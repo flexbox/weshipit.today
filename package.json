@@ -7,10 +7,15 @@
     "weshipit:lint": " nx lint weshipit",
     "weshipit:test": " nx test weshipit",
     "weshipit:build": " nx build weshipit",
+    "weshipit-ui:lint": " nx lint weshipit-ui",
+    "weshipit-ui:test": " nx test weshipit-ui",
+    "weshipit-ui:build": " nx build weshipit-ui",
     "cache:clear": "nx reset"
   },
   "private": true,
   "dependencies": {
+    "@headlessui/react": "^1.6.6",
+    "@heroicons/react": "^1.0.6",
     "@nrwl/next": "14.4.3",
     "autoprefixer": "^10.4.7",
     "core-js": "^3.6.5",
