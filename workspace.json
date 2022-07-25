@@ -2,7 +2,7 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
-    "weshipit": "packages/weshipit",
-    "weshipit-e2e": "packages/weshipit-e2e"
+    "weshipit": "apps/weshipit",
+    "weshipit-e2e": "apps/weshipit-e2e"
   }
 }
