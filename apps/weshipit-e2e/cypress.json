@@ -6,7 +6,7 @@
   "supportFile": "./src/support/index.ts",
   "pluginsFile": false,
   "video": true,
-  "videosFolder": "../../dist/cypress/packages/weshipit-e2e/videos",
-  "screenshotsFolder": "../../dist/cypress/packages/weshipit-e2e/screenshots",
+  "videosFolder": "../../dist/cypress/apps/weshipit-e2e/videos",
+  "screenshotsFolder": "../../dist/cypress/apps/weshipit-e2e/screenshots",
   "chromeWebSecurity": false
 }

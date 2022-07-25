@@ -1,12 +1,12 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/weshipit-e2e/src",
+  "sourceRoot": "apps/weshipit-e2e/src",
   "projectType": "application",
   "targets": {
     "e2e": {
       "executor": "@nrwl/cypress:cypress",
       "options": {
-        "cypressConfig": "packages/weshipit-e2e/cypress.json",
+        "cypressConfig": "apps/weshipit-e2e/cypress.json",
         "devServerTarget": "weshipit:serve:development"
       },
       "configurations": {
@@ -19,7 +19,7 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["packages/weshipit-e2e/**/*.{js,ts}"]
+        "lintFilePatterns": ["apps/weshipit-e2e/**/*.{js,ts}"]
       }
     }
   },

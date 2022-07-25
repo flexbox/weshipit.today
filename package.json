@@ -3,19 +3,23 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "weshipit:start" :" nx serve weshipit",
-    "weshipit:lint" :" nx lint weshipit",
-    "weshipit:test" :" nx test weshipit",
-    "weshipit:build" :" nx build weshipit"
+    "weshipit:start": " nx serve weshipit",
+    "weshipit:lint": " nx lint weshipit",
+    "weshipit:test": " nx test weshipit",
+    "weshipit:build": " nx build weshipit",
+    "cache:clear": "nx reset"
   },
   "private": true,
   "dependencies": {
     "@nrwl/next": "14.4.3",
+    "autoprefixer": "^10.4.7",
     "core-js": "^3.6.5",
     "next": "12.1.6",
+    "postcss": "^8.4.14",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "regenerator-runtime": "0.13.7",
+    "tailwindcss": "^3.1.6",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
