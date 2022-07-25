@@ -7,6 +7,9 @@
     "weshipit:lint": " nx lint weshipit",
     "weshipit:test": " nx test weshipit",
     "weshipit:build": " nx build weshipit",
+    "weshipit-ui:lint": " nx lint weshipit-ui",
+    "weshipit-ui:test": " nx test weshipit-ui",
+    "weshipit-ui:build": " nx build weshipit-ui",
     "cache:clear": "nx reset"
   },
   "private": true,
