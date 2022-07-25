@@ -14,6 +14,8 @@
   },
   "private": true,
   "dependencies": {
+    "@headlessui/react": "^1.6.6",
+    "@heroicons/react": "^1.0.6",
     "@nrwl/next": "14.4.3",
     "autoprefixer": "^10.4.7",
     "core-js": "^3.6.5",

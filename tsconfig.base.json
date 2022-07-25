@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@weshipit/weshipit-ui": ["libs/weshipit-ui/src/index.ts"]
+      "@weshipit/ui": ["libs/weshipit-ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
