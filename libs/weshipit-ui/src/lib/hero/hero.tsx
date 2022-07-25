@@ -5,7 +5,7 @@ export function Hero() {
         <div className="px-4  sm:px-8 xl:pr-16">
           <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
             <span className="block xl:inline">
-              Building apps in{' '}
+              Building React Native apps in
               <span className=" line-through text-gray-400">months</span> days
             </span>
           </h1>
