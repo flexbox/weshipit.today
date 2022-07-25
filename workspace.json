@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
-  "projects": {}
+  "projects": {
+    "weshipit": "packages/weshipit",
+    "weshipit-e2e": "packages/weshipit-e2e"
+  }
 }
