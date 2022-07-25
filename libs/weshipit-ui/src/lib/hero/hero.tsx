@@ -1,11 +1,4 @@
-import { StaticImageData } from 'next/image';
-import styles from './hero.module.css';
-import wall from './wall.png';
-
-/* eslint-disable-next-line */
-export interface HeroProps {}
-
-export function Hero(props: HeroProps) {
+export function Hero() {
   return (
     <main className="lg:relative h-full bg-gray-100">
       <div className="mx-auto max-w-7xl w-full pt-16 pb-20 text-center lg:py-72 lg:text-left">
