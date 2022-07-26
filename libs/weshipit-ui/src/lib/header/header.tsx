@@ -7,9 +7,9 @@ export function Header() {
         <div className="flex items-center justify-between py-6 md:justify-start md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <Link href="/">
-              <h2 className="text-2xl font-bold">
+              <a className="text-2xl font-bold">
                 weshipit<span className="text-gray-400">.today</span>
-              </h2>
+              </a>
             </Link>
           </div>
         </div>
