@@ -20,7 +20,7 @@
     "weshipit-ui:test": "nx test weshipit-ui",
     "weshipit-ui:build": "nx build weshipit-ui",
     "prepare": "husky install",
-    "weshipit-ui:storybook": "npx nx storybook weshipit-ui"
+    "weshipit-ui:storybook": "nx storybook weshipit-ui"
   },
   "private": true,
   "dependencies": {
