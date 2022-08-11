@@ -5,8 +5,7 @@ This project was generated using [Nx](https://nx.dev).
 ## Setup
 
 ```bash
-npm i -g nx
-
+yarn global add nx
 yarn
 ```
 
