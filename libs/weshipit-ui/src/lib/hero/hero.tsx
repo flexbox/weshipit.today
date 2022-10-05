@@ -1,3 +1,7 @@
+// eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
+import Button from 'libs/weshipit-ui/src/lib/button/button';
+import Gravatar from 'react-gravatar';
+
 export function Hero() {
   return (
     <main className="h-full bg-gray-100 lg:relative">
@@ -18,15 +22,26 @@ export function Hero() {
             focus on engineering community best practices.
           </p>
           <div className="mt-10 sm:flex sm:justify-center lg:justify-start">
-            <div className="rounded-md shadow">
-              <a
-                href="https://airtable.com/shrkRxhdc2zJD8EM5"
-                target={'_blank'}
-                className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 md:py-4 md:px-10 md:text-lg"
-                rel="noreferrer"
-              >
-                Start a project
-              </a>
+            <div className="flex rounded-md">
+              <Button variant="primary" text="Start a project" />
+              <Button
+                variant="secondary"
+                accessoryLeft={
+                  <div className="flex">
+                    <Gravatar
+                      className="rounded-full border-4 border-white"
+                      size={50}
+                      email="ducrocq.matthys@gmail.com"
+                    />
+                    <Gravatar
+                      className="-ml-4 rounded-full border-4 border-white"
+                      size={50}
+                      email="dleuliette@gmail.com"
+                    />
+                  </div>
+                }
+                text="Book a consultation"
+              />
             </div>
           </div>
         </div>

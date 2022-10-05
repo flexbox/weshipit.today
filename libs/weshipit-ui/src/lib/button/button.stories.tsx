@@ -16,8 +16,8 @@ Secondary.args = { variant: 'secondary' };
 
 const AllButtonExample = () => (
   <>
-    <Button>Primary</Button>
-    <Button variant="secondary">Secondary</Button>
+    <Button text={'Primary'} />
+    <Button variant="secondary" text="Secondary" />
   </>
 );
 
