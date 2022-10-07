@@ -23,7 +23,9 @@ export function Hero() {
           </p>
           <div className="mt-10 sm:flex sm:justify-center lg:justify-start">
             <div className="flex rounded-md">
-              <Button variant="primary">Start a project</Button>
+              <Button variant="primary" style="mr-4">
+                Start a project
+              </Button>
               <Button
                 variant="secondary"
                 accessoryLeft={

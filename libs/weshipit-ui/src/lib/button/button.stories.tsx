@@ -9,15 +9,22 @@ export default {
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
-Primary.args = {};
+Primary.args = {
+  children: 'Primary',
+};
 
 export const Secondary = Template.bind({});
-Secondary.args = { variant: 'secondary' };
+Secondary.args = { variant: 'secondary', children: 'Secondary' };
+
+export const AccessoryLeft = Template.bind({});
+AccessoryLeft.args = {
+  accessoryLeft: <span>👉</span>,
+};
 
 const AllButtonExample = () => (
   <>
-    <Button text={'Primary'} />
-    <Button variant="secondary" text="Secondary" />
+    <Button>Primary</Button>
+    <Button variant="secondary">Secondary</Button>
   </>
 );
 
