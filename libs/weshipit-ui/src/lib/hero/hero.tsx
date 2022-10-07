@@ -23,7 +23,7 @@ export function Hero() {
           </p>
           <div className="mt-10 sm:flex sm:justify-center lg:justify-start">
             <div className="flex rounded-md">
-              <Button variant="primary" text="Start a project" />
+              <Button variant="primary">Start a project</Button>
               <Button
                 variant="secondary"
                 accessoryLeft={
@@ -34,14 +34,15 @@ export function Hero() {
                       email="ducrocq.matthys@gmail.com"
                     />
                     <Gravatar
-                      className="-ml-4 rounded-full border-4 border-white"
+                      className="-ml-4 mr-4 rounded-full border-4 border-white"
                       size={50}
                       email="dleuliette@gmail.com"
                     />
                   </div>
                 }
-                text="Book a consultation"
-              />
+              >
+                Book a consultation
+              </Button>
             </div>
           </div>
         </div>
