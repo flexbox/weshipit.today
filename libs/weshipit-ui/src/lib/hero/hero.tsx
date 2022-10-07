@@ -23,11 +23,16 @@ export function Hero() {
           </p>
           <div className="mt-10 sm:flex sm:justify-center lg:justify-start">
             <div className="flex rounded-md">
-              <Button variant="primary" style="mr-4">
+              <Button
+                variant="primary"
+                style="mr-4"
+                href="https://airtable.com/shrkRxhdc2zJD8EM5"
+              >
                 Start a project
               </Button>
               <Button
                 variant="secondary"
+                href="https://airtable.com/shrkRxhdc2zJD8EM5"
                 accessoryLeft={
                   <div className="flex">
                     <Gravatar

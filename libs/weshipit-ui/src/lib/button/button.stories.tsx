@@ -23,8 +23,10 @@ AccessoryLeft.args = {
 
 const AllButtonExample = () => (
   <>
-    <Button>Primary</Button>
-    <Button variant="secondary">Secondary</Button>
+    <Button href="google.com">Primary</Button>
+    <Button href="google.com" variant="secondary">
+      Secondary
+    </Button>
   </>
 );
 
