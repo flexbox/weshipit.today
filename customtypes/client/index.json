@@ -1,0 +1,9 @@
+{
+  "id": "client",
+  "label": "Client",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {}
+  }
+}
