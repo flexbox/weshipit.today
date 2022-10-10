@@ -24,8 +24,8 @@ export function Button({
   return (
     <a
       href={href}
-      target={'_blank'}
-      className={`flex items-center justify-between rounded-md  py-3 text-base  font-medium  shadow-md  md:px-6 md:text-lg ${style} ${variantStyle}`}
+      target="_blank"
+      className={`flex items-center justify-between rounded-md py-3 text-base font-medium shadow-md md:px-6 md:text-lg ${style} ${variantStyle}`}
       rel="noreferrer"
     >
       {accessoryLeft && <div className="flex">{accessoryLeft}</div>}

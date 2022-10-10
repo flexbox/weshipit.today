@@ -1,5 +1,5 @@
 // eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
-import Button from 'libs/weshipit-ui/src/lib/button/button';
+import Button from 'libs/ui/src/lib/button/button';
 import Gravatar from 'react-gravatar';
 
 export function Hero() {
