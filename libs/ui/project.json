@@ -1,6 +1,6 @@
 {
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "libs/weshipit-ui/src",
+  "sourceRoot": "libs/ui/src",
   "projectType": "library",
   "tags": [],
   "targets": {
@@ -8,14 +8,14 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["libs/weshipit-ui/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["libs/ui/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/weshipit-ui"],
+      "outputs": ["coverage/libs/ui"],
       "options": {
-        "jestConfig": "libs/weshipit-ui/jest.config.ts",
+        "jestConfig": "libs/ui/jest.config.ts",
         "passWithNoTests": true
       }
     },
@@ -25,7 +25,7 @@
         "uiFramework": "@storybook/react",
         "port": 4400,
         "config": {
-          "configFolder": "libs/weshipit-ui/.storybook"
+          "configFolder": "libs/ui/.storybook"
         }
       },
       "configurations": {
@@ -39,9 +39,9 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "uiFramework": "@storybook/react",
-        "outputPath": "dist/storybook/weshipit-ui",
+        "outputPath": "dist/storybook/ui",
         "config": {
-          "configFolder": "libs/weshipit-ui/.storybook"
+          "configFolder": "libs/ui/.storybook"
         }
       },
       "configurations": {

@@ -4,6 +4,6 @@
   "projects": {
     "weshipit": "apps/weshipit",
     "weshipit-e2e": "apps/weshipit-e2e",
-    "weshipit-ui": "libs/weshipit-ui"
+    "ui": "libs/ui"
   }
 }
