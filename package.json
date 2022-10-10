@@ -19,8 +19,9 @@
     "weshipit-ui:lint": "nx lint weshipit-ui",
     "weshipit-ui:test": "nx test weshipit-ui",
     "weshipit-ui:build": "nx build weshipit-ui",
-    "prepare": "husky install",
-    "weshipit-ui:storybook": "nx storybook weshipit-ui"
+    "weshipit-ui:storybook": "nx storybook weshipit-ui",
+    "--misc--": "------------------------------------------------------",
+    "prepare": "husky install"
   },
   "private": true,
   "dependencies": {
