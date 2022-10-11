@@ -6,7 +6,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Welcome to weshipit!</title>
+        <title>weshipit.today — React Native Experts</title>
       </Head>
       <main className="app">
         <Component {...pageProps} />
