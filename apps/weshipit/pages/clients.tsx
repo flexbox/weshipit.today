@@ -22,7 +22,7 @@ interface clientPageProps {
 export default function ClientPage({ clients }: clientPageProps) {
   return (
     <Layout withHeader>
-      <div className="m-auto px-24 py-12">
+      <div className="m-auto p-24">
         <Text variant="h3" style="py-4">
           Clients
         </Text>
