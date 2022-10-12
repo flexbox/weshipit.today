@@ -19,6 +19,7 @@
     "ui:lint": "nx lint ui",
     "ui:test": "nx test ui",
     "ui:build": "nx build ui",
+    "ui:build:storybook": "nx build-storybook ui",
     "ui:storybook": "nx storybook ui",
     "--misc--": "------------------------------------------------------",
     "prepare": "husky install"
