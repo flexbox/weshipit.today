@@ -2,15 +2,20 @@ import { AppProps } from 'next/app';
 import Head from 'next/head';
 import './styles.css';
 
+import { PrismicProvider } from '@prismicio/react';
+import { client } from '../prismic';
+
 function CustomApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Head>
-        <title>weshipit.today — React Native Experts</title>
-      </Head>
-      <main className="app">
-        <Component {...pageProps} />
-      </main>
+      <PrismicProvider client={client}>
+        <Head>
+          <title>weshipit.today — React Native Experts</title>
+        </Head>
+        <main>
+          <Component {...pageProps} />
+        </main>
+      </PrismicProvider>
     </>
   );
 }
