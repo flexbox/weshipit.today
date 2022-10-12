@@ -20,14 +20,12 @@ interface clientPageProps {
 }
 
 export default function ClientPage({ clients }: clientPageProps) {
-  console.log(
-    '🚀 ~ file: clients.tsx ~ line 19 ~ ClientPage ~ clients',
-    clients
-  );
   return (
     <Layout withHeader>
-      <h1 className="text-2xl font-bold text-center">Clients</h1>
       <div className="m-auto px-24 py-12">
+        <Text variant="h3" style="py-4">
+          Clients
+        </Text>
         <Text variant="p1">
           Over the years, we have had the good fortune to work on React Native
           development and design projects for clients from a wide range of
@@ -37,13 +35,17 @@ export default function ClientPage({ clients }: clientPageProps) {
           with weshipit.today.
         </Text>
       </div>
-      <div className="flex flex-wrap justify-between  font-semibold">
+      <div className=" m-auto flex  justify-between  font-semibold w-3/4">
         {clients.map((client) => (
           <div key={client.id} className="text-center">
-            <p className="font-semibold text-lg">{client.data.name}</p>
+            <Text variant="s2">{client.data.name}</Text>
             {client.data.logo && (
               // eslint-disable-next-line @next/next/no-img-element
-              <img src={client.data.logo.url} alt={client.data.name} />
+              <img
+                src={client.data.logo.url}
+                alt={client.data.name}
+                className="opacity-80 hover:opacity-100"
+              />
             )}
           </div>
         ))}
