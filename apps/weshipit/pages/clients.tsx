@@ -1,7 +1,7 @@
 /* eslint-disable tailwindcss/classnames-order */
 import Layout from '../components/Layout';
 import { getClients } from '../../weshipit/pages/api/client';
-import Text from '@weshipit/ui';
+import { Text } from '@weshipit/ui';
 
 interface clientProps {
   id: string;
