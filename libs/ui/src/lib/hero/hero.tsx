@@ -1,10 +1,10 @@
 // eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
-import Button from 'libs/weshipit-ui/src/lib/button/button';
+import Button from 'libs/ui/src/lib/button/button';
 import Gravatar from 'react-gravatar';
 
 export function Hero() {
   return (
-    <main className="h-full bg-gray-100 lg:relative">
+    <main className="h-screen bg-gray-100 lg:relative">
       <div className="mx-auto w-full max-w-7xl pt-16 pb-20 text-center lg:py-72 lg:text-left">
         <div className="px-4  sm:px-8 xl:pr-16">
           <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
