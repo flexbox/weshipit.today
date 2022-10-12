@@ -69,6 +69,7 @@
     "babel-jest": "27.5.1",
     "babel-loader": "8.1.0",
     "cypress": "^9.1.0",
+    "cz-conventional-changelog": "3.3.0",
     "eslint": "~8.15.0",
     "eslint-config-next": "12.1.6",
     "eslint-config-prettier": "8.1.0",
@@ -92,5 +93,10 @@
   "lint-staged": {
     "*.{js,ts,tsx}": "eslint --cache --fix",
     "*.{js,ts,tsx,css,md}": "prettier --write"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
