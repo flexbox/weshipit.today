@@ -1,7 +1,6 @@
-/* eslint-disable tailwindcss/classnames-order */
-import Layout from '../components/Layout';
-import { getClients } from '../../weshipit/pages/api/client';
 import { Text } from '@weshipit/ui';
+import { Layout } from '../components/layout';
+import { getClients } from './api/client';
 
 interface clientProps {
   id: string;
@@ -15,11 +14,11 @@ interface clientProps {
   };
 }
 
-interface clientPageProps {
+interface clientsPageProps {
   clients: clientProps[];
 }
 
-export default function ClientPage({ clients }: clientPageProps) {
+export default function ClientsPage({ clients }: clientsPageProps) {
   return (
     <Layout withHeader>
       <div className="m-auto p-24">
@@ -35,7 +34,7 @@ export default function ClientPage({ clients }: clientPageProps) {
           with weshipit.today.
         </Text>
       </div>
-      <div className=" m-auto flex  justify-between  font-semibold w-3/4">
+      <div className="m-auto flex  w-3/4  justify-between font-semibold">
         {clients.map((client) => (
           <div key={client.id} className="text-center">
             <Text variant="s2">{client.data.name}</Text>
@@ -43,7 +42,7 @@ export default function ClientPage({ clients }: clientPageProps) {
               // eslint-disable-next-line @next/next/no-img-element
               <img
                 src={client.data.logo.url}
-                alt={client.data.name}
+                alt={`${client.data.name} logo client of weshipit.today`}
                 className="opacity-80 hover:opacity-100"
               />
             )}
@@ -54,7 +53,7 @@ export default function ClientPage({ clients }: clientPageProps) {
   );
 }
 
-ClientPage.getInitialProps = async function () {
+ClientsPage.getInitialProps = async function () {
   const clients = await getClients();
   return clients;
 };
