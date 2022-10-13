@@ -34,7 +34,6 @@
     "core-js": "^3.6.5",
     "next": "12.1.6",
     "postcss": "^8.4.14",
-    "prismic-javascript": "^3.0.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-gravatar": "^2.6.3",

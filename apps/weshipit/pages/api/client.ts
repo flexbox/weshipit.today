@@ -1,4 +1,4 @@
-import { client as prismicClient } from '../../prismic';
+import { client as prismicClient } from './prismic';
 
 export async function getClients() {
   try {

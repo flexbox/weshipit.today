@@ -1,10 +1,10 @@
 import { Header, Hero } from '@weshipit/ui';
 
-export default function Index() {
+export default function IndexPage() {
   return (
-    <div>
+    <>
       <Header />
       <Hero />
-    </div>
+    </>
   );
 }
