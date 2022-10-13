@@ -1,6 +1,6 @@
-import { Layout } from '../components/Layouteuh';
-import { getClients } from './api/client';
 import { Text } from '@weshipit/ui';
+import { Layout } from '../components/layout';
+import { getClients } from './api/client';
 
 interface clientProps {
   id: string;
