@@ -20,21 +20,24 @@ interface clientsPageProps {
 
 export default function ClientsPage({ clients }: clientsPageProps) {
   return (
-    <Layout withHeader>
-      <div className="m-auto p-24">
+    <Layout withHeader withContainer>
+      <div className="py-24">
         <Text variant="h3" style="py-4">
           Clients
         </Text>
         <Text variant="p1">
           Over the years, we have had the good fortune to work on React Native
           development and design projects for clients from a wide range of
-          industries and locations. Our clients have come from Paris, London,
-          Bruxelles, Troy Michigan, Bermuda, Munich, and beyond to seek our
-          expertise. Here are some of the clients that have chosen to partner
-          with weshipit.today.
+          industries and locations. Our clients have come from Paris France,
+          London UK, Bruxelles Belgium, Troy Michigan USA, Hamilton Bermuda,
+          Berlin Germany, and beyond to seek our expertise.
+        </Text>
+        <Text variant="p1">
+          Here are some of the clients that have chosen to partner with
+          weshipit.today.
         </Text>
       </div>
-      <div className="m-auto flex  w-3/4  justify-between font-semibold">
+      <div className="flex w-3/4 justify-between">
         {clients.map((client) => (
           <div key={client.id} className="text-center">
             <Text variant="s2">{client.data.name}</Text>
