@@ -2,6 +2,8 @@
 import Button from 'libs/ui/src/lib/button/button';
 import Gravatar from 'react-gravatar';
 
+const ONBOARDING_FORM = 'https://airtable.com/shryVoJ3nzyeq2P4s';
+
 export function Hero() {
   return (
     <main className="h-screen bg-gray-100 lg:relative">
@@ -23,16 +25,12 @@ export function Hero() {
           </p>
           <div className="mt-10 sm:flex sm:justify-center lg:justify-start">
             <div className="flex rounded-md">
-              <Button
-                variant="primary"
-                style="mr-4"
-                href="https://airtable.com/shrkRxhdc2zJD8EM5"
-              >
+              <Button variant="primary" style="mr-4" href={ONBOARDING_FORM}>
                 Start a project
               </Button>
               <Button
                 variant="secondary"
-                href="https://airtable.com/shrkRxhdc2zJD8EM5"
+                href={ONBOARDING_FORM}
                 accessoryLeft={
                   <div className="flex">
                     <Gravatar

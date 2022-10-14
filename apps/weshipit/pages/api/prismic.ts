@@ -7,7 +7,7 @@ export const client = prismic.createClient(repositoryName, {
   routes: [
     {
       type: 'client',
-      path: '/',
+      path: '/clients',
     },
   ],
 });

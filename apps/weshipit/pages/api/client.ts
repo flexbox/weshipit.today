@@ -1,6 +1,6 @@
 import { client as prismicClient } from './prismic';
 
-export async function getClients() {
+export async function getAllClients() {
   try {
     const clients = await prismicClient.getAllByType('client');
 
@@ -8,7 +8,7 @@ export async function getClients() {
       clients: clients ? clients : [],
     };
   } catch (error) {
-    console.error('getClients -> error', error);
+    console.error('getAllClients -> error', error);
     return error;
   }
 }

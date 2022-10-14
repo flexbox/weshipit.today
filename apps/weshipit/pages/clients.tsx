@@ -1,6 +1,6 @@
 import { Text } from '@weshipit/ui';
 import { Layout } from '../components/layout';
-import { getClients } from './api/client';
+import { getAllClients } from './api/client';
 
 interface clientProps {
   id: string;
@@ -54,6 +54,6 @@ export default function ClientsPage({ clients }: clientsPageProps) {
 }
 
 ClientsPage.getInitialProps = async function () {
-  const clients = await getClients();
+  const clients = await getAllClients();
   return clients;
 };
