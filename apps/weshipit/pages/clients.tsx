@@ -1,6 +1,7 @@
-import { Text } from '@weshipit/ui';
 import { Layout } from '../components/layout';
 import { getAllClients } from './api/client';
+import { ClientsList } from '../components/clients-list';
+import { Text } from '@weshipit/ui';
 
 interface clientProps {
   id: string;
@@ -37,21 +38,7 @@ export default function ClientsPage({ clients }: clientsPageProps) {
           weshipit.today.
         </Text>
       </div>
-      <div className="flex w-3/4 justify-between">
-        {clients.map((client) => (
-          <div key={client.id} className="text-center">
-            <Text variant="s2">{client.data.name}</Text>
-            {client.data.logo && (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                src={client.data.logo.url}
-                alt={`${client.data.name} logo client of weshipit.today`}
-                className="opacity-80 hover:opacity-100"
-              />
-            )}
-          </div>
-        ))}
-      </div>
+      <ClientsList clients={clients} />
     </Layout>
   );
 }
