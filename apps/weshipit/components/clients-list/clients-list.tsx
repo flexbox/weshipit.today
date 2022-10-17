@@ -1,5 +1,4 @@
 import { Text } from '@weshipit/ui';
-import { Layout } from '@weshipit/components';
 
 export interface clientProps {
   id: string;
