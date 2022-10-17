@@ -1,7 +1,7 @@
 import { Layout } from '../components/layout';
 import { getAllClients } from './api/client';
 import { Text } from '@weshipit/ui';
-import { ClientsList } from '../components/clients-list/clients-list';
+import { ClientsList } from '@weshipit/ui';
 
 interface clientProps {
   id: string;
