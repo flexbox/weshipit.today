@@ -7,7 +7,7 @@ export default function IndexPage() {
     <>
       <Header />
       <Hero />
-      <ClientsListHomepage clients={[]} />
+      {/* <ClientsListHomepage clients={[]} /> */}
     </>
   );
 }
