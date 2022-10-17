@@ -23,7 +23,6 @@ export function ClientsList({ clients }: clientsListProps) {
         <div key={client.id} className="text-center">
           <Text variant="s2">{client.data.name}</Text>
           {client.data.logo && (
-            // eslint-disable-next-line @next/next/no-img-element
             <img
               src={client.data.logo.url}
               alt={`${client.data.name} logo client of weshipit.today`}
