@@ -1,4 +1,4 @@
-import { clientProps } from './clients-list';
+import { clientProps } from './clients-list.d';
 
 export interface ClientsListHomepageProps {
   clients: clientProps[];

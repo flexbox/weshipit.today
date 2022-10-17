@@ -1,20 +1,5 @@
 import { Text } from '@weshipit/ui';
-
-export interface clientProps {
-  id: string;
-  data: {
-    name: string;
-    is_visible_homepage: boolean;
-    logo: {
-      url: string;
-    };
-    id: string;
-  };
-}
-
-interface clientsListProps {
-  clients: clientProps[];
-}
+import { clientsListProps } from './clients-list.d';
 
 export function ClientsList({ clients }: clientsListProps) {
   return (
