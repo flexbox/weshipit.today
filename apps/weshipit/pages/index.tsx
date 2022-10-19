@@ -21,7 +21,7 @@ export default function IndexPage({ clients }: clientsPageProps) {
   return (
     <>
       <Header />
-      <Hero />x
+      <Hero />
       <ClientsListHomepage clients={clients} />
     </>
   );
