@@ -1,17 +1,33 @@
-import { Header, Hero } from '@weshipit/ui';
-// import { getAllClients } from '../pages/api/client';
-// import ClientsListHomepage from '../components/clients-list/clients-list-homepage';
+import { ClientsListHomepage, Header, Hero } from '@weshipit/ui';
+import { getAllClients } from './api/client';
 
-export default function IndexPage() {
+interface clientProps {
+  id: string;
+  data: {
+    name: string;
+    is_visible_homepage: boolean;
+    logo: {
+      url: string;
+    };
+    id: string;
+  };
+}
+
+interface clientsPageProps {
+  clients: clientProps[];
+}
+
+export default function IndexPage({ clients }: clientsPageProps) {
   return (
     <>
       <Header />
-      <Hero />
+      <Hero />x
+      <ClientsListHomepage clients={clients} />
     </>
   );
 }
 
-// ClientsListHomepage.getInitialProps = async function () {
-//   const clients = await getAllClients();
-//   return clients;
-// };
+IndexPage.getInitialProps = async function () {
+  const clients = await getAllClients();
+  return clients;
+};
