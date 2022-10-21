@@ -6,18 +6,16 @@ export interface ClientsListHomepageProps {
 
 export function ClientsListHomepage(data: ClientsListHomepageProps) {
   return (
-    <div className="m-auto flex w-2/3 justify-between py-16">
+    <div className="flex w-full justify-between py-16">
       {data.clients.map(
         (client: clientProps) =>
           client.data.is_visible_homepage && (
-            <div key={client.id} className="text-center">
-              {client.data.logo && (
-                <img
-                  src={client.data.logo.url}
-                  alt={`${client.data.name} logo client of weshipit.today`}
-                  className="opacity-80 hover:opacity-100"
-                />
-              )}
+            <div key={client.id}>
+              <img
+                src={client.data.logo.url}
+                alt={`${client.data.name} logo client of weshipit.today`}
+                className="h-32 w-32 opacity-50 hover:opacity-100"
+              />
             </div>
           )
       )}

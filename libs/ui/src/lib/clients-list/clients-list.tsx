@@ -1,19 +1,20 @@
-import { Text } from '@weshipit/ui';
 import { clientsListProps } from './clients-list.d';
+import { Text } from '@weshipit/ui';
 
 export function ClientsList({ clients }: clientsListProps) {
   return (
-    <div className="flex w-3/4 justify-between">
+    <div>
       {clients.map((client) => (
-        <div key={client.id} className="text-center">
-          <Text variant="s2">{client.data.name}</Text>
+        <div key={client.id} className="flex items-center">
           {client.data.logo && (
-            <img
-              src={client.data.logo.url}
-              alt={`${client.data.name} logo client of weshipit.today`}
-              className="opacity-80 hover:opacity-100"
+            <div
+              style={{ backgroundImage: `url(${client.data.logo.url})` }}
+              className="opacity-80 hover:opacity-100 w-24 h-24 object-center object-cover bg-center bg-no-repeat bg-cover"
             />
           )}
+          <Text variant="s2" style="ml-4">
+            {client.data.name}
+          </Text>
         </div>
       ))}
     </div>

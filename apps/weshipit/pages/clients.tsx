@@ -26,14 +26,14 @@ export default function ClientsPage({ clients }: clientsPageProps) {
         <Text variant="h3" style="py-4">
           Clients
         </Text>
-        <Text variant="p1">
+        <Text variant="s2" style="mb-4">
           Over the years, we have had the good fortune to work on React Native
           development and design projects for clients from a wide range of
           industries and locations. Our clients have come from Paris France,
           London UK, Bruxelles Belgium, Troy Michigan USA, Hamilton Bermuda,
           Berlin Germany, and beyond to seek our expertise.
         </Text>
-        <Text variant="p1">
+        <Text variant="s2">
           Here are some of the clients that have chosen to partner with
           weshipit.today.
         </Text>
