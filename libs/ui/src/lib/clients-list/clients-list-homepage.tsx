@@ -15,7 +15,7 @@ export function ClientsListHomepage(data: ClientsListHomepageProps) {
                 <img
                   src={client.data.logo.url}
                   alt={`${client.data.name} logo client of weshipit.today`}
-                  className="opacity-80 hover:opacity-100"
+                  className="opacity-80 grayscale hover:opacity-100 hover:grayscale-0"
                 />
               )}
             </div>
