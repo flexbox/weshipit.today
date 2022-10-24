@@ -3,9 +3,9 @@ import { clientsListProps } from './clients-list.d';
 
 export function ClientsList({ clients }: clientsListProps) {
   return (
-    <div className="flex w-3/4 justify-between">
+    <div className=" grid grid-cols-4 justify-between">
       {clients.map((client) => (
-        <div key={client.id} className="text-center">
+        <div key={client.id} className="m-auto w-2/3 pb-32 text-center">
           <Text variant="s2">{client.data.name}</Text>
           {client.data.logo && (
             <img

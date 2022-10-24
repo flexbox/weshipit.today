@@ -10,7 +10,7 @@ export function ClientsListHomepage(data: ClientsListHomepageProps) {
       {data.clients.map(
         (client: clientProps) =>
           client.data.is_visible_homepage && (
-            <div key={client.id} className="text-center">
+            <div key={client.id} className="mx-12 w-1/3 ">
               {client.data.logo && (
                 <img
                   src={client.data.logo.url}
