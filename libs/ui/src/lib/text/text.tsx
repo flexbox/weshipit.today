@@ -36,7 +36,7 @@ export function Text({ children, variant, style }: TextProps) {
   if (variant === 's1') {
     return (
       <p
-        className={`text-xl font-semibold tracking-tight text-gray-900 sm:text-2xl md:text-3xl lg:text-2xl xl:text-3xl ${style}`}
+        className={`text-xl text-gray-900 sm:text-2xl md:text-3xl lg:text-2xl xl:text-3xl ${style}`}
       >
         {children}
       </p>
@@ -45,7 +45,7 @@ export function Text({ children, variant, style }: TextProps) {
   if (variant === 's2') {
     return (
       <p
-        className={`text-lg font-semibold tracking-tight text-gray-900 sm:text-xl md:text-2xl lg:text-xl xl:text-2xl ${style}`}
+        className={`text-lg text-gray-900 sm:text-xl md:text-2xl lg:text-xl xl:text-2xl ${style}`}
       >
         {children}
       </p>
@@ -54,7 +54,7 @@ export function Text({ children, variant, style }: TextProps) {
   if (variant === 'p1') {
     return (
       <p
-        className={`text-base font-medium tracking-tight text-gray-900 sm:text-lg md:text-xl lg:text-lg xl:text-xl ${style}`}
+        className={`text-base text-gray-900 sm:text-lg md:text-xl lg:text-lg xl:text-xl ${style}`}
       >
         {children}
       </p>
@@ -63,7 +63,7 @@ export function Text({ children, variant, style }: TextProps) {
   if (variant === 'p2') {
     return (
       <p
-        className={`text-sm font-medium tracking-tight text-gray-900 sm:text-base md:text-lg lg:text-base xl:text-lg ${style}`}
+        className={`text-sm font-medium text-gray-900 sm:text-base md:text-lg lg:text-base xl:text-lg ${style}`}
       >
         {children}
       </p>
