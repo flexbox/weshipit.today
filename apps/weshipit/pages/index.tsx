@@ -1,5 +1,4 @@
-import { ClientsListHomepage, Header, Hero, Text } from '@weshipit/ui';
-import Link from 'next/link';
+import { ClientsListHomepage, Header, Hero, Link, Text } from '@weshipit/ui';
 import { getAllClients } from './api/client';
 
 interface clientProps {
@@ -30,10 +29,8 @@ export default function IndexPage({ clients }: clientsPageProps) {
           </Text>
           <ClientsListHomepage clients={clients} />
 
-          <Link href="/clients">
-            <div className="m-auto max-w-md cursor-pointer  rounded-md bg-indigo-600 py-3    font-medium text-white   shadow-md hover:bg-indigo-700 md:px-6 md:text-lg">
-              View our client list
-            </div>
+          <Link href="/clients" style="m-auto w-52  ">
+            View our client list
           </Link>
         </div>
       </section>
