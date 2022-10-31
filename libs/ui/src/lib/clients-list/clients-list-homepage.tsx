@@ -1,4 +1,5 @@
 import { clientProps } from './clients-list.d';
+import { Text } from '@weshipit/ui';
 
 export interface ClientsListHomepageProps {
   clients: clientProps[];
@@ -14,7 +15,7 @@ export function ClientsListHomepage(data: ClientsListHomepageProps) {
               <img
                 src={client.data.logo.url}
                 alt={`${client.data.name} logo client of weshipit.today`}
-                className="h-32 w-32 opacity-50 hover:opacity-100"
+                className="h-32 w-32 opacity-50 grayscale hover:opacity-100 hover:grayscale-0"
               />
             </div>
           )
