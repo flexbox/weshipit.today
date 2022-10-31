@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { clientsListFixture } from '../clients-list/clients-list.fixture.spec';
+import { clientsListFixture } from './clients-list.fixture';
 import { ClientsListHomepage } from './clients-list-homepage';
 
 export default {

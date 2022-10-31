@@ -13,7 +13,7 @@
       },
       "configurations": {
         "development": {
-          "outputPath": "tmp/apps/weshipit"
+          "outputPath": "apps/weshipit"
         },
         "production": {}
       }
@@ -44,7 +44,7 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/weshipit"],
+      "outputs": ["{workspaceRoot}/coverage/apps/weshipit"],
       "options": {
         "jestConfig": "apps/weshipit/jest.config.ts",
         "passWithNoTests": true

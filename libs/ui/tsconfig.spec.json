@@ -16,5 +16,5 @@
     "**/*.test.jsx",
     "**/*.spec.jsx",
     "**/*.d.ts"
-  ]
+, "src/lib/clients-list/clients-list.fixture.ts"  ]
 }
