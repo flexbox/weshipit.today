@@ -29,9 +29,7 @@ export default function IndexPage({ clients }: clientsPageProps) {
             Some of the wonderful clients who have trusted us
           </Text>
           <ClientsListHomepage clients={clients} />
-          <Link href="/clients">
-            <a>View our client list</a>
-          </Link>
+          <Link href="/clients">View our client list</Link>
         </div>
       </section>
     </>
