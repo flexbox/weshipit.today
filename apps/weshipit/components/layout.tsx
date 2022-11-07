@@ -12,7 +12,7 @@ export function Layout({
   withContainer = false,
 }: LayoutProps) {
   return (
-    <div className="h-screen bg-gray-100">
+    <div className="h-full bg-gray-100">
       {withHeader && <Header />}
       {withContainer ? (
         <div className="mx-auto max-w-6xl">{children}</div>

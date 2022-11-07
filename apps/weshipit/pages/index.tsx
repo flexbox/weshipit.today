@@ -25,11 +25,15 @@ export default function IndexPage({ clients }: clientsPageProps) {
       <Hero />
       <section className="m-auto max-w-7xl">
         <div className="my-48 text-center">
-          <Text variant="s2" style="uppercase">
+          <Text variant="h3" style="py-4">
             Some of the wonderful clients who have trusted us
           </Text>
           <ClientsListHomepage clients={clients} />
-          <Link href="/clients">View our client list</Link>
+          <Link legacyBehavior href="/clients">
+            <a className="text-sm font-semibold text-blue-500 underline underline-offset-4  hover:text-blue-700">
+              View our client list
+            </a>
+          </Link>
         </div>
       </section>
     </>
