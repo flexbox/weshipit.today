@@ -1,5 +1,7 @@
 /* eslint-disable-next-line */
 
+import { NativeLink } from '@weshipit/ui';
+
 export interface LinkProps {
   variant?: 'primary' | 'secondary';
   accessoryLeft?: React.ReactNode;
@@ -22,15 +24,10 @@ export function Link({
     variantStyle = 'bg-indigo-600 hover:bg-indigo-700 text-white';
   }
   return (
-    <a
-      href={href}
-      target="_blank"
-      className={`flex items-center justify-between rounded-md py-3 text-base font-medium shadow-md md:px-6 md:text-lg ${style} ${variantStyle}`}
-      rel="noreferrer"
-    >
+    <NativeLink href={href}>
       {accessoryLeft && <div className="flex">{accessoryLeft}</div>}
       {children}
-    </a>
+    </NativeLink>
   );
 }
 

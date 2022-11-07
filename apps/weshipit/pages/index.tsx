@@ -30,7 +30,7 @@ export default function IndexPage({ clients }: clientsPageProps) {
           <ClientsListHomepage clients={clients} />
 
           <Link href="/clients" style="m-auto w-52  ">
-            View our client list
+            <a className="text-sm hover:text-gray-600">View our client list</a>
           </Link>
         </div>
       </section>
