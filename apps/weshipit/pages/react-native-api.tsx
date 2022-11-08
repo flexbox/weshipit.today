@@ -1,15 +1,17 @@
 import { Layout } from '../components/layout';
 
-import { Text } from '@weshipit/ui';
+import { Button, Text } from '@weshipit/ui';
 
 export default function ReactNativeApiPage() {
   return (
     <Layout
-      withHeaderButton
-      headerButtonHref="https://airtable.com/shrKPA2DGcG8xnQGG"
-      withContainer
+      withAccessoryRight={
+        <Button href="https://airtable.com/shrcF4Xn27rhIZVCs/tblpNvaodZH5S99le">
+          Add a new API
+        </Button>
+      }
     >
-      <div className="py-24">
+      <div className="mx-auto max-w-6xl py-24">
         <Text variant="h3" style="py-4">
           React Native API
         </Text>
@@ -17,10 +19,12 @@ export default function ReactNativeApiPage() {
           Here is the list of all the React Native API.
         </Text>
       </div>
+
       <iframe
         src="https://airtable.com/embed/shrcF4Xn27rhIZVCs/tblpNvaodZH5S99le"
-        width={1200}
-        height={3000}
+        height={1830}
+        width="80%"
+        className="mx-auto"
       />
     </Layout>
   );

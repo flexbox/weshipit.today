@@ -1,16 +1,13 @@
-import { Button } from '@weshipit/ui';
 import Link from 'next/link';
 
 interface HeaderProps {
-  withButton?: boolean;
-  buttonHref?: string;
-  buttonText?: string;
+  withAccessoryRight?: boolean;
+  accessoryRight?: React.ReactNode;
 }
 
 export function Header({
-  withButton = false,
-  buttonHref = '',
-  buttonText = 'Change button text here',
+  withAccessoryRight = false,
+  accessoryRight,
 }: HeaderProps) {
   return (
     <div className="bg-white">
@@ -23,9 +20,9 @@ export function Header({
               </div>
             </Link>
           </div>
-          {withButton && (
+          {withAccessoryRight && (
             <div className="flex justify-end lg:w-0 lg:flex-1">
-              <Button href={buttonHref}>{buttonText}</Button>
+              {accessoryRight}
             </div>
           )}
         </div>
