@@ -18,7 +18,13 @@ export function Layout({
   return (
     <div className="h-full bg-gray-100">
       {withHeader && <Header />}
-      {withHeaderButton && <Header withButton buttonHref={headerButtonHref} />}
+      {withHeaderButton && (
+        <Header
+          withButton
+          buttonHref={headerButtonHref}
+          buttonText="Add a new API"
+        />
+      )}
       {withContainer ? (
         <div className="mx-auto max-w-6xl">{children}</div>
       ) : (

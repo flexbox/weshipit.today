@@ -4,9 +4,14 @@ import Link from 'next/link';
 interface HeaderProps {
   withButton?: boolean;
   buttonHref?: string;
+  buttonText?: string;
 }
 
-export function Header({ withButton = false, buttonHref = '' }: HeaderProps) {
+export function Header({
+  withButton = false,
+  buttonHref = '',
+  buttonText = 'Change button text here',
+}: HeaderProps) {
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -20,7 +25,7 @@ export function Header({ withButton = false, buttonHref = '' }: HeaderProps) {
           </div>
           {withButton && (
             <div className="flex justify-end lg:w-0 lg:flex-1">
-              <Button href={buttonHref}>Add a new API</Button>
+              <Button href={buttonHref}>{buttonText}</Button>
             </div>
           )}
         </div>
