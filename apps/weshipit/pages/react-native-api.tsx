@@ -6,7 +6,7 @@ export default function ReactNativeApiPage() {
   return (
     <Layout
       withAccessoryRight={
-        <Button href="https://airtable.com/shrKPA2DGcG8xnQGG">
+        <Button href="https://airtable.com/shrKPA2DGcG8xnQ  GG">
           Add a new API
         </Button>
       }
@@ -22,7 +22,7 @@ export default function ReactNativeApiPage() {
 
       <iframe
         src="https://airtable.com/embed/shrcF4Xn27rhIZVCs/tblpNvaodZH5S99le"
-        height={1830}
+        height={3200}
         width="80%"
         className="mx-auto"
       />
