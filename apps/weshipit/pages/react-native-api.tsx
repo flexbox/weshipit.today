@@ -4,7 +4,11 @@ import { Text } from '@weshipit/ui';
 
 export default function ReactNativeApiPage() {
   return (
-    <Layout withHeader withContainer>
+    <Layout
+      withHeaderButton
+      headerButtonHref="https://airtable.com/shrKPA2DGcG8xnQGG"
+      withContainer
+    >
       <div className="py-24">
         <Text variant="h3" style="py-4">
           React Native API
