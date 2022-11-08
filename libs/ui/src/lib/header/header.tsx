@@ -1,6 +1,14 @@
 import Link from 'next/link';
 
-export function Header() {
+interface HeaderProps {
+  withAccessoryRight?: boolean;
+  accessoryRight?: React.ReactNode;
+}
+
+export function Header({
+  withAccessoryRight = false,
+  accessoryRight,
+}: HeaderProps) {
   return (
     <div className="bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
@@ -12,6 +20,11 @@ export function Header() {
               </div>
             </Link>
           </div>
+          {withAccessoryRight && (
+            <div className="flex justify-end lg:w-0 lg:flex-1">
+              {accessoryRight}
+            </div>
+          )}
         </div>
       </div>
     </div>
