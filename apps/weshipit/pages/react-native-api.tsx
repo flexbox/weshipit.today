@@ -13,10 +13,10 @@ export default function ReactNativeApiPage() {
     >
       <div className="mx-auto max-w-6xl py-24">
         <Text variant="h3" style="py-4">
-          React Native API
+          The best ressources and tools for busy developers
         </Text>
         <Text variant="s2" style="mb-4">
-          Here is the list of all the React Native API.
+          We curated the essentials for the success of your React Native App.
         </Text>
       </div>
 
