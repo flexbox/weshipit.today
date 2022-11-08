@@ -6,7 +6,7 @@ export default function ReactNativeApiPage() {
   return (
     <Layout
       withAccessoryRight={
-        <Button href="https://airtable.com/shrcF4Xn27rhIZVCs/tblpNvaodZH5S99le">
+        <Button href="https://airtable.com/shrKPA2DGcG8xnQGG">
           Add a new API
         </Button>
       }
