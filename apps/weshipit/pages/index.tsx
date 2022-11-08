@@ -30,7 +30,7 @@ export default function IndexPage({ clients }: clientsPageProps) {
           </Text>
           <ClientsListHomepage clients={clients} />
           <Link legacyBehavior href="/clients">
-            <a className="text-sm font-semibold text-blue-500 underline underline-offset-4  hover:text-blue-700">
+            <a className="text-sm font-semibold text-blue-500 underline underline-offset-4 hover:text-blue-700">
               View our client list
             </a>
           </Link>

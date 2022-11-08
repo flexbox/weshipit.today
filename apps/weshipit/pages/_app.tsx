@@ -9,7 +9,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
   return (
     <PrismicProvider client={client}>
       <Head>
-        <title>weshipit.today — React Native Experts</title>
+        <title>React Native Experts — weshipit.today</title>
       </Head>
       <main>
         <Component {...pageProps} />
