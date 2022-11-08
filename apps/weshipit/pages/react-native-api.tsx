@@ -11,7 +11,7 @@ export default function ReactNativeApiPage() {
         </Button>
       }
     >
-      <div className="mx-auto max-w-6xl py-24">
+      <div className="mx-auto max-w-6xl py-12">
         <Text variant="h3" style="py-4">
           The best ressources and tools for busy developers
         </Text>
