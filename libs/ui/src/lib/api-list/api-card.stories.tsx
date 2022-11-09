@@ -1,6 +1,6 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { apiListFixture } from './api-list.fixture';
-import ApiCard from './api-card';
+import { ApiCard } from './api-card';
 
 export default {
   component: ApiCard,

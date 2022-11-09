@@ -1,5 +1,12 @@
 export interface ApiProps {
   fields: {
+    logo?: {
+      thumbnails: {
+        large: {
+          url: string;
+        };
+      };
+    };
     description: string;
     features: string[];
     github_url: string;

@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 
-import Card from './card';
+import { ApiList } from './api-list';
 
 describe('Card', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<Card children={undefined} />);
+    const { baseElement } = render(<ApiList apis={[]} />);
     expect(baseElement).toBeTruthy();
   });
 });
