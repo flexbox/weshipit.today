@@ -4,14 +4,14 @@ import ApiCard from './api-card';
 
 export default {
   component: ApiCard,
-  title: 'components/apiCard',
+  title: 'components/react-native-api',
 } as ComponentMeta<typeof ApiCard>;
 
 const Template: ComponentStory<typeof ApiCard> = (args) => (
   <ApiCard {...args} />
 );
 
-export const Homepage = Template.bind({});
-Homepage.args = {
+export const Card = Template.bind({});
+Card.args = {
   apis: apiListFixture,
 };

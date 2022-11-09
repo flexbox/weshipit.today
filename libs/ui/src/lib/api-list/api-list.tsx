@@ -1,11 +1,11 @@
 import { apiListProps } from './api-list.d';
-import { Text } from '@weshipit/ui';
+import { Card, Text } from '@weshipit/ui';
 
 export function ApiList({ apis }: apiListProps) {
   return (
     <div className="grid grid-cols-3 gap-3">
       {apis.map((api) => (
-        <div className=" divide-y rounded-lg bg-slate-100 p-12">
+        <Card>
           <div key={api.name} className="pb-12 text-center font-bold">
             <Text variant={'s2'}>{api.name}</Text>
           </div>
@@ -41,7 +41,7 @@ export function ApiList({ apis }: apiListProps) {
               {api.pricing}
             </div>
           )}
-        </div>
+        </Card>
       ))}
     </div>
   );

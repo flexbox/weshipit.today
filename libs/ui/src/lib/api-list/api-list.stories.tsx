@@ -4,7 +4,7 @@ import { ApiList } from './api-list';
 
 export default {
   component: ApiList,
-  title: 'components/api',
+  title: 'components/react-native-api',
 } as ComponentMeta<typeof ApiList>;
 
 const Template: ComponentStory<typeof ApiList> = (args) => (
