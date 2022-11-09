@@ -1,11 +1,7 @@
-import { apiProps, fields } from './api-list.d';
-import { Button, Card, Text } from '@weshipit/ui';
+import { ApiProps } from './api-list.d';
+import { Card, Text } from '@weshipit/ui';
 
-export interface ApiCardProps {
-  fields: fields;
-}
-
-export function ApiCard({ fields }: ApiCardProps) {
+export function ApiCard({ fields }: ApiProps) {
   const { pricing, type, name } = fields;
 
   return (
