@@ -1,13 +1,15 @@
-export interface apiProps {
-  name: string;
-  website: string;
+export interface fields {
   description: string;
+  features: string[];
+  github_url: string;
+  name: string;
+  platform: string[];
+  pricing: string[];
   type: string;
-  features: string;
-  pricing: string;
-  logo?: {
-    url: string;
-  };
+  website_url: string;
+}
+export interface apiProps {
+  fields: { fields };
 }
 
 export interface apiListProps {

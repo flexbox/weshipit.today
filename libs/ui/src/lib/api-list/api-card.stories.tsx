@@ -13,5 +13,5 @@ const Template: ComponentStory<typeof ApiCard> = (args) => (
 
 export const Card = Template.bind({});
 Card.args = {
-  apis: apiListFixture,
+  fields: apiListFixture[1].fields,
 };
