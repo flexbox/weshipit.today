@@ -1,4 +1,4 @@
-export const clientsListFixture = [
+export const apiListFixture = [
   {
     name: 'Amplify',
     website: 'https://aws.amazon.com/amplify/',

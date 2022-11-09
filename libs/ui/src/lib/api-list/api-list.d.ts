@@ -8,5 +8,5 @@ export interface apiProps {
 }
 
 export interface apiListProps {
-  clients: apiProps[];
+  apis: apiProps[];
 }
