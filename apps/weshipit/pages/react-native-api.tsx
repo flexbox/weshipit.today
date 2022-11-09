@@ -64,6 +64,7 @@ export async function getStaticProps() {
         ) {
           records {
             fields
+            id
           }
         }
       }

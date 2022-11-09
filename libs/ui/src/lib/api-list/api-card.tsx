@@ -6,25 +6,29 @@ export function ApiCard({ fields }: ApiProps) {
 
   return (
     <Card>
-      <div className=" pb-12 text-center font-bold ">
-        <div className="my-8 flex justify-start px-12 ">
-          <Text variant="s2">
-            <div className="border-2 border-dashed border-gray-500 p-4 text-gray-500">
-              {pricing}
-            </div>
+      <div className="my-8 flex justify-start px-12">
+        <div className="border-2 border-dashed border-gray-400 p-4">
+          <Text variant="p1" style="font-bold">
+            {pricing}
           </Text>
         </div>
       </div>
-      <div className="flex flex-col rounded-b-lg  bg-gray-400 p-12">
-        <div className="mb-2  p-2 font-semibold ">
-          {' '}
-          <Text variant={'s2'}>{name}</Text>
+
+      <div className="rounded-b-lg p-12">
+        <div className="mb-2 p-2">
+          <Text variant="s2" style="font-semibold">
+            {name}
+          </Text>
         </div>
-        <div className="w-min rounded-3xl  ">
-          {' '}
-          <div className=" flex  items-center justify-between rounded-md bg-indigo-600 py-3 text-base font-medium text-white shadow-md md:px-6 md:text-lg">
+
+        <div className="rounded-md bg-indigo-700 py-3 md:px-6 ">
+          <Text
+            variant="p2"
+            style="text-base font-medium md:text-lg"
+            color="text-white"
+          >
             {type}
-          </div>
+          </Text>
         </div>
       </div>
     </Card>
