@@ -1,8 +1,10 @@
 import { Layout } from '../components/layout';
 
 import { Button, Text } from '@weshipit/ui';
+import client from './api/apollo-client';
+import { gql } from '@apollo/client';
 
-export default function ReactNativeApiPage() {
+export default function ReactNativeApiPage({ records }) {
   return (
     <Layout
       withAccessoryRight={
@@ -27,6 +29,15 @@ export default function ReactNativeApiPage() {
           </a>
           .
         </Text>
+
+        {records.map((record) => {
+          return (
+            <div key={record.id} className="mb-12">
+              <Text variant="h3">{record.fields.name}</Text>
+              <Text variant="p1">{record.fields.description}</Text>
+            </div>
+          );
+        })}
       </div>
 
       <iframe
@@ -37,4 +48,31 @@ export default function ReactNativeApiPage() {
       />
     </Layout>
   );
+}
+
+export async function getStaticProps() {
+  const apiKey = process.env.AIRTABLE_API_KEY;
+  const baseId = process.env.AIRTABLE_BASE_ID_REACT_NATIVE;
+
+  const { data } = await client.query({
+    query: gql`
+      query {
+        airtable_tableData(
+          airtable_apiKey: "${apiKey}"
+          airtable_baseId: "${baseId}"
+          tableName: "API"
+        ) {
+          records {
+            fields
+          }
+        }
+      }
+    `,
+  });
+
+  return {
+    props: {
+      records: data.airtable_tableData.records,
+    },
+  };
 }
