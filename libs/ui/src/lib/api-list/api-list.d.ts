@@ -5,6 +5,9 @@ export interface apiProps {
   type: string;
   features: string;
   pricing: string;
+  logo?: {
+    url: string;
+  };
 }
 
 export interface apiListProps {

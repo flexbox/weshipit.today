@@ -6,6 +6,9 @@ export const apiListFixture = [
     type: 'Infrastructure',
     features: '',
     pricing: 'Free tiers,Pay as-you-go',
+    logo: {
+      url: 'https://avatars.githubusercontent.com/u/4621061?s=200&v=4',
+    },
   },
   {
     name: 'Firebase',
