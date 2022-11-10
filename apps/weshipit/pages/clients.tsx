@@ -3,7 +3,7 @@ import { getAllClients } from './api/client';
 import { Text } from '@weshipit/ui';
 import { ClientsList } from '@weshipit/ui';
 
-interface clientProps {
+interface ClientProps {
   id: string;
   data: {
     name: string;
@@ -16,7 +16,7 @@ interface clientProps {
 }
 
 interface clientsPageProps {
-  clients: clientProps[];
+  clients: ClientProps[];
 }
 
 export default function ClientsPage({ clients }: clientsPageProps) {

@@ -1,4 +1,4 @@
-export interface clientProps {
+export interface ClientProps {
   id: string;
   data: {
     name: string;
@@ -10,6 +10,6 @@ export interface clientProps {
   };
 }
 
-export interface clientsListProps {
-  clients: clientProps[];
+export interface ClientsListProps {
+  clients: ClientProps[];
 }

@@ -1,14 +1,14 @@
-import { clientProps } from './clients-list.d';
+import { ClientProps } from './clients-list.d';
 
 export interface ClientsListHomepageProps {
-  clients: clientProps[];
+  clients: ClientProps[];
 }
 
 export function ClientsListHomepage(data: ClientsListHomepageProps) {
   return (
     <div className="flex w-full justify-between py-16">
       {data.clients.map(
-        (client: clientProps) =>
+        (client: ClientProps) =>
           client.data.is_visible_homepage && (
             <div key={client.id}>
               <img

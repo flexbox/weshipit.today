@@ -1,4 +1,3 @@
-/* eslint-disable-next-line */
 export interface TextProps {
   variant: 'h1' | 'h2' | 'h3' | 's1' | 's2' | 'p1' | 'p2';
   color?: string;

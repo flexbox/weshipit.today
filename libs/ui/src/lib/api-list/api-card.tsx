@@ -2,8 +2,7 @@ import { ApiProps } from './api-list.d';
 import { Card, Text } from '@weshipit/ui';
 
 export function ApiCard({ fields }: ApiProps) {
-  const { pricing, type, name } = fields;
-  console.log('file: api-card.tsx ~ line 6 ~ ApiCard ~ fields', fields);
+  const { pricing, type, name, description } = fields;
 
   if (!name) {
     return null;
@@ -12,25 +11,27 @@ export function ApiCard({ fields }: ApiProps) {
   return (
     <Card>
       {pricing && (
-        <div className="my-8 flex justify-start px-12">
-          <div className="rounded-lg border-2 border-dashed border-gray-400 p-2">
-            <Text variant="p1" style="font-bold">
-              {pricing}
+        <div className="mb-6 flex justify-start">
+          <div className="rounded-2xl border-2 border-dashed border-gray-400 px-4">
+            <Text variant="p2" style="font-bold" color="text-gray-400">
+              <small>{pricing[0]}</small>
             </Text>
           </div>
         </div>
       )}
 
-      <div className="rounded-b-lg p-12">
-        <div className="mb-2 p-2">
-          <Text variant="s2" style="font-semibold">
-            {name}
-          </Text>
-        </div>
+      <Text variant="s2" style="font-semibold mb-2 text-center">
+        {name}
+      </Text>
 
-        <div className="rounded-md bg-indigo-700 px-1 py-2">
-          <Text variant="p2" color="text-white">
-            {type}
+      <Text variant="p1" style="mb-6" color="text-gray-400">
+        {description}
+      </Text>
+
+      <div className="flex justify-start">
+        <div className="rounded-3xl bg-cyan-400 px-4 py-0.5">
+          <Text variant="p2" color="text-cyan-100">
+            <small>{type}</small>
           </Text>
         </div>
       </div>
