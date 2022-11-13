@@ -1,4 +1,5 @@
 export interface ApiProps {
+  id?: string;
   fields: {
     logo?: {
       thumbnails: {
@@ -18,6 +19,6 @@ export interface ApiProps {
   };
 }
 
-export interface apiListProps {
-  apis: apiProps[];
+export interface ApiListProps {
+  apis: ApiProps[];
 }

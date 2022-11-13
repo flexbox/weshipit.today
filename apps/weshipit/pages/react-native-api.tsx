@@ -29,18 +29,11 @@ export default function ReactNativeApiPage({ records }) {
           </a>
           .
         </Text>
-
-        <ApiList apis={records} />
-        {records.map((record) => {
-          return (
-            <div key={record.id} className="mb-12">
-              <Text variant="h3">{record.fields.name}</Text>
-              <Text variant="p1">{record.fields.description}</Text>
-            </div>
-          );
-        })}
       </div>
 
+      <div className="mx-auto max-w-screen-2xl px-4 sm:px-6">
+        <ApiList apis={records} />
+      </div>
       <iframe
         src="https://airtable.com/embed/shrcF4Xn27rhIZVCs/tblpNvaodZH5S99le"
         height={3200}

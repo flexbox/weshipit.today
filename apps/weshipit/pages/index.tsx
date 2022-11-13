@@ -2,7 +2,7 @@ import { ClientsListHomepage, Header, Hero, Text } from '@weshipit/ui';
 import Link from 'next/link';
 import { getAllClients } from './api/client';
 
-interface clientProps {
+interface ClientProps {
   id: string;
   data: {
     name: string;
@@ -15,7 +15,7 @@ interface clientProps {
 }
 
 interface clientsPageProps {
-  clients: clientProps[];
+  clients: ClientProps[];
 }
 
 export default function IndexPage({ clients }: clientsPageProps) {

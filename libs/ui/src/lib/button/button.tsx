@@ -1,5 +1,3 @@
-/* eslint-disable-next-line */
-
 export interface ButtonProps {
   variant?: 'primary' | 'secondary';
   accessoryLeft?: React.ReactNode;
