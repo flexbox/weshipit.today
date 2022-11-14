@@ -2,36 +2,8 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
-    "weshipit": {
-      "root": "apps/weshipit",
-      "sourceRoot": "apps/weshipit",
-      "projectType": "application",
-      "targets": {
-        "build": {
-          "executor": "@nrwl/next:build",
-          "outputs": ["{options.outputPath}"],
-          "options": {
-            "root": "apps/weshipit",
-            "outputPath": "dist/apps/weshipit"
-          },
-          "configurations": {
-            "production": {}
-          }
-        },
-        "postbuild": {
-          "executor": "nx:run-commands",
-          "options": {
-            "commands": [
-              {
-                "command": "next-sitemap --config apps/weshipit/next-sitemap.config.js"
-              }
-            ]
-          }
-        }
-      }
-    },
     "ui": "libs/ui",
-
+    "weshipit": "apps/weshipit",
     "weshipit-e2e": "apps/weshipit-e2e"
   }
 }

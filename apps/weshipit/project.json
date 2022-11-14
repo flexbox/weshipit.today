@@ -18,6 +18,16 @@
         "production": {}
       }
     },
+    "postbuild": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "next-sitemap --config apps/weshipit/next-sitemap.config.js"
+          }
+        ]
+      }
+    },
     "serve": {
       "executor": "@nrwl/next:server",
       "defaultConfiguration": "development",
