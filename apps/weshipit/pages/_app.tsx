@@ -10,16 +10,14 @@ const inter = Inter({ subsets: ['latin'] });
 
 function CustomApp({ Component, pageProps }: AppProps) {
   return (
-    <html className={inter.className}>
-      <PrismicProvider client={client}>
-        <Head>
-          <title>React Native Experts — weshipit.today</title>
-        </Head>
-        <main>
-          <Component {...pageProps} />
-        </main>
-      </PrismicProvider>
-    </html>
+    <PrismicProvider client={client}>
+      <Head>
+        <title>React Native Experts — weshipit.today</title>
+      </Head>
+      <main className={inter.className}>
+        <Component {...pageProps} />
+      </main>
+    </PrismicProvider>
   );
 }
 
