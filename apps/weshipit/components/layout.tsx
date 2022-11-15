@@ -1,5 +1,4 @@
 import { Header } from '@weshipit/ui';
-import { Inter } from '@next/font/google';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -7,8 +6,6 @@ interface LayoutProps {
   withContainer?: boolean;
   withAccessoryRight?: React.ReactNode;
 }
-
-const inter = Inter({ subsets: ['latin'] });
 
 export function Layout({
   children,
