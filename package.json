@@ -29,6 +29,7 @@
     "@apollo/client": "^3.7.1",
     "@headlessui/react": "^1.7.3",
     "@heroicons/react": "^2.0.12",
+    "@next/font": "^13.0.3",
     "@prismicio/client": "^6.7.1",
     "@prismicio/react": "^2.5.0",
     "autoprefixer": "10.4.13",
