@@ -24,18 +24,19 @@ export default function ClientsPage({ clients }: clientsPageProps) {
     <Layout withHeader withContainer>
       <div className="py-24">
         <Text variant="h3" style="py-4">
-          Clients
+          Our Customers
         </Text>
         <Text variant="s2" style="mb-4">
+          We help ambitious teams do amazing things. Over the last decades we’ve
+          guided more than {clients.length} companies to winning products,
+          impactful designs and right answers.
+        </Text>
+        <Text variant="p1" style="mb-4">
           Over the years, we have had the good fortune to work on React Native
           development and design projects for clients from a wide range of
           industries and locations. Our clients have come from Paris France,
           London UK, Bruxelles Belgium, Troy Michigan USA, Hamilton Bermuda,
           Berlin Germany, and beyond to seek our expertise.
-        </Text>
-        <Text variant="s2">
-          Here are some of the clients that have chosen to partner with
-          weshipit.today.
         </Text>
       </div>
       <ClientsList clients={clients} />
