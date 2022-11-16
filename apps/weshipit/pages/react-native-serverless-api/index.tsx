@@ -1,7 +1,7 @@
-import { Layout } from '../components/layout';
+import { Layout } from '../../components/layout';
 
 import { ApiList, Button, Text } from '@weshipit/ui';
-import client from './api/apollo-client';
+import client from '../api/apollo-client';
 import { gql } from '@apollo/client';
 
 export default function ReactNativeApiPage({ records }) {
@@ -31,20 +31,14 @@ export default function ReactNativeApiPage({ records }) {
         </Text>
       </div>
 
-      <div className="mx-auto max-w-screen-2xl px-4 sm:px-6">
+      <div className="mx-auto max-w-screen-2xl px-4 pb-48 sm:px-6">
         <ApiList apis={records} />
       </div>
-      <iframe
-        src="https://airtable.com/embed/shrcF4Xn27rhIZVCs/tblpNvaodZH5S99le"
-        height={3200}
-        width="100%"
-        className="mx-auto"
-      />
     </Layout>
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const apiKey = process.env.AIRTABLE_API_KEY;
   const baseId = process.env.AIRTABLE_BASE_ID_REACT_NATIVE;
 
