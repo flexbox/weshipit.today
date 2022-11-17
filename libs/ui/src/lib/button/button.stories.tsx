@@ -22,12 +22,12 @@ AccessoryLeft.args = {
 };
 
 const AllButtonExample = () => (
-  <>
+  <div className="grid gap-4">
     <Button href="google.com">Primary</Button>
     <Button href="google.com" variant="secondary">
       Secondary
     </Button>
-  </>
+  </div>
 );
 
 export const AllButton = AllButtonExample.bind({});
