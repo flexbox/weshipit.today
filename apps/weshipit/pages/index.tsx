@@ -1,4 +1,5 @@
 import { ClientsListHomepage, Header, Hero, Text } from '@weshipit/ui';
+import NextHead from '../components/next-head';
 import Link from 'next/link';
 import { getAllClients } from './api/client';
 
@@ -21,6 +22,7 @@ interface clientsPageProps {
 export default function IndexPage({ clients }: clientsPageProps) {
   return (
     <>
+      <NextHead ogTitle="WeShipIt - React Native Development Agency" />
       <Header />
       <Hero />
       <section className="m-auto max-w-7xl">

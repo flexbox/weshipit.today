@@ -21,7 +21,7 @@ interface clientsPageProps {
 
 export default function ClientsPage({ clients }: clientsPageProps) {
   return (
-    <Layout withHeader withContainer>
+    <Layout withHeader withContainer ogTitle="Clients">
       <div className="py-24">
         <Text variant="h3" style="py-4">
           Our Customers
