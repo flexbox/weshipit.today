@@ -69,7 +69,7 @@ export default function handler(req: NextRequest) {
       }
     );
   } catch (e: any) {
-    console.log(`${e.message}`);
+    console.error(`${e.message}`);
     return new Response(`Failed to generate the image`, {
       status: 500,
     });
