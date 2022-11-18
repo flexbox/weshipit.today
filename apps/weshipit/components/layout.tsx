@@ -1,10 +1,12 @@
 import { Header } from '@weshipit/ui';
+import NextHead from './next-head';
 
 interface LayoutProps {
   children: React.ReactNode;
   withHeader?: boolean;
   withContainer?: boolean;
   withAccessoryRight?: React.ReactNode;
+  ogTitle?: string;
 }
 
 export function Layout({
@@ -12,19 +14,23 @@ export function Layout({
   withHeader = false,
   withContainer = false,
   withAccessoryRight,
+  ogTitle,
 }: LayoutProps) {
   return (
-    <div className="h-full bg-gray-100">
-      {withHeader && <Header />}
-      {withAccessoryRight && (
-        <Header withAccessoryRight accessoryRight={withAccessoryRight} />
-      )}
-      {withContainer ? (
-        <div className="mx-auto max-w-6xl">{children}</div>
-      ) : (
-        children
-      )}
-    </div>
+    <>
+      <NextHead ogTitle={ogTitle} />
+      <div className="h-full bg-gray-100">
+        {withHeader && <Header />}
+        {withAccessoryRight && (
+          <Header withAccessoryRight accessoryRight={withAccessoryRight} />
+        )}
+        {withContainer ? (
+          <div className="mx-auto max-w-6xl">{children}</div>
+        ) : (
+          children
+        )}
+      </div>
+    </>
   );
 }
 
