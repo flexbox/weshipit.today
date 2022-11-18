@@ -35,7 +35,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
         <meta name="theme-color" content="#ffffff" />
         <meta
           property="og:image"
-          content="https://my-og-img.vercel.app/api/og?title=React Native Experts — weshipit.today"
+          content="https://weshiptit.today/api/og?title=React Native Experts — weshipit.today"
         />
         <title>React Native Experts — weshipit.today</title>
       </Head>
