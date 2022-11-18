@@ -22,7 +22,7 @@ interface clientsPageProps {
 export default function IndexPage({ clients }: clientsPageProps) {
   return (
     <>
-      <NextHead ogTitle="WeShipIt - React Native Development Agency" />
+      <NextHead ogTitle="React Native Development Agency - weshipit" />
       <Header />
       <Hero />
       <section className="m-auto max-w-7xl">
