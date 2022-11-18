@@ -42,9 +42,9 @@ export default function handler(req: NextRequest) {
             <img
               alt="weshipit.today - logo"
               height={150}
-              src="https://raw.githubusercontent.com/flexbox/weshipit.today/main/apps/weshipit/public/mstile-150x150.png"
+              src="https://raw.githubusercontent.com/flexbox/weshipit.today/main/apps/weshipit/public/android-chrome-192x192.png"
               style={{ margin: '0 30px' }}
-              width={152}
+              width={150}
             />
           </div>
           <div
