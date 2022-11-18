@@ -1,3 +1,4 @@
+export * from './lib/footer/footer';
 export * from './lib/badge/badge';
 export * from './lib/card/card';
 export * from './lib/text/text';
