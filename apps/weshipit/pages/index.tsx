@@ -3,6 +3,7 @@ import NextHead from '../components/next-head';
 import Link from 'next/link';
 import { getAllClients } from './api/client';
 import Layout from '../components/layout';
+import GlobalSeo from '../components/global-seo';
 
 interface ClientProps {
   id: string;
@@ -23,6 +24,12 @@ interface clientsPageProps {
 export default function IndexPage({ clients }: clientsPageProps) {
   return (
     <Layout withHeader withContainer withFooter ogTitle="weshipit">
+      <GlobalSeo
+        data={{
+          seo_description: 'React Native Development Agency',
+          seo_title: 'React Native Development Agency - weshiptit.today',
+        }}
+      />
       <NextHead ogTitle="React Native Development Agency - weshipit" />
       <Hero />
       <section className="m-auto max-w-7xl">
