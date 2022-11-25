@@ -2,6 +2,7 @@ import { ClientsListHomepage, Header, Hero, Text } from '@weshipit/ui';
 import NextHead from '../components/next-head';
 import Link from 'next/link';
 import { getAllClients } from './api/client';
+import Layout from '../components/layout';
 
 interface ClientProps {
   id: string;
@@ -21,9 +22,8 @@ interface clientsPageProps {
 
 export default function IndexPage({ clients }: clientsPageProps) {
   return (
-    <>
+    <Layout withHeader withContainer withFooter ogTitle="weshipit">
       <NextHead ogTitle="React Native Development Agency - weshipit" />
-      <Header />
       <Hero />
       <section className="m-auto max-w-7xl">
         <div className="my-48 text-center">
@@ -38,7 +38,7 @@ export default function IndexPage({ clients }: clientsPageProps) {
           </Link>
         </div>
       </section>
-    </>
+    </Layout>
   );
 }
 
