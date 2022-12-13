@@ -23,7 +23,12 @@ interface clientsPageProps {
 export default function IndexPage({ clients }: clientsPageProps) {
   return (
     <Layout withHeader withContainer withFooter ogTitle="weshipit">
-      <NextHead ogTitle="React Native Development Agency - weshipit" />
+      <NextHead
+        ogTitle="React Native Development Agency - weshipit"
+        seoDescription="React Native Development Agency"
+        seoTitle="React Native Development Agency - weshiptit.today"
+      />
+      <Header />
       <Hero />
       <section className="m-auto max-w-7xl">
         <div className="my-48 text-center">
