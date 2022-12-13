@@ -10,7 +10,7 @@ export function Hyperlink(props: HyperlinkProps) {
   const { href, text } = props;
   const isExternal = props.isExternal || false;
   return isExternal ? (
-    <a href={href} target="_blank" rel="noopener noreferrer">
+    <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
       {text} <ArrowUpRightIcon />
     </a>
   ) : (
