@@ -28,7 +28,6 @@ export default function IndexPage({ clients }: clientsPageProps) {
         seoDescription="React Native Development Agency"
         seoTitle="React Native Development Agency - weshiptit.today"
       />
-      <Header />
       <Hero />
       <section className="m-auto max-w-7xl">
         <div className="my-48 text-center">
