@@ -12,7 +12,7 @@ export default function ReactNativeApiPage({ records }) {
           Add a new API
         </Button>
       }
-      ogTitle="React Native Serverless API"
+      ogImageTitle="React Native Serverless API"
     >
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
         <Text variant="h3" style="py-4">

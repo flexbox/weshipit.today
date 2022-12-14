@@ -7,7 +7,7 @@ interface LayoutProps {
   withFooter?: boolean;
   withContainer?: boolean;
   withAccessoryRight?: React.ReactNode;
-  ogTitle?: string;
+  ogImageTitle?: string;
 }
 
 export function Layout({
@@ -16,11 +16,11 @@ export function Layout({
   withFooter = false,
   withContainer = false,
   withAccessoryRight,
-  ogTitle,
+  ogImageTitle,
 }: LayoutProps) {
   return (
     <>
-      <NextHead ogTitle={ogTitle} />
+      <NextHead ogImageTitle={ogImageTitle} />
       <div className="min-h-full bg-gray-100">
         {withHeader && <Header />}
         {withAccessoryRight && (

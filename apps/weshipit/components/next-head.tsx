@@ -4,13 +4,13 @@ import Head from 'next/head';
 interface NextHeadProps {
   seoTitle?: string;
   seoDescription?: string;
-  ogTitle?: string;
+  ogImageTitle?: string;
 }
 
 export function NextHead({
   seoTitle,
   seoDescription,
-  ogTitle = 'React Native Development Agency',
+  ogImageTitle = 'React Native Development Agency',
 }: NextHeadProps) {
   return (
     <>
@@ -53,9 +53,8 @@ export function NextHead({
         <meta name="theme-color" content="#ffffff" />
         <meta
           property="og:image"
-          content={`https://weshiptit.today/api/og?title=${ogTitle}`}
+          content={`https://weshiptit.today/api/og?title=${ogImageTitle}`}
         />
-        <title>React Native Experts — weshipit.today</title>
       </Head>
     </>
   );

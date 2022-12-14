@@ -16,7 +16,7 @@ export function Consulting(props: ConsultingProps) {
 
   return (
     <Layout
-      ogTitle="Helping you to ship your vision in production."
+      ogImageTitle="Helping you to ship your vision in production."
       withContainer
       withFooter
       withAccessoryRight={
