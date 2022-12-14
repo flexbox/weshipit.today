@@ -1,9 +1,9 @@
 import { DefaultSeo } from 'next-seo';
 import Head from 'next/head';
 
-interface NextHeadProps {
-  seoTitle?: string;
-  seoDescription?: string;
+export interface NextHeadProps {
+  seoTitle: string;
+  seoDescription: string;
   ogImageTitle?: string;
 }
 
@@ -16,7 +16,7 @@ export function NextHead({
     <>
       <DefaultSeo
         title={
-          `${seoTitle} - weshipit.today` ||
+          `${seoTitle} — weshipit.today` ||
           'React Native Development Agency - weshipit.today'
         }
         description={

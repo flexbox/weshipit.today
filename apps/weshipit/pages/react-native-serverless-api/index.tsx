@@ -12,6 +12,8 @@ export default function ReactNativeApiPage({ records }) {
           Add a new API
         </Button>
       }
+      seoTitle="React Native Serverless API"
+      seoDescription="The best tools and resources for busy developers"
       ogImageTitle="React Native Serverless API"
     >
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">

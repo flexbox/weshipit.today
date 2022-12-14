@@ -25,12 +25,14 @@ interface clientsPageProps {
 
 export default function IndexPage({ clients }: clientsPageProps) {
   return (
-    <Layout withHeader withContainer withFooter ogImageTitle="weshipit">
-      <NextHead
-        seoTitle="React Native Experts"
-        seoDescription="At our React Native Development Agency, we specialize in creating high-quality, performant, and scalable mobile applications using the latest technologies and best practices. Our team of experienced developers can help you bring your idea to life and deliver a seamless user experience across all platforms. Contact us today to discuss your project and get a free quote."
-        ogImageTitle="React Native Experts"
-      />
+    <Layout
+      withHeader
+      withContainer
+      withFooter
+      seoTitle="React Native Experts"
+      seoDescription="At our React Native Development Agency, we specialize in creating high-quality, performant, and scalable mobile applications using the latest technologies and best practices. Our team of experienced developers can help you bring your idea to life and deliver a seamless user experience across all platforms. Contact us today to discuss your project and get a free quote."
+      ogImageTitle="React Native Experts"
+    >
       <Hero>
         <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
           <span className="block xl:inline">

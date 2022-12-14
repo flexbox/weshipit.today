@@ -1,13 +1,12 @@
 import { Footer, Header } from '@weshipit/ui';
-import NextHead from './next-head';
+import NextHead, { NextHeadProps } from './next-head';
 
-interface LayoutProps {
+interface LayoutProps extends NextHeadProps {
   children: React.ReactNode;
   withHeader?: boolean;
   withFooter?: boolean;
   withContainer?: boolean;
   withAccessoryRight?: React.ReactNode;
-  ogImageTitle?: string;
 }
 
 export function Layout({
@@ -16,11 +15,17 @@ export function Layout({
   withFooter = false,
   withContainer = false,
   withAccessoryRight,
+  seoTitle,
+  seoDescription,
   ogImageTitle,
 }: LayoutProps) {
   return (
     <>
-      <NextHead ogImageTitle={ogImageTitle} />
+      <NextHead
+        seoTitle={seoTitle}
+        seoDescription={seoDescription}
+        ogImageTitle={ogImageTitle}
+      />
       <div className="min-h-full bg-gray-100">
         {withHeader && <Header />}
         {withAccessoryRight && (

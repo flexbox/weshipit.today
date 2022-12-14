@@ -16,9 +16,11 @@ export function Consulting(props: ConsultingProps) {
 
   return (
     <Layout
-      ogImageTitle="Helping you to ship your vision in production."
       withContainer
       withFooter
+      seoTitle="React Native Consulting"
+      seoDescription="Looking to improve your skills as a React Native developer? Our coaching services are here to help. Our experienced team will provide personalized guidance and support to help you take your skills to the next level. Whether you're a beginner or an experienced developer, we have a coaching program that's right for you."
+      ogImageTitle="Helping you to ship your vision in production"
       withAccessoryRight={
         <Button variant="secondary" href="https://cal.com/davidl/coaching">
           Schedule 1-to-1 consulting
