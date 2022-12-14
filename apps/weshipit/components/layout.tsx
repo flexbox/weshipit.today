@@ -26,11 +26,14 @@ export function Layout({
         {withAccessoryRight && (
           <Header withAccessoryRight accessoryRight={withAccessoryRight} />
         )}
-        {withContainer ? (
-          <div className="mx-auto max-w-6xl">{children}</div>
-        ) : (
-          children
-        )}
+
+        <main id="main-content">
+          {withContainer ? (
+            <div className="mx-auto max-w-7xl px-4 sm:px-6">{children}</div>
+          ) : (
+            children
+          )}
+        </main>
 
         {withFooter && <Footer />}
       </div>
