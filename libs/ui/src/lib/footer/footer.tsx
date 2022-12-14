@@ -8,6 +8,7 @@ const navigation = {
       href: 'https://flexbox.notion.site/Offre-de-stage-b2da035e1f2c4188a4a295712dca6529',
     },
     { name: 'Partners', href: '/clients' },
+    { name: 'Consulting', href: '/consulting' },
   ],
   social: [
     {

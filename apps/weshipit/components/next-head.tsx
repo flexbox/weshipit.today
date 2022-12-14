@@ -1,23 +1,23 @@
 import { DefaultSeo } from 'next-seo';
 import Head from 'next/head';
 
-interface NextHeadProps {
-  ogTitle?: string;
-
-  seoDescription?: string;
-  seoTitle?: string;
+export interface NextHeadProps {
+  seoTitle: string;
+  seoDescription: string;
+  ogImageTitle?: string;
 }
 
 export function NextHead({
-  ogTitle = 'WeShipIt - React Native Development Agency',
-  seoDescription,
   seoTitle,
+  seoDescription,
+  ogImageTitle = 'React Native Development Agency',
 }: NextHeadProps) {
   return (
     <>
       <DefaultSeo
         title={
-          `${seoTitle} ` || 'React Native Development Agency - weshipit.today'
+          `${seoTitle} — weshipit.today` ||
+          'React Native Development Agency - weshipit.today'
         }
         description={
           seoDescription ||
@@ -53,9 +53,8 @@ export function NextHead({
         <meta name="theme-color" content="#ffffff" />
         <meta
           property="og:image"
-          content={`https://weshiptit.today/api/og?title=${ogTitle}`}
+          content={`https://weshiptit.today/api/og?title=${ogImageTitle}`}
         />
-        <title>React Native Experts — weshipit.today</title>
       </Head>
     </>
   );
