@@ -7,15 +7,18 @@ export interface HyperlinkProps {
 }
 
 export function Hyperlink(props: HyperlinkProps) {
-  const { href, text } = props;
+  const { text } = props;
   const isExternal = props.isExternal || false;
-  return isExternal ? (
-    <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
-      {text} <ArrowUpRightIcon />
-    </a>
-  ) : (
-    <a href={href}>{text}</a>
-  );
+
+  if (isExternal) {
+    return (
+      <a target="_blank" rel="noopener noreferrer" {...props}>
+        {text} <ArrowUpRightIcon />
+      </a>
+    );
+  }
+
+  return <a {...props}>{text}</a>;
 }
 
 export default Hyperlink;
