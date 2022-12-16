@@ -1,6 +1,6 @@
 import { Layout } from '../../components/layout';
 
-import { ApiList, Button, Text } from '@weshipit/ui';
+import { ApiList, Button, Hyperlink, Text } from '@weshipit/ui';
 import client from '../api/apollo-client';
 import { gql } from '@apollo/client';
 
@@ -36,6 +36,16 @@ export default function ReactNativeApiPage({ records }) {
 
       <div className="mx-auto max-w-screen-2xl px-4 pb-48 sm:px-6">
         <ApiList apis={records} />
+
+        <div className="py-12">
+          <Hyperlink
+            href="https://clearbit.com"
+            isExternal
+            className="text-gray-400"
+          >
+            Logos provided by Clearbit
+          </Hyperlink>
+        </div>
       </div>
     </Layout>
   );

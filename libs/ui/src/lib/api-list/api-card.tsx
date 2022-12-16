@@ -1,12 +1,13 @@
 import { ApiProps } from './api-list.d';
 import { Badge, Card, Text } from '@weshipit/ui';
-import Image from 'next/image';
+
 import truncate from 'lodash/truncate';
 import Link from 'next/link';
 import kebabCase from 'lodash/kebabCase';
+import { ApiCardLogo } from './api-card-logo';
 
 export function ApiCard({ fields }: ApiProps) {
-  const { pricing, type, name, logo } = fields;
+  const { pricing, type, name, logo, website_url } = fields;
 
   if (!name) {
     return null;
@@ -66,14 +67,11 @@ export function ApiCard({ fields }: ApiProps) {
         </div>
 
         <div className="my-8 flex items-center justify-between">
-          {logo && (
-            <Image
-              src={logo[0].url}
-              alt={`Logo of ${name} compatible with React Native`}
-              width={250}
-              height={100}
-            />
-          )}
+          <ApiCardLogo
+            name={name}
+            websiteUrl={website_url}
+            logoUrl={logo?.[0].url || undefined}
+          />
         </div>
 
         <Text variant="p1" style="mb-6" color="text-gray-400">
