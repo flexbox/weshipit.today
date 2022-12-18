@@ -1,7 +1,7 @@
 import { Layout } from '../../components/layout';
+import client from '../api/apollo-client';
 
 import { ApiList, Button, Hyperlink, Text } from '@weshipit/ui';
-import client from '../api/apollo-client';
 import { gql } from '@apollo/client';
 
 export default function ReactNativeApiPage({ records }) {
@@ -40,7 +40,7 @@ export default function ReactNativeApiPage({ records }) {
         <div className="py-12">
           <Hyperlink
             href="https://clearbit.com"
-            isExternal
+            isExternal={true}
             className="text-gray-400"
           >
             Logos provided by Clearbit
@@ -57,7 +57,7 @@ export async function getServerSideProps() {
 
   const { data } = await client.query({
     query: gql`
-      query {
+      query GetAirtableData {
         airtable_tableData(
           airtable_apiKey: "${apiKey}"
           airtable_baseId: "${baseId}"

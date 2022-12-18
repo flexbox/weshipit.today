@@ -37,6 +37,7 @@ export interface ApiProps {
     pricing: string[];
     type: string;
     website_url: string;
+    slug: string;
   };
 }
 

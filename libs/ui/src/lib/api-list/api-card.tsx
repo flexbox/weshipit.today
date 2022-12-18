@@ -3,11 +3,10 @@ import { Badge, Card, Text } from '@weshipit/ui';
 
 import truncate from 'lodash/truncate';
 import Link from 'next/link';
-import kebabCase from 'lodash/kebabCase';
 import { ApiCardLogo } from './api-card-logo';
 
 export function ApiCard({ fields }: ApiProps) {
-  const { pricing, type, name, logo, website_url } = fields;
+  const { pricing, type, name, logo, website_url, slug } = fields;
 
   if (!name) {
     return null;
@@ -42,14 +41,9 @@ export function ApiCard({ fields }: ApiProps) {
       break;
   }
 
-  const slug = kebabCase(name);
-
   return (
     <Card>
-      <Link
-        href={`/react-native-serverless-api/${slug}`}
-        className="cursor-pointer"
-      >
+      <Link href={`/react-native-tools/${slug}`} className="cursor-pointer">
         <div className="flex items-center justify-between">
           <Text variant="s2" style="font-semibold mb-2 text-left">
             {name}
