@@ -43,7 +43,7 @@ export default function handler(req: NextRequest) {
               width={96}
             />
           </div>
-          <div style={{ fontSize: '64', fontWeight: 'bolder' }}>{title}</div>
+          <div style={{ fontSize: '64px', fontWeight: 'bolder' }}>{title}</div>
         </div>
       ),
       {
