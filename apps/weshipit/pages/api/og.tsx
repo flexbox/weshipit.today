@@ -9,58 +9,41 @@ export default function handler(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
 
-    // ?title=<title>
     const hasTitle = searchParams.has('title');
-    const title = hasTitle
-      ? searchParams.get('title')?.slice(0, 100)
-      : 'My default title';
+    const title = hasTitle ? searchParams.get('title') : 'weshipit.today';
 
     return new ImageResponse(
       (
         <div
           style={{
-            backgroundColor: 'white',
-            backgroundSize: '150px 150px',
+            backgroundColor: '#f3f4f6',
             height: '100%',
             width: '100%',
-            display: 'flex',
             textAlign: 'center',
             alignItems: 'center',
+            display: 'flex',
             justifyContent: 'center',
             flexDirection: 'column',
-            flexWrap: 'nowrap',
           }}
         >
           <div
             style={{
               display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              justifyItems: 'center',
+              position: 'absolute',
+              bottom: 0,
+              right: 0,
+              padding: 16,
             }}
           >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               alt="weshipit.today - logo"
-              height={150}
+              height={96}
               src="https://raw.githubusercontent.com/flexbox/weshipit.today/main/apps/weshipit/public/android-chrome-192x192.png"
-              style={{ margin: '0 30px' }}
-              width={150}
+              width={96}
             />
           </div>
-          <div
-            style={{
-              fontSize: 60,
-              fontStyle: 'normal',
-              letterSpacing: '-0.025em',
-              color: 'white',
-              marginTop: 30,
-              padding: '0 120px',
-              lineHeight: 1.4,
-              whiteSpace: 'pre-wrap',
-            }}
-          >
-            {title}
-          </div>
+          <div style={{ fontSize: '64px', fontWeight: 'bolder' }}>{title}</div>
         </div>
       ),
       {
