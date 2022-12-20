@@ -24,5 +24,6 @@
     }
   },
   "tags": [],
-  "implicitDependencies": ["weshipit"]
+  "implicitDependencies": ["weshipit"],
+  "name": "weshipit-e2e"
 }

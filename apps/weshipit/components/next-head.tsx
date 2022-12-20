@@ -62,7 +62,7 @@ export function NextHead({
         <meta property="og:logo" content="/android-chrome-256x256.png" />
         <meta
           property="og:image"
-          content={`https://weshiptit.today/api/og?title=${ogImageTitle}`}
+          content={`/api/og?title=${encodeURI(ogImageTitle)}`}
         />
       </Head>
     </>
