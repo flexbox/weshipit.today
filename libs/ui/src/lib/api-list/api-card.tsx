@@ -44,38 +44,44 @@ export function ApiCard({ fields }: ApiProps) {
   return (
     <Card>
       <Link href={`/react-native-tools/${slug}`} className="cursor-pointer">
-        <div className="flex items-center justify-between">
-          <Text variant="s2" style="font-semibold mb-2 text-left">
-            {name}
-          </Text>
-          {pricing && (
-            <div className="group relative flex items-center justify-center overflow-hidden rounded-2xl border-2 border-dashed border-gray-400 px-4">
-              <Text variant="p2" style="font-bold" color="text-gray-400">
-                <small>{pricing[0]}</small>
+        <div className="flex h-full flex-col justify-between">
+          <div className="justify-start">
+            <div className="flex items-center justify-between">
+              <Text variant="s2" style="font-semibold mb-2 text-left">
+                {name}
               </Text>
+              {pricing && (
+                <div className="group relative flex items-center justify-center overflow-hidden rounded-2xl border-2 border-dashed border-gray-400 px-4">
+                  <Text variant="p2" style="font-bold" color="text-gray-400">
+                    <small>{pricing[0]}</small>
+                  </Text>
 
-              {/* shine box */}
-              <div className="z-5 group-hover:animate-shine absolute -inset-full top-0 block h-full w-1/2 -skew-x-12 bg-gradient-to-r from-transparent to-gray-300 opacity-40" />
+                  {/* shine box */}
+                  <div className="z-5 group-hover:animate-shine absolute -inset-full top-0 block h-full w-1/2 -skew-x-12 bg-gradient-to-r from-transparent to-gray-300 opacity-40" />
+                </div>
+              )}
             </div>
-          )}
-        </div>
+            <div className="justify-center">
+              <div className="my-8 flex items-center justify-between">
+                <ApiCardLogo
+                  name={name}
+                  websiteUrl={website_url}
+                  logoUrl={logo?.[0].url || undefined}
+                />
+              </div>
+            </div>
+            <Text variant="p1" style="mb-6" color="text-gray-400">
+              {description}
+            </Text>
+          </div>
 
-        <div className="my-8 flex items-center justify-between">
-          <ApiCardLogo
-            name={name}
-            websiteUrl={website_url}
-            logoUrl={logo?.[0].url || undefined}
-          />
-        </div>
-
-        <Text variant="p1" style="mb-6" color="text-gray-400">
-          {description}
-        </Text>
-
-        <div className="flex justify-start">
-          <Badge size="small" intent={typeIntent as any}>
-            {type}
-          </Badge>
+          <div className=" justify-end">
+            <div className="flex justify-start ">
+              <Badge size="small" intent={typeIntent as any}>
+                {type}
+              </Badge>
+            </div>
+          </div>
         </div>
       </Link>
     </Card>
