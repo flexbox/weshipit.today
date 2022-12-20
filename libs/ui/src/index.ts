@@ -1,4 +1,3 @@
-export * from './lib/footer-book/footer-book';
 export * from './lib/hyperlink/hyperlink';
 export * from './lib/footer/footer';
 export * from './lib/badge/badge';
