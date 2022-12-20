@@ -5,10 +5,7 @@ import Layout from '../../components/layout';
 import ApiCardLogo from 'libs/ui/src/lib/api-list/api-card-logo';
 
 export function Slug({ records }) {
-  console.log('file: [slug].tsx:8 ~ Slug ~ records', records);
-  console.log('file: [slug].tsx:8 ~ Slug ~ records', records.lenght);
-
-  if (records.lenght === 0) {
+  if (records[0] === undefined || records[0].fields === undefined) {
     return (
       <Layout seoTitle={'Not found'} seoDescription={''}>
         <h1>404</h1>
@@ -29,13 +26,19 @@ export function Slug({ records }) {
         </Button>
       }
     >
-      <h1> {name} </h1>
-      <Text variant="p1"> {description} </Text>
-      <ApiCardLogo
-        name={name}
-        websiteUrl={website_url}
-        logoUrl={logo?.[0].url || undefined}
-      />
+      <div className="m-auto w-2/3 pb-16">
+        <div className="m-auto my-8 w-2/3 text-2xl font-bold"> {name} </div>
+        <div className="my-16 flex w-full  justify-center">
+          <ApiCardLogo
+            name={name}
+            websiteUrl={website_url}
+            logoUrl={logo?.[0].url || undefined}
+          />
+        </div>
+        <div className="m-auto my-8 w-2/3 rounded-2xl bg-white p-8 ">
+          <Text variant="p1"> {description} </Text>
+        </div>
+      </div>
     </Layout>
   );
 }
