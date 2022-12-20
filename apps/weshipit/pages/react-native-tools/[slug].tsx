@@ -26,8 +26,10 @@ export function Slug({ records }) {
         </Button>
       }
     >
-      <div className="m-auto w-2/3 pb-16">
-        <div className="m-auto my-8 w-2/3 text-2xl font-bold"> {name} </div>
+      <div className="m-auto w-2/3 py-16">
+        <Text variant="h2" style="w-2/3 m-auto">
+          {name}
+        </Text>
         <div className="my-16 flex w-full  justify-center">
           <ApiCardLogo
             name={name}
@@ -47,8 +49,6 @@ export async function getServerSideProps({ params }) {
   const apiKey = process.env.AIRTABLE_API_KEY;
   const baseId = process.env.AIRTABLE_BASE_ID_REACT_NATIVE;
 
-  console.log('file: [slug].tsx:24 ~ getServerSideProps ~ params', params.slug);
-
   const { slug } = params;
 
   const { data } = await client.query({
@@ -67,8 +67,6 @@ export async function getServerSideProps({ params }) {
       }
     `,
   });
-
-  console.log('file: [slug].tsx:47 ~ getServerSideProps ~ data', data);
 
   return {
     props: {
