@@ -23,7 +23,7 @@ export function ApiCardLogo({ websiteUrl, logoUrl, name }: ApiCardLogoProps) {
   }
 
   const domain = removeHttp(websiteUrl);
-  const logoSrc = `https://logo.clearbit.com/${domain}?size=150`;
+  const logoSrc = `https://logo.clearbit.com/${domain}?size=600`;
   const fallbackSrc = logoUrl || '';
 
   const [imgSrc, setImgSrc] = useState(logoSrc);
