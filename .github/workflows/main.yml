@@ -10,12 +10,7 @@ jobs:
       - name: Run install
         uses: borales/actions-yarn@v4
         with:
-          cmd: install # will run `yarn install` command
-      - name: Build production bundle
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: build # will run `yarn build` command
-          
+          cmd: install # will run `yarn install` command    
       - name: Test the app
         uses: borales/actions-yarn@v4
         with:
@@ -25,3 +20,8 @@ jobs:
         uses: borales/actions-yarn@v4
         with:
           cmd: ui:test
+      - name: Build production bundle
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: build # will run `yarn build` command
+    
