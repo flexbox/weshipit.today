@@ -39,7 +39,6 @@ export function Layout({
             children
           )}
         </main>
-
         {withFooter && <Footer />}
       </div>
     </>
