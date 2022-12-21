@@ -42,9 +42,9 @@ export function Slug({ records, recomendedRecords }) {
       </div>
       <div className="m-auto flex w-4/5 flex-col divide-y-2">
         <Text variant="h3" style="py-4">
-          Other tools from the same category
+          Other tools from the category {fields.type}
         </Text>
-        <div className="pt-4">
+        <div className="mb-12 pt-4">
           <ApiList apis={recomendedRecords} />
         </div>
       </div>
