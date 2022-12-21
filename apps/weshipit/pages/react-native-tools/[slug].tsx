@@ -1,10 +1,9 @@
 import { gql } from '@apollo/client';
-import { Button, Text } from '@weshipit/ui';
+import { Button, Text, ApiCardLogo } from '@weshipit/ui';
 import client from '../api/apollo-client';
 import Layout from '../../components/layout';
-import ApiCardLogo from 'libs/ui/src/lib/api-list/api-card-logo';
 
-export function Slug({ records }) {
+export function Slug({ records, recomendedRecords }) {
   if (records[0] === undefined || records[0].fields === undefined) {
     return (
       <Layout seoTitle={'Not found'} seoDescription={''}>
@@ -41,6 +40,7 @@ export function Slug({ records }) {
           <Text variant="p1"> {description} </Text>
         </div>
       </div>
+      {JSON.stringify(recomendedRecords)}
     </Layout>
   );
 }
@@ -49,7 +49,8 @@ export async function getServerSideProps({ params }) {
   const apiKey = process.env.AIRTABLE_API_KEY;
   const baseId = process.env.AIRTABLE_BASE_ID_REACT_NATIVE;
 
-  const { slug } = params;
+  const { slug, type } = params;
+  console.log('file: [slug].tsx:53 ~ getServerSideProps ~ type', type);
 
   const { data } = await client.query({
     query: gql`
@@ -68,9 +69,27 @@ export async function getServerSideProps({ params }) {
     `,
   });
 
+  const recomended = await client.query({
+    query: gql`
+      query GetAirtableDataByType {
+        airtable_tableData(
+          airtable_apiKey: "${apiKey}"
+          airtable_baseId: "${baseId}"
+          tableName: "API"
+          filterByFormula: "{type}='${type}'"
+        ) {
+          records {
+            fields
+          }
+        }
+      }
+    `,
+  });
+
   return {
     props: {
       records: data.airtable_tableData.records,
+      recomendedRecords: recomended.data.airtable_tableData.records,
     },
   };
 }
