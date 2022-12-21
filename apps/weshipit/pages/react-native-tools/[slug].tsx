@@ -1,5 +1,5 @@
 import { gql } from '@apollo/client';
-import { Button, Text, ApiCardLogo } from '@weshipit/ui';
+import { Button, Text, ApiCardLogo, ApiList } from '@weshipit/ui';
 import client from '../api/apollo-client';
 import Layout from '../../components/layout';
 
@@ -40,7 +40,14 @@ export function Slug({ records, recomendedRecords }) {
           <Text variant="p1"> {description} </Text>
         </div>
       </div>
-      {JSON.stringify(recomendedRecords)}
+      <div className="m-auto flex w-4/5 flex-col divide-y-2">
+        <Text variant="h3" style="py-4">
+          Other tools from the same category
+        </Text>
+        <div className="pt-4">
+          <ApiList apis={recomendedRecords} />
+        </div>
+      </div>
     </Layout>
   );
 }
@@ -49,8 +56,7 @@ export async function getServerSideProps({ params }) {
   const apiKey = process.env.AIRTABLE_API_KEY;
   const baseId = process.env.AIRTABLE_BASE_ID_REACT_NATIVE;
 
-  const { slug, type } = params;
-  console.log('file: [slug].tsx:53 ~ getServerSideProps ~ type', type);
+  const { slug } = params;
 
   const { data } = await client.query({
     query: gql`
@@ -68,7 +74,7 @@ export async function getServerSideProps({ params }) {
       }
     `,
   });
-
+  const type = data.airtable_tableData.records[0].fields.type;
   const recomended = await client.query({
     query: gql`
       query GetAirtableDataByType {
