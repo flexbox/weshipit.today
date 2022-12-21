@@ -25,8 +25,8 @@ export function Slug({ records, recomendedRecords }) {
         </Button>
       }
     >
-      <div className="m-auto w-2/3 py-16">
-        <Text variant="h2" style="w-2/3 m-auto">
+      <div className="m-auto w-5/6 py-16 md:w-2/3">
+        <Text variant="h2" style="w-2/3 md:m-auto">
           {name}
         </Text>
         <div className="my-16 flex w-full  justify-center">
@@ -36,7 +36,7 @@ export function Slug({ records, recomendedRecords }) {
             logoUrl={logo?.[0].url || undefined}
           />
         </div>
-        <div className="m-auto my-8 w-2/3 rounded-2xl bg-white p-8 ">
+        <div className="w-7/8 m-auto my-8 rounded-2xl bg-white p-8 md:w-2/3 ">
           <Text variant="p1"> {description} </Text>
         </div>
       </div>
