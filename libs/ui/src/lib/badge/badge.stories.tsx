@@ -19,8 +19,8 @@ const IntentExamples = () => (
     <Badge intent="lime">Analytics</Badge>
     <Badge intent="indigo">Authentication</Badge>
     <Badge intent="green">Backend</Badge>
-    <Badge intent="pink">Bug reports</Badge>
-    <Badge intent="cyan">Database</Badge>
+    <Badge intent="pink">Crash reporting</Badge>
+    <Badge intent="cyan">Persistent storage</Badge>
     <Badge intent="yellow">Infrastructure</Badge>
   </div>
 );

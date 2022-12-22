@@ -32,7 +32,7 @@ export function ApiCard({ fields }: ApiProps) {
     case 'Bug reports':
       typeIntent = 'pink';
       break;
-    case 'Database':
+    case 'Persistent storage':
       typeIntent = 'cyan';
       break;
     case 'Infrastructure':
