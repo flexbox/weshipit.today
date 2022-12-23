@@ -13,21 +13,32 @@ Primary.args = {
   children: 'Primary',
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = { variant: 'secondary', children: 'Secondary' };
-
 export const AccessoryLeft = Template.bind({});
 AccessoryLeft.args = {
   accessoryLeft: <span>👉</span>,
+  children: 'Accessory Left',
 };
 
-const AllButtonExample = () => (
+const IntentExamples = () => (
   <div className="grid gap-4">
-    <Button href="google.com">Primary</Button>
-    <Button href="google.com" variant="secondary">
-      Secondary
+    <Button href="https://weshipit.today">primary</Button>
+    <Button href="https://weshipit.today" intent="ghost">
+      ghost
     </Button>
   </div>
 );
 
-export const AllButton = AllButtonExample.bind({});
+export const Intent = IntentExamples.bind({});
+
+const SizeExamples = () => (
+  <div className="grid gap-4">
+    <Button href="https://weshipit.today" size="sm">
+      primary
+    </Button>
+    <Button href="https://weshipit.today" size="md">
+      primary
+    </Button>
+  </div>
+);
+
+export const Size = SizeExamples.bind({});

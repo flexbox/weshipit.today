@@ -1,17 +1,7 @@
 import { cva, type VariantProps } from 'class-variance-authority';
 
-const button = cva('badge', {
+const button = cva('button', {
   variants: {
-    size: {
-      md: [
-        'md:text-lg',
-        'md:px-6',
-        'shadow-md',
-        'font-medium',
-        'text-base',
-        'py-3',
-      ],
-    },
     intent: {
       primary: [
         'bg-indigo-600',
@@ -22,7 +12,7 @@ const button = cva('badge', {
         'items-center',
         'flex',
       ],
-      indigo: [
+      ghost: [
         'bg-white',
         'text-black',
         'hover:bg-gray-100',
@@ -32,21 +22,31 @@ const button = cva('badge', {
         'rounded-md',
       ],
     },
+    size: {
+      sm: ['md:text-lg', 'shadow-sm', 'font-medium', 'text-sm', 'py-1', 'px-4'],
+      md: [
+        'md:text-lg',
+        'md:px-6',
+        'shadow-md',
+        'font-medium',
+        'text-base',
+        'py-3',
+      ],
+    },
   },
-  compoundVariants: [{ intent: 'primary' }],
+  compoundVariants: [{ intent: 'primary', size: 'md' }],
   defaultVariants: {
     intent: 'primary',
+    size: 'md',
   },
 });
 
 export interface ButtonProps
   extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof button> {
-  variant?: 'primary' | 'secondary';
   accessoryLeft?: React.ReactNode;
   children?: React.ReactNode;
-  // style?: string;
-  // href: string;
+  href: string;
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -54,12 +54,14 @@ export const Button: React.FC<ButtonProps> = ({
   intent,
   children,
   accessoryLeft,
-  ...props
+  href,
+  size,
+  ...rest
 }) => (
   <a
-    href="google.com"
+    href={href}
     target="_blank"
-    className={button({ intent, className })}
+    className={button({ intent, size, className })} rel="noreferrer"
   >
     {accessoryLeft && <div className="flex">{accessoryLeft}</div>}
     {children}

@@ -29,8 +29,8 @@ export const Intent = IntentExamples.bind({});
 
 const SizeExamples = () => (
   <div className="grid gap-4">
-    <Badge size="small">Infrastructure</Badge>
-    <Badge size="medium">Infrastructure</Badge>
+    <Badge size="sm">Infrastructure</Badge>
+    <Badge size="md">Infrastructure</Badge>
   </div>
 );
 

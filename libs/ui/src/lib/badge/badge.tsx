@@ -13,14 +13,14 @@ const badge = cva('badge', {
       lime: ['bg-lime-400', 'text-lime-100', 'rounded-3xl'],
     },
     size: {
-      small: ['text-sm', 'py-1', 'px-2'],
-      medium: ['text-base', 'py-2', 'px-4'],
+      sm: ['text-sm', 'py-1', 'px-2'],
+      md: ['text-base', 'py-2', 'px-4'],
     },
   },
-  compoundVariants: [{ intent: 'primary', size: 'medium' }],
+  compoundVariants: [{ intent: 'primary', size: 'md' }],
   defaultVariants: {
     intent: 'primary',
-    size: 'medium',
+    size: 'md',
   },
 });
 
