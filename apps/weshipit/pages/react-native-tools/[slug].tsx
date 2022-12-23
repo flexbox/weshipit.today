@@ -13,7 +13,9 @@ export function Slug({ records, recomendedRecords }) {
   }
 
   const { fields } = records[0];
-  const { name, description, url, logo, website_url } = fields;
+  const { name, description, logo, website_url } = fields;
+  const logoUrl = logo?.[0].url || undefined;
+
   return (
     <Layout
       seoTitle="Slug React Native Serverless API"
@@ -30,21 +32,17 @@ export function Slug({ records, recomendedRecords }) {
           {name}
         </Text>
         <div className="my-16 flex w-full  justify-center">
-          <ApiCardLogo
-            name={name}
-            websiteUrl={website_url}
-            logoUrl={logo?.[0].url || undefined}
-          />
+          <ApiCardLogo name={name} websiteUrl={website_url} logoUrl={logoUrl} />
         </div>
-        <div className="w-7/8 m-auto my-8 rounded-2xl bg-white p-8 md:w-2/3 ">
+        <div className="m-auto my-8 rounded-2xl bg-white p-8 md:w-2/3 ">
           <Text variant="p1"> {description} </Text>
         </div>
       </div>
-      <div className="m-auto flex w-4/5 flex-col divide-y-2">
+      <div className="m-auto flex w-4/5 flex-col">
         <Text variant="h3" style="py-4">
           Other tools from the category {fields.type}
         </Text>
-        <div className="mb-12 pt-4">
+        <div className="mb-48 pt-4">
           <ApiList apis={recomendedRecords} />
         </div>
       </div>
