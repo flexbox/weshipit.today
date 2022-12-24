@@ -1,4 +1,6 @@
-export const apiListFixture = [
+import { ApiProps } from './api-list.d';
+
+export const apiListFixture: ApiProps[] = [
   {
     fields: {
       description:
@@ -7,6 +9,7 @@ export const apiListFixture = [
       name: 'Segment',
       type: 'Analytics',
       website_url: 'https://segment.com/',
+      slug: 'segment',
     },
   },
   {
@@ -19,6 +22,7 @@ export const apiListFixture = [
       pricing: ['Open source'],
       type: 'Persistent storage',
       website_url: 'https://realm.io/',
+      slug: 'realm',
     },
   },
   {
@@ -29,6 +33,8 @@ export const apiListFixture = [
       github_url: 'https://github.com/mixpanel/mixpanel-react-native',
       name: 'Mixpanel',
       type: 'Analytics',
+      website_url: 'https://mixpanel.com/',
+      slug: 'mixpanel',
     },
   },
   {
@@ -42,6 +48,7 @@ export const apiListFixture = [
       pricing: ['Free tiers', 'Premium tiers'],
       type: 'Backend',
       website_url: 'https://stepzen.com/',
+      slug: 'stepzen',
     },
   },
   {
@@ -53,6 +60,7 @@ export const apiListFixture = [
       pricing: ['Free tiers', 'Premium tiers'],
       type: 'Analytics',
       website_url: 'https://uxcam.com/',
+      slug: 'uxcam',
     },
   },
   {
@@ -64,6 +72,7 @@ export const apiListFixture = [
       pricing: ['Open source'],
       type: 'Persistent storage',
       website_url: 'https://nozbe.github.io/WatermelonDB/index.html',
+      slug: 'nozbe',
     },
   },
   {
@@ -75,6 +84,7 @@ export const apiListFixture = [
       pricing: ['Open source'],
       type: 'Infrastructure',
       website_url: 'https://expo.dev/',
+      slug: 'expo',
     },
   },
   {
@@ -84,10 +94,13 @@ export const apiListFixture = [
       pricing: ['Free tiers', 'Pay as-you-go'],
       type: 'Infrastructure',
       website_url: 'https://aws.amazon.com/amplify/',
+      slug: 'aws',
     },
   },
   {
     fields: {
+      description:
+        'FusionAuth is an open source identity and access management platform.',
       logo: [
         {
           filename: 'profile.png',
@@ -120,6 +133,7 @@ export const apiListFixture = [
       pricing: ['Free tiers', 'Premium tiers'],
       type: 'Authentication',
       website_url: 'https://fusionauth.io/',
+      slug: 'fusionauth',
     },
   },
   {
@@ -132,6 +146,7 @@ export const apiListFixture = [
       pricing: ['Free tiers', 'Premium tiers'],
       type: 'Crash reporting',
       website_url: 'https://sentry.io',
+      slug: 'sentry',
     },
   },
   {
@@ -151,6 +166,7 @@ export const apiListFixture = [
       pricing: ['Free tiers', 'Pay as-you-go'],
       type: 'Infrastructure',
       website_url: 'https://firebase.google.com/',
+      slug: 'firebase',
     },
   },
   {
@@ -161,6 +177,7 @@ export const apiListFixture = [
       name: 'Stream',
       type: 'Backend',
       website_url: 'https://getstream.io/',
+      slug: 'getstream',
     },
   },
   {
@@ -173,6 +190,7 @@ export const apiListFixture = [
       pricing: ['Open source'],
       type: 'Persistent storage',
       website_url: 'https://github.com/mrousavy/react-native-mmkv',
+      slug: 'github',
     },
   },
   {
@@ -184,6 +202,7 @@ export const apiListFixture = [
       pricing: ['Open source'],
       type: 'Persistent storage',
       website_url: 'https://pouchdb.com/',
+      slug: 'pouchdb',
     },
   },
 ];

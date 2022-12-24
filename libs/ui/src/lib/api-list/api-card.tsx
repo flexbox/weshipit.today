@@ -77,7 +77,7 @@ export function ApiCard({ fields }: ApiProps) {
 
           <div className=" justify-end">
             <div className="flex justify-start ">
-              <Badge size="small" intent={typeIntent as any}>
+              <Badge size="sm" intent={typeIntent as any}>
                 {type}
               </Badge>
             </div>
