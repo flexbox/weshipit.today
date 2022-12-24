@@ -28,16 +28,16 @@ interface LogoProps {
 export interface ApiProps {
   id?: string;
   fields: {
-    logo: LogoProps[];
     description: string;
-    features: string[];
-    github_url: string;
+    features?: string[];
+    github_url?: string;
+    logo?: LogoProps[];
     name: string;
-    platform: string[];
-    pricing: string[];
+    platform?: string[];
+    pricing?: string[];
+    slug: string;
     type: string;
     website_url: string;
-    slug: string;
   };
 }
 

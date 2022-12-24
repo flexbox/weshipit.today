@@ -4,8 +4,8 @@ import { Badge } from './badge';
 
 describe('Badge', () => {
   it('should render successfully', () => {
-    const { baseElement, getAllByText } = render(<Badge>Primary</Badge>);
+    const { baseElement, getAllByText } = render(<Badge>Analytics</Badge>);
     expect(baseElement).toBeTruthy();
-    getAllByText('Primary');
+    getAllByText('Analytics');
   });
 });

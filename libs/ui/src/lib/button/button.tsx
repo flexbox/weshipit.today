@@ -1,35 +1,72 @@
-export interface ButtonProps {
-  variant?: 'primary' | 'secondary';
+import { cva, type VariantProps } from 'class-variance-authority';
+
+const button = cva('button', {
+  variants: {
+    intent: {
+      filled: [
+        'bg-indigo-600',
+        'hover:bg-indigo-700',
+        'text-white',
+        'rounded-md',
+        'justify-between',
+        'items-center',
+        'flex',
+      ],
+      ghost: [
+        'bg-white',
+        'text-black',
+        'hover:bg-gray-100',
+        'flex',
+        'items-center',
+        'justify-between',
+        'rounded-md',
+      ],
+    },
+    size: {
+      sm: ['md:text-lg', 'shadow-sm', 'font-medium', 'text-sm', 'py-1', 'px-4'],
+      md: [
+        'md:text-lg',
+        'md:px-6',
+        'shadow-md',
+        'font-medium',
+        'text-base',
+        'py-3',
+      ],
+    },
+  },
+  compoundVariants: [{ intent: 'filled', size: 'md' }],
+  defaultVariants: {
+    intent: 'filled',
+    size: 'md',
+  },
+});
+
+export interface ButtonProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof button> {
   accessoryLeft?: React.ReactNode;
   children?: React.ReactNode;
-  style?: string;
   href: string;
 }
 
-export function Button({
-  variant,
-  accessoryLeft,
+export const Button: React.FC<ButtonProps> = ({
+  className,
+  intent,
   children,
-  style,
+  accessoryLeft,
   href,
-}: ButtonProps) {
-  let variantStyle;
-  if (variant === 'secondary') {
-    variantStyle = 'bg-white text-black hover:bg-gray-100';
-  } else {
-    variantStyle = 'bg-indigo-600 hover:bg-indigo-700 text-white';
-  }
-  return (
-    <a
-      href={href}
-      target="_blank"
-      className={`flex items-center justify-between rounded-md py-3 text-base font-medium shadow-md md:px-6 md:text-lg ${style} ${variantStyle}`}
-      rel="noreferrer"
-    >
-      {accessoryLeft && <div className="flex">{accessoryLeft}</div>}
-      {children}
-    </a>
-  );
-}
+  size,
+  ...rest
+}) => (
+  <a
+    href={href}
+    className={button({ intent, size, className })}
+    target="_blank"
+    rel="noreferrer"
+  >
+    {accessoryLeft && <div className="flex">{accessoryLeft}</div>}
+    {children}
+  </a>
+);
 
 export default Button;
