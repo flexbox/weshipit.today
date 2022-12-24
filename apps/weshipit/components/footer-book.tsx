@@ -1,4 +1,4 @@
-import Button from 'libs/ui/src/lib/button/button';
+import { Button } from '@weshipit/ui';
 import Image from 'next/image';
 
 export default function FooterBook() {
@@ -17,8 +17,7 @@ export default function FooterBook() {
           </div>
 
           <Button
-            variant="primary"
-            style="w-44 my-4"
+            className="my-4 w-44"
             href="https://gumroad.com/l/road-react-native"
           >
             Check it out !

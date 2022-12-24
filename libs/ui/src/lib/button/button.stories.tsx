@@ -15,13 +15,19 @@ Primary.args = {
 
 export const AccessoryLeft = Template.bind({});
 AccessoryLeft.args = {
-  accessoryLeft: <span>👉</span>,
+  accessoryLeft: (
+    <span role="img" aria-label="backhand index pointing right">
+      👉
+    </span>
+  ),
   children: 'Accessory Left',
 };
 
 const IntentExamples = () => (
   <div className="grid gap-4">
-    <Button href="https://weshipit.today">primary</Button>
+    <Button href="https://weshipit.today" intent="filled">
+      filled
+    </Button>
     <Button href="https://weshipit.today" intent="ghost">
       ghost
     </Button>
@@ -33,10 +39,10 @@ export const Intent = IntentExamples.bind({});
 const SizeExamples = () => (
   <div className="grid gap-4">
     <Button href="https://weshipit.today" size="sm">
-      primary
+      filled
     </Button>
     <Button href="https://weshipit.today" size="md">
-      primary
+      filled
     </Button>
   </div>
 );

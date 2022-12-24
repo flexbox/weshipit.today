@@ -4,22 +4,21 @@ import { cva, type VariantProps } from 'class-variance-authority';
 const badge = cva('badge', {
   variants: {
     intent: {
-      primary: ['bg-indigo-400', 'text-indigo-100', 'rounded-3xl'],
-      indigo: ['bg-indigo-400', 'text-indigo-100', 'rounded-3xl'],
-      pink: ['bg-pink-400', 'text-pink-100', 'rounded-3xl'],
-      cyan: ['bg-cyan-400', 'text-cyan-100', 'rounded-3xl'],
-      yellow: ['bg-yellow-400', 'text-yellow-100', 'rounded-3xl'],
-      green: ['bg-green-400', 'text-green-100', 'rounded-3xl'],
-      lime: ['bg-lime-400', 'text-lime-100', 'rounded-3xl'],
+      indigo: ['bg-indigo-400', 'text-indigo-100'],
+      pink: ['bg-pink-400', 'text-pink-100'],
+      cyan: ['bg-cyan-400', 'text-cyan-100'],
+      yellow: ['bg-yellow-400', 'text-yellow-100'],
+      green: ['bg-green-400', 'text-green-100'],
+      lime: ['bg-lime-400', 'text-lime-100'],
     },
     size: {
-      sm: ['text-sm', 'py-1', 'px-2'],
-      md: ['text-base', 'py-2', 'px-4'],
+      sm: ['text-sm', 'py-1', 'px-2', 'rounded-3xl'],
+      md: ['text-base', 'py-2', 'px-4', 'rounded-3xl'],
     },
   },
-  compoundVariants: [{ intent: 'primary', size: 'md' }],
+  compoundVariants: [{ intent: 'indigo', size: 'md' }],
   defaultVariants: {
-    intent: 'primary',
+    intent: 'indigo',
     size: 'md',
   },
 });

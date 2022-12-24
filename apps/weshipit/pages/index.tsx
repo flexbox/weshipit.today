@@ -1,5 +1,4 @@
 import { ClientsListHomepage, Button, Hero, Text } from '@weshipit/ui';
-import NextHead from '../components/next-head';
 import Link from 'next/link';
 import { getAllClients } from './api/client';
 import Layout from '../components/layout';
@@ -47,11 +46,11 @@ export default function IndexPage({ clients }: clientsPageProps) {
         </p>
         <div className="mt-10 sm:flex sm:justify-center lg:justify-start">
           <div className="flex rounded-md">
-            <Button variant="primary" style="mr-4" href={ONBOARDING_FORM}>
+            <Button className="mr-4" href={ONBOARDING_FORM}>
               Start a project
             </Button>
             <Button
-              variant="secondary"
+              intent="ghost"
               href={ONBOARDING_FORM}
               accessoryLeft={
                 <div className="flex">
