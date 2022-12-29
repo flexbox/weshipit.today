@@ -1,9 +1,11 @@
 import Layout from '../components/Layout';
+import { gumroad } from '../data/index';
 import Gravatar from 'react-gravatar';
 import { figmaDemo } from '../data/index';
-import BuyButton from '../components/BuyButton';
 import Image from 'next/image';
 import React from 'react';
+// eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
+import BuyButton from '../../../libs/ui/src/lib/buy-button/buy-button';
 
 const IndexPage = () => (
   <Layout title="Home | Next.js + TypeScript Example">
@@ -42,7 +44,11 @@ const IndexPage = () => (
               >
                 Explore the preview
               </a>
-              <BuyButton></BuyButton>
+              <BuyButton
+                scriptLink={gumroad}
+                buttonText={'Get early access'}
+                href={'https://gum.co/figmatostore'}
+              />
             </div>
           </div>
 
