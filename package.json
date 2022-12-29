@@ -36,7 +36,7 @@
     "@prismicio/client": "^6.7.1",
     "@prismicio/react": "^2.5.0",
     "@vercel/og": "^0.0.20",
-    "autoprefixer": "10.4.13",
+    "autoprefixer": "^10.4.13",
     "class-variance-authority": "^0.4.0",
     "core-js": "^3.6.5",
     "graphql": "^16.6.0",
@@ -44,12 +44,12 @@
     "next": "13.0.0",
     "next-seo": "^5.14.1",
     "next-sitemap": "^3.1.31",
-    "postcss": "8.4.20",
+    "postcss": "^8.4.20",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-gravatar": "^2.6.3",
     "regenerator-runtime": "0.13.7",
-    "tailwindcss": "3.2.4",
+    "tailwindcss": "^3.2.4",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
