@@ -1,4 +1,5 @@
-import { Button, Hyperlink, Text } from '@weshipit/ui';
+import { Text } from '@weshipit/ui';
+import Link from 'next/link';
 import { Layout } from '../components/layout';
 
 export default function NotFoundPage() {
@@ -18,12 +19,12 @@ export default function NotFoundPage() {
         <Text variant={'p1'} style="mb-12">
           The page you requested does not exist.
         </Text>
-        <Hyperlink
+        <Link
           href="/"
           className="rounded-md bg-indigo-600 p-4 text-white hover:bg-indigo-700"
         >
           Go back to homepage
-        </Hyperlink>
+        </Link>
       </div>
     </Layout>
   );
