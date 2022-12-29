@@ -46,8 +46,8 @@ const IndexPage = () => (
               </a>
               <BuyButton
                 scriptLink={gumroad}
-                buttonText={'Get early access'}
-                href={'https://gum.co/figmatostore'}
+                buttonText="Get early access"
+                href="https://gum.co/figmatostore"
               />
             </div>
           </div>
