@@ -1,14 +1,12 @@
 import Layout from '../components/Layout';
-import { gumroad } from '../data/index';
 import Gravatar from 'react-gravatar';
 import { figmaDemo } from '../data/index';
 import Image from 'next/image';
 import React from 'react';
-// eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
-import BuyButton from '../../../libs/ui/src/lib/buy-button/buy-button';
+import { BuyButton } from '@weshipit/ui';
 
 const IndexPage = () => (
-  <Layout title="Home | Next.js + TypeScript Example">
+  <Layout seoTitle="Boilerplate to generate quality mobile screenshots for Apple App Store and Google Play store.">
     <div className="relative min-h-screen overflow-hidden bg-gray-900">
       <div className="absolute hidden lg:block"></div>
 
@@ -44,11 +42,9 @@ const IndexPage = () => (
               >
                 Explore the preview
               </a>
-              <BuyButton
-                scriptLink={gumroad}
-                buttonText="Get early access"
-                href="https://gum.co/figmatostore"
-              />
+              <BuyButton href="https://gum.co/figmatostore">
+                Get early access
+              </BuyButton>
             </div>
           </div>
 

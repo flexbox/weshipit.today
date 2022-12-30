@@ -3,13 +3,16 @@ import Head from 'next/head';
 
 type Props = {
   children?: ReactNode;
-  title?: string;
+  seoTitle?: string;
 };
 
-const Layout = ({ children, title = 'This is the default title' }: Props) => (
+const Layout = ({
+  children,
+  seoTitle = 'This is the default title',
+}: Props) => (
   <>
     <Head>
-      <title>{title}</title>
+      <title>{seoTitle}</title>
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <meta

@@ -14,6 +14,7 @@ export function NextHead({
 }: NextHeadProps) {
   return (
     <>
+      <meta charSet="utf-8" />
       <DefaultSeo
         title={
           `${seoTitle} — weshipit.today` ||

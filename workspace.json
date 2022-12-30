@@ -3,7 +3,6 @@
   "version": 2,
   "projects": {
     "figmatostore": "apps/figmatostore",
-    "figmatostore-e2e": "apps/figmatostore-e2e",
     "ui": "libs/ui",
     "weshipit": "apps/weshipit",
     "weshipit-e2e": "apps/weshipit-e2e"
