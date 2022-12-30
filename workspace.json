@@ -2,6 +2,7 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
+    "figmatostore": "apps/figmatostore",
     "ui": "libs/ui",
     "weshipit": "apps/weshipit",
     "weshipit-e2e": "apps/weshipit-e2e"

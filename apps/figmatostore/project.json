@@ -1,7 +1,7 @@
 {
-  "name": "weshipit",
+  "name": "figmatostore",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/weshipit",
+  "sourceRoot": "apps/figmatostore",
   "projectType": "application",
   "targets": {
     "build": {
@@ -9,40 +9,30 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "root": "apps/weshipit",
-        "outputPath": "dist/apps/weshipit"
+        "root": "apps/figmatostore",
+        "outputPath": "dist/apps/figmatostore"
       },
       "configurations": {
         "development": {
-          "outputPath": "apps/weshipit"
+          "outputPath": "apps/figmatostore"
         },
         "production": {}
-      }
-    },
-    "postbuild": {
-      "executor": "nx:run-commands",
-      "options": {
-        "commands": [
-          {
-            "command": "next-sitemap --config apps/weshipit/next-sitemap.config.js"
-          }
-        ]
       }
     },
     "serve": {
       "executor": "@nrwl/next:server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "weshipit:build",
+        "buildTarget": "figmatostore:build",
         "dev": true
       },
       "configurations": {
         "development": {
-          "buildTarget": "weshipit:build:development",
+          "buildTarget": "figmatostore:build:development",
           "dev": true
         },
         "production": {
-          "buildTarget": "weshipit:build:production",
+          "buildTarget": "figmatostore:build:production",
           "dev": false
         }
       }
@@ -50,14 +40,14 @@
     "export": {
       "executor": "@nrwl/next:export",
       "options": {
-        "buildTarget": "weshipit:build:production"
+        "buildTarget": "figmatostore:build:production"
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/apps/weshipit"],
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/weshipit/jest.config.ts",
+        "jestConfig": "apps/figmatostore/jest.config.ts",
         "passWithNoTests": true
       }
     },
@@ -65,7 +55,7 @@
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/weshipit/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": ["apps/figmatostore/**/*.{ts,tsx,js,jsx}"]
       }
     }
   },
