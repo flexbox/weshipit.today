@@ -29,6 +29,7 @@
   "private": true,
   "dependencies": {
     "@apollo/client": "^3.7.1",
+    "@apollo/react-hooks": "^4.0.0",
     "@calcom/embed-react": "^1.0.9",
     "@headlessui/react": "^1.7.7",
     "@heroicons/react": "^2.0.13",

@@ -1,4 +1,4 @@
-import { Footer, FooterCallToAction, Header } from '@weshipit/ui';
+import { Footer, Header, FooterCallToAction } from '@weshipit/ui';
 import NextHead, { NextHeadProps } from './next-head';
 
 interface LayoutProps extends NextHeadProps {
