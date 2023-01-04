@@ -1,4 +1,4 @@
-import Layout from '../components/Layout';
+import Layout from '../components/layout-new';
 import Gravatar from 'react-gravatar';
 import { figmaDemo } from '../data/index';
 import Image from 'next/image';

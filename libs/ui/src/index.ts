@@ -1,3 +1,4 @@
+export * from './lib/footer-call-to-action/footer-call-to-action';
 export * from './lib/api-list/api-card-logo';
 export * from './lib/api-list/api-card';
 export * from './lib/api-list/api-list';

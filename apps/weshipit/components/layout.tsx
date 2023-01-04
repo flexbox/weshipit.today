@@ -1,10 +1,11 @@
-import { Footer, Header } from '@weshipit/ui';
+import { Footer, FooterCallToAction, Header } from '@weshipit/ui';
 import NextHead, { NextHeadProps } from './next-head';
 
 interface LayoutProps extends NextHeadProps {
   children: React.ReactNode;
   withHeader?: boolean;
   withFooter?: boolean;
+  withFooterNewsletter?: boolean;
   withContainer?: boolean;
   withAccessoryRight?: React.ReactNode;
 }
@@ -13,6 +14,7 @@ export function Layout({
   children,
   withHeader = false,
   withFooter = false,
+  withFooterNewsletter = false,
   withContainer = false,
   withAccessoryRight,
   seoTitle,
@@ -39,6 +41,7 @@ export function Layout({
             children
           )}
         </main>
+        {withFooterNewsletter && <FooterCallToAction />}
         {withFooter && <Footer />}
       </div>
     </>

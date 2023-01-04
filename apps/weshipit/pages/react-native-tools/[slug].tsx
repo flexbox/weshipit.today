@@ -26,6 +26,7 @@ export function Slug({ records, recomendedRecords }) {
           Add a new API
         </Button>
       }
+      withFooterNewsletter={true}
     >
       <div className="m-auto w-5/6 py-16 md:w-2/3">
         <Text variant="h2" style="w-2/3 md:m-auto">
