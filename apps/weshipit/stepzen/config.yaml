@@ -1,0 +1,6 @@
+configurationset:
+  - configuration:
+      name: airtable_config
+      # Authorization: Bearer KEY_HERE
+      Authorization: Bearer ${AIRTABLE_API_KEY}
+      baseid: ${AIRTABLE_BASE_ID_REACT_NATIVE}

@@ -1,0 +1,10 @@
+type Mutation {
+  createShipment(email: String!, type: String!): Airtable_Shipment
+    @rest(
+      method: POST
+      resultroot: "records[]"
+      postbody: "{\"records\":[{\"fields\":{\"email\":\"{{.Get \"email\" }}\"}}]}"
+      endpoint: "https://api.airtable.com/v0/$baseid/people"
+      configuration: "airtable_config"
+    )
+}

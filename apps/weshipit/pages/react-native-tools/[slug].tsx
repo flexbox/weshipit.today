@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client';
 import { Button, Text, ApiCardLogo, ApiList } from '@weshipit/ui';
 import client from '../api/apollo-client';
-import Layout from '../../components/layout';
+import { Layout } from '../../components/layout';
 
 export function Slug({ records, recomendedRecords }) {
   if (records[0] === undefined || records[0].fields === undefined) {
@@ -36,7 +36,7 @@ export function Slug({ records, recomendedRecords }) {
           <ApiCardLogo name={name} websiteUrl={website_url} logoUrl={logoUrl} />
         </div>
         <div className="m-auto my-8 rounded-2xl bg-white p-8 md:w-2/3 ">
-          <Text variant="p1"> {description} </Text>
+          <Text variant="p1">{description}</Text>
         </div>
       </div>
       <div className="m-auto flex w-4/5 flex-col">
@@ -63,7 +63,7 @@ export async function getServerSideProps({ params }) {
         airtable_tableData(
           airtable_apiKey: "${apiKey}"
           airtable_baseId: "${baseId}"
-          tableName: "API"
+          tableName: "tools"
           filterByFormula: "{slug}='${slug}'"
         ) {
           records {
@@ -80,7 +80,7 @@ export async function getServerSideProps({ params }) {
         airtable_tableData(
           airtable_apiKey: "${apiKey}"
           airtable_baseId: "${baseId}"
-          tableName: "API"
+          tableName: "tools"
           filterByFormula: "{type}='${type}'"
         ) {
           records {
