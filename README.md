@@ -26,3 +26,15 @@ Run the project
 yarn
 yarn start
 ```
+
+## Community
+
+💬 Join us on [Slack](https://weblille.rocks/) to discuss.
+
+⭐️ Help us out by [starring on GitHub](https://github.com/flexbox/weshipit.today), filing bug reports in [issues](https://github.com/flexbox/weshipit.today/issues) with questions or proposals.
+
+👥 Follow `flexbox_` on [Twitter](https://twitter.com/intent/follow?screen_name=flexbox_) for more updates.
+
+## Was this helpful?
+
+☕️ [Leaving a tip helps me a lot!](https://github.com/sponsors/flexbox?frequency=one-time&sponsor=flexbox)
