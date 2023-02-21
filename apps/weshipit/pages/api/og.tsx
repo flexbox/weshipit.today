@@ -14,33 +14,13 @@ export default function handler(req: NextRequest) {
 
     return new ImageResponse(
       (
-        <div
-          style={{
-            backgroundColor: '#f3f4f6',
-            height: '100%',
-            width: '100%',
-            textAlign: 'center',
-            alignItems: 'center',
-            display: 'flex',
-            justifyContent: 'center',
-            flexDirection: 'column',
-          }}
-        >
-          <div
-            style={{
-              display: 'flex',
-              position: 'absolute',
-              bottom: 0,
-              right: 0,
-              padding: 16,
-            }}
-          >
+        <div className="flex h-full w-full flex-col items-center justify-center bg-white text-center">
+          <div className="absolute bottom-0 right-0 flex p-4">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               alt="weshipit.today - logo"
-              height={96}
               src="https://raw.githubusercontent.com/flexbox/weshipit.today/main/apps/weshipit/public/android-chrome-192x192.png"
-              width={96}
+              className="h-24 w-24"
             />
           </div>
           <div style={{ fontSize: '64px', fontWeight: 'bolder' }}>{title}</div>
