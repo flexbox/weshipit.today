@@ -23,7 +23,7 @@ export default function handler(req: NextRequest) {
               className="h-24 w-24"
             />
           </div>
-          <div style={{ fontSize: '64px', fontWeight: 'bolder' }}>{title}</div>
+          <div className="font-inter text-5xl">{title}</div>
         </div>
       ),
       {
