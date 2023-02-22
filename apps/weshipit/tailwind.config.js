@@ -11,6 +11,9 @@ module.exports = {
     ...createGlobPatternsForDependencies(__dirname),
   ],
   theme: {
+    fontFamily: {
+      inter: ['Inter', 'sans-serif'],
+    },
     extend: {
       animation: {
         shine: 'shine 1s',
