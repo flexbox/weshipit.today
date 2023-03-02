@@ -1,4 +1,10 @@
-import { ClientsListHomepage, Button, Hero, Text } from '@weshipit/ui';
+import {
+  ClientsListHomepage,
+  Button,
+  Hero,
+  Text,
+  Hyperlink,
+} from '@weshipit/ui';
 import Link from 'next/link';
 import { getAllClients } from './api/client';
 import Layout from '../components/layout';
@@ -33,43 +39,50 @@ export default function IndexPage({ clients }: clientsPageProps) {
       ogImageTitle="React Native Experts"
     >
       <Hero>
-        <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
+        <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
           <span className="block xl:inline">
-            Building React Native apps
+            A tiny studio,
             <br />
-            in <span className=" text-gray-400 line-through">months</span> days.
+            making delightful React Native apps,
+            <br />
+            brought to you by
+            <Hyperlink
+              href="https://twitter.com/intent/follow?screen_name=flexbox_"
+              className="relative top-2 mx-0.5 inline-flex items-center gap-1.5 rounded-full p-1 font-bold transition hover:bg-gray-50 dark:hover:bg-white/10 sm:px-2 md:top-1"
+            >
+              @flexbox
+            </Hyperlink>
+            &
+            <Hyperlink
+              href="https://twitter.com/intent/follow?screen_name=MatthysDev"
+              className="relative top-2 mx-0.5 inline-flex items-center gap-1.5 rounded-full p-1 font-bold transition hover:bg-gray-50 dark:hover:bg-white/10 sm:px-2 md:top-1"
+            >
+              @MatthysDev
+            </Hyperlink>
           </span>
         </h1>
-        <p className="mt-3 max-w-md text-lg text-gray-500 sm:text-xl md:mt-5 md:max-w-3xl">
-          We are software developer, product makers, growth hackers, with a
-          focus on engineering community best practices.
-        </p>
+
         <div className="mt-10 sm:flex sm:justify-center lg:justify-start">
-          <div className="flex rounded-md">
-            <Button className="mr-4" href={ONBOARDING_FORM}>
-              Start a project
-            </Button>
-            <Button
-              intent="ghost"
-              href={ONBOARDING_FORM}
-              accessoryLeft={
-                <div className="flex">
-                  <Gravatar
-                    className="rounded-full border-4 border-white"
-                    size={50}
-                    email="ducrocq.matthys@gmail.com"
-                  />
-                  <Gravatar
-                    className="-ml-4 mr-4 rounded-full border-4 border-white"
-                    size={50}
-                    email="dleuliette@gmail.com"
-                  />
-                </div>
-              }
-            >
-              Book a consultation
-            </Button>
-          </div>
+          <Button
+            intent="ghost"
+            href={ONBOARDING_FORM}
+            accessoryLeft={
+              <div className="flex">
+                <Gravatar
+                  className="rounded-full border-4 border-white"
+                  size={50}
+                  email="ducrocq.matthys@gmail.com"
+                />
+                <Gravatar
+                  className="-ml-4 mr-4 rounded-full border-4 border-white"
+                  size={50}
+                  email="dleuliette@gmail.com"
+                />
+              </div>
+            }
+          >
+            Book a consultation
+          </Button>
         </div>
       </Hero>
       <section className="m-auto max-w-7xl">
@@ -79,7 +92,7 @@ export default function IndexPage({ clients }: clientsPageProps) {
           </Text>
           <ClientsListHomepage clients={clients} />
           <Link legacyBehavior href="/clients">
-            <a className="text-sm font-semibold text-blue-500 underline underline-offset-4 hover:text-blue-700">
+            <a className="text-base font-bold text-blue-500 underline underline-offset-4 hover:text-blue-700">
               View our client list
             </a>
           </Link>
