@@ -4,17 +4,17 @@ about: Suggest an idea for this project
 title: ''
 labels: ''
 assignees: ''
-
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+As a <persona>
+I can <what?>
+So that <why?>
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+Complexity —How "hard" is this thing to do?
+/10
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+Effort —How long do we think this will/should be worked on?
+/10
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+Risk —What are the chances that Complexity or Time were wrong?
+/10

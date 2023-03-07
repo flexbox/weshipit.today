@@ -1,9 +1,8 @@
+import Link from 'next/link';
 import { SVGProps } from 'react';
 
-/* eslint-disable-next-line */
-export interface FooterProps {}
-
 const navigation = {
+  solutions: [{ name: 'React Native Tools', href: '/react-native-tools' }],
   company: [
     {
       name: 'Work at weshipit.today',
@@ -35,10 +34,23 @@ const navigation = {
         </svg>
       ),
     },
+    {
+      name: 'YouTube',
+      href: 'https://www.youtube.com/channel/UCO0X5b0mQ4eIHitXHXSFUyw?sub_confirmation=1',
+      icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
+        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
+          <path
+            fillRule="evenodd"
+            d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z"
+            clipRule="evenodd"
+          />
+        </svg>
+      ),
+    },
   ],
 };
 
-export function Footer(props: FooterProps) {
+export function Footer() {
   const fullYear = new Date().getFullYear();
 
   return (
@@ -50,6 +62,23 @@ export function Footer(props: FooterProps) {
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="grid grid-cols-2 gap-8 xl:col-span-2">
             <div className="md:grid md:grid-cols-2 md:gap-8">
+              <div>
+                <h3 className="text-base font-medium text-gray-900">
+                  Solutions
+                </h3>
+                <ul role="list" className="mt-6 space-y-4">
+                  {navigation.solutions.map((item) => (
+                    <li key={item.name}>
+                      <Link
+                        href={item.href}
+                        className="text-base text-gray-500 hover:text-gray-900"
+                      >
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
               <div>
                 <h3 className="text-base font-medium text-gray-900">Company</h3>
                 <ul role="list" className="mt-4 space-y-4">
