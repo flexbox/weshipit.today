@@ -1,3 +1,5 @@
+import LoginButton from '../components/login-button';
+
 export function Index() {
   /*
    * Replace the elements below with your own.
@@ -10,9 +12,10 @@ export function Index() {
         <div id="welcome">
           <h1>
             <span> Hello there, </span>
-            Welcome githubtolinkedin 👋
+            Welcome ghtoin 👋
           </h1>
         </div>
+        <LoginButton />
       </div>
     </div>
   );
