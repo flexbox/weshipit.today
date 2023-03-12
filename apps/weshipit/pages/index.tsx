@@ -39,7 +39,7 @@ export default function IndexPage({ clients }: clientsPageProps) {
       ogImageTitle="React Native Experts"
     >
       <Hero>
-        <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
+        <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
           <span className="block xl:inline">
             A tiny studio,
             <br />

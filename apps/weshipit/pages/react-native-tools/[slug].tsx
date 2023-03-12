@@ -62,7 +62,7 @@ export async function getServerSideProps({ params }) {
         airtable_tableData(
           airtable_apiKey: "${apiKey}"
           airtable_baseId: "${baseId}"
-          tableName: "API"
+          tableName: "tools"
           filterByFormula: "{slug}='${slug}'"
         ) {
           records {
@@ -79,7 +79,7 @@ export async function getServerSideProps({ params }) {
         airtable_tableData(
           airtable_apiKey: "${apiKey}"
           airtable_baseId: "${baseId}"
-          tableName: "API"
+          tableName: "tools"
           filterByFormula: "{type}='${type}'"
         ) {
           records {
