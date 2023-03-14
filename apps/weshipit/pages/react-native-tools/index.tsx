@@ -61,7 +61,7 @@ export async function getServerSideProps() {
         airtable_tableData(
           airtable_apiKey: "${apiKey}"
           airtable_baseId: "${baseId}"
-          tableName: "API"
+          tableName: "tools"
         ) {
           records {
             fields
