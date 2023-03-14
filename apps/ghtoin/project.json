@@ -24,12 +24,14 @@
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "ghtoin:build",
-        "dev": true
+        "dev": true,
+        "port": 4200
       },
       "configurations": {
         "development": {
           "buildTarget": "ghtoin:build:development",
-          "dev": true
+          "dev": true,
+          "port": 4200
         },
         "production": {
           "buildTarget": "ghtoin:build:production",

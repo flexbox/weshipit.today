@@ -1,4 +1,3 @@
-import { AppProps } from 'next/app';
 import { SessionProvider } from 'next-auth/react';
 import { Inter } from '@next/font/google';
 import Head from 'next/head';
