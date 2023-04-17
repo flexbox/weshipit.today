@@ -6,7 +6,7 @@ const navigation = {
   company: [
     {
       name: 'Work at weshipit.today',
-      href: 'https://flexbox.notion.site/Offre-de-stage-b2da035e1f2c4188a4a295712dca6529',
+      href: 'https://flexbox.notion.site/Jobs-1c65e7a956a64a07b60a401f8747f1af',
     },
     { name: 'Partners', href: '/clients' },
     { name: 'Consulting', href: '/consulting' },
