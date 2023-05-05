@@ -37,6 +37,7 @@
     "@next/font": "13.1.1",
     "@prismicio/client": "^6.7.1",
     "@prismicio/react": "^2.5.2",
+    "@tailwindcss/typography": "^0.5.9",
     "@vercel/og": "^0.3.0",
     "autoprefixer": "^10.4.13",
     "class-variance-authority": "^0.4.0",
