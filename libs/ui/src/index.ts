@@ -12,3 +12,4 @@ export * from './lib/header/header';
 export * from './lib/hero/hero';
 export * from './lib/hyperlink/hyperlink';
 export * from './lib/text/text';
+export * from './lib/card-homepage/card-homepage';
