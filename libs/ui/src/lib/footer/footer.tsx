@@ -54,7 +54,7 @@ export function Footer() {
   const fullYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-white" aria-labelledby="footer-heading">
+    <footer className="bg-white dark:bg-black" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
@@ -63,7 +63,7 @@ export function Footer() {
           <div className="grid grid-cols-2 gap-8 xl:col-span-2">
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="text-base font-medium text-gray-900">
+                <h3 className="text-base font-medium text-gray-900 dark:text-slate-200">
                   Solutions
                 </h3>
                 <ul role="list" className="mt-6 space-y-4">
@@ -80,7 +80,9 @@ export function Footer() {
                 </ul>
               </div>
               <div>
-                <h3 className="text-base font-medium text-gray-900">Company</h3>
+                <h3 className="text-base font-medium text-gray-900 dark:text-slate-200">
+                  Company
+                </h3>
                 <ul role="list" className="mt-4 space-y-4">
                   {navigation.company.map((item) => (
                     <li key={item.name}>

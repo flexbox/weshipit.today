@@ -1,5 +1,7 @@
 import { ApiProps } from './api-list.d';
-import { Badge, Card, Text } from '@weshipit/ui';
+import { Badge } from '../badge/badge';
+import { Card } from '../card/card';
+import { Text } from '../text/text';
 
 import truncate from 'lodash/truncate';
 import Link from 'next/link';
@@ -44,7 +46,7 @@ export function ApiCard({ fields }: ApiProps) {
   return (
     <Card>
       <Link href={`/react-native-tools/${slug}`} className="cursor-pointer">
-        <div className="flex h-full flex-col justify-between">
+        <div className="flex h-full flex-col justify-between ">
           <div className="justify-start">
             <div className="flex items-center justify-between">
               <Text variant="s2" style="font-semibold mb-2 text-left">

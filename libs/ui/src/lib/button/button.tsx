@@ -6,6 +6,7 @@ const button = cva('button', {
       filled: [
         'bg-indigo-600',
         'hover:bg-indigo-700',
+        'dark:bg-indigo-900',
         'text-white',
         'rounded-md',
         'justify-between',

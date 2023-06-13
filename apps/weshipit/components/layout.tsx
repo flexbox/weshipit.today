@@ -26,7 +26,7 @@ export function Layout({
         seoDescription={seoDescription}
         ogImageTitle={ogImageTitle}
       />
-      <div className="min-h-full bg-gray-100">
+      <div className="min-h-full bg-gray-100 dark:bg-black">
         {withHeader && <Header />}
         {withAccessoryRight && (
           <Header withAccessoryRight accessoryRight={withAccessoryRight} />
