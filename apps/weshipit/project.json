@@ -5,11 +5,10 @@
   "projectType": "application",
   "targets": {
     "build": {
-      "executor": "@nrwl/next:build",
+      "executor": "@nx/next:build",
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "root": "apps/weshipit",
         "outputPath": "dist/apps/weshipit"
       },
       "configurations": {
@@ -30,7 +29,7 @@
       }
     },
     "serve": {
-      "executor": "@nrwl/next:server",
+      "executor": "@nx/next:server",
       "defaultConfiguration": "development",
       "options": {
         "buildTarget": "weshipit:build",
@@ -48,13 +47,13 @@
       }
     },
     "export": {
-      "executor": "@nrwl/next:export",
+      "executor": "@nx/next:export",
       "options": {
         "buildTarget": "weshipit:build:production"
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
+      "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/apps/weshipit"],
       "options": {
         "jestConfig": "apps/weshipit/jest.config.ts",
@@ -62,7 +61,7 @@
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
+      "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["apps/weshipit/**/*.{ts,tsx,js,jsx}"]

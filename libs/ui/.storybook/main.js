@@ -13,6 +13,8 @@ module.exports = {
   addons: [
     '@storybook/addon-essentials',
     ...rootMain.addons,
-    '@nrwl/react/plugins/storybook',
+    // https://github.com/nrwl/nx/issues/16629
+    // eslint-disable-next-line storybook/no-uninstalled-addons
+    '@nx/react/plugins/storybook',
   ],
 };

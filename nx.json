@@ -6,7 +6,7 @@
   },
   "tasksRunnerOptions": {
     "default": {
-      "runner": "nx/tasks-runners/default",
+      "runner": "nx-cloud",
       "options": {
         "cacheableOperations": [
           "build",
@@ -14,7 +14,8 @@
           "test",
           "e2e",
           "build-storybook"
-        ]
+        ],
+        "accessToken": "ZmJmZDg0NDAtZGM1Mi00YzViLTkyYzEtNTUyYzY0ZjMxZjg3fHJlYWQtd3JpdGU="
       }
     }
   },
@@ -41,12 +42,12 @@
     "libsDir": "libs"
   },
   "generators": {
-    "@nrwl/react": {
+    "@nx/react": {
       "application": {
         "babel": true
       }
     },
-    "@nrwl/next": {
+    "@nx/next": {
       "application": {
         "style": "css",
         "linter": "eslint"

@@ -24,6 +24,13 @@ Do the upgrades. It will update our `package.json`
 yarn nx migrate --run-migrations
 ```
 
+Make sure everything is working as expected.
+
+```bash
+yarn start
+yarn ui:storybook
+```
+
 After you run all the migrations, you can remove `migrations.json` and commit any outstanding changes.
 
 ```bash
