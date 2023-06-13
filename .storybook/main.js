@@ -8,4 +8,11 @@ module.exports = {
   //   // Return the altered config
   //   return config;
   // },
+  framework: {
+    name: '@storybook/react-webpack5',
+    options: {},
+  },
+  docs: {
+    autodocs: true,
+  },
 };

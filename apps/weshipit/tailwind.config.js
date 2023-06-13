@@ -1,5 +1,5 @@
 // apps/app1/tailwind.config.js
-const { createGlobPatternsForDependencies } = require('@nrwl/react/tailwind');
+const { createGlobPatternsForDependencies } = require('@nx/react/tailwind');
 const { join } = require('path');
 
 module.exports = {

@@ -10,7 +10,7 @@ There are also many [community plugins](https://nx.dev/community) you could add.
 
 ## Generate an application
 
-Run `nx g @nrwl/react:app my-app` to generate an application.
+Run `nx g @nx/react:app my-app` to generate an application.
 
 > You can use any of the plugins above to generate applications as well.
 
@@ -18,7 +18,7 @@ When using Nx, you can create multiple applications and libraries in the same wo
 
 ## Generate a library
 
-Run `nx g @nrwl/react:lib my-lib` to generate a library.
+Run `nx g @nx/react:lib my-lib` to generate a library.
 
 > You can also use any of the plugins above to generate libraries as well.
 
@@ -30,7 +30,7 @@ Run `nx serve my-app` for a dev server. Navigate to http://localhost:4200/. The 
 
 ## Code scaffolding
 
-Run `nx g @nrwl/react:component my-component --project=my-app` to generate a new component.
+Run `nx g @nx/react:component my-component --project=my-app` to generate a new component.
 
 ## Build
 
