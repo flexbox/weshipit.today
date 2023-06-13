@@ -4,11 +4,11 @@ import {
   Hero,
   Text,
   Hyperlink,
+  CardHomepage,
 } from '@weshipit/ui';
 import Link from 'next/link';
 import { getAllClients } from './api/client';
 import Layout from '../components/layout';
-import Gravatar from 'react-gravatar';
 
 const ONBOARDING_FORM = 'https://airtable.com/shryVoJ3nzyeq2P4s';
 
@@ -31,19 +31,23 @@ interface clientsPageProps {
 export default function IndexPage({ clients }: clientsPageProps) {
   return (
     <Layout
-      withHeader
       withContainer
       withFooter
       seoTitle="React Native Experts"
       seoDescription="At our React Native Development Agency, we specialize in creating high-quality, performant, and scalable mobile applications using the latest technologies and best practices. Our team of experienced developers can help you bring your idea to life and deliver a seamless user experience across all platforms. Contact us today to discuss your project and get a free quote."
       ogImageTitle="React Native Experts"
+      withAccessoryRight={
+        <div className="sm:flex sm:justify-center lg:justify-start">
+          <Button intent="filled" href={ONBOARDING_FORM}>
+            Book a consultation
+          </Button>
+        </div>
+      }
     >
       <Hero>
-        <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
-          <span className="block xl:inline">
-            A tiny studio,
-            <br />
-            making delightful React Native apps,
+        <h1 className="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-4xl md:text-2xl lg:text-3xl xl:text-4xl">
+          <span className="block leading-tight xl:inline">
+            A tiny studio, making delightful React Native apps,
             <br />
             brought to you by
             <Hyperlink
@@ -61,32 +65,10 @@ export default function IndexPage({ clients }: clientsPageProps) {
             </Hyperlink>
           </span>
         </h1>
-
-        <div className="mt-10 sm:flex sm:justify-center lg:justify-start">
-          <Button
-            intent="ghost"
-            href={ONBOARDING_FORM}
-            accessoryLeft={
-              <div className="flex">
-                <Gravatar
-                  className="rounded-full border-4 border-white"
-                  size={50}
-                  email="ducrocq.matthys@gmail.com"
-                />
-                <Gravatar
-                  className="-ml-4 mr-4 rounded-full border-4 border-white"
-                  size={50}
-                  email="dleuliette@gmail.com"
-                />
-              </div>
-            }
-          >
-            Book a consultation
-          </Button>
-        </div>
+        <CardHomepage />
       </Hero>
       <section className="m-auto max-w-7xl">
-        <div className="my-48 text-center">
+        <div className="mb-24 text-center">
           <Text variant="h3" style="py-4">
             Some of the wonderful clients who have trusted us
           </Text>
