@@ -1,6 +1,7 @@
+import Link from 'next/link';
 import { Layout } from '../components/layout';
 import { getAllClients } from './api/client';
-import { Text } from '@weshipit/ui';
+import { Button, Text } from '@weshipit/ui';
 import { ClientsList } from '@weshipit/ui';
 
 interface ClientProps {
@@ -47,6 +48,17 @@ export default function ClientsPage({ clients }: clientsPageProps) {
         </Text>
       </div>
       <ClientsList clients={clients} />
+      <div>
+        <Text variant="s2" style="py-4">
+          is your company missing?
+        </Text>
+        <Link
+          href="/onboarding"
+          className="my-4 flex w-60 justify-center rounded-md bg-indigo-600 py-6 text-white hover:bg-indigo-700"
+        >
+          Add your logo today!
+        </Link>
+      </div>
     </Layout>
   );
 }

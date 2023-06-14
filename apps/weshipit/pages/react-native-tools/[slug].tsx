@@ -2,6 +2,7 @@ import { gql } from '@apollo/client';
 import { Button, Text, ApiCardLogo, ApiList } from '@weshipit/ui';
 import client from '../api/apollo-client';
 import Layout from '../../components/layout';
+import { linksApi } from '../api/links';
 
 export function Slug({ records, recomendedRecords }) {
   if (records[0] === undefined || records[0].fields === undefined) {
@@ -22,9 +23,7 @@ export function Slug({ records, recomendedRecords }) {
       seoDescription="The best tools and resources for busy developers"
       ogImageTitle="React Native Serverless API"
       withAccessoryRight={
-        <Button href="https://airtable.com/shrKPA2DGcG8xnQGG">
-          Add a new API
-        </Button>
+        <Button href={linksApi.airtable.TOOLS_FORM}>Add a new API</Button>
       }
     >
       <div className="m-auto w-5/6 py-16  md:w-2/3">
