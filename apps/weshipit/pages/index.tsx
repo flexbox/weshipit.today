@@ -5,10 +5,12 @@ import {
   Text,
   Hyperlink,
   CardHomepage,
+  CardGradient,
 } from '@weshipit/ui';
 import Link from 'next/link';
 import { getAllClients } from './api/client';
 import Layout from '../components/layout';
+// eslint-disable-next-line @nx/enforce-module-boundaries
 
 const ONBOARDING_FORM = 'https://airtable.com/shryVoJ3nzyeq2P4s';
 
@@ -45,7 +47,7 @@ export default function IndexPage({ clients }: clientsPageProps) {
       }
     >
       <Hero>
-        <h1 className="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-4xl md:text-2xl lg:text-3xl xl:text-4xl">
+        <h1 className=" text-2xl font-extrabold tracking-tight text-gray-900 dark:text-slate-300 sm:text-4xl md:text-2xl lg:text-3xl xl:text-4xl">
           <span className="block leading-tight xl:inline">
             A tiny studio, making delightful React Native apps,
             <br />
@@ -68,17 +70,19 @@ export default function IndexPage({ clients }: clientsPageProps) {
         <CardHomepage />
       </Hero>
       <section className="m-auto max-w-7xl">
-        <div className="mb-24 text-center">
-          <Text variant="h3" style="py-4">
-            Some of the wonderful clients who have trusted us
-          </Text>
-          <ClientsListHomepage clients={clients} />
-          <Link legacyBehavior href="/clients">
-            <a className="text-base font-bold text-blue-500 underline underline-offset-4 hover:text-blue-700">
-              View our client list
-            </a>
-          </Link>
-        </div>
+        <CardGradient intent="purple">
+          <div className="mb-24 p-8 text-center ">
+            <Text variant="h3" style="py-4">
+              Some of the wonderful clients who have trusted us
+            </Text>
+            <ClientsListHomepage clients={clients} />
+            <Link legacyBehavior href="/clients">
+              <a className="text-base font-bold text-blue-700 underline underline-offset-4 hover:text-blue-900 dark:text-indigo-600 dark:hover:text-indigo-900">
+                View our client list
+              </a>
+            </Link>
+          </div>
+        </CardGradient>
       </section>
     </Layout>
   );
