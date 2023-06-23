@@ -1,9 +1,7 @@
 import { Text } from '@weshipit/ui';
 import { Layout } from '../components/layout';
 import Script from 'next/script';
-
-const PAIR_PROGRAMMING_FORM_EMBED =
-  'https://airtable.com/embed/shrbgrlfblUkIFovF';
+import { linksApi } from './api/links';
 
 export function Qr() {
   return (
@@ -35,7 +33,7 @@ export function Qr() {
 
           <Script src="https://static.airtable.com/js/embed/embed_snippet_v1.js"></Script>
           <iframe
-            src={PAIR_PROGRAMMING_FORM_EMBED}
+            src={linksApi.airtable.PAIR_PROGRAMMING_FORM_EMBED}
             width="100%"
             height="1231"
             className="airtable-embed airtable-dynamic-height mb-12"
