@@ -9,7 +9,7 @@
 - Monorepo generated using [Nx](https://nx.dev/getting-started/intro)
 - UI design with [tailwindCSS](https://tailwindcss.com/docs/)
 - Design system with Storybook [design.weshipit.today](https://design.weshipit.today/)
-- [Stepzen GraphQL API](https://graphql22.stepzen.net/api/22ab50410d605e68703a0fbd86140380/__graphql)
+- Stepzen GraphQL API for airtable data [https://dashboard.stepzen.com/](https://dashboard.stepzen.com/)
 
 ## Getting Started
 
