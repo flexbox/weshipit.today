@@ -1,3 +1,4 @@
+/* eslint-disable tailwindcss/no-custom-classname */
 import { ImageResponse } from '@vercel/og';
 import { NextRequest } from 'next/server';
 
