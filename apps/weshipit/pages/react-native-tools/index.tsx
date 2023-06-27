@@ -3,18 +3,24 @@ import client from '../api/apollo-client';
 
 import { ApiList, Button, Hyperlink, Text } from '@weshipit/ui';
 import { gql } from '@apollo/client';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'React Native Serverless API',
+  description: 'The best tools and resources for busy developers',
+};
 
 export default function ReactNativeApiPage({ records }) {
   return (
     <Layout
-      seoTitle="React Native Serverless API"
-      seoDescription="The best tools and resources for busy developers"
       ogImageTitle="React Native Serverless API"
       withAccessoryRight={
         <Button href="https://airtable.com/shrKPA2DGcG8xnQGG">
           Add a new API
         </Button>
       }
+      seoTitle={'React Native Serverless API'}
+      seoDescription={'The best tools and resources for busy developers'}
     >
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 ">
         <Text variant="h3" style="py-4">

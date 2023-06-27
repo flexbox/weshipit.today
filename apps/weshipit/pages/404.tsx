@@ -1,6 +1,12 @@
 import { Text } from '@weshipit/ui';
 import Link from 'next/link';
 import { Layout } from '../components/layout';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: '404 : Page not found',
+  description: 'We are sorry but the page you are looking for does not exist.',
+};
 
 export default function NotFoundPage() {
   return (
@@ -8,9 +14,11 @@ export default function NotFoundPage() {
       withHeader
       withContainer
       withFooter
-      seoTitle="404 : Page not found"
-      seoDescription="We are sorry but the page you are looking for does not exist."
       ogImageTitle="weshipit - 404"
+      seoTitle={'404 : Page not found'}
+      seoDescription={
+        'We are sorry but the page you are looking for does not exist.'
+      }
     >
       <div className="m-auto w-2/3 py-24 ">
         <Text variant={'h3'} style="mb-12">

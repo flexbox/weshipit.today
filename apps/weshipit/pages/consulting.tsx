@@ -2,6 +2,13 @@ import { Button, Hero, Text } from '@weshipit/ui';
 import { Layout } from '../components/layout';
 import Cal, { getCalApi } from '@calcom/embed-react';
 import { useEffect } from 'react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'React Native Consulting',
+  description:
+    'Looking to improve your skills as a React Native developer? Our coaching services are here to help. Our experienced team will provide personalized guidance and support to help you take your skills to the next level. Whether you‘re a beginner or an experienced developer, we have a coaching program that‘s right for you',
+};
 
 /* eslint-disable-next-line */
 export interface ConsultingProps {}
@@ -18,13 +25,15 @@ export function Consulting(props: ConsultingProps) {
     <Layout
       withContainer
       withFooter
-      seoTitle="React Native Consulting"
-      seoDescription="Looking to improve your skills as a React Native developer? Our coaching services are here to help. Our experienced team will provide personalized guidance and support to help you take your skills to the next level. Whether you're a beginner or an experienced developer, we have a coaching program that's right for you."
       ogImageTitle="Helping you to ship your vision in production"
       withAccessoryRight={
         <Button intent="ghost" href="https://cal.com/davidl/coaching">
           Schedule 1-to-1 consulting
         </Button>
+      }
+      seoTitle={'React Native Consulting'}
+      seoDescription={
+        'Looking to improve your skills as a React Native developer? Our coaching services are here to help. Our experienced team will provide personalized guidance and support to help you take your skills to the next level. Whether you‘re a beginner or an experienced developer, we have a coaching program that‘s right for you'
       }
     >
       <Hero>

@@ -3,6 +3,12 @@ import { Button, Text, ApiCardLogo, ApiList } from '@weshipit/ui';
 import client from '../api/apollo-client';
 import Layout from '../../components/layout';
 import { linksApi } from '../api/links';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Slug React Native Serverless API',
+  description: 'The best tools and resources for busy developers',
+};
 
 export function Slug({ records, recomendedRecords }) {
   if (records[0] === undefined || records[0].fields === undefined) {
@@ -19,12 +25,12 @@ export function Slug({ records, recomendedRecords }) {
 
   return (
     <Layout
-      seoTitle="Slug React Native Serverless API"
-      seoDescription="The best tools and resources for busy developers"
       ogImageTitle="React Native Serverless API"
       withAccessoryRight={
         <Button href={linksApi.airtable.TOOLS_FORM}>Add a new API</Button>
       }
+      seoTitle={'Slug React Native Serverless API'}
+      seoDescription={'The best tools and resources for busy developers'}
     >
       <div className="m-auto w-5/6 py-16  md:w-2/3">
         <Text variant="h2" style="w-2/3 md:m-auto">

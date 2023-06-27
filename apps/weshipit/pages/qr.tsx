@@ -2,14 +2,19 @@ import { Text } from '@weshipit/ui';
 import { Layout } from '../components/layout';
 import Script from 'next/script';
 import { linksApi } from './api/links';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'FREE Pair Programming Session',
+};
 
 export function Qr() {
   return (
     <Layout
-      seoTitle="FREE Pair Programming Session"
-      seoDescription={''}
       withHeader
       withFooter
+      seoTitle={'FREE Pair Programming Session'}
+      seoDescription={''}
     >
       <div className="mx-auto max-w-2xl p-3">
         <div className="prose prose-lg">

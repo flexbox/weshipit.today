@@ -4,9 +4,15 @@ import { figmaDemo } from '../data/index';
 import Image from 'next/image';
 import React from 'react';
 import { BuyButton } from '@weshipit/ui';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title:
+    'Boilerplate to generate quality mobile screenshots for Apple App Store and Google Play store.',
+};
 
 const IndexPage = () => (
-  <Layout seoTitle="Boilerplate to generate quality mobile screenshots for Apple App Store and Google Play store.">
+  <Layout>
     <div className="relative min-h-screen overflow-hidden bg-gray-900">
       <div className="absolute hidden lg:block"></div>
 

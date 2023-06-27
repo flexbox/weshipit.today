@@ -11,6 +11,13 @@ import Link from 'next/link';
 import { getAllClients } from './api/client';
 import Layout from '../components/layout';
 // eslint-disable-next-line @nx/enforce-module-boundaries
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'React Native Experts',
+  description:
+    'At our React Native Development Agency, we specialize in creating high-quality, performant, and scalable mobile applications using the latest technologies and best practices. Our team of experienced developers can help you bring your idea to life and deliver a seamless user experience across all platforms. Contact us today to discuss your project and get a free quote.',
+};
 
 import { linksApi } from './api/links';
 
@@ -35,8 +42,6 @@ export default function IndexPage({ clients }: clientsPageProps) {
     <Layout
       withContainer
       withFooter
-      seoTitle="React Native Experts"
-      seoDescription="At our React Native Development Agency, we specialize in creating high-quality, performant, and scalable mobile applications using the latest technologies and best practices. Our team of experienced developers can help you bring your idea to life and deliver a seamless user experience across all platforms. Contact us today to discuss your project and get a free quote."
       ogImageTitle="React Native Experts"
       withAccessoryRight={
         <div className="sm:flex sm:justify-center lg:justify-start">
@@ -44,6 +49,10 @@ export default function IndexPage({ clients }: clientsPageProps) {
             Book a consultation
           </Button>
         </div>
+      }
+      seoTitle={'React Native Experts'}
+      seoDescription={
+        'At our React Native Development Agency, we specialize in creating high-quality, performant, and scalable mobile applications using the latest technologies and best practices. Our team of experienced developers can help you bring your idea to life and deliver a seamless user experience across all platforms. Contact us today to discuss your project and get a free quote.'
       }
     >
       <Hero>

@@ -3,6 +3,13 @@ import { Layout } from '../components/layout';
 import { getAllClients } from './api/client';
 import { Button, Text } from '@weshipit/ui';
 import { ClientsList } from '@weshipit/ui';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Clients',
+  description:
+    'Our clients are at the heart of everything we do. We are proud to have worked with a diverse range of businesses and organizations, helping them achieve their goals with our high-quality React Native development services. Visit our /clients page to see a selection of our satisfied clients and learn more about the projects we have completed for them.',
+};
 
 interface ClientProps {
   id: string;
@@ -26,9 +33,11 @@ export default function ClientsPage({ clients }: clientsPageProps) {
       withHeader
       withContainer
       withFooter
-      seoTitle="Clients"
-      seoDescription="Our clients are at the heart of everything we do. We are proud to have worked with a diverse range of businesses and organizations, helping them achieve their goals with our high-quality React Native development services. Visit our /clients page to see a selection of our satisfied clients and learn more about the projects we have completed for them."
       ogImageTitle="Clients"
+      seoTitle={'Clients'}
+      seoDescription={
+        'Our clients are at the heart of everything we do. We are proud to have worked with a diverse range of businesses and organizations, helping them achieve their goals with our high-quality React Native development services. Visit our /clients page to see a selection of our satisfied clients and learn more about the projects we have completed for them.'
+      }
     >
       <div className="py-24">
         <Text variant="h3" style="py-4">
