@@ -14,3 +14,4 @@ export * from './lib/hyperlink/hyperlink';
 export * from './lib/text/text';
 export * from './lib/card-homepage/card-homepage';
 export * from './lib/card-gradient/card-gradient';
+export * from './lib/react-native-tools/type-filter/type-filter';
