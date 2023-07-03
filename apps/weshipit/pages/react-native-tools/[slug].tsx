@@ -18,9 +18,9 @@ export function Slug({ records, recomendedRecords }) {
 
   return (
     <Layout
-      seoTitle="Slug React Native Serverless API"
-      seoDescription="The best tools and resources for busy developers"
-      ogImageTitle="React Native Serverless API"
+      seoTitle={`${name} React Native Tools and Resources`}
+      seoDescription="The best tools and resources for busy developers in React Native"
+      ogImageTitle={`${name} for React Native`}
       withAccessoryRight={
         <Button href={linksApi.airtable.TOOLS_FORM}>Add a new API</Button>
       }
