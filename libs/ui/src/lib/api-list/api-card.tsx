@@ -8,7 +8,7 @@ import Link from 'next/link';
 import { ApiCardLogo } from './api-card-logo';
 
 export function ApiCard({ fields }: ApiProps) {
-  const { pricing, type, name, logo, website_url, slug } = fields;
+  const { pricing, type, name, website_url, slug } = fields;
 
   if (!name) {
     return null;
@@ -65,11 +65,7 @@ export function ApiCard({ fields }: ApiProps) {
             </div>
             <div className="justify-center">
               <div className="my-8 flex items-center justify-between">
-                <ApiCardLogo
-                  name={name}
-                  websiteUrl={website_url}
-                  logoUrl={logo?.[0].url || undefined}
-                />
+                <ApiCardLogo name={name} websiteUrl={website_url} />
               </div>
             </div>
             <Text variant="p1" style="mb-6" color="text-gray-400">

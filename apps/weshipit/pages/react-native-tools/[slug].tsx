@@ -14,8 +14,7 @@ export function Slug({ records, recomendedRecords }) {
   }
 
   const { fields } = records[0];
-  const { name, description, logo, website_url } = fields;
-  const logoUrl = logo?.[0].url || undefined;
+  const { name, description, website_url } = fields;
 
   return (
     <Layout
@@ -31,7 +30,7 @@ export function Slug({ records, recomendedRecords }) {
           {name}
         </Text>
         <div className="my-16 flex w-full  justify-center">
-          <ApiCardLogo name={name} websiteUrl={website_url} logoUrl={logoUrl} />
+          <ApiCardLogo name={name} websiteUrl={website_url} />
         </div>
         <div className="m-auto my-8 rounded-2xl bg-white p-8 md:w-2/3 ">
           <Text variant="p1"> {description} </Text>

@@ -1,13 +1,11 @@
 import Image from 'next/image';
-import { useState } from 'react';
 
 export interface ApiCardLogoProps {
   name: string;
   websiteUrl: string;
-  logoUrl?: string;
 }
 
-export function ApiCardLogo({ websiteUrl, logoUrl, name }: ApiCardLogoProps) {
+export function ApiCardLogo({ websiteUrl, name }: ApiCardLogoProps) {
   function removeHttp(url: string) {
     if (url.startsWith('https://')) {
       const https = 'https://';
@@ -22,21 +20,27 @@ export function ApiCardLogo({ websiteUrl, logoUrl, name }: ApiCardLogoProps) {
     return url;
   }
 
-  const domain = removeHttp(websiteUrl);
-  const logoSrc = `https://logo.clearbit.com/${domain}?size=600`;
-  const fallbackSrc = logoUrl || '';
+  /**
+   * Transforms https://expo.dev/ to expo.dev to call an image from logo.clearbit.com
+   * @param url
+   * @returns
+   */
+  function deleteAfterSlash(url: string) {
+    const domain = removeHttp(url);
+    const domainParts = domain.split('/');
+    return domainParts[0];
+  }
 
-  const [imgSrc, setImgSrc] = useState(logoSrc);
+  const domain = deleteAfterSlash(websiteUrl);
+  const logoSrc = `https://logo.clearbit.com/${domain}?size=600`;
 
   return (
     <Image
-      src={imgSrc}
+      src={logoSrc}
       alt={`Logo of ${name} compatible with React Native`}
       width={150}
       height={150}
-      onError={() => {
-        setImgSrc(fallbackSrc);
-      }}
+      loading="lazy"
     />
   );
 }

@@ -14,8 +14,17 @@ describe('ApiCardLogo', () => {
     const { baseElement } = render(
       <ApiCardLogo
         name="Watermelon DB"
-        websiteUrl="https://nozbe.github.io/WatermelonDB/"
-        logoUrl="https://v5.airtableusercontent.com/v1/13/13/1671120000000/vRTGxEByML_Z-VbFjjrwaA/fVyVB9JatbddUC5KtiV3cHhYwEOFHwXJvmZyKm7-0oJ2kNJbn7VK2fX_mwjx7QaWhl_KI2cIif7J69QRP9WH1lVBGXLIgwDXSo_RZhbEr58/-ITIbiRQVICg6QdqcM3j2OHXAFqMaLrtzT5YpQte3ug"
+        websiteUrl="https://nozbe.github.io/WatermelonDB/index.html"
+      />
+    );
+    expect(baseElement).toBeTruthy();
+  });
+
+  it('should render successfully when logo.clearbit.com returns a 404', () => {
+    const { baseElement } = render(
+      <ApiCardLogo
+        name="react-native-mmkv"
+        websiteUrl=" https://github.com/mrousavy/react-native-mmkv"
       />
     );
     expect(baseElement).toBeTruthy();

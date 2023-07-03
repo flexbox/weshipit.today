@@ -23,38 +23,44 @@ export function TypeFilter() {
   return (
     <ul className="grid grid-cols-1 gap-4 lg:grid-cols-6">
       <li>
-        <a href={pathname + '?' + createQueryString('type', 'Analytics')}>
+        <Link href={pathname + '?' + createQueryString('type', 'Analytics')}>
           <Badge intent={'lime'}># Analytics</Badge>
-        </a>
+        </Link>
       </li>
       <li>
-        <a href={pathname + '?' + createQueryString('type', 'Authentication')}>
+        <Link
+          href={pathname + '?' + createQueryString('type', 'Authentication')}
+        >
           <Badge intent={'indigo'}># Authentication</Badge>
-        </a>
+        </Link>
       </li>
       <li>
-        <a href={pathname + '?' + createQueryString('type', 'Backend')}>
+        <Link href={pathname + '?' + createQueryString('type', 'Backend')}>
           <Badge intent={'green'}># Backend</Badge>
-        </a>
+        </Link>
       </li>
       <li>
-        <a href={pathname + '?' + createQueryString('type', 'Crash reporting')}>
+        <Link
+          href={pathname + '?' + createQueryString('type', 'Crash reporting')}
+        >
           <Badge intent={'pink'}># Crash reporting</Badge>
-        </a>
+        </Link>
       </li>
       <li>
-        <a
+        <Link
           href={
             pathname + '?' + createQueryString('type', 'Persistent storage')
           }
         >
           <Badge intent={'cyan'}># Persistent storage</Badge>
-        </a>
+        </Link>
       </li>
       <li>
-        <a href={pathname + '?' + createQueryString('type', 'Infrastructure')}>
+        <Link
+          href={pathname + '?' + createQueryString('type', 'Infrastructure')}
+        >
           <Badge intent={'yellow'}># Infrastructure</Badge>
-        </a>
+        </Link>
       </li>
     </ul>
   );
