@@ -101,34 +101,6 @@ export const apiListFixture: ApiProps[] = [
     fields: {
       description:
         'FusionAuth is an open source identity and access management platform.',
-      logo: [
-        {
-          filename: 'profile.png',
-          height: 2048,
-          id: 'attglZOcBWCBBsWte',
-          size: 10299,
-          thumbnails: {
-            full: {
-              height: 3000,
-              url: 'https://v5.airtableusercontent.com/v1/10/10/1668016800000/VzHy4H3eNogPjw8iyGpfxA/CepyYSijFWeeHG0guk9-5XUflsKOY-VzKv5zPKHFmm1KTfE5Bw1IAfL_KXYXx7Vc7zkt0wknqLiFHOwUl_q25w/9TGuum9Wi7Wb7_Fu0ulrcdsfOB0Ds-ob4XuK72IPokI',
-              width: 3000,
-            },
-            large: {
-              height: 512,
-              url: 'https://v5.airtableusercontent.com/v1/10/10/1668016800000/62Y1Wql02ou21yv8AKGLSA/rwDRlM_TO9zPpz_x9mnZOpU4rzQWxF69PFd5MD4Q0C7BeAHrkWOVjihB1lFec-R86BZGB4HD1TrRz5eLw7GqcQ/0p9oeZ2l8ip-rJ1zVFGHCAwWNWAy8VU_us_aSoRQZy0',
-              width: 512,
-            },
-            small: {
-              height: 36,
-              url: 'https://v5.airtableusercontent.com/v1/10/10/1668016800000/QzmBxNm-wmPWjp307D4toQ/7m0dXsRjpituCDfxiECxfpL-4FBHtoy9pHNM2vkhvEJIdxVtSWWZJFnTR3knTU2weBsH3573TBp3DNJ_-XL6hA/H6ngHK7KybUN0UeqjPmBU26j5hOW6e_7GLKeydRHczE',
-              width: 36,
-            },
-          },
-          type: 'image/png',
-          url: 'https://v5.airtableusercontent.com/v1/10/10/1668016800000/JFLxIm2fPoGcVH_yy5zeUQ/sCzvEG0xdEaoYWm8dhp4iYJrrsl3fYw38CkuPS8lwWIVPPM3EhutgNUjKEqr3bzoJPE0rVwDQJ_dyxlGLUwBQB_NUVROeZ-Kjurv9Z9OKTI/J_zBNZ8DM_7f85VJl0P5ulpIaQy_WU3N7jouEdumFfM',
-          width: 2048,
-        },
-      ],
       name: 'FusionAuth',
       pricing: ['Free tiers', 'Premium tiers'],
       type: 'Authentication',

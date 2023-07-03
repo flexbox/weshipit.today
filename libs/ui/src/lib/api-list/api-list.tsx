@@ -1,5 +1,5 @@
 import { ApiListProps } from './api-list.d';
-import { ApiCard } from '@weshipit/ui';
+import { ApiCard } from './api-card';
 
 export function ApiList({ apis }: ApiListProps) {
   return (

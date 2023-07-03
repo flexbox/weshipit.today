@@ -1,7 +1,7 @@
 import { Layout } from '../../components/layout';
 import client from '../api/apollo-client';
 
-import { ApiList, Button, Hyperlink, Text } from '@weshipit/ui';
+import { ApiList, Button, TypeFilter, Hyperlink, Text } from '@weshipit/ui';
 import { gql } from '@apollo/client';
 
 export default function ReactNativeApiPage({ records }) {
@@ -16,7 +16,7 @@ export default function ReactNativeApiPage({ records }) {
         </Button>
       }
     >
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 ">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
         <Text variant="h3" style="py-4">
           The best tools and resources for busy developers
         </Text>
@@ -35,7 +35,13 @@ export default function ReactNativeApiPage({ records }) {
       </div>
 
       <div className="mx-auto max-w-screen-2xl px-4 pb-48 sm:px-6">
-        <ApiList apis={records} />
+        <div className="mb-6">
+          <TypeFilter />
+        </div>
+
+        <div className="flex-1">
+          <ApiList apis={records} />
+        </div>
 
         <div className="py-12">
           <Hyperlink
@@ -51,7 +57,14 @@ export default function ReactNativeApiPage({ records }) {
   );
 }
 
-export async function getServerSideProps() {
+/**
+ * Filter airtable records by type
+ */
+function filterRecordsByType(records, type) {
+  return records.filter((record) => record.fields.type === type);
+}
+
+export async function getServerSideProps(context) {
   const apiKey = process.env.AIRTABLE_API_KEY;
   const baseId = process.env.AIRTABLE_BASE_ID_REACT_NATIVE;
 
@@ -72,9 +85,15 @@ export async function getServerSideProps() {
     `,
   });
 
+  const { query } = context;
+  let records = data.airtable_tableData.records;
+  if (query.type) {
+    records = filterRecordsByType(records, query.type);
+  }
+
   return {
     props: {
-      records: data.airtable_tableData.records,
+      records,
     },
   };
 }
