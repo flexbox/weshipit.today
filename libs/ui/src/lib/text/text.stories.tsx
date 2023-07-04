@@ -8,13 +8,27 @@ export default {
 
 const Template: ComponentStory<typeof Text> = () => (
   <div>
-    <Text variant="h1">Title</Text>
-    <Text variant="h2">Title</Text>
-    <Text variant="h3">Title</Text>
-    <Text variant="s1">Title</Text>
-    <Text variant="s2">Title</Text>
-    <Text variant="p1">Title</Text>
-    <Text variant="p2">Title</Text>
+    <Text variant="h1" textStyle={'h1'}>
+      Title
+    </Text>
+    <Text variant="h2" textStyle={'h2'}>
+      Title
+    </Text>
+    <Text variant="h3" textStyle={'h3'}>
+      Title
+    </Text>
+    <Text variant="p" textStyle={'s1'}>
+      Title
+    </Text>
+    <Text variant="p" textStyle={'s2'}>
+      Title
+    </Text>
+    <Text variant="p" textStyle={'p1'}>
+      Title
+    </Text>
+    <Text variant="p" textStyle={'p2'}>
+      Title
+    </Text>
   </div>
 );
 

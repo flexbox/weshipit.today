@@ -26,18 +26,21 @@ export function Slug({ records, recomendedRecords }) {
       }
     >
       <div className="m-auto w-5/6 py-16  md:w-2/3">
-        <Text variant="h2" style="w-2/3 md:m-auto">
+        <Text variant="h2" textStyle="h2" className="w-2/3 md:m-auto">
           {name}
         </Text>
         <div className="my-16 flex w-full  justify-center">
           <ApiCardLogo name={name} websiteUrl={website_url} />
         </div>
         <div className="m-auto my-8 rounded-2xl bg-white p-8 md:w-2/3 ">
-          <Text variant="p1"> {description} </Text>
+          <Text variant="p" textStyle="p1">
+            {' '}
+            {description}{' '}
+          </Text>
         </div>
       </div>
       <div className="m-auto flex w-4/5 flex-col">
-        <Text variant="h3" style="py-4">
+        <Text variant="h3" textStyle="h3" className="py-4">
           Other tools from the category {fields.type}
         </Text>
         <div className="mb-48 pt-4">
