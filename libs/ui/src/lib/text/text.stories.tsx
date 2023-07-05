@@ -6,30 +6,53 @@ export default {
   title: 'Text',
 } as ComponentMeta<typeof Text>;
 
-const Template: ComponentStory<typeof Text> = () => (
-  <div>
-    <Text variant="h1" textStyle={'h1'}>
-      Title
+const VariantExamples = () => (
+  <div className="grid gap-4">
+    <Text as="h1" variant="h1">
+      Title h1
     </Text>
-    <Text variant="h2" textStyle={'h2'}>
-      Title
+    <Text as="h2" variant="h2">
+      Title h2
     </Text>
-    <Text variant="h3" textStyle={'h3'}>
-      Title
+    <Text as="h3" variant="h3">
+      Title h3
     </Text>
-    <Text variant="p" textStyle={'s1'}>
-      Title
+    <Text as="p" variant="s1">
+      Title s1
     </Text>
-    <Text variant="p" textStyle={'s2'}>
-      Title
+    <Text as="p" variant="s2">
+      Title s2
     </Text>
-    <Text variant="p" textStyle={'p1'}>
-      Title
+    <Text as="p" variant="p1">
+      Title p1
     </Text>
-    <Text variant="p" textStyle={'p2'}>
-      Title
+    <Text as="p" variant="p2">
+      Title p2
     </Text>
   </div>
 );
+export const Variant = VariantExamples.bind({});
 
-export const allVariant = Template.bind({});
+const SizeExamples = () => (
+  <div className="grid gap-4">
+    <Text as="h1" variant="h1">
+      Title h1
+    </Text>
+    <Text as="h1" variant="h2">
+      Title h2
+    </Text>
+    <Text as="h1" variant="h3">
+      Title h3
+    </Text>
+    <Text as="p" variant="h1">
+      Paragraph h1
+    </Text>
+    <Text as="p" variant="h2">
+      Paragraph h2
+    </Text>
+    <Text as="p" variant="h3">
+      Paragraph h3
+    </Text>
+  </div>
+);
+export const Size = SizeExamples.bind({});

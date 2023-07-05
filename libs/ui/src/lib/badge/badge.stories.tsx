@@ -24,7 +24,6 @@ const VariantExamples = () => (
     <Badge variant="yellow">Infrastructure</Badge>
   </div>
 );
-
 export const Variant = VariantExamples.bind({});
 
 const SizeExamples = () => (
@@ -33,5 +32,4 @@ const SizeExamples = () => (
     <Badge size="md">Infrastructure</Badge>
   </div>
 );
-
 export const Size = SizeExamples.bind({});

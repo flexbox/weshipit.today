@@ -6,7 +6,7 @@ export function ClientsList({ clients }: ClientsListProps) {
     <div className="grid gap-4 pb-24">
       {clients.map((client) => (
         <div key={client.id}>
-          <Text variant="p" textStyle={'s2'}>
+          <Text as="p" variant={'s2'}>
             {client.data.name}
           </Text>
         </div>

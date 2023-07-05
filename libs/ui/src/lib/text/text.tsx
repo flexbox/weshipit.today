@@ -1,16 +1,9 @@
 import React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 
-const text = cva('badge', {
+const text = cva('text', {
   variants: {
-    // size: {
-    //   sm: ['text-sm', 'py-1', 'px-2', 'rounded-3xl'],
-    //   md: ['text-base', 'py-2', 'px-4', 'rounded-3xl'],
-    //   lg: ['text-lg', 'py-2', 'px-4', 'rounded-3xl'],
-    //   xl: ['text-xl', 'py-2', 'px-4', 'rounded-3xl'],
-    //   xxl: ['text-2xl', 'py-2', 'px-4', 'rounded-3xl'],
-    // },
-    variant: {
+    as: {
       span: ['span'],
       p: ['p'],
       h1: ['h1'],
@@ -21,7 +14,7 @@ const text = cva('badge', {
       h6: ['h6'],
       div: ['div'],
     },
-    textStyle: {
+    variant: {
       h1: [
         'text-4xl font-extrabold tracking-tight dark:text-slate-200 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl',
       ],
@@ -45,10 +38,10 @@ const text = cva('badge', {
       ],
     },
   },
-  compoundVariants: [{ variant: 'h2', textStyle: 'h2' }],
+  compoundVariants: [{ as: 'h2', variant: 'h2' }],
   defaultVariants: {
-    variant: 'p',
-    textStyle: 'p1',
+    as: 'p',
+    variant: 'p1',
   },
 });
 
@@ -58,68 +51,68 @@ export interface TextProps
 
 export const Text: React.FC<TextProps> = ({
   className,
+  as,
   variant,
-  textStyle,
   ...props
 }) => {
-  if (variant === 'span') {
+  if (as === 'span') {
     return (
-      <span className={text({ className, textStyle })} {...props}>
+      <span className={text({ className, variant })} {...props}>
         {props.children}
       </span>
     );
   }
-  if (variant === 'p') {
+  if (as === 'p') {
     return (
-      <p className={text({ className, textStyle })} {...props}>
+      <p className={text({ className, variant })} {...props}>
         {props.children}
       </p>
     );
   }
-  if (variant === 'h1') {
+  if (as === 'h1') {
     return (
-      <h1 className={text({ className, textStyle })} {...props}>
+      <h1 className={text({ className, variant })} {...props}>
         {props.children}
       </h1>
     );
   }
-  if (variant === 'h2') {
+  if (as === 'h2') {
     return (
-      <h2 className={text({ className, textStyle })} {...props}>
+      <h2 className={text({ className, variant })} {...props}>
         {props.children}
       </h2>
     );
   }
-  if (variant === 'h3') {
+  if (as === 'h3') {
     return (
-      <h3 className={text({ className, textStyle })} {...props}>
+      <h3 className={text({ className, variant })} {...props}>
         {props.children}
       </h3>
     );
   }
-  if (variant === 'h4') {
+  if (as === 'h4') {
     return (
-      <h4 className={text({ className, textStyle })} {...props}>
+      <h4 className={text({ className, variant })} {...props}>
         {props.children}
       </h4>
     );
   }
-  if (variant === 'h5') {
+  if (as === 'h5') {
     return (
-      <h5 className={text({ className, textStyle })} {...props}>
+      <h5 className={text({ className, variant })} {...props}>
         {props.children}
       </h5>
     );
   }
-  if (variant === 'h6') {
+  if (as === 'h6') {
     return (
-      <h6 className={text({ className, textStyle })} {...props}>
+      <h6 className={text({ className, variant })} {...props}>
         {props.children}
       </h6>
     );
   }
   return (
-    <div className={text({ className, textStyle })} {...props}>
+    <div className={text({ className, variant })} {...props}>
       {props.children}
     </div>
   );

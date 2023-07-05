@@ -31,15 +31,15 @@ export default function ClientsPage({ clients }: clientsPageProps) {
       ogImageTitle="Clients"
     >
       <div className="py-24">
-        <Text variant="h3" textStyle="h3" className="py-4">
+        <Text as="h3" variant="h3" className="py-4">
           Our Customers
         </Text>
-        <Text variant="p" textStyle="s2" className="mb-4">
+        <Text as="p" variant="s2" className="mb-4">
           We help ambitious teams do amazing things. Over the last decades we’ve
           guided more than {clients.length} companies to winning products,
           impactful designs and right answers.
         </Text>
-        <Text variant="p" textStyle="p1" className="mb-4">
+        <Text as="p" variant="p1" className="mb-4">
           Over the years, we have had the good fortune to work on React Native
           development and design projects for clients from a wide range of
           industries and locations. Our clients have come from Paris France,
@@ -49,7 +49,7 @@ export default function ClientsPage({ clients }: clientsPageProps) {
       </div>
       <ClientsList clients={clients} />
       <div>
-        <Text variant="p" textStyle="s2" className="py-4">
+        <Text as="p" variant="s2" className="py-4">
           is your company missing?
         </Text>
         <Link

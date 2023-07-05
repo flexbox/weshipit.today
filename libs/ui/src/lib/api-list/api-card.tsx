@@ -50,8 +50,8 @@ export function ApiCard({ fields }: ApiProps) {
           <div className="justify-start">
             <div className="flex items-center justify-between">
               <Text
-                variant="p"
-                textStyle="s2"
+                as="p"
+                variant="s2"
                 className="mb-2 text-left font-semibold"
               >
                 {name}
@@ -59,8 +59,8 @@ export function ApiCard({ fields }: ApiProps) {
               {pricing && (
                 <div className="group relative flex items-center justify-center overflow-hidden rounded-2xl border-2 border-dashed border-gray-400 px-4">
                   <Text
-                    variant="p"
-                    textStyle={'p2'}
+                    as="p"
+                    variant={'p2'}
                     className="font-bold text-gray-400"
                   >
                     <small>{pricing[0]}</small>
@@ -76,14 +76,14 @@ export function ApiCard({ fields }: ApiProps) {
                 <ApiCardLogo name={name} websiteUrl={website_url} />
               </div>
             </div>
-            <Text variant="p" textStyle={'p1'} className="mb-6 text-gray-400">
+            <Text as="p" variant={'p1'} className="mb-6 text-gray-400">
               {description}
             </Text>
           </div>
 
           <div className=" justify-end">
             <div className="flex justify-start ">
-              <Badge size="sm" intent={typeIntent as any}>
+              <Badge size="sm" variant={typeIntent as any}>
                 {type}
               </Badge>
             </div>

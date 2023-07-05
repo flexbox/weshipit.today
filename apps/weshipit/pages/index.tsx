@@ -72,7 +72,7 @@ export default function IndexPage({ clients }: clientsPageProps) {
       <section className="m-auto max-w-7xl">
         <CardGradient intent="purple">
           <div className="mb-24 p-8 text-center ">
-            <Text variant="h3" textStyle="h3" className="py-4">
+            <Text as="h3" variant="h3" className="py-4">
               Some of the wonderful clients who have trusted us
             </Text>
             <ClientsListHomepage clients={clients} />
