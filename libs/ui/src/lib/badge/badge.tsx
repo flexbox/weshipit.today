@@ -3,7 +3,7 @@ import { cva, type VariantProps } from 'class-variance-authority';
 
 const badge = cva('badge', {
   variants: {
-    intent: {
+    variant: {
       indigo: ['bg-indigo-400', 'text-indigo-100'],
       pink: ['bg-pink-400', 'text-pink-100'],
       cyan: ['bg-cyan-400', 'text-cyan-100'],
@@ -16,9 +16,9 @@ const badge = cva('badge', {
       md: ['text-base', 'py-2', 'px-4', 'rounded-3xl'],
     },
   },
-  compoundVariants: [{ intent: 'indigo', size: 'md' }],
+  compoundVariants: [{ variant: 'indigo', size: 'md' }],
   defaultVariants: {
-    intent: 'indigo',
+    variant: 'indigo',
     size: 'md',
   },
 });
@@ -29,7 +29,7 @@ export interface BadgeProps
 
 export const Badge: React.FC<BadgeProps> = ({
   className,
-  intent,
+  variant,
   size,
   ...props
-}) => <div className={badge({ intent, size, className })} {...props} />;
+}) => <div className={badge({ variant, size, className })} {...props} />;

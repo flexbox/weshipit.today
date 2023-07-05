@@ -14,18 +14,18 @@ Primary.args = {
   children: 'Primary',
 };
 
-const IntentExamples = () => (
+const VariantExamples = () => (
   <div className="grid gap-4">
-    <Badge intent="lime">Analytics</Badge>
-    <Badge intent="indigo">Authentication</Badge>
-    <Badge intent="green">Backend</Badge>
-    <Badge intent="pink">Crash reporting</Badge>
-    <Badge intent="cyan">Persistent storage</Badge>
-    <Badge intent="yellow">Infrastructure</Badge>
+    <Badge variant="lime">Analytics</Badge>
+    <Badge variant="indigo">Authentication</Badge>
+    <Badge variant="green">Backend</Badge>
+    <Badge variant="pink">Crash reporting</Badge>
+    <Badge variant="cyan">Persistent storage</Badge>
+    <Badge variant="yellow">Infrastructure</Badge>
   </div>
 );
 
-export const Intent = IntentExamples.bind({});
+export const Variant = VariantExamples.bind({});
 
 const SizeExamples = () => (
   <div className="grid gap-4">
