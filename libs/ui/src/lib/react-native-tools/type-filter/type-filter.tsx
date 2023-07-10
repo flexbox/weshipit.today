@@ -67,7 +67,7 @@ export function TypeFilter() {
       {types.map((type) => (
         <li key={kebabCase(type.name)}>
           <Link href={pathname + '?' + createQueryString('type', type.name)}>
-            <Badge intent={type.color}>
+            <Badge variant={type.color}>
               <div className="flex justify-between">
                 # {type.name}
                 <ChevronRightIcon className="ml-1 h-6 w-6" />

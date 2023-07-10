@@ -28,7 +28,7 @@ export function Consulting(props: ConsultingProps) {
       }
     >
       <Hero>
-        <Text variant="h1" style="uppercase text-center">
+        <Text as="h1" variant="h1" className="text-center uppercase">
           <span className="tracking-widest">Straightforward</span> <br />
           <small className="tracking-wide">React Native solutions</small>
         </Text>
@@ -41,18 +41,18 @@ export function Consulting(props: ConsultingProps) {
       </Hero>
 
       <div className="mx-auto max-w-2xl p-3">
-        <Text variant="p1" style="mb-4">
+        <Text as="p" variant="p1" className="mb-4">
           Every week, I receive emails asking me for a moment with me. I never
           know who to say yes to, who to say no to, and besides, my time is
           precious, I don’t want to waste it. I have absolutely no desire to
           devalue the most precious resource of my life: time.
         </Text>
-        <Text variant="p1" style="mb-4">
+        <Text as="p" variant="p1" className="mb-4">
           The principle is simple: a 60-minute slot, online payment. You can
           send me before the call if you wish a clear email in bullet points,
           which summarizes the objectives of our conversation.
         </Text>
-        <Text variant="p1">
+        <Text as="p" variant="p1">
           My goal is for this hour to be most helpful to you.
         </Text>
       </div>

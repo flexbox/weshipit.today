@@ -17,10 +17,10 @@ export default function ReactNativeApiPage({ records }) {
       }
     >
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
-        <Text variant="h3" style="py-4">
+        <Text as="h3" variant="h3" className="py-4">
           The best tools and resources for busy developers
         </Text>
-        <Text variant="s2" style="mb-8" color="text-gray-500">
+        <Text as="p" variant="s2" className="mb-8 text-gray-500">
           We curated the essentials for the success of your React Native App.
           <br />
           Get all the data with{' '}
