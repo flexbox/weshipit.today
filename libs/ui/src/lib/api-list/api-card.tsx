@@ -1,4 +1,4 @@
-import { ApiProps } from './api-list.d';
+import { RecordProps } from './record-types';
 import { Badge } from '../badge/badge';
 import { Card } from '../card/card';
 import { Text } from '../text/text';
@@ -7,7 +7,7 @@ import truncate from 'lodash/truncate';
 import Link from 'next/link';
 import { ApiCardLogo } from './api-card-logo';
 
-export function ApiCard({ fields }: ApiProps) {
+export function ApiCard({ fields }: RecordProps) {
   const { pricing, type, name, website_url, slug } = fields;
 
   if (!name) {
@@ -37,6 +37,9 @@ export function ApiCard({ fields }: ApiProps) {
       typeIntent = 'cyan';
       break;
     case 'Infrastructure':
+      typeIntent = 'blue';
+      break;
+    case 'Payment':
       typeIntent = 'yellow';
       break;
     default:

@@ -1,6 +1,6 @@
-import { ApiProps } from './api-list.d';
+import { RecordProps } from './record-types';
 
-export const apiListFixture: ApiProps[] = [
+export const apiListFixture: RecordProps[] = [
   {
     fields: {
       description:

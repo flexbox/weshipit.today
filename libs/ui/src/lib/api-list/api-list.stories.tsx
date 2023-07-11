@@ -13,5 +13,5 @@ const Template: ComponentStory<typeof ApiList> = (args) => (
 
 export const List = Template.bind({});
 List.args = {
-  apis: apiListFixture,
+  records: apiListFixture,
 };

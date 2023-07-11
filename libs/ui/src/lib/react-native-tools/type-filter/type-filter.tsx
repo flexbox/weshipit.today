@@ -1,4 +1,4 @@
-import { ChevronRightIcon } from '@heroicons/react/24/solid';
+import { ChevronRightIcon, XMarkIcon } from '@heroicons/react/24/solid';
 import { usePathname, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { useCallback } from 'react';
@@ -8,11 +8,12 @@ import kebabCase from 'lodash/kebabCase';
 interface Type {
   name: string;
   color?:
-    | 'lime'
-    | 'indigo'
-    | 'green'
-    | 'pink'
+    | 'blue'
     | 'cyan'
+    | 'green'
+    | 'indigo'
+    | 'lime'
+    | 'pink'
     | 'yellow'
     | null
     | undefined;
@@ -36,18 +37,24 @@ const types: Type[] = [
     color: 'pink',
   },
   {
-    name: 'Persistent storage',
-    color: 'cyan',
+    name: 'Infrastructure',
+    color: 'blue',
   },
   {
-    name: 'Infrastructure',
+    name: 'Payment',
     color: 'yellow',
+  },
+  {
+    name: 'Persistent storage',
+    color: 'cyan',
   },
 ];
 
 export function TypeFilter() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
+
+  const canResetFitler = searchParams.has('type');
 
   // Get a new searchParams string by merging the current
   // searchParams with a provided key/value pair
@@ -76,6 +83,18 @@ export function TypeFilter() {
           </Link>
         </li>
       ))}
+      {canResetFitler && (
+        <li>
+          <Link href="/react-native-tools">
+            <Badge variant="gray">
+              <div className="flex justify-between">
+                Reset filter
+                <XMarkIcon className="ml-1 h-6 w-6" />
+              </div>
+            </Badge>
+          </Link>
+        </li>
+      )}
     </ul>
   );
 }

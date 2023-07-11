@@ -1,18 +1,46 @@
 import { Layout } from '../../components/layout';
 import client from '../api/apollo-client';
 
-import { ApiList, Button, TypeFilter, Hyperlink, Text } from '@weshipit/ui';
+import {
+  ApiList,
+  Button,
+  TypeFilter,
+  Hyperlink,
+  Text,
+  SearchBar,
+} from '@weshipit/ui';
 import { gql } from '@apollo/client';
+import { useEffect, useState } from 'react';
 
-export default function ReactNativeApiPage({ records }) {
+function filterByDescription(records, searchTerm: string) {
+  return records.filter((record) => {
+    const description = record.fields.description;
+    return description?.toLowerCase().includes(searchTerm);
+  });
+}
+
+export default function ReactNativeToolsPage({ records }) {
+  const numberOfTools = records.length;
+
+  const [searchTerm, setSearchTerm] = useState('');
+  const [searchResults, setSearchResults] = useState(records);
+  const handleChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
+  useEffect(() => {
+    const results = filterByDescription(records, searchTerm);
+    setSearchResults(results);
+  }, [records, searchTerm]);
+
   return (
     <Layout
-      seoTitle="React Native Serverless API"
-      seoDescription="The best tools and resources for busy developers"
-      ogImageTitle="React Native Serverless API"
+      seoTitle={`Repository of ${numberOfTools} resources and tools to elevate your React Native game`}
+      seoDescription={`The best tools & apis for React Native developers. Accelerate your product development and improvement with more than ${numberOfTools} design resources and tools.`}
+      ogImageTitle="React Native Tools"
       withAccessoryRight={
         <Button href="https://airtable.com/shrKPA2DGcG8xnQGG">
-          Add a new API
+          Add a new tool
         </Button>
       }
     >
@@ -25,7 +53,7 @@ export default function ReactNativeApiPage({ records }) {
           <br />
           Get all the data with{' '}
           <a
-            href="https://gum.co/road-react-native"
+            href="https://gum.co/road-react-native/HELLO_FRIEND"
             className="font-semibold text-blue-500 underline underline-offset-4 hover:text-blue-700"
           >
             the React Native Roadmap
@@ -37,10 +65,11 @@ export default function ReactNativeApiPage({ records }) {
       <div className="mx-auto max-w-screen-2xl px-4 pb-48 sm:px-6">
         <div className="mb-6">
           <TypeFilter />
+          <SearchBar searchTerm={searchTerm} handleChange={handleChange} />
         </div>
 
         <div className="flex-1">
-          <ApiList apis={records} />
+          <ApiList records={searchResults} />
         </div>
 
         <div className="py-12">

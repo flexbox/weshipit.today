@@ -1,11 +1,11 @@
-import { ApiListProps } from './api-list.d';
+import { ToolListProps } from './record-types';
 import { ApiCard } from './api-card';
 
-export function ApiList({ apis }: ApiListProps) {
+export function ApiList({ records }: ToolListProps) {
   return (
     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {apis.map((api, index) => (
-        <ApiCard fields={api.fields} key={`api-list-${index}`} />
+      {records.map((record, index) => (
+        <ApiCard fields={record.fields} key={`api-list-${index}`} />
       ))}
     </div>
   );

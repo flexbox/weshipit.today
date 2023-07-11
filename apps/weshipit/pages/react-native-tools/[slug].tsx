@@ -44,7 +44,7 @@ export function Slug({ records, recomendedRecords }) {
           Other tools from the category {fields.type}
         </Text>
         <div className="mb-48 pt-4">
-          <ApiList apis={recomendedRecords} />
+          <ApiList records={recomendedRecords} />
         </div>
       </div>
     </Layout>
