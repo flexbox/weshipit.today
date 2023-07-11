@@ -70,19 +70,19 @@ export default function IndexPage({ clients }: clientsPageProps) {
         <CardHomepage />
       </Hero>
       <section className="m-auto max-w-7xl">
-        <CardGradient intent="purple">
-          <div className="mb-24 p-8 text-center ">
-            <Text as="h3" variant="h3" className="py-4">
-              Some of the wonderful clients who have trusted us
+        <div className="mb-24 p-8 text-center ">
+          <div className="flex justify-between">
+            <Text as="h3" variant="p2" className="text-left">
+              Trusted by top companies
             </Text>
-            <ClientsListHomepage clients={clients} />
             <Link legacyBehavior href="/clients">
               <a className="text-base font-bold text-blue-700 underline underline-offset-4 hover:text-blue-900 dark:text-indigo-600 dark:hover:text-indigo-900">
                 View our client list
               </a>
             </Link>
           </div>
-        </CardGradient>
+          <ClientsListHomepage clients={clients} />
+        </div>
       </section>
     </Layout>
   );
