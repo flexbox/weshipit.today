@@ -57,7 +57,6 @@ export const Button: React.FC<ButtonProps> = ({
   accessoryLeft,
   href,
   size,
-  ...rest
 }) => (
   <a
     href={href}

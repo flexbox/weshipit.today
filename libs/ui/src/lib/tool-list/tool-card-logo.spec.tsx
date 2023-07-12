@@ -1,18 +1,18 @@
 import { render } from '@testing-library/react';
 
-import ApiCardLogo from './api-card-logo';
+import ToolCardLogo from './tool-card-logo';
 
-describe('ApiCardLogo', () => {
+describe('ToolCardLogo', () => {
   it('should render successfully', () => {
     const { baseElement } = render(
-      <ApiCardLogo name="Expo" websiteUrl="https://expo.dev/" />
+      <ToolCardLogo name="Expo" websiteUrl="https://expo.dev/" />
     );
     expect(baseElement).toBeTruthy();
   });
 
   it('should render successfully when logo.clearbit.com returns a 404', () => {
     const { baseElement } = render(
-      <ApiCardLogo
+      <ToolCardLogo
         name="Watermelon DB"
         websiteUrl="https://nozbe.github.io/WatermelonDB/index.html"
       />
@@ -22,7 +22,7 @@ describe('ApiCardLogo', () => {
 
   it('should render successfully when logo.clearbit.com returns a 404', () => {
     const { baseElement } = render(
-      <ApiCardLogo
+      <ToolCardLogo
         name="react-native-mmkv"
         websiteUrl=" https://github.com/mrousavy/react-native-mmkv"
       />

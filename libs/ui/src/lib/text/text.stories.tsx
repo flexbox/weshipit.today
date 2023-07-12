@@ -18,16 +18,22 @@ const VariantExamples = () => (
       Title h3
     </Text>
     <Text as="p" variant="s1">
-      Title s1
+      Subtitle s1
     </Text>
     <Text as="p" variant="s2">
-      Title s2
+      Subtitle s2
     </Text>
     <Text as="p" variant="p1">
-      Title p1
+      Paragraph p1
     </Text>
     <Text as="p" variant="p2">
-      Title p2
+      Paragraph p2
+    </Text>
+    <Text as="p" variant="c1">
+      Paragraph c1
+    </Text>
+    <Text as="p" variant="c2">
+      Paragraph c2
     </Text>
   </div>
 );

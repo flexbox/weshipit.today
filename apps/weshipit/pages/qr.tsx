@@ -12,7 +12,7 @@ export function Qr() {
       withFooter
     >
       <div className="mx-auto max-w-2xl p-3">
-        <div className="prose prose-lg">
+        <div className="prose prose-lg dark:prose-invert">
           <h1 className="mt-8">Office Hours</h1>
           <p>
             Join us during Code and Coffee breaks to pair with one of our

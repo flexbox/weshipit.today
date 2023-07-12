@@ -1,13 +1,13 @@
-import { ApiProps } from './api-list.d';
+import { RecordProps } from './record-types';
 import { Badge } from '../badge/badge';
 import { Card } from '../card/card';
 import { Text } from '../text/text';
 
 import truncate from 'lodash/truncate';
 import Link from 'next/link';
-import { ApiCardLogo } from './api-card-logo';
+import { ToolCardLogo } from './tool-card-logo';
 
-export function ApiCard({ fields }: ApiProps) {
+export function ToolCard({ fields }: RecordProps) {
   const { pricing, type, name, website_url, slug } = fields;
 
   if (!name) {
@@ -37,6 +37,9 @@ export function ApiCard({ fields }: ApiProps) {
       typeIntent = 'cyan';
       break;
     case 'Infrastructure':
+      typeIntent = 'blue';
+      break;
+    case 'Payment':
       typeIntent = 'yellow';
       break;
     default:
@@ -73,7 +76,7 @@ export function ApiCard({ fields }: ApiProps) {
             </div>
             <div className="justify-center">
               <div className="my-8 flex items-center justify-between">
-                <ApiCardLogo name={name} websiteUrl={website_url} />
+                <ToolCardLogo name={name} websiteUrl={website_url} />
               </div>
             </div>
             <Text as="p" variant={'p1'} className="mb-6 text-gray-400">
@@ -94,4 +97,4 @@ export function ApiCard({ fields }: ApiProps) {
   );
 }
 
-export default ApiCard;
+export default ToolCard;

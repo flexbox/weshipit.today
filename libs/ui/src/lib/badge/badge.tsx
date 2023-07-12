@@ -4,16 +4,18 @@ import { cva, type VariantProps } from 'class-variance-authority';
 const badge = cva('badge', {
   variants: {
     variant: {
-      indigo: ['bg-indigo-400', 'text-indigo-100'],
-      pink: ['bg-pink-400', 'text-pink-100'],
-      cyan: ['bg-cyan-400', 'text-cyan-100'],
-      yellow: ['bg-yellow-400', 'text-yellow-100'],
-      green: ['bg-green-400', 'text-green-100'],
-      lime: ['bg-lime-400', 'text-lime-100'],
+      blue: ['bg-blue-400', 'text-blue-700'],
+      cyan: ['bg-cyan-400', 'text-cyan-700'],
+      green: ['bg-green-400', 'text-green-700'],
+      indigo: ['bg-indigo-400', 'text-indigo-700'],
+      lime: ['bg-lime-400', 'text-lime-700'],
+      pink: ['bg-pink-400', 'text-pink-900'],
+      yellow: ['bg-yellow-400', 'text-yellow-700'],
+      gray: ['bg-slate-200', 'text-slate-700'],
     },
     size: {
       sm: ['text-sm', 'py-1', 'px-2', 'rounded-3xl'],
-      md: ['text-base', 'py-2', 'px-4', 'rounded-3xl'],
+      md: ['text-base', 'py-2', 'px-4', 'rounded-3xl', 'font-semibold'],
     },
   },
   compoundVariants: [{ variant: 'indigo', size: 'md' }],

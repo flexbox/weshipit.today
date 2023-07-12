@@ -1,4 +1,4 @@
-export interface ApiProps {
+export interface RecordProps {
   id?: string;
   fields: {
     description: string;
@@ -13,6 +13,6 @@ export interface ApiProps {
   };
 }
 
-export interface ApiListProps {
-  apis: ApiProps[];
+export interface ToolListProps {
+  records: RecordProps[];
 }

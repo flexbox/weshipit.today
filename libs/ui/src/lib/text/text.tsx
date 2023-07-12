@@ -34,8 +34,10 @@ const text = cva('text', {
         'text-base dark:text-slate-200 sm:text-lg md:text-xl lg:text-lg xl:text-xl',
       ],
       p2: [
-        'text-sm font-medium dark:text-slate-200 sm:text-base md:text-lg lg:text-base xl:text-lg ',
+        'text-sm font-medium dark:text-slate-200 sm:text-base md:text-lg lg:text-base xl:text-lg',
       ],
+      c1: ['text-base dark:text-slate-200'],
+      c2: ['text-sm font-medium dark:text-slate-200 '],
     },
   },
   compoundVariants: [{ as: 'h2', variant: 'h2' }],

@@ -1,11 +1,11 @@
 import Image from 'next/image';
 
-export interface ApiCardLogoProps {
+export interface ToolCardLogoProps {
   name: string;
   websiteUrl: string;
 }
 
-export function ApiCardLogo({ websiteUrl, name }: ApiCardLogoProps) {
+export function ToolCardLogo({ websiteUrl, name }: ToolCardLogoProps) {
   function removeHttp(url: string) {
     if (url.startsWith('https://')) {
       const https = 'https://';
@@ -38,11 +38,11 @@ export function ApiCardLogo({ websiteUrl, name }: ApiCardLogoProps) {
     <Image
       src={logoSrc}
       alt={`Logo of ${name} compatible with React Native`}
-      width={150}
-      height={150}
+      width={100}
+      height={100}
       loading="lazy"
     />
   );
 }
 
-export default ApiCardLogo;
+export default ToolCardLogo;
