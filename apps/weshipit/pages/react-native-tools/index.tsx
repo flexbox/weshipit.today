@@ -1,16 +1,12 @@
 import { Layout } from '../../components/layout';
 import client from '../api/apollo-client';
 
-import {
-  ApiList,
-  Button,
-  TypeFilter,
-  Hyperlink,
-  Text,
-  SearchBar,
-} from '@weshipit/ui';
+import { ToolList, TypeFilter, Hyperlink, Text, SearchBar } from '@weshipit/ui';
 import { gql } from '@apollo/client';
 import { useEffect, useState } from 'react';
+import round from 'lodash/round';
+import { HeaderLinksForTools } from './[slug]';
+import { useSearchParams } from 'next/navigation';
 
 function filterByDescription(records, searchTerm: string) {
   return records.filter((record) => {
@@ -20,7 +16,7 @@ function filterByDescription(records, searchTerm: string) {
 }
 
 export default function ReactNativeToolsPage({ records }) {
-  const numberOfTools = records.length;
+  const numberOfTools = round(records.length, -1);
 
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState(records);
@@ -33,22 +29,23 @@ export default function ReactNativeToolsPage({ records }) {
     setSearchResults(results);
   }, [records, searchTerm]);
 
+  const searchParams = useSearchParams();
+
+  const toolType = searchParams.get('type')?.toLowerCase();
+
   return (
     <Layout
-      seoTitle={`Repository of ${numberOfTools} resources and tools to elevate your React Native game`}
-      seoDescription={`The best tools & apis for React Native developers. Accelerate your product development and improvement with more than ${numberOfTools} design resources and tools.`}
+      seoTitle={`Repository of ${numberOfTools}+ resources and tools to elevate your React Native game`}
+      seoDescription={`The best tools & apis for React Native developers. Accelerate your product development and improvement with more than ${numberOfTools}+ design resources and tools.`}
       ogImageTitle="React Native Tools"
-      withAccessoryRight={
-        <Button href="https://airtable.com/shrKPA2DGcG8xnQGG">
-          Add a new tool
-        </Button>
-      }
+      withAccessoryRight={<HeaderLinksForTools />}
     >
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
         <Text as="h3" variant="h3" className="py-4">
-          The best tools and resources for busy developers
+          The best <span className="text-indigo-600">{toolType}</span> tools and
+          resources for busy developers.
         </Text>
-        <Text as="p" variant="s2" className="mb-8 text-gray-500">
+        <Text as="p" variant="p1" className="mb-4 text-gray-500">
           We curated the essentials for the success of your React Native App.
           <br />
           Get all the data with{' '}
@@ -60,16 +57,17 @@ export default function ReactNativeToolsPage({ records }) {
           </a>
           .
         </Text>
+        <SearchBar searchTerm={searchTerm} handleChange={handleChange} />
       </div>
 
       <div className="mx-auto max-w-screen-2xl px-4 pb-48 sm:px-6">
-        <div className="mb-6">
-          <TypeFilter />
-          <SearchBar searchTerm={searchTerm} handleChange={handleChange} />
-        </div>
-
-        <div className="flex-1">
-          <ApiList records={searchResults} />
+        <div className="grid grid-cols-1 md:grid-cols-6 md:gap-4">
+          <div>
+            <TypeFilter />
+          </div>
+          <div className="col-span-5">
+            <ToolList records={searchResults} />
+          </div>
         </div>
 
         <div className="py-12">

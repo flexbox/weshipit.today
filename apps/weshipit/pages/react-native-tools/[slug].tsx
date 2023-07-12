@@ -1,8 +1,27 @@
 import { gql } from '@apollo/client';
-import { Button, Text, ApiCardLogo, ApiList } from '@weshipit/ui';
+import { Button, Text, ToolCardLogo, ToolList } from '@weshipit/ui';
 import client from '../api/apollo-client';
 import Layout from '../../components/layout';
 import { linksApi } from '../api/links';
+
+export function HeaderLinksForTools() {
+  return (
+    <>
+      <div className="flex">
+        <Button
+          intent="ghost"
+          className="mr-4"
+          href="https://flexbox.gumroad.com/l/expo-checklist"
+        >
+          🎁 Free Launch Checklist
+        </Button>
+        <Button href={linksApi.airtable.TOOLS_FORM}>
+          Add a React Native Tool
+        </Button>
+      </div>
+    </>
+  );
+}
 
 export function Slug({ records, recomendedRecords }) {
   if (records[0] === undefined || records[0].fields === undefined) {
@@ -21,16 +40,14 @@ export function Slug({ records, recomendedRecords }) {
       seoTitle={`${name} React Native Tools and Resources`}
       seoDescription="The best tools and resources for busy developers in React Native"
       ogImageTitle={`${name} for React Native`}
-      withAccessoryRight={
-        <Button href={linksApi.airtable.TOOLS_FORM}>Add a new API</Button>
-      }
+      withAccessoryRight={<HeaderLinksForTools />}
     >
       <div className="m-auto w-5/6 py-16  md:w-2/3">
         <Text as="h2" variant="h2" className="w-2/3 md:m-auto">
           {name}
         </Text>
         <div className="my-16 flex w-full  justify-center">
-          <ApiCardLogo name={name} websiteUrl={website_url} />
+          <ToolCardLogo name={name} websiteUrl={website_url} />
         </div>
         <div className="m-auto my-8 rounded-2xl bg-white p-8 md:w-2/3 ">
           <Text as="p" variant="p1">
@@ -44,7 +61,7 @@ export function Slug({ records, recomendedRecords }) {
           Other tools from the category {fields.type}
         </Text>
         <div className="mb-48 pt-4">
-          <ApiList records={recomendedRecords} />
+          <ToolList records={recomendedRecords} />
         </div>
       </div>
     </Layout>

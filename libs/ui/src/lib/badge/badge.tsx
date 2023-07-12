@@ -11,7 +11,7 @@ const badge = cva('badge', {
       lime: ['bg-lime-400', 'text-lime-700'],
       pink: ['bg-pink-400', 'text-pink-900'],
       yellow: ['bg-yellow-400', 'text-yellow-700'],
-      gray: ['bg-slate-400', 'text-slate-700'],
+      gray: ['bg-slate-200', 'text-slate-700'],
     },
     size: {
       sm: ['text-sm', 'py-1', 'px-2', 'rounded-3xl'],

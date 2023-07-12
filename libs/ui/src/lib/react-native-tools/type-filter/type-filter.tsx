@@ -3,6 +3,7 @@ import { usePathname, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { useCallback } from 'react';
 import { Badge } from '../../badge/badge';
+import { Text } from '../../text/text';
 import kebabCase from 'lodash/kebabCase';
 
 interface Type {
@@ -70,19 +71,12 @@ export function TypeFilter() {
   );
 
   return (
-    <ul className="grid grid-cols-1 gap-4 lg:grid-cols-6">
-      {types.map((type) => (
-        <li key={kebabCase(type.name)}>
-          <Link href={pathname + '?' + createQueryString('type', type.name)}>
-            <Badge variant={type.color}>
-              <div className="flex justify-between">
-                # {type.name}
-                <ChevronRightIcon className="ml-1 h-6 w-6" />
-              </div>
-            </Badge>
-          </Link>
-        </li>
-      ))}
+    <ul className="grid grid-flow-row gap-4">
+      <li>
+        <Text variant="c2" className="text-gray-400">
+          Filter 30+ tools
+        </Text>
+      </li>
       {canResetFitler && (
         <li>
           <Link href="/react-native-tools">
@@ -95,6 +89,18 @@ export function TypeFilter() {
           </Link>
         </li>
       )}
+      {types.map((type) => (
+        <li key={kebabCase(type.name)}>
+          <Link href={pathname + '?' + createQueryString('type', type.name)}>
+            <Badge variant={type.color}>
+              <div className="flex justify-between">
+                # {type.name}
+                <ChevronRightIcon className="ml-1 h-6 w-6" />
+              </div>
+            </Badge>
+          </Link>
+        </li>
+      ))}
     </ul>
   );
 }

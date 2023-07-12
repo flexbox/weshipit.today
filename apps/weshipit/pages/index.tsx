@@ -54,14 +54,14 @@ export default function IndexPage({ clients }: clientsPageProps) {
             brought to you by
             <Hyperlink
               href="https://twitter.com/intent/follow?screen_name=flexbox_"
-              className="relative top-2 mx-0.5 inline-flex items-center gap-1.5 rounded-full p-1 font-bold transition hover:bg-gray-50 dark:hover:bg-white/10 sm:px-2 md:top-1"
+              className="items-center gap-1.5 rounded-full p-1 font-bold transition hover:bg-gray-50 dark:hover:bg-white/10 sm:px-2 md:top-1"
             >
               @flexbox
             </Hyperlink>
             &
             <Hyperlink
               href="https://twitter.com/intent/follow?screen_name=MatthysDev"
-              className="relative top-2 mx-0.5 inline-flex items-center gap-1.5 rounded-full p-1 font-bold transition hover:bg-gray-50 dark:hover:bg-white/10 sm:px-2 md:top-1"
+              className="items-center gap-1.5 rounded-full p-1 font-bold transition hover:bg-gray-50 dark:hover:bg-white/10 sm:px-2 md:top-1"
             >
               @MatthysDev
             </Hyperlink>
