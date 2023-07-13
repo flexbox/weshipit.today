@@ -74,7 +74,7 @@ export default function ReactNativeToolsPage({ records }) {
           <Hyperlink
             href="https://clearbit.com"
             isExternal={true}
-            className="text-gray-400"
+            className="text-sm text-gray-400"
           >
             Logos provided by Clearbit
           </Hyperlink>

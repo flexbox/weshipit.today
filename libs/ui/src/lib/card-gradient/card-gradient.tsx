@@ -3,8 +3,8 @@ import { cva, type VariantProps } from 'class-variance-authority';
 
 const cardGradient = cva('card', {
   variants: {
-    intent: {
-      blueLight: [
+    variant: {
+      'blue-light': [
         'shadow-none transition-shadow hover:shadow-xl delay-100 ease-in-out',
         'bg-gradient-to-tr from-[#0E95EE] to-[#27C9F5]',
         'dark:bg-gradient-to-tr dark:from-[#07384B] dark:to-[#1dc8a6]',
@@ -28,7 +28,7 @@ const cardGradient = cva('card', {
     },
   },
   defaultVariants: {
-    intent: 'blueLight',
+    variant: 'blue-light',
   },
 });
 
@@ -38,8 +38,8 @@ export interface CardGradientProps
 
 export const CardGradient: React.FC<CardGradientProps> = ({
   className,
-  intent,
+  variant,
   ...props
-}) => <div className={cardGradient({ intent, className })} {...props} />;
+}) => <div className={cardGradient({ variant, className })} {...props} />;
 
 export default CardGradient;

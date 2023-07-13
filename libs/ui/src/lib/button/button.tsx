@@ -2,7 +2,7 @@ import { cva, type VariantProps } from 'class-variance-authority';
 
 const button = cva('button', {
   variants: {
-    intent: {
+    variant: {
       filled: [
         'bg-indigo-600',
         'hover:bg-indigo-700',
@@ -24,7 +24,7 @@ const button = cva('button', {
       ],
     },
     size: {
-      sm: ['md:text-lg', 'shadow-sm', 'font-medium', 'text-sm', 'py-1', 'px-4'],
+      sm: ['shadow-sm', 'font-medium', 'text-sm', 'py-1', 'px-4'],
       md: [
         'md:text-lg',
         'md:px-6',
@@ -35,9 +35,9 @@ const button = cva('button', {
       ],
     },
   },
-  compoundVariants: [{ intent: 'filled', size: 'md' }],
+  compoundVariants: [{ variant: 'filled', size: 'md' }],
   defaultVariants: {
-    intent: 'filled',
+    variant: 'filled',
     size: 'md',
   },
 });
@@ -52,7 +52,7 @@ export interface ButtonProps
 
 export const Button: React.FC<ButtonProps> = ({
   className,
-  intent,
+  variant,
   children,
   accessoryLeft,
   href,
@@ -60,7 +60,7 @@ export const Button: React.FC<ButtonProps> = ({
 }) => (
   <a
     href={href}
-    className={button({ intent, size, className })}
+    className={button({ variant, size, className })}
     target="_blank"
     rel="noreferrer"
   >

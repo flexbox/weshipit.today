@@ -8,7 +8,7 @@ export function CardHomepage() {
   return (
     <div className="grid gap-8 py-12 sm:grid-cols-2 lg:grid-cols-8 lg:grid-rows-5">
       <CardGradient
-        intent="blueLight"
+        variant="blue-light"
         className=" grid min-h-[420px] rounded-xl bg-cover py-16 text-white sm:col-span-2 lg:col-span-5 lg:row-span-5 lg:min-h-[600px]"
       >
         <a
@@ -35,7 +35,7 @@ export function CardHomepage() {
         </a>
       </CardGradient>
       <CardGradient
-        intent="pink"
+        variant="pink"
         className="grid rounded-xl py-16 text-white dark:from-[#803C71] lg:col-span-3 lg:row-span-3"
       >
         <a
@@ -62,7 +62,7 @@ export function CardHomepage() {
         </a>
       </CardGradient>
       <CardGradient
-        intent="purple"
+        variant="purple"
         className=" grid overflow-hidden rounded-xl  py-12  sm:py-16 lg:col-span-3 lg:row-span-2"
       >
         <a
