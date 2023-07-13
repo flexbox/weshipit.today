@@ -22,7 +22,7 @@ export function Consulting(props: ConsultingProps) {
       seoDescription="Looking to improve your skills as a React Native developer? Our coaching services are here to help. Our experienced team will provide personalized guidance and support to help you take your skills to the next level. Whether you're a beginner or an experienced developer, we have a coaching program that's right for you."
       ogImageTitle="Helping you to ship your vision in production"
       withAccessoryRight={
-        <Button intent="ghost" href="https://cal.com/davidl/coaching">
+        <Button variant="ghost" href="https://cal.com/davidl/coaching">
           Schedule 1-to-1 consulting
         </Button>
       }
@@ -57,7 +57,7 @@ export function Consulting(props: ConsultingProps) {
         </Text>
       </div>
 
-      <div className="mt-12 mb-48">
+      <div className="mb-48 mt-12">
         <Cal
           calLink="davidl/coaching"
           style={{ width: '100%', height: '100%', overflow: 'scroll' }}

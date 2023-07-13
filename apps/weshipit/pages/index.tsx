@@ -40,7 +40,7 @@ export default function IndexPage({ clients }: clientsPageProps) {
       ogImageTitle="React Native Experts"
       withAccessoryRight={
         <div className="sm:flex sm:justify-center lg:justify-start">
-          <Button intent="filled" href={linksApi.airtable.CONSULTATION_FORM}>
+          <Button variant="filled" href={linksApi.airtable.CONSULTATION_FORM}>
             Book a consultation
           </Button>
         </div>

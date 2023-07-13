@@ -9,7 +9,7 @@ export function HeaderLinksForTools() {
     <>
       <div className="flex">
         <Button
-          intent="ghost"
+          variant="ghost"
           className="mr-4"
           href="https://flexbox.gumroad.com/l/expo-checklist"
         >

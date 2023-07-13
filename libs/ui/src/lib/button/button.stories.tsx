@@ -25,10 +25,10 @@ AccessoryLeft.args = {
 
 const IntentExamples = () => (
   <div className="grid gap-4">
-    <Button href="https://weshipit.today" intent="filled">
+    <Button href="https://weshipit.today" variant="filled">
       filled
     </Button>
-    <Button href="https://weshipit.today" intent="ghost">
+    <Button href="https://weshipit.today" variant="ghost">
       ghost
     </Button>
   </div>
