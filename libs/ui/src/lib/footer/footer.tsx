@@ -58,7 +58,7 @@ export function Footer() {
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
-      <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="grid grid-cols-2 gap-8 xl:col-span-2">
             <div className="md:grid md:grid-cols-2 md:gap-8">
@@ -131,7 +131,7 @@ export function Footer() {
             </form> */}
           </div>
         </div>
-        <div className="mt-8 border-t border-gray-200 pt-8 md:flex md:items-center md:justify-between">
+        <div className="mt-8 border-t border-gray-200 pt-8 dark:border-gray-800 md:flex md:items-center md:justify-between">
           <div className="flex space-x-6 md:order-2">
             {navigation.social.map((item) => (
               <a
