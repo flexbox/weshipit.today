@@ -46,10 +46,34 @@ const badge = cva('badge', {
         'dark:bg-yellow-800',
         'dark:text-yellow-200',
       ],
-      gray: [
-        'bg-slate-200',
+      'gray-lighter': [
+        'bg-slate-100',
         'text-slate-700',
         'dark:bg-slate-800',
+        'dark:text-slate-200',
+      ],
+      'gray-light': [
+        'bg-slate-300',
+        'text-slate-700',
+        'dark:bg-slate-800',
+        'dark:text-slate-200',
+      ],
+      gray: [
+        'bg-slate-500',
+        'text-slate-700',
+        'dark:bg-slate-800',
+        'dark:text-slate-200',
+      ],
+      'gray-dark': [
+        'bg-slate-700',
+        'text-slate-200',
+        'dark:bg-slate-900',
+        'dark:text-slate-200',
+      ],
+      'gray-darker': [
+        'bg-slate-900',
+        'text-slate-200',
+        'dark:bg-slate-900',
         'dark:text-slate-200',
       ],
     },
@@ -58,7 +82,6 @@ const badge = cva('badge', {
       md: ['text-base', 'py-2', 'px-4', 'rounded-3xl', 'font-semibold'],
     },
   },
-  compoundVariants: [{ variant: 'indigo', size: 'md' }],
   defaultVariants: {
     variant: 'indigo',
     size: 'md',

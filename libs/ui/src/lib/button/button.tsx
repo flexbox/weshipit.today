@@ -35,7 +35,6 @@ const button = cva('button', {
       ],
     },
   },
-  compoundVariants: [{ variant: 'filled', size: 'md' }],
   defaultVariants: {
     variant: 'filled',
     size: 'md',

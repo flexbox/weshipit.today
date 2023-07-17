@@ -1,3 +1,4 @@
+export * from './/lib/tool-list/platform-list';
 export * from './lib/tool-list/tool-card-logo';
 export * from './lib/tool-list/tool-card';
 export * from './lib/tool-list/tool-list';

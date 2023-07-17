@@ -23,6 +23,11 @@ const VariantExamples = () => (
     <Badge variant="cyan">Persistent storage</Badge>
     <Badge variant="blue">Infrastructure</Badge>
     <Badge variant="yellow">Payment</Badge>
+    <Badge variant="gray-lighter">Misc</Badge>
+    <Badge variant="gray-light">Misc</Badge>
+    <Badge variant="gray">Misc</Badge>
+    <Badge variant="gray-dark">Misc</Badge>
+    <Badge variant="gray-darker">Misc</Badge>
   </div>
 );
 export const Variant = VariantExamples.bind({});

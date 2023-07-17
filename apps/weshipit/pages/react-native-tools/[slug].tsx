@@ -1,8 +1,16 @@
 import { gql } from '@apollo/client';
-import { Button, Text, ToolCardLogo, ToolList } from '@weshipit/ui';
+import {
+  Button,
+  PlatformList,
+  Text,
+  ToolCardLogo,
+  ToolList,
+  ToolListProps,
+} from '@weshipit/ui';
 import client from '../api/apollo-client';
 import Layout from '../../components/layout';
 import { linksApi } from '../api/links';
+import ReactMarkdown from 'react-markdown';
 
 export function HeaderLinksForTools() {
   return (
@@ -23,7 +31,7 @@ export function HeaderLinksForTools() {
   );
 }
 
-export function Slug({ records, recomendedRecords }) {
+export function ReactNativeSlugPage({ records, recomendedRecords }) {
   if (records[0] === undefined || records[0].fields === undefined) {
     return (
       <Layout seoTitle={'Not found'} seoDescription={''}>
@@ -33,7 +41,19 @@ export function Slug({ records, recomendedRecords }) {
   }
 
   const { fields } = records[0];
-  const { name, description, website_url } = fields;
+
+  const {
+    name,
+    description,
+    description_success,
+    features,
+    platform,
+    pricing, // TODO: add this to the page
+    type, // TODO: add this to the page
+    website_url,
+    github_url,
+    twitter_url,
+  } = fields;
 
   return (
     <Layout
@@ -49,11 +69,18 @@ export function Slug({ records, recomendedRecords }) {
         <div className="my-16 flex w-full  justify-center">
           <ToolCardLogo name={name} websiteUrl={website_url} />
         </div>
-        <div className="m-auto my-8 rounded-2xl bg-white p-8 md:w-2/3 ">
-          <Text as="p" variant="p1">
-            {' '}
-            {description}{' '}
-          </Text>
+        <div className="m-auto my-8 rounded-2xl bg-white p-8 md:w-2/3">
+          <div className="prose lg:prose-xl ">
+            <Text as="p">{description}</Text>
+            <Text>
+              <ReactMarkdown>{description_success}</ReactMarkdown>
+            </Text>
+            <Text as="p">{website_url}</Text>
+            <Text as="p">{github_url}</Text>
+            <Text as="p">{twitter_url}</Text>
+          </div>
+          <PlatformList platforms={platform} />
+          <PlatformList platforms={features} />
         </div>
       </div>
       <div className="m-auto flex w-4/5 flex-col">
@@ -116,4 +143,4 @@ export async function getServerSideProps({ params }) {
   };
 }
 
-export default Slug;
+export default ReactNativeSlugPage;
