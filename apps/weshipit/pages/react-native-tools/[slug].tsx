@@ -6,11 +6,16 @@ import {
   ToolCardLogo,
   ToolList,
   ToolListProps,
+  ToolWebsitePreview,
+  ToolTypeBadge,
+  Hyperlink,
 } from '@weshipit/ui';
 import client from '../api/apollo-client';
 import Layout from '../../components/layout';
 import { linksApi } from '../api/links';
 import ReactMarkdown from 'react-markdown';
+import { preview } from '@prismicio/client/dist/cookie';
+import Image from 'next/image';
 
 export function HeaderLinksForTools() {
   return (
@@ -54,7 +59,6 @@ export function ReactNativeSlugPage({ records, recomendedRecords }) {
     github_url,
     twitter_url,
   } = fields;
-
   return (
     <Layout
       seoTitle={`${name} React Native Tools and Resources`}
@@ -69,18 +73,33 @@ export function ReactNativeSlugPage({ records, recomendedRecords }) {
         <div className="my-16 flex w-full  justify-center">
           <ToolCardLogo name={name} websiteUrl={website_url} />
         </div>
-        <div className="m-auto my-8 rounded-2xl bg-white p-8 md:w-2/3">
-          <div className="prose lg:prose-xl ">
-            <Text as="p">{description}</Text>
-            <Text>
-              <ReactMarkdown>{description_success}</ReactMarkdown>
-            </Text>
-            <Text as="p">{website_url}</Text>
-            <Text as="p">{github_url}</Text>
-            <Text as="p">{twitter_url}</Text>
+        <div className="m-0 h-1/3 justify-around md:mx-4 md:flex md:justify-center">
+          <div className=" my-auto w-full  lg:w-1/2">
+            <ToolWebsitePreview url={website_url} />
           </div>
-          <PlatformList platforms={platform} />
-          <PlatformList platforms={features} />
+          <div className="m-0 my-8 w-full rounded-2xl bg-white p-4 md:mx-4 lg:w-1/2 lg:p-8">
+            <div className="prose lg:prose-xl my-4">
+              <Text as="p">{description}</Text>
+              <Text>
+                <ReactMarkdown>{description_success}</ReactMarkdown>
+              </Text>
+              <div className="flex justify-around">
+                <Hyperlink href={website_url} isExternal>
+                  Website
+                </Hyperlink>
+                <Hyperlink href={github_url} isExternal>
+                  Github
+                </Hyperlink>
+                <Hyperlink href={twitter_url} isExternal>
+                  Twitter
+                </Hyperlink>
+              </div>
+            </div>
+            <PlatformList platforms={platform} />
+            <PlatformList platforms={features} />
+            <PlatformList platforms={pricing} />
+            <ToolTypeBadge type={type} />
+          </div>
         </div>
       </div>
       <div className="m-auto flex w-4/5 flex-col">

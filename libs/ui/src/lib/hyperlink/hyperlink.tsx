@@ -1,8 +1,9 @@
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
+import { ReactNode } from 'react';
 
 export interface HyperlinkProps {
   href: string;
-  children: string;
+  children: ReactNode;
   isExternal?: boolean;
   className?: string;
 }

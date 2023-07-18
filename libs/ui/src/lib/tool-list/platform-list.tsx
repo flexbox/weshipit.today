@@ -28,6 +28,18 @@ function PlatformListItem({ platform }: { platform: string }) {
     case 'Windows':
       platformVariant = 'blue';
       break;
+    case 'Premium tiers':
+      platformVariant = 'yellow';
+      break;
+    case 'Free tier':
+      platformVariant = 'lime';
+      break;
+    case 'Pay as-you-go':
+      platformVariant = 'pink';
+      break;
+    case 'Open source':
+      platformVariant = 'indigo';
+      break;
     default:
       break;
   }
@@ -43,7 +55,7 @@ export function PlatformList({ platforms }: PlatformListProps) {
   return (
     <div>
       <ul className="flex flex-wrap">
-        {platforms.map((platform, index) => (
+        {platforms?.map((platform, index) => (
           <li key={`platform-${index}`} className="mb-2 mr-2">
             <PlatformListItem platform={platform} />
           </li>
