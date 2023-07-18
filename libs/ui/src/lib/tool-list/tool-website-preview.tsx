@@ -14,7 +14,7 @@ export function ToolWebsitePreview(props: ToolWebsitePreviewProps) {
       src={logoSrc}
       alt={`Preview of ${url}`}
       width={3000}
-      height={300}
+      height={400}
       loading="lazy"
       className="rounded-lg"
     />

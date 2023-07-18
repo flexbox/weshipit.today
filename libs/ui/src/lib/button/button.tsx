@@ -45,6 +45,7 @@ export interface ButtonProps
   extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof button> {
   accessoryLeft?: React.ReactNode;
+  accessoryRight?: React.ReactNode;
   children?: React.ReactNode;
   href: string;
 }
@@ -54,6 +55,7 @@ export const Button: React.FC<ButtonProps> = ({
   variant,
   children,
   accessoryLeft,
+  accessoryRight,
   href,
   size,
 }) => (
@@ -65,6 +67,7 @@ export const Button: React.FC<ButtonProps> = ({
   >
     {accessoryLeft && <div className="flex">{accessoryLeft}</div>}
     {children}
+    {accessoryRight && <div className="flex">{accessoryRight}</div>}
   </a>
 );
 

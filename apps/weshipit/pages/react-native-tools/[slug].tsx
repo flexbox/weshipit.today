@@ -16,6 +16,7 @@ import { linksApi } from '../api/links';
 import ReactMarkdown from 'react-markdown';
 import { preview } from '@prismicio/client/dist/cookie';
 import Image from 'next/image';
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 
 export function HeaderLinksForTools() {
   return (
@@ -66,41 +67,68 @@ export function ReactNativeSlugPage({ records, recomendedRecords }) {
       ogImageTitle={`${name} for React Native`}
       withAccessoryRight={<HeaderLinksForTools />}
     >
-      <div className="m-auto w-5/6 py-16  md:w-2/3">
-        <Text as="h2" variant="h2" className="w-2/3 md:m-auto">
-          {name}
-        </Text>
-        <div className="my-16 flex w-full  justify-center">
-          <ToolCardLogo name={name} websiteUrl={website_url} />
-        </div>
-        <div className="m-0 h-1/3 justify-around md:mx-4 md:flex md:justify-center">
-          <div className=" my-auto w-full  lg:w-1/2">
+      <div className="mx-auto w-5/6 py-16  md:w-4/5">
+        {/* <div className="m-0 h-1/3 justify-around md:mx-4 md:flex md:justify-center"> */}
+        <div className="flex flex-col justify-around lg:flex-row">
+          <div className=" my-auto w-full lg:w-2/3">
             <ToolWebsitePreview url={website_url} />
           </div>
-          <div className="m-0 my-8 w-full rounded-2xl bg-white p-4 md:mx-4 lg:w-1/2 lg:p-8">
-            <div className="prose lg:prose-xl my-4">
-              <Text as="p">{description}</Text>
-              <Text>
-                <ReactMarkdown>{description_success}</ReactMarkdown>
-              </Text>
-              <div className="flex justify-around">
-                <Hyperlink href={website_url} isExternal>
-                  Website
-                </Hyperlink>
-                <Hyperlink href={github_url} isExternal>
-                  Github
-                </Hyperlink>
-                <Hyperlink href={twitter_url} isExternal>
-                  Twitter
-                </Hyperlink>
-              </div>
-            </div>
+          <div className="my-4 ml-0 flex w-full flex-col justify-around rounded-xl bg-slate-900 lg:my-0 lg:ml-24 lg:w-1/4">
+            <Button
+              variant="filled"
+              className="m-auto my-4 w-2/3 px-4 lg:my-0 "
+              href={website_url}
+              accessoryRight={
+                <ArrowTopRightOnSquareIcon className="ml-1 h-4 w-4 text-gray-400" />
+              }
+            >
+              Visit website
+            </Button>
+            <Button
+              variant="filled"
+              className="m-auto my-4 w-2/3 px-4 lg:my-0 "
+              href={github_url}
+              accessoryRight={
+                <ArrowTopRightOnSquareIcon className="ml-1 h-4 w-4 text-gray-400" />
+              }
+            >
+              Visit Github
+            </Button>
+            <Button
+              variant="filled"
+              className="m-auto my-4 w-2/3 px-4 lg:my-0 "
+              href={twitter_url}
+              accessoryRight={
+                <ArrowTopRightOnSquareIcon className="ml-1 h-4 w-4 text-gray-400" />
+              }
+            >
+              Visit Twitter
+            </Button>
+          </div>
+        </div>
+        <div className="my-8 flex w-full flex-col justify-around lg:my-16 lg:flex-row">
+          <div className="mb-12 flex w-1/2 lg:my-auto">
+            <ToolCardLogo name={name} websiteUrl={website_url} />
+            <Text as="h2" variant="h2" className="my-auto w-3/4 md:mx-8">
+              {name}
+            </Text>
+          </div>
+          <div className="w-full rounded-xl bg-slate-200 p-8 lg:w-1/2">
             <PlatformList platforms={platform} />
             <PlatformList platforms={features} />
             <PlatformList platforms={pricing} />
             <ToolTypeBadge type={type} />
           </div>
         </div>
+        <div className="my-8 w-auto rounded-2xl bg-white p-4 ">
+          <div className="prose lg:prose-xl m-auto my-4">
+            <Text as="p">{description}</Text>
+            <Text>
+              <ReactMarkdown>{description_success}</ReactMarkdown>
+            </Text>
+          </div>
+        </div>
+        {/* </div> */}
       </div>
       <div className="m-auto flex w-4/5 flex-col">
         <Text as="h3" variant="h3" className="py-4">
