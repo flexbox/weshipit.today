@@ -19,28 +19,28 @@ export function ToolCard({ fields }: RecordProps) {
     separator: '…',
   });
 
-  let typeIntent = 'primary';
+  let typeVariant = 'primary';
   switch (type) {
     case 'Analytics':
-      typeIntent = 'lime';
+      typeVariant = 'lime';
       break;
     case 'Authentication':
-      typeIntent = 'indigo';
+      typeVariant = 'indigo';
       break;
     case 'Backend':
-      typeIntent = 'green';
+      typeVariant = 'green';
       break;
     case 'Crash reporting':
-      typeIntent = 'pink';
+      typeVariant = 'pink';
       break;
     case 'Persistent storage':
-      typeIntent = 'cyan';
+      typeVariant = 'cyan';
       break;
     case 'Infrastructure':
-      typeIntent = 'blue';
+      typeVariant = 'blue';
       break;
     case 'Payment':
-      typeIntent = 'yellow';
+      typeVariant = 'yellow';
       break;
     default:
       break;
@@ -86,7 +86,7 @@ export function ToolCard({ fields }: RecordProps) {
 
           <div className=" justify-end">
             <div className="flex justify-start ">
-              <Badge size="sm" variant={typeIntent as any}>
+              <Badge size="sm" variant={typeVariant as any}>
                 {type}
               </Badge>
             </div>

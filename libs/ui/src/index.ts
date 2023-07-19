@@ -1,3 +1,4 @@
+export * from './/lib/tool-list/platform-list';
 export * from './lib/tool-list/tool-card-logo';
 export * from './lib/tool-list/tool-card';
 export * from './lib/tool-list/tool-list';
@@ -17,3 +18,5 @@ export * from './lib/hyperlink/hyperlink';
 export * from './lib/react-native-tools/type-filter/type-filter';
 export * from './lib/react-native-tools/search-bar/search-bar';
 export * from './lib/text/text';
+export * from './lib/tool-list/tool-website-preview';
+export * from './lib/tool-list/tool-type-badge';

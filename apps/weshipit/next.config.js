@@ -28,6 +28,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'images.prismic.io',
       },
+      {
+        protocol: 'https',
+        hostname: 'api.apiflash.com',
+      },
     ],
     dangerouslyAllowSVG: true,
     contentDispositionType: 'attachment',

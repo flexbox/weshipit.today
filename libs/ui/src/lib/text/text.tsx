@@ -40,10 +40,8 @@ const text = cva('text', {
       c2: ['text-sm font-medium dark:text-slate-200 '],
     },
   },
-  compoundVariants: [{ as: 'h2', variant: 'h2' }],
   defaultVariants: {
     as: 'p',
-    variant: 'p1',
   },
 });
 

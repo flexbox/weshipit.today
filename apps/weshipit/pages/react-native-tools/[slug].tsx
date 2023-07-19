@@ -1,8 +1,22 @@
 import { gql } from '@apollo/client';
-import { Button, Text, ToolCardLogo, ToolList } from '@weshipit/ui';
+import {
+  Button,
+  PlatformList,
+  Text,
+  ToolCardLogo,
+  ToolList,
+  ToolListProps,
+  ToolWebsitePreview,
+  ToolTypeBadge,
+  Hyperlink,
+} from '@weshipit/ui';
 import client from '../api/apollo-client';
 import Layout from '../../components/layout';
 import { linksApi } from '../api/links';
+import ReactMarkdown from 'react-markdown';
+import { preview } from '@prismicio/client/dist/cookie';
+import Image from 'next/image';
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 
 export function HeaderLinksForTools() {
   return (
@@ -10,12 +24,12 @@ export function HeaderLinksForTools() {
       <div className="flex">
         <Button
           variant="ghost"
-          className="mr-4"
+          className="mr-4 px-2"
           href="https://flexbox.gumroad.com/l/expo-checklist"
         >
           🎁 Free Launch Checklist
         </Button>
-        <Button href={linksApi.airtable.TOOLS_FORM}>
+        <Button href={linksApi.airtable.TOOLS_FORM} className="px-2">
           Add a React Native Tool
         </Button>
       </div>
@@ -23,7 +37,7 @@ export function HeaderLinksForTools() {
   );
 }
 
-export function Slug({ records, recomendedRecords }) {
+export function ReactNativeSlugPage({ records, recomendedRecords }) {
   if (records[0] === undefined || records[0].fields === undefined) {
     return (
       <Layout seoTitle={'Not found'} seoDescription={''}>
@@ -33,8 +47,19 @@ export function Slug({ records, recomendedRecords }) {
   }
 
   const { fields } = records[0];
-  const { name, description, website_url } = fields;
 
+  const {
+    name,
+    description,
+    description_success,
+    features,
+    platform,
+    pricing,
+    type,
+    website_url,
+    github_url,
+    twitter_url,
+  } = fields;
   return (
     <Layout
       seoTitle={`${name} React Native Tools and Resources`}
@@ -42,18 +67,81 @@ export function Slug({ records, recomendedRecords }) {
       ogImageTitle={`${name} for React Native`}
       withAccessoryRight={<HeaderLinksForTools />}
     >
-      <div className="m-auto w-5/6 py-16  md:w-2/3">
-        <Text as="h2" variant="h2" className="w-2/3 md:m-auto">
-          {name}
-        </Text>
-        <div className="my-16 flex w-full  justify-center">
-          <ToolCardLogo name={name} websiteUrl={website_url} />
+      <div className="mx-auto w-5/6 py-16  md:w-4/5">
+        <div className="flex flex-col justify-around lg:flex-row">
+          <div className=" my-auto w-full lg:w-2/3">
+            <ToolWebsitePreview url={website_url} />
+          </div>
+          <div className="my-4 ml-0 flex w-full flex-col justify-around rounded-xl bg-slate-200 dark:bg-slate-900 lg:my-0 lg:ml-24 lg:w-1/4">
+            <Button
+              variant="ghost"
+              className="m-auto my-4 w-2/3 px-4 lg:my-0 "
+              href={website_url}
+              accessoryRight={
+                <ArrowTopRightOnSquareIcon className="ml-1 h-4 w-4 text-gray-400" />
+              }
+            >
+              Visit website
+            </Button>
+            <Button
+              variant="ghost"
+              className="m-auto my-4 w-2/3 px-4 lg:my-0 "
+              href={github_url}
+              accessoryRight={
+                <ArrowTopRightOnSquareIcon className="ml-1 h-4 w-4 text-gray-400" />
+              }
+            >
+              Visit Github
+            </Button>
+            <Button
+              variant="ghost"
+              className="m-auto my-4 w-2/3 px-4 lg:my-0 "
+              href={twitter_url}
+              accessoryRight={
+                <ArrowTopRightOnSquareIcon className="ml-1 h-4 w-4 text-gray-400" />
+              }
+            >
+              Visit Twitter
+            </Button>
+          </div>
         </div>
-        <div className="m-auto my-8 rounded-2xl bg-white p-8 md:w-2/3 ">
-          <Text as="p" variant="p1">
-            {' '}
-            {description}{' '}
-          </Text>
+        <div className="my-8 flex w-full flex-col justify-around lg:my-16 lg:flex-row">
+          <div className="mb-12 flex w-1/2 lg:my-auto">
+            <ToolCardLogo name={name} websiteUrl={website_url} />
+            <Text as="h2" variant="h2" className="my-auto w-3/4 md:mx-8">
+              {name}
+            </Text>
+          </div>
+          <div className="w-full rounded-xl bg-slate-200 p-8 dark:bg-slate-900 lg:w-1/2">
+            {platform && platform.length > 0 && (
+              <Text as="h3" variant="p1" className=" mb-2 mt-4 ">
+                Platforms
+              </Text>
+            )}
+            <PlatformList platforms={platform} />
+            {features && features.length > 0 && (
+              <Text as="h3" variant="p1" className=" mb-2 mt-4 ">
+                Features
+              </Text>
+            )}
+            <PlatformList platforms={features} />
+            <Text as="h3" variant="p1" className="mb-2 mt-4 ">
+              Pricing
+            </Text>
+            <PlatformList platforms={pricing} />
+            <Text as="h3" variant="p1" className=" mb-2 mt-4 ">
+              Type
+            </Text>
+            <ToolTypeBadge type={type} />
+          </div>
+        </div>
+        <div className="my-8 w-auto rounded-2xl bg-white p-4 ">
+          <div className="prose lg:prose-xl m-auto my-4">
+            <Text as="p">{description}</Text>
+            <Text>
+              <ReactMarkdown>{description_success}</ReactMarkdown>
+            </Text>
+          </div>
         </div>
       </div>
       <div className="m-auto flex w-4/5 flex-col">
@@ -116,4 +204,4 @@ export async function getServerSideProps({ params }) {
   };
 }
 
-export default Slug;
+export default ReactNativeSlugPage;

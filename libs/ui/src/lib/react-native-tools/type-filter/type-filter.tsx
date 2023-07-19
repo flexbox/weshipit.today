@@ -80,7 +80,7 @@ export function TypeFilter() {
       {canResetFitler && (
         <li>
           <Link href="/react-native-tools">
-            <Badge variant="gray">
+            <Badge variant="gray-light">
               <div className="flex justify-between">
                 Reset filter
                 <XMarkIcon className="ml-1 h-6 w-6" />
