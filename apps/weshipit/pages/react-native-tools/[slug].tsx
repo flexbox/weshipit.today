@@ -24,12 +24,12 @@ export function HeaderLinksForTools() {
       <div className="flex">
         <Button
           variant="ghost"
-          className="mr-4"
+          className="mr-4 px-2"
           href="https://flexbox.gumroad.com/l/expo-checklist"
         >
           🎁 Free Launch Checklist
         </Button>
-        <Button href={linksApi.airtable.TOOLS_FORM}>
+        <Button href={linksApi.airtable.TOOLS_FORM} className="px-2">
           Add a React Native Tool
         </Button>
       </div>
@@ -54,8 +54,8 @@ export function ReactNativeSlugPage({ records, recomendedRecords }) {
     description_success,
     features,
     platform,
-    pricing, // TODO: add this to the page
-    type, // TODO: add this to the page
+    pricing,
+    type,
     website_url,
     github_url,
     twitter_url,
@@ -68,14 +68,13 @@ export function ReactNativeSlugPage({ records, recomendedRecords }) {
       withAccessoryRight={<HeaderLinksForTools />}
     >
       <div className="mx-auto w-5/6 py-16  md:w-4/5">
-        {/* <div className="m-0 h-1/3 justify-around md:mx-4 md:flex md:justify-center"> */}
         <div className="flex flex-col justify-around lg:flex-row">
           <div className=" my-auto w-full lg:w-2/3">
             <ToolWebsitePreview url={website_url} />
           </div>
-          <div className="my-4 ml-0 flex w-full flex-col justify-around rounded-xl bg-slate-900 lg:my-0 lg:ml-24 lg:w-1/4">
+          <div className="my-4 ml-0 flex w-full flex-col justify-around rounded-xl bg-slate-200 dark:bg-slate-900 lg:my-0 lg:ml-24 lg:w-1/4">
             <Button
-              variant="filled"
+              variant="ghost"
               className="m-auto my-4 w-2/3 px-4 lg:my-0 "
               href={website_url}
               accessoryRight={
@@ -85,7 +84,7 @@ export function ReactNativeSlugPage({ records, recomendedRecords }) {
               Visit website
             </Button>
             <Button
-              variant="filled"
+              variant="ghost"
               className="m-auto my-4 w-2/3 px-4 lg:my-0 "
               href={github_url}
               accessoryRight={
@@ -95,7 +94,7 @@ export function ReactNativeSlugPage({ records, recomendedRecords }) {
               Visit Github
             </Button>
             <Button
-              variant="filled"
+              variant="ghost"
               className="m-auto my-4 w-2/3 px-4 lg:my-0 "
               href={twitter_url}
               accessoryRight={
@@ -113,10 +112,26 @@ export function ReactNativeSlugPage({ records, recomendedRecords }) {
               {name}
             </Text>
           </div>
-          <div className="w-full rounded-xl bg-slate-200 p-8 lg:w-1/2">
+          <div className="w-full rounded-xl bg-slate-200 p-8 dark:bg-slate-900 lg:w-1/2">
+            {platform && platform.length > 0 && (
+              <Text as="h3" variant="p1" className=" mb-2 mt-4 ">
+                Platforms
+              </Text>
+            )}
             <PlatformList platforms={platform} />
+            {features && features.length > 0 && (
+              <Text as="h3" variant="p1" className=" mb-2 mt-4 ">
+                Features
+              </Text>
+            )}
             <PlatformList platforms={features} />
+            <Text as="h3" variant="p1" className="mb-2 mt-4 ">
+              Pricing
+            </Text>
             <PlatformList platforms={pricing} />
+            <Text as="h3" variant="p1" className=" mb-2 mt-4 ">
+              Type
+            </Text>
             <ToolTypeBadge type={type} />
           </div>
         </div>
@@ -128,7 +143,6 @@ export function ReactNativeSlugPage({ records, recomendedRecords }) {
             </Text>
           </div>
         </div>
-        {/* </div> */}
       </div>
       <div className="m-auto flex w-4/5 flex-col">
         <Text as="h3" variant="h3" className="py-4">
