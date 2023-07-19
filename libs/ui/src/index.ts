@@ -20,3 +20,4 @@ export * from './lib/react-native-tools/search-bar/search-bar';
 export * from './lib/text/text';
 export * from './lib/tool-list/tool-website-preview';
 export * from './lib/tool-list/tool-type-badge';
+export * from './lib/useful-resources/useful-resources';
