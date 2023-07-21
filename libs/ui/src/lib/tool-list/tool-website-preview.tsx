@@ -10,13 +10,15 @@ export function ToolWebsitePreview(props: ToolWebsitePreviewProps) {
 
   return (
     <div className="rounded-lg bg-slate-200 dark:bg-slate-900">
-      <Image
-        src={logoSrc}
-        alt={`Preview of ${url}`}
-        width={900}
-        height={500}
-        className="rounded-lg"
-      />
+      {url && (
+        <Image
+          src={logoSrc}
+          alt={`Preview of ${url}`}
+          width={900}
+          height={500}
+          className="rounded-lg"
+        />
+      )}
     </div>
   );
 }

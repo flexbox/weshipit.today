@@ -9,6 +9,7 @@ import {
   ToolWebsitePreview,
   ToolTypeBadge,
   Hyperlink,
+  UsefulResources,
 } from '@weshipit/ui';
 import client from '../api/apollo-client';
 import Layout from '../../components/layout';
@@ -148,10 +149,11 @@ export function ReactNativeSlugPage({ records, recomendedRecords }) {
         <Text as="h3" variant="h3" className="py-4">
           Other tools from the category {fields.type}
         </Text>
-        <div className="mb-48 pt-4">
+        <div className="mb-12 pt-4">
           <ToolList records={recomendedRecords} />
         </div>
       </div>
+      <UsefulResources />
     </Layout>
   );
 }
