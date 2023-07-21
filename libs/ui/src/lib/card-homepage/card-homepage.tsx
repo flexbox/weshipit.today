@@ -3,13 +3,14 @@ import bootcampLogo from '../../assets/bootcamp.png';
 import Gravatar from 'react-gravatar';
 import gumroad from '../../assets/gumroad-thumbnail.png';
 import CardGradient from '../card-gradient/card-gradient';
+import CardBootcamp from '../card/card-bootcamp';
 
 export function CardHomepage() {
   return (
     <div className="grid gap-8 py-12 sm:grid-cols-2 lg:grid-cols-8 lg:grid-rows-5">
       <CardGradient
         variant="blue-light"
-        className=" grid min-h-[420px] rounded-xl bg-cover py-16 text-white sm:col-span-2 lg:col-span-5 lg:row-span-5 lg:min-h-[600px]"
+        className=" grid  rounded-xl bg-cover py-16 text-white sm:col-span-2 lg:col-span-5 lg:row-span-5 "
       >
         <a
           className="flex flex-col items-center justify-center gap-8 text-center sm:flex-row sm:text-left"
