@@ -4,21 +4,13 @@ import bootcampLogo from '../../assets/bootcamp.png';
 import CardGradient from '../card-gradient/card-gradient';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 
-/* eslint-disable-next-line */
-export interface CardBootcampProps {
-  cardSize: string;
-  imgWidth: number;
-  imgHeight: number;
-  cardColor: any;
+export interface CardImageProps {
+  imageSize: number;
 }
 
-export function CardBootcamp(props: CardBootcampProps) {
-  const { cardSize, imgWidth, imgHeight, cardColor } = props;
+export function CardBootcamp({ imageSize }: CardImageProps) {
   return (
-    <CardGradient
-      variant={cardColor}
-      className={`m-auto flex  justify-center rounded-xl bg-cover px-4 py-8 text-white sm:col-span-2 md:m-0  lg:col-span-5 lg:row-span-5 ${cardSize}`}
-    >
+    <CardGradient className="flex justify-center rounded-xl bg-cover p-8 text-white">
       <a
         className="flex flex-col items-center justify-center gap-8 text-center sm:text-left"
         href="https://davidl.fr/bootcamp"
@@ -26,9 +18,9 @@ export function CardBootcamp(props: CardBootcampProps) {
         <div className="items-center">
           <Image
             src={bootcampLogo}
-            alt="Bootcamp logo"
-            width={imgWidth}
-            height={imgHeight}
+            alt="React Native Bootcamp logo with a spaceship"
+            width={imageSize}
+            height={imageSize}
             className="rounded-3xl"
           />
         </div>

@@ -37,7 +37,7 @@ export default function ClientsPage({ clients }: clientsPageProps) {
         </div>
       }
     >
-      <div className="py-24">
+      <div className="py-12">
         <Text as="h3" variant="h3" className="py-4">
           Our Customers
         </Text>
@@ -63,7 +63,7 @@ export default function ClientsPage({ clients }: clientsPageProps) {
           href="/onboarding"
           className="my-4 flex w-60 justify-center rounded-md bg-indigo-600 py-6 text-white hover:bg-indigo-700"
         >
-          Add your logo today!
+          Add your logo today
         </Link>
       </div>
     </Layout>

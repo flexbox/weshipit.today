@@ -3,19 +3,15 @@ import CardGradient from '../card-gradient/card-gradient';
 import Gravatar from 'react-gravatar';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 
-/* eslint-disable-next-line */
 export interface CardConsultationProps {
-  cardSize: string;
   gravatarSize: number;
-  cardColor: any;
 }
 
-export function CardConsultation(props: CardConsultationProps) {
-  const { cardSize, gravatarSize, cardColor } = props;
+export function CardConsultation({ gravatarSize }: CardConsultationProps) {
   return (
     <CardGradient
-      variant={cardColor}
-      className={`m-auto flex justify-center rounded-xl bg-cover px-4 py-8 sm:col-span-2 md:m-0 lg:col-span-5 lg:row-span-5 ${cardSize}`}
+      variant="purple"
+      className="flex justify-center rounded-xl bg-cover p-8"
     >
       <a
         className="flex flex-col items-center justify-center gap-8 text-center sm:text-left"

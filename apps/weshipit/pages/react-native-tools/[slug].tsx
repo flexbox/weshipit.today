@@ -5,18 +5,16 @@ import {
   Text,
   ToolCardLogo,
   ToolList,
-  ToolListProps,
   ToolWebsitePreview,
   ToolTypeBadge,
-  Hyperlink,
-  UsefulResources,
+  CardBootcamp,
+  CardChecklist,
+  CardConsultation,
 } from '@weshipit/ui';
 import client from '../api/apollo-client';
 import Layout from '../../components/layout';
 import { linksApi } from '../api/links';
 import ReactMarkdown from 'react-markdown';
-import { preview } from '@prismicio/client/dist/cookie';
-import Image from 'next/image';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 
 export function HeaderLinksForTools() {
@@ -67,36 +65,68 @@ export function ReactNativeSlugPage({ records, recomendedRecords }) {
       seoDescription="The best tools and resources for busy developers in React Native"
       ogImageTitle={`${name} for React Native`}
       withAccessoryRight={<HeaderLinksForTools />}
+      withContainer={true}
     >
-      <div className="mx-auto w-5/6 py-16  md:w-4/5">
-        <div className="flex flex-col justify-around lg:flex-row">
-          <div className=" my-auto w-full lg:w-2/3">
-            <ToolWebsitePreview url={website_url} />
+      <div className="flex">
+        <div>
+          <ToolCardLogo name={name} websiteUrl={website_url} />
+          <Text as="h2" variant="h2">
+            {name}
+          </Text>
+          <div className="prose lg:prose-xl">
+            <ReactMarkdown>{description}</ReactMarkdown>
+            <ReactMarkdown>{description_success}</ReactMarkdown>
           </div>
-          <div className="my-4 ml-0 flex w-full flex-col justify-around rounded-xl bg-slate-200 dark:bg-slate-900 lg:my-0 lg:ml-24 lg:w-1/4">
+
+          {platform && platform.length > 0 && (
+            <>
+              <Text as="h3" variant="p1" className=" mb-2 mt-4 ">
+                Platforms
+              </Text>
+              <PlatformList platforms={platform} />
+            </>
+          )}
+          {features && features.length > 0 && (
+            <>
+              <Text as="h3" variant="p1" className=" mb-2 mt-4 ">
+                Features
+              </Text>
+              <PlatformList platforms={features} />
+            </>
+          )}
+          <Text as="h3" variant="p1" className="mb-2 mt-4 ">
+            Pricing
+          </Text>
+          <PlatformList platforms={pricing} />
+          <Text as="h3" variant="p1" className=" mb-2 mt-4 ">
+            Type
+          </Text>
+          <ToolTypeBadge type={type} />
+        </div>
+        <div>
+          <ToolWebsitePreview url={website_url} />
+
+          <Button
+            variant="ghost"
+            href={website_url}
+            accessoryRight={
+              <ArrowTopRightOnSquareIcon className="ml-1 h-4 w-4 text-gray-400" />
+            }
+          >
+            Visit website
+          </Button>
+          <Button
+            variant="ghost"
+            href={github_url}
+            accessoryRight={
+              <ArrowTopRightOnSquareIcon className="ml-1 h-4 w-4 text-gray-400" />
+            }
+          >
+            Visit Github
+          </Button>
+          {twitter_url && (
             <Button
               variant="ghost"
-              className="m-auto my-4 w-2/3 px-4 lg:my-0 "
-              href={website_url}
-              accessoryRight={
-                <ArrowTopRightOnSquareIcon className="ml-1 h-4 w-4 text-gray-400" />
-              }
-            >
-              Visit website
-            </Button>
-            <Button
-              variant="ghost"
-              className="m-auto my-4 w-2/3 px-4 lg:my-0 "
-              href={github_url}
-              accessoryRight={
-                <ArrowTopRightOnSquareIcon className="ml-1 h-4 w-4 text-gray-400" />
-              }
-            >
-              Visit Github
-            </Button>
-            <Button
-              variant="ghost"
-              className="m-auto my-4 w-2/3 px-4 lg:my-0 "
               href={twitter_url}
               accessoryRight={
                 <ArrowTopRightOnSquareIcon className="ml-1 h-4 w-4 text-gray-400" />
@@ -104,56 +134,27 @@ export function ReactNativeSlugPage({ records, recomendedRecords }) {
             >
               Visit Twitter
             </Button>
-          </div>
-        </div>
-        <div className="my-8 flex w-full flex-col justify-around lg:my-16 lg:flex-row">
-          <div className="mb-12 flex w-1/2 lg:my-auto">
-            <ToolCardLogo name={name} websiteUrl={website_url} />
-            <Text as="h2" variant="h2" className="my-auto w-3/4 md:mx-8">
-              {name}
-            </Text>
-          </div>
-          <div className="w-full rounded-xl bg-slate-200 p-8 dark:bg-slate-900 lg:w-1/2">
-            {platform && platform.length > 0 && (
-              <Text as="h3" variant="p1" className=" mb-2 mt-4 ">
-                Platforms
-              </Text>
-            )}
-            <PlatformList platforms={platform} />
-            {features && features.length > 0 && (
-              <Text as="h3" variant="p1" className=" mb-2 mt-4 ">
-                Features
-              </Text>
-            )}
-            <PlatformList platforms={features} />
-            <Text as="h3" variant="p1" className="mb-2 mt-4 ">
-              Pricing
-            </Text>
-            <PlatformList platforms={pricing} />
-            <Text as="h3" variant="p1" className=" mb-2 mt-4 ">
-              Type
-            </Text>
-            <ToolTypeBadge type={type} />
-          </div>
-        </div>
-        <div className="my-8 w-auto rounded-2xl bg-white p-4 ">
-          <div className="prose lg:prose-xl m-auto my-4">
-            <Text as="p">{description}</Text>
-            <Text>
-              <ReactMarkdown>{description_success}</ReactMarkdown>
-            </Text>
-          </div>
+          )}
         </div>
       </div>
-      <div className="m-auto flex w-4/5 flex-col">
-        <Text as="h3" variant="h3" className="py-4">
-          Other tools from the category {fields.type}
+
+      <section className="py-12">
+        <Text as="h3" variant="h3" className="my-4">
+          Other tools from the category {fields.type.toLowerCase()}
         </Text>
-        <div className="mb-12 pt-4">
-          <ToolList records={recomendedRecords} />
+        <ToolList records={recomendedRecords} />
+      </section>
+
+      <section className="py-24">
+        <Text as="h3" variant="h3" className="my-4">
+          Useful resources
+        </Text>
+        <div className="flex justify-between">
+          <CardBootcamp imageSize={124} />
+          <CardChecklist imageSize={124} />
+          <CardConsultation gravatarSize={80} />
         </div>
-      </div>
-      <UsefulResources />
+      </section>
     </Layout>
   );
 }

@@ -63,7 +63,7 @@ export default function ReactNativeToolsPage({ records }) {
       <div className="mx-auto max-w-screen-2xl px-4 pb-48 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-6 md:gap-4">
           <div>
-            <TypeFilter />
+            <TypeFilter numberOfTools={numberOfTools} />
           </div>
           <div className="col-span-5">
             <ToolList records={searchResults} />
