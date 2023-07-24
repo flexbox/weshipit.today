@@ -4,7 +4,7 @@ export interface CardProps {
 
 export function Card({ children }: CardProps) {
   return (
-    <div className="rounded-xl border-2 border-transparent bg-white p-6 transition hover:border-slate-300 dark:bg-slate-900 dark:hover:border-slate-600">
+    <div className="rounded-xl bg-white p-6 ring-2 ring-transparent transition hover:ring-slate-300 dark:bg-slate-900 dark:hover:ring-slate-600">
       {children}
     </div>
   );

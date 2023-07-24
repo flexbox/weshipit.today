@@ -3,21 +3,13 @@ import Button from '../button/button';
 import gumroad from '../../assets/gumroad-thumbnail.png';
 import CardGradient from '../card-gradient/card-gradient';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
+import { CardImageProps } from './card-bootcamp';
 
-/* eslint-disable-next-line */
-export interface CardChecklistProps {
-  cardSize: string;
-  imgWidth: number;
-  imgHeight: number;
-  cardColor: any;
-}
-
-export function CardChecklist(props: CardChecklistProps) {
-  const { cardSize, imgWidth, imgHeight, cardColor } = props;
+export function CardChecklist({ imageSize }: CardImageProps) {
   return (
     <CardGradient
-      variant={cardColor}
-      className={`m-auto flex justify-center rounded-xl bg-cover px-4 py-8 text-white sm:col-span-2 md:m-0 lg:col-span-5 lg:row-span-5 ${cardSize}`}
+      variant="pink"
+      className="flex justify-center rounded-xl bg-cover p-8 text-white"
     >
       <a
         className="flex flex-col items-center justify-center gap-8 text-center sm:text-left"
@@ -27,8 +19,8 @@ export function CardChecklist(props: CardChecklistProps) {
           <Image
             src={gumroad}
             alt="Expo checklist"
-            width={imgWidth}
-            height={imgHeight}
+            width={imageSize}
+            height={imageSize}
             className="rounded-3xl"
           />
         </div>

@@ -70,9 +70,9 @@ export default function IndexPage({ clients }: clientsPageProps) {
         <CardHomepage />
       </Hero>
       <section className="m-auto max-w-7xl">
-        <div className="mb-24 p-8 text-center ">
+        <div className="mb-24 text-center ">
           <div className="flex justify-between">
-            <Text as="h3" variant="p2" className="text-left">
+            <Text as="h3" variant="p1" className="text-left">
               Trusted by top companies
             </Text>
             <Link legacyBehavior href="/clients">

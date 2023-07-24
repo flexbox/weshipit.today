@@ -51,7 +51,7 @@ const types: Type[] = [
   },
 ];
 
-export function TypeFilter() {
+export function TypeFilter({ numberOfTools }: { numberOfTools: number }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
@@ -74,7 +74,7 @@ export function TypeFilter() {
     <ul className="grid grid-flow-row gap-4">
       <li>
         <Text variant="c2" className="text-gray-400">
-          Filter 30+ tools
+          Filter {numberOfTools}+ tools
         </Text>
       </li>
       {canResetFitler && (

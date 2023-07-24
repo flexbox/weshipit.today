@@ -3,9 +3,14 @@ import Image from 'next/image';
 export interface ToolCardLogoProps {
   name: string;
   websiteUrl: string;
+  size?: number;
 }
 
-export function ToolCardLogo({ websiteUrl, name }: ToolCardLogoProps) {
+export function ToolCardLogo({
+  websiteUrl,
+  name,
+  size = 100,
+}: ToolCardLogoProps) {
   function removeHttp(url: string) {
     if (url.startsWith('https://')) {
       const https = 'https://';
@@ -38,9 +43,10 @@ export function ToolCardLogo({ websiteUrl, name }: ToolCardLogoProps) {
     <Image
       src={logoSrc}
       alt={`Logo of ${name} compatible with React Native`}
-      width={100}
-      height={100}
+      width={size}
+      height={size}
       loading="lazy"
+      className="rounded-xl"
     />
   );
 }

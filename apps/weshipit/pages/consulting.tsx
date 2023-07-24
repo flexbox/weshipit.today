@@ -1,12 +1,9 @@
-import { Button, Hero, Text } from '@weshipit/ui';
+import { Button, Hero, Hyperlink, Text } from '@weshipit/ui';
 import { Layout } from '../components/layout';
 import Cal, { getCalApi } from '@calcom/embed-react';
 import { useEffect } from 'react';
 
-/* eslint-disable-next-line */
-export interface ConsultingProps {}
-
-export function Consulting(props: ConsultingProps) {
+export function Consulting() {
   useEffect(() => {
     (async function () {
       const cal = await getCalApi();
@@ -54,6 +51,16 @@ export function Consulting(props: ConsultingProps) {
         </Text>
         <Text as="p" variant="p1">
           My goal is for this hour to be most helpful to you.
+        </Text>
+        <Text as="p" variant="p1">
+          <em>
+            Note: If the calendar below doesn’t load in a few seconds, try
+            refreshing the page. Or you can{' '}
+            <Hyperlink href="https://cal.com/davidl/coaching">
+              open the bookling link on another tab
+            </Hyperlink>
+            .
+          </em>
         </Text>
       </div>
 

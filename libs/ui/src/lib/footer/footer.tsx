@@ -62,7 +62,7 @@ export function Footer() {
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="grid grid-cols-2 gap-8 xl:col-span-2">
             <div className="md:grid md:grid-cols-2 md:gap-8">
-              <div>
+              <div className="mb-6">
                 <h3 className="text-base font-medium text-gray-900 dark:text-slate-200">
                   Solutions
                 </h3>

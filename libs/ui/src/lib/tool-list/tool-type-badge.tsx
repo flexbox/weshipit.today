@@ -1,6 +1,12 @@
 import { Badge } from '../badge/badge';
 
-export function ToolTypeBadge({ type }: { type: string }) {
+export function ToolTypeBadge({
+  type,
+  ...rest
+}: {
+  type: string;
+  size: 'sm' | 'md' | null | undefined;
+}) {
   let typeVariant = 'gray-lighter';
   switch (type) {
     case 'Analytics':
@@ -29,7 +35,7 @@ export function ToolTypeBadge({ type }: { type: string }) {
   }
 
   return (
-    <Badge variant={typeVariant as any} className="mr-2">
+    <Badge variant={typeVariant as any} className="mr-2" {...rest}>
       {type}
     </Badge>
   );
