@@ -38,7 +38,11 @@ export function HeaderLinksForTools() {
   );
 }
 
-export function ReactNativeSlugPage({ records, recomendedRecords }) {
+export function ReactNativeSlugPage({
+  records,
+  recomendedRecords,
+  screenshotAccessKey,
+}) {
   if (records[0] === undefined || records[0].fields === undefined) {
     return (
       <Layout seoTitle={'Not found'} seoDescription={''}>
@@ -125,7 +129,10 @@ export function ReactNativeSlugPage({ records, recomendedRecords }) {
 
         <div className="col-span-1 md:col-span-4">
           <div className="flex flex-col gap-4">
-            <ToolWebsitePreview url={website_url} />
+            <ToolWebsitePreview
+              url={website_url}
+              accessKey={screenshotAccessKey}
+            />
             <Button
               variant="ghost"
               href={website_url}
@@ -183,6 +190,7 @@ export function ReactNativeSlugPage({ records, recomendedRecords }) {
 export async function getServerSideProps({ params }) {
   const apiKey = process.env.AIRTABLE_API_KEY;
   const baseId = process.env.AIRTABLE_BASE_ID_REACT_NATIVE;
+  const screenshotAccessKey = process.env.APIFLASH_ACCESS_KEY;
 
   const { slug } = params;
 
@@ -224,6 +232,7 @@ export async function getServerSideProps({ params }) {
     props: {
       records: data.airtable_tableData.records,
       recomendedRecords: recomended.data.airtable_tableData.records,
+      screenshotAccessKey,
     },
   };
 }

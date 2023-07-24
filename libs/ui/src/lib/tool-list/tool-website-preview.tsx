@@ -2,11 +2,15 @@ import Image from 'next/image';
 
 export interface ToolWebsitePreviewProps {
   url: string;
+  accessKey: string;
 }
 
-export function ToolWebsitePreview(props: ToolWebsitePreviewProps) {
-  const { url } = props;
-  const logoSrc = `https://api.apiflash.com/v1/urltoimage?access_key=${process.env['APIFLASH_ACCESS_KEY']}&wait_until=page_loaded&url=${url}`;
+export function ToolWebsitePreview({
+  url,
+  accessKey,
+}: ToolWebsitePreviewProps) {
+  console.log('file: tool-website-preview.tsx:12 ~ accessKey:', accessKey);
+  const logoSrc = `https://api.apiflash.com/v1/urltoimage?access_key=${accessKey}&wait_until=page_loaded&url=${url}`;
 
   return (
     <div className="rounded-lg bg-slate-200 dark:bg-slate-900">
