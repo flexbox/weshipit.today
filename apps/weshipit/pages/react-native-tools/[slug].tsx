@@ -10,12 +10,14 @@ import {
   CardBootcamp,
   CardChecklist,
   CardConsultation,
+  Card,
 } from '@weshipit/ui';
 import client from '../api/apollo-client';
 import Layout from '../../components/layout';
 import { linksApi } from '../api/links';
 import ReactMarkdown from 'react-markdown';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
+import Link from 'next/link';
 
 export function HeaderLinksForTools() {
   return (
@@ -59,6 +61,7 @@ export function ReactNativeSlugPage({ records, recomendedRecords }) {
     github_url,
     twitter_url,
   } = fields;
+
   return (
     <Layout
       seoTitle={`${name} React Native Tools and Resources`}
@@ -67,86 +70,104 @@ export function ReactNativeSlugPage({ records, recomendedRecords }) {
       withAccessoryRight={<HeaderLinksForTools />}
       withContainer={true}
     >
-      <div className="flex">
-        <div>
-          <ToolCardLogo name={name} websiteUrl={website_url} />
-          <Text as="h2" variant="h2">
+      <div className="grid grid-cols-1 gap-8 pt-6 md:grid-cols-12">
+        <div className="col-span-1 md:col-span-8">
+          <Link
+            href="/react-native-tools"
+            className="mb-2 flex py-4  text-slate-400 hover:text-slate-500 dark:text-slate-500 dark:hover:text-slate-400"
+          >
+            Back to list
+          </Link>
+          <ToolCardLogo name={name} websiteUrl={website_url} size={64} />
+          <Text as="h1" variant="h2" className="my-6">
             {name}
           </Text>
-          <div className="prose lg:prose-xl">
+
+          <div className="mb-4 flex flex-wrap">
+            <ToolTypeBadge type={type} size="sm" />
+          </div>
+          <div className="prose lg:prose-xl mb-12">
             <ReactMarkdown>{description}</ReactMarkdown>
+            <Text as="h2" variant="s1" className="my-6">
+              How {name} will help you grow and be more successful?
+            </Text>
+
             <ReactMarkdown>{description_success}</ReactMarkdown>
           </div>
 
-          {platform && platform.length > 0 && (
-            <>
-              <Text as="h3" variant="p1" className=" mb-2 mt-4 ">
-                Platforms
-              </Text>
-              <PlatformList platforms={platform} />
-            </>
-          )}
-          {features && features.length > 0 && (
-            <>
-              <Text as="h3" variant="p1" className=" mb-2 mt-4 ">
-                Features
-              </Text>
-              <PlatformList platforms={features} />
-            </>
-          )}
-          <Text as="h3" variant="p1" className="mb-2 mt-4 ">
-            Pricing
-          </Text>
-          <PlatformList platforms={pricing} />
-          <Text as="h3" variant="p1" className=" mb-2 mt-4 ">
-            Type
-          </Text>
-          <ToolTypeBadge type={type} />
+          <Card>
+            {platform && platform.length > 0 && (
+              <div className="mb-6">
+                <Text as="h3" variant="h3" className="mb-4">
+                  Platforms
+                </Text>
+                <PlatformList platforms={platform} />
+              </div>
+            )}
+            {features && features.length > 0 && (
+              <div className="mb-6">
+                <Text as="h3" variant="h3" className="mb-4">
+                  Features
+                </Text>
+                <PlatformList platforms={features} />
+              </div>
+            )}
+            {pricing && pricing.length > 0 && (
+              <div>
+                <Text as="h3" variant="h3" className="mb-4">
+                  Pricing
+                </Text>
+                <PlatformList platforms={pricing} />
+              </div>
+            )}
+          </Card>
         </div>
-        <div>
-          <ToolWebsitePreview url={website_url} />
 
-          <Button
-            variant="ghost"
-            href={website_url}
-            accessoryRight={
-              <ArrowTopRightOnSquareIcon className="ml-1 h-4 w-4 text-gray-400" />
-            }
-          >
-            Visit website
-          </Button>
-          <Button
-            variant="ghost"
-            href={github_url}
-            accessoryRight={
-              <ArrowTopRightOnSquareIcon className="ml-1 h-4 w-4 text-gray-400" />
-            }
-          >
-            Visit Github
-          </Button>
-          {twitter_url && (
+        <div className="col-span-1 md:col-span-4">
+          <div className="flex flex-col gap-4">
+            <ToolWebsitePreview url={website_url} />
             <Button
               variant="ghost"
-              href={twitter_url}
+              href={website_url}
               accessoryRight={
                 <ArrowTopRightOnSquareIcon className="ml-1 h-4 w-4 text-gray-400" />
               }
             >
-              Visit Twitter
+              Visit website
             </Button>
-          )}
+            <Button
+              variant="ghost"
+              href={github_url}
+              accessoryRight={
+                <ArrowTopRightOnSquareIcon className="ml-1 h-4 w-4 text-gray-400" />
+              }
+            >
+              Visit Github
+            </Button>
+            {twitter_url && (
+              <Button
+                variant="ghost"
+                href={twitter_url}
+                accessoryRight={
+                  <ArrowTopRightOnSquareIcon className="ml-1 h-4 w-4 text-gray-400" />
+                }
+              >
+                Visit Twitter
+              </Button>
+            )}
+          </div>
         </div>
       </div>
 
       <section className="py-12">
-        <Text as="h3" variant="h3" className="my-4">
+        <Text as="h2" variant="h3" className="my-4">
           Other tools from the category {fields.type.toLowerCase()}
         </Text>
         <ToolList records={recomendedRecords} />
       </section>
 
       <section className="py-24">
-        <Text as="h3" variant="h3" className="my-4">
+        <Text as="h2" variant="h3" className="my-4">
           Useful resources
         </Text>
         <div className="flex justify-between">

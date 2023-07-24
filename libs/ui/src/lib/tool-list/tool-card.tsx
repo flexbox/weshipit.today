@@ -53,7 +53,7 @@ export function ToolCard({ fields }: RecordProps) {
           <div className="justify-start">
             <div className="flex items-center justify-between">
               <Text
-                as="p"
+                as="h3"
                 variant="s2"
                 className="mb-2 text-left font-semibold"
               >
@@ -84,7 +84,7 @@ export function ToolCard({ fields }: RecordProps) {
             </Text>
           </div>
 
-          <div className=" justify-end">
+          <div className="justify-end">
             <div className="flex justify-start ">
               <Badge size="sm" variant={typeVariant as any}>
                 {type}

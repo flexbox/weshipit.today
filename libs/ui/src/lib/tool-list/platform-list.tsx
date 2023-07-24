@@ -28,17 +28,15 @@ function PlatformListItem({ platform }: { platform: string }) {
     case 'Windows':
       platformVariant = 'blue';
       break;
-    case 'Premium tiers':
-      platformVariant = 'yellow';
-      break;
-    case 'Free tier':
-      platformVariant = 'lime';
+    // pricing
+    case 'Open Source' || 'Free tier':
+      platformVariant = 'gay-light';
       break;
     case 'Pay as-you-go':
-      platformVariant = 'pink';
+      platformVariant = 'orange';
       break;
-    case 'Open source':
-      platformVariant = 'indigo';
+    case 'Premium tiers':
+      platformVariant = 'yellow';
       break;
     default:
       break;
