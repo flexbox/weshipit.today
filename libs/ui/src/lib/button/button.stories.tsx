@@ -25,10 +25,10 @@ AccessoryLeft.args = {
 
 const IntentExamples = () => (
   <div className="grid gap-4">
-    <Button href="https://weshipit.today" variant="filled">
+    <Button as={'a'} href="https://weshipit.today" variant="filled">
       filled
     </Button>
-    <Button href="https://weshipit.today" variant="ghost">
+    <Button as={'a'} href="https://weshipit.today" variant="ghost">
       ghost
     </Button>
   </div>
@@ -38,13 +38,27 @@ export const Intent = IntentExamples.bind({});
 
 const SizeExamples = () => (
   <div className="grid gap-4">
-    <Button href="https://weshipit.today" size="sm">
+    <Button as={'a'} href="https://weshipit.today" size="sm">
       filled
     </Button>
-    <Button href="https://weshipit.today" size="md">
+    <Button as={'a'} href="https://weshipit.today" size="md">
       filled
     </Button>
   </div>
 );
-
 export const Size = SizeExamples.bind({});
+
+const TypeExamples = () => (
+  <div className="grid gap-4">
+    <Button as={'a'} href="https://weshipit.today" size="sm">
+      filled
+    </Button>
+    <Button as={'button'} href="https://weshipit.today" size="md">
+      filled
+    </Button>
+    <Button as={'Link'} href="https://weshipit.today" size="md">
+      filled
+    </Button>
+  </div>
+);
+export const Type = TypeExamples.bind({});

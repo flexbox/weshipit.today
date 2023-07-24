@@ -5,7 +5,6 @@ import {
   Text,
   Hyperlink,
   CardHomepage,
-  CardGradient,
 } from '@weshipit/ui';
 import Link from 'next/link';
 import { getAllClients } from './api/client';
@@ -40,7 +39,13 @@ export default function IndexPage({ clients }: clientsPageProps) {
       ogImageTitle="React Native Experts"
       withAccessoryRight={
         <div className="sm:flex sm:justify-center lg:justify-start">
-          <Button variant="filled" href={linksApi.airtable.CONSULTATION_FORM}>
+          <Button
+            as="a"
+            variant="filled"
+            href={linksApi.airtable.CONSULTATION_FORM}
+            target="_blank"
+            rel="noreferrer"
+          >
             Book a consultation
           </Button>
         </div>

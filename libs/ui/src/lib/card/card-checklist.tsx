@@ -32,12 +32,15 @@ export function CardChecklist({ imageSize }: CardImageProps) {
             Never miss your store deployments with Expo.
           </p>
           <Button
+            as={'a'}
             variant="ghost"
             href="https://flexbox.gumroad.com/l/expo-checklist"
             className="mt-4"
             accessoryRight={
               <ArrowTopRightOnSquareIcon className="ml-1 h-4 w-4 text-gray-400" />
             }
+            target="_blank"
+            rel="noreferrer"
           >
             Get the checklist
           </Button>

@@ -1,4 +1,6 @@
 import { cva, type VariantProps } from 'class-variance-authority';
+import Hyperlink from '../hyperlink/hyperlink';
+import { rest } from 'lodash';
 
 const button = cva('button', {
   variants: {
@@ -47,28 +49,31 @@ export interface ButtonProps
   accessoryLeft?: React.ReactNode;
   accessoryRight?: React.ReactNode;
   children?: React.ReactNode;
-  href: string;
+  as: React.ElementType;
+  href?: string;
+  target?: string;
+  rel?: string;
 }
 
 export const Button: React.FC<ButtonProps> = ({
+  as: Element = 'button',
+  href,
   className,
   variant,
   children,
   accessoryLeft,
   accessoryRight,
-  href,
   size,
-}) => (
-  <a
-    href={href}
-    className={button({ variant, size, className })}
-    target="_blank"
-    rel="noreferrer"
-  >
-    {accessoryLeft && <div className="flex">{accessoryLeft}</div>}
-    {children}
-    {accessoryRight && <div className="flex">{accessoryRight}</div>}
-  </a>
-);
+  as,
+  target,
+  rel,
+  ...restProps
+}) => {
+  return (
+    <Element {...restProps} className={button({ variant, size, className })}>
+      {children}
+    </Element>
+  );
+};
 
 export default Button;

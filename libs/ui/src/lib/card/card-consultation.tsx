@@ -37,12 +37,15 @@ export function CardConsultation({ gravatarSize }: CardConsultationProps) {
             Book a call with us to talk about your project.
           </p>
           <Button
+            as={'a'}
             variant="ghost"
             href="https://airtable.com/shryVoJ3nzyeq2P4s"
             className="mt-4"
             accessoryRight={
               <ArrowTopRightOnSquareIcon className="ml-1 h-4 w-4 text-gray-400" />
             }
+            target="_blank"
+            rel="noreferrer"
           >
             Book a call
           </Button>

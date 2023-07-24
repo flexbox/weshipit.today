@@ -10,9 +10,9 @@ const IndexPage = () => (
     <div className="relative min-h-screen overflow-hidden bg-gray-900">
       <div className="absolute hidden lg:block"></div>
 
-      <div className="relative min-h-screen bg-no-repeat lg:flex lg:items-center  lg:justify-center lg:py-20 lg:px-8">
+      <div className="relative min-h-screen bg-no-repeat lg:flex lg:items-center  lg:justify-center lg:px-8 lg:py-20">
         <div className="w-full lg:w-2/5 ">
-          <div className="px-6 pt-8 pb-12 md:mx-auto md:max-w-3xl lg:mx-0 lg:max-w-none lg:pt-0 lg:pb-16">
+          <div className="px-6 pb-12 pt-8 md:mx-auto md:max-w-3xl lg:mx-0 lg:max-w-none lg:pb-16 lg:pt-0">
             <div className="flex items-center justify-between">
               <div className="font-semibold uppercase text-gray-300">
                 Figma To Store
@@ -37,7 +37,7 @@ const IndexPage = () => (
               <a
                 href={figmaDemo}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noreferrer"
                 className="inline-flex w-full items-center justify-center rounded-md border border-transparent bg-white px-6 py-3 text-base font-semibold leading-6 text-gray-900 shadow-sm transition duration-150 ease-in-out hover:text-gray-600 focus:text-gray-600 focus:outline-none sm:w-auto xl:py-4 xl:text-lg"
               >
                 Explore the preview

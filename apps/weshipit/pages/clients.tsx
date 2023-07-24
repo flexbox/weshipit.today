@@ -31,7 +31,13 @@ export default function ClientsPage({ clients }: clientsPageProps) {
       ogImageTitle="Clients"
       withAccessoryRight={
         <div className="sm:flex sm:justify-center lg:justify-start">
-          <Button variant="filled" href={linksApi.airtable.CONSULTATION_FORM}>
+          <Button
+            as={'a'}
+            variant="filled"
+            href={linksApi.airtable.CONSULTATION_FORM}
+            target="_blank"
+            rel="noreferrer"
+          >
             Book a consultation
           </Button>
         </div>
