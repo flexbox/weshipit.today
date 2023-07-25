@@ -8,9 +8,7 @@ import {
 } from '@weshipit/ui';
 import Link from 'next/link';
 import { getAllClients } from './api/client';
-import Layout from '../components/layout';
-// eslint-disable-next-line @nx/enforce-module-boundaries
-
+import { Layout } from '../components/layout';
 import { linksApi } from './api/links';
 
 interface ClientProps {

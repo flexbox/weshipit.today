@@ -22,6 +22,7 @@
     "--libs--": "------------------------------------------------------",
     "ui:lint": "nx lint ui",
     "ui:test": "nx test ui",
+    "ui:test:watch": "nx test ui --watch",
     "ui:build": "nx build ui",
     "ui:build:storybook": "nx storybook build ui",
     "ui:storybook": "nx storybook ui",

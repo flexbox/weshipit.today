@@ -13,7 +13,7 @@ import {
   Card,
 } from '@weshipit/ui';
 import client from '../api/apollo-client';
-import Layout from '../../components/layout';
+import { Layout } from '../../components/layout';
 import { linksApi } from '../api/links';
 import ReactMarkdown from 'react-markdown';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
