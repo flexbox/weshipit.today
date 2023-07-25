@@ -20,11 +20,10 @@ export function Consulting() {
       ogImageTitle="Helping you to ship your vision in production"
       withAccessoryRight={
         <Button
-          as={'a'}
+          as="a"
           variant="ghost"
           href="https://cal.com/davidl/coaching"
-          target="_blank"
-          rel="noreferrer"
+          isExternalLink={true}
         >
           Schedule 1-to-1 consulting
         </Button>
@@ -38,10 +37,9 @@ export function Consulting() {
 
         <div className="mt-12 flex justify-center">
           <Button
-            as={'a'}
+            as="a"
             href="https://cal.com/davidl/coaching"
-            target="_blank"
-            rel="noreferrer"
+            isExternalLink={true}
           >
             Schedule one-on-one consulting
           </Button>

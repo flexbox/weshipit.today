@@ -23,7 +23,7 @@ const badge = cva('badge', {
         'dark:text-green-200',
       ],
       indigo: [
-        'bg-indigo-300',
+        'bg-indigo-400',
         'text-indigo-700',
         'dark:bg-indigo-800',
         'dark:text-indigo-200',

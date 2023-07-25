@@ -14,17 +14,22 @@ Primary.args = {
   children: 'Primary',
 };
 
-export const AccessoryLeft = Template.bind({});
-AccessoryLeft.args = {
+export const Accessory = Template.bind({});
+Accessory.args = {
   accessoryLeft: (
     <span role="img" aria-label="backhand index pointing right">
       👉
     </span>
   ),
+  accessoryRight: (
+    <span role="img" aria-label="backhand index pointing left">
+      👈
+    </span>
+  ),
   children: 'Accessory Left',
 };
 
-const IntentExamples = () => (
+const VariantExamples = () => (
   <div className="grid gap-4">
     <Button as="a" href="https://weshipit.today" variant="filled">
       filled
@@ -35,31 +40,51 @@ const IntentExamples = () => (
   </div>
 );
 
-export const Intent = IntentExamples.bind({});
+export const Variant = VariantExamples.bind({});
 
 const SizeExamples = () => (
   <div className="grid gap-4">
     <Button as="a" href="https://weshipit.today" size="sm">
-      filled
+      size sm
     </Button>
     <Button as="a" href="https://weshipit.today" size="md">
-      filled
+      size md
     </Button>
   </div>
 );
 export const Size = SizeExamples.bind({});
 
-const TypeExamples = () => (
+const AsExamples = () => (
   <div className="grid gap-4">
-    <Button as="a" href="https://weshipit.today" size="sm">
+    <Button as="a" href="https://weshipit.today">
       a href
     </Button>
-    <Button as="button" href="https://weshipit.today" size="md">
-      filled
+    <Button as="button" href="https://weshipit.today">
+      button
     </Button>
-    <LinkButton href="https://weshipit.today" size="md">
-      Link Button
-    </LinkButton>
+    <LinkButton href="https://weshipit.today">Link Button</LinkButton>
+    <Button as="a" href="https://davidl.fr/" isExternalLink={true}>
+      a href `isExternalLink`
+    </Button>
+    <Button as="button" href="https://davidl.fr/" isExternalLink={true}>
+      filled `isExternalLink`
+    </Button>
+    <Button
+      as="a"
+      href="https://davidl.fr/"
+      isExternalLink={true}
+      variant="ghost"
+    >
+      a href `isExternalLink`
+    </Button>
+    <Button
+      as="button"
+      href="https://davidl.fr/"
+      isExternalLink={true}
+      variant="ghost"
+    >
+      filled `isExternalLink`
+    </Button>
   </div>
 );
-export const Type = TypeExamples.bind({});
+export const As = AsExamples.bind({});

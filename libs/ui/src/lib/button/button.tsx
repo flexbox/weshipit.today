@@ -1,6 +1,5 @@
+import ArrowTopRightOnSquareIcon from '@heroicons/react/24/solid/ArrowTopRightOnSquareIcon';
 import { cva, type VariantProps } from 'class-variance-authority';
-import Hyperlink from '../hyperlink/hyperlink';
-import Link, { LinkProps } from 'next/link';
 
 export const buttonVariants = cva('button', {
   variants: {
@@ -10,30 +9,33 @@ export const buttonVariants = cva('button', {
         'hover:bg-indigo-700',
         'dark:bg-indigo-900',
         'text-white',
-        'rounded-md',
-        'justify-between',
-        'items-center',
-        'flex',
+        'dark:text-indigo-200',
       ],
-      ghost: [
-        'bg-white',
-        'text-black',
-        'hover:bg-gray-100',
-        'flex',
-        'items-center',
-        'justify-between',
-        'rounded-md',
-      ],
+      ghost: ['bg-white', 'hover:bg-gray-100', 'text-slate-900'],
     },
     size: {
-      sm: ['shadow-sm', 'font-medium', 'text-sm', 'py-1', 'px-4'],
+      sm: [
+        'flex',
+        'items-center',
+        'justify-between',
+        'shadow-sm',
+        'rounded-md',
+        'font-medium',
+        'text-sm',
+        'py-1',
+        'px-4',
+      ],
       md: [
-        'md:text-lg',
-        'md:px-6',
+        'flex',
+        'items-center',
+        'justify-between',
+        'rounded-md',
         'shadow-md',
         'font-medium',
         'text-base',
         'py-3',
+        'md:text-lg',
+        'md:px-6',
       ],
     },
   },
@@ -63,6 +65,8 @@ export const Button: React.FC<ButtonProps> = ({
   children,
   size,
   isExternalLink = false,
+  accessoryLeft,
+  accessoryRight,
   ...rest
 }) => {
   if (isExternalLink) {
@@ -70,17 +74,21 @@ export const Button: React.FC<ButtonProps> = ({
       <Element
         className={buttonVariants({ variant, size, className })}
         target="_blank"
-        rel="noreferrer"
         {...rest}
       >
         {children}
+        <span>
+          <ArrowTopRightOnSquareIcon className="ml-4 h-4 w-4 text-gray-400" />
+        </span>
       </Element>
     );
   }
 
   return (
     <Element className={buttonVariants({ variant, size, className })} {...rest}>
+      {accessoryLeft && <span className="mr-2">{accessoryLeft}</span>}
       {children}
+      {accessoryRight && <span className="ml-2">{accessoryRight}</span>}
     </Element>
   );
 };

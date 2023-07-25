@@ -8,5 +8,7 @@ const Story: Meta<typeof Card> = {
 export default Story;
 
 export const Primary = {
-  args: {},
+  args: {
+    children: 'I am a card.',
+  },
 };

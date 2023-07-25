@@ -42,7 +42,6 @@ export default function IndexPage({ clients }: clientsPageProps) {
             variant="filled"
             href={linksApi.airtable.CONSULTATION_FORM}
             target="_blank"
-            rel="noreferrer"
           >
             Book a consultation
           </Button>

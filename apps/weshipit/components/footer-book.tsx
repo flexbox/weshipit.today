@@ -20,8 +20,7 @@ export default function FooterBook() {
             as="a"
             className="my-4 w-44"
             href="https://gumroad.com/l/road-react-native"
-            target="_blank"
-            rel="noreferrer"
+            isExternalLink={true}
           >
             Check it out !
           </Button>

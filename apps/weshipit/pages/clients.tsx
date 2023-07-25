@@ -32,11 +32,10 @@ export default function ClientsPage({ clients }: clientsPageProps) {
       withAccessoryRight={
         <div className="sm:flex sm:justify-center lg:justify-start">
           <Button
-            as={'a'}
+            as="a"
             variant="filled"
             href={linksApi.airtable.CONSULTATION_FORM}
             target="_blank"
-            rel="noreferrer"
           >
             Book a consultation
           </Button>
