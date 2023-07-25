@@ -1,11 +1,11 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStory, Meta } from '@storybook/react';
 import { apiListFixture } from './tool-list.fixture';
 import { ToolCard } from './tool-card';
 
 export default {
   component: ToolCard,
   title: 'components/react-native-api',
-} as ComponentMeta<typeof ToolCard>;
+} as Meta<typeof ToolCard>;
 
 const Template: ComponentStory<typeof ToolCard> = (args) => (
   <ToolCard {...args} />

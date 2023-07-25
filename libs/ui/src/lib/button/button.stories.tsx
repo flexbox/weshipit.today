@@ -1,11 +1,11 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStory, Meta } from '@storybook/react';
 import { Button } from './button';
 import { LinkButton } from './link-button';
 
 export default {
   component: Button,
   title: 'Button',
-} as ComponentMeta<typeof Button>;
+} as Meta<typeof Button>;
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 

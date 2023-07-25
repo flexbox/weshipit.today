@@ -1,10 +1,10 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStory, Meta } from '@storybook/react';
 import { Text } from './text';
 
 export default {
   component: Text,
   title: 'Text',
-} as ComponentMeta<typeof Text>;
+} as Meta<typeof Text>;
 
 const VariantExamples = () => (
   <div className="grid gap-4">

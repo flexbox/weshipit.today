@@ -1,7 +1,7 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { ComponentStory, Meta } from '@storybook/react';
 import { Badge } from './badge';
 
-const Story: ComponentMeta<typeof Badge> = {
+const Story: Meta<typeof Badge> = {
   component: Badge,
   title: 'Badge',
 };
