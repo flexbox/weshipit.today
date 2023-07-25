@@ -19,7 +19,12 @@ export function Consulting() {
       seoDescription="Looking to improve your skills as a React Native developer? Our coaching services are here to help. Our experienced team will provide personalized guidance and support to help you take your skills to the next level. Whether you're a beginner or an experienced developer, we have a coaching program that's right for you."
       ogImageTitle="Helping you to ship your vision in production"
       withAccessoryRight={
-        <Button variant="ghost" href="https://cal.com/davidl/coaching">
+        <Button
+          as="a"
+          variant="ghost"
+          href="https://cal.com/davidl/coaching"
+          isExternalLink={true}
+        >
           Schedule 1-to-1 consulting
         </Button>
       }
@@ -31,7 +36,11 @@ export function Consulting() {
         </Text>
 
         <div className="mt-12 flex justify-center">
-          <Button href="https://cal.com/davidl/coaching">
+          <Button
+            as="a"
+            href="https://cal.com/davidl/coaching"
+            isExternalLink={true}
+          >
             Schedule one-on-one consulting
           </Button>
         </div>

@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function FooterBook() {
   return (
-    <div className="mx-auto mb-12 max-w-4xl overflow-hidden rounded-2xl bg-white py-12 px-4 sm:px-6 lg:px-8">
+    <div className="mx-auto mb-12 max-w-4xl overflow-hidden rounded-2xl bg-white px-4 py-12 sm:px-6 lg:px-8">
       <div className="flex items-center justify-between">
         <div className="flex-initial">
           <div className="my-4 text-lg font-semibold">
@@ -17,8 +17,10 @@ export default function FooterBook() {
           </div>
 
           <Button
+            as="a"
             className="my-4 w-44"
             href="https://gumroad.com/l/road-react-native"
+            isExternalLink={true}
           >
             Check it out !
           </Button>

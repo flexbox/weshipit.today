@@ -1,6 +1,7 @@
+import ArrowTopRightOnSquareIcon from '@heroicons/react/24/solid/ArrowTopRightOnSquareIcon';
 import { cva, type VariantProps } from 'class-variance-authority';
 
-const button = cva('button', {
+export const buttonVariants = cva('button', {
   variants: {
     variant: {
       filled: [
@@ -8,30 +9,33 @@ const button = cva('button', {
         'hover:bg-indigo-700',
         'dark:bg-indigo-900',
         'text-white',
-        'rounded-md',
-        'justify-between',
-        'items-center',
-        'flex',
+        'dark:text-indigo-200',
       ],
-      ghost: [
-        'bg-white',
-        'text-black',
-        'hover:bg-gray-100',
-        'flex',
-        'items-center',
-        'justify-between',
-        'rounded-md',
-      ],
+      ghost: ['bg-white', 'hover:bg-gray-100', 'text-slate-900'],
     },
     size: {
-      sm: ['shadow-sm', 'font-medium', 'text-sm', 'py-1', 'px-4'],
+      sm: [
+        'flex',
+        'items-center',
+        'justify-between',
+        'shadow-sm',
+        'rounded-md',
+        'font-medium',
+        'text-sm',
+        'py-1',
+        'px-4',
+      ],
       md: [
-        'md:text-lg',
-        'md:px-6',
+        'flex',
+        'items-center',
+        'justify-between',
+        'rounded-md',
         'shadow-md',
         'font-medium',
         'text-base',
         'py-3',
+        'md:text-lg',
+        'md:px-6',
       ],
     },
   },
@@ -43,32 +47,50 @@ const button = cva('button', {
 
 export interface ButtonProps
   extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof button> {
+    VariantProps<typeof buttonVariants> {
   accessoryLeft?: React.ReactNode;
   accessoryRight?: React.ReactNode;
-  children?: React.ReactNode;
-  href: string;
+  children: React.ReactNode;
+  as?: React.ElementType;
+  href?: string;
+  target?: string;
+  rel?: string;
+  isExternalLink?: boolean;
 }
 
 export const Button: React.FC<ButtonProps> = ({
+  as: Element = 'button',
   className,
   variant,
   children,
+  size,
+  isExternalLink = false,
   accessoryLeft,
   accessoryRight,
-  href,
-  size,
-}) => (
-  <a
-    href={href}
-    className={button({ variant, size, className })}
-    target="_blank"
-    rel="noreferrer"
-  >
-    {accessoryLeft && <div className="flex">{accessoryLeft}</div>}
-    {children}
-    {accessoryRight && <div className="flex">{accessoryRight}</div>}
-  </a>
-);
+  ...rest
+}) => {
+  if (isExternalLink) {
+    return (
+      <Element
+        className={buttonVariants({ variant, size, className })}
+        target="_blank"
+        {...rest}
+      >
+        {children}
+        <span>
+          <ArrowTopRightOnSquareIcon className="ml-4 h-4 w-4 text-gray-400" />
+        </span>
+      </Element>
+    );
+  }
+
+  return (
+    <Element className={buttonVariants({ variant, size, className })} {...rest}>
+      {accessoryLeft && <span className="mr-2">{accessoryLeft}</span>}
+      {children}
+      {accessoryRight && <span className="ml-2">{accessoryRight}</span>}
+    </Element>
+  );
+};
 
 export default Button;

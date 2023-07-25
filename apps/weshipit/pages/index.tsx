@@ -5,13 +5,10 @@ import {
   Text,
   Hyperlink,
   CardHomepage,
-  CardGradient,
 } from '@weshipit/ui';
 import Link from 'next/link';
 import { getAllClients } from './api/client';
-import Layout from '../components/layout';
-// eslint-disable-next-line @nx/enforce-module-boundaries
-
+import { Layout } from '../components/layout';
 import { linksApi } from './api/links';
 
 interface ClientProps {
@@ -40,7 +37,12 @@ export default function IndexPage({ clients }: clientsPageProps) {
       ogImageTitle="React Native Experts"
       withAccessoryRight={
         <div className="sm:flex sm:justify-center lg:justify-start">
-          <Button variant="filled" href={linksApi.airtable.CONSULTATION_FORM}>
+          <Button
+            as="a"
+            variant="filled"
+            href={linksApi.airtable.CONSULTATION_FORM}
+            target="_blank"
+          >
             Book a consultation
           </Button>
         </div>

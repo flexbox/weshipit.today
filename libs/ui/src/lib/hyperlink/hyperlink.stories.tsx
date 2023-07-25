@@ -1,7 +1,7 @@
-import type { ComponentStory, ComponentMeta } from '@storybook/react';
+import type { ComponentStory, Meta } from '@storybook/react';
 import { Hyperlink } from './hyperlink';
 
-const Story: ComponentMeta<typeof Hyperlink> = {
+const Story: Meta<typeof Hyperlink> = {
   component: Hyperlink,
   title: 'Hyperlink',
 };

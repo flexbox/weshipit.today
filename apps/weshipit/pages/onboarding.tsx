@@ -1,6 +1,6 @@
 import React from 'react';
 import { linksApi } from './api/links';
-import Layout from '../components/layout';
+import { Layout } from '../components/layout';
 
 export default function Onboarding() {
   return (

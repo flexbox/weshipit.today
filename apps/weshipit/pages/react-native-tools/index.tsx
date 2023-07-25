@@ -40,7 +40,7 @@ export default function ReactNativeToolsPage({ records }) {
       ogImageTitle="React Native Tools"
       withAccessoryRight={<HeaderLinksForTools />}
     >
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6">
+      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
         <Text as="h3" variant="h3" className="py-4">
           The best <span className="text-indigo-600">{toolType}</span> tools and
           resources for busy developers.
@@ -61,7 +61,7 @@ export default function ReactNativeToolsPage({ records }) {
       </div>
 
       <div className="mx-auto max-w-screen-2xl px-4 pb-48 sm:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-6 md:gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-6 md:gap-6">
           <div>
             <TypeFilter numberOfTools={numberOfTools} />
           </div>

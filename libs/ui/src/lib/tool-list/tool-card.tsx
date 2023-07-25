@@ -48,23 +48,19 @@ export function ToolCard({ fields }: RecordProps) {
 
   return (
     <Card>
-      <Link href={`/react-native-tools/${slug}`} className="cursor-pointer">
-        <div className="flex h-full flex-col justify-between ">
+      <Link href={`/react-native-tools/${slug}`}>
+        <div className="flex h-full flex-col justify-between">
           <div className="justify-start">
             <div className="flex items-center justify-between">
-              <Text
-                as="h3"
-                variant="s2"
-                className="mb-2 text-left font-semibold"
-              >
+              <Text as="h3" variant="s2" className="font-semibold">
                 {name}
               </Text>
               {pricing && (
                 <div className="group relative flex items-center justify-center overflow-hidden rounded-2xl border-2 border-dashed border-gray-400 px-4">
                   <Text
                     as="p"
-                    variant={'p2'}
-                    className="font-bold text-gray-400"
+                    variant="p2"
+                    className="font-bold text-slate-400"
                   >
                     <small>{pricing[0]}</small>
                   </Text>
@@ -74,22 +70,20 @@ export function ToolCard({ fields }: RecordProps) {
                 </div>
               )}
             </div>
-            <div className="justify-center">
-              <div className="my-8 flex items-center justify-between">
-                <ToolCardLogo name={name} websiteUrl={website_url} />
-              </div>
+
+            <div className="my-4">
+              <ToolCardLogo name={name} websiteUrl={website_url} />
             </div>
+
             <Text as="p" variant={'p1'} className="mb-6 text-gray-400">
               {description}
             </Text>
           </div>
 
-          <div className="justify-end">
-            <div className="flex justify-start ">
-              <Badge size="sm" variant={typeVariant as any}>
-                {type}
-              </Badge>
-            </div>
+          <div className="flex justify-start ">
+            <Badge size="sm" variant={typeVariant as any}>
+              {type}
+            </Badge>
           </div>
         </div>
       </Link>

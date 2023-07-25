@@ -1,10 +1,10 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStory, Meta } from '@storybook/react';
 import { Hero } from './hero';
 
 export default {
   component: Hero,
   title: 'Hero',
-} as ComponentMeta<typeof Hero>;
+} as Meta<typeof Hero>;
 
 const Template: ComponentStory<typeof Hero> = (args) => <Hero {...args} />;
 

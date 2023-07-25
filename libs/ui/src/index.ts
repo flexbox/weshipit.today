@@ -1,3 +1,4 @@
+export * from './lib/button/link-button';
 export * from './/lib/tool-list/platform-list';
 export * from './lib/badge/badge';
 export * from './lib/button/button';

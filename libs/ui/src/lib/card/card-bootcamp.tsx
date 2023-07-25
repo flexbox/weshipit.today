@@ -33,11 +33,10 @@ export function CardBootcamp({ imageSize }: CardImageProps) {
           </p>
           <Button
             variant="ghost"
+            as="a"
             href="https://davidl.fr/bootcamp"
             className="mt-4"
-            accessoryRight={
-              <ArrowTopRightOnSquareIcon className="ml-1 h-4 w-4 text-gray-400" />
-            }
+            isExternalLink={true}
           >
             Join the bootcamp
           </Button>
