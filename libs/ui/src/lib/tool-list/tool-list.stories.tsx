@@ -4,7 +4,7 @@ import { ToolList } from './tool-list';
 
 export default {
   component: ToolList,
-  title: 'components/react-native-api',
+  title: 'ToolList',
 } as Meta<typeof ToolList>;
 
 const Template: ComponentStory<typeof ToolList> = (args) => (

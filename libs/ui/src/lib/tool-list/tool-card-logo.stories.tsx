@@ -8,5 +8,8 @@ const Story: Meta<typeof ToolCardLogo> = {
 export default Story;
 
 export const Primary = {
-  args: {},
+  args: {
+    name: 'Expo',
+    websiteUrl: 'https://expo.dev',
+  },
 };

@@ -8,5 +8,8 @@ const Story: Meta<typeof ToolTypeBadge> = {
 export default Story;
 
 export const Primary = {
-  args: {},
+  args: {
+    type: 'Persistent storage',
+    size: 'md',
+  },
 };

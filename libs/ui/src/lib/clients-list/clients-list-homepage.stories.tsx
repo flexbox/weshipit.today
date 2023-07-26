@@ -4,7 +4,7 @@ import { ClientsListHomepage } from './clients-list-homepage';
 
 export default {
   component: ClientsListHomepage,
-  title: 'components/clients',
+  title: 'ClientsListHomepage',
 } as Meta<typeof ClientsListHomepage>;
 
 const Template: ComponentStory<typeof ClientsListHomepage> = (args) => (

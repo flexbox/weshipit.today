@@ -4,7 +4,7 @@ import { ToolCard } from './tool-card';
 
 export default {
   component: ToolCard,
-  title: 'components/react-native-api',
+  title: 'ToolCard',
 } as Meta<typeof ToolCard>;
 
 const Template: ComponentStory<typeof ToolCard> = (args) => (

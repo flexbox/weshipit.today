@@ -8,5 +8,7 @@ const Story: Meta<typeof PlatformList> = {
 export default Story;
 
 export const Primary = {
-  args: {},
+  args: {
+    platforms: ['iOS', 'Android', 'Web', 'MacOS', 'Windows', 'Linux', 'Unity'],
+  },
 };
