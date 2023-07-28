@@ -16,7 +16,7 @@ export function Header({
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <Link href="/">
               <div className="text-2xl font-bold dark:text-white">
-                weshipit<span className="text-gray-400">.today</span>
+                weshipit<span className="text-slate-400">.today</span>
               </div>
             </Link>
           </div>

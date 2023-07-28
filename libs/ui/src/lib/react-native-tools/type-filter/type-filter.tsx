@@ -1,4 +1,4 @@
-import { ChevronRightIcon, XMarkIcon } from '@heroicons/react/24/solid';
+import { ChevronRightIcon, XMarkIcon } from '@heroicons/react/20/solid';
 import { usePathname, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { useCallback } from 'react';
@@ -73,7 +73,7 @@ export function TypeFilter({ numberOfTools }: { numberOfTools: number }) {
   return (
     <ul className="grid grid-flow-row gap-4">
       <li>
-        <Text variant="c2" className="text-gray-400">
+        <Text variant="c2" className="text-slate-400">
           Filter {numberOfTools}+ tools
         </Text>
       </li>
@@ -81,10 +81,8 @@ export function TypeFilter({ numberOfTools }: { numberOfTools: number }) {
         <li>
           <Link href="/react-native-tools">
             <Badge variant="gray-light">
-              <div className="flex justify-between">
-                Reset filter
-                <XMarkIcon className="ml-1 h-6 w-6" />
-              </div>
+              Reset filter
+              <XMarkIcon className="ml-1 h-6 w-6" />
             </Badge>
           </Link>
         </li>
@@ -93,10 +91,8 @@ export function TypeFilter({ numberOfTools }: { numberOfTools: number }) {
         <li key={kebabCase(type.name)}>
           <Link href={pathname + '?' + createQueryString('type', type.name)}>
             <Badge variant={type.color}>
-              <div className="flex justify-between">
-                # {type.name}
-                <ChevronRightIcon className="ml-1 h-6 w-6" />
-              </div>
+              # {type.name}
+              <ChevronRightIcon className="ml-1 h-6 w-6" />
             </Badge>
           </Link>
         </li>

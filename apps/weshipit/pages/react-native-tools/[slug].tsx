@@ -22,11 +22,12 @@ export function HeaderLinksForTools() {
   return (
     <div className="flex">
       <Button
-        variant="ghost"
+        variant="secondary"
         as="a"
         className="mr-4 px-2"
         href="https://flexbox.gumroad.com/l/expo-checklist"
         target="_blank"
+        size="xl"
       >
         🎁 Free Launch Checklist
       </Button>
@@ -35,6 +36,7 @@ export function HeaderLinksForTools() {
         href={linksApi.airtable.TOOLS_FORM}
         className="px-2"
         target="_blank"
+        size="xl"
       >
         Add a React Native Tool
       </Button>
@@ -142,27 +144,30 @@ export function ReactNativeSlugPage({
                 accessKey={screenshotAccessKey}
               />
               <Button
-                variant="ghost"
+                variant="secondary"
                 as="a"
                 href={website_url}
                 isExternalLink={true}
+                size="xl"
               >
                 Visit website
               </Button>
               <Button
-                variant="ghost"
+                variant="secondary"
                 as="a"
                 href={github_url}
                 isExternalLink={true}
+                size="xl"
               >
                 Visit Github
               </Button>
               {twitter_url && (
                 <Button
-                  variant="ghost"
+                  variant="secondary"
                   as="a"
                   href={twitter_url}
                   isExternalLink={true}
+                  size="xl"
                 >
                   Visit Twitter
                 </Button>

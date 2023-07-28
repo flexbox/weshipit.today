@@ -1,7 +1,6 @@
 import Button from '../button/button';
 import CardGradient from '../card-gradient/card-gradient';
 import Gravatar from 'react-gravatar';
-import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 
 export interface CardConsultationProps {
   gravatarSize: number;
@@ -38,14 +37,10 @@ export function CardConsultation({ gravatarSize }: CardConsultationProps) {
           </p>
           <Button
             as={'a'}
-            variant="ghost"
+            variant="secondary"
             href="https://airtable.com/shryVoJ3nzyeq2P4s"
             className="mt-4"
-            accessoryRight={
-              <ArrowTopRightOnSquareIcon className="ml-1 h-4 w-4 text-gray-400" />
-            }
-            target="_blank"
-            rel="noreferrer"
+            isExternalLink={true}
           >
             Book a call
           </Button>

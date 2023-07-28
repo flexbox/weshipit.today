@@ -39,7 +39,7 @@ export default function IndexPage({ clients }: clientsPageProps) {
         <div className="sm:flex sm:justify-center lg:justify-start">
           <Button
             as="a"
-            variant="filled"
+            variant="primary"
             href={linksApi.airtable.CONSULTATION_FORM}
             target="_blank"
           >

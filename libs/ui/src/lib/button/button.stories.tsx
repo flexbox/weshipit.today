@@ -14,42 +14,83 @@ Primary.args = {
   children: 'Primary',
 };
 
-export const Accessory = Template.bind({});
-Accessory.args = {
-  accessoryLeft: (
-    <span role="img" aria-label="backhand index pointing right">
-      👉
-    </span>
-  ),
-  accessoryRight: (
-    <span role="img" aria-label="backhand index pointing left">
-      👈
-    </span>
-  ),
-  children: 'Accessory Left',
-};
-
-const VariantExamples = () => (
-  <div className="grid gap-4">
-    <Button as="a" href="https://weshipit.today" variant="filled">
-      filled
+export const Accessory = () => (
+  <div className="flex gap-4">
+    <Button
+      accessoryLeft={
+        <span role="img" aria-label="backhand index pointing right">
+          👉
+        </span>
+      }
+    >
+      accessoryLeft
     </Button>
-    <Button as="a" href="https://weshipit.today" variant="ghost">
-      ghost
+    <Button
+      accessoryRight={
+        <span role="img" aria-label="backhand index pointing right">
+          👈
+        </span>
+      }
+    >
+      accessoryRight
+    </Button>
+    <Button as="a" href="https://davidl.fr/" isExternalLink={true}>
+      a href `isExternalLink`
+    </Button>
+    <Button
+      as="a"
+      href="https://davidl.fr/"
+      isExternalLink={true}
+      variant="secondary"
+    >
+      a href `isExternalLink`
     </Button>
   </div>
 );
 
-export const Variant = VariantExamples.bind({});
+export const VariantExamples = () => (
+  <div className="grid gap-4">
+    <Button as="a" href="https://weshipit.today" variant="primary">
+      primary
+    </Button>
+    <Button as="a" href="https://weshipit.today" variant="secondary">
+      secondary
+    </Button>
+  </div>
+);
 
 const SizeExamples = () => (
   <div className="grid gap-4">
-    <Button as="a" href="https://weshipit.today" size="sm">
+    <LinkButton href="/" size="xs">
+      size sx
+    </LinkButton>
+    <LinkButton href="/" size="sm">
       size sm
-    </Button>
-    <Button as="a" href="https://weshipit.today" size="md">
+    </LinkButton>
+    <LinkButton href="/" size="md">
       size md
-    </Button>
+    </LinkButton>
+    <LinkButton href="/" size="lg">
+      size lg
+    </LinkButton>
+    <LinkButton href="/" size="xl">
+      size xl
+    </LinkButton>
+    <LinkButton href="/" size="xs" variant="secondary">
+      size sx
+    </LinkButton>
+    <LinkButton href="/" size="sm" variant="secondary">
+      size sm
+    </LinkButton>
+    <LinkButton href="/" size="md" variant="secondary">
+      size md
+    </LinkButton>
+    <LinkButton href="/" size="lg" variant="secondary">
+      size lg
+    </LinkButton>
+    <LinkButton href="/" size="xl" variant="secondary">
+      size xl
+    </LinkButton>
   </div>
 );
 export const Size = SizeExamples.bind({});
@@ -67,13 +108,13 @@ const AsExamples = () => (
       a href `isExternalLink`
     </Button>
     <Button as="button" href="https://davidl.fr/" isExternalLink={true}>
-      filled `isExternalLink`
+      primary `isExternalLink`
     </Button>
     <Button
       as="a"
       href="https://davidl.fr/"
       isExternalLink={true}
-      variant="ghost"
+      variant="secondary"
     >
       a href `isExternalLink`
     </Button>
@@ -81,9 +122,9 @@ const AsExamples = () => (
       as="button"
       href="https://davidl.fr/"
       isExternalLink={true}
-      variant="ghost"
+      variant="secondary"
     >
-      filled `isExternalLink`
+      primary `isExternalLink`
     </Button>
   </div>
 );

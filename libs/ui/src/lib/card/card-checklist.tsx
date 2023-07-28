@@ -2,7 +2,6 @@ import Image from 'next/image';
 import Button from '../button/button';
 import gumroad from '../../assets/gumroad-thumbnail.png';
 import CardGradient from '../card-gradient/card-gradient';
-import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 import { CardImageProps } from './card-bootcamp';
 
 export function CardChecklist({ imageSize }: CardImageProps) {
@@ -33,14 +32,10 @@ export function CardChecklist({ imageSize }: CardImageProps) {
           </p>
           <Button
             as={'a'}
-            variant="ghost"
+            variant="secondary"
             href="https://flexbox.gumroad.com/l/expo-checklist"
             className="mt-4"
-            accessoryRight={
-              <ArrowTopRightOnSquareIcon className="ml-1 h-4 w-4 text-gray-400" />
-            }
-            target="_blank"
-            rel="noreferrer"
+            isExternalLink={true}
           >
             Get the checklist
           </Button>
