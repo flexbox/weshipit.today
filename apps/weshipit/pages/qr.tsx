@@ -23,7 +23,7 @@ export function Qr() {
           </p>
           <p>
             You’ll receive a copy of your time slot request, and we’ll confirm
-            as we match you to a Double Agent Slots will be filled in order
+            as we match you to a Double Agent Slots will be primary in order
             received, and when slots fill up we’ll start a wait list.
           </p>
           <p>

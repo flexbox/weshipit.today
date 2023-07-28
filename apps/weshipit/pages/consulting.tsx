@@ -21,7 +21,7 @@ export function Consulting() {
       withAccessoryRight={
         <Button
           as="a"
-          variant="ghost"
+          variant="secondary"
           href="https://cal.com/davidl/coaching"
           isExternalLink={true}
         >

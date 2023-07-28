@@ -1,49 +1,57 @@
-import ArrowTopRightOnSquareIcon from '@heroicons/react/24/solid/ArrowTopRightOnSquareIcon';
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/20/solid';
 import { cva, type VariantProps } from 'class-variance-authority';
 
-export const buttonVariants = cva('button', {
-  variants: {
-    variant: {
-      filled: [
-        'bg-indigo-600',
-        'hover:bg-indigo-700',
-        'dark:bg-indigo-900',
-        'text-white',
-        'dark:text-indigo-200',
-      ],
-      ghost: ['bg-white', 'hover:bg-gray-100', 'text-slate-900'],
+export const buttonVariants = cva(
+  [
+    'button',
+    'inline-flex',
+    'items-center',
+    'focus-visible:outline',
+    'focus-visible:outline-2',
+    'focus-visible:outline-offset-2',
+    'font-semibold',
+    'shadow-sm',
+  ],
+  {
+    variants: {
+      variant: {
+        primary: [
+          'bg-blue-600',
+          'text-white',
+          'hover:bg-blue-500',
+          'focus-visible:outline-blue-600',
+          'dark:bg-blue-500',
+          'dark:text-white',
+          'dark:hover:bg-blue-400',
+          'dark:focus-visible:outline-blue-500',
+        ],
+        secondary: [
+          'bg-white',
+          'text-gray-900',
+          'ring-1',
+          'ring-inset',
+          'ring-gray-300',
+          'dark:text-white',
+          'dark:ring-0',
+          'hover:bg-gray-50',
+          'dark:bg-white/10',
+          'dark:hover:bg-white/20',
+        ],
+      },
+      size: {
+        xs: ['rounded', 'px-2', 'py-1', 'text-xs'],
+        sm: ['rounded', 'px-2', 'py-1', 'text-sm'],
+        md: ['rounded-md', 'px-2.5', 'py-1.5', 'text-sm'],
+        lg: ['rounded-md', 'px-3', 'py-2', 'text-sm'],
+        xl: ['rounded-md', 'px-3.5', 'py-2.5', 'text-sm'],
+      },
     },
-    size: {
-      sm: [
-        'flex',
-        'items-center',
-        'justify-between',
-        'shadow-sm',
-        'rounded-md',
-        'font-medium',
-        'text-sm',
-        'py-1',
-        'px-4',
-      ],
-      md: [
-        'flex',
-        'items-center',
-        'justify-between',
-        'rounded-md',
-        'shadow-md',
-        'font-medium',
-        'text-base',
-        'py-3',
-        'md:text-lg',
-        'md:px-6',
-      ],
+    defaultVariants: {
+      variant: 'primary',
+      size: 'md',
     },
-  },
-  defaultVariants: {
-    variant: 'filled',
-    size: 'md',
-  },
-});
+  }
+);
 
 export interface ButtonProps
   extends React.HTMLAttributes<HTMLDivElement>,
@@ -77,9 +85,11 @@ export const Button: React.FC<ButtonProps> = ({
         {...rest}
       >
         {children}
-        <span>
-          <ArrowTopRightOnSquareIcon className="ml-4 h-4 w-4 text-gray-400" />
-        </span>
+
+        <ArrowTopRightOnSquareIcon
+          className="-mr-0.5 ml-1 h-5 w-5 opacity-40"
+          aria-hidden="true"
+        />
       </Element>
     );
   }
