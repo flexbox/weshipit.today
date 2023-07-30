@@ -112,7 +112,7 @@ export function ReactNativeSlugPage({
             <Card>
               {platform && platform.length > 0 && (
                 <div className="mb-6">
-                  <Text as="h3" variant="h3" className="mb-4">
+                  <Text as="h3" variant="p2" className="mb-4">
                     Platforms
                   </Text>
                   <PlatformList platforms={platform} />
@@ -120,7 +120,7 @@ export function ReactNativeSlugPage({
               )}
               {features && features.length > 0 && (
                 <div className="mb-6">
-                  <Text as="h3" variant="h3" className="mb-4">
+                  <Text as="h3" variant="p2" className="mb-4">
                     Features
                   </Text>
                   <PlatformList platforms={features} />
@@ -128,7 +128,7 @@ export function ReactNativeSlugPage({
               )}
               {pricing && pricing.length > 0 && (
                 <div>
-                  <Text as="h3" variant="h3" className="mb-4">
+                  <Text as="h3" variant="p2" className="mb-4">
                     Pricing
                   </Text>
                   <PlatformList platforms={pricing} />
@@ -144,28 +144,30 @@ export function ReactNativeSlugPage({
                 accessKey={screenshotAccessKey}
               />
               <Button
+                href={website_url}
                 variant="secondary"
                 as="a"
-                href={website_url}
                 isExternalLink={true}
                 size="xl"
               >
                 Visit website
               </Button>
-              <Button
-                variant="secondary"
-                as="a"
-                href={github_url}
-                isExternalLink={true}
-                size="xl"
-              >
-                Visit Github
-              </Button>
-              {twitter_url && (
+              {github_url && (
                 <Button
+                  href={github_url}
                   variant="secondary"
                   as="a"
+                  isExternalLink={true}
+                  size="xl"
+                >
+                  Visit Github
+                </Button>
+              )}
+              {twitter_url && (
+                <Button
                   href={twitter_url}
+                  variant="secondary"
+                  as="a"
                   isExternalLink={true}
                   size="xl"
                 >

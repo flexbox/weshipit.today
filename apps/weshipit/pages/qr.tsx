@@ -1,4 +1,3 @@
-import { Text } from '@weshipit/ui';
 import { Layout } from '../components/layout';
 import Script from 'next/script';
 import { linksApi } from './api/links';
@@ -7,7 +6,9 @@ export function Qr() {
   return (
     <Layout
       seoTitle="FREE Pair Programming Session"
-      seoDescription={''}
+      seoDescription={
+        'Join us during Code and Coffee breaks to pair with one of our experienced software consultants on a challenge you’re puzzling over! Pick the day and time slot that’s best for you, and tell us what you’d like to pair on.'
+      }
       withHeader
       withFooter
     >

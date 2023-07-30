@@ -15,7 +15,7 @@ export function Header({
         <div className="flex flex-col items-center justify-between py-6 md:flex-row  md:space-x-10">
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <Link href="/">
-              <div className="text-2xl font-bold dark:text-white">
+              <div className="text-lg font-bold leading-6 dark:text-white">
                 weshipit<span className="text-slate-400">.today</span>
               </div>
             </Link>
