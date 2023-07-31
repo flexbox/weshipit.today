@@ -73,7 +73,7 @@ export function TypeFilter({ numberOfTools }: { numberOfTools: number }) {
   return (
     <ul className="grid grid-flow-row gap-4">
       <li>
-        <Text variant="c2" className="text-slate-400">
+        <Text variant="c2" className="ml-4 text-slate-400">
           Filter {numberOfTools}+ tools
         </Text>
       </li>

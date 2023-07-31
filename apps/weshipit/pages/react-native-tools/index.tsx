@@ -1,7 +1,14 @@
 import { Layout } from '../../components/layout';
 import client from '../api/apollo-client';
 
-import { ToolList, TypeFilter, Hyperlink, Text, SearchBar } from '@weshipit/ui';
+import {
+  ToolList,
+  TypeFilter,
+  Hyperlink,
+  Text,
+  SearchBar,
+  Hero,
+} from '@weshipit/ui';
 import { gql } from '@apollo/client';
 import { useEffect, useState } from 'react';
 import round from 'lodash/round';
@@ -41,14 +48,19 @@ export default function ReactNativeToolsPage({ records }) {
       withAccessoryRight={<HeaderLinksForTools />}
     >
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
-        <Text as="h3" variant="h3" className="py-4">
-          The best <span className="text-indigo-600">{toolType}</span> tools and
-          resources for busy developers.
-        </Text>
+        <Hero>
+          <Text as="h1" variant="h2">
+            The best <span className="text-indigo-600">{toolType}</span> tools
+            <br />
+            and resources for busy developers.
+          </Text>
+        </Hero>
         <Text as="p" variant="p1" className="mb-4 text-gray-500">
-          We curated the essentials for the success of your React Native App.
+          We have curated essential resources for the success of your React
+          Native app.
           <br />
-          Get all the data with{' '}
+          This informative content has been brought to you through the generous
+          sponsorship of{' '}
           <a
             href="https://gum.co/road-react-native/HELLO_FRIEND"
             className="font-semibold text-blue-500 underline underline-offset-4 hover:text-blue-700"
@@ -57,7 +69,6 @@ export default function ReactNativeToolsPage({ records }) {
           </a>
           .
         </Text>
-        <SearchBar searchTerm={searchTerm} handleChange={handleChange} />
       </div>
 
       <div className="mx-auto max-w-screen-2xl px-4 pb-48 sm:px-6">
@@ -66,6 +77,9 @@ export default function ReactNativeToolsPage({ records }) {
             <TypeFilter numberOfTools={numberOfTools} />
           </div>
           <div className="col-span-5">
+            <div className="mb-6">
+              <SearchBar searchTerm={searchTerm} handleChange={handleChange} />
+            </div>
             <ToolList records={searchResults} />
           </div>
         </div>
