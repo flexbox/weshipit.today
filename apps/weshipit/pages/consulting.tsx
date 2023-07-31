@@ -1,4 +1,4 @@
-import { Button, Hero, Hyperlink, Text } from '@weshipit/ui';
+import { Button, Card, Hero, Hyperlink, Text } from '@weshipit/ui';
 import { Layout } from '../components/layout';
 import Cal, { getCalApi } from '@calcom/embed-react';
 import { useEffect } from 'react';
@@ -13,7 +13,6 @@ export function Consulting() {
 
   return (
     <Layout
-      withContainer
       withFooter
       seoTitle="React Native Consulting"
       seoDescription="Looking to improve your skills as a React Native developer? Our coaching services are here to help. Our experienced team will provide personalized guidance and support to help you take your skills to the next level. Whether you're a beginner or an experienced developer, we have a coaching program that's right for you."
@@ -29,48 +28,91 @@ export function Consulting() {
         </Button>
       }
     >
-      <Hero>
-        <Text as="h1" variant="h1" className="text-center uppercase">
-          <span className="tracking-widest">Straightforward</span> <br />
-          <small className="tracking-wide">React Native solutions</small>
-        </Text>
+      <div className="relative">
+        <video
+          autoPlay
+          loop
+          muted
+          className="absolute left-0 top-0 z-0 h-[550px] w-auto min-w-full max-w-none object-cover opacity-20"
+          style={{ zIndex: -1 }}
+        >
+          <source
+            src="https://player.vimeo.com/progressive_redirect/playback/849077469/rendition/1080p/file.mp4?loc=external&signature=4d9740bee6a0997e8358e6e039238313d6cf22ff06d6a5a0c6b537368a466e56"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
 
-        <div className="mt-12 flex justify-center">
-          <Button
-            as="a"
-            href="https://cal.com/davidl/coaching"
-            isExternalLink={true}
+        <Hero>
+          <Text
+            as="h1"
+            variant="h1"
+            className="mt-24 text-center uppercase tracking-widest text-black"
           >
-            Schedule one-on-one consulting
-          </Button>
-        </div>
-      </Hero>
+            Straightforward
+            <br />
+            <small className="tracking-wide">React Native solutions</small>
+          </Text>
 
-      <div className="mx-auto max-w-2xl p-3">
-        <Text as="p" variant="p1" className="mb-4">
-          Every week, I receive emails asking me for a moment with me. I never
-          know who to say yes to, who to say no to, and besides, my time is
-          precious, I don’t want to waste it. I have absolutely no desire to
-          devalue the most precious resource of my life: time.
-        </Text>
-        <Text as="p" variant="p1" className="mb-4">
-          The principle is simple: a 60-minute slot, online payment. You can
-          send me before the call if you wish a clear email in bullet points,
-          which summarizes the objectives of our conversation.
-        </Text>
-        <Text as="p" variant="p1">
-          My goal is for this hour to be most helpful to you.
-        </Text>
-        <Text as="p" variant="p1">
-          <em>
-            Note: If the calendar below doesn’t load in a few seconds, try
-            refreshing the page. Or you can{' '}
-            <Hyperlink href="https://cal.com/davidl/coaching">
-              open the bookling link on another tab
-            </Hyperlink>
-            .
-          </em>
-        </Text>
+          <div className="mt-12 flex justify-center">
+            <Button
+              href="https://cal.com/davidl/coaching"
+              as="a"
+              isExternalLink={true}
+              size="xl"
+            >
+              Schedule one-on-one consulting
+            </Button>
+          </div>
+        </Hero>
+
+        <div className="mx-auto max-w-2xl prose prose-lg dark:prose-invert">
+          <Card>
+            <Text as="p" style={{ marginTop: 0 }}>
+              Every week, I receive emails asking me for a moment with me. I
+              never know who to say yes to, who to say no to, and besides, my
+              time is precious, I don’t want to waste it.
+            </Text>
+            <Text as="p">
+              The principle is simple: a 60-minute slot, online payment.
+            </Text>
+            <ul>
+              <li>
+                ✍️ You provide me with your current goals, challenges and
+                specific questions prior to our call.
+              </li>
+              <li>
+                🧠 I review the materials you provide and formulate a game plan
+                to tackle your challenges and help you achieve your vision.
+              </li>
+              <li>
+                🗣️ We speak face-to-face on a one hour video consulting call
+                where I review my findings with you and answer your questions.
+                📓 I provide you with a detailed written summary afterwards.
+              </li>
+              <li>
+                🔴 Record the video call locally on your computer (optional).
+              </li>
+              <li>
+                💬 For the next 30 days I make myself available via direct
+                message to answer your questions and support you.
+              </li>
+              <li>🗓️ Weekly & Monthly sessions are available by request.</li>
+            </ul>
+            <Text as="p">
+              My goal is for this hour to be most helpful to you.
+            </Text>
+
+            <em>
+              Note: If the calendar below doesn’t load in a few seconds, try
+              refreshing the page. Or you can{' '}
+              <Hyperlink href="https://cal.com/davidl/coaching">
+                open the bookling link on another tab
+              </Hyperlink>
+              .
+            </em>
+          </Card>
+        </div>
       </div>
 
       <div className="mb-48 mt-12">
