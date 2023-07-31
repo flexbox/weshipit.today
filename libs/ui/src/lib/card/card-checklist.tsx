@@ -1,15 +1,13 @@
 import Image from 'next/image';
 import Button from '../button/button';
 import gumroad from '../../assets/gumroad-thumbnail.png';
-import CardGradient from '../card-gradient/card-gradient';
+
 import { CardImageProps } from './card-bootcamp';
+import { Card } from './card';
 
 export function CardChecklist({ imageSize }: CardImageProps) {
   return (
-    <CardGradient
-      variant="pink"
-      className="flex justify-center rounded-xl bg-cover p-8 text-white"
-    >
+    <Card variant="gradient-pink" size="lg">
       <a
         className="flex flex-col items-center justify-center gap-8 text-center sm:text-left"
         href="gumroad.com/l/expo-checklist"
@@ -41,7 +39,7 @@ export function CardChecklist({ imageSize }: CardImageProps) {
           </Button>
         </div>
       </a>
-    </CardGradient>
+    </Card>
   );
 }
 

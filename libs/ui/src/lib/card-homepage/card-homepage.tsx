@@ -2,14 +2,14 @@ import Image from 'next/image';
 import bootcampLogo from '../../assets/bootcamp.png';
 import Gravatar from 'react-gravatar';
 import gumroad from '../../assets/gumroad-thumbnail.png';
-import CardGradient from '../card-gradient/card-gradient';
+import { Card } from '../card/card';
 
 export function CardHomepage() {
   return (
     <div className="grid gap-8 py-12 sm:grid-cols-2 lg:grid-cols-8 lg:grid-rows-5">
-      <CardGradient
-        variant="blue-light"
-        className="grid rounded-xl bg-cover py-16 text-white sm:col-span-2 lg:col-span-5 lg:row-span-5 "
+      <Card
+        variant="gradient-blue"
+        className="grid py-16 text-white sm:col-span-2 lg:col-span-5 lg:row-span-5"
       >
         <a
           className="flex flex-col items-center justify-center gap-8 text-center sm:flex-row sm:text-left"
@@ -33,10 +33,10 @@ export function CardHomepage() {
             </p>
           </div>
         </a>
-      </CardGradient>
-      <CardGradient
-        variant="pink"
-        className="grid rounded-xl py-16 text-white dark:from-[#803C71] lg:col-span-3 lg:row-span-3"
+      </Card>
+      <Card
+        variant="gradient-pink"
+        className="grid rounded-xl py-16 text-white lg:col-span-3 lg:row-span-3"
       >
         <a
           className="flex flex-col items-center justify-center gap-4 text-center md:flex-row md:text-left"
@@ -60,9 +60,9 @@ export function CardHomepage() {
             </p>
           </div>
         </a>
-      </CardGradient>
-      <CardGradient
-        variant="purple"
+      </Card>
+      <Card
+        variant="gradient-purple"
         className=" grid overflow-hidden rounded-xl  py-12  sm:py-16 lg:col-span-3 lg:row-span-2"
       >
         <a
@@ -86,11 +86,11 @@ export function CardHomepage() {
               Consultation
             </h1>
             <p className="max-w-[14ch] text-base font-medium text-black opacity-80 dark:text-white md:text-lg">
-              Book a call
+              Book a call. We'll help you with your project.
             </p>
           </div>
         </a>
-      </CardGradient>
+      </Card>
     </div>
   );
 }

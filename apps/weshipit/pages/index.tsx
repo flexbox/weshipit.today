@@ -5,6 +5,7 @@ import {
   Text,
   Hyperlink,
   CardHomepage,
+  LinkButton,
 } from '@weshipit/ui';
 import Link from 'next/link';
 import { getAllClients } from './api/client';
@@ -78,11 +79,9 @@ export default function IndexPage({ clients }: clientsPageProps) {
             <Text as="h3" variant="p1" className="text-left">
               Trusted by top companies
             </Text>
-            <Link legacyBehavior href="/clients">
-              <a className="text-base font-bold text-blue-700 underline underline-offset-4 hover:text-blue-900 dark:text-indigo-600 dark:hover:text-indigo-900">
-                View our client list
-              </a>
-            </Link>
+            <LinkButton href="/clients" variant="secondary" size="lg">
+              View our client list
+            </LinkButton>
           </div>
           <ClientsListHomepage clients={clients} />
         </div>

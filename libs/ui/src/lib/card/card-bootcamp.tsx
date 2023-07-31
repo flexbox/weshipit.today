@@ -1,8 +1,7 @@
 import Image from 'next/image';
 import Button from '../button/button';
 import bootcampLogo from '../../assets/bootcamp.png';
-import CardGradient from '../card-gradient/card-gradient';
-import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
+import { Card } from './card';
 
 export interface CardImageProps {
   imageSize: number;
@@ -10,7 +9,7 @@ export interface CardImageProps {
 
 export function CardBootcamp({ imageSize }: CardImageProps) {
   return (
-    <CardGradient className="flex justify-center rounded-xl bg-cover p-8 text-white">
+    <Card variant="gradient-blue" size="lg">
       <a
         className="flex flex-col items-center justify-center gap-8 text-center sm:text-left"
         href="https://davidl.fr/bootcamp"
@@ -42,7 +41,7 @@ export function CardBootcamp({ imageSize }: CardImageProps) {
           </Button>
         </div>
       </a>
-    </CardGradient>
+    </Card>
   );
 }
 

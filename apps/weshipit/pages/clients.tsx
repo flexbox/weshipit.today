@@ -1,9 +1,7 @@
-import Link from 'next/link';
 import { Layout } from '../components/layout';
 import { getAllClients } from './api/client';
-import { Button, Text } from '@weshipit/ui';
-import { ClientsList } from '@weshipit/ui';
-import { linksApi } from '../pages/api/links';
+import { Button, LinkButton, Text, ClientsList } from '@weshipit/ui';
+import { linksApi } from './api/links';
 
 interface ClientProps {
   id: string;
@@ -59,18 +57,17 @@ export default function ClientsPage({ clients }: clientsPageProps) {
           Berlin Germany, and beyond to seek our expertise.
         </Text>
       </div>
+
       <ClientsList clients={clients} />
-      <div>
-        <Text as="p" variant="s2" className="py-4">
+
+      <section className="py-24">
+        <Text as="p" variant="p1" className="mb-2">
           is your company missing?
         </Text>
-        <Link
-          href="/onboarding"
-          className="my-4 flex w-60 justify-center rounded-md bg-indigo-600 py-6 text-white hover:bg-indigo-700"
-        >
+        <LinkButton href="/onboarding" size="xl" variant="secondary">
           Add your logo today
-        </Link>
-      </div>
+        </LinkButton>
+      </section>
     </Layout>
   );
 }

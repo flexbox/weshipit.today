@@ -1,5 +1,5 @@
+import { ClientProps } from './clients-list';
 import Image from 'next/image';
-import { ClientProps } from './clients-list.d';
 
 export interface ClientsListHomepageProps {
   clients: ClientProps[];

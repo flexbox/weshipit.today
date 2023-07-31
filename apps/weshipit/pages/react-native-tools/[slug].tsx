@@ -17,6 +17,7 @@ import { Layout } from '../../components/layout';
 import { linksApi } from '../api/links';
 import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
+import { isNil } from 'lodash';
 
 export function HeaderLinksForTools() {
   return (
@@ -90,7 +91,7 @@ export function ReactNativeSlugPage({
       </div>
 
       <section className="mx-auto my-8 max-w-6xl">
-        <div className="grid grid-cols-1 gap-8 pt-6 md:grid-cols-12">
+        <div className="grid grid-cols-1 gap-24 pt-6 md:grid-cols-12">
           <div className="col-span-1 md:col-span-8">
             <ToolCardLogo name={name} websiteUrl={website_url} size={64} />
             <Text as="h1" variant="h2" className="my-6">
@@ -102,11 +103,15 @@ export function ReactNativeSlugPage({
             </div>
             <div className="prose lg:prose-xl dark:prose-invert prose-slate mb-12">
               <ReactMarkdown>{description}</ReactMarkdown>
-              <Text as="h2" variant="s1" className="my-6">
-                How {name} will help you grow and be more successful?
-              </Text>
 
-              <ReactMarkdown>{description_success}</ReactMarkdown>
+              {!isNil(description_success) && (
+                <>
+                  <Text as="h2" variant="s1" className="my-6">
+                    How {name} will help you grow and be more successful?
+                  </Text>
+                  <ReactMarkdown>{description_success}</ReactMarkdown>
+                </>
+              )}
             </div>
 
             <Card>

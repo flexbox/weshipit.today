@@ -37,7 +37,7 @@ export function ToolCardLogo({
   }
 
   const domain = deleteAfterSlash(websiteUrl);
-  const logoSrc = `https://logo.clearbit.com/${domain}?size=600`;
+  const logoSrc = `https://logo.clearbit.com/${domain}?size=${size}`;
 
   return (
     <Image

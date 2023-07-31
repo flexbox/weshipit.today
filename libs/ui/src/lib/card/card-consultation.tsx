@@ -1,5 +1,5 @@
+import { Card } from './card';
 import Button from '../button/button';
-import CardGradient from '../card-gradient/card-gradient';
 import Gravatar from 'react-gravatar';
 
 export interface CardConsultationProps {
@@ -8,10 +8,7 @@ export interface CardConsultationProps {
 
 export function CardConsultation({ gravatarSize }: CardConsultationProps) {
   return (
-    <CardGradient
-      variant="purple"
-      className="flex justify-center rounded-xl bg-cover p-8"
-    >
+    <Card variant="gradient-purple" size="lg">
       <a
         className="flex flex-col items-center justify-center gap-8 text-center sm:text-left"
         href="https://airtable.com/shryVoJ3nzyeq2P4s"
@@ -36,7 +33,7 @@ export function CardConsultation({ gravatarSize }: CardConsultationProps) {
             Book a call with us to talk about your project.
           </p>
           <Button
-            as={'a'}
+            as="a"
             variant="secondary"
             href="https://airtable.com/shryVoJ3nzyeq2P4s"
             className="mt-4"
@@ -46,7 +43,7 @@ export function CardConsultation({ gravatarSize }: CardConsultationProps) {
           </Button>
         </div>
       </a>
-    </CardGradient>
+    </Card>
   );
 }
 

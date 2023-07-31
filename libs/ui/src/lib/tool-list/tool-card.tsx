@@ -47,7 +47,7 @@ export function ToolCard({ fields }: RecordProps) {
   }
 
   return (
-    <Card>
+    <Card variant="link">
       <Link href={`/react-native-tools/${slug}`}>
         <div className="flex h-full flex-col justify-between">
           <div className="justify-start">
@@ -57,17 +57,17 @@ export function ToolCard({ fields }: RecordProps) {
               </Text>
               {pricing && (
                 <div className="group relative flex items-center justify-center overflow-hidden rounded-2xl border-2 border-dashed border-gray-400 px-4">
-                  <Text
-                    as="p"
-                    variant="p2"
-                    className="font-bold text-slate-400"
-                  >
-                    <small>{pricing[0]}</small>
-                  </Text>
+                    <Text
+                      as="p"
+                      variant="p2"
+                      className="font-bold text-slate-400"
+                    >
+                      <small>{pricing[0]}</small>
+                    </Text>
 
-                  {/* shine box */}
-                  <div className="z-5 group-hover:animate-shine absolute -inset-full top-0 block h-full w-1/2 -skew-x-12 bg-gradient-to-r from-transparent to-gray-300 opacity-40" />
-                </div>
+                    {/* shine box */}
+                    <div className="z-5 group-hover:animate-shine absolute -inset-full top-0 block h-full w-1/2 -skew-x-12 bg-gradient-to-r from-transparent to-gray-300 opacity-40" />
+                  </div>
               )}
             </div>
 
