@@ -2,7 +2,10 @@ import Link from 'next/link';
 import { SVGProps } from 'react';
 
 const navigation = {
-  solutions: [{ name: 'React Native Tools', href: '/react-native-tools' }],
+  solutions: [
+    { name: 'React Native Tools', href: '/react-native-tools' },
+    { name: 'React Native Audit', href: '/audit' },
+  ],
   company: [
     {
       name: 'Work at weshipit.today',

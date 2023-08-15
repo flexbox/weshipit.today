@@ -6,6 +6,7 @@ import { Text } from '../text/text';
 import truncate from 'lodash/truncate';
 import Link from 'next/link';
 import { ToolCardLogo } from './tool-card-logo';
+import { getVariantFromType } from './get-variant-from-type';
 
 export function ToolCard({ fields }: RecordProps) {
   const { pricing, type, name, website_url, slug } = fields;
@@ -19,32 +20,7 @@ export function ToolCard({ fields }: RecordProps) {
     separator: '…',
   });
 
-  let typeVariant = 'primary';
-  switch (type) {
-    case 'Analytics':
-      typeVariant = 'lime';
-      break;
-    case 'Authentication':
-      typeVariant = 'indigo';
-      break;
-    case 'Backend':
-      typeVariant = 'green';
-      break;
-    case 'Crash reporting':
-      typeVariant = 'pink';
-      break;
-    case 'Persistent storage':
-      typeVariant = 'cyan';
-      break;
-    case 'Infrastructure':
-      typeVariant = 'blue';
-      break;
-    case 'Payment':
-      typeVariant = 'yellow';
-      break;
-    default:
-      break;
-  }
+  const variantType = getVariantFromType(type);
 
   return (
     <Card variant="link">
@@ -56,18 +32,18 @@ export function ToolCard({ fields }: RecordProps) {
                 {name}
               </Text>
               {pricing && (
-                <div className="group relative flex items-center justify-center overflow-hidden rounded-2xl border-2 border-dashed border-gray-400 px-4">
-                    <Text
-                      as="p"
-                      variant="p2"
-                      className="font-bold text-slate-400"
-                    >
-                      <small>{pricing[0]}</small>
-                    </Text>
+                <div className="group relative flex items-center justify-center overflow-hidden rounded-2xl border-2 border-dashed border-slate-400 px-4">
+                  <Text
+                    as="p"
+                    variant="p2"
+                    className="font-bold text-slate-400"
+                  >
+                    <small>{pricing[0]}</small>
+                  </Text>
 
-                    {/* shine box */}
-                    <div className="z-5 group-hover:animate-shine absolute -inset-full top-0 block h-full w-1/2 -skew-x-12 bg-gradient-to-r from-transparent to-gray-300 opacity-40" />
-                  </div>
+                  {/* shine box */}
+                  <div className="z-5 group-hover:animate-shine absolute -inset-full top-0 block h-full w-1/2 -skew-x-12 bg-gradient-to-r from-transparent to-slate-300 opacity-40" />
+                </div>
               )}
             </div>
 
@@ -75,13 +51,13 @@ export function ToolCard({ fields }: RecordProps) {
               <ToolCardLogo name={name} websiteUrl={website_url} />
             </div>
 
-            <Text as="p" variant={'p1'} className="mb-6 text-gray-400">
+            <Text as="p" variant="p1" className="mb-6 text-slate-400">
               {description}
             </Text>
           </div>
 
-          <div className="flex justify-start ">
-            <Badge size="sm" variant={typeVariant as any}>
+          <div className="flex justify-start">
+            <Badge size="sm" variant={variantType}>
               {type}
             </Badge>
           </div>

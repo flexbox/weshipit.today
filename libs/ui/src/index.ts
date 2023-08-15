@@ -24,3 +24,4 @@ export * from './lib/tool-list/tool-card';
 export * from './lib/tool-list/tool-list';
 export * from './lib/tool-list/tool-type-badge';
 export * from './lib/tool-list/tool-website-preview';
+export * from './lib/tool-list/get-variant-from-type';
