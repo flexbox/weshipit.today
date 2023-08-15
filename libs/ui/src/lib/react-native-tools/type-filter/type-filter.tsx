@@ -5,56 +5,11 @@ import { useCallback } from 'react';
 import { Badge } from '../../badge/badge';
 import { Text } from '../../text/text';
 import kebabCase from 'lodash/kebabCase';
-
-interface Type {
-  name: string;
-  color?:
-    | 'blue'
-    | 'cyan'
-    | 'green'
-    | 'indigo'
-    | 'lime'
-    | 'pink'
-    | 'yellow'
-    | null
-    | undefined;
-}
-
-const types: Type[] = [
-  {
-    name: 'Analytics',
-    color: 'lime',
-  },
-  {
-    name: 'Authentication',
-    color: 'indigo',
-  },
-  {
-    name: 'Backend',
-    color: 'green',
-  },
-  {
-    name: 'Crash reporting',
-    color: 'pink',
-  },
-  {
-    name: 'Infrastructure',
-    color: 'blue',
-  },
-  {
-    name: 'Payment',
-    color: 'yellow',
-  },
-  {
-    name: 'Persistent storage',
-    color: 'cyan',
-  },
-];
+import { types } from '../../tool-list/get-variant-from-type';
 
 export function TypeFilter({ numberOfTools }: { numberOfTools: number }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
-
   const canResetFitler = searchParams.has('type');
 
   // Get a new searchParams string by merging the current

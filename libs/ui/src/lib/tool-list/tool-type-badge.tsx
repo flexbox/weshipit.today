@@ -1,3 +1,4 @@
+import { getVariantFromType } from './get-variant-from-type';
 import { Badge } from '../badge/badge';
 
 export function ToolTypeBadge({
@@ -7,35 +8,10 @@ export function ToolTypeBadge({
   type: string;
   size: 'sm' | 'md' | null | undefined;
 }) {
-  let typeVariant = 'gray-lighter';
-  switch (type) {
-    case 'Analytics':
-      typeVariant = 'lime';
-      break;
-    case 'Authentication':
-      typeVariant = 'indigo';
-      break;
-    case 'Persistent storage':
-      typeVariant = 'cyan';
-      break;
-    case 'Infrastructure':
-      typeVariant = 'blue';
-      break;
-    case 'Backend':
-      typeVariant = 'green';
-      break;
-    case 'Crash reporting':
-      typeVariant = 'pink';
-      break;
-    case 'Payment':
-      typeVariant = 'yellow';
-      break;
-    default:
-      break;
-  }
+  const variantType = getVariantFromType(type);
 
   return (
-    <Badge variant={typeVariant as any} className="mr-2" {...rest}>
+    <Badge variant={variantType} className="mr-2" {...rest}>
       {type}
     </Badge>
   );

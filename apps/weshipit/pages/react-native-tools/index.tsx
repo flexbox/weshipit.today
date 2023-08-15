@@ -8,6 +8,7 @@ import {
   Text,
   SearchBar,
   Hero,
+  getVariantFromType,
 } from '@weshipit/ui';
 import { gql } from '@apollo/client';
 import { useEffect, useState } from 'react';
