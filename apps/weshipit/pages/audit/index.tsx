@@ -1,63 +1,116 @@
-import { LinkButton } from '@weshipit/ui';
+import { FadeIn, LinkButton, StylizedImage, Text } from '@weshipit/ui';
 import { Layout } from '../../components/layout';
 
-export function Audit() {
+import clsx from 'clsx';
+
+export function Container({ as: Component = 'div', className, children }) {
   return (
-    <Layout
-      seoTitle="Audit React Native App - Identify and Address Technical Debt"
-      seoDescription={
-        'Our React Native Audit Package helps organizations identify and address technical debt in their codebase, improving app performance and stability. Book a call today to learn more.'
-      }
-      withHeader
-      withFooter
-      withContainer
+    <Component className={clsx('mx-auto max-w-7xl px-6 lg:px-8', className)}>
+      <div className="mx-auto max-w-2xl lg:max-w-none">{children}</div>
+    </Component>
+  );
+}
+
+function Section({ title, image, children }) {
+  return (
+    <Container className="group/section [counter-increment:section]">
+      <div className="lg:flex lg:items-center lg:justify-end lg:gap-x-8 lg:group-even/section:justify-start xl:gap-x-20">
+        <div className="flex justify-center">
+          <FadeIn className="w-[33.75rem] flex-none lg:w-[45rem]">
+            <StylizedImage
+              {...image}
+              sizes="(min-width: 1024px) 41rem, 31rem"
+              className="justify-center lg:justify-end lg:group-even/section:justify-start"
+            />
+          </FadeIn>
+        </div>
+        <div className="mt-12 lg:mt-0 lg:w-[37rem] lg:flex-none lg:group-even/section:order-first">
+          <FadeIn>
+            <div
+              className="text-base font-semibold before:text-neutral-300 before:content-['/_'] after:text-neutral-950 after:content-[counter(section,decimal-leading-zero)]"
+              aria-hidden="true"
+            />
+            <h2 className="mt-2 text-3xl font-medium tracking-tight text-neutral-950 sm:text-4xl">
+              {title}
+            </h2>
+            <div className="mt-6">{children}</div>
+          </FadeIn>
+        </div>
+      </div>
+    </Container>
+  );
+}
+
+function Discover() {
+  return (
+    <Section
+      title="What is React Native Audit?"
+      image={{
+        src: '/images/road-to-react-native-book.jpg',
+        alt: 'React Native Code Audit',
+        width: 600,
+        height: 400,
+      }}
     >
-      <div className="prose prose-lg dark:prose-invert my-12">
-        <h1>Audit React Native Codebase</h1>
-        <p>
-          React Native Audit Package is directed to organizations that struggle
-          with technical debt due to a lack of expertise or capacity within
-          their team. We can support your team by conducting the audit and
-          allowing your organization to focus on its priorities without a drop
-          in its development pace.
-        </p>
-        <LinkButton href="/onboarding" size="xl" className="no-underline">
-          Book a call
-        </LinkButton>
-        <section>
-          <h2>React Native Audit Package</h2>
-          <p>
-            Audit your React Native codebase to identify and address technical
-            debt and improve app performance.
-          </p>
-        </section>
-        <h2>What is React Native Audit?</h2>
-        <p>
-          Are you seeking someone to review your work and provide specific
-          recommendations regarding performance, structure, and tools?
-        </p>
-        <p>
+      <div className="space-y-6 text-base text-neutral-600">
+        <Text as="p">
+          Are you seeking someone to review your work and{' '}
+          <strong className="font-semibold text-neutral-950">
+            provide specific recommendations
+          </strong>{' '}
+          regarding performance, structure, and tools?
+        </Text>
+        <Text as="p">
           Our team has been focused on React Native since 2016, and we can help
-          you by conducting an audit or review of your application. Based on the
-          findings, we can work together to address any issues, taking into
-          account availability and cost. We can also provide recommendations for
-          improving your application.
-        </p>
-        <h2>How does the service work?</h2>
+          you by conducting an{' '}
+          <strong className="font-semibold text-neutral-950">
+            audit or review of your application
+          </strong>
+          . Based on the findings, we can work together to address any issues,
+          taking into account availability and cost.
+        </Text>
+        <Text as="p">
+          We can also provide recommendations for improving your application.
+        </Text>
+        <LinkButton
+          href="/onboarding"
+          size="xl"
+          className="no-underline"
+          variant="secondary"
+        >
+          Start now
+        </LinkButton>
+      </div>
+    </Section>
+  );
+}
+
+function Workflow() {
+  return (
+    <Section
+      title="How does it work?"
+      image={{
+        shape: 1,
+        src: '/images/road-to-react-native-book.jpg',
+        alt: 'React Native Code Audit',
+        width: 600,
+        height: 400,
+      }}
+    >
+      <div className="prose prose-neutral space-y-6 text-base text-neutral-600">
         <p>
           Our service is a fixed fee that covers a one-time project. The process
-          typically takes up to 2 weeks to complete. If you require more
-          personalized work, you have the option to add additional working hours
-          to your package.
-        </p>
-        <p>
-          <em>Here’s how it works:</em>
+          typically takes up to{' '}
+          <strong className="font-semibold text-neutral-950">
+            2 weeks to complete
+          </strong>
+          . If you require more personalized work, you have the option to add
+          additional working hours to your package.
         </p>
         <h3>Phase 1</h3>
         <ul>
           <li>
-            We investigate your codebase and estimate the project (2 working
-            days).
+            We investigate your codebase and estimate efforts (2 working days).
           </li>
           <li>
             We write down notes and recommendations, and share the Notion
@@ -97,6 +150,57 @@ export function Audit() {
             Google Play Store if necessary.
           </li>
         </ol>
+        <h3 className="mt-12 text-base font-semibold text-neutral-950">
+          Included in this phase
+        </h3>
+        {/* <TagList className="mt-4">
+        <TagListItem>In-depth questionnaires</TagListItem>
+        <TagListItem>Feasibility studies</TagListItem>
+        <TagListItem>Blood samples</TagListItem>
+        <TagListItem>Employee surveys</TagListItem>
+        <TagListItem>Proofs-of-concept</TagListItem>
+        <TagListItem>Forensic audit</TagListItem>
+      </TagList> */}
+      </div>
+    </Section>
+  );
+}
+
+export function Audit() {
+  return (
+    <Layout
+      seoTitle="Audit React Native App - Identify and Address Technical Debt"
+      seoDescription={
+        'Our React Native Audit Package helps organizations identify and address technical debt in their codebase, improving app performance and stability. Book a call today to learn more.'
+      }
+      withHeader
+      withFooter
+      withContainer
+    >
+      <div className="mt-24 space-y-24 [counter-reset:section] sm:mt-32 sm:space-y-32 lg:mt-40 lg:space-y-40">
+        <Discover />
+        <Workflow />
+      </div>
+      <div className="prose prose-lg dark:prose-invert my-12">
+        <h1>Audit React Native Codebase</h1>
+        <p>
+          React Native Audit Package is directed to organizations that struggle
+          with technical debt due to a lack of expertise or capacity within
+          their team. We can support your team by conducting the audit and
+          allowing your organization to focus on its priorities without a drop
+          in its development pace.
+        </p>
+        <LinkButton href="/onboarding" size="xl" className="no-underline">
+          Book a call
+        </LinkButton>
+        {/* <section>
+          <h2>React Native Audit Package</h2>
+          <p>
+            Audit your React Native codebase to identify and address technical
+            debt and improve app performance.
+          </p>
+        </section> */}
+
         <h2>What can you gain with our React Native Audit Package?</h2>
         <p>
           Auditing the version of your React Native app can provide the

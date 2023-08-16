@@ -1,5 +1,6 @@
 export function getVariantFromType(type: string) {
   switch (type) {
+    // types
     case 'Analytics':
       return 'lime';
     case 'Authentication':
@@ -13,6 +14,28 @@ export function getVariantFromType(type: string) {
     case 'Infrastructure':
       return 'blue';
     case 'Payment':
+      return 'yellow';
+    // platform
+    case 'Android':
+      return 'lime';
+    case 'iOS':
+      return 'gray-light';
+    case 'macOS':
+      return 'gray';
+    case 'tvOS':
+      return 'gray-dark';
+    case 'Unity':
+      return 'gray-darker';
+    case 'Web':
+      return 'cyan';
+    case 'Windows':
+      return 'blue';
+    // pricing
+    case 'Open Source' || 'Free tier':
+      return 'gay-light';
+    case 'Pay as-you-go':
+      return 'orange';
+    case 'Premium tiers':
       return 'yellow';
     default:
       return 'gray';

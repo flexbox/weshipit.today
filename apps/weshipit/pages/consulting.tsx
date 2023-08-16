@@ -33,7 +33,7 @@ export function Consulting() {
           autoPlay
           loop
           muted
-          className="absolute left-0 top-0 z-0 h-[550px] w-auto min-w-full max-w-none object-cover opacity-20"
+          className="absolute left-0 top-0 z-0 h-[550px] w-auto min-w-full max-w-none bg-slate-800 object-cover opacity-20"
           style={{ zIndex: -1 }}
         >
           <source
@@ -47,11 +47,11 @@ export function Consulting() {
           <Text
             as="h1"
             variant="h1"
-            className="mt-24 text-center uppercase tracking-widest text-black"
+            className="mt-12 text-center uppercase tracking-widest text-black"
           >
             Straightforward
             <br />
-            <small className="tracking-wide">React Native solutions</small>
+            <small className="tracking-wider">React Native solutions</small>
           </Text>
 
           <div className="mt-12 flex justify-center">
@@ -66,7 +66,7 @@ export function Consulting() {
           </div>
         </Hero>
 
-        <div className="mx-auto max-w-2xl prose prose-lg dark:prose-invert">
+        <div className="prose prose-lg dark:prose-invert mx-auto max-w-3xl">
           <Card>
             <Text as="p" style={{ marginTop: 0 }}>
               Every week, I receive emails asking me for a moment with me. I
@@ -88,6 +88,8 @@ export function Consulting() {
               <li>
                 🗣️ We speak face-to-face on a one hour video consulting call
                 where I review my findings with you and answer your questions.
+              </li>
+              <li>
                 📓 I provide you with a detailed written summary afterwards.
               </li>
               <li>

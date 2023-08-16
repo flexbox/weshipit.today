@@ -1,3 +1,5 @@
+export * from './lib/stylized-image/stylized-image';
+export * from './lib/fade-in/fade-in';
 export * from './lib/badge/badge';
 export * from './lib/button/button';
 export * from './lib/button/buy-button';
