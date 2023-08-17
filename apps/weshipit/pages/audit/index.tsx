@@ -9,8 +9,18 @@ import {
 import { Layout } from '../../components/layout';
 
 import clsx from 'clsx';
+import { PropsWithChildren } from 'react';
 
-export function Container({ as: Component = 'div', className, children }) {
+interface ContainerProps extends PropsWithChildren {
+  as?: React.ElementType;
+  className?: string;
+}
+
+export function Container({
+  as: Component = 'div',
+  className,
+  children,
+}: ContainerProps) {
   return (
     <Component className={clsx('mx-auto max-w-7xl px-6 lg:px-8', className)}>
       <div className="mx-auto max-w-2xl lg:max-w-none">{children}</div>
