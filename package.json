@@ -35,7 +35,6 @@
     "@calcom/embed-react": "^1.0.10",
     "@headlessui/react": "^1.7.13",
     "@heroicons/react": "^2.0.18",
-    "@next/font": "13.1.1",
     "@prismicio/client": "^6.7.1",
     "@prismicio/react": "^2.5.2",
     "@tailwindcss/forms": "^0.5.3",

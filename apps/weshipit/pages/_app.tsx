@@ -1,5 +1,5 @@
 import { AppProps } from 'next/app';
-import { Inter } from '@next/font/google';
+import { Inter } from 'next/font/google';
 import { PrismicProvider } from '@prismicio/react';
 import { client } from './api/prismic';
 
