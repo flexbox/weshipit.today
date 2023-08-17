@@ -57,7 +57,7 @@ export function ToolCard({ fields }: RecordProps) {
           </div>
 
           <div className="flex justify-start">
-            <Badge size="sm" variant={variantType}>
+            <Badge size="sm" variant={variantType as any}>
               {type}
             </Badge>
           </div>

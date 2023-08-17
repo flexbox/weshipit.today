@@ -1,9 +1,9 @@
 import type { Meta } from '@storybook/react';
-import { PlatformList } from './platform-list';
+import { TagList } from './tag-list';
 
-const Story: Meta<typeof PlatformList> = {
-  component: PlatformList,
-  title: 'PlatformList',
+const Story: Meta<typeof TagList> = {
+  component: TagList,
+  title: 'TagList',
 };
 export default Story;
 

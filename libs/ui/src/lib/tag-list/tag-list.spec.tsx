@@ -1,17 +1,15 @@
 import { render } from '@testing-library/react';
 
-import PlatformList from './platform-list';
+import TagList from './tag-list';
 
-describe('PlatformList', () => {
+describe('TagList', () => {
   it('should render successfully when its an empty array', () => {
-    const { baseElement } = render(<PlatformList platforms={[]} />);
+    const { baseElement } = render(<TagList tags={[]} />);
     expect(baseElement).toBeTruthy();
   });
 
   it('should render successfully', () => {
-    const { baseElement } = render(
-      <PlatformList platforms={['iOS', 'Android']} />
-    );
+    const { baseElement } = render(<TagList tags={['iOS', 'Android']} />);
     expect(baseElement).toBeTruthy();
   });
 });

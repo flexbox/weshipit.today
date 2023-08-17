@@ -16,32 +16,33 @@ const text = cva('text', {
     },
     variant: {
       h1: [
-        'text-4xl font-extrabold tracking-tight dark:text-slate-200 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl',
+        'text-neutral-950 text-4xl font-extrabold tracking-tight dark:text-neutral-200 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl',
       ],
       h2: [
-        'text-3xl font-bold tracking-tight dark:text-slate-200 sm:text-4xl  md:text-5xl lg:text-4xl xl:text-5xl ',
+        'text-neutral-950 text-3xl font-bold tracking-tight dark:text-neutral-200 sm:text-4xl  md:text-5xl lg:text-4xl xl:text-5xl ',
       ],
       h3: [
-        'text-2xl font-bold tracking-tight dark:text-slate-200 sm:text-3xl md:text-4xl lg:text-3xl xl:text-4xl ',
+        'text-neutral-950 text-2xl font-bold tracking-tight dark:text-neutral-200 sm:text-3xl md:text-4xl lg:text-3xl xl:text-4xl ',
       ],
       s1: [
-        'text-xl dark:text-slate-200 sm:text-2xl md:text-3xl lg:text-2xl xl:text-3xl',
+        'text-neutral-950 text-xl dark:text-neutral-200 sm:text-2xl md:text-3xl lg:text-2xl xl:text-3xl',
       ],
       s2: [
-        'text-lg dark:text-slate-200 sm:text-xl md:text-2xl lg:text-xl xl:text-2xl',
+        'text-neutral-950 text-lg dark:text-neutral-200 sm:text-xl md:text-2xl lg:text-xl xl:text-2xl',
       ],
       p1: [
-        'text-base dark:text-slate-200 sm:text-lg md:text-xl lg:text-lg xl:text-xl',
+        'text-neutral-950 text-base dark:text-neutral-200 sm:text-lg md:text-xl lg:text-lg xl:text-xl',
       ],
       p2: [
-        'text-sm font-medium dark:text-slate-200 sm:text-base md:text-lg lg:text-base xl:text-lg',
+        'text-neutral-950 text-sm font-medium dark:text-neutral-200 sm:text-base md:text-lg lg:text-base xl:text-lg',
       ],
-      c1: ['text-base dark:text-slate-200'],
-      c2: ['text-sm font-medium dark:text-slate-200 '],
+      c1: ['text-neutral-950 text-base dark:text-neutral-200'],
+      c2: ['text-neutral-950 text-sm font-medium dark:text-neutral-200 '],
     },
   },
   defaultVariants: {
     as: 'p',
+    variant: 'p1',
   },
 });
 
