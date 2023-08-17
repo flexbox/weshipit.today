@@ -11,7 +11,7 @@ export function ToolTypeBadge({
   const variantType = getVariantFromType(type);
 
   return (
-    <Badge variant={variantType} className="mr-2" {...rest}>
+    <Badge variant={variantType as any} className="mr-2" {...rest}>
       {type}
     </Badge>
   );

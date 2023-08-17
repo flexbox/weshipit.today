@@ -112,8 +112,8 @@ function Workflow() {
         shape: 1,
         src: '/images/audit-process.jpg',
         alt: 'React Native Code Audit',
-        width: 3472,
-        height: 5291,
+        width: 1969,
+        height: 3000,
       }}
     >
       <div className="space-y-6">
