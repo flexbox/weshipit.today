@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client';
 import {
   Button,
-  PlatformList,
+  TagList,
   Text,
   ToolCardLogo,
   ToolList,
@@ -120,7 +120,7 @@ export function ReactNativeSlugPage({
                   <Text as="h3" variant="p2" className="mb-4">
                     Platforms
                   </Text>
-                  <PlatformList platforms={platform} />
+                  <TagList tags={platform} />
                 </div>
               )}
               {features && features.length > 0 && (
@@ -128,7 +128,7 @@ export function ReactNativeSlugPage({
                   <Text as="h3" variant="p2" className="mb-4">
                     Features
                   </Text>
-                  <PlatformList platforms={features} />
+                  <TagList tags={features} />
                 </div>
               )}
               {pricing && pricing.length > 0 && (
@@ -136,7 +136,7 @@ export function ReactNativeSlugPage({
                   <Text as="h3" variant="p2" className="mb-4">
                     Pricing
                   </Text>
-                  <PlatformList platforms={pricing} />
+                  <TagList tags={pricing} />
                 </div>
               )}
             </Card>
