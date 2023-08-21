@@ -31,7 +31,7 @@
   },
   "private": true,
   "dependencies": {
-    "@apollo/client": "^3.7.10",
+    "@apollo/client": "3.5.10",
     "@calcom/embed-react": "^1.0.10",
     "@headlessui/react": "^1.7.13",
     "@heroicons/react": "^2.0.18",

@@ -10,12 +10,40 @@ import {
   Hero,
   getVariantFromType,
 } from '@weshipit/ui';
-import { gql } from '@apollo/client';
+import { gql, useQuery } from '@apollo/client';
 import { useEffect, useState } from 'react';
 import round from 'lodash/round';
 import { HeaderLinksForTools } from './[slug]';
 import { useSearchParams } from 'next/navigation';
 
+/**
+ * Filter airtable records by type
+ */
+function filterRecordsByType(records, type) {
+  return records.filter((record) => record.fields.type === type);
+}
+
+const apiKey = process.env.AIRTABLE_API_KEY;
+const baseId = process.env.AIRTABLE_BASE_ID_REACT_NATIVE;
+
+const GET_AIRTABLE_DATA = gql`
+  query GetAirtableData {
+    airtable_tableData(
+      airtable_apiKey: "${apiKey}"
+      airtable_baseId: "${baseId}"
+      tableName: "tools"
+    ) {
+      records {
+        fields
+        id
+      }
+    }
+  }
+`;
+
+/**
+ * Filter airtable records by description
+ */
 function filterByDescription(records, searchTerm: string) {
   return records.filter((record) => {
     const description = record.fields.description;
@@ -23,7 +51,7 @@ function filterByDescription(records, searchTerm: string) {
   });
 }
 
-export default function ReactNativeToolsPage({ records }) {
+function ToolListPage({ records }) {
   const numberOfTools = round(records.length, -1);
 
   const [searchTerm, setSearchTerm] = useState('');
@@ -36,15 +64,39 @@ export default function ReactNativeToolsPage({ records }) {
     const results = filterByDescription(records, searchTerm);
     setSearchResults(results);
   }, [records, searchTerm]);
+  return (
+    <>
+      <div>
+        <TypeFilter numberOfTools={numberOfTools} />
+      </div>
+      <div className="col-span-5">
+        <div className="mb-6">
+          <SearchBar searchTerm={searchTerm} handleChange={handleChange} />
+        </div>
+        <ToolList records={searchResults} />
+      </div>
+    </>
+  );
+}
 
+export default function ReactNativeToolsPage() {
   const searchParams = useSearchParams();
+  const { loading, error, data, networkStatus } = useQuery(GET_AIRTABLE_DATA);
+  console.log(
+    'file: index.tsx:85 ~ ReactNativeToolsPage ~ networkStatus:',
+    networkStatus
+  );
+  console.log('file: index.tsx:85 ~ ReactNativeToolsPage ~ data:', data);
+  console.log('file: index.tsx:85 ~ ReactNativeToolsPage ~ loading:', loading);
+
+  if (error) return `Error! ${error.message}`;
 
   const toolType = searchParams.get('type')?.toLowerCase();
 
   return (
     <Layout
-      seoTitle={`Repository of ${numberOfTools}+ resources and tools to elevate your React Native game`}
-      seoDescription={`The best tools & apis for React Native developers. Accelerate your product development and improvement with more than ${numberOfTools}+ design resources and tools.`}
+      seoTitle={`Repository of resources and tools to elevate your React Native game`}
+      seoDescription={`The best tools & apis for React Native developers. Accelerate your product development and improvement with more than 30+ design resources and tools.`}
       ogImageTitle="React Native Tools"
       withAccessoryRight={<HeaderLinksForTools />}
     >
@@ -74,15 +126,7 @@ export default function ReactNativeToolsPage({ records }) {
 
       <div className="mx-auto max-w-screen-2xl px-4 pb-48 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-6 md:gap-6">
-          <div>
-            <TypeFilter numberOfTools={numberOfTools} />
-          </div>
-          <div className="col-span-5">
-            <div className="mb-6">
-              <SearchBar searchTerm={searchTerm} handleChange={handleChange} />
-            </div>
-            <ToolList records={searchResults} />
-          </div>
+          {loading ? 'Loading...' : <ToolListPage records={data.records} />}
         </div>
 
         <div className="py-12">
@@ -99,43 +143,16 @@ export default function ReactNativeToolsPage({ records }) {
   );
 }
 
-/**
- * Filter airtable records by type
- */
-function filterRecordsByType(records, type) {
-  return records.filter((record) => record.fields.type === type);
-}
+// export async function getServerSideProps(context) {
+//   const { query } = context;
+//   let records = data.airtable_tableData.records;
+//   if (query.type) {
+//     records = filterRecordsByType(records, query.type);
+//   }
 
-export async function getServerSideProps(context) {
-  const apiKey = process.env.AIRTABLE_API_KEY;
-  const baseId = process.env.AIRTABLE_BASE_ID_REACT_NATIVE;
-
-  const { data } = await client.query({
-    query: gql`
-      query GetAirtableData {
-        airtable_tableData(
-          airtable_apiKey: "${apiKey}"
-          airtable_baseId: "${baseId}"
-          tableName: "tools"
-        ) {
-          records {
-            fields
-            id
-          }
-        }
-      }
-    `,
-  });
-
-  const { query } = context;
-  let records = data.airtable_tableData.records;
-  if (query.type) {
-    records = filterRecordsByType(records, query.type);
-  }
-
-  return {
-    props: {
-      records,
-    },
-  };
-}
+//   return {
+//     props: {
+//       records,
+//     },
+//   };
+// }
