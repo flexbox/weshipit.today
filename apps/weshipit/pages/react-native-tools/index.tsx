@@ -15,11 +15,21 @@ import round from 'lodash/round';
 import { HeaderLinksForTools } from './[slug]';
 import { useSearchParams } from 'next/navigation';
 
+/**
+ * Filter airtable records by description
+ */
 function filterByDescription(records, searchTerm: string) {
   return records.filter((record) => {
     const description = record.fields.description;
     return description?.toLowerCase().includes(searchTerm);
   });
+}
+
+/**
+ * Filter airtable records by type
+ */
+function filterRecordsByType(records, type) {
+  return records.filter((record) => record.fields.type === type);
 }
 
 export default function ReactNativeToolsPage({ records }) {
@@ -96,13 +106,6 @@ export default function ReactNativeToolsPage({ records }) {
       </div>
     </Layout>
   );
-}
-
-/**
- * Filter airtable records by type
- */
-function filterRecordsByType(records, type) {
-  return records.filter((record) => record.fields.type === type);
 }
 
 export async function getServerSideProps(context) {

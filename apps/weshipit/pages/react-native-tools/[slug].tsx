@@ -205,7 +205,17 @@ export function ReactNativeSlugPage({
   );
 }
 
-export async function getServerSideProps({ params }) {
+// make sure the build is happy
+export async function getStaticPaths() {
+  const paths = [];
+
+  return {
+    paths,
+    fallback: true,
+  };
+}
+
+export async function getStaticProps({ params }) {
   const apiKey = process.env.AIRTABLE_API_KEY;
   const baseId = process.env.AIRTABLE_BASE_ID_REACT_NATIVE;
   const screenshotAccessKey = process.env.APIFLASH_ACCESS_KEY;
@@ -252,6 +262,7 @@ export async function getServerSideProps({ params }) {
       recomendedRecords: recomended.data.airtable_tableData.records,
       screenshotAccessKey,
     },
+    revalidate: 600, // 10 minutes
   };
 }
 
