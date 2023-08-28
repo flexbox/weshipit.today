@@ -7,12 +7,16 @@ const navigation = {
     { name: 'React Native Audit', href: '/audit' },
   ],
   company: [
+    { name: 'Consulting', href: '/consulting' },
+    { name: 'Partners', href: '/clients' },
     {
       name: 'Work at weshipit.today',
       href: 'https://flexbox.notion.site/Jobs-1c65e7a956a64a07b60a401f8747f1af',
     },
-    { name: 'Partners', href: '/clients' },
-    { name: 'Consulting', href: '/consulting' },
+    {
+      name: 'Sponsorship',
+      href: 'https://github.com/sponsors/flexbox?frequency=one-time&sponsor=flexbox',
+    },
   ],
   social: [
     {
