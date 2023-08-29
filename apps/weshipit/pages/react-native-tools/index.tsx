@@ -1,25 +1,28 @@
 import { Layout } from '../../components/layout';
 import client from '../api/apollo-client';
 
-import {
-  ToolList,
-  TypeFilter,
-  Hyperlink,
-  Text,
-  SearchBar,
-  Hero,
-} from '@weshipit/ui';
+import { ToolList, TypeFilter, Text, SearchBar, Hero } from '@weshipit/ui';
 import { gql } from '@apollo/client';
 import { useEffect, useState } from 'react';
 import round from 'lodash/round';
 import { HeaderLinksForTools } from './[slug]';
 import { useSearchParams } from 'next/navigation';
 
+/**
+ * Search throught airtable records by filtering by description
+ */
 function filterByDescription(records, searchTerm: string) {
   return records.filter((record) => {
     const description = record.fields.description;
     return description?.toLowerCase().includes(searchTerm);
   });
+}
+
+/**
+ * Filter airtable records by type
+ */
+function filterRecordsByType(records, type) {
+  return records.filter((record) => record.fields.type === type);
 }
 
 export default function ReactNativeToolsPage({ records }) {
@@ -83,26 +86,9 @@ export default function ReactNativeToolsPage({ records }) {
             <ToolList records={searchResults} />
           </div>
         </div>
-
-        <div className="py-12">
-          <Hyperlink
-            href="https://clearbit.com"
-            isExternal={true}
-            className="text-sm text-gray-400"
-          >
-            Logos provided by Clearbit
-          </Hyperlink>
-        </div>
       </div>
     </Layout>
   );
-}
-
-/**
- * Filter airtable records by type
- */
-function filterRecordsByType(records, type) {
-  return records.filter((record) => record.fields.type === type);
 }
 
 export async function getServerSideProps(context) {

@@ -18,6 +18,7 @@ import { linksApi } from '../api/links';
 import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
 import { isNil } from 'lodash';
+import ChevronLeftIcon from '@heroicons/react/20/solid/ChevronLeftIcon';
 
 export function HeaderLinksForTools() {
   return (
@@ -81,16 +82,17 @@ export function ReactNativeSlugPage({
       withAccessoryRight={<HeaderLinksForTools />}
       withContainer={true}
     >
-      <div className="mt-8 flex">
+      <div className="mt-4 flex">
         <Link
           href="/react-native-tools"
           className="flex py-4 text-slate-400 hover:text-slate-500 dark:text-slate-500 dark:hover:text-slate-400"
         >
+          <ChevronLeftIcon className="mr-2 h-6 w-6" />
           Go back
         </Link>
       </div>
 
-      <section className="mx-auto my-8 max-w-6xl">
+      <section className="mx-auto my-4 max-w-6xl">
         <div className="grid grid-cols-1 gap-24 pt-6 md:grid-cols-12">
           <div className="col-span-1 md:col-span-8">
             <ToolCardLogo name={name} websiteUrl={website_url} size={64} />

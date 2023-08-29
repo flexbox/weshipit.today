@@ -1,3 +1,4 @@
+import { Hyperlink } from '../hyperlink/hyperlink';
 import Link from 'next/link';
 import { SVGProps } from 'react';
 
@@ -10,21 +11,23 @@ const navigation = {
     { name: 'Consulting', href: '/consulting' },
     { name: 'Partners', href: '/clients' },
     {
-      name: 'Work at weshipit.today',
-      href: 'https://flexbox.notion.site/Jobs-1c65e7a956a64a07b60a401f8747f1af',
-    },
-    {
       name: 'Sponsorship',
       href: 'https://github.com/sponsors/flexbox?frequency=one-time&sponsor=flexbox',
+    },
+    {
+      name: 'Jobs',
+      href: 'https://flexbox.notion.site/Jobs-1c65e7a956a64a07b60a401f8747f1af',
     },
   ],
   social: [
     {
-      name: 'Twitter',
+      name: 'X',
       href: 'https://twitter.com/intent/follow?screen_name=flexbox_',
       icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
-          <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+          <g>
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+          </g>
         </svg>
       ),
     },
@@ -57,6 +60,29 @@ const navigation = {
   ],
 };
 
+function FooterLink(item: { name: string; href: string }) {
+  if (item.href.startsWith('https')) {
+    return (
+      <Hyperlink
+        href={item.href}
+        className="text-base text-slate-400 hover:text-slate-900"
+        isExternal
+      >
+        {item.name}
+      </Hyperlink>
+    );
+  }
+
+  return (
+    <Link
+      href={item.href}
+      className="text-base text-slate-400 hover:text-slate-900"
+    >
+      {item.name}
+    </Link>
+  );
+}
+
 export function Footer() {
   const fullYear = new Date().getFullYear();
 
@@ -67,75 +93,42 @@ export function Footer() {
       </h2>
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-          <div className="grid grid-cols-2 gap-8 xl:col-span-2">
+          <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div className="mb-6">
-                <h3 className="text-base font-medium text-gray-900 dark:text-slate-200">
+                <h3 className="text-base font-medium text-slate-900 dark:text-slate-200">
                   Solutions
                 </h3>
-                <ul role="list" className="mt-6 space-y-4">
+                <ul className="mt-6 space-y-4">
                   {navigation.solutions.map((item) => (
                     <li key={item.name}>
-                      <Link
-                        href={item.href}
-                        className="text-base text-gray-500 hover:text-gray-900"
-                      >
-                        {item.name}
-                      </Link>
+                      <FooterLink {...item} />
                     </li>
                   ))}
                 </ul>
               </div>
               <div>
-                <h3 className="text-base font-medium text-gray-900 dark:text-slate-200">
+                <h3 className="text-base font-medium text-slate-900 dark:text-slate-200">
                   Company
                 </h3>
-                <ul role="list" className="mt-4 space-y-4">
+                <ul className="mt-4 space-y-4">
                   {navigation.company.map((item) => (
                     <li key={item.name}>
-                      <a
-                        href={item.href}
-                        className="text-base text-gray-500 hover:text-gray-900"
-                      >
-                        {item.name}
-                      </a>
+                      <FooterLink {...item} />
                     </li>
                   ))}
                 </ul>
               </div>
             </div>
           </div>
-          <div className="mt-8 xl:mt-0">
-            {/* TODO: connect an email provider */}
-            {/* <h3 className="text-base font-medium text-gray-900">
-              Subscribe to our newsletter
-            </h3>
-            <p className="mt-4 text-base text-gray-500">
-              The latest news, articles, and resources, sent to your inbox
-              weekly.
+
+          <div className="mt-8 space-y-8 xl:mt-0">
+            <p className="text-base leading-7 text-slate-400">
+              Are you looking to build a React Native app? Look no further than
+              weshipit.today, the #1 destination for finding tools, discovering
+              launch advices, and finding partners to successfully release your
+              React Native app.
             </p>
-            <form className="mt-4 sm:flex sm:max-w-md">
-              <label htmlFor="email-address" className="sr-only">
-                Email address
-              </label>
-              <input
-                type="email"
-                name="email-address"
-                id="email-address"
-                autoComplete="email"
-                required
-                className="w-full min-w-0 appearance-none rounded-md border border-gray-300 bg-white py-2 px-4 text-base text-gray-900 shadow-sm placeholder:text-gray-500 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 focus:placeholder:text-gray-400"
-                placeholder="Enter your email"
-              />
-              <div className="mt-3 rounded-md sm:mt-0 sm:ml-3 sm:shrink-0">
-                <button
-                  type="submit"
-                  className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-base font-medium text-white hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                >
-                  Subscribe
-                </button>
-              </div>
-            </form> */}
           </div>
         </div>
         <div className="mt-8 border-t border-gray-200 pt-8 dark:border-gray-800 md:flex md:items-center md:justify-between">
@@ -144,14 +137,14 @@ export function Footer() {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-gray-400 hover:text-gray-500"
+                className="text-slate-400 hover:text-slate-400"
               >
                 <span className="sr-only">{item.name}</span>
                 <item.icon className="h-6 w-6" aria-hidden="true" />
               </a>
             ))}
           </div>
-          <p className="mt-8 text-base text-gray-400 md:order-1 md:mt-0">
+          <p className="mt-8 text-base text-slate-400 md:order-1 md:mt-0">
             &copy; {fullYear} weshipit.today, SASU. All rights reserved.
           </p>
         </div>
