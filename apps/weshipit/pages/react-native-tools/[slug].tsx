@@ -76,7 +76,7 @@ export function ReactNativeSlugPage({
 
   return (
     <Layout
-      seoTitle={`${name} React Native Tools and Resources`}
+      seoTitle={`${name} for React Native`}
       seoDescription="The best tools and resources for busy developers in React Native. Find the best tools to help you grow and be more successful."
       ogImageTitle={`${name} for React Native`}
       withAccessoryRight={<HeaderLinksForTools />}
