@@ -5,6 +5,7 @@ import { SVGProps } from 'react';
 const navigation = {
   solutions: [
     { name: 'React Native Tools', href: '/react-native-tools' },
+    { name: 'React Native Starters', href: '/react-native-starters' },
     { name: 'React Native Audit', href: '/audit' },
   ],
   company: [
