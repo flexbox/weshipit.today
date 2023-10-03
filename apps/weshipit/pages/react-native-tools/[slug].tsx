@@ -7,44 +7,17 @@ import {
   ToolList,
   ToolWebsitePreview,
   ToolTypeBadge,
-  CardBootcamp,
-  CardChecklist,
-  CardConsultation,
   Card,
+  CallToActionCards,
 } from '@weshipit/ui';
 import client from '../api/apollo-client';
 import { Layout } from '../../components/layout';
-import { linksApi } from '../api/links';
+
 import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
 import { isNil } from 'lodash';
 import ChevronLeftIcon from '@heroicons/react/20/solid/ChevronLeftIcon';
-
-export function HeaderLinksForTools() {
-  return (
-    <div className="flex">
-      <Button
-        variant="secondary"
-        as="a"
-        className="mr-4 px-2"
-        href="https://flexbox.gumroad.com/l/expo-checklist"
-        target="_blank"
-        size="xl"
-      >
-        🎁 Free Launch Checklist
-      </Button>
-      <Button
-        as="a"
-        href={linksApi.airtable.TOOLS_FORM}
-        className="px-2"
-        target="_blank"
-        size="xl"
-      >
-        Add a React Native Tool
-      </Button>
-    </div>
-  );
-}
+import { HeaderLinksForTools } from '../../components/header-links-for-tools';
 
 export function ReactNativeSlugPage({
   records,
@@ -193,15 +166,11 @@ export function ReactNativeSlugPage({
         <ToolList records={recomendedRecords} />
       </section>
 
-      <section className="py-24">
+      <section className="mb-12 py-24">
         <Text as="h2" variant="h3" className="my-4">
           Useful resources
         </Text>
-        <div className="flex justify-between">
-          <CardBootcamp imageSize={124} />
-          <CardChecklist imageSize={124} />
-          <CardConsultation gravatarSize={80} />
-        </div>
+        <CallToActionCards />
       </section>
     </Layout>
   );

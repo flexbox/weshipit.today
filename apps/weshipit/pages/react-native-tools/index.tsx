@@ -1,11 +1,18 @@
 import { Layout } from '../../components/layout';
 import client from '../api/apollo-client';
 
-import { ToolList, TypeFilter, Text, SearchBar, Hero } from '@weshipit/ui';
+import {
+  ToolList,
+  TypeFilter,
+  Text,
+  SearchBar,
+  Hero,
+  CallToActionCards,
+} from '@weshipit/ui';
 import { gql } from '@apollo/client';
 import { useEffect, useState } from 'react';
 import round from 'lodash/round';
-import { HeaderLinksForTools } from './[slug]';
+import { HeaderLinksForTools } from '../../components/header-links-for-tools';
 import { useSearchParams } from 'next/navigation';
 
 /**
@@ -74,7 +81,7 @@ export default function ReactNativeToolsPage({ records }) {
         </Text>
       </div>
 
-      <div className="mx-auto max-w-screen-2xl px-4 pb-48 sm:px-6">
+      <div className="mx-auto max-w-screen-2xl px-4 pb-12 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-6 md:gap-6">
           <div>
             <TypeFilter numberOfTools={numberOfTools} />
@@ -86,6 +93,14 @@ export default function ReactNativeToolsPage({ records }) {
             <ToolList records={searchResults} />
           </div>
         </div>
+      </div>
+      <div className="mx-auto mb-24 max-w-7xl px-4 sm:px-6">
+        <section className="mb-12">
+          <Text as="h2" variant="h3" className="my-4">
+            Useful resources
+          </Text>
+          <CallToActionCards />
+        </section>
       </div>
     </Layout>
   );

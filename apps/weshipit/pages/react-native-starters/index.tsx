@@ -5,7 +5,7 @@ import { Text, Hero, Hyperlink, Card } from '@weshipit/ui';
 import { gql } from '@apollo/client';
 import round from 'lodash/round';
 
-import { HeaderLinksForTools } from '../react-native-tools/[slug]';
+import { HeaderLinksForTools } from '../../components/header-links-for-tools';
 
 export default function ReactNativeToolsPage({ records }) {
   const numberOfTools = round(records.length, -1);
