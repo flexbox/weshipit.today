@@ -4,7 +4,7 @@ import { CardConsultation } from '../card/card-consultation';
 
 export function CallToActionCards() {
   return (
-    <div className="flex justify-between">
+    <div className="flex flex-col justify-between gap-4 md:flex-row">
       <CardBootcamp imageSize={124} />
       <CardChecklist imageSize={124} />
       <CardConsultation gravatarSize={80} />
