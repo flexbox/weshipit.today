@@ -54,6 +54,7 @@ export function ReactNativeSlugPage({
       ogImageTitle={`${name} for React Native`}
       withAccessoryRight={<HeaderLinksForTools />}
       withContainer={true}
+      withProductHunt={true}
     >
       <div className="mt-4 flex">
         <Link

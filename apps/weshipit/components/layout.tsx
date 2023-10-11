@@ -1,10 +1,12 @@
 import { Footer, Header } from '@weshipit/ui';
 import NextHead, { NextHeadProps } from './next-head';
+import BannerProductHunt from '../components/banner-product-hunt/banner-product-hunt';
 
 interface LayoutProps extends NextHeadProps {
   children: React.ReactNode;
   withHeader?: boolean;
   withFooter?: boolean;
+  withProductHunt?: boolean;
   withContainer?: boolean;
   withAccessoryRight?: React.ReactNode;
 }
@@ -14,6 +16,7 @@ export function Layout({
   withHeader = false,
   withFooter = false,
   withContainer = false,
+  withProductHunt = false,
   withAccessoryRight,
   seoTitle,
   seoDescription,
@@ -27,6 +30,7 @@ export function Layout({
         ogImageTitle={ogImageTitle}
       />
       <div className="min-h-full">
+        {withProductHunt && <BannerProductHunt />}
         {withHeader && <Header />}
         {withAccessoryRight && (
           <Header withAccessoryRight accessoryRight={withAccessoryRight} />

@@ -56,6 +56,7 @@ export default function ReactNativeToolsPage({ records }) {
       seoDescription={`The best tools & apis for React Native developers. Accelerate your product development and improvement with more than ${numberOfTools}+ design resources and tools.`}
       ogImageTitle="React Native Tools"
       withAccessoryRight={<HeaderLinksForTools />}
+      withProductHunt={true}
     >
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
         <Hero>
