@@ -8,12 +8,12 @@ import round from 'lodash/round';
 import { HeaderLinksForTools } from '../../components/header-links-for-tools';
 
 export default function ReactNativeToolsPage({ records }) {
-  const numberOfTools = round(records.length, -1);
+  const recordsNumber = round(records.length, -1);
 
   return (
     <Layout
-      seoTitle={`${numberOfTools}+ starter tempaltes to create your React Native project`}
-      seoDescription={``}
+      seoTitle={`${recordsNumber}+ starter templates to create your React Native project`}
+      seoDescription="Starter repos to create your React Native project."
       ogImageTitle="React Native Starter Templates"
       withAccessoryRight={<HeaderLinksForTools />}
     >
@@ -68,7 +68,7 @@ export default function ReactNativeToolsPage({ records }) {
   );
 }
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps() {
   const apiKey = process.env.AIRTABLE_API_KEY;
   const baseId = process.env.AIRTABLE_BASE_ID_REACT_NATIVE;
 
