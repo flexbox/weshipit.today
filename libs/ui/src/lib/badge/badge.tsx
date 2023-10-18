@@ -24,9 +24,9 @@ const badge = cva(['badge'], {
         'bg-green-50',
         'text-green-700',
         'ring-green-700/10',
-        'dark:bg-red-400/10',
-        'dark:text-red-400',
-        'dark:ring-red-400/20',
+        'dark:bg-green-400/10',
+        'dark:text-green-400',
+        'dark:ring-green-400/20',
       ],
       indigo: [
         'bg-indigo-50',
@@ -67,6 +67,14 @@ const badge = cva(['badge'], {
         'dark:bg-orange-400/10',
         'dark:text-orange-500',
         'dark:ring-orange-400/20',
+      ],
+      red: [
+        'bg-red-50',
+        'text-red-800',
+        'ring-red-600/20',
+        'dark:bg-red-400/10',
+        'dark:text-red-500',
+        'dark:ring-red-400/20',
       ],
       'gray-lighter': [
         'bg-slate-50',

@@ -66,7 +66,7 @@ function FooterLink(item: { name: string; href: string }) {
     return (
       <Hyperlink
         href={item.href}
-        className="text-base text-slate-400 hover:text-slate-900"
+        className="text-base text-slate-400 hover:text-slate-900 dark:hover:text-white"
         isExternal
       >
         {item.name}
@@ -77,7 +77,7 @@ function FooterLink(item: { name: string; href: string }) {
   return (
     <Link
       href={item.href}
-      className="text-base text-slate-400 hover:text-slate-900"
+      className="text-base text-slate-400 hover:text-slate-900 dark:hover:text-white"
     >
       {item.name}
     </Link>
@@ -125,10 +125,10 @@ export function Footer() {
 
           <div className="mt-8 space-y-8 xl:mt-0">
             <p className="text-base leading-7 text-slate-400">
-              Are you looking to build a React Native app? Look no further than
-              weshipit.today, the #1 destination for finding tools, discovering
-              launch advices, and finding partners to successfully release your
-              React Native app.
+              Are you looking to <strong>build a React Native app</strong>?
+              <br /> Look no further than weshipit.today, the #1 destination for
+              finding tools, discovering launch advices, and finding partners to
+              successfully release your React Native app today.
             </p>
           </div>
         </div>

@@ -1,11 +1,67 @@
 import { Layout } from '../../components/layout';
 import client from '../api/apollo-client';
 
-import { Text, Hero, Hyperlink, Card } from '@weshipit/ui';
+import { Text, Hero, Hyperlink, Card, Badge } from '@weshipit/ui';
 import { gql } from '@apollo/client';
 import round from 'lodash/round';
 
 import { HeaderLinksForTools } from '../../components/header-links-for-tools';
+
+function extractUserNameFromGithubUrl(githubUrl) {
+  return githubUrl.split('/')[3];
+}
+
+const BadgeLevel = ({ level }) => {
+  console.log('file: index.tsx:15 ~ BadgeLevel ~ level:', level);
+  let color = 'green';
+  if (level.toLowerCase() === 'intermediate') {
+    color = 'yellow';
+  } else if (level.toLowerCase() === 'advanced') {
+    color = 'red';
+  }
+  console.log('file: index.tsx:22 ~ BadgeLevel ~ color:', color);
+
+  return <Badge variant={color as any}>{level}</Badge>;
+};
+
+function StarterList({ records }) {
+  return (
+    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {records.map((record) => {
+        const { name, github_url, website_url, level } = record.fields;
+
+        console.log('file: index.tsx:43 ~ {records.map ~ record:', record);
+
+        const author = extractUserNameFromGithubUrl(github_url || '');
+        return (
+          <Card key={record.id}>
+            <div className="prose prose-lg dark:prose-invert">
+              <div className="flex items-start justify-between">
+                <div className="shrink">
+                  <h2 className="my-0">{name} </h2>
+                  <h3 className="mt-0 italic opacity-40">by {author} </h3>
+                </div>
+                <BadgeLevel level={level} />
+              </div>
+              <ul>
+                {github_url && (
+                  <li>
+                    <Hyperlink href={github_url}>GitHub</Hyperlink>
+                  </li>
+                )}
+                {website_url && (
+                  <li>
+                    <Hyperlink href={website_url}>Website</Hyperlink>
+                  </li>
+                )}
+              </ul>
+            </div>
+          </Card>
+        );
+      })}
+    </div>
+  );
+}
 
 export default function ReactNativeToolsPage({ records }) {
   const recordsNumber = round(records.length, -1);
@@ -41,27 +97,34 @@ export default function ReactNativeToolsPage({ records }) {
       </div>
 
       <div className="mx-auto max-w-screen-2xl px-4 pb-48 sm:px-6">
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {records.map((record) => (
-            <Card key={record.id}>
-              <div className="prose prose-lg dark:prose-invert">
-                <h2 className="mt-0">{record.fields.name}</h2>
+        <StarterList records={records} />
+      </div>
+      <div className="mx-auto max-w-6xl px-4 pb-12 sm:px-6">
+        <div className="prose prose-lg dark:prose-invert">
+          <p>
+            Here is a brief explanation of why I categorized each template this
+            way:
+          </p>
 
-                <ul>
-                  <li>
-                    <Hyperlink href={record.fields.github_url}>
-                      GitHub
-                    </Hyperlink>
-                  </li>
-                  <li>
-                    <Hyperlink href={record.fields.website_url}>
-                      Website
-                    </Hyperlink>
-                  </li>
-                </ul>
-              </div>
-            </Card>
-          ))}
+          <ul>
+            <li>
+              Beginner: templates are both very easy to use and require very
+              little prior knowledge of React Native. They are both good choices
+              for developers who are new to React Native or who want to create a
+              simple app quickly.
+            </li>
+
+            <li>
+              Intermediate: Templates offer more flexibility and customization
+              options than the beginner templates, but they can also be more
+              difficult to set up and use.
+            </li>
+            <li>
+              Advanced: are all designed for experienced React Native
+              developers. They offer a lot of flexibility and customization
+              options, but they can also be more difficult to set up and use.
+            </li>
+          </ul>
         </div>
       </div>
     </Layout>

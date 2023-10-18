@@ -16,7 +16,7 @@ export function Hyperlink({
   if (isExternal) {
     return (
       <a target="_blank" rel="noopener noreferrer" {...rest}>
-        <span className="flex items-center dark:text-white">
+        <span className="flex items-center">
           {children}
           <ArrowTopRightOnSquareIcon className="ml-1 h-4 w-4 text-gray-400" />
         </span>
