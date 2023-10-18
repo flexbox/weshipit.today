@@ -12,14 +12,12 @@ function extractUserNameFromGithubUrl(githubUrl) {
 }
 
 const BadgeLevel = ({ level }) => {
-  console.log('file: index.tsx:15 ~ BadgeLevel ~ level:', level);
   let color = 'green';
   if (level.toLowerCase() === 'intermediate') {
     color = 'yellow';
   } else if (level.toLowerCase() === 'advanced') {
     color = 'red';
   }
-  console.log('file: index.tsx:22 ~ BadgeLevel ~ color:', color);
 
   return <Badge variant={color as any}>{level}</Badge>;
 };
