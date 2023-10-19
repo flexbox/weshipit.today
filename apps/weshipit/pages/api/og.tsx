@@ -32,22 +32,6 @@ export default async function handler(req: NextRequest) {
           >
             {title}
           </div>
-          <div
-            style={{
-              position: 'absolute',
-              bottom: 0,
-              right: 0,
-              display: 'flex',
-              padding: '1rem',
-            }}
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              alt="weshipit.today - logo"
-              src="https://raw.githubusercontent.com/flexbox/weshipit.today/main/apps/weshipit/public/android-chrome-192x192.png"
-              style={{ height: '6rem', width: '6rem' }}
-            />
-          </div>
         </div>
       ),
       {
