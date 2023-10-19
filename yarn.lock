@@ -5601,10 +5601,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@resvg/resvg-wasm@npm:2.4.1":
-  version: 2.4.1
-  resolution: "@resvg/resvg-wasm@npm:2.4.1"
-  checksum: 855aa1e5f1b228b9d2fe87e5d12b628c64b43a513fb67cd78b2eb447684d6b0861543a77ff8b878b21bf89b048ffeff73267685967d9f20cb8ef2c350dac5c81
+"@resvg/resvg-wasm@npm:2.5.0":
+  version: 2.5.0
+  resolution: "@resvg/resvg-wasm@npm:2.5.0"
+  checksum: 86b5128549ad685318b1669cecf00ac1986eac4c31515720c6245faabae1977bbc87df5dd5d0396dd06302151bdd0eff5bca6a705a3a4f72981188d53a10fe69
   languageName: node
   linkType: hard
 
@@ -8093,14 +8093,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/og@npm:^0.5.11":
-  version: 0.5.11
-  resolution: "@vercel/og@npm:0.5.11"
+"@vercel/og@npm:^0.5.19":
+  version: 0.5.19
+  resolution: "@vercel/og@npm:0.5.19"
   dependencies:
-    "@resvg/resvg-wasm": 2.4.1
-    satori: 0.10.3
+    "@resvg/resvg-wasm": 2.5.0
+    satori: 0.10.9
     yoga-wasm-web: 0.3.3
-  checksum: 6bdda9399804e497613fe8a66d1acaa0cef7daf4b91060b79a804508d361fa72ea428db2b5c327e8ea5e20cb7d8ef47c7e155088d4b9f55f0d3b7bc9370926d6
+  checksum: 27bc5415b10d10a3268f2c9710d6f0c57e3e4f22f98adc1f1fba9b21d7c23214636c16ba4abd92f4042ae3f9830bad18cd379a71206a649aaa9f03d901096878
   languageName: node
   linkType: hard
 
@@ -19715,9 +19715,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"satori@npm:0.10.3":
-  version: 0.10.3
-  resolution: "satori@npm:0.10.3"
+"satori@npm:0.10.9":
+  version: 0.10.9
+  resolution: "satori@npm:0.10.9"
   dependencies:
     "@shuding/opentype.js": 1.4.0-beta.0
     css-background-parser: ^0.1.0
@@ -19729,7 +19729,7 @@ __metadata:
     parse-css-color: ^0.2.1
     postcss-value-parser: ^4.2.0
     yoga-wasm-web: ^0.3.3
-  checksum: 44c98e2e07dd446daf4bfbfe9434f61e36c47aee1c32ee80eb34230559a904c02f543faaeda8d0b253b1512ac0969c314a22290712156dfb3872c5c9650caeac
+  checksum: 56cb35e553cf8a65ee08ec29357e441a10adcc7c0cd68977c4e24c613f8999b0862ae05fe3c648498c4bda8dfc5a1c15d883cfbc30c815a9117fd99531ee4355
   languageName: node
   linkType: hard
 
@@ -22379,7 +22379,7 @@ __metadata:
     "@types/react-gravatar": ^2.6.10
     "@typescript-eslint/eslint-plugin": 5.62.0
     "@typescript-eslint/parser": 5.62.0
-    "@vercel/og": ^0.5.11
+    "@vercel/og": ^0.5.19
     autoprefixer: ^10.4.15
     babel-jest: 29.4.3
     babel-loader: 8.1.0

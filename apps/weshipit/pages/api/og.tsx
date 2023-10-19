@@ -6,25 +6,48 @@ export const config = {
   runtime: 'edge',
 };
 
-export default function handler(req: NextRequest) {
+export default async function handler(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
-
     const hasTitle = searchParams.has('title');
     const title = hasTitle ? searchParams.get('title') : 'weshipit.today';
 
     return new ImageResponse(
       (
-        <div className="flex h-full w-full flex-col items-center justify-center bg-white text-center">
-          <div className="absolute bottom-0 right-0 flex p-4">
+        <div
+          style={{
+            display: 'flex',
+            height: '100%',
+            width: '100%',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backgroundColor: 'white',
+          }}
+        >
+          <div
+            style={{
+              fontSize: '5rem',
+              textAlign: 'center',
+            }}
+          >
+            {title}
+          </div>
+          <div
+            style={{
+              position: 'absolute',
+              bottom: 0,
+              right: 0,
+              display: 'flex',
+              padding: '1rem',
+            }}
+          >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               alt="weshipit.today - logo"
               src="https://raw.githubusercontent.com/flexbox/weshipit.today/main/apps/weshipit/public/android-chrome-192x192.png"
-              className="h-24 w-24"
+              style={{ height: '6rem', width: '6rem' }}
             />
           </div>
-          <div className="font-inter text-5xl">{title}</div>
         </div>
       ),
       {
