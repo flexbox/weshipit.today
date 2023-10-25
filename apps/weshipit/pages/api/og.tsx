@@ -1,4 +1,3 @@
-/* eslint-disable tailwindcss/no-custom-classname */
 import { ImageResponse } from '@vercel/og';
 import { NextRequest } from 'next/server';
 
@@ -35,8 +34,8 @@ export default async function handler(req: NextRequest) {
         </div>
       ),
       {
-        width: 1200,
-        height: 630,
+        width: 1050,
+        height: 549,
       }
     );
   } catch (e: any) {

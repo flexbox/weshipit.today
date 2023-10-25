@@ -39,7 +39,7 @@
     "@prismicio/react": "^2.7.1",
     "@tailwindcss/forms": "^0.5.4",
     "@tailwindcss/typography": "^0.5.9",
-    "@vercel/og": "^0.5.19",
+    "@vercel/og": "^0.5.20",
     "autoprefixer": "^10.4.15",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
