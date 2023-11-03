@@ -5,7 +5,12 @@ import { client } from './api/prismic';
 
 import './styles.css';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({
+  weight: ['400', '700', '800'],
+  style: ['normal'],
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 function CustomApp({ Component, pageProps }: AppProps) {
   return (

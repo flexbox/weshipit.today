@@ -28,16 +28,14 @@ function StarterList({ records }) {
       {records.map((record) => {
         const { name, github_url, website_url, level } = record.fields;
 
-        console.log('file: index.tsx:43 ~ {records.map ~ record:', record);
-
         const author = extractUserNameFromGithubUrl(github_url || '');
         return (
           <Card key={record.id}>
             <div className="prose prose-lg dark:prose-invert">
               <div className="flex items-start justify-between">
                 <div className="shrink">
-                  <h2 className="my-0">{name} </h2>
-                  <h3 className="mt-0 italic opacity-40">by {author} </h3>
+                  <h2 className="my-0">{name}</h2>
+                  <h3 className="mt-0 italic opacity-40">by {author}</h3>
                 </div>
                 <BadgeLevel level={level} />
               </div>
