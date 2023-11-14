@@ -26,7 +26,8 @@ function StarterList({ records }) {
   return (
     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {records.map((record) => {
-        const { name, github_url, website_url, level } = record.fields;
+        const { name, github_url, website_url, level, stack, scope } =
+          record.fields;
 
         const author = extractUserNameFromGithubUrl(github_url || '');
         return (
@@ -52,6 +53,36 @@ function StarterList({ records }) {
                 )}
               </ul>
             </div>
+            {scope && (
+              <div className="mt-8 flex overflow-x-auto">
+                {scope &&
+                  scope.map((scope, index) => (
+                    <Badge
+                      key={index}
+                      variant="blue"
+                      size="sm"
+                      className="mx-2 flex items-center"
+                    >
+                      <span style={{ whiteSpace: 'nowrap' }}>{scope}</span>
+                    </Badge>
+                  ))}
+              </div>
+            )}
+            {stack && (
+              <div className="my-2 flex overflow-x-auto">
+                {stack &&
+                  stack.map((stack, index) => (
+                    <Badge
+                      key={index}
+                      variant="blue"
+                      size="sm"
+                      className="mx-2"
+                    >
+                      <span style={{ whiteSpace: 'nowrap' }}>{stack}</span>
+                    </Badge>
+                  ))}
+              </div>
+            )}
           </Card>
         );
       })}
