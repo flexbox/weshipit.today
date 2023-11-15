@@ -46,12 +46,11 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/figmatostore/jest.config.ts",
-        "passWithNoTests": true
+        "jestConfig": "apps/figmatostore/jest.config.ts"
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["apps/figmatostore/**/*.{ts,tsx,js,jsx}"]

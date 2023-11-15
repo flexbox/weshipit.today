@@ -51,3 +51,5 @@ Thumbs.db
 .vercel
 .env
 .env*.local
+
+.nx/cache

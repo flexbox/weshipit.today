@@ -56,12 +56,11 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/apps/weshipit"],
       "options": {
-        "jestConfig": "apps/weshipit/jest.config.ts",
-        "passWithNoTests": true
+        "jestConfig": "apps/weshipit/jest.config.ts"
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["apps/weshipit/**/*.{ts,tsx,js,jsx}"]
