@@ -6,6 +6,8 @@ import { gql } from '@apollo/client';
 import round from 'lodash/round';
 
 import { HeaderLinksForTools } from '../../components/header-links-for-tools';
+import { linksApi } from '../api/links';
+
 
 function extractUserNameFromGithubUrl(githubUrl) {
   return githubUrl.split('/')[3];
@@ -67,7 +69,7 @@ export default function ReactNativeToolsPage({ records }) {
       seoTitle={`${recordsNumber}+ starter templates to create your React Native project`}
       seoDescription="Starter repos to create your React Native project."
       ogImageTitle="React Native Starter Templates"
-      withAccessoryRight={<HeaderLinksForTools />}
+      withAccessoryRight={<HeaderLinksForTools buttonText="Add a React Native Boilerplate" buttonLink={linksApi.airtable.TEMPLATE_FORM} />}
     >
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
         <Hero>

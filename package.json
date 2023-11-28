@@ -125,5 +125,6 @@
     "commitizen": {
       "path": "git-cz"
     }
-  }
+  },
+  "packageManager": "yarn@4.0.2"
 }
