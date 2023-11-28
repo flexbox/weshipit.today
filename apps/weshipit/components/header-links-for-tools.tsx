@@ -1,7 +1,15 @@
 import { Button } from '@weshipit/ui';
 import { linksApi } from '../pages/api/links';
 
-export function HeaderLinksForTools() {
+interface HeaderLinksForToolsProps {
+  buttonText?: string;
+  buttonLink?: string;
+}
+
+export function HeaderLinksForTools({
+  buttonText = 'Add a React Native Tool',
+  buttonLink = linksApi.airtable.TOOLS_FORM,
+}: HeaderLinksForToolsProps) {
   return (
     <div className="flex">
       <Button
@@ -16,12 +24,12 @@ export function HeaderLinksForTools() {
       </Button>
       <Button
         as="a"
-        href={linksApi.airtable.TOOLS_FORM}
+        href={buttonLink}
         className="px-2"
         target="_blank"
         size="xl"
       >
-        Add a React Native Tool
+        {buttonText}
       </Button>
     </div>
   );
