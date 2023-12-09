@@ -26,8 +26,6 @@ export function getVariantFromType(type: string) {
       return 'gray-dark';
     case 'Unity':
       return 'gray-darker';
-    case 'Web':
-      return 'cyan';
     case 'Windows':
       return 'blue';
     // pricing

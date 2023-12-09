@@ -3,29 +3,33 @@ import { Badge } from '../badge/badge';
 
 export interface TagListProps {
   tags: string[];
+  size?: 'sm' | 'md';
 }
 
-function TagListItem({ platform }: { platform: string }) {
-  const platformVariant = getVariantFromType(platform);
+interface TagListItemProps {
+  item: string;
+  size?: 'sm' | 'md';
+}
+
+function TagListItem({ item, size }:TagListItemProps) {
+  const variant = getVariantFromType(item);
 
   return (
-    <Badge variant={platformVariant as any} className="mr-2">
-      {platform}
+    <Badge variant={variant as any} size={size} className="mr-2">
+      {item}
     </Badge>
   );
 }
 
-export function TagList({ tags }: TagListProps) {
+export function TagList({ tags, size }: TagListProps) {
   return (
-    <div>
-      <ul className="flex list-none flex-wrap pl-0">
-        {tags?.map((platform, index) => (
-          <li key={`platform-${index}`} className="mb-2 mr-2">
-            <TagListItem platform={platform} />
-          </li>
-        ))}
-      </ul>
-    </div>
+    <ul className="flex list-none flex-wrap pl-0">
+      {tags?.map((item, index) => (
+        <li key={`platform-${index}`} className="mb-2 mr-2">
+          <TagListItem item={item} size={size}/>
+        </li>
+      ))}
+    </ul>
   );
 }
 
