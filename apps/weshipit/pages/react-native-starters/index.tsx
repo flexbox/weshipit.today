@@ -56,18 +56,18 @@ function StarterList({ records }) {
             </div>
             {scope && (
               <div className="mt-2">
-                <Text variant="c1" className="mr-2">
+                <Text variant="c1" className="mb-2 mr-2 flex">
                   Scope of the template
                 </Text>
-                <TagList tags={scope} size="sm" />
+                <TagList tags={scope}/>
               </div>
             )}
             {stack && (
               <div className="mt-2">
-                <Text variant="c1" className="mr-2">
+                <Text variant="c1" className="mb-2 mr-2 flex">
                   Stack included
                 </Text>
-                <TagList tags={stack} size="sm" />
+                <TagList tags={stack} />
               </div>
             )}
 
@@ -96,36 +96,6 @@ function StarterList({ records }) {
                 </Button>
               )}
             </div>
-            {scope && (
-              <div className="mt-8 flex overflow-x-auto">
-                {scope &&
-                  scope.map((scope, index) => (
-                    <Badge
-                      key={index}
-                      variant="blue"
-                      size="sm"
-                      className="mx-2 flex items-center"
-                    >
-                      <span style={{ whiteSpace: 'nowrap' }}>{scope}</span>
-                    </Badge>
-                  ))}
-              </div>
-            )}
-            {stack && (
-              <div className="my-2 flex overflow-x-auto">
-                {stack &&
-                  stack.map((stack, index) => (
-                    <Badge
-                      key={index}
-                      variant="blue"
-                      size="sm"
-                      className="mx-2"
-                    >
-                      <span style={{ whiteSpace: 'nowrap' }}>{stack}</span>
-                    </Badge>
-                  ))}
-              </div>
-            )}
           </Card>
         );
       })}
