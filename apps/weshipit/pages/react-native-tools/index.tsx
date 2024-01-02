@@ -98,7 +98,7 @@ export default function ReactNativeToolsPage({ records }) {
       <div className="mx-auto mb-24 max-w-7xl px-4 sm:px-6">
         <section className="mb-12">
           <Text as="h2" variant="h3" className="my-4">
-            Useful resources
+            More React Native resources
           </Text>
           <CallToActionCards />
         </section>
