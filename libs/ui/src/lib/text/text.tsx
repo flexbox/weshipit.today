@@ -1,7 +1,7 @@
 import React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 
-export const TextVariants = cva(['primary'], {
+export const TextVariants = cva([''], {
   variants: {
     variant: {
       h1: [
@@ -39,7 +39,7 @@ export const TextVariants = cva(['primary'], {
       ],
       s1: [
         'text-neutral-950',
-        'text-xl dark:text-neutral-200 sm:text-2xl md:text-3xl lg:text-2xl xl:text-3xl',
+        'text-xl sm:text-2xl md:text-3xl lg:text-2xl xl:text-3xl dark:text-neutral-200',
       ],
       s2: [
         'text-neutral-950',

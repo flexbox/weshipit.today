@@ -29,14 +29,14 @@ export function Layout({
         seoDescription={seoDescription}
         ogImageTitle={ogImageTitle}
       />
-      <div className="min-h-full">
+      <div className="flex min-h-screen flex-col justify-between">
         {withProductHunt && <BannerProductHunt />}
         {withHeader && <Header />}
         {withAccessoryRight && (
           <Header withAccessoryRight accessoryRight={withAccessoryRight} />
         )}
 
-        <main id="main-content">
+        <main id="main-content" className="mb-auto">
           {withContainer ? (
             <div className="mx-auto max-w-7xl px-4 sm:px-6">{children}</div>
           ) : (

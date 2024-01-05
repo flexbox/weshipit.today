@@ -4,6 +4,7 @@ import { SVGProps } from 'react';
 
 const navigation = {
   solutions: [
+    { name: 'Start Learning', href: '/react-native-resources' },
     { name: 'React Native Tools', href: '/react-native-tools' },
     { name: 'React Native Starters', href: '/react-native-starters' },
     { name: 'React Native Audit', href: '/audit' },
@@ -132,7 +133,7 @@ export function Footer() {
             </p>
           </div>
         </div>
-        <div className="mt-8 border-t border-gray-200 pt-8 dark:border-gray-800 md:flex md:items-center md:justify-between">
+        <div className="mt-8 border-t border-gray-200 pt-8 md:flex md:items-center md:justify-between dark:border-gray-800">
           <div className="flex space-x-6 md:order-2">
             {navigation.social.map((item) => (
               <a
