@@ -50,10 +50,7 @@ export default function About() {
           and projects.
         </p>
         <div className="not-prose">
-          <LinkButton
-            href="https://styleguide.weshipit.today"
-            variant="secondary"
-          >
+          <LinkButton href="https://design.weshipit.today" variant="secondary">
             Check it out
           </LinkButton>
         </div>
