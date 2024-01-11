@@ -8,6 +8,7 @@ import {
   Card,
   Hero,
   Hyperlink,
+  Prose,
   TagList,
   Text,
 } from '@weshipit/ui';
@@ -29,6 +30,7 @@ const BadgeLevel = ({ level }) => {
   }
 
   return (
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     <Badge variant={color as any} size="sm">
       {level}
     </Badge>
@@ -59,7 +61,7 @@ function StarterList({ records }) {
                 <Text variant="c1" className="mb-2 mr-2 flex">
                   Scope of the template
                 </Text>
-                <TagList tags={scope}/>
+                <TagList tags={scope} />
               </div>
             )}
             {stack && (
@@ -145,7 +147,7 @@ export default function ReactNativeToolsPage({ records }) {
         <StarterList records={records} />
       </div>
       <div className="mx-auto my-48 max-w-6xl px-4 sm:px-6">
-        <div className="prose prose-lg dark:prose-invert">
+        <Prose size="lg">
           <p>
             Here is a brief explanation of why I categorized each template this
             way:
@@ -210,7 +212,7 @@ export default function ReactNativeToolsPage({ records }) {
             </Hyperlink>
             .
           </p>
-        </div>
+        </Prose>
       </div>
     </Layout>
   );

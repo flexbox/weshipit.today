@@ -9,6 +9,7 @@ import {
   ToolTypeBadge,
   Card,
   CallToActionCards,
+  Prose,
 } from '@weshipit/ui';
 import client from '../api/apollo-client';
 import { Layout } from '../../components/layout';
@@ -77,7 +78,7 @@ export function ReactNativeSlugPage({
             <div className="mb-4 flex flex-wrap">
               <ToolTypeBadge type={type} size="sm" />
             </div>
-            <div className="prose lg:prose-xl dark:prose-invert prose-slate mb-12">
+            <Prose size="lg" className="mb-12">
               <ReactMarkdown>{description}</ReactMarkdown>
 
               {!isNil(description_success) && (
@@ -88,7 +89,7 @@ export function ReactNativeSlugPage({
                   <ReactMarkdown>{description_success}</ReactMarkdown>
                 </>
               )}
-            </div>
+            </Prose>
 
             <Card>
               {platform && platform.length > 0 && (

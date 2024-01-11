@@ -1,6 +1,7 @@
 import { Layout } from '../components/layout';
 import Script from 'next/script';
 import { linksApi } from './api/links';
+import { Prose } from '@weshipit/ui';
 
 export function Qr() {
   return (
@@ -13,7 +14,7 @@ export function Qr() {
       withFooter
     >
       <div className="mx-auto max-w-2xl p-3">
-        <div className="prose prose-lg dark:prose-invert">
+        <Prose size="lg">
           <h1 className="mt-8">Office Hours</h1>
           <p>
             Join us during Code and Coffee breaks to pair with one of our
@@ -40,7 +41,7 @@ export function Qr() {
             className="airtable-embed airtable-dynamic-height mb-12"
             style={{ background: '#ffffff' }}
           ></iframe>
-        </div>
+        </Prose>
       </div>
     </Layout>
   );

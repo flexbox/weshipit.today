@@ -2,6 +2,7 @@ import {
   FadeIn,
   Hyperlink,
   LinkButton,
+  Prose,
   StylizedImage,
   TagList,
   Text,
@@ -50,9 +51,7 @@ function Section({ title, image, children }) {
             <Text as="h2" variant="h3" className="mt-2">
               {title}
             </Text>
-            <div className="prose prose-neutral dark:prose-invert mt-6">
-              {children}
-            </div>
+            <Prose className="mt-6">{children}</Prose>
           </FadeIn>
         </div>
       </div>
@@ -255,7 +254,7 @@ export function Audit() {
       withFooter
       withContainer
     >
-      <div className="prose prose-lg dark:prose-invert my-12">
+      <Prose size="lg" className="my-12">
         <h1>Audit React Native Codebase</h1>
         <p>
           React Native Audit Package is directed to organizations that struggle
@@ -264,24 +263,18 @@ export function Audit() {
           allowing your organization to focus on its priorities without a drop
           in its development pace.
         </p>
-        <LinkButton href="/onboarding" size="xl" className="no-underline">
-          Book a call
-        </LinkButton>
-      </div>
+        <div className="not-prose">
+          <LinkButton href="/onboarding" size="xl">
+            Book a call
+          </LinkButton>
+        </div>
+      </Prose>
       <div className="mt-12 space-y-24 [counter-reset:section] sm:mt-32 sm:space-y-32 lg:mt-40 lg:space-y-40">
         <Discover />
         <Workflow />
         <Benefits />
       </div>
-      <div className="prose prose-lg dark:prose-invert my-12">
-        {/* <section>
-          <h2>React Native Audit Package</h2>
-          <p>
-            Audit your React Native codebase to identify and address technical
-            debt and improve app performance.
-          </p>
-        </section> */}
-
+      <Prose size="lg" className="my-32">
         <h2>What else can we do for you?</h2>
         <h3>Long-term maintenance</h3>
         <p>
@@ -295,10 +288,12 @@ export function Audit() {
           version of React Native (RN). By doing so, your app will not only be
           more stable but will also offer better performance for its users.
         </p>
-        <LinkButton href="/onboarding" size="xl" className="no-underline">
-          Book a call
-        </LinkButton>
-      </div>
+        <div className="not-prose">
+          <LinkButton href="/onboarding" size="xl">
+            Book a call
+          </LinkButton>
+        </div>
+      </Prose>
     </Layout>
   );
 }

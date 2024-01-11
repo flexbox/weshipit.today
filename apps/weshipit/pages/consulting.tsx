@@ -1,4 +1,4 @@
-import { Button, Card, Hero, Hyperlink, Text } from '@weshipit/ui';
+import { Button, Card, Hero, Hyperlink, Prose, Text } from '@weshipit/ui';
 import { Layout } from '../components/layout';
 import Cal, { getCalApi } from '@calcom/embed-react';
 import { useEffect } from 'react';
@@ -66,7 +66,7 @@ export function Consulting() {
           </div>
         </Hero>
 
-        <div className="prose prose-lg dark:prose-invert mx-auto max-w-3xl">
+        <Prose className="mx-auto max-w-3xl">
           <Card>
             <Text as="p" style={{ marginTop: 0 }}>
               Every week, I receive emails asking me for a moment with me. I
@@ -114,7 +114,7 @@ export function Consulting() {
               .
             </em>
           </Card>
-        </div>
+        </Prose>
       </div>
 
       <div className="mb-48 mt-12">

@@ -12,6 +12,7 @@ const navigation = {
   company: [
     { name: 'Consulting', href: '/consulting' },
     { name: 'Partners', href: '/clients' },
+    { name: 'About', href: '/about' },
     {
       name: 'Sponsorship',
       href: 'https://github.com/sponsors/flexbox?frequency=one-time&sponsor=flexbox',
