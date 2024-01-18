@@ -5,6 +5,8 @@ import { Text, Hero, CallToActionCards, Card, Button } from '@weshipit/ui';
 import { gql } from '@apollo/client';
 import round from 'lodash/round';
 import { HeaderLinksForTools } from '../../components/header-links-for-tools';
+import { format } from 'date-fns';
+import { linksApi } from '../api/links';
 
 interface ResourceRecord {
   fields: {
@@ -16,6 +18,7 @@ interface ResourceRecord {
     youtube_url?: string;
     discord_url?: string;
     country?: string;
+    date_event?: string;
   };
   id: string;
 }
@@ -34,16 +37,22 @@ function ResourceList({ records }) {
           youtube_url,
           discord_url,
           country,
+          date_event,
         } = record.fields;
 
         return (
           <Card key={record.id}>
+            {country && (
+              <Text as="p" variant="p2" className="mb-2">
+                {country}
+              </Text>
+            )}
             <Text as="h3" variant="h3" className="mb-2">
               {name}
             </Text>
-            {country && (
+            {date_event && (
               <Text as="p" variant="p2" className="mb-4">
-                {country}
+                {format(new Date(date_event), 'cccc dd MMMM yyyy')}
               </Text>
             )}
 
@@ -130,7 +139,12 @@ export default function ReactNativeResourcesPage({
       seoTitle={`${numberOfRecords}+ best resources to start with React Native in mobile app development`}
       seoDescription={`Most effective resources for learning React Native, online guides and tutorials, podcast and newsletter.`}
       ogImageTitle="React Native Resources"
-      withAccessoryRight={<HeaderLinksForTools />}
+      withAccessoryRight={
+        <HeaderLinksForTools
+          buttonLink={linksApi.airtable.RESOURCES_FORM}
+          buttonText="Add resource"
+        />
+      }
     >
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
         <Hero>

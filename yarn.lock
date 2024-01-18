@@ -9769,6 +9769,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"date-fns@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "date-fns@npm:3.2.0"
+  checksum: 2f36cb9165a066ae90c0b6f0c25b3c70eb75bc52e64ba6dd8680964ebda144851a244ff4ed0b2afb4a6bab796a1af6a0e6c7c2814529d04c72fa434f931d4e81
+  languageName: node
+  linkType: hard
+
 "dayjs@npm:^1.10.4":
   version: 1.11.10
   resolution: "dayjs@npm:1.11.10"
@@ -21309,6 +21316,7 @@ __metadata:
     core-js: "npm:^3.32.1"
     cypress: "npm:^13.0.0"
     cz-conventional-changelog: "npm:3.3.0"
+    date-fns: "npm:^3.2.0"
     eslint: "npm:8.48.0"
     eslint-config-next: "npm:13.1.1"
     eslint-config-prettier: "npm:9.0.0"
