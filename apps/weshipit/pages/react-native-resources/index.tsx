@@ -122,16 +122,16 @@ export default function ReactNativeResourcesPage({
   const numberOfRecords = round(records.length, -1);
 
   const guides = records.filter((record) =>
-    record.fields.type.includes('guide')
+    record.fields.type.includes('Guide')
   );
   const newsletters = records.filter((record) =>
-    record.fields.type.includes('newsletter')
+    record.fields.type.includes('Newsletter')
   );
   const podcasts = records.filter((record) =>
-    record.fields.type.includes('podcast')
+    record.fields.type.includes('Podcast')
   );
   const conferences = records.filter((record) =>
-    record.fields.type.includes('conference')
+    record.fields.type.includes('Conference')
   );
 
   return (
