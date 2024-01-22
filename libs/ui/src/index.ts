@@ -1,3 +1,4 @@
+export * from './lib/airtable-toggle-form/airtable-toggle-form';
 export * from './lib/badge/badge';
 export * from './lib/button/button';
 export * from './lib/button/buy-button';
@@ -28,3 +29,4 @@ export * from './lib/tool-list/tool-card';
 export * from './lib/tool-list/tool-list';
 export * from './lib/tool-list/tool-type-badge';
 export * from './lib/tool-list/tool-website-preview';
+export * from './lib/airtable-toggle-form/airtable-toggle-form';
