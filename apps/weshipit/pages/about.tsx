@@ -29,6 +29,9 @@ export default function About() {
     >
       <Prose className="my-12">
         <h1>About</h1>
+        <blockquote>
+          <p>Automation has always helped people write code.</p>
+        </blockquote>
         <h2>Logo</h2>
         <Image
           src="/images/weshipit.today-logo.png"
