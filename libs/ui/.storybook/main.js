@@ -11,6 +11,7 @@ module.exports = {
     '../src/lib/**/*.stories.@(js|jsx|ts|tsx)',
   ],
   addons: [
+    '@storybook/addon-interactions',
     '@storybook/addon-essentials',
     ...rootMain.addons,
     // https://github.com/nrwl/nx/issues/16629
