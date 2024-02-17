@@ -21,17 +21,7 @@ export const buttonVariants = cva(
           'focus-visible:outline-blue-600',
           'dark:bg-blue-500',
           'dark:text-white',
-          'dark:hover:bg-blue-400',
-          'dark:focus-visible:outline-blue-500',
-        ],
-        primaryBlack: [
-          'bg-blue-600',
-          'text-white',
-          'hover:bg-blue-500',
-          'focus-visible:outline-blue-600',
-          'dark:bg-blue-500',
-          'dark:text-black',
-          'dark:hover:bg-blue-400',
+          'dark:hover:bg-blue-800',
           'dark:focus-visible:outline-blue-500',
         ],
         secondary: [
@@ -74,6 +64,7 @@ export interface ButtonProps
   target?: string;
   rel?: string;
   isExternalLink?: boolean;
+  withExternalLinkIcon?: boolean;
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -83,6 +74,7 @@ export const Button: React.FC<ButtonProps> = ({
   children,
   size,
   isExternalLink = false,
+  withExternalLinkIcon = true,
   accessoryLeft,
   accessoryRight,
   ...rest
@@ -96,10 +88,12 @@ export const Button: React.FC<ButtonProps> = ({
       >
         {children}
 
-        <ArrowTopRightOnSquareIcon
-          className="-mr-0.5 ml-1 size-5 opacity-40"
-          aria-hidden="true"
-        />
+        {withExternalLinkIcon && (
+          <ArrowTopRightOnSquareIcon
+            className="-mr-0.5 ml-1 size-5 opacity-40"
+            aria-hidden="true"
+          />
+        )}
       </Element>
     );
   }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Button } from '../button/button';
 import { ArrowRightIcon } from '@heroicons/react/20/solid';
 
@@ -25,7 +25,7 @@ export function AirtableToggleForm({
         <div className="flex w-full flex-col items-center">
           <Button
             size="xxl"
-            variant={'primaryBlack'}
+            variant={'primary'}
             onClick={toggleForm}
             accessoryRight={<ArrowRightIcon height={24} className="ml-2" />}
           >

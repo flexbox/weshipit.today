@@ -11,11 +11,11 @@ export function HeaderLinksForTools({
   buttonLink = linksApi.airtable.TOOLS_FORM,
 }: HeaderLinksForToolsProps) {
   return (
-    <div className="flex">
+    <div className="flex gap-2">
       <Button
         variant="secondary"
         as="a"
-        className="mr-4 px-2"
+        className="px-2"
         href="https://flexbox.gumroad.com/l/expo-checklist"
         target="_blank"
         size="xl"

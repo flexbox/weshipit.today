@@ -6,7 +6,6 @@ export interface CardProps
 
 const card = cva(
   [
-    'card',
     'rounded-xl',
     'bg-white',
     'dark:bg-slate-900',
