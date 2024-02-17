@@ -7009,6 +7009,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vercel/analytics@npm:^1.2.0":
+  version: 1.2.0
+  resolution: "@vercel/analytics@npm:1.2.0"
+  dependencies:
+    server-only: "npm:^0.0.1"
+  peerDependencies:
+    next: ">= 13"
+    react: ^18 || ^19
+  peerDependenciesMeta:
+    next:
+      optional: true
+    react:
+      optional: true
+  checksum: 3fa1487fd25809c9cc8d9e94c6b0ab8327af416235aee6ceab03f851d9aafedae2270b9d48e35150cfe0a4f29d38b96d5453b2fe1cb51b7e6efbc1a51ba2c9fb
+  languageName: node
+  linkType: hard
+
 "@vercel/og@npm:^0.5.20":
   version: 0.5.20
   resolution: "@vercel/og@npm:0.5.20"
@@ -18970,6 +18987,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"server-only@npm:^0.0.1":
+  version: 0.0.1
+  resolution: "server-only@npm:0.0.1"
+  checksum: c432348956641ea3f460af8dc3765f3a1bdbcf7a1e0205b0756d868e6e6fe8934cdee6bff68401a1dd49ba4a831c75916517a877446d54b334f7de36fa273e53
+  languageName: node
+  linkType: hard
+
 "set-blocking@npm:^2.0.0":
   version: 2.0.0
   resolution: "set-blocking@npm:2.0.0"
@@ -21359,6 +21383,7 @@ __metadata:
     "@types/react-gravatar": "npm:^2.6.10"
     "@typescript-eslint/eslint-plugin": "npm:^6.17.0"
     "@typescript-eslint/parser": "npm:6.11.0"
+    "@vercel/analytics": "npm:^1.2.0"
     "@vercel/og": "npm:^0.5.20"
     autoprefixer: "npm:^10.4.17"
     babel-jest: "npm:29.4.3"

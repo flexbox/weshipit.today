@@ -2,6 +2,7 @@ import { AppProps } from 'next/app';
 import { Inter } from 'next/font/google';
 import { PrismicProvider } from '@prismicio/react';
 import { client } from './api/prismic';
+import { Analytics } from '@vercel/analytics/react';
 
 import './styles.css';
 
@@ -18,6 +19,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
       <div className={inter.className}>
         <Component {...pageProps} />
       </div>
+      <Analytics />
     </PrismicProvider>
   );
 }
