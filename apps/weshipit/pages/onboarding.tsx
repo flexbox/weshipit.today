@@ -1,6 +1,11 @@
 import React from 'react';
 import { Layout } from '../components/layout';
-import { Text, AirtableToggleForm, ClientsListHomepage } from '@weshipit/ui';
+import {
+  Text,
+  AirtableToggleForm,
+  ClientsListHomepage,
+  Prose,
+} from '@weshipit/ui';
 import { linksApi } from '../pages/api/links';
 import { getAllClients } from '../pages/api/client';
 
@@ -15,15 +20,17 @@ export default function Onboarding({ clients }) {
     >
       <div className="m-auto my-24 flex w-1/2 flex-col gap-12">
         <Text variant="h2" className="text-center">
-          Let’s make something <br /> great together
+          Make a difference,
+          <br />
+          work with us
         </Text>
         <Text variant="p1" className="text-center">
-          Let’s talk about your next project. We‘ll reply to your message within
-          24 hours. ✌️
+          Let’s discuss your upcoming project.
+          <br /> We will respond to your message within 24 hours. ✌️
         </Text>
         <AirtableToggleForm
-          formHeight={1480}
-          formLink={linksApi.airtable.ONBOARDING_FORM_EMBED}
+          formHeight={1960}
+          formLink={linksApi.airtable.CONSULTATION_FORM_EMBED}
           buttonText="Start a project"
         />
       </div>
@@ -37,38 +44,34 @@ export default function Onboarding({ clients }) {
         <ClientsListHomepage clients={clients} />
       </div>
       <div className="m-auto my-24 flex w-1/2 flex-col gap-12">
-        <Text variant="p1">
-          We are a team of{' '}
-          <strong>
-            highly skilled and experienced freelance React developers
-          </strong>
-          . Our expertise lies in web and mobile app development using the{' '}
-          <strong>React Native library</strong>.
-        </Text>
-        <Text variant="p1">
-          With years of experience in <strong>JavaScript development</strong>,
-          we are well-equipped to handle any web development project, regardless
-          of its size. As freelance React developers, we are dedicated to
-          providing our clients with high-quality, reliable, and cost-effective
-          solutions.
-        </Text>
-        <Text variant="p1">
-          If you are looking for skilled JavaScript developers to help bring
-          your web development ideas to life, do not hesitate to contact us. We
-          are always <strong>available to discuss your project</strong> and
-          provide a tailored solution to meet your needs.
-        </Text>
-        <Text variant="p1">
-          If you’re interested in working with us, please fill out the form
-          linked below to <strong>gain access to our calendar</strong>. From
-          there, we can schedule a call to discuss your project in further
-          detail.
-        </Text>
-      </div>
-      <div className="mb-32">
+        <Prose>
+          <Text>
+            We are a team of{' '}
+            <strong>experienced freelance React developers</strong>. We
+            specialize in web and mobile app development with the{' '}
+            <strong>React Native library</strong>.
+          </Text>
+          <Text>
+            Our <strong>JavaScript development</strong> experience equips us to
+            manage any web development project, regardless of size. We strive to
+            deliver high-quality, reliable, and affordable solutions as
+            freelance React developers.
+          </Text>
+          <Text>
+            Contact us if you need capable JavaScript developers to actualize
+            your web development concepts. We’re{' '}
+            <strong>ready to discuss your project</strong> and offer a
+            customized solution to fit your requirements.
+          </Text>
+          <Text>
+            Fill out the form linked below to{' '}
+            <strong>access our calendar</strong> if you want to collaborate. We
+            can arrange a call to talk about your project more specifically.
+          </Text>
+        </Prose>
         <AirtableToggleForm
-          formHeight={1480}
-          formLink={linksApi.airtable.ONBOARDING_FORM_EMBED}
+          formHeight={1960}
+          formLink={linksApi.airtable.CONSULTATION_FORM_EMBED}
           buttonText="Schedule an appointment"
         />
       </div>
