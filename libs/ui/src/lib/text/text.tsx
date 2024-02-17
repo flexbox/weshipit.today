@@ -102,7 +102,7 @@ export interface TextProps
 }
 
 export const Text: React.FC<TextProps> = ({
-  as: Element = 'text',
+  as: Element = 'p',
   className,
   variant = 'p1',
   children,

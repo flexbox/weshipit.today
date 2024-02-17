@@ -1,7 +1,7 @@
 import { Layout } from '../components/layout';
 import Script from 'next/script';
 import { linksApi } from './api/links';
-import { Prose } from '@weshipit/ui';
+import { HeaderLinksOnboarding, Prose } from '@weshipit/ui';
 
 export function Qr() {
   return (
@@ -12,6 +12,7 @@ export function Qr() {
       }
       withHeader
       withFooter
+      withAccessoryRight={<HeaderLinksOnboarding />}
     >
       <div className="mx-auto max-w-2xl p-3">
         <Prose size="lg">

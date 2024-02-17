@@ -3,6 +3,7 @@ import bootcampLogo from '../../assets/bootcamp.png';
 import Gravatar from 'react-gravatar';
 import gumroad from '../../assets/gumroad-thumbnail.png';
 import { Card } from '../card/card';
+import Link from 'next/link';
 
 export function CardHomepage() {
   return (
@@ -40,7 +41,9 @@ export function CardHomepage() {
       >
         <a
           className="flex flex-col items-center justify-center gap-4 text-center md:flex-row md:text-left"
+          target="_blank"
           href="https://flexbox.gumroad.com/l/expo-checklist"
+          rel="noreferrer"
         >
           <div className="relative flex flex-col items-center">
             <Image
@@ -65,9 +68,9 @@ export function CardHomepage() {
         variant="gradient-purple"
         className=" grid overflow-hidden rounded-xl  py-12  sm:py-16 lg:col-span-3 lg:row-span-2"
       >
-        <a
+        <Link
+          href="/consulting"
           className="flex flex-col items-center justify-center gap-6 text-center md:flex-row md:gap-4 md:text-left"
-          href="https://airtable.com/shryVoJ3nzyeq2P4s"
         >
           <div className="relative flex h-[164px] w-[124px] flex-row  items-center justify-center sm:h-[124px]">
             <Gravatar
@@ -82,14 +85,14 @@ export function CardHomepage() {
             />
           </div>
           <div className="flex flex-col items-center gap-2 md:items-start">
-            <h1 className="relative bg-gradient-to-b from-black to-[#444] bg-clip-text text-3xl font-bold tracking-tight text-transparent dark:from-white dark:to-white/75 dark:drop-shadow md:text-3xl">
+            <h1 className="relative bg-gradient-to-b from-black to-[#444] bg-clip-text text-3xl font-bold tracking-tight text-transparent md:text-3xl dark:from-white dark:to-white/75 dark:drop-shadow">
               Consultation
             </h1>
-            <p className="max-w-[14ch] text-base font-medium text-black opacity-80 dark:text-white md:text-lg">
+            <p className="max-w-[14ch] text-base font-medium text-black opacity-80 md:text-lg dark:text-white">
               Book a call. We'll help you with your project.
             </p>
           </div>
-        </a>
+        </Link>
       </Card>
     </div>
   );

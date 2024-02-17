@@ -1,7 +1,11 @@
 import { Layout } from '../components/layout';
 import { getAllClients } from './api/client';
-import { Button, LinkButton, Text, ClientsList } from '@weshipit/ui';
-import { linksApi } from './api/links';
+import {
+  LinkButton,
+  Text,
+  ClientsList,
+  HeaderLinksOnboarding,
+} from '@weshipit/ui';
 
 interface ClientProps {
   id: string;
@@ -27,19 +31,7 @@ export default function ClientsPage({ clients }: clientsPageProps) {
       seoTitle="Clients"
       seoDescription="Our clients are at the heart of everything we do. We are proud to have worked with a diverse range of businesses and organizations, helping them achieve their goals with our high-quality React Native development services. Visit our /clients page to see a selection of our satisfied clients and learn more about the projects we have completed for them."
       ogImageTitle="Clients"
-      withAccessoryRight={
-        <div className="sm:flex sm:justify-center lg:justify-start">
-          <Button
-            as="a"
-            variant="primary"
-            href={linksApi.airtable.CONSULTATION_FORM}
-            target="_blank"
-            size="xl"
-          >
-            Book a consultation
-          </Button>
-        </div>
-      }
+      withAccessoryRight={<HeaderLinksOnboarding />}
     >
       <div className="py-12">
         <Text as="h3" variant="h3" className="py-4">

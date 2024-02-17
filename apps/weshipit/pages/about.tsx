@@ -1,4 +1,9 @@
-import { Hyperlink, LinkButton, Prose } from '@weshipit/ui';
+import {
+  HeaderLinksOnboarding,
+  Hyperlink,
+  LinkButton,
+  Prose,
+} from '@weshipit/ui';
 import { Layout } from '../components/layout';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -23,9 +28,9 @@ export default function About() {
     <Layout
       seoTitle="About"
       seoDescription="Our philosophy is simple: the more you automate, the more you innovate. We are dedicated to creating delightful React Native applications."
-      withHeader
       withFooter
       withContainer
+      withAccessoryRight={<HeaderLinksOnboarding />}
     >
       <Prose className="my-12">
         <h1>About</h1>

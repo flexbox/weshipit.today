@@ -21,7 +21,7 @@ export const buttonVariants = cva(
           'focus-visible:outline-blue-600',
           'dark:bg-blue-500',
           'dark:text-white',
-          'dark:hover:bg-blue-400',
+          'dark:hover:bg-blue-800',
           'dark:focus-visible:outline-blue-500',
         ],
         secondary: [
@@ -43,6 +43,7 @@ export const buttonVariants = cva(
         md: ['rounded-md', 'px-2.5', 'py-1.5', 'text-sm'],
         lg: ['rounded-md', 'px-3', 'py-2', 'text-sm'],
         xl: ['rounded-md', 'px-3.5', 'py-2.5', 'text-sm'],
+        xxl: ['rounded-md', 'px-8', 'py-3', 'text-2xl'],
       },
     },
     defaultVariants: {
@@ -63,6 +64,7 @@ export interface ButtonProps
   target?: string;
   rel?: string;
   isExternalLink?: boolean;
+  withExternalLinkIcon?: boolean;
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -72,6 +74,7 @@ export const Button: React.FC<ButtonProps> = ({
   children,
   size,
   isExternalLink = false,
+  withExternalLinkIcon = true,
   accessoryLeft,
   accessoryRight,
   ...rest
@@ -85,19 +88,21 @@ export const Button: React.FC<ButtonProps> = ({
       >
         {children}
 
-        <ArrowTopRightOnSquareIcon
-          className="-mr-0.5 ml-1 h-5 w-5 opacity-40"
-          aria-hidden="true"
-        />
+        {withExternalLinkIcon && (
+          <ArrowTopRightOnSquareIcon
+            className="-mr-0.5 ml-1 size-5 opacity-40"
+            aria-hidden="true"
+          />
+        )}
       </Element>
     );
   }
 
   return (
     <Element className={buttonVariants({ variant, size, className })} {...rest}>
-      {accessoryLeft && <span className="mr-2">{accessoryLeft}</span>}
+      {accessoryLeft && accessoryLeft}
       {children}
-      {accessoryRight && <span className="ml-2">{accessoryRight}</span>}
+      {accessoryRight && accessoryRight}
     </Element>
   );
 };

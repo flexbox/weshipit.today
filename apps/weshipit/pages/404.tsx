@@ -12,10 +12,10 @@ export default function NotFoundPage() {
       ogImageTitle="weshipit - 404"
     >
       <div className="m-auto mb-64 w-2/3 py-24">
-        <Text variant="h2" as={'h1'} className="mb-12">
+        <Text variant="h2" as="h1" className="mb-12">
           Oh oh. There is nothing to see here.
         </Text>
-        <Text variant="p2" as={'p'} className="mb-12">
+        <Text variant="p2" as="p" className="mb-12">
           The page you requested does not exist.
         </Text>
         <LinkButton href="/" size="xl">
