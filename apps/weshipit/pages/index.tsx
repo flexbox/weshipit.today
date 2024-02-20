@@ -62,7 +62,7 @@ export default function IndexPage({ clients }: clientsPageProps) {
       <section className="m-auto max-w-7xl">
         <div className="mb-24 text-center ">
           <div className="flex justify-between">
-            <Text as="h3" variant="p2">
+            <Text as="h2" variant="p2">
               Trusted by top companies
             </Text>
             <LinkButton href="/clients" variant="secondary" size="lg">
