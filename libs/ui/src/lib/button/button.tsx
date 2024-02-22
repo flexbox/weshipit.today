@@ -10,6 +10,8 @@ export const buttonVariants = cva(
     'focus-visible:outline-offset-2',
     'font-semibold',
     'shadow-sm',
+    'transition',
+    'active:scale-105',
   ],
   {
     variants: {
