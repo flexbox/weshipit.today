@@ -1,0 +1,26 @@
+type ResoucesRecord {
+  id: ID!
+  createdTime: String!
+  fields: Fields!
+}
+
+type Fields {
+  name: String!
+  description: String
+  website_url: String
+  type: [String!]!
+  discord_url: String
+  slack_url: String
+  youtube_url: String
+  conference_country: String
+  conference_date: String
+}
+
+type Query {
+  getResourcesRecords: [ResoucesRecord!]!
+    @rest(
+      resultroot: "records[]"
+      endpoint: "https://api.airtable.com/v0/$baseid/resources"
+      configuration: "airtable_config"
+    )
+}
