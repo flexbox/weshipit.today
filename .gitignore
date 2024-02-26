@@ -5,6 +5,10 @@
 /tmp
 /out-tsc
 
+# yaml files
+
+/apps/weshipit/stepzen/config.yaml
+
 # dependencies
 node_modules
 .yarn/*
