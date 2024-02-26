@@ -62,7 +62,7 @@ export function ReactNativeSlugPage({
           href="/react-native-tools"
           className="flex py-4 text-slate-400 hover:text-slate-500 dark:text-slate-500 dark:hover:text-slate-400"
         >
-          <ChevronLeftIcon className="mr-2 h-6 w-6" />
+          <ChevronLeftIcon className="mr-2 size-6" />
           Go back
         </Link>
       </div>
@@ -179,6 +179,7 @@ export function ReactNativeSlugPage({
 }
 
 export async function getServerSideProps({ params }) {
+  /* @deprecated */
   const apiKey = process.env.AIRTABLE_API_KEY;
   const baseId = process.env.AIRTABLE_BASE_ID_REACT_NATIVE;
   const screenshotAccessKey = process.env.APIFLASH_ACCESS_KEY;

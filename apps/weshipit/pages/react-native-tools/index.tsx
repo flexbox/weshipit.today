@@ -108,6 +108,7 @@ export default function ReactNativeToolsPage({ records }) {
 }
 
 export async function getServerSideProps(context) {
+  /* @deprecated */
   const apiKey = process.env.AIRTABLE_API_KEY;
   const baseId = process.env.AIRTABLE_BASE_ID_REACT_NATIVE;
 

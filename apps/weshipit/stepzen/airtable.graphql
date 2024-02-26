@@ -1,10 +1,10 @@
 type ResoucesRecord {
   id: ID!
   createdTime: String!
-  fields: Fields!
+  fields: ResourcesFields!
 }
 
-type Fields {
+type ResourcesFields {
   name: String!
   description: String
   website_url: String
