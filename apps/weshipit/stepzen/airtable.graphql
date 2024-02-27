@@ -4,6 +4,24 @@ type ResoucesRecord {
   fields: ResourcesFields!
 }
 
+type ToolsRecord {
+  id: ID!
+  createdTime: String!
+  fields: ToolsFields!
+}
+
+type ToolsFields {
+  name: String!
+  description: String
+  website_url: String
+  type: [String!]!
+  discord_url: String
+  slack_url: String
+  youtube_url: String
+  conference_country: String
+  conference_date: String
+}
+
 type ResourcesFields {
   name: String!
   description: String
@@ -21,6 +39,12 @@ type Query {
     @rest(
       resultroot: "records[]"
       endpoint: "https://api.airtable.com/v0/$baseid/resources"
+      configuration: "airtable_config"
+    )
+  getToolsRecords: [ToolsRecord!]!
+    @rest(
+      resultroot: "records[]"
+      endpoint: "https://api.airtable.com/v0/$baseid/tools"
       configuration: "airtable_config"
     )
 }
