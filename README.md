@@ -20,6 +20,13 @@ yarn global add nx
 vercel env pull
 ```
 
+To make Stepzen work, you need to create a `.env` file with the following content:
+
+```bash
+STEPZEN_AIRTABLE_BASE_ID
+STEPZEN_AIRTABLE_BEARER_TOKEN
+```
+
 Run the project
 
 ```bash
