@@ -41,6 +41,9 @@ type Query {
       endpoint: "https://api.airtable.com/v0/$baseid/resources"
       configuration: "airtable_config"
     )
+}
+
+type Query {
   getToolsRecords: [ToolsRecord!]!
     @rest(
       resultroot: "records[]"
