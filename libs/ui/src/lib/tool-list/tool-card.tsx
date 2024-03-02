@@ -7,17 +7,13 @@ import truncate from 'lodash/truncate';
 import Link from 'next/link';
 import { ToolCardLogo } from './tool-card-logo';
 import { getVariantFromType } from './get-variant-from-type';
-import kebabCase from 'lodash/kebabCase';
 
 export function ToolCard({ fields }: RecordProps) {
-  const { pricing, type, name, website_url } = fields;
+  const { pricing, type, name, website_url, slug } = fields;
 
   if (!name) {
     return null;
   }
-
-  // TODO: fix that at the source, we should return a slug from the API
-  const slug = kebabCase(name);
 
   const description = truncate(fields.description, {
     length: 160,

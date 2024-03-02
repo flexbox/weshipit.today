@@ -1,3 +1,6 @@
+/**
+ * @deprecated we should use codegen
+ */
 export interface RecordProps {
   id?: string;
   fields: {
@@ -15,6 +18,9 @@ export interface RecordProps {
   };
 }
 
+/**
+ * @deprecated we should use codegen
+ */
 export interface ToolListProps {
   records: RecordProps[];
 }

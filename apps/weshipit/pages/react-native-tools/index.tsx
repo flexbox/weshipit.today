@@ -121,6 +121,7 @@ export async function getServerSideProps(context) {
             discord_url
             name
             slack_url
+            slug
             type
             website_url
             youtube_url

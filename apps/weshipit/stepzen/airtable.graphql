@@ -27,6 +27,7 @@ type Query {
 
 type ToolsField {
   name: String!
+  slug: String!
   description: String
   website_url: String
   type: [String!]!
