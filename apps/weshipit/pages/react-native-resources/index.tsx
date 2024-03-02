@@ -8,6 +8,9 @@ import { HeaderLinksForTools } from '../../components/header-links-for-tools';
 import { format } from 'date-fns';
 import { linksApi } from '../api/links';
 
+/**
+ * @deprecated we should use codegen
+ */
 interface ResourceRecord {
   fields: {
     name: string;
@@ -23,6 +26,9 @@ interface ResourceRecord {
   id: string;
 }
 
+/**
+ * @deprecated we should use codegen
+ */
 type ResourceRecords = ResourceRecord[];
 
 function ResourceList({ records }) {
@@ -210,10 +216,10 @@ export default function ReactNativeResourcesPage({
   );
 }
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps() {
   const { data } = await client.query({
     query: gql`
-      query GetAirtableData {
+      query getResourcesRecords {
         getResourcesRecords {
           id
           createdTime
@@ -232,7 +238,6 @@ export async function getServerSideProps(context) {
       }
     `,
   });
-  console.log('🚀 ~ getServerSideProps ~ data:', data);
 
   const records = data.getResourcesRecords;
 

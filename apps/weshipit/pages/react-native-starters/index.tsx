@@ -21,18 +21,18 @@ function extractUserNameFromGithubUrl(githubUrl) {
   return githubUrl.split('/')[3];
 }
 
-const BadgeLevel = ({ level }: { level: [string] }) => {
+const BadgeLevel = ({ level }: { level: string }) => {
   let color = 'green';
-  if (level[0].toLowerCase() === 'intermediate') {
+  if (level.toLowerCase() === 'intermediate') {
     color = 'yellow';
-  } else if (level[0].toLowerCase() === 'advanced') {
+  } else if (level.toLowerCase() === 'advanced') {
     color = 'red';
   }
 
   return (
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     <Badge variant={color as any} size="sm">
-      {level[0]}
+      {level}
     </Badge>
   );
 };

@@ -9,13 +9,15 @@ import {
   Card,
   CallToActionCards,
   Prose,
+  ToolList,
 } from '@weshipit/ui';
 import client from '../api/apollo-client';
 import { Layout } from '../../components/layout';
 
 import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
-import { isNil } from 'lodash';
+import isNil from 'lodash/isNil';
+import take from 'lodash/take';
 import ChevronLeftIcon from '@heroicons/react/20/solid/ChevronLeftIcon';
 import { HeaderLinksForTools } from '../../components/header-links-for-tools';
 
@@ -163,12 +165,14 @@ export function ReactNativeSlugPage({
         </div>
       </section>
 
-      <section className="py-12">
-        <Text as="h2" variant="h3" className="my-4">
-          Other tools from the category {type.toLowerCase()}
-        </Text>
-        {/* <ToolList records={recomendedRecords} /> */}
-      </section>
+      {recomendedRecords.length > 0 && (
+        <section className="py-12">
+          <Text as="h2" variant="h3" className="my-4">
+            Other tools from the category {type.toLowerCase()}
+          </Text>
+          <ToolList records={recomendedRecords} />
+        </section>
+      )}
 
       <section className="mb-12 py-24">
         <Text as="h2" variant="h3" className="my-4">
@@ -207,28 +211,30 @@ export async function getServerSideProps({ query }) {
   });
   const record = data.getToolRecord[0];
 
-  // const type = record.fields.type;
-  // const recomended = await client.query({
-  //   query: gql`
-  //     query GetAirtableDataByType {
-  //       airtable_tableData(
-  //         airtable_apiKey: "${apiKey}"
-  //         airtable_baseId: "${baseId}"
-  //         tableName: "tools"
-  //         filterByFormula: "{type}='${type}'"
-  //       ) {
-  //         records {
-  //           fields
-  //         }
-  //       }
-  //     }
-  //   `,
-  // });
+  const type = record.fields.type;
+  const { data: recomendedData } = await client.query({
+    query: gql`
+    query getToolsRecordsFiltered {
+      getToolsRecordsFiltered(filterByFormula: "{type}='${type}'") {
+        id
+        fields {
+          name
+          description
+          type
+          pricing
+          website_url
+          slug
+        }
+      }
+    }
+    `,
+  });
+  const recomendedRecords = take(recomendedData.getToolsRecordsFiltered, 3);
 
   return {
     props: {
       record,
-      // recomendedRecords: recomended.data.airtable_tableData.records,
+      recomendedRecords,
       screenshotAccessKey,
     },
   };
