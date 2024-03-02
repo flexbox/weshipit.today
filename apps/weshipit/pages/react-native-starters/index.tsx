@@ -21,18 +21,18 @@ function extractUserNameFromGithubUrl(githubUrl) {
   return githubUrl.split('/')[3];
 }
 
-const BadgeLevel = ({ level }) => {
+const BadgeLevel = ({ level }: { level: [string] }) => {
   let color = 'green';
-  if (level.toLowerCase() === 'intermediate') {
+  if (level[0].toLowerCase() === 'intermediate') {
     color = 'yellow';
-  } else if (level.toLowerCase() === 'advanced') {
+  } else if (level[0].toLowerCase() === 'advanced') {
     color = 'red';
   }
 
   return (
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     <Badge variant={color as any} size="sm">
-      {level}
+      {level[0]}
     </Badge>
   );
 };
@@ -219,28 +219,24 @@ export default function ReactNativeToolsPage({ records }) {
 }
 
 export async function getServerSideProps() {
-  /* @deprecated */
-  const apiKey = process.env.AIRTABLE_API_KEY;
-  const baseId = process.env.AIRTABLE_BASE_ID_REACT_NATIVE;
-
   const { data } = await client.query({
     query: gql`
-      query GetAirtableData {
-        airtable_tableData(
-          airtable_apiKey: "${apiKey}"
-          airtable_baseId: "${baseId}"
-          tableName: "starter_templates"
-        ) {
-          records {
-            fields
-            id
+      query getStarterTemplatesRecords {
+        getStarterTemplatesRecords {
+          createdTime
+          fields {
+            github_url
+            level
+            name
+            website_url
+            stack
+            scope
           }
         }
       }
     `,
   });
-
-  const records = data.airtable_tableData.records;
+  const records = data.getStarterTemplatesRecords;
 
   return {
     props: {
