@@ -10,6 +10,7 @@
 - UI design with [tailwindCSS](https://tailwindcss.com/docs/)
 - Design system with Storybook [design.weshipit.today](https://design.weshipit.today/)
 - Stepzen GraphQL API for Airtable data [dashboard.stepzen.com/](https://dashboard.stepzen.com/)
+- Airtable API reference [airtable.com/api](https://airtable.com/api)
 
 ## Getting Started
 
@@ -18,6 +19,12 @@ Install global dependencies
 ```bash
 yarn global add nx
 vercel env pull
+```
+
+To make Stepzen work, you need to create a `.env` file on `apps/weshipit`
+
+```bash
+cp apps/weshipit/.env.sample apps/weshipit/.env
 ```
 
 Run the project

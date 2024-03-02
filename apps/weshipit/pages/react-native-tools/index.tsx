@@ -29,7 +29,9 @@ function filterByDescription(records, searchTerm: string) {
  * Filter airtable records by type
  */
 function filterRecordsByType(records, type) {
-  return records.filter((record) => record.fields.type === type);
+  return records.filter(
+    (record) => record.fields.type[0].toLowerCase() === type.toLowerCase()
+  );
 }
 
 export default function ReactNativeToolsPage({ records }) {
@@ -108,30 +110,34 @@ export default function ReactNativeToolsPage({ records }) {
 }
 
 export async function getServerSideProps(context) {
-  const apiKey = process.env.AIRTABLE_API_KEY;
-  const baseId = process.env.AIRTABLE_BASE_ID_REACT_NATIVE;
-
   const { data } = await client.query({
     query: gql`
-      query GetAirtableData {
-        airtable_tableData(
-          airtable_apiKey: "${apiKey}"
-          airtable_baseId: "${baseId}"
-          tableName: "tools"
-        ) {
-          records {
-            fields
-            id
+      query getToolsRecords {
+        getToolsRecords {
+          id
+          fields {
+            description
+            description_success
+            features
+            name
+            github_url
+            platform
+            pricing
+            slug
+            twitter_url
+            website_url
+            type
           }
         }
       }
     `,
   });
 
-  const { query } = context;
-  let records = data.airtable_tableData.records;
-  if (query.type) {
-    records = filterRecordsByType(records, query.type);
+  const searchQuery = context.query.type;
+
+  let records = data.getToolsRecords;
+  if (searchQuery) {
+    records = filterRecordsByType(records, searchQuery);
   }
 
   return {

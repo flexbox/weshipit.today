@@ -21,7 +21,7 @@ function extractUserNameFromGithubUrl(githubUrl) {
   return githubUrl.split('/')[3];
 }
 
-const BadgeLevel = ({ level }) => {
+const BadgeLevel = ({ level }: { level: string }) => {
   let color = 'green';
   if (level.toLowerCase() === 'intermediate') {
     color = 'yellow';
@@ -119,6 +119,7 @@ export default function ReactNativeToolsPage({ records }) {
           buttonLink={linksApi.airtable.TEMPLATE_FORM}
         />
       }
+      withFooter
     >
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
         <Hero>
@@ -219,27 +220,23 @@ export default function ReactNativeToolsPage({ records }) {
 }
 
 export async function getServerSideProps() {
-  const apiKey = process.env.AIRTABLE_API_KEY;
-  const baseId = process.env.AIRTABLE_BASE_ID_REACT_NATIVE;
-
   const { data } = await client.query({
     query: gql`
-      query GetAirtableData {
-        airtable_tableData(
-          airtable_apiKey: "${apiKey}"
-          airtable_baseId: "${baseId}"
-          tableName: "starter_templates"
-        ) {
-          records {
-            fields
-            id
+      query getStarterTemplatesRecords {
+        getStarterTemplatesRecords {
+          fields {
+            github_url
+            level
+            name
+            website_url
+            stack
+            scope
           }
         }
       }
     `,
   });
-
-  const records = data.airtable_tableData.records;
+  const records = data.getStarterTemplatesRecords;
 
   return {
     props: {

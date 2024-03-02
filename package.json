@@ -15,6 +15,8 @@
     "weshipit:lint": "nx lint weshipit",
     "weshipit:test": "nx test weshipit",
     "weshipit:build": "nx build weshipit",
+    "weshipit:stepzen": "stepzen start --dir=./apps/weshipit/stepzen/ --endpoint=api/airtable",
+    "weshipit:stepzen:localhost": "stepzen start --dir=./apps/weshipit/stepzen/ --endpoint=api/airtable --dashboard=local --port=5005",
     "figmatostore:start": "nx serve figmatostore",
     "figmatostore:build": "nx build figmatostore",
     "githubtolinkedin:start": "nx serve githubtolinkedin",
@@ -47,15 +49,15 @@
     "core-js": "^3.32.1",
     "date-fns": "^3.3.1",
     "framer-motion": "^10.16.0",
-    "graphql": "^16.8.0",
+    "graphql": "^16.8.1",
     "heroicons": "^2.1.1",
     "lodash": "^4.17.21",
     "next": "13.3.0",
     "next-seo": "^5.14.1",
     "next-sitemap": "^4.2.2",
     "postcss": "^8.4.21",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-gravatar": "^2.6.3",
     "react-markdown": "^8.0.7",
     "regenerator-runtime": "0.13.11",
@@ -127,5 +129,5 @@
       "path": "git-cz"
     }
   },
-  "packageManager": "yarn@4.0.2"
+  "packageManager": "yarn@4.1.0"
 }

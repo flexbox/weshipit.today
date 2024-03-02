@@ -1,0 +1,96 @@
+# RESOURCES
+type ResourcesField {
+  name: String!
+  description: String
+  website_url: String
+  type: [String!]!
+  discord_url: String
+  slack_url: String
+  youtube_url: String
+  conference_country: String
+  conference_date: Date
+}
+
+type ResoucesRecord {
+  id: ID!
+  createdTime: String!
+  fields: ResourcesField!
+}
+
+type Query {
+  getResourcesRecords: [ResoucesRecord!]!
+    @rest(
+      resultroot: "records[]"
+      endpoint: "https://api.airtable.com/v0/$baseid/resources"
+      configuration: "airtable_config"
+    )
+}
+
+# TOOLS
+type ToolsField {
+  name: String!
+  description: String
+  description_success: String
+  website_url: String
+  github_url: String
+  type: String
+  features: [String]
+  pricing: [String]
+  platform: [String]
+  twitter_url: String
+  slug: String!
+}
+
+type ToolsRecord {
+  id: ID!
+  createdTime: String!
+  fields: ToolsField!
+}
+
+type Query {
+  getToolsRecords: [ToolsRecord!]!
+    @rest(
+      resultroot: "records[]"
+      endpoint: "https://api.airtable.com/v0/$baseid/tools"
+      configuration: "airtable_config"
+    )
+
+  getToolsRecordsFiltered(filterByFormula: String!): [ToolsRecord!]!
+    @rest(
+      resultroot: "records[]"
+      endpoint: "https://api.airtable.com/v0/$baseid/tools?filterByFormula=$filterByFormula"
+      configuration: "airtable_config"
+    )
+
+  getToolRecord(id: String!): [ToolsRecord!]!
+    @rest(
+      endpoint: "https://api.airtable.com/v0/$baseid/tools/$id"
+      configuration: "airtable_config"
+    )
+}
+
+# STARTER TEMPLATES
+type StarterTemplatesField {
+  name: String!
+  github_url: String
+  website_url: String
+  level: String!
+  stack: [String]
+  scope: [String]
+  slug: String!
+}
+
+type StarterTemplatesRecord {
+  id: ID!
+  createdTime: String!
+  fields: StarterTemplatesField!
+}
+
+type Query {
+  getStarterTemplatesRecords: [StarterTemplatesRecord!]!
+    @rest(
+      resultroot: "records[]"
+      endpoint: "https://api.airtable.com/v0/$baseid/starter_templates"
+      configuration: "airtable_config"
+    )
+}
