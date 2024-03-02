@@ -7,13 +7,17 @@ import truncate from 'lodash/truncate';
 import Link from 'next/link';
 import { ToolCardLogo } from './tool-card-logo';
 import { getVariantFromType } from './get-variant-from-type';
+import kebabCase from 'lodash/kebabCase';
 
 export function ToolCard({ fields }: RecordProps) {
-  const { pricing, type, name, website_url, slug } = fields;
+  const { pricing, type, name, website_url } = fields;
 
   if (!name) {
     return null;
   }
+
+  // TODO: fix that at the source, we should return a slug from the API
+  const slug = kebabCase(name);
 
   const description = truncate(fields.description, {
     length: 160,
@@ -57,6 +61,7 @@ export function ToolCard({ fields }: RecordProps) {
           </div>
 
           <div className="flex justify-start">
+            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
             <Badge size="sm" variant={variantType as any}>
               {type}
             </Badge>

@@ -179,10 +179,10 @@ export function ReactNativeSlugPage({
 }
 
 export async function getServerSideProps({ params }) {
+  const screenshotAccessKey = process.env.APIFLASH_ACCESS_KEY;
   /* @deprecated */
   const apiKey = process.env.AIRTABLE_API_KEY;
   const baseId = process.env.AIRTABLE_BASE_ID_REACT_NATIVE;
-  const screenshotAccessKey = process.env.APIFLASH_ACCESS_KEY;
 
   const { slug } = params;
 

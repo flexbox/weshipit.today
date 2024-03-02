@@ -119,6 +119,7 @@ export default function ReactNativeToolsPage({ records }) {
           buttonLink={linksApi.airtable.TEMPLATE_FORM}
         />
       }
+      withFooter
     >
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
         <Hero>
@@ -223,7 +224,6 @@ export async function getServerSideProps() {
     query: gql`
       query getStarterTemplatesRecords {
         getStarterTemplatesRecords {
-          createdTime
           fields {
             github_url
             level
