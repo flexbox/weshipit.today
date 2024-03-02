@@ -1,37 +1,19 @@
+type ResourcesField {
+  name: String!
+  description: String
+  website_url: String
+  type: [String!]!
+  discord_url: String
+  slack_url: String
+  youtube_url: String
+  conference_country: String
+  conference_date: String
+}
+
 type ResoucesRecord {
   id: ID!
   createdTime: String!
-  fields: ResourcesFields!
-}
-
-type ToolsRecord {
-  id: ID!
-  createdTime: String!
-  fields: ToolsFields!
-}
-
-type ToolsFields {
-  name: String!
-  description: String
-  website_url: String
-  type: [String!]!
-  discord_url: String
-  slack_url: String
-  youtube_url: String
-  conference_country: String
-  conference_date: String
-}
-
-type ResourcesFields {
-  name: String!
-  description: String
-  website_url: String
-  type: [String!]!
-  discord_url: String
-  slack_url: String
-  youtube_url: String
-  conference_country: String
-  conference_date: String
+  fields: ResourcesField!
 }
 
 type Query {
@@ -43,11 +25,53 @@ type Query {
     )
 }
 
+type ToolsField {
+  name: String!
+  description: String
+  website_url: String
+  type: [String!]!
+  discord_url: String
+  slack_url: String
+  youtube_url: String
+  conference_country: String
+  conference_date: String
+}
+
+type ToolsRecord {
+  id: ID!
+  createdTime: String!
+  fields: ToolsField!
+}
+
 type Query {
   getToolsRecords: [ToolsRecord!]!
     @rest(
       resultroot: "records[]"
       endpoint: "https://api.airtable.com/v0/$baseid/tools"
+      configuration: "airtable_config"
+    )
+}
+
+type StarterTemplatesField {
+  name: String!
+  github_url: String
+  website_url: String
+  level: [String!]!
+  stack: [String!]
+  scope: [String!]
+}
+
+type StarterTemplatesRecord {
+  id: ID!
+  createdTime: String!
+  fields: StarterTemplatesField!
+}
+
+type Query {
+  getStarterTemplatesRecords: [StarterTemplatesRecord!]!
+    @rest(
+      resultroot: "records[]"
+      endpoint: "https://api.airtable.com/v0/$baseid/starter_templates"
       configuration: "airtable_config"
     )
 }
