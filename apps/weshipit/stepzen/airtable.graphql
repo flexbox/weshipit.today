@@ -7,7 +7,7 @@ type ResourcesField {
   slack_url: String
   youtube_url: String
   conference_country: String
-  conference_date: String
+  conference_date: Date
 }
 
 type ResoucesRecord {
@@ -27,15 +27,16 @@ type Query {
 
 type ToolsField {
   name: String!
-  slug: String!
   description: String
+  description_success: String
   website_url: String
-  type: [String!]!
-  discord_url: String
-  slack_url: String
-  youtube_url: String
-  conference_country: String
-  conference_date: String
+  github_url: String
+  type: String
+  features: [String]
+  pricing: [String]
+  platform: [String]
+  twitter_url: String
+  slug: String!
 }
 
 type ToolsRecord {
@@ -53,13 +54,23 @@ type Query {
     )
 }
 
+type Query {
+  getToolRecord(id: String!): [ToolsRecord!]!
+    @rest(
+      # resultroot: "records[]"
+      endpoint: "https://api.airtable.com/v0/$baseid/tools/$id"
+      configuration: "airtable_config"
+    )
+}
+
 type StarterTemplatesField {
   name: String!
   github_url: String
   website_url: String
-  level: [String!]!
-  stack: [String!]
-  scope: [String!]
+  level: String!
+  stack: [String]
+  scope: [String]
+  slug: String!
 }
 
 type StarterTemplatesRecord {

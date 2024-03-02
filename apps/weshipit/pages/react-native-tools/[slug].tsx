@@ -4,7 +4,6 @@ import {
   TagList,
   Text,
   ToolCardLogo,
-  ToolList,
   ToolWebsitePreview,
   ToolTypeBadge,
   Card,
@@ -21,19 +20,22 @@ import ChevronLeftIcon from '@heroicons/react/20/solid/ChevronLeftIcon';
 import { HeaderLinksForTools } from '../../components/header-links-for-tools';
 
 export function ReactNativeSlugPage({
-  records,
+  record,
   recomendedRecords,
   screenshotAccessKey,
 }) {
-  if (records[0] === undefined || records[0].fields === undefined) {
+  if (record === undefined || record.fields === undefined) {
     return (
-      <Layout seoTitle={'Not found'} seoDescription={''}>
+      <Layout
+        seoTitle={'Not found'}
+        seoDescription={''}
+        withHeader
+        withContainer
+      >
         <h1>404</h1>
       </Layout>
     );
   }
-
-  const { fields } = records[0];
 
   const {
     name,
@@ -46,7 +48,7 @@ export function ReactNativeSlugPage({
     website_url,
     github_url,
     twitter_url,
-  } = fields;
+  } = record.fields;
 
   return (
     <Layout
@@ -163,9 +165,9 @@ export function ReactNativeSlugPage({
 
       <section className="py-12">
         <Text as="h2" variant="h3" className="my-4">
-          Other tools from the category {fields.type.toLowerCase()}
+          Other tools from the category {type.toLowerCase()}
         </Text>
-        <ToolList records={recomendedRecords} />
+        {/* <ToolList records={recomendedRecords} /> */}
       </section>
 
       <section className="mb-12 py-24">
@@ -178,52 +180,55 @@ export function ReactNativeSlugPage({
   );
 }
 
-export async function getServerSideProps({ params }) {
+export async function getServerSideProps({ query }) {
   const screenshotAccessKey = process.env.APIFLASH_ACCESS_KEY;
-  /* @deprecated */
-  const apiKey = process.env.AIRTABLE_API_KEY;
-  const baseId = process.env.AIRTABLE_BASE_ID_REACT_NATIVE;
 
-  const { slug } = params;
+  const { id } = query;
 
   const { data } = await client.query({
     query: gql`
-      query GetAirtableDataBySlug {
-        airtable_tableData(
-          airtable_apiKey: "${apiKey}"
-          airtable_baseId: "${baseId}"
-          tableName: "tools"
-          filterByFormula: "{slug}='${slug}'"
-        ) {
-          records {
-            fields
+      query getToolRecord {
+        getToolRecord(id: "${id}") {
+          fields {
+            description
+            description_success
+            features
+            github_url
+            name
+            platform
+            pricing
+            twitter_url
+            type
+            website_url
           }
         }
       }
     `,
   });
-  const type = data.airtable_tableData.records[0].fields.type;
-  const recomended = await client.query({
-    query: gql`
-      query GetAirtableDataByType {
-        airtable_tableData(
-          airtable_apiKey: "${apiKey}"
-          airtable_baseId: "${baseId}"
-          tableName: "tools"
-          filterByFormula: "{type}='${type}'"
-        ) {
-          records {
-            fields
-          }
-        }
-      }
-    `,
-  });
+  const record = data.getToolRecord[0];
+
+  // const type = record.fields.type;
+  // const recomended = await client.query({
+  //   query: gql`
+  //     query GetAirtableDataByType {
+  //       airtable_tableData(
+  //         airtable_apiKey: "${apiKey}"
+  //         airtable_baseId: "${baseId}"
+  //         tableName: "tools"
+  //         filterByFormula: "{type}='${type}'"
+  //       ) {
+  //         records {
+  //           fields
+  //         }
+  //       }
+  //     }
+  //   `,
+  // });
 
   return {
     props: {
-      records: data.airtable_tableData.records,
-      recomendedRecords: recomended.data.airtable_tableData.records,
+      record,
+      // recomendedRecords: recomended.data.airtable_tableData.records,
       screenshotAccessKey,
     },
   };

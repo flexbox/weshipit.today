@@ -114,17 +114,19 @@ export async function getServerSideProps(context) {
     query: gql`
       query getToolsRecords {
         getToolsRecords {
+          id
           fields {
-            conference_country
-            conference_date
             description
-            discord_url
+            description_success
+            features
             name
-            slack_url
+            github_url
+            platform
+            pricing
             slug
-            type
+            twitter_url
             website_url
-            youtube_url
+            type
           }
         }
       }

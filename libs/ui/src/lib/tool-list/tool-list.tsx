@@ -14,8 +14,8 @@ export function ToolList({ records }: ToolListProps) {
   return (
     <>
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {records.map((record, index) => (
-          <ToolCard fields={record.fields} key={`api-list-${index}`} />
+        {records.map((record) => (
+          <ToolCard fields={record.fields} key={record.id} id={record.id} />
         ))}
       </div>
       <div className="py-6">
