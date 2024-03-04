@@ -29,9 +29,10 @@ function filterByDescription(records, searchTerm: string) {
  * Filter airtable records by type
  */
 function filterRecordsByType(records, type) {
-  return records.filter(
-    (record) => record.fields.type[0].toLowerCase() === type.toLowerCase()
-  );
+  return records.filter((record) => {
+    const recordType = record.fields.type?.toLowerCase();
+    return recordType === type.toLowerCase();
+  });
 }
 
 export default function ReactNativeToolsPage({ records }) {
