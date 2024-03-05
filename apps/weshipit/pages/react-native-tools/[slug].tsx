@@ -10,6 +10,7 @@ import {
   CallToActionCards,
   Prose,
   ToolList,
+  NotFound,
 } from '@weshipit/ui';
 import client from '../api/apollo-client';
 import { Layout } from '../../components/layout';
@@ -34,7 +35,7 @@ export function ReactNativeSlugPage({
         withHeader
         withContainer
       >
-        <h1>404</h1>
+        <NotFound />
       </Layout>
     );
   }
