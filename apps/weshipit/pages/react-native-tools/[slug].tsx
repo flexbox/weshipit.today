@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { ApolloError, gql } from '@apollo/client';
 import {
   Button,
   TagList,
@@ -184,60 +184,68 @@ export function ReactNativeSlugPage({
   );
 }
 
-export async function getServerSideProps({ query }) {
+export async function getServerSideProps({ query, res }) {
   const screenshotAccessKey = process.env.APIFLASH_ACCESS_KEY;
 
-  const { id } = query;
+  try {
+    const { id } = query;
+    const { data } = await client.query({
+      query: gql`
+        query getToolRecord {
+          getToolRecord(id: "${id}") {
+            fields {
+              description
+              description_success
+              features
+              github_url
+              name
+              platform
+              pricing
+              twitter_url
+              type
+              website_url
+            }
+          }
+        }
+      `,
+    });
+    const record = data.getToolRecord[0];
 
-  const { data } = await client.query({
-    query: gql`
-      query getToolRecord {
-        getToolRecord(id: "${id}") {
+    const type = record.fields.type;
+    const { data: recomendedData } = await client.query({
+      query: gql`
+      query getToolsRecordsFiltered {
+        getToolsRecordsFiltered(filterByFormula: "{type}='${type}'") {
+          id
           fields {
-            description
-            description_success
-            features
-            github_url
             name
-            platform
-            pricing
-            twitter_url
+            description
             type
+            pricing
             website_url
+            slug
           }
         }
       }
-    `,
-  });
-  const record = data.getToolRecord[0];
+      `,
+    });
+    const recomendedRecords = take(recomendedData.getToolsRecordsFiltered, 3);
 
-  const type = record.fields.type;
-  const { data: recomendedData } = await client.query({
-    query: gql`
-    query getToolsRecordsFiltered {
-      getToolsRecordsFiltered(filterByFormula: "{type}='${type}'") {
-        id
-        fields {
-          name
-          description
-          type
-          pricing
-          website_url
-          slug
-        }
-      }
+    return {
+      props: {
+        record,
+        recomendedRecords,
+        screenshotAccessKey,
+      },
+    };
+  } catch (error) {
+    if (error instanceof ApolloError) {
+      res.statusCode = 404;
+      return { props: { error: 'Not Found' } };
+    } else {
+      throw error;
     }
-    `,
-  });
-  const recomendedRecords = take(recomendedData.getToolsRecordsFiltered, 3);
-
-  return {
-    props: {
-      record,
-      recomendedRecords,
-      screenshotAccessKey,
-    },
-  };
+  }
 }
 
 export default ReactNativeSlugPage;
