@@ -6,6 +6,7 @@ import {
   CardHomepage,
   LinkButton,
   HeaderLinksOnboarding,
+  HeroText,
 } from '@weshipit/ui';
 import { getAllClients } from './api/client';
 import { Layout } from '../components/layout';
@@ -37,26 +38,28 @@ export default function IndexPage({ clients }: clientsPageProps) {
       withAccessoryRight={<HeaderLinksOnboarding />}
     >
       <Hero>
-        <h1 className="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-4xl md:text-2xl lg:text-3xl xl:text-4xl dark:text-slate-300">
-          <span className="block leading-tight xl:inline">
-            A tiny studio, making delightful React Native apps,
-            <br />
-            brought to you by
-            <Hyperlink
-              href="https://twitter.com/intent/follow?screen_name=flexbox_"
-              className="items-center gap-1.5 rounded-full p-1 font-bold transition hover:bg-gray-50 sm:px-2 md:top-1 dark:hover:bg-white/10"
-            >
-              @flexbox
-            </Hyperlink>
-            &
-            <Hyperlink
-              href="https://twitter.com/intent/follow?screen_name=MatthysDev"
-              className="items-center gap-1.5 rounded-full p-1 font-bold transition hover:bg-gray-50 sm:px-2 md:top-1 dark:hover:bg-white/10"
-            >
-              @MatthysDev
-            </Hyperlink>
-          </span>
-        </h1>
+        <HeroText
+          title={
+            <>
+              A tiny studio, making delightful React Native apps,
+              <br />
+              brought to you by
+              <Hyperlink
+                href="https://twitter.com/intent/follow?screen_name=flexbox_"
+                className="items-center gap-1.5 rounded-full p-1 font-bold transition hover:bg-gray-50 sm:px-2 md:top-1 dark:hover:bg-white/10"
+              >
+                @flexbox
+              </Hyperlink>
+              &
+              <Hyperlink
+                href="https://twitter.com/intent/follow?screen_name=MatthysDev"
+                className="items-center gap-1.5 rounded-full p-1 font-bold transition hover:bg-gray-50 sm:px-2 md:top-1 dark:hover:bg-white/10"
+              >
+                @MatthysDev
+              </Hyperlink>
+            </>
+          }
+        />
         <CardHomepage />
       </Hero>
       <section className="m-auto max-w-7xl">
