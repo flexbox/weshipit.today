@@ -8,6 +8,7 @@ import {
   SearchBar,
   Hero,
   CallToActionCards,
+  HeroText,
 } from '@weshipit/ui';
 import { gql } from '@apollo/client';
 import { useEffect, useState } from 'react';
@@ -63,26 +64,37 @@ export default function ReactNativeToolsPage({ records }) {
     >
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
         <Hero>
-          <Text as="h1" variant="h2">
-            The best <span className="text-indigo-600">{toolType}</span> tools
-            <br />
-            and resources for busy developers.
-          </Text>
+          <HeroText
+            badgeStyle="bg-orange-200 dark:bg-orange-900 text-[#ed6c5c] ring-[#ed6c5c] dark:ring-[#ed6c5c]"
+            hintTitle="Upvote us on Product Hunt"
+            hintDescription="Help us climb the ranks and reach more people"
+            hintLink=""
+            title={
+              <>
+                The best <span className="text-indigo-600">{toolType}</span>{' '}
+                tools
+                <br />
+                and resources for busy developers.
+              </>
+            }
+            description={
+              <>
+                We have curated essential resources for the success of your
+                React Native app.
+                <br />
+                This informative content has been brought to you through the
+                generous sponsorship of{' '}
+                <a
+                  href="https://gum.co/road-react-native/HELLO_FRIEND"
+                  className="font-semibold text-blue-500 underline underline-offset-4 hover:text-blue-700"
+                >
+                  the React Native Roadmap
+                </a>
+                .
+              </>
+            }
+          />
         </Hero>
-        <Text as="p" variant="p1" className="mb-4 text-gray-500">
-          We have curated essential resources for the success of your React
-          Native app.
-          <br />
-          This informative content has been brought to you through the generous
-          sponsorship of{' '}
-          <a
-            href="https://gum.co/road-react-native/HELLO_FRIEND"
-            className="font-semibold text-blue-500 underline underline-offset-4 hover:text-blue-700"
-          >
-            the React Native Roadmap
-          </a>
-          .
-        </Text>
       </div>
 
       <div className="mx-auto max-w-screen-2xl px-4 pb-12 sm:px-6">
