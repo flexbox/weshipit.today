@@ -28,6 +28,9 @@
     "ui:build": "nx build ui",
     "ui:build:storybook": "nx storybook build ui",
     "ui:storybook": "nx storybook ui",
+    "util:lint": "nx lint util",
+    "util:test": "nx test util",
+    "util:test:watch": "nx test util --watch",    
     "--misc--": "------------------------------------------------------",
     "prepare": "husky install"
   },

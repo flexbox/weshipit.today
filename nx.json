@@ -48,16 +48,18 @@
   "generators": {
     "@nx/react": {
       "application": {
-        "babel": true
+        "babel": true,
+        "nameAndDirectoryFormat": "derived",
+        "style": "none"        
       },
       "library": {
         "unitTestRunner": "jest"
-      }
+      },
     },
     "@nx/next": {
       "application": {
-        "style": "css",
-        "linter": "eslint"
+        "linter": "eslint",
+        "style": "none"
       }
     }
   },
