@@ -4,7 +4,8 @@ export interface HeroTextProps {
   hintTitle?: string;
   hintDescription?: string;
   title: string | React.ReactNode;
-  description?: string;
+  description?: string | React.ReactNode;
+  badgeStyle?: string;
 }
 
 export function HeroText({
@@ -14,14 +15,19 @@ export function HeroText({
   hintTitle,
   title,
   description,
+  badgeStyle,
 }: HeroTextProps) {
+  badgeStyle =
+    badgeStyle || 'bg-indigo-600/10 text-indigo-600 ring-indigo-600/10';
   return (
     <div className="mx-auto w-full lg:shrink-0">
       {hintTitle && (
-        <div>
+        <div className="my-4">
           {hintLink ? (
             <a href={hintLink} className="inline-flex space-x-6">
-              <span className="rounded-full bg-indigo-600/10 px-3 py-1 text-sm font-semibold leading-6 text-indigo-600 ring-1 ring-inset ring-indigo-600/10">
+              <span
+                className={`rounded-full ${badgeStyle} px-3 py-1 text-sm font-semibold leading-6  ring-1 ring-inset`}
+              >
                 {hintTitle}
               </span>
               {hintDescription && (
@@ -32,7 +38,9 @@ export function HeroText({
             </a>
           ) : (
             <div className="inline-flex space-x-6">
-              <span className="rounded-full bg-indigo-600/10 px-3 py-1 text-sm font-semibold leading-6 text-indigo-600 ring-1 ring-inset ring-indigo-600/10">
+              <span
+                className={`rounded-full ${badgeStyle} px-3 py-1 text-sm font-semibold leading-6  ring-1 ring-inset`}
+              >
                 {hintTitle}
               </span>
               {hintDescription && (
@@ -48,7 +56,7 @@ export function HeroText({
         {title}
       </h1>
       {description && (
-        <p className="mt-6 text-lg leading-8 text-gray-600">{description}</p>
+        <p className="mt-6 text-lg leading-8 text-gray-300">{description}</p>
       )}
       {children && (
         <div className="mt-10 flex items-center gap-x-6">{children}</div>
