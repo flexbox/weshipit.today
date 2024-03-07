@@ -16,9 +16,7 @@ import round from 'lodash/round';
 
 import { HeaderLinksForTools } from '../../components/header-links-for-tools';
 import { linksApi } from '../api/links';
-// TODO: fix this import
-// import { extractUsernameFromGithubUrl } from '@weshipit/util';
-import extractUsernameFromGithubUrl from 'libs/util/src/lib/extract-username-from-github-url/extract-username-from-github-url';
+import { extractUsernameFromGithubUrl } from '@weshipit/utils';
 
 const BadgeLevel = ({ level }: { level: string }) => {
   let color = 'green';

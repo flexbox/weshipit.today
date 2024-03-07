@@ -1,4 +1,4 @@
-function extractUsernameFromGithubUrl(githubUrl: string): string | null {
+export function extractUsernameFromGithubUrl(githubUrl: string): string | null {
   if (!githubUrl) {
     return null;
   }
