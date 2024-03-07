@@ -16,10 +16,7 @@ import round from 'lodash/round';
 
 import { HeaderLinksForTools } from '../../components/header-links-for-tools';
 import { linksApi } from '../api/links';
-
-function extractUserNameFromGithubUrl(githubUrl) {
-  return githubUrl.split('/')[3];
-}
+import { extractUsernameFromGithubUrl } from '@weshipit/utils';
 
 const BadgeLevel = ({ level }: { level: string }) => {
   let color = 'green';
@@ -44,7 +41,7 @@ function StarterList({ records }) {
         const { name, github_url, website_url, level, scope, stack } =
           record.fields;
 
-        const author = extractUserNameFromGithubUrl(github_url || '');
+        const author = extractUsernameFromGithubUrl(github_url || '');
         return (
           <Card key={record.id}>
             <div className="flex items-start justify-between">
