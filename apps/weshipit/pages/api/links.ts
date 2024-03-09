@@ -8,4 +8,8 @@ export const linksApi = {
     TEMPLATE_FORM: 'https://airtable.com/appLcVC7NmRBu1itw/shrPvK2WNmqZv3TIQ',
     TOOLS_FORM: 'https://airtable.com/shrKPA2DGcG8xnQGG',
   },
+  stripe: {
+    MONTHLY_PLAN:
+      'https://buy.stripe.com/00g03Ggnt4gee0E6oq?prefilled_promo_code=FIRSTMONTH50',
+  },
 };

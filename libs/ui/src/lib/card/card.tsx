@@ -8,7 +8,7 @@ const card = cva(
   [
     'rounded-xl',
     'bg-white',
-    'dark:bg-slate-900',
+    'dark:bg-slate-800',
     'ring-2 ring-inset ring-transparent',
     'shadow-none transition-shadow  duration-300 ease-in-out',
   ],
@@ -36,6 +36,18 @@ const card = cva(
           'dark:ring-white/20',
           'ring-blue-200/20',
           'cursor-pointer hover:shadow-lg',
+        ],
+        red: [
+          '!bg-red-50',
+          '!ring-red-600/20',
+          'dark:!bg-red-400/10',
+          'dark:!ring-red-400/20',
+        ],
+        green: [
+          '!bg-green-50',
+          '!ring-green-600/20',
+          'dark:!bg-green-400/10',
+          'dark:!ring-green-400/20',
         ],
       },
       size: {

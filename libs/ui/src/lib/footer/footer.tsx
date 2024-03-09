@@ -90,11 +90,14 @@ export function Footer() {
   const fullYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-white dark:bg-black" aria-labelledby="footer-heading">
+    <footer
+      className="bg-white dark:bg-slate-950"
+      aria-labelledby="footer-heading"
+    >
       <h2 id="footer-heading" className="sr-only">
-        Footer
+        weshipit.today
       </h2>
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+      <div className="mx-auto max-w-7xl px-4 py-12 opacity-50 hover:opacity-100 sm:px-6 lg:px-8 lg:py-16">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:grid-cols-2 md:gap-8">
@@ -143,7 +146,7 @@ export function Footer() {
                 className="text-slate-400 hover:text-slate-400"
               >
                 <span className="sr-only">{item.name}</span>
-                <item.icon className="h-6 w-6" aria-hidden="true" />
+                <item.icon className="size-6" aria-hidden="true" />
               </a>
             ))}
           </div>

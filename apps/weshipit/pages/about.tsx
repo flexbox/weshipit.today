@@ -33,7 +33,7 @@ export default function About() {
       withAccessoryRight={<HeaderLinksOnboarding />}
     >
       <Prose className="my-12">
-        <h1>About</h1>
+        <h1>You might already know us</h1>
         <blockquote>
           <p>Automation has always helped people write code.</p>
         </blockquote>

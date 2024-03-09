@@ -23,6 +23,7 @@ export function Consulting() {
           variant="secondary"
           href="https://cal.com/davidl/coaching"
           isExternalLink={true}
+          size="xl"
         >
           Schedule 1-to-1 consulting
         </Button>

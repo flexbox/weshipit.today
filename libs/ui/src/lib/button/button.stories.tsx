@@ -48,7 +48,7 @@ export const Accessory = () => (
   </div>
 );
 
-export const VariantExamples = () => (
+export const Variants = () => (
   <div className="grid gap-4">
     <Button as="a" href="https://weshipit.today" variant="primary">
       primary
@@ -56,46 +56,57 @@ export const VariantExamples = () => (
     <Button as="a" href="https://weshipit.today" variant="secondary">
       secondary
     </Button>
+    <Button href="https://weshipit.today" variant="primary" disabled={true}>
+      primary
+    </Button>
+    <Button href="https://weshipit.today" variant="secondary" disabled={true}>
+      secondary
+    </Button>
   </div>
 );
 
-const SizeExamples = () => (
+export const Sizes = () => (
   <div className="grid gap-4">
-    <LinkButton href="/" size="xs">
+    <Button href="/" size="xs">
       size sx
-    </LinkButton>
-    <LinkButton href="/" size="sm">
+    </Button>
+    <Button href="/" size="sm">
       size sm
-    </LinkButton>
-    <LinkButton href="/" size="md">
+    </Button>
+    <Button href="/" size="md">
       size md
-    </LinkButton>
-    <LinkButton href="/" size="lg">
+    </Button>
+    <Button href="/" size="lg">
       size lg
-    </LinkButton>
-    <LinkButton href="/" size="xl">
+    </Button>
+    <Button href="/" size="xl">
       size xl
-    </LinkButton>
-    <LinkButton href="/" size="xs" variant="secondary">
+    </Button>
+    <Button href="/" size="xxl">
+      size xxl
+    </Button>
+    <Button href="/" size="xs" variant="secondary">
       size sx
-    </LinkButton>
-    <LinkButton href="/" size="sm" variant="secondary">
+    </Button>
+    <Button href="/" size="sm" variant="secondary">
       size sm
-    </LinkButton>
-    <LinkButton href="/" size="md" variant="secondary">
+    </Button>
+    <Button href="/" size="md" variant="secondary">
       size md
-    </LinkButton>
-    <LinkButton href="/" size="lg" variant="secondary">
+    </Button>
+    <Button href="/" size="lg" variant="secondary">
       size lg
-    </LinkButton>
-    <LinkButton href="/" size="xl" variant="secondary">
+    </Button>
+    <Button href="/" size="xl" variant="secondary">
       size xl
-    </LinkButton>
+    </Button>
+    <Button href="/" size="xxl" variant="secondary">
+      size xxl
+    </Button>
   </div>
 );
-export const Size = SizeExamples.bind({});
 
-const AsExamples = () => (
+export const As = () => (
   <div className="grid gap-4">
     <Button as="a" href="https://weshipit.today">
       a href
@@ -128,4 +139,3 @@ const AsExamples = () => (
     </Button>
   </div>
 );
-export const As = AsExamples.bind({});

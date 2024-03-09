@@ -26,9 +26,9 @@ export function CardHomepage() {
             />
           </div>
           <div className="flex flex-col items-center gap-2 sm:items-start">
-            <h1 className="relative bg-gradient-to-b from-white to-white/75 bg-clip-text text-5xl font-bold tracking-tight text-transparent drop-shadow md:text-7xl">
+            <h2 className="relative bg-gradient-to-b from-white to-white/75 bg-clip-text text-5xl font-bold tracking-tight text-transparent drop-shadow md:text-7xl">
               Bootcamp
-            </h1>
+            </h2>
             <p className="max-w-[20ch] text-xl font-medium opacity-80 md:text-2xl">
               The ultimate way to learn React Native.
             </p>
@@ -55,9 +55,9 @@ export function CardHomepage() {
             />
           </div>
           <div className="flex flex-col items-center gap-2 md:items-start">
-            <h1 className="relative bg-gradient-to-b from-white to-white/75 bg-clip-text text-4xl font-bold tracking-tight text-transparent drop-shadow md:text-5xl">
+            <h2 className="relative bg-gradient-to-b from-white to-white/75 bg-clip-text text-4xl font-bold tracking-tight text-transparent drop-shadow md:text-5xl">
               Checklist
-            </h1>
+            </h2>
             <p className=" max-w-[14ch] text-lg font-medium opacity-80 md:text-xl">
               Never miss your store deployments with Expo.
             </p>
@@ -85,9 +85,9 @@ export function CardHomepage() {
             />
           </div>
           <div className="flex flex-col items-center gap-2 md:items-start">
-            <h1 className="relative bg-gradient-to-b from-black to-[#444] bg-clip-text text-3xl font-bold tracking-tight text-transparent md:text-3xl dark:from-white dark:to-white/75 dark:drop-shadow">
+            <h2 className="relative bg-gradient-to-b from-black to-[#444] bg-clip-text text-3xl font-bold tracking-tight text-transparent md:text-3xl dark:from-white dark:to-white/75 dark:drop-shadow">
               Consultation
-            </h1>
+            </h2>
             <p className="max-w-[14ch] text-base font-medium text-black opacity-80 md:text-lg dark:text-white">
               Book a call. We'll help you with your project.
             </p>

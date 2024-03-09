@@ -12,6 +12,8 @@ export const buttonVariants = cva(
     'shadow-sm',
     'transition',
     'active:scale-105',
+    'disabled:opacity-50',
+    'disabled:cursor-not-allowed',
   ],
   {
     variants: {
@@ -38,6 +40,15 @@ export const buttonVariants = cva(
           'dark:bg-white/10',
           'dark:hover:bg-white/20',
         ],
+        link: [
+          'text-gray-900',
+          'dark:text-white',
+          'hover:bg-gray-50',
+          'dark:hover:bg-white/20',
+        ],
+      },
+      disabled: {
+        true: ['!cursor-not-allowed', '!opacity-50'],
       },
       size: {
         xs: ['rounded', 'px-2', 'py-1', 'text-xs'],

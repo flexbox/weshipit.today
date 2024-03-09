@@ -2,12 +2,12 @@ import { StarIcon } from '@heroicons/react/24/outline';
 import { Button } from '../button/button';
 import { LinkButton } from '../button/link-button';
 
-/* eslint-disable-next-line */
-export interface HeaderLinksOnboardingProps {}
-
-export function HeaderLinksOnboarding(props: HeaderLinksOnboardingProps) {
+export function HeaderLinksOnboarding() {
   return (
     <div className="flex gap-2">
+      <LinkButton variant="secondary" href="/pricing" size="xl">
+        Pricing
+      </LinkButton>
       <Button
         variant="secondary"
         href="https://github.com/flexbox/weshipit.today"
