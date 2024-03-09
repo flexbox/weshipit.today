@@ -4,7 +4,7 @@ const client = new ApolloClient({
   link: createHttpLink({
     credentials: 'same-origin',
     headers: {
-      Authorization: process.env.STEPZEN_API_KEY,
+      Authorization: process.env.STEPZEN_API_KEY || '',
     },
     uri: process.env.STEPZEN_API_AIRTABLE_URL,
   }),
