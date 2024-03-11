@@ -1,4 +1,3 @@
-export * from './lib/hero-text/hero-text';
 export * from './lib/header/header-links-onboarding';
 export * from './lib/airtable-toggle-form/airtable-toggle-form';
 export * from './lib/badge/badge';
