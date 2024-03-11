@@ -7,7 +7,6 @@ import {
   Button,
   Card,
   Hero,
-  HeroText,
   Hyperlink,
   Prose,
   TagList,
@@ -123,33 +122,30 @@ export default function ReactNativeToolsPage({ records }) {
       withFooter
     >
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
-        <Hero>
-          <HeroText
-            title={
-              <>
-                The best{' '}
-                <span className="text-blue-600">Starter Templates</span> for
-                busy developers.
-              </>
-            }
-            description={
-              <>
-                We have curated essential resources for the success of your
-                React Native app.
-                <br />
-                This informative content has been brought to you through the
-                generous sponsorship of{' '}
-                <a
-                  href="https://gum.co/road-react-native/HELLO_FRIEND"
-                  className="font-semibold text-blue-500 underline underline-offset-4 hover:text-blue-700"
-                >
-                  the React Native Roadmap
-                </a>
-                .
-              </>
-            }
-          />
-        </Hero>
+        <Hero
+          title={
+            <>
+              The best <span className="text-blue-600">Starter Templates</span>{' '}
+              for busy developers.
+            </>
+          }
+          description={
+            <>
+              We have curated essential resources for the success of your React
+              Native app.
+              <br />
+              This informative content has been brought to you through the
+              generous sponsorship of{' '}
+              <a
+                href="https://gum.co/road-react-native/HELLO_FRIEND"
+                className="font-semibold text-blue-500 underline underline-offset-4 hover:text-blue-700"
+              >
+                the React Native Roadmap
+              </a>
+              .
+            </>
+          }
+        />
       </div>
 
       <div className="mx-auto max-w-screen-2xl px-4 sm:px-6">

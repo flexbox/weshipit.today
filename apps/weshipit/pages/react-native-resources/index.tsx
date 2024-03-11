@@ -153,12 +153,14 @@ export default function ReactNativeResourcesPage({
       }
     >
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
-        <Hero>
-          <Text as="h1" variant="h1">
-            Starting mobile app development
-            <br /> with React Native.
-          </Text>
-        </Hero>
+        <Hero
+          title={
+            <>
+              Starting mobile app development
+              <br /> with React Native.
+            </>
+          }
+        ></Hero>
         <Text as="p" variant="p1" className="mb-4 text-gray-500">
           We have curated essential resources for the success of your React
           Native app.

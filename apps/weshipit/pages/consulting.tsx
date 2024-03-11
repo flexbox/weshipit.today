@@ -44,7 +44,7 @@ export function Consulting() {
           Your browser does not support the video tag.
         </video>
 
-        <Hero>
+        <Hero title="">
           <Text
             as="h1"
             variant="h1"
