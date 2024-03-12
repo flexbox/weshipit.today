@@ -293,3 +293,8 @@ export default function About({ clients }) {
     </Layout>
   );
 }
+
+About.getInitialProps = async () => {
+  const clients = await getAllClients();
+  return { clients };
+};
