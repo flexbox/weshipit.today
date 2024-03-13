@@ -1,3 +1,5 @@
+import { Text } from '../text/text';
+
 interface HeroProps {
   children?: React.ReactNode;
   hintLink?: string;
@@ -51,11 +53,11 @@ export function Hero({
             )}
           </div>
         )}
-        <h1 className="font-bold tracking-tight text-gray-900 sm:text-4xl md:text-2xl lg:text-3xl  xl:text-4xl dark:text-slate-300">
+        <Text variant="h2" as="h1">
           {title}
-        </h1>
+        </Text>
         {description && (
-          <p className="mt-6 text-lg leading-8 text-gray-500">{description}</p>
+          <p className="text-lg leading-8 text-gray-500">{description}</p>
         )}
         {children && (
           <div className="mt-10 items-center gap-x-6">{children}</div>
