@@ -160,21 +160,22 @@ export default function ReactNativeResourcesPage({
               <br /> with React Native.
             </>
           }
-        ></Hero>
-        <Text as="p" variant="p1" className="mb-4 text-gray-500">
-          We have curated essential resources for the success of your React
-          Native app.
-          <br />
-          This informative content has been brought to you through the generous
-          sponsorship of{' '}
-          <a
-            href="https://gum.co/road-react-native/HELLO_FRIEND"
-            className="font-semibold text-blue-500 underline underline-offset-4 hover:text-blue-700"
-          >
-            the React Native Roadmap
-          </a>
-          .
-        </Text>
+        >
+          <Text as="p" variant="p1" className="mb-4 text-gray-500">
+            We have curated essential resources for the success of your React
+            Native app.
+            <br />
+            This informative content has been brought to you through the
+            generous sponsorship of{' '}
+            <a
+              href="https://gum.co/road-react-native/HELLO_FRIEND"
+              className="font-semibold text-blue-500 underline underline-offset-4 hover:text-blue-700"
+            >
+              the React Native Roadmap
+            </a>
+            .
+          </Text>
+        </Hero>
       </div>
 
       <div className="mx-auto max-w-screen-2xl px-4 pb-12 sm:px-6">
