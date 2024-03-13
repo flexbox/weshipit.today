@@ -36,9 +36,9 @@ export default function IndexPage({ clients }: clientsPageProps) {
       ogImageTitle="React Native Experts"
       withAccessoryRight={<HeaderLinksOnboarding />}
     >
-      <Hero>
-        <h1 className="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-4xl md:text-2xl lg:text-3xl xl:text-4xl dark:text-slate-300">
-          <span className="block leading-tight xl:inline">
+      <Hero
+        title={
+          <>
             A tiny studio, making delightful React Native apps,
             <br />
             brought to you by
@@ -55,8 +55,9 @@ export default function IndexPage({ clients }: clientsPageProps) {
             >
               @MatthysDev
             </Hyperlink>
-          </span>
-        </h1>
+          </>
+        }
+      >
         <CardHomepage />
       </Hero>
       <section className="m-auto max-w-7xl">
