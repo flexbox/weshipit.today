@@ -13,6 +13,10 @@
       "inputs": ["default", "^production"],
       "cache": true
     },
+    "lint": {
+      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"],
+      "cache": true
+    },
     "build-storybook": {
       "inputs": [
         "default",
@@ -35,10 +39,6 @@
           "codeCoverage": true
         }
       }
-    },
-    "@nx/eslint:lint": {
-      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"],
-      "cache": true
     }
   },
   "workspaceLayout": {
@@ -48,18 +48,13 @@
   "generators": {
     "@nx/react": {
       "application": {
-        "babel": true,
-        "nameAndDirectoryFormat": "derived",
-        "style": "none"
-      },
-      "library": {
-        "unitTestRunner": "jest"
+        "babel": true
       }
     },
     "@nx/next": {
       "application": {
-        "linter": "eslint",
-        "style": "none"
+        "style": "css",
+        "linter": "eslint"
       }
     }
   },
@@ -78,23 +73,5 @@
       "!{projectRoot}/tsconfig.storybook.json",
       "!{projectRoot}/src/test-setup.[jt]s"
     ]
-  },
-  "plugins": [
-    {
-      "plugin": "@nx/eslint/plugin",
-      "options": {
-        "targetName": "lint"
-      }
-    },
-    {
-      "plugin": "@nx/vite/plugin",
-      "options": {
-        "buildTargetName": "build",
-        "previewTargetName": "preview",
-        "testTargetName": "test",
-        "serveTargetName": "serve",
-        "serveStaticTargetName": "serve-static"
-      }
-    }
-  ]
+  }
 }
