@@ -39,7 +39,7 @@ export default function IndexPage({ clients }: clientsPageProps) {
       <Hero>
         <h1 className="text-2xl font-extrabold tracking-tight text-gray-900 sm:text-4xl md:text-2xl lg:text-3xl xl:text-4xl dark:text-slate-300">
           <span className="block leading-tight xl:inline">
-            A tiny studio, making delightful React Native apps,
+            A tiny studio,
             <br />
             brought to you by
             <Hyperlink
