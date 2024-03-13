@@ -20,7 +20,7 @@ export default function PricingPage() {
       seoTitle="Subscription as a Service for React Native Developers"
       seoDescription="Software development is a service, not a product. We offer a subscription-based service for React Native developers. One flat fee. Zero billable hours. Pause or cancel whenever."
     >
-      <Hero>
+      <Hero title="">
         <Text as="h1" variant="h1" className="text-center">
           One flat fee.
           <br />
