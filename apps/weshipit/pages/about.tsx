@@ -11,6 +11,7 @@ import {
 import Link from 'next/link';
 import Image from 'next/image';
 import { Layout } from '../components/layout';
+import { getAllClients } from './api/client';
 
 const links = [
   {
@@ -27,7 +28,7 @@ const links = [
   },
 ];
 
-export default function About({ clients }) {
+export default function AboutPage({ clients }) {
   return (
     <Layout
       seoTitle="About"
@@ -50,7 +51,7 @@ export default function About({ clients }) {
         </blockquote>
       </Prose>
       <div className="m-auto my-24 w-3/4">
-        <ClientsListHomepage clients={clients.clients} />
+        <ClientsListHomepage clients={clients} />
       </div>
       <div className="m-auto my-24 flex justify-center">
         <Button
@@ -281,3 +282,8 @@ export default function About({ clients }) {
     </Layout>
   );
 }
+
+AboutPage.getInitialProps = async function () {
+  const clients = await getAllClients();
+  return clients;
+};
