@@ -12,6 +12,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Layout } from '../components/layout';
 import { getAllClients } from './api/client';
+import LiteYouTubeEmbed from 'react-lite-youtube-embed';
+import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
 
 const links = [
   {
@@ -164,6 +166,15 @@ export default function AboutPage({ clients }) {
           up-to-date tools and sharing our knowledge about them during different
           talks
         </p>
+        <LiteYouTubeEmbed
+          id="gkUABRFKoXs"
+          title="Design system in React Native"
+        />
+        <br />
+        <LiteYouTubeEmbed
+          id="rQzVtOhz6O0"
+          title="Comment faire une application full-stack avec React Native et GraqhQL"
+        />
         <br />
       </Prose>
       <div className="my-24 w-screen bg-white py-32  dark:bg-slate-900">
