@@ -8,9 +8,13 @@ interface AvatarAvengerProps {
   githubUrl: string;
 }
 
-export function AvatarAvenger(props: AvatarAvengerProps) {
+export function AvatarAvenger({
+  email,
+  emailhover,
+  username,
+  githubUrl,
+}: AvatarAvengerProps) {
   const [isShown, setIsShown] = useState(false);
-  const { email, emailhover, username, githubUrl } = props;
   return (
     <div className=" mb-8 flex h-48 w-full flex-row justify-around">
       <div className="text-center">

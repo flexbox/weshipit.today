@@ -14,6 +14,7 @@ import { Layout } from '../components/layout';
 import { getAllClients } from './api/client';
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
+import { linksApi } from './api/links';
 
 const links = [
   {
@@ -31,6 +32,7 @@ const links = [
 ];
 
 export default function AboutPage({ clients }) {
+  const currentYear = new Date().getFullYear();
   return (
     <Layout
       seoTitle="About"
@@ -58,7 +60,7 @@ export default function AboutPage({ clients }) {
       <div className="m-auto my-24 flex justify-center">
         <Button
           variant="primary"
-          href=" https://cal.com/davidl/30min"
+          href={linksApi.calendly.CONSULTATION}
           size="xxl"
           as="a"
           isExternalLink
@@ -77,8 +79,8 @@ export default function AboutPage({ clients }) {
           client will become happy.
         </p>
         <p>
-          In 2022 finding JavaScript developers is easy, but finding the
-          developer you need in the React Native ecosystem is way harder.
+          In {currentYear} finding JavaScript developers is easy, but finding
+          the developer you need in the React Native ecosystem is way harder.
         </p>
         <p>You dont know where to start..</p>
         <p>The good news is, you are in the right place.</p>
@@ -153,7 +155,7 @@ export default function AboutPage({ clients }) {
         <h2>Our story</h2>
         <p>
           David has been working as a freelancer since 2017. He delivered
-          bootcamps at the university for 200+ students. One day, he decided to
+          bootcamps at the university for 300+ students. One day, he decided to
           hire one of them to pass on his skills and working methods.
         </p>
         <p>
@@ -162,9 +164,9 @@ export default function AboutPage({ clients }) {
           we know that GitHub contributions are more important).
         </p>
         <p>
-          We have been working together for more than 6 months now using
-          up-to-date tools and sharing our knowledge about them during different
-          talks
+          We have been working together for more than {currentYear - 2022} years
+          now using up-to-date tools and sharing our knowledge about them during
+          different talks
         </p>
         <LiteYouTubeEmbed
           id="gkUABRFKoXs"
@@ -222,7 +224,7 @@ export default function AboutPage({ clients }) {
       <div className="flex justify-center py-12">
         <Button
           variant="primary"
-          href="https://cal.com/davidl/30min"
+          href={linksApi.calendly.CONSULTATION}
           size="xxl"
           as="a"
           isExternalLink
