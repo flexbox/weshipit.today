@@ -31,3 +31,5 @@ export * from './lib/tool-list/tool-list';
 export * from './lib/tool-list/tool-type-badge';
 export * from './lib/tool-list/tool-website-preview';
 export * from './lib/not-found/not-found';
+export * from './lib/stack/avenger-stack';
+export * from './lib/gravatar/avatar-avengers';

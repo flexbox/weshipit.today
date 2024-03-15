@@ -12,4 +12,7 @@ export const linksApi = {
     MONTHLY_PLAN:
       'https://buy.stripe.com/00g03Ggnt4gee0E6oq?prefilled_promo_code=FIRSTMONTH50',
   },
+  calendly: {
+    CONSULTATION: 'https://cal.com/davidl/30min',
+  },
 };
