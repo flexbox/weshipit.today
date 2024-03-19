@@ -9,6 +9,6 @@ export default Story;
 
 export const Primary = {
   args: {
-    platforms: ['iOS', 'Android', 'Web', 'MacOS', 'Windows', 'Linux', 'Unity'],
+    tags: ['iOS', 'Android', 'Web', 'MacOS', 'Windows', 'Linux', 'Unity'],
   },
 };

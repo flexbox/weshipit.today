@@ -31,7 +31,7 @@ export default function PricingPage() {
         </Text>
       </Hero>
 
-      <div className="m-auto max-w-2xl flex-col">
+      <div className="m-auto mb-24 max-w-2xl flex-col">
         <div className="mb-24 mt-12 flex flex-col gap-4 text-center">
           <div className="shrink-0">
             <Badge variant="blue">First month at 50% off ✨</Badge>

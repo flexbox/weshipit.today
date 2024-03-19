@@ -38,7 +38,7 @@ export default function IndexPage({ clients }: clientsPageProps) {
     >
       <Hero
         title={
-          <>
+          <div className="mt-12">
             A tiny studio, making delightful React Native apps,
             <br />
             brought to you by
@@ -55,11 +55,10 @@ export default function IndexPage({ clients }: clientsPageProps) {
             >
               @MatthysDev
             </Hyperlink>
-          </>
+          </div>
         }
-      >
-        <CardHomepage />
-      </Hero>
+      />
+      <CardHomepage />
       <section className="m-auto max-w-7xl">
         <div className="mb-24 text-center ">
           <div className="flex justify-between">

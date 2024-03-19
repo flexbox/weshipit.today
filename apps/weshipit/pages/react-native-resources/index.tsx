@@ -152,7 +152,7 @@ export default function ReactNativeResourcesPage({
         />
       }
     >
-      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+      <div className="mx-auto mb-6 max-w-6xl px-4 sm:px-6">
         <Hero
           title={
             <>
@@ -161,7 +161,7 @@ export default function ReactNativeResourcesPage({
             </>
           }
         >
-          <Text as="p" variant="p1" className="mb-4 text-gray-500">
+          <Text as="p" variant="p1" className="my-4 !text-gray-500">
             We have curated essential resources for the success of your React
             Native app.
             <br />

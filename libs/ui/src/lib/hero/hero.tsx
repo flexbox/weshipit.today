@@ -59,9 +59,7 @@ export function Hero({
         {description && (
           <p className="text-lg leading-8 text-gray-500">{description}</p>
         )}
-        {children && (
-          <div className="mt-10 items-center gap-x-6">{children}</div>
-        )}
+        {children && <div className="items-center gap-x-6">{children}</div>}
       </div>
     </div>
   );

@@ -60,7 +60,7 @@ export default function ReactNativeToolsPage({ records }) {
       ogImageTitle="React Native Tools"
       withAccessoryRight={<HeaderLinksForTools />}
     >
-      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+      <div className="mx-auto mb-6 max-w-6xl px-4 sm:px-6">
         <Hero
           badgeStyle="bg-orange-200 dark:bg-orange-900 text-[#ed6c5c] ring-[#ed6c5c] dark:ring-[#ed6c5c]"
           hintTitle="Upvote us on Product Hunt"

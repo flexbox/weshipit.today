@@ -105,7 +105,7 @@ function StarterList({ records }) {
   );
 }
 
-export default function ReactNativeToolsPage({ records }) {
+export default function ReactNativeStartersPage({ records }) {
   const recordsNumber = round(records.length, -1);
 
   return (
@@ -121,7 +121,7 @@ export default function ReactNativeToolsPage({ records }) {
       }
       withFooter
     >
-      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+      <div className="mx-auto mb-6 max-w-6xl px-4 sm:px-6">
         <Hero
           title={
             <>

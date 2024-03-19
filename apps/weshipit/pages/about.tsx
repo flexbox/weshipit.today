@@ -41,7 +41,7 @@ export default function AboutPage({ clients }) {
       withAccessoryRight={<HeaderLinksOnboarding />}
     >
       <Prose className="m-auto my-16">
-        <h1>Hire top React Native developers</h1>
+        <h1>You might already know us</h1>
         <p>
           We are software developer, product makers, growth hackers, with a
           focus on engineering community best practices.
@@ -60,7 +60,7 @@ export default function AboutPage({ clients }) {
       <div className="m-auto my-24 flex justify-center">
         <Button
           variant="primary"
-          href={linksApi.calendly.CONSULTATION}
+          href={linksApi.cal.CONSULTATION}
           size="xxl"
           as="a"
           isExternalLink
@@ -70,7 +70,7 @@ export default function AboutPage({ clients }) {
         </Button>
       </div>
       <Prose className="m-auto my-12">
-        <h2>Are you looking for experience React Native Developer?</h2>
+        <h2>Hire top React Native developers</h2>
         <p>
           Our experience and expertise let us build the scalable TypeScript
           applications and long-term partnerships. As indie hackers, we ship
@@ -224,7 +224,7 @@ export default function AboutPage({ clients }) {
       <div className="flex justify-center py-12">
         <Button
           variant="primary"
-          href={linksApi.calendly.CONSULTATION}
+          href={linksApi.cal.CONSULTATION}
           size="xxl"
           as="a"
           isExternalLink
