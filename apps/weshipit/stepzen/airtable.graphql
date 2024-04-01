@@ -94,3 +94,27 @@ type Query {
       configuration: "airtable_config"
     )
 }
+
+# FRENCH REACT NATIVE APPS
+type FrenchAppsField {
+  name: String!
+  website_url: String
+  ios_url: String
+  android_url: String
+  category: String
+}
+
+type FrenchAppsRecord {
+  id: ID!
+  createdTime: String!
+  fields: FrenchAppsField!
+}
+
+type Query {
+  getFrenchAppsRecords: [FrenchAppsRecord!]!
+    @rest(
+      resultroot: "records[]"
+      endpoint: "https://api.airtable.com/v0/$baseid/french_apps"
+      configuration: "airtable_config"
+    )
+}
