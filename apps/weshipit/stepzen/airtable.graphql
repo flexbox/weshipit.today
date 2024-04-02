@@ -101,7 +101,7 @@ type FrenchAppsField {
   website_url: String
   ios_url: String
   android_url: String
-  category: String
+  category: String!
 }
 
 type FrenchAppsRecord {
