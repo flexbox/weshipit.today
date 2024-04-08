@@ -1,6 +1,8 @@
 import { Hyperlink } from '../hyperlink/hyperlink';
 import Link from 'next/link';
 import { SVGProps } from 'react';
+import Button from '../button/button';
+import LinkButton from '../button/link-button';
 
 const navigation = {
   solutions: [
@@ -129,6 +131,9 @@ export function Footer() {
                       <FooterLink {...item} />
                     </li>
                   ))}
+                  <li>
+                    <LinkButton href="/pricing">Work with us</LinkButton>
+                  </li>
                 </ul>
               </div>
               <div>

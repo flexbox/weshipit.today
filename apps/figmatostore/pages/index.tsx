@@ -59,7 +59,7 @@ const IndexPage = () => (
               >
                 <div className="shrink-0">
                   <Gravatar
-                    className="h-12 w-12 rounded-full border-2 border-white"
+                    className="size-12 rounded-full border-2 border-white"
                     email="dleuliette@gmail.com"
                   />
                 </div>
