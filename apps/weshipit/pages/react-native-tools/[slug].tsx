@@ -132,7 +132,7 @@ export function ReactNativeSlugPage({
               />
               <Button
                 href={website_url}
-                variant="secondary"
+                variant="outline"
                 as="a"
                 isExternalLink={true}
                 size="xl"
@@ -142,7 +142,7 @@ export function ReactNativeSlugPage({
               {github_url && (
                 <Button
                   href={github_url}
-                  variant="secondary"
+                  variant="outline"
                   as="a"
                   isExternalLink={true}
                   size="xl"
@@ -153,7 +153,7 @@ export function ReactNativeSlugPage({
               {twitter_url && (
                 <Button
                   href={twitter_url}
-                  variant="secondary"
+                  variant="outline"
                   as="a"
                   isExternalLink={true}
                   size="xl"

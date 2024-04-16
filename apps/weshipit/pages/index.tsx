@@ -65,7 +65,7 @@ export default function IndexPage({ clients }: clientsPageProps) {
             <Text as="h2" variant="p2">
               Trusted by top companies
             </Text>
-            <LinkButton href="/clients" variant="secondary" size="lg">
+            <LinkButton href="/clients" variant="outline" size="lg">
               View our client list
             </LinkButton>
           </div>

@@ -47,8 +47,8 @@ export default function PricingPage() {
             Subscribe Today
           </Button>
           <LinkButton
-            variant="link"
-            href="/onboarding"
+            variant="ghost"
+            href={linksApi.cal.CONSULTATION}
             size="xl"
             className="justify-center"
           >

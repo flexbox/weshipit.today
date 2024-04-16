@@ -36,7 +36,7 @@ export function CardConsultation({ gravatarSize }: CardConsultationProps) {
           </p>
           <LinkButton
             as="a"
-            variant="secondary"
+            variant="outline"
             href="/onboarding"
             className="mt-4"
           >

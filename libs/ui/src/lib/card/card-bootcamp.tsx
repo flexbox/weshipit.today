@@ -31,7 +31,7 @@ export function CardBootcamp({ imageSize }: CardImageProps) {
             The ultimate way to learn React Native.
           </p>
           <Button
-            variant="secondary"
+            variant="outline"
             as="a"
             href="https://davidl.fr/bootcamp"
             className="mt-4"

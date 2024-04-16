@@ -94,7 +94,7 @@ function Discover() {
           href="/onboarding"
           size="xl"
           className="no-underline"
-          variant="secondary"
+          variant="outline"
         >
           Start now
         </LinkButton>
@@ -234,7 +234,7 @@ function Benefits() {
           href="/onboarding"
           size="xl"
           className="mt-6 no-underline"
-          variant="secondary"
+          variant="outline"
         >
           Book a call
         </LinkButton>

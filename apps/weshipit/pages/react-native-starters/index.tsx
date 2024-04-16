@@ -77,7 +77,7 @@ function StarterList({ records }) {
               {github_url && (
                 <Button
                   href={github_url}
-                  variant="secondary"
+                  variant="outline"
                   as="a"
                   isExternalLink={true}
                   size="xl"
@@ -89,7 +89,7 @@ function StarterList({ records }) {
               {website_url && (
                 <Button
                   href={website_url}
-                  variant="secondary"
+                  variant="outline"
                   as="a"
                   isExternalLink={true}
                   size="xl"

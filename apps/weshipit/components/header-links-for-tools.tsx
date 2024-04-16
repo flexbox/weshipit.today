@@ -13,7 +13,7 @@ export function HeaderLinksForTools({
   return (
     <div className="flex gap-2">
       <Button
-        variant="secondary"
+        variant="outline"
         as="a"
         className="px-2"
         href="https://flexbox.gumroad.com/l/expo-checklist"

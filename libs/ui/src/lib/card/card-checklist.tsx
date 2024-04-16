@@ -30,7 +30,7 @@ export function CardChecklist({ imageSize }: CardImageProps) {
           </p>
           <Button
             as={'a'}
-            variant="secondary"
+            variant="outline"
             href="https://flexbox.gumroad.com/l/expo-checklist"
             className="mt-4"
             isExternalLink={true}

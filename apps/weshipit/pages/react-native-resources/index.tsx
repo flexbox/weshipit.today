@@ -72,7 +72,7 @@ function ResourceList({ records }) {
               {website_url && (
                 <Button
                   href={website_url}
-                  variant="secondary"
+                  variant="outline"
                   as="a"
                   isExternalLink={true}
                   className="mr-4"
@@ -83,7 +83,7 @@ function ResourceList({ records }) {
               {youtube_url && (
                 <Button
                   href={youtube_url}
-                  variant="secondary"
+                  variant="outline"
                   as="a"
                   isExternalLink={true}
                   className="mr-4"
@@ -94,7 +94,7 @@ function ResourceList({ records }) {
               {slack_url && (
                 <Button
                   href={slack_url}
-                  variant="secondary"
+                  variant="outline"
                   as="a"
                   isExternalLink={true}
                   className="mr-4"
@@ -105,7 +105,7 @@ function ResourceList({ records }) {
               {discord_url && (
                 <Button
                   href={discord_url}
-                  variant="secondary"
+                  variant="outline"
                   as="a"
                   isExternalLink={true}
                 >

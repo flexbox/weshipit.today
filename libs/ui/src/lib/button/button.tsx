@@ -9,7 +9,6 @@ export const buttonVariants = cva(
     'focus-visible:outline-2',
     'focus-visible:outline-offset-2',
     'font-semibold',
-    'shadow-sm',
     'transition',
     'active:scale-105',
     'disabled:opacity-50',
@@ -19,6 +18,7 @@ export const buttonVariants = cva(
     variants: {
       variant: {
         primary: [
+          'shadow-sm',
           'bg-blue-600',
           'text-white',
           'hover:bg-blue-500',
@@ -29,6 +29,13 @@ export const buttonVariants = cva(
           'dark:focus-visible:outline-blue-500',
         ],
         secondary: [
+          'shadow-sm',
+          'bg-blue-50',
+          'text-blue-600',
+          'hover:bg-blue-100',
+        ],
+        outline: [
+          'shadow-sm',
           'bg-white',
           'text-gray-900',
           'ring-1',
@@ -40,7 +47,7 @@ export const buttonVariants = cva(
           'dark:bg-white/10',
           'dark:hover:bg-white/20',
         ],
-        link: [
+        ghost: [
           'text-gray-900',
           'dark:text-white',
           'hover:bg-gray-50',

@@ -245,7 +245,7 @@ export default function AboutPage({ clients }) {
           <div className="not-prose">
             <LinkButton
               href="/images/weshipit.today-logo.png"
-              variant="secondary"
+              variant="outline"
             >
               Download
             </LinkButton>
@@ -256,10 +256,7 @@ export default function AboutPage({ clients }) {
             websites and projects.
           </p>
           <div className="not-prose">
-            <LinkButton
-              href="https://design.weshipit.today"
-              variant="secondary"
-            >
+            <LinkButton href="https://design.weshipit.today" variant="outline">
               Check it out
             </LinkButton>
           </div>

@@ -16,7 +16,7 @@ export function BannerProductHunt() {
         </Text>
 
         <Button
-          variant="secondary"
+          variant="outline"
           size="sm"
           as="a"
           href="https://www.producthunt.com/@flexbox"

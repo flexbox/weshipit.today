@@ -5,11 +5,11 @@ import { LinkButton } from '../button/link-button';
 export function HeaderLinksOnboarding() {
   return (
     <div className="flex gap-2">
-      <LinkButton variant="secondary" href="/pricing" size="xl">
+      <LinkButton variant="outline" href="/pricing" size="xl">
         Pricing
       </LinkButton>
       <Button
-        variant="secondary"
+        variant="outline"
         href="https://github.com/flexbox/weshipit.today"
         size="xl"
         as="a"

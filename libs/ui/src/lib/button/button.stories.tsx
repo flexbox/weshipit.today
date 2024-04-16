@@ -41,7 +41,7 @@ export const Accessory = () => (
       as="a"
       href="https://davidl.fr/"
       isExternalLink={true}
-      variant="secondary"
+      variant="outline"
     >
       a href `isExternalLink`
     </Button>
@@ -50,17 +50,29 @@ export const Accessory = () => (
 
 export const Variants = () => (
   <div className="grid gap-4">
-    <Button as="a" href="https://weshipit.today" variant="primary">
+    <Button onClick={() => alert('click')} variant="primary">
       primary
     </Button>
-    <Button as="a" href="https://weshipit.today" variant="secondary">
+    <Button onClick={() => alert('click')} variant="secondary">
       secondary
     </Button>
-    <Button href="https://weshipit.today" variant="primary" disabled={true}>
-      primary
+    <Button onClick={() => alert('click')} variant="outline">
+      outline
     </Button>
-    <Button href="https://weshipit.today" variant="secondary" disabled={true}>
-      secondary
+    <Button onClick={() => alert('click')} variant="ghost">
+      ghost
+    </Button>
+    <Button onClick={() => alert('click')} variant="primary" disabled={true}>
+      primary disabled
+    </Button>
+    <Button onClick={() => alert('click')} variant="secondary" disabled={true}>
+      secondary disabled
+    </Button>
+    <Button onClick={() => alert('click')} variant="outline" disabled={true}>
+      outline disabled
+    </Button>
+    <Button onClick={() => alert('click')} variant="ghost" disabled={true}>
+      ghost disabled
     </Button>
   </div>
 );
@@ -85,22 +97,22 @@ export const Sizes = () => (
     <Button href="/" size="xxl">
       size xxl
     </Button>
-    <Button href="/" size="xs" variant="secondary">
+    <Button href="/" size="xs" variant="outline">
       size sx
     </Button>
-    <Button href="/" size="sm" variant="secondary">
+    <Button href="/" size="sm" variant="outline">
       size sm
     </Button>
-    <Button href="/" size="md" variant="secondary">
+    <Button href="/" size="md" variant="outline">
       size md
     </Button>
-    <Button href="/" size="lg" variant="secondary">
+    <Button href="/" size="lg" variant="outline">
       size lg
     </Button>
-    <Button href="/" size="xl" variant="secondary">
+    <Button href="/" size="xl" variant="outline">
       size xl
     </Button>
-    <Button href="/" size="xxl" variant="secondary">
+    <Button href="/" size="xxl" variant="outline">
       size xxl
     </Button>
   </div>
@@ -125,7 +137,7 @@ export const As = () => (
       as="a"
       href="https://davidl.fr/"
       isExternalLink={true}
-      variant="secondary"
+      variant="outline"
     >
       a href `isExternalLink`
     </Button>
@@ -133,7 +145,7 @@ export const As = () => (
       as="button"
       href="https://davidl.fr/"
       isExternalLink={true}
-      variant="secondary"
+      variant="outline"
     >
       primary `isExternalLink`
     </Button>

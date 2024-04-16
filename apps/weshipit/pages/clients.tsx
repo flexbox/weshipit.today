@@ -57,7 +57,7 @@ export default function ClientsPage({ clients }: clientsPageProps) {
         <Text as="p" variant="p1" className="mb-2">
           is your company missing?
         </Text>
-        <LinkButton href="/onboarding" size="xl" variant="secondary">
+        <LinkButton href="/onboarding" size="xl" variant="outline">
           Add your logo today
         </LinkButton>
       </section>
