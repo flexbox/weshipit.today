@@ -102,6 +102,42 @@ type FrenchAppsField {
   ios_url: String
   android_url: String
   category: String!
+  logo: [AttachmentType]
+}
+
+type Full {
+  url: String
+  width: Int
+  height: Int
+}
+
+type Large {
+  url: String
+  width: Int
+  height: Int
+}
+
+type Small {
+  url: String
+  width: Int
+  height: Int
+}
+
+type Thumbnails {
+  full: Full
+  large: Large
+  small: Small
+}
+
+type AttachmentType {
+  id: String
+  width: Int
+  height: Int
+  url: String
+  filename: String
+  size: Int
+  type: String
+  thumbnails: Thumbnails
 }
 
 type FrenchAppsRecord {

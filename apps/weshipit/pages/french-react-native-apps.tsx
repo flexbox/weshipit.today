@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Card, Hero, LinkButton, Prose } from '@weshipit/ui';
 
 import { Layout } from '../components/layout';
@@ -12,6 +13,9 @@ type FrenchApp = {
     ios_url?: string;
     android_url?: string;
     category: string;
+    logo: {
+      url: string;
+    };
   };
 };
 
@@ -26,13 +30,15 @@ export async function getStaticProps() {
             ios_url
             category
             website_url
+            logo {
+              url
+            }
           }
         }
       }
     `,
   });
   const records: FrenchApp[] = data.getFrenchAppsRecords;
-  console.log('🚀 ~ getStaticProps ~ records:', records);
 
   return {
     props: {
@@ -47,7 +53,6 @@ export default function FrenchReactNativePage({
   console.log('🚀 ~ records:', records);
   const currentYear = new Date().getFullYear();
   const heroTitle = `French companies using React Native in ${currentYear}`;
-
   return (
     <Layout
       withHeader
@@ -66,17 +71,16 @@ export default function FrenchReactNativePage({
         </p>
       </Prose>
       <ul className="my-8">
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
           {records.map((record) => (
             <Card key={record.fields.name} size={'md'}>
               <Prose>
                 <div className="flex gap-4">
-                  {/* <img
-                src={record.fields.logo[0].url}
-                alt={record.fields.name}
-                className="size-24 rounded-full object-cover"
-              /> */}
-                  ici image
+                  <img
+                    src={record.fields.logo[0].url}
+                    alt={record.fields.name}
+                    className="size-28 rounded-md"
+                  />
                   <div className="m-auto w-2/3">
                     <h3 className="mt-0">{record.fields.name}</h3>
                     <p>{record.fields.category}</p>
