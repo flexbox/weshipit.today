@@ -1,10 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
-import { Card, Hero, LinkButton, Prose } from '@weshipit/ui';
+import {
+  AppBadge,
+  Card,
+  Hero,
+  Hyperlink,
+  LinkButton,
+  Prose,
+} from '@weshipit/ui';
 
 import { Layout } from '../components/layout';
 import client from './api/apollo-client';
 import { gql } from '@apollo/client';
 import { InferGetStaticPropsType } from 'next/types';
+import Image from 'next/image';
 
 type FrenchApp = {
   fields: {
@@ -50,7 +58,6 @@ export async function getStaticProps() {
 export default function FrenchReactNativePage({
   records,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
-  console.log('🚀 ~ records:', records);
   const currentYear = new Date().getFullYear();
   const heroTitle = `French companies using React Native in ${currentYear}`;
   return (
@@ -66,51 +73,62 @@ export default function FrenchReactNativePage({
         <p>
           We are building a list of French iOS and Android apps apps that are
           using React Native in {currentYear}. If you’re working in a French
-          company that uses React Native, <a href={''}>add your app</a> to the
-          list.
+          company that uses React Native,{' '}
+          <a
+            href={
+              'https://airtable.com/appLcVC7NmRBu1itw/pagxKprcd7i0tLxML/form'
+            }
+          >
+            add your app
+          </a>{' '}
+          to the list.
         </p>
       </Prose>
       <ul className="my-8">
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
           {records.map((record) => (
             <Card key={record.fields.name} size={'md'}>
               <Prose>
-                <div className="flex gap-4">
-                  <img
-                    src={record.fields.logo[0].url}
-                    alt={record.fields.name}
-                    className="size-28 rounded-md"
+                <Image
+                  src={record.fields.logo[0].url}
+                  width={96}
+                  height={96}
+                  alt={record.fields.name}
+                  className=" rounded-lg"
+                />
+                <div className="mb-4 flex justify-start gap-4">
+                  <AppBadge link={record.fields.website_url as string} />
+                  <AppBadge link={record.fields.ios_url as string} iOS />
+                  <AppBadge
+                    link={record.fields.android_url as string}
+                    android
                   />
-                  <div className="m-auto w-2/3">
-                    <h3 className="mt-0">{record.fields.name}</h3>
-                    <p>{record.fields.category}</p>
-                    <div className="flex gap-4">
-                      <a
-                        href={record.fields.website_url}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        Website
-                      </a>
+                  {/* <Hyperlink
+                    href={record.fields.website_url as string}
+                    isExternal
+                    noIcon
+                  >
+                    Website
+                  </Hyperlink>
 
-                      <a
-                        href={record.fields.ios_url}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        iOS
-                      </a>
+                  <Hyperlink
+                    href={record.fields.ios_url as string}
+                    isExternal
+                    noIcon
+                  >
+                    iOS
+                  </Hyperlink>
 
-                      <a
-                        href={record.fields.android_url}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        Android
-                      </a>
-                    </div>
-                  </div>
+                  <Hyperlink
+                    href={record.fields.android_url as string}
+                    isExternal
+                    noIcon
+                  >
+                    Android
+                  </Hyperlink> */}
                 </div>
+                <h3 className="mt-0">{record.fields.name}</h3>
+                <p>{record.fields.category}</p>
               </Prose>
             </Card>
           ))}
