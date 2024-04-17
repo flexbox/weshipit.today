@@ -10,6 +10,7 @@ const navigation = {
     { name: 'React Native Tools', href: '/react-native-tools' },
     { name: 'React Native Starters', href: '/react-native-starters' },
     { name: 'React Native Audit', href: '/audit' },
+    { name: 'React Native Apps 🇫🇷 ', href: '/french-react-native-apps' },
   ],
   company: [
     { name: 'Consulting', href: '/consulting' },
@@ -117,7 +118,7 @@ export function Footer() {
       <h2 id="footer-heading" className="sr-only">
         weshipit.today
       </h2>
-      <div className="mx-auto max-w-7xl px-4 py-12 opacity-50 hover:opacity-100 sm:px-6 lg:px-8 lg:py-16">
+      <div className="mx-auto max-w-7xl px-4 py-12 opacity-60 transition-opacity hover:opacity-100 sm:px-6 lg:px-8 lg:py-16">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:grid-cols-2 md:gap-8">
