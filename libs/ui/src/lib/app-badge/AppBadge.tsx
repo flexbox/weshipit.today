@@ -11,7 +11,7 @@ export function AppBadge({ iOS, android, link }: AppBadgeProps) {
   return (
     <Hyperlink isExternal noIcon href={link} className="no-underline">
       <Badge size={'md'}>
-        {iOS && ' iOS'}
+        {iOS && '🍎 iOS'}
         {android && '🤖 Android'}
         {iOS || android ? '' : '🌐 Web'}
       </Badge>
