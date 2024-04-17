@@ -1,4 +1,4 @@
-import { AppBadge, Card, Hero, Prose, Text } from '@weshipit/ui';
+import { AppBadge, Card, Hero, LinkButton, Prose, Text } from '@weshipit/ui';
 import { Layout } from '../components/layout';
 import client from './api/apollo-client';
 import { gql } from '@apollo/client';
@@ -57,9 +57,13 @@ export default function FrenchReactNativePage({
 
   return (
     <Layout
-      withHeader
       withFooter
       withContainer
+      withAccessoryRight={
+        <LinkButton size={'lg'} href="/pricing">
+          Work with us
+        </LinkButton>
+      }
       seoTitle="React Native Usage Among French Companies"
       seoDescription="Discover how French companies like BlaBlaCar, Doctolib, Ledger, and Shine are harnessing the power of React Native to create robust mobile applications."
     >
