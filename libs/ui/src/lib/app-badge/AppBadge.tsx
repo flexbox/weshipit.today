@@ -1,6 +1,5 @@
 import { Hyperlink } from '../hyperlink/hyperlink';
 import { Badge } from '../badge/badge';
-import { appleLogo, simpleAppleLogo } from './AppsIcons';
 
 export interface AppBadgeProps {
   iOS?: boolean;
@@ -12,9 +11,9 @@ export function AppBadge({ iOS, android, link }: AppBadgeProps) {
   return (
     <Hyperlink isExternal noIcon href={link} className="no-underline">
       <Badge size={'md'}>
-        {iOS && 'iOS'}
-        {android && 'Android'}
-        {iOS || android ? '' : 'Web'}
+        {iOS && ' iOS'}
+        {android && '🤖 Android'}
+        {iOS || android ? '' : '🌐 Web'}
       </Badge>
     </Hyperlink>
   );
