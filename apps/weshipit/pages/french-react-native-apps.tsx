@@ -39,6 +39,7 @@ export async function getStaticProps() {
     `,
   });
   const records: FrenchApp[] = data.getFrenchAppsRecords;
+  console.log('🚀 ~ getStaticProps ~ records:', records);
   const categorizedApps = formatAppsByCategory(records);
 
   return {
