@@ -1,4 +1,4 @@
-import type { ComponentStory, Meta } from '@storybook/react';
+import type { StoryFn, Meta } from '@storybook/react';
 import { Badge } from './badge';
 
 const Story: Meta<typeof Badge> = {
@@ -7,11 +7,10 @@ const Story: Meta<typeof Badge> = {
 };
 export default Story;
 
-const Template: ComponentStory<typeof Badge> = (args) => <Badge {...args} />;
-
-export const Primary = Template.bind({});
-Primary.args = {
-  children: 'Primary',
+export const Primary = {
+  args: {
+    children: 'Primary',
+  },
 };
 
 const VariantExamples = () => (
@@ -30,7 +29,10 @@ const VariantExamples = () => (
     <Badge variant="gray-darker">Misc</Badge>
   </div>
 );
-export const Variant = VariantExamples.bind({});
+
+export const Variant = {
+  render: VariantExamples,
+};
 
 const SizeExamples = () => (
   <div className="grid gap-4">
@@ -38,4 +40,7 @@ const SizeExamples = () => (
     <Badge size="md">Infrastructure</Badge>
   </div>
 );
-export const Size = SizeExamples.bind({});
+
+export const Size = {
+  render: SizeExamples,
+};

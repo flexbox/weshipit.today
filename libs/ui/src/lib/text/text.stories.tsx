@@ -1,4 +1,4 @@
-import { ComponentStory, Meta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 import { Text } from './text';
 
 export default {
@@ -37,7 +37,9 @@ const VariantExamples = () => (
     </Text>
   </div>
 );
-export const Variant = VariantExamples.bind({});
+export const Variant = {
+  render: VariantExamples,
+};
 
 const SizeExamples = () => (
   <div className="grid gap-4">
@@ -61,4 +63,6 @@ const SizeExamples = () => (
     </Text>
   </div>
 );
-export const Size = SizeExamples.bind({});
+export const Size = {
+  render: SizeExamples,
+};
