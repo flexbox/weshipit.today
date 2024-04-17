@@ -75,37 +75,39 @@ export default function FrenchReactNativePage({
           to the list.
         </p>
       </Prose>
-      {categorizedApps.map((category) => (
-        <div key={category.category}>
-          <Text variant={'h4'} as={'h2'} className="mb-8 mt-12 capitalize">
-            {category.category}
-          </Text>
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
-            {category.apps.map((app) => (
-              <Card key={app.name} size={'md'}>
-                <Prose>
-                  <Image
-                    src={app.logo_url}
-                    width={96}
-                    height={96}
-                    alt={app.name}
-                    className="rounded-lg"
-                  />
-                  <div className="mb-4 flex justify-start gap-4">
-                    <AppBadge link={app.website_url} />
-                    {app.ios_url && <AppBadge link={app.ios_url} iOS />}
-                    {app.android_url && (
-                      <AppBadge link={app.android_url} android />
-                    )}
-                  </div>
-                  <h3 className="mt-0">{app.name}</h3>
-                  <p>{app.category}</p>
-                </Prose>
-              </Card>
-            ))}
+      <div className="mb-24">
+        {categorizedApps.map((category) => (
+          <div key={category.category}>
+            <Text variant={'h4'} as={'h2'} className="mb-8 mt-12 capitalize">
+              {category.category}
+            </Text>
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
+              {category.apps.map((app) => (
+                <Card key={app.name} size={'md'}>
+                  <Prose>
+                    <Image
+                      src={app.logo_url}
+                      width={96}
+                      height={96}
+                      alt={app.name}
+                      className="rounded-lg bg-slate-300 dark:bg-slate-700"
+                    />
+                    <div className="mb-4 flex justify-start gap-4">
+                      <AppBadge link={app.website_url} />
+                      {app.ios_url && <AppBadge link={app.ios_url} iOS />}
+                      {app.android_url && (
+                        <AppBadge link={app.android_url} android />
+                      )}
+                    </div>
+                    <h3 className="mt-0">{app.name}</h3>
+                    <p>{app.category}</p>
+                  </Prose>
+                </Card>
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </Layout>
   );
 }
