@@ -7,6 +7,8 @@ export const linksApi = {
     RESOURCES_FORM: 'https://airtable.com/appLcVC7NmRBu1itw/shrWiSoEoiToGa7pB',
     TEMPLATE_FORM: 'https://airtable.com/appLcVC7NmRBu1itw/shrPvK2WNmqZv3TIQ',
     TOOLS_FORM: 'https://airtable.com/shrKPA2DGcG8xnQGG',
+    FRENCH_REACT_NATIVE_APPS_FORM:
+      'https://airtable.com/appLcVC7NmRBu1itw/pagxKprcd7i0tLxML/form',
   },
   stripe: {
     MONTHLY_PLAN:

@@ -1,10 +1,19 @@
-import { AppBadge, Card, Hero, LinkButton, Prose, Text } from '@weshipit/ui';
+import {
+  AppBadge,
+  Button,
+  Card,
+  Hero,
+  LinkButton,
+  Prose,
+  Text,
+} from '@weshipit/ui';
 import { Layout } from '../components/layout';
 import client from './api/apollo-client';
 import { gql } from '@apollo/client';
 import { InferGetStaticPropsType } from 'next/types';
 import Image from 'next/image';
 import { formatAppsByCategory } from '../components/french-react-native-apps/format-apps-by-category';
+import { linksApi } from './api/links';
 
 type FrenchApp = {
   fields: {
@@ -39,7 +48,6 @@ export async function getStaticProps() {
     `,
   });
   const records: FrenchApp[] = data.getFrenchAppsRecords;
-  console.log('🚀 ~ getStaticProps ~ records:', records);
   const categorizedApps = formatAppsByCategory(records);
 
   return {
@@ -73,7 +81,7 @@ export default function FrenchReactNativePage({
           We are building a list of French iOS and Android apps that are using
           React Native in {currentYear}. If you’re working in a French company
           that uses React Native,{' '}
-          <a href="https://airtable.com/appLcVC7NmRBu1itw/pagxKprcd7i0tLxML/form">
+          <a href={linksApi.airtable.FRENCH_REACT_NATIVE_APPS_FORM}>
             add your app
           </a>{' '}
           to the list.
@@ -110,6 +118,22 @@ export default function FrenchReactNativePage({
             </div>
           </div>
         ))}
+        <Card
+          size={'sm'}
+          className="m-auto my-24 items-center justify-center p-8 text-center"
+          variant={'gradient-purple'}
+        >
+          <Text variant={'h4'} as={'h2'} className="my-12">
+            Join the list of French companies using React Native 🚀
+          </Text>
+          <LinkButton
+            size={'xxl'}
+            href={linksApi.airtable.FRENCH_REACT_NATIVE_APPS_FORM}
+            className="mb-12"
+          >
+            Add your app
+          </LinkButton>
+        </Card>
       </div>
     </Layout>
   );
