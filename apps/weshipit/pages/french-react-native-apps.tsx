@@ -88,24 +88,23 @@ export default function FrenchReactNativePage({
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-3">
               {category.apps.map((app) => (
                 <Card key={app.name} size={'md'}>
-                  <Prose>
-                    <Image
-                      src={app.logo_url}
-                      width={96}
-                      height={96}
-                      alt={app.name}
-                      className="rounded-lg bg-slate-300 dark:bg-slate-700"
-                    />
-                    <div className="mb-4 flex justify-start gap-4">
-                      <AppBadge link={app.website_url} />
-                      {app.ios_url && <AppBadge link={app.ios_url} iOS />}
-                      {app.android_url && (
-                        <AppBadge link={app.android_url} android />
-                      )}
-                    </div>
-                    <h3 className="mt-0">{app.name}</h3>
-                    <p>{app.category}</p>
-                  </Prose>
+                  <Image
+                    src={app.logo_url}
+                    width={96}
+                    height={96}
+                    alt={app.name}
+                    className="rounded-lg bg-slate-300 dark:bg-slate-700"
+                  />
+                  <Text variant="s2" as="h3" className="my-4 ml-1 font-bold">
+                    {app.name}
+                  </Text>
+                  <div className="mb-4 flex justify-start gap-4">
+                    <AppBadge link={app.website_url} />
+                    {app.ios_url && <AppBadge link={app.ios_url} iOS />}
+                    {app.android_url && (
+                      <AppBadge link={app.android_url} android />
+                    )}
+                  </div>
                 </Card>
               ))}
             </div>
