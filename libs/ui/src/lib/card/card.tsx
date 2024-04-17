@@ -37,6 +37,12 @@ const card = cva(
           'ring-blue-200/20',
           'cursor-pointer hover:shadow-lg',
         ],
+        'gradient-purple-dark': [
+          'bg-gradient-to-tr from-slate-200 to-slate-300',
+          'dark:bg-gradient-to-bl dark:from-blue-900 dark:to-slate-900',
+          'dark:ring-white/10',
+          'ring-blue-300/20',
+        ],
         red: [
           '!bg-red-50',
           '!ring-red-600/20',

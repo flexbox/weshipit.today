@@ -6,11 +6,13 @@ export interface HyperlinkProps {
   children: ReactNode;
   isExternal?: boolean;
   className?: string;
+  noIcon?: boolean;
 }
 
 export function Hyperlink({
   children,
   isExternal = false,
+  noIcon = false,
   ...rest
 }: HyperlinkProps) {
   if (isExternal) {
@@ -18,7 +20,9 @@ export function Hyperlink({
       <a target="_blank" rel="noopener noreferrer" {...rest}>
         <span className="flex items-center">
           {children}
-          <ArrowTopRightOnSquareIcon className="ml-1 size-4 text-gray-400" />
+          {noIcon ? null : (
+            <ArrowTopRightOnSquareIcon className="ml-1 size-4 text-gray-400" />
+          )}
         </span>
       </a>
     );

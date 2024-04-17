@@ -5,7 +5,7 @@ interface HeroProps {
   hintLink?: string;
   hintTitle?: string;
   hintDescription?: string;
-  title: string | React.ReactNode;
+  title?: string | React.ReactNode;
   description?: string | React.ReactNode;
   badgeStyle?: string;
 }
@@ -53,9 +53,11 @@ export function Hero({
             )}
           </div>
         )}
-        <Text variant="h2" as="h1">
-          {title}
-        </Text>
+        {title && (
+          <Text variant="h2" as="h1">
+            {title}
+          </Text>
+        )}
         {description && (
           <p className="text-lg leading-8 text-gray-500">{description}</p>
         )}

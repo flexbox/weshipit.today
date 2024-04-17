@@ -37,6 +37,17 @@ export const TextVariants = cva([''], {
         'lg:text-3xl',
         'xl:text-4xl',
       ],
+      h4: [
+        'text-neutral-950',
+        'text-xl',
+        'font-bold',
+        'tracking-tight',
+        'dark:text-neutral-200',
+        'sm:text-2xl',
+        'md:text-3xl',
+        'lg:text-2xl',
+        'xl:text-3xl',
+      ],
       s1: [
         'text-neutral-950',
         'text-xl sm:text-2xl md:text-3xl lg:text-2xl xl:text-3xl dark:text-neutral-200',
@@ -92,6 +103,7 @@ export interface TextProps
     | 'h1'
     | 'h2'
     | 'h3'
+    | 'h4'
     | 's1'
     | 's2'
     | 'p1'

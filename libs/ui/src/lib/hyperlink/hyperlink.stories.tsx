@@ -1,4 +1,4 @@
-import type { ComponentStory, Meta } from '@storybook/react';
+import type { StoryFn, Meta } from '@storybook/react';
 import { Hyperlink } from './hyperlink';
 
 const Story: Meta<typeof Hyperlink> = {
@@ -7,7 +7,7 @@ const Story: Meta<typeof Hyperlink> = {
 };
 export default Story;
 
-const Template: ComponentStory<typeof Hyperlink> = (args) => (
+const Template: StoryFn<typeof Hyperlink> = (args) => (
   <div className="grid gap-4">
     <Hyperlink href="https://davidl.fr" isExternal={true}>
       View the FAQs
@@ -29,5 +29,7 @@ const Template: ComponentStory<typeof Hyperlink> = (args) => (
   </div>
 );
 
-export const Primary = Template.bind({});
-Primary.args = {};
+export const Primary = {
+  render: Template,
+  args: {},
+};
