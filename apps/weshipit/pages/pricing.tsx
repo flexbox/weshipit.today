@@ -116,14 +116,16 @@ export default function PricingPage({ faq }: FaqSectionProps) {
             {faq.map((item) => (
               <div
                 key={item.id}
-                className=" cursor-pointer rounded-md px-4 py-12 hover:bg-gray-200"
+                className=" cursor-pointer rounded-md px-4 py-12 transition-colors duration-200 ease-in-out hover:bg-gray-200 dark:hover:bg-gray-800"
                 onClick={() => toggle(item.id)}
               >
                 <Text as={'h2'} variant="s2" className="my-4 font-semibold">
                   <PrismicRichText field={item.data.question} />
                 </Text>
                 {activeId === item.id && (
-                  <PrismicRichText field={item.data.answer} />
+                  <Text as="p" variant="p2">
+                    <PrismicRichText field={item.data.answer} />
+                  </Text>
                 )}
               </div>
             ))}
