@@ -10,8 +10,28 @@ import {
 
 import { linksApi } from './api/links';
 import { Layout } from '../components/layout';
+import { getAllFaq } from './api/faq';
+import { RichTextField } from '@prismicio/client/*';
+import { PrismicRichText } from '@prismicio/react';
 
-export default function PricingPage() {
+interface FaqProps {
+  id: string;
+  data: {
+    question: RichTextField;
+    answer: RichTextField;
+  };
+}
+
+interface FaqSectionProps {
+  faq: FaqProps[];
+}
+
+export default function PricingPage({ faq }: FaqSectionProps) {
+  console.log('🚀 ~ PricingPage ~ faq:', faq);
+  const test = faq.map((item) => {
+    console.log('🚀 ~ PricingPage ~ item:', item.data.question);
+  }, []);
+  console.log('🚀 ~ test ~ test:', test);
   return (
     <Layout
       withHeader
@@ -88,7 +108,27 @@ export default function PricingPage() {
             </ol>
           </Card>
         </Prose>
+        <div>
+          <Text as="h2" variant="h2" className="mb-12 mt-24">
+            Frequently Asked Questions
+          </Text>
+          <div>
+            {faq.map((item) => (
+              <div key={item.id} className="my-12">
+                <Prose>
+                  <PrismicRichText field={item.data.question} />
+                  <PrismicRichText field={item.data.answer} />
+                </Prose>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </Layout>
   );
 }
+
+PricingPage.getInitialProps = async function () {
+  const clients = await getAllFaq();
+  return clients;
+};
