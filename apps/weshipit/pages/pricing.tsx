@@ -133,3 +133,12 @@ export default function PricingPage({ faq }: FaqSectionProps) {
     </Layout>
   );
 }
+
+export async function getStaticProps() {
+  const { faq } = await getAllFaq();
+  return {
+    props: {
+      faq,
+    },
+  };
+}
