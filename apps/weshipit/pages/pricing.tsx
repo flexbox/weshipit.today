@@ -13,6 +13,7 @@ import { Layout } from '../components/layout';
 import { getAllFaq } from './api/faq';
 import { RichTextField } from '@prismicio/client/*';
 import { PrismicRichText } from '@prismicio/react';
+import { useState } from 'react';
 
 interface FaqProps {
   id: string;
@@ -27,11 +28,10 @@ interface FaqSectionProps {
 }
 
 export default function PricingPage({ faq }: FaqSectionProps) {
-  console.log('🚀 ~ PricingPage ~ faq:', faq);
-  const test = faq.map((item) => {
-    console.log('🚀 ~ PricingPage ~ item:', item.data.question);
-  }, []);
-  console.log('🚀 ~ test ~ test:', test);
+  const [activeId, setActiveId] = useState(null);
+  const toggle = (id) => {
+    setActiveId(activeId === id ? null : id);
+  };
   return (
     <Layout
       withHeader
@@ -112,13 +112,19 @@ export default function PricingPage({ faq }: FaqSectionProps) {
           <Text as="h2" variant="h2" className="mb-12 mt-24">
             Frequently Asked Questions
           </Text>
-          <div>
+          <div className="">
             {faq.map((item) => (
-              <div key={item.id} className="my-12">
-                <Prose>
+              <div
+                key={item.id}
+                className=" cursor-pointer rounded-md px-4 py-12 hover:bg-gray-200"
+                onClick={() => toggle(item.id)}
+              >
+                <Text as={'h2'} variant="s2" className="my-4 font-semibold">
                   <PrismicRichText field={item.data.question} />
+                </Text>
+                {activeId === item.id && (
                   <PrismicRichText field={item.data.answer} />
-                </Prose>
+                )}
               </div>
             ))}
           </div>
@@ -127,8 +133,3 @@ export default function PricingPage({ faq }: FaqSectionProps) {
     </Layout>
   );
 }
-
-PricingPage.getInitialProps = async function () {
-  const clients = await getAllFaq();
-  return clients;
-};
