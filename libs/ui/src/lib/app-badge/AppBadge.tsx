@@ -10,7 +10,7 @@ export interface AppBadgeProps {
 export function AppBadge({ iOS, android, link }: AppBadgeProps) {
   return (
     <Hyperlink isExternal noIcon href={link} className="no-underline">
-      <Badge size={'md'}>
+      <Badge size="md" variant="gray-light">
         {iOS && '🍎 iOS'}
         {android && '🤖 Android'}
         {iOS || android ? '' : '🌐 Web'}
