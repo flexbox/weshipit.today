@@ -1,8 +1,10 @@
 import {
+  AvatarAvenger,
   Badge,
   Button,
   Card,
   Hero,
+  Hyperlink,
   LinkButton,
   Prose,
   Text,
@@ -15,6 +17,7 @@ import { RichTextField, asHTML, asText } from '@prismicio/client';
 import { useState } from 'react';
 import Head from 'next/head';
 import { format } from 'date-fns';
+import Gravatar from 'react-gravatar';
 
 interface FaqProps {
   id: string;
@@ -65,6 +68,62 @@ function ScarcityBox() {
   );
 }
 
+function ProblemAgitation() {
+  const currentYear = new Date().getFullYear();
+  const yearsOfExperience = currentYear - 2016;
+
+  return (
+    <>
+      <p>
+        In {currentYear}, React Native development faces challenges due to
+        rapidly evolving technology and a growing demand for complex,
+        interactive apps. Developers must continually adapt and deliver
+        high-quality products without sacrificing performance or user
+        experience.
+      </p>
+
+      <div className="relative flex h-[164px] w-[124px] flex-row items-center justify-center sm:h-[124px]">
+        <Gravatar
+          className="rounded-full border-4 border-white"
+          size={64}
+          email="ducrocq.matthys@gmail.com"
+        />
+        <Gravatar
+          className="-ml-4 mr-4 rounded-full border-4 border-white"
+          size={64}
+          email="dleuliette@gmail.com"
+        />
+      </div>
+
+      <p>
+        My name is David and I have been primarily laser on React Native
+        development for the past {yearsOfExperience} years.
+      </p>
+      <p>
+        Unlike lengthy contracts that bind you for months and require a six-step
+        paperwork process, our service is available whenever you need it. You
+        have the freedom to pause or cancel at any time and can restart whenever
+        it suits you.
+      </p>
+
+      <p>
+        We can partner with you and your team on a rolling basis, or we can
+        enhance your team’s skills with a one-off workshop. We are flexible to
+        suit your needs.
+      </p>
+
+      <p>
+        We are going to present the details of our partnership below. However,
+        if you’re interested in workshops, you can directly{' '}
+        <Hyperlink href="https://davidl.fr/bootcamp">
+          jump to workshops
+        </Hyperlink>
+        .
+      </p>
+    </>
+  );
+}
+
 function HowItWorks() {
   return (
     <Prose>
@@ -72,7 +131,7 @@ function HowItWorks() {
       <div className="flex flex-col gap-12">
         <WorkflowCard step={1} title="You invite us as contributors.">
           <p>
-            We are working as developet on React Native. To ship your project to
+            We are working as developer on React Native. To ship your project to
             <code>preview</code> or <code>production</code>, we need access to{' '}
             <strong>Google Play Console</strong>,{' '}
             <strong>Apple App Store Connect</strong>, and <strong>Expo</strong>.
@@ -174,6 +233,22 @@ export default function IndexPage({ faqs }: FaqSectionProps) {
 
         <div className="m-auto mb-24 max-w-2xl flex-col">
           <ScarcityBox />
+
+          <Prose className="mb-24">
+            <ProblemAgitation />
+
+            <Button
+              href={linksApi.stripe.MONTHLY_PLAN}
+              as="a"
+              size="xxl"
+              isExternalLink
+              withExternalLinkIcon={false}
+              variant="outline"
+              className="no-underline"
+            >
+              Work with us
+            </Button>
+          </Prose>
 
           <HowItWorks />
 

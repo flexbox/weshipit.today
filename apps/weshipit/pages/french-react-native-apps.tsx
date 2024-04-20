@@ -113,15 +113,15 @@ export default function FrenchReactNativePage({
         ))}
       </div>
       <Card
-        size={'sm'}
-        className="m-auto my-24 items-center justify-center p-8 text-center"
-        variant={'gradient-purple'}
+        size="lg"
+        className="m-auto my-24 items-center justify-center text-center"
+        variant="gradient-purple"
       >
-        <Text variant={'h4'} as={'h2'} className="my-12">
+        <Text variant="h4" as="h2" className="my-12">
           Join the list of French companies using React Native 🚀
         </Text>
         <LinkButton
-          size={'xxl'}
+          size="xxl"
           href={linksApi.airtable.FRENCH_REACT_NATIVE_APPS_FORM}
           className="mb-12"
         >

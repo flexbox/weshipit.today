@@ -1,5 +1,4 @@
 import { Card } from './card';
-import Button from '../button/button';
 import Gravatar from 'react-gravatar';
 import Link from 'next/link';
 import LinkButton from '../button/link-button';
