@@ -1,12 +1,4 @@
-import {
-  AppBadge,
-  Button,
-  Card,
-  Hero,
-  LinkButton,
-  Prose,
-  Text,
-} from '@weshipit/ui';
+import { AppBadge, Card, Hero, LinkButton, Prose, Text } from '@weshipit/ui';
 import { Layout } from '../components/layout';
 import client from './api/apollo-client';
 import { gql } from '@apollo/client';
@@ -14,6 +6,7 @@ import { InferGetStaticPropsType } from 'next/types';
 import Image from 'next/image';
 import { formatAppsByCategory } from '../components/french-react-native-apps/format-apps-by-category';
 import { linksApi } from './api/links';
+import { kebabCase } from 'lodash';
 
 type FrenchApp = {
   fields: {
@@ -75,7 +68,7 @@ export default function FrenchReactNativePage({
       seoTitle="React Native Usage Among French Companies"
       seoDescription="Discover how French companies like BlaBlaCar, Doctolib, Ledger, and Shine are harnessing the power of React Native to create robust mobile applications."
     >
-      <Hero title={heroTitle}></Hero>
+      <Hero title={heroTitle} />
       <Prose size={'xl'} className="my-8">
         <p>
           We are building a list of French iOS and Android apps that are using
@@ -87,9 +80,9 @@ export default function FrenchReactNativePage({
           to the list.
         </p>
       </Prose>
-      <div className="mb-24">
+      <div className="mb-24 flex flex-col gap-24">
         {categorizedApps.map((category) => (
-          <div key={category.category}>
+          <section key={category.category} id={kebabCase(category.category)}>
             <Text variant={'h4'} as={'h2'} className="mb-8 mt-12 capitalize">
               {category.category}
             </Text>
@@ -106,7 +99,7 @@ export default function FrenchReactNativePage({
                   <Text variant="s2" as="h3" className="my-4 ml-1 font-bold">
                     {app.name}
                   </Text>
-                  <div className="mb-4 flex justify-start gap-4">
+                  <div className="flex justify-start gap-4">
                     <AppBadge link={app.website_url} />
                     {app.ios_url && <AppBadge link={app.ios_url} iOS />}
                     {app.android_url && (
@@ -116,25 +109,25 @@ export default function FrenchReactNativePage({
                 </Card>
               ))}
             </div>
-          </div>
+          </section>
         ))}
-        <Card
-          size={'sm'}
-          className="m-auto my-24 items-center justify-center p-8 text-center"
-          variant={'gradient-purple'}
-        >
-          <Text variant={'h4'} as={'h2'} className="my-12">
-            Join the list of French companies using React Native 🚀
-          </Text>
-          <LinkButton
-            size={'xxl'}
-            href={linksApi.airtable.FRENCH_REACT_NATIVE_APPS_FORM}
-            className="mb-12"
-          >
-            Add your app
-          </LinkButton>
-        </Card>
       </div>
+      <Card
+        size={'sm'}
+        className="m-auto my-24 items-center justify-center p-8 text-center"
+        variant={'gradient-purple'}
+      >
+        <Text variant={'h4'} as={'h2'} className="my-12">
+          Join the list of French companies using React Native 🚀
+        </Text>
+        <LinkButton
+          size={'xxl'}
+          href={linksApi.airtable.FRENCH_REACT_NATIVE_APPS_FORM}
+          className="mb-12"
+        >
+          Add your app
+        </LinkButton>
+      </Card>
     </Layout>
   );
 }
