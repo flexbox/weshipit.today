@@ -11,8 +11,8 @@ export const linksApi = {
       'https://airtable.com/appLcVC7NmRBu1itw/pagxKprcd7i0tLxML/form',
   },
   stripe: {
-    MONTHLY_PLAN:
-      'https://buy.stripe.com/00g03Ggnt4gee0E6oq?prefilled_promo_code=FIRSTMONTH50',
+    // MONTHLY_PLAN: 'https://buy.stripe.com/00g03Ggnt4gee0E6oq?prefilled_promo_code=FIRSTMONTH50',
+    MONTHLY_PLAN: 'https://buy.stripe.com/00g03Ggnt4gee0E6oq',
   },
   cal: {
     CONSULTATION: 'https://cal.com/davidl/30min',

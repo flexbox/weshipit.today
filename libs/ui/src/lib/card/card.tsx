@@ -10,7 +10,7 @@ const card = cva(
     'bg-white',
     'dark:bg-slate-800',
     'ring-2 ring-inset ring-transparent',
-    'shadow-none transition-shadow  duration-300 ease-in-out',
+    'shadow-none transition-shadow duration-300 ease-in-out',
   ],
   {
     variants: {
@@ -57,6 +57,7 @@ const card = cva(
         ],
       },
       size: {
+        xs: ['p-0'],
         sm: ['p-4'],
         md: ['p-6'],
         lg: ['p-8'],

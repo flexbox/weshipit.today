@@ -16,7 +16,7 @@ export function HeaderLinksOnboarding() {
         <StarIcon className="mr-2 size-5" />
         Star Us on GitHub
       </Button>
-      <LinkButton variant="primary" href="/pricing" size="xl">
+      <LinkButton variant="primary" href="/" size="xl">
         Work with us
       </LinkButton>
     </div>

@@ -6,7 +6,7 @@ import { InferGetStaticPropsType } from 'next/types';
 import Image from 'next/image';
 import { formatAppsByCategory } from '../components/french-react-native-apps/format-apps-by-category';
 import { linksApi } from './api/links';
-import { kebabCase } from 'lodash';
+import kebabCase from 'lodash/kebabCase';
 
 type FrenchApp = {
   fields: {
@@ -61,7 +61,7 @@ export default function FrenchReactNativePage({
       withFooter
       withContainer
       withAccessoryRight={
-        <LinkButton size={'lg'} href="/pricing">
+        <LinkButton size="lg" href="/">
           Work with us
         </LinkButton>
       }

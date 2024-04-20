@@ -1,7 +1,6 @@
 import { Hyperlink } from '../hyperlink/hyperlink';
 import Link from 'next/link';
 import { SVGProps } from 'react';
-import Button from '../button/button';
 import LinkButton from '../button/link-button';
 
 const navigation = {
@@ -16,6 +15,7 @@ const navigation = {
     { name: 'Consulting', href: '/consulting' },
     { name: 'Partners', href: '/clients' },
     { name: 'About', href: '/about' },
+    { name: 'Home', href: '/home' },
     {
       name: 'Sponsorship',
       href: 'https://github.com/sponsors/flexbox?frequency=one-time&sponsor=flexbox',
@@ -133,7 +133,7 @@ export function Footer() {
                     </li>
                   ))}
                   <li>
-                    <LinkButton href="/pricing">Work with us</LinkButton>
+                    <LinkButton href="/">Work with us</LinkButton>
                   </li>
                 </ul>
               </div>
