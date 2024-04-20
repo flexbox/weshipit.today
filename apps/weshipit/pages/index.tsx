@@ -18,6 +18,8 @@ import Head from 'next/head';
 import { format } from 'date-fns';
 import Gravatar from 'react-gravatar';
 import { Customer, getAllClients } from './api/client';
+import { Steps, getAllWorkflowSteps } from './api/workflow-steps';
+import { PrismicRichText } from '@prismicio/react';
 
 interface FaqProps {
   id: string;
@@ -30,6 +32,7 @@ interface FaqProps {
 interface IndexPageProps {
   faqs: FaqProps[];
   clients: Customer[];
+  steps: Steps[];
 }
 
 function CallToAction() {
@@ -136,11 +139,21 @@ function SocialProof({ clients }) {
   return <ClientsListHomepage clients={clients} />;
 }
 
-function HowDoesItWorks() {
+function HowDoesItWorks({ steps }: { steps: Steps[] }) {
   return (
     <Prose size="xl">
       <h2>How does it works when you subscribe?</h2>
       <div className="flex flex-col gap-12">
+        {steps.map((step) => (
+          <WorkflowCard
+            key={step.id}
+            step={step.data.step_number}
+            title={step.data.title}
+          >
+            <PrismicRichText field={step.data.description} />
+          </WorkflowCard>
+        ))}
+
         <WorkflowCard step={1} title="You invite us as contributors.">
           <p>
             We are working as React Native developers. To ship your project to{' '}
@@ -200,7 +213,7 @@ function HowDoesItWorks() {
   );
 }
 
-export default function IndexPage({ faqs, clients }: IndexPageProps) {
+export default function IndexPage({ faqs, clients, steps }: IndexPageProps) {
   const [activeId, setActiveId] = useState<string | null>(null);
   const toggle = (id: string) => {
     setActiveId(activeId === id ? null : id);
@@ -265,7 +278,7 @@ export default function IndexPage({ faqs, clients }: IndexPageProps) {
         <SocialProof clients={clients} />
 
         <div className="m-auto max-w-3xl">
-          <HowDoesItWorks />
+          <HowDoesItWorks steps={steps} />
         </div>
 
         <div className="m-auto max-w-2xl pt-12">
@@ -327,10 +340,13 @@ export default function IndexPage({ faqs, clients }: IndexPageProps) {
 export async function getStaticProps() {
   const { faqs } = await getAllFaqs();
   const { clients } = await getAllClients();
+  const { steps } = await getAllWorkflowSteps();
+
   return {
     props: {
       faqs,
       clients,
+      steps,
     },
   };
 }

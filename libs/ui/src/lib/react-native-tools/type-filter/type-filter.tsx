@@ -37,7 +37,7 @@ export function TypeFilter({ numberOfTools }: { numberOfTools: number }) {
           <Link href="/react-native-tools">
             <Badge variant="gray-light">
               Reset filter
-              <XMarkIcon className="ml-1 h-6 w-6" />
+              <XMarkIcon className="ml-1 size-6" />
             </Badge>
           </Link>
         </li>
@@ -47,7 +47,7 @@ export function TypeFilter({ numberOfTools }: { numberOfTools: number }) {
           <Link href={pathname + '?' + createQueryString('type', type.name)}>
             <Badge variant={type.color}>
               # {type.name}
-              <ChevronRightIcon className="ml-1 h-6 w-6" />
+              <ChevronRightIcon className="ml-1 size-6" />
             </Badge>
           </Link>
         </li>

@@ -17,7 +17,7 @@ export function ClientsListHomepage(data: ClientsListHomepageProps) {
                 alt={`logo of ${client.data.name} client of weshipit.today`}
                 width={250}
                 height={250}
-                className="size-32 opacity-50 grayscale transition duration-300 ease-in-out hover:opacity-100 hover:grayscale-0 dark:rounded-3xl dark:bg-white dark:p-4"
+                className="size-32 opacity-50 grayscale transition duration-300 ease-in-out hover:opacity-100 hover:grayscale-0 dark:rounded-xl dark:bg-white/90 dark:p-2"
               />
             </div>
           )
