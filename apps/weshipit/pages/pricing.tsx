@@ -9,9 +9,8 @@ import {
 } from '@weshipit/ui';
 import { linksApi } from './api/links';
 import { Layout } from '../components/layout';
-import { getAllFaq } from './api/faq';
-import { RichTextField } from '@prismicio/client';
-import { PrismicRichText } from '@prismicio/react';
+import { getAllFaqs } from './api/faq';
+import { RichTextField, asHTML, asText } from '@prismicio/client';
 import { useState } from 'react';
 import Head from 'next/head';
 
@@ -24,36 +23,33 @@ interface FaqProps {
 }
 
 interface FaqSectionProps {
-  faq: FaqProps[];
+  faqs: FaqProps[];
 }
 
-function generateStructuredData(faq) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faq.map(({ id, data }) => ({
-      '@type': 'Question',
-      name: data.question[0].text,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: data.answer[0].text,
-      },
-    })),
-  };
-}
-
-export default function PricingPage({ faq }: FaqSectionProps) {
+export default function PricingPage({ faqs }: FaqSectionProps) {
   const [activeId, setActiveId] = useState<string | null>(null);
   const toggle = (id: string) => {
     setActiveId(activeId === id ? null : id);
   };
-  const structuredData = generateStructuredData(faq);
+
+  /** @type {import('schema-dts').FAQPage} */
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(({ data }) => ({
+      '@type': 'Question',
+      name: asText(data.question),
+      acceptedAnswer: asHTML(data.answer),
+    })),
+  };
+
   return (
     <>
       <Head>
-        <script type="application/ld+json">
-          {JSON.stringify(structuredData)}
-        </script>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
       </Head>
       <Layout
         withHeader
@@ -136,18 +132,18 @@ export default function PricingPage({ faq }: FaqSectionProps) {
               Frequently Asked Questions
             </Text>
             <div className="">
-              {faq.map((item) => (
+              {faqs.map((item) => (
                 <div
                   key={item.id}
                   className="cursor-pointer rounded-md px-4 py-12 transition-colors duration-200 ease-in-out hover:bg-gray-200 dark:hover:bg-gray-800"
                   onClick={() => toggle(item.id)}
                 >
                   <Text as={'h2'} variant="s2" className="my-4 font-semibold">
-                    <PrismicRichText field={item.data.question} />
+                    {asText(item.data.question)}
                   </Text>
                   {activeId === item.id && (
                     <Text as="p" variant="p2">
-                      <PrismicRichText field={item.data.answer} />
+                      {asText(item.data.answer)}
                     </Text>
                   )}
                 </div>
@@ -161,10 +157,10 @@ export default function PricingPage({ faq }: FaqSectionProps) {
 }
 
 export async function getStaticProps() {
-  const { faq } = await getAllFaq();
+  const { faqs } = await getAllFaqs();
   return {
     props: {
-      faq,
+      faqs,
     },
   };
 }

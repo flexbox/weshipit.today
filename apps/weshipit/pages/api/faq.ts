@@ -1,11 +1,11 @@
 import { client as prismicClient } from './prismic';
 
-export async function getAllFaq() {
+export async function getAllFaqs() {
   try {
-    const faq = await prismicClient.getAllByType('faq');
+    const faqs = await prismicClient.getAllByType('faq');
 
     return {
-      faq: faq ? faq : [],
+      faqs: faqs ? faqs : [],
     };
   } catch (error) {
     console.error('getAllfaq -> error', error);
