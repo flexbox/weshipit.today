@@ -19,9 +19,9 @@ export function WorkflowCard({ step, title, children }: WorkflowCardProps) {
           className="m-0 rounded-lg bg-slate-300 dark:bg-slate-700"
         />
       </div>
-      <div>
+      <div className="px-6">
         <p>Step {step}</p>
-        <h3>{title}</h3>
+        <h3 className="mt-0">{title}</h3>
         {children}
       </div>
     </Card>

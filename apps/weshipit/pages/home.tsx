@@ -7,26 +7,14 @@ import {
   LinkButton,
   HeaderLinksOnboarding,
 } from '@weshipit/ui';
-import { getAllClients } from './api/client';
+import { Customer, getAllClients } from './api/client';
 import { Layout } from '../components/layout';
 
-interface ClientProps {
-  id: string;
-  data: {
-    name: string;
-    is_visible_homepage: boolean;
-    logo: {
-      url: string;
-    };
-    id: string;
-  };
+interface ClientsPageProps {
+  clients: Customer[];
 }
 
-interface clientsPageProps {
-  clients: ClientProps[];
-}
-
-export default function HomePage({ clients }: clientsPageProps) {
+export default function HomePage({ clients }: ClientsPageProps) {
   return (
     <Layout
       withContainer

@@ -1,5 +1,5 @@
 import { Layout } from '../components/layout';
-import { getAllClients } from './api/client';
+import { Customer, getAllClients } from './api/client';
 import {
   LinkButton,
   Text,
@@ -7,20 +7,8 @@ import {
   HeaderLinksOnboarding,
 } from '@weshipit/ui';
 
-interface ClientProps {
-  id: string;
-  data: {
-    name: string;
-    is_visible_homepage: boolean;
-    logo: {
-      url: string;
-    };
-    id: string;
-  };
-}
-
 interface clientsPageProps {
-  clients: ClientProps[];
+  clients: Customer[];
 }
 
 export default function ClientsPage({ clients }: clientsPageProps) {
