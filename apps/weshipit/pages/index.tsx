@@ -154,30 +154,6 @@ function HowDoesItWorks({ steps }: { steps: Steps[] }) {
           </WorkflowCard>
         ))}
 
-        <WorkflowCard step={1} title="You invite us as contributors.">
-          <p>
-            We are working as React Native developers. To ship your project to{' '}
-            <code>preview</code> or <code>production</code>, we need access to{' '}
-            <strong>Google Play Console</strong>,{' '}
-            <strong>Apple App Store Connect</strong>, and <strong>Expo</strong>.
-          </p>
-          <p>We will send you a Notion Checklist to speed up the process.</p>
-        </WorkflowCard>
-        <WorkflowCard
-          step={2}
-          title="You have features or fixes that need to be done."
-        >
-          <p>
-            Whether it’s big features, small fixes, or tricky workflows, no
-            matter the complexity, we’ve got your back.
-          </p>
-          <p>
-            We will provide you with a custom backlog tailored to your needs.
-            You can add any tasks requiring our attention to this backlog. There
-            are no limits or constraints.
-          </p>
-        </WorkflowCard>
-
         <Card variant="green">
           <ul>
             <li>Unlimited revisions.</li>
@@ -256,7 +232,7 @@ export default function IndexPage({ faqs, clients, steps }: IndexPageProps) {
           </Text>
         </Hero>
 
-        <div className="m-auto mb-24 max-w-2xl">
+        <div className="m-auto max-w-2xl">
           <CallToAction />
 
           <Prose className="mb-12" size="2xl">
@@ -275,7 +251,9 @@ export default function IndexPage({ faqs, clients, steps }: IndexPageProps) {
           </Button>
         </div>
 
-        <SocialProof clients={clients} />
+        <div className="mb-12 py-24">
+          <SocialProof clients={clients} />
+        </div>
 
         <div className="m-auto max-w-3xl">
           <HowDoesItWorks steps={steps} />
