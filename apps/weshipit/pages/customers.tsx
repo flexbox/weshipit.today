@@ -7,11 +7,11 @@ import {
   HeaderLinksOnboarding,
 } from '@weshipit/ui';
 
-interface CustomerPageProps {
+interface CustomersPageProps {
   clients: Customer[];
 }
 
-export default function CustomerPage({ clients }: CustomerPageProps) {
+export default function CustomersPage({ clients }: CustomersPageProps) {
   return (
     <Layout
       withContainer
@@ -53,7 +53,7 @@ export default function CustomerPage({ clients }: CustomerPageProps) {
   );
 }
 
-CustomerPage.getInitialProps = async function () {
+CustomersPage.getInitialProps = async function () {
   const clients = await getAllClients();
   return clients;
 };

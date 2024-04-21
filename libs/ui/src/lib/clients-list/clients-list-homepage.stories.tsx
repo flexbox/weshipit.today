@@ -1,4 +1,4 @@
-import { StoryFn, Meta } from '@storybook/react';
+import { Meta } from '@storybook/react';
 import { clientsListFixture } from './clients-list.fixture';
 import { ClientsListHomepage } from './clients-list-homepage';
 
