@@ -13,8 +13,8 @@ export function ClientsListHomepage(data: ClientsListHomepageProps) {
           client.data.is_visible_homepage && (
             <div className="flex justify-center" key={client.id}>
               <Image
-                src={client.data.logo.url}
-                alt={`logo of ${client.data.name} client of weshipit.today`}
+                src={client.data.logo?.url || ''}
+                alt={`${client.data.name} logo`}
                 width={250}
                 height={250}
                 className="size-32 opacity-50 grayscale transition duration-300 ease-in-out hover:opacity-100 hover:grayscale-0 dark:rounded-xl dark:bg-white/90 dark:p-2"
