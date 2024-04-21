@@ -1,3 +1,5 @@
+import Image from 'next/image';
+import { Card } from '../card/card';
 import { Text } from '../text/text';
 
 export interface ClientProps {
@@ -5,7 +7,7 @@ export interface ClientProps {
   data: {
     name: string;
     is_visible_homepage: boolean;
-    logo: {
+    logo?: {
       url: string;
     };
     id: string;
@@ -18,14 +20,27 @@ export interface ClientsListProps {
 
 export function ClientsList({ clients }: ClientsListProps) {
   return (
-    <ul className="grid gap-4">
+    <div className="grid auto-rows-fr gap-4 md:grid-cols-3">
       {clients.map((client) => (
-        <li key={client.id}>
-          <Text as="p" variant={'s2'}>
-            {client.data.name}
-          </Text>
-        </li>
+        <Card
+          size="sm"
+          key={client.id}
+          className="flex items-center justify-center text-center"
+        >
+          {client.data.logo?.url ? (
+            <Image
+              src={client.data.logo.url}
+              alt={client.data.name}
+              width={120}
+              height={80}
+            />
+          ) : (
+            <Text as="p" variant="s2">
+              {client.data.name}
+            </Text>
+          )}
+        </Card>
       ))}
-    </ul>
+    </div>
   );
 }

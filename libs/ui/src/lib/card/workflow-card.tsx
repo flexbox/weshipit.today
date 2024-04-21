@@ -20,7 +20,7 @@ export function WorkflowCard({ step, title, children }: WorkflowCardProps) {
         />
       </div>
       <div className="px-6">
-        <p>Step {step}</p>
+        <p className="mb-0 opacity-60">Step {step}</p>
         <h3 className="mt-0">{title}</h3>
         {children}
       </div>

@@ -20,7 +20,7 @@ export function Hero({
   description,
 }: HeroProps) {
   return (
-    <div className="mx-auto w-full max-w-7xl py-2 text-center lg:py-12 lg:text-left">
+    <div className="mx-auto w-full max-w-7xl py-2 text-center lg:py-24 lg:text-left">
       <div className="mx-auto w-full lg:shrink-0">
         {hintTitle && (
           <div className="my-4">

@@ -12,7 +12,7 @@ export function CardConsultation({ gravatarSize }: CardConsultationProps) {
     <Card variant="gradient-purple" size="lg">
       <Link
         className="flex flex-col items-center justify-center gap-8 text-center sm:text-left"
-        href="/onboarding"
+        href="/consulting"
       >
         <div className="relative flex h-[164px] w-[124px] flex-row items-center justify-center sm:h-[124px]">
           <Gravatar
@@ -36,7 +36,7 @@ export function CardConsultation({ gravatarSize }: CardConsultationProps) {
           <LinkButton
             as="a"
             variant="outline"
-            href="/onboarding"
+            href="/consulting"
             className="mt-4"
           >
             Book a call

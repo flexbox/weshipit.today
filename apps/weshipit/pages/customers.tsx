@@ -7,23 +7,23 @@ import {
   HeaderLinksOnboarding,
 } from '@weshipit/ui';
 
-interface clientsPageProps {
+interface CustomerPageProps {
   clients: Customer[];
 }
 
-export default function ClientsPage({ clients }: clientsPageProps) {
+export default function CustomerPage({ clients }: CustomerPageProps) {
   return (
     <Layout
       withContainer
       withFooter
-      seoTitle="Clients"
-      seoDescription="Our clients are at the heart of everything we do. We are proud to have worked with a diverse range of businesses and organizations, helping them achieve their goals with our high-quality React Native development services. Visit our /clients page to see a selection of our satisfied clients and learn more about the projects we have completed for them."
-      ogImageTitle="Clients"
+      seoTitle="Customers"
+      seoDescription="Our clients are at the heart of everything we do. We are proud to have worked with a diverse range of businesses and organizations, helping them achieve their goals with our high-quality React Native development services. Visit our customer page to see a selection of our satisfied clients and learn more about the projects we have completed for them."
+      ogImageTitle="Customers"
       withAccessoryRight={<HeaderLinksOnboarding />}
     >
       <div className="py-12">
         <Text as="h3" variant="h3" className="py-4">
-          Our Customers
+          Meet our customers
         </Text>
         <Text as="p" variant="s2" className="mb-4">
           We help ambitious teams do amazing things. Over the last decades we’ve
@@ -45,7 +45,7 @@ export default function ClientsPage({ clients }: clientsPageProps) {
         <Text as="p" variant="p1" className="mb-2">
           is your company missing?
         </Text>
-        <LinkButton href="/onboarding" size="xl" variant="outline">
+        <LinkButton href="/" size="xl" variant="outline">
           Add your logo today
         </LinkButton>
       </section>
@@ -53,7 +53,7 @@ export default function ClientsPage({ clients }: clientsPageProps) {
   );
 }
 
-ClientsPage.getInitialProps = async function () {
+CustomerPage.getInitialProps = async function () {
   const clients = await getAllClients();
   return clients;
 };

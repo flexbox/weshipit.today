@@ -42,7 +42,7 @@ function CallToAction() {
   const nextMonthInText = format(nextMonth, 'MMMM');
 
   return (
-    <div className="mb-24 mt-12 flex flex-col gap-4 text-center">
+    <div className="mb-24 flex flex-col gap-4 text-center">
       <div className="shrink-0">
         <Badge variant="blue" className="flex gap-2">
           <div className="size-3 rounded-full bg-slate-300 dark:bg-slate-600"></div>
@@ -50,27 +50,31 @@ function CallToAction() {
           <div>1 spot left in {nextMonthInText} ✨</div>
         </Badge>
       </div>
-      <Button
-        href={linksApi.stripe.MONTHLY_PLAN}
-        as="a"
-        isExternalLink
-        size="xxl"
-        withExternalLinkIcon={false}
-        className="justify-center"
-      >
-        Subscribe Today
-      </Button>
-      <Button
-        href={linksApi.cal.CONSULTATION}
-        as="a"
-        isExternalLink
-        withExternalLinkIcon={false}
-        size="xl"
-        variant="ghost"
-        className="justify-center"
-      >
-        Or book a call
-      </Button>
+      <div className="shrink-0">
+        <Button
+          href={linksApi.stripe.MONTHLY_PLAN}
+          as="a"
+          isExternalLink
+          size="xxl"
+          withExternalLinkIcon={false}
+          className="justify-center"
+        >
+          Subscribe Today
+        </Button>
+      </div>
+      <div className="shrink-0">
+        <Button
+          href={linksApi.cal.CONSULTATION}
+          as="a"
+          isExternalLink
+          withExternalLinkIcon={false}
+          size="xl"
+          variant="ghost"
+          className="justify-center"
+        >
+          Or book a call
+        </Button>
+      </div>
     </div>
   );
 }
@@ -142,7 +146,7 @@ function SocialProof({ clients }) {
 function HowDoesItWorks({ steps }: { steps: Steps[] }) {
   return (
     <Prose size="xl">
-      <h2>How does it works when you subscribe?</h2>
+      <h2>How does it works?</h2>
       <div className="flex flex-col gap-12">
         {steps.map((step) => (
           <WorkflowCard
@@ -307,7 +311,7 @@ export default function IndexPage({ faqs, clients, steps }: IndexPageProps) {
             isExternalLink
             withExternalLinkIcon={false}
           >
-            Subscribe today
+            Start a project
           </Button>
         </Card>
       </Layout>

@@ -53,7 +53,7 @@ export default function HomePage({ clients }: ClientsPageProps) {
             <Text as="h2" variant="p2">
               Trusted by top companies
             </Text>
-            <LinkButton href="/clients" variant="outline" size="lg">
+            <LinkButton href="/customers" variant="outline" size="lg">
               View our client list
             </LinkButton>
           </div>
