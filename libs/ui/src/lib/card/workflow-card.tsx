@@ -17,7 +17,7 @@ export function WorkflowCard({
   const imageUrl = image.url || image[0]?.url;
   return (
     <Card size="xs" className="flex flex-col sm:flex-row">
-      <div>
+      <div className="p-6 sm:p-0">
         <Image
           src={imageUrl}
           alt={`Step ${step}`}
