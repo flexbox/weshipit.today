@@ -262,7 +262,7 @@ export default function IndexPage({ faqs, clients, steps }: IndexPageProps) {
           </Button>
         </div>
 
-        <div className="mb-16 py-12 lg:py-24">
+        <div className="mb-16 py-0 pb-12 lg:py-24">
           <SocialProof clients={clients} />
         </div>
 
