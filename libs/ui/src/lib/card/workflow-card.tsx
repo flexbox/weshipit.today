@@ -5,16 +5,23 @@ export interface WorkflowCardProps {
   children: React.ReactNode;
   step: number;
   title: string;
+  image: any;
 }
 
-export function WorkflowCard({ step, title, children }: WorkflowCardProps) {
+export function WorkflowCard({
+  step,
+  title,
+  children,
+  image,
+}: WorkflowCardProps) {
+  const imageUrl = image.url || image[0]?.url;
   return (
-    <Card size="xs" className="flex">
-      <div>
+    <Card size="xs" className="flex flex-col sm:flex-row">
+      <div className="p-6 sm:p-0">
         <Image
-          src="https://images.prismic.io/weshipit/ZiO9tPPdc1huKpyW_CleanShot2024-04-20at15.05.14%402x.png?auto=compress%2Cformat&rect=1%2C0%2C2090%2C1608&w=800&h=800&fit=max"
-          alt="Step 1"
-          width={500}
+          src={imageUrl}
+          alt={`Step ${step}`}
+          width={400}
           height={400}
           className="m-0 rounded-lg bg-slate-300 dark:bg-slate-700"
         />
