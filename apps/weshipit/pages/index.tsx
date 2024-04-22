@@ -148,21 +148,16 @@ function HowDoesItWorks({ steps }: { steps: Steps[] }) {
     <Prose size="xl">
       <h2>How does it works?</h2>
       <div className="flex flex-col gap-12">
-        {steps.map(
-          (step) => (
-            console.log('🚀 ~ step:', step),
-            (
-              <WorkflowCard
-                key={step.id}
-                step={step.data.step_number}
-                title={step.data.title}
-                image={step.data.image}
-              >
-                <PrismicRichText field={step.data.description} />
-              </WorkflowCard>
-            )
-          )
-        )}
+        {steps.map((step) => (
+          <WorkflowCard
+            key={step.id}
+            step={step.data.step_number}
+            title={step.data.title}
+            image={step.data.image}
+          >
+            <PrismicRichText field={step.data.description} />
+          </WorkflowCard>
+        ))}
 
         <Card variant="green">
           <ul>
