@@ -93,7 +93,7 @@ function ProblemAgitation() {
         without sacrificing performance or user experience.
       </p>
 
-      <div className="relative flex h-[164px] w-[124px] flex-row items-center justify-center sm:h-[124px]">
+      <div className="relative m-auto flex h-[164px] w-[124px] flex-row items-center justify-center sm:h-[124px]">
         <Gravatar
           className="rounded-full border-4 border-white"
           size={64}
@@ -148,15 +148,21 @@ function HowDoesItWorks({ steps }: { steps: Steps[] }) {
     <Prose size="xl">
       <h2>How does it works?</h2>
       <div className="flex flex-col gap-12">
-        {steps.map((step) => (
-          <WorkflowCard
-            key={step.id}
-            step={step.data.step_number}
-            title={step.data.title}
-          >
-            <PrismicRichText field={step.data.description} />
-          </WorkflowCard>
-        ))}
+        {steps.map(
+          (step) => (
+            console.log('🚀 ~ step:', step),
+            (
+              <WorkflowCard
+                key={step.id}
+                step={step.data.step_number}
+                title={step.data.title}
+                image={step.data.image}
+              >
+                <PrismicRichText field={step.data.description} />
+              </WorkflowCard>
+            )
+          )
+        )}
 
         <Card variant="green">
           <ul>
@@ -226,19 +232,20 @@ export default function IndexPage({ faqs, clients, steps }: IndexPageProps) {
         seoDescription="Software development is a service, not a product. We offer a subscription-based service for React Native developers. One flat fee. Zero billable hours. Pause or cancel whenever."
       >
         <Hero>
-          <Text as="h1" variant="h1" className="text-center">
-            One flat fee.
-            <br />
-            React Native Experts on demand.
-          </Text>
-          <Text as="p" variant="h3" className="text-center opacity-30">
-            Pause or cancel whenever.
-          </Text>
+          <div className="my-12">
+            <Text as="h1" variant="h1" className="text-center">
+              One flat fee.
+              <br />
+              React Native Experts on demand.
+            </Text>
+            <Text as="p" variant="h3" className="text-center opacity-30">
+              Pause or cancel whenever.
+            </Text>
+          </div>
         </Hero>
 
         <div className="m-auto max-w-2xl">
           <CallToAction />
-
           <Prose className="mb-12" size="2xl">
             <ProblemAgitation />
           </Prose>
@@ -255,7 +262,7 @@ export default function IndexPage({ faqs, clients, steps }: IndexPageProps) {
           </Button>
         </div>
 
-        <div className="mb-12 py-24">
+        <div className="mb-16 py-12 lg:py-24">
           <SocialProof clients={clients} />
         </div>
 
