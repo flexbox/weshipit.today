@@ -41,6 +41,7 @@
     "@headlessui/react": "^1.7.18",
     "@heroicons/react": "^2.1.1",
     "@prismicio/client": "^7.1.1",
+    "@prismicio/next": "^1.5.0",
     "@prismicio/react": "^2.7.1",
     "@storybook/jest": "^0.2.3",
     "@tailwindcss/forms": "^0.5.7",

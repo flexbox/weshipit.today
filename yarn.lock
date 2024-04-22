@@ -2978,6 +2978,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@formatjs/intl-localematcher@npm:^0.5.2":
+  version: 0.5.4
+  resolution: "@formatjs/intl-localematcher@npm:0.5.4"
+  dependencies:
+    tslib: "npm:^2.4.0"
+  checksum: 10/780cb29b42e1ea87f2eb5db268577fcdc53da52d9f096871f3a1bb78603b4ba81d208ea0b0b9bc21548797c941ce435321f62d2522795b83b740f90b0ceb5778
+  languageName: node
+  linkType: hard
+
 "@graphql-typed-document-node/core@npm:^3.1.1":
   version: 3.2.0
   resolution: "@graphql-typed-document-node/core@npm:3.2.0"
@@ -4521,6 +4530,21 @@ __metadata:
   dependencies:
     imgix-url-builder: "npm:^0.0.4"
   checksum: 10/59479534de104ad1512165120ee084e134266f5114242dd09b1c00df6d35d768e66a56c600eed698ad9a13bf9b7ce25a335d6bd45e67c33c44c1a919804d24de
+  languageName: node
+  linkType: hard
+
+"@prismicio/next@npm:^1.5.0":
+  version: 1.5.0
+  resolution: "@prismicio/next@npm:1.5.0"
+  dependencies:
+    "@formatjs/intl-localematcher": "npm:^0.5.2"
+    imgix-url-builder: "npm:^0.0.4"
+    negotiator: "npm:^0.6.3"
+  peerDependencies:
+    "@prismicio/client": ^6 || ^7
+    next: ">=13.4.5"
+    react: ^18
+  checksum: 10/8063af78e83acbc14d1311e5fd92833c1ee8a9dfdaa3dad9acfbcecfd8bff06a566d2e4974da516e686519bace4a02676f4568e6b4c673c0dc89b440361fc87a
   languageName: node
   linkType: hard
 
@@ -25175,6 +25199,7 @@ __metadata:
     "@nx/webpack": "npm:18.3.3"
     "@nx/workspace": "npm:18.3.3"
     "@prismicio/client": "npm:^7.1.1"
+    "@prismicio/next": "npm:^1.5.0"
     "@prismicio/react": "npm:^2.7.1"
     "@storybook/addon-essentials": "npm:7.5.3"
     "@storybook/core-server": "npm:7.5.3"

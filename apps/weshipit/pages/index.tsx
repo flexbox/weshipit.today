@@ -276,7 +276,7 @@ export default function IndexPage({ faqs, clients, steps }: IndexPageProps) {
               {faqs.map((item) => (
                 <div
                   key={item.id}
-                  className="cursor-pointer rounded-md px-4 py-6 transition-colors duration-200 ease-in-out hover:bg-gray-200 dark:hover:bg-gray-800"
+                  className="cursor-pointer rounded-md px-4 py-6 transition-colors duration-200 ease-in-out hover:bg-white dark:hover:bg-gray-800"
                   onClick={() => toggle(item.id)}
                 >
                   <Text as="h2" variant="s2" className="my-4 font-semibold">
