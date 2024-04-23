@@ -42,7 +42,7 @@ function CallToAction() {
   const nextMonthInText = format(nextMonth, 'MMMM');
 
   return (
-    <div className="mb-24 flex flex-col gap-4 text-center">
+    <div className="flex flex-col gap-4 text-center">
       <div className="shrink-0">
         <Badge variant="blue" className="flex gap-2">
           <div className="size-3 rounded-full bg-slate-300 dark:bg-slate-600"></div>
@@ -93,14 +93,14 @@ function ProblemAgitation() {
         without sacrificing performance or user experience.
       </p>
 
-      <div className="relative m-auto flex h-[164px] w-[124px] flex-row items-center justify-center sm:h-[124px]">
+      <div className="relative flex h-[164px] w-[124px] flex-row items-center sm:h-[124px]">
         <Gravatar
-          className="rounded-full border-4 border-white"
+          className="rounded-full border-4 border-white bg-slate-300 dark:bg-slate-700"
           size={64}
           email="ducrocq.matthys@gmail.com"
         />
         <Gravatar
-          className="-ml-4 mr-4 rounded-full border-4 border-white"
+          className="-ml-4 mr-4 rounded-full border-4 border-white bg-slate-300 dark:bg-slate-700"
           size={64}
           email="dleuliette@gmail.com"
         />
@@ -112,6 +112,10 @@ function ProblemAgitation() {
           React Native development for the past {yearsOfExperience} years
         </strong>
         . I hired Matthys to be my right-hand and help me to scale our services.
+      </p>
+      <p>
+        We are based in France, speak english for all our communications and use{' '}
+        <code>qwerty</code> keyboards.
       </p>
       <p>
         Unlike lengthy contracts that bind you for months and require a six-step
@@ -161,6 +165,7 @@ function HowDoesItWorks({ steps }: { steps: Steps[] }) {
 
         <Card variant="green">
           <ul>
+            <li>Get acces to top-noch talent.</li>
             <li>Unlimited revisions.</li>
             <li>One request at time.</li>
             <li>No billable hours.</li>
@@ -237,10 +242,10 @@ export default function IndexPage({ faqs, clients, steps }: IndexPageProps) {
               Pause or cancel whenever.
             </Text>
           </div>
+          <CallToAction />
         </Hero>
 
         <div className="m-auto max-w-2xl">
-          <CallToAction />
           <Prose className="mb-12" size="2xl">
             <ProblemAgitation />
           </Prose>
@@ -265,31 +270,34 @@ export default function IndexPage({ faqs, clients, steps }: IndexPageProps) {
           <HowDoesItWorks steps={steps} />
         </div>
 
-        <div className="m-auto max-w-2xl pt-12">
+        <div className="m-auto max-w-2xl py-32">
+          <Text as="h2" variant="h2" className="mb-12">
+            Elevate your App Experience with our Subscription Service
+          </Text>
           <CallToAction />
+        </div>
 
+        <div className="m-auto max-w-2xl">
+          <Text as="h2" variant="h2" className="mb-12">
+            Frequently Asked Questions
+          </Text>
           <div>
-            <Text as="h2" variant="h2" className="mb-12 mt-24">
-              Frequently Asked Questions
-            </Text>
-            <div>
-              {faqs.map((item) => (
-                <div
-                  key={item.id}
-                  className="cursor-pointer rounded-md px-4 py-6 transition-colors duration-200 ease-in-out hover:bg-white dark:hover:bg-gray-800"
-                  onClick={() => toggle(item.id)}
-                >
-                  <Text as="h2" variant="s2" className="my-4 font-semibold">
-                    {asText(item.data.question)}
+            {faqs.map((item) => (
+              <div
+                key={item.id}
+                className="cursor-pointer rounded-md px-4 py-6 transition-colors duration-200 ease-in-out hover:bg-white dark:hover:bg-gray-800"
+                onClick={() => toggle(item.id)}
+              >
+                <Text as="h2" variant="s2" className="my-4 font-semibold">
+                  {asText(item.data.question)}
+                </Text>
+                {activeId === item.id && (
+                  <Text as="p" variant="p2">
+                    {asText(item.data.answer)}
                   </Text>
-                  {activeId === item.id && (
-                    <Text as="p" variant="p2">
-                      {asText(item.data.answer)}
-                    </Text>
-                  )}
-                </div>
-              ))}
-            </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
 
