@@ -126,7 +126,7 @@ function Workflow() {
         <h3>Phase 1</h3>
         <ul>
           <li>
-            We investigate your codebase and estimate efforts (2 working days).
+            We investigate your codebase and estimate efforts (3 working days).
           </li>
           <li>
             We write down notes and recommendations, and share the Notion

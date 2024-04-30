@@ -263,6 +263,15 @@ export default function IndexPage({ faqs, clients, steps }: IndexPageProps) {
         </div>
 
         <div className="mb-16 py-0 pb-12 lg:py-24">
+          <div className="m-auto max-w-2xl">
+            <Prose className="mb-12" size="xl">
+              <h2>What makes a great app?</h2>
+              <p>
+                We are proud to have completed more than 12 react native apps on
+                production for over {clients.length} clients such as:
+              </p>
+            </Prose>
+          </div>
           <SocialProof clients={clients} />
         </div>
 
