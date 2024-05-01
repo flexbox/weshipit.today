@@ -1,5 +1,7 @@
 import {
+  Button,
   FadeIn,
+  Hero,
   Hyperlink,
   LinkButton,
   Prose,
@@ -11,6 +13,7 @@ import { Layout } from '../../components/layout';
 
 import clsx from 'clsx';
 import { PropsWithChildren } from 'react';
+import { linksApi } from '../api/links';
 
 interface ContainerProps extends PropsWithChildren {
   as?: React.ElementType;
@@ -254,21 +257,27 @@ export function Audit() {
       withFooter
       withContainer
     >
-      <Prose size="lg" className="my-12">
-        <h1>Audit React Native Codebase</h1>
-        <p>
-          React Native Audit Package is directed to organizations that struggle
-          with technical debt due to a lack of expertise or capacity within
-          their team. We can support your team by conducting the audit and
-          allowing your organization to focus on its priorities without a drop
-          in its development pace.
-        </p>
-        <div className="not-prose">
-          <LinkButton href="/onboarding" size="xl">
-            Book a call
-          </LinkButton>
-        </div>
-      </Prose>
+      <FadeIn>
+        <Hero
+          title="React Native Codebase Audit."
+          description="Eradicating your technical debt caused by a lack of expertise or capacity within your team. We can support your team by conducting the audit and allowing your
+          organization to focus on its priorities without a drop in its
+          development pace."
+        >
+          <div className="my-6">
+            <Button
+              href={linksApi.cal.CONSULTATION}
+              as="a"
+              isExternalLink
+              withExternalLinkIcon={false}
+              size="xxl"
+              className="justify-center"
+            >
+              Book a call
+            </Button>
+          </div>
+        </Hero>
+      </FadeIn>
       <div className="mt-12 space-y-24 [counter-reset:section] sm:mt-32 sm:space-y-32 lg:mt-40 lg:space-y-40">
         <Discover />
         <Workflow />

@@ -219,7 +219,7 @@ export default function ReactNativeResourcesPage({
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const { data } = await client.query({
     query: gql`
       query getResourcesRecords {

@@ -3,6 +3,7 @@ import {
   Button,
   Card,
   ClientsListHomepage,
+  FadeIn,
   Hero,
   Hyperlink,
   Prose,
@@ -72,7 +73,7 @@ function CallToAction() {
           variant="ghost"
           className="justify-center"
         >
-          Or book a call
+          Or book a 30-min introduction call
         </Button>
       </div>
     </div>
@@ -231,24 +232,28 @@ export default function IndexPage({ faqs, clients, steps }: IndexPageProps) {
         seoTitle="Hire React Native Developers as a Service"
         seoDescription="Software development is a service, not a product. We offer a subscription-based service for React Native developers. One flat fee. Zero billable hours. Pause or cancel whenever."
       >
-        <Hero>
-          <div className="my-12">
-            <Text as="h1" variant="h1" className="text-center">
-              One flat fee.
-              <br />
-              React Native Experts on demand.
-            </Text>
-            <Text as="p" variant="h3" className="text-center opacity-30">
-              Pause or cancel whenever.
-            </Text>
-          </div>
-          <CallToAction />
-        </Hero>
+        <FadeIn>
+          <Hero>
+            <div className="my-12">
+              <Text as="h1" variant="h1" className="text-center">
+                One flat fee.
+                <br />
+                React Native Experts on demand.
+              </Text>
+              <Text as="p" variant="h3" className="text-center opacity-30">
+                Pause or cancel whenever.
+              </Text>
+            </div>
+            <CallToAction />
+          </Hero>
+        </FadeIn>
 
         <div className="m-auto max-w-2xl">
-          <Prose className="mb-12" size="2xl">
-            <ProblemAgitation />
-          </Prose>
+          <FadeIn>
+            <Prose className="mb-12" size="2xl">
+              <ProblemAgitation />
+            </Prose>
+          </FadeIn>
 
           <Button
             href={linksApi.stripe.MONTHLY_PLAN}
@@ -320,7 +325,7 @@ export default function IndexPage({ faqs, clients, steps }: IndexPageProps) {
             as="h2"
             className="bg-gradient-to-b from-white to-white/75 bg-clip-text font-bold tracking-tight text-transparent drop-shadow"
           >
-            Ready to start your journey with us?
+            Ready to improve your React Native app with us?
           </Text>
           <Button
             size="xxl"
@@ -330,7 +335,7 @@ export default function IndexPage({ faqs, clients, steps }: IndexPageProps) {
             isExternalLink
             withExternalLinkIcon={false}
           >
-            Start a project
+            Start now
           </Button>
         </Card>
       </Layout>
