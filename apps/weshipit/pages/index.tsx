@@ -272,8 +272,8 @@ export default function IndexPage({ faqs, clients, steps }: IndexPageProps) {
             <Prose className="mb-12" size="xl">
               <h2>What makes a great app?</h2>
               <p>
-                We are proud to have completed more than 12 react native apps on
-                production for over {clients.length} clients such as:
+                We take immense pride in having expertly served an impressive
+                roster of over {clients.length} clients, including:
               </p>
             </Prose>
           </div>
