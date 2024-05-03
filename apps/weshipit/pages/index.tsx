@@ -151,7 +151,7 @@ function SocialProof({ clients }) {
 function HowDoesItWorks({ steps }: { steps: Steps[] }) {
   return (
     <Prose size="xl">
-      <h2>How does it works?</h2>
+      <h2>How does it work?</h2>
       <div className="flex flex-col gap-12">
         {steps.map((step) => (
           <WorkflowCard
