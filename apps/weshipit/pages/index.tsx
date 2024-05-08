@@ -14,7 +14,6 @@ import { linksApi } from './api/links';
 import { Layout } from '../components/layout';
 import { getAllFaqs } from './api/faq';
 import { RichTextField, asHTML, asText } from '@prismicio/client';
-import { useState } from 'react';
 import Head from 'next/head';
 import { format } from 'date-fns';
 import Gravatar from 'react-gravatar';
@@ -27,7 +26,6 @@ import {
   DisclosurePanel,
 } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
-import { indexOf } from 'lodash';
 
 interface FaqProps {
   id: string;
@@ -208,11 +206,6 @@ function HowDoesItWorks({ steps }: { steps: Steps[] }) {
 }
 
 export default function IndexPage({ faqs, clients, steps }: IndexPageProps) {
-  const [activeId, setActiveId] = useState<string | null>(null);
-  const toggle = (id: string) => {
-    setActiveId(activeId === id ? null : id);
-  };
-
   /** @type {import('schema-dts').FAQPage} */
   const schema = {
     '@context': 'https://schema.org',
@@ -302,29 +295,28 @@ export default function IndexPage({ faqs, clients, steps }: IndexPageProps) {
           <Text as="h2" variant="h2" className="mb-12">
             Frequently Asked Questions
           </Text>
-          <div>
-            {faqs.map((item, index) => (
-              <div key={index}>
-                <Disclosure
-                  as="div"
-                  className="cursor-pointer rounded-md p-6 px-4 transition-colors duration-200 ease-in-out hover:bg-white dark:hover:bg-gray-800"
-                  defaultOpen={false}
-                >
-                  <DisclosureButton className="group flex w-full items-center justify-between">
-                    <Text as="h2" variant="s2" className="my-4 font-semibold">
-                      {asText(item.data.question)}
-                    </Text>
-                    <ChevronDownIcon className="size-5 fill-white/60 group-data-[open]:rotate-180 group-data-[hover]:fill-white/50" />
-                  </DisclosureButton>
-                  <DisclosurePanel className="mt-2 ">
-                    <Text as="p" variant="p2">
-                      {asText(item.data.answer)}
-                    </Text>
-                  </DisclosurePanel>
-                </Disclosure>
-              </div>
-            ))}
-          </div>
+
+          {faqs.map((item) => (
+            <div key={item.id}>
+              <Disclosure
+                as="div"
+                className="cursor-pointer rounded-md transition-colors duration-200 ease-in-out hover:bg-white dark:hover:bg-gray-800"
+                defaultOpen={false}
+              >
+                <DisclosureButton className="group flex w-full items-center justify-between px-4 py-3">
+                  <Text as="h2" variant="s2" className="my-4 font-semibold">
+                    {asText(item.data.question)}
+                  </Text>
+                  <ChevronDownIcon className="size-5 group-data-[open]:rotate-180  dark:fill-white/60" />
+                </DisclosureButton>
+                <DisclosurePanel className="px-4 pb-4">
+                  <Text as="p" variant="p2">
+                    {asText(item.data.answer)}
+                  </Text>
+                </DisclosurePanel>
+              </Disclosure>
+            </div>
+          ))}
         </div>
 
         <Card
