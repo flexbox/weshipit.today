@@ -34,7 +34,7 @@ export function Consulting() {
           autoPlay
           loop
           muted
-          className="absolute left-0 top-0 z-0 h-[550px] w-auto min-w-full max-w-none bg-slate-800 object-cover opacity-20"
+          className="absolute left-0 top-0 z-0 h-[150px] w-auto min-w-full max-w-full bg-slate-800  object-cover opacity-20 md:h-[550px]"
           style={{ zIndex: -1 }}
         >
           <source
@@ -48,11 +48,13 @@ export function Consulting() {
           <Text
             as="h1"
             variant="h1"
-            className="mt-12 text-center uppercase tracking-widest text-black"
+            className="mt-12 text-center uppercase tracking-tight text-black md:tracking-widest"
           >
             Straightforward
             <br />
-            <small className="tracking-wider">React Native solutions</small>
+            <small className="tracking-tight md:tracking-wide">
+              React Native solutions
+            </small>
           </Text>
 
           <div className="mt-12 flex justify-center">
