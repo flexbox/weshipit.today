@@ -1,6 +1,7 @@
 import { Button, Card, Hero, Prose, Text } from '@weshipit/ui';
 import { Layout } from '../components/layout';
 import React from 'react';
+import { linksApi } from './api/links';
 
 export default function CodingRetreat() {
   return (
@@ -13,7 +14,7 @@ export default function CodingRetreat() {
         <Button
           as="a"
           variant="primary"
-          href="https://airtable.com/appM394dCiLp3DoaF/shr3Ubj3BroW6DS5c"
+          href={linksApi.airtable.CODING_RETREAT_FORM}
           size="xl"
           isExternalLink={true}
         >
@@ -51,7 +52,7 @@ export default function CodingRetreat() {
 
           <div className="mt-12 flex justify-center">
             <Button
-              href="https://airtable.com/appM394dCiLp3DoaF/shr3Ubj3BroW6DS5c"
+              href={linksApi.airtable.CODING_RETREAT_FORM}
               as="a"
               isExternalLink={true}
               size="xl"
@@ -142,7 +143,7 @@ export default function CodingRetreat() {
             </Text>
             <div className="mt-8 flex justify-center">
               <Button
-                href="https://airtable.com/appM394dCiLp3DoaF/shr3Ubj3BroW6DS5c"
+                href={linksApi.airtable.CODING_RETREAT_FORM}
                 isExternalLink={true}
                 size="xl"
               >
