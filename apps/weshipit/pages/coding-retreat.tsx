@@ -13,7 +13,7 @@ export default function CodingRetreat() {
         <Button
           as="a"
           variant="primary"
-          href="https://airtable.com/appLcVC7NmRBu1itw/shrXRYspfLCX6m1Q8"
+          href="https://airtable.com/appM394dCiLp3DoaF/shr3Ubj3BroW6DS5c"
           size="xl"
           isExternalLink={true}
         >
@@ -51,7 +51,7 @@ export default function CodingRetreat() {
 
           <div className="mt-12 flex justify-center">
             <Button
-              href="https://airtable.com/appLcVC7NmRBu1itw/shrXRYspfLCX6m1Q8"
+              href="https://airtable.com/appM394dCiLp3DoaF/shr3Ubj3BroW6DS5c"
               as="a"
               isExternalLink={true}
               size="xl"
@@ -142,7 +142,7 @@ export default function CodingRetreat() {
             </Text>
             <div className="mt-8 flex justify-center">
               <Button
-                href="https://airtable.com/appLcVC7NmRBu1itw/shrXRYspfLCX6m1Q8"
+                href="https://airtable.com/appM394dCiLp3DoaF/shr3Ubj3BroW6DS5c"
                 isExternalLink={true}
                 size="xl"
               >
