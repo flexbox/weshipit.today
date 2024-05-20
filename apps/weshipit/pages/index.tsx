@@ -270,6 +270,48 @@ export default function IndexPage({ faqs, clients, steps }: IndexPageProps) {
         <div className="mb-16 py-0 pb-12 lg:py-24">
           <div className="m-auto max-w-2xl">
             <Prose className="mb-12" size="xl">
+              <h2>Mobile app for iOS, Android and more</h2>
+              <p>
+                Our team can assist you in shipping a new app, add new features,
+                or just keep an existing app up to date. Contact us today if you
+                want:
+              </p>
+              <ul>
+                <li>
+                  A new mobile application{' '}
+                  <strong>quickly on Apple and Google store</strong>.
+                </li>
+                <li>
+                  <strong>Regain agility</strong> to evolve my application
+                  quickly.
+                </li>
+                <li>
+                  Stop struggling with <strong>React Native updates</strong>.
+                </li>
+                <li>
+                  Quickly{' '}
+                  <strong>migrate an application to React Native</strong>.
+                </li>
+              </ul>
+            </Prose>
+            <div className="flex justify-center">
+              <Button
+                href={linksApi.cal.CONSULTATION}
+                as="a"
+                isExternalLink
+                withExternalLinkIcon={false}
+                size="xxl"
+                variant="outline"
+              >
+                Book a free 30-min introduction call
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        <div className="mb-16 py-0 pb-12 lg:py-24">
+          <div className="m-auto max-w-2xl">
+            <Prose className="mb-12" size="xl">
               <h2>What makes a great app?</h2>
               <p>
                 We take immense pride in having expertly served an impressive
