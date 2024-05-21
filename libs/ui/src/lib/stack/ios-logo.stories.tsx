@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { IosLogo } from './ios-logo';
+import IosLogo from './ios-logo';
 
 import { within } from '@storybook/testing-library';
 import { expect } from '@storybook/jest';

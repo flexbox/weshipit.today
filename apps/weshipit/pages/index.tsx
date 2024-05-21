@@ -153,6 +153,63 @@ function SocialProof({ clients }) {
   return <ClientsListHomepage clients={clients} />;
 }
 
+function PodcastProof() {
+  const URLS = [
+    {
+      platform: 'Apple Podcasts',
+      icon: 'apple',
+      url: 'https://podcasts.apple.com/us/podcast/rnr-289-real-life-react-native-david-leuliette-talks/id1058647602?i=1000647166395',
+    },
+    {
+      platform: 'Spotify',
+      icon: 'spotify',
+      url: 'https://open.spotify.com/show/28hPRLml3FbP14FCYtlOvg',
+    },
+    {
+      platform: 'Web',
+      icon: 'globe',
+      url: 'https://reactnativeradio.com/episodes/rnr-289-real-life-react-native-david-leuliette-talks-retail-shake-scanner',
+    },
+  ];
+
+  return (
+    <Prose size="xl">
+      <h2>We’re trusted React Native consultants.</h2>
+      <p>
+        We actively participate in the community, presenting at meetups and
+        conferences, as well as{' '}
+        <Hyperlink href="https://davidl.fr/bootcamp">
+          conducting bootcamps
+        </Hyperlink>
+        .
+      </p>
+      <p>
+        We have made numerous open-source contributions to different
+        organizations, such as <code>@expo</code>, <code>@facebook</code>,{' '}
+        <code>@aws-amplify</code> and <code>@infinitered</code>.
+      </p>
+      <p>
+        Listen to David Leuliette, the founder of weshipit.today, on the React
+        Native Radio podcast.
+      </p>
+      <div className="not-prose flex gap-4">
+        {URLS.map(({ platform, url }) => (
+          <Button
+            key={platform}
+            href={url}
+            as="a"
+            isExternalLink
+            variant="outline"
+            size="lg"
+          >
+            {platform}
+          </Button>
+        ))}
+      </div>
+    </Prose>
+  );
+}
+
 function HowDoesItWorks({ steps }: { steps: Steps[] }) {
   return (
     <Prose size="xl">
@@ -247,7 +304,6 @@ export default function IndexPage({ faqs, clients, steps }: IndexPageProps) {
             <CallToAction />
           </Hero>
         </FadeIn>
-
         <div className="m-auto max-w-2xl">
           <FadeIn>
             <Prose className="mb-12" size="2xl">
@@ -266,7 +322,6 @@ export default function IndexPage({ faqs, clients, steps }: IndexPageProps) {
             Work with us
           </Button>
         </div>
-
         <div className="mb-16 py-0 pb-12 lg:py-24">
           <div className="m-auto max-w-2xl">
             <Prose className="mb-12" size="xl">
@@ -308,7 +363,6 @@ export default function IndexPage({ faqs, clients, steps }: IndexPageProps) {
             </div>
           </div>
         </div>
-
         <div className="mb-16 py-0 pb-12 lg:py-24">
           <div className="m-auto max-w-2xl">
             <Prose className="mb-12" size="xl">
@@ -322,17 +376,21 @@ export default function IndexPage({ faqs, clients, steps }: IndexPageProps) {
           <SocialProof clients={clients} />
         </div>
 
+        <div className="mb-24 py-0 lg:py-24">
+          <div className="m-auto max-w-2xl">
+            <PodcastProof />
+          </div>
+        </div>
+
         <div className="m-auto max-w-3xl">
           <HowDoesItWorks steps={steps} />
         </div>
-
         <div className="m-auto max-w-2xl py-32">
           <Text as="h2" variant="h2" className="mb-12">
             Elevate your App Experience with our Subscription Service
           </Text>
           <CallToAction />
         </div>
-
         <div className="m-auto max-w-2xl">
           <Text as="h2" variant="h2" className="mb-12">
             Frequently Asked Questions
@@ -360,7 +418,6 @@ export default function IndexPage({ faqs, clients, steps }: IndexPageProps) {
             </div>
           ))}
         </div>
-
         <Card
           size="xl"
           className="m-auto my-24 flex flex-col items-center justify-center gap-8 text-center"

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { AndroidLogo } from './android-logo';
+import AndroidLogo from './android-logo';
 
 import { within } from '@storybook/testing-library';
 import { expect } from '@storybook/jest';

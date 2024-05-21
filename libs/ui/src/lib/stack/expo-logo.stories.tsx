@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ExpoLogo } from './expo-logo';
+import ExpoLogo from './expo-logo';
 
 import { within } from '@storybook/testing-library';
 import { expect } from '@storybook/jest';

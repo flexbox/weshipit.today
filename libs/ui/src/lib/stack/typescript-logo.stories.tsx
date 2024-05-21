@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { TypeScriptLogo } from './typescript-logo';
+import TypeScriptLogo from './typescript-logo';
 
 import { within } from '@storybook/testing-library';
 import { expect } from '@storybook/jest';

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { TanstackLogo } from './tanstack-logo';
+import TanstackLogo from './tanstack-logo';
 
 import { within } from '@storybook/testing-library';
 import { expect } from '@storybook/jest';
