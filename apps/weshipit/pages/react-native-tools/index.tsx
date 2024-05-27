@@ -51,11 +51,15 @@ export default function ReactNativeToolsPage({ records }) {
 
   const searchParams = useSearchParams();
 
-  const toolType = searchParams.get('type')?.toLowerCase();
+  const toolType = searchParams?.get('type')?.toLowerCase();
+  let seoTitle = `Repository of ${numberOfTools}+ resources and tools to elevate your React Native game`;
+  if (toolType) {
+    seoTitle = `Best React Native ${toolType} tools: Boost your mobile app development`;
+  }
 
   return (
     <Layout
-      seoTitle={`Repository of ${numberOfTools}+ resources and tools to elevate your React Native game`}
+      seoTitle={seoTitle}
       seoDescription={`The best tools & apis for React Native developers. Accelerate your product development and improvement with more than ${numberOfTools}+ design resources and tools.`}
       ogImageTitle="React Native Tools"
       withAccessoryRight={<HeaderLinksForTools />}
