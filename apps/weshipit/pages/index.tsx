@@ -42,7 +42,17 @@ interface IndexPageProps {
   steps: Steps[];
 }
 
-function CallToAction() {
+function CallToAction({
+  label,
+  href,
+  secondaryHref,
+  secondaryLabel,
+}: {
+  label: string;
+  href: string;
+  secondaryHref: string;
+  secondaryLabel: string;
+}) {
   const currentDate = new Date();
   const nextMonth = new Date();
   nextMonth.setMonth(currentDate.getMonth() + 1);
@@ -59,19 +69,19 @@ function CallToAction() {
       </div>
       <div className="shrink-0">
         <Button
-          href={linksApi.stripe.MONTHLY_PLAN}
+          href={href}
           as="a"
           isExternalLink
           size="xxl"
           withExternalLinkIcon={false}
           className="justify-center"
         >
-          Subscribe Today
+          {label}
         </Button>
       </div>
       <div className="shrink-0">
         <Button
-          href={linksApi.cal.CONSULTATION}
+          href={secondaryHref}
           as="a"
           isExternalLink
           withExternalLinkIcon={false}
@@ -79,7 +89,7 @@ function CallToAction() {
           variant="ghost"
           className="justify-center"
         >
-          Or book a 30-min introduction call
+          {secondaryLabel}
         </Button>
       </div>
     </div>
@@ -312,7 +322,12 @@ export default function IndexPage({ faqs, clients, steps }: IndexPageProps) {
                 Pause or cancel whenever.
               </Text>
             </div>
-            <CallToAction />
+            <CallToAction
+              label={'Book a 30-min introduction call'}
+              href={linksApi.cal.CONSULTATION}
+              secondaryLabel={'Or Subscribe Today'}
+              secondaryHref={linksApi.stripe.MONTHLY_PLAN}
+            />
           </Hero>
         </FadeIn>
         <div className="m-auto max-w-2xl">
@@ -330,7 +345,7 @@ export default function IndexPage({ faqs, clients, steps }: IndexPageProps) {
             withExternalLinkIcon={false}
             className="mb-24 flex w-full justify-center"
           >
-            Work with us
+            Subscribe now
           </Button>
         </div>
         <div className="mb-16 py-0 pb-12 lg:py-24">
@@ -400,7 +415,12 @@ export default function IndexPage({ faqs, clients, steps }: IndexPageProps) {
           <Text as="h2" variant="h2" className="mb-12">
             Elevate your App Experience with our Subscription Service
           </Text>
-          <CallToAction />
+          <CallToAction
+            label={'Subscribe Today'}
+            href={linksApi.stripe.MONTHLY_PLAN}
+            secondaryLabel={'Book a 30-min introduction call'}
+            secondaryHref={linksApi.cal.CONSULTATION}
+          />
         </div>
         <div className="m-auto max-w-2xl">
           <Text as="h2" variant="h3" className="mb-12">

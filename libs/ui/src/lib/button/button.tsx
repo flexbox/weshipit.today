@@ -23,10 +23,10 @@ export const buttonVariants = cva(
           'text-white',
           'hover:bg-blue-500',
           'focus-visible:outline-blue-600',
-          'dark:bg-orange-500',
+          'dark:bg-blue-700',
           'dark:text-white',
-          'dark:hover:bg-orange-600',
-          'dark:focus-visible:outline-orange-600',
+          'dark:hover:bg-blue-800',
+          'dark:focus-visible:outline-blue-700',
         ],
         secondary: [
           'shadow-sm',
