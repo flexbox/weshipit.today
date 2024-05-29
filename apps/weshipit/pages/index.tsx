@@ -26,6 +26,7 @@ import {
   DisclosurePanel,
 } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
+import Image from 'next/image';
 
 interface FaqProps {
   id: string;
@@ -183,6 +184,16 @@ function PodcastProof() {
         </Hyperlink>
         .
       </p>
+      <Image
+        src="/images/appjs-2022.jpg"
+        alt="David Leuliette, at appjs conference."
+        className="mb-0 w-full rounded-lg bg-neutral-100 object-cover"
+        width={950}
+        height={559}
+      />
+      <small className="text-slate-400">
+        David with Catalyn and Aman at App.js Conf
+      </small>
       <p>
         We have made numerous open-source contributions to different
         organizations, such as <code>@expo</code>, <code>@facebook</code>,{' '}
@@ -392,7 +403,7 @@ export default function IndexPage({ faqs, clients, steps }: IndexPageProps) {
           <CallToAction />
         </div>
         <div className="m-auto max-w-2xl">
-          <Text as="h2" variant="h2" className="mb-12">
+          <Text as="h2" variant="h3" className="mb-12">
             Frequently Asked Questions
           </Text>
 
