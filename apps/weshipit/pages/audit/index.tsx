@@ -1,5 +1,6 @@
 import {
   Button,
+  Card,
   FadeIn,
   Hero,
   Hyperlink,
@@ -93,14 +94,16 @@ function Discover() {
         <p>
           We can also provide recommendations for improving your application.
         </p>
-        <LinkButton
-          href="/onboarding"
-          size="xl"
-          className="no-underline"
-          variant="outline"
-        >
-          Start now
-        </LinkButton>
+        <div className="not-prose">
+          <LinkButton
+            href="/onboarding"
+            size="xl"
+            className="no-underline"
+            variant="outline"
+          >
+            Start now
+          </LinkButton>
+        </div>
       </div>
     </Section>
   );
@@ -233,14 +236,16 @@ function Benefits() {
             .
           </li>
         </ol>
-        <LinkButton
-          href="/onboarding"
-          size="xl"
-          className="mt-6 no-underline"
-          variant="outline"
-        >
-          Book a call
-        </LinkButton>
+        <div className="not-prose">
+          <LinkButton
+            href="/onboarding"
+            size="xl"
+            className="mt-6 no-underline"
+            variant="outline"
+          >
+            Book a call
+          </LinkButton>
+        </div>
       </ol>
     </Section>
   );
@@ -297,12 +302,44 @@ export function Audit() {
           version of React Native (RN). By doing so, your app will not only be
           more stable but will also offer better performance for its users.
         </p>
-        <div className="not-prose">
-          <LinkButton href="/onboarding" size="xl">
-            Book a call
-          </LinkButton>
-        </div>
+        <h3>Streamlining your app distribution</h3>
+        <p>
+          We are extensive users of the Expo application service and can assist
+          your team in releasing and iterating more quickly.
+        </p>
       </Prose>
+      <div className="m-auto max-w-4xl py-24">
+        <Card
+          size="xl"
+          className="m-auto my-24 flex flex-col items-center justify-center gap-8 text-center"
+          variant="gradient-blue"
+        >
+          <Text
+            variant="h4"
+            as="h2"
+            className="bg-gradient-to-b from-white to-white/75 bg-clip-text font-bold tracking-tight text-transparent drop-shadow"
+          >
+            Ready to start your journey with us?
+          </Text>
+          <Text
+            variant="p1"
+            as="p"
+            className="bg-gradient-to-b from-white to-white/75 bg-clip-text tracking-tight text-transparent drop-shadow"
+          >
+            Get in touch today and let’s build memorable products together.
+          </Text>
+          <Button
+            size="xxl"
+            variant="outline"
+            href={linksApi.cal.CONSULTATION}
+            as="a"
+            isExternalLink
+            withExternalLinkIcon={false}
+          >
+            Book a free call now
+          </Button>
+        </Card>
+      </div>
     </Layout>
   );
 }
