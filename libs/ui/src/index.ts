@@ -1,3 +1,4 @@
+export * from './lib/faq/faq';
 export * from './lib/airtable-toggle-form/airtable-toggle-form';
 export * from './lib/app-badge/AppBadge';
 export * from './lib/badge/badge';

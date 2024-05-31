@@ -4,6 +4,8 @@ import {
   Card,
   ClientsListHomepage,
   FadeIn,
+  Faq,
+  FaqProps,
   Hero,
   Hyperlink,
   Prose,
@@ -13,28 +15,15 @@ import {
 import { linksApi } from './api/links';
 import { Layout } from '../components/layout';
 import { getAllFaqs } from './api/faq';
-import { RichTextField, asHTML, asText } from '@prismicio/client';
+import { asHTML, asText } from '@prismicio/client';
 import Head from 'next/head';
 import { format } from 'date-fns';
 import Gravatar from 'react-gravatar';
 import { Customer, getAllClients } from './api/client';
 import { Steps, getAllWorkflowSteps } from './api/workflow-steps';
 import { PrismicRichText } from '@prismicio/react';
-import {
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
-} from '@headlessui/react';
-import { ChevronDownIcon } from '@heroicons/react/20/solid';
-import Image from 'next/image';
 
-interface FaqProps {
-  id: string;
-  data: {
-    question: RichTextField;
-    answer: RichTextField;
-  };
-}
+import Image from 'next/image';
 
 interface IndexPageProps {
   faqs: FaqProps[];
@@ -252,16 +241,14 @@ function HowDoesItWorks({ steps }: { steps: Steps[] }) {
             <li>Get acces to top-noch talent.</li>
             <li>Unlimited revisions.</li>
             <li>One request at time.</li>
-            <li>No billable hours.</li>
-            <li>Pause anytime.</li>
-            <li>Cancel whenever.</li>
+            <li>Pause anytime and cancel whenever.</li>
           </ul>
         </Card>
 
         <Card variant="red">
           <h3 className="mt-0">Do not work with us if you want</h3>
           <ol>
-            <li>A quote after an initial call.</li>
+            <li>A quote is sent after an initial call.</li>
             <li>The quote is then validated.</li>
             <li>
               A service contract is signed, which describes the list of tasks to
@@ -275,6 +262,10 @@ function HowDoesItWorks({ steps }: { steps: Steps[] }) {
             <li>
               Finally, the intellectual property rights transfer contract is
               signed.
+            </li>
+            <li>
+              Endless loop of back en forth emails because accounting because
+              the payment was not send.
             </li>
           </ol>
         </Card>
@@ -423,55 +414,41 @@ export default function IndexPage({ faqs, clients, steps }: IndexPageProps) {
           />
         </div>
         <div className="m-auto max-w-2xl">
-          <Text as="h2" variant="h3" className="mb-12">
-            Frequently Asked Questions
-          </Text>
-
-          {faqs.map((item) => (
-            <div key={item.id}>
-              <Disclosure
-                as="div"
-                className="cursor-pointer rounded-md transition-colors duration-200 ease-in-out hover:bg-white dark:hover:bg-gray-800"
-                defaultOpen={false}
-              >
-                <DisclosureButton className="group flex w-full items-center justify-between px-4 py-3">
-                  <Text as="h2" variant="s2" className="my-4 font-semibold">
-                    {asText(item.data.question)}
-                  </Text>
-                  <ChevronDownIcon className="size-5 group-data-[open]:rotate-180  dark:fill-white/60" />
-                </DisclosureButton>
-                <DisclosurePanel className="px-4 pb-4">
-                  <Text as="p" variant="p2">
-                    {asText(item.data.answer)}
-                  </Text>
-                </DisclosurePanel>
-              </Disclosure>
-            </div>
-          ))}
+          <Faq faqs={faqs} />
         </div>
-        <Card
-          size="xl"
-          className="m-auto my-24 flex flex-col items-center justify-center gap-8 text-center"
-          variant="gradient-blue"
-        >
-          <Text
-            variant="h4"
-            as="h2"
-            className="bg-gradient-to-b from-white to-white/75 bg-clip-text font-bold tracking-tight text-transparent drop-shadow"
+        <div className="m-auto max-w-4xl py-24">
+          <Card
+            size="xl"
+            className="m-auto my-24 flex flex-col items-center justify-center gap-8 text-center"
+            variant="gradient-blue"
           >
-            Ready to improve your React Native app with us?
-          </Text>
-          <Button
-            size="xxl"
-            variant="outline"
-            href={linksApi.stripe.MONTHLY_PLAN}
-            as="a"
-            isExternalLink
-            withExternalLinkIcon={false}
-          >
-            Start now
-          </Button>
-        </Card>
+            <Text
+              variant="h4"
+              as="h2"
+              className="bg-gradient-to-b from-white to-white/75 bg-clip-text font-bold tracking-tight text-transparent drop-shadow"
+            >
+              See if weshipit.today is right for your needs
+            </Text>
+            <Text
+              variant="p1"
+              as="p"
+              className="bg-gradient-to-b from-white to-white/75 bg-clip-text tracking-tight text-transparent drop-shadow"
+            >
+              Book a call and find out how you and your team can change your
+              mobile app development forever.
+            </Text>
+            <Button
+              size="xxl"
+              variant="outline"
+              href={linksApi.cal.CONSULTATION}
+              as="a"
+              isExternalLink
+              withExternalLinkIcon={false}
+            >
+              Book a free call now
+            </Button>
+          </Card>
+        </div>
       </Layout>
     </>
   );
