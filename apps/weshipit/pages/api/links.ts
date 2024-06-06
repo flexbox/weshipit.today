@@ -17,6 +17,6 @@ export const linksApi = {
     MONTHLY_PLAN: 'https://buy.stripe.com/00g03Ggnt4gee0E6oq',
   },
   cal: {
-    CONSULTATION: 'https://cal.com/davidl/30min',
+    CONSULTATION: 'https://cal.com/davidl/weshipit-onboarding',
   },
 };
