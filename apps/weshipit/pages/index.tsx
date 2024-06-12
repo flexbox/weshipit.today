@@ -264,8 +264,8 @@ function HowDoesItWorks({ steps }: { steps: Steps[] }) {
               signed.
             </li>
             <li>
-              Endless loop of back en forth emails because accounting because
-              the payment was not send.
+              Endless loop of back and forth emails with accounting because the
+              payment was not sent.
             </li>
           </ol>
         </Card>
@@ -386,7 +386,7 @@ export default function IndexPage({ faqs, clients, steps }: IndexPageProps) {
               <h2>What makes a great app?</h2>
               <p>
                 We take immense pride in having expertly served an impressive
-                roster of over {clients.length} clients, including:
+                roster of over {clients.length} clients, including
               </p>
             </Prose>
           </div>

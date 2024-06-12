@@ -5,7 +5,7 @@ import { frenchAppsFixture } from './french-apps.fixture';
 import { formatAppsByCategory } from './format-apps-by-category';
 import Image from 'next/image';
 
-describe('ToolList', () => {
+describe('French Apps', () => {
   it('should render a list of items', () => {
     const categorizedApps = formatAppsByCategory(frenchAppsFixture);
     const { baseElement } = render(
