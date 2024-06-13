@@ -44,7 +44,11 @@ export function Faq({ faqs }: FaqListProps) {
             defaultOpen={false}
           >
             <DisclosureButton className="group flex w-full items-center justify-between px-4 py-3">
-              <Text as="h2" variant="s2" className="my-4 font-semibold">
+              <Text
+                as="h2"
+                variant="s2"
+                className="my-4 text-left font-semibold"
+              >
                 {asText(item.data.question)}
               </Text>
               <ChevronDownIcon className="size-5 group-data-[open]:rotate-180  dark:fill-white/60" />

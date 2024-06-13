@@ -91,12 +91,21 @@ function ProblemAgitation() {
 
   return (
     <>
+      <p>In {currentYear}, iteration speed is important.</p>
       <p>
-        In {currentYear}, React Native development faces challenges due to
-        <strong> rapidly evolving technology</strong> and a{' '}
-        <strong>growing demand</strong> for complex, interactive apps.
-        Developers must continually adapt and deliver high-quality products
-        without sacrificing performance or user experience.
+        Iteration speed means{' '}
+        <strong className="text-green-500">
+          getting code to users as fast as possible
+        </strong>
+        ,{' '}
+        <strong className="text-cyan-500">
+          seeing what’s working well or what isn’t
+        </strong>
+        , <strong className="text-yellow-500">making changes</strong>, and{' '}
+        <strong className="text-pink-500">
+          deploying new code to users again
+        </strong>
+        .
       </p>
 
       <div className="relative flex h-[164px] w-[124px] flex-row items-center sm:h-[124px]">
@@ -147,10 +156,6 @@ function ProblemAgitation() {
       </p>
     </>
   );
-}
-
-function SocialProof({ clients }) {
-  return <ClientsListHomepage clients={clients} />;
 }
 
 function PodcastProof() {
@@ -390,7 +395,8 @@ export default function IndexPage({ faqs, clients, steps }: IndexPageProps) {
               </p>
             </Prose>
           </div>
-          <SocialProof clients={clients} />
+          {/* Social Proof */}
+          <ClientsListHomepage clients={clients} />
         </div>
 
         <div className="mb-24 py-0 lg:py-24">
