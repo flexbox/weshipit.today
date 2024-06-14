@@ -146,7 +146,12 @@ function ProblemAgitation() {
         <strong>
           React Native development for the past {yearsOfExperience} years
         </strong>
-        . I hired Matthys to be my right-hand and help me to scale our services.
+        , which has enabled me to become{' '}
+        <Hyperlink href={'https://x.com/flexbox_/status/1801588179687936329'}>
+          one of the top 20 contributors
+        </Hyperlink>{' '}
+        on Stackoverflow. I hired Matthys to be my right-hand and help me to
+        scale our services.
       </p>
       <p>
         We are based in France, speak english for all our communications and use{' '}
