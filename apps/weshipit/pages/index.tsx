@@ -24,6 +24,7 @@ import { Steps, getAllWorkflowSteps } from './api/workflow-steps';
 import { PrismicRichText } from '@prismicio/react';
 
 import Image from 'next/image';
+import { useState, useEffect } from 'react';
 
 interface IndexPageProps {
   faqs: FaqProps[];
@@ -85,27 +86,43 @@ function CallToAction({
   );
 }
 
+function useGetLocalTimeInFrance() {
+  const [localTime, setLocalTime] = useState('');
+
+  useEffect(() => {
+    const updateLocalTime = () => {
+      const timeInFrance = new Intl.DateTimeFormat('en-US', {
+        timeZone: 'Europe/Paris',
+        hour: '2-digit',
+        minute: '2-digit',
+        // second: '2-digit',
+        hour12: false,
+      }).format(new Date());
+
+      setLocalTime(timeInFrance);
+    };
+
+    updateLocalTime(); // Update time immediately on component mount
+    const intervalId = setInterval(updateLocalTime, 1000); // Then update every second
+
+    return () => clearInterval(intervalId); // Cleanup interval on component unmount
+  }, []);
+
+  return localTime;
+}
+
 function ProblemAgitation() {
   const currentYear = new Date().getFullYear();
   const yearsOfExperience = currentYear - 2016;
+  const localTimeInFrance = useGetLocalTimeInFrance();
 
   return (
     <>
-      <p>In {currentYear}, iteration speed is important.</p>
       <p>
-        Iteration speed means{' '}
-        <strong className="text-green-500">
-          getting code to users as fast as possible
-        </strong>
-        ,{' '}
-        <strong className="text-cyan-500">
-          seeing what’s working well or what isn’t
-        </strong>
-        , <strong className="text-yellow-500">making changes</strong>, and{' '}
-        <strong className="text-pink-500">
-          deploying new code to users again
-        </strong>
-        .
+        <strong>99% of apps</strong> have 1000 users or less and{' '}
+        <strong>will never stand out</strong> because of a{' '}
+        <strong>broken design and UX</strong>. Users typically decide within 5
+        seconds whether to uninstall an app.
       </p>
 
       <div className="relative flex h-[164px] w-[124px] flex-row items-center sm:h-[124px]">
@@ -121,6 +138,9 @@ function ProblemAgitation() {
         />
       </div>
 
+      <Text as="h2" variant="h4">
+        Become top 1% mobile app.
+      </Text>
       <p>
         My name is David and I have been laser focused on{' '}
         <strong>
@@ -130,7 +150,12 @@ function ProblemAgitation() {
       </p>
       <p>
         We are based in France, speak english for all our communications and use{' '}
-        <code>qwerty</code> keyboards.
+        <code>qwerty</code> keyboards. It’s {localTimeInFrance} for us right
+        now,{' '}
+        <Hyperlink href={linksApi.cal.CONSULTATION}>
+          book a call to see if we can help you
+        </Hyperlink>
+        .
       </p>
       <p>
         Unlike lengthy contracts that bind you for months and require a six-step
