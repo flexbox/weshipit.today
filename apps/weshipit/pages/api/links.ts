@@ -13,8 +13,7 @@ export const linksApi = {
       'https://airtable.com/appM394dCiLp3DoaF/shr3Ubj3BroW6DS5c',
   },
   stripe: {
-    // MONTHLY_PLAN: 'https://buy.stripe.com/00g03Ggnt4gee0E6oq?prefilled_promo_code=FIRSTMONTH50',
-    MONTHLY_PLAN: 'https://buy.stripe.com/00g03Ggnt4gee0E6oq',
+    MONTHLY_PLAN: 'https://buy.stripe.com/5kA17K2wD4ge9Ko7sv',
   },
   cal: {
     CONSULTATION: 'https://cal.com/davidl/weshipit-onboarding',
