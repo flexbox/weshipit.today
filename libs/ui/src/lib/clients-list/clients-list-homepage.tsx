@@ -12,7 +12,12 @@ export function ClientsListHomepage({ clients }: ClientsListHomepageProps) {
     <div className="my-12">
       <div className="group relative grid grid-cols-3 content-around gap-4 md:grid-cols-5">
         <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 transition-all group-hover:opacity-100">
-          <LinkButton href="/customers" className="z-20 cursor-pointer text-lg">
+          <LinkButton
+            href="/customers"
+            className="z-20"
+            variant="outline"
+            size="xl"
+          >
             Meet our customers
           </LinkButton>
         </div>

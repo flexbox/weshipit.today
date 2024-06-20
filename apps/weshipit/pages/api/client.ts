@@ -1,3 +1,4 @@
+import * as prismic from '@prismicio/client';
 import { client as prismicClient } from './prismic';
 
 export interface Customer {
@@ -25,6 +26,24 @@ export async function getAllClients() {
     };
   } catch (error) {
     console.error('getAllClients -> error', error);
+    return error;
+  }
+}
+
+export async function getVisibleClients() {
+  try {
+    const { results } = await prismicClient.get({
+      filters: [
+        prismic.filter.at('document.type', 'client'),
+        prismic.filter.at('my.client.is_visible_homepage', true),
+      ],
+    });
+
+    return {
+      clients: results ? results : [],
+    };
+  } catch (error) {
+    console.error('❌ getVisibleClients -> error', error);
     return error;
   }
 }

@@ -4540,39 +4540,39 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@prismicio/client@npm:^7.1.1":
-  version: 7.4.1
-  resolution: "@prismicio/client@npm:7.4.1"
+"@prismicio/client@npm:^7.6.0":
+  version: 7.6.0
+  resolution: "@prismicio/client@npm:7.6.0"
   dependencies:
     imgix-url-builder: "npm:^0.0.4"
-  checksum: 10/59479534de104ad1512165120ee084e134266f5114242dd09b1c00df6d35d768e66a56c600eed698ad9a13bf9b7ce25a335d6bd45e67c33c44c1a919804d24de
+  checksum: 10/0b22304afa02db74141b80bdc2194c33ce06f8613f93c8d6b7223b6d1b87d91b88cde046c7af20a0dea4a74afac0081b33865a585aa1d8d44d1c280a6fc1e747
   languageName: node
   linkType: hard
 
-"@prismicio/next@npm:^1.5.0":
-  version: 1.5.0
-  resolution: "@prismicio/next@npm:1.5.0"
+"@prismicio/next@npm:^1.6.0":
+  version: 1.6.0
+  resolution: "@prismicio/next@npm:1.6.0"
   dependencies:
     "@formatjs/intl-localematcher": "npm:^0.5.2"
     imgix-url-builder: "npm:^0.0.4"
     negotiator: "npm:^0.6.3"
   peerDependencies:
     "@prismicio/client": ^6 || ^7
-    next: ">=13.4.5"
-    react: ^18
-  checksum: 10/8063af78e83acbc14d1311e5fd92833c1ee8a9dfdaa3dad9acfbcecfd8bff06a566d2e4974da516e686519bace4a02676f4568e6b4c673c0dc89b440361fc87a
+    next: ^13.4.5 || ^14 || ^15.0.0-rc.0
+    react: ^18 || ^19.0.0-rc.0
+  checksum: 10/c8c21857abc05ed4673dd6b04ebb279abf60dddc47ca7d912c1970dd84932ecad00fd3bba29b5a6e51d91ca577f4589f364c956a9034f780672c197cdde9896d
   languageName: node
   linkType: hard
 
-"@prismicio/react@npm:^2.7.1":
-  version: 2.7.4
-  resolution: "@prismicio/react@npm:2.7.4"
+"@prismicio/react@npm:^2.8.0":
+  version: 2.8.0
+  resolution: "@prismicio/react@npm:2.8.0"
   dependencies:
     "@prismicio/richtext": "npm:^2.1.5"
   peerDependencies:
     "@prismicio/client": ^6 || ^7
-    react: ^18
-  checksum: 10/ecac298b343d0ac56d16df021e246812c708acf82eeaa6f7db5d0c8a4f250d3da0d33914bb2a0a4ae102b485c9892cc20fdd10ee2dbe7ec91c9a46bea2b8b6c8
+    react: ^18 || ^19.0.0-rc.0
+  checksum: 10/e27d470d1c56706a09efd79197f0b98286a5c60802976186808d474c177c7d25c08157bd8402477c1ef9873a5c0da1c88d89c577a450db19a1af0222bdbf76d9
   languageName: node
   linkType: hard
 
@@ -25305,9 +25305,9 @@ __metadata:
     "@nx/web": "npm:18.3.3"
     "@nx/webpack": "npm:18.3.3"
     "@nx/workspace": "npm:18.3.3"
-    "@prismicio/client": "npm:^7.1.1"
-    "@prismicio/next": "npm:^1.5.0"
-    "@prismicio/react": "npm:^2.7.1"
+    "@prismicio/client": "npm:^7.6.0"
+    "@prismicio/next": "npm:^1.6.0"
+    "@prismicio/react": "npm:^2.8.0"
     "@storybook/addon-essentials": "npm:7.5.3"
     "@storybook/core-server": "npm:7.5.3"
     "@storybook/jest": "npm:^0.2.3"

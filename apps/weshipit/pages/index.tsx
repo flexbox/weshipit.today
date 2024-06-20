@@ -18,7 +18,7 @@ import { getAllFaqs } from './api/faq';
 import { asHTML, asText } from '@prismicio/client';
 import Head from 'next/head';
 import Gravatar from 'react-gravatar';
-import { Customer, getAllClients } from './api/client';
+import { Customer, getVisibleClients } from './api/client';
 import { Steps, getAllWorkflowSteps } from './api/workflow-steps';
 import { PrismicRichText } from '@prismicio/react';
 
@@ -39,6 +39,23 @@ interface CallToActionProps {
   secondaryHref: string;
   secondaryLabel: string;
   teamSpotsLeft: number;
+}
+
+export async function getStaticProps() {
+  const { faqs } = await getAllFaqs();
+  const { clients } = await getVisibleClients();
+  const { steps } = await getAllWorkflowSteps();
+
+  const teamSpotsLeft = await fetchTeam();
+
+  return {
+    props: {
+      faqs,
+      clients,
+      steps,
+      teamSpotsLeft: teamSpotsLeft.length,
+    },
+  };
 }
 
 function CallToAction({
@@ -496,21 +513,4 @@ export default function IndexPage({
       </Layout>
     </>
   );
-}
-
-export async function getStaticProps() {
-  const { faqs } = await getAllFaqs();
-  const { clients } = await getAllClients();
-  const { steps } = await getAllWorkflowSteps();
-
-  const teamSpotsLeft = await fetchTeam();
-
-  return {
-    props: {
-      faqs,
-      clients,
-      steps,
-      teamSpotsLeft: teamSpotsLeft.length,
-    },
-  };
 }

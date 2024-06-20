@@ -11,10 +11,11 @@ import {
 import Link from 'next/link';
 import Image from 'next/image';
 import { Layout } from '../components/layout';
-import { getAllClients } from './api/client';
+import { Customer, getVisibleClients } from './api/client';
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
 import { linksApi } from './api/links';
+import { GetStaticProps } from 'next';
 
 const links = [
   {
@@ -30,6 +31,13 @@ const links = [
     label: 'Youtube',
   },
 ];
+
+export const getStaticProps = (async (context) => {
+  const { clients } = await getVisibleClients();
+  return { props: { clients } };
+}) satisfies GetStaticProps<{
+  clients: Customer[];
+}>;
 
 export default function AboutPage({ clients }) {
   const currentYear = new Date().getFullYear();
@@ -292,8 +300,3 @@ export default function AboutPage({ clients }) {
     </Layout>
   );
 }
-
-AboutPage.getInitialProps = async function () {
-  const clients = await getAllClients();
-  return clients;
-};
