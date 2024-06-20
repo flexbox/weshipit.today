@@ -1,5 +1,4 @@
 import {
-  Badge,
   Button,
   Card,
   ClientsListHomepage,
@@ -9,6 +8,7 @@ import {
   Hero,
   Hyperlink,
   Prose,
+  SpotLeft,
   Text,
   WorkflowCard,
 } from '@weshipit/ui';
@@ -17,7 +17,6 @@ import { Layout } from '../components/layout';
 import { getAllFaqs } from './api/faq';
 import { asHTML, asText } from '@prismicio/client';
 import Head from 'next/head';
-import { format } from 'date-fns';
 import Gravatar from 'react-gravatar';
 import { Customer, getAllClients } from './api/client';
 import { Steps, getAllWorkflowSteps } from './api/workflow-steps';
@@ -25,11 +24,21 @@ import { PrismicRichText } from '@prismicio/react';
 
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
+import { fetchTeam } from './api/team';
 
 interface IndexPageProps {
   faqs: FaqProps[];
   clients: Customer[];
   steps: Steps[];
+  teamSpotsLeft: number;
+}
+
+interface CallToActionProps {
+  label: string;
+  href: string;
+  secondaryHref: string;
+  secondaryLabel: string;
+  teamSpotsLeft: number;
 }
 
 function CallToAction({
@@ -37,26 +46,11 @@ function CallToAction({
   href,
   secondaryHref,
   secondaryLabel,
-}: {
-  label: string;
-  href: string;
-  secondaryHref: string;
-  secondaryLabel: string;
-}) {
-  const currentDate = new Date();
-  const nextMonth = new Date();
-  nextMonth.setMonth(currentDate.getMonth() + 1);
-  const nextMonthInText = format(nextMonth, 'MMMM');
-
+  teamSpotsLeft,
+}: CallToActionProps) {
   return (
     <div className="flex flex-col gap-4 text-center">
-      <div className="shrink-0">
-        <Badge variant="blue" className="flex gap-2">
-          <div className="size-3 rounded-full bg-slate-300 dark:bg-slate-600"></div>
-          <div className="size-3 rounded-full bg-blue-500"></div>
-          <div>1 spot left in {nextMonthInText} ✨</div>
-        </Badge>
-      </div>
+      <SpotLeft spotsLeft={teamSpotsLeft} />
       <div className="shrink-0">
         <Button
           href={href}
@@ -309,7 +303,12 @@ function HowDoesItWorks({ steps }: { steps: Steps[] }) {
   );
 }
 
-export default function IndexPage({ faqs, clients, steps }: IndexPageProps) {
+export default function IndexPage({
+  faqs,
+  clients,
+  steps,
+  teamSpotsLeft,
+}: IndexPageProps) {
   /** @type {import('schema-dts').FAQPage} */
   const schema = {
     '@context': 'https://schema.org',
@@ -353,6 +352,7 @@ export default function IndexPage({ faqs, clients, steps }: IndexPageProps) {
               href={linksApi.cal.CONSULTATION}
               secondaryLabel={'Or Subscribe Today'}
               secondaryHref={linksApi.stripe.MONTHLY_PLAN}
+              teamSpotsLeft={teamSpotsLeft}
             />
           </Hero>
         </FadeIn>
@@ -447,6 +447,7 @@ export default function IndexPage({ faqs, clients, steps }: IndexPageProps) {
             href={linksApi.stripe.MONTHLY_PLAN}
             secondaryLabel={'Book a 30-min introduction call'}
             secondaryHref={linksApi.cal.CONSULTATION}
+            teamSpotsLeft={teamSpotsLeft}
           />
         </div>
         <div className="m-auto max-w-2xl">
@@ -495,11 +496,14 @@ export async function getStaticProps() {
   const { clients } = await getAllClients();
   const { steps } = await getAllWorkflowSteps();
 
+  const teamSpotsLeft = await fetchTeam();
+
   return {
     props: {
       faqs,
       clients,
       steps,
+      teamSpotsLeft: teamSpotsLeft.length,
     },
   };
 }

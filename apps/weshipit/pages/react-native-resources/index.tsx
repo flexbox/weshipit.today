@@ -20,8 +20,8 @@ interface ResourceRecord {
     slack_url?: string;
     youtube_url?: string;
     discord_url?: string;
-    country?: string;
-    date_event?: string;
+    conference_country?: string;
+    conference_date?: string;
   };
   id: string;
 }
@@ -42,23 +42,23 @@ function ResourceList({ records }) {
           slack_url,
           youtube_url,
           discord_url,
-          country,
-          date_event,
+          conference_country,
+          conference_date,
         } = record.fields;
 
         return (
           <Card key={record.id}>
-            {country && (
+            {conference_country && (
               <Text as="p" variant="p2" className="mb-2">
-                {country}
+                {conference_country}
               </Text>
             )}
             <Text as="h3" variant="h3" className="mb-2">
               {name}
             </Text>
-            {date_event && (
+            {conference_date && (
               <Text as="p" variant="p2" className="mb-4">
-                {format(new Date(date_event), 'cccc dd MMMM yyyy')}
+                {format(new Date(conference_date), 'cccc dd MMMM yyyy')}
               </Text>
             )}
 

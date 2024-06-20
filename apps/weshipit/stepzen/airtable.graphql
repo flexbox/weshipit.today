@@ -154,3 +154,25 @@ type Query {
       configuration: "airtable_config"
     )
 }
+
+# PEOPLE
+type PeopleField {
+  name: String
+  type: [String]
+  status: [String]
+}
+
+type PeopleRecord {
+  id: ID!
+  createdTime: String!
+  fields: PeopleField!
+}
+
+type Query {
+  getPeopleRecords: [PeopleRecord!]!
+    @rest(
+      resultroot: "records[]"
+      endpoint: "https://api.airtable.com/v0/$baseid/people"
+      configuration: "airtable_config"
+    )
+}
