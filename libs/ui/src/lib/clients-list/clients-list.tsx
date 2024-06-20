@@ -6,6 +6,7 @@ export interface ClientProps {
   id: string;
   data: {
     name: string;
+    industry?: string;
     is_visible_homepage: boolean;
     logo?: {
       url: string;
@@ -25,7 +26,7 @@ export function ClientsList({ clients }: ClientsListProps) {
         <Card
           size="sm"
           key={client.id}
-          className="flex items-center justify-center text-center"
+          className="flex flex-col items-center justify-between text-center"
         >
           {client.data.logo?.url ? (
             <Image
@@ -35,10 +36,13 @@ export function ClientsList({ clients }: ClientsListProps) {
               height={80}
             />
           ) : (
-            <Text as="p" variant="s2">
+            <Text as="p" variant="s2" className="py-6">
               {client.data.name}
             </Text>
           )}
+          <Text as="p" variant="p2" className="opacity-40">
+            {client.data.industry}
+          </Text>
         </Card>
       ))}
     </div>

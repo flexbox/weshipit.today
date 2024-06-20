@@ -4,8 +4,9 @@ export interface Customer {
   id: string;
   data: {
     name: string;
+    industry?: string;
     is_visible_homepage: boolean;
-    logo: {
+    logo?: {
       url: string;
     };
     id: string;

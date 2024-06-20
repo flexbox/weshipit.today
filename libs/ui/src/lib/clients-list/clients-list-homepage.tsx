@@ -1,4 +1,5 @@
 import { ClientProps } from './clients-list';
+import { Text } from '../text/text';
 import Image from 'next/image';
 
 export interface ClientsListHomepageProps {
@@ -11,14 +12,20 @@ export function ClientsListHomepage(data: ClientsListHomepageProps) {
       {data.clients.map(
         (client: ClientProps) =>
           client.data.is_visible_homepage && (
-            <div className="flex justify-center" key={client.id}>
+            <div
+              className="flex flex-col items-center justify-center gap-4 opacity-50 grayscale transition-all hover:opacity-100 hover:grayscale-0"
+              key={client.id}
+            >
               <Image
                 src={client.data.logo?.url || ''}
                 alt={`${client.data.name} logo`}
                 width={250}
                 height={250}
-                className="size-32 opacity-50 grayscale transition duration-300 ease-in-out hover:opacity-100 hover:grayscale-0 dark:rounded-xl dark:bg-white/90 dark:p-2"
+                className="size-32 transition duration-300 ease-in-out dark:rounded-xl dark:bg-white/90 dark:p-2"
               />
+              <Text as="p" variant="p2">
+                {client.data.industry}
+              </Text>
             </div>
           )
       )}
