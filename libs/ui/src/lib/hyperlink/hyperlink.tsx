@@ -17,7 +17,7 @@ export function Hyperlink({
 }: HyperlinkProps) {
   if (isExternal) {
     return (
-      <a target="_blank" rel="noopener noreferrer" {...rest}>
+      <a target="_blank" rel="noopener noreferrer nofollow" {...rest}>
         <span className="flex items-center">
           {children}
           {noIcon ? null : (
