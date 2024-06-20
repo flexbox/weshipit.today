@@ -331,160 +331,167 @@ export default function IndexPage({
       <Layout
         withHeader
         withFooter
-        withContainer
         seoTitle="Hire React Native Developers as a Service"
         seoDescription="Software development is a service, not a product. We offer a subscription-based service for React Native developers. One flat fee. Zero billable hours. Pause or cancel whenever."
       >
-        <FadeIn>
-          <Hero>
-            <div className="my-12">
-              <Text as="h1" variant="h1" className="text-center">
-                One flat fee.
-                <br />
-                React Native Experts on demand.
-              </Text>
-              <Text as="p" variant="h3" className="text-center opacity-30">
-                Pause or cancel whenever.
-              </Text>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <FadeIn>
+            <Hero>
+              <div className="my-12">
+                <Text as="h1" variant="h1" className="text-center">
+                  One flat fee.
+                  <br />
+                  React Native Experts on demand.
+                </Text>
+                <Text as="p" variant="h3" className="text-center opacity-30">
+                  Pause or cancel whenever.
+                </Text>
+              </div>
+              <CallToAction
+                label={'Book a 30-min introduction call'}
+                href={linksApi.cal.CONSULTATION}
+                secondaryLabel={'Or Subscribe Today'}
+                secondaryHref={linksApi.stripe.MONTHLY_PLAN}
+                teamSpotsLeft={teamSpotsLeft}
+              />
+            </Hero>
+          </FadeIn>
+          <div className="m-auto max-w-2xl">
+            <FadeIn>
+              <Prose className="mb-12" size="2xl">
+                <ProblemAgitation />
+              </Prose>
+            </FadeIn>
+
+            <Button
+              href={linksApi.stripe.MONTHLY_PLAN}
+              as="a"
+              size="xxl"
+              isExternalLink
+              withExternalLinkIcon={false}
+              className="mb-24 flex w-full justify-center"
+            >
+              Subscribe now
+            </Button>
+          </div>
+          <div className="mb-16 py-0 pb-12 lg:py-24">
+            <div className="m-auto max-w-2xl">
+              <Prose className="mb-12" size="xl">
+                <h2>Mobile app for iOS, Android and more</h2>
+                <p>
+                  Our team can assist you in shipping a new app, add new
+                  features, or just keep an existing app up to date. Contact us
+                  today if you want:
+                </p>
+                <ul>
+                  <li>
+                    A new mobile application{' '}
+                    <strong>quickly on Apple and Google store</strong>.
+                  </li>
+                  <li>
+                    <strong>Regain agility</strong> to evolve my application
+                    quickly.
+                  </li>
+                  <li>
+                    Stop struggling with <strong>React Native updates</strong>.
+                  </li>
+                  <li>
+                    Quickly{' '}
+                    <strong>migrate an application to React Native</strong>.
+                  </li>
+                </ul>
+              </Prose>
+              <div className="flex justify-center">
+                <Button
+                  href={linksApi.cal.CONSULTATION}
+                  as="a"
+                  isExternalLink
+                  withExternalLinkIcon={false}
+                  size="xxl"
+                  variant="outline"
+                >
+                  Book a free 30-min introduction call
+                </Button>
+              </div>
             </div>
+          </div>
+          <div className="mb-16 py-0 pb-12 lg:py-24">
+            <div className="m-auto max-w-2xl">
+              <Prose className="mb-12" size="xl">
+                <h2>What makes a great app?</h2>
+                <p>
+                  We take immense pride in having expertly served an impressive
+                  roster of over {clients.length} clients, including
+                </p>
+              </Prose>
+            </div>
+            {/* Social Proof */}
+            <ClientsListHomepage clients={clients} />
+          </div>
+
+          <div className="mb-24 py-0 lg:py-24">
+            <div className="m-auto max-w-2xl">
+              <PodcastProof />
+            </div>
+          </div>
+
+          <div className="m-auto max-w-3xl">
+            <HowDoesItWorks steps={steps} />
+          </div>
+        </div>
+
+        <div className="my-12 bg-white py-32">
+          <div className="m-auto max-w-2xl text-center">
+            <Text as="h2" variant="h2" className="mb-12">
+              Cutting Edge UI and Enhanced Productivity
+            </Text>
             <CallToAction
-              label={'Book a 30-min introduction call'}
-              href={linksApi.cal.CONSULTATION}
-              secondaryLabel={'Or Subscribe Today'}
-              secondaryHref={linksApi.stripe.MONTHLY_PLAN}
+              label={'Subscribe Today'}
+              href={linksApi.stripe.MONTHLY_PLAN}
+              secondaryLabel={'Book a 30-min introduction call'}
+              secondaryHref={linksApi.cal.CONSULTATION}
               teamSpotsLeft={teamSpotsLeft}
             />
-          </Hero>
-        </FadeIn>
-        <div className="m-auto max-w-2xl">
-          <FadeIn>
-            <Prose className="mb-12" size="2xl">
-              <ProblemAgitation />
-            </Prose>
-          </FadeIn>
-
-          <Button
-            href={linksApi.stripe.MONTHLY_PLAN}
-            as="a"
-            size="xxl"
-            isExternalLink
-            withExternalLinkIcon={false}
-            className="mb-24 flex w-full justify-center"
-          >
-            Subscribe now
-          </Button>
+          </div>
         </div>
-        <div className="mb-16 py-0 pb-12 lg:py-24">
+
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="m-auto max-w-2xl">
-            <Prose className="mb-12" size="xl">
-              <h2>Mobile app for iOS, Android and more</h2>
-              <p>
-                Our team can assist you in shipping a new app, add new features,
-                or just keep an existing app up to date. Contact us today if you
-                want:
-              </p>
-              <ul>
-                <li>
-                  A new mobile application{' '}
-                  <strong>quickly on Apple and Google store</strong>.
-                </li>
-                <li>
-                  <strong>Regain agility</strong> to evolve my application
-                  quickly.
-                </li>
-                <li>
-                  Stop struggling with <strong>React Native updates</strong>.
-                </li>
-                <li>
-                  Quickly{' '}
-                  <strong>migrate an application to React Native</strong>.
-                </li>
-              </ul>
-            </Prose>
-            <div className="flex justify-center">
+            <Faq faqs={faqs} />
+          </div>
+          <div className="m-auto max-w-4xl py-24">
+            <Card
+              size="xl"
+              className="m-auto my-24 flex flex-col items-center justify-center gap-8 text-center"
+              variant="gradient-blue"
+            >
+              <Text
+                variant="h4"
+                as="h2"
+                className="bg-gradient-to-b from-white to-white/75 bg-clip-text font-bold tracking-tight text-transparent drop-shadow"
+              >
+                See if weshipit.today is right for your needs
+              </Text>
+              <Text
+                variant="p1"
+                as="p"
+                className="bg-gradient-to-b from-white to-white/75 bg-clip-text tracking-tight text-transparent drop-shadow"
+              >
+                Book a call and find out how you and your team can change your
+                mobile app development forever.
+              </Text>
               <Button
+                size="xxl"
+                variant="outline"
                 href={linksApi.cal.CONSULTATION}
                 as="a"
                 isExternalLink
                 withExternalLinkIcon={false}
-                size="xxl"
-                variant="outline"
               >
-                Book a free 30-min introduction call
+                Book a free call now
               </Button>
-            </div>
+            </Card>
           </div>
-        </div>
-        <div className="mb-16 py-0 pb-12 lg:py-24">
-          <div className="m-auto max-w-2xl">
-            <Prose className="mb-12" size="xl">
-              <h2>What makes a great app?</h2>
-              <p>
-                We take immense pride in having expertly served an impressive
-                roster of over {clients.length} clients, including
-              </p>
-            </Prose>
-          </div>
-          {/* Social Proof */}
-          <ClientsListHomepage clients={clients} />
-        </div>
-
-        <div className="mb-24 py-0 lg:py-24">
-          <div className="m-auto max-w-2xl">
-            <PodcastProof />
-          </div>
-        </div>
-
-        <div className="m-auto max-w-3xl">
-          <HowDoesItWorks steps={steps} />
-        </div>
-        <div className="m-auto max-w-2xl py-32">
-          <Text as="h2" variant="h2" className="mb-12">
-            Elevate your App Experience with our Subscription Service
-          </Text>
-          <CallToAction
-            label={'Subscribe Today'}
-            href={linksApi.stripe.MONTHLY_PLAN}
-            secondaryLabel={'Book a 30-min introduction call'}
-            secondaryHref={linksApi.cal.CONSULTATION}
-            teamSpotsLeft={teamSpotsLeft}
-          />
-        </div>
-        <div className="m-auto max-w-2xl">
-          <Faq faqs={faqs} />
-        </div>
-        <div className="m-auto max-w-4xl py-24">
-          <Card
-            size="xl"
-            className="m-auto my-24 flex flex-col items-center justify-center gap-8 text-center"
-            variant="gradient-blue"
-          >
-            <Text
-              variant="h4"
-              as="h2"
-              className="bg-gradient-to-b from-white to-white/75 bg-clip-text font-bold tracking-tight text-transparent drop-shadow"
-            >
-              See if weshipit.today is right for your needs
-            </Text>
-            <Text
-              variant="p1"
-              as="p"
-              className="bg-gradient-to-b from-white to-white/75 bg-clip-text tracking-tight text-transparent drop-shadow"
-            >
-              Book a call and find out how you and your team can change your
-              mobile app development forever.
-            </Text>
-            <Button
-              size="xxl"
-              variant="outline"
-              href={linksApi.cal.CONSULTATION}
-              as="a"
-              isExternalLink
-              withExternalLinkIcon={false}
-            >
-              Book a free call now
-            </Button>
-          </Card>
         </div>
       </Layout>
     </>

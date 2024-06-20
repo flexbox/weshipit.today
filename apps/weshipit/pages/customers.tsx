@@ -25,16 +25,17 @@ export default function CustomersPage({ clients }: CustomersPageProps) {
       <Prose className="py-12" variant="slate" size="2xl">
         <h3>Meet our customers</h3>
         <p>
-          We help ambitious teams do amazing things. Over the last decades we’ve
-          guided more than {clients.length} companies to winning products,
-          impactful designs and right answers.
+          We help <strong>ambitious teams do amazing things</strong>. Over the
+          last decades we’ve guided more than {clients.length} companies to
+          winning products, impactful designs and right answers.
         </p>
         <p>
-          Over the years, we have had the good fortune to work on React Native
-          development and design projects for clients from a wide range of
-          industries and locations. Our clients have come from Paris France,
-          London UK, Bruxelles Belgium, Troy Michigan USA, Hamilton Bermuda,
-          Berlin Germany, and beyond to seek our expertise.
+          Over the years, we have had the good fortune to work on{' '}
+          <code>React / React Native development</code> and design projects for
+          clients from a wide range of industries and locations. Our clients
+          have come from Paris France, London UK, Bruxelles Belgium, Troy
+          Michigan USA, Hamilton Bermuda, Berlin Germany, and beyond to seek our
+          expertise.
         </p>
       </Prose>
 

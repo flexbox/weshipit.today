@@ -36,7 +36,7 @@ export function ClientsList({ clients }: ClientsListProps) {
               height={80}
             />
           ) : (
-            <Text as="p" variant="s2" className="py-6">
+            <Text as="p" variant="s2" className="pt-8">
               {client.data.name}
             </Text>
           )}
