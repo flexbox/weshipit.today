@@ -438,7 +438,7 @@ export default function IndexPage({
                 <h2>What makes a great app?</h2>
                 <p>
                   We take immense pride in having expertly served an impressive
-                  roster of over {clients.length} clients, including
+                  roster of over 15 clients, including
                 </p>
               </Prose>
             </div>
