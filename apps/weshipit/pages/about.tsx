@@ -68,7 +68,7 @@ export default function AboutPage({ clients }) {
       <div className="m-auto my-24 flex justify-center">
         <Button
           variant="primary"
-          href={linksApi.cal.CONSULTATION}
+          href={linksApi.cal.ONBOARDING}
           size="xxl"
           as="a"
           isExternalLink
@@ -232,7 +232,7 @@ export default function AboutPage({ clients }) {
       <div className="flex justify-center py-12">
         <Button
           variant="primary"
-          href={linksApi.cal.CONSULTATION}
+          href={linksApi.cal.ONBOARDING}
           size="xxl"
           as="a"
           isExternalLink

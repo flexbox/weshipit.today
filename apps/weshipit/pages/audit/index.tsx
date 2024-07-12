@@ -271,7 +271,7 @@ export function Audit() {
         >
           <div className="my-6">
             <Button
-              href={linksApi.cal.CONSULTATION}
+              href={linksApi.cal.ONBOARDING}
               as="a"
               isExternalLink
               withExternalLinkIcon={false}
@@ -331,7 +331,7 @@ export function Audit() {
           <Button
             size="xxl"
             variant="outline"
-            href={linksApi.cal.CONSULTATION}
+            href={linksApi.cal.ONBOARDING}
             as="a"
             isExternalLink
             withExternalLinkIcon={false}

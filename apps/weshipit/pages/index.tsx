@@ -168,7 +168,7 @@ function ProblemAgitation() {
         We are based in France, speak english for all our communications and use{' '}
         <code>qwerty</code> keyboards. It’s {localTimeInFrance} for us right
         now,{' '}
-        <Hyperlink href={linksApi.cal.CONSULTATION}>
+        <Hyperlink href={linksApi.cal.ONBOARDING}>
           book a call to see if we can help you
         </Hyperlink>
         .
@@ -222,8 +222,11 @@ function PodcastProof() {
     <Prose size="xl">
       <h2>We’re trusted React Native consultants.</h2>
       <p>
-        We actively participate in the community, presenting at meetups and
-        conferences, as well as{' '}
+        We actively participate in the community, presenting at{' '}
+        <Hyperlink href="https://davidl.fr/talks">
+          meetups and conferences
+        </Hyperlink>
+        , as well as{' '}
         <Hyperlink href="https://davidl.fr/bootcamp">
           conducting bootcamps
         </Hyperlink>
@@ -232,18 +235,30 @@ function PodcastProof() {
       <Image
         src="/images/appjs-2022.jpg"
         alt="David Leuliette, at appjs conference."
-        className="mb-0 w-full rounded-lg bg-neutral-100 object-cover"
+        className="mb-0 w-full rounded-lg bg-neutral-100 object-cover dark:bg-neutral-800"
         width={950}
         height={559}
       />
       <small className="text-slate-400">
         David with Catalyn and Aman at App.js Conf
       </small>
+      <h3>infinite.red alchemist</h3>
       <p>
         We have made numerous open-source contributions to different
-        organizations, such as <code>@expo</code>, <code>@facebook</code>,{' '}
-        <code>@aws-amplify</code> and <code>@infinitered</code>.
+        organizations focused on react-native, such as <code>@expo</code>,{' '}
+        <code>@facebook</code>, <code>@aws-amplify</code> and{' '}
+        <code>@infinitered</code>.
       </p>
+      <Image
+        src="/images/chainreact-2023.jpg"
+        alt="David Leuliette, at ChainReact conference."
+        className="mb-0 w-full rounded-lg bg-neutral-100 object-cover dark:bg-neutral-800"
+        width={950}
+        height={559}
+      />
+      <small className="text-slate-400">
+        David with John and Mazen at Chain React
+      </small>
       <p>
         Listen to David Leuliette, the founder of weshipit.today, on the React
         Native Radio podcast.
@@ -283,12 +298,11 @@ function HowDoesItWorks({ steps }: { steps: Steps[] }) {
         ))}
 
         <Card variant="green">
-          <ul>
+          <ol>
             <li>Get acces to top-noch talent.</li>
-            <li>Unlimited revisions.</li>
-            <li>One request at time.</li>
+            <li>Unlimited revisions and one request at time.</li>
             <li>Pause anytime and cancel whenever.</li>
-          </ul>
+          </ol>
         </Card>
 
         <Card variant="red">
@@ -366,7 +380,7 @@ export default function IndexPage({
               </div>
               <CallToAction
                 label={'Book a 30-min introduction call'}
-                href={linksApi.cal.CONSULTATION}
+                href={linksApi.cal.ONBOARDING}
                 secondaryLabel={'Or Subscribe Today'}
                 secondaryHref={linksApi.stripe.MONTHLY_PLAN}
                 teamSpotsLeft={teamSpotsLeft}
@@ -381,14 +395,15 @@ export default function IndexPage({
             </FadeIn>
 
             <Button
-              href={linksApi.stripe.MONTHLY_PLAN}
+              href={linksApi.cal.ONBOARDING}
               as="a"
               size="xxl"
+              variant="outline"
               isExternalLink
               withExternalLinkIcon={false}
               className="mb-24 flex w-full justify-center"
             >
-              Subscribe now
+              Talk to us
             </Button>
           </div>
           <div className="mb-16 py-0 pb-12 lg:py-24">
@@ -406,21 +421,22 @@ export default function IndexPage({
                     <strong>quickly on Apple and Google store</strong>.
                   </li>
                   <li>
-                    <strong>Regain agility</strong> to evolve my application
+                    to <strong>Regain agility</strong> to evolve my application
                     quickly.
                   </li>
                   <li>
-                    Stop struggling with <strong>React Native updates</strong>.
+                    To stop struggling with{' '}
+                    <strong>React Native updates</strong>.
                   </li>
                   <li>
-                    Quickly{' '}
+                    To quickly{' '}
                     <strong>migrate an application to React Native</strong>.
                   </li>
                 </ul>
               </Prose>
               <div className="flex justify-center">
                 <Button
-                  href={linksApi.cal.CONSULTATION}
+                  href={linksApi.cal.ONBOARDING}
                   as="a"
                   isExternalLink
                   withExternalLinkIcon={false}
@@ -463,10 +479,10 @@ export default function IndexPage({
               Cutting Edge UI and Enhanced Productivity
             </Text>
             <CallToAction
-              label={'Subscribe Today'}
-              href={linksApi.stripe.MONTHLY_PLAN}
-              secondaryLabel={'Book a 30-min introduction call'}
-              secondaryHref={linksApi.cal.CONSULTATION}
+              label={'Book a 30-min introduction call'}
+              href={linksApi.cal.ONBOARDING}
+              secondaryLabel={'Subscribe Today'}
+              secondaryHref={linksApi.stripe.MONTHLY_PLAN}
               teamSpotsLeft={teamSpotsLeft}
             />
           </div>
@@ -500,7 +516,7 @@ export default function IndexPage({
               <Button
                 size="xxl"
                 variant="outline"
-                href={linksApi.cal.CONSULTATION}
+                href={linksApi.cal.ONBOARDING}
                 as="a"
                 isExternalLink
                 withExternalLinkIcon={false}
