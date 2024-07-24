@@ -3,9 +3,9 @@ import client from './apollo-client';
 
 interface People {
   fields: {
-    status: string; // 'free' | 'busy'
-    type: string;
-    name?: string;
+    status: string[]; // 'free' | 'busy'
+    type: string[] | null;
+    name?: string | null;
   };
 }
 
@@ -22,8 +22,10 @@ export async function fetchTeam(): Promise<People[]> {
       }
     `,
   });
+
   const records: People[] = data.getPeopleRecords;
-  const team = records.filter((record) => record.fields.type.includes('team'));
+  const team = records.filter((record) => record.fields.type?.includes('team'));
+
   const teamSpotsLeft = team.filter((record) =>
     record.fields.status.includes('free')
   );
