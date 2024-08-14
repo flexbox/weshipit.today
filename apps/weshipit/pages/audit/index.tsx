@@ -49,7 +49,7 @@ function Section({ title, image, children }) {
         <div className="mt-12 lg:mt-0 lg:w-[37rem] lg:flex-none lg:group-even/section:order-first">
           <FadeIn>
             <div
-              className="text-base font-semibold before:text-neutral-300 before:content-['/_'] after:text-neutral-950 after:content-[counter(section,decimal-leading-zero)]"
+              className="text-base font-semibold before:text-neutral-300 before:content-['/_'] after:text-neutral-950 after:content-[counter(section,decimal-leading-zero)] dark:after:text-neutral-300"
               aria-hidden="true"
             />
             <Text as="h2" variant="h3" className="mt-2">
@@ -263,27 +263,29 @@ export function Audit() {
       withContainer
     >
       <FadeIn>
-        <Hero
-          title="React Native Codebase Audit."
-          description="Eradicating your technical debt caused by a lack of expertise or capacity within your team. We can support your team by conducting the audit and allowing your
+        <div className="mt-32">
+          <Hero
+            title="React Native Codebase Audit."
+            description="Eradicating your technical debt caused by a lack of expertise or capacity within your team. We can support your team by conducting the audit and allowing your
           organization to focus on its priorities without a drop in its
           development pace."
-        >
-          <div className="my-6">
-            <Button
-              href={linksApi.cal.ONBOARDING}
-              as="a"
-              isExternalLink
-              withExternalLinkIcon={false}
-              size="xxl"
-              className="justify-center"
-            >
-              Book a call
-            </Button>
-          </div>
-        </Hero>
+          >
+            <div className="my-12">
+              <Button
+                href={linksApi.cal.ONBOARDING}
+                as="a"
+                isExternalLink
+                withExternalLinkIcon={false}
+                size="xxl"
+                className="justify-center"
+              >
+                Start now
+              </Button>
+            </div>
+          </Hero>
+        </div>
       </FadeIn>
-      <div className="mt-12 space-y-24 [counter-reset:section] sm:mt-32 sm:space-y-32 lg:mt-40 lg:space-y-40">
+      <div className="mt-12 space-y-24 [counter-reset:section] sm:mt-32 sm:space-y-32 lg:mt-16 lg:space-y-40">
         <Discover />
         <Workflow />
         <Benefits />
