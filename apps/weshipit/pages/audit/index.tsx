@@ -33,20 +33,11 @@ export function Container({
   );
 }
 
-function Section({ title, image, children }) {
+function Section({ title, children }) {
   return (
     <Container className="group/section [counter-increment:section]">
-      <div className="lg:flex lg:items-center lg:justify-end lg:gap-x-8 lg:group-even/section:justify-start xl:gap-x-20">
-        <div className="flex justify-center">
-          <FadeIn className="w-[33.75rem] flex-none lg:w-[45rem]">
-            <StylizedImage
-              {...image}
-              sizes="(min-width: 1024px) 41rem, 31rem"
-              className="justify-center lg:justify-end lg:group-even/section:justify-start"
-            />
-          </FadeIn>
-        </div>
-        <div className="mt-12 lg:mt-0 lg:w-[37rem] lg:flex-none lg:group-even/section:order-first">
+      <div className="lg:flex lg:items-center lg:justify-center lg:gap-x-8 lg:group-even/section:justify-start xl:gap-x-20">
+        <div className="mx-auto mt-12 lg:mt-0 lg:w-[37rem] lg:flex-none lg:group-even/section:order-first">
           <FadeIn>
             <div
               className="text-base font-semibold before:text-neutral-300 before:content-['/_'] after:text-neutral-950 after:content-[counter(section,decimal-leading-zero)] dark:after:text-neutral-300"
@@ -65,15 +56,7 @@ function Section({ title, image, children }) {
 
 function Discover() {
   return (
-    <Section
-      title="What is React Native Audit?"
-      image={{
-        src: '/images/audit-discover.jpg',
-        alt: 'React Native Code Audit',
-        width: 4896,
-        height: 3264,
-      }}
-    >
+    <Section title="What is React Native Audit?">
       <div className="space-y-6">
         <p>
           Are you seeking someone to review your work and{' '}
@@ -111,16 +94,7 @@ function Discover() {
 
 function Workflow() {
   return (
-    <Section
-      title="How does it work?"
-      image={{
-        shape: 1,
-        src: '/images/audit-process.jpg',
-        alt: 'React Native Code Audit',
-        width: 1969,
-        height: 3000,
-      }}
-    >
+    <Section title="How does it work?">
       <div className="space-y-6">
         <p>
           Our service is a fixed fee that covers a one-time project. The process
@@ -186,16 +160,7 @@ function Workflow() {
 
 function Benefits() {
   return (
-    <Section
-      title="What can you gain with our React Native Audit Package?"
-      image={{
-        shape: 2,
-        src: '/images/audit-benefits.jpg',
-        alt: 'Auditing the version of your React Native app can provide benefits',
-        width: 3000,
-        height: 2000,
-      }}
-    >
+    <Section title="What can you gain with our React Native Audit Package?">
       <p>
         Auditing the version of your React Native app can provide the following
         benefits:
@@ -263,7 +228,7 @@ export function Audit() {
       withContainer
     >
       <FadeIn>
-        <div className="mt-32">
+        <div className="mx-auto mt-24 w-2/3">
           <Hero
             title="React Native Codebase Audit."
             description="Eradicating your technical debt caused by a lack of expertise or capacity within your team. We can support your team by conducting the audit and allowing your
@@ -285,12 +250,12 @@ export function Audit() {
           </Hero>
         </div>
       </FadeIn>
-      <div className="mt-12 space-y-24 [counter-reset:section] sm:mt-32 sm:space-y-32 lg:mt-16 lg:space-y-40">
+      <div className="mt-12 space-y-24 [counter-reset:section] sm:mt-32 sm:space-y-32 lg:mt-8 lg:space-y-40">
         <Discover />
         <Workflow />
         <Benefits />
       </div>
-      <Prose size="lg" className="my-32">
+      <Prose size="lg" className="mx-auto my-4 lg:my-32">
         <h2>What else can we do for you?</h2>
         <h3>Long-term maintenance</h3>
         <p>
@@ -310,7 +275,7 @@ export function Audit() {
           your team in releasing and iterating more quickly.
         </p>
       </Prose>
-      <div className="m-auto max-w-4xl py-24">
+      <div className="m-auto max-w-4xl py-8 lg:py-24">
         <Card
           size="xl"
           className="m-auto my-24 flex flex-col items-center justify-center gap-8 text-center"
