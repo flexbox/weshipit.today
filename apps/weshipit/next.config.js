@@ -36,6 +36,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'api.apiflash.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'pbs.twimg.com',
+      },
     ],
     dangerouslyAllowSVG: true,
     contentDispositionType: 'attachment',

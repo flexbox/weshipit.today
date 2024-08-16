@@ -19,6 +19,7 @@ import {
   ScaleIcon,
 } from '@heroicons/react/24/outline';
 
+import Image from 'next/image';
 import clsx from 'clsx';
 import { PropsWithChildren } from 'react';
 import { linksApi } from '../api/links';
@@ -227,7 +228,7 @@ function BenefitItem({ Icon, title, description }) {
   return (
     <div className="flex flex-col items-center text-center">
       <Icon className="size-12 text-black dark:text-white" />
-      <Text as="h3" variant="h4" className="my-4">
+      <Text as="h3" variant="h4" className="mt-4">
         {title}
       </Text>
       <Text as="p" variant="p1">
@@ -274,6 +275,38 @@ function BenefitsSection() {
   );
 }
 
+function TestimonialSection() {
+  return (
+    <div className="m-auto w-3/4">
+      <div className="mt-12 lg:flex lg:items-center lg:justify-center lg:gap-x-8">
+        <div className="flex w-full flex-col items-center rounded-lg bg-white py-8 text-center shadow-lg lg:w-1/2">
+          <Text as="p" variant="quote" className="w-full italic">
+            “What‘s better than good code? Less code.”
+          </Text>
+          <div className="mt-4 flex items-center justify-center">
+            <Hyperlink href="https://x.com/jamonholmgren">
+              <Text
+                as="p"
+                variant="quote"
+                className="mr-4 text-right font-semibold"
+              >
+                Jamon Holmgren
+              </Text>
+            </Hyperlink>
+            <Image
+              src="https://pbs.twimg.com/profile_images/1712505856905170944/LDFMYGSQ_400x400.jpg"
+              alt="Jamon Holmgren"
+              className="size-16 rounded-full"
+              width={64}
+              height={64}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function Audit() {
   return (
     <Layout
@@ -310,6 +343,7 @@ export function Audit() {
       </FadeIn>
       <div className="mt-12 space-y-24 [counter-reset:section] sm:mt-32 sm:space-y-32 lg:mt-8 lg:space-y-40">
         <Discover />
+        <TestimonialSection />
         <Workflow />
         <Benefits />
       </div>
