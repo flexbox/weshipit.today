@@ -209,5 +209,63 @@
       }
     }
   },
-  "3346972901774463372": {}
+  "3346972901774463372": {},
+  "13510444182437530633": {},
+  "2818267944068185121": {},
+  "9052735107935726737": {},
+  "3861197047259981969": {},
+  "12294616153755063947": {},
+  "8809994825575013268": {},
+  "13111975579195412483": {},
+  "13129728899902244372": {},
+  "409480824815349367": {},
+  "9624130447354553938": {},
+  "17906566563912033976": {},
+  "5629802279943505747": {},
+  "14043122237789233770": {},
+  "7299075800475316040": {},
+  "15028005192392282521": {
+    "libs/ui": {
+      "targets": {
+        "lint": {
+          "command": "eslint .",
+          "cache": true,
+          "options": {
+            "cwd": "libs/ui"
+          },
+          "inputs": [
+            "default",
+            "^default",
+            "{workspaceRoot}/.eslintrc.json",
+            "{projectRoot}/.eslintrc.json",
+            "{workspaceRoot}/tools/eslint-rules/**/*",
+            {
+              "externalDependencies": [
+                "eslint"
+              ]
+            }
+          ],
+          "outputs": [
+            "{options.outputFile}"
+          ],
+          "metadata": {
+            "technologies": [
+              "eslint"
+            ],
+            "description": "Runs ESLint on project",
+            "help": {
+              "command": "yarn eslint --help",
+              "example": {
+                "options": {
+                  "max-warnings": 0
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "2555478727923264873": {},
+  "4920506550045863629": {}
 }

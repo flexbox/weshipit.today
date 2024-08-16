@@ -53,3 +53,4 @@ Thumbs.db
 .env*.local
 
 .nx/cache
+.nx/workspace-data

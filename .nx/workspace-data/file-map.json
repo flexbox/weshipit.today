@@ -9,8 +9,7 @@
     "@prismicio/client": "^7.6.0",
     "@prismicio/next": "^1.6.0",
     "@prismicio/react": "^2.8.0",
-    "@storybook/addon-interactions": "^8.2.8",
-    "@storybook/jest": "^0.2.3",
+    "@storybook/addon-interactions": "^8.2.9",
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.10",
     "@vercel/analytics": "^1.2.0",
@@ -39,7 +38,7 @@
     "@babel/core": "^7.14.5",
     "@babel/preset-react": "^7.14.5",
     "@babel/preset-typescript": "7.12.13",
-    "@chromatic-com/storybook": "^1",
+    "@chromatic-com/storybook": "^1.6.1",
     "@nrwl/cli": "15.9.3",
     "@nx/cypress": "19.6.0",
     "@nx/eslint": "19.6.0",
@@ -53,12 +52,12 @@
     "@nx/web": "19.6.0",
     "@nx/webpack": "19.6.0",
     "@nx/workspace": "19.6.0",
-    "@storybook/addon-essentials": "8.2.9",
-    "@storybook/core-server": "8.2.9",
-    "@storybook/react": "8.2.9",
-    "@storybook/react-webpack5": "7.5.3",
-    "@storybook/test-runner": "^0.13.0",
-    "@storybook/testing-library": "^0.2.2",
+    "@storybook/addon-essentials": "^8.2.9",
+    "@storybook/core-server": "^8.2.9",
+    "@storybook/nextjs": "^8.2.9",
+    "@storybook/react": "^8.2.9",
+    "@storybook/test": "^8.2.9",
+    "@storybook/test-runner": "^0.19.1",
     "@svgr/webpack": "8.0.1",
     "@swc-node/register": "1.9.2",
     "@swc/core": "1.5.29",
@@ -85,7 +84,7 @@
     "eslint-plugin-jsx-a11y": "6.7.1",
     "eslint-plugin-react": "7.32.2",
     "eslint-plugin-react-hooks": "4.6.0",
-    "eslint-plugin-storybook": "^0.6.12",
+    "eslint-plugin-storybook": "^0.8.0",
     "eslint-plugin-tailwindcss": "^3.7.1",
     "git-cz": "^4.9.0",
     "husky": "^8.0.2",
@@ -95,7 +94,7 @@
     "lint-staged": "^13.0.3",
     "nx": "19.6.0",
     "prettier": "^2.6.2",
-    "storybook": "8.2.9",
+    "storybook": "^8.2.9",
     "ts-jest": "29.1.0",
     "ts-node": "10.9.1",
     "typescript": "5.5.4",
@@ -131,141 +130,638 @@
     }
   ],
   "fileMap": {
-    "nonProjectFiles": [
-      {
-        "file": ".github/ISSUE_TEMPLATE/feature_request.md",
-        "hash": "14983644348452326660"
-      },
-      {
-        "file": "apps/.gitkeep",
-        "hash": "3244421341483603138"
-      },
-      {
-        "file": ".github/FUNDING.yml",
-        "hash": "5120889441865392561"
-      },
-      {
-        "file": "docs/nx-migration.md",
-        "hash": "14996819092707042308"
-      },
-      {
-        "file": ".prettierrc",
-        "hash": "16267754514737964994"
-      },
-      {
-        "file": ".vscode/extensions.json",
-        "hash": "8222805642385614202"
-      },
-      {
-        "file": ".github/PULL_REQUEST_TEMPLATE.md",
-        "hash": "14558230768682382473"
-      },
-      {
-        "file": "nx.json",
-        "hash": "4510229400446859935"
-      },
-      {
-        "file": "package.json",
-        "hash": "14036041676856550020"
-      },
-      {
-        "file": ".eslintrc.json",
-        "hash": "8621021040958942084"
-      },
-      {
-        "file": ".yarnrc.yml",
-        "hash": "1738288956040000640"
-      },
-      {
-        "file": "babel.config.json",
-        "hash": "5546405625092116747"
-      },
-      {
-        "file": "vercel.json",
-        "hash": "17483696782381925976"
-      },
-      {
-        "file": ".storybook/tsconfig.json",
-        "hash": "3128062056361165723"
-      },
-      {
-        "file": ".gitignore",
-        "hash": "5661185891029228407"
-      },
-      {
-        "file": ".prettierignore",
-        "hash": "9175937087874081623"
-      },
-      {
-        "file": ".vscode/settings.json",
-        "hash": "4493069063864926133"
-      },
-      {
-        "file": "jest.config.ts",
-        "hash": "12333515226966617182"
-      },
-      {
-        "file": "tools/tsconfig.tools.json",
-        "hash": "16088922570277978783"
-      },
-      {
-        "file": "tsconfig.base.json",
-        "hash": "17825924079975498304"
-      },
-      {
-        "file": ".yarn/releases/yarn-4.3.0.cjs",
-        "hash": "5844628996811314674"
-      },
-      {
-        "file": "jest.preset.js",
-        "hash": "9084884494335109525"
-      },
-      {
-        "file": ".husky/pre-commit",
-        "hash": "13469207043343598078"
-      },
-      {
-        "file": "migrations.json",
-        "hash": "374386856560352263"
-      },
-      {
-        "file": ".eslintignore",
-        "hash": "7663861978715868291"
-      },
-      {
-        "file": "README.md",
-        "hash": "4114224535076074457"
-      },
-      {
-        "file": ".storybook/main.js",
-        "hash": "3811757160680838808"
-      },
-      {
-        "file": "docs/nx.md",
-        "hash": "13953852117505670762"
-      },
-      {
-        "file": ".editorconfig",
-        "hash": "5443105041930014821"
-      },
-      {
-        "file": "docs/storybook-migration-summary.md",
-        "hash": "9612212630978455048"
-      },
-      {
-        "file": "changelog.config.js",
-        "hash": "9737849419401042451"
-      },
-      {
-        "file": ".github/ISSUE_TEMPLATE/bug_report.md",
-        "hash": "1579763754440796575"
-      },
-      {
-        "file": "yarn.lock",
-        "hash": "521642332823356298"
-      }
-    ],
     "projectFileMap": {
+      "utils": [
+        {
+          "file": "libs/utils/.babelrc",
+          "hash": "2946678488919325452"
+        },
+        {
+          "file": "libs/utils/.eslintrc.json",
+          "hash": "11012487992710232822"
+        },
+        {
+          "file": "libs/utils/README.md",
+          "hash": "17034218750445164374"
+        },
+        {
+          "file": "libs/utils/jest.config.ts",
+          "hash": "18265961918342049132"
+        },
+        {
+          "file": "libs/utils/package.json",
+          "hash": "11239560876598226286"
+        },
+        {
+          "file": "libs/utils/project.json",
+          "hash": "17762468390082753681"
+        },
+        {
+          "file": "libs/utils/src/index.ts",
+          "hash": "9347419158683565442"
+        },
+        {
+          "file": "libs/utils/src/lib/extract-domain-name/extract-domain-name.spec.tsx",
+          "hash": "12189801734215020631"
+        },
+        {
+          "file": "libs/utils/src/lib/extract-domain-name/extract-domain-name.ts",
+          "hash": "3220800344513156540",
+          "deps": [
+            "npm:lodash"
+          ]
+        },
+        {
+          "file": "libs/utils/src/lib/extract-username-from-github-url/extract-username-from-github-url.spec.tsx",
+          "hash": "6806791571020626201"
+        },
+        {
+          "file": "libs/utils/src/lib/extract-username-from-github-url/extract-username-from-github-url.tsx",
+          "hash": "4500154920692957229"
+        },
+        {
+          "file": "libs/utils/tsconfig.json",
+          "hash": "10374583890390798648"
+        },
+        {
+          "file": "libs/utils/tsconfig.lib.json",
+          "hash": "11908890256657676622"
+        },
+        {
+          "file": "libs/utils/tsconfig.spec.json",
+          "hash": "6514620907549802163"
+        },
+        {
+          "file": "libs/utils/vite.config.ts",
+          "hash": "921563878865983436",
+          "deps": [
+            "npm:vite",
+            "npm:@vitejs/plugin-react",
+            "npm:vite-plugin-dts",
+            "npm:@nx/vite"
+          ]
+        }
+      ],
+      "weshipit-e2e": [
+        {
+          "file": "apps/weshipit-e2e/.eslintrc.json",
+          "hash": "15523834149352881398"
+        },
+        {
+          "file": "apps/weshipit-e2e/cypress.json",
+          "hash": "3232495797855373900"
+        },
+        {
+          "file": "apps/weshipit-e2e/project.json",
+          "hash": "3640793926844374923"
+        },
+        {
+          "file": "apps/weshipit-e2e/src/fixtures/example.json",
+          "hash": "11614668686582597233"
+        },
+        {
+          "file": "apps/weshipit-e2e/src/integration/app.spec.ts",
+          "hash": "8758488402022621868"
+        },
+        {
+          "file": "apps/weshipit-e2e/src/support/app.po.ts",
+          "hash": "11157016311132186162"
+        },
+        {
+          "file": "apps/weshipit-e2e/src/support/commands.ts",
+          "hash": "7314691991044890572"
+        },
+        {
+          "file": "apps/weshipit-e2e/src/support/index.ts",
+          "hash": "3666078656922506009"
+        },
+        {
+          "file": "apps/weshipit-e2e/tsconfig.json",
+          "hash": "15074946957254721334"
+        }
+      ],
+      "figmatostore": [
+        {
+          "file": "apps/figmatostore/.eslintrc.json",
+          "hash": "9035025596659947158"
+        },
+        {
+          "file": "apps/figmatostore/components/Layout.tsx",
+          "hash": "15204385503359605696",
+          "deps": [
+            "npm:react",
+            "npm:next"
+          ]
+        },
+        {
+          "file": "apps/figmatostore/data/index.ts",
+          "hash": "4118468687970988492"
+        },
+        {
+          "file": "apps/figmatostore/index.d.ts",
+          "hash": "5498222895072842432"
+        },
+        {
+          "file": "apps/figmatostore/jest.config.ts",
+          "hash": "11491837128991460268"
+        },
+        {
+          "file": "apps/figmatostore/next-env.d.ts",
+          "hash": "5909181270615354023"
+        },
+        {
+          "file": "apps/figmatostore/next.config.js",
+          "hash": "4272252622042955866",
+          "deps": [
+            "npm:@nx/next"
+          ]
+        },
+        {
+          "file": "apps/figmatostore/pages/_app.tsx",
+          "hash": "16652344026786719173",
+          "deps": [
+            "npm:next",
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/figmatostore/pages/index.tsx",
+          "hash": "986133390866859220",
+          "deps": [
+            "npm:react-gravatar",
+            "npm:next",
+            "npm:react",
+            "ui"
+          ]
+        },
+        {
+          "file": "apps/figmatostore/pages/styles.css",
+          "hash": "2866083945719690482"
+        },
+        {
+          "file": "apps/figmatostore/postcss.config.js",
+          "hash": "2759402739052110475"
+        },
+        {
+          "file": "apps/figmatostore/project.json",
+          "hash": "13918134896957561818"
+        },
+        {
+          "file": "apps/figmatostore/public/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/figmatostore/public/demo.png",
+          "hash": "10111385741850290869"
+        },
+        {
+          "file": "apps/figmatostore/public/github-thumbnail.png",
+          "hash": "4718441800051944831"
+        },
+        {
+          "file": "apps/figmatostore/public/image_og.png",
+          "hash": "5703245456953158205"
+        },
+        {
+          "file": "apps/figmatostore/specs/index.spec.tsx",
+          "hash": "11056183168799669859",
+          "deps": [
+            "npm:react",
+            "npm:@testing-library/react"
+          ]
+        },
+        {
+          "file": "apps/figmatostore/tailwind.config.js",
+          "hash": "3790221286760968443",
+          "deps": [
+            "npm:@nx/react"
+          ]
+        },
+        {
+          "file": "apps/figmatostore/tsconfig.json",
+          "hash": "4549117079513823106"
+        },
+        {
+          "file": "apps/figmatostore/tsconfig.spec.json",
+          "hash": "6922413205408300107"
+        }
+      ],
+      "weshipit": [
+        {
+          "file": "apps/weshipit/.env.sample",
+          "hash": "17617511714716373877"
+        },
+        {
+          "file": "apps/weshipit/.eslintrc.json",
+          "hash": "4128217031026560353"
+        },
+        {
+          "file": "apps/weshipit/components/banner-product-hunt/banner-product-hunt.spec.tsx",
+          "hash": "6725771191063494813",
+          "deps": [
+            "npm:@testing-library/react"
+          ]
+        },
+        {
+          "file": "apps/weshipit/components/banner-product-hunt/banner-product-hunt.tsx",
+          "hash": "8794175947679322541",
+          "deps": [
+            "ui"
+          ]
+        },
+        {
+          "file": "apps/weshipit/components/footer-book.tsx",
+          "hash": "8449963148431053312",
+          "deps": [
+            "ui",
+            "npm:next"
+          ]
+        },
+        {
+          "file": "apps/weshipit/components/french-react-native-apps/format-apps-by-category.ts",
+          "hash": "6255549915808291723"
+        },
+        {
+          "file": "apps/weshipit/components/french-react-native-apps/french-apps.fixture.ts",
+          "hash": "6315389741793347013"
+        },
+        {
+          "file": "apps/weshipit/components/french-react-native-apps/french-apps.spec.tsx",
+          "hash": "1727220615718123509",
+          "deps": [
+            "npm:@testing-library/react",
+            "ui",
+            "npm:next"
+          ]
+        },
+        {
+          "file": "apps/weshipit/components/header-links-for-tools.tsx",
+          "hash": "13804828616464447586",
+          "deps": [
+            "ui"
+          ]
+        },
+        {
+          "file": "apps/weshipit/components/layout.tsx",
+          "hash": "10832773141529938200",
+          "deps": [
+            "ui"
+          ]
+        },
+        {
+          "file": "apps/weshipit/components/next-head.tsx",
+          "hash": "4569436020195542459",
+          "deps": [
+            "npm:next-seo",
+            "npm:next"
+          ]
+        },
+        {
+          "file": "apps/weshipit/index.d.ts",
+          "hash": "5498222895072842432"
+        },
+        {
+          "file": "apps/weshipit/jest.config.ts",
+          "hash": "10860363613455275426"
+        },
+        {
+          "file": "apps/weshipit/next-env.d.ts",
+          "hash": "5909181270615354023"
+        },
+        {
+          "file": "apps/weshipit/next-sitemap.config.js",
+          "hash": "5803350617203670667"
+        },
+        {
+          "file": "apps/weshipit/next.config.js",
+          "hash": "1523666941508002429",
+          "deps": [
+            "npm:@nx/next"
+          ]
+        },
+        {
+          "file": "apps/weshipit/pages/404.tsx",
+          "hash": "17606874809137864695",
+          "deps": [
+            "ui"
+          ]
+        },
+        {
+          "file": "apps/weshipit/pages/_app.tsx",
+          "hash": "5681049518772019617",
+          "deps": [
+            "npm:next",
+            "npm:@prismicio/react",
+            "npm:@vercel/analytics"
+          ]
+        },
+        {
+          "file": "apps/weshipit/pages/_document.tsx",
+          "hash": "4143609829870447187",
+          "deps": [
+            "npm:next"
+          ]
+        },
+        {
+          "file": "apps/weshipit/pages/about.tsx",
+          "hash": "18105745304035492246",
+          "deps": [
+            "ui",
+            "npm:next",
+            "npm:react-lite-youtube-embed"
+          ]
+        },
+        {
+          "file": "apps/weshipit/pages/api/apollo-client.ts",
+          "hash": "10757139273610245717",
+          "deps": [
+            "npm:@apollo/client"
+          ]
+        },
+        {
+          "file": "apps/weshipit/pages/api/client.ts",
+          "hash": "845946899318525269",
+          "deps": [
+            "npm:@prismicio/client"
+          ]
+        },
+        {
+          "file": "apps/weshipit/pages/api/faq.ts",
+          "hash": "8160191034236109059"
+        },
+        {
+          "file": "apps/weshipit/pages/api/hello.tsx",
+          "hash": "17317223900880828566",
+          "deps": [
+            "npm:next"
+          ]
+        },
+        {
+          "file": "apps/weshipit/pages/api/links.ts",
+          "hash": "17470154427993677771"
+        },
+        {
+          "file": "apps/weshipit/pages/api/og.tsx",
+          "hash": "8961959753487305693",
+          "deps": [
+            "npm:@vercel/og",
+            "npm:next"
+          ]
+        },
+        {
+          "file": "apps/weshipit/pages/api/prismic.ts",
+          "hash": "946520445958799264",
+          "deps": [
+            "npm:@prismicio/client"
+          ]
+        },
+        {
+          "file": "apps/weshipit/pages/api/team.ts",
+          "hash": "5858474024160447001",
+          "deps": [
+            "npm:@apollo/client"
+          ]
+        },
+        {
+          "file": "apps/weshipit/pages/api/workflow-steps.ts",
+          "hash": "6545047229105778521"
+        },
+        {
+          "file": "apps/weshipit/pages/audit/index.tsx",
+          "hash": "8547202364060050677",
+          "deps": [
+            "ui",
+            "npm:@heroicons/react",
+            "npm:next",
+            "npm:clsx",
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/weshipit/pages/consulting.tsx",
+          "hash": "11568598034847163712",
+          "deps": [
+            "ui",
+            "npm:@calcom/embed-react",
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/weshipit/pages/customers.tsx",
+          "hash": "6759566419479273529",
+          "deps": [
+            "ui"
+          ]
+        },
+        {
+          "file": "apps/weshipit/pages/french-react-native-apps.tsx",
+          "hash": "10169643986252406913",
+          "deps": [
+            "ui",
+            "npm:@apollo/client",
+            "npm:next",
+            "npm:lodash"
+          ]
+        },
+        {
+          "file": "apps/weshipit/pages/home.tsx",
+          "hash": "7017851963745653566",
+          "deps": [
+            "ui"
+          ]
+        },
+        {
+          "file": "apps/weshipit/pages/index.tsx",
+          "hash": "16041426748542776360",
+          "deps": [
+            "ui",
+            "npm:@prismicio/client",
+            "npm:next",
+            "npm:react-gravatar",
+            "npm:@prismicio/react",
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/weshipit/pages/onboarding.tsx",
+          "hash": "2567554724295389973",
+          "deps": [
+            "npm:react",
+            "ui"
+          ]
+        },
+        {
+          "file": "apps/weshipit/pages/qr.tsx",
+          "hash": "11612056495506220010",
+          "deps": [
+            "npm:next",
+            "ui"
+          ]
+        },
+        {
+          "file": "apps/weshipit/pages/react-native-resources/index.tsx",
+          "hash": "14009530436069536510",
+          "deps": [
+            "ui",
+            "npm:@apollo/client",
+            "npm:lodash",
+            "npm:date-fns"
+          ]
+        },
+        {
+          "file": "apps/weshipit/pages/react-native-starters/index.tsx",
+          "hash": "5223544013964510930",
+          "deps": [
+            "npm:@apollo/client",
+            "ui",
+            "npm:lodash",
+            "utils"
+          ]
+        },
+        {
+          "file": "apps/weshipit/pages/react-native-tools/[slug].tsx",
+          "hash": "5859425091419467745",
+          "deps": [
+            "npm:@apollo/client",
+            "ui",
+            "npm:react-markdown",
+            "npm:next",
+            "npm:lodash",
+            "npm:@heroicons/react"
+          ]
+        },
+        {
+          "file": "apps/weshipit/pages/react-native-tools/index.tsx",
+          "hash": "14559180355968964558",
+          "deps": [
+            "ui",
+            "npm:@apollo/client",
+            "npm:react",
+            "npm:lodash",
+            "npm:next"
+          ]
+        },
+        {
+          "file": "apps/weshipit/pages/retreat.tsx",
+          "hash": "3150240827040773211",
+          "deps": [
+            "ui",
+            "npm:react"
+          ]
+        },
+        {
+          "file": "apps/weshipit/pages/styles.css",
+          "hash": "2866083945719690482"
+        },
+        {
+          "file": "apps/weshipit/postcss.config.js",
+          "hash": "13598591179375906364"
+        },
+        {
+          "file": "apps/weshipit/project.json",
+          "hash": "18066882361610036512"
+        },
+        {
+          "file": "apps/weshipit/public/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/weshipit/public/android-chrome-192x192.png",
+          "hash": "8106216540198659598"
+        },
+        {
+          "file": "apps/weshipit/public/android-chrome-256x256.png",
+          "hash": "8963630931073439182"
+        },
+        {
+          "file": "apps/weshipit/public/apple-touch-icon.png",
+          "hash": "7341688327786583864"
+        },
+        {
+          "file": "apps/weshipit/public/browserconfig.xml",
+          "hash": "6818257873516693125"
+        },
+        {
+          "file": "apps/weshipit/public/favicon-16x16.png",
+          "hash": "8802650705565479677"
+        },
+        {
+          "file": "apps/weshipit/public/favicon-32x32.png",
+          "hash": "13956531566367547279"
+        },
+        {
+          "file": "apps/weshipit/public/favicon.ico",
+          "hash": "13650837577383608224"
+        },
+        {
+          "file": "apps/weshipit/public/images/appjs-2022.jpg",
+          "hash": "15347636096149078155"
+        },
+        {
+          "file": "apps/weshipit/public/images/audit-benefits.jpg",
+          "hash": "10390090162260501849"
+        },
+        {
+          "file": "apps/weshipit/public/images/audit-discover.jpg",
+          "hash": "7801535938421800395"
+        },
+        {
+          "file": "apps/weshipit/public/images/audit-process.jpg",
+          "hash": "13167441524152042456"
+        },
+        {
+          "file": "apps/weshipit/public/images/chainreact-2023.jpg",
+          "hash": "16250659811081995529"
+        },
+        {
+          "file": "apps/weshipit/public/images/road-to-react-native-book.jpg",
+          "hash": "9583015176942928984"
+        },
+        {
+          "file": "apps/weshipit/public/images/weshipit.today-logo.png",
+          "hash": "15108031767923648139"
+        },
+        {
+          "file": "apps/weshipit/public/mstile-150x150.png",
+          "hash": "15540276347289667762"
+        },
+        {
+          "file": "apps/weshipit/public/site.webmanifest",
+          "hash": "8409468944370878360"
+        },
+        {
+          "file": "apps/weshipit/stepzen.config.json",
+          "hash": "7916327641345609277"
+        },
+        {
+          "file": "apps/weshipit/stepzen/airtable.graphql",
+          "hash": "10467327284495593277"
+        },
+        {
+          "file": "apps/weshipit/stepzen/config.yaml",
+          "hash": "13531362908033824050"
+        },
+        {
+          "file": "apps/weshipit/stepzen/index.graphql",
+          "hash": "3059946541645597713"
+        },
+        {
+          "file": "apps/weshipit/tailwind.config.js",
+          "hash": "17346234459466400051",
+          "deps": [
+            "npm:@nx/react",
+            "npm:@tailwindcss/typography"
+          ]
+        },
+        {
+          "file": "apps/weshipit/tsconfig.json",
+          "hash": "11850687526837059451"
+        },
+        {
+          "file": "apps/weshipit/tsconfig.spec.json",
+          "hash": "6932660931697717727"
+        }
+      ],
       "ui": [
         {
           "file": "libs/ui/.babelrc",
@@ -1203,638 +1699,141 @@
           "file": "libs/ui/tsconfig.storybook.json",
           "hash": "6364268763249898402"
         }
-      ],
-      "weshipit-e2e": [
-        {
-          "file": "apps/weshipit-e2e/.eslintrc.json",
-          "hash": "15523834149352881398"
-        },
-        {
-          "file": "apps/weshipit-e2e/cypress.json",
-          "hash": "3232495797855373900"
-        },
-        {
-          "file": "apps/weshipit-e2e/project.json",
-          "hash": "3640793926844374923"
-        },
-        {
-          "file": "apps/weshipit-e2e/src/fixtures/example.json",
-          "hash": "11614668686582597233"
-        },
-        {
-          "file": "apps/weshipit-e2e/src/integration/app.spec.ts",
-          "hash": "8758488402022621868"
-        },
-        {
-          "file": "apps/weshipit-e2e/src/support/app.po.ts",
-          "hash": "11157016311132186162"
-        },
-        {
-          "file": "apps/weshipit-e2e/src/support/commands.ts",
-          "hash": "7314691991044890572"
-        },
-        {
-          "file": "apps/weshipit-e2e/src/support/index.ts",
-          "hash": "3666078656922506009"
-        },
-        {
-          "file": "apps/weshipit-e2e/tsconfig.json",
-          "hash": "15074946957254721334"
-        }
-      ],
-      "figmatostore": [
-        {
-          "file": "apps/figmatostore/.eslintrc.json",
-          "hash": "9035025596659947158"
-        },
-        {
-          "file": "apps/figmatostore/components/Layout.tsx",
-          "hash": "15204385503359605696",
-          "deps": [
-            "npm:react",
-            "npm:next"
-          ]
-        },
-        {
-          "file": "apps/figmatostore/data/index.ts",
-          "hash": "4118468687970988492"
-        },
-        {
-          "file": "apps/figmatostore/index.d.ts",
-          "hash": "5498222895072842432"
-        },
-        {
-          "file": "apps/figmatostore/jest.config.ts",
-          "hash": "11491837128991460268"
-        },
-        {
-          "file": "apps/figmatostore/next-env.d.ts",
-          "hash": "5909181270615354023"
-        },
-        {
-          "file": "apps/figmatostore/next.config.js",
-          "hash": "4272252622042955866",
-          "deps": [
-            "npm:@nx/next"
-          ]
-        },
-        {
-          "file": "apps/figmatostore/pages/_app.tsx",
-          "hash": "16652344026786719173",
-          "deps": [
-            "npm:next",
-            "npm:react"
-          ]
-        },
-        {
-          "file": "apps/figmatostore/pages/index.tsx",
-          "hash": "986133390866859220",
-          "deps": [
-            "npm:react-gravatar",
-            "npm:next",
-            "npm:react",
-            "ui"
-          ]
-        },
-        {
-          "file": "apps/figmatostore/pages/styles.css",
-          "hash": "2866083945719690482"
-        },
-        {
-          "file": "apps/figmatostore/postcss.config.js",
-          "hash": "2759402739052110475"
-        },
-        {
-          "file": "apps/figmatostore/project.json",
-          "hash": "13918134896957561818"
-        },
-        {
-          "file": "apps/figmatostore/public/.gitkeep",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "apps/figmatostore/public/demo.png",
-          "hash": "10111385741850290869"
-        },
-        {
-          "file": "apps/figmatostore/public/github-thumbnail.png",
-          "hash": "4718441800051944831"
-        },
-        {
-          "file": "apps/figmatostore/public/image_og.png",
-          "hash": "5703245456953158205"
-        },
-        {
-          "file": "apps/figmatostore/specs/index.spec.tsx",
-          "hash": "11056183168799669859",
-          "deps": [
-            "npm:react",
-            "npm:@testing-library/react"
-          ]
-        },
-        {
-          "file": "apps/figmatostore/tailwind.config.js",
-          "hash": "3790221286760968443",
-          "deps": [
-            "npm:@nx/react"
-          ]
-        },
-        {
-          "file": "apps/figmatostore/tsconfig.json",
-          "hash": "4549117079513823106"
-        },
-        {
-          "file": "apps/figmatostore/tsconfig.spec.json",
-          "hash": "6922413205408300107"
-        }
-      ],
-      "utils": [
-        {
-          "file": "libs/utils/.babelrc",
-          "hash": "2946678488919325452"
-        },
-        {
-          "file": "libs/utils/.eslintrc.json",
-          "hash": "11012487992710232822"
-        },
-        {
-          "file": "libs/utils/README.md",
-          "hash": "17034218750445164374"
-        },
-        {
-          "file": "libs/utils/jest.config.ts",
-          "hash": "18265961918342049132"
-        },
-        {
-          "file": "libs/utils/package.json",
-          "hash": "11239560876598226286"
-        },
-        {
-          "file": "libs/utils/project.json",
-          "hash": "17762468390082753681"
-        },
-        {
-          "file": "libs/utils/src/index.ts",
-          "hash": "9347419158683565442"
-        },
-        {
-          "file": "libs/utils/src/lib/extract-domain-name/extract-domain-name.spec.tsx",
-          "hash": "12189801734215020631"
-        },
-        {
-          "file": "libs/utils/src/lib/extract-domain-name/extract-domain-name.ts",
-          "hash": "3220800344513156540",
-          "deps": [
-            "npm:lodash"
-          ]
-        },
-        {
-          "file": "libs/utils/src/lib/extract-username-from-github-url/extract-username-from-github-url.spec.tsx",
-          "hash": "6806791571020626201"
-        },
-        {
-          "file": "libs/utils/src/lib/extract-username-from-github-url/extract-username-from-github-url.tsx",
-          "hash": "4500154920692957229"
-        },
-        {
-          "file": "libs/utils/tsconfig.json",
-          "hash": "10374583890390798648"
-        },
-        {
-          "file": "libs/utils/tsconfig.lib.json",
-          "hash": "11908890256657676622"
-        },
-        {
-          "file": "libs/utils/tsconfig.spec.json",
-          "hash": "6514620907549802163"
-        },
-        {
-          "file": "libs/utils/vite.config.ts",
-          "hash": "921563878865983436",
-          "deps": [
-            "npm:vite",
-            "npm:@vitejs/plugin-react",
-            "npm:vite-plugin-dts",
-            "npm:@nx/vite"
-          ]
-        }
-      ],
-      "weshipit": [
-        {
-          "file": "apps/weshipit/.env.sample",
-          "hash": "17617511714716373877"
-        },
-        {
-          "file": "apps/weshipit/.eslintrc.json",
-          "hash": "4128217031026560353"
-        },
-        {
-          "file": "apps/weshipit/components/banner-product-hunt/banner-product-hunt.spec.tsx",
-          "hash": "6725771191063494813",
-          "deps": [
-            "npm:@testing-library/react"
-          ]
-        },
-        {
-          "file": "apps/weshipit/components/banner-product-hunt/banner-product-hunt.tsx",
-          "hash": "8794175947679322541",
-          "deps": [
-            "ui"
-          ]
-        },
-        {
-          "file": "apps/weshipit/components/footer-book.tsx",
-          "hash": "8449963148431053312",
-          "deps": [
-            "ui",
-            "npm:next"
-          ]
-        },
-        {
-          "file": "apps/weshipit/components/french-react-native-apps/format-apps-by-category.ts",
-          "hash": "6255549915808291723"
-        },
-        {
-          "file": "apps/weshipit/components/french-react-native-apps/french-apps.fixture.ts",
-          "hash": "6315389741793347013"
-        },
-        {
-          "file": "apps/weshipit/components/french-react-native-apps/french-apps.spec.tsx",
-          "hash": "1727220615718123509",
-          "deps": [
-            "npm:@testing-library/react",
-            "ui",
-            "npm:next"
-          ]
-        },
-        {
-          "file": "apps/weshipit/components/header-links-for-tools.tsx",
-          "hash": "13804828616464447586",
-          "deps": [
-            "ui"
-          ]
-        },
-        {
-          "file": "apps/weshipit/components/layout.tsx",
-          "hash": "10832773141529938200",
-          "deps": [
-            "ui"
-          ]
-        },
-        {
-          "file": "apps/weshipit/components/next-head.tsx",
-          "hash": "4569436020195542459",
-          "deps": [
-            "npm:next-seo",
-            "npm:next"
-          ]
-        },
-        {
-          "file": "apps/weshipit/index.d.ts",
-          "hash": "5498222895072842432"
-        },
-        {
-          "file": "apps/weshipit/jest.config.ts",
-          "hash": "10860363613455275426"
-        },
-        {
-          "file": "apps/weshipit/next-env.d.ts",
-          "hash": "5909181270615354023"
-        },
-        {
-          "file": "apps/weshipit/next-sitemap.config.js",
-          "hash": "5803350617203670667"
-        },
-        {
-          "file": "apps/weshipit/next.config.js",
-          "hash": "1523666941508002429",
-          "deps": [
-            "npm:@nx/next"
-          ]
-        },
-        {
-          "file": "apps/weshipit/pages/404.tsx",
-          "hash": "17606874809137864695",
-          "deps": [
-            "ui"
-          ]
-        },
-        {
-          "file": "apps/weshipit/pages/_app.tsx",
-          "hash": "5681049518772019617",
-          "deps": [
-            "npm:next",
-            "npm:@prismicio/react",
-            "npm:@vercel/analytics"
-          ]
-        },
-        {
-          "file": "apps/weshipit/pages/_document.tsx",
-          "hash": "4143609829870447187",
-          "deps": [
-            "npm:next"
-          ]
-        },
-        {
-          "file": "apps/weshipit/pages/about.tsx",
-          "hash": "18105745304035492246",
-          "deps": [
-            "ui",
-            "npm:next",
-            "npm:react-lite-youtube-embed"
-          ]
-        },
-        {
-          "file": "apps/weshipit/pages/api/apollo-client.ts",
-          "hash": "10757139273610245717",
-          "deps": [
-            "npm:@apollo/client"
-          ]
-        },
-        {
-          "file": "apps/weshipit/pages/api/client.ts",
-          "hash": "845946899318525269",
-          "deps": [
-            "npm:@prismicio/client"
-          ]
-        },
-        {
-          "file": "apps/weshipit/pages/api/faq.ts",
-          "hash": "8160191034236109059"
-        },
-        {
-          "file": "apps/weshipit/pages/api/hello.tsx",
-          "hash": "17317223900880828566",
-          "deps": [
-            "npm:next"
-          ]
-        },
-        {
-          "file": "apps/weshipit/pages/api/links.ts",
-          "hash": "17470154427993677771"
-        },
-        {
-          "file": "apps/weshipit/pages/api/og.tsx",
-          "hash": "8961959753487305693",
-          "deps": [
-            "npm:@vercel/og",
-            "npm:next"
-          ]
-        },
-        {
-          "file": "apps/weshipit/pages/api/prismic.ts",
-          "hash": "946520445958799264",
-          "deps": [
-            "npm:@prismicio/client"
-          ]
-        },
-        {
-          "file": "apps/weshipit/pages/api/team.ts",
-          "hash": "5858474024160447001",
-          "deps": [
-            "npm:@apollo/client"
-          ]
-        },
-        {
-          "file": "apps/weshipit/pages/api/workflow-steps.ts",
-          "hash": "6545047229105778521"
-        },
-        {
-          "file": "apps/weshipit/pages/audit/index.tsx",
-          "hash": "8547202364060050677",
-          "deps": [
-            "ui",
-            "npm:@heroicons/react",
-            "npm:next",
-            "npm:clsx",
-            "npm:react"
-          ]
-        },
-        {
-          "file": "apps/weshipit/pages/consulting.tsx",
-          "hash": "11568598034847163712",
-          "deps": [
-            "ui",
-            "npm:@calcom/embed-react",
-            "npm:react"
-          ]
-        },
-        {
-          "file": "apps/weshipit/pages/customers.tsx",
-          "hash": "6759566419479273529",
-          "deps": [
-            "ui"
-          ]
-        },
-        {
-          "file": "apps/weshipit/pages/french-react-native-apps.tsx",
-          "hash": "10169643986252406913",
-          "deps": [
-            "ui",
-            "npm:@apollo/client",
-            "npm:next",
-            "npm:lodash"
-          ]
-        },
-        {
-          "file": "apps/weshipit/pages/home.tsx",
-          "hash": "7017851963745653566",
-          "deps": [
-            "ui"
-          ]
-        },
-        {
-          "file": "apps/weshipit/pages/index.tsx",
-          "hash": "16041426748542776360",
-          "deps": [
-            "ui",
-            "npm:@prismicio/client",
-            "npm:next",
-            "npm:react-gravatar",
-            "npm:@prismicio/react",
-            "npm:react"
-          ]
-        },
-        {
-          "file": "apps/weshipit/pages/onboarding.tsx",
-          "hash": "2567554724295389973",
-          "deps": [
-            "npm:react",
-            "ui"
-          ]
-        },
-        {
-          "file": "apps/weshipit/pages/qr.tsx",
-          "hash": "11612056495506220010",
-          "deps": [
-            "npm:next",
-            "ui"
-          ]
-        },
-        {
-          "file": "apps/weshipit/pages/react-native-resources/index.tsx",
-          "hash": "14009530436069536510",
-          "deps": [
-            "ui",
-            "npm:@apollo/client",
-            "npm:lodash",
-            "npm:date-fns"
-          ]
-        },
-        {
-          "file": "apps/weshipit/pages/react-native-starters/index.tsx",
-          "hash": "5223544013964510930",
-          "deps": [
-            "npm:@apollo/client",
-            "ui",
-            "npm:lodash",
-            "utils"
-          ]
-        },
-        {
-          "file": "apps/weshipit/pages/react-native-tools/[slug].tsx",
-          "hash": "5859425091419467745",
-          "deps": [
-            "npm:@apollo/client",
-            "ui",
-            "npm:react-markdown",
-            "npm:next",
-            "npm:lodash",
-            "npm:@heroicons/react"
-          ]
-        },
-        {
-          "file": "apps/weshipit/pages/react-native-tools/index.tsx",
-          "hash": "14559180355968964558",
-          "deps": [
-            "ui",
-            "npm:@apollo/client",
-            "npm:react",
-            "npm:lodash",
-            "npm:next"
-          ]
-        },
-        {
-          "file": "apps/weshipit/pages/retreat.tsx",
-          "hash": "3150240827040773211",
-          "deps": [
-            "ui",
-            "npm:react"
-          ]
-        },
-        {
-          "file": "apps/weshipit/pages/styles.css",
-          "hash": "2866083945719690482"
-        },
-        {
-          "file": "apps/weshipit/postcss.config.js",
-          "hash": "13598591179375906364"
-        },
-        {
-          "file": "apps/weshipit/project.json",
-          "hash": "18066882361610036512"
-        },
-        {
-          "file": "apps/weshipit/public/.gitkeep",
-          "hash": "3244421341483603138"
-        },
-        {
-          "file": "apps/weshipit/public/android-chrome-192x192.png",
-          "hash": "8106216540198659598"
-        },
-        {
-          "file": "apps/weshipit/public/android-chrome-256x256.png",
-          "hash": "8963630931073439182"
-        },
-        {
-          "file": "apps/weshipit/public/apple-touch-icon.png",
-          "hash": "7341688327786583864"
-        },
-        {
-          "file": "apps/weshipit/public/browserconfig.xml",
-          "hash": "6818257873516693125"
-        },
-        {
-          "file": "apps/weshipit/public/favicon-16x16.png",
-          "hash": "8802650705565479677"
-        },
-        {
-          "file": "apps/weshipit/public/favicon-32x32.png",
-          "hash": "13956531566367547279"
-        },
-        {
-          "file": "apps/weshipit/public/favicon.ico",
-          "hash": "13650837577383608224"
-        },
-        {
-          "file": "apps/weshipit/public/images/appjs-2022.jpg",
-          "hash": "15347636096149078155"
-        },
-        {
-          "file": "apps/weshipit/public/images/audit-benefits.jpg",
-          "hash": "10390090162260501849"
-        },
-        {
-          "file": "apps/weshipit/public/images/audit-discover.jpg",
-          "hash": "7801535938421800395"
-        },
-        {
-          "file": "apps/weshipit/public/images/audit-process.jpg",
-          "hash": "13167441524152042456"
-        },
-        {
-          "file": "apps/weshipit/public/images/chainreact-2023.jpg",
-          "hash": "16250659811081995529"
-        },
-        {
-          "file": "apps/weshipit/public/images/road-to-react-native-book.jpg",
-          "hash": "9583015176942928984"
-        },
-        {
-          "file": "apps/weshipit/public/images/weshipit.today-logo.png",
-          "hash": "15108031767923648139"
-        },
-        {
-          "file": "apps/weshipit/public/mstile-150x150.png",
-          "hash": "15540276347289667762"
-        },
-        {
-          "file": "apps/weshipit/public/site.webmanifest",
-          "hash": "8409468944370878360"
-        },
-        {
-          "file": "apps/weshipit/stepzen.config.json",
-          "hash": "7916327641345609277"
-        },
-        {
-          "file": "apps/weshipit/stepzen/airtable.graphql",
-          "hash": "10467327284495593277"
-        },
-        {
-          "file": "apps/weshipit/stepzen/config.yaml",
-          "hash": "13531362908033824050"
-        },
-        {
-          "file": "apps/weshipit/stepzen/index.graphql",
-          "hash": "3059946541645597713"
-        },
-        {
-          "file": "apps/weshipit/tailwind.config.js",
-          "hash": "17346234459466400051",
-          "deps": [
-            "npm:@nx/react",
-            "npm:@tailwindcss/typography"
-          ]
-        },
-        {
-          "file": "apps/weshipit/tsconfig.json",
-          "hash": "11850687526837059451"
-        },
-        {
-          "file": "apps/weshipit/tsconfig.spec.json",
-          "hash": "6932660931697717727"
-        }
       ]
-    }
+    },
+    "nonProjectFiles": [
+      {
+        "file": ".editorconfig",
+        "hash": "5443105041930014821"
+      },
+      {
+        "file": ".eslintignore",
+        "hash": "7663861978715868291"
+      },
+      {
+        "file": ".eslintrc.json",
+        "hash": "3703945831989669618"
+      },
+      {
+        "file": ".github/FUNDING.yml",
+        "hash": "5120889441865392561"
+      },
+      {
+        "file": ".github/ISSUE_TEMPLATE/bug_report.md",
+        "hash": "1579763754440796575"
+      },
+      {
+        "file": ".github/ISSUE_TEMPLATE/feature_request.md",
+        "hash": "14983644348452326660"
+      },
+      {
+        "file": ".github/PULL_REQUEST_TEMPLATE.md",
+        "hash": "14558230768682382473"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "9023146906925465269"
+      },
+      {
+        "file": ".husky/pre-commit",
+        "hash": "13469207043343598078"
+      },
+      {
+        "file": ".prettierignore",
+        "hash": "1094603469163323313"
+      },
+      {
+        "file": ".prettierrc",
+        "hash": "16267754514737964994"
+      },
+      {
+        "file": ".storybook/main.js",
+        "hash": "3811757160680838808"
+      },
+      {
+        "file": ".storybook/tsconfig.json",
+        "hash": "3128062056361165723"
+      },
+      {
+        "file": ".vscode/extensions.json",
+        "hash": "8222805642385614202"
+      },
+      {
+        "file": ".vscode/settings.json",
+        "hash": "4493069063864926133"
+      },
+      {
+        "file": ".yarn/releases/yarn-4.3.0.cjs",
+        "hash": "5844628996811314674"
+      },
+      {
+        "file": ".yarnrc.yml",
+        "hash": "1738288956040000640"
+      },
+      {
+        "file": "README.md",
+        "hash": "4114224535076074457"
+      },
+      {
+        "file": "apps/.gitkeep",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": "babel.config.json",
+        "hash": "5546405625092116747"
+      },
+      {
+        "file": "changelog.config.js",
+        "hash": "9737849419401042451"
+      },
+      {
+        "file": "docs/nx-migration.md",
+        "hash": "14996819092707042308"
+      },
+      {
+        "file": "docs/nx.md",
+        "hash": "13953852117505670762"
+      },
+      {
+        "file": "docs/storybook-migration-summary.md",
+        "hash": "9612212630978455048"
+      },
+      {
+        "file": "jest.config.ts",
+        "hash": "12333515226966617182"
+      },
+      {
+        "file": "jest.preset.js",
+        "hash": "9084884494335109525"
+      },
+      {
+        "file": "migrations.json",
+        "hash": "374386856560352263"
+      },
+      {
+        "file": "nx.json",
+        "hash": "4510229400446859935"
+      },
+      {
+        "file": "package.json",
+        "hash": "14036041676856550020"
+      },
+      {
+        "file": "tools/tsconfig.tools.json",
+        "hash": "16088922570277978783"
+      },
+      {
+        "file": "tsconfig.base.json",
+        "hash": "17825924079975498304"
+      },
+      {
+        "file": "vercel.json",
+        "hash": "17483696782381925976"
+      },
+      {
+        "file": "yarn.lock",
+        "hash": "521642332823356298"
+      }
+    ]
   }
 }
