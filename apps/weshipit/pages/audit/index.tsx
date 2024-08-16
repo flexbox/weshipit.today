@@ -6,11 +6,18 @@ import {
   Hyperlink,
   LinkButton,
   Prose,
-  StylizedImage,
   TagList,
   Text,
 } from '@weshipit/ui';
 import { Layout } from '../../components/layout';
+import {
+  AcademicCapIcon,
+  ClockIcon,
+  CheckCircleIcon,
+  CurrencyDollarIcon,
+  ClipboardDocumentCheckIcon,
+  ScaleIcon,
+} from '@heroicons/react/24/outline';
 
 import clsx from 'clsx';
 import { PropsWithChildren } from 'react';
@@ -216,6 +223,57 @@ function Benefits() {
   );
 }
 
+function BenefitItem({ Icon, title, description }) {
+  return (
+    <div className="flex flex-col items-center text-center">
+      <Icon className="size-12 text-black dark:text-white" />
+      <Text as="h3" variant="h4" className="my-4">
+        {title}
+      </Text>
+      <Text as="p" variant="p1">
+        {description}
+      </Text>
+    </div>
+  );
+}
+
+function BenefitsSection() {
+  return (
+    <div className="my-24 grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+      <BenefitItem
+        Icon={AcademicCapIcon}
+        title="Deep Expertise"
+        description="Expert recommendations tailored to your needs."
+      />
+      <BenefitItem
+        Icon={ClockIcon}
+        title="Time-Saving"
+        description="We handle the audit, so you can focus elsewhere."
+      />
+      <BenefitItem
+        Icon={CheckCircleIcon}
+        title="Enhanced Compatibility"
+        description="Stay updated with the latest libraries and tools."
+      />
+      <BenefitItem
+        Icon={CurrencyDollarIcon}
+        title="Fixed Pricing"
+        description="No hidden costs, just a straightforward budget."
+      />
+      <BenefitItem
+        Icon={ClipboardDocumentCheckIcon}
+        title="Custom Recommendations"
+        description="Tailored notes and recommendations for your project."
+      />
+      <BenefitItem
+        Icon={ScaleIcon}
+        title="Scalable Solutions"
+        description="Flexibly scale the scope of work as needed."
+      />
+    </div>
+  );
+}
+
 export function Audit() {
   return (
     <Layout
@@ -254,6 +312,9 @@ export function Audit() {
         <Discover />
         <Workflow />
         <Benefits />
+      </div>
+      <div className="">
+        <BenefitsSection />
       </div>
       <Prose size="lg" className="mx-auto my-4 lg:my-32">
         <h2>What else can we do for you?</h2>
