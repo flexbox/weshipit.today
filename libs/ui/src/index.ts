@@ -14,6 +14,7 @@ export * from './lib/card/card';
 export * from './lib/card/workflow-card';
 export * from './lib/clients-list/clients-list-homepage';
 export * from './lib/clients-list/clients-list';
+export * from './lib/clients-list/clients-list-audit';
 export * from './lib/fade-in/fade-in';
 export * from './lib/footer/footer';
 export * from './lib/gravatar/avatar-avengers';

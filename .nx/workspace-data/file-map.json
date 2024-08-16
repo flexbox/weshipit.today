@@ -134,6 +134,126 @@
   "fileMap": {
     "nonProjectFiles": [
       {
+        "file": "docs/storybook-migration-summary.md",
+        "hash": "9612212630978455048"
+      },
+      {
+        "file": "migration-storybook.log",
+        "hash": "9981625266290172846"
+      },
+      {
+        "file": "nx.json",
+        "hash": "4510229400446859935"
+      },
+      {
+        "file": ".vscode/extensions.json",
+        "hash": "8222805642385614202"
+      },
+      {
+        "file": "vercel.json",
+        "hash": "17483696782381925976"
+      },
+      {
+        "file": "apps/.gitkeep",
+        "hash": "3244421341483603138"
+      },
+      {
+        "file": ".github/ISSUE_TEMPLATE/bug_report.md",
+        "hash": "1579763754440796575"
+      },
+      {
+        "file": "migrations.json",
+        "hash": "374386856560352263"
+      },
+      {
+        "file": "tsconfig.base.json",
+        "hash": "17825924079975498304"
+      },
+      {
+        "file": "jest.preset.js",
+        "hash": "9084884494335109525"
+      },
+      {
+        "file": ".storybook/tsconfig.json",
+        "hash": "3128062056361165723"
+      },
+      {
+        "file": ".husky/pre-commit",
+        "hash": "13469207043343598078"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "9023146906925465269"
+      },
+      {
+        "file": ".github/FUNDING.yml",
+        "hash": "5120889441865392561"
+      },
+      {
+        "file": "docs/nx.md",
+        "hash": "13953852117505670762"
+      },
+      {
+        "file": ".github/ISSUE_TEMPLATE/feature_request.md",
+        "hash": "14983644348452326660"
+      },
+      {
+        "file": "babel.config.json",
+        "hash": "5546405625092116747"
+      },
+      {
+        "file": "jest.config.ts",
+        "hash": "12333515226966617182"
+      },
+      {
+        "file": ".eslintrc.json",
+        "hash": "3703945831989669618"
+      },
+      {
+        "file": ".yarn/releases/yarn-4.3.0.cjs",
+        "hash": "5844628996811314674"
+      },
+      {
+        "file": "yarn.lock",
+        "hash": "9107579270520474479"
+      },
+      {
+        "file": "package.json",
+        "hash": "16522639222572989262"
+      },
+      {
+        "file": ".prettierrc",
+        "hash": "16267754514737964994"
+      },
+      {
+        "file": "README.md",
+        "hash": "4114224535076074457"
+      },
+      {
+        "file": ".yarnrc.yml",
+        "hash": "1738288956040000640"
+      },
+      {
+        "file": ".storybook/main.js",
+        "hash": "10324766574087085223"
+      },
+      {
+        "file": ".prettierignore",
+        "hash": "1094603469163323313"
+      },
+      {
+        "file": "tools/tsconfig.tools.json",
+        "hash": "16088922570277978783"
+      },
+      {
+        "file": "docs/nx-migration.md",
+        "hash": "14996819092707042308"
+      },
+      {
+        "file": "storybook-migration-summary.md",
+        "hash": "14225788986665591598"
+      },
+      {
         "file": ".editorconfig",
         "hash": "5443105041930014821"
       },
@@ -142,136 +262,16 @@
         "hash": "7663861978715868291"
       },
       {
-        "file": ".eslintrc.json",
-        "hash": "3703945831989669618"
-      },
-      {
-        "file": ".github/FUNDING.yml",
-        "hash": "5120889441865392561"
-      },
-      {
-        "file": ".github/ISSUE_TEMPLATE/bug_report.md",
-        "hash": "1579763754440796575"
-      },
-      {
-        "file": ".github/ISSUE_TEMPLATE/feature_request.md",
-        "hash": "14983644348452326660"
-      },
-      {
-        "file": ".github/PULL_REQUEST_TEMPLATE.md",
-        "hash": "14558230768682382473"
-      },
-      {
-        "file": ".gitignore",
-        "hash": "9023146906925465269"
-      },
-      {
-        "file": ".husky/pre-commit",
-        "hash": "13469207043343598078"
-      },
-      {
-        "file": ".prettierignore",
-        "hash": "1094603469163323313"
-      },
-      {
-        "file": ".prettierrc",
-        "hash": "16267754514737964994"
-      },
-      {
-        "file": ".storybook/main.js",
-        "hash": "10324766574087085223"
-      },
-      {
-        "file": ".storybook/tsconfig.json",
-        "hash": "3128062056361165723"
-      },
-      {
-        "file": ".vscode/extensions.json",
-        "hash": "8222805642385614202"
-      },
-      {
         "file": ".vscode/settings.json",
         "hash": "4493069063864926133"
-      },
-      {
-        "file": ".yarn/releases/yarn-4.3.0.cjs",
-        "hash": "5844628996811314674"
-      },
-      {
-        "file": ".yarnrc.yml",
-        "hash": "1738288956040000640"
-      },
-      {
-        "file": "README.md",
-        "hash": "4114224535076074457"
-      },
-      {
-        "file": "apps/.gitkeep",
-        "hash": "3244421341483603138"
-      },
-      {
-        "file": "babel.config.json",
-        "hash": "5546405625092116747"
       },
       {
         "file": "changelog.config.js",
         "hash": "9737849419401042451"
       },
       {
-        "file": "docs/nx-migration.md",
-        "hash": "14996819092707042308"
-      },
-      {
-        "file": "docs/nx.md",
-        "hash": "13953852117505670762"
-      },
-      {
-        "file": "docs/storybook-migration-summary.md",
-        "hash": "9612212630978455048"
-      },
-      {
-        "file": "jest.config.ts",
-        "hash": "12333515226966617182"
-      },
-      {
-        "file": "jest.preset.js",
-        "hash": "9084884494335109525"
-      },
-      {
-        "file": "migration-storybook.log",
-        "hash": "9981625266290172846"
-      },
-      {
-        "file": "migrations.json",
-        "hash": "374386856560352263"
-      },
-      {
-        "file": "nx.json",
-        "hash": "4510229400446859935"
-      },
-      {
-        "file": "package.json",
-        "hash": "16522639222572989262"
-      },
-      {
-        "file": "storybook-migration-summary.md",
-        "hash": "14225788986665591598"
-      },
-      {
-        "file": "tools/tsconfig.tools.json",
-        "hash": "16088922570277978783"
-      },
-      {
-        "file": "tsconfig.base.json",
-        "hash": "17825924079975498304"
-      },
-      {
-        "file": "vercel.json",
-        "hash": "17483696782381925976"
-      },
-      {
-        "file": "yarn.lock",
-        "hash": "9107579270520474479"
+        "file": ".github/PULL_REQUEST_TEMPLATE.md",
+        "hash": "14558230768682382473"
       }
     ],
     "projectFileMap": {
@@ -360,7 +360,7 @@
         },
         {
           "file": "libs/ui/src/index.ts",
-          "hash": "15703336909338122202"
+          "hash": "3125477745328337664"
         },
         {
           "file": "libs/ui/src/lib/airtable-toggle-form/airtable-toggle-form.spec.tsx",
@@ -662,7 +662,7 @@
         },
         {
           "file": "libs/ui/src/lib/clients-list/clients-list.tsx",
-          "hash": "11937658764059919894",
+          "hash": "14077036227363511121",
           "deps": [
             "npm:next"
           ]
@@ -1249,6 +1249,20 @@
         {
           "file": "libs/ui/tsconfig.storybook.json",
           "hash": "6364268763249898402"
+        },
+        {
+          "file": "libs/ui/src/lib/clients-list/clients-list-audit.tsx",
+          "hash": "15276521967300717421",
+          "deps": [
+            "npm:next"
+          ]
+        },
+        {
+          "file": "libs/ui/src/lib/clients-list/clients-list-audit.spec.tsx",
+          "hash": "11906590646756322642",
+          "deps": [
+            "npm:@testing-library/react"
+          ]
         }
       ],
       "weshipit": [
@@ -1433,7 +1447,7 @@
         },
         {
           "file": "apps/weshipit/pages/audit/index.tsx",
-          "hash": "8547202364060050677",
+          "hash": "5742173014815949804",
           "deps": [
             "ui",
             "npm:@heroicons/react",
@@ -1477,7 +1491,7 @@
         },
         {
           "file": "apps/weshipit/pages/index.tsx",
-          "hash": "16041426748542776360",
+          "hash": "9200421465632356136",
           "deps": [
             "ui",
             "npm:@prismicio/client",

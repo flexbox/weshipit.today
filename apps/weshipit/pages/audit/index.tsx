@@ -1,15 +1,15 @@
+import { getAllClients } from '../api/client';
+import { Layout } from '../../components/layout';
 import {
-  Button,
-  Card,
   FadeIn,
   Hero,
-  Hyperlink,
-  LinkButton,
+  Button,
+  ClientsListAudit,
   Prose,
-  TagList,
+  Card,
   Text,
 } from '@weshipit/ui';
-import { Layout } from '../../components/layout';
+import { linksApi } from '../api/links';
 import {
   AcademicCapIcon,
   ClockIcon,
@@ -18,12 +18,27 @@ import {
   ClipboardDocumentCheckIcon,
   ScaleIcon,
 } from '@heroicons/react/24/outline';
-
 import Image from 'next/image';
 import clsx from 'clsx';
 import { PropsWithChildren } from 'react';
-import { linksApi } from '../api/links';
 
+// Define the shape of the props expected by the Audit component
+interface AuditProps {
+  clients: Customer[];
+}
+
+// Fetch the client data at build time
+export async function getStaticProps() {
+  const { clients } = await getAllClients();
+
+  return {
+    props: {
+      clients,
+    },
+  };
+}
+
+// Container component
 interface ContainerProps extends PropsWithChildren {
   as?: React.ElementType;
   className?: string;
@@ -41,6 +56,7 @@ export function Container({
   );
 }
 
+// Section component
 function Section({ title, children }) {
   return (
     <Container className="group/section [counter-increment:section]">
@@ -62,6 +78,7 @@ function Section({ title, children }) {
   );
 }
 
+// Discover component
 function Discover() {
   return (
     <Section title="What is React Native Audit?">
@@ -86,20 +103,21 @@ function Discover() {
           We can also provide recommendations for improving your application.
         </p>
         <div className="not-prose">
-          <LinkButton
+          <Button
             href="/onboarding"
             size="xl"
             className="no-underline"
             variant="outline"
           >
             Start now
-          </LinkButton>
+          </Button>
         </div>
       </div>
     </Section>
   );
 }
 
+// Workflow component
 function Workflow() {
   return (
     <Section title="How does it work?">
@@ -124,9 +142,11 @@ function Workflow() {
         <h4 className="mt-12 text-base font-semibold">
           Included in this phase
         </h4>
-        <TagList
-          tags={['Notion Backlog', 'Feasibility studies', 'Estimations']}
-        />
+        <ul>
+          <li>Notion Backlog</li>
+          <li>Feasibility studies</li>
+          <li>Estimations</li>
+        </ul>
         <h3>Phase 2</h3>
         <ol>
           <li>
@@ -166,6 +186,7 @@ function Workflow() {
   );
 }
 
+// Benefits component
 function Benefits() {
   return (
     <Section title="What can you gain with our React Native Audit Package?">
@@ -203,27 +224,28 @@ function Benefits() {
           <li>better web-dev compatibility with flexbox gap support,</li>
           <li>
             and many{' '}
-            <Hyperlink href="https://github.com/facebook/react-native/blob/main/CHANGELOG.md">
+            <a href="https://github.com/facebook/react-native/blob/main/CHANGELOG.md">
               more feature from the React Native changelog
-            </Hyperlink>
+            </a>
             .
           </li>
         </ol>
         <div className="not-prose">
-          <LinkButton
+          <Button
             href="/onboarding"
             size="xl"
             className="mt-6 no-underline"
             variant="outline"
           >
             Book a call
-          </LinkButton>
+          </Button>
         </div>
       </ol>
     </Section>
   );
 }
 
+// BenefitItem component
 function BenefitItem({ Icon, title, description }) {
   return (
     <div className="flex flex-col items-center text-center">
@@ -238,6 +260,7 @@ function BenefitItem({ Icon, title, description }) {
   );
 }
 
+// BenefitsSection component
 function BenefitsSection() {
   return (
     <div className="my-24 grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
@@ -275,6 +298,7 @@ function BenefitsSection() {
   );
 }
 
+// TestimonialSection component
 function TestimonialSection() {
   return (
     <div className="m-auto w-3/4">
@@ -284,7 +308,7 @@ function TestimonialSection() {
             “What‘s better than good code? Less code.”
           </Text>
           <div className="mt-4 flex items-center justify-center">
-            <Hyperlink href="https://x.com/jamonholmgren">
+            <a href="https://x.com/jamonholmgren">
               <Text
                 as="p"
                 variant="quote"
@@ -292,7 +316,7 @@ function TestimonialSection() {
               >
                 Jamon Holmgren
               </Text>
-            </Hyperlink>
+            </a>
             <Image
               src="https://pbs.twimg.com/profile_images/1712505856905170944/LDFMYGSQ_400x400.jpg"
               alt="Jamon Holmgren"
@@ -307,7 +331,7 @@ function TestimonialSection() {
   );
 }
 
-export function Audit() {
+export function Audit({ clients }: AuditProps) {
   return (
     <Layout
       seoTitle="Audit React Native App - Identify and Address Technical Debt"
@@ -322,9 +346,7 @@ export function Audit() {
         <div className="mx-auto mt-24 w-2/3">
           <Hero
             title="React Native Codebase Audit."
-            description="Eradicating your technical debt caused by a lack of expertise or capacity within your team. We can support your team by conducting the audit and allowing your
-          organization to focus on its priorities without a drop in its
-          development pace."
+            description="Eradicating your technical debt caused by a lack of expertise or capacity within your team. We can support your team by conducting the audit and allowing your organization to focus on its priorities without a drop in its development pace."
           >
             <div className="my-12">
               <Button
@@ -345,6 +367,7 @@ export function Audit() {
         <Discover />
         <TestimonialSection />
         <Workflow />
+        <ClientsListAudit clients={clients} />
         <Benefits />
       </div>
       <div className="">
