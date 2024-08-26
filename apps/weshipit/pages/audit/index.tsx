@@ -250,7 +250,7 @@ function Benefits() {
 function BenefitItem({ Icon, title, description }) {
   return (
     <div className="flex flex-col">
-      <Icon className="mb-4 size-12 rounded-full bg-blue-300/50 fill-white p-1 text-blue-500 dark:text-white" />
+      <Icon className="mb-4 size-12 rounded-full bg-blue-300/50 fill-white p-1 text-blue-500 dark:bg-blue-800/50 dark:fill-blue-800/20 dark:text-blue-600" />
       <Prose className="prose-xl">
         <h3>{title}</h3>
         <p>{description}</p>
@@ -396,25 +396,16 @@ export function Audit({ clients }: AuditProps) {
         <Card
           size="xl"
           className="m-auto my-24 flex flex-col items-center justify-center gap-8 text-center"
-          variant="gradient-blue"
+          variant="gradient-purple"
         >
-          <Text
-            variant="h4"
-            as="h2"
-            className="bg-gradient-to-b from-white to-white/75 bg-clip-text font-bold tracking-tight text-transparent drop-shadow"
-          >
+          <Text variant="h4" as="h2">
             Ready to start your journey with us?
           </Text>
-          <Text
-            variant="p1"
-            as="p"
-            className="bg-gradient-to-b from-white to-white/75 bg-clip-text tracking-tight text-transparent drop-shadow"
-          >
+          <Text variant="p1" as="p">
             Get in touch today and let’s build memorable products together.
           </Text>
           <Button
             size="xxl"
-            variant="outline"
             href={linksApi.cal.ONBOARDING}
             as="a"
             isExternalLink
