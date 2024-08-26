@@ -7,6 +7,7 @@ export interface Customer {
     name: string;
     industry?: string;
     is_visible_homepage: boolean;
+    is_audit: boolean;
     logo?: {
       url: string;
     };

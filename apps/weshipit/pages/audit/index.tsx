@@ -1,21 +1,45 @@
+import { getAllClients } from '../api/client';
+import { Layout } from '../../components/layout';
 import {
-  Button,
-  Card,
   FadeIn,
   Hero,
-  Hyperlink,
-  LinkButton,
+  Button,
+  ClientsListAudit,
   Prose,
-  StylizedImage,
-  TagList,
+  Card,
   Text,
+  ClientProps,
 } from '@weshipit/ui';
-import { Layout } from '../../components/layout';
-
+import { linksApi } from '../api/links';
+import {
+  AcademicCapIcon,
+  ClockIcon,
+  CheckCircleIcon,
+  CurrencyDollarIcon,
+  ClipboardDocumentCheckIcon,
+  ScaleIcon,
+} from '@heroicons/react/24/outline';
+import Image from 'next/image';
 import clsx from 'clsx';
 import { PropsWithChildren } from 'react';
-import { linksApi } from '../api/links';
 
+// Define the shape of the props expected by the Audit component
+interface AuditProps {
+  clients: ClientProps[];
+}
+
+// Fetch the client data at build time
+export async function getStaticProps() {
+  const { clients } = await getAllClients();
+
+  return {
+    props: {
+      clients,
+    },
+  };
+}
+
+// Container component
 interface ContainerProps extends PropsWithChildren {
   as?: React.ElementType;
   className?: string;
@@ -33,29 +57,21 @@ export function Container({
   );
 }
 
-function Section({ title, image, children }) {
+// Section component
+function Section({ title, children }) {
   return (
     <Container className="group/section [counter-increment:section]">
-      <div className="lg:flex lg:items-center lg:justify-end lg:gap-x-8 lg:group-even/section:justify-start xl:gap-x-20">
-        <div className="flex justify-center">
-          <FadeIn className="w-[33.75rem] flex-none lg:w-[45rem]">
-            <StylizedImage
-              {...image}
-              sizes="(min-width: 1024px) 41rem, 31rem"
-              className="justify-center lg:justify-end lg:group-even/section:justify-start"
-            />
-          </FadeIn>
-        </div>
-        <div className="mt-12 lg:mt-0 lg:w-[37rem] lg:flex-none lg:group-even/section:order-first">
+      <div className="lg:flex lg:items-center lg:justify-center lg:gap-x-8 lg:group-even/section:justify-start xl:gap-x-20">
+        <div className="mx-auto mt-12 lg:mt-0 lg:w-[37rem] lg:flex-none lg:group-even/section:order-first">
           <FadeIn>
             <div
-              className="text-base font-semibold before:text-neutral-300 before:content-['/_'] after:text-neutral-950 after:content-[counter(section,decimal-leading-zero)]"
+              className="text-base font-semibold before:text-neutral-300 before:content-['/_'] after:text-neutral-950 after:content-[counter(section,decimal-leading-zero)] dark:after:text-neutral-300"
               aria-hidden="true"
             />
             <Text as="h2" variant="h3" className="mt-2">
               {title}
             </Text>
-            <Prose className="mt-6">{children}</Prose>
+            <Prose className="prose-xl mt-6">{children}</Prose>
           </FadeIn>
         </div>
       </div>
@@ -63,17 +79,10 @@ function Section({ title, image, children }) {
   );
 }
 
+// Discover component
 function Discover() {
   return (
-    <Section
-      title="What is React Native Audit?"
-      image={{
-        src: '/images/audit-discover.jpg',
-        alt: 'React Native Code Audit',
-        width: 4896,
-        height: 3264,
-      }}
-    >
+    <Section title="What is React Native Audit?">
       <div className="space-y-6">
         <p>
           Are you seeking someone to review your work and{' '}
@@ -95,32 +104,24 @@ function Discover() {
           We can also provide recommendations for improving your application.
         </p>
         <div className="not-prose">
-          <LinkButton
+          <Button
             href="/onboarding"
             size="xl"
             className="no-underline"
             variant="outline"
           >
             Start now
-          </LinkButton>
+          </Button>
         </div>
       </div>
     </Section>
   );
 }
 
+// Workflow component
 function Workflow() {
   return (
-    <Section
-      title="How does it work?"
-      image={{
-        shape: 1,
-        src: '/images/audit-process.jpg',
-        alt: 'React Native Code Audit',
-        width: 1969,
-        height: 3000,
-      }}
-    >
+    <Section title="How does it work?">
       <div className="space-y-6">
         <p>
           Our service is a fixed fee that covers a one-time project. The process
@@ -142,9 +143,11 @@ function Workflow() {
         <h4 className="mt-12 text-base font-semibold">
           Included in this phase
         </h4>
-        <TagList
-          tags={['Notion Backlog', 'Feasibility studies', 'Estimations']}
-        />
+        <ul>
+          <li>Notion Backlog</li>
+          <li>Feasibility studies</li>
+          <li>Estimations</li>
+        </ul>
         <h3>Phase 2</h3>
         <ol>
           <li>
@@ -184,18 +187,10 @@ function Workflow() {
   );
 }
 
+// Benefits component
 function Benefits() {
   return (
-    <Section
-      title="What can you gain with our React Native Audit Package?"
-      image={{
-        shape: 2,
-        src: '/images/audit-benefits.jpg',
-        alt: 'Auditing the version of your React Native app can provide benefits',
-        width: 3000,
-        height: 2000,
-      }}
-    >
+    <Section title="What can you gain with our React Native Audit Package?">
       <p>
         Auditing the version of your React Native app can provide the following
         benefits:
@@ -230,28 +225,112 @@ function Benefits() {
           <li>better web-dev compatibility with flexbox gap support,</li>
           <li>
             and many{' '}
-            <Hyperlink href="https://github.com/facebook/react-native/blob/main/CHANGELOG.md">
+            <a href="https://github.com/facebook/react-native/blob/main/CHANGELOG.md">
               more feature from the React Native changelog
-            </Hyperlink>
+            </a>
             .
           </li>
         </ol>
         <div className="not-prose">
-          <LinkButton
+          <Button
             href="/onboarding"
             size="xl"
             className="mt-6 no-underline"
             variant="outline"
           >
             Book a call
-          </LinkButton>
+          </Button>
         </div>
       </ol>
     </Section>
   );
 }
 
-export function Audit() {
+// BenefitItem component
+function BenefitItem({ Icon, title, description }) {
+  return (
+    <div className="flex flex-col">
+      <Icon className="mb-4 size-12 rounded-full bg-blue-300/50 fill-white p-1 text-blue-500 dark:bg-blue-800/50 dark:fill-blue-800/20 dark:text-blue-600" />
+      <Prose className="prose-xl">
+        <h3>{title}</h3>
+        <p>{description}</p>
+      </Prose>
+    </div>
+  );
+}
+
+// BenefitsSection component
+function BenefitsSection() {
+  return (
+    <div className="my-24 grid grid-cols-1 gap-20 md:grid-cols-2 lg:grid-cols-3">
+      <BenefitItem
+        Icon={AcademicCapIcon}
+        title="Deep Expertise"
+        description="Expert recommendations tailored to your needs."
+      />
+      <BenefitItem
+        Icon={ClockIcon}
+        title="Time-Saving"
+        description="We handle the audit, so you can focus elsewhere."
+      />
+      <BenefitItem
+        Icon={CheckCircleIcon}
+        title="Enhanced Compatibility"
+        description="Stay updated with the latest libraries and tools."
+      />
+      <BenefitItem
+        Icon={CurrencyDollarIcon}
+        title="Fixed Pricing"
+        description="No hidden costs, just a straightforward budget."
+      />
+      <BenefitItem
+        Icon={ClipboardDocumentCheckIcon}
+        title="Custom Recommendations"
+        description="Tailored notes and recommendations for your project."
+      />
+      <BenefitItem
+        Icon={ScaleIcon}
+        title="Scalable Solutions"
+        description="Flexibly scale the scope of work as needed."
+      />
+    </div>
+  );
+}
+
+// TestimonialSection component
+function TestimonialSection() {
+  return (
+    <div className="m-auto w-3/4">
+      <div className="mt-12 lg:flex lg:items-center lg:justify-center lg:gap-x-8">
+        <div className="flex w-full flex-col items-center rounded-lg bg-white py-8 text-center shadow-lg lg:w-1/2">
+          <Text as="p" variant="quote" className="w-full italic">
+            “What’s better than good code? Less code.”
+          </Text>
+          <div className="mt-4 flex items-center justify-center">
+            <a href="https://x.com/jamonholmgren">
+              <Text
+                as="p"
+                variant="quote"
+                className="mr-4 text-right font-semibold"
+              >
+                Jamon Holmgren
+              </Text>
+            </a>
+            <Image
+              src="https://pbs.twimg.com/profile_images/1712505856905170944/LDFMYGSQ_400x400.jpg"
+              alt="Jamon Holmgren"
+              className="size-16 rounded-full"
+              width={64}
+              height={64}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function Audit({ clients }: AuditProps) {
   return (
     <Layout
       seoTitle="Audit React Native App - Identify and Address Technical Debt"
@@ -263,32 +342,37 @@ export function Audit() {
       withContainer
     >
       <FadeIn>
-        <Hero
-          title="React Native Codebase Audit."
-          description="Eradicating your technical debt caused by a lack of expertise or capacity within your team. We can support your team by conducting the audit and allowing your
-          organization to focus on its priorities without a drop in its
-          development pace."
-        >
-          <div className="my-6">
-            <Button
-              href={linksApi.cal.ONBOARDING}
-              as="a"
-              isExternalLink
-              withExternalLinkIcon={false}
-              size="xxl"
-              className="justify-center"
-            >
-              Book a call
-            </Button>
-          </div>
-        </Hero>
+        <div className="mx-auto mt-24 w-2/3">
+          <Hero
+            title="React Native Codebase Audit."
+            description="Eradicating your technical debt caused by a lack of expertise or capacity within your team. We can support your team by conducting the audit and allowing your organization to focus on its priorities without a drop in its development pace."
+          >
+            <div className="my-12">
+              <Button
+                href={linksApi.cal.ONBOARDING}
+                as="a"
+                isExternalLink
+                withExternalLinkIcon={false}
+                size="xxl"
+                className="justify-center"
+              >
+                Start now
+              </Button>
+            </div>
+          </Hero>
+        </div>
       </FadeIn>
-      <div className="mt-12 space-y-24 [counter-reset:section] sm:mt-32 sm:space-y-32 lg:mt-40 lg:space-y-40">
+      <div className="mt-12 space-y-24 [counter-reset:section] sm:mt-32 sm:space-y-32 lg:mt-8 lg:space-y-40">
         <Discover />
+        <TestimonialSection />
         <Workflow />
+        <ClientsListAudit clients={clients} />
         <Benefits />
       </div>
-      <Prose size="lg" className="my-32">
+      <div className="">
+        <BenefitsSection />
+      </div>
+      <Prose size="lg" className="mx-auto my-4 lg:my-32">
         <h2>What else can we do for you?</h2>
         <h3>Long-term maintenance</h3>
         <p>
@@ -308,29 +392,20 @@ export function Audit() {
           your team in releasing and iterating more quickly.
         </p>
       </Prose>
-      <div className="m-auto max-w-4xl py-24">
+      <div className="m-auto max-w-4xl py-8 lg:py-24">
         <Card
           size="xl"
           className="m-auto my-24 flex flex-col items-center justify-center gap-8 text-center"
-          variant="gradient-blue"
+          variant="gradient-purple"
         >
-          <Text
-            variant="h4"
-            as="h2"
-            className="bg-gradient-to-b from-white to-white/75 bg-clip-text font-bold tracking-tight text-transparent drop-shadow"
-          >
+          <Text variant="h4" as="h2">
             Ready to start your journey with us?
           </Text>
-          <Text
-            variant="p1"
-            as="p"
-            className="bg-gradient-to-b from-white to-white/75 bg-clip-text tracking-tight text-transparent drop-shadow"
-          >
+          <Text variant="p1" as="p">
             Get in touch today and let’s build memorable products together.
           </Text>
           <Button
             size="xxl"
-            variant="outline"
             href={linksApi.cal.ONBOARDING}
             as="a"
             isExternalLink

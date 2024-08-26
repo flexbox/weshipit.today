@@ -7,6 +7,7 @@ import {
   HeaderLinksOnboarding,
   Prose,
 } from '@weshipit/ui';
+import { linksApi } from './api/links';
 
 interface CustomersPageProps {
   clients: Customer[];
@@ -45,7 +46,7 @@ export default function CustomersPage({ clients }: CustomersPageProps) {
         <Text as="p" variant="p1" className="mb-2">
           is your company missing?
         </Text>
-        <LinkButton href="/" size="xl" variant="outline">
+        <LinkButton href={linksApi.cal.ONBOARDING} size="xl" variant="outline">
           Add your logo today
         </LinkButton>
       </section>

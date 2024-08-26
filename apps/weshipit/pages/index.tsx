@@ -487,7 +487,6 @@ export default function IndexPage({
             />
           </div>
         </div>
-
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="m-auto max-w-2xl">
             <Faq faqs={faqs} />

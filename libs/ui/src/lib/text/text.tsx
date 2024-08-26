@@ -87,6 +87,7 @@ export const TextVariants = cva([''], {
         'font-medium',
         'dark:text-neutral-200 ',
       ],
+      quote: ['text-neutral-950', 'text-lg', 'font-bold'],
     },
   },
   defaultVariants: {
@@ -110,6 +111,7 @@ export interface TextProps
     | 'p2'
     | 'c1'
     | 'c2'
+    | 'quote'
     | undefined;
 }
 
