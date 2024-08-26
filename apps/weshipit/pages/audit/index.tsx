@@ -9,6 +9,7 @@ import {
   Card,
   Text,
   ClientProps,
+  Section as SectionDivider,
 } from '@weshipit/ui';
 import { linksApi } from '../api/links';
 import {
@@ -246,7 +247,6 @@ function Benefits() {
   );
 }
 
-// BenefitItem component
 function BenefitItem({ Icon, title, description }) {
   return (
     <div className="flex flex-col">
@@ -259,14 +259,13 @@ function BenefitItem({ Icon, title, description }) {
   );
 }
 
-// BenefitsSection component
-function BenefitsSection() {
+function BenefitsList() {
   return (
-    <div className="my-24 grid grid-cols-1 gap-20 md:grid-cols-2 lg:grid-cols-3">
+    <div className="grid grid-cols-1 gap-16 md:grid-cols-2 lg:grid-cols-3">
       <BenefitItem
         Icon={AcademicCapIcon}
         title="Deep Expertise"
-        description="Expert recommendations tailored to your needs."
+        description="We do React Native since 2017."
       />
       <BenefitItem
         Icon={ClockIcon}
@@ -276,7 +275,7 @@ function BenefitsSection() {
       <BenefitItem
         Icon={CheckCircleIcon}
         title="Enhanced Compatibility"
-        description="Stay updated with the latest libraries and tools."
+        description="Stay up-to-date with the latest libraries and tools."
       />
       <BenefitItem
         Icon={CurrencyDollarIcon}
@@ -290,8 +289,8 @@ function BenefitsSection() {
       />
       <BenefitItem
         Icon={ScaleIcon}
-        title="Scalable Solutions"
-        description="Flexibly scale the scope of work as needed."
+        title="Flexible Solutions"
+        description="We can tackle the solutions provided in our audit by joining your team."
       />
     </div>
   );
@@ -361,16 +360,19 @@ export function Audit({ clients }: AuditProps) {
             </div>
           </Hero>
         </div>
+
+        <ClientsListAudit clients={clients} />
+
+        <SectionDivider variant="transparent">
+          <BenefitsList />
+        </SectionDivider>
       </FadeIn>
+
       <div className="mt-12 space-y-24 [counter-reset:section] sm:mt-32 sm:space-y-32 lg:mt-8 lg:space-y-40">
         <Discover />
         <TestimonialSection />
         <Workflow />
-        <ClientsListAudit clients={clients} />
         <Benefits />
-      </div>
-      <div className="">
-        <BenefitsSection />
       </div>
       <Prose size="lg" className="mx-auto my-4 lg:my-32">
         <h2>What else can we do for you?</h2>
@@ -399,10 +401,10 @@ export function Audit({ clients }: AuditProps) {
           variant="gradient-purple"
         >
           <Text variant="h4" as="h2">
-            Ready to start your journey with us?
+            Improve your app today
           </Text>
           <Text variant="p1" as="p">
-            Get in touch today and let’s build memorable products together.
+            Get in touch and let’s build memorable products together.
           </Text>
           <Button
             size="xxl"

@@ -1,3 +1,4 @@
+export * from './lib/section/section';
 export * from './lib/spot-left/spot-left';
 export * from './lib/faq/faq';
 export * from './lib/airtable-toggle-form/airtable-toggle-form';
