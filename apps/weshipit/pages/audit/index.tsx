@@ -8,6 +8,7 @@ import {
   Prose,
   Card,
   Text,
+  ClientProps,
 } from '@weshipit/ui';
 import { linksApi } from '../api/links';
 import {
@@ -24,7 +25,7 @@ import { PropsWithChildren } from 'react';
 
 // Define the shape of the props expected by the Audit component
 interface AuditProps {
-  clients: Customer[];
+  clients: ClientProps[];
 }
 
 // Fetch the client data at build time
@@ -70,7 +71,7 @@ function Section({ title, children }) {
             <Text as="h2" variant="h3" className="mt-2">
               {title}
             </Text>
-            <Prose className="mt-6">{children}</Prose>
+            <Prose className="prose-xl mt-6">{children}</Prose>
           </FadeIn>
         </div>
       </div>
@@ -248,14 +249,12 @@ function Benefits() {
 // BenefitItem component
 function BenefitItem({ Icon, title, description }) {
   return (
-    <div className="flex flex-col items-center text-center">
-      <Icon className="size-12 text-black dark:text-white" />
-      <Text as="h3" variant="h4" className="mt-4">
-        {title}
-      </Text>
-      <Text as="p" variant="p1">
-        {description}
-      </Text>
+    <div className="flex flex-col">
+      <Icon className="mb-4 size-12 rounded-full bg-blue-300/50 fill-white p-1 text-blue-500 dark:text-white" />
+      <Prose className="prose-xl">
+        <h3>{title}</h3>
+        <p>{description}</p>
+      </Prose>
     </div>
   );
 }
@@ -263,7 +262,7 @@ function BenefitItem({ Icon, title, description }) {
 // BenefitsSection component
 function BenefitsSection() {
   return (
-    <div className="my-24 grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
+    <div className="my-24 grid grid-cols-1 gap-20 md:grid-cols-2 lg:grid-cols-3">
       <BenefitItem
         Icon={AcademicCapIcon}
         title="Deep Expertise"
@@ -305,7 +304,7 @@ function TestimonialSection() {
       <div className="mt-12 lg:flex lg:items-center lg:justify-center lg:gap-x-8">
         <div className="flex w-full flex-col items-center rounded-lg bg-white py-8 text-center shadow-lg lg:w-1/2">
           <Text as="p" variant="quote" className="w-full italic">
-            “What‘s better than good code? Less code.”
+            “What’s better than good code? Less code.”
           </Text>
           <div className="mt-4 flex items-center justify-center">
             <a href="https://x.com/jamonholmgren">
