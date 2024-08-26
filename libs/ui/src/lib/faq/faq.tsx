@@ -22,18 +22,9 @@ interface FaqListProps {
 
 export function Faq({ faqs }: FaqListProps) {
   return (
-    <div>
-      <Text as="h2" variant="h3" className="mb-12">
+    <div className="flex flex-col gap-6 py-24">
+      <Text as="h2" variant="h3" className="px-4">
         Frequently Asked Questions
-      </Text>
-      <Text as="p" variant="p1" className="mb-8 px-4">
-        Can’t find what you're looking for here? Feel free to reach out:{' '}
-        <Hyperlink
-          href="mailto:z2qdm0yrm@mozmail.com?subject=weshipit.today%20faq%20recommendation&body=Hello,%20here%20is%20my%20question:%20"
-          className="font-bold text-blue-500 underline underline-offset-4 hover:text-blue-700"
-        >
-          z2qdm0yrm@mozmail.com
-        </Hyperlink>
       </Text>
 
       {faqs.map((item) => (
@@ -61,6 +52,16 @@ export function Faq({ faqs }: FaqListProps) {
           </Disclosure>
         </div>
       ))}
+
+      <Text as="p" variant="p1" className="px-4">
+        Can’t find what you're looking for here? Feel free to reach out:{' '}
+        <Hyperlink
+          href="mailto:z2qdm0yrm@mozmail.com?subject=weshipit.today%20faq%20recommendation&body=Hello,%20here%20is%20my%20question:%20"
+          className="font-bold text-blue-500 underline underline-offset-4 hover:text-blue-700"
+        >
+          z2qdm0yrm@mozmail.com
+        </Hyperlink>
+      </Text>
     </div>
   );
 }
