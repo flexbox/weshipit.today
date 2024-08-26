@@ -8,6 +8,7 @@ import {
   Hero,
   Hyperlink,
   Prose,
+  Section,
   SpotLeft,
   Text,
   WorkflowCard,
@@ -473,7 +474,7 @@ export default function IndexPage({
           </div>
         </div>
 
-        <div className="my-12 bg-white py-32 dark:bg-slate-900">
+        <Section variant="light">
           <div className="m-auto max-w-2xl text-center">
             <Text as="h2" variant="h2" className="mb-12">
               Cutting Edge UI and Enhanced Productivity
@@ -486,7 +487,7 @@ export default function IndexPage({
               teamSpotsLeft={teamSpotsLeft}
             />
           </div>
-        </div>
+        </Section>
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="m-auto max-w-2xl">
             <Faq faqs={faqs} />
