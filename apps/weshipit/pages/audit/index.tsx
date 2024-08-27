@@ -61,12 +61,12 @@ export function Container({
 // Section component
 function Section({ title, children }) {
   return (
-    <Container className="group/section [counter-increment:section]">
+    <Container>
       <div className="lg:flex lg:items-center lg:justify-center lg:gap-x-8 lg:group-even/section:justify-start xl:gap-x-20">
         <div className="mx-auto mt-12 lg:mt-0 lg:w-[37rem] lg:flex-none lg:group-even/section:order-first">
           <FadeIn>
             <div
-              className="text-base font-semibold before:text-neutral-300 before:content-['/_'] after:text-neutral-950 after:content-[counter(section,decimal-leading-zero)] dark:after:text-neutral-300"
+              className="text-base font-semibold before:text-neutral-300 dark:after:text-neutral-300"
               aria-hidden="true"
             />
             <Text as="h2" variant="h3" className="mt-2">
