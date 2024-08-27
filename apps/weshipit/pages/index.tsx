@@ -422,7 +422,7 @@ export default function IndexPage({
                   </p>
                 </Prose>
               </div>
-              <div className="m-auto grid w-3/4 grid-cols-2 gap-4 p-4">
+              <div className="m-auto grid w-full grid-cols-1 gap-4 p-4 md:w-3/4 md:grid-cols-2">
                 <div className="flex h-full flex-col gap-4">
                   <Card className="h-1/2 overflow-hidden p-4">
                     <Prose size={'xl'} className="mb-6">
@@ -460,7 +460,7 @@ export default function IndexPage({
                   </Card>
                 </div>
                 <div className="flex h-full flex-col gap-4">
-                  <Card className="h-1/3 p-4">
+                  <Card className="h-1/4 p-4  md:h-1/3">
                     <Prose size={'xl'} className="mb-6">
                       <Text>
                         To <strong>regain agility</strong> to evolve my
@@ -468,7 +468,7 @@ export default function IndexPage({
                       </Text>
                     </Prose>
                     <div className="flex justify-end gap-8">
-                      <Text variant="h2" className="pr-4 pt-4">
+                      <Text variant="h2" className="pr-4 pt-0 md:pt-4">
                         🚀
                       </Text>
                     </div>
@@ -478,19 +478,19 @@ export default function IndexPage({
                       variant={'gradient-purple-dark'}
                       className="w-1/2 p-4"
                     >
-                      <Prose size={'xl'} className="mb-6">
+                      <Prose size={'xl'} className="mb-0 md:mb-6">
                         <Text>
                           Talk to <strong>experts</strong>
                         </Text>
                       </Prose>
-                      <div className="relative mx-auto flex h-[164px] w-full flex-row items-center justify-center sm:h-[124px]">
+                      <div className="relative mx-auto flex h-[164px] w-full flex-col-reverse items-center justify-center sm:h-[124px] md:flex-row">
                         <Gravatar
-                          className="rounded-full border-4 border-white bg-slate-300 dark:bg-slate-700"
+                          className="size-[64px] rounded-full border-4 border-white bg-slate-300 md:size-auto dark:bg-slate-700"
                           size={80}
                           email="ducrocq.matthys@gmail.com"
                         />
                         <Gravatar
-                          className="-ml-4 mr-4 rounded-full border-4 border-white bg-slate-300 dark:bg-slate-700"
+                          className="-mb-4 size-[64px] rounded-full border-4 border-white bg-slate-300 md:-mb-0 md:-ml-4 md:mr-4 md:size-auto dark:bg-slate-700"
                           size={80}
                           email="dleuliette@gmail.com"
                         />
@@ -501,16 +501,17 @@ export default function IndexPage({
                         <Text>
                           <strong>Slack !</strong>
                         </Text>
-                        <Text variant="c1">
+                        <Text variant="c2">
                           No emails here! Responsive and more human exchanges
                         </Text>
                       </div>
-                      <div className="flex justify-end gap-8">
+                      <div className="flex justify-end gap-8 md:h-auto md:w-full">
                         <Image
                           src="/images/slack.png"
                           alt="slack logo"
-                          width={50}
-                          height={50}
+                          className="size-[32px] md:size-auto"
+                          width={40}
+                          height={40}
                         />
                       </div>
                     </Card>
