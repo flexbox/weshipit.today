@@ -411,7 +411,17 @@ export default function IndexPage({
             </Button>
           </div>
           <div className="mb-16 py-0 pb-12 lg:py-24">
-            <>
+            <div>
+              <div className="m-auto max-w-2xl">
+                <Prose className="mb-12" size="xl">
+                  <h2>Mobile app for iOS, Android and more</h2>
+                  <p>
+                    Our team can assist you in shipping a new app, add new
+                    features, or just keep an existing app up to date. Contact
+                    us today if you want:
+                  </p>
+                </Prose>
+              </div>
               <div className="m-auto grid w-3/4 grid-cols-2 gap-4 p-4">
                 <div className="flex h-full flex-col gap-4">
                   <Card className="h-1/2 overflow-hidden p-4">
@@ -524,34 +534,8 @@ export default function IndexPage({
                   </Card>
                 </div>
               </div>
-            </>
-            <div className="m-auto max-w-2xl">
-              <Prose className="mb-12" size="xl">
-                <h2>Mobile app for iOS, Android and more</h2>
-                <p>
-                  Our team can assist you in shipping a new app, add new
-                  features, or just keep an existing app up to date. Contact us
-                  today if you want:
-                </p>
-                <ul>
-                  <li>
-                    A new mobile application{' '}
-                    <strong>quickly on Apple and Google store</strong>.
-                  </li>
-                  <li>
-                    to <strong>Regain agility</strong> to evolve my application
-                    quickly.
-                  </li>
-                  <li>
-                    To stop struggling with{' '}
-                    <strong>React Native updates</strong>.
-                  </li>
-                  <li>
-                    To quickly{' '}
-                    <strong>migrate an application to React Native</strong>.
-                  </li>
-                </ul>
-              </Prose>
+            </div>
+            <div className="m-auto mt-12 max-w-2xl">
               <div className="flex justify-center">
                 <Button
                   href={linksApi.cal.ONBOARDING}
