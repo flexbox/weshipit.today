@@ -70,7 +70,7 @@ function Discover() {
               className="no-underline"
               variant="outline"
             >
-              Start now
+              Migrate to Expo
             </Button>
           </div>
         </div>
@@ -84,17 +84,14 @@ function Workflow() {
     <MigrationSection title="How does the migration process work?">
       <div className="space-y-6">
         <p>
-          Our migration service is a fixed fee that covers a one-time project.
-          The process typically takes up to{' '}
-          <strong className="font-semibold">2 weeks to complete</strong>. If you
-          require more personalized work, you have the option to add additional
-          working hours to your package.
+          Our migration service is a fixed monthly fee that covers a one-time
+          project. We offer a two-phase approach to ensure a smooth transition
+          to Expo:
         </p>
         <h3>Phase 1</h3>
         <ul>
           <li>
             We evaluate your current codebase and identify areas for migration
-            (3 working days).
           </li>
           <li>
             We create a migration plan, including necessary adjustments and
@@ -112,34 +109,36 @@ function Workflow() {
         <h3>Phase 2</h3>
         <ol>
           <li>
-            We start the migration process, adapting your code to work within
-            the Expo environment.
+            Begin the migration by adapting your codebase for Expo, ensuring all
+            components and native modules are compatible.
           </li>
           <li>
-            We upgrade necessary libraries and tools to ensure compatibility.
+            Upgrade all libraries and tools to their latest versions to ensure
+            compatibility and stability within the Expo environment.
           </li>
-          <li>We prepare the build process and share the plan with you.</li>
-          <ol>
-            <li>
-              We decide whether to use Expo Go or a custom development client
-              for your app.
-            </li>
-            <li>
-              We leverage Expo managed and bare workflow to meet your project’s
-              specific needs.
-            </li>
-          </ol>
-          <li>We run tests to ensure a successful migration:</li>
-          <ol>
-            <li>We engage your existing test suite and testing team.</li>
-            <li>
-              If necessary, we can involve our QA engineers for additional
-              testing.
-            </li>
-          </ol>
           <li>
-            We help you deploy the migrated version to the App Store and Google
-            Play Store if necessary.
+            Optimize the build process, including:
+            <ol>
+              <li>Setting up Continuous Integration (CI) pipelines.</li>
+              <li>Improving build efficiency and reliability.</li>
+              <li>Streamlining deployment with Expo’s tools.</li>
+            </ol>
+          </li>
+          <li>
+            Conduct thorough testing, including:
+            <ol>
+              <li>Unit tests for individual components.</li>
+              <li>Integration tests for module interactions.</li>
+              <li>End-to-end tests to validate user flows.</li>
+            </ol>
+          </li>
+          <li>
+            Deploy the migrated app to the App Store and Google Play Store,
+            ensuring all platform-specific requirements are met.
+          </li>
+          <li>
+            Provide post-migration support to resolve any issues and ensure a
+            smooth transition.
           </li>
         </ol>
       </div>
@@ -186,17 +185,17 @@ function Benefits() {
             .
           </li>
         </ol>
-        <div className="not-prose">
-          <Button
-            href="/onboarding"
-            size="xl"
-            className="mt-6 no-underline"
-            variant="outline"
-          >
-            Book a call
-          </Button>
-        </div>
       </ol>
+      <div className="not-prose">
+        <Button
+          href="/onboarding"
+          size="xl"
+          className="mt-6 no-underline"
+          variant="outline"
+        >
+          Book a call
+        </Button>
+      </div>
     </MigrationSection>
   );
 }
@@ -289,26 +288,28 @@ export function Migration({ clients }: MigrationProps) {
       <div className="mt-12 space-y-24 [counter-reset:section] sm:mt-32 sm:space-y-32 lg:mt-8 lg:space-y-40">
         <Benefits />
       </div>
-      <Prose size="lg" className="mx-auto my-4 lg:my-32">
-        <h2>What else can we do for you?</h2>
-        <h3>Long-term maintenance</h3>
-        <p>
-          With Expo’s tools and our team’s expertise, you can focus on what
-          matters most: growing your product, while we ensure it remains stable
-          and optimized.
-        </p>
-        <h3>Improved performance and stability</h3>
-        <p>
-          Migrating to Expo ensures that your app is running on a stable and
-          optimized platform, providing a better experience for your users.
-        </p>
-        <h3>Streamlined app distribution</h3>
-        <p>
-          Expo’s build and deployment tools can significantly reduce the
-          complexity of releasing updates, and we can help you make the most of
-          these capabilities.
-        </p>
-      </Prose>
+      <Section variant={'light'}>
+        <Prose size="lg" className="mx-auto my-4 lg:my-32">
+          <h2>What else can we do for you?</h2>
+          <h3>Long-term maintenance</h3>
+          <p>
+            With Expo’s tools and our team’s expertise, you can focus on what
+            matters most: growing your product, while we ensure it remains
+            stable and optimized.
+          </p>
+          <h3>Improved performance and stability</h3>
+          <p>
+            Migrating to Expo ensures that your app is running on a stable and
+            optimized platform, providing a better experience for your users.
+          </p>
+          <h3>Streamlined app distribution</h3>
+          <p>
+            Expo’s build and deployment tools can significantly reduce the
+            complexity of releasing updates, and we can help you make the most
+            of these capabilities.
+          </p>
+        </Prose>
+      </Section>
       <div className="m-auto max-w-4xl py-8 lg:py-24">
         <Card
           size="xl"
