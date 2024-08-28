@@ -1,4 +1,5 @@
 import {
+  Bento,
   Button,
   Card,
   ClientsListHomepage,
@@ -411,33 +412,25 @@ export default function IndexPage({
             </Button>
           </div>
           <div className="mb-16 py-0 pb-12 lg:py-24">
-            <div className="m-auto max-w-2xl">
-              <Prose className="mb-12" size="xl">
-                <h2>Mobile app for iOS, Android and more</h2>
-                <p>
-                  Our team can assist you in shipping a new app, add new
-                  features, or just keep an existing app up to date. Contact us
-                  today if you want:
-                </p>
-                <ul>
-                  <li>
-                    A new mobile application{' '}
-                    <strong>quickly on Apple and Google store</strong>.
-                  </li>
-                  <li>
-                    to <strong>Regain agility</strong> to evolve my application
-                    quickly.
-                  </li>
-                  <li>
-                    To stop struggling with{' '}
-                    <strong>React Native updates</strong>.
-                  </li>
-                  <li>
-                    To quickly{' '}
-                    <strong>migrate an application to React Native</strong>.
-                  </li>
-                </ul>
-              </Prose>
+            <div>
+              <div className="m-auto max-w-2xl">
+                <Prose className="mb-12" size="xl">
+                  <h2>Mobile app for iOS, Android and more</h2>
+                  <p>
+                    Our team can assist you in shipping a new app, add new
+                    features, or just keep an existing app up to date. Contact
+                    us today if you want:
+                  </p>
+                </Prose>
+              </div>
+              <Bento
+                expertLink={linksApi.cal.ONBOARDING}
+                auditLink={'/audit'}
+                slackLink="https://weblille.rocks/"
+                gumroadLink="https://flexbox.gumroad.com/l/expo-checklist"
+              />
+            </div>
+            <div className="m-auto mt-12 max-w-2xl">
               <div className="flex justify-center">
                 <Button
                   href={linksApi.cal.ONBOARDING}
