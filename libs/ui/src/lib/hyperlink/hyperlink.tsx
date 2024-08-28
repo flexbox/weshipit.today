@@ -7,23 +7,34 @@ export interface HyperlinkProps {
   isExternal?: boolean;
   className?: string;
   noIcon?: boolean;
+  noSpanStyle?: boolean;
 }
 
 export function Hyperlink({
   children,
   isExternal = false,
   noIcon = false,
+  noSpanStyle = false,
   ...rest
 }: HyperlinkProps) {
   if (isExternal) {
     return (
       <a target="_blank" rel="noopener noreferrer nofollow" {...rest}>
-        <span className="flex items-center">
-          {children}
-          {noIcon ? null : (
-            <ArrowTopRightOnSquareIcon className="ml-1 size-4 text-gray-400" />
-          )}
-        </span>
+        {noSpanStyle ? (
+          <span>
+            {children}
+            {noIcon ? null : (
+              <ArrowTopRightOnSquareIcon className="ml-1 size-4 text-gray-400" />
+            )}
+          </span>
+        ) : (
+          <span className="flex items-center">
+            {children}
+            {noIcon ? null : (
+              <ArrowTopRightOnSquareIcon className="ml-1 size-4 text-gray-400" />
+            )}
+          </span>
+        )}
       </a>
     );
   }

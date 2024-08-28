@@ -60,6 +60,17 @@ const card = cva(
         lg: ['p-8'],
         xl: ['p-16'],
       },
+      shadow: {
+        light: [
+          'shadow-md',
+          'hover:shadow-slate-400',
+          'dark:shadow-sm',
+          'dark:shadow-slate-400',
+        ],
+      },
+      transform: {
+        px: ['hover:translate-x-px', 'hover:translate-y-px'],
+      },
     },
     defaultVariants: {
       size: 'md',
@@ -67,8 +78,20 @@ const card = cva(
   }
 );
 
-export function Card({ className, variant, size, ...props }: CardProps) {
-  return <div className={card({ variant, size, className })} {...props} />;
+export function Card({
+  className,
+  variant,
+  size,
+  shadow,
+  transform,
+  ...props
+}: CardProps) {
+  return (
+    <div
+      className={card({ variant, size, className, shadow, transform })}
+      {...props}
+    />
+  );
 }
 
 export default Card;

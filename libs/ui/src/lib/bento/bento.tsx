@@ -4,6 +4,7 @@ import { Prose } from '../prose/prose';
 import { Text } from '../text/text';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Hyperlink } from '../hyperlink/hyperlink';
 
 export interface BentoProps {
   expertLink: string;
@@ -18,18 +19,15 @@ export function Bento({
   gumroadLink,
   slackLink,
 }: BentoProps) {
-  const customShadow =
-    'shadow-md hover:translate-x-px hover:translate-y-px hover:shadow-slate-400 dark:shadow-sm dark:shadow-slate-400';
   return (
     <div className="m-auto grid w-full grid-cols-1 gap-4 p-4 md:w-3/4 md:grid-cols-2">
       <div className="flex h-full flex-col gap-4">
-        <a
-          href={gumroadLink}
-          className="h-1/2"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <Card className={`h-full overflow-hidden p-4 ${customShadow}`}>
+        <Hyperlink href={gumroadLink} className="h-1/2" isExternal noIcon>
+          <Card
+            className={`h-full overflow-hidden p-4`}
+            transform={'px'}
+            shadow={'light'}
+          >
             <Prose size={'xl'} className="mb-6">
               <Text>
                 A new mobile application{' '}
@@ -46,9 +44,13 @@ export function Bento({
               />
             </div>
           </Card>
-        </a>
-        <a href={expertLink} className="h-1/2" target="_blank" rel="noreferrer">
-          <Card className={`overflow-hidden p-4 ${customShadow}`}>
+        </Hyperlink>
+        <Hyperlink href={expertLink} className="h-1/2" isExternal noIcon>
+          <Card
+            className={`overflow-hidden p-4`}
+            transform={'px'}
+            shadow={'light'}
+          >
             <Prose size={'xl'} className="mb-6">
               <Text>
                 To <strong>stop struggling</strong> with React Native updates.
@@ -64,16 +66,17 @@ export function Bento({
               />
             </div>
           </Card>
-        </a>
+        </Hyperlink>
       </div>
-      <div className="flex h-full flex-col gap-4">
-        <a
+      <div className="flex h-full flex-col gap-4 ">
+        <Hyperlink
           href={expertLink}
-          className="md:h-1/3"
-          target="_blank"
-          rel="noreferrer"
+          className="h-1/3"
+          isExternal
+          noIcon
+          noSpanStyle
         >
-          <Card className={`h-full p-4 ${customShadow}`}>
+          <Card className={`h-full p-4`} transform={'px'} shadow={'light'}>
             <Prose size={'xl'} className="mb-6">
               <Text>
                 To <strong>regain agility</strong> to evolve my application
@@ -86,17 +89,20 @@ export function Bento({
               </Text>
             </div>
           </Card>
-        </a>
+        </Hyperlink>
         <div className="flex h-1/3 w-full gap-4">
-          <a
+          <Hyperlink
             href={expertLink}
             className="w-1/2"
-            target="_blank"
-            rel="noreferrer"
+            isExternal
+            noIcon
+            noSpanStyle
           >
             <Card
               variant={'gradient-purple-dark'}
-              className={`w-full p-4 ${customShadow}`}
+              className={`size-full p-4`}
+              transform={'px'}
+              shadow={'light'}
             >
               <Prose size={'xl'} className="mb-0 md:mb-6">
                 <Text>
@@ -116,14 +122,15 @@ export function Bento({
                 />
               </div>
             </Card>
-          </a>
-          <a
+          </Hyperlink>
+          <Hyperlink
             href={slackLink}
-            className="h-full w-1/2"
-            target="_blank"
-            rel="noreferrer"
+            className="w-1/2"
+            isExternal
+            noIcon
+            noSpanStyle
           >
-            <Card className={`size-full p-4 ${customShadow}`}>
+            <Card className={`h-full`} transform={'px'} shadow={'light'}>
               <div className="mb-6 flex flex-col gap-2">
                 <Text>
                   <strong>Slack !</strong>
@@ -142,10 +149,10 @@ export function Bento({
                 />
               </div>
             </Card>
-          </a>
+          </Hyperlink>
         </div>
-        <Link href={auditLink}>
-          <Card className={`p-4 ${customShadow}`}>
+        <Link href={auditLink} className="h-1/3">
+          <Card className={`p-4`} transform={'px'} shadow={'light'}>
             <Prose size={'xl'} className="mb-6">
               <Text>
                 To <strong>quickly migrate</strong> an application to React
