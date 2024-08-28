@@ -59,7 +59,7 @@ export function Container({
 }
 
 // Section component
-function Section({ title, children }) {
+export function Section({ title, children }) {
   return (
     <Container>
       <div className="lg:flex lg:items-center lg:justify-center lg:gap-x-8 lg:group-even/section:justify-start xl:gap-x-20">
@@ -247,7 +247,7 @@ function Benefits() {
   );
 }
 
-function BenefitItem({ Icon, title, description }) {
+export function BenefitItem({ Icon, title, description }) {
   return (
     <div className="flex flex-col">
       <Icon className="mb-4 size-12 rounded-full bg-blue-300/50 fill-white p-1 text-blue-500 dark:bg-blue-800/50 dark:fill-blue-800/20 dark:text-blue-600" />
