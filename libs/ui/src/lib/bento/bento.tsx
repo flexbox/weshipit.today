@@ -18,14 +18,18 @@ export function Bento({
   gumroadLink,
   slackLink,
 }: BentoProps) {
+  const customShadow =
+    'shadow-md hover:translate-x-px hover:translate-y-px hover:shadow-slate-400 dark:shadow-sm dark:shadow-slate-400';
   return (
     <div className="m-auto grid w-full grid-cols-1 gap-4 p-4 md:w-3/4 md:grid-cols-2">
       <div className="flex h-full flex-col gap-4">
-        <Link
+        <a
           href={gumroadLink}
-          className="h-1/2 hover:translate-x-px hover:translate-y-px"
+          className="h-1/2"
+          target="_blank"
+          rel="noreferrer"
         >
-          <Card className="h-full overflow-hidden p-4">
+          <Card className={`h-full overflow-hidden p-4 ${customShadow}`}>
             <Prose size={'xl'} className="mb-6">
               <Text>
                 A new mobile application{' '}
@@ -42,12 +46,9 @@ export function Bento({
               />
             </div>
           </Card>
-        </Link>
-        <Link
-          href={expertLink}
-          className="h-1/2 hover:translate-x-px hover:translate-y-px"
-        >
-          <Card className="overflow-hidden p-4">
+        </a>
+        <a href={expertLink} className="h-1/2" target="_blank" rel="noreferrer">
+          <Card className={`overflow-hidden p-4 ${customShadow}`}>
             <Prose size={'xl'} className="mb-6">
               <Text>
                 To <strong>stop struggling</strong> with React Native updates.
@@ -63,14 +64,16 @@ export function Bento({
               />
             </div>
           </Card>
-        </Link>
+        </a>
       </div>
       <div className="flex h-full flex-col gap-4">
-        <Link
+        <a
           href={expertLink}
-          className=" hover:translate-x-px hover:translate-y-px md:h-1/3"
+          className="md:h-1/3"
+          target="_blank"
+          rel="noreferrer"
         >
-          <Card className="h-full p-4">
+          <Card className={`h-full p-4 ${customShadow}`}>
             <Prose size={'xl'} className="mb-6">
               <Text>
                 To <strong>regain agility</strong> to evolve my application
@@ -83,13 +86,18 @@ export function Bento({
               </Text>
             </div>
           </Card>
-        </Link>
+        </a>
         <div className="flex h-1/3 w-full gap-4">
-          <Link
+          <a
             href={expertLink}
-            className="w-1/2 hover:translate-x-px hover:translate-y-px"
+            className="w-1/2"
+            target="_blank"
+            rel="noreferrer"
           >
-            <Card variant={'gradient-purple-dark'} className="w-full p-4">
+            <Card
+              variant={'gradient-purple-dark'}
+              className={`w-full p-4 ${customShadow}`}
+            >
               <Prose size={'xl'} className="mb-0 md:mb-6">
                 <Text>
                   Talk to <strong>experts</strong>
@@ -108,12 +116,14 @@ export function Bento({
                 />
               </div>
             </Card>
-          </Link>
-          <Link
+          </a>
+          <a
             href={slackLink}
-            className="h-full w-1/2 hover:translate-x-px hover:translate-y-px"
+            className="h-full w-1/2"
+            target="_blank"
+            rel="noreferrer"
           >
-            <Card className="size-full p-4">
+            <Card className={`size-full p-4 ${customShadow}`}>
               <div className="mb-6 flex flex-col gap-2">
                 <Text>
                   <strong>Slack !</strong>
@@ -132,13 +142,10 @@ export function Bento({
                 />
               </div>
             </Card>
-          </Link>
+          </a>
         </div>
-        <Link
-          href={auditLink}
-          className="hover:translate-x-px hover:translate-y-px"
-        >
-          <Card className="p-4">
+        <Link href={auditLink}>
+          <Card className={`p-4 ${customShadow}`}>
             <Prose size={'xl'} className="mb-6">
               <Text>
                 To <strong>quickly migrate</strong> an application to React
