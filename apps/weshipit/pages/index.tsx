@@ -423,7 +423,12 @@ export default function IndexPage({
                   </p>
                 </Prose>
               </div>
-              <Bento />
+              <Bento
+                expertLink={linksApi.cal.ONBOARDING}
+                auditLink={'/audit'}
+                slackLink="https://weblille.rocks/"
+                gumroadLink="https://flexbox.gumroad.com/l/expo-checklist"
+              />
             </div>
             <div className="m-auto mt-12 max-w-2xl">
               <div className="flex justify-center">
