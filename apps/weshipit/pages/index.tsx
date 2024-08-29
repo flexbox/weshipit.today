@@ -449,6 +449,14 @@ export default function IndexPage({
             <div className="m-auto max-w-2xl">
               <Prose className="mb-12" size="xl">
                 <h2>What makes a great app?</h2>
+                <h3>It’s an app :</h3>
+                <ol>
+                  <li>Reactive</li>
+                  <li>That does’nt crash</li>
+                  <li>Without errors</li>
+                  <li>Up to date</li>
+                  <li>Downloaded fast</li>
+                </ol>
                 <p>
                   We take immense pride in having expertly served an impressive
                   roster of over 15 clients, including
