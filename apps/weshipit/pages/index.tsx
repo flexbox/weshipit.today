@@ -286,7 +286,7 @@ function PodcastProof() {
 function HowDoesItWorks({ steps }: { steps: Steps[] }) {
   return (
     <div className="mx-auto flex flex-col gap-4">
-      <Prose size={'xl'}>
+      <Prose size="xl">
         <h2>How does it work?</h2>
       </Prose>
       <div className="flex flex-col gap-12">
@@ -302,36 +302,40 @@ function HowDoesItWorks({ steps }: { steps: Steps[] }) {
         ))}
 
         <Card variant="green">
-          <ol>
-            <li>Get acces to top-noch talent.</li>
-            <li>Unlimited revisions and one request at a time.</li>
-            <li>Pause anytime and cancel whenever.</li>
-          </ol>
+          <Prose size="xl">
+            <ol>
+              <li>Get acces to top-noch talent.</li>
+              <li>Unlimited revisions and one request at a time.</li>
+              <li>Pause anytime and cancel whenever.</li>
+            </ol>
+          </Prose>
         </Card>
 
         <Card variant="red">
-          <h3 className="mt-0">Do not work with us if you want</h3>
-          <ol>
-            <li>A quote is sent after an initial call.</li>
-            <li>The quote is then validated.</li>
-            <li>
-              A service contract is signed, which describes the list of tasks to
-              be accomplished and includes the elements of the quote.
-            </li>
-            <li>The developments are then carried out.</li>
-            <li>
-              A delivery report is validated, which triggers the payment of the
-              invoice.
-            </li>
-            <li>
-              Finally, the intellectual property rights transfer contract is
-              signed.
-            </li>
-            <li>
-              Loop of back and forth emails with accounting because the payment
-              was not sent.
-            </li>
-          </ol>
+          <Prose size="xl">
+            <h3 className="mt-0">Do not work with us if you want</h3>
+            <ol>
+              <li>A quote is sent after an initial call.</li>
+              <li>The quote is then validated.</li>
+              <li>
+                A service contract is signed, which describes the list of tasks
+                to be accomplished and includes the elements of the quote.
+              </li>
+              <li>The developments are then carried out.</li>
+              <li>
+                A delivery report is validated, which triggers the payment of
+                the invoice.
+              </li>
+              <li>
+                Finally, the intellectual property rights transfer contract is
+                signed.
+              </li>
+              <li>
+                Loop of back and forth emails with accounting because the
+                payment was not sent.
+              </li>
+            </ol>
+          </Prose>
         </Card>
       </div>
     </div>
