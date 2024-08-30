@@ -79,15 +79,11 @@ export function Card({
   className,
   shadow,
   size,
-  transform,
   variant,
   ...props
 }: CardProps) {
   return (
-    <div
-      className={card({ className, shadow, size, transform, variant })}
-      {...props}
-    />
+    <div className={card({ className, shadow, size, variant })} {...props} />
   );
 }
 
