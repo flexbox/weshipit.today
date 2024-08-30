@@ -23,11 +23,7 @@ export function Bento({
     <div className="m-auto grid w-full grid-cols-1 gap-4 p-4 md:w-3/4 md:grid-cols-2">
       <div className="flex h-full flex-col gap-4">
         <Hyperlink href={gumroadLink} className="h-1/2" isExternal noIcon>
-          <Card
-            className="h-full overflow-hidden p-4"
-            transform="px"
-            shadow="light"
-          >
+          <Card className="h-full overflow-hidden p-4" shadow="light">
             <Prose size="xl" className="mb-6">
               <Text>
                 A new mobile application{' '}
@@ -46,11 +42,7 @@ export function Bento({
           </Card>
         </Hyperlink>
         <Hyperlink href={expertLink} className="h-1/2" isExternal noIcon>
-          <Card
-            className={`overflow-hidden p-4`}
-            transform={'px'}
-            shadow={'light'}
-          >
+          <Card className={`overflow-hidden p-4`} shadow={'light'}>
             <Prose size={'xl'} className="mb-6">
               <Text>
                 To <strong>stop struggling</strong> with React Native updates.
@@ -69,14 +61,14 @@ export function Bento({
         </Hyperlink>
       </div>
       <div className="flex h-full flex-col gap-4 ">
-        <Hyperlink
-          href={expertLink}
-          className="h-1/3"
-          isExternal
-          noIcon
-          noSpanStyle
-        >
-          <Card className={`h-full p-4`} transform={'px'} shadow={'light'}>
+        <Card className={`h-full p-4`}>
+          <Hyperlink
+            href={expertLink}
+            className="h-1/3"
+            isExternal
+            noIcon
+            noSpanStyle
+          >
             <Prose size={'xl'} className="mb-6">
               <Text>
                 To <strong>regain agility</strong> to evolve my application
@@ -88,8 +80,8 @@ export function Bento({
                 🚀
               </Text>
             </div>
-          </Card>
-        </Hyperlink>
+          </Hyperlink>
+        </Card>
         <div className="flex h-1/3 w-full gap-4">
           <Hyperlink
             href={expertLink}
@@ -101,7 +93,6 @@ export function Bento({
             <Card
               variant={'gradient-purple-dark'}
               className={`size-full p-4`}
-              transform={'px'}
               shadow={'light'}
             >
               <Prose size={'xl'} className="mb-0 md:mb-6">
@@ -130,16 +121,16 @@ export function Bento({
             noIcon
             noSpanStyle
           >
-            <Card className={`h-full`} transform={'px'} shadow={'light'}>
+            <Card className={`relative h-full`} shadow={'light'}>
               <div className="mb-6 flex flex-col gap-2">
                 <Text>
                   <strong>Slack</strong>
                 </Text>
-                <Text variant="c2">
+                <Text variant="p2">
                   No emails here! Responsive and more human exchanges.
                 </Text>
               </div>
-              <div className="flex justify-end gap-8 md:h-auto md:w-full">
+              <div className="absolute bottom-4 right-4">
                 <Image
                   src="/images/slack.png"
                   alt="slack logo"
@@ -152,7 +143,7 @@ export function Bento({
           </Hyperlink>
         </div>
         <Link href={auditLink} className="h-1/3">
-          <Card className={`p-4`} transform={'px'} shadow={'light'}>
+          <Card className={`p-4`} shadow={'light'}>
             <Prose size={'xl'} className="mb-6">
               <Text>
                 To <strong>quickly migrate</strong> an application to React

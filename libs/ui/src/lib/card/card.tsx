@@ -32,9 +32,6 @@ const card = cva(
         xl: ['p-16'],
         xs: ['p-0'],
       },
-      transform: {
-        px: ['hover:translate-x-px', 'hover:translate-y-px'],
-      },
       variant: {
         'gradient-blue': [
           'text-white',
