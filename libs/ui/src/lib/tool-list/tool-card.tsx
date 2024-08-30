@@ -9,7 +9,7 @@ import { ToolCardLogo } from './tool-card-logo';
 import { getVariantFromType } from './get-variant-from-type';
 
 export function ToolCard({ fields, id }: RecordProps) {
-  const { pricing, type, name, website_url, slug } = fields;
+  const { name, pricing, slug, type, website_url } = fields;
 
   if (!name) {
     return null;
@@ -27,7 +27,7 @@ export function ToolCard({ fields, id }: RecordProps) {
       <Link
         href={{
           pathname: '/react-native-tools/[slug]',
-          query: { slug, id },
+          query: { id, slug },
         }}
       >
         <div className="flex h-full flex-col justify-between">

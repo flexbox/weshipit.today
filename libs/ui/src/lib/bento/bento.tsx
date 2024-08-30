@@ -7,15 +7,15 @@ import Link from 'next/link';
 import { Hyperlink } from '../hyperlink/hyperlink';
 
 export interface BentoProps {
-  expertLink: string;
   auditLink: string;
-  gumroadLink: string;
   slackLink: string;
+  expertLink: string;
+  gumroadLink: string;
 }
 
 export function Bento({
-  expertLink,
   auditLink,
+  expertLink,
   gumroadLink,
   slackLink,
 }: BentoProps) {
@@ -24,11 +24,11 @@ export function Bento({
       <div className="flex h-full flex-col gap-4">
         <Hyperlink href={gumroadLink} className="h-1/2" isExternal noIcon>
           <Card
-            className={`h-full overflow-hidden p-4`}
-            transform={'px'}
-            shadow={'light'}
+            className="h-full overflow-hidden p-4"
+            transform="px"
+            shadow="light"
           >
-            <Prose size={'xl'} className="mb-6">
+            <Prose size="xl" className="mb-6">
               <Text>
                 A new mobile application{' '}
                 <strong>quickly on Apple and Google store</strong>.
@@ -133,10 +133,10 @@ export function Bento({
             <Card className={`h-full`} transform={'px'} shadow={'light'}>
               <div className="mb-6 flex flex-col gap-2">
                 <Text>
-                  <strong>Slack !</strong>
+                  <strong>Slack</strong>
                 </Text>
                 <Text variant="c2">
-                  No emails here! Responsive and more human exchanges
+                  No emails here! Responsive and more human exchanges.
                 </Text>
               </div>
               <div className="flex justify-end gap-8 md:h-auto md:w-full">

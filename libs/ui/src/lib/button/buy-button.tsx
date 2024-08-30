@@ -1,6 +1,6 @@
 interface BuyButtonProps {
-  children: string;
   href: string;
+  children: string;
 }
 
 export const BuyButton = ({ children, href }: BuyButtonProps) => {

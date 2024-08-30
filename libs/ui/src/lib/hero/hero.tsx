@@ -1,23 +1,23 @@
 import { Text } from '../text/text';
 
 interface HeroProps {
-  children?: React.ReactNode;
   hintLink?: string;
   hintTitle?: string;
+  badgeStyle?: string;
   hintDescription?: string;
+  children?: React.ReactNode;
   title?: string | React.ReactNode;
   description?: string | React.ReactNode;
-  badgeStyle?: string;
 }
 
 export function Hero({
-  children,
-  title,
-  hintLink,
-  hintDescription,
-  hintTitle,
   badgeStyle,
+  children,
   description,
+  hintDescription,
+  hintLink,
+  hintTitle,
+  title,
 }: HeroProps) {
   return (
     <div className="mx-auto w-full max-w-7xl py-2 text-center lg:py-24 lg:text-left">

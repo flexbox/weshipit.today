@@ -3,10 +3,10 @@ import { ReactNode } from 'react';
 
 export interface HyperlinkProps {
   href: string;
+  noIcon?: boolean;
+  className?: string;
   children: ReactNode;
   isExternal?: boolean;
-  className?: string;
-  noIcon?: boolean;
   noSpanStyle?: boolean;
 }
 

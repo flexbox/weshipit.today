@@ -6,8 +6,8 @@ interface HeaderProps {
 }
 
 export function Header({
-  withAccessoryRight = false,
   accessoryRight,
+  withAccessoryRight = false,
 }: HeaderProps) {
   return (
     <header className="bg-white dark:bg-slate-900">

@@ -13,9 +13,29 @@ const card = cva(
     'shadow-none transition-shadow duration-300 ease-in-out',
   ],
   {
+    defaultVariants: {
+      size: 'md',
+    },
     variants: {
+      shadow: {
+        light: [
+          'shadow-md',
+          'hover:shadow-slate-400',
+          'dark:shadow-sm',
+          'dark:shadow-slate-400',
+        ],
+      },
+      size: {
+        lg: ['p-8'],
+        md: ['p-6'],
+        sm: ['p-4'],
+        xl: ['p-16'],
+        xs: ['p-0'],
+      },
+      transform: {
+        px: ['hover:translate-x-px', 'hover:translate-y-px'],
+      },
       variant: {
-        link: ['cursor-pointer hover:shadow-lg'],
         'gradient-blue': [
           'text-white',
           'bg-gradient-to-tr from-[#0E95EE] to-[#27C9F5]',
@@ -40,55 +60,35 @@ const card = cva(
           'dark:ring-white/10',
           'ring-blue-300/20',
         ],
-        red: [
-          '!bg-red-50',
-          '!ring-red-600/20',
-          'dark:!bg-red-400/10',
-          'dark:!ring-red-400/20',
-        ],
         green: [
           '!bg-green-50',
           '!ring-green-600/20',
           'dark:!bg-green-400/10',
           'dark:!ring-green-400/20',
         ],
-      },
-      size: {
-        xs: ['p-0'],
-        sm: ['p-4'],
-        md: ['p-6'],
-        lg: ['p-8'],
-        xl: ['p-16'],
-      },
-      shadow: {
-        light: [
-          'shadow-md',
-          'hover:shadow-slate-400',
-          'dark:shadow-sm',
-          'dark:shadow-slate-400',
+        link: ['cursor-pointer hover:shadow-lg'],
+        red: [
+          '!bg-red-50',
+          '!ring-red-600/20',
+          'dark:!bg-red-400/10',
+          'dark:!ring-red-400/20',
         ],
       },
-      transform: {
-        px: ['hover:translate-x-px', 'hover:translate-y-px'],
-      },
-    },
-    defaultVariants: {
-      size: 'md',
     },
   }
 );
 
 export function Card({
   className,
-  variant,
-  size,
   shadow,
+  size,
   transform,
+  variant,
   ...props
 }: CardProps) {
   return (
     <div
-      className={card({ variant, size, className, shadow, transform })}
+      className={card({ className, shadow, size, transform, variant })}
       {...props}
     />
   );

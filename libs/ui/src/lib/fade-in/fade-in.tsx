@@ -5,7 +5,7 @@ import { motion, useReducedMotion } from 'framer-motion';
 
 const FadeInStaggerContext = createContext(false);
 
-const viewport = { once: true, margin: '0px 0px -200px' };
+const viewport = { margin: '0px 0px -200px', once: true };
 
 // https://www.framer.com/motion/component/###animating-css-variables
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -24,8 +24,8 @@ export function FadeIn(props: any) {
         ? {}
         : {
             initial: 'hidden',
-            whileInView: 'visible',
             viewport,
+            whileInView: 'visible',
           })}
       {...props}
     />

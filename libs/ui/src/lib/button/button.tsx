@@ -15,8 +15,42 @@ export const buttonVariants = cva(
     'disabled:cursor-not-allowed',
   ],
   {
+    defaultVariants: {
+      size: 'md',
+      variant: 'primary',
+    },
     variants: {
+      disabled: {
+        true: ['!cursor-not-allowed', '!opacity-50'],
+      },
+      size: {
+        lg: ['rounded-md', 'px-3', 'py-2', 'text-sm'],
+        md: ['rounded-md', 'px-2.5', 'py-1.5', 'text-sm'],
+        sm: ['rounded', 'px-2', 'py-1', 'text-sm'],
+        xl: ['rounded-md', 'px-3.5', 'py-2.5', 'text-sm'],
+        xs: ['rounded', 'px-2', 'py-1', 'text-xs'],
+        xxl: ['rounded-md', 'px-8', 'py-3', 'text-2xl'],
+      },
       variant: {
+        ghost: [
+          'text-gray-900',
+          'dark:text-white',
+          'hover:bg-gray-50',
+          'dark:hover:bg-white/20',
+        ],
+        outline: [
+          'shadow-sm',
+          'bg-white',
+          'text-gray-900',
+          'ring-1',
+          'ring-inset',
+          'ring-gray-300',
+          'dark:text-white',
+          'dark:ring-0',
+          'hover:bg-gray-50',
+          'dark:bg-white/10',
+          'dark:hover:bg-white/20',
+        ],
         primary: [
           'shadow-sm',
           'bg-blue-600',
@@ -34,41 +68,7 @@ export const buttonVariants = cva(
           'text-blue-600',
           'hover:bg-blue-100',
         ],
-        outline: [
-          'shadow-sm',
-          'bg-white',
-          'text-gray-900',
-          'ring-1',
-          'ring-inset',
-          'ring-gray-300',
-          'dark:text-white',
-          'dark:ring-0',
-          'hover:bg-gray-50',
-          'dark:bg-white/10',
-          'dark:hover:bg-white/20',
-        ],
-        ghost: [
-          'text-gray-900',
-          'dark:text-white',
-          'hover:bg-gray-50',
-          'dark:hover:bg-white/20',
-        ],
       },
-      disabled: {
-        true: ['!cursor-not-allowed', '!opacity-50'],
-      },
-      size: {
-        xs: ['rounded', 'px-2', 'py-1', 'text-xs'],
-        sm: ['rounded', 'px-2', 'py-1', 'text-sm'],
-        md: ['rounded-md', 'px-2.5', 'py-1.5', 'text-sm'],
-        lg: ['rounded-md', 'px-3', 'py-2', 'text-sm'],
-        xl: ['rounded-md', 'px-3.5', 'py-2.5', 'text-sm'],
-        xxl: ['rounded-md', 'px-8', 'py-3', 'text-2xl'],
-      },
-    },
-    defaultVariants: {
-      variant: 'primary',
-      size: 'md',
     },
   }
 );
@@ -76,33 +76,33 @@ export const buttonVariants = cva(
 export interface ButtonProps
   extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof buttonVariants> {
-  accessoryLeft?: React.ReactNode;
-  accessoryRight?: React.ReactNode;
-  children: React.ReactNode;
-  as?: React.ElementType;
+  rel?: string;
   href?: string;
   target?: string;
-  rel?: string;
+  as?: React.ElementType;
   isExternalLink?: boolean;
+  children: React.ReactNode;
   withExternalLinkIcon?: boolean;
+  accessoryLeft?: React.ReactNode;
+  accessoryRight?: React.ReactNode;
 }
 
 export const Button: React.FC<ButtonProps> = ({
-  as: Element = 'button',
-  className,
-  variant,
-  children,
-  size,
-  isExternalLink = false,
-  withExternalLinkIcon = true,
   accessoryLeft,
   accessoryRight,
+  as: Element = 'button',
+  children,
+  className,
+  isExternalLink = false,
+  size,
+  variant,
+  withExternalLinkIcon = true,
   ...rest
 }) => {
   if (isExternalLink) {
     return (
       <Element
-        className={buttonVariants({ variant, size, className })}
+        className={buttonVariants({ className, size, variant })}
         target="_blank"
         {...rest}
       >
@@ -119,7 +119,7 @@ export const Button: React.FC<ButtonProps> = ({
   }
 
   return (
-    <Element className={buttonVariants({ variant, size, className })} {...rest}>
+    <Element className={buttonVariants({ className, size, variant })} {...rest}>
       {accessoryLeft && accessoryLeft}
       {children}
       {accessoryRight && accessoryRight}

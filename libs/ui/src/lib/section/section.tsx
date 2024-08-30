@@ -28,9 +28,9 @@ interface SectionProps
   };
 }
 
-export function Section({ children, variant, className }: SectionProps) {
+export function Section({ children, className, variant }: SectionProps) {
   return (
-    <section className={sectionVariants({ variant, className })}>
+    <section className={sectionVariants({ className, variant })}>
       {children}
     </section>
   );

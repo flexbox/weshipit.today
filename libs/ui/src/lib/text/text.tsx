@@ -2,8 +2,18 @@ import React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 
 export const TextVariants = cva([''], {
+  defaultVariants: {
+    variant: 'p1',
+  },
   variants: {
     variant: {
+      c1: ['text-neutral-950', 'text-base', 'dark:text-neutral-200'],
+      c2: [
+        'text-neutral-950',
+        'text-sm',
+        'font-medium',
+        'dark:text-neutral-200 ',
+      ],
       h1: [
         'text-neutral-950',
         'text-4xl',
@@ -48,19 +58,6 @@ export const TextVariants = cva([''], {
         'lg:text-2xl',
         'xl:text-3xl',
       ],
-      s1: [
-        'text-neutral-950',
-        'text-xl sm:text-2xl md:text-3xl lg:text-2xl xl:text-3xl dark:text-neutral-200',
-      ],
-      s2: [
-        'text-neutral-950',
-        'text-lg',
-        'dark:text-neutral-200',
-        'sm:text-xl',
-        'md:text-2xl',
-        'lg:text-xl',
-        'xl:text-2xl',
-      ],
       p1: [
         'text-neutral-950',
         'text-base',
@@ -80,26 +77,29 @@ export const TextVariants = cva([''], {
         'lg:text-base',
         'xl:text-lg',
       ],
-      c1: ['text-neutral-950', 'text-base', 'dark:text-neutral-200'],
-      c2: [
-        'text-neutral-950',
-        'text-sm',
-        'font-medium',
-        'dark:text-neutral-200 ',
-      ],
       quote: ['text-neutral-950', 'text-lg', 'font-bold'],
+      s1: [
+        'text-neutral-950',
+        'text-xl sm:text-2xl md:text-3xl lg:text-2xl xl:text-3xl dark:text-neutral-200',
+      ],
+      s2: [
+        'text-neutral-950',
+        'text-lg',
+        'dark:text-neutral-200',
+        'sm:text-xl',
+        'md:text-2xl',
+        'lg:text-xl',
+        'xl:text-2xl',
+      ],
     },
-  },
-  defaultVariants: {
-    variant: 'p1',
   },
 });
 
 export interface TextProps
   extends React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof TextVariants> {
-  children: React.ReactNode;
   as?: React.ElementType;
+  children: React.ReactNode;
   variant?:
     | 'h1'
     | 'h2'
@@ -117,13 +117,13 @@ export interface TextProps
 
 export const Text: React.FC<TextProps> = ({
   as: Element = 'p',
+  children,
   className,
   variant = 'p1',
-  children,
   ...rest
 }) => {
   return (
-    <Element className={TextVariants({ variant, className })} {...rest}>
+    <Element className={TextVariants({ className, variant })} {...rest}>
       {children}
     </Element>
   );

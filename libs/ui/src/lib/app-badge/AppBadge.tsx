@@ -2,12 +2,12 @@ import { Hyperlink } from '../hyperlink/hyperlink';
 import { Badge } from '../badge/badge';
 
 export interface AppBadgeProps {
+  link: string;
   iOS?: boolean;
   android?: boolean;
-  link: string;
 }
 
-export function AppBadge({ iOS, android, link }: AppBadgeProps) {
+export function AppBadge({ android, iOS, link }: AppBadgeProps) {
   return (
     <Hyperlink isExternal noIcon href={link} className="no-underline">
       <Badge size="md" variant="gray-light">

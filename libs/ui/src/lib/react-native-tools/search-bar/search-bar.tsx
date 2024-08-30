@@ -3,7 +3,7 @@ export interface SearchBarProps {
   handleChange: (e: any) => void;
 }
 
-export function SearchBar({ searchTerm, handleChange }: SearchBarProps) {
+export function SearchBar({ handleChange, searchTerm }: SearchBarProps) {
   return (
     <input
       value={searchTerm}

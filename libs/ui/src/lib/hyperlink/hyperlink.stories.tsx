@@ -30,6 +30,6 @@ const Template: StoryFn<typeof Hyperlink> = (args) => (
 );
 
 export const Primary = {
-  render: Template,
   args: {},
+  render: Template,
 };

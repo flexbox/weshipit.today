@@ -3,16 +3,16 @@ import Gravatar from 'react-gravatar';
 
 interface AvatarAvengerProps {
   email: string;
-  emailhover: string;
   username: string;
   githubUrl: string;
+  emailhover: string;
 }
 
 export function AvatarAvenger({
   email,
   emailhover,
-  username,
   githubUrl,
+  username,
 }: AvatarAvengerProps) {
   const [isShown, setIsShown] = useState(false);
   return (

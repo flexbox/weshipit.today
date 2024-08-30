@@ -10,18 +10,18 @@ export default {
 
 export const WithHint = {
   args: {
-    hintTitle: 'Read our changelog',
+    children: <Button size="xl">View plans</Button>,
     hintDescription: 'We just released a new version of our app!',
     hintLink: 'https://nx.dev',
+    hintTitle: 'Read our changelog',
     title: 'Expert React Native developer on-demand. Anytime, anywhere.',
-    children: <Button size="xl">View plans</Button>,
   },
 };
 
 export const WithChildren = {
   args: {
-    title: 'Expert React Native developer on-demand. Anytime, anywhere.',
     children: <Button size="xl">View plans</Button>,
+    title: 'Expert React Native developer on-demand. Anytime, anywhere.',
   },
 };
 
