@@ -29,18 +29,18 @@ import { useState, useEffect } from 'react';
 import { fetchTeam } from './api/team';
 
 interface IndexPageProps {
+  steps: Steps[];
   faqs: FaqProps[];
   clients: Customer[];
-  steps: Steps[];
   teamSpotsLeft: number;
 }
 
 interface CallToActionProps {
-  label: string;
   href: string;
+  label: string;
   secondaryHref: string;
-  secondaryLabel: string;
   teamSpotsLeft: number;
+  secondaryLabel: string;
 }
 
 export async function getStaticProps() {
@@ -52,8 +52,8 @@ export async function getStaticProps() {
 
   return {
     props: {
-      faqs,
       clients,
+      faqs,
       steps,
       teamSpotsLeft: teamSpotsLeft.length,
     },
@@ -61,8 +61,8 @@ export async function getStaticProps() {
 }
 
 function CallToAction({
-  label,
   href,
+  label,
   secondaryHref,
   secondaryLabel,
   teamSpotsLeft,
@@ -105,9 +105,9 @@ function useGetLocalTimeInFrance() {
   useEffect(() => {
     const updateLocalTime = () => {
       const timeInFrance = new Intl.DateTimeFormat('en-US', {
-        timeZone: 'Europe/Paris',
         hour: '2-digit',
         minute: '2-digit',
+        timeZone: 'Europe/Paris',
         // second: '2-digit',
         hour12: false,
       }).format(new Date());
@@ -204,18 +204,18 @@ function ProblemAgitation() {
 function PodcastProof() {
   const URLS = [
     {
-      platform: 'Apple Podcasts',
       icon: 'apple',
+      platform: 'Apple Podcasts',
       url: 'https://podcasts.apple.com/us/podcast/rnr-289-real-life-react-native-david-leuliette-talks/id1058647602?i=1000647166395',
     },
     {
-      platform: 'Spotify',
       icon: 'spotify',
+      platform: 'Spotify',
       url: 'https://open.spotify.com/show/28hPRLml3FbP14FCYtlOvg',
     },
     {
-      platform: 'Web',
       icon: 'globe',
+      platform: 'Web',
       url: 'https://reactnativeradio.com/episodes/rnr-289-real-life-react-native-david-leuliette-talks-retail-shake-scanner',
     },
   ];
@@ -340,8 +340,8 @@ function HowDoesItWorks({ steps }: { steps: Steps[] }) {
 }
 
 export default function IndexPage({
-  faqs,
   clients,
+  faqs,
   steps,
   teamSpotsLeft,
 }: IndexPageProps) {
@@ -351,8 +351,8 @@ export default function IndexPage({
     '@type': 'FAQPage',
     mainEntity: faqs.map(({ data }) => ({
       '@type': 'Question',
-      name: asText(data.question),
       acceptedAnswer: asHTML(data.answer),
+      name: asText(data.question),
     })),
   };
 

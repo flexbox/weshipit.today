@@ -16,12 +16,12 @@ export default async function handler(req: NextRequest) {
       (
         <div
           style={{
+            alignItems: 'center',
+            backgroundColor: 'white',
             display: 'flex',
             height: '100%',
-            width: '100%',
-            alignItems: 'center',
             justifyContent: 'center',
-            backgroundColor: 'white',
+            width: '100%',
           }}
         >
           <div
@@ -35,8 +35,8 @@ export default async function handler(req: NextRequest) {
         </div>
       ),
       {
-        width: 1050,
         height: 549,
+        width: 1050,
       }
     );
   } catch (e: any) {

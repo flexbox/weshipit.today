@@ -1,16 +1,16 @@
 /** @type {import('next-sitemap').IConfig} */
 
 module.exports = {
-  sourceDir: 'dist/apps/weshipit/.next',
-  outDir: 'dist/apps/weshipit/public',
-  siteUrl: 'https://weshipit.today/',
   generateRobotsTxt: true,
+  outDir: 'dist/apps/weshipit/public',
   robotsTxtOptions: {
     policies: [
       {
-        userAgent: '*',
         allow: ['/', '/api/og/*'],
+        userAgent: '*',
       },
     ],
   },
+  siteUrl: 'https://weshipit.today/',
+  sourceDir: 'dist/apps/weshipit/.next',
 };

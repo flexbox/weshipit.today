@@ -6,8 +6,8 @@ export const repositoryName = 'weshipit';
 export const client = prismic.createClient(repositoryName, {
   routes: [
     {
-      type: 'client',
       path: '/clients',
+      type: 'client',
     },
   ],
 });

@@ -1,6 +1,7 @@
 import { ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 
 const client = new ApolloClient({
+  cache: new InMemoryCache(),
   link: createHttpLink({
     credentials: 'same-origin',
     headers: {
@@ -8,7 +9,6 @@ const client = new ApolloClient({
     },
     uri: process.env.STEPZEN_API_AIRTABLE_URL,
   }),
-  cache: new InMemoryCache(),
 });
 
 export default client;

@@ -7,8 +7,8 @@ interface HeaderLinksForToolsProps {
 }
 
 export function HeaderLinksForTools({
-  buttonText = 'Add a React Native Tool',
   buttonLink = linksApi.airtable.TOOLS_FORM,
+  buttonText = 'Add a React Native Tool',
 }: HeaderLinksForToolsProps) {
   return (
     <div className="flex gap-2">
