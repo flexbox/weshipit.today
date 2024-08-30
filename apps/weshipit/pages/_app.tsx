@@ -7,10 +7,10 @@ import { Analytics } from '@vercel/analytics/react';
 import './styles.css';
 
 const inter = Inter({
-  weight: ['400', '700', '800'],
+  display: 'swap',
   style: ['normal'],
   subsets: ['latin'],
-  display: 'swap',
+  weight: ['400', '700', '800'],
 });
 
 function CustomApp({ Component, pageProps }: AppProps) {

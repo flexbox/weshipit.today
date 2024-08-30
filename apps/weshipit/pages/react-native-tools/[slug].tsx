@@ -23,8 +23,8 @@ import ChevronLeftIcon from '@heroicons/react/20/solid/ChevronLeftIcon';
 import { HeaderLinksForTools } from '../../components/header-links-for-tools';
 
 export function ReactNativeSlugPage({
-  record,
   recomendedRecords,
+  record,
   screenshotAccessKey,
 }) {
   if (record === undefined || record.fields === undefined) {
@@ -41,16 +41,16 @@ export function ReactNativeSlugPage({
   }
 
   const {
-    name,
     description,
     description_success,
     features,
+    github_url,
+    name,
     platform,
     pricing,
+    twitter_url,
     type,
     website_url,
-    github_url,
-    twitter_url,
   } = record.fields;
 
   return (
@@ -234,8 +234,8 @@ export async function getServerSideProps({ query, res }) {
 
     return {
       props: {
-        record,
         recomendedRecords,
+        record,
         screenshotAccessKey,
       },
     };
