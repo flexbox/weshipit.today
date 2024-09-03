@@ -38,7 +38,7 @@ function StarterList({ records }) {
   return (
     <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {records.map((record) => {
-        const { name, github_url, website_url, level, scope, stack } =
+        const { github_url, level, name, scope, stack, website_url } =
           record.fields;
 
         const author = extractUsernameFromGithubUrl(github_url || '');

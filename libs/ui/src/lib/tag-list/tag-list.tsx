@@ -11,7 +11,7 @@ interface TagListItemProps {
   size?: 'sm' | 'md';
 }
 
-function TagListItem({ item, size }:TagListItemProps) {
+function TagListItem({ item, size }: TagListItemProps) {
   const variant = getVariantFromType(item);
 
   return (
@@ -21,12 +21,12 @@ function TagListItem({ item, size }:TagListItemProps) {
   );
 }
 
-export function TagList({ tags, size }: TagListProps) {
+export function TagList({ size, tags }: TagListProps) {
   return (
     <ul className="flex list-none flex-wrap pl-0">
       {tags?.map((item, index) => (
         <li key={`platform-${index}`} className="mb-2 mr-2">
-          <TagListItem item={item} size={size}/>
+          <TagListItem item={item} size={size} />
         </li>
       ))}
     </ul>

@@ -5,17 +5,17 @@ import { ImageFieldImage } from '@prismicio/client';
 import { Prose } from '../prose/prose';
 
 export interface WorkflowCardProps {
-  children: React.ReactNode;
   step: number;
   title: string;
   image: ImageFieldImage;
+  children: React.ReactNode;
 }
 
 export function WorkflowCard({
-  step,
-  title,
   children,
   image,
+  step,
+  title,
 }: WorkflowCardProps) {
   return (
     <Card size="xs" className="flex flex-col p-4 sm:flex-row">

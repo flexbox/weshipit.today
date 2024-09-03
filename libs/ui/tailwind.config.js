@@ -10,10 +10,8 @@ module.exports = {
     ),
     ...createGlobPatternsForDependencies(__dirname),
   ],
+  plugins: [require('@tailwindcss/typography')],
   theme: {
-    fontFamily: {
-      inter: ['Inter', 'sans-serif'],
-    },
     extend: {
       animation: {
         shine: 'shine 1s',
@@ -24,6 +22,8 @@ module.exports = {
         },
       },
     },
+    fontFamily: {
+      inter: ['Inter', 'sans-serif'],
+    },
   },
-  plugins: [require('@tailwindcss/typography')],
 };

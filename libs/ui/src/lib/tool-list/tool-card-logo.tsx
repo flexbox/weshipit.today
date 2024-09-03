@@ -3,14 +3,14 @@ import Image from 'next/image';
 
 export interface ToolCardLogoProps {
   name: string;
-  websiteUrl: string;
   size?: number;
+  websiteUrl: string;
 }
 
 export function ToolCardLogo({
-  websiteUrl,
   name,
   size = 100,
+  websiteUrl,
 }: ToolCardLogoProps) {
   const domain = extractDomainName(websiteUrl);
   const logoSrc = `https://logo.clearbit.com/${domain}?size=${size}`;

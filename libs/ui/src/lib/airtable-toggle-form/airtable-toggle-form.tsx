@@ -3,15 +3,15 @@ import { Button } from '../button/button';
 import { ArrowRightIcon } from '@heroicons/react/20/solid';
 
 interface AirtableToggleFormProps {
-  formHeight: number;
   formLink: string;
+  formHeight: number;
   buttonText: string;
 }
 
 export function AirtableToggleForm({
+  buttonText,
   formHeight,
   formLink,
-  buttonText,
 }: AirtableToggleFormProps) {
   const [showForm, setShowForm] = useState(false);
 

@@ -12,6 +12,7 @@ import { linksApi } from '../api/links';
  * @deprecated we should use codegen
  */
 interface ResourceRecord {
+  id: string;
   fields: {
     name: string;
     description?: string;
@@ -23,7 +24,6 @@ interface ResourceRecord {
     conference_country?: string;
     conference_date?: string;
   };
-  id: string;
 }
 
 /**
@@ -36,14 +36,14 @@ function ResourceList({ records }) {
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {records.map((record: ResourceRecord) => {
         const {
-          name,
-          description,
-          website_url,
-          slack_url,
-          youtube_url,
-          discord_url,
           conference_country,
           conference_date,
+          description,
+          discord_url,
+          name,
+          slack_url,
+          website_url,
+          youtube_url,
         } = record.fields;
 
         return (

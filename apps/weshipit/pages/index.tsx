@@ -1,4 +1,5 @@
 import {
+  Bento,
   Button,
   Card,
   ClientsListHomepage,
@@ -28,18 +29,18 @@ import { useState, useEffect } from 'react';
 import { fetchTeam } from './api/team';
 
 interface IndexPageProps {
+  steps: Steps[];
   faqs: FaqProps[];
   clients: Customer[];
-  steps: Steps[];
   teamSpotsLeft: number;
 }
 
 interface CallToActionProps {
-  label: string;
   href: string;
+  label: string;
   secondaryHref: string;
-  secondaryLabel: string;
   teamSpotsLeft: number;
+  secondaryLabel: string;
 }
 
 export async function getStaticProps() {
@@ -51,8 +52,8 @@ export async function getStaticProps() {
 
   return {
     props: {
-      faqs,
       clients,
+      faqs,
       steps,
       teamSpotsLeft: teamSpotsLeft.length,
     },
@@ -60,8 +61,8 @@ export async function getStaticProps() {
 }
 
 function CallToAction({
-  label,
   href,
+  label,
   secondaryHref,
   secondaryLabel,
   teamSpotsLeft,
@@ -104,9 +105,9 @@ function useGetLocalTimeInFrance() {
   useEffect(() => {
     const updateLocalTime = () => {
       const timeInFrance = new Intl.DateTimeFormat('en-US', {
-        timeZone: 'Europe/Paris',
         hour: '2-digit',
         minute: '2-digit',
+        timeZone: 'Europe/Paris',
         // second: '2-digit',
         hour12: false,
       }).format(new Date());
@@ -203,18 +204,18 @@ function ProblemAgitation() {
 function PodcastProof() {
   const URLS = [
     {
-      platform: 'Apple Podcasts',
       icon: 'apple',
+      platform: 'Apple Podcasts',
       url: 'https://podcasts.apple.com/us/podcast/rnr-289-real-life-react-native-david-leuliette-talks/id1058647602?i=1000647166395',
     },
     {
-      platform: 'Spotify',
       icon: 'spotify',
+      platform: 'Spotify',
       url: 'https://open.spotify.com/show/28hPRLml3FbP14FCYtlOvg',
     },
     {
-      platform: 'Web',
       icon: 'globe',
+      platform: 'Web',
       url: 'https://reactnativeradio.com/episodes/rnr-289-real-life-react-native-david-leuliette-talks-retail-shake-scanner',
     },
   ];
@@ -285,7 +286,7 @@ function PodcastProof() {
 function HowDoesItWorks({ steps }: { steps: Steps[] }) {
   return (
     <div className="mx-auto flex flex-col gap-4">
-      <Prose size={'xl'}>
+      <Prose size="xl">
         <h2>How does it work?</h2>
       </Prose>
       <div className="flex flex-col gap-12">
@@ -300,15 +301,18 @@ function HowDoesItWorks({ steps }: { steps: Steps[] }) {
           </WorkflowCard>
         ))}
 
-        <Prose size="xl" className="mx-auto flex flex-col gap-4">
-          <Card variant="green">
+        <Card variant="green">
+          <Prose size="xl">
             <ol>
               <li>Get acces to top-noch talent.</li>
-              <li>Unlimited revisions and one request at time.</li>
+              <li>Unlimited revisions and one request at a time.</li>
               <li>Pause anytime and cancel whenever.</li>
             </ol>
-          </Card>
-          <Card variant="red">
+          </Prose>
+        </Card>
+
+        <Card variant="red">
+          <Prose size="xl">
             <h3 className="mt-0">Do not work with us if you want</h3>
             <ol>
               <li>A quote is sent after an initial call.</li>
@@ -327,20 +331,20 @@ function HowDoesItWorks({ steps }: { steps: Steps[] }) {
                 signed.
               </li>
               <li>
-                Endless loop of back and forth emails with accounting because
-                the payment was not sent.
+                Loop of back and forth emails with accounting because the
+                payment was not sent.
               </li>
             </ol>
-          </Card>
-        </Prose>
+          </Prose>
+        </Card>
       </div>
     </div>
   );
 }
 
 export default function IndexPage({
-  faqs,
   clients,
+  faqs,
   steps,
   teamSpotsLeft,
 }: IndexPageProps) {
@@ -350,8 +354,8 @@ export default function IndexPage({
     '@type': 'FAQPage',
     mainEntity: faqs.map(({ data }) => ({
       '@type': 'Question',
-      name: asText(data.question),
       acceptedAnswer: asHTML(data.answer),
+      name: asText(data.question),
     })),
   };
 
@@ -411,33 +415,25 @@ export default function IndexPage({
             </Button>
           </div>
           <div className="mb-16 py-0 pb-12 lg:py-24">
-            <div className="m-auto max-w-2xl">
-              <Prose className="mb-12" size="xl">
-                <h2>Mobile app for iOS, Android and more</h2>
-                <p>
-                  Our team can assist you in shipping a new app, add new
-                  features, or just keep an existing app up to date. Contact us
-                  today if you want:
-                </p>
-                <ul>
-                  <li>
-                    A new mobile application{' '}
-                    <strong>quickly on Apple and Google store</strong>.
-                  </li>
-                  <li>
-                    to <strong>Regain agility</strong> to evolve my application
-                    quickly.
-                  </li>
-                  <li>
-                    To stop struggling with{' '}
-                    <strong>React Native updates</strong>.
-                  </li>
-                  <li>
-                    To quickly{' '}
-                    <strong>migrate an application to React Native</strong>.
-                  </li>
-                </ul>
-              </Prose>
+            <div>
+              <div className="m-auto max-w-2xl">
+                <Prose className="mb-12" size="xl">
+                  <h2>Mobile app for iOS, Android and more</h2>
+                  <p>
+                    Our team can assist you in shipping a new app, add new
+                    features, or just keep an existing app up to date. Contact
+                    us today if you want:
+                  </p>
+                </Prose>
+              </div>
+              <Bento
+                expertLink={linksApi.cal.ONBOARDING}
+                auditLink={'/audit'}
+                slackLink="https://weblille.rocks/"
+                gumroadLink="https://flexbox.gumroad.com/l/expo-checklist"
+              />
+            </div>
+            <div className="m-auto mt-12 max-w-2xl">
               <div className="flex justify-center">
                 <Button
                   href={linksApi.cal.ONBOARDING}
@@ -456,6 +452,14 @@ export default function IndexPage({
             <div className="m-auto max-w-2xl">
               <Prose className="mb-12" size="xl">
                 <h2>What makes a great app?</h2>
+                <h3>It’s an app :</h3>
+                <ol>
+                  <li>Reactive</li>
+                  <li>That does’nt crash</li>
+                  <li>Without errors</li>
+                  <li>Up to date</li>
+                  <li>Downloaded fast</li>
+                </ol>
                 <p>
                   We take immense pride in having expertly served an impressive
                   roster of over 15 clients, including

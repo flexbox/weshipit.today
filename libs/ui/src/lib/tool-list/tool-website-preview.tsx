@@ -6,8 +6,8 @@ export interface ToolWebsitePreviewProps {
 }
 
 export function ToolWebsitePreview({
-  url,
   accessKey,
+  url,
 }: ToolWebsitePreviewProps) {
   const logoSrc = `https://api.apiflash.com/v1/urltoimage?access_key=${accessKey}&wait_until=page_loaded&url=${url}`;
 

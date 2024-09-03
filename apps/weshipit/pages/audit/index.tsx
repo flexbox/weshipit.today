@@ -42,14 +42,14 @@ export async function getStaticProps() {
 
 // Container component
 interface ContainerProps extends PropsWithChildren {
-  as?: React.ElementType;
   className?: string;
+  as?: React.ElementType;
 }
 
 export function Container({
   as: Component = 'div',
-  className,
   children,
+  className,
 }: ContainerProps) {
   return (
     <Component className={clsx('mx-auto max-w-7xl px-6 lg:px-8', className)}>

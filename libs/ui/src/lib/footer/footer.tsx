@@ -13,22 +13,21 @@ const navigation = {
     { name: 'React Native Apps 🇫🇷 ', href: '/french-react-native-apps' },
   ],
   company: [
-    { name: 'Consulting', href: '/consulting' },
-    { name: 'Customers', href: '/customers' },
-    { name: 'About', href: '/about' },
-    { name: 'Home', href: '/home' },
+    { href: '/consulting', name: 'Consulting' },
+    { href: '/customers', name: 'Customers' },
+    { href: '/about', name: 'About' },
+    { href: '/home', name: 'Home' },
     {
-      name: 'Sponsorship',
       href: 'https://github.com/sponsors/flexbox?frequency=one-time&sponsor=flexbox',
+      name: 'Sponsorship',
     },
     {
-      name: 'Jobs',
       href: 'https://flexbox.notion.site/Jobs-1c65e7a956a64a07b60a401f8747f1af',
+      name: 'Jobs',
     },
   ],
   social: [
     {
-      name: 'X',
       href: 'https://twitter.com/intent/follow?screen_name=flexbox_',
       icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
@@ -37,9 +36,9 @@ const navigation = {
           </g>
         </svg>
       ),
+      name: 'X',
     },
     {
-      name: 'GitHub',
       href: 'https://github.com/flexbox',
       icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
@@ -50,9 +49,9 @@ const navigation = {
           />
         </svg>
       ),
+      name: 'GitHub',
     },
     {
-      name: 'YouTube',
       href: 'https://www.youtube.com/channel/UCO0X5b0mQ4eIHitXHXSFUyw?sub_confirmation=1',
       icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
@@ -63,9 +62,9 @@ const navigation = {
           />
         </svg>
       ),
+      name: 'YouTube',
     },
     {
-      name: 'Slack',
       href: 'https://join.slack.com/t/weblille/shared_invite/zt-87i4ozyq-K5GRJKAFqKp_w9IHjleW~Q',
       icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
         <svg
@@ -81,7 +80,15 @@ const navigation = {
           <path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z" />
         </svg>
       ),
+      name: 'Slack',
     },
+  ],
+  solutions: [
+    { href: '/react-native-resources', name: 'Start Learning' },
+    { href: '/react-native-tools', name: 'React Native Tools' },
+    { href: '/react-native-starters', name: 'React Native Starters' },
+    { href: '/audit', name: 'React Native Audit' },
+    { href: '/french-react-native-apps', name: 'React Native Apps 🇫🇷 ' },
   ],
 };
 

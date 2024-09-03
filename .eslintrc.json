@@ -1,8 +1,27 @@
 {
   "root": true,
   "ignorePatterns": ["**/*"],
-  "plugins": ["@nx", "tailwindcss"],
-  "extends": ["plugin:tailwindcss/recommended", "plugin:storybook/recommended"],
+  "plugins": [
+    "@nx",
+    "tailwindcss",
+    "perfectionist"
+  ],
+  "extends": [
+    "plugin:tailwindcss/recommended",
+    "plugin:storybook/recommended"
+  ],
+  "rules": {
+    "perfectionist/sort-objects": ["error", {
+      "type": "alphabetical"
+    }],
+    "perfectionist/sort-interfaces": ["error"]
+  },
+  "settings": {
+    "perfectionist": {
+      "type": "line-length",
+      "partitionByComment": true
+    }
+  },
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],

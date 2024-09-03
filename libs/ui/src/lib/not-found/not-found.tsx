@@ -1,8 +1,7 @@
 import { Text } from '../text/text';
 import { LinkButton } from '../button/link-button';
-export interface NotFoundProps {}
 
-export function NotFound(props: NotFoundProps) {
+export function NotFound() {
   return (
     <div className="m-auto mb-64 w-2/3 py-24">
       <Text variant="h2" as="h1" className="mb-12">

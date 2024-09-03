@@ -10,7 +10,7 @@ export const List = {
   args: {
     email: 'dleuliette@gmail.com',
     emailhover: 'dleuliette+tony@gmail.com',
-    username: '@flexbox',
     githubUrl: 'https://github.com/flexbox',
+    username: '@flexbox',
   },
 };

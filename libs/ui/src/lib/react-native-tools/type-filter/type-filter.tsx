@@ -6,15 +6,14 @@ import { Badge } from '../../badge/badge';
 import { Text } from '../../text/text';
 import kebabCase from 'lodash/kebabCase';
 import { types } from '../../tool-list/get-variant-from-type';
+import { Button } from '../../button/button';
 
 export function TypeFilter({ numberOfTools }: { numberOfTools: number }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const canResetFitler = searchParams.has('type');
+  const canResetFilter = searchParams.has('type');
+  const selectedType = searchParams.get('type'); // Get the current type from the URL
 
-  // Get a new searchParams string by merging the current
-  // searchParams with a provided key/value pair
-  // <pathname>?type="xxxxx"
   const createQueryString = useCallback(
     (name: string, value: string) => {
       const params = new URLSearchParams(searchParams.toString());
@@ -32,26 +31,32 @@ export function TypeFilter({ numberOfTools }: { numberOfTools: number }) {
           Filter {numberOfTools}+ tools
         </Text>
       </li>
-      {canResetFitler && (
+      {canResetFilter && (
         <li>
           <Link href="/react-native-tools">
-            <Badge variant="gray-light">
+            <Button variant={'primary'} className="flex w-full justify-between">
               Reset filter
               <XMarkIcon className="ml-1 size-6" />
-            </Badge>
+            </Button>
           </Link>
         </li>
       )}
-      {types.map((type) => (
-        <li key={kebabCase(type.name)}>
-          <Link href={pathname + '?' + createQueryString('type', type.name)}>
-            <Badge variant={type.color}>
-              # {type.name}
-              <ChevronRightIcon className="ml-1 size-6" />
-            </Badge>
-          </Link>
-        </li>
-      ))}
+      {types.map((type) => {
+        const isSelected = selectedType === type.name; // Check if this type is selected
+        return (
+          <li key={kebabCase(type.name)}>
+            <Link href={pathname + '?' + createQueryString('type', type.name)}>
+              <Button
+                variant={isSelected ? 'ghost' : 'outline'} // Change variant if selected
+                className="flex w-full justify-between"
+              >
+                {type.name}
+                <ChevronRightIcon className="ml-1 size-6" />
+              </Button>
+            </Link>
+          </li>
+        );
+      })}
     </ul>
   );
 }

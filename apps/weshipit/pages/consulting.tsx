@@ -123,7 +123,7 @@ export function Consulting() {
       <div className="mb-48 mt-12">
         <Cal
           calLink="davidl/coaching"
-          style={{ width: '100%', height: '100%', overflow: 'scroll' }}
+          style={{ height: '100%', overflow: 'scroll', width: '100%' }}
         />
       </div>
     </Layout>

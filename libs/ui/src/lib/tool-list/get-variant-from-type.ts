@@ -56,31 +56,31 @@ interface Type {
 
 export const types: Type[] = [
   {
-    name: 'Analytics',
     color: 'lime',
+    name: 'Analytics',
   },
   {
-    name: 'Authentication',
     color: 'indigo',
+    name: 'Authentication',
   },
   {
-    name: 'Backend',
     color: 'green',
+    name: 'Backend',
   },
   {
-    name: 'Crash reporting',
     color: 'pink',
+    name: 'Crash reporting',
   },
   {
-    name: 'Infrastructure',
     color: 'blue',
+    name: 'Infrastructure',
   },
   {
-    name: 'Payment',
     color: 'yellow',
+    name: 'Payment',
   },
   {
-    name: 'Persistent storage',
     color: 'cyan',
+    name: 'Persistent storage',
   },
 ];

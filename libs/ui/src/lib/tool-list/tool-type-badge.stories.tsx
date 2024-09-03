@@ -9,7 +9,7 @@ export default Story;
 
 export const Primary = {
   args: {
-    type: 'Persistent storage',
     size: 'md',
+    type: 'Persistent storage',
   },
 };

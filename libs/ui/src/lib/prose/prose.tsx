@@ -2,23 +2,23 @@ import React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 
 const prose = cva(['prose dark:prose-invert'], {
+  defaultVariants: {
+    size: 'base',
+    variant: 'slate',
+  },
   variants: {
+    size: {
+      '2xl': ['prose-2xl'],
+      base: ['prose-base'],
+      lg: ['prose-lg'],
+      sm: ['prose-sm'],
+      xl: ['prose-xl'],
+    },
     variant: {
       slate: [
         'prose-slate prose-a:text-blue-600 hover:prose-a:text-blue-500 dark:prose-a:text-blue-700 dark:hover:prose-a:text-blue-800',
       ],
     },
-    size: {
-      sm: ['prose-sm'],
-      base: ['prose-base'],
-      lg: ['prose-lg'],
-      xl: ['prose-xl'],
-      '2xl': ['prose-2xl'],
-    },
-  },
-  defaultVariants: {
-    variant: 'slate',
-    size: 'base',
   },
 });
 
@@ -28,7 +28,7 @@ export interface ProseProps
 
 export const Prose: React.FC<ProseProps> = ({
   className,
-  variant,
   size,
+  variant,
   ...props
-}) => <div className={prose({ variant, size, className })} {...props} />;
+}) => <div className={prose({ className, size, variant })} {...props} />;

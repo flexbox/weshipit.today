@@ -9,6 +9,6 @@ export default {
 const Template: StoryFn<typeof Header> = () => <Header />;
 
 export const Primary = {
-  render: Template,
   args: {},
+  render: Template,
 };
