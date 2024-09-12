@@ -387,7 +387,7 @@ export default function IndexPage({
                 </Text>
               </div>
               <CallToAction
-                label={'Book a 30-min introduction call'}
+                label={'Book a call with David'}
                 href={linksApi.cal.ONBOARDING}
                 secondaryLabel={'Or Subscribe Today'}
                 secondaryHref={linksApi.stripe.MONTHLY_PLAN}
