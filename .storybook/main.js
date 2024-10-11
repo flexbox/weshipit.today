@@ -1,6 +1,10 @@
 module.exports = {
   stories: [],
-  addons: ['@storybook/addon-essentials', '@chromatic-com/storybook'],
+  addons: [
+    '@storybook/addon-essentials',
+    '@chromatic-com/storybook',
+    '@storybook/addon-a11y',
+  ],
 
   // uncomment the property below if you want to apply some webpack config globally
   // webpackFinal: async (config, { configType }) => {
