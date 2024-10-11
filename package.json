@@ -88,6 +88,7 @@
     "@nx/web": "19.6.0",
     "@nx/webpack": "19.6.0",
     "@nx/workspace": "19.6.0",
+    "@storybook/addon-a11y": "^8.3.5",
     "@storybook/addon-essentials": "^8.2.9",
     "@storybook/core-server": "^8.2.9",
     "@storybook/jest": "^0.2.3",
