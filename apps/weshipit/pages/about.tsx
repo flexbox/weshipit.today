@@ -279,13 +279,13 @@ export default function AboutPage({ clients }) {
           <p>
             <Link href="/">weshipit.today</Link> is a remote React Native design
             and development agency based in France. We specialize in React
-            Native, offering expertise in mobile design and development. Our
-            teams build robust apps and contribute to libraries that drive the
-            React Native movement.
+            Native with Expo, offering expertise in mobile design and
+            development. Our teams build robust apps and contribute to libraries
+            that drive the React Native movement.
           </p>
           <p>
-            Our company is renowned for the Twitch show “Office Hours Des
-            Pirates”, and we also organize React Native Bootcamps.
+            With our React Native Bootcamps, we’ve enabled more than 400 happy
+            developers to successfully ship outstanding apps to their users.
           </p>
           <h2>Links</h2>
           <ul>
