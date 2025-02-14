@@ -20,7 +20,7 @@ export function HeaderLinksForTools({
         target="_blank"
         size="xl"
       >
-        🎁 Free Launch Checklist
+        Expo Launch Checklist
       </Button>
       <Button
         as="a"
