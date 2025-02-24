@@ -1,5 +1,0 @@
-configurationset:
-  - configuration:
-      name: airtable_config
-      authorization: STEPZEN_AIRTABLE_BEARER_TOKEN
-      baseid: STEPZEN_AIRTABLE_BASE_ID
