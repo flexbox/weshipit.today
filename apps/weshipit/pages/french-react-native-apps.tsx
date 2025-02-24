@@ -1,46 +1,35 @@
 import { AppBadge, Card, Hero, LinkButton, Prose, Text } from '@weshipit/ui';
 import { Layout } from '../components/layout';
-import client from './api/apollo-client';
-import { gql } from '@apollo/client';
 import { InferGetStaticPropsType } from 'next/types';
 import Image from 'next/image';
 import { formatAppsByCategory } from '../components/french-react-native-apps/format-apps-by-category';
 import { linksApi } from './api/links';
 import kebabCase from 'lodash/kebabCase';
 
+import { frenchApps } from '../fixtures/french-apps.fixture';
+
 type FrenchApp = {
-  fields: {
-    name: string;
-    website_url?: string;
-    ios_url?: string;
-    android_url?: string;
-    category: string;
-    logo: {
-      url: string;
-    };
-  };
+  name: string;
+  website_url?: string | null;
+  ios_url?: string | null;
+  android_url?: string | null;
+  category: string;
+  logo: {
+    url: string;
+  }[];
 };
 
 export async function getStaticProps() {
-  const { data } = await client.query({
-    query: gql`
-      query getFrenchAppsRecords {
-        getFrenchAppsRecords {
-          fields {
-            name
-            android_url
-            ios_url
-            category
-            website_url
-            logo {
-              url
-            }
-          }
-        }
-      }
-    `,
-  });
-  const records: FrenchApp[] = data.getFrenchAppsRecords;
+  // Use the local fixture data directly
+  const records: FrenchApp[] = frenchApps.records.map((record) => ({
+    android_url: record.fields.android_url || null,
+    category: record.fields.category,
+    ios_url: record.fields.ios_url || null,
+    logo: record.fields.logo.map((logo) => ({ url: logo.url })),
+    name: record.fields.name,
+    website_url: record.fields.website_url || null,
+  }));
+
   const categorizedApps = formatAppsByCategory(records);
 
   return {
@@ -72,8 +61,8 @@ export default function FrenchReactNativePage({
       <Prose size={'xl'} className="my-8">
         <p>
           We are building a list of French iOS and Android apps that are using
-          React Native in {currentYear}. If you’re working in a French company
-          that uses React Native,{' '}
+          React Native in {currentYear}. If you&apos;re working in a French
+          company that uses React Native,{' '}
           <a href={linksApi.airtable.FRENCH_REACT_NATIVE_APPS_FORM}>
             add your app
           </a>{' '}
