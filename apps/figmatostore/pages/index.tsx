@@ -1,5 +1,5 @@
 import Layout from '../components/Layout';
-import Gravatar from 'react-gravatar';
+import { Avatar } from '@weshipit/ui';
 import { figmaDemo } from '../data/index';
 import Image from 'next/image';
 import React from 'react';
@@ -30,8 +30,8 @@ const IndexPage = () => (
             </h1>
             <p className="mt-2 text-lg leading-7 text-gray-300 sm:mt-3 sm:max-w-xl sm:text-xl xl:mt-4 xl:max-w-2xl xl:text-2xl">
               I shipped dozen of apps to the Apple store and Google play.
-              Everytime, it’s a pain to coordinate everyone. Let’s fix it with
-              this Figma boilerplate.
+              Everytime, it&apos;s a pain to coordinate everyone. Let&apos;s fix
+              it with this Figma boilerplate.
             </p>
             <div className="mt-6 sm:mt-8 sm:flex xl:mt-12">
               <a
@@ -58,9 +58,11 @@ const IndexPage = () => (
                 className="flex items-center no-underline"
               >
                 <div className="shrink-0">
-                  <Gravatar
+                  <Avatar
                     className="size-12 rounded-full border-2 border-white"
                     email="dleuliette@gmail.com"
+                    size={48}
+                    name="David Leuliette"
                   />
                 </div>
                 <div className="ml-3">

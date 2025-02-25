@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Gravatar from 'react-gravatar';
+import { Avatar } from '../avatar/avatar';
 
 interface AvatarAvengerProps {
   email: string;
@@ -24,17 +24,13 @@ export function AvatarAvenger({
           onMouseLeave={() => setIsShown(false)}
         >
           {!isShown ? (
-            <Gravatar
-              email={email}
-              size={128}
-              className="mb-4 size-36 rounded-full bg-gradient-to-b from-gray-200 to-gray-400 p-0.5"
-            />
+            <div className="mb-4 size-36 rounded-full bg-gradient-to-b from-gray-200 to-gray-400 p-0.5">
+              <Avatar email={email} size={128} name={username} />
+            </div>
           ) : (
-            <Gravatar
-              email={emailhover}
-              size={128}
-              className="mb-4 size-36 rounded-full bg-gradient-to-b from-gray-200 to-gray-400 p-0.5"
-            />
+            <div className="mb-4 size-36 rounded-full bg-gradient-to-b from-gray-200 to-gray-400 p-0.5">
+              <Avatar email={emailhover} size={128} name={username} />
+            </div>
           )}
         </div>
         <a className="text-gray-600 hover:text-gray-400" href={githubUrl}>

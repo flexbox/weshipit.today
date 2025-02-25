@@ -6702,6 +6702,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/md5@npm:^2.3.5":
+  version: 2.3.5
+  resolution: "@types/md5@npm:2.3.5"
+  checksum: 10/a86baf0521006e3072488bd79089b84831780866102e5e4b4f7afabfab17e0270a3791f3331776b73efb2cc9317efd56a334fd3d2698c7929e9b18593ca3fd39
+  languageName: node
+  linkType: hard
+
 "@types/mdast@npm:^3.0.0":
   version: 3.0.15
   resolution: "@types/mdast@npm:3.0.15"
@@ -23888,6 +23895,7 @@ __metadata:
     "@tailwindcss/typography": "npm:^0.5.10"
     "@testing-library/react": "npm:16.1.0"
     "@types/jest": "npm:29.5.12"
+    "@types/md5": "npm:^2.3.5"
     "@types/node": "npm:18.19.24"
     "@types/react": "npm:18.3.1"
     "@types/react-dom": "npm:18.3.0"

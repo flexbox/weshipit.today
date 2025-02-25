@@ -19,6 +19,7 @@ export * from './lib/clients-list/clients-list';
 export * from './lib/clients-list/clients-list-audit';
 export * from './lib/fade-in/fade-in';
 export * from './lib/footer/footer';
+export * from './lib/avatar/avatar';
 export * from './lib/gravatar/avatar-avengers';
 export * from './lib/header/header-links-onboarding';
 export * from './lib/header/header';
