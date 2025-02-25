@@ -1,4 +1,3 @@
-import { ApolloError, gql } from '@apollo/client';
 import {
   Button,
   TagList,
@@ -12,8 +11,8 @@ import {
   ToolList,
   NotFound,
 } from '@weshipit/ui';
-import client from '../api/apollo-client';
 import { Layout } from '../../components/layout';
+import { tools } from '../../fixtures/tools.fixture';
 
 import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
@@ -23,7 +22,7 @@ import ChevronLeftIcon from '@heroicons/react/20/solid/ChevronLeftIcon';
 import { HeaderLinksForTools } from '../../components/header-links-for-tools';
 
 export function ReactNativeSlugPage({
-  recomendedRecords,
+  recommendedRecords,
   record,
   screenshotAccessKey,
 }) {
@@ -67,8 +66,10 @@ export function ReactNativeSlugPage({
           href="/react-native-tools"
           className="flex py-4 text-slate-400 hover:text-slate-500 dark:text-slate-500 dark:hover:text-slate-400"
         >
-          <ChevronLeftIcon className="mr-2 size-6" />
-          Go back
+          <div className="flex items-center">
+            <ChevronLeftIcon className="mr-2 size-6" />
+            Go back
+          </div>
         </Link>
       </div>
 
@@ -166,12 +167,12 @@ export function ReactNativeSlugPage({
         </div>
       </section>
 
-      {recomendedRecords.length > 0 && (
+      {recommendedRecords.length > 0 && (
         <section className="py-12">
           <Text as="h2" variant="h3" className="my-4">
             Other tools from the category {type.toLowerCase()}
           </Text>
-          <ToolList records={recomendedRecords} />
+          <ToolList records={recommendedRecords} />
         </section>
       )}
 
@@ -189,63 +190,32 @@ export async function getServerSideProps({ query, res }) {
   const screenshotAccessKey = process.env.APIFLASH_ACCESS_KEY;
 
   try {
-    const { id } = query;
-    const { data } = await client.query({
-      query: gql`
-        query getToolRecord {
-          getToolRecord(id: "${id}") {
-            fields {
-              description
-              description_success
-              features
-              github_url
-              name
-              platform
-              pricing
-              twitter_url
-              type
-              website_url
-            }
-          }
-        }
-      `,
-    });
-    const record = data.getToolRecord[0];
+    const { slug } = query;
+    const records = tools.records;
+    const record = records.find((record) => record.fields.slug === slug);
+
+    if (!record) {
+      res.statusCode = 404;
+      return { props: { error: 'Not Found' } };
+    }
 
     const type = record.fields.type;
-    const { data: recomendedData } = await client.query({
-      query: gql`
-      query getToolsRecordsFiltered {
-        getToolsRecordsFiltered(filterByFormula: "{type}='${type}'") {
-          id
-          fields {
-            name
-            description
-            type
-            pricing
-            website_url
-            slug
-          }
-        }
-      }
-      `,
-    });
-    const recomendedRecords = take(recomendedData.getToolsRecordsFiltered, 3);
+
+    const recommendedRecords = take(
+      records.filter((r) => r.fields.type === type && r.fields.slug !== slug),
+      3
+    );
 
     return {
       props: {
-        recomendedRecords,
+        recommendedRecords,
         record,
         screenshotAccessKey,
       },
     };
   } catch (error) {
-    if (error instanceof ApolloError) {
-      res.statusCode = 404;
-      return { props: { error: 'Not Found' } };
-    } else {
-      throw error;
-    }
+    res.statusCode = 500;
+    return { props: { error: 'Server Error' } };
   }
 }
 

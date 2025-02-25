@@ -1,5 +1,5 @@
 import { Layout } from '../../components/layout';
-import client from '../api/apollo-client';
+import { tools } from '../../fixtures/tools.fixture';
 
 import {
   ToolList,
@@ -9,7 +9,6 @@ import {
   Hero,
   CallToActionCards,
 } from '@weshipit/ui';
-import { gql } from '@apollo/client';
 import { useEffect, useState } from 'react';
 import round from 'lodash/round';
 import { HeaderLinksForTools } from '../../components/header-links-for-tools';
@@ -35,7 +34,7 @@ function filterRecordsByType(records, type) {
   });
 }
 
-export default function ReactNativeToolsPage({ records }) {
+export default function ReactNativeToolsPage({ initialToolType, records }) {
   const numberOfTools = round(records.length, -1);
 
   const [searchTerm, setSearchTerm] = useState('');
@@ -50,8 +49,13 @@ export default function ReactNativeToolsPage({ records }) {
   }, [records, searchTerm]);
 
   const searchParams = useSearchParams();
+  const [toolType, setToolType] = useState(initialToolType || '');
 
-  const toolType = searchParams?.get('type')?.toLowerCase();
+  useEffect(() => {
+    const clientToolType = searchParams?.get('type')?.toLowerCase() || '';
+    setToolType(clientToolType);
+  }, [searchParams]);
+
   let seoTitle = `Repository of ${numberOfTools}+ resources and tools to elevate your React Native game`;
   if (toolType) {
     seoTitle = `Best React Native ${toolType} tools: Boost your mobile app development`;
@@ -72,7 +76,9 @@ export default function ReactNativeToolsPage({ records }) {
           hintLink="https://www.producthunt.com/@flexbox"
           title={
             <>
-              The best <span className="text-indigo-600">{toolType}</span> tools
+              The best{' '}
+              {toolType && <span className="text-indigo-600">{toolType}</span>}{' '}
+              tools
               <br />
               and resources for busy developers.
             </>
@@ -122,39 +128,20 @@ export default function ReactNativeToolsPage({ records }) {
 }
 
 export async function getServerSideProps(context) {
-  const { data } = await client.query({
-    query: gql`
-      query getToolsRecords {
-        getToolsRecords {
-          id
-          fields {
-            description
-            description_success
-            features
-            name
-            github_url
-            platform
-            pricing
-            slug
-            twitter_url
-            website_url
-            type
-          }
-        }
-      }
-    `,
-  });
+  const records = tools.records;
 
   const searchQuery = context.query.type;
+  const initialToolType = searchQuery ? searchQuery.toLowerCase() : '';
 
-  let records = data.getToolsRecords;
+  let filteredRecords = records;
   if (searchQuery) {
-    records = filterRecordsByType(records, searchQuery);
+    filteredRecords = filterRecordsByType(records, searchQuery);
   }
 
   return {
     props: {
-      records,
+      initialToolType,
+      records: filteredRecords,
     },
   };
 }

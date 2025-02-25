@@ -1,33 +1,20 @@
-import { gql } from '@apollo/client';
-import client from './apollo-client';
+import { people } from '../../fixtures/people.fixture';
 
 interface People {
   fields: {
-    status: string[]; // 'free' | 'busy'
-    type: string[] | null;
+    status: string; // 'free' | 'busy'
+    type: string | null;
     name?: string | null;
   };
 }
 
 export async function fetchTeam(): Promise<People[]> {
-  const { data } = await client.query({
-    query: gql`
-      query getPeopleRecords {
-        getPeopleRecords {
-          fields {
-            status
-            type
-          }
-        }
-      }
-    `,
-  });
+  const records = people.records;
 
-  const records: People[] = data.getPeopleRecords;
-  const team = records.filter((record) => record.fields.type?.includes('team'));
+  const team = records.filter((record) => record.fields.type === 'team');
 
-  const teamSpotsLeft = team.filter((record) =>
-    record.fields.status.includes('free')
+  const teamSpotsLeft = team.filter(
+    (record) => record.fields.status === 'free'
   );
 
   return teamSpotsLeft;

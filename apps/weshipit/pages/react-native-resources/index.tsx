@@ -1,8 +1,7 @@
 import { Layout } from '../../components/layout';
-import client from '../api/apollo-client';
+import { resources } from '../../fixtures/resources.fixture';
 
 import { Text, Hero, CallToActionCards, Card, Button } from '@weshipit/ui';
-import { gql } from '@apollo/client';
 import round from 'lodash/round';
 import { HeaderLinksForTools } from '../../components/header-links-for-tools';
 import { format } from 'date-fns';
@@ -220,29 +219,7 @@ export default function ReactNativeResourcesPage({
 }
 
 export async function getStaticProps() {
-  const { data } = await client.query({
-    query: gql`
-      query getResourcesRecords {
-        getResourcesRecords {
-          id
-          createdTime
-          fields {
-            name
-            description
-            website_url
-            type
-            discord_url
-            slack_url
-            youtube_url
-            conference_country
-            conference_date
-          }
-        }
-      }
-    `,
-  });
-
-  const records = data.getResourcesRecords;
+  const records = resources.records;
 
   return {
     props: {

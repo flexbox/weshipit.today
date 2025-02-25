@@ -1,7 +1,6 @@
 import { Layout } from '../../components/layout';
-import client from '../api/apollo-client';
+import { starters } from '../../fixtures/starters.fixture';
 
-import { gql } from '@apollo/client';
 import {
   Badge,
   Button,
@@ -187,8 +186,8 @@ export default function ReactNativeStartersPage({ records }) {
             they promise.
           </p>
           <p>
-            If you find a useful template that’s not in the list, but should be
-            - please let us know!
+            If you find a useful template that&apos;s not in the list, but
+            should be - please let us know!
           </p>
 
           <p className="flex">
@@ -221,23 +220,7 @@ export default function ReactNativeStartersPage({ records }) {
 }
 
 export async function getStaticProps() {
-  const { data } = await client.query({
-    query: gql`
-      query getStarterTemplatesRecords {
-        getStarterTemplatesRecords {
-          fields {
-            github_url
-            level
-            name
-            website_url
-            stack
-            scope
-          }
-        }
-      }
-    `,
-  });
-  const records = data.getStarterTemplatesRecords;
+  const records = starters.records;
 
   return {
     props: {

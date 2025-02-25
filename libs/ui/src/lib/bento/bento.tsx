@@ -1,4 +1,4 @@
-import Gravatar from 'react-gravatar';
+import { Avatar } from '../avatar/avatar';
 import { Card } from '../card/card';
 import { Prose } from '../prose/prose';
 import { Text } from '../text/text';
@@ -101,15 +101,17 @@ export function Bento({
                 </Text>
               </Prose>
               <div className="relative mx-auto flex h-[164px] w-full flex-col-reverse items-center justify-center sm:h-[124px] md:flex-row">
-                <Gravatar
+                <Avatar
                   className="size-[64px] rounded-full border-4 border-white bg-slate-300 md:size-auto dark:bg-slate-700"
                   size={80}
                   email="ducrocq.matthys@gmail.com"
+                  name="Matthys Ducrocq"
                 />
-                <Gravatar
+                <Avatar
                   className="-mb-4 size-[64px] rounded-full border-4 border-white bg-slate-300 md:-mb-0 md:-ml-4 md:mr-4 md:size-auto dark:bg-slate-700"
                   size={80}
                   email="dleuliette@gmail.com"
+                  name="David Leuliette"
                 />
               </div>
             </Card>

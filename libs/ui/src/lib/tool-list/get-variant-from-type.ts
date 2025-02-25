@@ -29,8 +29,10 @@ export function getVariantFromType(type: string) {
     case 'Windows':
       return 'blue';
     // pricing
-    case 'Open Source' || 'Free tier':
-      return 'gay-light';
+    case 'Open Source':
+      return 'gray-light';
+    case 'Free tier':
+      return 'gray-light';
     case 'Pay as-you-go':
       return 'orange';
     case 'Premium tiers':

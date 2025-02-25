@@ -25,6 +25,9 @@ export function WorkflowCard({
           width={429}
           height={335}
           className="m-0 rounded-lg bg-slate-300 dark:bg-slate-700"
+          alt=""
+          // https://github.com/prismicio/prismic-next/blob/main/messages/alt-must-be-an-empty-string.md
+          // should be empty string
         />
       </div>
       <div className="px-6 md:w-7/12">
