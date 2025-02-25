@@ -1,19 +1,15 @@
 {
   "root": true,
   "ignorePatterns": ["**/*"],
-  "plugins": [
-    "@nx",
-    "tailwindcss",
-    "perfectionist"
-  ],
-  "extends": [
-    "plugin:tailwindcss/recommended",
-    "plugin:storybook/recommended"
-  ],
+  "plugins": ["@nx", "perfectionist"],
+  "extends": ["plugin:storybook/recommended"],
   "rules": {
-    "perfectionist/sort-objects": ["error", {
-      "type": "alphabetical"
-    }],
+    "perfectionist/sort-objects": [
+      "error",
+      {
+        "type": "alphabetical"
+      }
+    ],
     "perfectionist/sort-interfaces": ["error"]
   },
   "settings": {
