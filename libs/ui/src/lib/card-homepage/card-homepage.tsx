@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import bootcampLogo from '../../assets/bootcamp.png';
-import Gravatar from 'react-gravatar';
+import { Avatar } from '../avatar/avatar';
 import gumroad from '../../assets/gumroad-thumbnail.png';
 import { Card } from '../card/card';
 import Link from 'next/link';
@@ -73,15 +73,17 @@ export function CardHomepage() {
           className="flex flex-col items-center justify-center gap-6 text-center md:flex-row md:gap-4 md:text-left"
         >
           <div className="relative flex h-[164px] w-[124px] flex-row  items-center justify-center sm:h-[124px]">
-            <Gravatar
+            <Avatar
               className="rounded-full border-4 border-white"
               size={80}
               email="ducrocq.matthys@gmail.com"
+              name="Matthys Ducrocq"
             />
-            <Gravatar
+            <Avatar
               className="-ml-4 mr-4 rounded-full border-4 border-white"
               size={80}
               email="dleuliette@gmail.com"
+              name="David Leuliette"
             />
           </div>
           <div className="flex flex-col items-center gap-2 md:items-start">
