@@ -14,6 +14,8 @@
 
 ## Getting Started
 
+Node version: `22.x.x`
+
 Install global dependencies
 
 ```bash
