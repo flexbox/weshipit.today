@@ -13,13 +13,13 @@ import {
   SpotLeft,
   Text,
   WorkflowCard,
+  Avatar,
 } from '@weshipit/ui';
 import { linksApi } from './api/links';
 import { Layout } from '../components/layout';
 import { getAllFaqs } from './api/faq';
 import { asHTML, asText } from '@prismicio/client';
 import Head from 'next/head';
-import Gravatar from 'react-gravatar';
 import { Customer, getVisibleClients } from './api/client';
 import { Steps, getAllWorkflowSteps } from './api/workflow-steps';
 import { PrismicRichText } from '@prismicio/react';
@@ -139,12 +139,12 @@ function ProblemAgitation() {
       </p>
 
       <div className="relative flex h-[164px] w-[124px] flex-row items-center sm:h-[124px]">
-        <Gravatar
+        <Avatar
           className="rounded-full border-4 border-white bg-slate-300 dark:bg-slate-700"
           size={64}
           email="ducrocq.matthys@gmail.com"
         />
-        <Gravatar
+        <Avatar
           className="-ml-4 mr-4 rounded-full border-4 border-white bg-slate-300 dark:bg-slate-700"
           size={64}
           email="dleuliette@gmail.com"
@@ -168,8 +168,8 @@ function ProblemAgitation() {
       </p>
       <p>
         We are based in France, speak english for all our communications and use{' '}
-        <code>qwerty</code> keyboards. It’s {localTimeInFrance} for us right
-        now,{' '}
+        <code>qwerty</code> keyboards. It&apos;s {localTimeInFrance} for us
+        right now,{' '}
         <Hyperlink href={linksApi.cal.ONBOARDING}>
           book a call to see if we can help you
         </Hyperlink>
@@ -185,13 +185,13 @@ function ProblemAgitation() {
 
       <p>
         We can <strong>partner with you and your team</strong> on a rolling
-        basis, or we can enhance your team’s skills with a one-off workshop. We
-        are flexible to suit your needs.
+        basis, or we can enhance your team&apos;s skills with a one-off
+        workshop. We are flexible to suit your needs.
       </p>
 
       <p>
         We are going to present the details of our partnership below. However,
-        if you’re interested in workshops, you can directly{' '}
+        if you&apos;re interested in workshops, you can directly{' '}
         <Hyperlink href="https://davidl.fr/bootcamp">
           jump to workshops
         </Hyperlink>
@@ -222,7 +222,7 @@ function PodcastProof() {
 
   return (
     <Prose size="xl">
-      <h2>We’re trusted React Native consultants.</h2>
+      <h2>We&apos;re trusted React Native consultants.</h2>
       <p>
         We actively participate in the community, presenting at{' '}
         <Hyperlink href="https://davidl.fr/talks">
@@ -452,7 +452,7 @@ export default function IndexPage({
             <div className="m-auto max-w-2xl">
               <Prose className="mb-12" size="xl">
                 <h2>What makes a mobile app exceptional?</h2>
-                <h3>It’s an app that:</h3>
+                <h3>It&apos;s an app that:</h3>
                 <ol>
                   <li>Offers a seamless, responsive experience</li>
                   <li>Is free from bugs and crashes</li>
@@ -460,7 +460,7 @@ export default function IndexPage({
                   <li>Downloads in seconds</li>
                 </ol>
                 <p>
-                  We’ve had the privilege of working with over 15 clients,
+                  We&apos;ve had the privilege of working with over 15 clients,
                   delivering top-tier solutions.
                 </p>
               </Prose>

@@ -1,5 +1,5 @@
 import { Card } from './card';
-import Gravatar from 'react-gravatar';
+import { Avatar } from '../avatar/avatar';
 import Link from 'next/link';
 import LinkButton from '../button/link-button';
 
@@ -15,15 +15,17 @@ export function CardConsultation({ gravatarSize }: CardConsultationProps) {
         href="/"
       >
         <div className="relative flex h-[164px] w-[124px] flex-row items-center justify-center sm:h-[124px]">
-          <Gravatar
+          <Avatar
             className="rounded-full border-4 border-white"
             size={gravatarSize}
             email="ducrocq.matthys@gmail.com"
+            name="Matthys Ducrocq"
           />
-          <Gravatar
+          <Avatar
             className="-ml-4 mr-4 rounded-full border-4 border-white"
             size={gravatarSize}
             email="dleuliette@gmail.com"
+            name="David Leuliette"
           />
         </div>
         <div className="flex flex-col items-center gap-2 text-black sm:items-start">

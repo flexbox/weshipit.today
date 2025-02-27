@@ -1,6 +1,6 @@
 import { Hyperlink } from '../hyperlink/hyperlink';
 import Link from 'next/link';
-import { SVGProps } from 'react';
+import { JSX, SVGProps } from 'react';
 import LinkButton from '../button/link-button';
 
 const navigation = {
