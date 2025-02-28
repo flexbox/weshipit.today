@@ -38,6 +38,14 @@ const nextConfig = {
         hostname: 'pbs.twimg.com',
         protocol: 'https',
       },
+      {
+        hostname: 'is1-ssl.mzstatic.com',
+        protocol: 'https',
+      },
+      {
+        hostname: 'play-lh.googleusercontent.com',
+        protocol: 'https',
+      },
     ],
   },
   nx: {
