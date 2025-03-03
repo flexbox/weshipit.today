@@ -1,6 +1,31 @@
 export const frenchApps = {
   records: [
     {
+      createdTime: '2025-03-03T20:17:43.000Z',
+      fields: {
+        android_url:
+          'https://play.google.com/store/apps/details?id=cdiscount.mobile&hl=fr&gl=US',
+        category: 'Shopping',
+        ios_url: 'https://apps.apple.com/fr/app/cdiscount/id398364165',
+        logo: [
+          {
+            filename: '230x0w.webp',
+            height: 230,
+            id: 'attaWbugfgoYASxdS',
+            size: 1366,
+            type: 'image/webp',
+            url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/50/72/01/507201ee-d376-6f51-c94d-cf9d3bdd3c7b/AppIcon-0-0-1x_U007epad-0-1-85-220.png/230x0w.webp',
+            width: 230,
+          },
+        ],
+        name: 'Cdiscount',
+        podcast_url:
+          'https://open.spotify.com/episode/4u0RkE3y1gkCpFtpppk25t?si=a6ed852bde0b4dfa',
+        website_url: 'https://www.cdiscount.com/',
+      },
+      id: 'rec2W7XObYe5qFber',
+    },
+    {
       createdTime: '2024-04-03T06:53:23.000Z',
       fields: {
         android_url:
@@ -14,23 +39,6 @@ export const frenchApps = {
             height: 230,
             id: 'attaWbugfgoYASxdS',
             size: 1366,
-            thumbnails: {
-              full: {
-                height: 230,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/rgneIH4m0Hs0UUIhB3raaQ/gMqKYjPvCUjl2g4COsVEn6pCPjq9mwjgf72HCRUqMGDNSSbj51kyhi8SRck-3q-J9xJ9aAoxb2Kf7oNkPnN4klsY7b3obk-ni6zhCKFkp1cLpM7sL9qZSFxINZd8taEgSSNZrxIPhDTLGA-5v7cl0Q/5OQJ9-QVL44HOWOTIkYQSdkPskomGR8Af29aVhysY7E',
-                width: 230,
-              },
-              large: {
-                height: 230,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/-WC5S7nz5hsAQ5d2_rY1OQ/HerU3PQMIghp7TN5A1Z0rgXO_bx2TUG_CXa8koRXgZn-OFjdAKpTSDWtl6ngZTQEtix9MNGbzzgkq2aYAi0Q0X0R2oP_Ihg4Uvy0eA0GTqI5i7OxgzGbW6-Az7WHhG9aqHXhsoGdoBLGBxSOeK_OWA/1QN7Cz7EXAo5bLxj7ryQD-HPh8JW5_fxbIAvPqlIB7o',
-                width: 230,
-              },
-              small: {
-                height: 36,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/YYDxy2qrM5l1Ps8-dFFXWw/V7nXoLdTWR90_0g1Lv3hGdQLZkiRh0U3qx38z25xmaUJYkB259O6tc0p1Rgvkbrs9Bj6taFMjUbe2d2CWHCDlPj8dR_DbXbnzvNJOJvej-MXMvRi8SWAuvZyfyHdljz6Es2T3GTPgtHFqYMGLNnzlw/m3s9LKLR4Tvxxn413hdRQ4eTd0j8EpyWVxhewN9HtkQ',
-                width: 36,
-              },
-            },
             type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/c2/36/b9/c236b9c8-e3cf-42e0-9570-e486c4637995/AppIcon-0-0-1x_U007epad-0-1-85-220.png/230x0w.webp',
             width: 230,
@@ -51,23 +59,6 @@ export const frenchApps = {
             height: 128,
             id: 'attjDbdgsnTq4yjGG',
             size: 21004,
-            thumbnails: {
-              full: {
-                height: 128,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/lO1YLFD5WVCHZpWCNmWkaQ/X__5OvY4eKYpyAYLiPTQ9S8h-8JPbysszBGCBNB1wGR_jA9B-S3RkghWpcU4R3ZlzGX6tvnO44NT_xmzLNX2WkNkFn3QR1tU7VjoaoghupiD3rFw700Md-NWduVDGiq9cxl8kcQ2Dex8XIQ2WTqBaQ/nGICrtINOT3Ww7j4oxinckTpq0uF0FtLFhy41XbWPB4',
-                width: 128,
-              },
-              large: {
-                height: 128,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/EvTK3j2ztlVFw-JLGr-rkg/8DrQ8l5V17aHhyo1ib7UwoDLWOZSezbUMCgcDnOciLaPPCWJylBYZSO10gZZj1KDb46UMRf_gSo3wewKuJPhHxde-cLg0NEVenYe-IpJpbuhK6dSWoxxbhYJJkofpqLRqc7x12ZtGVrJhVDV0SgsVw/9CtEsuv_iIt9Np7dYM0zyMpU5QVYoUBit181FkKXPSM',
-                width: 128,
-              },
-              small: {
-                height: 36,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/msmL8mCL_sKIfmHxawzcmw/yHRTgnMdkdJDE6EMmH_9L00VBaAXMhzYq5i84MAfVb416khahQIu1Un3My8xtI9UM10WyURXXd3TqsXEeDdx3Dn9kuKiZM95C1syQV1qmnP0ZKWmsMV2KLLpl9WexG47M9zxaIrT6kk7uwMQDF_7ow/r3d5R2l5mPDZxrrPZJ3VxOahqxfy5RgEosbFiNByJSI',
-                width: 36,
-              },
-            },
             type: 'image/png',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/8d/24/e1/8d24e1ae-3675-0673-2d98-17e19f580ea7/AppIcon-0-0-1x_U007ephone-0-85-220.png/230x0w.webp',
             width: 128,
@@ -92,23 +83,6 @@ export const frenchApps = {
             height: 460,
             id: 'attXa3CfqvnNz3ipr',
             size: 1000,
-            thumbnails: {
-              full: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/6X_7ikxL9TXPlCorku8XnA/BBCmDpWyge8kGH2lpnN1ei19cC_ljUyC8MByYsvvrA_znnqb-nU6tfMR6hVplam-dJWBAVZ0_rHf45GrTBmoEwZrhhdjHhqdLIClz1Ypz_22JMIkcmKZMhh6NgjGa6ZaFL-J0xpxg0QVnu9PdqeANA/UVu7ea-Cks48PeV5tUexkfuKJL3ZXhbExWMrevQ-Pc4',
-                width: 460,
-              },
-              large: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/PUgQzNk0h2ocMA8Yqi8euQ/N7v1undLvQ1iHCtCHMXjWKBi_u29J852ycdnoaQ14mNuBJ9kW-2HMRy1-8Js_nyvu-fsZL9VQqLiGPzz9fbDIPWpzwbcJWiwKFE4mzCHpOPfVM7prSBvhXXmIDL6VCZLVHXnje6SCvDwDpB8wfUHAw/UFCgQWY4jFrPC6vU48MU-OJFGS20ebc6zvJYb5hZNss',
-                width: 460,
-              },
-              small: {
-                height: 36,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/HRy4Vo8DsRmI9KYp5LvR0Q/p4dHcGbQXyWf72OQDF-Vx6j4KCk9kfid4OMZ2PhUmUgIxrP-BpRx1rpOhGeNDo3qloaV8bhY14rV1mYwlNxjBKSOEEst0pYwECgL6pd8tNy-thB8bpQFoVFrFM1jwBKCPooz38AITUFdTYta2STVSQ/nQoZQ1US84QmFZGsB8ilPhDw1jISwiC423s1_h78Vww',
-                width: 36,
-              },
-            },
             type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/dd/4b/6f/dd4b6f3c-a3e2-ed8d-0fc6-bea54a6be730/AppIcon-0-0-1x_U007emarketing-0-10-0-85-220.png/230x0w.webp',
             width: 460,
@@ -133,23 +107,6 @@ export const frenchApps = {
             height: 460,
             id: 'attj7O9xaXvgZAhoT',
             size: 2514,
-            thumbnails: {
-              full: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/lWEucVqm2D5E53PJ3PYEwA/3a8e3Ww-R0c7ckc5eoe9B8FB7TrVhSnrQGUtGY17BRnPVD3xIjvWZ4OffGokPocbbA3YwQ0Z-1TYYLhSr4hM0ubceoU_FLbViVTE5PiMvrFg8SM1PrfUOuqlhZh4IjTcZhPS3AndIAEY5pwgdtwNDw/lzObSWpOQ_Np3jCqU2ON0LdSkkA8kM2w14TSSPH0ebs',
-                width: 460,
-              },
-              large: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/l2-ymsnAYGGq9k9gI4R00g/ve9_LN3dU_bMyEJfjN5H2xhmUuYARSPrvjNYprB80hnTK_Xu32vW0hcb38MG6voVgEAMaPbdylbFJGeK4i-GHPDq0IJu0lUjDyN6yIbbJbMuaozrINjBpftTxbenuoSb8dufIHAeZFlBWAvR7HMPvA/CwW_f7Wg-GUq_kbn9z2k9GmEngjRVkx1BfQIHTe4H7U',
-                width: 460,
-              },
-              small: {
-                height: 36,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/KdosvwKFEVAXtreXISo0WA/Sd3ghTTbxTfbOEmbtzpObXzByGE4btdNI0d6hT6kYrUabDEoxbZ9KytwuYp5HgTkCL7ceB_BEZg0F3xEk-WDCPx80RG78PAbBq4HX9TB6CPKscD_Rwk2m_kBEV6RYEkbWLYbLcYF5E-fjYyN4zWjXg/Zp6Kyz9oT1-LMCHDcHiq-gz1ST9XemxHQ5INtEtvGgs',
-                width: 36,
-              },
-            },
             type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/fc/6e/17/fc6e171e-cd14-d36a-91e7-387da9c61439/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/230x0w.webp',
             width: 460,
@@ -173,23 +130,6 @@ export const frenchApps = {
             height: 230,
             id: 'att5T0WzRgXPqqqxl',
             size: 1734,
-            thumbnails: {
-              full: {
-                height: 230,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/WEzYy1cLVi49QbBoQZF8ig/bMt5thjCRoI8ZIF-l5GEZT8rg6OdDD2TDaRRv30qcYSSLYk8LTbAexcqMWjYc2vzJ8vV8luEiX134t-Mf1JICSJqTBhCEeiKIIw5ziOX6Lx0NutnEvReTimbUcFl_y-GF9JxuyXBgiyjL1Zld9fSGQ/7WmLmPvHbOUAUgl7klqWRXLsfy5SNddYfPRDMHRd8yM',
-                width: 230,
-              },
-              large: {
-                height: 230,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/vifqDyrwxqMhEW1o7D2wRQ/_5LP0RN0MH1AM7BhrNJ1z-k9-Tmc-EPx4TkIxi5gBRK4HCmG42bspob1yVMJANw6uJyhiybpQ2_5R2Embc8OQl0t_yFD_H8NQ_a3kUAwgaR0XoFz1Z0_268GZGB80ZbwQSCENuci5Aryo7Z7GiVGHw/zy0OsukoMNp0JrtIj1Hhiv0YNJxjdvq435G04tQTtyQ',
-                width: 230,
-              },
-              small: {
-                height: 36,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/tsVWgKjgVz3mwo6ELDPXyg/qUdC4Ai5KAM2-DuFWpChbevkQcR0OUJ-lQjrHFi1gtRcPZmD0PGTMDQ_rNFxxgICfpWvpO_2saV2ljg_vSUCfkA5rH3btwoFWd0iU-TCOpw_CblAAVRQiSvKzLdC3xr62rfECfoLJ0icE41Xcj1JSA/zHoYXmUEoufP_qkLaUHyRrA9hUzW9myHqie9I6qKpnM',
-                width: 36,
-              },
-            },
             type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/86/4b/ec/864becdb-e575-a1af-79d2-8b893b92e9ae/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/146x0w.webp',
             width: 230,
@@ -213,23 +153,6 @@ export const frenchApps = {
             height: 460,
             id: 'attbO61U32FWHzSlg',
             size: 6116,
-            thumbnails: {
-              full: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/PQ7VdZb-A0whf0YO3v-Teg/ggqagb58zKvk2TlLrYrphRyEgegYvSTkhMO1ytvx3M1JNG_jEil9G2XSRV1aC9uV711_HN1Lz80D1fM43gI96jBR7OErvL0VF0a723yunLEe-Wq9MCyctFr35mKHANkmu-pzk34SMXHz9qNZI2ZFBg/b_yU3dUqRsD2gdy0KWfU6E8EH8sgNbWA3rwrPUcTDzQ',
-                width: 460,
-              },
-              large: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/PWXnM9B9VTWyxeSsgdlxBQ/WB8FgnXRY-foGO77NeReDoYLdtI5Uyc9qBphgL9U9dzsYR_sr2hzr_SrunAIJAqNsX7Mqf5CBFZeE0O1JoZCWqPEfZOUSaCPrfVL8tIadJKznO2mdkzhy2fyOgy_mQL3gTvNHmG_44QMJqyd9V_47A/yuqAuSle-G6Zk-C0MkakrSByRa9ouKBnQdST1OV-9U4',
-                width: 460,
-              },
-              small: {
-                height: 36,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/SKPV67bpS3Gb0HB8AyKODA/3SweXhc65GnzprxfOSum05pQKmCY9kjFn2i691apX0_vMqvACbedY_0OftPtA89u5yBJ3rA_ErBV6zZUDP3f9YGvE6tYeMOTwbCL3Tecj_88Unggl0UbaaE6BdOETHu5Y6bO2AvPGASFnVSf8IMiSw/nOubiASlB9ccLZgKCeUpeb0v1nCsCLRWMpylum8vt0s',
-                width: 36,
-              },
-            },
             type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/32/d3/d0/32d3d0f3-9947-d31d-4059-adf282bf7f92/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/230x0w.webp',
             width: 460,
@@ -254,23 +177,6 @@ export const frenchApps = {
             height: 460,
             id: 'attKQtYPtqXGGdEOA',
             size: 5244,
-            thumbnails: {
-              full: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/FUszQNnMYg1pnfllyjuNgg/hxkClhsiKJY21o5dUnCPPYB3J5jkkllynSddEEkjAMHkGZ4x09cUfeIggEJzCHBwTsKxZmB__AXIa2fnIUyKhk4mevIvdOQBr-8vb8HMvs4Jxjmcd551WTvLiRuNMtfgdpSk7oBKEBiAtrUdJaKcWA/eDe80R2VkB-TpK1ZniEpHsf7mWvm4n8Pf4iUtB0h7pM',
-                width: 460,
-              },
-              large: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/Fp0fciSqT04FnYskbbx-zA/-inB_6FpRssNp7F1p2CyHxe9WDTDrIByJyf6Bf-SO0QFdl3YQ8JZM8SBaSUpLpAv5jLt_tEmXtszwq8ZL2gvMPSB81utTz3powc_fqpO0-C2GXslVDS-GN3I8UIDfAWbhItxd0VCowTsjtAxsI1ODw/RjF-VTSIfGzfMlgj54ZLlqXIM_ZV1vFDSS8_HTA-2qg',
-                width: 460,
-              },
-              small: {
-                height: 36,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/eh3GpYLMMnjfMH_OvinEyA/6_njOcXIAouYG4TomAF0R8T4Y9MhXv-w86hnYEekZlGFOFYSlgsG8WSukWx9fPE2l8IHML4s-RuzlpYXwygJ3lBxxmpWREXZ4GRSBOLo_r-FLfFTtos7FU_954NVj83uNSk6BHlkhS2KlrgcapbIkQ/yfgNRtkwTeW_ZcfyQiafZhh_-7QnEheYBd6WgJIjhz8',
-                width: 36,
-              },
-            },
             type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/33/8b/01/338b0105-8f27-34c0-45c7-c1bd4d205876/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/230x0w.webp',
             width: 460,
@@ -294,23 +200,6 @@ export const frenchApps = {
             height: 460,
             id: 'att2YUCBCd3bPcVlL',
             size: 4834,
-            thumbnails: {
-              full: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/JeSw1NVqRFCS3EGhzI4sJw/y2Jq6iUuyv5k3qM_ERhq54XoCUjGvBiToot79_A44btyPfGhiNznI81J549JUAsU9271TEu_lWBIOcig1v2fWtW5tlsWA9iMZ4jPOke9dv3vMEWb3YE78nvtaiO3TG5W6yN4vmRQG-SVc2S-SFYMSQ/vEqrrhzDDHEa_CWKsKIH00K6nm2JzgXWRtPSnvVNmV4',
-                width: 460,
-              },
-              large: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/VTc07xsPbLlA6cgDMdv7kA/fkQTAqHGBUKlntpkox1Gsaz4VuWGJPmGCQS9X5cNz2k97zOy-zZ_QSpud8OLYThq1Nb5Nv2ydidm2iViulXOcUvbLwv1HzJCu5EMsB1t_UoUvWsxVYs3bkIhXLQSL5_OcZbnPxMKJxYrUtlq27LQgg/xLjfrOPAkrRPUdJIks16YbY10aKnDQBAHFR9RBMKAXo',
-                width: 460,
-              },
-              small: {
-                height: 36,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/84MzAK8ClJo9dwmWxqge4g/TzcNZypYBXG-LH8ntTDVE7ZtC8jD5O_18xrHrXBgdfDuCgDyuMkODswfojySdY0oW1VOR63WcEIwq9Zx2lxs9zlWTAFK9oImH5YBtAynSsOYsXOvb5FJopYKOKlLWSuyNMmq8cltljPIvun4SxtoDg/s8x7XcSpSkUltvWCKPB5drpkobXOqcPXNY5zm-PhXR4',
-                width: 36,
-              },
-            },
             type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/d3/a7/47/d3a7471f-253c-c061-ce4d-a1bbcfd62129/AppIcon-0-0-1x_U007epad-0-1-0-85-220.png/230x0w.webp',
             width: 460,
@@ -335,23 +224,6 @@ export const frenchApps = {
             height: 460,
             id: 'attM6peR6YS5BfSHJ',
             size: 6150,
-            thumbnails: {
-              full: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/cg1TXpbJ1jz49-66k6aFrA/U76E3tOVaOdWA2ufb4FsqoXm0sI3AQ1aj4mMkstTEWvpOZdBpANMfuVKpeM1ZyhvZbynLL9GUegErF8C9Q6SYfya4-0kxpWauw1wSqKiV7ZSqor3kKpy9ZNlWBC9cSqljMFkPdHvgr_HTr6YcUg8gQ/rh3roafXxeOW4AjKX8OFEeXOhNdxKmassXz_ir3cd-4',
-                width: 460,
-              },
-              large: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/OJyabQ5nvAcHUsPZDObk4A/b-dJ4U2wCy_yxsRypKunk2ZF8F0-4D1Rw4TuYeMjlmMiN318Bfo0bQAy9Ybu_EaWY3Stxd_J87okqK_8EVmbpFBveB-v4osALuO5A49ZVsAsxWsNCEjPDo3Jvihcv-kbrjOhnARYF3ldP72keJPDuA/1imNjHecj9zfyAii8WIMkfrJUrKLx0zqyBS5a9PO2ck',
-                width: 460,
-              },
-              small: {
-                height: 36,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/12iKigqrbLAqy5F9PORMAA/TcPXaQsn1h9eSRhtOkH62l9B0D5OSnmA-_j-xdZ7a5jDMcDp-EsvN3l4ZG0rmcCYZmUBpKyE8OeEZLgu3otbmZTDyAT2yy8GWJvg68L2sI1NpSxznw5lMFFkMhaVJJ-1pHHA66nzMKKsZeS8Mi4BPg/-N2NnIK7oxwLS3Gg-_7U7-VRAHl_strQLr5qLapWEko',
-                width: 36,
-              },
-            },
             type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b2/ce/f6/b2cef64f-4b47-7da5-7168-ad382eb42288/appicon-0-0-1x_U007emarketing-0-7-0-85-220.png/230x0w.webp',
             width: 460,
@@ -376,23 +248,6 @@ export const frenchApps = {
             height: 460,
             id: 'attdUOynryJEMfFzh',
             size: 3788,
-            thumbnails: {
-              full: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/9kadT8AmFHaWd05X8zfZQQ/9zvDhZgHHZzmINfur-tALrPJFQy_pcbIS7JgefnbDWbD479vMBfOUnxGHda5EN4Mb1ywPfyDElxrywHtzee32f_s9ooPafFG36UIKR--IBMfo-qf9FK8WOe8qWg7Jdxur6fYiVPaf4OtT2rRsx-usQ/X9E1pAmQckqUqzRNLfpcHKr2yx9diHiYqVSUgoEgr68',
-                width: 460,
-              },
-              large: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/joSzroPIFwTvONdxh1M_GQ/k1K5rwi53zHYKpBX5wMuSRh-jQxQd-8rKvTcM0IHoudON2BKuKCOx9wv1_idxey1472gxMAAK_lfEm3Lp9NRCJvEM05oWz7YHHMFhQ0_Ur7kzmfDbqCtyuZ704vp1Egc8P0iMRrnGxEUTndP5ItZRw/KtxyTqcwKseQqAFHVZKoyxGgNInw0DRLaXEyf4MmQ-Y',
-                width: 460,
-              },
-              small: {
-                height: 36,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/RRQdd6Ob1yI7DGO8e-x30Q/UgZIpMFLBHbKqZn3JbolpJbEAmuFosM5yXNNpUwtGHXUd9RWG9YXtf3OQ8STSxaUmgTULbCvxkD0lQNnIiNQ2yijGLdnoeNT4rFTOhXWBUHBKH0HglypxbBPoXktxWGXIZxBEjO4QTj1eYHlmFxrYQ/kLVMfTBG1h0IPbomx-ZafyoyoxpzZWbuqoE3p4RVegI',
-                width: 36,
-              },
-            },
             type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b2/48/b5/b248b56a-996d-11c6-b56c-898d4f9f0c85/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/230x0w.webp',
             width: 460,
@@ -416,23 +271,6 @@ export const frenchApps = {
             height: 230,
             id: 'attZ9KZLfFKQ6J2aY',
             size: 1488,
-            thumbnails: {
-              full: {
-                height: 230,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/mt4-COATbcvdNQ3rmjEsHA/NiDIadbViT2JznMTi1xhft-lB08mr4emWf6DuPoYkAP1TYpWWNBGak8_2ZQ73JXssQLv2Mda4-kOFazHgyYPyCdh_L6VD4amY8Q7VtaVMliqiimF3YJDg27HdWIIJmMDRDp3diGEOZ_5ve5CE4pjZA/-KDp0XTjE1E10gMQuE3aVvLfGdG4qpoKh3CzYTgS5fs',
-                width: 230,
-              },
-              large: {
-                height: 230,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/oHNeRRqXCMFKEm3LjSUZjg/FYsWxuYo9AxrpxtvQ_b99DeDkkMhccYKwCKxK72mVihJRyET18umNJPOzIxbbDUq5yCekXadY_9gFGlQU68xXD4AE_woPzridV9gkc6WkpnkWJmiaRsh6bWN46PXZ5UMlJjW6oPuayUEM9uZ8mVZSA/eSksT1w-7TiS3xjDyHbAi6M90feroAxGK0dNDfLYU70',
-                width: 230,
-              },
-              small: {
-                height: 36,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/HLItZemmvxLRqiUkF3_m6w/WEOl00s0tfI249ADeFOhxfxsq9h52HCx9OMCZ8p5eq8Amh5Rjg6If9P8JAodEB5SobjhK3fwhI1gJ-HowqG9kzBtwXl9iqF4_4W8CG3tiqNcWqfgV-FTNZaRlAuk7n_0WaPlXaDGJq9-2HoFWKuIFA/A5bPA7CDgtV7UP-hRo_N6PxMEqvxuGoIp1wn9FintuM',
-                width: 36,
-              },
-            },
             type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/f1/3e/39/f13e3997-a86a-56b7-e462-5725fe760ccc/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/230x0w.webp',
             width: 230,
@@ -457,23 +295,6 @@ export const frenchApps = {
             height: 460,
             id: 'attkXVlGlRt2XQTfL',
             size: 3900,
-            thumbnails: {
-              full: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/fCLUB5QVA2WteYkq0JcHrA/q5F8e1K6IUyeY6IkmC-bqiL0bN6rMFP6sP_vx_-V7phrfa9pE77zRhWJQLhsGbEoWH-H3ZfBPznAxWl8r2G1hr2bU0VNYxZVDY55CRiwpmBSLt0uybp8Bn0dplqCHk6e0fBVTCSJ6uNvuySml-EqdA/JohwCZt_mW30rD_t_wzDNpr0ie0eFmBp2jA3MVTQiqg',
-                width: 460,
-              },
-              large: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/f5grFLw_rdSOqkk4UfHZkA/1gPV6schqBNPr0iCiQmqmCFUoVSwgnQMnmHrwPNoM5opGMHtezDIH9PDvq3fgUk_fljm9GpUS-lgBXgvX4MMDOWL3dPcgcs2U7elAXPIz9hXkkwsQMnfylGEdoQRIzypnED2y88IaLx1YxzCDyvJyw/51BrtxLbIsK6_Bb-q5HCdrMF-ulFFSPtkGElDvUahE8',
-                width: 460,
-              },
-              small: {
-                height: 36,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/RK2KV0WYnZzitMCRePtDTQ/EtVskNHuS57_hgMcfS-wdmtLs920Zw_9eU1SHq3Tx6Rdp5B6WwFCnyRv-lQbNQ3alCbUuU_4KvR_Tf8AyG48nUtJ6_rE2OejmNpoBgCema1I9nWf5TJXCs2ALe2cy6psmauCh6mKa9Y111jAqn2NwA/vs5kveY3t4UQsAT08BLoBfsufMLelMRvIaDYUKwJQkE',
-                width: 36,
-              },
-            },
             type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/99/35/84/9935840f-3804-e3cf-a1b6-60ea4a80c137/AppIcon-0-0-1x_U007ephone-0-85-220.png/230x0w.webp',
             width: 460,
@@ -498,23 +319,6 @@ export const frenchApps = {
             height: 460,
             id: 'attsH0UfeK50TUgFt',
             size: 3292,
-            thumbnails: {
-              full: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/Jo9A_drLgHYt--mBSAuI1g/SO4tBZgWD5reay8SWmhp5mUU5UKyb58ppMYOOlBLvaMgoyysCAfxUIKTS2v-efRNII2PMZjUgL_DHIyg4R4DYka65_o3VilQURh3KdMPczImGdasZKLOCr7k2uSaJr3g-rtCIqLJDhZ9ub8yN-iClw/R5JbPSsddZRXy0ky6bH9hA5GBKOWVHwIj0ZHV5QF7lQ',
-                width: 460,
-              },
-              large: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/nIL7yH8YjXKJYKmyM1QMEA/aJbH2_3gE3omiR5exRDTF19CdF8TP3w1y54Jobt29t0kBONma_fapdDkDnyhiaeRekVKSUHcQFZjmF7KH4ncXDKlAvgAI9VssRg3maifad8-BP7n3qJfK5YQpn3Q_3YYRuVtUm_Rdp6XiOTK2ca8Nw/OnQE3Ywdw9kUWGPKdkwGZNS7ETSG_DtJ2WqXvttITMI',
-                width: 460,
-              },
-              small: {
-                height: 36,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/8nyhN2yUcvdQ8luRardD8A/NWJeXnP95jxBhI0wMcStY-GRAkviRyJx6aljL9DsKFCMsgmJDxgP0cIKZ7NgnlhbgKtAbqL0YS3IGamGMXNirMpJRKlNSLAsLbsQdZ5MjQq3fENJnKaMPz0u054gVlfx5PUc1p_wVR9aOjXOsmxgPw/dTvwtuKaHsciBCcmHbACPf0GldjkgAcBO91ui-dB7xo',
-                width: 36,
-              },
-            },
             type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/24/4e/af/244eaf1e-fa84-898a-535b-2a2fa7abd8dc/AppIcon-0-0-1x_U007epad-0-85-220.png/230x0w.webp',
             width: 460,
@@ -538,23 +342,6 @@ export const frenchApps = {
             height: 460,
             id: 'att3PnTULWeTfzSbv',
             size: 3198,
-            thumbnails: {
-              full: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/6usstNOhg5LNxPp8VpXpWA/L3Yu67I7PPR260gj9gP10Cev2qktQyEex5C5qfp5fb1XIudFEPhfiyTmKXQWeRL2yZg0FnM8D7Pl3vw4kcXA2OI7trl_AT3hYICu2gsuRkKB6Ce5UvJsvMGhbCAzkCsDIFZP7nw-qXJeI2HfIm-9xQ/SLe-5OswsFUF3hH0YTxYFEWDGozIeMd1-Hhj3lxRAJ8',
-                width: 460,
-              },
-              large: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/sBJ_zbg-4hbepZOke3IOWA/7m6vQE1iSw0-jZIi4KnXowfpUmj53Wzr1awR3TdRpgKioqRMAIVwgZfGkB8x0049AjIJa5tIoqX6-AB2HcWIQ_DiGUdRuJ2orpM9jeWUUlQQ0hLIU3RPYWp5MqIcwe3KfZVPu4Z3M3OSP_MZDXCCMQ/02NWosO5KeazCvsin-FYDeTX8U6q0pIXGWIOPsSNm0Y',
-                width: 460,
-              },
-              small: {
-                height: 36,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/n8PT70YwB4ZpTVcNxD3MtA/wMYDWJ4ZJ162DfPSXRw1I3FpkESxk74VpGbITAmbG_ayegEY3H_bzU9imsA-bLiWLVJEkH-x1yoolIxClN6vKD-tx0z92KHBXf745I35YPXqejIL_4X-A1ineKLT8N1TjHNDg6PPf0G4fbZ0143dbQ/BnGkyUxtU8mqPoRoHcARScN0d6rDZ3iceX1f_Ct5AVY',
-                width: 36,
-              },
-            },
             type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/2f/56/b7/2f56b72d-237c-98fe-94ae-9189b7d7a9f4/AppIcon-production-0-0-1x_U007emarketing-0-7-0-0-85-220.png/230x0w.webp',
             width: 460,
@@ -579,23 +366,6 @@ export const frenchApps = {
             height: 460,
             id: 'attfnwiiOTJpXVpit',
             size: 4616,
-            thumbnails: {
-              full: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/-KwRvpWQSAE0FspwcNiXfA/X2mG9VxojxpCEMgQ8QtEMNVObF2SajRetE4w4Dix-yzN1KL5c8POYETmAATfxJSmE_2Vr-Uq2wAN0qiQpGC6HSzcuTDX_gdWPxrHcY1MxP-vo0Dmb4ovkUWcXVXY9rvjIYwKAyoPY5BJsHT943t_eQ/GEgM-wmtZQLYrsD5OiG6qUkpkji40C_7E33RgIbi2iU',
-                width: 460,
-              },
-              large: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/9u1Icv9BM8k_XOlz7620-w/PmkXkLDOF3yhsf7Rng-nME9BXqylHZxEnfYhevE7TA8K3K2JRJQZ_AXSyALFskaoeUhu8OD8IeKGdH1naoQ069RrwsdLJZIKRJQLAdiAMZJAvkk134l3bFYTgS4KSTcrGpLki6yt5hsfoR9G4nJDWg/v-TcO8a3aXvgazYL6s0_pI8gv7vGm3liyyYEI8cc6R0',
-                width: 460,
-              },
-              small: {
-                height: 36,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/BD96Ogn38YjmR2k8S66z3g/iRl35ylLuaeLL_UEEl92ydx-7dzRoJQrQCxmSJbYtQ4dorMLev9jkcrAOMFvt8oWTBuKoS0P6Jdnzkk2nfXAaAPaJJzDivM1k6c8AvYSEnObZTq0GyzbebfD3cxCLJLvWJ2KRKkL_DdiuuKMmroRtA/9s5lAnuXLsdBD3dwmgzWEeVZc5CDYlVsx8nsT0StSM0',
-                width: 36,
-              },
-            },
             type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/f6/30/31/f6303121-110d-afc1-8190-3e48d7e9051d/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/230x0w.webp',
             width: 460,
@@ -619,29 +389,14 @@ export const frenchApps = {
             height: 230,
             id: 'attlGd6IVWMCKDrlu',
             size: 2454,
-            thumbnails: {
-              full: {
-                height: 230,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/g10_TH4dcToEBrCodhfRDw/c6GvR09vj4c2KmFd7Q4OZVkMetOYdZQ-io-HOZgMimfXH7jn5wGzTGFQjL1WndiYb-nV6Y9yL-JYLL4hT8MP1cM84TSDb9GQk2ZpIo7sZNOWeMcLPST5WQvvSauOqJPU83heksPU10Ss4bkkFi6prA/acAVEA4vA6lPN1LDurWhlhFsBv3L-sbyfon8laLX8sk',
-                width: 230,
-              },
-              large: {
-                height: 230,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/fBjgJE7cH-r8lqAKikhWbA/S8hB3TcbBvFsGj2ONviDqXL2-tpXK7DOj4bab_5jOr75vgOy45-_lUVt3-9TYMtfa9MRravRgOb18SFdQxxOCF9AP_ekCkqdJPfmGTzfplbL6KF0lpQSdq4QtnPjSLU6SPNEi4XTBTDcPsopM6GMbQ/v8no0e8_AKPB4hW_O9jVqDFNIfjmxov9AM-FkemTFBI',
-                width: 230,
-              },
-              small: {
-                height: 36,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/Zbd5ax6NVvvuNBUuKMwS-w/92qJSm8Bwba-s3uFTACve9mRFa5Zo3equFKQf4Md41ZfySJG6src6mbqPEZhw4pyfnh3XxICkJqb1_BO85h6tKpZ2hmKsHtF2QuhETrm94lgsJtSjNQESUy0hFzv4PF-4xsk9QBn0Nmn_7cpi1AH2g/Luj457T74Kjz3bdtGXgzGYtB61g4a3C-TBHIqHs54nA',
-                width: 36,
-              },
-            },
             type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/36/49/67/3649675f-bd1c-6a2c-5972-87f49f34f9c7/AppIcon-0-0-1x_U007ephone-0-85-220.png/230x0w.webp',
             width: 230,
           },
         ],
         name: 'Karnott',
+        podcast_url:
+          'https://open.spotify.com/episode/4dyRNiw7xuSGpdQXkwb3GW?si=8790eede701746d6',
         website_url: 'https://www.karnott.fr/',
       },
       id: 'recc0chf6gU7B2jDd',
@@ -660,23 +415,6 @@ export const frenchApps = {
             height: 460,
             id: 'attkANXAjCpqnyHOZ',
             size: 3984,
-            thumbnails: {
-              full: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/BOxx3fdujiEw7znU-_D-Pg/9Tmgi07m38d5W_iUW--WKs010yCSkh6jChzFQ_XcMJ28XBloe5dWdHwLmdWa2iXMO5OKMmWisal3_H9Uil3RPt27L2KnA6CLSPKAZ6pNXlzfpKA5CDuwtZrwwjzw-3BTzkFoedNJaSgx0IE1AB9b0w/uGlQDzkZ-Y2oVPSZJb0tTvkrE3TLO4ROyqu0HlN1COw',
-                width: 460,
-              },
-              large: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/6S0lcbO_PxRYPM1tNVEinQ/yjtNeA97gIrUksr8Gggyr2tbkuPDjQXt3tDFng_N2qJvESKOuLGRN_o5iXu-l1Tvkeq2FZFRInG7vBlyT_UwpJDiP-KtHcWckTiFGDv6s8jhJWufDrCq2QUIDyKLTQCjJHErDQNJczunSj0wKha1qg/7HkWaNGhxpMcAQwl8J2QkOZZg2RMwnR5Bh-r0m25pSY',
-                width: 460,
-              },
-              small: {
-                height: 36,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/v9ZhkukgXH3RsSz6tId2SQ/qdtc513Xo496TAeVCdyJWHxzlUyxrJ90k1EqmxefYedbKkGNYfjgQ5Gp1KgrYpjexRCelpt0ysLfpgSl1W3M-ta1QdlpJAoIFeg7RE0PeZkDZBIw_FeY5Z3z3mihaY67FxWWw4gMRO5zg463Oa24tQ/bDS2eY_V5pgzTd37c1U2bMEpsxCBo_1zrdf71jxDMiQ',
-                width: 36,
-              },
-            },
             type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/9a/09/4b/9a094bd4-54b6-4f58-9c1c-c5cff1135deb/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/230x0w.webp',
             width: 460,
@@ -700,23 +438,6 @@ export const frenchApps = {
             height: 460,
             id: 'attApGQGwN95HzjyR',
             size: 5614,
-            thumbnails: {
-              full: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/slXBBhaYJp8QR5aNNVxx2A/b_sC3d1mADyKxYikk7kZNPV_q9GeUZvFeTaQl9itDlOJr1-Vql3W5FF9ZqywzSG7CeoFxdW_qMLXAJaf0bIpQVh9BEkEnMccgBY7VvxxIanDE6ZTHV1Tp1S3O9fC5AWQjIg3s-1DiGpqIv2h1-S6gw/4g6F1VPNYZ4znogQhArGEgV5IM44E4TTQ_JTg99uy_c',
-                width: 460,
-              },
-              large: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/qLnduPOVid4Iy4DwTo3raA/A2lVJWZgt1a1x_9vLUpiRrA1Z01ymTfss8Bq0tnZ3D8BohUEFLyohgCW5IIP5ATIZXoPm9CSbosu55Ica9nLRWpfY0GkQkUwCop53H7iINJJY7fsGaKAc_GGN27Z2Bmwh0ce-JU3db7AdqbDS3vh8A/qUqYGUYW1OyPPGhO4572tJJ1ZzYZPeeWcniuGE8HMPA',
-                width: 460,
-              },
-              small: {
-                height: 36,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/tNugmhLQOqPEicrBIJ9qgA/zfHLWz1BvoEnJ1CRRJMzbKMvyu3Tp2rdbVGNH8mG3ExKf0kGSmRLX17-bYooqzD4C1zS-yV3Pd3OWKMu77nJyHxKLa7HAIZDGcz9k4ASBLmYmZMlpoe9a2M1ZFZZ-i-3Eis99xJl00r-O3TvdCQibA/SyVzxrWggVCSSWEkGIhCjZsARaRJrAzqpzNvkcen8k0',
-                width: 36,
-              },
-            },
             type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/4f/77/1c/4f771cb7-fbea-c144-986c-d42a1a294411/AppIcon-0-0-1x_U007emarketing-0-6-0-85-220.png/230x0w.webp',
             width: 460,
@@ -740,23 +461,6 @@ export const frenchApps = {
             height: 460,
             id: 'attdnmbFtvbXCtUj1',
             size: 4674,
-            thumbnails: {
-              full: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/WHgMjpa1vEn1qSgTjUS9zg/3n6BEg0osjLUVp-eWX6fWMvmoLUo90ZpIkJvmkZy8WTZYha_J1gl1bnHsJ5Jz5NO2MPudJz6tuw_2lrIwzlgPZ6EIduSTT-ep9sBoUpcj4hrXAIDClghj5HAWhmf91IXIXkccJRU92mNGOf2T1iLiA/4o6qWJuSyx5-HGKRUv-MRdAj2PosTlSSewE54FEcgRw',
-                width: 460,
-              },
-              large: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/4gZ5_oO_o295H4frus8AfQ/4v8UjOvsL2iHFJbn1gcUA50KjHnCY--_mez-iGzGZMVfXLUnArOBtwIApVum8IURAMi4SM24fQIQnmTpx5z_5qZk3lp7ShjtcyBsRzWhiqVf2Y-t1FDXzmHxJP3LzsnUE0kL17tmMyXtYzj7BYXkpQ/lsdu52socWSi_k_RoZceobPMmAUqqw4rCtoZvbxtQYE',
-                width: 460,
-              },
-              small: {
-                height: 36,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/O8xifa8eYo3LD8KnlRdV4g/FPj7Lh6Y5HogJzJpY04KIuh6rtvZk0bG3uouNqap8-FqFKqgvBQvbVUWvygeMMNG2-qzT6YqJnpjkYgO2gbwNN87ciu313vXeuKrTmYexs5kOcpcJuWb51q7wcNQqj4A2vsjI4RjiHsU3WUrmZNPXQ/g1NCQCOl2BdUT03dIX5bSA0pAdIAEVnpEblpaX43w_A',
-                width: 36,
-              },
-            },
             type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/9c/a7/a4/9ca7a47f-c6ef-41ea-4965-c746df6505df/AppIcon-0-0-1x_U007emarketing-0-5-0-0-85-220.png/230x0w.webp',
             width: 460,
@@ -781,23 +485,6 @@ export const frenchApps = {
             height: 230,
             id: 'attDcKtSIltfOquC7',
             size: 1862,
-            thumbnails: {
-              full: {
-                height: 230,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/pclOkkQw-aO-eplEY-oHTA/cYwGwhFn1JU0HQofJmJCysLAgaKT_Ul-27R1qlaDsQ5M4kvz1UBbfvbExH1dWkJ-YMoIhOqfXIiZ_WSzLQ3mCf3fkJofL8_7VA1MnHjQC5pR6F-Xyu4h6thZSKRDVav69uWuR38SrBvNQkoUUaZmcQ/iUPeh9a9scsimGq-FfWbCnYhFMwrk0Y-JEyb2K0fUUg',
-                width: 230,
-              },
-              large: {
-                height: 230,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/deQi17PdUPRWRWs9LTdM-w/dvhFN9zmd5ZlgvGhAjD06CHYaQTcE7yGKC5byz6_3NSXcV-B27rQFpQ39fSslxIvDNnSDLqzaTw1k88JfUuwYsNUCqnWkOspQfs57lFZ1COojvm-lLbDpunez0koRhBh1rV9IoyvWk9bqQeeHLSHuQ/BGTqZ7syuEWYfEZPI1zH_bHYFKg1uUQN5drF8urAJO8',
-                width: 230,
-              },
-              small: {
-                height: 36,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/wXZk7nqwgjvEODbP8szOTw/nkvHsWh57qP-Ye-_FBu4tti4lWV7ofrNizGFw2qA7F0EdJsEZERYcRbeOc2lP-BIH_Eb_6Wk8eBWNDzZc0eH16-BKePYI53x7sObr1Da02H1rqt3BXXdpXvp0hxq0S5Son1YEB8KhHiLeTkOxxs43Q/W8M-qo2kawbXxomHGOcxXQ0oD4sIhZAAyOu7rZ3nZ-E',
-                width: 36,
-              },
-            },
             type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/15/77/f7/1577f708-b52e-6bf3-8cd2-e2808cb87018/AppIcon-0-0-1x_U007epad-0-1-85-220.png/230x0w.webp',
             width: 230,
@@ -822,23 +509,6 @@ export const frenchApps = {
             height: 460,
             id: 'att4l0VuMrvQskmwg',
             size: 3796,
-            thumbnails: {
-              full: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/ncavB-oWqZczAF_gxvpO3w/RHaigXMVAYs0w1JR-ZBEw2zv2a6t3dI4TAbaeZkzf7OGMqXdcYVgcTUuJ1PmcK5NLG1CBjgt2xbH9hnn23AxaFQTjW9x_7ZZnIbldo41ONyOMpKLqBvJIcIScU0kfzllW1dBQXFYgY2iQIK15NC0kQ/IGc4o3tykkrnxfuMl9TCXHIHE74kJaE7D1EXIUOt1mE',
-                width: 460,
-              },
-              large: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/ber3IcK9BSQRqW4bLcAWnQ/VnL7xNxzboLe0yPKF1PKocwc3kituFzDBwgrevEoG-aujX-XyyfNfa5z3sRl-hAywjFlAx7gpDkgVjNtA9MhJkGu2Pbyj5Kc9dfzdB8rxDi6B9nMg6fs_UhAJdlW1fBJul2hz8m6bI3jHEzrlnLPiw/SgfWgwmw3Z9jOwnO-LLIT6xRLNt4u72Yj4ahuShjO_o',
-                width: 460,
-              },
-              small: {
-                height: 36,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/0p2XMa2KC9CeqwaKDsoqpQ/_0YnXXY8f7nROhc16Q_tce6xCbz_WgZpHJH1KBebhZMS8i2iBXVN69oGCHrnhQPfeju0xTUcGufNbTcXHimi6ffCcj2dhx8ZchuAOBYKsO0PXdjkNoIlUjQx8Or4O1FkBvk2_g2b-OFLb5Ps-5z0-Q/PV6qJ_SPnR-HuzXGFzGniaRrM9jT5fFwOO5PKPuYFkw',
-                width: 36,
-              },
-            },
             type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ba/d3/e4/bad3e466-e404-4ac0-2c5f-51c540c8b2f3/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/230x0w.webp',
             width: 460,
@@ -863,23 +533,6 @@ export const frenchApps = {
             height: 460,
             id: 'att1LDCpyQwGgrn4M',
             size: 5046,
-            thumbnails: {
-              full: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/jvzEJ5kVTHyNSavfvn8PWg/3TxrVuTjGMPfv3b2j4dKghNlPHLqzDMET2pzVXXwLZg8B1r4SdikwZlDIB9T1O65MoM9zCpNfUBgKzHK3yOzclmuvzrpQBtqBKszltimJhyySVrOXgmyZ-hTCa15PcaosmVPkwpoT_OzlXmRnzxjQA/NG-EJAHzzwlfXJYPYtvUE-_1_yBvzLXvjNRikqOuAOU',
-                width: 460,
-              },
-              large: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/4E0dfyz2vrsHTdk0d2IBww/RObjQjaPrQEmahQBZ6Zmi1Vwd6vIbWWjEjxYk46BjmhmKjQ6mavC-C5oiTNyaS4hrd6g3iuc22O3DTcP6-Wkxeib39WIP_YMWILNg-LH-zSwtGY7qKP4-xQt2-gVCTLilB0HJtzeWkrjp4-LrWC36Q/ALXN6xxGKx17kEIcgmDFeOsGRrMDSRlfYCK0u_3HmO0',
-                width: 460,
-              },
-              small: {
-                height: 36,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/_vgMBkQC0OmU9Wmfqmicgw/EG71oIdU9MtvZt5DKGqoMj2KT5oTHsvc21BHzZNeCo5cYrXVI_uuTrFUH_mLKEPFp2Ww7pF7wu1Vkh7c7rK_5jzEHllk4d--M7lXTzGqiVWs4S7zFX8oYhD22RuZ5CePqx8yFuqSsps4XG52Tx9DZQ/rBwd3qSF5acU3OFlX6oWvL09O0Pll46Wnjngxf4L10A',
-                width: 36,
-              },
-            },
             type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/3e/aa/9f/3eaa9f25-e70b-bd59-e554-81774c0601be/AppIcon-0-0-1x_U007emarketing-0-10-0-85-220.png/230x0w.webp',
             width: 460,
@@ -904,23 +557,6 @@ export const frenchApps = {
             height: 460,
             id: 'attEEpdryyf0g8E9x',
             size: 3158,
-            thumbnails: {
-              full: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/OFb41ZS47vUAZudV-_MjXQ/iEqQiymJCbMxR2WlubMQFdM900p-0gZrCJcL1LlC-skm2VKKO33lLgav9Z6uxyM1xfRJ33_1GYx0VYp3GF1xK6yuqVLDxRD_ppcp1Dw4_86NQ4UIH6Wnr2e5bQExg2k3_S2OqVXmp0b9ycGSW7Kpig/-OytbSEEY0kawJpaeh4ESwgzQnelrNMxqPMkxrnxMoU',
-                width: 460,
-              },
-              large: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/91M8AFi4pmRp7e6RCjKEAQ/y1EU812OOzTJgbS1E8R01v1n9sN-ULKT3K4MA77moFEfCowskyE7KHOYAuU34fV6VDAaDHr1cVf0BqBkymvUvObA4KzLSO0l_njASQ9o2hUoREFs6R9x2t7fNfOzr7Z_svQrjNsaX67mP06E1Allbg/WYIrzmwiw1zHh3JA2uJUOgqqzH3PhqBYhsNOE8qfiyw',
-                width: 460,
-              },
-              small: {
-                height: 36,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/4ew1hqmQ212ST-gpXkDZFA/WTvxWDD7it5sGMehrSogjEFuDZnVma2APlstR0Fv7eaQR793IPKzAs8TMEdZ_tELFrNTrm6Np2yhXfCslPES7m4ethmfN8ztHgKz2UM01m-4ZlCcSQJiPvk3CM2HAHyTeS9_kFGwdxt2Q2MFRMXJiw/KWa0KtaVXVEZL986m0qpINspQY4oBkovII9h39leJFk',
-                width: 36,
-              },
-            },
             type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/b4/c0/07/b4c007c8-34b5-b668-381b-30b1240a80ea/AppIcon-0-0-1x_U007emarketing-0-0-0-10-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/230x0w.webp',
             width: 460,
@@ -944,23 +580,6 @@ export const frenchApps = {
             height: 460,
             id: 'attuTzkyki66X4zSp',
             size: 13404,
-            thumbnails: {
-              full: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/jUhe0bwCN1k_EEedVL-yrA/BhmpafnCscASh_FCZDxtQdnJsTwMU2aMyG_591HkJ6u2megqMoOrVP3Yr-bD2Iby6oJeMMIOztTtGBBSLaCC-CvNbZ316WGsERLTbPOIWN34UERWsv8eCJLwFUh2qDGblu-WuDpFKW4J6kpK3JirjQ/2BnCh3Kh8fwxYEwwY31ZwAHkDlN2Zinxm3HkXlPKjX4',
-                width: 460,
-              },
-              large: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/X6NID8JnXDP9h0rhlYRZMQ/XS3GzJlnN_759scRSShNRZ2qCnASKT_63De9iJKg-6Tn-cvctwKhYO1NsFKRwebb6KwRBfduGTjXhxSTk_oByYRrMkwvInEKlJV94D1w7kdVFGzljgsllay2e1AJLabozBG043cZf7m-S9nrFIZaVA/46iPTQhVwZrqMIjzDVo5sqtq6NvNXB6o3i99kz0LUeo',
-                width: 460,
-              },
-              small: {
-                height: 36,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/JPCyt3uevLWCYquL6opo6Q/mfrn7oBTgprhXxV-uAzAHrYz0ME22WEsj6Z0W0ClHkhFOkfzHS-ZL2gvoRbtsZQ09r7k1Py-hCrnwqdabj1nzjFWt1Jx0NCKpS9vOr-foaKcr3oP7RtcI9wOjsXXX3Be5nMTzzv090f9PNmgZ_U_4g/3WbjkHK1NbJTsJCmByFubMpIPsL-0Bqla2qHVuY_rqQ',
-                width: 36,
-              },
-            },
             type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/e0/99/d3/e099d379-09ed-b0dd-1994-fc684f9629be/AppIcon-0-0-1x_U007emarketing-0-5-0-sRGB-85-220.png/230x0w.webp',
             width: 460,
@@ -986,23 +605,6 @@ export const frenchApps = {
             height: 460,
             id: 'attNyQoI01RQgTbTr',
             size: 3196,
-            thumbnails: {
-              full: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/tmWN700aX5nQS004cJpIcg/tnm2l7Xc5OhQn68Y4E6ScvKmvr4skpQnPX0PA3rRSsgwi-4NrH0b54aM4I_uk5mQMuW1jwgXzhXoOPvk4iP4voKrd2HawC2C25TtJEDFbbT3rT8S1hqwzD70gwRaAbWhRasJAYABgF3tqvPBowOthQ/9GzBIlP7rgoYRkoRsO00MSEh5x8Mb-MAYKYmKHh0dIA',
-                width: 460,
-              },
-              large: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/zswF-Cse9bg0o8gQ1lU0Lg/lMyiTD_ow4Nhac9gjhPshY6dRPi04VQeKBirC2brAFUgpQiZ-QB_1YdlR04HftPAkn_Qcx3UxGD8vYFjjXbN8NjModiRAB1hbDcXafTiYLqlFzU38K3pq4KlgBvvXB3J0TGsoK-zu564OXlhG7k25w/A-hgmrTFtIb304s5HtL9eFNa3KFpt7s8VhGuLGVLf8Q',
-                width: 460,
-              },
-              small: {
-                height: 36,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/7x-fRCTJfSsNkxigP60zhg/ihKE3MCld_JC0ckbGU8o8wUeEptPxANB2y7V9yE6GHOzhaq_bjjeb3IR6YgmhW9so3RVEZwQgzLFYoe1d2b9YuNXkmRqaF2aYumkqQ5vtfsMs6pO8Acf7yANjU35eMcs1bPO7B_g8Yx0E2z9wCF0Rw/u4PQ7TLTqdX6wwHIVVTC8KEhDflZe4XvmyR4fFDKIjs',
-                width: 36,
-              },
-            },
             type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/83/0b/c9/830bc98b-89f6-b277-33b3-c2e57b4bd8d2/AppIcon-prod-0-0-1x_U007epad-0-1-85-220.png/230x0w.webp',
             width: 460,
@@ -1026,23 +628,6 @@ export const frenchApps = {
             height: 460,
             id: 'attdJsnSljEI7cT86',
             size: 11636,
-            thumbnails: {
-              full: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/zC4iCRz9aXZaO1BzIkHZmw/EUvaKSAQSCKc8ZpUigchqp1xkUydAlASy52Bk5dGXZvoqrfUoTijBf5QaUjrNEvL9Ok99-bSsfY_UstBNLrIShE_mDhZ-29k9okz_8xrI6JYrYm6vXbxOn6nMJiDhbqvBlK9BS5UHBCAaY53yAPKqg/k04eRgZ1Umdi1Ej8yLSd0rPoZ-HI9OuFc7jOv8f3S84',
-                width: 460,
-              },
-              large: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/f6QdcNFHzLoDjHx4X8FbiQ/Dt7AJxcip9lb4nBSY7vcRzGiUX9UAfFMK_YV0zVzku5YRXxHa_eiUDxn92IAeYaermNBuSm2AZut8PuNElYgHn8jXQbEPg_pDw8cs8WKRWHv-6Lm-q_9YkOlD7yWCczr1HFMrRUxKE2MsC1LHVGtxg/nghQ_LK0HpP7OHH1HWcIi9PXnoM8CCItgTysDY9nlg8',
-                width: 460,
-              },
-              small: {
-                height: 36,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/Zbp2NQY7r8aXccF1scpIsw/GTBYa75DtJTDpcBy9wKIjlGKZHEFLTmKWOA41HM5SjDEkp7tZthYjD41cUeGdjL3RcYY66h-42r5fy-RcN8uDbMmECAHtS8_isjGrBWWHP0f2uoMIz3Gcu4vkL9el0EDnWVNA2bs8Eli-kmfQcb5mg/jTromGOpGyXWRjLleG9eY3mekbpTywT0o0g_Vua03rw',
-                width: 36,
-              },
-            },
             type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/1a/e2/1d/1ae21df3-7c50-dbfa-feb2-4d8f6dc1f56f/AppIcon-0-0-1x_U007emarketing-0-10-0-0-sRGB-85-220.png/230x0w.webp',
             width: 460,
@@ -1066,23 +651,6 @@ export const frenchApps = {
             height: 460,
             id: 'attkPokcJBVccc4DR',
             size: 7606,
-            thumbnails: {
-              full: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/Xie4pUS10hzm1s1reO3U-A/8EKtC87-0wLePTSL345Gtjpcu4K9k-GlHzlId2AsiqYElmN1R4vdbrSCjvhY_k5mPg1qXH28ZHJk9SSTt7Eo0WytyKI4ATXoNi2KGnE59haF2x0emffa4XarAhSt6W3b70eaFlLln1NedxXbf5xrLA/-B6lPizqdf20WLR488IDm1CF1BWjhqFVzcDO4sraPaw',
-                width: 460,
-              },
-              large: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/vWkYcc4pnUVyu8IJEM3A7Q/xbQB3BW-t0rpgfTx3_91lAo1Qgzj7oeh5tiNhR7HwfarJpZWDr24ddDzlHo9EdCxpeP4FAWmb8hN4zCTy4RipyiG5-jqp2dm1-s_JG8bqLAfhKax_ViN3Vgu-mImB2DqY7luDJWovTzVvVJfM0SnxQ/4Uu8pqncGQKlGLlaCCpZl-XlUz5Ee1L5ju0BIFDEi4k',
-                width: 460,
-              },
-              small: {
-                height: 36,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/AuplPAUhY47hhuipxxhc0g/eRh33KNCzEWgsJKRZY0izSTlWtKlHsgcQoq2QgcTVWU1WVlbndPfULLvCJHUUbP32Zv7fG_kpglVDA2rxYaLsNBsnN8geWMPWI9erxrWdWaZpoYv8r9s8MDPZv8-f6fPHrmyX6B7sNGxveXdoQiuOw/sboxNT0b-w24b7HfS9E75cUzfN1oGpffeTfxtHiTvok',
-                width: 36,
-              },
-            },
             type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/51/49/95/51499550-5381-c386-66cd-3ebfbd91603d/AppIcon-1x_U007emarketing-0-11-0-85-220-0.png/230x0w.webp',
             width: 460,
@@ -1107,23 +675,6 @@ export const frenchApps = {
             height: 460,
             id: 'attHI4PjZoSNBVVNt',
             size: 3570,
-            thumbnails: {
-              full: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/VuDM9paAXGVO12ckj6YY4Q/PIejYl7aPrXkng9WAAty83rsuQTIWe_No0YJO9kSM9cO2jjq46GOCdTUXu9XDb0ONhnfDlgUQJOMznfqRM1WylafIrOQECvBhq6prqfJSdR7tyDn29s3v9OY3XP9HZtpNQj2He-9yS8HGbaNpUKaMA/N6jkZJDD-2UwGB-ivKQHmYnz0lUjClLLBHn2K0wJiHk',
-                width: 460,
-              },
-              large: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/0iqek6M1G1hj2ugpKfNLfw/c2skh7BZUmV8GPQUySGjEbgb7yRh5ZnyqJ1gb_JzX6GJW4RWJErsfyWRS6ui1uy35cdyiL7_SI2LzyY0jxeJFMWcOuoCF_Bt8FQtWsJWv_u2OA00LgCmlp-qQNeNSh2TIUEj_9B55CzG5Uy4TKLSfg/XfJbDomjl2Xr9o5dfqQam5As_fgsWAdtC-M1DhOprkA',
-                width: 460,
-              },
-              small: {
-                height: 36,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/5YwWME9bdJJI_yJLFRcKeg/ek8mgFva1F-HjLKZxrktmef37dNRH59dfc-XL3E1EVFdAcv7u-EC0k4xJHEM8QcaLPcXRadl6vHpu84aEyL1Dg1y6bBkXEaSvOFEF39P8Kj-E_SS90442fldhj-otVsFKD3PTk5XZT0iGxO-q0yf-g/9ptD4FSHqzr46n5_z1XFCJ1iXttn7dQtVm__G7euJa8',
-                width: 36,
-              },
-            },
             type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/41/51/01/4151014b-a86e-c8f2-2c1c-c25a0f9416e2/AppIcon-0-0-1x_U007emarketing-0-6-0-85-220.png/230x0w.webp',
             width: 460,
@@ -1146,23 +697,6 @@ export const frenchApps = {
             height: 480,
             id: 'atti3pm7VWdbeKBRE',
             size: 15870,
-            thumbnails: {
-              full: {
-                height: 480,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/QXd9AeyN0ACofENDsSOseA/xuG9sP1KHKc6UmJuOfuLIGhK_Kl9aFwMrib6CoXvPQ0l9dPh3ygQImjA0URue6RTUeWXm_yNL7DZk3QiZ8oHwK01VMpil7gQmCv4x2s1mdSWjL-9JQ9ga0UgUV29wHL0NjvqZ_Gd2Kf6R-kf1WbDuA/BsOhg9K37dyT4PQpH6EZmCcOVH7sMwze8uvS3bMjI-M',
-                width: 480,
-              },
-              large: {
-                height: 480,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/YiJJx3bNwBXs1EtPfNPYiQ/pgPFSjgNNueqm0RszRdi3scLy96799OuUwMjtDCI5Kh6uQj5q96bAZHxpZDPMck34_y_7s0mFi13mQ-UQW1RBrpNFI_xpjW5O8UjdfMDIPu6S9Wfdm9GAN7EAJqPwcMBTbhOzqlAu1vSNEl8A6t8ew/dnqMWHXUNbtD3sbkEOCT98__dIzTyku55cH8Ko0-QaE',
-                width: 480,
-              },
-              small: {
-                height: 36,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/AddCLKjD69ySRyEICzGXcA/Xigr-t3E5KwsvljneW1sie4dBZdqdfORKlA-zm1JAnyn9KuRiFgL5pXFMO2CIO7t1DinXv2cUBBYXugMWKQBlvd60FPkp2ePmFE2eUntN8kSSnRQUCllN0hzUFQ8qYaSevuFxqzVg4ipELSkjqzhNg/tSbPXB13MyMK6m1fAdlntthoJE9UJw8FGzCtJGJBV18',
-                width: 36,
-              },
-            },
             type: 'image/webp',
             url: 'https://play-lh.googleusercontent.com/7A5YEJrg4N08VkfSsD84ICF9TVl0p0uMekVfvn5uk5yiucl-D5BpqjH8pcE5SP8CeRw=w240-h480-rw',
             width: 480,
@@ -1187,29 +721,14 @@ export const frenchApps = {
             height: 460,
             id: 'att4xvePf70Nd10i9',
             size: 16524,
-            thumbnails: {
-              full: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/jt2SPJzd0yQ9HS5Mp9-dcA/tcRDVKB5pcXFvZVc_qZ9owpyu8iTOy2Lath8r38ogVcElP_QILUwIQeHeH4ocRfSNLFUcDriW5XcfaC10iFCVAhioJzlrmDk8Fht3Tj3fp4biolzAvKshUa54iau3m2fuhZJHZXb5x1z9-MqjPdPWw/mVU1Aks4ZpcjYyRlTkIIU9F3DNFC4jrS5NQjcYWvvmk',
-                width: 460,
-              },
-              large: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/-08HCrEI_-8iCJnlWCxE0w/nTf0NpPtO5Dtbx36eGbaSu2mWB2P4m1b94P2ed5pfyLXEtsgFPjiN2E6KKAql7g5k872V-eF7LbeP7lIn4ZD9rJJlJiPlhk-xgmemROueWlyKMHsKRrgjihZ-np-2mMP-Ioas5XXV7wcCXybHiglzA/9JoMjD-Qm7hRdE_5EbqUI6aQF74nTUNmdkXDSvjk7ok',
-                width: 460,
-              },
-              small: {
-                height: 36,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/AytAEEaj4Mrb6MDRhBS7UA/cUz4wEsDtISGAjZqm4siKl2WiUtDDxuItVwEioM11-Fs5_t9MZbvYb1ys75laPPeVt0anoZsKREZ225qAoW6t1EEgd-fRxkiaCQQFveZ3AevwV-WQrkT_rUEwF52DVvcPUTstdM9wcR1KHqeR4TH-Q/JJnOqJQtw3nRT_0Q34MQqBT1f56aRwsopfvYpxEdJB4',
-                width: 36,
-              },
-            },
             type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/15/ff/24/15ff24da-3615-8cf9-d4ea-f621f9851fc8/AppIcon-0-0-1x_U007emarketing-0-1-85-220.png/230x0w.webp',
             width: 460,
           },
         ],
         name: 'Alan',
+        podcast_url:
+          'https://open.spotify.com/episode/7GxdKx5EsfhTwnhCBitOau?si=0645c020f5754e58',
         website_url: 'https://alan.com/',
       },
       id: 'rectEnvV1gJ8I5Hwg',
@@ -1228,23 +747,6 @@ export const frenchApps = {
             height: 460,
             id: 'attkn0JTIrBXHbdNL',
             size: 4552,
-            thumbnails: {
-              full: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/3wCIPzFC82UIk2xFC9mCDg/dZ-sekWRlBSZKQkbK9A6tpV0L2ICWp6Pe0zFMw0CN6PERmqcGq0gDBz6yBTdGp0CJWp_n9kGlRjb5IXancqCLB3hkOiiqU-P5elvHw7NEpLMNWKfH-YWyUR13nzth9JAfyX8m0BgAni_YZI6MU-IZw/DilLbhs2bgMw77UY07nlBYWyQDBJXacqPmkR8VlC7jI',
-                width: 460,
-              },
-              large: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/6K9hmH8fc0lR-woWBOHRmg/-MGgNo8Z_uBePh9zj04o8lg0MWvuWaELk8Fjt_Z90at1x6WO35_jAj3ycHjhPdmrN-B2qKMJMrZ7Tz6GWvgCMQJWxa1u7fCvuGBfeuNWX8ZncSYHV6GiTQYX4tz83ATtcC5WdqqWaxkgmJ71jbMY6Q/SCJpUwa6kB6k6JnJOdTPWfGGmWwHRakgjAY5uHCn45Q',
-                width: 460,
-              },
-              small: {
-                height: 36,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/PZQme3lst6gvHcLOoWFM-Q/RikrrVzXP0L3qNqW76QC0A6ymOUD-9lSNQPxEGZwTE34vgK7PRtiEca5WAXIJfFQ43lS4WSg0M-WShYEGGnVGX-69SYcGPzaRheLrdi35AQW3EqsQ7dnka2v0D-69b9itbCUpGH1CWk-_VfhsYYNPw/xKZtiI_-PiMMb0nNlzuB5jaLDHFel1yOFiTXgwaUF9Q',
-                width: 36,
-              },
-            },
             type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ce/2e/65/ce2e65b3-4704-3b61-5f0e-bd820aee75d1/AppIcon-0-0-1x_U007epad-0-1-85-220.png/230x0w.webp',
             width: 460,
@@ -1269,23 +771,6 @@ export const frenchApps = {
             height: 460,
             id: 'att6stTk81vn0Vmug',
             size: 6166,
-            thumbnails: {
-              full: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/xu2xThoZnACQdu_jkcfiyg/TsNPjkaFpkKxUODRZr_1cHd7_ms4Iz_vzuSsVYnSMw0cpJOFjbf9VtMOkUF7Axj2bIEBLSKdjb9UaVALvvxxiyiGSs3wZty0nuTfefPRvie1XBYzdUfUT-Zm3e5GVre-8pD6BmsbTPhZe2Q4yBBZdA/K8oBZtY0HmDu21KqrC_PaRZ35N5uteFeV-AU3jysp9E',
-                width: 460,
-              },
-              large: {
-                height: 460,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/o295rLZlkMXaKrFEILEP_w/1m89Z5fcLGjpw02gYksjg5ILVns6l_16mg8W7qXB-uDmg3VI4fvOjAsTtYtm6xrkmgzClGI4cJJOvsnSFbkHKkVooXMoAXjs69lNK6Xzv4aRpscY5U-juifSkHP4qf-uShuGf9xUwqcmzRp7z-HCSg/BLkA4tt41UXeY4rZWOaS-qgTNqyqAY_-9B3aWLPqPOA',
-                width: 460,
-              },
-              small: {
-                height: 36,
-                url: 'https://v5.airtableusercontent.com/v3/u/38/38/1740420000000/JgsjUHgJJzzLRvzcfX0NDQ/TAkqt9cl_8mfrPy8Ftoko4_ysZaGByv9IylGCo4P6Ctm6ntH33ja9Q88l7KlBd9wGnG8jkmsl7vH3C_DJlB25D-fo29qb9SvwF7L7d-zMFN8N5KKfvoHN78SyIzMiG4LZjZox9C46Am_YeNWdyFfbw/K93EFL1LbOV4V0k18YAKisD_vSe-SeJAmohdaE3pnNs',
-                width: 36,
-              },
-            },
             type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/26/1b/96/261b966d-0ff6-2b85-50f8-a90a58858f5a/VeepeeAppIcon-0-0-1x_U007emarketing-0-8-0-sRGB-85-220.png/230x0w.webp',
             width: 460,
