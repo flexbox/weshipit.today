@@ -11,6 +11,7 @@ import { frenchApps } from '../fixtures/french-apps.fixture';
 type FrenchApp = {
   name: string;
   website_url?: string | null;
+  podcast_url?: string | null;
   ios_url?: string | null;
   android_url?: string | null;
   category: string;
@@ -28,6 +29,7 @@ export async function getStaticProps() {
     logo: record.fields.logo.map((logo) => ({ url: logo.url })),
     name: record.fields.name,
     website_url: record.fields.website_url || null,
+    podcast_url: record.fields.podcast_url || null,
   }));
 
   const categorizedApps = formatAppsByCategory(records);
@@ -88,11 +90,16 @@ export default function FrenchReactNativePage({
                   <Text variant="s2" as="h3" className="my-4 ml-1 font-bold">
                     {app.name}
                   </Text>
-                  <div className="flex justify-start gap-4">
-                    <AppBadge link={app.website_url} />
-                    {app.ios_url && <AppBadge link={app.ios_url} iOS />}
+                  <div className="flex gap-4 flex-wrap">
+                    <AppBadge link={app.website_url} platform="web" />
+                    {app.ios_url && (
+                      <AppBadge link={app.ios_url} platform="iOS" />
+                    )}
                     {app.android_url && (
-                      <AppBadge link={app.android_url} android />
+                      <AppBadge link={app.android_url} platform="android" />
+                    )}
+                    {app.podcast_url && (
+                      <AppBadge link={app.podcast_url}>🎙️ Podcast</AppBadge>
                     )}
                   </div>
                 </Card>

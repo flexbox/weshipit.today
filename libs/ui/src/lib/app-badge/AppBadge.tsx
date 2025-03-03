@@ -1,19 +1,20 @@
 import { Hyperlink } from '../hyperlink/hyperlink';
 import { Badge } from '../badge/badge';
+import { PropsWithChildren } from 'react';
 
-export interface AppBadgeProps {
+export interface AppBadgeProps extends PropsWithChildren {
   link: string;
-  iOS?: boolean;
-  android?: boolean;
+  platform?: 'iOS' | 'android' | 'web';
 }
 
-export function AppBadge({ android, iOS, link }: AppBadgeProps) {
+export function AppBadge({ platform, link, children }: AppBadgeProps) {
   return (
     <Hyperlink isExternal noIcon href={link} className="no-underline">
       <Badge size="md" variant="gray-light">
-        {iOS && '🍎 iOS'}
-        {android && '🤖 Android'}
-        {iOS || android ? '' : '🌐 Web'}
+        {platform === 'iOS' && '🍎 iOS'}
+        {platform === 'android' && '🤖 Android'}
+        {platform === 'web' && '🌐 Web'}
+        {children}
       </Badge>
     </Hyperlink>
   );
