@@ -1,24 +1,15 @@
-import type { Meta, StoryObj } from '@storybook/react';
 import { AppBadge } from './AppBadge';
 
-import { within } from '@storybook/testing-library';
-import { expect } from '@storybook/jest';
-
-const meta: Meta<typeof AppBadge> = {
+export default {
   component: AppBadge,
   title: 'AppBadge',
 };
-export default meta;
-type Story = StoryObj<typeof AppBadge>;
 
-export const Primary = {
-  args: {},
-};
-
-export const Heading: Story = {
-  args: {},
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    await expect(canvas.getByText(/Welcome to AppBadge!/gi)).toBeTruthy();
-  },
-};
+export const allVariants = () => (
+  <div className="flex flex-col space-y-4">
+    <AppBadge link="https://example.com" platform="iOS" />
+    <AppBadge link="https://example.com" platform="android" />
+    <AppBadge link="https://example.com" platform="web" />
+    <AppBadge link="https://example.com">🎙️ Podcast</AppBadge>
+  </div>
+);
