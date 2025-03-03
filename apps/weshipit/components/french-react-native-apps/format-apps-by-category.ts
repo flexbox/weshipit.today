@@ -5,6 +5,7 @@ function extractAppData(app) {
     logo_url: app.logo[0].url,
     name: app.name,
     website_url: app.website_url,
+    podcast_url: app.podcast_url,
   };
 }
 
