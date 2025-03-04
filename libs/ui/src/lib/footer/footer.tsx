@@ -4,6 +4,14 @@ import { JSX, SVGProps } from 'react';
 import LinkButton from '../button/link-button';
 
 const navigation = {
+  solutions: [
+    { name: 'Start Learning', href: '/react-native-resources' },
+    { name: 'React Native Tools', href: '/react-native-tools' },
+    { name: 'React Native Starters', href: '/react-native-starters' },
+    { name: 'React Native Audit', href: '/audit' },
+    { name: 'Expo Migration', href: '/react-native-migration' },
+    { name: 'React Native Apps 🇫🇷 ', href: '/french-react-native-apps' },
+  ],
   company: [
     { href: '/consulting', name: 'Consulting' },
     { href: '/customers', name: 'Customers' },
