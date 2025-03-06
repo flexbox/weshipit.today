@@ -21,7 +21,12 @@ export default function CustomersPage({ clients }: CustomersPageProps) {
       seoTitle="Customers"
       seoDescription="Our clients are at the heart of everything we do. We are proud to have worked with a diverse range of businesses and organizations, helping them achieve their goals with our high-quality React Native development services. Visit our customer page to see a selection of our satisfied clients and learn more about the projects we have completed for them."
       ogImageTitle="Customers"
-      withAccessoryRight={<HeaderLinksOnboarding />}
+      withHeader
+      callToActionLink={{
+        name: 'Star Us on GitHub',
+        href: 'https://github.com/flexbox/weshipit.today',
+      }}
+      callToActionButton={{ name: 'Work with us', href: '/' }}
     >
       <Prose className="py-12" variant="slate" size="2xl">
         <h3>Meet our customers</h3>

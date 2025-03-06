@@ -2,6 +2,9 @@ import { StarIcon } from '@heroicons/react/24/outline';
 import { Button } from '../button/button';
 import { LinkButton } from '../button/link-button';
 
+/**
+ * @deprecated
+ */
 export function HeaderLinksOnboarding() {
   return (
     <div className="flex gap-2">

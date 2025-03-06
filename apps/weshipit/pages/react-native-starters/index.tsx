@@ -109,12 +109,12 @@ export default function ReactNativeStartersPage({ records }) {
       seoTitle={`${recordsNumber}+ starter templates to create your React Native project`}
       seoDescription="Starter repos to create your React Native project."
       ogImageTitle="React Native Starter Templates"
-      withAccessoryRight={
-        <HeaderLinksForTools
-          buttonText="Add a React Native Boilerplate"
-          buttonLink={linksApi.airtable.TEMPLATE_FORM}
-        />
-      }
+      withHeader
+      callToActionButton={{
+        name: 'Add a React Native Boilerplate',
+        href: linksApi.airtable.TEMPLATE_FORM,
+        isExternalLink: true,
+      }}
       withFooter
     >
       <div className="mx-auto mb-6 max-w-6xl px-4 sm:px-6">

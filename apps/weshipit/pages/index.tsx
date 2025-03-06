@@ -369,6 +369,12 @@ export default function IndexPage({
       </Head>
       <Layout
         withHeader
+        headerLinks={[
+          { label: 'Services', href: '/services' },
+          { label: 'Workshops', href: '/workshops' },
+          { label: 'Blog', href: '/blog' },
+          { label: 'About', href: '/about' },
+        ]}
         withFooter
         seoTitle="Hire React Native Developers as a Service"
         seoDescription="Software development is a service, not a product. We offer a subscription-based service for React Native developers. One flat fee. Zero billable hours. Pause or cancel whenever."
@@ -480,20 +486,6 @@ export default function IndexPage({
           </div>
         </div>
 
-        <Section variant="light">
-          <div className="m-auto max-w-2xl text-center">
-            <Text as="h2" variant="h2" className="mb-12">
-              Cutting Edge UI and Enhanced Productivity
-            </Text>
-            <CallToAction
-              label={'Book a 30-min introduction call'}
-              href={linksApi.cal.ONBOARDING}
-              secondaryLabel={'Subscribe Today'}
-              secondaryHref={linksApi.stripe.MONTHLY_PLAN}
-              teamSpotsLeft={teamSpotsLeft}
-            />
-          </div>
-        </Section>
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="m-auto max-w-2xl">
             <Faq faqs={faqs} />

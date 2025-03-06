@@ -51,11 +51,8 @@ export default function FrenchReactNativePage({
     <Layout
       withFooter
       withContainer
-      withAccessoryRight={
-        <LinkButton size="lg" href="/">
-          Work with us
-        </LinkButton>
-      }
+      withHeader
+      callToActionButton={{ name: 'Work with us', href: '/' }}
       seoTitle="React Native Usage Among French Companies"
       seoDescription="Discover how French companies like BlaBlaCar, Doctolib, Ledger, and Shine are harnessing the power of React Native to create robust mobile applications."
     >

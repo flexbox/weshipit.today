@@ -19,7 +19,6 @@ import Link from 'next/link';
 import isNil from 'lodash/isNil';
 import take from 'lodash/take';
 import ChevronLeftIcon from '@heroicons/react/20/solid/ChevronLeftIcon';
-import { HeaderLinksForTools } from '../../components/header-links-for-tools';
 
 export function ReactNativeSlugPage({
   recommendedRecords,
@@ -57,9 +56,15 @@ export function ReactNativeSlugPage({
       seoTitle={`${name} for React Native`}
       seoDescription="The best tools and resources for busy developers in React Native. Find the best tools to help you grow and be more successful."
       ogImageTitle={`${name} for React Native`}
-      withAccessoryRight={<HeaderLinksForTools />}
-      withContainer={true}
-      withProductHunt={true}
+      withHeader
+      callToActionLink={{
+        name: 'Expo Launch Checklist',
+        href: 'https://flexbox.gumroad.com/l/expo-checklist',
+        isExternalLink: true,
+      }}
+      callToActionButton={{ name: 'Work with us', href: '/' }}
+      withContainer
+      withProductHunt
     >
       <div className="mt-4 flex">
         <Link
@@ -203,7 +208,7 @@ export async function getServerSideProps({ query, res }) {
 
     const recommendedRecords = take(
       records.filter((r) => r.fields.type === type && r.fields.slug !== slug),
-      3
+      3,
     );
 
     return {

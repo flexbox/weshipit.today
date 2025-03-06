@@ -1,14 +1,16 @@
-import { Footer, Header } from '@weshipit/ui';
+import { Footer, Header, HeaderLinksProps } from '@weshipit/ui';
 import NextHead, { NextHeadProps } from './next-head';
 import BannerProductHunt from '../components/banner-product-hunt/banner-product-hunt';
 
 interface LayoutProps extends NextHeadProps {
   withHeader?: boolean;
+  navigation?: HeaderLinksProps[];
+  callToActionButton?: HeaderLinksProps;
+  callToActionLink?: HeaderLinksProps;
   withFooter?: boolean;
   withContainer?: boolean;
   children: React.ReactNode;
   withProductHunt?: boolean;
-  withAccessoryRight?: React.ReactNode;
 }
 
 export function Layout({
@@ -16,10 +18,12 @@ export function Layout({
   ogImageTitle,
   seoDescription,
   seoTitle,
-  withAccessoryRight,
+  withHeader = false,
+  callToActionButton,
+  callToActionLink,
   withContainer = false,
   withFooter = false,
-  withHeader = false,
+  navigation,
   withProductHunt = false,
 }: LayoutProps) {
   return (
@@ -31,9 +35,12 @@ export function Layout({
       />
       <div className="flex min-h-screen flex-col justify-between">
         {withProductHunt && <BannerProductHunt />}
-        {withHeader && <Header />}
-        {withAccessoryRight && (
-          <Header withAccessoryRight accessoryRight={withAccessoryRight} />
+        {withHeader && (
+          <Header
+            navigation={navigation}
+            callToActionButton={callToActionButton}
+            callToActionLink={callToActionLink}
+          />
         )}
 
         <main id="main-content" className="mb-auto">
