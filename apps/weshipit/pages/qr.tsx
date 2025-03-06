@@ -15,6 +15,7 @@ export function Qr() {
       callToActionLink={{
         name: 'Star Us on GitHub',
         href: 'https://github.com/flexbox/weshipit.today',
+        isExternalLink: true,
       }}
       callToActionButton={{ name: 'Work with us', href: '/' }}
     >

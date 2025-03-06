@@ -21,6 +21,7 @@ export function Consulting() {
       callToActionButton={{
         name: 'Schedule 1-to-1 consulting',
         href: 'https://cal.com/davidl/coaching',
+        isExternalLink: true,
       }}
     >
       <div className="relative">

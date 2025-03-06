@@ -369,11 +369,10 @@ export default function IndexPage({
       </Head>
       <Layout
         withHeader
-        headerLinks={[
-          { label: 'Services', href: '/services' },
-          { label: 'Workshops', href: '/workshops' },
-          { label: 'Blog', href: '/blog' },
-          { label: 'About', href: '/about' },
+        navigation={[
+          { name: 'Services', href: '#services' },
+          { name: 'Pricing', href: '#pricing' },
+          { name: 'Faq', href: '#faq' },
         ]}
         withFooter
         seoTitle="Hire React Native Developers as a Service"
@@ -420,7 +419,7 @@ export default function IndexPage({
               Talk to us
             </Button>
           </div>
-          <div className="mb-16 py-0 pb-12 lg:py-24">
+          <div className="mb-16 py-0 pb-12 lg:py-24" id="services">
             <div>
               <div className="m-auto max-w-2xl">
                 <Prose className="mb-12" size="xl">
@@ -487,7 +486,7 @@ export default function IndexPage({
         </div>
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <div className="m-auto max-w-2xl">
+          <div className="m-auto max-w-2xl" id="faq">
             <Faq faqs={faqs} />
           </div>
           <div className="m-auto max-w-4xl py-24">

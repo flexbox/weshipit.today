@@ -12,6 +12,7 @@ export default function Podcast() {
       callToActionLink={{
         name: 'Participer au podcast',
         href: 'https://flexbox.notion.site/17af478bcb8c8018b4a9db6b13d1df38?pvs=105',
+        isExternalLink: true,
       }}
     >
       <Prose className="m-auto my-16">

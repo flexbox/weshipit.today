@@ -5,7 +5,7 @@ export const linksApi = {
     CONSULTATION_FORM_EMBED:
       'https://airtable.com/embed/app9rX548UNFBnnCt/shryVoJ3nzyeq2P4s',
     FRENCH_REACT_NATIVE_APPS_FORM:
-      'https://airtable.com/appLcVC7NmRBu1itw/pagxKprcd7i0tLxML/form',
+      'https://github.com/flexbox/weshipit.today/blob/main/apps/weshipit/fixtures/french-apps.fixture.ts',
     OFFICE_HOUR_FORM_EMBED: 'https://airtable.com/embed/shrbgrlfblUkIFovF',
     PAIR_PROGRAMMING_FORM_EMBED: 'https://airtable.com/embed/shrbgrlfblUkIFovF',
     RESOURCES_FORM: 'https://airtable.com/appLcVC7NmRBu1itw/shrWiSoEoiToGa7pB',

@@ -52,7 +52,12 @@ export default function FrenchReactNativePage({
       withFooter
       withContainer
       withHeader
-      callToActionButton={{ name: 'Work with us', href: '/' }}
+      callToActionLink={{ name: 'Work with us', href: '/' }}
+      callToActionButton={{
+        name: 'Add your app',
+        href: linksApi.airtable.FRENCH_REACT_NATIVE_APPS_FORM,
+        isExternalLink: true,
+      }}
       seoTitle="React Native Usage Among French Companies"
       seoDescription="Discover how French companies like BlaBlaCar, Doctolib, Ledger, and Shine are harnessing the power of React Native to create robust mobile applications."
     >

@@ -1,5 +1,4 @@
-import { Example, Header } from './header';
-import HeaderLinksOnboarding from './header-links-onboarding';
+import { Header } from './header';
 
 export default {
   component: Header,

@@ -1,12 +1,6 @@
 import { Layout } from '../components/layout';
 import { Customer, getAllClients } from './api/client';
-import {
-  LinkButton,
-  Text,
-  ClientsList,
-  HeaderLinksOnboarding,
-  Prose,
-} from '@weshipit/ui';
+import { LinkButton, Text, ClientsList, Prose } from '@weshipit/ui';
 import { linksApi } from './api/links';
 
 interface CustomersPageProps {
@@ -25,6 +19,7 @@ export default function CustomersPage({ clients }: CustomersPageProps) {
       callToActionLink={{
         name: 'Star Us on GitHub',
         href: 'https://github.com/flexbox/weshipit.today',
+        isExternalLink: true,
       }}
       callToActionButton={{ name: 'Work with us', href: '/' }}
     >

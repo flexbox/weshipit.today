@@ -1,7 +1,6 @@
 import {
   Button,
   ClientsListHomepage,
-  HeaderLinksOnboarding,
   Hyperlink,
   LinkButton,
   Prose,
@@ -49,6 +48,7 @@ export default function AboutPage({ clients }) {
       callToActionLink={{
         name: 'Star Us on GitHub',
         href: 'https://github.com/flexbox/weshipit.today',
+        isExternalLink: true,
       }}
       callToActionButton={{ name: 'Work with us', href: '/' }}
       withFooter
