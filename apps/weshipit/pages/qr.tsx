@@ -1,7 +1,7 @@
 import { Layout } from '../components/layout';
 import Script from 'next/script';
 import { linksApi } from './api/links';
-import { HeaderLinksOnboarding, Prose } from '@weshipit/ui';
+import { Prose } from '@weshipit/ui';
 
 export function Qr() {
   return (
@@ -12,7 +12,12 @@ export function Qr() {
       }
       withHeader
       withFooter
-      withAccessoryRight={<HeaderLinksOnboarding />}
+      callToActionLink={{
+        name: 'Star Us on GitHub',
+        href: 'https://github.com/flexbox/weshipit.today',
+        isExternalLink: true,
+      }}
+      callToActionButton={{ name: 'Work with us', href: '/' }}
     >
       <div className="mx-auto max-w-2xl p-3">
         <Prose size="lg">

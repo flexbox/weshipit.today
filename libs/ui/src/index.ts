@@ -21,7 +21,6 @@ export * from './lib/fade-in/fade-in';
 export * from './lib/footer/footer';
 export * from './lib/avatar/avatar';
 export * from './lib/gravatar/avatar-avengers';
-export * from './lib/header/header-links-onboarding';
 export * from './lib/header/header';
 export * from './lib/hero/hero';
 export * from './lib/hyperlink/hyperlink';

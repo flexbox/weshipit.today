@@ -13,7 +13,7 @@ export const people = {
       createdTime: '2024-06-19T19:54:35.000Z',
       fields: {
         name: 'Matthys Ducrocq',
-        status: 'busy',
+        status: 'free',
         type: 'team',
       },
       id: 'recsDxv4hwKZkyHxK',

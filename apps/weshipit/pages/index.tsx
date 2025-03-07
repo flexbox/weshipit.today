@@ -368,10 +368,20 @@ export default function IndexPage({
         />
       </Head>
       <Layout
-        withHeader
-        withFooter
         seoTitle="Hire React Native Developers as a Service"
         seoDescription="Software development is a service, not a product. We offer a subscription-based service for React Native developers. One flat fee. Zero billable hours. Pause or cancel whenever."
+        withHeader
+        navigation={[
+          { name: 'Services', href: '#services' },
+          { name: 'Pricing', href: '#pricing' },
+          { name: 'Faq', href: '#faq' },
+        ]}
+        callToActionButton={{
+          name: 'Book a call',
+          href: linksApi.cal.ONBOARDING,
+          isExternalLink: true,
+        }}
+        withFooter
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <FadeIn>
@@ -414,7 +424,7 @@ export default function IndexPage({
               Talk to us
             </Button>
           </div>
-          <div className="mb-16 py-0 pb-12 lg:py-24">
+          <div className="mb-16 py-0 pb-12 lg:py-24" id="services">
             <div>
               <div className="m-auto max-w-2xl">
                 <Prose className="mb-12" size="xl">
@@ -480,22 +490,8 @@ export default function IndexPage({
           </div>
         </div>
 
-        <Section variant="light">
-          <div className="m-auto max-w-2xl text-center">
-            <Text as="h2" variant="h2" className="mb-12">
-              Cutting Edge UI and Enhanced Productivity
-            </Text>
-            <CallToAction
-              label={'Book a 30-min introduction call'}
-              href={linksApi.cal.ONBOARDING}
-              secondaryLabel={'Subscribe Today'}
-              secondaryHref={linksApi.stripe.MONTHLY_PLAN}
-              teamSpotsLeft={teamSpotsLeft}
-            />
-          </div>
-        </Section>
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <div className="m-auto max-w-2xl">
+          <div className="m-auto max-w-2xl" id="faq">
             <Faq faqs={faqs} />
           </div>
           <div className="m-auto max-w-4xl py-24">

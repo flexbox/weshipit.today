@@ -13,6 +13,7 @@ import { useEffect, useState } from 'react';
 import round from 'lodash/round';
 import { HeaderLinksForTools } from '../../components/header-links-for-tools';
 import { useSearchParams } from 'next/navigation';
+import { linksApi } from '../api/links';
 
 /**
  * Search throught airtable records by filtering by description
@@ -66,7 +67,13 @@ export default function ReactNativeToolsPage({ initialToolType, records }) {
       seoTitle={seoTitle}
       seoDescription={`The best tools & apis for React Native developers. Accelerate your product development and improvement with more than ${numberOfTools}+ design resources and tools.`}
       ogImageTitle="React Native Tools"
-      withAccessoryRight={<HeaderLinksForTools />}
+      withHeader
+      callToActionLink={{
+        name: 'Add a tool',
+        href: linksApi.airtable.TOOLS_FORM,
+        isExternalLink: true,
+      }}
+      callToActionButton={{ name: 'Work with us', href: '/' }}
     >
       <div className="mx-auto mb-6 max-w-6xl px-4 sm:px-6">
         <Hero
