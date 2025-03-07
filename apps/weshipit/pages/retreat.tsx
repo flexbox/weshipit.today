@@ -10,17 +10,7 @@ export default function CodingRetreat() {
       seoTitle="Indie Hackers Coding Retreat"
       seoDescription="Looking to take your project to the next level? Join our Indie Hackers Coding Retreat for a week of immersive coding, learning, and networking. Get personalized guidance from experienced developers and connect with like-minded indie hackers."
       ogImageTitle="Join our next coding retreat!"
-      withAccessoryRight={
-        <Button
-          as="a"
-          variant="primary"
-          href={linksApi.airtable.CODING_RETREAT_FORM}
-          size="xl"
-          isExternalLink={true}
-        >
-          Join our next coding retreat!
-        </Button>
-      }
+      callToActionButton={{ name: 'Work with us', href: '/' }}
     >
       <div className="relative">
         <video
@@ -111,9 +101,9 @@ export default function CodingRetreat() {
         <Prose className="mx-auto mt-12 max-w-3xl">
           <Card>
             <Text as="p">➡️ Next Retreat</Text>
-            <Text as="p">📍 Marrakech 2024</Text>
+            <Text as="p">📍 Marrakech</Text>
             <Text as="p" style={{ marginTop: 0 }}>
-              We‘re excited to announce that our next coding retreat will take
+              We’re excited to announce that our next coding retreat will take
               place in Marrakech, a vibrant city that offers the perfect
               backdrop for creativity and focus. From stunning landscapes to
               rich cultural experiences, Marrakech has it all.

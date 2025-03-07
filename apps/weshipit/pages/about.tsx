@@ -1,7 +1,6 @@
 import {
   Button,
   ClientsListHomepage,
-  HeaderLinksOnboarding,
   Hyperlink,
   LinkButton,
   Prose,
@@ -45,8 +44,14 @@ export default function AboutPage({ clients }) {
     <Layout
       seoTitle="About"
       seoDescription="Our philosophy is simple: the more you automate, the more you innovate. We are dedicated to creating delightful React Native applications."
+      withHeader
+      callToActionLink={{
+        name: 'Star Us on GitHub',
+        href: 'https://github.com/flexbox/weshipit.today',
+        isExternalLink: true,
+      }}
+      callToActionButton={{ name: 'Work with us', href: '/' }}
       withFooter
-      withAccessoryRight={<HeaderLinksOnboarding />}
     >
       <Prose className="m-auto my-16">
         <h1>You might already know us</h1>

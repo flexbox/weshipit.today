@@ -5,7 +5,6 @@ import {
   Hyperlink,
   CardHomepage,
   LinkButton,
-  HeaderLinksOnboarding,
 } from '@weshipit/ui';
 import { Customer, getAllClients } from './api/client';
 import { Layout } from '../components/layout';
@@ -22,7 +21,7 @@ export default function HomePage({ clients }: ClientsPageProps) {
       seoTitle="React Native Experts"
       seoDescription="At our React Native Development Agency, we specialize in creating high-quality, performant, and scalable mobile applications using the latest technologies and best practices. Our team of experienced developers can help you bring your idea to life and deliver a seamless user experience across all platforms. Contact us today to discuss your project and get a free quote."
       ogImageTitle="React Native Experts"
-      withAccessoryRight={<HeaderLinksOnboarding />}
+      callToActionButton={{ name: 'Work with us', href: '/' }}
     >
       <Hero
         title={

@@ -8,11 +8,12 @@ export default function Podcast() {
         'Le Cross Platform Show, le podcast sur React Native animé par David Leuliette'
       }
       seoDescription={''}
-      withAccessoryRight={
-        <LinkButton size="lg" href="/">
-          Work with us
-        </LinkButton>
-      }
+      withHeader
+      callToActionLink={{
+        name: 'Participer au podcast',
+        href: 'https://flexbox.notion.site/17af478bcb8c8018b4a9db6b13d1df38?pvs=105',
+        isExternalLink: true,
+      }}
     >
       <Prose className="m-auto my-16">
         <h1>Le Cross Platform Show</h1>

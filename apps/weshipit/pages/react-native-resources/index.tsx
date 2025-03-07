@@ -127,16 +127,16 @@ export default function ReactNativeResourcesPage({
   const numberOfRecords = round(records.length, -1);
 
   const guides = records.filter((record) =>
-    record.fields.type.includes('Guide')
+    record.fields.type.includes('Guide'),
   );
   const newsletters = records.filter((record) =>
-    record.fields.type.includes('Newsletter')
+    record.fields.type.includes('Newsletter'),
   );
   const podcasts = records.filter((record) =>
-    record.fields.type.includes('Podcast')
+    record.fields.type.includes('Podcast'),
   );
   const conferences = records.filter((record) =>
-    record.fields.type.includes('Conference')
+    record.fields.type.includes('Conference'),
   );
 
   return (
@@ -144,14 +144,20 @@ export default function ReactNativeResourcesPage({
       seoTitle={`${numberOfRecords}+ best resources to start with React Native in mobile app development`}
       seoDescription={`Most effective resources for learning React Native, online guides and tutorials, podcast and newsletter.`}
       ogImageTitle="React Native Resources"
-      withAccessoryRight={
-        <HeaderLinksForTools
-          buttonLink={linksApi.airtable.RESOURCES_FORM}
-          buttonText="Add resource"
-        />
-      }
+      withHeader
+      navigation={[
+        { name: 'Guides', href: '#guides' },
+        { name: 'Newsletters', href: '#newsletters' },
+        { name: 'Podcasts', href: '#podcasts' },
+        { name: 'Conferences', href: '#conferences' },
+      ]}
+      callToActionButton={{
+        name: 'Add resource',
+        href: 'https://github.com/flexbox/weshipit.today/blob/main/apps/weshipit/fixtures/resources.fixture.ts',
+        isExternalLink: true,
+      }}
     >
-      <div className="mx-auto mb-6 max-w-6xl px-4 sm:px-6">
+      <div className="mx-auto mb-6 max-w-6xl">
         <Hero
           title={
             <>
@@ -177,29 +183,29 @@ export default function ReactNativeResourcesPage({
         </Hero>
       </div>
 
-      <div className="mx-auto max-w-screen-2xl px-4 pb-12 sm:px-6">
-        <section className="mb-32">
+      <div className="mx-auto max-w-screen-2xl px-4 pb-12 sm:px-6 grid gap-64">
+        <section id="guides">
           <Text as="h2" variant="s2" className="my-6 font-semibold">
             React Native online resources
           </Text>
           <ResourceList records={guides} />
         </section>
 
-        <section className="mb-32">
+        <section id="newsletters">
           <Text as="h2" variant="s2" className="my-6 font-semibold">
             React Native newsletters
           </Text>
           <ResourceList records={newsletters} />
         </section>
 
-        <section className="mb-32">
+        <section id="podcasts">
           <Text as="h2" variant="s2" className="my-6 font-semibold">
             React Native podcasts
           </Text>
           <ResourceList records={podcasts} />
         </section>
 
-        <section className="mb-32">
+        <section id="conferences">
           <Text as="h2" variant="s2" className="my-6 font-semibold">
             React Native conferences
           </Text>
