@@ -368,15 +368,20 @@ export default function IndexPage({
         />
       </Head>
       <Layout
+        seoTitle="Hire React Native Developers as a Service"
+        seoDescription="Software development is a service, not a product. We offer a subscription-based service for React Native developers. One flat fee. Zero billable hours. Pause or cancel whenever."
         withHeader
         navigation={[
           { name: 'Services', href: '#services' },
           { name: 'Pricing', href: '#pricing' },
           { name: 'Faq', href: '#faq' },
         ]}
+        callToActionButton={{
+          name: 'Book a call',
+          href: linksApi.cal.ONBOARDING,
+          isExternalLink: true,
+        }}
         withFooter
-        seoTitle="Hire React Native Developers as a Service"
-        seoDescription="Software development is a service, not a product. We offer a subscription-based service for React Native developers. One flat fee. Zero billable hours. Pause or cancel whenever."
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <FadeIn>

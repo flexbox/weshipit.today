@@ -65,7 +65,7 @@ function StarterList({ records }) {
                 <Text variant="c1" className="mb-2 mr-2 flex">
                   Stack included
                 </Text>
-                <TagList tags={stack} />
+                <TagList tags={stack} size="sm" />
               </div>
             )}
 
