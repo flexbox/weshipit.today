@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { FadeInStagger } from './fade-in';
-
 import { within } from '@storybook/testing-library';
 import { expect } from '@storybook/jest';
 
@@ -12,13 +11,19 @@ export default meta;
 type Story = StoryObj<typeof FadeInStagger>;
 
 export const Primary = {
-  args: {},
+  args: {
+    faster: '',
+    props: '',
+  },
 };
 
 export const Heading: Story = {
-  args: {},
+  args: {
+    faster: '',
+    props: '',
+  },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    await expect(canvas.getByText(/Welcome to FadeInStagger!/gi)).toBeTruthy();
+    expect(canvas.getByText(/Welcome to FadeInStagger!/gi)).toBeTruthy();
   },
 };
