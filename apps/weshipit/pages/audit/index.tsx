@@ -12,15 +12,7 @@ import {
   Section as SectionDivider,
 } from '@weshipit/ui';
 import { linksApi } from '../api/links';
-import {
-  AcademicCapIcon,
-  ClockIcon,
-  CheckCircleIcon,
-  CurrencyDollarIcon,
-  ClipboardDocumentCheckIcon,
-  ScaleIcon,
-} from '@heroicons/react/24/outline';
-import Image from 'next/image';
+
 import clsx from 'clsx';
 import { PropsWithChildren } from 'react';
 
@@ -64,16 +56,14 @@ function Section({ children, title }) {
     <Container>
       <div className="lg:flex lg:items-center lg:justify-center lg:gap-x-8 lg:group-even/section:justify-start xl:gap-x-20">
         <div className="mx-auto mt-12 lg:mt-0 lg:w-[37rem] lg:flex-none lg:group-even/section:order-first">
-          <FadeIn>
-            <div
-              className="text-base font-semibold before:text-neutral-300 dark:after:text-neutral-300"
-              aria-hidden="true"
-            />
-            <Text as="h2" variant="h3" className="mt-2">
-              {title}
-            </Text>
-            <Prose className="prose-xl mt-6">{children}</Prose>
-          </FadeIn>
+          <div
+            className="text-base font-semibold before:text-neutral-300 dark:after:text-neutral-300"
+            aria-hidden="true"
+          />
+          <Text as="h2" variant="h3" className="mt-2">
+            {title}
+          </Text>
+          <Prose className="prose-xl mt-6">{children}</Prose>
         </div>
       </div>
     </Container>
@@ -247,88 +237,6 @@ function Benefits() {
   );
 }
 
-function BenefitItem({ description, Icon, title }) {
-  return (
-    <div className="flex flex-col">
-      <Icon className="mb-4 size-12 rounded-full bg-blue-300/50 fill-white p-1 text-blue-500 dark:bg-blue-800/50 dark:fill-blue-800/20 dark:text-blue-600" />
-      <Prose className="prose-xl">
-        <h3>{title}</h3>
-        <p>{description}</p>
-      </Prose>
-    </div>
-  );
-}
-
-function BenefitsList() {
-  return (
-    <div className="grid grid-cols-1 gap-16 md:grid-cols-2 lg:grid-cols-3">
-      <BenefitItem
-        Icon={AcademicCapIcon}
-        title="Deep Expertise"
-        description="We do React Native since 2017."
-      />
-      <BenefitItem
-        Icon={ClockIcon}
-        title="Time-Saving"
-        description="We handle the audit, so you can focus elsewhere."
-      />
-      <BenefitItem
-        Icon={CheckCircleIcon}
-        title="Enhanced Compatibility"
-        description="Stay up-to-date with the latest libraries and tools."
-      />
-      <BenefitItem
-        Icon={CurrencyDollarIcon}
-        title="Fixed Pricing"
-        description="No hidden costs, just a straightforward budget."
-      />
-      <BenefitItem
-        Icon={ClipboardDocumentCheckIcon}
-        title="Custom Recommendations"
-        description="Tailored notes and recommendations for your project."
-      />
-      <BenefitItem
-        Icon={ScaleIcon}
-        title="Flexible Solutions"
-        description="We can tackle the solutions provided in our audit by joining your team."
-      />
-    </div>
-  );
-}
-
-// TestimonialSection component
-function TestimonialSection() {
-  return (
-    <div className="m-auto w-3/4">
-      <div className="mt-12 lg:flex lg:items-center lg:justify-center lg:gap-x-8">
-        <div className="flex w-full flex-col items-center rounded-lg bg-white py-8 text-center shadow-lg lg:w-1/2">
-          <Text as="p" variant="quote" className="w-full italic">
-            “What’s better than good code? Less code.”
-          </Text>
-          <div className="mt-4 flex items-center justify-center">
-            <a href="https://x.com/jamonholmgren">
-              <Text
-                as="p"
-                variant="quote"
-                className="mr-4 text-right font-semibold"
-              >
-                Jamon Holmgren
-              </Text>
-            </a>
-            <Image
-              src="https://pbs.twimg.com/profile_images/1712505856905170944/LDFMYGSQ_400x400.jpg"
-              alt="Jamon Holmgren"
-              className="size-16 rounded-full"
-              width={64}
-              height={64}
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export function Audit({ clients }: AuditProps) {
   return (
     <Layout
@@ -362,15 +270,10 @@ export function Audit({ clients }: AuditProps) {
         </div>
 
         <ClientsListAudit clients={clients} />
-
-        <SectionDivider variant="transparent">
-          <BenefitsList />
-        </SectionDivider>
       </FadeIn>
 
       <div className="mt-12 space-y-24 [counter-reset:section] sm:mt-32 sm:space-y-32 lg:mt-8 lg:space-y-40">
         <Discover />
-        <TestimonialSection />
         <Workflow />
         <Benefits />
       </div>
@@ -398,12 +301,20 @@ export function Audit({ clients }: AuditProps) {
         <Card
           size="xl"
           className="m-auto my-24 flex flex-col items-center justify-center gap-8 text-center"
-          variant="gradient-purple"
+          variant="gradient-blue"
         >
-          <Text variant="h4" as="h2">
+          <Text
+            variant="h4"
+            as="h2"
+            className="bg-gradient-to-b from-white to-white/75 bg-clip-text font-bold tracking-tight text-transparent drop-shadow"
+          >
             Improve your app today
           </Text>
-          <Text variant="p1" as="p">
+          <Text
+            variant="p1"
+            as="p"
+            className="bg-gradient-to-b from-white to-white/75 bg-clip-text font-bold tracking-tight text-transparent drop-shadow"
+          >
             Get in touch and let’s build memorable products together.
           </Text>
           <Button
@@ -412,6 +323,7 @@ export function Audit({ clients }: AuditProps) {
             as="a"
             isExternalLink
             withExternalLinkIcon={false}
+            variant="outline"
           >
             Book a free call now
           </Button>

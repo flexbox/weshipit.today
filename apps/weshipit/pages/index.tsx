@@ -9,11 +9,11 @@ import {
   Hero,
   Hyperlink,
   Prose,
-  Section,
   SpotLeft,
   Text,
   WorkflowCard,
   Avatar,
+  Pricing,
 } from '@weshipit/ui';
 import { linksApi } from './api/links';
 import { Layout } from '../components/layout';
@@ -86,7 +86,6 @@ function CallToAction({
         <Button
           href={secondaryHref}
           as="a"
-          isExternalLink
           withExternalLinkIcon={false}
           size="xl"
           variant="ghost"
@@ -388,8 +387,6 @@ export default function IndexPage({
             <Hero>
               <div className="my-12">
                 <Text as="h1" variant="h1" className="text-center">
-                  One flat fee.
-                  <br />
                   React Native Experts on demand.
                 </Text>
                 <Text as="p" variant="h3" className="text-center opacity-30">
@@ -399,8 +396,8 @@ export default function IndexPage({
               <CallToAction
                 label={'Book a call with David'}
                 href={linksApi.cal.ONBOARDING}
-                secondaryLabel={'Or Subscribe Today'}
-                secondaryHref={linksApi.stripe.MONTHLY_PLAN}
+                secondaryLabel={'Or see pricing'}
+                secondaryHref={'#pricing'}
                 teamSpotsLeft={teamSpotsLeft}
               />
             </Hero>
@@ -453,7 +450,7 @@ export default function IndexPage({
                   size="xxl"
                   variant="outline"
                 >
-                  Book a free 30-min introduction call
+                  Book a free introduction call
                 </Button>
               </div>
             </div>
@@ -489,6 +486,8 @@ export default function IndexPage({
             <HowDoesItWorks steps={steps} />
           </div>
         </div>
+
+        <Pricing />
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="m-auto max-w-2xl" id="faq">
