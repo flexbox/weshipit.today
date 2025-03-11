@@ -4,6 +4,7 @@ import { CheckIcon } from '@heroicons/react/20/solid';
 import clsx from 'clsx';
 import { SpotLeft } from '../spot-left/spot-left';
 import Button from 'libs/ui/src/lib/button/button';
+import { Card } from 'libs/ui/src/lib/card/card';
 
 const frequencies = [
   { value: 'monthly', label: 'Monthly', priceSuffix: '/monthly' },
@@ -95,14 +96,10 @@ export function Pricing({ buttonLink }: { buttonLink: string }) {
         </p>
         <div className="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-4">
           {tiers.map((tier) => (
-            <div
+            <Card
               key={tier.id}
-              className={clsx(
-                tier.featured
-                  ? 'bg-gray-900 ring-gray-900'
-                  : 'bg-white ring-gray-200',
-                'rounded-3xl p-8 ring-1 xl:p-10',
-              )}
+              variant={tier.featured ? 'pricing-featured' : 'pricing'}
+              size="xs"
             >
               <h3
                 id={tier.id}
@@ -125,8 +122,7 @@ export function Pricing({ buttonLink }: { buttonLink: string }) {
               <p className="mt-6 flex items-baseline gap-x-1">
                 <span
                   className={clsx(
-                    tier.featured ? 'text-white' : 'text-gray-900',
-                    'text-4xl font-semibold tracking-tight',
+                    'text-4xl font-semibold tracking-tight price',
                   )}
                 >
                   {typeof tier.price === 'string'
@@ -177,7 +173,7 @@ export function Pricing({ buttonLink }: { buttonLink: string }) {
                   </li>
                 ))}
               </ul>
-            </div>
+            </Card>
           ))}
         </div>
       </div>
