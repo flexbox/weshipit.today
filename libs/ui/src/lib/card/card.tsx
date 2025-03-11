@@ -7,10 +7,10 @@ export interface CardProps
 const card = cva(
   [
     'rounded-3xl',
-    'bg-white dark:bg-gray-900',
+    'bg-white dark:bg-slate-900',
     'ring-1',
-    'ring-gray-200 dark:ring-gray-800',
-    'text-gray-900 dark:text-white',
+    'ring-slate-200 dark:ring-slate-800',
+    'text-slate-900 dark:text-white',
   ],
   {
     defaultVariants: {
@@ -34,9 +34,9 @@ const card = cva(
       },
       variant: {
         featured: [
-          '!bg-gray-900 dark:!bg-white',
-          '!ring-gray-800 dark:!ring-gray-200',
-          '!text-white dark:!text-gray-900',
+          '!bg-slate-900 dark:!bg-slate-800',
+          '!ring-slate-800 dark:!ring-slate-700',
+          '!text-white dark:!text-slate-900',
         ],
         'gradient-blue': [
           'text-white',
@@ -55,28 +55,28 @@ const card = cva(
           'dark:bg-gradient-to-bl dark:from-blue-900 dark:to-slate-900',
           'dark:ring-white/20',
           'ring-blue-200/20',
-          'text-gray-900 dark:text-gray-100',
+          'text-slate-900 dark:text-slate-100',
         ],
         'gradient-purple-dark': [
           'bg-gradient-to-tr from-slate-200 to-slate-300',
           'dark:bg-gradient-to-bl dark:from-blue-900 dark:to-slate-900',
           'dark:ring-white/10',
           'ring-blue-300/20',
-          'text-gray-900 dark:text-gray-100',
+          'text-slate-900 dark:text-slate-100',
         ],
         green: [
           '!bg-green-50 dark:!bg-green-900/20',
           '!ring-green-600/20 dark:!ring-green-400/30',
-          'text-gray-900 dark:text-gray-100',
+          'text-slate-900 dark:text-slate-100',
         ],
         link: [
           'cursor-pointer hover:shadow-lg',
-          'text-gray-900 dark:text-gray-100',
+          'text-slate-900 dark:text-slate-100',
         ],
         red: [
           '!bg-red-50 dark:!bg-red-900/20',
           '!ring-red-600/20 dark:!ring-red-400/30',
-          'text-gray-900 dark:text-gray-100',
+          'text-slate-900 dark:text-slate-100',
         ],
       },
     },

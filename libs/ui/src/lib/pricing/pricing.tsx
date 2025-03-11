@@ -3,7 +3,6 @@
 import { CheckIcon } from '@heroicons/react/20/solid';
 import clsx from 'clsx';
 import { SpotLeft } from '../spot-left/spot-left';
-import Button from 'libs/ui/src/lib/button/button';
 import { Card } from 'libs/ui/src/lib/card/card';
 
 const frequencies = [
@@ -87,7 +86,7 @@ export function Pricing({ buttonLink }: { buttonLink: string }) {
       <div className="mx-auto max-w-8xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-base/7 font-semibold text-blue-600">Pricing</h2>
-          <p className="mt-2 text-balance text-5xl font-semibold tracking-tight text-gray-900 sm:text-6xl">
+          <p className="mt-2 text-balance text-5xl font-semibold tracking-tight text-gray-900 dark:text-white sm:text-6xl">
             Pricing that fits your needs
           </p>
         </div>
@@ -108,7 +107,7 @@ export function Pricing({ buttonLink }: { buttonLink: string }) {
                 className={clsx(
                   'mb-4 text-lg/8 font-semibold',
                   tier.featured
-                    ? 'text-white dark:text-gray-900'
+                    ? 'text-white'
                     : 'text-gray-900 dark:text-white',
                 )}
               >
@@ -191,18 +190,6 @@ export function Pricing({ buttonLink }: { buttonLink: string }) {
             </Card>
           ))}
         </div>
-      </div>
-      <div className="mt-16 flex w-screen justify-center">
-        <Button
-          size="xxl"
-          variant="primary"
-          href={buttonLink}
-          as="a"
-          isExternalLink
-          withExternalLinkIcon={false}
-        >
-          Book a free call now
-        </Button>
       </div>
     </div>
   );
