@@ -3,6 +3,7 @@
 import { CheckIcon } from '@heroicons/react/20/solid';
 import clsx from 'clsx';
 import { SpotLeft } from '../spot-left/spot-left';
+import Button from 'libs/ui/src/lib/button/button';
 
 const frequencies = [
   { value: 'monthly', label: 'Monthly', priceSuffix: '/monthly' },
@@ -78,7 +79,7 @@ const tiers = [
   },
 ];
 
-export function Pricing() {
+export function Pricing({ buttonLink }: { buttonLink: string }) {
   return (
     <div className="py-24 sm:py-32" id="pricing">
       <div className="mx-auto max-w-8xl px-6 lg:px-8">
@@ -179,6 +180,18 @@ export function Pricing() {
             </div>
           ))}
         </div>
+      </div>
+      <div className="mt-16 flex w-screen justify-center">
+        <Button
+          size="xxl"
+          variant="primary"
+          href={buttonLink}
+          as="a"
+          isExternalLink
+          withExternalLinkIcon={false}
+        >
+          Book a free call now
+        </Button>
       </div>
     </div>
   );
