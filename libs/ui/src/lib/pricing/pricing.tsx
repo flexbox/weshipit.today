@@ -17,7 +17,7 @@ const tiers = [
     href: '#',
     price: { onetime: '10000 €' },
     description:
-      'Get started with our one-time package led by award-winning expert David Leuliette for strategic insights to launch or revitalize your React Native app.',
+      'Transform your React Native app with our award-winning expertise. Our comprehensive audit and strategic roadmap will unlock mobile development optimization and accelerate your growth with proven methodologies.',
     features: [
       'Comprehensive stack audit and assessment',
       '2 phases implementation: investigation and execution',
@@ -36,7 +36,7 @@ const tiers = [
     href: '#',
     price: { monthly: '2500 €' },
     description:
-      'Get started with a solid foundation guided by an industry leader. This plan offers focused strategic consultation to ensure your community engagement is on the right track.',
+      'Build your mobile app with confidence through our monthly guidance. Our expert team provides responsive support and weekly strategic sessions to ensure your development success and continuous improvement.',
     features: [
       '40 hours of software development',
       '24-hour support response time on Slack',
@@ -52,7 +52,7 @@ const tiers = [
     href: '#',
     price: { monthly: '6750 €' },
     description:
-      'Elevate your efforts with more frequent strategy sessions and in-depth support. This package is perfect for growing teams looking to scale with expert insight.',
+      'Accelerate your app development with our premium package. Get a dedicated team, priority support, and in-depth strategic sessions to maximize your growth potential and scale efficiently.',
     features: [
       '120 hours of software development',
       '24-hour support response time on Slack',
@@ -67,7 +67,8 @@ const tiers = [
     id: 'tier-enterprise',
     href: '#',
     price: 'Custom',
-    description: 'Dedicated support and infrastructure for your company.',
+    description:
+      'Custom-tailored solutions for large-scale enterprises. Experience dedicated team support, premium infrastructure, and personalized React Native development strategies for your mission-critical projects.',
     features: [
       'Custom hours of software development',
       '1-hour, dedicated support response time',
