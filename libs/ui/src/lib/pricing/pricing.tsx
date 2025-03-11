@@ -14,7 +14,7 @@ const tiers = [
   {
     name: 'Kickstart',
     id: 'tier-kickstart',
-    href: '#',
+    href: 'https://buy.stripe.com/14k3fSdbhdQOcWA28e',
     price: { onetime: '10000 €' },
     description:
       'Transform your React Native app with our award-winning expertise. Our comprehensive audit and strategic roadmap will unlock mobile development optimization and accelerate your growth with proven methodologies.',
@@ -33,7 +33,7 @@ const tiers = [
   {
     name: 'Essential',
     id: 'tier-essential',
-    href: '#',
+    href: 'https://buy.stripe.com/bIY2bOb39fYWe0E8wD',
     price: { monthly: '2500 €' },
     description:
       'Build your mobile app with confidence through our monthly guidance. Our expert team provides responsive support and weekly strategic sessions to ensure your development success and continuous improvement.',
@@ -49,7 +49,7 @@ const tiers = [
   {
     name: 'Growth',
     id: 'tier-growth',
-    href: '#',
+    href: 'https://buy.stripe.com/5kA03G1sz8wu8GkfZ6',
     price: { monthly: '6750 €' },
     description:
       'Accelerate your app development with our premium package. Get a dedicated team, priority support, and in-depth strategic sessions to maximize your growth potential and scale efficiently.',
