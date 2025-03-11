@@ -2,6 +2,7 @@
 
 import { CheckIcon } from '@heroicons/react/20/solid';
 import clsx from 'clsx';
+import { SpotLeft } from '../spot-left/spot-left';
 
 const frequencies = [
   { value: 'monthly', label: 'Monthly', priceSuffix: '/monthly' },
@@ -41,6 +42,7 @@ const tiers = [
     ],
     featured: false,
     cta: 'Get Started',
+    spotsLeft: 3,
   },
   {
     name: 'Growth',
@@ -56,6 +58,7 @@ const tiers = [
     ],
     featured: false,
     cta: 'Get Started',
+    spotsLeft: 1,
   },
   {
     name: 'Enterprise',
@@ -71,6 +74,7 @@ const tiers = [
     ],
     featured: true,
     cta: 'Book a call with David',
+    spotsLeft: 1,
   },
 ];
 
@@ -85,7 +89,7 @@ export function Pricing() {
           </p>
         </div>
         <p className="mx-auto mt-6 max-w-2xl text-pretty text-center text-lg font-medium text-gray-600 sm:text-xl/8">
-          Our plans are designed to meet your company’s needs. Begin with
+          Our plans are designed to meet your company's needs. Begin with
           Kickstart, and scale to more advanced plans as your mobile app evolve.
         </p>
         <div className="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-4">
@@ -103,11 +107,12 @@ export function Pricing() {
                 id={tier.id}
                 className={clsx(
                   tier.featured ? 'text-white' : 'text-gray-900',
-                  'text-lg/8 font-semibold',
+                  'mb-4 text-lg/8 font-semibold',
                 )}
               >
                 {tier.name}
               </h3>
+              {tier.spotsLeft && <SpotLeft spotsLeft={tier.spotsLeft} />}
               <p
                 className={clsx(
                   tier.featured ? 'text-gray-300' : 'text-gray-600',
