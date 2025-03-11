@@ -98,14 +98,17 @@ export function Pricing({ buttonLink }: { buttonLink: string }) {
           {tiers.map((tier) => (
             <Card
               key={tier.id}
-              variant={tier.featured ? 'pricing-featured' : 'pricing'}
+              className={clsx('p-8 xl:p-10 isolate')}
+              variant={tier.featured ? 'featured' : undefined}
               size="xs"
             >
               <h3
                 id={tier.id}
                 className={clsx(
-                  tier.featured ? 'text-white' : 'text-gray-900',
                   'mb-4 text-lg/8 font-semibold',
+                  tier.featured
+                    ? 'text-white dark:text-gray-900'
+                    : 'text-gray-900 dark:text-white',
                 )}
               >
                 {tier.name}
@@ -113,8 +116,10 @@ export function Pricing({ buttonLink }: { buttonLink: string }) {
               {tier.spotsLeft && <SpotLeft spotsLeft={tier.spotsLeft} />}
               <p
                 className={clsx(
-                  tier.featured ? 'text-gray-300' : 'text-gray-600',
                   'mt-4 text-sm/6',
+                  tier.featured
+                    ? 'text-gray-300 dark:text-gray-600'
+                    : 'text-gray-600 dark:text-gray-300',
                 )}
               >
                 {tier.description}
@@ -122,7 +127,10 @@ export function Pricing({ buttonLink }: { buttonLink: string }) {
               <p className="mt-6 flex items-baseline gap-x-1">
                 <span
                   className={clsx(
-                    'text-4xl font-semibold tracking-tight price',
+                    'text-4xl font-semibold tracking-tight',
+                    tier.featured
+                      ? 'text-white dark:text-gray-900'
+                      : 'text-gray-900 dark:text-white',
                   )}
                 >
                   {typeof tier.price === 'string'
@@ -132,8 +140,10 @@ export function Pricing({ buttonLink }: { buttonLink: string }) {
                 {typeof tier.price !== 'string' ? (
                   <span
                     className={clsx(
-                      tier.featured ? 'text-gray-300' : 'text-gray-600',
                       'text-sm/6 font-semibold',
+                      tier.featured
+                        ? 'text-gray-300 dark:text-gray-600'
+                        : 'text-gray-600 dark:text-gray-300',
                     )}
                   >
                     {tier.price.monthly && frequencies[0].priceSuffix}
@@ -145,28 +155,32 @@ export function Pricing({ buttonLink }: { buttonLink: string }) {
                 href={tier.href}
                 aria-describedby={tier.id}
                 className={clsx(
-                  tier.featured
-                    ? 'bg-white/10 text-white hover:bg-white/20 focus-visible:outline-white'
-                    : 'bg-blue-600 text-white shadow-sm hover:bg-blue-500 focus-visible:outline-blue-600',
                   'mt-6 block rounded-md px-3 py-2 text-center text-sm/6 font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2',
+                  tier.featured
+                    ? 'bg-white/10 text-white hover:bg-white/20 focus-visible:outline-white dark:bg-gray-900 dark:text-white dark:hover:bg-gray-800'
+                    : 'bg-blue-600 text-white shadow-sm hover:bg-blue-500 focus-visible:outline-blue-600 dark:bg-blue-500 dark:hover:bg-blue-400',
                 )}
               >
                 {tier.cta}
               </a>
-              <ul
-                role="list"
-                className={clsx(
-                  tier.featured ? 'text-gray-300' : 'text-gray-600',
-                  'mt-8 space-y-3 text-sm/6 xl:mt-10',
-                )}
-              >
+              <ul className="mt-8 space-y-3 text-sm/6 xl:mt-10">
                 {tier.features.map((feature) => (
-                  <li key={feature} className="flex gap-x-3">
+                  <li
+                    key={feature}
+                    className={clsx(
+                      'flex gap-x-3',
+                      tier.featured
+                        ? 'text-gray-300 dark:text-gray-600'
+                        : 'text-gray-600 dark:text-gray-300',
+                    )}
+                  >
                     <CheckIcon
                       aria-hidden="true"
                       className={clsx(
-                        tier.featured ? 'text-white' : 'text-blue-600',
                         'h-6 w-5 flex-none',
+                        tier.featured
+                          ? 'text-white dark:text-blue-600'
+                          : 'text-blue-600 dark:text-blue-400',
                       )}
                     />
                     {feature}
