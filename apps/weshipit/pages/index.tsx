@@ -487,7 +487,7 @@ export default function IndexPage({
           </div>
         </div>
 
-        <Pricing buttonLink={linksApi.cal.ONBOARDING} />
+        <Pricing />
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="m-auto max-w-2xl" id="faq">
