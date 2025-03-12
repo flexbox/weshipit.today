@@ -64,7 +64,7 @@ const tiers = [
   {
     name: 'Enterprise',
     id: 'tier-enterprise',
-    href: '#',
+    href: 'https://cal.com/davidl/weshipit-onboarding',
     price: 'Custom',
     description:
       'Custom-tailored solutions for large-scale enterprises. Experience dedicated team support, premium infrastructure, and personalized React Native development strategies for your mission-critical projects.',
@@ -80,7 +80,7 @@ const tiers = [
   },
 ];
 
-export function Pricing({ buttonLink }: { buttonLink: string }) {
+export function Pricing() {
   return (
     <div className="py-24 sm:py-32" id="pricing">
       <div className="mx-auto max-w-8xl px-6 lg:px-8">
@@ -98,95 +98,118 @@ export function Pricing({ buttonLink }: { buttonLink: string }) {
           {tiers.map((tier) => (
             <Card
               key={tier.id}
-              className={clsx('p-8 xl:p-10 isolate')}
+              className={clsx('p-8 xl:p-10 isolate flex flex-col h-full')}
               variant={tier.featured ? 'featured' : undefined}
               size="xs"
             >
-              <h3
-                id={tier.id}
-                className={clsx(
-                  'mb-4 text-lg/8 font-semibold',
-                  tier.featured
-                    ? 'text-white'
-                    : 'text-gray-900 dark:text-white',
-                )}
-              >
-                {tier.name}
-              </h3>
-              {tier.spotsLeft && <SpotLeft spotsLeft={tier.spotsLeft} />}
-              <p
-                className={clsx(
-                  'mt-4 text-sm/6',
-                  tier.featured
-                    ? 'text-gray-300 dark:text-gray-600'
-                    : 'text-gray-600 dark:text-gray-300',
-                )}
-              >
-                {tier.description}
-              </p>
-              <p className="mt-6 flex items-baseline gap-x-1">
-                <span
+              <div className="flex-1">
+                <h3
+                  id={tier.id}
                   className={clsx(
-                    'text-4xl font-semibold tracking-tight',
+                    'mb-4 text-lg/8 font-semibold',
                     tier.featured
                       ? 'text-white dark:text-gray-900'
                       : 'text-gray-900 dark:text-white',
                   )}
                 >
-                  {typeof tier.price === 'string'
-                    ? tier.price
-                    : tier.price.monthly || tier.price.onetime}
-                </span>
-                {typeof tier.price !== 'string' ? (
+                  {tier.name}
+                </h3>
+                {tier.spotsLeft && <SpotLeft spotsLeft={tier.spotsLeft} />}
+                <p
+                  className={clsx(
+                    'mt-4 text-sm/6',
+                    tier.featured
+                      ? 'text-gray-300 dark:text-gray-600'
+                      : 'text-gray-600 dark:text-gray-300',
+                  )}
+                >
+                  {tier.description}
+                </p>
+                <p className="mt-6 flex items-baseline gap-x-1">
                   <span
                     className={clsx(
-                      'text-sm/6 font-semibold',
+                      'text-4xl font-semibold tracking-tight',
                       tier.featured
-                        ? 'text-gray-300 dark:text-gray-600'
-                        : 'text-gray-600 dark:text-gray-300',
+                        ? 'text-white dark:text-gray-900'
+                        : 'text-gray-900 dark:text-white',
                     )}
                   >
-                    {tier.price.monthly && frequencies[0].priceSuffix}
-                    {tier.price.onetime && frequencies[1].priceSuffix}
+                    {typeof tier.price === 'string'
+                      ? tier.price
+                      : tier.price.monthly || tier.price.onetime}
                   </span>
-                ) : null}
-              </p>
-              <a
-                href={tier.href}
-                aria-describedby={tier.id}
+                  {typeof tier.price !== 'string' ? (
+                    <span
+                      className={clsx(
+                        'text-sm/6 font-semibold',
+                        tier.featured
+                          ? 'text-gray-300 dark:text-gray-600'
+                          : 'text-gray-600 dark:text-gray-300',
+                      )}
+                    >
+                      {tier.price.monthly && frequencies[0].priceSuffix}
+                      {tier.price.onetime && frequencies[1].priceSuffix}
+                    </span>
+                  ) : null}
+                </p>
+                <a
+                  href={tier.href}
+                  aria-describedby={tier.id}
+                  className={clsx(
+                    'mt-6 block rounded-md px-3 py-2 text-center text-sm/6 font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2',
+                    tier.featured
+                      ? 'bg-white/10 text-white hover:bg-white/20 focus-visible:outline-white dark:bg-gray-900 dark:text-white dark:hover:bg-gray-800'
+                      : 'bg-blue-600 text-white shadow-sm hover:bg-blue-500 focus-visible:outline-blue-600 dark:bg-blue-500 dark:hover:bg-blue-400',
+                  )}
+                >
+                  {tier.cta}
+                </a>
+                {!tier.featured && (
+                  <div className="mt-4 flex items-center justify-center gap-2 text-sm text-gray-600 dark:text-gray-300">
+                    <span>or</span>
+                    <a
+                      href={'https://cal.com/davidl/weshipit-onboarding'}
+                      className="underline hover:text-gray-900 dark:hover:text-white"
+                    >
+                      book a call
+                    </a>
+                  </div>
+                )}
+                <ul className="mt-8 space-y-3 text-sm/6 xl:mt-10">
+                  {tier.features.map((feature) => (
+                    <li
+                      key={feature}
+                      className={clsx(
+                        'flex gap-x-3',
+                        tier.featured
+                          ? 'text-gray-300 dark:text-gray-600'
+                          : 'text-gray-600 dark:text-gray-300',
+                      )}
+                    >
+                      <CheckIcon
+                        aria-hidden="true"
+                        className={clsx(
+                          'h-6 w-5 flex-none',
+                          tier.featured
+                            ? 'text-white dark:text-blue-600'
+                            : 'text-blue-600 dark:text-blue-400',
+                        )}
+                      />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <p
                 className={clsx(
-                  'mt-6 block rounded-md px-3 py-2 text-center text-sm/6 font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2',
+                  'mt-auto pt-6 text-center text-xs font-medium uppercase tracking-wider',
                   tier.featured
-                    ? 'bg-white/10 text-white hover:bg-white/20 focus-visible:outline-white dark:bg-gray-900 dark:text-white dark:hover:bg-gray-800'
-                    : 'bg-blue-600 text-white shadow-sm hover:bg-blue-500 focus-visible:outline-blue-600 dark:bg-blue-500 dark:hover:bg-blue-400',
+                    ? 'text-gray-300 dark:text-gray-600'
+                    : 'text-gray-600 dark:text-gray-300',
                 )}
               >
-                {tier.cta}
-              </a>
-              <ul className="mt-8 space-y-3 text-sm/6 xl:mt-10">
-                {tier.features.map((feature) => (
-                  <li
-                    key={feature}
-                    className={clsx(
-                      'flex gap-x-3',
-                      tier.featured
-                        ? 'text-gray-300 dark:text-gray-600'
-                        : 'text-gray-600 dark:text-gray-300',
-                    )}
-                  >
-                    <CheckIcon
-                      aria-hidden="true"
-                      className={clsx(
-                        'h-6 w-5 flex-none',
-                        tier.featured
-                          ? 'text-white dark:text-blue-600'
-                          : 'text-blue-600 dark:text-blue-400',
-                      )}
-                    />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
+                NO CONTRACTS, CANCEL ANYTIME
+              </p>
             </Card>
           ))}
         </div>

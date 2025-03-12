@@ -34,7 +34,7 @@ const card = cva(
       },
       variant: {
         featured: [
-          '!bg-slate-900 dark:!bg-slate-800',
+          '!bg-slate-900 dark:!bg-white',
           '!ring-slate-800 dark:!ring-slate-700',
           '!text-white dark:!text-slate-900',
         ],
