@@ -1,7 +1,7 @@
 import React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 
-export const TextVariants = cva([''], {
+export const TextVariants = cva(['text-pretty'], {
   defaultVariants: {
     variant: 'p1',
   },

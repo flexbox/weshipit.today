@@ -1,3 +1,4 @@
+export * from './lib/pricing/pricing';
 export * from './lib/bento/bento';
 export * from './lib/section/section';
 export * from './lib/spot-left/spot-left';
