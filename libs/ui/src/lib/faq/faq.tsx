@@ -31,7 +31,7 @@ export function Faq({ faqs }: FaqListProps) {
         <div key={item.id}>
           <Disclosure
             as="div"
-            className="cursor-pointer rounded-md transition-colors duration-200 ease-in-out hover:bg-white dark:hover:bg-gray-800"
+            className="cursor-pointer rounded-md transition-colors duration-200 ease-in-out hover:bg-white dark:hover:bg-slate-800"
             defaultOpen={false}
           >
             <DisclosureButton className="group flex w-full items-center justify-between px-4 py-3">
