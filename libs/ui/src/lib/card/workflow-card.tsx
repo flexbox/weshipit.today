@@ -1,5 +1,5 @@
 import Card from './card';
-import Image from 'next/image';
+
 import { PrismicNextImage } from '@prismicio/next';
 import { ImageFieldImage } from '@prismicio/client';
 import { Prose } from '../prose/prose';

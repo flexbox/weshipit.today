@@ -6,11 +6,11 @@ export interface CardProps
 
 const card = cva(
   [
-    'rounded-xl',
-    'bg-white',
-    'dark:bg-slate-800',
-    'ring-4 ring-inset ring-transparent',
-    'shadow-none transition-shadow duration-300 ease-in-out',
+    'rounded-3xl',
+    'bg-white dark:bg-slate-900',
+    'ring-1',
+    'ring-slate-200 dark:ring-slate-800',
+    'text-slate-900 dark:text-white',
   ],
   {
     defaultVariants: {
@@ -33,6 +33,11 @@ const card = cva(
         xs: ['p-0'],
       },
       variant: {
+        featured: [
+          '!bg-slate-900 dark:!bg-white',
+          '!ring-slate-800 dark:!ring-slate-700',
+          '!text-white dark:!text-slate-900',
+        ],
         'gradient-blue': [
           'text-white',
           'bg-gradient-to-tr from-[#0E95EE] to-[#27C9F5]',
@@ -50,29 +55,32 @@ const card = cva(
           'dark:bg-gradient-to-bl dark:from-blue-900 dark:to-slate-900',
           'dark:ring-white/20',
           'ring-blue-200/20',
+          'text-slate-900 dark:text-slate-100',
         ],
         'gradient-purple-dark': [
           'bg-gradient-to-tr from-slate-200 to-slate-300',
           'dark:bg-gradient-to-bl dark:from-blue-900 dark:to-slate-900',
           'dark:ring-white/10',
           'ring-blue-300/20',
+          'text-slate-900 dark:text-slate-100',
         ],
         green: [
-          '!bg-green-50',
-          '!ring-green-600/20',
-          'dark:!bg-green-400/10',
-          'dark:!ring-green-400/20',
+          '!bg-green-50 dark:!bg-green-900/20',
+          '!ring-green-600/20 dark:!ring-green-400/30',
+          'text-slate-900 dark:text-slate-100',
         ],
-        link: ['cursor-pointer hover:shadow-lg'],
+        link: [
+          'cursor-pointer hover:shadow-lg',
+          'text-slate-900 dark:text-slate-100',
+        ],
         red: [
-          '!bg-red-50',
-          '!ring-red-600/20',
-          'dark:!bg-red-400/10',
-          'dark:!ring-red-400/20',
+          '!bg-red-50 dark:!bg-red-900/20',
+          '!ring-red-600/20 dark:!ring-red-400/30',
+          'text-slate-900 dark:text-slate-100',
         ],
       },
     },
-  }
+  },
 );
 
 export function Card({
