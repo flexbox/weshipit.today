@@ -23,7 +23,6 @@ export function Header({
   callToActionButton,
   callToActionLink,
 }: HeaderProps) {
-  console.log('🚀 ~ navigation:', navigation);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
