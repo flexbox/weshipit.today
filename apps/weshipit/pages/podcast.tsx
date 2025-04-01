@@ -1,5 +1,8 @@
-import { LinkButton, Prose } from '@weshipit/ui';
+import { Hyperlink, LinkButton, Prose } from '@weshipit/ui';
 import { Layout } from '../components/layout';
+
+const NOTION_FORM_URL =
+  'https://flexbox.notion.site/17af478bcb8c8018b4a9db6b13d1df38?pvs=105';
 
 export default function Podcast() {
   return (
@@ -9,7 +12,7 @@ export default function Podcast() {
       withHeader
       callToActionLink={{
         name: 'Participer au podcast',
-        href: 'https://flexbox.notion.site/17af478bcb8c8018b4a9db6b13d1df38?pvs=105',
+        href: NOTION_FORM_URL,
         isExternalLink: true,
       }}
       withContainer
@@ -21,9 +24,9 @@ export default function Podcast() {
           cross-platform, explorant React Native et bien plus, tout en apportant
           une touche de joie et de passion au quotidien des coders.
         </p>
-        <p>S’abonner au podcast :</p>
+        <h2>S’abonner au podcast</h2>
       </Prose>
-      <div className="flex mt-4 mb-12 gap-x-3 flex-wrap">
+      <div className="flex mt-4 mb-12 gap-3 flex-wrap">
         <LinkButton
           variant="outline"
           isExternalLink
@@ -68,7 +71,18 @@ export default function Podcast() {
           maxWidth: '660px',
           width: '100%',
         }}
-      ></iframe>
+      />
+      <Prose className="mt-12 mb-12">
+        <h2>Participer à une emission</h2>
+        <p>
+          Tu as un application codée en React Native et tu souhaite partager ton
+          expérience ?, Pour enregister une emmission il suffit de{' '}
+          <Hyperlink href={NOTION_FORM_URL} isExternal>
+            remplir ce formulaire sur Notion
+          </Hyperlink>
+          .
+        </p>
+      </Prose>
     </Layout>
   );
 }
