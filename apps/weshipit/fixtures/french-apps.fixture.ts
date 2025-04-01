@@ -1,5 +1,44 @@
-export const frenchApps = {
+interface frenchApps {
+  records: {
+    createdTime: string;
+    fields: {
+      android_url?: string | null;
+      ios_url?: string | null;
+      category: string;
+      logo: {
+        url: string;
+        width?: number;
+        height?: number;
+      }[];
+      name: string;
+      website_url?: string | null;
+      podcast_url?: string | null;
+    };
+    id: string;
+  }[];
+}
+
+export const frenchApps: frenchApps = {
   records: [
+    {
+      createdTime: '2025-04-01T20:17:04.000Z',
+      fields: {
+        android_url:
+          'https://play.google.com/store/apps/dev?id=5935141824663336810&amp%3Bhl=en_US',
+        ios_url: 'https://apps.apple.com/fr/app/swan/id1536581956',
+        category: 'Finance',
+        logo: [
+          {
+            url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ec/ca/c7/eccac76a-0a83-5ff4-d878-1b0915922572/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/460x0w.webp',
+          },
+        ],
+        name: 'Swan',
+        website_url: 'https://swan.io/',
+        podcast_url:
+          'https://open.spotify.com/episode/6OFwNSER1iNx1K5Scoge4t?si=d05827ceda464775',
+      },
+      id: 'rec2W7XObYe5qFber',
+    },
     {
       createdTime: '2025-03-03T20:17:43.000Z',
       fields: {
@@ -9,11 +48,7 @@ export const frenchApps = {
         ios_url: 'https://apps.apple.com/fr/app/cdiscount/id398364165',
         logo: [
           {
-            filename: '230x0w.webp',
             height: 230,
-            id: 'attaWbugfgoYASxdS',
-            size: 1366,
-            type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/50/72/01/507201ee-d376-6f51-c94d-cf9d3bdd3c7b/AppIcon-0-0-1x_U007epad-0-1-85-220.png/230x0w.webp',
             width: 230,
           },
@@ -35,11 +70,7 @@ export const frenchApps = {
           'https://apps.apple.com/fr/app/finary-patrimoine-bitcoin/id1569413444',
         logo: [
           {
-            filename: '230x0w.webp',
             height: 230,
-            id: 'attaWbugfgoYASxdS',
-            size: 1366,
-            type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/c2/36/b9/c236b9c8-e3cf-42e0-9570-e486c4637995/AppIcon-0-0-1x_U007epad-0-1-85-220.png/230x0w.webp',
             width: 230,
           },
@@ -55,11 +86,7 @@ export const frenchApps = {
         category: 'Social',
         logo: [
           {
-            filename: 'hivebrite.io',
             height: 128,
-            id: 'attjDbdgsnTq4yjGG',
-            size: 21004,
-            type: 'image/png',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/8d/24/e1/8d24e1ae-3675-0673-2d98-17e19f580ea7/AppIcon-0-0-1x_U007ephone-0-85-220.png/230x0w.webp',
             width: 128,
           },
@@ -79,11 +106,7 @@ export const frenchApps = {
           'https://apps.apple.com/us/app/ledger-live-crypto-nft-app/id1361671700',
         logo: [
           {
-            filename: '460x0w.webp',
             height: 460,
-            id: 'attXa3CfqvnNz3ipr',
-            size: 1000,
-            type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/dd/4b/6f/dd4b6f3c-a3e2-ed8d-0fc6-bea54a6be730/AppIcon-0-0-1x_U007emarketing-0-10-0-85-220.png/230x0w.webp',
             width: 460,
           },
@@ -103,11 +126,7 @@ export const frenchApps = {
           'https://apps.apple.com/fr/app/ornikar-code-et-permis/id1612432450',
         logo: [
           {
-            filename: '460x0w.webp',
             height: 460,
-            id: 'attj7O9xaXvgZAhoT',
-            size: 2514,
-            type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/fc/6e/17/fc6e171e-cd14-d36a-91e7-387da9c61439/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/230x0w.webp',
             width: 460,
           },
@@ -126,11 +145,7 @@ export const frenchApps = {
         ios_url: 'https://apps.apple.com/fr/app/meero-realtors/id1608365779',
         logo: [
           {
-            filename: '230x0w.webp',
             height: 230,
-            id: 'att5T0WzRgXPqqqxl',
-            size: 1734,
-            type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/86/4b/ec/864becdb-e575-a1af-79d2-8b893b92e9ae/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/146x0w.webp',
             width: 230,
           },
@@ -149,11 +164,7 @@ export const frenchApps = {
         ios_url: 'https://apps.apple.com/be/app/ugc/id503875877',
         logo: [
           {
-            filename: '460x0w.webp',
             height: 460,
-            id: 'attbO61U32FWHzSlg',
-            size: 6116,
-            type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/32/d3/d0/32d3d0f3-9947-d31d-4059-adf282bf7f92/AppIcon-0-0-1x_U007ephone-0-1-0-85-220.png/230x0w.webp',
             width: 460,
           },
@@ -173,11 +184,7 @@ export const frenchApps = {
           'https://apps.apple.com/fr/app/manomano-bricolage-et-jardin/id1503142603',
         logo: [
           {
-            filename: '460x0w.webp',
             height: 460,
-            id: 'attKQtYPtqXGGdEOA',
-            size: 5244,
-            type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/33/8b/01/338b0105-8f27-34c0-45c7-c1bd4d205876/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/230x0w.webp',
             width: 460,
           },
@@ -196,11 +203,7 @@ export const frenchApps = {
         ios_url: 'https://apps.apple.com/fr/app/spendesk/id1189271166',
         logo: [
           {
-            filename: '460x0w.webp',
             height: 460,
-            id: 'att2YUCBCd3bPcVlL',
-            size: 4834,
-            type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/d3/a7/47/d3a7471f-253c-c061-ce4d-a1bbcfd62129/AppIcon-0-0-1x_U007epad-0-1-0-85-220.png/230x0w.webp',
             width: 460,
           },
@@ -220,11 +223,7 @@ export const frenchApps = {
           'https://apps.apple.com/fr/app/pmu-sport-paris-sportifs/id587844598',
         logo: [
           {
-            filename: '460x0w.webp',
             height: 460,
-            id: 'attM6peR6YS5BfSHJ',
-            size: 6150,
-            type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b2/ce/f6/b2cef64f-4b47-7da5-7168-ad382eb42288/appicon-0-0-1x_U007emarketing-0-7-0-85-220.png/230x0w.webp',
             width: 460,
           },
@@ -244,11 +243,7 @@ export const frenchApps = {
           'https://apps.apple.com/fr/app/blank-compte-professionnel/id1522046776',
         logo: [
           {
-            filename: '460x0w.webp',
             height: 460,
-            id: 'attdUOynryJEMfFzh',
-            size: 3788,
-            type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b2/48/b5/b248b56a-996d-11c6-b56c-898d4f9f0c85/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/230x0w.webp',
             width: 460,
           },
@@ -267,11 +262,7 @@ export const frenchApps = {
         ios_url: 'https://apps.apple.com/app/shoootin/id1408602189',
         logo: [
           {
-            filename: '230x0w.webp',
             height: 230,
-            id: 'attZ9KZLfFKQ6J2aY',
-            size: 1488,
-            type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/f1/3e/39/f13e3997-a86a-56b7-e462-5725fe760ccc/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/230x0w.webp',
             width: 230,
           },
@@ -291,11 +282,7 @@ export const frenchApps = {
           'https://apps.apple.com/fr/app/morphy-programme-musculation/id1667787113',
         logo: [
           {
-            filename: '460x0w.webp',
             height: 460,
-            id: 'attkXVlGlRt2XQTfL',
-            size: 3900,
-            type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/99/35/84/9935840f-3804-e3cf-a1b6-60ea4a80c137/AppIcon-0-0-1x_U007ephone-0-85-220.png/230x0w.webp',
             width: 460,
           },
@@ -315,11 +302,7 @@ export const frenchApps = {
           'https://apps.apple.com/fr/app/shine-compte-pro-en-ligne/id1159779855',
         logo: [
           {
-            filename: '460x0w.webp',
             height: 460,
-            id: 'attsH0UfeK50TUgFt',
-            size: 3292,
-            type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/24/4e/af/244eaf1e-fa84-898a-535b-2a2fa7abd8dc/AppIcon-0-0-1x_U007epad-0-85-220.png/230x0w.webp',
             width: 460,
           },
@@ -338,11 +321,7 @@ export const frenchApps = {
         ios_url: 'https://apps.apple.com/fr/app/matera/id1501663391',
         logo: [
           {
-            filename: '460x0w.webp',
             height: 460,
-            id: 'att3PnTULWeTfzSbv',
-            size: 3198,
-            type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/2f/56/b7/2f56b72d-237c-98fe-94ae-9189b7d7a9f4/AppIcon-production-0-0-1x_U007emarketing-0-7-0-0-85-220.png/230x0w.webp',
             width: 460,
           },
@@ -362,11 +341,7 @@ export const frenchApps = {
           'https://apps.apple.com/us/app/tf1-info-lci-actualit%C3%A9s/id426125722',
         logo: [
           {
-            filename: '460x0w.webp',
             height: 460,
-            id: 'attfnwiiOTJpXVpit',
-            size: 4616,
-            type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/f6/30/31/f6303121-110d-afc1-8190-3e48d7e9051d/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/230x0w.webp',
             width: 460,
           },
@@ -385,11 +360,7 @@ export const frenchApps = {
         ios_url: 'https://apps.apple.com/ca/app/karnott/id1451207222',
         logo: [
           {
-            filename: '230x0w.webp',
             height: 230,
-            id: 'attlGd6IVWMCKDrlu',
-            size: 2454,
-            type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/36/49/67/3649675f-bd1c-6a2c-5972-87f49f34f9c7/AppIcon-0-0-1x_U007ephone-0-85-220.png/230x0w.webp',
             width: 230,
           },
@@ -411,11 +382,7 @@ export const frenchApps = {
           'https://apps.apple.com/fr/app/doctolib-trouvez-un-m%C3%A9decin/id925339063',
         logo: [
           {
-            filename: '460x0w.webp',
             height: 460,
-            id: 'attkANXAjCpqnyHOZ',
-            size: 3984,
-            type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/9a/09/4b/9a094bd4-54b6-4f58-9c1c-c5cff1135deb/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/230x0w.webp',
             width: 460,
           },
@@ -434,11 +401,7 @@ export const frenchApps = {
         ios_url: 'https://apps.apple.com/us/app/swile/id1190612035',
         logo: [
           {
-            filename: '460x0w.webp',
             height: 460,
-            id: 'attApGQGwN95HzjyR',
-            size: 5614,
-            type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/4f/77/1c/4f771cb7-fbea-c144-986c-d42a1a294411/AppIcon-0-0-1x_U007emarketing-0-6-0-85-220.png/230x0w.webp',
             width: 460,
           },
@@ -457,11 +420,7 @@ export const frenchApps = {
         ios_url: 'https://apps.apple.com/fr/app/sharelock/id1540289966',
         logo: [
           {
-            filename: '460x0w.webp',
             height: 460,
-            id: 'attdnmbFtvbXCtUj1',
-            size: 4674,
-            type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/9c/a7/a4/9ca7a47f-c6ef-41ea-4965-c746df6505df/AppIcon-0-0-1x_U007emarketing-0-5-0-0-85-220.png/230x0w.webp',
             width: 460,
           },
@@ -481,11 +440,7 @@ export const frenchApps = {
           'https://apps.apple.com/fr/app/brigad-travailler-librement/id1232220717',
         logo: [
           {
-            filename: '230x0w.webp',
             height: 230,
-            id: 'attDcKtSIltfOquC7',
-            size: 1862,
-            type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/15/77/f7/1577f708-b52e-6bf3-8cd2-e2808cb87018/AppIcon-0-0-1x_U007epad-0-1-85-220.png/230x0w.webp',
             width: 230,
           },
@@ -505,11 +460,7 @@ export const frenchApps = {
           'https://apps.apple.com/fr/app/blablacar-covoiturage-et-bus/id341329033',
         logo: [
           {
-            filename: '460x0w.webp',
             height: 460,
-            id: 'att4l0VuMrvQskmwg',
-            size: 3796,
-            type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ba/d3/e4/bad3e466-e404-4ac0-2c5f-51c540c8b2f3/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/230x0w.webp',
             width: 460,
           },
@@ -529,11 +480,7 @@ export const frenchApps = {
           'https://apps.apple.com/fr/app/m%C3%A9nage-et-bien-%C3%AAtre-wecasa/id1339647526',
         logo: [
           {
-            filename: '460x0w.webp',
             height: 460,
-            id: 'att1LDCpyQwGgrn4M',
-            size: 5046,
-            type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/3e/aa/9f/3eaa9f25-e70b-bd59-e554-81774c0601be/AppIcon-0-0-1x_U007emarketing-0-10-0-85-220.png/230x0w.webp',
             width: 460,
           },
@@ -553,11 +500,7 @@ export const frenchApps = {
           'https://apps.apple.com/fr/app/sarenza-mode-chaussures/id712216051',
         logo: [
           {
-            filename: '460x0w.webp',
             height: 460,
-            id: 'attEEpdryyf0g8E9x',
-            size: 3158,
-            type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/b4/c0/07/b4c007c8-34b5-b668-381b-30b1240a80ea/AppIcon-0-0-1x_U007emarketing-0-0-0-10-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/230x0w.webp',
             width: 460,
           },
@@ -576,11 +519,7 @@ export const frenchApps = {
         ios_url: 'https://apps.apple.com/fr/app/psg-officiel/id515968212',
         logo: [
           {
-            filename: '460x0w.webp',
             height: 460,
-            id: 'attuTzkyki66X4zSp',
-            size: 13404,
-            type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/e0/99/d3/e099d379-09ed-b0dd-1994-fc684f9629be/AppIcon-0-0-1x_U007emarketing-0-5-0-sRGB-85-220.png/230x0w.webp',
             width: 460,
           },
@@ -601,11 +540,7 @@ export const frenchApps = {
           'https://itunes.apple.com/fr/app/choose-concept-store/id985799982',
         logo: [
           {
-            filename: '460x0w 460x460.webp',
             height: 460,
-            id: 'attNyQoI01RQgTbTr',
-            size: 3196,
-            type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/83/0b/c9/830bc98b-89f6-b277-33b3-c2e57b4bd8d2/AppIcon-prod-0-0-1x_U007epad-0-1-85-220.png/230x0w.webp',
             width: 460,
           },
@@ -624,11 +559,7 @@ export const frenchApps = {
         ios_url: 'https://apps.apple.com/fr/app/pass-culture/id1557887412',
         logo: [
           {
-            filename: '460x0w.webp',
             height: 460,
-            id: 'attdJsnSljEI7cT86',
-            size: 11636,
-            type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/1a/e2/1d/1ae21df3-7c50-dbfa-feb2-4d8f6dc1f56f/AppIcon-0-0-1x_U007emarketing-0-10-0-0-sRGB-85-220.png/230x0w.webp',
             width: 460,
           },
@@ -647,11 +578,7 @@ export const frenchApps = {
         ios_url: 'https://apps.apple.com/fr/app/edf-moi/id563799142',
         logo: [
           {
-            filename: '460x0w.webp',
             height: 460,
-            id: 'attkPokcJBVccc4DR',
-            size: 7606,
-            type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/51/49/95/51499550-5381-c386-66cd-3ebfbd91603d/AppIcon-1x_U007emarketing-0-11-0-85-220-0.png/230x0w.webp',
             width: 460,
           },
@@ -671,11 +598,7 @@ export const frenchApps = {
           'https://apps.apple.com/fr/app/luko-n%C3%A9o-assurance-n-1/id1436300089',
         logo: [
           {
-            filename: '460x0w.webp',
             height: 460,
-            id: 'attHI4PjZoSNBVVNt',
-            size: 3570,
-            type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/41/51/01/4151014b-a86e-c8f2-2c1c-c25a0f9416e2/AppIcon-0-0-1x_U007emarketing-0-6-0-85-220.png/230x0w.webp',
             width: 460,
           },
@@ -693,11 +616,7 @@ export const frenchApps = {
         category: 'Utilities',
         logo: [
           {
-            filename: 'unnamed.webp',
             height: 480,
-            id: 'atti3pm7VWdbeKBRE',
-            size: 15870,
-            type: 'image/webp',
             url: 'https://play-lh.googleusercontent.com/7A5YEJrg4N08VkfSsD84ICF9TVl0p0uMekVfvn5uk5yiucl-D5BpqjH8pcE5SP8CeRw=w240-h480-rw',
             width: 480,
           },
@@ -717,11 +636,7 @@ export const frenchApps = {
           'https://apps.apple.com/fr/app/alan-france-assurance-sant%C3%A9/id1277025964',
         logo: [
           {
-            filename: '460x0w.webp',
             height: 460,
-            id: 'att4xvePf70Nd10i9',
-            size: 16524,
-            type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/15/ff/24/15ff24da-3615-8cf9-d4ea-f621f9851fc8/AppIcon-0-0-1x_U007emarketing-0-1-85-220.png/230x0w.webp',
             width: 460,
           },
@@ -743,11 +658,7 @@ export const frenchApps = {
           'https://apps.apple.com/bj/app/revyze-ton-bac-entre-potes/id1614818005',
         logo: [
           {
-            filename: '460x0w.webp',
             height: 460,
-            id: 'attkn0JTIrBXHbdNL',
-            size: 4552,
-            type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ce/2e/65/ce2e65b3-4704-3b61-5f0e-bd820aee75d1/AppIcon-0-0-1x_U007epad-0-1-85-220.png/230x0w.webp',
             width: 460,
           },
@@ -767,11 +678,7 @@ export const frenchApps = {
           'https://apps.apple.com/fr/app/veepee-by-vente-privee/id906681058',
         logo: [
           {
-            filename: '460x0w.webp',
             height: 460,
-            id: 'att6stTk81vn0Vmug',
-            size: 6166,
-            type: 'image/webp',
             url: 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/26/1b/96/261b966d-0ff6-2b85-50f8-a90a58858f5a/VeepeeAppIcon-0-0-1x_U007emarketing-0-8-0-sRGB-85-220.png/230x0w.webp',
             width: 460,
           },

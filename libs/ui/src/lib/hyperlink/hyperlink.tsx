@@ -28,7 +28,7 @@ export function Hyperlink({
             )}
           </span>
         ) : (
-          <span className="flex items-center">
+          <span className="inline-flex items-center">
             {children}
             {noIcon ? null : (
               <ArrowTopRightOnSquareIcon className="ml-1 size-4 text-gray-400" />
