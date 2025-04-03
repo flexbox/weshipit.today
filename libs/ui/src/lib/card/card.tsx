@@ -11,6 +11,9 @@ const card = cva(
     'ring-1',
     'ring-slate-200 dark:ring-slate-800',
     'text-slate-900 dark:text-white',
+    'transition-shadow',
+    'duration-300',
+    'ease-in-out',
   ],
   {
     defaultVariants: {
