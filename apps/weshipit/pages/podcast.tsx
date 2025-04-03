@@ -55,6 +55,13 @@ export default function Podcast() {
         >
           Apple Podcast
         </LinkButton>
+        <LinkButton
+          variant="outline"
+          isExternalLink
+          href="https://anchor.fm/s/ffc13f2c/podcast/rss"
+        >
+          RSS
+        </LinkButton>
       </div>
       <iframe
         height="450"
