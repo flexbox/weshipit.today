@@ -14,6 +14,7 @@ import {
   WorkflowCard,
   Avatar,
   Pricing,
+  HeroBanner,
 } from '@weshipit/ui';
 import { linksApi } from './api/links';
 import { Layout } from '../components/layout';
@@ -221,7 +222,7 @@ function PodcastProof() {
 
   return (
     <Prose size="xl">
-      <h2>We&apos;re trusted React Native consultants.</h2>
+      <h2>We’re trusted React Native consultants.</h2>
       <p>
         We actively participate in the community, presenting at{' '}
         <Hyperlink href="https://davidl.fr/talks">
@@ -384,7 +385,8 @@ export default function IndexPage({
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <FadeIn>
-            <Hero>
+            <HeroBanner />
+            {/* <Hero>
               <div className="my-12">
                 <Text as="h1" variant="h1" className="text-center">
                   React Native Experts on demand.
@@ -400,7 +402,7 @@ export default function IndexPage({
                 secondaryHref={'#pricing'}
                 teamSpotsLeft={teamSpotsLeft}
               />
-            </Hero>
+            </Hero> */}
           </FadeIn>
           <div className="m-auto max-w-2xl">
             <FadeIn>
@@ -456,23 +458,6 @@ export default function IndexPage({
             </div>
           </div>
           <div className="mb-16 py-0 pb-12 lg:py-24">
-            <div className="m-auto max-w-2xl">
-              <Prose className="mb-12" size="xl">
-                <h2>What makes a mobile app exceptional?</h2>
-                <h3>It&apos;s an app that:</h3>
-                <ol>
-                  <li>Offers a seamless, responsive experience</li>
-                  <li>Is free from bugs and crashes</li>
-                  <li>Always uses the most up-to-date libraries</li>
-                  <li>Downloads in seconds</li>
-                </ol>
-                <p>
-                  We&apos;ve had the privilege of working with over 15 clients,
-                  delivering top-tier solutions.
-                </p>
-              </Prose>
-            </div>
-            {/* Social Proof */}
             <ClientsListHomepage clients={clients} />
           </div>
 

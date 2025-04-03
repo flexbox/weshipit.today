@@ -1,6 +1,6 @@
-import { StoryFn, Meta } from '@storybook/react';
+import { Meta } from '@storybook/react';
 import { Hero } from './hero';
-import React from 'react';
+import { HeroBanner } from './hero-banner';
 import Button from '../button/button';
 
 export default {
@@ -30,3 +30,5 @@ export const Simple = {
     title: 'Expert React Native developer on-demand. Anytime, anywhere.',
   },
 };
+
+export const HeroPhone = () => <HeroBanner />;
