@@ -1,4 +1,82 @@
-export const starters = {
+/**
+ * Level of difficulty for a starter template
+ */
+export type StarterLevel = 'Beginner' | 'Intermediate' | 'Advanced';
+
+/**
+ * Fields contained in a starter record
+ */
+export interface StarterFields {
+  /**
+   * GitHub repository URL
+   */
+  github_url?: string;
+
+  /**
+   * Difficulty level
+   */
+  level: StarterLevel;
+
+  /**
+   * Name of the starter template
+   */
+  name: string;
+
+  /**
+   * Optional internal notes
+   */
+  private_note?: string;
+
+  /**
+   * Area of application
+   */
+  scope?: string[];
+
+  /**
+   * URL-friendly identifier
+   */
+  slug: string;
+
+  /**
+   * Technologies used in the starter
+   */
+  stack?: string[];
+
+  /**
+   * Documentation or demo URL
+   */
+  website_url?: string;
+}
+
+export interface StarterRecord {
+  createdTime: string;
+  fields: StarterFields;
+  id: string;
+}
+
+/**
+ * API response containing all starter records
+ */
+export interface StartersResponse {
+  records: StarterRecord[];
+}
+
+/**
+ * Categorized starter records grouped by difficulty level
+ */
+export interface CategorizedStarters {
+  title: StarterLevel;
+  records: StarterRecord[];
+}
+
+/**
+ * Props for the ReactNativeStartersPage component
+ */
+export interface ReactNativeStartersPageProps {
+  categorizedRecords: CategorizedStarters[];
+}
+
+export const starters: StartersResponse = {
   records: [
     {
       createdTime: '2023-09-08T17:24:41.000Z',

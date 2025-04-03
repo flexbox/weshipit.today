@@ -1,5 +1,10 @@
 import { Layout } from '../../components/layout';
-import { starters } from '../../fixtures/starters.fixture';
+import {
+  CategorizedStarters,
+  ReactNativeStartersPageProps,
+  StarterLevel,
+  starters,
+} from '../../fixtures/starters.fixture';
 
 import {
   Badge,
@@ -13,11 +18,10 @@ import {
 } from '@weshipit/ui';
 import round from 'lodash/round';
 
-import { HeaderLinksForTools } from '../../components/header-links-for-tools';
 import { linksApi } from '../api/links';
 import { extractUsernameFromGithubUrl } from '@weshipit/utils';
 
-const BadgeLevel = ({ level }: { level: string }) => {
+const BadgeLevel = ({ level }: { level: StarterLevel }) => {
   let color = 'green';
   if (level.toLowerCase() === 'intermediate') {
     color = 'yellow';
@@ -33,76 +37,87 @@ const BadgeLevel = ({ level }: { level: string }) => {
   );
 };
 
-function StarterList({ records }) {
+function StarterList({ categorizedRecords }) {
   return (
-    <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      {records.map((record) => {
-        const { github_url, level, name, scope, stack, website_url } =
-          record.fields;
+    <div>
+      {categorizedRecords.map((category) => (
+        <div key={category.title} className="mb-12">
+          <Text variant="h4" as="h2" className="mb-6">
+            {category.title} Templates
+          </Text>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {category.records.map((record) => {
+              const { github_url, level, name, scope, stack, website_url } =
+                record.fields;
 
-        const author = extractUsernameFromGithubUrl(github_url || '');
-        return (
-          <Card key={record.id}>
-            <div className="flex items-start justify-between">
-              <div className="shrink">
-                <Text variant="h3" as="h2" className="my-0">
-                  {name}
-                </Text>
-                <Text className="italic opacity-40">by {author}</Text>
-              </div>
-              <BadgeLevel level={level} />
-            </div>
-            {scope && (
-              <div className="mt-2">
-                <Text variant="c1" className="mb-2 mr-2 flex">
-                  Scope of the template
-                </Text>
-                <TagList tags={scope} />
-              </div>
-            )}
-            {stack && (
-              <div className="mt-2">
-                <Text variant="c1" className="mb-2 mr-2 flex">
-                  Stack included
-                </Text>
-                <TagList tags={stack} size="sm" />
-              </div>
-            )}
+              const author = extractUsernameFromGithubUrl(github_url || '');
+              return (
+                <Card key={record.id}>
+                  <div className="flex items-start justify-between">
+                    <div className="shrink">
+                      <Text variant="h4" as="h3" className="my-0">
+                        {name}
+                      </Text>
+                      <Text className="italic opacity-40">by {author}</Text>
+                    </div>
+                    <BadgeLevel level={level} />
+                  </div>
+                  {scope && (
+                    <div className="mt-2">
+                      <Text variant="c1" className="mb-2 mr-2 flex">
+                        Scope of the template
+                      </Text>
+                      <TagList tags={scope} />
+                    </div>
+                  )}
+                  {stack && (
+                    <div className="mt-2">
+                      <Text variant="c1" className="mb-2 mr-2 flex">
+                        Stack included
+                      </Text>
+                      <TagList tags={stack} size="sm" />
+                    </div>
+                  )}
 
-            <div className="mt-6">
-              {github_url && (
-                <Button
-                  href={github_url}
-                  variant="outline"
-                  as="a"
-                  isExternalLink={true}
-                  size="xl"
-                  className="mr-4"
-                >
-                  GitHub
-                </Button>
-              )}
-              {website_url && (
-                <Button
-                  href={website_url}
-                  variant="outline"
-                  as="a"
-                  isExternalLink={true}
-                  size="xl"
-                >
-                  Website
-                </Button>
-              )}
-            </div>
-          </Card>
-        );
-      })}
+                  <div className="mt-6">
+                    {github_url && (
+                      <Button
+                        href={github_url}
+                        variant="outline"
+                        as="a"
+                        isExternalLink={true}
+                        size="xl"
+                        className="mr-4"
+                      >
+                        GitHub
+                      </Button>
+                    )}
+                    {website_url && (
+                      <Button
+                        href={website_url}
+                        variant="outline"
+                        as="a"
+                        isExternalLink={true}
+                        size="xl"
+                      >
+                        Website
+                      </Button>
+                    )}
+                  </div>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
 
-export default function ReactNativeStartersPage({ records }) {
-  const recordsNumber = round(records.length, -1);
+export default function ReactNativeStartersPage({
+  categorizedRecords,
+}: ReactNativeStartersPageProps) {
+  const recordsNumber = round(categorizedRecords?.length, -1);
 
   return (
     <Layout
@@ -145,7 +160,7 @@ export default function ReactNativeStartersPage({ records }) {
       </div>
 
       <div className="mx-auto max-w-screen-2xl px-4 sm:px-6">
-        <StarterList records={records} />
+        <StarterList categorizedRecords={categorizedRecords} />
       </div>
       <div className="mx-auto my-48 max-w-6xl px-4 sm:px-6">
         <Prose size="lg">
@@ -222,9 +237,48 @@ export default function ReactNativeStartersPage({ records }) {
 export async function getStaticProps() {
   const records = starters.records;
 
+  // add an extra keys and order records by level
+  // sort all begninner first, then intermediate and advanced
+  records.sort((a, b) => {
+    const levelA = a.fields.level.toLowerCase();
+    const levelB = b.fields.level.toLowerCase();
+
+    if (levelA === 'beginner' && levelB !== 'beginner') {
+      return -1;
+    }
+    if (levelA !== 'beginner' && levelB === 'beginner') {
+      return 1;
+    }
+    if (levelA === 'intermediate' && levelB !== 'intermediate') {
+      return -1;
+    }
+    if (levelA !== 'intermediate' && levelB === 'intermediate') {
+      return 1;
+    }
+
+    return 0;
+  });
+
+  const categorizedRecords: CategorizedStarters[] = [
+    { title: 'Beginner', records: [] },
+    { title: 'Intermediate', records: [] },
+    { title: 'Advanced', records: [] },
+  ];
+
+  records.forEach((record) => {
+    const level = record.fields.level.toLowerCase();
+    if (level === 'beginner') {
+      categorizedRecords[0].records.push(record);
+    } else if (level === 'intermediate') {
+      categorizedRecords[1].records.push(record);
+    } else if (level === 'advanced') {
+      categorizedRecords[2].records.push(record);
+    }
+  });
+
   return {
     props: {
-      records,
+      categorizedRecords,
     },
   };
 }
