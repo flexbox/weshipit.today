@@ -10,6 +10,7 @@ export const buttonVariants = cva(
     'focus-visible:outline-offset-2',
     'font-semibold',
     'transition',
+    'hover:cursor-pointer',
     'active:scale-105',
     'disabled:opacity-50',
     'disabled:cursor-not-allowed',
@@ -70,7 +71,7 @@ export const buttonVariants = cva(
         ],
       },
     },
-  }
+  },
 );
 
 export interface ButtonProps

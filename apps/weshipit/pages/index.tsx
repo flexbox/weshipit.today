@@ -481,7 +481,7 @@ export default function IndexPage({
           <div className="m-auto max-w-4xl py-24">
             <Card
               size="xl"
-              className="m-auto my-24 flex flex-col items-center justify-center gap-8 text-center"
+              className="my-24 flex flex-col items-center justify-center gap-8 text-center"
               variant="gradient-blue"
             >
               <Text
@@ -500,14 +500,13 @@ export default function IndexPage({
                 mobile app development forever.
               </Text>
               <Button
+                href={linksApi.cal.ONBOARDING}
                 size="xxl"
                 variant="outline"
-                href={linksApi.cal.ONBOARDING}
                 as="a"
                 isExternalLink
-                withExternalLinkIcon={false}
               >
-                Book a free call now
+                Book a call with David
               </Button>
             </Card>
           </div>

@@ -1,4 +1,4 @@
-import { AppBadge, Card, Hero, LinkButton, Prose, Text } from '@weshipit/ui';
+import { AppBadge, Button, Card, Hero, Prose, Text } from '@weshipit/ui';
 import { Layout } from '../components/layout';
 import { InferGetStaticPropsType } from 'next/types';
 import Image from 'next/image';
@@ -110,22 +110,39 @@ export default function FrenchReactNativePage({
           </section>
         ))}
       </div>
-      <Card
-        size="lg"
-        className="m-auto my-24 items-center justify-center text-center"
-        variant="gradient-purple"
-      >
-        <Text variant="h4" as="h2" className="my-12">
-          Join the list of French companies using React Native 🚀
-        </Text>
-        <LinkButton
-          size="xxl"
-          href={linksApi.airtable.FRENCH_REACT_NATIVE_APPS_FORM}
-          className="mb-12"
+      <div className="m-auto max-w-4xl py-24">
+        <Card
+          size="lg"
+          className="my-24 flex flex-col items-center justify-center gap-8 text-center"
+          variant="gradient-blue"
         >
-          Add your app
-        </LinkButton>
-      </Card>
+          <Text
+            variant="h4"
+            as="h2"
+            className="bg-gradient-to-b from-white to-white/75 bg-clip-text font-bold tracking-tight text-transparent drop-shadow"
+          >
+            Join the elite network of <br />
+            french companies using React Native
+          </Text>
+          <Text
+            variant="p1"
+            as="p"
+            className="bg-gradient-to-b from-white to-white/75 bg-clip-text tracking-tight text-transparent drop-shadow"
+          >
+            Showcase your innovation alongside France's most forward-thinking
+            tech companies.
+          </Text>
+          <Button
+            href={linksApi.airtable.FRENCH_REACT_NATIVE_APPS_FORM}
+            size="xxl"
+            variant="outline"
+            as="a"
+            isExternalLink
+          >
+            Add your app
+          </Button>
+        </Card>
+      </div>
     </Layout>
   );
 }
