@@ -29,13 +29,13 @@ export function PhoneAnimation() {
     const borderRadius = 30;
     const screenWidth = phoneWidth - 20;
     const screenHeight = phoneHeight - 60;
-    const screenX = (rect.width - screenWidth) / 2;
-    const screenY = (rect.height - screenHeight) / 2;
+    // const screenX = (rect.width - screenWidth) / 2;
+    // const screenY = (rect.height - screenHeight) / 2;
 
     // Blueprint style
     ctx.strokeStyle = '#0ea5e9';
     ctx.lineWidth = 1;
-    ctx.fillStyle = 'rgba(14, 165, 233, 0.05)';
+    ctx.fillStyle = 'rgba(14, 165, 233, 0.01)';
 
     // Animation variables
     let animationFrame: number;
@@ -200,7 +200,7 @@ export function PhoneAnimation() {
           const textOpacity = Math.min(1, (componentsProgress - 0.8) * 5);
           ctx.globalAlpha = textOpacity;
 
-          ctx.font = '10px monospace';
+          ctx.font = '12px monospace';
           ctx.fillStyle = '#0ea5e9';
 
           // Width measurement

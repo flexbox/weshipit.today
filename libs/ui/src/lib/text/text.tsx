@@ -12,7 +12,7 @@ export const TextVariants = cva(['text-pretty'], {
         'text-neutral-950',
         'text-sm',
         'font-medium',
-        'dark:text-neutral-200 ',
+        'dark:text-neutral-200',
       ],
       h1: [
         'text-neutral-950',
