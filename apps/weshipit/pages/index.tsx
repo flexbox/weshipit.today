@@ -14,6 +14,7 @@ import {
   WorkflowCard,
   Avatar,
   Pricing,
+  HeroBanner,
 } from '@weshipit/ui';
 import { linksApi } from './api/links';
 import { Layout } from '../components/layout';
@@ -221,7 +222,7 @@ function PodcastProof() {
 
   return (
     <Prose size="xl">
-      <h2>We&apos;re trusted React Native consultants.</h2>
+      <h2>We’re trusted React Native consultants.</h2>
       <p>
         We actively participate in the community, presenting at{' '}
         <Hyperlink href="https://davidl.fr/talks">
@@ -384,23 +385,10 @@ export default function IndexPage({
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <FadeIn>
-            <Hero>
-              <div className="my-12">
-                <Text as="h1" variant="h1" className="text-center">
-                  React Native Experts on demand.
-                </Text>
-                <Text as="p" variant="h3" className="text-center opacity-30">
-                  Pause or cancel whenever.
-                </Text>
-              </div>
-              <CallToAction
-                label={'Book a call with David'}
-                href={linksApi.cal.ONBOARDING}
-                secondaryLabel={'Or see pricing'}
-                secondaryHref={'#pricing'}
-                teamSpotsLeft={teamSpotsLeft}
-              />
-            </Hero>
+            <HeroBanner
+              onboardingHref={linksApi.cal.ONBOARDING}
+              teamSpotsLeft={teamSpotsLeft}
+            />
           </FadeIn>
           <div className="m-auto max-w-2xl">
             <FadeIn>
@@ -456,23 +444,6 @@ export default function IndexPage({
             </div>
           </div>
           <div className="mb-16 py-0 pb-12 lg:py-24">
-            <div className="m-auto max-w-2xl">
-              <Prose className="mb-12" size="xl">
-                <h2>What makes a mobile app exceptional?</h2>
-                <h3>It&apos;s an app that:</h3>
-                <ol>
-                  <li>Offers a seamless, responsive experience</li>
-                  <li>Is free from bugs and crashes</li>
-                  <li>Always uses the most up-to-date libraries</li>
-                  <li>Downloads in seconds</li>
-                </ol>
-                <p>
-                  We&apos;ve had the privilege of working with over 15 clients,
-                  delivering top-tier solutions.
-                </p>
-              </Prose>
-            </div>
-            {/* Social Proof */}
             <ClientsListHomepage clients={clients} />
           </div>
 
@@ -496,7 +467,7 @@ export default function IndexPage({
           <div className="m-auto max-w-4xl py-24">
             <Card
               size="xl"
-              className="m-auto my-24 flex flex-col items-center justify-center gap-8 text-center"
+              className="my-24 flex flex-col items-center justify-center gap-8 text-center"
               variant="gradient-blue"
             >
               <Text
@@ -515,14 +486,13 @@ export default function IndexPage({
                 mobile app development forever.
               </Text>
               <Button
+                href={linksApi.cal.ONBOARDING}
                 size="xxl"
                 variant="outline"
-                href={linksApi.cal.ONBOARDING}
                 as="a"
                 isExternalLink
-                withExternalLinkIcon={false}
               >
-                Book a free call now
+                Book a call with David
               </Button>
             </Card>
           </div>

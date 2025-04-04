@@ -24,6 +24,7 @@ export * from './lib/avatar/avatar';
 export * from './lib/gravatar/avatar-avengers';
 export * from './lib/header/header';
 export * from './lib/hero/hero';
+export * from './lib/hero/hero-banner';
 export * from './lib/hyperlink/hyperlink';
 export * from './lib/not-found/not-found';
 export * from './lib/prose/prose';
