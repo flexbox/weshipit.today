@@ -42,7 +42,7 @@ export function Bento({
           </Card>
         </Hyperlink>
         <Hyperlink href={expertLink} className="h-1/2" isExternal noIcon>
-          <Card className={`overflow-hidden p-4`} shadow={'light'}>
+          <Card className={'overflow-hidden p-4'} shadow={'light'}>
             <Prose size={'xl'} className="mb-6">
               <Text>
                 To <strong>stop struggling</strong> with React Native updates.
@@ -61,7 +61,7 @@ export function Bento({
         </Hyperlink>
       </div>
       <div className="flex h-full flex-col gap-4 ">
-        <Card className={`h-full p-4`}>
+        <Card className={'h-full p-4'}>
           <Hyperlink
             href={expertLink}
             className="h-1/3"
@@ -92,7 +92,7 @@ export function Bento({
           >
             <Card
               variant={'gradient-purple-dark'}
-              className={`size-full p-4`}
+              className={'size-full p-4'}
               shadow={'light'}
             >
               <Prose size={'xl'} className="mb-0 md:mb-6">
