@@ -1,0 +1,13 @@
+# weshipit.today
+
+> weshipit helps startups teams to release their mobile apps build with React Native.
+
+## Company
+- [Getting Started] (https://weshipit.today): Step-by-step guide to work with us
+- [Customers] (https://weshipit.today/customers): List of our customers
+- [React Native Audits] (https://weshipit.today/audit): Eradicating your technical debt caused by a lack of expertise or capacity within your team.
+- [React Native Podcast] (https://weshipit.today/podcast): Le podcast francophone incontournable pour les développeurs cross-platform, explorant React Native.
+
+## Tutorials
+- [React Native Resources] (https://weshipit.today/react-native-resources): Starting mobile app development with React Native.
+- [React Native Starters] (https://weshipit.today/react-native-starters): The best Starter Templates for busy developers.
