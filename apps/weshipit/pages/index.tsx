@@ -6,7 +6,6 @@ import {
   FadeIn,
   Faq,
   FaqProps,
-  Hero,
   Hyperlink,
   Prose,
   SpotLeft,
@@ -25,9 +24,9 @@ import { Customer, getVisibleClients } from './api/client';
 import { Steps, getAllWorkflowSteps } from './api/workflow-steps';
 import { PrismicRichText } from '@prismicio/react';
 
-import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { fetchTeam } from './api/team';
+import { TrustedConsultantsSection } from '../components/trusted-consultants-section';
 
 interface IndexPageProps {
   steps: Steps[];
@@ -152,19 +151,17 @@ function ProblemAgitation() {
       </div>
 
       <Text as="h2" variant="h4">
-        Become top 1% mobile app.
+        Join the top 1% of mobile apps that actually succeed.
       </Text>
       <p>
-        My name is David and I have been laser focused on{' '}
-        <strong>
-          React Native development for the past {yearsOfExperience} years
-        </strong>
-        , which has enabled me to become{' '}
+        I'm David, a{' '}
         <Hyperlink href={'https://x.com/flexbox_/status/1801588179687936329'}>
-          one of the top 20 contributors
+          top 20 Stack Overflow contributor
         </Hyperlink>{' '}
-        on Stackoverflow. I hired Matthys to be my right-hand and help me to
-        scale our services.
+        with {yearsOfExperience}+ years of{' '}
+        <strong>laser-focused React Native experience</strong>. Together with my
+        right-hand Matthys, we transform struggling apps into user-converting
+        experiences that stand out in the market.
       </p>
       <p>
         We are based in France, speak english for all our communications and use{' '}
@@ -201,91 +198,9 @@ function ProblemAgitation() {
   );
 }
 
-function PodcastProof() {
-  const URLS = [
-    {
-      icon: 'apple',
-      platform: 'Apple Podcasts',
-      url: 'https://podcasts.apple.com/us/podcast/rnr-289-real-life-react-native-david-leuliette-talks/id1058647602?i=1000647166395',
-    },
-    {
-      icon: 'spotify',
-      platform: 'Spotify',
-      url: 'https://open.spotify.com/show/28hPRLml3FbP14FCYtlOvg',
-    },
-    {
-      icon: 'globe',
-      platform: 'Web',
-      url: 'https://reactnativeradio.com/episodes/rnr-289-real-life-react-native-david-leuliette-talks-retail-shake-scanner',
-    },
-  ];
-
-  return (
-    <Prose size="xl">
-      <h2>We’re trusted React Native consultants.</h2>
-      <p>
-        We actively participate in the community, presenting at{' '}
-        <Hyperlink href="https://davidl.fr/talks">
-          meetups and conferences
-        </Hyperlink>
-        , as well as{' '}
-        <Hyperlink href="https://davidl.fr/bootcamp">
-          conducting bootcamps
-        </Hyperlink>
-        .
-      </p>
-      <Image
-        src="/images/appjs-2022.jpg"
-        alt="David Leuliette, at appjs conference."
-        className="mb-0 w-full rounded-lg bg-neutral-100 object-cover dark:bg-neutral-800"
-        width={950}
-        height={559}
-      />
-      <small className="text-slate-400">
-        David with Catalyn and Aman at App.js Conf
-      </small>
-      <h3>infinite.red alchemist</h3>
-      <p>
-        We have made numerous open-source contributions to different
-        organizations focused on react-native, such as <code>@expo</code>,{' '}
-        <code>@facebook</code>, <code>@aws-amplify</code> and{' '}
-        <code>@infinitered</code>.
-      </p>
-      <Image
-        src="/images/chainreact-2023.jpg"
-        alt="David Leuliette, at ChainReact conference."
-        className="mb-0 w-full rounded-lg bg-neutral-100 object-cover dark:bg-neutral-800"
-        width={950}
-        height={559}
-      />
-      <small className="text-slate-400">
-        David with John and Mazen at Chain React
-      </small>
-      <p>
-        Listen to David Leuliette, the founder of weshipit.today, on the React
-        Native Radio podcast.
-      </p>
-      <div className="not-prose flex gap-4">
-        {URLS.map(({ platform, url }) => (
-          <Button
-            key={platform}
-            href={url}
-            as="a"
-            isExternalLink
-            variant="outline"
-            size="lg"
-          >
-            {platform}
-          </Button>
-        ))}
-      </div>
-    </Prose>
-  );
-}
-
 function HowDoesItWorks({ steps }: { steps: Steps[] }) {
   return (
-    <div className="mx-auto flex flex-col gap-4">
+    <div className="mx-auto flex flex-col gap-4 mt-16">
       <Prose size="xl">
         <h2>How does it work?</h2>
       </Prose>
@@ -413,11 +328,11 @@ export default function IndexPage({
             <div>
               <div className="m-auto max-w-2xl">
                 <Prose className="mb-12" size="xl">
-                  <h2>Mobile app for iOS, Android and more</h2>
+                  <h2>Transform Your Business with Powerful Mobile Apps</h2>
                   <p>
-                    Our team can assist you in shipping a new app, add new
-                    features, or just keep an existing app up to date. Contact
-                    us today if you want:
+                    Our expert team delivers market-ready iOS and Android apps
+                    that drive engagement and boost revenue. Don't let technical
+                    challenges hold you back.
                   </p>
                 </Prose>
               </div>
@@ -428,6 +343,18 @@ export default function IndexPage({
                 gumroadLink="https://flexbox.gumroad.com/l/expo-checklist"
               />
             </div>
+
+            <div className="mt-12 bg-muted/50 p-6 rounded-lg max-w-3xl mx-auto">
+              <Text className="italic text-lg">
+                “An understanding of our challenges, the presentation of various
+                possible solutions, and an opinion — their own, but one we can
+                rely on.”
+              </Text>
+              <Text className="font-semibold mt-2">
+                — Ludovic Borie, CTO of Karnott
+              </Text>
+            </div>
+
             <div className="m-auto mt-12 max-w-2xl">
               <div className="flex justify-center">
                 <Button
@@ -438,7 +365,7 @@ export default function IndexPage({
                   size="xxl"
                   variant="outline"
                 >
-                  Book a free introduction call
+                  Get your free consultation now
                 </Button>
               </div>
             </div>
@@ -446,13 +373,11 @@ export default function IndexPage({
           <div className="mb-16 py-0 pb-12 lg:py-24">
             <ClientsListHomepage clients={clients} />
           </div>
+        </div>
 
-          <div className="mb-24 py-0 lg:py-24">
-            <div className="m-auto max-w-2xl">
-              <PodcastProof />
-            </div>
-          </div>
+        <TrustedConsultantsSection />
 
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="m-auto max-w-5xl">
             <HowDoesItWorks steps={steps} />
           </div>

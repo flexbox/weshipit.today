@@ -31,4 +31,6 @@ export const Simple = {
   },
 };
 
-export const HeroPhone = () => <HeroBanner />;
+export const HeroPhone = () => (
+  <HeroBanner onboardingHref={'#'} teamSpotsLeft={1} />
+);
