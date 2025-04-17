@@ -200,7 +200,7 @@ function ProblemAgitation() {
 
 function HowDoesItWorks({ steps }: { steps: Steps[] }) {
   return (
-    <div className="mx-auto flex flex-col gap-4">
+    <div className="mx-auto flex flex-col gap-4 mt-16">
       <Prose size="xl">
         <h2>How does it work?</h2>
       </Prose>

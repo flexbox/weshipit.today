@@ -1,11 +1,15 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export function PhoneAnimation() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+  const animationRef = useRef<number | null>(null);
+  const startTimeRef = useRef<number | null>(null);
 
-  useEffect(() => {
+  // Setup canvas and animation
+  const setupCanvas = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -15,6 +19,10 @@ export function PhoneAnimation() {
     // Set canvas dimensions with higher resolution for retina displays
     const dpr = window.devicePixelRatio || 1;
     const rect = canvas.getBoundingClientRect();
+
+    // Update state with the new dimensions
+    setDimensions({ width: rect.width, height: rect.height });
+
     canvas.width = rect.width * dpr;
     canvas.height = rect.height * dpr;
     ctx.scale(dpr, dpr);
@@ -29,6 +37,21 @@ export function PhoneAnimation() {
     const borderRadius = 30;
     const screenWidth = phoneWidth - 20;
     const screenHeight = phoneHeight - 60;
+
+    // Calculate scaling factor for smaller screens
+    const maxPhoneHeight = rect.height * 0.95; // Use 95% of available height
+
+    // Maintenir la taille originale sur desktop, réduire seulement si nécessaire sur mobile
+    // Si l'écran est assez grand (> 768px hauteur), on garde l'échelle à 1
+    // Sinon, on ajuste proportionnellement
+    const isDesktop = rect.height >= 450;
+    const scale = isDesktop ? 1 : Math.min(1, maxPhoneHeight / phoneHeight);
+
+    const scaledPhoneWidth = phoneWidth * scale;
+    const scaledPhoneHeight = phoneHeight * scale;
+    const scaledBorderRadius = borderRadius * scale;
+    const scaledScreenWidth = screenWidth * scale;
+    const scaledScreenHeight = screenHeight * scale;
     // const screenX = (rect.width - screenWidth) / 2;
     // const screenY = (rect.height - screenHeight) / 2;
 
@@ -38,8 +61,6 @@ export function PhoneAnimation() {
     ctx.fillStyle = 'rgba(14, 165, 233, 0.01)';
 
     // Animation variables
-    let animationFrame: number;
-    let startTime: number | null = null;
     const animationDuration = 5000; // 5 seconds for full animation cycle
 
     // Draw grid
@@ -84,11 +105,11 @@ export function PhoneAnimation() {
         // Phone body
         roundedRect(
           ctx,
-          centerX - phoneWidth / 2,
-          centerY - phoneHeight / 2,
-          phoneWidth,
-          phoneHeight,
-          borderRadius,
+          centerX - scaledPhoneWidth / 2,
+          centerY - scaledPhoneHeight / 2,
+          scaledPhoneWidth,
+          scaledPhoneHeight,
+          scaledBorderRadius,
           phoneOutlineProgress,
         );
 
@@ -102,11 +123,11 @@ export function PhoneAnimation() {
         ctx.beginPath();
         roundedRect(
           ctx,
-          centerX - screenWidth / 2,
-          centerY - screenHeight / 2,
-          screenWidth,
-          screenHeight,
-          borderRadius - 10,
+          centerX - scaledScreenWidth / 2,
+          centerY - scaledScreenHeight / 2,
+          scaledScreenWidth,
+          scaledScreenHeight,
+          scaledBorderRadius - 10 * scale,
           screenProgress,
         );
 
@@ -120,24 +141,33 @@ export function PhoneAnimation() {
         // Home indicator
         if (componentsProgress > 0.2) {
           ctx.beginPath();
-          const homeWidth = 60 * Math.min(1, (componentsProgress - 0.2) * 5);
-          ctx.moveTo(centerX - homeWidth / 2, centerY + screenHeight / 2 - 15);
-          ctx.lineTo(centerX + homeWidth / 2, centerY + screenHeight / 2 - 15);
+          const homeWidth =
+            60 * scale * Math.min(1, (componentsProgress - 0.2) * 5);
+          ctx.moveTo(
+            centerX - homeWidth / 2,
+            centerY + scaledScreenHeight / 2 - 15 * scale,
+          );
+          ctx.lineTo(
+            centerX + homeWidth / 2,
+            centerY + scaledScreenHeight / 2 - 15 * scale,
+          );
           ctx.stroke();
         }
 
         // Camera notch
         if (componentsProgress > 0.4) {
           ctx.beginPath();
-          const notchWidth = 60 * Math.min(1, (componentsProgress - 0.4) * 5);
-          const notchHeight = 15 * Math.min(1, (componentsProgress - 0.4) * 5);
+          const notchWidth =
+            60 * scale * Math.min(1, (componentsProgress - 0.4) * 5);
+          const notchHeight =
+            15 * scale * Math.min(1, (componentsProgress - 0.4) * 5);
           roundedRect(
             ctx,
             centerX - notchWidth / 2,
-            centerY - screenHeight / 2 + 5,
+            centerY - scaledScreenHeight / 2 + 5 * scale,
             notchWidth,
             notchHeight,
-            10,
+            10 * scale,
             1,
           );
           ctx.stroke();
@@ -149,7 +179,7 @@ export function PhoneAnimation() {
           ctx.globalAlpha = logoOpacity;
 
           // Atom-like symbol
-          const atomRadius = 30;
+          const atomRadius = 30 * scale;
           ctx.beginPath();
           ctx.ellipse(
             centerX,
@@ -188,7 +218,7 @@ export function PhoneAnimation() {
 
           // Nucleus
           ctx.beginPath();
-          ctx.arc(centerX, centerY, 5, 0, Math.PI * 2);
+          ctx.arc(centerX, centerY, 5 * scale, 0, Math.PI * 2);
           ctx.fillStyle = 'rgba(14, 165, 233, 0.5)';
           ctx.fill();
 
@@ -200,43 +230,43 @@ export function PhoneAnimation() {
           const textOpacity = Math.min(1, (componentsProgress - 0.8) * 5);
           ctx.globalAlpha = textOpacity;
 
-          ctx.font = '12px monospace';
+          ctx.font = `${12 * Math.max(0.75, scale)}px monospace`;
           ctx.fillStyle = '#0ea5e9';
 
           // Width measurement
           ctx.beginPath();
           ctx.moveTo(
-            centerX - phoneWidth / 2 - 10,
-            centerY - phoneHeight / 2 - 10,
+            centerX - scaledPhoneWidth / 2 - 10 * scale,
+            centerY - scaledPhoneHeight / 2 - 10 * scale,
           );
           ctx.lineTo(
-            centerX + phoneWidth / 2 + 10,
-            centerY - phoneHeight / 2 - 10,
+            centerX + scaledPhoneWidth / 2 + 10 * scale,
+            centerY - scaledPhoneHeight / 2 - 10 * scale,
           );
           ctx.stroke();
 
           ctx.fillText(
             `${phoneWidth}px`,
-            centerX - 15,
-            centerY - phoneHeight / 2 - 20,
+            centerX - 15 * scale,
+            centerY - scaledPhoneHeight / 2 - 20 * scale,
           );
 
           // Height measurement
           ctx.beginPath();
           ctx.moveTo(
-            centerX + phoneWidth / 2 + 10,
-            centerY - phoneHeight / 2 - 10,
+            centerX + scaledPhoneWidth / 2 + 10 * scale,
+            centerY - scaledPhoneHeight / 2 - 10 * scale,
           );
           ctx.lineTo(
-            centerX + phoneWidth / 2 + 10,
-            centerY + phoneHeight / 2 + 10,
+            centerX + scaledPhoneWidth / 2 + 10 * scale,
+            centerY + scaledPhoneHeight / 2 + 10 * scale,
           );
           ctx.stroke();
 
           ctx.save();
-          ctx.translate(centerX + phoneWidth / 2 + 25, centerY);
+          ctx.translate(centerX + scaledPhoneWidth / 2 + 25 * scale, centerY);
           ctx.rotate(Math.PI / 2);
-          ctx.fillText(`${phoneHeight}px`, -15, 0);
+          ctx.fillText(`${phoneHeight}px`, -15 * scale, 0);
           ctx.restore();
 
           ctx.globalAlpha = 1;
@@ -244,15 +274,15 @@ export function PhoneAnimation() {
       }
 
       // Draw some blueprint-style dots at corners
-      const dotRadius = 2;
+      const dotRadius = 2 * scale;
       if (progress > 0.9) {
         ctx.fillStyle = '#0ea5e9';
 
         // Phone corners
         ctx.beginPath();
         ctx.arc(
-          centerX - phoneWidth / 2,
-          centerY - phoneHeight / 2,
+          centerX - scaledPhoneWidth / 2,
+          centerY - scaledPhoneHeight / 2,
           dotRadius,
           0,
           Math.PI * 2,
@@ -261,8 +291,8 @@ export function PhoneAnimation() {
 
         ctx.beginPath();
         ctx.arc(
-          centerX + phoneWidth / 2,
-          centerY - phoneHeight / 2,
+          centerX + scaledPhoneWidth / 2,
+          centerY - scaledPhoneHeight / 2,
           dotRadius,
           0,
           Math.PI * 2,
@@ -271,8 +301,8 @@ export function PhoneAnimation() {
 
         ctx.beginPath();
         ctx.arc(
-          centerX - phoneWidth / 2,
-          centerY + phoneHeight / 2,
+          centerX - scaledPhoneWidth / 2,
+          centerY + scaledPhoneHeight / 2,
           dotRadius,
           0,
           Math.PI * 2,
@@ -281,8 +311,8 @@ export function PhoneAnimation() {
 
         ctx.beginPath();
         ctx.arc(
-          centerX + phoneWidth / 2,
-          centerY + phoneHeight / 2,
+          centerX + scaledPhoneWidth / 2,
+          centerY + scaledPhoneHeight / 2,
           dotRadius,
           0,
           Math.PI * 2,
@@ -412,10 +442,10 @@ export function PhoneAnimation() {
       }
     }
 
-    // Animation runs once
+    // Animation function
     const animate = (timestamp: number) => {
-      if (!startTime) startTime = timestamp;
-      const elapsed = timestamp - startTime;
+      if (!startTimeRef.current) startTimeRef.current = timestamp;
+      const elapsed = timestamp - startTimeRef.current;
 
       // Calculate progress (0 to 1) capped at 1
       const progress = Math.min(1, elapsed / animationDuration);
@@ -424,21 +454,46 @@ export function PhoneAnimation() {
 
       // Continue animation until complete
       if (progress < 1) {
-        animationFrame = requestAnimationFrame(animate);
+        animationRef.current = requestAnimationFrame(animate);
       }
     };
 
     // Start animation
-    animationFrame = requestAnimationFrame(animate);
+    startTimeRef.current = null;
+    if (animationRef.current) {
+      cancelAnimationFrame(animationRef.current);
+    }
+    animationRef.current = requestAnimationFrame(animate);
+  };
+
+  // Initialize canvas on first render
+  useEffect(() => {
+    setupCanvas();
+
+    // Resize handler
+    const handleResize = () => {
+      // Debounce the resize event to avoid too many re-renders
+      const timeoutId = setTimeout(() => {
+        setupCanvas();
+      }, 200);
+
+      return () => clearTimeout(timeoutId);
+    };
+
+    // Add resize event listener
+    window.addEventListener('resize', handleResize);
 
     // Cleanup
     return () => {
-      cancelAnimationFrame(animationFrame);
+      window.removeEventListener('resize', handleResize);
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
     };
   }, []);
 
   return (
-    <div className="relative w-full max-w-md aspect-square">
+    <div className="relative w-full max-w-md aspect-[3/4] sm:aspect-square">
       <canvas
         ref={canvasRef}
         className="w-full h-full"

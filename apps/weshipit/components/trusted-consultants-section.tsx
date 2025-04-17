@@ -1,19 +1,27 @@
 import Image from 'next/image';
 import { Button, Text, Hyperlink, Prose, Card, LinkButton } from '@weshipit/ui';
-import { SiGithub } from '@icons-pack/react-simple-icons';
+import {
+  SiGithub,
+  SiApplepodcasts,
+  SiSpotify,
+} from '@icons-pack/react-simple-icons';
 
 import Link from 'next/link';
 import { MicrophoneIcon } from '@heroicons/react/20/solid';
 
 export function TrustedConsultantsSection() {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-white dark:bg-slate-900">
       <div className="container px-4 mx-auto">
         <div className="max-w-3xl mx-auto text-center mb-12 py-12">
           <Text as="h2" variant="h2" className="mb-4">
             Industry-leading React Native experts trusted by top companies
           </Text>
-          <Text as="p" variant="p1" className="text-neutral-500">
+          <Text
+            as="p"
+            variant="p1"
+            className="text-neutral-500 dark:text-neutral-400"
+          >
             Not just consultants — we're active community leaders shaping the
             future of React Native
           </Text>
@@ -23,7 +31,7 @@ export function TrustedConsultantsSection() {
           <Prose size="xl">
             <h3>Community leadership that sets us apart</h3>
             <p>
-              Our team doesn’t just build with React Native —we help define its
+              Our team doesn't just build with React Native —we help define its
               future. We regularly share our expertise at prestigious events
               like Chain React and App.js Conf, empowering developers worldwide.
             </p>
@@ -44,8 +52,12 @@ export function TrustedConsultantsSection() {
                 height={300}
                 className="w-full object-cover"
               />
-              <div className="p-4 bg-muted/30">
-                <Text as="p" variant="c1" className="text-neutral-500">
+              <div className="p-4 bg-muted/30 dark:bg-slate-800/50">
+                <Text
+                  as="p"
+                  variant="c1"
+                  className="text-neutral-500 dark:text-neutral-400"
+                >
                   David Leuliette with John Major and Mazen Chami at Chain React
                 </Text>
               </div>
@@ -63,8 +75,12 @@ export function TrustedConsultantsSection() {
                 height={300}
                 className="w-full object-cover"
               />
-              <div className="p-4 bg-muted/30">
-                <Text as="p" variant="c1" className="text-neutral-500">
+              <div className="p-4 bg-muted/30 dark:bg-slate-800/50">
+                <Text
+                  as="p"
+                  variant="c1"
+                  className="text-neutral-500 dark:text-neutral-400"
+                >
                   David Leuliette with Catalyn Miron and Aman Mittal at App.js
                   Conf
                 </Text>
@@ -100,14 +116,20 @@ export function TrustedConsultantsSection() {
         </div>
 
         <div className="max-w-2xl mx-auto">
-          <div className="bg-muted rounded-xl p-6 md:p-8">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="bg-primary/10 p-3 rounded-full">
-                <MicrophoneIcon className="h-6 w-6 text-primary" />
+          <div className="bg-muted rounded-xl p-6 md:p-8 dark:bg-slate-800 shadow-lg border border-gray-100 dark:border-slate-700">
+            <div className="flex items-center gap-4 mb-8">
+              <div className="bg-primary/20 p-3 rounded-full dark:bg-primary/30">
+                <MicrophoneIcon className="h-6 w-6 text-black dark:text-white" />
               </div>
               <div>
-                <h3 className="text-xl font-semibold">Hear From Our Founder</h3>
-                <Text as="p" variant="p1" className="text-muted-foreground">
+                <h3 className="text-xl font-semibold dark:text-white">
+                  Hear From Our Founder
+                </h3>
+                <Text
+                  as="p"
+                  variant="p1"
+                  className="text-muted-foreground dark:text-neutral-300"
+                >
                   Listen to David Leuliette on the React Native Radio podcast
                 </Text>
               </div>
@@ -115,42 +137,36 @@ export function TrustedConsultantsSection() {
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <Link
-                href="#"
-                className="flex items-center justify-center gap-2 p-3 rounded-lg border bg-background hover:bg-muted/50 transition-colors"
+                href="https://podcasts.apple.com/us/podcast/rnr-289-real-life-react-native-david-leuliette-talks/id1058647602?i=1000647166395"
+                className="flex items-center justify-center gap-2 p-4 rounded-lg border bg-background hover:bg-muted/50 transition-colors dark:bg-slate-700 dark:border-slate-600 dark:hover:bg-slate-600 shadow-md hover:shadow-xl"
               >
-                <Image
-                  src="/placeholder.svg?height=24&width=24"
-                  alt="Apple Podcasts"
-                  width={24}
-                  height={24}
-                />
-                <span className="font-medium">Apple Podcasts</span>
+                <SiApplepodcasts className="h-6 w-6 text-[#AB42DF] dark:text-[#C856FF]" />
+                <span className="font-medium dark:text-white">
+                  Apple Podcasts
+                </span>
               </Link>
               <Link
-                href="#"
-                className="flex items-center justify-center gap-2 p-3 rounded-lg border bg-background hover:bg-muted/50 transition-colors"
+                href="https://open.spotify.com/show/28hPRLml3FbP14FCYtlOvg"
+                className="flex items-center justify-center gap-2 p-4 rounded-lg border bg-background hover:bg-muted/50 transition-colors dark:bg-slate-700 dark:border-slate-600 dark:hover:bg-slate-600 shadow-md hover:shadow-xl"
               >
-                <Image
-                  src="/placeholder.svg?height=24&width=24"
-                  alt="Spotify"
-                  width={24}
-                  height={24}
-                />
-                <span className="font-medium">Spotify</span>
+                <SiSpotify className="h-6 w-6 text-[#1DB954] dark:text-[#1ED760]" />
+                <span className="font-medium dark:text-white">Spotify</span>
               </Link>
               <Link
-                href="#"
-                className="flex items-center justify-center gap-2 p-3 rounded-lg border bg-background hover:bg-muted/50 transition-colors"
+                href="https://reactnativeradio.com/episodes/rnr-289-real-life-react-native-david-leuliette-talks-retail-shake-scanner"
+                className="flex items-center justify-center gap-2 p-4 rounded-lg border bg-background hover:bg-muted/50 transition-colors dark:bg-slate-700 dark:border-slate-600 dark:hover:bg-slate-600 shadow-md hover:shadow-xl"
               >
-                {/* <ExternalLink className="h-4 w-4" /> */}
-                <span className="font-medium">Web</span>
+                <span className="text-2xl" aria-hidden="true">
+                  🌐
+                </span>
+                <span className="font-medium dark:text-white">Web</span>
               </Link>
             </div>
           </div>
         </div>
 
         <div className="mt-16 text-center">
-          <h3 className="text-2xl font-semibold mb-6">
+          <h3 className="text-2xl font-semibold mb-6 dark:text-white">
             Ready to work with React Native experts?
           </h3>
           <Button size="lg" className="bg-primary hover:bg-primary/90">
@@ -165,19 +181,19 @@ export function TrustedConsultantsSection() {
 export function TrustedConsultantsSection2() {
   const URLS = [
     {
-      icon: 'apple',
+      icon: <SiApplepodcasts className="h-5 w-5 text-[#AB42DF]" />,
       platform: 'Apple Podcasts',
-      url: 'https://podcasts.apple.com/us/podcast/rnr-289-real-life-react-native-david-leuliette-talks/id1058647602?i=1000647166395',
+      url: 'https://podcasts.apple.com/fr/podcast/le-cross-platform-show/id1790867559',
     },
     {
-      icon: 'spotify',
+      icon: <SiSpotify className="h-5 w-5 text-[#1DB954]" />,
       platform: 'Spotify',
-      url: 'https://open.spotify.com/show/28hPRLml3FbP14FCYtlOvg',
+      url: 'https://open.spotify.com/show/69dZrIeMZ2S2QELCGp6gW1?nd=1&dlsi=3fe99c92beb14fc3',
     },
     {
-      icon: 'globe',
+      icon: <span className="text-xl">🌐</span>,
       platform: 'Web',
-      url: 'https://reactnativeradio.com/episodes/rnr-289-real-life-react-native-david-leuliette-talks-retail-shake-scanner',
+      url: 'https://weshipit.today/podcast',
     },
   ];
 
@@ -185,7 +201,7 @@ export function TrustedConsultantsSection2() {
     <div className="mb-24 py-0 lg:py-24">
       <div className="m-auto max-w-2xl">
         <Prose size="xl">
-          <h2>We’re trusted React Native consultants.</h2>
+          <h2>We're trusted React Native consultants.</h2>
           <p>
             We actively participate in the community, presenting at{' '}
             <Hyperlink href="https://davidl.fr/talks">
@@ -228,8 +244,8 @@ export function TrustedConsultantsSection2() {
             Listen to David Leuliette, the founder of weshipit.today, on the
             React Native Radio podcast.
           </p>
-          <div className="not-prose flex gap-4">
-            {URLS.map(({ platform, url }) => (
+          <div className="not-prose flex flex-wrap gap-4">
+            {URLS.map(({ icon, platform, url }) => (
               <Button
                 key={platform}
                 href={url}
@@ -237,7 +253,9 @@ export function TrustedConsultantsSection2() {
                 isExternalLink
                 variant="outline"
                 size="lg"
+                className="flex items-center gap-2 shadow-md hover:shadow-lg transition-shadow"
               >
+                {icon}
                 {platform}
               </Button>
             ))}
