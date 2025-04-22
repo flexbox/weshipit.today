@@ -18,6 +18,9 @@ export async function getAllGlossaryTerms() {
     };
   } catch (error) {
     console.error('getAllGlossaryTerms -> error', error);
-    return error;
+    return {
+      glossaryTerms: [],
+      error: 'Failed to fetch glossary terms',
+    };
   }
 }
