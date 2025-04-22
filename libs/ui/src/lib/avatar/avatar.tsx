@@ -1,8 +1,7 @@
-import React from 'react';
 import md5 from 'md5';
 
 interface AvatarProps {
-  size: number;
+  size?: number;
   email: string;
   name?: string;
   className?: string;
@@ -12,7 +11,7 @@ interface AvatarProps {
  * Avatar component that uses Gravatar to display user avatars
  * Falls back to a colored initial-based avatar if Gravatar fails
  */
-export function Avatar({ className, email, name, size }: AvatarProps) {
+export function Avatar({ className, email, name, size = 128 }: AvatarProps) {
   const hash = md5(email.trim().toLowerCase());
 
   const getInitials = (): string => {

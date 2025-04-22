@@ -2125,6 +2125,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@icons-pack/react-simple-icons@npm:^12.5.0":
+  version: 12.5.0
+  resolution: "@icons-pack/react-simple-icons@npm:12.5.0"
+  peerDependencies:
+    react: ^16.13 || ^17 || ^18 || ^19
+  checksum: 10/4de301a833d2d1666c2b52f7c7aab5ceb2d3fdd8d3c6be3c19677fdcc224a7b89c1476ff78781a2173f9fd51c50c990048a37fe0a1d750395c11fdca12e7b08d
+  languageName: node
+  linkType: hard
+
 "@img/sharp-darwin-arm64@npm:0.33.5":
   version: 0.33.5
   resolution: "@img/sharp-darwin-arm64@npm:0.33.5"
@@ -23043,6 +23052,7 @@ __metadata:
     "@chromatic-com/storybook": "npm:^3.2.4"
     "@headlessui/react": "npm:^2.2.0"
     "@heroicons/react": "npm:^2.2.0"
+    "@icons-pack/react-simple-icons": "npm:^12.5.0"
     "@nrwl/cli": "npm:15.9.7"
     "@nx/cypress": "npm:20.4.6"
     "@nx/eslint": "npm:20.4.6"

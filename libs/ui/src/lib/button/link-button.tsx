@@ -9,6 +9,7 @@ export interface LinkButtonProps
   className?: string;
   children: React.ReactNode;
   isExternalLink?: boolean;
+  withExternalLinkIcon?: boolean;
 }
 
 export function LinkButton({
@@ -17,6 +18,7 @@ export function LinkButton({
   size,
   variant,
   isExternalLink = false,
+  withExternalLinkIcon = false,
   ...rest
 }: LinkButtonProps) {
   if (isExternalLink) {
@@ -29,10 +31,12 @@ export function LinkButton({
         <div className="flex">
           {children}
 
-          <ArrowTopRightOnSquareIcon
-            className="-mr-0.5 ml-1 size-5 opacity-40"
-            aria-hidden="true"
-          />
+          {withExternalLinkIcon && (
+            <ArrowTopRightOnSquareIcon
+              className="-mr-0.5 ml-1 size-5 opacity-40"
+              aria-hidden="true"
+            />
+          )}
         </div>
       </Link>
     );

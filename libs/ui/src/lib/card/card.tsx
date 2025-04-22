@@ -6,6 +6,7 @@ export interface CardProps
 
 const card = cva(
   [
+    'overflow-hidden',
     'rounded-3xl',
     'bg-white dark:bg-slate-900',
     'ring-1',
@@ -24,7 +25,7 @@ const card = cva(
         light: [
           'shadow-md',
           'hover:shadow-slate-400',
-          'dark:shadow-sm',
+          'dark:shadow-md',
           'dark:shadow-slate-400',
         ],
       },
