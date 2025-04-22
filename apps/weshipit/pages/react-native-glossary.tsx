@@ -7,6 +7,18 @@ import { Card, LinkButton, Text } from '@weshipit/ui';
 import { useEffect, useState } from 'react';
 import { linksApi } from './api/links';
 
+// Helper function to create slug from title
+function slugify(text: string): string {
+  return text
+    .toString()
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, '-') // Replace spaces with -
+    .replace(/&/g, '-and-') // Replace & with 'and'
+    .replace(/[^\w\-]+/g, '') // Remove all non-word characters except dashes
+    .replace(/\-\-+/g, '-'); // Replace multiple - with single -
+}
+
 interface GlossaryPageProps {
   glossaryTerms: GlossaryTerm[];
 }
@@ -105,7 +117,12 @@ export default function ReactNativeGlossary({
                       >
                         <dt>
                           <h3 className="text-lg font-medium leading-6 text-gray-900 dark:text-white">
-                            {item.data.title}
+                            <Link
+                              href={`/react-native-glossary/${slugify(item.data.title)}`}
+                              className="hover:text-blue-600 dark:hover:text-blue-400 cursor-pointer"
+                            >
+                              {item.data.title}
+                            </Link>
                           </h3>
                         </dt>
                         <dd className="mt-2 text-base text-gray-500 dark:text-gray-400">
