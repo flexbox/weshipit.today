@@ -37,9 +37,11 @@ interface GlossaryTermPageProps {
 export const getStaticPaths: GetStaticPaths = async () => {
   const { glossaryTerms } = await getAllGlossaryTerms();
 
-  const paths = glossaryTerms.map((term) => ({
-    params: { uid: slugify(term.data.title) },
-  }));
+  const paths = glossaryTerms
+    .filter((term) => term.data.title)
+    .map((term) => ({
+      params: { uid: slugify(term.data.title) },
+    }));
 
   return {
     paths,
@@ -81,7 +83,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   // Create a map of terms by title for quick lookup
   const termsByTitle: Record<string, GlossaryTerm> = {};
   glossaryTerms.forEach((term) => {
-    termsByTitle[term.data.title] = term;
+    if (term.data.title) {
+      termsByTitle[term.data.title] = term as unknown as GlossaryTerm;
+    }
   });
 
   // Fetch related articles from Prismic

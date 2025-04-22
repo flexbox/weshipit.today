@@ -29,6 +29,8 @@ export async function getStaticProps() {
   // Group terms by their first letter
   const groupedTerms: { [key: string]: GlossaryTerm[] } = {};
   glossaryTerms.forEach((term) => {
+    if (!term.data.title) return;
+
     const firstLetter = term.data.title.charAt(0).toUpperCase();
     const category = /^[0-9]/.test(firstLetter) ? '#' : firstLetter;
 
@@ -36,7 +38,7 @@ export async function getStaticProps() {
       groupedTerms[category] = [];
     }
 
-    groupedTerms[category].push(term);
+    groupedTerms[category].push(term as unknown as GlossaryTerm);
   });
 
   return {
