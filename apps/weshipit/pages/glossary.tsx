@@ -1,119 +1,23 @@
 import { Layout } from '../components/layout';
+import { GlossaryTerm, getAllGlossaryTerms } from './api/glossary';
+import { PrismicRichText } from '@prismicio/react';
+import { asText } from '@prismicio/client';
 
-const glossaryTerms = [
-  {
-    term: 'Android',
-    definition:
-      'A mobile operating system developed by Google based on a modified version of the Linux kernel. React Native can be used to develop apps for Android devices.',
-  },
-  {
-    term: 'API',
-    definition:
-      'Application Programming Interface. A set of functions and procedures that allow applications to access features or data of an operating system, application, or other service.',
-  },
-  {
-    term: 'Babel',
-    definition:
-      'A JavaScript compiler that lets you use modern JavaScript features that may not be supported by all environments yet.',
-  },
-  {
-    term: 'Bridge',
-    definition:
-      "The layer in React Native that enables communication between the JavaScript thread and the native thread. It's being phased out in favor of the new architecture with JSI.",
-  },
-  {
-    term: 'Codegen',
-    definition:
-      'Code generation process used in React Native to create native code from JavaScript specifications.',
-  },
-  {
-    term: 'Component',
-    definition:
-      'A reusable piece of UI in React Native that can be composed to create complex interfaces.',
-  },
-  {
-    term: 'Expo',
-    definition:
-      'A framework and platform for universal React applications, providing a managed workflow to make React Native development easier and more accessible.',
-  },
-  {
-    term: 'Fabric',
-    definition:
-      'The new rendering system for React Native, part of the new architecture that improves performance and flexibility.',
-  },
-  {
-    term: 'Flexbox',
-    definition:
-      'A layout system used in React Native to arrange components on the screen, similar to CSS Flexbox in web development.',
-  },
-  {
-    term: 'Hermes',
-    definition:
-      'An open-source JavaScript engine optimized for React Native that improves app performance, reduces memory usage, and decreases app size.',
-  },
-  {
-    term: 'Hot Reloading',
-    definition:
-      'A feature that allows developers to see changes in their code immediately without losing the current state of the application.',
-  },
-  {
-    term: 'iOS',
-    definition:
-      "Apple's mobile operating system used on iPhone and iPad devices. React Native can be used to develop apps for iOS devices.",
-  },
-  {
-    term: 'JSI (JavaScript Interface)',
-    definition:
-      "A part of React Native's new architecture that allows JavaScript to hold references to C++ objects and call methods on them directly, eliminating the need for the bridge.",
-  },
-  {
-    term: 'Metro',
-    definition:
-      'The JavaScript bundler for React Native that takes all your JavaScript code and its dependencies and combines them into a single file.',
-  },
-  {
-    term: 'Native Modules',
-    definition:
-      'Modules that allow you to write native code and expose it to JavaScript in React Native when you need to access platform-specific functionality.',
-  },
-  {
-    term: 'New Architecture',
-    definition:
-      "A set of changes to React Native's underlying infrastructure including JSI, Fabric, TurboModules, and Codegen that aim to improve performance and flexibility.",
-  },
-  {
-    term: 'Props',
-    definition:
-      'Short for "properties," these are inputs to React components that allow customization of their behavior and appearance.',
-  },
-  {
-    term: 'React',
-    definition:
-      'A JavaScript library for building user interfaces, developed by Facebook. React Native is built on top of React.',
-  },
-  {
-    term: 'State',
-    definition:
-      "Data that controls a component's behavior and rendering. When state changes, the component re-renders.",
-  },
-  {
-    term: 'StyleSheet',
-    definition:
-      'An API in React Native used to define styles for your components, similar to CSS in web development but with some differences.',
-  },
-  {
-    term: 'TurboModules',
-    definition:
-      "Part of React Native's new architecture that improves the performance and type safety of native modules.",
-  },
-  {
-    term: 'Virtual DOM',
-    definition:
-      'A programming concept where a lightweight copy of the DOM is kept in memory that is synced with the real DOM by React. React Native uses a similar concept for native components.',
-  },
-];
+interface GlossaryPageProps {
+  glossaryTerms: GlossaryTerm[];
+}
 
-export default function Glossary() {
+export async function getStaticProps() {
+  const { glossaryTerms } = await getAllGlossaryTerms();
+
+  return {
+    props: {
+      glossaryTerms,
+    },
+  };
+}
+
+export default function Glossary({ glossaryTerms }: GlossaryPageProps) {
   return (
     <Layout
       seoTitle="React Native Glossary | weshipit.today"
@@ -139,17 +43,36 @@ export default function Glossary() {
             <dl className="space-y-10 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10 md:space-y-0">
               {glossaryTerms.map((item) => (
                 <div
-                  key={item.term}
+                  key={item.id}
                   className="relative border-b border-gray-200 dark:border-gray-700 pb-6"
                 >
                   <dt>
                     <h2 className="text-lg font-medium leading-6 text-gray-900 dark:text-white">
-                      {item.term}
+                      {item.data.title}
                     </h2>
                   </dt>
                   <dd className="mt-2 text-base text-gray-500 dark:text-gray-400">
-                    {item.definition}
+                    <PrismicRichText field={item.data.description} />
                   </dd>
+                  {item.data.related_to && item.data.related_to.length > 0 && (
+                    <div className="mt-4">
+                      <span className="text-sm font-medium text-gray-500 dark:text-gray-400">
+                        Related to:
+                      </span>
+                      <div className="mt-1 flex flex-wrap gap-2">
+                        {item.data.related_to.map(
+                          (related: any, index: number) => (
+                            <span
+                              key={index}
+                              className="inline-flex items-center rounded-md bg-gray-100 px-2.5 py-0.5 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-200"
+                            >
+                              {asText(related)}
+                            </span>
+                          ),
+                        )}
+                      </div>
+                    </div>
+                  )}
                 </div>
               ))}
             </dl>
