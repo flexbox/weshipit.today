@@ -2,24 +2,13 @@ import { Layout } from '../../components/layout';
 import { PrismicRichText } from '@prismicio/react';
 import { asText } from '@prismicio/client';
 import Link from 'next/link';
-import { Button, Card, LinkButton, Text } from '@weshipit/ui';
-import { linksApi } from '../api/links';
+import { LinkButton } from '@weshipit/ui';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { GlossaryTerm, getAllGlossaryTerms } from '../api/glossary';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 import { client as prismicClient } from '../api/prismic';
-
-// Helper function to create slug from title
-function slugify(text: string): string {
-  return text
-    .toString()
-    .toLowerCase()
-    .trim()
-    .replace(/\s+/g, '-') // Replace spaces with -
-    .replace(/&/g, '-and-') // Replace & with 'and'
-    .replace(/[^\w\-]+/g, '') // Remove all non-word characters except dashes
-    .replace(/\-\-+/g, '-'); // Replace multiple - with single -
-}
+import { GlossaryCTA } from '../../components/GlossaryCTA';
+import { slugify } from '../../utils/slugify';
 
 interface GlossaryTermPageProps {
   term: GlossaryTerm;
@@ -256,51 +245,7 @@ export default function GlossaryTermPage({
 
             {/* Call to Action Card */}
             <aside className="sticky top-8 h-fit lg:col-span-1">
-              <Card
-                size="xl"
-                className="flex flex-col items-start"
-                variant="gradient-blue"
-              >
-                <Text
-                  variant="h4"
-                  as="h2"
-                  className="bg-gradient-to-b from-white to-white/75 bg-clip-text font-bold tracking-tight text-transparent drop-shadow"
-                >
-                  React Native Expertise
-                </Text>
-                <Text
-                  variant="p1"
-                  as="p"
-                  className="bg-gradient-to-b from-white to-white/75 bg-clip-text tracking-tight text-transparent drop-shadow"
-                >
-                  Make your app stand out from the crowd with professional
-                  assistance. We can help with:
-                </Text>
-                <ul className="mt-4 space-y-2 text-white">
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>Expert advice on React Native development</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>Performance optimization</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>UX/UI improvements</span>
-                  </li>
-                </ul>
-                <div className="mt-6 w-full">
-                  <LinkButton
-                    href={linksApi?.cal?.ONBOARDING || '/contact'}
-                    size="xl"
-                    variant="outline"
-                    className="mt-4 w-full justify-center"
-                  >
-                    Book a Free Consultation
-                  </LinkButton>
-                </div>
-              </Card>
+              <GlossaryCTA variant="gradient" />
             </aside>
           </div>
         </div>

@@ -3,21 +3,9 @@ import { GlossaryTerm, getAllGlossaryTerms } from '../api/glossary';
 import { PrismicRichText } from '@prismicio/react';
 import { asText } from '@prismicio/client';
 import Link from 'next/link';
-import { Card, LinkButton, Prose, Text } from '@weshipit/ui';
 import { useEffect, useState } from 'react';
-import { linksApi } from '../api/links';
-
-// Helper function to create slug from title
-function slugify(text: string): string {
-  return text
-    .toString()
-    .toLowerCase()
-    .trim()
-    .replace(/\s+/g, '-') // Replace spaces with -
-    .replace(/&/g, '-and-') // Replace & with 'and'
-    .replace(/[^\w\-]+/g, '') // Remove all non-word characters except dashes
-    .replace(/\-\-+/g, '-'); // Replace multiple - with single -
-}
+import { GlossaryCTA } from '../../components/GlossaryCTA';
+import { slugify } from '../../utils/slugify';
 
 interface GlossaryPageProps {
   glossaryTerms: GlossaryTerm[];
@@ -157,39 +145,7 @@ export default function ReactNativeGlossary({
 
             {/* Call to Action Card */}
             <aside className="sticky top-8 h-fit lg:col-span-1">
-              <Card className="flex flex-col items-start" size="lg">
-                <Prose>
-                  <h2>Unlock your app’s full potential</h2>
-                  <p>
-                    Don't let your app become another statistic. 99% of apps
-                    fail due to poor implementation and design.
-                  </p>
-                  <p>Our React Native experts can help you:</p>
-                  <ul>
-                    <li>Optimize performance for buttery-smooth UX</li>
-                    <li>Create intuitive interfaces users love</li>
-                    <li>Accelerate development with proven patterns</li>
-                  </ul>
-
-                  <LinkButton
-                    href={linksApi?.cal?.ONBOARDING || '/contact'}
-                    size="xl"
-                    variant="primary"
-                    className="mt-4 w-full justify-center not-prose"
-                  >
-                    Book your consultation
-                  </LinkButton>
-
-                  <Text
-                    as="p"
-                    variant="c1"
-                    className="mt-4 text-slate-400 dark:text-slate-300 text-center"
-                  >
-                    No commitment required. Discover how we can transform your
-                    app.
-                  </Text>
-                </Prose>
-              </Card>
+              <GlossaryCTA />
             </aside>
           </div>
         </div>
