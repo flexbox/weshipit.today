@@ -5,12 +5,7 @@ import Link from 'next/link';
 import { Button, Card, LinkButton, Text } from '@weshipit/ui';
 import { linksApi } from '../api/links';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import {
-  GlossaryTerm,
-  getGlossaryTermByUID,
-  getPrevNextGlossaryTerms,
-  getAllGlossaryTerms,
-} from '../api/glossary';
+import { GlossaryTerm, getAllGlossaryTerms } from '../api/glossary';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 import { client as prismicClient } from '../api/prismic';
 
@@ -232,34 +227,28 @@ export default function GlossaryTermPage({
               <div className="mt-20 border-t border-gray-200 dark:border-gray-700 pt-8 flex justify-between">
                 <div>
                   {previousTerm && (
-                    <Link
+                    <LinkButton
                       href={`/react-native-glossary/${slugify(previousTerm.data.title)}`}
+                      size="lg"
+                      variant="ghost"
+                      className="flex items-center"
                     >
-                      <Button
-                        size="lg"
-                        variant="outline"
-                        className="flex items-center"
-                      >
-                        <ChevronLeftIcon className="h-4 w-4 mr-2" />
-                        {previousTerm.data.title}
-                      </Button>
-                    </Link>
+                      <ChevronLeftIcon className="h-4 w-4 mr-2" />
+                      {previousTerm.data.title}
+                    </LinkButton>
                   )}
                 </div>
                 <div>
                   {nextTerm && (
-                    <Link
+                    <LinkButton
                       href={`/react-native-glossary/${slugify(nextTerm.data.title)}`}
+                      size="lg"
+                      variant="ghost"
+                      className="flex items-center"
                     >
-                      <Button
-                        size="lg"
-                        variant="outline"
-                        className="flex items-center"
-                      >
-                        {nextTerm.data.title}
-                        <ChevronRightIcon className="h-4 w-4 ml-2" />
-                      </Button>
-                    </Link>
+                      {nextTerm.data.title}
+                      <ChevronRightIcon className="h-4 w-4 ml-2" />
+                    </LinkButton>
                   )}
                 </div>
               </div>

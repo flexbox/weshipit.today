@@ -1,11 +1,11 @@
-import { Layout } from '../components/layout';
-import { GlossaryTerm, getAllGlossaryTerms } from './api/glossary';
+import { Layout } from '../../components/layout';
+import { GlossaryTerm, getAllGlossaryTerms } from '../api/glossary';
 import { PrismicRichText } from '@prismicio/react';
 import { asText } from '@prismicio/client';
 import Link from 'next/link';
-import { Card, LinkButton, Text } from '@weshipit/ui';
+import { Card, LinkButton, Prose, Text } from '@weshipit/ui';
 import { useEffect, useState } from 'react';
-import { linksApi } from './api/links';
+import { linksApi } from '../api/links';
 
 // Helper function to create slug from title
 function slugify(text: string): string {
@@ -43,14 +43,12 @@ export async function getStaticProps() {
 
   return {
     props: {
-      glossaryTerms,
       groupedTerms,
     },
   };
 }
 
 export default function ReactNativeGlossary({
-  glossaryTerms,
   groupedTerms,
 }: GlossaryPageProps & { groupedTerms: { [key: string]: GlossaryTerm[] } }) {
   const alphabet = '#ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
@@ -159,50 +157,38 @@ export default function ReactNativeGlossary({
 
             {/* Call to Action Card */}
             <aside className="sticky top-8 h-fit lg:col-span-1">
-              <Card
-                size="xl"
-                className="flex flex-col items-start"
-                variant="gradient-blue"
-              >
-                <Text
-                  variant="h4"
-                  as="h2"
-                  className="bg-gradient-to-b from-white to-white/75 bg-clip-text font-bold tracking-tight text-transparent drop-shadow"
-                >
-                  React Native Expertise
-                </Text>
-                <Text
-                  variant="p1"
-                  as="p"
-                  className="bg-gradient-to-b from-white to-white/75 bg-clip-text tracking-tight text-transparent drop-shadow"
-                >
-                  Make your app stand out from the crowd with professional
-                  assistance. We can help with:
-                </Text>
-                <ul className="mt-4 space-y-2 text-white">
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>Expert advice on React Native development</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>Performance optimization</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="mr-2">•</span>
-                    <span>UX/UI improvements</span>
-                  </li>
-                </ul>
-                <div className="mt-6 w-full">
+              <Card className="flex flex-col items-start" size="lg">
+                <Prose>
+                  <h2>Unlock your app’s full potential</h2>
+                  <p>
+                    Don't let your app become another statistic. 99% of apps
+                    fail due to poor implementation and design.
+                  </p>
+                  <p>Our React Native experts can help you:</p>
+                  <ul>
+                    <li>Optimize performance for buttery-smooth UX</li>
+                    <li>Create intuitive interfaces users love</li>
+                    <li>Accelerate development with proven patterns</li>
+                  </ul>
+
                   <LinkButton
                     href={linksApi?.cal?.ONBOARDING || '/contact'}
                     size="xl"
-                    variant="outline"
-                    className="mt-4 w-full justify-center"
+                    variant="primary"
+                    className="mt-4 w-full justify-center not-prose"
                   >
-                    Book a Free Consultation
+                    Book your consultation
                   </LinkButton>
-                </div>
+
+                  <Text
+                    as="p"
+                    variant="c1"
+                    className="mt-4 text-slate-400 dark:text-slate-300 text-center"
+                  >
+                    No commitment required. Discover how we can transform your
+                    app.
+                  </Text>
+                </Prose>
               </Card>
             </aside>
           </div>
