@@ -245,7 +245,7 @@ export default function GlossaryTermPage({
 
             {/* Call to Action Card */}
             <aside className="sticky top-8 h-fit lg:col-span-1">
-              <GlossaryCTA variant="gradient" />
+              <GlossaryCTA />
             </aside>
           </div>
         </div>
