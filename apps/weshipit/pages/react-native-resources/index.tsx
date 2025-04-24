@@ -46,70 +46,132 @@ function ResourceList({ records }) {
         } = record.fields;
 
         return (
-          <Card key={record.id}>
-            {conference_country && (
-              <Text as="p" variant="p2" className="mb-2">
-                {conference_country}
+          <Card
+            key={record.id}
+            className="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-shadow duration-300 flex flex-col justify-between"
+          >
+            <div>
+              {conference_country && (
+                <Text as="p" variant="p2" className="mb-2 text-gray-500">
+                  {conference_country}
+                </Text>
+              )}
+              <Text
+                as="h3"
+                variant="h4"
+                className="mb-2 font-semibold text-gray-800"
+              >
+                {name}
               </Text>
-            )}
-            <Text as="h3" variant="h3" className="mb-2">
-              {name}
-            </Text>
-            {conference_date && (
-              <Text as="p" variant="p2" className="mb-4">
-                {format(new Date(conference_date), 'cccc dd MMMM yyyy')}
-              </Text>
-            )}
+              {conference_date && (
+                <Text as="p" variant="p2" className="mb-4 text-gray-500">
+                  {format(new Date(conference_date), 'cccc dd MMMM yyyy')}
+                </Text>
+              )}
 
-            {description && (
-              <Text as="p" variant="p1" className="mb-4">
-                {description}
-              </Text>
-            )}
+              {description && (
+                <Text as="p" variant="p1" className="mb-4 text-gray-600">
+                  {description}
+                </Text>
+              )}
+            </div>
 
-            <div className="mb-4 flex flex-wrap">
+            <div className="mt-auto pt-4 flex flex-wrap gap-2">
               {website_url && (
-                <Button
+                <a
                   href={website_url}
-                  variant="outline"
-                  as="a"
-                  isExternalLink={true}
-                  className="mr-4"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300 text-xs font-medium px-2.5 py-0.5 rounded-full border border-blue-300 dark:border-blue-700 hover:bg-blue-200 dark:hover:bg-blue-800 hover:border-blue-400 dark:hover:border-blue-600 transition-colors"
                 >
-                  Website
-                </Button>
+                  <span>Website</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-3 h-3 ml-1"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                    />
+                  </svg>
+                </a>
               )}
               {youtube_url && (
-                <Button
+                <a
                   href={youtube_url}
-                  variant="outline"
-                  as="a"
-                  isExternalLink={true}
-                  className="mr-4"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-300 text-xs font-medium px-2.5 py-0.5 rounded-full border border-red-300 dark:border-red-700 hover:bg-red-200 dark:hover:bg-red-800 hover:border-red-400 dark:hover:border-red-600 transition-colors"
                 >
-                  Youtube
-                </Button>
+                  <span>Youtube</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-3 h-3 ml-1"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                    />
+                  </svg>
+                </a>
               )}
               {slack_url && (
-                <Button
+                <a
                   href={slack_url}
-                  variant="outline"
-                  as="a"
-                  isExternalLink={true}
-                  className="mr-4"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-300 text-xs font-medium px-2.5 py-0.5 rounded-full border border-purple-300 dark:border-purple-700 hover:bg-purple-200 dark:hover:bg-purple-800 hover:border-purple-400 dark:hover:border-purple-600 transition-colors"
                 >
-                  Slack
-                </Button>
+                  <span>Slack</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-3 h-3 ml-1"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                    />
+                  </svg>
+                </a>
               )}
               {discord_url && (
-                <Button
+                <a
                   href={discord_url}
-                  variant="outline"
-                  as="a"
-                  isExternalLink={true}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center bg-indigo-100 text-indigo-700 dark:bg-indigo-900 dark:text-indigo-300 text-xs font-medium px-2.5 py-0.5 rounded-full border border-indigo-300 dark:border-indigo-700 hover:bg-indigo-200 dark:hover:bg-indigo-800 hover:border-indigo-400 dark:hover:border-indigo-600 transition-colors"
                 >
-                  Discord
-                </Button>
+                  <span>Discord</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-3 h-3 ml-1"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                    />
+                  </svg>
+                </a>
               )}
             </div>
           </Card>
@@ -157,56 +219,76 @@ export default function ReactNativeResourcesPage({
         isExternalLink: true,
       }}
     >
-      <div className="mx-auto mb-6 max-w-6xl">
-        <Hero
-          title={
-            <>
-              Starting mobile app development
-              <br /> with React Native.
-            </>
-          }
-        >
-          <Text as="p" variant="p1" className="my-4 !text-gray-500">
-            We have curated essential resources for the success of your React
-            Native app.
-            <br />
-            This informative content has been brought to you through the
-            generous sponsorship of{' '}
-            <a
-              href="https://gum.co/road-react-native/HELLO_FRIEND"
-              className="font-semibold text-blue-500 underline underline-offset-4 hover:text-blue-700"
-            >
-              the React Native Roadmap
-            </a>
-            .
-          </Text>
-        </Hero>
+      <div className="bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 py-12 md:py-20 mb-12">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <Hero
+            title={
+              <>
+                <span className="text-white">
+                  Starting mobile app development
+                </span>
+                <br /> <span className="text-white">with React Native.</span>
+              </>
+            }
+          >
+            <Text as="p" variant="p1" className="my-4 !text-purple-100">
+              We have curated essential resources for the success of your React
+              Native app.
+              <br />
+              This informative content has been brought to you through the
+              generous sponsorship of{' '}
+              <a
+                href="https://gum.co/road-react-native/HELLO_FRIEND"
+                className="font-semibold text-white underline underline-offset-4 hover:text-purple-200 transition-colors"
+              >
+                the React Native Roadmap
+              </a>
+              .
+            </Text>
+          </Hero>
+        </div>
       </div>
 
-      <div className="mx-auto max-w-screen-2xl px-4 pb-12 sm:px-6 grid gap-64">
+      <div className="mx-auto max-w-screen-2xl px-4 pb-12 sm:px-6 grid gap-16 md:gap-24">
         <section id="guides">
-          <Text as="h2" variant="s2" className="my-6 font-semibold">
+          <Text
+            as="h2"
+            variant="s2"
+            className="my-6 pb-2 font-semibold text-gray-800 border-b border-gray-200"
+          >
             React Native online resources
           </Text>
           <ResourceList records={guides} />
         </section>
 
         <section id="newsletters">
-          <Text as="h2" variant="s2" className="my-6 font-semibold">
+          <Text
+            as="h2"
+            variant="s2"
+            className="my-6 pb-2 font-semibold text-gray-800 border-b border-gray-200"
+          >
             React Native newsletters
           </Text>
           <ResourceList records={newsletters} />
         </section>
 
         <section id="podcasts">
-          <Text as="h2" variant="s2" className="my-6 font-semibold">
+          <Text
+            as="h2"
+            variant="s2"
+            className="my-6 pb-2 font-semibold text-gray-800 border-b border-gray-200"
+          >
             React Native podcasts
           </Text>
           <ResourceList records={podcasts} />
         </section>
 
         <section id="conferences">
-          <Text as="h2" variant="s2" className="my-6 font-semibold">
+          <Text
+            as="h2"
+            variant="s2"
+            className="my-6 pb-2 font-semibold text-gray-800 border-b border-gray-200"
+          >
             React Native conferences
           </Text>
           <ResourceList records={conferences} />

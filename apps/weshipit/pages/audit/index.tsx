@@ -27,7 +27,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      clients,
+      clients: clients.slice(0, 6),
     },
   };
 }
@@ -315,7 +315,7 @@ export function Audit({ clients }: AuditProps) {
             as="p"
             className="bg-gradient-to-b from-white to-white/75 bg-clip-text font-bold tracking-tight text-transparent drop-shadow"
           >
-            Get in touch and let’s build memorable products together.
+            Get in touch and let's build memorable products together.
           </Text>
           <Button
             size="xxl"
