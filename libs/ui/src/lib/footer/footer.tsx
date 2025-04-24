@@ -83,6 +83,7 @@ const navigation = {
     { href: '/audit', name: 'React Native Audit' },
     { href: '/french-react-native-apps', name: 'React Native Apps 🇫🇷 ' },
     { href: '/react-native-migration', name: 'React Native Migration' },
+    { href: '/react-native-glossary', name: 'React Native Glossary' }
   ],
 };
 
