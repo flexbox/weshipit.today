@@ -18,7 +18,7 @@ export function WorkflowCard({
   title,
 }: WorkflowCardProps) {
   return (
-    <Card size="xs" className="flex flex-col p-4 sm:flex-row">
+    <Card size="sm" className="flex flex-col p-4 sm:flex-row">
       <div className="flex items-center justify-center md:w-5/12">
         <PrismicNextImage
           field={image}
