@@ -43,23 +43,6 @@ interface CallToActionProps {
   secondaryLabel: string;
 }
 
-export async function getStaticProps() {
-  const { faqs } = await getAllFaqs();
-  const { clients } = await getVisibleClients();
-  const { steps } = await getAllWorkflowSteps();
-
-  const teamSpotsLeft = await fetchTeam();
-
-  return {
-    props: {
-      clients,
-      faqs,
-      steps,
-      teamSpotsLeft: teamSpotsLeft.length,
-    },
-  };
-}
-
 function CallToAction({
   href,
   label,
@@ -396,4 +379,21 @@ export default function IndexPage({
       </Layout>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const { faqs } = await getAllFaqs();
+  const { clients } = await getVisibleClients();
+  const { steps } = await getAllWorkflowSteps();
+
+  const teamSpotsLeft = await fetchTeam();
+
+  return {
+    props: {
+      clients,
+      faqs,
+      steps,
+      teamSpotsLeft: teamSpotsLeft.length,
+    },
+  };
 }

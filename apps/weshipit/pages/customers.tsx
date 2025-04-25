@@ -17,7 +17,7 @@ export default function CustomersPage({ clients }: CustomersPageProps) {
       ogImageTitle="Customers"
       withHeader
       callToActionLink={{
-        name: 'Star Us on GitHub',
+        name: 'Star us on GitHub',
         href: 'https://github.com/flexbox/weshipit.today',
         isExternalLink: true,
       }}
@@ -41,16 +41,12 @@ export default function CustomersPage({ clients }: CustomersPageProps) {
         </p>
       </Prose>
 
-      <ClientsList clients={clients} />
-
-      <section className="py-24">
-        <Text as="p" variant="p1" className="mb-2">
-          is your company missing?
-        </Text>
-        <LinkButton href={linksApi.cal.ONBOARDING} size="xl" variant="outline">
-          Add your logo today
-        </LinkButton>
-      </section>
+      <div className="mb-24">
+        <ClientsList
+          clients={clients}
+          hrefOnboarding={linksApi.cal.ONBOARDING}
+        />
+      </div>
     </Layout>
   );
 }
@@ -58,20 +54,9 @@ export default function CustomersPage({ clients }: CustomersPageProps) {
 CustomersPage.getInitialProps = async function () {
   const result = await getAllClients();
 
-  result.clients.push({
-    id: 'weshipit',
-    data: {
-      name: 'WeShipIt',
-      industry: 'is your company missing?',
-      is_visible_homepage: true,
-      is_audit: false,
-      logo: {
-        // url: 'https://cdn.weshipit.today/clients/weshipit.png',
-      },
-      id: 'weshipit',
-    },
-  });
+  if (!result) {
+    return { clients: [] };
+  }
 
-  console.log('🚀 ~ result.clients:', result.clients);
   return { clients: result.clients };
 };
