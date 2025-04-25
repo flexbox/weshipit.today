@@ -25,11 +25,10 @@ export const buttonVariants = cva(
         true: ['!cursor-not-allowed', '!opacity-50'],
       },
       size: {
-        lg: ['rounded-md', 'px-3', 'py-2', 'text-sm'],
-        md: ['rounded-md', 'px-2.5', 'py-1.5', 'text-sm'],
         sm: ['rounded', 'px-2', 'py-1', 'text-sm'],
+        md: ['rounded-md', 'px-2.5', 'py-1.5', 'text-sm'],
+        lg: ['rounded-md', 'px-3', 'py-2', 'text-sm'],
         xl: ['rounded-md', 'px-3.5', 'py-2.5', 'text-sm'],
-        xs: ['rounded', 'px-2', 'py-1', 'text-xs'],
         xxl: ['rounded-md', 'px-8', 'py-3', 'text-2xl'],
       },
       variant: {

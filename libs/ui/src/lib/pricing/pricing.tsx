@@ -100,7 +100,7 @@ export function Pricing() {
               key={tier.id}
               className={clsx('p-8 xl:p-10 isolate flex flex-col h-full')}
               variant={tier.featured ? 'featured' : undefined}
-              size="xs"
+              size="sm"
             >
               <div className="flex-1">
                 <h3

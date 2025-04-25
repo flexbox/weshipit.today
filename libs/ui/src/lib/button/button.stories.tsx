@@ -78,9 +78,7 @@ export const Variants = () => (
 
 export const Sizes = () => (
   <div className="grid gap-4">
-    <Button href="/" size="xs">
-      size sx
-    </Button>
+    <Button href="/">size sx</Button>
     <Button href="/" size="sm">
       size sm
     </Button>
@@ -96,7 +94,7 @@ export const Sizes = () => (
     <Button href="/" size="xxl">
       size xxl
     </Button>
-    <Button href="/" size="xs" variant="outline">
+    <Button href="/" variant="outline">
       size sx
     </Button>
     <Button href="/" size="sm" variant="outline">
