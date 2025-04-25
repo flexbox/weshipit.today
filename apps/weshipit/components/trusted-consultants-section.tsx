@@ -1,5 +1,11 @@
 import Image from 'next/image';
-import { Text, Prose, Card, LinkButton } from '@weshipit/ui';
+import {
+  Text,
+  Prose,
+  Card,
+  LinkButton,
+  ClientsListHomepage,
+} from '@weshipit/ui';
 import {
   SiGithub,
   SiApplepodcasts,
@@ -8,11 +14,11 @@ import {
 
 import { MicrophoneIcon } from '@heroicons/react/20/solid';
 
-export function TrustedConsultantsSection() {
+export function TrustedConsultantsSection({ clients }) {
   return (
     <section className="py-16 bg-white dark:bg-slate-900">
       <div className="container px-4 mx-auto">
-        <div className="max-w-3xl mx-auto text-center mb-12 py-12">
+        <div className="max-w-3xl mx-auto text-center pt-12">
           <Text as="h2" variant="h2" className="mb-4">
             Industry-leading React Native experts trusted by top companies
           </Text>
@@ -26,16 +32,20 @@ export function TrustedConsultantsSection() {
           </Text>
         </div>
 
+        <div className="pb-12">
+          <ClientsListHomepage clients={clients} />
+        </div>
+
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
           <Prose size="xl">
             <h3>Community leadership that sets us apart</h3>
             <p>
-              Our team doesn't just build with React Native —we help define its
+              Our team doesn’t just build with React Native —we help define its
               future. We regularly share our expertise at prestigious events
               like Chain React and App.js Conf, empowering developers worldwide.
             </p>
             <ul>
-              <li>Regular speakers at major React Native conferences</li>
+              <li>Delivering workshops at major React conferences</li>
               <li>
                 Conduct professional bootcamps for teams and organizations
               </li>
@@ -90,10 +100,9 @@ export function TrustedConsultantsSection() {
             <Prose size="xl">
               <h3>Open-source impact that builds trust</h3>
               <p>
-                We've made significant contributions to the React Native
-                ecosystem, collaborating with industry leaders like Facebook,
-                Expo, AWS Amplify, and Infinite Red. Our open-source work
-                demonstrates our deep technical expertise.
+                We’ve made contributions to the React Native ecosystem,
+                collaborating with friends like Infinite Red and Expo. Our
+                open-source work demonstrates our deep technical expertise.
               </p>
               <div className="flex items-center gap-3 mb-6">
                 <SiGithub className="h-5 w-5 text-primary" />

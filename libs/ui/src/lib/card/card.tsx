@@ -30,11 +30,10 @@ const card = cva(
         ],
       },
       size: {
-        lg: ['p-8'],
+        sm: ['p-4 !rounded-2xl'],
         md: ['p-6'],
-        sm: ['p-4'],
+        lg: ['p-8'],
         xl: ['p-16'],
-        xs: ['p-0'],
       },
       variant: {
         featured: [
@@ -59,13 +58,6 @@ const card = cva(
           'dark:bg-gradient-to-bl dark:from-blue-900 dark:to-slate-900',
           'dark:ring-white/20',
           'ring-blue-200/20',
-          'text-slate-900 dark:text-slate-100',
-        ],
-        'gradient-purple-dark': [
-          'bg-gradient-to-tr from-slate-200 to-slate-300',
-          'dark:bg-gradient-to-bl dark:from-blue-900 dark:to-slate-900',
-          'dark:ring-white/10',
-          'ring-blue-300/20',
           'text-slate-900 dark:text-slate-100',
         ],
         green: [

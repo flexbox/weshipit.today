@@ -23,13 +23,14 @@ export default function CustomersPage({ clients }: CustomersPageProps) {
       }}
       callToActionButton={{ name: 'Work with us', href: '/' }}
     >
-      <Prose className="py-12" variant="slate" size="2xl">
-        <h3>Meet our customers</h3>
+      <Prose className="py-12" variant="slate">
+        <h1>Trusted by ambitious teams worldwide</h1>
         <p>
           We help <strong>ambitious teams do amazing things</strong>. Over the
           last decades we’ve guided more than {clients.length} companies to
           winning products, impactful designs and right answers.
         </p>
+        <h2>Global expertise</h2>
         <p>
           Over the years, we have had the good fortune to work on{' '}
           <code>React / React Native development</code> and design projects for
@@ -55,6 +56,22 @@ export default function CustomersPage({ clients }: CustomersPageProps) {
 }
 
 CustomersPage.getInitialProps = async function () {
-  const clients = await getAllClients();
-  return clients;
+  const result = await getAllClients();
+
+  result.clients.push({
+    id: 'weshipit',
+    data: {
+      name: 'WeShipIt',
+      industry: 'is your company missing?',
+      is_visible_homepage: true,
+      is_audit: false,
+      logo: {
+        // url: 'https://cdn.weshipit.today/clients/weshipit.png',
+      },
+      id: 'weshipit',
+    },
+  });
+
+  console.log('🚀 ~ result.clients:', result.clients);
+  return { clients: result.clients };
 };

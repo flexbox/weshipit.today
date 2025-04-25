@@ -533,7 +533,7 @@ export function Migration({ clients, feedback }: MigrationProps) {
           <div className="m-auto max-w-4xl py-8 lg:py-24">
             <Card
               size="xl"
-              className="m-auto my-24 flex flex-col items-center justify-center gap-8 text-center"
+              className="my-24 flex flex-col items-center justify-center gap-8 text-center"
               variant="gradient-blue"
             >
               <Text
@@ -548,8 +548,9 @@ export function Migration({ clients, feedback }: MigrationProps) {
                 as="p"
                 className="max-w-md bg-gradient-to-b from-white to-white/75 bg-clip-text font-medium tracking-tight text-transparent drop-shadow"
               >
-                Get expert advice on your migration path. No commitment
-                required.
+                Get expert advice on your migration path.
+                <br />
+                No commitment required.
               </Text>
               <Button
                 size="xxl"
@@ -560,7 +561,7 @@ export function Migration({ clients, feedback }: MigrationProps) {
                 variant="outline"
                 className="font-medium text-base bg-white text-primary hover:bg-slate-100"
               >
-                Book Your Free Strategy Call
+                Book your free strategy call
               </Button>
             </Card>
           </div>

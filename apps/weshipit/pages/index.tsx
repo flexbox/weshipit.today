@@ -215,7 +215,7 @@ function HowDoesItWorks({ steps }: { steps: Steps[] }) {
             <PrismicRichText field={step.data.description} />
           </WorkflowCard>
         ))}
-
+        {/* @todo: refactor this section
         <Card variant="green">
           <Prose size="xl">
             <ol>
@@ -251,7 +251,7 @@ function HowDoesItWorks({ steps }: { steps: Steps[] }) {
               </li>
             </ol>
           </Prose>
-        </Card>
+        </Card> */}
       </div>
     </div>
   );
@@ -343,39 +343,10 @@ export default function IndexPage({
                 gumroadLink="https://flexbox.gumroad.com/l/expo-checklist"
               />
             </div>
-
-            <div className="mt-12 bg-muted/50 p-6 rounded-lg max-w-3xl mx-auto">
-              <Text className="italic text-lg">
-                “An understanding of our challenges, the presentation of various
-                possible solutions, and an opinion — their own, but one we can
-                rely on.”
-              </Text>
-              <Text className="font-semibold mt-2">
-                — Ludovic Borie, CTO of Karnott
-              </Text>
-            </div>
-
-            <div className="m-auto mt-12 max-w-2xl">
-              <div className="flex justify-center">
-                <Button
-                  href={linksApi.cal.ONBOARDING}
-                  as="a"
-                  isExternalLink
-                  withExternalLinkIcon={false}
-                  size="xxl"
-                  variant="outline"
-                >
-                  Get your free consultation now
-                </Button>
-              </div>
-            </div>
-          </div>
-          <div className="mb-16 py-0 pb-12 lg:py-24">
-            <ClientsListHomepage clients={clients} />
           </div>
         </div>
 
-        <TrustedConsultantsSection />
+        <TrustedConsultantsSection clients={clients} />
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="m-auto max-w-5xl">

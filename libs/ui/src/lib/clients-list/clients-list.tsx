@@ -5,6 +5,7 @@ import { Text } from '../text/text';
 export interface ClientProps {
   id: string;
   data: {
+    id: string;
     name: string;
     industry?: string;
     is_visible_homepage: boolean;
@@ -12,7 +13,6 @@ export interface ClientProps {
     logo?: {
       url: string;
     };
-    id: string;
   };
 }
 

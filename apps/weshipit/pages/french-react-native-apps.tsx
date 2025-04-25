@@ -18,8 +18,6 @@ type FormattedApp = {
   android_url?: string | null;
 };
 
-type Platform = 'web' | 'ios' | 'android' | 'podcast';
-
 type FrenchApp = {
   name: string;
   website_url?: string | null;
@@ -160,7 +158,7 @@ export default function FrenchReactNativePage({
       seoDescription="Discover how French companies like BlaBlaCar, Doctolib, Ledger, and Shine are harnessing the power of React Native to create robust mobile applications."
     >
       <Hero title={heroTitle} />
-      <Prose size={'xl'} className="my-8">
+      <Prose size="xl" className="my-8">
         <p>
           We are building a list of French iOS and Android apps that are using
           React Native in {currentYear}. If you&apos;re working in a French
@@ -173,7 +171,7 @@ export default function FrenchReactNativePage({
       </Prose>
 
       <div className="my-8 flex justify-start flex-wrap gap-2">
-        {viewOptions.map((option, index) => (
+        {viewOptions.map((option) => (
           <Button
             key={option.id}
             onClick={() => setViewMode(option.id)}

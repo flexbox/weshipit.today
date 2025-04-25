@@ -83,17 +83,13 @@ export function Bento({
           </Hyperlink>
         </Card>
         <div className="flex h-1/3 w-full gap-4">
-          <Hyperlink
-            href={expertLink}
-            className="w-1/2"
-            isExternal
-            noIcon
-            noSpanStyle
-          >
-            <Card
-              variant={'gradient-purple-dark'}
-              className={'size-full p-4'}
-              shadow={'light'}
+          <Card shadow="light" className="w-1/2">
+            <Hyperlink
+              href={expertLink}
+              className="size-full p-4"
+              isExternal
+              noIcon
+              noSpanStyle
             >
               <Prose size={'xl'} className="mb-0 md:mb-6">
                 <Text>
@@ -114,8 +110,8 @@ export function Bento({
                   name="David Leuliette"
                 />
               </div>
-            </Card>
-          </Hyperlink>
+            </Hyperlink>
+          </Card>
           <Hyperlink
             href={slackLink}
             className="w-1/2"

@@ -20,9 +20,6 @@ export const Variants = () => (
     <Card variant="gradient-blue">I am a gradient-blue card.</Card>
     <Card variant="gradient-pink">I am a gradient-pink card.</Card>
     <Card variant="gradient-purple">I am a gradient-purple card.</Card>
-    <Card variant="gradient-purple-dark">
-      I am a gradient-purple-dark card.
-    </Card>
     <Card variant="green">I am a green card.</Card>
     <Card variant="red">I am a red card.</Card>
   </div>
@@ -30,9 +27,6 @@ export const Variants = () => (
 
 export const Sizes = () => (
   <div className="grid gap-4">
-    <Card variant="gradient-blue" size="xs">
-      I am a xs card.
-    </Card>
     <Card variant="gradient-blue" size="sm">
       I am a sm card.
     </Card>
@@ -41,6 +35,9 @@ export const Sizes = () => (
     </Card>
     <Card variant="gradient-blue" size="lg">
       I am a lg card.
+    </Card>
+    <Card variant="gradient-blue" size="xl">
+      I am a xl card.
     </Card>
   </div>
 );
