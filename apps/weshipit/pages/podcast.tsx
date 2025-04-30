@@ -72,6 +72,7 @@ export default function Podcast() {
         sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
         allow="autoplay *; encrypted-media *; clipboard-write"
         style={{
+          backgroundColor: '#eaeaec',
           border: '0px',
           borderRadius: '12px',
           height: '450px',
@@ -82,8 +83,8 @@ export default function Podcast() {
       <Prose className="mt-12 mb-12">
         <h2>Participer à une emission</h2>
         <p>
-          Tu as un application codée en React Native et tu souhaite partager ton
-          expérience ?, Pour enregister une emmission il suffit de{' '}
+          Tu as une application codée en React Native et tu souhaites partager
+          ton expérience ? Pour enregistrer une émission, il suffit de{' '}
           <Hyperlink href={NOTION_FORM_URL} isExternal>
             remplir ce formulaire sur Notion
           </Hyperlink>
