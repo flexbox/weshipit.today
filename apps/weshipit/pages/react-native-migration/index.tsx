@@ -450,6 +450,7 @@ export function Migration({ clients, feedback }: MigrationProps) {
                         height={48}
                         className="h-12 w-12 rounded-full bg-slate-200 dark:bg-slate-700 object-cover"
                         imgixParams={{ fit: 'crop', ar: '1:1' }}
+                        alt={item.data.alt || 'Client Avatar'}
                       />
                       <div>
                         <p className="font-semibold text-slate-900 dark:text-white">

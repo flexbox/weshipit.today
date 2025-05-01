@@ -9,7 +9,6 @@ const navigation = {
     { href: '/customers', name: 'Customers' },
     { href: '/about', name: 'About' },
     { href: '/podcast', name: 'Podcast' },
-    { href: '/home', name: 'Home' },
     {
       href: 'https://github.com/sponsors/flexbox?frequency=one-time&sponsor=flexbox',
       name: 'Sponsorship',
@@ -76,14 +75,14 @@ const navigation = {
       name: 'Slack',
     },
   ],
-  solutions: [
+  resources: [
     { href: '/react-native-resources', name: 'Start Learning' },
     { href: '/react-native-tools', name: 'React Native Tools' },
     { href: '/react-native-starters', name: 'React Native Starters' },
     { href: '/audit', name: 'React Native Audit' },
     { href: '/french-react-native-apps', name: 'React Native Apps 🇫🇷 ' },
     { href: '/react-native-migration', name: 'React Native Migration' },
-    { href: '/react-native-glossary', name: 'React Native Glossary' }
+    { href: '/react-native-glossary', name: 'React Native Glossary' },
   ],
 };
 
@@ -126,24 +125,21 @@ export function Footer() {
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div className="mb-6">
-                <h3 className="text-base font-medium text-slate-900 dark:text-slate-200">
-                  Solutions
-                </h3>
+                <p className="text-base font-bold text-slate-900 dark:text-slate-200">
+                  Resources
+                </p>
                 <ul className="mt-6 space-y-4">
-                  {navigation.solutions.map((item) => (
+                  {navigation.resources.map((item) => (
                     <li key={item.name}>
                       <FooterLink {...item} />
                     </li>
                   ))}
-                  <li>
-                    <LinkButton href="/">Work with us</LinkButton>
-                  </li>
                 </ul>
               </div>
               <div>
-                <h3 className="text-base font-medium text-slate-900 dark:text-slate-200">
+                <p className="text-base font-bold text-slate-900 dark:text-slate-200">
                   Company
-                </h3>
+                </p>
                 <ul className="mt-4 space-y-4">
                   {navigation.company.map((item) => (
                     <li key={item.name}>
@@ -156,15 +152,20 @@ export function Footer() {
           </div>
 
           <div className="mt-8 space-y-8 xl:mt-0">
+            <p className="text-base font-bold text-slate-900 dark:text-slate-200">
+              Are you looking to build a React Native app?
+            </p>
             <p className="text-base leading-7 text-slate-400">
-              Are you looking to <strong>build a React Native app</strong>?
-              <br /> Look no further than weshipit.today, the #1 destination for
+              Look no further than weshipit.today, the #1 destination for
               finding tools, discovering launch advices, and finding partners to
               successfully release your React Native app today.
             </p>
+            <LinkButton href="/" size="xl">
+              Work with us
+            </LinkButton>
           </div>
         </div>
-        <div className="mt-8 border-t border-gray-200 pt-8 md:flex md:items-center md:justify-between dark:border-gray-800">
+        <div className="my-8 border-t border-gray-200 pt-8 md:flex md:items-center md:justify-between dark:border-gray-800">
           <div className="flex space-x-6 md:order-2">
             {navigation.social.map((item) => (
               <a
@@ -189,6 +190,25 @@ export function Footer() {
             </Hyperlink>
           </p>
         </div>
+        <p className="text-base text-slate-400">
+          Website 100% Over-engineered made with React,{' '}
+          <Hyperlink
+            href="https://design.weshipit.today/"
+            isExternal
+            className="text-slate-400 hover:text-slate-900 dark:hover:text-white"
+          >
+            Storybook
+          </Hyperlink>
+          , Next.js and Nx monorepo. You can hack the{' '}
+          <Hyperlink
+            href="https://github.com/flexbox/weshipit.today/"
+            isExternal
+            className="text-slate-400 hover:text-slate-900 dark:hover:text-white"
+          >
+            source code source on GitHub
+          </Hyperlink>
+          .
+        </p>
       </div>
     </footer>
   );
