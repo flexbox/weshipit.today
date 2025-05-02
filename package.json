@@ -45,7 +45,7 @@
     "@tailwindcss/typography": "^0.5.16",
     "@types/md5": "^2.3.5",
     "@vercel/analytics": "^1.5.0",
-    "@vercel/og": "^0.6.5",
+    "@vercel/og": "^0.6.8",
     "autoprefixer": "^10.4.20",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
