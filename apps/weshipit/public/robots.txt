@@ -1,0 +1,3 @@
+Allow: /api/og/*
+
+sitemap: https://weshipit.today/sitemap-0.xml
