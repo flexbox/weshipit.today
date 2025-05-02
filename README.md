@@ -14,8 +14,6 @@
 
 ## Getting Started
 
-Node version: `22.x.x`
-
 Install global dependencies
 
 ```bash
@@ -36,7 +34,7 @@ yarn start
 
 ## Community
 
-💬 Join us on [Slack](https://weblille.rocks/) to discuss.
+💬 Join us on [Slack](https://join.slack.com/t/weblille/shared_invite/zt-87i4ozyq-K5GRJKAFqKp_w9IHjleW~Q) to discuss.
 
 ⭐️ Help us out by [starring on GitHub](https://github.com/flexbox/weshipit.today), filing bug reports in [issues](https://github.com/flexbox/weshipit.today/issues) with questions or proposals.
 
