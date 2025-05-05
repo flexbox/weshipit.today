@@ -18,13 +18,14 @@ export interface FaqProps {
 
 interface FaqListProps {
   faqs: FaqProps[];
+  isFrench?: boolean;
 }
 
-export function Faq({ faqs }: FaqListProps) {
+export function Faq({ faqs, isFrench }: FaqListProps) {
   return (
     <div className="flex flex-col gap-6 py-24">
       <Text as="h2" variant="h3" className="px-4">
-        Frequently Asked Questions
+        {isFrench ? 'Questions fréquentes' : 'Frequently Asked Questions'}
       </Text>
 
       {faqs.map((item) => (

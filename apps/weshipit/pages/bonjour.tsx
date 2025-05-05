@@ -9,6 +9,9 @@ import {
   Hyperlink,
   Section,
   ClientsListHomepage,
+  Faq,
+  StatisticsGrid,
+  FeatureGrid,
 } from '@weshipit/ui';
 import { linksApi } from './api/links';
 import { Layout } from '../components/layout';
@@ -24,8 +27,8 @@ import {
   UserIcon,
   ChartBarIcon,
   PaintBrushIcon,
-  StarIcon as StarIconSolid,
 } from '@heroicons/react/24/outline';
+import { StarIcon as StarIconSolid } from '@heroicons/react/24/solid';
 import Head from 'next/head';
 import { PrismicRichText, PrismicText } from '@prismicio/react';
 import { PrismicNextImage } from '@prismicio/next';
@@ -35,58 +38,9 @@ interface BonjourPageProps {
   feedback: FeedbackPrismicDocument[];
 }
 
-function useGetLocalTimeInFrance() {
-  const [localTime, setLocalTime] = useState('');
-
-  useEffect(() => {
-    const updateLocalTime = () => {
-      const timeInFrance = new Intl.DateTimeFormat('fr-FR', {
-        hour: '2-digit',
-        minute: '2-digit',
-        timeZone: 'Europe/Paris',
-        hour12: false,
-      }).format(new Date());
-
-      setLocalTime(timeInFrance);
-    };
-
-    updateLocalTime();
-    const intervalId = setInterval(updateLocalTime, 1000);
-
-    return () => clearInterval(intervalId);
-  }, []);
-
-  return localTime;
-}
-
-function CountUp({ end, duration = 2 }: { end: number; duration?: number }) {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    let startTime: number;
-    let animationFrame: number;
-
-    const animate = (timestamp: number) => {
-      if (!startTime) startTime = timestamp;
-      const progress = Math.min((timestamp - startTime) / (duration * 1000), 1);
-      setCount(Math.floor(progress * end));
-
-      if (progress < 1) {
-        animationFrame = requestAnimationFrame(animate);
-      }
-    };
-
-    animationFrame = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(animationFrame);
-  }, [end, duration]);
-
-  return <span>{count}</span>;
-}
-
 function ProblemAgitation() {
   const currentYear = new Date().getFullYear();
   const yearsOfExperience = currentYear - 2016;
-  const localTimeInFrance = useGetLocalTimeInFrance();
 
   return (
     <>
@@ -124,15 +78,6 @@ function ProblemAgitation() {
         qui convertissent les utilisateurs et se démarquent sur le marché.
       </p>
       <p>
-        Nous sommes basés en France, parlons anglais pour toutes nos
-        communications et utilisons des claviers <code>qwerty</code>. Il est{' '}
-        {localTimeInFrance} pour nous en ce moment,{' '}
-        <Hyperlink href={linksApi.cal.ONBOARDING}>
-          réservez un appel pour voir si nous pouvons vous aider
-        </Hyperlink>
-        .
-      </p>
-      <p>
         Contrairement aux contrats de longue durée qui vous lient pendant des
         mois et nécessitent un processus administratif en six étapes,{' '}
         <strong>notre service est disponible quand vous en avez besoin</strong>.
@@ -155,57 +100,36 @@ function StatistiquesMobiles() {
           que s'accélérer.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
-          <motion.div
-            className="bg-slate-50 dark:bg-slate-800 p-6 rounded-xl text-center"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <DevicePhoneMobileIcon className="h-12 w-12 mx-auto text-blue-600 mb-4" />
-            <div className="text-3xl font-bold mb-2">
-              <CountUp end={4880} /> millions
-            </div>
-            <p>utilisateurs de smartphones dans le monde</p>
-          </motion.div>
+        <StatisticsGrid
+          className="mx-2"
+          items={[
+            {
+              icon: <DevicePhoneMobileIcon className="h-12 w-12" />,
+              value: 4880,
+              suffix: ' millions',
+              label: 'utilisateurs de smartphones dans le monde',
+            },
+            {
+              icon: <UserIcon className="h-12 w-12" />,
+              value: 150,
+              suffix: '+',
+              label: 'consultations du smartphone par jour et par utilisateur',
+            },
+            {
+              icon: <ChartBarIcon className="h-12 w-12" />,
+              value: 5,
+              label: 'secondes pour convaincre un utilisateur',
+            },
+          ]}
+        />
 
-          <motion.div
-            className="bg-slate-50 dark:bg-slate-800 p-6 rounded-xl text-center"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <UserIcon className="h-12 w-12 mx-auto text-blue-600 mb-4" />
-            <div className="text-3xl font-bold mb-2">
-              <CountUp end={150} />+
-            </div>
-            <p>consultations du smartphone par jour et par utilisateur</p>
-          </motion.div>
-
-          <motion.div
-            className="bg-slate-50 dark:bg-slate-800 p-6 rounded-xl text-center"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            <ChartBarIcon className="h-12 w-12 mx-auto text-blue-600 mb-4" />
-            <div className="text-3xl font-bold mb-2">
-              <CountUp end={5} />
-            </div>
-            <p>secondes pour convaincre un utilisateur</p>
-          </motion.div>
-        </div>
-
-        <div className="relative aspect-video rounded-xl mt-8 mx-auto">
+        <div className="relative aspect-video rounded-xl mt-8">
           <Image
             src="/images/smartphone-users-growth.jpg"
             alt="Graphique montrant la croissance des utilisateurs de smartphones dans le monde"
             width={800}
             height={450}
-            className="object-contain bg-slate-100 dark:bg-slate-800 p-4 rounded-xl mx-auto"
+            className="object-contain bg-slate-200 dark:bg-slate-800 p-4 rounded-xl mx-auto"
           />
           <div className="text-sm text-slate-500 text-center">
             La croissance des utilisateurs de smartphones de 2014 à 2029
@@ -231,73 +155,38 @@ function ImportanceAppMobile() {
       <Prose size="xl" className="mx-auto">
         <h2>Pourquoi votre projet a besoin d'une application mobile</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
-          <motion.div
-            className="bg-slate-50 dark:bg-slate-800 p-6 rounded-xl"
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <DevicePhoneMobileIcon className="h-8 w-8 text-blue-600 mb-2" />
-            <h3 className="mt-0 text-xl font-bold">Accessibilité maximale</h3>
-            <p>
-              Les utilisateurs consultent leur smartphone en moyenne 150 fois
-              par jour. Votre présence sur cet appareil personnel est vitale
-              pour rester connecté avec votre audience.
-            </p>
-          </motion.div>
-
-          <motion.div
-            className="bg-slate-50 dark:bg-slate-800 p-6 rounded-xl"
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <PaintBrushIcon className="h-8 w-8 text-blue-600 mb-2" />
-            <h3 className="mt-0 text-xl font-bold">
-              Expérience utilisateur dédiée
-            </h3>
-            <p>
-              Une application native offre des performances supérieures et une
-              expérience parfaitement adaptée aux appareils mobiles,
-              contrairement aux sites web responsive.
-            </p>
-          </motion.div>
-
-          <motion.div
-            className="bg-slate-50 dark:bg-slate-800 p-6 rounded-xl"
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <RocketLaunchIcon className="h-8 w-8 text-blue-600 mb-2" />
-            <h3 className="mt-0 text-xl font-bold">Engagement accru</h3>
-            <p>
-              Les notifications push, l'accès hors ligne et les fonctionnalités
-              spécifiques aux mobiles permettent de créer des interactions plus
-              riches avec vos utilisateurs.
-            </p>
-          </motion.div>
-
-          <motion.div
-            className="bg-slate-50 dark:bg-slate-800 p-6 rounded-xl"
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <ChartBarIcon className="h-8 w-8 text-blue-600 mb-2" />
-            <h3 className="mt-0 text-xl font-bold">Avantage concurrentiel</h3>
-            <p>
-              Dans un marché saturé, ne pas avoir d'application mobile risque de
-              vous faire perdre du terrain face à des concurrents plus
-              innovants.
-            </p>
-          </motion.div>
-        </div>
+        <FeatureGrid
+          items={[
+            {
+              icon: <DevicePhoneMobileIcon className="h-8 w-8" />,
+              title: 'Accessibilité maximale',
+              description:
+                'Les utilisateurs consultent leur smartphone en moyenne 150 fois par jour. Votre présence sur cet appareil personnel est vitale pour rester connecté avec votre audience.',
+              animationDirection: 'left',
+            },
+            {
+              icon: <PaintBrushIcon className="h-8 w-8" />,
+              title: 'Expérience utilisateur dédiée',
+              description:
+                'Une application native offre des performances supérieures et une expérience parfaitement adaptée aux appareils mobiles, contrairement aux sites web responsive.',
+              animationDirection: 'right',
+            },
+            {
+              icon: <RocketLaunchIcon className="h-8 w-8" />,
+              title: 'Engagement accru',
+              description:
+                "Les notifications push, l'accès hors ligne et les fonctionnalités spécifiques aux mobiles permettent de créer des interactions plus riches avec vos utilisateurs.",
+              animationDirection: 'left',
+            },
+            {
+              icon: <ChartBarIcon className="h-8 w-8" />,
+              title: 'Avantage concurrentiel',
+              description:
+                "Dans un marché saturé, ne pas avoir d'application mobile risque de vous faire perdre du terrain face à des concurrents plus innovants.",
+              animationDirection: 'right',
+            },
+          ]}
+        />
 
         <p>
           <strong>Ne perdez pas vos utilisateurs potentiels</strong> à cause
@@ -414,7 +303,7 @@ function NosRealisations({
   );
 }
 
-function Faq() {
+function createFaqData() {
   const faqData = [
     {
       question:
@@ -440,78 +329,40 @@ function Faq() {
     },
   ];
 
-  return (
-    <section id="faq" className="my-0 py-20">
-      <div className="text-center max-w-3xl mx-auto mb-16">
-        <h2 className="text-base/7 font-semibold text-blue-600">FAQ</h2>
-        <Text
-          variant="h2"
-          as="h2"
-          className="mb-4 text-slate-900 dark:text-white"
-        >
-          Questions fréquentes
-        </Text>
-        <Text
-          variant="p1"
-          as="p"
-          className="text-slate-600 dark:text-slate-400"
-        >
-          Tout ce que vous devez savoir sur notre service de développement
-          d'applications mobiles
-        </Text>
-      </div>
-      <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        {faqData.map((faq, index) => (
-          <Card key={index} shadow="light" className="border-none">
-            <div className="pt-6">
-              <h3 className="text-xl font-bold mb-2 text-slate-900 dark:text-white">
-                {faq.question}
-              </h3>
-              <p className="text-slate-600 dark:text-slate-400">{faq.answer}</p>
-            </div>
-          </Card>
-        ))}
-      </div>
-    </section>
-  );
+  return faqData.map((faq, index) => ({
+    id: `faq-${index}`,
+    data: {
+      question: [
+        {
+          type: 'heading2',
+          text: faq.question,
+          spans: [],
+        },
+      ] as any,
+      answer: [
+        {
+          type: 'paragraph',
+          text: faq.answer,
+          spans: [],
+        },
+      ] as any,
+    },
+  }));
 }
 
 export default function BonjourPage({ clients, feedback }: BonjourPageProps) {
-  const faqData = [
-    {
-      question:
-        'Combien de temps faut-il pour développer une application mobile ?',
-      answer:
-        "Le délai de développement dépend de la complexité du projet. Une application simple peut être développée en 2-3 mois, tandis qu'une application plus complexe peut prendre 4-6 mois. Nous travaillons en cycles courts pour vous livrer des versions fonctionnelles rapidement.",
-    },
-    {
-      question:
-        'Pourquoi choisir React Native plutôt que le développement natif ?',
-      answer:
-        'React Native permet de développer une application qui fonctionne à la fois sur iOS et Android, tout en offrant des performances proches du natif. Cela réduit considérablement les coûts et les délais de développement, tout en maintenant une excellente expérience utilisateur.',
-    },
-    {
-      question: 'Comment assurez-vous la qualité de vos applications ?',
-      answer:
-        "Nous suivons un processus rigoureux de tests à chaque étape du développement. Cela inclut des tests unitaires, des tests d'intégration, et des tests utilisateurs réels. Nous utilisons également des outils de monitoring pour détecter et résoudre les problèmes rapidement.",
-    },
-    {
-      question: "Que se passe-t-il après le lancement de l'application ?",
-      answer:
-        "Nous proposons des services de maintenance et d'évolution pour garantir que votre application reste performante et à jour. Nous pouvons également vous aider à analyser les données d'utilisation pour optimiser l'expérience utilisateur et augmenter l'engagement.",
-    },
-  ];
+  const faqs = createFaqData();
 
   /** @type {import('schema-dts').FAQPage} */
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: faqData.map((faq) => ({
+    mainEntity: faqs.map((faq, index) => ({
       '@type': 'Question',
-      name: faq.question,
+      name: faq.data.question[0].text,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: faq.answer,
+        text: faq.data.answer[0].text,
       },
     })),
   };
@@ -551,27 +402,17 @@ export default function BonjourPage({ clients, feedback }: BonjourPageProps) {
                 <ProblemAgitation />
               </Prose>
             </FadeIn>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
+            <Button
+              href={linksApi.cal.ONBOARDING}
+              as="a"
+              size="xxl"
+              variant="outline"
+              isExternalLink
+              withExternalLinkIcon={false}
+              className="mb-24 flex w-full justify-center mx-auto"
             >
-              <div className="flex items-center justify-center">
-                <PhoneIcon className="mr-2 h-5 w-5" />
-                <Button
-                  href={linksApi.cal.ONBOARDING}
-                  as="a"
-                  size="xxl"
-                  variant="outline"
-                  isExternalLink
-                  withExternalLinkIcon={false}
-                  className="mb-24 flex w-full justify-center mx-auto"
-                >
-                  Discutez de votre projet avec nous
-                </Button>
-              </div>
-            </motion.div>
+              Discutez de votre projet avec nous
+            </Button>
           </div>
         </div>
 
@@ -590,12 +431,35 @@ export default function BonjourPage({ clients, feedback }: BonjourPageProps) {
         <Section variant="transparent" className="py-12">
           <div className="mx-auto max-w-7xl px-4 sm:px-6">
             <NosRealisations feedback={feedback} />
-            <Faq />
+
+            <section id="faq" className="my-0 py-8">
+              <div className="text-center max-w-3xl mx-auto mb-8">
+                <h2 className="text-base/7 font-semibold text-blue-600">FAQ</h2>
+                <Text
+                  variant="h2"
+                  as="h2"
+                  className="mb-4 text-slate-900 dark:text-white"
+                >
+                  Questions fréquentes
+                </Text>
+                <Text
+                  variant="p1"
+                  as="p"
+                  className="text-slate-600 dark:text-slate-400"
+                >
+                  Tout ce que vous devez savoir sur notre service de
+                  développement d'applications mobiles
+                </Text>
+              </div>
+              <div className="max-w-4xl mx-auto">
+                <Faq faqs={faqs} isFrench />
+              </div>
+            </section>
           </div>
         </Section>
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <div className="m-auto max-w-4xl py-12">
+          <div className="m-auto max-w-4xl py-2 mb-16">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -603,7 +467,7 @@ export default function BonjourPage({ clients, feedback }: BonjourPageProps) {
               viewport={{ once: true }}
             >
               <Card
-                className="my-12 flex flex-col items-center justify-center gap-8 overflow-hidden relative"
+                className="my-2 flex flex-col items-center justify-center gap-8 overflow-hidden relative"
                 variant="gradient-blue"
               >
                 <motion.div
