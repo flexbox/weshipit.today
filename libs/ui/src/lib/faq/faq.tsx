@@ -18,13 +18,17 @@ export interface FaqProps {
 
 interface FaqListProps {
   faqs: FaqProps[];
+  title?: string;
 }
 
-export function Faq({ faqs }: FaqListProps) {
+export function Faq({
+  faqs,
+  title = 'Frequently Asked Questions',
+}: FaqListProps) {
   return (
     <div className="flex flex-col gap-6 py-24">
       <Text as="h2" variant="h3" className="px-4">
-        Frequently Asked Questions
+        {title}
       </Text>
 
       {faqs.map((item) => (

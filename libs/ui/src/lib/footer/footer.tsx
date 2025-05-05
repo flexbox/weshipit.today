@@ -5,6 +5,7 @@ import LinkButton from '../button/link-button';
 
 const navigation = {
   company: [
+    { href: '/bonjour', name: 'Bonjour 🇫🇷' },
     { href: '/consulting', name: 'Consulting' },
     { href: '/customers', name: 'Customers' },
     { href: '/about', name: 'About' },
