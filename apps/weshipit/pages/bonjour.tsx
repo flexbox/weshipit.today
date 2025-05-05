@@ -459,7 +459,7 @@ export default function BonjourPage({ clients, feedback }: BonjourPageProps) {
                 </Text>
               </div>
               <div className="max-w-4xl mx-auto">
-                <Faq faqs={faqs} isFrench />
+                <Faq faqs={faqs} title="Questions fréquentes" />
               </div>
             </section>
           </div>
