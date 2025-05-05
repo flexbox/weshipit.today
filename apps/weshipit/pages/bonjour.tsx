@@ -32,6 +32,7 @@ import { StarIcon as StarIconSolid } from '@heroicons/react/24/solid';
 import Head from 'next/head';
 import { PrismicRichText, PrismicText } from '@prismicio/react';
 import { PrismicNextImage } from '@prismicio/next';
+import { useRouter } from 'next/router';
 
 interface BonjourPageProps {
   clients: Customer[];
@@ -48,7 +49,7 @@ function ProblemAgitation() {
         <strong>99% des applications</strong> ont 1000 utilisateurs ou moins et{' '}
         <strong>ne se démarqueront jamais</strong> en raison d'un{' '}
         <strong>design et d'une UX défaillants</strong>. Les utilisateurs
-        décident généralement en 5 secondes s'ils désinstallent une application.
+        décident généralement en 5 secondes s’ils désinstallent une application.
       </p>
 
       <div className="relative flex h-[164px] w-[124px] flex-row items-center mx-auto sm:h-[124px]">
@@ -92,12 +93,12 @@ function StatistiquesMobiles() {
   return (
     <div className="mx-auto flex flex-col gap-4 mt-12">
       <Prose size="xl" className="mx-auto">
-        <h2>L'explosion des smartphones : une opportunité à saisir</h2>
+        <h2>L’explosion des smartphones : une opportunité à saisir</h2>
         <p>
           En 2024, on compte environ{' '}
           <strong>4,88 milliards d'utilisateurs de smartphones</strong> dans le
           monde, soit 60,42% de la population mondiale. Cette tendance ne fait
-          que s'accélérer.
+          que s’accélérer.
         </p>
 
         <StatisticsGrid
@@ -141,7 +142,7 @@ function StatistiquesMobiles() {
           Cette croissance représente une opportunité sans précédent pour les
           entreprises, mais aussi un défi considérable :{' '}
           <strong>
-            comment capter et retenir l'attention de ces utilisateurs ?
+            comment capter et retenir l’attention de ces utilisateurs ?
           </strong>
         </p>
       </Prose>
@@ -175,7 +176,7 @@ function ImportanceAppMobile() {
               icon: <RocketLaunchIcon className="h-8 w-8" />,
               title: 'Engagement accru',
               description:
-                "Les notifications push, l'accès hors ligne et les fonctionnalités spécifiques aux mobiles permettent de créer des interactions plus riches avec vos utilisateurs.",
+                'Les notifications push, l’accès hors ligne et les fonctionnalités spécifiques aux mobiles permettent de créer des interactions plus riches avec vos utilisateurs.',
               animationDirection: 'left',
             },
             {
@@ -190,8 +191,8 @@ function ImportanceAppMobile() {
 
         <p>
           <strong>Ne perdez pas vos utilisateurs potentiels</strong> à cause
-          d'une présence mobile insuffisante. Dans le monde hyperconnecté
-          d'aujourd'hui, une application mobile n'est plus un luxe mais une
+          d’une présence mobile insuffisante. Dans le monde hyperconnecté
+          d’aujourd’hui, une application mobile n'est plus un luxe mais une
           nécessité.
         </p>
       </Prose>
@@ -212,8 +213,8 @@ function NotreSolution() {
         <ol className="flex flex-col mx-auto max-w-lg">
           <li>
             <strong>Design intuitif et attrayant</strong> - Une interface qui
-            séduit dès les 5 premières secondes d'utilisation, cruciales pour
-            l'adoption.
+            séduit dès les 5 premières secondes d’utilisation, cruciales pour
+            l’adoption.
           </li>
           <li>
             <strong>Performance technique irréprochable</strong> - Des
@@ -221,14 +222,14 @@ function NotreSolution() {
             iOS et Android.
           </li>
           <li>
-            <strong>Stratégie d'engagement</strong> - Des fonctionnalités qui
-            encouragent l'utilisation répétée et la fidélisation des
+            <strong>Stratégie d’engagement</strong> - Des fonctionnalités qui
+            encouragent l’utilisation répétée et la fidélisation des
             utilisateurs.
           </li>
         </ol>
 
         <p>
-          Notre équipe d'experts React Native vous accompagne de la conception à
+          Notre équipe d’experts React Native vous accompagne de la conception à
           la publication sur les stores, en garantissant une qualité qui place
           votre application dans le top 1% des applications mobiles.
         </p>
@@ -352,6 +353,8 @@ function createFaqData() {
 
 export default function BonjourPage({ clients, feedback }: BonjourPageProps) {
   const faqs = createFaqData();
+  const router = useRouter();
+  const { name } = router.query;
 
   /** @type {import('schema-dts').FAQPage} */
   const schema = {
@@ -367,6 +370,10 @@ export default function BonjourPage({ clients, feedback }: BonjourPageProps) {
     })),
   };
 
+  const heroTitle = name
+    ? `Bonjour ${name}, L’ère mobile est là. Êtes-vous prêt?`
+    : 'L’ère mobile est là. Êtes-vous prêt?';
+
   return (
     <>
       <Head>
@@ -377,7 +384,7 @@ export default function BonjourPage({ clients, feedback }: BonjourPageProps) {
       </Head>
       <Layout
         seoTitle="Applications Mobiles React Native pour Votre Entreprise | weshipit.today"
-        seoDescription="Dans un monde avec 4,88 milliards d'utilisateurs de smartphones, ne perdez pas vos clients potentiels. Créez une application mobile performante avec notre expertise React Native."
+        seoDescription="Dans un monde avec 4,88 milliards d’utilisateurs de smartphones, ne perdez pas vos clients potentiels. Créez une application mobile performante avec notre expertise React Native."
         withHeader
         withFooter
         callToActionButton={{
@@ -390,7 +397,7 @@ export default function BonjourPage({ clients, feedback }: BonjourPageProps) {
           <FadeIn>
             <div className="mx-auto max-w-4xl">
               <Hero
-                title="L'ère mobile est là. Êtes-vous prêt?"
+                title={heroTitle}
                 description="Dans un monde dominé par les smartphones, la qualité de votre application mobile détermine le succès de votre entreprise."
               />
             </div>
@@ -448,7 +455,7 @@ export default function BonjourPage({ clients, feedback }: BonjourPageProps) {
                   className="text-slate-600 dark:text-slate-400"
                 >
                   Tout ce que vous devez savoir sur notre service de
-                  développement d'applications mobiles
+                  développement d’applications mobiles
                 </Text>
               </div>
               <div className="max-w-4xl mx-auto">
@@ -489,14 +496,14 @@ export default function BonjourPage({ clients, feedback }: BonjourPageProps) {
                   as="h2"
                   className="bg-gradient-to-b from-white to-white/75 bg-clip-text font-bold tracking-tight text-transparent drop-shadow"
                 >
-                  Ne laissez pas passer l'opportunité mobile
+                  Ne laissez pas passer l’opportunité mobile
                 </Text>
                 <Text
                   variant="p1"
                   as="p"
                   className="bg-gradient-to-b from-white to-white/75 bg-clip-text tracking-tight text-transparent drop-shadow"
                 >
-                  Avec 4,88 milliards d'utilisateurs de smartphones dans le
+                  Avec 4,88 milliards d’utilisateurs de smartphones dans le
                   monde, chaque jour sans application mobile est une opportunité
                   manquée pour votre entreprise.
                 </Text>
