@@ -242,7 +242,8 @@ export const starters: StartersResponse = {
         scope: ['Mobile'],
         slug: 'react-native-cli',
         stack: ['React Native'],
-        website_url: 'https://reactnative.dev/docs/environment-setup',
+        website_url:
+          'https://reactnative.dev/docs/getting-started-without-a-framework',
       },
       id: 'recT7gn9zuQwjAn1A',
     },

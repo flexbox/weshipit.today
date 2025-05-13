@@ -8,7 +8,6 @@ import {
 
 import {
   Badge,
-  Button,
   Card,
   Hero,
   Hyperlink,
@@ -167,7 +166,14 @@ function StarterList({ categorizedRecords }) {
 export default function ReactNativeStartersPage({
   categorizedRecords,
 }: ReactNativeStartersPageProps) {
-  const recordsNumber = round(categorizedRecords?.length, -1);
+  // count all records in the list
+  const recordsNumber = round(
+    categorizedRecords?.reduce(
+      (total, category) => total + category.records.length,
+      0,
+    ),
+    -1,
+  );
 
   return (
     <Layout
@@ -193,7 +199,7 @@ export default function ReactNativeStartersPage({
               </>
             }
             description={
-              <div className="!text-sky-100">
+              <span className="!text-sky-100">
                 We have curated essential resources for the success of your
                 React Native app.
                 <br />
@@ -206,7 +212,7 @@ export default function ReactNativeStartersPage({
                   the React Native Roadmap
                 </a>
                 .
-              </div>
+              </span>
             }
           />
         </div>
