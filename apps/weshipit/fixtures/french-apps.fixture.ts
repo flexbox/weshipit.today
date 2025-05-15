@@ -1,15 +1,15 @@
 interface frenchApps {
   records: {
     fields: {
-      android_url?: string | null;
-      ios_url?: string | null;
+      android_url?: string;
+      ios_url?: string;
       category: string;
       logo: {
         url: string;
       }[];
       name: string;
-      website_url?: string | null;
-      podcast_url?: string | null;
+      website_url?: string;
+      podcast_url?: string;
     };
   }[];
 }
@@ -359,6 +359,8 @@ export const frenchApps: frenchApps = {
         ],
         name: 'ShareLock',
         website_url: 'https://www.sharelock.co/',
+        podcast_url:
+          'https://open.spotify.com/episode/2zOddvp0or5uyg97FSGMkA?si=e6ace9e1ae6a4caf',
       },
     },
     {
