@@ -1,11 +1,16 @@
-function extractAppData(app) {
+import {
+  filteredApp,
+  frenchApp,
+} from 'apps/weshipit/fixtures/french-apps.fixture';
+
+function extractAppData(app): filteredApp {
   return {
-    android_url: app.android_url,
-    ios_url: app.ios_url,
-    logo_url: app.logo[0].url,
     name: app.name,
-    website_url: app.website_url,
-    podcast_url: app.podcast_url,
+    logo_url: app.logo_url,
+    android_url: app.android_url || null,
+    ios_url: app.ios_url || null,
+    website_url: app.website_url || null,
+    podcast_url: app.podcast_url || null,
   };
 }
 
@@ -16,7 +21,7 @@ function addAppToCategory(categoryMap, category, appData) {
   categoryMap.get(category).push(appData);
 }
 
-export function formatAppsByCategory(apps) {
+export function formatAppsByCategory(apps: frenchApp[]) {
   const categoryMap = new Map();
 
   apps.forEach((app) => {

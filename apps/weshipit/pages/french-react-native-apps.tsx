@@ -7,38 +7,29 @@ import { linksApi } from './api/links';
 import kebabCase from 'lodash/kebabCase';
 import { useMemo, useState } from 'react';
 
-import { frenchApps } from '../fixtures/french-apps.fixture';
+import {
+  filteredApp,
+  frenchApp,
+  frenchAppsFixture,
+} from '../fixtures/french-apps.fixture';
 
-type FormattedApp = {
-  name: string;
-  logo_url: string;
-  website_url?: string | null;
-  podcast_url?: string | null;
-  ios_url?: string | null;
-  android_url?: string | null;
-};
-
-type FrenchApp = {
-  name: string;
-  website_url?: string | null;
-  podcast_url?: string | null;
-  ios_url?: string | null;
-  android_url?: string | null;
-  category: string;
-  logo: {
-    url: string;
-  }[];
-};
+type ViewMode =
+  | 'category'
+  | 'alphabetical'
+  | 'ios'
+  | 'android'
+  | 'web'
+  | 'podcast';
 
 export async function getStaticProps() {
-  const records: FrenchApp[] = frenchApps.records.map((record) => ({
-    android_url: record.fields.android_url || null,
-    category: record.fields.category,
-    ios_url: record.fields.ios_url || null,
-    logo: record.fields.logo.map((logo) => ({ url: logo.url })),
+  const records: frenchApp[] = frenchAppsFixture.records.map((record) => ({
     name: record.fields.name,
-    website_url: record.fields.website_url || null,
-    podcast_url: record.fields.podcast_url || null,
+    category: record.fields.category,
+    logo_url: record.fields.logo_url,
+    ios_url: record.fields.ios_url,
+    android_url: record.fields.android_url,
+    website_url: record.fields.website_url,
+    podcast_url: record.fields.podcast_url,
   }));
 
   const categorizedApps = formatAppsByCategory(records);
@@ -52,15 +43,7 @@ export async function getStaticProps() {
   };
 }
 
-type ViewMode =
-  | 'category'
-  | 'alphabetical'
-  | 'ios'
-  | 'android'
-  | 'web'
-  | 'podcast';
-
-const AppGrid = ({ apps }: { apps: FormattedApp[] }) => {
+function AppGrid({ apps }: { apps: filteredApp[] }) {
   if (apps.length === 0) {
     return (
       <Text className="my-12 text-center text-gray-500 dark:text-gray-400">
@@ -98,7 +81,7 @@ const AppGrid = ({ apps }: { apps: FormattedApp[] }) => {
       ))}
     </div>
   );
-};
+}
 
 export default function FrenchReactNativePage({
   categorizedApps,
@@ -109,7 +92,7 @@ export default function FrenchReactNativePage({
 
   const allApps = useMemo(() => {
     return categorizedApps.flatMap(
-      (category) => category.apps as FormattedApp[],
+      (category) => category.apps as filteredApp[],
     );
   }, [categorizedApps]);
 
@@ -199,7 +182,7 @@ export default function FrenchReactNativePage({
                   >
                     {category.category}
                   </Text>
-                  <AppGrid apps={category.apps as FormattedApp[]} />
+                  <AppGrid apps={category.apps} />
                 </section>
               ))
             ) : (

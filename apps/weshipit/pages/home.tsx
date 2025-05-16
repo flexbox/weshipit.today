@@ -1,15 +1,4 @@
-import {
-  ClientsListHomepage,
-  Hero,
-  Text,
-  Hyperlink,
-  CardHomepage,
-  LinkButton,
-  Button,
-  Card,
-  Avatar,
-} from '@weshipit/ui';
-import { Customer, getAllClients } from './api/client';
+import { Text, Button, Card, Avatar } from '@weshipit/ui';
 import { Layout } from '../components/layout';
 import {
   CalendarIcon,
@@ -17,11 +6,7 @@ import {
   StarIcon,
 } from '@heroicons/react/20/solid';
 
-interface ClientsPageProps {
-  clients: Customer[];
-}
-
-export default function HomePage({ clients }: ClientsPageProps) {
+export default function HomePage() {
   return (
     <Layout
       withContainer
@@ -153,8 +138,3 @@ export default function HomePage({ clients }: ClientsPageProps) {
     </Layout>
   );
 }
-
-HomePage.getInitialProps = async function () {
-  const clients = await getAllClients();
-  return clients;
-};
