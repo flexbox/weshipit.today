@@ -1,6 +1,32 @@
 export interface frenchApp {
   name: string;
-  category: string;
+  category:
+    | 'Books'
+    | 'Business'
+    | 'Developer Tools'
+    | 'Education'
+    | 'Entertainment'
+    | 'Finance'
+    | 'Food & Drink'
+    | 'Games'
+    | 'Graphics & Design'
+    | 'Health & Fitness'
+    | 'Lifestyle'
+    | 'Kids (iOS and iPadOS only)'
+    | 'Magazines & Newspapers'
+    | 'Medical'
+    | 'Music'
+    | 'Navigation'
+    | 'News'
+    | 'Photo & Video'
+    | 'Productivity'
+    | 'Reference'
+    | 'Shopping'
+    | 'Social Networking'
+    | 'Sports'
+    | 'Travel'
+    | 'Utilities'
+    | 'Weather';
   logo_url: string;
   ios_url?: string | null;
   android_url?: string | null;
@@ -18,15 +44,55 @@ export type filteredApp = Omit<frenchApp, 'category'>;
 
 export const frenchAppsFixture: frenchApps = {
   records: [
+    // Dupplicate and uncomment the following lines to add a new app
+    // {
+    //   fields: {
+    //     name: '',
+    //     category: '',
+    //     android_url: '',
+    //     ios_url: '',
+    //     logo_url: '',
+    //     website_url: '',
+    //     podcast_url: '',
+    //   },
+    // },
     {
       fields: {
+        name: 'Mangacollec',
+        category: 'Books',
+        android_url:
+          'https://play.google.com/store/apps/details?id=com.mangacollec',
+        ios_url: 'https://apps.apple.com/fr/app/mangacollec/id1178656045',
+        logo_url:
+          'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/13/60/fc/1360fc54-4755-0359-adab-2414d735ec68/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/460x0w.webp',
+        website_url: 'https://www.mangacollec.com/',
+        podcast_url: '',
+      },
+    },
+    {
+      fields: {
+        name: 'Pacevisor',
+        category: 'Health & Fitness',
+        android_url:
+          'https://pacevisor.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fandroid-download.9e23af6e.png&w=640&q=75',
+        ios_url:
+          'https://apps.apple.com/fr/app/pacevisor-convertisseur-course/id1488948143',
+        logo_url:
+          'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/4b/f4/41/4bf4416f-f939-83ac-7d2b-d18f7fd888c2/AppIcon-0-0-1x_U007epad-0-1-85-220.png/460x0w.webp',
+        website_url: 'https://pacevisor.com/',
+        podcast_url:
+          'https://open.spotify.com/episode/4VyluvJMpxAOvTPS0Cbj3k?si=1e9e942c1cc64ee9',
+      },
+    },
+    {
+      fields: {
+        name: 'Mūcho',
+        category: 'Lifestyle',
         android_url:
           'https://play.google.com/store/apps/details?id=fr.getmucho.app&pcampaignid=web_share',
         ios_url: 'https://apps.apple.com/fr/app/mucho/id6737886597',
-        category: 'Lifestyle',
         logo_url:
           'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/e8/fb/dd/e8fbdd06-cdf2-bc6c-7e3c-f9853f82aa1b/AppIcon-0-0-1x_U007epad-0-85-220.png/230x0w.webp',
-        name: 'Mūcho',
         website_url: 'https://www.getmucho.fr/',
         podcast_url:
           'https://open.spotify.com/episode/1uF2VZH5rs5eXeUAPpVNQQ?si=e8fbd76d663642ef',
@@ -75,7 +141,7 @@ export const frenchAppsFixture: frenchApps = {
     },
     {
       fields: {
-        category: 'Social',
+        category: 'Social Networking',
         logo_url:
           'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/8d/24/e1/8d24e1ae-3675-0673-2d98-17e19f580ea7/AppIcon-0-0-1x_U007ephone-0-85-220.png/230x0w.webp',
         name: 'Hivebrite',
@@ -112,7 +178,7 @@ export const frenchAppsFixture: frenchApps = {
       fields: {
         android_url:
           'https://play.google.com/store/apps/details?id=com.meero.realtors&hl=en_US',
-        category: 'Photography',
+        category: 'Photo & Video',
         ios_url: 'https://apps.apple.com/fr/app/meero-realtors/id1608365779',
         logo_url:
           'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/86/4b/ec/864becdb-e575-a1af-79d2-8b893b92e9ae/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/146x0w.webp',
@@ -187,7 +253,7 @@ export const frenchAppsFixture: frenchApps = {
       fields: {
         android_url:
           'https://play.google.com/store/apps/details?id=com.shoootin.mobile',
-        category: 'Photography',
+        category: 'Photo & Video',
         ios_url: 'https://apps.apple.com/app/shoootin/id1408602189',
         logo_url:
           'https://is1-ssl.mzstatic.com/image/thumb/Purple125/v4/f1/3e/39/f13e3997-a86a-56b7-e462-5725fe760ccc/AppIcon-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/230x0w.webp',
@@ -264,7 +330,7 @@ export const frenchAppsFixture: frenchApps = {
       fields: {
         android_url:
           'https://play.google.com/store/apps/details?id=fr.doctolib.www&hl=en&gl=US',
-        category: 'Health',
+        category: 'Health & Fitness',
         ios_url:
           'https://apps.apple.com/fr/app/doctolib-trouvez-un-m%C3%A9decin/id925339063',
         logo_url:
@@ -333,7 +399,7 @@ export const frenchAppsFixture: frenchApps = {
         ios_url:
           'https://apps.apple.com/fr/app/m%C3%A9nage-et-bien-%C3%AAtre-wecasa/id1339647526',
         logo_url:
-          'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/3e/aa/9f/3eaa9f25-e70b-bd59-e554-81774c0601be/AppIcon-0-0-1x_U007emarketing-0-10-0-85-220.png/230x0w.webp',
+          'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/13/41/9c/13419c38-d086-b356-0370-2f45bd99e295/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/460x0w.webp',
         name: 'Wecasa',
         website_url: 'https://www.wecasa.fr/',
       },
@@ -429,7 +495,7 @@ export const frenchAppsFixture: frenchApps = {
       fields: {
         android_url:
           'https://play.google.com/store/apps/details?id=com.alanmobile',
-        category: 'Health',
+        category: 'Health & Fitness',
         ios_url:
           'https://apps.apple.com/fr/app/alan-france-assurance-sant%C3%A9/id1277025964',
         logo_url:

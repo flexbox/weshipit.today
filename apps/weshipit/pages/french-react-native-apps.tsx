@@ -118,7 +118,7 @@ export default function FrenchReactNativePage({
   );
 
   const viewOptions: { id: ViewMode; label: string }[] = [
-    { id: 'category', label: 'By Category' },
+    { id: 'category', label: 'Category' },
     { id: 'alphabetical', label: 'Alphabetical' },
     { id: 'ios', label: 'iOS' },
     { id: 'android', label: 'Android' },
@@ -143,8 +143,8 @@ export default function FrenchReactNativePage({
       <Hero title={heroTitle} />
       <Prose size="xl" className="my-8">
         <p>
-          We are building a list of French iOS and Android apps that are using
-          React Native in {currentYear}. If you&apos;re working in a French
+          We are building a list of french iOS and Android apps that are using
+          React Native in {currentYear}. If you&apos;re working in a french
           company that uses React Native,{' '}
           <a href={linksApi.airtable.FRENCH_REACT_NATIVE_APPS_FORM}>
             add your app
