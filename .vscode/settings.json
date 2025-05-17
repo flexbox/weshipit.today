@@ -15,5 +15,6 @@
 			"cva\\(([^)]*)\\)",
 			"[\"'`]([^\"'`]*).*?[\"'`]"
 		]
-	]
+	],
+	"nxConsole.generateAiAgentRules": true
 }
