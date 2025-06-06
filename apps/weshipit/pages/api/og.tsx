@@ -1,7 +1,6 @@
 import { ImageResponse } from '@vercel/og';
 import { NextRequest } from 'next/server';
 
-// Comment for now because `Error: The Edge Function "api/og" size is 1.09 MB and your plan size limit is 1 MB.`
 export const config = {
   runtime: 'edge',
 };
@@ -28,6 +27,10 @@ export default async function handler(req: NextRequest) {
             style={{
               fontSize: '5rem',
               textAlign: 'center',
+              color: '#111827', // slate-900
+              fontFamily: 'Inter, sans-serif',
+              fontWeight: 'bold',
+              padding: '20px',
             }}
           >
             {title}

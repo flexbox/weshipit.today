@@ -150,5 +150,5 @@
       "path": "git-cz"
     }
   },
-  "packageManager": "yarn@4.3.0"
+  "packageManager": "yarn@4.9.2"
 }

@@ -29,6 +29,24 @@ export function NextHead({
           handle: '@flexbox_',
           site: '@flexbox_',
         }}
+        openGraph={{
+          type: 'website',
+          locale: 'en_US',
+          url: 'https://weshipit.today',
+          title: `${seoTitle} — weshipit.today`,
+          description:
+            seoDescription ||
+            'Our mission to make people’s lives easier is driven by a disciplined and measured approach to automation, minimalist design, and mentoring.',
+          images: [
+            {
+              url: `/api/og?title=${encodeURI(ogImageTitle)}`,
+              width: 1200,
+              height: 630,
+              alt: seoTitle || 'React Native Development Agency',
+            },
+          ],
+          siteName: 'weshipit.today',
+        }}
         additionalLinkTags={[
           {
             href: '/favicon.ico',
@@ -59,12 +77,6 @@ export function NextHead({
 
         <meta name="msapplication-TileColor" content="#f3f4f6" />
         <meta name="theme-color" content="#f3f4f6" />
-
-        <meta property="og:logo" content="/android-chrome-256x256.png" />
-        <meta
-          property="og:image"
-          content={`/api/og?title=${encodeURI(ogImageTitle)}`}
-        />
       </Head>
     </>
   );
