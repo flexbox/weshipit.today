@@ -1,6 +1,6 @@
 import { DefaultSeo } from 'next-seo';
 import Head from 'next/head';
-import router from 'next/router';
+import { useRouter } from 'next/router';
 
 export interface NextHeadProps {
   seoTitle: string;
@@ -18,6 +18,7 @@ export function NextHead({
     'Software development is a service, not a product. We offer a subscription-based service for React Native developers. One flat fee. Pause or cancel whenever.';
 
   // Generate the full canonical URL based on current path
+  const router = useRouter();
   const baseUrl = 'https://weshipit.today';
   const path = router.asPath;
   const canonicalUrl = `${baseUrl}${path === '/' ? '' : path}`;
@@ -72,16 +73,21 @@ export function NextHead({
         <meta name="msapplication-TileColor" content="#f3f4f6" />
         <meta name="theme-color" content="#f3f4f6" />
 
-        <meta property="og:title" content={seoTitle || defaultSeoTitle} />
         <meta
+          name="title"
+          property="og:title"
+          content={seoTitle || defaultSeoTitle}
+        />
+        <meta
+          name="description"
           property="og:description"
           content={seoDescription || defaultSeoDescription}
         />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
         <meta
-          property="og:image"
           name="image" // this is for LinkedIn preview https://github.com/garmeeh/next-seo/issues/1311
+          property="og:image"
           content={`/api/og?title=${encodeURI(ogImageTitle)}`}
         />
         <meta property="og:image:type" content="image/png" />
@@ -93,6 +99,7 @@ export function NextHead({
         <meta property="og:image:height" content="630" />
         <meta property="og:locale" content="en_US" />
         <meta property="og:site_name" content="weshipit.today" />
+        <meta name="author" content="David Leuliette" />
       </Head>
     </>
   );
