@@ -1,5 +1,6 @@
 import { DefaultSeo } from 'next-seo';
 import Head from 'next/head';
+import router from 'next/router';
 
 export interface NextHeadProps {
   seoTitle: string;
@@ -12,6 +13,15 @@ export function NextHead({
   seoDescription,
   seoTitle,
 }: NextHeadProps) {
+  const defaultSeoTitle = 'React Native Development Agency';
+  const defaultSeoDescription =
+    'Software development is a service, not a product. We offer a subscription-based service for React Native developers. One flat fee. Pause or cancel whenever.';
+
+  // Generate the full canonical URL based on current path
+  const baseUrl = 'https://weshipit.today';
+  const path = router.asPath;
+  const canonicalUrl = `${baseUrl}${path === '/' ? '' : path}`;
+
   return (
     <>
       <meta charSet="utf-8" />
@@ -20,32 +30,16 @@ export function NextHead({
           `${seoTitle} — weshipit.today` ||
           'React Native Development Agency - weshipit.today'
         }
-        description={
-          seoDescription ||
-          'Our mission to make people’s lives easier is driven by a disciplined and measured approach to automation, minimalist design, and mentoring.'
-        }
+        description={seoDescription || defaultSeoDescription}
+        canonical={canonicalUrl}
         twitter={{
-          cardType: 'summary_large_image',
           handle: '@flexbox_',
           site: '@flexbox_',
-        }}
-        openGraph={{
-          type: 'website',
-          locale: 'en_US',
-          url: 'https://weshipit.today',
-          title: `${seoTitle} — weshipit.today`,
-          description:
-            seoDescription ||
-            'Our mission to make people’s lives easier is driven by a disciplined and measured approach to automation, minimalist design, and mentoring.',
-          images: [
-            {
-              url: `/api/og?title=${encodeURI(ogImageTitle)}`,
-              width: 1200,
-              height: 630,
-              alt: seoTitle || 'React Native Development Agency',
-            },
-          ],
-          siteName: 'weshipit.today',
+          cardType: 'summary_large_image',
+          // we don't use these, to avoid duplication because Twitter will read the og:title, og:image and og:description
+          // twitter:title,
+          // twitter:image
+          // twitter:description
         }}
         additionalLinkTags={[
           {
@@ -77,6 +71,28 @@ export function NextHead({
 
         <meta name="msapplication-TileColor" content="#f3f4f6" />
         <meta name="theme-color" content="#f3f4f6" />
+
+        <meta property="og:title" content={seoTitle || defaultSeoTitle} />
+        <meta
+          property="og:description"
+          content={seoDescription || defaultSeoDescription}
+        />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          name="image" // this is for LinkedIn preview https://github.com/garmeeh/next-seo/issues/1311
+          content={`/api/og?title=${encodeURI(ogImageTitle)}`}
+        />
+        <meta property="og:image:type" content="image/png" />
+        <meta
+          property="og:image:alt"
+          content="Hire React Native Developers as a Service"
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:site_name" content="weshipit.today" />
       </Head>
     </>
   );

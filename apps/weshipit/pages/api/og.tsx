@@ -16,7 +16,7 @@ export default async function handler(req: NextRequest) {
         <div
           style={{
             alignItems: 'center',
-            backgroundColor: 'white',
+            backgroundColor: '#F9FAFB', // slate-50
             display: 'flex',
             height: '100%',
             justifyContent: 'center',
