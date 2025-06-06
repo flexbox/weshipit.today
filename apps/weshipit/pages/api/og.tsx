@@ -5,11 +5,21 @@ export const config = {
   runtime: 'edge',
 };
 
+const interBold = fetch(
+  new URL(
+    'https://cdn.jsdelivr.net/npm/@fontsource/inter/files/inter-latin-700-normal.woff',
+    import.meta.url,
+  ),
+).then((res) => res.arrayBuffer());
+
 export default async function handler(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
     const hasTitle = searchParams.has('title');
     const title = hasTitle ? searchParams.get('title') : 'weshipit.today';
+
+    // Load the fonts
+    const [interBoldData] = await Promise.all([interBold]);
 
     return new ImageResponse(
       (
@@ -38,8 +48,22 @@ export default async function handler(req: NextRequest) {
         </div>
       ),
       {
-        height: 549,
-        width: 1050,
+        width: 1200,
+        height: 630,
+        fonts: [
+          {
+            name: 'Inter',
+            data: interBoldData,
+            style: 'normal',
+            weight: 400,
+          },
+          {
+            name: 'Inter',
+            data: interBoldData,
+            style: 'normal',
+            weight: 700,
+          },
+        ],
       },
     );
   } catch (e: any) {

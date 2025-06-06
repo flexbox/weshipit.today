@@ -179,7 +179,7 @@ export default function ReactNativeStartersPage({
     <Layout
       seoTitle={`${recordsNumber}+ starter templates to create your React Native project`}
       seoDescription="Starter repos to create your React Native project."
-      ogImageTitle="React Native Starter Templates"
+      ogImageTitle={`React Native\n\nStarter Templates`}
       withHeader
       callToActionButton={{
         name: 'Add a React Native Boilerplate',
