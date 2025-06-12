@@ -15,6 +15,11 @@ export default function Podcast() {
         href: NOTION_FORM_URL,
         isExternalLink: true,
       }}
+      callToActionButton={{
+        name: 'Expo checklist',
+        href: 'https://flexbox.gumroad.com/l/expo-checklist',
+        isExternalLink: true,
+      }}
       withContainer
     >
       <Prose className="mt-16">
@@ -23,6 +28,14 @@ export default function Podcast() {
           Le podcast francophone incontournable pour les développeurs
           cross-platform, explorant React Native et bien plus, tout en apportant
           une touche de joie et de passion au quotidien des coders.
+        </p>
+        <p>
+          Tu as une application codée en React Native et tu souhaites partager
+          ton expérience ? Pour enregistrer une émission, il suffit de{' '}
+          <Hyperlink href={NOTION_FORM_URL} isExternal>
+            remplir ce formulaire sur Notion
+          </Hyperlink>
+          .
         </p>
         <h2>S’abonner au podcast</h2>
       </Prose>
@@ -81,12 +94,22 @@ export default function Podcast() {
         }}
       />
       <Prose className="mt-12 mb-12">
-        <h2>Participer à une emission</h2>
+        <h2>Sponsoriser l'émission</h2>
         <p>
-          Tu as une application codée en React Native et tu souhaites partager
-          ton expérience ? Pour enregistrer une émission, il suffit de{' '}
-          <Hyperlink href={NOTION_FORM_URL} isExternal>
-            remplir ce formulaire sur Notion
+          Tu souhaites sponsoriser le podcast ?{' '}
+          <Hyperlink href="https://github.com/sponsors/flexbox" isExternal>
+            devenez sponsor sur GitHub
+          </Hyperlink>
+          .
+        </p>
+        <h2>Rejoindre la communauté</h2>
+        <p>
+          Rejoins la communauté des développeurs React Native francophones sur{' '}
+          <Hyperlink
+            href="https://join.slack.com/t/reactnativeconnection/shared_invite/zt-1j5jigyph-MJURqXxpWHXTcYSH8PwhrQ"
+            isExternal
+          >
+            le Slack de React Native Connection
           </Hyperlink>
           .
         </p>
