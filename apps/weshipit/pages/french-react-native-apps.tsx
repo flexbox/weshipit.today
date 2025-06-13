@@ -60,7 +60,7 @@ function AppGrid({ apps }: { apps: filteredApp[] }) {
             width={96}
             height={96}
             alt={app.name}
-            className="rounded-lg bg-slate-300 dark:bg-slate-700"
+            className="rounded-xl bg-slate-300 dark:bg-slate-700"
           />
           <Text variant="s2" as="h3" className="my-4 ml-1 font-bold">
             {app.name}
