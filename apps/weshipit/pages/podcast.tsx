@@ -9,6 +9,7 @@ export default function Podcast() {
     <Layout
       seoTitle="Le Cross Platform Show, le podcast francophone React Native animé par David Leuliette"
       seoDescription="Interviews de développeurs React Native, discussions sur les dernières tendances et conseils pratiques pour améliorer vos compétences en développement cross-platform."
+      ogImageTitle="Le Cross Platform Show"
       withHeader
       callToActionLink={{
         name: 'Participer au podcast',
