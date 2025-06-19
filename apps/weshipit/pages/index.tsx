@@ -254,7 +254,7 @@ export default function IndexPage({
       name: asText(data.question),
       acceptedAnswer: {
         '@type': 'Answer',
-        text: asHTML(data.answer),
+        text: asText(data.answer),
       },
     })),
   };
