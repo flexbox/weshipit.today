@@ -2,7 +2,6 @@ import {
   Bento,
   Button,
   Card,
-  ClientsListHomepage,
   FadeIn,
   Faq,
   FaqProps,
@@ -252,8 +251,11 @@ export default function IndexPage({
     '@type': 'FAQPage',
     mainEntity: faqs.map(({ data }) => ({
       '@type': 'Question',
-      acceptedAnswer: asHTML(data.answer),
       name: asText(data.question),
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: asHTML(data.answer),
+      },
     })),
   };
 
