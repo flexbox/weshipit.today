@@ -58,6 +58,21 @@ export const frenchAppsFixture: frenchApps = {
     // },
     {
       fields: {
+        name: 'ControlResell',
+        category: 'Shopping',
+        android_url:
+          'https://play.google.com/store/apps/details?id=com.lyesbenchoubane.controlresell&hl=en',
+        ios_url:
+          'https://apps.apple.com/fr/app/controlresell-stock-inventaire/id6447619941',
+        logo_url:
+          'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/25/f8/fd/25f8fd8f-f7ad-7f3b-f804-0bd64c124532/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/230x0w.webp',
+        website_url: 'https://www.controlresell.com/',
+        podcast_url:
+          'https://open.spotify.com/episode/1Pet3tskRm0E64ftDt00n9?si=6fc1dcfdb4734c65',
+      },
+    },
+    {
+      fields: {
         name: 'Mangacollec',
         category: 'Books',
         android_url:
@@ -66,7 +81,8 @@ export const frenchAppsFixture: frenchApps = {
         logo_url:
           'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/13/60/fc/1360fc54-4755-0359-adab-2414d735ec68/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/460x0w.webp',
         website_url: 'https://www.mangacollec.com/',
-        podcast_url: '',
+        podcast_url:
+          'https://open.spotify.com/episode/6guQ03HE7yadwX369y0zjn?si=ee5c8f18db7c4595',
       },
     },
     {
@@ -100,13 +116,13 @@ export const frenchAppsFixture: frenchApps = {
     },
     {
       fields: {
+        name: 'Swan',
+        category: 'Finance',
         android_url:
           'https://play.google.com/store/apps/dev?id=5935141824663336810',
         ios_url: 'https://apps.apple.com/fr/app/swan/id1536581956',
-        category: 'Finance',
         logo_url:
           'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ec/ca/c7/eccac76a-0a83-5ff4-d878-1b0915922572/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/460x0w.webp',
-        name: 'Swan',
         website_url: 'https://swan.io/',
         podcast_url:
           'https://open.spotify.com/episode/6OFwNSER1iNx1K5Scoge4t?si=d05827ceda464775',
@@ -114,13 +130,13 @@ export const frenchAppsFixture: frenchApps = {
     },
     {
       fields: {
+        name: 'Cdiscount',
+        category: 'Shopping',
         android_url:
           'https://play.google.com/store/apps/details?id=cdiscount.mobile',
-        category: 'Shopping',
         ios_url: 'https://apps.apple.com/fr/app/cdiscount/id398364165',
         logo_url:
           'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/50/72/01/507201ee-d376-6f51-c94d-cf9d3bdd3c7b/AppIcon-0-0-1x_U007epad-0-1-85-220.png/230x0w.webp',
-        name: 'Cdiscount',
         podcast_url:
           'https://open.spotify.com/episode/4u0RkE3y1gkCpFtpppk25t?si=a6ed852bde0b4dfa',
         website_url: 'https://www.cdiscount.com/',
@@ -128,50 +144,52 @@ export const frenchAppsFixture: frenchApps = {
     },
     {
       fields: {
+        name: 'Finary',
+        category: 'Finance',
         android_url:
           'https://play.google.com/store/apps/details?id=com.finary.main',
-        category: 'Finance',
         ios_url:
           'https://apps.apple.com/fr/app/finary-patrimoine-bitcoin/id1569413444',
         logo_url:
           'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/c2/36/b9/c236b9c8-e3cf-42e0-9570-e486c4637995/AppIcon-0-0-1x_U007epad-0-1-85-220.png/230x0w.webp',
-        name: 'Finary',
         website_url: 'https://finary.com/',
       },
     },
     {
       fields: {
+        name: 'Hivebrite',
         category: 'Social Networking',
         logo_url:
           'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/8d/24/e1/8d24e1ae-3675-0673-2d98-17e19f580ea7/AppIcon-0-0-1x_U007ephone-0-85-220.png/230x0w.webp',
-        name: 'Hivebrite',
         website_url: 'https://hivebrite.io/mobile-app',
       },
     },
     {
       fields: {
+        name: 'Ledger',
+        category: 'Finance',
         android_url:
           'https://play.google.com/store/apps/details?id=com.ledger.live&hl=en&gl=US',
-        category: 'Finance',
         ios_url:
           'https://apps.apple.com/us/app/ledger-live-crypto-nft-app/id1361671700',
         logo_url:
           'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/dd/4b/6f/dd4b6f3c-a3e2-ed8d-0fc6-bea54a6be730/AppIcon-0-0-1x_U007emarketing-0-10-0-85-220.png/230x0w.webp',
-        name: 'Ledger',
         website_url: 'https://www.ledger.com/ledger-live',
       },
     },
     {
       fields: {
+        name: 'Ornikar',
+        category: 'Education',
         android_url:
           'https://play.google.com/store/apps/details?id=com.ornikar.learning&hl=fr',
-        category: 'Education',
         ios_url:
           'https://apps.apple.com/fr/app/ornikar-code-et-permis/id1612432450',
         logo_url:
           'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/fc/6e/17/fc6e171e-cd14-d36a-91e7-387da9c61439/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/230x0w.webp',
-        name: 'Ornikar',
         website_url: 'https://www.ornikar.com/a-propos/app-mobile',
+        podcast_url:
+          'https://open.spotify.com/episode/7nKJ4uxFPnhv2TMf28eqEJ?si=c84fbf441ad04acf',
       },
     },
     {
