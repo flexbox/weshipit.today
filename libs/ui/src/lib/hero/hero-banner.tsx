@@ -27,7 +27,7 @@ export function HeroBanner({
           <div
             className={`space-y-4 ${isVisible ? 'animate-fadeIn' : 'opacity-0'}`}
           >
-            <SpotLeft spotsLeft={teamSpotsLeft} />
+            <SpotLeft spotsLeft={2} />
             <Text as="h1" variant="h1" className="tracking-tighter">
               React Native Experts on demand.
             </Text>

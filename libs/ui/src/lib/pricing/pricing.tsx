@@ -9,6 +9,7 @@ const frequencies = [
   { value: 'monthly', label: 'Monthly', priceSuffix: '/monthly' },
   { value: 'onetime', label: 'One time', priceSuffix: '/one time' },
 ];
+
 const tiers = [
   {
     name: 'Kickstart',
@@ -43,7 +44,7 @@ const tiers = [
     ],
     featured: false,
     cta: 'Get Started',
-    spotsLeft: 3,
+    spotsLeft: 2,
   },
   {
     name: 'Growth',
@@ -59,7 +60,7 @@ const tiers = [
     ],
     featured: false,
     cta: 'Get Started',
-    spotsLeft: 1,
+    spotsLeft: 0,
   },
   {
     name: 'Enterprise',
@@ -76,7 +77,7 @@ const tiers = [
     ],
     featured: true,
     cta: 'Book a call with David',
-    spotsLeft: 1,
+    spotsLeft: 0,
   },
 ];
 
@@ -114,7 +115,9 @@ export function Pricing() {
                 >
                   {tier.name}
                 </h3>
-                {tier.spotsLeft && <SpotLeft spotsLeft={tier.spotsLeft} />}
+                {(tier.spotsLeft || tier.spotsLeft === 0) && (
+                  <SpotLeft spotsLeft={tier.spotsLeft} />
+                )}
                 <p
                   className={clsx(
                     'mt-4 text-sm/6',
@@ -168,7 +171,7 @@ export function Pricing() {
                   <div className="mt-4 flex items-center justify-center gap-2 text-sm text-gray-600 dark:text-gray-300">
                     <span>or</span>
                     <a
-                      href={'https://cal.com/davidl/weshipit-onboarding'}
+                      href="https://cal.com/davidl/weshipit-onboarding"
                       className="underline hover:text-gray-900 dark:hover:text-white"
                     >
                       book a call
