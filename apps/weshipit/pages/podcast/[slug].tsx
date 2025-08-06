@@ -69,8 +69,6 @@ export default function PodcastEpisodePage() {
     <Layout
       seoTitle={`Épisode ${episode.number} - ${episode.name} avec ${episode.guestName}`}
       seoDescription={episode.description}
-      ogImageTitle={`Épisode ${episode.number} - ${episode.name}`}
-      ogImageUrl={`/api/og-podcast?slug=${episode.slug}`}
       withHeader
       withContainer
     >

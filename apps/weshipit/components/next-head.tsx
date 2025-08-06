@@ -6,14 +6,12 @@ export interface NextHeadProps {
   seoTitle: string;
   ogImageTitle?: string;
   seoDescription: string;
-  ogImageUrl?: string;
 }
 
 export function NextHead({
   ogImageTitle = 'React Native Development Agency',
   seoDescription,
   seoTitle,
-  ogImageUrl,
 }: NextHeadProps) {
   const defaultSeoTitle = 'React Native Development Agency';
   const defaultSeoDescription =
@@ -90,7 +88,7 @@ export function NextHead({
         <meta
           name="image" // this is for LinkedIn preview https://github.com/garmeeh/next-seo/issues/1311
           property="og:image"
-          content={ogImageUrl || `/api/og?title=${encodeURI(ogImageTitle)}`}
+          content={`/api/og?title=${encodeURI(ogImageTitle)}`}
         />
         <meta property="og:image:type" content="image/png" />
         <meta
