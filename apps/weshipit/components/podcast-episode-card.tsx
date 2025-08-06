@@ -21,7 +21,7 @@ export function PodcastEpisodeCard({ episode }: PodcastEpisodeCardProps) {
             </span>
             <img
               src={episode.companyLogo}
-              alt="Logo entreprise"
+              alt={`Logo ${episode.name}`}
               className="w-14 h-14 rounded-xl object-cover shadow-md"
             />
           </div>
