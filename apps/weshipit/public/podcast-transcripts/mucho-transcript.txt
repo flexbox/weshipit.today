@@ -1,0 +1,1313 @@
+David Leuliette (00:00.056)
+correctement sinon... mais de façon quoi qu'il arrive c'est bien sauvegardé. Bonjour et bienvenue sur le Cross Platform Show, le podcast qui parle développement d'applications mobiles avec React Native. Je suis David, développeur chez Wishy Pity Today. Nous sommes en avril 2016. Température extérieure de 11°C. C'est quoi ce bordel la dernière fois ? C'était plus haut.
+
+Lucie (00:05.175)
+OK.
+
+Lucie (00:22.414)
+Avril 2016 ?
+
+David Leuliette (00:24.984)
+Avril 2016 ! Avril 2025, oh là là ! Pourquoi j'ai dit 2016 ? Parce qu'on a eu le 16 ! Voilà, ça va pas du tout là, je devrais pas dire quoi. Mais c'est bien, c'est bien, au moins y'en a qui suivent, c'est bien, c'est bien. Super. Eh bien Lucie, merci d'être là, est-ce que tu peux te présenter succinctement ?
+
+Lucie (00:44.398)
+Je m'appelle Lucie, je travaille à Theodo Apps depuis 4 ans maintenant. J'ai fait une école d'ingénieur classique et puis j'ai été engagée directement après le stage à Feubam. Exactement. En fait, on fait partie d'un groupe, du coup le groupe Theodo.
+
+David Leuliette (00:57.73)
+suis... oui, faut expliquer alors. Explique tout... C'était Bam avant. Bam... Bamtech ?
+
+Lucie (01:11.054)
+dans l'idée, parce que c'était un peu confus, parce qu'il a des gens qui disaient « Ah, mais du coup, est-ce vous êtes pareil que Theodo UK, qui font aussi du mobile et tout ? » Donc il y a eu un rebranding et maintenant on s'appelle Theodo Apps.
+
+David Leuliette (01:23.832)
+Ok, super, super, super. Ah et bam, depuis l'origine ça fait partie de Théodo ? Ah putain, d'accord. Ah bah, c'était clairement pas clair, parce que même moi je pensais que c'était deux boîtes différentes, en fait j'avais jamais capté...
+
+Lucie (01:29.576)
+Oui, tout à fait. C'est bien ça.
+
+C'était deux bois différents, c'est juste le même groupe. La plupart des gens captaient pas trop bien, ils avaient du mal. Même avec le get-up qui s'appelle BamLab, y a encore des gens qui disent « vous êtes BamLab ! » alors que c'est pas exactement ça.
+
+David Leuliette (01:40.824)
+Ouais.
+
+David Leuliette (01:51.704)
+C'est difficile le branding, c'est cool, c'est cool. Et donc tu as trouvé Direct, donc école classique, tu fait ton stage et hop, tu as fait du ragnative tout de suite quoi.
+
+Lucie (02:07.586)
+C'est ça.
+
+Lucie (02:11.156)
+J'ai fait du React Native dès que je suis rentrée à... Avant, j'avais déjà fait du React. J'ai été plus orientée un peu web, on va dire, et puis après, je me suis dit, c'est la dernière occasion de tester quelque chose, donc pourquoi pas faire quelque chose qui s'éloigne un petit peu, mais pas trop, donc du React Native, faire du mobile. Et c'est comme ça que j'ai été embarquée et j'ai été conquise.
+
+David Leuliette (02:35.956)
+C'était en quelle année ça du coup ?
+
+Lucie (02:38.166)
+Oula, du coup, il faire les calculs. Ça devait être en 2021, je pense.
+
+David Leuliette (02:45.176)
+Ok, ok, ça va, c'était... 2021, ok, ok, ok, ok. Donc, React Native save 60 quelque chose, 60 des bruites, quoi.
+
+Lucie (02:56.334)
+Honnêtement, je me souviens plus, mais ça devait être quelque chose comme ça. Je me souviens de la 60... Je me demande si je me souviens pas, la 61, peut-être la plus vieille, je sais plus.
+
+David Leuliette (02:59.177)
+C'est plus.
+
+David Leuliette (03:07.454)
+Y'avait déjà les Hooks. ouais, ok.
+
+Lucie (03:09.048)
+Oui, tout à fait. Quand j'ai commencé React, c'était au passage où on passait au Hook. Du coup, quand tu regardais un peu les code base, tu voyais encore les anciennes... le code legacy, on va dire. Mais après, je suis passée totalement au Hook. n'y a pas eu trop de changements là.
+
+David Leuliette (03:15.906)
+Ok.
+
+David Leuliette (03:23.691)
+bien non, il y en a encore des façons de faire.
+
+David Leuliette (03:31.41)
+Ok, c'est pour ça que c'était plutôt smooth ton parcours. En fait c'est facile, je comprends pourquoi. Oui c'est parce qu'il y a eu des itérations avant.
+
+Lucie (03:38.798)
+...
+
+Ouais, c'est ça.
+
+David Leuliette (03:45.76)
+Ok super, donc tu as commencé direct là, n'as pas fait d'autres frameworks JavaScript, rien du pour comparer. Tu as fait un peu d'autres technomobiles ou pas ?
+
+Lucie (03:53.806)
+D'autres technomobiles non. Vu que à TheodoApps on fait aussi du flotteur et du natif, on se parle un peu entre nous, il y a des choses que je vois un petit peu. Des fois quand tu parles aux gens tu te rends compte, en fait en flotteur tu as aussi des équivalents des states ou des choses comme ça. C'est pas exactement pareil, mais ça s'appelle peut-être autrement, mais c'est le même principe on va dire. Et puis pareil pour le natif, des fois tu discutes un peu et puis...
+
+tu vois certaines choses par ce biais là on va dire.
+
+David Leuliette (04:26.828)
+Ouais, ok, ouais, t'as des gens qui font du...
+
+Swift to High. En plus je l'ai le livre, est là. Littéralement il est là. Le Take Radar, pour ceux qui ne pas sur internet, on est en live. C'est le livre que j'ai eu à London, à Racknative London. C'est Racknative London ? Je ne sais plus. Et dedans il a tout. Mais vu que j'ai un fils, je n'ai pas le time de tout. Bien parcourir.
+
+Lucie (04:36.3)
+!
+
+Lucie (04:54.84)
+Allez, merci, je dirais. Des livres à lire...
+
+David Leuliette (04:57.4)
+Mais il est là ! Alors regardez, il est dans la pile. Il dans la pile des livres à lire. Exactement. Exactement. Super, super. Donc aujourd'hui, on va parler de ton application pour laquelle tu bosses en ce moment qui s'appelle Mucho. Mucho ? Mucho ? Oui.
+
+Lucie (05:11.342)
+J'ai beaucoup, mais je n'ai pas arrêté de travailler pour cette compagnie. J'ai fait ça, je pense que c'était janvier, février, mars, quelque chose comme ça. Maintenant, je fais un truc qui pas vraiment mobile-related. Du coup, c'est pour ça que j'ai pu choisir celle-ci.
+
+David Leuliette (05:18.272)
+Ok.
+
+David Leuliette (05:22.168)
+Ok.
+
+David Leuliette (05:28.696)
+D'accord, d'accord, Ouais, parce que oui, il faut préciser, c'est vrai que c'est au-deux apps, genre vous avez 1 000 clients, c'est comme moi quoi. Je fais Wishy-Pishy, on a 15 000 apps différentes. puis voilà, tu switches de projet, mais en plus j'ai été voir le... Ah ouais, du coup...
+
+Lucie (05:39.637)
+Oui, tout à fait.
+
+David Leuliette (05:47.864)
+C'est pareil, vais le dire en même temps, de façon il a pas grand monde. Mais si tu vas sur le site web de Mucho, Mucho ça se dit comment ? Mucho ?
+
+Lucie (05:54.252)
+Oui, c'est bon.
+
+David Leuliette (05:56.184)
+et que tu scrolles tout en bas de la home page il a un truc qui écrit this is the default text value tout en bas donc je pense qu'il quelqu'un qui a testé je te jure c'est vrai tu vas dessus tu scrolles tout en bas et c'est écrit this is the default text value mais que sur la home page donc voilà les gens voilà tous les gens qui seront dans l'audience ils sauront qu'il ya un test mettez jamais mettez jamais le ram libsum en production les amis
+
+Lucie (06:05.486)
+C'est vrai ?
+
+Lucie (06:15.64)
+ouais effectivement, c'est dégueulasse.
+
+Ha ha ha ha ha
+
+David Leuliette (06:24.216)
+J'ai trouvé ça marrant, fais ah, bah du coup je vais le dire comme ça tu pourras corriger mais c'est pas grave, j'enverrai un mail à contact après.
+
+Lucie (06:31.178)
+Ouais, ça c'est la landing page du coup, j'ai pas développé ça mais ouais c'est rigolo parce que je sais même plus c'est quoi, c'est du no code mais quelle est la techno qu'ils utilisent derrière, je plus si c'est...
+
+David Leuliette (06:35.298)
+Oui oui non mais... Ok.
+
+David Leuliette (06:44.706)
+ça doit être...
+
+Pas Figma, mais Webflow.
+
+Lucie (06:52.48)
+Il y a moyen que ça soit ça, Parce que je me souviens d'un W dans l'histoire. Donc ça semble correspondre. Mais effectivement, je crois que t'avais pas beaucoup de gens qui étaient en bordée, on va dire, là-dessus.
+
+David Leuliette (06:55.416)
+J'ai moins que soit.
+
+David Leuliette (07:07.96)
+Ouais. Ok, ok, donc pour présenter Mucho, qui est s... Qu'est-ce que... On va arrêter de parler espagnol. Mucho, qu'est-ce que c'est ? Mucho.
+
+Lucie (07:15.726)
+Ouais... Je suis sûre que je parle pas espagnol du coup !
+
+David Leuliette (07:20.792)
+je parle un petit peu vite fait, mais c'est l'Espagne de la street.
+
+Lucie (07:24.706)
+Oui. C'est une application qui... ou application, produit, site web, tout ce que tu veux... qui permet de bénéficier en fait d'avantages sociaux. Pour ceux qui sont dans des entreprises, la plupart du temps on a du coup les tickets restaurants. C'est un des avantages sociaux mais on peut en avoir plusieurs. Ça peut être lié aux vacances, aux loisirs, ce genre de choses.
+
+Et il arrive souvent que les compagnies disent « OK, on donne telle somme pour les vacances ». Sauf qu'il faut être éligible des fois pour bénéficier de ses avantages. Et du coup, veut dire que que tous les employés ne pas y bénéficier ou alors peut-être qu'ils n'ont pas envie de l'utiliser pour les vacances mais plus pour les loisiens. Et du coup, l'idée de Mucho, c'est de réunir tous ses avantages.
+
+les tickets réseaux sont un peu à part mais tous les autres avantages et de pouvoir juste que la compagnie donne une certaine somme et toi tu utilises l'argent comme tu veux, ce qui est plutôt pratique.
+
+David Leuliette (08:34.932)
+Ouais pour toi à côté, mon avis, la ténération, parce que moi je vois, rien que ma boîte, je voulais mettre des tickets resto. Et pfff, putain d'enfer, tu vois, du coup pas de tickets resto, j'ai pas que ça à foutre. Mais non mais c'est parce qu'en fait on est que deux, donc forcément mon temps est limité quoi. Et ce genre de plateforme, je pense que c'est carrément bien niveau employeur, employee, enfin employer plutôt. Employee tu te rends pas compte, mais niveau employer ça doit sauver plein de... Vu que tout est centralisé à un seul endroit.
+
+Lucie (08:41.294)
+Bon, allez.
+
+Lucie (08:46.658)
+Ouais... Ouais je vois.
+
+David Leuliette (09:03.288)
+Tu as bossé que sur la partie mobile et sur la customer.
+
+Lucie (09:08.654)
+Je faisais full stack dessus, du coup je faisais aussi le web et le back-end. tu avais plusieurs briques installées.
+
+David Leuliette (09:15.98)
+Ouais donc il y a... ouais.
+
+David Leuliette (09:21.888)
+Ok je vois, avec des pie charts et des tables comme on adore, pour la partie dashboard. Super, Alors du coup, est-ce que c'est toi qui l'avait choisi, la stack technique, ou comment ça marchait à la time chez Musho ?
+
+Lucie (09:41.774)
+J'ai pas choisi la stack technique pour le gros on va dire parce que ça c'était plus l'ancienne équipe qui était avant nous qui avait choisi ce genre de choses. Après t'avais certains choix en fait notamment en fait ceux pourquoi ils nous ont contacté c'était pour faire une universal app parce que eux ils...
+
+Ils avaient donc site web et aussi plusieurs types de site web suivant si tu étais un employeur, tu étais un employé, ce genre de choses, et l'application mobile. en fait, ça faisait beaucoup de travail parce qu'ils sont une petite équipe. Donc déjà, ils voulaient faire une Universal App pour tout ce qui était employé.
+
+David Leuliette (10:26.944)
+Donc Universal App, rappelle pour ceux qui ne savent pas, c'est avoir une code base. Généralement, c'est moi comment je le ferai et comment je l'ai déjà fait. C'est boom, un monoripo tout dedans. Tout est partagé. Donc Universal App, c'est web, iOS, Android, TV. C'est possible. voilà, c'est ça Universal App. Comme ça, tu fais un bouton. C'est le même partout.
+
+Lucie (10:36.118)
+Oui.
+
+Lucie (10:46.062)
+C'est possible oui.
+
+David Leuliette (10:55.192)
+fait informe de login c'est le même partout. voilà donc là tu perds peut-être un peu en vélocité parce que bah forcément faut vérifier que ça fonctionne sur les quatre plateformes à chaque fois ou les N plateformes à chaque fois mais la magnitude de des changements elle est incroyable parce que tu fixes un truc exemple le fameux roundy de... enfin tu les currency quoi genre si tu veux faire du multi currency que comme par hasard maintenant on fait du dollar et hop le dollar maintenant il est avant
+
+Lucie (11:23.79)
+Ha ha ha !
+
+David Leuliette (11:24.152)
+Le signe dollar et avant le signe euro, quand tu as cinq plateformes différentes, c'est compliqué. que là, coup, au côté Universal App, je pense que c'est pour ça, mais Day to Day Maintenance, c'est plus facile pour eux aussi.
+
+Lucie (11:33.134)
+...
+
+Lucie (11:39.378)
+Tout à fait. Ils vont avoir beaucoup moins de temps passé dessus. Donc c'était l'objectif. Après t'as dit TV, compris dedans, on faisait pas de la télé, de la TV pour tout ce qui est ça. Mais ouais.
+
+David Leuliette (11:49.72)
+Ouais mais c'était pour l'exemple. C'était pour...
+
+Ah bah tu pouvais, sais, pour les CEO, un dashboard dans mode Overlord qui balança sur sa TV. Moi je veux en temps réel des pie charts qui me disent combien sont dépensés à Noël, tu vois. Tu vois. Mais ok, ok, donc on va plus se diguer le truc. Donc en 6 points, on va commencer par le data layer. C'était quoi que vous aviez utilisé ? Donc tu utilisais quoi sur cette app mobile ?
+
+Lucie (11:58.606)
+ouais ?
+
+Oui, je comprends.
+
+Lucie (12:16.686)
+De base on utilisait Expo et du coup quand on est passé en Universal App... Je bypasse un peu ta question, je vais y répondre après. Quand on est passé en Universal App, Expo c'était super parce que vraiment tu regardes la doc, je crois que tu as une ou deux commandes à lancer et c'est fini. Moi je me souviens des Universal Apps avant parce que j'en avais fait justement quand j'étais arrivée donc il a quatre ans.
+
+David Leuliette (12:20.632)
+Ok.
+
+David Leuliette (12:26.452)
+Ouais vas-y, vas-y.
+
+Lucie (12:46.35)
+C'était pas très compliqué avec React Native Web de le mettre en place, mais t'avais quand même un peu plus de config en disant comment est-ce que tu voulais gérer exactement Webpack et ce genre de choses. Alors que là vraiment c'était une ligne de commande et c'était fait. c'était vraiment parfait pour ça. donc déjà la base de la stack technique c'est vraiment Expo qui nous a bien...
+
+David Leuliette (12:54.52)
+...
+
+Lucie (13:15.63)
+bien épargner du temps aussi là-dessus. après, tu me parlais de datafishing, c'est ça le premier que tu as demandé ? Il avait du Stenz, là on passe en allemand.
+
+David Leuliette (13:24.44)
+Pour l'instant juste State Management, des data offline ou pas ?
+
+David Leuliette (13:34.641)
+Ok. Zoestand. voilà, il sera super multiculturel. On adore, on adore, on adore.
+
+Lucie (13:41.342)
+Mais il n'y a pas grand chose qui est utilisé pour ça. C'était à rester une petite app, on va dire un peu MVP au début. du coup, l'utilisation qu'on en faisait, Zustanz allait stocker. C'était quoi un peu l'état de l'authentification pour éviter de regarder après à chaque fois si on avait des tokens ou des trucs comme ça.
+
+tout et n'importe quoi, c'était un peu de regarder est-ce qu'on est authentifié, est-ce qu'on n'est pas authentifié, ce genre de choses.
+
+David Leuliette (14:17.684)
+Ok, et pour data fetching du coup
+
+Lucie (14:20.462)
+Ça c'était du réaccourri. J'ai l'impression que c'est un peu la norme devenue maintenant.
+
+David Leuliette (14:27.032)
+C'est vrai que c'est devenu... Moi je l'utilise tout le temps parce qu'en fait c'est puissant, facile à mettre en place et aussi très puissant. Et pour les petites teams, ouais c'est plus simple. Mais en fait maintenant c'est devenu gargantuesque. Quand tu regardes la doc, j'ai regardé la doc il a pas longtemps, j'ai fait what ? Il a quand même plein de trucs. c'est vrai que c'est devenu un peu la norme. J'avoue là sur laquelle je bosse, c'est du raccourri aussi vite fait. Mais il a plus d'offline du coup.
+
+Lucie (14:32.782)
+Bye.
+
+Lucie (14:45.134)
+...
+
+David Leuliette (14:55.864)
+qui utilise Legend State mais euh...
+
+Lucie (14:57.262)
+Bye !
+
+David Leuliette (15:00.603)
+mais c'est particulier, là je bosse sur une app Bluetooth donc il faut que du offline en fait donc en fait il a presque pas de online quoi donc ok super, Aquaries ou Stand très bien très bien, classique
+
+Lucie (15:13.006)
+Je me dis aussi que je ne pas si c'était les premiers, mais j'ai l'impression qu'ils ont un peu plus normalisé le fait d'utiliser du suspense dans ton app, ce qui est quand même aussi bien pratique, je trouve.
+
+David Leuliette (15:24.536)
+Hmm?
+
+David Leuliette (15:30.584)
+T'as un exemple particulier ?
+
+Lucie (15:33.422)
+Tu veux dire de l'utilisation de suspense ? Pour ceux qui nous écoutent et qui ne pas ce que c'est, l'idée c'est qu'au lieu d'avoir des espaces de loading que nous on doit gérer, pour tout ce qui est query, la query va automatiquement trigger un événement pour dire maintenant tu passes dans un état de loading et il va fall back sur un composant qu'on aura choisi à l'avance.
+
+David Leuliette (15:35.435)
+Oui.
+
+Lucie (16:02.294)
+mais ça évite de devoir, par exemple, si on a plusieurs queries qui sont l'une après l'autre, chaque fois, de récupérer tous les états de loading et de devoir les mettre ensemble et de gérer tous ces queries ensemble parce que là, il te le fait automatiquement.
+
+David Leuliette (16:20.536)
+Ouais c'est ça, j'ai quand une app où t'as des pipes partout, pipe, const, loading, pipe, des cats et hop là ! Parce que ça existait pas en fait à l'époque et du coup vas-y, pfouf pas le type mais c'est vrai que maintenant, ça c'est marrant ouais parce que j'en ai fait du web. Donc c'est disponible et ça marche bien alors tu me dis. Puisque c'est utilisé, ok ouais, ok, ok.
+
+Lucie (16:27.798)
+ou SSL.
+
+Lucie (16:38.03)
+Oui, moi j'avoue que j'en utilise au moins depuis deux ans je pense, un moment. Et puis ça marche vraiment bien. Alors ils ont fait plusieurs étapes dans l'intégration React Query. Je sais plus si c'est l'année dernière, mais ils ont dû faire une version où ils ont un peu changé la manière dont tu le mettais en place, mais ça reste le même principe.
+
+David Leuliette (16:44.695)
+Ok.
+
+David Leuliette (17:02.584)
+oui c'est suspense avec react-query, c'est pas suspense-react tout court. Enfin ça utilise les deux mais under the hood mais ouais ok d'accord. Je vois ils ont fait un rapper.
+
+Lucie (17:07.95)
+Pour moi, c'est... Ouais, exactement. c'est pour ça que je me disais, je me demande si c'est pas devenu aussi plus commun, tu vois, Query, parce que je me demande si c'était pas cette livrerie qui a un peu plus popularisé Suspense. Mais je suis pas sûre là-dessus, mais j'ai l'impression.
+
+David Leuliette (17:26.296)
+Ouais, ouais ouais...
+
+David Leuliette (17:31.384)
+parce que j'ai fait une up to date là avec React 19 et j'ai tout regardé, notamment use et maintenant tu peux faire use, va te retourner soit une promo ou soit un contexte. J'ai fait mais en fait il faut que je rechange tout. Je suis assez bon, c'est du... ouais parce qu'en plus tu as un petit décalage entre... je fais très gaffe quand je fais du React Web et du React Native parce que vu que tu as un tout petit décalage de version, des fois tu as des trucs qui sont pas encore disponibles et du coup voilà je reste sur l'ancien système au moins c'est sûr que ça fonctionne.
+
+Lucie (17:38.926)
+Oui.
+
+Lucie (18:01.016)
+Oui.
+
+David Leuliette (18:01.976)
+Super super, donc classique, allez je vais essayer de deviner. Pour la navigation, c'est rack navigation.
+
+Lucie (18:10.318)
+Eh ben non ! Il y en a un salaud de gros concurrents C'était Expo Ruta.
+
+David Leuliette (18:11.714)
+merde, putain vas-y. Ok.
+
+David Leuliette (18:21.066)
+Ouais.
+
+David Leuliette (18:24.493)
+ok, vous aviez direct... Aventureux, aventureux chez Moucho, Moucho... Parce que Explorouter V1...
+
+Lucie (18:26.51)
+Je pense que... Ouais...
+
+Je que c'était plus le fait que vu que tu avais aussi une application web et que eux ils sont de base avant ils étaient en Next donc tu as aussi un peu le même système de routing. Oui exactement.
+
+David Leuliette (18:40.621)
+Ouais.
+
+David Leuliette (18:45.624)
+Ouais, c'est...
+
+David Leuliette (18:49.674)
+de faire des fichiers et que ça fait une route en fait. que sinon avec navigation, faire tout... Quand tu sais pas, tu détestes. dis, mais c'est quoi cette merde, je comprends rien, je peux pas juste faire un fichier et hop, ça marche.
+
+Lucie (19:03.438)
+Hmm.
+
+David Leuliette (19:05.748)
+Non du coup, ok, là pareil, tu n'étais pas perdu. Tu étais perdu avec RekspoRotor ou pas au début
+
+Lucie (19:09.077)
+Non, pas assez.
+
+Moi ça allait, je pense que justement ça a été fait comme choix parce qu'ils voulaient pas être perdus de ce point de vue là. De ce que je me souviens, l'équipe avant nous, t'avais une personne en mobile mais sinon c'était surtout du web sur lequel ils mettaient de l'accent. Mais moi je trouve que tu comprends assez vite en fait. Une fois que t'as compris que dès que tu crées un fichier, ça va te créer une page.
+
+Alors évidemment, il les mettre dans un dossier particulier, va l'imaginer un petit peu, sinon on aurait un fichier avec tous nos composants, ça serait vraiment embêtant. Mais une fois que tu as compris un peu ce système-là, je trouve que tu as tout compris, fait, quasiment. Donc tu comprends que c'est ton URL, quoi.
+
+David Leuliette (19:55.724)
+Après que t'as layout, ouais ouais, faut tu gères aussi layout, comment tu gères ton... Enfin moi je sais qu'au début ça m'a brainfuck, je fais mais il est où le entry point de mon app.tsx, il est où là pour mettre tout le... Toutes les loadings de fond, les trucs... c'est layout, mais du coup... Mais c'est pas layout, enfin comment je fais pour récupérer les paramètres, enfin... Mais c'est parce que j'ai le background de pendant des années j'ai fait... Je n'ai pas utilisé ce truc là, mais là j'ai utilisé aussi...
+
+Lucie (20:00.481)
+Oui.
+
+Lucie (20:07.15)
+Oui.
+
+Lucie (20:18.669)
+Ouin, ouais.
+
+Lucie (20:24.91)
+Et alors, tu en as pensé quoi ?
+
+David Leuliette (20:25.176)
+Donc c'est vrai que... Bah en fait, moi c'est un peu particulier parce que j'ai hack... Enfin j'ai pas hack... En fait, en vrai normalement, tu bourres les param, tu fais slash ID et tu termines... genre user slash ID, boum t'as un user. Et moi en fait, mon routing c'est slash user slash ID slash feature, tu vois, et j'ai 4-5 features. Donc en fait l'ID change, l'ID est dynamique.
+
+Lucie (20:41.55)
+Mmh.
+
+David Leuliette (20:54.156)
+Mais le dernier paramètre à la fin, c'est le même. Et du coup, la route, elle est comme ça. Pour que je change de screen et que je refetche de la data.
+
+Donc je reflège le data et du coup ça s'est pas encore supporté par Expo Router. donc je suis obligé de tweaker, ça va je passe par le state de Legend State mais c'est pas encore, enfin j'ai tout essayé franchement en vrai j'ai tout essayé, suis dit mais je comprends pas ça marche pas, je peux pas récupérer les paramètres correctement donc mais je pense que mon...
+
+Lucie (21:20.258)
+Oui ?
+
+Lucie (21:28.942)
+Je sais pas...
+
+David Leuliette (21:32.426)
+Je pense que mon cas est un peu particulier aussi tu vois, normalement tu fais pas ça comme ça mais... Ou alors quand je l'ai fait c'était pas encore la bonne version et c'était pas encore up to date et là c'est possible maintenant, j'ai pas revisite le truc.
+
+Lucie (21:46.542)
+Je sais pas si ça correspond exactement à ton cas, à toi, mais je crois qu'ils ont un peu revu cette histoire de paramètres dans leur dernière version. J'ai vu quelque chose passer un peu sur le sujet, je ne pas si c'est exactement ça, mais tu peux peut-être regarder.
+
+David Leuliette (21:54.488)
+Hmm.
+
+David Leuliette (22:01.4)
+possible. J'avoue faudrait que je vérifie les gens, insultez moi sur internet si vous êtes en train de bouillir chez vous. Mais non ! Mais putain c'est là, c'est écrit là ! Non, c'est parce que j'ai pas encore revérifié. A l'époque il me fallait un truc qui marche et puis voilà que j'ai pas revisité le truc. Donc là on va arriver à un point croustillant pour niveau styling et UI component library. Qu'est que vous utilisez pour avoir une app
+
+Lucie (22:08.75)
+...
+
+...
+
+...
+
+David Leuliette (22:30.739)
+disponible sur iOS, Android et Web.
+
+Lucie (22:33.23)
+que tu as envie de rediviner.
+
+David Leuliette (22:35.336)
+alors redevinons, vu que ça a été fait il a pas longtemps et que ils aiment bien le web équipé du NexJS je pense que c'est native wind.
+
+Lucie (22:43.502)
+Non. C'est pas grave, ça sera la prochaine. C'était du unistyle.
+
+David Leuliette (22:48.358)
+C'est bien, sans la prochaine j'aurais peut-être... Ok, vas-y.
+
+David Leuliette (22:54.297)
+Unistyle oui c'est style shit ok ok ok Donc c'est quoi unistyle ? Vas-y pitch moi le truc
+
+Lucie (22:55.554)
+Oui, mais effets ?
+
+Lucie (23:02.99)
+de style qui marche à la fois sur le web et sur le mobile. ça c'est cool. Effectivement tu pourrais imaginer du native wind surtout que sur le web ils utilisaient du tailwind de base. en fait par rapport à tailwind ça reste dans l'idée qu'on a directement un peu comme une style chitre en bas de nos composants avec...
+
+avec tout notre style qu'on veut y mettre.
+
+David Leuliette (23:34.008)
+Ouais c'est ça et ce qu'il y a en plus c'est il y a la gestion des variants, des media queries, des... Tous les trucs chiants en fait Tous les trucs relous qui font que sur stylesheet de base il a pas Parce que c'est vrai que moi j'avais vu la V2 et là je suis sur le site de la V3 et il a des milliards de trucs quoi Les components variables, components variants, media queries, dynamic functions Il y a...
+
+Lucie (23:39.854)
+Oui.
+
+Lucie (23:43.757)
+Au vécu.
+
+Lucie (23:48.15)
+Ouais, bc.
+
+David Leuliette (24:03.384)
+ça a bien évolué donc ça c'est top, c'est un super set, ça nous permet de mieux gérer en fait en
+
+Lucie (24:11.502)
+Les brain points, surtout quand tu fais du web et à la fois du mobile, c'est hyper pratique de l'avoir dessiné à un seul endroit et après tu gères par la suite dans ton style directement en fonction de ce que tu veux.
+
+David Leuliette (24:27.096)
+Ouais, je vois comment c'est fait en fait. Tu définis tes variables genre 100, 200, 100, 400 et après tu mets XL, MD, LG, boum terminé quoi. J'aime bien, on adore, on adore. Et après il n'y a pas une feature que tu as particulièrement bien aimé à part le...
+
+Lucie (24:31.445)
+Bon,
+
+Lucie (24:35.327)
+Exactement.
+
+David Leuliette (24:46.92)
+a le fameux Edge to Edge, Mathieu serait ravi. Il a le Edge to Edge, fameux, dans l'épisode précédent, ou celui d'avant.
+
+Lucie (24:50.606)
+...
+
+Lucie (24:54.19)
+De unistyle, ce les breakpoints j'ai dit, ce qui est pratique aussi c'est que ça reste assez optimisé pour le web je En plus, y a bientôt une nouvelle version qui va sortir encore plus optimisé. Donc je trouve que c'était assez un bon choix.
+
+David Leuliette (25:09.016)
+Mmh.
+
+Lucie (25:23.822)
+Je t'avoue que native wind j'ai jamais utilisé mais j'imagine que c'est un peu comme du tailwind donc la version web.
+
+David Leuliette (25:31.22)
+Tout pareil, sauf quand ça marche pas. Non mais euh, moi j'ai utilisé euh, la V2, V2, là c'est dans la V3 je crois, j'sais plus. enfin, mais y'avait des trucs qui étaient pas disponibles tout court, genre euh...
+
+Lucie (25:40.11)
+Mmh.
+
+David Leuliette (25:46.104)
+De base, en réac'native, c'est inversé, le flow. C'est pas vertical, c'est horizontal. C'est pas horizontal, c'est... Je sais jamais, je me trompe, j'oublie tout le temps. Ce genre de truc. Et il a des choses, tu dis, ouais, Telwind, je vais utiliser Shadow d'HLG. Et ben en fait, il n'y a pas à tout court parce que ça n'existe pas. Donc il faut juste faire gaffe à ce qui existe ou pas. C'est tout. Parce que des fois, si tu devs ton composant, tu dis, ouais, c'est bon.
+
+Lucie (26:05.838)
+Mmh.
+
+David Leuliette (26:12.682)
+Universal app et tout, j'ai storybook, boum je lance en web, hop je teste, et bah ça marche je ship. Bon en fait faut que tu testes sur un vrai device parce que comme par hasard sur Android je sais pas quoi ça ne marche pas tout court. il y a un peu ça à prendre en compte quoi. Mais après sinon c'est la même chose quoi. Mais j'ai pas testé, j'ai testé un petit peu.
+
+Lucie (26:25.966)
+Hmm.
+
+Lucie (26:34.482)
+Je me disais que si c'était comme tailwind, t'as quand même des trucs que j'aime pas énormément. Alors c'est un parti priant. sur tailwind, j'aime pas trop le fait que ça soit si facile de pouvoir mettre un style qui n'est pas lié à ton design système. Et après tu te retrouves avec des trucs avec mille couleurs ou des trucs comme ça.
+
+David Leuliette (26:41.656)
+Hmm.
+
+David Leuliette (26:50.826)
+De faire de la merde, ouais ouais je vois, je comprends, je comprends.
+
+David Leuliette (26:57.46)
+Ouais c'est ça, oui que tu puisses, j'avoue. Bah pour ça faut faire des variants en fait, enfin faut faire un... faut utiliser CVA ou... faut utiliser un truc qui fait que du coup ton API tu peux pas la changer comme ça et mettre un texte RAID random. J'avoue. J'avoue, j'avoue, j'avoue, faut le forcer en fait, ouais c'est ça le...
+
+Lucie (27:01.07)
+Oui.
+
+Lucie (27:13.326)
+et
+
+David Leuliette (27:18.808)
+En plus si utilises Tchadjipiti et tout il va t'autre poutre de la merde et là t'es sûr de trouver 15 000 balises qui servent à rien. Donc je comprends que tu aies une love-hate relationship avec ce truc.
+
+Lucie (27:29.038)
+Justement, je trouve que Tywin, avais le côté où tu as tes noms de balises qui sont raccourcis ou des choses comme ça, ce qui fait que tu as un gap d'entrée, on va dire. Puis tu as aussi les numéros derrière. Il faut savoir quel numéro correspond à quoi. Après, tu as les plugins, on va dire VS Code ou d'autres choses qui t'aident. Quand tu passes ta souris, il te dit à quoi ça correspond. Mais je trouvais que tu avais quand même un gap d'entrée, tu vois.
+
+David Leuliette (27:38.658)
+Allez.
+
+David Leuliette (27:51.192)
+Mmh.
+
+Lucie (27:58.254)
+pour faire du tag win. Et justement, Tchaï J
+
+David Leuliette (28:03.933)
+oui ?
+
+David Leuliette (28:16.536)
+N'importe quoi.
+
+David Leuliette (28:26.68)
+Ouais, si, parce que du coup, pour ça... V0, et pas le V0... Si, c'est unistyle. Y'a le V0 de... Tu vois, c'est quoi V0 ? V0.dev, c'est le truc de Verzel pour justement faire des trucs. Mais ils utilisent Tailwind et ShadCN, mais y'a ShadCN, il me semble. Version React Native. C'est... Ah, je l'avais noté, je le mettrai dans les notes de l'é... Ah, React Native Reusables. Aha !
+
+connaissez pas ça hein ? Et ben on en parlera en prochain épisode ! En vrai Reusable c'est genre... c'est genre... ouais une collection c'est... Ah t'sais des composants préfets sans style. Headless style tu vois. Tu genre un drop down, un truc un machin. Attends je crois. Universal, ShadCN, FarakNative, ShadCN focus on components crafted with native wind and accessibility in mind. Ok ouais c'est ça, je me suis pas trop foiré ça va.
+
+Lucie (28:57.619)
+On m'en aller.
+
+Lucie (29:12.302)
+Oui.
+
+David Leuliette (29:25.898)
+mais pareil j'ai jamais vraiment essayé quoi. Cool super donc tu avais ça, avais ça ok sachant que avant tu utilisaient quoi ? C'était la première fois que tu utilisaient Unistyle ou pas ?
+
+Lucie (29:39.182)
+Ouais, avant, t'avais tout ce qui était un peu les émotions, mais du coup c'est moins optimisé pour le web. sais même pas si ça fonctionne vraiment. Si je pense que tu dois avoir des trucs qui te le convertissent. Et encore avant, je sais plus comment ça s'appelait. Je crois le Style Components ou un truc comme ça.
+
+David Leuliette (29:47.995)
+oui, t'as connu cette époque là, ouais.
+
+David Leuliette (30:04.12)
+autre truc.
+
+oui les fameux qui sont... En plus t'as vu ils sont deprecated, ils sont... Tout internet est en panique, enfin pas tout internet mais tous les dev routines sont en panique. Non c'est pas deprecated, c'est maintenance mode, ça veut dire que c'est comme Arc. Il faut... ça va mourir. Et puis moi j'utilise encore Arc du coup, faut la flemme de changer. Mais ok c'est pas là on discutera un jour, on fera un épisode spécial avec toutes les b... Parce que je l'avais fait il a deux ans, en fait en live sur Twitch j'avais fait...
+
+Lucie (30:08.88)
+Qu'ils se sentent plus. Ouais, j'ai vu.
+
+Lucie (30:19.054)
+...
+
+David Leuliette (30:34.596)
+une tier list de tous les UI components, toi je m'étais dit c'est cool et tout, trop bien et deux ans après tu regardes c'est nul parce qu'en fait tout l'écosystème a changé, il n'y a pas bon si il en a une ou deux mais je crois qu'il n'y a vraiment pas beaucoup de lib que j'avais testé qui Unistide j'avais pas testé, Reusebud j'avais pas testé, en deux ans j'ai l'impression qu'il y eu un une explosion de solutions pour se régler des problèmes divers et variés faudrait que je le refasse
+
+Lucie (30:36.814)
+OK.
+
+Lucie (30:41.742)
+...
+
+Lucie (31:03.854)
+D'ailleurs je me demande s'il n'y avait pas quelque chose entre émotion et les style component en terme de ce qui était populaire, peut-être que toi tu sais.
+
+David Leuliette (31:12.516)
+de CSS in JS ? Bon non c'était genre CSS Plane après CSS in JS et après là il Tailwind qui arrivé au niveau du web Il faudrait que je retrouve, j'ai React, React styling, j'ai... je te l'envoie, je t'envoie un screenshot, j'ai un... j'ai un mind map avec toutes les solutions de design, tu vas péter un câble
+
+Lucie (31:40.494)
+Je pas.
+
+David Leuliette (31:41.938)
+Il y a du CSCS, il du inline style, il y avait du state driven, il y avait du... Bah oui, y avait ça, c'est l'ES, les pré-processeurs. T'as pas connu ça non plus toi. Les pré-processeurs, est... ça, l'ES et tout ça.
+
+C'était... Mais ça n'existait pas sur RackNative, c'était que sur Dweba.
+
+Lucie (32:04.974)
+Ouais mais je crois que si j'avais fait un petit peu le... Comment tu l'as réappelé ? SASS ? Quelque comme ça ?
+
+David Leuliette (32:11.896)
+SASS, SESS, SESS, SESS, SESS, SESS, SESS, SESS, SESS, SESS, SESS, SESS, SESS, SESS, SESS, SESS, SESS, SESS, SESS, SESS, SESS, SESS, SESS, SESS, SESS, SESS, SESS,
+
+Lucie (32:15.022)
+Bonne chance.
+
+Lucie (32:20.462)
+...
+
+Lucie (32:36.206)
+Est-ce que tu veux de nouveau devenir ?
+
+David Leuliette (32:40.34)
+Petite équipe du coup aucune.
+
+Lucie (32:43.658)
+Et ben moi aussi je pensais honnêtement parce que j'ai réouvert mon package pour design pour vérifier et être sûr que j'avais rien oublié. Et finalement il y avait du reanimated pour mes petits trucs du style je crois que t'avais un switch et du coup la personne avait voulu l'animer joliment.
+
+David Leuliette (32:47.672)
+David Leuliette (32:52.056)
+Ouais. Ouais.
+
+David Leuliette (32:57.83)
+ouais, ok.
+
+David Leuliette (33:06.488)
+Ouais, ce genre de trucs.
+
+Lucie (33:09.686)
+des micro animations tu sais un petit peu comme ça. Mais après ce que quand on était passés du coup à l'universalab j'essayais de voir et pour pas forcément l'utiliser partout partout non plus parce que surtout pas pour le web quoi.
+
+David Leuliette (33:11.544)
+micro interaction
+
+David Leuliette (33:25.982)
+parce que ça fout le bordel après Ranimated j'ai jamais été sur du web je sais que ça fonctionne
+
+Lucie (33:33.664)
+ça fonctionne, c'est pas ça, c'est juste... On va dire que si tu l'ajoutes dans le bundle, tu vois, c'est un peu plus lent. Et du coup, l'idée c'était de... Je crois que si tu l'utilises jamais en termes d'import sur tout ce qui est web, ça va quand même pas l'ajouter à la fin. Je suis pas vraiment sûre de cette information-là.
+
+David Leuliette (33:42.456)
+C'est ça.
+
+Lucie (34:00.746)
+mais j'essaie quand même de l'imiter pour que ce ne soit plus des animations qui ne pas faites directement en CSS pour le web, s'il y en avait vraiment besoin. C'est plus optimisé.
+
+David Leuliette (34:12.088)
+Bah ouais c'est ça ouais... C'est ça... Je suis sur le truc, c'est écrit NexJS polyfil, je sais pas quoi là, ça peut fonctionner mais en fait non du coup Pas d'animation, pas de problème Mais ouais mais au pire de toute façon tu fais if web zen pas d'anim et ou go gif quoi donc... Ok donc il y avait ce genre de truc Ouais mais c'était pas des composants alors tu me dis drag et pas de... tu sais pour une view
+
+Lucie (34:25.902)
+ça.
+
+Lucie (34:34.99)
+...
+
+David Leuliette (34:40.93)
+Enfin sur une liste tu peux drag mais pas ça sur le web j'imagine.
+
+Lucie (34:45.418)
+Euh... Non, je pense pas.
+
+David Leuliette (34:47.96)
+Ouais c'était juste affiché différemment quoi.
+
+Lucie (34:52.87)
+Généralement, tu as la même code base comme ce qu'on en a parlé avant, se dire que vas utiliser les mêmes composants, sauf que de manière... De temps en temps, tu as des composants que tu as envie qu'ils soient que sur le web ou alors que tout simplement sur le web, c'est des composants, on va dire, guillemets natifs, des dumb components qui sont différents de ce que tu pourras avoir sur ton mobile. Et à ce moment-là, tu utilises les extensions dans sens où...
+
+t'auras ton myfile.web.tsx et c'est pour ça que je dis que je crois que normalement il est assez intelligent pour regarder les imports et si toi en fait tu vas tout le temps prendre des web.tsx au moment où tu des animations je crois qu'il ne le rajoute pas en fait à la fin.
+
+David Leuliette (35:39.22)
+Ouais, si, normalement il est assez smart là-dessus. Ouais, si, si, moi un peu que j'avais tête. Et ça me fait penser à une autre question, sur le niveau routing, tu t'es arrivé, tu disais solito ou ce genre de truc ou pas du coup ? non, parce qu'il n'y avait pas de Nexious, c'était que du... C'était donc une app universelle, t'avais que full expo quoi.
+
+Lucie (35:52.482)
+Nous on ne l'a pas mis en place.
+
+Lucie (36:02.446)
+Ouais, bah en fait de base donc t'avais vraiment l'app et un site web en next et sauf que l'app en fait elle était quand même assez petite du coup ou même le site web c'était pas non plus très très gros on va dire donc ça allait le passage sur on passe tout en universal app était pas très très long du coup on s'est dit on va pas s'embêter avec du
+
+David Leuliette (36:12.152)
+Ok.
+
+Lucie (36:31.166)
+ou des trucs comme ça pour faire en sorte que tu arrives les deux code base donc Next plus l'app mobile dans monorepo mais qu'ils arrivent à cohabiter ensemble. Nous on était passé direct où sur la code base mobile on est en train de passer directement en Universal App et de faire en sorte que ce soit compatible.
+
+David Leuliette (36:35.416)
+Allez, allez.
+
+David Leuliette (36:52.328)
+Ok, ici, oui d'où le... Vas-y continue.
+
+Lucie (36:53.998)
+Et surtout que Next, ça peut être intéressant avec tout ce qui est server-side rendering pour le CEO. Alors que nous, ne nous intéressait pas tellement parce que de toute façon, les employés, allaient avoir un compte.
+
+David Leuliette (37:08.216)
+S-I-O, mais si c'est taquette.
+
+Lucie (37:21.59)
+ils allaient chercher ce qu'ils ont vraiment besoin vu que c'est lié à leur entreprise. Donc ce n'est pas une question d'être découvrable sur Internet qui était intéressant.
+
+David Leuliette (37:29.464)
+Ouais, ouais, c'est ça. C'est un autre truc, je regarde le site web, oui c'est un autre truc, tu Webflow, n'est pas inclus dans la code base et tout, parce que ce pas une app de banque où il faut des trucs hyper dynamiques de partout, le nombre d'useurs direct, on peut récupérer ça dans une base de données airtable et ça fait le taf. Donc du coup, vous réalisiez ce truc-là Quelle est la stratégie ? Est-ce que vous réalisiez tous les jours, toutes les semaines, tous les mois ?
+
+Lucie (37:37.207)
+Au revoir.
+
+Lucie (37:56.974)
+Pour tout ce qui web c'était tous les jours. Il y avait sa sortie directe. Pour le mobile, du coup on utilisait EAS. En soi avec les updates, crois que tu peux le mettre en place pour faire des releases avec que du JS tous les jours.
+
+qu'on avait regardé c'était que le nombre de downloads, tu vas payer en fait le nombre de downloads. Donc pour l'instant il ne l'avait pas mis en place. Il faisait quand même des releases assez souvent quand on était passés sur le mobile, il voulait avoir des choses où sur les stores il demande peut-être toutes les deux semaines ou quelque chose comme ça pour faire une nouvelle release.
+
+David Leuliette (38:33.144)
+Mm-hmm.
+
+Lucie (38:53.71)
+quand tu passes par les stores, il faut avoir la validation des stores donc forcément ça prend un peu plus de temps que si tu drop juste du GS sur ton app. Mais c'était quelque chose qu'ils allaient potentiellement considérer par la suite.
+
+David Leuliette (39:02.334)
+JavaScript, le QI et SOPD toi ? Ouais.
+
+David Leuliette (39:11.382)
+Ouais. Ok, ok, ouais. Moi, en fait, ça dépend, c'est pareil. Ça dépend de... Ça dépend. Moi, c'est toutes les semaines et tous les jours. Enfin, j'essaye les petits... Bah les ISUpdates, ouais. En fait, c'est ça, quoi. C'est grosse release. En plus, j'ai juste un script à lancer. Mais moi, c'est juste que j'ai la flemme d'aller dans... D'aller décrire dans le store et tout. c'est important, j'ai tout automaït. J'ai même un script sur Raycast. Je sélectionne le changelog, ça montre...
+
+un message clair pour les équipes marketing même ça je trouve ça trop long, pas trop long mais faut attendre le build et là tu fais mais je vais pas commencer un truc parce que potentiellement dans une heure c'est fini peut-être pas une heure mais dans aller dans en plus c'est plus rapide maintenant 1.6 time plus rapide du coup genre peut-être entre 6 minutes et 30 minutes ça peut être fini mais après sur les surdroid il faut vérifier du coup ça prend un peu de temps
+
+Lucie (39:45.944)
+Oui.
+
+Lucie (40:05.198)
+Mmh.
+
+David Leuliette (40:11.0)
+Ok, super, assez classique le script, IAS, Expo, iOS, Android. Et Web, c'était où ?
+
+Lucie (40:25.262)
+ça c'est une bonne question
+
+David Leuliette (40:26.806)
+tu sais pas. Vous avez pas utilisé IAS Deploy ?
+
+Lucie (40:30.894)
+Si, bah tu...
+
+David Leuliette (40:32.888)
+Ouais, si, le nouveau truc ils ont launch... Ok.
+
+Lucie (40:36.014)
+Ah le nouveau hosting ? Non ils n'utilisaient pas ça, ils l'ont mis avec les autres sites web qui étaient plus orientés pour l'employeur et les amis. Il y avait du CloudFair, je m'en souviens, mais je crois que tu avais autre chose, il y avait du IBM dans l'histoire.
+
+David Leuliette (40:45.09)
+Ok, ok.
+
+David Leuliette (40:55.688)
+Ok, quelque part, dans le cloud. Ok, ok, mais c'était pas... ouais, je vois. Parce que c'est encore assez nouveau le YSDP. J'ai essayé, c'est rigolo. Enfin, ça fonctionne. Mais après, ouais, serais peut-être pas super confiant de... Je sais pas, en fait, en vrai, je sais pas, ça dépend. Ça dépend.
+
+Lucie (41:05.774)
+Ok.
+
+Lucie (41:11.182)
+Après, tester aussi. C'est ça ce qui est intéressant quand tu choisis ta stack technique. C'est que, à la fois, tu as envie d'avoir des trucs que toi tu leur fais confiance et tu es solide sur tes appuis. Mais c'est bien d'avoir un petit truc qui te fait découvrir aussi quelque chose de nouveau, je trouve. Qui pourra essayer de comparer, voir si c'est bien, si c'est mieux.
+
+David Leuliette (41:34.146)
+Ouais.
+
+Lucie (41:41.26)
+que ce que tu utilises et avant ou ce genre de choses.
+
+David Leuliette (41:42.424)
+Parce que tu sais pas ouais c'est clair, sais pas moi c'est pour ça que je vais en conférence en fait, vrai que j'essaye de rencontrer plein de gens et que je fais le podcast en fait c'est pour savoir est-ce que... Est-ce que c'est des trucs mieux ? Parce qu'en vrai oui sinon on s'ennuie tellement tu genre quand tu sais pas que Expo ça existe et bah pouf ! C'est fastidieux hein quand tu sais pas que TypeScript et ESLint et Prettier ça existe et bah pfff ! C'est chiant le dev hein bordel !
+
+Lucie (41:50.862)
+Hehehehe...
+
+Lucie (41:58.766)
+Oui.
+
+Lucie (42:08.834)
+Est-ce que tu as déjà rencontré quelqu'un qui t'a dit... enfin qui a été choqué tu vois, dit prétire non je connais pas ou quelque chose comme ça
+
+David Leuliette (42:19.284)
+oui plein mais moi c'est parce que je fais des bootcamp. Et donc des gens qui font pas du tout de JavaScript donc en fait ils connaissent pas l'écosystème donc forcément tout le temps en en vrai bon ça m'arrive tout le temps. Et je suis toujours les choses de la communauté enfin au max. Vu que je vais en conférence et tout j'ai une assez bonne lecture et qu'on suit la newsletter de Seb, big up à
+
+Lucie (42:24.542)
+Oui, bon, ça c'est... Ouais... Oui...
+
+Lucie (42:45.71)
+...
+
+David Leuliette (42:48.92)
+This Week in React. n'importe quoi les gars, ça m'a plu ! Du coup j'arrive à avoir une bonne lecture de ce qui est utilisé un peu partout et du coup je fais un diff de tout ça et je prends le consensus en fait. vois, moi je suis pas... Parce que avant je faisais du Ruby on Rails et j'utilisais les outils Rails qui étaient de base, tu j'essayais pas d'importer un truc du node techno parce que ça marchait, tout ça, quand j'essayais d'utiliser les outils...
+
+Lucie (42:51.662)
+Ha ha !
+
+Lucie (43:02.734)
+...
+
+David Leuliette (43:16.905)
+Si demain je ne plus faire de rack natif, je ferais du...
+
+David Leuliette (43:23.192)
+Rails mobile app c'est Hotwire, crois que c'est Hotwire, il a un truc Hotwire, je ne sais plus, un truc pour train, pour transformer mais c'est pas comme Rack Native en fait, c'est plus comme une webview j'ai l'impression. Mais ça fait le taf, mais le truc c'est que ça reste dans l'écosystème et c'est bien fait pour et du coup ça te permet d'avancer plus vite quoi.
+
+Lucie (43:42.734)
+OK.
+
+David Leuliette (43:50.904)
+commencer à mettre du Prétecear sur du Python par exemple parce que ça marche pas trop. Du coup, peut-être qu'il a Prétecear, je pourrais pas dire. Mais donc, après cette sympathique discussion, n'y a pas cinq livreries que tu recommandes ou que tu utiliserais avec ce projet là ?
+
+ou tu recommandes d'ailleurs, qui ne peut-être pas forcément dans ce projet-là. En vrai.
+
+Lucie (44:23.63)
+De manière générale, as toujours des choses qui ressortent un peu tout le temps sur les projets. On va dire que tu as toujours besoin de dates, as toujours besoin de traduction, de formulaires, tout ce de choses.
+
+David Leuliette (44:29.144)
+Je...
+
+David Leuliette (44:32.984)
+Ah oui le fameux « il 18a de next ». Moi je suis sûr qu'il 18a de next en ce moment pour la trad si les gens veulent passer leur app en plus. Tain, rien à voir, j'ai digression. C'est quand même la folie les haïs. Parce que moi je fais plus de Et je me mets en tunnel et je fais tout d'un coup en 3 semaines.
+
+Donc en fait je fais pas du tout de trad, même pas de clés, de rien du tout, je fais l'app tout en anglais. Et après en fait, que j'utiliserais Ecast ou même Copilot ou je pas quoi, tu lui dis add moi 18e là dedans et génère moi les clés. Et en fait il génère les clés tout seul automatiquement. Une fois que t'as les clés avec tout ton fichier, tout dans un seul fichier.
+
+Lucie (44:56.11)
+Oui.
+
+Lucie (45:08.907)
+en
+
+David Leuliette (45:20.14)
+T'envoies ça à la GPD ou je sais pas quoi et hop il traduit tout et c'est good enough pour la... pour la... pour la V, tu vois, passer là. J'ai passé la port en allemand ça a pris dix minutes en fait. J'ai fait Pomme A, Pomme C, Pomme V. Ça, incroyable quoi.
+
+Lucie (45:37.454)
+ça te fait aussi les langues ? C'est un peu plus parce que l'allemand ça reste très connu mais des choses plus rares ou je sais pas du flamand ou du...
+
+David Leuliette (45:42.938)
+oui !
+
+traduire en arabe ? Ouais sûrement ouais. ouais peut-être. Oui si ça le fait, ça le fait certains, ça le fait c'est sûr, mais après je garantis. En fait c'est toujours pareil, la localisation, la traduction et la localisation c'est vraiment un métier parce que voilà pour l'instant moi ce que je fais c'est good enough ça passe, mais t'as certains mots, faut vérifier quoi. Parce que avec un vrai natif comme ça tombe il l'autre poute de la merde et moi j'en sais rien en fait en vrai je m'en rends pas compte. enfin je trouve ça incroyable quand même la vitesse à laquelle tu peux...
+
+peu spin-up un langage, c'est fou. C'est fou. Et moi c'est Edwitt Annext que j'utilisais. Là elle était en multilingue ou pas ? Non, je pense que non.
+
+Lucie (46:23.962)
+Là c'était full français, parce que c'était pour un public français. Ils avaient quand mis de la traduction. Je n'ai pas noté celle qu'ils avaient mis. Je crois que c'était ça, ça devait être I 18th and next. Mais après on n'était pas très convaincu de ce que l'équipe présidente avait fait. Ils avaient fait double traduction je crois. Et du coup on avait essayé un peu de nettoyer ça après coup.
+
+David Leuliette (46:26.273)
+Ouais, faut le français.
+
+David Leuliette (46:32.086)
+Ok.
+
+David Leuliette (46:52.62)
+Ouais. Ok. Digration terminée. Alors 5 livres à être que tu recouvres.
+
+Lucie (46:58.222)
+Les formulaires c'est quand même un truc que j'ai pas mal utilisé sur le site d'autrape parce que comme tu as dit vu que c'est une société de services j'ai fait plein d'autrape et pas juste mucho donc il y avait des formulaires qui étaient assez complexes et je m'en suis sorti avec Reacookform et Zod combinés les deux ensemble du coup je pense que je recommande ces deux libres
+
+David Leuliette (47:19.928)
+Oui. Oui.
+
+Lucie (47:27.886)
+Après... Oui ?
+
+David Leuliette (47:30.232)
+exemple parce que moi je vais le dire, moi je recommande un il n'y a pas longtemps. En fait j'ai un chart
+
+il y a des data et en fait le chart fait que ça bouge les data... attends... il a un chart, il a un toggle du coup qui fait que je puisse changer... quand je toggle je peux changer le chart et il y a aussi donc des... ça met des data dans des inputs et en fait quand j'appuie sur l'input ça doit update le chart aussi et bah ça... un enfer en fait j'ai découvert qu'il a... bah pareil
+
+Lucie (47:54.414)
+Mm-hmm.
+
+Lucie (48:04.677)
+stylé
+
+David Leuliette (48:10.776)
+Je m'étais dit mais comment je vais faire ? Parce qu'en plus c'est assez particulier, il a tout un délire de... il faut que ça sync correctement les data. En bluetooth en plus bien sûr, parce qu'à chaque fois que tu changes de valeur, boum ça update en bluetooth les informations. Et en fait c'est quoi ? C'est sync... sync ou call ou... attends...
+
+quoi je ne sais même plus je l'ai fait la semaine dernière je ne sais même plus il ya quelque chose quelque chose qui permet de listen enfin tu d'écouter en fait quand quand un paramètre change et ouais bah c'est ça c'est watch voilà c'est carrément c'est ça c'est ça voilà si un jour allez lire la doc de react hook form watch c'est franchement c'est folie en dix minutes c'était plié mais c'est pas possible que ce soit aussi facile en fait bien si
+
+Lucie (48:48.11)
+va voir la watch, ou quelque chose comme ça.
+
+Lucie (49:08.27)
+Pour moi c'était des formulaires où le BAC te renvoie un dix-one pour te dire que tu m'affiches un champ input, tu lui mettes valeur par défaut ça, etc. Tu avais plein de champs et du coup ton BAC te donnait ça. Mais c'était encore plus compliqué parce que suivant ce que l'utilisateur avait répondu, ça t'ouvrait des sous-formulaires juste en dessous, des trucs comme ça.
+
+David Leuliette (49:32.746)
+ouais, bah oui, c'est ...
+
+Lucie (49:35.47)
+ça le faisait super bien. puis tu avais aussi du côté... Je ne sais plus exactement ce ça s'appelle, je crois que ça s'appelle un fil arrêt. Ou en gros, imagine que tu vas avoir... Tu as des enfants, ok ? Et tu peux en avoir plusieurs. Et du coup, quand tu as un formulaire, ils vont peut-être te dire, bah, remplis-moi le nom de ton enfant et en quelle année il est né. Et en fait, le fil arrêt, il va te permettre d'avoir le petit plus, tu sais, en bas qui te permet de rajouter des enfants.
+
+et ça te gère ça super bien pour si jamais tu veux en supprimer un mais au milieu de ta liste, ça gère ça super bien donc je suis assez conquise actuellement par tout ce que cette lippe peut faire.
+
+David Leuliette (50:19.32)
+Ouais ouais, c'est folie, folie. moi j'utilise aussi souvent... J'utilise une autre, je ne sais même plus le nom. J'ai oublié. Je ne sais plus pourquoi j'ai changé. Peut-être parce qu'il avait les Hooks. Et puis je me suis allé hop ! Et du coup j'utilise celle-là. Cool. Donc ça coûte pour deux ou ça coûte pour un celle-là alors ?
+
+Lucie (50:30.03)
+Ha ha ha
+
+Lucie (50:35.054)
+Peut-être pour deux, parce que tu le Zod qui te permet de vérifier tes types, ton typage. C'est pour les formulaires, mais ça peut être sur plein d'autres choses, sur tes variables d'environnement, sur ce que ton bac va te renvoyer si tu veux vérifier le typage.
+
+David Leuliette (50:54.168)
+Ah ouais tu utilises pour ça ? Ouais, t'as c'est vrai que j'ai jamais utilisé moi j'ai toujours utilisé que pour les formulaires, les genre adresse, faut code postalville, min max et tout ça. Ah ouais mais j'ai jamais utilisé, genre pour les variables d'environnement j'ai jamais utilisé en fait. Smart.
+
+Lucie (51:01.25)
+Oui.
+
+Lucie (51:08.334)
+Je trouve que c'est pas trop mal parce ça arrive des fois où t'es dans un projet et tu vas juste oublier une seule variable d'environnement. Tu tu partages les variables d'environnement de personne en personne pour pas le comitter et du coup tu vas oublier certaines variables et je trouve que c'est pratique d'avoir ce type check, on va dire, qui va t'assurer que t'as les variables, que t'as besoin. Et si jamais tu mets une valeur par défaut du style, si t'as pas l'URL de ton site, va te mettre un localhost ou des trucs comme ça, tu vois.
+
+David Leuliette (51:16.44)
+...
+
+Aller.
+
+David Leuliette (51:29.688)
+...
+
+David Leuliette (51:36.728)
+Smart, trop bien. Vas-y, du coup, next.
+
+Lucie (51:42.574)
+Après, a dit que pour la trad, j'utilise plus linguïe, même si... C'est aussi une librairie de traduction. Je pense que c'est plus par préférence, parce que je connais bien, que de réelles comparaisons, on va dire.
+
+David Leuliette (51:53.249)
+C'est quoi sa linguie
+
+David Leuliette (52:09.174)
+Ok.
+
+Lucie (52:13.774)
+Donc là j'en ai trois, il me manque deux. On va dire MMKV pour tout ce qui est store tes tokens et ce genre de choses. Et le dernier, peut-être que peu de gens connaissent mais j'aime bien aussi Rive.
+
+David Leuliette (52:23.071)
+Ouais.
+
+David Leuliette (52:30.776)
+C'est un truc d'animation, arrive.
+
+Lucie (52:30.85)
+Voici ce c'est.
+
+Exactement. Ça te permet d'avoir des animations un peu en style GIF mais avec des states où tu vas pouvoir lui dire il y a une application qu'on a fait à TheodoApps où le fond d'écran en fait il change en fonction de la météo. du coup toi tu as cette sorte de GIF on va dire mais donc...
+
+David Leuliette (52:54.38)
+sympa.
+
+Lucie (52:58.624)
+et tu vas lui dire bah si il neige je veux que ça neige aussi du coup tu vois la neige tomber ou des trucs comme ça
+
+David Leuliette (53:04.088)
+Ça c'est bien ça. Au moins c'est synchronisé et ça update parce qu'on n'en peut plus des trucs de neige et qui sont encore là... 6 mois après parce qu'on a oublié d'enlever le truc de la neige.
+
+Lucie (53:11.692)
+Oui. C'était fait en flotteur, fait Rive c'est une technolibrille qui peut être utilisée aussi en ragnatives. Je ne l'ai jamais utilisé sur un projet que pour un client, mais pour les petits trucs persos et tout, pour regarder faire des petits pop. Je me suis pas mal amusée avec et du coup j'ai bien aimé cette clip.
+
+David Leuliette (53:48.152)
+Ouais, moi j'ai pas le time. J'ai le feu à gérer donc du coup pas le time. Ok ok super. là on a fait les 5. Est-ce que tu peux me parler d'une feature que tu deves et combien de ça t'a pris pour mettre en prod ?
+
+Lucie (53:49.934)
+Ha ha ha !
+
+Lucie (54:07.502)
+Si on revoit sur l'universal app de Mucho, crois que ça nous a pris 2 ou 3 semaines. Pour l'intégration de plus, y avait plein de features qui manquaient sur le mobile, donc on les a rajoutées. Tu vois, c'est comme une carte Swile, tu veux, où tu peux acheter après.
+
+David Leuliette (54:09.016)
+Je t'en souviens.
+
+Lucie (54:36.576)
+et ils n'avaient pas implémenté la feature qui te de mot de passe ou enfin code pin oublié et du coup des trucs comme ça et qu'on avait rajouté par la volée donc ça a rajouté du temps parce qu'on a rajouté toutes ces features aussi manquantes.
+
+David Leuliette (54:41.664)
+Allez, OK.
+
+David Leuliette (54:51.032)
+Ah bah oui, puis correction de bugs, tu te rends compte de plein de trucs en fait en vrai. Ouais, je suis pas étonné. Vous étiez combien du coup dans la team à bosser sur le projet en même temps ? Ok ouais, on voit donc ça. Parce que moi pareil, j'avais changé. Moi j'avais déjà une boîte aux US et pareil, il fallait passer sur un Mono repo. Moi ça m'a pris deux semaines parce que c'était une banque et il fallait tout setup correctement avec Enix. Enix.dev, parce qu'en fait ils avaient setup un Mono repo mais n'importe comment.
+
+Lucie (55:01.111)
+On était deux.
+
+David Leuliette (55:21.416)
+et coup, il fallait remettre tout ça en track avec les fameux prétilleurs Aslint et tout le merdier qui fait que tu cobit pas n'importe quoi. si c'est un coup de setup un peu long, mais après ça dépile. Est-ce qu'il y a eu un moment difficile dans le dev de setup ?
+
+Lucie (55:28.782)
+...
+
+Lucie (55:32.439)
+Bonne
+
+Lucie (55:43.662)
+J'en ai pas pensé un pour cette lab en particulier, mais j'en ai passé un pour... C'était justement mon premier projet quand je suis arrivée. Et en fait, à ce moment-là, on était trois dans l'équipe. Du coup, y avait moi, y avait une autre fille, à peu près comme moi, et puis t'avais Nath Tech Lead à l'époque. Et Nath Tech Lead avait décidé de je crois, trois semaines de vacances.
+
+David Leuliette (55:47.398)
+Ok.
+
+David Leuliette (56:12.952)
+Ah ouais, bah oui, normal. c'est à base de... Des fois c'était 100 jours, mais ouais ok. Et du coup, à deux, vous retrouvez à deux.
+
+Lucie (56:13.422)
+un moment. Non mais il a l'or. Et du coup on était toutes les deux et il fallait qu'on mep. Et on devait meper la veille de Noël. Et on l'avait fait, je crois qu'on avait commencé la mep à 17h, se disant tout va bien se passer.
+
+David Leuliette (56:35.542)
+À vendredi, très bon, ça tout va bien se passer, ouais.
+
+Lucie (56:42.102)
+Et évidemment, ce n'était pas le cas. On savait comment on revert et tout. coup, on a revert et tout. après, on s'est appelé en visio et puis on a essayé de résoudre le bug pour pouvoir le corriger et remettre. Mais je pense que cette expérience m'a surtout appris, c'est ne mepez pas quand vous savez que après vous voulez rentrer chez vous. Ne mepez pas la veille de Noël à 17h.
+
+David Leuliette (57:03.902)
+Au revoir.
+
+David Leuliette (57:08.824)
+ou alors c'est l'inverse, c'est mise en prod, quoi qu'il arrive toutes les semaines et comme mécanismes de revert il t'enverte aussi, mais si la mise en prod n'arrive pas, c'est pas grave, c'est la prochaine qui arrive et tu mets en place un mécanisme pour... c'est comme ça, moi c'est ce que je fais chez Wichipit, en fait l'objectif c'est de mettre en prod tous les jours et du coup on met des mécanismes qui font qu'on release tous les jours en
+
+Lucie (57:16.79)
+Ouais.
+
+Lucie (57:30.134)
+Oui.
+
+David Leuliette (57:35.85)
+Et que du coup ça devient un autre événement. En fait tu releases normal, y'a pas de grosse catastrophe qui puisse arriver. Si on a une, bah en fait pas grave. Comme ça ouais t'as une solution de rollback. Mais c'est sûr que oui, quand t'es junior dev avant Noël, en plus tout le monde s'en tape, tout le monde à Noël à part envoyer des SMS de...
+
+Lucie (57:48.494)
+Justement en fait, c'était une application pour des chefs de chantier et ils savaient que... En fait c'est pour ça qu'on ne pas forcément faire beaucoup beaucoup de releases parce que eux ils s'attendaient à une release tous les trois mois ou quelque chose comme ça Et après ils voulaient justement que ça soit pendant la période de Noël parce qu'ils savaient que tout monde serait en vacances chez eux.
+
+David Leuliette (58:01.656)
+ok.
+
+David Leuliette (58:06.475)
+oui !
+
+David Leuliette (58:10.6)
+oui.
+
+David Leuliette (58:17.016)
+Ok, d'accord je comprends.
+
+Lucie (58:18.464)
+Et que du coup, on pouvait release et qu'ensuite ils auraient des nouveautés quand ils reviendraient quoi.
+
+David Leuliette (58:27.295)
+Je vois. oui, oui, oui, après, c'est ce que je dis, c'est pareil. Il toujours des, toujours des genre moi, jamais de ma vie, ça m'est arrivé de release. pas que moi, mais la team dans laquelle je bossais, un site Web E-commerce, la veille des soldes, nouvelle version. Ben non, ben non, non, on ne pas ça. On ne fait pas ça. Si, m'est déjà arrivé. C'est le final. C'est pareil de douleur.
+
+Lucie (58:41.806)
+Oui, oui.
+
+David Leuliette (58:52.856)
+grosse douleur, grosse douleur, grosse douleur.
+
+Lucie (58:53.198)
+Ouais.
+
+Lucie (58:56.694)
+Mais ça t'apprend les choses, à la dure, je pense. Je le referai plus jamais de ma vie.
+
+David Leuliette (59:01.048)
+Ouais ouais ouais c'est vrai, c'est vrai, c'est vrai, des fois c'est pas forcément... Plaisant, mais en vrai, je trouve que ça va la tête que c'est assez facile entre guillemets, pas vraiment si facile. Si, si, si, si tu peux genre delete, drop des databases de prods. Mais en vrai, du coup c'est pareil, il faut qu'il des mécanismes en place.
+
+tu peux... pareil, j'ai déjà fait un partager des apéries qui... enfin, tout le monde l'a fait, tout le monde l'a fait ce truc. Moi, c'est dans un giste, c'est dans un giste en fait et du coup... mais c'est bien, vois, ça fait stresser... en fait, c'est ça, c'est le truc, c'est que si tu travailles des personnes sérieuses et qui travaillent correctement, bah en fait ça va. C'est catastrophe si tu travailles avec des gens qui sont pas forcément...
+
+up to date, je voudrais dire, ou qui se rendent pas compte des impacts que ça peut avoir en fait. Là c'est horrible. Là c'est chiant, j'avoue. Et donc est-ce que tu des techniques de débugs que tout développeur de Rack Native devrait connaître ? Ou alors que tu as apprise récemment ?
+
+Lucie (01:00:00.334)
+Oui.
+
+Lucie (01:00:16.11)
+et...
+
+Lucie (01:00:20.782)
+Pour moi, que tout dev devrait savoir, c'est faire des schémas. Je trouve que ça permet de visualiser concrètement fait, qu'est-ce qui ne pas. Je peux donner un exemple. J'avais un bug, c'était lié à de la mémoire. Et du coup, j'avais un peu du mal à comprendre c'était quoi mes différents états de mémoire. Du coup, j'ai fait un schéma et je me suis dit, ok, voilà, c'est ça.
+
+David Leuliette (01:00:48.264)
+oui, papier crayon, boom. Ou alors Excalibro. Excalibro alors, sinon vous faites des cas... Faut lire Excalibro. Si vous connaissez pas, allez tout de suite sur Excalibro.com et faites un schéma de ce que tu vas expliquer. Maintenant.
+
+Lucie (01:01:02.318)
+Oui, c'est vraiment en fait, on va dire que c'était vraiment un bug Android pour le coup et du coup je regardais la doc et tout mais j'avais du mal à comprendre en fait c'était quoi vraiment ces états sur lesquels ça pouvait passer et une fois que tu fait le schéma, as compris en exactement, bah en fait évidemment tu as le foreground, tu le background, mais en fait même à l'intérieur de ces gros catégories d'états, tu vas avoir des sous-états.
+
+Parce qu'au fur et mesure que tu vas l'utiliser ou pas, implication, elle va passer dans des stades où elle va se dire plus... Enfin c'est un peu comme un garbage collector, on va dire, où au bout d'un moment elle se non mais là tu ne pas utilisé depuis longtemps, du coup je peux libérer de la mémoire ou ce genre de choses. Et c'est comme ça qu'après tu comprends vraiment comment débuguer pour moi parce que tu as compris comment ça fonctionnait concrètement.
+
+David Leuliette (01:01:54.68)
+T'as fait des carrés, des carrés, des carrés, des flèches, hop là. Exactement. Non mais si, en plus en vrai ça s'apprend, enfin ça s'apprend...
+
+Moi ça me paraît logique tu vois en vrai. que sinon tu vas pas... Bah si en fait en vrai si. Mais après je pense que t'en as un peu expérimenté tu sais mais genre... Tu vois ma femme elle a fait un bootcamp récemment pour devenir dev full stack. Et au tout début quand elle codait, elle regardait l'écran et elle dit attends je réfléchis dans ma tête. Elle me détestait que je dis ça mais je lui dis mais enfin non c'est un...
+
+Lucie (01:02:07.201)
+Oui.
+
+Lucie (01:02:20.462)
+Mm-hmm.
+
+Lucie (01:02:27.694)
+...
+
+David Leuliette (01:02:33.564)
+aucun intérêt tu ne vas pas, t'as pas de compiler dans ta tête qui va te dire la solution en réfléchissant il faut essayer plein de trucs, mettre des consoles logs partout et pareil, ou poser, faire un carré machin ou exactement ce que tu fais dans Excalibro pour euh... parce que tu peux pas imaginer que c'est impossible c'est trop compliqué quoi donc... ouais ouais
+
+Lucie (01:02:42.958)
+Mmh.
+
+Lucie (01:02:51.064)
+Ouais. J'ai toujours incarné avec moi, vraiment. que comme ça, t'arrives mieux à comprendre, de ok, ça implique ça. Pour les trucs complexes, t'en as besoin pour moi.
+
+David Leuliette (01:03:01.368)
+Ouais, c'est ça. Et du coup, vous aviez géré comment les différences iOS Android Web sur le Top Universal ? Il a vraiment des trucs un peu tricky ? Genre Datepicker ? Genre Birthday Datepicker ? Le fameux ?
+
+Lucie (01:03:10.222)
+...
+
+Lucie (01:03:14.584)
+Ouais, c'est comme je dit, les petites différences tu le gères un peu dans le style avec tes breakpoints ou des trucs comme ça. Les plus grosses différences, tu vas vouloir faire des fichiers, des composants, c'est pareil. Et effectivement, je pense que je me suis bien mordu les doigts sur les calendriers pour que ça soit compatible, trucs comme ça et tout. Avoir des choses où tu as le style qui se ressemble et en même temps, j'avais des bugs ou...
+
+David Leuliette (01:03:24.172)
+Ouais, je sais ouais.
+
+David Leuliette (01:03:35.34)
+Ouais bah ça c'est...
+
+Lucie (01:03:43.905)
+T'avais Expo qui avait mis une sorte de super style sur tous les écomposants web sauf que ça écrasait le style de ma modale de calendrier donc tu la voyais en background mon calendrier alors que tu ne veux pas. Tu vois, t'as pas mal de problématiques on va dire comme ça et là tu veux vraiment de toute façon séparer tes composants quand c'est vraiment des trucs comme je disais plus natifs, plus les dumb components et des trucs comme ça.
+
+David Leuliette (01:04:01.854)
+à l'enfer
+
+Lucie (01:04:14.062)
+et après essayer de trouver la meilleure solution possible en regardant les livres, qu'est-ce qui est compatible, qu'est-ce qui pas compatible, ce que tu peux faire pour avoir des choses qui se ressemblent finalement.
+
+David Leuliette (01:04:26.1)
+Et que j'ai à dire. Ouais, t'avais un storybook pour tester tout genre de trucs.
+
+Lucie (01:04:33.166)
+Non, là on n'avait pas mis en place le storybook. On était restés sur le côté... J'avais un calendrier dans mon app, pour l'instant j'avais mis là. Mais effectivement, prochaine étape ça aurait été de mettre un storybook pour que ce soit plus simple.
+
+David Leuliette (01:04:34.615)
+Et peu-d'un.
+
+David Leuliette (01:04:40.499)
+Ouais, bah tu le fais. Ouais ouais, c'est ça.
+
+David Leuliette (01:04:48.6)
+Ouais ouais bah t'es pas vraiment obligé, moi je sais que je le mets parce que... Bah en fait sais que je le mets de base parce qu'en fait euh... Oh là, chez le setup... Maintenant le setup est incroyable, c'est trop facile ! Avant c'était chiant ! Euh... Mais j'utilise pas partout quoi. Mais je sais que genre quand je veux speed up rapidement, genre typiquement le truc du calendrier là... Ou les permissions ou ce genre de trucs, ça permet vraiment de gagner du temps pour retester les flows parce qu'après quand tu dois retaper tous les screens et tout, parce que ton calendrier il est perdu je sais pas où...
+
+un peu fastidieux quoi, mais je fais pas forcément tout quoi. Donc ça dépend pareil. Et donc chez Théo Do, ou alors toi, c'est quoi ta stratégie pour être up to date à part donner des conférences ? Ça a donné, oui, t'as donné une super conférence d'ailleurs. ne sait pas, on ne sait pas, mais j'aurais dû vous dire, mais bon j'ai eu des problèmes, j'ai eu des problèmes de calendrier, j'ai pas pu assister à n'importe quoi. Moi je sponsorise une conférence et j'y vais pas, tu vois. C'est le gars.
+
+Lucie (01:05:35.822)
+...
+
+Lucie (01:05:40.462)
+Je remercie.
+
+David Leuliette (01:05:44.792)
+Allez hop, allez-y les gens, je donne des billets, vas-y pas de problème, je fais gagner des billets, serai même pas là. Mais du coup à part pour... Donc donner des conférences fait partie de ta stratégie pour te former ou tu as un autre tips à partager avec les gens
+
+Lucie (01:06:02.606)
+Alors donner des conférences, va dire que c'est plus une conséquence de ce que j'ai travaillé avant, on va dire. Moi je pense que tout ce qui est veille, fallait que j'en fasse un peu une habitude. Du coup, ce que je me suis dit, c'est que j'allais faire une sorte de habit tracker. Tu tu prends une app, un peu habit tracker, et puis tu décides, qu'est-ce que tu as envie de faire et tout.
+
+David Leuliette (01:06:07.32)
+Hmm?
+
+Lucie (01:06:28.95)
+Et moi c'est ce que j'ai fait, je me suis dit je veux le faire 5 fois par semaine. C'est pas obligé d'être les 5 jours ouvrés, mais 5 fois par semaine. Ça peut être... Enfin un truc tout petit avec 5 minutes de veille où tu regardes un peu sur Twitter ou Blue Sky qu'est-ce qui se passe ou alors des trucs plus longs où effectivement tu vas vouloir faire des POK ou des trucs comme ça. Mais je trouve que ça marche bien parce qu'au bout d'un moment en fait tu tiques tes petits trackers là, ton trackers et...
+
+Au bout d'un moment, en as tellement que tu te que tu ne pas m'arrêter là. Et du coup, tu continues parce que tu serais frustrée de perdre ta suite. C'est un truc que crois que ça s'appelle vraiment Habitraca. Habitude en français. C'est le fond bleu avec une flèche qui tourne.
+
+David Leuliette (01:07:04.664)
+J'ai oublié.
+
+long streak euh ton streak tu n'auras plus ta flamme là là attends tu utilises quoi comme up du coup de tracker
+
+David Leuliette (01:07:18.135)
+Ok.
+
+Habitude sur iOS.
+
+David Leuliette (01:07:29.72)
+Habitude app iOS, les 10 meilleurs. Ouais non mais habité. Habitude avec un S. Résolution plus 4. Ah non il a un H. Ah l'enfer. Attends. Habit tracker.
+
+Lucie (01:07:43.822)
+Tu peux prendre n'importe quoi, c'est pas très grave.
+
+David Leuliette (01:07:47.256)
+On veut la même, on veut la même et les flammes et se partager des... Tu me l'enverras sur Slack. Est-ce que tu peux ajouter les amis dedans ? C'est ça le truc, la pression sociale. C'est comme quand tu vas à la salle, tu vois, hé ! Mais là, tu n'as pas lu ton article de la semaine. Je suis repassé devant le leaderboard.
+
+Lucie (01:07:53.998)
+Au
+
+Lucie (01:07:59.128)
+!
+
+Lucie (01:08:06.254)
+Bah je suis même pas sûre parce que je pense qu'ils m'ont pas demandé de créer un compte ou quoi. m'ont pas... Pareil tu vois ça marche en offline donc je pense vraiment que c'est juste en local. Ils ont mis toutes les données. Je sais pas jusqu'à quand est-ce que je peux le faire jusqu'à ce qu'ils me disent j'ai plus de mémoire.
+
+David Leuliette (01:08:11.466)
+Oui. Non mais ça, marche tout seul en fait. Ça marche mieux tout seul.
+
+David Leuliette (01:08:28.679)
+Ah c'est ça, il te faut payer 200€ à la fin quand t'as un long streak de 300 jours et que tu le badge Diamond tu vois. ok, du coup tu te fais une liste, tac et tu dis ok donc là ça ça ça et qu'est que tu regardes ? tu cherry-pick au gré du vent ce qu'il y a quoi, sur twitter ou plus quel que ça, dépend quoi.
+
+Lucie (01:08:34.51)
+Je suis plus loin.
+
+Lucie (01:08:47.662)
+Comme tu l'as dit, il y a la newsletter de Seb qui est quand même vachement pratique. as tout ce qui est effectivement sur Twitter ou Blue Sky. Et après aussi au sein de Théodo, on a aussi le côté où on va partager des choses aux gens assez facilement. Tu as des channels spéciales de Veitech et des trucs comme ça. Donc c'est pratique aussi pour découvrir des choses ou alors voir ce qu'ils font sur les autres projets parce qu'ils vont dire bah en fait sur mon projet j'ai découvert qu'on pouvait faire ça, ça, ça.
+
+David Leuliette (01:09:06.232)
+Ok ouais, je heureux, ok.
+
+David Leuliette (01:09:17.558)
+Donc plus en interne. D'ailleurs rien à voir sur Blue Sky, je mettrais dans les notes de l'émission, je mets tous les gens qui font du Rack Native. Donc vous avez un clic et hop, vous suivez direct tout le monde. Du coup, vous avez déjà une bulle Rack Native incroyable qui va vous enfermer dans l'écosystème très très bien. On adore. C'est quoi ton setup ?
+
+Lucie (01:09:17.676)
+et les gens partagent un peu les apprentissages et je trouve ça vachement cool.
+
+Lucie (01:09:45.23)
+Moi j'ai quelque chose de très simple, juste mon Mac et j'ai un deuxième écran et c'est tout. Vraiment... Tu veux dire mon téléphone portable ?
+
+David Leuliette (01:09:49.61)
+Ouais... Ouais... Et tu testes avec quoi ?
+
+David Leuliette (01:09:58.27)
+Ouais, tu test sur quoi comme téléphone généralement
+
+Lucie (01:10:01.454)
+Moi le mien c'est un Android Samsung, je me souviens plus du S quelque chose, ça doit être.
+
+David Leuliette (01:10:07.326)
+Ok c'est lequel ? S quelque chose, S dernier, S quelque chose Il est assez rapide pour que ce soit pas... Ok moi j'ai un S10 S10 je crois, mais je crois que c'est très vieux, il doit être très très vieux, enfin très vieux
+
+Lucie (01:10:21.496)
+Non moi c'est plus loin, c'est plus dans les 20 quelque chose. Et puis après si vraiment t'as besoin aussi, Théodo ils mettent à disposition, on appelle ça le Device Lab, ils mettent à disposition en fait plein de téléphones, que soit Android, iPhone, il y a aussi, je crois qu'il a du Huawei, si vraiment t'en as besoin. Je pense pas que t'es un Kindle mais...
+
+David Leuliette (01:10:24.232)
+Ok, voilà, ok.
+
+David Leuliette (01:10:34.687)
+le fameux device lab
+
+David Leuliette (01:10:43.832)
+les Amazon Kindle.
+
+Lucie (01:10:50.974)
+mais tu vraiment plein de choses différentes et du coup c'est pratique pour tester si tu as un bug qui est juste sur un truc en particulier.
+
+David Leuliette (01:10:59.32)
+Ouais c'est ça même pour s'en rendre compte parce que tu sais pas en fait, fait c'est tellement différent que... Quoi que là ça va encore pour là, pour Mucho, je pense qu'il n'y avait pas de trucs très très... Exotiques entre guillemets mais... Pour certaines apps, t'es là tu vas... Ouais non mais... Super super ! Faudrait que tu m'envoies d'ailleurs la photo de ton setup, parce que j'ai quand en fait, en vrai je voulais commencer à faire un Megasthread avec tous les setups des gens... Tu vois c'est quoi sur Reddit ? Battle Station ?
+
+Lucie (01:11:03.053)
+Oui.
+
+Lucie (01:11:06.944)
+Non, ça va.
+
+Lucie (01:11:22.382)
+...
+
+Lucie (01:11:26.702)
+oui.
+
+David Leuliette (01:11:27.864)
+Les gens font des trucs de fou ! Je me suis dit, vas-y, faut que je fasse pareil pour les gens qui font direct native. Si vous savez pas quoi faire, et chiler, vous allez sur reddit.r, Battle Station, il a des gens... C'est des tarés ! C'est vraiment des tarés ! Est-ce que tu as un sujet à aborder ?
+
+Lucie (01:11:31.167)
+Bon.
+
+Lucie (01:11:42.798)
+...
+
+Lucie (01:11:47.647)
+Non, particulièrement. Regardez la conf, ça peut être intéressant une fois qu'elle sera sortie.
+
+David Leuliette (01:11:53.336)
+Ah oui, donc oui c'est qu'on ne même pas dit, je ne l'ai même pas dit au début, du coup pour la conférence avec Native Connection tu as donné une conf sur les couleurs, il me semble c'est ça là, oui ok, c'était quoi le titre ?
+
+Lucie (01:12:03.87)
+Oui, c'est ça. C'est Reignative and the Quest of the Perfect Color, je crois.
+
+David Leuliette (01:12:11.512)
+le cliffhanger c'est que la couleur parfaite pour l'atteindre vous devrez regarder ce tool qui sera disponible dans les quelques semaines à venir sur les internets super et où est qu'on peut te retrouver pour avoir l'annonce directement
+
+Lucie (01:12:24.949)
+Oui.
+
+Lucie (01:12:32.334)
+Je suis sur Twitter et BlueSky du coup et c'est mon nom de famille qui est compliqué. U, 2F, O, L, TZ et après un L comme Lucy.
+
+David Leuliette (01:12:36.6)
+On mettra ça dans les notes de l'émission, oui.
+
+David Leuliette (01:12:48.118)
+Super super, bah très bien, moi c'est David Oliyette, on me retrouve sur le blaze flexbox, getup.com slash flexbox, nom terrible mais à l'époque ça existait pas, quand je l'ai choisi c'était la hype, mais maintenant quand tu cherches flexbox c'est genre... Nul, niveau SEO, nul, nul, nul, mais bon, too late, too late pour changer, sinon c'est wishy-pity.today, je t'ai ravie de t'avoir, c'était très cool, très cool, très cool.
+
+Lucie (01:13:05.934)
+Merci beaucoup.
+
+Lucie (01:13:15.541)
+Merci beaucoup.
+
+David Leuliette (01:13:17.112)
+Et j'espère qu'on se croisera à la prochaine conférence du coup, en vrai ! Tu vas à un BS ou pas ?
+
+Lucie (01:13:21.142)
+Oui.
+
+Non, je n'y vais pas. Mais... Ouais, exactement.
+
+David Leuliette (01:13:26.7)
+On ne pas tout faire. Normal, ça prend du temps. Moi j'y serais parce que pour faire le workshop, je ne sais même plus c'est quoi le workshop.
+
+ben super, allez les habits, on vous dit à la prochaine, espérons que cet épisode vous aille kiffer. si vous avez kiffé... vous saviez d'ailleurs que quand sur Spotify vous mettez 5 étoiles, y'a un secret.
+
+David Leuliette (01:13:54.444)
+Et hop, va terminer l'épisode là-dessus. Ciao !
+

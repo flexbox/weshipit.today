@@ -5,12 +5,14 @@ import { Hyperlink } from '@weshipit/ui';
 export function PodcastNavigation({
   previousEpisode,
   nextEpisode,
+  className,
 }: {
   previousEpisode: PodcastEpisode | null;
   nextEpisode: PodcastEpisode | null;
+  className?: string;
 }) {
   return (
-    <div className="flex justify-between items-center pt-8 border-t border-slate-200 dark:border-slate-700">
+    <div className={`flex justify-between items-center pt-8 my-4 ${className}`}>
       <div className="flex items-center gap-4">
         {previousEpisode ? (
           <Hyperlink

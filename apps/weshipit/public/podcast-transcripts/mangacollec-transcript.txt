@@ -1,0 +1,1575 @@
+David Leuliette (00:01.624)
+Il a encore 5 secondes de délai du coup c'est bon. Et de toute après au pire on fait un edit...
+
+on utilise l'AI pour éditer notre son qui sera delay de fou sur le podcast. Bonjour et bienvenue sur le Cross Platform Show, le podcast dédié au développement d'applications mobiles avec React Native. Je suis David, développeur chez  Pityoday. Nous sommes en février 2025, la température extérieure est de 13 degrés ici à Lille. suis ravi d'avoir Freddy avec nous qui a été recommandé et on a des amis en commun lilois, donc c'est très bien.
+
+forcément à Gabia. Est-ce que tu peux te présenter pour ceux qui ne te connaissent pas ?
+
+Freddy (00:42.638)
+Je m'appelle Freddy Harris, j'ai 35 ans, je suis développeur frontaine et fondateur de Manga Collect, donc une application pour gérer sa collection de manga qui est faite en réac natif, c'est très surprenant. Il fait aussi 13 degrés en région parisienne. Et voilà, j'ai été salarié, freelance, j'ai peu changé, mais là suis sur mon projet à temps plein depuis 3-4 ans maintenant.
+
+David Leuliette (00:57.741)
+bah voilà super tu vois au bout on est aligné.
+
+David Leuliette (01:11.89)
+Ok super et du coup, qu'est que tu as fait comme étude
+
+Freddy (01:18.606)
+J'ai fait un IUT SRC, alors aujourd'hui je crois que ça s'appelle MMI donc c'est plutôt multimédia internet donc c'est pas spécialement... bah SRC ça voulait dire service et réseau de communication, c'était pas encore moins probable. On va dire on fait un peu moins d'IT qu'en info mais un peu plus de graphisme, gestion de projet, design et un peu plus front. Moi j'ai surtout fait du flash à l'école en vrai. Action script 2, action script 3...
+
+David Leuliette (01:25.469)
+c'est beau ! Un... 18T... Internet quoi ! ça c'est excellent, excellent. Qu'est-ce qu'on fait en fait ?
+
+David Leuliette (01:38.123)
+Ouais ?
+
+David Leuliette (01:45.375)
+ouais !
+
+Freddy (01:48.718)
+Bon en back-end du PHP un peu classique mais moins de Java ou de C comme un parcours info classique et après j'ai enchaîné sur une licence et master en par exemple multimédia ça s'appelait Produit et service multimédia. Mon UT était au pionvelet en Auvergne parce que je viens d'Auvergne et mon master était à Montbelliard dans le Doubs, la Franche-Comté.
+
+David Leuliette (01:57.704)
+Ouais moi j'ai fait, c'est ça j'ai fait du taf.
+
+David Leuliette (02:16.807)
+Trop bien, trop bien.
+
+Freddy (02:18.19)
+Y'a pas beaucoup de comms ultimédiats dans le public.
+
+David Leuliette (02:22.126)
+Non, parce que moi quand je voulais faire mes études il y avait Limoges, ils faisaient une licence design Limoges Festival Web, truc du genre. bah c'était Festival Web, c'était il a très longtemps.
+
+Freddy (02:33.966)
+Je l'ai pas vu passer.
+
+Freddy (02:39.764)
+Mais en gros dans mes promos, y avait un tiers de designer, un tiers de chef de projet, un tiers de développeur. Pour te donner un peu...
+
+David Leuliette (02:47.008)
+Ok, j'ai retrouvé le truc, c'est Ouais ouais, le truc que j'ai retrouvé quand... C'est le WIF, le Festival International du Web Design à Limoges. Et euh... Je suis jamais allé à Limoges, voilà. En fait, en vrai, j'ai pas fait ça. J'ai fait le vrai changement de train, exactement. tu je suis resté dans le nord et tout, machin, et du coup... Mais, j'ai quand même fait euh... Tu vois, du développement mobile par la force des choses par la suite.
+
+Freddy (03:00.59)
+Changement de train,
+
+David Leuliette (03:12.886)
+Toi du coup, dans ta carrière de dev, c'était quoi le point de bascule pour faire du mobile ?
+
+Freddy (03:19.33)
+En vrai j'avais petit peu fait d'objectif C en master, donc j'aimais bien le mobile, iOS etc. puis en fait je trouve que... Puis même avec Flash, y avait Adobe Air je crois, tu pouvais exporter des applis mobiles au tout début, bon ça ramait de fou mais... en vrai j'aime bien le j'ai vite un attrait pour le mobile parce que j'aime bien peu faire des vrais projets pour... Je suis plus B2C dev, enfin product que B2B, même si ça peut être cool aussi.
+
+David Leuliette (03:33.121)
+oui !
+
+David Leuliette (03:45.078)
+Mm-hm.
+
+Freddy (03:46.766)
+Et je trouve que dans le mobile tu peux aller un peu plus loin dans les finitions, dans les animations ce genre de choses un peu vraiment poli chez l'UX Et moi ça m'a toujours un peu attiré et mon premier job quand je suis arrivé à Paris après avoir fini le stage de fin d'études c'était dans une agence mobile donc j'étais entouré de devs iOS Android natif qui crachait tout le temps sur le web et bon il fallait faire quelques projets un peu hybrides qui tournent aussi sur le web donc on encapsule des webviews à la main c'était même avant avant en fin de gap
+
+Et donc voilà, après j'ai toujours un peu continué dans cette voie-là même si des fois j'ai aussi bossé sur des dashboards d'analytique aussi en angular, en backbone.js etc. Mais quand React est arrivé j'ai fait, ouais, un truc un peu intéressant même si au début comme tout le monde mon JSX c'était bizarre à préhender.
+
+David Leuliette (04:36.693)
+Ouais, et puis c'est genre quoi ? Vous mélangez tout et tout, mais non, séparation des concertes, il faut mettre pas le style, jamais.
+
+Freddy (04:39.598)
+C'est ça, c'est ça. Après, quand on passe un peu ce qu'on a appris, qu'on essaye, fait oui, c'est quand utile pour construire des applications. Et moi, Manga Collect, c'était mon projet de fin d'étude à la base que j'avais, que j'ai pas trop continué quand après quand on a un boulot à temps plein, c'est un peu compliqué d'avoir un side project.
+
+David Leuliette (04:58.05)
+ouais, ok.
+
+Freddy (05:05.742)
+Mais j'avais toujours cette idée de le faire, surtout de faire une J'avais que le site web, tu vois, développé en Ruby on Rails avec Bootstrap un peu... Il était responsif mais c'était pas ce que je voulais. Moi je voulais une vraie appli mobile, je voulais l'offline, je voulais scanner les codes-bars avec l'application. Et surtout, bah... Bon bah, je suis salarié, les années passent et... Bah, y a personne qui fait cette application donc je suis encore... Moi je suis frustré tout simplement en tant que collectionneur de manga.
+
+Je me dis, il faut vraiment que je me lance, j'ai envie de la faire mais comment avoir plus de temps ? Et c'est vrai qu'à force de traîner dans les meet-up sur Paris, tu croises des freelancers qui te disent qu'ils gagnent deux fois plus qu'en étant salarié, tu fais, c'est intéressant ça, ça m'intéresse beaucoup et c'est pas tant pour l'argent que pour le temps. En fait, coup, en travaillant six mois, je gagnais autant que salarié avant et donc j'avais six mois de libre pour faire l'appli. Et donc ça, c'est ce que j'ai fait en 2016. Donc après, j'étais freelance du coup, un peu à...
+
+David Leuliette (05:58.643)
+Ok donc en 2016, app, t'as pas qu'à avoir d'app mobile, t'as un site web, des gens.
+
+Freddy (06:02.286)
+Voilà c'est ça mais j'arrive à finir de coder l'application en Racknative, je l'ai commencé Racknative en 0.13 je un petit peu avant d'être passé Freelance je crois quand peut-être une ou deux versions après qu'Android soit arrivé je me suis dit ok là on peut faire des projets ça a l'air trop cool pour du mobile il y avait plein de projets cross-platformes qui existaient mais moi c'est ce qui me semblait le plus à même de faire un projet pour qui part en prod
+
+David Leuliette (06:11.643)
+Ok, donc...
+
+David Leuliette (06:31.007)
+avoir fait du flash pendant des années.
+
+Freddy (06:33.154)
+Euh bah après, bon après j'ai surtout du PhoneGap Cordovin avec Backbone ou euh... euh... si... si... Non, non en vrai bah non, moi je suis arrivé sur le marché de l'emploi 2012, c'était déjà mort.
+
+David Leuliette (06:37.018)
+ok. t'as jamais fait de flash en pro ? ok. oui c'était déjà mort. Ouais ok d'accord.
+
+Freddy (06:46.222)
+C'est déjà marrant, heureusement que j'avais fait du JavaScript aussi, même pas... en vrai j'avais fait du JavaScript avant j'ai query donc ça va...
+
+David Leuliette (06:52.878)
+Salut, ouais ok ok ok je vois.
+
+Freddy (06:53.966)
+Donc ça va. Puis après, bon, t'as une connaissance un peu plus théorique qui te permet de transposer un peu partout. Tu sais faire une application, sais pas architecturer ça. Entre guillemets, un peu qu'importe le langage ou le framework. Bon, tu j'ai fait de l'angular, mais j'ai détesté ça pendant deux ans. J'arrêtais pas de cracher dessus. Mais il avait pas le choix. Il y avait pas le choix parce que pour le boulot, il avait que ça disponible. Donc tu t'adaptes après. Le luxe de choisir ces outils, c'est quand même assez cool, mais c'est pas toujours possible parce que bon...
+
+David Leuliette (07:07.902)
+Allez, je reviens
+
+David Leuliette (07:14.612)
+C'est ça.
+
+Freddy (07:21.864)
+La communauté choisit pas toujours les meilleurs trucs je trouve.
+
+David Leuliette (07:24.98)
+C'est ça, ou alors tu fais comme moi, je faisais pas de rails ni de rails native en France, enfin sur l'île, et je me suis barré en Angleterre pendant 3 ans quoi en vrai. Et puis après je suis revenu, je dit bah tiens c'est bizarre tout monde en fait. En vrai, plus de rails mais je verrais.
+
+Freddy (07:37.59)
+bah des boîtes en rubis j'en ai trouvé, j'y ai bossé mais j'ai jamais eu le temps de toucher aux rubis vu qu'en c'était une boîte où tout monde était full stack mais quand je suis arrivé c'était très content de redevenir des bakken et qu'il un front-end spécialiste.
+
+David Leuliette (07:42.621)
+oui.
+
+David Leuliette (07:47.006)
+Ouais. Oui, bah oui, ça en connaît, on connaît, bah oui, c'est sûr, ça c'est certain, la spécialité au bout d'un moment, il a pas de secret, quoi. Tu peux toucher quand même, mais t'es obligé d'avoir ton domaine d'expertise plus ou moins, quoi. OK, OK, donc là, t'arrives, on arrive en... Ouais, d'autres impératifs, tout ça, quoi. Du coup, on arrive à peu près en 2016, donc là, ta première version d'app mobile, tu te rappelles en combien de temps tu l'as fait ?
+
+Freddy (08:13.774)
+Je la sors en 2017, juste avant la Japan Expo. a fait 3 jours à la sortie du RER à distribuer des flyers. Et à se prendre des vents avec mon compas. Donc voilà, on s'était fait des petits t-shirts, mangacolleque.com, on distribuait. À l'époque, j'avais 100 personnes inscrites, il avait personne, il avait que moi qui l'utilisait.
+
+David Leuliette (08:16.391)
+D'hume 17, ok.
+
+! Excellent ! On aurait pu s'y croiser à Japan Expo.
+
+David Leuliette (08:28.083)
+Ouais, y'c'est bon.
+
+David Leuliette (08:36.594)
+Oui ?
+
+David Leuliette (08:42.588)
+Et ouais ?
+
+Freddy (08:42.602)
+en distribuant 5000 flyers, c'est comme ça que je vais pouvoir avoir mes 1000 premiers inscrits.
+
+David Leuliette (08:47.279)
+Ok.
+
+Freddy (08:48.238)
+Et ça a enclenché un peu l'effet boule de neige, j'ai dû faire peut-être après un an et demi après, c'était assez lent au début, c'est que j'avais pas assez le temps de faire du marketing, etc. et d'améliorer le produit. la deuxième vie du projet, je crois que c'était plutôt en 2019 quand je fais la V2 avec le Dark Mode, j'améliore les performances aussi parce que je passe à un autre langage qui s'appelle Reason ML à la base et rescript aujourd'hui.
+
+David Leuliette (08:50.937)
+ça a encloché la boucle de feedback.
+
+David Leuliette (09:12.976)
+Ok.
+
+Freddy (09:18.454)
+Parce que moi j'aimais beaucoup un peu la... tout ce qui est manipulation de data et les mutabilités. Je faisais un peu de fonctionnel programming mais sans vraiment connaître vraiment le fonctionnel programming. Tu j'utilisais Mutable.js, c'est très bien pour avoir des maps, des sets, etc. et mutable. Je trouve que pour... t'enlève beaucoup de tests unitaires un peu débiles. Tu gardes des tests unitaires plutôt orientés métiers. Mais Mutable.js était lent. Et en fait quand j'ai vu qu'il y avait des maps et des sets qui étaient...
+
+David Leuliette (09:41.775)
+Ok.
+
+Freddy (09:45.322)
+hyper rapide en raisonnement et en rescript, en fait quand j'ai fait mes petits benchmarks et j'ai testé, fais mais oui mais c'est trop bien du coup j'ai migré mon app, l'app a été plus rapide, les gens étaient trop contents parce qu'en plus il avait le dark mode etc rapide et j'ai vu quand même qu'en investissant aussi dans le produit ça marchait bien les gens recommandaient plus et utilisaient plus
+
+David Leuliette (10:05.253)
+Ok du coup là, on est en quelle version pour l'app MangaCollect ?
+
+Freddy (10:10.67)
+On est toujours en deux, mais bon on est en 2.10, 2.12 je sais plus mais ouais je... Après bon, une application c'est du romantique versioning hein.
+
+David Leuliette (10:12.1)
+Là c'est toujours V2, V2 ok ok ok Ouais ouais 2 whatever quoi
+
+Ouais c'est ça, j'avoue, j'avoue. Mais du coup, le choix de passer en rescript, c'est vraiment vas-y go, performance, le bordel quoi.
+
+Freddy (10:31.616)
+Ouais c'est ça, il y avait un... et puis au fur et mesure des missions freelance, avait... on commençait à rajouter TypeScript dans les Rockies, moi je l'utilisais mais j'avais pas l'impression que ça m'aidait beaucoup, j'avais toujours l'impression de... je mettais des tips pour la machine mais ça me le rendait pas beaucoup, genre tu moi j'ai fait de l'Action Crypt, c'était déjà tippé, mais ça m'a pas trop manqué de les perdre en JavaScript. Et avoir une expérience strict typing en TypeScript, je sais pas si... je pense que ça s'améliorait depuis, mais moi à l'époque 2019, je pense que c'était assez dur.
+
+David Leuliette (10:49.884)
+Ouais.
+
+David Leuliette (10:59.729)
+C'était début, c'était soit tu faisais du flow et...
+
+Freddy (11:03.683)
+Ouais c'est vrai que Flo c'était un peu par défaut en ragnatie mais jamais trop poussé le Non
+
+David Leuliette (11:07.89)
+Bah pas vraiment, t'étais pas obligé. Enfin c'était... C'était genre même pas conseillé, c'était genre ouais ça existe. Et au bout d'un moment vu que personne utilisait, du coup TypeScript est arrivé. J'ai juste fait du flow, c'est possible. J'en ai fait un petit peu, mais moi j'ai fait du TypeScript direct parce que pareil, j'étais un peu dans une boîte à l'époque, écosystème web kind of. Et du coup on avait plein de trucs, avait une app mobile, un dashboard web.
+
+Freddy (11:18.094)
+C'est surtout les migrations qui étaient chiantes apparemment. De flow, le...
+
+David Leuliette (11:37.905)
+du GraphQL et du coup d'un moment il ne pas multiplier les stacks TypeScript est arrivé on a tout passé en TypeScript et puis voilà
+
+Freddy (11:44.518)
+Oui oui. Mais disons que moi qui n'étais pas spécialement obligé, qui le met un peu pour des clients et pour bosser avec quand j'étais lead dev d'une petite équipe, ça aidait un petit peu mais j'avais pas l'impression que c'était la révolution pour moi. En plus à l'époque il avait pas beaucoup de lib qui était vraiment typé. Et en plus moi j'aimais pas trop, ça remettait un peu en avant des concepts un peu plus orientés objet au tout début de TypeScript que...
+
+David Leuliette (12:04.078)
+Ouais ouais c'est ça ouais c'est ça.
+
+Freddy (12:12.75)
+Je n'aime pas trop, moi je voyais ça pour les dev java qui veulent faire du front au Donc c'est vrai que c'est pas le truc qui me bousculait plus et puis après dans les discussions avec les gens dès que tu critiques un peu typescript ils te disent que non mais le typing c'est intéressant je leur dis bah oui mais le typing c'est intéressant mais ça peut être avec d'autres outils qui sont meilleurs en fait parce que quand j'ai découvert à l'époque ça appelait reasoneml aujourd'hui c'est re-script le typing c'est à dire que tout est strictement typé mais sans que tu aies besoin de tout typé toi même parce que l'inférence elle est incroyable
+
+David Leuliette (12:16.004)
+So.
+
+David Leuliette (12:34.384)
+Right.
+
+David Leuliette (12:40.09)
+Ouais, je vois. on est d'accord pour ce...
+
+Freddy (12:42.094)
+Et ça quand t'es sur un projet à mi-temps que tu reprends ton code six mois après quand t'as bossé sur un client, c'est incroyable parce que tu sais plus goûter en fait.
+
+David Leuliette (12:50.744)
+Ouais, bah oui c'est sûr même moi deux jours après tu sais, y'a pas besoin de 6 mois. Mais donc on est d'accord, Ryscript parce que moi j'avais vu des... On va dire Ryscript maintenant. Ouais, clairement sinon ça va être un enfer parce que j'avais déjà vu des confs de l'ancêtre de Ryscript et je m'étais dit dans ma tête, ah ouais non mais attendez les gars je vais juste d'abord de react, je pas commencer à changer d'autre truc mais je trouvais, ça m'a rappelé...
+
+Freddy (12:53.486)
+ah ah ah ah ah ah ah
+
+Freddy (12:59.022)
+On va dire Roskripp, on va dire Roskripp maintenant parce que c'est le vrai nom pour trouver.
+
+David Leuliette (13:15.409)
+Pour ceux qui ont un peu plus de background, CoffeeScript. Tu qu'en gros tu compiles ton JavaScript en un autre truc. Ouais c'est ça, fait en vrai c'est tous les mêmes outils quoi.
+
+Freddy (13:18.958)
+Hum... Oui ! Mais un peu comme Tabscript aujourd'hui, enfin en vrai c'est juste un... Mais Coffee Script c'est très renté objet aussi, c'était un peu... Je crois que ça venait... C'était beaucoup utilisé plutôt dans des projets rubis justement. Dans des projets rails à la base.
+
+David Leuliette (13:32.332)
+Oui c'était que du rubis en fait je crois que c'était ça carrément. du coup, attends du coup ce qu'on fait généralement c'est qu'on disseyclap en 6 parties, 5 parties, data layer, navigation, styling, graphique et CI et tout ça. Donc dans l'univers de rescript comment ça marche ce truc en commençant par le data layer ? Tu peux avoir n'importe quelle librairie ?
+
+Freddy (13:52.814)
+Tu peux utiliser toutes les librairies JavaScript, s'il a des bindings qui existent ou si tu peux les écrire toi-même. L'avantage, je trouve que c'est beaucoup plus facile d'écrire des bindings en re-script que en typescript. Parce que, bah tu... en fait tu... c'est un peu aussi... moi je trouve re-script c'est JavaScript the good part, c'est t'enlève le polymorphisme, t'enlève... t'enlève un peu l'objet, de choses, la mutabilité et...
+
+David Leuliette (14:06.782)
+ouais, ok.
+
+Freddy (14:18.894)
+Bon bah des fois vu que tes API sont polymorphiques, tu vas créer deux fonctions différentes qui ont un nom différent mais en gros l'une a le point string et l'autre a le point int tu vois donc plutôt que d'avoir un truc polymorphique genre de choses mais d'ailleurs du coup maintenant je maintiens la librairie rescript ragnative donc les bandings on les passe à jour etc ou tu peux créer tes propres librairies mais plus facilement quoi parce que
+
+David Leuliette (14:27.149)
+Ouais, ok.
+
+Freddy (14:46.638)
+Pour reprendre sur le data layer, moi j'avais déjà un peu mon sort de Redux-like mais avec mes réduceurs en imitable.js Bon bah là du coup, grâce au pattern matching en script, c'est hyper facile de faire des réduceurs qui soient agréables à utiliser que des switches. Les switches en java script ça n'a rien à voir. Ça n'a rien à voir qu'avec du vrai pattern matching.
+
+David Leuliette (14:53.335)
+Ouais, maison... que j'ai fait.
+
+Ouais.
+
+David Leuliette (15:11.055)
+Ouais ouais, c'est beau.
+
+Freddy (15:13.358)
+avec déjà les objets qui sont... j'ai pas besoin d'utiliser d'autres librairies, j'ai déjà des objets qui sont des maps et des sets facilement utilisables pour gérer mon data layer, tout mon state management. Après moi je mets que de... j'ai mon petit recuéris à moi entre guillemets on va dire. J'ai jamais peaufiné pour le sortir etc mais c'est vrai que c'est un truc qui pourrait me tenter si j'avais le temps de devenir re-script influenceur tu vois.
+
+David Leuliette (15:31.726)
+Ok ouais.
+
+David Leuliette (15:38.617)
+Ouais bah c'est toujours pareil, non mais... bah oui, comme Tanner, tu refais comme Tanner, tu fais un framework anti en rescript, à commencer par query, après tu fais les formes, après tu... et dans un an tu fais le propre framework, mais je...
+
+Freddy (15:42.302)
+En vrai...
+
+Freddy (15:47.255)
+Mais c'est s'faire.
+
+Freddy (15:52.266)
+C'est ça, parce qu'en plus si tu veux à l'époque de Redux, moi j'avais un peu tombé dans Redux Saga, donc avec les Yields, je sais plus comment ça s'appelle, les trucs comme ça, mais tu faisais des trucs de fou, moi ça me permettait de gérer le refetching et le renew du token AOS 2, sorte de choses. En fait, qu'on voulait c'est gérer Side Effects, tout simplement. Et là tu vois, a un autre...
+
+Mathias c'est lui qui m'a appris ReasonML à la base, il a créé une librairie qui s'appelle React Update En gros c'est comme les news-reduceurs sauf que tu peux gérer le side-effects donc tu peux le dire à la fin de cette action de Reduce tu peux aussi dire je provoque un side-effect ou tu peux avoir des actions qui sont juste pour faire des side-effects et en fait quand j'ai réécris tout mon truc Redux Saga qui était hyper compliqué et très difficile à debuguer des cas un peu obscur
+
+Quand j'ai refait ça, que c'était super simple à écrire et c'était clean à maintenir et à comprendre, toujours à comprendre quand tu reviens après plusieurs semaines, je fais ok, ouais. En fait, pour moi c'est vraiment ça que ça m'aide dans ce trouve en rescript, c'est que je n'ai pas besoin de créer de la complexité non nécessaire parce que le langage est un peu nul ou que les outils soient un peu nuls, etc. Vraiment, j'arrive à garder quelque chose de simple pour garder une application qui c'est simple à maintenir et à évoluer. Je pense que un peu le but de tout le monde, mais...
+
+David Leuliette (17:03.411)
+Oui.
+
+Freddy (17:14.318)
+Il faut y arriver, après on a des affinités et des produits différents avec les outils et technologies. donc voilà, qu'est-ce que je peux dire d'autre sur la stack un peu, sur le data fetching ?
+
+David Leuliette (17:27.031)
+Donc State a fait ton propre query like Data fetching tu fetches tu fetches tu fais quoi tu écris un fetch et go ça Bim
+
+Freddy (17:30.52)
+on va dire... Ouais, je fetch, moi je dis juste fetch, etc. J'ai mes trucs qui sont un peu... Après, moi je me suis créé mes ou qui ont du coup ma propre gestion d'état en en rescript. Il y a quelque chose qui s'appelle le type result qui est très très... qui est vachement pratique en fait. Et du coup, si veux par exemple, les promizes, moi je plutôt utiliser des futures. Ça ressemble beaucoup à des promizes.
+
+David Leuliette (17:38.083)
+Et ça marche.
+
+David Leuliette (17:47.726)
+Right ?
+
+Freddy (17:59.552)
+Mais il a cette notion... ouais des futurs... en fait c'est un objet en C'est... ça n'existe pas en rescript si tu veux mais en gros c'est comme des promices mais qu'ils soient plus simples à utiliser en fait parce que notamment pour gérer les erreurs il y a cette notion d'encapsulation qui existe en rescript. Si tu veux par exemple en rescript il n'y a pas de nulle ou undefined.
+
+David Leuliette (17:59.862)
+C'est quoi ça ? Futur...
+
+J'ai jamais entendu ce mot là, allez on va diguer le truc. C'est quoi ? C'est futur en JavaScript ?
+
+Freddy (18:25.134)
+en fait tu vas faire un type None où SOME en fait qui est à l'intérieur tu mets ton vrai objet s'il existe ou pas et là le but c'est pareil du type Result tu vas avoir le succès, l'erreur, le pending ce genre d'état que tu peux que tu peux créer sur tes types en fait tu réfléchis vraiment sur tes types encore plus moi je trouve que quand tu fais du TypeScript même si les gens qui font du TypeScript à haut niveau ils réfléchissent ce type aussi en premier
+
+David Leuliette (18:25.805)
+Ok.
+
+Freddy (18:47.342)
+Mais c'est simple, fait tu décris ton type, tu vas faire ta requête et en fait quand j'ai l'erreur ou je l'ai pas, si tu veux maintenant dans le langage Roscript il a aThinkAwait, ça existe, tu peux l'utiliser, mais je trouve que moi aThinkAwait j'ai jamais trouvé ça pratique parce qu'en fait si tu veux gérer tes erreurs tu mets des try-catch partout. Ouais c'est ça alors que là moi, ok le fetch il me retourne une promise, je la fous dans Roscript, il y a une libraire qui s'appelle Roscript Futures qui est aussi faite par Mathias mais il y en a d'autres.
+
+David Leuliette (18:56.375)
+Ouais ? Ok.
+
+David Leuliette (19:03.117)
+Ouais c'est rabbit hole après, je vois ce que tu vas dire.
+
+David Leuliette (19:14.361)
+C'est exactement ce que je regarde. Rescript futur, donc tu écris futur.fetch, j'ai dit. Tu mets ton endpoint, bim, et après si la réponse ok, true, false, ok, ça ressemble...
+
+Freddy (19:16.974)
+Tissup.
+
+Freddy (19:27.982)
+ça ressemble à des promais hein, c'est juste que t'as pas besoin de gérer les différents niveaux de zen et de... En fait t'as deux types en fait, problème c'est que t'as un type réjecte, un petit présole, alors que là c'est un seul type qui a plusieurs états.
+
+David Leuliette (19:29.481)
+Ouais c'est...
+
+Freddy (19:42.83)
+tu ne peux pas être en état différent en même temps parce que souvent tu peux récupérer data et erreur mais si ta data et erreur en même temps en fait lequel était à jour ou pas etc là vu que c'est encapsulé avec un type ça ça je pense ça peut se en fait un type futur ça peut se recoder en typescript je pense tu vois tu sais pas c'est pas le souci mais voilà du coup c'est des trucs un peu à la mano mais pas totalement à la mano que j'ai pioché à droite à gauche tout ce qui existe mais pour faire mes requêtes
+
+David Leuliette (19:51.565)
+Ouais ouais je vois, ouais ouais c'est C'est bon.
+
+David Leuliette (19:58.541)
+Oui oui, bah oui, oui oui, y pas de...
+
+David Leuliette (20:10.093)
+Ouais ouais, non mais intéressant. Au moins c'est stylé, comme moi je fais des futures, je fais pas de promises. Hé, ça on va en faire un short. Ok, coup, alors attends, du coup on est d'accord que tout ce qui est rescript... Ah non, faut quand écrire un binding, si tu veux. Tu peux pas mettre n'importe quel paquet NPM. On va dire genre un truc de currency, t'es obligé de faire un binding rescript, c'est ça ?
+
+Freddy (20:34.552)
+Euh bah s'il n'existe pas, oui. Après t'es pas obligé de tout typer. Moi j'ai des librairies ragnatives. J'utilise deux fonctions dedans et j'ai juste bindé ces deux là et puis voilà.
+
+David Leuliette (20:36.341)
+Ouais, ok.
+
+David Leuliette (20:43.812)
+Ouais et juste ça marche ok ok ça marche du coup pour la navigation c'est pareil tu peux utiliser direct c'est quoi la navigation du coup Ok avec navigation depuis le début est que t'as changé entre deux
+
+Freddy (20:51.886)
+Bah, rien que navigation, hein, c'est...
+
+Freddy (20:57.134)
+Non non mais depuis le début, j'utilisais RackNative, avant qu'il RackNavigation qui existe, ma première mission freelance était justement faire l'état de l'art RackNative, est-ce que c'est utilisable tout de suite début 2016 et c'était en mode bah il nous manque un vrai routing ! Il nous manque un vrai routing, avec un truc en plus qui soit adapté au mobile, etc. Donc oui oui je suis sur RackNavigation depuis le début, je bouge des petites PR quand je trouve un petit bug de trois trucs...
+
+David Leuliette (20:58.988)
+A de fil de vue.
+
+David Leuliette (21:09.549)
+Il y en a pas, enfin si, il en a plein!
+
+Freddy (21:26.858)
+sur hack navigation. dernière paire, elle a mis un an à être en prod, enfin elle a mis quoi, deux mois à être mergée, mais en fait ils ont attendu la version 7 pour la mettre en prod et du coup moi j'étais avec mes patch package à attendre que on puisse enfin... C'est des trucs customisés pour le... Non c'était pas un bug mais c'était gérer juste des paddings à l'intérieur de la top view, la matériel top top view en fait parce que moi du coup j'ai pas mal triqué, j'ai pas mal customisé ce style de ça et...
+
+David Leuliette (21:26.86)
+C'est beau.
+
+David Leuliette (21:33.996)
+Re.
+
+David Leuliette (21:39.222)
+c'était quoi le bug ?
+
+David Leuliette (21:48.14)
+Mmmh... Ok.
+
+Freddy (21:56.768)
+Bah du coup, moi c'est Patch Package, c'est le truc que j'ai besoin. Enfin maintenant, les yarn patchs, mais moi j'en ai une dizaine sur des librairies pour des petits bugs à droite à gauche.
+
+David Leuliette (22:00.469)
+Ouais, c'est ça.
+
+David Leuliette (22:04.468)
+c'est bien, donc ouais t'as une table, parce que moi justement j'ai une table view, mais une fausse table view, mais je pouvais pas laisser la custom du coup j'ai dit fû la table view et hop ! Je l'ai remplacé par un truc nul qui est screen et du coup c'était screen mais du coup ça tape pas correctement. bah tu je voudrais que je regarde du coup en V7 ce que ça donne. Si ça tombe c'est toi, grâce à toi je pourrais fixer un un style que j'ai pas.
+
+Freddy (22:16.75)
+Mmh mmh.
+
+Freddy (22:31.47)
+Bah moi si tu regardes sur mon dap en fait les petites pilules en haut c'est juste l'activity indicator que j'ai mis en gros plutôt qu'il soit en bas une ligne pour que ça fasse moins style Android en fait. Puisque maintenant je m'amuse plus à faire un design différent entre iOS et Android. Au début je le faisais. Au début j'avais le draw à Android en 2017. Si tu faisais une appli trop iOS sur Android tu te faisais taper. Tu mettais pas une bottom bar. Aujourd'hui ça va tu vois. coup tu peux...
+
+David Leuliette (22:38.144)
+Ouais ? Ok. Ok, ok, ok.
+
+David Leuliette (22:46.698)
+A tuer !
+
+David Leuliette (22:53.213)
+Tu te faisais défoncer, j'avoue.
+
+C'est vrai que pour tout le monde...
+
+Freddy (22:58.894)
+J'utilise même les mêmes icônes, avant j'utilisais même des icônes différentes tu vois, aujourd'hui c'est bon on s'en fout.
+
+David Leuliette (23:04.319)
+Les millénials, non pas les millénials, nous sommes des millénials, les djens et aïs ne savent pas ça, qu'avant il n'y avait pas de bottom tab sur Android et c'était la guerre. Oui, c'était pas, c'est ça, c'est ça. Et du coup, tu avais un truc en bas, les gens ils disaient mais non, vous êtes malade. Bon, mais non, c'est exactement, alors qu'en vrai, non, c'est juste que le pouce, il est en bas frérot. Du coup, bah voilà.
+
+Freddy (23:13.226)
+Android, non. Enfin tu pouvais la coder mais c'était pas euh... les gens aimaient pas avoir une UI pas dans leur système.
+
+Freddy (23:24.398)
+Vous avez pensé cette application pour iOS d'abord ?
+
+Freddy (23:30.318)
+Ouais non, aujourd'hui iOS et Android sont tellement piqués des trucs les deux pour le bien, pour le mieux je trouve, qu'on s'en fout et puis de toute façon si tu regardes les applis des réseaux sociaux les plus populaires, respectent pas du tout les codes de la plateforme donc...
+
+David Leuliette (23:42.965)
+Ouais, clairement euh...
+
+J'ai pas honte. Bah oui, regarde Snapchat. Snapchat, il n'y a aucune UI. Personne comprend rien. C'est ce qui a fait leur force du coup. ce qui a fait leur force en vrai. Très bien. attends du coup, navigation, c'est rack navigation. T'as un truc, ouais, t'as un peu dit un truc. Ok, ouais. Ok. oui, ton site web, c'est encore ton app Rails ou...
+
+Freddy (23:46.772)
+Voilà, j'essaye de customiser l'Ui.
+
+Non, y a vraiment... Je comprends.
+
+Freddy (24:03.51)
+Et sur le web, un routing à la main aussi.
+
+Freddy (24:11.352)
+Ouais c'est du ragnat... non, euh, non, c'est bien tout à via l'API donc c'est une ragnative web, c'est euh...
+
+David Leuliette (24:15.485)
+Ok. Et t'as tout dans un monoripo ? Ok.
+
+Freddy (24:18.494)
+Ouais, j'ai mon design system, l'application Racknative, l'application design system et l'application datastore, qui est mon stake management. du coup, l'application Racknative Web prend beaucoup d'objets dans l'application Racknative tout court, en ayant des différences. La navigation par contre, trouve que Racknavigation ça marche pas du tout sur le web. Ils disent que c'est compatible, mais que ce soit les UI Element ou la manière de naviguer...
+
+David Leuliette (24:28.011)
+Ok.
+
+Freddy (24:47.822)
+J'aurais préféré faire un truc un peu plus web classique. Moi je trouve que ça ne fonctionne pas trop.
+
+David Leuliette (24:50.736)
+Ouais... Euh... Moi j'sais plus...
+
+Freddy (24:54.424)
+Mais du coup fallait que j'abstraire ça en fait, du fallait que mes Hooks, en fonction que je sois dans RegNative ou dans RegNative Web, fassent pas les mêmes actions. Mes goûts de navigation.
+
+David Leuliette (25:01.286)
+Ouais, ouais, ok, ok, ici, Je vois.
+
+Freddy (25:04.736)
+Donc j'abstrais ça. J'ai vu qu'il y avait un projet qui existait solito pour faire à la fois du Next et du... du Rack Native. J'ai pas pioché parce que moi j'utilise pas de Next. Vraiment, a quasiment peu de couches pour l'appli... pour l'appli web. Le SSR, il est fait un peu à la mano. Sur quelques pages parce que c'est vraiment juste pour le SEO et quand les gens partagent des liens sur les réseaux quoi. Sinon, moi je voulais pas, si tu veux, je voulais pas tout refaire mon data management avec les...
+
+David Leuliette (25:22.216)
+En vrai.
+
+David Leuliette (25:27.591)
+Ok.
+
+Freddy (25:33.678)
+face au Next.js alors qu'en 85 % de mon usage est dans l'appli mobile donc je veux que ce soit reste ma main projet pour l'architecture et que le SSR soit un truc que je peux couper au besoin, enfin que je peux changer. Je voulais pas que ça n'ait des dépendances plus trop imbriquées dans mon application.
+
+David Leuliette (25:40.778)
+oui,
+
+David Leuliette (25:49.418)
+Bah oui parce que les... Ouais manga c'est plus mobilité, machin... Tu vois je suis en train de lire un livre, voilà j'ai pas forcément mon laptop en France de moi.
+
+Freddy (25:54.168)
+Ouais bah ouais non mais moi c'est... Voilà c'est ça, je en librairie, j'ai pas de réseau, je veux savoir est-ce que j'ai le tome 32 ou 33 chez moi parce que j'ai pas envie d'acheter en double. C'est ça le besoin. C'est ça le besoin ouais. L'offline je l'ai depuis le début et c'est vraiment le truc que tu vois les gens remarquent pas mais en fait quand ça marche juste ça marche et ils ont confiance du coup quand ils ouvrent l'application.
+
+David Leuliette (26:04.762)
+Exactement, c'est ça le besoin, le... Ouais.
+
+David Leuliette (26:14.931)
+bah oui, du coup tu gères comment le offline, ça c'est intéressant ça.
+
+Freddy (26:18.392)
+Bon en fait un peu... Moi je offline first, je suis pas local first encore parce que c'est plus compliqué je trouve. Faut avoir un produit qui fasse sens. Mais en vrai tout simplement c'est juste bah je store un G-Zone sur l'application de temps en temps dès qu'il une update dans mon datastore et au début je le re-load. Mais en gros moi c'est ça en fait si tu veux, toutes mes vues sont branchées sur le store qui est normalisé, vraiment classique donc qu'importe en fait...
+
+David Leuliette (26:25.066)
+Hmm?
+
+David Leuliette (26:32.551)
+A vous !
+
+David Leuliette (26:42.249)
+Ouais ?
+
+Freddy (26:45.578)
+quelle roquette a mis à jour cette data en fait on s'en fout, qu'elle vient du cache, du store etc. Et en fait du coup ce store il se construit au fur et mesure de ta navigation. Mais c'est hyper pratique parce que c'est à dire que même si tu n'as pas visité un écran tel écran pendant que tu avais du réseau et après tu n'as plus de réseau, tu peux quand même aller sur l'écran et voir une moitié de la donnée qui est déjà loadée. Et même si tu as du réseau ça l'ouvre super rapidement tu vois moi j'ai des...
+
+David Leuliette (27:07.49)
+Ok. Ok, ok.
+
+Freddy (27:12.498)
+comme on appelle déjà les viailles, le skeleton design, genre de choses là, les trucs qui chargent un peu partout comme ça.
+
+David Leuliette (27:18.249)
+L'useur n'a pas tout l'intégralité de tous les mangas disponibles de la terre. Il qu'ils naviguent pour faire un mieux.
+
+Freddy (27:23.17)
+Non, mais on va dire toutes les données liées à sa collection, au planning, à la news, etc. et à la recherche aussi un petit peu. Après, s'il veut digger plus dans la donnée alors qu'il l'a pas fait avant, non, je peux pas tout stocker non plus parce que sinon il aurait un cash énorme.
+
+David Leuliette (27:38.185)
+Ouais c'est ça, ce que je me dis parce que manga, t'inquiètes que ça en crache des nouveautés, sais pas, par semaine il en a combien qui sortent
+
+Freddy (27:43.982)
+Et... Alors par mois, y'a entre 250 et 300 livres qui sortent.
+
+David Leuliette (27:48.431)
+Ouais, juste FR. Tu fais juste FR ou c'est multilangue ? Ok.
+
+Freddy (27:50.602)
+Oui, Juste FR. Juste FR. On est le deuxième pays au monde du manga donc euh...
+
+David Leuliette (27:54.985)
+Ouais ça je savais ça. à Dorothée. Bah oui, non mais c'est ça. Nous on n'avait pas d'argent pour acheter des vraies séries, du coup on était acheté les animés au Japon et du coup, voilà. Bim. FAST FORWARD 20 ans plus tard, premier.
+
+Freddy (27:59.31)
+C'est clair, mais c'est vraiment ça, c'est vraiment ça.
+
+Freddy (28:09.912)
+Oui, oui, c'est ça. Mais Netflix est en train de faire ce que le Club Dorothée a fait chez nous un peu partout ailleurs en Europe ou aux États-Unis. C'est en train de aussi ailleurs. ouais, niveau japanime, c'est en train de s'internationaliser. Même les mangas à papier, se vend bien en Espagne, en Allemagne, en Italie, aux États-Unis. Les États-Unis nous dépasseront sûrement bientôt en termes de valeur parce qu'ils vendent un peu plus haut, des plus grands formats, plus chers et puis bon, ils ont plus grand marché.
+
+David Leuliette (28:20.348)
+euh, niveau... Niveau japanime !
+
+David Leuliette (28:27.908)
+Ok.
+
+David Leuliette (28:38.381)
+Les perfectes éditions et tout ça, oui, forcément.
+
+Freddy (28:39.982)
+Donc je songe à l'internationalisation mais on va dire que c'est plus compliqué que traduire, il faut la base de données aussi.
+
+David Leuliette (28:46.824)
+Correct, oui, oui, et puis la localisation, c'est un pouf, laisse tomber. Ouais, on va focus français pour l'instant. Du coup, niveau style, on a parlé design et système, niveau styling, fait à la main.
+
+Freddy (28:56.171)
+Pour l'instant c'est ça, voilà.
+
+Freddy (29:02.126)
+Juste ragnatifs tout seul, les hook pour les insets et les thèmes genre de choses Vraiment je fais ça à la main, j'aime pas du tout Moi j'étais très assassinjs depuis le début même quand c'était encore des criers Je sais plus quel quel quel je crois que c'était emotion au début que j'aimais bien en web Aujourd'hui j'ai vu que c'était Tailwind le nouveau truc des cool kids mais alors je
+
+David Leuliette (29:05.992)
+style sheet
+
+David Leuliette (29:18.364)
+Ouais.
+
+David Leuliette (29:21.904)
+Emotion, ouais. Il y avait emotion, ouais.
+
+Freddy (29:27.498)
+déteste ça vraiment j'ai pas du tout envie d'apprendre un nouveau dsl mais en fait si tu veux moi je me souvenais au début du style ragnative on disait non c'est camel caisse c'est pas la vraie syntaxe css et aujourd'hui il met et bah oui mais je dis mais c'est quand plus simple que d'apprendre aujourd'hui les trucs que vous mettez en tailwind en vrai en plus est obligé d'avoir des lineteurs pour savoir dans quel ordre vous les mettez parce que de façon le merging des classes name des classes n'est pas n'est pas lié à la l'ordre dans lequel tu l'écris en fait vu que c'est l'ordre dans lequel c'est déclaré
+
+David Leuliette (29:37.262)
+oui, ça se faire.
+
+David Leuliette (29:43.442)
+Ouais, ça vous...
+
+David Leuliette (29:49.224)
+c'est un bordel.
+
+David Leuliette (29:55.75)
+Ouais. Ouais.
+
+Freddy (29:57.162)
+Mais bref, si tu veux là, enfin Reignative Web il a déjà en fait un styling CSS InJS ça en fait, il t'écrit des class names uniques par rapport à ton couple qui les valeurs mais sauf que c'est pas à toi de l'écrire en fait c'est la machine qui le fait. Je trouve ça beaucoup plus pratique mais je suis très intéressé plutôt par les évolutions de ce qu'il sur StyleX et Reignative Dom, euh, Rextricdom dans le futur. Pour Reignative et euh...
+
+David Leuliette (30:11.718)
+Ouais si je vois.
+
+David Leuliette (30:20.156)
+Ouais.
+
+Freddy (30:22.668)
+Et le web, que vraiment, pour le cross-platform, parce que moi de toute façon je regarde que des... Si quelque chose n'est pas cross-platform aujourd'hui, ça m'intéresse même pas. Tu vois...
+
+David Leuliette (30:29.358)
+Ouais, pareil, Stylix.js qui est le librairie utilisé pour faire Facebook et Instagram et WhatsApp. il a WhatsApp juste sur le... et Shred. Je suis sur le site web en même temps.
+
+Freddy (30:37.87)
+C'est Nicolas, c'est l'ancien lead dev de Twitter qui a créé React Native Web, qui travaille là dessus. Stylyx et React Strictdom, entre autres.
+
+David Leuliette (30:48.156)
+mais ça me... Tout est lié, tout est... Je savais pas. En fait j'avais vu passer mais j'ai ouvert le truc, j'ai fait pfou, Je vais r'aça plus tard. Et j'ai jamais rouvert le site.
+
+Freddy (30:57.358)
+Bon en tout cas sur la philosophie du... la page philosophie de StyleX du projet c'est exactement dans quoi moi je m'inscris.
+
+David Leuliette (31:03.463)
+Ouais, ok. Donc ok, ça ressemble à unistyle. Ouais.
+
+Freddy (31:11.582)
+Ouais, y a un peu plus de gestion, c'est vrai que des fois, faire un hook en React Native juste pour un hover, ça peut être un peu chiant, ou ce de choses, des petits trucs et tout, justement, fait, le but, c'est l'évolution de React Native, React Strict Dom aussi. Donc le but est d'être un peu plus proche du web sur certaines APIs qui sont quand même intéressantes, parce qu'en fait...
+
+David Leuliette (31:19.789)
+Ouais, non, bah oui, c'est... ouais, exactement.
+
+Freddy (31:32.45)
+L'avantage des API web en fait c'est dans le blog post de React Native quand ils avaient expliqué pourquoi ils avaient implémenté les pointer events comme le web parce qu'en fait ils ont dit bah ces API sont déjà prévus pour être cross-platformes donc c'est assez intéressant. Tu vois dans les standards web tout n'est pas ajouté en fait il a... Tu vois moi je reviendrai pas à des trucs de CSS avec la cascade j'ai pas du tout envie mais on va dire tout ce qui n'est pas de la manière de... tout ce qui n'est pas architecture tout ce qui n'est pas de la méthodologie sur comment construire une application
+
+David Leuliette (31:44.039)
+N'importe quoi.
+
+Freddy (32:01.992)
+est intéressant tu vois juste la pi des pointers parce que maintenant même sur iPad en fait un survol si tu as un stylet genre de choses donc même si nous on sait que bah ouais
+
+David Leuliette (32:08.903)
+Ah ? Ah avec le pro tu... Ah attends je savais pas, j'ai pas d'alipad donc ok ok.
+
+Freddy (32:13.614)
+Tu vois, donc tu peux avoir géré ce genre de choses en vrai maintenant. C'est de plus en plus flou entre le web et le natif, donc avoir des APIs qui sont intéressantes là-dessus parce que ce qui est intéressant dans le Rack Native, c'est pas uniquement l'implémentation iOS ou Android qui a existé depuis le début, c'est surtout la côté API design et module et modulaire. C'est ça qui a permis en fait la portabilité sur d'autres plateformes. Mais c'est vrai qu'on peut un peu le repenser et avoir... Il y a des trucs dans le Rack Native web qui sont pas très performants parce qu'en fait, du coup, ça pourrait être plus simple.
+
+David Leuliette (32:17.166)
+bah oui oui.
+
+David Leuliette (32:34.626)
+Mais... Mais oui c'est ça.
+
+Freddy (32:42.99)
+que de passer par JS pour faire des trucs.
+
+David Leuliette (32:43.227)
+Ouais ouais mais exactement de façon c'est ce qu'il dit J-mon, un big up à J-mon, allez hop on fera un big up J-mon spécial C'est React Native, c'est ce qu'aurait dû être React au début Parce que c'est une API qui compile en tout en fait en vrai mais...
+
+Freddy (32:58.958)
+En fait, réac... Oui, en fait, oui, ça se met à côté, UI, mais en fait, moi, réac native, ça me fait la sensation d'être dans un navigateur moderne qui aurait été créé aujourd'hui sans les contraintes, sans être compatible avec le pré-existent. Au tout début quand j'avais l'impression de faire ça, en fait. Mais bon, après, tu peux triquer et utiliser des composants natifs si tu le veux vraiment, mais moi, j'ai très peu de composants vraiment natifs que j'utilise, souvent je refais... Oui, t'as la porte. Oui, t'as la porte.
+
+David Leuliette (33:13.001)
+oui, un peu.
+
+David Leuliette (33:23.179)
+Ouais mais t'as encore la porte qui est ouverte si demain tu veux genre faire je sais pas quoi, allez hop c'est bon et si pareil demain il a...
+
+Freddy (33:29.08)
+Oui, Bah par exemple si tu veux faire une application Vision OS, bah tu peux vraiment... Là, il vaut mieux utiliser les composants natifs de la plateforme parce que c'est tellement spécifique, ce que Flutter peut pas vu que tout passe par ce qu'il a.
+
+David Leuliette (33:41.419)
+Ouais c'est ça. coup on va pas parler d'applications custom, manga, vision OS. J'imagine pas ce que les gens vont faire avec ça.
+
+Freddy (33:47.38)
+Non non bah franchement j'adorerais avoir le temps de faire ça ou qu'il y un marché. Les mangas en 3D qui tournent autour de toi de ta collection ça sera incroyable mais y'a pas, voilà j'ai pas le temps. Mais je me retiens.
+
+David Leuliette (33:54.641)
+oui bah oui, oui c'est vrai que ça pourrait... Oui. Y a pas... Bah oui non mais... Ouais j'avoue t'sais, t'ouvres, t'sais tu comme les livres interactifs là, t'ouvres l'olive et... Un univers.
+
+Freddy (34:07.95)
+Ouais non mais en vrai à la base mon React Native du coup c'était... Quand j'étais freelance ça m'était vachement utile parce que c'était aussi mon labo d'application. Tu vois au début pas grand-mante faisait React Native et quand tu dis bah non oui je connais bien regardez j'ai une appli en prod quand t'as 4,8 sur l'app store en fait c'est ton CV. Du coup moi c'est assez facile d'avoir des missions et en plus le fait d'avoir un projet en prod ça fait que bah tu peux parler avec le PM et avec le PO facilement. Tu il te voit pas juste comme un dev qui crache du code mais aussi un dev qui est awakeyM.
+
+David Leuliette (34:15.599)
+Oui.
+
+David Leuliette (34:22.22)
+Ouais, ouais oui, je vous... c'est clair.
+
+Freddy (34:34.912)
+l'expérience utilisateur qui sait c'est quoi de gérer un vrai projet.
+
+David Leuliette (34:38.465)
+Ouais c'est ça avoir des reviews des trucs des machins feedback loop priorisé parce que voilà et voilà attends du coup t'es full time dessus et
+
+Freddy (34:46.51)
+Ouais, ouais, ouais, j'ai lancé le premium manga collect en début 2021 Euh... Non 2022 je crois ? Ouais, 2021 en fait, j'ai lâché un peu ma dernière mission freelance L'été je leur ai... En fait j'ai eu un boom en 2021 Euh... J'ai passé la barre des 100 000 comptes inscrits et 200 000 dans la même année Parce qu'il y a eu le boom du manga à la fin du confinement Et j'étais un peu là au bon endroit au bon moment Et euh... La plie elle a trop bien tourné, je me suis dit non mais euh...
+
+David Leuliette (35:07.262)
+Ok, voilà.
+
+Freddy (35:17.512)
+Il faut que je lance ce fameux premium, j'ai plus le temps de faire des missions freelance et je suis pas revenu de mes vacances d'été. Je suis pas revenu de mes vacances d'été même si en plus c'était une mission à reason et mel, enfin l'ancêtre de Rewscript. Donc c'était assez cool. C'est rare à trouver ce genre de mission. Mais je me suis dit, il faut absolument que je passe l'automne à coder ce premium et que je le sorte début 2022 parce que beaucoup de monde, mes utilisateurs me demandaient déjà un paypal en pour me donner de l'argent. me dis mais attendez...
+
+David Leuliette (35:21.261)
+Ouais, je suis busy. Ouais, c'est ça.
+
+David Leuliette (35:28.517)
+oui,
+
+Ouais.
+
+David Leuliette (35:44.715)
+Ok. ouais déjà les gens tu voulais te jeter de l'argent dans la figure genre. Mais allez !
+
+Freddy (35:47.79)
+Mais c'est vrai, mais c'est vrai, mais tu dis c'est incroyable et tout et en fait j'ai codé des fonctionnalités premium que j'avais peu gardé sous le cou des nouvelles features et j'ai codé le système d'abonnement avec iOS et Android et j'ai lancé ça début 2022 et même pas une semaine il avait déjà 1000 inscrits.
+
+David Leuliette (36:06.561)
+Ouais ok, trop bien t'as déjà trouvé ses premiers clients, mille premiers clients quoi. Mais après euh...
+
+Freddy (36:08.802)
+Ouais c'est ça, c'est ça, je me suis dit dans ma tête si j'avais déjà de quoi sortir un SMIC tous les mois j'étais content et aujourd'hui le chiffre est confidentiel mais c'est largement plus parce que des années après en fait l'abonnement ça ne fait qu'augmenter.
+
+David Leuliette (36:19.556)
+Ouais ouais du coup...
+
+David Leuliette (36:24.484)
+Ouais mais c'est ça, mais t'as travaillé hard pendant à peu près 10 ans avant de foutre un paywall et d'avoir une communauté fidèle et... Je sais plus ce que je veux dire. Et du coup, tu dois être encore plus content que Tim Sweeney a gagné son procès contre Apple et que maintenant il a plus les 30%, on va en parler !
+
+Freddy (36:33.304)
+C'est ça.
+
+Freddy (36:42.478)
+Oui, ah bien sûr, ça je suivais. Bah y'a les 15, c'est 15 % maintenant pour les petits créateurs quand t'es en dessous d'un million. Donc en gros si tu veux, moi sur l'abonnement que je vends à 2 euros par mois, enfin 1,99 parce qu'on choisit pas exactement, l'étrange, moi je touche 1,40 en chiffre d'affaires, en enlevant du coup la TVA et les 15 % sur le hors taxe. Et en vrai...
+
+David Leuliette (36:48.388)
+C'est 15 ? Ok. Ok.
+
+David Leuliette (37:01.988)
+Ok.
+
+Freddy (37:09.6)
+Moi ça me va actuellement, tu j'ai jamais fait la version web avec Stripe ou quoi parce que y'a beaucoup moins de monde qui l'utilise. J'ai moins de sécurité à gérer parce que moi je reçois que des preuves d'achat, j'ai pas besoin de gérer les mails de relance des cartes bleues et tout ou de dire que les gens insèrent leurs cartes bleues. Ils ont déjà inséré leurs cartes bleues souvent sur l'App Store et le Play Store et ils ont confiance en fait vu que c'est intégré dans l'abonnement tu vois ils vont sur leur page abonnement, ils voient ce qui en cours, ils se désabonnent à n'importe quel moment. Donc je t'avoue que je pense que le taux de transformation vaut ce prix quand même.
+
+David Leuliette (37:13.443)
+Ouais.
+
+David Leuliette (37:26.249)
+Ouais, c'est ça.
+
+Freddy (37:39.086)
+tu vois, pas se casser la tête puis en plus je suis largement dessous d'un million sur iOS et Android donc... Tu vois 15 % je trouve ça va, je trouve ça va mais oui j'étais content parce que dans les règles d'abonnement à la base c'est tes utilisateurs et c'est 30 % la première année une fois qu'ils ont passé la première année tu passes à 15 % seulement mais si jamais ils se désinscrivent pendant trop longtemps bah en fait tu recettes de zéro donc c'est vraiment que pour les gens qui ont un abonnement qui garde sans de manière discontinue
+
+David Leuliette (37:39.103)
+Oui bah oui, non mais c'est sûr, c'est sûr.
+
+David Leuliette (37:44.557)
+Ouais et puis...
+
+David Leuliette (37:57.603)
+Hmm, ok.
+
+Freddy (38:08.366)
+Du coup là, au c'est bien, 15 % tout le temps. Mais oui, je suis beaucoup l'actualité. Moi je suis très Apple fanboy. Moi j'ai une Apple TV, j'ai une Apple Watch, machin tout, j'ai l'AirPod Max et tout, mais ça reste quand même des bâtards aussi tu vois Apple. Tu vois genre, sur le web, sur le web, tu vois, vont te dire ah oui regardez, on est à jour sur les API mais c'est toujours un peu compliqué de d'installer une PWA, d'expliquer aux gens comment faire, d'avoir les pushs, les machins. Il y a des petits trucs du hype.
+
+David Leuliette (38:18.627)
+Pareil, j'ai tout. Quand même.
+
+Freddy (38:35.628)
+En fait, les standards web c'est bien mais il y a des trucs qui sont pas liés aux standards qui sont intégrés à l'OS en fait. C'est ce qui fait aussi beaucoup pourquoi on fait une application électron et pas une application PWM qu'on installe aussi parce que des fois, être dans l'écosystème, avoir accès à d'autres API etc. qui ne sont pas encore tout à fait là et aussi en fait l'App Store ou le Play Store c'est des market place et en fait c'est là où les gens te cherchent.
+
+Moi au tout début là quand je disais que j'avais que le site web compatible mobile responsif, je disais je suis compatible mobile mais en fait les gens ils tapaient manga collect sur l'app store. Et ils s'attendent pas du tout à une application, ils savent pas trop mettre en signée une version web sur la home screen et ils s'attendent pas à que ça marche en offline. Alors que moi ma PWA elle marche aussi en offline mais ils s'attendent pas à ce qu'un site web marche en offline. Alors qu'une application ils s'attendent à ce que je l'ouvre dans les attentes aussi.
+
+David Leuliette (39:07.459)
+Bah oui, bah c'est sûr, bah oui, c'est parce que...
+
+David Leuliette (39:14.315)
+Non ils savent pas, la Gen...
+
+David Leuliette (39:22.133)
+oui, oui, oui, bah oui, c'est ça, oui, c'est ça, c'est ça, ouais.
+
+Freddy (39:25.742)
+Donc c'était à la fois faire un produit un peu mieux intégré à l'OS et une marketplace là où les gens te cherchent.
+
+David Leuliette (39:32.789)
+Niveau graphic design animation, tu pulls les data et hop, pas de 1.
+
+Freddy (39:40.046)
+Animéty to court ou réaniméty de besoin. t'avoue que là c'est... Moi je suis un peu orphelin d'avoir des verres vus transition qui marchent ou des... Comment on disait là, quand il y a un élément qui page d'une page à l'autre.
+
+David Leuliette (39:57.219)
+Ouais le... Sur iOS ou Android, c'est pas les mêmes. Ouais ouais.
+
+Freddy (39:59.598)
+Il y a un terme pour ça mais je sais plus. Bon les deux, non mais il y a un terme générique un peu pour des chairs, des lemondes je crois en vue de transition, crois qu'il a un truc comme ça. C'est très compliqué à faire marcher avec les listes virtualisées je trouve. Ou même mettre à jour les listes virtualisées que ce soit à flatlist, flashlist ou légende list. Du coup des fois je fais encore des vieux transitions classiques de React Native.
+
+David Leuliette (40:07.956)
+Ouais, ch...
+
+Hmm.
+
+David Leuliette (40:24.066)
+Ouais en vrai pas d'animation pas de problème hein, tu vois pas le time c'est rapide.
+
+Freddy (40:26.058)
+des fois ouais mais du coup quand ouais mais du coup tu vois quand justement quand moi j'ai souvent des vues qui sont à moitié chargées et bah il faut que j'anime cette transition de dire en fait oui mais ok tu as lodé ça c'était ce manga là parce que tu avais deux mangas lodés sur quatre mais en fait c'était le tome 3 4 en fait du coup après je les remets dans le bon ordre le l2 tu vois et bah c'est mieux quand il une petite animation qui te montre c'est le polish c'est le polish quand même sur mobile aussi c'est ça qu'on aime c'est ça qu'on aime mais mais là c'est intéressant justement dans les évolutions de réact qui est mis vieux transition directement dans réact et pas réact dom
+
+David Leuliette (40:32.061)
+oui !
+
+Je vous...
+
+David Leuliette (40:44.098)
+Ouais ouais, qu'un peu ouais.
+
+Ouais bah oui ! Bah c'est ce qui fait que...
+
+Freddy (40:56.664)
+ça veut dire que du coup il a l'implémentation qui est fait pour le web avec la paye transition web classique mais ça veut dire qu'ils ont prévu de je pense de faire une implémentation réact native parce qu'en plus même dans le blog post il parle de après faire en sorte que ce soit compatible avec les gestures donc ça c'est intéressant aussi d'avoir un peu plus du high qui soit remonté au niveau de réact et pas juste réact-bomb et pas juste une implémentation web
+
+David Leuliette (41:16.384)
+Ouais c'est avec le hook use transition
+
+Freddy (41:19.054)
+Hum, ouais ça c'est encore pour des trucs ou use optimistique, non, vue transition là le dernier blog post avec... Je crois que ça utilise vue transition, peut-être ça utilise vue transition aussi. Je suis pas toujours à jour sur tous les derniers trucs de réacte, j'est à vous par exemple j'ai jamais fait des...
+
+David Leuliette (41:26.572)
+Ouais j'ai pas vu, excusez.
+
+David Leuliette (41:31.97)
+Parce que j'ai google en même temps vue transition, le premier résultat c'est vue transition, mais c'est transition vue js.
+
+Freddy (41:41.422)
+Ah oui non, là c'est le dernier Bokplost du 23 avril, React Lab. Sur les activities et les vieux transitions.
+
+David Leuliette (41:46.934)
+Ok, d'accord, faudrait que je regarde. En ce moment j'ai des problèmes de comptables. Ceux qui me connaissent savent que je trash-talk sur eux parce qu'ils font pas leur taf, ça me rend fou. Donc j'ai pas le temps de faire ma veille, ça me rend encore plus fou. ok. J'aimerais bien, j'aimerais bien. D'ailleurs si vous avez un coupon de code, truc, machin, aidez-moi please les amis. Contactez-moi. Bref.
+
+Freddy (42:02.122)
+oui, tu metta... Faut déléguer ta comptable.
+
+David Leuliette (42:14.753)
+Du coup alors attend du coup c'est du réact native
+
+Freddy (42:16.332)
+Mais moi tu je suis pas à jour sur tout ce qui REX Server Component vu que je m'en fous un peu de tout ça, par rapport au produit je suis un peu largué sur des genres de trucs.
+
+David Leuliette (42:20.245)
+oui, ouais. Ouais mais en vrai, est-ce que c'est important toi ? C'est pareil, c'est juste que ça grandit, le scope devient plus grand, est-ce que t'en auras besoin ? Non, tu fais déjà du rescript.
+
+Freddy (42:31.519)
+Euh... En réac... Ouais mais... Ouais mais non mais je veux dire c'est plus après un besoin... Moi par exemple j'utilise pas CodePush, j'mets pas mon code en live etc...
+
+David Leuliette (42:37.601)
+Ouais ouais, bah ça parlons du CI et tout. Ok donc tu fais les builds, React Native, Plane, t'as pas Expo, tout ça quoi.
+
+Freddy (42:44.938)
+Ouais Bah moi quand j'ai commencé Expo ça n'existait pas Je me suis tapé toutes les mises à jour, toutes les migrations depuis le début Et ça va depuis 0.60 avec l'auto-linking ça va En vrai c'est quand même un peu plus facile C'est un peu plus facile Moi à chaque fois que j'ai essayé de mettre Expo à chaque fois quand ils font la com pour dire ah maintenant on peut utiliser Expo dans un projet pas Expo ça jamais marchait Moi ça met des bugs partout
+
+David Leuliette (42:47.647)
+Ouais c'est
+
+David Leuliette (42:51.697)
+J'ai que d'été.
+
+David Leuliette (42:56.155)
+Oui, c'est vrai que les gens ne savent pas, ça connaissent pas ce...
+
+Freddy (43:09.102)
+les expos modules, je suis jamais arrivé à les mettre dans mon projet, peut-être que parce que je les créais depuis trop longtemps et que j'ai bidouillé trop de trucs dans les fichiers natifs. Mais j'y arrive pas et d'un coup ça me saoule un peu parce que maintenant il a certaines livres qui sont que dans expo et qui sont plus maintenues. Alors pour passer à la nouvelle architecture c'est un peu chiant. Peut-être qu'il faudrait que je fasse un nouveau package dans mon ripo et je crée depuis expo quoi, et puis un peu importer les trucs. Mais j'ai pas trop le temps.
+
+David Leuliette (43:24.641)
+Right.
+
+David Leuliette (43:29.31)
+Un reboot pour la V3.
+
+David Leuliette (43:38.242)
+Bah... ouais...
+
+Freddy (43:38.85)
+Mais aujourd'hui je pense que c'est... aujourd'hui ça a l'air d'être la façon la plus courante de commencer un projet React Native, vu surtout que depuis que React Native framework c'est quelque chose d'officiel avec Expo et tout, mais c'est vrai que bon bah moi vu que j'ai commencé, que j'ai appris à faire sans, bah pour l'instant que c'est compliqué de l'intégrer moi je trouve dans un projet. Parce qu'à l'époque un projet Expo qui était éjecté c'était un enfer, c'était encore pire. C'était dès que tu voulais un natif module fallait l'éjecter et c'est encore plus dur à maintenir quoi, c'est comme...
+
+David Leuliette (43:46.485)
+bah oui.
+
+David Leuliette (44:01.809)
+oui, c'était... Oui, oui, clairement, oui, oui, clairement.
+
+Freddy (44:07.758)
+Mais je pense qu'aujourd'hui c'est bon. Après moi, les CI, quand j'étais chez des clients, tu mets en place un fastlane, des fois App Center, Microsoft, genre de trucs et tout. Mais là, moi, sur mon projet, je fais peut-être une version par mois, je le build en local et je le upload et puis basta.
+
+David Leuliette (44:23.361)
+tu vas dans Xcode tu fais clic upload. ouais on adore on adore ça.
+
+Freddy (44:25.614)
+Ah ouais ouais ouais, j'ouvre Xcode, euh... J'archive, je mets sur mon téléphone une petite journée pour tester, j'envoie et puis... Sur Testlight et tout. C'est un peu chiant mais en vrai, maintenir un CI des fois qui casse, au moins quand j'ai un bug, je le vois tout de suite quoi. Quand j'ai mis un jour avec native ou native dependency, je peux voir tout de suite le problème. Et pareil, bah le...
+
+David Leuliette (44:37.331)
+Et c'est parti. Ouais mais !
+
+T'as pas besoin de plus.
+
+David Leuliette (44:46.101)
+Ouais c'est ça, puis là t'es tout...
+
+Freddy (44:53.582)
+Bon j'ai pas besoin d'ouvrir Android Studio, les commandes elles marchent bien pour Android pour faire le bundle, le point A, A, B. Et après bah je le drag and drop sur Play Store.
+
+David Leuliette (45:01.098)
+Ouais.
+
+Et tu testes sur quoi comme Android ? T'es un vrai Android ?
+
+Freddy (45:07.47)
+Bah c'est vrai que dernièrement je suis plutôt dans le simulateur, je crois que j'ai un Android, j'ai un Nexus, tu vois, j'ai ce vieux truc qui est en Android 8 toujours. Quand je veux tester la performance, c'est là dessus que je teste. Ce vieux que j'ai depuis des années mais depuis qu'il les Mac arm du coup maintenant les les emulateurs Android sont plus rapides qu'avant. Avant même ce truc était plus rapide que les emulateurs Android et maintenant... Mais depuis que c'est la même architecture ça se voit.
+
+David Leuliette (45:19.423)
+Bah oui, forcément.
+
+David Leuliette (45:30.815)
+Ouais ouais, ouais c'est clair, j'avoue, j'avoue, j'avoue.
+
+David Leuliette (45:37.555)
+Ok super donc on a fait un peu le tour de la stat... T'as pas 5 librairies que tu utilises souvent et que tu recommandes ? Bah non, moi je bulle de mes propres librairies monsieur !
+
+Freddy (45:46.998)
+Bah non tu vois avec navigation j'ai jamais eu le... ou access screen, réanimé, tout de quoi, j'ai jamais eu le temps de faire d'autres trucs différents donc j'utilise quand même. En lib que j'utilise vraiment, c'est que tout ce qui est UI j'utilise peu, j'utilise pas quoi, souvent je le refais. préfère, c'est fou, c'est plus facile à maintenir en vrai. Le nombre de fois que j'ai dû être emmerdé que ce sur le web à l'époque pour bootstrap ou même matériel design, faire une mise à jour et que ça casse partout, parce que dès que tu fais des trucs custom, souvent bah c'est compliqué à mettre à jour je trouve. Alors que c'est plus simple.
+
+David Leuliette (46:09.895)
+On monter le design, c'est un enfer.
+
+faut pas, faut pas faire de trucs custom. Et ça le truc.
+
+Freddy (46:16.174)
+Alors que si c'est juste... Bah attends, si c'est juste... Je mets le truc en soin parce que j'ai trois flexbox à faire et deux couleurs, c'est bon, je sais le faire quoi. J'ai pas besoin de la lit pour faire l'interaction. Euh... Non, du coup, ça qu'on UI, je recommande de rien. Ah bon après, y'a un peu du UI, y'a un peu du UI dans la réacnavigation quand même. Y'a un peu du UI dans la réacnavigation quand même. D'ailleurs, c'est qui est chiant souvent mettre à jour. Je veux dire, toute la navigation marche toujours mais y'a deux trois endroits qui ont pété et qu'il faut savoir que fait, oui, ce paramètre il a changé, non, et niang niang niang.
+
+David Leuliette (46:23.199)
+Mmh mmh.
+
+David Leuliette (46:31.942)
+Rien. Non mais c'est bien.
+
+David Leuliette (46:42.217)
+Ouais.
+
+Freddy (46:47.134)
+Euh... Mais sinon... Bah je recommande d'utiliser ReScript. Interressez-vous à ReScript, vous aimez beaucoup TypeScript, vous aimez beaucoup le typing et l'expérience stricte, mais en fait, pas besoin d'être aussi compliqué. Vraiment, l'inférence peut être meilleure. Alors je sais que l'écosystème est pas aussi vaste que TypeScript aujourd'hui, c'est vrai que la communauté, fait beaucoup. Mais justement, venez, on sera plus nombreux, ça sera encore plus facile. Parce que vraiment en...
+
+David Leuliette (46:52.617)
+Ouais bah ça suffit.
+
+David Leuliette (47:02.763)
+C'est ça.
+
+David Leuliette (47:13.887)
+C'est ça.
+
+Freddy (47:16.68)
+En terme de... trouve moi c'est incroyable, vraiment. Tu peux juste refactorer tout un truc dans ton train sans réseau juste avec le compilateur sans besoin de voir si le truc il a... Il tourne toujours en fait. Tu sais que si ça compile c'est que ça tourne. Moi ça me met une sécurité, je trouve, qui est incroyable et... il toujours la possibilité de ne jamais s'affacer à du code mort que tu n'as pas envie de supprimer. Tu peux toujours tout refaire et tout changer.
+
+David Leuliette (47:33.83)
+Ouais, on est sur vous.
+
+Freddy (47:45.23)
+Je trouve que c'est quand une expérience assez incroyable. terme de librairie... Après bon, y a des incontournables en ragnative que tout le connaît, exemple. Ragnative Permission, ragnative Boots Splash de Zune. Ce genre de choses. Oui voilà. Bah du coup Edge to Edge maintenant va se souvient prêt pour la prochaine version d'Android. Moi j'ai mis aussi bon. Du coup j'ai créé aussi même le binding pour ReScript. Il a pas grand chose mais bon moins comme ça ça permet de le partager plutôt que de le réécrire.
+
+David Leuliette (47:59.96)
+On a fait un épisode spécial avec toutes les lib,
+
+C'est ça.
+
+Ok bah oui forcément mais il faut le faire ouais c'est ça cool est ce que il dans le dev de ton app il y a eu un moment très difficile que tu as rencontré et comment tu l'as géré
+
+Freddy (48:26.446)
+c'est pas technique, c'est plus par rapport à... mais ça peut intéresser des vrais natifs parce que c'est par rapport à... compliance des stores. J'avais été... il a un néandroit coréen via une société allemande qui avait claim mon âme pour étant illégal. J'ai été catalogué à pli pirate. J'ai été catalogué...
+
+David Leuliette (48:45.79)
+J'ai reçu...
+
+Freddy (48:49.238)
+Non mais voilà, tu vois moi j'en ai marre d'être comparé à des applis de scantrade tu vois, je suis une appli légale pour les gens qui achètent du papier un peu, bordel. Et j'avais été mis dans un sac avec des trucs et par défaut en fait le Play Store c'est un peu comme les claims d'EMCA, c'est comme sur YouTube. Par défaut t'es supprimé, c'est à toi de dire pourquoi c'est... voilà.
+
+David Leuliette (48:57.703)
+Ouais c'est ça.
+
+David Leuliette (49:09.31)
+que tu étais pas là.
+
+Freddy (49:11.734)
+Donc moi j'ai dit mais attendez en plus moi j'ai que les images tu j'ai même pas les scans enfin j'ai rien enfin j'ai que les images j'ai dit mais non mais les images j'ai le droit d'utiliser regardez j'ai la pays j'utilise la pays product advertising d'Amazon il y a un droit pour les images et tout et en plus ce qui est intéressant c'est que dans le le claim que te fournit Google tu as l'email de celui qui a claim donc après j'étais directement en relation avec les allemands pour essayer de leur dire bah s'il vous plaît à enlever votre claim pour que je revienne sur l'opstore parce que moi pendant ce temps j'étais plus sur le play store j'étais plus du tout sur le play store mais mais vraiment c'est à que la
+
+mais pendant 10 jours ouvrait, jusqu'à que... Parce que moi du coup j'ai reclaim, mais en gros, faut que celui qui claime dise... qui porte plainte. Google a une petite sécurité en mode, si l'autre entreprise porte plainte, mais si elle ne porte pas plainte au bout de 10 jours, c'est bon tu reviens. Parce qu'on estime que tes arguments sont suffisants et puis du coup finalement ils se sont pas plus manifestés. Mais c'est à dire que eux, ils ont juste attendu que les 10 jours ouvraient, donc ça fait 2 semaines, c'est long en fait. Et en plus pendant ce temps...
+
+David Leuliette (50:02.225)
+Mouais.
+
+Freddy (50:07.982)
+ton application n'existe plus du tout mais en plus non plus tes API t'écoule donc c'est à dire que moi pour les abonnements ça ne marchait plus je pouvais plus faire des auto-renew d'abonnements genre de choses ou quoi donc pendant tout ce temps moi j'ai du hardcoder le truc pour dire attendez je vais pas enlever le premium aux gens qui le payaient avant parce que la période de renouvellement ne marchait pas à ce moment là en plus c'était dans ma première année tu vois donc un peu stressé aussi ce genre de choses
+
+David Leuliette (50:14.557)
+oui !
+
+Freddy (50:32.096)
+J'essaye de passer par l'éditeur français qui avait les licences mais qui me dit bah non mais avec les endroits coréens ou japonais on peut rien faire c'est hyper compliqué. Bon j'essaye un petit peu d'alerter de genre de choses quoi. Et en fait y'avait rien à faire à part attendre et être revenu et puis bah après il fallait que j'enlève en plus le truc hardcoded que j'avais fait en back-end pour pas vérifier les abonnements parce que du coup ça empêchait les autres de s'abonner, enfin pour un enfer.
+
+David Leuliette (50:39.197)
+Bon, allez, on
+
+Freddy (50:57.23)
+Donc voilà, un peu chiant à gérer sur la commune, mais fait vu que je communiquais bien sur les réseaux là-dessus, la commune était compréhensive. Et puis c'était pas de ma faute, mais voilà, c'est super chiant. Mais c'est vraiment chiant que tu n'existes même plus d'un point de vue API quoi. Comme si ton appli n'existait plus du tout sur le Play Store vraiment pendant... C'est long. C'est super long. moi en tout cas maintenant je fais super gaffe quand je reçois des claims, quand il a les mises à jour Play Store, les règlements qui sont à jour et tout quand je lis un peu pour voir toujours dans les clous...
+
+David Leuliette (51:04.239)
+Ouais les gens étaient au courant Ouais c'est tombé comme ça
+
+Freddy (51:26.958)
+J'ai eu part des fois quand tu mets à jour l'application... Moi, il y des mangas pour adultes et des hentaïs qui sont moins de 18, moi je les floute. Mais tu j'avais laissé un système certifié d'avoir 18 ans, d'être majeur et tout, et tu pourrais les voir, etc. C'est stocké. Même ça, allait pas du tout, parce qu'en fait, avec le compte test, si quelqu'un sur l'app store ou le play store a un compte test de quelqu'un qu'il avait déjà fait avant, fait, il avait pas vu du coup ce paramètre pour Clem qui a 18 ans, parce que moi je leregistrais sur le compte, je te le demandais pas à chaque fois.
+
+David Leuliette (51:45.036)
+Bah oui, ouais.
+
+David Leuliette (51:53.668)
+ouais, bah oui, ok.
+
+Freddy (51:57.294)
+Donc du coup, soit fallait faire attention que ton compte test soit tout temps fait avant, mais en fait moi je me suis dit ok c'est bon je... Je floute en permanence sur l'appli, il que le web où tu peux faire ça. Et... Et j'ai mis l'app aussi en 17 plus ou 18 plus pis bastin. que pour la violence les machins aussi qui sont intégrés parce que... Voilà tu vois je crois... Non je crois que je pégissais sur Android. Mais parce que voilà, moins de enverre en vrai aussi. Des fois tu penses... Et en vrai ça m'a pas empêché pour le téléchargement ou quoi.
+
+David Leuliette (52:14.166)
+Ouais, tu sais jamais, tu vas avoir un...
+
+Ok.
+
+David Leuliette (52:26.288)
+Ouais. Du coup, t'as pas de différence iOS, Android, Web, tu fais pareil quoi.
+
+Freddy (52:35.424)
+quasiment quasiment, à part la navigation pour le web ou l'Ui un peu différente sur le web quand en fait je me suis permis d'avoir une gestion un peu différente parce que tu vois par exemple, que sur une bottom bar sur le web ça fait bizarre moi je trouve
+
+David Leuliette (52:42.744)
+Ok, et vu que t'as vu les évolutions...
+
+David Leuliette (52:48.092)
+Ouais, oui c'est mieux ce que c'est sur une sidebar sur la gauche quoi. En plus moi j'utilise ARC maintenant et du coup tout est sur la gauche et je vais utiliser un autre navigateur normal avec la barre en haut. Ça m'enroule. Mais pourquoi il a toute cette place de perdu les gars ? a moins 15 pixels ? Non pas. Combien de pixels ? 50 ? Je ne sais pas. 50. 51 je viens de vérifier.
+
+Freddy (52:51.598)
+Oui.
+
+Freddy (53:03.278)
+Ouais.
+
+David Leuliette (53:14.428)
+Ok donc vu que tu as vu l'évolution de tout Rack Native depuis le début, c'est quoi le conseil que tu pourrais donner aux gens pour améliorer leurs skills en debug ?
+
+Freddy (53:28.294)
+Franchement, moi je debug avec des consoles logout la plupart du temps. Y'a pas grand chose. Après la performance, là où c'est Android, ça ne pardonne pas, c'est la mémoïsation quoi. Que ce soit les use mémo sur la data ou les mémo de tes components, faut le faire. Mais ça je le fais un peu à la main, vois, alors les YDDU... A l'époque, je sais pas, il existe encore les YDDU render que tu mets au début de ta livre et que tu commentes. De temps en temps quand je me fais une passe performance, mais c'est que c'est chiant à maintenir la performance.
+
+David Leuliette (53:31.491)
+Ouais, bah oui.
+
+David Leuliette (53:52.95)
+Ouais.
+
+Ouais, bah c'est faux mesurer.
+
+Freddy (53:55.886)
+c'est chiant j'ai jamais encore trouvé le bon truc c'est qu'avec le React Compiler ça peut faire des trucs cool mais bon moi j'ai mes propres hooks de mémoïsation parce que j'ai un double écoil qui est hyper rapide entre mes objets donc j'ai pas toujours besoin de mémoïser juste pour avoir la strict égalité de l'objet donc en fait moi je me permets d'avoir d'autres j'ai des... moi si tu veux moi j'utilise souvent j'écris moi même aussi le use compare le hardcomp la deuxième fonction de mémo sais le deuxième paramètre où c'est toi qui écris comment tu compares
+
+Donc je fais beaucoup ça. Souvent la performance en plus si vous le mettez des mémoisés, bon après c'est la Crack Compiler ça a l'air quand assez intéressant aujourd'hui, mais partez de vos composants feuilles de l'application. Votre application c'est un arbre, votre liste d'affichage, vous partez des composants feuilles, les petits components qui reçoivent deux trois la couleur, le texte, etc. C'est les plus faciles à faire et en fait souvent c'est eux qui cumulaient au total sur votre application un render qui vont mémoiser un...
+
+votre composant qui va être un peu votre contrôleur qui va recevoir la data, les machins un peu de partout, il va se rendre plein de fois mais c'est pas grave tant que l'Ui elle-même n'est pas rendue plein de fois.
+
+David Leuliette (55:02.395)
+Moi pour ça j'ai mis en place Réassur chez un de mes clients. Je sais pas si tu vois ce que c'est, c'est Callstack qui a fait ça. Callstack Réassur. Et en vrai en fait c'est pour tes tests et pour justement mesurer la régression. Parce qu'en fait c'est ça le truc, c'est que tu fais des choses et après tu bosses, tu fais un refactor, c'est vendredi, tu push et hop là !
+
+Freddy (55:07.95)
+Hmm?
+
+crois que j'avais entendu parler.
+
+Freddy (55:19.399)
+La régression, ouais, c'est le truc le plus chiant pour la performance, ouais. Ok.
+
+Freddy (55:27.286)
+T'as mis un paramètre de plus dans ton copenote, hein. T'as rajouté une dépendance dans ton oreille de use effect et tout est foutu, tout est foutu.
+
+David Leuliette (55:33.158)
+Et tu as oublié et tu reviens 6 mois plus tard et tu te que c'est quand même lent, je ne comprends pas. Et en fait ça permet un peu de mettre en garde-fou. Après c'est toujours pareil, tu deviens un full-time QA engineer et tu passes un peu plus de temps à maintenir les tests. Mais après peut-être que ça peut aider sur certains scénarios.
+
+Freddy (55:49.826)
+Non non, je que j'avais vu passer mais j'avais pas le temps de creuser à l'époque mais ça peut grave m'intéresser. Après je t'avoue que depuis 2017, les mobiles sont aussi plus performants de base. Ça, a beaucoup géré. En plus moi je fais beaucoup de data logique dans l'application en vrai. Moi l'API c'est presque un sync de données. Parce que si t'as pas de data logique dans l'UI, bah en fait ton front il marche pas en offline. Tout simplement.
+
+David Leuliette (56:01.002)
+Oui aussi, aussi. Puis moi c'est... un truc.
+
+David Leuliette (56:09.498)
+...
+
+David Leuliette (56:15.778)
+Ouais c'est ça.
+
+Freddy (56:16.814)
+Et en vrai ça m'économise aussi beaucoup de frais serveurs parce qu'en fait j'ai plein de CPU à disposition de tous les gens plutôt que de maximiser les CPU de mon serveur et que ça soit bloated, même les accès à la base de données. En plus moi vu que c'est la donnée plutôt froide en fait le livre tu vois je mets à jour peut-être la date une fois par semaine sur un bouquin je peux même cacher un truc pendant 24 heures et ça va quoi.
+
+David Leuliette (56:23.528)
+Oui.
+
+David Leuliette (56:37.05)
+Ok
+
+Et donc c'est quoi la dernière feature que tu as faite et combien de temps tu as mis pour la shipper ?
+
+Freddy (56:46.734)
+J'ai fait une feature premium pour afficher l'historique de toutes les ajouts et toutes les lectures dans l'application. gens étaient contents parce que c'était rétroactif parce que forcément moi je stockais dans la base de données la création mais les gens ne pas forcément. Et du coup ils étaient contents, ça a bien marché et j'essaye de provoquer que les gens fassent des screens de cette feature et qu'ils le partagent régulièrement sur les réseaux sociaux pour faire des défis de lecture, des défis d'achat, ce genre de choses. C'est assez marrant, voilà. Tu vois.
+
+David Leuliette (56:54.17)
+Ok.
+
+David Leuliette (57:00.762)
+Oui oui oui.
+
+David Leuliette (57:13.031)
+excellent, oui, excellent, excellent.
+
+Freddy (57:16.556)
+Mais ça m'a pas pris tant de temps à coder que ça mais j'étais un peu bloqué sur l'Ui. Comment je fais ça ? Je me pose plus souvent des questions du UI. Et c'est vrai que je réfléchis un peu l'Ui et l'architecture de la base de données en même temps, souvent. Parce qu'en fait, il y a toujours plein de façons de faire la base de données. Tous les modèles sont faux mais lequel modèle tu as le plus besoin pour la manière dont tu veux le faire et sans être trop contraint si tu veux les faire évoluer.
+
+David Leuliette (57:46.788)
+bah oui forcément. Et puis moi pour le regard je fais ce squat Mobin. Je pense que connais Mobin.com. C'est folie en fait, ils scrapent. Ils prennent des screenshots de toutes les apps, de toutes les versions. Et puis si tu cherches comment ils font, je peux avoir un text field. Tu peux voir tous les text fields des différentes apps, comment ils font un dialogue ou un progress indicator ou ce genre de trucs.
+
+Pas mal, je sais que j'utilise. Ouais.
+
+Freddy (58:17.39)
+C'est intéressant pour avoir des idées. Après moi j'aime bien aussi les développeurs confs d'Apple quand ils font un chacre de BWDC. Il y a des confs qui sont un peu moins dev et juste design et c'est assez intéressant.
+
+David Leuliette (58:24.356)
+Ouais.
+
+David Leuliette (58:28.601)
+Ok, et ça tu peux les suivre sur l'app developer Apple, Apple Developer. T'as l'app pour ceux qui connaissent pas en fait, il une app sur le store qui s'appelle Developer, Apple Developer et vous avez la W12 ici forcément et il y a 50 000, comme tu dis quoi, 50 000 talks à chaque fois. Explore finance kit.
+
+Freddy (58:48.494)
+Moi j'ai regardé tous les talks sur le design, vision OS, UI, interactions etc. parce que justement ça m'intéressait cette nouvelle grammaire en fait.
+
+David Leuliette (58:57.506)
+Ouais, ouais, bah oui, oui, clairement, bah oui, parce que ça va arriver en fait en vrai. Ouais, bah oui, non mais c'est ça quoi, c'est genre... Moi c'est pareil en fait, je fais du ragnézis, mais maintenant en fait mes stacks c'est plus des views, c'est X stack et Y stack parce que c'est utilisé en Swift et je trouve ça smart. Bon en fait ils ont changé, c'est H horizontal et vertical maintenant. Mais je suis intéressant de comment, quels appels ils utilisent, parce que les gars... Enfin, quel naming d'appels ils utilisent, parce que je pense que les gars ils ont réfléchi... Ouais c'est ça, la naming, c'est important en fait.
+
+Freddy (59:00.236)
+Même si je l'utilise pas mais ça m'intéressait de fou.
+
+Freddy (59:23.05)
+Ouais le naming.
+
+David Leuliette (59:26.792)
+ils réfléchissent à ça pendant mille ans du coup allez hop je vais prendre le même nom parce que c'est très bien. En faisant du rack native qu'est que tu as appris sur le dev en général ? Le développement logiciel en général.
+
+Freddy (59:43.246)
+Euh... Je sais pas...
+
+David Leuliette (59:45.944)
+Si street marketing ça marche, pour avoir 1000 users faut distribuer 5000 flyers.
+
+Freddy (59:49.457)
+Bah... Ouais, ouais, bah... Alors, ce qui est intéressant, c'est quand t'as des retours au utilisateur qui te dit c'est lent, y a mille... Y peut y avoir 100 raisons différentes derrière. Toi, quand t'entends ça en tant que développeur, t'as l'impression que l'UI est bah ok, peut-être que j'avais un truc de performance, comme on parlait tout l'heure de rendu qui était là, et en fait non, en fait y avait un headpoint qui était lent dans ton API, ou tu ne sais pas, y a a autre chose, ou...
+
+La perception de performance c'est autre chose que la vraie performance aussi. Tu peux aussi la truquer, les trucs avec l'optimistique UI aussi. Mais... Tu vois...
+
+David Leuliette (01:00:23.096)
+Ouais tu peux, pareil, ralentir l'Ui en faisant exprès parce que alors je crois que c'est Instagram qui faisait exprès de ralentir, mettre un spinner en sachant que la photo était déjà upload parce que sinon les gens n'y captaient pas que la photo était déjà upload.
+
+Freddy (01:00:36.206)
+C'est ouais tu peux un peu faire ça bon moi j'ai pas trop de plot ou quoi mais tu vois juste la rien que l'offline déjà ça donne une instantanéité quand on ouvre l'application de tout de suite loader le cache Ce genre de choses qu'est que j'ai appris après c'est plus ouais c'est plus après c'est Des trics produits on va dire que liés au développement parce qu'après en soi sur le développement bah je trouve que
+
+depuis que je suis un peu plus passé fonctionnel programming, je suis pas du tout un expert de la fonctionnel programming, mais je trouve que c'est plus simple de juste utiliser des fonctions en fait, la programmation auto-objet, j'en fais toujours un petit peu avec Ruby mais je trouve ça très compliqué de paramétrer un truc de ton sigle de ton, de ton machin, les design pattern et tout, alors que c'est juste rajoute un deux ou trois paramètres dans ta fonction, fait c'est bon juste parce que tu veux pas, des fois j'ai l'impression que c'est ça, a tout un truc juste pour pas avoir trois paramètres en plus de bête, écoute si rajoute ton cas dans la fonction c'est pas grave, si tu le rajoute à chaque fois.
+
+David Leuliette (01:01:29.72)
+Duplique ton truc, j'avoue,
+
+Freddy (01:01:35.617)
+Ouais moi je trouve que tout est plus simple, la composition de fonctions c'est beaucoup plus simple que d'autres trucs et là tu vois je vois des trucs en TS, moi je m'entends je suis une bille en TS, vraiment quand je vois des trucs, il y a des gens qui utilisent FPTS etc c'est compliqué je trouve de faire des évolutions dans l'Userland quand t'es pas... alors quand c'est plus simple, quand c'est dans le langage directement, vois le TS pattern, pattern matching c'est trop bien mais je trouve qu'en TS bah c'est un peu plus compliqué, tu peux pas faire des trucs aussi...
+
+aussi avancé que tu peux faire avec le pattern matching quand c'est inclus dans le langage, tout simplement quand c'est inclus dans le langage. en plus bon on a vu que ça n'allait pas trop avancer au niveau TypeScript ou JavaScript. Tu vois même là dernièrement j'ai vu qu'en JavaScript ils allaient abandonner les tuples ou les genre de choses et c'est un peu dommage où ils recordent alors que c'est hyper pratique d'avoir des objets un plus spécifiques.
+
+Freddy (01:02:29.253)
+Et là j'ai vu des choses qui sont hyper compliquées avec les effects, il a des TS effects, quelque chose comme ça là, j'ai vu des gens commencer à jouer avec ça pour gérer un peu plus les side effects, les trucs en the best way to build a TypeScript, tu vois. Ça a l'air très compliqué. trouve.
+
+David Leuliette (01:02:39.383)
+C'est effect.
+
+David Leuliette (01:02:52.087)
+déjà la doc, il déjà 50 milliards de...
+
+Freddy (01:02:55.136)
+Ouais ouais et je trouve... et ce que tu vois, je me rends compte que les gens ont encore du besoin qui est fait mais j'ai envie de leur dire mais venez en re-script c'est plus simple de gérer tout ça donc c'est vrai que je commence à dire a commence à avoir des gens qui voient un peu les limites de typescript et qui ont envie d'utiliser d'autres choses pour gérer les effets et quoi je leur dis mais venez, venez c'est plus simple chez nous
+
+David Leuliette (01:03:05.416)
+C'est plus... C'est ça.
+
+David Leuliette (01:03:18.431)
+C'est ça, on a supprimé des features. C'est ça.
+
+Freddy (01:03:19.023)
+Je me dis il a des gens qui sont mûres, y a des gens qui sont mûres tu on est plus dans le débat typing ou pas typing mais comment le typing je pense
+
+David Leuliette (01:03:26.119)
+Venez, je suis dans le monde de Captain Train. C'est la même story, c'est genre pourquoi Captain Train c'est Successful ? Ils sont arrivés, ils ont fait l'app de SNCF, y a 15 clics pour booker un billet de train. Captain Train il arrivé, il a fait fuck it. Nous on met trois clics et on retire 80 % des features. Résultat, c'est ça.
+
+Freddy (01:03:44.078)
+Mais oui voilà, il y à l'essentiel hein. Mais moi c'est pareil, sur mon application on me demande plein de features, y'en a certaines je suis content que matche ma roadmap, mais y'en a d'autres je suis en mode mais ça jamais je fais ça, enfin ça va devenir une usine à gaz, y'en aura partout...
+
+David Leuliette (01:03:53.814)
+ouais c'est quoi le truc le le truc le plus fuggie t'es l'anecdote plus bain fugg quand t'as demandé
+
+Freddy (01:04:02.926)
+Il
+
+David Leuliette (01:04:10.614)
+David Leuliette (01:04:19.158)
+oui !
+
+David Leuliette (01:04:33.686)
+ouais, c'est des vrais warriors quoi.
+
+Freddy (01:04:33.748)
+Donc tu vois là dessus, des fois il a des petites features qu'on demande mais que je veux pas mais vraiment d'un point de vue philosophique parce que tu vois, moi les gens ils aiment beaucoup flexer avec leur nombre total de collections. Tu vois moi par exemple j'ai 1600 mangas mais je suis un petit joueur sur ma propre plateforme, y en a ils ont donc 4000, 5000 chez eux, je sais pas où ils habitent, mais ils en ont énormément. Et ils voudraient aussi afficher genre le prix total de la collection. Moi je pourrais à peu près le faire, un équivalent par rapport au... parce que j'ai un peu des data e-commerce mais...
+
+David Leuliette (01:04:39.35)
+Oui.
+
+David Leuliette (01:04:46.838)
+Hmm?
+
+David Leuliette (01:04:53.046)
+!
+
+Ouais...
+
+Freddy (01:04:59.022)
+malgré tout si tu l'as acheté d'occasion les prix peuvent changer un peu j'ai pas le vrai prix bon ça peut redonner une estimation mais je trouve que ça me rappelle trop l'appli où j'ai bossé pour arrêter de fumer pour moi en fait si t'affiches un peu si t'affiches le total en fait c'est dissuasif putain j'ai mis 10 000 euros dans les mangas mais faut que j'arrête bah non mais non c'est pas ça le but en fait c'est t'as acheté de la culture t'as pas acheté c'est pas parti en fumée comme comme une appli pour arrêter de fumer tu vois moi j'ai bossé pour pour la sécu pour tabin faux service et pour moi c'est ça t'affiches ce montant pour qu'il soit dissuasif pas pour flex
+
+David Leuliette (01:05:08.214)
+Ok.
+
+David Leuliette (01:05:12.735)
+Ouais.
+
+David Leuliette (01:05:16.797)
+Ouais... Bah oui, c'est ça.
+
+David Leuliette (01:05:28.871)
+Ouais ouais ou faudrait trouver d'autres trucs, faudrait trouver... Ouais donne le temps que t'as passé moyen de lecture ou... Parce que c'est bien sans être bien tu vois c'est genre quoi ? T'es un vrai nerd, t'as lu la moitié de ta vie tout seul... je comprends tout ce qui est les nombres... Ouais compliqué.
+
+Freddy (01:05:30.35)
+Tu vois, y a genre deux choses. Et après...
+
+Freddy (01:05:46.734)
+Et on me demande beaucoup mais ça je vais le faire mais avec un petit touch un peu plus de fonctionnalité sociale dans l'application. De pouvoir voir... Alors le but c'est pas de devenir Facebook mais tu vois des petites touches comme sur Spotify quoi. Tu vois ce que tes amis ont lu, ce qu'ils ont acheté etc. Tu vois, ça peut améliorer ton expérience sur la Rocco et tout ce qui est découvrabilité quoi.
+
+David Leuliette (01:05:52.917)
+Ah ouais, mais après tu te ressembles en réseau social et tout, tu devoir gérer...
+
+David Leuliette (01:06:02.714)
+Ouais, recommandation quoi.
+
+David Leuliette (01:06:10.037)
+Ouais, bah oui, découvertabilité, c'est pas rien. C'est toujours à ta mille façon de faire. Ok, c'est quoi ta stratégie pour te former en REC Native ?
+
+Freddy (01:06:24.686)
+si vous connaissez déjà React vous lancez un expo et puis vous testez des fonctionnalités vous regardez la doc de RackNative, je pense qu'elle est bien faite, la doc de React Navigation aussi. Il faut un petit peu apprendre c'est quoi la... pourquoi React Navigation en fait... pourquoi la navigation est différente sur mobile par rapport au web, pourquoi on utilise pas Recruteur en gros sur le... RackNative. Parce qu'il y a cette notion d'imbrication de stacks et de tabs. C'est une poupée russe d'architecture en fait. a pas juste une seule... et c'est pas juste une seule stack comme sur le web.
+
+David Leuliette (01:06:44.117)
+Hmm.
+
+David Leuliette (01:06:51.423)
+Ouais c'est ça.
+
+Moi quand je donne des bootcamp, les gens généralement au début ils disent voilà la navigation, et puis en fait je les perds au bout du premier exo. Mais pourquoi faut ?
+
+Freddy (01:07:03.648)
+En fait ils ont jamais creusé comment marche le rap Twitter en fait que quand tu reviens sur un onglet en fait t'as toujours la page d'avant et tu peux ouvrir la même page dans les deux onglets différents ça ils font pas trop gaffe. En fait la lua-hierarchie elle est plus présente alors que sur un web on est plus habitué à de la data-hierarchie on va dire. C'est aussi pour ça que moi par exemple je déteste tout ce qui est les routings fil basés sur les fichiers. Parce que moi il y toujours un ou deux contre-exemples qui font chier et qui...
+
+David Leuliette (01:07:06.897)
+Ouais mais tu t'en rends pas compte en fait en vrai tu... C'est ça... Ouais c'est ça... Bah non mais...
+
+David Leuliette (01:07:27.912)
+Oui.
+
+Freddy (01:07:31.326)
+qui m'emmerde donc je préfère faire mon truc dans un fichier config.
+
+David Leuliette (01:07:34.941)
+Ouais non mais c'est sûr, c'est sûr. Et du coup, donc lire la doc, puis voilà quoi, creuser.
+
+Freddy (01:07:41.878)
+Ouais bah franchement React Native ou React To Core, maintenant les docs sont quand même super bien faits, React Navigation aussi quand même assez explicite sur les éléments, se former au design, quand on est fronte c'est quand même super intéressant pour aussi discuter avec le designer tout simplement. Il y des designers qui sont complètement ouf, qui savent très bien c'est quoi une ur hierarquie et de l'UX, mais moi je trouve qu'il a beaucoup de designers qui sont UI, ils mettent UI slash UX mais ils pas très UX parce que sur la navigation je vois que je les perds.
+
+David Leuliette (01:07:46.621)
+oui.
+
+Freddy (01:08:10.638)
+des des designers ils ont pas ils ont pas cette notion en plus souvent ils ils vont vont faire que le happy pass alors qu'en fait basse et tous tous les cas d'erreur à qui sont à gérer quoi en fait et si le tiateur il quitte l'application au milieu il revient comment je sais pas voilà comment tu reprends ton parcours au milieu tu vois c'est bien de faire un parcours où les gens ils sont obligés mais en fait faut toujours prévoir le cas où il perd tu vois moi par exemple quand je fais mon application
+
+David Leuliette (01:08:11.391)
+Ouais.
+
+Ouais, d'y
+
+David Leuliette (01:08:19.608)
+Ah bah oui, on a 4 milliards.
+
+Freddy (01:08:33.952)
+tu la télécharges et t'arrives tout de suite dedans et tu peux déjà naviguer dedans avec la donnée alors que moi la plupart de mes utilisateurs ils sont logués parce que l'expérience manga collect c'est surtout quand t'es logué mais je te force pas, veux dire que t'arrives pas dans l'application où hop crée un compte parce que là tu perds du monde sur la transformation et à l'inscription je te demande très peu d'informations aussi
+
+David Leuliette (01:08:44.723)
+Oui.
+
+David Leuliette (01:08:50.949)
+Ouais, ça c'est pareil, moi je fais pareil aussi, je pète un câble...
+
+Freddy (01:08:53.206)
+Il faut... Mais voilà, alors que tu vois, moi j'ai pas codé, y'a pas le tuto qui t'explique, et clique ici dans l'application, le machin, le... Comment... J'essaye de faire en sorte que les gens le découvrent. Après j'ai quelques features qui sont peut-être un peu trop cachées, quand ça fait deux, trois fois qu'on me dit, ça serait bien que tu fasses ça, et je dis bah ça existe, parce que je l'ai trop caché, qu'il faut que je la refasse, quelque chose un peu mieux mis en avant. Mais c'est des features qui sont un peu avancées dans le premium, tu vois, donc... Ça va.
+
+David Leuliette (01:09:00.275)
+mais ça je n'en peux plus le look... Welcome tour ! Au secours.
+
+David Leuliette (01:09:17.075)
+Hmm.
+
+Freddy (01:09:22.946)
+mais non non le but c'est les... faire quelque chose de... c'est compliqué de faire quelque chose de simple et bon ça veut dire quand vous êtes face à une interface et qu'elle vous semble évidente c'est qu'on s'est beaucoup pris la tête pour qu'elle le soit si vous vous sentez idiot face à une interface et que les gens de l'autre côté c'est eux qui sont idiots en vrai
+
+David Leuliette (01:09:36.563)
+C'est beau ça, j'avoue, j'avoue que c'est ça. C'est un peu ça, ouais.
+
+Freddy (01:09:45.518)
+Ouais donc du design, le code c'est bien aussi pour faire là toute la performance et tout ça etc mais du design.
+
+David Leuliette (01:09:52.179)
+Et c'est
+
+Freddy (01:09:56.75)
+Euh bah moi j'ai mon MacBook 14 pouces, j'ai un écran LG Ultra Fan que j'ai acheté il y a super longtemps mais c'est qu'à 21 pouces. Faudrait que je rachète un truc plus grand etc mais en vrai ça va tu vois vu que quand tu bosses sur un mobile tu le mets à côté, j'ai mon compiler au script à côté, je vois l'Ui aussi, ça va. J'ai pas un setup spécialement de fou.
+
+Quand je déménagerai bientôt, j'aurais peut-être un standing desk avec un truc pour marcher pour faire un peu plus de sport. Un peu plus de sport. J'ai plus de mouse, j'utilise plutôt le trackpad aussi. Que le trackpad. Mais sinon j'ai pas de set-up particulier quoi, j'ai acheté ce micro pour faire les podcasts et les live twitch.
+
+David Leuliette (01:10:22.867)
+Ouais ouais, piment moi là.
+
+mais ça c'est bien, ça j'en ai un.
+
+Jarvis.
+
+David Leuliette (01:10:42.117)
+Ouais bah oui bah oui, moi c'est pareil j'avais acheté un vrai truc, c'est Jarvis Standing Desk. Moi je ce que j'ai, c'est un peu cher, j'ai payé 800 dollars c'est un peu, mais bon. J'ai dû le couper en plus parce qu'il était trop haut.
+
+Freddy (01:10:45.495)
+C'est zut.
+
+Freddy (01:10:56.661)
+La folie que je m'étais acheté avec mon premier cachet de freelance c'était de m'acheter une chaise Hermann Miller, la M-body. Ça, je me suis dit, je bosse beaucoup assis, etc. Je commence à avoir des petits problèmes de dos et franchement depuis que j'ai ça et que je me mets dans des bonnes positions pour dormir, franchement j'ai pas trop de soucis. Donc euh...
+
+David Leuliette (01:11:01.461)
+oui, bah oui.
+
+David Leuliette (01:11:11.379)
+C'est ça, c'est important. Les chaises, mais tu vois, c'est ça, c'est bien. T'as plus de... T'as mis plus de thunes dans la chaise que l'écran.
+
+Freddy (01:11:14.638)
+la chaise et j'ai repos pied aussi parce que c'est aussi important de pas avoir la cuisse trop compressée tu vois moi je suis pas très grand moi je suis 1m71 du coup
+
+David Leuliette (01:11:19.945)
+ouais !
+
+ok, donc il faut un repose pied avant le...
+
+Freddy (01:11:29.154)
+Ouais, et un repose pied en plus, un repose pied qui est pas stable, donc c'est à dire que je peux bouger quand même mes chevilles... ...au dessus.
+
+David Leuliette (01:11:37.349)
+D'accord, ok je savais pas. Moi je suis trop grand du coup, j'ai jamais eu besoin mais ok on aura appris. Repose pied, repose pied les amis, repose pied avant d'acheter un écran full OLED HD je sais pas quoi. Ouais bah oui je sais mais c'est drôle, c'est la priorité.
+
+Freddy (01:11:41.474)
+Voilà.
+
+Freddy (01:11:47.944)
+Le grand post-pied c'est pas que coûte le plus cher mais voilà il faut acheter un truc un peu sympa. Pour les trucs pour le dos c'est quand même intéressant.
+
+David Leuliette (01:11:58.83)
+Est-ce qu'il a un sujet que tu aurais voulu aborder qu'on n'a pas vu ?
+
+Freddy (01:12:05.634)
+Euh non, je pense que j'ai bien parlé de re-script. C'est franchement, s'il pouvez le tester, bah quand vous testez React Native, vous installez les bindings re-script et vous pouvez apprendre. Bon après, apprenez un truc à la fois quand même, vous mettez vous pas tout d'un coup. Tu vois après c'est pas grave si vous êtes pas à jour sur certains trucs, tu vois par exemple moi, j'ai toujours webpack, j'ai encore jamais essayé VIT ou Rolldown, Rollup, je sais plus lequel.
+
+David Leuliette (01:12:08.76)
+Oui, bah oui, allez visiter ReScrip les amis.
+
+Freddy (01:12:30.798)
+Je suis pas toujours à jour sur les trucs, j'ai jamais eu le temps de tester Remix Enfin, maintenant c'est Récruteur 7, c'est ça je crois Qui est assez revenu Tu vois, après c'est vrai que j'ai un peu le biais ou si c'est pas cross-platform je regarde pas parce que tu vois dès qu'il y avait un truc, un nouveau framework, Tipsvelte ou autre Et je vois qu'il est que web, bah du coup je passe à côté parce que... Je m'intéresse pas Essayez aussi d'aller voir au-delà des devs, des revdels, des advocates qui sont dans les grandes plateformes par exemple
+
+David Leuliette (01:12:37.522)
+Ouais mais c'est pareil en fait en vrai c'est faut prendre un train, utiliser ce que vous habitez
+
+Freddy (01:13:01.588)
+Non mais je dire par exemple tu vois, tu vois beaucoup Google, ils sont extrêmement forts pour faire la pub de leurs trucs et t'as l'impression que Flutter, c'est c'est un truc utilisé par tout le monde machin et tout parce qu'ils font plein de tutos en ligne mais c'est ce que je reproche à Meta en vrai, ils font pas assez les outils aussi pour les autres tu vois, s'ils avaient voulu vraiment Flo ils auraient pu en faire un truc pour pas que Microsoft passe devant avec TypeScript par exemple et... et tu... ils sont pas, tu vois, ils mettent pas tout leur livre en ligne tu vois, ils utilisent forcément un truc
+
+autre que Rack Navigation mais ils l'ont jamais, je pense qu'ils l'ont jamais publié ou fait d'autres trucs même si c'est super intéressant tout ce qu'ils mettent en ligne mais des fois ils poussent pas assez, poussent pas assez au contraire de Google où ils sont très forts donc allez au-delà juste du gros dev qui vous a vendu enfin tu vois je veux dire ça fait 10 ans qu'on a des talks sur le web component qui utilisent vraiment les web components on s'en fout un peu quoi donc essaye d'aller aussi au-delà de certaines hypes
+
+David Leuliette (01:13:31.761)
+Hmm.
+
+Freddy (01:13:58.306)
+il a des hypes qui sont éphémères, d'autres non, vois, réact et ça c'est une geste au tout début on était décrit en mode c'est une hype éphémère et en fait c'est nous qui sommes restés quoi parce que tout simplement c'est plus simple pour faire des applis parce que notre vrai but tu vois, si on veut sauver le web en fait il faudrait que le web soit au des... au niveau produit de ce qu'on peut faire sur le mobile aujourd'hui en iOS et en Android et on s'en fout de quel framework dans lequel ça tourne en vrai, si il il se... et ce qui est triste aujourd'hui c'est que tu peux lancer ton produit sans être sur le web et marcher en fait puisque...
+
+David Leuliette (01:14:07.419)
+Ouais.
+
+David Leuliette (01:14:22.961)
+Freddy (01:14:27.982)
+C'est ça qui va vraiment tuer le web. Moi j'aime pas être Halloween mais c'est pas grave, c'est pas Halloween ou React ou autre chose qui va tuer le web.
+
+David Leuliette (01:14:36.627)
+ouais c'est que... oui pas de mouboille parce que attends c'est combien ? J'ai vu le chiffre il pas longtemps et je crois qu'il a 3 milliards de téléphones en circulation.
+
+Freddy (01:14:45.058)
+Ouais ouais, mais ouais, c'est Mobile Force quand même aujourd'hui mais ça serait bien d'être pas autant dépendant des plateformes pour être moins dépendant de Tim Sweeney qui porte plainte pour Apple et Conga etc. Ou peut-être un peu plus libre sur ce qu'on veut faire comme produit parce que bah on est quand même des trucs qui sont compliqués. Tu vois par exemple le NFC, par exemple tu vois on a le Navigo pour les parisiens sur le téléphone que depuis les Olympiques parce que
+
+L'île de France Mobilité a bossé avec Apple pour faire le truc spécial et tout. l'expérience elle marche super bien mais il fallu attendre super longtemps quand même.
+
+David Leuliette (01:15:16.784)
+Hum, j'avoue, je viens de vérifier, je viens de me fact checker. En janvier 2025, à ton avis, combien de milliards de smartphones utilisés dans le monde ?
+
+Freddy (01:15:27.886)
+T'as dit trois et demi donc je pense à peu près ça, peut-être plus maintenant, 4, 5. On est combien sur Terre ? On est 9 ? 8 ? 7 ? On est 7 ? On est 7 ?
+
+David Leuliette (01:15:33.616)
+C'est ça ! C'est 7,42 milliards de smartphones utilisés.
+
+Freddy (01:15:41.486)
+Ouais mais y des gens qui en utilisent plusieurs alors maintenant... Tu comptes tes tablettes dedans ou pas ? On est 8 ? Ah ouais...
+
+David Leuliette (01:15:43.856)
+Ben on est 8 milliards donc 7,42. Ouais pas loin en fait ouais c'est ça y'a des gens qui genre comme toi et moi qui ont plusieurs téléphones ils sont comptés dedans je pense même si on les utilise pas je sais pas
+
+Freddy (01:15:56.458)
+Ouais, ça faudrait voir la méthode de comptage, mais oui, mais c'est vrai qu'il y a plein de pays qu'on dit émergents où ils font la plupart même de leurs dossiers administratifs ou d'autres choses via le mobile plutôt que via le desktop en fait.
+
+David Leuliette (01:16:03.466)
+Oui, y'a pas tout quoi.
+
+Ouais bah moi je suis allé à Shenzhen, t'as pas de mobile, tu peux rien faire. T'as pas WeChat, c'est foutu. C'est littéralement, tu ne peux rien faire. Plus important d'avoir même son passeport ou même du cash. Je te jure, là-bas si t'as pas de batterie, t'es foutu.
+
+Freddy (01:16:13.92)
+Hum, hum, mais ce que je veux dire c'est c'est plus important d'avoir un mobile qu'un ordinateur aujourd'hui.
+
+Freddy (01:16:24.157)
+aussi aussi quand j'étais au japon fallait quand même du cash aussi ouais pourtant tu dis c'est le pays de la technologie il ya 15 000 logos pour payer etc incroyable de prendre les transports avec ta suica sur ton qui vend de la navigo sur ton téléphone aussi pour badger partout dans tout le pays vraiment imagine t'as la navigo qui marche dans tout le pays c'est incroyable mais de temps en temps cash only ok ok bon bah voilà mes petits billets
+
+David Leuliette (01:16:38.832)
+OUÈ
+
+David Leuliette (01:16:43.088)
+C'est ça. Ok. C'est ça. Est-ce que t'as la recommission d'une personne que je devrais inviter ?
+
+Freddy (01:16:52.558)
+Le problème c'est qu'il fait pas DRAC NATIVE mais je t'aurais bien dit d'inviter Mathias pour faire un spécial rescript.
+
+David Leuliette (01:16:57.429)
+il fait du mobile, est-ce qu'il fait du mobile ?
+
+Freddy (01:17:02.658)
+Euh... pas plus que ça. Pas plus que ça, c'est vrai, mais... mais il fait du réact depuis le tout début, c'est un... Avec moi, il fait le meet-up, on fait ensemble le meet-up Paris GS, même si moi je le fais beaucoup moins maintenant.
+
+David Leuliette (01:17:15.247)
+bah on en a parlé, on en pas parlé, vous faites un meetup ? Ouais, ok ouais. D'accord, plus le temps de faire bah oui.
+
+Freddy (01:17:19.15)
+Le meetup... moi je suis plus trop... Maintenant c'est plutôt Mathias et Georges qui le gèrent. Non mais Mathias vraiment c'est un des mecs les plus chauds en JavaScript de France. Vraiment, lui il peut parler spec avec les gens qui la font vraiment. Il est au courant de trucs. Il est très très chaud. Alors c'est vrai que ça va un peu en dehors de ton podcast Cross Platform. Mais si tu veux Mathias Lebrun, Bloody Hole sur internet.
+
+David Leuliette (01:17:23.503)
+Ok.
+
+David Leuliette (01:17:38.223)
+C'est Matthias comment ?
+
+David Leuliette (01:17:42.415)
+oui mais j'ai fait Pomme Té, Mathias... bah oui travaille chez Swan, il travaille avec Ok.
+
+Freddy (01:17:48.334)
+Oui, travailler avec Zoom aussi. maintenant, Euh... Bah après, Bon après, voilà. Si tu veux faire une spéciale Euroscript, ça peut intéresser tous les devreacts, d'une manière générale, que sont les devreacts natifs, ce sont des devreacts comme les autres. Euh... Ça peut. Si... Sinon, je te recommanderais, si tu veux, en cross-platformes, Thibaut, le lead dev, même, CTO de 1er Octée, une agence mobile sur Paris.
+
+David Leuliette (01:17:53.165)
+Allez, on va noter ça.
+
+David Leuliette (01:18:01.839)
+Bah oui, oui oui.
+
+David Leuliette (01:18:12.823)
+bah oui, tu veux.
+
+David Leuliette (01:18:18.527)
+mais je pensais que c'était Thibaut de Brigade mais Thibaut... premier...
+
+Freddy (01:18:18.67)
+Vu que... Non. Je me souviens un peu de son nom de famille. Mais en tout cas, voilà, si tu veux avoir une vision un peu c'est quoi une agence RegNative, sur par une petite agence, c'est ça. C'est ça. Donc il est CTO de 1ère octée. Bon, bon, bon. Je reçois encore quelque fois des missions freelance. Parce que j'ai laissé mon site à jour et du coup je les redirige vers cette agence.
+
+David Leuliette (01:18:30.606)
+C'est Thibaut Lancelot. C'est Thibaut Lancelot ?
+
+inconnue au bataillon.
+
+David Leuliette (01:18:42.239)
+Ok.
+
+David Leuliette (01:18:46.99)
+Ah bah super bah écoute bah voilà parfait trop bien. J'ai l'impression qu'on a plein. Voilà bah super on adore. On adore on adore. Où est-ce qu'on peut te retrouver sur à part manga collect ? On l'a même pas dit le site manga collect.com. Manga vous cherchez manga collect.
+
+Freddy (01:18:50.54)
+Voilà, deux rocos qui n'ont rien à voir.
+
+Freddy (01:18:59.714)
+Euh... Si, MangaCollec, a déjà dit, moi je l'ai dit quelquefois, mangacollec.com Bon bah après je suis sur tous les réseaux, il y a du contenu mais bon c'est du contenu manga. Et après il a un peu blog de l'application quoi. C'est ce que on pense, c'est ce que les gens préfèrent, c'est marrant. Euh... Moi après je fais un peu ma veille sur les réseaux, bah... Après je suis un peu orphelin de Twitter, de PixieX, au delà des contenus très fascisants qu'on trouve sur ce réseau maintenant.
+
+Y a le fait qu'il a tué la P.I. moi j'ai plus tweetbot Parce que moi avant j'utilisais tweetbot pour vraiment... C'était mon flux RSS moi Twitter Je suivais... Si un dev faisait un peu trop sa vie perso bah je donne follow parce que ça pollue un peu trop mon flux Mais j'ai perdu ça, mais donc j'essaie de le retrouver sur BlueSky Où il a un peu moins de contenu mais y a un peu pas mal de dev qui sont partis dessus Donc ouais, BlueSky, X, c'est là où je suis... Même si je... Je pose pas grand chose et je RT pas grand chose dernièrement mais j'essaye un peu
+
+David Leuliette (01:19:30.946)
+ouais... Ok... Ouais...
+
+David Leuliette (01:19:56.911)
+Je mettrai les liens dans les notes de l'émission c'est Freddy Harry. En plus tu as mis sur Blue Sky ton vrai blaze. as mis Freddy Harry à d'autres que... je sais mais pas le time en fait. Mais en vrai c'est trop bien mais trop de trucs à faire. le record, l'édit du podcast précédent.
+
+Freddy (01:20:03.278)
+Ouais bah oui bah tu peux mettre le nom de domaine.com
+
+Freddy (01:20:09.078)
+Bah c'est un peu la nouvelle manière d'identifier que t'es bien le vrai conte quoi.
+
+David Leuliette (01:20:24.078)
+On est un peu en retard là dessus. Sinon on peut se retrouver sur le Slack de Rack Native Connection. Il y aura pareil le lien dans les notes de ma mission.
+
+Freddy (01:20:34.542)
+Et sinon moi je suis à quasiment tous les meet-up Paris JS donc pour se voir en vrai.
+
+David Leuliette (01:20:38.494)
+bah voilà, voilà voilà. Moi c'est David Leliette, si vous avez besoin d'une application, pas de manga, on va dire quoi comme livre, il a quoi comme type de livre ?
+
+De BD voilà exactement je serais ravi de la faire en... ouais !
+
+Freddy (01:20:57.984)
+On me demande beaucoup de faire BD Collec, mais la base donnée est encore plus impressionnante et encore plus d'éditions un peu chelou à droite à gauche. Donc chaud.
+
+David Leuliette (01:21:06.058)
+Moi ce sera... Alors ce sera que BD mais Franco-Belge tu vois. Faut prendre une niche sinon c'est l'enfer. Ouais parce que BD c'est... Ouais laisse tomber. Ouais c'est gar... Si tu fais toutes les BD c'est garagrotu est-ce qu'en fait ?
+
+Freddy (01:21:19.36)
+Ouais nan mais... mais t'es obligé aujourd'hui de faire romans graphiques et comics hein.
+
+David Leuliette (01:21:26.518)
+ouais en plus si tu prends les comics, laisse tomber t'as pas fini.
+
+Freddy (01:21:28.895)
+Bon, ça va, le rayon est pas trop grand en France quand même, ça se vend pas beaucoup les comics en France.
+
+David Leuliette (01:21:33.665)
+ouais ? Parce que j'en ai aussi un peu... Tu vois, ça prend de la place quand même. C'est... Ok. oui, c'est vraiment... C'est vrai, parce que quand je vais au fur et à fait, vrai, tu regardes le rayon manga et Gigante, ce qui est les autres Marvel et tout, c'est plus au coin, c'est moins mis en avant, on va dire.
+
+Freddy (01:21:36.558)
+Oui oui. ça ça prend de la place mais c'est pas les ventes, c'est pas les ventes du manga, le manga c'est plus de la moitié des ventes des BD en France.
+
+Freddy (01:21:47.246)
+Mmmh
+
+Freddy (01:21:52.846)
+à la... Non mais la taille dans un magasin te dit sur... Sur le marché.
+
+David Leuliette (01:21:56.589)
+J'avoue sur le marché c'est Oui donc Wish me today si vous avez besoin d'applications Racknative on serait ravi de vous parler. Très bien franchement super épisode. Il sera mis en ligne soon normalement. J'espère que ça vous a plu et je vous dis à bientôt. Ciao à tous.
+
+Freddy (01:22:21.55)
+Ciao ! Merci de m'avoir reçu.
+
+David Leuliette (01:22:24.694)
+Merde, j'ai coupé...
+

@@ -1,0 +1,714 @@
+David Leuliette (00:00.456)
+temps que ça arrive.
+
+David Leuliette (00:11.498)
+Je vais le refaire. Ça va bugger. Bonjour et bienvenue dans le Cross Platform Show, le podcast qui explore le... Putain, mais merde, je ne suis pas dedans. Allez. Bonjour et bienvenue sur le Cross Platform Show, le podcast qui parle développement d'applications mobiles avec React Native. Je suis David, développeur chez Wishy Pityoday. Nous sommes en mars 2025.
+
+Matthys (00:13.742)
+...
+
+Matthys (00:22.69)
+Allez !
+
+David Leuliette (00:42.341)
+Mathis, est-ce que tu peux te présenter succinctement
+
+Matthys (00:47.246)
+Mathis est le développeur depuis maintenant 4 ans pour Wishy Pity Today, donc on travaille ensemble. Et depuis maintenant un an je travaille en parallèle sur Eclos, donc une plateforme en ligne pour les coaches.
+
+David Leuliette (01:02.442)
+C'est quoi ton titre ? Developer full stack ? CTO mobile ? oui attends, j'ai vu ! CTO mobile. Est-ce que tu peux être CTO que du mobile ? Est-ce que CTO c'est forcément CTO ou CTO mobile ?
+
+Matthys (01:06.657)
+Je suis Citiomobile.
+
+Matthys (01:19.594)
+Je pense qu'il peut y avoir plusieurs CTO mais... Si tu mets deux CTO qui font la même chose ça fout le bordel. Donc il faut un sitio...
+
+David Leuliette (01:26.569)
+Ah non bah il faut un VP, il faut un VP of engineering en fait. Je pense que VP of engineering c'est au-dessus du CTO. Très bonne question. Dites-nous, dites-nous, dites-nous, dites-nous les amis. Qui est-ce qui est au-dessus du CTO ? Quand il en a plusieurs, est-ce que des fois il peut y avoir plusieurs ? Si dans les grosses DSI il y a peut-être plusieurs CTO. Mais est-ce que le DSI... Il faudra que je demande à Damien. On va faire un short link pour Damien. Didou.
+
+Matthys (01:37.048)
+je sais pas mobile...
+
+Matthys (01:49.006)
+Il y a plusieurs CEO il y a plusieurs sitios...
+
+David Leuliette (01:56.234)
+le classement des ordres de puissance dans les développeurs. sera ta tâche. Ok, ok. alors, quand est-ce que tu commencé à faire du rack native ?
+
+Matthys (02:10.4)
+Maintenant ça fait 4-5 ans je dirais, donc 2020-2021.
+
+David Leuliette (02:16.637)
+Ok, qu'est-ce que tu t'es dit ? Ouais, ça a l'air cool, faut que j'en fasse.
+
+Matthys (02:23.372)
+Parce que j'avais fait du flotteur avant et que la knatiss est plus simple.
+
+David Leuliette (02:29.361)
+C'est vrai que tu fait du flotteur carrément. Plus simple. Ouais, plus simple pourquoi ? Parce que tu as déjà fait de JavaScript avant et où
+
+Matthys (02:35.022)
+parce que j'ai fait du flotteur et un petit peu d'android studio et avec ragnative t'as pas tout le bordel d'android studio, les simulateurs tout ça avec expo ça va tellement plus vite que l'expérience de développeur elle est tellement plus efficace ça donne envie de développer quoi
+
+David Leuliette (02:50.633)
+Bonne réponse, j'avoue. Ok, donc alors tu nous as parlé de Declaw, donc on va faire un épisode spécial aujourd'hui. Ça va être spécial performance. On va parler un peu de ton app et on parlera aussi des 10 meilleures pratiques pour optimiser votre application Racknative. Ce guide nous a été offert par Colestack et on l'a lu religieusement.
+
+Donc pouvez partager tous les tips si vous n'avez pas le temps de lire les 120 pages, pense beaucoup beaucoup de pages. Beaucoup trop de pages. Donc éclos, éclos, c'est quoi?
+
+Matthys (03:24.788)
+beaucoup trop de pages.
+
+Matthys (03:31.406)
+C'est une solution pour les coaches sportifs. Avant, c'était beaucoup de paperasse. Je te donne une feuille avec tes séances de sport. Donne-moi tes bilans sur papier, il faut se voir physiquement. Là, c'est un peu une solution pour le coaching en ligne. Tu peux directement attribuer des séances de sport à tes clients, leur assigner des bilans, avoir des retours directement. C'est une plateforme web pour les coaches et une application mobile pour les clients suivant leurs séances.
+
+David Leuliette (03:56.688)
+Ok donc les gens ils donnent une lap. Attends c'est quoi le customer de journée ? non en tant que coach je dis en tant que coach je dis.
+
+Matthys (04:03.758)
+Alors, en tant que coach, je crée mes séances de sport et j'invite mes clients. Mon client reçoit un lien pour télécharger l'application, il se connecte et il voit directement les séances. Tu peux télécharger l'application directement sur les stores, mais tu ne verras rien parce que juste Apple oblige la création de compte, un accès à une application alors qu'il a pas de contenu, même si tu as de contenu payant.
+
+David Leuliette (04:09.914)
+Ouais, ok.
+
+David Leuliette (04:27.911)
+Ah oui et si les randoms tu arrives à les avoir, n'as pas une feature genre trouver les coachs autour de moi.
+
+Matthys (04:33.186)
+Alors si justement on a un onglet dans le profil, trouver un coach avec une recherche par sport différent, donc musculation, fitness, crossfit, et on peut choisir des coaches dans toute la France. Un coach peut se créer des fiches coach pour être disponible.
+
+David Leuliette (04:50.584)
+Ok, stylé, stylé, stylé. trop bien. donc alors, c'est quoi la stack technique vite fait ?
+
+Matthys (05:00.43)
+Alors, pour le web c'est du Nuxt, et pour le mobile du coup c'est Expo, avec des cols API simples, React Query, au niveau du back-end d'Ango.
+
+Et après pour tout ce qui est détail, on le verra au niveau de l'optimisation parce qu'on va en parler au niveau des states.
+
+David Leuliette (05:23.848)
+Donc on a 10 stack query, expo et...
+
+Matthys (05:29.646)
+native wind pour le style.
+
+David Leuliette (05:31.879)
+Ah pour le style vous avez pris native wind, ok. Ok ok super. Du coup on va faire... on va... pardon, au conseil numéro 1 qui est utiliser le React Compiler. Donc à chaque fois on aura une citation en anglais, Mathis va la traduire car tu un TOEIC de 250.
+
+Matthys (05:59.956)
+C'est peu 250.
+
+David Leuliette (06:00.838)
+ouais c'est peu, c'est combien le toic ?
+
+Matthys (06:03.436)
+Toi c'est 750 pour l'obtenir, c'est sur 1000 points.
+
+David Leuliette (06:05.308)
+! Et donc t'as eu convert au autoïc ?
+
+Matthys (06:09.934)
+760
+
+David Leuliette (06:11.815)
+Bon bah, tonique de 760, attention vérification. utiliser React Compiler. React Compiler est un nouveau conçu pour automatiquement optimiser les applications en utilisant la de mémohisation à la fin du Page 52. Qu'est-ce que ça veut dire, Matisse, ce truc-là ?
+
+Matthys (06:30.245)
+Donc en gros React Compiler c'est un outil qui permet au moment du build d'appliquer selon ton code. Alors il faut bien sûr que le code il respecte les règles de React. Si c'est codé n'importe comment ça va pas fonctionner. Mais en gros ça va appliquer directement au moment du build les useMemo, les Memoize. Tout ce qui fait que l'application va avoir des rendus plus rapides et plus fluides. Et donc ça c'est utilisé par méta, même si en fait c'est encore en bêta.
+
+David Leuliette (06:54.009)
+N'oui, donc.
+
+Matthys (06:59.156)
+mais Metal utilise eux, donc je ne pas s'il utilise vraiment en mode test en production et après il repasse dessus pour voir ce qui s'est passé, mais il utilise même si l'application est encore en beta. Donc si Metal utilise, je pense qu'on peut l'utiliser.
+
+David Leuliette (07:14.343)
+Ouais, faut tester en fait, en vrai c'est ça, le truc c'est c'est toujours les sortes, parcs, libraries et ce genre de choses. Moi c'est vrai que j'avais vu des... à chaque fois de toute façon que j'étais tombé sur une stack et que je voyais des use memos et des use callbacks, je me flippais parce que je m'étais dit c'est... c'est très bizarre, il y en a beaucoup de trop, il y en a partout et en fait j'ai l'impression que ça sert un peu à rien. Et donc là en fait...
+
+Matthys (07:36.59)
+Oui.
+
+David Leuliette (07:43.041)
+avec le React Compiler, permet d'optimiser de façon optimale au rip cette phrase, mais la magie apparaît sans que vous ayez besoin de manuellement dire spécifier useMU. Et en fait, c'est vrai qu'il a Ludwig dans l'épisode 1 qu'on a vu, qu'il avait essayé sur une de ses apps. Alors je ne sais pas s'il est allé jusqu'au bout.
+
+Mais le setup, comment ça fonctionne, c'est que oui, vu que c'est encore en bêta, sur Rack Native, il va falloir faire des optimisations avec Babel et Metro, il me semble.
+
+Matthys (08:21.678)
+C'est justement pour que le code soit bien formaté et que le compiler puisse bien fonctionner.
+
+David Leuliette (08:28.571)
+Ouais c'est ça ouais, franchement ça a l'air assez facile où il a trois trucs à faire en fait en vrai. Mais j'aimerais savoir si t'as des erreurs de compilation, comment ça marche ? Tu le vois compiler en local ou comment ça marche ?
+
+Matthys (08:45.902)
+C'est l'heure du build donc je pense que tu peux vérifier après.
+
+David Leuliette (08:48.262)
+Ouais c'est lors du build du coup, et après dans IAS peut-être que IAS, Itchi... Hey ! Ça marche pas because... J'aimerais savoir, j'ai pas encore eu le temps de diguer mais... Dites-nous ! Ouais, forcément, bah après tu peux le faire en local et tout pour voir la stack trace mais... On va savoir si... Je pense que les erreurs doivent être assez explicites, ça doit être genre oui ça marche pas plutôt que d'avoir un truc cryptique genre...
+
+Matthys (09:00.501)
+pense qu'il faut tester en dev build.
+
+David Leuliette (09:15.622)
+erreur build 65 qu'on connaît et là bah c'est les erreurs d'xcode classique tu sais pas où segmentation fault est là impossible de savoir de où ça vient. Ok conseil numéro 2 optimiser les animations avec RedDirectNative avec reanimated oui parce que use driver hein Mathis, plus l'utiliser on en parlera après sur notre super projet qu'on a fait de l'ondig page tu l'as utilisé
+
+Bon ça fonctionne mais il faudrait être reanimated. Donc, page 59. Qu'est que ça veut dire ce truc ?
+
+Matthys (09:58.574)
+Donc en gros, Animated de Recreative ça fonctionne mais c'est pas optimisé et c'est limité au niveau des FPS jusqu'à 60. Alors que Reanimated ça utilise le thread du high et donc c'est pas du tout bloqué au niveau des FPS, ça c'est plus que 60 FPS généralement parce que Reanimated est vraiment bien optimisé. Et en gros dans le livre Colestack, il parle de performance
+
+au niveau du rendu visuel. Donc la performance ce pas vraiment ce qui se passe à l'intérieur du téléphone et de l'application, c'est surtout ce que l'utilisateur va percevoir parce qu'on peut avoir une application très fluide mais un visuel qui lag alors qu'un visuel qui ne lag pas alors que l'application n'est pas la fluide, l'utilisateur a l'expérience d'une application rapide. Si c'est smooth, il va se dire l'application elle marche trop bien. Donc la performance pour call stack c'est le rendu visuel.
+
+Et avec reanimated c'est plus de 60 fps donc l'utilisateur a l'impression d'avoir un truc qui va super vite. Donc c'est pour ça qu'il faut utiliser.
+
+David Leuliette (11:06.652)
+Réanimated, alors attention on précise, Réanimated c'est fait par Software Mention, et pas Callstack. Donc on va faire tiens de... Oh !
+
+Matthys (11:10.734)
+Oui. Alors oui, Colstack précise qu'il faut une performance visuelle et Reanimated de Software Mansion offre cette performance visuelle.
+
+David Leuliette (11:21.092)
+C'est beau, on pourra faire un short avec cette phrase là, incroyable, incroyable. Oui, parce que ces deux boîtes qui sont en Pologne et qui travaillent à faire avec Nativ un bon écosystème, ils font des choses différentes. Super super et Réanimated, c'est vrai que moi je l'utilise tout le temps en J'ai fait un short avec, un short, vidéo avec Cataline si ça vous intéresse de diguer un peu le truc, mais ça s'installe super facilement.
+
+Vous l'instalez, vous avez même pas besoin de refaire... Il me semble que t'as même pas de refaire... T'as même pas besoin de refaire de dev build. Tu l'installes et boum c'est parti.
+
+Matthys (11:57.132)
+Euh non, c'est... ouais c'est direct.
+
+Mais du coup je me rends compte qu'on n'a même pas défini ce que c'était la performance parce qu'on parle du top 10 mais qu'est-ce que c'est la performance au final ? Alors j'ai récupéré la phrase. la performance c'est plein de petites choses. Donc ça peut être time to interactive. Donc ça c'est le temps que va mettre l'application entre le moment où on appuie sur le lancement et le temps où l'utilisateur peut faire quelque chose.
+
+David Leuliette (12:07.236)
+vas-y. Vas-y.
+
+David Leuliette (12:18.915)
+Ouais, tu t'y vois.
+
+Matthys (12:28.878)
+Il y a certaines boîtes qui utilisent le TSS, Time to Specific Screen, feature. ça, c'est admettons combien de temps je vais prendre pour aller jusqu'à mon édition de nom dans mon compte. certaines personnes vont mesurer ça. Si c'est une feature qui beaucoup plus utilisée, combien de temps j'ai pour y accéder. Parce que du coup, ça fait de la rétention d'utilisateurs.
+
+Et donc au niveau de la perspective utilisateur, j'ai dit mais un peu difficilement, donc c'est le temps que met une application à monter, faire voir un splash screen, un skeleton ou un jeu en étant prêt à être utilisé. Donc c'est le ready to use, il faut que ce soit rapide pour l'utilisateur.
+
+David Leuliette (13:17.059)
+Ouais.
+
+Comment tu dis monte Monté ? L'application est montée ? C'est très bizarre, je ne sais pas.
+
+Matthys (13:25.026)
+Ouais si... ouais... euh... Ouais si... Franchement je sais pas comment dire...
+
+David Leuliette (13:28.42)
+Non mais si c'est ça, en fait ça va rien. Je peux pas être à cap. Mounted, ok, got it. Mais l'application est montée et... Qu'est-ce que vous dites ? Dites-moi, dites-nous. Dites-nous sur les réseaux sociaux tout ça. Qu'est-ce que vous dites dans votre ad unit ? On attend... We are only to wait that the app is mounted. Ou alors on attend que l'application ait... Trois petits points. Ok, super donc...
+
+Matthys (13:57.002)
+Rendu.
+
+David Leuliette (13:58.355)
+compiler, on a fait compiler, a fait animation. Ouais rendu ouais, ouais rendu, mais... Ouais, ok. Donc troisième conseil, appliquer le view flattening. Donc view flattening c'est Reduce Signisted Views Can Significantly Improve Rendering Performance, page 113.
+
+Qu'est-ce que c'est le View flattening ?
+
+Matthys (14:31.798)
+En gros c'est vraiment le let's use more, c'est au lieu de faire beaucoup d'imbrications, donc une joue pour ce style là, ce style là, ce style là, on va essayer d'optimiser au maximum, donc c'est un peu le principe de faire le maximum de composants possible, c'est de réutiliser plutôt que de dupliquer. Comme ça on évite cette imbrication et le rendu. Donc en fait on va voir aussi après avec les autres conseils que le rendu c'est là où la performance est le plus absorbée.
+
+Donc plus il a de rendu, moins on a de performance. Donc il limiter ce rendu et limiter le nombre de views. Et ça marche avec d'autres balises que les views par exemple.
+
+David Leuliette (15:12.19)
+Parce que vu que c'est direct native, ça compile, si vous mettez des vues abriquées, plein de vues abriquées, derrière ça crée des composants natifs, ça utilise les composants natifs et donc si on a trop, ça sert à rien. ça, il faut une bonne gestion des composants et en fait le truc c'est qu'il faut factoriser...
+
+au max et avoir des primitives de base, vois genre ce que l'utilise. Ouais en fait les styles c'est vrai que c'est l'enfer en fait c'est pour ça que style sheet moi ça me rend ouf je préfère carrément Shopify. C'est quoi le truc du Shopify déjà pour le thème ?
+
+Matthys (15:46.996)
+C'est surtout au niveau des styles.
+
+Matthys (16:04.43)
+style.
+
+David Leuliette (16:05.754)
+Restyle, ouais Restyle comme ça on a des primitives super simples et après tu peux faire CVI avec Tailwind, ouais je sais pas je me rends pas compte avec Nativewind si ça fout plus le bordel ou pas quoi, c'est assez compliqué à suivre. Tu utilises CVI pour euh... ouais.
+
+Matthys (16:20.61)
+Euh... ouais. Si vieille avec note, il vous en prie.
+
+David Leuliette (16:24.45)
+Parce là, ça limite, ça vous fait des variants et ça vous limite pas, ça vous force à faire, pas dupliquer 50 fois la même chose. Donc... flattening, bah non, moi en fait c'est vrai qu'en ce moment je suis sur Tamagui et Tamagui pareil, le fait en fait. Quand il compile, il y a une phase de compilateur et avant d'envoyer au compilateur, t'as un compilateur juste pour le thème en fait et voilà il fait du view flattening aussi.
+
+Ok conseil numéro 4
+
+fait des numéros pour ceux qui n'ont que l'audio avec la vidéo. Gérer l'état efficacement. Nous on a mis avec juste The Stand et Legend State. que nous c'est ce que j'utilise. Breaking State into Smaller Independent Atoms Reduces Unnecessary Rerenders. Page 42.
+
+Explique nous.
+
+Matthys (17:31.438)
+Alors du coup j'ai mis The Stand et Legend State. Legend State n'est pas mentionné dans le livre de Colstack mais je l'ai mis parce que je pense que Legend State a un peu émergé après l'écriture de ce livre.
+
+David Leuliette (17:44.981)
+Bah en fait, pas vraiment de ça, c'est plus qu'il est pas trop utilisé. Moi c'est parce qu'en vrai, on connaît Jay et Jay connaît Jamon et en fait voilà, c'est juste pour ça que... En fait je croyais que c'était plus ça, mais c'est que moi dans l'histoire que j'ai avec les State Manager, c'est que j'ai fait du rien, du Redux. Après j'ai fait du GraphQL donc comme Mathieu de chez Swan, l'épisode d'avant, il disait que...
+
+Quand tu fais du GraphQL, n'as plus vraiment besoin de State Manager puisqu'il est géré dans ton client GraphQL. Et après, j'ai refait du Redux et après du Rtk Query, parce qu'Rtk Query c'était vraiment beaucoup plus simple. Et là, il fallait en reprendre un pour la dernière app que j'ai faite et il fallait un binding offline. Et Legend State, il l'a. Donc c'est en fait dans l'histoire, dans le state of Rack Native,
+
+Il y a deux ans il y avait les John State, l'année dernière il l'ont retiré et cette année ils l'ont remis.
+
+Donc moi je sais que j'aime bien. Mais c'est que les gens, j'ai l'impression que The Stand est plus populaire.
+
+Matthys (19:01.624)
+Oui c'est ça, c'est deux solutions assez similaires mais elles font la même chose donc il faut juste choisir la solution qui convient le mieux, celle où on est plus à l'aise. Je sais que sur Legend State on peut directement aller sur le site voir les rendus. avec un bouton et plein de petits Jus on peut cliquer sur un bouton d'un côté en React Native UState Basique et de l'autre côté avec Legend State et on peut voir un peu comment ça se passe les rendus.
+
+David Leuliette (19:04.256)
+Pouce en plein.
+
+Matthys (19:30.702)
+Et pareil si vous l'utilisez dans votre application mobile avec les DevTools, on peut voir tout ce qui se passe au niveau des rendus à chaque clic. Et en utilisant les JohnStakes, ça fait dix rendus en moins. Donc plein d'utilisations de les JohnStakes partout dans l'application, ça va faire une performance qui va très vite être optimisée. Donc utilisez un gestionnaire d'état.
+
+David Leuliette (19:54.399)
+Ouais celui que... C'est qu'on y arrive assez rapidement en plus... Assez rapidement ils sont tous...
+
+Ils sont tous optimisés donc oui c'est vrai que...
+
+Matthys (20:10.542)
+faut pas se dire on met des use state au début pour attendre et après on met trois autres choses parce que ça va très vite. J'ai pas mal d'écran où il a des dizaines de states et au final je fais bon faut migrer ça maintenant. Comment on fait ?
+
+David Leuliette (20:18.48)
+Ouais.
+
+David Leuliette (20:24.824)
+c'est ce que t'as eu avec les clous là ?
+
+Matthys (20:26.318)
+Il a des écrans où par exemple il faut gérer le state d'une série de répétitions, d'un exercice, un chronomètre, donc très vite des écrans, a 10-12 states et si on ne gère pas ça et on ne les reset pas à chaque fois, ça peut très vite faire un bordel ou mal update les states justement.
+
+David Leuliette (20:39.295)
+Ah bah ouais, bah oui.
+
+David Leuliette (20:50.248)
+En plus, application mobile, c'est pas pareil que sur du web. n'es pas tout le temps online, tu n'as pas tout le temps... Tu peux pas tout le temps... Il faut avoir une expérience plus asynchrone que sur du web, où tu arrives vite. Et là, coup, dans l'app de Clos, vous allez...
+
+Donc là t'en as pas pour l'instant, t'as pas de solution, t'as RTK query, enfin React query, t'as un stack query, sorry, pour tout ce qui est data, source de vérité du serveur. Mais en local t'as quoi sur le téléphone ?
+
+Matthys (21:27.086)
+On va passer sur Legend State, pour l'instant il n'y a pas encore tout qui est migré. Oui, ça marche, il faut faire petit à petit parce qu'il a trop de morceaux à migrer d'un coup.
+
+David Leuliette (21:31.935)
+Ok.
+
+David Leuliette (21:35.581)
+Pour l'instant juste, juste ça marche.
+
+David Leuliette (21:43.069)
+Ouais, pour la migration, je dirais...
+
+Matthys (21:44.376)
+Mais du coup, le meilleur conseil, c'est de mettre un gestionnaire dès le début de l'application.
+
+David Leuliette (21:48.896)
+C'est toujours pareil, sinon tu serais... Ouais. Mais maintenant tu sais, c'est ton coup d'apprentissage, Mathis. Tu vas passer quelques points à refactor, mais... c'est ça. Pourquoi c'est important ? Parce que, oui, l'a dit, vrai que ça réduit le nombre de rerenders, surtout sur les grandes listes. Et en plus, il a tout le maintenant avec Nati.
+
+Matthys (21:57.454)
+Merci à
+
+David Leuliette (22:22.878)
+Avec les nouveaux specs de logging, expo les DevTools, ça fonctionne très bien. Conseil numéro 5, minimiser la taille du bundle JavaScript. que analyser le size et utiliser 3 treeshaking aide à éliminer le code Page 142. Moi, me rend ouf.
+
+Quand il a du code pas utilisé.
+
+Matthys (22:52.28)
+aussi mais en fait ça dépend de vos pratiques parce que là minimiser la taille on peut déjà le faire avec des pratiques comme ESLint qui vont nous indiquer le code inutilisé et après avant de push le code on fait un petit coup de lint et on vérifie ce qui peut être enlevé ou pas. Mais sinon il d'autres solutions, on peut vérifier la taille des bundles avec React Native Bundle Visualizer et on peut voir quelles sont les fichiers qui sont les plus gros dans notre application.
+
+On peut aussi activer le tree shaking, donc ça va être dans la config métro où on ajoute une ligne de code et ça va supprimer le code inutilisé au moment du build, comme ça ça réduit la taille de l'application.
+
+David Leuliette (23:25.182)
+Merci.
+
+David Leuliette (23:31.645)
+Et tu sais si ça marche avec Storybook ? Faudrait que j'essaye en fait ça.
+
+Matthys (23:40.622)
+Alors non, pour l'instant dans le livre, je n'ai pas cherché plus que ça, mais il parle juste d'applications à inclinatif de base, donc pas de storybook ou de test.
+
+David Leuliette (23:50.781)
+Parce que je vais le mettre. vous dirais quoi. Je vous dirais quoi parce qu'en fait en vrai le code il n'est pas shippé. Alors je ne pas s'il est shippé.
+
+aucune idée. Je ne suis pas sûr. toute façon il n'y a pas 50 000 choses non plus mais less is more donc on va essayer. Et pour activer le tree shaking, allez dans Metro, vous Transformer, Minifer, Config, Compress.
+
+Un use true. Ok, tu des exemples de...
+
+David Leuliette (24:36.702)
+Euh non, trois, enfin question de trois
+
+Matthys (24:39.118)
+Question 3, du coup remplacer les bibliothèques lourdes. là il a un exemple, y avait Moments qui fait 70 kilobits contre DIGS qui fait 2 kilobits, Redux, TheStent, plein de choses comme ça. il a aussi, il me semble que ça s'appelle du barrel import. C'est le fait de tout importer, c'est import étoile from l'audace par exemple.
+
+David Leuliette (24:44.926)
+Merci, sir.
+
+David Leuliette (25:05.618)
+oui, ouais ouais ouais ouais
+
+Matthys (25:07.476)
+En fait, sélectionner juste la fonctionnalité dont on a besoin et import, je sais pas...
+
+David Leuliette (25:15.496)
+Ouais c'est ça, moi sur l'Odash je n'importe jamais l'Odash. Quand j'utilise l'Odash je fais import, mettons take from l'Odash take. Du coup, avec sur VS Code vous avez Bundle Visualizer, ça vous dit direct combien le bundle import. Et moi je sais que ça je le fais déjà et dans le guide ils disent de...
+
+David Leuliette (25:41.689)
+d'utiliser Remeda au lieu de l'Odash. Ça j'avais jamais entendu parler quoi, j'en ai marre, dites-moi. Pourquoi il faut encore changer ? Mais je pense qu'en fait en vrai je sais pourquoi, c'est parce que l'Odash ça a été fait...
+
+Lo-dash release date ? C'était féquent Mathis, Lo-dash à ton avis ? Comme ça comme ça sans regarder sur internet. Première release. Première release 2012, 2012 tu vois ? 2012 c'était où ?
+
+Matthys (26:04.366)
+2017 ? là, non, j'ai rien trouvé.
+
+Matthys (26:12.078)
+J'étais mit 12, wesh. J'faisais pas de code.
+
+David Leuliette (26:15.325)
+Je faisais pas de code. Du coup, pense que Remeda c'est la solution. Ils ont tout refait avec TypeScript et je pense que tout le legacy, ils ne pas l'avoir. C'est toujours pareil, tu as des nouvelles librairies qui émergent, qui sont plus efficientes parce qu'il y a moins de legacy qui doivent être supportées en fait.
+
+Ok super donc oui ça c'est pareil si vous utilisez le bundle visualizer, npx-rec-native-bundle-visualizer-love vous allez voir accès aux librairies qui prennent de la place. Donc vous pouvez virer celles qui servent à rien. Je pense qu'aussi vector-icons ça vaut le coup de diguer le truc et de ne tout importer. Parce que vector-icons il y a quand même pas mal de fontes qui sont importées de symboles tout ça.
+
+Ok, est-ce que tu as un autre conseil pour minimiser la taille du bundle ?
+
+Matthys (27:11.054)
+utiliser Xpo Optimize avec les images. que les assets ça prend de la taille, c'est gourmand et donc il faut les optimiser pour l'affichage sur le mobile surtout que sur le mobile on n'a pas besoin d'image avec une aussi grande qualité que sur le web vu que l'affichage est plus petit.
+
+David Leuliette (27:31.676)
+J'ai juste essayé de faire. J'ai fait chouer sur le projet de cache au bose. Je NPX Expo Optimize Proceed Yes Optimize asset. Donc ok ça crée un super dossier asset. Et à ton avis, quel est notre copain qui pète un câble
+
+David Leuliette (27:51.548)
+les images. Est-ce que tu connais une librairie qui est assez ennuyeuse quand on gère des images ? Ça commence par un S, ça finit par un P. Sharp. Tu rappelles Sharp ? Le fameux. Donc en fait il faut juste l'installer de façon globale, c'est ce que je viens de faire. Et là du coup il a optimisé, il a sauvé 320 kilobytes. Et ben...
+
+Matthys (28:03.96)
+bah oui, sharp, ok.
+
+David Leuliette (28:22.427)
+Ok, donc il doit à mon avis, il doit run un algorithme d'optimisation d'images, c'est vrai qu'il faudrait que je regarde avec imageoptime, parce que moi j'ai un logiciel sur Mac qui s'appelle imageoptime qui optimise les images et jpeg mini aussi. Alors je sais pas quel algo ils utilisent, faudrait regarder. Bon, au là, il n'y a pas besoin d'installer de sort part logiciel, vous faites ça, hop, ça marche direct, je viens de le faire. Ça m'a pris 30 secondes.
+
+comptant l'installation de Sharp. il n'y a vraiment aucune excuse. Faites NPX Expo Optimize Today pour économiser de la bande passante et procurer de la joie aux utilisateurs qui sont dans les transports en commun. Enfin, quoique non, les transports en commun ça marche plus. Il y a du réseau avec les transports en commun. Ok, donc le conseil numéro 6.
+
+éviter les rerenders inutiles avec React Memo et Use Callback. Donc c'est quand pas ce qu'on a dit. Every unnecessary rerender slows down your app, page 13. Ok, là on aurait... Donc vas-y, explique déjà qu'est-ce que c'est React Memo.
+
+Matthys (29:37.454)
+c'est pour éviter de rerender un composant donc ça le stoc entre guillemets en local pour éviter de faire un rerender quand on update un state par exemple un clic d'un bouton pour incrémenter un nombre
+
+David Leuliette (29:54.362)
+Mais du coup c'est un peu vrai, c'est vrai qu'en fait ils disent de l'utiliser mais en même temps ils disent de pas l'utiliser parce que du coup il y a React Compiler qui va le faire.
+
+Matthys (30:09.518)
+On peut utiliser Red Compiler mais on n'est pas obligé de faire des React Memos si on utilise The Stand ou Legend State. On va faire un Rewinder de seulement du bouton sur lequel on appuie.
+
+David Leuliette (30:25.787)
+Après, c'est comme les conseils en sécurité. En vrai, on suit 100 % des conseils en sécurité, au bout d'un moment, on baisse dans les stats parce qu'il a des conseils qui se clashent entre deux et ça ne pas. Tout ça, il vous faire avoir en fonction de vos problématiques. Si vous lancez votre app avec Expo, vous appuyez sur J.
+
+vous ouvrez le flame graph et là il diguer en fait. Si à un moment vous vous rendez compte que oui mais là dans ma scroll view horizontale il y a une vidéo et juste ce composant là je vais être sûr que il n'y a pas de render et vous foutez un rec memo comme ça au moins vous êtes sûr quoi. Je pense que ReacomPyler ça fait plein d'optimisation que toi t'as pas conscience en fait.
+
+Et donc useCallback. Qu'est que c'est ?
+
+Matthys (31:21.71)
+c'est pour éviter de recréer une nouvelle fonction à chaque render. c'est juste, j'ai une fonction getDate. Si j'appuie sur un bouton d'un écran et à chaque fois sans le useCallback, ça va refaire un getDate. Donc, on évite de réappeler cette fonction. Ouais, c'est ça.
+
+David Leuliette (31:26.051)
+un peu.
+
+David Leuliette (31:39.8)
+Ouais pour le part, fait ça dépend comment tu mets ta... Comment tu encapsules... Eh c'est beau ! T'es composer mais ça se suit sur le part.
+
+David Leuliette (31:56.897)
+Ok donc le conseil numéro 7, charger du code à distance uniquement lorsque c'est nécessaire. Donc do not load out code at launch, it on demand. Page 163. Comment on fait ça pour fetch on demand ?
+
+Matthys (32:16.088)
+on utilise react lazy. Donc en fait, le principe c'est on affiche seulement les composants nécessaires au début et tout ce qui se voit pas, admettons on est dans une liste ou une scroll view, tout ce qu'on ne voit pas au début on le laisse en lazy. Comme ça l'utilisateur a directement un aperçu d'éléments et il peut voir le reste après. Comme on a dit au début, le plus important c'est la performance visuelle, c'est pas vraiment la...
+
+réperformance, que le temps que l'utilisateur voit quelque chose, il est content. Et avec TrackLazy, on fait charger plus rapidement les autres composants en laissant les composants qu'on ne voit pas au début, chargés en arrière-plan.
+
+David Leuliette (32:58.059)
+Et c'est précisé si tu peux le faire entre sur des screens entiers.
+
+Matthys (33:02.926)
+Il faudrait aller revoir dans le livre, là tout de suite je pourrais pas donner de réponse.
+
+David Leuliette (33:08.345)
+En fait je me demande si tu un navigateur entier, tu lui fais un REC NAILSY sur l'intégralité d'un navigateur, il ne jamais charger tout ce qu'il y a à l'intérieur tu vois en vrai. donc je me demande, possibilité que sur la navigation ça fonctionne pas ce genre de truc.
+
+Matthys (33:19.022)
+Oui.
+
+David Leuliette (33:30.325)
+Moi je sais que je l'avais déjà fait en React Web.
+
+David Leuliette (33:36.575)
+Mais en règle native, ça, je ne sais pas du tout comment ça se comporte.
+
+de rétester. en attendant ils disent pas... Peut-être que je sais pas comment elle fonctionne à la pléidora clési. Tu peux mettre des skeletons ou ce genre de choses où ça les load direct.
+
+Matthys (33:56.682)
+Justement, il me semble que c'est ce qui est fait. Parce qu'il disait aussi que même si on a des squelettons, l'utilisateur voit qu'il se passe quelque chose. C'est un peu le principe de l'activity indicator. C'est le temps qu'on voit quelque chose sur notre écran, on sait qu'il se passe la magie derrière des requêtes ou du chargement, donc on reste.
+
+David Leuliette (33:59.93)
+Ok.
+
+David Leuliette (34:10.221)
+Ouais.
+
+David Leuliette (34:19.725)
+Ouais c'est ça, c'est mieux d'utiliser l'activity indicator de RECNATIVE parce que comme ça de base c'est le spinner de l'OS et comme ça les utilisateurs ils ont l'impression que c'est le téléphone qui se galère, c'est l'OS qui galère et pas votre app. Ok, donc faudrait creuser... J'ai serré, j'ai serré, tiens, truc là, comment ça fonctionne vraiment.
+
+Conseil numéro 8 accélérer l'interface avec concurrent react. Perceive performance is often more important than actual performance. Page 46. c'est quoi react concurrent mode ? Je crois que c'est ça la définition exacte.
+
+Matthys (35:08.088)
+en gros, va permettre d'accélérer l'interface parce qu'on va précharger des choses ou appeler des fonctions pour faire des transitions. Donc, par exemple, useDiffirT value dans un state, on va pouvoir utiliser l'ancienne valeur le temps que la nouvelle se charge et se met à jour. Ça permet d'éviter d'avoir un blanc ou une skeleton.
+
+David Leuliette (35:29.951)
+S
+
+C'est quelle version de React ça ?
+
+Matthys (35:35.982)
+euh 18 depuis le règne 18
+
+David Leuliette (35:39.033)
+Et donc RAC18, parce que là on est en SDK 52 Expo, RAC Native 077 et c'est encore la 18 aussi.
+
+Ok, ok, parce que...
+
+Matthys (35:53.838)
+Et pareil, l'utilisation de ce spence pour charger le contenu progressivement.
+
+David Leuliette (36:00.088)
+Parce que ceux là, c'était les use different value, use transition, ou que là, moi perso je ne les ai jamais utilisés. Parce que j'ai toujours pensé que c'était que sur le web en fait.
+
+David Leuliette (36:13.943)
+Et en plus, quand je les avais vus, React Native, il y un petit délai entre les versions de React généralement. Ça dépend des fois, il n'y pas de stats universels là-dessus.
+
+Mais ok, est-ce que sur Eclos tu vas mettre des useDifferedValues ? Non.
+
+Matthys (36:35.361)
+Nnnooo-
+
+C'est pas un truc auquel je suis habitué. Après il faut tester mais j'ai plein d'autres optimisations à faire avant d'arriver sur les différentes values.
+
+David Leuliette (36:49.687)
+J'avoue, j'avoue, j'avoue. Mais donc... Ok, ouais, donc ce genre de hook ça permet d'empêcher l'Ui de freezer. C'est vrai que je teste, moi, c'est vrai que j'ai des trucs un peu compliqués. Non, mais moi ils sont déjà dans le state, et déjà dans le legend, donc c'est déjà optimisé. Moi c'est juste un peu lent parce que je fais opération Bluetooth, donc...
+
+pourrais pas utiliser ce genre de choses, malheureusement.
+
+Ok ouais c'est donc... vas-y
+
+Matthys (37:22.264)
+Alors, une petite information en plus, viens de vérifier. vrai que j'aurais dû le mentionner, mais pour utiliser concurrent React, coup, il faut la nouvelle architecture.
+
+David Leuliette (37:33.591)
+Ah ! Bonne précision ! Bonne précision ! Parce que moi je suis pas encore passé New Arch... Éclos ou pas ?
+
+Matthys (37:46.606)
+Ouais, depuis peu.
+
+David Leuliette (37:49.783)
+Bravo, c'est beau.
+
+Matthys (37:51.694)
+Mais en fait il faut vérifier si vous avez une nouvelle architecture et qu'on vous dit unsupported package, par exemple Stripe, ça dit que c'est pas supporté mais selon les fonctionnalités que vous utilisez, ça peut être supporté. Donc globalement il a la moitié des fonctionnalités de Stripe qui ne sont pas disponibles dans la nouvelle architecture mais comme nous on ne les utilise pas, ça fonctionne quand même.
+
+David Leuliette (38:12.651)
+Ouais ok. Ok ok moi je suis encore sur Old Arch, j'ai voulu le faire, ça a bugué. En fait je crois que Tama Guaï il y a des... faut que je vérifie le setup en fait. Il me semble qu'il y a des trucs qui fonctionnent pas encore. Puis moi j'ai voulu tout faire d'un coup en mode allez vas-y, let's go. Mais bizarrement j'avais des... si c'est ça je sais, c'est MMKV. En fait j'ai voulu passer...
+
+Ah c'est ça ! En fait j'ai voulu passer MMKV, le concurrent d'Async Storage, est plus rapide, sur la version 3. Et la version 3, faut New Arch, et du coup je New Arch, et en fait pour ça il faut que je checke Tabak Uai. Et du coup j'ai fait un rollback, parce que je me suis dit ouh là, je vais pas dig leur habit, oh le 2 ! De tout vérifier et pas le temps donc...
+
+même qu'il v2 pour l'instant. Et ça marche très bien, donc je ne pourrai pas bénéficier du concurrent mode React. Tristesse. Mais grâce au conseil numéro 9, qui est désactiver la compression du bundle JavaScript. donc Disable JavaScript Bundle Compression Can Improve Execution Speed, page 175. Alors ça, j'ai dû lire trois phrases. J'ai dû lire trois fois la phrase.
+
+que j'avoue j'ai pas compris.
+
+Matthys (39:45.382)
+En gros, tu peux désactiver la compression parce que la compression elle fait, en fait elle augmente la taille de l'APK et elle augmente le time to interactive. Donc en fait, c'est pas optimisé pour Android et si tu désactives cette compression dans le buildgradle Android, donc ça ça doit être dans le package sur expo au niveau de l'app config.
+
+tu peux avoir jusqu'au moins 16 % sur le Time To Interactive.
+
+David Leuliette (40:21.592)
+C'est ce qu'ils ont mesuré. Franchement stylé. Là je suis en train de regarder. App Config, Android. donc là je vais mettre virgule. Je fais Control Space. Vu que j'ai le VS Code extension
+
+Expo, me modifie les choses que je peux modifier. Et attention, Android, Android Resources, runtime version. C'est dans quoi t'as dit ? Android,
+
+Matthys (40:58.824)
+et dans le livre c'est dans Android, Android Resources, No Compress mais je pense qu'il ne le mentionne pas pour Expo, c'est ça.
+
+David Leuliette (41:08.693)
+Peut-être qu'il n'est pas encore documenté. Je suis quasi sûr qu'on peut l'ajouter, mais c'est peut-être pas encore documenté. J'ai Bundle Pass, Manifest Pass... A voir. Je suis certain qu'il a moyen. Il a toujours un moyen.
+
+Matthys (41:30.798)
+Mais de base il le mentionne pour le buildgrad de l'android, donc pas pour expo.
+
+David Leuliette (41:35.334)
+Ouais ok ok mais même c'est pareil il faut que je vérifie je peut-être pas à jour de toutes mes extensions. Ok intéressant tu vois tu désactives un truc pour tu désactives la compression pour que ça aille plus vite. Intéressant.
+
+Matthys (41:51.694)
+et la Team Rack Native est en train de le mettre par défaut.
+
+David Leuliette (41:56.436)
+Ah ok, c'est ça. Après, faut vous tester, vous mettez un petit commentaire, delete that later. voilà, ça va bien se passer. Ok, et le dernier, numéro 10, c'est utiliser flashlist au lieu de flatlist. Because flatlist is performant but flash... Putain, je vais la refaire. Flatlist is performant but flashlist is even faster. Page 40.
+
+Matthys (42:29.166)
+Donc flashlist c'est de Shopify, flatlist c'est de Reat-native donc c'est performant, mais pour les lists de moins de 1000 éléments, donc ça arrive quand même très souvent, flashlist de Shopify c'est beaucoup mieux. C'est plus performant, c'est moins de lag, c'est fluide, mais à partir d'un certain nombre d'éléments dans des trop grandes listes ça lag, donc il faut utiliser flatlist.
+
+David Leuliette (42:56.136)
+Ouais, j'avoue. Après, moi j'aurais mis aussi...
+
+Matthys (43:04.331)
+Legendiste.
+
+David Leuliette (43:04.885)
+Ben je regarde, je regarde s'il a mis 1.0, Il a...
+
+Matthys (43:09.836)
+En fait, c'est faux.
+
+Ouais c'est comme The Stance
+
+David Leuliette (43:12.852)
+Ah c'est pas encore précisé. C'est pas encore précisé. Oui en fait il a plein. y a aussi la personne Jay, on lui fait un big up, big up Jay. Il travaille aussi sur un composant qui s'appelle LegendList et qui est encore plus rapide que FlashList. Parce que lui c'est qu'une approche que JavaScript. FlashList, c'est les optimisations pour des composants natifs.
+
+Mais ce qui est fou, c'est que LegendList, c'est plus rapide en utilisant que du JavaScript. Mais pour l'instant, c'est pas encore stable. C'est pour ça que tu fais bien de ne le préciser. Mais c'est vrai que je trouve ça dingue qu'il y ait trois composants différents pour faire des FlatLists. Mais ce qui bien, c'est qu'ils ont tous la même Surface API. Je pense.
+
+Non, c'est vrai que ce que tu dit c'est que Flashlist de Shopify, peux lui mettre une prop Estimated Item Size et du coup tu lui dis mettons 25 items estimés du coup ça va être plus rapide. A scroller ou à render ? Oui c'est pareil ça ne rende que ce qui est visible.
+
+Matthys (44:34.03)
+C'est pour ça, essayez les trois.
+
+David Leuliette (44:37.971)
+Il faut essayer les trois de nous dire quel est le plus rapide. que après c'est bien précisé, les journalists ils disent que c'est expérimental et bon c'est pas production ready. Donc moi je partirai pas là dessus. Si je veux vraiment faire l'optimisation sur une app en prod, je mettrai plutôt Shopify. En plus c'est vraiment no brainer. Il y a juste à installer la lib, changer l'import, terminé.
+
+Il n'y a pas de changement plus ça à faire. Donc ça c'est bien. Ok super. Donc on a vu nos 10 conseils. Est-ce que... Est-ce que il a... Donc j'ai une question quand tu travailles dans ton day to day c'est quoi ton setup ?
+
+Matthys (45:37.454)
+C'est à dire...
+
+David Leuliette (45:39.928)
+combien tu as d'écran ?
+
+David Leuliette (45:46.386)
+Bonne réponse, déjà ça marche. Faudra prendre une photo de ton setup. plus aussi, tu quoi pour debug sur Android comme téléphone ? C'est quoi la marque ?
+
+Matthys (45:59.896)
+Oula alors moi j'ai un Honor 8x qui doit dater de 2016 ou 2017 donc c'est très bien parce que du coup quand je dev, si ma fonctionnalité fonctionne sur ce téléphone, même avec du lag, c'est qu'elle fonctionne partout ailleurs.
+
+David Leuliette (46:16.338)
+C'est bien, well done. Bonne réponse. Moi c'est un Samsung... Je ne sais plus lequel, je le chercherai. Je le dirai Samsung S10.
+
+Matthys (46:27.343)
+Si vous voulez optimiser vos applications, utilisez des vrais téléphones parce que les simulateurs, ment !
+
+David Leuliette (46:33.458)
+oui, ça oui, mais clairement, oui, mais simulateur, bah oui, si tu loupes sur un Mac M3 Max, c'est pas du tout la réalité quoi. Est-ce que tu eu des différences à gérer entre Android et iOS sur l'app Euclid?
+
+Matthys (46:56.392)
+ce qui est un peu de... les modal, c'est des trucs un peu natifs où sur iPhone c'est un peu beau, tu peux les customiser mais sur Android t'as la petite pop-up blanche un peu moche qui lag beaucoup.
+
+David Leuliette (47:08.274)
+Ouais, tu as utilisé la modal que de React Navigation. T'as pas utilisé le modal modal ou le screen modal ?
+
+Matthys (47:16.366)
+Moodle Moodle
+
+David Leuliette (47:19.184)
+oui, modal from ragnative. oui, ça c'est... Ça fait longtemps que je n'ai pas utilisé celle-là, j'avoue.
+
+Matthys (47:21.28)
+Oui, c'est ça. Merci.
+
+Matthys (47:30.132)
+Donc ça pour la performance, n'est pas top.
+
+David Leuliette (47:32.988)
+Ouais... oui parce que... Attends ça arrête d'aller...
+
+Matthys (47:36.334)
+En fait c'est fluide sur iPhone, tu peux avoir des belles modales, tu peux les rendre un peu plus mousses avec des transitions alors que sur Android tu peux pas faire ça et c'est directement une modale qui pop sur ton écran et qui... t'as pas vraiment de l'interaction visible comme sur iPhone.
+
+David Leuliette (47:56.53)
+Ouais ok, super. Et est-ce que tu as un sujet que tu auras aimé aborder ?
+
+Matthys (48:13.358)
+Non, on a fait le tour de toutes les optimisations là. Ah si ! C'est quoi ton optimisation que tu mets en place sur tes applications toi ?
+
+David Leuliette (48:17.617)
+Ça c'est...
+
+David Leuliette (48:23.223)
+à la mienne.
+
+Il faut que je regarde parce que j'ai un Mind Nod. Je vais sur Reka, je vais faire MS Performance Checklist. J'ai une performance checklist de la Moirte. La première je dirais.
+
+Ouais si, moi de libérer qui ne à rien, mettre à jour toutes les briéries, mettre à jour tous les SDK.
+
+ce genre de truc quoi et tout le code d'aide avec S-Line Prétyre tout le en fait. que ça de base je le mets parce que ça me rafle déjà quand moi je l'installe qui est librairie qui ne à rien. C'est vraiment le truc que j'ai en place et après ça dépend vraiment parce que chaque projet est différent donc tu peux pas vraiment
+
+dire euh... tu vois genre là si on prend le truc des flatlists bah là projet pour lequel je bosse en fait il n'y a pas. Enfin y en a une. Donc en fait euh... y a 10 items dedans enfin c'est pas... c'est pas un feed à l'instagram quoi. Donc qu'on conseille, il sert à rien. Après euh...
+
+Matthys (49:32.174)
+Merci.
+
+David Leuliette (49:48.241)
+Par contre le conseil de bundle size et tout ça dans toutes les apps, y est c'est sûr. là on parlait de conseil numéro 3 c'était le view flattening. là pareil je le fais pas parce que j'utilise Tamagui et Tamagui il le fait pour moi. Donc il n'y a pas vraiment de liste ultimate à mettre en place. Ça dépend vraiment des problématiques du chacun comme on l'a vu.
+
+Matthys (50:03.662)
+Merci.
+
+David Leuliette (50:18.224)
+Superbe !
+
+Matthys (50:20.304)
+Je pense que la prochaine étape c'est peut-être optimiser la navigation. Prochain épisode.
+
+David Leuliette (50:26.7)
+la neuve ! Qu'est-ce t'entends par optimiser la navigation ?
+
+Matthys (50:35.432)
+quand tu interagis pour aller sur un nouvel écran, si tu as des grosses tâques de navigation, ça peut être plus long à charger, comment faire pour optimiser ça quoi. Je sais qu'avec export à hauteur, tu as les slots qui permettent le rendu.
+
+David Leuliette (50:45.424)
+Ah oui comment tu... Ouais Comment tu fais pour, avoir une expérience fluide, fetch les data de l'autoscreen, c'est vrai que t'as plein de solutions ce genre de trucs. C'est que... un épisode spécial navigation et performance où vous n'avez juste la navigation. Franchement en vrai, y'a rien de quoi faire. Juste un épisode pour la navigation, mais laisse tomber, on peut en faire pendant trois heures parce qu'il faut expliquer tout ce qui est... Toutes les...
+
+Matthys (50:56.443)
+c'est ça
+
+Matthys (51:07.47)
+...
+
+David Leuliette (51:14.032)
+les solutions de navigation qui existaient avant, solutions qui existent après et actuelles. Ouais, il faudrait. À ton avis, qui c'est que je devrais inviter dans le podcast pour...
+
+à une prochaine émission.
+
+Matthys (51:31.318)
+Dans la prochaine émission, on essaie de vous trouver un membre de l'équipe Ornicart car oui, la semaine prochaine on va à React Native Connection et le regagnant du Ticket Bonus est un membre de l'équipe Ornicart.
+
+David Leuliette (51:47.343)
+J'avoue. Et donc il ne sait pas encore mais il passera dans le podcast. Oui oui donc Ornicard ils font le code, c'est ça, c'est le code de la route. Ok ils ont une app mobile et tout à mon avis et pour réviser le code. Trop bien, j'aurais kiffé avoir ça quand j'étais au lycée plutôt que... Non bah non moi j'allais en sortant du...
+
+Matthys (51:51.502)
+Voilà.
+
+Matthys (51:58.583)
+Oui c'est ça.
+
+Matthys (52:07.426)
+Au lieu d'avoir ton petit livre.
+
+Matthys (52:12.366)
+On va faire les sessions de code sur place.
+
+David Leuliette (52:14.127)
+Après le bus, en bus direction Guine, bien hop, je m'arrêtais à Coulogne pour aller de 18h30 à 19h30 au code avec les manettes qui étaient de la taille de trois Game Gear, tu Du coup, mieux tu j'aurais préféré, il faudrait faire ça dans le bus déjà. Ok. Bon, c'était cool.
+
+Mathis, où est-ce qu'on peut te retrouver ?
+
+Matthys (52:45.582)
+Sur Twitter, BlueSky, partout sous le même pseudo, Matisse Dev.
+
+David Leuliette (52:52.675)
+On mettra ça dans les notes de l'émission, moi c'est Flexbox, pareil un peu partout, sinon vous pouvez aller sur Wishy Pity Today. Et n'hésitez pas à lâcher 5 étoiles et à nous dire dans les stars... 5 étoiles et nous dire votre conseil performance. Ça, ce serait une bonne idée pour partager avec la communauté sur Apple Podcasts. Et Spotify, je pense pas que tu puisses lâcher dire...
+
+Je pense que tu peux juste mettre des étoiles sur Spotify. ouais ? bah allez, on va utiliser la feature parce que je sais que ça tombe. J'ai un feed dans le backend du Spotify Creator, j'ai les commentaires. Du coup, voilà. Et vous serez featured au prochain épisode. Ça c'est beau, c'est beau, c'est Bon bah super. J'espère que cet épisode vous a plu et on se retrouve la fois prochaine. Ciao !
+
+Matthys (53:24.19)
+Non, tu peux mettre des commentaires.
+
+Matthys (53:51.662)
+Ciao !
+

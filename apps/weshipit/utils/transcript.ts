@@ -29,7 +29,7 @@ export function parseTranscript(raw: string): TranscriptEntryType[] {
   let lastTime: string | null = null;
   let expectTimeAfterDash = false;
   const headerRegex =
-    /^([^\(\[]+)\s*[\(\[]((?:\d{1,2}:)?\d{1,2}:\d{2}(?:\.\d{1,3})?)[\)\]]$/;
+    /^(.+?)\s*[\(\[]((?:\d{1,2}:)?\d{1,2}:\d{2}(?:\.\d{1,3})?)[\)\]]$/;
   const timeOnlyRegex =
     /^[\(\[]((?:\d{1,2}:)?\d{1,2}:\d{2}(?:\.\d{1,3})?)[\)\]]$/;
   const timeBracketOnlyRegex =

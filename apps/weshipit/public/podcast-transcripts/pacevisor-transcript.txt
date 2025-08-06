@@ -1,0 +1,1189 @@
+David Leuliette (00:01.451)
+Bonjour et bienvenue sur le cross... Putain, je dois recommencer. C'est pas grave, on est déjà en live, c'est pas grave. Je queuterai à l'édit. Allez. Bonjour et bienvenue sur le cross-platform show, le podcast qui parle développement d'applications mobiles avec Racknative. Je suis David, développeur chez Wipit Today. Nous sommes en février 2025. Baptiste, je suis ravi de t'avoir. Est-ce que tu peux te présenter à la communauté pour ceux qui ne te connaissent pas ?
+
+Baptiste (00:29.822)
+Bonjour mon cher Dalil. Baptiste Lecoq, j'ai 31 ans. Maintenant, ça y est. devient vieux. Je ne plus, Millenials, ils n'y sont plus. On est déjà trop vieux, ça c'est sûr. J'ai 31 ans, je suis développeur...
+
+David Leuliette (00:36.423)
+C'est bien, c'est c'est beau, c'est beau. Je fais partie de la Gen... C'est Gen quoi ? C'est Gen Z ?
+
+David Leuliette (00:44.625)
+Non moi je suis un millénials, moi je suis un début de millénials. Toi je pense que c'est Gen Z. Je suis pas sûr.
+
+Baptiste (00:58.542)
+FULL STAQ comme on dit maintenant. J'ai fait une école d'ingénieur qui s'appelle EPSIS, ça duré cinq ans. C'est pas là où j'ai appris les meilleurs, les tréfonds de nos métiers. On pourrait en parler par la suite peut-être. Et maintenant je suis en Paris. Ouais c'était bien.
+
+David Leuliette (01:16.336)
+Bah, c'était bien non ? Si, si quand je me souviens quand Baptiste il a débarqué chez Silicon Salad et que c'était eu en stage ? C'était ton premier travail ? Bah t'étais plutôt sharp hein ? Enfin moi quand je suis sorti d'étude on faisait rien, enfin.
+
+Baptiste (01:33.678)
+C'est dans ces expériences là que j'ai appris encore plus. Juste finir là où je suis maintenant, je suis indépendant. Je travaille principalement pour ADO et Bardal. ADO, Laura Marlin, etc. Et Bardal c'est tout ce qui est huile et additif pour voiture. Et j'ai des produits à côté, notamment Pais Visor et d'autres.
+
+David Leuliette (02:00.074)
+Space Visor et c'est pour ça que tu es dans cet super épisode. C'est ce qui se passe là. Baptiste, normalement c'était moi qui faisait. En fait, on s'est rencontré à Baptiste. Moi, j'étais développeur front end Baptiste apprenti.
+
+Baptiste (02:15.63)
+développeurs.
+
+David Leuliette (02:16.542)
+apprenti développeur. Et du coup, après, forcément au chemin naturel, je suis devenu mobile, dev par la force des choses en faisant du cordova et tout machin. Et après, j'ai fait du rack native en 2017. Mais toi, pourquoi? Pourquoi tu fais du mobile? Pourquoi tu as fait? Qu'est qui t'a amené au mobile? vois?
+
+Baptiste (02:35.022)
+J'ai fait plein de projets depuis que je développe. J'ai eu des applis. Alors à l'époque, les toutes premières que j'ai faites, c'était pour créer des groupes Twitter. Les groupes n'existaient pas à l'époque, il a très très longtemps. C'était déjà une app mobile à l'époque. Alors si je me rappelle bien, les meilleurs c'était Ionic. Ça fait super longtemps.
+
+David Leuliette (02:51.003)
+C'est déjà une app mobile !
+
+Ah ouais, en quoi du coup ?
+
+David Leuliette (02:59.497)
+Ouais ok ouais. Ouais Ionic du coup c'était Cordova et tout machin c'était la façon de faire plus simple et maintenant mais maintenant Ionic ils font du rack native. Maintenant Ionic c'est devenu un libraire du high pour enfin je sais qu'ils font plein de trucs je connais pas du tout l'écosystème mais du coup ok ouais donc en fait c'est un peu pareil que moi quoi moi j'ai fait du Ionic aussi c'est comme ça que j'ai...
+
+Baptiste (03:18.958)
+J'ai tenté une fois pour une app qui s'appelait Ploup, d'ailleurs c'est là aussi sur une seconde expérience, on s'est revu David chez Ineat. C'est une app qui faisait de la notif vraiment très personnalisée. donc là j'ai eu l'occasion de faire un peu de mobile natif en iOS principalement, mais vraiment j'ai trouvé ça un peu gênant. L'objectif c'est avec
+
+David Leuliette (03:30.568)
+Aller ouais.
+
+David Leuliette (03:43.027)
+c'est... de l'objectif C ?
+
+Arrrr
+
+Baptiste (03:48.782)
+C'est le nom de la base de données, le truc native d'iOS. c'est un peu à l'arrache. Maintenant, Rack Native et Expo nous a changé notre vie quand même.
+
+David Leuliette (03:51.677)
+Ouais, fou, hein, je suis diable. Ouais, ouais.
+
+bah c'est...
+
+David Leuliette (04:03.001)
+Exactement, en choisir du Pace Visor, qu'est que c'est Pace Visor
+
+Baptiste (04:07.072)
+Alors en gros, faire simple, c'est une plateforme de sport.
+
+réinvente l'entraînement et la préparation des athlètes. gros avec des outils d'analyse on va essayer de... Les outils d'analyse c'est quoi ? Ils se sourcent par exemple de notre poids, de notre capacité à courir vite ou moins vite, de notre capacité à monter rapidement ou à descendre des pentes. Pareil pour le vélo, pareil pour la nage. Est-ce qu'on a une capacité à nager loin, pas loin ? Les données météo, à travers plein de données comme ça.
+
+la pluie, le vent, à travers toutes ces données là, la pluie va à travers des algos, guider l'athlète de la meilleure manière qu'il soit. si je donne un exemple concret, dans deux mois, je prépare un trail par chez nous qui s'appelle le Nord Trail des Monts de Flandre. Mon but, c'est de courir 27 km. Actuellement, je reprends tout juste la course parce que je sors de blessure de dos. la pluie, va m'aider en fonction de ces paramètres à me dire,
+
+les 10 premiers kilomètres il n'y pas trop de montée tu peux aller à ton rythme de croisière par contre par exemple le 11e kilomètre celui là il est dur parce qu'il ya je sais pas 200 mètres de dénivelé positif admettons elle va me guider en me disant bah ce kilomètre là je te préconise telle allure etc et en vélo je donne un deuxième exemple pour bien comprendre je fais le Lillard de l'eau en juin
+
+David Leuliette (05:11.592)
+...
+
+Mmh.
+
+Baptiste (05:33.108)
+Le jour J, y aura certainement du vent et dans une direction bien spécifique. bien, la vie, ce qu'elle va faire, c'est qu'elle va dire, OK, fais attention au 60e kilomètre, t'as le vent pleine face, on te recommande d'aller un peu moins vite.
+
+David Leuliette (05:37.64)
+Au
+
+Baptiste (05:45.39)
+Donc c'est du temps réel. C'est aussi de la préparation. Donc y a dans l'appli toute une partie en avant la course, fait, sur l'avant course où elle va essayer de dire, voilà tel plan d'entraînement, voilà comment tu peux travailler tes zones de cardio, etc. Mais le but à la fin, une fois qu'on a utilisé tous ces outils, c'est bien le jour J de savoir au mieux s'objectiver pour une course. Voilà le gros de l'appli.
+
+David Leuliette (06:11.735)
+Trop bien, bien. Parce qu'au début c'était que de la course là. T'as migré sur tous les sports.
+
+Baptiste (06:14.638)
+Au début c'était que de la course, c'était que de la conversion même, faisait que en en course à pied on parle de minutes par kilomètre, c'est ce qu'on appelle le reboot. Alors en fait, l'appli a réellement démarré il y a quatre ans maintenant, où c'était que de la conversion et je l'ai repris totalement en janvier 2024. J'ai tout rebooté. a même longtemps. Ouais c'est ça.
+
+David Leuliette (06:21.127)
+T'as mis combien de temps à chipper la V1, juste à un compteur de course ?
+
+David Leuliette (06:37.096)
+Ah t'as reboot tout, Ah oui, du coup tu as deux stacks dans ta stack. Ah bah vas-y, parlons-en. Alors vas-y, MVP première version 2020. Y a quatre ans, 2020. Qu'est-ce qui se passe ? Tu vas où, tu fais quoi ? Je vais sur internet, je tape après AcNative.
+
+Baptiste (06:48.622)
+Alors bah du coup il a 4 ans, 2020 c'est ça.
+
+Baptiste (06:54.958)
+Alors en fait, c'était déjà du React Native à l'époque avec Ignitred, donc c'est toujours ça.
+
+David Leuliette (07:05.375)
+Ignite. Bigga pas Jemon. Tu sais que Jemon à chaque fois, je dois faire des shorts pour lui à chaque fois, chaque épisode, à chaque épisode, on parle d'Infinite Red. Pour ceux qui connaissent pas, fait, Infinite Red, c'est une boîte aux US et qui sont spécialisés dans React Native. Et voilà, ils ont une conférence de chaine React qui est très sympa, qui aura pas lieu cette année, malheureusement, mais on leur fait des coucou. Alors du coup, Ignite, Ignite, c'est un boilerplate, c'est un boilerplate pour scaffold, tournage avec...
+
+Baptiste (07:27.118)
+et du chuteur
+
+David Leuliette (07:32.237)
+plein de trucs. donc là, il y a deux ans, c'était la version browser.
+
+Baptiste (07:33.248)
+avec plein de trucs, c'est ça ?
+
+Baptiste (07:40.015)
+Ouais exactement, c'est ça. J'aurais pas su le redire.
+
+David Leuliette (07:42.119)
+Tu as vu ça ? T'inquiètes, moi je connais tout. J'étais là, j'étais là à Gandalfel il a un bilan.
+
+Baptiste (07:46.318)
+Et d'ailleurs, vois, j'allais dire, moi, ça fait partie de mes douleurs, je ne mets plus trop à jour, le boilerplate, et je le fais via moi maintenant, mon expérience. ça, c'est une de mes douleurs, c'est que la sac est exceptionnelle. Tout est branché, de la navigation, du state, etc. Mais la mise à jour, c'est un peu galère. tout cas, moi, je l'ai décidée.
+
+David Leuliette (07:56.871)
+Oui oui.
+
+David Leuliette (08:07.495)
+Tu veux, euh, mettre à jour, ignite, Parce qu'il a comme, il y a le diff, tu vas sur... Tu vas sur... Après là, le truc, c'est que toi, tu as une version majeure. Mais sinon, il y a une version, comme React Native Upgrade Helper, tu as Ignite Helper en fait, sur la doc, tu vois, sur docs et tout, mais j'avoue que c'est un peu long, je t'enverrai le lien. Mais du coup, alors vas-y, attends, attends, on reprend.
+
+Baptiste (08:10.986)
+Oui, le boilerface.
+
+Baptiste (08:29.518)
+Moi je trouve ça un petit peu galère. Et en fait, quand tu commences à faire des composants...
+
+David Leuliette (08:35.552)
+Première éthération, tu tombes sur ignite, tu NPM, ignite, boom. T'as une app. Alors qu'est ce qu'il y a ? Vas-y décris nous la stack.
+
+Baptiste (08:40.846)
+à l'époque donc il y avait trois écrans liés aux trois sports la course le vélo et la natation
+
+et en fait ces trois écrans, essayez de faire de la conversion toute simple. je prends l'exemple de la course à pied. On connaît tous la vitesse, par exemple 12 kmh. En course à pied, on va aimer parler en minutes par kilomètre, ce qu'on appelle le rythme. Et donc, par exemple, je cours à 5,00 du kilomètre, donc 5 minutes au kilomètre. Et donc ces conversions là, c'est ce que la plie faisait. Donc en course à pied, faisait ça. En vélo, pas grand chose parce qu'il a que des kilomètres heure et en nage. Donc si admettons, je dis je nage à 4,
+
+kilomètres heure ça a une équivalence en nage qui s'appelle les minutes aux 100 mètres donc c'est une unité par exemple moi je pourrais dire que je nage à une minute 30 au 100 mètres et l'application grâce à React donc pas tout en live tous les bindings qui vont bien bah l'utilisateur il avait son petit input il mettait je veux nager à quatre kilomètres heure et tout se modifiait directement en minutes aux 100 mètres
+
+Et suite à ça, la deuxième feature qui existait c'était les tableaux de passage. Donc par exemple, je reprends un exemple en course un peu plus parlant. Je dis je veux courir à 12 km heure, 5 minutes au kilomètre. Donc ça la plie elle le rentre. Elle va afficher par exemple kilomètre 1 ça fait donc 5 minutes. Au bout de 5 kilomètres ça fait 5 fois 5, 25 etc.
+
+David Leuliette (10:03.333)
+Ok, over.
+
+Baptiste (10:05.876)
+Je dois affiner mes calculs. Par exemple, y a beaucoup de courants à l'époque, même encore maintenant d'ailleurs, qui utilisent l'appli dans des séances d'entraînement et ils peuvent aussi faire avec des mètres, par exemple, le 100 mètres, en combien de minutes je le courrai. Donc ça c'est la V1 de l'appli qui a rapporté déjà à l'époque 5-6 mille utilisateurs à travers le nord de la France principalement.
+
+David Leuliette (10:20.077)
+Ok, je vous...
+
+David Leuliette (10:28.717)
+Ouais, simplement genre bouche à oreille, tu faisais des conférences, des compétitions, tu faisais « Hey ! Tu as distribué des flyers. bah voilà, les flyers comme quoi ça marche très bien. coup, il y avait déjà MobX de base dedans, as pas dû... Enfin si tu l'as utilisé du coup, un petit peu vite fait.
+
+Baptiste (10:34.19)
+C'est ça. C'est déjà à l'époque. Mais non, c'est rien.
+
+Baptiste (10:46.476)
+Alors je l'avais mais vraiment il n'y avait pas de persistance vraiment donc à l'époque j'avais pris surtout une X pour la partie routing.
+
+David Leuliette (10:51.438)
+Ouais.
+
+David Leuliette (10:56.806)
+TypeScript et tout avec React Navigation. coup en styling library c'était simple, style sheet. Et après du coup pour deploy, t'avais pas expo.
+
+Baptiste (11:00.268)
+C'est ça, racte navillisme.
+
+Baptiste (11:04.622)
+Alors il avait rien ? Ouais, c'est ça.
+
+Baptiste (11:11.5)
+Et donc à l'époque il y avait déjà Expo, si je ne me trompe pas. J'avais déjà Expo qui d'ailleurs ça fait aussi partie de mes douleurs. Actuellement on avait Expo, tout était gratuit, tu pouvais déploy autant d'utilisateurs etc. maintenant alors du coup je ne pas passé sur la version payante parce que...
+
+David Leuliette (11:16.645)
+Ouais, t'avais expo, Ouais, ouais.
+
+David Leuliette (11:26.674)
+oui oui oui oui.
+
+Baptiste (11:33.396)
+j'ai plus de facilité à déployer des versions spécifiques. J'ai remarqué que les utilisateurs, il en a quand même qui vont sur l'App Store et ils regardent s'il y a des mises à jour. Et quand t'es en OTA, comment ? Il y a des stats, même vis-à-vis de Google, tu vois que quand tu déploies une nouvelle mise à jour, t'as un taux de téléchargement qui se fait de nouveaux utilisateurs même des fois.
+
+David Leuliette (11:42.18)
+Hein, bah comment tu sais ça ?
+
+Comment tu sais ?
+
+David Leuliette (11:54.681)
+de nouveau, peut-être... ouais ? ça c'est marrant.
+
+Baptiste (11:56.406)
+En gros des fois, j'ai déjà vécu les gens qui s'ils voient pas de mise à jour ils disent bah la plie est pas vivante alors que si t'as une mise à jour ils disent bah la plie elle vit quoi, il se passe des trucs et donc ils réouvrent l'application et le nombre d'ouvertures tu peux le voir sur le source IOS.
+
+David Leuliette (12:08.814)
+Ouais ouais ouais, ok ouais, intéressant.
+
+Baptiste (12:11.182)
+Maintenant je fais plus d'OTAP, je fais du full, je crée une release grâce à Expo et je la publie moi-même sur mon Android.
+
+David Leuliette (12:22.254)
+On va en parler. coup, alors attends pour release, il y avait déjà expo du coup c'était bon, ok tout ce qui était en OTA. coup très bien, as tes 5000 utilisateurs, voilà. Stylé. Et là tu reprends la code base il y a un an et genre drama, faut tout upgrade.
+
+Baptiste (12:27.714)
+Mais c'était en auteur.
+
+Baptiste (12:38.081)
+Et à re-
+
+Alors, mise à jour de l'enfer. Expo à mettre à jour à l'époque c'était je crois que j'ai commencé la 43 version 43. Actuellement on en 52 tout le genre.
+
+David Leuliette (12:54.444)
+on est en 52 ouais ouais ouais ouais ouais ça ça peut se faire faut ouais mais en
+
+Baptiste (13:00.502)
+Alors ça se fait mais c'est plus l'écosystème qui retourne en suit... T'avais pas EBS à l'époque.
+
+David Leuliette (13:05.24)
+Ouais t'avais pas EAS. Expo Application Service donc le service de CI et tout pour mettre à jour des applications et en fait ça a beaucoup changé entre la version d'avant, ne me parlez pas d'éject en Expo parce que ça n'existe plus, c'est un vieux concept d'avant et maintenant toute l'infrastructure c'est plus du tout la même. Le CLI il a été split avant le CLI il était dans la LibreVee Expo.
+
+Baptiste (13:20.462)
+Merci.
+
+David Leuliette (13:30.787)
+Et maintenant en fait le CLI qui s'appelle IAS est externalisé en fait, enfin c'est dans une autre librairie du coup, c'est deux écosystèmes différents du coup je comprends que toi si tu avais une ancienne version c'est plus simple de... ce que t'as fait quoi. T'as scaffold un nouveau truc et let's go quoi. Du coup, on repart, on va à l'autre côté.
+
+Baptiste (13:45.45)
+Le truc business important je trouve c'est que j'ai été contacté par plusieurs clubs du coin et qui me disaient que l'appli elle est bien mais on aimerait avoir un peu plus. Alors c'est des clubs que moi je fréquentais par exemple l'île triathlon et autres et qui me disaient nous l'appli on l'adore mais elle n'a pas évolué. D'ailleurs avant elle s'appelait convertisseur en course en tant que bon français.
+
+David Leuliette (13:54.787)
+ouais ? Genre direct comme ça ils t'ont trouvé comment ?
+
+David Leuliette (14:08.387)
+Pfff, hé ! Bah hé, en vrai, en vrai, le SEO, c'est... Est-ce que t'as gardé ça dans le nom de l'app
+
+Baptiste (14:13.23)
+Exactement, j'ai gardé ces mots là qui sont toujours dans les tops mots recherchés sur Google et j'ai réussi à garder les noms de domaines qui me génèrent encore un peu de trafic.
+
+David Leuliette (14:23.107)
+Ah t'as convertisseurtancours.fr ? Incroyable, bah oui, normal. Normal. Ah bah ouais, Ok, du coup, et le reboot.
+
+Baptiste (14:29.102)
+du coup pour l'afférence un ami à nous. D'ailleurs avec nous, un bon conseil de notre ami commun, Antoine Brisset. Je vous reçois encore super sur Xacto.
+
+David Leuliette (14:37.431)
+Antoine Brisset, on lui fait des big ups aussi. Si vous tapez SEO... Non vous n'avez pas besoin de taper SEO Antoine Brisset. Comment... Oui oui, carrément, mais il fait du référencement et du coup c'est lui qui nous a tout appris.
+
+Baptiste (14:44.692)
+faut marquer le lieu et on tombe sur Anton de Brisset quoi !
+
+Baptiste (14:51.878)
+Exactement. du coup, grâce à ces demandes d'autres clubs, j'ai démarré une nouvelle version de l'appli, comme tu dis, en rebootrapant tout avec de l'AS, tout de même avec Ignite. Alors en fait, j'ai créé un projet à côté et j'ai fait un diff moi-même. J'ai pris ce qui m'intéressait de la nouvelle infra Ignite et je l'ai copié-collé vraiment à la mano.
+
+David Leuliette (15:04.903)
+t'as refait, t'es reparti à zéro de tout.
+
+David Leuliette (15:20.643)
+Ah ouais mais attends t'as refait un Ignite en fait, t'es reparti sur Ignite ? Ouais ok t'as rescapé... bah c'est ce qu'ils font aussi à Infinite Red aussi parce que Infinite Red c'est une agency en fait pareil vu que moi je bosse avec eux des fois et bah voilà typiquement genre le client il parle pas pendant 2-3 ans genre il a une version majeure ils font fuck it on rescapfold un projet on reprend le code de ses components et c'est parti donc ouais ok ok ok donc t'as reparti
+
+Baptiste (15:23.262)
+à côté.
+
+Baptiste (15:46.19)
+C'est ça, exactement. Et moi j'étais pareil.
+
+David Leuliette (15:49.474)
+Alors vas-y, du coup on va refaire tous les points de la stack. Alors qu'est-ce qu'il y a dans Ignite ? Niveau data layer, c'est quoi ?
+
+Baptiste (15:54.424)
+Alors moi ce que j'utilise est encore toujours grâce à Ignite donc c'est MobX, que j'adore franchement. Le système de binding, le système de quand tu mets à jour d'une vue, les autres vues se mettent à jour aussi grâce aux Observer, tout ce système là est vraiment bien foutu pour avoir pu comparer avec d'autres librairies genre Redux ou autres. Vraiment, je la trouve vraiment très performante en tout cas.
+
+David Leuliette (15:59.714)
+Ouais mais on pas s'inquièrent.
+
+Baptiste (16:24.014)
+du rack navigation. Il y a un an, l'Expo router n'était pas encore totalement sec.
+
+David Leuliette (16:31.042)
+Ouais ouais, sec. Pour la navigation, ok. Et est-ce que tu as des trucs un peu particuliers sur la navigation de pattern que tu utilises ? c'est 3 screens, une modal terminée quoi.
+
+Baptiste (16:41.42)
+Non, y a quand même des trucs intéressants. La version web de PaySvisor est très importante parce que de nombreuses courses intègrent le route.
+
+David Leuliette (16:52.749)
+mais ça alors tu ne l'as pas dit ça donc du coup c'est app iOS, web, Android et c'est tout pareil et tu ship ça... ouais.
+
+Baptiste (17:00.538)
+Grâce à Expo, c'est vraiment un gain de temps énorme. Par exemple, on va sur le site de la Ronde de Saint-Jean, est une course assez connue dans le Nord aussi, ils ont intégré le widget directement à Pysvisor. J'ai fait un petit script JS, un embed.js, comme si on intégrait un bouton Facebook.
+
+et qui va intégrer un seul et unique écran de la stack Expo. L'avantage, c'est que quand tu arrives sur le site de l'organisation, j'ai plus d'une centaine de courses qui l'intègrent sur leur site, ils ont accès directement à tout l'écosystème Paveizer directement sur l'alligateur. Si je t'en donne un, c'est la ronde de Saint-Lenant par exemple.
+
+David Leuliette (17:30.981)
+ouais ?
+
+c'est... Incroyable. C'est quoi le site ?
+
+David Leuliette (17:40.097)
+la ronde de Saint-Jean. Alors les amis ceux qui sont sur internet et ou en remote et ou voilà croyez moi il est où le widget ?
+
+Baptiste (17:43.15)
+J-A-N-S.
+
+Baptiste (17:49.39)
+Dans la nave en haut, le parcours est par exemple 21 km.
+
+David Leuliette (17:54.823)
+Le parcours 21 km, ouais ok ouais.
+
+Baptiste (17:56.574)
+Donc là t'as le widget payzvisor directement inclus qui se trouve dans les brasses.
+
+David Leuliette (17:59.583)
+et tout ce truc là, pour ceux qui l'ont qu'en audio, c'est une page gigantesque. ouais, énorme avec le petit voir l'analyse complète sur païsvisor.fr ou télécharger l'app. Incroyable. Il faudrait que tu ajoutes un QR code comme ça les gens peuvent scanner le truc et bam, direct ils peuvent donner.
+
+Baptiste (18:15.052)
+Et du coup l'avantage de ça, c'est qu'il y a aussi une version responsive qui vient du mode web et ou iPad, enfin en gros qui vient d'Expo finalement.
+
+Mais du coup, on a vraiment l'impression d'être sur le site de la Rente de Saint-Jean. donc, j'essaye de ne pas trop immiscer la marque PayZuyar. En tout cas, on a accès à toute l'analyse, le téléchargement du tracé, tous les algorithmes de prédiction sont embarqués du coup, comme ils sont côté client. Donc ils sont embarqués et on peut faire toutes les violations possibles et immédiables sur le site de la course. Donc ça, c'est ce que les gens adorent parce que t'as pas besoin des fois de télécharger une application. Sachant que...
+
+David Leuliette (18:23.782)
+ouais.
+
+David Leuliette (18:51.205)
+Ah ouais ouais bah oui surtout en plus toi mode course et tout machin j'ai pas internet machin boum juste le truc web ouais ouais je crois ou ils peuvent pas tout court tu ils ont un c'est quoi les un breakable phone de décathlon là non mais tu vois pas en fait je crois que c'est un
+
+Baptiste (18:56.352)
+des fois les gens veulent...
+
+Baptiste (19:05.503)
+Ouais, je les ai pas oubliés.
+
+David Leuliette (19:10.337)
+C'est un phone résiste to winvasion. je pense, il me semble que c'est un téléphone ultra résistant. Alors je sais plus, je sais plus si c'est des quatre longs. Peut-être que je misse, peut-être que je confonds à quelque chose, mais c'est ça, c'est un genre téléphone indestructible. Et du coup, tu n'as pas de store dessus, mais tu as sûrement un navigateur web. du coup, tu mets ça, ça, la puissance aussi, c'est que c'est disponible. Du coup, c'est intéressant. Pour niveau navigation, tu es disponible partout.
+
+Baptiste (19:18.766)
+All right.
+
+...
+
+Baptiste (19:25.774)
+l'esprit.
+
+Baptiste (19:30.222)
+C'est ça.
+
+Baptiste (19:33.772)
+Donc, le courant à venter.
+
+Donc c'est un petit script JS que je file à l'organisateur, lui il le copie-colle là où il veut dans le fondum et ça marche. donc le second avantage d'être sur la partie web grâce à Expo, c'est donc le site lui-même PayZior qui génère énormément de trafic grâce au référencement, donc aussi grâce à Antane d'ailleurs. donc l'avantage c'est que les gens peuvent simplement par exemple en marquant North Rail des Montes-Flands GPX ou bien La Route du Louvre GPX ou L'Hillard de Logix, peu importe, et ça tombe directement sur le
+
+et avec le même widget web qu'on peut voir là comme la ronde de sable. C'est vraiment le truc vraiment sympa parce que en étant sur du expo j'ai pas eu besoin de vraiment de coder un truc très compliqué et donc la stack web c'est simplement un Next, Next.js, j'ai mis un Next qui intègre le eFrame de ma web.
+
+David Leuliette (20:26.509)
+t'as mis des exigences quand même, ok.
+
+David Leuliette (20:32.256)
+Et tu vas utiliser Expo... Nouveau truc, ils ont sorti de hosting là.
+
+Baptiste (20:39.15)
+Ouais, j'ai pas encore vraiment...
+
+David Leuliette (20:41.688)
+En fait, soit en XJS soit tu fais un site en XJS et maintenant en fait Expo, justement avec le SDK 52, ils ont sorti leur solution de hosting comme Verzei et comme Netlify pour hoster justement la partie web en Directement du coup tu as plus à faire, voilà ça se fait en fait, mais là au moins tu as un écosystème, tu tout qui est compris dedans. Trop bien, en plus ça rend super bien en fait.
+
+Baptiste (20:56.619)
+Ok.
+
+David Leuliette (21:09.823)
+Mais... ouais, mais tu...
+
+Baptiste (21:10.766)
+Nice.
+
+David Leuliette (21:13.679)
+en train de réfléchir pour le SEO je pense que c'est quand même un peu mieux si tu fais du neck.js à voir
+
+Baptiste (21:18.018)
+Alors du coup, c'est bien mieux pour du Next parce qu'il arrive à builder statiquement les assets, tout ce qui est les meta tags, Ça vient pas d'un mode JS en fait. J'ai essayé de faire le maximum possible en server side grâce à Next et le reste s'affiche en JS. Donc c'est un peu moins bien pour Google, mais le max est fait côté Next. C'est l'avantage.
+
+David Leuliette (21:24.415)
+Hmm.
+
+David Leuliette (21:34.857)
+Ouais.
+
+David Leuliette (21:42.559)
+Ouais ouais. Ok ok ok donc super du coup, donc t'es encore sur Rec Navigation en fait. Et tu vas...
+
+Baptiste (21:50.422)
+du coup je suis toujours sur la web navigation, toujours avec un mix et par contre j'ai un monoripo yarn du coup pour la partie parce que j'aime bien partager mes entités métiers par exemple les cours ce genre de des entités métiers et donc je les partage entre mon next et mon appli mobile donc en expo tout dans un monoripo yarn du coup voilà sans trop d'autres ouais ce soit globalement la stack quoi
+
+David Leuliette (22:11.583)
+Ouais.
+
+David Leuliette (22:18.495)
+Et du coup, tu gères justement le styling et l'UILabrery ?
+
+Baptiste (22:19.278)
+...
+
+Baptiste (22:25.996)
+Alors ça j'ai continué de rester un petit peu à la main. fait j'ai bien aimé Ignite mais à mon goût ça apportait un peu trop de code par défaut.
+
+David Leuliette (22:38.783)
+mais maintenant ils l'ont viré. Maintenant en fait tu peux faire dash dash drop démo code et hop t'as plus tous les trucs de démo en fait. Parce que la force du truc c'est au tout début quand tu sais rien faire c'est genre ouah il y a plein de trucs. Après c'est vrai quand t'es un peu expérimenté c'est genre ouais mais les entities de démo de code pour MobX j'en ai pas besoin. Et du coup je comprends la douleur de de devoir les supprimer de ouais c'est pas vraiment ce que j'ai besoin mais maintenant t'as le...
+
+Baptiste (23:05.389)
+et même de les maintenir parce que par défaut il a pas trop de styling ou un petit peu c'est un peu galère à gérer donc coup là je suis reparti vraiment un truc un peu à la main où il n'y a pas de composants tout cas extérieurs à part les miens et je ne gère pas vraiment de... un bootstrap ou autre vois côté web mais je ne pas ce genre de truc
+
+David Leuliette (23:10.727)
+Ouais. Ouais.
+
+David Leuliette (23:27.231)
+Ouais, pas UI. Du coup, tu style sheet de basse quoi.
+
+Baptiste (23:30.414)
+Par contre je gère simplement un mode dark assez haut niveau grâce à React Navigation, je me sers de leur style sheet à eux pour gérer la partie dark.
+
+de vrais besoins design, ou est-ce qu'on extérieur. Par contre, moi j'ai fait appel à une agence qui s'appelle La Comer d'ailleurs, si jamais vous m'écoutez, une agence d'Azbrook qui ont fait toute la partie design de l'application et du coup, c'est deux filles très compétentes qui m'ont fait donc la partie UX et UI de l'appli. Et du coup, fait, moi, me suis contenté de faire un peu d'intégration finalement.
+
+David Leuliette (24:00.222)
+bah oui oui.
+
+David Leuliette (24:04.67)
+Vous vous appelez comment ?
+
+Baptiste (24:19.534)
+grâce à Stahyshit mais tout bête quoi. Pas de...
+
+David Leuliette (24:22.727)
+bien. Allez big up à Hasbro que je mettrai le lien dans les notes de l'émission. J'ai pas le temps mais le site a l'air très cool en tout cas. C'est toi qui a fait le site ?
+
+David Leuliette (24:34.795)
+ok, ouais, t'as fait le site, on est... bah oui, ça c'est smart, tu vois, ça c'est smart, vois, donnez-nous des trucs à faire, nous on les fait, tu vois, parce que nous on n'a pas le time... Moi tu vois, c'est pareil sur Wishipit today, tu vois, sur le site, y a rien, pas de logo, pas de problème, y a pas de... Y a juste... J'ai juste réfléchi à la typographie, comment c'est fait, mais après... bah du coup, super, transition impeccable niveau graphique et animations. Donc graphique, t'as fait appel à une agence pour avoir des trucs beaux.
+
+Baptiste (24:59.598)
+Bon, c'est
+
+David Leuliette (24:59.629)
+qui te disent là il faut que les couleurs soient telles teintes du orange parce que sinon ça marche pas. Ok est qu'il y a d'autres trucs du coup les compatibles web mobile ?
+
+Baptiste (25:04.91)
+Mmh.
+
+Baptiste (25:09.76)
+Oui, c'est ça, exactement. Responsive pour la partie iPad parce que tu as des fois des coureurs en mode home trainer, donc c'est le vélo un peu d'appartement, va dire. Des fois, ils tiennent l'iPad en mode portrait ou en paysage. Donc la police gère comme ça.
+
+David Leuliette (25:23.57)
+ouais t'as des vélos qui mettent leur... ouais mais attends, incroyable ! T'as des mecs qui... Alors attends, du coup comment t'as géré... Donc ouais on a dit graphique, y'a pas trop de stage sheets de base, ok ? Et donc du coup, comment t'as géré le responsive sur iPad ?
+
+Baptiste (25:31.313)
+Non.
+
+Baptiste (25:35.714)
+Alors là pour le coup, je me suis pas trop embêté, je me suis fait des hooks liés à l'orientation de l'écran et du coup j'ai des composants qui réagissent en fonction de ça. Voilà, truc très très simple. Ouais c'est ça, je fais vraiment confiance à Expo pour ça, l'orientation de l'écran. J'ai pas trop eu de galère ni de librement.
+
+David Leuliette (25:40.989)
+Ouais. Ouais.
+
+David Leuliette (25:47.214)
+Avec des tailles, ouais.
+
+David Leuliette (25:57.405)
+que tu n'as pas regardé, c'est DripSci c'est pas mal. DripSci c'est pour... Pareil, tu définis ton thème, tu as des tailles. Et après dans tes views, tu peux faire view SM equals MD equals ça et LG. En fait franchement c'est bien, c'est pas une librairie. Enfin c'est ici, c'est une librairie pour t'aider à justement créer ta librairie. Donc DripSci React Native ça s'appelle. Et c'est un peu comme...
+
+Baptiste (26:13.998)
+...
+
+David Leuliette (26:27.837)
+...
+
+Et de l'SUI, tu trucs là, sans style, mais du coup pour t'aider à faire des livres. coup, peut-être que ça t'aidera. Moi, pareil, j'avais déjà fait cette approche là, donc plain, avec des hooks et tout. Et au bout d'un moment, ça part en sucette. Toi, ça a l'air assez simple. C'est des carrés et tout, terminé, il n'y a pas 50 000 trucs. Mais moi, je sais que ça partait vite en...
+
+Baptiste (26:33.333)
+Ouais. Ok.
+
+Ok, d'accord.
+
+Baptiste (26:55.416)
+Ouais.
+
+David Leuliette (26:59.133)
+en freestyle parce que il y a des cas où ça devient un peu complexe donc il fallait des tools. Mais vu que tu es tout seul, ça va parce que tu sais ce qui est possible, tu ce qui est pas possible. Moi c'est plus vu que je suis freelance, il faut que quand je parte les devs puissent continuer à bosser sur la stack. Du coup je vais pas leur laisser un truc non documenté où ils savent pas comment ça marche, c'est pour ça je préfère.
+
+Mais des vrairies où il a une doc tout simplement et où je suis sûr que ça fonctionne quoi.
+
+Baptiste (27:32.302)
+D'ailleurs c'est un petit avantage quand même à Ignite pour y revenir c'est que dans leurs composants un peu de base je pense à Tex là je le vois sur Dripsi mais ils ont quand même des composants comme ça à l'époque alors tu dis maintenant ils l'ont peut-être plus mais à l'époque c'était quand même assez bien documenté ils avaient déjà codé tout ce qui est les size etc un peu des trucs normaux et toujours ok
+
+David Leuliette (27:40.796)
+Alright.
+
+David Leuliette (27:50.366)
+oui oui oui, toujours, il y toujours. Genre là, moi j'ai dû mettre les 18N sur une app sur laquelle je bosse. J'ai Scaffold Ignite, en plus ils ont changé, ils ont fait les 18N Next. Et du coup maintenant leur truc de texte, ça prend en compte aussi les 18N et le style en fait. Du coup c'est vrai que même si vous ne l'utilisez pas au quotidien, en fait je m'en sers tout le temps, Ignite, juste je Scaffold un truc, je suis ouais c'est vrai ils ont fait ça comme ça, assez smart et je l'adapte.
+
+Baptiste (28:08.974)
+Décalque.
+
+David Leuliette (28:19.036)
+En fait j'ai jamais eu la chance de bosser sur une stack full ignite mais j'ai réglé la moitié des stacks pour lesquels je bosse, sont ignite compliant parce que y'a plein de solutions qui fonctionnent. Moi je contribue aussi, et ça je suis dans les corps contributeurs d'ignite, c'est vrai j'avais obligé de le dire. Non mais c'est que je me rends compte de certains trucs que je fixe parce que moi j'utilise moi-même, je tombe dessus, j'ai ah ça m'enroufle.
+
+Baptiste (28:44.71)
+J'avais juste à un truc pour remettre en avant Ignite une dernière fois mais un truc que j'ai découvert sur leur stack, tu parlais des 18N, j'en ai aussi sur Paydayer, ils ont une petite méthode, en tout cas un typage TypeScript pour inférer les clés de traduction. Donc en gros si vous avez un FR.JSON avec des trucs imbriqués à l'infini, ils ont un typage TypeScript qui infère ce qu'on a mis dans le JSON.
+
+David Leuliette (29:03.707)
+Ouais, ben... Exactement.
+
+Baptiste (29:15.224)
+Common et à l'intérieur de Common il y a Lib et à l'intérieur de Lib il a Title, TypeScript va savoir de lui-même dire ok tu as donc Common.lib.title. Ça c'est plutôt fort. Et je l'ai découvert sur Inai d'ailleurs.
+
+David Leuliette (29:24.732)
+Trop bien, j'avoue. Bah oui, c'est ça, parce que ça, tu regardes la tronche du code, fais... Moi, je suis pas math, je sais pas quoi, le mec chaud en TypeScript, fais habitable. Et en fait, c'est exactement pour ça que je les copie, en fait. Parce que, ouais, quand tu l'as pas, tu fais... Quand tu l'as, en fait, quand on te le retire, c'est là que tu te rends compte que, ouais, non, mais en fait, si j'ai pas ça, moi, je bosse pas. C'est comme Slyne Pratt hier et tout ça.
+
+Baptiste (29:29.742)
+pas compris aussi.
+
+Baptiste (29:37.294)
+C'est ça.
+
+Baptiste (29:45.26)
+Et donc l'avantage de celui-là, par exemple, à la fin, un NPM en 1 bill, et puis c'est de nous dire directement même s'il nous manque des trades ou s'il a des trades qui ne pas faites, c'est vraiment bien fait.
+
+David Leuliette (29:56.879)
+Ouais, ouais, c'est ça. Du coup, niveau graphique design, OK, donc tu fait appel à cette agence qui a fait Dark Mode, White Mode et tout un truc assez assez simple, mais efficace. On reconnaît tu vois, brand machin. Et donc, est que tu as mis en place des animations sur ta Delightful à la Duolingo avec des tadas et tout
+
+Baptiste (30:20.658)
+Non, n'y a pas grand chose. La seule anime, si on peut appeler ça une anime, c'est l'écran downbonding au tout début.
+
+J'ai une libe qui doit s'appeler Regnative Onboarding Swiper. Elle est plutôt efficace. On y met une photo, un peu de texte et ça permet de faire de l'animation avec des transitions de fond. Par exemple si le premier écran est rouge et le deuxième bleu, il va juste en swipant faire un beau petit dégradé.
+
+David Leuliette (30:37.135)
+et toi.
+
+David Leuliette (30:51.321)
+oui ok je vois. Je vois, je vois.
+
+Baptiste (30:53.486)
+C'est les seuls les trucs...
+
+David Leuliette (30:57.861)
+Avec des pages au quai requiert. Ouais, parce qu'il faut faire un peu d'éducation parce que toi, c'est pas des techos hardcore. C'est plus des gens qui la tech, ils utilisent, mais pas trop.
+
+Baptiste (30:57.966)
+C'est ce qui me permet d'on-boarder les gens.
+
+Baptiste (31:12.506)
+Je peux avoir Jean-Michel 40 ans qui comptable, comme Anne-Lise qui a 20 ans et qui étudiante et qui fait du vélo. Il a vraiment tout type de profils et du coup il m'a fallu vraiment faire un gros gros travail du X et du Y. D'ailleurs pour la partie du X j'ai aussi mandaté une autre société qui s'appelle...
+
+David Leuliette (31:20.955)
+Ouais ouais.
+
+Baptiste (31:34.702)
+vais plus le retrouver. J'ai eu beaucoup de retours qui me disaient que même si le design est joli, c'est quand même bien d'aller un peu plus loin. Si jamais je la retrouve, je la à Boutt Now, Rémi qui en fait un super boulot aussi pour la partie UX. que comme tu dis, même si on a des écrans non-bending, rien ne vaut quand même une belle UX parce que sinon les citateurs sont totalement perdus.
+
+David Leuliette (31:45.733)
+Ouais.
+
+David Leuliette (32:03.065)
+Ah oui, bah de toute façon, c'est pareil, lui, ça fait partie du business model en fait. vrai, si t'as un bon truc, c'est ça qui... Surtout sur Mobile en fait.
+
+David Leuliette (32:14.201)
+les gens sont habitués à avoir un... enfin ils sont pas habitués, ils savent sans le savoir. C'est un peu comme la première fois qu'on dit cartoon c'est dessin animé. fais mais ouah... t'en as menti toute ma vie. Et bah là c'est pareil en fait, les utilisateurs tu leur montres un onboarding un peu clangy ou je sais pas quoi, bah ils vont avoir 15 secondes d'attention. Plus maintenant les millennials dans la Gen Z. Ils ont pas d'attention. Ok du coup...
+
+Baptiste (32:39.246)
+Pour donner un exemple de ça, récemment j'ai eu un 3 étoiles, presque l'un des premiers 3 étoiles seulement sur le Play Store. Ça fait mal. Ou une appli gratuite de sans tracking.
+
+David Leuliette (32:48.573)
+ouais en notation, notation, 3 star. 3 star c'est... bah attends... ok donc attends, contexte, l'app est gratuite. Ouais. Y'a pas de tracking.
+
+Baptiste (32:56.098)
+Alors l'app est gratuite, il n'y a pas de tracking, il a pas de pub non plus, a rien du tout en fait. Pour les utilisateurs, moi je suis vraiment très très réglo. Pas de compte à créer, on peut télécharger tout ce qu'il faut sans créer de compte. L'applique génère des revenus seulement grâce aux courses organisatrices qui paient du coup pour y mettre leurs courses.
+
+David Leuliette (33:17.433)
+Ok.
+
+Baptiste (33:18.024)
+Sachant que je suis encore sur un mode de ramp-up, certaines courses, notamment par exemple les associations, là récemment je l'ai fait pour LudoHopital, c'est une course à Roubaix où tout est totalement gratuit. Donc l'appui est totalement gratuit pour nous les coureurs, les utilisateurs, et elle l'est moins pour les organisateurs.
+
+David Leuliette (33:31.042)
+Ouais ok.
+
+David Leuliette (33:38.137)
+Et là, il y a le patient 0, on va l'appeler Baptiste. Baptiste est charge lap.
+
+Baptiste (33:40.13)
+Et du coup, là, j'ai Daniel, m'a bâtissé. Et le mec, il met trois étoiles. Pourquoi ?
+
+Alors certainement à raison, je lui donne 100 % raison. Donc l'appli, comme je l'ai dit, V1, il n'y a que des écrans de conversion. V2, il y a maintenant des courses avec des analyses, etc. les écrans de conversion sont passés en deuxième phase. Et cette personne a mis un commentaire qui dit, j'aimerais dans la table barre, donc y a trois petites tables barre en bas, entraînement, courses et profils. Et en fait, la personne veut les entraînements en premier, sachant que
+
+Moi dans l'ordre, j'ai mis d'abord les courses. Donc elle m'a mis trois secondes pour pouvoir réorganiser les tables du bas. Donc c'est vraiment raison.
+
+David Leuliette (34:25.717)
+Bah vas-y, feature request, et tu peux faire payment support 100 euros. Si pour 100 euros, tu peux changer les tabs parce que Theo, c'est un mec, c'est un mec qui fait des vidéos YouTube et en bref, a fait un site qui s'appelle UploadSync et le Dark Mode en feature, c'est payant pour les devs. Et là, tout le monde lui a chié dessus en mode mais t'es malade et tout, tu fais payer le Dark Mode. Et en fait, alors que son truc est déjà gratuit, enfin pas gratuit, mais je sais plus.
+
+Baptiste (34:32.302)
+ça peut être ça.
+
+David Leuliette (34:55.372)
+crois que c'était peu uploading. Et la valeur qui délive est déjà incroyable. au bout d'un moment, lui en plus, c'est pire. a des frais serveurs et tout, machin. Voilà, mais là, pense que oui, ça se fait. En vrai, feature request, lifetime supporter, un payment. Mais après, faut mettre en place tout le paiement. C'est un peu de ta... Quoi que tu peux le faire avec Revenu 4 ?
+
+Baptiste (35:07.63)
+C'est l'immense, je y passer.
+
+Baptiste (35:21.838)
+Bon.
+
+David Leuliette (35:24.394)
+pense que ça se fait quoi ? Si tu te mets en tunnel et tout, machin, fais le vite avant parce que bientôt après tu pourras plus. Ça sera comme moi, vois. Du coup, ok, donc si I release et deploy, comment ça se passe ?
+
+Baptiste (35:38.616)
+Alors là j'utilise tous les outils de GitHub Moi je suis vraiment un fan de GitHub Action Donc j'ai pour la CI GitHub Action où je vais tester un peu de linting, un peu de pretier donc formatting
+
+David Leuliette (35:45.367)
+Ouais, pareil.
+
+Baptiste (35:55.286)
+Je lance mes tests, il y a vraiment beaucoup de tests sur l'app, on pourra en parler après mais moi j'ai beaucoup de conversions et de traitements de données, des choses qui ne pas visuelles, y a vraiment beaucoup de traitements et tout ça est testé et unitèrement et en end to end, donc ça c'est des tests qui sont lancés sur GitHub Action.
+
+David Leuliette (36:08.536)
+Right ?
+
+David Leuliette (36:18.122)
+Et tu dis ce que pour les end to end du coup ?
+
+Baptiste (36:20.422)
+J'utilise le Stacking Library et un peu de Playwright. Voilà, c'est ça.
+
+David Leuliette (36:22.934)
+Maestro ?
+
+David Leuliette (36:27.736)
+Ah ouais parce que tu as la version web, ok ouais. Ah ouais ok ouais, t'as déporté le... Parce que la complexité de faire du mobile c'est que du coup faut tester en mobile et du coup c'est un... enfin c'est... tricky mais là vu que toi t'as une expérience web, bah bah tu utilises la version web et...
+
+Baptiste (36:40.622)
+La majorité de mes calculs sont ceux de l'écran web. Je peux utiliser T-Rite et j'utilise T-Similarity pour, on va dire, peu, alors c'est pas vendu end-to-end mais des thèses d'intégration, on les appeler comme ça.
+
+David Leuliette (36:49.25)
+Ouais tout le reste
+
+Ouais ouais, moi j'sais pas, enfin j'ai des trucs, pareil ça dépend de quoi, mais ouais, tous les variants et tout, machin, ouais. Je vois.
+
+Baptiste (36:59.192)
+ça y'a un peu de geste pour le l'unitaire, je garde quand même les fondamentaux. du coup voilà, c'est la partie CI qui lance toute cette batterie de test et pour la partie release, j'utilise Expo en mode pour le build de l'image en fait, donc de l'IPA ou du...
+
+David Leuliette (37:04.568)
+Right ?
+
+David Leuliette (37:16.289)
+N'est-ce
+
+Baptiste (37:18.126)
+Et ensuite pour l'instant je sais qu'Expo le fait un peu automatiquement mais pour l'instant je le fais manuellement. J'aime bien faire la petite release note qui va bien etc. Donc je génère la release sur les stores et je télécharge le livrable et je le claque sur un...
+
+David Leuliette (37:34.679)
+Ah tu télécharges et tu drag and drop ? Ah t'es un malade toi, faut que je t'envoie un script. En fait tu fais... Attends je vais te l'envoyer tout de suite. Moi je fais yarn release et ce que ça fait c'est que ça bump la version... Je sais plus ce que ça fait en Alors on va aller voir.
+
+Baptiste (37:36.982)
+Ouais, pour l'instant je le fais comme ça.
+
+Baptiste (37:55.51)
+ça crée la vie sur ton ordre, sur ton poste.
+
+Je sais qu'Expo le fait tout seul maintenant, me semble...
+
+David Leuliette (38:02.631)
+J'ai un petit script en bash. Je sais faire du bash monsieur. Eh oui. Prompt, écho, would you like a release? Yes, no. Déjà, je demande est ce que tu veux une release. Pas mal. Ensuite, il fait un yarn version dash dash minor. En fait, je pourrais minor, major ou je pas quoi, mais bon, je fais tout le temps minor et comme ça c'est réglé. Du coup, il fait un GQ de package.json. Du coup, il l'update. Enfin, il lit. Non, ça, c'est pour lire la release.
+
+Baptiste (38:07.563)
+Annoncez-moi.
+
+Baptiste (38:12.014)
+Bonne
+
+David Leuliette (38:32.563)
+Et du coup il dit releasing version bla bla bla comme ça je vérifie bien que attention monsieur feedback feedback utilisateur ça vient dans le terminal. Ensuite je un yarn change log et donc change log c'est un paquet npm qui me prend tous mes commits depuis la dernière version et qui génère un change log. Et après je fais git add git commit git push donc là ça lit justement la version que j'ai update que j'ai lu avec GQ.
+
+Baptiste (38:49.262)
+Merci.
+
+David Leuliette (39:08.406)
+Et après prompt release production iOS Android. ce que ça fait, c'est ça fait un IA-Sbuild – auto-submit – platform iOS Android. Et du coup, je fais ça comme ça, je fais juste faire une release, boum, ça me prend le changelog.
+
+Baptiste (39:16.544)
+Voilà, c'est le tout sublime. Moi, je jamais mis en fait.
+
+Baptiste (39:21.449)
+iOS en origine, wall.
+
+Baptiste (39:28.462)
+C'est l'auto-submite que je n'ai pas encore mise. C'est assez nouveau, départ ça n'existait pas. Il faut que je le mette en place car a quelques petits liens qu'il faut faire quand même avec les comptes Apple Store et Android pour que ça se publie automatiquement.
+
+David Leuliette (39:43.723)
+tu l'as pas fait ? oui mais je sais plus parce que moi vu que je le fais tout le temps dès le début c'est le premier truc que je mets en place. en fait peut-être que tu as... Parce qu'après du coup c'est straightforward, je fais Yarn Release, boum, ça me fait le Change Log, après je vais dans le Change Log et vu que j'ai un script avec Recast, j'écris Change Log et ça me balance ça sur la GPT et ça me mode put un truc marketing pour envoyer aux équipes.
+
+Baptiste (40:10.286)
+Nickel !
+
+David Leuliette (40:11.702)
+Ben oui, moi je suis busy quoi, j'ai pas le temps quoi. Donc euh... Ok cool, cool, cool. coup, pareil, ouais, il toujours une partie manuelle. De toute façon, mobile, il y a toujours une partie manuelle. Mais quand tu merges sur main, master, est-ce que ça deploye ta version web direct ?
+
+Baptiste (40:28.096)
+Oui aussi, pour la partie mobile, là j'en ai parlé donc iOS et Android et pour la partie web, j'héberge tout ça chez CloudFlare. Donc ça génère la partie web, ça l'envoie chez CloudFlare et donc j'ai mon nom de domaine qui va bien là-bas. Ça me le met sur une... Je ne sais plus exactement le mot, web page, crois que ça me lance sur CloudFlare.
+
+David Leuliette (40:29.846)
+Oui.
+
+David Leuliette (40:51.414)
+Ouais ça doit être ça comme github, pages ou je sais pas quoi
+
+Baptiste (40:54.99)
+et du coup ça me le met, ça fait tout la partie 4. J'aime bien Callout Flair parce que pour le routing c'est un peu mieux foutu. Tu vois quand t'as des slash quelque chose sur Expo, GitopPages il se galérait un petit peu. Il faisait pas du routing sur le slash index.html, ça marchait un peu. Exactement.
+
+David Leuliette (41:12.264)
+Ouais, GitHub Edge c'est bien mais c'est pour la démo. Après, faut... Bah maintenant avec leur solution de hosting, je pense que c'est beaucoup mieux géré mais...
+
+Baptiste (41:20.906)
+Peut-être. Donc là je suis passé chez Cloudflare. J'ai mon app.payswire.com qui est hébergé là-bas. Et du coup ensuite j'ai mon app Next qui est aussi lancé par GitHub Action sur celles. Et du coup le lien se fait entre les deux après. Mais voilà.
+
+David Leuliette (41:34.678)
+Right ?
+
+David Leuliette (41:42.118)
+Ok, est-ce qu'il a un top 5 dans l'hybride que tu utilises ?
+
+Baptiste (41:47.104)
+Alors la première, la must de chez must, Gorom bottom shift, je sais que tu l'aimes, je l'ai vu il en un en haut.
+
+David Leuliette (41:52.661)
+Ah oui je suis sponsor en plus de Gorobotop je vais filer 130 dollars je crois je sais plus. Explique pourquoi, pourquoi, pourquoi, pourquoi.
+
+Baptiste (41:58.862)
+Je pense que c'est...
+
+C'est l'une des librairies les mieux foutues de l'écosystème, en tout cas à mon sens. C'est une bottom sheet, par exemple si je prends l'appli plan de Apple, le petit truc qui vient du bas où on peut avoir tout ce qu'on veut, soit une liste, soit des champs de recherche, etc. C'est hyper fluide si jamais on pose notre doigt sur l'écran du dessus, la bottom sheet peut se réduire, peut se fermer totalement, on peut la grandir, peut scroller.
+
+l'intérieur et tout la partie gesture est vraiment vraiment bien foutu.
+
+David Leuliette (42:37.065)
+Il a une flat list, ça marche sur iOS et Android.
+
+Baptiste (42:40.436)
+Exactement. Web aussi. Même si la dérivation disait que ce pas encore bien fait, moi ça marche très bien pour les besoins que j'ai.
+
+David Leuliette (42:48.021)
+Ok.
+
+Baptiste (42:51.119)
+Franchement moi c'est vraiment la libre que j'adore. Le chant par exemple si on a un chant dans la bottom sheet et qu'on appuie ça lève la bottom sheet pour pas que ça passe en dessous du keyboard.
+
+David Leuliette (43:02.047)
+Ouais plein de trucs comme ça que c'est un enfer. Ouais et si tu connais pas... Ouais moi j'ai connu sans donc j'ai dû faire sans et c'était un enfer. J'y arrive et maintenant heureusement qu'on a ce genre de trucs. Ok du coup bah top j'y t'en a pas eu une autre.
+
+Baptiste (43:10.926)
+...
+
+Alors ça c'est ma top 1, dans les autres que je m'étais un petit peu noté. C'est dans le domaine très spécifique qui est le mien. Ce que je pas dit, c'est que j'ai beaucoup de signes au GPS, aussi de la prévisibilisation de GPX. Un GPX, un fichier qui contient des latitudes, longitudes et une élévation. C'est comme ça que la GPS marche. Si on dit je veux aller à Paris, il va déjà mettre tous les points de comment
+
+David Leuliette (43:35.964)
+Ok.
+
+David Leuliette (43:39.568)
+Ouais.
+
+Baptiste (43:42.688)
+et du coup en fait il y une librairie pour manipuler les gpi qui s'appelle turf donc c'est at turf slash turf qui est absolument dingue pour manipuler par exemple je veux la distance entre deux points gps et ben elle le donne il n'y a pas besoin de sortir les radians etc donc cela
+
+David Leuliette (44:01.348)
+ouais, attends, attends, que moi j'avais dû le faire ça. Enfin j'avais dû le faire en même temps, moi c'était pas compliqué, c'était un truc entre deux magasins. Donc en vrai euh...
+
+Baptiste (44:12.186)
+Moi je m'en sers par exemple, vois si j'ai un tracé GPS, il se peut que le jour J, le tracé n'est pas le même. exemple le coureur il fait 10 mètres plus loin. bien grâce à Tor, par exemple, je sais snapper son point à lui sur le point de la course. Donc si la course, admettons, je vais prendre un exemple, c'est une ligne droite et que le coureur s'éloigne un petit peu, et bien grâce à Tor je vais savoir repositionner le point au plus proche du vrai segment de course. Et ça c'est absolument dingue parce que c'est des calculs qui sont complexes et avec Tor ça se fait très rapidement.
+
+David Leuliette (44:15.796)
+Ouais.
+
+David Leuliette (44:20.318)
+Ouais.
+
+David Leuliette (44:41.566)
+Ouais, ouais, je vois, je vois, ouais, je vois un truc un peu spécialisé, mais ouais, bah trop bien.
+
+Baptiste (44:44.942)
+C'est un peu spécialisé et j'allais dire juste en OPLIB qui me viennent, j'ai Ragnative Chart Kit pour faire des charts, des graphiques qui me plaisent pas mal. une qui est plutôt connue, Chart Kit, Ragnative Chart, donc C H A R T, KIT.
+
+David Leuliette (44:56.532)
+Tu es bien-comme, tcha-tcha-tcha.
+
+David Leuliette (45:01.844)
+Chartkit, ouais pardon, moi je connais pas du tout, je suis sur Victory Native, c'est une note.
+
+Baptiste (45:10.41)
+Alors elle me va bien, celle-là aussi je l'ai utilisée, mais en code de vue qui scroll, dans... En fait moi j'ai vraiment beaucoup de composants avec les doigts, enfin tu me diras c'est un téléphone, tu le fais pas avec les pieds, mais il y a vraiment beaucoup d'interactions quand même sur mes écrans et je trouvais que Victoria, des fois il perd un peu le contact, il y a des trucs un peu chelou.
+
+David Leuliette (45:35.987)
+Ça dépend quand est-ce que tu l'as utilisé. je sais que là j'ai pas trop... Parce qu'ils l'ont rebuild from scratch 0 et en fait en vrai il y avait Victoria avant et là il Victoria native-xl et c'est reboot de la libre et genre quand des fois tu tombes sur la doc et que tu fais pas gaffe tu mais c'est pas dedans et en fait non c'est qu'ils ont viré des features pour rebuild et voilà donc en fait peut-être que quand t'avais testé avant c'était pas si efficace que ça mais ouais je sais ça.
+
+Baptiste (46:00.664)
+Celle-là est liée avec Re-Antnative, Responsive, Line Chart. Elle est aussi balèze et je crois que même ces deux livres sont superposés. J'en ai un pour faire le chart et l'autre pour la ligne. Un peu comme si on veut visualiser les bitcoins ou autre. C'est un peu les mêmes genres de ligne.
+
+David Leuliette (46:25.421)
+Ok donc attends tu utilises Re
+
+Baptiste (46:28.686)
+Donc ça c'est très doux.
+
+du chart pour l'élévation donc c'est en Y que l'élévation et en X la distance et responsive line chart c'est une ligne que je vais mettre au dessus de ce chart kit parce que la ligne n'est pas très très bien faite de chart kit par contre la line chart est vraiment super bien fait on peut surtout récupérer plein de métadonnées sur l'endroit où le curseur il est on peut mettre un dégradé en dessous de la ligne par exemple il a des choses pas mal foutues avec ça
+
+David Leuliette (46:34.013)
+Ouais.
+
+David Leuliette (46:40.093)
+Ok ?
+
+Baptiste (46:59.92)
+donc en fait j'ai l'un sur l'autre, et c'est aussi surtout Compatibweb, parce que je crois qu'il a une des deux qui marche pas très bien sur le web.
+
+David Leuliette (47:09.584)
+Ouais oui ok ouais c'est ça, ok ouais.
+
+Baptiste (47:11.246)
+C'est mes deux bonnes libres aussi pour visualiser des graphiques.
+
+David Leuliette (47:16.639)
+Très bien, très bien. Est-ce que tu peux nous dire un moment difficile dans le dev de ton app et comment tu l'as géré ?
+
+Baptiste (47:26.766)
+J'ai un super exemple. MobX, on en a fait l'éloge tout à l'heure. C'est vrai que c'est cool, on peut manipuler de la donnée. Quand on la modifie à un endroit, tous les endroits qui l'observent sont reliés. Donc ça c'est très bien.
+
+Par contre, si on veut commencer à tester ou avoir de la logique très métier, je trouve que ça devient compliqué. Je donner un exemple facile. Moi dans le business de l'app, il faut faire pas mal de conversion, donc de minute en kilomètre, des fois dans d'autres unités. Par exemple, nous on est dans le système métrique, nous les Français, mais on a le système impérial pour les autres. C'est un bordel. C'est complexe.
+
+David Leuliette (48:03.602)
+Noi.
+
+Ah bordel. En plus c'est... c'est combien ? 1.33
+
+Baptiste (48:11.214)
+Alors 1,33 mais quand tu parles de miles en kilomètres par exemple mais si tu passes en yards et bien c'est pas, genre nous c'est 1000 mètres c'est un kilomètre et bien eux 1000 yards c'est pas un miles.
+
+David Leuliette (48:22.458)
+Mais attends, t'as combien de clients aux US ??
+
+Baptiste (48:24.542)
+J'en ai beaucoup aussi. Alors c'est pas US, moi c'est plutôt Royaume-Uni. C'est ça. Mais ouais, j'en ai quand même pas mal.
+
+David Leuliette (48:26.538)
+oui !
+
+David Leuliette (48:30.299)
+Ouais UK, ouais pardon, j'allais dire out of... ok c'est rigolo, oui parce que c'est des gens qui font le trail du nord et du coup ils repartent chez eux après...
+
+Baptiste (48:37.502)
+Exactement. J'ai même des courses à l'étranger. Alors là, c'est pas au Royaume-Uni, mais j'en ai à Barcelone, par j'en ai en Grèce. Il y a des courses qui utilisent... Là, j'ai eu... Alors ça reste la France, mais c'était la Guadeloupe. Ça va quand même assez loin dans le monde. Il n'y a pas que la France pour les métropolitains.
+
+David Leuliette (48:50.671)
+Ouais ok ouais, bonne niche, bonne niche. Du coup ouais, pour gérer tout ce merdier là, un enfer.
+
+Baptiste (48:54.414)
+Pour gérer tout ça, trouvais que c'était complet avec MobX. du coup, moi ce que j'ai fait, je reprends un peu des concepts de DDD, donc Domain Driven Design, qui dit c'est bien d'avoir des objets TypeScript, comme si demain on te dit de développer une app mais ni réinternative ni rien du tout, juste crée tes objets. Par exemple, j'ai créé une classe qui s'appelle Rays. Et la Rays, sait ce qu'elle a des méthodes utilisataires, exemple, donne-moi le nombre de kilomètres. Mais en lui filant des paramètres, par exemple, je ne pas en
+
+système impérial mais je en système biblique, elle va savoir faire les conversions. Donc ça c'est super parce que tu peux faire tes tests unitaires vraiment unitairement vu que c'est du code, il n'y a pas de librairie, il rien du tout. Et ce que j'ai fait, et ça c'était une complexité que j'ai eue,
+
+David Leuliette (49:26.545)
+Noi.
+
+Baptiste (49:40.074)
+Pour remettre dans le contexte, départ j'avais géré ça avec des fonctions, des constantes et tout, c'était du code invisible. du coup ce que j'ai fait maintenant, c'est que mon MobX ne me sert vraiment que pour stocker. Et j'ai des petites méthodes utilitaires qui me disent getDomainObject, donc par exemple j'ai un objet Race, MobX, mais j'ai aussi une classe Race en plain JavaScript, en plain TypeScript on va dire. Et quand je fais ma méthode .toDomainObject, ça me donne
+
+mon objet JS peuplé avec les bonnes données qui va bien et puis c'est lui ensuite que j'utilise dans ma vue. L'avantage de faire ça c'est que lui il est peuplé avec les bonnes données MobX et je sais le tester unitairement et faire toutes les conversions que je veux.
+
+David Leuliette (50:19.537)
+C'est marrant, je fais exactement pareil avec Legend State en Sans le savoir, je fais tout pareil. Et du coup tu peux changer de mode, tu drop mobics, tu mets un autre truc et hop tout fonctionne encore en fait.
+
+Baptiste (50:24.366)
+Et ça se fait si bien des choses comme ça.
+
+Baptiste (50:29.326)
+...
+
+Je vais utiliser des grands mots, on n'est pas exactement à cet endroit là, mais on peut parler des fois de hexagonal architecture. C'est vraiment de séparer le domaine métier, ce se pourquoi les clients nous payent, parce qu'ils ne nous payent pas pour faire du style, souvent ils nous payent quand même pour faire le cœur de leur business, donc vendre des produits, faire des courses à pied, etc. Et ce cœur du business, c'est bien s'il est dans une techno qui n'est pas dépendante d'un outil agnostique, qu'elle n'est pas liée à MobX, qu'elle n'est pas liée à quoi que ce soit.
+
+David Leuliette (50:57.071)
+Agnostica.
+
+Baptiste (51:01.872)
+du coup c'est comme ça que j'ai réussi à me dépêtrer du problème de conversion qu'il y en avait de partout des fonctions JS à travers tout et je me suis dit bah ok MobX lui je vais me faire des méthodes tout domain et qui me donnera accès à un objet JS pur et dans lequel là je peux faire ce que je veux
+
+David Leuliette (51:20.259)
+Et du coup comment t'as debug ce truc là ? Tu debug avec quoi ?
+
+Baptiste (51:23.638)
+Alors moi je n'utilise pas trop d'outils, j'ai IntelliJ avec le mode debug ou des fois je m'en sers un petit peu mais je pas trop d'outils spécifiques. Je ne pas si toi tu en as.
+
+David Leuliette (51:38.641)
+Ouais moi je suis console log, j'appuie sur J hop. Bah en fait là le truc que tu as avec Xposed50, t'es déjà sur 52 ?
+
+Baptiste (51:45.432)
+Ouais, m'en suis-tu s'assommer ?
+
+David Leuliette (51:46.893)
+ok, parce que là du coup ils vont drop console log et du coup ce sera que les devtools, la nouvelle norme...
+
+Je ne sais plus comment ça s'appelle, j'en avais plus envie de Mais bref, tap sur J et hop, ça ouvre Google Chrome et t'as accès au React EDF Tools en
+
+Baptiste (52:03.278)
+Ce que je pourrais donner comme conseil, ça m'a fait gagner pas mal de temps. Au début je voulais toujours coder avec mon iPhone ou mon iPad ou peu importe. Et je me suis rendu compte quand même qu'en étant sur le simulateur, c'est un peu plus simple de faire Ctrl R ou Command R pour reloader la stack. Parce que quand on est sur le mode natif, on est plus proche du device final mais je trouvais que c'était un peu plus galère. Donc si on est sur Max, c'est quand même cool d'avoir le simulateur.
+
+David Leuliette (52:30.755)
+ouais moi je fais les deux. Moi j'ai tout ce qui est storybook et tout sur le mac et tout comme ça je dépile et hop ça va hyper vite et je mets le téléphone. ça dépend pour sur quoi je bosse en fait. Souvent il y a des fois des semaines entières où je joue même pas, je joue jamais l'app. Je fais que du storybook et du test unitaire.
+
+Et après en fait je connecte et ça va hyper vite puisque déjà mon contrat d'API qui déjà fait, les composants j'ai déjà tous les variants donc en fait ça va hyper vite en fait si tu fais ça de façon méthodique.
+
+Baptiste (53:02.1)
+et je te donne un gros plus un sur le côté test unitaire parce que ça en fait c'est le meilleur outil de debug des fois à l'ancienne bah ouais des consoles log ça marche c'est bien mais si on peut comme je disais il cinq minutes commencer à exporter du code et quand il ya des bugs bah savoir le tester comme tu viens de dire aussi, tu gagnes un temps fou
+
+David Leuliette (53:19.897)
+bah oui. bah oui, moi c'est pareil, moi c'est un bug, je sais exactement. Vas-y.
+
+Baptiste (53:23.82)
+D'ailleurs moi j'ai des petits outils peut-être à donner, j'imagine que tu connais un mais il a un outil qui s'appelle Quokka et Wallaby qui sont...
+
+David Leuliette (53:32.862)
+oui mais Quokka.js ! Quand je fais des bootcamp, je le montre à tout le monde. Alors explique, qu'est-ce que c'est CocaJS
+
+Baptiste (53:39.022)
+...
+
+Juste sur l'écriture, que si les gens nous écoutent c'est un peu compliqué à écrire, pas juste ce C O C A, c'est Q U O K K A, donc pour Quokka.js et Wallaby W A 2 L A B Y. Donc c'est deux outils un peu similaires. L'un se lance en scratch, vous utilisez IntegJ ou peu importe. Donc on peut écrire du code et puis en fait on peut par exemple visualiser l'intérieur d'une constante. Par exemple si on a un objet on peut faire slash slash point d'interrogation et il va afficher le contenu d'une méthode.
+
+David Leuliette (53:43.823)
+Ouais. ouais. Ouais.
+
+David Leuliette (53:51.308)
+C'est très chouette.
+
+Baptiste (54:09.968)
+et voilà donc j'y viens il y aussi des petits carrés rouge et vert et Wallaby c'est ce qu'il fait Wallaby va permettre quand on écrit du code de prod et du test unitaire et ben soit côté code de prod s'il ya une ligne qui bug met un petit carré rouge ou si c'est côté test bah pareil le petit carré rouge à l'endroit précis qui ne va pas
+
+David Leuliette (54:11.407)
+et des petits carrés
+
+David Leuliette (54:30.511)
+Ouais.
+
+Baptiste (54:31.202)
+et on peut facilement, tu parlais de débuggage, peut facilement aussi débugger grâce au slash slash point d'interrogation à la ligne qui nous embête on va dire et ils nous donnent toutes les infos qui vaut bien et ça c'est deux outils...
+
+David Leuliette (54:44.463)
+C'est que je m'en sers, ça dépend. oui, moins, je sais pas, je ne pas compilé dans ma tête. Moi, j'utilise un ordinateur pour les tests techniques sur papier. Non, Non, j'ai un Macbook avec 64Go, c'est bon. Alors du coup, comment tu te formes au quotidien? Comment tu follow up avec l'écosystème? Parce que tu as quatre ans de stack.
+
+Baptiste (55:10.574)
+J'ai les Fidly, les FLUERS SS, j'ai tous ces outils là. Moi je trouve que ma meilleure source, c'est par exemple toi, le fait de suivre des gens sur Github.
+
+David Leuliette (55:29.972)
+ouais, ça c'est un nice hack. Oui, follow des gens sur GitHub.
+
+Baptiste (55:34.062)
+au moins tu vois ce que les gens font donc tu peux inspecter le code et puis te renseigner sur comment c'est fait je suis sindresaurus alors le mec il n'arrête pas mais ce que je trouve super intéressant c'est de voir comment il et qu'est qu'il utilise comme lib donc moi je me forme aussi grâce à ça beaucoup d'ailleurs j'aime bien aller voir du code tu tu disais t'es core-contributeur sur Ignite moi je le suis pas mais par contre je vais voir comment le code est fait je trouve que c'est la meilleure source d'apprentissage et de se tenir à jour
+
+David Leuliette (55:42.689)
+ouais, mais lui c'est une machine, lui...
+
+Ouais.
+
+Baptiste (56:03.982)
+Et après le réseau, les Slack, les Webly, ce genre de communauté.
+
+David Leuliette (56:11.49)
+ouais ouais, ça reste Slack et tout. D'ailleurs, gens qui sont encore là, faut me pinger où alors écouter le prochain épisode, et où, parce que je vais faire gagner comme l'année dernière une place pour Rack Native Connection, la conférence qui aura lieu Rack Native sur Paris en avril. ouais, c'est dans deux mois, c'est soon. Du coup, stay tuned. Je ne sais pas encore comment ça va s'organiser ce truc là, mais je sais que j'ai déjà mon truc de sponsorship.
+
+du coup après il faut que j'arrête ça donc voilà ça c'est fait est ce que du coup tu as un sujet que tu aurais aimé aborder qu'on n'a pas abordé
+
+Baptiste (56:41.966)
+...
+
+Baptiste (56:57.742)
+Pour parler d'une libe, c'est par rapport aux maps, les cartes. Sur React Native, c'est un peu la galère. faut des crées dans le chose. Maps, chez Apple, ça se fait un peu mieux, mais c'est quand même un peu la galère. Sur Paydeer, j'ai des cartes. J'utilise Expo Leaflet. Il a un gage, ne plus exactement la libe. Le nom de la libe, ça s'appelle Expo Leaflet.
+
+David Leuliette (57:06.237)
+ouais, !
+
+Baptiste (57:27.696)
+un petit hack qui génère une web view avec une eFrame de l'eFlip. Et du coup ça enlève toute la difficulté de...
+
+David Leuliette (57:33.677)
+Ok.
+
+Baptiste (57:38.728)
+rate limit, de google maps, de ce tu veux. C'est disponible sur web du coup, l'avantage, donc Android, iOS, web. Moi j'utilise ça. T'as des hooks, par exemple, quand le mec resize, quand la personne change d'écran ou elle sort de l'écran. Elle est quand même plutôt bien faite. Moi j'ai dû faire un fork, je ne sais plus exactement pourquoi mais j'avais une particularité qui m'embêtait. Alors elle est plus très active cette lib.
+
+David Leuliette (58:04.845)
+Ouais ouais mais en fait le truc c'est que trop cool franchement trop bien mais je pense que du coup avec useDOM ça va disparaître parce que maintenant en fait quand tu fais expo useDOM en fait tu peux embed du code du code web dans une apprec native. faut que je t'envoie useDOM il faut que je t'envoie c'est sorti avec le SDK 52. Et du coup je pense que t'auras plus besoin de ce truc là.
+
+Baptiste (58:24.206)
+C'est chouette.
+
+David Leuliette (58:36.134)
+Use DOM directive en fait, tu goûtes, tu peux mettre n'importe...
+
+Baptiste (58:37.324)
+Et c'est que pour du web ou c'est aussi pour du... Genre si tu compiles quelque chose avec un user, est-ce que ça arrive sur iOS ou Android ?
+
+David Leuliette (58:41.676)
+Euh bah tu t'en fous.
+
+David Leuliette (58:45.864)
+oui, c'est l'intérêt. Tu peux embed n'importe quel projet web. Ça marche. ouais, ça, c'est la folie. J'avais vu la démo par Cédric et en fait, lui, il avait mis carrément un canvas. Tu vois, il avait fait une app, tu sais, le Draw My Thing ou Draw My Life ou Draw My... C'est une app mobile qui était connue il a longtemps. En fait, tu dessinais et tu t'envoyais des dessins.
+
+Baptiste (59:11.563)
+Ok.
+
+David Leuliette (59:12.614)
+Et ben ça c'est... suis en fer en fait. Et ben là en fait il a fait un... Il en avait fait un avec un canvas HTML5 et ça marchait hyper bien. Du coup, ça, mindblow. Ouais. Ben en fait ouais c'est ça, tu prends n'importe quelle page web, tu mets use them, boum, terminé, ça marche en RackNative.
+
+Baptiste (59:15.086)
+...
+
+Baptiste (59:20.526)
+ça a l'air vraiment puissant ouais.
+
+Baptiste (59:27.798)
+Donc en fait, il génère une certaine WebView côté…
+
+David Leuliette (59:30.892)
+Ouais en fait c'est ça, je pense que c'est pareil que ce que fait Expo Lieflet, sauf que Expo Lieflet c'est une aberration un peu manuelle, je pense que t'as des trucs qui changent parce que je en train de checker le code, t'as vraiment une webview et du coup il doit impacter certains trucs, mais là du coup t'as accès direct à l'iflet web et du coup t'as plus de questions à te poser, tu dois lui envoyer des props et puis terminé Voici la prochaine feature request à ajouter.
+
+Baptiste (59:45.55)
+...
+
+Baptiste (59:54.222)
+Merci pour le temps.
+
+Baptiste (59:59.48)
+Ouais.
+
+David Leuliette (01:00:00.333)
+Je te mettrai quand 5 étoiles sur ton app. Trop bien, trop bien. Du coup, est-ce qu'il y a une... Tu pourrais nous parler d'une fonctionnalité que tu as développée, comment tu fait en fait ?
+
+Baptiste (01:00:03.566)
+Merci.
+
+Baptiste (01:00:18.958)
+Quand c'est pas dans ma tête, c'était les débuts de paysard, tout était dans ma tête et j'ai tout codé. Maintenant, qui se passe, le rituel, c'est que je vais souvent voir les clubs ou les organisations. Par exemple, le NTMF, donne un exemple très précis. Le Nortelier des Montes-Flandres, c'est une cour dans le Nord. Les personnes, voulaient que sur un tracé, on imagine une boucle,
+
+David Leuliette (01:00:26.412)
+Ouais.
+
+Baptiste (01:00:47.15)
+que tous les kilomètres, y ait le nom du kilomètre. 1, 2, 3, etc. donc moi ce que je fais, c'est que je vais souvent au feedback de ce genre d'utilisateurs. J'essaye, donc j'ai un panel, moi j'ai un groupe WhatsApp avec des gens qui veulent contribuer à Pay-Videos.
+
+David Leuliette (01:01:00.828)
+Ouais tu es on board dedans smart, smart.
+
+Baptiste (01:01:02.83)
+Exactement. du coup je leur dis, ok voilà j'ai une proposition de tel et tel organisateur, il me demande de faire ça, qu'est vous en pensez ? Donc dedans il a des hommes, des femmes, des vieux, des jeunes, plein de types de profils. Je propose cette feature en leur demandant si ça peut être utile pour eux. On débat 5 minutes et souvent je vais prendre les feedbacks et je la développe. Et donc là en l'occurrence c'est ce qui s'est passé. J'ai eu d'ailleurs un bug mais fonctionnel on va dire où je me suis retrouvé avec une course qui faisait 160 km, le Lille-Arts de l'eau.
+
+quand tu 1 2 3 4 5 en fait il y a trop de points sur la carte on voit plus rien du tout et donc c'est là où j'ai étendu cette feature en disant et ben ok pour les courses de par exemple plus de 100 km j'affiche tous les 5 km par exemple et tu peux pas savoir et du coup ça c'est le truc quand tu le délèves au début tu t'imagines pas du qu'il peut y avoir ce genre de même suite à un panel les gens pensent pas à tout non plus et donc c'est comme ça que j'ai développé ce truc
+
+David Leuliette (01:01:36.844)
+Bye.
+
+David Leuliette (01:01:45.035)
+Ouais ou tous les 10, ouais ok, typiquement tu peux pas savoir quoi.
+
+David Leuliette (01:02:00.874)
+comprends pas, faut juste mettre un point virgule sur une requête. T'as pas besoin de faire de test pour ça, Baptiste. Voyons. C'est juste un bouton. Franchement, t'as juste à mettre un bouton. C'est facile. Pour tous les gens qui disent juste... Moi, chaque fois qu'on me dit juste, c'est 10 000 euros.
+
+Baptiste (01:02:13.518)
+...
+
+C'est ça. Mais voilà une des features récemment que j'ai pu dev. Et donc après, ça suit le flot de ce qu'on s'est dit. J'ouvre mon super high-term, j'ouvre mon super IDE intelligent. Je développe mon truc, je fais mes tests quand il faut. Je mets pas des tests à tout bout de champ. J'aime bien mettre des tests sur les choses qui sont très business, mais choses qui sont des fois visuelles. Genre je mets du bleu à la place du rouge. Je vais pas m'amuser à tester ce genre de choses. Et voilà.
+
+David Leuliette (01:02:26.482)
+Meilleur.
+
+David Leuliette (01:02:41.68)
+Ouais ça non, Moi dans Storybook je teste tous les variants possibles et inimaginables et puis toutes les data des fixtures. C'est vrai que ça j'ai pas dit ? En fait moi j'extraque souvent les points d'API. Je fais des doomy data tu vois. Et du coup je les partage entre Storybook et Jest. Parce que je corrige pas là. ça dépend. Il y a certains trucs où je vois le résultat et certains trucs où je vérifie l'intégrité des données en fait.
+
+Baptiste (01:03:03.022)
+Ok.
+
+Baptiste (01:03:12.342)
+Ok.
+
+David Leuliette (01:03:13.355)
+Donc tu j'ai vérifié que dans un tableau on a bien 100 à la fin de la ligne, ça j'ai fait un test Jest mais par contre si il se design correctement, si il s'affiche correctement, ça je teste ça dans Storybook en fait. Du coup ça dépense deux différences quoi. Mais je checke pas si... ou ça dépense, des fois je checke dans Jest est-ce que tu as bien ce texte là pour être sûr que ça rende quoi. Je vais pas commencer à tester tous les textes parce que sinon on en faire quoi.
+
+Baptiste (01:03:38.062)
+...
+
+David Leuliette (01:03:41.744)
+Trop bien, trop bien. À ton avis, qui c'est que je devrais inviter ?
+
+Baptiste (01:03:47.37)
+Alors j'ai une proposition à te faire, pense que tu le connais, il s'appelle Jonathan d'Uberville, c'est un de mes mentors quand moi j'étais chez Octo, alors au travers Silicon Salad, j'ai eu toi, au travers Inéat, on a eu le fameux Uber et donc moi j'ai eu la chance de travailler chez Octo Technologies.
+
+David Leuliette (01:04:01.561)
+oui.
+
+Baptiste (01:04:03.872)
+Et il Jonathan Duberville qui a fait une réacnative. C'était pour la réunion. C'était à l'époque du Covid, une appli qui gérait en gros de la vente en ligne. Je ne pas en dire plus. Il en parlera si il souhaite.
+
+David Leuliette (01:04:25.034)
+Et bien,
+
+Baptiste (01:04:40.524)
+Alors le bac, ça va peut-être en faire froisser certains mais je vais bien aimer ça, c'est du Next. En fait je trouve que la Next, avant je faisais du Nest, c'est de bien prononcer les choses, mais je faisais des API en Nest, je refais toujours un d'ailleurs.
+
+Ce que j'ai bien aimé avec Next, c'est qu'il a vraiment une bonne gestion du cache. n'ai pas besoin de donner très... Par exemple, si je fais une modification, n'ai pas besoin qu'elle soit en ligne dans les deux minutes. donc, y a une très bonne gestion du cache avec Next et Vercell. Et en fait, gère mes API comme ça. Donc, je suis en mode app-router. Je suis sur le nouveau format de...
+
+David Leuliette (01:05:17.001)
+L'oeil.
+
+Baptiste (01:05:18.062)
+et je trouve que le bac est simple. Alors ce que j'aime moins chez Next, mais c'est peut-être pas l'objet d'ici, c'est leur convention de fichier, de nom, etc. Ça fait toujours un petit peu friser de savoir exactement quel nom il fallait mettre. Je trouve que c'est pas très Devex friendly on va dire, mais moi j'aime vraiment bien cette stack, elle fonctionne.
+
+David Leuliette (01:05:42.151)
+Et tes data, sont où du coup ?
+
+Baptiste (01:05:44.118)
+et mes data sont sur un Mongo Atlas donc en fait j'ai une petite libre Mongo que je vais instancier dans un singleton sur mon Next donc j'ai qu'une connexion par instance on va dire de mon service et lui il va se connecter à un Mongo Atlas pour récupérer la data et tout le backoffice est en Next aussi franchement ça marche quoi
+
+David Leuliette (01:06:01.929)
+Et puis terminé.
+
+David Leuliette (01:06:06.289)
+oui bah oui bah attend un second... Oui si si ça marche bien. Moi je que...
+
+Baptiste (01:06:09.344)
+Des fois, j'ai vu beaucoup de threads de personnes qui disent que je fais du Next et Next est pour du Front, je ne pas pourquoi on fait du Back avec ça. C'est vrai que je ne m'attends pas le site Laurent Marlin sur du Next, mais en fait ça marche.
+
+David Leuliette (01:06:17.38)
+bah...
+
+Ouais bah c'est ça, c'est toujours ça quoi. C'est toujours pareil, bah coucou tu es tout seul mec, j'ai pas le time, j'y pite, il a combien, 10 000 personnes qui utilisent le truc, bah voilà je suis content quoi. J'ai pas besoin de plus que le bon outil pour... la bonne techno pour le bon usage. Eh c'est beau ça hein.
+
+Baptiste (01:06:34.406)
+Exactement. Et d'ailleurs, tu pour donner un peu de chiffre, j'atteins un peu plus de 30 militateurs maintenant. Tout tourne très très bien sur un Next. Je suis sur Versel en 0. Je ne paye pas Versel, je n'en ai pas besoin pour l'instant. Cloudflare, presque pareil. Pour la gestion des images aussi. Les GPX, les fichiers de tracés GPS. Donc en fait, l'appli est relativement peu coûteuse parce que je pense que comme tu viens de le dire, il faut choisir les bonnes techno pour le bon besoin.
+
+...
+
+David Leuliette (01:07:03.89)
+Ouais c'est Ouais puis c'est même c'est by design quoi. design t'as dit fuck it, il n'y pas d'useurs, il n'y a pas tout ça, c'est bon quoi. Tout le monde a tout, c'est ça quoi. C'est dès que tu limites les features, ça simplifie pas mal de choses quoi. Cool donc alors si les gens, les coureurs parmi nous, ils veulent se maintenir, eh si, pacevisor, p-a-c-e-v-i-s-o-r, téléchargez-le, mettez-lui 5 étoiles parce que Baptiste il est triste.
+
+Baptiste (01:07:30.286)
+Coucou !
+
+David Leuliette (01:07:33.189)
+quand on lui met trois étoiles alors que c'est Mettez cinq étoiles et mettez mettez quoi dans le commentaire ? Mettez que vous...
+
+Baptiste (01:07:34.752)
+En bon coup.
+
+Baptiste (01:07:41.119)
+Pace Visor m'a aidé à conquérir ma prochaine nouvelle course et j'ai su me surpâcher.
+
+David Leuliette (01:07:46.128)
+C'est ça, ou avoir des six packs pour cet été et ou autre chose pour vous demoiselles, je ne sais pas. Trop bien du coup, Pais Visor, où est qu'on peut retrouver Baptiste sur les internets?
+
+Baptiste (01:07:50.222)
+Le seum en physique.
+
+Baptiste (01:08:00.918)
+Alors moi je vais toujours sur mon internet personnel donc tiste-iste.io sur github tiste-iste sur xtiste-iste et voilà
+
+David Leuliette (01:08:13.896)
+c'est vrai que... parce que c'est cher, c'est 40 balles lors de l'aumentiste.com T'avais pas chopé ça justement quand t'étais en stage avec moi ?
+
+Baptiste (01:08:21.774)
+Mais...
+
+Je crois que c'est toi qui m'a bien influé à faire ce genre de congés.
+
+David Leuliette (01:08:28.04)
+Ah bah c'est possible, je savais pas que ça allait prendre 40 balles, ça commence à coûter, tu vois. Moi j'ai un point FR, c'est 12 balles. Après c'est foutu, mais bon, voilà, il faudra plus d'utilisateurs pour payer tes noms de domaine, voilà, c'est ça. Ok, en tout cas, Baptiste, ravi de t'avoir, et nos amis d'internet, on se retrouve à la prochaine. Ciao !
+
+Baptiste (01:08:39.63)
+Exactement.
+
+Baptiste (01:08:50.094)
+Salut, merci David.
+

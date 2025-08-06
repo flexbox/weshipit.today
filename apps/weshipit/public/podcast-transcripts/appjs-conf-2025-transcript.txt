@@ -1,0 +1,1199 @@
+David Leuliette (00:01.606)
+Bonjour et bienvenue dans le Cross Platform Show, l'émission qui explore les technologies basées sur Rack Native et le monde du développement mobile en général. sommes en juin, on revient de Pologne où c'était App.js. Comment ça va les amis ? Présentez-vous succinctement chacun puisque personne vous connaît. Allez, on va commencer par Gabriel, c'est parti.
+
+Gabriel (00:29.838)
+Gabriel, développeur mobile depuis un petit moment, j'ai commencé avec native en 2017, fait du freelance, surtout pour accompagner des startups ou des scale-ups à développer soit leur première app, soit les terres sur une app déjà existante et leur éviter un peu les bêtises par lesquelles je suis déjà passé.
+
+David Leuliette (00:53.11)
+Et c'est quoi ton titre exact ? Je me suis demandé juste avant l'épisode. T'es full stack ?
+
+Gabriel (00:57.418)
+Il n'y a pas de titre, c'est moi qui crée mon titre. C'est rare que je fasse du full stack, je peux faire du back end sur du node mais en général je raccompagne plus sur du mobile. Donc ouais, mobile developer.
+
+David Leuliette (01:07.526)
+Ok cool, on est aussi accompagné de Matisse, CTO de Eclos.
+
+Matthys (01:17.519)
+CTO Mobile et Clo. Est-ce qu'on peut avoir deux CTO ? On n'a toujours pas la réponse. Et de mobile, développeur mobile depuis 4 ans, un peu plus de 4 ans oui.
+
+David Leuliette (01:29.333)
+C'est ça qu'on a eu dans l'épisode numéro 6. Je ne sais plus. peu du genre... Et Ludwig, comment ça va depuis l'épisode numéro 1 ? C'était l'épisode numéro... Ouais, l'épisode numéro 1. Représente-toi ! Qu'est-ce que... Qu'est-ce que tu as évolué depuis
+
+Ludwig (01:39.576)
+Bah... épisode numéro un, c'est ça, ouais. Bah, développeur mobile aussi, toujours freelance. Je n'ai pas évolué, je travaillais toujours pour, en ce moment, Stadion, une boîte spécialisée dans le sport, on travaille sur des applications mobiles comme celles de Liverpool, Newcastle...
+
+David Leuliette (02:00.277)
+et les autres. Et les autres sont confidentiels. Cool. les amis, merci de se joindre à nous. Voilà, donc le plan c'était cette année, parce que vu qu'on va chaque année sur Krakow pour assister à la conférence à BS, cette année on s'est dit, allez, on fait une French Acker House. Voilà, on était quatre pour aller à la conférence la plus importante du monde du Rack Native, je dirais. Est-ce que c'est la plus importante ?
+
+Ludwig (02:29.833)
+C'est la plus grosse actuellement.
+
+David Leuliette (02:32.981)
+500 personnes ? Pauline nous avait dit qu'il y avait à 450 cette année. Donc c'était la best world ragnative. Donc c'est un épisode un peu spécial, on va parler des trois jours, les moments qui nous ont marqués en espérant vous donner envie d'y aller l'année prochaine et de faire une hacker house à combien ? Huit personnes cette fois-ci On verra.
+
+Matthys (02:36.229)
+450 cette année.
+
+David Leuliette (03:02.139)
+On verra, on verra. Donc on va commencer par le 28 mai.
+
+Moi et Mathis on a eu la chance... non on était à trois ! J'ai zappé ! Workshop performance, Ludwig, parle-lu ton setup au workshop performance. Qu'est-ce que tu as appris
+
+Ludwig (03:20.737)
+Alors j'ai appris que quand on voit des instructions par email pour installer Xcode 16.3, fais-le avant le workshop, pendant, parce que le réseau n'est pas forcément capable de supporter tous les gigas téléchargés.
+
+David Leuliette (03:36.181)
+J'avoue, j'avoue, j'avoue. On le dit. On le répète avant le début du film. On le redit pendant la pub. Mais préparer le setup, c'est toujours important. Ouais, moi ce que j'ai retenu, c'est plus le stand. Il falloir que tu me donnes les reviews. Enfin, mettra dans les notes de l'émission le même parce que ton stand, il est incroyable. Il recharge en même temps, non ? Ton téléphone.
+
+Ludwig (03:44.15)
+prépare ton setup.
+
+Ludwig (03:48.631)
+par
+
+Ludwig (04:04.693)
+tu parles de... Ok, mon Stan. donc toi tu retiens en fait ce petit appareil Belkin qui est capable de recharger... ton téléphone.
+
+David Leuliette (04:15.313)
+C'était super parce que vu que tu laisses le téléphone ouvert toute la journée, c'est quand même utile.
+
+Ludwig (04:21.939)
+Ouais, j'avoue, j'étais bien équipé avec mon écran portable. Un professionnel, mais qui pouvait pas lancer le projet. Si, si, si, une fois que j'ai téléchargé toutes les sources et tout, c'était bon. Mais j'ai ramé au début.
+
+Gabriel (04:29.133)
+Merci.
+
+David Leuliette (04:30.052)
+T'as pas pu lancer le projet, pourquoi ?
+
+David Leuliette (04:38.886)
+Ouais t'as ramé parce que t'avais pas suivi les conventions. Moi j'ai un peu ramé aussi parce que à performance fallait faire le build, il fallait télécharger tout, lancer l'appl... Moi j'ai utilisé que... J'ai pas fait Android hein ! Mathis au final t'avais fait Android ou pas ?
+
+Matthys (04:58.789)
+Euh non, j'ai fait que iOS aussi parce que Android Studio ça prenait trop de place et c'était 15 gigas pour le télécharger.
+
+David Leuliette (05:06.714)
+oui c'est vrai, c'est vrai, c'est vrai.
+
+Ludwig (05:07.574)
+Pareil, problème. Moi j'ai fait que Android, parce que quand t'as des problèmes de performance, c'est sur Android et c'était un workshop sur la performance.
+
+David Leuliette (05:17.47)
+Ouais c'est ça et donc on a parlé de vraiment plein de choses Moi ce que j'ai retenu aussi c'était le calcul de... Enfin c'était vraiment intéressant mais je pense que une demi-journée... Bah pour moi je pas ce que vous en pensez mais c'était pas assez quoi On a quand même vu des trucs sur le FPS Comment débugger les listes Comment débugger les maps Ça c'était rigolo ça le truc de la map Comment profiler... Utiliser le profiler avec commande I
+
+Alors maintenant je sais lancer instrument sur Xcode, j'avais jamais ouvert ce truc là. Mais ça prend.
+
+Ludwig (05:56.758)
+Après ce qu'il faut noter c'est que c'est un workshop qui était aussi accessible, géré autant pour les débutants React Native que les experts. Parce que ça a balayé très très large, on est parti comme tu le disais au début du nombre de FPS donc pourquoi la performance est importante, quand tu bloques le JS thread, qu'est-ce qui se passe sur une animation qui est gérée par le JS thread, il freeze. Et du coup on a parlé du High Thread, des animations avec Reanimated, donc c'est vrai qu'on a balayé de...
+
+du début jusqu'à la fin, jusqu'à comment faire une trace des performances Android et iOS.
+
+David Leuliette (06:34.067)
+voir les slices du nap sur Xcode pour voir si ça en fait si vos views elles sont flatten ou pas on a vu les SVG voir comment si c'est inclus avec plein de petits éléments ou juste un seul on n'a pas parlé... si on a parlé à la fin il restait 10 minutes et l'un des intervenants je ne sais plus comment il s'appelle on retrouve à son nom il a dit
+
+Bon alors j'ai dix minutes pour parler du React Compiler, c'est bon ça va bien se passer, je vais pouvoir en parler. Bon au final ça a débordé, on est arrivé en retard pour aller manger. Et le truc que j'ai retenu, c'est que si on veut skipper le React Compiler, on peut utiliser la directive use no memo tout en haut de notre composant et hop, si on a activé le React Compiler ça ne va pas.
+
+les optimisations du Rack Compiler. Je ne savais pas du tout.
+
+Ludwig (07:37.897)
+Oui. Nous ont aussi dit qu'eux ils utilisaient déjà le compiler en production et que pour le moment tout allait bien. Alors que je crois que c'est encore expérimental sur la doc de Expo et de React Native.
+
+Gabriel (07:51.925)
+Ils ont vu des gains sur la période de leur app ? Ou ils n'ont pas mesuré ?
+
+Ludwig (07:56.693)
+Ah c'est sûr, y a quand même des gains de performance qui sont out of the box, c'est gratuit, t'as juste à l'activer.
+
+David Leuliette (08:05.135)
+Après je pense que oui, il faut tester, voir... Inch'Allah ça fonctionne. Donc l'après-midi on a bien mangé, après l'après-midi... Mathis, t'as fait quoi comme workshop ?
+
+Ludwig (08:11.572)
+Hum.
+
+Matthys (08:19.171)
+IAS Donc maintenant on sait la différence entre les branches et les channels
+
+David Leuliette (08:27.794)
+On des de prêts pour de EAS.
+
+Ludwig (08:32.006)
+Faut que tu nous en dises plus, c'est quoi la différence du coup entre les branches et les channels ?
+
+Matthys (08:35.107)
+Il n'y en a pas, une branche, cinq Chanel, il y en a trois, production, staging, développement et on ne pas en ajouter de plus et il en a que trois.
+
+David Leuliette (08:35.257)
+Vas-y Didou !
+
+David Leuliette (08:46.862)
+Si vous n'avez pas dit que les channels, pouvez en avoir 1000, attend les branches ou les channels, vous pouvez avoir plusieurs channels ou plusieurs branches.
+
+Matthys (08:53.763)
+En fait tu peux mais elles sont tout le temps liées à... Tu peux avoir plusieurs branches mais elles sont tout le temps liées à ces trois channels. Tu peux pas créer de nouveau channel.
+
+David Leuliette (09:03.218)
+En vrai dans la vraie vie c'est déjà tellement compliqué de se synchroniser avec les moldus qui font pas de tech et qui savent pas c'est quoi prod, enfin preview et dev que du coup si tu fais wetmill channel les gens ils vont pas comprendre quoi. Après si on a vu comment in app tu pouvais changer directement de channel ou de branche depuis ton app quoi. Genre t'as un toggle tu dis bah ouais là un peu comme font vrzel ou netlifly tu ils font du... quand tu push ça te crée une instance complète de ton site web.
+
+à base de... Heroku, c'est pareil, ça te fait pr1234.heroku.app et à chaque fois que tu pushes, ça te génère une nouvelle version de ton site. Là, c'est pareil pour les app mobiles. Mais force est de constater que dans la vraie vie... Je sais pas, moi je travaille pas avec des équipes de QA gargantuesques, c'est plus Ludwig, toi qui pourrais nous dire là-dessus mais...
+
+Ludwig (09:54.227)
+Allez.
+
+David Leuliette (10:03.555)
+Je pense qu'Avarie...
+
+Ludwig (10:03.668)
+La vérité, c'est toujours compliqué, les channels, les branches, même si par exemple on peut installer le Expo Dev Client sur ton app pour que quand tu le lances, tu puisses choisir par exemple la branche que tu veux récupérer. ça va trop télécharger un bundle et tu vas faire tourner une branche particulière. Les QA sont toujours pas très très à l'aise avec ça. Et je sais aussi qu'Expo a mis à jour son dashboard. Maintenant, la moyen de visualiser
+
+Ok, je suis sur le channel, par exemple, Develop ou Preview. Quelle est la branche qui utilisée sur ce channel ? On peut le visualiser maintenant sous forme de petit diagramme, mais ça reste toujours un peu compliqué. Quel est le code ? Quelles sont les features qui sont sur cette branche particulière ? Si t'as pas des conventions de nommage très précises, ça reste toujours un peu difficile.
+
+David Leuliette (10:50.885)
+Ouais c'est ça. Je pense que ça peut être très utile pour des vraiment grosses grosses boîtes où t'as plein de gens. euh... Ou alors euh... Je sais pas. J'ai pas encore eu personnellement l'occasion de diguer ce truc. Mais ! Si vous avez des problèmes avec votre chaîne et vos branches, vous savez que vous pouvez appeler Wishipittoday, on sera ravis. Y'a un client il nous a dit, les gars vous allez trop vite ! Trop fier ! Franchement en vrai, trop fier. Je suis trop fier de ce qu'il nous a dit ce matin. Euh voilà et du coup, Gabriel pendant ce temps là t'étais où ?
+
+C'est pas avec nous au workshop !
+
+Gabriel (11:21.196)
+Bon, pas au workshop, je suis resté tranquillement à Airbnb pour bosser pour mon client, ce qui était efficace. Et ça y note, mais j'ai appris que All Settled, promise d'être All Settled, n'est pas supporté sur Hermes. Donc si jamais ça peut éviter un peu de temps de recherche, qui compte, écoute.
+
+David Leuliette (11:31.664)
+eeeeuh
+
+David Leuliette (11:42.916)
+bah voilà, ça tu vois t'as quand même appris un truc même si tu faisais pas des workshops t'as appris quelque chose. J'ai fait ton propre workshop, excellent. Excellent, donc c'est le point saillant, je dirais un truc des workshops. Moi ce serait command I pour lancer les outils d'instruments de débugs sur Xcode. Logic ce serait quoi, t'as un truc du workshop à retenir
+
+Gabriel (11:47.724)
+Je fais mon propre workshop.
+
+Ludwig (12:10.674)
+Sur la performance, a vu que quand tu utilises React Native SVG, que tu faisais le render du component, d'un point de vue natif, tu vas rendre chaque élément, le pass, le circle, le rectangle, de manière individuelle, alors que si tu utilises Expo Image, ça te fait un seul et même élément natif. du coup, pour des problématiques de performance, c'est très très bien de faire ça, tant que tu n'as pas besoin de faire des animations ou quoi que ce soit avec ton SVG.
+
+David Leuliette (12:38.472)
+ou de modifier la couleur et ou si ton SVG il est gargantuesque cool et Mathis tu as un truc ce serait quoi ?
+
+Matthys (12:46.816)
+Je sais plus quel est l'outil où tu peux voir tout tes screens empilés pour voir tout ce qui se passe avec les jeux qui sont rangés.
+
+David Leuliette (12:54.144)
+bah c'est ça, c'est euh... Attends, je l'ai là. Je vais... Je vais copier l'image et je vais la partager sur Twitter. Du coup les gens, si vous voulez voir qu'est-ce que c'est, faut aller voir sur X slash... ça fait une caméra, zut. Euh... Il y a les... Il faut aller dans...
+
+Ludwig (12:58.091)
+sur Xcode.
+
+David Leuliette (13:18.069)
+dans Xcode. Alors c'est la petite spray et une autre icône. C'est très compliqué à trouver. Moi je sais que j'étais déjà tombé dessus au random mais à retrouver... Je pourrais pas vous dire. Hop c'est bon, c'est partagé. Donc super.
+
+Ludwig (13:35.585)
+J'ai un petit truc sur la vue avec Xcode. Pendant le workshop, ils nous ont expliqué que tu avais le view flattening. Donc en gros, si tu fais un immense arbre avec plein de views qui sont imbriquées les unes dans les autres, quand tu vas regarder sur Xcode, tu ne pas voir 10 views, tu vas en voir seulement une, parce que du coup, on est capable d'aplatir toutes les vues, d'emerger tous les styles ensemble.
+
+David Leuliette (13:40.303)
+Ludwig (14:02.755)
+afin d'optimiser les performances. Ils nous ont parlé aussi du re-parenting, c'est-à-dire que quand par exemple t'as un arbre de composants et que c'est un enchaînement de parents-enfants, maintenant on est capable, si ça fait sens, de les rendre frères, donc siblings, plutôt qu'avoir trop de child-run.
+
+David Leuliette (14:24.271)
+l'on
+
+Ludwig (14:26.799)
+Donc c'est des optimisations qui sont faites out of the box maintenant par React Native. Et c'est plutôt cool. Et si on veut opt-out, ils nous ont dit qu'il fallait utiliser collapsible, false en props, et comme ça on respecte la hiérarchie.
+
+David Leuliette (14:40.367)
+C'est vrai qu'il y avait ça aussi. Cool, oubliez pas Collapsible Falls sur les views. Voilà, si vous tombez là-dessus un jour, dites, hum, à quoi ça sert ? Maintenant vous saurez. Donc maintenant on va passer au jour 1 conférence. Donc généralement, tous les ans il a une keynote. Elle est stylée. Là c'était Charlie et John cette année. Il a un truc que j'ai retenu, ce qu'a dit Charlie, c'est à la prochaine App.js conférence.
+
+combien d'applications expo vous aurez sur votre home screen. trouvais ça intéressant parce qu'il a partagé un screenshot de son home screen malgré les 200 000 emails non lus et les 4000 messages iMessage non lus, il avait quand même un certain nombre d'applications, plus de la moitié peut-être, je ne sais plus, d'applications faites avec expo. Et en gros il disait que oui dans le futur il y a vraiment eu un point d'inflexion au nombre de downloads
+
+d'Expo il est vraiment skyrocketing, en a eu d'un million, en a eu plein d'un million en 2025 donc certains diront que c'est à cause des CIs mais en vrai ça prouve quand même quelque chose et notamment il a parlé de BlueSky qui avait hit le number one sur les stores, Phantom qui a hit le number 4 sur les stores, party full, y en avait plein, moi j'avais plus l'impression que c'était
+
+année une année de consolidation sur tout ce qu'ils ont annoncé plutôt qu'une année de new features incroyables comme ce qu'on a vu avant qu'est que vous en pensez gabriel par rapport à 2024 2023 j'ai plus la première année qu'on s'est vu
+
+Gabriel (16:26.175)
+Là après le truc c'est que cette année ils avaient déjà annoncé pas mal de choses avant donc ils n'ont pas gardé l'effet de surprise de on garde tout pour App.js et on annonce comme ils avaient pu le faire des fois par le Donc après est-ce que là c'est consolidation ou pas je sais pas, il y a déjà même pas mal de trucs qui sont sortis qui sont assez cool. Même le fait qu'ils soient passés c'est recommandé maintenant si je pas de bêtises sur la doc ragnative.
+
+il te conseille plus de passer par expo donc plus tu en vas passer plus tu auras d'app là dessus et c'est de plus en plus simple de bider une app mobile maintenant grâce à ça et toutes les... on sait plus c'est quoi la stat mais beaucoup de boîtes qui se lancent maintenant le de facto c'est du ragnatif donc plus ça va et plus il en aura donc histoire du home screen ça m'étonne pas que tu en aies beaucoup plus je pense pas que ça devienne la norme ou en tout cas que ce soit la majorité de tes app là dessus mais clairement ça en aura de plus en plus
+
+David Leuliette (17:22.926)
+Ouais ou alors t'as des trucs vraiment spécifiques... Moi je sais que j'en ai plus.
+
+Gabriel (17:26.677)
+ça ne pas tous les besoins. Si tu fais un jeu réclamant, on ne pas sur du rack native. En tout cas, si tu fais un jeu 3D hyper complexe tout, beaucoup d'apps en vrai ça fait bien taf et si tu es bien faire les choses et que ton... ! T'optimises bien. Tu ne pas discerner une app rack native d'une app native.
+
+David Leuliette (17:32.474)
+oui, oui.
+
+David Leuliette (17:46.957)
+plot twist all apps are crud je sais plus qui disait ça mais en gros toutes les apps c'est des crud ouais exactement donc et vous les amis Mathis tu retiens quoi de la keynote
+
+Matthys (18:04.895)
+J'ai plus le détail complet de la keynote, à part franchement toutes les notifs de Charlie.
+
+Ce que j'ai retenu, c'est qu'il a beaucoup d'apps sur Expo, de toute façon on le voyait déjà sur le site d'Evan Bacon que toutes les grosses applications des stores Burger King, Discord, c'est avec Expo.
+
+Matthys (18:28.771)
+D'ailleurs on a même vu un mec faire développer Discord
+
+David Leuliette (18:28.813)
+...
+
+il y avait Burger King, y avait plein d'apps sur le truc des Van Bacon. T'as été censuré par la police de... c'est bon, c'est bon. Vas-y, vas-y.
+
+Matthys (18:38.333)
+Voilà. c'est bon, je suis de retour. Du coup, je disais, toutes les grosses apps sont sur Expo et on a même vu une personne en train de développer Discord en plein milieu de la conf.
+
+David Leuliette (18:51.132)
+oui ! On a vu, on sait, on sait, on ne dira pas les noms mais on sait l'exclu que Discord c'est Feraknative, on a vu un développeur travailler dessus in situ, on a fait du shoulder surfing ça s'appelle. Il en a qui font du vibe coding et bah nous on fait du shoulder surfing. Cool, super ! Et donc après il y avait plusieurs sessions.
+
+Ludwig (18:52.526)
+Bonne
+
+David Leuliette (19:17.161)
+notamment Evan, ça va parler nous à l'architecture, Kim qui était incroyable aussi. Moi, le talk que j'ai préféré, c'était le dernier dans le slot du matin, c'était sur Radon, nous présentait, c'était un talk assez générique, je veux dire, qui présentait l'outil, l'idée au Radon. Radon, c'est un plugin qu'on met dans VS Code et ça transforme notre VS Code en
+
+développer des apps mobiles, RecNetvis spécifiquement. J'avais essayé au tout début quand c'était en bêta mais c'était pas encore super abouti et là ça m'a fait une dessus et j'ai trouvé ça très très cool Ludwig, toi tu utilises Radon au quotidien il me semble ?
+
+Ludwig (20:15.917)
+J'essaye de l'utiliser au quotidien quand mon projet peut l'utiliser, ça va dépendre de tes dépendances expo notamment. Mais c'est vrai que c'est très cool comme outil, parce que ça intègre directement le simulateur dans l'IDE. Tu peux cliquer sur des éléments visuels et ça te renvoie dans le code directement. Tu peux record, mettre des breakpoints. Tu peux avoir accès aussi aux outils de débuggage directement dans l'IDE. Tu peux voir React Query, tu peux voir
+
+le network, les fameux consoles Log, on peut aussi les voir directement dans l'IDE. Mais non, c'est un super outil, vrai gain de productivité, enfin on arrive vraiment à un IDE avec VS Code ou Cursor par exemple où on est aussi performant qu'avec un IDE comme Xcode ou Android Studio où tous les outils sont intégrés au même endroit.
+
+David Leuliette (20:52.326)
+les fameux.
+
+David Leuliette (21:13.287)
+Ouais c'est vrai parce que tu dois souvent ouvrir le Chrome, debugger, est-ce qu'eSync, des fois pas forcément. Là au moins tout est au même endroit et puis...
+
+Et puis ça va plus vite, J'avoue, moi faudrait que je m'y mette. Allez, j'ai dit, cette année, j'essaye de m'y mettre à Raiden. Sinon... ouais ? Ok, Gavray, tu vas nous mettre à Raiden, tu vas te mettre à Raiden. Ok, super, tu nous feras une update. On t'invitera, on fera un épisode spécial sur avant-après Raiden. Est-ce que c'était bien ou pas ? Comment ça a changé ma vie
+
+Gabriel (21:35.947)
+C'est le but aussi pour moi.
+
+Gabriel (21:49.355)
+ça a changé ma vie ou pas. En vrai de ce qu'il présentait, a quand même beaucoup de features hyper cool. tu dis, ça interrompt tout, même notre truc tout con mais de... T'es dans une poute, clavier est tout le temps affiché. Enfin c'est des petits wins quand tu développes d'avoir ça built-in.
+
+Ludwig (21:51.319)
+Ouais, la licence.
+
+David Leuliette (22:13.962)
+Yes ! Et alors Matis, tu as du coup de la première matinée, quelle session tu as préférée
+
+Matthys (22:20.229)
+Alors il y avait la première matinée, avait le talk d'Evan qui était cool aussi. Il était vraiment sympa.
+
+David Leuliette (22:26.941)
+oui sur Expo, deploy everywhere with Expo router. Parce que Expo router c'est V5 maintenant.
+
+David Leuliette (22:37.589)
+et il nous a présenté... ...MASSE Masse exemple avec Expo Router et aussi ils ont mis le point sur... maintenant c'est... Donc on a connu Exponente jadis où il fallait éjecter, hein, le fameux. Bon maintenant ça n'existe plus depuis au moins deux ans, éjecter d'Expo ça n'existe plus parce que les native modules sont beaucoup mieux intégrés. Donc on a cette version là d'Expo. Et dans les prochaines années à venir ce sera...
+
+Expo, ce serait aussi une serveur plateforme, car ils ont quatre features genre les variables d'environnement, les IPI routes, les serveurs functions et maintenant si on fait IAS deploy ça fait plateforme dusting pour votre site web. Du coup ça se transforme vraiment en Heroku-like all-in solution pour...
+
+pour respecter le fameux mantra. Write runs, run everywhere. C'est vrai que ça c'était bien et il nous a parlé aussi des deep intégrations.
+
+Il l'avait déjà présenté mais tu ce que tu m'avais montré quand on était dans le train pour revenir.
+
+Matthys (23:54.852)
+Oui, l'IA, son application.
+
+David Leuliette (24:00.244)
+Ouais, que ça crache des... Vas-y parle-en un peu plus de ce truc là, ça crache des servares components, j'ai pas trop su...
+
+Matthys (24:06.131)
+Ouais c'est ça en gros, ça... Faudrait regarder un petit peu comment ça se passe mais ça préhérant le composant et donc du coup c'est ultra rapide De toute façon il a sorti 2-3 applications disponibles donc je pense qu'on mettra les liens dans la description et on peut voir que c'est super rapide et même avec des requêtes d'intelligence artificielle avant même d'avoir reçu une réponse le composant s'affiche
+
+David Leuliette (24:29.423)
+Ouais, je suis en train d'ajouter ces... XAI.EXPO.APE je crois, truc du genre. Je ne sais plus, je rajouterai les... EXPO.AI... XAI c'est EXPO.AI ? Ouais je ne sais plus. De façon...
+
+Matthys (24:37.58)
+Expo AI.
+
+Ludwig (24:44.217)
+Je crois que c'était l'application qu'il avait montré à la réac-conf, qu'il open-sourcé.
+
+David Leuliette (24:48.659)
+oui, ouais ouais, ouais c'est possible que ce soit celle-là.
+
+David Leuliette (24:57.616)
+Super super, alors attendez qu'est qu'il a après ? celui aussi de Spacek, j'ai trouvé pas mal où ils ont parlé qu'il fallait pas mettre du texte parce que les gens ne lisent pas le texte, plot twist, les gens voulaient plus visualiser ce qu'il se passe.
+
+Et dans l'app de SpaceX, notamment, ils ont utilisé des modèles 3D pour vraiment montrer comment ça se passait et comment leur speed test fonctionnait pour expliquer qu'il pouvait y avoir des différences. Je trouvais ça très intéressant, même si c'était plus du storytelling que vraiment des choses actionnables qu'on a pu avoir comme on a eu avec Radone par exemple.
+
+Ludwig (25:47.666)
+Oui, c'est vrai.
+
+David Leuliette (25:49.352)
+Euh... Méap. Vas-y.
+
+Ludwig (25:52.534)
+Moi je trouve que, final, la journée a vraiment bien représenté la vision de Charlie Sheever. C'est qu'on est passé d'un monde où React Native c'était bien, mais bon, c'était pas pour tout faire. C'était des applications OK, pas... T'avais facilement des problèmes de performance, et là on est arrivé vraiment à un niveau de maturité où en gros, on nous présente que... Bah, tu dois faire de la 3D, tu peux en faire. On a résolu les problèmes de performance avec les listes.
+
+David Leuliette (26:21.005)
+il y avait Jay.
+
+Ludwig (26:22.515)
+peux faire tourner des LLM avec React Native sur ton téléphone tu vois c'est possible donc en gros je trouve qu'on a un peu passé un plafond de verre qu'on avait en React Native en mode là c'est vraiment les gars là on est arrivé à un stade où tout est possible si tu peux pas le faire en React Native directement bah React Native ça pilote du native fait un module fait un module parce qu'on dit plus bridge maintenant c'est fini bah oui ils ont enterré
+
+David Leuliette (26:45.284)
+oui ! Et en plus, on a eu l'annonce officielle les habits de Christophe et... Comment il s'appelle les deux mecs de méta ? Je ne sais plus. Ricardo, voilà. Que c'est officiel maintenant, l'architecture, c'est frisé. Donc il n'y a plus de bug report... bah attends, c'était juste que vendredi dernier... bah non, c'est bon, c'est officiel. C'est frisé, il n'y a plus de bug report, n'y a plus de polyquests qui sont merges.
+
+Ludwig (26:58.558)
+Ricardo ?
+
+David Leuliette (27:14.408)
+Et donc tout ça dans l'objectif de remove le bridge one day parce que pour l'instant Ragnative embarque quand même la code base de l'autre bridge donc je sais pas combien de temps ça va durer cette affaire mais passer à la nouvelle architecture si c'est pas encore fait parce que c'est vrai que ça ouvre plein de possibilités. Il a un new render
+
+Il y a la nouvelle architecture API du coup on va voir tout ce qui est disponible dans CSS genre box shadow, mix blend mode, filter, box sizing Tout ça tout ça du coup on a eu ouais l'annonce officielle Et... La... Ouais comme tu disais ouais ouais maintenant il y a WebGPU... Le... De... Piasco... Je ne sais plus comment il s'appelle le mec qui a fait WebGPU Ouais
+
+Ludwig (28:04.49)
+Il risque pas.
+
+David Leuliette (28:08.302)
+Dezo, si tu nous écoutes, bon on a prononcé ton nom terriblement, mais le bec des web GPU, là là au secours, c'est horrible de dire ça, mais le talk d'avant l'année dernière il était un peu mieux, là c'était plus il nous a parlé de oui, qu'on peut utiliser, comment ça fonctionne le render pipeline avec React Native Web GPU, l'explication de l'année dernière c'était plus démo.
+
+si vous voulez savoir WebGP, il y avait plus des showcases de ce qui est possible en fait de faire. Donc c'est de votre intérêt la 3D, allez-y. Et c'est vrai qu'il aussi NFL qui a parlé de comment ils sont passés de leur... de App Center à Expo, car il y en a les amis, il y avait des gens sur App Center qui ont dû faire la migration de façon douloureuse. Vous avez déjà bossé avec App Center ou pas du tout
+
+Gabriel (29:02.633)
+C'est beau.
+
+Matthys (29:04.47)
+Non.
+
+Ludwig (29:05.429)
+On a migré cette année aussi sur EAS, sur certains projets. Et on l'a pas mal utilisé aussi pour les updates over the air. Ça avait l'avantage d'être complètement gratuit par rapport à expo, où ça peut coûter très vite cher si t'as beaucoup d'utilisateurs.
+
+David Leuliette (29:21.007)
+ouais, App Center c'était totalement free ?
+
+Ludwig (29:23.42)
+De mémoire, tu payais un petit abonnement, peut-être que lié avec d'autres outils Microsoft que tu avais, mais en soit tu payais pas au nom de l'utilisateur actif.
+
+David Leuliette (29:29.732)
+oui, oui, oui, oui, oui, c'est ça.
+
+Gabriel (29:34.249)
+pas de problème, il tout un nombre.
+
+David Leuliette (29:36.235)
+Et bizarrement ils ont arrêté parce qu'en fait ils ont rendu compte que ça génère pas d'argent du coup... On va...
+
+Ludwig (29:42.665)
+Et d'ailleurs, peut se rendre compte aussi que le modèle économique de Expo est complètement tourné vers le cloud computing, c'est pouvoir déployer, pouvoir faire des mises à jour, les runners. Ce qu'avant c'était un peu de la philanthropie. Pendant quelques années, ils ont installé le framework dans toutes les apprécs native et maintenant, ils ont tellement simplifié le problème que tu utilises leurs outils pour...
+
+déployer pour renaître un honte en code.
+
+David Leuliette (30:11.042)
+Oui, bah oui, sinon tu peux utiliser des GitHub Action pour le faire. ouais, là je ne pas comment les Overshear Update ça va fonctionner, mais je sais que je suis tombé sur un outil qui s'appelle, je vais retrouver ça grâce à mon outil favori qui s'appelle Raycast les amis, Expo Build Expo. En même temps, je cherche Expo.
+
+ExpoBuilder.app et en fait ça ça permet donc c'est une alternative ça utilise tous les outils d'expo mais ça run le CI sur GitHub Action du coup en fait bah c'est censé être gratuit mais je pense que c'est pareil t'as une limite mais bon voilà si les 15 à 100 dollars par mois vous êtes dans l'étape où bah vous pouvez pas le faire bah vous pouvez prendre deux jours pour setup ce truc là
+
+Ludwig (30:51.432)
+Ok.
+
+David Leuliette (31:09.861)
+Il a toujours des solutions, surtout quand on démarre et où on fonctionne. Et forcément quand t'as des centaines de milliers d'useurs, au bout d'un moment...
+
+Faut quand même passer à la caisse.
+
+Gabriel (31:27.657)
+après Expo aussi je pense que... eux ils font quand même beaucoup de choses en open source tous les tout-leaks etc donc pense à la base c'était un peu targeter aux développeurs de faciliter un peu la vie versus direct native Sali où ils abstraient la partie Xcode, abstraient la partie Android Studio, toute la partie native là ils font toute la partie un peu déploiement envoyé sur les stores et c'est du... d'être développeur expérience pour que ce soit beaucoup plus simple après je pense que peut-être leur vision un peu plus long terme c'est...
+
+Là par exemple ils le font avec Bolt et tout mais potentiellement c'est des gens qui sont patecs et uploader sur les stores, gérer les certificats et choses comme ça. Déjà pour nous des fois c'est relou donc un mec qui est patec là je pense qu'ils ont un peu la vie en double où c'est faire du tooling pour les devs et rendre aussi le déploiement d'une app, la friction de builder et de publier une app beaucoup plus seamless et potentiellement c'est des gens qui sont patecs qui vont après payer pour leur produit et ça va fonder un peu le reste.
+
+David Leuliette (32:03.749)
+Ouais.
+
+David Leuliette (32:21.765)
+Ouais pour faire la première itération Ouais carrément parce qu'il disait il y a AI2 Incubator avec des outils comme RepliedBolt, Create, XYZ, Tempo et AI0.dev Comme V0 mais c'est A0 bah justement c'est Verzel qui fait ça aussi avec
+
+là là j'ai encore oublié son nom, le mec de solito, oui je veux dire les mecs de... Fernando Jojo, voilà. Cool et après aussi le premier jour il y avait un français qui était sur Seb qui nous vient de Bordeaux d'ailleurs, qui c'est qui le connaît ? Comment tu le connais ? Oui comment tu le connais ?
+
+Ludwig (32:48.68)
+Fernandos.
+
+Ludwig (33:03.975)
+Et oui, Kim ! Kim, c'est son deuxième passage à la JS, il était là l'année dernière je crois. On a organisé ensemble un meet-up à Bordeaux dans les locaux de Deezer où il nous a présenté un peu la solution qu'il développe. Il crée une plateforme de e-learning pour instruments de musique, notamment le saxophone. Dans la boîte dans laquelle il travaille, où il est CTO, il développe le hardware.
+
+espèce de saxophone miniature et tu peux jouer de la musique et en temps réel en fait la plateforme du Learning voit les notes que tu as tapé, si tu as bien soufflé etc et te fait des feedbacks et tu peux apprendre à jouer de la musique
+
+David Leuliette (33:47.951)
+Ouais c'est ça, il s'est testilé En plus il a réussi à faire le son correctement, on stage Ce qui est pas facile Et il nous a même trollé Quand il a simulé un appel téléphonique et tout le a cru que c'était un vrai appel téléphonique Mais en fait non ! C'était des notifications pour ne pas faire comprendre que le son c'est important et où ça peut être anxiogène dans certaines situations Très bien joué, Big Up, il faudrait que je l'invite Il faudrait je l'invite, qu'il pourra nous parler de...
+
+ODIZEI MUSIC, là j'ai le lien c'est play.odiseimusic.com et c'est ça la plateforme web où tu peux tester directement je crois. Cool cool et après
+
+Gabriel (34:36.585)
+rapidement mais en tout cas pour un coup il y avait LegendList de Jay où il expliquait comment optimiser ça, comparer comment ça fonctionnait FlashList, Under the Hood pour optimiser, l'approche qu'il a pris. En vrai c'est intéressant de voir comment c'est fait.
+
+David Leuliette (34:52.276)
+mais déjà il est trop fort, depuis que nous on a fait... ouais de moi ça fait très longtemps que je le connais, pourquoi ? si parce que je suis corps contributeur sur Legend State mec ! J'ai changé de place un import et pouf ça marchait parce que je sais qu'il avait... Je sais pas une bêta et tout, l'import n'était plus bon et voilà, corps contributeur, One-liner. Non mais plus, a au moins 10 lignes ! Parce que j'ai bougé à pitié de place. Donc voilà c'est comme ça que j'ai commencé à sympathiser avec lui et je l'ai revu plein de fois en conférence.
+
+Ludwig (34:58.791)
+Les jeunes States.
+
+David Leuliette (35:21.636)
+Mais oui, pourquoi ? Le contexte est super intéressant, c'est comment il approche le truc, c'est que Jay avant il faisait des jeux pour Nintendo Wii, Wii, Wii tout court. Oui, performance, c'est important quand tu fais des jeux vidéo.
+
+Ludwig (35:31.751)
+Oui,
+
+David Leuliette (35:39.203)
+Et maintenant qu'il a migré sur React, il garde en tête cette idée de performance, c'est le truc le plus important. Donc j'avoue, Legend List, très bien en plus moi j'utilise déjà Legend State donc je pense que j'essaierai de l'implémenter sur d'autres choses. J'attendais un petit peu mais là c'est stable donc bonne nouvelle. L'autre talk que j'ai, qui a eu un wow effect, c'était le... je sur Party Clip.
+
+Ludwig (35:54.342)
+Ouais.
+
+David Leuliette (36:09.354)
+Partie full.
+
+Ludwig (36:09.604)
+partie folle, oui. Les ad-clips.
+
+David Leuliette (36:13.115)
+C'était... Il me semble moi aussi, c'était le premier jour aussi. Ça parlait des app clips. D'ailleurs, on a eu une idée révolutionnaire de business. On gardera ça secret. On gardera ça secret. Est-ce que... Est-ce que vous pensez que sur... Est-ce que... si, on va demander à l'audience. On faire un short. Est-ce que si vous voyez une app clip se lancer, vous serez susceptible d'acheter des choses à l'intérieur. Exemple.
+
+David Leuliette (36:42.275)
+Et personne n'a un exemple ? Ohlala, on n'a pas trouvé des exemples. Mais pendant...
+
+Ludwig (36:43.782)
+Exemple un jeu vidéo Doom.
+
+David Leuliette (36:48.892)
+Un jeu vidéo Doom, bah oui, si t'as une app Clip qui t'envoie ça à ton ASMR, un pote, paf, tu peux acheter Doom direct.
+
+Ludwig (36:57.19)
+Ce qui était intéressant sur les app clips, c'est que Partyful t'explique qu'ils avaient des problèmes notamment d'adoption, de rétention d'utilisateurs, ou de conversion plutôt. Et que quand ils ont mis les app clips sur iOS uniquement en place, ça leur a permis d'augmenter de presque 45 % la conversion quand...
+
+David Leuliette (37:17.731)
+47 % d'usage et 23 % d'appdownload. Mais faut expliquer qu'est-ce que c'est Partyful, sinon les gens ils ont pas le contexte.
+
+Ludwig (37:24.453)
+Partiful, c'est une application où tu peux créer un événement et après t'invites tes potes autour de cet événement où ils peuvent poster des commentaires, poster des photos de la soirée. Leur but en fait c'était de pouvoir convertir les utilisateurs qui n'avaient pas l'application en envoyant un SMS. Tu cliques sur le lien et en fait ce lien déclenche une app clip donc du coup tu as une prévisualisation de l'application. C'est un peu réduit, tu n'as pas toutes les features mais en tout cas tu as l'événement qui apparaît et si tu veux répondre, si tu veux interagir, ils te disent bah là, il que installes l'application.
+
+Et je trouve que moi en termes d'expérience utilisateur c'est extraordinaire parce que tu peux goûter à l'application sans forcément être passé par l'app store et fait gérer le chemin qui fait que t'auras installé une application a été tellement réduit, tu en arrives à un clic, enfin un tap, je trouve ça assez extraordinaire et je toujours surpris de me dire on en fait pas plus des app clips, qu'est-ce qui se passe quoi, pourquoi ?
+
+David Leuliette (38:19.203)
+Bon, on est trop occupés à régler les autres problèmes, genre... J'aime pas la taille du logo et où... Tu vois ? On connaît, on connaît !
+
+Gabriel (38:28.84)
+Après il un use case assez spécifique pour répondre à un event. pense que c'est bloquant de devoir télécharger une app juste pour répondre et ok je je viens pas. Donc il que ça se prête à un use case spécifique mais clairement c'est hyper cool de pouvoir faire une préview de l'app et après t'accroche à toi de télécharger ou pas et c'est un peu ce qui s'est passé chez eux.
+
+David Leuliette (38:51.202)
+Ouais c'est ça, moi à l'after party j'ai parlé avec Frank, Frank d'Infinite Red, big up à Frank. Et il me disait lui, bah pour une app de fitness il pourrait carrément faire un app clip en fait, t'envoies ça par SMS en gros pour l'acquisition de nouvel utilisateur. T'es déjà l'utilisateur de l'app, tu veux share un workout avec quelqu'un, bah t'envoies ça par SMS. La personne peut voir le free workout et ou si elle s'abonne bah toi d'ailleurs tu peux faire une mécanique de bah je te file
+
+5 % de réduction parce que tu as invité quelqu'un et il a converti et toi en fait avec la clip tu peux suivre tout ça et la personne elle download ou pas l'application mais c'est vrai que comme tu disais ou il faudra l'use case mais toujours intéressant de le voir en vrai et voir une success story même si moi ça ne fonctionne pas avec on off
+
+Parce que j'ai un autre numéro de téléphone et du coup je pouvais plus me désabonner des notifications. Un enfer.
+
+Gabriel (39:55.049)
+Ils vont quand finir à poste d'hier cette année, l'année dernière sur Android. C'était quand
+
+David Leuliette (39:55.362)
+Eww.
+
+Ludwig (40:01.027)
+Mais le lien, là, c'est quoi ?
+
+David Leuliette (40:03.835)
+c'est possible, ça j'avais pas vu ouais. Ça j'avais pas... J'avais... Ok. ouais !
+
+Ludwig (40:07.583)
+HUB de l'année Android. C'est du REC natif et Android. Attention !
+
+David Leuliette (40:16.252)
+c'était pas gagné et pendant ce temps là Matisse il était assis dans le dans les bulles dans les bulles j'ai vu j'ai vu qu'est que tu étais en train de faire matisse dans le fond des bulles
+
+Matthys (40:24.211)
+Merci.
+
+Matthys (40:29.203)
+J'étais en train de régler un souci de build. J'étais en train de voir si on peut automatiser du multiapp avec un fichier IAS.
+
+David Leuliette (40:40.52)
+Et t'as réussi au final ? Je ne sais plus.
+
+Matthys (40:42.148)
+Et donc du coup, oui ça marche mais il faut bien configurer les variables d'environnement et les channels justement.
+
+David Leuliette (40:47.809)
+Les fameux, les fameux, les fameux. Cool et après à la fin, on a eu... Est-ce qu'on parle des swag et tout ? On avait quand même pas mal de swag, j'ai trouvé cette année, ils étaient bien cool d'ailleurs. J'ai un super suite sur Terminion, il très bien. Et à fin de la journée, moi le top que j'ai bien aimé c'est Building Mobile App with Premium Fill.
+
+et Quality UX de Soul Sharma...
+
+C'est vrai que s'il a un talk qui est vraiment actionable tout de suite, serait celui-là je pense. C'est assez généraliste pour que ce soit compréhensif par tout le monde. aussi il a 10, je crois que c'est 10 tips qu'on peut mettre en place directement pour que votre application soit mieux et qui ne ressemblent pas à ce qu'il disait « website in a box ». Parce généralement en fait les UI sont génériques.
+
+Ludwig (41:51.192)
+Hum.
+
+David Leuliette (41:53.909)
+Il a pas un design unifié, a pas les conventions de la plateforme. Typiquement, quand vous ouvrez une modal, il n'y a pas de drag and drop vers le bas pour close la modal. Les animations ne sont pas bonnes, les gestures ne sont pas bonnes. Les couleurs, faut gérer aussi. Moi, ça, fait longtemps que je le fais, mais tactile UX, c'est à dire que quand j'ai un confirm button, moi, j'utilise l'app, enfin l'app IExpo Aptique.
+
+et je mets un au niveau de la vibration comme ça
+
+Ludwig (42:29.891)
+C'est vrai qu'il nous a montré qu'au final en React Native on n'a plus rien à envier, dirais à SwiftUI par exemple ou Compose, on est capable vraiment de faire des interfaces très chiadées sur mesure avec toutes les fonctionnalités natives qu'on peut attendre, les gestures.
+
+David Leuliette (42:48.511)
+Ouais c'est ça, mais je sais plus si c'est à ce moment là qu'il en a parlé de Expo UI.
+
+ou si on a eu un talk direct dessus.
+
+Ludwig (42:56.157)
+Expo UI, c'est la journée 2, Le The Pit of Success ?
+
+Gabriel (42:57.41)
+C'est pas évident.
+
+David Leuliette (43:02.348)
+oui c'était le lendemain, c'était le lendemain ouais. Ok ok ok, donc ça c'était bien, super.
+
+Matthys (43:02.491)
+Oui c'est ça.
+
+David Leuliette (43:18.693)
+Après du coup c'était la fin de la journée. Euh... Et où est-ce que nous sommes allés ? Je ne sais plus. Le premier soir... Le premier... Est-ce que c'est... ouais parce que c'est ça, AbJS aussi, on fait des...
+
+Matthys (43:28.06)
+dans les mêmes barres.
+
+Gabriel (43:32.871)
+C'était pas le truc code magic ? C'était sur le bateau. Ouais.
+
+Ludwig (43:35.399)
+Scone Magic le...
+
+Matthys (43:35.69)
+si c'est ça.
+
+David Leuliette (43:36.159)
+si c'était sur le bateau ! C'est vrai qu'on a pas dit l'onboarding avant, on a eu au meet-up, nous sommes allés au meet-up avant le workshop. Donc le meet-up organisé par Software Mansion, on a vu les bureaux, on a vu tout le monde. Si vous voulez plus en savoir, parce que la full expérience à B.J.S. c'est venir toute la semaine en vrai, parce qu'il y espace plein de choses. Mais le soir, c'était offert par CodeMagic, on était sur le bateau, on s'est retrouvé avec Taz.
+
+Et on a parlé toute la soirée, nerd out, talking about, je ne sais plus ce que c'était.
+
+Ludwig (44:11.821)
+Qu'est-ce que c'est le code magique en fait, Gabriel ? Tu sais nous répondre ? T'as discuté avec eux, il me semble.
+
+Gabriel (44:16.635)
+Ouais bah grosso modo c'est pas forcément les meilleurs vendeurs du monde je pense mais en tout cas moi ils ont du mal mais c'est une scie où ils essayent je pense de concurrencer peut-être pas tant du EAS mais plus des choses comme Bitrise ou quoi tu peux faire la scie pour toutes les plateformes et le gros argument de ce que j'ai compris c'est qu'ils sont moins chers que Bitrise à fonctionnalité égale.
+
+Après avoir les custom, il a beaucoup de sur bitrace qui fonctionnait, code magic, je ne ai jamais regardé plus que ça jusqu'aux conférences.
+
+et ouais sinon ça fait quand même très bien le taf pour la majorité des use cases donc bon un peu compliqué à l'écosystème bien sûr
+
+Matthys (45:18.23)
+pense que Code Magic c'est CI-CD pour Android, iOS, Flutter et React Native. Ils font tout.
+
+David Leuliette (45:26.628)
+c'est tout, ouais je sais qu'ils plus tout.
+
+Gabriel (45:27.623)
+mais ils font que du mobile. Je pensais qu'ils avaient aussi...
+
+Matthys (45:30.829)
+c'est que du mobile.
+
+David Leuliette (45:33.651)
+Ouais mais après c'est toujours pareil, dépend de la scale, tu ça tombe c'est plus des outils mis dans les grosses boîtes et ou non moi je veux pas parce qu'à la fin de la journée Expo ça deploy sur IAS, sur AWS si je ne m'abuse et il suffit que décision du DSI qui dit non moi vivant jamais j'utiliserai AWS Bon ça tombe Code Magic ils utilisent aussi AWS mais peut-être qu'ils utilisent une autre solution donc c'est toujours intéressant d'avoir Zelda Alternative et ou savoir qu'elles existent
+
+Donc le lendemain, on a reparti d'ardar sur stable.api JavaScript. Il me semble... C'était quoi le...
+
+C'était quoi la problématique de ce... Vas-y.
+
+Gabriel (46:20.487)
+Avant il y avait le talk, j'ai plus son nom mais... Ouais mais t'avais le spoke sur... comment il s'appelle ? Raphael qui fait les développe avec de l'IA et le workflow un peu qu'il utilisait. C'était la première talk.
+
+Ludwig (46:24.638)
+C'est le lxn.
+
+Matthys (46:31.824)
+...
+
+David Leuliette (46:33.96)
+oui ça, était très bien. oui, j'ai cru que c'était après le premier talk. Donc Raphaël, si vous le suivez pas, vous devriez ground control sur les réseaux sociaux. Je l'ai vu mille fois en conférence. Et il disait comment il développe à grande échelle avec Ia. Vas-y Gabriel, si tu as tout retenu, parle-en nous.
+
+Gabriel (46:54.055)
+Non, c'était présenter un peu le workflow qu'il avait. Je n'ai plus forcément de sous en tête, de couper ça en faisant un plan, de définir un peu ce que tu voulais faire plutôt que de mettre un compte random et tu définis un peu step by step et que ce soit plus calier.
+
+David Leuliette (47:07.538)
+Ouais, c'est ça. C'est ça. C'était ça.
+
+sa catch phrase était « don't vibe code on code base worth millions of dollars » instead create a plan. Donc quand vous promptez votre n'importe quel IA, en mode chat, pas en mode agent, vous lui dites « à la fin, moi un plan.md et crée une liste claire des steps à faire
+
+Comme ça je peux utiliser un agent pour implémenter ce plan. Du coup l'IA va faire ces petits trucs là, ça va cracher un fichier plan.md. Et en fait après vous allez utiliser ce plan.md en mode agent. Et vous dites à votre IA en suivant le plan, fais moi les tâches. Et là du coup vous pouvez vraiment piloter la génération de code tout en gardant le contrôle.
+
+tout en essayant que ce soit un peu déterministique le plus possible. à la fin le truc qu'il a dit super intéressant c'était use GH, GH c'est un outil en terminale de commande, faire Brow install GH, ça vous permet de piloter GitHub depuis le terminal. En fait si vous faites GHPR view ou GHPR diff ça va vous faire des résultats. Et dans son prompt il disait use GHPR view
+
+ou grprdiff. review this PR and give me a tldr for the change for each file and write the whole report file to a fichier called prreview.md. Donc en fait il utilise même l'IA pour faire des reviews de pull requests. Franchement trop smart. Je trouvais la façon dont il a fait, ouais, c'était trop smart.
+
+David Leuliette (49:07.473)
+Et à la fin, est-ce qu'il a quelqu'un qui se souvient ce qu'il a dit ?
+
+Matthys (49:12.718)
+J'adore ça.
+
+David Leuliette (49:14.787)
+On a eu des Lamborghini, on devait juste apprendre à pas les cracher.
+
+Ludwig (49:20.639)
+Ha
+
+Gabriel (49:25.67)
+c'est qu'ils faisaient la comparaison de quand tu tests ce qu'il a et après c'est vrai mais quand tu testes et que ça outputte pas vraiment ce que tu veux et que dis que c'est un peu de la merde ou ça répond pas à ton use case et ils faisaient le parallèle de si tu quelqu'un qui a tout le temps conduit une voiture de merde tu le mets au volant d'une lambeau des fois faut pas s'étonner qu'il fonce dans le mur quoi donc faut un peu apprendre à gérer un outil à savoir s'en servir et dans quel cas il est efficace et comment l'aider à contourner les limitations qu'il peut avoir
+
+David Leuliette (49:46.106)
+C'était ça.
+
+David Leuliette (49:56.378)
+Ouais c'est ça et après il le talk de Keith et là il l'a présenté justement à Expo UI Mathis tu t'en souviens ? Tout ce qui avait été présenté ? vas-y dis nous, dis nous c'est quoi ? Qu'est que c'est Expo UI ?
+
+Matthys (50:05.006)
+Oui, c'était avec la métaphore du pit. Expo UI, c'est une librairie de composants où tu as des composants qui sont natifs. Donc tu as le bouton style iOS, le bouton cylindroid et ça va être sur chaque plateforme, ça sera différent pour que l'utilisateur ait vraiment une expérience téléphone natif et pas une application customisée avec des composants.
+
+et de A Z.
+
+David Leuliette (50:36.892)
+Parce que derrière ça utilise un mapping pour SwiftUI et Jetpack Compose. Donc ça utilise vraiment les composants natifs de base.
+
+Ludwig (50:50.367)
+Et aussi le web, ? C'est les trois plateformes.
+
+Matthys (50:54.337)
+Euh... Là je vois Android, iOS.
+
+David Leuliette (50:54.406)
+bah de l'air, bah oui !
+
+Ludwig (50:56.863)
+T'as accès au primitif ? Ah.
+
+David Leuliette (51:00.444)
+En vrai ça dépend, genre pareil, c'est calendrier, ya peut-être, ok, mais picker, ya peut-être, ok, y'en a pas un autre.
+
+David Leuliette (51:15.74)
+Tu il a un composant, en plateforme web il n'existe pas tout court donc forcément il aura pas de mapping.
+
+Ludwig (51:20.283)
+Oui, non, t'as raison, c'est que Android iOS.
+
+David Leuliette (51:22.684)
+mais ça permet d'avoir les trucs genre app clip, peut-être pas app clip mais vraiment les composants natifs color picker, color picker t'en as un sur le web aussi input type égale picker 70 % sûr que ça existe même si je ne fais plus de html depuis 2012 mais ouais ouais si c'était intéressant
+
+Ludwig (51:28.094)
+color picker
+
+David Leuliette (51:54.337)
+Et ensuite, bah voilà, ensuite on a re-u, nous avons, on a re-u. Ensuite on a re-u, attention ça vient de Shnora. bah oui, en plus c'est la transition super parce que Delphine, qui travaille chez Mistral et I, Delphine Bugner, et bah elle vient du Nord aussi. Du coup on a fait une super photo tous ensemble du crew français et dont il y avait...
+
+de la moitié qui venaient du nord. C'était intéressant. Elle nous a présenté les problématiques qu'ils ont rencontrés en faisant mistral l'application de chat, le chat.
+
+Mistral avec... Qu'est qu'on se rappelle ? Pourquoi le fetch de base ne fonctionnait pas ?
+
+Matthys (52:42.988)
+ça a encodé alors qu'elle décodait et du coup vous ne pas faire de stream
+
+David Leuliette (52:49.443)
+Ouais c'était le streaming de data qui était pas bon... Attends c'était pas le streaming, c'était la récup... Azimathys.
+
+Gabriel (52:52.368)
+A plus !
+
+Matthys (52:52.67)
+En fait, quand elle récupérait la donnée, elle voulait faire du streaming, parce que les agents IA, les chats IA, c'est du streaming pour que ce soit rapide. Et elle récupérait de la donnée encodée qui était ensuite décodée au lieu de juste recevoir la donnée directement. Et donc la problématique c'était comment éviter cette étape pour ce soit encore plus rapide.
+
+David Leuliette (53:16.696)
+Ouais c'est ça et du coup il fallait mettre un polyfil
+
+Ludwig (53:20.733)
+C'était pas supporté à Opt of the Box.
+
+David Leuliette (53:22.906)
+Ouais, c'était pas supporté par... Mais moi j'avais un vieux souvenir. J'avais un vieux souvenir du fetch de base qui était pas supporté tout court dans Ragnative mais il a très longtemps.
+
+Gabriel (53:24.134)
+C'est un gisseux.
+
+Ludwig (53:31.165)
+...
+
+Gabriel (53:32.754)
+React Native justement qui a créé son implémentation de fetch et du coup, si je de bêtises, l'année où ils l'ont fait c'est quand le standard a changé et c'est à ce moment là que ça a été implémenté sur le web et du coup il y a eu un peu l'overlap où eux ils ont misé, enfin ils ont loupé à l'implémentation du streaming d'où le fait que c'est pas supporté sur React Native, en tout cas sur le de React Native et là donc StoryShort utilise celui d'Expo qui a été
+
+David Leuliette (53:36.772)
+Ouais c'est ça.
+
+David Leuliette (53:42.522)
+Ouais.
+
+David Leuliette (53:50.308)
+Ouais.
+
+David Leuliette (53:59.834)
+Ouais, expo... Expofetch.
+
+Gabriel (54:02.562)
+J'ai un kudo. C'était lui je crois.
+
+Ludwig (54:05.417)
+Qu'est-ce tu veux
+
+David Leuliette (54:05.69)
+oui, si il un mec à suivre qui vous fait relativiser votre... Vous pensez que vous êtes un bon développeur ? Suivez Qudo et on en reparle ! Parce que lui c'est vraiment furieux, franchement pour lui c'est un full stack. Moi tu nous demandes qui c'est full stack développeur ? Qudo. Franchement le mec il te fait du Raspberry Pi, Linux, kernel, sais pas quoi et ou des trucs vraiment de coding incroyables.
+
+Après on a eu un petit talk, animation sur React-ive, donc Everybody can cook with React Native, c'était pareil, c'était comment on fait des apps delayed full avec des conseils... bah moi ça me paraît, moi en fait tous ces trucs là ça me paraît la base parce que ça fait mille ans que je refais. Mais je sais pas, il a quelque chose que vous avez appris en suivant le Everybody can cook with React Native ?
+
+Matthys (55:03.659)
+...
+
+Ludwig (55:04.066)
+Je pense que c'est une bonne piqûre de rappel quand tu fais de l'intégration UIS, parce que des fois quand tu as juste un Figma on parle pas du tout de micro-interaction ou quoi que ce soit, et ça te montre tous les petits tips, tout ce que tu peux faire, à quel endroit tu peux le faire pour faire une super expérience First Class Citizen. Moi j'ai bien aimé, c'est toujours des bons rappels à avoir, comment faire, qu'est-ce qu'on peut faire.
+
+David Leuliette (55:29.742)
+Et utilisez Ease In Out Parce que vous n'êtes pas des experts du coup commencez pas à vous improviser à faire des curves de je sais pas quoi Bah si on peut On peut faire des expériences d'animation vraiment sharp Mais Ease In Out ça marche dans 80 % du temps donc si vous voulez en faire mettez ça partout et après au moins vous aurez de bonnes 10 stack
+
+Vous êtes tous... Vous utilisez tous StandTag Query en fait là, j'ai l'impression. Ouais. C'est devenu la... Un... Puisque moi le talk, j'ai vu, j'ai fait waouh... Je connais en fait. Franchement j'étais deg, j'ai cru que j'allais apprendre des trucs et en fait pas du tout. Vas-y Gab, dis doutou.
+
+Ludwig (56:00.668)
+Oui.
+
+Gabriel (56:12.613)
+Une fois de plus après il targette pour finir une vise à un public qui connaît pas forcément l'anime ou peut-être qui pas crevé hyper longtemps donc par exemple les listes infinies ou les choses comme ça tout le monde n'a pas forcément eu le cas de figure un peu comme les animes ou quand on fait depuis un certain temps tu sais ce qu'il faut utiliser dans quel cas de figure c'est pas pour autant que tu le fais toujours mais en tout cas tu sais que ça existe et là du coup c'était pas mal de petites choses
+
+Si t'as pas l'habitude de cette lime ou RTK ou des choses qui font un peu la même chose, c'est pas mal de savoir que ça existe et c'est quoi un peu les meilleurs cas de figure dans lesquels utiliser ça quoi.
+
+David Leuliette (56:49.826)
+Ouais. Ouais j'avoue si c'est ta première fois que tu fais du Rack Native, tu vois le talk 10 stack query improving DX and UX, tu fais mind blowing quoi.
+
+Gabriel (56:58.021)
+Même si tu viens d'Axios, utilises toujours Axios ou Fedge Basics, tu te rends compte qu'il a quand même un écart monumental sur le tooling et l'expérience de développement quand tu utilises un peu une surcouche par dessus.
+
+David Leuliette (57:10.274)
+ouais, clairement. Et après je voulais parler de son truc, là, heyapi.dev, y'a quelqu'un qui a compris à quoi ça servait ? Parce qu'il en a pas du tout parlé, mais j'ai l'impression que son talk c'était ça en fait. En gros tu lui envoies un schéma OpenAPI et hop il te fait tout le binding de ton API pour ton stack query. C'est ça en fait.
+
+Ludwig (57:10.619)
+Ouais.
+
+Ludwig (57:30.715)
+Nous on utilise plutôt code Gen, j'ai l'impression que c'est similaire à code Gen. Donc en gros, grâce à la spécification de ton app, tu es capable d'autogénérer tout le code, tout est use query, comme ça, out of the box, tout est typé correctement, tu plus qu'à utiliser. À partir d'un schéma.
+
+David Leuliette (57:49.817)
+Ouais à partir d'un schéma on est d'accord. Parce qu'en fait il a parlé ça deux minutes au début ou à la fin je sais plus mais il n'y avait pas de lien alors qu'en fait il aurait dû faire... Bon après c'est mon ressenti. Il aurait dû faire tout son talk là dessus plutôt que de présenter juste l'IPI de Thunstack mais après c'est comme tu disais Gab, ouais si tu connais pas bah tu manques le contexte et tu passes à côté alors que... C'est genre compliqué de façon d'avoir des niveaux de plaire à tout le monde en fait.
+
+Gabriel (58:19.013)
+C'est pour ça que tu avais des conférences hyper techniques, où ça deep dive vachement dans certains sujets. Même si tu es à ce quai, des fois tu peux être perdu. Après tu es peu plus généralisé, donc il faut utiliser un peu de tout pour tout le monde.
+
+David Leuliette (58:19.078)
+autant des basiques que des...
+
+Ludwig (58:34.424)
+D'ailleurs en talk ultra technique on a un skip 1 qui était je crois un matiné qui était sur le brownfield avec un cohérent... cohérent... cohérent... Korean !
+
+David Leuliette (58:45.378)
+!
+
+Gabriel (58:48.687)
+oui.
+
+David Leuliette (58:50.227)
+Oui, vas-y, c'était quoi celui-là ?
+
+Ludwig (58:52.762)
+En fait, il nous a présenté une problématique qu'ils ont, ça arrive apparemment souvent dans les applications asiatiques, c'est que tu peux te retrouver sur une application qui va être composée d'une constellation de micro-applications. Et donc ils ont un peu cette problématique de, entre guillemets, micro-fontaine, et des fois avec des micro-applications qui doivent avoir des intégrations natives très très poussées. Et eux, crois que la problématique était venue de la monétique et du paiement.
+
+Et les gars se sont dit qu'on n'a pas de solution qui répond à nos besoins, notre appellante. On va créer un nouveau framework pour faire de la Brownfield integration. Et qui est que? Granite. Et assez intéressant, donc Brownfield integration c'est quand tu vas intégrer plutôt dans une app native du vrai hack native.
+
+David Leuliette (59:32.864)
+C'est quoi le nom du framework ?
+
+David Leuliette (59:37.974)
+Ouais, ouais.
+
+Ludwig (59:47.982)
+Et eux ce qu'ils ont fait en fait, c'est donc sur ce socle natif, ils ont intégré React Native, ils avaient ce problème que, actuellement quand tu fais du brand new field, t'as un peu un bundle, c'est un monolithe, tu te prends tout d'un coup quoi, et t'as pas de découpage comme du micro front-end côté web. Donc ça peut être très lent au startup time, parce que tu dois charger tout le bundle, initialiser toutes tes dépendances etc. Donc ça peut être assez lourd. Eux ils ont dit, on va résoudre ça.
+
+D'une, Metro supporte pas le Street Shaking du coup on va activer le Street Shaking avec ESBuild. Bim, ça t'a retiré les trois quarts du code mort qui n'est pas utilisé dans tes packages. Et ils ont dit, bah vu qu'on a plein de micro applications, bah on va les charger quand on en a besoin. Et du coup ils ont mis en place ce système où tu peux casser le bundle en micro bundle. Et du coup l'application est ultra performante. Et Cerise sur le gâteau, ils t'ont rajouté le support des bis à jour Update Over The Air.
+
+où tu peux targeter ta micro-application, donc c'est une complexité technique assez importante. Apparemment ils sont plus de 100 développeurs sur l'application.
+
+David Leuliette (01:00:53.245)
+Ouais, c'est ce que j'allais dire, mecs ils sont pas... Enfin voilà, ça balance tout sur AWS, à mon avis tu dois avoir des certifiait d'AWS dans le plat parce que... pareil, machine de guerre pour problématique d'entreprise, c'est écrit dessus, c'est écrit Enterprise Framework, donc... Ouais, j'aurais faire une liste en fait avec tous les frameworks, avec Netsy, parce que du coup t'as Expo, t'as suite Callstack, t'as celui-là, t'en as trois, ouais, commence à avoir des solutions.
+
+David Leuliette (01:01:25.275)
+Après on a eu un petit talk sur comment build des SecureApps Moi c'est la première fois que j'ai parler de ce truc En gros, de qui nous fait un peu un pitch sur la sécurité, il faut faire attention si on se fait reverse engineering les attaques On peut inspecter la logique si c'est du JavaScript L'avantage du natif c'est que c'est compilé en binaire
+
+Tu peux faire aussi de la logique Obfuscation, utiliser ProGuard, Android, plein d'outils pour gérer la sécurité. en fait, chez Chase, la logique qu'ils avaient, c'est sa Launch Lab, y a un native UI qui bloque l'application. Ils avaient utilisé Expo Secure Store, ces jeux de ma buse, pour créer un corps secure. Et ce module
+
+natif autorisé et ou avoir accès aux expériences de l'application qu'ils appelaient ça donc ou ce qui est auth, storage, network etc etc et à chaque fois ils faisaient un back and forth avec le secure core build en natif qui donnait accès aux composants JavaScript. Vous avez déjà entendu parler de ce truc de cette façon de faire ou c'est la première fois ? Moi j'avais jamais vu ça.
+
+Matthys (01:02:47.352)
+Pas du tout.
+
+Gabriel (01:02:47.428)
+la manière qu'eux utilisent, après e-use, c'est une banque du coup pas les mêmes cas de figure après rien que de fait de Dofus qui ton code et tout après c'est juste pour rendre la recherche un peu des codes source plus compliqués mais c'est toujours faisable de trouver ce qui se trouve dans le bundle donc
+
+David Leuliette (01:02:52.02)
+Ouais !
+
+David Leuliette (01:03:03.784)
+oui c'est toujours... oui... Ouais, mais c'était intéressant quand même la façon de faire. Bah c'est toujours pareil, c'est un layer... c'est quoi ? 12 ? Non, 8. 8 factor, 8 layers. C'est 12 factor ? Dites-moi, faites-moi un cours là-dessus, envoyez-moi le meilleur lien. Comme ça la prochaine fois je dirais pas de conneries. Le 12 factor...
+
+Gabriel (01:03:14.468)
+On a 12 exactors en application
+
+Ludwig (01:03:15.224)
+12 x x 12 12 12
+
+David Leuliette (01:03:27.123)
+Euh... Attends c'est quoi déjà le 12 factor 12 ?
+
+Ludwig (01:03:31.048)
+C'est tous les conseils en matière de sécurité, des principes généraux à suivre. C'est beaucoup de pragmatisme au final.
+
+David Leuliette (01:03:33.659)
+Ouais voilà. Voilà c'est ça le...
+
+tu sais, va parler, un épisode spécial sécurité parce que je pense qu'on a tous des horror coding stories avec la personne qui est owner du site, enfin du compte Apple Developer qui nous permet de développer des apps. Jamais c'est l'email personnel du CEO avec un mot de passe type 1 3 4. Non.
+
+ça n'existe pas ce truc. Ok après on a eu aussi un petit talk sur le vibe coding. Ah là là, c'est quoi votre expérience du vibe coding en fait ? Parce que là le mec après... Attends, qu'est qu'ils sont souviens de ce talk là ?
+
+Matthys (01:04:29.791)
+C'est Bolt.
+
+David Leuliette (01:04:31.899)
+Ouais vas-y vas-y Mathis, parle nous du talk.
+
+Matthys (01:04:35.718)
+c'était comment faire des bonnes applications avec du Vibecoding et Bolt ils utilisaient Expo pour créer des applications rapidement avec des promptes bien définies. Je ne plus vraiment de quoi parler de TOLC mais je sais que la conclusion c'était que le Vibecoding ne va pas nous remplacer parce que eux ils font du Vibecoding et ils ont besoin de bons dev JavaScript pour développer leur fonctionnalité.
+
+David Leuliette (01:05:01.877)
+ça c'était beau oui en fait en gros c'est ça c'est pas sa problématique lui c'était genre vas-y j'ai besoin d'une app mobile pour faire mon compagnie offsite meeting donc c'est typiquement le genre de truc tu vas pas demander à des devs de faire ça mais tu as besoin quand même d'une app pour RSVP avoir certaines choses et où un outil qui pourra t'aider de façon éphémère tu avais déjà les outils no code qu'il faisait
+
+Ludwig (01:05:02.071)
+...
+
+David Leuliette (01:05:28.223)
+Mais en Vibe Coding tu peux aller plus loin, connecter SuperBase et avoir une vraie infrastructure derrière et vraiment résoudre tes problématiques. Donc oui c'est vrai que c'était hilarant qu'ils nous disent, oui on fait un truc sur le Vibe Coding mais je recrute parce que j'ai besoin de bons développeurs. Mais ouais c'était plus pour présenter bold, voir les intégrations avec Stripe, l'intégration avec SuperBase, l'intégration avec Github. C'est vrai qu'au final c'est pas mal si t'as fait ta première ration. Je pense que la MVP...
+
+Je pense que tu peux vibecoder une app, je ne sais pas la première version mais quand tu te rends compte que tu as un peu de traction et de wood user, reboot tout à zéro. Avec ce que tu as appris, supprimer 80 % des features et repartir sur des basses scènes. Moi c'est ce que je retiens de ce qu'il a dit.
+
+Gabriel (01:06:20.388)
+développer un truc qui parvient de son aide technique et après, comme je le disais au début, pense que c'est dans la business roadmap de Expo de vivre un peu aussi ce genre de public qui va utiliser au final Expo et les outils autour et ils vont payer et je pense...
+
+David Leuliette (01:06:37.179)
+Et après il prend rappel à des devs et après les devs disent bah les gars on aura besoin d'expo pour l'infrastructure et du coup voilà boucler boucler
+
+Gabriel (01:06:44.03)
+Après pour des clients, plutôt que de lancer un MVP, prendre un dev qui va bosser x autant et qui va leur coûter cher sans être sûr, puisqu'en général ils ont pas toujours hyper bien creusé l'aspect produit de ce qu'ils vont faire ou même comment ils vont le distribuer. Tu peux faire un MVP hyper simple comme ça, potentiellement tout seul ou juste accompagné de quelqu'un en quelques jours. Tu valides beaucoup plus vite ton idée. Après potentiellement il y aura plein d'apps de merde sur les stores qui seront des tests.
+
+Ludwig (01:06:47.318)
+Mmh.
+
+David Leuliette (01:07:07.165)
+A la suite.
+
+Gabriel (01:07:11.588)
+mais après, nous, se différencier en faisant justement une exp un peu qualique quand tu ship une app...
+
+Ludwig (01:07:18.278)
+En vrai, je pense que a créé beaucoup de business pour les développeurs sur du cours au moyen terme, sens où ça a donné l'accès aux app mobiles comme on l'a pour le web. Donc on va pouvoir faire plein de sites web, plein de petites applications, des prototypes fonctionnels, on va dire. Mais dès que tu vas passer à l'échelle, tu vas devoir faire quelque chose de beaucoup plus structuré et solide, là, tu auras toujours besoin de faire appel à un dev pour le moment. je dirais que c'est un peu...
+
+Une sorte de... Tu peux faire du WordPress sur mesure mais en mobile tu vois, du Wix, mais avec une Wix extraordinaire pour les non-tech.
+
+David Leuliette (01:07:59.208)
+Ouais j'avoue, parce que généralement pour faire une UI dégueulasse avec de l'AI c'est compliqué hein. Enfin... Je trouve ça plus dur en fait. Mais après c'est parce que j'ai l'habitude aussi de prompter donc en fait je sais pas, je m'en rends pas compte. Mais moi je sais qu'à chaque fois que j'utilise ces trucs là je fais génère moi une app avec deux tabs PLS hein, les deux tabs ils pètent un câble, ils arrivent pas à faire les stacks navigator correctement mais moi de modal à l'intérieur de ce screen qui souffre correctement là...
+
+Je suis obligé d'utiliser la fameuse props qu'on a vue ce matin, enfin tout à l'heure. C'est quoi la props Ludwig ? J'ai déjà oublié. Si on veut flatten les views, flatten les Voilà, collapsible false, les haïs, si vous savez pas quoi les demander, ça aura pas le dire. Parce que ça compile mal sur Android et où votre truc est cassé sur telle version Android parce que ça on connaît, les bugs de ce genre on connaît.
+
+Ludwig (01:08:35.109)
+pour collapsible faults
+
+David Leuliette (01:08:57.491)
+Super, super, la fin on a quand même eu un super talk... Ben celui de Revenu 4 on l'avait déjà vu avec Mathis et Ludwig à... React Native London ? Non, React Native London, c'était le même en fait il me semble.
+
+Ludwig (01:09:14.229)
+Avec Native London. l'époque, je ne pense pas qu'il travaillait pour Revenu 4, je pense qu'il n'était que freelance.
+
+David Leuliette (01:09:18.605)
+Non. Ouais c'est ça. Il a fait un talk sur Revenu 4, donc voilà. Les gens qui cherchent du taf, faites un talk sur une librairie et faites vous embaucher. Alors je sais pas si ça a joué ou pas, j'aurais dû m'appeler le temps de lui demander. Mais ouais c'était typiquement présentation de Revenu 4, comment ça marche, pourquoi... Franchement si vous connaissez pas la solution c'est très stylé pour gérer. Non quoique non, le Duc t'avais fait les paiements à la main non ? Ou c'est toi Gab qui avait fait les paiements à la main ? sais plus.
+
+Ludwig (01:09:48.216)
+Euh... On les a fait tous les deux je crois... Ah ! Je l'utilise par offre du 4, on le fait à la main.
+
+Gabriel (01:09:48.387)
+Moi justement j'ai 10 revenus
+
+David Leuliette (01:09:55.292)
+Ouais, ok.
+
+Ludwig (01:09:56.414)
+Et c'est vrai qu'il a une grosse complexité, enfin, il lire les dogmes de fond en compte parce qu'il y a plein de subtilités pour notamment être capable de tester tout tes flots de monétisation dans ton app. Et c'est vrai que Revenu 4, ça retire une grosse épine du pire parce que ça t'apporte une DX très sympathique autour de tout ça. Moi ce que je retire du toll, c'est que les apps et Agnatives font plus de thunes que les aptatives.
+
+David Leuliette (01:10:20.562)
+Ah oui c'est vrai ! mais je l'ai en plus je l'ai noté dans mes reminders. Dans mes reminders j'ai vas-y prends un screenshot et balance-le sur LinkedIn pour rendre tous les gens aigris. Il faut absolument que je le fasse. Merci du rappel.
+
+Ludwig (01:10:24.5)
+...
+
+Gabriel (01:10:34.475)
+Pour ceux que ça intéresse, ils font un report tous les ans où ils donnent, c'est plus les revenus moyens et tout, mais par catégorie comment la monétisation est faite et c'est plein de très bons feedbacks basés sur les data de l'ordre utilisateur, sur tout ce qui est monétisation iOS, Android, sur le natif, le cross-platform et tout. Ceux qui comptent des app avec des images purchase, clairement, allez checker le document.
+
+David Leuliette (01:11:00.242)
+Ouais, plus je pense que ça enlève pas mal de trucs parce que ça donne la possibilité aux personnes marketing ou décisionnaires, au moins ils ont un dashboard, peuvent faire ça correctement. Dans mes souvenirs, si tu fais ça à la main, c'est beaucoup plus compliqué, il faut être carré sur les descriptions, est-ce c'est des types subscription et ou...
+
+abonnements et où... Enfin il y a plein de subtilités c'est vrai que... Et au moins là tu l'as dans un dashboard au moins les mecs ils vont réfléchir en trois semaines en mode bah ouais qu'est qu'on fait c'est quoi notre pricing ? On veut changer un S sur la description on n'a pas besoin de faire appeler un dev, toi tu pool juste le truc et voilà.
+
+Gabriel (01:11:39.556)
+sur tes pewols, même designer les pewols entièrement plutôt que de le faire à la mano. a quand même pas mal de choses. Même pour suivre le suivi, combien d'utilisateurs ont churné, c'est quoi ton... Il y des utilisateurs et tout qui ont encore un trial, qui a cancel mais encore dans sa période de trial. Du coup c'est le but de leur outil mais c'est pas plein de choses liées au Xenap purchase ou...
+
+David Leuliette (01:11:41.041)
+W-
+
+David Leuliette (01:11:44.815)
+Ouais c'est ça ouais, c'est comme... Pour ceux qui connaissent...
+
+Gabriel (01:12:05.731)
+tout ce qui est au paiement inapp, tu n'as pas besoin de te le faire à la main. Après avoir en fonction de l'échelle, est-ce que c'est pertinent de payer 1 % de toutes tes transactions pour ça ou est-ce que du coup ça se build à la mano comme fait Ludwig ? Ça dépend de l'échelle et du temps que tu es prêt à investir dedans.
+
+David Leuliette (01:12:19.633)
+Je pas, ça dépend. It depends.
+
+David Leuliette (01:12:25.293)
+Exactement. Et après on a fini par le meilleur talk que tout le monde attendait, Keyboard Management Evolution. Mathis, tu connaissais des librairies qu'il y avait dedans ou pas ? Toutes ou pas ?
+
+Ludwig (01:12:33.588)
+Il était ou celui-là ? Faut dire que...
+
+Matthys (01:12:39.868)
+Euh non parce que moi j'utilisais déjà celle là.
+
+David Leuliette (01:12:44.017)
+Ah ouais ! Moi je suis arrivé en 2020... en 2021 du coup c'était déjà tout fixé ces conneries là.
+
+Ludwig (01:12:47.252)
+Le pro... Ouais. Faut dire que pendant longtemps en fait, on était capable d'envoyer une fûte.
+
+David Leuliette (01:12:53.265)
+Attends ça a commencé... Vas-y commence Ludwig en 2015. Ah vas-y je vais faire un jeu. C'était Calibrary.
+
+Ludwig (01:12:58.356)
+Là je dis en 2015 on était capable d'envoyer une fusée sur la lune sans problème avec du JavaScript. Par contre afficher correctement un clavier et faire le focus, ça on savait pas faire.
+
+David Leuliette (01:13:10.68)
+J'avoue, bon, bon... Ouais, keyboard voting view... ...for iOS,
+
+Gabriel (01:13:10.781)
+À l'époque t'avais juste l'AP1 et le keyboard.
+
+Ludwig (01:13:18.579)
+Mais c'était pas un problème avec native à la base, c'est aussi un problème natif côté iOS Android.
+
+Gabriel (01:13:24.771)
+Ça a mis un bon moment, tu regardes que très récent que tu aies le moyen de bien gérer ça alors que avoir un input et un keyboard c'est quand la base dans beaucoup d'apps et ça a été très longtemps de galère de faire ça.
+
+David Leuliette (01:13:39.184)
+En 2015 on utilise le keyboard avoiding view Le problème c'est que les formulaires ça marche pas trop Donc en 2017 il a React Native Keyboard Aware Scroll View
+
+David Leuliette (01:13:55.246)
+Mais quel était le problème ?
+
+Ludwig (01:13:59.144)
+le focus, on avait toujours ce clavier qui recouvrait ton input quoi, c'était...
+
+David Leuliette (01:14:02.164)
+Non c'était pas ça, moi ce que j'ai noté c'était que ça autorise pas les inputs donc pour les textes arrières ça marchait pas, ça fonctionnait pas. Donc c'était en 2017. En 2018 il y a React Native Keyboard Manager qui apporte une nouvelle fonctionnalité. Est-ce que vous vous souvenez qu'est-ce que c'était ?
+
+Ludwig (01:14:10.067)
+Mmmh
+
+Gabriel (01:14:24.962)
+les boutons tu peux snap en bas quand tu montes ton keyboard tu peux ouais
+
+David Leuliette (01:14:28.298)
+La fameuse toolbar que tu as au dessus tes keyboards, tu veux par exemple, soit du texte soit le fameux email. Moi je que ça je l'ai déjà fait. Au lieu, quand tu mets un texte, input email, tu ajoutes at gmail ou at la poste.net.
+
+Gabriel (01:14:44.864)
+mais ça c'est le input Accessorio, ça c'est une API ragnative où tu peux avoir un champ qui est au-dessus.
+
+David Leuliette (01:14:52.079)
+Ah ouais, avait pas besoin de... Mais là, c'était en 2018. Depuis de base ? Ah, je sais plus, je...
+
+Gabriel (01:14:59.022)
+Je sais pas si c'était ça à l'époque mais là je sais que depuis quelques temps t'as l'input Accessory U et au-dessus de ton clavier pour l'auto complète ou des choses comme ça tu peux ajouter des choses.
+
+David Leuliette (01:15:04.687)
+Allez.
+
+Ouais, c'est ça. Du coup en 2021 il a React Native AVOID soft input qui est arrivé. Par contre problème c'est que ça ne resize pas la window automatiquement. Toujours des problèmes. Et en 2022 il a enfin React Native Keyboard Controller qui son job c'était d'unifier toutes les librairies qu'on a vu avant et que ça fonctionne.
+
+de la même façon sur iOS et Android.
+
+David Leuliette (01:15:42.546)
+Voilà donc si vous êtes comme Mathis et que vous ne jumpez que maintenant dans l'univers de RackNative, utilisez RackNative Keyboard Controller et ne regardez pas tout le reste. Et ou pour les autres, investiguez vos librairies de clavier. Parce qu'il a bien moyen que ce soit tout obsolète.
+
+Ludwig (01:16:04.666)
+D'ailleurs je me demande s'il a un custom rule dans Bolt pour dire attention, utilise cette livrerie et rien d'autre.
+
+David Leuliette (01:16:11.359)
+oui, faut... ouais, bah ça, ouais, alors là, 100 % que les trucs d'EI, ils arrivent pas, parce qu'ils comprennent déjà pas de faire deux tables différentes, donc le truc des claviers... Ouais, faut mettre une custom rule.
+
+Gabriel (01:16:23.17)
+Ils vont prendre ceux qui sont le plus discutés sur net, basés sur l'entraînement, qui réagissent natively sur keyboard ou Rscroview. Ils vont se baser sur leurs data, sauf si tu leur dis...
+
+David Leuliette (01:16:32.064)
+Ouais c'est ça, vont voir tout ça cover flow, vont faire y'a 4000 posts sur Keyboard of aiding view c'est peut-être une bonne idée de mettre ça, allez mettez ça Je sais pas s'il a moyen de... Bah si tu le fine tune avec ton cursor rule, utilise que cette librairie là Mais de base je sais pas si eux y mettent un genre master prompt
+
+ou à l'intérieur ils disent calibrer, utiliser tu vois.
+
+Gabriel (01:17:03.618)
+tu dépend de quelqu'un qui sait déjà qu'il faut faire des rouses, librairie utiliser, donc c'est déjà plus le même type d'utilisateur. être quand même un peu avancé pour savoir quelle librairie lui dire d'absolument utiliser, et lesquelles pas utiliser, versus Bolt, ou personne va savoir lui dire utilise Rack Query ou fais du fetch.
+
+David Leuliette (01:17:16.706)
+À vous.
+
+David Leuliette (01:17:21.486)
+C'est ça, et si vous ne pas qualibrer et utiliser, écoutez le podcast. On est déjà au 12ème épisode. Ok, super. Donc si on récap, c'était quoi les moments forts et les leçons que vous avez apprises ? Le moment préféré de la conférence, on va commencer par Mathis.
+
+Matthys (01:17:44.268)
+c'est pendant la conférence ou pendant les quelques jours ?
+
+David Leuliette (01:17:47.95)
+C'est full stack, c'est une expérience à part entière.
+
+Matthys (01:17:51.007)
+Le full stack c'est quand j'ai gagné le karting. le soir de... Le premier soir on est arrivé, karting. Donc maintenant je peux rejoindre la Margello Racing Team, c'est bon.
+
+David Leuliette (01:18:05.751)
+C'est bon, c'est bon, tu es passé devant Vadim, incroyable, à quelques centièmes ça s'est joué, quelques centièmes, incroyable, tu as fini sur le podium. Ouais franchement très cool, on s'est fait inviter par...
+
+Matthys (01:18:16.143)
+par Bart Wiedlars
+
+David Leuliette (01:18:19.662)
+De Wild Arts Group, incroyable.
+
+Ludwig (01:18:19.824)
+Yeah.
+
+Ludwig (01:18:24.92)
+C'est ça, React Native Vidéo. Si vous avez besoin d'aide sur React Native Vidéo, peut vous aider.
+
+David Leuliette (01:18:31.374)
+bah voilà, faudrait que je l'invite mais faudrait qu'il parle... Mais du coup ça va peut-être être possible avec Siri, Cole qui traduit à la volée directement. Alors là ce serait rigolo de faire des épisodes comme ça. Cool. Et t'avais deux trucs, t'avais deux trucs que t'avais dit. Tout à l'heure.
+
+Ludwig (01:18:37.072)
+Ha
+
+Matthys (01:18:48.297)
+oui, et deuxième moment préféré c'est qu'on a découvert que la gourde de Gabriel pouvait détruire les bactéries avec de la lumière magique.
+
+David Leuliette (01:18:56.622)
+Ah oui ! Si vous savez pas, cherchez Lumière Bleue, Lumière Bleue O sur les internets pour dig The Rabbit Hole. Ok du coup, bah vas-y Gabriel, vas-y dis-nous, c'était quoi ton moment préféré ?
+
+Gabriel (01:19:16.898)
+Moi du coup pas forcément mon préféré mais sur les confs React-React-Native je trouve que c'est celle qui a une très bonne ambiance. a pas mal de monde qui se déplace jusqu'à là bas donc ils sont quand même pas mal involus dans l'écosystème. Tu vois pas mal de teams de boîtes différentes et tout le est hyper ouvert pour discuter. Tu as des gens de très gros de boîtes genre tu as du Pinterest comme des toutes petites startups. Donc un peu de tout et franchement ça...
+
+dans les costumes ragnatifs, ma comps préférés.
+
+David Leuliette (01:19:50.656)
+Ouais, parce que c'est vrai qu'il y avait pas mal de monde et tout. puis en fait, c'est vrai qu'on y va tout le temps maintenant et que moi je mesure 2 mètres, bah voilà, tout monde me reconnaît. Enfin, nous reconnaît. Ok, du coup Ludwig...
+
+Ludwig (01:20:05.263)
+Dans l'ambiance générale, dirais le fait que tout est possible en créac'native, on n'a pas de limites. Et que maintenant l'écosystème est vraiment solide. Au bout de 10 ans, on a vraiment quelque chose de stable pour iOS, Android et même d'autres plateformes. Et après, j'ai bien aimé aussi le moment où Evan Bacon nous dit que...
+
+la Play Store Connect, le Play Console, c'est toujours un peu relou à utiliser pour partager les builds etc. Et qui te présente un petit outil en mode, bon bah on utilise ça en interne chez nous, c'est un peu en bêta mais voilà on a notre interface web pour pouvoir gérer tout ça nous-mêmes et ça va faire les bons calls API pour piloter les stores, je me suis dit ah très très cool, j'ai hâte de pouvoir utiliser ça avec mes équipes pour un peu fluidifier le partage des builds.
+
+David Leuliette (01:20:56.448)
+Ouais carrément parce que App Store Codec te...
+
+C'est parce que j'ai pas été empoché chez Apple. Quand j'étais chez Apple, enfin quand j'ai fait les entretiens d'recrutement que j'étais à Londres chez Apple, ils m'ont pas pris. Parce que je savais pas faire une tour de Hanoi sur papier. Bah ouais les gars, mais bon, moi j'aurais pu vous faire une app delightful pour les stores. là là ! Enfin je les rappelle. Ok, super. oui, moi j'ai un truc. Le moment fort et le son à prise, c'est un hack.
+
+Pour parler aux gens, vous allez en conférence et que vous savez pas trop comment aborder les gens, tout ça, faites comme moi, mettez un beau t-shirt, là ils peuvent avoir les gens, les gens sur internet peuvent le voir, un t-shirt DOOM TypeScript, pour ceux qui savent pas l'histoire, pouvez taper DOOM TypeScript et chercher la vidéo sur YouTube. Mais je me suis fait aborder plein de fois le jour où je l'ai mis, le jour de l'after party justement, et le vendredi.
+
+Je pouvais pas faire deux bêtes sans quelqu'un me dire putain ton t-shirt il est trop cool et tout et puis après bah voilà c'est bon c'était parti vous dites ouais bah oui j'aime bien Doom tu connais Doom et puis après c'est parti quoi. Discussion de nerds sur Doom et React Native. Donc voilà parce que c'est vrai que c'est... Enfin moi je sais que j'adore aller en conférence parce que ça permet de rencontrer plein de nouveaux gens mais après quand t'es un peu timide c'est pas forcément facile de parler directement aux gens tu dis voilà mettez un t-shirt cool voilà les gens vont venir vous parler tout seul.
+
+pouvez plus faire après faire 3 bets sans vous faire arrêter. Donc pour ceux qui n'ont pas pu assister à l'événement, dommage, n'hésitez pas à vous inscrire à la newsletter du site sur AppJS, comme ça l'année prochaine vous pouvez avoir un Early Bird pour avoir le code.
+
+Gabriel (01:22:51.937)
+et aussi les vidéos qui sont remises au fur et à mesure sur leur chaîne YouTube pour ceux qui ne pas suivre
+
+David Leuliette (01:22:55.884)
+C'est vrai qu'on n'a pas dit la qualité de la prod pour le live est stratosphérique parce qu'il y a littéralement un gru, je dirais qu'il a au moins 20 personnes à la tech video team qui font ça en retransmission live. y a ne pas combien de caméras. Tous les talks sont disponibles sur les internets. Il y a le replay du live qui est déjà disponible mais après ils vont faire des cuts et des edits des vidéos.
+
+Ludwig (01:23:11.757)
+Très bien.
+
+Ludwig (01:23:24.877)
+D'ailleurs, pour le live, ils nous ont dit que faire du live et retransmettre de la vidéo en temps réel c'est relativement complexe. Qu'est-ce qu'ils ont fait ? Ils se rebuildent leur propre framework pour utiliser WebRTC et ils l'ont utilisé pour streamer la conf.
+
+David Leuliette (01:23:39.371)
+C'est vrai qu'on n'a pas parlé de WebRTC mais oui ! Je vous l'ai pas dit que ce sera vite old non plus parce que la vidéo est trop compliquée. oui, Membrane ça s'appelle je Il me semble que c'est ce
+
+Ludwig (01:23:50.219)
+Ouais. J'ai testé et du coup tu lançais le flux vidéo en live et genre tu regardais la conf physiquement et en fait le délai était de... je sais pas, peut-être presque moins de une seconde, deux secondes, même pas. Impressionnant.
+
+David Leuliette (01:24:02.943)
+Ouais... Ouais...
+
+Donc n'hésitez pas, conclutons à l'avenir. ouais, React Native, enfin App.js, chaque fois ça marque l'année à venir et l'année passée. va bet, on va faire des shorts et on fera des prédictions. On fera un reminder un an après. Vas-y, je vais commencer. Ma prédiction pour l'année prochaine, c'est qu'on arrêtera de parler de Rack Net... d' UI Library et on va tous utiliser Native Wind.
+
+Ludwig (01:24:29.911)
+non !
+
+David Leuliette (01:24:35.409)
+Parce que les... Bah non mais mec c'est parce qu'en fait les LLM sont bons avec Tailwind , du coup ils seront forcément bons avec Nati Wind, donc c'est tout. C'est comme comics en MS, il faut l'accepter. C'est tout. Quelle est ta prédiction Ludwig ?
+
+Ludwig (01:24:37.901)
+...
+
+Ludwig (01:24:51.341)
+Ma prédiction, c'est que dans un an, on fera tous des Serverside Components en React Native
+
+David Leuliette (01:24:57.834)
+C'est beau, c'est beau. Vas-y Gabriel, c'est quoi ta prédiction ?
+
+Gabriel (01:25:03.617)
+Prédictions, je n'ai pas trop réfléchi mais je pense que ça fait écho à ce qu'on disait au début où il aura de plus en plus d'apps faites sur du expo et react native et beaucoup plus de petites app va être codé, du coup un afflux d'apps plus ou moins quali sur les stores et à nous de nous démarquer
+
+David Leuliette (01:25:29.626)
+Ok, et toi Matisse ?
+
+Matthys (01:25:31.771)
+Ma prédiction c'est que dans un an on pourra deploy des applications expo directement depuis notre téléphone depuis une app spécial expo
+
+David Leuliette (01:25:44.522)
+mais attends, tu veux dire que la Team Expo serait en train de travailler sur une app mobile pour avoir le dashboard d'Expo sur ton téléphone ?
+
+Matthys (01:25:51.745)
+Imagine si tu peux trigger des builds
+
+Ludwig (01:25:52.445)
+C'était secret !
+
+David Leuliette (01:25:53.966)
+là là ce serait incroyable que ça se réalise, franchement dites nous dans les commentaires ou partout sur les réseaux sociaux qui c'est qui a la prédiction qui va se réaliser. Où est qu'on peut retrouver Mathis sur les internets pour les gens qui veulent te suivre ?
+
+Matthys (01:26:13.709)
+sur BlueSky ou sur X, Mathis Dev
+
+David Leuliette (01:26:20.074)
+Vas-y moi c'est Flexbox sur les internets un peu partout, pareil sur github, blue sky, tout ça. oui c'est vrai que c'est sur X, flexbox underscore, il y a tous mes sketch notes si vous voulez voir le récap des conférences. Ludwig où est-ce qu'on va te retrouver ?
+
+Ludwig (01:26:38.924)
+Vous pouvez me retrouver sur Twitter parce que moi je suis all fashion.
+
+David Leuliette (01:26:52.291)
+Ok, et Gabriel ? Qu'est-ce qu'on te pose comme question sur LinkedIn ? Qu'est-ce qu'on te pose comme question si on veut te reach ?
+
+Gabriel (01:27:03.164)
+Moi ou l'autre ?
+
+David Leuliette (01:27:04.428)
+direct... Ouais, ouais, toi, toi, toi.
+
+Gabriel (01:27:06.912)
+qu'est qu'on pose comme question ? N'importe quelle question sur l'écosystème Rack Native et moi je réponds. du coup sur l'indie c'est Gabriel Hoffman et sinon plutôt sur Github puisque moi j'ai pas, en tout cas j'utilise pas X ou Blue Sky, donc sur Github c'est T-A-S-Y-I-R-V-O.
+
+David Leuliette (01:27:14.121)
+Voilà.
+
+David Leuliette (01:27:26.313)
+Pareil c'est sous côté du CZGuitab. Moi je dis tout le temps mieux en fait en... Genre là j'ai refait une PR sur quoi ? React Native Directory avec SimTech. SimEc ? SimTech ? Je sais pas. Il était à AbJS, je le vois jamais et en fait je lui parle tout le temps par issue interposé sur Guitab. Je le connais très bien depuis des années mais j'ai jamais vu qui c'est. Je ne pas quoi il ressemble. Je sais qu'il voit chez Expo mais je ne sais pas qui c'est.
+
+Bref, sinon si vous voulez venir nous rejoindre aussi, on a un Slack sur Racknative Connection où on est tous. Si vous voulez soutenir l'émission, vous allez sur wishypittoday.com slash podcast. N'hésitez pas à mettre 5 stars sur Comme l'a fait Ludwig si vous avez survécu à la fin. Vas-y, mettez-moi des reviews. Alors, essayez d'aller sur Apple Podcasts pour mettre 5 stars et essayez d'identifier la review de Ludwig.
+
+David Leuliette (01:28:24.129)
+Super, merci d'avoir tenu jusqu'au bout le prochain épisode. Alors c'est vrai, le le prochain épisode ce sera sur Shine. J'avais déjà dit dans le preview que c'était sur Shine mais là, là c'est vrai, c'est la semaine prochaine. Ce sera suivi sur Shine. J'espère que avez bien aimé cet épisode et on se revoit l'année prochaine les amis. Ciao !
+

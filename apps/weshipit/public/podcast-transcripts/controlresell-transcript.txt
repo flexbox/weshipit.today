@@ -1,0 +1,1450 @@
+David Leuliette (00:01.656)
+Bonjour et bienvenue dans le Cross Platform Show, l'émission qui parle développement mobile avec plusieurs technologies aujourd'hui. Je suis David, développeur chez Wishy Pee Today, nous sommes en mai 2025. Nathan, je suis ravi. fait, faut qu'on raconte l'histoire. Est-ce que c'est toi qui raconte l'histoire de comment tu as atterri ici ?
+
+Nathan (00:22.83)
+Ouais, je peux la raconter. Bah après de toute façon je vais en... Ouais je vais d'abord me présenter et tout mais je vais revenir dessus de toute façon... vais revenir dessus. Donc moi pour me présenter, bah du coup je suis Nathan... Je vis actuel... Bah en fait je vais faire de manière histoire, c'est mieux.
+
+David Leuliette (00:24.352)
+Vite fait, genre... présente-toi, présente-toi d'abord, genre...
+
+David Leuliette (00:39.418)
+beau on ada petite petite posez vous petite bougie ambiance un peu feutrée
+
+Nathan (00:48.282)
+Je vais vous raconter un petit peu mon histoire, ce sera mieux comme présentation. Quand j'étais petit, j'avais environ 10 ans, j'ai commencé à me pencher sur le code par curiosité. Sur le navigateur de ma 3DS, parce que la 3DS avait un navigateur. Je suis allé sur Open Classroom, parce que je me demandais comment fonctionnait Internet, et c'est comme ça que j'ai commencé à apprendre le Donc tout petit, j'ai commencé là-dessus.
+
+Et petit à petit j'ai commencé à faire mes premiers sites internet etc. Et quand j'avais à peu près 15 ans, que je rentrais au lycée, quelque chose comme ça, j'ai découvert le mobile et c'est là que j'ai kiffé et que je me suis dit ok dans le futur je vais faire du mobile. Donc j'ai fait différents projets, moi j'ai commencé par du natif, j'ai fait différents projets, des petits zapps à droite à gauche, beaucoup d'open source.
+
+David Leuliette (01:29.551)
+Ouais, je t'adore trop bien.
+
+Nathan (01:41.758)
+J'ai suivi le parcours scolaire classique quand tu veux être dev et que tu sais pas trop où aller. tu vas au prépa scientifique, tu vas en école d'ingénieur. Et... oui. Donc j'ai quand... Là, actuellement, je suis à Mulhouse parce que je suis venu ici quand j'étais en école d'ingénieur. Mais ma famille est dans le nord de la France. Un petit peu plus bas que l'île quand même, mais... Genre l'Aisne, l'Oise, pour la majorité des gens, ça reste dans nord de la France.
+
+David Leuliette (01:51.494)
+T'as pas dit de T-T-T-T-
+
+Ok.
+
+David Leuliette (02:08.334)
+Ok.
+
+Nathan (02:10.922)
+Et je risque d'ici peu de redéménager dans la région parisienne parce que ma famille est du coup dans ce coin là et j'ai un associé où on a des bureaux en région parisienne. Mais pour l'instant je suis toujours en Alsace, c'est un coin sympa que j'aime bien. Et du coup je reviens au niveau de mon histoire. Attends, j'en étais où ?
+
+David Leuliette (02:33.614)
+ODS, machin, tac, après, école... T'as fait où ton école École d'ingé, c'était où ?
+
+Nathan (02:36.686)
+École d'ingé, du coup ici à Mélouse et pendant mon école d'ingé, je faisais déjà du freelance parce que vu que ça faisait des années que je faisais des projets à côté et tout, comme je me suis lancé en freelance, j'ai commencé à assécher les cours pour faire du freelance et à un moment je me suis dit stop, j'arrête et c'est là que je me suis lancé à temps plein à être dev officiellement, sans aller au bout de l'école d'ingénieur.
+
+David Leuliette (03:04.011)
+Ok, Octadrop out.
+
+Ok, su.
+
+Nathan (03:08.494)
+Si j'avais pas drop à outre, je serais dans ma dernière année d'école d'ingénieur. Je serais pas encore sorti.
+
+David Leuliette (03:13.028)
+Ok.
+
+Ouais, donc t'aurais fait des trucs... On va pas en parler. Parce que la gêne, qu'est-ce qu'ils apprennent maintenant vu qu'ils y allaient partout ? Quel est l'intérêt d'aller à l'université ?
+
+Nathan (03:20.15)
+Bah pas mal des projets sont les...
+
+Nathan (03:28.062)
+Moi j'ai appris avant les AI, c'est à que quand j'ai commencé à faire mes premiers sites, mes premières apps et tout, je codais tout à la main et même encore aujourd'hui j'utilise un petit peu les AI avec copilot etc. Et je commence petit à petit à utiliser des outils style chat, GPT etc. quand il a des questions de la réflexion ou un petit peu un avis externe. je suis encore beaucoup de... je vais chercher sur Stack Overflow les soucis que j'ai, lire la documentation avant d'utiliser une librairie et tout. Là où moi tu vois quand j'étais en école d'ingé, je voyais beaucoup de gens et...
+
+David Leuliette (03:30.164)
+Ouais, ouais, j'avoue.
+
+Nathan (03:57.518)
+Ils se posaient pas la question, ils allaient directement sur chat de gbt, poser la question en espérant voir le truc tout fait. Je me dis, c'est pas comme ça que t'apprends quoi.
+
+David Leuliette (04:03.575)
+Ouais, moi c'est ça, quand je devais des cours à l'UIT, le premier truc qu'ils faisaient c'était une search Google Random. chez les mecs c'est impossible, je te donne la doc, il faut lire juste le truc d'intro Getting Started avec native. Donc non, on commence pas à partir je sais pas où. bah ouais, c'est le but.
+
+Nathan (04:23.028)
+Ouais, surtout que... Surtout que souvent, ouais, si tu suis la doc, ça se passe bien.
+
+David Leuliette (04:32.224)
+Très bien, très bien. donc, le point de bascule, c'est vas-y, l'école, c'est nul. J'ai des clients qui me payent à l'heure. C'est important. À la journée. Ouais, non, mais attends, vois, pas comme moi où j'ai des...
+
+Nathan (04:43.406)
+C'était la journée mais...
+
+Mais ouais, à ce moment-là, c'était ça. C'est-à-dire que j'avais un gros client, ça faisait déjà un an et demi que je travaillais avec lui. J'avais sur trois jours par semaine, on tapait déjà sur une grosse app et tout. je suis dit, allez, j'y vais. Parce qu'en fait, en école d'ingénieur, on faisait du technique et tout, mais pour des gens qui découvraient le code, la première année d'ingénieur, ils découvraient comment on codait. Ça faisait déjà des années que je faisais des apps et que je voulais faire des apps, donc je me suis dit...
+
+David Leuliette (04:50.127)
+oui.
+
+David Leuliette (04:57.11)
+Ok.
+
+David Leuliette (05:02.435)
+Et là...
+
+Nathan (05:17.358)
+de la deuxième année je suis parti quoi.
+
+David Leuliette (05:19.053)
+Ouais ouais, normal. bah c'est pareil. Vu que c'était pas appliqué, c'était vraiment très très théorique et on voyait pas... Enfin moi, à l'époque on voyait pas GitHub. Ça me rendait fou. Enfin quand j'ai découvert GitHub, je me mais pourquoi on apprend pas ça ? C'est... Enfin Git pardon. C'est la base, si t'apprends pas Git, tu sais pas... Avec plusieurs personnes et du coup... Enfin je vois pas comment tu peux faire. Mais bref. Et donc là c'était en quelle technologie... C'est à quelle technologie que t'as commencé ?
+
+Nathan (05:47.758)
+Moi j'ai tout commencé en natif, donc je faisais du swift, du javard, maintenant du cut-lean. il a 6 mois, quand je me suis associé avec une des âmes dont on va parler aujourd'hui, la personne à qui je me suis associé avait commencé son app en règle native. Donc j'ai mis les pieds dedans et c'est là que j'ai découvert un monde et tous les problèmes dont je vais parler après.
+
+David Leuliette (06:11.619)
+C'est que j'ai vu ton commentaire sur LinkedIn, c'était écrit putain, le Natif je déteste, c'est horrible, je comprends pas pourquoi c'est trop très compliqué et que ça casse de partout, versus faire du Natif où c'est assez stable.
+
+Nathan (06:31.822)
+Ouais c'était un peu ça le take parce que en natif après c'est aussi parce que j'ai mes habitudes et tout mais je mets à jour les choses etc enfin tout marche bien et en ragnative et j'ai remarqué que j'ai fait aussi un post sur le reddit d'Expo et à chaque fois que j'allais voir si j'avais des notifs parce que j'ai plein de gens et tout qui m'ont répondu je voyais tout le temps un nouveau post de ah j'ai mis à jour Expo et j'ai tout qu'est cassé à l'aide donc à chaque fois que je voyais ça ça me faisait sourire parce que je me dis bah on n'est pas les seuls mais ouais en gros oui
+
+David Leuliette (06:33.09)
+...
+
+David Leuliette (06:45.91)
+Ouais.
+
+David Leuliette (06:53.266)
+Ouais ouais bah...
+
+David Leuliette (06:58.283)
+non mais c'est le chaos, c'est horrible, moi je déteste JavaScript en fait en vrai, c'est une stack horrible, ça pète tout le temps, mais euh...
+
+Nathan (07:05.754)
+Javascript c'est encore un autre problème dont je vais parler après. Ça fait partie de l'écosystème et en fait il un jour il a un mec qui s'est dit, Javascript c'est un truc qui est pour le navigateur, allez on va le mettre sur le backend, on va le mettre dans des apps, on va le mettre partout alors que ça n'a pas été fait pour ça et c'est un souci.
+
+David Leuliette (07:08.14)
+Ouais non mais c'est ça, c'est... C'est ça.
+
+David Leuliette (07:23.842)
+À la base oui, c'est vrai que c'est pas le truc le plus stable du monde mais c'est un peu comme comics en MS tu vois, syndrome de la méducrité victorieuse et il faut faire avec, c'est comme les gens qui disent digital tu vois. Il faut vivre avec. donc super. alors l'app sur laquelle tu as travaillé c'est Control Resale. Control Resale, vas-y pitch nous le nom de ton app, enfin ce que vous avez.
+
+Nathan (07:46.657)
+contrôleur Icel.
+
+Nathan (07:50.57)
+En gros, le but du projet de Control Resale, c'est pour tous les personnes qui font de la vente en ligne de seconde main, on cherche à automatiser tout leur processus au maximum pour qu'ils gagnent du temps et qu'ils puissent diminuer à fond le temps nécessaire pour mettre en ligne un article et le vendre. C'est à dire qu'à la base, tu prends tes photos, ça il faut le faire quoi qu'il arrive, mais derrière toute la suite on automatise.
+
+C'est à l'écriture de ta description, la prise des mesures, la mise en ligne sur les différentes plateformes, style Vinted, le bon coin, Shopify, etc. La réponse au message quand il a des négociations, quand on t'envoie le bordereau, on va automatiquement le crop et te mettre un petit truc dans le coin comme ça quand tu imprimes tous tes bordereaux, tu sais directement quel bordereau et il va avec quel article. Et puis voilà quoi.
+
+Notre ambition c'est vraiment de tout automatiser pour que quand tu vends un article tu prennes quelques photos, tu imprimes ton bordereau quand faut l'envoyer et c'est fini quoi tout le reste ça se fait tout seul.
+
+David Leuliette (08:44.258)
+...
+
+le chip sur toutes les plateformes.
+
+Nathan (08:55.606)
+Oui, sur toutes les plateformes. Parce que c'est pareil, c'est très répétitif. Si tu veux le publier par exemple sur Vintets, sur Le Bon Coin, sur Vestiaire Collectif, à chaque fois tu dois prendre les photos, tout remplir à la main, etc. Là nous on te remplit tout pour toi quoi.
+
+David Leuliette (08:57.063)
+Ok, exemple.
+
+David Leuliette (09:10.665)
+Et tout type d'articles ?
+
+Nathan (09:12.903)
+Pour l'instant on est focus sur les vêtements mais par la suite je pense que oui on pourra supporter n'importe quel type d'articles.
+
+David Leuliette (09:18.641)
+Et euh... Comment vous... Ouais ça après c'est au day to day parce que... Comment tu fais pour gérer euh... Genre exemple, je veux publier des Playmobil Bon j'en ai pas avant, mais on va prendre un exemple Je vais publier des Playmobil, je prends des photos, claque, ça les met sur... Ça a choisi pour moi les plateformes ou ça va automatiquement les chercher genre met les sur eBay même si c'est un truc que j'avais pas forcément pensé ou...
+
+Nathan (09:30.094)
+...
+
+Nathan (09:40.831)
+Bye !
+
+C'est à toi de connecter ton compte, parce que le compte sur la plateforme est à toi. Et nous, va automatiser cette mise en ligne dessus. quand tu prends tes photos, ça te génère tout seul les descriptions, les machins, tu peux vérifier qu'il pas d'erreur, que des fois, il a, ça peut faire des erreurs. Et après, tu coches, tu dis, ces articles-là, je les possède sur toutes ces plateformes-là. Et après, c'est fini, tu laisses le serveur faire son taf.
+
+David Leuliette (09:45.386)
+Ok.
+
+David Leuliette (09:58.656)
+Oui oui.
+
+David Leuliette (10:05.857)
+Voilà, je vois, un peu la même logique qu'une plateforme de partage de contenu où t'agrèges tous tes réseaux sociaux et tu fais un post et boum, ça la partage partout et t'as connecté avant toutes tes sens.
+
+Nathan (10:11.544)
+Ouais.
+
+Nathan (10:15.096)
+Ouais là-dessus oui c'est un peu le même fonctionnement.
+
+David Leuliette (10:18.032)
+ici, cool. oui ça, vous avez mis combien de temps à faire l'après-midi ? Est-ce que tu m'as dit c'était quand ça ? En quelle année ?
+
+Nathan (10:27.342)
+Cette version là où on synchronise tout, fait 3 mois qu'on est dessus à peu près. On a commencé à vendre à des clients qui sont plutôt contents des retours mais on n'a pas encore ouvert au public parce qu'on a encore des petits bugs, a encore des trucs de stabilité à vérifier, certaines fonctionnalités qu'on n'a pas encore trop finies donc on veut finir de finir au lait tout ça. Mais on a déjà commencé à vendre parce qu'on s'est dit déjà c'est une validation et nous on a besoin aussi d'un peu de soupe pour vivre.
+
+David Leuliette (10:56.928)
+Ouais et puis même si ça fonctionne en vrai... Tu vois ? Moi je paye un comptable, le comptable il fait pas son taf et ben... Il prend quand même l'argent hein ! en vrai... On va arrêter, on va arrêter les comptables, ceux qui me connaissent sachent que ça m'en fout. Ah bah voilà on se rejoint au moins là dessus tu vois même si on a des différences de stacks. Ok super donc oui quand tu join ce truc là c'est ton confoder qui avait déjà fait l'application.
+
+Nathan (10:58.222)
+Donc oui.
+
+Nathan (11:05.966)
+...
+
+Nathan (11:12.462)
+Le aussi de l'administratif...
+
+Nathan (11:17.376)
+à bœuf
+
+David Leuliette (11:27.004)
+Et toi tu débarques dans REC Native et là crise d'hystérie totale.
+
+Nathan (11:27.113)
+En gros il avait commencé le projet
+
+Nathan (11:34.818)
+Oui, il y a eu beaucoup de soucis. gros, je veux résumer, déjà moi j'arrivais du natif, donc j'arrive sur React Native, beaucoup de changements, parce que la manière de penser son code, c'est complètement différent. C'est plus inspiré du web, notamment, sur React, sur tout ça. Ce n'est pas du tout la même manière d'organiser. Donc moi je dois découvrir déjà tout ça. En plus de ça, il a le langage. Donc là c'était une code base qui était en TypeScript. Même en TypeScript, il y a beaucoup de soucis qu'on a eus.
+
+David Leuliette (11:36.96)
+Ok.
+
+Nathan (12:04.926)
+avec TypeScript que c'est des soucis que j'avais pas l'habitude de gérer parce que en natif on utilise des langages qui sont compilés, sont strictement statiquement tippés donc il y a plein de soucis qui ne peuvent pas exister qui en TypeScript existaient donc on doit gérer et en plus de ça, là c'est la dernière surcouche qui a eu, qui m'a un peu fait exploser tu vois c'est cette histoire de quand tu mets à jour ça casse
+
+David Leuliette (12:07.936)
+...
+
+...
+
+Nathan (12:33.321)
+Je ne plus pourquoi, crois que c'était parce qu'on avait besoin d'une certaine librairie qui supportait pas la bonne version d'Expo. Donc j'ai dû passer de Expo 51 à Expo 52 et là ça nous a causé des problèmes dans tous les sens.
+
+David Leuliette (12:34.963)
+Ouais ça c'est parce que oui en fait c'est pas vraiment les mises à jour c'est plus la stack entière et toutes les third-part librairies qui ne sont pas maintenues ou qui ne marchent plus. En plus toi t'es tombé dans le pire moment parce que là il a la nouvelle architecture qui arrive enfin qui est arrivée et qui est de base dans expo SDK 53.
+
+qui fondamentalement change quelque chose qui avait été commencé en... Je dirais en 2022, ou peut-être même avant. Je pense que c'est le pire moment pour un job dans un projet quand tu viens de quelque chose. du coup, va en parler. d'hab à travers... Tu m'as dit aussi, tu as une autre application, Flash Up, c'est quoi ça ?
+
+Nathan (13:33.646)
+Ouais, j'ai une autre application, celle-ci, c'est une application que j'avais commencé moi-même avant, il y a longtemps. En fait, quand j'étais étudiant en prépa scientifique, je cherchais une solution un peu plus sympa pour réviser et j'ai fait ce projet-là. À la base, je l'ai fait pour moi et après, je me suis dit, le projet est sympa et tout, ça plaît, j'ai partagé avec mes camarades, etc. Ça leur plaît aussi, donc je vais le publier et puis ils t'aideront dessus, tu vois. Et en gros, l'idée, c'est que tu prends en photo ton cours, ça te génère tout seul des fiches de révision.
+
+Tes fiches de révision tu les as tout le temps partout quand tu veux quoi. Elles sont dans ta poche, juste tu prends ton téléphone, stripes les fiches, ça te permet de réviser. C'était pratique quoi. T'as pas à te ramaller avec des fiches physiques, t'as pas à les faire à la main, enfin voilà.
+
+David Leuliette (14:13.328)
+Ouais cool et ça... ouais bah oui carrément. Et ça du coup c'était en natif...
+
+Nathan (14:21.39)
+Je l'ai commencé à la base en natif et je l'ai migré vers Kotlin Multiplatform au fur et mesure. que il a à peu près deux ans j'ai commencé à utiliser Kotlin Multiplatform et quand tu fais du natif, fait, passer du natif à Kotlin Multiplatform, tu as quasi rien à changer. Tu as l'impression de coder un peu pareil quoi. là, ouais.
+
+David Leuliette (14:40.925)
+Ok, c'est pour ça que là tu peux vraiment bien comparer les deux solutions et dire « Ah, RackNative, je déteste, c'est horrible, venez dans l'autre univers ! »
+
+Nathan (14:44.866)
+Ouais.
+
+Nathan (14:49.198)
+C'est vrai que quand je vois l'écosystème Kotlin Multiplatform, il a beaucoup de gens qui disent que c'est encore un peu nouveau, mais niveau stabilité, j'ai l'impression que quand plus stable qu'un écosystème comme Expo. Et au final, j'y re-réfléchi après et ça se compare par le fait qu'au niveau du nombre de dépendances, au niveau de la surcouche, quand tu fais du Kotlin Multiplatform, tu n'as pas grand-chose. Je veux dire, le compiler sur Android, c'est tel quel comme du natif.
+
+Sur iOS, on vient compiler ton code clean comme si on compilait du code C à côté. Du coup, a très peu de choses. T'es sur du de la performance native t'as aucune surcouche. Au niveau de l'UI, si tu veux faire une UI qui est commune aux deux, bon, il y a Compose Multiplatform. Sur Android, ça map directement sur le compose, qui est le truc native. Sur iOS, il a un truc avec Skia qui a été refait pour avoir directement la même UI. Et voilà quoi.
+
+David Leuliette (15:33.853)
+Ouais, OK.
+
+Nathan (15:42.798)
+les dépendances après des librairies, utilises des librairies style une librairie si as une base de données, librairie si tu veux faire des appels réseau mais ces librairies là, tu installes la librairie et t'as que celle-ci quoi, t'as pas 15 autres dépendances là tu vois sur notre projet React Native quand tu fais un npm install, t'as à peu près 2000 packages et pourtant on n'a pas tant de trucs que ça tu vois et c'est normal d'avoir 2000 packages alors que quand tu fais une app native ou Kotlin milch platform, t'as quoi ? 10-20 packages ?
+
+David Leuliette (16:02.223)
+oui, boy, c'est...
+
+David Leuliette (16:11.101)
+Max, du coup on va en parler. On va disséquer la stack de Control Resale. À travers 5 points, on va commencer par le data layer. Comment vous récupérez la donnée
+
+Nathan (16:12.554)
+Donc ça paraît là-dessus.
+
+Nathan (16:28.866)
+Alors là actuellement pour tout ce qui est gestion du state etc on utilise du stand. Je pense que tu connais du coup du stand. Et ça a été un soulagement quand je l'ai découvert parce que avant ça en fait... C'est en vrai c'est le... Ouais j'allais dire c'est un des trucs où ça m'a soulagé dans le sens où avant on utilisait des UState et ça nous causait des problèmes dans tous les sens parce que quand tu fais un UState bah ton truc faut attendre un re-render pour avoir la valeur.
+
+David Leuliette (16:32.413)
+Ouais. Ok.
+
+David Leuliette (16:39.559)
+bah y a au moins un truc bien.
+
+Nathan (16:58.99)
+du coup quand tu fais par exemple des fonctions dessus et bah tes fonctions tu vas modifier la valeur mais tu dois attendre au render du coup tu retrouves avec des retards de state quand tu fais des use effects bah les use effects et tout ça se déclencher pas forcément ça se déclencher pas forcément comme on voulait tout ce qui était au niveau des fonctions etc soit on utilisait des use callback et on se retrouve avec des le problème du use callback c'est qu'il capture les valeurs du coup on se retrouve avec des fonctions qui étaient appelées avec les anciennes valeurs par exemple sur l'écran d'accueil tu as des filtres
+
+On ne comprenait pas pourquoi tu mettais à les filtres mais c'était quand même appelé avec les filtres d'avant et coup il y avait toujours un retard d'un là dessus. Et si tu mets les trucs en dépendance on se croit avec des trucs étaient appelés à l'infini en boucle. Du coup le jour où on est passé au store avec ce stand c'était un soulagement parce que tu étais un objet externe, les fonctions ne pas recréées à chaque rendu, le state tu peux y accéder quand tu veux, as toujours la dernière valeur dans les fonctions du store.
+
+David Leuliette (17:30.589)
+...
+
+Nathan (17:58.19)
+tu toujours accès à la dernière valeur du state et en fait c'est
+
+David Leuliette (18:00.445)
+C'est partagé partout, tu plein de choses avancées, genre time travel et tout ça déjà construit dedans ou tu dois le faire la main ? Je m'en rappelle plus. Non, c'est tu n'as pas besoin. Parce que des fois, je sais que dans Agent Taste j'ai besoin d'un time travel pour faire back, tu genre tu files un form et tu fais preview ce stage. C'est déjà, enfin je peux le faire à la main.
+
+Nathan (18:12.558)
+ça me parle pas du tout donc je saurais pas te dire.
+
+David Leuliette (18:29.597)
+Dans du temps, pense que c'est ça, mais tu déjà des utilities qui sont déjà built in dedans. coup, fais, ah, mais c'est génial. Ça te sauve quand même pas mal de temps. Ouais, non, mais c'est normal. En fait, en vrai, c'est ce que je dis. Faut en prendre un si ça marche. hop, pas le temps de tout investiguer parce que là, depuis les 18 minutes du podcast, a au moins quatre librairies de gestion de state qui sont sorties, dont deux qui sont mortes. Donc.
+
+Nathan (18:38.272)
+J'ai pas touché à tout ça, donc je saurais pas te dire.
+
+Nathan (18:55.944)
+ouais !
+
+David Leuliette (18:58.23)
+Donc voilà, on a 5 minutes pour finir le data fetching avant qu'il en ait une autre qui arrive. Et du coup, vous récupérez comment la data ?
+
+Nathan (19:06.594)
+Et nous la data actuellement on utilise Axios, on fait des requêtes rest sur notre back-end donc ça je veux dire c'est plutôt classique et normal quoi. Et en comparaison tu vois là où on a notre app Kotlin Multiplatform et puis toutes les autres que j'avais fait parce que j'en avais fait plein avant, bah pour tout ce qui est gestion de state on utilise des viewmodels et au final quand tu compares le standard et ton viewmodel bah au niveau du fonctionnement c'est assez similaire et c'est pour ça que ça m'a un peu parlé pas mal. Donc voilà.
+
+David Leuliette (19:15.548)
+Ouais.
+
+David Leuliette (19:34.426)
+Ouais. Et le backend, c'est quoi ?
+
+Nathan (19:38.482)
+Le backend, on est sur un backend qui fait en Kotlin avec Cthor. L'avantage en fait, moi j'utilisais cette stack là de base quand je faisais du natif parce que je pouvais partager pas mal de choses entre mon backend et mon app. Parce que j'avais du Kotlin côté back, du Kotlin côté app. Je pouvais importer mes modèles. client, comme ça, vois là, tout ce qu'on fait avec Axios à la main, on le faisait automatiquement en apportant le Kotlin du backend avec les modèles et tout. Donc c'était plutôt cool.
+
+David Leuliette (19:41.689)
+Ok, ouais.
+
+Nathan (20:06.806)
+et du coup je suis resté sur cette stack là parce que on a déjà tout, on peut réutiliser du code entre les projets, des librairies entre les projets, enfin c'est pratique quoi.
+
+David Leuliette (20:16.699)
+Ouais bah souvent c'est ça en fait, vu que t'as une stack universelle, pour ça en fait que tu disais tout l'heure ouais n'importe quoi les gars, pourquoi ils ont mis du JavaScript en backend, bah en fait c'est pareil, c'est même même chose, parce qu'ils avaient plus de dev JavaScript du coup ils sont dit, ils ne savaient pas que c'était possible alors ils l'ont fait. Bon, rétrospectivement c'était peut-être une idée de merde mais force est de constater que ça a rendu quand même, ça a sauvé la vie à plein de gens qui voulaient pas avoir 50 000 langages.
+
+Nathan (20:26.776)
+Ouais.
+
+David Leuliette (20:46.395)
+Et après il y a 5 spécificités... Non mais j'avoue,
+
+Nathan (20:46.465)
+Ouais mais bon...
+
+Pour avoir déjà fait par exemple du Node.js côté backend, on a eu plein de soucis, beaucoup de soucis. Là c'est plus au niveau du langage en lui-même du coup. qu'en fait le problème avec JavaScript et même TypeScript, c'est qu'ils te laissent écrire des choses des fois qui n'ont aucun sens et ça va quand même marcher. Mais dans un autre langage, les autres langages ils ne te laisseraient même pas écrire ce bout de code là. Et tu trouves avec des bout de code qui sont soit pas clairs, soit...
+
+David Leuliette (21:17.55)
+Ouais.
+
+Nathan (21:17.598)
+peuvent porter à confusion au niveau de l'exécution. vois, je beaucoup de personnes par exemple qui utilisent des double et, des double ou, des trucs comme ça un peu partout parce que ça te fait économiser quelques caractères et encore c'est pas toujours le cas mais souvent c'est à cause des bugs. Moi à chaque fois que je voyais ces trucs là dans le code il y avait souvent des bugs derrière. Là j'ai un exemple en tête
+
+David Leuliette (21:37.157)
+Ouais du coup, vas-y, vas-y,
+
+Nathan (21:41.646)
+Là c'était côté app, pas côté back mais ça représente bien les soucis qu'on a avec JavaScript et TypeScript. On avait un state qui était l'étape, c'était le numéro de l'étape parce qu'on avait un écran qui était composé en plusieurs étapes. Et on avait un A-B-Test dessus ce qui faisait que l'étape était soit nulle, dans le cas où la B-Test n'était pas activée, t'avais ton écran en un seul bloc, ou soit un entier avec le numéro de l'étape si la B-Test était activée et t'affichais que l'étape que tu voulais. Et moi j'avais mis un if-step.
+
+Et le problème avec ça, c'est que quand ma step était à 0, c'était considéré comme faux. Parce qu'en fait, il faisait la conversion automatiquement et Et ce genre de truc, tu te dis, ouais, je vais écrire if-step au lieu de if-step différent nul, comme ça je vais gagner quelques caractères. Mais il y toujours un cas auquel tu n'as pas pensé et voilà. Et les autres langages, vois par exemple en Kotlin, si veux faire un boulet 1, il faut être explicite et écrire différent nul. Si tu mets if un entier, il va te dire non mon gars, je ne pas ton entier, donne-moi un boulet 1.
+
+David Leuliette (22:21.21)
+...
+
+Nathan (22:39.67)
+Et ça c'est vraiment un truc que je reproche à JavaScript et TypeScript quoi. il y a plein de choses comme ça ouais.
+
+David Leuliette (22:44.322)
+Tu dois faire plein de bidouilles pour corriger ou alors tu mets des outils en place genre ISLint et ce genre de trucs pour...
+
+Nathan (22:49.294)
+On a un ESLint du coup, mais même avec l'ESLint, on a encore beaucoup d'endroits à corriger côté app et même au niveau d'ailleurs, c'est un autre truc que j'ai du mal à comprendre avec les gens qui font du TypeScript, c'est que je suis arrivé sur le projet et quand je faisais TSC, t'avais genre 2000 erreurs qui sortaient et pourtant l'app elle était en production tu vois, et là je me suis dit mais attends mais t'envoies un truc qui a des erreurs de partout en production et après il y avait des bugs partout dans l'appli du coup je suis dans mode bah faut pas s'étonner.
+
+David Leuliette (22:54.329)
+Mais c'est pas les foules.
+
+Nathan (23:18.926)
+Aujourd'hui on a énormément réduit nombre d'erreurs, y'en a encore parce que y'a des des bouts de code qui sont écrits et si tu veux les réécrire sans erreur faut repenser tout le truc parce qu'ils faisaient des pirouettes un peu peu bizarre sur des choses un peu bordere du langage qui marchaient dans certains cas qui des fois cassés mais bon et ça je trouve que c'est un problème tu vois genre en natif vu que c'est un langage qui est compilé si tu as une erreur de type si tu as une erreur de t'appeler une fonction une variable qui n'existe pas bah tu peux pas compiler tu peux pas envoyer ton app
+
+David Leuliette (23:47.754)
+Ouais, j'y vais.
+
+Nathan (23:47.918)
+Et ça devrait être normal que quand on voit ton app, que tu sois sûr que quand tu fasses un TSC, il zéro erreur qui ressort. Et ça, pour avoir vu plusieurs projets passer, ce n'est pas le premier projet que je vois passer avec ce genre de choses.
+
+David Leuliette (23:55.93)
+Ouais ouais.
+
+David Leuliette (24:03.094)
+moi c'est tout le temps, le client que je récupère ça dépend en desquels mais souvent c'est panique. Et question du coup, Taleb's Crypt il a été mis après le début du projet ou pendant qu'il le faisait ?
+
+Nathan (24:15.264)
+Non, j'ai toujours connu le projet avec TypeScript. TypeScript mais avec des erreurs de partout, des NIs, des machins... Donc au final tu te dis...
+
+David Leuliette (24:17.677)
+La vogue, yo !
+
+David Leuliette (24:22.089)
+Ok setup un peu genre j'ai pas le time, vas-y je vais le dire on verra ça plus tard, plus tard égale jamais et jamais égale problème.
+
+Nathan (24:25.582)
+Ouais, et des fois, ouais, il y avait des...
+
+Quand je suis arrivé, pour ça qu'il y avait beaucoup de bugs sur des choses comme ça. Et depuis qu'on a renforcé vraiment le TSC pour que ce soit le plus strict possible, qu'on a mis un 2S lint et tout, sur les nouveaux trucs on a beaucoup moins de soucis.
+
+David Leuliette (24:42.521)
+Pour ce qui est navigation dans l'app, vous utilisez quoi et est-ce que vous avez un pattern particulier ?
+
+Nathan (24:51.982)
+On fait un React Navigation. Je suis arrivé sur le projet, il était déjà comme ça et on n'a pas besoin de changer parce que ça marche. Le seul problème qu'on a, et ça c'est pareil, c'est encore un truc, je vois qu'en React, ça a l'air d'être standard et en Natif on ne pas ça comme ça, c'est que vous faites des navigations dans des navigations.
+
+David Leuliette (25:11.569)
+Des navigateurs ! Des stacks, stacks ! Non, t'as un navigateur et t'as des stacks à l'intérieur.
+
+Nathan (25:12.91)
+Ouais, des navigateurs qui sont eux-mêmes dans des navigateurs,
+
+Par exemple, nous, qu'on a, c'est que quand on a app, il a des onglets. Et quand tu changes d'onglet, c'est un navigateur différent.
+
+David Leuliette (25:22.968)
+Oui.
+
+C'est une stack.
+
+Nathan (25:27.96)
+Je sais pas la différence mais euh...
+
+David Leuliette (25:29.272)
+En fait, Navigator, c'est le truc qui englobe tout.
+
+Nathan (25:32.182)
+Ouais ?
+
+David Leuliette (25:33.816)
+Oui, Navigator c'est ça. Tu fais un Navigator à ton route, boum, ça englobe tout. À l'intérieur tu as plusieurs stacks. Donc tu as une stack, tu une bottom tab, c'est une stack. À l'intérieur de ton premier onglé, tu as une stack. À l'intérieur de cette stack, tu as plusieurs... plusieurs écrans. que... et en fait les stacks sont différentes en fonction de... de tes tabs. Parce qu'en fait quand tu fais un back button, tu reviens dans ta stack de ton tab. Tu reviens pas...
+
+Nathan (25:46.966)
+plusieurs écrans. Ok.
+
+David Leuliette (26:00.92)
+Tu fais pas saute mouton et tu reviens pas aux routes de ton homme par exemple.
+
+Nathan (26:05.966)
+Ouais, en fait je vois l'idée dans ce sens là mais ce qui nous a causé beaucoup de soucis c'est que des fois tu vas vouloir ouvrir une vue qui n'est pas dans le bon stack ou quoi du coup ça va te faire un changement bizarre des fois tu te retrouves bloqué là par exemple on a mis en place le deep linking il y a quelques jours et quand tu cliques sur une notif et que ça va t'ouvre par exemple dans l'onglet messages ça va t'ouvrir la conversation et bah quand tu fais back tu peux pas retourner back parce que du coup il t'a mis le truc en comme initial
+
+David Leuliette (26:08.952)
+Ouais.
+
+David Leuliette (26:14.968)
+Right ?
+
+Ouais.
+
+David Leuliette (26:29.206)
+Ouais, je vois. C'est parce qu'en go back, du coup go back n'existe pas. Mais ça, il me semble que, en fait, avant, tu étais obligé de définir explicitement dans tes stacks, justement dans ton navigation, tous les fichiers où tu allais. Et il me semble qu'avec la V7, tu peux faire ce genre de truc sur le bouton. Pour certains endroits. alors, en fait, ouais, il faut dupliquer ton code et le screen va au même endroit, mais la navigation, c'est pas exactement le même.
+
+Moi je sais pas, je pensais que c'était un truc qui venait du natif ça le fait, qu'il ait des stacks partout.
+
+Nathan (27:03.79)
+Je sais qu'avec SwiftUI, n'as pas directement une navigation, c'est directement tu dis je veux naviguer sur tel écran et après c'est géré tout seul. Et au niveau du Android, en tout cas sur du layout c'est pareil et sur du compose, tu as une navigation à la racine. Enfin moi j'ai toujours fait avec une seule navigation à la racine, même avec plusieurs onglets, plusieurs trucs et ça te donne beaucoup plus de liberté sur comment tu veux naviguer.
+
+David Leuliette (27:10.936)
+Ok.
+
+David Leuliette (27:22.337)
+Ouais.
+
+David Leuliette (27:27.669)
+Reveillez.
+
+Nathan (27:30.04)
+Et ça t'empêche pas de revenir par exemple sur la racine d'un onglet, même si c'était pas passé avant.
+
+David Leuliette (27:30.167)
+Euh...
+
+David Leuliette (27:35.223)
+Ouais ouais je vois, parce qu'en fait le truc c'est construit, à mon avis, construit le stade de la nave au fur et mesure et donc il sait pas en fait où tu es quand tu débarques d'un Deep Link. C'est comme faire un navigateur web en en vrai. Tu vois tu peux pas faire un bag de quoi ? De rien, je suis venu nulle part. je pense que ça doit être ça la raison. Sinon on cherchera.
+
+Nathan (27:45.684)
+Ouais, parce que du coup tu... Ouais.
+
+Nathan (27:53.302)
+Oui, c'est vrai.
+
+Nathan (27:58.978)
+Mais par exemple, quand tu veux dire... Je vais ouvrir l'app, je vais te montrer un exemple vite fait. Même si là il n'y aura pas le cas de Deep linking. Mais tu as un écran où tu as liste des messages. Tu vas sur une conversation, tu as les messages. Et si tu viens du Deep linking, quand tu cliques sur le back, ça te retourne sur l'onglet principal de l'app. Par contre quand tu reclic sur l'onglet messages, ça te retourne sur la conversation, pas sur la liste des conversations. Parce que lui a créé le navigateur avec, tu vois. Et ce genre de truc pour l'instant ne l'a pas encore résolu.
+
+David Leuliette (28:10.327)
+Ouais.
+
+David Leuliette (28:21.175)
+Ouais. Ouais. Ouais.
+
+David Leuliette (28:31.317)
+I see.
+
+Nathan (28:32.238)
+Voilà, on a ce souci là.
+
+David Leuliette (28:36.363)
+Ouais ouais, ça a l'air assez clean, ça ressemble carrément à une native classique tu vois. Pour tout ce qui est styling, t'as du pété à câble pour styling !
+
+Nathan (28:51.566)
+Pour le style, y a deux manières qui sont utilisées. D'un côté on a du Tailwind qui est utilisé à pas mal d'endroits. Et en même temps on a beaucoup d'endroits où on a des styles avec des stylesheets comme en CSS.
+
+David Leuliette (28:59.361)
+Ouais.
+
+David Leuliette (29:04.279)
+vous avez quand même mis... c'est nativewind en fait. avez quand même mis nativewind... il y avait déjà nativewind quand il est arrivé ?
+
+David Leuliette (29:12.81)
+Le reste
+
+David Leuliette (29:23.063)
+Ouais, c'est marrant qu'il y ait déjà la nativewind parce que c'est que c'est pas...
+
+quelque chose d'hyper connu dans le monde du React Native. J'ai l'impression que plus en plus, parce qu'avec la hype de Tailwind, c'est genre, ouais j'ai déjà fait du Tailwind, hop, ça fonctionne à peu près pareil. Sauf dans les cas où tu vas tomber et toi et que tu vas te dire mais c'est nul, ça marche pas, c'est juste que... Ben exactement ce que tu disais, en fait, tu peux pas faire de Shadow, tu peux pas faire ce genre de truc. Bon l'instant ça arrive mais...
+
+Nathan (29:50.038)
+Bah en vrai ça... ça allait.
+
+Nathan (29:54.57)
+Oui, tout ce qui Shadow et tout, c'est des trucs qu'on fait encore avec des styles classiques, va dire. Ça nous arrivait, moi j'avais cherché, j'avais pas trouvé avec Tello Man, donc j'avais fait comme ça. Ouais, ok. Ça doit être pour ça.
+
+David Leuliette (29:59.542)
+Alright.
+
+David Leuliette (30:03.286)
+C'est encore dispo je pense, avec la V4 peut-être mais c'est juste que bah en fait il n'y pas de binding qui existe donc il... Tu vois il sait pas en fait. C'est comme avant t'avais pas Android... T'es dans Android, la PIS c'est Elevation et sur iOS c'est... Je pense qu'il n'y en avait pas jusqu'à récemment. Et je prends Shadow parce que ça parle vraiment à beaucoup de gens. Mais je pense que c'est ça, ça n'existait pas à court. Donc maintenant que ça existe un petit peu...
+
+Nathan (30:10.332)
+ok.
+
+Nathan (30:28.632)
+Ouais, ok.
+
+David Leuliette (30:29.302)
+c'est plus fin, coup Telwin il faut qu'il se mette à jour et que quand il compile et qu'il détecte bien oui là c'est tel plateforme, sur de web ça va faire ça, sur de l'android ça va faire ça, sur de la web ça va faire ça.
+
+Nathan (30:40.959)
+Ouais, j'ai pas le truc.
+
+David Leuliette (30:42.613)
+Mais c'est toujours pareil, dis ouais ça fonctionne, tu l'écris, tu vas le voir, vas faire bah ok, tout va bien, puis en fait pas du tout. Donc t'as plein de codes, j'avoue c'est ça quoi, JavaScript ouais. En plus maintenant avec tout ce qui est généré, tu demandes d'acheter GPT, vas-y génère-moi un screen, ça va fonctionner, tu vas avoir plein de codes, mais en fait les trois cartes tu peux enlever parce que c'est inutile tout simplement.
+
+Donc je comprends un peu la frustration. Donc pas de composants du High Lab Rite vous avez touché à la main.
+
+Nathan (31:13.23)
+Tout est fait à la main car pour ce projet là, a un designer qui avait fait des maquettes Figma et tout, coup tous les composants avaient été faits à la main. On a fait gros notre propre lioiris de composants qu'on utilise partout, nos boutons, nos champs de texte, à nous quoi.
+
+David Leuliette (31:28.935)
+Et vous avez un outil pour gérer le design système ou pas ?
+
+Nathan (31:34.183)
+Tout est sur le Figma. Figma c'est notre source of truffes.
+
+David Leuliette (31:36.018)
+Ok donc Figma, ouais mais vous avez pas... parce que moi ce que je... ouais moi ce que je fais généralement c'est, dépend soit je mets Storybook en place comme ça j'ai sur le device je peux avoir accès au Storybook, j'ai aussi les fichiers de... les fixtures donc je peux faire les tests du coup les deux sont partagés et j'ai un truc un peu consistant ou alors quand j'ai pas le time c'est juste j'ai un écran un peu caché, boum et je mets tout dedans
+
+Nathan (31:58.552)
+Oui, ça ferait aussi. Non, non, on n'a pas. On n'a pas fait. En vrai, en ce moment, avec la version, avec la synchronisation des plateformes, etc., on est déjà bien occupé. Donc pour l'instant, c'est le genre de choses qu'on n'a pas spécialement prévu de mettre en place. Déjà, là, côté serveur, on a une logique assez complexe pour supporter toutes les plateformes et tout. Donc on a beaucoup de tests à rajouter, etc.
+
+David Leuliette (32:00.123)
+Et vous, avez fait quoi ? Vous avez ce genre de truc ou pas ? Pas le time. Pas le time !
+
+David Leuliette (32:24.233)
+Ouais c'est ce que j'avais dit. en plus, il faut le maintenir au overtime parce que je me dis que les API changent peut-être pas forcément mais comment tu sais que ça pète ?
+
+Nathan (32:27.488)
+pour être sûr que tout se passe bien.
+
+Nathan (32:37.678)
+Il a des changements, c'est ça aussi, on a beaucoup dû réfléchir à ça. Par exemple au niveau des appis et tout, on a mis en place des schémas pour être sûr que à chaque fois on ait le bon schéma et si jamais le schéma n'est plus bon, ça nous notifie, comme ça on peut savoir que le schéma a changé et adapter tout nos trucs. Et puis après une fois qu'on a le schéma qui est validé, tout le reste c'est du test unitaire classique.
+
+David Leuliette (32:58.42)
+Allez.
+
+David Leuliette (33:03.636)
+Parce que sur @ControlResell il n'y a pas d'expérience web pour l'instant.
+
+Nathan (33:08.462)
+Non, tout est full mobile parce qu'on s'est dit en fait ça doit rester simple. Un truc que dans ta poche, tu prends tes photos, tu cliques sur deux trois boutons si tu as besoin. Et après tout ce qui est compliqué, tu as une IA qui le gère pour toi. On veut pas trop avoir d'expérience web pour ça quoi. On veut garder quelque chose de simple. Si ça rentre pas dans le téléphone, c'est que nous on a raté quelque chose sur l'expérience utilisateur.
+
+David Leuliette (33:33.125)
+beau je vais en faire un short, je vais en faire un short de ce truc donc pareil niveau graphique et animations, keep it simple on va pas faire des trucs trop compliqués il ya un bouton et le but c'est que vous passez le moins de temps possible sur l'app, que les gens passent le moins de temps sur l'app donc il a pas d'animation delightful ni
+
+Nathan (33:34.094)
+on aimerait... Vas-y, vas-y.
+
+Nathan (33:51.352)
+Ouais, c'est ça.
+
+Nathan (33:56.974)
+On a du réanimate, je sais que c'est utilisé à 2-3 endroits, genre la caméra, les bottom sheets, mais on a pas fait d'animation spécialement.
+
+David Leuliette (34:03.22)
+Ok.
+
+David Leuliette (34:08.393)
+Et pour la caméra, vous utilisez quel composant
+
+Nathan (34:12.099)
+Je crois que c'est
+
+David Leuliette (34:15.516)
+c'est vision caméra quoi, c'est pas expo, parce qu'il a aussi expo caméra de base, moi je que j'avais utilisé pour un truc de scanner mais bon.
+
+Nathan (34:23.084)
+Je crois qu'on a du expo caméra aussi quelque part parce qu'il est dans les dépendances et y a des trucs genre pour les permissions et tout, il y a expo caméra je crois. Donc il y peut-être un mélange...
+
+David Leuliette (34:31.828)
+ça va te permettre d'avoir les permissions, ou alors t'as Expo Permissions. fait, ça aussi, vu que le SDK change un peu. Tu peux avoir, si tu fais du SlimFrog, je passe du SDK 51 à 53 direct, sans lire correctement le changelog, a moyen que tu perdes des morceaux parce qu'ils sont en train d'unifier tout ça.
+
+Nathan (34:39.79)
+Ouais, c'est pas clair.
+
+Nathan (34:58.382)
+On a déjà perdu des morceaux comme ça en mettant un jour, alors ce n'était pas sur la capéra mais... Petit exemple, les deux gros problèmes qu'on a eu quand on a mis un jour de Xposed 51 à 52. Problème et problème, ça s'est posé au niveau des variables d'environnement. Nous il faut savoir qu'on a une version de staging sur laquelle on fait tous nos tests et on a une version de production qu'on envoie sur les stores. Et la seule différence entre les deux, c'est qu'il a une variable d'environnement qui dit staging ou production.
+
+David Leuliette (35:02.279)
+Ouais.
+
+David Leuliette (35:25.574)
+Ok.
+
+Nathan (35:26.1)
+Du coup, quand on teste tout en staging et qu'on est content de nous, des fois on ne regarde même pas la build de production parce que on dit que la CI elle n'a pas bougé, il a pas de raison que ça change. Et quand on a mis à jour de Expo 51 à 52, je ne pas ce qu'ils ont fait Expo ou React Native, ils ont changé un truc et on s'est retrouvé avec la build staging en production parce qu'il y avait un cache qui faisait que quand on buildait la staging, ça buildait la staging, et quand on buildait la production, la vape d'environnement il avait un cache ou un truc.
+
+David Leuliette (35:41.939)
+Et ça changer, et ça va changer.
+
+Nathan (35:55.402)
+et il a build la staging et on s'est retrouvé avec la staging en production. Et quand on a commencé à recevoir des messages des utilisateurs qui nous disaient, nos données elles ont disparu et tout, on a commencé à paniquer et on a pris énormément de temps à comprendre déjà ce qui s'était passé. voilà. Et après du coup on a dû refaire... Temporairement ce qu'on a fait c'est qu'on a changé les DNS pour faire en sorte que le nom de domaine staging pointe sur la prod et que les gens récupèrent tout. Et après on a dû fixer côté CI.
+
+David Leuliette (35:57.085)
+Ouais. Ouais c'est ça.
+
+David Leuliette (36:19.165)
+Ouais.
+
+Nathan (36:23.502)
+le fait que la vague d'environnement ont cleané le cache etc. ça c'est un autre truc d'ailleurs que je trouve un peu honteux au niveau du cache de React Native, c'est que le seul moyen de clear le cache c'est de faire un start reset cache. Et ça au niveau de la CI c'est super chiant. Parce que nous du coup la seule moyen qu'on a de vider le cache au niveau de la CI, c'est qu'on lance cette commande, on la met en background, on attend 5 secondes et après on kill le process. Parce que sinon on n'a aucun moyen de faire en sorte que ils prennent un jour les vagues d'environnement.
+
+David Leuliette (36:38.384)
+Ouais.
+
+David Leuliette (36:53.721)
+Et les vabres d'environnement, sont dans IAS, ENV ?
+
+Nathan (36:57.462)
+Elles sont injectées par GitHub Action parce que nous au niveau de la CI on utilise GitHub Action et on build avec ça.
+
+David Leuliette (37:04.723)
+Parce qu'il faudrait que tu regardes IAS en list et je pense que ça résolvera votre problème. Je t'enverrai la doc juste après, je t'enverrai comment moi je fais. en fait quand ça build et tout, après il faut voir la CI et tout, du coup GitHub Action merge to main égale go ça prend... Je ne suis pas 100 % sûr, mais au moins je sais que t'auras plus le problème de...
+
+Nathan (37:18.67)
+...
+
+David Leuliette (37:34.547)
+de cache parce qu'avant c'est pareil avant je mettais jadis jadis mais variable d'environnement c'était dans ias.json ou appenv je ne sais plus un des deux je ne me rappelle jamais et maintenant en fait je suis passé du coup justement ce truc là avec expo 52 quand ils ont changé les trucs d'environnement je me suis dit ouais faudrait le changer et cette semaine je l'ai fait avec un de mes clients et je me suis dit ouais bah en fait bah c'est pareil pour l'analytics endpoint en fait c'était pas le bon
+
+J'avais un mix des deux, j'avais pas clair correctement, je me suis dit je l'ai refait là hier du coup c'est frais dans ma tête. Du coup je te l'enverrai.
+
+Nathan (38:09.943)
+Ok.
+
+Nathan (38:13.3)
+Ok ça marche. que nous actuellement on a un truc qui tourne sur GitHub Action avec Fastlane pour uploader notre build. J'ai toujours fait ça en native et du coup quand je suis arrivé en reg. native j'ai gardé la même chose et j'ai juste changé les commandes de build.
+
+David Leuliette (38:29.042)
+Ah ouais ok ouais ok donc tu utilisaient Expo mais sans utiliser leur infrastructure de build, tu as utilisé ton propre chez Fastline et tout ça.
+
+Nathan (38:38.254)
+Ouais parce qu'avant ils buildaient à la main et moi quand je suis arrivé j'ai fait on va pas build à la main à chaque fois du coup j'ai récupéré ce que j'avais fait en natif sur les CIs et j'ai juste repris, mis à jour et puis voilà quoi.
+
+David Leuliette (38:50.702)
+Ok, ouais, je vois. Ouais, du coup...
+
+Nathan (38:53.43)
+Après, est-ce que avec Xposed, est-ce censé laisser Xposed gérer ta build ?
+
+David Leuliette (38:59.838)
+En fait ça dépend, peux avoir les deux, tu peux utiliser la toute l'infrastructure d'Expo pour build l'intégralité de tes apps, ça c'est cool. Quand t'as rien et que tu connais rien, c'est génial. qu'en la gestion des certificats, la gestion des builds, Android, iOS, comment ça marche sur les stores, comment j'upload, ou est-ce que je dois drag and drop pour mettre le build, ça c'est génial. Quand les gens ne savent pas ce que c'est créer un certificat, connaître Fastlane ou faire du Ruby,
+
+Bah voilà, c'est génial. Mais quand t'as déjà cette connaissance, tu dis bah... Vas-y quoi.
+
+Nathan (39:34.35)
+Nous on avait déjà tout qui tournait et qui fonctionnait comme ça pour les autres rap, on a aussi de la CI qui marche sur du back-end etc. moi je me suis même pas posé la question de est-ce que Expo faisait un truc, j'ai repris ce que j'avais et voilà. Et ça marchait très bien jusqu'au moment où Expo ont changé leur truc en 52 pour les vaves d'environnement et que du coup on s'est retrouvé avec ça. Et ça a été un peu la surprise. Et ouais, c'était un peu la surprise.
+
+David Leuliette (39:44.145)
+Normal.
+
+David Leuliette (39:51.953)
+J'avoue, ! Et en code lean multi-platform, c'est pareil, si tu veux faire de l'iOS, tu utilises Fastlane pour tout ce qui est CI.
+
+Nathan (40:03.502)
+Ouais, disais pareil, exactement pareil.
+
+David Leuliette (40:07.145)
+mais du coup t'as un langage en plus mec t'as rubis à savoir à connaître ça se lit franchement ça se lit même moi je pouvais en faire ouais moi j'en avais fait ouais j'en avais déjà fait avant du coup je savais je savais clairement mais oui oui faut pas avoir peur du tout c'est un fichier de config il n'y a pas grand chose à savoir non plus donc donc
+
+Nathan (40:11.338)
+Ouais après la config face lane...
+
+Ça se lit, ça s'écrase bien. Moi qui n'ai jamais fait de rubis à côté tout seul, j'ai eu aucun problème avec ça.
+
+David Leuliette (40:32.337)
+Ça va. C'est quoi le release train ? Bon l'instant on était full time là dessus là sur control oricelles.
+
+Nathan (40:39.392)
+Ouais, full time là-dessus pour l'instant, ça fait 3 mois qu'on est à fond dessus.
+
+David Leuliette (40:41.169)
+Et c'est quoi le release train ? Vous déployez quand ? Quand c'est fait ou
+
+Nathan (40:49.166)
+C'est déjà dispo, pour l'instant on le vend un peu à nos clients qu'on connaît et qu'on leur vend directement. Et par la suite on finira par le vendre en self serve quand on pensera que tout sera suffisamment stable et qu'il aura les fonctionnalités qu'on veut. Parce que là dans le plan initial il manque encore quelques petits morceaux.
+
+David Leuliette (41:12.578)
+Ouais, ajoutez-moi encore une feature. On connaît le fameux. ouais, après...
+
+Nathan (41:20.19)
+Après là c'est aussi nos clients qui nous font des retours extrêmement pertinents sur l'expérience utilisateur et tout. c'est pour ça qu'on déploie aussi en progressif.
+
+David Leuliette (41:29.796)
+Ouais, ok. Ouais du coup vous êtes deux. Tu m'as dit. Ouais ok. Ouais du coup c'est plus genre grès du vent, il n'y a pas vraiment de plan, genre on relise toutes les semaines quoi qu'il arrive. C'est... Bah là on va plus faire du back-end, là on va plus faire les retours, gestion de priorité. Je vois. Est-ce que... Il a cinq librairies que tu recommandes quand même même si tu détestes... que... Ouais détestes c'est beau.
+
+Nathan (41:34.881)
+On est deux,
+
+David Leuliette (41:58.736)
+Est-ce que tu détestes du correct native ? Non, ça me procure pas de la joie.
+
+Nathan (42:01.19)
+Bah, faut dire... Ouais, quand je fais du ragnatif, je suis pas forcément très heureux quand je me rencontre aux problèmes qui sont devenus habituels, en Et c'est...
+
+David Leuliette (42:10.608)
+Je vois... Ah oui tous ces quotidiens tous les jours j'ai un truc... Ah là là au secours...
+
+Nathan (42:15.662)
+Ouais mais on a souvent des trucs... Mais j'ai quand noté quelques librairies qui sont pour moi utiles ou que j'ai bien aimé. La première chose que j'ai noté, bon je sais pas si on peut vraiment considérer ça comme une librairie même si ça fait partie des dépendances, bah c'est tout ce qui est TypeScript de S-Lint. Mine de rien, même si TypeScript il a encore à mes yeux des soucis, ça reste quand même mieux que de faire du JavaScript pur.
+
+David Leuliette (42:25.199)
+bah vas-y alors, quels sont elles ?
+
+David Leuliette (42:35.449)
+Oui.
+
+Nathan (42:45.1)
+Parce que quand tu fais du JavaScript pur, c'est un peu comme coder à l'aveugle. C'est comme si demain tu codais dans le bloc de Windows et que tu disais, bon, voilà. T'as aucune info. JavaScript au cours, moi, c'est pas utilisable. C'est impossible d'écrire du code qui va marcher facilement. Tu vas tout temps avec des bugs, des trucs parce que... Tu peux, mais...
+
+David Leuliette (42:54.554)
+ouais, c'est JavaScript au Cofour, euh...
+
+David Leuliette (43:05.919)
+si, si si si, ça je suis pas d'accord. Écrire du code facilement, si. En JavaScript, oui. Par contre, maintenir la chose à travers le temps, impossible. Impossible. Même revenir trois jours après, est-ce que ça fonctionne ?
+
+Nathan (43:12.108)
+Ouais le maintenir et tout c'est...
+
+Nathan (43:18.156)
+T'as aucune information sur ce que c'est ton truc si c'est une string, c'est un entier, si c'est un objet, c'est... enfin... c'est immaintenable pour moi, c'est voilà, le minimum il faut du TypeScript où tu utilises du typage partout, parce que sinon t'as tout temps des erreurs undefined, des erreurs machin, c'est un string alors que tu voulais un entier, enfin voilà... Ouais.
+
+David Leuliette (43:21.935)
+ouais... ouais, t'as...
+
+David Leuliette (43:35.141)
+ouais, je suis d'accord, je suis complètement d'accord, c'est cool. En plus, ouais...
+
+Nathan (43:41.206)
+Donc ça avec le S-Line, parce qu'il y a beaucoup de choses que tu autorises normalement de base JavaScript ou TypeScript, que le S-Line va te dire non, tu ne m'écris pas ça, parce que ça, une fois sur deux, ça ne pas être ce que tu penses.
+
+David Leuliette (43:55.183)
+Ouais la vibe est déjà scopée. Moi ce que j'aime bien aussi c'est que tu as le même style partout, tu n'utilises pas de ternary operator. C'est vrai que c'est un mix de erreurs qui fixe le langage.
+
+David Leuliette (44:11.785)
+beauté du code ? beauté du code, tu sais des trucs lisibles en fait, genre moi je déteste, enfin c'est pas que je déteste, trouve ça, tu les gens qui sont smarts et qui écrivent, bah comme tu disais tout à l'heure, qui utilisent une feature genre on va mettre, pour économiser deux caractères on va faire un truc qui pas explicite, bah...
+
+Nathan (44:13.632)
+Ouais le style après euh... Oui.
+
+Nathan (44:28.718)
+Ouais ça c'est pas ouf parce que quand tu lis le code tu vas te dire ouais est-ce que ça fait ça, est-ce que ça fait autre chose et du coup souvent ça cause des bugs parce que bah c'est pas ce que tu pensais. Genre tu t'es dit ouais dans mon cas ça va être ça et en final t'as un cas auquel t'as pas pensé, bah par exemple le cas de tout l'heure du step qui était 0 et au final ça faisait false bah ça bug parce que tu as pas pensé à ce cas là tu vois.
+
+David Leuliette (44:36.943)
+Ouais c'est ça.
+
+Ouais.
+
+David Leuliette (44:49.775)
+Ouais, parce que ça peut être toi qui reviens 6 mois après et ou quelqu'un d'autre qui bosse dessus qui va dire « code obscur, qu'est-ce que, what ? » Si c'était en franglais alors là, pfff, moi je rage quitte. Ok, alors vas-y, qu'est-ce que t'as d'autre qu'il faudrait que tu recommanderais ?
+
+Nathan (45:06.958)
+Donc y a ça, il a ZOD pour tout ce qui est validation parce que ça c'est un souci aussi le fait que le typage soit dynamique. Quand tu vas faire par exemple une requête à ton API, souvent tu vas dire ok ça ça me retourne tel truc et tu fais confiance à TypeScript. Et puis trois écrans plus tard tu te retrouves avec une erreur d'un truc undefined parce que bah en fait c'était pas du tout ce que tu pensais. Donc partout on a de l'entrée et de la sortie.
+
+souvent c'est tout ce qui est requête d'API, écriture de données dans des stores, j'en sais rien, enfin voilà. Et ben on passe ça dans Zod, comme ça on est sûr que ce que TypeScript nous dit que c'est tippé, il y a bien la bonne chose derrière quoi. Ça c'est un truc, par exemple tous les langages qui sont statiquement tippés gèrent de base, mais côté JavaScript, TypeScript, c'est quelque chose qu'on est obligé de rajouter. Et ce qu'on a fait pour aller encore plus vite même,
+
+c'est que nos modèles qui sont définis en code ligne, j'ai fait un petit plugin qui va générer automatiquement les schémasodes depuis les modèles. Comme ça, un petit npm install et puis on récupère tous nos schémasodes automatiquement depuis le backend. On est sûr qu'ils sont à jour, que tout ça.
+
+David Leuliette (46:15.214)
+ça c'est smart ça on adore
+
+Nathan (46:21.998)
+Je me souviens quand je l'ai développé, mon associé était un peu en mode, tu parles pas peu de temps à faire ton truc. puis aujourd'hui, on ne plus une seule seconde. On appuie sur un bouton et on récupère tous nos modèles à jour. Surtout qu'aujourd'hui on a beaucoup de modèles. Donc si tu devais les maintenir à la main, ça serait une horreur. C'est ce qu'on avait fait au début et c'était horrible. Donc c'est clairement rien qu'un temps.
+
+David Leuliette (46:31.66)
+bah c'est ça.
+
+David Leuliette (46:39.246)
+Ouais c'est ça, si t'as un truc qui change, tu fais, tu re-run une commande, va dire, hé voilà mes 4000 erreurs, fais, hé si ça je n'avais pas fait, jamais on l'aurait capté donc oui.
+
+Nathan (46:52.142)
+Donc c'est génial d'avoir ça.
+
+J'ai même étendu ce truc pour ça me génère aussi les modèles pour Python, parce qu'on a un projet, on a des quelques trucs, on fait de l'IA, on fait de l'analyse des images, on fait de l'automatisation, on a du Python. Et du coup, avec la même annotation, je génère aussi les modèles pour Python et on valide pareil partout. Ça c'est génial d'avoir pu avoir tout ça. Donc voilà, il a Zod pour tout ça. Et dernière librairie que j'ai notée, Zustand, parce que mine de rien, je trouve que la gestion avec les useStates, avec les use machins...
+
+C'est très bancal quand on a beaucoup. coup, utiliser un store, mine de rien, ça simplifie énormément niveau lisibilité. Le fait que ce soit un objet, bah moi je m'y retrouve parce que ça marche un peu comme un viewmodel. En tout cas, c'est ce qui se rapprochait le plus d'un viewmodel. Où tu as un objet qui a son state interne, tu as des fonctions dessus qui sont stables, qui causent pas d'erreur rendue à chaque fois. Après je sais que TheStand c'est pas le seul, il y a des rédux, en a plein. Mais...
+
+Pour quelqu'un qui commence et qui sait pas quoi choisir, Justin est assez simple à prendre en main. Et voilà quoi.
+
+David Leuliette (48:00.279)
+Ouais c'est ça la force du truc c'est que... Tu lis le Getting Started en plus je suis sur la doc, t'as compris instantanément il y a assez de magie et c'est assez approchable pour faire des petites choses et ou grossir comme vous où tu utilises que ça et t'as... T'as un global store, tout dedans ou vous avez breakdown par...
+
+Nathan (48:24.154)
+Non a break parce que ça c'est pareil c'est un truc où j'ai pas trop pigé l'intérêt c'est d'avoir un gros store ou dans lequel tu mets tout en vrac. Nous on a un store plutôt par section genre par exemple pour l'onglet de la messagerie on a un store qui stocke la liste des conversations et quand tu vas dans une conversation, t'as un store qui est créé à la volée qui est scopé à l'écran qui correspond à la conversation avec ses messages etc et qui quand tu retournes en arrière est détruit et chaque...
+
+Chaque fois que tu ouvres une conversation, tu un store local. Ça ressemble vachement au vieux modèle de ce qu'on fait en natif. Je trouve ça beaucoup plus simple à gérer que d'avoir un gros store dans lequel tu vas tout mettre en vrac et tu dois gérer avec ton ID, avec ton machin. Là, tu es vraiment scopé sur ce que tu as besoin et ça t'évite aussi de charger des choses que tu n'as pas besoin. Parce je vois par exemple, avant on avait, je crois qu'on a encore ce problème là, quand tu ouvres l'application, tu arrives sur la page d'accueil.
+
+tu as des données qui sont chargées sur des écrans qui sont affichés que si tu vas en profondeur dans l'architecture du truc. Et je me dis mais ça sert à rien de les charger au démarrage, tu vas les charger quand tu vas aller dans cet écran-là, mais voilà. Et le fait de découper en stores comme ça, ça permet de vraiment charger ce que tu as besoin au et mesure aussi.
+
+David Leuliette (49:41.772)
+Ouais ouais si c'est ça, bah faut séparer ça dépend quoi. Des fois, généralement moi je commence avec un gros et je mets tout dedans. Et puis d'un moment il y a trop de lignes, je fais... Allez, on va casser ça, exploser ça en plusieurs parties. Mais si t'avais une vision claire dès le début de ce qu'il fallait faire... Parce que là ouais c'était ça, c'était que vous avez mis... Ouais, t'as mis ou stand quand t'es arrivé sur le projet et tu t'es dit... Pas tout de suite.
+
+Nathan (50:03.662)
+Pas tout de suite quand je suis arrivé, parce qu'au début quand je suis arrivé, tout était mélangé dans les écrans, t'avais des states, des fonctions, t'avais tout qui était mélangé dans les écrans. Et je me suis dit, déjà, niveau lisibilité tout, c'est pas ouf. Donc au début, j'avais opté pour une première solution, où j'avais fait des contextes et des providers dans lesquels je sortais tous les states et la logique. Comme ça, tu faisais un use machin et tu récupérais ça. Mais j'avais encore le problème parce que derrière c'était des use state, des fonctions avec des use callback, une fois sur deux, machin. C'est là, ouais.
+
+David Leuliette (50:29.836)
+C'est là que t'as détesté React, tu t'es dit, c'est horrible, pourquoi je dois faire tout ça ?
+
+Nathan (50:34.19)
+C'est là où j'ai eu beaucoup de soucis avec ça et au fur et mesure je cherchais, la meilleure solution que j'ai trouvée c'était d'utiliser un store comme ça et au final j'ai remappé tout ce que j'avais mis dans des vieux modèles, je les ai remappé dans des stores et ça a fixé beaucoup de nos soucis.
+
+David Leuliette (50:49.068)
+Ouais, je vois, je comprends pourquoi t'as pas kiffé du tout l'expérience. Parce que, ouais, quand ça a pas passé ça, fait, vu que c'est bordélique quand t'arrives, t'as l'habitude de...
+
+Nathan (51:03.758)
+Ouais, ouais, le projet quand je travel, le projet était assez... c'était un peu le bazar, il n'y avait pas de convention, il y avait... voilà. Et moi qui est habitué de, en tout cas, tous les projets que j'ai fait avant, où tout était bien structuré, quand même quand je regarde par exemple mes apps Kotlin Multiplatform et mes backends, c'est la même architecture en oignon. La seule chose qui change, c'est que bah... au bout, il y en a un où tu présentes un écran et l'autre tu présentes des routes d'API, tu vois. Mais sinon tout ce qui est en dessous, c'est la même chose.
+
+David Leuliette (51:29.33)
+Ouais.
+
+Nathan (51:31.348)
+Je vais avoir mes modèles, autour mes repos, mes use case pour la logique, autour j'ai la couche des viewmodels dans l'app, soit des contrôleurs côté back-end, et puis après l'écran ou les routes d'API, mais tout était identique et du coup j'ai toujours eu la même structure et tout. Je m'y retrouvais facilement et là je suis arrivé là-dessus, j'ai eu énormément de mal à trouver comment on architecturait un projet correctement, parce qu'il a beaucoup de choses, je me disais mais ça tu le fais comme ça, mais c'est un peu le bazar de le faire comme ça.
+
+écrire des tests, tu fais, machin, parce que ça tu as pareil autre chose j'ai mis en place l'injection de dépendance un petit peu partout dans notre projet parce que comme ça ça nous permet, t'as un store, t'as un use case, t'as rien ce que tu veux, tu peux le prendre indépendamment lui injecter ce que tu as besoin et faire tes tests unitaires dessus. Avant tu te retrouvais avec tout qui était mélangé et c'était impossible de tester un truc parce que si tu voulais tester un truc, en fait fallait tester les 15 000 trucs, ouais tout ce qui était appelé
+
+David Leuliette (52:16.903)
+Ouais, bravo.
+
+David Leuliette (52:24.053)
+Ouais ça prenait toute la grappe ouais.
+
+Nathan (52:27.724)
+Et pour l'avoir fait une fois quand je débutais d'écrire un test, ou je voulais faire un test où je testais tout sans injecter des choses, je l'ai fait une fois, j'avais envie de me tirer une balle après et j'ai jamais recommencé quoi. C'est pour ça que je décompose tout, que chaque chose est à sa place, voilà, parce que pour tester c'est beaucoup plus simple. Quand tu écris un cas de test, tu testes vraiment que ton bout de code là, tu n'as pas à gérer 15 000 cas. Parce que quand tu tests indépendamment, tu additionnes le nombre de tests.
+
+David Leuliette (52:43.317)
+Oui.
+
+Nathan (52:55.628)
+alors que quand tu dois tester les choses les unes dans les autres, tu multiplies le nombre de tests pour traiter tous les cas. Donc ça grossit de manière exponentielle et c'est ingérable. Et ça j'ai eu beaucoup de mal à trouver côté React Native, comment tu faisais pour bien découper ton code. Ouais, j'ai l'impression que oui, c'est ça en fait. En natif, faire de l'injection de dépendance est standard, tout le monde fait ça, il a des dizaines de librairies qui gèrent ça.
+
+David Leuliette (53:09.696)
+bah c'est normal que t'aies pas trouvé ! Parce que ça n'existe pas ! C'est le chaos mec !
+
+Nathan (53:20.11)
+En React Native, j'ai fait un truc à la main, j'ai utilisé A8LX pour faire de l'injection de dépendance, c'était ce qui ressortait le plus. En React Native, personne avait l'air de trop utiliser ça. Les gens avaient plus l'air de que ma vue appelle mon API directement, et si je veux tester ma vue, je suis obligé de simuler avec les bons retours de l'API parce que c'est pas séparé.
+
+David Leuliette (53:34.106)
+c'est...
+
+Nathan (53:45.708)
+alors que non, t'as envie tester indépendamment la pays, indépendamment la logique, indépendamment la vue.
+
+David Leuliette (53:45.915)
+Alright, c'est...
+
+David Leuliette (53:51.114)
+Ouais même ça tu fais un functional component, tu as toute la logique du high et après... après ça dépend vraiment comment tu gères tes appels d'API mais tu peux faire extraire ça dans un hook et après tester le hook mais en fait ça c'est qu'il a pas une solution. Je comprends ta frustration parce que pareil moi avant je faisais du rails et c'était trop bien. a une façon de faire, fermez là, commencez pas à avoir 50 000 solutions différentes. Et en rack native c'est complètement l'inverse, c'est genre do whatever.
+
+Donc ce qui peut être bien mais ce qui peut être aussi carrément bordélique. Est-ce qu'il y a une fonctionnalité, la dernière que tu as faite à peu près, combien de ça prend à peu près pour mettre en prod ? Tu avais une idée d'une fonctionnalité que tu as développée et combien de temps vous avez mis pour le chiper ?
+
+Nathan (54:26.336)
+Voilà, c'était un peu chaotique quoi.
+
+Nathan (54:38.734)
+Nous ce qu'on aime bien faire c'est chip le plus souvent possible, le sens où même si c'est des petits bugs fixes ou des petits ajouts, éviter de mettre des trop gros trucs d'un seul coup en production. On aime bien de découper comme ça, ça nous permet de tester, de revenir rapidement sur une modification. Et du coup des fois on va même envoyer des morceaux, même si une fonctionnalité ne va pas être finie, mais il a des morceaux déjà qui sont prêts, va déjà l'envoyer parce que ça peut déjà être utilisé à tel endroit.
+
+et voilà on aime bien un rollout le plus souvent possible. Après là la grosse version sur laquelle on travaille avec les intégrations des plateformes et tout, mais là c'est vraiment comme c'est un gros truc, il y a du back-end, y a de l'app, y a... Côté serveur c'est même décomposé en plusieurs services parce que selon les plateformes, selon les traitements etc. c'est assez gros, ça nous a pris beaucoup de temps.
+
+David Leuliette (55:28.49)
+Et vous faites du futur flag ou pas
+
+Nathan (55:35.307)
+du feature flag.
+
+David Leuliette (55:36.809)
+En gros tu mets un feature flag, dis juste moi en tant qu'user ABC password 1 2 3 4 j'ai accès à la feature donc comme ça mes tests ou mes VIP clients ou mes champions ou comment tu veux les appeler au moins ils peuvent tester même si c'est complètement cassé il faut pas que ça casse mais il juste que comme ça tu permets le long run
+
+Nathan (55:38.38)
+Oui, enfin je... Oui, je vois ce que c'est.
+
+David Leuliette (56:05.253)
+continuer à délivrer de la valeur quand même. Genre je vais faire un petit bug fixe et où j'avance sur mon gros chantier de ajouter une nouvelle plateforme par exemple. Donc du coup les utilisateurs ils l'auront bloqué. En staging ce sera ouvert mais pas en prod.
+
+Nathan (56:14.368)
+Ouais bah là dessus euh...
+
+Nathan (56:19.624)
+Là-dessus, a staging prod qui séparé, là la donnée peut être différente entre les plateformes. Des fois il des choses qu'on peut activer à la main dans la base de données, du coup c'est propre là où est. Et après les grosses fonctionnalités, par exemple la nouvelle version, c'est un untacting mon sur Revenu 4, ce qui fait que c'est activé pour les gens à qui on l'a vendu, c'est activé pour nous, et pour l'instant pour les autres utilisateurs ils ont encore l'ancienne version. Parce qu'à la base l'application, quand je suis arrivé, c'était juste une application de gestion de stock.
+
+David Leuliette (56:24.444)
+Ouais, ok.
+
+David Leuliette (56:28.9)
+Ok ouais, faites boire, pas... Ouais.
+
+Nathan (56:49.07)
+tu traquais le stock de tes articles et tout mais il avait rien qui était ça publie sur les plateformes ça te faisait les descriptions ça a géré les négociations les bords d'euros il n'y avait pas tout ça donc les... ouais on est passé de simple gestion de stock en mode tu traques ton stock tu sais combien t'as vendu voilà vraiment ton tracking de stock c'est à... voilà
+
+David Leuliette (56:59.669)
+ouais c'est un sacré pivot quand même ça change de...
+
+David Leuliette (57:09.576)
+de photos et pull type. Ok.
+
+Nathan (57:13.038)
+C'est à que quand tu l'ajoutes dans ton stock, tu vas uniquement l'ajouter là dans ton stock et après tout le reste est derrière. Et même l'ajout dans le stock est super rapide parce qu'avant il tout rentrer à la main, là tu prends juste une photo. Donc ouais c'est une évolution, mais en faisant de la recherche utilisateur, c'est ce qu'on s'est rendu compte que les gens voulaient vraiment. Parce que les gens étaient en mode, c'est bien on fait notre gestion de stock, on publie à un parallèle sur Vinted, on publie en parallèle sur telle plateforme, on en a marre de tout remplir à la main, on veut une intégration où tu prends ta photo et tout se remplit tout seul sur toutes les plateformes.
+
+David Leuliette (57:24.68)
+Dernier coup.
+
+Nathan (57:42.36)
+Comme ça on le fait une fois. Et c'est pour ça qu'à un moment on a fait ce pivot et on s'est dit voilà on rajoute ça et ça va devenir sur le long terme le truc central de l'app quoi. Les anciens clients ils nous utilisaient principalement pour la gestion de stock, les nouveaux clients la partie stock et statistiques ils s'en fichent un peu et eux ce qui les intéresse vraiment en fait c'est l'intégration des plateformes.
+
+David Leuliette (57:42.492)
+Ouais, c'est bon.
+
+David Leuliette (58:00.73)
+Ouais je vois. Est-ce que t'as une idée de doc sur un moment très difficile dans le dev de votre rap et comment vous l'avez géré ?
+
+Nathan (58:07.758)
+Le moment difficile qu'on a eu c'est la mise à jour de Expo 50R à 52, la fameuse. Tout à l'heure j'ai expliqué le cas des vabres d'environnement qui a posé souci, mais j'ai encore un autre cas qui nous a posé souci. Quand on a mis à jour, on s'est retrouvé avec un splash screen qui était complètement cassé. Je dois encore avoir des screenshots de notre splash screen tout cassé. Je sais pas si j'en ai.
+
+David Leuliette (58:13.346)
+Les dot en v... Les avoue !
+
+David Leuliette (58:22.802)
+on adore !
+
+Nathan (58:37.862)
+potentiellement bon sinon c'est pas grave mais en gros quand on ouvre l'app je vais ouvrir là comme ça tu auras le truc si je vous l'app tu vois qu'on a un splash screen comme ça en plein écran et nous ce qu'on avait c'est que ce splash screen il était en tout petit au milieu quand on a mis à jour
+
+David Leuliette (58:51.473)
+Ouais.
+
+David Leuliette (58:56.615)
+Sur iOS ou Android ?
+
+Nathan (58:58.398)
+les deux alors moi j'ai cherché et tout et on m'a dit ouais il ya des trucs qu'on changé dans les API d'android du coup on a dû faire des modifs et moi je leur ai dit bah regardez les gars mais nous notre splash screen il est cassé sur iOS aussi je dois voir d'ailleurs j'avais mis sur reddit une image donc je dois avoir une image et ouais le truc il était tout petit ça marchait plus du tout et en gros ils avaient changé leurs API ouais c'est cette con là
+
+David Leuliette (59:15.206)
+Donc ouais, genre il était tout petit, tout petit.
+
+Nathan (59:27.138)
+Voilà, quand on ouvrait l'app, on avait le splash screen comme ça en petit au milieu de l'écran. Au lieu que l'image là, elles sont en plein écran, il était en tout petit au milieu. Et je leur ai dit, mais voilà, nous c'est cassé sur iOS et Android. Et en fait, quand ils ont changé leur truc pour passer de la clé Splash à Explos splash screen, ils ont changé aussi la manière dont la config était faite. Et on avait beau chercher le moyen dont la résolue. fait, c'est la team d'Expo, enfin, il un mec de Expo qui m'a dit, rajoute la clé.
+
+David Leuliette (59:30.21)
+On a genre taille 32 x 64 quoi.
+
+Ouais.
+
+David Leuliette (59:44.871)
+Mmh.
+
+Nathan (59:54.412)
+Enable Legacy, fullscreen, chose, j'ai plus la clé en tête mais... Et depuis qu'on l'a remis, ça refonctionne. Mais tu vois en fait, ok ils ont mis à jour des choses côté Android, qu'ils ont mis à jour côté Android, ils n'étaient pas obligés de changer ce que tu mettais dans ton app.json pour que ça fonctionne tu vois. Le côté app.json, ils auraient pu le laisser tel quel. Et surtout là tu vois par exemple c'était cassé aussi sur iOS, alors sur iOS on n'avait rien demandé quoi.
+
+David Leuliette (01:00:14.695)
+oui.
+
+David Leuliette (01:00:21.017)
+Et c'était juste le... Si le splash can y passer, l'appel était utilisable.
+
+Nathan (01:00:28.516)
+oui ça fonctionnait, c'était juste au lancement, c'était moche.
+
+David Leuliette (01:00:32.817)
+Ouais. Et puis c'était genre de où ça vient, j'ai aucune info là-dessus, détresse, qu'est-ce que je fais quoi ? Et là tu passes quatre jours...
+
+Nathan (01:00:37.216)
+Oui, parce que moi j'allais voir la doc, j'ai déplacé le truc comme il disait de splash à expo splash screen dans les plugins et il disait ça doit marcher avec la même config et ça marchait pas avec la même config, on a dû rajouter une clé legacy quelque chose pour que ça remarche quoi.
+
+David Leuliette (01:00:46.823)
+Mmh.
+
+David Leuliette (01:00:55.92)
+C'est peut-être parce que vous utilisez Fastlane et qu'il a un build et que vous faites votre propre build... Pfff aucune idée. Je ne sais pas.
+
+Nathan (01:01:04.355)
+Après si tu utilises pas Fastlane, comment tu fais pour... Enfin... Même en développement quoi.
+
+David Leuliette (01:01:07.942)
+Non mais fait eux, le truc c'est que chez Expo ils utilisent Fastlane aussi. Ils font les mêmes trucs. Mais du coup ils ont peut-être dans Fastlane une librairie pour croper les images et pour découper les images en plusieurs morceaux qui fait que c'était pas la même version et où il manquait un paramètre et où ils ont changé quelque chose. Ça je me rends pas compte en fait, je ne sais pas.
+
+Ouais, j'imagine bien la frustration quoi. Y'a pas la doc, c'est écrit d'une part et qu'est-ce qui se passe quoi. Y'a que moi qui ai le problème surtout.
+
+Nathan (01:01:38.414)
+Ouais, bah là après c'était... Ouais, et on a... J'avais passé une demi-journée là dessus et à un moment je me suis dit, bon, je laisse tomber, ça me saoule, ça cause pas de bugs autres. Mais voilà, et c'est quand j'en ai parlé là sur... Enfin quand j'ai fait mon post là où j'ai dit, ouais, quand tu mets à jour expo il a tout qui casse, qu'au final, bah comme j'en ai parlé, il a des gens qui m'ont donné cette solution de Enable Legacy, machin.
+
+David Leuliette (01:02:00.026)
+Ouais. Merci quoi les gars. Super, j'aurais pu... Comment je pouvais savoir ça ? S'il vous plaît.
+
+Nathan (01:02:01.742)
+Et voilà quoi. Ouais mais c'est ça, en fait ça apparaît nulle part dans les documentations. Quand tu lis les changelogs on te dit non mais tu peux garder la même config, faut juste la déplacer à tel endroit et c'est ce qu'on a fait et bah ça marchait pas. Et surtout qu'il n'y avait pas de raison en vrai que sur iOS ça casse quelque chose alors qu'il disait que c'était juste lié à un changement sur Android quoi.
+
+David Leuliette (01:02:23.958)
+Est-ce qu'il a une technique de debug que tout développeur Rack Native devrait connaître ? Parce que tu dois détester du coup, que venant de Kotlin Mutile Baffer mais d'un univers où tout est stable et tout beau et tout ça, c'est le bordel dans JavaScript pour debug.
+
+Nathan (01:02:33.858)
+Euh, attends j'avais noté un...
+
+Nathan (01:02:44.462)
+Oui, c'est vrai que moi en fait ce que j'ai l'habitude de faire quand je fais du ce soit du back-end, ce soit du code ligné de plateforme, comme toute ma logique est séparée, toute ma logique je fais des tests unitaires dessus. Ça permet d'être sûr que ma logique fonctionne. Et après quand j'injecte ça dans l'écran, dans l'IDE j'ai une preview temps réel de mon écran. Je peux avoir même plusieurs previews avec des data différentes etc. Le debug est très simple. Là quand je suis arrivé sur du React Native,
+
+Bon alors déjà le DevTool dans Chrome, j'ai entendu parler récemment, a un truc qui s'appelait Flipper qui apparemment est mieux, je ne l'ai pas encore testé.
+
+David Leuliette (01:03:22.629)
+C'est des bric-aïtilles depuis deux ans. Des os. C'est pas grave, c'est
+
+Nathan (01:03:25.614)
+Ah ouais ? Ah super ! Génial ! J'ai pas testé la solution mais voilà, c'est génial. Le DevTool qui est intégré dans Chrome, je le trouve un peu horrible dans le sens où toutes les deux secondes il se déconnecte. Du coup pour débugger c'est horrible. Et on le maîtrise pas encore complètement parce que ça fait pas longtemps qu'il... En fait c'est quand on est passé à Expo 52 qu'il a commencé à être utilisé. Et voilà.
+
+David Leuliette (01:03:52.666)
+Ouais.
+
+Ouais, j'avoue, j'avoue.
+
+Nathan (01:03:55.63)
+Souvent quand on débug des trucs, on va mettre des consoles logs un peu partout pour voir un peu ce qui se passe parce que comme tout est lié les uns aux autres, même si on découpe au fur et mesure pour pouvoir tester des trucs indépendamment, c'est pas encore le cas partout et des fois il a des states, on sait pas pourquoi le state vaut ça alors qu'il devrait valoir autre chose. Et on débug un peu à la main quoi.
+
+David Leuliette (01:04:13.657)
+Ouais ouais, je vois.
+
+Oui, console log et debugger, non mais c'est ça, vois, mec c'est javasse. ouais, ben, c'est mieux qu'avant en vrai. Donc, ça ne peut que s'améliorer. Est-ce que vous avez beaucoup de différences entre iOS et Android ou c'est tout pareil ?
+
+Nathan (01:04:21.046)
+Ouais je trouve ça un peu dommage. Mais voilà.
+
+Nathan (01:04:29.302)
+Comment c'était avant ?
+
+Nathan (01:04:40.19)
+On a très peu de différences entre iOS et Android et souvent d'ailleurs, je trouve que c'est un problème avec React Native, c'est que tu développes, tu tests ton code sur iOS et tout, parce que nous on le test principalement en iPhone, et du coup on teste tout sur iOS, et on a des surprises souvent parce que sur Android ça marche pas pareil. En fait, vu que tu appelles tout en code en truc unifié, tu penses pas forcément avoir tout retesté sur Android, et t'as des surprises, parce que des fois les libraires te disent pas, bah là dans ce cas là je vais pas retourner la même chose.
+
+Dernier exemple qu'on a eu, quand t'as apporté des photos, sur iOS ça te retournait une URI avec file de point slash slash et le chemin de ton fichier. Et sur Android, la même API elle te retournait que le chemin du fichier sans le file de point slash slash. Donc on a eu un bug où on a eu... Parce que dans tous nos clients là avec la nouvelle version, on a un seul client qui est sur Android et il a eu des bugs du coup sur les photos parce qu'on n'avait pas testé ce truc là parce que on pensait pas que ça allait retourner un truc différent sur Android. Et mine de rien en fait quand on fait du Kotlin Multiplatform,
+
+David Leuliette (01:05:23.333)
+A la
+
+Nathan (01:05:39.502)
+Le code logique c'est de la logique pure, donc il n'y a rien qui dépend des plateformes et quand on appelle des choses qui viennent des plateformes souvent soit on le fait nous même et à ce moment là du coup on teste individuellement sur chaque plateforme soit on utilise des librairies et souvent les librairies l'ont bien testé pour nous et on fait en sorte que que ça nous retourne tout le temps la même chose alors que là j'ai l'impression que ça fait un peu les appels souvent ça fait un peu les appels directs au
+
+David Leuliette (01:06:03.716)
+...
+
+Nathan (01:06:08.704)
+au truc natif sans vraiment faire en sorte d'unifier correctement le truc. Genre tu as encore des cas trop différents.
+
+David Leuliette (01:06:14.733)
+Ou alors c'est pas testé ou... En plus, je sais quoi, le file system a changé récemment. Il faut bien vérifier et bien double-check la bonne version. Moi, pareil, j'ai déjà des problématiques de file upload et je sais qu'il faut que je vérifie bien.
+
+Nathan (01:06:27.683)
+ouais ? c'est peut-être ça aussi ou enfin voilà.
+
+David Leuliette (01:06:42.844)
+compatibilité parce que AOS Android est vraiment testé sur de vrais appareils parce que tu sais jamais quel dagri peut arriver.
+
+en travaillant avec React Native. Qu'est-ce que t'as appris sur le développement logiciel en général ? À part que tu détestes JavaScript.
+
+Nathan (01:07:02.686)
+Euh... Mais ça j'ai jamais aimé JavaScript de base, j'ai fait une fois, enfin je me souviens j'avais fait une fois un projet en OJS pour le back-end, je l'ai jeté à la poubelle très rapidement et j'ai refait en Kotlin le back-end derrière quoi. sinon ce que j'ai appris avec React Native c'est que bah il fallait vraiment tout tester genre à fond et rarement faire confiance parce que tu te dis bah ça ça marche, ça ça marche, ça marche bien en natif mais en React Native ça marche pas.
+
+du coup vraiment bien tout tester à fond quoi
+
+David Leuliette (01:07:38.125)
+Et où ça fonctionne, comme je disais tout l'heure, deux semaines après, breaking change, LibreAire qui s'update et puis bah zut ça marche plus parce que pour une raison obscure et variée ça ne pas le...
+
+Nathan (01:07:50.146)
+Tu dépend de 2000 librairies et 2000 librairies c'est beaucoup de points potentiels où il peut y avoir des bugs. ça c'est un vrai souci et c'est pour ça qu'il faut énormément tester. Là où en en natif comme tu dépend de généralement pas grand chose, tu fais assez facilement confiance aussi à ton code même si tu mets des tests unitaires, trucs. Donc ouais, il bien tout tester quoi. Et sur les deux plateformes parce que souvent il a des surprises. Plus faire attention quand on...
+
+David Leuliette (01:07:58.509)
+Ouais.
+
+David Leuliette (01:08:14.111)
+Ouais, est-ce que... Oui.
+
+Nathan (01:08:20.578)
+quand on met à jour. Quand tu mets à jour, il vraiment... même la build de production où tu te dis c'est la même que la staging, normalement il a rien qui va casser, faut quand aller vérifier. que sinon tu tourneras avec ta staging en production et voilà.
+
+David Leuliette (01:08:31.363)
+Ouais bah oui. J'avoue ça, j'avais jamais entendu que la staging en prod... Ouais. Non mais c'est surtout pour détricoter de où ça vient, quel est le problème, ah oui c'est les backups, machin. Tu te dis pas du tout que ça venait du dot en vœux qui...
+
+Nathan (01:08:37.358)
+Non mais vraiment quand ça nous est arrivé et qu'on a vu ça on s'est dit mais lalalala
+
+Nathan (01:08:45.614)
+Oui.
+
+Ouais, c'est tout pour te dire, j'avais été télécharger l'IPA sur l'app store que j'ai été décompiler, aller rechercher le bundle.js et tout pour chercher en fait pourquoi ça tapait, parce qu'en fait quand on regardait les logs de nos backends on s'est dit mais alors pourquoi les requêtes elles arrivent sur la staging et elles arrivent pas sur la prod ? Et on comprenait pas tu vois, on s'est dit est-ce que c'est une erreur, genre nous on a changé un truc dans notre code, sur les environnements et tout, et on comprenait pas, alors en fait non, c'était juste il avait compilé avec la mauvaise arabe d'environnement parce qu'il avait changé un truc.
+
+Et on s'attendait vraiment à tout sauf à ça quoi. C'est vraiment quand on a fait nos recherches, la CI c'était le dernier truc auquel on a pensé quoi. Parce qu'elle avait pas bougé et voilà. Voilà. Une variable d'environnement, c'est une variable d'environnement, elle a pas de raison de...
+
+David Leuliette (01:09:21.684)
+Oui, bah c'est ça parce que tu... tu touches pas. Ouais c'est ça exactement, tu me touches pas, y'a...
+
+de changer exactement. T'as le temps de te former en... T'as le temps de te former en acte natif ou pas du tout du coup
+
+Nathan (01:09:37.262)
+Un peu sur le tas, que... Après, je veux dire, quand t'as l'habitude de coder depuis des années, souvent tu jumps dans un nouveau truc, tu vas lire un les Getting Started, tu vas un peu regarder... Enfin je me souviens, j'avais regardé quelques vidéos de comment marche une app Natives, en gros. Et après, j'ai un peu découvert au fur et mesure que j'utilisais telle librairie, que j'utilisais tel truc, parce que apprendre à coder en soi, quand ça fait 10 ans que tu codes, c'est pas un souci. Et après, faut s'adapter...
+
+David Leuliette (01:09:38.721)
+Quand même ! C'est quoi ta stratégie
+
+Nathan (01:10:06.708)
+j'avais regardé comment ça marche les use state, ça marche les use effect, comment voilà et puis voilà quoi
+
+David Leuliette (01:10:13.633)
+Tu te souviens de les vidéos de qui t'avais regardé
+
+Nathan (01:10:16.846)
+pas du tout. J'avais dû prendre... Ouais, il a plein de gens et... C'est le genre de truc, bah, je me mettais le soir pendant que je mangeais, je mettais les streams des gens qui codaient une app, genre le mec qui reprenait Uber, il recodait Uber en React Native. Et tu voyais un peu comment le mec il utilisait les states, comment il utilisait les... Comment il faisait des écrans, comment il faisait, enfin tu vois, ça permettait de voir un peu toutes les bases. Ça, plus la doc de React Native un peu, genre sur les bases, ça allait quoi.
+
+David Leuliette (01:10:18.013)
+Pas du tout, il a plein de gens. Taper sur internet, getting started.
+
+David Leuliette (01:10:32.353)
+...
+
+David Leuliette (01:10:42.997)
+Ouais, je crois que c'est Simon ou c'est Not Just Vadim, un des deux, je pense. Moi je qu'ils sont chauds dans le game, ils font des vidéos bas bien correctement. Comme avant je faisais des lives mais pff j'ai plus le time. Parce que ça prend... en fait ça prend un temps infini quoi.
+
+Nathan (01:10:48.769)
+Je saurais pas te dire mais...
+
+Nathan (01:11:02.186)
+J'aimerais bien refaire du live aussi, ouais ça prend... C'est ça. Création de contenu c'est un truc que je voudrais bien refaire mais pour l'instant on est tellement débordé que c'est dur à remettre.
+
+David Leuliette (01:11:06.081)
+Ouais bah c'est ça quoi. Bah c'est bonne nouvelle en vrai tu vois, c'est plutôt bonne nouvelle.
+
+Nathan (01:11:14.548)
+Oui. Mais à un moment, c'était de dire on va faire des lives, on va juste mettre une cam dans notre bureau et suivez-nous en direct sur notre activité quoi.
+
+David Leuliette (01:11:23.915)
+Ouais, mais même ça, c'est pareil, ça demande un peu de bande-façante. faut penser le mettre, il faut que tu sois au bureau, faut... Enfin, si, si, je comprends. Ou alors, il faut le dédier différemment et tu dis office hour. Moi, j'aimerais bien reprendre ça, peu là ce que je fais, tu podcast, c'est un peu pareil. Ça te permet d'échanger, de retrouver, partager des bonnes pratiques et où... En fait, c'est souvent ça, rappeler les fondamentaux. Parce que moi, j'ai tendance à oublier les fondamentaux.
+
+Nathan (01:11:51.546)
+Les fondamentaux, c'est vrai qu'il des choses sur lesquelles, enfin moi je le vois, mon associé, il est bon aussi, mais il a des choses fondamentales sur lesquelles il a encore du mal. là par exemple, je il a deux jours, il me posait une question sur les arrow functions, il me disait, mais là pourquoi ma fonction elle pas appelée ? Je fais, bah il faut mettre ton arrow function et puis après tu remets des parenthèses. Et tu vois, c'est des trucs fondamentaux, après tu prends l'habitude et tout, après c'est propre à la syntaxe de chaque langage et tout.
+
+David Leuliette (01:12:09.345)
+Mmh
+
+David Leuliette (01:12:18.529)
+J'avoue. Du coup, dans votre boîte, quand vous aurez fini que votre trap sera en prod, contrôle REC, que ça cracherait de l'argent en automatique, est-ce que vous allez faire une nouvelle application mobile en REC native ou pas alors ?
+
+Nathan (01:12:32.686)
+Je pense que si demain on refait une nouvelle application mobile bon déjà il y aura le débat parce que mon associé lui il est ouais React Native c'est trop bien on va vite etc et moi je en mode ouais mais React Native on a beaucoup de problèmes de stabilité moi je fais très vite avec du Kotlin Image Platform et sur le long terme je pense que si demain on faisait une nouvelle app on irait très vite en Kotlin Image Platform parce qu'en fait le problème avec Kotlin Image Platform c'est que beaucoup de gens
+
+David Leuliette (01:12:45.941)
+Ouais.
+
+Nathan (01:12:58.368)
+pensent que c'est un truc tout récent et du coup il a rien qu'il faut tout faire à la main, faut tout faire en double, qu'il n'y a aucune librairie, rien. Mais en fait tu bénéficies déjà de la majorité de l'écosystème d'Android parce que les grosses librairies Android aujourd'hui elles sont compatibles avec Kotlin Multiplatform. Niveau développeur sur le marché, des développeurs Android natifs tu les recrutes, ils sont capables de faire du Kotlin Multiplatform sans effort parce que pour eux c'est quasi pareil puisque souvent les librairies de base elles gèrent aussi...
+
+cas iOS. au final le problème de il n'y a pas de gens sur le marché, n'existe pas et le problème de on va pas vite ou quoi, il n'existe pas non plus. au final pour tous les problèmes de stabilité qu'on a eu avec Racknative, c'est demain on commence une nouvelle app, j'aurais plus envie de la faire en code limite plateforme qu'en Racknative.
+
+David Leuliette (01:13:47.2)
+Ouais, je vois,
+
+Nathan (01:13:53.13)
+Après un jour j'aimerais bien aussi tester Flutter parce que j'en ai entendu beaucoup parler mais je ne l'ai jamais testé vraiment. Et apparemment Flutter il n'y a pas tous les problèmes que l'on a avec les expos etc. Apparemment Flutter c'est beaucoup plus stable. Je ne pas me prononcer...
+
+David Leuliette (01:13:59.104)
+Bah c'est...
+
+David Leuliette (01:14:08.116)
+Ouais tu l'as pas parce que c'est un peu différent parce que c'est vraiment un moteur de jeu vidéo quoi c'est genre Sadro dans un Canva et l'app t'es sûr qu'elle est exactement la même donc après mais s'il une plateforme qui arrive genre Vision OS bah là tu peux pas parce que y a enfin tu peux pas compiler ton app en Vision OS et ou en Watch ou ce genre de truc là où React Native tu vas en coller une multiplatforme non mais oui tu dois pouvoir aussi avoir des apps pour Watch et...
+
+Nathan (01:14:14.52)
+Ouais, je vois l'idée.
+
+Nathan (01:14:30.126)
+Ouais, Kotlin de la plateforme, peux vraiment compiler sur ce que tu veux. Tu peux même compiler... Ça, va faire rire mon associé. Je lui avais dit, tu vois, mon Kotlin, je peux faire du React en Kotlin si je veux, parce ça compile aussi en JS, peux faire tout ce que tu veux.
+
+David Leuliette (01:14:34.16)
+Ok ouais.
+
+David Leuliette (01:14:41.363)
+Oui, c'est ça. Pour ceux qui veulent savoir un peu le meilleur des deux mondes, vous pouvez voir l'épisode avec Freddy de Manga Collab qui lui fait du rescript. Big up à lui, c'est pareil, c'est un peu la même logique. OK, OK. c'est donc c'est quoi votre setup pour vous tester sur quoi quand vous devez tester sur Android?
+
+Nathan (01:15:08.238)
+Moi perso j'ai un tel Android aussi sur lequel je peux tout tester. Je ne teste pas assez souvent dessus. Là où en natif c'est vrai que je testais tout le temps. Je faisais la version U.S. testais la version U.S. Je faisais la version Android. testais la version Android. Là en React Native on a tendance à tester vraiment sur iPhone et oublier Android. Mais...
+
+David Leuliette (01:15:24.883)
+Ouais tu fais que sur le simulateur et puis même pas sur le vrai téléphone des fois.
+
+Nathan (01:15:28.728)
+Non, non, je dev toujours sur un vrai device. Le simulateur, vraiment, j'ai du mal à faire dessus.
+
+David Leuliette (01:15:31.025)
+Ok.
+
+David Leuliette (01:15:35.889)
+Ouais je sais pas, dépend, moi ça dépend.
+
+Nathan (01:15:36.914)
+Surtout que t'as beaucoup de choses que t'as pas sur le simulateur, genre la caméra, les notifs, les machins. Y'a plein de choses qui marchent pas par sur le simulateur. Donc moi je teste tout le temps sur le vrai device. Je développe plus sur le simulateur depuis des années. Surtout qu'au fur et mesure, t'as l'habitude de faire des apps, tu commences à te retrouver avec une flotte de téléphones.
+
+David Leuliette (01:15:40.563)
+Oui.
+
+Le clavier.
+
+David Leuliette (01:15:48.479)
+Ouais, en fait ça dépend, ça dépend, ça dépend quoi.
+
+David Leuliette (01:15:56.982)
+Ah bah oui, c'est ça, vous savez, c'est j'en ai partout des téléphones, j'en ai pas là, j'en ai... Ah non, bah il est en caméra.
+
+Nathan (01:16:00.462)
+Et encore là, j'en ai trois chez moi mais il y en a d'autres au Après souvent, il a mon tel perso, mon tel pro et puis y a d'autres téléphones, c'est de la récup d'anciens téléphones ou de personnes qu'on connaît, qu'on a rachetées à pas cher. Mais je veux dire par exemple, sur celui-là, j'ai le compte d'un de nos clients et du coup on est connecté sur... Et du coup on peut tout tester sur son contrôle RICEL à lui comme si c'était lui.
+
+David Leuliette (01:16:14.927)
+C'est ça.
+
+David Leuliette (01:16:21.263)
+directement. c'est bon !
+
+Nathan (01:16:29.53)
+ça nous permet de débugger très facilement alors que là on est plutôt sur les environnements de test etc donc c'est toujours pratique
+
+David Leuliette (01:16:37.874)
+Ouais, carrément.
+
+Nathan (01:16:38.19)
+Mais on teste tout sur vrai device, c'est mille fois mieux que sur l'émulateur. Déjà niveau performance, souvent c'est beaucoup plus agréable. Par exemple, niveau d'Android, l'émulateur Android il est horrible alors que là moi je suis sur un Google Pixel et vraiment moi qui n'aimais pas Android du tout avant, le Google Pixel c'est vraiment celui que j'ai adoré niveau expérience utilisateur, niveau fluidité, niveau plein de choses.
+
+David Leuliette (01:16:42.12)
+David Leuliette (01:17:02.302)
+Ouais, je vois, Moi j'ai des Samsung mais euh... Et puis j'avais une Nexus, Nexus 7 à l'époque. Mais euh, ouais non plus je foutu, plus jamais je pourrais repartir sur Android, trop de... Tout est connecté partout donc euh, c'est foutu, c'est foutu ! Pour les messages, pour pouvoir lire mes messages sur mon téléphone et euh... Ouais c'est ça. En plus maintenant il a Raycast, Raycast qui est connecté bientôt, j'espère qu'ils connecteront euh...
+
+Nathan (01:17:17.622)
+Oui, ça c'est vrai que là-dessus...
+
+Nathan (01:17:22.668)
+Ouais les messages, les copiers, collés, les machins, c'est que des trucs ouais. Je suis d'accord là-dessus.
+
+David Leuliette (01:17:33.119)
+Je ferai un épisode spécial sur Recast un jour. Est-ce qu'il a un sujet dont nous n'avons pas parlé que tu voudrais aborder ?
+
+Nathan (01:17:48.238)
+Je vais faire de la propagande pour Kotlin Multiplatform, voilà. C'est tout. Non, bah... vrai, là-dedans, j'avais noté que je voulais dire ce que j'ai dit tout à l'heure, que Kotlin Multiplatform, pour les devs natifs, c'est super facile et puis c'est super léger par rapport à un stack comme React Native ou Expo où il y a énormément de dépendances, de surcouches, etc. Et puis voilà, quoi.
+
+David Leuliette (01:17:53.823)
+bah oui, il faut, il faut, il faut.
+
+Nathan (01:18:17.206)
+Et les gens qui ont des arguments de c'est pas stable ou c'est dur à recruter, remballer vos arguments aujourd'hui c'est plus vrai quoi. Tu recrutes un dev android natif ça va nickel. vu qu'il a beaucoup moins de surcouche, beaucoup moins de dépendance et tout, c'est beaucoup plus stable. Genre jamais j'ai eu un problème en mettant à jour. Je me souviens quand on est passé par exemple de Kotlin 1 à Kotlin 2, vois grosse mise à jour, ils ont changé tout le compiler et tout, j'ai dû rajouter le point Kotlin dans mon Github, c'est le seul truc que j'ai dû faire quoi et changer le numéro de version.
+
+David Leuliette (01:18:23.614)
+Ouais.
+
+David Leuliette (01:18:44.466)
+Ok. c'est vrai que ça change quoi.
+
+Nathan (01:18:47.288)
+Genre vraiment... Ouais, ça tu dis, bah je change l'umbre de version, je rajoute le point Gold Clean dans le Githing Nord, parce qu'il y avait de nouveaux trucs au niveau de la compile et tout, et ça marche, point. Aucun bug, rien... Alors que là, tu changes la mineure d'Expo, bah ça y est, il tout qui est cassé quoi.
+
+David Leuliette (01:19:02.02)
+Ouais t'as le red screen of death, on connait, j'avoue. Est-ce qu'il a une recommandation d'une personne que je devrais inviter ?
+
+Nathan (01:19:07.821)
+Donc voilà.
+
+Nathan (01:19:13.902)
+J'ai pas trop d'idées parce que en vrai je connais beaucoup de dev natifs, beaucoup de dev iOS surtout, des dev REAC-NATIVE ou FLUTTER. D'ailleurs je comprends mais ça s'applique à n'importe quel techno. Quand t'es dans une techno, tu te ma techno elle est bien, elle fonctionne, j'ai l'habitude. T'as pas envie de te dire je vais passer à une nouvelle techno. vois on pourrait avoir le débat entre le natif et le REAC-NATIVE mais ça pourrait être le même débat avec FLUTTER, avec ce que tu veux.
+
+David Leuliette (01:19:20.346)
+Ouais, pareil, il déteste arachnatives.
+
+Nathan (01:19:39.968)
+Un mec qui fait du ragnative, jamais il va se dire, ouais je vais apprendre flotteur et je vais tout changer, je vais faire du flotteur demain. Non, il va pas avoir envie tu vois. C'est comme ça dans n'importe quel techno, quand t'as une techno qui est bien, qui marche bien, que tu maîtrises, t'as pas envie de changer.
+
+David Leuliette (01:19:53.468)
+Ouais c'est surtout ça, c'est surtout quand tu la maîtrises. Moi je sais que j'ai changé plein de fois mais c'est parce que j'ai fait des trucs dégueulasses en PHP horrible sans framework. euh... Et euh... oui parce que ça existait pas, enfin il avait que ça en fait et du coup...
+
+Nathan (01:20:00.972)
+J'en ai fait ça du PHP à l'époque.
+
+Quand j'ai appris sur OpenClassroom il y a 10 ans à faire mes premiers sites web, on a tous lu le cours de Mathieu Nebra développé. Sans lui je serais pas là aujourd'hui, c'est lui qui m'a appris le HTML, le PHP, le MySQL, tout ça et que j'ai fait mes premiers projets. Parce qu'avant de faire mes backends dans Kotlin, je faisais mes trucs en PHP, même sans framework et tout. J'avais testé une fois la ravel mais j'avais pas été loin avec. Et le jour où j'ai commencé à faire des backends dans Kotlin, j'ai complètement lâché le PHP.
+
+David Leuliette (01:20:10.754)
+Bah tu fais un Mathieu, big up à Mathieu.
+
+David Leuliette (01:20:19.932)
+C'est ça. J'aimerais savoir du...
+
+David Leuliette (01:20:35.82)
+Parce que en vrai je pense que c'est Bathieu qui a créé l'intégralité, insuffler la vocation à tous les software engineers de France d'être les devs qui sont aujourd'hui. C'est lui en fait, c'est parce qu'on a tous commencé sur le du zéro. oui oui, pour ceux qui... Ok, pour ceux qui connaissent pas en fait, le site du zéro c'était le site où l'on tapait oui...
+
+Nathan (01:20:49.454)
+Ouais mais je pense que ouais il a joué. Le site du zéro ouais c'est ça. Quand j'ai commencé il venait tout juste de changer de nom.
+
+David Leuliette (01:21:03.101)
+j'ai tapé comment faire un site web en français et paf c'était la première ressource qui tombait et même pas parce que moi je m'en rappelle j'ai fait mes cours de C à l'époque je lisais ces cours de C quand j'étais adulté parce que c'était plus clair que les cours que j'avais par les profs et en fait
+
+Nathan (01:21:06.638)
+Bye !
+
+Nathan (01:21:13.614)
+C'est vrai.
+
+Ouais bah oui, le C, le Java, j'ai plein de trucs que j'ai appris sur OpenClassroom et c'est dommage aujourd'hui parce qu'il y a plein de cours que tu trouves plus. Le cours que moi j'ai lu quand j'ai appris le Java, aujourd'hui il n'est plus disponible sur OpenClassroom.
+
+David Leuliette (01:21:23.514)
+Bon, je vous excuse.
+
+David Leuliette (01:21:31.297)
+pour comme ce qui est plus obsolète ou...
+
+Nathan (01:21:33.614)
+Il est peut-être un peu obsolète sur deux trois trucs mais ils en ont mis un nouveau qui est beaucoup moins complet et l'ancien n'est plus du tout dispo. Je trouve ça vraiment dommage parce qu'il était vraiment bien.
+
+David Leuliette (01:21:42.076)
+bah faut aller sur WebArchive...
+
+Nathan (01:21:44.426)
+Ouais, sur WebArchive tu arrives encore à retrouver des trucs ou des PDFs du truc mais il est très difficile à retrouver alors qu'il était génial quoi. Et aujourd'hui si quelqu'un me disait comment j'apprends le Java, j'ai de lui dire va lire ce cours là parce que c'était vraiment ce que j'ai vu de mieux en cours de Java quoi.
+
+David Leuliette (01:21:54.041)
+Ok.
+
+David Leuliette (01:22:03.238)
+Ouais ouais. Ok, voilà, en recommandation Mathieu. Ouais mais non, il fait plus du tout de dev. Où est-ce qu'on peut te retrouver sur les internets ?
+
+Nathan (01:22:17.71)
+Je suis un petit peu actif sur LinkedIn. Avant je était beaucoup plus actif mais là comme en ce moment à fond contrôle resale, je suis beaucoup moins actif.
+
+David Leuliette (01:22:26.044)
+Nathan Fallet, de toute mettra le lien dans les notes de l'émission.
+
+Nathan (01:22:32.588)
+Et puis voilà, pense que c'est là que je réponds plus facilement.
+
+David Leuliette (01:22:37.26)
+Ok, moi c'est David, vous me retrouvez sur le Blazoflexbox, sur les internets BlueSky, GitHub, un peu partout. Si vous voulez faire du Rack Native, venez sur le Slack de Rack Native Connection. C'est vrai que je ne l'ai pas dit.
+
+Nathan (01:22:54.587)
+En ce moment en GitHub c'est bien rempli.
+
+David Leuliette (01:22:58.107)
+Ah c'est bien, c'est Bon en fait il n'est pas vert du tout parce que because mon client pour l'instant il n'est pas sur github et ou enfin donc je suis passé de 2000 contributions par an à pas beaucoup. Attends je vais aller voir je suis à combien ? 449 par an. la, c'est, ça n'a pas ce que je suis en vacances H24.
+
+Donc bon, il faudrait que je mette un runner qui publie pour moi, mais bon, ça se verrait, sais, une GitHub Action qui... Tu sais qu'il des mecs qui font des trucs de fou, genre qui écrivent, ils font des dessins dedans avec des petits carrés, je trouvais ça incroyable. Mais non, pas le type. C'est mieux d'avoir des vraies dates, c'est ça qu'on veut.
+
+Nathan (01:23:26.402)
+la la...
+
+Nathan (01:23:32.652)
+Oui, ils font des dessins et tout, j'ai déjà vu.
+
+Nathan (01:23:43.566)
+Ouais, Tous les jours on corrige des bugs sur React Native donc on a des commis tous les jours. Non, il n'y a pas que sur React Native qu'on a des bugs. Sur nos automatisations en Python, on a des soucis aussi de stabilité.
+
+David Leuliette (01:23:48.791)
+c'est beau, c'est beau, c'est Ouais ouais
+
+David Leuliette (01:23:57.595)
+Ok, ok, ok. En tout cas super, si vous avez après un truc aujourd'hui, faites le moi savoir. Je serais ravi si vous voulez lancer votre application sur les stores bientôt, allez taper sur internet Gumroad Expo Checklist. Elle était déjà en prod l'app quand tu l'as join ? Ah bah oui parce que c'était un scanner de...
+
+Nathan (01:24:19.105)
+Oui à la base c'était celle qui faisait gestion d'inventaire et moi quand je suis arrivé c'est là qu'on a fixé beaucoup de bugs d'abord et après on a commencé la version avec la vision d'aujourd'hui de synchro avec les plateformes.
+
+David Leuliette (01:24:29.348)
+Ouais, mais c'est ça que l'audience veut savoir. Est-ce que c'est aussi galère de publier la première version de ton app sur les stores quand tu fais du multiplatform Kotlin ?
+
+Nathan (01:24:41.71)
+C'est à dire aussi y'a l'air...
+
+David Leuliette (01:24:42.926)
+Les certificats, les ajouts, toutes les assets, tout ça tout ça.
+
+Nathan (01:24:48.578)
+ça ressemble beaucoup plus à ce que tu fais en natif mais après tu vois quand j'ai fait en rec native j'ai eu beaucoup plus de mal à setup la CIA avec fastlane que en natif quoi donc... mais... ouais
+
+David Leuliette (01:24:57.464)
+ouais mais c'est plus tout ce qui est code, tout ce qui est... T'as aucune automisation, tout ce qui est... Tu sur les stores mettre un... Genre que t'as un filet texte et que ça update automatiquement les descriptions de tes pages. Ouais ok avec... Ouais. Avec Fastlane.
+
+Nathan (01:25:10.856)
+ça tu peux le faire avec Fastlane et après tu as plein de sas qui vont te le faire pour toi ou tu connecte ton repo github et vont te le faire pour toi un peu à la EAS après c'est vrai que coup EAS j'ai jamais utilisé j'en ai entendu parler mais j'ai jamais utilisé
+
+David Leuliette (01:25:17.69)
+Oui, oui, oui. Oui, oui, c'est... Oui.
+
+David Leuliette (01:25:27.938)
+bah c'est en fait c'est fastline, ça se paraît que c'est les mêmes commandes en fait, c'est juste que c'est un peu exposé mais... C'est vrai que c'est bah... faire ça. Tu fais EAS build, boum ça te fait trop EAS submit et hop, puis à la vraie tu fais EAS, un script de release et hop tu mets en une commande, tu relises tout. Mais ok ok, alors du coup la prochaine fois qu'est-ce qu'on aura... la prochaine fois c'est Shine ! Un mec de Shine qui viendra donc...
+
+Nathan (01:25:57.08)
+Mon ancienne banque.
+
+David Leuliette (01:25:57.348)
+Je pense que tu connais Shine du coup, ? En tant que freelance, voilà.
+
+Nathan (01:26:02.252)
+Ouais, j'étais chez eux avant et j'ai changé de banque parce qu'ils faisaient des frais sur les transactions en dollars, qui commençaient à devenir un peu embêtants.
+
+David Leuliette (01:26:10.105)
+oui, bah oui, bah oui, bah moi j'ai changé parce qu'ils ne pas dollars à l'époque du coup, j'en de banque. Mais en vrai, si vous êtes freelance, c'est quand même incroyable. Moi, c'est la meilleurs exp... C'est la seule boîte qui m'a aidé. Versus toutes les...
+
+Nathan (01:26:25.65)
+Quand j'ai fait ma micro entreprise, eux qui avaient fait tous les trucs. Quand je suis passé en Sazu, c'est pareil, c'est eux qui ont fait tous les trucs et tout. Et ouais, là, parce qu'on fait beaucoup de trucs où on a du dollar qui circule, on a changé de banque. Mais sinon, quand tu fais juste du freelance, que tu factures des clients en euros et tout, c'était nickel.
+
+David Leuliette (01:26:29.219)
+Ouais.
+
+Euh...
+
+David Leuliette (01:26:36.281)
+Oui bah c'est ça oui, c'est parce que vous êtes trop gros quoi.
+
+David Leuliette (01:26:42.969)
+C'est ça, pareil, on sera avec Corentin normalement. Cool, bah Nathan, merci d'être venu et merci pour ton temps et puis j'espère qu'on se croiserait quand même pour du vrai. Va de rien, ça fait plaisir. Allez, à la prochaine et passez de... mois de mai ? non, c'est pas encore les vacances. Y'aura pas de pause, je sais pas, la pause c'est pas encore prévu pour... verra.
+
+Nathan (01:26:45.365)
+suis d'accord.
+
+Nathan (01:26:53.244)
+Merci pour ton invitation.
+
+Nathan (01:27:08.406)
+Les vacances c'est quoi ça les vacances ?
+
+David Leuliette (01:27:08.921)
+Ah non, la semaine prochaine tu vas à App.js, c'est vrai, je fais une conférence à App.js, mais il aura un épisode quand même. Ce sera celui-là en fait, celui-là il sera publié quand je serai à App.js. Bon allez, allez, excellente journée à tous et ciao.
+
+Nathan (01:27:21.384)
+Merci, ciao ciao
+
+David Leuliette (01:27:24.372)
+Hop, c'est bon
+

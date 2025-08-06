@@ -1,0 +1,1370 @@
+David Leuliette (00:05.751)
+sais pas si ça va marcher.
+
+David Leuliette (00:12.394)
+merde.
+
+Kim Chouard (00:13.93)
+Il faut que t'ailles low back. Maintenant avec la nouvelle version de Mac OS tu peux choisir.
+
+David Leuliette (00:18.437)
+Non mais je pense que ça l'a peut-être record pour les gens mais bon j'ai pas... Bon en fait c'était... Je voulais te faire deviner et tout machin et en fait c'était Jurassic Park au synthé. T'as vu ? Franchement... non j'sais le fait...
+
+Kim Chouard (00:28.718)
+c'est bon ça ! mec c'est open source bon j'ai pas encore ramené le bout de code pour importer un fucil MIDI mais tu peux faire une petite PR sur MelosKia pour nous montrer les notes de Jurassic Park ça ça me plait ça
+
+David Leuliette (00:39.931)
+Mais euh... Ok. Je... Ah ! Bah voilà, pour ceux qui... Pour ceux qui voient pas... Pour ceux qui voient pas et qui sont en live, bienvenue. Vous êtes sur le cross-platform show, j'étais en train d'essayer... Bah non, j'ai réussi ! Moi je l'ai entendu clairement, impeccablement dans mes oreilles. Ouais... Ouais ouais. Et euh... Mais si si, ils te recordent direct, là c'est parti, c'est au live. Mais alors je sais pas si... Je sais pas si...
+
+Kim Chouard (00:57.934)
+Moi je peux rien dire tant que le show n'est pas live.
+
+Kim Chouard (01:07.214)
+Ah oui mais j'ai pas entendu, donc je peux pas dire si tu l'as réussi ou pas.
+
+David Leuliette (01:09.962)
+Je pense que sur Youtube il aura peut-être, on verra, je suis pas sûr. Vu les troubles que j'ai en ce moment d'internet, tout ça, mais c'est bon. Là on est back on track, le setup est bien. Les amis vous êtes sur le cross-platform show, l'épisode dédié du podcast au développement d'applications mobiles avec Rack Native, rien n'est dans l'ordre, c'est pas grave, c'est l'épisode de juillet.
+
+Kim Chouard (01:24.942)
+On la
+
+David Leuliette (01:37.978)
+Je suis David, développeur chez Wishy Pity Today, nous sommes en juillet exactement, je viens de le dire. Et je suis avec Kim. Comment ça va Kim ? Franchement on est en off, on a eu un moment assez hilarant.
+
+Kim Chouard (01:46.606)
+Salut !
+
+C'est super !
+
+ouais, on a digué des apps sur l'Apple Store. voilà, comme quand tu finis sur des gifs chelou, on a été renommé sur des apps chelou, de flûte.
+
+David Leuliette (02:01.024)
+Ouais comme quoi... Alors combien il y a d'apps sur le store ? Je ne sais plus plein, je l'avais déjà dit je crois dans un épisode mais il a des milliards peut-être, peut-être pas des milliards, des millions c'est déjà plein de millions et il y a toujours de la place je pense tu vois, parce que là on vient de voir une app de Flute 4ème sur le store qui a le mérite d'exister mais qui est noté juste 1.3 stars
+
+Kim Chouard (02:07.305)
+ouais putain, des millions. Des milliards !
+
+David Leuliette (02:30.49)
+Et je pense qu'on pourrait faire mieux tu vois. En vrai eux au moins leur app elle est en ligne. C'est ça. paf ! Du coup... Alors qui ? On s'est vu vite fait, on n'a pas eu le temps de parler mais à App.js, la conférence des développeurs. Ça fait deux fois que t'es speaker.
+
+Kim Chouard (02:39.03)
+tu marques
+
+Kim Chouard (02:57.454)
+Ouais, ouais putain c'est trop bien, franchement cette conférence c'est incroyable. que j'aime bien avec ReckNective c'est que c'est une petite communauté. Je trouve que c'est pas un truc, tu sais pas genre en mode next, ou des trucs énormes avec vraiment beaucoup de gens. Et c'est des gens qui sont super impliqués et assez euh... comment dire... ils essayent de faire les choses le plus élégamment possible et le plus efficacement possible. Et du coup c'est assez focus, y'a pas de...
+
+y a pas beaucoup en tout cas pour le moment de mecs qui viennent et qui veulent juste utiliser le truc gratuitement et qui du coup vont polluer un peu entre guillemets le truc ça c'est super grave parce que putain et ça renvoie du steak la promise
+
+David Leuliette (03:35.917)
+Ouais clairement, ouais c'est clair.
+
+David Leuliette (03:40.727)
+Moi je savais pas, j'ai fait qu'avant j'étais actif, communauté rubis, rails et c'est pareil en fait. en fait j'ai eu exactement la même sensation.
+
+Kim Chouard (03:47.326)
+ouais, trop bien
+
+N'a-ca
+
+David Leuliette (03:51.961)
+J'ai retrouvé le spirit et j'ai fait « ah putain c'est trop smart ».
+
+Kim Chouard (03:55.342)
+Donc voilà, si vous êtes pas allé à la VS et vous avez l'occasion de l'aller, je recommande fortement. Très bonne vibe et plein de connexions.
+
+David Leuliette (04:00.821)
+Et du coup on fera une hacker house à 8 personnes cette fois-ci parce que là les derniers on l'a fait à 4 donc l'objectif l'année prochaine c'est de la faire à 8. Délégation française. Est-ce que tu peux vas-y te présenter succès pour ceux qui n'ont pas eu la chance de voir...
+
+Kim Chouard (04:07.086)
+Mmh.
+
+Kim Chouard (04:18.858)
+Ouais ! Mais t'inquiète pas, en écouphant je parle pas trop de moi, je donne des sujets plutôt sur les créatives, l'utilisation de l'audio et des jeux.
+
+David Leuliette (04:24.489)
+Oui, c'est vrai. Là on va... parce que je suis allé sur ton link, mec, et j'ai fait... ouais mais en fait, il a une... 4 vies tu vois ? Vas-y, présente-toi.
+
+Kim Chouard (04:31.622)
+!
+
+Donc en fait je suis Kim Schwartz, j'ai grandi à Aix mais je commençais à coder très tôt. début putain j'ai commencé sur le site du zéro pour ceux qui s'en rappellent. Mathieu Nebra si jamais tu entends ce podcast je te renverserai il du coeur grâce à toi. J'ai découvert que le coding c'est super creatif en PHP à l'époque et c'était assez super stimulant et ça a mis une graine dans ma tête à moi de genre ok j'assure que maintenant
+
+y a mon studio qui s'écroule, c'est pas grave. J'adore faire ça. les cours à l'école, c'est quand même un peu rébarbatif. C'est très passif. Enfin... Ouais, Après, c'est un sujet compliqué. la critique est facile, mais l'art est... Non, la critique est aisée, mais l'art est difficile. voilà, disons qu'il y avait... On peut mieux faire, surtout que je me sois rendu compte qu'il y avait vraiment... Quand t'avais une...
+
+David Leuliette (05:11.417)
+de la merde. Non faut dire c'est de la merde. C'est à chier, faut le dire. À l'époque, jadis, c'était très nul.
+
+Kim Chouard (05:33.39)
+ce que j'appelle purpose-based learning quand t'as un objectif versus quand tu sais même pas pourquoi tu fais les trucs. Anyway, donc ça a mis ça dans ma tête, je vais créer des petits dabs et des petits trucs, j'ai tout de même amoureux de San Francisco, j'ai déménagé là-bas. Pardon.
+
+David Leuliette (05:45.4)
+Attends, ! Direct ! Parce que quand t'étais en études, tu as fait études où ? Tes études...
+
+Kim Chouard (05:53.257)
+Ouais, donc j'ai fait mes études. Donc la première fois que je suis allé à San Francisco c'était juste avant le bac et après mes études je les fait à l'Inside Lyon. Une école incroyable. Non mais sans déconner c'est une dingue réelle cette école. C'est 5000 personnes, 5 en plus énormes et c'est une école qui se dit former des... Comment ils s'appellent ça ? Des ingénieurs humains entre guillemets.
+
+David Leuliette (06:00.097)
+ok.
+
+Kim Chouard (06:20.193)
+Et donc il a plein de trucs qui vont au-delà de l'ingénierie, qui prend le truc au contexte. Et moi ce que j'ai le plus apprécié, c'est pas tant le niveau des cours qui vont pas être comme Berkeley ou des écoles comme ça, mais plus vraiment l'ambiance, le campus. On avait le plus gros débit de bière de Lyon. Mais c'est pas pour ça que j'ai kiffé. Ça c'était juste un side-fact marrant. Mais il y avait énormément d'associations. Du coup tu étais super investi.
+
+et en fait t'avais un écosystème de ouf quoi donc socialement ça m'a beaucoup appris et euh... ouais, ouais, non complètement j'avais ma boîte de consulting où je faisais des sites et des apps à commencer à faire dans le site un peu précoce et euh... et après en fait au début je voulais pas faire des tubes, supérieurs entre guillemets euh... j'ai failli faire juste un UT pour avoir un diplôme quand même
+
+David Leuliette (06:54.133)
+Mais tu codais déjà avant, tu savais déjà coder Kind of avant quoi.
+
+David Leuliette (07:01.58)
+ok, ok.
+
+Kim Chouard (07:17.505)
+parce que j'avais déjà un boulot tu vois et c'était hors de question de faire une prépa donc perdre deux ans de ta vie c'était ma perspective ça quand même ça t'apprend à réfléchir c'est pas tout négatif mais c'était pas ma perspective du truc et en fait l'insalurant c'est une prépa intégrée donc c'est deux ans où tu bosses quand même beaucoup mais c'est pas c'est que des trucs que tu vas utiliser plus tard et c'est beaucoup de fun
+
+David Leuliette (07:42.391)
+Ouais ça c'est smart parce que moi direct les études kind of j'ai un peu détesté parce que je voyais pas l'application directe quand j'étais là je fais pfff Qu'est-ce tu... Si Assembler tu je trouvais ça rigolo et tout quand j'ai fait IT machin études Assembler et tout je comptais un DUT, IUT écalé quoi DUT écalé ouais carrément c'était bien et après j'ai fait un imagerie numérique ça s'appelait à l'époque et c'était genre ouais calculer
+
+Kim Chouard (07:50.197)
+Hum hum hum hum
+
+Kim Chouard (07:55.149)
+T'as fait quoi quand même dessus toi ?
+
+Ouais super, donc c'est appliqué ça déjà bien.
+
+David Leuliette (08:08.855)
+faire des filtres photosh... faire les filtres photoshop tu vois, refaire les filtres émails c'était là pff qu'est qu'on s'en branle de la... de... ça commençait... en fait c'était de l'imagerie c'était pas de la tech en fait c'était de l'imagerie numérique donc en fait c'était entre deux eaux tu vois entre l'arche ouais c'est ça et moi j'étais là je faisais atta faire une page web c'est quand même plus rigolo quoi et du coup j'ai de repas où j'ai été faire une une école nulle où on n'apprenait rien et les profs ils
+
+Kim Chouard (08:16.55)
+Ça, commence à être... Il a un sujet que je n'ai pas démystifié encore.
+
+Kim Chouard (08:25.333)
+des maths appliquées.
+
+David Leuliette (08:38.882)
+et t'apprenais tout dans le désordre en fait c'est ça que j'ai dit, c'est la plus grosse reproche que j'ai à l'éducation c'est que t'apprends tout dans le désordre en fait il a aucun fil rouge ou comme tu tu commences guide, terminal machin et la base tu vas passer une semaine dans le terminal puis après t'apprends les outils puis après tu build up au fur et mesure quoi tu vois tu vas pas faire du mountain bike direct si tu sais pas faire de vélo quoi donc
+
+Kim Chouard (08:49.661)
+Hmm, intéressant.
+
+Kim Chouard (09:03.501)
+T'intéressant ce que tu dis ? Ouais... Ouais, tu sais pas pédaler. Je pense que... Ouais, je suis enjoué sur certains trucs, mais à la fois, je pense que c'est important aussi de ne pas forcer un ordre commun, parce qu'en fonction de tes intérêts et tout, tu vas peut-être d'abord être intéressé à faire du web, ou d'abord un peu de natif, ou d'abord, je sais pas, moi, du back-end.
+
+David Leuliette (09:08.853)
+A la
+
+David Leuliette (09:17.237)
+Ouais.
+
+Kim Chouard (09:29.293)
+la façon dont j'essaye d'approcher les trucs sur tous les sujets éducatifs sur lesquels j'ai bossé et ça va de genre d'un jeu pour apprendre à utiliser de la technologie pour résoudre des objectifs de long durables à un app pour apprendre à jouer du saxo, des instruments avant, jusqu'à dans des écoles là où j'ai bossé c'est vraiment de lier ça à un objectif réel de ta vie quoi en fait et de rendre le truc comme un jeu en fait quand tu regardes les enfants ils passent son leur temps à jouer même les
+
+David Leuliette (09:52.0)
+Ouais, clairement.
+
+Kim Chouard (09:59.478)
+tous les animaux c'est comme ça qu'ils apprennent et à un moment on s'est dit je pas pourquoi en fait jouer c'est pour les enfants faut arrêter et ça je pense que c'est une grosse erreur donc il faut continuer de jouer avec un objectif ouais dégo ça c'est... vaste shooting ouais vaste...
+
+David Leuliette (10:07.893)
+J'avoue, à part Lego. À part Lego, mais non, qui vendait 7 à 1000 balles et c'est normal. Ok, étude, machin, ok, et donc c'est à peu près là où tu découvres San Francisco.
+
+Kim Chouard (10:22.027)
+Voilà, donc j'avais essayé d'aller là-bas en stage à la fin de ma...
+
+première année je crois. Echec complet, mon pote. Genre vraiment zéro lead, il l'avait pas vraiment forcé quoi. C'est très compliqué parce qu'il faut que t'aies un visa et tout. Et ça m'a un peu énervé. Donc l'année d'après j'ai arrêté d'aller en office à la place, j'ai bossé sur mon personal branding, comment tu te vends, comment tu... network quoi. Et du coup j'ai eu deux offres de Adobe et LinkedIn, je suis allé à Adobe parce que j'utilisais beaucoup leurs produits à l'époque. Et c'était super intéressant, c'était à l'époque où ils switchaient de...
+
+David Leuliette (10:50.592)
+oui.
+
+Kim Chouard (10:59.277)
+Software-based, cloud-based, subscription-based. Donc ils te vendent des softwares tous les ans, ils te vendent un abonnement tous les mois. Et je te donne leur équipe
+
+David Leuliette (11:07.003)
+l'enfer. Est-ce t'as pris de la shit store de l'intégralité du monde ever en disant vous êtes des voleurs ? C'était un peu ça l'ambiance ? Ok ouais ok.
+
+Kim Chouard (11:13.281)
+Alors moi j'étais pas trop exposé à ça, moi j'étais plutôt dans l'équipe cloud, donc assez back-end, je connaissais pas le cloud à l'époque, donc ça m'a cassé la tête, j'étais là wouah, et donc moi c'était plus vraiment purement technologique, donc c'était très intéressant.
+
+David Leuliette (11:33.428)
+Mais en plus bonne période, très bonne période en plus pour apprendre des trucs. Parce que quand il passe de cette période là, c'était Photoshop CS il me semble, CS 4, 5, un truc du genre. Je sais plus trop.
+
+Kim Chouard (11:36.077)
+Ouais ouais ouais, c'était cool.
+
+Kim Chouard (11:42.157)
+Quelque chose comme ça, non non, ils étaient on top of the hill. J'avais bossé sur leur site open source, d'ailleurs qui est encore live. D'ailleurs, il a un truc qui cassé, j'ai honte, mais ça fait plus de 10 ans qu'il est là. voilà. De fil en aiguille, ensuite une fois que mis un pied dedans, c'est plus simple. On avait fait un truc cool. Encore une fois, l'insa avait été assez ouvert pour ça, ce qui était sympa. La première connexion que j'ai eue avec Salesforce,
+
+Pour ceux qui ne connaissent pas, c'est un mastodonte pour les entreprises, c'est un outil de gestion de clients, de... Ouais... Ouais, maintenant ça va au-delà du sales, ils vraiment beaucoup de choses. Et ils avaient organisé un hackathon à l'époque parce qu'ils commençaient à rentrer sur le marché du mobile. Ils avaient créé une espèce de plateforme où tu pouvais créer ton app mobile rapidement. Ils avaient fait un hackathon. Et nous, avait une startup à Lyon et c'était putain, on apporter...
+
+David Leuliette (12:17.012)
+Si vous n'êtes pas sales, c'est que vous ne connaissez pas tous les sales que laisse Salesforce.
+
+Kim Chouard (12:41.708)
+Donc on a essayé de faire une magouille où on a réussi à se mettre de pair avec la communication de l'école en disant ok si vous me payez le billet d'avion on y va et on essaie d'envoyer du steak pour faire rayonner l'école à l'international. A l'époque c'était le plus gros prix de la catande du monde quoi. Donc c'était un peu un stretch mais on a réussi à le faire et on y est allé 4 euros à San Francisco c'était marrant.
+
+David Leuliette (12:56.787)
+Ok, stylé.
+
+Kim Chouard (13:07.98)
+On a passé trois jours à coder dans le hackathon et on a fini quatrième. Donc on était sur la big stage et tout. C'était un truc assez propre à Salesforce. C'était un mélange du backend de Salesforce donc je vais pas rentrer dans les détails ça n'a pas beaucoup d'intérêt. Mais au-dessus il y avait une stack HTML.js avec de l'angular pour avoir un frontend. c'était il a 9-10 ans. Donc ça fait un temps. C'est comme ça que j'ai découvert l'univers de Salesforce.
+
+David Leuliette (13:11.348)
+Et c'était quoi la stack ? C'était quoi la stack du...
+
+David Leuliette (13:28.924)
+Ok.
+
+Kim Chouard (13:37.357)
+j'ai rencontré pas mal de monde et puis il une opportunité intéressante donc je suis allé bosser là bas en tant que Product Manager et en fait je recommence à peine à coder pendant beaucoup beaucoup de temps j'étais plus genre connecté avec le code mais j'étais pas un ingénieur quoi code je gère les équipes entre le design et le code à Salesforce
+
+David Leuliette (14:00.933)
+Et donc là, c'est super transition, là c'est maintenant que tu reboucles et que tu as découvert Rack Native avec...
+
+Kim Chouard (14:08.076)
+Voilà alors ça c'était incroyable en fait si regardes un peu les stories de Reignity, de Expo il y a beaucoup de qui... bitch, ça commençait à se calmer parce qu'il n'y a plus lieu d'être mais au début de Expo c'était quand même assez painful il y avait beaucoup de points de friction c'était compliqué et il a deux, trois ans ça commençait à vraiment être très mature et c'est pile pour le moment que j'en ai besoin en fait moi quand j'étais à Salesforce
+
+Quand tu passes à Salesforce, peux t'investir en tant que bénévole pour faire du bénévolat dans ce qui t'intéresse. Moi, j'avais été investi dans une école là-bas où on avait commencé à faire un coding club et j'avais créé un petit jeu pour initier les enfants à la technologie pour résoudre des objectifs de développement durable. Ça a fait un effet boule de neige, j'ai eu de la visibilité jusqu'aux co-fondateurs de Salesforce qui ont vu l'impact et comme je voulais dupliquer le truc, ils m'ont dit « ok cool, tu ne pas bosser là-dessus dans l'équipe philanthropique
+
+Donc ils ont créé un post pour moi dans l'équipe yandropique et j'ai pu scaler le truc international donc c'était super intéressant. Pendant l'époque de Covid, on était tous un peu au cloîtré chez nous, il y avait le Black Lives Matter aux US et tout et donc du coup on a fait une version plus musicale où les élèves du monde entier choisissaient un sujet d'inégalité sociale qui leur donnait à cœur et ensuite...
+
+il naviguait le jeu, donc c'était une carte, un peu comme Agent 4Pierre, avec le Warfog qui s'agrandit au fur et que tu complètes des quêtes. Et donc tu apprenais à... Donc tu avais la Lyric Valley où tu apprenais comment créer des paroles, les structures, des flots de brainstorming, la musique Theory City où tu apprenais un peu la théorie musicale de base qui est en fait pas compliquée. Un mec qui s'appelle Andrew Wang, il m'a vraiment ouvert les yeux sur le fait que composer, c'est pas si compliqué que ça.
+
+David Leuliette (15:37.394)
+Tristez.
+
+Kim Chouard (16:01.578)
+pourrais dire qu'on faire 10 ans de solfège mais en fait pas du tout, c'est relativement simple. Et ça revient à ce qu'on disait sur le fait de comment t'apprends et d'essayer d'avoir les bases.
+
+Et ouais, c'était cool. a fait une... Il des élèves d'Australie, d'Inde, qui ont fait une finale avec... Il y avait Will.i.am et deux, trois artistes dans les juges, c'était cool. Mais tout ça pour dire que ce jeu-là, je l'ai créé, une extension Chrome. Donc j'avais Redux et JS à l'époque. Donc je m'étais un peu déjà remis dans le code avec du web. Mais native, j'ai jamais codé en natif. J'ai jamais fait iOS en net, c'est un truc que je connais pas. Donc moi, je suis vraiment... Purement web.
+
+Node et TypeScript. En fait, je suis rentré en France, j'ai rejoint un groupe d'écoles alternatives, Là, c'est rapide, mais j'ai fini par m'arrêter et me recentrer sur l'aspect technologique et la musique. Et c'est là où je me suis associé avec Odyssey Musique, une boîte espagnol qui fait ce petit coquin, un saxo électronique.
+
+David Leuliette (17:09.604)
+cette clarinette alors si vous n'avez pas la vidéo imaginez que vous pouvez faire de la clarinette en ASMR saxo pardon pardon pardon clarinette il y a les deux c'est différent là là attends attends saxophone c'est saxophone in english je pensais que c'était clarinette in english et saxophone en français mais non c'est deux instruments différents tu me dis
+
+Kim Chouard (17:14.976)
+oui, c'est du saxo, c'est du saxo. On a une clarinette aussi, mais là c'est du saxo. On a les deux, on a les deux. c'est très différent.
+
+Kim Chouard (17:30.668)
+C'est tous les deux saxophones en français et en anglais. clarinet en français en anglais. C'est des instruments différents, ouais. Très différents. C'est des instruments à voix.
+
+David Leuliette (17:35.409)
+ok d'accord, je sais pas, j'ai bugué. Et du coup... Ouais. Et on peut faire de l'ASMR avec.
+
+Kim Chouard (17:45.622)
+Ouais, j'ai compris.
+
+David Leuliette (17:49.073)
+Attendez les petits...
+
+Kim Chouard (17:49.392)
+Et donc en fait ce qui est vraiment cool avec les saxos et les instruments en général c'est que ça fait du bruit. Et ce qui est un peu chiant avec les saxos c'est que ça fait du bruit. Parce que du coup quand tu veux t'entraîner ça rend fou, c'est lourd. Et donc là ça c'est la taille d'une petite bouteille d'eau que tu peux en prendre dans l'avion, dans le train, où tu veux, dans une réunion, discrètement, entraîner, sur ta gamme. Et donc moi j'ai commencé par acheter le produit et j'ai fait mais attendez les gars il manque un peu quoi.
+
+David Leuliette (18:09.21)
+C'est ça.
+
+Kim Chouard (18:14.763)
+Parce qu'en fait, comme je sais exactement quelles touches tu appuies, donc ceux qui n'ont pas les vidéos, il a beaucoup de dans un saxo, donc ça peut être intimidant. Pour apprendre le saxo, il faut que tu apprennes à souffler, comment tenir les... Enfin, t'as plein de trucs en même temps. Donc on a décomposé l'apprentissage pour que tu apprennes d'abord le doigté, comment tu joues les différentes notes, la rythmique et être à l'aise, pour qu'ensuite quand tu arrives sur le vrai instrument, t'aies plus qu'à gérer ton souffle et qu'ensuite tu puisses avoir les deux outils pour t'entraîner et progresser.
+
+Donc voilà, on a créé, donc c'est en bêta sur web maintenant, on va relire dans quelques semaines sur test.ly d'abord l'app, et puis c'est la fin de l'année sur l'app store, au moins iOS. L'application qui s'appelle Odyssey Play, c'est un peu un duolingo de la musique, c'est comme si duolingo et guitar hero, ils faisaient un enfant qui tombe amoureux des instruments avant. donc quand j'ai commencé ce projet, du coup je savais qu'il fallait que ce soit universel, pas que sur web.
+
+parce que quand t'es dans un avion t'as un téléphone ou dans un train ou dans un métro tu vas pas sortir ton laptop et c'est là où je me suis pensé un peu sur RECNATIVE et ça a été fascinant ça va tellement vite à chaque fois j'avais un problème et puis le mois où j'ai ce problème t'as Evan qui poste une nouvelle version ou t'as Will Candillion qui fait une nouvelle version de Skiya et donc en fait maintenant ça commence à être vraiment super mature sur tous les sujets quand j'étais allé à FJS l'année dernière
+
+J'avais partagé comment j'avais créé le jeu. Le dernier point un peu de friction c'était vraiment l'audio. donc je l'ai dit sur scène, ça a énervé deux trois personnes je crois. Du coup ils disent ouais d'accord ! Et du coup ils ont créé des librairies. Donc il y a Expo qui a maturé leurs librairies avec Expo Audio. Et maintenant t'as Software Mansion qui a fait Reactive Audio API. Et ça mon pote, ça c'est incroyable. En fait il a utilisé un pattern que je trouve très intéressant.
+
+David Leuliette (20:08.656)
+A tout à l'heure.
+
+vas-y, vas-y, on va en reparler dans deux secondes. Donc ouais, la sac technique... Ouais, t'es arrivé, y'avait rien. C'est genre, les gars, what up, y'a juste... Y'a pas d'app, y'avait pas... Non, non mais quand t'as rejoiné leur... Zéro, rien. T'as dit, bon les gars, on arrête les conneries, allez hop, moi je join...
+
+Kim Chouard (20:23.307)
+Il y avait Expo Heavy et puis il avait... l'app ? non, moi zéro. ouais non, c'était Hardware Company. Hardware Company. Non pardon, si si, désolé, désolé. Excuse-moi, il y avait une app. Il avait une petite app Rec Native mais c'était... qu'on était aux Axos pour changer les sons. C'était juste une app de configuration, tu vois. Il n'y avait pas une... Ouais.
+
+David Leuliette (20:36.473)
+A la vignette.
+
+David Leuliette (20:42.288)
+Ouais ok, c'était pas... Et là t'as dit, hé, c'est rigolo mais bon, on peut... Y a eu une opportunité de ouf, exactement.
+
+Kim Chouard (20:48.651)
+Il a une opportunité de ouf quoi. Mais le founder avait déjà ça en tête. C'est juste qu'il fallait quelqu'un pour l'exécuter et avec qui s'associer quoi.
+
+David Leuliette (20:57.913)
+Ouais, il fallait trouver quelqu'un qui digue. Exactement. du coup, là, l'application qui va sortir, on va faire la stack en 5 points, puisque le format c'est success stories. Et on va commencer par... En plus, ça va être intéressant parce que Data Layer, comment tu fais ? Il n'y a pas de data fetching en fait
+
+Kim Chouard (21:10.847)
+Allez. Pis y'en a qui sont très sain. Yes.
+
+Kim Chouard (21:23.349)
+Si si si bien sûr ! Si si si ! En fait, juste avant qu'on parle de la stack, je vais vous parler des problématiques de lafs. Je vais choisir un peu un truc...
+
+David Leuliette (21:24.908)
+si ? Ok. Ok, ok, ok.
+
+David Leuliette (21:30.734)
+Ouais, oui oui, vas-y.
+
+Kim Chouard (21:34.572)
+Je pense que c'est la pire app après les apps de streaming ou les trucs comme ça parce qu'en fait mon app, le coeur de l'app c'est l'interface de jeu où tu peux jouer et ça si j'ai 10 ms de délai, 10-20 ms tout est aligné et c'est mort donc c'est un niveau de performance qui est vraiment extrême et donc du coup il faut être ultra pointu quoi
+
+David Leuliette (21:49.936)
+C'est mort.
+
+pas faire un perfect et tout.
+
+Kim Chouard (22:01.735)
+C'est pour ça que j'avais un peu peur au début avec Direct Native, parce qu'il y avait beaucoup de discours comme quoi c'était lent et tout. Maintenant je pense sincèrement que tu peux faire des trucs plus rapides avec Direct Native que avec du code RAW sur certains sujets, notamment les graphiques avec Skilla et tout, c'est n'importe quoi. Ce que Will a fait c'est un putain de génie. Voilà, donc ça c'est notre problématique et ça se joue principalement sur l'interface de jeu. Donc quand on au moins tes notes, soit sur une partition de musique, soit...
+
+On a une interface qui te montre exactement quelle touche appuyer. Parce que tu peux ne pas avoir de background de musique, mais on veut que tu puisses lui du saxo quand même. Mais en dehors de ça, il y a tout un data layer. y a la gestion de compte, t'as toutes les chansons avec les différentes configurations de chansons, l'URL des backing tracks. Moi je suis avec Super Bass qui fait ma base de données PSQL et mon équivalent de bucket, il SaStorage.
+
+David Leuliette (22:52.558)
+Ok.
+
+Kim Chouard (22:58.283)
+Et puis après t'as plein de sujets, donc on a tout un cours avec des vidéos pour apprendre les bases où on va te montrer comment tenir ton sax, comment appuyer sur les touches et en fait comme c'est connecté en live tu vas savoir si t'as appuyé sur la bonne touche ou pas donc c'est vraiment super interactif et en quelques minutes tu loues ta première chanson et d'ici une demi-heure tu connais toutes les naturelles c'est l'équivalent des notes blanches au piano donc la vitesse d'apprentissage est assez impressionnante
+
+David Leuliette (23:23.695)
+Et tu utilises les lives... Il a un truc avec, pas, c'est live il me semble. Ok.
+
+Kim Chouard (23:27.053)
+Pour ça on a plein de données quoi.
+
+Kim Chouard (23:32.127)
+Ouais, non, moi j'en ai pas besoin. J'en ai pas besoin parce que y a pas de tchat ou quoi. fait c'est... La donnée que tu modifies, c'est toi qui la modifie. Donc en fait, je suis en train de... Pour le moment, il y avait tellement de choses à construire que j'ai fait des raccourcis. Mais je tente vers un offline first approach. Auquel cas, du coup, tu le changes chez toi, puis tu pushes à SuperBase. Mais ce que SuperBase t'envoie, ça change pas très souvent.
+
+David Leuliette (23:53.646)
+Ouais, c'est beau.
+
+David Leuliette (24:01.807)
+Parce que t'as vu sur les John State, t'as un truc de synchronisation avec Super Bass directement. Et... Ah moi j'ai jamais eu... Ouais ouais ouais, ah oui c'est vrai. On n'explique pas, ça va pas du tout là. L'épisode de l'été on est fatigué. Super Bass pour ceux qui connaissent pas, c'est une alternative à Fire Bass. Ok, vous l'avez peut-être jamais entendu. Moi je rêverais de... Bah faire comme toi, arrive dans une boîte et fais... Bon les gars on arrête les conneries, ok on utilise Super Vous avez rien ? Mais Super Bass...
+
+Kim Chouard (24:04.082)
+Ils font ça ouais.
+
+Ouais c'est super bien fait. C'est pas mal, c'est assez puissant d'aller que c'est bien.
+
+Kim Chouard (24:19.793)
+à mieux
+
+Kim Chouard (24:28.594)
+Non mais, faille en baisse, c'est compliqué.
+
+David Leuliette (24:30.382)
+on met SuperBase en place et voilà. Mais après c'est très compliqué, enfin quand tu fais un product, ouais, mais quand tu dans une boîte et tout, si c'est pas mis en place déjà bah compliqué. Et après c'est un backend as a service quoi. Donc c'est vraiment quand vous avez pas le time, faites clic clic, hop ça spin up.
+
+Kim Chouard (24:44.862)
+Ouais ouais, voilà moi j'ai pas qu'il équipe à Cannes et je veux faire... ça peut pas me permettre une petite startup quoi.
+
+David Leuliette (24:51.04)
+Bah non et puis même pas forcément...
+
+Kim Chouard (24:55.05)
+C'est pas là où je pense que nous en tant qu'équipe on va faire la différence. Là on va faire la différence, c'est l'interface, l'expérience utilisateur et tous les petits détails liés à la musique et l'expérience de gamification, de motivation des gens. C'est là où en fait, par contre, notre base de données tourne. Le mec il s'en fout, il veut juste jouer de la musique quoi. C'est ça.
+
+David Leuliette (24:59.146)
+Exactement.
+
+David Leuliette (25:06.469)
+C'est ça.
+
+David Leuliette (25:11.566)
+Votre backend il est fait le client OZEF. C'est ça. Donc je pas base, clic clic, du coup c'est bien, ça vous facilite bien la gestion des comptes, IAM, les permissions, ce genre de trucs.
+
+Kim Chouard (25:19.594)
+...
+
+Voilà on utilise SuperBase Hots, ce qui est pas mal. J'ai hésité à le lier avec un truc genre Auth0 parce qu'on a un site de e-commerce aussi qui est sur WooCommerce et WordPress. C'est compliqué. Mais bon, on aimerait bien avoir un login centralisé et c'est compliqué de le lier, de façon même si tu passes sur Shopify. Donc SuperBase Hots, c'est bien si t'as ta propre app. Par contre, pour lier avec d'autres trucs, il faudra peut-être, tu vois, faire un passerelle avec un autre truc.
+
+David Leuliette (25:29.527)
+Ouais.
+
+ok, ouais.
+
+David Leuliette (25:41.101)
+Right ?
+
+David Leuliette (25:49.485)
+Ouais, ouais, bah... toujours compliqué, de toute façon. Ouais.
+
+Kim Chouard (25:51.573)
+C'est pas en gros si mature que Firebase Auth où t'as des trucs qui existent déjà ça fait longtemps. Donc bon ça c'est un petit peu le trade off. tout cas pour une app standalone qui n'a pas l'insomnie besoin de s'interagir avec d'autres trucs c'est vraiment bien.
+
+David Leuliette (26:06.549)
+Et en fait c'est pour ceux qui ne connaissent pas non plus, vous pouvez faire des branches de database, c'est folie. Franchement moi je ne plus...
+
+Kim Chouard (26:11.742)
+C'est une développeur d'expérience de malade, c'est très très bien fait. Bon alors par contre ce qu'il faut savoir c'est que comme tout surcouche, il a un coût qui vient avec donc c'est bien pour commencer, il faut faire attention et après si jamais vraiment on arrive à des notions d'échelle pour optimiser les coûts, tu finis par faire les choses toi même. Mais il le savoir, vois c'est comme si tu utilises Amazon EC2 avec tout un serveur versus Vercelles quoi.
+
+David Leuliette (26:31.991)
+Ouais, forcément.
+
+David Leuliette (26:38.925)
+Alright.
+
+Kim Chouard (26:39.21)
+tu vas avoir 10 000 personnes en ce moment, donc forcément tu faut les payer ces gens.
+
+David Leuliette (26:43.085)
+Donc niveau data layer, ouais c'est ça, ok. Y'a un autre truc niveau data layer que tu veux parler ?
+
+Kim Chouard (26:51.868)
+Alors, ouais, donc comme je t'ai dit, moi en fait, comme de base, j'ai commencé à être un programmeur, puis après j'étais PM et là je suis un nouveau programmeur. J'ai une approche où je ne pas passer 10 000 ans sur optimiser et que ce soit le plus élégant. Je veux que ça fonctionne. Je sais les endroits où il que ce soit rapide, par exemple, la plaine du haï. Mais sinon, si c'est pas parfait, ça ne me dérange pas. Je sais qu'il a un sujet qui faut que je l'améliore là. C'est comment je fais mon datafitting. Donc j'utilise le...
+
+le SDK de SuperBase mais j'ai pas vraiment de lien avec un TypeScript, je le fais à la main donc quand change ma DB il faut que change mon TypeScript et puis j'ai pas vraiment de libret de query et donc là, assez seulement sous peu je vais mettre un 10 stack query. On en parlera quand on parlera du state, match bump.
+
+David Leuliette (27:36.6)
+bah vas-y, ouais vas-y, vas-y, tente stack query, ok, parce que pour l'instant y'a Ouais c'est SuperBase... ok ! Ouais parce qu'en fait, le truc c'est que je sais que le SDK de SuperBase il vient avec plein de choses déjà préfées, du coup bah t'as peut-être pas forcément besoin...
+
+Kim Chouard (27:41.222)
+Voilà, il a Kim Sakura. C'est pas très élégant quand même.
+
+Kim Chouard (27:52.971)
+Ouais mais en fait ça te crée tes queries SQL si tu veux mais ça va pas te faire ton app le lien avec ton app elle-même. C'est pas... pas... Ouais. Ça te permet de courir ta database.
+
+David Leuliette (27:57.067)
+Ouais.
+
+David Leuliette (28:02.28)
+Ok donc il va falloir passer sur le fameux Tanstakue de Tanner qu'on aime bien
+
+Kim Chouard (28:11.184)
+Ouais. Voilà, je fais des bigodous.
+
+David Leuliette (28:16.391)
+Ok, super.
+
+Kim Chouard (28:16.648)
+Voilà, je crois que la prochaine étape c'est le State, c'est ça
+
+David Leuliette (28:20.845)
+La prochaine étape c'est statement management, comment tu gères...
+
+Kim Chouard (28:23.348)
+Alors ça c'est un gros sujet et ça j'ai des trucs à dire, je suis la tête dedans. Donc en fait comme à l'époque quand j'avais fait Edge of Makers, jeu pour apprendre... non j'avais parlé de l'accent chrome, j'utilisais Redux parce qu'en fait entre le pop-up, le l'IES que t'injectes, le script qui tourne en maquette dans ton accent chrome, c'est trois scripts complètement indépendants donc il fallait qu'il un state commun donc Redux à l'époque c'était pas mal. Donc là quand j'ai commencé l'app, je suis parti sur Redux aussi avec le toolkit et tout bien sûr.
+
+mais en fait là je suis commencé à taper aux limites notamment en performance je pense qu'avec le toolkit ils ont vraiment amélioré tout la bowler plate mais c'est quand même assez lourd
+
+et surtout si tu veux vraiment l'optimis, il être très pointu sur le sujet, ça devient très spécialisé. en fait, moi, quand on a toujours build sur toutes les plateformes, iOS, Android et mobile, on testait le maximum sur web et c'est comme ça qu'on a ouvert la bêta et tout. Mais de notre côté, on avait toujours les builds qui fonctionnaient. Chaque misageur de expo ne s'assurait qu'il pas de problème. Parce que sinon, si tu commences à prendre du retard, cuit. Il faut tout recommencer. Et donc là,
+
+on est en train de vraiment sérieusement revivre l'iOS. Android est build, mais l'iOS, va faire en sorte qu'il fonctionne, mais c'est la fin de ce mois. j'avais un problème où en fait, j'utilisais la Native Audio API maintenant, c'est incroyable, on prendra le temps d'en parler plus sérieusement parce qu'il a des choses à dire là-dessus sur où est-ce que ça va et tout, parce que maintenant je suis très connecté avec l'équipe qui fait ça. Et quand j'appuyais sur Play, y avait un diner au moment où le son se lançait, et donc mon interface et mon son n'étaient pas synchronisés.
+
+David Leuliette (30:06.27)
+à l'enfer.
+
+Kim Chouard (30:06.345)
+Et ça, pareil, pour moi ça veut dire que mon app ne me sert plus à rien. Et en fait j'ai l'impression que ça venait de Redux, ça marchait très bien sur Watt mais sur mobile il devait y avoir des layers qui... De toute façon le JSWD est un peu moins disponible sur mobile. Et donc là je me suis lancé dans une migration qui est assez impressionnante et j'ai bougé à Legend State parce que je rencontrais Jay de Legend List, donc Jay c'est un mec qui a fait Legend List qui est le...
+
+David Leuliette (30:31.477)
+Allez.
+
+Kim Chouard (30:35.945)
+la liste la plus optimisée dans la cognitive il vient de poster un tweet il y a quelques jours qui m'a fait marrer où il montrait une nouvelle version où il améliore la performance il a un screen recording il fait un fois 0,05 pour montrer le gain de performance tu dis quand tu dois diminuer de 0,05 c'est que tu vraiment à un niveau de performance de malade quoi donc le mec est très très dénabé
+
+David Leuliette (30:56.906)
+Pour ceux qui ne connaissent pas la backstory de Jay, il bossait dans les jeux vidéo, il faisait des jeux sur Wii U, et du coup c'est pour ça que Performance First. Et moi c'est pour ça que j'utilise ces librairies parce que Performance First, du coup voilà, au bout d'un moment il faut choisir, moi je choisis la performance d'abord.
+
+Kim Chouard (31:01.476)
+dans les jeux vidéo ouais, c'est ça.
+
+Kim Chouard (31:08.306)
+T'es pointu le gars.
+
+Kim Chouard (31:18.281)
+c'est parfait. Moi c'était peut-être plus une légacie de mon parcours ou grid jokes, c'est d'aller plus rapide et puis c'est quand même assez puissant mais c'est pas le plus rapide quoi. Et donc là je suis en train de migrer et c'est super intéressant, je trouve que c'est assez élégant. En vrai, j'ai l'impression de ce que je comprends, c'est assez similaire de Jotai qui est aussi un truc atomique très simple de gestion de state avec le petit extra J de performance qui permet vraiment d'optimiser le truc.
+
+et euh... et ouais, et euh... dès là j'ai bougé que deux parties de mon state dessus et déjà je vois, bah déjà ça a réglé mon problème et je sens que, en fait, un des problèmes que j'ai c'est que quand j'ai les notes de mes partitions affichées je peux avoir des milliers de notes affichées et donc j'ai déjà des optimisations dont j'ai parlé dans ma conférence l'année dernière où je render que la view, le viewport donc ce qui est affiché à l'écran avec un peu de buffer à gauche et à droite mais même au-delà de ça quand le mec il joue une note ou il arrête
+
+il y a cette note là en particulier qu'il faut être mis à jour et donc il faut changer tout ton array mais c'est super targetten et donc ça j'ai réussi à faire de la même simulation mais il toujours un peu des moments où ça frotte et avec Jay il a des optimisations spécifiques pour les arrays où tu dois juste faire un switch downlighten et là il fait un fois 10 ou fois 20 par rapport à... il est assez... Jota est déjà assez performant mais sur certaines calculs comme ça il fait des downlights
+
+et donc j'ai même pas attaqué mes notes et déjà je vois des performances rien que sur la gestion du play-pause, de comment mes audios sont démarrés Donc voilà, ça peut pas faire une condition définitive mais en tout cas de ce que j'ai vu passant de Redux à Legendless c'est assez impressionnant. À la fois en termes de Legend State pardon, Too Many Legends et c'est assez impressionnant. Et la DX est assez élégante en plus.
+
+David Leuliette (33:03.846)
+Legend State.
+
+Kim Chouard (33:13.597)
+Il y a beaucoup moins de C'est cool. Je recommande de vous renseigner et de regarder si vous ne connaissez pas.
+
+David Leuliette (33:20.809)
+Ouais franchement pareil, posez-moi des questions, je serais ravi de vous répondre. Du coup, navigation... Ouais carrément, carrément. Qu'est-ce j'allais dire ? ouais, app universelle, faut que ça fonctionne partout. Donc iOS, Android, web, connaissez. Niveau navigation, vu que ton app... Tu dises qu'à folk-en l'app là en fait ? On n'a pas dit. Tu l'as créé quand ? Ouais.
+
+Kim Chouard (33:24.713)
+Une idée assez difficile aussi.
+
+Kim Chouard (33:41.705)
+Quand est-ce que je suis démarrer ? Il a deux ans et demi. Deux ans et demi je faisais mes premiers prototypes vraiment, genre, minimum.
+
+David Leuliette (33:46.076)
+oui ok ouais.
+
+Non mais celle là, c'est la sur laquelle on parle, Play, Odyssey. ça, ouais ok, ok, ok, ok. Mais là, ouais, c'est over.
+
+Kim Chouard (33:53.564)
+On c'est play ouais. Il y a deux ans et demi, je ne savais jamais toucher avec native.
+
+David Leuliette (33:59.269)
+Ok ok ok. Et du coup à la renavigation... Oula.
+
+Kim Chouard (34:04.713)
+Là c'est Expo. Expo router c'est incroyable. Ça venait. J'ai bootstrapped. Je te dis.
+
+David Leuliette (34:08.377)
+Ouais, t'as utilisé Explorouter, ça fait déjà... tu l'as créé avec Explorouter aussi ? ça venait tout juste, ça fait deux ans ! OMG, j'ai l'impression que... Time flies.
+
+Kim Chouard (34:19.881)
+Ah ouais, mais non. Et puis il a beaucoup évolué. Je te dis à chaque fois, je commençais à construire mon backend, il a fait les API routes. Donc Expo Router, c'est le equivalent d'Expo pour ceux qui ne pas, qui permet d'avoir une gestion de routing. Sur le web, c'est un truc qui est assez commun d'avoir des liens pour les choses et l'URL qui change. Mais sur le mobile, ça n'existe pas par défaut. Et donc en fait, c'est ça. Tu as juste des écrans, mais ils n'ont pas de liens. Et là, maintenant, ça y est avec Expo Router, tout est lié.
+
+David Leuliette (34:40.777)
+d'avoir une URL de l'IFO.
+
+Kim Chouard (34:49.385)
+Par exemple si tu ouvres une page avec les détails d'une chanson sur web, tu l'ouvres dans l'app, il va t'amener directement sur cette page. Il a un deep linking qui est fait, qui est incroyable. Et en fait, t'as pas à te... C'est très très... DX est vraiment belle. C'est file-based routing, donc c'est à partir de fichiers. Tu fais tes fichiers et le nom de tes fichiers va définir tes URLs. T'as des layouts. Bon, tu peux te perdre des fois un peu dans les layouts, mais comme dans n'importe quel truc. C'est vraiment bien fait. Et...
+
+Tu peux même faire ton backend avec des systèmes d'API. Moi j'ai ça par exemple en termes de sécurité. Franchement en venant du web je voyais pas comment je pouvais envoyer mes clés côté client même si c'est compilé dans une app et tout. Tu peux la décompiler. Pour moi en termes de sécurité c'était un bouton rouge énorme. Donc ce que j'ai fait c'est que j'utilise le server side de SuperBase et toutes mes clés et le contenu j'ai une API entre mon app qu'elle soit web ou mobile.
+
+et SuperBase, c'est un petit truc que j'ai créé avec Espo Router, qui super simple à faire et du coup, les variables d'environnement sont côté server et c'est jamais exposé Donc ça c'est super bien fait et là avec la dernière version, il vient de sortir un truc qui te permet de gérer ce qui s'appelle Protected Route, donc de définir qui peut accéder à quel lien. Par exemple, tu peux gaiter les trucs derrière un login, tu dis ok, tu peux accéder ces pages que tu logins,
+
+Moi j'ai des pages d'admin aussi pour éditer le contenu et tout. ben ça pareil, j'ai juste dans ma stack, en fait ce qu'il boit avec Expo router c'est que ça ne revende pas la roue, ça rajoute juste de la colle entre tous les différents trucs, c'est avec les Black Navigation, des trucs qui sont déjà bien installés. Et donc tu as tes stacks, une stack, peux dire écoute, cette stack là elle est protégée, les gens peuvent y accéder que s'il a ça. Et ça permet de simplifier beaucoup de trucs, moi j'avais des problématiques,
+
+Si t'es authentifié au page, te rediriger mais que dans certains cas, là t'as juste à mettre un boulet hand sur les différents trucs et il fait un fall back, c'est...
+
+David Leuliette (36:56.776)
+dans ton layout. Ça simplifie quand même trop bien. En plus, ça, vous, c'est disponible partout, ça fonctionne partout, même sur le web, nickel.
+
+Kim Chouard (36:58.121)
+C'est ça, dans le layout bien sûr. Là où tu définis tes stacks et tes screens.
+
+Kim Chouard (37:11.081)
+Voilà, c'est ça. Après il y a plein de choses à faire encore dessus. sujet que je n'ai pas encore touché mais que je sais que ça fait partie de ma prise de décision, c'est le server side rendering. Moi j'en ai particulièrement besoin pour tout ce qui est SEO, donc indexing, comme c'est un site web. Il faut que mes pages de... qui est le détail des chansons, quand le bot de Google l'appelle, qu'il déjà tous les détails dedans. S'il y a juste un fichier HTML, JavaScript et pas d'infos, va dire ok, ben t'es mignon mais...
+
+David Leuliette (37:23.377)
+Ouais.
+
+Kim Chouard (37:40.755)
+Elle sert à rien ta page.
+
+David Leuliette (37:40.967)
+apparemment avec angular ils disent que non mais moi je les ai jamais cru quand ils disaient oui on est bon à exactement exactement
+
+Kim Chouard (37:48.551)
+Non, y'a rien de mieux que de pousser un HTML clean comme ça, y'a pas de débat. Et donc ça c'est une idée. Après lui, aller plus loin, Evan Bacon c'est le créateur de Explorateur où il a carrément fait du SSR sur mobile. Donc tu l'as for free mais je comprends pas, je m'intéresse...
+
+David Leuliette (38:03.665)
+Ouais. Et la démo...
+
+Si vous cherchez la démo, la démo c'est Expo Movies Expo Movies, truc du genre, tapez Expo Movies Evan Bacon
+
+Kim Chouard (38:14.322)
+Ouais, à t'façon dans ces talks de FJS il en parle. Donc autant sur web, la valeur accloutée elle est claire, c'est vraiment genre pour le SEO c'est net. Sur mobile, alors après il a des use case DAI où il peut générer des components qui existent pas et tout ça je comprends, mais ça reste quand même un peu nul. Mais bon au moins t'as ta stack qui est cohérente et puis voilà.
+
+David Leuliette (38:37.927)
+Ok du coup navigation c'est clair niveau styling et component UI library comment ça marche
+
+Kim Chouard (38:45.16)
+Ah ouais putain. Bah ça pareil, c'était un peu compliqué. J'ai passé pas mal de temps à ping-pong. J'suis content parce que j'ai l'impression d'avoir fait le bon choix en pour moi. Relativement rapidement, encore une fois, c'était une question de maturité de quand les trucs sont arrivés. Mais quand je me suis renseigné, il y a un an et demi, non ? J'étais là, c'est un peu... Déjà, style sheet, c'est pas... C'est pas ouf. En venant du web avec tout le CSS et tout...
+
+David Leuliette (39:12.656)
+Ouais c'est
+
+Kim Chouard (39:15.912)
+Bon et en fait je trouvais que c'était pas très mature quoi. Il a un truc qui s'appelle Tamagawai, c'est ça ? Qui est intéressant mais...
+
+David Leuliette (39:26.212)
+Ta mague d'urail, ouais, c'est que j'utilise. Mais là c'est full mobile. C'est plus mobile to web que web to mobile.
+
+Kim Chouard (39:33.66)
+Ouais mais en fait c'est une usine à gâte quoi donc ça peut être intéressant si tu veux vraiment bootstrapper ultra rapidement moi je voulais être très précis sur mes components j'avais déjà des designs des gâtes style et tout et donc je voulais juste pouvoir les stylez comme je voulais et avoir un truc euh...
+
+David Leuliette (39:38.406)
+Alright.
+
+David Leuliette (39:46.758)
+TamaGuy c'est hyper opinionnated donc en fait mais t'as des trucs stylés genre des selects et tout qui sont très bien faits mais c'est clair pour bootstrap c'est génial mais faut pas de design quoi si tu arrives toi genre il a une DA déjà pré faite et tout non donc pas TamaGuy, NEXT !
+
+Kim Chouard (39:57.604)
+voilà voilà c'est ça moi c'est mort voilà mais à l'époque il y avait Native One qui était en train de boomer mais c'était pas encore c'était pas clair mais moi j'ai vu le truc j'ai fait les gars vous êtes des génies en plus Marc il vous avez l'occasion d'écouter il a fait des podcasts super intéressants où il parle de comment
+
+David Leuliette (40:10.119)
+Ouais. Ouais.
+
+David Leuliette (40:16.112)
+Ok.
+
+Kim Chouard (40:22.664)
+c'est fait en dessous de Natiwind. Natiwind en fait c'est un portage universel de Tailwind. Donc Tailwind c'est une hybride qui te permet de faire du style et au lieu d'écrire du CSS tu vas faire des classes sur tes objets HTML qui vont style tes trucs. Il y a des pour et des contre, y a des threads énormes sur X qui bitent et qui love le truc donc c'est hellomiss moi je trouve ça très puissant.
+
+David Leuliette (40:46.854)
+C'est clair !
+
+Kim Chouard (40:52.072)
+t'as des filets de configuration et tout et puis c'est très clair c'est très rapide et en fait native win apporte ça sur mobile j'en avais parlé l'année dernière dans mon talk il ya des trucs de dingue par exemple pour faire des animations lui behind the scene il va te créer tes short value reanimated pour faire des animations que ça soit sur le live feed soit performant donc tu gagnes énormément de temps et ça c'est vraiment c'est vraiment si tout montre
+
+David Leuliette (41:13.446)
+Et toi t'as juste tapé... T'as tapé Hoover-Red et paf ! Undersmoot ça a créé 15 000 animations ! Génie ! Donc euh... ouais.
+
+Kim Chouard (41:18.16)
+Voilà.
+
+avec euh... non non c'est pas bien fait bon alors ils ont un peu fait des ping-pong avec la V4 ils ont galéré à les autres trucs mais bon moi ça va en vrai en étant en prod ça m'a pas gêné à outre mesure voilà et juste que je dire sur Marc en dessous de cette librairie comment ça fonctionne il y a un système qui s'appelle CSS interrupt qui permet de faire le entre toutes les notions de style qui est assez intéressant en fait il va divérer
+
+du CSS, transformer ça dans un modèle de données qui peut être ensuite qu'on transforme en n'importe quel styling, en l'occurrence le styling de native donc c'est assez assez smart, on n'a pas besoin de savoir ça quand on l'utilise mais si vous êtes curieux c'est intéressant donc tailwind for the win, native win et c'est vraiment le feu c'est tellement clean quoi c'est ouf tu peux définir tes variables avec tes... bien même j'avais pas forcément utilisé tailwind avant mais c'est tellement...
+
+David Leuliette (42:09.855)
+Et... Ouais j'avoue quand t'as l'habitude, ouais c'est clair, c'est hyper bien foutu. Mais t'as pas de... Ok.
+
+Kim Chouard (42:18.568)
+Pour moi c'est venu assez naturellement et ça m'a permis d'aller très vite.
+
+David Leuliette (42:20.725)
+Ouais, c'est Et t'es tout seul du coup, t'as dit sur l'app que vous êtes une team.
+
+Kim Chouard (42:24.232)
+Donc j'ai commencé tout seul pendant un an et demi, là il a un dev avec qui on bosse qui est vraiment cool, lui il focus plus sur tout ce qui est front-end et puis toute la stack et moi je vais travailler sur les sujets précis, tout ce qui est plain UI, des trucs un peu plus qui demandent d'être vraiment à la milliseconde près. Voilà.
+
+David Leuliette (42:47.63)
+chirurgicale à la sommeille seconde je vois je vois je vois
+
+Kim Chouard (42:51.78)
+Et puis ouais non non, donc là on est deux. On est un taqueur.
+
+David Leuliette (42:55.205)
+Très cool, pareil pour l'on-board, c'est vrai que Telwin pour on-boarder les nouveaux, je trouve que ça va, ça devient de plus plus répandu.
+
+Kim Chouard (43:03.378)
+Ouais c'est naturel quoi. Après voilà, il faut quand même être au fait qu'il a des subtilités qui changent. Des trucs, t'as pas le flex raw par défaut, t'as des petits trucs comme ça où t'as un truc... Ouais, mais comme t'es native win, si tu le sais pas, tu le sais pas quoi. Donc si tu viens de web avec tailwind, tu vas dire, mais attends, pourquoi il a rien qui dans l'ordre alors que t'as juste besoin de mettre un flex raw. C'est des petits... Et puis après t'as des trucs de compatibilité. ouais, des trucs de compatibilité aussi.
+
+David Leuliette (43:12.537)
+mais ça c'est direct Native to Core, c'est direct Native to... Enfin il est inversé. Ouais j'avoue, j'avoue... Oui ça...
+
+Ha
+
+David Leuliette (43:27.013)
+J'imagine trop un newcomer qui fait du tailwind, il dit « ouais facile » et tout, il débarque et tu lui mets ça dans les mains. Mais pourquoi tout est inversé, je comprends pas.
+
+Kim Chouard (43:40.52)
+Parce que tu te dirige intuitivement, vas apprendre, je sais pas, tell win ui, tu le copies pas, ça marche pas. Alors qu'en fait, t'as que quelques petits trucs à changer.
+
+David Leuliette (43:46.296)
+Ouais, ouais, j'avoue. Bah en vrai, sinon on n'aurait pas de travail, hein, tu vois. Donc, ok, donc ça, tu utilises un design système, t'as Storybook, genre de truc, ou...?
+
+Kim Chouard (43:52.424)
+Hmm.
+
+Kim Chouard (44:02.289)
+Ouais, putain c'est le faux storybook. Par contre, à configuration, crois que c'est David qui bosse dessus, un autre David. Danny pardon, Big Up, lui il fait énormément de et il a vraiment le valable truc. Maintenant, fait, c'est incroyable ce qui s'est passer avec Storybook. ceux qui ne savent pas c'est une librairie qui permet de travailler sur tes composants, individuellement. plutôt que...
+
+David Leuliette (44:10.766)
+Ouais, c'est Dani, big up à Dani
+
+Bah maintenant c'est plus simple. Enfin maintenant c'est plus simple, je trouve que...
+
+Kim Chouard (44:29.223)
+d'aller sur la page où t'as ton component pour le regarder, tu recharges et puis tu recommences. En fait tu l'isoles, tu lui passes des states. C'est comme un livre de design quoi, c'est super bien fait. J'en parle aussi dans mon talk l'année dernière de app.js et c'est vraiment, nous ça nous permet de gagner de longs temps. On avait essayé Chromatic aussi pour automatiser les tests et tout. Notamment moi dans ma interface de jeu, j'ai plein de edge cases sur mes partitions et tout qu'il faut gérer pour paquer de régressions.
+
+David Leuliette (44:40.494)
+Ouais c'est ça c'est... ok, trop bien.
+
+Ouais parce que sinon tu me ferais pas ta gueule. Ok. Ouais.
+
+Kim Chouard (44:58.919)
+mais ça coûte un peu cher donc on a arrêté pour le moment. Tant qu'on n'a pas lancé l'app et qu'on n'a pas de subscription, on va se calmer.
+
+David Leuliette (45:06.983)
+Chromatique, en plus c'est genre 300 balles par mois je crois.
+
+Kim Chouard (45:09.543)
+C'est super cher, Et après t'as un autre qui s'appelle Sherlock, crois, qui fait à peu près pareil pour Native. On a essayé, c'était compliqué, c'était pas mature encore. Là je crois qu'ils ont fait une nouvelle version, pas... T'façon, on va shipper l'app. On a Storybook pour boire ça en interne. Mais c'est très puissant, ouais. Pour tout ce qui est UI system, c'est vraiment joli. Et voilà, et dans Storybook 9, la dernière version qui vient de sortir là, avant il y avait toujours un décalage entre la version web et avec Native et tout, et là, tout est unifié. Et la version web et avec Native a été poussée en même temps.
+
+David Leuliette (45:16.131)
+Oui.
+
+David Leuliette (45:24.259)
+oui c'est ça.
+
+Kim Chouard (45:39.279)
+Donc big up à Dani et à l'équipe qui est derrière parce que c'est chouette.
+
+David Leuliette (45:43.069)
+Y'a que Dany en fait en vrai. Pour la partie rack native, y'a que lui je crois. Ici il me semble bien, j'avais pas de...
+
+Kim Chouard (45:51.288)
+Il est assez narré et très responsif sur les issues et tout. Ça fait plaisir.
+
+David Leuliette (45:55.139)
+Ouais carrément. Et donc niveau graphique et animation. là, vu que c'est un vidéo game, c'est un jeu vidéo, qu'est-ce qu'il a comme librairie ?
+
+Kim Chouard (46:03.367)
+Ah ben là mon pote, bon je suis en 2D hein, donc ça va, mais c'est quand même énervé parce que la temporique dont j'ai parlé, ben moi ce qu'il a est réanimé principalement. Ce qu'il y a, alors pour ceux qui en espace... Oh putain, attends, ok.
+
+David Leuliette (46:23.363)
+c'est un moteur de jeu vidéo. L'Unreal Engine, bah ce qu'il a, c'est pareil.
+
+Kim Chouard (46:27.527)
+Non pas du tout ! Unreal Engine c'est un moteur de jeux vidéo où t'as tout des univers et plein de choses qui sont créées en 3D. Ce qui se passe quand tu regardes, si on prend par exemple iOS, Android et le web, quand on appuie quelque chose sur un écran, c'est juste le moteur final qui va choisir quelle couleur va être la pixel et surtout les pixels. Le moteur qui fait ça
+
+David Leuliette (46:29.251)
+...
+
+David Leuliette (46:36.835)
+oui. oui.
+
+Kim Chouard (46:56.615)
+sur ces trois plateformes dont j'ai parlé, au bout de la chaîne c'est Skia, un moteur qui s'appelle Skia, a été créé je de base par Google, c'est un truc open source, donc en fait tous ils ont la même plateforme de rendering si tu veux, qui bon c'est un peu plus compliqué que ça mais en fait ce que William a fait c'est qu'il a dit putain ça c'est super puissant mais c'est très très très très bas niveau, comment je peux arriver à rendre ça accessible de façon beaucoup plus haut niveau et élégante ?
+
+David Leuliette (47:23.406)
+l'extract.
+
+Kim Chouard (47:25.063)
+Il a créé React Native Skia, qui a énormément maturé. Ça permet d'avoir des trucs qui tapent directement dans cet engine, qui commun, qui n'est plus trop commun maintenant, il a fait en sorte... Regardez cette Hocab.js, vous en saurez plus. En fait, tu as des trucs ultra performants avec juste des APIs super élégantes. Tu fais un cercle, tu un component de cercle avec ces paramètres et puis voilà.
+
+et tout s'intègre avec reanimated aussi donc les animations tournent gestion handler et tout pour gestionner toutes les gestions sur le UI Thread et ça c'est ce qui m'a permis s'il n'y avait pas eu ça je sais pas ce que j'aurais fait mais je...
+
+David Leuliette (48:08.492)
+bah si y'avait pas ça, en fait j'ai bugé dans ma tête, je voulais dire flutter mais pas du tout, dans ma tête j'ai bugé entre les deux mais...
+
+Kim Chouard (48:14.119)
+Même flotteur c'est mort, fait j'aurais fait qu'une app ouais mais franchement ça aurait été chaud. Je te faire connaître ça à Will et au Taf qui l'a fait parce que... toute l'équipe de Reanimated aussi. Donc c'est ça.
+
+David Leuliette (48:18.314)
+Ouais, mais euh...
+
+David Leuliette (48:22.786)
+Exactement et du coup ce qu'il y a ça permet autant de des charts assez basiques, assez basiques, des bar charts, trucs de genre. Ouais c'est ça.
+
+Kim Chouard (48:31.239)
+En fait tu ce que tu veux, en fait t'as un canva, c'est comme si t'avais un espace blanc et tu dessines dessus. Donc tu vois t'as pas tout ce qui est layouting et tout, donc faut pas tout faire avec ce qu'il a, mais sur des sujets particuliers, sur des petites animations de boutons et tout, c'est des dingues.
+
+David Leuliette (48:43.681)
+Non, non, une partie... C'est ça. Toi du coup, il a que vraiment la partie guitare-héros, je veux dire, avec le skier. Ouais.
+
+Kim Chouard (48:50.983)
+Voilà, l'interface de jeu, ouais. Mais sur mon interface de jeu, j'ai des views. Tous les menus et tout, c'est des views. Donc j'ai mon interface de jeu, j'ai quelques trucs comme des polar gauges. Donc c'est une barre de progression ronde, tu comme les cercles de l'Apple Watch. Ça, c'est avec ce qu'il y a. Puis des petits trucs comme ça.
+
+David Leuliette (48:55.211)
+Ouais.
+
+David Leuliette (49:06.869)
+Ouais, truc sur la watch, sur la watch, ouais. Ok.
+
+Kim Chouard (49:13.287)
+tout ce qui est scoti aussi maintenant qui supporté de base par skia qui permet de faire des animations de l'hoti avec skia ultra performante juste des petites animations et tout scoti c'est l'hoti donc l'hoti c'est une librairie d'animation qui est super connue sur le web mais qui tourne sur react native donc c'était Marc Laior le créateur de l'intromodule et donc CEO de Margello qui avait fait ça
+
+David Leuliette (49:21.345)
+c'est quoi ce cotice ? Jamais entendu parler de ce truc.
+
+David Leuliette (49:30.048)
+Ouais.
+
+David Leuliette (49:37.857)
+...
+
+Kim Chouard (49:38.695)
+Et maintenant le filon de guille s'est supporté par défaut sur ce qu'il a, donc il n'y même pas besoin d'avoir un niveau. Je n'ai pas besoin de remplir les détails, c'est juste une façon de charger les animations toutes faites sur internet et de les animer, un peu comme R.I.V.E.
+
+David Leuliette (49:46.465)
+Ok, je vais... Ouais ouais. Non mais... Ouais carrément. Exactement. Trop bien. C'est ça, on adore. Cool, cool. Trop bien, trop bien. Alors attends, du coup, une fois qu'on a fait tout ça, comment on ship ça en prod ? C'est quoi la partie CI, release, deploy, comment ça marche ?
+
+Kim Chouard (50:05.958)
+Ouais Ouais ouais ouais Alors ça je suis encore assez nouveau là dessus donc sur web j'ai Netlify avec des systèmes de autobuild donc dès que je fais une PR sur ma branche de dev il va me faire une preview et donc Netlify ça va vraiment bien faire franchement aucun problème là dessus c'est super clean il des petites outils d'AI des fois si t'as des erreurs un peu chelou et j'ai même des background functions
+
+qui tournent pour des fois à des synchronisations entre mes différents systèmes. Donc là aucun problème, je liotte EAS hosting parce que ce qu'ils ont en plus c'est les logs d'erreurs sur tes API routes, que je n'ai pas vraiment pour le moment. Donc ça c'est assez cool. Donc ça c'est sur la partie web. Pour tout ce qui mobile, j'utilise l'EAS.
+
+Pour le moment j'en suis que à la phase native test flight donc je suis encore un peu un noob du papier de production mais j'en ai pas mal parlé pour moi c'est un peu un noobriner IAS, tranquillou, voilà ça ça se fait bien
+
+David Leuliette (51:12.733)
+Ouais non c'est pas maintenant c'est assez classique
+
+Kim Chouard (51:20.249)
+Voilà !
+
+David Leuliette (51:23.305)
+Et après tout ce qui est data c'est suabase donc pareil, si tu veux synchroniser, clique-clique.
+
+Kim Chouard (51:26.16)
+Ouais, alors moi j'ai un layer dont on parle pas beaucoup justement, et je pense qu'il faut l'aborder ici, peut être intéressant. C'est tout le layer audio. Comment je gère tout ce qui audio ? Ça fait partie inhérente de mon app, et de toutes les apps de jeux vidéo, et même des fois, c'était le sujet de mon talk cette année là, à App.js Donc même si tu veux faire un petit peu des sons pour ajouter un peu de réalité sur des boutons, ou mettre des sons d'ambiance...
+
+Je vais pas refaire mon talk donc si ça vous intéresse vous pouvez regarder mais on peut aller peut-être plus dans l'aspect technique ici Avant j'utilisais Expo-av qui était la librairie audio vidéo de Expo qui était un peu vieille, pas forcément et donc pas rapide Il avait des délais incompressibles entre 20 et 50 ms J'ai essayé de... Si je pouvais faire n'importe quoi je pouvais rien faire, c'était inhérent à la librairie
+
+Donc là j'avais un système de sync qui rendait fou
+
+et ensuite ils ont exporté ça dans Expo Vidéo  et éventuellement avec Expo Audio qui est déjà mieux, un peu plus performant. Je ne pas en parler exhaustivement, je sais que c'est bien et c'est stable, c'est back par Expo parce qu'en même temps il a Software Mansion qui ont fait un truc qui s'appelle a Rack Native Audio API qui utilise un paradigme que je trouve très puissant dans l'univers Rack Native qui a été lead par pas mal de gens comme William avec ce qu'il a fait avec WebGPU et tout ce qui est en 3D.
+
+où fait tu prends les paradigmes qui ont été testés, qui fonctionnent, que tu as adopté en tout cas sur le web, et tu les amènes de façon universelle. C'est ce que NativeWin a fait par exemple, en prenant Telywin, en le mettant partout, ce que William fait avec WebGPU, en faisant marcer 3JS partout, et ce que du coup SoftwareMotion ont fait, ils ont pris la WebAudio API et ils l'ont apporté universalement pour que ça fonctionne sur web et sur native. La différence avec cette librairie,
+
+Kim Chouard (53:22.118)
+qui est un peu particulière c'est que c'est vraiment une livrée d'audio. la façon dont tu vas approcher le truc c'est que tu vas avoir des blocs que tu vas connecter comme si tu étais dans un studio et tu connectais des câbles audio entre les différentes parties. Donc ça prend un peu plus de temps à le faire mais par contre après tu es ultra-réformant. Donc voilà ils sont super réactifs, on bosse beaucoup ensemble là on est en train de finaliser le truc et de la faire maturer. Et là on bosse sur des petits sujets assez excitants.
+
+David Leuliette (53:35.743)
+J'aime bien le...
+
+Kim Chouard (53:52.679)
+Donc le jack-o'-tips ça marche très bien et tu peux changer le pitch. Donc par exemple quand tu changes la vitesse d'un son, l'algorithme de base va te faire des sons de chipmunks très aigus, très gras et donc tu des algorithmes un peu plus compliqués qui te permettent de changer la vitesse en gardant le contexte musical, le pitch on appelle ça. Pour que tu puisses réduire par exemple et t'entraîner sur une chanson en jouant plus doucement sans que ça change les notes que la chanson joue. Donc ça, ça permet de faire ça pareil.
+
+mais il a un truc où encore je pense qu'on a matière à s'améliorer c'est comment l'interface donc tout ce qui est animation est synchronisé avec l'audio pour le moment il n'y a pas vraiment de parallèle entre les deux et donc ce qu'on est en train d'explorer ensemble c'est d'apporter le concept de shared values donc quand tu fais une animation avec reanimated tu définis une variable qui va être accessible par le JavaScript et par l'Ui et qui va permettre de commander tes animations par exemple tu définis
+
+une variable qui est la taille de ta vue et tu vas l'augmenter, la descendre avec les animations, ça va lui. Donc en fait l'idée c'est d'apporter ce concept pour qu'il abordable à la fois du côté reanimated et du côté React Native Audio API. Pour que les trois univers JavaScript, UI et audio puissent communiquer ensemble.
+
+David Leuliette (55:10.503)
+Ouais. Et après, faudrait que ce soit sync avec ton store aussi. coup, je pense qu'avec les jeux... Il me semble que... J'avais déjà eu des cas où... Ouais. Où ça ne fonctionnait pas forcément, il me semble. Quand t'es dans un... Quand t'es... Ouais.
+
+Kim Chouard (55:15.747)
+ouais.
+
+Kim Chouard (55:25.072)
+Alors ouais les Genlis il y a quelques sujets avec les Shared Values mais généralement ça monte pas forcément au niveau du state c'est plus de l'animation instantanée en tout cas pendant l'animation c'est pas obligé de monter on peut le faire monter si besoin mais là par exemple faudrait que tu démarres un audio et que la position dans ton audio contrôle l'animation et que l'animation se fasse à partir de la valeur de la position et en fait avec le concept de Shared Values
+
+David Leuliette (55:31.335)
+Allez.
+
+David Leuliette (55:48.51)
+Oui.
+
+Kim Chouard (55:54.79)
+ça permet de faire ça de façon super élégante et c'était un use case mais l'idée c'est que moi je vais peut-être on va bosser sur le use case de la voiture qui marche mais après conceptuellement ça permet beaucoup de choses par exemple tu fais un faux vinyle une image de vinyle et en fonction de l'animation ça fait jouer la chanson ou pas donc la chanson joue ça bouge et tu fais un scratching avec gestion de l'heure ça fait vick vick vick parce que ça fait bouger le... comme le... ça s'approche de la réalité tu vois plein d'idées comme ça et donc ça je pense que c'est le petit truc qui va permettre de...
+
+David Leuliette (56:07.262)
+Bye.
+
+David Leuliette (56:14.856)
+Ouais ça le fera vraiment quoi... En vrai.
+
+Kim Chouard (56:22.113)
+Ensuite de faire des multitracks, si tu joues plusieurs sons en même temps, comment tu les alignes ? Bah t'en un qui a une short value et les autres qui utilisent la short value pour... Voilà. On sait pas si ça va aboutir, mais conceptuellement c'est ça qu'on essaie.
+
+David Leuliette (56:30.958)
+ça du coup dans dans deux allez vas-y moi je dis je bête dans trois ans kim tu nous fais une app vision pro pour faire le dj genre allez on a fait les clarinet and saxophone maintenant on fait on fait future on fait future tu vois
+
+Kim Chouard (56:43.845)
+J'ai vu, ça se fait mal ça.
+
+Kim Chouard (56:49.698)
+Un mec y du boulot.
+
+Par contre, tu viens me donner une idée, que nous on va faire tous les instruments avant. Donc on a les instruments électroniques avec la saxo, la clarinette, mais tout ce qui est instrument à ce qu'on appelle brass, cuivre, c'est très compliqué parce que tout se joue sur l'embouchure. Avec la trompette par exemple, avec le même doigté, tu peux jouer trois notes différentes en fonction de comment tu souffles et tu positionnes ta bouche. Donc si tu fais une trompette électronique où il a que le doigté, ça sert à rien.
+
+David Leuliette (57:05.213)
+Ouais.
+
+Kim Chouard (57:20.559)
+Donc il qu'on arrive à faire une embouchure électronique, c'est très compliqué, donc on essaye, ça va prendre du temps. D'ici là, un truc sur lequel on bosse aussi, c'est d'avoir un système qui permet de reconnaître l'audio et de transformer ça en MIDI. Donc en signaux, genre une note à commencer, une note à c'est terminé, voilà la note que la personne a joué et est-ce qu'il a le bon pitch ? Parce que quand tu joues sur un piano...
+
+David Leuliette (57:24.73)
+Ouais. Ouais.
+
+Kim Chouard (57:44.75)
+T'appuies sur la touche, ça joue la note, mais quand tu joues un instrument avant, un saxo, il faut que tu s'ouvres de la même façon pour que la note soit stable. Et ça prend des années de développer l'oreille, alors que si t'as un jeu ou t'as un moteur qui permet de détecter le pit, tu peux te dire, là, tu es en train de dériver, tu peux faire des petits jeux et tout. Donc ça, exactement. Et donc ça casse la learning curve, le temps d'apprentissage.
+
+David Leuliette (57:56.081)
+Tu le vois mieux, vois directement. La feedback loop, elle est plus rapide que je vois et du coup... Ok. Est-ce que c'est quoi ? Alors attends, on a parlé un peu d'Expo, Native. C'est quoi les top 5 de librairies que tu recommandes ? ouais, React Native, Audio API, ESCAN Accord 2.
+
+Kim Chouard (58:16.645)
+Donc ce a, Reanimated, Rec Native Audio API. Du coup maintenant les jeunes lits, pense qu'il faut valider sur long terme. Les jeunes lits, c'est les jeunes les states pardon.
+
+David Leuliette (58:26.613)
+Ouais, si, moi je valide, je valide parce que Marc de Infinite Red, j'étais sur le Slack ce matin de Infinite Red et Marc, que vous connaissez pas, impossible parce qu'il a pas de... non, non, le Marc d'Infinite Red, en fait il a pas de réseau sociaux donc impossible. Le seul... si, il a une vidéo, tu tapes Skydiving React Native, en fait il fait du saut en parachute et il est déjà release une app en production.
+
+Kim Chouard (58:36.825)
+Au sa-vie
+
+Kim Chouard (58:41.291)
+Alors, je... me cas.
+
+David Leuliette (58:54.35)
+pendant qu'il était en train de skydive et ses marques. bah oui, c'est un américain, que crois ? Normal, forcément. Et bref, sur Slack, il a dit, j'étais mindblowé par les perfs de LegendList, franchement folie. Parce qu'il faisait un workshop, justement. Du coup, c'est bon. Moi, maintenant, je dis aussi, je recommande aussi.
+
+Kim Chouard (58:54.565)
+Incroyable. C'est un américain, non ? Ouais, forcément.
+
+Kim Chouard (59:07.557)
+All right.
+
+Les jeunes lisent les jeunes states, c'est carré. puis storybook. Storybook, si tu veux être précis sur tes designs et faire en sorte que t'aies pas de régression, c'est pas mal. Moi je sais que j'ai des sujets où j'ai des lacunes. C'est sur le testing et tout, j'ai pas vraiment de... Voilà, donc ça je pourrais pas conseiller. Je suis ouvert à des... des tests, pense, ou un truc comme ça.
+
+David Leuliette (59:17.222)
+Ouais Storybook ça fait gagner un temps de fou.
+
+David Leuliette (59:31.228)
+Ah ouais bah faut... En fait, testing, si tu fais avec gestes et tout, peux, c'est des unités et tout, franchement en vrai je pourrais t'envoyer comment moi j'ai setup, c'est assez... ça, mais le truc c'est toujours pareil, c'est que ça prend un peu de temps, mais euh... Moi je fais un mix de tout, en fait j'ai euh... tu vois j'ai... on va dire 30%, 30 à 50 % d'unit test, 50 plus sur storybook et euh...
+
+Kim Chouard (59:38.501)
+...
+
+Oui.
+
+David Leuliette (59:59.901)
+Et après du maestro, là je commence à mettre du end to end avec maestro pour faire des tests de flow en entier. Genre... Ouais. Ouais c'est ça. Est-ce que en tant qu'utilisateur je peux changer mon prénom ? Donc ça va dans settings...
+
+Kim Chouard (01:00:02.735)
+Alors tu fais quoi avec ma instru ?
+
+Kim Chouard (01:00:07.749)
+Donc tu fais cliquer et tu fais en sorte que ça aboutisse quelque part.
+
+J'ai noté ça.
+
+Kim Chouard (01:00:17.221)
+Et donc ça, ça marche, c'est dans un CI, donc c'est détecturer les intrus qui va te faire sur Master, ou si tu as une PR, il va vérifier que tous les tests passent, c'est ça ?
+
+David Leuliette (01:00:21.71)
+Ouais tu peux le mettre dans le... Pour l'instant... Ouais c'est ça, pour l'instant il est en manuel... Enfin Maestro il est en manuel pour l'instant, parce que j'ai pas encore setup le clave, le truc, le machin...
+
+Kim Chouard (01:00:30.966)
+Et leur prefig il est pas trop violent, que je sens un truc arriver comme chromatique.
+
+David Leuliette (01:00:35.324)
+Je sais pas, j'ai pas regardé. J'ai pas... Parce que en fait, en vrai, quand je fais une release, vois, je lance le truc, ça me prend...
+
+Kim Chouard (01:00:39.973)
+Ok.
+
+Kim Chouard (01:00:44.973)
+Oui, si tu le fais manuellement, peux avoir plus de granularité.
+
+David Leuliette (01:00:46.832)
+Ouais c'est ça pour l'instant je le fais je me servir un café, hop je reviens ma machine c'est un m3 le truc il fusille... Ouais tu peux le faire tourner localement aussi et maestro franchement c'est folie si tu regardes le...
+
+Kim Chouard (01:00:54.761)
+tu le fais en local, d'accord, donc c'est pas cloudbreak, donc tu peux les faire tourner localement. C'est bien.
+
+Kim Chouard (01:01:03.293)
+Storybook aussi tu peux faire tes tests en local avant de push ou pas. Des visual tests.
+
+David Leuliette (01:01:09.548)
+Ouais, bah je regarde pas storybook. si, ouais si si tu peux, tu pourrais, tu pourrais, tu pourrais mais... Parce qu'en fait le diff tu peux pas vraiment savoir quoi. Donc ça dépens enfin, ouais il plusieurs, plusieurs... Mais je t'enverrai le truc de geste, c'est vrai que ça peut être intéressant pour certains cas, pour certains trucs.
+
+Kim Chouard (01:01:18.725)
+Voilà.
+
+Kim Chouard (01:01:28.737)
+Ouais, moi sur HGS, vous avez vu, by test ou un truc comme ça, un truc qui est un peu plus performant, un peu plus génitaire. Ouais, à voir.
+
+David Leuliette (01:01:35.075)
+Ouais, pareil mais moi je fais pas de plomberie, donc les gens ils utilisent geste ou je dis geste, je sais que c'est possible, mais je suis pas plomberie, c'est ça je suis pas plomberie, j'attends que les autres fassent la plomberie ou alors ok je veux bien faire de la plomberie mais je fais ça correctement et tout mais après j'ai pas trop le temps, en fait c'est ça que j'ai pas trop le temps en tant que freelance tu vois, pas le time.
+
+Kim Chouard (01:01:41.591)
+On est d'accord. J'pais pas de plomburique.
+
+Kim Chouard (01:01:54.871)
+Faut
+
+Ouais.
+
+David Leuliette (01:02:02.29)
+Comment est-ce que ta dev a une fonctionnalité XY et combien de temps ça prend pour mettre en prod ? Voilà, c'est pas encore en prod on dire.
+
+Kim Chouard (01:02:10.148)
+mec over the air c'est incroyable en fait ce qu'Expo ont fait c'est une... en fait pour moi ça a toujours été pas un non-sullet mais genre en gros quand t'es sur le web t'as un nouveau truc tu pousses sur ton serveur et le mec la prochaine fois qu'il recharge il a de la nouvelle version c'est cadeau mais là du coup ils ont...
+
+David Leuliette (01:02:13.712)
+oui !
+
+David Leuliette (01:02:24.25)
+Quand j'ai fait du mobile, je comprenais pas, c'était pas ça du tout.
+
+Kim Chouard (01:02:32.1)
+Ouais, je sais. Mais Expo, ils ont permis de faire un truc vraiment élégant. En gros, après, il a des petites subtilités. Comme ils font un fingerprinting, si tu rajoutes juste une commande sur ton package.js, il va penser que c'est un tout nouveau truc. Donc, il faire attention sur les petits détails comme ça. Sinon, si tu as juste un petit patch qui est purement JavaScript, c'est incroyable. Ça, c'est vraiment chouette. Ouais, parce que ce de Vérolid était un peu, comment dire, à la merci de l'App Store.
+
+Je vais oublier un peu ça parce qu'on a quand même une app qui est live là pour gérer les instruments. Et alors qu'au lieu d'hier, c'est pas mal. Ah oui et MMKV aussi, LibreDryer à conseiller pour les actions de storage. Ça c'est bien. Et donc du coup en fait ce que je trouvais assez élégant avec Legend State, c'est que du coup tu peux avoir ton State Management et avoir beaucoup de choses gratuitement sans que ce soit non plus une black box. Tu peux connecter avec ton Tint Stack pour faire ton Data Layer.
+
+et ensuite tu fais ton persistence avec MMKV et du coup tu as quasi un offline force très rapidement voilà
+
+David Leuliette (01:03:33.284)
+Ouais, c'est exactement ce que je fais. C'est exactement ce que je fais en ce moment avec une app Bluetooth. C'est carrément ça. Et franchement, ça...
+
+Kim Chouard (01:03:42.629)
+Parce que nous, faut qu'on ait une fonctionnalité offline aussi, tu vois. Tu peux dire comme Spotify, je download offline. Comme ça quand je suis dans un endroit où j'ai pas forcément de réseau, je peux quand m'entraîner. Donc ça, ça devrait être un gros sujet. Puis comme je suis en train migrer vers le level and state, toi tu ce que tu fais et tu me confirmes que c'est bien.
+
+David Leuliette (01:03:53.239)
+dans l'avion, j'avoue.
+
+David Leuliette (01:04:00.31)
+ouais ça marche bien après ce qu'il faut faire gaffe c'est les montées de version quand tu break ton... faut pas faire l'andouille enfin faut déjà fois reset ta clé en fait si tu changes ton state et que tu ship et que bah en fait bah en fait moi j'ai une synchronisation entre les data bluetooth et les data que t'as en réel et du coup si ton state tu change une clé, nœud, un machin
+
+Kim Chouard (01:04:10.849)
+Hmmmm
+
+Kim Chouard (01:04:14.59)
+peut casser là parce que la synchronisation... intéressant.
+
+David Leuliette (01:04:28.131)
+Dans le doute je reset le offline comme ça le mec qui n'a plus data offline doit resynchroniser.
+
+Kim Chouard (01:04:31.752)
+Oui, mais il faut juste faire l'effort que s'il détecte une nouvelle version il te wipe tout ton storage et il restore petit à petit quoi. Ok, good to know.
+
+David Leuliette (01:04:37.002)
+Ouais, c'est... ouais, ouais c'est un peu ça ouais. Enfin faut... Moi je sais que je le fais pour être sûr mais bon ça dépend des fois. Y a peut-être moyen de faire un truc de migration mais ça dépend vraiment des dates, etc. Moi je wipe tout comme ça, c'est à régler quoi. Allez hop !
+
+Kim Chouard (01:04:53.134)
+Ouais, c'est ça. Donc le deploy, ça c'est pas mal. Après, je sens qu'il va y avoir des petites subtilités, comme par exemple, c'est Expo Router qui gère tout. Si jamais j'ai mon API qui change, je mets à jour sur mon serveur, mais que l'application n'est pas à jour, il a des sujets où il faut faire attention, comme c'est le même code base. En fait, si veux, quand tu pousses Expo Router, tu vas pousser sur le web et en fait, ton application mobile, va taper dans l'API de ton site web. il y a des petites...
+
+David Leuliette (01:05:13.515)
+Ouais.
+
+Kim Chouard (01:05:22.336)
+comme ça oui il faut être un peu récautionné.
+
+David Leuliette (01:05:24.297)
+Ouais, bah oui, sinon on n'aurait plus de travail. Est-ce que... oui, coup, tu... Bah plus dans ta carrière en général, plus sur React Native, même si elle n'est pas si grande que les autres, mais quand même. Est-ce qu'il y a eu d'anecdotes, un moment très difficile dans le dev de ton app, et comment tu l'as géré ?
+
+Kim Chouard (01:05:39.918)
+Ouais, c'est relativement court, mais d'accord.
+
+Kim Chouard (01:05:46.542)
+A vous.
+
+non mais laisse tomber
+
+David Leuliette (01:05:51.513)
+Tous les jours !
+
+Kim Chouard (01:05:53.153)
+Pas tous les jours, mais il y a des périodes vraiment, il y en a eu deux la dernière c'est récemment là. Donc là quand j'ai fait ma variation de state, fait ce qui est compliqué c'est quand tu fais des choix super importants, comme moi j'ai pas le choix que mon app soit performante, il y a des moments où je me retrouve dans une impasse où j'arrive au bout de la stack que j'ai choisi et je sais pas si est-ce que c'est un problème de stack, comment j'utilise ou si c'est la stack elle-même. Donc là c'est typiquement le problème que j'avais avec sur mobile quand j'ai appuyé sur play post il y avait un délai avec l'audio.
+
+Heureusement j'étais assez serein sur la partie audio parce que je suis en contact avec eux et je sais très bien qu'ils sont trustworthy, ils ont plus leur confiance. Du coup j'ai dû perdre le choix. Nous on est une startup, on doit aller très vite. Là on génère pas de revenus, à part pour le hardware mais le software on dépense beaucoup d'argent. Il faut financer l'équipe qui permet de faire le produit, qui permet que les gens l'utilisent. Au plus on attend avant d'avoir un produit qui est...
+
+et à assez de valeur pour que les gens puissent dire ok je suis prêt à payer parce que ça m'aide vraiment, en plus tu prends le risque. Chaque journée de dev que tu passes, a un impact énorme, donc ta priorisation. Quand tu choisis de dire ok je vais changer mon state management, moi là en l'occurrence je ne que sur tout ce qui touche à l'interface de jeu, c'est un commitment énorme, tu sais même pas si ça va marcher. Donc là je suis en train de changer, je change que mon state qui gère tout ce qui est play-pause, le moment où tu joues, quand tu scrolls et tout.
+
+et ça marche, ça marchait pas. En fait, j'avais toujours un délai avec l'audio. Et j'étais là, putain, j'ai perdu presque une semaine pour... c'est pas pour rien, parce que je voulais faire un moment. Et en fait, tant que t'as pas le truc qui marche, t'as un mur devant toi. Ça, c'est assez intimidant. Puis au final, j'ai changé une autre partie de mon state qui gérait le son, qui était aussi sur la Dux. Et là, du coup, c'est super fluid. Donc je vais continuer et je vais aboutir sur le state qui gère les notes. Et je pense que ça va être incroyable. Mais tu vois, c'était vendredi dernier, là.
+
+Vendredi tu m'aurais peu d'accusation, à 4h j'avais envie de me pendre et puis à 21h j'étais là, ah je me suis oublié un beer c'était la fête quoi !
+
+David Leuliette (01:07:54.632)
+Non mais ça c'est tous les jours, moi là j'ai un problème sur les Select avec Tabagueye, il faut que ça ne pas, enfin en fait des fois oui, des fois non. Alors c'est random, je ne sais... Mais en fait je pense que c'est Expo Routeur qui fout la merde. que... Je sais pas, mais typiquement le moment la vallée où t'es, vas-y j'en peux plus, j'en débarque, j'arrête, ça va jamais marcher et trois jours après c'est...
+
+Kim Chouard (01:08:04.958)
+Mais ta maquillage c'est quand même compliqué.
+
+Kim Chouard (01:08:16.238)
+Donc ça c'était une difficulté.
+
+Kim Chouard (01:08:21.483)
+Ouais.
+
+David Leuliette (01:08:23.921)
+bon je suis un génie c'est quoi le prochain problème
+
+Kim Chouard (01:08:25.454)
+Ouais c'est fou ! Exactement ! Moi il y a une période plus longue où j'avais vécu ça. C'était au début quand je boostrapais vraiment que l'interface de jeu. Il n'y avait pas vraiment toute l'app qui avait autour. C'était vraiment focus sur les notes, les connexions avec l'instrument et tout. Donc j'utilisais ce qu'il a. Et en fait il a 2-3 ans c'était quand même assez chaud parce qu'en React Native, comme son nom l'a dit, c'est native. Et donc je pense pas qu'il y avait beaucoup de... ça va mieux.
+
+mais qui fait vraiment web-focused. Moi j'étais un peu un ovni en mode, je suis le mec qui va venir te faire chier et dire, est-ce que ça marche sur web ? Parce que la promesse de ce truc qui est vraiment ouf, c'est que c'est vraiment universel. Donc c'est pas que la histoire, c'est que ça marche sur web. Ça fait comme la plupart des gens viennent du background mobile. Voilà. Ouais. Ouais.
+
+David Leuliette (01:09:05.281)
+Oui. Toi c'est un pré-requis à votre boîte. C'est un pré-requis à votre boîte quoi. C'est pas genre... c'est une condition... Ouais.
+
+Kim Chouard (01:09:14.166)
+Et donc du coup je suis toujours un mec un peu chiant genre est-ce que ça marche ? Ouais je pense que c'est important parce que ça permet d'aboutir à la promesse. du coup putain, du fond un peu Will, on a discuté parce qu'il y avait des problèmes d'erreurs de ouf où j'ai dû réécrire le script donc là c'était des semaines où le truc bilpa, t'as des erreurs ultra cryptiques. Bon final maintenant c'est Will il est super actif et tout.
+
+on a mis à jour la doc de Skia donc je pense que maintenant c'est plus mature. Si je vois un problème je sais où ça vient mais là justement quand j'avais update à Expo 58 j'avais du code legacy de l'époque qui faisait planter donc si t'aurais commencé à m'en sortir ça marchait mais comme moi j'avais du code qui traînait que j'avais fait à l'époque ça a me cassé mon truc. J'espère que c'est des choses que j'ai vécues mais que les vivants ne vivront plus maintenant parce que la doc est mise à jour et que le flow est beaucoup mieux.
+
+et que WID a amélioré la livrerie elle-même.
+
+David Leuliette (01:10:10.903)
+Enfin, si tu veux savoir la vérité, c'est que ça sera jamais fini. Il y aura toujours des trucs... Ce sera jamais... Non mais il y aura toujours des erreurs... Alors je suis allé sur mon site web il a pas longtemps, j'ai vu que ça fait 18 ans, que officiellement je fais du dev, machin. Et il y a toujours des messages d'erreurs cryptiques dans tous les... Non, tout le temps ! Des erreurs de build, machin, erreur Xcode, je sais pas à quoi, il en aura tout le temps. C'est juste à quel niveau ils seront, tu vois.
+
+Kim Chouard (01:10:14.827)
+Non mais bien sûr, mais ça, là,
+
+Kim Chouard (01:10:25.859)
+Ouais, p't'être.
+
+Kim Chouard (01:10:32.674)
+Attends... et ouais... euh... Non mais... c'est ça... en vrai... ce qu'on fait c'est quand même assez euh... ce qu'on peut faire avec cette technologie, ça c'est magique, tu dis que tu fais un code et il est poussé partout, c'est incroyable. C'est une promesse incroyable qui est plutôt bien tenue quand même. Et en parlant d'erreurs cryptiques, qu'Evan a poussé récemment avec Explobotor, où plutôt que de te dire qu'il faut pas qu'il du texte dans ton truc, il te dit où est-ce que le texte est.
+
+Tu sais ? Euh... Il faut 18.1, je crois, un truc comme ça. Mais il faut 53 plus un truc en plus. Bientôt ça sera par défaut, mais...
+
+David Leuliette (01:11:02.56)
+Oui, le nouveau en fait dans... c'est SDK 53 je crois ou...
+
+Ok, en fait il y a les messages d'erreur, les RedScreenOfDeath qui sont utiles, et ben en fait maintenant oui les messages d'erreur, c'est une stack 13 dégueulasse de strings illisible, et maintenant ils make it pretty, vois, c'est pour ceux qui ont déjà fait du rubis, c'est better error quoi. C'est ça. C'est ça parce que ça des fois, après ça dépend comment ils essaient de topter ta stack, mais moi je sais que c'est impossible que ça arrive, mais...
+
+Kim Chouard (01:11:24.323)
+Ouais, il te dit où est-ce que tu as rajouté du texte à un espace que tu voulais pas rajouter.
+
+David Leuliette (01:11:36.358)
+possible si t'as pas WSLine Préture, tout genre de trucs qui lintent, qui fait tout ton truc machin.
+
+Kim Chouard (01:11:39.14)
+Moi j'ai un slint, j'ai pas mis pret-tier parce que je veux avoir le choix des fois de layout mes trucs comme je veux pour pouvoir mettre des commentaires à des endroits précis donc c'est un choix mais peut-être que... sur des ifs ou des ternaries des fois tu... je vais pas respecter un pattern qui normalement doit être respecté
+
+David Leuliette (01:11:53.566)
+bah il le met. Ouais ouais. Pourquoi les commentaires, c'est à dire ?
+
+David Leuliette (01:12:08.021)
+Ah ouais ? Ah je sais pas moi ça m'a jamais mis le cas à porte.
+
+Kim Chouard (01:12:08.259)
+et euh... mais c'est peut-être qu'il faudrait que je le fasse mais tu vois encore une fois ça c'est... la take-depth qui va prendre énormément de temps et la valeur ajoutée bon... ça va pas changer... ESLing par contre c'est essentiel, là y'a même pas de débat Critiqueur c'est pas mal pour l'aider à les éviter mais c'est pas aussi game-changing peut-être que si j'ai commencé Programe Scratch je l'aurais mis au remis euh... mais là de le mettre ça va te faire des divs de Mawool et la PR la pire du monde et pendant que tu bosses sur cette pierre personne ne peut rien faire parce que tu vas pas pouvoir euh...
+
+David Leuliette (01:12:14.865)
+Ouais c'est nice to have. Ouais le pauvre.
+
+David Leuliette (01:12:37.365)
+Ah oui bah oui, ouais non tu fais ça vas-y file moi les accès je te fais ça dimanche après mais puis on n'en parle plus. Bah non tu lintes tout, fais tu lintes hop moi je l'ai plugé à ESLint et hop ça le fait automatiquement quoi ça le fait en même temps ça le fait direct mais c'est vrai que oui tu peux pas topper et puis vas-y chiant j'ai pas que ça à foutre y'a un autre truc y'a d'autres priorités à faire.
+
+Kim Chouard (01:12:38.221)
+et bien à quoi tu as joué dedans.
+
+Kim Chouard (01:12:44.195)
+Bon courage, y a
+
+Kim Chouard (01:12:55.011)
+Oui oui oui
+
+Kim Chouard (01:13:01.859)
+Mais S-Line je l'utilise et c'est essentiel avec TypeScript et S-Line c'est des barrières super importantes
+
+David Leuliette (01:13:07.645)
+Carrément, carrément. bah oui sinon ça en fout. Des fois tu gères les plateformes iOS, Android et web différemment ? Ou pas ? Est-ce que pour l'instant...
+
+Kim Chouard (01:13:21.143)
+Ouais, sujets précis. Le Bluetooth, sais que web, il fallait que fasse l'implémentation avec les web API. Je n'en ai jamais vraiment parlé parce que je trouve que ce n'est pas forcément trop problématique. Mais ça serait bien d'avoir une vraie réactative Bluetooth qui est croulée universelle. Je pas où se dépinger le créateur. J'ai BLE, réactative BLE et j'ai la version web parce que je ne sais plus exactement.
+
+David Leuliette (01:13:39.797)
+Ouais parce que... Tu fais comment ?
+
+David Leuliette (01:13:46.353)
+B-L-I-P-L-X
+
+Kim Chouard (01:13:49.836)
+il y a deux librairies qui ont exactement le même nom presque et j'en utilise une des deux qui est... j'avais fait une petite recherche donc il y a le Bluetooth et ensuite là on est en train de faire un moteur comme je disais qui permet donc c'est un engine C++ qui transforme l'audio buffer de ton micro en MIDI donc en signal de notes et de pitch donc ça c'est du C donc là je l'ai compilé en WebAssembly sur le web et donc
+
+et je vais le compiler en natif. Et là pour le moment, j'ai encore des fichiers JavaScript qui sont différents. Mais l'idée, c'est qu'on est en de bosser avec Centaurimension pour unifier un peu tout ça et qu'en fait, il y ait juste une librairie avec une API au niveau qui soit la même, mais que ce soit la librairie qui gère la compilation.
+
+Donc c'est des trucs un peu custom, mais c'est une question d'itération pour arriver à faire en sorte que ce soit vraiment unifié. Parce qu'encore une fois, le schéma mental de Rack Native est assez puissant, qui te permet de non seulement utiliser ce qui existe déjà, comme ce qu'a fait William avec Rack Native, etc. Mais aussi de créer toi tes propres lipoiries de façon vraiment universelle pour que après ça soit dégant à utiliser. Si tu l'as fait une fois ou tu dois la maintenir, l'équipe qui va coder dessus va forcément avoir besoin de comment ça se passe dessous. Mais si il un mec qui... Tu vois, ça permet de séparer les...
+
+de façon vraiment légende. Et sinon non, franchement c'est presque pareil. y a, voilà, sur Tailwind, sur Native Wind, il y a quand même des cas où je vais avoir un CN qui va dire si c'est mobile, je mets un padding un peu différent ou je type les trucs. il a Jean Ledet dans l'équipe qui avait buté sur un truc.
+
+un peu à la mode position relative avec le CSS pour la position absolue c'était... on avait un accordéon où t'avais une liste d'instruments quand tu pliais sur l'autre, fallait que ça se ferme et ça s'ouvre et tu vois ça fait des vases communicants normalement c'est assez fluide mais là ça lagguait, il y avait des... ça faisait tac tac, enfin bon c'était un peu bizarre parce qu'en fait, au lieu d'utiliser hauteur il fallait utiliser scale-y ou un truc comme ça tu fais scale-y 0 et là ça est assez smooth
+
+David Leuliette (01:15:59.077)
+ouais, ce genre de truc, ouais.
+
+Kim Chouard (01:16:03.446)
+Alors que j'utilise la hate ça ne marchera pas avec la intimité du style.
+
+David Leuliette (01:16:03.549)
+Ouais, ouais, parce qu'il a un Render, enfin pas un Recalculation, un Repaint ou un Recalculation. Ouais. Je vois, je vois. Entrayeur et CrackNative, qu'est-ce que tu as appris sur le dev logiciel en général ?
+
+Kim Chouard (01:16:08.674)
+Je ne pas avec vraiment de détails mais genre si tu ne pas au courant de ça, tu vas rire en fait, tu vas pas comprendre. c'est des petites spécificités comme ça, bien croustillantes.
+
+David Leuliette (01:16:31.507)
+Parce que je sais plus qui, c'était rien. Donc je pense que c'est Sherlock.
+
+Kim Chouard (01:16:37.506)
+Non, non, j'ai appris plein de trucs. Après, c'est plus personnel au vu de où est-ce que j'en étais quand j'ai commencé cette stack et où est-ce que j'en suis maintenant. Moi, ça m'a appris pas mal la puissance d'une communauté, en tout cas, d'avoir vraiment des gens passionnés et compétents qui travaillent et ça rend des choses possibles. Clairement, la communauté, enfin, qui derrière l'Agnactive, si il avait que la tech, j'y aurais nulle part, moi.
+
+Pour moi, c'est le plus gros apprentissage, peut-être. Et après, il y a plein d'apprentissages personnels sur des optimisations, la beauté d'arriver à avoir une API générique qui peut être compilée dans différents trucs sans se voir transparent, des sujets de performance un peu pointus comme on a parlé avec les John State et des choses comme ça. Mais ça, pense que c'est très spécifique à où est-ce que j'en suis, où est-ce que je vais. Le sujet global qui va tout de suite tout monde, c'est vraiment l'importance d'une communauté.
+
+et la puissance d'arriver à bosser ensemble avec de l'open source.
+
+David Leuliette (01:17:37.843)
+Le design du Nepier, quand Corentin de Shine, l'épisode d'avant qui est sorti enfin qui est sorti hier mais qui sort enfin bref, il disait pareil, il est hyper important de y réfléchir à fond comment il design son API, props, ses machins, parce que eux pareil c'était banque mais c'est pour des teams de 50 développeurs en fait.
+
+Kim Chouard (01:18:00.725)
+Et surtout, il faut que fasses backward compatibility.
+
+David Leuliette (01:18:07.015)
+Ouais et que ce soit compatible partout et tout du coup ils réfléchissent carrément au naming hyper important quoi. Comment tu... Ouais ouais bah oui c'est ça.
+
+Kim Chouard (01:18:15.23)
+on aime les noms de variables bien longues parce que c'est explicite on a de l'autocomplete maintenant donc voilà soyons explicites
+
+David Leuliette (01:18:24.211)
+Ouais, on peut se permettre d'être explicite. Oui, du Moi, je toujours explicite les mots, j'écris toujours des complets. On pas de SMS. Est-ce que tu as le temps de te former ou pas du tout ? Tu t'enques...
+
+Kim Chouard (01:18:40.514)
+ça va.
+
+David Leuliette (01:18:45.08)
+Pas besoin. J'explore de nouveaux univers, monsieur, moi je Je n'ai pas besoin de me former.
+
+Kim Chouard (01:18:45.61)
+ouais non, je me fais défoncer.
+
+Ah non mais je veux... Non non, j'ai pas le temps, j'ai pas le... Non, j'ai pas le temps. fait comme... Bon après je sais pas si c'est intéressant pour les gens qui écoutent, c'est juste que vis-à-vis de mon rôle comme je CTO, j'ai aussi des suivis de la boîte générique et donc je suis un peu au four à Moulin. Donc j'ai pas le temps. Mais... d'aller à des conférences comme... BGIS et tout, bah ça te force après ce pause, discuter avec les gens. La façon dont j'apprends le plus, c'est vraiment en discutant avec les gens. La discussion qu'on a maintenant...
+
+d'écouter des podcasts aussi comme celui-là. te dis « ah ouais, putain, toi t'as fait ça, d'accord ». Tu vois, si je vais arroser mon jardin, je vais écouter peut-être un podcast, mais c'est pas... Je dois chipper, comme je te dis, là, on est sur une pression temporelle assez grosse. Mais bon, par exemple, là, tu vois, je viens d'apprendre les jeunes states parce que j'avais vraiment un éparatif « entre guillemets. Il fallait que j'étais dans une impasse avec Redux, donc j'ai pris le temps.
+
+David Leuliette (01:19:33.605)
+oui.
+
+Kim Chouard (01:19:45.891)
+J'ai pris un haut de jour où j'ai lu Docklon en travers, j'ai migré. C'était assez barbu parce que c'est pas comme si je fais une nouvelle app, du coup je fais des essais et je vois ce qui marche pas. Là j'avais un state déjà très complexe qu'il fallait que je migre. Et je no way tu peux demander à l'AEI de faire ça parce que là ça va te prendre je pas combien de tokens parce qu'il faut que changes beaucoup de fichiers pour rien. Et puis en plus il comprendra pas ta logique de ton app.
+
+David Leuliette (01:19:57.66)
+Ouais.
+
+David Leuliette (01:20:08.942)
+Non c'est sûr. Et puis même, il pourra peut-être même pas parce que c'est juste des concepts qui pourra pas...
+
+Kim Chouard (01:20:15.554)
+Il pourrait en fait, la migration technique va te la faire, il va pas comprendre tous les petits détails que t'as fait pour que ton app marche. Surtout moi, ma phase de jeu est très complexe, tu vois tu changes un E ou un END ou tu t'essayes d'optimiser un IF et ça va tout casser quoi. Parce que quand tu charges la première fois, tu fais des détails comme ça. Après j'utilise beaucoup les E, mais pour le refactor c'est un peu dangereux quand
+
+David Leuliette (01:20:34.767)
+Ouais, je vois.
+
+Kim Chouard (01:20:44.428)
+ça dépend quel type de refactor mais changement de state... Mais bon là j'ai prévu d'utiliser Cloud Code justement de tester ça une fois que j'ai fait une première migration vers Legend State j'aimerais bien faire bosser Cloud Code pour me dire ok j'ai Legend State donc soit je le finis de le migrer pour le reste moi même soit je vais ok prendre la slice qui gère tout le data management de Redux micro moi ça dans Legend State on regarde un peu comment j'utilise ailleurs et
+
+David Leuliette (01:20:48.625)
+F...
+
+Ok.
+
+Kim Chouard (01:21:14.434)
+profite de vent pour me setup Rehack Native Query et le offline. C'est un peu le hack que je vais essayer là parce que du coup là j'ai dû apprendre les Genet Lease donc c'est intéressant ce que je vais apprendre. TaxTag Query, j'aimerais bien pouvoir l'apprendre avec Claude qui me fait la migration et dire ok c'est comme ça que tu l'as utilisé. Je garantis pas que ça a marché mais je vais essayer ça là.
+
+David Leuliette (01:21:37.969)
+Ouais parce que Rayquiz, pareil, c'est gargantuesse, c'est devenu gargantuesse maintenant la doc. Et comment il va savoir entre ton state, quel state save en offline et quel state est de l'avoir dans le cache. Bon challenge ! Fais pas tout d'un coup ! Ah ouais ! Oui c'est clair, c'est clair. Est-ce que juste...
+
+Kim Chouard (01:21:44.162)
+Mmh.
+
+Kim Chouard (01:21:52.802)
+Je pense que je vais peut-être le faire par étapes. Ouais, on commence par 10 stack query. On fait pas l'offline, tu fais d'abord 10 stack query parce que c'est déjà un sujet. Mais je voudrais essayer Cloud Code parce que j'ai l'impression que le cursor va être perdu. Il faut un truc plus...
+
+David Leuliette (01:22:09.433)
+ouais, tu sens la diff euh...
+
+Je sais pas je suis quoi sur github copilot ? Ah non je suis sur copilot mais avec Avec Claude pardon. je pense à rien au même. Ouais poussez ça. C'est juste un vrai rapper, on tous un vrai rapper tout de quelque chose. Est-ce qu'il a un sujet que t'aimerais aborder ?
+
+Kim Chouard (01:22:20.499)
+Oui, en tout cas on tourne tous avec le dat. C'est juste la pré-trompting et l'interface qu'il dessus quand même.
+
+Kim Chouard (01:22:31.233)
+...
+
+Kim Chouard (01:22:38.364)
+Je suis content, on a parlé pas mal d'audio aussi, de comment ça fonctionne dessous. J'espère que ça a aidé, en tout cas ça a inspiré. Si vous avez l'occasion d'aller regarder le talk que j'ai fait, ça peut être intéressant. C'est pas du tout pour me faire de la self-promotion, c'est parce que je parle d'un sujet qu'on n'a pas pris le temps d'aborder ici, mais qui est, pense, intéressant. C'est l'utilisation de l'audio et de tout ce qui est sonorité dans l'app. On parle souvent d'interface, de...
+
+expérience utilisateur et tout, même de haptique, c'est de faire du bril le téléphone mais rarement en fait on parle d'audio et l'audio ça peut avoir un impact de ouf, tu réfléchis par exemple le logo SNCF ou voilà, exactement
+
+David Leuliette (01:23:14.693)
+Alors... Ouais... De fou... Tadung... Ouais... Ou ta ta ta... Bah là vous êtes tous hystériques en mode, vas-y c'est bon, ça m'a saoulé, pourquoi être en retard ? Ouais... Comme quoi... Comme quoi... Rien que le son, peut provoquer des émotions.
+
+Kim Chouard (01:23:30.224)
+retard et c'est ça exactement et en fait ça fait des trucs plus rapides donc il y a des trucs à diguer j'en parle un peu je donne un exemple marrant donc si vous avez l'occasion et ça vous intéresse d'essayer d'augmenter un peu l'X de votre rap pour qu'elle soit un peu plus sensible ça n'y pas de tâche
+
+David Leuliette (01:23:48.688)
+est delightful. Est-ce qu'il a une recommandation d'une personne que je devrais inviter ?
+
+Kim Chouard (01:23:54.9)
+Ben William il est passé ou pas ?
+
+David Leuliette (01:23:56.84)
+Non bah faut... Ok d'accord. Il est dans la liste, bah là il a plus le choix. Puisque c'est toi qui demande. Donc super voilà. Je dirais que c'est de ta faute.
+
+Kim Chouard (01:24:08.125)
+Je lui envoyé un message, dit que... parce que il est très chaud en crossfit et à chaque fois qu'il m'a open il fait... donc il est très chaud et il m'a motivé donc moi je peux se mettre au crossfit donc je lui envoyé un message, je dit que... si jamais tu ne pas... j'arrête de te faire suivre... non c'est bon... à voir après le problème... après il est... donc ça c'est une idée après je sais pas lui il est super baby aussi je sais pas si il pourra donc ça ça peut être un bien parce que tu as eu des gens assez cool aussi
+
+David Leuliette (01:24:17.277)
+bah c'est bien, bravo, bravo, bravo.
+
+oui !
+
+David Leuliette (01:24:30.692)
+Ouais.
+
+Kim Chouard (01:24:35.073)
+Deux ou personnes que j'aime bien aussi qui sont passées Il y a Cédric aussi de Expo Alors lui il est à moitié français donc je sais pas si on pourra faire un podcast... Il parle bien français quand même
+
+David Leuliette (01:24:44.385)
+Yes.
+
+bah je demande plus, Cédric je le connais bien aussi, demanderais. je savais qu'il parlait... bah oui, clairement, bah oui, carrément.
+
+Kim Chouard (01:24:51.509)
+ouais il est cool. Lui il pourra parler de sujets intéressants avec ce qu'il a fait avec Atlas et tout. Il a des sujets de ouf. Lui il va donner une perspective un peu plus méta. En français ouais c'est ça parce que sinon... Ouais.
+
+David Leuliette (01:25:04.598)
+Ouais l'objectif c'est que français parce que pareil je pouvais choper Maison et en fait en vrai je lui demandé d'Infinite Red il m'a dit un podcast no way ! parle français mais mes podcasts entiers c'est quand même chaud quoi. en fait je me dis que je ferais des exceptions et puis ferais des épisodes en anglais et c'est tout. Où est-ce qu'on peut... Ah non non non non non non non non !
+
+Kim Chouard (01:25:13.697)
+Bye bye, bye, bye !
+
+Kim Chouard (01:25:25.025)
+Mais maintenant avec les haïs t'as des trucs d'auto translation qui sont pas mal même avec les voix. Tu veux pas ? Ok. Je propose...
+
+David Leuliette (01:25:32.032)
+Non Kim, on arrête. Youtube, translate automatiquement les vidéos en anglais. Attends, je t'ai entendu, parce que pour préparer l'épisode, j'ai regardé une vidéo avant, j'ai regardé ton talk traduit en français, mais pas avec ta voix, mais pourquoi tu parles anglais ? Enfin tu vois Youtube, tout le délire de... parce qu'en fait, alors ça m'en fout, mais moi je suis... donc j'ai QWERTY, full anglais, tout est anglais chez moi.
+
+Kim Chouard (01:25:42.657)
+Ouais.
+
+David Leuliette (01:25:59.182)
+avec la translation, est british tu vois en plus, british, c'est ce que j'ai vécu à Londres. en fait, donc mon youtube est en anglais, nickel, mais en fait du coup il me traduit les titres des vidéos françaises en anglais, ça me rend fou, et plus ça maintenant il me traduit automatiquement les voix, mais parce qu'en fait je suis localisé en France, mais du coup des fois il fait l'inverse.
+
+Kim Chouard (01:26:04.49)
+non... merde...
+
+Kim Chouard (01:26:14.931)
+Moi aussi, ça m'en faut. Je veux pas, moi. Je veux voir aussi.
+
+Kim Chouard (01:26:30.256)
+Hmm... Hmm... Ouais, il essaie d'être un peu trop intelligent, ouais.
+
+David Leuliette (01:26:37.302)
+Je peux parler anglais quand je veux, je ne veux pas que tu le traduises pour moi-même, ok ? Laisse-moi seul, viens !
+
+Kim Chouard (01:26:37.473)
+T'es gneur le David !
+
+David Leuliette (01:26:56.034)
+Mais je pense que la question ne pas être réglée très très... ...soon, on va dire. Parce que des fois t'as envie de vraiment... Enfin... Tu sais que...
+
+Kim Chouard (01:27:05.281)
+Bah tu vois, c'est juste, moi je pensais dans le cadre de ton podcast, si tu m'invités des gens qui parlent anglais, mais tu veux que le podcast reste quand même en français, tu peux le publier, mais voilà, c'était une idée.
+
+David Leuliette (01:27:13.774)
+Non. Non. Il faut parler anglais, puis c'est tout. Au bout d'un moment, faut ouverture vers le monde et voilà. Après, oui, tu pourrais. Mais moi, en fait, j'ai pas envie de faire aux autres... Ouais. Ouais, c'est vrai, je l'ai pas dit. Je l'ai pas dit. Je suis le premier podcast de francophones réac'native. En fait, j'ai vérifié, il y en a pas. Il a que celui-là.
+
+Kim Chouard (01:27:26.145)
+Non mais merci dans tout cas d'avoir un podcast français. Coucou et coucou. Et puis on espère que ça a déjà...
+
+Kim Chouard (01:27:38.977)
+Ouais ouais? Ouais ouais non non non. Ouais ouais.
+
+David Leuliette (01:27:42.222)
+Y'a que... J'ai regardé justement avant et je me suis dit, ouais, faut que je fasse pour l'intro, j'ai oublié. Pour ceux qui ont survécu jusque là, voilà, vous saurez pour la prochaine épisode que ce sera ça. Ouais, l'intro est terrible. Ouais, c'est ça. Où est-ce qu'on peut te retrouver sur les internets à part sur Odyssey Music ?
+
+Kim Chouard (01:27:49.291)
+C'est clair qu'on a duré assez l'été.
+
+Kim Chouard (01:28:01.323)
+Alors déjà si vous voulez être plus sexy n'hésitez pas à sur odyssemusic.com Et puis après vous allez remonter sur odysseplay Moi c'est Twitter, TwitterX quoi Je n'utilise principalement ça parce qu'il y pas mal de gens qui sont dessus Voilà après LinkedIn Pour une connexion un peu plus formelle Mais ouais moi je regarde sur X, je retweet, je tweet certains trucs
+
+Il y a pas mal de discussions intéressantes dessus. Après je suis sur Instagram, mais Instagram c'est plus pour l'inspiration et tout l'aspect musique donc c'est pas trop relevant.
+
+David Leuliette (01:28:33.832)
+C'est ça, bye.
+
+David Leuliette (01:28:39.136)
+Ouais.
+
+David Leuliette (01:28:42.539)
+bah si, tu vois les groupes de musique... tu vois, le premier groupe de musique entièrement composé de gens qui font du rake natif.
+
+Kim Chouard (01:28:53.932)
+J'avoue, j'avoue ce serait pas mal ça. Ah oui mais c'est ça que je voulais faire, que Yvo Plaza, celui qui est le créateur de TypeGPU, très bon gars, il ne nous entendra jamais parce qu'il ne pas français, mais c'est un producteur d'Electro. Et donc on a un petit plan Machiavellic pour l'année prochaine, pour LabJS, pour faire un petit live à mi saxo mi electro, à voir si ça se concrète ou pas.
+
+David Leuliette (01:28:55.659)
+Tu peux faire la truc.
+
+David Leuliette (01:29:08.502)
+bah voilà.
+
+David Leuliette (01:29:16.333)
+mais ça ce serait... c'est bon, c'est bon, voilà venez voir le live ok. Moi c'est Flexbox sur Twitter, BlueSky et Github aussi, où je mets des stars sur les gens. viens de plein de stars à cet épisode, il avait plein de trucs que j'avais pas stars en fait. Tous les liens sont sur wishyp2day.com slash podcast pour soutenir l'émission, retrouvez la expo checklist et retrouvez le lien du rack natif de Slack Connection.
+
+Kim Chouard (01:29:25.633)
+D'accord.
+
+Kim Chouard (01:29:30.303)
+Et ouais, trop cool. Ouais, moi aussi Kim Shaw.
+
+David Leuliette (01:29:45.421)
+Slack React Native Connection. Allez, bonne vacances à tous et à la rentrée. Ciao !
+
+Kim Chouard (01:29:53.694)
+Happy Summer !
+

@@ -1,0 +1,1553 @@
+David Leuliette (00:02.381)
+Alors attention, regarde, là je vais dire exactement ce que je t'ai dit en off, je vais lancer la super application Bankso, timecode à 10 secondes et là ça va lancer l'application Bankso. ouais mais ça refait... merde ça refait le grésillement ouais.
+
+Corentin (00:22.792)
+ça refait le désiment
+
+Non mais je vais enlever... En fait je pense que c'est le micro.
+
+David Leuliette (00:30.88)
+Ouais c'est con, bah tant pis, ouais, ce truc là ce sera mieux au pire. Ou alors, ou alors, attends, mais euh... Le micro du Mac et garde les...
+
+Corentin (00:36.921)
+C'est mieux comme ça ?
+
+Corentin (00:44.888)
+Non mais je suis sûrement... En fait je suis sûrement... Mon téléphone.
+
+David Leuliette (00:49.332)
+Ok ok ok ouais bah vas-y ça va le faire, ça va le faire. C'est pas grave on a pété l'intro. Ouais ouais comme ça c'est bon ça va aller. Parce qu'en fait c'est mieux que ce soit comme ça. Parce qu'avec Riverside je pourrais avoir le niveau carrément. Bon c'est pas grave. On est déjà en live, on a dit qu'il la trop, c'est pas grave. Allez hop on va la refaire.
+
+Corentin (00:50.585)
+Comme ça c'est bon ?
+
+David Leuliette (01:09.939)
+Ben ça... Attends j'ai foiré... J'ai foiré total.
+
+Corentin (01:15.326)
+Il faut relancer Banco.
+
+David Leuliette (01:15.694)
+Attention l'intro du... Non c'est bon, c'est ouais voilà c'est ça, intro du podcast, c'est parti. Alors là je vais lancer BanqSo, timecode à 1.24, j'ai un écran de chargement, s'il vous plaît patientez, j'ai re-annot spinner, je dois appuyer sur un bouton, j'ai un autre spinner différent dessus d'avant, là j'ai le Face ID qui se met en place, j'ai le re-spinner que j'avais d'avant, je repatiente et bim, timecode 1.39, versus, je vais lancer Shine.
+
+Bon en vrai je voulais le montrer en live mais bon pour des raisons de coefficient de CT un petit peu et j'ai pas le temps. Là je l'enchaîne.
+
+Et boum, je vois ma balance. Voilà, je vous laisse chez vous faire le bilan de combien de temps on perd à lancer Banxo alors qu'on est bizy, on veut juste lancer notre app et à savoir est-ce qu'on était payé ou pas. Corentin, merci de te joindre au Cross Platform Show aujourd'hui. C'est l'épisode de podcast dédié au développement d'applications mobiles avec RecNative. Est-ce que tu peux te présenter succinctement
+
+Corentin (02:21.286)
+Salut David, moi c'est Corentin du coup, ça fait un peu moins de deux ans que je suis chez Shine et je rejoins la boîte en Staff Engineer et maintenant je suis Head of Frontend. donc on bosse principalement sur tout ce qui est
+
+mettre à disposition les meilleurs outils lib, internes et externes pour les développeurs et on est des garants de l'archi.
+
+David Leuliette (02:45.293)
+Cool. Oui, donc pour ceux qui ne connaissent pas, Shine, c'est une banque en ligne pour les freelance. Alors c'est les seules personnes qui m'ont aidé dans ma carrière de freelance, je tiens à le dire. Shine, je vous adore parce que tout le reste, soit ils font perdre du temps, soit ils donnent des mauvaises Shine Lone Boarding est stylé. Je l'ai fait quand j'étais à Londres et moi, base, alors j'hésitais entre faire e-Citizen Estonien et ouvrir notre entreprise parce qu'en fait, j'étais à Londres et du coup, je fais...
+
+une boîte et tout, j'habite à Londres, fuck it, je vais pas faire ça en France, je sais qu'ils vont me casser les noix avec les papiers et tout ça, enfin bref. Et en fait à l'époque c'est Valentin qui m'avait parlé de Shine, qui bossait chez Coup d'État, et j'ai fait clic clic bam, j'avais ma boîte en 2-2 et je fais trop bien, stylé je peux, enfin facturé, même si j'habitais pas en France en fait à l'époque. Mais bon bref, c'était tellement stylé que ça fonctionnait voilà.
+
+Corentin (03:27.959)
+...
+
+Et on a une bonne réputation de service client aussi, ce que tu dis, c'est que nous notre ADN, c'est ça, c'est d'être proche du client et de l'aider dans tous les moments d'étape de sa vie d'auto-entrepreneur, de patron d'entreprise.
+
+David Leuliette (03:54.526)
+Ouais c'est ça, autant sur le blog les infos elles sont hyper accurate, elles sont stylées avec des vrais tutos ou clic clic où il faut cliquer versus quand t'appelles l'administre en français elles te disent n'importe quoi. On n'est pas là pour parler d'à, on n'est pas là pour parler de toi. Est-ce que succinctement c'était quoi ton parcours niveau études ?
+
+Corentin (04:12.695)
+J'ai fait une école d'ingé mais rien à voir avec l'info. J'ai fait principalement des études d'électronique de système embarqué et j'ai fait mon stage de fin d'étude chez Parrot qui est une boîte française de qui faisait la refois des drones consumer et B2B. Ils ont pivoté vachement sur le B2B récemment. Ils font des drones pour tout ce qui est agriculture, pour les pompiers aussi. Je sais qu'ils vendent des drones en Australie pour les pompiers, pour la détection de feu, etc.
+
+David Leuliette (04:26.912)
+Ouais.
+
+Corentin (04:41.974)
+et donc avec de l'image, avec de l'imagerie, avec de l'intelligence artificielle, machine learning et compagnie pour analyser l'état de tes cultures, etc. Et du coup, j'avais fait un stage là-bas sur des bancs d'essais et il y avait énormément de données. On ne pas les visualiser parce qu'on avait une espèce de kibana branché à Elasticsearch, mais c'était inutilisable pour des personnes qui ne pas tech. Et on m'avait demandé de le faire pour mon stage. Fais-nous un site web où on peut visualiser les données en temps réel et voir comment, en gros, prendre des...
+
+David Leuliette (04:51.473)
+Ok ouais...
+
+Corentin (05:11.42)
+go no go sur des drones pour la mise en production ou pour passer à l'étape d'après des tests, etc. Et donc je suis tombé dans le web comme ça, faisant l'analyse, en faisant d'espèces d'outils BI pour le business et essayer de prendre des décisions. Et c'est là où ça m'a plu. Et mon premier taf, ça a été dans une startup qui est éteinte depuis, qui s'appelait BIM, qui faisait de la réservation de restaurants, un peu comme la fourchette.
+
+mais sur des restos haut de gamme, etc. à Paris. Et après, j'ai rejoint Ornicart pendant presque 6 ans, Software Engineer, c'est là où j'ai gravi un peu tous les échelons jusqu'à LID. Tous les échelons, j'aime bien ça, bon. Alors que oui, bon bref, je suis passé LID à la fin quoi, mais j'ai énormément appris là-bas, à la fois sur le web, sur le mobile, sur comment on fait du software quand on est 50, 60 personnes, ou quand on en est 5 ou 6.
+
+David Leuliette (05:39.709)
+ok j'ai oublié.
+
+David Leuliette (05:53.099)
+tout le temps.
+
+David Leuliette (06:06.122)
+Et à vous de suivre.
+
+Corentin (06:07.382)
+parce que je suis vraiment rejoint au tout début où on était 5 devs et à la fin on était une 60, 70 à peu près. après je suis parti chez Shine en tant que staff software engineer et suite au rachat de Shine par une entreprise qui s'appelle Ageras qui vient de Danemark, je suis passé head of Frontend Ops. Voilà un peu mon parcours, je sais pas comment.
+
+David Leuliette (06:31.115)
+Donc c'est vraiment chez Ornicart que tu as découvert le mobile et RecNative en même temps. Genre, il une app mobile, on utilise RecNative, voilà.
+
+Corentin (06:37.785)
+Exactement.
+
+Corentin (06:43.669)
+Si tu avais parlé avec Romain il y a quelques semaines dans un épisode, Romain Schindlmann qui va toujours là-bas, la première app qu'on avait c'était une app pour les enseignants parce qu'en fait le premier use case était je suis enseignant de la conduite, du coup pour Rappel Ornicard c'est une auto école en ligne, donc je suis enseignant de la conduite, j'ai besoin d'avoir mon planning et j'ai pas mon ordi sous la main. Ou alors si je veux regarder mon planning sur un site web c'est quand pas très pratique sur mobile.
+
+David Leuliette (06:51.869)
+Tout à fait.
+
+Corentin (07:10.983)
+autant leur faire une app dédiée où on peut leur pousser des notifs, où on peut plus facilement interagir avec eux quand ils sont dans leur voiture, qu'un site web. On a eu une app pendant très longtemps en rack native côté mobile depuis je pense 2019 ou 2018. Peut-être qu'on avait déjà une app mobile en rack native chez Ornicart. Donc ça datait quand même pas mal. À l'époque il n'y avait pas Expo, alors c'était assez balbutiement.
+
+David Leuliette (07:41.354)
+Ouais, je vois. Ice. Ouais, ouais, tu suivi toute l'évolution. Voilà, donc il a pas vraiment de point de bascule. C'était genre... Allez hop, je surfe la vague et voilà. Moi, c'était plus par opportunité. J'ai commencé mobile. C'est parce que vu que c'était un peu avant, c'était Ionic, Cordova et...
+
+Corentin (07:42.95)
+Donc ouais, c'est là-bas, j'ai fait mes armes sur le mobile.
+
+David Leuliette (08:05.002)
+ça faisait le taf mais c'était pas ouf et après j'ai digué le truc et j'ai cherché la meilleure technologie et après j'ai fait du rack native. Donc quand t'es arrivé chez Shine, l'app était déjà setup.
+
+Corentin (08:14.355)
+Bonne soirée.
+
+Corentin (08:20.628)
+On partait avec... En fait mon rôle en tant que staff, c'était pas de... L'app existait déjà, le site web existait déjà. C'est juste qu'il y avait pas de... On manquait d'une culture mobile dans la boîte. il y avait... l'app, était... En fait... C'est-à-dire qu'en fait... Oui, oui, tout à fait, et même l'usage était mobile. En fait, tout monde contribuait et on avait des devs qui étaient très bons sur le mobile.
+
+David Leuliette (08:38.154)
+Ah ouais ? C'est marrant parce que c'est une app mobile à la base, enfin...
+
+Corentin (08:50.481)
+Mais souvent, on pensait qu'on n'avait pas une approche unique et commune aux deux plateformes, Web et mobile, que ce soit dans la conception que dans l'implémentation. Et du coup...
+
+David Leuliette (09:06.921)
+Ouais je vois, c'était plus Web In-A-Box quoi, c'était un site web dans une boîte quoi, un site web plus petit en fait en Ok je vois.
+
+Corentin (09:11.76)
+Un petit peu. Un petit peu, exactement. Plus petit. Typiquement, un des exemples, c'est que le web n'est pas très responsable. Si tu essaies de resize shine.fr, tu ne pas avoir de version mobile. Parce que du coup, il n'y avait pas de continuité entre le web et le mobile. D'un point de vue user experience, etc. C'était conçu de manière relativement différente.
+
+en termes d'approche du conception design etc. Et dans l'implémentation ça se ressentait aussi. Le mobile il a eu longtemps aussi un espèce de... il y eu un désamour sur vraiment la... l'application mobile mais sur le... tooling, l'architecture, vraiment comment je me sers de la mobile. Et du coup il a un des développeurs en revanche qui lui était passionné par le mobile alors que son équipe n'avait rien à voir avec l'app, il était dans l'équipe acquisition où il n'y a pas le parcours d'acquisition sur le milieu.
+
+David Leuliette (10:08.84)
+Ah ! Ok, ok. C'est le fameux article Medium qu'il a écrit, non ? C'est lui ?
+
+Corentin (10:16.468)
+Je sais pas, il faudrait que je regarde. C'était avant que j'arrive ça, mais c'était Alex Tudik qui a bossé sur ça. fait, lui, il fan de l'app mobile. Il s'est dit, bon, je vais bosser là-dessus, vais retravailler l'archi, etc. C'est lui qui a fait le passage de React Native à Expo. Et quand je suis arrivé, on a encore plus poussé le truc pour intégrer Expo à tous les workflows de dev. Mais en gros, mon job quand je suis arrivé chez Shine, c'était de ramener du lien entre les deux.
+
+entre le web et le mobile, et de s'assurer que tout le monde est hyper content de bosser sur le mobile, qu'on a les outils qu'il faut pour pouvoir développer avec efficacité, de pouvoir faire confiance à la plateforme, d'améliorer la qualité de l'application et de mettre en place vraiment une architecture beaucoup plus pérenne dans l'app mobile. Parce qu'en fait, y a eu énormément de développeurs qui sont arrivés chez Shine, qui ont énormément contribué. Il y a eu plein de features qui sont sorties.
+
+Mais du coup, il n'y avait pas ce liant qui faisait que toutes les feature teams allaient dans la même direction. Mon rôle de staff, c'était ça. C'est vraiment ce rôle de liant entre la vision et les équipes de dev qui peuvent parfois être un peu déconnectées parce qu'il y a d'intermédiaires.
+
+David Leuliette (11:33.609)
+Ah bah oui, et puis aligner tout le monde... Pas facile en plus quand tu... Ouais, Shine, ça fait... Je sais pas si c'est une exponential grosse, mais bon. tu passes de 2 à 4, ça va, mais 4, 8, après 8, 16, ça c'est 32, ça devient vite le bordel. Ils sont combien chez Shine maintenant ?
+
+Corentin (11:47.955)
+En dev, si tu comptes pré-acquisition par Aguerras, pense qu'on 60, plus de 70 000. Si tu comptes en plus les ops, on était facile à 80, je pense. Et là, avec Aguerras, ça a une autre dimension, il avait 150 développeurs en tout, pense. Entre 120 et 150. Donc vraiment...
+
+David Leuliette (11:56.988)
+Ouais, Ok ouais.
+
+David Leuliette (12:08.228)
+Ouais, bah oui. Donc t'es obligé d'avoir des... Il faut des capitaines sinon c'est le bordel. Cool ! Donc le format de l'émission c'est success-app. On va parler de la stack technique en 5 points. Data layer, navigation, styling, graphique, animation et CI release.
+
+Corentin (12:13.467)
+complètement ploufou.
+
+Exactement.
+
+David Leuliette (12:35.367)
+En commençant par le Data Layer, qu'est-ce que ça utilise chez Shine ? Vu que vous êtes des gens bien, il me semble que c'est GraphQL le truc, mais dis-moi si je me trompe.
+
+Corentin (12:40.371)
+On est sur du...
+
+Corentin (12:46.958)
+Oui c'est tout à fait ça, on est sur du GraphQL et Apollo. Très peu de... Aucun state management à part des contextes React. Si on a du Redux Legacy mais qu'on vire, qu'on a viré petit à petit, ce doit être sur des parties hyper spécifiques et pas très critiques de l'app. Donc en fait on l'a pas priorisé parce que pas spécialement besoin.
+
+David Leuliette (12:54.499)
+Apollo Client, ok ouais.
+
+David Leuliette (13:01.383)
+Right ?
+
+David Leuliette (13:15.259)
+Ouais, Dropbox. Technique Dropbox, on touche pas ce qui marche. C'est ça.
+
+Corentin (13:17.234)
+ça marche, ça marche, on ne repousse pas et c'est pas critique et c'est pas impactant pour le business et ça ne nous empêche pas de faire de la tech donc on le laisse quoi. voilà et donc principalement ça. On a aussi essayé pas mal du coup de pousser, quand je suis arrivé, de pousser pas mal l'uniformisation de la façon dont on fait du GraphQL et aussi de pousser un peu, d'utiliser GraphQL autant...
+
+autrement que juste un crud et donc vraiment d'utiliser à fond les mécanismes de cache, les mécanismes de mutation de la donnée, d'optimistiques queries, tous les trucs qui font que GraphQL est intéressant versus un crud classique, enfin un truc classique.
+
+David Leuliette (14:02.727)
+Ça tu peux expliquer ce que c'est optimistic queries. C'est comme optimistic update mais peut-être qu'il en a qui ne connaissent pas vraiment la définition.
+
+Corentin (14:12.018)
+C'est-à-dire qu'en fait, on va faire une action, mettons, je vais marquer une transaction comme payée. On va utiliser l'application de Shine. Je vais marquer une transaction comme payée. Pardon, pas une transaction, mais une facture comme payée. L'outcome de cette mutation, c'est visuellement d'avoir la facture qui peut être rayée, par exemple, ou avec une chèque verte. Et on sait que dans quasiment la majorité des cas,
+
+ou 99,9 % près, c'est quelque chose qui n'a aucun side effect, qui ne va pas forcément failer par des providers externes, qui est fait chez nous et c'est marqué en champ dans une base de données grosso modo pour dire que ça a été payé. Et en fait, les optimistic mutation queries, ça permet de dire côté client le résultat de la mutation sans attendre le retour du serveur et d'avoir un UI qui est beaucoup plus snappy, qui est beaucoup plus responsive et d'éviter d'avoir...
+
+soit un loader dans un bouton, soit un loader fullscreen, etc. Et c'est marrant d'ailleurs que tu parles de loading au début de la vidéo, parce qu'on a... Enfin chez Shine, l'une de mes premiers trucs, c'était d'améliorer le loading du début parce que ce que tu discrivais chez BankSore, on l'avait en trois ou quatre chez Shine où on enchaînait trois loaders énormes parce qu'il y avait... C'était mal... Au fur et mesure, on avait rajouté des transactions, des queries qui n'avaient pas vraiment de sens et qu'on aurait pu méranger.
+
+David Leuliette (15:36.624)
+Ouais.
+
+Corentin (15:39.343)
+ou en tout cas qu'on aurait pu les dupliquer, etc. C'est marrant que tu parlais de ça parce que maintenant on a vachement bossé là-dessus.
+
+David Leuliette (15:41.68)
+Ouais c'est possible, ouais c'est possible mais c'était quand même plus rapide que Banxo tu vois. Enfin quand je me rappelle des V1 c'est vrai qu'il y avait un Bigloader et tout mais au moins là c'était utilisable, il n'y avait pas de data mais c'était utilisable. Là chez Banxo c'est vraiment... Et attends, attends il faut qu'on parle. Est-ce que tu sais pourquoi les apps bancaires quand tu...
+
+n'as pas le face ID d'activer, que tu dois mettre ton pin code, enfin c'est même pas un pin code c'est ton password, il change de place les numéros.
+
+Corentin (16:16.688)
+Ouais.
+
+Corentin (16:20.241)
+pour éviter les... ouais c'est chiant mais c'est sécurité en plus pour éviter de...
+
+David Leuliette (16:25.125)
+Sécurité de ou ? Versus mettre ton téléphone caché tu vois ? Explique-moi je...
+
+Corentin (16:31.159)
+de deviner, en gros, c'est de deviner, j'imagine, l'emplacement par rapport avec une caméra de surveillance. Une caméra de surveillance, tu vas voir l'image, mais tu vas pas pouvoir se dire en détail, mais tu verrais, par exemple, je sais pas si il des animations sur les presses, tu verrais la position du doigt et tu pourrais deviner par extension l'échelle que t'as touchée. Là, l'avantage, c'est que tu peux pas deviner ça. Mais Shine, ça le fait pas en revanche. Shine, c'est toujours le même.
+
+David Leuliette (16:42.928)
+Ouais.
+
+David Leuliette (17:00.825)
+Non non non non non non non non non non non non non non non non non non non non non non non non non non non non non non non non non non non non non non non non non non non non
+
+Corentin (17:01.163)
+Le pad est toujours dans même endroit.
+
+Corentin (17:17.36)
+pour voir si tu suis aussi.
+
+David Leuliette (17:19.566)
+pour voir si t'es réveillé. vois, jamais tu te foires, tu te foires tout le temps. Et je me suis toujours demandé, mais dans quel univers connu il y a quelqu'un qui s'est dit un matin, j'ai une idée, pour la sécurité on va changer de place les nombres, ça va être génial.
+
+Corentin (17:34.401)
+Peut-être que c'est un... Ils ont eu un précédent et en fait, la personne leur a collé un procès, ou... Tu ça peut être ce genre de choses, et depuis ça fait jurisprudence et... Et ils veulent se baquer.
+
+David Leuliette (17:43.173)
+...
+
+peut-être ouais je comprends pas désolé
+
+Corentin (17:48.225)
+Comme aux US, vous mettez des extensions partout, des exemptions partout sur les lois ou sur les assurances pour éviter les problèmes.
+
+David Leuliette (17:55.525)
+Je vois... Je vois... Mais versus LUX, tous les jours, moi ça m'en fout. Donc ok, donc... Puis en plus toutes les autres, tu vois, des autres banques succes... Ou n'importe, attends, les trucs cryptos, ont pas ce genre de sécurité, je suis désolé. Donc non, non, voilà, c'est pas recevable, pas recevable, désolé. Peut-être dans le monde d'avant en 2010, oui, why not, mais...
+
+Corentin (18:13.775)
+C'est Oui, c'est vrai en fait.
+
+Après il y a des normes que tu dois respecter ISO, qu'il a peut-être pas sur des trucs de crypto. J'essaie de trouver des excuses, mais peut-être que c'est des normes ISO, machin, et c'est un des points de la norme.
+
+David Leuliette (18:28.613)
+On va dire que c'est la norme ISO 9001. Comme ça on peut mettre des beaux logos à la fin. Voilà super, super, on adore. Donc niveau data layer, state management et data fetching, a vu, ouais c'est principalement Apollo. Est-ce que... Non, il a du offline ou pas ? Pas trop. Il a pas de offline du tout.
+
+Corentin (18:35.894)
+Passe.
+
+Corentin (18:47.311)
+Merci.
+
+Corentin (18:53.397)
+Il n'y a pas de offline. Aucun offline.
+
+David Leuliette (18:59.976)
+j'ai ouvert l'app d'un de vos concurrents que j'utilise maintenant parce qu'en fait à l'époque j'avais besoin de dollars et tout machin et je l'avais ouvert dans l'avion et j'avais halluciné que ça fonctionnait et que toutes mes data étaient là. fais what ? Comment c'est possible ? Et il y a...
+
+Corentin (19:16.877)
+Et du coup, veut dire qu'ils font la sécurité en locale.
+
+David Leuliette (19:21.88)
+Ouais, alors je sais pas mais magique quoi. Enfin, il y avait certaines data qui étaient là. Et j'avais trouvé ça...
+
+Corentin (19:27.31)
+Ouais, le cache devait être hydraté avec les données que t'avais avant de prendre l'avion.
+
+David Leuliette (19:31.422)
+Ouais, je pense que c'est ça. Mais de toute façon pour une banque en vrai, je demande juste par curiosité. Parce que généralement il faut que ça soit des data up to date. Donc niveau navigation, qu'est-ce que vous utilisez
+
+Corentin (19:53.162)
+Alors, c'est intéressant, on utilise Rack Navigation. On n'utilise pas Expo Router, on utilise Rack Navigation mais avec un twist. En fait, on a beaucoup bossé ces derniers mois sur le fait de réaplanir notre architecture de navigation parce qu'en fait, on avait énormément de soucis de l'APA.
+
+très légacy du coup, date d'il y assez longtemps, la de Shine, elle a vraiment plusieurs années. Et il y a énormément d'écrans. quand je te dis énormément d'écrans, c'est plus d'une centaine, je pense qu'on a plus de 100 quelques écrans. le souci qu'on a, c'est que très longtemps, la navigation n'était pas tippée sur React Navigation. Les routes n'étaient pas tippées.
+
+David Leuliette (20:26.375)
+2017. Moi j'ai join en 2017 donc ça devait exercer.
+
+Corentin (20:45.902)
+C'est arrivé maintenant avec la S5 à partir de la S5 on va dire et vraiment se s'industrialiser à la S6 et la S7. Le souci c'est que ça se base sur des extents d'interface. C'est pas comme Expo Router où c'est typé statiquement, enfin c'est typé via la CLI d'Expo Router. Où Expo Router va générer automatiquement des types à partir de la configuration file tree que tu as générique.
+
+que tu as. Et ça c'était un peu problématique parce qu'en fait on se retrouvait beaucoup avec des... Comme il y avait beaucoup de nesting dans les navigateurs, on se retrouvait beaucoup, chez Shine, on se retrouvait beaucoup avec des navigations impossibles. Soit parce que la route n'était pas montée, soit parce qu'on n'avait pas spécifié le parent, ou alors on avait bougé l'écran, on n'avait pas changé les navigations et on n'avait aucune éleveur bloc de signes.
+
+David Leuliette (21:35.876)
+Ouais, ouais, c'est ça, vois un bordel. Ouais, non, mais j'imagine, parce que moi je faisais la moitié. Quand c'était sur une op que j'avais bossé de scanner, c'était tippé, mais à moitié quoi. Et comme il faire la main, bah à la fin, fuck it, j'avais mis tout dans un truc et c'était navigation ennui. Voilà, vu que j'étais tout seul, ça allait, mais quand t'avais 20 personnes, forcément tu pètes des morceaux.
+
+Corentin (21:39.563)
+Un bordel.
+
+Corentin (21:48.461)
+...
+
+Corentin (21:58.669)
+tu es tout seul, va, mais quand tu à 50, as bossé sur une app, c'est hyper dur de ne pas pouvoir faire confiance à ton navigation. Et du coup, ce surqu'on a bossé, un des premiers trucs que j'ai fait sur l'app quand je suis arrivé, c'est de mettre en place cette navigation tippée sans passer par les types de React Navigation, mais en utilisant la linking config. Donc la linking config, c'est la collection de liens.
+
+de Deep Link que tu vas donner en configuration à ton app pour qu'on puisse naviguer depuis l'extérieur vers chacun de ces écrans. Et du coup, j'avais mis en place un nouveau truc, c'est que maintenant toutes les routes doivent être déclarées dans la ligne config. Et en fait, on utilisait les URIs pour naviguer et j'ai repompé l'algo de exporouter à partir du nom des écrans.
+
+David Leuliette (22:46.966)
+Non, Deep Linking.
+
+Corentin (22:58.861)
+ce que fait Expo Router, avec son use link, sa façon de link, c'est qu'il va faire du récursif sur l'état de navigation globale, sur la liste de l'ensemble des routes, pour trouver celle qui matche le nombre que lui donnes. Il va parcourir un arbre et définir le chemin le plus court pour aller à cet écran, avec les paramètres, etc. Du coup, j'ai refait cette même chose, côté React Navigation, et maintenant, a une navigation qui est typée. On a des paramètres qui sont typés aussi, c'est-à-dire que si...
+
+David Leuliette (23:21.836)
+Ouais.
+
+Corentin (23:29.037)
+tu vas utiliser du coup on a un composant qui s'appelle le Chainlink et tu vas dire Chainlink to account details pour avoir les détails d'un compte et il va te forcer à passer en paramètres le bank account ID parce que c'est un paramètre non optionnel et obligatoire de cette route là parce que dans l'url il a analysé les courriels par amie il est capable de savoir que ce truc là il est important d'être passé et donc on a fait on a fait ça et maintenant ça nous assure une type safety à 100 % sur
+
+toutes les routes et sur les paramètres liés à une route. Et ça c'est hyper puissant et ça nous rend beaucoup plus safe quant à la navigation générale dans l'app. Donc on a direct navigation mais on peut booster quand même au stéroïde avec cette type safety.
+
+David Leuliette (24:10.882)
+Ouais.
+
+custom, vous avez investigué dessus, bien dessus... Ouais, puis en plus tu parlais de deep linking, c'est vrai que c'est hyper important pour une app de banque versus une autre où il a un logo rouge et blanc qui te dit « Hey, vous avez un nouveau message, je d'ouvrir là, pas tant de 30 secondes, allez dans plus, message, ouvrir le PDF, télécharger le PDF », tout ça pour dire que t'as... tout ça que ton compte n'est pas provisionné parce que Ah, vas-y, ça en fout ! » Ouais, versus deep linking, au moins là t'es sûr d'avoir du deep linking partout et en fait...
+
+Corentin (24:22.763)
+Pétanque.
+
+Corentin (24:39.029)
+Ouais.
+
+Corentin (24:43.093)
+C'est ça.
+
+David Leuliette (24:43.57)
+On a pas parlé... Web et native, partage des morceaux ou pas ? Ou c'est deux ripos séparés ou c'est dans un monoripo ?
+
+Corentin (24:48.491)
+On peut en parler pendant le truc Styling UI Component Libraries tu veux ? Parce que c'est une transition magnifique.
+
+David Leuliette (24:55.234)
+Ah bah pff, ouais t'as vu la transition incroyable là ! Super, Corentin t'es embauché pour faire la transition. Ah ouais, c'est incroyable, vas-y vas-y, dis nous tout, dis nous tout.
+
+Corentin (25:03.916)
+Transition Man. du coup, fait, historiquement, choses qui étaient partagées, c'était principalement le thème, donc c'est des couleurs exportées dans un fichier TS. C'était des codes APE, donc c'est les codes des entreprises. Donc c'est une liste statique de codes d'entreprises qui sont des codes...
+
+David Leuliette (25:08.298)
+Exacto.
+
+Corentin (25:34.211)
+l'état. c'est des choses comme ça. Et étonnamment il y avait visuellement le même design système sur mobile et sur web. Mais, et là c'est encore plus étonnant, les composantes s'utilisaient pas de la même manière, n'avaient pas les mêmes noms de prop alors qu'ils se comportaient de la même manière. Je sais pas si c'est clair ce que je ce que j'ai dit mais en gros...
+
+David Leuliette (25:56.18)
+euh... attends dans ma tête c'est genre, vas-y on va prendre un exemple, modal, t'avais plusieurs composants de modal mais ils avaient pas le même nom, c'est ça ?
+
+Corentin (26:01.951)
+Ils avaient pas le même nom, avaient pas les mêmes propres. Donc par exemple, on peut prendre l'exemple du bouton. vais dire un truc. Il y avait pas les mêmes variantes.
+
+David Leuliette (26:09.341)
+Button et Summit Button, tu vois tu as les variants, as un button...
+
+Corentin (26:13.035)
+Et rien n'était pas similaire. Pareil pour le texte. Il n'y avait pas d'équivalent en termes d'usage. Visuellement, ça ressemblait, mais en termes d'usage, ce n'était pas le même. Et même en termes de visuellement, avait parfois des petites différences qui n'étaient pas forcément justifiables. du coup, mon taf, c'était d'arriver et de créer du lien entre les deux, entre le web et le mobile. Pas forcément du lien technique, c'était pas forcément de partager du code à tout prix. Ce n'est pas grave si on n'en partage pas.
+
+mais de faire en sorte que quand tu es développeur et que tu switches d'une plateforme à l'autre, n'as pas besoin de... Tu n'as pas une learning curve qui énorme. Tu n'as pas un contexte switching qui est énorme. Et en fait, c'était ça qui était le plus impactant en termes de DX et de temps de développement, c'est qu'en ce qui a été pénible, c'est que les devs qui étaient plus allés sur le web, ça allait souler de faire du mobile parce qu'il fallait réapprendre des trucs. Les devs qui étaient plutôt mobiles, ça allait souler de faire du web parce que ce n'était pas la même façon de coder.
+
+David Leuliette (27:07.943)
+Ouais.
+
+Corentin (27:11.147)
+etc. Il avait pas de pont entre les deux. Et moi mon taf c'était faciliter ce context switching pour avoir des devs qui soient beaucoup plus capables de bosser sur une ou l'autre plateforme et réduire un peu le gap de différence entre ces deux-là et d'augmenter la DX par la même occasion sur les deux. Et du coup, ce qu'on a choisi de faire c'est d'utiliser, on a profité d'un rebranding pour réimplémenter un design system universel. C'est-à-dire qu'on
+
+vous voulez faire la base d'une application ou d'un site web, c'est le look and feel. C'est comment tu construis tes écrans, ton UX avec des building blocks qui sont réutilisables et qui correspondent à ta brand et à ce que le design a choisi pour l'application du site web. donc du coup, parti de cette analyse-là, on a refait notre design system avec Tamaguri. Et du coup, c'est compatible web et mobile. La majorité des composants...
+
+qu'on utilise son dedans et ça exporte des primitives qui sont plugées à notre thème et qu'on utilise de la même manière. Un des trucs qui était pénible avant c'est que par exemple sur le web on utilise Chakra et sur le mobile on utilisait Style Components. La DXD2 n'a strictement rien à voir. Là où Chakra tu voulais utiliser les props à props as a styling, Style Components c'était des objets de style que tu importais etc. Donc ça te faisait vachement plus... c'était un peu plus lourd à lire parce que du coup tu devais faire des...
+
+David Leuliette (28:25.631)
+Ouais, c'est pas à pareil du tout.
+
+Corentin (28:38.107)
+des allers-retours sans cesse entre tes fichiers de style et tes fichiers de view, versus des approches à la tailwind ou à la chakra ou à la tamaguy, où tu utilises des props pour faire du style.
+
+David Leuliette (28:49.439)
+Et cette migration là, avez mis combien de temps à le faire ? C'était avant le rebranding quand vous êtes passé de c'est Joyful en in-startup. Ah, on est sérieux, on est tout jaune et noir, mais non la DA. On est la banque, on est la banque. C'était assez... Ah ouais, bah ok. Ok, ok, ok.
+
+Corentin (28:59.185)
+On est debout.
+
+Corentin (29:03.178)
+C'est exactement ça, on le fait à moment-là. Mais c'est un work in progress et on l'avait pas... Enfin, c'est pas fini. Je pense pas que ça sera fini de...
+
+David Leuliette (29:13.503)
+Ouais ouais, de façon le design c'est jamais fini, vous tapez iOS, évolution, screen, c'est jamais fini le design. J'ai toujours, ouais, quand on me dit, ouais, combien de temps ça prend à faire un design système ? Je dis, bah la vie, enfin la vie du projet, c'est jamais fini ce truc, donc il faut tout le temps que ça évolue. ouais, ok, enfin, parce pour ceux qui connaissent pas, en fait, au tout début, l'ADA elle était vraiment slack, on va dire, slack style, vraiment colourful et tout ça. Et après quand, je pense que c'était au rachat peut-être.
+
+Corentin (29:28.905)
+Bye bye.
+
+Corentin (29:38.825)
+Merci beaucoup.
+
+David Leuliette (29:42.911)
+C'est blanc et noir, et l'ADI est toujours, moi j'aime bien, c'est vrai que ça y est plus sérieux
+
+Corentin (29:46.959)
+Non, c'était... Ça a été... En fait, y a eu un changement de positionnement où on avait besoin de paraître plus sérieux pour attirer des clients plus premiums.
+
+David Leuliette (29:52.615)
+Ouais, Ouais, alors que vous étiez carrément plus sérieux... Ouais, ok.
+
+Corentin (29:59.273)
+Et du coup, s'est fait il y a 2 un peu moins de 2 ans, pense, un an et demi. Le rachat, fait 8 mois à peu près, donc c'était un autre truc. Et du coup, dans ces enjeux de migration design system, on est en train d'explorer des trucs, de faire de l'analyse, statical analyse, de l'analyse de code pour traquer un peu en fonction des équipes. Enfin, ce n'est pas le critère le plus important, mais c'est ce qu'on a trouvé pour segmenter.
+
+c'est voir les efforts de migration qu'il a à faire, à combien de pourcentage de changement de code on a, etc. Donc on utilise des outils comme Omelette, mais j'utilise juste leur CLI et après je refais des analyses derrière avec Google Sheet ou avec des outils de BI pour mesurer. C'est un truc qui été fait par les gars de Zeppelin, crois. le truc de... l'outil de gestion des assets, ça s'appelle OMLOT.
+
+David Leuliette (30:45.15)
+Omelette ? Attends, c'est quoi omelette ?
+
+David Leuliette (30:53.266)
+Ok... Oui.
+
+Ouais ? Ok ouais je vais te...
+
+Corentin (30:57.99)
+Et en fait c'est un espèce d'outil pour gérer ton design system, tes composants, gérer ta dette, etc. Et en gros, ce qui nous intéressait nous, c'est de mesurer l'usage des composants du nouveau design system, versus ce legacy qui ont été déprécated, etc. Et donc de voir un peu par flow, par feature, par équipe, comment ça évolue, à quelle vitesse, s'il a des équipes qui sont en difficulté.
+
+David Leuliette (31:15.43)
+Ok ouais, pour...
+
+Corentin (31:24.775)
+Et dans ce cas là, ça veut peut-être dire qu'il manque des usages dans les composants du design système, il manque des composants, il y a de la documentation qui pas claire sur certains composants, etc. C'est hyper intéressant d'avoir cette vision un peu de pilotage là, parce que quand t'as 50-69 et qu'un des composants leur convient pas, ils vont pas forcément venir te voir parce que ça va leur faire perdre du temps, ce que je comprends, pour te dire que ça, truc là, ça marche pas, etc.
+
+et donc du coup ils vont aller au plus simple et prendre le composant qui matche leurs besoins. Et donc ça c'est hyper intéressant pour voir l'évolution quoi. Et aussi c'est intéressant...
+
+David Leuliette (31:56.861)
+normal
+
+David Leuliette (32:02.045)
+Pour ceux qui connaissent, ça ressemble un peu à Expo Atlas, le truc omelette. Vous avez une vue, vous avez un arbre et vous pouvez diguer le truc pour savoir pourcentage. Enfin je ne connaissais pas du tout, jamais entendu parler mais parce que j'ai jamais eu le problème en fait en vrai de ce genre de choses. oui, pour mesurer et voir ça a l'air beaucoup plus visuel, très bien. Un peu comme NX.dev aussi, ils font ça aussi avec un graphe et tout, incroyable.
+
+Corentin (32:11.784)
+d'ectomaux.
+
+Corentin (32:25.608)
+Pour les graphes de dépendance, ouais, tout à fait.
+
+David Leuliette (32:29.059)
+Cool cool et donc styling ok, tamaguy, et pourquoi tamaguy ?
+
+Corentin (32:34.312)
+Parce que Perf. Broso Mondo c'était le côté perf. Ça aurait été ça. En fait c'est parce que pour plusieurs raisons, pas Tailwind parce que c'était encore rajouter une nouvelle façon de faire du style. On avait des style components, avait des props as a styling avec Chakra. Si on avait utilisé Tailwind ça aurait été des classes as a styling. Enfin c'était d'utiliser des classes name atomique entre guillemets pour faire du styling. Et ça aurait été un autre truc en plus à apprendre.
+
+L'avantage de Tamaguy, c'est que je préfère... Ça aurait été un bordel pas possible. Du coup, a préféré prendre l'approche... On a plutôt préféré l'approche props à the styling, qui est quand même assez agréable, très facile à prototyper, et en même temps, tu peux l'emmener très vite en prod, sans que ce soit trop crasseux. Et bien en fait, on a choisi cette approche-là, Tamaguy le proposait, et c'était à l'époque où il y avait Native Bass qui était un peu en train de péricliter, qui était vraiment pas ouf en terme de perf.
+
+David Leuliette (33:05.61)
+bordel avec 60 dev ça aurait été un gros bordel
+
+Corentin (33:33.061)
+il y a eu Glue Stack qui arrivait en même temps mais c'est un peu pas très mature. Tamagui était un poil plus mature et marchait pour nos use case relativement simple et en fait on est parti là dessus et ça marche.
+
+David Leuliette (33:45.546)
+Ouais, c'est ça, les planètes alignées, c'est pas complet. C'est ça, Alan, c'est pareil, ils sont sur Tamaguy, moi aussi, ce moment, j'utilise Tamaguy. Ça marche, ça fonctionne bien.
+
+Corentin (33:53.18)
+Il y a des trucs, je suis un peu frustré avec Tamaguhari. C'est la doc qui est, je trouve, manque cruellement de pratiques et d'exemples et de pourquoi. Moi, j'ai dû deviner beaucoup de trucs de par l'usage et pas via la doc. Et ça, c'est un peu le seul problème. Bon, c'est open source, donc j'avais qu'à y contribuer. On vouloir qu'à moi-même.
+
+David Leuliette (34:03.709)
+Dégueu. Ouais. Ouais.
+
+David Leuliette (34:11.965)
+Je vous.
+
+David Leuliette (34:17.908)
+C'est ça, moi j'ai... Attends j'ai quoi ? 4-5 commits je crois sur Tavaguy où j'ai fixé la doc parce que genre... C'était pas ça du tout en fait ! Mais bon après on peut pas tous le faire, tu vois, c'est... demande de diguer dedans, setup, tout ça... Ok et donc niveau graphique, est-ce qu'il y avait des animations dans la V1 ? Je ne sais plus, non c'était que flat, c'était... Vous avez un...
+
+Corentin (34:27.527)
+Peace out
+
+Corentin (34:41.531)
+Il y a des animations, si si. Si si, y a des animations et on utilise reanimated. On utilise reanimated. Classique. On est aussi en train d'investiguer Rive pour faire l'animation de nos... On veut switcher de l'OT vers Rive. Donc on est en train de, tu vois, d'investiguer un peu cette solution-là.
+
+David Leuliette (34:44.664)
+Ouais ? Vous avez une librairie spécifique ou pas ?
+
+David Leuliette (34:50.14)
+Ok.
+
+David Leuliette (35:05.82)
+Alright.
+
+Corentin (35:07.939)
+même si on est assez déçu de l'implémentation du SDK de Rive React Native. Elle manque toutes les features les plus intéressantes de Rive Web. Elles y sont pas sur la version React Native globalement. Ça utilise la AllDarch en plus.
+
+David Leuliette (35:15.75)
+Ouais.
+
+David Leuliette (35:29.533)
+Vous ne pas un useDom et utiliser à expo useDom et du coup tu utilises la version web et go. Ça te crache.
+
+Corentin (35:35.57)
+possible oui on aurait pu on pourrait faire ça c'est envisageable on a envisagé aussi refaire le SDK from scratch en passion quoi
+
+David Leuliette (35:47.91)
+Ok Ouais ouais après y'a... Ouais ouais je vois, vois T'sais rabbit hole, allez let's go Vas-y ça devrait pas être très compliqué Et puis en fait au bout de si moi tu te rends compte que mais je sais pourquoi, pourquoi je vois carrément Parce que sur Android où toute joyeuxité du genre ça marche pas donc euh... Je vois, je vois, je vois
+
+Corentin (36:06.918)
+J'avais oublié cette version 30 de Samsung, machin truc bidule, qui marche pas, Ce genre de truc.
+
+David Leuliette (36:14.118)
+Ouais bah on connaît, on connaît et puis comme par hasard c'est plus de 20 % du parc donc on peut pas dire allez fuck it Je vois, je vois compliqué Ok là dessus et il y a une autre
+
+Corentin (36:23.206)
+C'est ça.
+
+Corentin (36:27.686)
+Mais Reanimated, c'est assez subtil. Ouais, Reanimated, c'est assez subtil, mais ce qui est cool avec Tamagui, et juste pour là-dessus, c'est que tu peux définir des animations par défaut et les avoir dans ton thème. du coup, c'est littéralement, quand on veut, par exemple, animer un... Sur Tamagui, on utilise un prop pour styler un press sur un élément. Ça s'appelle Press Style. Et du coup, on dit, press style, je veux mettre l'opacité à 0,5. Et de rajouter une animation, c'est littéralement mettre un props.
+
+et dire animation égale, default animation, default press peu importe la valeur d'animation qui est défonnée. Et ça c'est exceptionnel en terme de DX, quand tu ne pas comment ça marche Reanimated que tu viens du web, c'est compliqué, tu n'as pas envie d'aller taper la dog, tu n'as pas envie de souler un dev de ton équipe pour lui demander de le faire, c'est hyper... et avec ta make UI c'est littéralement improp et ça fait tout derrière le tooling pour remplacer par le Reanimated view, de passer les styles.
+
+David Leuliette (37:03.055)
+Ouais, je... Je...
+
+Corentin (37:24.471)
+et d'animer les styles correctement de manière optimisée avec Reanimated. Donc ça c'est quand même assez fou. C'est un petit détail qui change quand même beaucoup la DX quand t'es pas un expert du lobby mais que t'as autre chose à faire que de faire du Reanimated pour animer un bouton.
+
+David Leuliette (37:36.155)
+Né.
+
+David Leuliette (37:42.349)
+Ouais, c'est ça, je l'avais oublié en fait. Je l'avais, j'utilise mais je vais zapper. Que c'était aussi facile.
+
+Corentin (37:42.597)
+Ça, c'est très cool.
+
+Corentin (37:49.301)
+Je crois que Naty Winn le fait aussi, je suis pas sûr mais ça me dit quelque chose. Peut-être que je dis des bêtises.
+
+David Leuliette (37:54.075)
+Je ne sais pas si tu as ouvert le site récemment de Native Wind, de C'est la V4. Tu sens que maintenant c'est devenu Serious Business et qu'ils vont investir dedans. Je pense qu'ils bossent chez Expo maintenant.
+
+Corentin (38:01.029)
+Oui.
+
+Corentin (38:12.319)
+Ouais c'est ça. Mais oui, clairement, si maintenant j'avais le choix, j'hésiterais beaucoup plus. Je serais beaucoup plus...
+
+David Leuliette (38:23.227)
+Ouais, c'est toujours pareil, ça dépend du contexte. Si moi j'avais... Là maintenant je serais dans ta position, je serais... Hmm... Native Wind, 50 développeurs... 50 développeurs... Hmm... Qu'est-ce qui va mal se passer ? Ou alors il faut un vrai temps de... Un vrai Parce que je sais, si tu donnes... En fait, c'est ça qui est cool avec Tabaguay, c'est que tu peux pas tout faire, mais justement c'est by design en fait. Du coup, les gens peuvent pas faire n'importe quoi, parce que si tu ouvres la porte de Native Wind, c'est... Hmm...
+
+Corentin (38:24.228)
+C'est ça.
+
+Corentin (38:30.756)
+Les deux parties sont ouvertes.
+
+Corentin (38:38.036)
+Ouais, après...
+
+David Leuliette (38:52.548)
+Dans 6 mois on va se retrouver avec un bordel
+
+Corentin (38:52.664)
+Alors ça c'est un bon point parce que tu vois genre si ton design system tu exportais des composants directement depuis ta Magui, c'est ça où j'ai pas mal bossé aussi, c'est que tu pourrais par exemple tu exporterais un bouton tu pourrais s'utiliser n'importe quoi, tu pourrais lui rajouter du padding alors quand tu n'as pas envie de modifier le padding de ton bouton parce que c'est des choses qui sont définies dans le design system. Et du coup j'ai dû refaire des exports propres de type pour pouvoir utiliser que les props du bouton.
+
+que les styles de props qu'on veut autoriser et de les accepter sous forme de responsive. que du coup tu peux faire des media query directement dans les composants avec Tamagüeï. Donc c'est pas si tranché avec Tamagüeï, tu peux quand même vite aussi customiser des composants de ton design system s'ils sont mal exportés et si les interfaces sont un peu trop permissives.
+
+David Leuliette (39:42.436)
+Oui si tu peux toujours, à fin tu mets style égale et puis tu peux toujours comme ça demande un effort supplémentaire je trouve ou mettre juste une classe juste une classe name ça peut après moi j'utilise un autre truc j'utilise cva pour gérer juste ouais pour ceux qui s'intéressent vous allez sur wishyp2day vous scroller tout en bas vous cliquez sur le lien vous aurez accès au repo et vous pouvez diguer le repo vous aurez button par exemple et vous voyez comment je gère mes button avec cva
+
+Corentin (39:45.64)
+Voilà. Oui, c'est sûr.
+
+Corentin (39:54.179)
+13, 20, 30, oui, c'est très bien ça.
+
+David Leuliette (40:10.903)
+Ouais c'est bien comme ça, force en fait d'avoir des contraintes et des variants et tout ça, moi j'aime bien. J'aime bien, j'aime bien.
+
+Corentin (40:15.171)
+Très cool d'ailleurs Sivyay. Très cool.
+
+David Leuliette (40:22.105)
+Ok donc là la partie fun c'est fini, comment ça release, ça deploy chez Shine si je me doute ? Là il doit y avoir des requirements très hauts pour pas faire n'importe quoi.
+
+Corentin (40:33.205)
+Ouais, sur le web on a... Sur le web c'est classique, intégration continue, on merge dans staging puis dans master. Et sur le mobile on relise toutes les semaines. On a bossé énormément sur la DX récemment avec Alex dans mon équipe Front-Anops. Et maintenant on a sur toutes les PR, en fait on crée des relices toutes les semaines. Et on a sur toutes les PR...
+
+des previews de l'app qui sont générés automatiquement et c'est complètement automatique. Tu rajoutes un label sur le GitHub et il a un check dans la série qui va définir s'il a besoin d'un nouveau build parce que pour rappel du coup sur Expo, dès qu'on rajoute quelque chose qui va modifier le build natif, que ce soit changer une variable dans la config de l'app, rajouter une dépendance native touchée à du code natif qui est embarqué, on va devoir régénérer un build de l'application.
+
+Il a un script qui se base sur la fingerprint d'Expo, qui va checker s'il a besoin de régénérer un full build. Si oui, ça va régénérer un full build, le lancer sur Expo, le publier en commentaire de l'APR et générer une update, donc un QR code, à scanner avec son appareil photo pour pouvoir le tester. L'intérêt de ça. Et après aussi, on a fait une autre automation pour pouvoir le synchroniser avec Linear. Ce qui fait que, par exemple, je suis Product Manager.
+
+pas que ça est GitHub, je veux tester un ticket et bien en fait si le ticket est linké dans l'APR, on a fait la synchro entre commentaire linéaire et GitHub et on va toucher aussi le commentaire sur linéaire. Comme ça je suis PM, je peux tester directement le ticket, faire la validée de la QA, merger dans master et du coup ça sera inclus dans la prochaine release. Et donc ce qu'on fait c'est qu'on cut la release le mercredi, enfin on cut la release un jour dans la semaine, c'est à dire qu'on crée une branche de release et tout ce qui est mergé dans master du coup ne sera pas inclus dans cette release.
+
+On cuait pendant deux jours, manuel et automatique, et on réalise le fin de semaine et ça part en prod le lundi matin. Et tout ça est quasiment automatisé. On crée une branche de release, le script sait que c'est une branche de release, que ça va marcher sur la prod et que du coup ça va faire une release avec Expo sur les stores, etc. On n'a pas automatisé la partie soumission, mais on n'a que la soumission engrouillée dans l'auto, mais pas la soumission iOS, mais c'était en cours d'investigation.
+
+David Leuliette (42:40.899)
+Ok, cool.
+
+David Leuliette (42:53.529)
+Ouais bah oui, me dis toute façon quand tu... Ouais.
+
+Corentin (43:01.282)
+pour la investigation.
+
+David Leuliette (43:01.997)
+Ouais ouais parce que toute façon c'est mobile tu peux toujours... De toute façon c'est simple. Si tu veux chipper toutes les semaines bah t'automatise... C'est même pas une question, c'est... By default, by design, t'es obligé d'automatiser. C'est comme les gens quand ils bossent avec moi, ils me disent David t'automatises tout. Je bah oui je suis censé relier tous les jours. Donc en vrai, je suis obligé d'automatiser sinon je sais pas... Le nom de la boîte c'est We ship it today. Donc l'objectif c'est relier tous les jours. Mais en vrai bon ça n'arrive pas.
+
+Corentin (43:11.618)
+...
+
+Corentin (43:20.994)
+Je vais dire tout le jour.
+
+David Leuliette (43:30.708)
+On va rester sérieux deux minutes. Après ça dépend. C'est pareil. tu te dis... Ouais, si tu te dis... Oui ça dépend de l'équipe en fait. En vrai je pourrais réaliser tout le jour vu que je suis tout seul tu vois. Script main, boom, yes, update, boom, done quoi. Mais en fait c'est ça si by design tu te dis bah là en fait on va réaliser toutes les semaines, on va mettre en place tous les outils pour que on aille hyper vite et qu'on perde pas du temps à ça et que release, ce soit à partir du workflow et que voilà quoi si il trois boutons hop là non il faut qu'il en qu'un seul.
+
+Corentin (43:32.714)
+Mais déjà, une semaine c'est cool déjà, en vrai.
+
+David Leuliette (44:00.492)
+Mais Smart, le truc des labels qui trigorent automatiquement des builds autom... Euh ça c'est pas bête.
+
+Corentin (44:04.524)
+Ouais, soit la paire est ready, soit tu mets la paire en ready, soit tu mets un label GitHub et ça trigger le job. Et pour les expos updates, on en fait un tout petit peu, enfin des updates over the air, on en fait un tout petit peu. Et là, en revanche, c'est un process manuel parce qu'en fait, on ne pas que ce soit quelque chose de standardisé. On veut que ce soit vraiment du cas par cas et en fonction de la criticité du bug, ce sera que pour des bugs fixes ou pour activer des features à distance, non même pas activer des features à distance, on utilise des features flag.
+
+David Leuliette (44:13.394)
+Non, je suis bon, bon.
+
+Corentin (44:34.176)
+Donc c'est vraiment que pour fixer des bugs énormes en prod, ce genre de choses.
+
+David Leuliette (44:39.958)
+Vous utilisez quoi feature flag pour gérer les feature flag ?
+
+Corentin (44:42.53)
+Firebase reboot config.
+
+David Leuliette (44:47.028)
+ok ouais j'ai déjà utilisé aussi ça marche bien
+
+Corentin (44:52.674)
+...
+
+David Leuliette (44:54.007)
+Super ! Trop bien, va passer à la deuxième partie... Ah oui, C'est quoi ton top 5 des librairies que tu utilises le plus souvent et que tu recommandes
+
+Corentin (45:13.482)
+Tu couples ça avec un Zod et ça fait le café.
+
+David Leuliette (45:18.775)
+Pourquoi ? Parce que les forms jadis quand React est arrivé, il n'y avait rien. Ensuite... Il y a... Oui, le premier jour, on a fait des formulaires, le troisième jour on s'est rendu compte que c'était la merde, le quatrième, il a... C'était quoi celui avant, React Hook Form ? Avec... Merde, comment il s'appelle ? Rien... Non, c'était pas ça.
+
+Corentin (45:26.05)
+premier jour
+
+Corentin (45:34.709)
+serais tout le temps.
+
+Final Form.
+
+C'est pas Final Form avec la petite formule 1, là ?
+
+Moi j'utilisais ça à un moment donné.
+
+David Leuliette (45:47.415)
+Non non c'était un autre. Ah ouais, incognito batallion, j'ai jamais vu ce truc là. Ah ça je ne connaissais pas du tout, Direct Final Form. Non moi c'était le mec de... Pas J-Man, Jason, le mec de Expo Router. y avait un autre. Bon bref, y avait une autre librairie de routers. Enfin une autre librairie de gestion de formulaires. Et le septième jour, Dieu a décidé de faire les Hooks.
+
+Corentin (46:14.218)
+Ouais c'est ça.
+
+David Leuliette (46:14.327)
+Ce qui a fracassé l'interterté de l'écosystème de React. Et React to Form survécu... Pareil, j'utiliserais React to Form depuis...
+
+Non, en fait c'est ma sœur qui utilisait React Hookforbes, enfin quand on a fait un bootcamp, je te jure. Alors c'est moi qui était teacher bootcamp, enfin teacher, ouais non mais en fait en vrai ma sœur, bref avant elle bossait dans le monde et je lui ai dit bah vas-y go, fais le wagon parce qu'elle voulait faire UX designer. Je suis pas... ouais au wagon ils en font et en vrai comme ça tu sauras comment ça fonctionne la tech.
+
+Corentin (46:31.136)
+C'est une affaire de famille en fait, le code chez toi.
+
+David Leuliette (46:51.478)
+Mais heureusement que je lui ai dit de ça, parce qu'en fait sinon elle aurait fait une cahière de 8 designers et puis là elle aurait plus de taf parce qu'en vrai maintenant... Déjà à l'époque j'en connais pas beaucoup, ouais c'est très compliqué, alors maintenant c'est encore pire quoi. Maintenant la valeur de faire un logo avec mid-journée, générations d'images et tout, c'est encore pire. Les gens ils disent, ouais mais ça je sais le faire, c'est très compliqué. bref, du coup elle a fait le wagon et elle a suivi mon bootcamp BreakNative et quand on arrivait le deuxième jour faire des formulaires, elle a pas utilisé l'eyebray que j'utilisais, elle a utilisé celle-là, Rectoform.
+
+Corentin (46:57.984)
+C'est un peu plus compliqué.
+
+David Leuliette (47:21.11)
+Du coup je me suis dit, ouais c'est vrai que c'est fait avec les Hooks et tout. Et comme tu disais avec Zod, ça permet de valider le schéma et t'as plus d'erreurs. Impossible d'avoir des erreurs. Enfin si, justement, tu peux afficher correctement la gestion d'erreurs de caractère minimum ou 3 ou 10 ou là il faut remplir tel... Enfin c'est impossible que t'aies des data mal faites ou mal typées ou que t'aies pas une expérience stylée.
+
+Corentin (47:21.156)
+C'est très cool.
+
+Corentin (47:30.528)
+Ouais !
+
+Corentin (47:34.016)
+C'est by design.
+
+Corentin (47:47.074)
+les erreurs sont by design quoi. C'est fait pour que justement tu les déclare quoi. Et ça c'est hyper intéressant.
+
+David Leuliette (47:52.96)
+Ouais, exactement. Moi je dis toujours, quand on commence un projet, on va pas faire d'illustration, on va commencer par faire les messages d'erreur.
+
+Corentin (48:05.5)
+Mais, c'est vrai.
+
+David Leuliette (48:06.101)
+bah surtout si on une app de bank en fait parce qu'il ya plein plein de cas où ça peut foirer et si on dit c'est ça et si on dit erreur bah non fuck it erreur pourquoi vas-y arrêtez de me saouler est ce que parce que justement regarde je suis le freelance hyper stressant il a une erreur de facture pourquoi c'est à dire j'ai pas reçu les fonds machin oui est qu'elle n'est pas été reçue est ce que est ce que lui il pas pu payer est ce que je dois
+
+Corentin (48:10.72)
+tellement de vignettes avec des clous.
+
+Corentin (48:19.232)
+Meuh
+
+David Leuliette (48:33.935)
+aller chercher le téléphone du CEO sur apollo.io parce qu'il m'a pas envoyé la facture parce qu'il a une erreur chez chez... Plein de sources de stress qui peuvent être évitées avec juste un message d'erreur sympa. Oups ! Quelque chose s'est mal passé, réessayez dans deux minutes et puis là ça marche et là tu as... ! Ok ! Cool !
+
+Corentin (48:51.52)
+Ce qui est important aussi dans le parcours UX, c'est de mettre de l'aide contextuelle. Nous, a beaucoup de liens d'aide qui sont contextualisés par rapport au parcours et qui sont reliés directement à des articles NDesk ou alors qui sont reliés au plugin Intercom pour pouvoir directement interagir avec le service client. Ça, c'est hyper important.
+
+David Leuliette (49:11.237)
+C'est... ouais c'est possible. C'est très bien possible qu'une fois j'avais eu direct un téléphone, je me suis dit, les gars sont trop smarts quand même. Ouais, clairement, clairement, Ok, donc, formulaires. Après, qu'est-ce qu'on a encore trois à trouver ? Ah ouais ! Alors, attends, faut expliquer tout. C'est qui ? David, David, Xavier Piano, X-T8. Qu'est-ce que c'est X-T8 ?
+
+Corentin (49:17.952)
+Ça, c'est hyper important en ce sens.
+
+Corentin (49:27.064)
+J'adore X-T8. J'adore X-T8. Je vais utiliser...
+
+Pardon, je refais le contexte.
+
+David Leuliette (49:39.989)
+Là on est au 10e jour, Dieu, Dieu il s'est dit, on va faire 10 livreries de state management et X state parce que... Pourquoi ? Vas-y explique-nous.
+
+Corentin (49:48.347)
+Là c'est la fusée en public space.
+
+Corentin (49:53.15)
+Parce qu'en fait, je à Ornicart, ça fait très longtemps que je connais X-Tate, j'ai rejeté le premier DAV à rejoindre l'assurance, on a monté un truc d'assurance auto et on avait un parcours de souscription et le parcours de souscription d'une assurance auto, il est très conditionnel. Tu me vois venir, tu me vois venir, il y a énormément de, en fonction de tu réponds à telle ou telle question, combien d'enfants tu as, tes années de conduite, tes accidents, machin, il y a des flots conditionnels qui vont se lancer.
+
+David Leuliette (50:08.764)
+Ouais... Je vois !
+
+Corentin (50:21.158)
+pour remplir des informations supplémentaires qui vont être envoyées à l'assurance, La première implémentation, c'est arrivé, c'était fait par des gens en freelance, c'était un IF. Donc il y avait un IF, enfin non pas un IF, mais plutôt 60 IF nested qui se basait sur un état global et qui déterminait, en gros, il n'y avait aucun lien de cause à effet entre un écran A et un écran B.
+
+David Leuliette (50:36.5)
+Oui.
+
+David Leuliette (50:43.508)
+Ah oui, non mais y'avait pas de wizard... Oui oui... Première version. On va dire que c'est une première version, tu vois les pauvres ils... Tu vois ? Ça...
+
+Corentin (50:46.47)
+Voilà.
+
+ça marchait, ça marchait, tu serrais les fesses quand tu rajoutais un écran parce que tu savais pas quand est-ce qu'il allait apparaître mais ça marchait. donc voilà, donc c'était vraiment très artisanal et en fait j'avais déjà utilisé pas mal X-State avant Charonica et je m'étais dit mais c'est mille mille fois l'usage d'un state, c'est mille fois X-State qu'il faut utiliser pour ça et du coup X-State
+
+C'est une librairie de machine à état qui permet de définir des transitions d'un point A à un point B et de les définir de manière complètement manuelle et de ne laisser aucune place à la devinette. Tout est défini dans une confine. On ne pas être dans un état impossible.
+
+David Leuliette (51:33.684)
+Impossible state... Alors si vous voulez tri...
+
+Si vous voulez trigger, vous allez voir David K. Piano et vous lui dites pourquoi je ne pas utiliser un ease loading pour mon state et là il va péter à câble. Moi c'est bon mais non, enfin je l'avais vu à React Finland en 2017, il bossait là-dessus et je l'avais rencontré et je me dit putain ouais c'est trop intéressant et je ne savais pas c'était quoi une machine à état. Enfin j'avais déjà entendu parler.
+
+Corentin (51:51.998)
+Bye
+
+David Leuliette (52:07.142)
+Et c'est lui qui m'a vraiment ouvert les yeux sur le fait que Ease loading boolean c'est de la merde, c'est nul, c'est la pire idée du monde ! depuis maintenant à chaque fois... Ouais c'est ça déjà, et à chaque fois je pense à lui, je pense à lui, et... J'ai jamais utilisé Xstate parce que c'est vrai que c'est compliqué quand même comme système, mais typiquement l'édition de contrat et tout, t'as un...
+
+Corentin (52:15.582)
+C'est bien, réduire c'est mieux.
+
+David Leuliette (52:31.416)
+gigantesque et tu dois justement visualiser toutes les étapes et à la fin ton chart ressemble à un diagramme en huitaine avec plein d'automation, en plus tu as un outil de visualisation assez stylé.
+
+Corentin (52:44.414)
+T'as un outil de visualisation, tu peux lui ton schéma et il te le fait automatiquement. Et d'ailleurs, c'est tellement fort que les machinalités en général, que Chakra, l'engine derrière Chakra, ça utilise Zag, qui est par le même créateur, et c'est des machinalités pour tes composants. Genre, est-ce qu'une modal est ouverte ou fermée ? Est-ce qu'elle est en train d'être animée ? Les boutons, est-ce qu'ils sont loading, press ? Enfin bref, tous tes composants derrière ont des machinalités dans Chakra.
+
+David Leuliette (52:48.052)
+Ouais c'est ça si je me rappelle bien.
+
+Corentin (53:13.405)
+pour justement éviter que c'est une possible saut, etc. Ça s'appelle Zach James, mais...
+
+David Leuliette (53:14.546)
+Smart. Ouais bah oui oui oui. Ok.
+
+Corentin (53:19.141)
+Et pour finir dans les libs, j'adore expo-router. Je suis assez fan même si j'ai du mal avec le file system routing parce que j'ai du mal parfois à voir mes urls. Mais avec ça, j'utilise un tout petit cli qu'un gars a développé qui permet de faire l'arbeau de tous les fichiers et du coup les liens, enfin, chaque écran. Je que ça s'appelle, je pourrais le retrouver, mais c'est un CLI pour expo-router qui fait juste...
+
+David Leuliette (53:24.153)
+oui ?
+
+Corentin (53:48.067)
+qui analise les fichiers et qui dump tous les urls. Et il me faut une cinquième...
+
+David Leuliette (53:54.844)
+Euh, bah si, bah c'est... Plus que... Ouais, ouais, non mais attends, pour expro... C'est plus que... Parce que quand tu fais underscore sitemap... Ben, t'sais, tu fais un link vers underscore sitemap... Tu vois direct tout ça.
+
+Corentin (54:07.921)
+Oui mais t'as pas quel fichier, map, quelle route. Parce que parfois tu vas avoir des nested layout routes avec des parenthèses tabs, parenthèses machin, truc bidule. Et du coup c'est intéressant moi je trouve aussi de voir quel fichier, map, quelle route. Parfois j'ai du mal à mapper les fichiers avec une URL parce que je suis pas à l'aise avec ce système de file routing, j'en ai très peu fait dans ma carrière de dev. J'ai toujours besoin de ce petit béquis de voir quel fichier correspond à quelle route.
+
+David Leuliette (54:17.49)
+Hmm?
+
+David Leuliette (54:28.754)
+Ouais ouais... Ouais...
+
+David Leuliette (54:35.922)
+Ouais, je vois, je Et puis même le fait que ça s'appelle... Ouais, que ça s'appelle index et tout, c'est un enfer parce que tu vas... Ah mais c'est où en fait en vrai ?
+
+Corentin (54:36.845)
+Ne faites pas la safe-up.
+
+Corentin (54:43.664)
+Ouais c'est ça. Oui ça s'appelle index mais ça prend potentiellement l'url, prend le nom de la route qui est au dessus. en fait tu sais pas exactement quel truc tu essaies.
+
+David Leuliette (54:44.723)
+Laissez-moi !
+
+David Leuliette (54:50.574)
+Ouais, vois, à naviguer. Non mais je comprends pareil, frustration, j'utilise aussi, c'est stylé, mais des fois un peu ugly à t'y retrouver, surtout si t'as une centaine de screens.
+
+Corentin (55:09.124)
+Mais derrière, le support est exceptionnel, les vidéos de Addy Kramer sont top. La falle-gou.
+
+David Leuliette (55:15.94)
+de Kadir, ce n'est pas, oui, c'est vraiment Kadir, dites-lui merci pour cette vidéo. Parce que tu sais, en fait je la connais bien, je la connais bien parce qu'elle était à Londres avant et tout, et elle m'a dit ouais, il a un commentaire que j'ai eu sous une demi-vidéo, c'est pourquoi c'est une AI, pourquoi vous avez utilisé une AI pour faire cette vidéo et tout. La pauvre, franchement la pauvre, elle doit record et tout. Le seul commentaire qu'elle a c'est, c'est de l'AI. Non pas du tout, c'est une vraie personne, je la connais bien, c'est un humain et tout, vous inquiétez pas.
+
+Corentin (55:21.913)
+Merci pour ce vrai.
+
+Corentin (55:36.188)
+...
+
+Corentin (55:45.43)
+c'est vraiment l'insulte de 2025 quoi.
+
+David Leuliette (55:48.045)
+ouais non mais... Je... Comment...
+
+Corentin (55:50.032)
+Mais ouais, très très cool ces vidéos, elles sont hyper instructives et du coup, mettre en place de l'autre, c'est hyper facile à faire avec ExponRouter parce que les layout routes, c'est du pain béni quoi, pour ce moment de chose.
+
+David Leuliette (56:01.81)
+C'est vrai, vous voulez savoir, il a un article qui a popé genre hier, il y a quatre minutes. Ah non, c'était hier. Ah non, c'était le 17. Je le mettrai dans les notes de l'émission. Ouais, ouais, c'est vrai, tout plus facile. Trop bien, trop bien. va arriver à la deuxième partie de l'émission. Alors, est-ce que tu te rappelles, tu peux dire quelles fonctionnalités tu aurais pris ?
+
+développé récemment ou une kit à marquer et combien de temps ça t'a pris pour la mettre en prod ? Enfin vous, parce que vous étiez en...
+
+Corentin (56:32.571)
+Et ben justement, c'est un truc intéressant parce que tu as parlé au début de l'amélioration du temps loading chez Shine, de l'application Shine. On peut parler de ça. C'est une... On a un fonctionnement... Donc quand j'étais staff chez Shine, donc maintenant je suis head of front-end ops, donc c'est un peu différent, mais en tant que staff chez Shine, on avait une façon de bosser assez cool, je trouvais. Je manquais clairement de ressources parce que j'étais le seul staff sur la partie front et en fait, c'était très difficile d'avoir des ressources pérennes.
+
+Donc ce qu'on faisait, c'est qu'on identifiait des problèmes. Les plus gros problèmes, c'était le design system et on a eu notamment les performances sur l'app mobile. Et en fait, du coup, j'ai réussi à monter une mini task force, on va dire, avec trois devs. J'avais piqué des devs chez des gens avec des et tout. en fait, objectif, c'était d'améliorer. On s'était mis des objectifs assez ambitieux, genre améliorer le temps de loading par deux.
+
+David Leuliette (57:17.681)
+Allez, les barbares, vas-y y en a marre ! Trop bien !
+
+Corentin (57:30.207)
+sur telles et telles pages, on avait vraiment pris des trucs concrets de performances et de faire un audit complet de la perf de l'app. Et donc ce qu'on a commencé à faire, c'est qu'on a utilisé Sentry pour mettre en place des espèces d'observeurs pour mesurer les performances de chargement, etc. Et donc on a fonctionné par itération jusqu'à ce qu'on soit satisfait du résultat et on disbandé l'équipe parce qu'il n'y avait plus rien à bosser. Donc ça, ça a duré peut-être un peu moins d'un quart d'heure, ça a duré deux mois.
+
+Et en fait, c'était... Moi, j'étais sur d'autres sujets en plus, mais ça, c'était un autre projet qui a duré deux mois. donc, a bossé, on a mis la première étape, c'était de voir où est-ce qu'on voulait améliorer les perfs. On savait que la home, donc ce que tu décrivais, le parcours, tu décris, j'ouvre l'application, je fais le Face ID et je me connecte sur l'application, je vois le montant de mon compte en banque, c'est le corps parcours et c'est ce que passent 100 % des utilisateurs. Donc ça, c'est le premier truc le plus facile à améliorer. Et il n'était pas terrible.
+
+On avait mesuré, on avait des P75, donc les P75 c'est le pourcentile de gens. Si par exemple on a un P75 à 2 secondes, ça veut dire que 75 % des utilisateurs voient l'application en 2 secondes, voient le montant de leur banque en 2 secondes. Donc c'est ce que ça veut dire. Et généralement dans des apps de banque, etc. En termes de performance et de reliability, on va plutôt regarder des indicateurs comme le P90, le P95.
+
+voire même le P99 qui est vraiment le 99 % des utilisateurs. Et du coup, ce qu'on a fait, c'est qu'on a mesuré déjà, on n'avait pas l'indicateur, on a mesuré la performance de notre rap actuelle. Elle était horrible. Donc on l'était, je pense, en P75, on était peut-être à 6 ou 7 secondes, même plus, on était à plutôt 10 secondes. Et notre objectif, c'est de faire un fois, enfin de diviser par trois, ou diviser par deux ou par trois. Et en gros, se dit OK, on fait ça. Comment on fait ?
+
+Et vraiment, a une approche très... très sur la mesure, très portée sur la data. Donc on a utilisé Sentry tout le temps, on faisait des releases toutes les semaines, on regardait ce qu'on avait amélioré, comment ça impactait le PS 60, enfin comment ça améliorait, etc. Un des trucs que Apollo n'est pas forcément très connu mais fait, c'est que par défaut, il va attendre le retour de toutes les queries pour... enfin il va batcher les queries.
+
+Corentin (59:55.449)
+c'est à qu'il va prendre trois quatre queries, il va les envoyer en même temps, il va attendre le retour de toutes les queries pour retourner. Le problème de ça c'est qu'il suffit qu'il une query qui est un P90 dégueulasse parce que le serveur il fait des trucs, des side effects, machin, il doit interroger la poste.fr ou je sais pas quoi et en en vrai il y a une API qu'on interrogeait à la poste à un moment donc c'est pour ça que ça prend du temps. Mais en gros il suffit qu'il en ait une qui soit hyper lente et ça plombe.
+
+David Leuliette (01:00:12.694)
+La poste.
+
+Mais je sais, non mais j'imagine bien, j'imagine bien.
+
+Corentin (01:00:24.569)
+le reste se décourait. Donc déjà on a enlevé ça, on a gagné je sais pas, on a gagné trois secondes, enfin c'était énorme quoi, parce qu'il en avait juste une qui servait à rien et qui était un peu loin. voilà. Et donc on a petit à petit, par itération, a fait ça, on a supprimé des champs qui servaient à rien, on a du dupliqué des champs, on a enlevé du chemin critique des infos qui servaient à rien, on loadait par exemple les notifications et c'était en bloquant. C'est à dire qu'on attendait d'avoir le retour des notifications.
+
+pour afficher l'écran de la home. Mais en fait, des notifications, on s'en fiche un peu. Tu peux les fêcher plus tard. Et en plus, potentiellement, sont compliquées à fêcher parce que ça vient de sources différentes. peux avoir des notifications de transactions, de factures, d'accès aux comptes. C'est...
+
+David Leuliette (01:01:08.623)
+Ouais non mais les notifs c'est un délire. De toute façon les gens savent pas le faire correctement, moi les notifications ça rend ouf. que... Ouais en plus t'as les pushs... Enfin moi je que de base je fais non à tout. Parce que j'ai pas envie. C'est chiant. J'ai que ça à foutre d'avoir des notifs. Et je sais que si je dis oui, il y toujours un risque que je reçoive une push notif de j'ai pas envie de l'équipe marketing qui dit hey ! Allez ! J'ai une idée on va faire genre...
+
+Corentin (01:01:15.169)
+C'est un acte d'égard de choses énormes.
+
+David Leuliette (01:01:35.455)
+Genre, dans la banque rouge là, on va t'envoyer une notif, genre tiens prenez après ! Bah oui, bien sûr. Genre je vais prendre après parce que j'ai reçu une push notif. Non mais les gars, vous êtes fous quoi ! Donc euh... C'est ça, et puis c'est très compl...
+
+Corentin (01:01:44.919)
+Et ouais, c'est ça. Et ça, coup, en faisant ça... Pardon.
+
+David Leuliette (01:01:50.767)
+Gérer la granularité de ce truc c'est un enfer, oui, vaut mieux le différer après et voilà comme tu le dis.
+
+Corentin (01:01:58.709)
+Et là c'était les notes inapp, donc y a énormément de différentes qui viennent de sources différentes qui sont hyper lourdes à charger etc. Et donc juste en faisant ces trucs là, en remettant du bon sens et surtout en mettant derrière un contrôle, c'est à dire de mettre des code on-er sur GitHub, sur tel et tel query qui sont impactants dans l'app pour s'assurer qu'en une équipe ne pas venir ajouter des trucs parce qu'ils en ont besoin et en soi ils en ont besoin et c'est valide. Mais est-ce que c'est vraiment le bon endroit pour mettre ça ?
+
+du coup ça permet un peu de s'assurer que ça maintient une espèce de qualité de code. donc avec ça on a réussi à atteindre nos indicateurs de performance et on a disbandé l'équipe en fait, il n'y avait plus besoin. c'est hyper intéressant je trouve comme approche parce que t'es hyper focus, t'as de l'impact très vite, très facile à mesurer et tu peux facilement le justifier auprès de stakeholders.
+
+parce que tu mesures l'impact, le coût, le calcul ressource-impact est facile.
+
+David Leuliette (01:03:00.59)
+Et du coup après, donc Blitzkrieg, on s'en va, c'est bien. Mais comment tu fais justement pour garder la performance over time ? Y'a des outils en place, y'a Ascentry qui dit hey ! Be careful !
+
+Corentin (01:03:09.047)
+Et va
+
+On a gardé les alertings entry. sur Slack, le P90 de l'app dépasse x secondes sur telle telle transaction, ça pop une alerte. Tu mets en place des codes honneur pour protéger certains fichiers qui peuvent être critiques. Notamment la home, la courri graph QVL, le hook, ce genre de truc. D'où l'intérêt de mettre ça dans des dossiers un peu spécifiques pour facilement mettre des codes honneur dessus.
+
+David Leuliette (01:03:15.927)
+Ok.
+
+David Leuliette (01:03:21.047)
+Ouais.
+
+Corentin (01:03:41.816)
+et de la doc et des règles que j'aime beaucoup. Moi, mon mantra c'est si c'est pas automatisable, ça n'a pas vraiment de sens à ce que ce soit une règle, que ce soit une guideline. Donc typiquement, si je peux faire ça sous forme de règle ESLint, Prétier ou un outil d'automation dans la CI, je me porte très très bien grosso modo. Ou des alertes Slack automatiques. Tout ça c'est...
+
+Toutes ces choses-là d'automatisation, vraiment pour moi le nerf de la guerre et c'est ça qui fait que tu maintiens une qualité. C'est parce que si tu comptes sur la surveillance de chacun, ça ne pas parce que ça fait une accumulation dans ta tête à autre chose à faire que de penser à comment je dois ne pas coder. Tu veux juste penser à comment je fais pour sortir ma feature. Tu ne pas penser en inverse.
+
+David Leuliette (01:04:31.278)
+Ouais, je suis d'accord. Ouais, moi c'est pareil. Tooling versus human et tooling win. Moi, pareil, je suis monsieur Tooling Guy, je mets plein de trucs en place parce que je ne me truste pas moi-même parce qu'entre deux journées, je change de code base et tout, j'oublie. Non mais ça, j'oublie, c'est sûr. Et il faut que ça fasse le job pour moi, sinon pas le temps. Mais pour en fait, c'est ça, développer super vite et super rapidement et qu'on ait des erreurs, boucle de feedback comme dans les jeux vidéo, hyper courtes.
+
+Corentin (01:04:46.199)
+Ouais, t'oublies. Ouais.
+
+David Leuliette (01:04:59.981)
+Pourquoi Breath of the Wild ? Parce que justement, toutes les 4 secondes, tu as un truc à faire. Et boucle de feedback. Si ça vous intéresse, vous tapez boucle de feedback sur YouTube, vous trouverez jeu vidéo et vous trouverez ce que je veux dire. Est-ce qu'il a un anecdote difficile dans le développement de cette app et comment vous l'avez géré ?
+
+Corentin (01:05:00.18)
+Exactement.
+
+Corentin (01:05:14.161)
+Ouais, c'est ça.
+
+Corentin (01:05:24.531)
+Dans le développement, un truc difficile, je pense, auquel tout monde peut s'identifier, c'est la démigration React Navigation quand c'est pas typé et que React Navigation a décidé de faire des breaking changes entre la 5 et la 6 parce que... c'est entre la 4 et la 5 je crois. Mais des trucs énormes genre... ouais 4 et 5, en fait tu peux plus navigate de manière...
+
+David Leuliette (01:05:31.553)
+Wot
+
+David Leuliette (01:05:46.221)
+4 et 5. 4 et 5.
+
+Corentin (01:05:52.579)
+Avant dans React Navigation 4, tu pouvais naviguer de manière nested et donc donner un nom de route qui n'est pas dans ton navigateur. React Navigation était quand même capable de retrouver le navigateur. Enfin l'écran. Dans la 5, ils ont dit non, on ne fait plus ça. Sauf que nous, avait une structure d'application qui était énormément nested. On avait navigateur dans navigateur, dans navigateur, dans navigateur. D'ailleurs, en parlant de perf, c'est un truc qu'on a complètement qu'il est. Maintenant, on a tout aplati. y a quelques navigateurs qui nested.
+
+mais quasiment l'entièreté des routes sont au même niveau. Donc déjà, ça facilite la navigation, mais surtout ça améliore énormément les performances. J'avais fait des tests de perfs, c'était gigantesque. Tu gagnais tellement de frames par seconde sur la neve, c'était impressionnant. Et donc du coup, la migration de React Navigation 4 à 5, en fait au début, ça a été fait, on l'a tenté trois fois, deux fois avant que j'arrive, parce qu'en fait, il été un peu distribué dans les équipes de faire leurs trucs. Ça n'a jamais marché parce qu'en fait, tu as besoin qu'il une personne qui coordonne.
+
+David Leuliette (01:06:45.353)
+Ouais.
+
+Corentin (01:06:52.134)
+Il n'y avait pas ce rôle-là. Il n'y avait pas ce rôle-là. Et moi, quand je suis arrivé, du coup, j'ai eu ce rôle ingrat. Salut. Mais en fait, oui, c'est un peu ça.
+
+David Leuliette (01:06:52.597)
+oui sinon ça va être juste ça.
+
+David Leuliette (01:06:58.591)
+Dictateur. Bonjour ! Je suis Quoranta, je dictateur, ça va bien se passer hein, mais vous faites ce que je dis et pas de questions. T'es obligé, t'es obligé. Ouais t'es obligé sinon ça marche pas, ça marche pas.
+
+Corentin (01:07:08.714)
+Et du coup, c'était vraiment, je te jure, un mois et demi après t'arriver chez Shine. Donc j'avais un peu la pression de ne sortir un truc en prod tout pété et de juste pas flinguer l'expérience de tous les gens. Et du coup, ça a été hyper long, hyper dur d'aligner tout le monde. Mais au final, on a réussi.
+
+David Leuliette (01:07:16.68)
+merde, il a été déco. C'est pas grave, va copier link, il va pouvoir rejoin. T'as perdu internet.
+
+David Leuliette (01:07:54.028)
+Ouais non t'inquiètes, je sais pas ça a des coups, t'as perdu internet
+
+Mais là j'entends pas du
+
+David Leuliette (01:08:06.761)
+T'inquiète, t'inquiète, avec le saut je pourrais édite. Y'a que les gens en live... Y'a que sur YouTube, y'a que YouTube qui s'en souviendra.
+
+Mais ouais j'ai pas le son, pourquoi j'ai pas le son ? Tain c'est chelou ça T'as qui l'app complète ?
+
+David Leuliette (01:08:27.579)
+Corentin recording... Ouais... Tell them to stop and restart the studio recording. Ok. Au pire relance...
+
+David Leuliette (01:08:43.059)
+Ouais tu kill complètement l'app et tu la relance... attention ça fait reconnecting...
+
+David Leuliette (01:08:55.709)
+on n'entend plus Corentin. Wesh Mathis, Corentin il est dans les limbes. a... c'est bon. putain on a deux fois Corentin. Attends, attends c'est pas grave. non c'est bon. Attends mais là ? Can change while recording. Vas-y parle attends.
+
+Corentin (01:09:05.232)
+Ah c'est bon ! Est-ce que c'est mieux là ? Ah putain on a deux fois 41 ! Ah punaise il faut quitter l'autre ! attends c'est pas grave. Ah non c'est bon. Attends mais là ? Can't change while recording. Vas-y parle attends. Est-ce que tu m'entends ? Ouais. Cool. Mais... Je m'entends moi-même.
+
+David Leuliette (01:09:25.137)
+Ouais, mais je m'entends moi-même.
+
+David Leuliette (01:09:33.477)
+Rebranche ton micro ? Euh, enfin ouais ton micro ouais. Parce que du coup, tout à l'heure on avait branché le micro...
+
+Corentin (01:09:33.77)
+Rebranche ton micro ? On peut faire un truc ? enfin ouais ton micro ouais. Parce que du coup, tout à l'heure on avait branché le micro. la la la la. Sacré setup. Ouais c'est pas grave. Non mais t'inquiète, le pire...
+
+David Leuliette (01:09:46.214)
+Ouais c'est pas grave. Non mais t'inquiètes le pire c'est avec Mox, on pourra pas faire pire que Mox. Mais grâce à la magie du... du... recording on a entendu.
+
+Corentin (01:09:54.454)
+Est-ce que ça change quelque chose là ou pas ? Sinon je peux essayer de juste brancher mes écouteurs et les débrancher ? Ouais c'est ça, pardon j'avais juste à rebrancher les écouteurs
+
+David Leuliette (01:10:02.89)
+Ouais c'est ça, pardon j'allais juste dire brancher écouteurs brancher écouteurs et changer le son
+
+David Leuliette (01:10:16.432)
+Donc là...
+
+Là, vas-y, reparle.
+
+Là j'entends pas... si là c'est bon, attendi quel, touche plus à rien ? Vas-y.
+
+Corentin (01:10:25.356)
+Tu m'entends pas
+
+David Leuliette (01:10:32.938)
+Vas-y, dis, vas-y parle, dis quelque chose.
+
+Corentin (01:10:35.936)
+Du coup, je parlais de... Je sais plus de quoi je parlais quand...
+
+David Leuliette (01:10:38.41)
+merde ! non ! On a repert du leçon ! Au secours.
+
+On a rep perdu le son.
+
+Ah mais là il fait reconnecting. Ah je sais pas pourquoi... Ah c'est bon, ouais si c'est bon, c'est bon mais tu vois ça va plus être bon dans deux minutes.
+
+Corentin (01:10:53.004)
+Je vous remercie.
+
+Corentin (01:10:57.869)
+Bon, qu'est-ce qui nous fait Riverside là ? Parce je suis vraiment sur un setup assez simple.
+
+David Leuliette (01:11:02.74)
+Ouais mais là on a reperdu en internet.
+
+reperdue internet. ouais ! Euh... enfin...
+
+Corentin (01:11:07.724)
+C'est mon temps para ?
+
+Corentin (01:11:19.18)
+Ah oui. Ça marche pas du tout en effet.
+
+David Leuliette (01:11:26.249)
+Ouais c'est pareil il va rejoin. là là, ça c'est... Ben oui ça va aller. ça va juste être... En plus, on est large, on est qu'à une heure de record. Franchement. En vrai, ça passe.
+
+David Leuliette (01:11:43.241)
+ça va passer, nickel ! Tu tu ru ru tu on pourrait mettre une musique d'ascenseur en attendant. Tu tu ru ru tu ru ru tu ru
+
+David Leuliette (01:11:55.653)
+Euh... ou alors ?
+
+David Leuliette (01:12:00.969)
+Ouais je pense Matisse, il qu'on fasse un test la prochaine fois sur l'app. Depuis l'app mobile. C'est bizarre qu'on est perdus.
+
+David Leuliette (01:12:15.401)
+Ou alors c'est qu'il n'a plus de batterie sur son téléphone, ce serait possible. C'est parce que j'utilise l'app mobile Riverside.
+
+David Leuliette (01:12:25.257)
+je pas nocé, nocé qui est... qui est... pas là... je parle espagnol, n'importe quoi, je ne parle pas du tout espagnol les amis
+
+David Leuliette (01:12:43.158)
+On va le récupérer ne vous inquiétez pas
+
+David Leuliette (01:12:52.719)
+est-ce que ça va aller ? Oui, oui, oui, oui,
+
+David Leuliette (01:13:04.135)
+mais en fait, ça c'est marrant.
+
+David Leuliette (01:13:10.636)
+Sur Twitch, Corentin est encore là. Attends, mais du coup si je fais copy link...
+
+euh... Saint.
+
+David Leuliette (01:13:38.928)
+Ça tombe, il a plus internet hein.
+
+David Leuliette (01:13:44.142)
+On va dire euh...
+
+David Leuliette (01:13:57.379)
+On va dire que...
+
+on va dire que quoi ? va dire que quoi ? on va dire que bah...
+
+David Leuliette (01:14:17.448)
+On va aller explorer, vas-y.
+
+David Leuliette (01:14:23.4)
+j'ai son mail si c'est on a retrouvé on a retrouvé ouais attends on a retrouvé on a retrouvé on a retrouvé
+
+Corentin (01:14:27.927)
+C'est beaucoup mieux ?
+
+David Leuliette (01:14:40.867)
+Attends, déjà on t'a retrouvé. Non, ça fait reconnecting. En fait, je sais pas, c'est ton internet qui galère.
+
+David Leuliette (01:14:52.712)
+ou wifi et ou...
+
+David Leuliette (01:14:59.58)
+bizarre hein. Parce que ça a été nickel pendant... Je vois pourquoi d'un coup ça a cut. Tu genre là pareil il a rejoin mais il a redisparu. l'enfer ! Mathis dis-moi comment je peux dire pour meubler.
+
+David Leuliette (01:15:44.529)
+ouais attends, si je sais, je vais lire un article en attendant. Garde.
+
+David Leuliette (01:15:55.207)
+On va lire la newsletter de Seb. Allez hop ! On va lire un article en attendant qu'il rejoigne. Alors, qu'est-ce qui se passe dans le monde de Racknative ? Cette semaine, Racknative 0.80 ? Mais genre ? Ah oui ! Ah oui, non mais ça, oui, non mais... Si, ça je savais ouais ! C'est tout ce qu'on a vu à BGS. With Frame, Expo Support for Racknative 0.54 Canary.
+
+ça va. ShredCNScaffoldComponent for ExpoApp in the lights. BlueSkyMobileAppair enable new arc. une BlueSky. il a la pull request. Est-ce qu'on lit la pull request ? Est-ce qu'ils ont changé du coup
+
+social hop new ark donc ils font ils ont mis un type ils ont créé un mock dans les tests new ark true à là c'est bon
+
+Corentin (01:16:53.072)
+Je pense en fait c'est Riverside qui en train d'uploader des vidéos en même temps. C'est Riverside qui upload les vidéos en même temps de...
+
+David Leuliette (01:16:57.242)
+c'est quoi ?
+
+David Leuliette (01:17:00.879)
+Ouais ouais, ça c'est normal en fait si il upload la conversation d'avant. Enfin en fait ça upload, en fait en gros ça...
+
+ça centralise et quand tu l'ouvres en fait ça sauvegarde en même temps donc en fait à la fin même si on a eu la conversation et que tu laisses le truc upload il va raccorder les mots et quand je ferai l'edit en fait ce sera raccord au même endroit tu vois. alors pourquoi ça a désynchronisé ? Aucune idée. Mais c'est pas grave on a récupéré, nickel, parle de map libraire. Matisse dans le chat il me dit parle de map libraire.
+
+Corentin (01:17:33.571)
+C'est bizarre.
+
+David Leuliette (01:17:41.962)
+non ! On t'a reperdu ! je sais pas, attends... Je sais pas si... Bah non, on est obligé du plot en fait. On est obligé du plot parce que là je t'ai reperdu. Et en 4G... C'est peut-être ton wifi non ? Est-ce que c'est ton wifi qui... Qui fait que ça...
+
+Corentin (01:17:50.621)
+Ah ouais ? Je suis en 5G là pourtant.
+
+Je suis en full 5G.
+
+David Leuliette (01:18:00.486)
+qui fixe à foire.
+
+David Leuliette (01:18:07.677)
+parce que là, re-tanker en fait. C'est trop bizarre.
+
+David Leuliette (01:18:15.627)
+là là zut zut zut zut
+
+...
+
+David Leuliette (01:18:46.092)
+Alors, bon, c'est pas grave, je vais parler de RecNativeMapLibre.
+
+David Leuliette (01:18:53.062)
+Pouuuuh
+
+David Leuliette (01:18:57.408)
+Jean-Charles. bah j'y sais. Pourquoi maplibret? Pourquoi le bon moment? Le bon moment c'est maplibret? Parlons de maplibret. Hé, Jean-Charles Mathis qui est présent dans le chat, il a dit, bosser avec des librairies open source... non, avec des libristes pardon. C'est... Il y a plus de contraintes pour résumer. Bah c'est sûr que Versus...
+
+Ouais c'est Linux, c'est Linux versus Mac OS tu vois. Il y a un peu plus de contrats mais tu peux faire plus de choses. Parce que là on utilisait Rack Native Maps. Et Matisse il a découvert Rack Native Maps Libre. Et bon il a un peu plus de friction, il moins de docs, trouver les choses c'est un peu plus compliqué, travailler, ça demande un peu plus de temps. Il a moins de polish on va dire.
+
+c'est utiliser MacOS vs utiliser Linux. C'est pareil mais MacOS est quand même plus agréable quand même, tu perds moins de temps sur certaines choses.
+
+David Leuliette (01:20:13.035)
+Alors attends, sais pas si on va réussir... Ce serait dommage qu'on nous aves cut...
+
+David Leuliette (01:20:21.317)
+là comme ça parce que je ne pas
+
+David Leuliette (01:20:28.485)
+Je pas si Riverside, parce que moi je suis en uploading, je suis bon. Je sais pas si lui ça a tout coupé, ou si a des erreurs d'internet, ça, dns, tout bordel comme il a deux jours. Je pense pas parce qu'on est encore en live. Donc ça m'étonnerait que tous les tuyaux soient coupés.
+
+David Leuliette (01:20:56.613)
+Et on a récupéré Corentin, si, c'est bon. Ah ! Ah ! J'étais sur Android, j'étais sur un Android !
+
+Corentin (01:21:00.955)
+J'ai changé de Couteau suisse.
+
+C'est bon, je changer de device.
+
+David Leuliette (01:21:13.381)
+Ouais t'inquiète, t'as pas de stress hein.
+
+Corentin (01:21:13.965)
+plus
+
+David Leuliette (01:21:18.175)
+Ouais, ça va. Et ici, pas de stress en plus, Jean-Charles nous a rejoint sur le chat. Alors attends. T'as connu Parano.be ?
+
+Corentin (01:21:27.547)
+Très bien, c'est super des études.
+
+Corentin (01:21:32.016)
+Non ?
+
+David Leuliette (01:21:35.594)
+bah renciène-toi. Bon je t'enverrai le lien c'est avant jadis avant Facebook, réseau social, mais c'était en Belgique du coup forcément. T'es basé où je t'ai même pas demandé.
+
+Corentin (01:21:41.147)
+Je pas.
+
+Corentin (01:21:47.163)
+Moi j'habite dans le sud-ouest, près de l'Espagne, à Cap Breton, c'est vers au second.
+
+David Leuliette (01:21:52.068)
+Ok ok ok, bon, forcément, tu connais. Alors attends, va falloir raccorder.
+
+Corentin (01:21:56.856)
+Cordonneur Val-Grande.
+
+David Leuliette (01:21:59.941)
+On disait quoi ?
+
+Corentin (01:22:01.04)
+moment très difficile je crois on parlait de rec navigation et de migration et de...
+
+David Leuliette (01:22:08.224)
+Migration règle native. Ok.
+
+Tu te souviens, on le refait total.
+
+Corentin (01:22:14.001)
+Je sais plus où ça s'est coupé.
+
+David Leuliette (01:22:17.674)
+sais pas, dans le chat, dites-nous, 2003.
+
+Corentin (01:22:18.171)
+Mais les migrations reactivation et le fait que ce soit compliqué de... Oui tu demandais c'était quoi le moment le plus difficile et c'était ça en termes purement techniques on va dire parce qu'il fallait coordonner énormément de gens énormément d'équipes sur un truc qui impactait littéralement tout le monde et ça c'est vraiment le plus compliqué parce qu'il fallait pas empêcher de chipper des features il fallait pas couper la prod il y a énormément de contraintes
+
+Il fallait pas impacter le release cycle. Ça a été long, a été laborieux, mais quand c'est sorti, ça s'est bien passé, et tant mieux.
+
+David Leuliette (01:22:58.173)
+Tu te souviens combien de temps vous avez... C'était quoi ? Il y avait des pré-kaitied ? Vous avez des duplications avec des pré-kaitied partout ? C'était quoi la stratégie ?
+
+Corentin (01:23:00.464)
+mais c'est...
+
+Corentin (01:23:05.339)
+Non, fait, on n'a pas voulu utiliser des pre-caiteds parce qu'en fait, si c'était des pre-caiteds, on savait qu'à un moment donné, de toute façon, ça allait sauter. Donc, on demandé, on fait le truc à fond, etc. Ce qu'on a fait, c'est que tout bête, mais on est passé navigate par navigate. Moi, j'ai fait toute la partie un peu commune. Et après, dans chacune des équipes, je leur ai fait l'étiquet pour qu'ils passent navigate par navigate pour vérifier les navigations. On avait une branche normale et une branche qui était seule avec la mise à jour.
+
+et en fait on mergeait sur les deux à chaque fois. en fait on dupliquait et tu as une branche qui était pétée, était celle de la mise à jour, et celle qui marchait bien qui était la prod, et après on faisait des comparatifs. disait, là ça marche comme attendu, etc. On n'avait pas de test automatisé à l'époque, mais ça aurait été clairement l'opportunité de mettre un maestro ou un detox branché dessus et faire les scénarios et de les faire rejouer à chaque mise à jour.
+
+David Leuliette (01:23:39.211)
+Ouais, ok.
+
+David Leuliette (01:24:02.574)
+Et maintenant vous avez Maestro en place ?
+
+Corentin (01:24:03.975)
+Non, on a des TOCs parce qu'on avait besoin de faire des trucs très pénibles avec Maestro. C'est que l'engin.js qui est dedans, c'est un vieux truc pas ouf. Et du coup, y a énormément de fonctionnalités de JavaScript de base qui ne marchent pas. Notamment, c'est un polyfil de fetch. Je crois qu'il pas de fetch.
+
+David Leuliette (01:24:28.855)
+oui, mais ça c'est le rac native de base, c'est pas maestro... ouais.
+
+Corentin (01:24:30.521)
+Non, c'est Maestro qui utilise un autre engin JS. bref, c'est très bizarre. Et du coup, l'avantage qu'on avait avec DTAC, c'est qu'on pouvait run notre code. En fait, on avait besoin de se créer des personnels. avait besoin de... Comme on est dans une appli de banque, il y a beaucoup de trucs genre two-factor authentication, vérification d'identité. Et on avait besoin de bypass ces trucs-là depuis le code. On voulait tear down et créer des environnements de test à la volée par test. Et du coup, contrôler tout ça via du code.
+
+les créations de Persona, les créations de Flow, etc. Du coup, on était obligé de passer par des Tox, qui n'est pas idéal en termes de DX, c'est quand même assez compliqué, versus un Maestro qui est très...
+
+David Leuliette (01:25:12.109)
+Ouais, me parait, ouais. J'avoue. C'est exactement ce qu'on disait off quand à côté, c'est logiciel livre versus... versus... Linux versus macOS, tu vois.
+
+Corentin (01:25:21.947)
+C'était ça, il y vraiment un gap avec Maestro qui a été franchi, est assez intéressant en termes d'automation d'applications mobiles. Donc oui, c'est un peu le seul problème qu'on n'avait pas, le fait de ne avoir ça, a été quand même assez long, assez manuel et assez laborieux, mais ça s'est bien passé au final. Parce que justement, j'étais là pour coordonner et tout le monde était motivé et aligné, c'était plus simple.
+
+David Leuliette (01:25:42.115)
+Au revoir.
+
+David Leuliette (01:25:49.763)
+Super, j'en profite si y'a des gens dans le chat qui ont des questions, je les pose en direct live. Enfin je trie quand même avant. Les questions... Je sais pas, si y'a des questions pas politiquement correctes, ça tombe, je vais les poser quand même. Est-ce que les techniques de débug que tout RecNative Developer devrait connaître ou le Corentin de avant-Hornicare, qu'est-ce que tu lui conseillerais ?
+
+Corentin (01:26:15.263)
+Pour moi, l'instrumentalisation avec Sentry, ça a été game changer et d'avoir des stats en prod. Là, on ne pas des bugs, mais on parle un peu... Mais c'est quand très lié, c'est d'avoir des indicateurs de ton application en prod. moi, c'est hyper important parce que ça fait un peu boîte noire. Tu sais pas trop ce qui se passe, tu sais pas trop comment s'utiliser. Et Sentry ou n'importe quoi d'autre, peut être Data Dog et d'analyser des transactions des events sur Data Dog.
+
+David Leuliette (01:26:24.167)
+ça fonctionne quand même, c'est ce t'aide quand même.
+
+Corentin (01:26:43.865)
+Mais le principe d'instrumentaliser, d'instrumenter, pardon, et de mettre en place des mesures sur des parcours précis qui sont critiques à l'expérience utilisateur, de temps moyen, par exemple, de completion d'un parcours, nous, ça peut être le temps moyen pour faire un virement, tous ces trucs-là, c'est des indicateurs de santé de l'application.
+
+David Leuliette (01:27:05.793)
+Tu mets des loggers un peu partout et ça les crache la sentry ou y'a un truc spécifique ?
+
+Corentin (01:27:10.267)
+Avec Sentry, quand tu veux mesurer des parcours précis, vas mettre des espèces de sondes, des transactions avec des stops et tu vas créer ta transaction et dire je la commence à ce moment-là. Donc c'est toi qui émettre des moments de la transaction et tu dis ça finit là. Et ce que tu peux rajouter en plus, il y a des plugins avec React Navigation qui permettent de rajouter par exemple des spans. C'est-à-dire qu'une transaction va faire cinq secondes et il se passe plusieurs événements dedans.
+
+David Leuliette (01:27:19.85)
+Ouais.
+
+Corentin (01:27:38.147)
+Il peut se passer des erreurs, des navigations, des data fetching, etc. On peut imaginer, nous, qu'on a fait, c'est qu'on a rajouté des spans, donc juste des traits de mesure, va dire, d'activités. On a fait tchétel query en temps de seconde. On a fait la navigation à tel timestamp. Il y a eu telle erreur à tel moment. Tout ça, c'est des trucs en plus qui permettent de comprendre un peu les parcours utilisateurs. Et c'est assez intéressant.
+
+David Leuliette (01:28:05.481)
+Et te rappelle c'est quoi le nom de la pays ? C'est Sentry Instruments ?
+
+Corentin (01:28:07.523)
+C'est transaction de Sentry. C'est les transactions.
+
+David Leuliette (01:28:11.143)
+Sentry Transaction, ok. Pour ceux qui s'intéressent, se diront voir. Moi je mets juste des loggers et ça log des trucs mais j'ai jamais eu de trucs qui subassent parce que j'ai jamais eu l'occasion non plus en fait de faire des parcours entiers mais j'ai déjà fait sur un site web.
+
+Corentin (01:28:25.459)
+Ce qui est cool avec ces outils là, que ça fait des dashboards, peut sortir des indicateurs de performance, peut sortir des temps moyens de parcours, ça fait des jolis dashboards qu'on peut afficher sur un écran au bureau par exemple. C'est vrai, c'est des trucs qui sont marrants et qui sont intéressants à faire d'un point de vue business en fait, parce que s'il y a énormément d'insatisfaction à chaque fois, s'il y a énormément de temps pour faire un transfert alors que tu es une banque,
+
+David Leuliette (01:28:33.803)
+Ouais c'est ça.
+
+David Leuliette (01:28:39.969)
+dans le Ouais non mais si si si si...
+
+Corentin (01:28:54.839)
+ça la fout mal quoi, ça le fout mal. J'ai un accélération pas. Mais c'est imperceptible mais c'est quand même important. Donc moi ça tu vois c'est un truc que je me fais beaucoup après le nouveau debugger Ragnative c'est la folie et voilà quoi. Moi c'est ce j'utilise principalement et d'utiliser le flashlight pour mesurer les perfs c'est très très cool. La lib de bam
+
+David Leuliette (01:28:56.765)
+Moyen, moyen. Moi tu y'en a ça dérange pas. Y'en a que ça dérange pas.
+
+Né.
+
+Corentin (01:29:23.176)
+la livre de Bam, Ragnatif, sais plus comment ça s'appelle, Performance Flashlight ?
+
+David Leuliette (01:29:29.024)
+flashlight c'est codo apps mais maintenant mais ouais ça doit être vous allez sur le site light le site web flashlight.dev et je pense que vous arriverez à tout retrouver sinon pinguez moi je serais ravi de vous donner la ref
+
+Corentin (01:29:31.621)
+Oui c'est...
+
+Corentin (01:29:42.875)
+...
+
+Corentin (01:29:46.907)
+Celui-là, c'est ouf. Il faut faire un SDK de son app sous Android, l'export, et ça va mesurer les FPS, le heap usage, l'usage de la RAM, etc. ça, typiquement, quand j'ai mesuré, j'avais besoin d'indicateurs de perf pour mesurer l'impact de navigation nestée versus navigation flat. J'avais fait un espèce d'exemple de repro avec une navigation nested avec trois navigateurs nested, et la même, mais en flat.
+
+et les indicateurs de performance montraient que justement, on gagnait 40-50 % parfois de RAM sur des mêmes flots. Et du coup, c'était un argument supplémentaire que j'utilisais auprès du business pour justifier d'avoir des ressources avec moi pour améliorer ces performances-là. Parce que c'était... Quand c'est flat.
+
+David Leuliette (01:30:35.325)
+Quand c'était flat ou quand c'était nested ? Quand c'est flat il y a moins... Ouais logique. ok ouais.
+
+Corentin (01:30:40.059)
+Est-ce que tu crées moins d'objets en mémoire en réalité ? T'as qu'un signalier de temps
+
+David Leuliette (01:30:43.359)
+Ouais, si parce que dans ce moment j'ai un bug avec Explorouter. ça freeze, ouais en fait ça freeze. Il n'y a pas que moi, il a plein de gens en fait. Ouais bah bon je suis en plein dedans. Et là tu vois les objets en mémoire bizarrement, ça en fait plein. Alors je ne pas ce qui se passe mais...
+
+Corentin (01:30:49.413)
+Corentin (01:30:53.253)
+Je l'ai vu passer son truc.
+
+Corentin (01:31:06.415)
+C'est aussi le reproche qu'on peut faire à Xporouter, c'est que du coup, t'as pas trop la main sur ces abstractions en plus.
+
+David Leuliette (01:31:13.28)
+Ouais tu sais pas trop... Ouais... Ouais pareil, j'ai même mis 4 jours à... Mais tu sais, vous savez, ce problème, pourquoi ça freeze, je pensais que c'était John State, mais on fait pas du tout, mais... Bon bref, classique. S'il y avait pas des trucs comme ça, on aurait pas de taf les amis. Parce que vu que l'AI maintenant est capable de faire des applications à la volée, hein... Quand il aura des gros bugs comme ça, il faudra encore des devs pour faire les vrais problèmes et ou régler les vraies choses.
+
+Corentin (01:31:20.889)
+Ouais.
+
+Corentin (01:31:32.781)
+il faut qu'on garde nos petits problèmes de perf...
+
+David Leuliette (01:31:43.599)
+En travaillant avec Rack Native, qu'as-tu appris sur le développement logiciel en général ?
+
+Corentin (01:31:48.077)
+En travaillant avec React Native, c'est surtout en travaillant avec des plateformes différentes. Le web est mobile. C'est la philosophie d'Expo, c'est... Le but, pour moi, j'ai l'impression, de toutes mes boîtes et Charmicar chez Shine, c'est vraiment de passer d'un... En fait, c'est la même chose. C'est juste le médium qui change. Mais la façon dont on a de faire du code, est la même. On utilise React, grosso malgré quelques subtilités.
+
+qui parfois sont énormes, et dans l'ensemble, c'est la même chose. Et en fait, ça m'a appris à concevoir des interfaces, des API de la même manière que quelle que soit la plateforme. Et du coup, de réfléchir beaucoup plus et que les props qu'on utilise, par exemple, un coup, dis le cas le plus pratique, c'est que les props d'un composant sont hyper importantes, d'autant plus s'il est partagé. Et ça, c'est...
+
+C'est vraiment la base de la base. Il faut vraiment faire attention à la façon dont on nomme les choses, la façon dont on met en place des usages. qu'en fonction de la taille de la boîte, et j'ai bossé avec globalement dans le centre, c'était entre 50 et 150 développeurs, ça a un impact énorme. On se trompe sur l'API, on se trompe sur la façon dont on met en place et on diffuse des mauvaises pratiques très rapidement. Et donc, du coup, c'est hyper important de penser la conception de nos interfaces d'API.
+
+hyper générique et cross-platform. Même si c'est pas forcément le but, même si on n'a pas une implémentation cross-platform, c'est quand important. Parce que les personnes qui collaborent, qui contribuent, elles peuvent faire les deux. Pour moi, c'est ça.
+
+David Leuliette (01:33:22.302)
+Allez, suivez
+
+David Leuliette (01:33:28.158)
+N'importe quoi.
+
+David Leuliette (01:33:33.414)
+Avoir une DX, la DX est importante aussi parce qu'en vrai tu vois en fait c'est comme un virus après. Si ta DX est nulle, je vais dépropter des bugs et après ça va être très compliqué de de soigner en fait.
+
+Corentin (01:33:44.453)
+Exactement. Et pour moi, performance, après. make it right, et après tu make it fast, parce qu'en fait, ça marche. La performance, est OK, à part si tu fais des trucs vraiment compliqués et où tu vas mettre en place des parcours qui sont vraiment complexes, etc. Make it right d'abord, avec des bonnes pratiques, bien sûr, ça ne veut pas dire qu'il faut faire ça à l'arrache, mais make it right et faut que ça marche, et après, faut que ça soit rapide.
+
+David Leuliette (01:33:55.528)
+Ouais.
+
+Corentin (01:34:14.507)
+C'est vraiment après, comment je peux l'optimiser par rapport à des critères de satisfaction. Et React Native, le coup, autre truc que j'ai appris, c'est que c'est natif. On utilise les primitives de la plateforme. J'ai vu, il avait beaucoup sur Twitter quand Apple a lancé son nouveau Fluid Design, machin là. Liquid Glass.
+
+David Leuliette (01:34:37.086)
+Liquid Glass.
+
+Corentin (01:34:38.459)
+Et il y avait tout le qui disait oui c'est la fin de REC NATIVE machin, une heure plus tard Evan Bacon il dropait une vidéo d'Expo Routard avec, vu qu'il pouvait se faire chier. Et ça m'a fait rire parce qu'en fait c'est la plateforme, il n'y a rien de...
+
+David Leuliette (01:34:46.836)
+Terminé ? Bah oui ! Ah oui la télécharge de l'SD ! Ah oui, est-ce qu'on parle du drama du coup ? En fait le drama c'est que Flutter ils ont dit « Stand by pour faire liquid glass ça va arriver » et les gars de Ragnative c'était « Evan Bacon une heure après Terminado c'est en prod ».
+
+Corentin (01:35:05.419)
+Une heure c'était littéralement le temps de mettre à jour Xcode.
+
+David Leuliette (01:35:15.577)
+Ouais c'est vraiment ça en plus, c'est ça le pire donc... Ouais moi je dis il faut tout ou faire un monde si Flutter prend une décision, enfin... Moi je ne sais pas, tu vois... Pareil, tu vois, je n'aime pas PHP, je déteste PHP, j'ai fait du Robion Rail, j'ai trouvé que c'était génial, je pense que... Tu il a encore plein de sites web PHP, pas besoin de guerre en fait entre...
+
+Corentin (01:35:34.363)
+Non, y'a pas besoin.
+
+David Leuliette (01:35:37.211)
+Mais ouais, c'est marrant, ce drama là est rigolo.
+
+Corentin (01:35:38.829)
+C'est plus le côté genre, ouais ça va être fini pour eux, et littéralement 30 minutes plus tard, Evan Bacon qui RT juste, bah voilà c'est bon ça marche les gars. C'est là, bon bah c'est natif en fait. Et ça c'est un truc qu'on réalise pas assez bien et qu'il faut continuer à évangéliser.
+
+David Leuliette (01:35:44.157)
+Nö.
+
+David Leuliette (01:35:58.009)
+moi ça fait longtemps, en fait quand j'ai compris que React tu pouvais faire des emails, en fait c'est là que j'ai compris, c'était au tout début, enfin pas au tout début mais je faisais du Amber à l'époque, et en fait je vois React encore un framework, encore un, je savais que, mais je voyais pas la différence en fait, je comprenais pas vraiment c'était quoi vraiment la différence fondamentale entre React, entre React et les autres, et React c'est un moteur de rendu, et c'est ce que dit Ken C.
+
+Corentin (01:36:23.611)
+...
+
+David Leuliette (01:36:26.414)
+Il a dit en fait, React, ce sera le dernier framework. Sa théorie, c'est ça. Ouais.
+
+Corentin (01:36:28.611)
+Et pareil, c'est serveur, le serveur c'est juste une autre source de rendu. Au lieu de sur un device, on rend sur un serveur. Et il y a une libe de React qui permet de des CLI avec React aussi. On peut tout faire avec
+
+David Leuliette (01:36:36.313)
+C'est ça.
+
+David Leuliette (01:36:44.55)
+Ouais, Ink. Ouais Ink. Ouais bah on peut tout faire. Exactement. Donc ouais, on n'est pas prisonnier si demain il a des glaces chez Apple ou à TvR. Bah hop, pas de problème, une heure après on télécharge Xcode, une heure après on compile et c'est bon, terminé. C'est quoi ta stratégie pour tenir au courant de ce qui se passe justement dans le monde de Ragnative ?
+
+Corentin (01:37:03.777)
+En vrai, passe du temps sur Twitter. Je suis un peu les offres d'emploi des autres entreprises pour voir qui bosse avec Racknative ou pas. du coup, je fais un peu du reverse engineering. regarde où est-ce qu'ils recrutent en Racknative. Je regarde les CTO et les gens qui bossent dans ces boîtes-là. Et du coup, je les suis. Ou je regarde ce qu'ils font. Ou je regarde les trucs open source. Et je regarde les confs.
+
+David Leuliette (01:37:20.216)
+!
+
+David Leuliette (01:37:35.292)
+bête. Si vous voulez savoir, vous avez sur wishypityoday, french, react native apps et à liste de toutes les apps. Pour l'instant, c'est avec chaque... en fait ça me sert de dashboard pour les gens que j'ai interviewés. Et Shine était dans le top dès le début.
+
+Corentin (01:37:41.188)
+ouais ? C'est toi qui la maintiens un jour manuellement ?
+
+Corentin (01:37:56.027)
+Je suis content de participer.
+
+David Leuliette (01:38:00.135)
+Ouais, de participer au truc. Je pense que c'est pareil. J'ai dû le voir en regardant offre d'emploi et j'ai vu et j'ai fait, tiens Smart, il de Racknative, faudrait que je les interviewe un jour. Voilà, ouais, juste française en fait. Faudrait que j'insistre réaliser la chose, mais pour l'instant, c'est juste à la mano. En voyant les gens qui sont interviewés, je mets le lien de l'interview direct dedans, comme ça c'est plus facile à retrouver.
+
+Corentin (01:38:25.211)
+Et il commence à y avoir énormément de grosses apps.
+
+Je ne me rends pas compte par rapport aux autres marchés, les autres pays d'Europe, comment on se place, est-ce qu'on est plus ou moins... Est-ce qu'on est une grosse communauté ou pas ?
+
+David Leuliette (01:38:45.72)
+En fait, tu regardes les stats, les stats de State of React Native, c'est l'enquête qui a lieu chaque année, fait par Software Mention. y a US, Pologne, forcément, et après c'est français, crois qu'on est dans le top 5. Alors je sais pas si c'est parce que c'est Seb, This Week in React, qui drive le truc et qui fait la pub pour le survey. Donc du coup, il y a plein de gens.
+
+Corentin (01:39:08.699)
+de la taille 2.
+
+David Leuliette (01:39:12.253)
+ou si juste les autres écosystèmes qui ne pas que ça existe, State of React Native tout simplement. Je n'ai pas la réponse mais...
+
+Corentin (01:39:16.697)
+Est-ce que c'est un biais peut-être ? Oui, je sais pas.
+
+David Leuliette (01:39:24.549)
+idée. Je ne sais pas. Celui qui a la réponse, veux bien qu'il vienne ici et qu'il m'explique. Dites-moi.
+
+Corentin (01:39:28.069)
+Expo pourrait avoir la réponse en fonction des stats des apps qui sont faites sur leur build et peut-être les pays des facturations. Ils pourraient se baser sur ça pour faire des stats.
+
+David Leuliette (01:39:35.26)
+Ouais, des pays... Ouais.
+
+David Leuliette (01:39:46.368)
+je demande, je trouve quelqu'un, Cédric, vas-y je note. Allez, stats usage France. Je vais demander. Il y peut-être moyen que je trouve l'info en plus. Alors...
+
+Corentin (01:40:02.683)
+c'est ça,
+
+David Leuliette (01:40:08.288)
+Est-ce que c'est quoi ton conseil Si tu devais démarrer une nouvelle app demain, serait quoi ton conseil que tu donnerais aux jeunes générations ?
+
+David Leuliette (01:41:56.942)
+Ouais, je suis d'accord. Si c'est trop compliqué, faut breakdown en plein de petits morceaux et vous verrez, ça ira plus vite. Est-ce qu'il a un sujet que tu aurais voulu aborder ? Dont on n'a pas parlé.
+
+David Leuliette (01:43:07.209)
+Ouais... Ouais, je suis complètement d'accord.
+
+David Leuliette (01:43:59.737)
+Tu connais le Valve Handbook ?
+
+David Leuliette (01:44:09.097)
+voilà. franchement bah c'est pareil, il faut vraiment le lire. En vrai moi j'ai lu ça, je mettrai le lien dans les notes de mission, c'est Valve Handbook. Ouais exactement. Ils font des jeux ? bon ? Je pense que c'est juste une plateforme de... Juste... Non non si ouais. Donc Valve, ceux qui ont fait Half-Life, voilà moi j'ai un affect parce que je connais la boîte parce que Half-Life, hein, et du coup je trouve l'histoire de comment ils ont switché incroyable et...
+
+En fait, ça rappelle exactement ce que tu dis, ils un handbook pour les nouveaux employés. en fait, en gros, c'est ça. Si t'es embauché chez Valve, on va dire tiens, première semaine, ce livre, lis-le. Et c'est à toi de trouver du taf. Donc en fait, ça brainfuck le cerveau des gens parce qu'au début, on dit quoi faire. Mais là, en fait, pas du tout ça, c'est genre dis, t'es bon là-dedans, trouve trois personnes et ship un truc. Et donc c'est vraiment l'espèce task force. C'est comme ça ça marche, en fait. Donc ça peut être.
+
+C'est complètement le chaos. Moi je sais que ça irait dans un environnement comme ça, j'arriverais à naviguer, à aider les gens et faire des choses à impact et à trouver moyen à me débrouiller moi-même en fait en
+
+David Leuliette (01:45:23.138)
+Ouais c'est...
+
+David Leuliette (01:45:27.682)
+Ouais. ouais là oui. C'est exactement... C'est complètement organique et du coup ils arrivent à chipper. Après ça demande une organisation quand même. c'est ce qu'ils disent en fait, les teams elles sont pas vouées à rester en fait en vrai. Comme vous avez fait pour la performance c'était Ops, Guerilla Performance, on fait une Blitzkrieg pendant trois mois et après...
+
+fait le meilleur qu'on pouvait, fait ça sert à rien qu'on reste sur le sujet parce que de toute façon on en refera peut-être une dans six mois mais c'est le format qui marche bien, la team se disloque et on
+
+Oui, oui.
+
+David Leuliette (01:46:20.372)
+ça. Est-ce que tu recommandes quelqu'un qui devrait passer dans l'émission ? Il y avait une personne mais elle est secrète défense ! Est-ce que tu as trouvé quelqu'un d'autre depuis ?
+
+David Leuliette (01:46:48.545)
+Ouais.
+
+David Leuliette (01:46:54.285)
+Sinon si c'est personne que ça tombe c'est clair que tu connais pas du...
+
+David Leuliette (01:47:01.241)
+Tu connais qui fait du React natif ?
+
+David Leuliette (01:47:08.311)
+Je sais pas...
+
+David Leuliette (01:47:19.255)
+Oui, oui oui oui oui oui. Ouais non mais c'est pas grave t'inquiètes, je prendrais le... je prends le défi. Un francophone, un francophone de chez Expo, ça devrait peut-être se trouver tu vois, parce qu'il veut... en fait...
+
+David Leuliette (01:47:38.392)
+Exactement, alors plot twist, y peut-être moyen que je réveille une maidsen de chez Infinite Raid parce qu'en fait il parle français bien, mais alors je sais pas s'il pourrait tenir un podcast parce que j'ai parlé avec Franck à Abjj justement et il m'a dit ouais il faudrait que tu l'invites parce que en fait il... alors je sais pas s'il tenir un podcast entier je ne sais pas mais ou au pire je ferais une exception où ferais du franglais et ça sera très bien
+
+Alors où est-ce qu'on peut te retrouver Corentin pour les gens qui veulent plus de Corentin en vrai et en OHD et tout ça ?
+
+David Leuliette (01:48:34.001)
+Bah c'est bien, c'est la plateforme, vois, le réseau social de bots. Je pensais que ça allait devenir un réseau social full bot. là c'est Mi AI. J'avais une théorie avant. C'est que devenir le premier réseau social de bots, là c'est plus AI qui parle avec AI. Mais y a des vrais gens dedans encore sur LinkedIn.
+
+David Leuliette (01:48:56.263)
+un AI... Moi j'ai déjà un adblock, enfin j'ai... You block origin et je bloque carrément des éléments de page, du coup en fait mon LinkedIn en fait il ressemble à rien, enfin il ressemble à rien, il y a deux cases et j'ai viré toute l'Ui. Ouais c'est ça, parce que c'est insupportable mais c'est vrai qu'un AI machin... Il faudrait...
+
+David Leuliette (01:49:21.654)
+Ah ouais, voilà là. On verra s'il a. Moi c'est David, pouvez me retrouver sur Twitter, BlueSky ou Github sur le nom Flexbox. Si vous avez survécu jusqu'ici, vous pouvez aller voir wishypity.today.com podcast pour soutenir l'émission, voir la expo checklist pour lancer votre prochain projet et rejoindre aussi le Slack de Rack Native Connection si vous voulez nous poser des questions. Pour donner de la force...
+
+Est-ce que tu sais que quand tu mets 5 stars sur Spotify sur le podcast, il se passe un truc ?
+
+Ouais. Il se passe un truc, c'est que du coup, j'ai 5 stars. Voilà, et ça incrémente le compteur. voilà, et Apple Podcast aussi s'envoie de la force. m'aide à inviter d'autres gens. vois, ça build de la trust. Comme ça, pourrais dire, les gars de chez Expo, vous voyez, j'ai un podcast cool, faites ramener un francophone. Donc du coup, prochain épisode, qu'est que ça va être ?
+
+Dans le backlog on a... Plan, on a toi... Pour l'instant j'ai rien. Ah bah c'est Ludwig, pas pour l'instant. Ah si ! Attends, j'ai quelque chose d'autre. J'ai quelqu'un d'autre. Le prochain cross-platform show. Ah bah oui ce sera avec Kim de... Qui a fait... Tu vois ce qu'il a fait ? Il a fait une conf à AbJS pour sa boîte de musique qui habite à Bordeaux.
+
+trop On sent les confs. trop fort. oui, si y une conf à voir, c'est vrai que celle de Kim elle est incroyable. En plus, elle doit être disponible en replay.
+
+David Leuliette (01:51:02.453)
+En tout cas je vous remercie d'avoir assisté à l'émission et on se retrouve à la prochaine. Ciao à tous !
+

@@ -126,7 +126,7 @@ export default function PodcastEpisodePage() {
               </div>
             </div>
           </div>
-          <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-sm border border-slate-200 dark:border-slate-700 mb-8">
+          <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-sm border border-slate-200 dark:border-slate-700">
             <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">
               Écouter l'épisode
             </h2>
@@ -153,14 +153,21 @@ export default function PodcastEpisodePage() {
             </div>
           </div>
           {transcriptEntries && transcriptEntries.length > 0 && (
-            <Transcript
-              entries={transcriptEntries}
-              spotifyLink={episode.spotifyLink}
-            />
+            <>
+              <PodcastNavigation
+                previousEpisode={previousEpisode}
+                nextEpisode={nextEpisode}
+              />
+              <Transcript
+                entries={transcriptEntries}
+                spotifyLink={episode.spotifyLink}
+              />
+            </>
           )}
           <PodcastNavigation
             previousEpisode={previousEpisode}
             nextEpisode={nextEpisode}
+            className="mb-16"
           />
         </div>
       </div>

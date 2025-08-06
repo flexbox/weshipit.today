@@ -1,0 +1,1089 @@
+David Leuliette (00:00.183)
+Il a un temps de délai de toute façon. En fait, il a au moins deux secondes le temps que ça balance sur les Internet. Du coup, j'attends un petit peu parce que sinon, sinon ça synchronise pas trop. Mais après, peux refaire l'édit. bonjour et bienvenue sur le Cross Platform Show, le podcast qui parle développement d'applications Web-able avec Rack Native. Je suis David, développeur chez Wishy Pityoday. Nous sommes toujours en février 2025 et je suis accompagné d'Audrey. Je suis très content de t'avoir.
+
+Est-ce que tu peux te présenter à la communauté pour ceux qui ne te connaissent pas encore ?
+
+Audrey (00:37.354)
+Bonjour à tous, donc moi c'est Audrey, j'ai 35 ans, je viens d'une petite ville du côté de l'Anse mais je bosse pour une startup liloise, voilà pour la petite histoire.
+
+David Leuliette (00:48.759)
+Côté de lance, est-ce que tu avais le 56k quand tu étais petit ?
+
+Audrey (00:53.441)
+Oui, y a fort fort longtemps.
+
+David Leuliette (00:55.435)
+Parce que moi, en fait, il n'y avait pas internet au débit où j'habitais. Mais quand je faisais mes études et genre, en fait, il y avait un canal et c'était en face du canal qu'ils avaient l'internet au débit, tu vois. Et pendant des années, ben voilà, j'étais dans la diagonale du vide. Toi, il y avait du vrai internet ou pas ? C'était quoi le bled à côté de l'ance ?
+
+Audrey (01:00.376)
+Oui.
+
+Audrey (01:17.966)
+Là j'habite sur Bully-les-Mines.
+
+David Leuliette (01:21.18)
+Bully les... bah voilà, tu vois. Trop bien. Les campagnes, on adore. On adore. Cool, du coup, et t'as fait tes études à Lille ou sur le Lancelor ?
+
+Audrey (01:27.671)
+C'est ça, la campagne.
+
+Audrey (01:33.102)
+Sur lance aussi. J'ai eu mon bac, après je suis allée à l'université d'Artois, donc sur lance en licence mathématique informatique. à la base plus de maths et en fait quand on a commencé à faire de l'info et de l'algo, j'ai dit c'est ça que je veux faire en fait. J'étais partie en maths mais on avait un cursus info en parallèle et au final je dis non c'est ça que je veux faire.
+
+David Leuliette (01:35.862)
+Ok.
+
+David Leuliette (01:46.536)
+Ok, plus de maths ou de...
+
+David Leuliette (01:54.358)
+ouais, t'étais parti, tu savais
+
+David Leuliette (02:03.35)
+Ok.
+
+Audrey (02:03.47)
+J'ai eu ma première année de licence, j'ai arrêté mes études et en 2020 j'ai profité des formations d'EV qui paupaient un peu partout les formations expérimentées pour remettre un peu le pied à l'étrier et puis me voilà chez Carnot.
+
+David Leuliette (02:16.542)
+Ouais ?
+
+David Leuliette (02:21.944)
+trop bien parce que du coup c'était moitié maths, moitié algo entre guillemets, c'était quoi les cours genre...
+
+Audrey (02:30.722)
+On faisait du circuit, donc tout ce qui était logique. J'avais fait quand un peu de Java. Les premiers langages, c'était du Scheme à l'époque. C'était en 2000. Enfin du Scheme, un peu de Pascal, je crois. ouais, 2007.
+
+David Leuliette (02:40.758)
+Inconnue, c'est quoi, scheme ? Du scheme, ok !
+
+David Leuliette (02:48.234)
+ouais ! Pascal, attends, je connais, c'est genre, c'est... Sononante !
+
+Audrey (02:52.216)
+Oui, tout au moins 2010 quoi, grand max, un peu de Java mais avec quand même un gros cursus math en parallèle quoi.
+
+David Leuliette (03:01.075)
+Mais oui, je vois, je vois, vois.
+
+David Leuliette (03:09.569)
+Ok, trop bien. du coup, du coup, alors ça fait ça, ok, donc là t'arrêtes, on arrête les conneries, là on fait un bootcamp. C'était quoi le bootcamp ?
+
+Audrey (03:17.454)
+En fait je suis arrivée chez Pop School, donc ils avaient une antenne sur Lens, donc formation dev accélérée, la traditionnelle. Exactement sans savoir est-ce qu'il a des débouchés, est-ce que voilà, parce que bon c'est pas fou en terme de débouchés mais j'ai dit allez c'est parti, j'avais eu mes enfants, ils commençaient à un peu plus grands.
+
+David Leuliette (03:23.958)
+Ouais ok, parce que c'était pas loin et tout, moi c'est pas resté sur Calais en fait, c'est parce que c'était pas loin du coup j'ai pris ce qu'il y avait quoi en gros.
+
+David Leuliette (03:42.789)
+Ouais, de toute façon c'est pas... ouais c'est ça, faut commencer quelque part. vois ce que je dis toujours, quand les gens ils se plaignent et tout machin, ça m'a coûté X milliers d'euros ou X temps ou voilà, et bah eh, c'est ton coup d'apprentissage. Voilà, prends... accepte-le et c'est tout.
+
+Audrey (03:46.286)
+Exactement.
+
+Audrey (03:54.814)
+Exactement, c'est ça et ça permettait de survoler parce que c'était quand même hyper accéléré en quatre mois. Tu fais du HTML, CSS, passes par début de JavaScript, début de PHP, tu vois du React. On a fait un peu de React native, mais très peu.
+
+David Leuliette (04:12.885)
+Ah vous avez fait quand du... Ouais non mais je sais que moi Popschool c'est pareil il m'avait appelé j'ai fait les gars... Non je vais pas travailler avec vous parce que vous faites tout. Et je dis non faut absolument pas faire ça faut faire un truc et faites le bien au lieu de faire tout mais après je comprends que pour les formations ils doivent cocher des petites cases de programmes de formation je sais pas à quoi pour avoir le petit label...
+
+Audrey (04:20.66)
+Non mais c'est ça, c'est...
+
+Audrey (04:32.398)
+mais je pense qu'il a un prérequis. Après je pense que c'est aussi par rapport à l'équipe, enfin aux formateurs et leur forcément leurs affinités. Donc voilà, un peu de React Native vraiment la base quoi, un peu de React Navigation et puis du contexte et encore et après c'était tout quoi.
+
+David Leuliette (04:39.285)
+Ouais ouais, ouais, je vois.
+
+David Leuliette (04:50.941)
+Et donc ça, c'était en quelle année, ça ?
+
+Audrey (04:52.798)
+En fait, suis rentrée en formation, on a fini en... Coucou Covid en Donc, oui, pré-rentrée le vendredi, lundi, on était tous confinés. Donc, ça va être du présentiel, on a fait du... du distanciel, comme on a pu. Donc, j'ai fait quatre mois de formation, six mois de stage. Et à l'issue de mon stage, quinze jours de pause et je suis rentrée chez Carnot juste après.
+
+David Leuliette (04:54.195)
+Donc 2000, ok. Ok, oui, ok super.
+
+David Leuliette (05:02.863)
+ok, trop...
+
+David Leuliette (05:08.468)
+OK.
+
+David Leuliette (05:19.458)
+directement, t'as trouvé direct chez Carnot, en m'en disais, salut ! Je sais faire des maths.
+
+Audrey (05:21.358)
+Les planètes
+
+David Leuliette (05:26.001)
+Ouais bah... c'est ça, bah c'est ça souvent, tu vois, boum, tac, les palettes étaient alignées, exactement, c'est bien, c'est bien, c'est beau, c'est beau. Alors du coup, parle-nous de Carnot, qu'est-ce que c'est, hormis un beau t-shirt ?
+
+Audrey (05:39.67)
+hormis un t-shirt corporate. Carnot, c'est une startup lilloise dans le domaine de l'agriculture connectée. Donc l'application Carnot, l'application mobile, on a aussi une application Web React à destination de nos clients et on a pour but de faciliter la saisie des travaux agricoles et viticoles. Nos clients, typiquement, ils entrent leur parcellaire, ont toute leur liste de clients.
+
+David Leuliette (05:41.172)
+à BOSWAG.
+
+Audrey (06:09.034)
+ils rentrent leur matériel et puis nous avec un magnifique boîtier de captation de .gps du coup on affiche au sein de nos applications donc les travaux qui ont été effectués chez tel client, dans tel parcel, du temps moteur, de la surface etc. Donc on a énormément dans nos apps de carto forcément la cartographie et du reporting de la data du gros affichage de data et sur la carto.
+
+David Leuliette (06:37.557)
+Et du coup c'est principalement pour les agriculteurs... Dans les agriculteurs ils utilisent la version mobile. Et la version web elle est utilisée par qui ?
+
+Audrey (06:42.926)
+Oui, en fait, la version web, ce sera plutôt tout ce qui est administrateur, ceux qui sont responsables un peu des comptes, là où l'application mobile est quand même plutôt utilisée par les chauffeurs qui sont salariés des entreprises de travaux agricoles ou viticoles, exemple. Après, l'un n'empêche pas l'autre, peuvent utiliser l'un et l'autre, mais on a quand même...
+
+David Leuliette (07:01.618)
+Ouais ok, c'est deux types de gens différents qui compagniquent en harmonie.
+
+Audrey (07:10.622)
+ces profils-là plutôt sur l'application mobile des chauffeurs des entreprises.
+
+David Leuliette (07:16.902)
+J'ai déjà une question, est-ce que ça utilise des iPad dans les tracteurs ?
+
+Audrey (07:21.972)
+Alors dans les tracteurs, ne sais, iPad je pense pas, mais on a quand même pas mal d'iOS.
+
+David Leuliette (07:27.997)
+Oui, oui, a iPads. oui, non, mais oui, si, s'est obligé d'être connecté. Attends, on va en parler, on va en parler offline. Attends, il y a du offline, il une partie offline ? non, pour l'instant, c'est full online. Ok. Du coup, ok, super. du coup, la stag technique, est-ce qu'on va en parler maintenant ? Je suppose qu'elle était faite avant que arrives.
+
+Audrey (07:35.566)
+C'est fou.
+
+Audrey (07:50.254)
+Oui, l'application, a donc moi je suis arrivée chez Carnot début 2021, est l'application a commencé à développer en 2018. Donc, stack technique, donc React Native, mais pas d'expo, quoi. From scratch. Donc, c'était voilà. Donc, stack technique React Native pour l'application mobile.
+
+David Leuliette (07:59.226)
+Ouais, oui.
+
+David Leuliette (08:05.254)
+Ouais, c'était Vanilla... Vanilla React Native, oui c'est vrai. C'est vrai.
+
+David Leuliette (08:18.361)
+Après pour tout ce qui est state management, on va plus dire maintenant. Maintenant, grâce à une super entreprise qui s'appelle Wishipit today, vous avez migré sur Expo.
+
+Audrey (08:27.918)
+Oui. Non sans mal.
+
+David Leuliette (08:30.77)
+Sinon on va faire deux épisodes... va... Ouais, ça va, deux semaines... Ça pris... Ça a pris combien de temps en vrai ? Non, en vrai, première... Initial Push deux semaines et après un mois je dirais, c'est ça ?
+
+Audrey (08:41.198)
+le temps de la mise en prod comme en plus on avait d'autres fonctionnalités sur la V1, vraiment full finie prod 4 mois quand même.
+
+David Leuliette (08:47.855)
+Ouais.
+
+David Leuliette (08:52.915)
+Le full rewrite. Ouais, passer de React Native à Expo. Oui mais dans la bataille on a... Il y a d'autres choses qui se sont ajoutées quoi. c'est... Ouais, autant tout faire d'un coup en vrai. Oui, oui, c'est ça, c'est moi. Je me souviens. J'ai fait une PR avec 4000 fichiers, j'ai fait... Ahi hop, c'est bon.
+
+Audrey (08:57.806)
+Oui, il y avait... j'en ai profité. On s'est dit pourquoi faire compliqué, On va mettre un petit peu de typescript aussi, même si c'est en mode light, mais bon, pourquoi pas, on enchaîner.
+
+Audrey (09:16.75)
+C'est parti.
+
+David Leuliette (09:19.609)
+Ok cool, coup alors attends, maintenant du coup, carnaut 2025, le niveau State Management, qu'est-ce qu'on utilise ?
+
+Audrey (09:27.592)
+on utilise Redux, Redux2 pour le State Management qui était déjà sur le repo de base. Sur la V1 c'était ça donc on est resté sur...
+
+David Leuliette (09:30.77)
+Mouais.
+
+David Leuliette (09:38.66)
+Ouais c'est ça. Ouais et puis ça marche bien. ça marche bien. Moi je sais que je suis nul en rédeux. J'ai toujours été nul. C'est le truc, ça m'a jamais... Enfin si, j'ai compris l'intérêt. Mais j'ai jamais... Si quand je bossais pour les applications de banque, oui. Parce que là on était 8 devs et puis voilà. Mais euh...
+
+Audrey (09:48.28)
+Oui.
+
+Audrey (09:56.014)
+Moi j'ai appris en arrivant chez Carnot. J'étais lancée dans la bataille. Et puis dans la mêlée et au final bon, faut s'y mettre et après ça va. on a quand même, au niveau du state, a quand même un state, c'est hyper complexe, on a des parcelles, a de la data géographique, du géogézone et tout. Donc Redux fait quand même pas mal le duo.
+
+David Leuliette (10:23.853)
+Yes, yes, carrément. Et du coup, pour fetcher la data, c'est pareil, vous utilisez rtkquery. Ok, donc pour ceux qui ne connaissent pas, rtkquery est sorti en... Je ne pas, qu'une idée.
+
+Audrey (10:31.022)
+...
+
+Audrey (10:41.486)
+Après on a quand même du Fetch, du Redux Action, pour ceux qui connaissent pas, du Dispatch d'Action etc. On est quand même sur un modèle encore, une façon de faire encore à l'ancienne. Faut encore qu'on migre vraiment full Redux Toolkit avec tout ce qui est Slice etc. pour toute la gestion.
+
+David Leuliette (11:02.354)
+Ouais mais toi c'est pareil, ouais vous êtes en train de le faire parce que chez Dropbox il y a encore des morceaux... Ah je sais plus, c'est le mec de Dropbox qui disait faut pas toucher ce qui fonctionne.
+
+Audrey (11:12.2)
+J'ai de te dire, oui, après quatre mois de labeur pour passer en V2 au sein d'Expo, me suis dit, tant que ça marche, gardons-vous.
+
+David Leuliette (11:16.369)
+oui, oui, mais là c'était obligé. Là c'était genre Breaking Change, on était obligé de changer des trucs.
+
+Ouais. Bah oui, là, Redux, c'est pour... Il a plein de fichiers, au pire, t'ouvres le truc, tu fais, ouh là, il a plein de fichiers, ok.
+
+Audrey (11:26.766)
+Oui, c'est la première fois que tu refermes.
+
+David Leuliette (11:32.993)
+Oui, ça fonctionne quand même encore mais... Ok, c'est vrai qu'on n'a pas dit, vous êtes combien à bosser sur l'app ?
+
+Audrey (11:41.422)
+Jusqu'à la V1 j'étais toute seule. Et là on est deux.
+
+David Leuliette (11:44.695)
+Ouais t'étais ok. Donc première expérience. Tiens, t'as fait deux semaines de Rack Native, allez hop
+
+Audrey (11:51.862)
+Après j'avais fait 6 mois mon stage, donc en tout cas obligatoire à l'issue de la formation. C'est aussi ce qui m'a permis, enfin c'était les cartes que j'avais à jouer pour entrer chez Carnote, c'est que j'ai fait un stage où j'étais toute seule et fallait développer une app mobile donc React Native pour MVP. Donc c'était une application autour du tourisme. Donc de l'achat de parcours et puis me visiter au Gérantet par exemple c'était...
+
+David Leuliette (12:15.313)
+Right ?
+
+Audrey (12:21.23)
+voyager au j'achète mon parcours et je veux visiter les églises de Lille par exemple. Je fais un petit checkpoint. Donc c'est un MVP, je suis allée jusqu'à la sélection mais on n'avait pas de budget pour faire la navigation in-app. On avait juste le parcours qui était affiché, nous ce qu'on fait au sein de Carnot finalement, mais il n'y avait pas de guidage si je puis dire. Il y avait du développement, enfin j'ai fait...
+
+David Leuliette (12:45.848)
+Ouais, pas de gibiers, quoi.
+
+Audrey (12:50.707)
+et se sentait seul. Donc ce n'était pas trop gênant d'arriver.
+
+David Leuliette (12:56.611)
+Ouais, bah c'est quand pas mal parce que première expérience, nobody de j'ai jamais codé de ma life et puis il l'a mis en prod.
+
+bah eh, ça va c'est quand même pas mal, trop cool. Et du coup chez Carnot où elle a une app basique niveau navigation, comment s'organiser, il TAP, je me souviens il a un drawer, il a un drawer.
+
+Audrey (13:19.758)
+Oui, alors on a une navigation hyper complexe donc on utilisera avec navigation. C'était dans la V1, je suis restée sur ça dans la V2. On a un drawer, on a une bottom bar en termes de navigation et au sein de mes navigations bottom, j'ai d'autres navigations, d'autres top bar navigation. C'est hyper hyper... J'ai des navigations indriquées.
+
+David Leuliette (13:27.664)
+Ouais.
+
+David Leuliette (13:43.248)
+oui, c'est vrai que je me souviens ça.
+
+Audrey (13:48.448)
+Donc ça fait parfois des noms.
+
+David Leuliette (13:50.327)
+Euh... Ouais, ça se fait des nœuds au cerveau quand c'est pas tout carré. euh... Ok, y'a pas de trucs un peu particuliers dans les négations à part ces trucs là ? Ces paternes là de...
+
+Audrey (14:02.252)
+Non, à part de la navigation abriquée où on a des index qui sont d'autres navigations, non, c'est déjà pas mal.
+
+David Leuliette (14:12.304)
+Ouais non mais après c'est vrai que pour les gens ils se rendent pas compte mais c'est vrai qu'il des cartes, il des points, il a...
+
+Audrey (14:18.155)
+C'est hyper lourd, y a pas mal d'écran.
+
+David Leuliette (14:24.526)
+Et sinon dégros je sais plus 40, 50.
+
+Audrey (14:26.882)
+Je sais plus. Ouais, pas mal. Je sais plus.
+
+David Leuliette (14:31.813)
+Ouais, on va dire 40-50. Ok, cool. coup, n'y a pas de... Eh ben, des fois, il n'est pas obligé d'avoir des navigations super complexes, veux dire. Surtout en plus, si tu dans un tracteur et qu'il fait du soleil et que tu n'as pas le time, il que ce soit hyper clair.
+
+Audrey (14:45.038)
+C'est ça, donc on a aussi des prérequis en termes d'utilisation de l'application quand tu en plein milieu de ton champ, en plein soleil. Tu fais attention. Après ils sont auto-guidés. Tu peux être sur ton téléphone et la machine avance. C'est high-tech.
+
+David Leuliette (14:54.128)
+tu vois rien. Tu fais plus attention à ton chant, enfin, ouve à ton tracteur.
+
+David Leuliette (15:06.864)
+Hein ? Et l'autopilot des tracteurs ? Ah !
+
+Incroyable.
+
+Audrey (15:15.008)
+On a eu pas, donc on n'est peut-être pas si loin finalement.
+
+David Leuliette (15:17.495)
+Ok ok. Du coup niveau styling, est-ce qu'il a une UI libérée? Ça je me souviens plus.
+
+Audrey (15:30.702)
+Non ! La style sheet à l'ancienne !
+
+David Leuliette (15:34.832)
+C'est un cheat ouais c'est
+
+Audrey (15:36.79)
+on a juste un petit système pour avoir des constantes, pour avoir quelque chose de iso un peu partout mais non et je pense qu'on y viendra pour le mode tablette parce que du coup la pensée mobile first est pas du tout tablette, pas de paysage, pas de... donc on aura pas trop le choix.
+
+David Leuliette (15:56.144)
+Ouais c'est juste qu'il un gros zoom dans... Mais de toute façon c'est autre... Enfin c'est... Ouais c'est quand même compliqué déjà de shipper une app mobile avec 40 millions de features déjà. Et après elle break it down pour qu'elle soit... Ah by the way, faut que ça marche sur iPad ! Oui bien sûr !
+
+Audrey (16:14.251)
+Non, là, elle est pensée mobile, portrait traditionnel.
+
+David Leuliette (16:18.443)
+Ouais du coup ça zoom juste sur un iPad et c'est dommage parce que du coup on perd de la place quoi sur des choses qu'on pourrait aimer c'est pas si...
+
+Audrey (16:22.634)
+Oui, sur l'iPad, t'as le mode, t'as juste ton écran de mobile quoi, et Android, on comprend pas, parce que du coup Android...
+
+David Leuliette (16:28.771)
+Ouais, ouais c'est ça. Et si t'as pas de trucs de... bah c'est ça, de librairies, de design inclus dedans qui... avec des hooks et qui fait de la magie, bah tu te retrouves à faire de la bidouille et au début ça fonctionne mais pour scaler le truc et vraiment avoir une expérience optimale, c'est beaucoup de taf. Je comprends.
+
+Audrey (16:47.214)
+pour pouvoir poser les bases correctement pour ne se tirer une balle dans le pied.
+
+David Leuliette (16:51.79)
+Oui, mais après tu ne peux jamais savoir. Si tu mets trop de choses, dis que peut-être qu'on n'aurait pas pu shipper non plus. c'est toujours compliqué. Ok, super. Niveau illustration et graphique. Est-ce qu'il a des animations qui delightful ?
+
+Genre quand il pleut. Y'a de la pluie. Y'a pas de pluie qui tombe.
+
+Audrey (17:22.764)
+On n'a pas tant d'animation. Quand je suis arrivée chez Carnot, il y en avait un peu plus. Et au final, c'était plus gênant qu'autre chose. Comme on disait tout à l'heure, on a quand même une typologie de client qui n'est pas forcément technophile. Et puis, comme je dirais, on n'a pas le temps de niaiser. Non mais c'est ça, t'es en milieu de ton champ, t'as juste envie de voir tes données, là où sont tes tracteurs, qu'est-ce qui se passe, est-ce que c'est ok ?
+
+David Leuliette (17:35.49)
+Ouais, baliq.
+
+David Leuliette (17:42.232)
+Ouais bah... en vrai.
+
+Audrey (17:51.552)
+Donc on a oui quelques animations quand on a un petit formulaire qui s'affiche ou ça slide un tout petit peu, voilà, pas de surcouche qui serait inutile un peu pour nos clients.
+
+David Leuliette (18:03.407)
+C'était quoi que vous aviez au début ? C'était des animations... Parce que t'as dit qu'il y avait des animations et après on les a drop.
+
+Audrey (18:07.278)
+On a juste des petites icônes qui s'animaient dans certaines modèles. On avait ça donc on a droppé pour venir à quelque chose un peu plus basique. Ce qui reste c'est plutôt de l'affichage de formulaires, on a les inputs qui arrivent les uns après les autres, vraiment très léger.
+
+David Leuliette (18:14.382)
+Ouais, c'est avec l'OTI là. Avec l'OTI non ? Ouais.
+
+David Leuliette (18:31.822)
+De toute façon, moi, c'est pareil. Moi, je sais que des fois, ça devenait hyper complexe et du coup, si tu les drop, ça paraît de passer du temps sur d'autres choses, TypeScript, par exemple, pour que aies une intégrité des données qui soit bien. En vrai, et donc. OK, du coup, avant, c'était faire des releases. C'était très compliqué. Enfin, non, ce n'était pas compliqué. Ça fonctionnait, mais ce n'était pas une foule.
+
+Audrey (18:44.494)
+Oui, oui, oui, non, non, non, Oui. Merci.
+
+Audrey (18:59.918)
+ça allait donc on utilisait les GitHub Action, tout ce qui était pour le tag de versioning qu'on a toujours d'ailleurs sur la V2 et puis après donc on avait GitHub Action pour le build iOS, le build Android et c'était Fastlane, on utilisait Fastlane et pareil la gestion des profiles pour Apple
+
+David Leuliette (19:01.894)
+S'aule.
+
+David Leuliette (19:05.261)
+Oui oui.
+
+Audrey (19:28.492)
+Donc on utilisait Match, qui permettait avec notre épaule de gérer tous ces profils. Pareil, tu sais que ça marche, ça va, mais la première fois que tu dois les updates, peut-être qu'ils sont morts, tu t'arraches les cheveux.
+
+David Leuliette (19:35.788)
+Ouais.
+
+David Leuliette (19:39.768)
+oui oui, en fait Fastlane Match ça ajoute un ton certificat sur GitHub en privé du coup tu peux le récupérer et le partager entre ta team. Mais oui, la première fois que tu sais pas comment ça marche c'est... Mais du coup maintenant, grâce à Wishy Pityoday qui vous a aidé à faire cette superbe émigration, est-ce que...
+
+Audrey (19:49.294)
+...
+
+Audrey (20:04.394)
+incroyable, on a toujours le versioning de l'app via la GitHub Action et après on en a une seconde donc Pushmaster qui s'occupe de lancer le IAS build et qui est entrainé sur le CYBLIT.
+
+David Leuliette (20:16.525)
+C'est vrai parce que vous aviez des overs hier mais non, update.
+
+Audrey (20:21.294)
+Alors on l'a pas encore mis en place, pareil c'est dans la to do, mais on a encore à l'ancienne on fait les releases, on fait le build et le submit qui s'enchaîne tout seul.
+
+David Leuliette (20:23.841)
+Ok.
+
+David Leuliette (20:36.287)
+Ouais bah au moins le truc c'est que du coup tu... Attends c'est qui ? C'est Alan aussi il disait ? Il disait que pareil ils ont mis en place tout Expo et tout machin mais Updates ils se disent presque pas ils font que des builds tout le temps. Je ne suis plus sûr. Vérifier, c'était il deux épisodes je m'en rappelle déjà plus. Voilà, la vieillesse.
+
+Audrey (20:47.15)
+Oui.
+
+Non, je me crie bien, j'ai écouté l'épisode effectivement. Je sais plus si c'était eux, j'ai tout écouté. pareil, tu me mets toute ma tête, tu sais plus. Il faudra re-écouter. Mais ouais, l'update, c'est quelque chose qui va nous convenir aussi pour du bug fixe. C'est clairement ce qu'il nous faut.
+
+David Leuliette (20:54.946)
+c'était eux ? Bon ouais, super.
+
+David Leuliette (21:03.083)
+Réacte.
+
+David Leuliette (21:13.94)
+Ouais si c'est ça ouais. Cool. du coup là on va arriver à la partie où t'as le délibrairie, donc on a appareil d'expo, appareil d'rack navigation, les trucs assez classiques en fait somme toute mais qui fonctionnent bien.
+
+Audrey (21:24.738)
+Oui, oui, qui fonctionnent et qui vont bien pour nous en fait, clairement.
+
+David Leuliette (21:30.612)
+Ouais c'est ça ouais. Et donc là on rappelle carnaut, applications, plus geolocation pour incident, plus suivi de parcelle, tout ça. C'est quoi le top 5 des librairies que tu utilises et que tu recommandes
+
+Audrey (21:45.838)
+Alors j'avais pensé... Je voulais dire à la française mais on a D3. On a le dessin de parcelle sur certaines cartes. On n'utilise vraiment que pour ça. Quand tu veux ajouter une observation sur une parcelle, as aussi le dessin de la parcelle. C'est très visuel pour nos clients. Pas uniquement le nom parce que les parcelles ont des noms, des îlots, etc.
+
+David Leuliette (21:53.322)
+D3
+
+David Leuliette (22:12.3)
+Mais c'est lequel que... C'est... Attends pardon je te coupe, c'est D3 ? D3, D3 ? Disreactnet ?
+
+Audrey (22:15.448)
+On utilise le scale pour D3 pour faire nos dessins de parcelle. On lui envoie la bounding box de la parcelle avec les données géométrie et à partir de ça il arrive à dessiner le contour de la parcelle. Des petits tips comme ça, on utilise celle-ci et moi je trouve ça génial d'arriver à avoir un dessin de parcelle
+
+David Leuliette (22:34.444)
+Ok, ok.
+
+Audrey (22:42.52)
+que tu peux scaler, qui est, entre guillemets, vectorisé, que tu peux manipuler comme tu veux à des tailles toutes petites comme très grandes et juste en passant juste une bounding box quoi.
+
+David Leuliette (22:53.425)
+Et du coup c'est un SVJ... Alors attends c'est un SVJ je comprends rien. C'est un SVJ que tu fais.
+
+Audrey (22:56.334)
+Oui ça te fait ça, oui donc on utilise pour des cartes et enfin moi je trouve ça génial comme chose.
+
+David Leuliette (22:58.956)
+Ok.
+
+David Leuliette (23:04.064)
+Donc t'importes Core D3, c'est à l'univers entier, juste le scale. T'importes juste D3 scale, D3 scale, ok got it. Et après tu fais des maths pour...
+
+Audrey (23:07.598)
+Le scale ça va. Non non c'est scale je crois de mémoire. Ouais. Yes. Yes c'est ça.
+
+Audrey (23:22.181)
+Avec le arrêt et le style aussi, on fait des maths. Pour le coup, ce n'est pas moi qui mis en place, mais on l'utilise. Ça fait le job et assez facilement finalement. Pour le rendu de carte, c'est React Native Maps. Ça faisait partie de ma deuxième librairie parce que, elle est simple d'utilisation, on s'en sert pour rendre des marqueurs.
+
+David Leuliette (23:28.949)
+Eh oui.
+
+David Leuliette (23:34.769)
+Ok. Et la carte du coup vous... Vous utilisez quoi pour la carte ?
+
+Audrey (23:51.038)
+basique sur les cartos, des polygones, nos dessins de parcelles typiquement, pour dessiner les tracés, les Geosie-Fusion-Trax, donc c'est des polylines du coup pour ceux qui connaissent, donc enfin pareil avec une facilité de mise en place qui est quand même incroyable.
+
+David Leuliette (24:16.543)
+Oui c'est vrai que tu mets la clé API, tu mets le truc et tu termines. Alors attends, Remind me rappelle moi. Donc ça affiche bien Apple Maps sur iOS et Google Maps sur Android TESA.
+
+Audrey (24:30.819)
+Et en plus nous on a mis un layer pour le fond de carte IGN qui est aussi demandé par nos clients pour se repérer.
+
+David Leuliette (24:39.604)
+oui ! Et alors est-ce qu'il des mismatchs entre la vérité et le terrain ? Enfin tu vois, genre vous en avez souvent ça ? Parce que je sais que moi j'ai bossé en e-commerce et le truc de l'enfer c'est les points, relais, colis, machin, ça ferme tous les jours ! Et en vrai donc tout... Ouais.
+
+Audrey (24:53.89)
+Alors nous on ne vraiment que du fond de carte, on n'a pas toutes ces infos là, c'est vraiment le cadastre en fait, le fond de carte pour avoir vraiment la délimitation.
+
+David Leuliette (25:03.851)
+Ouais, donc ça change pas souvent, quoi, il n'y a pas de bugs de ouf, genre et... Ok, Ok, cool, du coup, D3 pour faire des cartes Delayed Full, React Native Map pour faire des cartes. Ok, est-ce que tu as deux autres ? Trois autres.
+
+Audrey (25:10.636)
+Bon.
+
+Audrey (25:23.954)
+J'en ai une autre, il me semble qu'elle avait été déjà mentionnée mais Turf, on s'en sert aussi nous pour la manipulation. On récupère des bounding box, donc en gros on lui dit « tiens, liste de parcelles, donne-moi la bounding box qui englobe toutes ces parcelles pour que je puisse centrer ma carte à ce niveau-là par exemple
+
+David Leuliette (25:47.038)
+Donc Turf c'est de la Advanced Geospatial Analysis for browser du coup oui c'est genre voilà voilà mon trajet, calcule-moi enfin voilà ma parcelle, calcule-moi le milieu voilà ma parcelle
+
+Audrey (25:58.766)
+Oui exactement. Donne-moi le centre de la parcelle et pareil, facilite.
+
+David Leuliette (26:03.922)
+Ouais c'est ça, ça t'évite. C'est vrai parce que j'imagine bien que, en plus c'est genre gigant... Wouah je regarde, t'as 4000 trucs. C'est genre low-dash pour les données géospatiales. C'est bien ça ?
+
+Audrey (26:12.814)
+...
+
+Audrey (26:18.574)
+Ouais non, c'est incroyable.
+
+David Leuliette (26:22.053)
+Line Slice Cluster Radius. Ils ont des noms de fous. cool, cool, Vas-y, alors du coup, tu en as une autre?
+
+Audrey (26:27.854)
+...
+
+Audrey (26:35.342)
+Non, pas spécialement. Je que c'est vraiment celles qui sortent un peu du lot dans notre utilisation propre à l'application d'Eunkarnot qui nous aide vraiment au quotidien.
+
+David Leuliette (26:49.769)
+Ouais, bah oui, tu vas pas refaire en plus des trucs déjà faits. plus, sais que j'ai... Moi, c'est pareil, quand j'ai découvert... Alors du coup, en database, il rien à voir, mais vous utilisez Pogis.
+
+Audrey (26:52.174)
+Non.
+
+Audrey (27:02.702)
+Mais du coup ça c'est pas moi qui m'occupe de cette partie là.
+
+David Leuliette (27:05.054)
+Ouais ouais, moi quand j'ai découvert que... Oui donc PostgreSQL et Database normal et en fait quand j'ai découvert qu'il PostGIS, je sais ce truc, et en fait c'est pareil que PostgreSQL mais pour les données géospatiales parce que la terre est ronde les amis donc voilà, fois que j'ai découvert ça je vais voir.
+
+Audrey (27:18.478)
+Les projections, ouais non mais pareil, enfin moi j'arrivais, je débarque après mon stage, etc. Donc en plus t'as toute la logique métier, agriculteur, qu'est que c'est une ETA, une ETV, entreprise de travaux agricoles ou hitticoles, toutes ces notions, les différents matériels, un épandeur, tu tu sors, t'as pas que des tracteurs et des moissons de la réduction.
+
+David Leuliette (27:42.957)
+oui, t'as pas une anecdote de fou là-dessus justement, sur une règle métier de DAG.
+
+Audrey (27:49.638)
+Non mais après ouais, c'est toujours rigolo quand tu fais du support et que tu traites des tickets et des pendages quoi, combien de pendeurs il a quand il déverse du caca dans son champ pour fertiliser, enfin... ouais c'est vrai que c'est un peu comique parfois.
+
+David Leuliette (28:07.91)
+Pour bien comprendre la demande, mais qu'est-ce qu'il fait là ?
+
+Audrey (28:09.614)
+Non mais c'est ça, quand tu fais les salons agricoles, tu vas te promener sur les stands et tu révises, tu fais des interrogations, ça c'est quel matériel, ça c'est quel matériel ? Ça permet aussi de visualiser un peu. Donc ouais, on va se promener dans les salons agricoles.
+
+David Leuliette (28:27.58)
+Ouais bah si bah il faut tu vois sinon ça sert à rien tu vois si t'es pas au contact de tes utilisateurs tu les aides pas parce que des trucs insignifiants pour toi pour eux ça leur change la vie en fait et c'est vraiment ça que si tu leur parles pas bah tu vas jamais savoir en fait en vrai c'est pas possible. Super super du coup alors est-ce que tu peux nous parler de comment si une feature que tu as développé parlons d'une feature que tu as développé Audrey.
+
+Audrey (28:30.604)
+Aie aie non !
+
+Audrey (28:37.144)
+Ok, on est en
+
+Oui.
+
+Audrey (28:57.112)
+Oui. Une feature que j'ai développée, il faudrait que j'en trouve une qui sorte un peu du lot. Pas évident au final. En termes de fonctionnalité, si on s'est un peu amusé à dire ok si j'ai mon téléphone dans ma poche et que j'essaye de lancer de la captation GPS, de point GPS et enfin de voir si...
+
+David Leuliette (28:57.423)
+Raconte-nous !
+
+Audrey (29:26.72)
+avec un bouton start et un bouton stop. Je lance ça et c'est parti. L'application récupère tous les points, les envoie et j'arrive à générer des interventions avec le moteur du calcul qui travaille en arrière-plan. Et ce n'était pas si évident que ça, cette gestion de captation de points GPL. De background.
+
+David Leuliette (29:46.541)
+Je comprends pas, c'est juste un bouton. Moi je suis désolé.
+
+Audrey (29:51.758)
+de background, ah mais mon application au bout de 30 minutes elle est mise en arrière-plan, ah merde je récupère plus de .gps comment je vais faire ? C'était pas évident et il a encore plein de choses plein de choses à améliorer mais ouais.
+
+David Leuliette (29:59.432)
+Bah oui oui...
+
+Audrey (30:06.878)
+Pas simple et puis pareil, façon dont les apps sont envoyés en background à iOS, Android, c'est pas pareil. Donc tu essayes avec ton device, tu pars te promener avec ta voiture, t'as lancé ton téléphone et puis tu as tout ça sur le siège passager. Puis tu vas te promener dans ton quartier et tu rentres chez toi et tu essayes de voir ce que tu as capté, si tu as généré une intervention, si tu as de la distance, etc. Donc oui, pas évident de mettre les mains là dedans.
+
+David Leuliette (30:12.5)
+bah oui !
+
+Audrey (30:32.462)
+Mais il a encore pas mal de choses à améliorer, le background, la captation.gps.
+
+David Leuliette (30:36.487)
+et
+
+David Leuliette (30:39.943)
+Et c'est quoi du coup que tu utilises pour l'expo background ?
+
+Audrey (30:43.918)
+C'était avec l'AV1, donc à la limite je vais recommencer tout au sein de l'AV2, puisqu'on a quand même pas mal de choses qui changent. Mais c'était juste de la tâche en arrière-plan qui a envoyé les points GPS par batch.
+
+David Leuliette (31:02.065)
+Avec Expo Background je pense que vous arriveriez sûrement à faire quelque chose mais après... faut...
+
+Audrey (31:05.293)
+j'avais commencé à regarder quelque chose de plus adapté, on a essayé ça, on était encore en V1, beaucoup moins de possibilités de faire quelque chose de fonctionnel, mais c'était un POC assez sympa à tester.
+
+David Leuliette (31:23.297)
+Parce que... ouais du coup là il est en prod ça fonctionne. Non.
+
+Audrey (31:27.566)
+Non, est resté sur la V1, c'était vraiment en mode pop. On aimait faire ça et essayer un peu de voir ce qui se passe.
+
+David Leuliette (31:31.313)
+Ok. Ouais ouais, steeew.
+
+David Leuliette (31:38.841)
+Oui ça a pris plus de taf que de prévu au final.
+
+Audrey (31:41.69)
+C'était en fil rouge, de voir un peu ce qu'on pouvait faire en parallèle d'autres tâches plus traditionnelles de développement, de nouvelles fonctionnalités.
+
+David Leuliette (31:47.911)
+Je sais que Racknative et Shopify, l'article qu'ils ont fait des 5 ans, eux pareil pour le background au bout d'un moment, ils avaient atteint la limite et ils ont dû faire leur propre code, code lead, nez Swift pour faire du native pour vraiment avoir accès aux tasks en background. Je ne plus pourquoi mais...
+
+Audrey (32:08.302)
+...
+
+David Leuliette (32:18.049)
+Peut-être que tu devras faire ça en plus des maths et de règne native et bah voilà tu deviendras dev, dev Android et dev iOS. C'est beau, c'est Est-ce que tu as eu d'anecdotes sur un moment difficile pendant le dev de l'app et comment vous l'avez géré ?
+
+Audrey (32:20.302)
+Bonne
+
+Non.
+
+...
+
+Audrey (32:41.422)
+Oui, dernièrement, avait des clients qui étaient déconnectés de l'application. On en a entendu parler. Non, on n'a pas trouvé. Je remets dans le contexte. On a des clients.
+
+David Leuliette (32:51.043)
+oui.
+
+Mais on n'a pas trouvé... Enfin, du coup.
+
+David Leuliette (33:00.854)
+oui, attends, faut réexpliquer, faut réexpliquer tout, exactement. bonjour, je m'appelle Didier, agriculteur, je lance l'app, boum, ça me déconnecte de façon... ça marche pas. Voilà.
+
+Audrey (33:10.92)
+Voilà, suis en train de... Alors il y a plusieurs cas et pareil, quand on a les retours clients, c'est parfois difficile en tant que tech de distinguer l'impression qu'ils ont de ce qui se passe vraiment. En plus quand ils sont dans le champ, ils ont autre chose à faire que prendre ces infos là. Donc j'avais des clients qui... Donc Android, iOS, il n'y avait pas de différence, qui étaient déconnectés parfois, donc en navigation, mais souvent c'était quand même...
+
+David Leuliette (33:27.59)
+D'accord.
+
+Audrey (33:40.49)
+au moment de relancer l'app. Elle était par exemple en arrière-plan, ils revenaient dessus et bim ils étaient déconnectés. En plus à ce moment-là on n'avait pas du tout de sauvegarde des data, c'est-à-dire qu'il fallait retapper e-mail et mot de passe. Ils avaient autre chose à faire que de retapper leur e-mail et leur mot de passe. Donc comme on ne trouvait pas le bug, dans un premier temps on s'est mis à log, donc console log c'est la vie. Donc on s'est mis à loger le côté API pour essayer d'avoir le maximum d'informations sur les devices,
+
+à quel moment ils étaient déco, les appels qui foireaient parce qu'en fait ils étaient déconnectés parce qu'ils faisaient un appel avec un token qui était révoqué. Donc ça marchait moins bien. Donc on a logué et puis en fait on n'a pas trouvé un pattern de dire ok ça se passe pas bien parce que on voyait ce qui se passait, on sentait un peu le truc mais en fait ça on en savait pas plus quoi.
+
+David Leuliette (34:40.069)
+Et du coup c'était avec quoi que vous remontiez les logs d'erreurs ?
+
+Audrey (34:43.406)
+On avait développé une API de tracking juste pour ça, pour récupérer ça parmi d'autres infos, pour essayer de voir un petit peu ce qui se passait. puis, au bout d'un moment, j'avais pas d'idée. Une pression client, qui est entièrement compréhensible. Donc en fait, je ne sais pas, je ne sais plus. Donc ce qu'on a fait déjà pour...
+
+David Leuliette (34:47.511)
+Ok, on interne, ok.
+
+David Leuliette (35:02.543)
+Ouais bah oui, plutôt tu te sens désemparé, genre... Je veux bien t'aider mais j'arrive pas à le refaire.
+
+Audrey (35:11.85)
+alléger un peu la souffrance, c'est qu'on a mis un petit truc, ce souvenir de moi qui au moins gardait l'adresse mail pour pouvoir déjà souléger un petit peu le client, mais ça n'empêchait pas les déconnexions. la technique de base pour, d'après nous, résoudre le souci. Alors après, on est là dans une période creuse. Nous, on fonctionne beaucoup en termes de saisonnalité. On a quand même nos clients qui bossent pas trop là dans les champs, ça reprend tout doucement. Donc on en saura plus un petit peu.
+
+dans les mois qui suivent, on s'est mis autour de la table avec l'équipe Tech qui viennent d'horizons différents, qui n'ont pas forcément de connaissances mobiles, mais fait ça nous a permis de reprendre un peu les bases, de revoir ça avec des regards différents. Et il se peut qu'on ait résolu le souci en faisant au niveau du refresh token, on force le flush parce qu'on utilise Async Storage pour la gestion du token, et en fait jusqu'à présent on forçait pas le flush et on se demande si...
+
+Au la listing storage, la mise en place du nouveau token, quand il est récupéré, fait, l'utilisateur n'utilisait plus l'app, elle passait soit en background, et il devait y avoir quelque chose comme ça qui faisait que le token n'était pas remis dans la listing storage. Et donc, au nouveau lancement de l'app, on faisait une réédition du store Redux avec l'ancien token qui avait été révoqué par la PII de Financier.
+
+David Leuliette (36:36.856)
+Hmm?
+
+Audrey (36:40.03)
+Donc ce qui nous a permis finalement de croiser les doigts, mais on est quand même assez confiant sur le sujet, c'est de nous mettre autour d'une table avec plein de profils tech différents, dev différents, avec des informations sur les choses, et voilà, avec un petit flush du token dans la SYNC Store.
+
+David Leuliette (36:50.84)
+oui.
+
+David Leuliette (37:00.366)
+Ouais, si, carrément, c'est ça les trucs classiques entre guillemets de... cache ne s'invalide pas, ça c'est les trois grands problèmes de programming, ça nommait le nommage des variables, la validation du cache, la base.
+
+Audrey (37:14.254)
+Non mais... façon j'aurais dit moi j'ai plus d'idées si on trouve pas là, moi je ne plus quoi faire. Je ne sais plus. Et puis non on a fait ça et...
+
+David Leuliette (37:21.144)
+Ouais, ouais, ouais...
+
+David Leuliette (37:25.08)
+Et attends, du coup ça a été mis, alors du coup ça n'arrive plus. Ou tant ça, tu sais pas encore.
+
+Audrey (37:29.742)
+Les clients qu'on a recontactés n'ont plus le souci, mais moi je ne dis que ceux qui croisent les doigts et attendent vraiment d'avoir le panel.
+
+David Leuliette (37:33.539)
+Ouais.
+
+David Leuliette (37:39.136)
+Ouais ouais c'est ça, vu que tu sais pas. Et en plus si tu sais pas comment... si !
+
+Audrey (37:43.502)
+Et il en a qui que les déconnexions en plus, ça n'arrive pas tout le temps. J'ai mon compte sur mes deux téléphones, je suis déconnectée sur l'iPhone mais pas sur Android. Et c'était hyper frustrant. Moi pendant plusieurs semaines, pendant que je faisais du dev de fonctionnalité, j'ai forcé l'expiration de mon token toutes les 90 secondes.
+
+David Leuliette (37:48.833)
+Ouin.
+
+David Leuliette (37:54.07)
+bah oui, bah non mais ça c'est... Ouais ouais ça c'est...
+
+Audrey (38:10.03)
+Je me suis dit, voilà, moins pour essayer de reproduire, à aucun moment j'ai été déconnectée par exemple.
+
+David Leuliette (38:15.684)
+Oui oui non mais ça c'est classique genre c'est pareil c'est une vieille version d'android qui fait que comme par hasard il a un truc et que le mec qui met pas à jour son android mais qu'en fait il a la dernière version quand même et bah
+
+Audrey (38:24.334)
+Au bout de plusieurs mois de... parce que ça pèse mine de rien tu dis mais... ça reste dans un coin de ta tête et tu dis bah oui je sais à chaque remontée tiquets support bah oui je sais mais je ne sais pas comment t'es dit donc ouais
+
+David Leuliette (38:31.167)
+Ouais c'est clair, tu pètes un câble, ça rend fou.
+
+David Leuliette (38:39.491)
+Ouais ouais, je vois. Du coup, au-delà du console.log, qu'est-ce que tu conseillerais à la Audrey qui fait son étude de maths là, en debug React Native ? Je pense que...
+
+Audrey (38:52.887)
+M'aie.
+
+Audrey (38:57.518)
+Ben moi, avec la V2, réacto trop. me... Alors, il faut savoir que pendant la V1, à la V1, j'avais le console log dans le code et dans la console. Le repo était tellement... Je vais pas aller le dire jusqu'à verrouler, mais on avait tellement de modifs, etc., pas moyen de lancer les réacteurs.
+
+David Leuliette (39:01.493)
+ouais, Reacto Throne ! Allez ! C'est le moment infinite raid, c'est parti ! À chaque épisode on parle de... Vas-y explique ce que c'est Reacto Throne.
+
+Audrey (39:26.99)
+devtools pas moyen. Donc j'avais mon terminal, mon console log et débrouille toi ! Avec des consoles log, des retours API pareil parce que du coup j'avais pas d'infos des retours API, enfin des payloads c'était vraiment compliqué. Et là du coup, React Tron quand même. en plus j'ai le plugin Redux donc j'ai connaissance de mon site.
+
+David Leuliette (39:39.831)
+Ouais.
+
+David Leuliette (39:49.525)
+Oui, bah oui, ça c'est... Oui, c'est que c'est trop bien.
+
+Audrey (39:53.07)
+Quand tu passes de ton terminal, ton console log à ça, enfin c'est jour et la nuit, donc j'ai connaissance de mon store, j'ai mes logs, mes consoles logs qui peuvent passer, mais tous les appels API qui passent avec le payload, la response, ça me saoule la vie.
+
+David Leuliette (40:00.866)
+...
+
+David Leuliette (40:12.458)
+Oui t'as tout en plus tu peux faire replay, t'as back in force history, t'as... Oui non c'est vrai que c'est super moi j'utilise plus trop en ce moment parce que... Bah je sais pas de Redux en fait en vrai. Mais c'est vrai que quand tu fais du Redux tu utilises Ractotron c'est... ouais en fait... Le jour et la nuit. Quoique maintenant avec les nouveaux... dev tools d'Expo vu que maintenant t'as accès à...
+
+Audrey (40:14.974)
+Oui. Merci.
+
+Audrey (40:23.886)
+Bye !
+
+oui, franchement,
+
+Audrey (40:34.926)
+Oui.
+
+David Leuliette (40:39.528)
+Faudra voir en fait comment ça se comporte mais je pense que ce sera quand même le plus parce que c'est optimisé, c'est fait pour ça en fait en vrai, Ractotron. Du coup je pense pas que vous allez devoir changer... devoir changer.
+
+Audrey (40:44.6)
+Hum.
+
+Oui, puis là je trouve que ça marche vraiment bien. Tu peux connecter plusieurs apps en même temps, en parallèle. C'est cool quoi.
+
+David Leuliette (41:00.098)
+Et du coup on n'a pas du tout parlé mais la version web c'est carrément une autre team, un autre projet où ça communique entre les deux.
+
+Audrey (41:06.574)
+C'est plutôt mon collègue qui s'en occupe. Moi, je suis plutôt sur l'app mobile. Mais n'empêche que avec la V2, lui aussi peut venir bosser sur l'app mobile. Notre app Front, c'est du React et c'est vraiment un autre stack, un autre épau.
+
+David Leuliette (41:09.954)
+Ouais. Ouais.
+
+David Leuliette (41:28.735)
+oui, c'est deux repos différents, ça ne communique pas trop entre les deux. Mais du coup, est-ce que tu as dû gérer des différences iOS Android ?
+
+Audrey (41:30.094)
+Oui, mais pas du tout.
+
+Audrey (41:39.052)
+Alors dans ce qu'on fait dans l'app, pas vraiment, c'est plutôt en termes de paradigme, c'est-à-dire je pensais, parce que j'ai bossé dessus cette semaine, les permissions où on a une petite différence Android, mais du coup la libre React Native Permissions, ça permet un peu de faire abstraction de toutes ces différences assez facilement. Sinon, franchement, on n'a pas de grandes questions iOS Android au sein de notre app.
+
+David Leuliette (41:48.801)
+Oui. Oui.
+
+David Leuliette (42:07.602)
+Native Permissions de Mathieu ZoonTech. C'est celle-là que tu utilises ? Tu utilises pas le truc d'expo, tu utilises celle-là.
+
+Audrey (42:11.375)
+Oui, c'est celle que j'utilisais dans la V1.
+
+David Leuliette (42:17.781)
+Ouais parce qu'il n'y avait pas... oui il n'y avait pas, normal. Ouais exactement, en vrai carrément. En plus les permissions c'est tellement chiant, à chaque fois que j'en fais moi je fais de la merde c'est sûr parce que...
+
+Audrey (42:19.854)
+Ne pas flonger ce qui fonctionne !
+
+Audrey (42:28.024)
+Ouais, en plus le fail... Non mais pareil, m'est arrivé la même chose cette semaine. Sur iPhone, quand tu n'as pas encore donné permission, t'as pas le réglage dans les paramètres de l'application, au sein de l'iOS. Donc ouais, le fail. Mais bon, maintenant je sais, tu vois.
+
+David Leuliette (42:48.086)
+Ouais.
+
+David Leuliette (42:52.482)
+Ouais mais t'auras oublié dans deux mois, t'auras oublié et puis ça aura changé parce qu'il une nouvelle version d'iOS et puis iOS 19 qui va changer les trucs et puis en fait ce sera plus pareil et puis tu vas, ouais en fait j'étais certain que c'était ça. Non mais non, permission au gros sujet quoi. Donc c'est vrai que si tu peux utiliser ça au moins c'est une API unifiée, tu sais à peu près comment ça marche.
+
+Audrey (42:57.102)
+...
+
+David Leuliette (43:17.785)
+Donc ok, donc en fait, bosser sur la stack recreative, c'est ta seule expérience de développeuse professionnelle.
+
+Audrey (43:30.912)
+Oui, si on met en parenthèse le MVP pendant mon stage, ouais.
+
+David Leuliette (43:37.121)
+Ouais mais c'était du rack native aussi.
+
+Audrey (43:38.794)
+Oui, en app mobile, du coup j'ai fait que du réact.
+
+David Leuliette (43:46.273)
+Alors attends, du coup, tu es expert, c'est expert React Native en fait, vrai. Tu n'as fait que ça. Bah si, parce que techniquement, si tu prends ton intérêt de vie de développeur, de software engineer, tu n'as fait que ça. Donc, tu es plus expert que quelqu'un qui en a fait six mois, tu vois, mais qui a 15 ans de dev dans une autre technologie.
+
+Audrey (43:49.454)
+Je ne les réconseillerai pas jusqu'à là.
+
+Je n'allais pas jusque là.
+
+Audrey (44:09.262)
+...
+
+David Leuliette (44:13.921)
+Mais alors comment tu fais pour vous... tu veux maintenir à jour ? Parce que ça change quand même beaucoup. Au delà de faire des salons d'agriculture qui sont somme toute très bien.
+
+Audrey (44:23.769)
+Oui. Oui. Qui m'aide pas trop dans ma tete. Oui. Ben du coup, forcément. J'essaie de tenir à jour sur les confs et puis d'essayer de faire un replay, de trouver les replays des confs.
+
+David Leuliette (44:43.84)
+C'est vrai que souvent ils sont online soit à le streaming direct soit à le replay des fois un ou deux mois après
+
+Audrey (44:45.432)
+Ouais, trouve que ça mène pas mal. Je suis un peu difficilement le Discord Expo Developers. C'est tellement plein d'axes, c'est blindé. Il y a le chain announcement qui permet de suivre un petit peu les premières choses.
+
+David Leuliette (45:00.412)
+ouais, impossible !
+
+David Leuliette (45:08.928)
+Ouais.
+
+Audrey (45:11.234)
+Mais j'avoue qu'il y tellement d'infos là dedans, tellement de fils de discussion, enfin c'est compliqué, mais bon.
+
+David Leuliette (45:16.244)
+oui c'est Overwhelming. Moi je ferais FR en fait ça dépend. Avant il était sur le forum, je trouvais que c'était bien. Et maintenant ils ont migré sur Discord parce qu'en maintenir etc. Ils sont pas à 50 000 non plus chez Expo donc voilà. C'est vrai que ça makes sense parce que Discord c'est quand même un outil incroyable. Mais pareil, moi chaque fois que je Discord c'est bonjour, vous avez 40 000 messages non lus. Alors déjà ça m'angoisse.
+
+Audrey (45:28.142)
+Merci.
+
+Audrey (45:34.318)
+J'ai coupé, j'ai muté, je vais chercher l'info quand je veux parce que...
+
+David Leuliette (45:48.64)
+Ouais c'est ça. Ah non j'ai ouvert c'est 1860 et si je joue Expo il en a 42 non lus et là je suis ouah au score. Ouais ouais si ça va ça ça va. Mais ouais je suis pas trop pareil, je... pas le time. suis trop...
+
+Audrey (45:55.182)
+Ça va carrément.
+
+Audrey (46:04.378)
+ouais non. après, il y a Medium aussi, quelques articles là sur Medium, je reçois un peu les news. Il y a des articles qui peuvent être intéressants parfois des points de vue.
+
+David Leuliette (46:13.887)
+Oui.
+
+David Leuliette (46:19.04)
+Ouais parce qu'avant le blog d'Expo ils étaient sur Medium. Maintenant ils ont migré, ils sont sur leur propre solution Expo avec Expo router. Ils ont fait leur propre blog pardon, avec Expo router. Et ils mettent leurs articles de blog comme ça. Mais je ne sais plus s'ils cross-publish. Je crois qu'ils ont peut-être tout migré, je ne sais pas. Je sais pas dire, je ne pas 100 % sûr. Mais ok, bonne source Medium aussi. C'est vrai que ça fait longtemps que je n'ai pas lu l'article Medium.
+
+Audrey (46:26.766)
+Mmh.
+
+David Leuliette (46:48.895)
+crois que c'est parce que je paye plus et du coup j'ai un paywall et ça me rouche mais j'ai payé médium pendant de nombreuses années. Genre pourquoi j'ai arrêté je ne sais pas plus le temps en fait c'est ça j'ai plus le temps moi de... j'ai pas le temps de me tenir à...
+
+Audrey (47:01.71)
+Non mais c'est ça, après c'est compliqué, enfin la veille comme tu dis ça bouge beaucoup et quand t'as un peu la tête dans le guidon et c'est pas... enfin je sais que moi faut que je me fasse un peu violence pour justement dire je me dégage du temps et... attends je suis pas en mode...
+
+David Leuliette (47:18.851)
+oui, bah oui, oui, c'est sûr. Moi c'est pour ça que je vais en conférence, je me force et après j'ai pris le billet, puis après je obligé d'y aller. C'est trop tard.
+
+Audrey (47:23.31)
+Le Devleel, tout ça, ça permet aussi de rencontrer des gens, même s'il a pas beaucoup de confériat native au Devleel.
+
+David Leuliette (47:35.507)
+Ah au DevFest Lille ? ouais non y'en aura pas trop. Bah en fait c'est plus Haute Techno, Java, machin... Y'en aura pas trop en fait en Rack Native. veux pourquoi je... Enfin localement en fait c'est ça quoi. Après sur Paris y'a des meet-up assez spécialisés sur Londres et tout ça. après si y'avait Bordeaux. Rack Native Bordeaux ? Je sais pas. Mais après c'est compliqué parce que pas tout le monde fait du mobile déjà et pas tout le monde fait du Rack Native donc sur des petits files moyenne size c'est un peu compliqué mais...
+
+Audrey (47:40.398)
+Bon,
+
+Audrey (47:48.014)
+Oui.
+
+David Leuliette (48:02.846)
+y a toujours moyen de trouver des trucs. Sinon, announcement, il a la React Native Connection qui est bientôt à Paris. Ça se fait sur une journée, franchement, on prend le train de n'importe où. Paf ! Moi j'y serais avec Mathis. On fera gagner une place. suivez l'activité... Mon activité sur Twitter et ou BlueSky, je ne sais pas encore trop. que je m'en occupe. D'ailleurs c'est... Attends, c'est bientôt ? C'est quand ? C'est quand, c'est quand ?
+
+Audrey (48:07.598)
+...
+
+David Leuliette (48:34.49)
+1er avril, 1er 2 avril, c'est le 2 avril. Oh ça va on est large, j'ai encore... Ah ouais mais faut que je m'en occupe. Oui, bon bah soon, soon soon soon. Ok. Et donc si en 2025 tu devrais faire un nouveau projet, qu'est-ce que... ce serait quoi ton meilleur conseil ?
+
+Audrey (48:48.206)
+Oui.
+
+Audrey (48:51.924)
+Expo ! Non mais c'est vrai, je veux dire si tu fais un projet avec Native...
+
+David Leuliette (48:53.374)
+Merci.
+
+David Leuliette (48:58.846)
+Ça a changé quoi dans ton day to day work ?
+
+Audrey (49:03.726)
+...
+
+David Leuliette (49:03.804)
+Tout le monde dit, vois, c'est incroyable, en vrai, pourquoi ?
+
+Audrey (49:08.334)
+C'est aussi pas vraiment lié à l'application Carnote à la V1, on ne pas installer... Tu clonnais le repo de la V1, c'était impossible. tourner, si j'avais configuré pour que ça tourne chez moi, en fait il y avait tellement de patchs depuis beaucoup d'années que mon collègue par exemple était incapable de le faire tourner chez lui sans faire de modifs. Mais s'il faisait ses modifs, ça tournait plus chez moi. C'est horrible.
+
+David Leuliette (49:35.472)
+Ouais ouais, non mais ça c'est typiquement dependency hell où t'as...
+
+Audrey (49:37.582)
+C'est horrible. il a tourné le repo, petit NPX Expo Start et en avant c'est parti quoi.
+
+David Leuliette (49:44.477)
+Oui, c'est ça, les gens se rendent pas compte parce que genre j'ai pas la bonne version de Ruby donc les bundles GM elles marchent pas et puis du coup voilà mais ça après alors après sinon si tu étais chez Microsoft et que tu as une team de ouf tu utilises RN, RNX Toolkit et ça ça permet de perdre, tu sais pas ça RN Toolkit Microsoft
+
+Audrey (49:49.795)
+en même temps.
+
+David Leuliette (50:14.621)
+Surface Toolkit, je ne sais plus, Rack Native qui permet aussi de RNX Kit, et qui permet justement de gérer ce truc là, de ce dependency management pour être sûr que si tu utilises une version Vanilla de Rack Native au moins ça marche sur toutes tes machines. Mais eux forcément ils ont fait ce projet là parce qu'ils ont des milliards de machines, enfin des milliards, des milliers.
+
+Audrey (50:24.334)
+Oui.
+
+David Leuliette (50:44.413)
+Mille de développeurs agnés chez Microsoft ? Plusieurs centaines, on va dire ça. du coup, ça permet au moins de gérer ce pinpoint là. Mais t'as toujours pas fait de build, t'as toujours pas... T'as toujours pas fait tout ça, quoi. Genre... première fois... Je crois que je faisais pareil, la première fois, je vous ai montré, mais oui, vous pouvez faire avec Expo Orbit, boum, vous faites un build et c'est l'autre personne qui peut le récupérer.
+
+Audrey (51:06.21)
+Oui, ça c'est pareil. Exactement. Il n'y a pas photo quoi. Quand tu as testé, tu ne reviens pas en arrière.
+
+David Leuliette (51:10.045)
+Merci quoi.
+
+David Leuliette (51:15.988)
+Ah ouais ça c'est clair, ça j'avoue, moi j'avais fait, en fait j'avais commencé sur Expo, mais genre du vieux Expo du SDK32 je crois, c'est déjà incroyable, après j'avais refait du Rack Native normal et j'ai fait ah ouais non mais en fait la productivité elle est divisée par deux quoi limite, mais bon c'est déjà setup et tout.
+
+Audrey (51:38.446)
+J'ai déjà vu la différence pendant mon stage, donc l'app de voyage, enfin de tourisme. J'avais utilisé Expo, l'Expo de 2020, donc rien à voir avec le Expo 2025. Donc quand je suis arrivée chez Carnot et qu'on n'aille pas, je dis mais vous n'avez pas Expo ? Non, Ah ! Mais c'est parti.
+
+David Leuliette (51:47.356)
+Ah oui, ok ouais. Ouais.
+
+David Leuliette (51:58.268)
+...
+
+David Leuliette (52:02.3)
+Et ça marche ! Ouais ouais, si, en vrai faut pas dire que c'était pas bien, s'est dit juste que c'était des solutions différentes et puis c'est ça en fait l'écosystème il a vraiment changé, maturé...
+
+Audrey (52:13.102)
+Exactement, pense pas que à l'époque, tu vois, 2018, notamment avant 2022, je dirais, tout ce qui était fait dans l'app Carnot, enfin Expo, je pense que c'était pas la bonne solution. là on se retrouve, mais parce que l'écosystème a beaucoup changé.
+
+David Leuliette (52:19.836)
+Ouais. oui.
+
+David Leuliette (52:27.939)
+Ouais c'est ça.
+
+David Leuliette (52:31.864)
+Ils ont réécrit tout, je sais pas si je demanderais à mais je crois qu'ils ont tout réécrit de multiples fois, je ne sais pas, je demanderais à Evan quand je le capterais. Est-ce qu'il a un sujet que tu aurais aimé qu'on aborde, qu'on n'a pas vu ?
+
+Audrey (52:51.086)
+Non, pas spécialement.
+
+David Leuliette (52:55.645)
+Ben moi oui ! Les boîtiers connectés là, alors c'est le firmware et tout, ça fonctionne ? Est-ce que vous... C'est quoi l'anecdote que tu as sur les... Parce que l'app est... non, elle n'est pas connectée au boîtier ?
+
+Audrey (52:57.55)
+...
+
+Audrey (53:10.19)
+L'appel s'occupe de rendre les informations en gros les boîtiers envoient des points GPS nous on les traite avec notre le moteur de calcul et
+
+David Leuliette (53:21.244)
+Je pensais que l'app mobile était quand même connecté somehow à pas du tout.
+
+Audrey (53:24.334)
+Non, non, Nous on s'occupe vraiment de rendre de la donnée
+
+David Leuliette (53:32.028)
+Ok, et les petits boîtiers, ça envoie de la data. Comment ça envoie de la data du coup
+
+Audrey (53:36.376)
+Oui, GPS, attends, les petits boîtiers, j'en ai un là. Les petits boîtiers, sont quand même comme ça. c'est sur un tracteur,
+
+David Leuliette (53:41.052)
+Ah bah voilà, super, on va voir montrer.
+
+Oui, c'est bon, c'est sur un tracteur pour les gens, ne se rendent pas compte en audio, ça fait un gros clavier. Ça fait un clavier dans un... Ça fait 3, 4, 5 claviers empilés.
+
+Audrey (53:54.488)
+Oui, oui ça envoie donc .gps et nous en fait le client a créé ses matériels il dit voilà telle carnaut avec tel numéro de série il est associé à mon tracteur A, c'est le chauffeur Jean-Michel qui va conduire avec et puis nous on a la détection de parcelles grâce aux données qu'on récupère côté gouvernement.
+
+Donc on a la détection des parcelles du client qui l'a potentiellement déjà enregistrée, a des parcelles anonymes et puis du coup on génère des interventions et sur nos apps du coup les clients retrouvent tel jour de telle heure à telle heure, mon chauffeur Jean-Michel a travaillé avec tel tracteur, il a fait tel tracé sur la carte, j'ai bossé dans tel et tel parcelles qui appartiennent à tel et tel client. Du coup on génère comme ça des interventions et après ça peut servir aussi à la facturation.
+
+David Leuliette (54:46.799)
+ouais ok, d'accord c'est une solution 360 comme dirait les gens, nos amis du marketing. Cool, super. Est-ce que tu as une recommandation d'une personne que je devrais inviter ici ?
+
+Audrey (54:51.886)
+pour nous.
+
+Tout à fait.
+
+Audrey (55:07.374)
+Alors tu as spoilé un petit peu tout à l'heure parce que c'était... Oui j'avoue que... Alors je ne connais pas du tout mais enfin je pense qu'on utilise, on a tous utilisé une de ces librairies pour mettre au sein de nos apps et enfin je trouve, j'aimerais bien avoir son point de vue et...
+
+David Leuliette (55:10.485)
+non, c'est Mathieu !
+
+David Leuliette (55:30.725)
+Oui parce que c'est vrai qu'il fait plein de... oui non mais c'est pour ça ! Ok carrément ! Mathieu il faut que tu viennes à KaZoonTech et que tu nous dises comment on prononce ton nom de famille. Big up à toi si t'écoutes cet épisode ! Oui parce que c'est vrai qu'il y a plein de... En fait le truc je l'ai croisé au moins plein de fois mais à chaque fois je connecte pas... Qui sait parce que... Parce que tu les avatars des fois c'est une fois que t'as pas...
+
+Audrey (55:37.902)
+Bon, allez, on peut commencer.
+
+...
+
+Audrey (55:59.16)
+Oui, mais non, il y a un autre.
+
+David Leuliette (56:00.635)
+Une fois que tu as vu la personne en vrai, c'est toi ! vois carrément qui t'es. Mais cool. Je note, ce sera avec plaisir que je l'invite ici, qu'il vienne nous parler. Et là, il bâche chez Swann. C'est une bank. Non, c'est une API de banque. Il me semble. API de banque en ligne. Ok, super.
+
+Du coup, où est-ce qu'on peut te retrouver si les gens veulent savoir plus sur les mathématiques et où ?
+
+Audrey (56:34.158)
+LinkedIn, Blue Sky, même si je reconnais que je ne pas très active aux réseaux sociaux, mais je répondrai avec plaisir et je devrais très vite.
+
+David Leuliette (56:37.465)
+et ou des trois.
+
+David Leuliette (56:48.314)
+Attends c'est blue sky c'est quoi le blaz sur blue sky ? Shinelia.blue sky vous serait chez Audrey Audrey wesh on dit comment Audrey wesh ? Non avec Audrey wesh n'importe quoi
+
+Audrey (56:52.302)
+Je ne sais plus, Chanelia, c'est mon... Ouais.
+
+Audrey (57:03.473)
+VEC. Non mais, enfin je veux dire, la plupart des gens disent ça mais c'est pas... tu prononces pas assez. Oui. Oui. Une bonne questionnance allemande. Comment ?
+
+David Leuliette (57:08.312)
+merde !
+
+David Leuliette (57:12.946)
+Eh, de f'nor, nous de f'nor nous on dit wesh. Ah ouais t'as dû être traumatisé pendant ton enfance. qu'à l'Anse, toute ta scolarité à l'Anse ça devait être un enfer non ? Non ? T'avais pas Audrey Wesh je sais pas quoi ? ? Bon ça va. Ok cool. C'est que moi, moi c'est parce que je 62 du coup forcément. Mais euh... Ah oui c'est vrai ! Ah bah oui c'est vrai ! Ohlalalala.
+
+Audrey (57:24.43)
+Non, non non non !
+
+Non, ça non.
+
+Audrey (57:38.552)
+Ok ?
+
+David Leuliette (57:40.282)
+Heureusement que c'est la fin d'épisode, parce que là on peut fuir. Donc shinella.bouskai.social, je mettrai le lien dans les notes de l'émission. Sinon sur LinkedIn, super. Et moi, c'était David Leliette, on me retrouve flexbox sur les internets un peu partout, en vous espérant que vous avez passé un super épisode entre nous. Moi en tout cas, trop bien, c'était la première developers. Du coup, c'est bien.
+
+Je suis trop fier de ça, vois pour l'instant on va essayer de contenir ça, va avoir aussi Delphine qui va venir normalement, trop cool. Il nous faut plus de développeuse aussi. Allez, et bien en tout cas merci beaucoup et à la prochaine tout le monde, ciao !
+
+Audrey (58:17.598)
+Super. Merci pour la question.
+
+...
+
