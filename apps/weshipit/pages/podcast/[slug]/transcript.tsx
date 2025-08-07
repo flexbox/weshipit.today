@@ -27,7 +27,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   const paths = podcastEpisodes
     .filter((episode) => {
-      const transcriptFile = `${episode.slug}-transcript.txt`;
+      const transcriptFile = `${episode.slug}.txt`;
       return transcriptFiles.includes(transcriptFile);
     })
     .map((episode) => ({
@@ -71,7 +71,7 @@ export const getStaticProps: GetStaticProps<
   const transcriptPath = path.join(
     process.cwd(),
     'public/podcast-transcripts',
-    `${slug}-transcript.txt`,
+    `${slug}.txt`,
   );
 
   if (fs.existsSync(transcriptPath)) {
