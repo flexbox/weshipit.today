@@ -107,37 +107,41 @@ export default function PodcastEpisodePage({
           </div>
           <div className="bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900 rounded-2xl p-8 mb-8">
             <div className="flex flex-col lg:flex-row lg:items-start lg:gap-8">
-              <div className="flex-shrink-0 mb-6 lg:mb-0">
-                <img
-                  src={episode.companyLogo}
-                  alt={`Logo ${episode.name}`}
-                  className="w-24 h-24 rounded-xl object-cover shadow-lg"
-                />
-              </div>
-              <div className="flex-1">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
-                    Épisode {episode.number}
-                  </span>
-                  <span className="text-sm text-slate-500 dark:text-slate-400">
-                    Podcast
-                  </span>
+              <div className="flex-1 lg:order-1">
+                <div className="flex items-start justify-between gap-6">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3 mb-4">
+                      <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+                        Épisode {episode.number}
+                      </span>
+                      <span className="text-sm text-slate-500 dark:text-slate-400">
+                        Podcast
+                      </span>
+                    </div>
+                    <Text as="h1" variant="h2" className="mb-3">
+                      {episode.name}
+                    </Text>
+                    <Text
+                      variant="s1"
+                      className="text-slate-600 dark:text-slate-300 mb-6"
+                    >
+                      avec{' '}
+                      <span className="font-semibold">{episode.guestName}</span>
+                    </Text>
+                    <div
+                      ref={contentRef}
+                      className="text-slate-700 dark:text-slate-200 leading-relaxed prose prose-slate dark:prose-invert max-w-none prose-a:no-underline prose-a:text-blue-600 hover:prose-a:text-blue-700 dark:prose-a:text-blue-400 dark:hover:prose-a:text-blue-300"
+                      dangerouslySetInnerHTML={{ __html: episode.description }}
+                    />
+                  </div>
+                  <div className="flex-shrink-0">
+                    <img
+                      src={episode.companyLogo}
+                      alt={`Logo ${episode.name}`}
+                      className="w-24 h-24 rounded-xl object-cover shadow-lg"
+                    />
+                  </div>
                 </div>
-                <Text as="h1" variant="h2" className="mb-3">
-                  {episode.name}
-                </Text>
-                <Text
-                  variant="s1"
-                  className="text-slate-600 dark:text-slate-300 mb-6"
-                >
-                  avec{' '}
-                  <span className="font-semibold">{episode.guestName}</span>
-                </Text>
-                <div
-                  ref={contentRef}
-                  className="text-slate-700 dark:text-slate-200 leading-relaxed prose prose-slate dark:prose-invert max-w-none prose-a:no-underline prose-a:text-blue-600 hover:prose-a:text-blue-700 dark:prose-a:text-blue-400 dark:hover:prose-a:text-blue-300"
-                  dangerouslySetInnerHTML={{ __html: episode.description }}
-                />
               </div>
             </div>
           </div>
