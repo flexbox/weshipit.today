@@ -1,6 +1,7 @@
 import React from 'react';
 import { TranscriptEntryType } from '../utils/transcript';
 import { TranscriptEntry } from './transcript-entry';
+import { Prose, Text } from '@weshipit/ui';
 
 export function Transcript({
   entries,
@@ -10,14 +11,17 @@ export function Transcript({
   spotifyLink?: string;
 }) {
   if (!entries || entries.length === 0) return null;
+
   return (
     <section className="max-w-4xl mx-auto">
-      <h2 className="text-2xl font-bold mb-4">Transcript de l'épisode</h2>
-      <div className="bg-slate-50 dark:bg-slate-900 rounded-xl p-6 overflow-x-auto text-sm text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">
+      <Text as="h2" variant="h4" className="mb-6">
+        Transcript de l'épisode
+      </Text>
+      <Prose>
         {entries.map((entry, idx) => (
           <TranscriptEntry key={idx} entry={entry} spotifyLink={spotifyLink} />
         ))}
-      </div>
+      </Prose>
     </section>
   );
 }
