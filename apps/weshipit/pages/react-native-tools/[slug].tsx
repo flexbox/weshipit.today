@@ -3,7 +3,6 @@ import {
   TagList,
   Text,
   ToolCardLogo,
-  ToolWebsitePreview,
   ToolTypeBadge,
   Card,
   CallToActionCards,
@@ -20,11 +19,7 @@ import isNil from 'lodash/isNil';
 import take from 'lodash/take';
 import ChevronLeftIcon from '@heroicons/react/20/solid/ChevronLeftIcon';
 
-export function ReactNativeSlugPage({
-  recommendedRecords,
-  record,
-  screenshotAccessKey,
-}) {
+export function ReactNativeSlugPage({ recommendedRecords, record }) {
   if (record === undefined || record.fields === undefined) {
     return (
       <Layout
@@ -132,10 +127,6 @@ export function ReactNativeSlugPage({
 
           <div className="col-span-1 md:col-span-4">
             <div className="flex flex-col gap-4">
-              <ToolWebsitePreview
-                url={website_url}
-                accessKey={screenshotAccessKey}
-              />
               <Button
                 href={website_url}
                 variant="outline"
@@ -192,8 +183,6 @@ export function ReactNativeSlugPage({
 }
 
 export async function getServerSideProps({ query, res }) {
-  const screenshotAccessKey = process.env.APIFLASH_ACCESS_KEY;
-
   try {
     const { slug } = query;
     const records = tools.records;
@@ -215,7 +204,6 @@ export async function getServerSideProps({ query, res }) {
       props: {
         recommendedRecords,
         record,
-        screenshotAccessKey,
       },
     };
   } catch (error) {

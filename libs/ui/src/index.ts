@@ -41,7 +41,6 @@ export * from './lib/tool-list/tool-card-logo';
 export * from './lib/tool-list/tool-card';
 export * from './lib/tool-list/tool-list';
 export * from './lib/tool-list/tool-type-badge';
-export * from './lib/tool-list/tool-website-preview';
 export * from './lib/count-up/count-up';
 export * from './lib/statistics-grid/statistics-grid';
 export * from './lib/feature-grid/feature-grid';
