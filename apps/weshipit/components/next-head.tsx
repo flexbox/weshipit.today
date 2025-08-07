@@ -88,7 +88,12 @@ export function NextHead({
         <meta
           name="image" // this is for LinkedIn preview https://github.com/garmeeh/next-seo/issues/1311
           property="og:image"
-          content={`/api/og?title=${encodeURI(ogImageTitle)}`}
+          content={
+            ogImageTitle?.startsWith('/api/') ||
+            ogImageTitle?.startsWith('http')
+              ? ogImageTitle
+              : `/api/og?title=${encodeURI(ogImageTitle)}`
+          }
         />
         <meta property="og:image:type" content="image/png" />
         <meta

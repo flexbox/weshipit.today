@@ -135,6 +135,7 @@ export default function PodcastEpisodePage({
     <Layout
       seoTitle={`${episode.name} avec ${episode.guestName} — Le Cross Platform Show Podcast`}
       seoDescription={episode.description}
+      ogImageTitle={`/api/podcast-og?title=${encodeURIComponent(episode.name)}&guest=${encodeURIComponent(episode.guestName)}&episode=${episode.number}&type=podcast`}
       withHeader
       withContainer
     >
