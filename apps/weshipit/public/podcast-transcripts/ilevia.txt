@@ -1,0 +1,1550 @@
+David Leuliette (00:00.911)
+C'est bon, y a 2-3 temps de latence le temps que ce retrouver là et du coup c'est bon.
+
+Max (00:04.833)
+Nickel.
+
+David Leuliette (00:07.406)
+Bonjour et bienvenue sur le Cross Platform Show, le podcast qui parle développement d'applications mobiles avec RecNative. suis David, développeur chez Wishy Pitty Today. Nous sommes en avril 2025, la température extérieure est de 14 degrés. Ça a remonté depuis hier hier, c'était 11 degrés. On a un record dans les Hauts-de-France, plus de soleil et plus de de chaleur. Du coup, je suis avec Maxime. Est-ce que tu peux te présenter à la communauté ?
+
+Max (00:34.049)
+Salut, moi c'est Max, en général on m'appelle Max, il que ma mère en colère qui m'appelle Maxime. C'est ça, donc moi c'est Max, j'habite à Toulouse, je suis développeur principalement front-end depuis... va me donner un coup de yeux mais une bonne quinzaine d'années à la louche ou même peut-être plus. bien sûr, je connais...
+
+David Leuliette (00:40.014)
+Maxime, on l'entend ici.
+
+David Leuliette (00:57.27)
+tu connais ASV quoi. Si on te dit salut, ASV, tu connais, les gens sur IRC, seuls les vrais savent. Moi aussi je connais.
+
+Max (01:04.133)
+ASV c'est bon, donc ASV 40 ans, Homme et Toulouse. Et que dire de plus pour présenter un domo ? Peut-être qu'il en a qui me connaissent sous le pseudo de Moog sur github et compagnie, twitter à l'époque où j'étais actif. Voilà voilà.
+
+David Leuliette (01:25.582)
+Et t'as commencé ta guerre de dev quand ? Enfin t'sais son pr... Ouais.
+
+Max (01:29.773)
+Alors j'ai commencé ma carrière de dev, j'ai fait mes premiers pas de dev à l'âge de 14 ans. À l'époque je jouais au taquet aux jeux vidéo, principalement à Zelda parce que je suis un gros fan de la franchise. Et c'était les débuts d'internet, c'était les débuts d'internet quand même puisque j'ai 40 ans donc là je vous parle d'il a 26 ans.
+
+David Leuliette (01:45.752)
+Ouais, on adore, on adore.
+
+Max (01:54.829)
+Je cherchais un site de Solus, je trouvais qu'il n'était pas assez bien fait donc j'avais commencé à faire une Solus notamment de Majora Mask et du coup j'avais fait tout un site avec Dreamweaver et c'est là que je suis tombé dedans. C'est là que j'ai découvert les joueurs du HTML et même jusqu'au JavaScript. Les MM Prerolles
+
+David Leuliette (02:04.17)
+trop bien.
+
+David Leuliette (02:10.766)
+Bah c'est ça, c'est Sur Dream ? Moi j'ai fait Front Page. J'avais fait Front Page et... Ah ouais ? Ah là là, ah oui, c'est fou.
+
+Max (02:19.629)
+Les pros de Dreamweaver de l'époque, se rappellent du MMpreroll, c'était une fonction JavaScript. Et donc j'ai commencé à faire mes premiers pas en dev là dedans et puis après un Bacchus un peu à la con, je suis parti en unité informatique donc j'ai fait un truc assez standard, analyse programmeur, un peu boring mais ça donne des bases quoi, tu fais du C++, des pointeurs, du PHP à la fin, petit peu de web.
+
+Une petite licence en suivant et puis direct après des petites boîtes principalement. Et là beaucoup de devs. Initialement full stack puisqu'à l'époque on faisait pas trop la dissociation. Et en fait quand ça a été pertinent, ouais un webmaster++ ouais, et dès que ça a été pertinent, je me suis orienté vers le fonte.
+
+David Leuliette (02:45.922)
+Euh... Hmm?
+
+David Leuliette (03:01.707)
+Webmaster
+
+David Leuliette (03:12.045)
+Et t'as découvert ACNATIF quand alors
+
+Max (03:15.766)
+Alors j'ai découvert React Native... Ça fait quoi ? C'était à ses débuts. Moi j'ai commencé à utiliser React assez tôt version 0.10 ou 0.11. Et qu'est-ce qui s'est passé après ? J'ai eu une opportunité de bosser sur une app mobile. Donc c'était peut-être il a 6-7 ans, truc comme ça. c'était dans les versions 0.40 et quelques.
+
+0.42, peut-être 0.48, je sais plus trop, mais j'ai commencé à jouer avec RackNative à ce moment-là.
+
+David Leuliette (03:51.479)
+Ok ok super. Donc Early Adopter aussi 2016, truc du genre, moi c'était pareil. Sauf que moi j'avais fait du Cordova et tout ça, c'était avant. Et je me suis dit c'est l'Anthas, elle ! C'est par ça que j'ai changé.
+
+Max (03:57.055)
+Ouais.
+
+Max (04:01.707)
+J'ai fait un peu de Phone Gap slash Cordova à l'époque aussi parce que c'était pertinent et pas super convaincu du rendu du truc.
+
+David Leuliette (04:18.348)
+Pareil. C'est pour ça que j'ai migré.
+
+Max (04:18.603)
+Et pour la petite anecdote, j'ai fait ma première expérience d'appli mobile avant que tout ce qu'il puisse... Enfin toutes les technologies qu'on a aujourd'hui, ne serait-ce que PhoneGap à l'époque, c'était cool quand c'est arrivé. C'était quand j'étais en IUT, il avait un prof et j'avais un projet tutoré et j'avais un prof qui nous demandait de un espèce de dictionnaire interactif de Donjons et Dragons pour passer des excellentes soirées avec ses potes. Je pense que c'était ça en vrai.
+
+David Leuliette (04:39.575)
+et j'allais à peu près vous demander de un effet de dictionnaire interactif de Donfait de la Lune.
+
+Max (04:47.787)
+Et donc j'avais fait une appli qui devait être utilisée sur Palm OS et donc à l'époque il y avait Internet Explorer et Opera dessus. Donc Internet Explorer c'était très très limité donc j'avais fait une app en JavaScript en fait, un truc qui était... J'avais un petit backend qui générait une énorme page HTML et tout était au fou de JavaScript et donc il y avait un autocomplete, il y avait des trucs un peu fous pour l'époque. Le prof il était fou.
+
+David Leuliette (04:48.157)
+le fameux.
+
+David Leuliette (04:58.441)
+Ok, trop bien.
+
+Max (05:15.935)
+Et donc, ouais, une petite appli interactive, page dans Opéra mobile sur Palm. Voilà, ça, c'est ma première expérience d'appli mobile. Non. Et ouais, c'était mon prof. C'était mon prof qui nous avait demandé de faire ça.
+
+David Leuliette (05:16.045)
+Et donc ouais, si t'aimes bien ça, arrête de t'avancer d'autres.
+
+Max (05:45.099)
+Un génie. Dans mon UT, souvent ils demandaient de faire une appli pour créer les plannings, puisque la gestion de planning c'est un peu relou. donc tous les ans ils demandaient à des élèves de faire une nouvelle version de gestion de planning et des fois ils gardaient des trucs qui mettaient... Voilà.
+
+David Leuliette (05:45.548)
+Au revoir.
+
+David Leuliette (05:54.389)
+oui, Bill Gates.
+
+David Leuliette (06:02.924)
+D'accord, ok, trop cool, Tu m'as dit que tu as principalement bossé sur des outils en interne, puisque là ce qu'on va faire généralement c'est on dissecte l'app, la technologie, enfin la stack d'une application. Toi ce que tu as fait c'est une application marque blanche.
+
+Max (06:13.227)
+Hmm
+
+Max (06:20.97)
+Ouais.
+
+David Leuliette (06:25.612)
+Tu te rappelles c'était quoi le nom ou est-ce c'est secret défense ?
+
+Max (06:29.515)
+Non, ça s'appelait l'ADM. C'est un truc qui était fait par une boîte qui l'époque s'appelait Kisio Digital, qui a changé maintenant, ça s'appelle OV. Et en fait c'est une filiale de la SNCF pour essayer de faire simple. Et en gros l'ADM c'est une appli comme l'appli de l'art ATP. À Toulouse on a l'appli TCO. C'était une appli qui était principalement vendue à des villes où en fait on avait une appli mobile. Je crois qu'il a un client qui reste encore avec l'appli aujourd'hui, c'est la ville de Lille.
+
+David Leuliette (06:43.701)
+Ok.
+
+Max (06:59.612)
+Donc l'appelé Ilévia, je le dis de suite, elle n'est pas folle. Mais c'est pas pour le problème qu'il y avait, c'était des problèmes plutôt politiques, on en parlera peut-être plus tard.
+
+David Leuliette (07:00.48)
+Ouais. ouais ! mais je connais !
+
+David Leuliette (07:12.363)
+Oui, non mais on connaît les collectivités de transport et tout, la mairie, tout ça, on sait, tous les devs savent que c'est juste la politique en fait, que le truc qu'ils demandent c'est « non mais moi j'aime pas la taille du logo » mais on s'en fout de ton logo, c'est une app mobile, tout le monde s'en parle !
+
+Max (07:18.217)
+Allez, allez, allez, allez. Allez.
+
+Max (07:27.753)
+Ouais, bah c'est ça, il y avait beaucoup de perte de temps et d'énergie sur des trucs qui n'avaient pas beaucoup d'intérêt. Mais en gros, cette appli servait à prendre le métro, voir les horaires de métro, de bus, éventuellement de vélib, voir... Et puis il y avait toute la gestion de la marche à pied, tout ça. Donc une appli très classique en fait, qui réinvente pas du tout la roue.
+
+Il y en a aujourd'hui qui connaissent Citymapper ou quoi, va être hors réseau, mais là du coup on a eu jusqu'à une vingtaine de villes. Il y avait quelques villes au Brésil, Canada. Donc voilà, il a un moment où c'était un...
+
+David Leuliette (07:58.314)
+Oui.
+
+David Leuliette (08:04.627)
+ouais c'était genre multi... mais c'est trop bien ça en fait, comment... Qu'est-ce qui s'est passé ?
+
+Max (08:07.604)
+Ouais, En fait, ils avaient des données. Ils avaient les données de plein de trucs. puis, quand ils n'avaient pas les données, le client qui voulait l'appli leur envoyait les données directement. Et en fait, à partir de là, avaient un truc interopérable. puis nous, avait un coverage. Chaque client avait son coverage et il disait si c'est Telville, ça ne pas du périmètre de Telville. Donc, si tu dézoomes, tu ne peux pas prendre des trucs un peu partout.
+
+David Leuliette (08:21.386)
+Hmm.
+
+David Leuliette (08:36.299)
+Ouais ouais comme petit team mapper quoi. Parce que moi city mapper depuis day one, enfin en fait j'ai vécu à Londres et city mapper ça m'a sauvé la vie clairement. Parce que...
+
+Max (08:45.801)
+Mais ouais, Steamappers ils sont en avance parce que déjà à l'époque ils avaient des trucs genre des petits trucs qui sont trop bien genre va au bout de la rame parce qu'après t'as un changement et tu vas gagner un peu de temps et ça c'est incroyable ça.
+
+David Leuliette (08:51.945)
+OUI
+
+mais ça... Exact. Ça c'est incroyable j'avoue et ils ont une team de furieux, ils sont 50... C'est combien de personnes toi la team ? Parce que Citymapper c'est basé à Londres il me semble et ouais c'est Serious Business. Les mecs ils sont une armée. Vous vous étiez combien sur l'app là ?
+
+Max (09:08.936)
+Ouais.
+
+Max (09:14.653)
+Alors on a commencé, on était je crois 5-6 de mémoire. En gros on a commencé, ce qui s'est passé c'est qu'ils ont eu envie de rafraîchir un truc à l'époque ils avaient du PHPJQuery. Ils ont gardé PHPJQuery pendant longtemps pour le web mais du coup moi ils m'ont demandé d'intervenir parce que j'avais fait un audit chez Molotov TV et voilà par du contact je me suis retrouvé à former des gens à React Native alors que je savais pas trop en faire mais je savais faire du React et j'avais pas peur. J'avais vendu que je savais faire du React Native.
+
+David Leuliette (09:27.987)
+Ouais.
+
+Max (09:44.712)
+J'avais fait un POC de 20 minutes et je me suis dit c'est bon, c'est bon je peux le faire en Et c'est ça qui est trop cool avec React.
+
+David Leuliette (09:45.563)
+Ouais. Bah,
+
+David Leuliette (09:49.938)
+En vrai ouais c'est clair il faut juste dire mettre en prod, c'est un peu tricky, c'est pas git push et boum ça marche. vous galérez là dessus, tapez expo checklist gubroad sur internet vous allez la retrouver, vous me demandez. J'ai fait justement une checklist de tout ce qu'il faut faire pour mettre en prod mais en vrai ça passe quoi. C'est vrai que si on peut fake it until you make it comme tu l'as fait brillamment, ça ça prend sur le tas facile quoi.
+
+Max (10:15.36)
+Voilà. Et donc on était 5-6 devs. J'ai formé un petit peu tout le monde à React et au JavaScript moderne, toutes les bonnes pratiques qu'il y avait à ce moment-là. Et en fait, on a envoyé... On a fait le gros de l'appli en quelques 2-3 mois. Si prends l'appli qui avait été fait en 2-3 mois...
+
+David Leuliette (10:39.121)
+Ouais c'est ça que j'allais dire, 2-3 moins... Ok.
+
+Max (10:43.108)
+Ce qu'il y a aujourd'hui sur le reste de l'appli Lévia, mais c'est une appli qui n'a pas été mise à jour depuis bien longtemps parce que justement il n'y a que des histoires de process, tout est très long pour rien, mais en gros l'appli on l'a fait en 3-4 mois quoi. Et après ça n'a été que des petites retouches, des bugs, y avait plein de petites particularités métiers mais le gros du truc a été fait très très vite. Et on est monté jusqu'à 10 devs.
+
+David Leuliette (11:06.49)
+oui.
+
+Max (11:09.129)
+à un moment où il y avait un gros client qui était la ville de Lyon mais depuis ils ont changé de produit et en fait il y avait beaucoup de demandes plein de trucs spécifiques et donc il y avait un petit peu à un moment
+
+David Leuliette (11:19.305)
+Et en fait, il avait beaucoup de demandes quand tu te faisais... Ah non mais... Est-ce que je peux mettre le festival de la saucisse tel jour ? J'imagine bien... Vas-y !
+
+Max (11:27.976)
+On en était pas à ça mais vraiment ça... perdait du temps sur des tout petits détails et en fait c'est presque plus les process qu'il y avait en termes d'aller-retour qu'ils disaient que tout était super long quoi. Tout était super long pour le moindre truc, pour changer une couleur, avoir des validations, des fois ça prenait 2-3 semaines et en fait ça bloat tout le process, ça aurait pu être une super app, il y avait une super PO...
+
+David Leuliette (11:42.665)
+Hmm.
+
+Max (11:55.112)
+On faisait des tests utilisateurs dans la rue, des fois je montais à Paris, on descendait dans la rue, on allait au niveau des abrébus, on demandait des trucs et ça a été, on a fait ça 3-4 mois et après il y a eu beaucoup de bullshit et c'est un peu dommage mais voilà donc on est monté jusqu'à 10 devs pour pas grand chose parce que finalement il y avait des problèmes et c'était plus des problèmes de gestion et en fait à la fin on a fini. Moi j'étais parti du projet, à moment on m'a rappelé au secours.
+
+David Leuliette (12:04.105)
+...
+
+Ouais.
+
+...
+
+Max (12:22.661)
+Et donc je suis resté, il n'y avait plus qu'un alternant avec moi. Parce qu'il y avait trop de freelance et vraiment c'était... Il y avait de la perte de temps de pull request, mais attends, mais le point virgule, le machin... A une époque où prettier, c'était pas encore la norme et ce genre de truc où on automatisait un max.
+
+David Leuliette (12:27.333)
+Ok.
+
+David Leuliette (12:39.338)
+Ah ouais t'avais... Ok, ok ouais ouais ouais ouais ouais parce que moi...
+
+Max (12:44.103)
+C'était beaucoup d'énergie perdue pour pas grand chose.
+
+David Leuliette (12:49.351)
+Avant qu'on passe à la stack technologique de setup, pour le back-end, ça fonctionnait comment ?
+
+Max (12:55.591)
+et
+
+Ils avaient tout un bac et j'en avais aucune foutue idée. Il y avait une API REST qui était faite par d'autres équipes. Du coup, on consommait l'API REST. fois on trouvait des bugs dans l'API, donc on les remontait à l'équipe et après on les corrigait. Ça allait assez vite en vrai. C'était vachement compartimenté et c'était pas plus molle.
+
+David Leuliette (13:04.294)
+ok. Ok, d'accord. Qui a un... D'accord, c'est tout.
+
+David Leuliette (13:14.523)
+Ok ok. parce que c'est ce que je me dis si vous signez un client au Portugal et qu'après il faut la ville de Lyon et qu'après machin il a forcément les data c'était pas les mêmes. Mais ouais il y avait une équipe à Kennedy.
+
+Max (13:28.295)
+Mais ça justement, avaient des équipes qui s'occupaient de normaliser, il y avait des récupérations de trucs Open Data et ça c'est le cœur de métier de mon client de l'époque. OV là, c'est justement d'agréger tout et de rendre tout ça avec une API unifiée.
+
+David Leuliette (13:45.487)
+Ok super, on va parler, on va pas faire les six points Data Layers, Navigation, Styling, Graphics, CI et ton top six délibré que tu utilises à l'époque. va commencer par Data Layer, qu'est-ce que tu utilises ?
+
+Max (14:02.631)
+Donc à l'époque, c'était les débuts de Redux. On s'est jeté sur Redux. Moi le premier, t'arrives, t'as Redux, ça a l'air cool. À l'époque, on bricolait un peu avec du state et du contexte. C'était pas foufou. on s'est... Ouais, il y avait des trucs user-land. On bricolait des trucs...
+
+David Leuliette (14:08.199)
+Ah bah oui. Bah oui ! Bah normal s'il y avait rien.
+
+David Leuliette (14:19.998)
+mais t'avais pas contexte. Je pense que t'avais même pas contexte avant.
+
+Max (14:28.711)
+On faisait du pseudo-contexte à l'époque, j'ai des vagues souvenirs comme ça. donc on est allé dans Redux, pote. Tête baissée, il y a eu Redux Tunk, ce genre de conneries, Redux Saga. Et bim, on est allé, mon gars, full Redux. au bout d'un moment, tu chiales en fait. Et on n'avait pas tant besoin de Redux, parce que si tu prends l'application, reste un truc, il n'y a pas tant de données partagées. Il y avait quelques petites gestions de favoris.
+
+C'était vraiment l'appli très rudimentaire, donc il n'y avait pas de complexité et en fait tous les devs voulaient tout foutre dans Redux et fait très vite bottleneck de performance. C'était pas optimisé, ils voulaient mettre même les champs de recherche dans Redux et en fait à la fin l'appli ça devenait un enfer.
+
+David Leuliette (15:06.618)
+oui ok
+
+David Leuliette (15:13.754)
+Ouais, en fait c'est ça le danger, c'est que tu dis ouais le toggle je vais le mettre dans Redux, je vais mettre le theme dans Redux, et en fait en vrai tu t'en fous de ce type de date.
+
+Max (15:22.668)
+Et en plus, avais un boilerplate, pour ajouter un état, c'était une quantité de phénoménale. que souvent, tu fous un setState. Moi, règle, en plus, maintenant, c'est un setState, un useState, tant que je n'ai pas besoin d'autre chose. Quand j'ai besoin d'autre chose, j'essaye de faire avec du useState parce que j'ai été traumatisé par cette expérience.
+
+David Leuliette (15:30.881)
+Ouais, cinq fichiers.
+
+David Leuliette (15:51.239)
+Hummm... J'avoue, moi j'ai pas tant fait que ça. En fait, j'ai fait... Quand Redux a commencé, hype et tout, j'ai direct fait du GraphQL moi. Du coup, je regardais les gens faire du Redux et je fais... fais putain mais c'est trop compliqué votre truc, moi je comprends rien. Et du coup, j'en fais plus, ça me rend triste. Dès que je rencontre des gens qui font du GraphQL, je les adore. Parce que... Magie ! Trop de magie ! Nous, je shipais des trucs super rapidement, il y avait tout qui était sacro... Enfin, incroyable ! Moi, je kiffais !
+
+Max (16:02.592)
+ouais, t'étais dans le futur mon pote !
+
+Max (16:07.877)
+ouais
+
+Max (16:19.238)
+C'est sûr que GraphQL à ce niveau là, moi dès j'ai essayé GraphQL je me suis dit wow mais fait avoir de la gestion de states on va dire globale c'est très peu nécessaire la plupart du temps.
+
+David Leuliette (16:21.638)
+...
+
+David Leuliette (16:29.363)
+ouais, exactement, ça ne sert à rien. ok, coup, Redux pour State Management et pareil Data Fetching, c'était pareil. Redux Sunc, Redux Sunc pour ceux qui connaissent pas, c'est justement pour faire à l'époque... Non, je confonds avec Saga. Je ne sais même plus.
+
+Max (16:49.477)
+Non non non non en fait c'était un peu ça, Reductunk en fait c'était en gros pour gérer le côté asynchrone donc le côté promesse pour que quand tu fasses un fetch tu pouvais déclencher l'action d'aller et de retour via Reductunk c'était un peu la base en vrai quand t'avais Redux et Redux c'est une API REST et t'avais Reductunk à la base quoi. Et après il y a eu Saga mais Saga c'était une usine à gaz mon pote.
+
+David Leuliette (16:57.71)
+Ouais voilà, c'est ça. Bisous.
+
+David Leuliette (17:07.222)
+C'est ça. Ouais carrément.
+
+David Leuliette (17:14.906)
+Ça et sa gaz, ou c'était... C'était quoi sa gaz ?
+
+Max (17:19.328)
+ouais, c'était... T'avais des trucs de partout... Ouais, c'était... J'ai même pas envie de m'en rappeler tellement, c'était...
+
+David Leuliette (17:25.414)
+Tromatisé, ok. Mais donc pour ceux qui nous écoutent et qui font du Radux et qui kiffent, bah oui parce que maintenant tout ça a migré vers RTK, donc Radux Toolkit. Et maintenant c'est plus simple, il a moins de bordel, c'est un peu plus normalisé. Et dans des grosses équipes, c'est vrai que ça peut être très bien aussi. Mais toi...
+
+Max (17:27.753)
+ouais non non mais c'est...
+
+Max (17:51.644)
+Ce qui était cool avec Saga, c'était le côté élégant, la façon dont tu décris les trucs et tout. en fait, quand tu devais débugger, ça devenait très vite un enfer. C'était beau en tant que théorie, mais en pratique pas du tout pertinent et pas du tout performant.
+
+David Leuliette (18:12.625)
+Ouais c'est sûr que tu compares à ce que maintenant l'hypstodia on parlait Raiquery, tu comparais les tu dis ouais mais Raiquery tu trois lignes tu comprends, il a plein de magie. Alors que Redux c'est architectuellement parlant, c'est vrai que c'est beau, c'est du beau code, mais en termes de DX et de est-ce que je ship ? Bah pfff, pas fou. Pas fou, pas fou, pas fou. Ok et donc est-ce que...
+
+Max (18:26.051)
+N'a-
+
+Max (18:29.567)
+Ouais, c'est ça exactement.
+
+David Leuliette (18:41.03)
+niveau navigation qu'est que tu utilises comme librairie ?
+
+Max (18:45.792)
+C'était déjà sur du React Navigation. Pour du React Native, React Navigation, c'était les premières versions. Je crois qu'on a peut-être commencé avec la 1. Oui, ça devait être la 1 à l'époque. Je me rappelle avoir migré de la 2 à la 3. Ça a été un peu douloureux, de de parler, ça a dû prendre quelques jours à gérer.
+
+David Leuliette (18:50.296)
+C'est déjà direct.
+
+Max (19:09.635)
+mais voilà, React Navigation très classique, très bien, globalement content du truc, il y avait sûrement des choses à redire à l'époque, mais franchement le résultat était très cool, on avait une petite barre de navigation, on avait les gestes natifs, sur iOS franchement ça rendit nickel, Android sûrement très bien aussi, vraiment bonne expérience à l'époque de navigation et je pense que c'est un peu la base aujourd'hui.
+
+David Leuliette (19:28.933)
+On a un weed très bien fini, vraiment, les parois de l'interprétation, pour la base des grossiers.
+
+Max (19:36.387)
+ça rien après actuative quoi.
+
+Max (19:46.691)
+Mh. Ouais ouais, breaknautin screen et compagnie ouais. Mh.
+
+David Leuliette (19:59.114)
+que t'avais ou pas ? Parce que genre sur City Mapper ?
+
+Max (20:01.284)
+Non, franchement. Non, on avait un truc assez classique en termes d'écran. On avait des onglets en bas. Il n'y avait rien de foufou. avait un truc dans un écran où fait, avais la carte. Puisque quand tu dans une appli de carto, c'est un peu la base. On avait un petit peu des trucs avec du scroll et tout, mais ce n'était pas lié. Les problématiques qu'on avait n'étaient pas spécialement liées au système de navigation. Donc le système de navigation, était très contents. À l'époque, il n'y avait pas spécialement de... Ouais, c'était des onglets.
+
+David Leuliette (20:19.908)
+...
+
+termes de navigation, termes de navigation, on était très content, à l'époque il avait pas spécialement de... Ouais, c'était des onglets, des broglets, des trucs. Ouais, et ZSite quoi. Ok, Ok, ok. donc iOS, Android. C'était sur iOS et Android. Et niveau styling, est-ce que vous aviez Scaffold avec une librairie ou tout à la mano ?
+
+Max (20:31.379)
+des onglets et puis des stacks et basta quoi. En tout cas c'est classique. Ouais.
+
+Max (20:49.283)
+C'était très simple, c'était des composants, des stylesheets. Moi, depuis que j'ai pris en main React, je me suis dit que ce que je trouve cool, c'est un composant qui peut gérer son style. On faisait une stylesheet par composant, donc on avait un fichier assez basique, avec peut-être quelques tailles, quelques couleurs. En plus, vu qu'on avait un truc marque blanche, on avait des couleurs modifiables par client.
+
+David Leuliette (21:16.612)
+Ouais, ouais.
+
+Max (21:18.115)
+Mais en gros on avait une config très rudimentaire, quelques tailles de couleurs et quelques tailles d'espacement éventuellement. après il y avait quelques composants qui tapaient dedans mais les composants étaient assez autonomes sur leur style. en haut de chaque fichier une fichille de point créate et bam quoi. Et en fait l'idée que j'ai et que j'applique encore aujourd'hui c'est un minimum de style dans les fichiers.
+
+David Leuliette (21:26.372)
+Et après, il y a quelques proposons de ce genre, mais les proposons étaient assez autonomes sur Orbit. Donc en haut de l'électricité, une fois Théase, et bah quoi. Ouais, et après tu faisais le...
+
+Max (21:43.255)
+Et en fait, j'essaie toujours d'avoir... Dès que j'ai des styles qui vont être redondants, je vais faire un composant qui va héberger ces styles. Et du coup, je vais avoir de l'encapitulation de composants à ce niveau-là pour vraiment profiter du côté Lego, temps boîte et t'as pas trop à réfléchir de, mais faut que je mette des styles, etc. Je vais essayer de vraiment avoir une approche composant.
+
+David Leuliette (21:43.684)
+et en fait j'ai toujours voulu avoir des trucs qui vont être au-douneur, je vais faire un composant qui va héberger ce style et du coup j'aurai de l'incarculation composante
+
+fais le Lego, tu t'emboîtes, tu as quand tu veux un petit chien de hann, tu des éparages, tu fais des des autres propos en même temps.
+
+Max (22:16.674)
+What ?
+
+David Leuliette (22:26.466)
+80 % qui servait à rien. Et oui mais si t'en capsules bien correctement, bah t'as pas besoin de te faire chier en plus. Donc oui, pas trop. Donc oui, styling, tout à la main, pas besoin de librairie.
+
+Max (22:28.194)
+Ben ouais ouais ouais c'est ça. Exactement. Ouais.
+
+Max (22:36.163)
+Très simple. à l'époque, le côté cool qu'il y avait c'est qu'on utilisait Flow sur le projet, FlowType. C'était avant que TypeScript soit cool. Franchement très bonne expérience. Moi ça a été ma première expérience avec les types. J'en avais fait à l'école et tout mais quand tu t'allais dans le front-end, le JavaScript, avait TheB. C'était toi et tes runtime errors. Donc là Flow...
+
+David Leuliette (22:43.906)
+Woh ! Oh là là ! Incroyable ! Incroyable !
+
+David Leuliette (22:59.606)
+c'était le... C'est ça !
+
+Max (23:04.628)
+Ça nous avait amené un degré de sécurité et un degré de confiance que j'avais jamais eu avant dans aucune code base où on avait un coverage de l'ordre de 95-96%. C'était ouf. D'ailleurs petit à petit, au début on était peut-être dans les 80 et au fur et mesure qu'on montait, on avait mis une ligne de commande qui bloquait si on rebaissait en pourcentage.
+
+David Leuliette (23:11.714)
+C'est ça.
+
+Max (23:29.45)
+Et donc on a réussi à monter et on pouvait faire des refactoring et tout et t'avais les orres qui paupaient de partout et ça c'était trop bien et on avait du coup les types de style. Tout ce qui était style c'était couvert avec les types et donc si tu mettais une mauvaise prop, tu fais des infos, tout quoi, on était couvert et ça c'était super agréable.
+
+David Leuliette (23:41.699)
+...
+
+David Leuliette (23:50.871)
+C'est ça, et il faut préciser que oui, fait, Flo, c'était le compétiteur de TypeScript, enfin, ça allait toujours d'ailleurs, mais bon, Microsoft a gagné la bataille, la bataille des types.
+
+Max (23:58.889)
+il est pire. Le problème qui a eu le problème qui a eu flot c'est que ils ont pas du tout assez communiqué. L'outil il est très bien et je pense qu'il est vraiment c'est un bon compétiteur peut-être encore aujourd'hui c'est un bon compétiteur de typescript mais il a pas de communauté. Il communique très peu dessus c'est principalement un outil interne à Facebook et à l'époque typescript en était qu'à ses débuts du coup tu avais quand même
+
+David Leuliette (24:24.162)
+Hum ? Ouais c'est bon ça va être...
+
+Max (24:26.594)
+Pas de communauté TypeScript, t'avais une petite communauté et tous les gens qui utilisaient React ils se mettaient un peu à utiliser Flow. Et en fait, vite TypeScript a mangé Flow complètement parce que ouais, Flow ils ont eu des problèmes de là où ils ont été mauvais, je pense c'est la com. Ils ont pas mis d'énergie dedans et du coup, s'est fait manger très vite quoi. Et bon, comme tout le monde, au bout d'un moment tu passes à TypeScript.
+
+David Leuliette (24:49.378)
+Parce que tu peux l'utiliser partout. Ouais mais je pense qu'ils ont bénéficié de...
+
+Max (24:54.945)
+Bah en plus, ce qui était cool.
+
+David Leuliette (24:55.906)
+Parce que en fait c'est flow, pardon, TypeScript si je ne m'abuse c'est le mec qui créé JavaScript qui l'a fait.
+
+Max (25:05.043)
+peut-être ça, franchement je ne serais même pas te dire parce que moi j'ai raté complètement les débuts de TypeScript parce que j'avais Flo et j'étais très content de Flo à l'époque et on avait un projet, on avait démarré Flo dès le début donc j'ai bossé avec Flo pendant 5 ans parce qu'en gros ce projet, j'y suis resté bien 5 ans dessus quoi.
+
+David Leuliette (25:24.821)
+Le lead architect de TypeScript c'est Anders Heiberg, who is also work on Delphi, C-Sharp et other programming languages. TypeScript 2012 et c'était release en 2013. je pense que, oui, voilà, pense que, ouais, typiquement c'est ça, effort marketing plus important peut-être, ou après juste chance en fait, en vrai, en vrai c'est pareil, dans un univers parallèle, peut-être que...
+
+Max (25:47.872)
+Non je pense qu'il y avait le côté... ça a été vraiment poussé, a été intégré dans VS Code, il y a eu tout ce qu'il faut, y a eu le tool, il y eu la communauté, et fait il a un moment les gars, c'est bon quoi. La communauté en fait c'est ça qui... aujourd'hui c'est ça qui fait la force d'un outil, c'est la communauté. Je trouve.
+
+David Leuliette (25:56.789)
+Ouais, c'est ça.
+
+David Leuliette (26:09.314)
+Ouais je suis d'accord Rubian Rails, on vous adore les amis. Ok du coup, est-ce que tu avais des animations ces graphiques, un peu des fancy animations ?
+
+Max (26:24.445)
+On avait quelques trucs sympas et à l'époque, c'était du Animated. Animated de React Native, ça marche pour plein de choses simples. Animated, un petit peu de spring, un petit peu de trucs quand c'était nécessaire. On n'avait pas tant d'animation mais tous les petits trucs où on avait besoin d'animation, on utilisait Animated. Et ça c'était très cool.
+
+David Leuliette (26:34.283)
+Ouais, ok.
+
+David Leuliette (26:47.099)
+C'est vrai que ça marche aussi très bien.
+
+Max (26:49.354)
+Ouais et à tel point que les projets que j'ai fait après, parce que j'ai fait quelques projets en React Native web, même quand j'avais pas besoin de contrepartie React Native, j'avais continué à utiliser dans certains cas Animated parce que j'avais un peu l'habitude de ça. En termes de performance sur le web, c'est pas optimal mais ça tourne très bien et tant que moi je suis un peu de l'équipe, que personne ressent un ralentissement et que mon CPU ça falle pas.
+
+David Leuliette (27:01.281)
+Mmh-hmm.
+
+David Leuliette (27:08.321)
+Hum
+
+Max (27:17.841)
+je fais avec le truc que j'ai l'habitude. Dès qu'après il y a une vraie problématique soit de performance soit de maintenance, là je vais réfléchir à changer mais sinon je vais faire avec ma petite habitude.
+
+David Leuliette (27:29.92)
+Je vois. donc, on va passer à 5ème point. Alors attends, donc on va dire que tu avais 20 clients dans le monde, tous différents, petit, moyenne, grosse mairie. Voilà pour release. Comment ça se passait cette affaire?
+
+Max (27:38.111)
+Ouais. Ouais.
+
+Max (27:43.559)
+Ouais, exactement. C'était trop bien en fait. J'ai passé beaucoup de temps, mais on avait tout automatisé. C'est à dire que, en gros, on a utilisé Fastlane. Voilà, Fastlane. C'est la base. l'époque, c'était un peu les débuts de Fastlane aussi. Alors ça pétait régulièrement. En fait, ce qui pétait, c'est que...
+
+David Leuliette (27:51.693)
+ouais ?
+
+David Leuliette (27:57.184)
+Oui.
+
+David Leuliette (28:01.717)
+Oui forcément, oui ok.
+
+David Leuliette (28:09.475)
+ouais ! c'était les deux !
+
+Max (28:12.704)
+Dès qu'il avait des trucs qui se passaient côté App Store ou Play Store, il fallait vraiment tout temps mettre à jour Fastlane et des fois dans la journée tu avais un bug, le matin tu pouvais pas release. Donc de rares fonds on faisait des releases à la main mais c'était assez rare parce qu'il n'y avait jamais d'urgence. Et nous en gros on avait un... J'avais cette op à Jenkins.
+
+David Leuliette (28:25.056)
+oui.
+
+Max (28:34.879)
+où on avait un truc git assez classique quand on avait une release qui était bonne on faisait un mis à jour donc on suivait le semver en interne sur le projet et donc on faisait une release, on faisait un tag et après dans Jenkins, donc là j'avais fait du Jenkins file et donc j'avais décrit tout un truc on avait même les trucs pour les pull requests ça c'était trop bien j'avais mis en place tout un truc automatisé
+
+David Leuliette (28:40.768)
+des codes, on a fait des updates, donc on a fait des tests de serveur en interne sur le projet. Et donc on faisait une release.
+
+Device, ouais.
+
+Max (29:04.605)
+Ça mettait un commentaire dans la PR, tu cliquais, donc on avait un... Je sais plus comment s'appelle les trucs avec les provisioning profiles, on avait toute une flotte de devises qui étaient autorisées. Et en gros, t'avais une poudre request, que ce soit la QA ou les devs, ils cliquaient, ils téléchargaient. Ça avait pris, on va dire, pas mal de temps à faire et à maintenir. On avait amélioré le truc qu'on avait en internet et tout, mais dès là, on avait cette partie-là qui faisait que c'était super simple. On mettait un truc sur une PR.
+
+il y avait un build qui était accessible en quelques minutes à peine, je crois que c'était moins de 5 minutes, la QA, les devs, pouvaient les tester. Et après ça, quand tu voulais faire une release pour un client, tu sélectionnais le client. Des fois, il y avait un mode dev ou prod pour avoir des logs ou des trucs un peu cachés dans les menus. On sélectionnait la version 3.17.14 et on envoyait et ça partait.
+
+David Leuliette (29:38.143)
+Ouais.
+
+...
+
+David Leuliette (29:56.2)
+Oui, bim, c'est parti.
+
+Max (29:57.99)
+Ça partait en test light sur iOS, Android et puis après il y avait une équipe, on va dire marketing entre guillemets, qui s'occupait eux de promouvoir les builds une fois que ça avait été validé par les clients. Ils s'occupaient de mettre les bêta testeurs et après derrière ils s'en occupaient. Mais nous franchement on avait un truc super fluide et fast lane mais quel bonheur quoi. On avait automatisé l'ajout
+
+David Leuliette (30:21.268)
+oui, mais c'est clair.
+
+Max (30:23.174)
+On avait automatisé l'ajout des téléphones, donc on avait un fichier texte où dès qu'il y avait un nouveau développeur, on mettait le son nom, le numéro de son iPhone par exemple, parce que c'est pour iPhone que c'était principalement chiant. Et tout ça on avait automatisé. Et franchement, c'était à utiliser pour les gens qui consomaient ce truc, c'était un bonheur et d'une simplicité déconcertante. Et c'était ma petite fierté à l'époque. J'étais vraiment trop content.
+
+David Leuliette (30:27.168)
+...
+
+David Leuliette (30:37.914)
+Et franchement, c'était un coupé pour les gens qui pensaient que mes coupes étaient un bonheur et que j'étais petit souverain.
+
+Max (30:52.537)
+Non pas du tout. Pas du tout. Donc j'ai découvert un peu Ruby. Ouais ouais ouais franchement j'étais content. Ouais au niveau de la doc et tout c'était... Ouais il y avait un peu des galères mais pas plus que quand je faisais du front donc c'était très satisfaisant franchement.
+
+David Leuliette (30:55.287)
+Ok ouais. Ouais donc t'as plus de jump in assez facilement parce que... ouais.
+
+Max (31:11.965)
+...
+
+David Leuliette (31:12.917)
+Tu te souviens à peu près du que tu passais ? Tu as Auto Automate, c'était cool, mais je pense que tu as dû passer quand même pas mal de temps. Moi je dirais, je bette la moitié de ton temps à faire du Fastlane et l'autre moitié à faire le Day to Day jusqu'à arriver à un point où tout est Auto-Mate. Moins que ça.
+
+Max (31:32.35)
+Je pense que... Non, il n'y avait pas tant de temps, peut-être une semaine, une semaine ou deux semaines en gros pour le gros du setup. Parce qu'on avait des contraintes, et encore c'est parce qu'on avait des contraintes de trucs internes, de machines, c'était nous en interne qui devions gérer le Jenkins. Donc j'ai perdu beaucoup de temps, le gros de ma perte de temps ça a été plus sur du Jenkins que le setup de Fastlane en vrai. Parce que de mémoire les fichiers ils n'étaient pas si gros.
+
+David Leuliette (31:44.98)
+ouais, ok.
+
+David Leuliette (31:50.302)
+mais c'est ça que je me dis.
+
+Max (32:02.368)
+C'était pas si compliqué et franchement j'ai pas un mauvais souvenir de ça, j'ai plus un souvenir de Jeltyne ça m'a cassé les couilles » que « Fastlane ça m'a cassé les couilles tu vois.
+
+David Leuliette (32:09.214)
+Et que j'ai le coup que ça m'a caché les couilles, que Fathain ça m'a caché les couilles.
+
+Max (32:29.892)
+Alors ça, c'était...
+
+En fait, ce niveau-là, chaque client avait son propre compte, son propre compte iOS et son propre compte Android, et en fait, on leur demandait, on leur avait fait un tuto pour qu'ils nous partagent. Nous, avait un compte développeur de la boîte, et pour notre équipe pour le projet, ils nous ajoutaient, ils nous donnaient les permissions, et après, pouvait envoyer les bids. Et ce qu'ils nous faisaient perdre beaucoup de temps, c'était en fait... Non mais ça, c'était un truc de fou.
+
+David Leuliette (32:35.271)
+Vous avez eu...
+
+Max (33:03.865)
+Il y avait les CGU à accepter sur l'iOS store et en fait les mecs on leur envoyait un mail mais ouais ça nous faisait péter un plomb. Des fois c'était du 1 mois pour qu'il un mec qui se connecte sur le compte développeur Apple qui fasse ok et voilà ça ça nous rendait fou.
+
+David Leuliette (33:20.244)
+Et qui s'en souviennent, parce que 1. On les connaît, les gens des Berry qui ont Ah bah je sais plus c'est quoi mon compte IOS, ah bah je peux pas réaliser ». Ah bah ouais, true story, moi ça m'est déjà arrivé. Donc oui, oui. Ou c'est plus le bon mail, ou ça on connaît, on connaît, on connaît, on connaît, on connaît.
+
+Max (33:28.125)
+Ah ouais... Putain... Un enfer ! Un enfer ! Bah ouais, ça c'était un vrai problème ça ouais. Ah ouais c'est ça. Ah ouais mais machin il est plus donc le mail en fait il a été désactivé donc il faut que la tech réactive le mail des fois, un mois je te jure c'était un truc de ouf. C'était...
+
+David Leuliette (33:52.062)
+Ah oui, non mais je sais. J'ai récemment passé trois mois à réactiver le truc, je me suis fait passer pour quelqu'un d'autre. Parce que pareil, fait, la personne avait perdu son mail. Enfin, pouvait plus se connecter en en holder du compte. Et tu vois, fais « Vous êtes le compte, l'admin du compte ? » « Oui, oui, c'est moi, t'sais, au téléphone quoi. » Du coup, sachez-le. Si vous voulez hack le truc, c'est des humains chez Apple au support.
+
+Max (34:19.261)
+Ça fait du social hacking.
+
+David Leuliette (34:21.789)
+Et du coup du... voilà, exactement, du social hacking ça passe. Euh... Ok. Alors est-ce que y a... Après ces déboires, est-ce qu'il a 5 librairies que tu recommandes d'utiliser maintenant ? T'en fais encore DiracNative ou t'en fais plus du tout du coup ?
+
+Max (34:37.5)
+En fait j'en fais en side project principalement. Aujourd'hui... Qu'est-ce que je... Bah Reanimated je trouve que c'est vraiment cool quand tu fais du rack native. Parce que la API est cool. En plus maintenant avec la V4 qui arrive, on a enfin les keyframes, l'équivalent des CSS animation, des CSS transition. Et bah du coup ça fait que là on...
+
+David Leuliette (34:42.109)
+Ok.
+
+Max (35:07.438)
+On est en train de se rapprocher d'une expérience de la simplicité du web et ça c'est vraiment cool donc Reanimated, foncé. Après... Bah, React navigation mais je le répandance maintenant à dire Expo. J'ai longtemps été pas fan de Expo parce que...
+
+David Leuliette (35:13.873)
+Ouais, j'avoue. Tu l'as vu sur le site web de Ranimated ? Quand tu te connectes sur la home page...
+
+David Leuliette (35:28.676)
+perdu.
+
+à l'enfer, là où à l'edit ça passera. Je pense que je t'ai perdu. C'est moi, c'est le bon...
+
+Max (35:33.595)
+Je fais une petite pause parce qu'il y a marqué Xtar Reconnect. Donc là on est sur un bon lac, j'ai l'impression des familles. Je n'ai pas envie de me répéter 47 fois. Je patiente, tant qu'il a plus marqué Reconnected. Est-ce que c'est ma connexion qui n'est pas ouf ?
+
+David Leuliette (35:40.238)
+Sinon moi je en 350 Mbps de...
+
+David Leuliette (35:48.155)
+speed internet donc on a perdu max à la la ah ouais on l'a carrément perdu à merde alors faire bah ça va bien se passer si si reconnect ça va aller on va pouvoir le récupérer
+
+Max (36:02.496)
+Reconnecting mon pote, c'est super long.
+
+Max (36:08.283)
+ce que se passe-t-il ? Je ne pas si ça enregistre en plus, c'est la première fois que j'utilise Revertide donc à tout moment ça marche, à tout moment tu m'entends mais moi il marqué reconnecting et tu une tête qui est bien frise.
+
+David Leuliette (36:09.756)
+mais ce que je disais c'est que si on se connecte sur le site web de React Native Reanimated, on peut changer, on peut bouger la place du Reanimated, enfin l'écriture Reanimated, je trouvais ça incroyable. Alors, que nous dit Internet ?
+
+Max (36:24.155)
+ça rec et ça reconnect pas
+
+Max (36:33.955)
+Pourtant moi je suis tout bien connecté au réseau.
+
+David Leuliette (36:39.836)
+Ouais non, je pense que je l'ai vraiment perdu. là là, l'enfer.
+
+Max (36:40.347)
+10 minutes quoi.
+
+Max (36:45.817)
+qu'est qui fait que ça peut rammer à ce point là
+
+Attends, est-ce que j'ai internet ? J'ai plus l'impression que j'ai internet en fait.
+
+David Leuliette (36:53.468)
+Parce que oui on est en train la... Bah alors attends, comment on va faire pour le récupérer ? Calendar... Calendar... Tac !
+
+Max (36:59.918)
+Et je pense que mon problème il vient de là.
+
+David Leuliette (37:06.939)
+hop et on va récupérer Mox, j'ai la foi. Vas-y, reteste de venir sur hop
+
+Max (37:13.507)
+ouais mon pote.
+
+J'ai plus internet.
+
+David Leuliette (37:25.819)
+du coup c'est bon.
+
+Max (37:35.318)
+Pourquoi mon iPhone n'est pas connecté à Internet ?
+
+David Leuliette (37:35.98)
+Alors ?
+
+Alors alors...
+
+David Leuliette (37:48.363)
+ouais non je pense que tombe, j'espère qu'il a plus de... J'espère que c'est pas un truc où genre il y plus de wifi ou je sais pas quoi. Euh non plus de...
+
+Max (37:50.327)
+Tu fous de Ken !
+
+David Leuliette (37:59.448)
+plus de batterie.
+
+David Leuliette (38:04.097)
+ce serait tristesse.
+
+David Leuliette (38:09.408)
+Ce serait la tristesse...
+
+Max (38:14.212)
+Ok, d'accord.
+
+David Leuliette (38:20.929)
+c'est bon, c'est revenu. c'est bon, incroyable.
+
+Max (38:25.427)
+ma connexion qui s'est barrée complètement en couilles ça a été un enfer.
+
+David Leuliette (38:29.082)
+C'est ce que je me suis dit. Attends, attends, C'est pas la bonne catégorie votre live bug. Oui, attends. C'est bon. J'étais sur Twitch en train de checker, je m'entendais deux fois, ça rendait fou. Ça va bien se passer. toute façon, avec la magie de... Je ferais un édit, donc... Bah oui, attends. La magie du montage Maty, ce sera pour toi.
+
+Max (38:41.849)
+C'est nickel ! Du montage ! La magie du montage !
+
+Max (38:52.161)
+J'étais en de parler je pense de réacnavigation. En vrai aujourd'hui... Ouais, j'ai pas...
+
+David Leuliette (38:55.863)
+Réanimated, réanimated, et moi je te disais que si tu vas sur la home page de Réanimated, tu peux bouger la place de Réanimated, incroyable. Voilà.
+
+Max (39:04.355)
+Ouais c'est très marrant, c'est très marrant. Et après j'ai varié sur Expo et en fait aujourd'hui, Expo j'étais contre peu au début parce que je trouvais qu'il y avait un truc un peu shady. Le Expo d'avant, ils avaient copié des trucs, ils mettaient pas les sources au niveau de la licence, je que c'était pas clean et tout. Je sentais qu'il y avait un truc avec le business model qui allait arriver.
+
+David Leuliette (39:17.466)
+C'était le expo d'avant.
+
+Max (39:32.332)
+Et c'est logique en vrai aujourd'hui, j'entreprends aussi des projets donc il y a un moment il faut... fais pas des trucs que pour le beurre et l'argent du beurre quoi. Enfin ça veut rien dire ce que j'ai dit mais je pense tout le monde a compris l'idée mais ma phrase n'a aucun sens. Et en fait aujourd'hui je vais dire à tout le monde en fait utilise d'Expo parce que c'est simple et il a la plupart des trucs que tu as besoin ils sont dedans. T'as React Native for web si tu veux faire du web.
+
+David Leuliette (39:44.986)
+On a compris, c'est ça.
+
+Max (40:00.313)
+T'as un router qui est très bien, il a tout en fait. Bah là, t'as eu Mathieu il a pas longtemps avec Edge to Edge, hop, il y a du Edge to Edge partout. Je sais pas, fait aujourd'hui, tu prends Expo, il y a tout ce qu'il faut et à moins que t'aies besoin de faire des trucs un petit peu chelou, je dirais, prenez Expo et faites au plus simple. Moi, j'adore faire au plus simple. J'aime pas me dire, ouais, par exemple pour les styles, je vais prendre telle lib avec telle lib avec...
+
+David Leuliette (40:23.229)
+Ouais
+
+David Leuliette (40:29.081)
+vais prendre... Je vais prendre telle massive avec telle bosse. Y a un truc...
+
+Max (40:29.849)
+Il a un truc, ça marche, c'est fait avec ça en fait. En plus maintenant avec les Agents d'IA qu'on a, qui nous codent la moitié des trucs, ouais c'est verbeux, c'est pas grave en fait, c'est verbeux, c'est explicite Moi j'aime bien quand c'est verbeux parce que Tailwind c'est un truc qui me dérange beaucoup. Parce que c'est pas verbeux, parce que c'est pas super intuitif. Oui on met tout dans une string et tout.
+
+David Leuliette (40:36.889)
+les agents de diacro...
+
+David Leuliette (40:44.856)
+Ouais je avoue c'est compliqué ouais
+
+Max (40:55.255)
+C'est bon quoi, on a des outils avec du type et tout, utilisez ça et faites des choses simples. Donc j'ai pas spécialement de de fou à recommander, parce que je pense qu'il a tout dans quelque chose comme Expo et... et ouais, j'irais presque dire, n'utilisez pas Reignative sans Expo ou un truc similaire, je pas s'il a aujourd'hui des alternatives à Expo. Mais t'as Reignative qui recommande Expo, en fait, il a un moment, allez-y.
+
+David Leuliette (41:04.504)
+Je pense qu'il a l'âme dans quelque chose de faux et... et ouais, peut-être que dis un petit peu pareil, dans tout le temps, un faux...
+
+David Leuliette (41:16.569)
+...
+
+Ouais j'avoue, c'est ça. Cool cool.
+
+Max (41:21.304)
+Et je te dirais la même chose pour du web, pour du web je te dirais éventuellement, utilise Next. Parce que y'a une communauté, ça fonctionne, ça répond à plein de problématiques qu'on a tous. Donc let's go les gars. Le but c'est de chipper.
+
+David Leuliette (41:37.911)
+Ouais carrément. Ouais je... C'est ça moi je... Bah c'est le nom de ma boîte. C'est wishypity.today. Donc tu vois. C'est pas genre la question c'est pas quand est-ce qu'on relise, la question c'est qu'est-ce qu'on relise aujourd'hui. Donc... Euh... Trop bad.
+
+Max (41:50.52)
+Je pense qu'il un moment où on s'est trop attardé sur la tech en elle-même. mode, vois, typiquement l'époque de Redux, pour moi, c'était, ouais, on passait du temps à faire du code, machin. En fait, ça n'apportait rien au produit. On passait du temps à vendre des trucs à nos PO. disait oui, mais là, il faut qu'on refactor. Les PO, il fallait juste qu'ils fassent des tests de non-régression. En fait, à partir de là,
+
+David Leuliette (42:13.273)
+OUI !
+
+Max (42:20.664)
+il faut se concentrer sur shippez quoi.
+
+David Leuliette (42:24.313)
+ça je pense que c'est plus l'écosystème JavaScript en général qui était pas mature et qui avait pas d'écosystème en fait c'était le chaos moi je sais que j'ai fait du rails et quand j'ai fait rails mais c'est génial il n'y a pas de questions à se poser de où est que je foutais le truc c'est tout est conventions over configuration tout fonctionne il y a déjà tout qui est bien et j'ai trouvé l'expérience incroyable et après j'ai retrouvé un peu ce truc là maintenant mais genre dix ans plus tard donc
+
+Max (42:32.6)
+Ouais, ouais, ouais.
+
+Max (42:37.88)
+Ouais. Ouais.
+
+Max (42:51.722)
+Ouais, ouais c'est vrai, suis d'accord avec toi.
+
+David Leuliette (42:56.149)
+Donc c'est ça, vas-y, cool. On va passer à la partie question. Mec, j'ai une question à te poser. Est-ce que tu as une application mobile à recommander aux gens qui veulent faire Pékin Express ?
+
+Parce que tu as participé à l'émission récemment. Est-ce que t'as pu... Non attends, j'ai pas de télé en fait, du coup j'ai pas pu suivre tes aventures. Tu t'es fait kiquer au bout de combien de temps ?
+
+Max (43:13.555)
+L'application...
+
+Max (43:24.151)
+5 épisodes.
+
+David Leuliette (43:27.464)
+ouais, donc ça va, t'as eu le temps de... Est-ce que t'as un conseil tech qui t'a permis de survivre pendant 5 épisodes ?
+
+Max (43:29.015)
+5 épisodes...
+
+Max (43:36.215)
+En fait j'ai eu exactement la même démarche. j'en parle très vite quoi de Pekexpress, c'était parti d'un délire. Je devais m'inscrire avec un pote et à l'époque je venais de rencontrer la personne qui va devenir ma femme et ça faisait à peine quelques mois qu'on était ensemble.
+
+David Leuliette (43:46.242)
+Ouais.
+
+David Leuliette (43:55.625)
+trop bien, trop bien.
+
+Max (43:57.207)
+le pote avec qui on disait vas-y on s'inscrit pour délirer il se dégonfle et en fait ma copine quand elle était jeune elle regardait Pékin Express du coup elle m'a l'enfer un petit regard et j'ai sorti le téléphone je nous ai fait un dossier d'inscription c'était marrant et on a poussé le délire très loin puisqu'on y est allé et franchement c'était fun et en fait j'ai eu un peu la même approche que je fais avec la tech c'est à dire j'ai un peu fouillé et genre ma copine elle m'a dit tu vas voir le sac à dos il faut qu'on fasse attention ça va faire mal au dos et si on l'a tout le temps et tout ça peut être chiant parce qu'elle est sur youtube
+
+David Leuliette (44:14.359)
+Ouais ?
+
+Max (44:26.655)
+J'ai cherché des tutos.
+
+David Leuliette (44:27.764)
+challenge accepted, chercher minimaliste life way of life comment optimiser le j'imagine bien non mais je te crois
+
+Max (44:32.056)
+Je te jure, j'ai regardé une ou deux heures de vidéo, comment ajuster son sac, où est-ce qu'il faut placer les affaires, de quoi tu as besoin. en fait, eux, nous donnent une liste et tout. Et en fait, on a eu le sac le plus léger de l'histoire de Pekinxpress, donc c'est ma petite fierté. Parce qu'on a vraiment pris le minimum. Et en fait, du coup, quand on a démarré l'émission, je te spoil du coup.
+
+David Leuliette (44:49.324)
+c'est incroyable, incroyable.
+
+Max (44:59.831)
+En gros, on descend d'un avion et ils nous ont pris nos affaires et ils disent voilà vous devez remettre vos affaires et vous devez mettre un matelas gonflable. Et en fait, là tout monde avait des valides. Nous on avait un petit sac avec peu d'affaires donc on a remballé, on est parti, on a gagné la première étape, on est allé en haut du Kilimanjaro, on a baisé tous les autres contestants en gros. Et en fait du coup on a été direct le binôme à battre. du coup, et du coup, ben t'es dans une... Alors c'est pas Koh Lanta où les gens vont te faire des coups de pute et tout mais il y avait un petit peu des histoires d'alliances, les gens étaient en mode oui du coup ils sont forts.
+
+David Leuliette (45:20.16)
+merde, ok.
+
+Max (45:29.939)
+Et pareil, la deuxième étape, on s'est bien débrouillé au début, donc on a un peu fait peur aux binômes. On a été très vite, le binôme, à abattre. Ça s'est pas trop trop vu à la télé. Mais nous, c'est vraiment comme ça qu'on le vivait, qu'on le vivait avec les autres binômes. Et en fait, au bout d'un moment, mentalement, on a été usés. Ça nous a pu trop amuser. Cinquième épisode, a un peu lâché. En fait, on est sortis sur 15 secondes. Ouais, c'est pas grave. On est sortis. C'était marrant. Je sais pas s'il aurait tenu beaucoup plus longtemps en vrai le mental et tout.
+
+David Leuliette (45:44.568)
+Oui.
+
+David Leuliette (45:55.221)
+Ouais, j'ai beau.
+
+Max (45:58.487)
+C'est de la télé-réalité, c'était fun mais il a quand même une vibe de télé-réalité, de fake it. Pas une petite you make it mais bon voilà.
+
+David Leuliette (46:04.972)
+Ouais ouais je comprends, comprends. Et donc du coup, pas trop de city mapper ou de ce genre d'app qui t'a sauvé la life quoi.
+
+Max (46:14.774)
+Ben en fait on a droit rien. On a droit à rien. Non on a droit à rien. On a aucun truc tech, ils nous enlèvent tout. Moi j'avais juste une montre Garmin à l'époque parce que j'avais pas pris mon Apple Watch parce que tu peux pas forcément charger tous les soirs, y a des moments où dors chez des gens. Donc j'avais pris une montre qui tenait longtemps, la Garmin a tené 15 jours. Et en fait j'avais une boussole dessus. Alors j'aurais pu acheter une vraie boussole, je pense qu'ils m'auraient pas enlevé. Mais c'était très utile parce que y a des moments quand tu montes, toi t'as une carte en papier.
+
+David Leuliette (46:18.828)
+ouais, t'as... ok.
+
+David Leuliette (46:31.008)
+Ouais.
+
+David Leuliette (46:38.67)
+Ok.
+
+Max (46:44.073)
+Et en fait, t'as un axe de route à l'ancienne, le soleil à telle heure tu sais qu'à peu près il est au nord, au sud et tout. Et en fait, il a un moment, je me suis rendu compte qu'on partait complètement dans la mauvaise direction parce que j'avais la boussole. Encore une fois, j'aurais pu faire avec le soleil, mais la boussole vraiment me rassurait et je voyais que sur la carte, on n'était pas du tout dans la bonne direction. Et du coup, il des moments où a pu, visité, perdre du temps juste avec une boussole en fait.
+
+David Leuliette (46:48.574)
+Ouais ouais !
+
+David Leuliette (46:55.798)
+Ok.
+
+David Leuliette (46:59.638)
+Ouais
+
+David Leuliette (47:06.55)
+il a des moments où a pu, on a été de faire du temps juste avec le pouceau à l'entrée.
+
+Max (47:09.811)
+Parce que là on avait droit à de la low tech et du coup c'était le seul truc qui m'a sauvé.
+
+David Leuliette (47:15.286)
+Ok ok cool cool cool cool Ok on va repasser aux questions normales. Merci pour la garmine. Moi j'ai pas de garmine, j'ai une Apple Watch Ultra que j'ai pété un câble pour mes 40 ans. Pareil tu vois, team ultra. vais aller vas-y. Vas-y, j'achète pas de voiture, j'achète de la tech et j'ai le fameux truc Tras, tu pour aller faire du tracking et tout, tu appuies sur un bouton, hop et ben...
+
+Max (47:25.333)
+Une ultrame mon pote.
+
+David Leuliette (47:38.839)
+ça m'a pas du servi mais à Marrakech j'étais bien content d'avoir ça dans le souk pour retrace l'historie de où tu étais. Voilà, parenthèse. donc, vas-y on va faire ça dans tout à cas... Peut-être sur cette app là, sur la la marque blanche, est-ce qu'il y a une anecdote sur un moment très difficile dans le dev de cette application hormis
+
+Max (47:44.165)
+ouais, très cool.
+
+David Leuliette (48:05.175)
+la demande de cliquage sur les Terms and Conditions d'Apple. Comment tu la gérais ?
+
+Max (48:10.569)
+Le Covid. Avec le Covid, on En fait, on a dû... On a dû chipper des trucs très très vite, des écrans pour le fameux... Attention aux autres, gardez les distances. Donc c'était juste quelques écrans pour te montrer tout c'est dans votre coude, ce genre de conneries. Et on a dû...
+
+David Leuliette (48:17.16)
+ouais, ouais, bah ouais.
+
+Max (48:37.109)
+et on a dû le gérer très vite et là pour le coup les clients étaient beaucoup plus réactifs parce que c'était un peu une gestion de panique. Il y avait finalement très peu de choses parce que c'était un slider qu'il avait au début, on voulait l'intégrer un peu différemment dans l'app et ça a été un peu de la gestion de crise mais au final la problématique elle n'était pas tant technique, c'était plus humain de faire des arriérretours mais je me rappelle un peu d'un truc comme ça. Mais non après j'ai pas de...
+
+Si on veut rester sur du technique, j'ai jamais eu vraiment de gestion de crise. J'ai eu des trucs, mais ce n'est pas en lien avec Rack Native. C'était mes premières expériences de mise en prod où on du déploiement continu. À l'époque, c'était un des premiers sites où je me suis mis à faire du front. On avait fait une mise en prod et en fait, il y avait des gens qui détectaient des bugs en direct et on avait cette capacité à
+
+David Leuliette (49:17.374)
+Oui.
+
+David Leuliette (49:34.205)
+Oui, oui.
+
+Max (49:35.524)
+à fixer un bug et on faisait pas du FTP et tout, on faisait du git commit et en fait on poussait et 2-3 minutes après les bugs étaient corrigés et ça c'était super jouissif donc c'était même de la gestion de crives mais qui était jouissive parce que les mecs ils étaient là oui il a des bugs ils étaient en panique on était là t'inquiète c'est bon vas-y rafraîchis c'est bon il a plus de bugs et ça c'était un bonheur en fait d'avoir ces trucs là
+
+David Leuliette (49:50.269)
+Non, t'as pas fait le coup du... Moi quand je vois ça, je fixe le truc et je fais t'es sûr ? Reload la page ? Bah... Moi je vois rien. Non, t'as dû halluciner. Non c'est pas vrai, ça dépend, des fois, mais je l'ai déjà fait. Je l'ai déjà fait tu vois. Ou alors...
+
+Max (50:05.331)
+Max (50:12.771)
+tu dégazes light, tu dégazes light.
+
+David Leuliette (50:19.613)
+Ou alors des fois, le bug est déjà corrigé et fait c'est juste que ça arrive et que voilà, mais oui j'ai déjà fait quoi. Mais ça dépend. Ouais c'est ça, ça dépend des moments. Ok, donc est-ce que y'a une... Donc t'as dû gérer une team, c'était quoi le... Comment tu leur apprenais à débugger en règle native ?
+
+Max (50:24.627)
+Ouais ! Le temps que ça release, ok.
+
+Max (50:45.747)
+sais pas moi j'ai jamais apprenait à debuger donc bah au final quand on avait Redux il y avait un truc qui était très relou c'était de comprendre tout le processus et c'était plus la partie Redux qui était chiant à debuger que la partie React moi j'ai jamais trop utilisé les debugger
+
+David Leuliette (51:01.993)
+Ouais, il pas tout le kit. Maintenant il a un debugger dans les règles de DevTools. Il a un debugger spécial Redux.
+
+Max (51:07.764)
+Il y a un debugger. Ouais, y a tout ce qu'il faut maintenant. Mais moi, c'est vrai que personnellement, j'ai jamais trop été team debugger. Alors, les moments où j'ai eu des vrais problèmes, j'ai utilisé des debugger. Ça m'arrive encore quand c'est un peu rare, même le debugger JavaScript, si j'ai besoin de du remonté de stack traces et de compagnie. Mais c'est assez rare où en fait, je perds du temps. Souvent, je fais du bon vieux console log, mon pote.
+
+Et la plupart du temps j'utilise ça donc comment on débugue ? Franchement rien de fifou hein. J'ai pas eu de problématique et ça a jamais gêné qui que ce soit dans l'équipe d'avoir des problématiques comme ça. Et au final...
+
+David Leuliette (51:36.668)
+A oui,
+
+David Leuliette (51:55.284)
+Parce que moi je sais que des fois j'ai eu des problèmes de build et du coup il re-excode et du coup faut aller lire les... enfin c'est plus ce genre de... ou tu peux download la stack trace depuis... qui est générée depuis fastlane sur expo maintenant. Donc ça ça te permet aussi d'aider quoi. Toi peut-être t'as pas eu ce genre de truc quoi. C'est bien.
+
+Max (52:11.92)
+Ouais.
+
+Max (52:16.923)
+En fait, les vrais problèmes qu'on avait, alors qu'il a un moment où on avait des composants natifs Android et iOS, qu'il y avait des trucs du beacon, je ne plus dans quelle ville c'était, je me demande si ce pas quand, mais je ne suis pas sûr. En fait, on avait dû intégrer une fonctionnalité parce qu'ils voulaient que tu aies une notif quand tu arrives à un arrêt, il y avait des beacons à tous les arrêts, donc il y avait un truc natif. On avait des crashes vis-à-vis de ça.
+
+David Leuliette (52:33.948)
+En fait on avait dû intégrer une socialité...
+
+David Leuliette (52:40.988)
+!
+
+Max (52:44.477)
+Et donc là c'était vraiment relou à débugger mais on avait fait un système de logs, je me rappelle plus trop ce qu'on avait fait. C'était un peu le seul truc qui était relou, après tout ce qui était purement React Native en fait on passait que par du JavaScript donc quand on avait des crashes on arrivait à les reproduire dès que tu les reproduisais en dev, t'avais une stack trace de tel composant, tel set state ou quoi qui plante. Bon en fait tu débugais ça assez vite quoi.
+
+David Leuliette (52:45.662)
+Right.
+
+David Leuliette (52:52.66)
+qui était relou après qui était vraiment à la clé.
+
+Max (53:10.277)
+Non.
+
+Ouais ouais ouais ouais ouais c'est Très cool. C'est vrai que je l'ai mis sur des projets après et même sur du web mais après à l'époque on n'avait pas... On parlait de mettre Crash Fintech mais au final on l'a jamais mis.
+
+David Leuliette (53:18.548)
+Mais euh... Ouais.
+
+David Leuliette (53:28.749)
+Crashlytics, c'est le truc de Firebase.
+
+Max (53:30.808)
+Ouais, c'est l'équivalent de Suntree.
+
+David Leuliette (53:34.393)
+Est-ce que en travail en RAC Native, tu as appris quelque chose sur le développement logiciel en général ?
+
+Max (53:41.73)
+L'UX, dirais... En fait, le fait de travailler que sur un truc qui tout petit, à l'inverse du web où souvent tu pars du desktop et il a beaucoup de gens aujourd'hui... Tu vois, là j'ai parlé avec un gars, un prospect on va dire, une appli où ils ont besoin d'un truc avec carto et tout. Ils ont tout réfléchi en grand et je lui posé la question de, ouais, est-ce que vous avez réfléchi à l'aspect accessible depuis des écrans plus petits ?
+
+Il me dit non mais si on ferait une version on enlèverait plein de en fait de tout ce qu'il me montrait, vu que j'ai les modèles en tête de navigation mobile et tout, j'étais en mode il n'y a rien d'enlevé, tu peux tout rendre accessible via des drawers, des trucs comme ça, des bottom sheets, dis drawers mais je pense à bottom sheets. Il y a plein de choses que tu peux ajouter, y a même zéro complexité. Et en fait le fait de travailler sur quelque chose qui est tout petit,
+
+David Leuliette (54:15.962)
+Ouais
+
+David Leuliette (54:25.103)
+Hmm ? Ouais.
+
+Max (54:37.65)
+Je trouve que c'est le bon modèle et en fait aujourd'hui quand je dev des trucs je pars mentalement je pars des écran je pars des petits écrans et après je décline sur un endroit où t'as plus d'espace et donc j'ai eu cette approche de ça m'a vraiment on va dire fait rentrer en communion avec l'expérience utilisateur et donc je me suis mis à méditer j'ai fait du bouddhisme d'expérience utilisateur 1-1-1x voilà et du coup j'ai
+
+David Leuliette (54:39.315)
+...
+
+David Leuliette (54:46.865)
+et après je décline sur un endroit où pousse des pannes et donc j'ai eu cette approche de... m'a vraiment... on a été remplis en premier million avec les différents utilisateurs
+
+T'es la moine Shaolin ! J'arrête de mettre des maudals partout.
+
+Max (55:08.753)
+J'ai pris un réflexe, c'est que quand j'ai une problématique un peu de tiens comment faudrait que j'affiche telle ou telle information aujourd'hui j'ai un iPhone donc je prends mon iPhone et je regarde quelle appli en général je prends les applis du système natif je regarde quelle appli d'Apple à un truc qui ressemble un petit peu à ce que je veux et souvent je vais copier la façon de donner accès à l'information etc.
+
+Et donc je garde cette habitude de, tiens j'ai cette petite problématique, attends il y a quelle appli qui fait ça ? L'autre jour j'ai testé l'application de Apple Invite là, c'est un truc pour faire des invitations de calendrier avec les gens peuvent partager des photos des trucs et tout. J'ai regardé vite fait l'appli et quelques jours après j'ai eu un truc de, tiens mais je me rappelle il avait un truc qui ressemble à ça donc je suis arrivé voir dans l'appli et je me dit ok ça c'est cool et du coup je vais l'implimenter comme ça. Et donc c'est vraiment le truc que j'ai gardé et qui reste encore aujourd'hui de...
+
+David Leuliette (55:41.81)
+...
+
+Ouais.
+
+avec les enfants.
+
+Je vais regarder
+
+Max (56:03.185)
+Du que je suis arrivé sur du RAC Natif, donc du Développement Natif, j'ai gardé cette approche UX mobile first en fait.
+
+Max (56:15.299)
+Non, ça me parle pas du tout. Non. Non.
+
+David Leuliette (56:18.662)
+Allez mec, tu regardes ça, je te le revois tout de suite, je te le revois en DM. Mobin, c'est incroyable, c'est des screenshots d'apps, de toutes les apps, classés par types, vois, des dialogues, des toasts, des textes fills, des buttons, des screens, machin. Trop cool parce que c'est exactement ça, quoi. Quand tu cherches quelque chose...
+
+Max (56:26.521)
+Allez !
+
+Max (56:35.094)
+Ok ok, ça a l'air cool, très cool.
+
+David Leuliette (56:46.61)
+Quand tu cherches quelque chose, moi je sais que je vais tout temps là dessus, ça permet de rétro-engineer la chose. Super, donc Luix, c'est quoi ta stratégie ? Comment tu fais pour ton quotidien pour faire de la veille à part aller à Sud Web ? Si vous êtes dans le Sud, les amis, aller à Sud Web c'est très bien. Très bonne conférence. salut.
+
+Max (56:50.831)
+Ok.
+
+Max (57:02.988)
+Je suis même pas sûr que ça existe encore. Alors comment je fais ma veille ?
+
+David Leuliette (57:09.608)
+ouais ? merde ! dommage. Presque. miss. Bah peut-être ce sera... Bah voilà. Si vous voulez vous former, faites revivre Sud Web. Les gens seront ravis de vous aider là-dessus.
+
+Max (57:20.657)
+En fait pour la petite anecdote on va avoir un petit moment tristou mais il a l'un des plus gros contributeurs de Sudweb qui nous a malheureusement quitté et du coup je pense que ça peut être un peu arrêté le truc quoi mais peut-être à tout moment j'ai même pas regardé je dis de la merde et ça existe encore bref c'est aussi possible
+
+David Leuliette (57:43.09)
+Ok.
+
+David Leuliette (57:46.588)
+ouais c'est possible ! C'est possible, faites nous tromper ! Mais toi en général, comment tu fais pour te former et te tenir à jour
+
+Max (57:50.16)
+...
+
+Max (57:55.824)
+En fait ce qui se passe...
+
+Je me forme quand j'ai un besoin. Je n'ai pas tendance à me former avant. Par contre, j'essaye de... Moi j'utilise les Flu RSS à l'ancienne. Flu RSS. Je vois passer beaucoup de choses. Et en fait ce que je trouve très intéressant avec l'approche que j'ai, il y a un moment c'était plus du Twitter. Maintenant je suis un petit peu retourné au Flu RSS parce que Twitter...
+
+David Leuliette (58:14.352)
+C'est trop bien, je les ai.
+
+David Leuliette (58:23.856)
+Et à un moment c'était plus leur, maintenant plus un disque-tourné ou plus restreint, c'était plus de... on connait. a un peu trop d'infos qui sont un chirurgées de la texture de couvert à 40g, voilà. Du coup, c'est de laisser connaître des choses que vous connaissez pas. Donc je vais passer beaucoup plus avec les mêmes trucs, par exemple ça, ça, ça, le lait...
+
+Max (58:28.208)
+Il y a beaucoup de... Une fois qu'il y a trop d'infos, je suis un peu submergé. Un petit troupe de l'attention que j'ai découvert à 40 piges, hein, ça fait plaisir. Mais voilà. Du coup, ce que je fais, c'est que j'essaie de connaître les choses que je ne connais pas. Je m'explique. Je vois passer beaucoup de titres de news avec tel outil permet de faire ça, tel outil permet de faire ça. Je vais rarement creuser. Par contre, ma mémoire me permet de me dire...
+
+David Leuliette (58:54.128)
+contre ma maman me permet de dire que j'ai coupé un jour une vidéo film et rappelé d'un an et que j'ai regardé sur le web et là je vais retrouver le film et là je fais la piste à la fin la vidéo c'est vrai c'est vrai c'est un conseil pour les dirigeants il a une deuxième pierre c'est le hasard le hasard c'est à que
+
+Max (58:56.374)
+ok un jour j'ai dû passer ce truc je vais me rappeler d'un nom je vais regarder sur le web et là je vais retrouver l'outil et là je vais l'apprendre parce que là j'en ai besoin c'est vraiment ma façon de faire de la veille on va dire c'est je dirais le premier tiers il y a un deuxième tiers c'est le hasard le hasard c'est à dire que bah moi j'utilise de l'open source comme beaucoup de gens et quand j'utilise de l'open source
+
+Peut-être parce que je suis un peu gourmand de faire toujours les trucs avec un peu la tech stack délirante du moment. Genre là, mon délire c'est d'utiliser react strict dom sur un projet que je suis en train de lancer. Donc quand tu te mets à utiliser un truc qui est d'inexpérimental, qu'il a pas de communauté à proprement parler, du coup tu te mets à taper des issues machin, donc tu te retrouves dans des discussions avec des gens qui sont un peu dans le futur.
+
+David Leuliette (59:31.613)
+Ouais
+
+David Leuliette (59:50.092)
+Tu te mets à sa place dans tu te retrouves dans des équipes de temps avec gens...
+
+Max (59:53.879)
+et ben en fait tu vois passer des noms d'outils tu vois passer des noms d'outils, vois passer des méthodes, vois passer des trucs tu fais putain tiens c'est quoi, putain tiens c'est quoi et à chaque fois je l'ouvre des nouveaux onglets, des nouveaux onglets, des nouveaux onglets et ça c'est euh... ouais je dirais que c'est peut-être même la moitié de ma veille y'a un tiers de ma veille c'est euh les réseaux sociaux et les flux RSS la grosse moitié de ma veille c'est quand je me balade sur github en fait c'est que... et que je lis des docs, des trucs comme ça et euh le petit dernier restant euh...
+
+David Leuliette (01:00:05.68)
+...
+
+David Leuliette (01:00:20.976)
+Et le petit dernier instant, je dirais que c'est quand je fais un peu des side projects, des trucs et que je me lance en mode, tout le monde la, je la s'approchait avec ma vie? m'occupe de toute ma partie technique et là je me suis dit, ok, réappelait si for what qui est bien, je vois ça stagne, c'est pas un truc qui est voué à évoluer, je me suis posé question de pourquoi, etc. Et là...
+
+Max (01:00:23.311)
+je dirais que c'est quand je fais un peu des side projects ou des trucs et que je me lance en mode, tu vois là je lance un projet avec ma future femme du coup je m'occupe de toute la partie technique et là je me suis dit ok React Native 4 Web c'est bien je vois que ça stagne c'est pas un truc qui est voué à évoluer du coup je me suis posé la question du pourquoi etc et là j'ai un client avec qui je bosse sur React Native 4 Web je vais pas changer ça du jour au lendemain
+
+David Leuliette (01:00:49.488)
+J'ai un client avec qui ne vais pas changer ça pour le lendemain, mais je lance un petit projet en parallèle, je vais un petit drift parce que la partie de l'écoute est sûrement modélisagère. J'ai toujours eu un petit projet dans ma vie, je voir à soi des petits projets que je n'en ferai jamais.
+
+Max (01:00:52.911)
+Par contre, vu que je lance un petit projet en parallèle où là je peux prendre un petit peu de risque, parce que la partie technique c'est purement moi qui la gère, j'ai toujours eu un petit side project dans la vie, soit des trucs open source, soit des petits projets que je lance en général jamais, mais au moins ça me permet de découvrir des choses.
+
+Et en fait, en faisant des trucs, en tentant des trucs, tu te casses un peu les dents et pareil, tu découvres un peu des trucs un peu par hasard. Et après, y a un petit pourcentage, c'est juste en parlant avec les potes et les petites communautés, petits groupes. vois, les petits groupes, il a un Slack Toulousain où il a des dev Toulousains qui sont là. Là, je me suis inscrit un petit Slack où il a des gars qui parlent un petit peu d'IA et tout ça. Et c'est tous ces petits groupes où tu trouves un peu de temps en temps des petites choses.
+
+David Leuliette (01:01:37.295)
+...
+
+Max (01:01:44.174)
+Donc c'est un peu multifactorial parce qu'il un moment j'étais fou sur un truc et en fait il a des moments où on n'a pas le temps et donc maintenant j'essaie de diversifier, d'avoir un petit peu toutes types de sources pour essayer de me maintenir un petit peu à jour parce que j'ai très peur de devenir un vieux dinosaure.
+
+David Leuliette (01:01:45.615)
+C'est un peu mini-factoriel parce qu'à un moment j'étais plus sur intrus et après j'étais pas avec moi. Donc maintenant je souviens plus de dire que d'avoir un truc de plus d'être con. Pour essayer de m'interrompre, je me souviens faire de la même chose.
+
+Max (01:02:02.863)
+ouais. Mais je fais tout pour ne pas le devenir.
+
+David Leuliette (01:02:14.359)
+Faut faire le deuil mec, c'est tout !
+
+Max (01:02:15.566)
+On n'est pas des cool kids. contre, j'ai eu une espèce d'angoisse liée à l'IA récemment parce que me suis dit, wow, si je ne mets pas à utiliser l'IA très vite. Parce que là, pense que notre job va vraiment changer. On va devenir des managers qui savent tromper. On aura toujours notre expertise pour les finitions pendant un moment, mais je pense que ça va changer. Ça va pas mal changer.
+
+David Leuliette (01:02:29.647)
+Managers d'agents, ouais ouais.
+
+Max (01:02:42.702)
+Mais coup j'ai eu une espèce d'angoisse et en fait j'ai vite compris que dans l'état actuel des choses si t'es jeune et que tu utilises trop ça, tu vas rater beaucoup de et... Ouais. Bah tu vas commit... Tu auras pas les fondamentaux et si tu commits des trucs que tu comprends pas, ton projet il va très vite avoir de la dette technique en fait.
+
+David Leuliette (01:02:57.707)
+T'auras pas les fondamentaux en fait. Tu vois ? Tu voudras...
+
+David Leuliette (01:03:11.182)
+Moi je pense que ça va être pire. vrai là tout le monde est en mode milieu de soirée. Genre l'IA c'est un peu celle-là. Donc la soirée a déjà commencé tu vois. Mais je pense que là il y avoir plein de projets où... bah c'est bien on a shipé ça en deux semaines, on a 40 000 features. là, où mise à jour et où maintenant, ça va y avoir plein de choses que...
+
+Max (01:03:11.339)
+Si j'ai un compte...
+
+Max (01:03:22.87)
+Noi.
+
+David Leuliette (01:03:39.022)
+qu'il faudrait refactor ou qui n'ont pas été promptés correctement. Je pense que du coup, ça va peut-être tanker un petit peu. va se dire, ouais, on va virer des gens. Mais c'est ça, mais va-y avoir vraiment une vague ou ça va être pire ? En fait, je dis pas que ce sera pire. On va devoir faire de la maintenance d'IA. Donc je ne pas quel est le pire. Est-ce que le pire, c'est d'avoir un fork dégueulasse fait par une team in-house où il a pas de doc ou une Apple entière crachée par l'IA ?
+
+Max (01:03:42.925)
+C'est des problèmes de conception, je pense.
+
+Max (01:04:08.589)
+Je pense que je préfère un truc in-house parce que même si c'est in-house, si il a une certaine logique, l'IA elle pourra sûrement la capter. Si tu n'as que des trucs qui sont chipés, puisque le problème des IA aujourd'hui c'est de digérer complètement le contexte, si tu génères que des petites features à droite à gauche avec une IA et qu'il a pas une cohérence et une vision ensemble, l'IA va peut-être avoir du mal à...
+
+David Leuliette (01:04:09.518)
+Mmmh, chai !
+
+David Leuliette (01:04:14.74)
+Y a une logique, ouais, ouais... Ouais...
+
+David Leuliette (01:04:23.636)
+le contexte,
+
+David Leuliette (01:04:30.584)
+Ouais.
+
+Max (01:04:37.118)
+à interpréter tout ça derrière quoi.
+
+David Leuliette (01:04:39.918)
+Ok, ton conseil pour 2025 c'est maîtriser les fondamentaux, utiliser expo.
+
+Max (01:04:49.748)
+Et se mettre à l'IA, du coup si tu veux un autre conseil c'est se mettre à l'IA. Il faut fort fort.
+
+David Leuliette (01:04:52.237)
+et se mettre à l'IA. C'est vrai, tu utilises Squat, tu es sur quoi toi ? Moi, je suis sur Github Copilot parce que j'ai la flemme de changer vu que je fais de l'open source, c'est gratuit pour moi.
+
+Max (01:05:04.012)
+Euh... Ouais, alors moi en fait ce que je fais, c'est du Cursor
+
+David Leuliette (01:05:12.237)
+Cursor, ok. Matthys le mec avec qui je bosse, pareil, cursor. Mais je me dis que ça va merge dans 6 mois, ce sera pareil.
+
+Max (01:05:16.52)
+Ouais.
+
+Cursor, je suis très content, j'ai utilisé copilot pendant longtemps sans même le payer. Vu que j'ai fait de l'open source, à un moment GitHub, m'ont dit que j'avais droit à copilot parce que je suis artistique. Donc j'étais en mode cool. L'autocomplete était sympa. Après, en fait...
+
+David Leuliette (01:05:33.821)
+Ouais bah c'est ça. C'est ça, c'est ça, pareil.
+
+Max (01:05:48.46)
+J'ai pas testé la version actuelle de Co-Pilot avec le chat parce que je suis parti sur Cursor il y quelques temps et je suis très content de Cursor. Je pense que le step au dessus, ça serait d'avoir des trucs comme Crew AI où tu détaches un peu ton éditeur de code.
+
+David Leuliette (01:05:59.469)
+Ouais, je s'y faire, je s'y faire.
+
+Max (01:06:15.206)
+et tu vas avoir des groupes d'agents qui vont surveiller, tu vas faire un truc qui va générer des visuels. Avec tes visuels, tu génères des specs et avec tes specs, tu génères du code. Et en fait, pour moi, ce truc, va être intéressant le jour où je pense pas qu'on aura ça, mais je pense que là où on aura un truc intéressant, c'est là où ça deviendra un peu comme avec React déterministe. C'est-à-dire que si tu donnes un prompt, il te sort deux fois la même chose.
+
+David Leuliette (01:06:20.173)
+ouais, mais...
+
+David Leuliette (01:06:27.165)
+C'est ça. Tu dors ? Ça te le fait quand tu dors.
+
+Max (01:06:44.46)
+Et du coup, si tu changes ton cahier des charges et que tu le renvoies avec une modification, t'as pas peur qu'il te régénère toute une merde. Et le jour où on arrivera à avoir une gestion comme ça globale, là on pourra utiliser ça sérieusement et en fait on programmera en langage naturel. On programmera avec façon de parler un cahier des charges. On dira voilà ce que doit faire mon appli, voilà les couleurs qui a de base et tout ça. Je pense qu'on arrivera à ça assez rapidement.
+
+David Leuliette (01:06:46.157)
+Mh.
+
+David Leuliette (01:06:58.221)
+Là on pourra aller plus loin et après on programmera en langage naturel. Programmer avec euh... Pas trop de parler, un cahier des chars. Ouais. C'est ça.
+
+Max (01:07:13.132)
+Mais du coup, dans tous les cas, faut prendre en main l'IA maintenant parce que notre métier, les dev fronts, autant que les dev backs je pense, il va fortement être impacté par l'apport de l'IA. en fait, ceux qui ne pas s'y mettre dedans, ma chérie, elle a parlé avec quelqu'un pour je sais plus quoi, et la personne lui a dit, non mais moi l'IA, j'aime pas, je comprends pas, j'aime pas, j'utilise pas.
+
+David Leuliette (01:07:14.669)
+Mais du coup, dans tous les cas...
+
+mais tu sais les dés vont prendre autant que les dés à pas que je pense il va fortement être impacté par l'apport de l'IA et en fait ceux qui vont pas s'y mettre dedans c'est un chéri elle a parlé avec quelqu'un pour le coup quoi et la personne lui a dit non mais moi l'IA j'aime pas je comprends pas j'aime pas j'ai peur et je me dis waouw
+
+Max (01:07:43.467)
+J'ai peur et je me dis wow si tu as un truc comme ça et que tu vas pas dedans donc si t'es dev et que l'IA tu te mets pas dedans en fait tu vas devenir c'est ok de faire ça mais tu vas devenir le petit artisan qui fait ses meubles en bois avec son ciseau à bois tout à l'ancienne tu vois tu vas devenir un artisan un peu stylé un peu vintage
+
+David Leuliette (01:08:04.176)
+Ouais je vois
+
+Max (01:08:10.882)
+et en fait tu pourras pas shipper comme d'autres personnes et en fait le vrai truc c'est est-ce que tu aimes juste écrire du code et qu'il fait du code ou est-ce que tu aimes livrer des fonctionnalités ? Moi mon plaisir c'est de rendre un service aux gens et le développement est en fait un truc qui me permet d'arriver à avoir des boutons comme ça dans la main et de faire des trucs. Si un jour en fait...
+
+David Leuliette (01:08:13.771)
+...
+
+David Leuliette (01:08:21.983)
+Oui.
+
+David Leuliette (01:08:26.987)
+et le développement est un truc qui permet d'arriver à avoir des choses comme ça dans la main et faire des choses. Si un jour en fait j'ai un truc que ne connais et que j'ai un autre moyen et que j'ai des qui ont pas dit et que j'arrive à avoir un truc qui est stable, c'est parce que ça, et que je ne pas vraiment de codes.
+
+Max (01:08:37.802)
+besoin de coder et que j'ai un autre moyen et que j'utilise des IA, des prompt et compagnie et que j'arrive à avoir un truc qui est stable, peut-être qu'on ne plus que ça et qu'il n'y aura plus vraiment du code et on ne tapera plus des deux points double guillemets, est-ce que je mets des points virgule ou pas.
+
+Max (01:08:57.788)
+Non mais tu les débats de TAP versus SPACE et tout...
+
+Max (01:09:06.589)
+Prétire, prétire et bam mon pote, et c'est tout droit quoi. Prétire, un peu de ESLid, autosave, quelques trucs qui font des ordres, qui rangent les imports par ordre alphabétique comme ça, y'a pas de... et allez hop en fait. Non.
+
+David Leuliette (01:09:24.512)
+C'est ça, ouais, il n'y a pas de débat. Allez hop ça se fait, exactement. C'est quoi ton setup quand tu bosses ? Un écran, deux écrans ? C'est quoi ton téléphone ?
+
+Max (01:09:36.254)
+J'ai un iPhone 15 Pro Max dont je suis très content. Très belle bête franchement. Peut-être que changerai pour le 17 si il y a vraiment besoin mais tu vois le 16 j'ai pas senti le besoin. Encore que en tant que dev je me permets de faire celui que cela. l'impact que... Tu vois je pense un peu à l'impact sur la planète et tout mais bon. J'essaie de pas trop changer. Je suis dev. C'est un peu mon excuse de... change d'iPhone tous les deux ans. Bon allez.
+
+David Leuliette (01:09:41.03)
+là là, c'est beau !
+
+David Leuliette (01:09:57.931)
+...
+
+Max (01:10:03.082)
+Donc un iPhone, un Android un pété. Parce que je fais du React Native donc c'est un Oppo... Je sais même plus ce que c'est mon pote. C'est un Oppo, l'écran là il est pété, l'écran il est éclaté et ça me suffit. La plupart du temps j'arrive à faire avec du simulateur. À un moment j'avais jusqu'à trois Androids mais en fait il y un moment ça ne me servait pas tant que ça. Chez moi j'ai un Apple Studio Display 27 pouces.
+
+David Leuliette (01:10:07.657)
+C'est quoi l'android ? C'est quoi la marque ? Ouais ouais c'est quoi la marque ? Enfin le...
+
+David Leuliette (01:10:14.886)
+Ahahahah
+
+David Leuliette (01:10:22.57)
+Ok.
+
+David Leuliette (01:10:29.599)
+ouais, ça c'est bien. Ouais, mon écran ouais, moi pas ouais. Ouais.
+
+Max (01:10:32.33)
+Mono écran. Mono écran. Pendant quelques années, j'avais deux 24 pouces plus le MacBook. Je regardais en général sur le deuxième écran Breaking Bad. J'avais Slack sur le troisième et j'avais mon écran de dev. Et en fait, me suis dit, trop d'écrans, ça tue l'écran. Donc je suis revenu à un simple 27 pouces. Donc mon écran à la maison, mon MacBook, il est sur le côté. Donc j'ai un MacBook Pro M2. Très bien.
+
+David Leuliette (01:10:54.293)
+Ouais.
+
+Max (01:11:02.09)
+peut-être que je changerai si il un M6 ou... Là j'ai pas du tout de problème de performance donc j'en ai pas l'utilité. Que dire, j'ai une souris, un trackpad, un clavier. Voilà, je pourrais peut-être t'envoyer une photo. Sour... Mais moi...
+
+David Leuliette (01:11:16.255)
+bah oui, c'est classique. bah oui carrément, vas-y faut que t'envoies la photo. En fait en vrai faut que je te starte un thread. Et à propos à chaque fois j'oublie. Mais ouais si si. Envoie-moi la photo, t'auras...
+
+Max (01:11:23.923)
+Ouais ça peut être cool. Moi j'aime bien le combo souris-trakpad parce que le trackpad est très pertinent pour faire certains mouvements. Et par contre quand je fais plus et plus pour le design, quand je vais utiliser du design parce que moi personnellement j'apprécie beaucoup le design et quand je design des trucs dans sketch et compagnie, fait la souris je trouve que je suis beaucoup plus efficace à la souris. Et des fois je joue.
+
+David Leuliette (01:11:40.151)
+ouais !
+
+David Leuliette (01:11:47.38)
+Ouais, au trackpad c'est un enfer. Ouais. Ouais.
+
+Max (01:11:53.417)
+C'est mon petit plaisir. Des fois un petit FPS, bim bim. Donc une souris c'est sympa.
+
+David Leuliette (01:11:53.438)
+Ouais c'est clair je valide. Je valide... du coup t'as une vraie souris quoi ! putain ouais parce que moi j'ai que une souris, c'est pour ça que j'ai une Magic Mouse.
+
+Max (01:12:01.149)
+j'ai... bah tiens elle est là parce que là je pars en déplacement quelques jours une petite Logitech MX... non c'est une MX 3S Mac voilà
+
+David Leuliette (01:12:13.226)
+mais Logitech MX ! c'est pas une MX, les Logitech MX, on adore ces MX 1000, moi j'avais à l'époque.
+
+Max (01:12:16.218)
+La base.
+
+C'est une MX3F. Et le truc que j'aime bien, c'est la partie du pouce là, c'est un bouton. Et quand j'appuie, ça me met Mission Control où j'ai toutes les fenêtres. c'est un truc que je trouve assez sympa. Bon après, tu peux le faire avec le trackpad aussi, voilà. Petit setup, que rajouter. Et après, je ne pas du tout dérangé. Je suis assez mobile. Je vais dans des coworking, des fois je bosse dans des cafés.
+
+David Leuliette (01:12:26.097)
+Ok.
+
+David Leuliette (01:12:40.19)
+je vois. Ok, on se passe vite.
+
+Max (01:12:48.42)
+Et quand je fais ça, j'ai juste mon Macbook. en fait, le truc que je suis très content d'utiliser, je n'utilise pas le multi-écran sur Mac OS. J'utilise une petite appli qui s'appelle Rectangle, qui permet, via des raccourcis clavier, de dispatcher un peu à rectangle. Et souvent, j'ai une appli qui prend deux tiers. Donc ça va être le navigateur. Donc souvent, j'ai mon navigateur.
+
+David Leuliette (01:12:56.81)
+Je ne peux pas l'utiliser, pas le multi-écran sur ma couette. J'utilise du sol, du pour le rectangle. Ah, rectangle, oui, rectangle.
+
+David Leuliette (01:13:10.352)
+rectangle c'est trop bien
+
+Max (01:13:14.376)
+Et quand je fais Alt Table, j'ai le VS Code et sur le côté, j'ai la console, le terminal. Comme ça, je vois passer les débugs, les trucs... En gros, c'est à peu près comme ça que je travaille. J'ai beaucoup, beaucoup de choses à ajouter, si ce n'est...
+
+David Leuliette (01:13:26.673)
+Ouais c'est ça.
+
+J'ai rectangle, j'ai utilisé pendant mille ans et maintenant j'ai raycast et en fait ils ont intégré la même feature que rectangle donc plus besoin d'avoir cette app.
+
+Max (01:13:44.38)
+Et voilà, des AirPods Pro avec près du bruit.
+
+David Leuliette (01:13:45.801)
+Eeeuuuhm...
+
+Max (01:13:49.714)
+La production de bruit pour moi c'est... ouais ça je suis ravi. Et moi en plus j'ai commencé à écouter de la musique électronique assez énervée parce que ça me calme mon trouble un petit peu de la tension. En gros si je mets pas trop de musique, je vais vite fait faire un halte-table, aller ailleurs, aller voir la notif. Quand j'écoute du gros son bien vénère, je vais jusqu'à de la hard-tech. Et en fait vraiment ça... J'ai le truc du coup je suis toujours un petit peu en mouvement.
+
+David Leuliette (01:13:50.408)
+oui, les fameux, ça change la vie ce truc.
+
+David Leuliette (01:14:04.841)
+Ok.
+
+David Leuliette (01:14:15.529)
+fait, j'ai eu le fun de toujours rentrer dans mon compte, ça me permet de me focaliser sur la mante et je m'en suis rendu compte récemment.
+
+Max (01:14:17.606)
+et ça me permet de me focaliser quand je bosse. Et je m'en suis rendu compte que récemment en plus. Un petit bonheur.
+
+Max (01:14:36.912)
+Nut.
+
+Max (01:14:41.468)
+Ouais.
+
+David Leuliette (01:14:45.66)
+Ça c'est marrant, faudrait que je checke ce truc là. Est-ce qu'il a un sujet que tu aimerais aborder qu'on n'a pas fait ?
+
+Max (01:14:54.439)
+Son podcast s'appelle Cross Platform et on n'a pas vraiment parlé de Cross Platform. Donc ne pas si tu une question vis-à-vis de ça.
+
+David Leuliette (01:15:01.896)
+Ouais.
+
+David Leuliette (01:15:07.63)
+Si c'est iOS, iOS, Android, on a parlé d'IOS, a parlé d'Android, on a parlé de web donc euh...
+
+Max (01:15:13.041)
+Ouais. Est-ce que toi, j'ai une question pour toi, est-ce que tu as déjà fait des projets où ton scope il a dépassé iOS Android ? Genre est-ce que tu as eu du Windows, du Mac ou du web avec la même code base ?
+
+Max (01:15:34.823)
+Ouais, faut l'opportunité quoi.
+
+Max (01:15:42.183)
+Noi
+
+...
+
+David Leuliette (01:15:50.984)
+Et du coup là tu peux le mettre partout, tu fais une après-hac native, elle dispose sur Vision OS les amis, c'est possible. Mais non pareil, j'ai pas eu... Bah ouais ça je kifferais ! Je retourne avec mes amis Indie Hacker à New York pour acheter un Vision OS. a un groupe Indie Hacker à Lille. Et le trip c'était, en fait on est parti à New York pour aller bosser.
+
+Max (01:15:59.383)
+ouais c'est stylé ça !
+
+Max (01:16:10.919)
+Ben moi je suis... ouais.
+
+David Leuliette (01:16:18.088)
+ensemble et le délire c'était qui c'est qui revient avec un vision pro pour le travail bon personne n'est revenu avec mais on l'a tous testé là bas à New York c'était incroyable
+
+Max (01:16:26.277)
+pense qu'il y aurait peut-être une version qui arriverait beaucoup plus light, qui serait dépendante d'un MacBook.
+
+Il faudrait qu'il soit branché au MacBook donc il y aurait peut-être moins de puissance de calcul mais on verra si c'est vrai parce que ça reste des rumeurs. Pour revenir aux cross-platformes, je suis en train d'essayer React Strict Dom. Je fais tout un site web avec React Strict Dom.
+
+David Leuliette (01:16:37.869)
+ok ouais, d'accord.
+
+David Leuliette (01:16:54.759)
+Ouais, là faut que t'explique ce que c'est Rectric Dom, parce que les gens ne connaissent pas forcément.
+
+Max (01:16:58.961)
+Alors React StrictDrom, le constat c'est qu'aujourd'hui on a React Native qui permet de faire du iOS et du Android et ça marche très bien. du coup il y a eu un gars, Nicolas, qui vient, un ancien anthropologue qui est parti sur le CSS, je sais pas comment, c'est devenu un un expert CSS et il a bossé chez Twitter et du coup il a créé un truc qui s'appelait au début React SDK je sais pas quoi.
+
+David Leuliette (01:17:21.735)
+...
+
+Max (01:17:26.854)
+C'était truc un peu comme React Native, des composants assez primitifs que quand tu utilises React, tu as les composants DOM et là c'était des composants plus images, et compagnie. Au final il a copié et collé l'API de React Native pour faire un truc qui s'appelle React Native for Web et donc il sert aujourd'hui dans Expo pour que ton API iOS Android marche aussi sur le Web. Et donc ce truc là il existe, le problème c'est que...
+
+Le constat un petit peu global, c'est que approche-là n'est pas la meilleure parce que les contraintes que tu as entre iOS Android et le web, l'abstraction n'est pas forcément la meilleure du coup ils ont décidé, ce gars a décidé et c'est beaucoup utilisé chez Facebook à priori maintenant de plus en plus d'avoir une autre approche et d'avoir un truc qui s'appelle React Strict DOM donc c'est en gros le DOM mais avec pas mal de contraintes donc tu des composants de div, span, image et compagnie
+
+David Leuliette (01:17:55.559)
+Le constat un global, cette approche là, pas la meilleure parce que les contraintes que tu as entre iOS, Android et le web, la passion est pas forcément la meilleure. C'est beaucoup de choses que je vous faire prioriser maintenant, je vous en prie, d'avoir une autre approche, d'avoir un truc qui s'appelle FreeCac.
+
+le dom mais avec pas mal de retraps donc t'as des coups aux endives par exemple et en fait ce truc là il a une partie qui fait un mapping entre ce web avec des coups de train vers le règle natif donc il y a une représentation qui fait juste des calls à la règle natif et du coup quand tu codes ce truc là en théorie tu vas pouvoir exécuter ça sur IOS Android et du coup t'as une approche
+
+Max (01:18:23.331)
+Et en fait, truc là, il a une partie qui fait un mapping entre ce web avec des contraintes vers du React Native. Donc il y a une implémentation qui fait juste des calls à React Native. Et du coup, quand tu codes ce truc là en théorie, tu vas pouvoir exécuter ça sur iOS, Android. Et du coup, tu as une approche qui va être plus familière en termes d'API, de composants, parce que tu as des divs, des spans et compagnie.
+
+et tu vas pouvoir compiler ça sur le web et ça utilise StyleX donc en gros c'est l'API Steelsheet de React Native adapté au web avec toutes les contraintes de performance et ce qui cool c'est que tu as les médias query, les pseudo-states, les pseudo-éléments et tout ça il a la counterpart sur iOS Android pour la plupart des trucs donc tu peux mettre des deux points over et ça va marcher sur iOS Android tu peux mettre des médias query pour changer les styles et compagnie
+
+David Leuliette (01:18:53.734)
+Donc en gros c'est l'API signifie le réactatif, adapter web avec tous les cas de performance, fait que les médias plus rigides, les sous-dos c'est dire les sous-dos élément et tout ça il a la plupart des trucs.
+
+Donc tu te mets des deux fois en vert, ça va marcher sur un ULT, tu me mets des médias query pour changer les styles des pantalons. Donc là je suis en train de faire ça, franchement pour mon projet, pour qu'arrière il y aura une possibilité de faire des appui-tests de cette alpha, des trucs comme ça. Donc je suis en train de ça, je suis inspiré de me soucier pour voir si ça marche tellement comme ça aussi. Mais sur le papier je trouve que l'approche elle est très bien parce qu'il y a beaucoup à faire du web et le web est globalement un peu plus...
+
+Max (01:19:19.942)
+Donc là je suis en train de tester ça, sachant que mon projet potentiellement il y aura peut-être une nécessité de faire une application peut-être iPad ou des trucs comme ça. Et donc dans tous les cas j'essaierai de le compiler pour voir si ça marche vraiment comme ça dit. Mais sur le papier je trouve que l'approche elle est très bien parce qu'on est beaucoup à faire du web et le web c'est globalement un peu plus accessible. Tout ce qui est animation, les keyframes et ce genre de trucs, tout ça ça va marcher sur iOS et Android.
+
+les keyframes j'ai pas testé encore mais je crois que sur le papier c'est censé arriver parce que dans tous les cas vu qu'on a reanimated qui gère ça dans tous les cas faire une partie bridge entre React Freedom et compiler ces trucs là ça pourra marcher je pense avec très peu de souffrance sur iOS Android donc voilà je suis en train de faire le boulot avec ça
+
+David Leuliette (01:19:53.585)
+On diras sur cana use
+
+David Leuliette (01:20:14.694)
+cool, on voudra une update... je prends note, je prends note, je prends note, je prends note, dans un an on fait une update, est-ce que oui, non, il faut continuer, exactement, est-ce que t'as une personne, qui c'est que je dois inviter dans le podcast ?
+
+Max (01:20:17.261)
+À l'occasion. J'en parlerai peut-être...
+
+Max (01:20:23.019)
+Un retour d'XP. Ouais.
+
+Max (01:20:30.319)
+Alors on n'a pas eu l'occasion d'en parler mais il un moment j'ai eu une passe entre Flow et TypeScript, j'ai eu une passe d'un truc qui s'appelle ReScript. donc j'ai écrit tous les bindings ReScript, en gros c'est un TypeScript mais encore plus vénère qui vient d'Ocaml, c'est un truc qui a été dérivé d'Ocaml, il un truc qui s'appelait ReasonML puis ReScript.
+
+David Leuliette (01:20:40.57)
+oui, ok.
+
+Max (01:20:55.141)
+La communauté est cool, c'est pas mal mais il y a trop peu de personnes qui se sont mises. TypeScript est tellement devenu populaire que Resscript est devenu un truc hyper de niche. Mais à l'époque j'avais écrit tous les bindings, moi je faisais des petits side-projects avec ça. Et donc il y a aujourd'hui quelqu'un qui s'appelle Freddy, qui a une appli qui s'appelle Manga Collec, qui a fait une appli au départ qui était pour lui, une appli React Native qui faisait pour son usage perso.
+
+pour suivre peu toutes ses collections de mangas parce qu'il kiffe les mangas. en fait, aujourd'hui ce produit, il en vit. Donc il vit de cet appli React Native qui s'est développé et donc elle est en Rewscript React Native, donc c'est du binding donc du React Native. Maintenant c'est lui qui maintient les bindings React Native et ça peut voler le coup que vous fassiez un petit pitch là-dessus parce que...
+
+David Leuliette (01:21:26.042)
+Ok.
+
+David Leuliette (01:21:31.034)
+ouais, incroyable ! Ok, ok, trop cool.
+
+David Leuliette (01:21:47.43)
+oui oui, carrément.
+
+Max (01:21:49.316)
+Je crois qu'il a en plus sa particularité d'avoir la version web qui utilise la même code base. Donc il a du React Native, du React Native for web et du rescript par dessus. C'est un combo en termes de sécurité et de finesse, c'est un combo de ouf.
+
+David Leuliette (01:21:55.076)
+!
+
+David Leuliette (01:22:03.952)
+Ouais, trop cool. En plus on parlera manga, hein, c'est stylé, je valide. Je valide. Est-ce que, où est-ce qu'on peut te retrouver sur les internets ?
+
+Max (01:22:04.78)
+Voilà donc euh...
+
+Max (01:22:09.196)
+Ben voilà, je t'envoi son contact.
+
+Max (01:22:15.716)
+Mooks.io, c'est mon site internet que je viens tout juste de refaire. Un point IO mon pote. Je veux le point dev, je veux le point dev, je veux le point dev mais il a un gars qui l'achète qui l'utilise pas. J'ai été déçu, bon enfin bref. Là il devait être dispo dans 15 jours et en fait le gars l'a renouvelé alors qu'il n'en sert pas et j'ai la mort. Du coup j'ai un Mooks.io, pouvez me retrouver. Dessus il a mon LinkedIn, mon GitHub, mon BlueSky, mon Dribble, il y a trois screenshots dessus, c'est la fête.
+
+David Leuliette (01:22:20.002)
+c'est un point yo ! c'est un point yo, holalala, les gens... Aïe !
+
+merde !
+
+Max (01:22:46.051)
+Et voilà, et LinkedIn. Je vais essayer d'être un petit peu plus actif pour LinkedIn parce que j'ai envie d'aller taper en fait. LinkedIn ça m'énerve et je me suis dit, si je vais être sur LinkedIn, je vais être un mec qui te dérange et en fait je me suis dit pourquoi pas y aller. Donc je vais essayer d'aller déranger les gens sur LinkedIn. Là je vais aller chier sur Tailwind. Prochain post, je vais chier sur Tailwind. Je vais prendre des balles mais ça va être marrant parce que moi je fais ça pour le fun un peu.
+
+David Leuliette (01:22:46.212)
+C'est ça !
+
+David Leuliette (01:22:52.206)
+Vachement c'est chaud hein.
+
+David Leuliette (01:22:57.726)
+Bye, ça va ouf !
+
+David Leuliette (01:23:06.148)
+Et je...
+
+David Leuliette (01:23:12.024)
+Ouais tu peux... En fait, LinkedIn, truc c'est que le site est nul, il est moche, je déteste. je suis obligé d'utiliser... Merde, c'est quoi le bloqueur de pub là ? UBlock Origin et je hide des morceaux du site parce que ça me rend ouf. Il a 80 % du site qui sert à rien et là Inbox c'est à chier. Donc rien que pour ça y aller, ça me rend fou, mais je suis un peu obligé, bon... Voilà, je comprends mais... Allez !
+
+Max (01:23:30.637)
+Ouais, je comprends.
+
+David Leuliette (01:23:41.75)
+On ira poster sur LinkedIn, c'est bien. Vas-y, je...
+
+Max (01:23:43.747)
+Et dernier point, dernier point qui n'est pas recoupé avec du coup tout mon site perso où il a toutes les infos pour me trouver, sur Instagram max underscore Pékinxpress. Si jamais vous êtes amateur de l'émission, j'ai fait des petits montages des briefs avec ma chérie qui est encore plus drôle que moi, si tenté que je suis un mec drôle.
+
+David Leuliette (01:23:57.316)
+Ah là, c'est bien, adore ! Allez, allez mettre des likes !
+
+David Leuliette (01:24:04.572)
+bah c'est bien, c'est bien.
+
+Max (01:24:07.299)
+Et donc à l'époque où on était dans le game, a mis des petits retours et on s'est amusé à faire ça. C'était marrant.
+
+David Leuliette (01:24:14.766)
+bah c'est bien, allez voir les behind the scenes de vrai, on adore Moi c'est David, vous me retrouvez sur wishypits.today On est en train de refaire le site, on a des slots pour le mois de mai qui arrivent Il faut que... c'est Mathis parce qu'on est deux chez moi La titre Mathis pour l'instant il... il chill Il chill pas... non il va devoir faire le montage de ce...
+
+Max (01:24:18.302)
+Exactement.
+
+Max (01:24:38.082)
+J'ai vu que je suis allé faire un tour sur le site et franchement c'est très très propre et je pense que je vais copier des idées plus ou moins parce que moi mon site c'est vachement voilà qui je suis mais il n'y a pas du tout de... j'ai pas de call to action, j'ai pas d'endroit pour bouquer des slots et tout et je me dis ouais ça peut être cool d'avoir un petit truc comme ça.
+
+David Leuliette (01:24:42.596)
+T'es-tu ok ?
+
+David Leuliette (01:24:46.932)
+oui...
+
+David Leuliette (01:24:56.516)
+Ouais. Ouais.
+
+Max (01:25:01.117)
+Donc franchement, allez-y, allez voir, c'est super.
+
+David Leuliette (01:25:01.7)
+Vas-y bah c'est open source tu peux les tout copier tu peux même pas te faire chier à prompter les haïs pour prendre le truc tu fais un copy paste hop là terminé mais après c'est un monoripo sur nx du coup faut juste aller voir le bon dossier quoi mais tout est open je mettrai le du coup attends je devrais aller vas-y je je vais rien que pour toi je vais mettre en footer je mettrai le lien ouais ok ça écrit hack this website
+
+Max (01:25:14.05)
+ouais...
+
+Max (01:25:19.274)
+Bah moi, pour l'anecdote, mon site dans le footer...
+
+Moi dans mon site il a s'est écrit, moi j'ai le lien où tu peux aller voir tout le code sur mon site qui est fait avec ragnative4web.info et next.js
+
+David Leuliette (01:25:34.936)
+Ouais. Ok bah c'est bah vas-y. bah super, bah vas-y je ferais pareil. Tu copieras mon site et moi je compierai le tien, le footer pour Axis website. On adore, c'est ça l'open source. Juste la idée. Ok. Bon bah ça roule, allez on se retrouve la prochaine. Et j'espère que vous avez kiffé cet épisode autant que nous. Et normalement l'édit sera bien. À la prochaine. Allez.
+
+Max (01:25:43.091)
+Non juste, juste la ville du footer.
+
+C'est pas équilibré mais j'aime bien l'idée. Conceptuellement c'est cool.
+
+Max (01:26:04.093)
+Merci beaucoup pour l'invite, ciao ciao
+
+David Leuliette (01:26:08.579)
+Hop !
+

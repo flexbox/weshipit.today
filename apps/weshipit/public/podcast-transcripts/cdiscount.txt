@@ -1,0 +1,980 @@
+David Leuliette (00:00.459)
+Incroyable. bonjour et bienvenue sur le Cross Platform Show, le podcast qui parle développement d'applications mobiles avec React Native. Nous sommes en janvier 2025. Bonne année à tous. Je suis avec Ludwig. Ludwig, est-ce que tu peux te présenter à la communauté ?
+
+Ludwig (00:13.314)
+Bonne année !
+
+Ludwig (00:18.896)
+Alors, je suis développeur React Native. Ça va faire à peu près 6-7 ans maintenant. Et ça fait 7 ans que je fais des applications mobiles, et j'adore ça. Actuellement, je suis freelance et j'ai pu travailler sur différents types d'apps, autant sur le e-commerce que des apps à fort trafic, notamment dans le milieu du sport, ou dans le secteur des assurances.
+
+David Leuliette (00:47.321)
+et je l'utilise et c'est la meilleure app que... Enfin, ça fait partie de mon top 3. On en parlera après. Mais normalement, le podcast, si on prend une app, une stack et on voit tout, mais c'est cool avec ton parcours, pourra voir many apps and many stacks. Ça va être très bien. simplifier... T'as bossé sur combien d'apps en tout ?
+
+Ludwig (01:14.118)
+1, 2, 3, 4, 5, 6, 7,
+
+David Leuliette (01:25.646)
+ça de tête, incroyable c'est bien, tu arrives à t'en rempler. Moi je crois que c'est pareil, ça doit être une dizaine à peu près je pense.
+
+Ludwig (01:30.606)
+Beaucoup d'apps ces deux dernières années parce que je sais travailler pour une agence, du coup tu fais beaucoup d'apps, tous les trois mois à peu près tu as une nouvelle app qui sort.
+
+David Leuliette (01:39.854)
+Ouais, ah ouais ! Tain plus rapide que les sélections SDK... Tu quoi j'étais en train de regarder mon chaîne YouTube, rien à voir. Et j'ai regardé l'une des dernières vidéos bump SDK que j'ai fait. L'année dernière c'était le SDK 48 d'Expo. Et là on est en 52 et en un an je fais mais what ?
+
+Ludwig (01:58.093)
+C'est vrai que la dernière année a été... wouh ! C'est passé énormément de !
+
+David Leuliette (02:00.238)
+Il se passe des trucs. Cool. du coup, présentation depuis vraiment le début. Power user de React Native. va dire ça. Non, early adopter de React Native.
+
+Ludwig (02:16.902)
+2018, donc pas les toutes premières versions, je ne me souviens même plus si c'était la combien à l'époque de version React Native.
+
+David Leuliette (02:26.605)
+30, moi j'ai commencé avec 30 quelque chose.
+
+Ludwig (02:29.471)
+J'ai commencé plus tard.
+
+David Leuliette (02:31.061)
+C'était Exponent. Moi, c'était... Il avait déjà Expo, mais c'était pas le nom. C'était encore leur vieux nom. Enfin, moi, quand j'ai commencé, tu vois. Et le debug, c'était... ouais, il y avait une app Desktop. Et c'était... Ouais, c'était pas du tout ce qu'on a maintenant.
+
+Ludwig (02:53.413)
+C'était React Native en Vanilla, sans framework ou librairie pour aider. Le seul outil était à peu près stable à l'époque c'était celui de Infinite Red, Reactotron.
+
+David Leuliette (03:08.827)
+React Autron, Big Up à Infinite Red, on les adore.
+
+On leur fait un coucou. Regardez, si vous êtes sages, je vous ramenerai du swag de Chain React. On leur fait coucou. Cool. coup, si tu voudrais pitcher ton app mobile, on va en prendre trois. Je ne sais pas, tu vas en prendre combien ? Une, deux, trois. De façon, ça doit être à peu près les mêmes stacks au fur et mesure. Mais vas-y, je te laisse pitcher l'app mobile de ton choix, de ton cœur, celle que tu préfères. vois, peut-être pas la meilleure, mais celle la plus intéressante qu'on pourrait partager avec notre audience.
+
+Ludwig (03:46.244)
+en termes de stacks ?
+
+David Leuliette (03:48.851)
+Ouais, ouais, ouais, si on va prendre ça alors.
+
+Ludwig (03:51.652)
+Je vais prendre la toute première sur laquelle j'ai travaillé, celle de C discount. Ça remonte un paquet d'années en arrière, ce qui était intéressant, c'était qu'on était à la grande époque de Redux et aussi de Redux Saga.
+
+David Leuliette (04:08.887)
+Euh... oui. Raconte-nous, pour ceux qui connaissent pas cette époque. Mathis, big up à toi, tu vois, Mathis, connaît pas.
+
+Ludwig (04:17.22)
+Redux a été une des premières solutions vraiment plébiscité par la communauté pour le State Management, notamment pour un State Management global. C'était à l'époque où on n'avait pas encore les Hooks, on faisait encore des Class Components. C'est vrai qu'on avait cette problématique de pouvoir partager une information à divers endroits dans l'application. Grâce à Redux, on était capable de pouvoir partager ces détails.
+
+chose qui était plus compliquée avant, où on faisait souvent du props drilling, c'est-à-dire que passait des données à travers tout l'arbre. C'était ultra contraignant, pas très performant. Redux a un peu arrivé en nous permettant d'avoir des principes d'ingénierie beaucoup plus carrés, notamment pour le state management.
+
+David Leuliette (05:07.179)
+Donc ça 2018. En 2018 c'était ça
+
+Ludwig (05:09.731)
+Ouais, en 2017-2018, ouais.
+
+David Leuliette (05:13.556)
+et saga du Redux Saga
+
+Ludwig (05:15.88)
+Et Saga, ça pouvait fonctionner notamment avec Redux, mais ça prenait un peu le principe d'un processus. J'aime bien expliquer ça comme ça. On avait des fonctions qu'on appelait les génératrices. Et l'intérêt de cette fonction, c'est qu'elle peut fonctionner pas à pas. Du coup, tant que la première étape n'est pas terminée, elle ne passera pas à la seconde ni à la troisième. On peut vraiment bien architecturer la séquence
+
+d'une fonction et des événements qui vont se passer. Et on était capables d'écouter des events, notamment des events liés à Redux ou liés à Redux Saga, pour pouvoir trigger des fonctions qui allaient avancer pas à pas. C'était assez sympa, notamment à l'époque où on n'avait aucune librairie pour faire du data fetching. Grâce à des fonctions génératrices, on était capables vraiment de gérer son UI et son data fetching et de...
+
+de pouvoir gérer le côté asynchrone des choses.
+
+David Leuliette (06:19.371)
+que là ils disent c'est encore... ah oui c'est ça ouais ok pour moi c'est quoi le truc offline du coup ? y'avait pas un autre truc en plus ? Sunk c'était quoi la diff avec Sunk alors Redux Sunk ? moi je suis nul en Redux
+
+Ludwig (06:31.201)
+Euuuuh... Allez, au tout début ça existait pas encore je crois, ça y arrivait après notamment avec RTK je pense, je me souviens plus très bien.
+
+David Leuliette (06:39.092)
+c'est possible, je saurais plus dire l'ordre. Je pourrais pas dire l'ordre.
+
+Ludwig (06:42.209)
+Et du coup, oui, ça apportait une couche d'attraption pour gérer le data set, le fetching avec Redux. Mais au tout début, on n'avait rien. Il fallait tout... C'était le Far West !
+
+David Leuliette (06:59.311)
+C'était un peu... Oui quand tu jumpais dans cet écosystème effectivement il n'y avait pas vraiment de règles. Moi j'ai un background de Ruby on Rails du coup j'adore tout ce qui est... Il a une solution, tout le monde l'utilise, ça marche. Quand j'ai commencé à faire du React, c'était pas toujours maintenant en fait d'ailleurs. Je pense que c'est ça qui fait qu'il y a plein de gens qui n'aiment pas...
+
+C'est double sword et edge, donc en fait c'est bien sans être bien. Moi j'aime bien parce que du coup tu peux vraiment, ça va beaucoup plus vite à choper des app je trouve. Mais après si t'es pas carré, si t'as pas des seniors qui font eh ! Moi j'ai déjà fait une dizaine d'apps, je sais exactement que le problème A on va le résoudre avec ce problème là. Et pas commencer à faire le fameux hammer, if you have a hammer, si t'as un marteau, si t'en as le seul outil dont tu as à disposition et ta marteau tout ressemble à un clou.
+
+ou un truc du genre.
+
+Ludwig (07:56.067)
+C'est vrai que React Native, à React, c'est qu'on n'avait pas cette notion de framework. C'était une agglomération de plein de librairies qu'il fallait orchestrer et du coup c'était au choix du développeur. D'où faire très attention à son architecture et être plutôt carré, sinon tu peux vite mettre le bordel. Heureusement l'écosystème se consolide maintenant, grâce à Expo notamment.
+
+David Leuliette (08:20.458)
+Ah oui oui car oui oui ça c'est Du coup c'était pas en expo là cette table là ? Non c'était tout à la main. Est-ce que tu faisais clic clic dans Xcode et tu plodais à la main ?
+
+Ludwig (08:30.369)
+Non, on avait une CI qui avait été faite par une équipe et on était capable de gérer tout ça avec Fastlane.
+
+David Leuliette (08:39.467)
+Ouais bah oui. Pareil, pour ceux qui ne connaissent pas Fastlane, tu peux expliquer ce que c'est.
+
+Ludwig (08:40.947)
+Et c'était bien ça, mais...
+
+Fastlane, c'était un outil qui nous permettait de gérer le déploiement des apps, notamment sur les stores, avec le côté signature de code, pour pouvoir avoir une app utilisable par l'Apple Store et le Play Console.
+
+David Leuliette (08:57.962)
+certifique.
+
+David Leuliette (09:03.114)
+C'est ça exactement. Ruby, coup, c'est pareil. est... Donc en 2018, tu dois faire du JavaScript, du Redux, du React et du Ruby pour gérer ton script de diplôme. Ça commence à faire beaucoup de technologie, ça.
+
+Ludwig (09:17.761)
+C'est vrai que c'était plutôt fragile, ça avait tendance à casser souvent, vous pouvez perdre beaucoup de temps notamment sur les outils.
+
+David Leuliette (09:23.794)
+Ah bah quand ton gemfile il est... en fait tu n'as jamais entendu parler que tu te dis ouais je fais de JavaScript et vas-y go et puis que tu arrives pour deploy et tu fais mais c'est un gemfile mais c'est gem install bah non c'est bundle install mais pourquoi tu as un bundler ? ça en fout !
+
+Ludwig (09:39.105)
+J'ai l'impression que j'ai envie de comparer cette époque de React Native avec un peu la pratique du surf, tu vois. Le surf, au début, c'est juste ingrat, tu prends aucun plaisir, c'est dur, ça marche pas, tu galères, mais une fois que tu as réussi à prendre une vague, c'est génial. Et React Native, c'était un peu ça à l'époque, tu galérais avec tous les outils avec lesquels tu devais composer, mais une fois que tu avais ton app dans les mains et qu'elle fonctionnait, c'était magique.
+
+David Leuliette (10:04.922)
+Et du coup, comment tu naviguais sur ton app native ? Est-ce que tu utilises la librairie React Native Surf, qui n'existe pas ?
+
+Ludwig (10:12.769)
+La première c'était React Navigation, j'ai aussi utilisé celle de Wix à un moment. Mais j'ai plutôt utilisé React Navigation. Le problème c'est qu'à l'époque, le problème de performance, c'était full.js.
+
+David Leuliette (10:20.902)
+Reste pas sur celle-là.
+
+David Leuliette (10:29.341)
+et c'était des classes components du coup il n'y avait pas de props à rater.
+
+Il n'y avait pas de hook. Du coup, pour la prop, il la balancer partout, me souviens. Si je me souviens bien. Navigation.navigate, c'était un enfer. Il n'y avait pas un high order component.
+
+Ludwig (10:48.545)
+C'est possible, c'était l'époque des HEC, ouais, c'est possible. J'avoue que là je commence à avoir des trop de bevoirs, vois. Maintenant avec les Hooks, enfin, ou les Provider, c'est complètement différent, mais à l'époque, c'est vrai que c'était l'injection de props en tous les sens.
+
+David Leuliette (11:07.369)
+Je crois que j'ai encore du code de 2017, of. que je l'ouvre. Je serais certain, je serais incapable de... Déjà là, je bosse avec un client et on a encore des classes component et j'ai ouvert le truc et j'ai fait... Je comprends rien. Comment... Comment... Tu fais un zis, ah oui, un zis et tout. Oh là là. Je te jure, chaque fois que je vous le fiche, je fais... Je le refactor parce que il est super huge et il fait mille lignes et tout. Bref.
+
+Ludwig (11:35.68)
+les fonctions de binding, les bindings...
+
+David Leuliette (11:38.941)
+Ouais c'est ça, c'est exactement ça ouais. La belle époque. Du coup, est-ce que si tu utilises React Navigation, est-ce que tu te souviens, il n'y pas un pattern de navigation que tu avais utilisé assez fréquemment ? sais genre, là en ce moment si tu prends une app de trading, ils utilisent à fond les modales, ce genre de truc. Est-ce qu'il y a un truc pour l'app Cdiscount qui était...
+
+Ludwig (12:01.279)
+Hmm.
+
+David Leuliette (12:09.85)
+dont tu te souviens, tu vois.
+
+Ludwig (12:11.786)
+A l'époque, on utilisait des patterns, on avait le drawer, on avait la bottom tab. Et après, c'était des stacks de screens, si je me rappelle bien. Donc chaque bottom tab, c'est un stack où tu peux pusher des screens dedans. Et un drawer pour accéder à toutes les informations utilisateurs.
+
+David Leuliette (12:23.473)
+Ok.
+
+David Leuliette (12:31.962)
+Ok ouais, parce qu'à ce moment là, c'était encore Android, je ne plus quoi. 12 on va dire, mais il n'y avait pas de bottom tab à départ d'Android.
+
+Ludwig (12:37.715)
+Vous n'avez pas trop de...
+
+Ludwig (12:41.993)
+Alors je ne pourrais pas te dire, mais en tout cas, ça existait quand j'ai commencé.
+
+David Leuliette (12:48.648)
+Moi je suis presque sur, insultez-nous sur Twitter ou... Bouskah il est genre... Mais je suis presque sûr que moi quand j'ai commencé Android il n'y avait pas de bottom tab et justement c'était le pattern de navigation qui était utilisé sur iOS et c'était genre pas du tout pareil et du coup de base il y avait... Non non tu pouvais le faire dans Rack Navigation tu as toujours eu bottom tab mais en fait le truc c'est que tu utilisaies ce pattern là mais tous les utilisateurs Android ils étaient pas du tout...
+
+Ludwig (13:04.928)
+C'est fait à la maintenant ?
+
+David Leuliette (13:19.188)
+il naviguait pas du tout comme ça en
+
+Ludwig (13:20.415)
+la déviation était performante sur Android, notamment parce qu'elle était gérée en JS et c'est pour ça que par exemple, on utilisait Wix parce qu'on utilisait la navigation native.
+
+David Leuliette (13:26.32)
+Ouais, aussi, hein.
+
+David Leuliette (13:32.828)
+Ouais. Et donc... Et donc quoi ?
+
+Ludwig (13:37.472)
+qui a eu son lot de problèmes aussi.
+
+David Leuliette (13:39.735)
+Oui, on fera un épisode de Space Cache, l'ai fait, navigation library je pense, dans cinq ans, qu'on aura tous oublié et qu'on fera tous du expo router. donc, l'app de CDSCOUNT, donc styling, je pense qu'il n'y avait pas de... Dis-moi, est-ce que vous avez utilisé un UI library qui existait déjà ou tout à la mano ?
+
+Ludwig (14:02.784)
+Non. Tout à la mano. Je crois qu'à l'époque c'était le tout début des libres très connus en réact comme Matéria du High, des choses comme ça. Donc c'était pas encore très très populaire, je pense qu'il devait en exister, mais en tout cas tout était fait à la mano, c'était le shit API.
+
+David Leuliette (14:20.967)
+Ha !
+
+Est-ce tu des anecdotes sur Style City Pi ? Est-ce que ça scale bien Style City Pi ?
+
+Ludwig (14:30.171)
+En vrai, allait parce que ce qui était intéressant avec cette discount, c'est là où ça a été une expérience géniale, c'est que c'est une grosse DSI, y avait énormément de développeurs et du coup, on va dire que c'est là où j'ai appris à faire du code de façon industrielle, il y avait des process, on avait un peu des concepts comme les Request for Command, donc avant de commencer à coder, on devait décrire comment on voulait implémenter la feature.
+
+Ça pouvait aller dans le détail, mode c'est quoi la folder structure que tu vas voir, comment tu vas ranger toute ta feature. C'est de la belle ingénierie, c'est Discount, c'était vraiment une belle boîte.
+
+David Leuliette (15:09.267)
+Ok, trop bien. Typiquement, est-ce que tu veux appeler ça un carousel ou un slider ?
+
+Ludwig (15:15.666)
+Unending Convention ? Ouais, ouais, ouais. On pourrait se poser ces questions notamment dans les RFC.
+
+David Leuliette (15:22.663)
+Bah oui parce que sinon tu te retrouves avec 5 librairies qui font le même. Real life use case scenario, j'ai déjà eu le cas où tu 50 fois la même librairie, enfin pas vraiment. Où tu te retrouves avec 15 composants de modal qui font presque la même chose mais qui s'escape pas pareil et là tu fais... au secours.
+
+Ludwig (15:42.673)
+Après tu vois, avait un garde-fou qui était assez contraignant. C'est que l'organisation des gens qui pouvaient collaborer sur le mobile, c'était un peu en feature team. Donc tu avais une team tracking, une team acquisition, et tu avais la core team. Et à un moment donné, pour éviter que ça devienne le bordel sur l'application mobile, toutes les pull requests devaient être validées par la core team. C'est-à-dire que tu avais un peu d'étrangement, et la core team devait valider tout le temps ce que tu faisais.
+
+David Leuliette (16:06.062)
+Ouais du coup ouais ça.
+
+Ludwig (16:12.284)
+Ce qui a donné lieu à des situations un peu rigolotes, que du coup, demander des reviews, c'est demander du temps à la core team, du coup tu devais échanger tes jours robes, de ton projet contre leur temps. La bureaucratie des grandes boîtes, ça se comprend dans un sens, mais c'est vrai que ça peut freiner l'innovation on va dire.
+
+David Leuliette (16:24.039)
+ouais !
+
+David Leuliette (16:32.135)
+Ouais je vois, c'est pas maniaque, c'est pas indie hacker, allégo, on est plus un bouton et... Je vois, mais ouais j'imagine typiquement, bah allez c'est bon tu me donnes, en plus des trucs n'importe comment, tu me donnes 10 jours hommes. À quoi correspond un jour homme ?
+
+Ludwig (16:36.542)
+C'est ça, les procès.
+
+Ludwig (16:46.492)
+J'ai fait autant de vidéos ce mois-ci, tu me vois autant de temps.
+
+David Leuliette (16:51.034)
+Ouais ouais ouais, c'est très compliqué de scopé les trucs. Ok et donc est-ce que... Donc tout le style sheet à la main et tout, c'était... Non c'était que app mobile, c'était pas shipé sur le web.
+
+Ludwig (17:06.525)
+Il y avait un site web complètement dédié. En fait, il y avait trois plateformes différentes. On avait un site pour le web, desktop. On avait un site spécial pour le web mobile à l'époque et React Native pour les applications mobiles.
+
+David Leuliette (17:21.486)
+Et ça communique, tout communiquer ensemble ?
+
+Ludwig (17:24.286)
+par le bac n
+
+David Leuliette (17:27.13)
+oui, mais c'était pas un front-end, c'était pas un monoripo avec des components, t'es...
+
+Ludwig (17:30.557)
+C'est pas tout ça l'époque, on n'en parlait pas.
+
+David Leuliette (17:33.311)
+Ouais, non, il avait pas, il y avait... On sait jamais, tu vois.
+
+Ludwig (17:35.933)
+Il y avait eu des grosses problématiques, pour le web et le mobile. On passait par le header qui servait d'orchestrateur pour le contenu de ta vue. En termes d'ingénierie, c'était plutôt complexe à l'époque.
+
+David Leuliette (17:54.146)
+bah oui, de toute façon c'est 10 secondes, je sais pas combien c'est le trafic mais... Moi j'ai déjà acheté plein de trucs sur ces 10 secondes toi.
+
+App mobile, non, je ne pense pas, mais quand même pas mal de monde. du coup, ouais, parce qu'ils sont assez connus, c'est Discoon, pour être tout rouge et faire des gros... C'était avant ça, non ? Et c'est tout rouge, genre, dépêchez-vous, il vous reste quatre minutes pour acheter un truc. C'est C'est Discoon, tout ça où j'hallucine. OK. Et donc, du coup, est-ce que le branding niveau graphique et animation, s'il y avait des trucs un peu crazy sur l'app mobile ou c'était...
+
+assez classique.
+
+Ludwig (18:33.116)
+à l'époque, surtout qu'on n'avait aucune livrerie pour les animations à part celles fournies par ReactNet. Donc tu pouvais...
+
+David Leuliette (18:38.839)
+En vrai tu mets des gifs, tu mets un petit gif.
+
+Ludwig (18:42.044)
+Ça peut faire son effet.
+
+David Leuliette (18:43.81)
+ça fait le taf hein ! Pas de gif alors.
+
+Ludwig (18:47.581)
+C'était plutôt simple de ce que je me souviens. On n'était pas trop sur les animations.
+
+David Leuliette (18:56.631)
+Ouais niveau image ça faisait des trucs de producte et tout...
+
+Ludwig (19:01.2)
+C'est plutôt statique.
+
+David Leuliette (19:01.669)
+Parce qu'il me semble qu'au niveau DA, des fois il pétait les plombs pour la home page de ses discounts, qui était vraiment connue d'ailleurs pour ça. Je sais plus si c'est le cas.
+
+Ludwig (19:10.396)
+Ouais, sur le côté, je te mets des pop-ups.
+
+David Leuliette (19:16.261)
+Ah peut-être. Là je suis sur le site, ah ouais c'est redevenu... Là c'est redevenu, c'est devenu simple tu vois. C'est... Ouais. Ouais je sais pas, ça faisait partie du charme. En même temps, love hate relationship quoi, j'adore mais je déteste en même temps. Moi je sais que ça m'a angoissé quoi, de ouf. Tu montes sur le site, fais wouah ! Il y a tellement tout ça à acheter au secours.
+
+Ludwig (19:22.524)
+Il y eu un rebranding récemment
+
+David Leuliette (19:45.908)
+Ok donc pas d'animation, pas de graphique mais ce que tu disais à l'heure à niveau CD, CI, Release, Deploy...
+
+Eeeemmmm
+
+Ludwig (19:56.074)
+Alors disait ouais
+
+David Leuliette (19:59.458)
+Et c'était pas... C'était vous qui le maintaniez ce truc là ou...
+
+Ludwig (20:02.56)
+L'équipe Core, c'était pas moi, mais en gros il y avait toute une CI qui fonctionnait sur TFS, est la solution de Microsoft pour gérer le versionnement du code. Et toute la CI-CD était bien réglée, ou dès que tu merges et tape le request, ça générait des QR codes. Les gens du mediterranéen pouvaient installer la build, donc c'était une PR, une build. Il n'y avait pas encore ces notions d'update over the...
+
+David Leuliette (20:26.262)
+Ouais, Overshear, ouais pour les gens qui connaissent pas, Overshear Objets ça balance un bundle JavaScript et du coup t'as pas besoin de download ton application mobile. T'as pas besoin de redownload, tu download le bundle sans passer par le store et c'est beaucoup plus rapide pour shipper genre, on a oublié de mettre un S, dans 5 minutes c'est corriger en production, tant dis qu'avant bah c'était genre, faut faire un build, attendre 3 heures.
+
+et après re soumettre au store du coup 2 jours pour mettre en prod combien de temps ça prend 2 jours et la première fois ça prend 1 mois by the way le temps d'approuval et tout moi j'ai une idée de ouf genre je bossais donc première après hack native vraiment officielle qu'on bosse dessus mais c'était que ouais c'était expo et du coup la project manager vient me voir et fait bah du coup faut la mettre en prod je fais bah ok ça prend 1 mois
+
+Ludwig (21:07.876)
+C'est vrai, c'est vrai.
+
+David Leuliette (21:25.411)
+me dit quoi ? Je pas, ouais, vous avez les credentials, vous avez ça, vous avez ça, est-ce que les terms and conditions, elles sont bien ? Est-ce que vous avez toute l'administratif ? Est-ce que vous avez mis... Non. Bon. Bah ok, moi suis ready, mais allez-y. Et en vrai, je me trompe pas souvent.
+
+Ludwig (21:41.435)
+Ouais.
+
+C'est vrai que maintenant dès que je commence un projet avec un client, de suite je leur dis, première chose à faire c'est les comptes Apple Store et Play Console, certifiez votre compte entreprise, récupérez la validation du DUNS. Il a tout un process... DUSN. Tout un process administratif à cet endroit.
+
+David Leuliette (21:58.819)
+DUSN.
+
+David Leuliette (22:03.541)
+DUNS ? non c'est DUNS, tu as raison. C'est bon, t'es un vrai développeur senior Ragnetty puisque tu sais c'est quoi la 10. Alors qu'en plus moi j'ai la liste, j'ai une expo chain list, donc moi j'ai une checklist en fait, un guide sur Gummroad, enfin sur Notion, où j'ai toutes les checkbox parce qu'il y en a vraiment.
+
+vraiment beaucoup à valider. C'est vrai que souvent les gens ils y pensent pas quoi, enfin les gens. En général tu dis ouais c'est bon.
+
+Ludwig (22:40.794)
+Je vais te dire un secret, j'utilise ta liste.
+
+David Leuliette (22:43.958)
+bah oui, bah je sais, bah attends, moi j'en ai mis tellement sur les bons prods que ça me rend fou. je suis coute de savoir que tu l'utilises, c'est bien, parce que je continue à la maintenir à jour. Et en plus, c'est vrai que c'est frustrant, tu dis vas-y, j'oublie ça, j'oublie ça, j'oublie ça, parce que quand tu te mets en tunnel, vas-y, je le fais. il me manque les assets pour Android. Bah boum, t'es bloqué, ça reprend trois jours et tu perds un temps de fou.
+
+Ludwig (22:50.65)
+...
+
+David Leuliette (23:12.194)
+Et surtout les faire, t'as des choses à faire dans l'ordre en fait, que tu peux pas faire...
+
+que tu dois un peu respecter quoi, sinon... tu peux pas laisser avec ces... trop chiant. Pour ceux qui savent pas, je mettrai le lien... Je mettrai le lien de ma liste.
+
+Ludwig (23:27.989)
+Super pratique, la check-lit pour être sûr que tu peux déployer en prod.
+
+David Leuliette (23:34.306)
+on tape Expo Checklist Gumroad, vous prenez le premier lien, terminé. Cool. Est-ce tu te souviens des librairies diverses, au-delà de styling, navigation, data fetching, que tu utilisais à l'époque et qui t'ont rendu
+
+Un grand service.
+
+Ludwig (24:07.102)
+Alors, il y en a une qui m'a marqué. Je pense que sur le moment elle m'a pas rendu un grand service et m'a plutôt freiné. C'est... Randa.
+
+David Leuliette (24:17.084)
+mais Ramda c'est trop bien, enfin moi j'ai jamais utilisé, alors vas-y c'est quoi, qu'est-ce que c'est Ramda ?
+
+Ludwig (24:21.643)
+C'est une librairie qui propose plein d'utilitaires, comme l'Odash, sauf que sa priorité est qu'elle est focus sur la programmation fonctionnelle.
+
+David Leuliette (24:27.01)
+Ouais exactement. Moi je suis...
+
+Ludwig (24:32.825)
+c'est-à-dire que tout est fonction. Elle était utilisée énormément pour la manipulation des données. Quand on recevait des données du back-end, on n'a pas forcément toujours le bon format pour pouvoir matcher ce qu'on a côté front-end. coup, des fois, on était forcé de les adapter. On utilisait énormément cette libe pour pouvoir manipuler les données. Ça m'a donné...
+
+J'ai vraiment eu énormément de mal au tout début parce que c'est un autre paradigme, il changer sa façon de penser, c'est un autre syntaxe à apprendre.
+
+David Leuliette (25:11.074)
+Genre à quel niveau ? Genre tu retournes tout le temps un résultat et puis après tu l'utilises et puis euh...
+
+Ludwig (25:16.582)
+C'est ça, c'est vraiment le côté programmation fonctionnelle ou déclarative. Disons que c'est un peu comme la boucle fort et le map. Mais la boucle fort est impérative, tu décris exactement ce que tu veux et comment tu veux. Alors que le déclaratif c'est tu dis, ben, ITER sur mon tableau. Point.
+
+David Leuliette (25:25.959)
+Ouais, I see.
+
+David Leuliette (25:41.089)
+Ouais, non mais ouais c'est ça. Mais moi je sais pas, j'ai pas eu le... Moi c'est particulier parce que j'ai appris la programmation n'importe comment. En fait, moi je faisais du HTML, CSS au début. Après j'étais web designer tu vois. Et après j'ai devenu dev front-end parce que voilà c'est comme ça qu'on l'appelait. Mais avant je faisais du PHP n'importe comment, il n'y avait pas de rails, c'était le chaos absolu. Voilà et après j'ai fait du rails et là...
+
+Et en fait, moi dans le front-end, faisais toujours, je me souviens avec JQuery, je faisais de la programmation fonctionnelle tout le temps sans le savoir. Parce qu'en fait avec JQuery...
+
+Ludwig (26:20.479)
+chêner les fonctions.
+
+David Leuliette (26:20.928)
+En fait, non, mettais justement tous mes sélecteurs avant et après justement je faisais pas le truc de re-rappeler tout. Je faisais souvent des petits morceaux, petites fonctions qui retournaient à résultat et je mettais au tout début tous mes sélecteurs et voilà, donc je faisais kind of de la programmation fonctionnelle sans le savoir en fait.
+
+Ludwig (26:39.672)
+Ouais.
+
+David Leuliette (26:43.856)
+Et quand moi réacte du coup j'en ai fait, ça m'a semblé hyper facile parce que vu que réacte c'était déclaratif, programmation fonctionnelle, tu retournes un résultat et tout, c'est pour ça que moi au rendez-vous j'aurais pas eu de problème vraiment à l'utiliser, jamais utilisé. Moi j'utilise l'Odash et j'ai la flemme de changer mais je sais que c'est pareil. Mais je comprends venant d'un truc assez structurel, fort et comme tu disais, au premier coup tu fais mais c'est quoi cette...
+
+Ludwig (27:10.777)
+C'est notre façon de penser. Une fois que le flow des données, comme tu dis, tu fais une fonction pipe et tu lui donnes plein de sélecteurs. Toutes tes fonctions de sélecteurs vont s'appliquer les unes après les autres à ta donnée tel un flow. Après, tu récupères l'output et roule le genèse.
+
+David Leuliette (27:11.552)
+Exactement.
+
+David Leuliette (27:32.18)
+Ouais c'est ça, en plus c'est quand même, là je suis sur la doc de Ramda, c'est quand mieux quand tu regardes à Replace, Reverse, Sequence, Sleep, Tail, enfin tout makes sense, Update, franchement au lieu de lire un truc dégueulasse JavaScript, tu fais wouah je comprends rien, là c'est écrit Replace, Comparator, makes sense. Donc ouais pour tout ce qui est massaging de data, je me doute que...
+
+Ludwig (27:44.962)
+Allez !
+
+Ludwig (27:58.168)
+...
+
+David Leuliette (27:59.73)
+que ça devait être bonheur. Alors, Ramda, après, est-ce qu'il en a une autre que tu te souviens ?
+
+Ludwig (28:04.024)
+Si on parle de Reanimated, quand j'ai fait un peu d'animation, la V1 Reanimated existait déjà, crois, mais c'était pas du geste.
+
+David Leuliette (28:10.17)
+y'avait déjà ?
+
+David Leuliette (28:16.582)
+Ouais.
+
+Ludwig (28:17.634)
+On était sur de l'impératif, n'était pas sur du déclaratif du tout. pareil, y avait toute une syntaxe à apprendre qui était plutôt complexe. Et quand la V2 est arrivée avec ce côté déclaratif, ça a tout changé. C'est là où je pense que la librairie devenue extrêmement populaire. Je me rappelle d'avoir suivi des tutoriels de William Candillon qui faisaient du R-Animated V1 et je me disais...
+
+David Leuliette (28:38.643)
+Oui.
+
+Big up ! Ah ouais ! Ah bah c'est comme ça ! Ah bah oui parce que personne ne comprend rien ! en fait, c'est pas que tu comprends rien, c'est qu'il faut te mettre en mode, allez warrior, je vais devenir un warrior dans l'animation et je faire que ça. Mais d'où ? vois ? Moi je suis freelance du coup, animation c'est genre dans la pile des features, c'est loin. Le premier truc c'est release et après c'est data fetching en fait. Et après un peu plus sur le moi je suis un peu plus focus sur le i que d'autres choses. Mais...
+
+Ouais ouais je comprends qu'au début tu regardes tu comment on un interpolate et tout tu dois tout définir avec un bloc comme ça tu fais un clic clic et hop je pourrais utiliser ce qu'il fait ok ouais du coup tu as poncé les vidéos de William pour comprendre comment ça marche c'est bien
+
+Ludwig (29:29.463)
+Ouais, ouais, et je crois que je peux lui dire merci aussi, parce que c'est grâce à certaines vidéos qu'il a fait où il boostrapait une app from scratch, je sais pas si c'était avec Expo à l'époque, il avait fait une série de vidéos pendant le Covid je crois, et j'avais suivi toute sa série de vidéos et ça m'avait appris plein de principes plutôt sympas, et après quand j'ai passé des entretiens d'embauche, j'ai dit bah voilà j'ai fait comme ça, j'aime bien ce principe, j'ai eu différentes façons, et j'avais énormément appris grâce à ces vidéos et ça m'avait...
+
+bien aidé dans ma carrière.
+
+David Leuliette (30:03.412)
+ben nickel alors !
+
+William Candillon, générateur de job. Franchement, up à toi. Ok, donc Ramdar Animated V1 en plus.
+
+Ludwig (30:24.759)
+Après on peut parler d'Expo, je l'ai utilisé un peu après Expo, mais à l'époque où Expo était une boîte noire.
+
+David Leuliette (30:35.071)
+C'est à dire, attend, tu utilises Expo chez... Non, vous utilisez pas Expo chez... Après. Bon allez, on va dire que ça passe, Tu te souviens plus du coup ? Y a pas une autre libe chez CD'scoons que tu utilises, qui t'a simplifié la vie
+
+Ludwig (30:40.31)
+Et l'utiliser après, pas acheter ses discounts.
+
+Ludwig (30:51.382)
+À l'époque, une façon de faire les tests qui a été remise en question, mais on faisait des snapshots avec Jest. On faisait des snapshots de notre arbre React, donc tu avais vraiment un snapshot avec ton style visible, tes props, etc. Des fois, quand on avait des régressions, on devait regarder le snapshot.
+
+David Leuliette (31:00.965)
+Ouais. Ouais, ok.
+
+David Leuliette (31:20.158)
+Ouais !
+
+Ludwig (31:21.142)
+le snapshot je ne comprends mais c'était un des moyens efficaces et rapides pour pouvoir poser du test on va dire UI entre guillemets tu vois pour pour valider que tu fais pas de régression on faisait même ça avec les sagas on faisait des snapshots des outputs de ta saga pour vérifier qu'elle était bien déterministe parce que le but c'était de rendre déterministe quelque chose d'insynchronique
+
+Donc le snapshot testing.
+
+David Leuliette (31:49.661)
+Bonjour.
+
+Et avec gestes tu vois, gestes, gestes... Moi j'ai commencé gestes un peu sur le tar. En fait non, moi j'ai fait d'abord storybook et après j'ai fait du geste.
+
+Ludwig (32:05.413)
+du geste avec un ordinateur Windows.
+
+David Leuliette (32:07.325)
+RNTL ? avec Windows, attends, tu étais sur Windows ?
+
+Ludwig (32:12.607)
+On était sur Windows, Très vite, j'ai mis un Linux pour que ça aille un peu plus vite. Au tout début, n'avait pas de Mac dans l'équipe, et du coup, j'ai dû faire du lobbying pour avoir un Mac pour toute l'équipe, pour pouvoir vraiment travailler sur iOS.
+
+David Leuliette (32:30.577)
+Mais comment vous y allez ?
+
+Ludwig (32:33.366)
+C'était dur. Mais disons que, ouais, on était d'abord focus sur Android. Après on pouvait tester avec... On avait un serveur de build iOS, donc pouvait récupérer des builds et les faire fonctionner en debug avec Windows, mais c'est vrai que, rien que le bundler qui prend entre 5 et 10 minutes pour préparer ton app, c'était une époque assez folklorique.
+
+David Leuliette (33:00.573)
+Ah oui, bah c'était long. Dans certaines parties du monde, certaines personnes travaillent encore comme ça, je pense, no offense, il a des choses mieux maintenant, notamment Expo qui simplifie la vie. en 2017-2018, j'en ai encore fait, sans Expo, Plane. En 2019, j'ai bien refait du Expo, après j'ai re-arrêté le...
+
+l'application pour laquelle j'avais travaillé avait été setup avec le CLI normal de Rack Native. Et là, je me suis rendu compte vraiment qu'en fait, n'y pas la vélocité, elle est carrément impactée. C'est trop long de bosser sans Expo. Là, tu dois réinventer tout pour les scripts de deploy. Tu es sur Azure DevOps, du coup, a un mec qui savait le faire, mais tout le reste, tu vois, Orbit, Expo Orbit, ça permet de lancer tes builds comme ça à la volée si quelqu'un a déjà fait le build.
+
+Ludwig (33:46.677)
+...
+
+David Leuliette (33:57.981)
+le truc du QR code qui scanne, le web browser intégré dedans, t'as vraiment plein de que libérer qui simplifie la vie de fou quoi.
+
+Ludwig (34:11.775)
+Ils ont pris tous les pain points, ils les ont taclés.
+
+David Leuliette (34:14.973)
+Ouais et là en plus tu vu ce qu'ils ont sorti, IAS ce matin, j'ai vu ça hier, IAS deploy, boum ça deploy sur un site web, du coup on a plus besoin de Netlify ni de Verzel quoi, donc franchement là...
+
+Ludwig (34:21.299)
+Deploy !
+
+Ludwig (34:27.828)
+tu veux une petite lancement qui s'est passé il y a deux jours je crois. y eu un problème sur les... Enfin en tout cas nous on a eu un problème sur les variables d'environnement. Expo Token, ont tous disparu de tous nos projets. Du coup au début on se posait, mais on se disait pourquoi toutes nos patlines de toutes nos apps ne fonctionnent plus et je pense qu'ils étaient en train de préparer la nouvelle feature de AS et il y eu un petit loopé sur...
+
+David Leuliette (34:38.32)
+Ouais ?
+
+David Leuliette (34:54.812)
+Et il un petit DB Mygrade qui a chié et du coup... c'est bien.
+
+Ludwig (34:59.22)
+C'est ça ! Heureusement tu peux vite résoudre ça, tu régénères un token, tu le mets en accès global sur ton GitHub et hop, tout est progé
+
+David Leuliette (35:06.929)
+Ouais mais c'est ça mais je pense que c'était un bon stress test, tu vois c'était un stress test interne. Genre bon les gars on a raisé toutes les clés pour votre propre sécurité. Tu peux faire un bel article de blog comme ça genre pour repartir cette nouvelle base en 2025, mettons à jour nos pratiques de sécurité. T'es alors qu'en fait ça tombe, ils ont lancé une commande en mode bah zut, ou rename.
+
+Rename ou peut-être je ne sais pas je ne pourrais pas dire. Cool. Alors du coup est-ce que tu te souviens d'une feature random que tu as aimé développer et comment tu l'as fait en fait comment tu as développé une fonctionnalité.
+
+Sur l'app, c'est discount. C'est quoi ton workflow ?
+
+Ludwig (36:03.059)
+...
+
+David Leuliette (36:03.168)
+Genre on va dire, suis David du marketing, j'aimerais que tu mettes une feature qui permet d'avoir cinq étoiles sur les stores.
+
+Ludwig (36:16.115)
+On avait une feature rigolote à l'époque, c'était l'intégration d'un SDK qui permettait d'utiliser la géocalisation de l'utilisateur pour pouvoir lui proposer des points de collect très proches de lui, de son adresse. Du coup, c'était une feature assez sympa parce que ça a peut-être touché aux permissions, donc on demandait la localisation de l'utilisateur.
+
+David Leuliette (36:16.572)
+au jus.
+
+David Leuliette (36:35.708)
+Hmm.
+
+David Leuliette (36:44.028)
+Il n'y pas de libre de permission, si, c'est peut-être.
+
+Ludwig (36:50.292)
+pas à l'époque, non. du coup tu récupérais sa permission, après tu récupérais sa géologue afin de pouvoir, lors du checkout, lui proposer en lui disant bah voilà en fait on a vu que juste à côté de toi tu avais cette boutique de vêtements, ce bar, ce tabac...
+
+David Leuliette (36:52.272)
+Allez.
+
+David Leuliette (37:10.779)
+ce PMU ! Le café de la gare est à 500 mètres. Vas-y
+
+Ludwig (37:16.573)
+C'est ça. Tu peux recevoir ton colis le plus rapidement possible si tu veux grâce à ce point de collect. Et c'était au tout début tu vois, des pick-up. Ça n'existait pas encore, enfin c'était pas très populaire je pense. Donc c'était sympa. C'était sympa.
+
+David Leuliette (37:33.019)
+En plus la géologue c'est un vrai truc parce que même étavée maps
+
+Ludwig (37:41.459)
+Il y avait une carte...
+
+David Leuliette (37:43.929)
+T'avais une carte ou t'avais juste l'adresse ? Parce que carte c'est le truc de Airbnb avec Notive Maps.
+
+Ludwig (37:47.323)
+et par rapport à l'adresse.
+
+Y'avait pas de carte.
+
+David Leuliette (37:51.256)
+oui c'était l'adresse et tu vas lancer direct et débrouillez vous.
+
+Ludwig (37:55.133)
+Ouais, c'était le SDK qui gérait tout ça, mais... Mais qu'est-ce que je voulais dire par rapport à ça ?
+
+David Leuliette (38:02.895)
+Carthes aussi c'est très compliqué, c'est pas très compliqué mais en fait le truc c'est que moi je sais, je connais plutôt bien le sujet carte et geolocation puisque expo, geolocation et ragnative maps en fait c'est pas exactement le même format de latitude longitude et du coup tu dois faire un calcul pour si tu récupères des points en fait pour calculer la distance genre le truc est à 500 mètres vu que la terre est ronde il faut... bah pour 500 mètres ça va en fait
+
+Ludwig (38:17.171)
+D'accord.
+
+David Leuliette (38:33.604)
+Tu ne veux pas faire vraiment de différence mais genre pour plusieurs kilomètres t'auras un petit calcul à faire. que la terre est ronde les amis. Elle n'est pas flat. Si elle était flat, ce serait plus simple. Mais ouais ouais donc j'imagine quoi. C'est un peu le même délire que les time zones. Les time zones c'est jamais le même format. Quoique maintenant c'est mieux avec datafnfs. ok du coup.
+
+Ludwig (38:59.954)
+La complexité, c'est une permission que tu demandes une fois, tu peux plus la demander plusieurs fois d'affilée.
+
+David Leuliette (39:09.05)
+Si, bah après tu peux, ça t'as tout un mécanisme de fallback, si le mec il dit non, bam t'affiches un screen qui dit hey, need permission quand même, tu peux la re-demander, bah après... Ouais ouais, si faut gérer ça.
+
+Ludwig (39:18.994)
+Il me semble qu'à l'époque Android c'était le Far West. Tu n'étais pas obligé de demander la permission. C'est plus à l'époque où...
+
+David Leuliette (39:26.19)
+ouais c'était All In ! C'est bien possible ! Android ça m'étonnerait !
+
+Ludwig (39:32.05)
+Alors...
+
+David Leuliette (39:33.21)
+Ça m'étonnerait pas que download égale all-in et hop access to everything.
+
+Ludwig (39:39.224)
+permissif de mémoire mais j'ai un doute, vois, enfin... ça remonte.
+
+David Leuliette (39:44.41)
+Ouais, et du coup est-ce que tu une anecdote, anecdote sur un moment difficile dans le dev de ton app et comment vous l'avez géré ?
+
+Ludwig (39:54.994)
+Le moment difficile, on va dire, c'est surtout le debug en React Native, surtout à l'époque. Quand t'as pas d'outils, qu'on te dit d'installer par exemple un SDK qui permet de gérer une régime publicitaire dans ton app, et qu'une fois installé, ça crache, et que c'est dû à une dépendance native, et que t'as aucune connaissance, je veux approfondie du Java ou du WTF-C à l'époque, et que tu te « ça marche pas, ça compile pas ».
+
+Pourquoi tu dois sauter dans le latif, ouvrir Xcode ou Ordre Studio et comprendre que ça peut être peu intimidant de faire du React Native ? Je me rappelle d'un problème qui s'était passé pendant les fêtes, avant Noël ou après Noël. là, d'un coup, les apps iOS uniquement crash. Moi, j'étais dans l'équipe tracking et je vois la courbe de crash qui monte, qui monte, qui monte.
+
+en l'espace d'une journée à plus de 200 000 crashes. gros, tous les utilisateurs avec une certaine version de l'app, même pas tous les utilisateurs iOS qui avaient lancé l'app genre le 25 ou le 26, crachaient. Et du coup là, il a fallu regarder pourquoi Estheli en fait, un SDK de Adobe. Et c'était ultra bête, mais pour le trouver, il fallu vraiment regarder le code.
+
+David Leuliette (40:58.561)
+C'est beaucoup.
+
+Ludwig (41:21.937)
+du SDK, fait le SDK il avait une fonction qu'il appelait et pas forcément de logique de try-catch. Et du coup, bah... crash. C'était... Ouais, c'était pour le trouver, tu bah ouais, tu... t'as pas forcément les connaissances natives, t'as pas forcément les outils... T'as pas la maîtrise notamment des outils natives comme Xcode.
+
+David Leuliette (41:44.481)
+Ouais bah oui forcément. Et comment vous l'avez vu ? C'était quoi que vous utilisiez à l'époque pour traquer les crashs
+
+Ludwig (41:52.454)
+Crashlytics.
+
+David Leuliette (41:53.689)
+Ouais Crashlytics, c'est ce que j'avais en tête.
+
+Ludwig (41:55.76)
+Avant que ce soit repris par Firebase.
+
+David Leuliette (41:59.942)
+ouais ça a été racheté, savais pas, je pensais que c'était... mais c'est pour ça qu'il a un nom différent.
+
+Ludwig (42:02.736)
+Maintenant c'était dans Firebase, mais avant c'était complètement une solution standalone. C'était Crashlytics et on avait vu que c'était un problème natif grâce à Stacktrace. Après il faut le reproduire et trouver d'où ça vient exactement, comprendre l'objectif C, écrire de l'objectif C sans connaître le langage, notamment la déclaration des headers.
+
+David Leuliette (42:21.919)
+Sans avoir de mec. Sans avoir de mec.
+
+David Leuliette (42:29.529)
+Ah mais Objective-C c'est un bit... Moi je fais des variables en Objective-C, voilà, that's it. voilà. Parce que moi pareil, j'avais déjà eu des trucs de genre là, genre... Le build, il fonctionne pas, tu vois. Ah, il faut relire une app, boum, Android marche pas. Pourquoi ? Impossible. Gradle et tout, machin, tu commences à faire... Et en fait, je crois que c'était Google qui avait changé leur serveur de place et tout, du coup quand ils devaient...
+
+buildé le truc, il est plus cherché au bon endroit. Et ça, t'es obligé de le spécifier en dur dans le Gradle file. Bah pareil, tu cherches une semaine à trouver ce truc, mais tu peux pas savoir. Et derrière, gens, ils te font, bah alors ça sort quand, ça sort quand, ça sort quand ?
+
+sais pas, aucune idée les amis. ouais, je vois ce que tu veux. Mais ça, pense que c'est en tout software, je pense pas que c'est spécifique à ActActive. Tu sais, le genre, je sais pas ce qui se passe, on build le truc. Après, peut-être parce que je suis biaisé, parce que j'ai expérience avec JavaScript où c'est le chaos et il a tout temps des trucs qui pètent dans tous les sens.
+
+et j'ai une capacité à pas comprendre mais à fixer le et avoir les bons réflexes de oui alors ça vient peut-être de là ok là ça ça lire l'output d'un terminal en fait peut-être que
+
+Ludwig (43:50.088)
+C'était aussi une époque pas populaire, je suis en train de penser. J'ai oublié, mais on faisait du tracite.
+
+David Leuliette (43:58.775)
+oui bah oui c'était JavaScript ouais, avait pas de time script ouais, oui c'est vrai.
+
+Ludwig (44:01.967)
+que t'avais intérêt à vraiment bien connaître ton contrat de données avec ton API et surtout à ne jamais oublier de mettre des garde-fous sur la nullité ou le côté undefined des choses pour éviter d'avoir des crashes. On n'avait pas l'optional chaining, des choses comme ça...
+
+David Leuliette (44:18.466)
+Ouais, c'est vrai.
+
+Ludwig (44:19.469)
+Donc ça demandait une rigueur.
+
+David Leuliette (44:22.808)
+Est-ce que tu peux parler des techniques de débugs en Rack Native que tout développeur devrait connaître du coup vu qu'on est sur le debug ?
+
+Ludwig (44:38.383)
+Aujourd'hui ou avant ? Aujourd'hui.
+
+David Leuliette (44:40.784)
+Ouais je sais pas avant... ouais avant non aujourd'hui. Aujourd'hui oui avant on a vu que c'était le bordel, que voilà on voulait pleurer des larmes de sang.
+
+Ludwig (44:49.314)
+C'était un peu le console log, c'était la seule façon de débuter correctement.
+
+David Leuliette (44:55.499)
+C'est tout genre d'actualité, j'utilise tout le temps ça. Non, moi je fais un logger. En fait maintenant, moi je fais un logger que j'appelle logger log. Du coup, si dev, ça drop le log. Sinon si prod, go, ça balance dans sentry. Et du coup, j'ai une observabilité de tout ce qui se passe, de tout. Je choisis d'observer certains trucs. Parce qu'en plus, je fais du bluetooth en ce moment. Du coup, t'inquiètes que des loggers, il y en a partout.
+
+Ludwig (45:20.271)
+Maintenant, ce qui génial, c'est que là récemment, j'ai pris un outil qui s'appelle Radon IDE. En fait, ça a été développé par Redimension et ça te permet d'avoir ton simulateur directement intégré dans ton IDE. Ça fonctionne avec VS Code ou Cursor, par exemple. Là, ce qui est génial, c'est que tu vas pouvoir inspecter
+
+David Leuliette (45:28.909)
+oui !
+
+Ludwig (45:49.031)
+Simulator, va directement te renvoyer dans le sur l'IDE quand tu vas sélectionner un item. Tu vas pouvoir mettre des breakpoints. Ça c'est un truc en réel native. Ça paraît bête de dire qu'on n'avait pas de breakpoints. Mais on n'était pas capable de poser l'exécution du code de manière fiable sans avoir un crash.
+
+David Leuliette (46:15.355)
+t'avais pas de debugger ? oui mais si il faut debugger avec un... oui mais c'est vrai avant ouais...
+
+Ludwig (46:19.19)
+Non, je parle des breakpoints, d'arrêter l'exécution du code et être sûr que quand tu relances le truc, tout fonctionne correctement.
+
+David Leuliette (46:27.294)
+Moi je sais pas, je mets des debugger partout mais du coup... oui, choisir ! Oui là je veux le faire là oui ! Je vois ce que tu veux dire. Tu regardes ton code, fais... oui je veux que ça pose là.
+
+Ludwig (46:35.918)
+un breakpoint dans l'exécution de ton code, ton app s'arrête, tu vas pouvoir inspecter les variables etc. et après tu relances ton app. Et que ça fonctionne !
+
+David Leuliette (46:37.334)
+Ok ouais.
+
+David Leuliette (46:45.642)
+Ouais je... Ouais ouais en fait c'est ça le truc c'est que quand tu fais des buggers et tout des fois vu que t'as le hot reloading des fois il pète un câble ou tu reload carrément et du coup ça perd le state et t'es re-back au route je vois ce que tu veux dire et tu obligé de refaire toute la boucle pour aller chercher ton composant où il était mais je vois ce que tu veux dire ouais du coup dans raton tu l'as direct ouais
+
+Ludwig (47:01.344)
+C'est ça.
+
+Tu peux mettre tes breakpoints, tu peux faire des petits records de ton écran. Là, ils viennent d'ajouter les Expos Plugins pour le débagage. C'est-à-dire que tu peux voir maintenant ton React Query. es un explorateur de Query, Data Fetching, tu vois tes données, ton state, etc. Franchement, je pense que devenir dans le futur un outil indispensable. Et moi, super investissement, j'adore.
+
+David Leuliette (47:10.709)
+!
+
+David Leuliette (47:29.942)
+Et il a pas de setup ? Parce que j'avais essayé et moi ça ne marchait pas mais c'était avant, c'était quand c'était encore...
+
+Ludwig (47:32.75)
+...
+
+Ludwig (47:37.71)
+il y avait de la complexité sur les monoripos. Alors je ne travaillais pas sur tous les monoripos, mais normalement si tu un setup classique expo, ça fonctionne out of the box, il va détecter ta config. Après si tu as une config un peu plus exotique, tu peux avoir un fichier de config pour donner les différents...
+
+David Leuliette (47:41.237)
+mais je crois que c'est ça.
+
+David Leuliette (47:56.502)
+L'adresse du MetroBunler, ne sais pas à quoi, les monorepos c'est ça, va chercher ça là-bas. Fait du hosting de file folder. On connaît ça, avant il n'y avait pas autolink les amis. Quand j'ai dit à Matisse c'est quoi l'autolink, il m'a regardé comme un demeuré genre, quoi tu parles ? Matisse c'est la personne avec qui je travaille. je pense qu'il n'a toujours pas compris, je ne sais plus, il faudrait lui demander.
+
+Ludwig (48:01.613)
+C'est ça.
+
+Ludwig (48:15.725)
+Merci.
+
+David Leuliette (48:24.865)
+Mais il y avait ça aussi, c'était genre 70... 60, Racknative 60, ouah maintenant il l'autolink. Parce qu'avant en fait on était obligé de faire npm install et après run bundle install pod install, enfin installer les pods tu vois là c'était... mais... non il fallait link ! Il fallait link après !
+
+Ludwig (48:41.441)
+Il fallait modifier les chiffres. n'y avait pas l'autolink au début. T'allais dans ton main activity, tu rajoutais les libs que tu voulais.
+
+David Leuliette (48:47.797)
+ouais, de ouf.
+
+David Leuliette (48:52.469)
+C'est ça ouais. Ok et du coup, vu que tu m'as dit que chez CDSquint il n'y avait pas vraiment de plateformes, est-ce que vous avez dû gérer des différences iOS Android en utilisant React Native ?
+
+Ludwig (49:06.061)
+pas sur moi ce que j'ai dû faire. Mais je suis en train de repenser à ce que tu disais sur l'autolink. du coup, en expérience douloureuse aussi, c'était les montées de versions réactives où...
+
+David Leuliette (49:22.058)
+oui dans Belsor ! Ça... On connaît, tout le monde connaît ça, ça c'est...
+
+Ludwig (49:26.765)
+Je voilà à peu près les divs qu'il y a eu, maintenant faut les appliquer, tu les appliquais, après t'essayais de compiler et ça plantait, ça plantait, ça plantait. Il fallait résoudre à peu près tous les problèmes.
+
+David Leuliette (49:39.413)
+Ouais parce que vu que quand tu faisais du rack native tu modifiais toi-même tes fichiers de metton Gradle et c'est quoi le truc Xcode je sais plus, quand tu regardes le diff de rack native upgrade helper, le diff n'est pas le même puisque toi-même tu as modifié le fichier du coup, des fois ça ne marchait pas et en plus l'ordre avait un impact.
+
+Des fois tu avais des trucs, tu ne savais même plus si tu l'avais mis, c'était douloureux. Avec Expo, plus le cas. On a d'autres problématiques, mais c'est vrai que ça simplifie quand même. mets un joueur SD card en 2D, tu fais Expo upgrade, boum, terminé. En travaillant avec Racknative, qu'est-ce que tu as appris sur le développement logiciel en général, sur toutes ces années ?
+
+Ludwig (50:34.022)
+La patience et la résilience.
+
+David Leuliette (50:36.958)
+c'est beau, c'est beau on adore. Pourquoi pourquoi alors dis nous pourquoi ? veut savoir pourquoi maintenant.
+
+Ludwig (50:42.7)
+Parce que tu as une vraie complexité à devoir gérer déjà à l'époque, deux plateformes, maintenant tu peux en gérer beaucoup plus, mais avoir à gérer deux plateformes iOS Android avec leurs différences, tester sur les deux plateformes et devoir... T'adapter, ça demande beaucoup de patience.
+
+David Leuliette (51:03.989)
+Sur de vrais devices en plus. Moi je dis toujours, faut tester sur un émulateur et tout, ça va ok. Mais tester sur de vrais devices là, parce j'ai un plot twist à ce truc. va peut-être y avoir une petite musique. Je devrais prendre ça comme jingle en fait, on n'a pas de jingle mais le son de mon lave-linge ça va être nickel.
+
+Ludwig (51:07.53)
+C'est ça.
+
+David Leuliette (51:33.658)
+Bref, coup je disais, ouais, plot twist, faut toujours tester sur de vrais devices parce que moi quand j'en faisais, OPPO One Plus, voilà, Android One Plus, je comprenais pas, les deux dernières lettres de tous mes textes étaient trims, donc c'était enlevé. Donc au lieu d'avoir login, t'avais log, au lieu d'avoir logout, t'avais logo, tous les textes.
+
+Ludwig (52:02.601)
+Tu parles des surcouches des manufactureurs sur Android ?
+
+David Leuliette (52:06.676)
+En fait, la fonte système était buggée juste sur les OnePlus, pas sur les Android. Et bien pour trouver ça impossible, et forcément c'était le boss qui avait un OnePlus, forcément sinon c'est pas drôle. Et ça impossible à savoir si tu t'essayes pas sur de vrais devices, impossible à avoir.
+
+Donc ouais patience, comme quoi c'est pas pareil. Chaque fois je dis c'est pareil, vas-y on release, ah bah ok ça va prendre au moins deux jours. Enfin deux jours. Ça dépend après si tu réalises tous les jours, nous on essaie de réaliser le maximum. Mais t'as une certaine inertie et il vraiment le faire le plus vite possible. Tu peux avoir des fois où tu mets deux jours à release parce que sur Android ça marche pas parce que les permissions ont changé et du coup...
+
+Il faut qu'on attende que la librairie qu'on utilise de maps, le subdate ou ce genre de choses quoi. Donc ouais, patience et résilience, on adore, c'est beau. Et du coup, c'est quoi ta stratégie pour... Comment tu tiens à jour ? Pour toutes les news de l'écosystème ?
+
+Ludwig (53:22.834)
+C'est un peu comme ça qu'on s'est rencontré, c'est en faisant des confs.
+
+David Leuliette (53:27.302)
+oui c'est vrai, en faisant des con...
+
+Ludwig (53:30.965)
+En faisant des confs, notamment App.js à Krakow, qui est organisé par Software.io, c'est un peu la messe actuelle pour React Native. faire des confs, beaucoup de meet-up aussi. Et pas hésiter, je l'ai fait une fois, c'est genre, exemple, des fois aller à Paris pour voir un peu les personnes qui sont influentes en France sur l'écosystème et discuter avec eux, les rencontrer, ça peut...
+
+David Leuliette (53:36.146)
+Yes.
+
+Ludwig (53:58.57)
+Tu peux apprendre plein de choses.
+
+David Leuliette (53:59.09)
+En meetup ? Mais t'étais là, React Native Connection.
+
+Ludwig (54:03.018)
+Ouais.
+
+David Leuliette (54:04.252)
+Et ben voilà, c'est pareil, c'est une autre conférence en fait pour ceux qui en France, qui veulent pas aller forcément à Cracow, qui ont pas forcément le budget et tout. Ça se fait une journée, si vous travaillez, vous demandez à votre patron « Hey ! » Il a une conférence qui a l'air très bien, les gens sont très sympas, en plus c'est à Paris, on peut y aller une journée. Donnez-moi une bonne raison de ne pas y aller, parce que ça va vraiment changer plein de trucs. Moi genre React Query...
+
+Ludwig (54:23.274)
+Ouais.
+
+David Leuliette (54:31.795)
+Donc ça a clairement changé ma façon de travailler sur le data fetching pour ceux qui ne connaissent pas en React. C'est vraiment incroyable quand c'est sorti ce truc. C'était un lightning talk que j'avais vu à React Amsterdam. Ce n'est pas React Amsterdam, c'est...
+
+Ludwig (54:46.516)
+Ok.
+
+David Leuliette (54:51.762)
+React Summit pardon, qui a lieu à Amsterdam. Et ça payait pas de mine, c'est genre Tanner qui parait dans un truc, va-mi-du-te, t'sais entre deux tols que tu... t'sais entre deux plores de couloirs, le mec il n'avait pas de stage. Et maintenant par contre il est sur la main stage et il fait des trucs incroyables, il a carrément un framework, enfin bref. Mais ça peut vraiment changer votre perspective de travail, comme je disais tout l'heure Bah si tu sais pas que les outils existent...
+
+Tu endures la paine alors que ça ne coûte pas plus cher de bien manger. du coup, en 2025, va se terminer là dessus. serait quoi le meilleur conseil que tu aurais à partager si tu devais démarrer une application en 2025 ? Donc Greenfield Project, on va dire. Ouh, Brownfield. Je ne sais pas. Greenfield, c'est genre...
+
+Ludwig (55:45.962)
+parce que...
+
+David Leuliette (55:50.574)
+On commence depuis rien, Brownfield c'est on doit... On a déjà un truc existant, on va devoir continuer dessus. Mais non, on va dire pour démarrer carrément.
+
+Ludwig (56:00.969)
+J'arrête de se focaliser sur Expo. Actuellement, l'écosystème se consolide autour d'Expo. Maintenant, on ne plus de librairie, mais vraiment de framework. On a vraiment toutes les étapes de A Z pour shipper une application mobile en prod. Pour apprendre, Expo, c'est de l'or. Je trouve qu'on a énormément de chance dans notre écosystème. Les documentations sont très bien faites. Notre expo est React Native, et même de React.
+
+David Leuliette (56:23.666)
+C'est vrai.
+
+Ludwig (56:28.841)
+Et si on veut faire une application mobile et le faire avec succès, il miser sur X-Row actuellement.
+
+David Leuliette (56:38.593)
+documentation Java, je recherche, started, je clique.
+
+Ça fait... Ouais ça va ! Servers... Comment tu fais ? J'comprends rien. J'ai pas trouvé.
+
+Ludwig (56:51.049)
+J'ai essayé de faire un peu d'iOS natif avec UIKit, après SwiftUI, et tu prends par exemple la dog d'Apple, c'est un catalogue.
+
+David Leuliette (56:55.803)
+Ouais ?
+
+David Leuliette (57:03.995)
+ouais bah iOS, je tape iOS, UIKit. Ouais mais non ! Attends c'est Swift, SwiftUI, iOS SwiftUI, Xcode, Learning SwiftUI.
+
+Ludwig (57:06.077)
+ou dans l'anthropédie tu vois, a tout mais faut naviguer de...
+
+David Leuliette (57:21.201)
+Ah ouais c'est... Ouais ! Ah oui c'est déjà plus beau que Java je sais pas quoi. Mais il y a beaucoup de trucs pour faire un padding...
+
+Ouais j'avoue, j'avoue que l'Expo... Bah le truc c'est que ça, c'est qu'en fait c'est à l'intersection de plein de trucs avec native, il y a les dev web classiques qui se disent non mais les gars il faut que ce soit rapide, qu'ils savent faire des sites web en fait. Tu vois bien de façon tu regardes le dashboard d'Expo, il est incroyable, tout est rapide et ça se ressent vraiment, c'est pareil, ouais dans la doc, ouais c'est vraiment plaisant à lire, tu trouves l'info en deux dos quoi.
+
+react native expo padding hop je cherche la boom safe area contexte paf c'est vraiment c'est vrai que c'est clair c'est vrai que on le prend pour acquis
+
+Moi j'ai tel... Ouais la... Ouais si t'as tout, c'est vrai que c'est vrai que tout le temps un de mes gens, moi il me demande... Ceux qui veulent pas suivre mon bootcamp forcément, mais qui veulent juste commencer, je fais pas grave, il le getting started d'Expo en plus tu fais un truc, tu utilises la caméra et tu mets des stickers et euh... quand même pas mal de trucs. Mais ça se fait en 2-2 euh...
+
+Ludwig (58:22.376)
+et de trouver des des tutoriels.
+
+Ludwig (58:44.296)
+Et puis c'est à ch'la.
+
+David Leuliette (58:49.78)
+peut-être la navigation en fait. nav dedans parce que maintenant ils ont dû ajouter expo routers dedans. C'est possible tu pour faire deux screens.
+
+Ludwig (59:00.744)
+Tu vois, trouve que quand tu discutes avec les gens et tu leur dis « fais du expo, ne te pose pas de questions, c'est un no-brainer », ils disent non, mais après t'es enfermé dans l'écosystème, quand tu dois éjecte, ça va être horrible ».
+
+David Leuliette (59:13.901)
+oui ça va, y a plus d'éjection.
+
+Ludwig (59:16.388)
+Et c'est du Expo qui existait mais 3-4 ans en arrière. L'architecture de l'Expo était complètement revue et maintenant c'est modulaire, c'est plug-in-play. Il n'y a plus de...
+
+David Leuliette (59:27.418)
+Ouais, il n'y a plus de TPU bloqué. fait, en gros, c'est expo, truc, c'est que c'est un framework on top of Rack Native et avant, le pain point, c'était oui, mais en fait, si je veux utiliser une librairie de géolocalisation ou Adobe, je ne pas quoi, là, pas possible. Avant, ce n'était pas possible. Maintenant, si vous faites un custom plugin, vous intégrer votre librairie et vous pouvez faire votre code. Si vous avez des développeurs Android et iOS.
+
+qui est dans votre team, ce qui est trop bien parce que du coup ils sont experts, ils pourront faire vraiment un plugin parce qu'ils savent de quoi ils parlent. Moi je sais faire mais je fais n'importe quoi parce que je connais pas assez. fait je suis pas développeur iOS ni développeur Android. Et ben ils peuvent aussi intégrer votre team, ils feront vraiment un travail incroyable et c'est pas bloquant en fait. Avant il fallait éjecter mais maintenant c'est plus du tout le cas. En plus là tu as vu...
+
+L'article de Shopify qui dit ouais, bilan des 5 ans de règle native chez nous.
+
+Ludwig (01:00:28.167)
+Je l'ai pas encore lu.
+
+David Leuliette (01:00:29.465)
+Ouais ok, bah il est cool ouais c'est genre euh...
+
+Ouais bah c'est ça en fait, la vélocité elle est meilleure parce que même niveau hiring des gens en fait du coup tu fais du React Native bah du coup tu peux faire du web et du coup tu peux... bah tiens en fait j'ai une idée, mettons on a mis une feature sur l'application mobile bah tiens j'aimerais bien le mettre sur web bah en fait tu peux le faire vu que c'est du React y'a des trucs qui vont changer mais tu pourras faire le draft facile, soumettre la PR et les derniers...
+
+tu la fileras un ingénieur web qui pourra vraiment avoir connecté à la DB, sais pas quoi. Mais t'as vraiment un scope de compétences qui est vraiment incroyable et pour les prochaines années c'est pareil, tu auras toujours... Si Réacte disparaît.
+
+Ludwig (01:01:20.167)
+Tout le complexité gérée de faire du React Native, c'est qu'il faut une polyvalence et une connaissance de beaucoup de choses quand tu rentres dans le côté natif. Parce que maintenant tu peux faire du desktop, peux faire de la télé, tu peux faire de la VR... Mais effectivement, le paradigme en tout cas, c'est le même partout, celui de React. Et après, pour les edge cases, il y en a beaucoup. Pour être capable de...
+
+de sauter sur du Swift, sur du Kotlin...
+
+David Leuliette (01:01:55.824)
+Ouais c'est ça. Ouais mais c'est pareil, ça dépend. Si tu prends ce discount, as vraiment des effets. C'est genre un site e-commerce dans une app. Voilà, si tu commences à faire...
+
+de la VR ou je ne pas quoi, tu peux ou du machine learning ou je sais pas quoi. Là, ok d'accord. Ou du background fête. ok, il y a des trucs à faire. Cool. Super.
+
+David Leuliette (01:02:21.717)
+Dernière chose, est-ce qu'il a un sujet que tu aurais voulu aborder ? Qu'on n'a pas eu le temps.
+
+Ludwig (01:02:28.742)
+Bah... au final je me rends compte qu'on a passé beaucoup... on a parlé beaucoup du...
+
+du passé.
+
+David Leuliette (01:02:37.583)
+Tu vraiment du futur bah en même temps ouais si c'est ça mais c'est ta faute c'est toi t'es arrivé t'as dit ouais bah moi j'ai travaillé avec 10 ap je vais prendre la meilleure tu vois tu vois on aurait pu parler faudrait refaire l'épisode qu'est que tu fais maintenant et c'est quoi ta stack tu vois donc
+
+Ludwig (01:02:51.654)
+Ah c'est complètement difficile. Ouais, peut-être qu'on aurait pu être plus tournés sur le futur. Mais bon, comme je disais, c'était ma faute.
+
+David Leuliette (01:02:59.252)
+Voilà, c'est entièrement de ta faute, moi je veux dire j'ai un script de prêm' où je suis ready, pas du tout fait complètement, non non non, tout écarré.
+
+Ludwig (01:03:08.39)
+Du coup j'ai hâte de les futurs épisodes avec d'autres intervenants qui vont parler du futur.
+
+David Leuliette (01:03:13.485)
+Ouais ouais carrément ça, faut en parler qui c'est que je devrais... qui c'est que je devrais avenir.
+
+Ludwig (01:03:19.973)
+Des personnes de la team Luko, pense que pourrait être intéressant.
+
+David Leuliette (01:03:24.385)
+bah oui comme ça là, ça fait un crossover tu vois, parce que du coup Luko c'est justement l'app que j'utilise qui est incroyable, big up à Luko, d'assurance qui est bien faite et qui a été faite en Rack Native. Ok, je contacterai quelqu'un. ouais mais c'est pareil, on en parlera après, Active ou Popoi, je sais pas parce que maintenant, bref on sait pas. Cool !
+
+Du coup, où est-ce qu'on peut te retrouver sur les internets si les gens ont des questions ? Et où du support à demander ?
+
+Ludwig (01:04:01.573)
+du support. En vrai, j'aime bien le Slack qu'ils ont fait pour la React Native Tech Connection. Ça permet de toutes les personnes actives dans l'écosystème français. Donc, on peut peut-être partager le Slack. Et après, vous retrouverez mon prénom Ludwig.
+
+David Leuliette (01:04:09.653)
+Ouais, on y est ouais.
+
+David Leuliette (01:04:20.215)
+Ouais c'est ça ouais.
+
+David Leuliette (01:04:27.8)
+Ouais, il aller sur le site web et puis c'est dans le footer. Donc, je mettrai aussi dans les notes de l'émission et vous pinguez Ludwig. Voilà, incroyable. Et bien, super. Nous, se retrouve la prochaine, espérons que vous avez épisode. Et voilà, faites tout passer un coucou. Allez, ciao.
+
+Ludwig (01:04:51.99)
+Merci beaucoup, salut !
+

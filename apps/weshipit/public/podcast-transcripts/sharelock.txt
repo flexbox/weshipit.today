@@ -1,0 +1,1149 @@
+David Leuliette (00:04.641)
+Bonjour et bienvenue sur le Cross Platform Show, le podcast qui parle développement d'applications mobiles avec React Native. Je suis David, développeur chez Wishy Pee Today, nous sommes en avril 2025. Alors la température extérieure, 22. Chaque fois je fais la température, je vais faire bis météo, tu vois. Adnan, on s'est rencontré à React Native Connection, si je ne m'abuse. Est-ce que tu peux te présenter succinctement pour les gens qui ne te connaissent pas encore
+
+Adnan (Sharelock) (00:29.838)
+C'est ça.
+
+Adnan (Sharelock) (00:35.246)
+Alors moi je m'appelle Adnan, je suis tombé dans l'informatique quand j'étais tout petit petit petit, je crois le premier ordinateur entre les mains où je devais avoir 6 ans, 7 ans.
+
+David Leuliette (00:47.453)
+Ok, non, et c'était quoi ? C'était cadeau On te l'a offert direct ? Cadeau familial ou genre c'était celui de quel ?
+
+Adnan (Sharelock) (00:51.66)
+Alors au début c'était ceux des cousins ou ceux etc. Après il y a eu ceux au travail de mon père qui travaillait dans une boîte qui faisait de la simulation de mécanique des fluides à l'époque donc qui travaillait avec qui avait déjà des machines en réseau fin des années 80 avec des silicones graphiques ce qui était capable de faire du rendering 3D
+
+David Leuliette (01:13.089)
+les fameuses icônes graphiques.
+
+Adnan (Sharelock) (01:15.406)
+et on allait souvent chez lui, enfin dans sa boîte le week-end, pour jouer à... En fait, y avait un... Icon Graphics avait développé un jeu qui était un simulateur de vol qui pouvait jouer en réseau, qui était en 3D et qui servait à la base de démos pour OpenGL et montrer qu'est-ce qu'il était capable de faire OpenGL parce que avant que ça arrive sur le grand marché, c'était surtout chez eux. Et donc on allait là-bas, on jouait à ça. Et en fait, de fil en aiguille, du gaming entre guillemets, même si c'était plutôt du rétro gaming, on va dire.
+
+David Leuliette (01:44.512)
+...
+
+Adnan (Sharelock) (01:45.446)
+pour l'époque, je m'en suis mis à développer des trucs. Dans le collège où j'étais, il y avait un petit club informatique, avait des Commodore et des Mac, on faisait un peu de basic, il des petits trucs comme ça avec des labyrinthes où tu cliques pour te balader en mode un peu... C'était dégueulasse mais c'était rigolo. Et après on a fait différents trucs. Mon père après a quitté cette boîte, on s'est mis à faire des sites web en arabe qu'on a vendus à...
+
+David Leuliette (02:01.421)
+Ouais, mais c'est déjà bien tu vois.
+
+Adnan (Sharelock) (02:13.78)
+grosse boîte puis il y eu la crise enfin la crise de façon de parler mais l'éclatement de la bulle internet en mode en fait c'est pas si compliqué plein de gens peuvent le faire donc on va arrêter de payer ça une fortune et donc on arrête de faire ça puis moi il a fallu que je fasse des études donc j'ai fait l'épitha
+
+David Leuliette (02:30.794)
+Ok ouais, oui c'est vrai on en a parlé ouais.
+
+Adnan (Sharelock) (02:32.622)
+C'est en grande surprise parce que voilà, c'était l'école d'informatique. À l'époque, il y avait une blague. On disait que c'était une école qui se faisait en 10 ans, deux ans de prépa, trois ans d'ingé, cinq ans de prison. ne crois y ait pas beaucoup qui ont fait les cinq ans de prison parce que c'était une école un peu de hackers, de choses comme ça, enfin, vu comme ça. À tel point,
+
+David Leuliette (02:44.92)
+ouais, pourquoi ? Pourquoi c'est quoi la légende ?
+
+David Leuliette (02:52.274)
+je vois, oui ça te donnait les armes pour faire des choses illégales en gros, ok je vois.
+
+Adnan (Sharelock) (02:57.55)
+C'est ça, à tel point que certaines boîtes à l'époque blacklistaient l'EPITA au niveau du recrutement. exemple, c'était impossible d'aller bosser chez Thales jusqu'à 2003-2004 parce que Thales considérait que l'EPITA égale hacker et donc on ne pas de hacker chez nous.
+
+Donc j'ai fait ça. Le problème c'est que sortie de l'école, donc 2006, se passe quelque chose qui n'était quand même pas très agréable, c'est qu'on voit les informaticiens un peu comme des barbus à mettre à la cave et comme des centres de coût et pas des de profit. Et du coup moi comme j'aimais quand même assez l'argent et que...
+
+un père à moitié entrepreneur, j'avais peut-être un peu peur à l'époque de me lancer dans l'entrepreneuriat, je suis allé dans un domaine radicalement différent, donc je suis parti dans la finance, bossé pour la BNP pendant quasiment 10 ans avec une pause au milieu pour faire en 2009-2010 des jeux sérieux et des réseaux sociaux d'entreprise.
+
+David Leuliette (03:52.671)
+Mmh.
+
+Adnan (Sharelock) (03:55.434)
+et magnifiquement casser la gueule, mais on n'était pas beaucoup, et bon bref, on a fait pas mal de bêtises et pas mal, on a pris pas mal de choses. Et puis je suis revenu en 2015, j'en ai eu ras-le-bol en fait des grandes groupes et de ça, et j'ai voulu me remettre à l'attaque qui est quand même une passion, alors j'en ai toujours fait même en parallèle.
+
+des 10 ans où mon métier c'était clairement pas de faire de l'informatique parce que ça permet de gagner du temps, de faire des macro XL pour générer des slides ou des choses comme ça, histoire de pas faire des trucs à la main.
+
+David Leuliette (04:27.209)
+Ouais mais c'est parce que tu savais déjà avant avec ton passé d'informatique que tu pouvais faire tout ça tu vois. Parce que moi en fait en gros, je suis foutu. Parce que je connais comment automatiser tout et dès que les gens font des trucs à main, ça me rend fou tu vois. fais mais... Pourquoi tu perds ton temps à faire ça ?
+
+Adnan (Sharelock) (04:42.446)
+C'est complètement ça. Il y a des sujets où à la BNP, je me suis retrouvé à remplacer des équipes par un script.
+
+David Leuliette (04:52.471)
+Ouais, ok, ouais, oui, parce que t'étais un peu le sachant, quoi. Ouais, je vois, je vois.
+
+Adnan (Sharelock) (04:56.574)
+Le Sachan, spécialement, c'est plutôt le borne au royaume des aveugles. Après, comme dans toute organisation, c'est quand même une boîte qui marche et il a des gens qui bossent. C'est juste que peut-être que ça pourrait fonctionner avec beaucoup moins de monde.
+
+David Leuliette (05:01.758)
+Je vois, j'imagine bien.
+
+David Leuliette (05:13.566)
+Ouais ou être plus efficient et les gens pourraient faire des vrais trucs où il a de la valeur ajoutée plutôt que de perdre leur temps à faire des copies-coulées et faire des erreurs comme les comptables. Bref.
+
+Adnan (Sharelock) (05:20.814)
+Un peu ça. Bref, donc je suis au moment là qui me plaisait. D'abord dans une boîte qui s'appelait John Paul, qui faisait de la consergerie privée, où j'ai fait deux ans, qui a été vendu à l'accord pour 200 millions d'euros à peu près. J'ai pas eu ça moi, mais j'ai eu un petit chèque quand même, j'étais content.
+
+Après je suis parti chez Ionisix, c'était le groupe d'école d'EPITA qui essayait de faire de l'e-learning et du diplôme en ligne surtout. À l'époque où il n'y avait pas encore Open Classroom, Open Classroom c'était surtout un forum avec une liste de tutos.
+
+David Leuliette (05:58.823)
+Ouais, c'était du zéro.
+
+Adnan (Sharelock) (06:01.198)
+il n'y avait pas grand chose et donc il y avait une vraie volonté de vouloir faire ça. Moi je voulais faire de la formation tech en en limite en full automatisé, c'est à dire répliquer à peu près ce que fait Epitech mais en mode sans prof.
+
+David Leuliette (06:15.846)
+Ouais bootcamp autonome tu le fais tout seul, t'as des tests, t'as un feedback.
+
+Adnan (Sharelock) (06:19.256)
+donne un diplôme typique Epitec à la fin. En plus on a déjà le nom Epitec donc on peut limite donner le diplôme pour qu'on fasse un mapping. Le problème c'est qu'Epitec c'est quand même une vache à lait pour ce groupe là et s'autoconcurencer c'est un peu le syndrome Kodak, c'est difficile. Bon bref au bout d'un an j'ai dit ok c'est bon j'arrête les frais on va faire autre chose. Moi faire du marketing en ligne, des formations marketing en ligne c'est pas mon truc.
+
+Je suis parti dans une boîte qui faisait du software pour tout ce qui était fonds d'investissement, pour gérer le fonds, depuis le passage d'ordre et prise d'opposition sur les marchés jusqu'à la comptabilité, un énorme truc.
+
+suis parti au bout de deux ans pour co-fonder Sherlock, qui m'aboite actuellement depuis... ça fait déjà cinq ans, je trouve ça énorme aujourd'hui. Au début, l'idée de Sherlock, c'était de se dire, le frein principal aux développants du vélo en milieu urbain, c'est le vol et la perte.
+
+David Leuliette (07:04.382)
+...
+
+David Leuliette (07:17.021)
+Le frein du vélo,
+
+Adnan (Sharelock) (07:29.214)
+Et donc c'est le vol et la peur du vol. donc on s'est dit, on veut lutter contre le vol et donc on s'est dit, ok, donc pour lutter contre le vol, il faut du stationnement sécurisé, faire du stationnement sécurisé avec du génie civil, ça coûte cher, c'est compliqué, etc. On va essayer de faire du stationnement sécurisé, sécurisé sans génie civil. Donc on a inventé et on a construit et fabriqué des cadenas partagés qui s'installent sur les potelets qui sont en bord des routes.
+
+qui ne servent à aujourd'hui à ne empêcher la voiture à monter sur le trottoir pour les convertir en station de vélo sécurisé mais du coup sans faire de travaux en voirie. Donc on a fait ça, on a développé petit à petit le réseau, on avait quatre, cinq villes en Île-de-France mais malheureusement on n'a pas eu Paris. Le plus gros déploiement à un moment c'était Nice où on avait quasiment 800 cadenas comme ça dans la ville.
+
+David Leuliette (08:15.176)
+Oui
+
+Adnan (Sharelock) (08:21.486)
+avec un réseau bien maillé, Une cinquantaine, centaines d'utilisateurs qui utilisaient ça très régulièrement. Assez rapidement, fait, on a continué dans la verticale en lançant un produit d'assurance vélo.
+
+Et en fait, finalement, quatre ans après la création de la boîte, on a décidé de mettre les cadenas de côté en mode aujourd'hui, c'est peut-être compliqué d'un point de vue rentabilité, puis les gens ne pas forcément prêts, les villes... Aujourd'hui, on a porté nous le CAPEX, c'est-à-dire qu'on payait nous l'infrastructure et on se remboursait sur les abonnements. les gens qui font du vélo, autant les néo-cyclistes, c'est-à-dire les gens qui se mettent nouvellement au vélo, se disent, ça ne me dérange pas de payer un abonnement pour le stationnement parce que ça m'évite de payer deux antivols,
+
+David Leuliette (08:39.708)
+...
+
+David Leuliette (09:08.454)
+Hmm?
+
+Adnan (Sharelock) (09:08.976)
+Autant les gens qui font du vélo depuis 10-15 ans, sont là, non moi j'ai mes 2, 3, 4, 5 antivols, jamais de ma vie je paierai pour du stationnement vélo. Et donc c'était un peu compliqué. Donc on change le modèle là-dessus pour dire, non les villes peuvent si elles le souhaitent payer de l'infrastructure, de façon ça leur coûtera beaucoup moins cher que n'importe quelle autre infrastructure de stationnement sécurisé pour vélo. Mais du coup elles peuvent elles le mettre gratuit pour l'usager ou pour un tarif dérisoire.
+
+David Leuliette (09:25.82)
+...
+
+David Leuliette (09:33.532)
+et tu peux même mettre des gratuits films visagés sur un pari qui reviendra.
+
+Adnan (Sharelock) (09:39.96)
+c'est bon.
+
+Adnan (Sharelock) (09:47.626)
+Du native ? Non, j'avais pas fait avant Sherlock, d'ailleurs du mobile tout court... Non j'avais fait un peu de Swift et un peu de Kotlin mais j'avais pas du tout utilisé d'outils cross-platform avant.
+
+David Leuliette (10:02.702)
+Et ouais la première version de Sherlock c'était pourquoi ?
+
+Adnan (Sharelock) (10:07.386)
+C'était pour les cadenas, donc il fallait que l'usager puisse prendre son téléphone, à côté d'un cadenas partagé, cliquer sur l'application, payer éventuellement son stationnement ou son abonnement et déverrouiller le cadenas pour y mettre son vélo. Donc on avait besoin d'une application mobile capable de classiquement dialoguer avec un serveur, mais aussi dialoguer en Bluetooth avec le cadenas pour se déverrouiller.
+
+David Leuliette (10:09.092)
+Que pour les connexions.
+
+David Leuliette (10:34.203)
+Et du coup ça première version, quelle année à peu près et combien de temps vous avez mis à faire la première version ? Au prototype ?
+
+Adnan (Sharelock) (10:41.23)
+Le proto ça a dû mettre...
+
+Adnan (Sharelock) (10:49.662)
+Le tout premier proto, a été la boîte qui nous aidait sur la conception mais d'un point de vue ingénierie du cadenas, donc la partie plutôt mécanique, électronique embarquée, qui a fait une V0. Donc on a fait ensemble le choix de techno et ils ont fait un proto mais ça a pris une semaine quoi. Et après la version on va dire live pour les usagers, c'était janvier donc ça a dû mettre quatre mois.
+
+David Leuliette (11:15.597)
+Ok. Et pourquoi vous avez choisi Rack Native à l'époque ?
+
+Adnan (Sharelock) (11:19.438)
+C'est pas cher. Aujourd'hui l'intérêt de faire du natif, du swiss ou du cote-ligne, est quand même relativement limité. Alors y a beaucoup de gens qui disent, ouais les performances, les performances.
+
+David Leuliette (11:22.189)
+Bonne réponse !
+
+Adnan (Sharelock) (11:34.894)
+95 % des problèmes des gens qui râlent entre guillemets de React Native sur les performances, n'est pas dû à React Native, c'est souvent dû à plein d'autres choses. On bombarde 30 000 requêtes au serveur, on a des use effects qui sont dans tous les sens et qui rerunder constamment les vues. On utilise un stack navigateur et du coup quand je modifie l'écran qui tout en haut de ma pile, j'ai plein de use effects dans toute ma pile qui se
+
+David Leuliette (11:57.531)
+...
+
+Adnan (Sharelock) (12:04.848)
+alors qui ne même pas de display et qui me bouffent dans la hand perf. Il y a vraiment cet impact là. Après il y peut-être des boîtes qui ont besoin vraiment de faire du temps réel sur le téléphone, ont peut-être ces problématiques là. Je peux comprendre qu'elles fassent du natif mais aujourd'hui pourquoi développer dans deux frameworks ? Et à l'époque, flotteur n'était pas là.
+
+Il y avait React Native, il y avait un peu d'autres solutions mais qui étaient encore plus bancales à l'époque que React Native. on s'est dit, vas-y, go ! L'autre avantage que ça avait, c'est que comme on s'est dit tant qu'à faire sur le front web, on va faire du React, c'est quasiment la même techno à peu de choses près. Et comme ça, les gens qu'on forme, en fait, ils sont formés assez rapidement aux deux, ils sont opérationnels sur les deux et je n'ai pas besoin d'avoir une équipe App Mobile, une équipe Web.
+
+en fait c'est les mêmes ils se débrouillent ils font la feature des deux côtés et basta così quoi. ils peuvent réagir
+
+David Leuliette (12:58.063)
+Ouais si c'est ça. Développeur JavaScript. C'est quoi déjà la citation ? Toute application écrite en JavaScript finira par être écrite en JavaScript. C'est Jeff Atwood qui dit ça. Et la deuxième c'est toute application se développe jusqu'à qu'elle fasse des PDF et ou des exports Excel.
+
+Mais on en est pas encore là ! Bientôt, bientôt, bientôt les experts Excel, bientôt ! Ah ! Ok !
+
+Adnan (Sharelock) (13:30.19)
+On va pouvoir finir.
+
+Adnan (Sharelock) (13:34.894)
+On fait du PDF, on fait de l'Export Excel, que typiquement dans l'assurance, on est obligé de générer tout un tas de documentation contractuelles personnalisées, donc on fait de la génération PDF en veux-tu-en-voilà. On ne pas la génération PDF côté mobile. dire, encore intérêt de faire ça, mais...
+
+David Leuliette (13:49.316)
+Ouais ouais ok ok ok. Super du coup maintenant... le but de l'épisode c'est qu'on dissèque la stack, donc on va en parler. Donc maintenant pour que tout le monde soit au clair, maintenant c'est juste entre guillemets une application mobile pour gérer ton assurance Sherlock, ça fait encore les cadenas. Non y'a plus du tout le cadenas.
+
+Adnan (Sharelock) (14:12.158)
+Il a encore les cadenas mais on a caché un peu. L'idée c'est qu'on les laisse si on a besoin de faire des démos pour vendre, qu'on n'ait pas à dire qu'il faut que je rebuild du nap spécialement pour toi. Mais aujourd'hui c'est majoritairement l'assurance avec quelques petites features un peu cool à gauche à droite. Typiquement dans un certain nombre de grandes villes on a une carte
+
+David Leuliette (14:15.234)
+Ok.
+
+Ouais ? Ok.
+
+David Leuliette (14:23.103)
+Non mais non.
+
+David Leuliette (14:31.904)
+Ouais vu que... Ouais ouais.
+
+Adnan (Sharelock) (14:40.759)
+paru du risque de vol de vélo.
+
+David Leuliette (14:43.107)
+ça c'est smart ça !
+
+Adnan (Sharelock) (14:45.966)
+à avoir de meilleures pratiques. l'assurance, on fait une franchise réduite, ils prennent une photo via l'application. Cette photo, on analyse avec de l'IA pour détecter partie mobile, partie fixe, point fixe, etc. pour voir si le vélo est bien attaché. On regarde si la batterie, si un VAE est encore dessus ou si il n'est pas dessus ou si elle est cachée par un cache, etc. Pour par exemple, la personne s'est garée.
+
+dans une rue qu'on considère très risquée et à laisser sa batterie, va avoir une notif lui disant t'es gentil mais tu ferais mieux de l'en...
+
+David Leuliette (15:22.322)
+Dans 10 minutes tu n'as plus de batterie et tu mets un compteur
+
+Adnan (Sharelock) (15:24.718)
+Ce sera couvert quoi qu'il arrive, mais même si tu es couvert, n'est pas agréable d'avoir à revenir chez toi sans assistance, à aller au magasin racheter une batterie, à devoir uploader dans quelques documents, même si on essaie de faire ça le plus simple possible pour les gens, il a quand même un tout petit peu de travail. Versus garder 5 minutes ta batterie avec toi.
+
+David Leuliette (15:49.187)
+Ouais mais dans le sac, je vois, je vois. Ok, ok, du coup...
+
+Adnan (Sharelock) (15:51.406)
+Et là on a lancé un truc qui, pour l'instant, marque Shot, mais donc il est un peu caché dans l'application, mais ça existe, on a quelques utilisateurs qui s'en servent. Quand ça marchera un peu mieux...
+
+On permet aux gens de faire du suivi de leur itinéraire vélo. Si les gens veulent, ils peuvent activer le suivi et on va essayer de détecter automatiquement qu'ils sont sur un itinéraire vélo et de l'envoyer comme trace. Ils peuvent clire si ils veulent. L'idée avec ça, c'est de des calculs de compensation carbone, faire du feel good, un peu de gamification là-dessus. On a quelques badges, quelques trucs.
+
+vont arriver mais d'essayer d'encourager ça. L'idée vraiment à terme c'est de dire tes cyclistes à Sherlock, que tu sois assuré chez nous ou pas. Tout ce que tu as besoin dans le monde du vélo c'est dans ce tableau là.
+
+David Leuliette (16:36.728)
+...
+
+David Leuliette (16:45.548)
+Ouais je vois, c'est une super app dans la verticale du vélo. Smart. Alors du coup c'est toi qui a choisi la stack technique, on va voir ça en 6 points. On va commencer par le Data Layer et ce qui est State Management, qu'est ce qu'il a dans Sherlock en 2025 ?
+
+Adnan (Sharelock) (16:50.446)
+Tussauds
+
+Adnan (Sharelock) (17:05.421)
+La même chose qu'on avait en 2020. On a choisi de mettre Redux Toolkit.
+
+David Leuliette (17:08.384)
+Ok.
+
+David Leuliette (17:13.303)
+Ouais.
+
+Adnan (Sharelock) (17:14.154)
+Pourquoi ? Parce que ce n'est pas seulement du State Management. fait, les gens ont tendance à considérer Redux comme un State Manager. C'est vraiment la feedback loop entre actions et états qui est intéressante, dans le sens où les actions permettent de déporter 95 % des traitements asynchrone, qu'ils aillent chercher de la donnée ou qu'ils manipulent de la donnée ou pas. Typiquement, toutes les interactions Bluetooth du téléphone sont en fait des actions Redux.
+
+David Leuliette (17:39.928)
+Je me
+
+Adnan (Sharelock) (17:42.488)
+parce que je pas forcément besoin d'avoir ce traitement là dans mes composants React ou dans genre de choses et ça me permet vraiment d'avoir de la synchrone là dessus. Ouais je suis un gros gros fan de Redux Toolkit. Autant Redux tout court, je trouve ça hyper verbeux et vite casse pied, autant Redux Toolkit avec du TypeScript on est quand même pas mal quoi.
+
+David Leuliette (18:07.735)
+Moi, la dernière fois que j'en ai fait, c'était la migration par la migration. Donc en fait, compliqué parce que tu avais les deux paradigmes qui vivaient en même temps et on avait la moitié du Redux old school et la moitié du RTK. Et du coup, c'était, je ne comprends rien. Donc, super. Et tout ce qui est data fetching, passe aussi par Redux alors.
+
+Adnan (Sharelock) (18:30.574)
+Ça passe par Redux et après parce que par S et réutilisabilité du code entre le web et le mobile, fait on a notre propre SDK qu'on a fait, donc en fait Redux appelle un SDK qui n'est qu'une libre. Donc j'ai jamais à écrire de requêtes HTTP directement dans la mobile.
+
+David Leuliette (18:41.024)
+oui, c'est vrai.
+
+David Leuliette (18:54.528)
+Ouais et tu as toute une partie web, les gens peuvent se connecter sur leur dashboard web. C'est partagé ou pas ? C'est dans un monoripo
+
+Adnan (Sharelock) (19:04.698)
+Tout est dans un monoripo. Au début, on était sur l'ERNA, il y a longtemps, et je ne plus quand, mais ça doit faire quand même un moment, je pense il a un an, un an et demi, on a basculé sur du PNPM. Dans le monoripo, je n'ai pas que du JavaScript, j'ai du C pour le firmware embarqué, j'ai d'autres choses dedans. J'ai du Python pour toutes mes Lambdas qui sont dans AWS.
+
+David Leuliette (19:06.645)
+Ok.
+
+Ouais.
+
+David Leuliette (19:19.998)
+Ok.
+
+David Leuliette (19:31.702)
+Ok, ok, mais ouais, t'as tout qui est partagé quand même et du coup tu peux voir... Genre tout ce qui est ton Redux, peux le partager entre web et mobile.
+
+Adnan (Sharelock) (19:41.408)
+Non, le Redux chacun a son propre état aujourd'hui.
+
+David Leuliette (19:44.04)
+Ok, ouais parce que c'est pas encore ISO.
+
+Adnan (Sharelock) (19:47.022)
+suis pas content de mais le gain est limité. Ce n'est pas ça qui prend du temps à écrire. Ce pas ça qui prend énormément de temps à maintenir. en fait, si j'ai une route qui change, je change le SDK, je ne pas les actions ou les réduceurs.
+
+David Leuliette (19:54.646)
+Hmm.
+
+David Leuliette (20:08.114)
+Ok ok du coup navigation, attention je vais essayer de devider, React Navigation.
+
+Adnan (Sharelock) (20:15.918)
+avec du stack navigator.
+
+David Leuliette (20:17.75)
+Ouais c'était pas... le dernier épisode je me suis foiré tout le long donc c'est pour ça que je demande. Est-ce que tu as un pattern de navigation particulier ou c'est un truc classique ?
+
+Adnan (Sharelock) (20:32.386)
+Alors a un truc un peu bizarre dans le sens où on a trois navigateurs avec un route navigateur par dessus et chaque navigateur en gros j'ai Mekadna et il a son propre navigateur tout ce qui est dans le domaine de l'assurance et son propre navigateur et tout ce qui est on the side, gestion utilisateur etc. c'est dans son propre navigateur je pense que rétrospectivement je pense que c'est une connerie je vois pas trop l'intérêt ça nous a causé plus de problèmes qu'autre chose de splitter ça
+
+David Leuliette (20:43.958)
+Ouais.
+
+Adnan (Sharelock) (21:02.32)
+mais au début on s'est dit ouais c'est mieux c'est plus organisé c'est plus truc
+
+David Leuliette (21:07.552)
+Ouais moi je sais que j'ai un peu un truc là et moi c'est flat tout le a accès à tout le monde et par contre c'est pareil c'est un peu caché genre j'ai le dev mode j'appuie 7 fois sur la version number et hop ça m'ouvre une nouvelle stack et du coup elle est quand même présente dedans donc ouais j'ai pas de problématique je pense que ouais t'as eu des trucs chelou genre oui mais là ça marche pas enfin quand je change de... c'est ça c'est rien
+
+T'as pas qu'un seul navigation container, t'as plusieurs navigation containers et chaque... Ouais c'est ça. Ok c'était... Ouais.
+
+Adnan (Sharelock) (21:41.014)
+En fait le problème c'est quand tu passes de l'un à l'autre, t'es obligé de détricoter la sac, de la garder, de renvoyer dans l'autre sac, mais comme si t'as un go back, il faut que t'ailles la trace de l'ancienne sac de l'autre côté. c'est... ça fait des cochonneries. Un jour il faudra qu'on mette tout en flat histoire de supprimer cette bêtise. Bon après c'est pas la priorité du moment mais puis ça marche. Là il faut qu'on fasse les mises à jour de Ragnative, ça commence à piquer. Mais...
+
+David Leuliette (21:53.298)
+Nice ou pas ?
+
+Adnan (Sharelock) (22:11.094)
+mais on est en 0,71.
+
+David Leuliette (22:11.253)
+Vous êtes en quelle version là pour l'instant ?
+
+David Leuliette (22:16.021)
+Ouais,
+
+Adnan (Sharelock) (22:17.87)
+ça va. vois hier, j'avais repoussé parce que iOS veut qu'on build avec le SDK 18 depuis une dizaine de jours.
+
+David Leuliette (22:26.938)
+oui là ça y est ! oui vous êtes... oui ! Ok, j'ai cru mais en fait... Ok.
+
+Adnan (Sharelock) (22:29.422)
+Hier on a poussé une version de l'app. Apple qui dit « Eh, je suis pas content ! » 16.3, tu peux pas bulle du React Native 0.71, t'es obligé de downgrade en 16.2. Ou alors de faire des dingueries, mais le post commit ça allait être 50 fichiers, ça fait beaucoup. React Native a dit « Ben non, 0.71 c'est plus maintenu, démerdez-vous. »
+
+David Leuliette (22:36.931)
+ok d'accord, donc là oui, panique.
+
+Adnan (Sharelock) (22:57.678)
+Donc ouais, là ça commence, il va falloir qu'on s'y attelle. Mais j'avais eu un problème parce que j'avais passé il y a six mois une journée pour essayer de passer en 0.74 et j'avais eu un problème à cause de React Reanimated et React Views, je ne plus quel truc il est sur le stag name. React Native.
+
+et du coup il y avait un problème sur le onclick qui foutait un bordel pas possible et je crois que sur l'issue github il y a 250 commentaires, c'est toujours pas complètement fixe donc je pense que si je passe à 74 ou à 76 va falloir que je rebosse sur le navigateur soit pour changer quelque chose pour dégager une partie de cette problématique là
+
+David Leuliette (23:33.748)
+Salut.
+
+David Leuliette (23:47.4)
+Ouais faut que tu te libères un mois je sais pas c'est quoi...
+
+Adnan (Sharelock) (23:50.934)
+Non, mais c'est une semaine, deux semaines.
+
+Non, moi c'est beaucoup.
+
+David Leuliette (23:56.276)
+Ouais, une fois... Moi c'était avant aussi dans les 0.60 quelque chose. Mais en fait en vrai c'est quand on récupère en...
+
+Adnan (Sharelock) (24:03.182)
+On était en 0,68 pour faire l'upgrade en 0,71, il nous a fallu à peu près un mois. Mais là, en 0,74, j'avais un truc qui marchait à 95 % en une après-midi. Je m'attends pas à...
+
+David Leuliette (24:10.046)
+Ouais, en fait c'est ça.
+
+David Leuliette (24:15.879)
+Parce que... Ouais. Là ça va encore parce que moi sais que j'avais plein de side-effects avec Firebase et tout et en fait là t'es parti pour... En fait généralement c'est quand on récupère des projets dans ma boîte qui n'ont pas été maintenus depuis 1000 ans, depuis 3-4 ans et en fait tu dois tout faire d'un coup.
+
+Adnan (Sharelock) (24:30.744)
+Oui mais, nous, on beaucoup de choses, c'est juste la partie native pure, où on est un peu en retard. Alors y a un autre truc où est en retard, c'est sur l'UI. On est sur du native base aujourd'hui, donc ce n'est pas vraiment ce que je vous recommande pour commencer un projet maintenant, mais bon à l'époque le choix pouvait se tenir.
+
+David Leuliette (24:39.54)
+N'importe quoi.
+
+Adnan (Sharelock) (24:58.124)
+et va se poser, je pense, une question si on fait l'upgrade de Rack Native d'en profiter pour remplacer Native Base par autre chose. Alors est-ce qu'on fera du glue stack ou est-ce qu'on passera complètement sur autre chose, je n'en sais rien encore. Mais la question se posera. Et l'autre truc qui va probablement me piquer un peu, c'est la lib pour faire des photos. Je crois qu'on utilise Rack Native Vision Camera.
+
+David Leuliette (25:21.661)
+Ouais.
+
+David Leuliette (25:25.437)
+Ouais.
+
+Adnan (Sharelock) (25:26.114)
+Dans la V2, la V3 il a des breaking change dans tous les points parce qu'il a complètement réécrit la libre. Il manquait des trucs, donc on a tardé à faire l'upgrade et ça fait un moment que je n'ai pas regardé si la V3 a rattrapé le niveau de features de la V2. je pense que c'est les deux trois sujets qui vont piquer un peu quand on va devoir faire l'upgrade et se remettre un peu au goût du jour.
+
+David Leuliette (25:55.091)
+Je vois, vois, ouais du coup, ouais Native Bay, celui-là l'avait pris parce qu'à l'époque, ouais, c'était bien utilisé.
+
+Ouais c'est ça, c'est ça, et là du coup, ouais c'est carrément plus maintenu, ils ont complètement changé. Donc du coup pour la migration plan, tu comptes migrer ou au pire tu restes dessus et puis...
+
+Adnan (Sharelock) (26:20.318)
+Je vais sûrement migrer mais la question c'est quand et vers quoi. Donc il faut que trouve le temps et il faut qu'on décide avec les loulous au bureau.
+
+David Leuliette (26:23.556)
+Vers quoi ? Ouais, vers quoi
+
+David Leuliette (26:36.283)
+Et à terme, vous voulez faire une parity entre composants web et natif ou pas du tout ?
+
+Adnan (Sharelock) (26:44.598)
+Non, parce que les approches sont différentes, la manière de prédire les choses vont être différentes, parce que en fait on n'attend pas la même chose en termes d'expérience sur du mobile que sur du web.
+
+David Leuliette (26:46.931)
+c'est dit.
+
+Adnan (Sharelock) (26:55.264)
+et à partir du moment où les attentes sont radicalement différentes, ce pas juste une question de responsiveness, sauf à dire que la responsiveness est affichée des composants qui n'ont complètement rien à voir en fonction de la taille de l'écran. Je veux bien, mais dans ce cas-là, c'est en fait ces deux applications différentes, si tout change. Donc je suis assez mitigé. Alors y a des choses qu'on a mutualisées à gauche à droite, mais non.
+
+pour moi c'est pas le même objectif quoi. Sur le web, veut vraiment un truc, une vue, un clic, j'exagère un peu etc. Sur du web, selon le contexte, on veut afficher
+
+David Leuliette (27:27.982)
+Ouais c'est pas même cas de usage.
+
+Adnan (Sharelock) (27:39.104)
+pas mal d'infos de manière organisée sur le même espace et si on met ça en responsif, soit on n'affiche rien, ou pas grand chose, soit ça fait une page qui a rallonge ou on scrolle pendant 10 minutes, c'est pas agréable. Donc c'est pas tout à fait la même. Et en termes de fonctionnalité, il y a quand même beaucoup de fonctionnalités qu'il dans l'app qui n'ont jamais vocation à être dans le web. Typiquement le risque paru, l'intérêt c'est pour quand t'es géolocalisé et que tu viens garer ton vélo et que tu veux prendre la photo, qu'on t'affiche le risque.
+
+David Leuliette (27:58.876)
+Ouais, ouais, clairement.
+
+Adnan (Sharelock) (28:08.715)
+Tu vas quand tu veux juste uploader les documents parce que tu avais la flemme de mettre l'app et donc tu fais ton sinistre via le web au lieu de le faire via l'app.
+
+David Leuliette (28:17.778)
+Je vois, vois. Est-ce que tu des animations, des illustrations peu où c'est classique ? Il y a des emojis. Il a que des emojis.
+
+Adnan (Sharelock) (28:27.209)
+J'ai quasiment...
+
+Il n'y a pas d'emojis, des badges et a un peu d'illustrations à gauche à droite pour décorer, mais il a pas d'anim, il a pas de trucs, on n'est pas en train de faire du jeu vidéo.
+
+David Leuliette (28:40.459)
+ouais, keep it simple, c'est bien. Moi je préfère aussi.
+
+Adnan (Sharelock) (28:43.668)
+En la population est désassurée, même si on a de tous âges. La grosse majorité, c'est du CSP urbain, 35, 55, c'est peut-être 40 % de la population. mettre des emojis qui shine, un peu comme Zenly à l'époque, c'est très cool. Mais le mineur, n'est pas lui qui va nous ramener de l'argent.
+
+David Leuliette (29:12.242)
+Ouais, je vois. Bon, excellent. Et donc en terme de CI, Release, Deploy, comment ça se passe pour mettre en proche chez Sherlock ? L'app mobile.
+
+Adnan (Sharelock) (29:23.776)
+On a une magnifique CIA qui tourne sur un Mac mini.
+
+David Leuliette (29:29.869)
+ouais, trop bien, enfin j'en rencontre quelqu'un qui a ça, j'avais toujours dit mais en fait c'est trop facile, c'est possible. Alors vas-y raconte nous.
+
+Adnan (Sharelock) (29:38.958)
+Pour builder du iOS, faut du Mac. Louer du Mac dans le cloud, je ne pas comment c'est aujourd'hui, mais à l'époque c'était une fortune. Et moi faire sans SIA, je ne pas faire. Oui, en 2006, il n'y avait pas autre chose, donc on faisait comme ça. Mais à partir du moment où ces outils-là existent, faut être peu bête pour s'en passer.
+
+Donc on a pris GitLab et on a mis un GitLab Runner sur un Mac Mini qu'on a acheté d'occasion pour pas cher qui tourne les pipes pour le mobile et avec Fastlane pour lancer le build, c'est assez conventionnel. Le seul truc qui est un peu casse-pied, c'est qu'il y a certains trucs où l'API Apple ne peut pas marcher seulement avec la clé API.
+
+De temps en temps, faut qu'il quelqu'un au bureau qui vienne sur le Mac Mini, qui réhôte. Ça lui affiche le MFA sur le Mac Mini. Quand la pipe va passer après, pendant une semaine, ça passera crème.
+
+David Leuliette (30:37.625)
+Ok, allez.
+
+Adnan (Sharelock) (30:49.934)
+notamment le truc qui bloque c'est le téléchargement des certificats PEM pour les push notifs alors tu pourras me dire ouais mais tu peux les stocker ailleurs ouais mais machin ouais mais j'ai pas envie en fait de me souvenir que quand je modifie un certificat push ou que je le renew qu'il faut que je pense à revenir au synchro ça mais oui effectivement on pourrait peut-être gratter un peu là dessus et en tout on utilise un deuxapp
+
+David Leuliette (31:14.288)
+Ouais mais après si ça marche, si vous avez l'habit de sufer...
+
+Adnan (Sharelock) (31:18.978)
+C'est dire qu'on a une app staging Android et Apple et on a une app prod Android et Apple. en fait dans l'app staging, on se sert un peu du release cycle. sur iOS, ça va être du test flight, mais l'app sera jamais poussé en prod.
+
+et sur Android on utilise internal Closed Beta pour distribuer au testeur etc. Et une fois qu'on est content de ça, qu'on merge sur Master, Master elle s'appuie et les brancher sur les apps de prod et elle va livrer directement en promote en prod.
+
+David Leuliette (31:56.41)
+Ok.
+
+Adnan (Sharelock) (31:57.766)
+C'est ça. Le seul truc c'est que comme il a des temps de validation parfois et qu'on veut quand même être à peu près synchrone sur les versions etc. en gros ça push auto mais le dernier clic pour dire une fois qu'ils ont validé c'est good ça on le fait à la main.
+
+David Leuliette (32:13.988)
+Ouais ouais, ouais moi ça dépend, je sais plus, ça dépend des fois en fait. Moi aussi sais que j'aime bien faire le dernier clic parce que tu sais jamais avec du mobile il y toujours des trucs qui arrivent, voir ce qu'il de scénario. Ok.
+
+Adnan (Sharelock) (32:27.944)
+Il a le fait de, est-ce que tu veux que le back-end soit synchro, est-ce que tu veux que ceci... Parfois il y a des, façon de parler, mais des breaking change, donc tu as envie vraiment que tout le monde soit calé sur la même version de l'app parce que tu as changé un peu des choses en profondeur. ouais, on a pris l'habitude d'avoir cette synchro et donc généralement c'est le lundi matin quand tu arrives et tu regardes tes mails, Apple a validé, ok, je viens, je clique et je clique dans la CI
+
+ce qui reste en manual deploy à la fin pour juste activer le switch par exemple du backend ou redeployer les londas.
+
+David Leuliette (33:08.044)
+Et donc pour faire les release c'est tout les quoi ? C'est quand le produit évolue ou vous avez un train wagon, genre on release toutes les deux semaines quoi qu'il arrive.
+
+Adnan (Sharelock) (33:15.316)
+Généralement c'est deux semaines, après on s'interdit pas de relive plus tôt. Généralement les apps on relive pas plus tôt mais le web et le back-end, oui on relive des trucs un peu plus souvent quoi.
+
+David Leuliette (33:25.848)
+Ouais, forcément. Donc, est-ce que dans ton expérience en React Native, a cinq librairies que tu utilises et recommandes
+
+Adnan (Sharelock) (33:37.87)
+Bonne question. Alors, vas éprouver la question avant, et je vais t'en noter quelque chose. Et j'avais mis, d'ailleurs, je sais pas trop dans mes notes.
+
+David Leuliette (33:41.257)
+On peut dire déjà, Act Native...
+
+David Leuliette (33:47.183)
+Oui.
+
+Adnan (Sharelock) (33:48.814)
+J'avais mis plutôt des bonnes habitudes à prendre, c'est regarder quand on choisit une libre, combien de gens s'en servent, si c'est maintenu, faire un petit tour sur SNIC et compagnie pour voir s'il a pas trop de soucis. Bon on en a parlé mais effectivement il y a Redux Toolkit, moi je ne pas faire sans, que ce soit du web ou du mobile, etc. Et après il y a certaines libres où il a parfois des débats...
+
+de est-ce que j'en ai besoin ou pas. Typiquement les gens ont tendance à venir chercher du YOOP ou du LODASH alors qu'ils n'en ont pas besoin. Je dis pas qu'il ne jamais utiliser YOOP ou jamais utiliser LODASH, pas le seul sujet, il faut réfléchir quand quand on embarque des choses de est-ce qu'on en a besoin, est-ce que ce pas forcément peut-être soit un peu overkill, soit machin, si dans toute ton app tu utilises une seule des fonctions LODASH, pourquoi embarquer LODASH quoi ?
+
+David Leuliette (34:24.911)
+Hmm?
+
+David Leuliette (34:46.105)
+Ouais ouais, je suis d'accord. Moi je sais que j'utilise l'audace souvent parce que je connais l'API et tout ça. en fait, maintenant ça doit plus être vrai. Mais j'ai eu des problèmes avec notamment les versions d'Android où le moteur JavaScript c'est pas le même. du coup des trucs à la con genre toNumber, bah je vais prendre un exemple, je ne l'ai plus en tête. Je vais prendre, tu veux convertir un string en number. Donc tu utilises le JavaScript de base number.
+
+Et en fait, vu que tu as un moteur JavaScript sur un vieux Android où c'était pas implémenté, bah ça crache. Et du coup, pour avoir ça, bon chance ! C'est pour ça que moi je mets l'Odash quand j'en ai besoin aussi. j'utilise ça comme ça, je suis sûr que ça marche partout.
+
+Adnan (Sharelock) (35:35.776)
+Alors c'est peut-être un peu la part synth et part float, non ?
+
+David Leuliette (35:39.294)
+Ouais, c'était peut-être ça ! Attends, non attends, non non mais là j'ai pris l'exemple de Parsin, mais c'était... Alors attends, c'était quoi ? J'arriverai plus à retrouver dans ma tête. Mais je sais clairement que l'Odash, va fixer le problème parce que du coup il fait un peu...
+
+Adnan (Sharelock) (35:42.158)
+...
+
+Adnan (Sharelock) (35:51.15)
+Il a le sort, eu quelques petits soucis en JavaScript à une époque et je suis plus...
+
+David Leuliette (35:55.758)
+Je pourrais plus dire ce que c'était mais...
+
+Adnan (Sharelock) (35:59.124)
+Après, on peut faire de l'EDH, il est quasiment dans tous les projets, c'est juste pour pas que ça soit en automatisme.
+
+David Leuliette (36:05.535)
+Ouais, c'est tout ce que tu dis. Si tu l'utilises pour une fonction, peut-être que tu n'es pas obligé de l'utiliser.
+
+Adnan (Sharelock) (36:11.246)
+Il s'appelle alternative to load hash ou you don't need load hash. Il te donne toutes les fonctions. Il un bout de code qui te permet de passer de load hash. te donne la compatibilité avec les navigateurs.
+
+David Leuliette (36:17.767)
+oui, le fame... ok, ouais. Attends, c'est quoi le nom ?
+
+David Leuliette (36:26.773)
+c'est ça ouais, ok ouais. Excellent je connaissais pas.
+
+David Leuliette (36:37.401)
+Oui, oui, surtout la compatibilité avec les autres navigateurs qui des fois peuvent faire des trucs bizarres. OK, trop bien. du coup, on a un peu parlé de vision caméra. donc, pourquoi vous avez utilisé vision caméra et pas...
+
+Adnan (Sharelock) (36:56.622)
+mais on cherche à l'aider pour faire des photos, on n'en a pas trouvé 50.
+
+David Leuliette (37:01.24)
+Ouais, c'est vrai. C'est vrai.
+
+Adnan (Sharelock) (37:03.534)
+Honnêtement, c'est quasiment la seule qui gère à peu près tout, qui en plus te permet d'avoir un peu de pré-processing sur les photos. Je ne pas qu'il ait d'alternative en fait.
+
+David Leuliette (37:16.75)
+Après sinon tu utilises Expo et tu le truc caméra de base d'Expo du coup ça marche bien, ça fait le taf pour les trucs simples mais dès que tu veux des choses un peu avancées...
+
+Adnan (Sharelock) (37:26.222)
+On avait dû changer d'expo à l'époque à cause du bluetooth, je ne sais pas si aujourd'hui expo marche avec le bluetooth mais le bluetooth ne marchait pas avec expo en tout cas.
+
+David Leuliette (37:32.73)
+Ouais ok, maintenant ça fonctionne, j'utilise React Native, BLE, PLX et ça marche très bien avec Expo.
+
+Adnan (Sharelock) (37:44.526)
+J'ai la même et à l'époque ça marchait pas, a 5 ans. Après la question de rebrancher Expo ou pas est aussi une question qui se pose. Je ne pas encore. C'est un peu comme le bread de version, c'est-à-dire c'est dans l'idée pourquoi pas, mais il trouver le temps.
+
+David Leuliette (37:48.11)
+Bye.
+
+David Leuliette (37:59.756)
+Ouais bah oui c'est toujours ça le truc, ça te prendrait quand même un peu de temps, parce que là faudrait que tu revoies le CI, que tu revoies tout ce qui est...
+
+Adnan (Sharelock) (38:08.543)
+Tu peux contrôler ta CIA sans ES, fait, t'es pas obligé.
+
+David Leuliette (38:12.974)
+Ouais ouais mais en fait c'est l'aspect migration qu'il va bien falloir planifier, sais, peut-être les certificats et tout machin.
+
+Adnan (Sharelock) (38:17.678)
+C'est ça, et surtout nous, on des équipes extrêmement réduites, c'est-à-dire que la boîte en est 15, la tech, design compris, on est 8. Et ça pour toute la stack, sachant qu'on a trois portails web, trois API, des interco avec plein de gens.
+
+David Leuliette (38:27.693)
+C'est
+
+Adnan (Sharelock) (38:37.414)
+une data platform, des contraintes réglementaires à respecter. en fait le DevMobile on en fait, mais il a même pas un FTE à temps plein sur le mobile.
+
+David Leuliette (38:48.289)
+Ouais bah oui c'est ça, c'est toujours pareil. Ok cool et du coup pour les autres, c'est reactnative.directory, site si vous voulez vérifier l'état de santé des librairies avant d'ajouter n'importe laquelle.
+
+Adnan (Sharelock) (39:05.356)
+Sinon il a Marek qui fait un tech radar tous les ans avec son truc. Marek, j'ai un trop de mémoires sur le nom de famille.
+
+David Leuliette (39:10.413)
+Et à qui ?
+
+David Leuliette (39:18.573)
+Parce que sinon moi j'ai celui de CO2 que j'ai montré la dernière fois
+
+Adnan (Sharelock) (39:21.45)
+Mais c'est même... Marek, c'est celui qui a fait BAM, qui devenu Théo Doaps, je crois, ou quelque chose comme ça.
+
+David Leuliette (39:31.001)
+ok bah c'est ça, tout se suit quoi, on est dans une saison 4 de... Si si parce que c'était il a deux épisodes où a eu Lucie. Et il y a plein de gens dans le truc hein. Il a plein de gens, on mettra le lien du techradar. Ok cool. Qu'est que j'allais dire... Ouais bah c'est bien, alors attends, est ce que...
+
+Adnan (Sharelock) (39:42.03)
+C'est lui qui prépare tout seul, c'est toute sa boîte.
+
+David Leuliette (40:02.088)
+T'as l'idée en tête d'une fonctionnalité que tu as faite sur l'app mobile et combien de temps ça t'a pris pour la mettre en prod ? Genre la dernière feature que vous avez faite, grosse feature.
+
+Adnan (Sharelock) (40:12.43)
+Dernière grosse feature, en fait souvent nous on découpe le boulot, c'est à dire que je préfère livrer des trucs incomplets qui ne marchent pas mais un peu cachés et il a les lignères itératives jusqu'à ce que ça marche. Alors on ne pas le faire sur tout typiquement donc au début quand on a lancé la première fois l'assurance, oui ça a pris un peu de temps surtout qu'on a d'abord lancé la souscription assurance sur le mobile avant de le faire en web.
+
+Ça avait pris, je pense, deux, trois mois, un truc comme ça. Parce qu'il y avait beaucoup de choses à tenir, c'est pas juste un flow, faire un peu aussi la gestion de signes, faire aussi deux, trois trucs. Donc il y a eu pas mal de travail. Pour te donner une idée sur la carte du risque, rue par rue, on appelle ça nous VJMAP. Parce que voilà, on s'amusait aussi, nous, à la...
+
+David Leuliette (41:11.306)
+C'est bien, y Batman dans le fond et tout, on adore !
+
+Adnan (Sharelock) (41:13.71)
+Je pense que le proto a été fait en trois semaines en termes de délais pour que ça soit quelque chose d'assez smooth qui marche bien. a dû prendre trois mois aussi tu vois.
+
+David Leuliette (41:32.246)
+bah oui, c'est les détails.
+
+Adnan (Sharelock) (41:34.446)
+Mais voilà, début tu fais un truc, tu viens chercher la planète. au début quand tu fais un POK avec quelques données, c'est cool, la carte elle circule bien. Puis tu recalcules la échelle d'une ville, tu mets les données disponibles à l'échelle d'une ville. Là tu vois que tu dois attendre trois minutes quand tu as déplacé ton point de la carte pour avoir la carte qui s'affiche. Tu dis ok, on va réfléchir à autre chose. On va peut-être essayer de clusteriser les trucs, essayer de définir qu'est-ce que je dois chercher. Tu te dis bon, au début peut-être en fonction du point,
+
+j'ai cherché que les trucs qui sont autour du point sauf que l'indexation sur la geodata c'est toujours un peu bancal tu viens chercher beaucoup de trucs donc là au final on a une espèce de système avec du local storage qui fait du cache de cluster un peu comme ce que faisait google map il a dix ans où tu avais ta carte qui s'affichait par carré un par un
+
+Donc là c'est la même chose, sauf que la carte, au moins, elle est affichée tout le temps parce que maintenant c'est bien foutu côté Google. Mais nous voilà, on a clusterisé ça avec est-ce que tu as le cluster en cache ou pas ? Si tu as le cluster en cache, je le renders direct. Si tu n'as pas le cluster en cache, va chercher le cluster du cache de sorte que plus tu l'utilises, plus c'est smooth et que ça soit quand même smooth au tout début. Mais le temps de mettre tout ça en place et d'apprendre de manière itérative à l'usage.
+
+David Leuliette (42:38.119)
+Et puis t'en rends compte, elle vient de où la data justement ?
+
+Adnan (Sharelock) (42:59.87)
+C'est nous qui la computons par rapport au cynisme qu'on a eu sur ces villes-là.
+
+David Leuliette (43:06.983)
+ok, ouais c'est interne, ça y est pas, je pensais qu'il avait un truc Open Data, mais je me demandais de vous, ça vient ? ouais, trop bien, trop bien, trop bien.
+
+Adnan (Sharelock) (43:10.303)
+non, c'est nous là-bas,
+
+C'est nos data, on a... Allez, aujourd'hui on doit avoir 20 000 usages... 20 000 assuréactifs. Historiquement, si je prends toutes les souscripteurs, j'ai dû en avoir 30-40. Parce que il y a des gens qui sont faits voler leur vélo, qui rachètent pas, enfin il y a plein de use case. Mais mine de rien, on commence à avoir beaucoup de données et donc l'idée c'était aussi de restituer cette donnée aux usagers.
+
+David Leuliette (43:39.24)
+Ouais c'est ça et la Vigimap on peut genre moi je pas chez vous mais je peux genre je vais sur le web je tape je me suis fait voler son vélo boum je tombe sur votre dashboard et je peux ajouter un point
+
+Adnan (Sharelock) (43:52.31)
+Non, tu ne pas rajouter de données parce que l'idée justement, c'est d'éviter les déclarations.
+
+David Leuliette (43:57.578)
+Ouais, faut que ce soit accurate, ouais. On ne va qu'y pas du review bombing ou je ne pas quoi, ouais.
+
+Adnan (Sharelock) (44:01.422)
+Il a des sites qui font ça mais c'est compliqué aussi en termes de données personnelles parce que l'adresse c'est peut-être ton adresse à toi, le code postal mais le code postal c'est pas assez précis. Donc là c'est complètement anonyme, tu vois pas les sinistres mais tu vois une modélisation statistique du globalité des sinistres là-dessus. On s'interdit pas de le faire, il y a d'ailleurs une boîte qui a proposé de nous vendre ces data alors que
+
+David Leuliette (44:11.946)
+je vous...
+
+David Leuliette (44:28.104)
+Ouais ok d'accord.
+
+Adnan (Sharelock) (44:31.376)
+là où elle les collecte, elle n'indique nulle part qu'elle va vendre ces vêtements-là. Moi rien que sur là-dessus j'ai dit non, même si les data potentiellement pourquoi pas. J'aime pas trop qu'ils se moquent des gens tu vois mais... Mais oui on fait ça de la même manière que maintenant tous les deux ans on fait une étude des assurés vélo qu'on a publié la dernière il y a un mois où...
+
+David Leuliette (44:39.85)
+Hmm.
+
+Adnan (Sharelock) (44:56.782)
+1 500 personnes pour essayer de mieux comprendre l'impact de l'assurance dans l'usage du vélo, les usages des gens, etc. Donc on s'amuse comme on peut quoi.
+
+David Leuliette (45:08.809)
+Super l'étude, je mettrai le lien aussi, l'étude 2025 avec un beau guide et tout, on adore !
+
+Adnan (Sharelock) (45:14.538)
+Et pareil, les itinéraires, l'objectif c'est d'aider les villes à faire de la planification d'urbanisme, notamment. pas de faire les traces de manière individuelle, mais de pouvoir dire, tiens regardez, en fait, là, dans telle rue, a plein de gens qui passent à vélo, il a pas de piste cyclable, il a rien, l'infrastructure est intéressante, ça peut être mis en place, etc. Et de pouvoir faire de la recommandation personnalisée, ça, peut être un des...
+
+David Leuliette (45:20.411)
+Ouais, ok.
+
+David Leuliette (45:39.335)
+Ouais, des leviers aussi, ouais. Ouais, smart.
+
+Adnan (Sharelock) (45:40.654)
+de la data mais idéalement de la faire gratuitement pour les villes parce que l'objectif c'est de développer le c'est pas le coeur de l'argent ça va être l'assurance c'est pas c'est pas ça
+
+David Leuliette (45:46.953)
+Hmm.
+
+David Leuliette (45:52.451)
+Ouais ouais si je comprends, comprend carrément. Plus vous c'est un domaine vertueux parce que plus il de gens et plus c'est simple et plus c'est mieux... Ok.
+
+Adnan (Sharelock) (45:58.35)
+Plus il a de gens en biais de célébration, moins il a d'accidents, plus l'assurance est la scène, moins il a de vols, plus l'assurance est la scène. on fait ça pour améliorer l'assuranciel.
+
+David Leuliette (46:05.139)
+Ouais, c'est ça. Est-ce que tu as une anecdote sur un moment difficile dans le dev de votre rap et comment vous l'avez géré ?
+
+Adnan (Sharelock) (46:19.416)
+! Voilà ce que je m'étais noté. Sur les cadenas au début, avec le Bluetooth, il a un truc qui m'a rendu dingue, c'est que de manière aléatoire, le cadenas ne s'ouvrait pas. Mais pourquoi ? Est-ce c'est problème mécanique Est-ce c'est ceci ? Est-ce que c'est cela ? On y passe du temps, on réfléchit, on change plein de trucs.
+
+David Leuliette (46:27.337)
+oui bah oui !
+
+David Leuliette (46:34.749)
+ouais, c'est exactement ce que j'ai pensé.
+
+Adnan (Sharelock) (46:49.134)
+On trouve pas, on trouve pas, ça me rendait dingue. Et en fait, la lib bluetooth envoyait pas forcément les paquets dans le même ordre. Donc en fait, nous on faisait du chiffrement côté serveur. Le serveur, il envoie le payload au téléphone qui est chiffré et le téléphone découpe le payload en, je sais plus, 5, 6, 10 messages, enfin un certain nombre de messages qu'il envoie au cadenas et le cadenas reconstitue le payload.
+
+le déchiffre et vérifie la signature et le chiffrement et s'il est content il sait que ça vient du serveur et il s'ouvre. Et en fait la lib bluetooth, on avait une pauvre boucle qui disait envoie le message 1, envoie le message 2, envoie, enfin tant qu'il des messages envoie-les. Et en fait le téléphone n'envoyait pas forcément les messages dans l'ordre. Malgré le wait, malgré tout ce que tu veux tu vois. Donc quelques petites frustrations.
+
+David Leuliette (47:21.893)
+...
+
+Adnan (Sharelock) (47:45.898)
+Bon on a fini par faire quelque chose d'horrible que je recommande à personne mais on a rajouté un petit slip de 15 MS pour lutter contre la race condition.
+
+David Leuliette (47:54.311)
+Pareil, j'ai fait exactement la même chose !
+
+Adnan (Sharelock) (47:57.37)
+extrêmement dégueulasse mais voilà on n'a pas non plus son temps. Réfléchir j'aurais peut-être dû regarder un peu le code de la libre mais je soupçonnais que ça soit dans l'OS du téléphone.
+
+David Leuliette (48:09.927)
+Ouais, parce que plutôt c'est vraiment très compliqué, en plus c'est ce que je voulais dire, ça vient d'où, d'un endroit et ça... Moi en fait j'ai le problème c'est que ça...
+
+Adnan (Sharelock) (48:13.326)
+Je pense que la plupart des messages qui sont envoyés normalement en Bluetooth, il doit y avoir des histoires d'index, de machin, de trucs. Et du coup, fait, le device de l'autre côté reconstitue et les remet dans l'ordre. Sauf que là, c'est un device complètement propriétaire qu'on a fait nous bricoler 3 francs 6 sous. Enfin, j'exagère un peu, mais qu'on a bricolé. Au début, on était sur l'ESP32. Je ne pas si tu connais un peu les chips. Et après, on a bougé sur du...
+
+Adnan (Sharelock) (48:43.672)
+et yuppie.
+
+David Leuliette (48:45.177)
+Quelque chose de mieux. Un autre.
+
+Adnan (Sharelock) (48:48.126)
+RN84, truc comme ça, sais plus... NRF quelque chose, NRF54. Et donc voilà, on a dû reconstituer. Et l'autre bug un peu de l'espace comme ça qui m'a fait rager, c'est basé sur RegNativeVisionCamera, mais c'est pas la faute de la LIM. Je sais plus si c'est sur Android ou sur iOS.
+
+David Leuliette (48:50.971)
+Ok, c'est beau. Un autre chip.
+
+Adnan (Sharelock) (49:13.004)
+mais en fait le device ne te donne pas exactement les résolutions supportées par la caméra et les tailles de trucs. Et coup, la LIB essaie d'extrapoler les tailles en fonction je ne pas trop quoi et en fait dans des cas extrêmement rares les extrapolations n'existent pas et si tu as eu le malheur toi de choisir cette extrapolation qui n'existe pas, la caméra elle est toute noire et ça ne pas.
+
+David Leuliette (49:20.159)
+Android
+
+David Leuliette (49:29.831)
+...
+
+David Leuliette (49:42.921)
+Ok, si Android cherche pas c'est certain parce qu'en fait il y a plusieurs
+
+Adnan (Sharelock) (49:43.87)
+Et ça, je crois qu'ils ont remis à jour côté Android et c'est un peu mieux maintenant. Et d'où aussi pourquoi il faut qu'on est d'être la libre à la V3, parce que je crois que la V3 maintenant gère mieux ça. ça, ça a été source de frustration pas mal aussi.
+
+David Leuliette (50:02.215)
+Oui, c'est parce qu'au niveau Android, il a plusieurs constructeurs, plusieurs caméras et plusieurs specs, du coup il faut gérer tout ça et comme d'hab, il a un constructeur qui n'utilise pas les recommandations d'Android et ou change son matériel et du coup c'est pas pris en compte. Donc j'imagine bien, j'ai à peu près les mêmes problématiques que toi aussi.
+
+Est-ce qu'il y a une technique à tips que tous développeurs React Native devraient connaître pour débugger du coup
+
+Adnan (Sharelock) (50:42.958)
+Moi je suis très déçu avec les upgrades de Ragnatif que Flipper part au...
+
+David Leuliette (50:49.989)
+C'est farte à l'abandon. Fli...
+
+Adnan (Sharelock) (50:51.727)
+J'avoue, on était très habitués à Flipper.
+
+David Leuliette (50:54.649)
+T'as découvert comment flipper en fait ? Pour ceux qui connaissent pas.
+
+Adnan (Sharelock) (50:58.062)
+Je sais pas, Google ?
+
+David Leuliette (50:59.527)
+C'est sur le site web de RackNative.
+
+Adnan (Sharelock) (51:01.516)
+Non je pense que c'était mentionné dans la doc de Ragnative à l'époque et 2, quelle que soit la techno, quand tu commences à faire tu te dis ok comment j'ai débuggé quoi donc c'est sûr que faire du console lock, du print ou whatever
+
+C'est pas super efficace donc ça peut aider sur des petits trucs locales mais il a des moments où tu as envie de comprendre ce qui se passe de manière un peu plus pertinente et donc j'étais content d'avoir Flipper. Alors j'ai essayé quand j'ai fait cet upgrade et j'ai vu que Flipper avait disparu et donc je crois qu'ils ont remplacé par un truc qui s'appelle ReactOtron.
+
+Adnan (Sharelock) (51:46.9)
+En tout cas c'est celui qui est mentionné maintenant dans la docregnet Je suis pas convaincu aujourd'hui mais euh...
+
+David Leuliette (51:49.67)
+Ok, d'accord, ok.
+
+David Leuliette (51:57.126)
+Malgré le fait que tu tout ton Redux et tout dedans, tes actions, peux Time Travel...
+
+Adnan (Sharelock) (52:02.03)
+C'est parti, c'est facile, mais tu vois, il y a des trucs parfois sur l'inspection de la mémoire, sur le fait de mettre des break points, sur des trucs un peu bizarres. pas, je n'ai pas eu le de faire la main suffisamment longtemps pour te dire non, ça ne pas le taf. Mais je me souviens que j'avais eu quelques petits soucis pour brancher le truc. J'ai réussi à brancher le truc. Si, si, il a un truc quand même qui est remis, ça, c'est Sentry.
+
+David Leuliette (52:08.048)
+Ouais.
+
+Ouais bah ça t'as pas à foutre ouais c'est sûr parce que...
+
+David Leuliette (52:26.918)
+oui, bah oui ! Ça c'est folie Sentry, c'est le mec !
+
+Adnan (Sharelock) (52:30.694)
+Parce que avoir les stacktraces de tes users qui sont de l'autre côté, qui ont des problématiques avec des téléphones, tu sais pas où est-ce qu'ils les ont trouvés et que toi t'as beau avoir cinq modèles de téléphone au bureau, tu n'arrives pas à reproduire, ça fait plaisir. Des fois on est allé jusqu'à acheter le téléphone du gars pour être capable de... Alors après on m'a dit, on s'est foutu de ma gueule...
+
+Je sais plus qui, mais elle dit, mais en fait tu peux les louer sur le cloud et du coup tu peux louer le device.
+
+David Leuliette (53:00.536)
+Oui, non, et je le veux dans la main le téléphone. La location dans le cloud, OK, AWS Device Farm, 100 % et puis en fait, au final, ça marche pas parce qu'il y avait un bouton physique qui enlevait le Bluetooth ou je ne pas. Donc oui.
+
+Adnan (Sharelock) (53:17.806)
+Je ne sais pas, a peut-être de ça. on avait du Bluetooth donc testez avec ta ferme en cloud.
+
+David Leuliette (53:23.769)
+Ouais, c'est ça, c'est ça. Et en fait, il toujours, toujours, toujours les... les devices physiques. Enfin moi quand je sais que je teste, j'essaye vraiment parce que... Ouais, dans le cloud et tout, ok, ça peut fonctionner, mais c'est pas vraiment la source de vérité.
+
+Adnan (Sharelock) (53:38.782)
+il y a une autre taille grise c'est les tailles de police il y a des gens sur les téléphones qui upgrade les tailles de police parce qu'ils voient rien du tout et qui mettent des polices genre fontes 8000 et c'est vrai que quand toi tu fais ton dev tu réfléchis pas forcément à tester sur fontes 8000 et ça donne parfois des choses un peu rigolote quoi
+
+David Leuliette (53:47.749)
+Ma mère ?
+
+David Leuliette (54:05.081)
+Allez, c'est bon.
+
+Adnan (Sharelock) (54:06.126)
+premier réflexe du dev, c'est de bah non, on va forcer la fonte pour pas qu'elle puisse exploser. Mais c'est pas très cool pour la personne parce que si elle peut pas voir ce qu'il dans ton app, elle va pas utiliser ton app. Donc c'est pas cool pour elle, c'est cool pour toi.
+
+David Leuliette (54:17.797)
+ça elle l'a fait pour une raison quoi
+
+Adnan (Sharelock) (54:21.652)
+Et donc, quand on a découvert ça avec le premier, alors c'était au début, avec le premier qui avait quelques petits soucis de vision près, je ne pas s'il était vu ou pas, je suis pas allé vérifier mais je m'en doute un peu, on a découvert ça et du coup on a dû faire pas mal de travail pour essayer de faire en sorte que ça ne pas joli mais ça soit facilement utilisable.
+
+David Leuliette (54:46.692)
+Ouais, ça ne pas complètement cassé non plus quoi. Ouais, ça ou alors un autre truc qui s'appelle, ça c'est le Jazz Effect, c'est que tu vas sur Android et tu mets là une police custom genre la Disney ou là je sais pas quoi pour vérifier justement que ça casse pas tout. Parce que il a des gens qui customisent leur police sur Android voilà voilà voilà. Sachez-le. Non non non, faut, je ne sais pas pourquoi mais ce sont des choses qui arrivent. Bref, avec...
+
+Adnan (Sharelock) (54:50.095)
+en police humide.
+
+David Leuliette (55:15.433)
+Avec React Native, qu'est-ce que tu as appris sur le développement logiciel en général ?
+
+Adnan (Sharelock) (55:21.204)
+Bon pas grand chose hein...
+
+David Leuliette (55:23.095)
+ouais, roh là, je savais tout déjà !
+
+Adnan (Sharelock) (55:25.614)
+Non, je ne savais pas tout. Ce que tu apprends, c'est que chaque écosystème est différent. Chaque écosystème, pour régler un problème ou différents problèmes, il a des gens qui sont sortis les doigts et qui ont fait des libs pour régler une problématique A, une problématique B, une problématique C, etc. Et forcément, la manière de régler la problématique n'est pas forcément la même dans tous les écosystèmes. Les parties-pris ne pas forcément les mêmes dans tous les écosystèmes. Donc effectivement, tu apprends
+
+finalement de qu'est-ce qui existe, de qu'est-ce que tu peux utiliser, éventuellement quelles sont un peu les limites, etc. Après en tant que tel, le JavaScript c'est du Playmobil. A l'époque on faisait du Meccano, voire encore plus fin, donc si tu veux, joue avec des Playmobil quand tu as vu toutes les couches qui en dessous.
+
+T'apprends mais sur l'usage tu vois, t'es pas en train de te dire « waouh, mind blowing » enfin sais pas, la première fois que t'as fait de l'assembleur, t'es là, tu fais « waouh, ok, je comprends quand tu commences à faire un bootloader ou un début de carnel.
+
+et tu commences à comprendre vraiment comment marche la machine. Là, ouais, tu apprends des trucs que tu dis, ok, je ne comprenais pas que ça marchait comme ça. Rack Native, non, après, oui, j'ai découvert comment marchait Rack Native, ce que c'était que les bridges, comment marche la nouvelle architecture, etc. Mais tout ça, c'est des...
+
+ça t'apprend pas sur le domaine général de l'informatique, ce qu'on appelle en anglais Computer Science, mais tu apprends sur un certain nombre de cas particuliers comment ils ont choisi de régler cette problématique pour essayer de faire quelque chose qui est adapté à la fois sur iOS et la fois sur Android.
+
+David Leuliette (57:05.783)
+Oui.
+
+David Leuliette (57:15.843)
+Et du coup, vous avez des diffs iOS Android sur vos apps ou pas du tout ?
+
+Adnan (Sharelock) (57:27.331)
+Il y en a une et Mathieu va me taper, c'est que crois que je toujours pas passé en Edge to Edge en...
+
+David Leuliette (57:34.2)
+le fameux, oui le fameux truc, oui ok.
+
+Adnan (Sharelock) (57:37.134)
+mais non sinon il a pas de diffs. Si c'est rare maintenant on a des petits diffs, genre Android il me fait des dingueries je sais pas pourquoi là où ça marche plutôt bien sur iOS. J'ai pas encore compris tout à fait pourquoi. Genre j'étais censé avoir de la background location y compris du Cilap et Keeley
+
+David Leuliette (57:40.958)
+Ok, c'est tout pareil.
+
+David Leuliette (57:52.451)
+ouais ?
+
+David Leuliette (57:56.643)
+F...
+
+Adnan (Sharelock) (58:02.542)
+iOS, il trigger bien les events même quand l'app est kill Android pour l'instant, parfois oui, parfois non, ça dépend du téléphone J'ai pas chuché What's weather
+
+David Leuliette (58:03.491)
+...
+
+David Leuliette (58:13.175)
+Ouais, c'est pas un truc de permis. non mais c'est... Je vois,
+
+Adnan (Sharelock) (58:18.698)
+va trouver le pourquoi, va régler le pourquoi. Il y a toujours parfois des petites diffs comme ça sur les caméras. On a eu des problèmes de diffs entre iOS et Android. Sur le Bluetooth, on a eu des micro diffs entre iOS et Android. les permissions, on a des diffs entre iOS et
+
+David Leuliette (58:31.308)
+Ouais.
+
+Et ça change tous les six points ! Ça en fout !
+
+Adnan (Sharelock) (58:39.374)
+Le pire c'est que obligé de rester rétro-matié, donc tu es « ouais mais si t'as telle version de SDK alors c'est tel perm, mais si t'as telle version de SDK alors c'est tel perm, alors il a des livres qui t'aident mais c'est vrai que c'est un peu serrant parfois quoi ».
+
+David Leuliette (58:57.193)
+Comment vous formez vous tenez à jour de ce se passe
+
+dans le monde de Rack Native.
+
+Adnan (Sharelock) (59:07.184)
+L'école de la démerde...
+
+David Leuliette (59:09.152)
+c'est bien ça, bonne réponse !
+
+Adnan (Sharelock) (59:11.85)
+Non, en vrai, n'y a pas de mystère en fait. Un, c'est parler aux gens. Alors soit tu as du réseau, soit tu vas à des événements, tu à des meet-up, tu vas à des trucs, tu croises des gens, tu papotes, tu dis que toi t'as réglé ça comment, moi j'ai réglé ça comme ça, toi t'as réglé ça comme ça. Bon après les gens parfois ils te disent de la merde mais t'apprends dans tous les cas à discuter avec les gens. Lire la doc, ça paraît con mais...
+
+Il y a beaucoup beaucoup de gens qui nous demandent « allez Doc, c'est dirigeant
+
+David Leuliette (59:41.983)
+Non je plus que maintenant, parce que maintenant il y a le AI Vibe Coding et tout, et en fait il plus personne qui la doc. Et moi je la lis, bah, encore hier j'ai encore lu un truc de la doc officielle sur le site parce que j'avais oublié en fait. Donc ouais, ça je pense que c'est encore plus important.
+
+Adnan (Sharelock) (01:00:01.39)
+Mais lire la doc, c'est pas forcément je cherche à comprendre comment faire A. Moi, lire la doc, c'est plus OK, qu'est que c'est capable de faire ? Qu'est ce que j'ai pouvoir faire avec ? Tiens, lire la souvent, les docs, elles ont des FAQ troubles shooting. te dis OK, ça, il a ça. Donc ça, ils ont dû faire ça comme ça et ça. ont du tout que c'est ça comme ça et machin. Donc t'apprends quand même des choses. Je pas il faut être sans arrêt. Moi, je suis premier à veiller coder aujourd'hui.
+
+David Leuliette (01:00:28.29)
+J'avoue.
+
+Adnan (Sharelock) (01:00:33.318)
+Mais lire la doc, reste important. Tu un upgrade majeur de version sur un truc que tu utilises. Va lire les relises notes, tu vas apprendre des trucs. Peut-être qu'il a des trucs que ne vas pas comprendre à l'instant T en lisant la relise note, mais où finalement, deux semaines plus tard ou un mois plus tard, quand tu vas jouer avec, tu vas dire, attends, attends, attends, attends, attends, attends, attends, attends, attends, attends, attends, attends, attends,
+
+David Leuliette (01:00:56.129)
+Ouais, si c'est que c'est... Ouais si c'est
+
+Adnan (Sharelock) (01:00:59.72)
+Et ça, Lia, elle ne pas te le dire. ouais, non, mais c'est parce que, en fait, ça cascade de ça et que ça vient de ça. Non, Lia, si le contexte, il est petit, ouais, elle te fait le taf, elle fait même parfois mieux que toi. Mais dès que ça commence à être un bire à cinq bandes, vu la taille des contextes aujourd'hui, en tout cas avec mes moyens à moi, Lia, part en cacaouette.
+
+David Leuliette (01:01:11.65)
+Au revoir,
+
+David Leuliette (01:01:21.717)
+Ouais ouais euh... C'est quoi ton setup du coup quand tu bosses un écran, deux écrans ? Moi j'ai un écran avec un... Ouais, one laptop.
+
+Adnan (Sharelock) (01:01:30.286)
+Je fais rien. Là, je suis en train de faire le TOL sur un MacBook Pro. Voilà, sans périphérique. Je n'ai pas besoin de plus. Au bureau, j'ai un écran, il n'est même pas branché. Quand il des gens qui en ont besoin parce qu'on a un stagiaire, je lui donne agréablement l'écran.
+
+David Leuliette (01:01:37.377)
+Bim.
+
+S-
+
+David Leuliette (01:01:47.809)
+...
+
+Adnan (Sharelock) (01:01:55.121)
+Après mon contexte est un peu différent parce que je suis CTO donc même si j'aime coder et que je passe du temps à coder ça va être aujourd'hui entre 20 et 30 % du temps que je passe à coder, c'est pas 70 % donc... Et je comprends que mes devs eux ils ont entre 1 et 2 écrans en fonction de comment ils ont envie de joueter. On leur a acheté des petits supports de téléphone pour poser les téléphones, le leur ou ceux test s'ils veulent jouer.
+
+David Leuliette (01:02:00.129)
+...
+
+David Leuliette (01:02:09.249)
+Non.
+
+David Leuliette (01:02:17.537)
+Et
+
+Adnan (Sharelock) (01:02:23.134)
+avec. En plus ça tombe bien dans pas mal d'évents ils offrent ce genre de goodies donc en plus tu n'as même pas à les payer pour leur faire ça comme cadeau c'est cool. Mais non ouais à la route souvent le macbook sur les genoux et les pieds sur la table tu vois.
+
+David Leuliette (01:02:42.905)
+C'est beau, on adore !
+
+Adnan (Sharelock) (01:02:45.038)
+et avec mon vp à côté qui me dit tu veux pas te mettre de l'autre côté parce que là j'ai les pieds dans la gueule quoi mais c'est pas très bien mais du coup je mets les pieds de l'autre côté maintenant j'essaie de faire attention
+
+David Leuliette (01:02:51.668)
+Ahahahah
+
+David Leuliette (01:02:58.503)
+Ok, ok. Est-ce qu'il a un sujet qu'on n'a pas abordé
+
+Adnan (Sharelock) (01:03:06.314)
+sujet pas abordé ? Non, je crois qu'on a fait le tour en tout cas d'un point de vue React Native. Après effectivement, tu me posais la question tout à l'heure sur React Native Web, directement sur est-ce qu'il une vision uniforme entre les deux ? C'est une question je pense que beaucoup de gens doivent se poser. C'est pas parce que moi j'ai écarté le sujet pour l'instant chez nous, et encore une fois c'est pour l'instant parce qu'en informatique rien n'est jamais définitif, que les gens ne pas
+
+David Leuliette (01:03:20.224)
+Hmm.
+
+David Leuliette (01:03:33.472)
+Hmm.
+
+Adnan (Sharelock) (01:03:36.0)
+se poser cette question là en fonction de leur use case, en fonction de leurs besoins, en fonction de leurs soucis. Par contre, ne pas utiliser aujourd'hui une technologie qui permet de faire à la fois iOS et Android, je trouve ça d'une stupidité incroyable. Alors tu préfères flotteur, du flotteur, tu préfères... comment ça s'appelle ? Codeline multiplatformes, fais du codeline multiplatformes, mais...
+
+David Leuliette (01:03:43.584)
+...
+
+Adnan (Sharelock) (01:04:03.886)
+ne fait pas une app de chaque côté juste parce qu'il a trois devs qui s'excitent sur Swift et qui n'ont pas envie de faire du Kotlin et qu'ils disent « Non mais nous on est développeur Swift, on va faire du Swift ». Ok mais grandit, le monde a changé.
+
+David Leuliette (01:04:16.864)
+Ouais alors en plus c'est pas up-side parce que si c'est DevSwift bah en fait ça va te paraître super easy de faire du Rack Native en plus parce que tu pourras exemple quand on va voir ton domaine d'expertise faire une app j'en sais rien pour ta montre par exemple en Swift et faire un... et que ça soit connecté quand même à ton app Rack Native donc il y a plein de cas
+
+Adnan (Sharelock) (01:04:37.422)
+Tu peux faire totalement dans la directive. Il me semble.
+
+David Leuliette (01:04:41.35)
+Ouais, t'es peut... enfin oui mais t'es obligé quand même de connecter, de faire un natif module il me semble, de faire reconnaître...
+
+Adnan (Sharelock) (01:04:47.406)
+Oui, tu auras peut-être besoin de faire un ou deux natifs module, mais c'est pas grave. Si tu fais juste les bindings sur quelques fonctions, ça reste beaucoup moins lourd que tout le code de l'app. Surtout la nouvelle architecture, si tu veux. Autant les bridges, ok, ça serialisait en JSON, ça desserialisait le JSON. Autant là, avec la nouvelle architecture qui n'est pas juste une référence en mémoire, ça poutre quand même d'une ours.
+
+David Leuliette (01:04:53.395)
+Ouais. Ouais. oui.
+
+Ouais ouais si nous...
+
+David Leuliette (01:05:15.135)
+poutre du nounours on adore c'est est ce qu'il ya une recrute à la recommandation d'une personne que je devrais éviter oui on a parlé juste avant off vite fait
+
+Adnan (Sharelock) (01:05:26.958)
+Ma Rec, pourquoi pas, je ne pas si tu as déjà fait ou pas parce qu'en vrai il est intéressant ou quelqu'un de chez Théodo qui bosserait avec lui ?
+
+David Leuliette (01:05:34.867)
+J'ai déjà eu Lucie mais je demanderai à Marek. Ce sera avec plaisir que je le ressors.
+
+Adnan (Sharelock) (01:05:39.758)
+L'avantage c'est qu'il a du recul aussi par rapport à pas mal de choses qui peuvent être assez intéressantes, est moins focus le problème tout de suite à Thènes. Et puis l'avantage c'est que comme eux ils font du conseil slash accompagnement, ils récupèrent aussi plein de trucs de plein de clients qui doivent être dans des états plus ou moins dégueulasses.
+
+David Leuliette (01:06:01.695)
+Oui, on doit avoir les mêmes problèmes.
+
+Adnan (Sharelock) (01:06:05.39)
+Moi là où j'ai la chance c'est que c'est quelque chose qu'on a construit, qu'on maintient et qu'on... même s'il a des choses où on se dit ouais là on pourrait faire mieux etc. On y met quand même du coeur pour s'assurer à ce que ça parte pas en désuitude quoi.
+
+David Leuliette (01:06:19.347)
+Ouais ouais. Où est-ce que l'on pourrait te retrouver sur les internets ?
+
+Adnan (Sharelock) (01:06:24.886)
+sur les internets, sur LinkedIn, pas mal, j'essaye de sauf pour les business développeurs, genre de choses, j'avoue, moi dès que je vois marketing, business development, ce genre de choses, je sais qu'on va vouloir me vendre quelque chose donc...
+
+David Leuliette (01:06:39.262)
+Pas le time. En plus tu dois te faire harceler non. Moi je sais que quand j'avais changé mon statut sur edit j'avais mis CTO chez Wispy2day et je recevais ou CEO j'avais mis je crois et je recevais plein de trucs je fais mais... C'est tout et là... Ouais bah c'est ça, insupportable.
+
+Adnan (Sharelock) (01:06:46.062)
+Merci beaucoup.
+
+Adnan (Sharelock) (01:06:50.478)
+Il y en a 10 par jour. Ça c'est compliqué. y a React Native Connection, j'essaye de venir assez souvent au meet-up, voire au conf. Qu'est-ce qu'il a d'autre ? Communauté plutôt orientée tech leaders, CTO, où je suis. J'essaye d'être assez actif parce que ça me permet aussi de rencontrer plein de gens qui ont plein de problématiques et du coup d'apprendre beaucoup.
+
+David Leuliette (01:07:05.218)
+bah c'est dit.
+
+David Leuliette (01:07:18.576)
+Ok, c'est quoi ça, c'est un Meetup sur Paris ?
+
+Adnan (Sharelock) (01:07:21.006)
+TechRox, c'est une conférence qui se passe tous les ans en décembre, début décembre, et c'est une communauté de tech leaders.
+
+aujourd'hui on a un gros slack pour échanger et plus il a un certain nombre d'événements qui sont organisés durant l'année, des meet-up parfois, des trucs complètement after work sponsorisés par des boîtes qui nous font un gentil speech sur leur technologie et en échange de nous voir écouter le speech nous payent l'apéro dans un rooftop à Paris.
+
+David Leuliette (01:07:36.756)
+oui.
+
+David Leuliette (01:07:55.183)
+bah super ! C'est bien ça, vas-y, je connaissais pas du tout. On ajoutera ça. mais attends, je connais cette personne.
+
+David Leuliette (01:08:03.966)
+Je ne sais pas, c'est possible.
+
+Adnan (Sharelock) (01:08:06.05)
+Tech Rock, il beaucoup. puis généralement, j'essaye de faire aussi de temps en temps, meet-up me suggère des petits groupes, des petits machins. Alors je passe une tête, je vois, ça me plaît, je continue à venir, ça me plaît pas. Donc, typiquement, il y avait des meet-up sur DBT. Alors là, on est plus sur la data. J'étais allé à un, j'ai fait OK, laisse tomber, j'ai plus allé. C'était que des gens qui... La question de est-ce qu'on est bien sur Talend ou est-ce qu'il faut bouger sur DBT était là. Mais c'est la question d'il a cinq ans, moi ça m'intéresse pas.
+
+David Leuliette (01:08:29.149)
+...
+
+David Leuliette (01:08:32.861)
+chou !
+
+Adnan (Sharelock) (01:08:34.926)
+J'ai trouvé un petit meet-up rigolo avec que des gens dans la tech mais qui sont expats en France. des Canadiens, des Anglais. On se réunit assez souvent mais on est à 10 dans un pub en train de picoler et on débate de...
+
+David Leuliette (01:08:45.287)
+excellent ! mais ça c'est trop bien ça !
+
+David Leuliette (01:08:52.823)
+Ouais bah ouais c'est ça.
+
+Adnan (Sharelock) (01:08:54.83)
+Ouais, Docker ceci, Docker cela, c'est quoi les problématiques que tu as avec du Docker Compose ? Est-ce que là on fait si, il y en a un autre qui commence à lancer un produit, on lui a fait du feedback sur son truc avant qu'il le lance. du coup, c'est assez mignon. Et puis le côté polyculturel, moi, c'est quelque chose qui me plaît bien parce que même en habitant à Paris, parfois, on a tendance parfois à se retrouver tout le temps dans les mêmes cercles. Là, ça permet de casser un peu cette dynamique.
+
+David Leuliette (01:09:16.141)
+Ouais dans les mêmes cercles je vois ce que tu veux dire.
+
+David Leuliette (01:09:22.23)
+Non, sur l'île on a pareil...
+
+Adnan (Sharelock) (01:09:24.142)
+progresser c'est parler à des gens.
+
+David Leuliette (01:09:26.078)
+On a pareil sur l'île avec le groupe IndieHackers, c'est des gens un peu de tout, du marketing, des tech, des entrepreneurs, des freelancers un peu comme moi. Et c'est cool d'avoir du feedback. Sortir de ta zone de confort et parler à des gens. On retiendra ça. Super. Ça va être la fin de l'épisode. tout cas, merci d'être venu. C'était très sympa. On a appris plein de trucs sur comment le Bluetooth.
+
+C'est compliqué, ne vous lancez pas dans le Bluetooth les amis ! alors... Comment ? Ouais c'est ça, quand tu n'as pas le choix, envoyez-nous des DM, on va pouvoir vous donner des guides de survie pour que vous pétiez pas des plombs et que vous pourriez repartir. Dans tout cas, si vous avez un vélo, regardez Sherlock. voilà, il aussi l'étude...
+
+Adnan (Sharelock) (01:09:59.246)
+Parfois t'as pas le choix, hein !
+
+Adnan (Sharelock) (01:10:21.994)
+Je vous rappelle trop, je ne pas s'il marche encore.
+
+David Leuliette (01:10:24.765)
+ouais bah vas-y, attends t'as un code promo, on va le mettre juste... On va le mettre juste à la fin, voilà, même on fera des références nulle part. Parce que tu peux faire un... Ou je les mettrais dans le nôtre de l'émission, vas-y, vas-y, on va faire un code promo excellent, trop bien.
+
+Adnan (Sharelock) (01:10:33.71)
+Tu peux les mettre hein...
+
+Adnan (Sharelock) (01:10:40.718)
+C'est pas celui-là, alors c'est d'autres. C'est Adnan Roulez. Donc Adnan, A-D-N-A-N-R-U-L-E-Z.
+
+David Leuliette (01:10:47.783)
+Attends...
+
+David Leuliette (01:10:53.295)
+Et on met ça à la fin dans le checkout et hop, vous aurez une surprise. On dit pas c'est quoi la surprise, vous devrez l'utiliser pour voir qu'est-ce que c'est la surprise.
+
+Adnan (Sharelock) (01:11:02.808)
+C'est l'équivalent d'un mois d'assurance gratuit en gros, c'est 8%.
+
+David Leuliette (01:11:06.336)
+bah voilà, franchement en vrai, au moins pour essayer c'est bien. Bon bah super, allez, en tout cas les amis je vous dis à la prochaine et ciao !
+
+Adnan (Sharelock) (01:11:17.55)
+Ciao !
+

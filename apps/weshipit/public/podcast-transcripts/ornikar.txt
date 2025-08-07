@@ -1,0 +1,1696 @@
+David Leuliette (00:01.208)
+Ouais exactement. J'attends un peu pour YouTube comme ça parce que je sais pas, a 5 secondes de délai.
+
+Bonjour et bienvenue sur le Cross Platform Show, l'émission dédiée à Rack Native et au développement de l'application mobile en général. Je suis David, développeur chez Wichipi Today, nous sommes en mai 2025. La température extérieure est de 14°C dans les Hauts-de-France. Romain, comment ça va ?
+
+Romain Spielmann (00:30.574)
+ça va très bien, c'est très très bien et toi
+
+David Leuliette (00:35.036)
+c'est une vraie plante ou pas ? Pour ceux qui n'ont pas la vidéo, y a une superbe vraie plante. Moi j'ai quoi ? Des livres que j'ai pas encore lus. Ah putain ouais si ! J'ai acheté ce bouquin là, il a l'air trop stylé. C'est The Tratenberg Speed System of Basic Mathematics. En fait en gros c'est comment tu fais des opérations, tu sais, genre 758
+
+fois 7 et tu fais des petits calculs manteaux, tu ajoutes des trucs machin et en fait tu peux calculer très rapidement voilà c'est ça bah vu que j'ai un fils je me suis dit ouais je le lirai et puis bon comme d'hab on va pas le lire mais le fib que j'avais vu il avait l'air trop bien je suis là putain mais j'ai dit faut que j'en fasse mais dans les nombreuses choses que j'ai à faire
+
+Romain Spielmann (01:12.558)
+Ok ouais des petites techniques de calcul à la bonne lecture
+
+Romain Spielmann (01:22.754)
+Ouais, mais ça fait de la déco !
+
+David Leuliette (01:31.832)
+One day, tu vois ? C'est ça, exactement. Du coup, Romain, est-ce que tu peux te présenter succinctement pour les gens qui ne te connaissent pas encore ?
+
+Romain Spielmann (01:32.75)
+Ça fait coucou.
+
+Romain Spielmann (01:41.238)
+Yes, du coup Romain, j'ai 30 ans, j'habite dans le coin de Strasbourg et je suis lead front-end chez Ornicard depuis 3 ans à peu près, un petit peu moins. Et du coup je fais du ralentit maintenant depuis 7-8 ans maintenant, on un petit moment.
+
+David Leuliette (01:57.461)
+Ok.
+
+Cool ! Qu'est-ce que Strasbourg ? Qu'est-ce que... Pourquoi Strasbourg ? Boss Remote depuis là-bas ou... C'est la box ? Ok.
+
+Romain Spielmann (02:01.837)
+Ouai ouai
+
+Romain Spielmann (02:06.573)
+Ouais je suis en remote depuis là bas et j'ai toujours rendu en Alsace donc je suis au petit village à côté de Strasbourg
+
+David Leuliette (02:11.512)
+OK.
+
+Ok. ouais, attends, on veut le vrai nom, nous. C'est quoi le vrai nom
+
+Romain Spielmann (02:17.894)
+Attends, hang and beaten.
+
+David Leuliette (02:21.128)
+Ok, euh... C'était... C'est bon, dans le coin de stress... C'est ça, dans le coin de stress, bon super. Donc t'as fait tes études là-bas ou t'as été autre part ?
+
+Romain Spielmann (02:22.45)
+Si je te l'épelle ! C'est le bon prénom de ville alsacienne !
+
+Ouais c'est ça.
+
+Romain Spielmann (02:33.517)
+Non j'ai fait toutes mes études, enfin je toujours avec un alias, j'ai fait mes études à Strasbourg, j'ai toujours été dans ce coin là. Là je remonte régulièrement à Paris.
+
+David Leuliette (02:39.55)
+C'était quoi le titre exact ?
+
+Romain Spielmann (02:43.109)
+Alors j'ai un petit trère NCP, c'est manager en système d'information. J'ai fait ça au CESI en alternance. J'ai fait toutes mes études en alternance, ça c'était plutôt cool. Je vous recommande vraiment de faire les études en alternance, c'est un gros plus je trouve.
+
+David Leuliette (02:47.732)
+c'était ça ? Ok, ok.
+
+David Leuliette (02:57.847)
+Moi j'ai fait aussi mais la boîte que j'ai fait c'était de la merde. en fait c'est ça, c'est que pas de chance, je suis bal tombé. Mais bon, en vrai. Du coup je savais ce que je voulais pas faire.
+
+Romain Spielmann (03:03.894)
+Ça fait risque.
+
+Romain Spielmann (03:08.749)
+Moi ça va
+
+C'est un vrai c'est déjà bien Moi aussi, j'ai fait 3 boîtes différentes Une qui était cool, une où ça me plaisait pas vraiment Donc je savais que vous voulez pas faire ça Et la troisième j'ai commencé à faire du ragnatif donc c'était là le déclic
+
+David Leuliette (03:15.679)
+C'est déjà bien.
+
+David Leuliette (03:25.085)
+Ok donc c'est comme si tu connaissais avant ou pas du tout ?
+
+Romain Spielmann (03:29.101)
+Non, en fait moi à base je faisais déjà un peu de mobile avec Ionic à l'époque, Ionic et du Angular. Donc c'était plutôt cool, j'kiffais ça. Et la boîte qui m'a pris pour ma dernière année en M2, elle voulait faire une application mobile, c'était un peu une startup qui venait se lancer, donc ils voulaient faire leur propre appui mobile dans l'événementiel. Et ils voulaient faire du Ionic. Donc j'avais passé des entretiens, on a discuté et tout, c'était parti pour faire Ionic, Angular, donc je connaissais, donc c'était cool, j'étais confiant. Premier jour j'arrive et en fait on a changé d'avis, on fait du ragnative ! Donc j'étais là !
+
+Ok ! Super ! J'avais jamais fait de réacte. En fait je crois qu'ils avaient pris un freelance pour lancer le process mais pour avoir en gros le MVP. Et lui il a conseillé de faire plutôt du ragnative parce que c'était un peu mieux que Ionic. Il l'avait un peu recommandé du coup c'est parti là dessus.
+
+David Leuliette (04:15.329)
+Ouais c'était différent. c'est ça. Moi je sais que quand j'ai fait pareil du mobile, fait React Native venait de sortir... Attends non c'est pas possible c'était en 2015.
+
+Romain Spielmann (04:17.121)
+Donc du coup, aujourd'hui je suis très content qu'ils aient fait ce choix.
+
+Romain Spielmann (04:30.893)
+Moi c'est en 2018... 2017.
+
+David Leuliette (04:32.955)
+Ouais non, Rack Native en 2015 ça devait être très, très, très, très early et du coup il fallait... bah si c'est sorti, voilà c'est ça, initial release en 2015. ok. Mais donc c'était genre le tout début et en fait la team que j'avais à l'époque c'était genre, pareil, Angular machin, donc j'avais pas dire, ouais les gars, on est une type de sac, balek, on va faire du Rack Native, ça va bien se passer. Non j'ai fait du pareil Ionic.
+
+Romain Spielmann (04:37.997)
+très très early.
+
+Romain Spielmann (04:45.805)
+Ouais ça se fait 10 ans cette année là.
+
+Romain Spielmann (05:02.509)
+Ouais, bon, je que vous faisiez le taf à l'époque.
+
+David Leuliette (05:03.57)
+C'est ça, il n'y avait pas 50 000 solutions. C'était Ornika alors.
+
+Romain Spielmann (05:09.047)
+C'est ça, au du natif.
+
+Romain Spielmann (05:16.205)
+Non c'était pas du tout ornicar Ornicar celle là c'est... c'est... Non c'était une petite boîte à Strasbourg Et ouais c'était une map qui faisait de l'événementiel Du coup il a eu le Covid après donc ça... Le tamis était très mauvais ça a pas vraiment marché Non non Ouais bah oui, on pas de chance sur ce coup là
+
+David Leuliette (05:17.525)
+Ah c'était pas du tout un... pardon pardon C'est le troisième mini... ok Ok
+
+David Leuliette (05:26.058)
+bizarrement. Ouais, ça arrive. Ok, super. Et du coup, maintenant, donc après Ornicart a trouvé comment ?
+
+Romain Spielmann (05:39.31)
+Après j'ai fait 2 ans chez Care, pareil j'ai commencé à chercher un taf en remote parce que c'est la période Covid, toutes les boîtes recrutées ont remonté, c'est un peu le feu. Je suis arrivé sur Anticar il y a 3 ans où ils ont lancé l'assurance. Anticar à la base c'était que l'éducation, l'hôte école, permis de conduire et tout ça.
+
+David Leuliette (05:57.064)
+On n'a pas expliqué c'était quoi Arnica, pour ceux qui connaissent pas du tout en vrai, c'est pas grave.
+
+Romain Spielmann (06:00.929)
+Ouais pardon. Du coup Ornicard fait deux choses. Il fait de l'assurance. Là c'est la partie où moi je travaille. Je travaille uniquement sur la partie assurance, donc l'application d'espace client. Et à côté ils font de tout ce qui permis, auto-école, cours de conduite, cours de code, en ligne.
+
+David Leuliette (06:21.205)
+Ouais mais moi je savais pas du tout qui faisait ça, moi je connais que le particode de la route.
+
+Romain Spielmann (06:23.597)
+C'est pas si connu de leur part C'est assez récent dans tous les cas Mais ils font de l'assurance auto depuis 3-4 ans maintenant
+
+David Leuliette (06:29.367)
+ils font assurance auto et tout. mais trop bien. mais vas-y, faut que je change. Je vais aller chez vous rien que parce que sais que vous faites du rack native. Je te jure, moi pour moi c'est un critère de... Moi les apps de banque c'est de la merde, l'UI elle est à chier. bah je vais chez Revolut. Voilà tu vois il n'y a pas de... Je... Ouais ouais. Je regarderai ça. Ok du coup permis de conduire et ou assurance. Donc trop bien.
+
+Romain Spielmann (06:41.997)
+bah oui
+
+Romain Spielmann (06:50.11)
+vas-y Ouais c'est ça
+
+David Leuliette (06:56.19)
+Et euh... Donc quand... Mais ils ont commencé par l'assurance ou ils ont commencé par le permis de conduire ?
+
+Romain Spielmann (07:03.341)
+Non, ils ont commencé par le permis de conduire, ça c'est vraiment le truc historique, fait presque 10 ans non plus, plus des ans qu'il existe C'était vraiment le truc initial et ils ont ouvert la partie assurance 2020 il me semble que je pas 100 % sûr des dates Du coup avant ils utilisaient un gros cise d'assurance et aujourd'hui on vend nos propres contrats d'assurance Et du coup moi je suis arrivé au moment où ils ont commencé à vraiment lancer la partie assurance avec l'application mobile qu'ils venaient de sortir Donc j'ai réussi à un projet un peu frais et tout, c'était cool
+
+David Leuliette (07:08.038)
+C'est ça que je connais.
+
+Romain Spielmann (07:32.659)
+Et même si on a fait une refonte entre temps, je pense qu'on peut en parler après ça Parlons-en !
+
+David Leuliette (07:36.489)
+bah vas-y, parlons-en, parlons-en, parlons-en, donc c'est quoi la stack, comment ça a été choisi, les 5 points, on va commencer par data layer, ou tout général, général la stack existait déjà.
+
+Romain Spielmann (07:43.34)
+W-
+
+Romain Spielmann (07:49.006)
+Ouais bah fait initialement ils ont commencé à faire du... d'abord c'était que du web, donc que du web avec du React et ils sont passés sur du mobile quelques années avant que j'arrive. C'est pas non plus si récent et du coup ils sont partis sur du React Native et à ce moment là on a eu un shift sur la mentalité et on est passé vraiment en mobile first donc on est passé vers le 100 % sur du React Native, pareil également pour le web. Et du coup on a pas mal de trucs un legacy où on a des webviews dans nos apps qui affichaient le site web à l'époque.
+
+David Leuliette (07:53.524)
+Hmm ?
+
+Romain Spielmann (08:18.893)
+C'était un peu le cas quand moi je suis arrivé à l'application assurance, c'était vraiment une grosse web but avec la navigation qui était native et ensuite on ne qu'afficher les éléments du site web. C'est pour qu'ensuite on a fait cette refonte où on est reparti un peu de zéro, on a refait un nouveau projet avec une nouvelle stack. En gros il y avait un besoin de design de tout refaire parce qu'actuellement le design n'était pas assez évolutif pour ce qu'il voulait faire et du coup nous avons en profité pour glisser une petite refonte tech pour en profiter.
+
+David Leuliette (08:34.032)
+vous avez Touribout quoi, ok. Pour euh...
+
+Mmh.
+
+David Leuliette (08:45.748)
+C'est ça, nous les techs on veut qu'il une DX qui procure de la joie donc on va tout reboot et ça va bien se passer parce que sinon je vois exactement le type de choses. Et le backend c'est en quoi vite fait ?
+
+Romain Spielmann (08:49.933)
+Ouais. C'est... Ouais ouais.
+
+Romain Spielmann (08:58.509)
+Nous côté assurance c'est du nest et côté éducation parce qu'en gros il y a deux squads, a la partie assurance, la partie éducation et côté éducation, ils ont du PHP en la ravali me semble et ils font du graphql aussi ouais c'est ça mais côté front par contre on a tout partagé entre les deux squads côté éducation, côté assurance on a vraiment un gros panoply de lit partagé, de design system donc ça c'est...
+
+David Leuliette (09:08.261)
+Ok, ok, donc deux teams. Ok, entre les deux pour mobile, pour que tu récupères bien. c'est bien, c'est bon vous êtes des gens bien.
+
+Romain Spielmann (09:27.309)
+très très cool sur la stack qu'on utilise.
+
+David Leuliette (09:28.083)
+Ah cool cool cool. du coup, sur Apple Bill, vas-y, reboot, data layer, c'était quand que vous avez fait la V2, V3 ? La Vnew, la Vnext.
+
+Romain Spielmann (09:35.15)
+Alors, euh... C'était la V2 on va dire, la V1 c'était la partie initiale avec les webviews Alors, a... que c'était 2022 du coup ? Non 2023, pardon On a commencé début 2023 En fait on a commencé à l'époque, c'était expo router venait de sortir Et on s'était posé la question de, est-ce qu'on switch sur expo router et on part vraiment 100 % vers expo Mais le timing était un peu... Just, c'était vraiment la release candidate 1 qui venait de sortir Donc on était un peu à mode...
+
+Est-ce qu'on part vraiment sur une app en prod qui part directement sur une tech qui vient de sortir, qui est un peu nouvelle, qui a pas été battée le testé, on était pas trop serein de partir là-dessus ? Je pense qu'aujourd'hui, si on refrait le aujourd'hui, on partait peut-être sans doute sur expo Mais du coup on a fait le choix de partir sur du nex côté web et full expo managed côté natif Et du coup on utilise solito pour la navigation Ouais En gros c'est une sorte de librairie qui a été faite par Fernando Roffo
+
+David Leuliette (10:25.01)
+ouais c'est trop bien ça ! Qu'est-ce que c'est solito Explique-moi.
+
+Romain Spielmann (10:33.357)
+fait pas mal de librairies sur React Native assez investi dans l'écosystème qui fait des trucs très cool dont Solito qui te permet de mapper tes urls qui sont côté web en next avec celles qui sont en natif en React Navigation et du coup tu as une API unifiée qui permet de faire tes links pour le web et pour le natif directement la gestion routing est très simplifiée et franchement c'est un peu le feu je suis très content d'utiliser ça, ça marche super bien
+
+David Leuliette (10:33.819)
+En andou
+
+David Leuliette (10:59.675)
+ouais carrément, moi quand j'ai découvert ça c'est folie, je fais ! C'est bon, maintenant il va falloir que les gens qui font le design ils jouent pas saute mouton entre les screens parce que... bouton va quelque part et euh... C'est ça, après les pro... Exactement, il y a d'autres problèmes après. Ok super, du coup solito tout ça, unifié, donc vas-y niveau data layer, côté app mobile, on en est où ? Qu'est-ce qu'on utilise ? Ok.
+
+Romain Spielmann (11:03.533)
+Oui.
+
+Romain Spielmann (11:12.683)
+Ouais c'est un peu ça. Ça dépend beaucoup du design.
+
+Romain Spielmann (11:23.981)
+Réacquery sur les deux donc ça marche très bien, ça me fait très content Et on a un peu de stun pour le peu de trucs qu'on veut stocker, qu'on veut persister Et sinon du roid contexte pour façon générale
+
+David Leuliette (11:33.692)
+David Leuliette (11:41.147)
+D'accord, et genre, pourquoi Zustand ? Parce que ça vous permet de partager, c'est pas forcément des trucs dans le cache ou c'est quoi le type de data qu'il dans Zustand ?
+
+Romain Spielmann (11:48.622)
+En fait c'est quelques petites informations, par exemple on a un list pour un des parcours de contacts, où gros tu différents choix de contacts et pour enregistrer le type que tu as choisi. On aussi pour certaines données un peu pourries, genre est-ce que tu as affiché ta modèle de Notif Push, par contre la réaffiche, genre de petites données qui ont persistes.
+
+David Leuliette (11:59.324)
+Ouais, ok.
+
+David Leuliette (12:05.106)
+Hmm.
+
+David Leuliette (12:08.658)
+Les trucs de wizard typiquement, les formulaires de la moireté. Ou t'as envie quand même que les utilisateurs, ils submittent pas 50 000 fois leur information comme sur le site de la TVA horrible. On va pas parler de comptabilité aujourd'hui. oui, je suis obligé, je suis obligé. Je suis obligé, je suis obligé.
+
+Romain Spielmann (12:12.64)
+Ouais c'est ça.
+
+Romain Spielmann (12:17.581)
+Oui.
+
+ça devait Un petit pic il devait partir là.
+
+David Leuliette (12:32.068)
+Mais oui, parce que là du coup ça procure de la joie parce que c'est vrai que ça vient vite vite vite complexe et en plus sur mobile vas-y t'es en train de faire ça, t'es dans le métro ou dans le bus et hop, pour éviter l'accident, bah hop tu fermes ton téléphone, là tu le rouvres, t'as tes infos qui sont dedans. c'est vrai, y a de l'offline ou pas du tout ?
+
+Romain Spielmann (12:49.229)
+Non pas du tout Si tu recherches tes informations avec ton le cache rack query oui mais sinon c'est tout
+
+David Leuliette (12:51.887)
+Euh... Ouais bah t'sais... Ouais... Non non pas forcément besoin et en plus euh... Ouais ça va pas forcément le coup... Euh...
+
+Romain Spielmann (13:01.641)
+Ouais en fait dans notre cas de l'assurance t'en as pas trop besoin Tu vas regarder tes informations de temps en ou tu vas quand tu vas avoir besoin de contrat pour envoyer tes documents, signer ton abonnement, ce genre de choses C'est pas non l'application que tu sur les deux jours et que t'as besoin en permanence quoi
+
+David Leuliette (13:16.323)
+Et vous faites la KYC en entier, donc KYC c'est vérification de l'identité directement, genre je download Ornicard, ils vont me demander des papiers voilà, et est-ce qu'il a une KYC qui est faite ou pas ?
+
+Romain Spielmann (13:30.253)
+Non t'as pas d'automatisation en gros, t'as une validation de notre côté par des opérateurs chez nous Donc on envoie tous tes documents et ensuite c'est à s'en insynchroner
+
+David Leuliette (13:35.61)
+Ok.
+
+D'accord, d'accord. Parce que moi, j'avais bossé dans la crypto, donc forcément il y avait des trucs de sécurité un peu plus vénères, on va dire ça. Cool, cool, cool. Du coup, navigation, je vais deviner quel libraire vous avez utilisé. Donc c'est React Navigation. Voilà, voilà. donc, ouais, donc parce que c'est ça, parce que je le fais à chaque fois, mais à chaque fois je me foire. Donc là, c'est bon, je ne suis pas foiré.
+
+Romain Spielmann (13:43.149)
+Ouais t'as toutes les validations qui étaient très cool
+
+Romain Spielmann (13:57.518)
+Eh oui ! Le risque était pas grand là !
+
+David Leuliette (14:07.341)
+Parce que est-ce que dans la roadmap vous avez la migration qui est prévue ou pas ? Vers Expo Routers.
+
+Romain Spielmann (14:14.829)
+Vérix pour router ? Non pour aujourd'hui c'est pas prévu. Tout le monde est très bien avec solito, avec next, ça fonctionne bien. Je pense qu'il a pas trop d'occasion de changer alors que ça tourne bien. Ça impliquerait aussi de peut-être modifier le routing côté web. je ne pas trop. Tout le monde c'est pas prévu.
+
+David Leuliette (14:23.322)
+A vous!
+
+David Leuliette (14:32.689)
+Ouais, bah c'est toujours tricky quoi. Et puis en plus, quelle plus value ça apporte en vrai que d'alps pour l'instant donc euh...
+
+Romain Spielmann (14:35.501)
+C'est ça. À part dire c'est cool...
+
+David Leuliette (14:41.59)
+Ouais pas forcément, moi je sais que du coup j'ai un verre, du coup là j'ai un projet en expo router et en fait c'est que c'est bien mais revenir sur un autre projet du coup ça va brainfuck vu que je switch. Ouais c'est ça quand t'as l'habitude des prises après c'est toujours un peu compliqué mais j'avoue...
+
+Romain Spielmann (14:55.309)
+Ouais t'as un peu l'habitude...
+
+David Leuliette (15:03.953)
+Ouais je suis mitigé parce que moi aussi j'aime bien avoir full control J'en ai parlé dans un épisode où en fait en gros j'ai un problème avec exporouter ça fonctionne pas du coup j'ai un peu hacké le truc parce que mon slug c'est route slug slash feature et en fait l'id il est pas à la fin quoi l'id il est au milieu et ça en fait ça marche pas du tout avec exporouter je m'en même pas pris en compte du coup du coup avec reg navigation j'aurais pu faire quelque chose ouais mais en fait ça marche pas du tout y'a pas l'api y'a pas donc j'ai fait
+
+Romain Spielmann (15:27.919)
+ouais ?
+
+Romain Spielmann (15:33.837)
+Peut-être avec la dernière version. ne pas si tu as mis la V5 là, a changé pas mal de trucs. J'ai pas encore tout le temps de tester. Mais ça a changé pas mal de choses.
+
+David Leuliette (15:33.973)
+J'ai fait de la... Bah c'est ça, tu vois faut... Bah... C'est ça là, je suis en... Là, c'est le moment bug les amis.
+
+Tamagui avec les selects sur Android ça fonctionne pas. Si tu mets une scroll view, en fait le truc c'est que l'event de la scroll view il est pas propagate correctement et en fait tu peux plus taper, t'as un pixel sur un pixel en haut à droite sur ta liste où tu peux taper pour faire le select. Alors pour retrouver ça fait trois jours je suis dessus c'est bon j'ai trouvé un enfer. Une collaboration internationale avec
+
+Romain Spielmann (16:00.365)
+Merci d'avoir
+
+Romain Spielmann (16:11.117)
+...
+
+David Leuliette (16:18.186)
+Un mec du Nigeria et un mec de je plus où, on s'est dit vas-y mais vas-y pourquoi ça marche pas ? Ça en fout. C'est ça. En plus c'est que sur Android, enfin un vrai device parce que sur l'émulateur ça fonctionne. Donc les...
+
+Romain Spielmann (16:20.685)
+T'es pas le seul
+
+Romain Spielmann (16:28.296)
+ça fonctionne ? ça c'est les trucs chiants quand tu fais du mobile tu là, tu t'es sur ton device, ça marche pas et tu comprends pas pourquoi
+
+David Leuliette (16:33.867)
+les amis.
+
+David Leuliette (16:37.632)
+achetez des vrais devices. Tu toujours toujours testé sur de vrais devices, c'est vraiment la vérité parce que oui il n'y vraiment que ça. Alors pourquoi ? n'en ai aucune idée. Je comprends pas pourquoi ça marche sur un émulateur et pas sur...
+
+Romain Spielmann (16:52.525)
+parce que c'est sur tous les devices ou juste certains en plus.
+
+David Leuliette (16:55.215)
+Non c'est tout, c'est euh... Oui oui c'est pas genre un Android... Ouais c'est ça ! On les connaît les OnePlus hein ! Oui oui c'est bon, les Xiaomi je sais pas quoi... Ouais c'est ça ! C'est ça, non là c'est surtout donc euh... Donc ça va. Donc oui, testez bien là dessus, ok. Donc est-ce que t'as un pattern de navigation un peu particulier ou c'est un truc classique ?
+
+Romain Spielmann (16:59.881)
+C'est pas juste les samsoums qui marchent pas...
+
+Romain Spielmann (17:06.15)
+les Xiaomi...
+
+Romain Spielmann (17:18.739)
+Non, apporte pas vraiment, truc très classique, a une tabarre, une stack... Vraiment très très classique là.
+
+David Leuliette (17:25.082)
+Ouais ouais. Cool. Ok, donc tu m'as dit tout à l'heure, ouais, t'avais un design système, web parity, parce que vous avez un site web, une app mobile. Y a une app mobile ou deux ?
+
+Romain Spielmann (17:38.669)
+En gros on a 3 apps mobiles, une qui n'a qu'une app mobile liée à ça Ensuite on a 2 sites et apps mobiles, côté assurance et côté éducation Ornicard tu auras 3 apps au total Ornicard code et permis, auras Ornicard pour les enseignants, ce qui donne des cours de conduite et Ornicard assurance
+
+David Leuliette (17:51.069)
+ok, donc si je vais sur l'app store je tape Ornicard. Ok ouais et il y en a chacun dédié dans ce...
+
+David Leuliette (18:04.939)
+Ok ! Et elles sont séparées, ouais.
+
+Romain Spielmann (18:05.645)
+Et du coup on Design System qui utilisé par toutes les apps et on a aussi une app qui que sur web. En gros pour faire ton devis c'est que sur web, on pas sur l'application mobile. Et ça pareil ça est utilisé aussi dans Design System. Donc au final on a que du web, que du natif et le mix des deux aussi. Donc on tout qui tourne là dessus.
+
+David Leuliette (18:17.743)
+bien
+
+David Leuliette (18:24.599)
+Et c'est quoi la stack pour votre design system du coup ?
+
+Romain Spielmann (18:27.955)
+Natif Base.
+
+David Leuliette (18:30.311)
+vous êtes encore sur Native Bayes aussi ? ça c'est marrant, Sherlock, Sherlock, étaient... l'épisode juste avant, ouais je reviens de publier tout l'heure. Native Bayes aussi, Native Bayes aussi. Donc alors, l'expérience Native Bayes en 2025.
+
+Romain Spielmann (18:31.304)
+Encore sur Nativase.
+
+Romain Spielmann (18:37.325)
+J'ai pas vu celui-là
+
+Romain Spielmann (18:44.424)
+C'était très bien au début, aujourd'hui on commence à avoir pas mal de problèmes vu que la libra est plus maintenue et qu'il pas mal de trucs sont un peu déprécaités donc on se retrouve avec des props qui fonctionnent pas, qui ne pas propagés notamment les props d'accessibilité c'est un peu l'enfer quand on a migré sur ReacNativeWeb19 et là il ReacNativeWeb21 qui vient de sortir avec Reac19 et tout on a pas encore pu bosser sur l'upgrade mais je pense que ça va être un petit bordel aussi mais on sait en discussion qu'on migre native base
+
+Peut-être vers Tamaguy, mais pour le moment y'a rien de définis, c'est qu'on fait...
+
+David Leuliette (19:14.37)
+Ouais.
+
+Romain Spielmann (19:17.879)
+Mais oui.
+
+David Leuliette (19:19.144)
+Et sur le web, le design ça marche comment ?
+
+Romain Spielmann (19:22.221)
+De la même façon, pareil, a tout sur un active base. Ouais, tout tout tout. En gros on a une libe universelle qui gère tous nos composants, donc on utilise des views, des boutons, des textes, tout ça sur le web également. On n'a pas trop de distinctions entre le web et le mobile.
+
+David Leuliette (19:25.295)
+Ah ouais il y a tout sur native base vraiment tout tout tout tout tout ok ok ok bah ouais en plus c'est vrai
+
+David Leuliette (19:37.76)
+Ouais ok, du coup, Freder...
+
+Ouais ouais, ouais mais si c'est bien au moins ça simplifie tout, ça simplifie pas mal de choses quoi. euh... Ouais je vois pour la migration faudra utiliser la technique de la mangrove les habits, si vous savez pas c'est quoi ? C'est mangrove...
+
+Romain Spielmann (19:54.986)
+Je connais pas.
+
+David Leuliette (19:56.43)
+Comment on dit Mangrove ? Mangrove dev ? Si je cherche, tape ça. Mangrove dev. C'est n'importe quoi. Je vais pas réussir à trouver. Mangrove software. En fait, en gros, c'est que tu commences par...
+
+David Leuliette (20:14.197)
+par... peut-être en Grove Software IT, non ça marche pas du tout. Bon, admettons, allez, projet, migration native base, c'est parti. Donc déjà, tout est exposé dans... Vous êtes dans un monoripo ou pas ? Ok, vous avez un monoripo, ok, slash button, ok, donc button, vous vous émettez...
+
+Romain Spielmann (20:18.989)
+David Leuliette (20:37.876)
+une prop' si vous voulez, un feature flag, new design or not. tu commences comme ça et tu as la chance d'avoir tout qui éclaté, tu peux migrer les composants un par un et tu les deux systèmes qui cohabitent. Tu tapes mangrove, software, implementation, design... C'est une technique...
+
+Romain Spielmann (20:52.823)
+Ouais Qui cohabite ouais
+
+David Leuliette (21:01.953)
+C'est pour refactor des API ou ce genre de trucs en fait. C'est première chose, c'est mettre des files de deprecated. Comme ça, ça pète pas tout. Tu t'appelles ton... Ouais, c'est ça, t'appelles ton button, button new. On va appeler button new. C'est bien. qui... Ouais, mais bon. bout d'un moment, comment on fait ? Faut faire ça. Et après... Et après... T'es dans un greenfield project sur une colline verdoyante à la Windows XP.
+
+Romain Spielmann (21:02.605)
+Ouais.
+
+Romain Spielmann (21:10.209)
+Ouais, mais t'as quand les warnings...
+
+Romain Spielmann (21:17.805)
+Peut-être que période de transition par contre est horrible.
+
+David Leuliette (21:31.374)
+Et tout est bien, tu n'es plus dans la mangrove en fait donc... Ouais c'est ça ouais. Donc c'est vrai quand t'es dans un monoripo et t'as un exam système et que tout est éclaté c'est plus facile. Si tu faisais appel directement à les librairies tout de suite bah c'est un peu plus chiant. c'est Ouais. Ouais c'est ça.
+
+Romain Spielmann (21:34.807)
+en place un par un.
+
+Romain Spielmann (21:45.037)
+On passe tout par notre livrairie. Elle explose toutes les primitives et tout aussi, toutes les views, tous les trucs primitives de native base directement. Donc on peut le remplacer directement et ça sera pas très sur toutes les appartes ensuite.
+
+David Leuliette (21:56.493)
+Moi je sais que ce que je mets en place maintenant c'est que j'ai un index, My UI, fait ça exporte tout à ma UI. comme ça si pour texte j'ai de l'I18N et du coup j'ai dû changer le truc texte, en fait c'était hyper rapide. J'avais pas tous les imports, tout le monde n'a pas changé puisque les imports sont déjà bons en fait, juste l'implantation de mon texte, ajouter TX, I18N, le bordel et hop c'est parti.
+
+Romain Spielmann (22:18.029)
+Ouais t'as pour toi en local.
+
+Romain Spielmann (22:22.957)
+C'est une bonne technique ça.
+
+David Leuliette (22:25.329)
+Très bien, oui c'est ça. Alors ça doit sûrement un nom aussi, je ne sais plus comment. On le retrouvera. Dites nous. Dites nous sur les shorts sur Youtube. Dites nous. Ok donc tu m'as dit, il est exposé sur internet ou pas le design système ?
+
+Romain Spielmann (22:42.413)
+Je crois qu'il était à une époque, je sais pas s'il est toujours. Il s'appelle Kit Universal. Je suis pas sûr.
+
+David Leuliette (22:46.996)
+Ennicard.
+
+David Leuliette (22:53.462)
+Euh... Non. Bah c'est que...
+
+Romain Spielmann (22:55.501)
+je pense
+
+Il était à une époque quand je l'utilisais pour les entretiens mais je crois qu'on n'en sait plus le cas. Je ne pas son pourcenture.
+
+David Leuliette (23:00.126)
+Ouais ouais...
+
+Ouais parce que en fait ça demande de maintenir aussi ce genre de... Moi il y est sur design.wiship.today si vous allez le voir... des morceaux un peu cassés. Bon hein. Mais en vrai en fait moi le critère de succès c'est est-ce que ça compile ? C'est tout. That's it. Est-ce que l'UI est cassé ? C'est pas très très grave. moins que ça compile ça va. Parce que pareil je suis dans un monorepo et j'ai des props, trucs, machins et des fois les data...
+
+Romain Spielmann (23:12.161)
+faut le maintenir
+
+Romain Spielmann (23:20.809)
+C'est pas grave.
+
+David Leuliette (23:31.052)
+ça casse, des fois ça casse, mais bon... Ok cool, est-ce qu'il y a des illustrations delightful, des animations incroyables ? Est-ce que tu as un TADA, un confetti quand tu réussis les trucs de ton contrat ? Ah non tu bosses pas sur le truc, ou quand tu remplis ton contrat ?
+
+Romain Spielmann (23:33.089)
+Ouais ça arrive, mais...
+
+Romain Spielmann (23:49.838)
+Ouais je suis pas sur la partie code. J'en ai fait un, on a un truc de confétis, je crois que c'est quand tu prends... genre t'as un bris de glace et tu prends rendez-vous pour ton bris de glace. C'est un des derniers trucs, une des futures qu'on a fait il a pas si longtemps et du coup vous avez fait une petite animation un peu sympa où en t'as une pluie de démojis calendrier qui tombe. Donc ouais. Réanimé 2.
+
+David Leuliette (24:01.419)
+ouais !
+
+David Leuliette (24:09.612)
+Vous allez faire ça avec quoi ?
+
+Redmetite tout court, ok.
+
+Romain Spielmann (24:14.509)
+Et pareil sur web aussi, ça marche plutôt bien. Ça bug peut-être un peu sur un vieil android, c'est possible. Mais dans le sens de ça, ça marche bien. Et ouais on utilise le ray animé sur quasiment toutes nos animations.
+
+David Leuliette (24:20.082)
+ça marche ok super
+
+David Leuliette (24:25.76)
+Ouais.
+
+David Leuliette (24:32.716)
+Ok super super. Et niveau illustration c'est que des photos classiques de stock ou des trucs assez particuliers.
+
+Romain Spielmann (24:41.413)
+C'est quasiment toujours des SVG qu'on utilise. ouais, pour un 2 particulier de ce côté là, c'est juste des assets qui sont fournis par nos designers.
+
+David Leuliette (24:52.128)
+Ouais, ouais directement, ok. Ouais, puis après c'est vrai que c'est le monde de l'assurance, tu vas pas commencer hein. C'est pas un jeu vidéo ou... Ouais, j'avoue. Boring, ouais mais boring business, boring, je crois que c'est assez boring, boring business hein. En vrai, c'est des trucs qui fonctionnent, des assurances on aura toujours besoin. Faut juste que, faut juste qu'il ait un gros travail en UX, que ce soit rapide et clair. Et puis... Ouais, c'est ça quoi.
+
+Romain Spielmann (24:58.519)
+Ouais, c'est pas le truc le plus sexy au monde.
+
+Romain Spielmann (25:08.429)
+Bye bye.
+
+Merci ça.
+
+Romain Spielmann (25:18.221)
+Oui, tu trouves les infos que tu cherches.
+
+David Leuliette (25:22.515)
+Moi ça suffit. Est-ce que pour Elise... Donc oui vous êtes sur Expo, pour Elise comment ça se passe ?
+
+Romain Spielmann (25:31.213)
+Du coup, nous, côté assurance, on utilise IAS. On a tout sur IAS pour nos releases. En rond, on utilise la circle CI comme CI de notre côté. Et c'est pareil côté éducation. Sauf que nous, notre circle CI, tout ce qu'il fait c'est lancer le job sur IAS derrière. Et côté éducation, eux, ont tout en fait main avec des fast lanes, tout qui est buildé sur nos runners circle CI. Les deux fours sautent très bien.
+
+David Leuliette (25:55.755)
+Ok.
+
+Parce que... êtes combien ? T'es combien à la tech, chez Ornica ?
+
+Romain Spielmann (26:04.269)
+Oh beaucoup ! Je sais pas, une cinquantaine j'irai au total. Si on compte tous les devs...
+
+David Leuliette (26:07.819)
+ouais ok ouais...
+
+Romain Spielmann (26:11.541)
+pas que front après il du full stack, il des backs et je crois même qu'on doit être plus que 50 je vais pas te dire trop non plus mais on a un bon petit nombre
+
+David Leuliette (26:11.774)
+Ouais ça fait quoi ?
+
+oui, je prends un...
+
+David Leuliette (26:19.595)
+Ouais non mais dans un ordre d'idée quoi, c'est pas genre indie hacker tout seul, j'ai pas le time, il me faut des trucs hyper efficaces, voilà.
+
+Romain Spielmann (26:23.199)
+Non non, non non, a quand même une grosse culture tech dans la boîte, ce qui est plutôt cool.
+
+David Leuliette (26:30.347)
+Ouais, y'a quand une grosse machinerie mais en fait le truc c'est que pareil, t'as des équipes dédiées pour maintenir le truc Tu vois, Circle, Circle Circle c'est vrai, moi ça fait longtemps que j'ai pas utilisé, J'avoue
+
+Romain Spielmann (26:42.803)
+Oui, du coup on a des SRE qui sont un peu plus sur cette partie là, sur la partie déploiement.
+
+David Leuliette (26:47.249)
+Oui, donc ils peuvent gérer tout ça quoi. Super, super. Et donc c'est quoi le release train ? Ça ship toutes les deux semaines ou c'est quand c'est prêt ?
+
+Romain Spielmann (26:51.117)
+Oui.
+
+Romain Spielmann (26:58.657)
+Alors en ce moment, c'est longtemps que je n'ai fait de natif. C'est un peu sur un projet interne qui est peu prio, je ne fais que du web. C'est un dashboard interne qu'on est en train de dev. Donc je n'ai pas fait de... n'y plus un petit moment à part des petits bug fixes de en temps. Mais sinon, ouais, c'est un peu au fur et mesure des futures. C'est un peu de release dès qu'on peut... Parfois c'est toutes les semaines, parfois toutes les deux semaines. Parfois c'est une fois par mois. C'était pas un peu des... Ouais, c'est ça.
+
+David Leuliette (27:22.27)
+En fonction de... Parce que vous avez plein de produits différents donc pas forcément... Allez go, toutes les deux semaines on réalise et après on voit ce qu'on met dedans mais euh...
+
+Romain Spielmann (27:32.365)
+Enfin en tout cas c'était chez nous côté assurance, chez côté éducation et RIS plus régulièrement, presque une fois par semaine.
+
+David Leuliette (27:38.826)
+Ouais, c'est une fois par semaine, le bon rythme je trouve, parce que tellement de... Ouais, tellement de trucs qui changent que... Ouais, si tu te fixes pas...
+
+Romain Spielmann (27:50.766)
+Après tu as toujours des moments où c'est un peu plus lent, quand tu as des plus grosses futures ou quand tu fais une migration expo et que tu passes... Tu bommes deux versions et là t'attends un petit peu avant de relire ce voiture.
+
+David Leuliette (28:01.579)
+C'est ça, c'est exactement ça. Moi, j'avais voulu faire ça à l'indien, mais Android m'est tombé dessus et puis voilà, j'ai abandonné le projet. Cool, cool, trop bien. Est-ce qu'il y a cinq, c'est vrai qu'on va parler, a vu que tu fais un peu du web aussi, on peut en parler aussi. Est-ce qu'il a cinq librairies que tu utilises et que tu recommandes à nos auditeurs?
+
+Romain Spielmann (28:07.501)
+Allez, le coup dur !
+
+Romain Spielmann (28:27.969)
+Alors ouais je me suis fait une petite liste. Alors en premier temps je mettrai solito quand même Parce que si tu as app Next, une app Web, une app Natif, tu partages du code c'est vraiment top pour gérer la navigation Parce qu'avant on avait un truc qui était fait maison Donc on custom, parce qu'on avait en réalité router côté Web et du rack navigation côté Natif Et on avait notre propre librairie custom qui fonctionnait très bien Mais bon il avait pas mal de boilerplate pour le setup, c'était un peu compliqué à prendre en main quand t'arrivais
+
+David Leuliette (28:32.446)
+Oui.
+
+David Leuliette (28:48.532)
+Ouais.
+
+Romain Spielmann (28:57.293)
+Là par exemple avec Solito c'est quand même vachement plus simple, je suis très content de ça.
+
+David Leuliette (29:05.94)
+Et en fait, c'est vrai qu'on peut dire si pour les gens qui connaissent pas du tout, tu vas sur Solito, tu fais clic clic, il va te faire un NPX, Create new monorepo from Solito. Et moi, sais que la première fois que j'ai découvert ça, j'ai halluciné. suis ouais, mais c'est génial ce truc. Et. Ouais, même juste pour information, pour comment faire.
+
+Romain Spielmann (29:20.011)
+Ouais Le petit starter template il est cool
+
+David Leuliette (29:30.473)
+organiser un monoripo ? Moi personnellement c'est pas ça que j'aurais pris parce que en plus surtout chez vous genre équipe de 50 personnes il est fait avec quoi votre monoripo ?
+
+Romain Spielmann (29:39.083)
+C'est du yarnwork space
+
+David Leuliette (29:41.003)
+Yarn Warspax tout court. Moi je que j'avais mis en place nx.dev, c'est un peu plus encore au dessus, mais au moins il a pas de bidouille et je passe pas mon temps à faire la plomberie quoi. Il une équipe de SRE de 500 mecs qui bâchent chez NX pour maintenir tout le merdier. C'est ça ouais. Donc après c'est toujours pareil, ça dépend est-ce que tu as la team et tout, machin, mais quelle est la taille du projet. Moi j'avais mis ça dans une banque tu vois, donc banque il faut que ce soit sérieux ce business, il faut qu'il ait...
+
+Romain Spielmann (29:56.334)
+Pour faire ça ouais.
+
+Romain Spielmann (30:06.701)
+Ouais faut que c'est un peu carré
+
+David Leuliette (30:08.361)
+faut que ce un peu carré et c'est pas très très grave si le rythme de release n'est pas aussi soutenu que dans une startup. Allez voir le starter kit de Solito, ça fait incroyable. Librarie numéro 2 !
+
+Romain Spielmann (30:15.949)
+Ouais, p't'faire.
+
+Romain Spielmann (30:23.127)
+Ouais, c'est encore une librairie qui faite par Fernando, c'est Zigo. C'est librairie là pour créer des contextes menus qui sont natifs, enfin Android et iOS. Je jamais utilisé sur web ça d'ailleurs, donc sais pas trop ce que ça vaut sur web, ce que ça donne.
+
+David Leuliette (30:27.113)
+oui, bah oui.
+
+David Leuliette (30:39.688)
+On explique en fait les menus en Rack Native, c'est clic droit, c'est ça on va partir du web, clic droit, a un contexte mu qui s'affiche et ça à faire en natif pour que ce soit en fait, c'est pas très compliqué, mais pour que ce soit pairing et que ça marche partout. C'est ça le challenge et que la pi soit classe et assez.
+
+Romain Spielmann (31:00.653)
+Ouais c'est ça, c'est facile à utiliser
+
+David Leuliette (31:04.828)
+C'est ça, et assez permissif pour... bah là dans ce drop down j'ai des icônes, là j'en ai pas, là j'ai un autre tab dans le drop down, enfin on a un enfer. Et donc Zigo de Fernando.
+
+Romain Spielmann (31:13.549)
+Donc ouais, c'est un wrapper autour de 3 livres il me semble et du coup ça fait vraiment le taf. Je l'utilise principalement sur des projets perso sur nika, on ne pas utilisé mais je le trouve très cool ça là.
+
+David Leuliette (31:26.664)
+Ouais...
+
+David Leuliette (31:30.37)
+Et... Alors attends, sur le web ça ressemble à quoi ?
+
+Romain Spielmann (31:30.701)
+...
+
+Je sais pas
+
+David Leuliette (31:35.272)
+Je ne sais plus, c'est un contexte menu tout simplement.
+
+David Leuliette (31:43.945)
+Je vois pas, habitué... vas-y je ferais une PR pour mettre un gif, ça va pas du tout ça. Faire en dos... T'inquiètes, je... Ouais, non. En vrai je le ferais pas parce que j'aurais pas le time, J'aurais matériellement pas le temps. Mais c'est vrai. Voilà. Marketing tips. Ouais. Marketing tips 101 pour ceux qui font des librairies open source. Mettez des gifs. Des petits gifs.
+
+Romain Spielmann (31:58.24)
+Mais c'est simple que ça drop dans un menu ouais.
+
+Romain Spielmann (32:05.389)
+Des petits GIFs. oui. A quand tu veux.
+
+David Leuliette (32:09.512)
+100 stars en plus facile quand tu vois direct ce que ça fait.
+
+Romain Spielmann (32:14.089)
+Oui tu sais tout suite c'est est-ce que c'est ce que truc va te correspondre est-ce que ce que tu veux Parce que là t'es pas sûr si je dis bon allez je vais l'implémenter tu fais un petit poke tu vas le tester en fait c'est pas du tout ce que tu voulais
+
+David Leuliette (32:17.742)
+C'est ça, parce que sinon...
+
+David Leuliette (32:22.824)
+Exacto et du coup tu fais, ils vont plus m'avoir. Ok donc Zigo, moi je crois que je sais même plus si j'utilise, non je pense pas que j'utilise, j'utilise un autre truc, il y encore un autre truc, peut-être qu'on en parlera, je ne pas. Librairie numéro 3, c'est quoi ta librairie ?
+
+Romain Spielmann (32:37.645)
+Du coup je dirais Gorom Bottom Shit, qui existe beaucoup La fameuse Bottom Shit, selon le t-shirt Nicar
+
+David Leuliette (32:41.736)
+à la fameuse
+
+Vas-y explique pour ceux qui ont jamais entendu parler de bottom shit.
+
+Romain Spielmann (32:50.232)
+C'est une livrer qui te permet d'avoir des bottomsheets qui est full.js par contre. pas des bottomsheets qui sont natives mais ça fait le taf. C'est une grosse plateforme, ça fonctionne sur web, sur natif, sur Android, sur iOS, qui est assez facile d'utilisation. plutôt cool. Et qui est vachement maintenu aussi, donc a pas mal de docs dessus, a pas mal d'utilisateurs. Donc là on trouve un peu les solutions à tes problèmes.
+
+David Leuliette (33:07.308)
+C'est ça. Et en vrai, ça fait tout. Ouais.
+
+Et ça fait tout parce qu'en vrai le problème principal c'est... Donc t'as une bottom sheet ok, donc admettons on appuie sur un bouton et la bottom sheet qui sort mais dès qu'on veut mettre du scroll à l'intérieur horizontal vertical, un text input, un snap point qui arrive à la moitié de l'écran ou au trois quarts et en fait il y a tous ces trucs là qui...
+
+Romain Spielmann (33:29.901)
+text input, le clavier
+
+David Leuliette (33:41.175)
+La première vue on se dit ouais une bottom shit easy, en vrai c'est hyper... c'est un enfer, c'est hyper compliqué donc euh...
+
+Romain Spielmann (33:43.821)
+facile à faire.
+
+Ouais c'est très... tu peux vraiment l'adapter un peu à tous les use cases que tu as besoin. Après c'est juste une bottom sheet qui affiche un petit bouton et un truc, tu peux le faire toi même. Mais si tu as des bottom sheets un peu plus complexes, ça vaut vraiment le coup d'utiliser la lib.
+
+David Leuliette (33:53.786)
+Ouais, ou...
+
+David Leuliette (34:00.859)
+Et vous avez... T'as quoi toi dans ta bottom shit chez Ornicard ?
+
+Romain Spielmann (34:05.397)
+Du coup on l'utilise pour certains écrans, des trucs d'informations, ne sais pas, quelques images, avoir du scroll dedans parce que par exemple quel type de document tu dois appeler pour voir comment tu récupères ce document, il tu le demandes à ton assurance, machin. Tu un peu de docs, as un peu de screenshots ou sinon pour notre picker de documents. Tu as affiche le choix entre caméra, galerie, document de picker et tout ça. Je suis côté éducation et éducation aussi mais je sais pas trop l'horizonique. Ça parait ça un truc qu'on partage.
+
+David Leuliette (34:23.687)
+Mmh. Ouais.
+
+Allez, je vous...
+
+Romain Spielmann (34:34.953)
+dans notre système.
+
+David Leuliette (34:37.255)
+Cool cool cool. Vas-y on est à 3 Libra-Ri, la prochaine c'est...
+
+Romain Spielmann (34:42.733)
+La profession c'est pas vraiment en librairie mais c'est le truc qui te permet de faire des widgets et tous les trucs peu natifs iOS avec Expo C'est le Apple Targets qui est fait par Evan Bacon qui est vraiment très cool qui te permet du de créer tes petits widgets ou... j'ai pas tous les termes de tous les trucs que tu peux faire sur iPhone Tu vois le truc dans le header, le dynamic as norm ce genre de choses
+
+David Leuliette (34:56.775)
+oui...
+
+Romain Spielmann (35:12.061)
+peux les synchroniser avec ton app expo pour que ça inclut dans ton bundle donc c'est super facile à mettre en place donc ça c'est très cool. Je n'utilise pas sur NiKar mais sur quelques projets persos et je trouve ça vraiment super facile à mettre en place du coup.
+
+David Leuliette (35:20.167)
+ça. a le...
+
+David Leuliette (35:27.454)
+Un truc de ouf que... Alors je ne sais pas si c'est avec Apple Target, je pense. Dans la spotlight, donc en fait quand on drague vers le bas et qu'on affiche des trucs, genre... Ah ouais je peux pas mon téléphone, il est là. Amazon... En fait c'est trop bien, Amazon ce qu'ils font c'est que tu searches Amazon, boum ça va t'afficher Amazon. Mais si tu tapes orders ou commandes, en fait le truc c'est qu'ils ont mis orders dans leur titre ou je sais pas quoi. En fait ça s'affiche quand même dans la search.
+
+Romain Spielmann (35:40.077)
+Ouais.
+
+Romain Spielmann (35:56.43)
+Ok. Trop cool.
+
+David Leuliette (35:57.158)
+Je trouve ça trop smart et je pense que ça utilise ce truc là d'Apple Target. Je sais pas si sur Android il a un équivalent...
+
+Romain Spielmann (36:02.797)
+Non je vais chercher parce que je voulais faire des trucs pour une de mes apps faire un widget mais je pas trouvé Mais j'ai discuté avec un mec sur twitter qui avait fait ça pour son application et coup il s'est inspiré de ce qu'a fait Evan sur Apple Targets qui avait fait un truc en équivalent en Kotlin pour son projet Donc c'est faisable Donc il faut juste prendre le temps de le faire Mais je sais que sur Android tu utilises pas trop les widgets
+
+David Leuliette (36:07.225)
+A y avoir.
+
+David Leuliette (36:24.738)
+Ok.
+
+Romain Spielmann (36:31.373)
+C'est un peu moins démocratisé tous les trucs à côté que sur l'écosystème Apple. C'est moins de demande aussi.
+
+David Leuliette (36:37.062)
+ouais, j'avais pensé l'inverse moi, parce que les gens ils savent pas les widgets, enfin genre ma meuf, vois, c'est pas... Les moldus. Les moldus ils savent pas !
+
+Romain Spielmann (36:42.925)
+Ah je sais pas moi même elle a plein de trucs dans son menu, elle fait plein de raccourcis. Genre à chaque fois elle connait beaucoup plus les systèmes qu'elle appelle que moi. Moi je suis Android guide depuis toujours donc j'aime e-diphone à part pour tester des apps.
+
+David Leuliette (36:50.001)
+ouais, assez de...
+
+David Leuliette (36:53.744)
+oui !
+
+David Leuliette (37:00.591)
+Ok, il une.
+
+Romain Spielmann (37:01.933)
+Après je pense ça dépend des gens en fait.
+
+Romain Spielmann (37:08.727)
+Allez.
+
+Romain Spielmann (37:12.117)
+quasiment tout.
+
+Romain Spielmann (37:17.773)
+À plus !
+
+Romain Spielmann (37:24.683)
+bah d'un, je n'en avais pas trop. Donc en vrai j'aurais dit peut-être juste expo de façon générale ou IAS. Parce qu'en vrai IAS c'est comme le feu pour plus avoir à gérer tous tes certificats, tous les provisioning profiles, ajouter un device, tous ces bordels là. Ça c'est quand même un plaisir.
+
+David Leuliette (37:29.188)
+Ouais.
+
+David Leuliette (37:40.986)
+Bah oui, parce que t'as des apps... C'est quoi que t'as comme app on-side ?
+
+Romain Spielmann (37:45.878)
+J'ai petit tap pour... en gros c'est un compteur de scores Pour les jeux de scie, je joue beaucoup à des jeux de scie donc j'ai écrit ça pour compter de ses scores Scory Donc c'est comme score mais avec Y à la fin, pas du E
+
+David Leuliette (37:51.921)
+C'est quoi le nom ?
+
+Romain Spielmann (38:03.533)
+C'est ça. le... le VSO là !
+
+Romain Spielmann (38:13.677)
+Ouais c'est Ouais bah c'est ça un peu flemme de gérer tous les certificats, les trucs. Ouais ça forme mon... Ouais tu passes tellement de temps au début... Après une fois que c'est setup ça va généralement mais le setup initial c'est un peu un enfer.
+
+David Leuliette (38:19.461)
+Ouais, je vais passer une semaine à la faire.
+
+David Leuliette (38:31.3)
+Et euh... Ah ouais t'as quand même 47 reviews... 47... 41 notes pardon.
+
+Romain Spielmann (38:35.185)
+Ouais, c'est ma seule app qui a un peu de téléchargement et qui marche un peu sur les deux autres mais qui ont pas trop de succès
+
+David Leuliette (38:40.625)
+bah... Pourquoi ? Parce qu'il a pas de marketing, non ? Bah...
+
+Romain Spielmann (38:45.549)
+Ouais. Et puis après c'est des niches un peu plus compliquées. Y en un, je voulais juste tester quelques trucs d'ISO qui ressemblent beaucoup un aux... C'est un compteur un peu plus générique que pour les jeux de société. Et le dernier c'est Rabbit Tracker. Genre j'ai fait le cliché du... Du indie dev. Mais je voulais tester en fait faire des widgets et tout et du coup je suis dit bah c'est le bon projet. Et franchement c'était cool du coup j'ai pu tester de créer des widgets et tout, c'était sympa, je un peu de swift. C'est aussi le truc ça me permet en fait de bosser sur des trucs que j'ai pas trop l'habitude de faire à côté ou pas trop l'occasion donc...
+
+David Leuliette (38:50.03)
+Ouais.
+
+David Leuliette (38:54.84)
+Ouais.
+
+David Leuliette (38:59.627)
+Ouais.
+
+David Leuliette (39:15.535)
+Ouais, puis il faut pas que le scope soit énorme de façon, parce que sinon après... Ouais bah ouais, c'est ça comme moi, c'est pareil, moi j'ai des idées d'app, il faudrait que je les ship, mais pfff... Faut... Hein ? J'ai le bébé Side Project en ce moment, donc voilà... Ah non, c'est pas trouvé, c'est qu'il y en a plus tout court. Il disparut dans le vortex de la vie, mais c'est bon, j'ai fait le deuil, maintenant je sais, en fait maintenant que je me dis que j'ai une idée, je me dis bon, je le note, même pas je le note dans ma tootlyst, ça n'a...
+
+Romain Spielmann (39:16.013)
+toujours cool ouais c'est ça bah en fait tu te termines jamais
+
+Romain Spielmann (39:29.032)
+C'est ça, faut trouver le temps à motive.
+
+On y n'a
+
+C'est tant pis.
+
+C'est pas la même.
+
+David Leuliette (39:44.542)
+aucun intérêt, à part me frustrer et me dire ouais ça sert à rien tu vois je devoir la flush et tout, pas de to do list, pas de problème. Ok super super. donc du coup ça a pris combien de temps à shipper compti, non compteur de points ? Scorri pardon, ouais j'ai fait un mix des deux.
+
+Romain Spielmann (39:47.396)
+t'es démoralisé quand tu leur regardes et te dis putain
+
+Romain Spielmann (39:54.381)
+Alright.
+
+Romain Spielmann (40:04.685)
+Scory J'ai fait ça l'été dernier, j'ai commencé début juillet, j'ai mis grosso modo un mois à peu près parce que je faisais ça le soir, le week-end
+
+David Leuliette (40:15.433)
+Oui, non mais on connaît, tout... Déjà un mois, tu vois, vrai, c'est déjà cool. Un mois from zero to production. a pas beaucoup... Enfin...
+
+Romain Spielmann (40:23.757)
+Après j'avais fait un truc un peu MVP Après t'avais le truc classique de... Je me disais il avait pas assez de features je rajoutais quelque truc parce que je trouvais que ça pas... Ouais le classique
+
+David Leuliette (40:31.811)
+Ah le fameux ! Ah moi je fais plus hein, moi je release le premier truc moche, nul. Déjà en plus tu vas sur mon site, a plein de parties qui sont éclatées. Mais ! Alors après t'as l'effet de la pression sociale, c'est que tu dis, ah putain ouais si les gens ils tombent dessus, ou si on me le dit, ils vont trouver ça nul, et tu dis, ah vas-y faut que je le fixe. Et après du coup t'es dans une feedback loop où tu te dis, ah bah c'est bon, je peux me... Ouais c'est ça ouais. Ou alors des choses complètement inutiles et...
+
+Romain Spielmann (40:47.307)
+Ouais, vous trouvez ça nul...
+
+Romain Spielmann (40:54.165)
+Y'a que des problèmes partout, tu vois des trucs partout à fixer.
+
+David Leuliette (41:02.479)
+dis toi ouais c'est ? Ouais personne tout le monde s'en fout. Donc vos bûches, je me chipper une feature.
+
+Romain Spielmann (41:05.293)
+Personne ne s'en fout ouais. Ça je le vois beaucoup hein. Du petit... Ouais donc t'as un truc qui fonctionne. En fait ça te motive plus aussi. Parce qu'une fois que j'avais release l'app sur le store j'avais un plus de motivation, y'avait des gens qui l'utilisaient, j'avais un peu de feedback, quelques personnes qui payaient la version premium et donc t'as peu le truc... T'as plus de motivation que de le dans ton coin en fait, et j'avais personne à utiliser et au final tu ne le relis jamais.
+
+David Leuliette (41:31.832)
+C'est sûr. T'as utilisé quoi pour le paiement ?
+
+Romain Spielmann (41:34.381)
+Revenu 4. Le classique.
+
+David Leuliette (41:36.332)
+Revenu 4, c'est une solution qui gère tout. C'est un Stripe version web, mais là c'est version mobile, puisqu'il y a beaucoup de choses à faire.
+
+Romain Spielmann (41:45.813)
+Ouais là c'est très simple, t'as une API à unifier, c'est assez facile à Non c'est vraiment cool ça. Et ils ont un fruitière assez généreux. C'est jusqu'à 2500 balles, c'est gratuit et après tu payes 1 % je crois.
+
+David Leuliette (41:52.288)
+C'est ça.
+
+Ouais il me semble
+
+Ok, ouais bah ça va ça le temps de bootstrap tranquillou. ouais, allez vérifier.
+
+Romain Spielmann (42:00.545)
+Ouais. Ouais, ça va. Je crois que c'est 2500 mensuels en plus.
+
+Passons pas fonds sur de l'info là par contre mais je sens que c'est ça. Ouais à vérifier.
+
+David Leuliette (42:21.443)
+Tu peux nous dire comment tu shipes des features chez Ornicard et combien de temps ça prend pour mettre en prod ? Dernière feature.
+
+Romain Spielmann (42:27.987)
+Ouais, ça dépend un petit peu des futures. La dernière feature c'était un... On a changé de provider d'analytics. Donc le truc très sexy. Ouais. Bah c'est ça. Bah non. On était chez Mixpanel et on est passé sur Segment.
+
+David Leuliette (42:36.471)
+Ahhhh... Bah facile, je change le endpoint et terminé ! Bah oui, bah oui bien sûr. C'était de qui à qui ?
+
+David Leuliette (42:49.021)
+! Ça... Ben... Ben... Moi je... Oui. C'est une bonne solution. en fait, en vrai, prouve que ça crache de l'argent chez HordiCard parce que je sais que c'est très cher Segment. En fait, c'est genre... Bah... Mais en fait, en vrai, c'est ça, c'est toujours pareil. C'est de quoi t'as besoin et qu'est-ce que tu fais, en fait. Mais Segment, c'est beaucoup... Il me semble que c'est beaucoup plus cher, mais c'est vraiment... T'as vraiment une analyse plus fine. C'est pas le même outil, en fait. Segment, c'est que tu peux unifier la terre entière et Mixpanel.
+
+Romain Spielmann (42:59.674)
+ouais ? j'ai pas eu l'info, j'ai pas eu le devis.
+
+Romain Spielmann (43:08.94)
+Ouais
+
+Romain Spielmann (43:12.429)
+C'est pas le même outil non plus tu... Ouais c'est ça.
+
+un point d'entrée et après tu balances un peu partout
+
+David Leuliette (43:19.906)
+C'est ça, Mixpanel c'est vraiment pour des data un peu simples et tu ne peux pas recouper les infos. Enfin de ce que je me souviens c'est ça quoi. Mais donc, changement d'API parce que rien à voir.
+
+Romain Spielmann (43:30.99)
+Ouais rien à voir. Et du coup, on voulait un peu unifier ça entre éducation et assurance pour qu'on ait la même source de vérité et qu'on ait une libe partagée. Donc on a créé une libe d'analytics qui est partagée entre les deux squads. Et du coup c'est réussi à faire une libe qui est facile à utiliser, qui gère un peu tout à l'intérieur en mode magique pour que dans l'app t'as vraiment pas beaucoup de sétape à faire. Pour que ça soit très facile à utiliser pour tout monde et que t'aies pas besoin d'avoir une course d'apprentissage énorme. Et du coup c'était un peu unifier de la PIA entre le web et le natif, qui n'est pas la même.
+
+David Leuliette (43:42.647)
+Ouais.
+
+Romain Spielmann (43:59.774)
+La façon d'initialiser le provider c'est pas la même, réussir à faire un peu de magie dans cette livrerie pour gérer tout ça Donc c'est très cool, a un truc qui fonctionne vraiment bien, qui fait le taf Tu initialises la même passion côté web, natif Et derrière c'est le Dalipe qui gère tout Donc pareil, ça gère le consentement de tous les Donc trop trop cool Et puis ensuite bah...
+
+Le truc le plus lourd c'est remettre en place tout le tracking plan qui a changé, que t'es plus le même, modifier tous les events sur tous les CTA, c'est ça qui prend 10 ans quoi.
+
+David Leuliette (44:37.994)
+Euh... ouais du coup vous le faites euh... comment vous le faites en...
+
+David Leuliette (44:45.986)
+En gros tu un logger on va dire et tu tracks tes events là dedans
+
+Romain Spielmann (44:51.061)
+En gros, on notre Libre Analytics, donc t'as un contexte que tu lis, t'as un hook, Use Analytics, et celui-là il a tes différentes... T'as ton Identify, ton Track ou ton Pay View. Donc la partie Pay View, donc tous tes écrans et tout, s'est thomautisé. Donc ça c'est directement dans droit avec navigation, t'as ton Unstaged Change je crois, qui te permet de savoir sur quel écran tu es. Du coup on se toque dans une ref, l'écran précédent pour savoir de quel écran tu viens pour avoir ton historique de navigation.
+
+David Leuliette (44:56.424)
+Ok.
+
+Romain Spielmann (45:19.819)
+et tu as les infos, les paramètres de ton écran et tout ça et puis ensuite sur tes écrans de façon générale tu as juste des CTAs quand tu cliques, on fait un track et t'envoie l'event. Voilà. Ouais c'est ça. Et ensuite c'est...
+
+David Leuliette (45:32.787)
+Ouais, l'event et après t'as des trucs à l'intérieur de dans quoi. je sais que...
+
+Vas-y, vas-y.
+
+Romain Spielmann (45:38.957)
+C'est la libre qui définit les textilités sur web et qui met en bord toutes les informations de ce web, que telle version de l'application, côté assurance, côté éducation. Donc tu as quelques infos qui sont mises en direct par la librairie qui est partagée.
+
+David Leuliette (45:55.489)
+ok, et du coup vous avez un truc genre Sentry pour les crashes ou tout est dans ce segment ? ok, vous avez Sentry aussi ?
+
+Romain Spielmann (45:59.19)
+Ouais, non on a toujours qu'un sentry pour les crashes, a aussi un datadug, mais ça c'est un service côté serveur donc on a juste tous les log API qui passent donc c'est toujours pratique quand même pour les informations et qui très utile pour le debug
+
+David Leuliette (46:15.553)
+Ah oui bah clairement, je mets tout dedans. En fait en vrai moi c'est ça, enfin... Après les projets sont plus petits, ça dépend ouais. Mais souvent c'est ça, j'ai un logger qui crache les consoles logs en local. Si c'est à go la prod, ça drop les consoles logs et ça shoot à la place les événements sentries. Et puis voilà, et puis je suis content, suis là, ah ! Le seul truc qui est relou c'est des fois quand j'ai, tu les fameux objectes, objectes.
+
+Romain Spielmann (46:31.233)
+On va aller sur Centrieu
+
+Romain Spielmann (46:40.779)
+putain.
+
+David Leuliette (46:41.152)
+Parce que, ouais ça c'est relou quand je suis là, mais vas-y dans cette triche et object il faut que je stringify le truc mais du coup en fait si je le stringify il est tout dégueulasse et du coup je vas-y c'est bon quoi. ma vie est nulle. Est-ce qu'il a beau bon difficile dans le dev d'une de tes apps ? Pas forcément, je suis un Ica en fait en vrai en plus mais que t'as rencontré et comment tu l'as géré ?
+
+Romain Spielmann (46:46.797)
+Ça c'est un enfer.
+
+Allez. Allez.
+
+Romain Spielmann (47:04.961)
+Ouais je pense que un des trucs qui était compliqué chez Stachornicard du coup c'était le passage où on avait la première version de l'application et du site et où on est passé à la 7 refonte avec Next et Solitude tout ça. Où on était toujours encore dans le run, donc on avait toujours encore des features qui devaient être chipées. Et une des features qui était un peu critique c'était l'upload de documents. Donc tu quand tu crées ton contrat d'assurance, tu envoies tous tes documents justificatifs, ton permis, ton carte-riste tout ça. Et en fait c'est très dépendant de ton profil.
+
+Si tu des accidents ou genre de choses, as des documents en plus à envoyer. Bref, ça dépend de ton profil, donc tu as une checklist à compléter et plein de documents à envoyer. Donc ça parait à peu de documents, soit tu peux prendre une photo, soit tu peux envoyer de ta galerie, soit ton document de picker, c'est pas pareil sur web, sur natif. Donc il a beaucoup de trucs et c'est un peu en parallèle. Donc il avait cette feature qui devait partir encore sur l'ancienne version parce qu'elle devait être en prod assez rapidement et il la faire de façon à qu'on puisse la migrer très facilement sur le nouveau repo. Ou du coup on n'avait pas le même...
+
+David Leuliette (47:46.406)
+ouais...
+
+Romain Spielmann (47:58.798)
+On avait pas la même navigation, les gestions d'API étaient différentes, les layouts étaient différents, donc en fait c'était vraiment un peu le truc complexe de tout gérer correctement et du coup on avait peu dû rendre les différents trucs un peu agnostiques de la navigation, les API, pour aller passer en prop c'est assez facilement pour les modifier et c'était un peu une galère parce que du coup moi j'étais là dessus, à côté t'avais Zcoly qui bossait sur la rifon donc fallait quand même que je suive un petit peu ce qu'il mettait en place
+
+pour le prendre en compte quoi Donc ça c'était un peu un gros chantier mais au final ça s'est pas si mal passé Franchement le rapatriement c'est plutôt bien fait Donc t'as vu, on a eu pas mal de modifs à faire quand même parce c'était pas juste drop-in, copier-coller mais dans l'ensemble ça s'est plutôt bien passé Donc c'est juste le truc, il falloir vraiment avoir des bonnes specs et bien savoir ce que tu veux faire, façon dont on souhaite le mettre après et au final ça c'est...
+
+David Leuliette (48:34.932)
+Ouais ouais, ouais bah après fous...
+
+Romain Spielmann (48:56.838)
+bien passé, on a plutôt bien passé sur ça mais c'était assez le bordel quand même sur le papier
+
+David Leuliette (49:02.208)
+Ah bah oui, en plus pour tester, le truc, parce que les gens ils upload quoi ? Permis. Ok, c'est quoi ? C'est une image, un PDF, un PNG ? Mais les gens qui ont ça dans un doc word, enfin bref, on connaît hein, ou alors tous les gens qui mettent tout dans un PDF parce qu'ils l'ont fait sur leur ordi, j'imagine bien le nombre de cas...
+
+Romain Spielmann (49:10.349)
+Ouais tu peux toujours essayer une image en PDF
+
+Romain Spielmann (49:17.74)
+les types d'officiers
+
+Romain Spielmann (49:24.941)
+Ouais attends, t'as un peu de tout... Après c'est pour ça qu'on a une speg à son manuel aussi derrière
+
+David Leuliette (49:31.488)
+Oui.
+
+Romain Spielmann (49:35.863)
+Mais ouais, c'était un des gros trucs, gros chantier, c'était un peu compliqué.
+
+David Leuliette (49:39.444)
+Et ça a pris combien de temps alors cette migration de trop de temps
+
+Romain Spielmann (49:43.209)
+La migration en tant que telle c'était pas trop long, ça a dû mettre peut-être une semaine, le moment on a décidé de le mettre sur le nouveau repo c'était assez rapide. Le dev du projet en tant que telle, ça a dû mettre un bon mois pour plus.
+
+David Leuliette (49:48.283)
+Allo !
+
+David Leuliette (49:56.862)
+Ouais pour tester tout ça.
+
+Romain Spielmann (49:58.446)
+parce que du coup, t'as tout le parti... ouais c'est ça. T'as tous les use case à tester. Faut tester sur Android, faut tester sur US, t'as toute la partie permission native, tous les use case de... bah il a pas donné sa permission pour que tu puisse lui envoyer un petit message pour lui dire bah faut que actives la permission pour que tu puisses envoyer ta photo parce que... sauf qu'il avait déjà refusé donc il qu'il aille sur ses settings. tous les use case un peu bâtards dans ce genre de cas.
+
+David Leuliette (50:02.814)
+Oui.
+
+David Leuliette (50:17.672)
+Ouais je vois, je Je vois carrément. Et vous avez un truc genre maestro pour faire du end to end ou pas du tout ?
+
+Romain Spielmann (50:26.829)
+Non on a un truc interne qui se base sur Nightwatch pour faire des tests end to end mais c'est en cours de setup donc on pas encore beaucoup de cas qui sont testés J'ai une PR qui est ouverte qui doit... justement cette partie de plus de documents que je dois terminer La PR elle existe mais j'ai jamais... parce que pareil les tests pour qui tourne sur Android et sur iOS et on a cette libre qui un peu...
+
+David Leuliette (50:42.61)
+Ouais bah oui justement c'est...
+
+Romain Spielmann (50:56.671)
+qui gère un peu tout pareil de façon un peu magique qui fait la distinction entre WebNative pour que n'aies qu'un seul test à écrire.
+
+David Leuliette (51:04.307)
+Ouais, je vois. Ça c'est pas compliqué, ça s'appelle QA Engineer et c'est full time. Parce que maintenir le truc, c'est... Ouais, c'est un taf. En fait, en tant que dev, tu peux faire des initial tests et tout, moi je fais des unit tests, typescript et tout, machin. Mais en vrai...
+
+Romain Spielmann (51:08.525)
+C'est ça. Ouais bah c'est ça.
+
+Romain Spielmann (51:26.509)
+En réalité ça me doit de mettre du temps à faire tous ces écrits super longs
+
+David Leuliette (51:29.15)
+Le challenge c'est de les maintenir over time parce que ta stack évolue et tu ne pas tout faire non plus. C'est vrai que dans le chat si vous avez des questions vous pouvez les poser directement mais pas sur de récupérer le chat normalement sur Twitch.
+
+Romain Spielmann (51:33.325)
+Ouais
+
+David Leuliette (51:55.038)
+Voilà, faudrait que je fasse plus de marketing dessus. Tu vois le fameux marketing ? Faut que je fasse plus de marketing dessus. Est-ce que tu as des techniques de debug que tout développeur de Racknative devrait connaître
+
+Romain Spielmann (51:57.838)
+Allez, va
+
+Romain Spielmann (52:11.799)
+les consoles logs hein ! Tu connais !
+
+David Leuliette (52:14.243)
+oui bah oui il alors attends, mais parce qu'ils vont partir avec la prochaine version de Règles Natives.
+
+Romain Spielmann (52:19.629)
+Ouais tu les aurais plus directement dans le métro je crois
+
+David Leuliette (52:20.094)
+Tu les auras plus direct dans le terminal. Faudra faire J et hop ça bump ton... console et puis voilà. Mais ouais c'est vrai moi c'est pareil. En fait en vrai avant je fais le setup des tools mais vu que je change tout le temps de projet bah... Au bout d'un moment et que... Ouais c'est ça souvent c'est un peu ça quoi. Après il des trucs stylés. Je sais que Ludwig épisode 1 il utilise RackNative IDE.
+
+Romain Spielmann (52:27.597)
+Ouais ta console...
+
+Romain Spielmann (52:36.429)
+un peu ça... heureux basse, faut les maintenir.
+
+Romain Spielmann (52:49.385)
+Ouais, j'ai vu passer... Ouais c'est ça, c'est le truc de softer mention
+
+David Leuliette (52:51.086)
+ça a l'air radon, idéo ça s'appelle ouais. Franchement ça l'air stylé mais faut que je lui mette et pas le time. What a day tu vois. Pareil.
+
+Romain Spielmann (53:00.597)
+Ouais, parce que j'avais testé quand il en bêta, tout au début quand il avait annoncé, j'avais testé, je trouvais ça un peu cool et après plus j'ai un peu laissé de côté parce que... parce que voilà. Mais... ouais.
+
+David Leuliette (53:07.965)
+du coup console.log c'est bien tu vois, revisiter les basiques, les fondamentaux c'est important
+
+Romain Spielmann (53:16.877)
+Sinon il y aussi le React-Can sur le web pour checker tes rerenders
+
+J'ai jamais trop utilisé sur le React Scan, en gros c'est un outil que tu branches sur ton app React et qui te permet de vérifier à quel composant re-render quand tu fais une action. Du coup ça te met un petit carré autour et tu sais celui-là est re-ender, celui-là est re-ender, celui-là n'a pas. Et ça te permet un peu de gérer tes optimisations de renders. Et t'as l'équivalence sur Expo. Enfin je ne pas si c'est sur React Native aussi mais en tout cas sur Expo à partir du SDK 52 je crois, tu l'as dans ton debugger. Donc quand tu fais J...
+
+David Leuliette (53:26.173)
+Ouais
+
+David Leuliette (53:40.413)
+Mmmh...
+
+David Leuliette (53:50.299)
+Ouais.
+
+Romain Spielmann (53:52.398)
+Tu vas dans ton debugger, as tout ton arbre de composants et ensuite tu as un petit strict settings et tu peux voir justement ce query render et ça les highlight. Donc c'est très pratique pour faire des optimations quand tu as un composant qui peu lent, ou que le query render trouve souvent. C'est un peu assez pratique ça.
+
+David Leuliette (53:52.913)
+oui !
+
+David Leuliette (54:07.421)
+C'est ça, allez fouiller, vous faites J, vous cliquez partout et vous allez le trouver. C'est comme moi, à chaque fois que j'ouvre Google Chrome, c'est genre, hey, vous allez, tu sais, t'as le fameux tab What's new in Debugging Tool. Avant, jadis, je l'ai lisé et maintenant, j'ai clairement plus le temps que je suis là. Mais vas-y, je sais qu'il a des milliards de trucs trop bien, mais fuck et cool, console log. Allez hop.
+
+Romain Spielmann (54:12.781)
+C'est ça ! Et vous voir !
+
+Romain Spielmann (54:25.58)
+Ouais.
+
+Romain Spielmann (54:29.677)
+Pas du tout. Ok cool.
+
+T'as tes habitudes de ce que tu fais tout le temps et du coup tu restes là-dedans quoi.
+
+David Leuliette (54:38.173)
+Ouais c'est ça mais c'est vrai que ça fait longtemps qu'en plus en ce moment j'ai un... Allez, j'irai voir, je te ferai un feedback Je te ferai un feedback, réutiliser ce truc là parce que j'ai typiquement... Faut que je lui mette... J'ai un bug aussi de render je sais pas... Trop render, ça lag trop mais ouais c'est ça et c'est à refaire c'est très compliqué quoi
+
+Romain Spielmann (54:52.353)
+Ouais, c'est des bugs un peu classiques.
+
+Romain Spielmann (54:57.917)
+Justement sur ça je me demande comment un React Compiler, je ne pas quand il occasion de l'utiliser mais j'aimerais bien mettre sur un de mes projets perso de le pluger, voir ce ça donne, si optimise vraiment tes composants, est-ce que ton app est plus fluide, est-ce que tu as moins de revendeurs... Parce que ça a l'air un peu magique !
+
+David Leuliette (55:10.032)
+Ouais normalement euh... Ouais Ouais ouais c'est pas encore... Je crois que je ne sais plus... Ça l'est avec la VSD-COS53 c'est un RC
+
+Romain Spielmann (55:16.877)
+crois que c'est un release candidat, tu peux le runner avec le 53 je crois
+
+David Leuliette (55:23.366)
+Ok. Ok, ok.
+
+Romain Spielmann (55:24.813)
+J'avais vu un article la dernière fois où il parlait de tu pouvais le setup pour optimiser ton application. C'est un article expo je crois.
+
+David Leuliette (55:29.264)
+On va faire un épisode spécial là dessus. Vas-y Romain, hop tu le mets en place et tu reviendras et tu nous diras oui non est-ce que c'était bien. On veut des nombres, on veut des nombres. Alors combien de temps ça t'a pris et combien de gains de performance tu as gagné tu vois. Prends des nombres avec des start up time et tout. Tu utilises flashlight.dev pour avoir des vrais metrics là dessus. Et on verra.
+
+Romain Spielmann (55:37.267)
+Allez, est-ce que ça valait le coup ou est-ce que ça m'a tout pété ?
+
+Romain Spielmann (55:52.617)
+Voilà. Le gros test.
+
+David Leuliette (55:56.354)
+Est-ce que... donc j'ai à comment les différences iOS, Android, Web ?
+
+Romain Spielmann (56:00.685)
+Pas tant que ça, côté design on a beaucoup de travail qui fait pour avoir vraiment un truc unifié sur chaque plateforme, autant web que native. c'est très cool, côté implement, c'est assez facile à implémenter généralement. Après t'as les cas un peu spécifiques où ça marche pas de même manière sur iOS, sur Android, genre par exemple qu'on avait eu le souci avec le PDF viewer. En gros sur native, sur web ça te couvre, en nouvel anglais pas trop de soucis, donc ça ça marche. Et sur native, sur iOS on utilise WebView.
+
+ça marche très bien, tu l'affiches, c'est nickel. Si on veut ça marche pas. Et du coup ce qu'on a fait c'est qu'on utilise les Android Intent et ça te l'ouvre sur ton PDF viewer que tu as en local sur ton PDFphone.
+
+David Leuliette (56:39.323)
+Ah oui, sur les 15 apps que tu peux choisir de... Ouvre-le avec Chrome, avec File, avec...
+
+Romain Spielmann (56:43.019)
+C'est ça. Tu vas l'ouvrir avec quoi Chrome, Mic Drive ?
+
+Donc ouais on a ça et du coup, ouais ça s'ouvre et ça fonctionne et c'est le taf quoi. Et du coup tu utilises au classique soit des fichiers, juste .ios, .entendroid pour gérer ça ou ton platform select. ouais, le plus souvent c'est des .web qu'on a où t'as une petite intégration qui un peu particulière sur web parce que c'est pas exactement pareil.
+
+David Leuliette (56:49.327)
+Mais après c'est plutôt problème. C'est plutôt problème après.
+
+Romain Spielmann (57:09.953)
+Mais dans l'ensemble on essaie de gérer ça un peu sur la partie design system tu vois. C'est que la plupart des trucs c'est un peu caché pour que c'est un peu facile à utiliser, que vraiment la DX dans l'app soit la meilleure possible. Et qu'ensuite c'est un peu faisant design system où on va taffer cette partie là. Par exemple des modèles full-stream qui s'affichent sur natif mais que sur web tu veux pas forcément des modèles full-stream, tu vas plutôt avoir une petite carte au milieu de ton écran. ce genre de choses c'est de gérer directement dans les modèles qu'on a dans le design system et ça fait le taf.
+
+David Leuliette (57:14.427)
+Mmh.
+
+Romain Spielmann (57:40.109)
+C'est facile à quoi.
+
+David Leuliette (57:40.187)
+Et solito gère correctement le fait que modal égale url ça s'ouvre sur le web.
+
+Romain Spielmann (57:47.118)
+Ça on a fait un truc maison pour gérer les modals, parce qu'on voulait avoir des modals qui soient routés du coup tu peux arriver avec un dipling ou quelque chose du coup on a fait un truc... Euh non je crois pas. Non je pense pas.
+
+David Leuliette (57:52.813)
+Oui, c'est très important. Et échappe aussi, Keyboard ça gère aussi. Raccord cyclavier, bon peut pas tout faire, parce que ça m'en fout, mais bon, après un peu intégrer...
+
+Romain Spielmann (58:06.541)
+Je crois que c'est sur twitter ou sur blue sky Quand tu ouvres une image tu peux pas faire échappe pour quitter et à chaque fois j'ai ma fenêtre toujours en grand sur le mac et ça me la ferme et ça m'énerve ça te sort du fullscreen On avait fait un truc maison où t'as un query par RAM qui check si ta modale est égale quelque chose et ça te redirige sur notre routing de fichier et ça t'apporte la bonne modale et ça l'affiche et ça marche très bien
+
+David Leuliette (58:29.627)
+Ok.
+
+Romain Spielmann (58:34.445)
+Mais du coup ça c'est un truc maison, je sais pas si SolidOlger ou Si a cette possibilité.
+
+David Leuliette (58:34.936)
+Parce que vous...
+
+Ouais. Parce que je me demande si vous avez des deep links qui shootent des mails et qui envoient direct dans une partie de l'app mobile ou pas ?
+
+Romain Spielmann (58:44.909)
+Ouais on a ça Et du coup ça fonctionne Et justement c'est un des trucs sur lequel j'avais bossé il pas si longtemps En gros qu'on puisse avoir des deep links qui te connectent automatiquement Tu as un magic link dedans et quand tu le reçois ça te connecte automatiquement et ça t'affiche sur bon écran Parce qu'en notre app est bloqué derrière ta notification quoi Si n'es pas connecté tu ne accéder à rien Donc si le mec n'est pas connecté il va cliquer sur deep link ça ne fait rien quoi Donc là il y en a des deep links qui sont...
+
+David Leuliette (58:47.224)
+Ok.
+
+David Leuliette (59:05.423)
+Ouais.
+
+Romain Spielmann (59:12.045)
+qui contient la Magic Link, qui te redirige directement sur bon écran, ça te connecte et si ton truc il est expéré, ça déconnecte, ça sauvegarde l'URL sur lequel tu sens que allé, ça te redirige ensuite. Donc ça c'est plutôt cool, mais ça parait...
+
+David Leuliette (59:22.139)
+Vas-y c'est bon je vais changer de... c'est bon ça y est. Non mais je vais le faire après, je m'inscris direct... je vais devoir cancel mon assurance auto ça me saoule. ouais ? vas-y, vas-y, vas-y.
+
+Romain Spielmann (59:31.617)
+non je crois que c'est ta nouvelle assurance qui te fait ça Je crois quand tu souscris une assurance tu donnes des informations et tout et c'est eux qui peuvent te résilier Ouais je crois que c'est ça
+
+David Leuliette (59:40.474)
+et ils se débrouillent, je testerai, je vous ferai une update là-dessus. Est-ce que c'est facile de vigrer direct ? Parce que tous ces trucs-là, ces trucs qui te font gagner du temps, surtout, mais surtout que quand t'es en galère et tout, machin, papier et tout, qui est ce genre de feature où tu gagnes du temps tout simplement et tu passes cinq minutes au lieu d'une heure, trop bien quoi. C'est ça.
+
+Romain Spielmann (59:47.501)
+c'est chiant.
+
+Romain Spielmann (01:00:04.329)
+boy, tu gagnes
+
+David Leuliette (01:00:07.787)
+Est-ce qu'en travaillant avec Rack Native, as appris quelque chose sur le développement logiciel en général ?
+
+Romain Spielmann (01:00:13.293)
+Je vais essayer noter, mettre des valeurs absolues dans ton package point Jason.
+
+David Leuliette (01:00:18.213)
+oui bonne réponse !
+
+Romain Spielmann (01:00:19.021)
+ça vraiment parce que tu fais un npm install et ça t'upgrade une librairie là que t'étais pas au courant avec un breaking change ou... dans l'ensemble ça va, la plupart des vrais respectent le sembr et ça t'upgrade pas des majors ça met pas des breaking change dans des mineurs mais de temps temps ça arrive quand même que t'as un petit truc qui soit pété parce que toi t'as une intégration custom un peu claquée et ça casse tout et tu comprends pas pourquoi donc ouais, toutes les versions elles sont en dur et quand tu fais un upgrade, du coup on a des bundabots qui nous...
+
+fais des PR sur GitHub pour les mettre à jour et tu fais ça régulièrement, as tes PR qui viennent automatiquement tu les mets à jour et tu peux tester quand tu mets à jour une rubrique qui te paraît importante
+
+David Leuliette (01:00:58.797)
+Ouais c'est ça, c'est vrai que c'était un peu galère avant mais maintenant Expo Doctor NPX Expo-Doctor ou Expo Doctor tout court je ne sais jamais lequel. C'est ça, exactement.
+
+Romain Spielmann (01:01:03.275)
+Du coup.
+
+Romain Spielmann (01:01:10.455)
+Ouais. Mais je me trompe à chaque fois une fois sur deux et dis qu'il plus utiliser celui-là, il faut utiliser l'autre. Je crois que c'est npx-expo-doctor. Je crois que c'est ça maintenant.
+
+David Leuliette (01:01:21.076)
+Attention on va bet, attention, attention, j'ai un projet ouvert. NPX, 2D, Expo, Docteur, il a pas de dash entre les deux. Un dash, alors attention, Yes, je vais install. Running 15 check. C'était celui-là, c'est bien. C'est NPX, Expo, pas de dash. Pas de dash, on va essayer de s'en rappeler.
+
+Romain Spielmann (01:01:29.227)
+Tirez, tirez, vas-y, d'où le docteur ? Ouais.
+
+Romain Spielmann (01:01:35.755)
+C'était ça.
+
+Romain Spielmann (01:01:40.819)
+C'était ça. C'est bon j'ai retenu.
+
+David Leuliette (01:01:47.033)
+Là il dit directement oui, est-ce qu'il faut faire et après vous faites dash dash fixe et il fixe automatiquement. Ça c'est plutôt appréciable j'avoue parce que... oui comme tu dis des fois pas pour toutes quoi. Pas pour toutes et...
+
+Romain Spielmann (01:01:51.105)
+Ouais ça c'est plutôt cool
+
+Sinon bah les upgrades drak natif c'est toujours un peu un enfer. Ou de expo.
+
+David Leuliette (01:02:03.885)
+Oui, bah oui, d'ailleurs Sood on va recevoir quelqu'un qui déteste Ragnative parce qu'il faisait du Kotlin multi-platform et disait mieux. Je suis trop content. Je suis trop content, pas des haters, mais ouais, en fait ça s'est mal passé pour lui. Ce que je comprends carrément en fait, tu vois.
+
+Romain Spielmann (01:02:12.397)
+d'avoir des avis un peu différents
+
+Romain Spielmann (01:02:19.501)
+Ouais, ben je comprends.
+
+Romain Spielmann (01:02:23.981)
+Ouais, et encore, ça dépend quand t'as testé, genre aujourd'hui c'est quand même vachement vachement mieux. Quand j'ai commencé le ragnatif c'était en 0.50, un truc comme ça, c'était l'enfer hein.
+
+David Leuliette (01:02:29.433)
+Ouais c'est ça, mon plan c'est que je vais lui dire, c'est mieux maintenant qu'avant.
+
+Romain Spielmann (01:02:36.013)
+Je pense que aussi dû faire le truc où tu crées un nouveau projet from scratch et tu fais du copier-coller pour remettre tout dedans pour faire un de React Native.
+
+Romain Spielmann (01:02:47.149)
+Toi, tu m'aies fait ça ?
+
+David Leuliette (01:02:51.59)
+Non, en vrai je m'en rappelle plus trop mais non je pense pas que j'en suis arrivé à cet état de là.
+
+Romain Spielmann (01:02:57.397)
+Je sais que j'avais dû faire une fois, c'est ma toute première boîte aussi. Du coup pareil, j'étais un peu plus jeune or et tout, j'étais en galère et je me suis dit bon, je faire un nouveau projet, vais mettre un par un les différents trucs jusqu'à ce qu'il un truc qui pète, je le fixe. Et ça marchait, beaucoup plus rapide que d'essayer de tout fixer d'un coup.
+
+David Leuliette (01:03:08.536)
+ou peut-être que je l'avais fait pour trouver la source du problème. Ça je fais souvent, je scaffolde un nouveau projet, j'installe les trucs un par un et puis voilà pour savoir pas partir en mode je fais d'app oa à point b et je teste des trucs random, c'est genre test 1 fail, test 2 fail, avoir une liste vraiment de qu'est-ce qui fonctionne et qu'est-ce qui fonctionne pas parce que sinon t'as des side effects dans tous les sens et voilà, mais c'est vrai que ça se fait quoi. Mes potes chez Infinite Raid eux c'est ce qu'ils font quoi, enfin c'est ce qu'ils font, c'est ce qu'ils faisaient je pense. Maintenant peut-être plus.
+
+Romain Spielmann (01:03:27.341)
+Qu'est-ce qui casse et comment on va mettre l'appareil
+
+David Leuliette (01:03:38.296)
+Mais avant avec leur boilerplate Ignite, quand ils avaient un nouveau projet, gens, enfin pas un nouveau projet mais genre demandaient de une upgrade, ils rescapolaient Ignite, ils reprenaient le dossier SRC et hop c'est parti quoi ! Trop relou de faire le... Maintenant en fait ils ont passé tout sur Expo donc c'est... c'est toujours pareil, est-ce que t'as de la bandwidth des gens capables de le faire quoi ? Après tu te transformes en call stack et tu deviens...
+
+Romain Spielmann (01:03:38.797)
+Ouais je pense que maintenant ça va.
+
+Romain Spielmann (01:03:49.718)
+Nope.
+
+Romain Spielmann (01:03:56.685)
+Je remercie.
+
+Romain Spielmann (01:04:08.397)
+expert là-dessus.
+
+David Leuliette (01:04:09.068)
+un framework ou tu crées un framework ou alors tu fais des apps. C'est toujours pareil, ça dépend de que tu veux faire, ça dépend de ton business. Je pense que Ornicard, faire un truc open source de tech, c'est pas dans la roadmap. Même si ça a l'air très delightful comme expérience. Comment tu fais pour stratégie veille et formation continue ?
+
+Romain Spielmann (01:04:22.285)
+Je ne suis pas sûr que ce le... Ouais non, ce n'est pas prévu.
+
+David Leuliette (01:04:35.454)
+bah je vais à des conférences gratuitement offertes par Wishy Pitty Today !
+
+Romain Spielmann (01:04:37.709)
+Bah ouais, c'est ça !
+
+David Leuliette (01:04:41.624)
+Faut que tu racontes l'histoire du coup.
+
+Romain Spielmann (01:04:43.469)
+Bah oui c'est comme ça que je suis arrivé ici En fait j'avais fait un post sur LinkedIn comme quoi t'offrais une place pour le React Native Connection à Paris le mois dernier Et je sais pas comment, je sais pas comment j'étais abonné à Tannusdator Et j'avais pas eu d'autres trucs de Tannusdator, j'ai vraiment eu que ce post De façon random, depuis je les reçois, mais avant je reçois rien, ou alors t'en envoyais pas c'est pas pour ça
+
+David Leuliette (01:04:53.195)
+c'est ça ?
+
+David Leuliette (01:04:58.935)
+Ah ! Ah ouais ! Parce que ma newsletter... Non mais j'en en vois pas en fait, c'est ça. En fait en vrai la newsletter c'est ouais abonnez-vous.
+
+Romain Spielmann (01:05:12.461)
+Mais voilà, peut-être un jour il y aurait...
+
+David Leuliette (01:05:12.919)
+Voilà, et une fois par an, en vrai c'est une ou deux fois par an, et la dernière fois c'était genre ouais, gagner, ou des fois quand j'ai des slots de bootcamp open, je voilà mes slots de bootcamp, mais là bah voilà, abonnez-vous à Bouddhieslator si vous voulez gagner, donc t'as reçu l'e-bail ?
+
+Romain Spielmann (01:05:28.845)
+Ben ouais, et ça vaut le coup ! Ouais j'ai vu ça, et j'étais en vacances, j'étais en vacances en plus à ce moment là et je me suis dit bon vas-y tu quoi, ça coûterait rien, je vais sur ton LinkedIn et je vois il a deux personnes ou une personne qui avait commenté et je me suis dit, il y a vraiment beaucoup de chances que je gagne du coup c'est cool ! Et donc tu vas-y je participe et ouais tu m'aurais écrit un message jours après, un truc comme ça ou 10 jours après je sais plus et du coup trop cool ouais
+
+David Leuliette (01:05:39.735)
+Ouais.
+
+Ouais !
+
+David Leuliette (01:05:49.031)
+Ouais, puis donne, terminé. Bah oui, c'est ça, parce qu'en fait, tous les ans j'achète des places et tous les ans je me dis, allez, vas-y, je faire un truc et tout, machin. là, cette année, j'avais clairement encore moins de temps que... Je fais juste un peu sur l'edit, personne... En plus, j'ai fait ça un vendredi soir ou un truc du genre, donc personne l'a vu, tu vas y tomber dans les limbes immédiatement.
+
+Romain Spielmann (01:06:03.085)
+que d'habitude.
+
+Romain Spielmann (01:06:10.255)
+ouais Oui T'as vu pour moi ?
+
+David Leuliette (01:06:13.943)
+Et j'ai du fun ! C'est ça, j'ai fait la douzette heure juste après, fait bon bah ok, nickel, très bien, parfait, y'a trois personnes, paf, random, paf, t'es tombé dessus, voilà, parfait. On adore, on adore. Euh, bah super. Et euh...
+
+Romain Spielmann (01:06:24.653)
+D'accord, moi je te jure que ton.
+
+ouais ça c'est cool. Après c'est le seul que j'ai fait, j'étais déjà l'an dernier. Donc ouais c'est le seul convention que je fais mais je pense que c'est vraiment cool à chaque fois. Et sinon, parce que j'en reçu 10 Week in React. Ouais de Seb je que ça serait un bon invité ouais. Mais ouais ça c'est un peu le classique je pense que tout monde devrait s'abonner à ça. Est-ce que vraiment c'est ça
+
+David Leuliette (01:06:41.994)
+de Seb, faudrait que j'invite Seb. Faudrait que je l'invite.
+
+Romain Spielmann (01:06:54.153)
+Récap un peu tout sur React Native, peu tout sur React, même de façon JS un peu de général, donc c'est plutôt cool. Sinon pour ça, juste Twitter, Edit...
+
+David Leuliette (01:07:06.966)
+Ok, et qui c'est qu'il faut suivre sur Twitter ? On redite ? Evan Bacon, oui, Evan voilà, ! C'est ça, suivez Evan, voilà, Evan et Fernando, voilà, on mettra, je mettrai les... Je mettrai les liens dans les notes de l'émission. Evan et... Et Fernando. Got it !
+
+Romain Spielmann (01:07:12.269)
+Evan Bacon je dirais. Je pense que c'est la personne à suivre sur Twitter.
+
+Romain Spielmann (01:07:33.261)
+C'est comme ça que j'avais trouvé le truc de Apple Target, c'est parce qu'il en a parlé sur Twitter. pense sinon je n'aurais pas trop trouvé, ce n'est pas le truc le plus mis en avant. Je crois que n'est pas Prod Ready, c'est un peu expérimental. en tout cas, moi je suis, ça fonctionne.
+
+David Leuliette (01:07:37.845)
+Ouais.
+
+David Leuliette (01:07:44.15)
+Ah oui, les trucs sur slash event, moins que ça marche ou c'est dric, c'est pareil. C'est moins que ça marche, bon, débrouillez-vous si ça ne plus. Ou alors, bon, ça fait un bon draft pour soit l'internaliser et le faire évoluer. Ou alors, fait, truc, c'est que généralement, pense qu'après, ça finit dans expo corps. Mais c'est pareil, faut que ce soit... Ouais, c'est ça, mais il faut que ce soit...
+
+Romain Spielmann (01:07:53.52)
+Pas trop compter dessus, ouais
+
+Romain Spielmann (01:08:07.214)
+Oui, moi je pense qu'à terme c'est le but, mais ça me met souvent du temps...
+
+David Leuliette (01:08:12.031)
+Ouais, il ce soit sur la roadmap officielle et après le truc c'est que s'il intègre, c'est pareil, il faut qu'il... C'est comme un enfant quoi, il faut qu'il maintienne le truc over time sinon ils vont se prendre des taurants de merde dessus alors qu'ils font juste... Parce que... Tu fais triper sur Reddit, il y a des gens qui disent ouais, expo ça marche pas, agnatif, cédule et tout, machin... Tu sais, les gars védères de l'open source et qui ouvrent un ticket genre ouais ça marche pas, fixez-moi le truc now ! Mais mec !
+
+Romain Spielmann (01:08:31.437)
+Hey.
+
+Romain Spielmann (01:08:35.361)
+et qui donnent pas d'infos
+
+David Leuliette (01:08:38.639)
+C'est gratuit, le software est gratuit, quoi tu... Et tu te donnes même pas de reproductible example et t'expliques même pas ton problème. Et en plus, t'insultes les gens par-dessus. Tu n'es pas une personne bienveillante.
+
+Romain Spielmann (01:08:48.397)
+Ah ça t'en vas plein. Je crois que c'est le truc classique quand t'as des trucs qui sont gratuits et les gens ils montrent trop. C'est un peu le truc classique.
+
+David Leuliette (01:08:56.113)
+Ouais, j'avoue, ils se rendent pas compte de la complexité qu'il y a déjà. Parce que faire des appobiles, pas du trivial, c'est très compliqué en fait.
+
+Romain Spielmann (01:09:02.135)
+Et la montagne...
+
+Romain Spielmann (01:09:11.104)
+En tant que dev, généralement tu as juste la partie Direct Native, fais du JSX et tout, c'est cool, c'est facile. Mais je suis rendu compte quand j'étais à la Direct Native Connection, les talks sur toute la partie native, la partie C++, les shadow tree, c'est un... Ah ouais, c'est doux que ça ! Mais là ça te remet peu à ta place !
+
+David Leuliette (01:09:25.301)
+Ah ouais ? Ah ouais, tu fermes au module, GSI. Fun fact, je comprends la moitié des talks, la moitié je capte rien.
+
+Romain Spielmann (01:09:37.483)
+C'est super intéressant mais tu as peu l'air de ok ça ne me servira pas tous les jours mais c'est un cool de savoir comment ça fonctionne et ça vulgarise un peu le truc quand même. C'est toujours cool.
+
+David Leuliette (01:09:42.357)
+C'est toujours pareil, ça dépend de ta position. Après si t'es librairie-mainteneur, tu vas faire « oui ok, d'accord ».
+
+Romain Spielmann (01:09:49.325)
+Ouais t'appes pas trop, c'est pas pareil. C'est pas la même position que le mec qui fait tes écrans en réactif et voilà c'est ton outil pour faire ton app quoi.
+
+David Leuliette (01:09:52.372)
+...
+
+David Leuliette (01:09:56.816)
+Ouais, c'est ça. En 2025, démarrer une app, c'est quoi ton conseil ? Quelle librarie d' UI on prends ?
+
+Romain Spielmann (01:10:07.434)
+Euh... Alors, bah je vais dire Nativewind.
+
+David Leuliette (01:10:11.56)
+ok, ok, ok. Pourquoi Nativweed ?
+
+Romain Spielmann (01:10:13.229)
+Et parce qu'aujourd'hui en 2025, pour moi t'es obligé d'utiliser un peu l'IA, tu utilises le cursor ou quelque chose pour améliorer ta productivité, pour aller plus vite, pour itérer plus rapidement. Sur mes apps perso j'utilise énormément, les apps Ornikar c'est un plus compliqué, la code base est plus grande donc c'est façon un peu moins de contexte, ça marche moins bien. Mais pour des petites refactos ça fait le taf, je pense ça un peu. Mais si on me prouve les persos je fais beaucoup avec cursor. Et malheureusement, j'ai envie de dire.
+
+les LMS ont beaucoup beaucoup plus de connaissances sur tailwind que sur autre chose... Et du coup t'as des bien meilleurs résultats si tu utilises nativewind sur native que si utilises tamagui ou un autre... Ben ouais c'est ça !
+
+David Leuliette (01:10:44.648)
+Euh... Ouais...
+
+David Leuliette (01:10:51.924)
+C'est parce qu'ils sont plus entraînés. Tu prends V0.dev, tu fais un screen sur V0, peux copy paste et ça peut marcher direct. oui, native wind. Bonne réponse.
+
+Romain Spielmann (01:10:57.421)
+Et t'as beaucoup plus de trucs d'entraînement.
+
+Romain Spielmann (01:11:04.148)
+Parce que c'est ce que j'avais sur mon app, sur mon app la scorie, jusqu'à y a quelques semaines j'utilisais Tamaggy, parce que je voulais le tester sur un projet perso et tout, j'étais très content. Et là il y a quelques semaines j'ai refait une grosse trifacto, j'ai refait tous mes écrans et tout, j'ai poussé pas mal dessus. Et à chaque fois que je demandais un truc à cursor, il me donnait des composants qui ressemblaient à rien, il me mettait 150 de props, puis en plus il me mettait du style pour modifier quand même encore des trucs en plus, il comprenait rien, il faisait vraiment un peu le bordel.
+
+Et je me dit, j'ai migré sur nativewind, c'est très facile à migrer. Du coup ton LLM s'occupe de tout, il te fait toute la migration, ça marche super bien. C'est vraiment cool pour ce genre de truc super inondant, ça marche trop bien. Et depuis j'ai des meilleurs résultats sur mes promptes, le code qui me sort est bien mieux. En fait j'en ai parlé sur Twitter et il un mec qui m'a dit, sur ton LLM tu peux rajouter de la doc, et du coup mettre des liens de doc en contexte et tout ça, et j'ai pas pensé à faire ça. Ouais t'as les cursors rules où toi tu peux mettre...
+
+David Leuliette (01:11:50.984)
+Oui les cursor rules ou... ouais ok
+
+Romain Spielmann (01:12:00.429)
+tout ce que toi tu veux dans ton code, tes guidelines à toi et comment toi tu t'imagines un peu le truc mais tu peux mettre des fichiers, des liens et tout ça et du coup je pense que j'aurais peut-être dû mettre la doc tamagui pour qu'il ait un peu plus de contexte sur la façon dont fonctionne la libary et comment elle doit être utilisée et un peu mieux faire mes règles pour l'orienter je je ressens que je suis des meilleurs résultats mais par défaut si par juste par défaut c'est vraiment native win qui est mieux
+
+David Leuliette (01:12:05.204)
+Mmh.
+
+David Leuliette (01:12:20.628)
+en lui mettant tamagui.dev.lms.txt et du coup ouais c'est genre robots.txt pour les LLM c'est fou maintenant y a plus personne se fait chier à faire du SEO maintenant les gens envoient les trucs pour les LLM c'est quand même incroyable quoi en vrai en vrai
+
+Romain Spielmann (01:12:26.86)
+Ouais c'est ça je crois.
+
+Romain Spielmann (01:12:46.603)
+Vale.
+
+David Leuliette (01:12:46.675)
+mais c'est ça le... ouais parce que tamagui.lms.txt du coup il a les liens vers tout donc peut-être que ça... il aurait mieux fait, je te dirais je te dirais parce que c'est vrai que moi j'ai pareil mais pour copilot et justement il faut que fasse mes custom rules j'ai un table d'ouvert depuis 3 semaines faut que je le fasse mais j'ai d'autres problèmes comme les comptables
+
+Romain Spielmann (01:12:59.501)
+Ouais il aurait pété un peu mieux ouais.
+
+Romain Spielmann (01:13:13.645)
+Ouais c'est beau, ça vaut le
+
+David Leuliette (01:13:16.494)
+que je déteste. Bref, allez, c'est reparti. Donc, c'est quoi ton setup pour dev généralement ?
+
+Romain Spielmann (01:13:17.038)
+Les fameux !
+
+Romain Spielmann (01:13:24.941)
+Ouais j'ai un Mac Pro, un M1, 7GB, mais je me tête à changer et en acheter un nouveau, un 5 mois tout peu. Et oui sinon j'ai deux écrans à côté, donc j'ai trois écrans en total.
+
+ça marche bien et à part ça rien de particulier
+
+David Leuliette (01:13:43.794)
+Ok. Et pour euh... Et c'est quoi ton Android pour tester ? Ok.
+
+Romain Spielmann (01:13:48.526)
+J'ai un Pixel 9 Pro et après j'ai encore des vieux Android, des vieux Xiaomi qui traînent, des anciens téléphones que j'utilise toujours pour tester certains trucs, des vieux devices ou des vieilles versions d'Android du coup Parce j'en une qui est bloquée sur Android 12, un Huawei à l'époque C'est qu'en Google... Je sais pas Mais bon du coup ça permet de tester sur une vieille version et d'avoir un peu les retours donc c'est toujours pratique Et sinon l'iPhone principalement, toujours le simulateur
+
+David Leuliette (01:14:04.562)
+Y'a beaucoup de gens sur Android 12, ouais, j'sais pas, j'm'en rends pas compte. Ouais, ok.
+
+David Leuliette (01:14:16.229)
+Oui oui, de toute façon ça marche sur le simulateur, j'ai jamais vu le cas où, comme je le disais tout à l'heure, ça marche pas. Mais en fait c'est pas que c'est très rare, j'ai l'impression que c'est impossible.
+
+Romain Spielmann (01:14:20.013)
+C'est très rare.
+
+Romain Spielmann (01:14:25.901)
+Le seul truc c'est que sur simulator j'utilise l'iphone pro, la 16 max pro Donc t'as l'écran qui est vachement grand Et du pour tester j'ai un SE, un tout petit Et du coup t'as plein de trucs où tu te rends compte que sur le petit écran ça rend moins bien ! Les deux boutons que t'avais alignés qui étaient super beaux, là ça marche pas !
+
+David Leuliette (01:14:31.586)
+Hmm ? Ouais ? Ok. Ouais. Ouhi !
+
+C'est ça ouais, c'est plus problématique de size que de trucs triqués comme j'ai eu tout à l'heure, le texte qui endurpe, les OnePlus qui bug les fontes, ce genre de trucs exotiques qui vient de je sais pas où. non, c'était munifié ouais.
+
+Romain Spielmann (01:14:46.09)
+Ouais c'est tout ça ouais.
+
+Romain Spielmann (01:14:51.255)
+Oui C'est un peu l'avantage de l'écosystème Apple C'est que t'as pas trop de entre les devices Ça c'est plutôt cool
+
+David Leuliette (01:15:01.432)
+Est-ce qu'il a un sujet qu'on n'a pas abordé que tu aurais voulu partager avec l'internet ?
+
+Romain Spielmann (01:15:08.397)
+Non je crois pas, on a fait le tour ! On a bien fait le tour de tous les différents trucs On peut parler des projets que je fais à côté donc c'est cool
+
+David Leuliette (01:15:14.202)
+Un filtre.
+
+David Leuliette (01:15:21.83)
+Du coup, c'est quoi la roadmap pour Next ? Toujours assurance, machin. Est-ce qu'il a un truc que vous allez développer en plus ? Ouais, c'est ça la question que je voulais voir tout à l'heure. J'ai oublié de te demander. Donc vous avez trois app mobiles. Et c'est parce que ça a été setup au fur et mesure.
+
+il y a l'idée de faire un jour la super app à Airbnb. Tu parce qu'AerbianB tu downloads l'app et t'as le côté vendeur et...
+
+Romain Spielmann (01:15:55.523)
+Et le B2C
+
+David Leuliette (01:15:55.954)
+et utilisateurs mergés dedans, c'est juste un peu caché et hop, ouvre en mode super app. En fait, j'étais à Shenzhen et j'ai découvert WeChat. J'ai découvert WeChat, mais tu n'imagines même pas. C'est un univers dans un univers. as une app dans une app dans une app. fais, qu'est qui se passe ? Et du coup, c'est... Ouais.
+
+Romain Spielmann (01:16:05.859)
+oui là ils ont tout... Ouais, ça fait tout.
+
+Romain Spielmann (01:16:18.733)
+C'est j'entends parler beaucoup, c'est vraiment un truc très très asiatique les super rap comme ça
+
+David Leuliette (01:16:23.1)
+Ouais, mais bizarrement ça marche très bien mais du coup vous allez le faire, tu penses que vous allez continuer à faire un projet une app ou vous allez migrer tout un jour ?
+
+Romain Spielmann (01:16:30.673)
+Je qu'on va garder les trois... A la limite, le truc qui aurait peut-être du sens c'est migrer la partie pour les conducteurs, enfin pour les moniteurs de conduite avec la cours et permis mais je pense à peu de plus-value d'avoir une app unifiée parce que c'est vraiment des personnes qui sont très différentes, les gens qui vont donner des cours de conduite c'est pas ceux qui vont les prendre donc je sais pas. Alors je pense que tu vois sur Airbnb, potentiellement tu vas pas louer des Airbnb mais tu peux aussi en...
+
+David Leuliette (01:16:41.572)
+Ouais, les drivers, ouais.
+
+David Leuliette (01:16:53.967)
+Ouais.
+
+Romain Spielmann (01:16:59.629)
+en louer toi-même. cas c'est vraiment des profils qui sont diamétralement opposés donc je pense qu'il a peu de plus à lui.
+
+David Leuliette (01:17:05.329)
+Ouais, et après c'est pas forcément...
+
+Romain Spielmann (01:17:08.045)
+Côté assurance on est très différents quand même, c'est c'est un peu une autre branche de la boîte donc je ne pas qu'il a d'intérêt vraiment à migrer le tout ensemble.
+
+On gardera nos 3 AP
+
+David Leuliette (01:17:21.243)
+Ouais, bah oui, c'est ça quoi. Parce que je me suis toujours demandé en quel est le plus simple et tout. Mais après quand c'est setup comme ça, pense que c'est juste différent. des politiques d'organisation, de boîtes et voilà quoi. Cool que c'est que je devrais inviter pour le prochain épisode.
+
+Romain Spielmann (01:17:38.733)
+J'ai un ancien collègue à moi qui s'appelle Corentin André qui head of front-end je crois front-end operation je sais plus le titre exact chez Shine et qui...
+
+David Leuliette (01:17:47.825)
+Ah trop bien ! Ah bah je m'en fiche. Parce qu'en Shine c'est le premier. En vrai. Je me suis dit ouais je vais faire le cross-platform shook c'est que j'invite Shine. Parce que j'adore. En vrai j'ai utilisé un. C'est pas comme les comptables nuls. Franchement en vrai, vous voulez être freelance les amis ? Allez chez Shine. En vrai eux, vont vous aider au moins. vois pas con versus... Non mais franchement je te jure, j'adore. J'adore et ils m'ont sauvé la vie et c'est des gens bien.
+
+Romain Spielmann (01:18:02.157)
+Romain Spielmann (01:18:09.581)
+Un petit coup de pub.
+
+David Leuliette (01:18:16.4)
+Donc en vrai il faut dire... et il faut du ragnatif. Et s'il fera du GrafQL ce sera encore des gens biens. Je ne pas s'il fera du GrafQL. Ouais je ne sais pas, je ne sais pas non plus mais...
+
+Romain Spielmann (01:18:16.877)
+Et ils font du ragnatif
+
+Romain Spielmann (01:18:24.117)
+ça j'ai pas cette info. ouais, il quitté boss sur pas mal de problématiques qui étaient cross-platformes justement sur le web, il a mis en place un design SMG tout chez eux donc je pense que ça peut être intéressant.
+
+David Leuliette (01:18:32.97)
+Ok, bah vas-y, il faudra actuellement envoyer son mail en DM comme ça, je contacte ça. Trop cool, trop cool. Où est-ce qu'on peut te retrouver sur les internets ?
+
+Romain Spielmann (01:18:37.577)
+Ouais je t'enverrai
+
+Romain Spielmann (01:18:44.597)
+sur les internets, euh, par expérience, Twitter ou BlueSky. Je parle un peu de mes projets persos.
+
+David Leuliette (01:18:50.468)
+Alors Twitter Romain SPIMN et Bluesky... c'est un L à l'enfer ! De toute façon ce sera dans les notes de l'émission tu vois fallait que je fasse l'erreur c'était sûr. sur Bluesky normalement je... Point Bluesky point social ouais normalement t'es dans le... je crois que tu t'es mis dans le starter pack
+
+Romain Spielmann (01:18:55.019)
+Euh non c'est un L ouais c'est mon nom de famille sans les voyelles
+
+Romain Spielmann (01:19:08.973)
+Et c'est romainss.blueskai.social, crois. Ouais, le classique.
+
+David Leuliette (01:19:19.984)
+Rack Native France normalement. Ouais, c'est ça. C'est vrai, c'est ça en vrai, c'est toujours ça. C'est pas ça, c'est que du coup là, future. Ouais, quand ta communauté est déjà un peu établie, mais si vous n'êtes pas sur Blue Sky et que vous dites, je veux faire ma bulle de dev Rack Native que français, c'est Franco-Français. J'aurais dû l'appeler Baguette, mais bon, non.
+
+Romain Spielmann (01:19:24.877)
+Je sais plus, j'avais utilisé les start-up packs tout au début quand j'arrivais sur blue sky et depuis j'ai plus tout touché C'était à la mode pendant trois semaines
+
+Attends, plus trop besoin après...
+
+Romain Spielmann (01:19:39.725)
+Ouais tu...
+
+Romain Spielmann (01:19:49.037)
+Ha
+
+David Leuliette (01:19:49.903)
+non non c'est plus voilà euh allez-y là dessus tout le monde est dessus ou sinon j'ai aussi un lien LinkedIn mais bon LinkedIn euh ça partage sur LinkedIn ? bah oui si j'ai pas des fois ouais des fois moi je pars ouais non moi je le fais parce que je suis un peu obligé mais c'est pas euh
+
+Romain Spielmann (01:20:02.751)
+Ouais moi pas du tout sur LinkedIn
+
+Romain Spielmann (01:20:08.599)
+Ouais, bah c'est ça en fait. pense que l'indeed c'est vraiment le réseau un peu plus quand tu fais du freelance ou que as ta propre boîte, ou que tu as des id un peu plus intéressant et tu cibles des spas les mêmes personnes. Moi sur Twitter je balance un peu les trucs randoms je fais sur mes projets persos et j'ai pas trop vocation à être sur mon CV ou quoi que ce soit non plus donc...
+
+David Leuliette (01:20:20.729)
+Ouais.
+
+David Leuliette (01:20:27.865)
+Ouais, exactement. Super sinon, si vous voulez venir nous parler, viendez sur le Slack de Ragnative Connection. Si vous avez une question, on vous répondra sûrement. Et puis voilà, c'était un super épisode. Quelque chose à rajouter.
+
+Romain Spielmann (01:20:47.437)
+Wut
+
+Romain Spielmann (01:20:50.987)
+Non mais très bien, merci beaucoup pour l'accueil, c'est très cool C'était un petit peu le truc qui fait sortir de la zone de confort, c'était sympa, ça change un peu Ouais, toi t'as l'habitude maintenant !
+
+David Leuliette (01:20:55.536)
+ben de rien.
+
+David Leuliette (01:21:00.287)
+Ouais, j'avoue. Moi je me rends plus compte en en vrai parce qu'avant je faisais des lives et tout. Non, podcast, il faut que je fasse les du coup et donc, un enfer. Quand je fais l'édit, 200 fois par épisode.
+
+Romain Spielmann (01:21:09.933)
+Ah oui Tu te rends compte de... ouais... Mais en vrai je pense que je vais être pareil
+
+David Leuliette (01:21:17.59)
+ça va, ça t'inquiète pas, t'inquiète pas, ça va bien se passer. Allez Zabi, en tout cas à la prochaine et merci pour votre temps. Ciao !
+

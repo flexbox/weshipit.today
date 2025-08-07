@@ -1,0 +1,1077 @@
+David Leuliette (00:01.275)
+Bonjour à tous. Bonjour et bienvenue sur le Cross Platform Show, le podcast qui parle développement d'applications mobiles avec Rack Native. Je suis David, développeur chez Wishy Pity Today. Nous sommes en février 2025 et je suis ravi d'être avec Xavier pour parler d'une application incroyable que j'utilise et que tous les freelances, on va en parler après. Est-ce que tu peux te présenter succès à ton?
+
+Xavier (00:29.038)
+Salut tout le Xavier. Je travaille chez Alan depuis un peu plus de trois ans maintenant et avec un gros focus sur la partie développement mobile. Donc ça passe par créer les fonctionnalités du produit mais aussi des parties développeur expérience, infra et puis aussi plein d'autres challenges qu'on a chez Alan.
+
+parce qu'il une culture d'entreprise assez particulière où on considère que tous les développeurs sont full stack. On pourra revenir là-dessus parce que je pense que c'est tout intéressant.
+
+David Leuliette (01:03.087)
+Ok cool. Alors est-ce que tu as commencé ta carrière de développeur en tant que full stack ? Moi j'ai commencé, j'étais webmaster.
+
+Xavier (01:12.886)
+Ouais. Alors moi j'ai une carrière assez atypique. J'étais pendant 10 ans, avant d'arriver chez Allen, j'étais pendant 10 ans freelance en tant qu'informaticien électronicien.
+
+David Leuliette (01:26.099)
+trop bien ! Genre les cartes-mères et tout, mais t'as fait des soudures ?
+
+Xavier (01:30.798)
+Oui, j'ai fabriqué et en prod des PCB et je travaillais très spécifiquement pour des artistes d'art numérique. Je fabriquais leur système sur mesure pour eux.
+
+David Leuliette (01:41.284)
+Ok, j'ai bossé au frein de moi au studio d'art contemporain, du coup je vois carrément le délire de... bah tiens j'ai une idée, faudrait mettre des lumières partout et que ça clignote dans tous les sens et que tout fonctionne bien.
+
+Xavier (01:52.014)
+C'est exactement ça, y avait beaucoup de trucs sur la lumière justement et ça m'est arrivé parfois de devoir coder des applications mobiles pour les besoins de contrôle d'oeuvre et c'est comme ça que je suis rentré en contact avec RecNative.
+
+David Leuliette (02:09.24)
+Tu as commencé direct du mobile avec React Native alors.
+
+Xavier (02:12.574)
+Ouais ouais j'ai été fouillé dans mes githubs parce que j'ai regardé le premier épisode et je me suis dit je vais essayer de retrouver quelle était la première version que j'ai utilisée et quand
+
+David Leuliette (02:20.698)
+Ouais ?
+
+David Leuliette (02:25.434)
+Ah c'est bon ça ouais vas-y dis !
+
+Xavier (02:27.15)
+C'était en 2016, ça fait 9 ans, avec la réactive 0.28.
+
+David Leuliette (02:29.579)
+Ok.
+
+David Leuliette (02:36.586)
+Ok. Ok, ok. Cool.
+
+Xavier (02:39.013)
+Je sais pas exactement quand est-ce qu'est sorti les premières versions publiques mais ça doit pas être bien entendu.
+
+David Leuliette (02:46.122)
+Ouais non c'est Early Adopteur aussi. Trop bien, trop bien. donc ouais qu'est qui t'a fait ça a été... donc joindre Alan ça a été un point de bascule dans ta carrière. Genre c'est ça qui t'a fait faire du... Ok ok avant c'était pas du tout product, machin... Les enjeux c'était pas les mêmes quoi.
+
+Xavier (03:02.03)
+Ouais.
+
+Xavier (03:07.374)
+non non pas du tout les mêmes et donc ouais ça a été un tournant parce que j'ai déménagé dans une autre région le faire ce travail c'était plus tout à fait possible et donc voilà j'ai fini par rejoindre
+
+David Leuliette (03:32.378)
+Cool, et du coup avant qu'on passe à la partie stack, t'as pas une anecdote de dingue que t'as dû faire avec les artistes, justement spécifique sur les développements mobiles ? Un truc que t'aurais eu à faire ?
+
+Xavier (03:42.958)
+spécifique sur les développements mobiles non je ne pas avoir d'anecdote de dames dessus mais euh...
+
+David Leuliette (03:47.733)
+Non pas trop. la la zut.
+
+Mais vas-y, une anecdote rigolote.
+
+Xavier (03:54.286)
+Bon, je ne sais si c'est des anecdotes rigolotes, en fait je trouve que les mises en prod, parce que ça existe à un jour de vernissage et c'est un peu comme une mise en prod, vois. Contrairement à une mise en prod, on va dire d'informatique classique, une mise en prod d'oeuvre, tu ne vraiment pas te louper. Tu peux pas envoyer un haut de fixe.
+
+David Leuliette (04:03.907)
+Ouais.
+
+David Leuliette (04:09.283)
+A la suite.
+
+David Leuliette (04:21.881)
+les gens en face. S'il n'y a pas de courant, il n'y a pas de courant. Je vois carrément parce que j'aide à l'organisation de conférences et pas de wifi, manque de multiprise, genre de petits détails qui peuvent tout faire tomber l'installation, j'imagine bien.
+
+Xavier (04:30.158)
+Hmm.
+
+Xavier (04:38.734)
+donc je suis très serein avec les mises en prod pour avoir vécu tout ça je te vous j'ai pas raté on en voit un fixe et puis
+
+David Leuliette (04:43.555)
+Ouais !
+
+David Leuliette (04:47.737)
+Ouais et puis voilà, c'est réglé, allez hop ! Ok cool. Du coup, pour ceux qui ne connaissent pas encore Alan, est-ce que tu peux nous pitcher l'application mobile ? Qu'est-ce que ça fait Alan ? En vrai.
+
+Xavier (05:00.032)
+Avant d'être une application mobile, Alan, il savoir que une mutuelle, une mutuelle d'assurance qui est vendue aux entreprises. donc Alan se voit non pas seulement comme une mutuelle, mais comme un partenaire santé. Et l'idée derrière tout ça, c'est que Alan va fournir les services d'une mutuelle classique, à savoir le remboursement de tes frais, une couverture, ainsi de suite.
+
+mais aussi tout un ensemble de services qui vont être de l'accompagnement, de la prévention pour ta santé avec des espaces thématiques à savoir des espaces sur la santé mentale, la parentalité, sur beaucoup de sujets, sur la nutrition et ainsi de suite. Elle va t'offrir aussi un accès à un chat à des médecins.
+
+David Leuliette (05:54.904)
+Ouais, des professionnels, ouais, j'ai vu ça l'unboarding. J'ai fait l'unboarding et en tant que freelance, pas le time. on va pas se cacher le monde de la santé, l'UX, Marie Kondo ne serait pas très contente. Ça me procure pas trop de la joie, mais franchement, je l'ai fait en deux secondes et trop bien. Merci de me rendre ma vie plus facile et même configurer la DSN et tout, parce que j'ai un employé de la DSN et tout machin.
+
+Xavier (06:01.006)
+Mhmm.
+
+Xavier (06:10.286)
+C'est clair.
+
+David Leuliette (06:23.73)
+horrible, j'ai fait clic clic, ajouter comptable, terminé. ça pour ça, big up à la team UX qui fait un très bon travail là dessus. Et vu qu'en plus c'est du ragnati, je obligé de les utiliser. Du coup, pour la stack technique, j'imagine que c'est pas trop toi qui l'a choisi, mais est que tu peux, commençant par toute la partie data layer, expliquer un peu comment ça fonctionne.
+
+Xavier (06:50.062)
+Oui oui, effectivement tu vois, mais Alain, la première, l'app française, elle a 7 ans. effectivement, Ouais. Ouais. Donc il a tout un existant. Donc évidemment, dit existant dit Redux. Oui parce que à l'époque, forcément, Redux était partout.
+
+David Leuliette (06:59.857)
+Ouais, ouais. Et c'est en règle native aussi, la V1. Cool.
+
+David Leuliette (07:12.961)
+bah oui, ok cool, cool.
+
+Xavier (07:19.31)
+On est en train d'enlever les dernières touches de Redux pour tout ce qu'est Stat Management. On a basculé sur quelque chose de beaucoup plus classique, on utilise les contextes.
+
+David Leuliette (07:31.937)
+juste ça ! c'est marrant pas de... Ok !
+
+Xavier (07:33.165)
+Ennemi.
+
+quasiment rien d'autre on utilise un petit peu, on est en train de en place certaines choses mais pour l'instant c'est pas encore déployé à grande échelle mais du MobX
+
+David Leuliette (07:50.515)
+Ok. Jamon, serait trop content. Big up à Jamon. Je vais lui envoyer ça. envoie. Je ferai un short rien que pour lui.
+
+Xavier (07:54.424)
+Oui, va être content. après le data fetching, rien de sensationnel. Nous, Shalan, on aime bien dire qu'on est une boring compagnie dans les choix.
+
+David Leuliette (08:05.583)
+Tanstack. oui, il y a quand Tanstack Query. Ouais, ouais.
+
+David Leuliette (08:15.456)
+Ouais, pour ceux qui connaissent pas tu peux expliquer c'est quoi Boring Software ou Boring Company ?
+
+Xavier (08:21.656)
+Oui, Boring tech l'idée en fait on n'essaie pas de réinventer la roue, on fait des choix pragmatiques, de choses qui fonctionnent et voilà. ça fait parfois, on pourrait penser que ça fait une stack qui n'est pas très sexy, peu dépassée, mais en vrai, voilà, a nos cadrans, nos quadrants internes dans lesquels on fait des explorations sur des technos, on fait beaucoup de veille sur beaucoup de choses.
+
+David Leuliette (08:23.399)
+Bonne taiguille.
+
+Xavier (08:50.24)
+mais les choix faut qu'ils soient motivés par une vraie valeur ajoutée sur le produit.
+
+David Leuliette (08:55.223)
+Ouais, que ce soit stable. Il me semble que c'est DHH qui a un article là-dessus, Boring... Using Boring Technologies ou un truc du genre. me semble que c'est ça et son article est incroyable. genre, ouais, c'est ça, c'est bon les gars, on va pas faire un truc révolutionnaire, mais il faut qu'on fasse du software maintenable sur le temps. Parce que c'est pareil, moi en fait j'ai bossé à Londres, j'ai un truc de pension, donc un peu pension. Donc un peu pareil que niveau de la santé. Et en fait, le CTO quand j'avais parlé avec lui, il dit, ouais, nous on fait du Rails.
+
+et il faut qu'on soit là pour les 100 prochaines Et en fait, c'était logique, c'était carrément ça. du coup, il m'a dit, ouais, c'est boring, mais en fait, vrai, un peu même délire Calan, tu vois. De tout ce, il faut qu'on fasse des trucs bien, qui fonctionnent over time.
+
+Xavier (09:30.062)
+Ouais.
+
+Xavier (09:43.48)
+Oui c'est un peu le même mindset chez Alan, c'est une licorne, elle est bien installée, c'est une scale up
+
+David Leuliette (09:54.261)
+Il a combien de pays sur... Parce qu'il y a pas que la France en fait.
+
+Xavier (09:58.398)
+Non, alors actuellement il y a quatre pays, il en un qu'on vient tout juste d'ouvrir, donc on a la France évidemment, l'Espagne, la Belgique et le Canada qui est en train d'être ouvert. on va avoir les premières zones boarding.
+
+rassurés.
+
+J'ai pas exactement la timeline en tête mais je pense que c'est vraiment dans le mois qu'arrive.
+
+David Leuliette (10:31.345)
+D'accord, d'accord. Trop bien, trop bien. coup, n'a pas... Donc, State Management Redux, TanStack Query pour Data Fetching. Moi, rien. TanStack Query, quand j'ai découvert ça, j'ai fait... Mais pourquoi la vie est très... On s'embête. ouais. Et du coup, alors la navigation en sept ans, est-ce qu'elle a beaucoup changé
+
+Xavier (10:45.998)
+C'est clair.
+
+Xavier (10:54.378)
+Eh ben figure-toi que... pas tant.
+
+David Leuliette (10:58.484)
+vous étiez direct sur React Navigation ?
+
+Xavier (11:03.502)
+Et j'ai pas l'existence complète en tête, mais il me semble bien que dès le début, ouais, ça a été vrai.
+
+David Leuliette (11:09.27)
+Ah bah ça va, parce que la navigation il y avait React Router Flux, y avait React Router, il y avait le truc de Wix, donc React Native Navigation. Avec Navigation il me semble que ça arrivait un peu après.
+
+Xavier (11:19.15)
+...
+
+Xavier (11:24.046)
+...
+
+David Leuliette (11:24.181)
+Mais bien, si vous êtes sur React Navigation...
+
+Xavier (11:31.48)
+Je te dis qu'on lorgne un peu sur Expo router mais la migration est très large.
+
+David Leuliette (11:37.695)
+Ouais, ça demande du tas. On l'a fait là avec Mathis. Il y avait combien ? Je sais plus, il n'y avait pas tant que ça. On a tout impacté et en fait, ça va, il n'y a que deux devs sur l'instag. Du coup, ça va, tu peux, c'est un vrai... Ce n'est pas trivial en fait. Et en plus, il a des patterns qui changent et tout. Je pense que vous êtes condamné, les gars. Vous êtes condamné à utiliser avec les gaillis fait. Ça va, tu vois. Il a un peu plus de taf, mais ça va.
+
+Xavier (12:00.494)
+Bon,
+
+Xavier (12:04.238)
+Ouais.
+
+Je pense que dans l'équipe, y a quelques motivés. Je sens que si un jour on arrive à sécuriser de la Benuit's engineer pour faire ça, ce qui est très hypothétique parce qu'on est quand même une entreprise orientée de produits. Et que s'il faut arbitrer un sujet ultra tech contre un au frais de nouvelles fonctionnalités.
+
+David Leuliette (12:33.749)
+Oui, ah bah oui, c'est sûr. Puis la nav, tout le monde s'en tape, enfin les gens s'en tapent, veux qu'elle utilise. Mais du coup, attends, parce que le site web, a un site web, toute une partie dashboard, admin et tout, c'est fait en quoi ça
+
+Xavier (12:39.246)
+Ouais. Ouais.
+
+Xavier (12:45.804)
+C'est ce qu'on voit.
+
+David Leuliette (12:47.536)
+ça fait un React tout court et c'est une autre team qui s'en occupe. Et ça communique ? Vous avez un monoripo ça communique ou pas du
+
+Xavier (12:52.974)
+Alors ouais ouais, nous on a un truc que j'aime bien appeler un giga repo. Ouais.
+
+David Leuliette (12:57.759)
+ok, y a tout dedans. Ouais, t'arrives, tu clones Alan et boum, t'as accès à tout.
+
+Xavier (13:02.35)
+On a quasiment tout dedans mais on a tout l'infra, TerraSpace, on a tout le backend, toutes les applis mobiles et tout le front de quoi. Tout est dans le même repo et franchement ça se passe bien.
+
+David Leuliette (13:08.191)
+Ouais. Ouais non mais je vois carrément ce que c'est.
+
+David Leuliette (13:19.262)
+Oui.
+
+David Leuliette (13:23.439)
+bah super du coup, va pouvoir passer au... Alors est-ce que niveau styling et UI et tout ça tout communique ?
+
+Xavier (13:30.688)
+Alors pas tout, mais on est en plein développement d'un design système universel.
+
+David Leuliette (13:32.414)
+Ouais.
+
+David Leuliette (13:38.676)
+Le fameux ! Le fameux ! Donc, pour ceux qui connaissent pas Design Systems Universal, c'est une bibliothèque de composants utilisée pour toutes nos applications et Universal, il faut que ça fonctionne sur iOS, Android, web, VR, casque, email. Moi, je dirais jusqu'à l'email, tu peux compiler des mails.
+
+Xavier (13:58.637)
+Bon déjà c'est pas mal.
+
+Xavier (14:05.57)
+Oui c'est
+
+David Leuliette (14:09.032)
+Il y a moyen que tu fetches les tokens de Figma et que boum, ça te génère tout, mais ça demande énormément de travail. Enfin, faut pas se le cacher quoi.
+
+Xavier (14:11.106)
+Ouais.
+
+Xavier (14:18.254)
+En fait, notre design système est un peu hybride, qu'on va avoir des composants qui sont universels et d'autres mobiles spécifiques et d'autres webs spécifiques. On commence à avoir quelque chose d'assez robuste en termes de design système universel, donc de composants dans notre hubrerie de design système qui s'appelle Meuret et Big Up à l'équipe qui bosse là-dessus.
+
+David Leuliette (14:22.757)
+Ouais. Vas-y, ça.
+
+Xavier (14:47.278)
+vraiment chouette ce qu'ils ont fait c'est basé sur tamag.ui
+
+David Leuliette (14:50.179)
+Ok, oui, ok, avez réussi à... mais du coup vous avez mis ça... Vous avez mis récans sur Tamaguy parce que c'est pas... Moi c'est pareil, j'ai Tamaguy sur mon projet là mais c'est pas si vieux que ça.
+
+Xavier (15:02.094)
+Non, non, partie de notre design-sum existe depuis très longtemps, la partie universelle. Donc il y a pas mal de composants qui ont été réimplémentés, tu vois, et après, ce qu'on fait, c'est des codes mode pour faire de la migration, ce genre de choses. Tamag-UI, ça a été intégré il deux ans.
+
+David Leuliette (15:07.012)
+Ok, ouais.
+
+David Leuliette (15:17.883)
+Ok.
+
+David Leuliette (15:23.283)
+Ouais bah c'est pas pareil, j'ai commencé à bosser avec Tamac, j'ai vu Nate, j'ai ah c'est pas mal ton truc ! Et puis maintenant je bosse dessus, c'est bien mais ça demande quand même...
+
+Xavier (15:32.98)
+Oui, la remonteur, elle est bien raide.
+
+David Leuliette (15:37.339)
+C'est ça, c'est bonjour. Tiens, ouais, c'est compliqué versus un autre truc. Moi, j'utilise plus souvent. Après, je suis frill, donc c'est compliqué. Du coup, je dois jump sur des stacks un peu différents. Voilà, j'utilise plus souvent Restyle que Tamagui, parce que c'est plus simple. Donc, c'est un livret de Shopify et où il n'y a pas, ça te fait juste des guidelines avec TypeScript pour te dire que tu fasses de la merde. Mais Tamagui, tu ne pas arriver à faire genre, parce que ça demande quand même...
+
+Xavier (15:59.246)
+Mmh.
+
+David Leuliette (16:06.675)
+beaucoup de travail pour implémenter un truc custom qui n'est pas prévu. L'avantage de Tomahguei pour ceux qui ne connaissent pas trop c'est que ça compil le...
+
+Il y a une phase compilateur en fait.
+
+Xavier (16:20.654)
+qui en fait va te générer du CSS pour ton web.
+
+David Leuliette (16:25.816)
+Ouais, c'est pour ça que c'est plus performant. Bon, battez-vous dans les commentaires pour nous filer des liens de benchmarks qu'ils me contredisent. Mais je sais que j'utilise ça marche, c'est bien, mais c'est que c'est pas... C'est un peu tricky. du coup, niveau... Vas-y.
+
+Xavier (16:38.894)
+Ce qui est intéressant pour rebondir là-dessus, c'est que là on commence aussi à explorer non plus le design système universel mais des écrans universels. Et c'est là où ça commence à être assez intéressant, c'est que nous il des fonctionnalités qu'on offre à nos membres dans l'application mobile.
+
+David Leuliette (16:59.994)
+Ouais.
+
+Xavier (17:08.046)
+Le pendant web, il n'existe pas forcément. La partie web, c'est plus pour les admins des entreprises, pour onboarder de nouveaux salariés et ce genre de choses. Et la partie mobile, va plus être pour le salarié assuré, pour qu'il puisse prendre une photo de son document médical et lancer le remboursement, qui en général se passe très rapidement.
+
+David Leuliette (17:17.041)
+Je suis carrément d'accord. C'est exactement ça.
+
+David Leuliette (17:35.777)
+Oui, oui, il faut préciser, c'est vrai, c'est important, c'est vrai.
+
+Xavier (17:39.032)
+Et donc là l'idée aussi c'est peut-être d'être capable d'offrir si tu veux des fonctionnalités membres sur le web mais en ayant à coder qu'une seule fois les écrans.
+
+David Leuliette (17:48.881)
+Alors du coup, parce que moi j'ai déjà eu cette problématique, application de banque, monoripo, tiens il Web Parity entre ça et ça. Ok donc admettons, on fait ça, il une carte, comment vous gérer chez Alan le fait que la carte y la navigation et que ça y sur un autre screen ?
+
+Xavier (17:58.286)
+Mmh mmh.
+
+Xavier (18:07.662)
+Alors moi je travaille exclusivement sur le mobile, je ne pas où vous en êtes, mais je sais que c'est un objectif sur lequel on cherche à tant d'être capable de réussir la promesse de React Native. Code once, run everywhere.
+
+David Leuliette (18:11.974)
+ok, ok.
+
+David Leuliette (18:24.913)
+Bye !
+
+Ouais, je vois parce que ça moi j'étais arrivé à... en fait on avait tous les composants indépendants donc nickel mais après il fallait les migrer tous ensemble et on arrive à moment je fais, les gars il faut mettre Solito en place, Solito c'est un rapper entre Next.js et Ragnative qui permet d'utiliser la nav des deux et ça fonctionne bien. Et ça avait pas été réfléchi en amont si veux du coup il y avait des espèces de saute mouton
+
+Xavier (18:33.774)
+...
+
+David Leuliette (18:56.208)
+Et puis au final on l'a pas fait. On a dupliqué les pages et dupliqué les screens entre l'app web et l'app mobile parce que ce n'était pas vraiment prévu à la base et puis voilà il fallait shipper. en vrai, nous ça nous fait juste deux fois plus de try mais ce n'est pas trivial du tout comme problème en fait.
+
+Xavier (19:11.214)
+...
+
+Xavier (19:16.972)
+Nous, n'utilise pas Next. Donc, pense que d'unifier la navigation, va être de créer une abstraction autour de réac navigation et de réac router, d'essayer d'avoir des primitives communes entre les deux. Je ne pas qu'il ait de gros challenge là-dessus.
+
+David Leuliette (19:18.765)
+Ouais.
+
+David Leuliette (19:40.837)
+C'est bien, on attendra l'update dans le changelog.
+
+Xavier (19:46.778)
+C'est des balles qui sont assez excitantes d'être là-dessus. Je regarde ça un peu d'un œil curieux.
+
+David Leuliette (19:55.025)
+Oui, qu'il y a vraiment beaucoup de choses qui se passent. Pour nos amis designers qui nous écoutent peut-être, est-ce qu'il a des trucs incroyables niveau graphique ? Parce qu'il faut que ce soit des light full, je ne me rappelle même plus. Si, il y a des animations. Je crois.
+
+Xavier (20:05.88)
+Ouais.
+
+Xavier (20:15.736)
+Ouais, franchement en 3 ans j'ai pris mon bâton de pèlerin et j'ai dit mais ça va
+
+David Leuliette (20:21.36)
+Elle et Hitbox, faut qu'elle fasse toutes la même taille les amis, parce que sinon ça scale pas.
+
+Xavier (20:28.75)
+Il a ça, y a beaucoup de micro-interactions qui manquaient un petit peu. Il a toute une culture et une acculturation à la fois des designers, des équipes produits et des ingénieurs désormais sur le fait qu'on a des outils qui sont à notre disposition désormais pour faire des animations performantes, évidemment réanimated. On est toujours sur réanimité de 3.
+
+David Leuliette (20:34.445)
+Ouais ?
+
+David Leuliette (20:51.76)
+Ouais, ok.
+
+David Leuliette (20:56.537)
+Et du coup, attend, vous avez commencé à une maitite genre V1 ?
+
+Xavier (21:00.334)
+Euh non. Non, non. Réanimé Thine, on a commencé à l'introduire avec la V2. Donc on n'a pas eu à souffrir.
+
+David Leuliette (21:08.319)
+Ok. On n'a pas eu à copier-coller William. De façon, à chaque fois, je vais en parler à chaque épisode de William. C'est sûr parce qu'il a que lui qui s'était dit, vas-y, je vais en faire et puis tout monde va en profiter.
+
+Xavier (21:12.558)
+...
+
+C'est à ben utile.
+
+Les apéries de limited vins étaient imbuvables.
+
+David Leuliette (21:24.751)
+Attends, moi j'ai fait l'openGL quand j'ai appris l'IT, c'était pareil.
+
+Xavier (21:29.825)
+Bonne chance.
+
+Donc voilà, Rianymetic 3, à peu près un an et demi je dirais, on a introduit RIV.
+
+David Leuliette (21:41.817)
+Rive ! C'est quoi ces rives.
+
+Xavier (21:46.062)
+Bonne question.
+
+David Leuliette (21:47.92)
+Rive.app
+
+David Leuliette (21:59.759)
+Le... l'homme... L'hu... l'hu l'allé ! ! J'ai le truc d'Hervé Enby là ! L'hôti ! là là Eh ! C'est bon !
+
+Xavier (22:02.158)
+Oui, l'autre.
+
+C'est un équivalent de l'OTI avec des fonctionnalités de machine à état pour trigger des états ton animation et des transitions entre certains états de ton animation qui peuvent être après trigger par du code REC NATIVE. On commence à utiliser pas mal ça. La développeur experience est plutôt satisfaisante, la performance est bien.
+
+Après les problématiques qu'on va retrouver autour de tout ça, va plus être la montée en compétences des équipes de design.
+
+David Leuliette (22:50.007)
+Ouais, c'est comment on scale le truc...
+
+Xavier (22:51.566)
+C'est un nouvel outil et après il y a aussi toutes les problématiques qu'on a sur les Design Token mais on les a aussi sur le Motion. Je pense qu'il a des thématiques de Motion Token, d'être capable d'harmoniser pour que ton appli ne ressemble pas à un sapin de Noël à la fin.
+
+David Leuliette (23:12.025)
+Oui la fin, c'est Je sais pas si... Du coup, vous l'objectif c'est quoi ? C'est que la source of truth elle soit dans Figma et que vous récupérez tokens direct depuis Figma ? Parce que c'est ce qu'ils font au Deliveroo quand je suis allé chez eux... au meet-up je crois, sais plus. Ouais un truc du genre. Dans leur HQ en fait c'était ça l'idée quoi, c'était que le design pilote et il récupère les démes. Mais bon ça demande partout une partie formation.
+
+Xavier (23:31.15)
+...
+
+David Leuliette (23:40.379)
+Vous faites ça vous vous dupliquez et c'est bon ça fait le taf parce que...
+
+Xavier (23:44.526)
+Moi je sais que j'ai fait des explo là dessus, j'essayais d'exporter au maximum des trucs, la partie des tokens, les spécifications, les couleurs et ainsi de suite depuis Figma. On n'a pas été plus loin que des explo. Donc là en gros ce qu'on a c'est qu'on duplique tout simplement.
+
+David Leuliette (23:47.918)
+Ouais.
+
+David Leuliette (24:02.574)
+Ouais ouais.
+
+David Leuliette (24:08.45)
+Ouais, normal, t'exportes et terminé quoi.
+
+Xavier (24:10.574)
+honnêtement ça marche bien
+
+David Leuliette (24:16.238)
+Oui, tu ne pas changer toutes les fontes du jour au lendemain et où les spacing généralement c'est 2, 4, 8, 12. Enfin tu vois, c'est les mêmes, ils ne pas réinventer le Cool, Cool, cool. alors attends du coup en sept ans, là on va pouvoir parler de la partie deploy et release.
+
+Xavier (24:19.502)
+No way.
+
+Xavier (24:27.278)
+non
+
+Xavier (24:36.686)
+Alors là, justement, la moitié... Ouais. On va sur médium.
+
+David Leuliette (24:38.225)
+Lisez l'article de blog qui est disponible je sais plus où. C'est ça, je le mettrai dans les notes de l'évition.
+
+Xavier (24:46.542)
+Ça a pas mal changé, ça continue de changer parce qu'il y a quand même une date couprée qui arrive pour tous ceux qui utilisent App Center.
+
+David Leuliette (25:00.294)
+parce que vous... ouais, attends, vas-y, explique que vous étiez chez App Center, là.
+
+Xavier (25:02.296)
+On utilisait entre autres App Center mais pour des releases sur des branches internes de testing, tu testes une fonctionnalité, tu veux t'assurer qu'elle fonctionne, tu veux partager la fonctionnalité et un build mobile avec cette fonctionnalité aux équipes produits, au designer ou même un collègue ingénieur, tu peux trigger juste en mettant un label sur ta perte.
+
+GitHub et ça trigger un build sur App Center qui est après distribué en interne donc on a ça qui est quand même plutôt pratique et après notre infra de release c'est GitHub Action plus Fastlane alors tu parles de l'article de blog où on parle de notre migration vers cette très belle marque que tu as sur ton Switch
+
+David Leuliette (25:35.305)
+Ok.
+
+David Leuliette (25:51.533)
+OK.
+
+Xavier (26:01.55)
+Et franchement, ça a été un game changer. on n'utilise pas leurs services ES, leurs services de déploiement vers les stores. On ne l'utilise pas pour plusieurs raisons. C'est que, en sept ans d'existence, on a...
+
+David Leuliette (26:10.861)
+Ouais ok.
+
+Ouais c'est ça.
+
+David Leuliette (26:26.568)
+On sait comment faire, du coup pas besoin de...
+
+Xavier (26:29.846)
+Déjà on sait comment faire, on a développé des processus hyper customisés et comme on sait comment faire, on se trigueur en prébude et de compiler des apps.
+
+David Leuliette (26:34.102)
+Ouais c'est ça.
+
+David Leuliette (26:43.92)
+Vous êtes combien dans la team du coup
+
+Xavier (26:46.742)
+Alors nous ce qu'il faut savoir c'est qu'il a pas d'équipe mobile.
+
+David Leuliette (26:50.68)
+oui c'est vrai tout le est full stack. Bon à peu près, on va dire sur le projet, sur un projet généralement.
+
+Xavier (26:52.373)
+ouais.
+
+Xavier (26:56.814)
+Nous, nous sans ingénieurs.
+
+David Leuliette (26:59.11)
+Ouais du coup tu peux trouver des gens qui... Eh les gars on va tanker deux semaines et puis on va prendre fast lane et ça va bien se passer, y'avait quelqu'un qui connaît Ruby dans le tas !
+
+Xavier (27:07.694)
+On va y aller. Les aspects organisationnels sont hyper intéressants, trouve, sur la façon dont on s'organise en tant qu'équipe de développement et le fait qu'on n'ait pas ou très peu d'experts mobiles. Ce qu'il faut dire, c'est que je pense que des vrais experts mobiles et qui ont envie de continuer à bosser sur du mobile parce qu'on a des experts mobiles...
+
+David Leuliette (27:32.684)
+Mwouh
+
+Xavier (27:34.222)
+Quand on avait un ras le bol de moitié sur du mobile, quand ils sont venus, ils ont voulu arrêter le
+
+David Leuliette (27:37.484)
+Ah ouais ! Ah là au secours ! Pourquoi ils veulent arrêter carrément ? Genre faire d'autres trucs.
+
+Xavier (27:44.28)
+Ouais, et c'est très bien. Si ils pensent que la valeur qu'ils peuvent apporter est ailleurs que là-dessus, c'est pas de soucis. Mais en gros, pense que sur les 100 ingénieurs de l'expertise mobile, on est 4 ou 5.
+
+David Leuliette (27:51.265)
+Ouais je vois.
+
+David Leuliette (28:02.571)
+Ok.
+
+Xavier (28:04.238)
+et ça tient parce que sur la partie développement on a très rarement des besoins qui vont les toucher aux ressources de ton device ou ce genre de choses là, on est minicule.
+
+David Leuliette (28:22.102)
+Ouais ouais, c'est à part le QR code scanner, le fond d'appareil photo, les push notifications...
+
+Xavier (28:28.606)
+du deep link, la push notif, y a quand même des trucs mobiles spécifiques mais rien de... sauf un petit truc dont on pourra peut-être reparler plus tard mais voilà. Pour en revenir à notre release, GitHub Action, Fastlane, très très bien et puis après on a pas mal de choses qui sont scriptées justement grâce à Fastlane pour aller push...
+
+David Leuliette (28:30.155)
+Bye.
+
+David Leuliette (28:35.531)
+d'exotique.
+
+Xavier (28:57.806)
+les stores.
+
+David Leuliette (28:58.443)
+Ouais, ouais, tout. En fait, vrai, pour ceux qui connaissent pas Fastlane, utilisent... Enfin, IAS utilise Fastlane. C'est pour ça que c'est... Enfin, il faut savoir lire. Il faut savoir c'est quoi. Et il faut savoir lire les stacktraces, des bugs de Fastlane quand on se connecte, Error 65. Ah, ok, d'accord. Ok, et du coup, ce serait quoi ton top 5 des librairies que tu aimes et que tu adores ? Top 3. Peut-être pas pour top 5, c'est un peu beaucoup. Top 3, on va dire. Hormis ce qu'on a parlé.
+
+Xavier (29:11.936)
+Bon.
+
+Xavier (29:26.762)
+Et bien il n'y en pas tant que ça, l'écosystème Expo, globalement, ce la CLI, toute la partie pré-build, les dev clients, ça a été un game player. Quant à 100 ingénieurs qui sont en train de bosser potentiellement sur l'app.
+
+David Leuliette (29:32.652)
+Bye bye !
+
+Ouais, on en faire un.
+
+David Leuliette (29:45.323)
+!
+
+Xavier (29:52.546)
+et que la dernière fois qu'ils ont bossé sur l'app, c'était il a trois mois, que ça fait trois mois qu'ils font majoritairement du backend et du web, exemple. Évidemment, avant les dev clients, qui sont une version de ton app avec la partie entre guillemets native, qui est précompilée pour toi, nous on les distribue grâce à S3 avec une commande, ils sont téléchargés automatiquement, et puis après tu lances le bundler métro et hop, ça charge mon dev client.
+
+le code que tu sur ta machine. Donc pas à un seul moment, ils ouvrent un Xcode, Android Studio. donc en fait, ça change énormément la donne sur la Developer Experience. clairement, top 1 Expo. Trop bien. ES, même si on ne l'utilise pas, trop bien. a un existant qui fait qu'on n'en a pas besoin.
+
+David Leuliette (30:30.886)
+All right.
+
+Xavier (30:51.264)
+et puis c'est beaucoup plus cher que ce qu'on Top 3 de trucs que j'ai pas cités, je vais avoir du mal mais réunimettid.
+
+David Leuliette (30:54.282)
+Bye !
+
+David Leuliette (31:06.11)
+bah oui, ça fonctionne. Réanimer utile pour animer, c'est vrai que...
+
+Xavier (31:12.99)
+et RIV aussi, c'est avec ça qu'on arrive à amener des choses delightful dans l'app, des choses intéressantes. Un truc qui est peut-être moins connu et qu'on utilise beaucoup pour tout ce qui est feedback interne quand on teste les app et ainsi de suite c'est ShakeBugs
+
+David Leuliette (31:19.166)
+Ouais.
+
+David Leuliette (31:32.714)
+Ah bah c'est bien ça, shake bugs. C'est une librairie qui existe ça, c'est parce que je suis en train de le faire à la main. Je suis un connard moi, shake bug.
+
+Xavier (31:40.622)
+On voyait que c'est un service de partie qui fournit aussi une librairie riaque native. en gros, sur nos versions de développement, aussi quand quelqu'un de Fallen est connecté à l'appli de prod, il peut juste secouer le device et ça figure un flot de...
+
+David Leuliette (32:02.708)
+Ouais. Et ça tombe où ?
+
+Xavier (32:05.422)
+ça tombe dans notre linéaire.
+
+David Leuliette (32:08.618)
+Ok ouais donc GitHub Linear ou GitHub Project Management Direct. bah je savais pas que ça existait, je suis en train de le faire à la main. En fait là pour l'instant c'était fake bug égale email, on chie pour une journée, je bosse chez Wispy2D, n'oubliez pas les amis. coup, chaque chose en son temps. Cool, trop bien, je connaissais pas, incroyable. vas-y, t'as pas eu une anecdote sur un moment difficile dans le dev que vous avez rencontré ?
+
+Xavier (32:14.574)
+Oui.
+
+David Leuliette (32:38.058)
+sur LAN et comment vous l'avez géré ?
+
+Xavier (32:41.518)
+Ce qui a été difficile, c'est que dernièrement on a introduit des mécanismes de gamification, où on encourage les gens à bouger, à faire des séances de méditation, des séances de respiration, et donc on a introduit des mécanismes de gamification. Pour ce qui est de bouger, on a introduit justement HealthKit sur iOS, HealthConnect sur Android, et les moments difficiles, a été les...
+
+les délais de revue qui sont devenus immenses chez Android, chez Google Play. On a un release cycle d'une semaine, on release tout le semaine et on avait des délais qui dépassaient la semaine. Donc en fait, on avait un effet tunnel, sachant que dès tu recernes une version, ça reset.
+
+David Leuliette (33:16.019)
+Ouais c'est vrai que... avant c'était immense genre, on veut des chiffres.
+
+David Leuliette (33:32.354)
+oué
+
+Xavier (33:40.302)
+de review chez Google Play à 0.
+
+David Leuliette (33:42.313)
+l'enfer... du coup t'es...
+
+Xavier (33:49.214)
+plus release potentiellement. donc là il a fallu encore une fois prendre son bâton de pèlerin, essayer de trouver dans les contacts comment réussir à choper les grands pontes de Google Play pour...
+
+David Leuliette (33:50.665)
+...
+
+David Leuliette (34:02.089)
+oui, et vous avez chopé un mec qui appuie sur le bouton à votre place ? Tu vois ? Genre, hey !
+
+Xavier (34:06.966)
+Ahah
+
+On a essayé de comprendre le fin mot de cette histoire, parce qu'il y a eu beaucoup de malentendus avec le support. Et donc il a fallu peu mettre le fin mot de cette histoire. C'est quelque chose qui a fini par être escaladé jusqu'à assez haut dans les responsables de Google Play. Et on a fini par comprendre les problématiques qu'ils avaient. C'est qu'en fait, ils sont régi par des lois européennes.
+
+David Leuliette (34:27.72)
+Mmh.
+
+David Leuliette (34:37.042)
+Ouais ok du coup il mettait un push back ok
+
+Xavier (34:39.822)
+Les lois européennes ont introduit des mécanismes de protection des données, entre autres des données de santé. Donc Google Play a... Voilà, donc c'est là, je remercie. Bye.
+
+David Leuliette (34:52.776)
+Ah ouais, IF, Santé, Zen, 3 semaines de review. Ah ouais, bah oui, que vous êtes... ouais, c'est ça, l'app de santé s'est régulé, du coup...
+
+Xavier (35:02.862)
+et donc les reviews manuelles parce qu'ils n'étaient pas outils et en même temps qui faisaient les reviews manuelles hélas je te parle d'un truc tu vois qui été résolu nous considère qu'il a été résolu depuis la semaine dernière tu vois on monitorait les time to ouais c'est très nouveau et donc on considère que c'est résolu mais en fait le truc derrière tout ça c'est que
+
+David Leuliette (35:07.496)
+Hmm.
+
+David Leuliette (35:18.856)
+ouais ? Ok.
+
+Xavier (35:29.678)
+Les reviews n'étaient pas outillés pour les faire sur les applis qui ont accès aux capteurs et aux données de santé qu'il a sur le device. C'était des reviews manuelles. Il semblerait désormais qu'ils envoyaient en prod leur outillage spécifique de review pour ça. C'était assez intéressant de discuter parce que je vois un peu ce qui se passe de l'autre côté.
+
+David Leuliette (35:49.608)
+D'accord.
+
+David Leuliette (35:54.552)
+Oui, l'envers du décor, vois. Du coup, les amis, même chez Google, de toute façon chez Apple, c'est pareil, le truc pour se connecter, trust browser, il fonctionne toujours pas. Donc même les giant tech companies, des fois, on a l'impression que tout est parfait chez eux. en fait, non, c'est juste que voilà. Intéressant, intéressant, intéressant et.
+
+Xavier (36:05.194)
+Oups, ouai ça.
+
+Xavier (36:15.47)
+...
+
+David Leuliette (36:19.432)
+Donc en ces 7 ans, est-ce qu'il y a comme pour les nouvelles personnes qui découvriraient l'écosystème, tu n'as pas un pro tips à partager pour débugger ton application ?
+
+Xavier (36:32.174)
+Déjà je leur dis qu'ils sont chanceux parce que l'avenir est plutôt brillant tu vois Acto Tron, plein de choses dans l'écosystème flipper qui a lentement mais sûrement pourris sur place un petit peu
+
+David Leuliette (36:37.928)
+C'est fou !
+
+David Leuliette (36:53.608)
+D'ailleurs, je trouvais ça stylé avant, je que ça allait trop bien, mais je jamais pris le temps de diguer le truc à chaque fois, ne marchait pas, me disais plus tard, plus tard, et plus tard, et ce n'est jamais arrivé.
+
+Xavier (37:05.262)
+Et là on voit quand tu regardes un petit peu ce qui se passe sur les discussions autour de l'écosystème React Native et du debugging de la direction que tout ça veut prendre. C'est assez...
+
+David Leuliette (37:23.207)
+Ben oui, a un épisode de Rack Native Radio justement avec Cédric et Jamin, pour ceux que ça intéresse en anglais, qui explique, qui fait tout l'overview en fait de pourquoi, comment, pourquoi c'est que maintenant qu'on a le React DevTools inclus direct en appuyant juste sur J, paf, ça ouvre ça en fait. Avant c'était pas ça. Ah ben oui c'est ça.
+
+Xavier (37:36.374)
+Et donc là.
+
+Xavier (37:46.734)
+J'ai une de mes préférées désormais
+
+David Leuliette (37:51.867)
+Tu as dit, Alan iOS Android ZSite, il a pas de qui n'est pas encore connecté, a une partie web mais c'est pas partie de l'app mobile. Est-ce qu'il a des différences avec HellSkits et tout, peut-être notamment ? Comment vous avez géré ça ?
+
+Xavier (38:08.366)
+La plupart du temps, les différences, je vais exclure le web parce que les seules fois où on a le trio iOS, Android et web, ça va être dans notre design système et comme je te l'ai dit sur des expérimentations qui sont assez récentes d'être capable de faire des écrans universels, donc si on se focus plus sur iOS et Android, la plupart du temps les librairies qu'on utilise, tu vois,
+
+abstraire les différences des plateformes là où c'est pas le cas effectivement c'est else kit versus else connect anciennement google fit parce qu'en plus l'écosystème des données de santé dans android est en pleine mutation
+
+David Leuliette (38:58.49)
+Ah bah, de toute façon, ils changent de nom tous les... Ah oui, alors attend, attend, attend, donc c'est compatible ou comment ça marche ? Est-ce qu'ils font comme Killed by Google ou comment... l'état de l'art là-dedans ?
+
+Xavier (39:01.326)
+...
+
+Xavier (39:12.334)
+La philosophie des deux est complètement différente. n'est pas si différente. Il voir ça comme un espèce de hub. Elles se connectent côté Android et elles se quittent côté iOS. Ce tous les deux des espèces de hubs qui vont remonter les données de santé qui viennent d'autres applications, potentiellement, et aussi d'objets connectés.
+
+et de ce hub après tu peux consommer les données dans d'autres applications. peux toi aussi en fournir dans ce hub. La grosse différence qu'il y a entre iOS et Android, qui pour nous était très impactante, c'est la partie comptage de pain qui existe côté iOS mais de facto dans elseKit.
+
+David Leuliette (40:02.731)
+oui ?
+
+David Leuliette (40:11.952)
+Oui ?
+
+Xavier (40:12.692)
+n'existe pas dans Android, de facto. tu te retrouves avec des espèces de processus d'unboarding hyper compliqués, t'assurer que le device a bien Else Connect d'installer, qu'en plus potentiellement il y a aussi notre app qui fournit ce comptage de pas dans Else Connect pour qu'après nous on puisse l'exploiter et ainsi de suite, ce qui fait qu'au final...
+
+ça te fait des on-boarding foireux tu vois c'est qu'en l'utilisateur il est dans ton appli, il obligé de sortir d'aller dans google play, installer je ne sais quelle application
+
+David Leuliette (40:44.194)
+Ouais.
+
+David Leuliette (40:52.294)
+oui, que tout était explosé, du coup y'a pas forcément le truc... Ouais et puis après tu l'as perdu le mec...
+
+Xavier (41:00.062)
+Nous on a développé notre step counter
+
+David Leuliette (41:08.182)
+ouais ! Boring software on avait dit au début. Nous, on fait notre propre système de comptage de pas les gars.
+
+Xavier (41:12.001)
+Ouais !
+
+Xavier (41:15.8)
+Ouais et puis là tu te retrouves dans des grosses problématiques après de consommation d'énergie, te retrouves dans des problématiques de services de Forgan Services, donc des services de tâches de fond dans Android.
+
+David Leuliette (41:30.502)
+Ouais, background, oui, oui, j'ai déjà parlé avec un mec qui aussi un background... C'est un gros... Vous utilisez quoi du coup pour background services du coup ?
+
+Xavier (41:39.214)
+On le fait à la main, on n'utilise pas de librairie.
+
+David Leuliette (41:40.301)
+A pour jo...
+
+David Leuliette (41:45.675)
+Ouais, a expo background de quelque chose.
+
+Xavier (41:49.325)
+On a mis peu en place ça mais ça suffit pas en fait parce qu'il faut que ton app démarre pour que ton code JS soit exécuté. Nous on veut que tu vois par exemple au redémarrage de ton téléphone, tu n'as pas forcément relancé l'application mais on veut qu'au démarrage du téléphone ce service s'exécute pour qu'on puisse qu'on télépasse sans que l'utilisateur ait nécessairement besoin de lancer la palane.
+
+David Leuliette (41:57.317)
+Right ?
+
+David Leuliette (42:06.117)
+Ouais.
+
+David Leuliette (42:10.177)
+On se loint, je
+
+David Leuliette (42:18.519)
+Et donc ça vous l'avez fait en natif alors.
+
+Ok, ça suffit.
+
+Xavier (42:24.33)
+En code clean, un expo config plugin pour injecter ça dans...
+
+David Leuliette (42:31.0)
+Et c'est parti.
+
+Xavier (42:33.866)
+Voilà, on n'hésite pas pour gérer ces différences-là quand on pas ce qu'il nous faut, n'hésite pas non plus à le faire de même.
+
+David Leuliette (42:33.975)
+Cool !
+
+David Leuliette (42:43.845)
+Ouais ouais carrément, non mais ouais c'est intéressant, ça c'est vraiment pas le truc que j'aurais pensé, le compteur de faque, que c'était différent en fait parce qu'il a plein de trucs, tu dis ouais bah ça, la base quoi, il est dedans quoi, comme la fameuse, attend c'est quoi, c'est checkbox ou radio sur hack native ? Je crois qu'il pas de checkbox de base, un truc du genre. Je dis mais comment c'est possible ? En fait non, c'est parce que non, il y en a pas. Et donc alors avec une team de...
+
+Xavier (42:50.35)
+...
+
+Xavier (43:01.134)
+Non.
+
+David Leuliette (43:10.34)
+de 100 personnes, comment vous faites pour vous maintenir à jour en interne ou pas
+
+Xavier (43:16.308)
+En fait, a différents cérémoniaux qui existent chez Alan qui s'appliquent pour le mobile mais comme pour d'autres. On a des helpers group, à savoir que sur Slack on a des gens qui vont être peut-être un peu plus compétents, plus motivés à donner de l'aide sur une thématique spécifique, donc le mobile par exemple. Donc voilà, déjà ça aide.
+
+David Leuliette (43:38.18)
+Ouais.
+
+Xavier (43:45.486)
+On a une gazette interne qui sort toutes les semaines dans lesquelles on peut communiquer sur des trucs. Et donc tu vois si tu as un tips and tricks à donner sur React Native, tu peux le faire.
+
+David Leuliette (43:50.446)
+trop bien ! Ok ouais.
+
+David Leuliette (44:00.42)
+C'est quoi genre le dernier trick sur Aknative dans la gazette ?
+
+Xavier (44:03.726)
+Ah, justement, on vient juste d'en parler. J'avais fait un petit record de comment on exploite au mieux les DevTools. J'ai dit à tout monde, do yourself a little favor, press J. Je pense qu'il va falloir éduquer aussi tous ces 100 développeurs, sachant que...
+
+David Leuliette (44:07.202)
+Il faut que je le fasse !
+
+David Leuliette (44:23.012)
+Ouais !
+
+Xavier (44:32.666)
+métro va arrêter de speed les logs
+
+David Leuliette (44:35.844)
+Ouais, oui oui c'est vrai il y a un petit warning. Bah si vous utilisez pas Expo, je sais pas comment ça marche mais oui il un petit warning qui dit hey la fête est finie, a plus les logs dans...
+
+Xavier (44:47.681)
+Donc il falloir peu éduquer les gens à utiliser d'autres trucs. Donc ça, fait partie un petit peu de comment on se maintient un jour. puis moi, j'aime bien faire, je t'enverrai peut-être, je fais un peu de manière opportuniste une fois par mois à peu près un truc que j'appelle RecNative CoolSings où je m'amuse à écrire à la fois des blagues débiles et puis les news de l'écosystème.
+
+David Leuliette (44:48.92)
+dans le terminal.
+
+David Leuliette (45:10.34)
+Attends, c'est quoi ? Je connais pas... React Native... Ah ok, ouais d'accord. Ah c'est pas... Ok, ouais d'accord.
+
+Xavier (45:13.262)
+Je vous remercie.
+
+Xavier (45:17.998)
+En général, prends le fait qu'il ait une sortie assez marquante dans l'écosystème React pour écrire un truc, rajouter quelques... quelques... on dit plus de tweets sur BlueSky, je sais pas comment on dit...
+
+David Leuliette (45:27.684)
+Ouais, ouais.
+
+David Leuliette (45:38.05)
+sur blue sky on dit des... putain mais c'est quoi sur blue sky ? C'est des... c'est des postes ? C'est des postes ? Un poste ? Ouais si c'est des postes, oula.
+
+Xavier (45:42.216)
+Des messages. Des postes.
+
+Voilà donc c'est un peu les trucs qu'on fait d'animer un peu la communauté en interne pour que voilà éduquer les développeurs
+
+David Leuliette (46:01.699)
+Ouais ouais, c'est pas mal franchement. je fais tout en public en fait, de base comme ça c'est réglé. puis comme ça après je les retrouve moi-même plus... Et j'ai appris aussi, ah ouais c'est un truc à Mathis Valmé qui bosse avec moi, pour lui dire, il a mille ans je lui dis, quand il a fait son alternance je lui fais, quoi t'as pas de compte stack overflow fais-en-ra tout de suite ! Comme ça en plus t'écris ta bio, paf, t'as plus les pubs.
+
+Xavier (46:11.694)
+...
+
+Xavier (46:30.786)
+Mh... Ouais.
+
+David Leuliette (46:30.844)
+Déjà c'est bien. Et en fait dès que tu as une question, ben écris là et ou réponds. Tu verras plus tard, et ben tu vas retomber sur tes propres posts. Et là récemment ça lui est arrivé en fait. il cherchait un truc et il t'a fait un truc, fait ouais mais en fait je me suis auto répondu. Il a retrouvé son message et il s'est dit mais ouais mais ok j'ai retrouvé ce truc là.
+
+Xavier (46:42.126)
+Oui.
+
+Xavier (46:54.018)
+Alors je t'avoue que moi c'est à cover foo depuis que j'utilise Cursor, j'y vais plus loin.
+
+David Leuliette (46:59.442)
+Ouais, oui oui oui c'est clair, oui ça c'est trop loin, après ça dépend.
+
+David Leuliette (47:14.818)
+Il est même mieux up to date, je n'utilise pas Cursor Multi, Gitop Copilot. Rack Native est assez spécifique, il arrive à pondre des trucs C Accurate.
+
+Xavier (47:28.856)
+On fait des expériments là-dessus, où on a couplé Cursor avec Radon, idéal. Pourquoi on a fait ça ? C'est qu'on essaie de voir en quelle mesure une personne non ingénieure est capable de couper un truc. Et en utilisant ce qu'il a. Ce qui bien avec Radon, c'est que tu vas cliquer sur un élément, va t'ouvrir le fichier correspondant.
+
+David Leuliette (47:36.034)
+Hmm ? Oui ?
+
+David Leuliette (47:45.452)
+Ouais, peut shipper un truc, ouais. Ok.
+
+Xavier (47:57.814)
+et après tu commences à remplir ton prompt par exemple tu trouves que je sais pas moi il faut un swipe quelque part et qu'il a pas tu cliques et tu dis mais moi un swipe et tout on a fait des expériences comme ça on a des des futures qu'on a réussi à chipper tout intégré dans un seul et même IDE là dessus donc tu vois c'est assez intéressant et ouais moi aussi
+
+David Leuliette (48:15.234)
+Ah ouais, d'accord, je pensais que...
+
+Xavier (48:28.462)
+j'avais des choses à conseiller à quelqu'un qui démarre ou pas direct natif c'est vraiment d'utiliser des outils comme Cursor ou d'autres équivalents
+
+David Leuliette (48:38.902)
+Ouais parce que maintenant, que enfin moi j'avais commencé au tout début ça marchait pas type type top il n'y pas les bonnes versions mais c'est vrai que j'ai pas testé récemment et après en ce moment je fais du bluetooth du coup c'est plus compliqué quoi c'est des trucs impossibles c'est vraiment c'est build bug ou des genres de trucs donc donc compliqué trop bien et en
+
+toutes ces années de React Native versus avant, qu'est que tu as appris en plus sur le développement logiciel ? Après on peut pas trop comparer avec ton truc d'avant vu que c'était pour des... mais le truc...
+
+Xavier (49:23.181)
+Bon.
+
+Moi ce que je dirais c'est que plus sur le basculement entre friand et travail dans une entreprise
+
+David Leuliette (49:37.73)
+oui c'est oui c'est marrant, tout le monde fait l'inverse et toi t'as fait dans l'autre sens.
+
+Xavier (49:45.058)
+Et ouais, donc tu vois, c'est vraiment plus sur des aspects organisationnels que j'ai appris beaucoup de choses. Comment tu réussis à fédérer, à éduquer des gens, à utiliser des choses, à essayer de trouver les ressources dans ton équipe, surtout chez Alan, où on a, comme je te disais, expertise assez contrainte côté mobile, mais comment tu arrives à faire monter en compétences des gens.
+
+comment tu essaies de faire que c'est un environnement accueillant pour que ces gens aient envie de s'investir aussi sur la plateforme mobile et que ça repose pas sur les épaules que de 3 à 4 personnes.
+
+David Leuliette (50:19.857)
+que de trois bonhommes pour éviter le buzz factor sinon allez voir buzz factor sur wikipédia si vous savez pas ce que c'est
+
+Xavier (50:23.246)
+Ouais, voilà. C'est vrai que quand on fait des événements on-site, on ne pas les mêmes véhicules justement ces trois-là. Donc voilà, c'est ça, c'est plus sur les aspects organisationnels que techniques.
+
+David Leuliette (50:34.298)
+Ouais, c'est ça exactement.
+
+David Leuliette (50:46.048)
+Ouais en plus, tu m'as dit que vous utilisez Linear ? Ah trop bien ! Et pourquoi Linear et... Parce qu'on est des designers et puis on veut des trucs beaux.
+
+Xavier (50:56.878)
+L'hinaire, parce que l'intégration et tout ce qui est fourni est quand même assez... l'expérience utilisateur elle est super bonne. Les intégrations que tu peux avoir avec Slack, le fait qu'il y des API, j'imagine qu'il a la même chose avant d'utiliser Trello.
+
+David Leuliette (51:17.323)
+Ouais mais Trello c'est bordel, enfin tu dois faire... En fait quand tu sais ce que tu fais Trello ouais ok mais souvent les gens ils font nimp et du coup c'est comme Jira quoi, j'ai rien contre Jira, j'aime pas que ce soit lent et customisable à l'infini. Résculinaire ouais c'est vrai enfin je sais qu'il a une linéaire way de faire les trucs et j'ai un peu utilisé je trouvais ça je trouvais ça bien mais j'ai pas vu beaucoup de boîtes qui l'utilisaient.
+
+Xavier (51:23.534)
+...
+
+Xavier (51:29.23)
+Ok.
+
+Xavier (51:44.306)
+Oui, nous on l'utilise depuis... Je te dis très long, moi j'ai du côtoyer très long sur quelques mois quand je suis arrivé chez Alan et on a basculé direct sur Linear. Donc plutôt relié à adopteur aussi sur cet outil là. Et plutôt content de l'utilisation qui est faite et de toutes les intégrations qui sont mises à disposition. Je te parie check bugs.
+
+cette librairie où tu secoules le device et puis ça te craint.
+
+David Leuliette (52:13.888)
+Ouais, c'est inclus direct, y'a pas de question à se poser, c'est... ouais, un genre de truc... Je vois, je vois.
+
+Xavier (52:18.03)
+donc ouais plutôt cool l'expérience qu'on a avec
+
+David Leuliette (52:26.088)
+Est-ce qu'il a un sujet qu'on n'a pas abordé que tu aurais aimé partager avec les internets
+
+Xavier (52:32.354)
+Ouais, on n'a pas parlé d'end-to-end testing.
+
+David Leuliette (52:40.0)
+Ah ouais bah fou là ! Prochain épisode ! Oui alors alors alors comment comment vous faites ? en ce moment Baestro ça a l'air cool mais ah si une fois j'ai bossé Xavier, ah putain c'est marrant c'est un Xavier aussi mais c'est pas le même. Et incroyable là j'ai découvert le vrai N-Twin testing et en fait on faisait ça sur Device Farm d'Amazon et du coup c'était genre bim ça ship ça sur 1000 device et c'est parti.
+
+Xavier (53:03.95)
+Ok
+
+David Leuliette (53:08.433)
+Mais en fait en vrai c'est un full time job et maintenir ce truc là c'est du taf.
+
+Xavier (53:15.086)
+Ouais ouais c'est painful. C'est très très
+
+David Leuliette (53:17.231)
+C'est pas painfull, ça dépend toujours de la scale. t'as une team de 100 bonhommes, c'est bon, tu peux investiguer 200 pour être sûr que ça pète pas. Vas-y, dis nous partage nous. Qu'est-ce que tu veux dire sur le hand-to-hand testing ? Qu'est-ce que vous utilisez chez Alan du coup
+
+Xavier (53:33.944)
+on utilise Waldo on utilise Waldo mais fait c'est pas on va pas écrire façon maestro on va pas écrire les tests end to end mais va les enregistrer sur une plateforme et après en fonction on trigger après des règles donc qui sont une série de tests qui vont être trigger sur
+
+David Leuliette (53:36.457)
+oui je vois ce que c'est
+
+Ok.
+
+Xavier (54:02.034)
+sur nos branches de release et puis on a aussi des tests de manières nightly sur notre main branch mais en fait ouais c'est assez painful et parfois un peu noisy, painful dans le sens où on a certains tests qui vont être qui vont fail parce qu'un écran il y a un design qui été un modifié qui fait que la ressemblance est plus suffisante pour que
+
+David Leuliette (54:29.907)
+Ouais.
+
+Xavier (54:30.67)
+ce genre de choses là donc il faut toujours être assez vigilant sur comment l'écrire les thèses, les maintenir, bien penser aussi à les mettre à jour si tu enlèves un bouton ou tu le mets ailleurs ou tu le renomnes, il y a des choses qui peuvent être assez painfull à maintenir et voilà et en fait ce qui est assez marrant c'est que chez Alan c'est quelque chose que tout le monde réclame
+
+David Leuliette (54:58.238)
+Ouais bah... Mais que personne veut faire et oui, y'a pas le budget.
+
+Xavier (54:59.816)
+et ce qui est compréhensible quelque part sachant que sachant que c'est assez pénible à maintenir voilà a tout un sujet en testing mobile
+
+David Leuliette (55:10.206)
+Ok.
+
+David Leuliette (55:16.363)
+bah voilà, si y'a des gens qui veulent faire QA engineer et bosser chez Alan, c'est bon, vous avez un un sujet.
+
+Xavier (55:22.015)
+Alors, on n'embauche pas que l'engineer.
+
+David Leuliette (55:25.288)
+ouais c'est les gens qui... Ok. Ok bah vous pouvez faire full stack et j'ai une passion pour les end-to-end testing.
+
+Xavier (55:28.341)
+On est honneur.
+
+Xavier (55:33.07)
+Vous êtes les bienvenus si vous adorez le N20 testing et que vous aimez bien les maintenir à bras ou à l'oeil.
+
+David Leuliette (55:42.206)
+Cool. Est-ce qu'il a une personne que je devrais inviter à parler ici ?
+
+Xavier (55:48.238)
+Uuuuh... What?
+
+Je pensais que tu pourrais sûrement inviter Delphine.
+
+David Leuliette (55:57.842)
+oui, elle était dans le backlog en fait, faut que... Oui, c'est carrément. Delphine qui travaille chez Mistral en ce moment, c'est ça
+
+Xavier (56:10.04)
+Oui, c'est Mistral qui partage les locaux avec Adam.
+
+David Leuliette (56:17.694)
+Ah oui ! Ah je savais pas ça ! Ah mais... incroyable ! Ok ! Bah on aura appris ça. Trop bien, trop bien ! Xavier, où est-ce qu'on peut te retrouver pour les gens qui veulent diguer ?
+
+Xavier (56:19.79)
+...
+
+Xavier (56:26.392)
+Ouais.
+
+Xavier (56:31.758)
+On peut me retrouver sur BlueSky.
+
+Et c'est quoi mon WENDE ?
+
+David Leuliette (56:38.295)
+BlueSky at dranji.fr
+
+Xavier (56:43.63)
+Au revoir.
+
+David Leuliette (56:53.719)
+ouais je viens de... Attends, il m'a fallu trois secondes pour voir le truc... Quoi ? ouais, incroyable. Ok, ok. Ok, c'était un plaisir. Les amis, on se retrouve la prochaine avec potentiellement Delphine. On verra comment aussi les planètes sont alignées. Allez, au revoir à tous et merci Xavier.
+
+Xavier (56:57.888)
+Mais non.
+
+Xavier (57:16.174)
+Salut !
+
+David Leuliette (57:18.333)
+Tep !
+

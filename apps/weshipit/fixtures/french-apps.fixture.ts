@@ -550,5 +550,28 @@ export const frenchAppsFixture: frenchApps = {
         website_url: 'https://www.veepee.fr/',
       },
     },
+    {
+      fields: {
+        android_url: 'https://play.google.com/store/apps/details?id=com.ekklo',
+        category: 'Sports',
+        ios_url: 'https://apps.apple.com/fr/app/ekklo/id1540289966',
+        logo_url:
+          'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/6d/f3/a2/6df3a215-ea30-6e7a-9994-8c10c37327ab/AppIcon-0-0-1x_U007epad-0-1-85-220.png/460x0w.webp',
+        name: 'Ekklo',
+        website_url: 'https://www.ekklo.com/',
+      },
+    },
+    {
+      fields: {
+        android_url:
+          'https://play.google.com/store/apps/details?id=com.transpole.mobi&hl=fr',
+        category: 'Navigation',
+        ios_url: 'https://apps.apple.com/fr/app/il%C3%A9via/id429143032',
+        logo_url:
+          'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/d9/02/d6/d902d64d-7b2b-bff6-bb72-2e13adbf6b12/AppIcon_ilevia-0-0-1x_U007epad-0-1-0-85-220.png/460x0w.webp',
+        name: 'Ilévia',
+        website_url: 'https://www.ilevia.com/',
+      },
+    },
   ],
 };

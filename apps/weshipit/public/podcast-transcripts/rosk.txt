@@ -1,0 +1,1136 @@
+David Leuliette (00:02.287)
+Alors pour l'épisode d'aujourd'hui, on a la chance d'avoir deux corps-contributeurs Recknative. Sauf que je pense que Thibaut, t'as plus de lignes que moi. Moi, en vrai, sur Facebook, je te souhaiterais être un one-liner de la doc. Mais ! Est-ce que je suis corps-contributeur du coup, Thibaut ? Merci de rejoindre le podcast. Cette question, est-ce tu penses que je suis corps-contributeur quand même, si c'est juste la doc ?
+
+Thibault Malbranche (00:19.756)
+...
+
+Thibault Malbranche (00:30.412)
+Je que ce rôle-là je l'ai défini plus par une application, activité un peu plus constante et globale et pas par juste le petit tag contribuiteur sur GitHub. c'est ultra important d'aider sur la doc quand même donc c'est cool.
+
+David Leuliette (00:39.919)
+Ça fonctionne quand mais oui oui, non mais c'est clair la code base de Rack Native est tellement gargantuer que voilà, mais on va en parler. Merci Thibaut de te joindre à nous pour l'épisode du Crosspad For Show, l'émission dédiée au développement d'applications mobiles à verre Rack Native.
+
+Je suis David, développeur chez Witschipytoday, nous sommes en juin 2025, Thibaut, est-ce que tu peux te présenter à la communauté et partager un peu ton parcours ?
+
+Thibault Malbranche (01:11.964)
+C'est Thibaut Malbranche.
+
+Thibault Malbranche (01:16.394)
+chez Rosk, anciennement on va dire Brigade, mais je vous donnerai plus à des années plus tard. Et je suis parti de la communauté open source avec Natives en France et j'ai essayé de m'impliquer beaucoup pour promouvoir ce qu'on fait et engager une nouvelle personne parce que moi je me suis retrouvé embarqué dans l'aventure il a un petit bout de temps chez Brigade.
+
+et je me suis mis à faire de l'open source, à participer au release direct native, à maintenir des libraires avec plein de gens qui l'utilisent et je trouve ça génial de pouvoir partager ça avec tout le monde. Voilà un peu ce que je fais.
+
+David Leuliette (01:55.302)
+Donc ouais, je suis obligé de la faire. T'as été embrigadé chez Brigade avant que tu fasses des releases pour RackNative ou après ?
+
+Thibault Malbranche (02:05.853)
+Bien avant, mon parcours est très lié à celui de ma boîte.
+
+David Leuliette (02:11.278)
+Vas-y, on va revenir un petit peu avant, parle-nous de Bomberman en C++.
+
+Thibault Malbranche (02:17.42)
+J'ai fait Epitech, donc on a tous fait les mêmes projets dans cette école où on apprend globalement à tout recoder en partant du C, la première année en faisant du C++ la deuxième année, un superbe Humberman qui n'avait presque aucun bug et plein de features cachées. Non, on a eu pas mal de points bonus en plus sur ce projet donc c'était bien marré. Et à la fin d'Epitech, il a quelque chose qui s'appelle l'EIP qui a un projet de fin d'étude.
+
+où normalement tu te retrouves avec un groupe de 6 à 10 étudiants et tu montes un truc de ta troisième à ta cinquième année. Et le challenge de tout ça c'est de se coordonner sur les deux années de fin parce qu'il y a plein de gens qui... enfin tu pars à l'étranger en quatrième année et tout le monde est dans des endroits différents etc. Et nous à ce moment-là, on s'est associé avec un entrepreneur qui voulait monter brigade. Et donc au lieu de faire un projet d'étude juste entre nous, entre étudiants et se barrer à fin de la cinquième année en jetant tout ce qu'on avait fait, on s'est dit...
+
+on va se mettre avec des gens qui veulent monter une boîte, qui un vrai projet, et on va gérer la tech sur ce truc-là. Et voilà comment on a commencé à bosser pour Brigade. Et comment Brigade a commencé. C'est-à-dire qu'au début, Brigade, c'était trois entrepreneurs et il s'y lève l'épitech.
+
+David Leuliette (03:31.373)
+Ah l'enfer ! Attends, est-ce que vous avez fait... Attends, vous étiez à 9 dès le début ? As.
+
+Thibault Malbranche (03:35.693)
+Et du coup c'était un peu bizarre parce que ça a mis un énorme kickstart dans la boîte dès le début. commences une boîte avec... Alors bon, j'ai été étudiant, JavaScript on n'y avait pas touché mais bon, quand tu sors d'Epitech tu sais quand même coder. Donc voilà, ça commence et il a déjà directement du monde tu vois. Et du coup ça permet de lancer le projet un peu plus violemment que si t'es tout seul en train de commencer à essayer de faire ton app... Et du coup, de là on a commencé à faire du JavaScript, on n'avait pas trop fait avant.
+
+David Leuliette (03:59.341)
+Ouais ouais carrément carrément.
+
+Thibault Malbranche (04:05.612)
+On a commencé à faire le back en JS, a commencé à faire le front en React et le plan a toujours été, et c'est ce qu'on avait vendu à l'école, je me souviens à l'époque, va faire un front en React et un appobli en Rack Native. Mais c'était du Rack Native de 2016-2017. Donc celui qui était un peu moins fun qu'aujourd'hui.
+
+David Leuliette (04:25.569)
+On va dire ça comme ça. Moi fun.
+
+Thibault Malbranche (04:28.387)
+On va dire ça. Donc tu vois c'était la version je pense 0.41 0.42 à mon avis. Au moment où on fait ça. Deux têtes, je ne saurais plus trop te dire. Mais c'était vieux. C'était un peu vieux. Donc voilà, moi j'arrive dans React Native via ce biais là. J'avais déjà fait du mobile avant, mais deux premiers stages c'était un stage applié à US, un stage à un petit robot qui était au donné sur Android TV. Donc j'avais déjà touché aux deux plateformes natives.
+
+David Leuliette (04:30.732)
+Tchie !
+
+Thibault Malbranche (04:56.424)
+et j'adore lui sur mobile. Donc j'avais un peu le background natif qui aujourd'hui je pense manque, il beaucoup de développeurs qui font du Rack Native parce que le but du Rack Native c'est que n'importe qui puisse tout faire en JavaScript mais quand tu peux mettre les mains dedans quand tu as un problème c'est quand même un sacré coup de boost quand tu peux aller jouer avec les plateformes.
+
+David Leuliette (05:20.108)
+Ouais bah oui c'est clair, mes cités d'expérience comme ça, c'est mieux. Moi c'est pareil, j'ai appris ça n'importe quoi. La pire façon, j'ai appris direct avec native, sans avoir fait de réact. J'avais déjà fait du mobile. Et CI et tout, j'avais déjà fait du rubis du coup je savais à peu près... me suis retrouvé. Mais oui c'est vrai que généralement c'est les gens qui font du web... bah ils apprennent le mobile un peu sur le tar et... Parce qu'il faut une app mobile et ils...
+
+Il y a plein de paternes qui ne pas genre la navigation, tout ça. Et même les composants natifs, genre les permissions. Bah oui, la base quoi, les permissions, iOS, Android. Ce pas les mêmes les habits. Ou alors le fameux... Attends, tu as dû la release là, sur Android TV quand tu étais en stage ?
+
+Thibault Malbranche (06:05.212)
+Non, en gros c'était un petit robot qui lui-même tournait sur Android TV et qui se déplaçait avec un vidéo proche dedans et tout. Donc j'avais pas eu besoin de release de ce truc mais...
+
+David Leuliette (06:17.804)
+Mais quand même ça te fait le changement... Enfin ça t'a exposé directement à...
+
+Thibault Malbranche (06:24.558)
+bah à rebuild Android et à faire plein de trucs marrants ouais. Déjà cloner Android ça m'avait déjà pris la nuit.
+
+David Leuliette (06:27.36)
+Ouais. C'est ça.
+
+David Leuliette (06:35.275)
+oui, déjà rien que lancer en druide studio, faire que ça fonctionne, c'est pas Xcode click click, ça fonctionne et voilà, wide. Cool, trop bien. Donc il a pas vraiment de point de bascule, c'était une continuation. Dès le début chez Brigade vous vous êtes dit, oui, React Native.
+
+Thibault Malbranche (06:40.032)
+C'est le fun !
+
+Thibault Malbranche (06:55.628)
+En gros notre CTO était en ancien d'Epitech. notre CTO à l'époque était en ancien d'Epitech, maintenant il est passé CPO. Mais à l'époque en gros il avait juste deux promos d'avance sur nous et il avait testé React Native à l'époque où il n'y avait qu'OIOS. Et il s'était dit, ça ça allait être trop bien, j'ai envie de parier dessus. Et nous du coup on a débarqué pour Briad.
+
+David Leuliette (07:12.395)
+Ok.
+
+Thibault Malbranche (07:21.494)
+un mod trop cool ça, vrai que ça a l'air sympa, partons là dessus. Donc on avait le retour d'expérience de quelqu'un qui avait fait justement où c'était que iOS et voilà pourquoi on a choisi cette techno et du coup on a target ça dès le début parce que on a envie de partager tout entre le web et le mobile donc React Native on a très très vite donc on avait notre site web qui fonctionnait super sur mobile et
+
+La première étape pour faire une app mobile, c'était de mettre un login et mettre une WebView derrière avec le site Web derrière. C'est globalement comme ça qu'étaient fait les apps à l'arrache à l'époque. y a encore plein d'apps, ça peut être comme ça en réalité. C'est comme ça que je me suis retrouvé très relié au monde de la WebView. À l'époque, WebView n'existait pas, il y avait la WebView dans le corps de Ragnative, y avait plein de pull-out requests.
+
+pour tenter de piquer des trucs dessus. Tu pouvais pas uploader des fichiers, pouvais pas injecter des scripts dans la page. Il a plein de trucs qui marchaient pas bien. Et en gros, j'avais commencé à prendre des forks entre eux, à faire une grosse boule et à créer mon propre fork de ragnative webview, enfin de webview à l'époque. Et c'est comme ça que au moment où ils ont décidé d'extraire la webview du corps de ragnative à l'époque, quand ils ont fait le link or effort, globalement tout ce que Facebook utilise pas,
+
+on le sort du corps de Ragnatif parce qu'ils ne pas le maintenir et ils préfèrent que des gens puissent faire des pull requests et faire avancer les projets. La Wabuu était le premier de ces package là et à l'époque, moi qui avais un intérêt particulier à ce que la Wabuu fonctionne, c'est comme ça que je suis récupéré le bébé et c'est comme ça que j'ai hérité du premier package qui est sorti du corps de Ragnatif, qui était Ragnatif Wabuu.
+
+David Leuliette (09:07.343)
+C'est ça, et ça si je me souviens bien c'était genre 2018-ish mais là t'étais encore en études. Ou c'était après.
+
+Thibault Malbranche (09:14.668)
+C'était peut-être, je sais pas, regardez quand est-ce que le répos était créé, je 2018-2019. Moi j'étais en étude, enfin la 5ème année d'Epitech, globalement j'étais en stage et puis voilà. Donc j'étais globalement déjà en train bosser. Je ne saurais pas te dire précisément la date, mais le timing était à peu près ça.
+
+David Leuliette (09:25.225)
+Ouais ouais.
+
+David Leuliette (09:39.034)
+Ok et donc trop bien et donc quand ils ont décidé de faire ça tu as juste reach out les gens ou c'est eux qui t'ont reach, enfin c'est eux qui t'ont dit hey faut extract la webview et euh...
+
+Thibault Malbranche (09:50.553)
+En gros, j'ai eu beaucoup de chance autour de mon parcours open source parce que j'avais envie de faire des trucs mais je suis passé au bon moment sur plein de trucs. Et j'ai eu 2-3 timings qui m'ont valu de connaître des gens, qui m'ont beaucoup aidé. Et un de ces timings ça a été, je ne plus quel mises à jour d'arrêt de la Tue, sais plus quelle version. Mais il une version où ils ont sorti la nouvelle version. Moi qui suis un crétin, je blague tout le jour de la sortie comme d'habitude. Donc j'ai fait ça.
+
+Et je leur dit, mais les gars il y plein de trucs cassés, faut qu'ils aient ça ça ça ça, et j'ai commencé à faire des pullery quests. Et à leur dire, j'investis là dessus, je m'ouvre et puis je fais ça. Et de là, quelqu'un qui a beaucoup beaucoup impacté ma vie dans l'open source, ma contactrice est Lorenzo, calcet sinon, ligne. Et quelqu'un qui m'a dit, bah c'est cool, t'as l'air investi, est-ce que tu veux aider plus ? Et de ce petit message, on a discuté un peu en mode, bah ouais ouais, trop chaud, j'ai vraiment envie de faire de l'open source.
+
+ça me fait marrer, je suis content d'aider, j'aime bien tester les trucs, j'aime bien discuter avec des gens qui comprennent un peu ce qu'ils font et qui font plein de trucs marrants. Et de là, j'ai fini dans un Slack avec plein de... ça devait être le Slack genre Corecontributor, React Native ou je ne pas trop quoi. De ce Slack est né un Discord sur lequel, parce qu'on avait marre de Slack, parce qu'on n'avait pas d'historique, on n'avait rien, ils ont dit qu'il faudrait créer un Discord avec tout le monde, je leur dit si vous voulez, je m'en occupe, je me suis retrouvé admin du Discord Corecontributor, React Native.
+
+et je me suis mis à discuter avec tout le monde et de là tu discutes la Webview c'était un projet commun avec J-Mund et Infinite Raid au début parce qu'il...
+
+David Leuliette (11:17.267)
+Et je vous...
+
+David Leuliette (11:25.167)
+Oui, une jamone que je connais très bien aussi, big up à jamone. Oui oui, et c'est là qu'il s'est dit, il faut que je dédie un an de mon temps.
+
+parce c'était à ce moment ces époques-là aussi qu'il t'a sponsorisé directement ou je ne plus c'est quoi l'histoire.
+
+Thibault Malbranche (11:42.413)
+Au début on gérait vraiment le truc à deux, c'est lui qui a fait toutes l'extraction au tout début, après il fallait gérer toutes les pod requests et toutes les issues que les gens envoyaient, c'est pareil, a le travail à deux. Après lui il avait beaucoup de trucs à faire pour Infinite Trade en parallèle, donc petit à petit, sur toutes les années il s'est un peu détaché du projet. Je me suis dit l'impression qu'en vrai, il dit qu'il ne plus passer de temps dessus, mais de temps en temps j'ai l'impression qu'il vient encore mettre son nez et vérifier d'autres atriques.
+
+David Leuliette (12:08.998)
+Tu le veux, c'est pareil, j'ai des messages aussi, une fois de temps en j'ai besoin d'une update là-dessus. Il est trop fort, J-Bone, big up à toi. Quatre enfants, CTO, plein de projets open source. En ce moment, il a peut-être moins le temps, il fait des jeux vidéo en C justement. Trop fort, trop fort, Il est trop fort, J-Bone, exactement.
+
+Thibault Malbranche (12:28.072)
+j'ai vu ses tweets, il me fait marrer. vraiment cool. voilà, mes grands copains de l'open source du début c'était Jaman et Lorenzo. Et donc dans un monde règle natif qui n'est pas si gros sur une core team etc, on va dire dans la partie open source, purement open source pas dans la partie qui débre active mais chez Meta ils ont toujours été on va dire cinq à qui tu parles vraiment, qui font l'image, qui font la partie communication extérieure.
+
+Une fois que tu as accès à pouvoir discuter avec ces gens là, que as les deux trois chez Infinite Trade, de là tu te fais inviter chez Callstack sur une conférence. J'ai fait un talk avec Native Europe, je ne plus quand, 2017, 2018, ou 2018, 2019, sais plus. Et puis tu commences à rencontrer plus de gens, et du coup tu rencontres Callstack, tu rencontres Software Mansion, et tu commences à avoir les contacts un peu partout. Les gens savent que tu bosses bien, et tu sais que du coup...
+
+Tu files des coups de main, et fais des coups main, et après ça devient un jeu d'échange un peu en permanence. Et donc comme je disais, il y a plein de gens qui auraient pu faire la même chose que moi, c'est une histoire de timing, il arriver au bon moment, il faut mettre l'effort et avoir la chance d'être là au bon moment. Bon, j'ai eu les deux, et du coup, je me suis occupé de la webview, par derrière, et ça je pense, je racontais l'anidote il pas longtemps à des potes.
+
+David Leuliette (13:30.535)
+Ouais, si c'est ça.
+
+Thibault Malbranche (13:53.453)
+je disais, je me suis construit une tour, comme je te disais avant que ça commence, ce qui me sert de la kintosh. à l'époque, n'y pas les M1, il n'y avait pas les M2, M3, M4, c'était un I9 qui montait à 100° dès que tu lançais Xcode et ton back frisait. Et globalement, tu voulais build avec native à l'époque, ça prenait une plombe, ça prenait une plombe. Et from source, c'était 30 minutes à une heure, le temps de tout build. Et donc moi, je me suis construit une tour, j'ai mis un horizon avec...
+
+David Leuliette (13:59.879)
+Ouais
+
+Thibault Malbranche (14:22.54)
+avec 24 threads dedans, j'ai mis mes 30gb de le truc ne chauffait pas et en fait, Reqnative, je voulais le build dans 5-6 minutes. Et en fait, ce qui s'est passé, c'est que pour tester chaque liste de Reqnative, fait, avait énormément de tests à faire à la main, il fallait le build dans toutes les architectures, dans tous les trucs, et je leur disais, moi, si vous voulez, je peux aider à faire les tests, ça me prend un dixième du temps, en fait, le fait d'avoir construit cet ordi et de me faire un peu chier,
+
+David Leuliette (14:30.919)
+smart.
+
+David Leuliette (14:46.234)
+Ok, je vois.
+
+Thibault Malbranche (14:52.35)
+à me faire un truc qui tourne, a fait que je me suis encore plus incrusté dans cet univers d'aider à faire les releases, discuter avec plus de gens, etc. Et purement par le fait que j'avais du matériel qui me permettait de bien bosser, ça m'a débloqué encore plus de trucs, donc c'était vraiment cool.
+
+David Leuliette (14:58.022)
+Oui.
+
+David Leuliette (15:10.086)
+Et du coup, Hackintosh pour expliquer pour ceux qui connaissent pas, c'est faire tourner un Mac, pas sur un Mac en fait.
+
+Thibault Malbranche (15:17.004)
+C'est faire croire à Apple et à tous leurs logiciels qui sont faits que pour leurs trois ordi que t'es bien sur ça alors qu'en dessous il a beaucoup plus de puissance. C'est quelque chose qui disparaît maintenant qu'Apple a ressorti sa propre architecture de processeur parce que ça sera plus juste faire croire, ça sera de l'émulation donc ça serait complètement autre chose, ça sera plus possible. MacOS 26 ça sera la dernière version supportée sur les anciens processeurs Intel.
+
+David Leuliette (15:26.114)
+C'est ça du coup.
+
+David Leuliette (15:43.492)
+Ok.
+
+Thibault Malbranche (15:43.5)
+Donc c'est la fin des Hackintosh. déjà il y avait beaucoup moins de trucs qui tournaient dessus, mais là on s'approche du bout.
+
+David Leuliette (15:46.81)
+c'est la fin de Hackintosh,
+
+David Leuliette (15:55.692)
+Ok, la la, tristesse, il falloir tous passer sur Linux et trouver un autre moyen. Ouais, aussi c'est vrai qu'un Mac mini maintenant, autant pire les Mac mini et ok, intéressant.
+
+Thibault Malbranche (16:02.72)
+ou se prendre un Mac mini, c'est bien suffisant pour le dev de nos jours.
+
+David Leuliette (16:14.242)
+Donc le format de l'épisode c'est Success Stories of Brigade, on a déjà parlé de Brigade, là on va plus aller dans l'analyse de la stack. En 5 points on voir data layer, navigation, styling, graphique et release. Ça utilise quoi chez Brigade pour gérer les data ? On a expliqué c'était quoi Brigade ? Je sais même plus. Si si. On a pas expliqué. Qu'est-ce que c'était ? Bonjour, je m'appelle David, j'ai un restaurant.
+
+Thibault Malbranche (16:34.636)
+On a même pas expliqué ce qui était horrible.
+
+Thibault Malbranche (16:41.579)
+Bonjour.
+
+David Leuliette (16:44.23)
+Ce week-end, il a un mariage et du coup, il y avoir 200 personnes. Je vais sur brickad.com et là, pouf, je peux trouver des extras qui me permettront de faire ce match successful. J'ai bien résumé ou pas
+
+Thibault Malbranche (17:00.85)
+C'était vraiment le pitch de base à l'époque. on a lancé le truc, c'était, t'as besoin de staff de manière temporaire, on va t'envoyer quelqu'un en fait. Tu n'es pas en train de chercher et de poster une annonce, etc. Tu nous dis juste, il me fallait, à l'époque j'avais besoin d'un serveur, d'un chef de rang ou quoi que soit. Et ça te permettait un peu de générer tes fluctuations de personnel et de besoin. Et ça c'était vraiment pour venir en renfort, en renfort à tout ça. Et vraiment le pitch de base c'était ça.
+
+Et aujourd'hui, reste une de grandes forces, c'est vraiment d'avoir amené de la simplicité dans un monde où le recrutement est un peu compliqué et un peu manuel. Et c'est une industrie où beaucoup de choses se font encore juste en passant des coups de fil, en gérant les trucs à la main. Et donc à l'époque, on arrivait avec ça et ça, marche super bien. se rend compte qu'il une énorme demande, que les établissements sont trop contents. Les gens qui bossent sur la base de forme, ils peuvent accepter des missions dans plein d'endroits. Et franchement, c'est trop bien quand...
+
+Chaque jour tu vas bosser dans des établissements différents, apprends plein de trucs. Tout le monde est super content. Ça c'était super. On s'est pris le Covid dans la tête. Tous les établissements ont fermé du jour au lendemain, globalement. Et donc quand tu au stade de start-up, c'est pas facile. Pendant le Covid, a puté pour faire de la tech, globalement, en interne. Vu qu'il n'y avait pas de sale à ce moment-là, on a fait de la tech.
+
+David Leuliette (18:23.535)
+Ouais.
+
+Thibault Malbranche (18:24.466)
+Et on a commencé à expérimenter dans une nouvelle industrie en parallèle de la restauration qui était la santé. Et du coup on s'est mis à permettre de récupérer des infirmières libérales sur la plateforme, des AES et tout ce dont tu peux avoir besoin dans des EHPAD, dans des choses comme ça. Et on a étendu Brigade à un deuxième scope qui était la santé. Ça c'est un peu l'historique de Brigade. Et on a continué de rechercher des features, etc.
+
+David Leuliette (18:48.612)
+Ok, on est...
+
+David Leuliette (18:55.468)
+Donc tout pareil mais changement de vertical et c'est pour ça que ça s'appelle Rusk.
+
+Thibault Malbranche (18:59.611)
+Et non, ça c'est encore Brigade à l'époque. C'est encore Brigade. C'est un système très simple où vraiment tu crées ta mission, tu as quelqu'un qui arrive, il est indépendant, donc soit il a sa propre entreprise, soit il est autre entrepreneur. Et ça, fonctionne très bien. Et pendant des années, on essaye de montrer aux gens que le modèle est bien, les business sont contents, les gens qui bossent sur la plateforme sont contents. Et on continue d'avoir...
+
+David Leuliette (19:03.758)
+Ok.
+
+Thibault Malbranche (19:25.068)
+certaines personnes, certaines politiques, organismes qui nous disent mais pourquoi vous passez par des autres entrepreneurs, pourquoi les gens ne sont pas en CDI, c'est bizarre. En France, faut pas que les gens puissent être à leur compte et gagner mieux leur vie. Donc on a eu beaucoup de retours, enfin beaucoup de retours de peu de personnes mais au final ce qui a pas mal d'impact, ils font que les gens avaient du mal avec notre modèle.
+
+Et du coup, pendant longtemps, on s'est battu pour essayer d'expliquer aux gens que notre modèle était bien. Et on a continué d'avoir des business qui disaient, on ne plus l'utiliser parce que telle personne nous a dit que ça, ce pas bien, etc. Mais en fait, c'est basé sur rien. On s'est beaucoup battu et là, cette année, on arrive avec une nouvelle approche, globalement, est, c'est le modèle qui vous pose problème, la manière dont c'est construit.
+
+Nous notre fonds d'indice de valeur c'est d'apporter des gens et d'apporter la solution. Le contrat qui est en dessous, ce qui est en dessous, ça boque un peu. Nous c'était juste un outil. C'était juste un outil. Donc on a reconstruit la plateforme sur des nouveaux contrats et on vient l'enrichir de beaucoup plus de solutions. Donc Rosk en gros, c'est... On reprend la simplité de brigade, on le met sur un contrat de travail temporaire qui va permettre de supprimer ce débat qui n'avait pas lieu d'être. Et...
+
+David Leuliette (20:29.752)
+On se fait faire.
+
+David Leuliette (20:50.936)
+Ouais.
+
+Thibault Malbranche (20:51.724)
+Et à côté de ça, vient rajouter plus de piliers qui sont une communauté et un peu un profil perso. Imagine pour simplifier en gros ton LinkedIn quand tu botes dans des industries qui ne pas la tech. T'es infirmier, tu es cuisinier, etc. Tu crées ton compte, t'as accès à des missions, t'auras accès à des offres d'emploi, tu auras accès à du contenu qui t'intéresse. Et tout ça, c'est cet écosystème qu'on est en train de construire et ça, ça devient rosque.
+
+David Leuliette (21:06.326)
+ok.
+
+David Leuliette (21:20.068)
+Ok ok, je vois. C'est bon, c'est très clair. Qu'est-ce que... Oui donc... Alors attends, parce que si on parle de Data Layer, on parle de Data Layer du début ou de maintenant ? Parce que je pense que... Ouais non, on va pas refaire tout l'historique. Si ça vous intéresse, a 10 épisodes avant, je pense que ça va aller, on va parler de la tech right now, tu vois.
+
+Thibault Malbranche (21:34.914)
+ça c'est comme tu veux hein, ça c'est comme tu veux on en a fait des trucs
+
+David Leuliette (21:48.324)
+Rom 2025 and Beyond Data Layer en State Management et Data Fetching, utilise quoi ?
+
+Thibault Malbranche (21:51.337)
+Ok.
+
+Thibault Malbranche (21:57.357)
+C'est la même chose, c'est Apollo pour le 2. Chez nous, on essaie de rester à jour sur tout ce qu'on peut. Globalement, on n'est pas compliqué. On prend tous les trucs qui nous semblent cool et on les utilise. Et on ne prend pas trop la tête à aller dans des trucs qui sortent beaucoup d'espects, on reste assez proche de React et on utilise l'enclésiographie à l'envers. À l'époque, avait pas des millions de librevues pour faire ça, y avait Apollo globalement.
+
+et notre backend est construit en une fédération de plan de microservices. Donc on a une seule grosse gateway qui expose toute notre data au front au travers d'Apollo, ça fonctionne très bien. Apollo gère son cache tout seul. Je ne pas te dire qu'on n'a jamais eu de problème dans le cache d'Apollo et qu'on n'a jamais fait de pull request, ça c'est faux. Et qu'on attend encore que la 4.0 sorte, ils viennent d'annoncer les RC, ça va encore fixer des problèmes. Mais...
+
+David Leuliette (22:43.042)
+He
+
+Thibault Malbranche (22:49.42)
+C'est good enough pour avoir une app qui fonctionne bien, gère sa data, qui quand tu la rebootes, elle reprend la data en offline et elle se met à jour, etc. Du GraphQL, Apollo et à côté de ça, un peu de contexte avec React pour faire circuler le site à l'intérieur de l'app. Quand il y a besoin, ou du sync external store s'il a pas besoin d'utiliser un contexte React et si on peut stocker des variables autrement.
+
+David Leuliette (23:16.085)
+Ok, moi j'adore, j'ai utilisé quand j'étais à Londres Apollo et GraphQL et tout Bon, depuis... J'ai pas eu l'occasion d'en refaire mais moi j'adore, moi je trouve ça trop... En fait, je sais pas, je trouve ça plus simple que le reste Enfin c'est vraiment... Ça fait plusieurs épisodes qu'on en parle mais c'est vraiment compliqué à expliquer Ceux qui ont pas exploré GraphQL avec Apollo c'est tellement facile... Enfin pas facile mais... C'est... il y a plein de problèmes qui disparaissent complètement de... Complètement
+
+Thibault Malbranche (23:31.084)
+Chut
+
+Thibault Malbranche (23:45.351)
+Nous ça nous permet plusieurs choses, ça nous permet d'être sûrs que quand on mettre un prod ça va fonctionner avec le back au niveau des tips, ça nous permet de générer tous nos tips depuis le backend, ça nous permet de plein de du coup sur le CI.
+
+On génère quand même beaucoup beaucoup de codes aujourd'hui et globalement le bas qu'ils écrivent juste le schéma graphuel ça leur génère tout en typescript, ils peuvent coder par dessus. Nous côté front, on écrit juste la quoi et comment on la refaire, on code-gen, ça nous génère tout ce qu'on va vouloir utiliser. Et après, t'es dans ton composant, tu fais un Usquare-E, t'as ta data qui est typée et puis tu sais ce que tu vas avoir, tu sais que tu ne peux pas ne pas avoir ça et... Et puis voilà quoi ! Et puis ça fonctionne... Ça fonctionne ! Ouais ouais...
+
+David Leuliette (24:17.567)
+Et tout roule quoi. C'est ça, la life est cool. C'est ça. Attends, mais du coup, il y a combien à mettre dans Brigade, genre chez Brigade à la Tech en 2025 ?
+
+Thibault Malbranche (24:26.57)
+À la tech, on a pas mal réduit. Et globalement, la tech Chebriard a toujours été comprise entre 6 et... Et je dirais, si on prend la tech un peu au global, on va dire 15-20 personnes. Et aujourd'hui, on est beaucoup moins.
+
+Comme je t'ai dit, avec le Covid, avait pris cher une fois. Avec ce qui s'est passé il a deux ans, c'est-à-dire qu'on n'a pas réussi à scale comme on voulait avec le modèle, s'est reséparé de quelques personnes. Et aujourd'hui, si je compte globalement les gens qui sont dans le développement pur, sur le front, on a trois des fronts de lead.
+
+Sur le back, on a un lead, un dev, donc ça fait cinq. Aujourd'hui, globalement, il gens qui codent 7-8 personnes. en fait, qui drôle, c'est qu'on arrive à maintenir une quantité de code et à avancer à faire des features. Parce qu'en fait, on s'est créé un écosystème interne qui nous permet d'aller super vite et de gérer plein de choses. Moi, je suis toujours impressionné.
+
+David Leuliette (25:26.017)
+Donc 16
+
+Thibault Malbranche (25:41.427)
+suis toujours impressionné par la capacité qu'on a à sortir plusieurs prods par jour et des features et des machins tout le temps. Franchement, là-dessus, aujourd'hui, on va avoir envie de recruter dans l'équipe Front pour pouvoir faire plus de features et faire plus de choses, mais franchement, on est bien déjà.
+
+David Leuliette (26:03.49)
+Ok du coup Apollo, trop bien, navigation... ouais ça ! Attends, navigation au tout début... Vous avez utilisé combien ? Toutes les librairies de routing ou juste Explorouter ? Euh juste... Ouais ou X ? Avec native navigation...
+
+Thibault Malbranche (26:14.284)
+On a utilisé Wix pour React Native Navigation et puis React Navigation, Intu. Récemment on est passé sur Expo Router. C'est encore en phase de test. Enfin en gros notre nouvelle app on la build avec ça en se disant à n'importe quel moment on prend deux heures enfin pas deux heures mais on prend une journée et on repasse sur React Navigation si il a Ça fout, c'est la même techno. Et j'attends de voir les
+
+David Leuliette (26:23.137)
+...
+
+David Leuliette (26:26.908)
+Ok, ok.
+
+David Leuliette (26:37.089)
+Ouais. Bye.
+
+Thibault Malbranche (26:44.262)
+bénéfices, j'attends de voir les bénéfices complets de ça. Comment dire, je trouve que c'est pas aussi magique que ce que les gens aiment le dire. Explorouter ça fait plein de trucs, mais il a quand même plein de choses que tu pouvais faire. en fait, ça fait super bien une app de deux pages. Et ça fait super bien plein de trucs de base.
+
+David Leuliette (27:04.491)
+Ouais, carrément d'accord.
+
+Thibault Malbranche (27:08.854)
+Et puis dès que tu as un cas un plus complexe, tu veux que ton flow soit dans une modal, mais à l'intérieur de ta modal tu veux une stack, mais à l'intérieur... etc. Tu commences à tomber dans des edge case et finalement quand tu avais la main sur tout ce qui se passait sur ton state avec Rack Navigation, nous on se retrouve à ce hook dans les internals de Rack Navigation un peu plus que ce que je voudrais. En fait pour moi, Explorouter, vu qu'ils veulent se rapprocher un petit peu trop de l'aspect web,
+
+David Leuliette (27:09.217)
+C'est
+
+Thibault Malbranche (27:37.325)
+Ils bloquent des patterns qui n'existent pas en dehors de ce que tu ferais sur un navigateur et je sais pas si je suis fan à 100 % Après encore une fois, c'est vrai que navigation en dessous, tout ce que tu peux faire avec la navigation, tu peux en théorie le faire avec Explorouter, suffit de regarder ce que eux génèrent et ce plug là dedans. c'est pas limitant aujourd'hui et encore une fois, on va venir tester les trucs nouveaux. Comme je te disais au début, moi il y a un truc où tout monde dit que c'est bien, bah je vais vérifier.
+
+David Leuliette (28:04.831)
+Ouais c'est ça, moi c'est pas... De toute façon les 40 ans on avait parlé à l'épisode d'avant, que ça intéresse, Shine, il sortira One Day, puisque... Internet de problème, du coup j'éditerai correctement ça, Et même qu'on se tague moi quoi. C'est intéressant, mais en fait en vrai, quand t'as plus sans screen et où des edge cases un peu pas tellement si compliqués que ça, bah Explorouter c'est... Il faut que je tweak.
+
+Expo router pour vraiment faire ce que je veux donc et pas pendant le bootcamp enfin je fais des bootcamp et je m'étais enfin je teacher bootcamp et pour un moment je m'étais dit vas-y je kicke la lecture le cours avec navigation et je fais que expo router et en fait je vais jamais le faire parce que bah pour tous ces cas là en fait en tu as quand même besoin de la navigation de savoir comment ça fonctionne
+
+et où la moitié des apps je pense que ouais t'en as juste pas besoin quoi donc pareil je suis encore en assessment
+
+Thibault Malbranche (29:03.884)
+Pour moi c'est un peu comme React Native par rapport au plateforme qui est en dessous. C'est cool de savoir si en dessous parce que quand t'es dans la merde, bah... aller voir en dessous. Par contre quand tu peux, quand tu peux ne pas avoir besoin de te poser de questions, tu veux créer un nouveau screen, t'as juste à drag and drop un fichier, bon... tant mieux tu vois. Donc moi j'y crois un peu sur le principe. Alors c'est la première fois qu'on fait de la filebase navigation sur le web, on fait pas ça non plus. Donc c'est marrant de faire ça en premier sur le mobile d'ailleurs.
+
+David Leuliette (29:11.52)
+Ouais, ouais, ouais, là-haut.
+
+David Leuliette (29:20.864)
+Ouais.
+
+Thibault Malbranche (29:34.797)
+On exprime, on va voir. Pour l'instant, on a ça qui est en prod, ça fonctionne. Tu vois, j'avais encore un bug. Y'a Evan qui fait une paire pour fixer un problème qu'on avait dans Explorouter à 2h du mat là. Globalement, jusqu'à aujourd'hui, sauf preuve de contraire, parce que je pas vérifié sur d'autres app, mais je ne pas comment ça aurait pu marcher. Si tu cherchais à faire l'universal linking, c'est-à-dire ouvrir ton app au travers d'un lien de site web et que ton app était killed, tu pouvais pas linker dans ton app, ça allait que sur la home. Bug d'Explorouter, tu vois, genre...
+
+David Leuliette (30:02.399)
+oui ? oui ? Ok, ouais.
+
+Thibault Malbranche (30:04.46)
+Le getInitiallyRealist envoie le slash. Bah super. Du coup, ils sont en mode ça gère tout. Bon bah ouais, y a des cas un peu basiques de t'envoyer une newsletter pour que les gens ouvrent ton app et ils arrivent sur un endroit. Ben marcher pas, vois. t'es en mode, bon bah encore des trucs à peaufiner. faut remonter les problèmes, il les fixe et puis ils en avancent tous. Comme d'hab, c'est toujours le débat.
+
+David Leuliette (30:07.273)
+Ok. Merci.
+
+David Leuliette (30:26.441)
+Ouais c'est ça Comment on écrit des reproductible examples ? T'en dis au revoir toi Moi déjà ça me rend fou quand je tombe sur des... Parce que... je... Enfin... J'ai plein de rêves... Généralement ouais quand je vois un problème de code ou de machin Je prends vraiment le temps à faire un exemple reproductible Vous allez translate pour...
+
+Identifier le bug, le mettre dans une sandbox bien, que le mainteneur puisse correctement le refaire chez lui et que ça lui prenne deux secondes entre guillemets. Limite lui mettre un curl pour qu'il fasse tout aux odions. Très bien. Est-ce que tu en as eu ? C'est quoi les conseils que tu pourrais donner aux gens justement pour qu'ils investissent plus ? Ouais.
+
+Thibault Malbranche (31:11.35)
+ça dépend du type de bug. React Native, ils ont un réproduceur qui fournissent, ils ont un template qui met à jour. Ça c'est quand tu un bug qui vraiment... En gros si tu un bug, tu sais qu'il est dans React Native, aucune librairie, rien, et tu veux leur montrer qu'il n'y a pas d'autres dépendances et que ça vient forcément d'eux, tu prends ce template là, tu fais en sorte de reproduire ton bug en utilisant que des trucs vanilla et là ils savent que le problème vient d'eux et ils vont se mettre dessus, le fixer. Ça, ça marche super bien.
+
+David Leuliette (31:15.74)
+Oui.
+
+Thibault Malbranche (31:38.828)
+Tu fais ta PR avec un truc comme ça en général si ça concerne... Si c'est sur la nouvelle architecture et que tu le reproduis sans dépendance, tu sais que ça être regardé. Ça c'est pas un problème. Vas-y.
+
+David Leuliette (31:50.93)
+Ouais et j'ajoute euh... Moi j'ajoute des gifs pour vraiment que les gens aient tout le contexte et screenshot du terminal et ou copy code du code, enfin l'output du terminal comme ça quand les gens ils search dans Google et ben ils tombent dessus et il a deux fois le contexte
+
+Thibault Malbranche (31:56.863)
+Ouais...
+
+Thibault Malbranche (32:01.228)
+Sssss
+
+Thibault Malbranche (32:10.54)
+Ouais, bah de toute façon, le plus de contexte c'est toujours le mieux. Il n'y a pas tous les bugs qui sont visibles visuellement on va dire. Donc évidemment il faut s'adapter un peu à tout ça. Ça c'est si t'as un bug sur Rack Native, après si t'as un bug sur une librairie, essaye de faire un dossier où tu prends le reproduire de base, tu rajoutes que cette dépendance et tu prouves que ça vient de là. Ça devient plus en plus compliqué quand c'est reanimated, plus Screens, plus machin, plus Vidule qui commence à faire du bordel. Mais...
+
+David Leuliette (32:35.07)
+C'est ça. Je vous vois.
+
+Thibault Malbranche (32:40.06)
+Mais l'idée c'est de réduire au plus petit pour que les gens qui creusent et pas trop d'emmerdes et se disent pas, mais ça vient peut-être d'un cas bizarre de l'interaction entre plein de librairies. c'est Expo, si c'est un bug que tu es capable de faire dans ExpoGo, c'est encore plus simple, vois, sur un mini truc. Personne n'a besoin de build-up, il peut vérifier sur son téléphone en ce cas dans la QR code qu'il le bug. Bon bah c'est encore plus pratique. Sur Snack, c'est la même techno que ExpoGo.
+
+David Leuliette (33:02.359)
+Ouais, ou tu peux le mettre sur Snack, enfin sur Snack c'est pas encore...
+
+Thibault Malbranche (33:10.356)
+par derrière. l'idée c'est que la personne n'est pas besoin de chercher pour pouvoir reproduire de manière consistante le voil et après tu sais qu'elle va mettre des breakpoints et se débrouiller. Globalement c'est lui emmener jusqu'au point où il n'y plus qu'à mettre un breakpoint quand tu as un state bizarre et qu'elle remonte la piste jusqu'à son implémentation à elle. Globalement c'est un peu l'idée derrière reproduire.
+
+David Leuliette (33:30.557)
+mais t'es pas juste une échoue ça marche pas et c'est tout quoi.
+
+Thibault Malbranche (33:33.879)
+Bah moi je peux... Moi qui maintiens la Webview, je lis presque pas les issues sauf si on me hard pingue Déjà même si c'est les réproduceurs, c'est rare que je les vois. L'open source prend beaucoup de temps aux gens. Le but c'est de leur en faire gagner si vous avez besoin qu'ils vous aident. Ça c'est quelque chose qui est tout le temps vrai. Moi quand je remonte un bug, vraiment, j'arrive avec le package clé en main et je leur dis si t'as besoin que je fasse quoi que ce soit d'autre, tu me dis je suis disponible pour toi.
+
+David Leuliette (33:39.377)
+Ouais.
+
+Ok.
+
+David Leuliette (33:53.853)
+Ça c'est beau.
+
+Thibault Malbranche (34:03.276)
+Et c'est comme ça que je fais avancer mes problèmes. Si tu fais pas ça, tu te donnes pas toutes les chances de réussite. C'est des gens qui vont faire ça le soir, c'est des gens qui vont faire ça sur leur week-end, sur leur temps libre. pourraient être en train de jouer, passer du temps avec leur famille, dans le jardin, faire d'autres choses. Crois-moi que tu as intérêt à être sympa et les motiver autant que tu peux. que sinon, non mais en fait, ça ne marche pas sinon. L'open source, on ne gagne pas d'argent à le faire. On fait ça pour s'amuser et aider les gens parce qu'on aime bien, mais un moment...
+
+David Leuliette (34:21.149)
+C'est clair.
+
+Bah oui.
+
+Thibault Malbranche (34:30.996)
+faut mettre toutes les chances de côté. Moi, c'est mon conseil. C'est surtout, il va te falloir de la chance parce que des fois, c'est l'histoire de timing. Moi, une fois, je monte dans le train, je me fais ping à ce moment là, je sais que je vais être enfermé trois heures dans le train avec du wifi. dis, ok, tu as du bol, tu m'as pingué au bon moment, je résout ton problème. Le type n'a jamais vu une issue fixée aussi vite. Et pendant ce temps là, il a des gens qui attendaient depuis deux mois. bah, happens. Donc, c'est un mélange de chance et de mettre toutes les chances de côté en faisant le mieux possible.
+
+David Leuliette (34:52.231)
+Ouais bah oui, tu peux pas laisser la pote.
+
+David Leuliette (34:59.293)
+J'aime bien. Est-ce qu'il a un pattern de navigation un peu tricky dans vos apps ou que ça reste classique ?
+
+Thibault Malbranche (35:05.452)
+En ce moment, on fait des trucs un peu rigolos où on a une app où on voulait que les gens puissent voir de la valeur de l'app sans avoir à passer par toutes les tapes d'inscription. Donc globalement, tu peux accéder à l'app et tu es censé un peu pouvoir t'inscrire depuis n'importe quel flot. Mais faut retenir d'où que la personne est venue à chaque fois. Donc tu veux que la personne arrive dans ton app, tu as tes tabs, tu veux pouvoir te promener dans des screens, tu veux pouvoir depuis ces screens-là faire pop une modal.
+
+qui n'est pas en fullscreen mais qui en mode que tu peux dismiss dans lequel tu vas commencer un flow de navigation, d'authentification si la personne se sentit par dessus tu veux mettre un flow potentiellement un peu plus en mode funnel pour une partie chez nous où on doit vérifier les skills des personnes qui s'inscrivent sur la plateforme par exemple ou des choses comme ça donc tu rentres dans des funnels, des stacks, des modals, dans des bidules, dans des machins on a des flows un peu rigolos en vrai on essaie de faire en sorte que ce soit le plus intuitif et le moins on essaie de ne pas bloquer le user dans des flows
+
+faut en permanence pouvoir 10 000 reprendre les flows là où tu en étais etc. C'est beaucoup de states et beaucoup d'initialisations. Par exemple des choses qui sont un peu tricies c'est tu veux reprendre un flow au milieu d'une stack d'écran parce que tu étais à l'étape 5 sur 10, Et comment tu fais pour que quand la personne retourne dans le flow, si elle fait précédent, elle revienne sur le 4 3 2 1. Des choses comme ça, il faut bien initialiser cette navigation. ça, typiquement, ce n'est pas le genre de choses que tu peux faire avec ce routier. Tu peux pas lui dire, navigue sur cet écran mais avant tu mets cet écran et cet écran et cet écran.
+
+impossible. Tu lui dis que tu as une source URL et débrouille-toi. Donc c'est tout de suite du navigation reset et là tu arrives dans des choses qui sont unsaved dans le processus TypeScript et tu t'amuses pas quand tu fais des updates.
+
+David Leuliette (36:44.486)
+Ouais ouais, je vois, vois. Cool. Donc ouais, après-midi vous avez plusieurs apps, avez aussi un site web, en plus depuis 2017. Le styling, c'est quoi la short story du styling vite fait ? Est-ce qu'il a eu beaucoup d'évolutions ou ?
+
+Thibault Malbranche (37:02.068)
+assez simple. Non, on est resté très vanillat depuis le début. Sur le web, ça a été du CSS, SSS et CSS Modules. Donc vraiment, truc basique. disait des styles... En gros, on est parti au principe que c'était dur de faire plus performant que du CSS, globalement. Après, le seul challenge, c'est d'en envoyer aussi peu que possible. Mais globalement, l'idée, c'était ça. Et du coup, CSS Modules et SAS permettaient d'avoir une syntaxe qui était quand même un peu cool par-dessus. Donc ça, c'était pour le web.
+
+Et pour le mobile, est toujours, et alors ça peut être décevoir des gens, rester sur Stage Hit parce que j'ai jamais compris pourquoi il a besoin d'autres choses. Et aussi parce que du coup, ça c'est nos primitives, mais par dessus nous on a construit un design système où en fait tu ne parles jamais avec des primitives parce que en fait tu vas utiliser une box avec une shadow de type high et puis tu vas mettre une background de type info et tu vas... en fait on ne parle pas avec les primitives de plateforme, on a construit notre design système en se basant sur les primitives.
+
+Et maintenant tu utilises une stack dans laquelle tu vas avoir tes Box, dans laquelle tu vas avoir un truc qui est en inline avec un button, etc. Mais tu vas jamais être en train de styler quoi que ce soit. Donc tu vas toujours respecter notre design système. Et en fait, ce design système, l'a implémenté de manière très simple, un peu comme ce que fait Reknative Web. D'un côté, tu vas importer Box et en fonction de ta plateforme, tu vas résomber sur box.web ou box.native. Ça t'affiche le même composant. Tu peux ouvrir les deux side by side dans un storybook, si tu mets Reknative Web dans Storybook pour...
+
+vérifier que tes deux implems sont corrects et concordes, mais notre styling a toujours été simple et efficace on va dire. C'est à qu'on n'est pas allé chercher des miracles et ça fonctionne bien comme ça.
+
+Thibault Malbranche (38:48.786)
+J'ai l'impression qu'on a perdu David. Mais il va revenir. Pour info sur le côté styling, si jamais il des gens qui sont intéressés, j'avais fait un talk, je pense qu'on va pouvoir le retrouver avec Native Paris, qui présente littéralement notre modèle de styling et comment on a tout interfacé, toute architecturalité.
+
+David Leuliette (39:12.218)
+Si, et puis en fait vu que vous votre force est d'avoir vécu vraiment toute l'évolution de l'écosystème en fait donc... Donc ouais en fait le truc c'est que voilà t'avais rien, t'avais pas le choix au tout début de commencer par style sheet donc forcément voilà quand t'as rien bah tu tu fêté
+
+Thibault Malbranche (39:34.335)
+Ouais mais même aujourd'hui tu vois je vois pas vraiment la valeur ajoutée. A part si globalement tu sais faire du tailwind et tu as envie de reprendre une syntaxe comme ça où tu vas prendre un native wind ou des choses comme ça mais il n'y a pas des énormes gains tu vois. T'as plus à gagner à faire du stale shit un peu proprement et que les air animated par dessus et à faire des choses un peu propres et que à partir d'un des trucs trop trop compliqués.
+
+Il a un des grands arguments des fois qui est pour gérer les thèmes sombres et lumineux mais en fait ça c'est quelque chose qui, t'as un design système par devant c'est un non sujet parce que tu peux avoir un contexte où tu subscribe et tu mets des bonnes couleurs donc moi j'ai jamais ressenti le besoin et n'y jamais personne en internet qui nous a dit c'est con on est un limité par ce qu'on peut faire en styling tu veux c'est quand même un peu... voilà donc à l'époque il y avait même un sujet de est-ce qu'il faut encore
+
+David Leuliette (40:25.08)
+No.
+
+Thibault Malbranche (40:32.428)
+Le grand débat de l'époque sur le styling, parce qu'on aime bien avoir des débats toujours sur comment on fait du styling, c'était déjà est-ce qu'il faut passer par stylesheet.create ou est-ce que passer des objets en dur ça a une différence. À l'époque, à l'époque il y avait une différence mais aujourd'hui il a aucune différence tu vois. À l'époque il y avait.
+
+David Leuliette (40:45.045)
+Ah bah attends, faut expliquer... Ah oui ! Ah, y avait des optimisations qui étaient faites !
+
+Thibault Malbranche (40:51.116)
+à l'époque il avait des optimisations qui étaient faites quand tu faisais stylesheet.create, ils créaient des ints et ils associaient l'int à ton truc et au travers du bridge qui galérait à balancer plein de styles ils faisaient ça ils se sont rendu compte que ça servait globalement à rien et ils ont enlevé et aujourd'hui quand t'appelles stylesheet.create ça ne fait rien c'est un hop ça te force à passer les bons types pour typescript voilà c'est tout donc vraiment tu pourrais passer tes objets alors ne crée pas des objets en inline évidemment tu pourrais passer des objets que tu mis dans des consoles ton fichier tes styles et ça fonctionnera très bien
+
+David Leuliette (41:06.229)
+Ouais, c'est ça, c'est...
+
+David Leuliette (41:12.419)
+Je m'en rappelais plus.
+
+Thibault Malbranche (41:20.524)
+Et y'a vraiment aucun problème là-dessus.
+
+David Leuliette (41:22.458)
+Ouais tu peux faire ça, du coup tu forces tes contes, ta Lipscript, tu mets View Style Props ou un truc du genre ou Text Style Props et du coup au moins c'est typé. ok ok. Oui c'est vrai qu'il y a eu ce truc là, j'avais oublié. J'avais oublié, c'était rigolo. Euh ouais y'en a eu des stories, faudrait faire une évolution complète de... Ce serait intéressant.
+
+Thibault Malbranche (41:33.799)
+Ah oui, il y en a eu de l'historique.
+
+Thibault Malbranche (41:41.389)
+Mais encore une fois, s'est dit, on va abstraire. On va prendre les primitives qui nous semblent les plus simples et plus performantes dans nos cas. On a mis une abstraction par-dessus et au fur et à mesure que ces primitives évoluent, on vient mettre en jour notre design system, mais notre code base ne change pas. Si le code est plus performant parce qu'on vient d'improve la manière dont on affiche une box ou whatever, tant mieux, ça se répercute immédiatement dans toute la code base. en fait, vu qu'on a créé Slayer d'abstraction,
+
+Moi pendant très longtemps j'ai harcelé Facebook pour qu'il merge gap. Et je suis content parce que si Flex gap est arrivé je pense que j'ai fait gagner au moins un ou deux ans dessus. Je les ai harcelés en mode mais je comprends pas pourquoi vous n'avez pas mis flex gap. Ça nous oblige à faire des trucs affreux avec des marges négatives, frapper tous les enfants et faire des trucs pas bien quoi. Et le jour ils en mergent Flex gap, vraiment on a enlevé des lignes de code chez nous, on a divisé notre nombre de views dans l'app par deux.
+
+David Leuliette (42:16.397)
+oui, gap.
+
+David Leuliette (42:26.98)
+oui.
+
+Thibault Malbranche (42:39.454)
+parce qu'on était obligé de draper tous nos enfants dès qu'on voulait mettre des spacings. Donc c'était un enfer. Et on a rien eu à changer dans le code autre que notre implémentation de notre design system. Et le jour où ils vont sortir strict DOM et que tu vas pouvoir implémenter une seule fois tes composants en utilisant cette nouvelle spec qui va fonctionner sur le web et sur RecNative, on arrêtera d'avoir un fichier .native et un fichier .web, on aura un seul fichier d'implémentation et ce sera fini.
+
+Mais encore une fois, sera transparent pour notre code base et on n'aura rien à maintenir.
+
+David Leuliette (43:13.528)
+Et euh...
+
+Donc pour l'instant c'est tout et dans un monoripo, tout est partagé ou c'est un peu éclaté ? est dans un monoripo.
+
+Thibault Malbranche (43:22.232)
+dans un mono repo. a le back séparé du front mais bon moi je bosse avec cursor j'ai les deux dans le space, ils sont à côté.
+
+David Leuliette (43:30.872)
+Et du coup ça partage votre design système et les partagez web natif ?
+
+Thibault Malbranche (43:36.493)
+et les partager Web Native. Tout le principe de notre implémentation, c'est qu'on peut littéralement utiliser les mêmes composants sur les deux. C'est-à-dire que si tu fais une implémentation qui n'utilise que les composants de l'Intelligent System, tu peux la renseigner sur TV Web et tu auras le même résultat. Et encore mieux que ça, tu n'auras pas le même résultat visuellement, auras le résultat approprié à la plateforme. Si sur mobile tu fous une modal, tu fous une bottom sheet, sur Web ça va être une grande modal ou ça va être un drawer ou whatever. Donc tu respectes encore.
+
+David Leuliette (43:38.591)
+Ok.
+
+David Leuliette (43:54.904)
+bon
+
+Thibault Malbranche (44:03.948)
+T'appliques encore la philosophie direct native avec les prestations pour les plateformes parce que vu que nos implémentations du design système sont basées sur les primitives des plateformes, tu peux faire ce que tu aimes.
+
+David Leuliette (44:14.692)
+ça et trop smart et pour tester tout ce qui est régression et tout ça vous avez quoi vous avez des outils ou pas
+
+Thibault Malbranche (44:24.556)
+En visual testing on n'a pas encore setup, on pourrait setup. Vu qu'on est en train de reconstruire le nouveau design system pour Rosk, on est encore dans la phase où on implique les derniers composants qui nous manquent. Une fois qu'on aura tout ça, on peut complètement faire ça si on a envie. Moi j'aime beaucoup l'idée d'essayer de renvoyer ce qu'on fait dans Figma pour pouvoir faire de la comparaison ou même de devenir la source de vérité pour qu'on arrête d'avoir des différences entre ce que voient les designers etc. Je crois beaucoup à...
+
+l'unification des sources de vérité on va dire peu importe d'où elles viennent mais malheureusement je pense pas qu'on soit encore capable de générer du code à partir du dnfigma et de générer un dn system à partir de Figma et de tous les edge cases j'y crois plus dans l'autre sens pour l'instant je crois plus dans l'autre sens que le code va générer ton design entre guillemets ou au minimum quelque chose qui te permet de vérifier en gros je pense que le workflow 2025 parce que c'est pas le workflow idéal mais
+
+David Leuliette (45:06.315)
+Ouais, ça Chopi fail là-haut.
+
+David Leuliette (45:11.358)
+le code... tu fais...
+
+Thibault Malbranche (45:23.754)
+Le workflow 2025, serait ton designer le fait d'enfigment, tu l'implémentes et le designer utilise pas sa version mais utilise ce que toi tu régénères pour être sûr qu'il utilise ta version en réalité. Et du coup, s'il fait des diffs, tu les applique sur ton truc et ça lui régénère sa version à lui. Quelque chose comme ça, pense que ça serait le plus idéal en ce moment. Comme t'as vu, on n'est pas des millions dans l'équipe, fait avancer les choses comme ça fonctionne et on est contents avec ça.
+
+David Leuliette (45:44.551)
+Ouin... C'est ça.
+
+Parce que j'avais vu Shopify ils font l'inverse, source, Deliveroo c'est pareil. C'est Figma, source de données, ils ont des tokens, ils exportent et hop ça génère leur...
+
+Thibault Malbranche (46:00.577)
+Alors ça nous aussi nos tokens ils sont exportés de Figma pour le Genre s'ils update les couleurs dans Figma on a un script qui s'acronise avec notre dev. Ouais, mais sûr. Ouais, bah quand c'est des tokens c'est simple, c'est plus que savoir que quand tu implémentes ton date time picker, tu veux que quand tu cliques sur le jour ça soit... En fait il a beaucoup de comportements de state qui sont compliqués à maintenir dans Figma, qui sont des trucs logiques mais...
+
+David Leuliette (46:07.817)
+Ok ça s'acronise tout seul. Ok c'était pareil. C'était pareil. Oui ! Non mais c'est ça !
+
+David Leuliette (46:26.677)
+Ouais, bah oui.
+
+Thibault Malbranche (46:28.382)
+mais gérer tous les cas un peu pourris de toutes les propres, dans toutes les variantes, toutes les choses, ça fait des figmas manseleux avec des milliers de variations que t'as pas envie de maintenir. Que t'as pas envie de maintenir. Les variables sur figmas, exactement, toi en deux lignes tu peux les faire. Le truc c'est que sur figmas les variables c'est pas de... Bon, tu sens qu'ils ont tenté un truc mais tu sens que c'est pas non plus encore incroyable, incroyable. Donc... Malheureusement, y'a pas encore le monde idéal. Moi, pour l'instant, mon envie c'est un peu...
+
+David Leuliette (46:37.514)
+Ouais bah c'est sûr. Et que toi en deux lignes.
+
+Thibault Malbranche (46:56.94)
+On construit le design system, on l'implément et si tu veux partir dans le monde de l'IA, t'expliques à une IA comment fonctionne ton design system et qu'est-ce qu'elle a le droit d'utiliser. Et après, les designers n'ont pas besoin de FIMA, peuvent dire à l'IA ce qu'ils veulent faire en utilisant le design system et puis, plus à général, à la design.
+
+David Leuliette (47:14.23)
+Est-ce que au niveau Graphic Animation c'est assez simple ?
+
+Thibault Malbranche (47:21.484)
+reanimated.
+
+Thibault Malbranche (47:25.356)
+Et puis y'a quelqu'un qui a répondu quelque chose d'autre à cette question ?
+
+David Leuliette (47:29.172)
+Non en vrai je devrais la changer quoi. Je devrais trop la changer. Ouais sinon si après si tu fais des trucs un peu compliqué genre Rive, le truc de Airbnb, Lottie, après SVG, Animate et tout. Mais ouais c'est vrai que Animate dans le vrai...
+
+Thibault Malbranche (47:31.116)
+Je comprends pas, il y a une autre possibilité ?
+
+Thibault Malbranche (47:41.684)
+Oui ok...
+
+Ouais ouais ouais j'ai plus le nom ouais euh Lottie
+
+Thibault Malbranche (47:53.706)
+Oui oui, bah... tu les animes avec Réanimé Tite et SVG en Si, ils sont animés.
+
+David Leuliette (47:57.404)
+Je devrais demander... ouais, c'est ça, je devrais demander... Quelle propriété de RainyMetty tu utilises et qui n'est pas comme...
+
+Thibault Malbranche (48:04.3)
+En vrai, dans les librairies de graphisme on va dire, on ASKIA aussi qu'on plugue pour faire des gradients et des trucs un peu plus poussés que tu peux pas faire dans...
+
+David Leuliette (48:10.258)
+Oui, oui c'est vrai.
+
+David Leuliette (48:14.486)
+Bah les... les charts... ouais, les charts... vous avez des charts ?
+
+Thibault Malbranche (48:18.06)
+Pour l'instant non, en a déjà eu à l'époque. À l'époque c'était juste du reanimated assez simple et des views parce qu'on avait pas fait... c'était des trucs en bâtons quoi donc c'était pas sorcier. Aujourd'hui sur tous nos écrans on a mis des gradients qui s'animent en fonction de comment tu scrolls etc. Tout ça c'est plugé sur ce qu'il y a à l'aide de reanimated. C'est encore un peu expérimental je trouve d'un point de vue perf sur iOS c'est sans aucun problème. Sur Android, sur les low-end c'est...
+
+David Leuliette (48:22.486)
+Ok.
+
+David Leuliette (48:28.17)
+Ouais, ok,
+
+Thibault Malbranche (48:47.852)
+C'est un peu... Moi qui suis tatillon, ça m'énerve
+
+David Leuliette (48:54.166)
+Go Pro. Là, si I release, comment ça fonctionne ?
+
+Thibault Malbranche (49:01.948)
+Ça a été un des gros chantiers quand on a recréé Rusk. On avait tout en custom, tout à la main depuis 2017. C'était du fastlane mais avec plein de scripts qu'on faisait nous, etc. Parce que globalement quand t'es pas 3000 dans la boîte, t'as pas envie de perdre de temps à faire ce genre de choses. Donc tu le set-up proprement, etc. Et donc on avait beaucoup de trucs manuels, avait notre propre Mac qui tournait en cloud. on passait par du... à l'époque on était sur drone.
+
+CI qui géraient nos instances et qui géraient nos trucs et au moment où on est passé sur Expo, donc chez Rosk, on a migré sur Git of Actions et j'ai décidé de tester un peu IAS pour voir. Je suis pas 100 % convaincu et en même temps c'est pas si grave sur les problèmes qu'on a. Je trouve que les builds sont un peu lents mais bon t'en fais.
+
+En fait, c'est juste que quand je bosse dessus et que je me mets à faire beaucoup de builds natifs, beaucoup de trucs, je suis frustré par des vitesses de tooling, des machins, des videos. Et puis après, je n'y touche plus pendant trois semaines. Donc je me dis, bon, c'est peut pas si grave et ça vaut peut pas le coup que j'investisse vraiment beaucoup de temps dessus. Donc aujourd'hui, globalement, aujourd'hui...
+
+David Leuliette (50:10.933)
+C'est ça !
+
+David Leuliette (50:16.821)
+Et c'est random en plus. Des fois ça dure 4 minutes. Genre la dernière fois ça a duré 4 minutes à la bite. J'ai fait what ? Et des fois non. Ouais, c'est ça.
+
+Thibault Malbranche (50:25.996)
+ils sont en train de mettre à jour tout le tooling. Chez Expo, j'ai envie discuter avec eux, ils bossent avec Meta pour avoir les pré-builds sur iOS. C'est à qu'il n'y plus besoin de build avec native, il n'y plus besoin de build plein de trucs pour gagner beaucoup de temps. Parce qu'en gros, aux Expo, je les aime bien sur ce truc là, c'est à dire qu'ils ont dit qu'on allait payer au build. Donc tu pourrais te dire, ils vont surfacturer le build, mais ça veut dire que eux dans leur vie, ont un seul incentive, c'est faire en sorte que le build soit le plus rapide possible pour que ça leur compte pas de compute.
+
+David Leuliette (50:52.117)
+Ouais... Ouais c'est ça.
+
+Thibault Malbranche (50:54.538)
+Et donc s'ils arrivent à faire en sorte que tous nos builds prennent une seconde, on payera très cher la seconde, mais au moins ils auraient eu un sacré incentive à faire aller jusque là et aller dans cette direction. Donc au moins c'est honnête de leur part, c'est à que s'ils font de la merde, ils sont encore plus impactés que toi, c'est à que toi t'attends deux minutes de plus, mais eux ils la payent auprès d'Amazon ou je sais pas qui. au moins c'est fair game. Quand tu discutes de perfs vq, ils sont intéressés et ils vont essayer de mettre tout en place pour que ça build plus vite.
+
+Donc voilà.
+
+David Leuliette (51:23.957)
+Et si vous êtes en team et que vos builds sont longs que vous n'êtes pas obligé de partager vos builds, vous installez Expo Orbit et si tu fais le build, je peux le récupérer sur ma machine alors qu'il a déjà été build, ne de refaire des builds.
+
+Thibault Malbranche (51:42.061)
+Et il y a eu un gros changement récemment qu'on a implémenté. Ça, ça marchait parce que tu pouvais lancer tes builds sur IAS et après qu'il y avait accès dans Orbit. C'était cool, n'importe qui avait accès dans Orbit. Récemment, ont lancé leur... Je ne plus comment ils appellent ça, mais globalement, tu peux build en local et uploader ton build toi-même sur Expo et tes collègues peuvent le télécharger. Donc moi, que j'ai fait...
+
+David Leuliette (52:06.972)
+ouais ? Avec quoi ?
+
+Thibault Malbranche (52:08.396)
+Ils ont posté sur leur Discord hier, ils en ont encore parlé. Mais ça fait déjà un petit mois qu'ils l'ont annoncé.
+
+David Leuliette (52:15.58)
+Attends, tu fais genre NPX prébill... Tu fais quoi ? Tu fais comment ?
+
+Thibault Malbranche (52:18.412)
+Tu builds chez toi, tu fais ton iOS Dev. Non, tu fais ton iOS Dev avec Expo. Et en fait, si tu as mis ES comme cash cloud provider, à la fin de ton build local, il upload. Par défaut, utilise le fingerprint qu'il compute. Je ne trouve pas qu'il fonctionne encore très bien, c'est fingerprint Expo. Donc moi, j'ai juste changé le fingerprint pour que ce soit la version de mon app dash ma plateforme. Et aujourd'hui, personne de l'équipe n'a besoin de build.
+
+David Leuliette (52:20.986)
+Yes build... ok, oui dashdash local.
+
+Ouais, ok.
+
+Thibault Malbranche (52:47.084)
+Parce qu'en fait quand tu run ton iOS dev, il va aller checker s'il a un build qui existe, va le télécharger. Moi du coup dès que je bump l'application parce que j'ai fait des changements natifs, suis sympa, je leur build pour les copains et ils n'ont plus jamais besoin de build donc ils n'ont pas besoin de faire tout stalling. Donc tu n'es même pas obligé d'utiliser orbit, tu n'es même pas obligé d'utiliser quoi que ce soit. Et comment ça s'appelle, je vais aller checker. Ils en ont parlé hier. Remote build cache, ouais c'est ça.
+
+David Leuliette (53:01.716)
+N'importe quoi.
+
+David Leuliette (53:10.451)
+Je vois parce que moi j'ai un remote build cache, ok.
+
+Thibault Malbranche (53:13.452)
+c'est leur build cache provider dans Expo, bon ils disent que c'est expérimental mais globalement c'est juste d'upload un zip sur leur serveur, donc c'est pas non plus si dangereux que ça. Et donc tu les vois après dans ta liste de build Expo, vois que t'as des builds qui viennent, t'as ceux qui ont été générés par ES, tous nos builds de release, je leur délegue, mais tous nos builds de dev, pour l'instant je les build encore en local. Alors ce que je pourrais faire c'est quand je fais un commit, quand je fais un commit, automatiquement, en plus de build mon truc de release, je pourrais build celui de dev en parallèle pour l'équipe.
+
+pour l'instant je le gère à la main, c'est des détails pour l'instant ça fonctionne bien les gens sont contents ils peuvent lancer leur app iOS et Android en 20 secondes avec leur serveur qui tourne c'est... ouais franchement... suffisant
+
+David Leuliette (53:55.603)
+C'est quoi tes cinq librairies que tu recommandes en REC Native ?
+
+Thibault Malbranche (54:03.39)
+en rtnative ou en JavaScript.
+
+David Leuliette (54:05.267)
+Ouais les deux, on peut faire les deux, on va faire les deux. Même si ça n'a pas un truc que j'avais à ce cap, genre moi, YouTube DL en piton, génie.
+
+Thibault Malbranche (54:14.06)
+J'aime beaucoup, j'ai deux libraires autour TypeScript que je commencerai par recommander. C'est les deux qui me viennent en tête, qui aident un peu. Il a TypeFest qui rajoute plein de utility types qui sont très très cool. que TypeScript en a pas assez. Il y a plein de trucs. Quand tu fais du TypeScript un peu poussé, que tu aimes bien et que tu une code base où il a aucun any etc.
+
+tu as besoin d'avoir deux trois alliés, Typeface te donne quelques alliés et par dessus on utilise TS Pattern qui est libéré de Pattern Matching basé sur TypeScript et globalement imaginez que c'est des EFels boostés aux hormones qui vous permettent de faire des EFels sur le type de vos objets et de réagir en fonction de ça dans la fonction de manière safe et je trouve ça vraiment très très cool parce que ça permet de faire du code qui est...
+
+qui est beaucoup plus clair et de respecter TypeScript proprement. ça c'est mes deux premières Liguries TypeScript oriented, mais que je trouve assez cool au jour le jour. Ouais, TS-Pattern.
+
+David Leuliette (55:22.098)
+L'autre c'est TSPatern t'as dit ? Ok la première j'avais vu Sindrosaurus Je connaissais pas ce gars là faut aller voir son github et pleurer Il fait deux trois trucs exactement, il fait deux trois trucs sur les internets Ok cool
+
+Thibault Malbranche (55:32.05)
+Fait 2-3 trucs ouais.
+
+Thibault Malbranche (55:40.781)
+Voilà, ça c'est les deux premières que j'ai. Et je trouve que ça se combine très très bien avec GraphQL. Parce que, imagine, t'as ton back... Alors nous on a arrêté d'avoir des... On n'a plus d'erreurs back... d'erreurs... Genre dans Apollo, on voit pas des erreurs. voit des objets, enfin des résultats, de type erreur. C'est très différent. C'est à que tu prends pas une 400 avec, il ça qui pas marché, tu prends une 200, et dans le type name de ton retour, tu vas avoir une note found d'erreur, etc. Donc tes erreurs sont typées.
+
+C'est la grosse différence que tu peux faire avec GraphQL. L'intérêt de ça, c'est que si par-dessus, en fonction de ton résultat, tu vas dire si je suis dans ce cas-là, je réagis comme ça, si je suis dans ce cas-là, je réagis comme ça. Et à la fin, ce qui cool avec tes patterns, que peux lui dire, vérifie que j'ai bien traité tous les cas. Imagine ton backend rajoute à une nouvelle type d'erreur. Ton front ne bille plus. Tu sais instantanément que ce n'est pas compatible. Tu sais instantanément que tu dois fixer quelque chose. Dans toute ta code base, tu sais que tu es safe à 100 %.
+
+avec ce genre de libraire. Donc ça c'est vraiment cool.
+
+Thibault Malbranche (56:44.396)
+Donc ça c'est les deux livres à écrire pour du TypeScript. du React Native, ça me fait un peu chier de rester dans les Basics, dire reanimated comme tout le monde, etc. Je réfléchis, je veux avoir ma liste de dépendance et je vais lire ce que j'ai. Parce que franchement, je pourrais vous redonner les Basics que tout le monde a mais c'est pas vraiment rigolo.
+
+David Leuliette (57:02.502)
+et
+
+David Leuliette (57:07.633)
+Bah c'est ça, moi j'ai dans mes stars, comment on fait pour retrouver les stars ? Maestro, bah oui, j'avais pas mis de stars, oh là là ! Maestro que j'utilise...
+
+Thibault Malbranche (57:17.516)
+Mm-hmm.
+
+David Leuliette (57:30.545)
+et euh...
+
+Thibault Malbranche (57:30.838)
+si, j'en ai une qui me vient en tête immédiatement, qui pour moi je ne comprends pas pourquoi elle n'a pas été plus connue et pourquoi il a pas tout monde qui s'en est servi, c'était Reignitiv Fast Shadow. C'est une libraire d'Alan. On aime bien les français qui font de la tech, très cool. Ils ont sorti Fast Shadow, est globalement des Shadow versions iOS mais sur Android, sans aucun problème de performance.
+
+David Leuliette (57:47.002)
+Big up à Alain.
+
+David Leuliette (58:00.758)
+ok oui je vois.
+
+Thibault Malbranche (58:03.084)
+En fait, vu qu'Android n'a que l'élévation, nativement, pendant des années, si tu voulais faire des shadows jolis sur Android, tu étais cuit. Soit tu mettais de l'élévation, soit tu faisais des SVG, soit tu faisais des trucs affreux, mais les performances étaient démolies. en fait, avec native face shadows, ils ont fait une implème et ils expliquent tout leur algorithme, tout leur truc, et c'est super cool. Et en vrai, ça n'a aucun impact sur tes performances. Il y a un jour où j'ai trouvé cette livrairie, pure hasard, et je leur ai dit, mais pourquoi vous n'avez pas communiqué dessus ? Un peu plus genre, c'est...
+
+C'est un peu game changer. À l'époque, c'était un peu game changer parce que ton designer, il comprend pas que tu puisses pas mettre une shadow globalement. Et moi, je déteste. Ça, c'est un objectif que je me donne. Je veux jamais que la tech soit un frein, quoi que ce soit dans la boîte. Donc je leur dis tout le jour, je vais trouver une solution et ils savent que si je leur dis finalement, c'est pas possible, ils savent que j'ai vraiment, j'ai tout retourné et c'est l'avantage. se fait confiance. Maintenant, si je leur dis non sur un truc, sont en mode, c'est sûr que c'est pas possible ou que ça va avoir trop d'impact.
+
+David Leuliette (58:34.225)
+Ouais, c'est ça.
+
+David Leuliette (58:53.453)
+Poncez le truc ouais.
+
+David Leuliette (59:00.753)
+Ha ha ha
+
+Thibault Malbranche (59:02.252)
+Une fois que j'avais ça, les shadows s'étaient réglés, la librairie ne pèse rien, elle n'a jamais eu de mise à jour parce qu'elle fonctionne super. Et React Native a beau avoir sorti les shadows nativement récemment, c'est que à partir d'une certaine version Android. Donc, Fast Shadow fonctionne toujours sur toutes les versions. Donc, tant qu'on n'a pas dropé les versions qui ne pas supportées par React Native, on utilisera Fast Shadow et big up à eux parce que franchement elle est trop cool cette librairie.
+
+David Leuliette (59:20.761)
+C'est ça.
+
+Thibault Malbranche (59:31.777)
+et je continue de la partager quand je la croise. celle-là elle est vraiment bien. À l'époque, je ne l'ai pas connue, mais MMKV ça change un peu quand même ta vie si tu utilises encore la Sink Storage. Je me souviens à l'époque il y avait Delibriary et MMKV qui se faisaient la guerre, avait celle de Mark et celle de quelqu'un d'autre. Et finalement je pense que celle de Mark a gagné. Il y avait MMKV Storage et MMKV. Et le marketing...
+
+David Leuliette (59:54.291)
+Ouais. bah c'est le marketing, ça de toute façon la moitié du succès des projets open source c'est le marketing, il n'y pas de débat en fait.
+
+Thibault Malbranche (01:00:00.717)
+Et ce qui est rigolo, c'est que MMKV, c'est la première librairie, je pense, que j'ai croisé de marque. Et du coup, à l'époque, c'est moi qui ai dit, faudrait l'inviter sur le Discord, Faudrait l'inviter sur le Discord des corps contributeurs. pense que ce type là a l'air de faire des trucs cool. Quand je vois ce qu'il fait quelques semaines plus tard, je me dis que c'était un bon call. je suis un peu content.
+
+David Leuliette (01:00:19.695)
+Alright
+
+David Leuliette (01:00:23.759)
+Bon ouais, vos goûts de bête, j'avoue, j'avoue.
+
+Thibault Malbranche (01:00:28.446)
+À l'époque, j'avais eu deux personnes en même temps que j'avais voulu inviter. y avait Marc et y avait la personne qui faisait Moti, je Je sais plus si c'est Fernando peut-être ou je sais plus. Mais bon, c'était deux trucs qui m'avaient un peu marqué dans les libraires que j'avais croisés. Après, moi j'aime bien toutes les librairies de Mathieu Zountek, donc Permissions, Edge to Edge, Boot Splash. Ça me surprend pas. Ça me surprend pas. Il fait plein de trucs cool et il est super smart.
+
+David Leuliette (01:00:36.719)
+Faire un endo ouais,
+
+David Leuliette (01:00:49.355)
+Oui, on a fait un épisode spécial si ça vous intéresse. Ouais, ouais, ouais, si, a plein.
+
+Thibault Malbranche (01:01:00.123)
+C'est un de nos meilleurs devs, Reign of the ultra chouette. Gros shout out. Il fait plein de trucs bien. Après, tous les classiques, du Reign the Et tous les copains. Face Shadow, elle est très bien. Globalement, les expos fonctionnent plutôt bien.
+
+David Leuliette (01:01:06.671)
+Carrément. Carrément, carrément.
+
+Oui ça après de façon y'en a plein mais celle-là, le face shadow, ne connaissais pas du tout, j'avais jamais entendu parler.
+
+Thibault Malbranche (01:01:25.43)
+Et voilà, et puis on n'a pas tant que ça d'autres dépendances. Je t'aurais bien dit flashlist à l'époque, mais je sais plus si c'est le truc du moment à annoncer, vu qu'apparemment il faut passer sur les Gen list. bon, écoute, je me dis que je testerai quand j'aurai des problèmes de performance avec l'une ou avec l'autre. Pour l'instant, en fait, je trouve que ça va être une controversial take, mais je trouve qu'une flatlist à l'époque, si tu...
+
+David Leuliette (01:01:25.559)
+Yes.
+
+David Leuliette (01:01:34.697)
+Avec les listes,
+
+David Leuliette (01:01:42.561)
+Non mais, c'est ça. Ça on adore les...
+
+Thibault Malbranche (01:01:54.539)
+Faisais les maths pour l'optimiser. Toi même, c'est à dire que tu donnais ton layout. Je parle pas dans le cas où tu des items de taille variable, mais assez peu d'apps ont des items de taille variable. En tout cas, nous on en avait pas. Si tu prenais le temps de bien la set-up, ça marchait déjà plutôt pas trop mal. Flashlist a préparé ce problème pour les trucs qui des tailles variables. Et globalement, LegendList est arrivé et a utilisé les nouvelles possibilités de Rack 19 pour le faire en flou JavaScript. Et du coup, Flashlist a fait, ouais, vous le faites comme ça, bon on sort la V2 et on fait pareil.
+
+J'ai pas un avis très fort sur l'utilisation de la librairie A ou la librairie B. Tant que votre app blague pas, c'est bon pour
+
+David Leuliette (01:02:32.943)
+Tant qu'elle est en prod, c'est bien. Est-ce que tu as eu d'anédocte sur un moment difficile dans le dev de Brigade et comment vous l'avez géré ?
+
+Thibault Malbranche (01:02:34.796)
+Si c'est un prod et que ça lag pas, pourquoi changer
+
+Thibault Malbranche (01:02:48.564)
+Des difficiles dans la vie de Brigade, des challenges on en a tout le temps. C'est une boîte qui est très intéressante quand tu bosses là-bas parce qu'on vient toujours te challenger et t'as toujours des trucs à faire donc ça t'es sûr de pas t'ennuyer. Est-ce qu'il a un truc qui me marque particulièrement en difficulté ?
+
+On aime bien se lancer des grosses migrations et des gros refactors un peu en mode... Faut pas que le user s'en rende compte. Et en général, on s'en sort pas si mal sur faire des grosses bascules de trucs en prod. Mais on n'a pas de gros challenge hardcore parce qu'en fait on cherche à ne jamais se mettre dans des tunnels qui vont prendre un mois ou deux de devs et à pas release. Donc en général, on sort les choses de manière assez graduelle. Et comme je disais, on fait plusieurs releases par jour.
+
+On utilise avant code push maintenant avec ce point update mais c'est la même chose. Juste pour que nos users lancent là puis qu'ils soient à jour en permanence et tout se passe bien. du coup, vu qu'on a tendance à fragmenter beaucoup ce qu'on release, je dirais que le gros challenge chez Rosk repose beaucoup dans le back-end sur la partie connexion à la bonne personne, algorithmie et beaucoup de choses et beaucoup de logique qu'il a par derrière.
+
+chez Roske va y avoir des gros challenges d'automatisation legal, c'est à dire tout ce qui est gestion des contrats, gestion des choses dans tous les sens. Et ça, c'est des vrais challenges techniques parce qu'on va devoir se plonger sur des API moyennement rigolotes. Moyennement rigolotes on dirait. Mais en fait, une fois que tu as fait ça, tu as créé une plateforme qui permet de faire des trucs trop cool. Et le seul challenge, c'est de s'amuser à faire des jolies interfaces et des features qui vont aider les gens. Et du coup...
+
+David Leuliette (01:04:28.052)
+Dégueulasse.
+
+Thibault Malbranche (01:04:43.436)
+Je te dirais qu'on aime bien se mettre dans la merde et se lancer des gros challenge takes, donc en général on va perdre une journée ou deux sur des animations par ci par là, sur des choses. Mais à côté de ça, on est content de ce qu'on fait et on n'a pas de giga galère. Je te dirais bien, les seules fois où la prod est tombée, c'est la DB qui n'arrive plus à tenir ou un truc qu'on n'a pas vu qui s'est rempli et qui fait un effet cascade dans l'infra des choses. Mais ça arrive rarement et on monitor les choses et on apprend de nos erreurs, donc on ne refait pas surtout.
+
+David Leuliette (01:05:13.165)
+Ouais du coup, vous avez eu un effet TF, genre d'un coup, tu sais pas, de où ça vient, et paf, t'as un pic !
+
+Thibault Malbranche (01:05:19.084)
+On n'a pas eu... Tu veux dire à quel niveau ? Un pic de quoi ?
+
+David Leuliette (01:05:23.373)
+Un pic, d'un coup, y a beaucoup plus de personnes qui s'inscrivent parce que...
+
+Thibault Malbranche (01:05:30.38)
+On a pris des Russes, ça nous est arrivé, qui se spament ton inscription. On a pris des gens qui utilisent nos OTP pour se faire de la thune. On a pris un peu tout. Rien qui ne se gère pas. On a un DevOps qui nous fait une infra, qui gère notre infra aux petits oignons.
+
+David Leuliette (01:05:32.094)
+Et ça...
+
+ok, ok.
+
+David Leuliette (01:05:42.093)
+...
+
+David Leuliette (01:05:47.597)
+Comme toutes les boîtes
+
+Thibault Malbranche (01:05:57.805)
+qui tu peux demander un peu n'importe quoi, il est passionné par ce qu'il fait et on est une infra qui est ultra stable et son but dans la vie c'est d'essayer de réduire les coûts tout en augmentant la stabilité et les performances et il fait un gros gros taf là dessus et franchement c'est très agréable parce que c'est des problématiques sur lesquelles on n'a pas besoin de se pencher grâce à lui et on peut lui faire confiance et donc en vrai avoir un bon devop dans la boîte ça fait vraiment plaisir.
+
+David Leuliette (01:06:22.605)
+Si ça vous intéresse, vous recrutez en plus en ce moment, je mettrai l'offre dans les notes de l'émission. Et le code vous mettez, que vous avez postulé grâce à podcast et du coup Thibaut sera incentivé à lire le CV.
+
+Thibault Malbranche (01:06:31.254)
+Ouais en ce moment on...
+
+Thibault Malbranche (01:06:43.82)
+Tu rigoles mais si quelqu'un a eu le courage d'écouter déjà 1h20 de podcast, sais que ça filtre déjà beaucoup de CV. Aujourd'hui on recrute sur des front, sur des gens qui ont de l'XP avec Rack Native. En fait on cherche des gens qui vont être autonomes pour que leur files un design et ils sont capables de challenger.
+
+David Leuliette (01:06:50.441)
+Une heure, une heure c'est bon, c'est c'est bon.
+
+Thibault Malbranche (01:07:11.244)
+remettre en cause des trucs, proposer des nouveaux trucs et l'implémenter quoi de A Z. Donc ça veut dire que tu as l'habitude de bosser avec d'autres gens. Donc c'est des profils un peu plus hauts que Junior, va être des profils assez confirmés sur du 4andxp ou des choses comme ça à peu près. tous les profils qu'on leur intéressants, on les regarde et on échange avec eux. Et globalement là aujourd'hui on a un dev qui s'en va parce qu'il veut partir vivre à Cognac et il être en full remote.
+
+On que nous on a une super dynamique d'équipe qu'on veut essayer de garder sur place. Lui il a réussi à trouver un taf dans une boîte full remote et il est super content. On super content pour lui et du coup on cherche quelqu'un globalement pour le remplacer.
+
+David Leuliette (01:07:54.924)
+Et du coup, selon toi, qu'est-ce qui devrait connaître le mec qui applique chez vous ? En technique de debug du Rack Native. Qu'est-ce qu'il devrait savoir ?
+
+Thibault Malbranche (01:08:00.937)
+En techno ? En quoi ?
+
+Thibault Malbranche (01:08:11.116)
+faire des consoles log dans tous les langages ? Non mais en fait, oui tu rigoles mais surtout dans Xcode tu vas pas faire un console log, donc... Je pense qu'on cherche des profils qui vont pas avoir peur de creuser. Moi la personne qui s'en va là c'est une personne qui avait énormément fonds sur le mobile et qui était autonome sur Xcode, Android Studio, faire des choses comme ça. Après je pense que c'est des choses qui s'apprennent dans tous les cas, on cherche vraiment des profils qui sont
+
+David Leuliette (01:08:14.604)
+Dans tous les langages, c'est bonne réponse. Non mais non, je sais ! C'est ça, c'est ça.
+
+Thibault Malbranche (01:08:41.864)
+qui sont on va dire smart dans la manière d'approcher les problèmes, c'est à qu'ils vont pas être perdus face à de l'inconnu et qu'ils vont pas hésiter à discuter et qu'ils vont pas hésiter à se challenger. du coup, en général, c'est quelque chose qui vient quand tu as un peu d'expérience et que tu as fait plusieurs trucs, tu es un peu moins perdu. début, on commence tous en mode baby, en mode merde, j'ai peur de mettre, j'ai pas mis les mains là dedans, je sais pas comment débuguer ou alors t'as pas encore l'habitude d'utiliser les outils. Là, idéalement, on cherche quelqu'un qui a.
+
+David Leuliette (01:08:51.104)
+Ouais, c'est ça.
+
+Thibault Malbranche (01:09:07.826)
+déjà un peu d'habitude, peu de truc, qui peut avoir un peu d'autonomie. veut pas dire que la personne sera toute seule, elle va bosser avec nous tous les jours et on pourra discuter tous les jours. vois, c'est pas le problème, mais pas là. Mais on quelqu'un qui est déjà, qui soit déjà pris des murs pour venir s'en prendre avec nous. On va continuer de tous prendre des murs. Moi, je me prends des murs tous les jours. Personne, personne ne code et essaie de tout faire. C'est impossible. La question, c'est comment tu réagis face à des problèmes? Et je pense que en vrai, je pense qu'on fournit plutôt un assez bon environnement.
+
+David Leuliette (01:09:30.054)
+C'est ça. Exactement.
+
+Thibault Malbranche (01:09:37.965)
+d'accompagnement et de brainstorming et de cerveau et de trucs pour résoudre ce problème. exemple, dans React Native, j'ai une boîte à outils qui s'appelle pouvoir MP n'importe qui, qui a fait la librairie. ça, c'est un peu un cheat code, mais mine de rien, ça aide beaucoup. Et à côté de ça, on a plein de gens ultra smart dans l'équipe qui vont se poser avec toi et qui vont discuter. On cherche des gens qui en veulent. Globalement, c'est un peu ça l'idée, il faut avoir un peu d'experts et faut en vouloir, il être motivé.
+
+Là je pense que les six prochains mois, voire la prochaine année de la boîte vont être assez intenses et assez fun. Donc on cherche des gens qui ont envie de se chauffer et de rejoindre la boîte dans cet état d'esprit là.
+
+David Leuliette (01:10:19.221)
+Et euh... ça paraissait marrant ce que tu disais. Moi j'ai découvert cette semaine que... virgule... Donc quand tu mets un... T'as un champ text input. T'as un champ text input. Donc tu mets un float, donc 0.1. Et ben sur iOS c'est une virgule et sur Android c'est un point des fois et ça fout la merde. Alors que j'ai bossé dans un truc crypto.
+
+Thibault Malbranche (01:10:28.524)
+et
+
+Ok.
+
+Thibault Malbranche (01:10:43.404)
+Ça dépend de la locale, non ? Peut-être ?
+
+David Leuliette (01:10:46.314)
+Ouais ouais, ça dépend de la locale en fait, j'ai découvert ça ou j'ai redécouvert ou alors je l'ai carrément oublié de mon cerveau. Parce que là pareil, là la pays elle est un peu, on va dire qu'elle est très nulle pour pas dire pire et du coup ça prend pas en compte tout ça. Et à l'époque quand je faisais justement de la crypto c'était du GraphQL et les chiffres c'était des numbers tu vois et on rendit de la currency l'affichage.
+
+Thibault Malbranche (01:10:52.556)
+ça arrive.
+
+David Leuliette (01:11:16.01)
+du coup euh... ouais... euh... c'est bon... ah c'est... c'est... ah oui bah du coup...
+
+Thibault Malbranche (01:11:16.924)
+Ne me parle pas des virgules en JavaScript. Comme on affiche des salaires et des trucs, je t'assure qu'on s'est pris la tête. On s'est pris la tête. On est allé lire la loi sur ce qu'il faut faire quand t'as des arrondis pourris que tu peux pas les gérer et machin. C'est une infamité. J'avoue, si y'a un truc qui pas cool, c'est vraiment de diviser un truc par trois en JavaScript. En fait, globalement, diviser en JavaScript, c'est une erreur. Si tu dois diviser, c'est que t'as un problème dans ton code. C'est la merde.
+
+David Leuliette (01:11:29.652)
+Ouais.
+
+David Leuliette (01:11:38.885)
+C'est ça !
+
+C'est ça. Exactement. C'est ça, bonne réponse. En travaillant avec Rack Native, qu'est-ce que tu as appris sur le développement logiciel en général ?
+
+Thibault Malbranche (01:11:45.258)
+Faut diviser au moment de l'affichage et c'est tout. Si tu divises dans tes calculs avant, t'as perdu.
+
+Thibault Malbranche (01:11:57.037)
+J'ai appris à creuser dans toutes les situations les plus affreuses, débugger des bugs qui n'arrivent qu'en release sur une app mobile globalement, s'appelle regarder tes pixels et essayer de comprendre en fronçant les yeux. Quand t'as pas accès au tooling c'est compliqué, je pense qu'aujourd'hui j'ai plus peur de débugger quoi que ce soit après ce que j'ai suivi. Quand tu dois transitionner entre les langages et entre les machins et les trucs.
+
+à l'époque où tout était asynchronous au travers du bridge et que tu devais réussir à cacher ce qui se passait mais du coup comme tu étais en debug bah ton bug n'arrivait pas, des choses comme ça. Ça fait réfléchir, le Dev Mobile c'est plein de challenges et c'est cool parce que c'est très complet. C'est très complet et il a beaucoup d'espace pour faire des trucs cool et des trucs nouveaux. Donc je pense que ça m'aura formé là dessus. Après je continue tous les jours d'essayer des nouveaux trucs. Dans la boîte je suis le lead sur la partie mobile mais...
+
+J'aime aller faire chuter le back-end, j'aime aller poser des questions à gauche à droite. En ce moment, j'ai essayé de set-up, voir si je pouvais faire gagner du temps au dev avec un peu d'IA, un peu de trucs, un peu de machin. Je fais beaucoup de tooling, fais beaucoup de choses. Il y a de la place pour faire plein de choses. Et donc après tout ce temps-là de dev mobile...
+
+Je suis toujours... fait, la raison pour laquelle je reste autour du mobile, c'est la passion de l'UX et de l'interaction avec l'écran. ne pas pourquoi, une app qui est fluide sur un téléphone, c'est trop satisfaisant. Comparé sur un site web, vraiment, c'est trop bien. Donc tout ce que je peux faire qui aide l'équipe à faire cette app-là, je le fais. Peu importe la techno, peu importe le besoin, peu importe quoi.
+
+David Leuliette (01:13:23.912)
+procure de la joie.
+
+David Leuliette (01:13:37.768)
+Et comment du coup quand entre deux releases de Ragnative Core est-ce que tu te formes ou juste suivre le train ? Conduire le train ? Ouais comment tu restes à jour tu tiens... Ouais.
+
+Thibault Malbranche (01:13:48.684)
+Tu dire comment je reste à jour ? Comment je reste à jour de ce qui se passe ?
+
+Et deux trois newsletters, si tu as encore un compte sur Twitter et que tu suis deux trois personnes, tu vois à peu près ce qui se passe. Je pense que j'ai dit ce week in react, il doit popper, mais globalement, moi je traîne sur Reddit, traîne sur un peu tout. Je les vois les news.
+
+David Leuliette (01:14:01.82)
+C'est lesquelles les newsletters ?
+
+David Leuliette (01:14:12.904)
+C'est vrai que Reddit ça on en pas parlé, c'est le premier, je crois que t'es le premier qui en parle aussi, ou peut-être que j'en ai parlé, je sais plus. Reddit c'est sous-côté hein. C'est...
+
+Thibault Malbranche (01:14:18.156)
+Le rédite Ragnative, si tu mets de côté tous les messages qui parlent de Ragnative versus Flutter, globalement il est fine. Il y a un peu de lag sur quelques annonces mais il a deux trois questions un peu intéressantes. Bon deux fois j'aime bien mettre des petits commentaires par ci par là sur d'autres trucs. Quand les gens posent des questions ou je sais que j'ai la réponse, j'hésite pas à mettre. Ça manque, mon Twitter de l'époque me manque quand j'avais que des gens tech dans mon fil et pas de pub et pas de trucs.
+
+David Leuliette (01:14:24.961)
+Ahahahahah
+
+David Leuliette (01:14:46.601)
+Ouais, ouais.
+
+Thibault Malbranche (01:14:47.372)
+J'y pas retrouvé ça ailleurs. J'ai des discords. Bon, tu suis sur le Discord d'Expo de Software Mention, de Callstack, de machin, de Bidule. Ça suffit à me donner pas mal d'infos. Et en fait, je suis un psychopathe dans la mise en jour des dépendances, donc je lis tous les changelogs de tous les librairies qu'on a. Comme je sais tous les comiques qui sont basés sur toutes les librairies qu'on utilise, bah en fait je sais ce qui se passe. Regac Native en général, je vois pas mal de discussions, pas mal de trucs.
+
+David Leuliette (01:15:05.106)
+Ouais c'est
+
+Thibault Malbranche (01:15:16.568)
+Donc je suis dans des points de synchronisation avec des devs de chez Expo, de chez Meta, de chez Microsoft. Donc j'ai accès à des infos qui font que je peux anticiper d'autres trucs. Après, il n'y a plus grand chose à anticiper de nos jours. franchement, la douane d'architecture est sortie, c'est stable, tout est tippé, tout est rapide. Il reste deux, petits trucs à régler, mais on est quand dans un monde où c'est cool de faire du mobile.
+
+David Leuliette (01:15:44.069)
+oui c'est quand même beaucoup plus simplifié... Ouais c'est clair !
+
+Thibault Malbranche (01:15:50.189)
+Moi j'ai très rarement souffert des updates de Arachnative. Une fois que tu sais ce qui se passe réellement, peut te prendre un peu de temps et des fois tu peux pas mettre à jour mais t'es pas en train de souffrir. Tu sais juste que tu peux pas mettre à jour. Je me suis jamais pété le nez en mode j'essaye d'update et je passe une semaine et j'arrive à rien. Ça, c'est que je jamais arrivé. Les librairies, les gens qui font de l'open source font quand même un gros, taf.
+
+David Leuliette (01:16:01.955)
+Ouais, et c'est pas Instante non plus, c'est ça.
+
+Thibault Malbranche (01:16:18.38)
+Un truc qui a beaucoup changé au fil des années c'est la qualité et l'exigence que les gens mettent sur ce qui est fourni en open source dans les custom ragnatives. Maintenant il y quand même des librairies qui sont vraiment vraiment cool et vraiment vraiment bien maintenues avec beaucoup de tests, beaucoup de choses et qui testent en fait beaucoup de librairies maintenant que ce soit expo ou software mention ou autre, test de build sur chaque commit qui arrive sur ragnatives ou sur chaque nightly au minimum. Donc en fait
+
+Tu sais que la librairie fonctionne, vois là toutes les librairies sont déjà prêtes pour la 0.80 qui est sortie, donc que personne n'utilise, parce que les gens sont sur les EK53 globalement. Mais tout est mis à jour en permanence et tu sais un peu ce que En suivant ça, tu sais les enmerdes qui se passent. Moi, vu que je maintiens une librairie, si je sais qu'il un truc qui va affecter des librairies, je serai au courant.
+
+Voilà comment je me tiens un jour. Après je discute, a des que je rate et que des gens me montrent. Tant pis j'ai raté et puis voilà.
+
+David Leuliette (01:17:12.625)
+on peut pas tout voir, impossible exactement c'est quoi ton setup ou tester comment chez Brigade sur tous les téléphones en Android
+
+Thibault Malbranche (01:17:14.023)
+Non, c'est dur de tout voir.
+
+Thibault Malbranche (01:17:24.332)
+Ça se passe sur tous les téléphones. J'ai un Android, il a un autre Android qui traîne dans le bureau. On a un iPhone 6S et les gens ont des iPhones.
+
+David Leuliette (01:17:32.775)
+Ah vous testez encore sur iPhone 6... Ah moi j'ai un iPhone 6 aussi...
+
+Thibault Malbranche (01:17:35.917)
+J'ai envie de dire que plus que j'aime pas jeter des choses qui fonctionnent, cet iPhone s'allume. Voilà. Point. Et il me permet de vérifier les trucs. Tu sais, genre t'as oublié de mettre un petit padding parce que t'as vu une safe array à view et du coup ça t'en a mis un tout seul en bas. le lances sur ton iPhone 6s, tu fais bah c'est collé en bas de l'écran. bah zut, j'ai oublié un padding. Des trucs cons mais en fait à utiliser des devices à la con, tu trouves des trucs des fois.
+
+David Leuliette (01:17:40.471)
+Ouais exactement ! C'est ça, c'est ça, pareil !
+
+David Leuliette (01:17:55.195)
+Ouais, exactement.
+
+Thibault Malbranche (01:18:01.345)
+Dans tous les cas nos ennemis ça restera les Xiaomi et tous ces téléphones qui font n'importe quoi sur Android. Les autres fonctionneront.
+
+Je pense que les Oppo, les Xiaomi, Redmi et tous ces trucs là, j'ai jamais vu de trucs aussi peu suivant les specs d'Android que ces plateformes là. Dans mon top, des trucs qui m'auront bouffé de l'énergie, y aura la gestion des push notifs qui pour nous sont critiques parce qu'on envoie les missions à tout le monde et on a besoin qu'ils les reçoivent. Et la gestion du delivery sur certains devices Samsung, je pense à toi qui ne reçoit pas tes push notifs.
+
+parce qu'il a pas envie et parce qu'ils font de la merde. C'est un peu compliqué, mais on se débrouille comme on peut.
+
+David Leuliette (01:18:48.442)
+Est-ce qu'il a un sujet qu'on avait parlé que tu aimerais aborder ?
+
+Thibault Malbranche (01:18:55.372)
+Franchement on a parlé beaucoup de trucs. mes sujets de cœur c'est l'UX, l'open source, et aider les gens à progresser en vrai franchement c'est... tant que je peux faire ces trucs là dans mon quotidien je suis content, j'ai des choses à pouvoir faire au boulot donc c'est très cool. Par rapport à Arachnative, il a des millions de trucs dont on pourrait parler, a des millions de choses...
+
+David Leuliette (01:19:19.298)
+mais c'est clair, n'importe quel sujet on peut faire dig rabbit hole pendant 3 ans.
+
+Thibault Malbranche (01:19:24.14)
+Tu vois, et c'est rigolo parce que je regardais un peu les anciennes éditions du podcast et il a des moments où j'étais en mode, je vais me rebondir sur ce truc là parce que j'avais des corrections ou d'autres trucs ou des machins ou des choses. En mode, c'est plus à jour, faudrait changer. Et j'étais en mode, tant pis, je reparlera avec quelqu'un d'autre pour chaque fois que je croise des choses. C'est pas très grave. Je te pingrais. Un épisode spécial. Un épisode débunk.
+
+David Leuliette (01:19:42.886)
+Vas-y hésite pas, ping ! À chaque fois tu peux ping ! Tu me ping, je un épisode spécial mais j'aime pas, j'ai plein d'idées, j'ai plein d'idées après faut juste... Ouais c'est ça, débunk de ce que j'ai dit mais après faut exécuter et trouver le temps mais... gérer les clients, plus gérer les comptables que je déteste, suivez-moi sur LinkedIn pour les updates de comptabilité. Tu parlais du X, sinon j'ai découvert Screensdesign.com C'est Mathis qui m'a partagé ça, c'est un peu comme Moblin tu sais pas
+
+Thibault Malbranche (01:20:02.572)
+Mm-hmm.
+
+Thibault Malbranche (01:20:08.662)
+Ok
+
+Ça me dit quelque chose. Ça me dit quelque chose.
+
+David Leuliette (01:20:13.189)
+Je sais si tu connais Moblin, ils prennent des screenshots des apps et en fait Screens Design c'est pareil, ils prennent des screenshots d'apps iOS et après tu peux retrouver hyper facilement genre comment je peux faire un error screen ou un offline ou je sais pas quoi
+
+Thibault Malbranche (01:20:28.588)
+C'est des bons liens surtout à filer à vos designers. Si vous avez quelqu'un qui peut bosser là dessus, c'est quelque chose qui... Le mobile, c'est une compétence à part même pour les designers, c'est pas que pour les devs. L'UX mobile, c'est vraiment quelque chose de très différent. Et trouver quelqu'un qui serait excellent sur iOS et Android, pour moi, serait une pépite. C'est dur, franchement, il y a beaucoup de choses à savoir, beaucoup de choses...
+
+David Leuliette (01:20:33.031)
+ouais, ouais, ouais, j'avoue.
+
+David Leuliette (01:20:43.045)
+Oui, oui, je suis d'accord, je suis...
+
+Thibault Malbranche (01:20:57.172)
+Tu ne t'en rends pas compte en fait à moins d'utiliser les deux tous les jours, tu ne pas savoir ce qui se passe sur la plateforme.
+
+David Leuliette (01:21:01.125)
+Ah ouais,  le truc typiquement, le truc qu'on parlait tout l'heure, la point-vergule, j'ai oublié en fait. En fait sur Android, tu peux afficher le point et où la vergule, et sur iOS, ça n'affiche que la virgule. Et en fait, j'avais zappé, je l'ai certainement vu à jour, et puis à force, je sais plus. Donc euh... ouais. Qui c'est que...
+
+Thibault Malbranche (01:21:15.724)
+Il a trop de choses. Mais même dans la navigation ou d'autres choses, y a tellement de différences d'une plateforme à l'autre. Et quand tu les respectes, fait, ça se ressent au niveau de l'app. Ça se ressent dans le feeling. Donc c'est important.
+
+David Leuliette (01:21:30.399)
+Exactement. Est-ce que t'as une recommandation d'une personne que je devrais inviter ?
+
+Thibault Malbranche (01:21:36.781)
+Si tu as déjà fait Mathieu en France, compliqué en France. n'y a pas des millions de gens qui font de l'open source autour de Racknative en France. Et je trouve ça dommage, trouve que les gens n'en parlent pas assez. Je me souviens à l'époque, j'avais engueulé les gens de chez Bam, maintenant Théo de Haps, parce qu'ils faisaient des trucs et ils n'en parlaient pas et ça m'énervait. J'étais un peu... Vous avez même des trucs open source qui sont cool et vous n'en parlez pas assez. Bon, ici ils font des meet-up, ils font des trucs maintenant, mais...
+
+Mais je trouve que les boîtes ne partagent pas assez ce qu'elles font. Il y a plein de boîtes qui utilisent Racknative. Alain, c'était un exemple, vois, mais il en a plein d'autres. Et en fait...
+
+David Leuliette (01:22:12.079)
+en a pas forcément ça, que je pose 4 là c'est pour inviter tous les gens qui font du Rack Native et voir explorer un peu et il y en a plein en fait. Après c'est toujours pareil, ça demande des ressources et ou du temps et le marketing et...
+
+Thibault Malbranche (01:22:27.656)
+je à la fois d'accord et pas trop d'accord avec toi là dessus je considère pas qu'on soit une grosse boîte je considère tu vois je considère pas qu'on est c'est plus une question de volonté et de se rendre compte des bénéfices que de moyens parce qu'en fait enfin faut donner les moyens aux gens de faire ça mais les moyens c'est globalement juste du temps humain tu vois moi tout le temps que je passe à faire de l'open source je le récupère au centuple quand j'ai un bug sur mon app en prod et en fait si je dois passer
+
+David Leuliette (01:22:31.621)
+Ouais parce que ça se demande... Oui tu le fais quoi.
+
+Thibault Malbranche (01:22:55.26)
+Une heure au lieu d'une semaine à débuguer un truc parce que je peux juste faire un DM à la personne et cette personne elle sait que je fais de l'open source donc elle sait qu'elle va regarder mon truc en priorité elle sait que mon report il est valide etc. Aujourd'hui je gagne un temps fou dans mon boulot tous les jours parce que je fais de l'open source donc en fait la boîte qui a investi du temps sur moi qui fais de l'open source qui m'a permis d'aller faire des confs qui m'a permis d'aller faire des trucs tout cet investissement est largement rentabilisé à la fois pour la boîte parce que du coup je bosse plus vite et je peux débloquer des problématiques et à la fois
+
+Pour mon profil, moi ça me permet d'être épanoui et de faire plein de trucs et donc c'est des manières de garder les gens dans les boîtes beaucoup plus longtemps et de faire en sorte que les gens s'investissent beaucoup plus. Si tu leur donnes un milieu dans lequel ils s'éclatent, c'est trop bien !
+
+David Leuliette (01:23:32.611)
+C'est clair, c'est un unfair advantage de fou. Moi c'est en fait, en vrai c'est pour ça que je suis fré, on sait acheter mon propre matos. Si je veux mettre 400 euros dans un clavier, je peux. Et faire des confs et que je puisse aller un peu n'importe où en conférence, j'ai toujours fait ça et je comprends pas pourquoi les boîtes en général... Je comprends pas.
+
+Thibault Malbranche (01:23:55.871)
+Et en fait, on est d'accord, les boîtes pourraient le faire à moindre coût. Mais fait, c'est juste que les gens, voient de l'immédiat. sont en mode, oui, mais si je lui donne une demi-journée par semaine, peut-être qu'il va pouvoir faire moins de trucs, etc. C'est faux. Les gens, sont contents, ils sont motivés, ils bossent deux fois plus. Je suis beaucoup plus partisan de quand les gens sont contents de ce qu'ils font, ils s'investissent à fond et c'est en leur fournissant des trucs comme ça. Après, par contre, warning, l'open source, c'est pas pour tout le monde.
+
+David Leuliette (01:24:09.706)
+Oui.
+
+Thibault Malbranche (01:24:24.052)
+C'est pas quelque chose que tout monde aime faire et faut pas du tout forcer les gens à faire. y a des moments c'est pas fun, il a des moments tu vas bosser, tu n'auras pas de retour sur ce que tu fais, etc. Par contre, permettre aux gens qui veulent en faire d'en faire, pour moi ça c'est un obrien.
+
+David Leuliette (01:24:26.627)
+pas fun.
+
+David Leuliette (01:24:38.115)
+où est qu'on peut te retrouver à part sur le blog de ReacNative ?
+
+Thibault Malbranche (01:24:45.676)
+mais je vois pas ce que je poste. Il y a une époque je postais mais depuis que c'est X et que le flux est tellement pourri je trouve maintenant. J'y suis, tu peux me suivre sur mon github mais pas grand chose à dire. Si les gens veulent discuter de Arachnative, bah moi je suis sur le... Alors en France je pense que le plus... On a le Slack de Arachnative Connection qui est la conférence qu'on utilise sur laquelle les gens peuvent nous attraper. Tu pourras dropper un lien vers le Slack à la limite.
+
+David Leuliette (01:24:52.867)
+Ouais. Je vois.
+
+Thibault Malbranche (01:25:15.308)
+Je réponds à tous mes messages qu'on fait dessus, on fait presque pas. Je réponds en général quand c'est des gens qui ont des questions, des machins, des biules, je suis content d'y aller et je suis content d'essayer de pousser un peu à créer cette communauté en France. Mais c'est vrai que moi je suis dans des endroits où tout monde parle anglais, c'est soit les Discord des gros trucs genre Expo, soit mon truc de corps contributeur. je suis très dans conférences, très dans meet-up et si les gens veulent parler, en général je suis dispo. C'est plus...
+
+David Leuliette (01:25:43.074)
+C'est ça.
+
+Thibault Malbranche (01:25:45.549)
+quand je reçois le 28ème message sur Twitter de et je fais des cryptos et j'utilise la WebView et dans ce flow là avec Web3 ça marche pas trop parce que j'essaye d'injecter des scripts et blablabla » Je réponds pas. Il a discuté, il discuté tu vois.
+
+David Leuliette (01:25:55.843)
+Alright.
+
+David Leuliette (01:26:01.021)
+bah oui bah c'est trop compliqué. Ouais, ouais, je suis d'accord. J'avoue. Moi c'est Twitter... Ouais c'est n'importe quoi. Moi c'est Flexbox sur Twitter. Quand je vais en confé... En fait c'est ça, sur Twitter j'ai aucune activité et d'un coup qu'il des conférences, paf, mon activité passe à beaucoup. Sur BlueSky, sinon sur GitHub aussi, slash Fakebox. Tous les liens de... Vous retrouverez tous les liens sur wishypity.today slash podcast.
+
+Si vous avez survécu à la fin de cet épisode, n'oubliez pas de mettre 5 étoiles sur Spotify et sur Apple Podcasts, ça revient de la force. Le prochain épisode, c'est vraiment calé et ce sera Kim qui va nous expliquer Odyssey App.
+
+Thibault Malbranche (01:26:34.86)
+toi qui a pas survécu.
+
+David Leuliette (01:26:55.938)
+Là j'ai profité un peu de l'activité que vous aviez pour le niveau recrutement pour caser un épisode mais prochain ce sera ça normalement. Je vous remercie.
+
+Thibault Malbranche (01:27:05.292)
+Est-ce que je voulais dire, hésite pas juste si tu organises des moments où tu veux qu'il plus de gens qui échangent, des mini meet-up, des petites tableaux en discussion à plus de devs, si tu veux que je vienne et que je donne des insights sur des trucs, machins, des fois j'ai quand même des infos en plus ou des bidules que j'adore partager donc hésite pas, hésite pas, on est une test.
+
+David Leuliette (01:27:27.618)
+Ouais cool ! Eh ben merci beaucoup. Ouais non mais j'ai plus le temps en fait. Avant j'organisais des meet-up avec des potes mais c'était plus JavaScript, TGS. Et là bah depuis qu'un enfant bah pas le temps. No time du coup. Pareil, si vous voulez nous capter Thibaut ou Bois, nous on se capte en conférence et puis voilà tu vois. Mais euh... En tout cas c'est noté. Allez les amis, on se retrouve au prochain épisode et jusque là...
+
+Happy hacking, ciao !
+
+Thibault Malbranche (01:27:59.596)
+tout le
+
+David Leuliette (01:28:03.4)
+Hop là, et ben... ça regarder ? Uploading. Nickel ! C'est bon tu vois !
+

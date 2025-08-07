@@ -1,0 +1,1113 @@
+David Leuliette (00:08.588)
+Bonjour et bienvenue sur le Cross Platform Show, le podcast qui parle développement d'applications mobiles avec React Native. suis David, développeur chez Wishy Pee Today. Nous sommes en mars 2025. La température extérieure est de 6 degrés. C'est remonté. Et aujourd'hui, je suis avec Mathieu.
+
+J'ai dit ton nom, je me suis répété ton nom tout à l'heure dans ma tête et là je le vois écrit et je me dis oula Mathieu je te laisse dire ton nom et ton prénom
+
+Zoontek (00:37.966)
+...
+
+J'ai l'habitude de t'inquiètre.
+
+David Leuliette (00:42.588)
+Ouais je me dis... actor noon ! ouais, je savais pas s'il fallait la faire en français ou en anglais. Tu vois, je m'étais dit, est-ce que c'est actor noon, est-ce que... je ne pas. Ok, ok, Mathieu, Mathieu, traumatisé du collège alors.
+
+Zoontek (00:46.67)
+Je vois que vous avez un peu la même conscience. T'inquiètes.
+
+Zoontek (00:58.962)
+Ouais, tous les profs, ça me va là, c'était terrible.
+
+David Leuliette (01:02.892)
+là là là, compagnie, en tout cas je suis ravi de t'avoir, ça fait plaisir. Est-ce que tu peux te présenter succinctement pour ceux qui ne te connaissent pas encore ?
+
+Zoontek (01:09.902)
+Moi c'est Mathieu, simple, mon pseudo un peu partout sur Twitter, Github, c'est ZoonTech. Je suis mantener de quelques librairies ragnatives du style ragnatives localize, boot splash, permission, récemment edge to edge. Je suis actif dans la communauté ragnative depuis...
+
+Neil 15, ça fait 8 ans. C'est sur la toute première version où il y avait le support d'Android, ça remonte vraiment. voilà, coup, dev, enfin, staff engineer chez Swan, qui une startup parisienne qui fait du banking et de service depuis 6 ans.
+
+David Leuliette (01:41.844)
+Ouais on fait bientôt 10 hein, pour tout le monde j'ai l'impression que ça va faire 10 ans.
+
+David Leuliette (02:04.875)
+super super aujourd'hui et donc comment t'allais tomber dans la marmite
+
+Zoontek (02:14.018)
+Alors, ça remonte à un ancien taf. Avant, bossais sur les start-up polys.
+
+David Leuliette (02:18.284)
+Mais avant tes études, c'était quoi tes études que as fait vite fait ?
+
+Zoontek (02:24.11)
+Je vais faire un déuté informatique à Calais. Rien de transcendant. 2009. 2009.
+
+David Leuliette (02:27.812)
+Non, ok Rene. Ok Rene.
+
+David Leuliette (02:34.187)
+Ah mais attends ça tombe euh... Ah bah moi c'était 2007. Ah le truc double ! Ok !
+
+Zoontek (02:40.798)
+bah on est pas loin !
+
+David Leuliette (02:43.691)
+Je savais pas du tout donc oui. t'as eu la même expérience que moi c'est marrant genre... Pas ouf la tech là bas c'est quoi comment comment
+
+Zoontek (02:52.504)
+Non, la décalcéthéline... Mais suite à ça, suis... Dejà, j'ai bossé un petit peu en agence avec des potes et parmi mes tout premiers tafs, j'ai rejoint une startup à Lille qui s'appelait ColliWeb, enfin qui s'appelle toujours ColliWeb, je pense qu'elle existe encore, qui faisait de la livraison du dernier kilomètre. Et on avait une app qui avait été faite par le Stio, était datée, qui utilisait Titanium.
+
+pour ceux qui ont connu, un truc un petit peu légacy que personne n'osait et pouvait toucher, que le code était là, ça tournait miraculeusement, mais si on faisait la moindre modification on n'arrivait même pas à builder l'app. Et c'est à peu près à ce moment là qu'il y a eu les prémices d'OraqNative, donc uniquement iOS, comme je le dis.
+
+David Leuliette (03:24.107)
+...
+
+Zoontek (03:44.622)
+Le livreur était équipé tous d'Android, donc on a attendu un petit peu et dès qu'il y eu la toute première version compatible en Android, genre vraiment la 0.15, on a tenté. On a tenté l'expérience, on a essuyé les plâtres, on mettait à jour tous les 15 jours, il y avait des breakings dans tous les sens, mais au moins on a réussi à faire ce qu'on voulait et on a pu faire passer ce qu'il fut hop.
+
+David Leuliette (04:02.153)
+Ouais.
+
+David Leuliette (04:06.761)
+Ok.
+
+Cool cool et du coup vous allez migrer euh... j'avais déjà entendu parler de ce truc Titanium, j'avais déjà entendu parler de Xamarin, mais Titanium pas du tout. Première version 2010, dernière version 2013. Ok, ouais, ok, ok, Cool cool. Bah on fallait choisir quelque chose tu au bout d'un moment on peut pas savoir... du coup est-ce que tu vas choisir...
+
+Zoontek (04:17.326)
+...
+
+Zoontek (04:26.03)
+C'est vrai ?
+
+Allez vous fouetter
+
+David Leuliette (04:41.258)
+qu'est qui est sorti là ? truc de... Links, est que tu vas choisir Links pour rewrite toutes tes app et ou faire des librairies Links ?
+
+Zoontek (04:43.502)
+Links ?
+
+Zoontek (04:51.157)
+Non, parce que je ne pas super... Tu sais, je sais que d'un coup, on se voit un compétiteur et il a la hype qui explose, mais je sais qu'au final, comme on le disait tout l'heure, tu mets ça en bookmark, tu dis ça a l'air trop cool, et le jour où on va tester, on se dira, ah c'est peut-être un peu jeune quand même.
+
+David Leuliette (04:52.233)
+...
+
+David Leuliette (05:01.866)
+Oui.
+
+David Leuliette (05:09.587)
+Ouais c'est exactement ça. Ok cool, du coup vous avez choisi genre React Native comme ça parce que... Parce qu'il fallait... Ouais ouais tout simplement. Généralement c'est ça, tu fais JavaScript, boum, React Native, tu vois mais en fait ça a l'air très facile à lire ce truc, je lis, je comprends. Ok cool. Trop bien, trop bien. Du coup l'épisode, normalement il est axé sur...
+
+Zoontek (05:13.643)
+pense que c'est marrant à poker.
+
+Zoontek (05:20.878)
+que je faisais du web.
+
+David Leuliette (05:37.598)
+application en particulier. Là, TODAY, vu qu'on a la chance de t'avoir et que tu maintiens plusieurs librairies, on va en parler en même temps. Et du coup, j'ai une première question. Les librairies, tu en as combien là, tu en as actif que tu arrives à maintenir ?
+
+Zoontek (05:53.056)
+Alors des livres réagnatifs purement, parce que j'ai pas mal de livres web aussi, j'en ai cinq.
+
+David Leuliette (06:00.937)
+Ok, 5. Comment tu les fais justement ? Tu utilises Builder Bob, utilises un truc ?
+
+Zoontek (06:07.054)
+...
+
+Zoontek (06:11.508)
+Ouais, j'utilise Bob pour le build de toutes mes libres. C'est hyper pratique en vrai. Merci.
+
+David Leuliette (06:16.005)
+Ok donc pour ceux qui connaissent Spar avec Native Builder... Builder Bob c'est un... c'est un scaffold tout simplement fait par Callstack pour justement mettre tous les trucs chants de plomberie en place genre les changelogs, le bump de version quoi d'autre. La plomberie sur tout le reste.
+
+Zoontek (06:42.606)
+...
+
+David Leuliette (06:46.057)
+Ok, du coup, donc tu as utilisé ce truc là pour Scaffold. La dernière librairie que as en date, c'est laquelle ?
+
+Zoontek (06:53.582)
+Non, fait, parce que ça arrivait plus tard. Vraiment, Mélib, il y a certaines qui sont assez anciennes. Je pense à Localize. Localize, en fait, c'est parti d'une volonté d'ajouter le polyfill. Je sais pas si tu te souviens, mais à l'époque, on avait Navigator.geolocation, qui était un polyfill de l'API de Geoloc directement dans React Native, avant qu'il le link core et que tout ça dégage.
+
+David Leuliette (06:58.235)
+ça arrivait plus tard !
+
+David Leuliette (07:14.217)
+Ouais.
+
+Zoontek (07:18.446)
+Du coup, y avait une volonté d'ajouter le polyfile de Navigator.Languages, histoire de pouvoir traduire tes apps en utilisant les préférés de language listés du device. Et à l'époque, la team Rack Native avait dit qu'on comprend le besoin, mais on était hésitant à ajouter des trucs dans le corps, parce que ça commence à faire beaucoup. Du coup, c'est...
+
+David Leuliette (07:42.633)
+Exactement, déjà.
+
+Zoontek (07:46.286)
+une libe et c'est comme ça que j'ai créé ma première libe donc RackNative Localize en 2017 et à l'époque Bob n'existait pas donc le scaffolding a été fait à la mano, j'irais mes builds à la mano et depuis que Bob existe je m'en sers uniquement pour gérer mes builds parce que on va dire j'ai mon organisation de code pour mes librairies que je duplique partout et ça fonctionne très bien j'ai pas forcément envie de refacturer cette part
+
+David Leuliette (08:10.727)
+Ok.
+
+David Leuliette (08:16.355)
+Ok, ok. du coup, qu'est-ce que j'allais dire ? Combain de temps ça t'a pris à faire la première version ? Genre maintenant, va dire, ouais, combien de temps ça t'a pris à l'époque ? À peu près pour sortir la première version. Tu te rappelles ou pas ?
+
+Zoontek (08:28.45)
+euh... Alors pour... Ouah, j'ai pas trop d'idées, je me souviens, j'avais bossé quasiment une semaine sur juste l'APR pour la code base de Rack Native. Parce que j'avais aucune connaissance, que ce soit en Java ou en Objective-C. Et donc, bon, Objective-C, je sais pas si t'as déjà eu l'occasion d'essayer, mais au début... Voilà.
+
+David Leuliette (08:41.799)
+Ouais.
+
+David Leuliette (08:52.781)
+Oui, moi je fais déclarer des variables objectifs, c'est déjà bien.
+
+Zoontek (08:57.126)
+Au début, les concepts sont tellement différents de toutes les autres langages de programmation que tu peux trouver que tu perds beaucoup de temps à comprendre la syntaxe et les concepts. Ce qui fait que la première fois, j'ai dû mettre une semaine pour un truc qui était juste ça retourner un tableau de string.
+
+David Leuliette (09:16.839)
+Ouais bah c'est ça, le truc c'est qu'il faut que ça fonctionne partout sur web, sur Android, sur iOS. Donc là c'est l'objectif C. En fait en vrai maintenant si tu devrais faire le même genre de choses c'est que du Swift et que du Kotlin, c'est ça ?
+
+Zoontek (09:33.998)
+J'utilise encore du Objectif C++ sur mes libs parce que c'est un peu moins chiant. Je dire, j'ai l'habitude et du coup il faudrait que j'apprenne Swift. C'est normal tout doux. Au niveau documentation, aujourd'hui il n'y a pas tellement de docs sur comment écrire des modules en Swift. Ça passe super bien supporté encore par Ragnative. Alors c'est faisable mais du coup...
+
+David Leuliette (09:43.842)
+Ouais, ok.
+
+Zoontek (09:58.836)
+difficile de de la doc et de l'aide là-dessus. Pour le moment, ça reste de l'objectif C++. Par contre, j'ai passé tous mes climes en Kotlin, côté Android.
+
+David Leuliette (10:08.475)
+Ok ok. Et t'as eu le temps de creuser le Nitro ? Ou alors ça rien à voir. Nitro.
+
+Zoontek (10:18.156)
+Ouais ouais non, j'ai eu le temps de creuser, je trouve ça vraiment cool, après en fait de par mon besoin... Ouais. Ouais ouais. Alors, comment dire ça simplement, en fait aujourd'hui... Alors, aujourd'hui en fait, pour écrire des modules ragnatifs, on a ce qu'on appelle les turbo modules.
+
+David Leuliette (10:23.782)
+Donc attends, faut expliquer ce que c'est fait Nitro pour les gens qui savent pas...
+
+David Leuliette (10:33.316)
+Comment expliquer Nitro Modules ? Voilà, c'est pour...
+
+Zoontek (10:45.326)
+ça inclut de base le Rack Native, c'est assez performant et ça va de pair avec un autre concept, s'appelle la CodeGen. En gros, qu'on fait, c'est on écrit des signatures de type, généralement en TypeScript. Il a le Rack Native CodeGen qui passe et à partir de là, ça sort une interface en code ligne et pareil, une interface en Objective-C. Il ne reste plus qu'à implémenter ces méthodes et retourner les trucs qui vont bien. À partir de là...
+
+ça permet de faire du multiplatform assez simplement et c'est assez performant comparativement à ce qu'on avait avant. Surtout sur un point, on peut faire des calls synchrones. Avant, quand on appelait depuis le JavaScript du code natif, fallait forcément que ce soit synchrone. Ça retournait une promesse.
+
+Maintenant, grâce au Turbo module et à la nouvelle architecture, on est capable de faire des codes synchrone où, au sein du JavaScript, on appelle une fonction et c'est le code natif qui répond. Il a pas besoin de faire un ThinkAwait ou de retourner une promesse. Donc ça, c'est la promesse initiale, c'est rempli, ça marche très bien. Là où Marc Roussavie est arrivé avec Nitro, c'est que lui, de part son travail sur Vision Camera, donc Crack Native Vision Camera, qui est un module de caméra,
+
+il avait des besoins de performance qui étaient extrêmement élevés. Parfois il fait de l'analyse d'image directement en temps réel avec TensorFlow, ce genre de choses. vraiment un besoin de perf très élevé. en fait même si Turbomodule c'est assez performant, il trouvait quand même des limites à ses performances, en tout cas pour son cas d'usage. Et donc il a créé...
+
+on va dire une espèce de bridge entre le JavaScript et les traits natifs qui est différent, enfin qui différent, qui se repose sur un truc qui JSIN. Enfin, je n'ai pas envie de rentrer dans tous les détails, c'est un peu compliqué, mais en gros derrière, c'est des modules natifs qui sont plus performants en fait que TurboModule qui est inclus en RAT.NET. Et donc oui, ça c'est pour l'explication, moi perso je ne m'en sers pas.
+
+David Leuliette (12:38.501)
+Ouais non, c'est juste à peu près.
+
+Zoontek (12:53.46)
+parce que ça oblige d'ajouter une nouvelle librairie. Donc si on veut s'en servir, il faut ajouter un natif Nitro Module. Donc toi en tant qu'utilisateur final, tu vas devoir installer ça. Et en fait, pour les librairies que j'ai moi, du coup un splash screen, permission, etc., je n'ai pas cet impératif de performance. Donc les turbo modules me font bien.
+
+David Leuliette (12:57.685)
+ouais, ok.
+
+David Leuliette (13:13.25)
+Ok cool.
+
+cool cool. Du coup tu me disais ouais que tu as quand même une petite app sur laquelle tu testes télibré comment en fait en C'est cette application là
+
+Zoontek (13:29.358)
+Oui, du coup j'ai une petite app, donc là actuellement dans la boîte où je travaille, c'est Swan, c'est la de ma boîte en fait.
+
+David Leuliette (13:33.969)
+Comment elle s'appelle ? Facebook, il teste en prod, je veux dire.
+
+Zoontek (13:43.598)
+C'est une toute petite app, elle n'a pas vocation d'être utilisée. C'est une app de démo sur comment on intègre notre produit dans une app avec des browsers in-app, etc. C'est sur l'app store parce qu'on a des contraintes réglementaires qui nous obligent à le sur l'app store.
+
+David Leuliette (13:58.073)
+ouais, je vois.
+
+David Leuliette (14:06.773)
+trop bien, du coup n'importe qui peut la download en fait en vrai.
+
+Zoontek (14:10.318)
+Après derrière, pense qu'à part si t'es client chez Swan, t'auras aucun intérêt à l'utiliser. Elle est full open source. Il faut juste chercher sur le GitHub SwanIO et il a un repo qui s'appelle Swan Partner Mobile. Comme c'est un exemple d'intégration, on s'est dit quoi de plus simple que juste de donner l'intégralité du code source à nos clients.
+
+David Leuliette (14:14.169)
+Ouais il se passe rien... Ouais... Ouais je vois...
+
+David Leuliette (14:22.944)
+! Et tu... C'est... C'est où alors ?
+
+David Leuliette (14:39.589)
+Bah ouais ouais carrément. Non ouais je savais pas du tout. Je savais que Swan ce qu'il faisait mais j'avoue je savais pas du tout. En en même temps j'ai pas très été regarder. Ok incroyable parce que souvent il a des gens qui me demandent ouais t'as pas des exemples d'apps et tout et en fait c'est très compliqué d'avoir des... enfin c'est pas très compliqué il y en a plein des exemples d'apps open source available mais qui sont utilisés et qui sont en prod voilà ça se compte sur les doigts de la main en fait en Enfin j'ai les listes mais là ouais super en fait en vrai.
+
+Zoontek (15:04.238)
+...
+
+David Leuliette (15:08.375)
+Très bien, très bien. Vas-y, on va utiliser cette rappe-là et comme ça on parlera en même temps des librairies. Du coup, c'est une app de démo pour intégrer un SDK de banque.
+
+Zoontek (15:18.862)
+C'est ça, fait c'est genre comment tu fais pour intégrer la feature de... ton bouton et ça te permet d'ajouter ta carte bleue dans ton wallet. Donc c'est un besoin assez niche, mais ça permet de faire ça.
+
+David Leuliette (15:29.412)
+Ah ouais, c'est déjà bien. coup, niveau... Alors comment niveau data lierre ? Comment tu as organisé ce truc-là ? Est-ce qu'il a des data déjà ? Il y a des data ? Ça va taper...
+
+Zoontek (15:41.614)
+Il y a un petit peu de data, Nous, qu'il faut savoir, c'est que notre API, c'est full GraphQL. on a l'idée de la type safety de bout en bout, on est fan du typage en général. Et donc, au sein de cette app, c'est comme tout le reste de notre infra. On a du GraphQL. Alors là, on utilise URQL, Urkel.
+
+David Leuliette (15:49.252)
+Ah ! Je vous aime déjà les amis ! J'adore Graf...
+
+Zoontek (16:12.53)
+pour State Management et Data Fetching, parce qu'à partir du moment où tu un cache normalisé, n'as pas besoin de te casser la tête avec un Zustand ou autre. Et voilà, du coup, on utilise ça. À savoir que l'appli va être mis à jour dans pas longtemps, parce qu'on a notre propre client GraphQL aujourd'hui. Du coup, on va virer...
+
+David Leuliette (16:22.357)
+Ouais.
+
+David Leuliette (16:34.563)
+Ah vous avez fait un client GraphQL ? Ok.
+
+Zoontek (16:36.686)
+C'est un graphQL client qui répond à nos problématiques de performance parce que comme tu t'imagines une API bancaire complète, le schéma est lourd.
+
+David Leuliette (16:41.955)
+Ok.
+
+David Leuliette (16:52.227)
+sais pas, t'sais, Banxo, ça leur dérange pas d'avoir une app qui est lente as fuck, La caisse des parcs...
+
+Zoontek (16:56.27)
+Oui, je sais. En fait, les clients actuels obligent à avoir l'introspection complète du schéma, enfin bref, de connaître le schéma en entier pour faire certaines choses, notamment au niveau du cache. Et ça ne me fallait pas parce qu'en fait vraiment ça faisait des bundles JavaScript de l'enfer.
+
+David Leuliette (17:17.182)
+de la moireté euh...
+
+Zoontek (17:19.278)
+Et donc, accède notre client qui, au final, a exactement les mêmes capabilities. Par contre, derrière, la résolution du cache normalisé ne se fait pas de la même façon. donc, on peut faire tout pareil, mais avec un fichier qui fait 10 lignes.
+
+David Leuliette (17:35.198)
+Ok, ok, non, parce qu'il y déjà toute la plomberie et la popote entre guillemets fait chez vous quoi. Et en fait, du coup, c'est juste un choix comme ça qui est tombé ou pourquoi vous n'avez pas utilisé Apollo?
+
+Zoontek (17:51.31)
+On a utilisé Apollo au tout début, mais c'est Chez nous, est assez fan de tout ce qui intégration verticale. Absorber le besoin à partir du moment où ça commence à être un pain. Typiquement, on a utilisé Apollo, puis on a utilisé Hercules, puis après on s'est dit, OK, à chaque fois on a des blèmes. Est-ce que je m'en rentrerai pas ?
+
+David Leuliette (17:53.799)
+ok, pareil, ça c'est ce est pas.
+
+David Leuliette (18:11.519)
+Let's build it !
+
+Zoontek (18:13.294)
+En vrai, te dis que c'est chiant parce que tu vas allouer deux semaines peut-être, mais après tu contrôles les releases, contrôles les features et tout. C'est un vrai luxe. Et même si tu es suivi un petit peu les plâtres au début, quand il arrive c'est très bien. coup, a à peu près tout. On a un router Type-Safe, on a une librairie de formulaires.
+
+David Leuliette (18:20.3)
+Ouais.
+
+David Leuliette (18:37.154)
+Ah ouais ok ça y est ! Si si si en plus, est-ce que vous avez un date picker custom ? Non attendez pas, un date picker c'est un... un birthday date picker. Parce que je sais que c'est... Ok, parce que moi j'en peux plus, message à tous les UX designers slash devs.
+
+Zoontek (18:46.018)
+Euh... Ouais, alors nous on a implémenté...
+
+David Leuliette (19:00.994)
+Moi je suis né en 85 les gars, j'en peux plus de scroller à l'infini quand on me demande ma date de naissance et plus ça va avancer plus je vais devoir scroller comme un fou ! Ça rend ça agréé les dates. Ok du coup votre custom client de GraphQL il fait state management et data fetching alors.
+
+Zoontek (19:18.574)
+En fait, tu un cache normalisé aussi du coup, si on résulte de l'animation, il a quelque chose qui a changé, tu spreads le fragment, ça majeures le cache. Vraiment 100 % pareil, tu as les mêmes fonctionnalités qu'ailleurs. C'est juste qu'il fait 3 KOs je crois.
+
+David Leuliette (19:32.418)
+Ouais ok. Et du coup alors pour ce qui est navigation c'est pareil tu as choisi un truc standard avec navigation ou vous avez fait expo router ?
+
+Zoontek (19:42.798)
+...
+
+Alors nous niveau mobile, on va utiliser React Navigation de base. Ça me va très bien. Je ne pas particulièrement fan de expo routers, parce que je ne pas fan des file-based routers. Donc en général, que ce soit sur du mobile ou sur du web. Et sur du web, pareil, on a un router qui s'appelle Shikan, qu'on a depuis quatre ans.
+
+On a essayé des plâtres avec plein de routers différents. À l'époque, un tan stack router n'existait pas. Au bout d'un moment, on s'est dit qu'on allait le faire en interne. C'était au tout début des templates string littérales en TypeScript. Je me suis dit qu'il y avait sûrement moyen de faire un router fullment type safe avec ça. Et voilà, ça vient de là.
+
+David Leuliette (20:20.353)
+Hmm?
+
+David Leuliette (20:30.229)
+Ouais ok, ouais.
+
+David Leuliette (20:41.545)
+Et vous êtes combien chez Swan ?
+
+Zoontek (20:44.59)
+En dev, on a 80 dev, après le gros de tout ce qui va être open source et tout, c'est fait côté front ou en étroit.
+
+David Leuliette (20:55.148)
+Ok ouais mais je veux dire t'as quand même la puissance de frappe pour réfléchir un petit peu. que quand t'es tout seul, généralement je suis freelance, je débarque, c'est panique, c'est le feu, du coup je n'ai pas du tout le temps de « eh les gars on va faire notre propre solution de je ne pas quoi »
+
+Zoontek (21:02.19)
+...
+
+Zoontek (21:07.041)
+oui mais ça tombe,
+
+C'est vraiment plus long terme, tu bosses en free, tu peux pas dire au client « non, maintenant on va prendre une semaine pour concevoir un router custom ». Ok, mais je ne te paye pas pendant le temps.
+
+David Leuliette (21:18.369)
+C'est ça. Après c'est ça, comme ce que tu dit il y a deux minutes. Si tu des besoins custom, en plus une banque tu ne pas une startup qui va potentiellement crash. En plus c'est même pire, c'est une intégration dans d'autres boîtes. Du coup c'est un SDK de paiement. Donc il faut que ce soit available pour les 50 prochaines années.
+
+Ok, canon, canon, canon. Du coup tu m'as dit, niveau styling, avez vos propres styling et UI composant les bruits, généralement tu utilises quoi ?
+
+Zoontek (21:59.791)
+Alors nous on est parti sur Rack Native Web à l'époque, donc au début de la boîte parce que moi j'avais un fort background Rack Native, j'avais fait assez peu de web en comparaison quand je suis arrivé chez Swan et donc je suis parti là dessus parce que c'est quelque chose je connais bien, je pouvais itérer très rapidement avec.
+
+par contre on ne s'en servait pas en multiplatformes. On utilisait Rack Native Web uniquement pour faire du web. On n'avait pas de partage iOS, Android. Avec le temps, forcément, ça a gravement évolué. On s'est permis tout un tas de choses du fait qu'on n'était pas limité à la plateforme. On utilisait des API Web directement, il n'y a pas de problème. Et maintenant, la direction que prend Rack Native Web, avec toutes les choses qui sont un peu des précaits dedans, la maintenance qui est, on va le dire, peu faiblarde.
+
+s'apprête à migrer. on a vraiment migré une grosse partie. Le problème c'est Style Sheet API. Et pareil en fait gros besoin vraiment en termes d'app niveau front il y a quand même pas mal de choses. On s'est dit en fait on va coder l'IBCSS inJS qui soit atomique et qui soit un drop-in. Et qui est un drop-in replacement à Style Sheet API. Du coup on a suenio.css aussi.
+
+David Leuliette (23:05.664)
+bah oui
+
+Zoontek (23:15.022)
+Et pareil, c'est opinionnated, ça fera pas 100 % de ce que va faire un emotion ou autre, mais ça répond parfaitement, et ça va nous faciliter la transition énormément.
+
+David Leuliette (23:29.12)
+Et vous avez fait vos propres... Et vous avez évalué les autres solutions ou pas Ou vous vous dit ouais non on va le faire parce que c'est... De toute façon on fait déjà tout le reste.
+
+Zoontek (23:35.774)
+Bien sûr, on les connaît bien les autres solutions, c'est vrai que nous, nos prérequis c'était, on voulait avoir du CSS atomique et non atomique, donc de l'hybride. déjà, n'y a pas beaucoup de solutions qui l'offrent, savoir vraiment soit tu fais tout l'un, soit tu fais tout l'autre, mais pouvoir faire les deux.
+
+David Leuliette (24:00.027)
+Oui, en a pas tout court.
+
+Zoontek (24:03.566)
+que Native Web te le permet, mais alors c'est une fonctionnalité qui est extrêmement cachée. C'est-à-dire que tu dois mettre un suffix qui est $RO sur le nom de ton style et à partir de là, il ne pas l'injecter de façon atomique. Il faut le savoir, c'est pas documenté.
+
+David Leuliette (24:06.079)
+Ouais. Ouais, ouais.
+
+David Leuliette (24:17.535)
+Je savais même pas, j'avais jamais digué le truc...
+
+Zoontek (24:20.846)
+Le truc c'est que de base, RackNativeWeb te le fait pour les Views, les images et les textes pour éviter les styles de base d'une View, parce que tu en as quand même une quinzaine pour réinitialiser un peu le style d'une Div et tout. Soit genre, ben direct, 15 classes CSS dans ton DOM, c'est pas possible. Donc nous il nous fallait ça.
+
+David Leuliette (24:41.911)
+Je...
+
+Zoontek (24:44.814)
+Et après, une gestion, on a une gestion des over, mais vous rappez dans un Media Query, automatiquement, si ça se supporte, si tu un pointer sur ton device, tu as juste le over, ça évite de le faire partout. Pareil, Focus, c'est un alias vers Focus Visible.
+
+David Leuliette (25:06.335)
+Hmm?
+
+Zoontek (25:07.774)
+Pour tout ce qui gestion du responsive, nous, est parti sur des conteneurs query, donc là, n'est pas encore release, mais en gros, va avoir une intégration des conteneurs query. Et pareil, ça va être un peu malin, ça va dire que les 10 % des browsers, tout sera frappé dans une Media Rules avec un bon petit support conteneur et il y aura...
+
+la Graceful Degradation où tous les browsers qui supportent pas les containers query seront en mode mobile. Et ça nous va, c'est fine.
+
+David Leuliette (25:32.2)
+Ouais.
+
+David Leuliette (25:39.942)
+Et vous faites comment pour tester tout ça du coup
+
+Zoontek (25:43.104)
+Pour tester, utilise Playwright principalement.
+
+David Leuliette (25:47.24)
+Et vous avez ce storybook pour les composants, designer les composants, quoi.
+
+Zoontek (25:50.606)
+On a un storybook, pareil notre système est aujourd'hui open source, il s'appelle Lake, comme Swan Lake. Et si tu veux être sur les tits-up, y a le storybook.
+
+David Leuliette (25:53.672)
+Ok.
+
+David Leuliette (26:05.278)
+Hop là ! Yes, je vais le mettre. swan.io.github.com, on adore. Et en plus, ouais ça va, en plus tu me dis que vous êtes trois dans la team Frontend pour maintenir tout ce truc là ?
+
+Zoontek (26:20.806)
+Et si tu veux un repo d'exemples qui l'utilise, tu vas avoir Swan Partner Frontend, qui en gros, on a toute une interface bancaire, donc un peu l'équivalent de quand tu te connectes chez Bourseau ou autre, vois. Et donc ça, on le maintient. Et pareil, comme à la base, les clients à nous étaient en mode Uruguay, on est au bien customisé, etc., on leur a dit, vous savez quoi, on va tout open sourcer et vous faites ce que vous voulez. Voilà.
+
+David Leuliette (26:28.04)
+Ouais.
+
+David Leuliette (26:44.712)
+Ouais, comme ça c'est plus simple. J'ai remarqué, enfin moi je sais que j'adore de faire de l'open source parce que ça élimine un milliard de questions. Si c'est open source by design, depuis le début, il n'y a pas de question de oui, mais donne-moi les droits, la doc, sais pas tout ça. Moi je trouve que c'est beaucoup plus simple.
+
+Zoontek (26:53.902)
+Bon,
+
+Zoontek (26:58.19)
+...
+
+Zoontek (27:01.678)
+Et puis tu avais un cas qui était assez simple, c'était que tu avais des clients qui étaient en mode genre, bah j'adore tout ça, l'interface bancaire et tout, c'est trop bien, mais nous on a notre design system. Du coup on fait, bah tenez, vous gardez la logique, les queries, le routing, etc. Par contre derrière vous mettez vos composants à la place.
+
+David Leuliette (27:20.67)
+Hmm?
+
+Zoontek (27:21.932)
+plutôt que d'avoir un truc où tu vas bidouiller deux trois curseurs pour avoir un truc qui se rapproche de ton design système et au final c'est uncanny valley du design
+
+David Leuliette (27:29.937)
+Ouais ouais ouais, c'est clair. Du coup ça reste assez design agnostique entre guillemets en fait. C'est pas du tout... si c'est open-ended un petit peu mais bon ça reste super simple. Du coup il a pas du tout de custom animation, d'illustration très compliquée à part des flags des pays. Ça c'est au...
+
+Zoontek (27:52.93)
+Ouais... Non non, c'est bon ça va.
+
+David Leuliette (27:55.357)
+C'est les gens à voulez des trucs intégrer ce que vous voulez et débrouiller vous quoi. Nous pas de logo pas de problème on adore.
+
+Zoontek (28:03.854)
+C'est ça, on est marque blanche, on ne pas se permettre d'avoir des trucs très tranchés, des belles illustrations, des trucs qui sont très brandés swan parce qu'au final il ne pas qu'il ait un branding swan.
+
+David Leuliette (28:22.558)
+Bah non ouais c'est clair, c'est ça, Typiquement le truc de la marque blanche tu mets couleur, logo et terminé, tout le reste, débrouillez-vous quoi. Ok. Alors c'est quoi vos stratégies pour release tout ce m*rd*er là ? Est-ce que c'est tout dans des repos séparés ? Bah Non c'est que des repos séparés quoi, y'a pas de monorepo géant qui orchestre tout.
+
+Zoontek (28:30.19)
+Merci beaucoup.
+
+Zoontek (28:44.878)
+Après, derrière, déploiement, c'est tout simple, on a un script custom qui se base par les GitHub Actions Et en gros, quand tu veux créer une release, tu fais ton Yarn Release, hop hop, à partir de là, ça prend SEMVER, ça dit tu veux Bump en quoi, tac tac tac, ça crée une PR, il faut l'approuval de quelqu'un d'autre. Et une fois qu'elle est mergée, il a la CI qui passe et qui va créer une Pré-Release sur Github. Pré-Release égale Pré-Prod.
+
+David Leuliette (29:12.765)
+Mmh.
+
+Zoontek (29:14.254)
+Il le changelog, c'est publié dans Slack, tout ça. Et à partir du moment où on veut balancer en prod, on va sur cette release, on l'édite et on dit tu sets as latest as test et t'enlèves pré-release et ça part en prod. Tout est basé sur  GitHub.
+
+David Leuliette (29:29.809)
+Ouais ouais ça c'est trop bien ça. moi je que j'adore, moi je que... Enfin ouais je connais assez... Je connais tout le système mais je connais assez peu. Parce que chaque fois il y a des trucs différents que ce soit c'est GitHub, soit c'est GitLab, soit c'est BitBucket, soit c'est machin. Et ça me rend ouf. J'aimerais trop que tout le monde utilise GitHub parce que c'est trop bien fait en vrai !
+
+Zoontek (29:51.054)
+C'est clairement trop bien. Juste avec notre petit script plus GH. coup, GH, c'est un outil ligne de commande conduit par GitHub. Vraiment, c'est incroyable. La DX, elle est géniale.
+
+David Leuliette (29:58.694)
+Ouais.
+
+David Leuliette (30:05.244)
+C'est ça ceux qui connaissent pas GH, vous perdez des heures de travail précieuses ! je dis ceux que... Ouais si vous connaissez pas vous faites brouhainstallgh, ghlogin et là welcome to the real world quoi ! Parce que pour faire des pr et tout machin c'est easy !
+
+Zoontek (30:08.494)
+Ouais ouais ouais.
+
+Zoontek (30:17.569)
+Ouais.
+
+Zoontek (30:26.222)
+Merci.
+
+David Leuliette (30:28.902)
+Ok, alors là ça va être question, c'est quoi les top 5 librairies que tu recommandes sans dire les tiennes ? Parce que React Native, bah oui sinon c'est React Native Permission, Edge to Edge, Boot Splash, Localize...
+
+Zoontek (30:43.662)
+En fait, je n'aime pas, je pense que j'aurais été sympa.
+
+David Leuliette (30:50.939)
+Voici, c'est le syndrome de Stockholm, c'est genre, vas-y, ils font trop chier ces librairies à maintenir, je les déteste mais je suis obligé de le faire parce que je suis investi d'une mission, tu vois.
+
+Zoontek (31:01.774)
+Alors attends, dans les libres actitives aujourd'hui que je recommanderais, je pense la première c'est Rack Native Keyboard Controller. Si vous avez besoin de gérer le clavier aujourd'hui sur Android, c'est un bust. La gestion du clavier avec Keyboard Ammonic View, c'est vraiment très rudimentaire.
+
+David Leuliette (31:13.531)
+Alors qu'est-ce que ça fait ça ?
+
+David Leuliette (31:29.005)
+C'est ça, ça...
+
+Zoontek (31:31.022)
+Ce que ça fait, c'est ça te permet d'avoir une gestion du clavier qui se rapproche de celle d'iOS. À savoir quand tu ouvres ton clavier sur Android, tu n'as pas cet effet genre hop, es bump, mode tac, tac, tac, tac, tac, tac, ton interface qui fait un saut dégueulasse là. Là vraiment, si tu as envie de une petite interface de chat, où tu as ton prompt qui est en bas, l'input qui est collé en bas et qui suit le clavier, de façon élégante.
+
+David Leuliette (31:55.643)
+C'est ça.
+
+Zoontek (31:57.038)
+Ça tu vas pouvoir le faire avec Keyboard Controller parce que Keyboard Controller utilise les nouvelles API de gestion de clavier qui sont dispos depuis Android 12 avec des polyfils et tout. Là où en vrai, Ragnative de base c'est le Adjust Resize et du coup c'est bado. Mais c'est pas grave.
+
+David Leuliette (32:14.139)
+Du coup ça flicking, c'est vrai que la première fois que tu t'en vas généralement tous les devs qui ont du rack native ils ont un mac parce que voilà et du coup ils testent sur le simulator et puis après ils se disent non ils testent déjà sur simulator sans avoir le keyboard activé donc déjà ça je dis toujours aux gens ouais faut faire dans I.O. mettre le keyboard et toucher pas à ce truc et c'est vrai que généralement tu testes sur android à la fin mais
+
+Zoontek (32:39.95)
+Hmm.
+
+David Leuliette (32:40.796)
+C'est pas du tout pareil le comportement, c'est quoi ce bordel ? Mais oui les amis, sachez-le que ça n'a rien à voir en fait, tout ce qui est keyboard c'est... En plus les keyboards c'est vraiment un sujet parce que sur Android tu peux mettre des custom fontes, après le back button, des fois ça ferme le keyboard et en fait non, c'est... la jungle. C'est le zoo je dirais. coup... du coup... non en fait la vraie vie c'est le zoo.
+
+Zoontek (32:44.942)
+...
+
+Zoontek (32:56.27)
+...
+
+Zoontek (33:02.094)
+Ouais...
+
+David Leuliette (33:08.771)
+Dans la vraie vie c'est la jungle et grâce à keyboard controller c'est le zoo. Donc vous avez une expérience un peu plus contrôlée. Mais c'est toujours wild. Ok, ok.
+
+Zoontek (33:14.542)
+C'est
+
+Zoontek (33:19.406)
+Après derrière, en vrai React Navigation, comme je le disais tout l'heure, moi je suis très fan du taf qu'il y battu sur cette libraire. Et en fait, je ne pas très fan des file-based routers, parce qu'en gros, utilisateur de TypeScript, j'aime avoir un truc où il a pas besoin d'avoir un plugin qui va générer quelques infos pour faire...
+
+David Leuliette (33:27.515)
+Oui.
+
+Zoontek (33:46.454)
+correspondent des types de fichiers entre eux, des imports, des exports, des imports dynamiques, si il faut, c'est très bien. Et au final, même Expo Router utilise en dessous React Navigation, c'est 100 % React Navigation. Donc vraiment, il leur donner de la force, enfin, on croit lui donner de la force parce qu'en vrai, il fait un travail de fou, furieux. N'hésitez pas à laisser... Voilà, franchement, ça, ça...
+
+David Leuliette (33:59.425)
+Ouais c'est ça, exactement ouais.
+
+David Leuliette (34:07.387)
+Depuis... Ouais depuis 10 ans presque bientôt en en vrai. Parce qu'il est tout seul... Il est tout seul non, je sais plus.
+
+Zoontek (34:15.982)
+Hmm... Je vois pas trop... Ouais.
+
+David Leuliette (34:18.907)
+Many, Many Alone. si, si, c'est vrai. En plus en c'est vraiment depuis la version... Attends, 4, 3. Entre la version 3 et 4. Moi je me souviens...
+
+Zoontek (34:33.358)
+...
+
+David Leuliette (34:38.458)
+départ je utilisais l'autre et c'est vrai que entre version 3 et 4 c'est quand il eu les hook et tout tu fais ah ouais non mais faut tout rewrite, je crois qu'il y a du truc. Bref, faudrait que je lui demande si je le croise, combien de fois tu as réécrit l'intégralité de React Navigation ? Beaucoup. Oui parce que tout change à chaque fois donc et tu n'as pas un usage particulier que tu as vu over the years sur React Navigation ?
+
+Zoontek (34:46.958)
+...
+
+Zoontek (35:04.57)
+En vrai, ce qui est les flots d'authentification ça a toujours été un pain. Pour avoir un router dédié à l'authentification ou non, maintenant c'est beaucoup plus simple. Je m'en suis pas encore servi mais dans version 7 apparemment, tu la possibilité de juste passer une fonction à un navigateur et en fonction de ce que va retourner cette fonction justement.
+
+David Leuliette (35:10.01)
+Tchaik, oui.
+
+Zoontek (35:30.222)
+il va rendre dehors le navigateur ou pas, qui est super pour les flots d'authentification. Et voilà, je trouve ça.
+
+David Leuliette (35:35.748)
+oui je viens de voir, carrément tu mettes les screens et tu fais if c'est sign in, t'as plus besoin de rappeler, t'as plus besoin de dupliquer toute ta logique en fait parce que pour l'instant la bidou il a, c'est qu'il faut dupliquer tout.
+
+Zoontek (35:42.606)
+Ouais.
+
+Zoontek (35:50.798)
+C'est ça, tu as les deux stacks naviguées à bord et tout...
+
+David Leuliette (35:53.657)
+Ah c'est ça ! Pareil, pas eu l'occasion d'utiliser. Mais ouais, ça a l'air super simple. En plus, tu mets des groupes, sign in, if c'est sign in tu mets tes screens tac tac tac, et si c'est sign out, tes autres screens terminés. Là où maintenant il faut dupliquer la logique. Super, big up pour ça.
+
+Zoontek (35:59.694)
+...
+
+Zoontek (36:10.478)
+...
+
+David Leuliette (36:22.121)
+On a React Native Keyboard Controller, React Navigation.
+
+Zoontek (36:26.094)
+Après je dirais en vrai ça va un peu avec mais Ragnative Screen.
+
+David Leuliette (36:32.611)
+oui, donc vas-y, il faut expliquer ce que ça fait ça parce qu'en fait il y a plein de gens qui savent pas ce que ça fait React Native Screen parce que React Native c'est du natif, les amis, c'est pas du JavaScript, c'est du natif. Et du coup, pour faire le binding avec...
+
+Zoontek (36:42.99)
+...
+
+David Leuliette (36:54.431)
+avec les composants en screen, il a 7 libérés. Je que fait que ça en plus en Ça fait quoi d'autre ?
+
+Zoontek (36:59.406)
+C'est ça, c'est que ça. Alors, y'a vous.
+
+David Leuliette (37:02.564)
+Enfin que ça fait que ça, c'est genre, c'est une ligne, a un clur et après mais il a un pouce.
+
+Zoontek (37:10.126)
+Avant, en termes de navigation sur Rack Native, tout était fait côté JS. Il y avait une volonté de reproduire ces écrans avec des animations côté JavaScript. Et y avait ce côté où c'était un peu off. dis que c'est bizarre, ça rend pas genre...
+
+David Leuliette (37:18.142)
+oui, voilà.
+
+David Leuliette (37:31.301)
+C'est un peu clunky, c'est pas tout pareil, c'est pas du 60 FPS.
+
+Zoontek (37:36.494)
+Ça ne rendait vraiment pas comme une app classique, les interactions pareilles avec les gestes, ce n'était pas vraiment pareil. à un moment, a Software Mansion qui est arrivé avec Rack Native Screen qui a fait, nous on fourni des bindings Rack Native par-dessus des vrais du coup natifs. Et à partir de là, oui.
+
+Rack Navigation l'a adopté, maintenant par défaut, quand tu utilises lib comme Rack Navigation, tu as des vrais screens natifs où les gestures fonctionnent comme dans n'importe quelle app native.
+
+David Leuliette (38:09.955)
+Ouais voilà, c'est ça.
+
+C'est avec la V4 de Rack Navigation. Faites gaffe si vous faites une stack, vous faites Create Stack ou Create Native Stack. C'est tout pareil l'API mais il a tout qui change derrière. Il a le seul limiteur, je ne plus ce c'est, mais en fait Native Stack c'est mieux. Cool cool cool. Est-ce que tu en auras une autre ?
+
+Zoontek (38:26.126)
+C'est ça, on se dans une prochaine vidéo.
+
+Zoontek (38:39.96)
+Ouais, Reign of the Unis
+
+David Leuliette (38:44.712)
+oui alors pitch moi le truc, convainc, convince me. Parce que j'ai toujours pas... Je vois ce que c'est mais...
+
+Zoontek (38:48.389)
+Alors, Rack Native en gros, de base en Rack Native tu vas avoir la gestion des Stage Sheets, que tu connais bien, avec la Stage Sheet API qui est inclus par défaut.
+
+David Leuliette (38:53.718)
+Version 3
+
+Zoontek (39:02.762)
+Ce que tu apportes avec Native Unistyle en plus, va être typiquement une gestion, pas vraiment des media queries, mais un équivalent des media queries, du responsif on va dire, une gestion facile par exemple des insets. Donc si par exemple tu veux conditionner ton style par rapport aux insets, donc les insets c'est tout ce qui est safe area, en haut, en bas, à gauche, à droite, etc. Plutôt que de devoir mettre avec Native Safe Area, prendre un ou faire des computations.
+
+c'est directement au niveau de ta style sheet, tu une gestion des thèmes etc. Franchement c'est pas mal du tout, je pense que si tu fais uniquement du mobile mobile, il n'y a pas forcément un intérêt qui est ultra fort, c'est agréable mais c'est pas non plus. Par contre si tu dis que ton app est compatible sur iPad et tout, là vraiment ça vaut le coup. J'aime pour éviter les conditions dans tous les sens.
+
+David Leuliette (40:00.28)
+C'est vraiment style sheet, ça fait style sheet create à la place de... en fait en vrai si on veut migrer sur unistiles, vous importez la libe, faites changement d'import, terminé. Donc ça va quand même fonctionner, c'est ça qui est bien, n'est pas genre allez hop faut tout rewrite et ça va fonctionner, vous avez des choses en plus directement, j'avais même dit à Query, variant, tout ça.
+
+J'ai vu ce truc là, mais moi vu que j'utilise pas du Style Sheet le moins possible, bah j'ai fait... Pfff trop chiant. Mais je comprends l'intérêt en Ouais, notamment ce qui est breakpoint et tout j'avoue. fais breakpoint, background, color, XCS, done, terminé quoi. XCS, SM après ça suit la logique. Canon, canon. Ok, est-ce que t'en as une dernière à recommander ?
+
+Zoontek (40:25.582)
+Oui.
+
+Zoontek (40:53.55)
+Ouais, alors c'est pas vraiment une nid pour le coup, mais je dirais Racknative Mac OS, parce que Microsoft fait un taf de dingue. Et je pense que c'est un truc que la plupart des gens n'ont pas à tester. Je pense que les gens seraient surpris de voir à quel point c'est simple à mettre en place, d'initialiser un projet et tout. Et à quel point, ouais, c'est exactement comme Racknative, mais pour faire des apps desktop.
+
+David Leuliette (41:00.385)
+oui c'est vrai.
+
+Zoontek (41:21.0)
+très quali, ça ouvre tout un pan de possibilités. Et donc si vous avez l'occasion de jouer avec, c'est vraiment cool. Je vous le recommande sincèrement.
+
+David Leuliette (41:33.665)
+Ouais je l'ai vu en plus le mec qui bosse là-dessus, App.js, donc conférence d'un mec qui bosse chez Microsoft qui nous parle d'une technologie créée par Facebook pour faire des applications macOS.
+
+Zoontek (41:48.342)
+C'est ça.
+
+David Leuliette (41:49.11)
+What the fuck is going on ? Je comprends plus rien. Ok. Qui utilisait quoi ?
+
+Zoontek (41:53.07)
+qui est utilisé dans... Il faut le savoir. C'est utilisé dans Office. C'est-à-dire qu'aujourd'hui, dans Office, il des composants.
+
+David Leuliette (42:00.018)
+oui oui, c'est utilisé pour faire les trucs d'Xbox... oui non, dans l'office tout court. J'allais dire... Bah oui, Rack Native aussi c'est utilisé sur l'app d'Xbox, sur le store, sur plein de trucs en fait. Ok, ok, bah là on va parler un peu open source. Est-ce qu'il y a une anecdote sur un moment dans le dev de tes librairies, que tu as trouvé très difficile et comment tu l'as géré ?
+
+Zoontek (42:09.774)
+...
+
+...
+
+Zoontek (42:29.326)
+Euh... Fouf... Euh... Y en a une à la...
+
+David Leuliette (42:32.118)
+plein, les gens relous qui savent pas faire des tickets ils me rendent fou.
+
+Zoontek (42:37.474)
+Ouais non non, c'est pas le pire. Tu t'y fais, c'est juste qu'au début, tu es conciliant. Quand tu arrives dans l'opensource et tout, tu t'acceptes, tu essaies de dire en mode « mais vas-y, ok, tu m'as pas expliqué comment reproduire le problème, mais on va creuser ensemble » tout. Avec le temps, tu closes et tu reviens quand tu arriveras à expliquer ton problème.
+
+David Leuliette (42:57.408)
+Ouais c'est vrai que pour les gens, les gens qui font de l'open source c'est pas des connards, c'est juste qu'ils en ont ras le bol de tomber sur des noobs qui savent pas écrire directement, donner un reproductible example et dire qu'est qu'il faut faire et donner de l'info quoi. Genre arriver et dire ouais ça marche pas c'est nul, mais mec tu te rends pas compte, je fais ça sur mon tonlit pendant que toi tu vas te peinter au bar donc...
+
+Donc, c'est vrai, donnez du love au maintenance open source.
+
+Zoontek (43:28.718)
+Voici dans les cas complexes, je peux parler de ma petite dernière, la Ragnative Edge to Dans l'idée, fait, depuis qu'il y a eu Android 15, et à partir du moment où tu mets le Target SDK sur Android à 35, ça réactive par défaut le Edge to Edge. Donc le Edge Edge qu'il faut savoir, c'est aujourd'hui sur un nouveau projet, la Ragnative. Vous allez avoir la status bar qui est opaque.
+
+David Leuliette (43:37.159)
+Ouais.
+
+Zoontek (43:58.398)
+l'application qui va par-dessous, et pareil pour la navigation bar, c'est opaque. Généralement, en ragnative, la plupart des devs ont tendance à utiliser status bar pour le mettre en translucent et permettre que l'appli va en dessous. Par contre, n'est pas encore le cas pour la navigation bar. Avec Android 15, Google a dit ce truc-là on va unforce, parce que ça fait longtemps qu'ils veulent que les applis soient edge-to-edge, donc bord à bord. Et donc ils l'on unforce.
+
+Et à partir du moment où il y a eu ça, moi je me suis dit ouh là, il a un souci. C'est-à-dire que la plupart des librairies réactives aujourd'hui n'en ont que faire du edge-to-edge. pire, la plupart des librairies utilisent une API qui casse le edge-to-edge. C'est-à-dire que quand t'as envie...
+
+David Leuliette (44:46.047)
+Allez.
+
+Zoontek (44:47.304)
+l'appli soit en H2H, tu fais un npm install je sépare avec native reanimated et boum d'un coup tu avais à nouveau ta status bar et tu comprends pas pourquoi. Et donc quand t'as aucune connaissance en native, je te laisse imaginer à quel point le debug peut être douloureux. Et donc j'ai créé cette libe qui permet d'activer le H2H mais avec ça il y a une libe de détection.
+
+David Leuliette (45:09.013)
+Oui.
+
+Zoontek (45:10.318)
+que j'ai humbed à peu près partout dans l'écosystème. J'ai fait des PR sur la plupart des librairies qui cassaient le H2H pour ajouter des conditions de « ah non non, là le mec il veut le H2H, donc vraiment tu ne casses pas le H2H s'il te plaît ». Et donc ça, ça a été un énorme taf. Vraiment ça fait... ça doit faire... Je sais pas, 6-8 mois que je bosse là-dessus. Et donc ouais, généralement je suis pingué à droite à gauche.
+
+comme étant le référent Edge to Edge et je fais des PR un petit peu partout dans l'écosystème. Et à côté de ça, je fais de la sensibilisation, c'est-à-dire que je fais des talks, des confs et tout pour parler de ça, pour que déjà les mainteneurs évitent de le casser ou au moins testent leur librairie en mode Edge to Edge et aussi pour que les utilisateurs migrent parce que si on attend la deadline qui sera, je crois que c'est fin août de cette année où...
+
+où il faudra faire quelque chose, ce n'est pas fou. me dis à tous les gens qui ont une app qui d'un coup vont devoir mettre dans leur backlog une catastrophe qui doivent migrer au H2H, donc s'ils peuvent le faire avant, c'est cool.
+
+David Leuliette (46:21.321)
+Ouais ouais j'avoue. oui ça c'est toujours... ouais du coup, attends, dans lesquels... Ouais parce qu'en fait c'est pas ta responsabilité, c'est pas genre vas-y go c'est bon je le fais puis limite c'est très très long mais je le fais mais là c'est que tu dois maintenir, tu dois contacter tous les mainteneurs d'autres librairies pour dire, eh en fait moi j'ai ça du coup... Et t'as un taux de réponse ou pas ?
+
+Zoontek (46:25.136)
+Donc gros fontier, bien transverse.
+
+Zoontek (46:32.558)
+Zoontek (46:36.917)
+Ouais.
+
+Zoontek (46:45.518)
+Plutôt bon, là parmi toutes les PR que j'ai ouvert, la dernière qui n'a pas été de merde c'est l'Irragnative Screen. Mais en soi c'est pas trop grave parce qu'il ne casse pas l'Irragnative Screen. Ce qui fait c'est juste que si tu utilises des props, là tu peux le casser. Mais par défaut il ne pas le casser, c'est pas juste en l'installant que ça cassera. Donc pas trop grave.
+
+Mais bon, si Software Mansion pouvait le merger, ce serait cool. Ça semble qu'ils ont mergé ce... Celle sur animated.
+
+David Leuliette (47:15.71)
+bah... Voilà. On va leur faire un short. Rien que pour eux. Allez, Software Mansion. Please.
+
+Zoontek (47:26.35)
+Vous l'avez fait pour animer des tines, vous pouvez le faire pour scrim.
+
+David Leuliette (47:30.9)
+Et bah voilà, le message sera passé en tout cas 47, je note le timecode. Ok, est-ce que tu des conseils à partager de débugs ? Je suis sûr, partager avec des gens que tout le monde devrait connaître. Vu que tu fais pas mal de native, plus que native en fait, qu'il faut connaître les deux.
+
+Zoontek (47:37.902)
+...
+
+Zoontek (47:51.822)
+...
+
+David Leuliette (48:01.044)
+T'as quoi comme téléphone chez toi ?
+
+Zoontek (48:04.494)
+Beaucoup. J'ai trois iPhone, j'ai des pixels, là j'ai eu un pixel 9, enfin j'ai quelques téléphones. Après niveau Android, j'avoue, je n'ai pas toutes les marques. Moi j'ai tendance à prendre des pixels et c'est ce qui est vachement relou parfois parce que t'as des mecs qui disent, j'ai tel problème.
+
+David Leuliette (48:06.92)
+C'est ça !
+
+David Leuliette (48:28.015)
+C'est pas pareil ! Les OnePlus on vous voit dans la salle ! Moi je prends les téléphones les moins chers du monde parce que comme ça je me dis que c'est les gens lambda qui ont ça mais c'est horrible ! Là typiquement sur l'app sur laquelle je en train de tester j'ai des 1, des segmentation fault error
+
+Zoontek (48:34.67)
+...
+
+David Leuliette (48:54.651)
+C'est pas tout ça bien quoi, c'est très très compliqué. C'est les joueurs du cross-platform.
+
+Zoontek (49:02.094)
+Après moi comme j'intègre, vois, je des API native. C'est pour ça je prends des pixels parce que c'est au moins ceux où les API sont correctement implémentés. Et après, j'ai des gars qui me disent ça pète sur telle marque, telle telle parce qu'il a une surcouche et tout. Et là, tu passes à la chasse au truc, tu ouvres des bugs sur le tracker d'issues de Google.
+
+Y en a, y en a. Mais après les marques, ils en ont rien à branler. C'est fou. Du coup, si vous avez un téléphone, achetez des pièces.
+
+David Leuliette (49:34.227)
+Euh ouais, ils savent pas. Ou c'est pas qu'ils ont rien branler, c'est qu'ils ont personne tout court, je pense. Ils ont personne car ils ont personne au support.
+
+Zoontek (49:40.334)
+Ouais, ils ont personne au support mais ils fournissent non plus pas de simulateur ou quoi que ce soit. Si par exemple il a un bug qui est uniquement sur MEV, moi en tant que développeur je suis obligé d'acheter un téléphone Xiaomi quoi, je suis pas en vie. Je sens vraiment... C'est du budget ? Non, veux dire le budget.
+
+David Leuliette (50:00.082)
+C'est genre... Ouais, bah oui, c'est ça en fait !
+
+David Leuliette (50:06.962)
+Carrément, carrément. du coup, pour revenir à la question, moi je voudrais éprouver mes skills sans débugs sur Android, par où je commence.
+
+Zoontek (50:15.304)
+Alors en vrai je pense pas en... faut installer Android Studio et je sais que c'est pas glamour comme ça mais en termes d'outils de debug à partir du moment où on comprend un petit peu comment ça fonctionne on y va beaucoup moins à tâtons que juste avec des consoles Log clairement là je le vois sur tous les problèmes de Edge2Edge
+
+Il a le layout inspector, a été le life saver, c'est ce qui m'a aidé à comprendre pourquoi Teldeep fonctionnait pas et tout, parce que derrière tu peux analyser tout le système de vue de ces natifs.
+
+David Leuliette (50:50.937)
+Oui oui, c'est la vue 3D, c'est sur Xcode ou sur Android Studio, je ne plus.
+
+Zoontek (50:55.806)
+Là c'est un peu pareil, tu pas du 3D mais tu as un peu le même genre de tooling. Et pareil le CAD et tout ces trucs là, c'est chiant à prendre en main on va dire. Mais une fois que tu les as compris, c'est quand très performant et ça t'aide énormément dans le debug. Moi je le vois sur les issues qui sont ouvertes Il a des gens en fait, ils utilisent Rack Native avec Expo et ça leur abstrait.
+
+David Leuliette (51:20.53)
+Ouais Expo ils ont pas de prébill... Ouais ils ont pas de prébill... Oui donc en fait si vous êtes dans le même cas, c'est... Faites un NPX Expo prébill.
+
+Là ça va créer deux folders et après vous faites npm run android Là ça va compiler et après vous pouvez ouvrir votre app avec Android Studio et c'est parti quoi C'est vrai que quand tu sais pas, enfin je me dis ouais t'es un peu junior kind of, t'as pas tout l'historique, le background d'avant, tu sais pas trop, c'est juste ça marche et puis c'est tout Même la démarche de le faire tu sauras pas où commencer quoi
+
+Zoontek (51:38.306)
+Ouais.
+
+Zoontek (51:43.822)
+All right, let's see.
+
+Zoontek (51:48.43)
+Ça peut faire peur.
+
+Zoontek (51:55.694)
+Ouais.
+
+David Leuliette (51:59.057)
+Alors que en vrai c'est pas très très compliqué comme t'as dit. Bim tu download Android Studio, bim tu fais un pre-build avec ses folders Android, tu l'open, non tu vas perdre 4 jours à trouver un simulator, une archive de simulator qui fonctionne. Moi je crois que j'ai un Pixel ou j'ai un... Je sais même plus ce que c'est, je crois que c'est Pixel. Et euh... Tu vas faire cliquer partout, tu vas devoir mettre Java je sais pas quoi pour que ça marche avec ton M4, mais après ça va fonctionner. Enfin quoi que là c'est mieux.
+
+Zoontek (52:02.734)
+...
+
+Zoontek (52:17.966)
+Ouais, c'est juste...
+
+David Leuliette (52:28.145)
+Je rappelle quand M1 est sorti, j'avais acheté un M1 tout pile D1 et j'ai fait... il a plus rien qui marche au secours. Et j'ai simplement abandonné le support pendant un an ou deux, et puis après je m'y suis remis et je que ça marche très bien. Donc c'est revenu, il a plus d'excuse les amis.
+
+Zoontek (52:29.238)
+Oui mais...
+
+Zoontek (52:36.046)
+Oui, c'est...
+
+Zoontek (52:48.686)
+Bon, allez, vas-y.
+
+Zoontek (52:52.366)
+C'est un petit peu difficile au début, mais...
+
+David Leuliette (52:55.729)
+Et comment tu gères les différentes plateformes iOS Android avec tes libs ? C'est genre je fais du custom à chaque fois.
+
+Zoontek (53:08.462)
+Après derrière, en termes de libre et d'abstraction, moi si tu regardes un petit peu mes libres, j'ai tendance à justement ne pas vouloir exposer la complexité de la plateforme.
+
+Donc je sais qu'en fait en RackNati il a deux écoles. Tu vas voir les librairies qui te disent, sur Android voilà toutes les options que tu as, sur IEVO, IEVO voilà toutes les options que tu as, sur le web voilà toutes les options que tu as. T'en as quelques-unes en commun mais globalement on va dire, tu as la possibilité de pousser chaque plateforme, vois, d'utiliser des trucs spécifiques à chaque plateforme pour aller un petit peu plus loin.
+
+Moi sur mes libs, j'ai tendance à dire ok en fait, je vise trois voire parfois quatre plateformes et du coup, est le socle commun à toutes ces plateformes et quel API à unifier, je vais pouvoir shipper. Alors je pas que par exemple sur Permission, tu n'as pas une API qui est entièrement unifiée, mais je l'unifie un maximum de façon à ce que quelqu'un qui arrive et quelqu'un tu lui dis en fait, tu as deux jours pour implémenter un truc.
+
+David Leuliette (53:52.464)
+Ouais.
+
+Zoontek (54:09.814)
+qui commencent pas à se bouffer de comment on gère les permissions sur US, comment on gère les permissions sur Android, etc. et qu'au final il y juste des bindings JavaScript. C'est-à-dire que moi j'ajoute une autre couche d'abstraction qui a son propre lifecycle, qui a un lifecycle qui est unifié. Et si tu as envie d'aller plus loin, tu peux, mais ça ne pas t'empêcher de shipper au bout de deux jours parce que derrière il a ton PN qui te saoule.
+
+David Leuliette (54:29.668)
+On connait, ou alors qu'il vendredi et que tu dois t'enfuir. vois, je vois, On connait toussous. Alors oui, dernière deadline des stores. Attention, si vous n'avez pas, si vous ne gérez pas le H2H, votre rap va être kiqué du sort. Et vu que tu en étais au courant au dernier minute, on connait, on connait. bonne...
+
+Zoontek (54:55.118)
+Salut !
+
+David Leuliette (54:57.772)
+C'est ça, les warnings, ça fait 10000 ans que j'ai des warnings mais jamais de la vie je les ai pris en compte. Bah maintenant, c'est maintenant qu'il faut le faire. Super et donc, tu n'as fait que du rack native en fait dans toute ta carrière de software engineer.
+
+Zoontek (55:16.43)
+Ragnative, après derrière là comme je te dis je fais du front donc à la base Ragnative oui mais comme on l'a viré au fur et mesure bah du coup maintenant je suis front général quoi et comme je suis staff et tout maintenant je fais un peu de back-end donc je des back-end de nod avec du Fastify
+
+David Leuliette (55:39.652)
+Avec du coup, Fastify, c'est quoi ça
+
+Fastify.
+
+Zoontek (55:44.501)
+Fastly, un serveur node, c'est l'équivalent d'un express mais un peu plus maintenu avec un écosystème de plugin qui est plutôt solide. Aujourd'hui, oui tu dois voir, c'est connu en vrai.
+
+David Leuliette (55:56.25)
+mais si je je vois ce que c'est.
+
+Je l'avais même déjà star. Je l'avais oublié. Mais oui, on ne pas tout coder. Je vois ce que c'est. En faisant du rack native, le truc que tu le plus appris, c'est plateforme Android et IOS, j'imagine.
+
+Zoontek (56:20.494)
+Ouais, vraiment. Et en fait, comme j'étais parmi les... enfin... tout début, on va dire au tout début de la plateforme, tu il y avait des besoins et au bout d'un moment, c'est juste bah, c'est chier, faut faire un splash screen. Toutes les livres de splash screens sont soit abandonnées, soit pourries. Bah vas-y !
+
+David Leuliette (56:38.574)
+challenge accepted rabbit hole open allez hop je vois ouais puis en fait c'est ça l'avant-fin l'avantage que nos générations ont connu c'est qu'on a vu un peu tous les trucs arriver au fur et mesure et je me dis maintenant quelqu'un qui débarque mais laisse tomber il a une élévrestre à gravir avant de commencer à comprendre de comprendre ou alors t'es en mode iceberg quoi tu
+
+Zoontek (56:56.686)
+oui oui oui
+
+Zoontek (57:07.704)
+Aller, c'est ça.
+
+David Leuliette (57:07.918)
+le truc tu dis mais c'est facile en fait et après tu fais mais ragnative screed c'est quoi ce truc c'est une ligne et tu ouvres le truc tu fais ah ouais non mais en fait ça gère une chier de tonne de trucs et bah oui bah oui c'est ça ok et donc justement comment tu te formes et tu te maintiens un jour
+
+Zoontek (57:26.862)
+Alors là je te donne Blue Sky un petit peu. les devs je suivais sur Twitter, ils ont quasiment migré à Blue Sky donc maintenant je vais là dessus.
+
+David Leuliette (57:38.474)
+ça. coup en plus pour ceux que ça intéresse j'ai aussi une liste de tous les devs qui ont justement migré dessus donc je le mettrai dans les notes de l'émission.
+
+Zoontek (57:46.07)
+Ouais.
+
+Et après, en soi, j'ai aussi des contacts un peu directs avec la Commu. On a un Discord, RepNativeContributor. J'ai un Slack avec les gars de chez Expo. Donc voilà, je suis en relation un peu directe, donc c'est facile forcément d'avoir des infos sur ce qui sort ou ce qui va sortir.
+
+David Leuliette (58:16.994)
+Euh... Yes mais je crois en plus c'était Vue... Non c'était...
+
+Zoontek (58:18.894)
+C'est un conseil un peu pourri parce que vraiment tu me demandes comment je fière ma veille et moi j'y pars des canaux privés.
+
+David Leuliette (58:27.514)
+Bah ouais mais non ! Je ne ferai pas d'édit mais on va refaire la question comment tu fais le truc. oui mais moi je fais des librairies open source et puis du coup c'est ça en fait. C'est pas des cadeaux parce que si on réfléchit bien combien de temps en tout tu as passé à déjà se shipper et maintenir cinq librairies différentes qui bénéficient à l'écosystème ?
+
+Zoontek (58:36.11)
+...
+
+Zoontek (58:55.63)
+beaucoup trop de buité
+
+David Leuliette (58:57.558)
+beaucoup. Ça se compte en milliers d'heures. On va peut-être dire 10 000, allez disons 10 000. du coup, voilà, c'est un peu... tu des infos, mais c'est grâce à ça qu'en fait en vrai, moi c'est pareil. Attends, je ne sais plus.
+
+Zoontek (59:03.694)
+...
+
+David Leuliette (59:17.262)
+Ouais je crois que c'est ça quand j'ai commencé aussi pareil à faire de l'open source je me suis rendu compte qu'en vrai c'est ça qui te fait devenir un meilleur ingénieur parce que tu te formes en fait t'apprends plein de trucs en min de 2 tu dis bah je vais faire une librairie ok qu'est qu'il faut que je fasse même si tu utilises le truc qu'on a dit avant builder blob bah tu vas apprendre comment on release parce qu'en fait release une librairie bah c'est pas trivial en fait il faut un chain de blog il faut des versions il faut gérer tout ce merdier
+
+Zoontek (59:39.726)
+...
+
+David Leuliette (59:42.087)
+après tu vas l'automatiser parce que j'ai que ça à foutre de faire des releases moi je veux que quand ça emerge boum ça réalise et donc c'est ça on va dire
+
+Zoontek (59:48.142)
+Ouais.
+
+Il y a un autre truc, c'est quand tu builds toi-même une solution. Typiquement, je prenais l'exemple du router. Après, la suite, peu importe le router qui va sortir, tu comprends comment ça marche. Tu comprends pas juste la pièce du truc, c'est juste derrière, tu comprends comment les choses fonctionnent et donc tout devient...
+
+un peu plus simple et si tu as besoin de migrer et tout, tu vas migrer parce que derrière les deux solutions fonctionnent de la même façon, c'est juste la piaille qui change. Donc en vrai, je recommande quand même cet exercice-là à pas mal de gens en construire des libres, c'est super instructif.
+
+David Leuliette (01:00:29.133)
+Yes, yes, yes. Et si devais en 2025 démarrer une nouvelle application, qu'est-ce tu dirais est la version plus jeune de toi-même ?
+
+Zoontek (01:00:46.638)
+En vrai, j'utiliserai quand même ragnative, berr ragnative, pas expo, pas nécessairement. Par contre, j'utiliserai tout ce qui est le pipeline de build de expo, là il n'y a pas de doute. On peut utiliser une application berr ragnative et build via le pipeline de expo, il a pas de problème. Et après, quelques libs bien sentis, et ça fait trop bien le taf.
+
+Et après, je te le dis, moi j'aime bien comprendre comment les choses fonctionnent derrière. Donc j'aime avoir accès immédiatement au dossier Android et iOS sans faire un préview, ou sans faire des plugins. C'est très pratique, je pense que je n'en serais pas là aujourd'hui si je n'avais pas eu ça.
+
+David Leuliette (01:01:24.343)
+Ouais... Ouais... Ouais j'avoue ça fait peur...
+
+David Leuliette (01:01:38.54)
+Ouais, clairement, que t'as toute la... En fait, tu sais faire du web, sais faire du React Web, tu sais pas faire du VRAID NATIF. Moi, c'est vrai que j'ai fait les deux. Ouais, il a les deux, ouais. termes de maintenance, en fait, en vrai, le truc, c'est ça, c'est que la maintenance... C'est vrai, puis le truc, c'est que plein d'apps sur lesquels j'ai bossé, c'est des crud. Enfin, tu vois, c'est des crud à la con, quoi. Enfin, des crud à la con.
+
+Zoontek (01:02:00.376)
+Oui oui, pour ce genre de...
+
+David Leuliette (01:02:03.38)
+Du coup tu n'as pas le truc typique limite à la caméra ou ce genre de choses mais c'est pas genre on va faire un background qui fetch ou gérer avec le file system ou du coup les besoins natifs sont assez limités somme toute. bon moi je suis chaud de dans un dossier en plus maintenant avec les AIs et tout, easy quoi. Alors qu'avant c'était plus long. Enfin je dirais pas easy, je dirais il faut peut-être plus complique.
+
+parce que du coup si tu ouvres un truc avec cursor et un folder avec qstore et peut-être qu'il va te dire de la merde je m'en rends pas compte quel est le... Est-ce que tu utilises l'AI et tout dans ton quotidien ? qu'il arrive à mapper les...
+
+Les... ouais ouais... Ça marche bien dans le monde d'une mobile ou quoi ça ? Parce que... la magie on connaît hein !
+
+Zoontek (01:02:51.288)
+Ouais justement, moi j'utilise Leaï mais juste en mode chat quoi. Je pose des questions et je lui demande de m'expliquer et par contre je pars en mode autocomplete parce que la plupart du temps il hallucine totalement ou alors il fait des trucs qui sont vraiment pas idéaux. Des trucs qui vont marcher, c'est génial mais c'est l'équivalent du no code à l'époque où tu avais des personnes qui ont un projet qui sont incapables de maintenir. Donc je l'utilise avec parcimonie.
+
+David Leuliette (01:03:03.404)
+Right.
+
+Bye.
+
+David Leuliette (01:03:14.038)
+Ouais.
+
+Zoontek (01:03:21.141)
+surtout pas en autocomplique.
+
+David Leuliette (01:03:24.287)
+Ouais, bah ça dépend, ça autocomplique mais moi la fin des trucs, genre quand j'écris des tests, ils m'autocomplient déjà le test mais c'est moi qui écris le test, ce genre de trucs. Mais c'est pas en autocomplique, genre voici une solution, ça dépend. Ouais ça dépend, ça dépend sur quoi en fait. Pour plein de trucs ça marche très bien mais pour des composants.
+
+Zoontek (01:03:37.518)
+et on retrouve dans une
+
+Zoontek (01:03:43.438)
+En fait, pas façon à la logique de métier. Vraiment, le corps de ton bâtissier, etc. c'est pas acceptable, qui te donne une solution comme ça, et que tu comprennes pas forcément.
+
+David Leuliette (01:03:47.304)
+Ouais.
+
+David Leuliette (01:03:54.603)
+Est-ce qu'il a un sujet auquel on n'a pas parlé que tu aurais voulu aborder ?
+
+Zoontek (01:04:01.742)
+Pas spécifiquement. En vrai, on l'a déjà abordé, c'est le H2H. J'invite vraiment les auditeurs à se renseigner sur le sujet parce que sinon ça va vous tomber dessus dans quelques mois. Et voilà. du coup, En plus, allez voir, ça simplifie un peu les choses dans le sens où c'est unifié maintenant par rapport à iOS et fini les conditions.
+
+David Leuliette (01:04:13.259)
+C'est ça, vous ne serez pas au courant et paf !
+
+Zoontek (01:04:28.91)
+on finit les différences de styling liées à la status bar ou la navigation bar donc ça vaut le coup, c'est pas compliqué à mettre en oeuvre mais du coup il faut le faire quoi
+
+David Leuliette (01:04:42.859)
+C'est quand la Deadline déjà ?
+
+Zoontek (01:04:44.91)
+fin août 2025.
+
+David Leuliette (01:04:47.239)
+fin août. Eh c'est soon, est déjà en mars les amis, mettez ça à votre backlog.
+
+Zoontek (01:04:54.449)
+Ils ont ajouté un attribut qui est genre « Disable Unforced To Edge » mais ce sera vraiment temporal. Ça dire que derrière, ça vous permettra d'économiser un petit peu de temps mais je ne compterai pas là-dessus.
+
+David Leuliette (01:05:04.863)
+BLEUH !
+
+David Leuliette (01:05:10.123)
+On n'aurait pas dû le dire parce qu'en fait c'est typiquement genre vas-y je fais ça et en fait j'oublie et après build fail et là bah pour retrouver pourquoi ça fail bon chance ! Cool, qui c'est que je dois inviter à passer dans le podcast pour nous parler à Ragnative ?
+
+Zoontek (01:05:22.414)
+...
+
+Zoontek (01:05:34.286)
+Est-ce que tu déjà eu l'occasion
+
+David Leuliette (01:05:39.767)
+Je devais mais en fait elle est perché Delphine. sera perché. C'est un classé secret défense avec ce qui se passe, l'actu en ce moment, tout ça. C'est l'œil du cyclone en ce moment, vois la tempête du coup. Non Delphine, faut trouver quelqu'un d'autre.
+
+Zoontek (01:05:44.142)
+Zoontek (01:06:00.398)
+Euh... Thibaut ? Thibaut Malbranche ?
+
+David Leuliette (01:06:04.139)
+Ah bah oui je l'avais dans ma liste, je crois que je l'avais dans ma liste Nctivo qui est bâché Brigade et qui maintient Webview, Act Native Webview. C'est carrément, je prends, je prends, je prends, je serais ravi de l'avoir aussi.
+
+Zoontek (01:06:23.182)
+Lui pour le coup il fait du mobile full time et ils ont une app quoi, enfin une app qui n'est pas une simple app de démonstration comme tout.
+
+David Leuliette (01:06:31.516)
+Ouais ouais, mais c'est... Attends vous vous faites une BAC aussi donc tu vois c'est différent, ouais Brigade c'est app pour retrouver du job... non c'est gérer ta task force, ta task... la task... en plus c'est forcément des gens bien parce qu'ils font du GrafQL. Aussi. Super du coup où est-ce qu'on peut te retrouver ZoonTech ? Zout ? Attends ouais ZoonTech.
+
+Zoontek (01:06:39.704)
+et faire tests de l'opération.
+
+Zoontek (01:06:46.126)
+aussi.
+
+Zoontek (01:06:54.03)
+Euh... ZoonTech quoi. Tu peux me retrouver donc sur BlueSky, donc ZoonTech.me, je suis sur GitHub, donc ZoonTech, et je suis encore de temps en temps sur Twitter, pareil, même pseudo.
+
+David Leuliette (01:07:09.417)
+du... la résistance.
+
+Zoontek (01:07:12.27)
+Non, c'est surtout que j'ai encore une énorme communauté qui me suit, enfin une énorme communauté sur Twitter, donc voilà, je jette un coup d'œil de temps en temps parce qu'il des gens qui continuent de m'attendre, de m'envoyer des DM.
+
+David Leuliette (01:07:16.585)
+Ouais bah si c'est ça moi c'est pareil j'ai tout plein de gens
+
+David Leuliette (01:07:26.825)
+Bah oui, carrément, c'est un peu pareil. Tous mes potes, sont sur Twitter et du coup, ex slash... Mais bon, il des gens qui partent, des gens qui viennent, mais oui. Si j'ai entendu un truc intéressant, c'est que... X, tout ce qui est... On va pas en parler, politique, le bordel, comment c'est géré. Mais en fait, si on part, les amis, eh ben du coup, ce sera encore pire.
+
+Du coup, il faut rester sur X pour faire de la résistance, pour pas propager des fausses informations. Et en fait, les deux arguments se valent. C'est autant, ouais je me barre parce que c'est nos éabondes, ou je reste parce que sinon ça va être encore pire. Mais sinon BlueSky c'est très bien. En plus, c'est fait en règle native. Donc il n'y a vraiment aucune excuse et l'app est open source.
+
+Zoontek (01:08:06.094)
+...
+
+Zoontek (01:08:18.904)
+Exactement.
+
+David Leuliette (01:08:20.297)
+Si on rebook avec ce que vous avez ce qu'on a dit, vous voulez améliorer vos compétences et bien faites une petite pull request et en plus j'ai une idée de pull request c'est ajouter le routing pour faire un new post parce qu'en vrai dans le script que j'ai là moi quand je fais clic sur blue sky en fait j'ai pas slash new qui ouvre la modal direct tu vois il faut que j'ouvre le truc et que je clique ça me rend fou je perds au moins une seconde et moi j'ai matérialement pas le temps de
+
+Donc, si quelqu'un parmi l'audience veut prendre le sujet, je veux bien lui dire ce qu'il faut écrire. En tout cas, c'était un plaisir de t'avoir. Est-ce qu'on se retrouve à React Native Connection en avril ?
+
+Zoontek (01:09:09.55)
+Oui bah oui vu que je suis speaker.
+
+David Leuliette (01:09:13.608)
+!
+
+David Leuliette (01:09:17.531)
+merde ! Ok ! ! sais le gars, moi le pire c'est que je sponsorise la conf, je suis même pas au courant que de... Je vais pas regarder en fait en vrai. Donc il y aura un ticket à gagner donc suivez-nous sur les internets. Et bah voilà, si vous voulez voir Mathieu en vrai, venez, c'est au mois d'avril. Voilà. Y aura que des gens biens.
+
+Zoontek (01:09:19.918)
+Tu vas faire des montagnes pour corps, attention !
+
+David Leuliette (01:09:43.495)
+Et ben super, allez en tout cas, excellente semaine à vous les amis et on se retrouve bientôt, ciao !
+
