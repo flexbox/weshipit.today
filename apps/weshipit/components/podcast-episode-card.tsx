@@ -34,7 +34,7 @@ export function PodcastEpisodeCard({ episode }: PodcastEpisodeCardProps) {
           </div>
 
           <Text variant="c1" className="leading-relaxed">
-            {episode.description}
+            {episode.shortDescription}
           </Text>
         </div>
 

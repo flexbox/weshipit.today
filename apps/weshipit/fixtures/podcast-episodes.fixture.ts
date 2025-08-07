@@ -2,6 +2,7 @@ export interface PodcastEpisode {
   name: string;
   title: string;
   number: number;
+  shortDescription: string;
   description: string;
   slug: string;
   spotifyLink: string;
@@ -15,6 +16,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     name: 'Cdiscount',
     title: 'React Native chez Cdiscount avec Ludwig Vantours',
     number: 1,
+    shortDescription:
+      "Le géant du e-commerce français qui optimise l'expérience mobile avec React Native",
     description:
       "Le géant du e-commerce français qui optimise l'expérience mobile avec React Native",
     slug: 'cdiscount',
@@ -31,6 +34,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     title:
       "Alan et React Native : L'alliance du bien-être et de la technologie avec Xavier Seignard",
     number: 2,
+    shortDescription:
+      "L'assurance santé nouvelle génération qui simplifie la protection avec React Native",
     description:
       "L'assurance santé nouvelle génération qui simplifie la protection avec React Native",
     slug: 'alan',
@@ -47,6 +52,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     title:
       'Pacevisor : la plateforme de sport crée avec ignite et React Native par Baptiste Lecocq',
     number: 3,
+    shortDescription:
+      'Le convertisseur de course qui aide les coureurs à optimiser leurs performances avec React Native',
     description:
       'Le convertisseur de course qui aide les coureurs à optimiser leurs performances avec React Native',
     slug: 'pacevisor',
@@ -63,6 +70,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     title:
       'Du React Native dans les tracteurs avec Karnott - Interview de Audrey Wech',
     number: 4,
+    shortDescription:
+      "L'application de productivité qui booste votre efficacité avec React Native",
     description:
       "L'application de productivité qui booste votre efficacité avec React Native",
     slug: 'karnott',
@@ -79,6 +88,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     title:
       'Swan le SDK de banque pour les applications mobiles en React Native avec Mathieu Acthernoene',
     number: 5,
+    shortDescription:
+      'La fintech qui révolutionne la banque en ligne avec une app React Native performante',
     description:
       'La fintech qui révolutionne la banque en ligne avec une app React Native performante',
     slug: 'swan',
@@ -95,6 +106,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     title:
       "Les 10 meilleurs conseils de Callstack pour optimiser son application React Native avec Matthys Ducrocq, CTO d'Ekklo",
     number: 6,
+    shortDescription:
+      "L'application de gestion de clients qui optimise la productivité pour coach sportif avec React Native",
     description:
       "L'application de gestion de clients qui optimise la productivité pour coach sportif avec React Native",
     slug: 'ekklo',
@@ -111,6 +124,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     title:
       'Mūcho, des avantages salariés ultra-spécialisés pour les PME avec une application mobile React Native - interview de Lucie Uffoltz',
     number: 7,
+    shortDescription:
+      "L'application lifestyle qui simplifie le quotidien grâce à React Native",
     description:
       "L'application lifestyle qui simplifie le quotidien grâce à React Native",
     slug: 'mucho',
@@ -127,6 +142,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     title:
       "Ilévia, l'application React Native en marque blanche et Pékin Express avec Maxime Thirouin aka MoOx",
     number: 8,
+    shortDescription:
+      "L'application de navigation qui optimise les trajets avec React Native",
     description:
       "L'application de navigation qui optimise les trajets avec React Native",
     slug: 'ilevia',
@@ -143,6 +160,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     title:
       'ShareLock l’application mobile companion pour sécuriser et assurer ton vélo - interview de Adnan Aita CTO',
     number: 9,
+    shortDescription:
+      'La solution de partage sécurisé qui révolutionne la collaboration avec React Native',
     description:
       'La solution de partage sécurisé qui révolutionne la collaboration avec React Native',
     slug: 'sharelock',
@@ -159,6 +178,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     title:
       'Mangacollec la meilleure app mobile pour les otakus français codée en rescript et react native avec Freddy Harris',
     number: 10,
+    shortDescription:
+      "L'application de collection de mangas qui passionne les fans avec une expérience React Native optimale",
     description:
       "L'application de collection de mangas qui passionne les fans avec une expérience React Native optimale",
     slug: 'mangacollec',
@@ -175,6 +196,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     title:
       "Ornikar, une stack React Native pour l'auto-école et l'assurance auto du futur - interview de Romain Spielmann Lead développeur",
     number: 11,
+    shortDescription:
+      "L'innovation dans l'éducation du code de la route avec React Native",
     description:
       "L'innovation dans l'éducation du code de la route avec React Native",
     slug: 'ornikar',
@@ -191,6 +214,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     title:
       'ControlResell automatise la vente Multiplatforme depuis ton téléphone, interview de Nathan Fallet',
     number: 12,
+    shortDescription:
+      "L'application de gestion de stock et d'inventaire qui révolutionne la gestion de stock et d'inventaire avec React Native",
     description:
       "Découvrez comment ControlResell révolutionne la gestion de stock et d'inventaire avec React Native",
     slug: 'controlresell',
@@ -207,6 +232,7 @@ export const podcastEpisodes: PodcastEpisode[] = [
     title:
       'App.js Conf 2025 rétrospective de la plus grosse conférence React Native',
     number: 13,
+    shortDescription: "La conférence React Native la plus attendue de l'année",
     description: "La conférence React Native la plus attendue de l'année",
     slug: 'appjs-conf-2025',
     spotifyLink:
@@ -222,6 +248,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     title:
       'Shine, comment procurer de la joie aux freelances avec une app React Native ? interview de Corentin André',
     number: 14,
+    shortDescription:
+      'Shone, vos comptes pro en un clic avec une app React Native',
     description: 'Shone, vos comptes pro en un clic avec une app React Native',
     slug: 'shine',
     spotifyLink:
@@ -237,6 +265,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     title:
       'Rosk (ex Brigad) l’application mobile des professionnels de la restauration et de la santé — interview de Thibault Malbranche aka Titozzz Lead Mobile Developer',
     number: 15,
+    shortDescription:
+      "Rosk, l'application mobile des professionnels de la restauration et de la santé",
     description:
       "Rosk, l'application mobile des professionnels de la restauration et de la santé",
     slug: 'rosk',
@@ -253,8 +283,10 @@ export const podcastEpisodes: PodcastEpisode[] = [
     title:
       'Odisei Music, le saxophone numérique qui se joue partout avec son téléphone grâce à React Native — entretien avec Kim Chouard, CTO',
     number: 16,
-    description:
+    shortDescription:
       'Jouez de la musique avec votre téléphone grâce à React Native',
+    description:
+      '<p>🎷 Sommaire</p><p>Dans cet épisode, <strong>David Leuliette</strong> reçoit <strong>Kim Chouard</strong>, fondateur d\'<strong>Odisei Music</strong>, la startup derrière le <strong>Travel Sax</strong> : le premier <strong>saxophone silencieux, connecté au téléphone</strong>, qui permet de <strong>s\'entraîner partout, sans déranger personne</strong>.</p><p>Ils discutent de :</p><ul><li><p>la genèse du projet Odisei Music, entre passion musicale et innovation hardware/software,</p></li><li><p>l\'intégration du <strong>React Native BLE</strong> pour la connectivité Bluetooth avec le saxophone,</p></li><li><p>l\'utilisation de <strong>React Native Skottie</strong>, <strong>Audio API</strong>, et d\'autres outils pour créer une expérience fluide et immersive,</p></li><li><p>la gestion des performances audio sur mobile,</p></li><li><p>le défi de concevoir une UX musicale sur téléphone,</p></li><li><p>l\'équilibre entre design industriel, électronique embarquée, et développement mobile.</p></li></ul><p>Kim partage aussi son parcours d\'ingénieur, sa passion pour la musique, et sa vision de l\'apprentissage mobile des instruments.</p><p><br /></p><p>🔗 Notes de l\'épisode</p><ul><li><p>🎶 Plateforme Odisei : <a href="https://play.odiseimusic.com/" target="_blank" rel="ugc noopener noreferrer">https://play.odiseimusic.com/</a></p></li><li><p>💡 Projet Meloskia : <a href="https://github.com/kimchouard/meloskia" target="_blank" rel="ugc noopener noreferrer">https://github.com/kimchouard/meloskia</a></p></li><li><p>🎥 React Native Skottie : <a href="https://github.com/margelo/react-native-skottie" target="_blank" rel="ugc noopener noreferrer">https://github.com/margelo/react-native-skottie</a></p></li><li><p>🎧 React Native Audio API : <a href="https://github.com/software-mansion/react-native-audio-api" target="_blank" rel="ugc noopener noreferrer">https://github.com/software-mansion/react-native-audio-api</a></p></li><li><p>📡 React Native BLE PLX : <a href="https://github.com/dotintent/react-native-ble-plx" target="_blank" rel="ugc noopener noreferrer">https://github.com/dotintent/react-native-ble-plx</a></p></li><li>🔧 BLE Manager : <a href="https://github.com/innoveit/react-native-ble-manager" target="_blank" rel="ugc noopener noreferrer">https://github.com/innoveit/react-native-ble-manager</a></li></ul><p><br /></p><p>🙋‍♂️ Kim Chouard</p><ul><li><p>Twitter/X : <a href="https://x.com/kimchouard" rel="ugc noopener noreferrer" target="_blank">https://x.com/kimchouard</a></p></li><li><p>GitHub : <a href="https://github.com/kimchouard" rel="ugc noopener noreferrer" target="_blank">https://github.com/kimchouard</a></p></li><li><p>LinkedIn : <a href="https://www.linkedin.com/in/kimchouard/" rel="ugc noopener noreferrer" target="_blank">https://www.linkedin.com/in/kimchouard/</a></p></li></ul><p><br /></p><p>🎙️ David Leuliette</p><ul><li><p>Twitter/X : <a href="https://x.com/flexbox_" target="_blank" rel="ugc noopener noreferrer">https://x.com/flexbox_</a></p></li><li><p>Bluesky : <a href="https://go.bsky.app/6QQemwz" target="_blank" rel="ugc noopener noreferrer">https://go.bsky.app/6QQemwz</a></p></li><li><p>Newsletter &amp; podcast : <a href="https://weshipit.today/" target="_blank" rel="ugc noopener noreferrer">https://weshipit.today/</a></p></li></ul>',
     slug: 'odisei-music',
     spotifyLink:
       'https://open.spotify.com/episode/1ym8Ydg6M3QTuP5xiThsIQ?si=a731bcf938f64eb9',

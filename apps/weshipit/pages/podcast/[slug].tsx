@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
+import { useEffect, useRef } from 'react';
 import {
   Hyperlink,
   Button,
@@ -25,6 +26,26 @@ export default function PodcastEpisodePage({
   nextEpisode,
   hasTranscript,
 }: PodcastEpisodePageProps) {
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (contentRef.current) {
+      const links = contentRef.current.querySelectorAll('a');
+      links.forEach((link) => {
+        const isExternal = link.getAttribute('target') === '_blank';
+        if (isExternal) {
+          link.setAttribute('rel', 'noopener noreferrer nofollow');
+          const linkContent = link.innerHTML;
+          link.innerHTML = '';
+          const span = document.createElement('span');
+          span.className = 'inline-flex items-center';
+          span.innerHTML = linkContent;
+          link.appendChild(span);
+        }
+      });
+    }
+  }, [episode]);
+
   if (!episode) {
     return (
       <Layout
@@ -112,12 +133,11 @@ export default function PodcastEpisodePage({
                   avec{' '}
                   <span className="font-semibold">{episode.guestName}</span>
                 </Text>
-                <Text
-                  variant="p1"
-                  className="text-slate-700 dark:text-slate-200 leading-relaxed"
-                >
-                  {episode.description}
-                </Text>
+                <div
+                  ref={contentRef}
+                  className="text-slate-700 dark:text-slate-200 leading-relaxed prose prose-slate dark:prose-invert max-w-none prose-a:no-underline prose-a:text-blue-600 hover:prose-a:text-blue-700 dark:prose-a:text-blue-400 dark:hover:prose-a:text-blue-300"
+                  dangerouslySetInnerHTML={{ __html: episode.description }}
+                />
               </div>
             </div>
           </div>
@@ -183,6 +203,17 @@ export default function PodcastEpisodePage({
     </Layout>
   );
 }
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = podcastEpisodes.map((episode) => ({
+    params: { slug: episode.slug },
+  }));
+
+  return {
+    paths,
+    fallback: false,
+  };
+};
 
 export const getStaticProps: GetStaticProps<PodcastEpisodePageProps> = async ({
   params,
