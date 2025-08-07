@@ -12,7 +12,7 @@ import { podcastEpisodes } from '../../fixtures/podcast-episodes.fixture';
 import { PodcastNavigation } from '../../components/podcast-navigation';
 import fs from 'fs';
 import path from 'path';
-import { DocumentTextIcon } from '@heroicons/react/20/solid';
+import { DocumentTextIcon, ChevronLeftIcon } from '@heroicons/react/20/solid';
 
 interface PodcastEpisodePageProps {
   episode: (typeof podcastEpisodes)[0] | null;
@@ -121,9 +121,10 @@ export default function PodcastEpisodePage({
           </Text>
           <Hyperlink
             href="/podcast"
-            className="text-blue-600 hover:text-blue-700"
+            className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700"
           >
-            ← Retour aux épisodes
+            <ChevronLeftIcon className="w-4 h-4" />
+            Retour aux épisodes
           </Hyperlink>
         </div>
       </Layout>
@@ -144,19 +145,7 @@ export default function PodcastEpisodePage({
               href="/podcast"
               className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200 transition-colors"
             >
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 19l-7-7 7-7"
-                />
-              </svg>
+              <ChevronLeftIcon className="w-4 h-4" />
               Retour aux épisodes
             </Hyperlink>
           </div>
