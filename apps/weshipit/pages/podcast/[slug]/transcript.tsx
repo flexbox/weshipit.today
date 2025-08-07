@@ -128,6 +128,7 @@ export default function PodcastTranscriptPage({
     <Layout
       seoTitle={`Transcript - Épisode ${episode.number} - ${episode.name} avec ${episode.guestName}`}
       seoDescription={`Transcript complet de l'épisode ${episode.number} du podcast avec ${episode.guestName} de ${episode.name}. ${episode.description}`}
+      ogImageTitle={`/api/podcast-og?title=${encodeURIComponent(episode.name)}&guest=${encodeURIComponent(episode.guestName)}&episode=${episode.number}&type=transcript`}
       withHeader
       withContainer
     >
