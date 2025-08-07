@@ -125,8 +125,7 @@ export default function PodcastEpisodePage({
             href="/podcast"
             className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700"
           >
-            <ChevronLeftIcon className="w-4 h-4" />
-            Retour aux épisodes
+            <ChevronLeftIcon className="h-4 w-4 mr-1" /> Retour aux épisodes
           </Hyperlink>
         </div>
       </Layout>
@@ -141,16 +140,25 @@ export default function PodcastEpisodePage({
       withHeader
       withContainer
     >
-      <div className="mt-16">
+      <div className="mt-8">
         <div className="max-w-4xl mx-auto">
-          <div className="mb-8">
+          <div className="inline-flex mb-8 gap-4">
             <Hyperlink
               href="/podcast"
               className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200 transition-colors"
             >
-              <ChevronLeftIcon className="w-4 h-4" />
+              <ChevronLeftIcon className="h-4 w-4 mr-1" />
               Retour aux épisodes
             </Hyperlink>
+            <div className="text-slate-400">•</div>
+            {hasTranscript && (
+              <Hyperlink
+                href={`/podcast/${episode.slug}/transcript`}
+                className="text-slate-600 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200 transition-colors"
+              >
+                Transcript
+              </Hyperlink>
+            )}
           </div>
           {/* <div className="bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900 rounded-2xl p-8 mb-8"> */}
           <div className="p-8 mb-8">
@@ -258,7 +266,6 @@ export default function PodcastEpisodePage({
               </div>
             </div>
           </div>
-
           <Card
             size="xl"
             className="my-24 flex flex-col items-center justify-center gap-8 text-center"

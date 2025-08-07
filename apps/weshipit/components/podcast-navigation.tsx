@@ -20,7 +20,6 @@ export function PodcastNavigation({
             href={`/podcast/${previousEpisode.slug}`}
             className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200 transition-colors"
           >
-            <ChevronLeftIcon className="w-4 h-4" />
             <div className="text-left">
               <div className="text-xs text-slate-500 dark:text-slate-400">
                 Épisode précédent
@@ -40,6 +39,7 @@ export function PodcastNavigation({
           </Hyperlink>
         )}
       </div>
+
       {nextEpisode && (
         <Hyperlink
           href={`/podcast/${nextEpisode.slug}`}
@@ -53,7 +53,6 @@ export function PodcastNavigation({
               Épisode {nextEpisode.number} - {nextEpisode.title}
             </div>
           </div>
-          <ChevronRightIcon className="w-4 h-4" />
         </Hyperlink>
       )}
     </div>

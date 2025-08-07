@@ -1,5 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { Hyperlink, Text, Button } from '@weshipit/ui';
+import { Hyperlink, Text, Button, Badge, Card } from '@weshipit/ui';
 import { Layout } from '../../../components/layout';
 import { podcastEpisodes } from '../../../fixtures/podcast-episodes.fixture';
 import { Transcript } from '../../../components/transcript';
@@ -10,6 +10,7 @@ import {
 import { PodcastNavigation } from '../../../components/podcast-navigation';
 import fs from 'fs';
 import path from 'path';
+import { ChevronLeftIcon } from '@heroicons/react/20/solid';
 
 interface PodcastTranscriptPageProps {
   episode: (typeof podcastEpisodes)[0] | null;
@@ -117,7 +118,7 @@ export default function PodcastTranscriptPage({
             href="/podcast"
             className="text-blue-600 hover:text-blue-700"
           >
-            ← Retour aux épisodes
+            <ChevronLeftIcon className="h-4 w-4 mr-1" /> Retour aux épisodes
           </Hyperlink>
         </div>
       </Layout>
@@ -132,99 +133,57 @@ export default function PodcastTranscriptPage({
       withHeader
       withContainer
     >
-      <div className="mt-16">
+      <div className="mt-8">
         <div className="max-w-4xl mx-auto">
-          <div className="mb-8">
+          <div className="inline-flex mb-8 gap-4">
             <Hyperlink
               href="/podcast"
               className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200 transition-colors"
             >
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 19l-7-7 7-7"
-                />
-              </svg>
+              <ChevronLeftIcon className="h-4 w-4 mr-1" />
               Retour aux épisodes
+            </Hyperlink>
+            <div className="text-slate-400">•</div>
+            <Hyperlink
+              href={`/podcast/${episode.slug}`}
+              className="text-slate-600 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200 transition-colors"
+            >
+              Écouter l'épisode
             </Hyperlink>
           </div>
 
-          {/* Header de l'épisode */}
-          <div className="bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900 rounded-2xl p-8 mb-8">
-            <div className="flex flex-col lg:flex-row lg:items-start lg:gap-8">
-              <div className="flex-1 lg:order-1">
-                <div className="flex items-start justify-between gap-6">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
-                        Épisode {episode.number}
-                      </span>
-                      <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
-                        Transcript
-                      </span>
-                    </div>
-                    <Text as="h1" variant="h2" className="mb-3">
-                      {episode.name}
-                    </Text>
-                    <Text
-                      variant="s1"
-                      className="text-slate-600 dark:text-slate-300 mb-6"
-                    >
-                      avec{' '}
-                      <span className="font-semibold">{episode.guestName}</span>
-                    </Text>
-                    <div className="flex flex-wrap gap-4">
-                      <Button
-                        as="a"
-                        href={`/podcast/${episode.slug}`}
-                        variant="primary"
-                        size="lg"
-                        accessoryLeft={
-                          <svg
-                            className="w-4 h-4"
-                            fill="none"
-                            stroke="currentColor"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth={2}
-                              d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6-5a7 7 0 017 7v1a1 1 0 01-1 1H4a1 1 0 01-1-1v-1a7 7 0 017-7z"
-                            />
-                          </svg>
-                        }
-                      >
-                        Écouter l'épisode
-                      </Button>
-                    </div>
+          <div className="flex flex-col lg:flex-row lg:items-start lg:gap-8">
+            <div className="flex-1 lg:order-1">
+              <div className="flex items-start justify-between gap-6">
+                <div className="flex-1">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Badge size="sm">Épisode {episode.number}</Badge>
+                    <Badge variant="blue" size="sm">
+                      Transcript
+                    </Badge>
                   </div>
-                  <div className="flex-shrink-0">
-                    <img
-                      src={episode.companyLogo}
-                      alt={`Logo ${episode.name}`}
-                      className="w-24 h-24 rounded-xl object-cover shadow-lg"
-                    />
-                  </div>
+                  <Text as="h1" variant="h2" className="mb-3">
+                    {episode.name}
+                  </Text>
+                  <Text
+                    variant="s1"
+                    className="text-slate-600 dark:text-slate-300"
+                  >
+                    avec{' '}
+                    <span className="font-semibold">{episode.guestName}</span>
+                  </Text>
+                </div>
+                <div className="flex-shrink-0">
+                  <img
+                    src={episode.companyLogo}
+                    alt={`Logo ${episode.name}`}
+                    className="w-24 h-24 rounded-xl object-cover shadow-lg"
+                  />
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Navigation */}
-          <PodcastNavigation
-            previousEpisode={previousEpisode}
-            nextEpisode={nextEpisode}
-          />
-
-          {/* Transcript */}
           {transcriptEntries && transcriptEntries.length > 0 && (
             <div className="mt-8">
               <Transcript
@@ -234,11 +193,10 @@ export default function PodcastTranscriptPage({
             </div>
           )}
 
-          {/* Navigation en bas */}
           <PodcastNavigation
             previousEpisode={previousEpisode}
             nextEpisode={nextEpisode}
-            className="mt-16 mb-16"
+            className="my-32"
           />
         </div>
       </div>
