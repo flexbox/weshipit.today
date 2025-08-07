@@ -1,47 +1,46 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
+import { Hyperlink, Text, Button } from '@weshipit/ui';
+import { Layout } from '../../../components/layout';
+import { podcastEpisodes } from '../../../fixtures/podcast-episodes.fixture';
+import { Transcript } from '../../../components/transcript';
 import {
-  Hyperlink,
-  Button,
-  SpotifyIcon,
-  ApplePodcastIcon,
-  Text,
-} from '@weshipit/ui';
-import { Layout } from '../../components/layout';
-import { podcastEpisodes } from '../../fixtures/podcast-episodes.fixture';
-import { PodcastNavigation } from '../../components/podcast-navigation';
+  parseTranscript,
+  TranscriptEntryType,
+} from '../../../utils/transcript';
+import { PodcastNavigation } from '../../../components/podcast-navigation';
 import fs from 'fs';
 import path from 'path';
 
-interface PodcastEpisodePageProps {
+interface PodcastTranscriptPageProps {
   episode: (typeof podcastEpisodes)[0] | null;
   previousEpisode: (typeof podcastEpisodes)[0] | null;
   nextEpisode: (typeof podcastEpisodes)[0] | null;
-  hasTranscript: boolean;
+  transcriptEntries: TranscriptEntryType[];
 }
 
-export default function PodcastEpisodePage({
+export default function PodcastTranscriptPage({
   episode,
   previousEpisode,
   nextEpisode,
-  hasTranscript,
-}: PodcastEpisodePageProps) {
+  transcriptEntries,
+}: PodcastTranscriptPageProps) {
   if (!episode) {
     return (
       <Layout
-        seoTitle="Épisode non trouvé"
-        seoDescription="L'épisode que vous recherchez n'existe pas."
+        seoTitle="Transcript non trouvé"
+        seoDescription="Le transcript que vous recherchez n'existe pas."
         withHeader
         withContainer
       >
         <div className="mt-16 text-center">
           <Text as="h1" variant="h3" className="mb-4">
-            Épisode non trouvé
+            Transcript non trouvé
           </Text>
           <Text
             variant="p1"
             className="text-slate-600 dark:text-slate-400 mb-8"
           >
-            L'épisode que vous recherchez n'existe pas.
+            Le transcript que vous recherchez n'existe pas.
           </Text>
           <Hyperlink
             href="/podcast"
@@ -56,8 +55,8 @@ export default function PodcastEpisodePage({
 
   return (
     <Layout
-      seoTitle={`Épisode ${episode.number} - ${episode.name} avec ${episode.guestName}`}
-      seoDescription={episode.description}
+      seoTitle={`Transcript - Épisode ${episode.number} - ${episode.name} avec ${episode.guestName}`}
+      seoDescription={`Transcript complet de l'épisode ${episode.number} du podcast avec ${episode.guestName} de ${episode.name}. ${episode.description}`}
       withHeader
       withContainer
     >
@@ -84,6 +83,8 @@ export default function PodcastEpisodePage({
               Retour aux épisodes
             </Hyperlink>
           </div>
+
+          {/* Header de l'épisode */}
           <div className="bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900 rounded-2xl p-8 mb-8">
             <div className="flex flex-col lg:flex-row lg:items-start lg:gap-8">
               <div className="flex-shrink-0 mb-6 lg:mb-0">
@@ -98,8 +99,8 @@ export default function PodcastEpisodePage({
                   <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
                     Épisode {episode.number}
                   </span>
-                  <span className="text-sm text-slate-500 dark:text-slate-400">
-                    Podcast
+                  <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+                    Transcript
                   </span>
                 </div>
                 <Text as="h1" variant="h2" className="mb-3">
@@ -112,71 +113,56 @@ export default function PodcastEpisodePage({
                   avec{' '}
                   <span className="font-semibold">{episode.guestName}</span>
                 </Text>
-                <Text
-                  variant="p1"
-                  className="text-slate-700 dark:text-slate-200 leading-relaxed"
-                >
-                  {episode.description}
-                </Text>
+                <div className="flex flex-wrap gap-4">
+                  <Button
+                    as="a"
+                    href={`/podcast/${episode.slug}`}
+                    variant="primary"
+                    size="lg"
+                    accessoryLeft={
+                      <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6-5a7 7 0 017 7v1a1 1 0 01-1 1H4a1 1 0 01-1-1v-1a7 7 0 017-7z"
+                        />
+                      </svg>
+                    }
+                  >
+                    Écouter l'épisode
+                  </Button>
+                </div>
               </div>
             </div>
           </div>
-          <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-sm border border-slate-200 dark:border-slate-700">
-            <Text as="h2" variant="h3" className="mb-6">
-              Écouter l'épisode
-            </Text>
-            <div className="flex flex-wrap gap-4">
-              <Button
-                href={episode.spotifyLink}
-                isExternalLink={true}
-                size="lg"
-                variant="spotify"
-                accessoryLeft={<SpotifyIcon />}
-              >
-                Écouter sur Spotify
-              </Button>
 
-              <Button
-                href={episode.appleLink}
-                isExternalLink={true}
-                size="lg"
-                variant="apple"
-                accessoryLeft={<ApplePodcastIcon />}
-              >
-                Écouter sur Apple Podcast
-              </Button>
-              {hasTranscript && (
-                <Button
-                  as="a"
-                  href={`/podcast/${episode.slug}/transcript`}
-                  variant="primary"
-                  size="lg"
-                  accessoryLeft={
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                      />
-                    </svg>
-                  }
-                >
-                  Voir le transcript
-                </Button>
-              )}
-            </div>
-          </div>
-
+          {/* Navigation */}
           <PodcastNavigation
             previousEpisode={previousEpisode}
             nextEpisode={nextEpisode}
-            className="mb-16"
+          />
+
+          {/* Transcript */}
+          {transcriptEntries && transcriptEntries.length > 0 && (
+            <div className="mt-8">
+              <Transcript
+                entries={transcriptEntries}
+                spotifyLink={episode.spotifyLink}
+              />
+            </div>
+          )}
+
+          {/* Navigation en bas */}
+          <PodcastNavigation
+            previousEpisode={previousEpisode}
+            nextEpisode={nextEpisode}
+            className="mt-16 mb-16"
           />
         </div>
       </div>
@@ -184,9 +170,31 @@ export default function PodcastEpisodePage({
   );
 }
 
-export const getStaticProps: GetStaticProps<PodcastEpisodePageProps> = async ({
-  params,
-}) => {
+export const getStaticPaths: GetStaticPaths = async () => {
+  // Générer les paths seulement pour les épisodes qui ont un transcript
+  const transcriptsDir = path.join(process.cwd(), 'public/podcast-transcripts');
+  const transcriptFiles = fs.existsSync(transcriptsDir)
+    ? fs.readdirSync(transcriptsDir)
+    : [];
+
+  const paths = podcastEpisodes
+    .filter((episode) => {
+      const transcriptFile = `${episode.slug}-transcript.txt`;
+      return transcriptFiles.includes(transcriptFile);
+    })
+    .map((episode) => ({
+      params: { slug: episode.slug },
+    }));
+
+  return {
+    paths,
+    fallback: false,
+  };
+};
+
+export const getStaticProps: GetStaticProps<
+  PodcastTranscriptPageProps
+> = async ({ params }) => {
   const slug = params?.slug as string;
 
   const episode = podcastEpisodes.find((ep) => ep.slug === slug);
@@ -197,7 +205,7 @@ export const getStaticProps: GetStaticProps<PodcastEpisodePageProps> = async ({
         episode: null,
         previousEpisode: null,
         nextEpisode: null,
-        hasTranscript: false,
+        transcriptEntries: [],
       },
     };
   }
@@ -210,19 +218,25 @@ export const getStaticProps: GetStaticProps<PodcastEpisodePageProps> = async ({
       ? podcastEpisodes[currentIndex + 1]
       : null;
 
+  // Lire le transcript
+  let transcriptEntries: TranscriptEntryType[] = [];
   const transcriptPath = path.join(
     process.cwd(),
     'public/podcast-transcripts',
     `${slug}-transcript.txt`,
   );
-  const hasTranscript = fs.existsSync(transcriptPath);
+
+  if (fs.existsSync(transcriptPath)) {
+    const transcriptContent = fs.readFileSync(transcriptPath, 'utf-8');
+    transcriptEntries = parseTranscript(transcriptContent);
+  }
 
   return {
     props: {
       episode,
       previousEpisode,
       nextEpisode,
-      hasTranscript,
+      transcriptEntries,
     },
   };
 };

@@ -2,6 +2,7 @@ import { Card, Button } from '@weshipit/ui';
 import { PodcastEpisode } from '../fixtures/podcast-episodes.fixture';
 import Link from 'next/link';
 import { SpotifyIcon, ApplePodcastIcon } from '@weshipit/ui';
+import { Text } from '@weshipit/ui';
 
 interface PodcastEpisodeCardProps {
   episode: PodcastEpisode;
@@ -10,15 +11,12 @@ interface PodcastEpisodeCardProps {
 export function PodcastEpisodeCard({ episode }: PodcastEpisodeCardProps) {
   return (
     <Link href={`/podcast/${episode.slug}`} className="block">
-      <Card
-        variant="link"
-        className="h-full flex flex-col hover:shadow-md border border-slate-200 dark:border-slate-700"
-      >
+      <Card variant="link" className="h-full flex flex-col">
         <div className="flex-1 p-6">
-          <div className="flex items-center justify-between mb-4">
-            <span className="text-xl font-bold text-slate-900 dark:text-white">
+          <div className="flex items-center justify-between mb-8">
+            <Text as="h3" variant="h3">
               {episode.name}
-            </span>
+            </Text>
             <img
               src={episode.companyLogo}
               alt={`Logo ${episode.name}`}
@@ -26,18 +24,18 @@ export function PodcastEpisodeCard({ episode }: PodcastEpisodeCardProps) {
             />
           </div>
 
-          <div className="mb-4">
-            <p className="text-md font-semibold text-slate-800 dark:text-slate-100 mb-2">
+          <div className="my-4">
+            <Text variant="p2" className="font-semibold">
               {episode.title}
-            </p>
-            <p className="text-sm text-slate-500 dark:text-slate-400">
-              Épisode {episode.number} avec {episode.guestName}
-            </p>
+            </Text>
+            <Text variant="p2" className="!text-slate-400 !mt-4">
+              Épisode {episode.number} - {episode.guestName}
+            </Text>
           </div>
 
-          <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+          <Text variant="c1" className="leading-relaxed">
             {episode.description}
-          </p>
+          </Text>
         </div>
 
         <div className="p-6 pt-0">
