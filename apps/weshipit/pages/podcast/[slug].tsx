@@ -20,6 +20,60 @@ interface PodcastEpisodePageProps {
   hasTranscript: boolean;
 }
 
+export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = podcastEpisodes.map((episode) => ({
+    params: { slug: episode.slug },
+  }));
+
+  return {
+    paths,
+    fallback: false,
+  };
+};
+
+export const getStaticProps: GetStaticProps<PodcastEpisodePageProps> = async ({
+  params,
+}) => {
+  const slug = params?.slug as string;
+
+  const episode = podcastEpisodes.find((ep) => ep.slug === slug);
+
+  if (!episode) {
+    return {
+      props: {
+        episode: null,
+        previousEpisode: null,
+        nextEpisode: null,
+        hasTranscript: false,
+      },
+    };
+  }
+
+  const currentIndex = podcastEpisodes.findIndex((ep) => ep.slug === slug);
+  const previousEpisode =
+    currentIndex > 0 ? podcastEpisodes[currentIndex - 1] : null;
+  const nextEpisode =
+    currentIndex < podcastEpisodes.length - 1
+      ? podcastEpisodes[currentIndex + 1]
+      : null;
+
+  const transcriptPath = path.join(
+    process.cwd(),
+    'public/podcast-transcripts',
+    `${slug}.txt`,
+  );
+  const hasTranscript = fs.existsSync(transcriptPath);
+
+  return {
+    props: {
+      episode,
+      previousEpisode,
+      nextEpisode,
+      hasTranscript,
+    },
+  };
+};
+
 export default function PodcastEpisodePage({
   episode,
   previousEpisode,
@@ -77,7 +131,7 @@ export default function PodcastEpisodePage({
 
   return (
     <Layout
-      seoTitle={`Épisode ${episode.number} - ${episode.name} avec ${episode.guestName}`}
+      seoTitle={`${episode.name} avec ${episode.guestName} — Le Cross Platform Show Podcast`}
       seoDescription={episode.description}
       withHeader
       withContainer
@@ -105,7 +159,8 @@ export default function PodcastEpisodePage({
               Retour aux épisodes
             </Hyperlink>
           </div>
-          <div className="bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900 rounded-2xl p-8 mb-8">
+          {/* <div className="bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-900 rounded-2xl p-8 mb-8"> */}
+          <div className="p-8 mb-8">
             <div className="flex flex-col lg:flex-row lg:items-start lg:gap-8">
               <div className="flex-1 lg:order-1">
                 <div className="flex items-start justify-between gap-6">
@@ -207,57 +262,3 @@ export default function PodcastEpisodePage({
     </Layout>
   );
 }
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = podcastEpisodes.map((episode) => ({
-    params: { slug: episode.slug },
-  }));
-
-  return {
-    paths,
-    fallback: false,
-  };
-};
-
-export const getStaticProps: GetStaticProps<PodcastEpisodePageProps> = async ({
-  params,
-}) => {
-  const slug = params?.slug as string;
-
-  const episode = podcastEpisodes.find((ep) => ep.slug === slug);
-
-  if (!episode) {
-    return {
-      props: {
-        episode: null,
-        previousEpisode: null,
-        nextEpisode: null,
-        hasTranscript: false,
-      },
-    };
-  }
-
-  const currentIndex = podcastEpisodes.findIndex((ep) => ep.slug === slug);
-  const previousEpisode =
-    currentIndex > 0 ? podcastEpisodes[currentIndex - 1] : null;
-  const nextEpisode =
-    currentIndex < podcastEpisodes.length - 1
-      ? podcastEpisodes[currentIndex + 1]
-      : null;
-
-  const transcriptPath = path.join(
-    process.cwd(),
-    'public/podcast-transcripts',
-    `${slug}-transcript.txt`,
-  );
-  const hasTranscript = fs.existsSync(transcriptPath);
-
-  return {
-    props: {
-      episode,
-      previousEpisode,
-      nextEpisode,
-      hasTranscript,
-    },
-  };
-};

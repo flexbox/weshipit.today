@@ -37,7 +37,7 @@ export function PodcastNavigation({
                 Épisode précédent
               </div>
               <div className="font-medium">
-                Épisode {previousEpisode.number} - {previousEpisode.title}
+                E{previousEpisode.number} - {previousEpisode.title}
               </div>
             </div>
           </Hyperlink>

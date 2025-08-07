@@ -12,7 +12,7 @@ export function PodcastEpisodeCard({ episode }: PodcastEpisodeCardProps) {
   return (
     <Link href={`/podcast/${episode.slug}`} className="block">
       <Card variant="link" className="h-full flex flex-col">
-        <div className="flex-1 p-6">
+        <div className="flex-1 p-4">
           <div className="flex items-center justify-between mb-8">
             <Text as="h3" variant="h3">
               {episode.name}
@@ -27,9 +27,6 @@ export function PodcastEpisodeCard({ episode }: PodcastEpisodeCardProps) {
           <div className="my-4">
             <Text variant="p2" className="font-semibold">
               {episode.title}
-            </Text>
-            <Text variant="p2" className="!text-slate-400 !mt-4">
-              Épisode {episode.number} - {episode.guestName}
             </Text>
           </div>
 

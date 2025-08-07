@@ -18,6 +18,77 @@ interface PodcastTranscriptPageProps {
   transcriptEntries: TranscriptEntryType[];
 }
 
+export const getStaticPaths: GetStaticPaths = async () => {
+  // Générer les paths seulement pour les épisodes qui ont un transcript
+  const transcriptsDir = path.join(process.cwd(), 'public/podcast-transcripts');
+  const transcriptFiles = fs.existsSync(transcriptsDir)
+    ? fs.readdirSync(transcriptsDir)
+    : [];
+
+  const paths = podcastEpisodes
+    .filter((episode) => {
+      const transcriptFile = `${episode.slug}-transcript.txt`;
+      return transcriptFiles.includes(transcriptFile);
+    })
+    .map((episode) => ({
+      params: { slug: episode.slug },
+    }));
+
+  return {
+    paths,
+    fallback: false,
+  };
+};
+
+export const getStaticProps: GetStaticProps<
+  PodcastTranscriptPageProps
+> = async ({ params }) => {
+  const slug = params?.slug as string;
+
+  const episode = podcastEpisodes.find((ep) => ep.slug === slug);
+
+  if (!episode) {
+    return {
+      props: {
+        episode: null,
+        previousEpisode: null,
+        nextEpisode: null,
+        transcriptEntries: [],
+      },
+    };
+  }
+
+  const currentIndex = podcastEpisodes.findIndex((ep) => ep.slug === slug);
+  const previousEpisode =
+    currentIndex > 0 ? podcastEpisodes[currentIndex - 1] : null;
+  const nextEpisode =
+    currentIndex < podcastEpisodes.length - 1
+      ? podcastEpisodes[currentIndex + 1]
+      : null;
+
+  // Lire le transcript
+  let transcriptEntries: TranscriptEntryType[] = [];
+  const transcriptPath = path.join(
+    process.cwd(),
+    'public/podcast-transcripts',
+    `${slug}-transcript.txt`,
+  );
+
+  if (fs.existsSync(transcriptPath)) {
+    const transcriptContent = fs.readFileSync(transcriptPath, 'utf-8');
+    transcriptEntries = parseTranscript(transcriptContent);
+  }
+
+  return {
+    props: {
+      episode,
+      previousEpisode,
+      nextEpisode,
+      transcriptEntries,
+    },
+  };
+};
+
 export default function PodcastTranscriptPage({
   episode,
   previousEpisode,
@@ -169,74 +240,3 @@ export default function PodcastTranscriptPage({
     </Layout>
   );
 }
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  // Générer les paths seulement pour les épisodes qui ont un transcript
-  const transcriptsDir = path.join(process.cwd(), 'public/podcast-transcripts');
-  const transcriptFiles = fs.existsSync(transcriptsDir)
-    ? fs.readdirSync(transcriptsDir)
-    : [];
-
-  const paths = podcastEpisodes
-    .filter((episode) => {
-      const transcriptFile = `${episode.slug}-transcript.txt`;
-      return transcriptFiles.includes(transcriptFile);
-    })
-    .map((episode) => ({
-      params: { slug: episode.slug },
-    }));
-
-  return {
-    paths,
-    fallback: false,
-  };
-};
-
-export const getStaticProps: GetStaticProps<
-  PodcastTranscriptPageProps
-> = async ({ params }) => {
-  const slug = params?.slug as string;
-
-  const episode = podcastEpisodes.find((ep) => ep.slug === slug);
-
-  if (!episode) {
-    return {
-      props: {
-        episode: null,
-        previousEpisode: null,
-        nextEpisode: null,
-        transcriptEntries: [],
-      },
-    };
-  }
-
-  const currentIndex = podcastEpisodes.findIndex((ep) => ep.slug === slug);
-  const previousEpisode =
-    currentIndex > 0 ? podcastEpisodes[currentIndex - 1] : null;
-  const nextEpisode =
-    currentIndex < podcastEpisodes.length - 1
-      ? podcastEpisodes[currentIndex + 1]
-      : null;
-
-  // Lire le transcript
-  let transcriptEntries: TranscriptEntryType[] = [];
-  const transcriptPath = path.join(
-    process.cwd(),
-    'public/podcast-transcripts',
-    `${slug}-transcript.txt`,
-  );
-
-  if (fs.existsSync(transcriptPath)) {
-    const transcriptContent = fs.readFileSync(transcriptPath, 'utf-8');
-    transcriptEntries = parseTranscript(transcriptContent);
-  }
-
-  return {
-    props: {
-      episode,
-      previousEpisode,
-      nextEpisode,
-      transcriptEntries,
-    },
-  };
-};
