@@ -92,7 +92,7 @@ export function NextHead({
             ogImageTitle?.startsWith('/api/') ||
             ogImageTitle?.startsWith('http')
               ? ogImageTitle
-              : `/api/og?title=${encodeURI(ogImageTitle)}`
+              : `/api/og?title=${encodeURI(ogImageTitle || '')}`
           }
         />
         <meta property="og:image:type" content="image/png" />
