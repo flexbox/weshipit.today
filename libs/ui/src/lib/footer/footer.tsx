@@ -20,7 +20,7 @@ const navigation = {
   ],
   social: [
     {
-      href: 'https://twitter.com/intent/follow?screen_name=flexbox_',
+      href: 'https://x.com/intent/follow?screen_name=flexbox_',
       icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <g>
@@ -65,7 +65,6 @@ const navigation = {
           height="800px"
           viewBox="0 0 24 24"
           role="img"
-          xmlns="http://www.w3.org/2000/svg"
           {...props}
         >
           <title>Join our Slack community</title>
