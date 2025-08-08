@@ -208,7 +208,7 @@ export default async function handler(req: NextRequest) {
                 position: 'absolute',
                 bottom: 32,
                 left: 32,
-                borderRadius: '9999px',
+                borderRadius: '12px',
                 objectFit: 'cover',
                 background: 'white',
               }}
