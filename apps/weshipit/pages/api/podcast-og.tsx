@@ -167,7 +167,7 @@ export default async function handler(req: NextRequest) {
                 marginBottom: '24px',
               }}
             >
-              The Cross Platform Show
+              Le Cross Platform Show
             </div>
 
             <div
