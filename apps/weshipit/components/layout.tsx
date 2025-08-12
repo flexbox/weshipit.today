@@ -11,6 +11,12 @@ interface LayoutProps extends NextHeadProps {
   withContainer?: boolean;
   children: React.ReactNode;
   withProductHunt?: boolean;
+  ogImagePodcast?: {
+    title: string;
+    guest: string;
+    episode: number;
+    type: 'podcast';
+  };
 }
 
 export function Layout({
@@ -25,6 +31,7 @@ export function Layout({
   withFooter = false,
   navigation,
   withProductHunt = false,
+  ogImagePodcast,
 }: LayoutProps) {
   return (
     <>
@@ -32,6 +39,7 @@ export function Layout({
         seoTitle={seoTitle}
         seoDescription={seoDescription}
         ogImageTitle={ogImageTitle}
+        ogImagePodcast={ogImagePodcast}
       />
       <div className="flex min-h-screen flex-col justify-between">
         {withProductHunt && <BannerProductHunt />}
