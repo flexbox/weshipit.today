@@ -221,19 +221,6 @@ export default function PodcastEpisodePage({
                         >
                           Apple Podcast
                         </Button>
-                        {hasTranscript && (
-                          <Button
-                            as="a"
-                            href={`/podcast/${episode.slug}/transcript`}
-                            variant="outline"
-                            size="md"
-                            accessoryLeft={
-                              <DocumentTextIcon className="w-4 h-4" />
-                            }
-                          >
-                            Transcript
-                          </Button>
-                        )}
                       </div>
                     </div>
 
