@@ -1,12 +1,22 @@
-import { Hyperlink, LinkButton, Prose } from '@weshipit/ui';
+import { Hyperlink, LinkButton, Prose, Button } from '@weshipit/ui';
 import { Layout } from '../../components/layout';
 import { PodcastEpisodeCard } from '../../components/podcast-episode-card';
 import { podcastEpisodes } from '../../fixtures/podcast-episodes.fixture';
-
-const NOTION_FORM_URL =
-  'https://flexbox.notion.site/17af478bcb8c8018b4a9db6b13d1df38?pvs=105';
+import { useState } from 'react';
+import { ArrowUpIcon, ArrowDownIcon } from '@heroicons/react/20/solid';
+import { linksApi } from '../api/links';
 
 export default function Podcast() {
+  const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
+
+  const toggleSortOrder = () => {
+    setSortOrder(sortOrder === 'desc' ? 'asc' : 'desc');
+  };
+
+  const sortedEpisodes = [...podcastEpisodes].sort((a, b) =>
+    sortOrder === 'desc' ? b.number - a.number : a.number - b.number,
+  );
+
   return (
     <Layout
       seoTitle="Le Cross Platform Show, le podcast francophone React Native animé par David Leuliette"
@@ -15,7 +25,7 @@ export default function Podcast() {
       withHeader
       callToActionLink={{
         name: 'Participer au podcast',
-        href: NOTION_FORM_URL,
+        href: linksApi.notion.PODCAST_FORM,
         isExternalLink: true,
       }}
       callToActionButton={{
@@ -40,7 +50,7 @@ export default function Podcast() {
                 Tu as une application codée en React Native et tu souhaites
                 partager ton expérience ? Pour enregistrer une émission, il
                 suffit de{' '}
-                <Hyperlink href={NOTION_FORM_URL} isExternal>
+                <Hyperlink href={linksApi.notion.PODCAST_FORM} isExternal>
                   remplir ce formulaire sur Notion
                 </Hyperlink>
                 .
@@ -94,11 +104,27 @@ export default function Podcast() {
           RSS
         </LinkButton>
       </div>
-      <Prose className="mt-12 mb-8">
-        <h2>Derniers épisodes</h2>
-      </Prose>
+      <div className="flex items-center justify-between mt-12 mb-8">
+        <Prose>
+          <h2>Derniers épisodes</h2>
+        </Prose>
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={toggleSortOrder}
+          accessoryRight={
+            sortOrder === 'desc' ? (
+              <ArrowDownIcon className="w-4 h-4 ml-2" />
+            ) : (
+              <ArrowUpIcon className="w-4 h-4 ml-2" />
+            )
+          }
+        >
+          Épisodes
+        </Button>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-        {podcastEpisodes.map((episode) => (
+        {sortedEpisodes.map((episode) => (
           <PodcastEpisodeCard key={episode.slug} episode={episode} />
         ))}
       </div>

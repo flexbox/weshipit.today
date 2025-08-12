@@ -6,6 +6,7 @@ import {
   SpotifyIcon,
   ApplePodcastIcon,
   Text,
+  Card,
 } from '@weshipit/ui';
 import { Layout } from '../../components/layout';
 import { podcastEpisodes } from '../../fixtures/podcast-episodes.fixture';
@@ -13,6 +14,7 @@ import { PodcastNavigation } from '../../components/podcast-navigation';
 import fs from 'fs';
 import path from 'path';
 import { DocumentTextIcon, ChevronLeftIcon } from '@heroicons/react/20/solid';
+import { linksApi } from '../api/links';
 
 interface PodcastEpisodePageProps {
   episode: (typeof podcastEpisodes)[0] | null;
@@ -156,77 +158,138 @@ export default function PodcastEpisodePage({
               <div className="flex-1 lg:order-1">
                 <div className="flex items-start justify-between gap-6">
                   <div className="flex-1">
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
-                        Épisode {episode.number}
-                      </span>
-                      <span className="text-sm text-slate-500 dark:text-slate-400">
-                        Podcast
-                      </span>
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <div className="flex items-center gap-3 mb-4">
+                          <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+                            Épisode {episode.number}
+                          </span>
+                          <span className="text-sm text-slate-500 dark:text-slate-400">
+                            Podcast
+                          </span>
+                        </div>
+                        <Text as="h1" variant="h2" className="mb-3">
+                          {episode.name}
+                        </Text>
+                        <Text
+                          variant="s1"
+                          className="text-slate-600 dark:text-slate-300 mb-6"
+                        >
+                          avec{' '}
+                          <span className="font-semibold">
+                            {episode.guestName}
+                          </span>
+                        </Text>
+                      </div>
+                      <img
+                        src={episode.companyLogo}
+                        alt={`Logo ${episode.name}`}
+                        className="w-24 h-24 rounded-xl object-cover shadow-lg"
+                      />
                     </div>
-                    <Text as="h1" variant="h2" className="mb-3">
-                      {episode.name}
-                    </Text>
-                    <Text
-                      variant="s1"
-                      className="text-slate-600 dark:text-slate-300 mb-6"
-                    >
-                      avec{' '}
-                      <span className="font-semibold">{episode.guestName}</span>
-                    </Text>
+
+                    {/* Section Écouter l'épisode */}
+                    <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 mb-6">
+                      <Text as="h2" variant="h4" className="mb-4">
+                        Écouter l'épisode
+                      </Text>
+                      <div className="flex flex-wrap gap-3">
+                        <Button
+                          href={episode.spotifyLink}
+                          isExternalLink={true}
+                          size="md"
+                          variant="spotify"
+                          accessoryLeft={<SpotifyIcon />}
+                        >
+                          Spotify
+                        </Button>
+
+                        <Button
+                          href={episode.appleLink}
+                          isExternalLink={true}
+                          size="md"
+                          variant="apple"
+                          accessoryLeft={<ApplePodcastIcon />}
+                        >
+                          Apple Podcast
+                        </Button>
+                        {hasTranscript && (
+                          <Button
+                            as="a"
+                            href={`/podcast/${episode.slug}/transcript`}
+                            variant="outline"
+                            size="md"
+                            accessoryLeft={
+                              <DocumentTextIcon className="w-4 h-4" />
+                            }
+                          >
+                            Transcript
+                          </Button>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Section YouTube */}
+                    {episode.youtubeEmbedId && (
+                      <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 mb-6">
+                        <Text as="h2" variant="h4" className="mb-4">
+                          Regarder sur YouTube
+                        </Text>
+                        <div className="aspect-video">
+                          <iframe
+                            src={`https://www.youtube.com/embed/${episode.youtubeEmbedId}`}
+                            title={`YouTube video player - ${episode.name}`}
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowFullScreen
+                            className="w-full h-full rounded-lg"
+                          />
+                        </div>
+                      </div>
+                    )}
+
                     <div
                       ref={contentRef}
                       className="text-slate-700 dark:text-slate-200 leading-relaxed prose prose-slate dark:prose-invert max-w-none prose-a:no-underline prose-a:text-blue-600 hover:prose-a:text-blue-700 dark:prose-a:text-blue-400 dark:hover:prose-a:text-blue-300"
                       dangerouslySetInnerHTML={{ __html: episode.description }}
                     />
                   </div>
-                  <div className="flex-shrink-0">
-                    <img
-                      src={episode.companyLogo}
-                      alt={`Logo ${episode.name}`}
-                      className="w-24 h-24 rounded-xl object-cover shadow-lg"
-                    />
-                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-sm border border-slate-200 dark:border-slate-700">
-            <Text as="h2" variant="h3" className="mb-6">
-              Écouter l'épisode
-            </Text>
-            <div className="flex flex-wrap gap-4">
-              <Button
-                href={episode.spotifyLink}
-                isExternalLink={true}
-                size="lg"
-                variant="spotify"
-                accessoryLeft={<SpotifyIcon />}
-              >
-                Écouter sur Spotify
-              </Button>
 
-              <Button
-                href={episode.appleLink}
-                isExternalLink={true}
-                size="lg"
-                variant="apple"
-                accessoryLeft={<ApplePodcastIcon />}
-              >
-                Écouter sur Apple Podcast
-              </Button>
-              {hasTranscript && (
-                <Button
-                  as="a"
-                  href={`/podcast/${episode.slug}/transcript`}
-                  variant="outline"
-                  accessoryLeft={<DocumentTextIcon className="w-4 h-4" />}
-                >
-                  Voir le transcript
-                </Button>
-              )}
-            </div>
-          </div>
+          <Card
+            size="xl"
+            className="my-24 flex flex-col items-center justify-center gap-8 text-center"
+            variant="gradient-blue"
+          >
+            <Text
+              variant="h4"
+              as="h2"
+              className="bg-gradient-to-b from-white to-white/75 bg-clip-text font-bold tracking-tight text-transparent drop-shadow"
+            >
+              Venez parler de votre stack sur le podcast
+            </Text>
+            <Text
+              variant="p1"
+              as="p"
+              className="bg-gradient-to-b from-white to-white/75 bg-clip-text tracking-tight text-transparent drop-shadow"
+            >
+              Vous avez développé une application avec React Native et souhaitez
+              partager votre expérience ? Rejoignez le Cross Platform Show et
+              racontez votre histoire !
+            </Text>
+            <Button
+              href={linksApi.notion.PODCAST_FORM}
+              size="xxl"
+              variant="outline"
+              as="a"
+              isExternalLink
+            >
+              Participer au podcast
+            </Button>
+          </Card>
 
           <PodcastNavigation
             previousEpisode={previousEpisode}
