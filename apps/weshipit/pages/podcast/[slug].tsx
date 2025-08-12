@@ -166,64 +166,85 @@ export default function PodcastEpisodePage({
             <div className="flex-1 lg:order-1">
               <div className="flex items-start justify-between gap-6">
                 <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-4">
-                    <Badge size="sm">Épisode {episode.number}</Badge>
-                    <Badge variant="green" size="sm">
-                      Podcast
-                    </Badge>
+                  <div className="flex items-start justify-between gap-6">
+                    <div>
+                      <div className="flex items-center gap-3 mb-4">
+                        <Badge size="sm">Épisode {episode.number}</Badge>
+                        <Badge variant="green" size="sm">
+                          Podcast
+                        </Badge>
+                      </div>
+                      <Text as="h1" variant="h2" className="mb-3">
+                        {episode.name}
+                      </Text>
+                      <Text
+                        variant="s1"
+                        className="text-slate-600 dark:text-slate-300 mb-6"
+                      >
+                        avec{' '}
+                        <span className="font-semibold">
+                          {episode.guestName}
+                        </span>
+                      </Text>
+                    </div>
+                    <img
+                      src={episode.companyLogo}
+                      alt={`Logo ${episode.name}`}
+                      className="w-24 h-24 rounded-xl object-cover shadow-lg"
+                    />
                   </div>
-                  <Text as="h1" variant="h2" className="mb-3">
-                    {episode.name}
-                  </Text>
-                  <Text
-                    variant="s1"
-                    className="text-slate-600 dark:text-slate-300 mb-6"
-                  >
-                    avec{' '}
-                    <span className="font-semibold">{episode.guestName}</span>
-                  </Text>
+                  <Card>
+                    <Text as="h2" variant="h3" className="mb-6">
+                      Écouter l'épisode
+                    </Text>
+                    <div className="flex flex-wrap gap-4">
+                      <Button
+                        href={episode.spotifyLink}
+                        isExternalLink={true}
+                        size="lg"
+                        variant="spotify"
+                        accessoryLeft={<SpotifyIcon />}
+                      >
+                        Écouter sur Spotify
+                      </Button>
+
+                      <Button
+                        href={episode.appleLink}
+                        isExternalLink={true}
+                        size="lg"
+                        variant="apple"
+                        accessoryLeft={<ApplePodcastIcon />}
+                      >
+                        Écouter sur Apple Podcast
+                      </Button>
+                    </div>
+                  </Card>
+                  {episode.youtubeEmbedId && (
+                    <Card className="my-6">
+                      <Text as="h2" variant="h4" className="mb-4">
+                        Regarder sur YouTube
+                      </Text>
+                      <div className="aspect-video">
+                        <iframe
+                          src={`https://www.youtube.com/embed/${episode.youtubeEmbedId}`}
+                          title={`YouTube video player - ${episode.name}`}
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allowFullScreen
+                          className="w-full h-full rounded-lg"
+                        />
+                      </div>
+                    </Card>
+                  )}
                   <div
                     ref={contentRef}
                     className="text-slate-700 dark:text-slate-200 leading-relaxed prose prose-slate dark:prose-invert max-w-none prose-a:no-underline prose-a:text-blue-600 hover:prose-a:text-blue-700 dark:prose-a:text-blue-400 dark:hover:prose-a:text-blue-300"
                     dangerouslySetInnerHTML={{ __html: episode.description }}
                   />
                 </div>
-                <div className="flex-shrink-0">
-                  <img
-                    src={episode.companyLogo}
-                    alt={`Logo ${episode.name}`}
-                    className="w-24 h-24 rounded-xl object-cover shadow-lg"
-                  />
-                </div>
               </div>
             </div>
           </div>
-          <Card>
-            <Text as="h2" variant="h3" className="mb-6">
-              Écouter l'épisode
-            </Text>
-            <div className="flex flex-wrap gap-4">
-              <Button
-                href={episode.spotifyLink}
-                isExternalLink={true}
-                size="lg"
-                variant="spotify"
-                accessoryLeft={<SpotifyIcon />}
-              >
-                Écouter sur Spotify
-              </Button>
-
-              <Button
-                href={episode.appleLink}
-                isExternalLink={true}
-                size="lg"
-                variant="apple"
-                accessoryLeft={<ApplePodcastIcon />}
-              >
-                Écouter sur Apple Podcast
-              </Button>
-            </div>
-          </Card>
           <Card
             size="xl"
             className="my-24 flex flex-col items-center justify-center gap-8 text-center"
