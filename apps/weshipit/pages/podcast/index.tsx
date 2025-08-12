@@ -1,11 +1,12 @@
-import { Hyperlink, LinkButton, Prose, Button } from '@weshipit/ui';
+import { Button, Hyperlink, LinkButton, Prose, Text } from '@weshipit/ui';
 import { Layout } from '../../components/layout';
 import { PodcastEpisodeCard } from '../../components/podcast-episode-card';
 import { podcastEpisodes } from '../../fixtures/podcast-episodes.fixture';
+import { linksApi } from 'apps/weshipit/pages/api/links';
 import { useState } from 'react';
-import { ArrowUpIcon, ArrowDownIcon } from '@heroicons/react/20/solid';
-import { linksApi } from '../api/links';
-import { Text } from '@weshipit/ui';
+import { ArrowDownIcon, ArrowUpIcon } from '@heroicons/react/20/solid';
+
+const YOUTUBE_URL = 'https://www.youtube.com/@flexbox_?sub_confirmation=1';
 
 export default function Podcast() {
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
@@ -51,10 +52,7 @@ export default function Podcast() {
               <ol>
                 <li>
                   Abonnez-vous à la{' '}
-                  <Hyperlink
-                    href="https://www.youtube.com/@flexbox_?sub_confirmation=1"
-                    isExternal
-                  >
+                  <Hyperlink href={YOUTUBE_URL} isExternal>
                     chaine YouTube de David Leuliette
                   </Hyperlink>
                   .
