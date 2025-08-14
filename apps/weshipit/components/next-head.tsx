@@ -2,14 +2,23 @@ import { DefaultSeo } from 'next-seo';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
+export interface PodcastOgImageData {
+  title: string;
+  guest: string;
+  episode: number;
+  type: 'podcast';
+}
+
 export interface NextHeadProps {
   seoTitle: string;
   ogImageTitle?: string;
+  ogImagePodcast?: PodcastOgImageData;
   seoDescription: string;
 }
 
 export function NextHead({
   ogImageTitle = 'React Native Development Agency',
+  ogImagePodcast,
   seoDescription,
   seoTitle,
 }: NextHeadProps) {
@@ -22,6 +31,19 @@ export function NextHead({
   const baseUrl = 'https://weshipit.today';
   const path = router.asPath;
   const canonicalUrl = `${baseUrl}${path === '/' ? '' : path}`;
+
+  const generateOgImageUrl = () => {
+    if (ogImagePodcast) {
+      const { title, guest, episode, type } = ogImagePodcast;
+      return `/api/podcast-og?title=${encodeURIComponent(title)}&guest=${encodeURIComponent(guest)}&episode=${episode}&type=${type}`;
+    }
+
+    if (ogImageTitle?.startsWith('/api/') || ogImageTitle?.startsWith('http')) {
+      return ogImageTitle;
+    }
+
+    return `/api/og?title=${encodeURI(ogImageTitle || '')}`;
+  };
 
   return (
     <>
@@ -88,7 +110,7 @@ export function NextHead({
         <meta
           name="image" // this is for LinkedIn preview https://github.com/garmeeh/next-seo/issues/1311
           property="og:image"
-          content={`/api/og?title=${encodeURI(ogImageTitle)}`}
+          content={generateOgImageUrl()}
         />
         <meta property="og:image:type" content="image/png" />
         <meta

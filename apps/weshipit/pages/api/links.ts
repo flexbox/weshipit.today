@@ -20,4 +20,8 @@ export const linksApi = {
   stripe: {
     MONTHLY_PLAN: 'https://buy.stripe.com/5kA17K2wD4ge9Ko7sv',
   },
+  notion: {
+    PODCAST_FORM:
+      'https://flexbox.notion.site/17af478bcb8c8018b4a9db6b13d1df38?pvs=105',
+  },
 };
