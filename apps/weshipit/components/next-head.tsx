@@ -6,7 +6,7 @@ export interface PodcastOgImageData {
   title: string;
   guest: string;
   episode: number;
-  type: 'podcast';
+  type: 'podcast' | 'transcript';
 }
 
 export interface NextHeadProps {
