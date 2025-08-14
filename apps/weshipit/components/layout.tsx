@@ -1,5 +1,5 @@
 import { Footer, Header, HeaderLinksProps } from '@weshipit/ui';
-import NextHead, { NextHeadProps } from './next-head';
+import NextHead, { NextHeadProps, PodcastOgImageData } from './next-head';
 import BannerProductHunt from '../components/banner-product-hunt/banner-product-hunt';
 
 interface LayoutProps extends NextHeadProps {
@@ -11,12 +11,7 @@ interface LayoutProps extends NextHeadProps {
   withContainer?: boolean;
   children: React.ReactNode;
   withProductHunt?: boolean;
-  ogImagePodcast?: {
-    title: string;
-    guest: string;
-    episode: number;
-    type: 'podcast';
-  };
+  ogImagePodcast?: PodcastOgImageData;
 }
 
 export function Layout({
