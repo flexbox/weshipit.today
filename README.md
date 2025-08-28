@@ -8,9 +8,11 @@
 
 - Monorepo generated using [Nx](https://nx.dev/getting-started/intro)
 - UI design with [tailwindCSS](https://tailwindcss.com/docs/)
+- Deployment with [Vercel](https://vercel.com/)
 - Design system with Storybook [design.weshipit.today](https://design.weshipit.today/)
 - Airtable API reference [airtable.com/api](https://airtable.com/api)
-- Headless content management system with [prismic.io](https://weshipit.prismic.io/)
+- Content Management System with [prismic.io](https://weshipit.prismic.io/)
+- Email with [improvmx.com](https://improvmx.com/)
 
 ## Getting Started
 
