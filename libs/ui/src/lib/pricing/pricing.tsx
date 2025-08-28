@@ -4,6 +4,7 @@ import { CheckIcon } from '@heroicons/react/20/solid';
 import clsx from 'clsx';
 import { SpotLeft } from '../spot-left/spot-left';
 import { Card } from 'libs/ui/src/lib/card/card';
+import { SPOT_AVAILABILITY } from '../spot-left/spot-availability';
 
 const frequencies = [
   { value: 'monthly', label: 'Monthly', priceSuffix: '/monthly' },
@@ -44,7 +45,7 @@ const tiers = [
     ],
     featured: false,
     cta: 'Get Started',
-    spotsLeft: 2,
+    spotsLeft: SPOT_AVAILABILITY.essential,
   },
   {
     name: 'Growth',
@@ -60,7 +61,7 @@ const tiers = [
     ],
     featured: false,
     cta: 'Get Started',
-    spotsLeft: 0,
+    spotsLeft: SPOT_AVAILABILITY.growth,
   },
   {
     name: 'Enterprise',
@@ -77,7 +78,7 @@ const tiers = [
     ],
     featured: true,
     cta: 'Book a call with David',
-    spotsLeft: 0,
+    spotsLeft: SPOT_AVAILABILITY.enterprise,
   },
 ];
 

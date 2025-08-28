@@ -6,19 +6,23 @@ import { PhoneAnimation } from './phone-animation';
 import { CalendarIcon } from '@heroicons/react/24/solid';
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import { LinkButton, SpotLeft, Text } from '@weshipit/ui';
+import { SPOT_AVAILABILITY } from '../spot-left/spot-availability';
 
 export function HeroBanner({
   onboardingHref,
   teamSpotsLeft,
 }: {
   onboardingHref: string;
-  teamSpotsLeft: number;
+  teamSpotsLeft?: number;
 }) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
+  // Use prop if provided, otherwise fallback to centralized config
+  const spotsLeft = teamSpotsLeft ?? SPOT_AVAILABILITY.team;
 
   return (
     <section className="relative overflow-hidden">
@@ -27,7 +31,7 @@ export function HeroBanner({
           <div
             className={`space-y-4 ${isVisible ? 'animate-fadeIn' : 'opacity-0'}`}
           >
-            <SpotLeft spotsLeft={2} />
+            <SpotLeft spotsLeft={spotsLeft} />
             <Text as="h1" variant="h1" className="tracking-tighter">
               React Native Experts on demand.
             </Text>
