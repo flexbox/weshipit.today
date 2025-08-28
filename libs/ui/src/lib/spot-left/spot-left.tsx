@@ -16,7 +16,8 @@ export function SpotLeft({ spotsLeft = 2 }: SpotLeftProps) {
         <div className="inline-block rounded-lg bg-slate-100 px-3 py-1 text-sm dark:bg-slate-800 dark:text-neutral-200">
           <span className="flex items-center">
             <span className="relative flex h-2 w-2 mr-2">
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-red-400"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
             </span>
             Fully booked for {nextMonthInText}
           </span>

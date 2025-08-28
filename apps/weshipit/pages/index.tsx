@@ -17,67 +17,19 @@ import {
 import { linksApi } from './api/links';
 import { Layout } from '../components/layout';
 import { getAllFaqs } from './api/faq';
-import { asHTML, asText } from '@prismicio/client';
+import { asText } from '@prismicio/client';
 import Head from 'next/head';
 import { Customer, getVisibleClients } from './api/client';
 import { Steps, getAllWorkflowSteps } from './api/workflow-steps';
 import { PrismicRichText } from '@prismicio/react';
 
 import { useState, useEffect } from 'react';
-import { fetchTeam } from './api/team';
 import { TrustedConsultantsSection } from '../components/trusted-consultants-section';
 
 interface IndexPageProps {
   steps: Steps[];
   faqs: FaqProps[];
   clients: Customer[];
-  teamSpotsLeft: number;
-}
-
-interface CallToActionProps {
-  href: string;
-  label: string;
-  secondaryHref: string;
-  teamSpotsLeft: number;
-  secondaryLabel: string;
-}
-
-function CallToAction({
-  href,
-  label,
-  secondaryHref,
-  secondaryLabel,
-  teamSpotsLeft,
-}: CallToActionProps) {
-  return (
-    <div className="flex flex-col gap-4 text-center">
-      <SpotLeft spotsLeft={teamSpotsLeft} />
-      <div className="shrink-0">
-        <Button
-          href={href}
-          as="a"
-          isExternalLink
-          size="xxl"
-          withExternalLinkIcon={false}
-          className="justify-center"
-        >
-          {label}
-        </Button>
-      </div>
-      <div className="shrink-0">
-        <Button
-          href={secondaryHref}
-          as="a"
-          withExternalLinkIcon={false}
-          size="xl"
-          variant="ghost"
-          className="justify-center"
-        >
-          {secondaryLabel}
-        </Button>
-      </div>
-    </div>
-  );
 }
 
 function useGetLocalTimeInFrance() {
@@ -239,12 +191,7 @@ function HowDoesItWorks({ steps }: { steps: Steps[] }) {
   );
 }
 
-export default function IndexPage({
-  clients,
-  faqs,
-  steps,
-  teamSpotsLeft,
-}: IndexPageProps) {
+export default function IndexPage({ clients, faqs, steps }: IndexPageProps) {
   /** @type {import('schema-dts').FAQPage} */
   const schema = {
     '@context': 'https://schema.org',
@@ -285,10 +232,7 @@ export default function IndexPage({
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <FadeIn>
-            <HeroBanner
-              onboardingHref={linksApi.cal.ONBOARDING}
-              teamSpotsLeft={teamSpotsLeft}
-            />
+            <HeroBanner onboardingHref={linksApi.cal.ONBOARDING} />
           </FadeIn>
           <div className="m-auto max-w-2xl">
             <FadeIn>
@@ -388,14 +332,11 @@ export async function getStaticProps() {
   const { clients } = await getVisibleClients();
   const { steps } = await getAllWorkflowSteps();
 
-  const teamSpotsLeft = await fetchTeam();
-
   return {
     props: {
       clients,
       faqs,
       steps,
-      teamSpotsLeft: teamSpotsLeft.length,
     },
   };
 }
