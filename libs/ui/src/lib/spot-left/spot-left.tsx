@@ -11,7 +11,18 @@ export function SpotLeft({ spotsLeft = 2 }: SpotLeftProps) {
   const nextMonthInText = format(nextMonth, 'MMMM');
 
   if (spotsLeft <= 0) {
-    return null;
+    return (
+      <div className="shrink-0">
+        <div className="inline-block rounded-lg bg-slate-100 px-3 py-1 text-sm dark:bg-slate-800 dark:text-neutral-200">
+          <span className="flex items-center">
+            <span className="relative flex h-2 w-2 mr-2">
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-red-400"></span>
+            </span>
+            Fully booked for {nextMonthInText}
+          </span>
+        </div>
+      </div>
+    );
   }
 
   return (
