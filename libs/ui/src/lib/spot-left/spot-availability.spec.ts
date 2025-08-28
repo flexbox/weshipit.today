@@ -18,7 +18,7 @@ describe('SPOT_AVAILABILITY', () => {
   it('should be centralized configuration that can be updated in one place', () => {
     // This test documents the intent: all spot availability should come from this single source
     expect(SPOT_AVAILABILITY.team).toBe(2);
-    expect(SPOT_AVAILABILITY.essential).toBe(2);
+    expect(SPOT_AVAILABILITY.essential).toBe(0);
     expect(SPOT_AVAILABILITY.growth).toBe(0);
     expect(SPOT_AVAILABILITY.enterprise).toBe(0);
   });

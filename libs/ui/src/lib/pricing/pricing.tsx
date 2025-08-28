@@ -78,7 +78,6 @@ const tiers = [
     ],
     featured: true,
     cta: 'Book a call with David',
-    spotsLeft: SPOT_AVAILABILITY.enterprise,
   },
 ];
 
