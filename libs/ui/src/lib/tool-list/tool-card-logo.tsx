@@ -13,7 +13,7 @@ export function ToolCardLogo({
   websiteUrl,
 }: ToolCardLogoProps) {
   const domain = extractDomainName(websiteUrl);
-  const logoSrc = `https://logo.clearbit.com/${domain}?size=${size}`;
+  const logoSrc = `https://www.google.com/s2/favicons?domain=${domain}&sz=${size}`;
 
   return (
     <Image

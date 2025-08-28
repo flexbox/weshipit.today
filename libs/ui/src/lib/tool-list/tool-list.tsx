@@ -20,11 +20,11 @@ export function ToolList({ records }: ToolListProps) {
       </div>
       <div className="py-6">
         <Hyperlink
-          href="https://clearbit.com/logo"
+          href="https://developers.google.com/search/docs/crawling-indexing/favicon-in-search"
           isExternal={true}
           className="text-sm text-slate-400"
         >
-          Logos provided by Clearbit
+          Logos provided by Google Favicon service
         </Hyperlink>
       </div>
     </>

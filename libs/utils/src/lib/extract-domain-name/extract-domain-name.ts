@@ -16,7 +16,7 @@ function removeHttp(url: string): string {
 }
 
 /**
- * Transforms https://expo.dev/ to expo.dev to call an image from logo.clearbit.com
+ * Transforms https://expo.dev/ to expo.dev to get the domain for favicon services
  * @param url
  * @returns domain without the slash and the rest of the url
  */
