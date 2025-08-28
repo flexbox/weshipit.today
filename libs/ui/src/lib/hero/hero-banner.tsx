@@ -6,6 +6,7 @@ import { PhoneAnimation } from './phone-animation';
 import { CalendarIcon } from '@heroicons/react/24/solid';
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import { LinkButton, SpotLeft, Text } from '@weshipit/ui';
+import { SPOT_AVAILABILITY } from '../spot-left/spot-availability';
 
 export function HeroBanner({
   onboardingHref,
@@ -27,7 +28,7 @@ export function HeroBanner({
           <div
             className={`space-y-4 ${isVisible ? 'animate-fadeIn' : 'opacity-0'}`}
           >
-            <SpotLeft spotsLeft={2} />
+            <SpotLeft spotsLeft={SPOT_AVAILABILITY.team} />
             <Text as="h1" variant="h1" className="tracking-tighter">
               React Native Experts on demand.
             </Text>
