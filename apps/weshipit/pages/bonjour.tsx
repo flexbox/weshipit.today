@@ -371,8 +371,8 @@ export default function BonjourPage({ clients, feedback }: BonjourPageProps) {
   };
 
   const heroTitle = name
-    ? `Bonjour ${name}, L’ère mobile est là. Voulez-vous commencer?`
-    : 'L’ère mobile est là. Voulez-vous commencer?';
+    ? `Bonjour ${name}, L’ère mobile est là. Voulez-vous commencer ?`
+    : 'L’ère mobile est là. Voulez-vous commencer ?';
 
   return (
     <>
