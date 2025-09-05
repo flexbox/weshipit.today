@@ -10,7 +10,7 @@ describe('ToolCardLogo', () => {
     expect(baseElement).toBeTruthy();
   });
 
-  it('should render successfully when logo.clearbit.com returns a 404', () => {
+  it('should render successfully when favicon service returns a 404', () => {
     const { baseElement } = render(
       <ToolCardLogo
         name="Watermelon DB"
@@ -20,7 +20,7 @@ describe('ToolCardLogo', () => {
     expect(baseElement).toBeTruthy();
   });
 
-  it('should render successfully when logo.clearbit.com returns a 404', () => {
+  it('should render successfully when favicon service returns a 404', () => {
     const { baseElement } = render(
       <ToolCardLogo
         name="react-native-mmkv"

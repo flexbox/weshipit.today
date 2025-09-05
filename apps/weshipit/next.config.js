@@ -23,7 +23,7 @@ const nextConfig = {
         protocol: 'https',
       },
       {
-        hostname: 'logo.clearbit.com',
+        hostname: 'www.google.com',
         protocol: 'https',
       },
       {
