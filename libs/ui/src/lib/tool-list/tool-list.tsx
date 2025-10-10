@@ -20,11 +20,11 @@ export function ToolList({ records }: ToolListProps) {
       </div>
       <div className="py-6">
         <Hyperlink
-          href="https://clearbit.com/logo"
+          href="https://logo.dev"
           isExternal={true}
           className="text-sm text-slate-400"
         >
-          Logos provided by Clearbit
+          Logos provided by Logo.dev
         </Hyperlink>
       </div>
     </>

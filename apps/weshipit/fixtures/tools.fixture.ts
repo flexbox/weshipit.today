@@ -137,23 +137,6 @@ export const tools = {
       id: 'recDGW4TfLy0lneF4',
     },
     {
-      createdTime: '2022-11-09T13:34:02.000Z',
-      fields: {
-        description:
-          'StepZen is a GraphQL server with a unique architecture that helps developers build APIs fast and with less code (using declarative configurations). APIs run in an in-memory Golang-based GraphQL engine deployed into Kubernetes, and are highly responsive to application needs.\n',
-        features: ['GraphQL'],
-        github_url: 'https://github.com/stepzen-dev/examples',
-        name: 'StepZen',
-        platform: ['Android', 'iOS', 'Web'],
-        pricing: ['Free tier', 'Premium tiers'],
-        slug: 'stepzen',
-        twitter_url: 'https://twitter.com/stepzen_dev',
-        type: 'Backend',
-        website_url: 'https://stepzen.com',
-      },
-      id: 'recDqwnArPe3H3HqK',
-    },
-    {
       createdTime: '2025-01-29T18:41:57.000Z',
       fields: {
         description:
@@ -1025,24 +1008,6 @@ export const tools = {
         website_url: 'https://www.instabug.com/platforms/react-native',
       },
       id: 'recrKm6FFFxPIHjn8',
-    },
-    {
-      createdTime: '2022-01-13T09:53:39.000Z',
-      fields: {
-        description:
-          'Continuously build, test, release, and monitor apps for every platform.\n',
-        features: ['Analytics', 'Device farm', 'Crash reporting'],
-        github_url:
-          'https://github.com/microsoft/appcenter-sampleapp-react-native',
-        name: 'AppCenter ☠️',
-        platform: ['Android', 'iOS', 'macOS', 'tvOS', 'Unity'],
-        pricing: ['Premium tiers', 'Free trial'],
-        slug: 'appcenter-☠️',
-        twitter_url: 'https://twitter.com/VSAppCenter',
-        type: 'Infrastructure',
-        website_url: 'https://appcenter.ms',
-      },
-      id: 'rectvZB4GyY5NWwNP',
     },
     {
       createdTime: '2023-05-22T18:02:35.000Z',

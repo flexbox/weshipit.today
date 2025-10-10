@@ -23,15 +23,11 @@ const nextConfig = {
         protocol: 'https',
       },
       {
-        hostname: 'logo.clearbit.com',
+        hostname: 'img.logo.dev',
         protocol: 'https',
       },
       {
         hostname: 'images.prismic.io',
-        protocol: 'https',
-      },
-      {
-        hostname: 'api.apiflash.com',
         protocol: 'https',
       },
       {
