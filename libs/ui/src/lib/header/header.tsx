@@ -35,6 +35,10 @@ export function Header({
           <Link
             href="/"
             className="-m-1.5 p-1.5 text-lg font-bold leading-6 dark:text-white"
+            onContextMenu={(event) => {
+              event.preventDefault();
+              window.location.href = '/about#logo';
+            }}
           >
             weshipit<span className="text-slate-400">.today</span>
           </Link>
@@ -96,6 +100,10 @@ export function Header({
             <a
               href="#"
               className="-m-1.5 p-1.5 text-lg font-bold leading-6 dark:text-white"
+              onContextMenu={(event) => {
+                event.preventDefault();
+                window.location.href = '/about#logo';
+              }}
             >
               weshipit<span className="text-slate-400">.today</span>
             </a>

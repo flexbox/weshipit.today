@@ -248,7 +248,7 @@ export default function AboutPage({ clients }) {
       </div>
       <div className="my-24 w-screen bg-white py-32  dark:bg-slate-900">
         <Prose className="m-auto my-12">
-          <h2>Logo</h2>
+          <h2 id="logo">Logo</h2>
           <Image
             src="/images/weshipit.today-logo.png"
             alt={'weshipit.today logo'}
