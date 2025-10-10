@@ -2,7 +2,7 @@ import {
   Button,
   TagList,
   Text,
-  ToolCardLogo,
+  CompanyLogo,
   ToolTypeBadge,
   Card,
   CallToActionCards,
@@ -76,7 +76,7 @@ export function ReactNativeSlugPage({ recommendedRecords, record }) {
       <section className="mx-auto my-4 max-w-6xl">
         <div className="grid grid-cols-1 gap-24 pt-6 md:grid-cols-12">
           <div className="col-span-1 md:col-span-8">
-            <ToolCardLogo name={name} websiteUrl={website_url} size={64} />
+            <CompanyLogo name={name} websiteUrl={website_url} size={64} />
             <Text as="h1" variant="h2" className="my-6">
               {name}
             </Text>

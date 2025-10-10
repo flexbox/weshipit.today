@@ -1,19 +1,20 @@
 import { extractDomainName } from '@weshipit/utils';
 import Image from 'next/image';
 
-export interface ToolCardLogoProps {
+export interface CompanyLogoProps {
   name: string;
   size?: number;
   websiteUrl: string;
 }
 
-export function ToolCardLogo({
+export function CompanyLogo({
   name,
-  size = 100,
+  size = 128,
   websiteUrl,
-}: ToolCardLogoProps) {
+}: CompanyLogoProps) {
   const domain = extractDomainName(websiteUrl);
-  const logoSrc = `https://logo.clearbit.com/${domain}?size=${size}`;
+  // hardcoding this to avoid hydration issues
+  const logoSrc = `https://img.logo.dev/${domain}?token=pk_ZE1YkhrvTcm58ijPUqyebA&retina=true`;
 
   return (
     <Image
@@ -27,4 +28,4 @@ export function ToolCardLogo({
   );
 }
 
-export default ToolCardLogo;
+export default CompanyLogo;

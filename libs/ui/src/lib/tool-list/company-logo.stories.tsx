@@ -1,9 +1,9 @@
 import type { Meta } from '@storybook/react';
-import { ToolCardLogo } from './tool-card-logo';
+import { CompanyLogo } from './company-logo';
 
-const Story: Meta<typeof ToolCardLogo> = {
-  component: ToolCardLogo,
-  title: 'ToolCardLogo',
+const Story: Meta<typeof CompanyLogo> = {
+  component: CompanyLogo,
+  title: 'CompanyLogo',
 };
 export default Story;
 

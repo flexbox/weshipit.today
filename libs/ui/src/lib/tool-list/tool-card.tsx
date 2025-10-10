@@ -5,7 +5,7 @@ import { Text } from '../text/text';
 
 import truncate from 'lodash/truncate';
 import Link from 'next/link';
-import { ToolCardLogo } from './tool-card-logo';
+import { CompanyLogo } from './company-logo';
 import { getVariantFromType } from './get-variant-from-type';
 
 export function ToolCard({ fields, id }: RecordProps) {
@@ -53,7 +53,7 @@ export function ToolCard({ fields, id }: RecordProps) {
             </div>
 
             <div className="my-4">
-              <ToolCardLogo name={name} websiteUrl={website_url} />
+              <CompanyLogo name={name} websiteUrl={website_url} />
             </div>
 
             <Text as="p" variant="p1" className="mb-6 text-slate-400">

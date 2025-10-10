@@ -39,20 +39,6 @@ export const apiListFixture: RecordProps[] = [
   },
   {
     fields: {
-      description:
-        'StepZen is a GraphQL server with a unique architecture that helps developers build APIs fast and with less code (using declarative configurations). APIs run in an in-memory Golang-based GraphQL engine deployed into Kubernetes, and are highly responsive to application needs.',
-      features: ['GraphQL'],
-      github_url: 'https://github.com/stepzen-dev/examples',
-      name: 'StepZen',
-      platform: ['Android', 'iOS', 'Web'],
-      pricing: ['Free tiers', 'Premium tiers'],
-      slug: 'stepzen',
-      type: 'Backend',
-      website_url: 'https://stepzen.com/',
-    },
-  },
-  {
-    fields: {
       description: '\n\n',
       features: ['Analytics'],
       github_url: 'https://github.com/uxcam/react-native-ux-cam',

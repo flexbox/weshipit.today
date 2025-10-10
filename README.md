@@ -16,21 +16,22 @@
 
 ## Getting Started
 
-Install global dependencies
+Install dependencies
 
 ```bash
-yarn global add nx
-vercel env pull
+yarn
 ```
 
+Set up environment variables
+
 ```bash
-cp apps/weshipit/.env.sample apps/weshipit/.env
+cd apps/weshipit
+vercel env pull
 ```
 
 Run the project
 
 ```bash
-yarn
 yarn start
 ```
 
