@@ -23,13 +23,13 @@ type ViewMode =
 
 export async function getStaticProps() {
   const records: frenchApp[] = frenchAppsFixture.records.map((record) => ({
-    name: record.fields.name,
-    category: record.fields.category,
-    logo_url: record.fields.logo_url,
-    ios_url: record.fields.ios_url,
-    android_url: record.fields.android_url,
-    website_url: record.fields.website_url,
-    podcast_url: record.fields.podcast_url,
+    name: record.name,
+    category: record.category,
+    logo_url: record.logo_url,
+    ios_url: record.ios_url,
+    android_url: record.android_url,
+    website_url: record.website_url,
+    podcast_url: record.podcast_url,
   }));
 
   const categorizedApps = formatAppsByCategory(records);
