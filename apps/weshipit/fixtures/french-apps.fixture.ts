@@ -49,9 +49,21 @@ export const frenchAppsFixture: frenchApps = {
     //   website_url: '',
     //   android_url: '',
     //   ios_url: '',
-    //   logo_url: '', get it from https://www.apple.com/fr/search/
+    //   logo_url: '', // get it from https://www.apple.com/fr/search/
     //   podcast_url: '',
     // },
+    {
+      name: 'SaxoTools',
+      category: 'Music',
+      website_url: 'https://www.saxotools.com/',
+      android_url:
+        'https://play.google.com/store/apps/details?id=com.saxotools&hl=fr',
+      ios_url: 'https://apps.apple.com/fr/app/saxotools/id6448632359',
+      logo_url:
+        'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/0a/52/fa/0a52fa97-f0e0-9b31-879d-65b1bcf3ced1/AppIcon-0-0-1x_U007epad-0-1-85-220.png/460x0w.webp',
+      podcast_url:
+        'https://open.spotify.com/episode/3tYS4XStjhwtqqPenqRL2m?si=c18878edf75f48bc',
+    },
     {
       name: 'Osly Solutions',
       category: 'Utilities',
