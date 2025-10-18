@@ -1,7 +1,7 @@
 import React from 'react';
 import { PodcastEpisode } from '../fixtures/podcast-episodes.fixture';
 import { Hyperlink } from '@weshipit/ui';
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid';
+import { ChevronLeftIcon } from '@heroicons/react/20/solid';
 
 export function PodcastNavigation({
   previousEpisode,

@@ -135,11 +135,11 @@ export default function PodcastEpisodePage({
 
   return (
     <Layout
-      seoTitle={`${episode.name} avec ${episode.guestName} — Le Cross Platform Show Podcast`}
+      seoTitle={`${episode.name} avec ${episode.guest_full_name} — Le Cross Platform Show Podcast`}
       seoDescription={episode.description}
       ogImagePodcast={{
         title: episode.name,
-        guest: episode.guestName,
+        guest: episode.guest_full_name,
         episode: episode.number,
         type: 'podcast',
       }}
@@ -188,12 +188,12 @@ export default function PodcastEpisodePage({
                       >
                         avec{' '}
                         <span className="font-semibold">
-                          {episode.guestName}
+                          {episode.guest_full_name}
                         </span>
                       </Text>
                     </div>
                     <img
-                      src={episode.companyLogo}
+                      src={episode.company_logo}
                       alt={`Logo ${episode.name}`}
                       className="w-24 h-24 rounded-xl object-cover shadow-lg"
                     />
@@ -204,7 +204,7 @@ export default function PodcastEpisodePage({
                     </Text>
                     <div className="flex flex-wrap gap-4">
                       <Button
-                        href={episode.spotifyLink}
+                        href={episode.spotify_url}
                         isExternalLink={true}
                         size="lg"
                         variant="spotify"
@@ -214,7 +214,7 @@ export default function PodcastEpisodePage({
                       </Button>
 
                       <Button
-                        href={episode.appleLink}
+                        href={episode.apple_podcast_url}
                         isExternalLink={true}
                         size="lg"
                         variant="apple"
@@ -224,14 +224,14 @@ export default function PodcastEpisodePage({
                       </Button>
                     </div>
                   </Card>
-                  {episode.youtubeEmbedId && (
+                  {episode.youtube_embed_id && (
                     <Card className="my-6">
                       <Text as="h2" variant="h4" className="mb-4">
                         Regarder sur YouTube
                       </Text>
                       <div className="aspect-video">
                         <iframe
-                          src={`https://www.youtube.com/embed/${episode.youtubeEmbedId}`}
+                          src={`https://www.youtube.com/embed/${episode.youtube_embed_id}`}
                           title={`YouTube video player - ${episode.name}`}
                           frameBorder="0"
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

@@ -2,14 +2,14 @@ export interface PodcastEpisode {
   name: string;
   title: string;
   number: number;
-  shortDescription: string;
+  description_short: string;
   description: string;
   slug: string;
-  spotifyLink: string;
-  appleLink: string;
-  youtubeEmbedId?: string;
-  companyLogo: string;
-  guestName: string;
+  spotify_url: string;
+  apple_podcast_url: string;
+  youtube_embed_id?: string;
+  company_logo: string;
+  guest_full_name: string;
 }
 
 export const podcastEpisodes: PodcastEpisode[] = [
@@ -17,267 +17,267 @@ export const podcastEpisodes: PodcastEpisode[] = [
     name: 'Cdiscount',
     title: 'React Native chez Cdiscount avec Ludwig Vantours',
     number: 1,
-    shortDescription:
+    description_short:
       "Le géant du e-commerce français qui optimise l'expérience mobile avec React Native",
     description: `<p>Dans cet épisode, David et Ludwig parlent du développement d'applications mobiles avec React Native. Voici les points principaux abordés :</p><p>	•	Parcours de Ludwig : Il partage son expérience en tant que développeur freelance et ses interactions avec Redux et Redux Saga.</p><p>	•	Défis du développement : Ils discutent des difficultés rencontrées lors du développement d'applications, notamment la navigation, la gestion des états et le déploiement chez Cdiscount.</p><p>	•	Processus administratifs : Ludwig et David parlent des démarches nécessaires pour initier un projet, des bibliothèques et outils utilisés, ainsi que des défis de débogage et de tests.</p><p>	•	Anecdotes : Ils partagent des histoires sur le développement de fonctionnalités, la gestion des permissions et les obstacles surmontés dans leur carrière.</p><p>	•	Techniques de débogage : La conversation aborde les défis et techniques de débogage en React Native, ainsi que la complexité du développement multi-plateforme.</p><p>	•	Conseils pour 2025 : Ils offrent des recommandations aux développeurs débutants, soulignant l'écosystème Expo et l'importance de la communauté.</p><p>L'épisode met en avant la patience et la résilience nécessaires dans le processus de développement.</p><p><br /></p><p>https://flexbox.gumroad.com/l/expo-checklist/</p><p>https://ramdajs.com/</p><p>https://docs.swmansion.com/react-native-reanimated/docs/1.x</p><p>https://jestjs.io/</p><p>https://ide.swmansion.com/</p><p>https://appjs.co/</p><p>https://reactnativeconnection.io/</p><p>https://join.slack.com/t/reactnativeconnection/shared_invite/zt-1j5jigyph-MJURqXxpWHXTcYSH8PwhrQ</p><p><br /></p>`,
     slug: 'cdiscount',
-    spotifyLink:
+    spotify_url:
       'https://open.spotify.com/episode/4u0RkE3y1gkCpFtpppk25t?si=a6ed852bde0b4dfa',
-    appleLink:
+    apple_podcast_url:
       'https://podcasts.apple.com/fr/podcast/react-native-chez-cdiscount-avec-ludwig-vantours/id1790867559?i=1000684234344&l=en-GB',
-    companyLogo:
+    company_logo:
       'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/50/72/01/507201ee-d376-6f51-c94d-cf9d3bdd3c7b/AppIcon-0-0-1x_U007epad-0-1-85-220.png/230x0w.webp',
-    guestName: 'Ludwig Vantours',
-    youtubeEmbedId: 'C3toh628KJE?si=mxDv7iXd0VqM-ne7',
+    guest_full_name: 'Ludwig Vantours',
+    youtube_embed_id: 'C3toh628KJE?si=mxDv7iXd0VqM-ne7',
   },
   {
     name: 'Alan',
     title:
       "Alan et React Native : L'alliance du bien-être et de la technologie avec Xavier Seignard",
     number: 2,
-    shortDescription:
+    description_short:
       "L'assurance santé nouvelle génération qui simplifie la protection avec React Native",
     description: `<p><strong>Sommaire</strong></p><p>Dans cet épisode, David et Xavier discutent du développement mobile avec React Native, en mettant l'accent sur l'application Alan. Xavier partage son parcours professionnel, ses choix technologiques, et les défis rencontrés dans le développement mobile. Ils abordent également l'importance des tests, de la qualité du code, et des outils utilisés pour améliorer l'expérience utilisateur.</p><p><br /></p><p><strong>Notes de l'émission</strong></p><p>Alan sur<a href="https://apps.apple.com/fr/app/alan-france-assurance-sant%C3%A9/id1277025964" target="_blank" rel="ugc noopener noreferrer">ios</a>Alan sur<a href="https://play.google.com/store/apps/details?id=com.alanmobile&amp;hl=fr" target="_blank" rel="ugc noopener noreferrer">android</a></p><p><br /></p><p><a href="https://rive.app/docs/runtimes/react-native/react-native" target="_blank" rel="ugc noopener noreferrer">https://rive.app/docs/runtimes/react-native/react-native</a></p><p><a href="https://medium.com/alan/our-journey-from-react-native-to-expo-for-mobile-app-development-at-alan-%EF%B8%8F-3b1569e8ab7c" target="_blank" rel="ugc noopener noreferrer">https://medium.com/alan/our-journey-from-react-native-to-expo-for-mobile-app-development-at-alan-️-3b1569e8ab7c</a></p><p><a href="https://www.shakebugs.com/" target="_blank" rel="ugc noopener noreferrer">https://www.shakebugs.com/</a></p><p><a href="https://www.waldo.com/product/end-to-end-testing" target="_blank" rel="ugc noopener noreferrer">https://www.waldo.com/product/end-to-end-testing</a></p><p><br /></p><p><br /></p><p><strong>Pour suivre nos aventures</strong></p><p>David Leuliette</p><ul><li><a href="https://twitter.com/intent/follow?screen_name=flexbox_" rel="ugc noopener noreferrer" target="_blank">⁠https://x.com/flexbox_⁠</a></li><li><a href="https://go.bsky.app/6QQemwz" rel="ugc noopener noreferrer" target="_blank">https://go.bsky.app/6QQemwz</a></li><li>https://weshipit.today/</li></ul><p>Xavier Seignard:</p><ul><li><a href="https://x.com/xavier_seignard" rel="ugc noopener noreferrer" target="_blank">⁠https://x.com/xavier_seignard⁠</a></li><li><a href="https://bsky.app/profile/drangies.fr" rel="ugc noopener noreferrer" target="_blank">https://bsky.app/profile/drangies.fr</a></li></ul><p><br /></p>`,
     slug: 'alan',
-    spotifyLink:
+    spotify_url:
       'https://open.spotify.com/episode/7GxdKx5EsfhTwnhCBitOau?si=0645c020f5754e58',
-    appleLink:
+    apple_podcast_url:
       'https://podcasts.apple.com/fr/podcast/alan-et-react-native-lalliance-du-bien-%C3%AAtre-et-de-la/id1790867559?i=1000689726403&l=en-GB',
-    companyLogo:
+    company_logo:
       'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/15/ff/24/15ff24da-3615-8cf9-d4ea-f621f9851fc8/AppIcon-0-0-1x_U007emarketing-0-1-85-220.png/230x0w.webp',
-    guestName: 'Xavier Seignard',
-    youtubeEmbedId: 'Si1_MacPWK0?si=M47QHRHsevINGHEY',
+    guest_full_name: 'Xavier Seignard',
+    youtube_embed_id: 'Si1_MacPWK0?si=M47QHRHsevINGHEY',
   },
   {
     name: 'Pacevisor',
     title:
       'Pacevisor : la plateforme de sport crée avec ignite et React Native par Baptiste Lecocq',
     number: 3,
-    shortDescription:
+    description_short:
       'Le convertisseur de course qui aide les coureurs à optimiser leurs performances avec React Native',
     description: `<p><strong>Sommaire</strong></p><p>Dans cet épisode, David Leuliette et Baptiste Lecoq explorent le développement d'applications mobiles, en mettant l'accent sur Pacevisor, une application innovante dédiée à l'entraînement sportif. Baptiste évoque son parcours de développeur, ses expériences variées avec différentes technologies, ainsi que les défis rencontrés lors des mises à jour de l'application.</p><p>Ils discutent de l'importance du référencement et des technologies web pour assurer le succès de l'application. Baptiste partage son expertise en React Native, en soulignant la gestion du design et de l'expérience utilisateur (UX), ainsi que les processus de déploiement. Il aborde la collaboration avec des agences de design, la gestion des orientations d'écran pour un rendu responsive, et l'utilisation de librairies spécifiques pour optimiser l'expérience utilisateur.</p><p>Le duo aborde également les tests, la documentation et les outils de CI/CD utilisés pour garantir la qualité de l'application. Ils échangent sur les défis liés au développement, notamment avec React Native et MobX, en abordant la gestion des données, les tests unitaires, les outils de débogage, et l'importance de la formation continue. Enfin, Baptiste parle de l'intégration des retours utilisateurs grâce à whatsapp dans le développement de nouvelles fonctionnalités et des technologies qu'il emploie pour améliorer son application.</p><p><br /></p><p><strong>L'application Pacevisor</strong></p><p>Pacevisor est une plateforme innovante qui réinvente l’entraînement et la préparation des athlètes en offrant une analyse approfondie et des prévisions de performance basées sur les données réelles des parcours (date, gpx, météo, D+, roadbook personnalisé, etc…).L'application permet aux sportifs d'anticiper et de s'adapter aux spécificités de chaque course, leur donnant ainsi les clés pour atteindre avec efficacité leurs objectifs.Pacevisor fournit des analyses de performance basées sur des données concrètes et personnalisées, telles que :📍 Les données de parcours (date, GPX, D+, roadbook, etc.)🌦️ Les prévisions météo📅 Des plans d’entraînement adaptés aux spécificités de votre coursePour concrétiser cette préparation, Pacevisor s'utilise aussi le jour J pour lancer un meneur d’allure personnalisé, qui guidera chaque sportif km par km, leur permettant de viser leurs objectifs avec une préparation optimale 🎯</p><p><br /></p><p><strong>Notes de l'émission</strong></p><p><a href="https://ignitecookbook.com/docs/recipes/UpdatingIgnite" target="_blank" rel="ugc noopener noreferrer">https://ignitecookbook.com/docs/recipes/UpdatingIgnite</a></p><p><a href="https://www.larondedestjans.com/21km" target="_blank" rel="ugc noopener noreferrer">https://www.larondedestjans.com/21km</a></p><p><a href="https://agencelacommere.com/" target="_blank" rel="ugc noopener noreferrer">https://agencelacommere.com/</a></p><p><a href="https://github.com/nandorojo/dripsy" target="_blank" rel="ugc noopener noreferrer">https://github.com/nandorojo/dripsy</a></p><p><a href="https://github.com/jfilter/react-native-onboarding-swiper" target="_blank" rel="ugc noopener noreferrer">https://github.com/jfilter/react-native-onboarding-swiper</a></p><p><a href="https://www.bootnow.co/" target="_blank" rel="ugc noopener noreferrer">https://www.bootnow.co/</a></p><p><br /></p><p><strong>Pour suivre nos aventures</strong></p><p>David Leuliette</p><ul><li><a href="https://twitter.com/intent/follow?screen_name=flexbox_" target="_blank" rel="ugc noopener noreferrer">⁠⁠https://x.com/flexbox_⁠⁠</a></li><li><a href="https://go.bsky.app/6QQemwz" target="_blank" rel="ugc noopener noreferrer">⁠https://go.bsky.app/6QQemwz⁠</a></li><li>https://weshipit.today</li></ul><p>Baptiste Lecocq:</p><ul><li>https://x.com/tiste</li></ul><ul><li>https://tiste.io</li></ul><p><br /></p>`,
     slug: 'pacevisor',
-    spotifyLink:
+    spotify_url:
       'https://open.spotify.com/episode/4VyluvJMpxAOvTPS0Cbj3k?si=1e9e942c1cc64ee9',
-    appleLink:
+    apple_podcast_url:
       'https://podcasts.apple.com/fr/podcast/pacevisor-la-plateforme-de-sport-cr%C3%A9e-avec-ignite-et/id1790867559?i=1000692148216&l=en-GB',
-    companyLogo:
+    company_logo:
       'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/4b/f4/41/4bf4416f-f939-83ac-7d2b-d18f7fd888c2/AppIcon-0-0-1x_U007epad-0-1-85-220.png/460x0w.webp',
-    guestName: 'Baptiste Lecocq',
-    youtubeEmbedId: 'QvXQcPIqU30?si=SvfpEiE7Q9dhzXZ8',
+    guest_full_name: 'Baptiste Lecocq',
+    youtube_embed_id: 'QvXQcPIqU30?si=SvfpEiE7Q9dhzXZ8',
   },
   {
     name: 'Karnott',
     title:
       'Du React Native dans les tracteurs avec Karnott - Interview de Audrey Wech',
     number: 4,
-    shortDescription:
+    description_short:
       "L'application de productivité qui booste votre efficacité avec React Native",
     description: `<p><strong>Sommaire</strong></p><p>Dans cet épisode, David Leuliette s'entretient avec Audrey sur son parcours professionnel et son rôle chez Karnott, une startup lilloise axée sur l'agriculture connectée. Audrey évoque son parcours éducatif et les défis qu'elle a rencontrés en tant que développeuse, en détaillant les technologies utilisées dans l'application Karnott, comme React Native et Redux.</p><p><br /></p><p>Ils abordent les éléments clés de l'interface utilisateur (UI) et de l'expérience utilisateur (UX), ainsi que les obstacles rencontrés lors du développement. La discussion inclut les outils et méthodes de développement, tels que GitHub Actions, Fastlane, ainsi que des librairies comme D3 et Turf.</p><p><br /></p><p>Audrey et David parlent également des défis techniques, comme la gestion des builds, le versioning et les problèmes de déconnexion des utilisateurs. Ils soulignent l'importance de l'analyse géospatiale et de la cartographie dans leurs projets, ainsi que les solutions mises en œuvre pour améliorer l'expérience utilisateur.</p><p><br /></p><p>Enfin, ils explorent les différences entre iOS et Android et l'importance de rester à jour dans un écosystème en évolution. Audrey partage des conseils pratiques pour les projets futurs et discute des défis liés à la gestion des permissions et à la connectivité des données. Ils concluent en abordant l'évolution de l'écosystème React Native et l'impact des outils modernes sur la productivité des développeurs.</p><p><br /></p><p><strong>Notes de l'émission</strong></p><p><a href="https://www.karnott.fr/" rel="ugc noopener noreferrer" target="_blank">https://www.karnott.fr/</a></p><p><a href="https://d3js.org/d3-scale" rel="ugc noopener noreferrer" target="_blank">https://d3js.org/d3-scale</a></p><p><a href="https://github.com/react-native-maps/react-native-maps" rel="ugc noopener noreferrer" target="_blank">https://github.com/react-native-maps/react-native-maps</a></p><p><a href="https://turfjs.org/" rel="ugc noopener noreferrer" target="_blank">https://turfjs.org/</a></p><p><a href="https://github.com/infinitered/reactotron" rel="ugc noopener noreferrer" target="_blank">https://github.com/infinitered/reactotron</a></p><p><a href="https://github.com/zoontek/react-native-permissions" rel="ugc noopener noreferrer" target="_blank">https://github.com/zoontek/react-native-permissions</a></p><p><a href="https://github.com/microsoft/rnx-kit" rel="ugc noopener noreferrer" target="_blank">https://github.com/microsoft/rnx-kit</a></p><p><br /></p><p><br /></p><p><strong>Pour suivre nos aventures</strong></p><p>David Leuliette</p><ul> <li><a href="https://twitter.com/intent/follow?screen_name=flexbox_" rel="ugc noopener noreferrer" target="_blank">⁠https://x.com/flexbox_⁠</a></li> <li><a href="https://go.bsky.app/6QQemwz" rel="ugc noopener noreferrer" target="_blank">https://go.bsky.app/6QQemwz</a></li>  <li><a href="https://weshipit.today/" rel="ugc noopener noreferrer" target="_blank">https://weshipit.today/</a></li></ul><p>Audrey Wech</p><ul>  <li><a href="https://bsky.app/profile/shinelia.bsky.social" target="_blank" rel="ugc noopener noreferrer">https://bsky.app/profile/shinelia.bsky.social</a></li></ul><p><br /></p>`,
     slug: 'karnott',
-    spotifyLink:
+    spotify_url:
       'https://open.spotify.com/episode/4dyRNiw7xuSGpdQXkwb3GW?si=8790eede701746d6',
-    appleLink:
+    apple_podcast_url:
       'https://podcasts.apple.com/fr/podcast/du-react-native-dans-les-tracteurs-avec-karnott-interview/id1790867559?i=1000696790726&l=en-GB',
-    companyLogo:
+    company_logo:
       'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/36/49/67/3649675f-bd1c-6a2c-5972-87f49f34f9c7/AppIcon-0-0-1x_U007ephone-0-85-220.png/230x0w.webp',
-    guestName: 'Audrey Wech',
-    youtubeEmbedId: 'y6ntPx7oSLw?si=TnqsnzmogXLlS53p',
+    guest_full_name: 'Audrey Wech',
+    youtube_embed_id: 'y6ntPx7oSLw?si=TnqsnzmogXLlS53p',
   },
   {
     name: 'Swan',
     title:
       'Swan le SDK de banque pour les applications mobiles en React Native avec Mathieu Acthernoene',
     number: 5,
-    shortDescription:
+    description_short:
       'La fintech qui révolutionne la banque en ligne avec une app React Native performante',
     description: `<p>Dans cet épisode, David Leuliette s'entretient avec Mathieu Acthernoene sur Swan, un SDK bancaire conçu pour les applications mobiles en React Native. Mathieu partage son parcours professionnel et explique son rôle chez Swan, une entreprise qui facilite l'intégration de services bancaires dans les applications mobiles.</p><p>Ils discutent des défis liés au développement d'un SDK bancaire, notamment la sécurité, la gestion des permissions et la compatibilité avec différentes plateformes. Mathieu détaille les technologies utilisées dans Swan, comme React Native et des bibliothèques essentielles pour améliorer l’expérience utilisateur et la performance des applications.</p><p>La conversation explore également l’impact de l’internationalisation avec react-native-localize (⁠https://github.com/zoontek/react-native-localize⁠), la gestion des écrans avec react-native-screens (⁠https://github.com/software-mansion/react-native-screens⁠) et la navigation fluide grâce à react-navigation (⁠https://github.com/react-navigation/react-navigation⁠). Ils abordent aussi la gestion des permissions critiques via react-native-permissions (⁠https://github.com/zoontek/react-native-permissions⁠) et l’optimisation du clavier avec react-native-keyboard-controller (⁠https://github.com/kirillzyusko/react-native-keyboard-controller⁠).</p><p>Enfin, David et Mathieu discutent des bonnes pratiques pour intégrer Swan dans une application React Native, des enjeux liés à la conformité bancaire et de l’évolution de l’écosystème mobile. Mathieu partage ses conseils pour les développeurs souhaitant intégrer des services bancaires à leurs applications et les outils essentiels pour y parvenir.</p><p>Swan – Le SDK bancaire pour les applications mobiles : ⁠https://github.com/swan-io/swan-partner-mobile⁠Lake – Bibliothèque associée pour gérer les interfaces : ⁠https://github.com/swan-io/lake⁠urql – Client GraphQL performant pour React et React Native : ⁠https://github.com/urql-graphql/urql⁠react-native-builder-bob – Génération de bibliothèques pour React Native : ⁠https://github.com/callstack/react-native-builder-bob⁠react-native-bootsplash – Gestion du splash screen : ⁠https://github.com/zoontek/react-native-bootsplash⁠react-native-edge-to-edge – Expérience immersive en plein écran : ⁠https://github.com/zoontek/react-native-edge-to-edge⁠nitro – Optimisation des performances pour React Native : ⁠https://github.com/mrousavy/nitro⁠</p><p><br /></p><p><br /></p><p>David Leuliette</p><p>👉 Twitter : ⁠https://x.com/flexbox⁠_</p><p>👉 Bluesky : ⁠https://go.bsky.app/6QQemwz⁠</p><p>👉 We Ship It : ⁠https://weshipit.today/⁠</p><p><br /></p><p><br /></p><p>Mathieu Acthernoene</p><p>👉 Bluesky : ⁠https://bsky.app/profile/zoontek.me⁠</p><p>👉 Twitter : ⁠https://twitter.com/zoontek⁠</p><p>👉 LinkedIn : ⁠https://www.linkedin.com/in/zoontek</p><p><br /></p>`,
     slug: 'swan',
-    spotifyLink:
+    spotify_url:
       'https://open.spotify.com/episode/6OFwNSER1iNx1K5Scoge4t?si=d05827ceda464775',
-    appleLink:
+    apple_podcast_url:
       'https://podcasts.apple.com/fr/podcast/swan-le-sdk-de-banque-pour-les-applications-mobiles/id1790867559?i=1000699642862&l=en-GB',
-    companyLogo:
+    company_logo:
       'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ec/ca/c7/eccac76a-0a83-5ff4-d878-1b0915922572/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/460x0w.webp',
-    guestName: 'Mathieu Acthernoene',
-    youtubeEmbedId: 'g5qlv9RsMYY?si=uRNNvU-HoXX3ngfY',
+    guest_full_name: 'Mathieu Acthernoene',
+    youtube_embed_id: 'g5qlv9RsMYY?si=uRNNvU-HoXX3ngfY',
   },
   {
     name: 'Ekklo',
     title:
       "Les 10 meilleurs conseils de Callstack pour optimiser son application React Native avec Matthys Ducrocq, CTO d'Ekklo",
     number: 6,
-    shortDescription:
+    description_short:
       "L'application de gestion de clients qui optimise la productivité pour coach sportif avec React Native",
     description: `<p>Dans cet épisode, David Leuliette s'entretient avec Matthys Ducrocq, CTO et cofondateur d’Ekklo, sur les 10 meilleurs conseils pour optimiser les performances d’une application React Native. Matthys partage son parcours et son expertise en développement mobile, tout en expliquant les défis techniques liés à l’optimisation des applications, notamment la gestion des performances, du rendu et des interactions utilisateur.</p><p>Ils explorent ensemble les outils et techniques essentiels pour améliorer la fluidité des applications React Native. Matthys met en avant l’impact de React Compiler pour optimiser le code en amont, ainsi que l’importance de Reanimated (⁠<a href="https://github.com/software-mansion/react-native-reanimated%E2%81%A0" target="_blank" rel="ugc noopener noreferrer">https://github.com/software-mansion/react-native-reanimated⁠</a>) pour des animations ultra-performantes. Il détaille également l’utilisation de Legend State (⁠<a href="https://github.com/LegendApp/legend-state%E2%81%A0" target="_blank" rel="ugc noopener noreferrer">https://github.com/LegendApp/legend-state⁠</a>) et Zustand (⁠<a href="https://github.com/pmndrs/zustand%E2%81%A0" target="_blank" rel="ugc noopener noreferrer">https://github.com/pmndrs/zustand⁠</a>) pour une gestion d’état efficace, ainsi que l’optimisation du rendu des listes grâce à FlashList (⁠<a href="https://github.com/Shopify/flash-list%E2%81%A0" target="_blank" rel="ugc noopener noreferrer">https://github.com/Shopify/flash-list⁠</a>).</p><p>La discussion met en lumière les avantages de Concurrent React pour améliorer la réactivité des applications et les stratégies pour minimiser les re-rendus inutiles. Matthys partage aussi son expérience sur la gestion avancée des styles avec Class Variance Authority (⁠<a href="https://github.com/joe-bell/cva%E2%81%A0" target="_blank" rel="ugc noopener noreferrer">https://github.com/joe-bell/cva⁠</a>), qui facilite l’organisation des composants.</p><p>Enfin, David et Matthys abordent les meilleures pratiques pour profiler et monitorer les performances en production, tout en évitant les pièges courants. Matthys partage ses conseils concrets pour développer des applications React Native rapides et scalables, en s’appuyant sur les outils les plus récents de l’écosystème.</p><p>📘 <em>The Ultimate Guide to React Native Optimization</em> – Le guide ultime par Callstack : ⁠<a target="_blank" rel="ugc noopener noreferrer">https://www.callstack.com/ebook/the-ultimate-guide-to-react-native-optimization⁠</a></p><p>📌 Ressources utiles :<br />🔹 React Compiler – Optimisation du code React<br />🔹 Reanimated – Gestion avancée des animations : ⁠<a href="https://github.com/software-mansion/react-native-reanimated%E2%81%A0" target="_blank" rel="ugc noopener noreferrer">https://github.com/software-mansion/react-native-reanimated⁠</a><br />🔹 Legend State – Gestion d’état réactive : ⁠<a href="https://github.com/LegendApp/legend-state%E2%81%A0" target="_blank" rel="ugc noopener noreferrer">https://github.com/LegendApp/legend-state⁠</a><br />🔹 Zustand – Gestion d’état légère et performante : ⁠<a href="https://github.com/pmndrs/zustand%E2%81%A0" target="_blank" rel="ugc noopener noreferrer">https://github.com/pmndrs/zustand⁠</a><br />🔹 FlashList – Rendu optimisé des listes : ⁠<a href="https://github.com/Shopify/flash-list%E2%81%A0" target="_blank" rel="ugc noopener noreferrer">https://github.com/Shopify/flash-list⁠</a><br />🔹 Class Variance Authority – Gestion avancée des styles : ⁠<a href="https://github.com/joe-bell/cva%E2%81%A0" target="_blank" rel="ugc noopener noreferrer">https://github.com/joe-bell/cva⁠</a><br />🔹 Concurrent React – Optimisation des performances</p><p>🎙 Pour suivre nos aventures :<br />🔗 <strong>David Leuliette</strong> : ⁠<a target="_blank" rel="ugc noopener noreferrer">https://x.com/flexbox_⁠</a> | ⁠<a target="_blank" rel="ugc noopener noreferrer">https://go.bsky.app/6QQemwz⁠</a> | ⁠<a target="_blank" rel="ugc noopener noreferrer">https://weshipit.today/⁠</a><br />🔗 <strong>Matthys Ducrocq</strong> : ⁠<a href="https://twitter.com/matthysdev%E2%81%A0" target="_blank" rel="ugc noopener noreferrer">https://twitter.com/matthysdev⁠</a> | ⁠<a target="_blank" rel="ugc noopener noreferrer">https://bsky.app/profile/matthysdev⁠</a><br />🔗 <strong>Callstack</strong> : ⁠<a target="_blank" rel="ugc noopener noreferrer">https://callstack.com/⁠</a></p>`,
     slug: 'ekklo',
-    spotifyLink:
+    spotify_url:
       'https://open.spotify.com/episode/06y8m0c9yQyrkp9ZDmQKRq?si=53e416dbf53c4f1c',
-    appleLink:
+    apple_podcast_url:
       'https://podcasts.apple.com/fr/podcast/les-10-meilleurs-conseils-de-callstack-pour/id1790867559?i=1000701124964&l=en-GB',
-    companyLogo:
+    company_logo:
       'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/6d/f3/a2/6df3a215-ea30-6e7a-9994-8c10c37327ab/AppIcon-0-0-1x_U007epad-0-1-85-220.png/460x0w.webp',
-    guestName: 'Matthys Ducrocq',
-    youtubeEmbedId: 'P8h9StbxNLY?si=Ny_U6MazVRqCr2al',
+    guest_full_name: 'Matthys Ducrocq',
+    youtube_embed_id: 'P8h9StbxNLY?si=Ny_U6MazVRqCr2al',
   },
   {
     name: 'Mucho',
     title:
       'Mūcho, des avantages salariés ultra-spécialisés pour les PME avec une application mobile React Native - interview de Lucie Uffoltz',
     number: 7,
-    shortDescription:
+    description_short:
       "L'application lifestyle qui simplifie le quotidien grâce à React Native",
     description: `<p><strong>Sommaire</strong></p><p>Dans cet épisode du Cross Platform Show, David Leuliette et Lucie discutent du développement d'applications mobiles avec React Native, en se concentrant sur l'application Mucho. Lucie partage son parcours professionnel, son expérience avec React Native et les choix techniques effectués pour le développement de Mucho.</p><p>Ils abordent également la gestion de l'état, le style et les bibliothèques UI utilisées dans l'application. Dans cette conversation, David Leuliette et Lucie discutent des défis et des stratégies liés au développement d'applications universelles, en mettant l'accent sur les différences entre le web et le mobile, les outils utilisés, et les meilleures pratiques pour le déploiement et la mise à jour des applications.</p><p>Ils partagent également des recommandations sur les bibliothèques et les outils, ainsi que des techniques de débogage et de gestion des différences entre iOS et Android. La discussion aborde également l'importance de la veille technologique et des conférences pour rester à jour dans le domaine.</p><p><br /></p><p><strong>Notes de l'émission</strong></p><p><a href="https://www.unistyl.es" rel="ugc noopener noreferrer" target="_blank">https://www.unistyl.es</a></p><p><a href="https://github.com/mrzachnugent/react-native-reusables" rel="ugc noopener noreferrer" target="_blank">https://github.com/mrzachnugent/react-native-reusables</a></p><p><a href="https://zod.dev/" rel="ugc noopener noreferrer" target="_blank">https://zod.dev/</a></p><p><a href="https://react-hook-form.com/docs/useform/watch" rel="ugc noopener noreferrer" target="_blank">https://react-hook-form.com/docs/useform/watch</a></p><p><a href="https://github.com/mrousavy/react-native-mmkv" rel="ugc noopener noreferrer" target="_blank">https://github.com/mrousavy/react-native-mmkv</a></p><p><a href="https://github.com/rive-app/rive-react-native" rel="ugc noopener noreferrer" target="_blank">https://github.com/rive-app/rive-react-native</a></p><p><a href="https://go.bsky.app/6QQemwz" rel="ugc noopener noreferrer" target="_blank">https://go.bsky.app/6QQemwz</a></p><p><br /></p><p><strong>Pour suivre nos aventures</strong></p><p>David Leuliette</p><ul><li><a href="https://twitter.com/intent/follow?screen_name=flexbox_" rel="ugc noopener noreferrer" target="_blank">⁠https://x.com/flexbox_⁠</a></li><li><a href="https://go.bsky.app/6QQemwz" rel="ugc noopener noreferrer" target="_blank">https://go.bsky.app/6QQemwz</a></li><li><a href="https://weshipit.today/" rel="ugc noopener noreferrer" target="_blank">https://weshipit.today/</a></li></ul><p><br /></p><p>Lucie Uffoltz</p><ul><li><a href="https://x.com/uffoltzl" target="_blank" rel="ugc noopener noreferrer">https://x.com/uffoltzl</a></li><li><a href="https://bsky.app/profile/uffoltzl.bsky.social" target="_blank" rel="ugc noopener noreferrer">https://bsky.app/profile/uffoltzl.bsky.social</a></li><li><a href="https://www.linkedin.com/in/lucie-u-655ab6195/" target="_blank" rel="ugc noopener noreferrer">https://www.linkedin.com/in/lucie-u-655ab6195/</a></li></ul><p><br /></p>`,
     slug: 'mucho',
-    spotifyLink:
+    spotify_url:
       'https://open.spotify.com/episode/1uF2VZH5rs5eXeUAPpVNQQ?si=e8fbd76d663642ef',
-    appleLink:
+    apple_podcast_url:
       'https://podcasts.apple.com/fr/podcast/m%C5%ABcho-des-avantages-salari%C3%A9s-ultra-sp%C3%A9cialis%C3%A9s-pour/id1790867559?i=1000703883833&l=en-GB',
-    companyLogo:
+    company_logo:
       'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/e8/fb/dd/e8fbdd06-cdf2-bc6c-7e3c-f9853f82aa1b/AppIcon-0-0-1x_U007epad-0-85-220.png/230x0w.webp',
-    guestName: 'Lucie Uffoltz',
-    youtubeEmbedId: '18cMx05PJIo?si=BMSlXXwF-TX1YP6x',
+    guest_full_name: 'Lucie Uffoltz',
+    youtube_embed_id: '18cMx05PJIo?si=BMSlXXwF-TX1YP6x',
   },
   {
     name: 'Ilevia',
     title:
       "Ilévia, l'application React Native en marque blanche et Pékin Express avec Maxime Thirouin aka MoOx",
     number: 8,
-    shortDescription:
+    description_short:
       "L'application de navigation qui optimise les trajets avec React Native",
     description: `<p>Dans cet épisode du Cross Platform Show, David Leuliette discute avec Maxime Thirouin du développement d’applications mobiles avec React Native, en se concentrant sur l’application Ilévia. Maxime partage son parcours professionnel, son expérience avec React Native et les choix techniques effectués pour le développement d’Ilévia.</p><p>Ils abordent également la gestion de l’état, le style et les bibliothèques UI utilisées dans l’application. Dans cette conversation, David Leuliette et Maxime Thirouin discutent des défis et des stratégies liés au développement mobile en 2025, en mettant l’accent sur les différences entre iOS et Android, les outils utilisés, et les meilleures pratiques pour le déploiement et la mise à jour des applications.</p><p>Ils partagent également des recommandations sur les bibliothèques et les outils, ainsi que des techniques de débogage et de gestion des contraintes multiplateformes. La discussion aborde également l’importance de la veille technologique, des communautés, et le passage de Maxime dans l’émission Pékin Express !</p><p><br /></p><p><a href="https://redux-toolkit.js.org/rtk-query/overview" rel="ugc noopener noreferrer" target="_blank">https://redux-toolkit.js.org/rtk-query/overview</a></p><p><a href="https://reactnavigation.org/" rel="ugc noopener noreferrer" target="_blank">https://reactnavigation.org/</a></p><p><a href="https://flow.org/" rel="ugc noopener noreferrer" target="_blank">https://flow.org/</a></p><p><a href="https://docs.swmansion.com/react-native-reanimated/" rel="ugc noopener noreferrer" target="_blank">https://docs.swmansion.com/react-native-reanimated/</a></p><p><a href="https://expo.dev/home" rel="ugc noopener noreferrer" target="_blank">https://expo.dev/home</a></p><p><a href="https://mobbin.com/" rel="ugc noopener noreferrer" target="_blank">https://mobbin.com/</a></p><p><a href="https://facebook.github.io/react-strict-dom/" rel="ugc noopener noreferrer" target="_blank">https://facebook.github.io/react-strict-dom/</a></p><p><br /></p><p>Maxime Thirouin : </p><ul><li><a href="https://x.com/MoOx" target="_blank" rel="ugc noopener noreferrer">https://x.com/MoOx</a></li><li><a href="https://bsky.app/profile/moox.io" target="_blank" rel="ugc noopener noreferrer">https://bsky.app/profile/moox.io</a></li><li><a href="https://www.linkedin.com/in/maxthirouin" target="_blank" rel="ugc noopener noreferrer">https://www.linkedin.com/in/maxthirouin</a></li></ul><p><br /></p><p>David Leuliette</p><ul><li><a href="https://twitter.com/intent/follow?screen_name=flexbox_" rel="ugc noopener noreferrer" target="_blank">⁠⁠https://x.com/flexbox_⁠⁠</a></li><li><a href="https://go.bsky.app/6QQemwz" rel="ugc noopener noreferrer" target="_blank">⁠https://go.bsky.app/6QQemwz⁠</a></li><li><a href="https://weshipit.today/" rel="ugc noopener noreferrer" target="_blank">⁠https://weshipit.today/⁠</a></li></ul><p><br /></p>`,
     slug: 'ilevia',
-    spotifyLink:
+    spotify_url:
       'https://open.spotify.com/episode/5Ul1mOJ5iCg1JhJgkTCMmO?si=e67374f2c2074859',
-    appleLink:
+    apple_podcast_url:
       'https://podcasts.apple.com/fr/podcast/il%C3%A9via-lapplication-react-native-en-marque-blanche/id1790867559?i=1000705449282&l=en-GB',
-    companyLogo:
+    company_logo:
       'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/d9/02/d6/d902d64d-7b2b-bff6-bb72-2e13adbf6b12/AppIcon_ilevia-0-0-1x_U007epad-0-1-0-85-220.png/460x0w.webp',
-    guestName: 'Maxime Thirouin',
+    guest_full_name: 'Maxime Thirouin',
   },
   {
     name: 'ShareLock',
     title:
       'ShareLock l’application mobile companion pour sécuriser et assurer ton vélo - interview de Adnan Aita CTO',
     number: 9,
-    shortDescription:
+    description_short:
       'La solution de partage sécurisé qui révolutionne la collaboration avec React Native',
     description: `<p><strong>Sommaire</strong></p><p>Dans cet épisode, David Leuliette et Adnan plongent dans l'univers du développement d'applications mobiles avec React Native. Adnan partage son parcours fascinant dans le monde de l'informatique et sa transition passionnante vers l'entrepreneuriat avec la création de <strong>Sherlock</strong>. Ensemble, ils explorent les choix technologiques qui ont façonné cette application innovante.</p><p>	•	<strong>Gestion des données</strong> avec Redux Toolkit : Adnan explique comment il a optimisé la gestion des données pour offrir une expérience utilisateur fluide.</p><p>	•	<strong>Navigation dans l'application</strong> : Découvrez les stratégies qu'ils ont mises en place pour faciliter la navigation et rendre l'application intuitive.</p><p>	•	<strong>Défis techniques</strong> : Ils abordent les obstacles rencontrés lors des mises à jour de React Native et les leçons tirées de ces expériences.</p><p>Adnan et David discutent également des différences entre le développement web et mobile, ainsi que des processus de CI/CD essentiels pour une application mobile performante.</p><p>Ils partagent des conseils pratiques sur le choix des bonnes bibliothèques et l'utilisation de <strong>Vision Camera</strong> pour capturer des moments inoubliables. De plus, attendez-vous à des anecdotes croustillantes sur les défis techniques, notamment ceux liés à Bluetooth et aux fonctionnalités de l'application.</p><p>Enfin, ils mettent en lumière l'importance de la communauté tech et offrent des astuces pour rester à jour dans cet environnement en constante évolution, tout en concluant avec des ressources utiles pour les développeurs.</p><p><br /></p><p><strong>Notes de l'émission</strong></p><p><a href="https://nativebase.io/" target="_blank" rel="ugc noopener noreferrer">https://nativebase.io/</a></p><p><a href="https://gluestack.io/" target="_blank" rel="ugc noopener noreferrer">https://gluestack.io/</a></p><p><a href="https://weshipit.today/react-native-tools/mac-mini" target="_blank" rel="ugc noopener noreferrer">https://weshipit.today/react-native-tools/mac-mini</a></p><p><br /></p><p>top5 libraries</p><p><a href="https://reactnative.directory/" target="_blank" rel="ugc noopener noreferrer">https://reactnative.directory/</a></p><p><a href="https://redux-toolkit.js.org/" target="_blank" rel="ugc noopener noreferrer">https://redux-toolkit.js.org/</a></p><p><a href="https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore" target="_blank" rel="ugc noopener noreferrer">https://github.com/you-dont-need/You-Dont-Need-Lodash-Underscore</a></p><p><a href="https://github.com/mrousavy/react-native-vision-camera" target="_blank" rel="ugc noopener noreferrer">https://github.com/mrousavy/react-native-vision-camera</a></p><p><br /></p><p><a href="https://apps.theodo.com/en/radar" target="_blank" rel="ugc noopener noreferrer">https://apps.theodo.com/en/radar</a></p><p><br /></p><p><a href="https://www.sharelock.co/fr/etude" target="_blank" rel="ugc noopener noreferrer">https://www.sharelock.co/fr/etude</a></p><p><br /></p><p>Code promo \`adanrulez\`</p><p><br /></p><p><strong>David Leuliette</strong></p><ul><li><a href="https://twitter.com/intent/follow?screen_name=flexbox_" target="_blank" rel="ugc noopener noreferrer">⁠https://x.com/flexbox_⁠</a></li><li><a href="https://go.bsky.app/6QQemwz" target="_blank" rel="ugc noopener noreferrer">https://go.bsky.app/6QQemwz</a></li><li><a href="https://weshipit.today/" target="_blank" rel="ugc noopener noreferrer">https://weshipit.today/</a></li></ul><p><strong>Adnan Aita</strong></p><ul><li><a href="https://www.linkedin.com/in/aaita/" target="_blank" rel="ugc noopener noreferrer">https://www.linkedin.com/in/aaita/</a></li></ul><ul><br /></ul>`,
     slug: 'sharelock',
-    spotifyLink:
+    spotify_url:
       'https://open.spotify.com/episode/2zOddvp0or5uyg97FSGMkA?si=e6ace9e1ae6a4caf',
-    appleLink:
+    apple_podcast_url:
       'https://podcasts.apple.com/fr/podcast/sharelock-lapplication-mobile-companion-pour/id1790867559?i=1000707011381&l=en-GB',
-    companyLogo:
+    company_logo:
       'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/9c/a7/a4/9ca7a47f-c6ef-41ea-4965-c746df6505df/AppIcon-0-0-1x_U007emarketing-0-5-0-0-85-220.png/230x0w.webp',
-    guestName: 'Adnan Aita',
-    youtubeEmbedId: 'H_lM_TU39tY?si=UUjs0CCyCzCUZO2m',
+    guest_full_name: 'Adnan Aita',
+    youtube_embed_id: 'H_lM_TU39tY?si=UUjs0CCyCzCUZO2m',
   },
   {
     name: 'Mangacollec',
     title:
       'Mangacollec la meilleure app mobile pour les otakus français codée en rescript et react native avec Freddy Harris',
     number: 10,
-    shortDescription:
+    description_short:
       "L'application de collection de mangas qui passionne les fans avec une expérience React Native optimale",
     description: `<p><strong>Sommaire</strong></p><p>Dans cet épisode, rejoignez David Leuliette et Freddy Harris pour plonger dans le monde du développement d'applications mobiles avec <strong>Rescript</strong> et <strong>React Native</strong> ! Freddy, le fondateur de <strong>Manga Collect</strong>, partage son parcours inspirant et les défis qu'il a rencontrés lors du lancement de son application.</p><p>	•	<strong>Défis du lancement</strong> : Découvrez les obstacles que Freddy a dû surmonter pour donner vie à Manga Collect.</p><p>	•	<strong>Choix technologiques</strong> : Quels outils et technologies ont été essentiels dans son processus de développement ?</p><p>	•	<strong>Gestion des données et navigation</strong> : Apprenez comment optimiser ces aspects cruciaux pour offrir une expérience utilisateur fluide.</p><p>	•	<strong>Stratégies de monétisation</strong> : Freddy partage ses idées sur comment rentabiliser une application mobile dans le marché actuel.</p><p>Ne manquez pas cet épisode riche en conseils pratiques et en anecdotes inspirantes !</p><p><br /></p><p><strong>Notes de l'émission</strong></p><p><a href="https://www.mangacollec.com/" rel="ugc noopener noreferrer" target="_blank">https://www.mangacollec.com/</a></p><p><a href="https://immutable-js.com/" rel="ugc noopener noreferrer" target="_blank">https://immutable-js.com/</a></p><p><a href="https://rescript-lang.org/" rel="ugc noopener noreferrer" target="_blank">https://rescript-lang.org/</a></p><p><a href="https://rescript-react-native.github.io/" rel="ugc noopener noreferrer" target="_blank">https://rescript-react-native.github.io/</a></p><p><a href="https://www.npmjs.com/package/@jvlk/rescript-future" rel="ugc noopener noreferrer" target="_blank">https://www.npmjs.com/package/@jvlk/rescript-future</a></p><p><a href="https://stylexjs.com/" rel="ugc noopener noreferrer" target="_blank">https://stylexjs.com/</a></p><p><a href="https://github.com/callstack/reassure" rel="ugc noopener noreferrer" target="_blank">https://github.com/callstack/reassure</a></p><p><a href="https://gcanti.github.io/fp-ts/" rel="ugc noopener noreferrer" target="_blank">https://gcanti.github.io/fp-ts/</a></p><p><br /></p><p><strong>David Leuliette</strong></p><ul><li><a href="https://twitter.com/intent/follow?screen_name=flexbox_" rel="ugc noopener noreferrer" target="_blank">⁠https://x.com/flexbox_⁠</a></li><li><a href="https://go.bsky.app/6QQemwz" rel="ugc noopener noreferrer" target="_blank">https://go.bsky.app/6QQemwz</a></li><li><a href="https://weshipit.today/" rel="ugc noopener noreferrer" target="_blank">https://weshipit.today/</a></li></ul><p><strong>Freddy Harris</strong></p><ul><li><a href="https://x.com/HarrisFreddy" target="_blank" rel="ugc noopener noreferrer">https://x.com/HarrisFreddy</a></li><li><a href="https://bsky.app/profile/freddyharris.com" target="_blank" rel="ugc noopener noreferrer">https://bsky.app/profile/freddyharris.com</a></li><li><a href="https://www.linkedin.com/in/freddy-harris-03bb9935/" target="_blank" rel="ugc noopener noreferrer">https://www.linkedin.com/in/freddy-harris-03bb9935/</a></li></ul><p><br /></p>`,
     slug: 'mangacollec',
-    spotifyLink:
+    spotify_url:
       'https://open.spotify.com/episode/6guQ03HE7yadwX369y0zjn?si=91bcd664f7f24861',
-    appleLink:
+    apple_podcast_url:
       'https://podcasts.apple.com/fr/podcast/mangacollec-la-meilleure-app-mobile-pour-les-otakus/id1790867559?i=1000709321112&l=en-GB',
-    companyLogo:
+    company_logo:
       'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/13/60/fc/1360fc54-4755-0359-adab-2414d735ec68/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/460x0w.webp',
-    guestName: 'Freddy Harris',
-    youtubeEmbedId: 'y2mk3hJ_3A4?si=YKudX08KS4xDDpEH',
+    guest_full_name: 'Freddy Harris',
+    youtube_embed_id: 'y2mk3hJ_3A4?si=YKudX08KS4xDDpEH',
   },
   {
     name: 'Ornikar',
     title:
       "Ornikar, une stack React Native pour l'auto-école et l'assurance auto du futur - interview de Romain Spielmann Lead développeur",
     number: 11,
-    shortDescription:
+    description_short:
       "L'innovation dans l'éducation du code de la route avec React Native",
-    description: `<p><strong>Sommaire</strong></p><p>Rejoignez David Leuliette et Romain Spielmann dans cette nouvelle édition du podcast !</p><p>Retour d'Expérience : Développement Mobile avec React Native</p><p>Dans cet épisode, Romain partage son parcours professionnel et ses expériences avec différentes technologies. Il explique comment il a transitionné vers React Native et quels défis il a rencontrés.</p><p>Thèmes Abordés</p><ul><li>Stack Technique : Quels outils et technologies sont utilisés chez Ornikard ?</li><li>Gestion des Données : Comment gérer les données efficacement avec Zustand ?</li><li>Défis Techniques : Quels sont les défis techniques courants lors du développement d'applications mobiles ?</li></ul><p><br /></p><p>Conseils et Expériences Partagées</p><ul><li>Design System : Pourquoi est-il crucial pour une expérience utilisateur fluide ? </li><li>Migrations Technologiques : Comment gérer les changements technologiques à venir ?</li><li>Outils de Développement : Quels sont les outils indispensables comme Expo et Circle CI ?</li></ul><p><br /></p><p>Écoutez cet épisode pour en savoir plus sur le développement mobile avec React Native, les défis et les succès rencontrés, et pour bénéficier de conseils pratiques de deux experts du domaine !</p><p><br /></p><p><strong>Notes de l'émission</strong></p><p><a href="https://www.ornikar.com/" rel="ugc noopener noreferrer" target="_blank">https://www.ornikar.com/</a></p><p>top 5 librairies</p><p><a href="https://solito.dev/" rel="ugc noopener noreferrer" target="_blank">https://solito.dev/</a></p><p><a href="https://zeego.dev/" rel="ugc noopener noreferrer" target="_blank">https://zeego.dev/</a></p><p><a href="https://github.com/gorhom/react-native-bottom-sheet" rel="ugc noopener noreferrer" target="_blank">https://github.com/gorhom/react-native-bottom-sheet</a></p><p><a href="https://github.com/EvanBacon/expo-apple-targets" rel="ugc noopener noreferrer" target="_blank">https://github.com/EvanBacon/expo-apple-targets</a></p><p><a href="https://apps.apple.com/fr/app/compteur-de-points-scory/id6538715670" rel="ugc noopener noreferrer" target="_blank">https://apps.apple.com/fr/app/compteur-de-points-scory/id6538715670</a></p><p><a href="https://mixpanel.com/" rel="ugc noopener noreferrer" target="_blank">https://mixpanel.com/</a></p><p><a href="https://segment.com/" rel="ugc noopener noreferrer" target="_blank">https://segment.com/</a></p><p><a href="https://nightwatchjs.org/" rel="ugc noopener noreferrer" target="_blank">https://nightwatchjs.org/</a></p><p><a href="https://x.com/baconbrix/" rel="ugc noopener noreferrer" target="_blank">https://x.com/baconbrix/</a></p><p><a href="https://x.com/FernandoTheRojo" rel="ugc noopener noreferrer" target="_blank">https://x.com/FernandoTheRojo</a></p><p><a href="https://tamagui.dev/llms.txt" rel="ugc noopener noreferrer" target="_blank">https://tamagui.dev/llms.txt</a></p><p><br /></p><p><strong>David Leuliette</strong></p><ul><li><a href="https://twitter.com/intent/follow?screen_name=flexbox_" rel="ugc noopener noreferrer" target="_blank">⁠https://x.com/flexbox_⁠</a></li><li><a href="https://go.bsky.app/6QQemwz" rel="ugc noopener noreferrer" target="_blank">https://go.bsky.app/6QQemwz</a></li><li><a href="https://weshipit.today/" rel="ugc noopener noreferrer" target="_blank">https://weshipit.today/</a></li></ul><p><strong>Romain Spielmann</strong></p><ul><li><a href="https://x.com/RomainSplmn" target="_blank" rel="ugc noopener noreferrer">https://x.com/RomainSplmn</a></li><li><a href="https://bsky.app/profile/romains.bsky.social" target="_blank" rel="ugc noopener noreferrer">https://bsky.app/profile/romains.bsky.social</a></li><li><a href="https://www.linkedin.com/in/spielmannromain/" target="_blank" rel="ugc noopener noreferrer">https://www.linkedin.com/in/spielmannromain/</a></li></ul>`,
+    description: `<p><strong>Sommaire</strong></p><p>Rejoignez David Leuliette et Romain Spielmann dans cette nouvelle édition du podcast !</p><p>Retour d'Expérience : Développement Mobile avec React Native</p><p>Dans cet épisode, Romain partage son parcours professionnel et ses expériences avec différentes technologies. Il explique comment il a transitionné vers React Native et quels défis il a rencontrés.</p><p>Thèmes Abordés</p><ul><li>Stack Technique : Quels outils et technologies sont utilisés chez Ornikard ?</li><li>Gestion des Données : Comment gérer les données efficacement avec Zustand ?</li><li>Défis Techniques : Quels sont les défis techniques courants lors du développement d'applications mobiles ?</li></ul><p><br /></p><p>Conseils et Expériences Partagées</p><ul><li>Design System : Pourquoi est-il crucial pour une expérience utilisateur fluide ?</li><li>Migrations Technologiques : Comment gérer les changements technologiques à venir ?</li><li>Outils de Développement : Quels sont les outils indispensables comme Expo et Circle CI ?</li></ul><p><br /></p><p>Écoutez cet épisode pour en savoir plus sur le développement mobile avec React Native, les défis et les succès rencontrés, et pour bénéficier de conseils pratiques de deux experts du domaine !</p><p><br /></p><p><strong>Notes de l'émission</strong></p><p><a href="https://www.ornikar.com/" rel="ugc noopener noreferrer" target="_blank">https://www.ornikar.com/</a></p><p>top 5 librairies</p><p><a href="https://solito.dev/" rel="ugc noopener noreferrer" target="_blank">https://solito.dev/</a></p><p><a href="https://zeego.dev/" rel="ugc noopener noreferrer" target="_blank">https://zeego.dev/</a></p><p><a href="https://github.com/gorhom/react-native-bottom-sheet" rel="ugc noopener noreferrer" target="_blank">https://github.com/gorhom/react-native-bottom-sheet</a></p><p><a href="https://github.com/EvanBacon/expo-apple-targets" rel="ugc noopener noreferrer" target="_blank">https://github.com/EvanBacon/expo-apple-targets</a></p><p><a href="https://apps.apple.com/fr/app/compteur-de-points-scory/id6538715670" rel="ugc noopener noreferrer" target="_blank">https://apps.apple.com/fr/app/compteur-de-points-scory/id6538715670</a></p><p><a href="https://mixpanel.com/" rel="ugc noopener noreferrer" target="_blank">https://mixpanel.com/</a></p><p><a href="https://segment.com/" rel="ugc noopener noreferrer" target="_blank">https://segment.com/</a></p><p><a href="https://nightwatchjs.org/" rel="ugc noopener noreferrer" target="_blank">https://nightwatchjs.org/</a></p><p><a href="https://x.com/baconbrix/" rel="ugc noopener noreferrer" target="_blank">https://x.com/baconbrix/</a></p><p><a href="https://x.com/FernandoTheRojo" rel="ugc noopener noreferrer" target="_blank">https://x.com/FernandoTheRojo</a></p><p><a href="https://tamagui.dev/llms.txt" rel="ugc noopener noreferrer" target="_blank">https://tamagui.dev/llms.txt</a></p><p><br /></p><p><strong>David Leuliette</strong></p><ul><li><a href="https://twitter.com/intent/follow?screen_name=flexbox_" rel="ugc noopener noreferrer" target="_blank">⁠https://x.com/flexbox_⁠</a></li><li><a href="https://go.bsky.app/6QQemwz" rel="ugc noopener noreferrer" target="_blank">https://go.bsky.app/6QQemwz</a></li><li><a href="https://weshipit.today/" rel="ugc noopener noreferrer" target="_blank">https://weshipit.today/</a></li></ul><p><strong>Romain Spielmann</strong></p><ul><li><a href="https://x.com/RomainSplmn" target="_blank" rel="ugc noopener noreferrer">https://x.com/RomainSplmn</a></li><li><a href="https://bsky.app/profile/romains.bsky.social" target="_blank" rel="ugc noopener noreferrer">https://bsky.app/profile/romains.bsky.social</a></li><li><a href="https://www.linkedin.com/in/spielmannromain/" target="_blank" rel="ugc noopener noreferrer">https://www.linkedin.com/in/spielmannromain/</a></li></ul>`,
     slug: 'ornikar',
-    spotifyLink:
+    spotify_url:
       'https://open.spotify.com/episode/7nKJ4uxFPnhv2TMf28eqEJ?si=8e9eb937155d4d93',
-    appleLink:
+    apple_podcast_url:
       'https://podcasts.apple.com/fr/podcast/ornikar-une-stack-react-native-pour-lauto-%C3%A9cole-et/id1790867559?i=1000710224129&l=en-GB',
-    companyLogo:
+    company_logo:
       'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/fc/6e/17/fc6e171e-cd14-d36a-91e7-387da9c61439/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/230x0w.webp',
-    guestName: 'Romain Spielmann',
-    youtubeEmbedId: 'J3q7UwdoJDc?si=ejqHdb_7uC6mjOJS',
+    guest_full_name: 'Romain Spielmann',
+    youtube_embed_id: 'J3q7UwdoJDc?si=ejqHdb_7uC6mjOJS',
   },
   {
     name: 'ControlResell',
     title:
       'ControlResell automatise la vente Multiplatforme depuis ton téléphone, interview de Nathan Fallet',
     number: 12,
-    shortDescription:
+    description_short:
       "L'application de gestion de stock et d'inventaire qui révolutionne la gestion de stock et d'inventaire avec React Native",
     description: `<p><strong>Sommaire</strong></p><p>Dans cet épisode du Cross Platform Show, David Leuliette et Nathan discutent du parcours de Nathan en tant que développeur mobile, de ses expériences avec différentes technologies, notamment React Native et Kotlin, ainsi que des défis rencontrés dans le développement d'applications comme Control Resale et Flash Up.</p><p>Ils abordent également des sujets tels que la gestion de l'état, la récupération des données et les problèmes liés à JavaScript et TypeScript. Dans cette conversation, Nathan et David discutent des défis et des solutions rencontrés lors du développement d'applications avec TypeScript et React Native. Ils abordent la réduction des erreurs, la navigation dans les applications, les styles et le design, ainsi que l'importance de garder une expérience utilisateur simple.</p><p>Ils partagent également leurs méthodes de déploiement et l'importance des retours des utilisateurs pour améliorer le produit. Dans cette conversation, Nathan et David explorent les défis et les meilleures pratiques du développement en JavaScript et React Native. Ils discutent de l'importance du typage avec TypeScript, des outils comme Zod pour la validation, et de la gestion des états avec des bibliothèques comme Zustand. Ils partagent également leurs expériences sur les mises à jour de bibliothèques, les stratégies de déploiement, et les leçons apprises sur la nécessité de tester rigoureusement le code.</p><p>Dans cette conversation, David et Nathan explorent les défis et les solutions liés au développement d'applications mobiles, en mettant l'accent sur la mise à jour des environnements, l'apprentissage de nouvelles technologies, et les choix entre React Native et Kotlin Multiplatform. Ils discutent également de l'importance des tests sur des appareils réels et des avantages de Kotlin Multiplatform en termes de stabilité et de facilité d'utilisation.</p><p>Enfin, ils partagent des recommandations pour les développeurs et concluent sur l'importance de la communauté et des ressources disponibles.</p><p><br /></p><p><br /></p><p><br /></p><p><strong>Notes de l'émission</strong></p><p><a href="https://docs.expo.dev/guides/using-eslint/" rel="ugc noopener noreferrer" target="_blank">https://docs.expo.dev/guides/using-eslint/</a></p><p><a href="https://zod.dev/" rel="ugc noopener noreferrer" target="_blank">https://zod.dev/</a></p><p><a href="https://github.com/pmndrs/zustand" rel="ugc noopener noreferrer" target="_blank">https://github.com/pmndrs/zustand</a></p><p><a href="https://www.youtube.com/channel/UC5KTJR0zRjT15keRTLKNP_w" rel="ugc noopener noreferrer" target="_blank">https://www.youtube.com/channel/UC5KTJR0zRjT15keRTLKNP_w</a></p><p><a href="https://kotlinlang.org/docs/multiplatform.html" rel="ugc noopener noreferrer" target="_blank">https://kotlinlang.org/docs/multiplatform.html</a></p><p><br /></p><p><strong>David Leuliette</strong></p><ul><li><a href="https://twitter.com/intent/follow?screen_name=flexbox_" rel="ugc noopener noreferrer" target="_blank">⁠https://x.com/flexbox_⁠</a></li><li><a href="https://go.bsky.app/6QQemwz" rel="ugc noopener noreferrer" target="_blank">https://go.bsky.app/6QQemwz</a></li><li><a href="https://weshipit.today/" rel="ugc noopener noreferrer" target="_blank">https://weshipit.today/</a></li></ul><p><strong>Nathan Fallet</strong></p><ul><li><a href="https://www.linkedin.com/in/nathanfallet/" target="_blank" rel="ugc noopener noreferrer">https://www.linkedin.com/in/nathanfallet/</a></li></ul><p><br /></p>`,
     slug: 'controlresell',
-    spotifyLink:
+    spotify_url:
       'https://open.spotify.com/episode/1Pet3tskRm0E64ftDt00n9?si=6fc1dcfdb4734c65',
-    appleLink:
+    apple_podcast_url:
       'https://podcasts.apple.com/fr/podcast/controlresell-automatise-la-vente-multiplatforme-depuis/id1790867559?i=1000711108828&l=en-GB',
-    companyLogo:
+    company_logo:
       'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/25/f8/fd/25f8fd8f-f7ad-7f3b-f804-0bd64c124532/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/230x0w.webp',
-    guestName: 'Nathan Fallet',
-    youtubeEmbedId: 'IiPEvKMtxuY?si=fITDHBAQt096Lw3_',
+    guest_full_name: 'Nathan Fallet',
+    youtube_embed_id: 'IiPEvKMtxuY?si=fITDHBAQt096Lw3_',
   },
   {
     name: 'AppjsConf',
     title:
       'App.js Conf 2025 rétrospective de la plus grosse conférence React Native',
     number: 13,
-    shortDescription: "La conférence React Native la plus attendue de l'année",
+    description_short: "La conférence React Native la plus attendue de l'année",
     description: `<p><strong>Sommaire</strong></p><p>Dans cet épisode du Cross Platform Show, les invités discutent de leurs expériences à la conférence App.js, des ateliers sur la performance, des outils innovants comme Radon et Expo, ainsi que des annonces clés faites lors de la keynote.</p><p>Ils partagent des insights sur le développement mobile et l'importance de la préparation technique pour les ateliers. Cette conversation explore les dernières innovations et tendances dans le développement mobile, en mettant l'accent sur React Native et Expo.</p><p>Les intervenants discutent des performances, des outils de développement, de l'optimisation de l'expérience utilisateur, et de l'impact des app clips sur la conversion des utilisateurs. Ils partagent également des insights sur la migration vers de nouvelles architectures et les solutions CI/CD disponibles pour les développeurs. </p><p>Cette conversation aborde divers aspects du développement moderne, notamment l'utilisation de l'IA pour optimiser le workflow, l'importance des composants natifs dans Expo UI, les défis rencontrés par l'application Mistral, et les meilleures pratiques en matière d'animation et d'expérience utilisateur avec React Native.</p><p>Les intervenants discutent également des intégrations brownfield, de la sécurité des applications mobiles, et de la tendance du vibe coding pour un développement rapide. Cette conversation aborde divers aspects de la gestion des revenus dans les applications, l'évolution des outils de gestion des claviers dans React Native, ainsi que les moments forts d'une conférence sur le sujet.</p><p>Les intervenants partagent également leurs prédictions pour l'avenir de React Native, mettant en avant l'importance de l'innovation et de l'adaptation dans le développement d'applications.</p><p><br /></p><p><strong>Notes de l'émission</strong></p><p><strong></strong><a href="https://github.com/software-mansion-labs/appjs-2025-workshop-performance" rel="ugc noopener noreferrer" target="_blank">https://github.com/software-mansion-labs/appjs-2025-workshop-performance</a></p><p>https://github.com/expo/appjs25-eas-update-workshop-code</p><p><a href="https://x.com/flexbox_/media" rel="ugc noopener noreferrer" target="_blank">https://x.com/flexbox_/media</a></p><p><a href="https://github.com/hey-api/openapi-ts" rel="ugc noopener noreferrer" target="_blank">https://github.com/hey-api/openapi-ts</a></p><p><a href="https://github.com/toss/granite" rel="ugc noopener noreferrer" target="_blank">https://github.com/toss/granite</a></p><p><br /></p><p><strong>David Leuliette</strong></p><ul><li><a href="https://twitter.com/intent/follow?screen_name=flexbox_" rel="ugc noopener noreferrer" target="_blank">⁠https://x.com/flexbox_⁠</a></li><li><a href="https://go.bsky.app/6QQemwz" rel="ugc noopener noreferrer" target="_blank">https://go.bsky.app/6QQemwz</a></li><li><a href="https://weshipit.today/" rel="ugc noopener noreferrer" target="_blank">https://weshipit.today/</a></li></ul><p><strong>Ludwig Vantours</strong></p><ul><li><a href="https://x.com/xavier_seignard" rel="ugc noopener noreferrer" target="_blank">https://x.com/ludwig_vaan</a></li><li><a href="https://bsky.app/profile/ludwig-dev.bsky.social" target="_blank" rel="ugc noopener noreferrer">https://bsky.app/profile/ludwig-dev.bsky.social</a></li></ul><p><strong>Matthys Ducrocq</strong></p><ul><li><a href="https://twitter.com/matthysdev" target="_blank" rel="ugc noopener noreferrer">https://twitter.com/matthysdev</a></li><li><a href="https://bsky.app/profile/matthysdev.bsky.social" target="_blank" rel="ugc noopener noreferrer">https://bsky.app/profile/matthysdev.bsky.social</a></li></ul><p><br /></p>`,
     slug: 'appjs-conf-2025',
-    spotifyLink:
+    spotify_url:
       'https://open.spotify.com/episode/1BPHr0oylS8FrNneRdGCZD?si=60bcb5a047274b74',
-    appleLink:
+    apple_podcast_url:
       'https://podcasts.apple.com/fr/podcast/app-js-conf-2025-r%C3%A9trospective-de-la-plus-grosse/id1790867559?i=1000713370419&l=en-GB',
-    companyLogo:
+    company_logo:
       'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/3e/c2/cf/3ec2cfae-c04c-ac54-93de-a311154d7a21/AppIcon-0-0-1x_U007epad-0-1-85-220.png/460x0w.webp',
-    guestName: 'Ludwig Vantours, Gabriel Hofman, Matthys Ducrocq',
-    youtubeEmbedId: 'e5DdBdoIAdE?si=pat1S-v-JP3q1pXh',
+    guest_full_name: 'Ludwig Vantours, Gabriel Hofman, Matthys Ducrocq',
+    youtube_embed_id: 'e5DdBdoIAdE?si=pat1S-v-JP3q1pXh',
   },
   {
     name: 'Shine',
     title:
       'Shine, comment procurer de la joie aux freelances avec une app React Native ? interview de Corentin André',
     number: 14,
-    shortDescription:
+    description_short:
       'Shone, vos comptes pro en un clic avec une app React Native',
     description: `<p><strong>Sommaire</strong></p><p>Dans cet épisode, David Leuliette et Corentin discutent du développement d'applications mobiles chez Shine, une banque en ligne pour freelances. Corentin partage son parcours professionnel, son rôle en tant que Head of Frontend, et les technologies utilisées, notamment React Native, GraphQL et Apollo. Ils abordent également la navigation, la gestion des données, les animations, le déploiement, et l'importance d'un design system cohérent. Enfin, Corentin recommande des librairies utiles pour les développeurs. Dans cette conversation, Corentin et David discutent des défis et des meilleures pratiques dans le développement d'applications avec React et React Native. Ils abordent des sujets tels que l'impact de React sur les formulaires, la gestion des états avec X-State, l'amélioration des performances des applications, les défis de migration, et l'importance des outils de débogage et d'instrumentation. Ils partagent également des leçons tirées de leur expérience dans le développement et des stratégies pour rester à jour dans l'écosystème React Native.</p><p><br /></p><p><strong>Notes de l'émission</strong></p><p>https://medium.com/@ababol/how-weve-increased-our-store-rating-to-4-8-4ee8308641f4</p><p>https://github.com/apollographql/apollo-client</p><p>https://reactnavigation.org/docs/deep-linking/</p><p>https://tamagui.dev/</p><p>https://omlet.dev/</p><p>https://docs.swmansion.com/react-native-reanimated/</p><p>https://react-hook-form.com/</p><p>https://zod.dev/</p><p>https://xstate.js.org/ </p><p>https://expo.dev/blog/simplifying-auth-flows-with-protected-routes</p><p>https://www.youtube.com/watch?v=H4kbJObhcHw</p><p>https://docs.sentry.io/platforms/javascript/configuration/integrations/reportingobserver/</p><p>https://www.debugbear.com/docs/rum/percentiles</p><p>https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners</p><p> Sentry instruments https://docs.sentry.io/product/insights/overview/transaction-summary/</p><p>https://flashlight.dev/</p><p>https://weshipit.today/french-react-native-apps</p><p><br /></p><p><strong>David Leuliette</strong></p><ul><li><a href="https://twitter.com/intent/follow?screen_name=flexbox_" rel="ugc noopener noreferrer" target="_blank">⁠https://x.com/flexbox_⁠</a></li><li><a href="https://go.bsky.app/6QQemwz" rel="ugc noopener noreferrer" target="_blank">https://go.bsky.app/6QQemwz</a></li><li><a href="https://weshipit.today/" rel="ugc noopener noreferrer" target="_blank">https://weshipit.today/</a></li></ul><p><strong>Corentin André</strong></p><ul><li><a href="https://www.linkedin.com/in/corentin-andr%C3%A9-b32526101/" target="_blank" rel="ugc noopener noreferrer">https://www.linkedin.com/in/corentin-andr%C3%A9-b32526101/</a></li></ul>`,
     slug: 'shine',
-    spotifyLink:
+    spotify_url:
       'https://open.spotify.com/episode/273rWVjbCwhsAUUibuxHQF?si=81f57cda883c48b8',
-    appleLink:
+    apple_podcast_url:
       'https://podcasts.apple.com/fr/podcast/shine-comment-procurer-de-la-joie-aux-freelances/id1790867559?i=1000718520721&l=en-GB',
-    companyLogo:
+    company_logo:
       'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/26/af/28/26af2830-d8c0-5fea-d28b-71742c955cd1/AppIcon-0-0-1x_U007epad-0-1-85-220.png/460x0w.webp',
-    guestName: 'Corentin André',
-    youtubeEmbedId: 'cGNybzNFj68?si=YuRyT57LYXzVjLDg',
+    guest_full_name: 'Corentin André',
+    youtube_embed_id: 'cGNybzNFj68?si=YuRyT57LYXzVjLDg',
   },
   {
     name: 'Rosk',
     title:
       'Rosk (ex Brigad) l’application mobile des professionnels de la restauration et de la santé — interview de Thibault Malbranche aka Titozzz Lead Mobile Developer',
     number: 15,
-    shortDescription:
+    description_short:
       "Rosk, l'application mobile des professionnels de la restauration et de la santé",
     slug: 'rosk',
-    spotifyLink:
+    spotify_url:
       'https://open.spotify.com/episode/7oDLs8BUb1TFYUeBZ4Cnys?si=1ba8b710453545f8',
-    appleLink:
+    apple_podcast_url:
       'https://podcasts.apple.com/fr/podcast/rosk-ex-brigad-lapplication-mobile-des-professionnels/id1790867559?i=1000719760174&l=en-GB',
-    companyLogo:
+    company_logo:
       'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/15/77/f7/1577f708-b52e-6bf3-8cd2-e2808cb87018/AppIcon-0-0-1x_U007epad-0-1-85-220.png/460x0w.webp',
-    guestName: 'Thibault Malbranche',
-    youtubeEmbedId: 'WsVqBjqvhf0?si=eMH2x1YqkCDyA9Pl',
+    guest_full_name: 'Thibault Malbranche',
+    youtube_embed_id: 'WsVqBjqvhf0?si=eMH2x1YqkCDyA9Pl',
     description: `<p><strong>Sommaire</strong></p><p>Dans cet épisode, David Leuliette et Thibaut Malbranche discutent de l'évolution de Brigade, de l'impact de React Native sur le développement mobile, et des défis rencontrés dans le monde de l'open source. Thibaut partage son parcours, son engagement dans la communauté, et les technologies utilisées chez Brigad, notamment Apollo pour la gestion des données et les solutions de navigation. </p><p>Ils abordent également l'importance d'un design système efficace et les défis liés aux tests et à l'assurance qualité. Dans cette conversation, Thibault Malbranche et David Leuliette explorent divers aspects du développement mobile, en mettant l'accent sur React Native.</p><p>Ils discutent des outils et techniques de développement, de l'optimisation des processus de build, des librairies recommandées, des défis rencontrés dans le développement mobile, ainsi que des compétences recherchées lors du recrutement.</p><p>Thibault partage également son expérience sur l'importance de l'UX et de l'open source dans le développement logiciel.</p><p><br /></p><p><br /></p><p><strong>Notes de l'émission</strong></p><p><a href="https://github.com/kelset" rel="ugc noopener noreferrer" target="_blank">https://github.com/kelset</a></p><p><a href="https://www.apollographql.com/" rel="ugc noopener noreferrer" target="_blank">https://www.apollographql.com/</a></p><p><a href="https://hackintosh.com/" rel="ugc noopener noreferrer" target="_blank">https://hackintosh.com/</a></p><p><a href="https://github.com/sindresorhus/type-fest" rel="ugc noopener noreferrer" target="_blank">https://github.com/sindresorhus/type-fest</a></p><p><a href="https://github.com/gvergnaud/ts-pattern" rel="ugc noopener noreferrer" target="_blank">https://github.com/gvergnaud/ts-pattern</a></p><p><a href="https://github.com/alan-eu/react-native-fast-shadow" rel="ugc noopener noreferrer" target="_blank">https://github.com/alan-eu/react-native-fast-shadow</a></p><p><br /></p><p>si tu cherches du travail</p><p><a href="https://www.welcometothejungle.com/fr/companies/brigad/jobs/developpeur-front-end-confirme_paris" rel="ugc noopener noreferrer" target="_blank">https://www.welcometothejungle.com/fr/companies/brigad/jobs/developpeur-front-end-confirme_paris</a></p><p><a href="mailto:thibault@brigad.co" rel="ugc noopener noreferrer" target="_blank">thibault@brigad.co</a></p><p><br /></p><p><strong>David Leuliette</strong></p><ul><li><a href="https://twitter.com/intent/follow?screen_name=flexbox_" rel="ugc noopener noreferrer" target="_blank">⁠https://x.com/flexbox_⁠</a></li><li><a href="https://go.bsky.app/6QQemwz" rel="ugc noopener noreferrer" target="_blank">https://go.bsky.app/6QQemwz</a></li><li><a href="https://weshipit.today/" rel="ugc noopener noreferrer" target="_blank">https://weshipit.today/</a></li></ul><p><strong>Thibault Malbranche</strong></p><ul><li><a href="https://x.com/xavier_seignard" rel="ugc noopener noreferrer" target="_blank">⁠https://x.com/titozzz</a></li><li><a href="https://www.linkedin.com/in/thibault-malbranche-03b4318b" target="_blank" rel="ugc noopener noreferrer">https://www.linkedin.com/in/thibault-malbranche-03b4318b</a></li></ul>`,
   },
   {
@@ -285,18 +285,18 @@ export const podcastEpisodes: PodcastEpisode[] = [
     title:
       'Odisei Music, le saxophone numérique qui se joue partout avec son téléphone grâce à React Native — entretien avec Kim Chouard, CTO',
     number: 16,
-    shortDescription:
+    description_short:
       'Jouez de la musique avec votre téléphone grâce à React Native',
     description:
       '<p>🎷 Sommaire</p><p>Dans cet épisode, <strong>David Leuliette</strong> reçoit <strong>Kim Chouard</strong>, fondateur d\'<strong>Odisei Music</strong>, la startup derrière le <strong>Travel Sax</strong> : le premier <strong>saxophone silencieux, connecté au téléphone</strong>, qui permet de <strong>s\'entraîner partout, sans déranger personne</strong>.</p><p>Ils discutent de :</p><ul><li><p>la genèse du projet Odisei Music, entre passion musicale et innovation hardware/software,</p></li><li><p>l\'intégration du <strong>React Native BLE</strong> pour la connectivité Bluetooth avec le saxophone,</p></li><li><p>l\'utilisation de <strong>React Native Skottie</strong>, <strong>Audio API</strong>, et d\'autres outils pour créer une expérience fluide et immersive,</p></li><li><p>la gestion des performances audio sur mobile,</p></li><li><p>le défi de concevoir une UX musicale sur téléphone,</p></li><li><p>l\'équilibre entre design industriel, électronique embarquée, et développement mobile.</p></li></ul><p>Kim partage aussi son parcours d\'ingénieur, sa passion pour la musique, et sa vision de l\'apprentissage mobile des instruments.</p><p><br /></p><p>🔗 Notes de l\'épisode</p><ul><li><p>🎶 Plateforme Odisei : <a href="https://play.odiseimusic.com/" target="_blank" rel="ugc noopener noreferrer">https://play.odiseimusic.com/</a></p></li><li><p>💡 Projet Meloskia : <a href="https://github.com/kimchouard/meloskia" target="_blank" rel="ugc noopener noreferrer">https://github.com/kimchouard/meloskia</a></p></li><li><p>🎥 React Native Skottie : <a href="https://github.com/margelo/react-native-skottie" target="_blank" rel="ugc noopener noreferrer">https://github.com/margelo/react-native-skottie</a></p></li><li><p>🎧 React Native Audio API : <a href="https://github.com/software-mansion/react-native-audio-api" target="_blank" rel="ugc noopener noreferrer">https://github.com/software-mansion/react-native-audio-api</a></p></li><li><p>📡 React Native BLE PLX : <a href="https://github.com/dotintent/react-native-ble-plx" target="_blank" rel="ugc noopener noreferrer">https://github.com/dotintent/react-native-ble-plx</a></p></li><li>🔧 BLE Manager : <a href="https://github.com/innoveit/react-native-ble-manager" target="_blank" rel="ugc noopener noreferrer">https://github.com/innoveit/react-native-ble-manager</a></li></ul><p><br /></p><p>🙋‍♂️ Kim Chouard</p><ul><li><p>Twitter/X : <a href="https://x.com/kimchouard" rel="ugc noopener noreferrer" target="_blank">https://x.com/kimchouard</a></p></li><li><p>GitHub : <a href="https://github.com/kimchouard" rel="ugc noopener noreferrer" target="_blank">https://github.com/kimchouard</a></p></li><li><p>LinkedIn : <a href="https://www.linkedin.com/in/kimchouard/" rel="ugc noopener noreferrer" target="_blank">https://www.linkedin.com/in/kimchouard/</a></p></li></ul><p><br /></p><p>🎙️ David Leuliette</p><ul><li><p>Twitter/X : <a href="https://x.com/flexbox_" target="_blank" rel="ugc noopener noreferrer">https://x.com/flexbox_</a></p></li><li><p>Bluesky : <a href="https://go.bsky.app/6QQemwz" target="_blank" rel="ugc noopener noreferrer">https://go.bsky.app/6QQemwz</a></p></li><li><p>Newsletter &amp; podcast : <a href="https://weshipit.today/" target="_blank" rel="ugc noopener noreferrer">https://weshipit.today/</a></p></li></ul>',
     slug: 'odisei-music',
-    spotifyLink:
+    spotify_url:
       'https://open.spotify.com/episode/1ym8Ydg6M3QTuP5xiThsIQ?si=a731bcf938f64eb9',
-    appleLink:
+    apple_podcast_url:
       'https://podcasts.apple.com/fr/podcast/odisei-music-le-saxophone-num%C3%A9rique-qui-se-joue-partout/id1790867559?i=1000720674682&l=en-GB',
-    youtubeEmbedId: '5Blu68kOJOA?si=C7ChIjVlm76AQKva',
-    companyLogo:
+    youtube_embed_id: '5Blu68kOJOA?si=C7ChIjVlm76AQKva',
+    company_logo:
       'https://www.autonomia.org/imgcache/7f/df/ef/be/9e/70/4a/c6/e0/5f/fc/2a/0c/fb/a9/ad/62102776_641813846335087_8272529151546621952_n.jpg',
-    guestName: 'Kim Chouard',
+    guest_full_name: 'Kim Chouard',
   },
 ];

@@ -5,10 +5,10 @@ import { Prose, Text } from '@weshipit/ui';
 
 export function Transcript({
   entries,
-  spotifyLink,
+  spotify_url,
 }: {
   entries: TranscriptEntryType[];
-  spotifyLink?: string;
+  spotify_url?: string;
 }) {
   if (!entries || entries.length === 0) return null;
 
@@ -19,7 +19,7 @@ export function Transcript({
       </Text>
       <Prose>
         {entries.map((entry, idx) => (
-          <TranscriptEntry key={idx} entry={entry} spotifyLink={spotifyLink} />
+          <TranscriptEntry key={idx} entry={entry} spotify_url={spotify_url} />
         ))}
       </Prose>
     </section>

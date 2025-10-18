@@ -43,12 +43,14 @@ export default async function handler(req: NextRequest) {
     };
 
     const currentEpisodeLogo = toSupportedImageType(
-      currentEpisode?.companyLogo,
+      currentEpisode?.company_logo,
     );
 
     const allOtherLogos = podcastEpisodes
-      .filter((e) => (currentEpisode ? e.slug !== currentEpisode.slug : true))
-      .map((e) => e.companyLogo)
+      .filter((episode) =>
+        currentEpisode ? episode.slug !== currentEpisode.slug : true,
+      )
+      .map((episode) => episode.company_logo)
       .filter(Boolean);
 
     const shuffled = allOtherLogos

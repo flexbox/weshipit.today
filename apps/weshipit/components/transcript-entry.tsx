@@ -4,13 +4,13 @@ import { Hyperlink } from '@weshipit/ui';
 
 export function TranscriptEntry({
   entry,
-  spotifyLink,
+  spotify_url,
 }: {
   entry: TranscriptEntryType;
-  spotifyLink?: string;
+  spotify_url?: string;
 }) {
   const seconds = timecodeToSeconds(entry.time);
-  const spotifyUrl = `${spotifyLink}${spotifyLink?.includes('?') ? '&' : '?'}t=${seconds}`;
+  const spotifyUrl = `${spotify_url}${spotify_url?.includes('?') ? '&' : '?'}t=${seconds}`;
 
   return (
     <div className="mb-4">

@@ -50,7 +50,7 @@ export const frenchAppsFixture: frenchApps = {
     //   android_url: '',
     //   ios_url: '',
     //   logo_url: '', // get it from https://www.apple.com/fr/search/
-    //   podcast_url: '',
+    //   podcast_url: '', // get it from https://open.spotify.com/show/69dZrIeMZ2S2QELCGp6gW1
     // },
     {
       name: 'SaxoTools',

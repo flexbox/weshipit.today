@@ -127,11 +127,11 @@ export default function PodcastTranscriptPage({
 
   return (
     <Layout
-      seoTitle={`Transcript - Épisode ${episode.number} - ${episode.name} avec ${episode.guestName}`}
-      seoDescription={`Transcript complet de l'épisode ${episode.number} du podcast avec ${episode.guestName} de ${episode.name}. ${episode.description}`}
+      seoTitle={`Transcript - Épisode ${episode.number} - ${episode.name} avec ${episode.guest_full_name}`}
+      seoDescription={`Transcript complet de l'épisode ${episode.number} du podcast avec ${episode.guest_full_name} de ${episode.name}. ${episode.description}`}
       ogImagePodcast={{
         title: episode.name,
-        guest: episode.guestName,
+        guest: episode.guest_full_name,
         episode: episode.number,
         type: 'transcript',
       }}
@@ -175,12 +175,14 @@ export default function PodcastTranscriptPage({
                     className="text-slate-600 dark:text-slate-300"
                   >
                     avec{' '}
-                    <span className="font-semibold">{episode.guestName}</span>
+                    <span className="font-semibold">
+                      {episode.guest_full_name}
+                    </span>
                   </Text>
                 </div>
                 <div className="flex-shrink-0">
                   <img
-                    src={episode.companyLogo}
+                    src={episode.company_logo}
                     alt={`Logo ${episode.name}`}
                     className="w-24 h-24 rounded-xl object-cover shadow-lg"
                   />
@@ -193,7 +195,7 @@ export default function PodcastTranscriptPage({
             <div className="mt-8">
               <Transcript
                 entries={transcriptEntries}
-                spotifyLink={episode.spotifyLink}
+                spotify_url={episode.spotify_url}
               />
             </div>
           )}

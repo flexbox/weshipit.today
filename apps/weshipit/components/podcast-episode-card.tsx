@@ -18,7 +18,7 @@ export function PodcastEpisodeCard({ episode }: PodcastEpisodeCardProps) {
               {episode.name}
             </Text>
             <img
-              src={episode.companyLogo}
+              src={episode.company_logo}
               alt={`Logo ${episode.name}`}
               className="w-14 h-14 rounded-xl object-cover shadow-md"
             />
@@ -31,14 +31,14 @@ export function PodcastEpisodeCard({ episode }: PodcastEpisodeCardProps) {
           </div>
 
           <Text variant="c1" className="leading-relaxed">
-            {episode.shortDescription}
+            {episode.description_short}
           </Text>
         </div>
 
         <div className="p-6 pt-0">
           <div className="flex gap-3">
             <Button
-              href={episode.spotifyLink}
+              href={episode.spotify_url}
               isExternalLink={true}
               size="md"
               variant="spotify"
@@ -47,7 +47,7 @@ export function PodcastEpisodeCard({ episode }: PodcastEpisodeCardProps) {
               Spotify
             </Button>
             <Button
-              href={episode.appleLink}
+              href={episode.apple_podcast_url}
               isExternalLink={true}
               size="md"
               variant="apple"
