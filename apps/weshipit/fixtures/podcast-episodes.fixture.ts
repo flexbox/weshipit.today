@@ -250,7 +250,7 @@ export const podcastEpisodes: PodcastEpisode[] = [
       'Shine, comment procurer de la joie aux freelances avec une app React Native ? interview de Corentin André',
     number: 14,
     description_short:
-      'Shone, vos comptes pro en un clic avec une app React Native',
+      'Shine, vos comptes pro en un clic avec une app React Native',
     description: `<p><strong>Sommaire</strong></p><p>Dans cet épisode, David Leuliette et Corentin discutent du développement d'applications mobiles chez Shine, une banque en ligne pour freelances. Corentin partage son parcours professionnel, son rôle en tant que Head of Frontend, et les technologies utilisées, notamment React Native, GraphQL et Apollo. Ils abordent également la navigation, la gestion des données, les animations, le déploiement, et l'importance d'un design system cohérent. Enfin, Corentin recommande des librairies utiles pour les développeurs. Dans cette conversation, Corentin et David discutent des défis et des meilleures pratiques dans le développement d'applications avec React et React Native. Ils abordent des sujets tels que l'impact de React sur les formulaires, la gestion des états avec X-State, l'amélioration des performances des applications, les défis de migration, et l'importance des outils de débogage et d'instrumentation. Ils partagent également des leçons tirées de leur expérience dans le développement et des stratégies pour rester à jour dans l'écosystème React Native.</p><p><br /></p><p><strong>Notes de l'émission</strong></p><p>https://medium.com/@ababol/how-weve-increased-our-store-rating-to-4-8-4ee8308641f4</p><p>https://github.com/apollographql/apollo-client</p><p>https://reactnavigation.org/docs/deep-linking/</p><p>https://tamagui.dev/</p><p>https://omlet.dev/</p><p>https://docs.swmansion.com/react-native-reanimated/</p><p>https://react-hook-form.com/</p><p>https://zod.dev/</p><p>https://xstate.js.org/ </p><p>https://expo.dev/blog/simplifying-auth-flows-with-protected-routes</p><p>https://www.youtube.com/watch?v=H4kbJObhcHw</p><p>https://docs.sentry.io/platforms/javascript/configuration/integrations/reportingobserver/</p><p>https://www.debugbear.com/docs/rum/percentiles</p><p>https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners</p><p> Sentry instruments https://docs.sentry.io/product/insights/overview/transaction-summary/</p><p>https://flashlight.dev/</p><p>https://weshipit.today/french-react-native-apps</p><p><br /></p><p><strong>David Leuliette</strong></p><ul><li><a href="https://twitter.com/intent/follow?screen_name=flexbox_" rel="ugc noopener noreferrer" target="_blank">⁠https://x.com/flexbox_⁠</a></li><li><a href="https://go.bsky.app/6QQemwz" rel="ugc noopener noreferrer" target="_blank">https://go.bsky.app/6QQemwz</a></li><li><a href="https://weshipit.today/" rel="ugc noopener noreferrer" target="_blank">https://weshipit.today/</a></li></ul><p><strong>Corentin André</strong></p><ul><li><a href="https://www.linkedin.com/in/corentin-andr%C3%A9-b32526101/" target="_blank" rel="ugc noopener noreferrer">https://www.linkedin.com/in/corentin-andr%C3%A9-b32526101/</a></li></ul>`,
     slug: 'shine',
     spotify_url:
@@ -299,4 +299,17 @@ export const podcastEpisodes: PodcastEpisode[] = [
       'https://www.autonomia.org/imgcache/7f/df/ef/be/9e/70/4a/c6/e0/5f/fc/2a/0c/fb/a9/ad/62102776_641813846335087_8272529151546621952_n.jpg',
     guest_full_name: 'Kim Chouard',
   },
+  // {
+  //   name: '',
+  //   slug: '',
+  //   title: '',
+  //   number: 16,
+  //   description_short: '',
+  //   description: '',
+  //   spotify_url: '',
+  //   apple_podcast_url: '',
+  //   youtube_embed_id: '',
+  //   company_logo: '',
+  //   guest_full_name: '',
+  // },
 ];
