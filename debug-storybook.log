@@ -1,0 +1,19 @@
+[21:27:18.668] [INFO] Checking the health of your Storybook..
+[21:27:18.669] [DEBUG] Getting Storybook info...
+[21:27:18.669] [DEBUG] Loading main config...
+[21:27:18.704] [DEBUG] Getting stories paths...
+[21:27:18.705] [DEBUG] Getting package manager...
+[21:27:18.926] [DEBUG] Getting Storybook version...
+[21:27:19.285] [WARN] .storybook: 1 issue found
+[21:27:19.285] [INFO] Attention: The following dependencies are duplicated which might cause unexpected behavior:
+@storybook/react-dom-shim:
+10.0.2, 9.1.9
+
+
+Please try de-duplicating these dependencies by running yarn dedupe
+
+
+You can find more information for a given dependency by running yarn why <package-name>
+[21:27:19.288] [INFO] Storybook doctor is complete!
+[21:27:19.288] [INFO] You can always recheck the health of your project(s) by running:
+npx storybook doctor

@@ -8,7 +8,6 @@ export * from './lib/airtable-toggle-form/airtable-toggle-form';
 export * from './lib/app-badge/AppBadge';
 export * from './lib/badge/badge';
 export * from './lib/button/button';
-export * from './lib/button/buy-button';
 export * from './lib/button/link-button';
 export * from './lib/card-homepage/card-homepage';
 export * from './lib/card/card-bootcamp';

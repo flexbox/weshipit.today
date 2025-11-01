@@ -1,4 +1,4 @@
-# Storybook 8 Migration Summary
+# Storybook 9 Migration Summary
 
 ## Upgrade Storybook packages
 
@@ -10,11 +10,11 @@ npx storybook@latest upgrade
 
 ## The Storybook automigration scripts were ran
 
-The following commands ran successfully and your Storybook configuration was successfully migrated to the latest version 7:
+The following commands ran successfully and your Storybook configuration was successfully migrated to the latest version 9:
 
-- `yarn dlx storybook@latest automigrate --config-dir .storybook`
+- `yarn dlx storybook automigrate --config-dir .storybook`
 
-- `yarn dlx storybook@latest automigrate --config-dir libs/ui/.storybook`
+- `yarn dlx storybook automigrate --config-dir libs/ui/.storybook`
 
 Please make sure to check the results yourself and make sure that everything is working as expected.
 
@@ -35,6 +35,5 @@ npx nx build-storybook project-name
 npx nx storybook project-name
 ```
 
-Please read the [Storybook 8.0.0 release article](https://storybook.js.org/blog/storybook-8/) and the
-official [Storybook 8.0.0 migration guide](https://storybook.js.org/docs/react/migration-guide)
+Please read the [Storybook 9.0.0 migration guide](https://github.com/storybookjs/storybook/blob/next/MIGRATION.md)
 for more information.

@@ -1,10 +1,7 @@
 module.exports = {
   stories: [],
-  addons: [
-    '@storybook/addon-essentials',
-    '@chromatic-com/storybook',
-    '@storybook/addon-a11y',
-  ],
+
+  addons: ['@storybook/addon-a11y', '@storybook/addon-docs'],
 
   // uncomment the property below if you want to apply some webpack config globally
   // webpackFinal: async (config, { configType }) => {
@@ -16,10 +13,6 @@ module.exports = {
   framework: {
     name: '@storybook/nextjs',
     options: {},
-  },
-
-  docs: {
-    autodocs: true,
   },
 
   typescript: {
