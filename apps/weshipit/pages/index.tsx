@@ -268,7 +268,7 @@ export default function IndexPage({ clients, faqs, steps }: IndexPageProps) {
               <Bento
                 expertLink={linksApi.cal.ONBOARDING}
                 auditLink={'/audit'}
-                slackLink="https://weblille.rocks/"
+                slackLink="https://join.slack.com/t/weblille/shared_invite/zt-87i4ozyq-K5GRJKAFqKp_w9IHjleW~Q"
                 gumroadLink="https://flexbox.gumroad.com/l/expo-checklist"
               />
             </div>
