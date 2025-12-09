@@ -1,0 +1,1352 @@
+David Leuliette (00:02.74)
+question Nike ou adidas ?
+
+Rémy Cassagne (00:05.934)
+Je pense plus Nike.
+
+David Leuliette (00:08.939)
+ouais, c'est ça le... Dans les deux frères ennemis c'est Nike qui a la cote, c'est un peu comme Mario et Sonic, je ne sais pas, moi j'ai géré mais j'étais jamais dans les sneakers. Alors Nike c'est mieux, ok. Et si tu prends des Air Jordan, t'es dans quelle catégorie ?
+
+Rémy Cassagne (00:23.134)
+En fait, juste pour répondre à la question d'avant, overall, Nike sort plus souvent des paires très sympas et Adidas c'est moins régulièrement mais quand ils en sortent une c'est vraiment un banger, c'est vraiment une très très belle paire. c'est moins régulier. Nike est plus régulier sur les collabs qui sortent et les petites paires un peu spéciales qui peuvent sortir que Adidas. Et du coup, question que tu m'as posé, excuse-moi.
+
+David Leuliette (00:51.756)
+Heu... Air Jordan alors. Bonne cam' ou pas ?
+
+Rémy Cassagne (00:53.526)
+Jordan pas du tout, suis pas très fan de Jordan mais parce qu'en fait j'ai du mal avec les chaussures montantes. Je trouve que ça me va pas donc j'ai du mal avec les Jordan.
+
+David Leuliette (00:59.317)
+Ok.
+
+David Leuliette (01:03.939)
+Vous inquiétez pas, vous êtes sur le Cross Platform Show, l'émission qui parle développement d'applications avec RecNative. Je suis David, développeur chez Wishy Pee Today, nous sommes en septembre 2025. Rémi, on va parler sneakers aujourd'hui, donc chaussures de sport pour ceux qui ne savent pas. Ça vient d'où du coup, le terme ? J'ai l'impression que c'est un...
+
+Rémy Cassagne (01:24.51)
+Le terme, je ne saurais pas d'où ça vient comme ça.
+
+David Leuliette (01:27.682)
+Il y a l'impression qu'il a même plus la hype. Tu vois, des sneakers bien spécifiques. ne sais pas, parce que je suis allé aux US, à New York et là-bas, laisse tomber, les pairs c'est 1000 dollars, c'est des trucs emballés et tout.
+
+Rémy Cassagne (01:41.368)
+Oui, ça vient notamment des Etats-Unis à la base. oui, aux Etats-Unis ils sont très forts là-dessus. Mais ça vaut plus le coût d'ailleurs aux Etats-Unis que en France en termes de prix. Même si tu trouvais ça cher aux Etats-Unis, ça vaudra moins cher que en France.
+
+David Leuliette (01:47.286)
+Ouais, ok.
+
+David Leuliette (01:54.302)
+Ok, ouais oui parce que forcément ça... Ouais forcément mais je me suis dit que c'était une business... enfin je savais que c'était moins cher mais la taille du shop j'ai débloqué, c'est des trucs sur deux étages et tout, tu fais ouais ok eux c'est sérieux, c'est sérieux. Super aujourd'hui on va parler de Kix Folio. Déjà d'abord est-ce que tu peux te présenter un peu ton parcours et pour ceux qui ne te connaissent pas.
+
+Rémy Cassagne (02:23.662)
+bien sûr. coup moi c'est rémi avec un Y, j'y tiens j'ai 25 ans. À la base des bases en fait j'ai un parcours de commerciale, j'étais commercial dans l'aventure de surgeler à domicile. Au bout de à peu près deux ans j'en ai eu un peu marre parce que j'avais plus le challenge, c'était plus trop stimulant et je rentrais un peu dans la routine, j'avais toujours besoin un peu de cette stimulation cérébrale et du coup quand je quitte cet emploi là, je tente la piscine de l'école 42. À ce moment là j'avais jamais ouvert un terminal de ma vie, c'était vraiment
+
+C'était vraiment pour voir si ça me plaisait. vraiment quand je l'ai faite, je me suis gardé sous le coude le fait que ça me plaise pas et je rentre chez moi. Mais au final c'est tout l'inverse qui s'est produit. J'ai adoré. Mais vraiment c'était une expérience.
+
+David Leuliette (02:53.954)
+Ok.
+
+David Leuliette (03:06.465)
+ouais, la piscine en plus. Parce que pour ceux qui ne pas, la piscine c'est genre, tiens, tu sers un IT, hop, on va te mettre avec 50 bonhommes dans une salle avec que des laptops, enfin avec que des Macs, 200, ouais je sais plus, c'est des trucs, genre un hangar, avec en mode LAN party des années 90, sauf que là c'est des Macs, avec des écrans plats et des merdes toi.
+
+Rémy Cassagne (03:15.041)
+même plus, même plus, même plus ouais. Ouais.
+
+Rémy Cassagne (03:27.63)
+Exactement.
+
+David Leuliette (03:31.713)
+Ouais, je pense que c'est assez brutal pour certaines personnes. Moi j'aurais kiffé le faire, mais j'ai pas eu l'occasion, mais je pense que j'aurais fait donc...
+
+Rémy Cassagne (03:37.16)
+Je pense que ça peut être assez brutal, ça dépend des profils, mais pour le coup ça m'a...
+
+Le début a été compliqué mais c'est ce que j'ai adoré en fait. Je m'attendais pas à ce que ça soit simple et que ce que je comprenne tout d'un coup. Mais c'était justement ça le fait de tomber à quelque chose d'inconnu que je ne connaissais pas et j'ai toujours été un peu de nature curieuse à creuser divers sujets et variés et là ça m'a plu, suis tombé dedans. lié à plusieurs aspects que ça soit, vu que la Piscine de 42 c'est en langage C qui est du coup très bas niveau et c'est très axé sur la résolution d'algorithmes un peu bêtes et méchantes.
+
+David Leuliette (03:51.529)
+Right ?
+
+Rémy Cassagne (04:13.176)
+genre la suite de Fibonacci, bref, des trucs un peu très bêtes et méchants mais du coup très formateurs aussi par la même occasion.
+
+David Leuliette (04:20.0)
+Oui, oui.
+
+Rémy Cassagne (04:22.306)
+C'est un peu ce que j'ai aimé, le fait que ça soit dur et que ça me stimule cérébralement. Et aussi tout l'aspect social, parce qu'on pourrait croire que c'est un examen d'entrée, qu'on est là pour se tirer dans les pattes, etc. Mais au final, pas du tout. C'est très basé sur l'entraide, etc. C'est même quelque chose qui a énormément mis en avant. Et du coup, c'est une des choses qui fait que j'ai adhéré.
+
+David Leuliette (04:41.701)
+Ouais ça, c'est que... Ouais moi j'ai pas... Je m'en rends pas compte parce que j'ai fait de la tech depuis toujours du coup... L'entraide c'est toujours présent mais c'est vrai que quand tu connais pas du tout... Tu dis mais pourquoi les gens ils m'aident je comprends pas. Alors que non mais c'est vrai à l'école c'est plus genre bah non tu triches sur moi enfin... Pas du tout sad.
+
+Rémy Cassagne (04:55.758)
+Non !
+
+Rémy Cassagne (04:59.832)
+Ouais c'est ça, exactement le même.
+
+Mais d'un regard extérieur, c'est vraiment une question qu'on me pose souvent en mode si c'est compétitif ou pas, alors qu'en fait pas du tout. Durant la piscine, on est répartis dans des maisons un comme dans la Harry Potter, mais avec des noms un peu moins sexy, genre les Verts de Terre, les Blobfish et les Putois, les Skunks, les derniers. Et on gagne des points pour notre maison en faisant différents trucs, c'est très bon enfant, c'est très second degré et décalé. C'est pas du tout dans un esprit de compétition et on se tire dans les pattes. Enfin bref.
+
+David Leuliette (05:10.09)
+Et non non...
+
+David Leuliette (05:14.068)
+Ouais ?
+
+David Leuliette (05:19.465)
+Ok.
+
+David Leuliette (05:29.743)
+Je vois. Excellent. Donc c'était en quelle année, ça, la piscine, alors ?
+
+Rémy Cassagne (05:33.227)
+Ça, la première piscine que j'ai faite en 2023.
+
+David Leuliette (05:40.256)
+Ok, 2023.
+
+Rémy Cassagne (05:40.938)
+2023, ouais c'est ça, 2023 la première piscine parce que du coup j'ai pas été pris après cette première piscine je me suis dit ok c'est pas grave je retente l'année prochaine sachant qu'on peut tenter que deux fois dans sa vie et que du coup on peut y faire que, faut que les deux tentatives soient espacées dans moins un an du coup j'ai tenté une deuxième fois l'année suivante avec ce coup-ci un peu plus l'objectif d'être pris, moi l'objectif de découvrir ça y je l'avais déjà fait une fois je me souviens de comment ça se passe et j'ai à nouveau pas été pris alors que j'ai fait une piscine
+
+meilleur en tout point mais pour des raisons obscures que 42 ne communiquera pas donc après c'est à soi même de faire un peu le petit travail d'introspection et de comprendre le pourquoi du comment mais j'avoue que mi septembre 2024 quand j'ai la réponse je me comment dire
+
+Je m'attarde pas trop sur le fait d'avoir échoué, etc. De comprendre le pourquoi du comment. En fait, à ce moment-là, j'ai pas envie de repartir dans des petits boulots. J'ai envie d'être formé, d'être développeur. J'ai découvert cette passion. J'ai vraiment envie d'en faire mon métier. Du coup, trouve deux autres formations. Une chez Adatec School et une chez le Wagons, j'ai fait toutes les deux, que j'ai quasiment enchaînés les deux. Et sur lesquelles, j'ai peu pu voir les bases du développement web, vite fait toucher au développement mobile, etc.
+
+David Leuliette (06:53.376)
+Ouais mais là c'était un peu plus... Ouais. C'est vrai que tu fais... Tu compares le wagon, la piscine... Rien à voir.
+
+Rémy Cassagne (06:59.31)
+Oui, c'est deux salles, ambiances, oui, je m'y rends
+
+David Leuliette (07:03.464)
+C'est carrément deux salles de sang mais on le wagon, c'est cool on va chipper des apps, va faire du bise et les piscines c'est genre mec, ta segmentation fault là c'est de la merde, t'es nul quoi.
+
+Rémy Cassagne (07:08.878)
+Ouais.
+
+Rémy Cassagne (07:13.294)
+Tous les jours, as trois fichiers qui compliquent pas et tout, tu pleures du sang et chez le wagon, c'est un peu plus tranquille.
+
+David Leuliette (07:22.142)
+C'est un peu... Ouais, oui, que c'est sûr que quand t'as fait l'apicide, le wagon c'est la promenade... Enfin pas la promenade de santé, mais... volume horaire, oui, oui, c'est pas... Déjà le wagon, c'est déjà poussé, hein. C'est déjà bien... Mais... attends, du coup, intéressant... Donc t'as fait le wagon, c'est la dernière que t'as faite ou c'est l'au milieu ? Ok, et euh... Et t'as appris quoi du coup au wagon que t'avais pas appris avant ?
+
+Rémy Cassagne (07:26.742)
+et aussi en terme de volume horaire.
+
+en terme de volubleur. Oui.
+
+Rémy Cassagne (07:38.99)
+Ouais, le wagon c'est la dernière que j'ai faite, ouais exactement.
+
+Rémy Cassagne (07:46.877)
+C'est une très bonne question et que même les apprenants qui étaient avec moi au wagon me posaient comme question. Pourquoi tu es là ? J'ai appris Ruby, Ruby et Ruby on Rails que je ne connaissais pas du tout. Mais mise à part ça, grand chose en termes d'algorithmi, Même SQL et tout, c'était quelque chose que j'avais déjà vu sur ma formation d'avant. Ouais, c'était...
+
+David Leuliette (07:52.926)
+Hum ? Oui ?
+
+David Leuliette (08:03.645)
+Non, ça c'est Bah non, trop chiant.
+
+Rémy Cassagne (08:10.502)
+C'était en fait, j'ai fait le wagon juste parce que je voulais valider un diplôme et que du coup je suis passé par ça juste pour ça. Mais en soi oui, j'ai pas appris des masses non plus pendant le wagon, mais du coup c'était...
+
+David Leuliette (08:15.207)
+Ouais, je vois. Ok.
+
+David Leuliette (08:24.095)
+Niveau tech, mais plus comment on des produits, comment on les présente.
+
+Rémy Cassagne (08:28.526)
+Ouais c'est ça exactement, plutôt la réflexion tout autour du produit avant etc. Vu qu'il a un projet final etc. en groupe plus le travail de groupe etc. Ce genre de choses qui est un peu moins 42 à 42 on est plus souvent tout seul même si le week-end il a des rushs, des travaux en groupe. Comme c'est dit, c'est le rush et il a pas le temps de réfléchir et de débattre, 15 ans non plus.
+
+David Leuliette (08:52.189)
+Euh... Ok. Et euh... Qu'est-ce que fout le mobile là-dedans ?
+
+Rémy Cassagne (08:56.608)
+Et qu'est-ce que ça le mobile ? C'est que j'ai eu très très tôt une idée d'application. Cette idée d'application, je l'ai eu assez tôt. Et ce qui fait que...
+
+David Leuliette (09:03.343)
+Ok.
+
+Donc Kix Folio, c'était Kix Folio déjà ? Ok.
+
+Rémy Cassagne (09:08.145)
+Kixfolio. Ouais, le Kixfolio, je l'ai trouvé assez vite. J'ai un peu brainstormé pour le trouver, mais il est venu assez vite. Et en fait, je me suis renseigné sur les technologies à ma disposition pour l'affaire, il y avait React Native ou Flutter. Et en fait, j'ai vu que React Native, y avait un peu tout l'écosystème React derrière, React en tant que tel, Next et du coup après React Native. du coup, fait, je me suis fait une petite route map, ça, un peu des connaissances que je devais avoir avant de me lancer sur l'application. Et du coup,
+
+David Leuliette (09:14.365)
+Ok.
+
+Rémy Cassagne (09:37.86)
+j'ai approfondi mes connaissances en JavaScript et en TypeScript, ensuite j'ai appris React, ensuite j'ai fait quelques projets avec React, ensuite j'ai appris Next, j'ai fait quelques projets avec Next, et ensuite j'ai appris React Native sur le tas parce que j'avais plus l'envie de continuer à faire des petits projets pour m'entraîner, j'avais envie de rentrer dans le dur et de faire cette application. en gros, j'ai commencé à apprendre ça...
+
+David Leuliette (09:56.093)
+C'était quand que t'as commencé ça ?
+
+Rémy Cassagne (10:03.278)
+l'année dernière, entre avril et juin de l'année dernière, pense que j'ai commencé cette roadmap là à l'attaquer, à faire mon plan, à mettre en sorte de cahier des charges pour KixFolyo, etc. J'essaye de me faire un truc assez propre pour ne me disperser parce que je sais que j'aurais pu me connaissant, partir dans tous les sens.
+
+David Leuliette (10:23.005)
+oui mais ça c'est... Si t'es passé... Oui tu passes de... Je me forme à Indie Hacker, shipper Ouais tu vas te confronter à plein de choses qui te paraissent contre-intuitives C'est genre il faut avoir 18 heures et puis le reste on s'en fout Si ça marche pas c'est pas grave, le plus important c'est d'avoir 18 heures Donc en fait c'est carrément un truc différent Tu passes de la piscine où tout est carré et il faut que ce soit hyper optimisé partout à il faut que j'aie des utilisateurs et que je shippe une app mobile
+
+Rémy Cassagne (10:29.902)
+Ouais.
+
+Rémy Cassagne (10:40.142)
+Non exactement.
+
+David Leuliette (10:52.134)
+orak native ou c'est pas forcément pas forcément carré carré ça fonctionne très bien mais bon il ya des trucs bon on peut bypass certaines validations on va dire tu vois il fait un peu plus
+
+Rémy Cassagne (10:52.34)
+No, c'est ça.
+
+Rémy Cassagne (11:06.558)
+Ouais, bien sûr.
+
+David Leuliette (11:09.968)
+Alors du coup, a parlé... Oui alors c'est quoi ? C'est quoi Kixfolio ? Pitch nous le product !
+
+Rémy Cassagne (11:13.046)
+Et du coup c'est quoi Kixpholium ?
+
+Pitchroom Product pour faire très très simple ce que j'aime dire c'est que c'est une manière pour les utilisateurs de référencer sur leur téléphone avec une nuit un peu plus sympa qu'un Excel ou une Note iPhone leur collection de chaussures et la partager facilement à leurs amis, famille, aux autres gens, à d'autres passionnés et de pouvoir aussi se connecter avec d'autres passionnés un peu comme sur Insta on peut suivre d'autres utilisateurs voir leur collection etc. Avec en plus de ça sur sa collection on peut mettre des filtres etc. enfin bref tout plein de petites features ce qui viennent à côté.
+
+Et la grosse feature de l'application, c'est le fait que tu une boîte de chaussures, tu ouvres l'application, tu scannes le code barre et ça te pré-remplit tout le formulaire pour rentrer ta chaussure dans ta collection. Ce qui fait que c'est un très bel aide pour les utilisateurs et c'est un gros gain de temps plutôt que de remplir le formulaire à la main à chaque fois.
+
+David Leuliette (11:57.692)
+Ok.
+
+David Leuliette (12:02.456)
+Le Yuka de... Ok.
+
+David Leuliette (12:09.404)
+Ouais je vois, Yuka de la Sneakers. Super du coup le Farmal Mission c'est le succès du lancement de votre application mobile. Tu l'as lancé il a pas longtemps, on va voir en 5 points la stack technique. Comment tu l'as choisi ? ouais alors, data layer, paf question ! Comment tu fait pour choisir du
+
+Rémy Cassagne (12:11.808)
+Ou est-ce que ça va ?
+
+Rémy Cassagne (12:23.022)
+Exactement.
+
+Rémy Cassagne (12:35.182)
+Du coup, vu que je suis passé avant par l'apprentissage de React, l'avantage c'est que quand j'ai appris React, j'ai suivi des cours sur Udemy et en fait les cours n'étaient pas trop mal faits parce que j'ai pu voir les trois options qui s'offraient à moi pour le data management à savoir soit les contextes React classiques, soit Redux avec Redux Toolkit qui rajoute une couche de simplicité ou soit Zustand qui est un peu la solution
+
+facile à prendre en main et à mettre en place. Du coup je suis parti sur Zustend parce que moins prise de tête que Redux et que les contextes c'est pas trop sexy à utiliser en termes d'expérience développeur. Je me sentais plus à l'aise avec Zustend.
+
+David Leuliette (13:11.516)
+Joue, c'est ça.
+
+David Leuliette (13:23.388)
+Ok super super, c'est vraiment... t'as dû découvrir ça avec Youdemai Et donc pour récupérer la data tu fais comment ?
+
+Rémy Cassagne (13:34.35)
+Pour récupérer la data, j'utilise SuperBase à la base. Quand j'ai commencé l'application, j'avais fait le back-end en Rails. J'ai commencé l'application juste après avoir quitté le wagon. C'était ce qui était plus frais dans mes doigts. Après, j'ai découvert SuperBase et je me suis rendu compte de la simplicité que c'était par rapport à Rails. Rails, pour faire le moindre changement, ça devient vite très lourd. Je me suis dit, on va switch sur SuperBase.
+
+David Leuliette (13:37.798)
+Ok.
+
+David Leuliette (13:58.268)
+Ouais, c'est pas le même produit, c'est toujours pareil. Ouais.
+
+Rémy Cassagne (14:00.598)
+et le jour où j'aurai besoin de complexité, je le referai en raid. Je me suis gardé le repo à disposition si jamais un jour je décide de le réouvrir.
+
+David Leuliette (14:10.811)
+Ouais mais en fait le truc c'est que Talk Knowledge il est pas perdu de « rage » entre guillemets parce que c'est la même logique, t'as ta migration, sites, tes DB, tes machins, c'est tout pareil, c'est juste que le back-end est déjà fait. Pour que ceux qui connaissent Postpubase, tu peux expliquer ?
+
+Rémy Cassagne (14:18.208)
+Oui, bien sûr, pour le coup oui.
+
+Rémy Cassagne (14:25.038)
+SuperBit c'est un back-end as a service qui vient d'une interface, on peut rentrer nos migrations avec postgreSQL, c'est 100 fois plus facile à faire, pour visualiser son schéma de base de données, je trouve ça vraiment très très facile d'accès et encore plus du fait qu'ils proposent leur propre solution pour le storage, moi qui stock les images, dans des buckets,
+
+simplifie grandement la tâche avec ça parce que quand j'avais fait mon back-end avec rails j'avais mis en place un bucket s3 de amazon et c'était une petite galère à faire
+
+David Leuliette (15:06.041)
+Mais c'était... Non, c'est pas une galère, ça s'appelle un métier. Ça s'appelle Cloud Engineer, tu vois ? Là... Bah... C'est fou.
+
+Rémy Cassagne (15:09.402)
+Oui, ça s'appelle leur métier. Ouais, ouais, mais je me suis rendu compte que c'était pas mon métier et du coup je me suis dit, tiens, le Super Base me simplifie ce métier-là. Bah, allez.
+
+David Leuliette (15:20.335)
+ouais bah ça clique, clique. Moi c'est pareil, moi je suis pas back-end guy tu vois, tu me demandes. Fouah chiant. Superbase, pour ceux qui connaissent pas aussi pareil, ceux qui ont déjà utilisé à peu près c'est Firebase. Firebase c'est l'alternative de Google mais c'est pas pareil, c'est du NoSQL et Superbase c'est du PostgreSQL si je ne m'abuse. Et du coup on est un peu moins vendor lock avec une technologie. Si on veut...
+
+Rémy Cassagne (15:32.749)
+de Google.
+
+David Leuliette (15:46.925)
+un day faire un note back-end en une note techno, hop, ça va déjà la DB et puis voilà. Mais c'est vrai que oui, tu génères ta base de données en 2-2, t'as tout ce qui est auth qui est déjà fait, un truc à la con, ça shoot des mails pour créer ton profile et tout, machin. Ou alors en règle, t'aurais dû le faire à la main et donc ça aurait pris plus de temps, forcément.
+
+Rémy Cassagne (16:05.13)
+Ouais c'est ça avec un truc... avec une gemme spécifique installée, etc.
+
+David Leuliette (16:12.611)
+Exactement. Donc, Super Bass, tu recommandes quoi. Bonne expérience pour l'instant.
+
+Rémy Cassagne (16:18.254)
+Je suis pas mal sur le moment, bonne expérience à voir comment ça scale dans le temps, aussi en terme de pricing, parce que pour le moment je suis sur le plan gratuit, ça me va très bien, je ne crois pas que je dépasserai un jour les limites de requêtes, mais si un jour le besoin s'en fait, on verra à ce moment-là.
+
+David Leuliette (16:37.146)
+Euh... Ok, ok. Et t'as découvert comment ? Ça, du coup ?
+
+Rémy Cassagne (16:41.858)
+J'ai découvert comment sur LinkedIn, me semble. Parce que je suis pas mal actif sur LinkedIn depuis un peu plus d'un an. Et je crois que c'était quelqu'un qui en parlait, Paris Firebase. en fait, je me suis renseigné, j'ai essayé, j'ai adopté. Ça a été assez rapide. J'ai essayé, j'ai vu que c'était facile à mettre en place. Je me dit ok, bah trop bien. Et ça marche. parfait. Pourquoi m'embêter plus longtemps avec Rails ? Et voilà.
+
+David Leuliette (16:44.218)
+Ok
+
+David Leuliette (16:57.178)
+Ok, ouais.
+
+Ouais... Ouais...
+
+C'est ça, exactement. Ça marche. là, tu es en mode startup founder. coup, quand tu es tout seul. Moi, c'est pareil, j'ai lancé une app KitGo pour aider le TripAdvisor pour les parents. pareil, j'ai fait Supaibase, clic clic en 2.2, c'était fait. Je n'écris même pas mes migrations, rien du tout. Je demande à copilot, fais, écris moi les migrations et paf, il te fait tout, franchement.
+
+Rémy Cassagne (17:21.262)
+Ok, bye.
+
+Rémy Cassagne (17:31.948)
+Oui bah oui, du coup oui. Et SuperBase ils ont leur propre assistant IA chat intégré auquel... qui est pas trop mal. Qui est pas si pire. Pas si pire. Y'a mieux. Mais il est pas si pire. Ça reste ok.
+
+David Leuliette (17:41.03)
+dedans et... t'as pu tester alors ? Et ça marche bien ou pas ?
+
+Ok, c'est au mois que j'avais testé l'année dernière je crois et c'était pas ouf. là je m'y suis revenu et je me connecte même pas au dashboard de SuperBase en fait, je fais tout direct.
+
+Rémy Cassagne (18:00.62)
+Bien sûr, depuis le code.
+
+David Leuliette (18:02.49)
+Je fais tout direct et en fait ça marche très bien. Alors je ne sais pas si c'est parce que maintenant les versions de SuperBase à jour et tout machin mais tout ce qui est migration, tout ces trucs là, pas de problème, nickel. Et opération de base de données aussi, pareil. Ok et donc RackNative, tu l'as pris comme ça, t'as créé ton projet, tout ce qui est navigation.
+
+Rémy Cassagne (18:25.218)
+J'ai créé mon projet et j'ai sauté à pieds joints dans le plage et suivi la doc. j'ai vu que dans la doc, ils recommandaient beaucoup Expo, donc pareil, j'ai utilisé Expo, Expo Routeur.
+
+David Leuliette (18:31.915)
+Ouais. Et pour...
+
+David Leuliette (18:39.147)
+Ok, t'es expo expo router, ok ouais. Parce que t'as commencé avec le SDK 53 du
+
+Rémy Cassagne (18:45.287)
+Exactement, je suis passé au 54 quand il est sorti.
+
+David Leuliette (18:47.769)
+Ok, c'est beau, Et qu'allais-je dire, c'est iOS, Android et web ou juste mobile ?
+
+Rémy Cassagne (18:55.662)
+iOS Android mais pas web pour le moment. J'ai vu que c'était une possibilité avec React Native mais quand j'ai commencé c'était pas ultra stable, pas ultra performant, top, etc. D'autres développeurs React Native avec qui j'ai changé me disaient que c'était OK mais sans plus. Du coup je n'ai pas préféré prendre le risque pour le moment, c'est juste iOS Android. Là-bas je voulais que ça soit une application mobile et ça le sera.
+
+David Leuliette (19:19.625)
+Ouais, non mais c'est ça quoi, c'est euh... Ok, état des différences entre iOS Android ou c'est tout pareil ?
+
+Rémy Cassagne (19:28.302)
+c'est tout pareil sauf sur une librairie que j'utilise et que je peux malheureusement rien y faire parce que la librairie est comme ça. Quand l'utilisateur peut mettre une photo de profil comme sur tout bon réseau social
+
+Sur Discord, l'image va être en forme de cercle. Sur Discord, elle est en forme de cercle. Quand tu vois ton image, tu vois le layer avec la forme de cercle de comment ton image sera et tu peux bien la cadrer. J'ai trouvé une librairie pour me faire ça. Sauf que sur Android, dépasse carrément. J'abuse, mais elle déborde un peu en haut de l'écran. Elle arrive sur la barre où il a l'heure, la batterie, etc.
+
+David Leuliette (20:15.16)
+Ouais. Ok.
+
+Rémy Cassagne (20:17.52)
+Mais en soit c'est juste du texte qui affiché, on s'en fiche. Mais ça m'embête un peu quand même parce que ça fait pas très propre. Mais ça dépend que de eux. Et du coup ça m'embête. C'est le seul truc de différence. Sinon j'ai eu quelques différences à cause de... oui si ! Non, non, non, non. J'ai eu une grosse différence. Et je m'en suis rendu compte dernièrement.
+
+David Leuliette (20:27.236)
+Tu te rappelles ces...
+
+Rémy Cassagne (20:38.986)
+où en fait vu que j'avais défini dans aucune de mes balises texte de React Native une couleur pour le texte, bien sur Android le texte prenait la couleur du thème. Ce qui fait que si on était en thème light, vu que le fond de mon application est un peu pêche clair, orange très très clair, très très pale, et bien du le texte était en blanc, ne voyait rien. Si le téléphone Android était en thème light, et du coup...
+
+ça je m'en suis rendu compte la semaine dernière et du coup j'ai défini la couleur du texte de partout maintenant et j'ai plus de soucis.
+
+David Leuliette (21:09.876)
+Ouais... Ok, mais du coup... T'as utilisé quoi comme styling de librairie ? Une librairie ou...?
+
+Rémy Cassagne (21:16.702)
+Pour le styling, j'utilise le native wind avec le tailwind. Depuis que j'ai découvert tailwind, je suis un gros amoureux tailwind, j'en ai marre des fichiers CSS. Même si je comprends les inconvénients qui vont avec, en termes d'expérience développeur, je m'amuse 100 fois plus à utiliser tailwind que à créer des fichiers CSS.
+
+David Leuliette (21:19.872)
+Nativween, ok va.
+
+David Leuliette (21:36.984)
+Nativewind c'est plus facile, moi c'est pareil, j'ai testé mais tu l'as setup dès le début ça Nativewind ?
+
+Rémy Cassagne (21:48.91)
+Dès le début je voulais utiliser TNB
+
+David Leuliette (21:52.417)
+Ok, voilà, NativewindUI
+
+Rémy Cassagne (21:56.768)
+Oui, NativewindUI oui oui.
+
+David Leuliette (21:59.197)
+Ok, ça tombe... Ouais parce que c'est pareil, ça bouge très vite du coup... sais qu'ils sont passés de la V4 récemment, donc peut-être que t'as scaffold le truc en V3 puis que du coup il a un truc qui changé et puis que c'est pour ça que t'as eu ton bug de couleur... Donc Nativewind et NativewindUI. Pour ceux qui connaissent pas, vous irez voir la doc, c'est très bien aussi, c'est ce que j'utilise aussi. Ça fonctionne très bien.
+
+Rémy Cassagne (22:06.978)
+Ouais.
+
+Rémy Cassagne (22:11.054)
+Au revoir, c'est ça, bien.
+
+David Leuliette (22:31.486)
+Est-ce tu as des mesh 3D des sneakers ou pas du tout ?
+
+Rémy Cassagne (22:36.974)
+Fun fact, a une application mobile qui le fait, s'appelle StockX, qui font ça. Et autre fun fact, c'est que ce pas du de la 3D, c'est que plusieurs images qui changent quand tu swipes et qui du coup te donnent cet effet de 3D. C'est genre du... Comment s'appelle ça ?
+
+David Leuliette (22:42.598)
+Oui je sais c'est pour ça que je demande !
+
+Rémy Cassagne (22:58.67)
+du stop motion et qui te donne cet effet de 3D de la paire en 3D et c'est plein de frames de la paire de tourner sous différents angles bref j'ai vu qu'ils avaient fait ça comme ça au stock X
+
+David Leuliette (23:09.79)
+Ok ouais c'est du faux 3D quoi, enfin du... Ok je vois.
+
+Rémy Cassagne (23:11.658)
+C'est du faux 3D. Mais du coup j'ai pas ça, et en plus de ça j'avais trouvé une API qui pouvait me renvoyer toutes ces images pour faire la vue à 360 de quand je fetchais ma Snickers avec le code bar ou le modèle de la paire. Et je pouvais récupérer ça sauf que l'API était pas terrible. Mais du coup pour répondre à ta question sur les animations, j'utilise très vite fait mais sans plus ces React Native Reanimated, qui s'appelle la lib, que j'utilise.
+
+David Leuliette (23:37.814)
+Ouais, on est animé ici, toi. Ouais.
+
+Rémy Cassagne (23:41.752)
+le cas d'usage que j'en ai, ça truie bien comme ça.
+
+David Leuliette (23:45.986)
+Si c'est devenu un un standard tout le utilise. De toute façon, épisode, tout le le dit. J'avais dit avant les vacances, il faudrait que je vire ce truc. La question c'est plus, est-ce que tu utilises... Si tu utilises autre chose que Reanimated, dis-moi. Mais... Parce que t'as pas de charte, t'as pas de ce genre de choses quoi. Ouais voilà, tu vois, ça dépend vraiment du cas d'utilisation. Et... Qu'est-ce que j'allais dire ? Oui, coup, niveau API, tes dates, viennent de où ?
+
+Rémy Cassagne (23:52.046)
+...
+
+Rémy Cassagne (23:56.174)
+...
+
+Rémy Cassagne (24:03.438)
+Ouais bien sûr.
+
+Rémy Cassagne (24:15.382)
+Du coup, viennent d'une... Alors ça, a été un long sujet. Parce que pour trouver la base de données, enfin l'API à laquelle je suis rattaché, ça a été un peu la croix et la bannière. Parce que j'avais besoin d'une API qui puisse retrouver une snickers en fonction de son numéro de... de série, mais son numéro de modèle, le SKU, c'est ce qu'on appelle comme ça.
+
+David Leuliette (24:24.79)
+Hmm?
+
+David Leuliette (24:38.708)
+Ouais SKU ouais, Universal. Le SKU c'est l'identifiant unique à Cross le Monde pour un produit sauf dans certains cas, on va pas en parler là parce que c'est un délire les SKU en fait en vrai, des fois.
+
+Rémy Cassagne (24:45.762)
+Au revoir.
+
+Rémy Cassagne (24:52.91)
+mais du coup en fonction du skew ou alors en fonction de l'EAN, ce qui est du coup le code barre et en fait au début j'étais partagé entre deux trucs donc une dédiée pour le skew et une dédiée pour le EAN pour le scan du code barre et en fait au final j'en ai finalement trouvé une qui jusqu'à récemment était gratuite pour 50 000 requêtes et qui me fait les deux et en plus de ça avec des images, elles sont nickel à chaque fois
+
+David Leuliette (24:57.556)
+Ouais, c'est ça.
+
+Rémy Cassagne (25:22.954)
+valeur est très accurate sur la valeur du marché de la paire. Elle est ultra top. Le souci que j'avais avant sur les API que je trouvais, c'était qu'elles n'étaient pas toujours très pertinentes quand s'agissait de le AN. Quand on scannait le code bar, ça ne trouvait pas toujours la paire. C'était très compliqué de trouver une API qui soit très accurate là-dessus. Et au final, celle que j'ai trouvée l'est parfaitement. Il y a forcément des exceptions.
+
+paires qui ne pas trouvées, forcément. Mais pour la grande majorité des paires et toute ma collection ça le trouve donc c'est déjà très bien.
+
+David Leuliette (26:00.822)
+Bon bah nickel, parfait. Mais ouais ça c'est le gros sujet hein, c'est... Enfin... Pour ceux qui travaillent un peu en retail, ils savent c'est quoi le cauchemar, entendre le SKU, AED et tout ça quoi, parce que des fois il a des compagnies qui reprennent le code mais qui utilisent un autre code on-interd et du coup pour le retrouver c'est un enfer, enfin...
+
+Rémy Cassagne (26:08.43)
+Bye.
+
+Rémy Cassagne (26:18.062)
+Du coup elle s'appelle KixDB, cette base de données à laquelle je joue. KixDB. Et ça marche très bien.
+
+David Leuliette (26:25.474)
+XDB pour ceux que ça intéresse, Modern Sneakers
+
+Rémy Cassagne (26:30.062)
+ça marche très très bien et je suis déçu parce que je suis un peu dégoûté parce que jusqu'à maintenant c'était gratuit pour 50 000 requêtes du coup j'étais très content parce que j'étais sur le plan gratuit et ils sont passés payant pour que ce soit 50 000 requêtes maintenant donc ils sont passés récemment du coup c'était 1000 requêtes je les avais déjà atteint sur l'application et j'ai dû upgrade du coup
+
+David Leuliette (26:36.053)
+Hmm ?
+
+Ouais.
+
+David Leuliette (26:48.693)
+Je ne ai pas contactés, il faut les contacter et dire, les gars j'ai fait ça pour le French market, je veux bien faire un partnership avec vous en tant que early adopteur.
+
+Rémy Cassagne (26:56.398)
+Ouais, pourquoi pas. Pourquoi pas, ouais.
+
+David Leuliette (27:03.157)
+30 du coup 30 ça fait 50 puisque super bass c'est 20 par mois
+
+Rémy Cassagne (27:08.078)
+Ouais c'est ça. Mais après Super Base de Pongman je crois que suis sur le plan gratuit.
+
+David Leuliette (27:12.159)
+Et pour en haut, t'es encore sur gratos, ok. Bon après ça va tu vois, mais c'est vrai que je devrais demander combien ça va coûter l'application en gros. Je demanderai à peu près moins de 1000 euros quoi en vrai.
+
+Rémy Cassagne (27:22.318)
+Je pense même moins de 500 parce que je suis un rat. Mais parce que j'ai fait des économies. Oui, bien sûr.
+
+David Leuliette (27:25.94)
+Ouais mais non ouais mais en fait c'est pas que t'es un rat, c'est qu'au début ça sert à rien, que tu vas pas burn pour rien. Et en plus t'as pas encore fait de AESO, NIDADS, tout ça.
+
+Rémy Cassagne (27:36.17)
+Ouais, rien du tout, ce n'est pas prévu pour le moment je pense.
+
+David Leuliette (27:39.668)
+Pour l'instant c'est que de l'organique et où pour tester, vraiment avoir du feedback, voir si ça fonctionne. Est-ce que ça déploie tous les vendredis
+
+Rémy Cassagne (27:49.162)
+ça déploie pas tous les vendredis c'est une bonne question c'est vrai que c'est une contrainte que je pourrais me mettre j'avoue qu'elle est sortie l'application elle est sortie samedi dernier et c'est tout récent ou un peu plus tôt dans la semaine je sais plus j'ai plus la date exacte mais il me semble ouais ça va faire un peu plus d'une semaine on va dire et la semaine dernière j'ai reçu un test technique parce que du coup je suis en recherche en parallèle d'emploi
+
+David Leuliette (27:55.516)
+bah oui ! Si si tu...
+
+ouais c'était assez tout récent vraiment ! je savais pas, j'avais pas capté.
+
+Rémy Cassagne (28:17.326)
+Et bref, du coup c'est... C'est... Ouais mais du coup c'est pas pour une application mobile, c'est pour un site web. Donc rien à voir. Oui, bien sûr. Bien sûr.
+
+David Leuliette (28:17.852)
+Et bah voilà, super tu lui dis de download Kixfolio et puis voilà terminé.
+
+David Leuliette (28:27.54)
+Mais c'est pas grave, c'est... enfin voilà. Moi franchement je le jouerais comme ça, je ferais bah votre test technique de façon personne va le lire. Du coup ce que je vous propose c'est d'implémenter cette feature...
+
+Rémy Cassagne (28:36.517)
+C'est un test technique en mode de coding game de merde etc. C'est un truc assez intéressant. C'est en mode un Figma fait par leur designer d'une page web qui actuellement sur le site, qui existe actuellement sur le site et que je dois reproduire. Il y a des erreurs dans le Figma et en mode je dois interagir avec le Figma, des commentaires etc. comme si j'étais vraiment dans la boîte pour interagir avec le designer et tout et que lui me fasse ses retours en mode de ok ça vas-y t'as le droit de faire cette animation, t'as le droit de faire ça comme ça, ok c'est vrai qu'ici j'ai fait une erreur blablabla et je dois
+
+David Leuliette (28:44.084)
+Right
+
+David Leuliette (28:55.342)
+Ok, du coup, ok.
+
+Rémy Cassagne (29:05.072)
+mais en mode en interrégissant vraiment avec eux en mode main dans la main quoi.
+
+David Leuliette (29:09.008)
+Ok, tu connais Figma Design Lint ? C'est un plugin sur Figma. Tu vois c'est quoi un linteur, S-Lint, Ipreteer ? C'est pareil, c'est pour Figma.
+
+Rémy Cassagne (29:13.0)
+Pas du tout.
+
+Rémy Cassagne (29:18.378)
+Ouais, bien sûr ouais. Ok, intéressant, je regarderai ça.
+
+David Leuliette (29:23.252)
+Et du coup tu l'ajoutes sur figma et il va te dire que a 12 erreurs et 15 000 warnings parce que la hitbox n'est pas centrée, il n'y a pas de calcula, les couleurs sont faibles, tous les design tokens qui ne pas...
+
+Rémy Cassagne (29:38.254)
+Bonne chance.
+
+Oui, bien sûr. Après, n'est pas plus tant des erreurs que ça. Par exemple, sur le truc que j'ai relevé aujourd'hui, ce matin, c'était que sur mobile, c'était un menu accordéon pour le footer, alors que ça n'est pas le cas sur desktop. Et au final, il m'a dit que c'était une erreur et que ça avait été modifié et que je pouvais faire comme je voulais. Mais...
+
+mais en soit c'est plus des trucs des soucis d'incohérence comme ça entre les deux versions et genre j'ai la version desktop et la version mobile mais j'ai pas l'entre deux, l'entre deux c'est à moi de le faire.
+
+David Leuliette (30:12.531)
+Ah oui, mais... Bienvenue, depuis 2012, toujours, c'est ça. Moi, j'ai toujours connu ça. C'est genre, le mobile, là le desktop, entre les deux, whatever quoi. Et j'ai appelé ça, on joue pas à saute-mouton les gars. Parce qu'en fait, me... Encore là... Avant, le responsable, tout au début, c'était vraiment rien à voir. Et donc c'était vraiment très très compliqué quand tu dois... Ça dépend de quel type de site, mais...
+
+Rémy Cassagne (30:19.115)
+Ouais !
+
+David Leuliette (30:41.678)
+dupliquer un peu de logique et que le SEO soit content et que tout le soit content. C'est aligner tout le monde en fait. Maintenant c'est plus simple mais avant en fait c'était vraiment très très très compliqué d'avoir un drop down et un texte en normal, que ce soit responsif donc même même contenu HTML et qu'il ait pas dupliqué de content pour le SEO. Parce que tu dis c'est facile en fait je duplique le composant et puis il en a s'affichent, il en a qui s'affichent pas mais en fait il sera quand même dans le dom et du coup ça Google il dit hey
+
+Rémy Cassagne (30:46.798)
+Merci.
+
+Rémy Cassagne (31:10.094)
+...
+
+David Leuliette (31:10.866)
+Pas content. Donc oui, j'imagine bien. Mais ce ne sera jamais résolu ce problème. En vrai, depuis plus de dix ans, c'est toujours pareil. Donc, hein, ça.
+
+Rémy Cassagne (31:16.398)
+Je pense aussi.
+
+Mais en fait ça doit être trop une merde à faire pour les designers sur Figma, même les outils comme Figma ne doivent pas tellement aider pour faire ça j'imagine.
+
+David Leuliette (31:29.234)
+Ça dépend comment tu pars. Si tu pars mobile first et que tu t'agrandis, c'est plus simple. Ou si tu fais l'inverse. Si tu fais l'inverse, il des compromis à faire.
+
+Rémy Cassagne (31:35.755)
+Oui forcément.
+
+C'est la même chose qu'en code aussi, on commence toujours mobile first.
+
+David Leuliette (31:43.311)
+Ouais ouais, clairement, c'est plus simple. les sites web, commencer par le mobile, c'est toujours plus simple. Ok, et donc... Tu m'as pas dit comment on pour release. Ta première release, ça s'est bien passé ? T'as mis combien de temps ?
+
+Rémy Cassagne (32:00.392)
+Ma première release, j'ai mis un peu plus d'une semaine entre le moment où je me suis dit ok maintenant je déploie et le moment où elle a été acceptée ça fait une semaine mais ça release pour le moment que sur l'app store parce que j'avais carrément oublié que le Google Play Store demandait d'avoir 12 bêta testeurs qui ont l'application pendant 14 jours quelque chose qui est très frustrant et chiant et j'avais genre deux bêta testeurs parce que j'avais quelques bêta testeurs avant sur l'application et j'en avais que deux sur le
+
+David Leuliette (32:21.234)
+ça. Du coup...
+
+Rémy Cassagne (32:30.256)
+Google Play Store et tout le reste, j'avais une cinquantaine de bêta testeurs et tout le reste était déjà sur iOS. Mais à chaque fois je faisais les deux builds pareils et je déployais pareil pour les deux au même moment etc. j'avais jamais de soucis de décalage de version entre les deux. Et je me suis tapé une erreur sur l'App Store parce que au niveau des data collectés des utilisateurs j'avais mis n'importe quoi parce que j'utilise...
+
+David Leuliette (32:57.348)
+Comme d'hab ! Clique, clique !
+
+Rémy Cassagne (32:59.498)
+Ouais c'est ça j'utilise Sentry et un autre truc d'Analytics Vexo. J'avais mis n'importe quoi, enfin j'avais pas lu les docs des deux de ce qu'ils recommandaient de mettre pour que ça passe. J'avais mis moi ce que je pensais être bon au feeling. Et du coup forcément Apple ils ont dit non. Et vu qu'à chaque fois ça met un peu 48 heures avant qu'ils regardent, avant qu'ils valident ou non le truc. Et après ça c'était bon. Ou un autre truc, je sais plus c'était quoi.
+
+oui, le compte que je leur donnais pour qu'ils puissent faire des tests n'était pas assez peuplé de data. Je leur ai donné un compte vierge et eux ils voulaient avoir des trucs dans la wishlist, avoir quelques stinkers dans leur collection déjà, Du coup j'ai fait ça si envie de faire.
+
+David Leuliette (33:31.354)
+oui.
+
+David Leuliette (33:35.058)
+Oui, c'est ça.
+
+Tes... Tes useurs ils sont obligés d'être logués pour euh...
+
+Rémy Cassagne (33:43.486)
+Et non, pas forcément. En gros tu peux...
+
+David Leuliette (33:45.22)
+Ok, Parce que ça, il me semble que c'est un requirement, j'arrive plus, je sais plus. Enfin, il me semble que... mais ça se peut que... ça soit pas vrai.
+
+Rémy Cassagne (33:52.782)
+En gros, peux... Comment ça se passe ? Si quelqu'un te partage le lien d'une collection, t'es obligé d'avoir l'application pour voir la collection. Si tu veux interagir avec l'application, il faudra te connecter pour ajouter tes pairs dans ta wishlist, voir toute la collection du user parce qu'il a pu mettre des filtres sur la collection qui t'a partagé. Tu peux pas enlever ces filtres. Tu seras signing anonymement juste pour voir sa collection à lui, tu tout ce que tu pourras faire. Tu pourras juste voir sa collection qui t'a partagé.
+
+David Leuliette (34:01.371)
+Ok.
+
+David Leuliette (34:22.737)
+Ce qui me semble maintenant c'est un recorehirement dans... Alors je sais plus si c'est Apple ou Android mais un des deux tu dois pouvoir avoir une expérience sign-on free quoi. Enfin dans certains cas. Tu vois genre si c'est une banque bah non.
+
+Rémy Cassagne (34:32.59)
+Ok. Oui, en mode... Non mais ça, en fait, non, chez Apple il me semble, et j'en parlais avec un développeur qui me disait que le fait qu'un utilisateur doit être connecté pour utiliser l'application doit être justifié. C'est surtout ça. Ça doit être, en gros, pour Apple, si tu... Si l'application, tu as l'impression que tu... Comment dire ? Que... Qu'elle peut être utilisée sans être connectée, bah du coup, pourquoi forcer l'utilisateur à créer un compte et se connecter ?
+
+David Leuliette (34:47.109)
+Ouais, c'est ça.
+
+David Leuliette (35:03.922)
+ça du coup ce
+
+Rémy Cassagne (35:04.45)
+Mais du coup, vu que ça fonctionne un peu comme un réseau social, bah t'es obligé d'avoir un compte et d'être connecté quoi.
+
+David Leuliette (35:08.475)
+Ouais, ouais, je vois. Cool, cool. Et sinon si I release et tout, c'est du IAS, Classic, Expo, tout ça, tout ça, quoi.
+
+Rémy Cassagne (35:17.504)
+Ouais c'est ça exactement et là dernièrement j'ai découvert les releases over the air et c'était un peu compliqué à comprendre mais parce que je comprenais pas trop la logique au niveau de la branche etc enfin j'avais pas tout compris mais au final ça va maintenant ça va j'avais quelques petits bugs à la release que j'ai pu corriger très très vite grâce à ça sans repasser par une énième validation qui prend huit ans de Apple
+
+David Leuliette (35:23.606)
+oui, les fameuses.
+
+David Leuliette (35:33.422)
+oui...
+
+Rémy Cassagne (35:47.534)
+Et non, au final ça s'est fait très très bien pour corriger les quelques petits soucis que j'avais.
+
+David Leuliette (35:53.788)
+Pour ceux qui ne connaissent pas Oversyheir, on fait IAS Update et paf, ça update le bundle JavaScript et les useurs ont ça en deux secondes. Trop bien.
+
+Rémy Cassagne (36:00.65)
+Oui c'est ça, en 2-3 minutes ils ont ça sur leur téléphone et ils peuvent accéder à la mise à jour.
+
+David Leuliette (36:05.044)
+C'est ça. Et ben pareil ça coûte cher quand t'as... Parce que c'est payant. Enfin les ISUpdates. Ouais je te le dis, au bout d'un moment, quand t'as 100 000 utilisateurs, tu réfléchis à deux fois. Quand tu le fais... Parce que là c'est bon tu le fais... je merge sur main ça ISUpdate automatiquement mais après faut un peu faire gaffe. Ok, est-ce que t'as eu... ouais alors attends... Parce que ça fait combien temps que tu fais du React à dans et des bruites quoi ?
+
+Rémy Cassagne (36:10.402)
+Ouais. Oui pour le congol.
+
+Rémy Cassagne (36:21.678)
+Oui, bien sûr, c'est ce que j'ai aussi avec la beat-up
+
+Rémy Cassagne (36:33.518)
+Un an il débrouille exactement.
+
+David Leuliette (36:35.756)
+Est-ce que tu as déjà eu le temps d'avoir un top 5 des librairies que tu recommanderais et que tu utilises ?
+
+Rémy Cassagne (36:42.701)
+Top 5 là comme ça. Justain je dirais pour la simplicité du store management c'est quand même top. Quoi d'autre ?
+
+Il en une que j'aime beaucoup sur mon application, j'en mets un peu partout, enfin un peu partout, j'abuse mais j'en mets souvent, c'est les vector icons de Expo. Ils ont une librerie Expo Vector Icons, qui est trop chouette, qui est trop bien le site, tu peux chercher, tu tapes le nom d'un icon de ce que tu veux, et tu le trouves, et tu as deux clics, tu copie-colles et ça te l'importe comme il faut. Qui est assez chouette à utiliser, après on peut les animer et tout, c'est marrant.
+
+David Leuliette (37:24.144)
+C'est icons.expo.fye for your information. site et hop tu trouves tout. c'est vrai qu'il a, moi je me fais pas gaffe parce que c'est pareil ça existe depuis le début, mais il y a Anto Design, Antipo, Evil, Fuzzer, Fontosome forcément, Foundation, Material Design. Donc c'est vrai que pareil, pas le time, Harley Fonder, il faut des icons, bah tiens, en voilà, 4000.
+
+Rémy Cassagne (37:34.648)
+Ok.
+
+David Leuliette (37:52.719)
+Tu vas bien en trouver une qui fait le taf. C'est vrai qu'on l'a jamais dit, c'est parce que les gens l'oublient.
+
+Rémy Cassagne (37:56.372)
+C'est ça.
+
+Rémy Cassagne (38:01.278)
+Et sinon il y a un site que j'aime beaucoup qui s'appelle React Native Directory et qui permet du coup de de ne pas réinventer la roue en fait. y a beaucoup de libraux qui sont référencés là dessus liés à React Native Expo et du coup quand j'avais besoin de chercher certaines choses ça m'a évité de me perdre dans les méandres de Google.
+
+David Leuliette (38:26.922)
+Exactement, REC NATIVE.REC NATIVE TO COOLER DOT DIRECTORY Et ce qui est bien c'est que ça dit l'état de l'ebraille, si il a été utilisé depuis longtemps ou pas, il a deux trois métriques ce genre... Un directory score. Et donc je sais pas comment ils font ça mais en mon avis c'est le nombre de downloads, le nombre de stars, le nombre d'updates, le nombre d'issues. Si y'a un truc qui pas été mis à jour depuis très longtemps bah ils vont dire... Peut-être pas ! Donc ça c'est bien surtout quand tu sais pas trop...
+
+Rémy Cassagne (38:33.172)
+Ouais, de la libre exactement.
+
+Rémy Cassagne (38:50.414)
+...
+
+David Leuliette (38:55.819)
+Ce que tu cherches, c'est la discoverabilité. Comme tu dis, c'est un peu compliqué, parce qu'après, tu es perdu dans Google.
+
+Rémy Cassagne (39:06.248)
+Et puis vu que je ne pas forcément le framework, pour Myroclu, ça va plus vite.
+
+David Leuliette (39:09.667)
+Ouais mais c'est... Bah c'est mieux mais c'est vrai que c'est un enfer, enfin t'as réussi à acheter plus ce truc là mais... Bon y'a quand même pas mal de... Y'a beaucoup de choses à savoir en fait en vrai Si après tu veux commencer à vraiment diguer et faire du native et tout, t'en rends qu'il Xcode, Android Studio, machin, que tu peux compiler et tout Le CNG donc continue so native generation et tout Et euh... Ouais Là ça marche, est dans un cas où...
+
+Rémy Cassagne (39:18.414)
+...
+
+Rémy Cassagne (39:28.942)
+Merci.
+
+David Leuliette (39:38.805)
+Super Base Expo, got it, ça se fait, excellent. après, si un jour tu veux mettre du Bluetooth RFID, c'est possible. après, ce sera plus compliqué. Moi, un truc que tu pourrais peut-être regarder, c'est... J'en sais rien, maybe. Mais un truc que tu pourrais regarder, c'est App Clip. Donc c'est que sur iOS. iOS, App Clip. En fait...
+
+Rémy Cassagne (39:48.212)
+Ok ouais. c'est cool.
+
+Rémy Cassagne (39:52.792)
+et y a du verre fini dans les snipeurs.
+
+Rémy Cassagne (40:02.496)
+Un clip ? Ok ouais.
+
+David Leuliette (40:08.362)
+En fait, tu peux...
+
+partager un app clip, c'est par un lien et en fait les gens ils auront pas besoin de... donc admettons tu partages le lien, les gens vont ouvrir ça, ça va ouvrir une espèce de modal en mode app clip et les gens ils auront pas toute l'app mais ils pourront quand même voir la sneakers de partagé quoi et ça va mettre un bouton, un bouton, hey tu veux installer l'application ? Allez, installe l'application ! Genre une mini app quoi ! Ça va pas ouvrir un navigateur, ça va pas ouvrir un truc là, ça va t'ouvrir une expérience...
+
+Rémy Cassagne (40:14.958)
+Ouais.
+
+Rémy Cassagne (40:33.87)
+ok oui je vois
+
+Ok, il n'est pas obligé d'avoir l'application d'installer parce que moi dans mon cas d'usage il est obligé d'avoir l'application pour que ça marche. Ok, intéressant.
+
+David Leuliette (40:46.382)
+C'est ça. là franchement tu pourrais garder juste pour... Faut regarder, UpClip de main après c'est que sur iOS du coup bon je sais pas si je sais pas si pour l'instant c'est c'est utile dans ton cas parce que là tu es plus en mode acquisition et faut pas commencer à faire des features spécifiques mais
+
+Rémy Cassagne (40:56.056)
+Ok.
+
+Rémy Cassagne (41:07.278)
+Ouais bien sûr. Mais c'est un truc, je me garde ça dans un coin de la tête.
+
+David Leuliette (41:11.476)
+Mais c'est possible, je l'ai mis pour aller dans les notes de l'émission. Pour aller voir tes propres notes d'émission. Pfff, folie. Est-ce qu'il a encore une autre livrairie que tu recommandes
+
+Rémy Cassagne (41:28.526)
+Une que j'ai découvert avec React Native, j'aime pas, moi personnellement, les applications quand il a un chargement, avoir une sorte de layer gris avec un loader ou alors que le contenu disparaît, c'est que j'ai un loader. J'aime pas trop ça. Mais du coup, ce que j'ai trouvé, c'est les toasts message. J'aime beaucoup. Je trouve ça trop marrant.
+
+David Leuliette (41:41.99)
+Un skeleton. Un skeleton.
+
+Rémy Cassagne (41:53.696)
+et ça apporte une petite touche de dynamisme. Tu le message qui d'en haut, qui pop, qui te dit attend. Et voilà.
+
+David Leuliette (42:01.332)
+quand tu load un truc tu fais des toasts
+
+Rémy Cassagne (42:02.958)
+Par exemple, j'ajoute une basket, mon toast apparaît, ajoute la sneaker en cours et quand elle est ajoutée, nouveau toast, sneaker ajouté.
+
+David Leuliette (42:06.605)
+Oui, ok.
+
+David Leuliette (42:15.356)
+tu fais un... Windows, Oui oui quand tu ajoutais au... Ok je vois Après ça dépend, je vois C'est de quoi l'eyebrac que utilisé pour ça ?
+
+Rémy Cassagne (42:17.708)
+Quand je mets une paire en wishlist, je rajouter à la wishlist, etc. Pareil quand même pour la suppression.
+
+React Native Toast Message qui s'appelle. Et on peut grave personnaliser les petits toasts et tout, on peut s'amuser avec. C'est assez intéressant.
+
+David Leuliette (42:35.032)
+Parce que ça c'est pas bloquant, ça ça va, c'est bien. IOS Android, ouais ok je vois, je vois que j'y ressemble. Je sais pas, j'en utilise d'autres aussi. Moi c'est plus... Attends, moi c'est quand c'est successful ou quand c'est erreur ? Ou quand il a qu'une erreur ? Ça dépend en fait, il n'y a pas vraiment de... J'utilise aussi des toasts mais... Moi c'est vraiment avec parcimonie et c'est quand... Quand il y a des erreurs qui arrivent et que je donne du contexte et que...
+
+Pourquoi ? c'est que boucle de feedback après quand tu ajouté aux favoris je m'en rends pas compte. C'est peut-être une opération que tu fais pas beaucoup mais ce qui est un peu relou à ce truc là c'est que si tu en fais trop après comment il se stack ? Est-ce qu'il se stack... se positionne l'un derrière l'autre est-ce qu'il se stack...
+
+Rémy Cassagne (43:21.878)
+Il me semble qu'il disparaît le Pour moi il ne se stague pas. L'ancien disparaît, enfin le nouveau fait enlever l'ancien. De ce qu'il me semble sur le repo on peut les staker.
+
+David Leuliette (43:25.484)
+Parce qu'ici il se stac en vertical, un enfer, tu vois... Ouais.
+
+Ok.
+
+David Leuliette (43:39.976)
+Il est de merde. non, les stackés, oui, peut-être. Bah après, ça dépend. Toujours pareil, si...
+
+Rémy Cassagne (43:43.358)
+mais je ne l'ai pas fait parce que n'est pas sexy, n'aime pas l'idée.
+
+David Leuliette (43:48.14)
+Ouais ouais ouais, mais ça dépend vraiment de... veux dire ça, il n'y a pas de règles de règles, mais oui c'est Quand vous faites des erreurs, et où validation, try catch, où on envoyer message de sauvegardé, pensez à mettre des toasts. Surtout quand il a des erreurs en fait, vrai. Quand il a un truc qui se passe mal, c'est... c'est utile. Ok, on va passer à la partie questions. Est-ce que...
+
+Est-ce que tu peux nous parler d'une feature que tu as développée et combien de temps ça t'a pris pour la mettre en production ? Bah pour la mettre, pour la terminer là, vu que tu as fait qu'une fois en production.
+
+Rémy Cassagne (44:28.014)
+Une feature, une feature, une feature, une feature...
+
+David Leuliette (44:33.362)
+Avec Super Bass par exemple, est-ce qu'il a un truc avec Super Bass que...
+
+T'as pris plus d'une journée. Parce que SuperMaze c'est jaloux, c'est le
+
+Rémy Cassagne (44:43.714)
+Avec Super Base, il a un truc qui m'a pris plus d'une journée en fait, mais c'est parce que j'ai mal construit ma base de dès le début et du coup je l'ai normalisé et du coup ça m'a pris plus d'une journée la normalisation de ma DB parce qu'en gros à la base j'avais une table sneakers, une table user, hop ils étaient collés les deux et c'était une... enfin bref un utilisateur pouvait avoir plusieurs chaussures mais il n'y avait pas de table intermédiaire et forcément si deux utilisateurs avaient exactement
+
+le même modèle, ça me faisait deux entrées dans la base de données alors que ces deux modèles allaient utiliser la même image etc. Mais du coup ce que j'ai fait pour régler ça, c'est que maintenant ça passe du coup par une table intermédiaire qui j'ai appelé collection, il me semble oui collection et
+
+La collection va contenir toutes les données variables, genre la taille, la condition de la chaussure, si il a la boîte originale ou pas, Toutes les choses propres à l'honneurship de l'utilisateur. Et ma table sneakers maintenant, c'est uniquement le modèle de la paire, son skew, son gender et...
+
+et crois c'est tout, ou une description vite fait que je peux fetch de temps en temps. et une image. Et aussi dans la collection on peut avoir des images. Ce qui fait que dans ma table Sneakers, les images elles sont... Enfin c'est que les images de référence qui sont du coup fetch, pour être sûr que c'est la bonne image de la chaussure. Et dans la table collection c'est que les images que l'utilisateur lui-même a mis de sa paire.
+
+qui lui sont propres à lui, qui fait que quand lui supprime sa paire de sa collection, ça ne me supprime pas déjà Elastickers dans la DB et ça ne me supprime pas l'image non plus que j'ai stocké dans mon bucket de référence, ce qui fait que je la garde toujours cette image de référence et j'ai pas besoin de la refetch à chaque fois. Et ça, m'a pris plus d'une semaine à faire. C'était très marrant.
+
+David Leuliette (46:29.932)
+C'est ce que j'allais dire, t'as un bucket et tout.
+
+David Leuliette (46:38.699)
+oui bah le temps de... comprendre...
+
+Rémy Cassagne (46:43.36)
+comment le faire, déjà le comprendre comment le faire et le mettre en place.
+
+David Leuliette (46:44.522)
+Ouais ouais... euh... Ouais... Comment le faire, le mettre en place ? Oui c'est... Qu'est-ce que c'est possible ? Parce que là je pense que c'est pareil, tu connais 1 % de... Bon allez, 20 % tu peux abeillez.
+
+Rémy Cassagne (46:56.27)
+Après je me disais que c'était possible, enfin je me disais pas que c'était pas possible, je me disais que c'était, pour moi c'était possible, mais c'était juste bien gérer avec les buckets en fait lors de mes requêtes, de ne me tromper de buckets etc. Que mes buckets soient bien nommés, que ça soit bien dissocié et tout. Je me suis assez amusé sur mon compte perso de l'application à ajouter et supprimer des stickers pour voir si ça marchait, une bonne centaine de fois jusqu'à me rendre compte, ok là ça marche.
+
+David Leuliette (47:25.898)
+Bah oui oui, je vois, Donc ouais, plus dans la partie super base, base de données, tout ça, que dans la partie UI, au final, règle native pure.
+
+Rémy Cassagne (47:35.994)
+Après dans la partie rack native pure, autre feature ça pourrait être le fait d'avoir un barcode qui scanne mais ça ça allait très vite étonnamment parce qu'il me semble qu'il a une lib expo barcode scanner et du coup juste tu les montres avec son caméra
+
+David Leuliette (47:47.795)
+oui.
+
+David Leuliette (47:53.362)
+Expo Camera. C'est Expo Camera maintenant en fait. Avant c'était Expo Barcode Scanner, il en avait deux différentes. Et là en fait ils ont merge chez Expo Camera et t'as une props. Et là tu peux... Ouais. Ouais. Ouais.
+
+Rémy Cassagne (48:00.447)
+Ok.
+
+Mais l'année dernière, y avait encore Expo barcode scanner, parce qu'au tout début, c'était ce que j'utilisais. Et maintenant, je ne qu'avec Expo Camera. Dès qu'il détecte un barcode, il te renvoie le EAN C'est hyper simple. Le EAN, juste à l'envoyer à l'api. C'est vraiment magique. Il voit un barcode, il te le renvoie. Il t'envoie le EAN et tu le traites comme tu veux. Ça a été assez facile à mettre en place, étonnamment.
+
+et ça marche plutôt bien en plus.
+
+David Leuliette (48:38.494)
+Est-ce qu'il y a eu un moment difficile du coup dans le dev ? Oui ! ! Alors !
+
+Rémy Cassagne (48:43.041)
+Oui.
+
+Au tout début que j'ai commencé l'application, j'étais très pris dans l'euphorie de découvrir React Native et d'avoir le build de développement sur mon téléphone téléchargé, voir les changements directs. J'étais un peu comme un gosse et j'étais très heureux de voir tout ça. Ce qui fait que j'ai codé un peu très vite et un peu très sale. Par exemple, j'ai un composant qui est ma clé de voûte de l'application. Quand on appuie sur la table barre en bas, ça ouvre une modal.
+
+David Leuliette (49:00.074)
+Oui oui.
+
+Rémy Cassagne (49:15.888)
+pour choisir comment on a envie d'ajouter la paire. Et cette modal là avait toutes ces steps de la modal inclus dans le même fichier. Et toute la logique inclue dans le même fichier aussi, que ce soit le fetch de la... Comment dire ? Du skew ou le fetch avec le barcode. Tout était dans le même fichier. Donc le moment où je me suis rendu compte de la merde que j'avais fait et qu'il fallait refactorer tout ça, c'était marrant.
+
+David Leuliette (49:44.327)
+Ouais. Oui mais t'aurais pas pu t'en rendre compte si... Tu vois en vrai, en vrai c'est ça. Et puis en plus t'es tout seul, en vrai. est-ce que c'est un problème ? Pas vraiment quoi. Là t'es plus en mode faut shipper, voilà.
+
+Rémy Cassagne (49:44.372)
+C'était mort. C'était mort.
+
+Rémy Cassagne (49:50.35)
+Je ne l'avais pas fait.
+
+Rémy Cassagne (49:54.217)
+Oui, oui bien sûr.
+
+Mais du coup ça m'a bien pris une ou deux semaines à tout remettre au propre bien avec des composants qui ont une seule responsabilité etc. je me suis aussi mis en tête, non oui et non, mais je me suis aussi imposé le fait d'avoir un semblant de clean architecture et d'avoir une application testée.
+
+David Leuliette (50:20.411)
+t'as mis des tests en place quand même, t'as mis quoi comme test ?
+
+Rémy Cassagne (50:23.682)
+j'ai des tests, tout ce qui va être lié à la logique, etc. à mon domaine. Du coup c'est avec vitest, parce que vitest ne supporte pas React Native. Et sinon tous mes tests duits de validation de formulaires, etc. de quand j'ai une erreur dans le formulaire sur telle input, que la bordure elle passe en rouge, que le message d'erreur soit bon et que si j'ai plusieurs erreurs, que les inputs correspondants soient bons et que le message soit un message global pas lié à chaque input. Bref, tout ça. Ça c'est des tests duits.
+
+que j'ai fait avec gestes où je teste mes composants avec des fire events et où je simule des actions utilisateurs comme ça.
+
+David Leuliette (51:00.539)
+Non. Non, mais...
+
+David Leuliette (51:05.289)
+Ouais quand même, ça arrivait quand même pas mal et ça tu l'avais vu où ça ? truc de vitesse et tout.
+
+Rémy Cassagne (51:09.332)
+Et ça, je l'ai vu moi-même quand j'ai appris le pistolet.
+
+David Leuliette (51:12.329)
+Tu l'as appris comme ça, Ok, RNTL, t'as tapé test, t'as trouvé RackNet, tu fais tu c'est signes memory, puis après... Bah c'est vrai que maintenant, je m'en rends pas compte, c'est plus simple. a plus de choses, mais y plus de docs, et tout est bien fait. Parce qu'avant c'était un peu wild.
+
+Rémy Cassagne (51:17.77)
+Ouais, exactement.
+
+Rémy Cassagne (51:23.884)
+Et le seul truc qui m'a frustré c'est que Vitesse ne soit pas compatible avec Direct Native. C'est le seul truc qui m'a agacé.
+
+David Leuliette (51:28.296)
+Non, à mon avis c'est peut-être moteur JavaScript ou interpréteur ou métro-bundler ou ce de Bonne question.
+
+Rémy Cassagne (51:39.182)
+Pendant un moment j'avais un souci de performance sur mes tests qui prenait 20 à 30 secondes à s'exécuter, c'était vraiment imbittable. Au final j'ai réussi à optimiser tout ça, j'avais mis peu d'essais de time out pour attendre que les Fire Events aient fini alors qu'il avait pas forcément besoin etc. Sur le coup ça marchait, me suis dit bon bah tant mieux, mais au final ça s'est accumulé et au final ça prenait un peu trop de temps.
+
+David Leuliette (51:47.218)
+Ouais.
+
+David Leuliette (51:59.471)
+Ouais non mais...
+
+David Leuliette (52:03.56)
+un métier ça s'appelle QA Ingenieur tu vois encore un autre métier où
+
+Rémy Cassagne (52:06.126)
+Mais au moins j'ai découvert plusieurs métiers quoi, c'est marrant.
+
+David Leuliette (52:11.656)
+Ouais, non mais là clairement là euh...
+
+Rémy Cassagne (52:14.35)
+Je suis passé par toutes les étapes quoi, par tous les métiers.
+
+David Leuliette (52:17.262)
+Là j'avoue, j'avoue, est-ce que tu as découvert des techniques de débugs grâce à Rack Native que tu connaissais pas avant ?
+
+Rémy Cassagne (52:23.854)
+Pas vraiment. j'ai un souci que je débug, généralement, c'est que je mets des logs de partout et on voit bien le moment où c'est chiant, où ça coince, où la donnée se perd, où la donnée est mal convertie. Je ne pas de technique de débug particulière comme ça, juste des consoles logs de partout.
+
+David Leuliette (52:30.632)
+Oui oui.
+
+David Leuliette (52:44.466)
+Ouais, console Log J, et tu tapes sur J. Pour ceux qui connaissent pas. Ce qui est un... un expo d'ouvert là. On est dans le terminal, tu tapes J. Poum, ça ouvre Google Chrome et puis c'est parti. Oui oui, parce que ça, paraît pas connu mais avant c'était pas du tout comme ça quoi. C'était fou, c'était... ouais, non mais là tu arrives au meilleur moment, au meilleur âge, tu l'âge nord. Là avant c'était plus de bidouilles quoi.
+
+Rémy Cassagne (52:55.539)
+Yes, c'est bien pratique.
+
+Rémy Cassagne (53:03.874)
+Ok, bon.
+
+Ha !
+
+Et aussi, quand on ouvre le menu de expo sur le bundle de développement, on peut ouvrir un truc de performance pour mesurer les performances. Et ça, m'a bien aidé parce qu'à un moment, j'ai un de mes bétatesteurs qui lui a ransonné entre 200 et 300 paires dans sa collection.
+
+David Leuliette (53:20.526)
+Mais trop. Ouais.
+
+David Leuliette (53:28.945)
+Ouais.
+
+Rémy Cassagne (53:38.158)
+et on peut afficher les sneakers de la collection d'un utilisateur de deux manières différentes soit avec des cartes où on a l'image, la taille et quand on clique dessus ça nous ouvre la modal avec toutes les infos, en moins sur un peu plus en détail ou soit sous format d'un peu plus de listes avec l'image en bien plus petite et un peu plus d'infos sur la liste mais pareil on peut swiper la liste pour afficher la modal avec toutes les infos enfin bref
+
+Et en formaliste, sa collection ramait à la mort. Et du coup, ce truc-là m'a pas trop mal aidé pour identifier le moment où ça ramait. Du coup, j'ai mis en place un truc que j'ai appelé des chunks, mais au final, ça s'appelle de la pagination et c'est un truc qui existe depuis la nuit des temps. Mais moi, j'ai appelé ça des chunks parce que ça me faisait penser à Minecraft en mode génération procéduriale. du coup, pour moi, c'était des bouts de collection que je téléchargeais petit à petit.
+
+David Leuliette (54:19.739)
+Ouais !
+
+ça me parlait... Ouais ok je vois
+
+Rémy Cassagne (54:30.734)
+Mais au final, c'est de l'imagination quoi.
+
+David Leuliette (54:31.08)
+Avec Super Base ou pas alors
+
+Rémy Cassagne (54:34.27)
+Avec super big sweat.
+
+David Leuliette (54:35.661)
+Il y avait déjà un truc inclus dedans. Oui c'est pour ça. Si t'avais eu Rayleigh, t'aurais dû faire ma pagination, machin, que je fasse le truc. Là c'est genre, mais c'est déjà dans la doc, pourquoi tu l'as pas déjà lu ? Donc... Ok, c'était pas du tout la flatlist qui ramait.
+
+Rémy Cassagne (54:41.034)
+Ouais c'est ça, on exactement le même mot.
+
+Exactement.
+
+Rémy Cassagne (54:54.25)
+Ouais la flatlist qui ramait euh... Oui non, enfin j'ai essayé de sur la flashlist de Shopify, ça a réglé les choses vite fait mais sans plus, même si c'est plus optimisé, plus recommandé, etc. Du coup je l'ai gardé, mais c'est pas ça qui a changé les choses quoi.
+
+David Leuliette (54:57.031)
+Parce que ça se peut que ce soit ça aussi en Ouais.
+
+On est pas trop.
+
+David Leuliette (55:09.471)
+Non, bah mais c'est vraiment... Trouver... De façon, c'est toujours pareil. C'est trouver d'où ça vient. C'est soit le DNS, soit c'est le backend, soit c'est... Généralement, c'est vrai que c'est pas RegNativePure qui fait que le fameux... C'est Flashlist qui fait rammer... Enfin, c'est Flatlist, pardon, qui fait rammer. Faut utiliser Flashlist. Ou Legendlist. C'est pas si simple que ça, en fait. Ça peut venir de plein d'endroits différents, genre là, bah juste pagination et puis terminé, quoi. Des chunks.
+
+Rémy Cassagne (55:16.27)
+...
+
+Rémy Cassagne (55:32.608)
+Non, merci.
+
+David Leuliette (55:37.893)
+On adore, on adore. J'ai mis des chunks en place. Vas-y, va faire... J'en ferai un short de ce truc. Découvrez la nouvelle fonctionnalité de SuperBase. Les chunks pour vos listes de collections. Donc qu'est-ce que tu as appris grâce à Rack Native sur le développement logiciel en général que tu savais pas avant de commencer ?
+
+Rémy Cassagne (56:03.022)
+que je savais pas, je pense que c'est surtout l'UX qui est bien plus ou il faut être bien plus comment dire je trouve sur mobile attentif et il y a moins de comment dire de entre guillemets de conventions je trouve sur mobile qu'on pourrait avoir sur le genre des choses qui sont entre guillemets actées je sais pas comment expliquer
+
+David Leuliette (56:24.462)
+t'as moins de conventions, c'est-à-dire... j'ai l'impression qu'il en a plus, mais...
+
+Rémy Cassagne (56:32.206)
+savais pas comment expliquer.
+
+David Leuliette (56:33.871)
+Oui, c'est genre va dire un site web, on attend, il a un header, un footer, une navigation sur mobile, Snapchat, zéro UI. Tu peux, c'est vrai que moi je dirais oui, c'est moins acté, il a moins de normes entre guillemets, je dirais. Mais il y a quand même des patternes de navigation qu'il faut répliquer au niveau de l'OS tu vois.
+
+Rémy Cassagne (56:36.916)
+Ouais c'est ça exactement en terme de structure et tout. C'est... Ouais voilà.
+
+Rémy Cassagne (56:55.31)
+Ouais bien sûr, par exemple, sur ma vue liste d'une...
+
+sur la collection quand on est en mode list, un de mes bétatesteurs m'a fait remarquer qu'une application que lui il utilisait avant et qu'il a fermé, qui faisait à peu près la même chose que moi, on pouvait swiper l'item list pour soit la supprimer ou soit la voir en plus. Et ce truc là, du coup, je l'ai mis en place et j'ai eu, parce que j'ai intégré dans mon...
+
+sur mon app, un formulaire de report bug qui m'ouvre une issue sur mon repo GitHub directement et j'ai une notification comme ça quand un utilisateur veut remonter un bug plutôt que de m'envoyer un message en privé ou un mail, bah j'ai la notification GitHub et ça va plus vite, enfin je m'en rends plus vite. Et bref, et j'ai eu une issue comme ça qui a été ouverte lors de la release en mode, bah en mode list, on peut pas ouvrir la modal pour voir toutes les infos.
+
+Et j'étais là, bah si en fait faut juste swipe et t'as le bouton pour ça. Mais je suis d'accord que ça aurait été... Enfin, il aurait préféré de pouvoir juste cliquer sur l'item et que ça ouvre le truc. Sauf que j'ai galéré en terme... c'est... Enfin je sais même pas si c'est possible. Je pense que c'est possible mais juste j'ai galéré et je saurais pas comment le faire. Et en fait j'ai des événements qui s'entrechoquent du swipe ou du taper sur le truc. Et du coup ça... Il a du mal à comprendre qu'est-ce que l'utilisateur a envie de faire. bref. Au final, juste laisser le fait de
+
+David Leuliette (58:17.829)
+Ouais, c'est vrai.
+
+Rémy Cassagne (58:25.296)
+et puis voilà.
+
+David Leuliette (58:27.831)
+C'est quoi que tu utilises pour notifier directement de GitHub depuis l'app ?
+
+Rémy Cassagne (58:32.398)
+C'est l'API de Github. J'ouvre une issue avec mon compte depuis l'API de Github.
+
+David Leuliette (58:40.517)
+Ah ouais ok ouais, il t'a fait un formulaire ... Ok ok ok, ok, I see, I see I see. Ah ouais, smart. Je pensais que c'était...
+
+Rémy Cassagne (58:43.182)
+Merci ça.
+
+Rémy Cassagne (58:48.494)
+Mais en fait ça m'a aidé parce que quand j'avais mes 50 bêta testeurs, quand j'étais toujours en développement, eux ils testaient l'application pendant que j'étais en développement et pour me remonter les bugs c'était bien plus pratique et puis après en fonction des bugs je les ajoutais à mon Trello ou pas.
+
+David Leuliette (58:54.117)
+Right.
+
+David Leuliette (59:00.453)
+Bah oui.
+
+David Leuliette (59:04.197)
+Ouais ouais si, bah oui si c'est ça qu'il faut faire, t'as plein de services qui font ça, Shake to Bug, c'est un peu plus, ou là t'as tout la stack trace en fait, ou et où t'as Sentry aussi en fait, moi j'utilise Sentry, et ouais, bah normal.
+
+Rémy Cassagne (59:12.846)
+Ok, bon.
+
+Rémy Cassagne (59:17.626)
+J'ai mis Sentry mais un peu tard en fait, j'ai découvert ça un peu tard. J'ai trouvé ça peu lourd à mettre en place et à configurer. C'était un peu lourd oui et non. il y aurait eu beaucoup d'endroits où il aurait fallu que je mette des trucs pour trigger Sentry en fait.
+
+David Leuliette (59:27.768)
+Ouais c'est comme tout.
+
+David Leuliette (59:32.598)
+Ouais, faut mettre des loggers, moi je sais que j'en fous partout, de l'observabilité j'en mets... en fait les consoles log je les garde, on va dire plein de consoles log partout et je fais un logger et si je suis en dev sa console log, si je suis en prod sa go sentry et du coup j'ai une stack trace de toutes les actions qui sont passées avant
+
+Rémy Cassagne (59:46.51)
+Ok.
+
+Ah c'est smart ! faudrait que je fasse ça en place. Et du coup tu places par une fonction générale qui te gère les deux, qui est en fonction du log de où il vient. Ok, ok.
+
+David Leuliette (59:59.795)
+Ouais je t'envoie le... Je t'enverrai le fichier logger.ts et hop, t'as tout dedans et du coup...
+
+Rémy Cassagne (01:00:06.026)
+Ok merci. Ok ouais c'est smart, vous restez pas bêtes.
+
+David Leuliette (01:00:08.829)
+du coup ouais ça aide quoi parce qu'en fait on les connaît les diffuseurs après j'avoue il en a qui sont plein de bonne volonté mais il en a ça marche pas mais mec tu veux que tu veux généralement mais là ça va t'as pas de clients parce que moi je suis freelance généralement c'est les clients qui font ça marche pas mais ça marche pas ou donne moi du contexte s'il te plaît donc voilà c'est ça
+
+Rémy Cassagne (01:00:15.982)
+Ha ha !
+
+Rémy Cassagne (01:00:23.575)
+Oui, bien sûr,
+
+David Leuliette (01:00:35.125)
+Est-ce que... Du coup, vu que t'as tout appris sur le TAR, comment tu t'es formé à part... Oui, tu t'es pas formé, t'as tout découvert...
+
+Rémy Cassagne (01:00:42.158)
+Pour le mobile, j'ai tout découvert en sautage.
+
+David Leuliette (01:00:45.503)
+en allant diguer la documentation, tout ça. C'est quoi ton setup pour tester du coup en mobile ? T'as des trucs particuliers
+
+Rémy Cassagne (01:00:58.848)
+En mobile, j'ai mon téléphone à moi sur lequel, qui est un iPhone, je prends un build de développement iOS et pour tester pour Android, j'ai installé Android Studio et je me lance un simulateur Android en parallèle pour voir les changements en direct et être sûr que ça reste cohérent sur les deux.
+
+David Leuliette (01:01:07.939)
+Mmh.
+
+David Leuliette (01:01:20.621)
+Ouais, que tu demandes à tes amis de quelqu'un s'il n'a pas un vieil IE Android qui ne sert plus. Parce que tu pourras avoir des surprises avec la caméra et le barcode scanner et que des fois la caméra... Parce qu'en fait en vrai sur iOS la caméra ça fonctionne, ça fonctionne pas ok normal parce que il a un hardware, un software. En fait sur Android vu qu'il a plusieurs caméras
+
+Rémy Cassagne (01:01:29.582)
+Allez !
+
+Ok.
+
+David Leuliette (01:01:49.195)
+ça se peut que ça fonctionne sur certains Android et sur d'autres non. Typiquement, moi j'avais déjà eu des problèmes, j'avais une app de scanner, pareil. Et donc ça scannait, tu revenais, écran noir.
+
+Rémy Cassagne (01:01:52.27)
+Ok.
+
+Rémy Cassagne (01:02:02.094)
+Ok.
+
+David Leuliette (01:02:03.331)
+et que sur... Certains androïdes, pas tous, forcément. Et alors ça pour savoir, trop chaud. Pour identifier, impossible. Et j'avais dû mettre un use effect, ils focusent screen, si le screen est focus, je remonte la caméra, enfin le composant caméra ou pas quoi. Donc One Day, quand on aura 1000€ de MRR... Ah bah non, c'est vrai, au début, on demande, on demande aux gens. Alors deux choses les amis, si vous avez...
+
+Rémy Cassagne (01:02:13.678)
+Je vous remercie.
+
+Rémy Cassagne (01:02:26.382)
+...
+
+David Leuliette (01:02:32.745)
+un vieil Android que vous n'en servez pas, Rémi sera ravi de lui trouver une nouvelle maison et contactez-nous pour tester l'application sur Android aussi comme ça on montrera le nombre d'useurs Android à ce sera...
+
+Rémy Cassagne (01:02:36.238)
+Ha ha ha !
+
+Rémy Cassagne (01:02:41.806)
+Ouais bien sûr.
+
+Je suis un peu plus de douce parce que du coup maintenant, enfin je trouve une solution pour parer ça, c'est qu'il a un subreddit qui est dédié à ça. Qui est dédié, tu partages ton application Android et les gens te testent. Et du coup il a un subreddit qui est dédié à ça. Alors attends, je te retrouve ça. Ah non, attends, je vais y aller sur mon téléphone, ça va être plus pratique. Parce que j'ai pas le même compte là.
+
+David Leuliette (01:02:50.035)
+ok.
+
+Ok.
+
+David Leuliette (01:02:56.895)
+Ok, c'est quoi le nom ?
+
+David Leuliette (01:03:02.498)
+C'est incroyable
+
+Rémy Cassagne (01:03:10.206)
+c'est tellement pratique, j'ai découvert ça, s'appelle Android Closet Testing. C'est aussi simple que ça, tout est dans le nom, parce que tu es obligé de faire des tests fermés pour Android à 12 utilisateurs qui ont l'app pendant 14 jours sans la désinstaller.
+
+David Leuliette (01:03:26.338)
+Ok on adore vas-y je... Android Closet
+
+Rémy Cassagne (01:03:28.478)
+Android, Closet Testing et du coup les gens partagent leur application, enfin le lien de leur application et le lien d'un groupe Google auquel rejoindre comme ça ils n'ont pas besoin de demander le mail de tout le monde et tous les gens du groupe, le groupe Google a forcément déjà les mails et puis voilà.
+
+David Leuliette (01:03:36.694)
+Oui.
+
+Ok.
+
+David Leuliette (01:03:45.378)
+Très bien, très bien. Moi des fois je joue des mails à ceux qui sont inscrits à la Expo Checklist et c'est pareil on arrive à faire ce que là mais là il y a plus de gens, plus rigolo, on adore. Est-ce qu'il a un sujet qu'on n'a pas abordé
+
+Rémy Cassagne (01:04:02.59)
+C'est une bonne question. Est-ce qu'il a un sujet qu'on n'a pas abordé ? Je crois pas.
+
+David Leuliette (01:04:07.34)
+Est-ce que la roadmap du coup, next, pour la suite ?
+
+Rémy Cassagne (01:04:10.426)
+La run map, c'est une bonne question la run map parce que pour le moment là cette semaine j'ai plus la tête dans mon test technique et j'avoue que j'ai pas trop pensé à la suite non si j'abuse la suite parce que pour le moment j'ai mis en place par exemple à très court terme des petits changements à faire à savoir pour le moment j'ai un système de notification en place sauf qu'il harcèle un peu l'utilisateur ça veut dire que quand un autre useur que je suis
+
+David Leuliette (01:04:18.639)
+bah ça c'est sûr là.
+
+Rémy Cassagne (01:04:40.719)
+ajoute une paire à sa collection, j'ai une notification. Mais à chaque fois qu'il ajoute une paire. Et généralement quand tu ajoutes ta collection, tu ajoutes toutes les paires que tu as dans ton placard. qui fait que, et vu que moi, pour me rendre compte de ça, vu que sur Super Bay j'ai accès à tous les noms d'utilisateurs, je m'amuse avec mon compte à suivre tous les users que je peux avoir. Et j'en ai un peu plus d'une centaine actuellement et je suis un peu content.
+
+David Leuliette (01:04:44.843)
+Ouais, beauf.
+
+Ah ouais ! J'avoue, j'avoue.
+
+David Leuliette (01:04:59.809)
+N'aie pas
+
+Rémy Cassagne (01:05:05.678)
+Et bah je... à moment je me suis mangé ça dans les dents. Toutes ces notifications qui ont pop d'un coup. Et j'étais là ok, chiant à régler. C'est un peu dans mes priorités là, faire de trucs à changer. Autre feature, ce qu'un bêta-testeur me demande depuis un moment, c'est de pouvoir exporter sa collection en CSV. Parce qu'il aimerait pouvoir la retrouver sur différents logiciels sur son PC ou quoi. Et que lui ça l'aiderait bien de pouvoir se l'exporter en CSV. Donc pourquoi pas, c'est un
+
+David Leuliette (01:05:27.713)
+Ok.
+
+Rémy Cassagne (01:05:35.632)
+Je pense pas que ça va être bien compliqué à faire.
+
+David Leuliette (01:05:39.319)
+ça exporte
+
+Bah avec Super Base non, à mon avis t'auras déjà un truc ou un Plug-In ou un Bachat
+
+Rémy Cassagne (01:05:46.158)
+Je pense pas que ça va être chiant à faire. Quoi d'autre ? Je suis en train de réfléchir. Quel truc que j'aimerais avoir que je m'étais dit.
+
+Je vais regarder vite faire mon Trello. Parce que je me suis fait un Trello pour ne me disperser. oui, j'ai fait une landing page pareil et il faudrait un jour que je trouve le moment. En fait, je l'ai fait avec Framer parce que du coup, forcément pour aller plus vite, etc. Je n'avais pas envie de me bloquer une semaine à me faire une landing page ou genre deux, trois jours à faire, etc. L'avantage, c'est qu'avec Framer, du coup, c'est un peu sexy, un peu d'animation et tout et c'est très facile à faire. Mais il est où ce Trello ? C'est horrible.
+
+David Leuliette (01:06:07.267)
+bah c'est sûr, sinon tu peux pas.
+
+David Leuliette (01:06:21.386)
+All right.
+
+Rémy Cassagne (01:06:31.978)
+Voilà. Et du coup, faudrait que je la recode parce que le SEO de Framer est horrible.
+
+David Leuliette (01:06:38.304)
+C'est exactement ce que j'allais dire. Framer ? Parce que du coup t'es prisonnier, t'es locataire de ton site web du coup. en vrai, le SEO et Web, c'est si tu veux aggro des gens, bah tu fais juste un site en GKILL, terminé quoi. Un scanner de QR code et puis voilà. Et ou tu fais une version web de ton app quoi. Enfin ton app tu la mets sur Web du coup. Mais après c'est toujours pareil. C'est pour l'instant t'es en mode conquête. Bon Framer ça fait le taf. Voilà je vais changer quoi. Mais euh...
+
+Rémy Cassagne (01:06:43.286)
+Ouais, et l'OSCIO est horrible.
+
+Rémy Cassagne (01:06:53.174)
+Noyé c'est ça ça.
+
+Rémy Cassagne (01:06:57.984)
+Ouais.
+
+Rémy Cassagne (01:07:08.242)
+Là j'ai regardé sur mon trédo les autres trucs que je mettais d'hôte, c'était juste histoire d'avoir un code un peu plus propre donc rien de fou. sinon en autre grosse feature, en fait là le business plan que j'ai avec ça derrière c'est de jamais faire payer les utilisateurs parce que c'est une application passion et que...
+
+Le code et ma passion, les sneakers sont ma passion, j'ai ma collection à moi et moi je conçois cette passion des sneakers un peu plus comme un truc en mode on se fait des passes décisives plutôt que de se faire des coups à l'envers et que les gens qui sont dans cette passion juste pour faire de l'achat aux ventes et de faire de l'argent j'ai toujours eu du mal avec ça mais du coup...
+
+Si j'ai du mal avec ça, je ne pas m'amuser à être limitant pour mes utilisateurs en mode tu ne mettre que 10 paires dans ta collection si tu as envie de mettre plus, il payer. Ça va un peu à l'encontre de mon éthique. Mais du coup, le business plan que j'ai trouvé pour un peu contrecarrer ça, c'est de faire payer les magasins physiques.
+
+David Leuliette (01:07:54.777)
+ouais, j'y vais.
+
+Rémy Cassagne (01:08:04.75)
+qui pourrait faire de la pub plus ciblée à travers l'application d'utilisateurs qui peuvent habiter près de chez eux ou pas forcément mais forcément des gens qui aiment les baskets donc ce sera forcément plus ciblé que de faire une pub sur insta où tu vas toucher 100 000 utilisateurs mais tu vas voir que 10 % de gens ont vraiment intéressé par le produit donc plus vendre le truc que comme ça
+
+David Leuliette (01:08:22.208)
+Ah oui, bah... Ouais, ouais, je vois, ouais, ouais... Bah tu nous diras, fais 20 boutiques avec ton passé de sales guy en réfrigérant un truc, bah c'est bon, vas-y. Prends 1000 prospectus. 5000, 5000 pour avoir 1000. C'est le mec de Manga Collect. C'était 5000 prospectus qu'il avait distribué à la Japan Expo pour avoir 1000 users sur son app de manga.
+
+Rémy Cassagne (01:08:35.0)
+Ouais c'est ça.
+
+Rémy Cassagne (01:08:41.688)
+Ouais.
+
+Rémy Cassagne (01:08:48.51)
+Ok. Ok stylé.
+
+David Leuliette (01:08:51.968)
+Mais pareil, était charbonné, je prends des prospectus et j'y vais un par un quoi. Donc là pareil avec les magasins, on faire 5000 magasins. Cool ! Est-ce que tu as une recommandation d'une personne que je devrais inviter ?
+
+Rémy Cassagne (01:08:57.038)
+...
+
+Ouais c'est ça.
+
+Rémy Cassagne (01:09:06.414)
+Hum... Je dirais Armand Petit qui est assez actif sur LinkedIn et qui m'a pas trop mal aidé. fait souvent des postes liés à React Native, Expo et aux librairies disponibles, etc. Et certains de ses postes sont toujours enregistrés. Il m'a fait découvrir pas mal de petites librairies, comme... Je me l'ai été noter là. React Native Keyboard Controller qui est assez pratique.
+
+David Leuliette (01:09:33.086)
+Ah oui ! Ah oui non mais ça... On fera un épisode exprès sur tout le gestion du keyboard parce que... C'est pas si facile en fait, c'est hyper compliqué le keyboard. Tu te dis... C'est normal en fait, le keyboard il s'affiche, voilà terminé, qu'est-ce qui peut avoir de compliqué ?
+
+Rémy Cassagne (01:09:35.808)
+Non mais enfin du coup j'imagine...
+
+Rémy Cassagne (01:09:47.146)
+Ouais, j'imagine.
+
+Rémy Cassagne (01:09:52.782)
+Mais du coup il qu'il soit bien aligné avec l'input que tu focus et tout, il que l'input reste visible à l'écran, tu peux mettre un bouton qui soit sticky en haut du keyboard etc et du coup cette libre simplifie vachement et que ça fonctionne sur les deux.
+
+David Leuliette (01:09:57.918)
+Oui. Oui.
+
+David Leuliette (01:10:03.129)
+C'est ça.
+
+et que ça fonctionne sur iOS et Android. qu'en fait, en vrai, la vraie raison, c'est que ça fonctionne pas pareil sur Android et iOS. Enfin, l'implémentation au niveau de la P.I. c'est pas la même. Et là, oui ! Là, oui ! Là, maintenant, oui ! Mais avant, non, en fait. du coup... En fait, en gros, cette librairie, c'est un merge des dix librairies de keyboards qui existent depuis le début de Rack Native, en fait. C'est ça, truc. Et chaque fois, ils ont pris des petits bouts et ils se sont dit, bon allez, gars, on arrête. On en fait une, et on fait celle-là. Et le mec, il fait les...
+
+Rémy Cassagne (01:10:13.198)
+Bah là, cette libre, c'est... Ils le vendent comme ça. Ils le vendent comme ça, Ouais, j'imagine.
+
+Rémy Cassagne (01:10:25.057)
+Ok. Ok, attention.
+
+Rémy Cassagne (01:10:30.35)
+Et on la fait bien quoi.
+
+David Leuliette (01:10:34.046)
+Ça me fait que je lui ai fait les 150 balles, crois que fais vas-y tiens, vas-y parce que ton travail est bien. Super transition.
+
+Rémy Cassagne (01:10:40.086)
+Tu m'étonnes. du coup, Arman Petit partage souvent sur ça, donc vraiment très intéressant.
+
+David Leuliette (01:10:47.785)
+Ok, bah c'est super parce que, enfin ça va revenir, c'est prochain épisode, c'est le 18 septembre. C'est trop bien que tu m'en parles parce que... bah si, je l'avais noté, bon bah super. C'est bon. Alors, m'en t'inquiète pas, je t'ai pas oublié. J'étais sûr en fait, mais c'est incroyable que t'en parles, c'est trop bien. Où est-ce qu'on peut te retrouver sur Internet ?
+
+Rémy Cassagne (01:10:59.822)
+Ha ha ha !
+
+...
+
+Rémy Cassagne (01:11:12.289)
+Sur LinkedIn, Rémi Kassang, Rémi avec un Y, je le répète encore une fois, j'y tiens. Et sinon, sur LinkedIn principalement.
+
+David Leuliette (01:11:20.062)
+...
+
+David Leuliette (01:11:23.634)
+Et n'oubliez pas de télécharger l'application Kixfolio. c'est Flexbox sur les internets Twitter, Blue Sky, GitHub. Pour retrouver tous les liens de l'émission, vous allez sur wishypit.today.com. Vous aurez accès à tout. N'oubliez pas de me donner 5 étoiles sur Spotify, comme ça je pourrai inviter d'autres gens comme Rémi.
+
+Rémy Cassagne (01:11:26.094)
+sur l'App Store exactement.
+
+Rémy Cassagne (01:11:45.966)
+On peut pas noter sur le podcast d'Apple ? Si ? Ok, Stoppez tout. Stoppez tout.
+
+David Leuliette (01:11:48.766)
+Si Si si t'appelles ouais ouais tu peux T'avais pas déjà noté ? Rhalala Il va le faire, regardez il va le faire maintenant Stopez Si vous faites quelque chose Stopez tout Et faites le maintenant J'attends Je vais le faire en même temps Tiens pour regarder combien de temps ça prend Normalement Normalement euh C'est bon mais Si si si c'est en bas je crois Faut scroller, doom scroller en bas 5 stars Voilà voilà La prochaine fois euh ouais
+
+Rémy Cassagne (01:12:12.878)
+Ok ouais.
+
+David Leuliette (01:12:18.738)
+On verra rarement, je sais pas de quoi il va parler, il va parler de quoi, à ton avis ? On va faire des bêtes, de quoi il va parler.
+
+Rémy Cassagne (01:12:24.19)
+Je ne pas du tout de quoi il va parler. que je l'ai eu en code la semaine dernière justement parce que je me posais des questions liées à mon business plan etc. Je voulais ouvrir la discussion sur le sujet et puis ça me permettait aussi de réfléchir à voix haute et pas parler qu'à mon chat. Et du coup...
+
+David Leuliette (01:12:33.615)
+Ok, trop bien.
+
+Rémy Cassagne (01:12:43.534)
+Lui il me que la dernière application qui la release, faisait un peu plus d'un an. Quand je lui en ai parlé, il a découvert le truc des 12 bêta testeurs chez Android. Il était même pas au courant. C'était un truc vraiment récent.
+
+David Leuliette (01:12:56.473)
+oui oui oui, bah c'est... C'est... Ouais c'est sûr, mais c'est ça le mobile, change tout le temps. Alors c'est sur les stores, alors tu te dis ok, mais en fait c'est les deux stores et du coup ça change tout le temps, c'est pour ça le mobile, c'est vraiment très très compliqué, tu te ouais c'est bon je release comme un site web, bah en fait pas du tout. Pas du tout. Ok ok, et ben merci si vous avez tenu jusque là et on se trouve à la prochaine, ciao à tous !
+
+Rémy Cassagne (01:13:06.904)
+Ouais.
+
+Rémy Cassagne (01:13:14.197)
+Ouais.
+

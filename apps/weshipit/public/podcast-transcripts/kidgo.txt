@@ -1,0 +1,1303 @@
+Ludwig (00:02.105)
+C'est parti, on est live. Bienvenue dans le cross-platform show. si vous essayez... On recommence. là là là là. Quand j'ai pas l'habitude encore. Donc bienvenue dans le...
+
+David Leuliette (00:10.993)
+C'est pas grave, on adore, on adore, adore, vas-y. T'inquiètes, y'a deux secondes de délai avec YouTube, du coup t'as le temps. Allez.
+
+Ludwig (00:18.973)
+Ah, parfait, On est reparti. Bienvenue dans le Cross Platform Show, épisode spécial où on inverse les rôles. Au lieu d'interview V, un invité. Aujourd'hui, David passe de l'autre côté du micro et c'est moi qui vais l'interview V. Je suis Ludwig. Je ne travaillais pas pour Wishy Pit. Alors aujourd'hui, on va parler un peu du parcours de l'animateur du Cross Platform Show. Un parcours un peu...
+
+typique je dirais parce qu'il a un côté indie hacking, freelance, développeur React Native, spécialiste de l'optimisation et l'automatisation, un parcours assez riche. Mais avant ça, on pense à mettre cinq étoiles sur Spotify et Apple Podcasts et on n'hésite pas à partager ce live avec ses copains développeurs React Native. Bref, David.
+
+David Leuliette (00:47.963)
+typique, là là, c'est bon, c'est bon.
+
+David Leuliette (01:11.648)
+peut partager avec les développeurs flutters aussi, moi j'ai pas de church C'est le cross-platform chaud tu vois
+
+Ludwig (01:11.833)
+Si on veut te connaître...
+
+Ludwig (01:16.529)
+C'est le cross-platform show, effectivement. Développeur Xamarin, si vous nous entendez, vous êtes les bienvenus aussi.
+
+David Leuliette (01:22.75)
+on pense à Big Up. sait que les gens qui faisaient du Windows Phone, étiez visionnaires, mais que dans un autre univers, c'est Windows qui a gagné et pas Apple. Voilà, Big Up à vous.
+
+Ludwig (01:34.65)
+Bon David, tu dis souvent qu'à l'époque tu étais webmaster, mais est-ce que tu peux nous en dire plus ? Qui es-tu ?
+
+David Leuliette (01:40.623)
+Ah ouais, webmaster, allez, bib, webmaster ! Webmaster, pourquoi ? Attends, mon premier taf c'était webmaster ? Si ! Alors Olivier Capra, il faut absolument que je l'envoie à Olivier Capra ensuite. vois ? Olivier, donc Olivier, merci de m'avoir pris en stage. J'ai bossé dans le cinéma, monsieur. Eh oui. Tu vois ?
+
+Gringe déchirait des tickets de cinéma et bien moi je mettais les horaires du ciné dans une databelle, au Frénois. Donc c'est un studio national des Arcs au Temporin à Roubaix au Tourcoing. Un des deux. ils ont des artistes, tous les ans ils faisaient panorama, ils font toujours d'ailleurs une exposition avec plein d'artistes. C'est des batchs en fait, c'est une école et chaque année il a un...
+
+Il y a des installations diverses et variées. moi j'étais pris en stage pour aider à monter ce site web là. Donc c'était principalement la collecteur feed de base de données avec PHP MyAdmin. Et Update Database de Cinema pour les horaires, ce genre de choses, des descriptions.
+
+Ludwig (02:53.248)
+Ok, PHP.
+
+David Leuliette (03:06.414)
+Et ça ouais, c'était Webmaster, peut dire ça, en 2000... Attends je regarde, c'était quand je faisais le libuté. c'était... C'était... Putain ça a doux, en 2007. Webmaster, voilà j'ai noté 2007 Webmaster. Updating Statutational Websites.
+
+Ludwig (03:31.573)
+D'accord, wetmaster. Et après il paraît que tu as eu un petit passif de développeur Ruby.
+
+David Leuliette (03:35.958)
+Et...
+
+Quoi ? J'ai pas entendu, ça a coupé.
+
+Ludwig (03:40.091)
+Si on continue la timeline du coup, donc tu étais webmaster, PHP MyAdmin, HTML, CSS. Après apparemment, t'as fait un peu de rubis.
+
+David Leuliette (03:45.455)
+Ouais ça c'était trois mois, trois mois, trois mois tu vois. Mais ça m'a mis un premier pied après ouais non ça c'était longtemps après ça. Entre deux j'ai eu la... non pas Lone Cani Valley, comment on dit ça ? T'as les early adopters et tu sais quand t'es au fond du trou là ? Non parce que... non mais en vrai c'était trop bien. Donc je fais webmaster, ok machin, on fait des sites en flash à l'époque, c'était les sites en flash que j'étais webmaster.
+
+Ludwig (04:04.86)
+Qu'est-ce qui s'est passé ?
+
+David Leuliette (04:15.538)
+Et donc, trop bien, un peu de PHP, tout ça. Et après, je fais une licence pro concepteur intégrateur web, ça s'appelle à l'époque, parce qu'il n'y avait pas d'école qui existait. là, l'école nulle parce que les programmes, pas chier, vois. Mais je fais quand même ça en alternance. Donc trop bien, me dirais génial. Et en fait, j'avais le choix entre bosser chez
+
+la redoute, ou bosser dans une banque. Rétrospectivement j'aurais peut-être dû bosser dans une banque parce que c'était horrible ! Franchement... Ouais non mais c'était... Oui carrément ! Non en vrai trop bien ! Mais c'était en 2008 et ils faisaient l'intégration d'emails en fait, donc le pire truc... Intégration d'emails et retouche de visuels. Trop chiant.
+
+Ludwig (04:53.811)
+redoute grande entreprise du nord de la France.
+
+Ludwig (05:08.282)
+D'ailleurs juste pour remettre le contexte, nos auditeurs ne le savent peut-être pas mais tu es Lillois, moi aussi je suis Lillois et c'est pour ça que tu parles de Tourcoing, Roubaix, La Redoute, là on est vraiment dans le contexte Nord Pas de Calais.
+
+David Leuliette (05:20.494)
+Ah ouais hein. Sachant que non, moi je venais à Calais, mais pas habité à Calais, donc j'ai dû migrer à la ville, tu vois, c'était waouh ! Je vais à la ville. Allez, Haut-de-France. Terre du Nord c'était mieux. Je sais pas ce qu'ils ont foutu. Quand ils ont rename le nom des régions, je sais plus en quelle année, il y avait Terre du Nord. Franchement c'était trop bien. Haut-de-France. En plus le logo il a encore coûté je sais pas combien. Bref.
+
+Ludwig (05:28.506)
+D'ailleurs maintenant on dit les Hauts de France.
+
+David Leuliette (05:49.803)
+Mais donc Webmaster, la redoute, mais ça c'était pas... c'était pas... enfin je faisais de l'update de visuels, retouche de visuels et en fait ce que je comprenais pas c'est que c'était la guerre entre les services, entre le catalogue papier et le catalogue web. En interne de la... ouais non mais en interne dans la boîte, en fait je comprenais pas, même tu vois il se faisait les opé, genre y'a un peu de...
+
+Ludwig (06:08.341)
+Tout ce que nous a le catalogue pas payé, ouais.
+
+David Leuliette (06:16.974)
+de silos, d'informations, enfin même moi c'était mon premier job j'avais capté ça et je fais mais c'est débile on bosse par la même boîte pourquoi ? puis en plus c'est con parce que c'était les leaders, enfin après je sais pas peut-être que ça va mieux maintenant mais c'était les leaders de la vente à distance je comprends pas pourquoi ils ont... Ouais mais ça s'est fait dans la souffrance en fait moi déjà quand j'avais l'époque je disais non mais faire des emails et que des images c'est de la merde et bizarrement ça passait pas bien
+
+Ludwig (06:35.705)
+ils sont digitalisés, ouais, c'est bon.
+
+David Leuliette (06:46.926)
+mais c'était avant l'iPhone et tout ça et moi je disais bah non en fait les emails c'est du texte on peut mettre des images mais pas que ça et en fait le brief c'était non faut mettre que des images et j'ai wikipedia il dit que les emails c'est du texte mais bon après donc après ouais mon alternance se termine j'ai failli même démissionner de mon alternance mais je me suis cassé la clavicule en skim board et donc il me restait plus que trop à moi faire j'ai fait bon allez
+
+Ludwig (07:12.825)
+...
+
+David Leuliette (07:17.538)
+Parce qu'en fait j'apprenais rien, c'était horrible. Et après j'ai fait d'autres jobs un peu random, on faisait du PHP, un peu à la con, code spaghetti, tout ça. il faut en remettre dans le contexte, il s'existait pas encore la ravel ou les frameworks un peu stylés. c'est vraiment, après j'ai fait du rubis, là on est en quelle année ? 2013, j'ai fait du rubis, du rails et git de façon sérieuse. Et là c'était, ah ouais mais c'est ça la programmation !
+
+C'est comme ça qu'on fait des sites web. Voilà, là je comprends mieux. Avant je comprenais rien, mais là tout s'est éclairé. Avant c'était de la bidouille et après...
+
+Ludwig (07:57.434)
+Comment t'as fait pour te former à tout ça Est-ce que t'étais un fidèle utilisateur du site du Zéro ? Tu connais Zozor ?
+
+David Leuliette (08:05.525)
+ça oui ! oui bah oui ça oui ! Quand c'était le site du zéro, pour mes cours de C et C++ à l'UT, j'utilisais le site du zéro. Mais après j'utilisais un site qui s'appelle SitePoint.com. en gros, les ai vire les trois quarts. J'achetais des livres parce qu'ils faisaient les soldes une fois par an.
+
+la collection d'avant ? Ouais je ne plus trop. Et en fait ils faisaient des gros bouquins genre Photography for the Web, How to design a page, How to design a form, ils te faisaient un bouquin sur les formules. Je sais pas si tu connais aussi Smashing magazine ?
+
+Ludwig (08:51.574)
+Ouais, ça me dit quelque chose.
+
+David Leuliette (08:52.815)
+Bah voilà, c'est tout ce truc là. Et moi, les bouquins SidePoint, je les achetais tous les ans, Smashing Magazine, pareil. Donc c'est pour ça que j'avais carrément un décalage entre ce que je voyais day to day à la redoute. Et où l'autre boîte où j'étais. Et vraiment, ce que je lisais dans les bouquins de Smashing Magazine, c'était genre, ouais, il a un grid system, il une typographie scale et tout. Puis j'arrive, je mais... Mais il n'y a pas de grid ? C'est quoi cette merde ? Pourquoi il n'y a pas de grid ?
+
+C'était les sites avant Bootstrap en fait, faut bien se remettre dans le contexte que 2012 Bootstrap... Je sais pas c'est quand la release date de Bootstrap mais...
+
+C'était pas encore vraiment sorti quoi. C'était 2011.
+
+Ludwig (09:36.536)
+du coup ce décalage entre la road-out et ce que tu as prenait sur le côté, donc il déclic et c'est parti Ruby on Rails et tu as bossé du coup dans le...
+
+David Leuliette (09:44.848)
+Ouais bah ouais là, là ouais ouais là, là je me suis rendu compte que j'avais du skill pas forcément. oui parce que c'est vrai je me suis fait virer pour la compétence. Et 6 mois après je remportais un award de meilleur développeur frontale de France avec un hackathon, à hackathon, les open du web ça s'appelait. Et euh...
+
+Voilà il avait des exos à faire voilà et j'ai fini premier en À ce truc.
+
+Ludwig (10:17.58)
+Donc on est vraiment sur un moment charnière quoi. Échec, licenciement, déclic, succès.
+
+David Leuliette (10:20.949)
+Et c'est là que j'ai compris que je ne pas fit dans toutes les organisations. La redoute, c'était que je n'ai pas kiffé. Après mes autres jobs, n'était pas ouf non plus. On me dit quand je suis incompétent et si moi après je remporte un award comme je suis le meilleur dev fontaine de France. Et en fait, ce n'est pas forcément moi. C'est juste après...
+
+Quand tu as plus d'XP tu l'apprends mais je pense que sais aussi quand tu montes une startup tu as besoin de profils que tu n'as pas forcément besoin d'un des grandes boîtes et inversement. Dans la vie d'un projet, au tout début tu as besoin d'un peu de généraliste après tu as besoin de spécialiste et en fait si tu un spécialiste qui arrive en early stage, le spécialiste va vouloir mettre en place des choses hyper égoureuses et tout, tu vas vouloir mettre Kubernetes alors qu'en fait on s'en fout, on fout une spreadsheet Google Sheet et ça fait le taf. Et donc l'expert il va être
+
+traiter d'incompétent alors que non c'est juste l'incompétence qui n'était pas utile à un moment T. Donc ça je l'ai compris après quoi.
+
+Ludwig (11:25.239)
+C'est bon.
+
+David Leuliette (11:30.607)
+Ouais voilà voilà donc là c'était en 2013-2015 donc là j'ai fait aussi Prof au wagon tout ça, Rebion Rail c'est trop cool et après en 2016 j'ai commencé à faire du mobile
+
+Ludwig (11:46.939)
+D'accord. Du coup, on peut voir un peu sur la timeline que tu viens de nous évoquer. Et puis ce que tu as dit aussi sur le fait de fêter ou pas dans une entreprise, ça t'a donné un peu un côté multicasquette parce que moi j'ai vu que tu étais freelance, étais développeur mobile, étais ingy hacker, étais papa. La légende dit que tu même écrit un livre et que tu fais des revenus passifs.
+
+David Leuliette (12:06.607)
+Ah oui ! Si, plusieurs ! Ah oui, je fais des revenus passifs. Ah oui, alors lesquels de revenus passifs ? On parle de Displate ?
+
+Ludwig (12:15.76)
+Je sais pas, mais du coup, explique-nous en fait ce côté indy hacker, freelancer... Qu'est-ce qui s'est passé du coup dans cette période pour acquérir toutes ces casquettes ?
+
+David Leuliette (12:25.295)
+Non mais tu veux savoir ce qui s'est passé ? C'est qu'à jour... mais à jour je me suis inscrit à Product Hunt et j'ai fait... Mais c'est génial ce truc ! Et après j'ai commencé à lire... Indie Hacker, site web.
+
+Et voilà, je pense que c'est curiosité savoir comment ça fonctionne, tu vois, et un peu essayer de maîtriser...
+
+David Leuliette (12:54.999)
+Ouais c'est vrai, le côté multi casquette, sais pas, je sais pas quand il un truc qui m'intéresse, je prends un sujet et hop je vais lire le wikipedia, après je vais prendre les livres, je vais lire tous les livres un par un, jusqu'à ce que je sache un peu maîtriser le sujet. donc si tu prends Product Hunt, pour ceux qui savent pas c'est un site où les gens lancent des...
+
+C'est peut-être un peu moins le cas maintenant, le but c'est de...
+
+David Leuliette (13:24.745)
+exemple j'ai KidGo, voilà mon application pour les darons qui n'ont pas le temps, je veux la promouvoir, je vais sur Product Hunt, je fais un launch, hop les gens vont voter et lire le meilleur produit de la journée. De la semaine. C'est par jour, par semaine et par mois. Et après c'est par an. Donc tu découvres plein d'outils stylés et moi j'ai commencé à dig ce truc là.
+
+Ludwig (13:52.278)
+Ok.
+
+David Leuliette (13:52.304)
+Et après je me suis dit comment ils font, après je suis allé me renseigner sur Indie Hacker. Donc Indie Hacker c'est comment faire des projets profitables sans lever des fonds.
+
+de façon indépendante pour build des business en ligne, principalement. Et après c'est un forum où tu lis des choses et en fait t'apprends comment lancer un produit, comment faire du marketing et tout ça et donc j'ai essayé de l'appli à plein de petits projets en fait. Donc qu'est-ce que j'ai fait ? ouais le truc des displays ! Displays pour ceux qui ne pas, c'est un site où on peut acheter des posters.
+
+de hyper qualité, poster en métal, avec des artistes que je respecte, des touches, alors moi j'ai pas de skill de...
+
+David Leuliette (14:44.047)
+d'illustration. Par contre la typographie, les règles et tout, connais. Et on va pas jouer sur la qualité, on va jouer sur la quantité. Donc ce que j'ai fait c'est que j'ai pris toutes les punchlines des rappeurs les plus connus. J'avais un script, j'avais mis ça dans une Google spreadsheet. J'avais un script pour dire à Figma, génère-moi X poster. Donc ça me générait, mettons, 50 posters, même taille. Blanc sur fond noir, une citation terminée.
+
+David Leuliette (15:17.007)
+Et après je les ai uploadé sur... sur Displate. Et Punchline de rap. Donc ma best punchline c'est... c'est... c'est laquelle ? Attends je crois que j'en ai vendu une autre, faut que j'y aille voir en même temps. Je joue Displate. Les miennes ? Je peux pas voir où c'est. Je crois que c'est Damso. Damso ou Relson ? Je ne sais plus, une des deux. Mais genre, on mettra le lien, si vous voulez une punch... ah une Displate.
+
+Ludwig (15:42.045)
+du coup on mettra le lien en commentaire
+
+David Leuliette (15:47.082)
+assez marrant blanc sur fournoir Orelsan voilà c'est possible et avec ça ouais je crois que j'ai dû me faire 1500 dollars un truc du genre je sais pas trop je
+
+Ludwig (16:01.593)
+Et du coup, cette histoire de livre, été édité par Gallimard, qu'est-ce qui s'est passé ?
+
+David Leuliette (16:06.407)
+ouais, mais l'olive alors attends ça c'était quand...
+
+plusieurs tentatives.
+
+Quand le webdesign est arrivé, avait pas trop d'articles sur le responsive webdesign et les gens ne comprenaient pas trop comment ça fonctionnait le webdesign. Et pas de ressources en français. Et quand je travaillais en agence web, je m'étais dit « vas-y, j'ai écrit un livre avec une méthode pour... » Parce qu'on vous voit, pour tous les conseils, en plus c'est un peu une check list, genre un guide de comment on fait pour que ton site devienne responsible, parce qu'il y a des règles à savoir.
+
+Parce que les gens au fond là, qui écrivent en lorem libsum, je vous vois. Et je vous méprise. Car quand on fait du lorem libsum, bah ça sert à rien. Autant pas le faire. Et encore en 2025, les gens, tu sais, quand ils font des maquettes et tout, on va mettre du lorem libsum. Bah non, qui sait qui a appris ce truc de merde ? Ça sert à rien. Si vous mettez une feature avec lorem libsum, boss sur le contenu texte du lorem libsum, au lieu de chipper la feature avec du texte...
+
+dans l'hypothèse qu'il aura un texte l'orim lipsum parce que dans la vérité c'est que soit t'as un titre qui fait, en plus en mobile on connaît, t'as un titre qui fait la taille du screen, soit il est sûr de lean, soit il va faire 10 lean et en fait ça change tout de comment tu présentes l'information.
+
+Ludwig (17:34.291)
+Tout à fait.
+
+David Leuliette (17:35.275)
+même sur les cartes ou quoi, vois, donc c'est pour ça je préfère bosser sur le texte. Et donc il avait plein de conseils comme ça que je donnais réussir la refonte de son site web, s'appelait. Et jamais publier parce que j'avais pas l'outil et j'ai fait un...
+
+J'ai fait un... Je crois que je n'avais pas fait un PDF. J'avais écrit la moitié du livre, je crois, et j'ai eu pu lire parce que pas le temps. Après deux habitérations, c'est... Donc mon livre sur React Native.
+
+Ludwig (18:12.787)
+T'as écrit un livre sur Ragnative ?
+
+David Leuliette (18:14.538)
+Ouais mais c'est euh... En gros c'est pour les...
+
+c'est un compagnon du bootcamp. Parce qu'en fait quand je donne des bootcamp, j'avais des gens qui n'avaient jamais fait de JavaScript et qui voulaient faire du Rack Native direct. Moi c'est ce que j'ai fait, à peu près, parce que je faisais du JavaScript mais du jQuery, vois, de la bidouille. C'est pas du vrai JavaScript. Et après quand je me suis dit vas-y, il faut que je fasse du vrai JavaScript correct, j'ai fait Rack Native, histoire de le pire chemin possible.
+
+Mais j'avais déjà un background, j'avais déjà fait de l'HumberJS, j'avais déjà fait plein de frameworks différents, donc ça va, des choses que je sais. Mais vraiment les aspects clés du langage, comment on un composant React, tu sais, Fatarro, parce qu'il a façons d'écrire une fonction, soit une fonction fléchée, soit une fonction normale, est-ce que t'as un early return, tout ça, comment tu fais un map, tu vois les trucs de base en fait. avec ça, le ZIS, le FA.
+
+Ludwig (19:15.321)
+le ZIS, les BIND.
+
+David Leuliette (19:19.056)
+les jeunes ne savent pas ce qu'ils sont codeurs depuis 2017, 2020 on va dire, mais le zis en JavaScript, vous savez pas ce que c'est ce truc. Et ben c'est un peu ça, ça a une compilation de les choses à savoir avant de dig ragnative en fait. Et je le donne à la fin, au début quand je donne des formations au bootcamp c'est un truc que je donne
+
+Ludwig (19:39.251)
+Ok.
+
+David Leuliette (19:45.637)
+début avant de faire le bootcamp comme ça je suis sûr que tout le monde est sur la même base et ça pour le coup j'avais utilisé Ulysse une app sur macOS pour écrire des... pour écrire sur le site web c'est écrit The Ultimate Rating App format qu'ipad et iphone je confirme expérience d'écriture trop bien parce que tu écris du Markdown et
+
+et tu fais un one-click, tu peux export en e-pub, e-book, enfin c'est vraiment un outil de publication.
+
+Ludwig (20:21.081)
+Ok, donc tu recommandes, plus lisse.
+
+David Leuliette (20:24.3)
+Ouais carrément, en vrai ça... trop bien. Et après j'avais fait celui sur Figma aussi mais...
+
+Et la pareille, tentative fail, because... le time. J'avais été contacté par... J'ai fait la moitié en fait. Par... Comment il s'appelle ? Un truc assez connu... Ouais, New Line. New Line, sorry. On pourrait écrire un livre pour comment automatiser Figma. Parce que je faisais déjà de la bidouille, c'était dans ma période où je faisais Displate.
+
+Je commençais à jouer avec la Pays de Figma direct, et je que c'était intéressant. En gros, ne s'est pas achievé parce que je ne passais pas assez de temps dans Figma. C'était pour vraiment connaître la Pays en fait. J'aurais pu, mais truc c'est qu'à l'époque je faisais plus du web, du React natif que du React. Je passais plus mon temps à faire du mobile qu'à vraiment faire du web.
+
+Ludwig (21:17.766)
+Ok.
+
+David Leuliette (21:33.584)
+Mais le plan est toujours là, le mindmap est dispo, a toujours plein de trucs mais en plus ça bougeait tellement vite qu'il fallait vraiment diguer la pays et en fait on peut pas tout faire. Donc voilà les tentatives de writing.
+
+Ludwig (21:51.64)
+du coup, recentrage sur le développement, développement mobile, création de Wipit. Tu peux nous pitcher Wipit ?
+
+David Leuliette (22:00.177)
+Ah, weshipit.today ! Pourquoi... Oh j'ai... Ah je l'ai jamais dit ? Ah je croyais que je l'avais dit dans les épisodes de Podcast ok. Pourquoi weshipit.today c'est vrai ? Bah c'est parce que... On était en coding retreat avec mes potes Indiehacker, Karl Matthys qui bossent avec moi. Et on était à Lisbonne et je sais plus c'était une blague, parce qu'on regardait... Silicon Valley ? Non attends. C'est la série ? C'est Silicon Valley ? Ok.
+
+Ludwig (22:25.617)
+La série, oui.
+
+David Leuliette (22:29.134)
+regarder cette série là puis je peux en taper des barres et à un moment Karl dit ouais mais quand est-ce qu'on ship ? bah on ship TODAY et je regarde je fais bah ouais et je regarde le nom de domaine weshipit.today est disponible bon bah ok je le prends paf et c'est comme ça que c'est né parce que j'en ai... cela fait depuis 2007 que je fais de... j'écris des livres d'ordinateurs donc écrire du code
+
+Et en fait répondre à la question quand est-ce que ça sort, on me l'a toujours posé et j'ai jamais su répondre. Donc maintenant la question c'est quand est-ce que ça sort, la réponse c'est aujourd'hui.
+
+Ludwig (23:04.816)
+Très bon mantra.
+
+David Leuliette (23:07.344)
+Voilà donc maintenant en fait on ship tous les jours. Et maintenant la question c'est plus qu'est-ce qu'on ship
+
+Ludwig (23:19.426)
+Ok, coup, toi t'as quoi comme casquette à Wishy-Pits ? Vous êtes combien ?
+
+David Leuliette (23:23.61)
+on est deux, y'a moi et Mathis et euh... et on...
+
+David Leuliette (23:33.809)
+Moi mon titre c'est CEO, donc je fais les trucs chiants, tous les trucs chiants et comme ça Matisse il peut faire 55 % de dev et moi 45 % parce qu'on a regardé les stats c'est Matisse qui bosse plus que moi pour les clients c'est 55-45 donc je tape le administratif et tout la partie acquisition tout ça et Matisse plus
+
+Ludwig (23:51.249)
+D'accord.
+
+David Leuliette (24:00.996)
+ça dépend en fait, c'est ce que j'ai dit hier à la crème dans un live sur comment aggro des clients on a plusieurs offres en fait et ça dépend de qu'est qui a besoin d'être fait tu vois, en a je sais que Matisse il peut le faire ou il y en a d'autres c'est moi qui le fais et après ça dépend aussi des dépôts de chacun quoi pour un unilatel planète tu c'est compliqué donc je dis toujours de quoi vous avez besoin
+
+J'ai pas vraiment... les projets React Native c'est... Bah tu dois savoir... C'est le chaos ! Je sais pas, t'as fait combien de boîtes différentes toi, de projets React Native à peu près ?
+
+Ludwig (24:36.173)
+Ha !
+
+Ludwig (24:41.474)
+De projets, peut-être une quinzaine au total maintenant. Beaucoup plus depuis que je suis en agence.
+
+David Leuliette (24:44.746)
+Ouais et donc combien, combien avait rien que l'organisation des dossiers pareils
+
+Ludwig (24:55.001)
+peu mis à part depuis que je suis en agence. Si on parle de folder structure, oui ça reste très personnel à chaque entreprise.
+
+David Leuliette (25:01.936)
+Ouais bah voilà... Ouais c'est ça quoi, c'est le chaos. C'est pour ça que je déteste. déteste. C'est bien mais c'est horrible aussi parce que à chaque fois t'es là tu vas... Pourquoi vous avez mis ça dans un dossier qui s'appelle service mais ça sert à rien ? Tu sens que les gens ils ont fait de l'angular avant. Tu vois ? Même si j'en ai pas fait depuis 2000... Attends, AngularJS c'était je sais pas quelle année, 2015 je crois. Tu sens que... Envie de mettre plein de dossiers. En fait on s'en fout, ça sert à rien.
+
+Donc ça c'est un avantage comme un inconvénient je trouve.
+
+Ludwig (25:40.943)
+Tu rentres dans la technique, tu as parlé de folder structure, on peut passer à ton stack React Native.
+
+David Leuliette (25:53.106)
+Alors là pour l'application, petit panorama pour l'application pour laquelle je travaille là. Ah ouais attends on fait quoi Bluetooth ou ? Parce que là je travaillais sur une stack Bluetooth. Non mais pour mon client, non non mais pour mon client, pour mon client là chez Nacon donc Gaming Industry on fait une app pour la R5.
+
+Ludwig (25:54.86)
+P'tit panorama.
+
+peux faire par topic si tu veux.
+
+Ludwig (26:10.133)
+Ok. Tu veux nous en parler ?
+
+David Leuliette (26:21.873)
+Revolution 5, pour une application PS5 mais après je pense que plus rigolo si je fais
+
+si je fais Kid Go.
+
+Ludwig (26:37.471)
+KitGo, c'est quoi ? C'est ton projet personnel ?
+
+David Leuliette (26:39.825)
+Ouais c'est ça, c'est l'application des darons qui ont pas le temps, le TripAdvisor mais juste pour les sorties avec les Voilà.
+
+Ludwig (26:49.045)
+D'accord, donc là tu as parti from scratch, c'est ta stack technique et pas de legacy à récupérer, c'est toi qui as tout défini.
+
+David Leuliette (26:55.409)
+oui bah Evergreen, ouais ouais bah oui parce que ça c'est bien, c'est vrai que les stacks un peu legacy où tu dois... même des certaines choses bah tu mets mille ans en fait, en vrai tu mets plus de temps. C'est pas compliqué, c'est pas con.
+
+Ludwig (27:11.553)
+Du coup, t'es daron, quitte-go, t'as pas le temps, qu'est-ce qui se passe sur cette application ?
+
+David Leuliette (27:16.657)
+Tu peux trouver les places dans lesquels
+
+Parle de pour l'instant ce que j'ai ou de la vision. La vision c'est que tu te connectes et que je me connecte à d'autres API, exemple la météo ou... la météo ou calendrier et je check en fonction de... bah oui là... tu peux aller au parc dans 10 minutes parce que la température extérieure est de 15°C. N'oublie pas un petit manteau. Tu vois ? Qui est pas de browsing et pas de décision. En fait le but c'est que tu utilises l'app le moins possible. Alors je sais pas si c'est une bonne idée ou pas.
+
+Mais c'est que t'es pas de watch time, vois, contrairement à YouTube. De que déjà ce soit dans l'efficacité quoi, pas de fureture, pas d'outboarding.
+
+Ludwig (28:02.254)
+Mais que tu gardes ton abonnement bien sûr.
+
+David Leuliette (28:04.945)
+Oui bah oui bah ça après on mettra revenu 4 pour le pricing tu vois on demandera ça on verra après mais le plan c'est vraiment j'ai pas d'idée faut que je fasse un truc maintenant paf instant et Alors qu'est ce que bah vas-y je vais prendre le package.json tu veux que je le fasse comment parce que package.json je le fais dans l'ordre je le fais
+
+Ludwig (28:25.039)
+On va commencer. Tu as fait ton application, on a compris peu le sujet. Design System, qu'est-ce que tu fais ? Comment tu fais ?
+
+David Leuliette (28:33.553)
+Alors attends, c'est quoi design ? Design c'est euh...
+
+Telwind, c'est native wind Telwind Telwind mais native wind
+
+Ludwig (28:45.975)
+Ok.
+
+David Leuliette (28:47.225)
+Native Wind, donc ce que ceux qui ne savent pas ce que c'est, c'est l'implémentation de tailwind en REC Native.
+
+Ludwig (28:58.958)
+Pourquoi t'es parti sur ça ?
+
+David Leuliette (29:01.297)
+Parce que il écouter l'épisode avec Kornikar. L'épisode du podcast avec Kornikar. J'ai plus Romain, je crois que c'est Romain. Déso Romain. Déso Romain si c'est pas Romain, je ne sais plus, plus sûr. Mais c'est l'épisode avec Kornikar. il a dit ouais en fait j'utilise ça parce que les LLM ils promptent, enfin ils autocomplitent mieux, parce qu'ils comprennent que c'est Tailwind. Et là j'ai... Hm, intéressant.
+
+Ludwig (29:05.486)
+Ha !
+
+Ludwig (29:29.493)
+Ok.
+
+David Leuliette (29:30.994)
+Et voilà, donc c'est vraiment choix complètement random, si il me fallait un truc, vais y aller, comme ça je peux tester aussi. Et là je me suis rendu compte que nativewind et nativewindui ça fonctionnait pas sur le web. Merde ! Ouais ! Bah pareil, c'est ce que je m'étais dit, je m'étais dit vas-y go, universellap, SEO et tout, machin, j'ai le plan en tête, I see what you mean. Et là j'ai shippé, enfin j'ai shippé le truc, et après je me dis, ah bah vas-y go, je vais utiliser expo.
+
+Ludwig (29:45.23)
+Ah c'est vrai ? Je vous avais dit que c'est un choix pour faire une universal app ?
+
+David Leuliette (30:02.097)
+Euh... Ouais Expo... Non mais leur service de hosting Ouais Expo Deploy, vous faites EAS Deploy et paf ça vous fait comme Verzel ou Netlify ou GitHub Edges du hosting directement, mais là c'était directement dans Expo Et en fait j'ai test, non, t'as une erreur de la moireté Mathis il saura, c'est euh...
+
+Ludwig (30:02.766)
+...
+
+David Leuliette (30:28.209)
+en plus j'utilise bun tous les trucs de cool kit je pas il fallait je m'étais dit vas-y go je mets bun parce que allez why not mais bon c'est pas vraiment la chose la plus importante mais l'erreur c'est importing native only module bla bla bla codegen native component rack native UI texte erreur et en fait je je ouais mélange un peu cryptique et un peu et je sais pas de où ça vient
+
+Ludwig (30:50.578)
+Ok, mélange un peu...
+
+David Leuliette (30:57.643)
+de nativewind ou nativewindui il a un truc dans la stack qui doit... parce que forcément ça je l'ai mis après, erreur, erreur si vous voulez faire vraiment une universelle app, priorité number one, mettre le CI, mettre un hello world, mettre des tests, mettre toute la machinerie pour que quand on push ça active ou... parce que quand on fait une PR ça build avant de tout faire parce que en fait
+
+Ludwig (30:58.131)
+Ok.
+
+Ludwig (31:14.23)
+et voir que ça fonctionne.
+
+David Leuliette (31:25.105)
+ça va être frustrant au tout début mais sinon vous allez faire comme moi dev hyper rapidement et après essayer de fixer des erreurs cryptiques que vous avez no fucking idea de où ça vient parce que je sais pas vraiment si c'est vraiment native wind ou si c'est native wind
+
+Je pense pas que ce soit la bottom shit de Gorom, Gorom Bottom Shit, je sais juste pas d'où ça vient en fait. Et pour répondre à la question design system, y en a pas, j'ai pas mis... si, j'ai mis Storybook, si, si, si, je l'ai mis un peu après. Parce que j'ai arrivé à un moment où il me fallait un variant...
+
+pour débugger quelque chose et je me suis dit vas-y. Au départ tu j'avais commencé, j'avais fait un screen avec tout dedans, un screen un peu caché et je mettais tous les composants dedans et à un moment je suis c'est bien mais c'est quand même chiant Storybook. Maintenant le setup en plus de Storybook il est hyper facile à mettre en place donc euh ouais ou alors c'est parce que je l'ai fait trop de fois et je sais exactement ce qu'il faut faire c'est peut-être ça aussi en fait je m'en rends pas compte. Je sais pas toi tu dis encore Storybook ?
+
+Ludwig (32:12.108)
+Ok.
+
+Ludwig (32:21.132)
+Tu recommandes. Si on a un design système à faire...
+
+Ludwig (32:30.576)
+J'ai déjà fait les deux moi aussi. De moins en moins pour être honnête. Il a encore paramétré sur un projet mais c'est vrai que maintenant j'ai un écran caché qui permet de render tous mes composants. c'est très vite fait mais après t'as pas tous les plugins que tu peux avoir sur Storybook. Mais majorité du temps on l'utilise pas forcément du coup. Un truc très simple, bête et méchant, une liste des composants, des variants.
+
+Tu mappes sur tes variants.
+
+David Leuliette (32:59.024)
+Ouais mais après tu... Ouais ouais, bah exactement c'est ce que je fais mais après tu commences pas à faire de la nave et tout pour avoir des screens différents.
+
+Ludwig (33:05.74)
+Je reste sur juste les composants plus atomiques, on ne pas sur des layouts complets. Effectivement, c'est assez de mythes.
+
+David Leuliette (33:16.242)
+Ouais moi je sais que j'arrive pas parce que d'un moment t'es dans le fichier tu dois chercher tout et là tu vas ah vas-y c'est quand même plus simple de l'éclater
+
+Vibre ou se faire pas, ça dépend.
+
+Ludwig (33:29.685)
+Ok, nativewind, storybook... Et du coup tu as dit que tu utilises Expo pour Expo Deploy, donc j'imagine que tu as goût strapper le projet avec le framework Expo plutôt que partir... j'allais dire... avec React Native CLI.
+
+David Leuliette (33:42.707)
+Ah ouais, non, moi je fais plus ça. J'arrête. Non, mais en 2025, faut arrêter. Après, si, en fait, ça dépend. C'est quoi le critère de succès et c'est qui la team et c'est quoi le budget. Là, je suis tout seul, je suis busy moi. Je n'ai pas commencé à gérer les certificats à la main. non, il faut que ça ship et expo, c'est vraiment... De toute façon, a 20 épisodes, non 16. Épisode quoi ? 17, je crois.
+
+qui peuvent confirmer que c'est très bien.
+
+Ludwig (34:19.14)
+un consensus tout le monde utilise expo, meilleur framework React Native.
+
+David Leuliette (34:21.362)
+Bah euh... oui.
+
+Exactement.
+
+Ludwig (34:26.536)
+Sauf peut-être que fait un épisode avec Sherlock.
+
+David Leuliette (34:32.378)
+Euh ouais, ouais c'est vrai, sont... ouais ils utilisent pas encore.
+
+Ludwig (34:37.087)
+Ils utilisent pas exprim son
+
+David Leuliette (34:38.77)
+Euh non non non non ils utilisent pas encore et euh...
+
+Et euh... Alors je sais plus si ils étaient en projet pour migrer. Je ne sais plus. Parce que après c'est toujours pareil quand t'as investi dedans et que t'es pas encore dessus. C'est toujours pareil mais après ils ont plus... Si demain ils veulent faire quelque chose de bien spécifique ou au moins... Bah non même pas parce qu'avec Expo maintenant tu peux vraiment tout faire en fait. J'étais en train de chercher.
+
+Ludwig (35:09.931)
+ce qu'il y a ici.
+
+David Leuliette (35:10.712)
+Pourquoi ne pas... Ouais ouais, un use case vraiment, peut-être avec macOS. Je sais pas si tu fais une app macOS. Est-ce que Expo, tu peux, mais après c'est toujours pareil, si tu mets ça un monoripo, y'a toujours moyen de t'extraire. Je pense, faut test. Mais là ouais, tout seul, pas le time, faut shipper. Faut shipper, on part là-dessus quoi.
+
+Ludwig (35:28.523)
+Ok.
+
+Ludwig (35:32.875)
+du coup, Expo pour le framework, State Management, comment les CoolKids font du State Management de nos jours.
+
+David Leuliette (35:40.399)
+Euh... Bah, moi, alors attends, mais moi, State Management, mais moi je connais tout, j'ai tout vu les amis ! J'ai vu... Attends, j'ai vu... J'ai vu... Moi j'ai vu... Attends, je vais... Je vais te faire toute l'histoire des State Management parce que... 7... Attends, c'était 7 States ? Ouais, c'était 7 States ! Tu sais l'appel de 7 States comme on l'utilise ?
+
+Ludwig (35:46.891)
+Donc tu fais encore du Redux ?
+
+Ludwig (36:09.706)
+State, le UState tu dire ?
+
+David Leuliette (36:14.266)
+Euuuuh... bah ouais ! Euuh... avant les Hooks
+
+Ludwig (36:18.694)
+Avant les Hooks, on faisait des ClassComponents et on avait un State dans le ClassComponent. C'est un objet au final.
+
+David Leuliette (36:22.149)
+non mais...
+
+David Leuliette (36:25.667)
+Avant le user state c'était set state, non ?
+
+Ludwig (36:28.892)
+et cette State, c'est à permettre de mettre à jour le State du Class Component et de trigger un Rewender.
+
+Là tu me forces à utiliser ma main.
+
+David Leuliette (36:37.202)
+Ouais c'est ça ouais. Ah bah ouais non mais j'y arrivais même pas, attends je suis en train de checker en même temps, je sais même pas... Bon bref, c'était pas pareil avant, c'était plus chiant. euh... Donc j'avais fait ça, après j'ai fait du Redux, après Redux, du...
+
+après là je sais plus ce que j'utilisais mais GraphQL, mais GraphQL moi ça m'a changé d'avis aussi, j'ai découvert ça, fait mais c'est génial avec Apollo et tout ça après j'ai reparti sur du Redux et en même temps je faisais du React Query, j'ai fait Méléga pour que j'utilise Redux et après là du coup en ce moment c'est Legend State en fait
+
+Donc pour le on est d'accord, on est pour le state côté client quoi, tout ce qui est toggle, tout ce qui est... Et pourquoi Legend State ? Parce que Jay il est cool, big up à Jay. C'est ça ouais. Et...
+
+Ludwig (37:39.012)
+La gestion de l'État...
+
+Ludwig (37:49.033)
+Jay c'est le créateur de Legend State
+
+Ludwig (37:54.825)
+du coup autant pour le stage global que local.
+
+David Leuliette (37:58.781)
+Ouais, bah oui. Oui, oui, bah oui, ça dépend pourquoi. C'est toujours pareil, ça dépend. Ça dépend pourquoi. Mais pourquoi Agents Aid ? Parce que c'est off-line et local first. c'est ça. Et donc, maintenant, toutes mes apps fonctionnent off-line puisque, en fait, une fois, j'étais dans l'avion, j'ouvre mon app de banque, qui commence par Rev-O, qui finit par LUT.
+
+Ludwig (38:01.669)
+fais encore du USTATE.
+
+Ludwig (38:17.523)
+Ok.
+
+David Leuliette (38:30.384)
+Et en fait j'avais les dates.
+
+Et là je me suis dit... Wouah... Bah non ! Enfin y'a rien qui fonctionnait mais enfin si, je pouvais faire des searches, j'avais un state local offline, mais déjà en 2015 je voulais déjà faire de l'offline quand je faisais
+
+Ludwig (38:34.249)
+fonctionner.
+
+David Leuliette (38:52.164)
+Cordova et PhoneGap et tout ça mais j'ai jamais eu le temps de diguer la chose. Et déjà de bas j'avais une appétence pour le offline en fait, je m'en documentais et tout ça, Saris Walker, tout bordel. Et quand j'ai vu que ouais les John State, donc il en a plein des State Library mais celle-là j'ai vraiment investigué la chose parce que c'est Offline First, voilà tout simplement. C'est un parti pris, ça peut pas marcher partout mais voilà moi c'est ce que je fais.
+
+Ludwig (39:16.2)
+Ok.
+
+Ludwig (39:21.166)
+et tu fais des fancy, genre tu t'arrives à synchroniser...
+
+David Leuliette (39:21.2)
+Moi c'est ce que je fais Offline First.
+
+David Leuliette (39:26.354)
+oui, avec Super Bass, Donc là, la stack de KidGo, il y a de la synchronisation off-line entre Legend State et Super Bass.
+
+Ludwig (39:35.108)
+Du coup, ça réconcilie les données, ça marche bien ? Tu conseilles ?
+
+David Leuliette (39:38.152)
+Euh... franchement c'est même mieux que ça marche bien ! Ça marche trop bien ! Parce que... attend... Ouais j'étais en train de bosser sur mon app là. Donc le backend, l'ai fait, ouais, backend de l'application KitGo, c'est SuperBase parce que pas le time, fais clic clic, hop, terminé. Euh...
+
+Et donc je mets, connecte mon SuperBase, tout ça, ça fonctionne. Je configure mon store pour qu'il observable et persus stasing. vois, il persiste les data en local. Voilà, tout marche. Super. Et après, je fais des observables et ça synchronise automatiquement. En peux try. En fait, tu plein d'options. Tu peux dire est ce que ça retry tout le temps? Est ce que je force le retry? Combien de fois je peux retry avant d'afficher un message d'erreur? Tout ça, franchement, c'est vraiment folie.
+
+quelle table je synch, parce que tu peux obliger de toutes les synchroniser, c'est vraiment folie.
+
+à un moment, donc en offline, j'ajoute des places, je fais ok, ça marche trop bien, je kill l'app, je relance l'app, ok super ma data elle en local sur mon téléphone, super, je regarde dans ma DB, je putain je comprends pas elle y pas, et là je commence à checker, je putain c'est pas possible, je comprends pas pourquoi, et en fait j'étais juste pas logé, mon token, je l'ai oublié, j'étais juste pas logé.
+
+Ludwig (40:55.368)
+...
+
+David Leuliette (41:13.223)
+et j'ai cherché pendant une heure pour que ça ne pas alors que en fait c'est première réplémentation, premier jet, je pas testé et en fait ça a fonctionné de base et quand je me suis logué sur mon app, hop là la data elle est remontée comme on dit comme les banquiers disent, la data ne remonte pas, là la data est remontée toute seule dès que je me suis logué avec mon code SuperBase que j'avais fait, hop ça s'est synchronisé tout seul sans que j'ai rien à faire en fait du coup j'ai cherché pendant une heure pour que ça marche pas mais en fait
+
+C'était simplement parce que j'étais pas logué côté user. Alors tout le code était bon en fait. Je me suis persuadé que c'était pas bon mais en fait, si. Donc ça fonctionne vraiment, c'est vraiment folie. ça, je mettrais...
+
+Ludwig (41:47.24)
+Ok.
+
+Ludwig (41:54.066)
+J'aurais dû dire Amen. La data est remontée au cloud, au ciel.
+
+David Leuliette (41:58.261)
+C'est ça, c'est exactement, je mettrai ça dans les notes de l'émission pour ceux que ça intéresse, pour comment faire de l'offline first avec Super Bass.
+
+Ludwig (42:05.849)
+bah moi je dis, peut-être le possible d'écrire un futur best-seller ebook.
+
+David Leuliette (42:11.707)
+Ouais je sais pas, j'ai pas le temps, je suis trop busy à écrire. Alors attends, est-ce que à l'âge de l'AI, écrire des bouquins tech, ça fonctionne toujours ?
+
+Ludwig (42:22.327)
+à ce que tu en achètes toujours.
+
+David Leuliette (42:26.287)
+Bah moi j'en achète mais après je les lis pas donc... Là le...
+
+Ludwig (42:29.702)
+c'est pas mal aussi !
+
+David Leuliette (42:33.649)
+Et je voyage plus.
+
+Ludwig (42:33.895)
+Donc il faut faire une belle couverture quoi. Si c'est pour être acheté mais pas pour être lu... C'est pour la bibliothèque.
+
+David Leuliette (42:37.411)
+Non, la couv' ça on s'en... Non, ouais, ouais, c'est ça, non mais la couv' on s'en fout, avant, avant c'est pas... Parce que je vivais à Londres du coup je voyagais tout le temps et donc j'achetais tout temps des bouquins parce que j'avais que ça à faire de lire. Mais maintenant, euh... Avec un bébé de trois ans, quand tu voyages, toi qui conduis, donc non, t'as plus... J'ai plus le temps de lire. Donc euh... Je... Je... Ouais, je suis en train regarder les livres que j'ai en bas là euh... Toujours pas lu.
+
+Ludwig (43:03.025)
+Bon alors du coup, on revient sur la stack, je saute. J'avais une question genre sur le côté Universal Lab, en me disant est-ce que tu fais du web et tout, tu peux nous en parler, mais on sait, ça fonctionne pas. Du coup je me dis...
+
+David Leuliette (43:13.416)
+ça fonctionne pas. Le plan c'est oui, le plan c'est d'en faire. Le plan ce serait oui mais...
+
+Ludwig (43:18.343)
+Mais t'en as déjà fait des Universal Apps qui fonctionnaient bien ? T'as pu faire ça avec des clients ?
+
+David Leuliette (43:23.705)
+oui ! bah oui quand j'ai fait l'app de banque pour les US, Mahalo Banking, donc c'était... En gros j'ai fait Shine, enfin j'ai fait... Ou Kanto, enfin j'ai fait un truc de genre... Tu sais une app mobile, en fait ils avaient personne pour faire un monoripo, ils avaient fait setup un monoripo avec Lerna. J'ai fait les gars... Faut pas faire ça du tout. En plus c'était avant que Lerna rachète... Euh non avant que Enix rachète Lerna, enfin rachète Kind of Oprea, le ownership...
+
+Ludwig (43:28.815)
+Ouais.
+
+Ludwig (43:35.751)
+Ok.
+
+Ludwig (43:50.022)
+Ok.
+
+David Leuliette (43:53.172)
+de la chose c'était en 2000 je sais plus combien et 2020 22 21 un truc du genre
+
+Ludwig (43:59.778)
+Du coup, était comment ton... C'était quoi comme technic pour faire le Universal App ? C'était du React Native Web ?
+
+David Leuliette (44:05.043)
+Moi j'ai arrivé, on arrête les conneries, on met NX pour toute la tooling, la machinerie, pour un monoripo partagé avec librairie de composants, ça. C'était React Native CLI, c'était Native Base, parce qu'ils avaient déjà commencé sur Native Base, du coup j'ai fait hmmm, bon, why not, not my choice but we need to start somewhere.
+
+Ludwig (44:25.51)
+Ok.
+
+David Leuliette (44:34.507)
+Redux et... Rack Native Web. On avait pas fait de NexJS en fait au avait... si, il y avait une admine en NexJS. Mais le site marketing, c'était juste en Rack Native Web. Si je m'en rappelle bien.
+
+Ludwig (44:49.26)
+D'accord, donc pas de solito, de metaframework...
+
+David Leuliette (44:52.761)
+Non, bah justement j'étais arrivé, je fais, il faut mettre solito, c'est ça, mais... à ton avis, pourquoi j'ai pas pu mettre en place solito ?
+
+Ludwig (45:03.184)
+bah je sais pas, tu veux nous dire ? Aucune idée.
+
+David Leuliette (45:06.099)
+Bah... Politique. Parce que les maquettes elles sont comme ça, du coup on va pas changer. Et maquettes sautent moutons. Tu vois, typiquement les maquettes, j'en parlais tout à l'heure, les gens ils savent pas c'était quoi le responsif en 2012, parce que sautent moutons. Tu sais genre, ça s'affiche comme ça sur téléphone, bah ça s'affiche comme ça sur desktop. Et entre deux, magie ! Tu vois, les composants changent de place, enfin les éléments de la page sont complètement de place. Mais en fait non, il y a une certaine logique de flux à avoir.
+
+Ludwig (45:13.753)
+D'accord.
+
+David Leuliette (45:36.692)
+peux pas faire de saute mouton en fait. Tu peux mais si tu as du SEO à faire en même temps, pas du piquet de content, ça devient très très compliqué. Là c'est pareil, il y avait des maquettes qui étaient faites sur le web et qui n'étaient pas les mêmes sur desktop. Donc on avait toutes les librairies shared, tous les composants shared.
+
+Ludwig (45:48.069)
+Ok.
+
+David Leuliette (46:01.681)
+mais les layouts, pas trop donc universal mais pas total en fait. La navigation c'est vraiment le... Mais je pense que si j'étais resté plus longtemps avec eux, j'aurais poussé le sujet, j'aurais fait mais non en fait on fait ça pis c'est tout. Y'a pas de... Peut-être qu'ils l'ont fait après en fait. Là j'en sais rien, faudrait que je recontacte... Lens, je vais recontacter.
+
+Ludwig (46:17.157)
+Ok.
+
+Ludwig (46:20.784)
+Est-ce que sur KidGo, a un peu de gamification, des petites animations ? C'est un peu shiny ou... Non ?
+
+David Leuliette (46:25.427)
+Y'a aucune... Rien du tout là. Là c'est... Là c'est... C'est minimaliste zen. Noir et blanc, terminé quoi. Y'a des emojis, y'a même pas d'image, c'est des emojis. Genre... Si, si. J'aimerais bien mettre en place ce genre de truc. Mais pour l'instant...
+
+Ludwig (46:35.237)
+C'est ça, vraiment.
+
+Ludwig (46:39.607)
+Et tu... Tu prendrais quoi comme lib' si tu dois en mettre en place ?
+
+David Leuliette (46:43.417)
+C'est même pas encore release, donc... Alors, qu'est-ce que... Moi je dis que ça arrête pas de prendre de libre, juste Line Path Animation. Moi ce que j'aime bien, c'est ce que fait l'UMA.
+
+Ludwig (46:56.005)
+Luma, c'est Nap...
+
+David Leuliette (46:57.327)
+Luma, trouve que c'est pas mal.
+
+C'est le concurrent à Meetup, enfin ils vont détruire des Meetup je pense, puisque Meetup depuis que ça a été racheté il n'y plus de...
+
+Il n'y a plus personne qui... Enfin, il n'y a plus personne, si, a encore du monde, mais... Ça marche de moins en moins. Ouais, le... Bah... Ça fait mille ans qu'on dit que le Numer Cool pour Meetup, à mes forces, c'est de constater que... Il est toujours là.
+
+Ludwig (47:14.757)
+Le navire coule.
+
+Ludwig (47:23.039)
+Là je suis sur la landing page de l'UMA et je me dis ! L'animation est ultra canon ! Et qu'est-ce qui se passe quand j'inspecte ? C'est une vidéo !
+
+David Leuliette (47:28.944)
+Ouais ?
+
+David Leuliette (47:32.729)
+ouais bah oui bah oui bah ça c'est sûr ça au bout d'un moment moi on ferait ça pareil je mettrais bien des gifs en home ça fait le taf en vrai mais donc ouais non je pense que ce serait plus minimaliste details ou small interaction tu vois si je devrais diguer le truc y'aurait pas vraiment de choses vraiment fancy comme exactement ce que je viens de mettre sur mon site web
+
+Ludwig (47:59.942)
+Tu utilises Reanimated pour faire ça ou des libres peu plus meta comme Mochi ?
+
+David Leuliette (48:05.012)
+ça non non je sais pas pour l'instant je suis pas encore là du tout donc j'ai pas encore fait du tout mon choix peut-être que ouais MoT ce serait pas mal faire des petits détails qui spark le joy avec plein de micro interactions
+
+Ludwig (48:20.855)
+Et Rai, as déjà testé ?
+
+David Leuliette (48:23.194)
+Non je connais mais j'ai jamais testé en Ça a l'air super.
+
+Ludwig (48:30.021)
+C'est l'arme secrète de Duelingo pour faire toutes ces animations de folie.
+
+David Leuliette (48:34.176)
+oui, bah oui, bah oui quand t'as des vrais designers. C'est pareil quand t'as une team bien et que t'as un peu de... Tu veux vraiment te démarquer des autres et que ça devienne une priorité, bah ouais carrément. Moi pour l'instant là avec Killgo la priorité c'est la data et sortir la V1 donc on n'a pas d'animation, pas de problème. C'est comme chez Wishy Petyoday. Chez Wishy Petyoday, vous allez sur le site, vous regardez le logo, voilà vous voyez où on met la priorité. Plot twist, y'a pas de logo donc pas de problème.
+
+Ludwig (48:57.603)
+Ok.
+
+Et...
+
+Très clair. Niveau API, tu n'utilises plus Apollo. Tu fais comment pour les API call ? Est-ce qu'il y a du GraphQL, OpenAPI ? C'est quoi les librairies que tu utilises pour le data fetching
+
+David Leuliette (49:04.372)
+...
+
+David Leuliette (49:24.628)
+C'est 10 stack query.
+
+Ludwig (49:30.317)
+un sac React Query. Ok.
+
+David Leuliette (49:33.62)
+Mais attends, il n'y a pas à recourir comment ça se fait ? Bah non, c'est juste super bass Comment ça se fait qu'il n'y pas... Attends...
+
+Ludwig (49:40.637)
+C'est ces Fetch Super Bass ?
+
+David Leuliette (49:45.044)
+Attends, je suis en train de check. GitHub API Const, Response.
+
+Attends, comment ça se fait qu'il pas...
+
+...
+
+David Leuliette (50:01.339)
+Bah non, je suis pas bé.
+
+Ludwig (50:04.291)
+Donc du coup tu des fonctions fetch et tu mets ça directement dans ton state de LegendState.
+
+David Leuliette (50:08.532)
+Non mais... En fait avec le SDK de SuperBased... ...Hos, get, places... là attend la magie, c'est de toute façon le code est open source si ça vous intéresse de comment j'ai fait. Mais je définis un observable. Je lui dis une collection, je fais un select étoile from quelque chose et hop. Je ne sais même pas. te jure je ne même pas comment ça fonctionne. Enfin je sais pas, si.
+
+Ludwig (50:33.643)
+Ok.
+
+David Leuliette (50:38.33)
+Mais je pense que ça doit être un fetch tout court, ça doit être opusqué dans le SDK de SuperBase.
+
+Ludwig (50:44.301)
+et à des getters, des setters qui font les fetchs et les mutations.
+
+David Leuliette (50:46.236)
+Ouais je pense que c'est ça. Mais moi j'ai toute l'abstraction qui fait que j'ai de la magie. j'ai pas encore eu besoin de mettre en place. C'est étonnant d'ailleurs.
+
+Ludwig (51:00.227)
+Et fait nous rêver, est-ce qu'avec toute cette magie, est tippé de bout en bout ?
+
+David Leuliette (51:05.076)
+Ah oui bah oui ! Bah en fait si je dois exemple, shippez places. Donc places c'est V1, V2 c'est events. Donc en fait j'aimerais bien mettre des events comme ça ça te pousse les events. Il y a le cirque qui arrivé en ville. Profitez ! Exactement tu vois on a la ref.
+
+Ludwig (51:06.275)
+C'est beau !
+
+Ludwig (51:23.581)
+à Champs-de-Mars, le Cirque.
+
+David Leuliette (51:28.724)
+Je vais dans le terminal, je Super Base Migration, new, paf, ça va me faire un fichier de migration, je vais dire à mon LLM préféré, créez moi une DB avec ces chants là, ces chants là, ces chants là, pouf, il va m'output automatiquement correctement la migration, puisque moi écrire la migration à la main, je sais pas, je suis pas dev backend, je sais pas que ça va faire.
+
+Après je fais un super base DB push. Une fois que ça c'est fait, pour générer les types, je fais super base gen typescript –project public schema database type.ts. Et hop, va automatiquement aller me mettre le schéma associé. Et après dans mon...
+
+dans mon Legend State Super Bass Sync, je récupère le type directement.
+
+Ludwig (52:27.362)
+Ok, super.
+
+David Leuliette (52:28.432)
+Donc tout est... est... Ouais tout flot quoi.
+
+Ludwig (52:35.402)
+Du coup, qu'est-ce qui nous reste après comme chose à définir dans ta stack ? On peut parler peut-être de tout ce qui est observabilité, bugs, tracking, des choses comme ça.
+
+David Leuliette (52:45.71)
+ça j'ai pas mis, j'ai même pas mis encore de scènes tri. J'aurais mis en plus quand je fais des audits c'est le premier truc que je diable qui ont. Observabilité et remontée de bugs. non mais c'est pareil c'est que c'est pas encore en prod, j'ai pas encore plein d'useurs donc en vrai euh...
+
+Ludwig (52:54.72)
+Voilà, du coup les cordonniers sont les plus bas de chaussée ?
+
+Ludwig (53:03.906)
+Tant que ce pas un besoin.
+
+David Leuliette (53:05.616)
+Ouais exactement, tant que c'est pas besoin ça sert à rien. Sinon j'aurais un logger sentry qui log tous mes try catch. Après là je vois pas comment le mettre en place parce que...
+
+David Leuliette (53:20.852)
+Où est-ce que je le fais ? Je ne pas parce que je fais un select star, il que je fasse des try catch, je peux même pas en fait. Comment ça fail ? Je ne pas, je n'ai pas encore la gestion d'erreur. En fait, tous ces trucs-là c'est génial mais c'est quand tu n'as pas quelque chose d'unifié. tu un backend, non mais tu quand tu as un backend qui je ne pas où, tu fais appel à un API un peu random et que tu n'as pas vraiment la doc et que tu ne pas comment ça fonctionne et que...
+
+Ludwig (53:34.921)
+Du coup, gestion d'air.
+
+Ludwig (53:43.905)
+Mmh.
+
+David Leuliette (53:44.725)
+il te renvoie un 200 erreur, mais tu fais ben non en fait c'est pas censé être vous ou 404, non il te renvoie un 200 notre farm, enfin tu vois. Non justement il te renvoie un 200 ok mais il a le message d'erreur il est dans le 200, enfin tu vois ce genre de choses de backend un peu obscur.
+
+Ludwig (54:01.281)
+tu fais comment là
+
+David Leuliette (54:03.044)
+Bah là tu mets un logger en place avec de l'observabilité et tout, des try-catch dans tous les sens pour vérifier de ce qui se passe et if response 200 ok mais qui a un message d'erreur et ben hop tu relog le truc parce que c'est une vraie erreur, t'as vu une 200 mais voilà, insupportable. Là tu mets ce genre de truc en place mais là en fait je pourrais même pas dire si je devrais parce que je pourrais même pas dire si c'est possible que y ait vraiment des erreurs puisque tout est bien synchronisé.
+
+Ludwig (54:17.313)
+Hum.
+
+Ludwig (54:29.569)
+Ouais, c'est pas sroy, ça sroie pas les erreurs, c'est ça que tu dis ?
+
+David Leuliette (54:32.56)
+Ben c'est pas que ça se repose les erreurs, c'est que tu peux pas en avoir. Vraiment de catastrophique. si ! Ce qu'il aurait c'est si je ship une nouvelle version, que je corrige... Non, que je fais une migration de la DB et que les gens ont encore l'ancienne version et que c'est pas encore roll-out partout. Donc là, devant, il faudrait que je mette en place un système pour vérifier que les gens ont la dernière version et forcer.
+
+Ludwig (54:45.79)
+breaking change.
+
+David Leuliette (55:01.902)
+une S-update. Ça, pareil, j'ai pas encore eu le problème, Mais non, non, observabilité, ça sert à fond, Mettez des logeurs partout, même pour vous. Moi là, dans le projet Bluetooth que j'ai, j'ai des logeurs dans tous les sens. Dès qu'il une action, je joue à Sentry. En plus, la nouvelle ration de Sentry, j'ai un peu de mal, mais là, c'est bon. Je trouve ça mieux. Et tu peux vraiment suivre tout le parcours de tout ce qui se passe.
+
+Ludwig (55:05.938)
+Ok, force update.
+
+Ludwig (55:26.656)
+Ok.
+
+David Leuliette (55:32.902)
+De toutes les erreurs,
+
+Ludwig (55:34.442)
+Ok. Tout n'a pas encore mis en place parce que tu n'as pas encore eu le besoin ou le projet n'est pas assez prémisse mais n'est pas encore livré en prod. Mais du coup, si tu avais des librairies no-brainer que tu mettrais en place au fur et mesure parce que tu sais que ça marche bien et que recommandes à tout le monde.
+
+David Leuliette (55:54.836)
+www.fuzz.js
+
+Ludwig (55:57.376)
+Je connais pas.
+
+David Leuliette (55:59.254)
+Ah ah ! Alors attendez, qu'est-ce que ça fait fuzz.js ?
+
+Ludwig (56:04.544)
+On est en 2e.
+
+David Leuliette (56:04.737)
+FUSSE.js C'est une powerful, lightweight, fuzzy search library with zero dependencies.
+
+parce que y'a une search et si on écrit
+
+Ludwig (56:24.0)
+Ok d'accord
+
+David Leuliette (56:26.677)
+on écrit.
+
+Parc ? Non, parc ça marche pas. Basket. Enfin ça avait la fuzzy search quoi. vois enfin les... Ouais, musée. Voilà, c'est écrit musée. Et que t'écris museux. Museux. Si t'écris museux, ça va pas fonctionner ta search. te dis que si tu mets du fuzzy search, ça va vérifier selon divers règles que tu mettre en place. Est-ce que le... Est-ce que le...
+
+Ludwig (56:42.32)
+Ok.
+
+Ludwig (56:52.384)
+Ok.
+
+David Leuliette (57:00.009)
+comment le poids du mot, quelle est l'importance du mot à chercher, combien de lettres tu check dans ce que tu rendes, dans quoi tu searches. Par exemple, moi la search, elle est sur le nom, la catégorie, la description et l'adresse dans cet ordre-là. Et t'as un score et ça calcule automatiquement pour rechercher des informations tout simplement.
+
+Ludwig (57:29.137)
+Ok, donc si on a besoin de faire une recherche simple et efficace, pas besoin de mettre un Algolia, fuzz...
+
+David Leuliette (57:32.213)
+Tu
+
+En vrai ça fait le taf, franchement là je récupère des infos de... en fait mon state est offline, du coup je cherche dans l'offline et ça va hyper vite Donc ouais, Algolia, enfin c'est toujours pareil, Algolia c'est stratosphérique, c'est génial si t'as des millions de records Mais là... J'en ai moins de 1000, je pense que Fuzz ça suffit... ça suffit quoi Ou pareil sur un... Tu peux avoir les deux en place, tu peux avoir Fuzz et Algolia Ouais je sais pas
+
+Ludwig (57:44.115)
+Ok.
+
+David Leuliette (58:04.949)
+Je sais pas si ça vaut le coup. que si Algolia si je me rappelle bien, j'ai pas essayé depuis longtemps mais il faut un index obligatoirement. il faut bien un index. tu vois genre si tu dois faire une search un peu locale sur les data que t'as en vrai mais que tu veux pas te faire chier à mettre un index, Algolia, tout ça, bah tu peux utiliser ça. Tu sais je peux avoir les deux quoi. Tu vas avoir genre ton main catalogue. Mettons que tu une app e-commerce, ton main catalogue sur Algolia. Et euh...
+
+ta recherche de last command en utilisant fuzz par exemple. vois ce que je veux dire ?
+
+Ludwig (58:39.455)
+Ah ouais, je vois. D'autres librairies comme ça de BrainH?
+
+David Leuliette (58:41.889)
+Euh... Voilà, après, qu'est-ce que... Expo aptx, les amis. Car nous sommes sur un téléphone.
+
+Ludwig (58:52.872)
+ok, c'est quoi ça C'est pour faire vibrer le téléphone ?
+
+David Leuliette (58:57.447)
+Ouais. Et moi c'est quand tu cliques sur Updates, quand tu cliques sur certaines interactions en fait, certains... En fait quand tu sais pas, c'est comme le logo C de Carrefour. Quand t'as jamais vu. Tu sais pas. Et quand tu le vois, tu peux plus t'empêcher de le voir. quand t'es enfant, quand on dit A, comme on dit dessin animé en anglais.
+
+tu te réponds que tu sais pas, elle en dit c'est un cartoon et là tu dis mais oui bien sûr, cartoon je connais, ben les aptics c'est pareil moi je que j'en mets des, ce qu'on disait tout à l'heure c'est des micro interactions donc genre quand une action réussit, enfin update, t'updates ton nom, action réussie on on affiche un toast ou pas je sais pas trop, faut voir et aptics
+
+A P'tit C'Feedback !
+
+Et...
+
+David Leuliette (01:00:03.739)
+Voilà, moi je le mets sur... si je l'avais mis sur le... Ouais pour l'UX ouais.
+
+Ludwig (01:00:04.634)
+Donc pour l'UX.
+
+David Leuliette (01:00:11.749)
+Qu'est qu'on pourrait avoir ? CVA ? CVA pour faire des Class Variants Authority pour faire des variants avec Tailwind parce que Tailwind avec Nativewind. En fait ceux qui détestent Tailwind je pense qu'ils sont pas assez outillés et ou ils font ça un peu à la main.
+
+Ludwig (01:00:19.839)
+avec
+
+David Leuliette (01:00:34.933)
+CVA ça permet vraiment de faire des variants trop faciles en fait.
+
+David Leuliette (01:00:43.917)
+on prend les boutons. on va prendre button. Mettons un button, on va faire un variant, on veut dire CVA variant primary et tu mets telle couleur, telle couleur, dark white terminé. Ensuite mon variant secondary il aura tel border, telle couleur.
+
+Ludwig (01:01:03.666)
+Donc ça permet de faire du conditionnel sur la string className de Tailwind.
+
+David Leuliette (01:01:09.461)
+En gros, j'ai une grappe donc CVA, j'ai mes variants, mon variant ça va être primary, secondaire, tonal, plain, whatever, ghost, tu débrouilles. T'as un autre niveau à ton variance à être size, donc tu SM, MD, LG, whatever. Après tu mets default, donc default c'est primary et MD. Et après ton bouton, comment tu l'affiches, ça va être button, variant, equals.
+
+variant size equals le nom de ce que tu as défini donc SM, MD, tout ça. Donc tu n'as pas besoin de mettre tes classes à rallonge tailwind et c'est assez éclaté donc par size et par style entre guillemets et après tu peux mettre un autre sub variant si tu veux. Vraiment c'est assez hyper flexible et moi je sais que j'utilise ça tout le temps
+
+Dès que je fais du tailwind en fait. Parce que c'est vrai que ça devient vite le bordel.
+
+Ludwig (01:02:09.444)
+et du coup, KitGo, c'est quoi l'objectif Redis sur les stores, t'as une deadline ?
+
+David Leuliette (01:02:15.518)
+bah c'était... Normalement ça devait être toujours... Enfin avant. Bah oui ! Today ! Mais ouais mais attends mais si je fais NPX Test Flight là y'a plus rien. Parce qu'en fait tu veux savoir ce qu'il s'est passé ? Jusqu'à 53 ça allait. Et je me suis dit bah vas-y je mets la 54.
+
+Ludwig (01:02:18.244)
+Aspa today, we ship it today.
+
+Ludwig (01:02:33.166)
+tiens, j'ai une question du coup, nouvelle architecture ou ancienne architecture ?
+
+David Leuliette (01:02:35.797)
+Ouais.
+
+non bah c'est Newark, bah ouais, pourquoi on va prendre que les trucs nouveaux, on va pas commencer à prendre les trucs anciens.
+
+Ludwig (01:02:46.32)
+Moi de mon côté j'ai des problèmes sur Android avec la nouvelle. Gros problème de performance, surtout avec les animations. Quand tu scrolls, tu veux synchroniser un scroll avec un élément que tu fais bouger de manière dynamique. C'est pas petits oignons. Pas encore.
+
+David Leuliette (01:02:51.734)
+Ah ouais ? Ah moi y'a pas d'animation. Ok, ah ouais !
+
+David Leuliette (01:03:03.996)
+Ok, moi j'ai pas encore eu le temps de tester.
+
+Attends mais je wrap up juste avant aussi qu'on passe à la suite, soner S O N N E R native pour le... les toasts. En fait, les toasts c'est un peu chiant les messages d'erreurs qui s'affichent. Enfin c'est pas chiant mais ça devient... faut vite afficher juste un message c'est bien mais des fois ça devient un peu compliqué faut deux lignes et des fois faut tu il un bouton d'action dans le toast. C'est chiant aussi.
+
+Genre, s'reau, tu fais un try catch, dans ton catch, tu displays un toast si erreur et dans ton toast, vas mettre, bah on a rencontré un problème, updatez vos taps, tap sur le bouton. Sonneur natif, folie, c'est le même que Blue Sky. J'étais curieux, j'ai été voir la stack de Blue Sky et j'étais curieux de savoir ce qu'ils regardaient, enfin ce qu'ils utilisaient pour les toasts, ils utilisent ça. Et pourquoi ?
+
+Ludwig (01:03:59.868)
+D'accord.
+
+David Leuliette (01:04:11.09)
+J'ai pris celui-là parce qu'il est assez customisable. peux mettre des boutons, texte, machin. aussi une feature qui est trop bien, c'est que tu as des promises. Donc tu fais toss pour un promise directement.
+
+Donc ça va se résoudre automatiquement et si tu as un loading success ou erreur, voilà, t'as pas de faire chier, faire tout ça à la main, c'est inclus dans la libra. Et je me dit, ouais mais ça c'est trop bien.
+
+Euuuuh... Ouvrez-le.
+
+Ludwig (01:04:49.58)
+Ok, super comme un petit libri no brainer. Là on parlait vite fait de la release de l'app, donc ce pas today, mais bientôt test flight apparemment. Parce qu'il n'y aurait pas une petite... !
+
+David Leuliette (01:05:01.631)
+ouais ouais, c'est déjà sur TestFlight, tu fais NPX TestFlight, boom c'est parti, c'était dans les premiers...
+
+Ludwig (01:05:08.72)
+Est-ce qu'il aurait pas un lien test flight à mettre pour les auditeurs afin de tester KidGo ?
+
+David Leuliette (01:05:13.264)
+C'est vrai faudrait que je mette... bah à bon chance les amis, il y a un...
+
+Ludwig (01:05:16.796)
+Ça tu vas avoir des feedbacks professionnels.
+
+David Leuliette (01:05:20.81)
+Ouais mais carrément, franchement en vrai j'ai remarqué un truc c'est qu'il a un bug avec expo router et les permissions de location. En gros moi tu arrives, je displaît deux tabs dès le début. Alors je sais pas si c'est avec le nouveau liquid glass ou pas. Parce qu'en fait j'arrive, paf, il y a un mon layout et...
+
+Ludwig (01:05:31.803)
+...
+
+David Leuliette (01:05:51.169)
+et j'affiche deux tabs. Et en gros, j'ai l'impression qu'il rerunder deux fois et la permission de mon location provider est top level. Et en fait, je ne pas pourquoi il me redemande deux fois la permission. Et ça, j'ai remarqué, c'est quand j'ai migré entre 53 et 54 que ça a cassé. Et alors, je ne pas du tout si c'est...
+
+à cause de l'export router, la façon dont on digère les nouveaux tabs, liquid glass, tout ça. Je ne pas du tout en fait.
+
+Ludwig (01:06:24.187)
+...
+
+Ludwig (01:06:27.673)
+Donc du coup le conseil ce serait d'attendre un peu avant de faire les upgrades avec Expo.
+
+David Leuliette (01:06:33.319)
+Non non non 54, si ça oui, mais les tables... les tables liquid glass, enfin c'est les nouveaux tables avec exporouter ouais c'est ça ouais peut-être attendre un petit peu
+
+Ludwig (01:06:42.639)
+iOS 26
+
+David Leuliette (01:06:50.038)
+Mais après, moi c'est parce que je suis tout seul dessus et je bosse un peu le soir et du coup des fois je fais nimp et je pète des trucs sans m'en rendre compte donc ça tombe c'est simplement moi qui fais nimp. voilà c'est ça quoi ça tombe ça fonctionne très bien. tu sais le fameux en plus quand t'es tout seul t'es en mode ah ouais tu fais ça tac tac tu commit, paf paf paf. Puis en plus tu commit tout sur main et au bout d'un moment tu fais ah ouais mais en fait j'ai fait 15 000 changements là je peux plus revenir en arrière.
+
+Du coup, faites des branches ! Toujours des branches, le conseil ce serait ça, faites des branches et des petits morceaux ! Exact, des petits morceaux hein, on fait pas Refactor... Refactor Untier Universe et hop là... Non non non.
+
+Ludwig (01:07:19.278)
+Ok. Dépêche-toi.
+
+Ludwig (01:07:26.112)
+comité atomique.
+
+Ludwig (01:07:33.604)
+Ok, bon, c'était cool du coup de parler de KitGo. Moi, il un dernier topic que j'aimerais bien aborder. Alors, pourquoi je vais aborder ce topic ? Parce que c'est un peu la façon dont on s'est rencontré. Moi, je suis développeur rargnatif d'à peu près maintenant une dizaine d'années et je crois que la première fois que je suis tombé sur ton handle, c'est parce que je devais installer une librairie qui gère les permissions.
+
+qui a été faite par notre ami Mathieu, ZoonTech sur Twitter et GitHub.
+
+David Leuliette (01:08:00.852)
+Ouais, C'était épisode 14, je crois si je ne m'abuse.
+
+Ludwig (01:08:07.578)
+Et même si les librairies de Bâtio sont extraordinaires, j'avais quelques petits problèmes pour la setup correctement sur mon app. Et après une recherche Google, je suis tombé sur ton blog.
+
+Je suis tombé sur ton blog où t'expliquais comment configurer React Native Permission à l'époque. Et de là, j'ai fait tiens, un Français qui fait du React Native mais qui communique, mais en plus il est Twitter, il sur Twitter, il est sur LinkedIn, il fait des sketch notes. Et je me suis dit, mais en fait le mec il fait quand même un peu de personal branding, il est présent un peu partout, dans les conférences, les meet-up, etc. Donc explique-nous un peu tout ça. Donc là il y a beaucoup de petits topics mais...
+
+David Leuliette (01:08:34.368)
+Oui.
+
+David Leuliette (01:08:46.422)
+oui, il faut envahir. Ben, floude, oui, c'est ça quoi. En fait j'étais freelance avant sans être freelance, sans le savoir. Mais euh...
+
+David Leuliette (01:08:59.446)
+En fait, le postulat de base c'est... J'écrivais des articles à l'époque sur des choses que j'apprends. Publish What You Learn. Ça c'est Brad Frost qui disait ça. Brad Frost pour ceux qui ont la ref.
+
+qui est très connu dans la sphère design et tout, et que je lisais dans la période Smash in Magazine, tout ça. Et un jour il a dit « ouais, publish What you learn ». Même si tu te dis « ouais, en fait c'est débile, tout monde le sait bah non, fait il a plein de gens qui ne le savent pas. Alors moi je faisais ça pour me dire « ah mais en fait c'est génial, je peux utiliser Google pour publier des articles que pour moi-même, que je vais retomber dessus dans un an parce que j'aurais oublié
+
+Et en fait c'est juste ça, c'est juste ça. C'est vraiment peut-être un peu moins maintenant parce que Google s'est devenu un peu un peu compliqué de... Mais avant c'était très facile surtout quand il n'y avait pas de littérature sur le sujet maintenant peut-être un peu plus mais de d'avoir son propre... Et en plus j'avais même un shortcut qui cherchait dans mes propres articles de blog sur mon site avec Alfred. Ouais je l'ai plus là.
+
+Ludwig (01:09:46.873)
+Génial !
+
+David Leuliette (01:10:15.35)
+Mais euh... Parce que je savais que j'avais déjà écrit quelque part. Et je savais que j'avais déjà écrit sur mon site. Et euh... que d'y chercher, paf ! J'écrivais un article de blog. Et euh... pour moi-même en fait.
+
+Et donc si ça marche pour moi c'est déjà bien, suis déjà mon propre mon propre éditeur, mon propre relecteur, mon propre fan. Mais simplement pour moi me retrouver. Si ça peut servir à quelqu'un d'autre dans la bataille, très bien. Et c'est pareil avec les sketchnotes, c'est pareil, c'est pour moi me rappeler un an après. oui mais ça je l'ai déjà vu, je me souviens. oui c'était telle conférence.
+
+disait Albert Einstein.
+
+Ludwig (01:11:05.045)
+Bernstein, grand développeur React Native.
+
+David Leuliette (01:11:08.75)
+très grand développeur de Rack Native, vous ne connaissez pas.
+
+Ludwig (01:11:17.463)
+C'est inventeur du comique atomique et du layout en position relative.
+
+David Leuliette (01:11:26.577)
+J'en ai plus à... Oh f...
+
+Ludwig (01:11:29.721)
+Wow !
+
+David Leuliette (01:11:30.966)
+Mais waouh alors là c'est bon on a le short, on a le short, on a le short je sais pas combien de temps ça fait mais oui. Non il disait don't memorize what you can read, for in a book. Ne mémorisez pas ce que vous pouvez rechercher dans un livre.
+
+Et en fait, j'ai suivi un peu la même logique. Je sais que je vais oublier, donc je les ai écrit quelque part et après je sais où les retrouver. Donc la boîte, j'arrive à les retrouver. Donc là c'était mon site web. Quand je fais des sketch notes, quand je vais en conférence, fais des sketch notes. Donc sketch notes, c'est papier crayon. By design. Parce que j'aime pas aller en conférence et ouvrir mon laptop. Parce que je vais me faire harponner par vampiriser le temps par quelque chose. Et si je vais en conférence, autant que je suive ce qu'il dit. Même si je comprends rien.
+
+Ça c'est le hack quand j'étais...
+
+Ludwig (01:12:26.033)
+Du coup, es actif en fait, tu n'es pas passif quand tu...
+
+David Leuliette (01:12:29.303)
+Ah bah non ! C'est ça l'intérêt. Quand j'étais en IUT, j'étais allé au FOSDEM, donc le Festival Open Source Free Open Source Software Development, un truc du genre. Donc une conférence sur l'open source à Bruxelles. j'ai voir des conférences de les gens qui font le noyau Linux.
+
+les systèmes de fichiers ext, sais pas quoi, comment les gens y font, ils mettiennent les databases, tout ça, c'est vraiment des sujets où je comprenais à moi, enfin si à la fin je passais mes temps dans la modula Rooms, allait, mais t'as vraiment des trucs sur les systèmes distribués, ça, hardcore.
+
+David Leuliette (01:13:28.215)
+rien mais je prenais quand même des notes tu vois et je faisais des sketch notes de sujets que j'essayais de comprendre en fait voilà et donc j'ai continué la logique quand je faisais du rec native enfin quand j'étais en conférence tech papier crayon on prend des notes illustrés parce que c'est plus rigolo et et voilà juste pour les mois les retrouver plus tard
+
+Ludwig (01:13:28.535)
+Ok. D'accord.
+
+Ludwig (01:13:51.991)
+très puissant pour le personnel d'handling parce que du coup un jour moi j'ai fait une conférence qui s'appelle App.js à Krakow, organisée par Expo et Software Mansion et genre en fait tout le monde connaît David, enfin tout le monde connaît Flexbox parce que tout monde est déjà tombé sur un poste sur un sketchnote extraordinaire
+
+David Leuliette (01:13:58.95)
+Allez-y.
+
+David Leuliette (01:14:06.584)
+Ouais... Ouais bah oui !
+
+David Leuliette (01:14:13.127)
+Ouais c'est ça ouais donc c'est mon moyen de euh... De hack, c'est vrai que bon je m'en rend pas compte en fait vu que je fais ça depuis toujours euh...
+
+Ludwig (01:14:22.679)
+Il me semble que tu même été invité à une conférence pour être officiellement le dessinateur sketch note de la conférence.
+
+David Leuliette (01:14:28.637)
+oui c'est vrai, c'est à React Helsinki, React Finland. Là pour l'instant ils font plus parce que voilà. Mais oui, il y a une année, j'étais deux années de suite. La première année j'avais été, bah pareil, j'avais été pour voir et le mec il te tombait sur moi et il m'avait déjà vu, il trop bien et tout. Et l'année d'après en j'avais été payé officiellement. Il m'avait pas tout défrayé, tu vois il m'avait juste filé, bah c'était déjà bien tu en vrai.
+
+J'avais pas payé le billet de la conf et il m'avait payé en plus. Et trop bien, trop bien, trop bien. Franchement si j'avais voulu pousser le truc j'aurais pu mais... pareil, l'univers, les planètes n'étaient pas alignées donc... J'ai pas poussé plus la chose.
+
+Ludwig (01:15:03.125)
+génial
+
+Ludwig (01:15:13.136)
+Comme quoi il faut donner pour recevoir.
+
+David Leuliette (01:15:17.203)
+ça c'est... ouais c'est vrai, ça veri dit quoi, j'avoue ça va pas tomber tout seul, faut charbonner, donner pour recevoir. Ouais ça c'est très bon très bonne quote.
+
+Ludwig (01:15:28.65)
+Et il a une légende que j'ai entendu qui dit que tu n'as jamais acheté un t-shirt par toi-même, que tous les t-shirts que tu portes viennent de conférences. Est-ce que c'est vrai ou pas ?
+
+David Leuliette (01:15:34.847)
+Non si j'achète les t-shirts par pack de 10, noirs, voilà tous le même, paf terminé, mais sinon y'a des t-shirts de conférence et oui à chaque fois...
+
+Depuis oui j'en ai beaucoup euh... J'ai beaucoup... Non les hoodies, les hoodies euh... Hoodies noirs euh... Non. Je voulais en acheter un recast et je me suis dit ouais pff... Non. En fait j'ai trop de t-shirts de geeks euh... Donc euh c'est bon mais... Mais cette légende est bien vraie. On va dire que cette légende est vraie.
+
+Ludwig (01:16:10.78)
+Ok. Et du coup, si tu une conférence à conseiller pour les développeurs React Native, ce serait laquelle ?
+
+David Leuliette (01:16:16.823)
+Ben là ce serait, appuyez à ce venez venez
+
+David Leuliette (01:16:23.987)
+ça dépend. Je vais répondre à vraie réponse de senior software engineer. Ça dépend. Quel est le critère de succès ? Quelle est la size de la team ? Et est-ce que vous voulez vraiment level up ou rester middle ?
+
+horrible horrible comme truc. mais en fait c'est genre pareil ça dépend, nous on a l'âge. Bah pas forcément aussi, ouais c'est un peu ça quoi, mais même si t'es nouveau en fait en vrai tu peux y appuyer S, mais là comme on part la semaine prochaine à Londres, tu vois c'est trop bien mais en vrai...
+
+Ludwig (01:16:50.324)
+citer de nouveau dans l'écosystème ou citer Seigneur.
+
+David Leuliette (01:17:06.103)
+Je sais pas...
+
+Ludwig (01:17:10.677)
+Effectivement, on est en novembre pour les auditeurs et la semaine prochaine on a la React Native London Conference qui est organisée par Theodo Haps.
+
+David Leuliette (01:17:13.526)
+Oui.
+
+David Leuliette (01:17:18.199)
+Do so.
+
+David Leuliette (01:17:23.415)
+Ouais, une journée. C'est vrai que je suis aussi sponsor de Ragnative Connection, tu vois. J'avais oublié. Coco Rico Big Up qui a lieu en France chaque année à peu près en avril. Donc c'est pareil, si vous êtes busy, vous n'avez pas le time, vous n'avez pas forcément une semaine à dédier à envoyer votre team qui fait du Ragnative en Pologne en mois de mai à peu près pour App.js.
+
+Ludwig (01:17:29.607)
+Cocorico !
+
+David Leuliette (01:17:51.03)
+Mais ça vaut quand le coup d'aller React Native Connection à Paris ou à RNL Conf à Londres en fait, ça dépend vraiment. Ou à React Universe. Ouais, si on est en France, allez voir React Native Connection en vrai. Big up à Greg. RNL Conf en novembre.
+
+Ludwig (01:17:55.221)
+Ok.
+
+Ludwig (01:18:01.717)
+Donc si on est en France, React Native Connection à Paris, Big Up à Grègue.
+
+Ludwig (01:18:15.434)
+Londres et si on veut vraiment deep dive et rencontrer toute la communauté, direction AbJS à Krakow.
+
+David Leuliette (01:18:16.306)
+à Londres.
+
+David Leuliette (01:18:21.304)
+Ouais c'est ça quand. je sais que chez Wishipit today, c'est by design. Nous optimisé pour aller en conféros. On en fait au moins 3 par an. Donc c'est pour ça qu'on est cutting edge niveau skills parce que moi je sais que avant je gagnais des billets de conf et je devais prendre une journée de congé pour y aller.
+
+Ceux qui me disaient... Je trouvais ça débile. Mais bon après, je comprends l'inverse aussi en tant que... Enfin non, je comprends pas en fait en vrai. Faut envoyer les gens en conférence et puis c'est tout. Ouais non mais... Bah ouais c'est ça quoi. En plus, ça évolue tout le temps donc en fait si tu te fermes pas un minimum, tu sauras pas quoi.
+
+Ludwig (01:19:03.7)
+C'est un investissement, c'est de la formation en interne.
+
+David Leuliette (01:19:19.394)
+On aura pas de nouveaux horizons.
+
+Ludwig (01:19:19.604)
+C'est vrai, c'est sinon pour un peu finir cet épisode, deux dernières questions. Qu'est-ce que tu prépares pour 2026 ? Est-ce qu'il a des projets, des choses ?
+
+David Leuliette (01:19:37.337)
+Ah ouais, voir 2026, faut... Quel niveau... Ah si, va... Il y a une offre d'emploi qui a pop sur le site. Ah non, que Gross Hacker, pas N8N et tout pour faire de l'automation, tout ça. Et aussi pour faire l'édit, la post-prod des podcasts. Parce que forcément, la pub... Tu vois, le pipe, il est... Je suis désolé. Désolé. Alors vas-y, je vais dire mes excuses publiques pour ceux qui ont tenu jusqu'ici.
+
+Je desodé Thibaut, Kim, Rémi, Armand et l'autre Rémi. Deso, les publications LinkedIn et tout. Si on a publié les shorts, mais vous êtes toujours step 4 dans le backlog. Normalement, y a step 5. Parce que si je publie sur.
+
+LinkedIn, tout ça les shorts. Et là en fait, j'ai carrément pas eu le temps. Vacances et tout, bébé, tout le bordel. non, faut quelqu'un qui m'aide là-dessus.
+
+Ludwig (01:20:33.273)
+Ok, donc futur projet, l'automatisation du podcast Cross Platform.
+
+David Leuliette (01:20:40.394)
+Ouais, on sait pas, automate, c'est scale up ça et ouais pour inviter quelqu'un qui met pour tous la post prod comme ça, et l'invitation des gens et tout. Comme ça on pourra...
+
+Ludwig (01:20:43.334)
+Comme en Scale.
+
+Ludwig (01:20:50.979)
+Ok. Pendant le podcast, quand même sorti beaucoup beaucoup de punchlines. Je dirais c'est quoi la punchline de David ?
+
+David Leuliette (01:20:56.098)
+Allez.
+
+La punchline de David... Ouais j'ai pas le time. Vraiment, j'ai pas le time. Pas le time pour ces conneries, allez hop. Chipit. Tu vois pas le time, chipit. Ouais, ce serait ça. Ce serait ça la punchline.
+
+Ludwig (01:21:02.011)
+J'ai pas le time.
+
+Chipper aujourd'hui ? Ok. Cool.
+
+Ludwig (01:21:12.659)
+Bon, bah où est-ce qu'on te suit David, du coup ?
+
+David Leuliette (01:21:16.52)
+Alors, où est-ce qu'on me suit ? sur... ouais, mais attends ! que là, c'est brainfuck, parce que là... Est-ce que c'est toi qui dis où on suit les liens du podcast ? Ou moi je dis... Non, c'est sûr, c'est sûr... non, c'est toi, c'est toi, c'est toi ! Non, c'est toi, c'est toi ! Moi c'est sur wifipeattoday.com podcast, sinon c'est flexbox sur les internets sur BlueSky et github et... X !
+
+Ludwig (01:21:26.515)
+Je te laisse finir le podcast. J'ai pris les clés mais je te les rends.
+
+David Leuliette (01:21:46.265)
+D'ailleurs Twitter apparemment le nom de domain va être disponible soon. C'est trop rigolo qu'il quelqu'un qui le rachète. C'est incroyable. Si... Si... Bah oui, bah pareil. Et si ce serait incroyable c'est que BlueSky rachète Twitter et que tous les liens redirectent vers BlueSky. Là ce serait ouf.
+
+Ludwig (01:21:54.051)
+J'avoue que je tape encore Twitter sur... pas X.
+
+Ludwig (01:22:06.34)
+Ok, donc flexbox.bsky.social pour BluSky. Flexbox avec un underscore à la fin pour Twitter. Sur GitHub, flexbox tout court.
+
+David Leuliette (01:22:12.84)
+oui c'est vrai oui.
+
+David Leuliette (01:22:19.308)
+Oui, non mais ça c'est parce qu'il faudrait que refine tout ça mais... On peut pas tout faire, on peut pas tout avoir.
+
+Ludwig (01:22:28.376)
+Après si vous voulez soutenir...
+
+David Leuliette (01:22:28.598)
+Et toi Ludwig on te retrouve... ouais si voulez soutenir l'émission n'oubliez pas de mettre un... Parce qu'on a découvert un nouveau hack, comment remonter dans Apple Podcasts, c'est mettre une review. Donc mettez juste n'importe quel texte. Bon mettez un texte sympa si vous trouvez que ça coule. Mettez moi ce que vous avez appris et quelle est votre librairie préférée en commentaire. Voilà comme ça je le lirai la prochaine fois. Et comme ça ça me permettra de remontrer...
+
+dans les chartes.
+
+Ludwig (01:23:02.098)
+Ok.
+
+David Leuliette (01:23:04.224)
+Et toi le dweeg on te retrouve sur internet.
+
+Ludwig (01:23:06.372)
+Vous pouvez me suivre sur xmohandles et ludwig-honderscore-van-2an sinon sur LinkedIn.
+
+David Leuliette (01:23:18.264)
+Parfait et prochain épisode. Alors là, un truc de fou. Pas Gabriel, désolé. Si Gabriel, va être un truc de fou aussi. Mais il en a encore un autre. J'ai réussi à sécuriser Julie. Oui, Julie de chez Neo Ads. Tu ne connais pas Neo Ads ? Elle est A.S.O. Consultante. Donc App Store... A.S.O. C'est quoi l'A.S.O ? L'Apple Store Optimization.
+
+Ludwig (01:23:30.141)
+Julie ?
+
+Ludwig (01:23:37.265)
+Non.
+
+Ludwig (01:23:48.434)
+intéressant.
+
+David Leuliette (01:23:49.688)
+Ça va être folie, franchement je trop content. Parce que ça va parler ads, acquisitions, parties que souvent les négliger, enfin pas souvent négliger mais pas souvent explorées par les développeurs atnative donc ce sera plus pour les indie hackers, peut-être pas, même si vous avez un gros projet et tout, toujours intéressant de savoir comment ça marche les ads.
+
+D'histoire.
+
+Ludwig (01:24:16.708)
+Très bien, merci beaucoup David pour cette interview. Je te rends les clés de ton podcast.
+
+David Leuliette (01:24:23.448)
+Eh bah merci à toi ! C'était très bien, non mais tu peux les garder comme ça tu feras le prochain pendant que moi je serai en vacances. Allez, ciao ! Bisous à tous, à la prochaine !
+
+Ludwig (01:24:34.418)
+S'il vous plaît, tchao tchao
+
