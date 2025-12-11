@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { PropsWithChildren } from 'react';
 
 export interface HeaderLinksProps {
@@ -18,6 +19,25 @@ import { Dialog, DialogPanel } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import LinkButton from '../button/link-button';
 
+function LogoToBrandPage() {
+  const router = useRouter();
+
+  const handleContextMenu = (e: React.MouseEvent) => {
+    e.preventDefault();
+    router.push('/brand');
+  };
+
+  return (
+    <Link
+      href="/"
+      className="-m-1.5 p-1.5 text-lg font-bold leading-6 dark:text-white"
+      onContextMenu={handleContextMenu}
+    >
+      weshipit<span className="text-slate-400">.today</span>
+    </Link>
+  );
+}
+
 export function Header({
   navigation,
   callToActionButton,
@@ -32,12 +52,7 @@ export function Header({
         className="mx-auto flex max-w-7xl items-center justify-between gap-x-6 p-6 lg:px-8"
       >
         <div className="flex lg:flex-1">
-          <Link
-            href="/"
-            className="-m-1.5 p-1.5 text-lg font-bold leading-6 dark:text-white"
-          >
-            weshipit<span className="text-slate-400">.today</span>
-          </Link>
+          <LogoToBrandPage />
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
           {navigation?.map((item) => (
@@ -93,12 +108,7 @@ export function Header({
         <div className="fixed inset-0 z-10" />
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white dark:bg-slate-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center gap-x-6">
-            <a
-              href="#"
-              className="-m-1.5 p-1.5 text-lg font-bold leading-6 dark:text-white"
-            >
-              weshipit<span className="text-slate-400">.today</span>
-            </a>
+            <LogoToBrandPage />
             {callToActionButton && (
               <LinkButton
                 href={callToActionButton.href}
