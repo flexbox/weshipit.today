@@ -17,11 +17,13 @@ export function PodcastEpisodeCard({ episode }: PodcastEpisodeCardProps) {
             <Text as="h3" variant="h3">
               {episode.name}
             </Text>
-            <img
-              src={episode.company_logo}
-              alt={`Logo ${episode.name}`}
-              className="w-14 h-14 rounded-xl object-cover shadow-md"
-            />
+            {episode.company_logo && (
+              <img
+                src={episode.company_logo}
+                alt={`Logo ${episode.name}`}
+                className="w-14 h-14 rounded-xl object-cover shadow-md"
+              />
+            )}
           </div>
 
           <div className="my-4">

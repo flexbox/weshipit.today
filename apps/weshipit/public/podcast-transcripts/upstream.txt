@@ -1,0 +1,1291 @@
+David Leuliette (00:01.838)
+C'est parti. T'étais pas à Londres la semaine dernière, Gabriel, ce que ce bordel.
+
+Gabriel (00:06.858)
+Non, j'étais pas à Londres. On fait pas forcément toutes les conférences. Bon, on a fait Cracow. On peut pas faire Londres aussi. Faut choisir ce bataille. Aussi.
+
+David Leuliette (00:13.87)
+Donc faut travailler, faut travailler au bout d'un moment. Moi c'est parce que quand je vois que la conf est annoncée, early bird, je prends les tickets et après je suis obligé d'y aller.
+
+Gabriel (00:28.324)
+Parce que vous avez passé la semaine là-bas ou juste les jours de la courbe?
+
+David Leuliette (00:32.174)
+Non, non, on a juste été le... les joueurs de la conf et j'y suis allé juste un jour avant avec Mathis et... y va un jour avant, on a demandé à tout monde, ouais, qui c'est qui est là ? Et tout le monde était, ouais non, on arrive deba. Et donc, on est reparti un jour avant, enfin est reparti avant l'after-party.
+
+Gabriel (00:51.402)
+oui. C'était quoi le jeudi, vendredi ?
+
+David Leuliette (00:54.424)
+Ouais c'était jeudi... jeudi vendredi, ouais workshop. attention ! J'ai ce super... je sais faire des apps TV maintenant avec Vega OS et on est reparti avec un Fire TV Stick 4K. Bought to you by Amazon. Euh oui il y avait un Toll qui avait un workshop aussi. euh... Et voilà au final on s'est retrouvé au workshop et euh... on est reparti avec un Fire Stick TV. Franchement stylé ! Stylé, stylé, stylé. Si vous voulez...
+
+Gabriel (01:06.695)
+J'ai vu ils ont fait un talk là-dessus.
+
+Gabriel (01:12.996)
+Ah il y a un suivant de Trump, j'avais pas dit...
+
+Gabriel (01:22.925)
+On attend ton app.
+
+David Leuliette (01:24.59)
+Ah ouais carrément, mon app de... de clip, de short de chat, pour les chats. Je ne sais pas. Je voir une niche. Est-ce que les gens qui ont un chien vous lui faites regarder la télé quand il neige et que la température extérieure est de 4° dans les Hauts-de-France comme en ce jeudi 20 novembre
+
+Gabriel (01:34.882)
+Bien business.
+
+Gabriel (01:45.748)
+Mon chien est dans le salon mais il dort.
+
+David Leuliette (01:48.002)
+! ben écoute, ce sera mon premier client pour l'app de clips de chien, whatever, VegaOS. Vous êtes bien sur le Cross Platform Show, l'émission dédiée au développement d'applications mobiles avec RecNative. Je suis David, développeur chez WishyPitToday. Aujourd'hui, Gabriel, qu'on a déjà vu une fois, on avait fait les présentations, mais je pense que tu peux te représenter pour ceux qui ne te connaissent pas encore.
+
+Gabriel (02:18.398)
+Déjà je comprends pas que tout monde n'ait pas écouté tous les épisodes...
+
+David Leuliette (02:21.57)
+Ouais ça c'est... Oui d'ailleurs, si vous n'êtes pas encore inscrit, claque ! oui ! Attends j'ai une annonce ! Il faut que... Donc celui qui lâche un commentaire sur Apple Podcast pour remonter dans le classement, je vais lui envoyer un T-shirt Expo. Parce que forcément j'étais en conférence et j'ai grab plein de merches. voilà. Tirage au sort prochainement.
+
+Voilà, vas-y je te laisse te présenter, vas-y vas-y.
+
+Gabriel (02:52.739)
+Je participerai. Moi, coup, Gabriel, 33 ans, région parisienne, à la toute base formation dans une école d'info en cinq ans. On a vu pas mal de choses, c'était assez généraliste, pas mal de langage bas niveau, plus haut niveau, un peu de réseau, un peu de tout. Et assez vite, je me suis spécialisé sur du web. Enfin, parce que c'est les stages, au final, que j'ai fait, les premières exp. Et j'en avais déjà fait un peu avant l'école.
+
+David Leuliette (03:21.704)
+C'était quoi ? C'était Effie Epitaque ? Non, Effie Co... Non. Superfaux, Superfaux... Paris...
+
+Gabriel (03:24.328)
+super info
+
+Il y avait avantage et inconvénient mais c'était pas dingue mais du coup je suis pas info Paris et j'avais fait une année à Londres.
+
+David Leuliette (03:32.75)
+Attends, tu peux pas faire pire que moi, c'est quoi les inconvénients ?
+
+Gabriel (03:39.875)
+Les cours étaient pas dingues, l'organisation c'était encore plus foireux, à chaque fois il se battre pour tout. C'était l'école de la débrouille quoi.
+
+David Leuliette (03:44.91)
+!
+
+David Leuliette (03:51.502)
+Ouais ok je vois un peu le délire quoi. t'es pas... y'a Big Up.
+
+Gabriel (03:55.299)
+À l'époque, ça me paraissait bien de faire une école, 5 ans, sortir avec un diplôme, te dire que ça servira à sur le CV, et tu te rends compte que dans notre domaine, c'est clairement pas ça qui compte. Si t'as des trucs à montrer, si t'es un peu doué, motivé, ça fait très bien de ta f...
+
+David Leuliette (04:08.398)
+Bah ouais quand c'était... Ouais c'est ça. C'était quand ? C'était en 2012 ou un truc du genre ? Ouais ouais avant ouais. Ouais ouais donc pas ouf. Pas la même époque. Exact. Exactement. Y'a William dans le chat qui est la big up à William. Pour ceux qui connaissent pas. D'ailleurs William t'es le prochain. Voilà on a décidé tu seras le prochain invité.
+
+Gabriel (04:15.586)
+Ou est-ce que ça a l'air ch...
+
+Par la même époque.
+
+Je ne pas si vieux mais pas à même époque.
+
+Gabriel (04:36.289)
+la penche.
+
+David Leuliette (04:36.408)
+euh voilà t'as pas le choix ok et donc tu fais du web en étude ou pas du tout
+
+Gabriel (04:42.946)
+Franchement sur les 5 années de cursus c'est extrêmement minoritaire le Du mobile on avait vite fait de l'objectif C, on avait fait un peu de Java.
+
+David Leuliette (04:54.286)
+ouais, tu es correcte. Ok, quand même.
+
+Gabriel (04:56.386)
+mais un peu de web et j'avais fait mes premiers stages là dessus donc j'avais continué. Quand j'ai commencé dans ma première boîte on a eu l'occasion de faire une app mobile. On avait des devs natifs mais on avait creusé les solutions cross-platformes et je sais toujours pas pourquoi mais on avait choisi de tester React Native alors que c'était assez early.
+
+Et depuis j'ai vachement accroché, depuis j'ai quasiment fait que ça, enfin un peu de web, un peu de backend à droite à gauche mais clairement à 90 % voire plus du temps, je fais du mobile quoi.
+
+David Leuliette (05:32.948)
+Donc vraiment, complètement random, c'est tombé dans ton feed de news... Est-ce que tu regardais des flux RSS sur iGoogle à l'époque ? non, c'est ça, c'est ça, c'était déjà mort, merde, c'était déjà mort ça ! je sais plus en quel AST c'était... Mais attends, Native, attends... Ouais, ça a plus de ces newsletters random ou... Tu sais plus trop quoi.
+
+Gabriel (05:40.077)
+non.
+
+Gabriel (05:49.089)
+la première fois... l'année où j'en avais fait je crois la première fois c'était en 2016 et après pourquoi on avait choisi ça plus qu'autre chose j'avoue je pourrais plus dire on avait regardé je crois c'était du Ionic ou du Cordoba en comparaison à l'époque on avait pris ça parce que sur le web on avait déjà des gars qui faisaient du réact moi j'avais déjà fait un peu de réact
+
+David Leuliette (06:07.586)
+Ouais. Ouais ça.
+
+Gabriel (06:16.061)
+Et depuis, ouais, à fond là-dessus.
+
+David Leuliette (06:20.818)
+Trop bien. Et aujourd'hui, sur quoi tu passes 80 % de ton temps
+
+Gabriel (06:28.449)
+Aujourd'hui, je fais que du développement mobile en freelance et j'accompagne des startups ou scale-ups pour soit lancer leur première app, soit renforcer les équipes parce qu'il faut accélérer, il y a bien du expertise particulière. Donc gros focus là-dessus.
+
+David Leuliette (06:54.132)
+C'est ça, et moi je suis non officiellement l'agent de Gabriel.
+
+Gabriel (06:57.601)
+Mais oui, un peu.
+
+David Leuliette (07:00.224)
+Fasse que, alors si vous vous contactez, voilà, et que les planètes sont en lignée, il y a une chance que je vous envoie Gabriel et que lui soit disponible et que hop ! Parce que ça fait déjà deux, trois fois, il me semble que je sais plus que je fais ça avec plaisir. ouais, Justement, j'étais en train de regarder et...
+
+Gabriel (07:11.121)
+il y eu Coccoli et UQlearn. Là où on a shipé l'app, on n'a pas appuyé sur le bouton mais elle est approuvée sur iOS Android.
+
+David Leuliette (07:25.23)
+Et donc si on rewind un petit peu dans ta carrière tech, c'est quoi le moment de bascule ? Est-ce que tu as une anecdote avec une date si possible ? Là tu t'es dit, ouais, c'est là je sens qu'il y a vraiment un changement dans ma carrière.
+
+Gabriel (07:45.008)
+En vrai c'est un peu ce qu'on disait, où ça a peu orienté le reste de la carrière, mais c'est le premier projet où j'ai testé le mobile et bon l'époque c'était encore un peu plus foireux que ça l'est Maintenant où c'était un peu bancal, c'était le tout début où il y avait quasiment que iOS, Android, marchait pas forcément bien sur React Native Mais je sais pas, il y a des interactions qui sont différentes sur le mobile, t'as une expérience... Enfin t'as accès à des API que en tout cas à l'époque t'avais pas sur le web. Tu peux faire quand même...
+
+pas mal de choses et tu tiens l'objet dans les mains quoi. Tu peux faire de la IOT si tu veux, peux utiliser la caméra, peux utiliser... Regarder, tout connecter aux API pour la santé, voir le nombre de pas, tout ça... Enfin en tout cas pour moi c'est beaucoup plus sympa de développer sur du mobile et c'est cette première expérience un peu qui m'a fait chavirer de l'autre côté.
+
+David Leuliette (08:35.086)
+C'est clair que la première fois que tu download expo, tu lances la caméra et que tu fais import camera, from camera, button, open camera et que ça marche, tu fais waouh ! En quatre lignes !
+
+Gabriel (08:42.46)
+Ouais, surtout maintenant tu te mets avec Expo, tu choppes ils ont quand même un paquet d'API built-in et c'est quand même beaucoup plus simple.
+
+David Leuliette (08:48.216)
+oui. oui. Après tu fais NPX... Tu veux dans le terminal tu fais NPX TestFlight. Boom, t'es sur TestFlight et launch.dev. Paf, t'es sur les stores en...
+
+Gabriel (08:58.975)
+Avant il fallait faire ton fastlane ça a marché mais c'était un peu plus de setup, pas la facilité expo, il gérer le natif natif. Mais ça a même beaucoup évolué dans la bonne direction.
+
+David Leuliette (09:15.678)
+C'est quoi la dernière fois que tu t'es dit « waouh c'est incroyable d'être développeur en 2025 »
+
+Gabriel (09:24.48)
+Du coup, est-ce que en 2025 que la dernière fois que je me suis dit ça Je ne pas.
+
+David Leuliette (09:28.994)
+ouais t'as pas de WoWomans c'est fini ça, on est déjà des vieux...
+
+Gabriel (09:31.135)
+Bah si, bah en vrai en moment oua mais c'est pas forcément... Si c'est un peu lié à la tech mais j'avais bossé je sais plus quand je suis très mauvais sur les dates mais pour Reviz et c'est bon pour simplifier un peu c'est un TikTok mais qu'avec du contenu éducatif tu dis que t'es admettons en troisième si t'as des spécialités enfin du coup le cursus se change toujours mais si t'as des spécialités particulières ça te met que du contenu lié à ton année en cours
+
+du coup on a développé ça avec des vidéos pour mieux comprendre les trucs, pour faire des quizzes, pour veiller des thésakis et c'est vrai qu'à la fin quand t'as les étudiants qui t'envoient des messages soit en direct soit sur restore pour dire j'ai une meilleure note, j'ai réussi mon année, il a des trucs que j'ai réussi à comprendre alors qu'en cours j'ai jamais compris c'est quand même cool de dire que t'as buildé un produit et qu'il a quelqu'un qui s'en sert derrière et que ça... bon on va pas dire changer sa vie mais c'est quand même...
+
+un peu game changer pour certains. Par exemple j'ai fait d'autres rap ou bon c'est cool, il a un intérêt mais tu... Ouais t'as pas le même impact.
+
+David Leuliette (10:33.071)
+Ouais l'audience, ouais c'est sûr que si t'es en mode vas-y je vais faire une app, c'était quoi ? Pour le Covid avec Expo, tu sais les mecs ils fait ça avec eux, je crois qu'on était à FGS à ce moment-là. Direct il est passé de zéro à plein de millions d'useurs, et là tu fais ok ouais, c'est pas crud.
+
+Gabriel (10:48.894)
+Bye !
+
+Quand tu résous vraiment une problématique, c'est quand même assez cool de voir ce que tu fait, devient tangible et que c'est vraiment utilisé et pas une application en random qui n'a pas vraiment un besoin hyper clair.
+
+David Leuliette (11:07.777)
+Ouais ouais, je vois, Là, on va parler de l'application sur laquelle tu travailles, qui s'appelle Oreo Upstream.
+
+Est-ce que tu peux nous pitcher la version marketing et la version développeur ? Donc on va passer par le pitch marketing, vas-y dis-nous. Qu'est-ce que ça fait upstream ?
+
+Gabriel (11:36.286)
+De façon elle n'est pas lancée officiellement donc il a pas forcément de pitch marketing pour l'instant. on est en train de... Enfin la version web elle est déjà, il a des gens qui sont en train border et tout mais c'est manuellement. Enfin il y a une invite list et les apps on est en train de les builder sur mobile. Mais dans l'idée upstream c'est un client mail qui se connecte, qui fonctionne que avec Gmail. Enfin les comptes en regard de Gmail.
+
+David Leuliette (11:41.816)
+le DotA... euh ok ok ok vas-y
+
+David Leuliette (11:48.335)
+Ouais. Ok. Ok.
+
+Gabriel (12:06.919)
+et le but c'est d'organiser ton inbox, que tu peux avoir sur d'autres types d'applications comme Superhuman, toi je crois que tu utilises Shortwave.
+
+David Leuliette (12:16.013)
+Moi j'ai dit shortwave, parce que folie... En fait moi, jadis, j'utilisais Google Inbox et depuis je déteste Google d'avoir tué cette UI qui fait simplement du GTD. Donc Don, Boons et To Do. Et que ça bundle les emails correctement et que quand j'appuie sur un bouton, que quand j'ai un avion ou un... Peut-être qu'ils le font maintenant Gmail.
+
+Gabriel (12:23.645)
+...
+
+David Leuliette (12:44.975)
+Mais sais que pendant des années ils ne le faisaient pas, genre j'ai une conférence, j'ai pu sur un bouton, paf, ça va me renvoyer l'email le jour de la conférence. Basique, enfin... Bonjour 2012 quoi. Voilà, je vais juste me lancer. En vrai, et euh...
+
+Gabriel (12:52.295)
+Oui. Oui.
+
+Gabriel (13:00.899)
+Ouais, ben t'as pas mal d'habs qui ont un...
+
+point de vue un peu différent sur qu'est qui doit apporter en plus de l'email de base et nous c'est vrai que le truc principe on a deux composantes à la partie un peu solo dans tes mails tu peux créer des sprites pour router tes mails pour qu'ils aillent dans les bons endroits ou par exemple à ton sprit sprit primaire où tu as tous tes sujets un peu important on va dire
+
+David Leuliette (13:08.141)
+Ouais. C'est ça.
+
+Gabriel (13:26.373)
+Si tu reçois beaucoup de newsletters, peux te faire un split newsletter et finir tout là dedans et ça pollue pas un peu le reste. tu veux un truc purement tech, moi par exemple sur mon compte upstream j'ai un truc tech, j'ai tous mes mails de GitLab, Sentry, Asana, enfin tout ce qui est lié on va dire un peu aux codes qui finissent là dedans et mon primaire, par exemple je sais que c'est que les trades où j'ai besoin de faire quelque chose, il a une réponse qui est nécessaire ou quoi, donc ça me focus un peu ça. Ça il y a quand même pas mal d'apps honnêtement qui le font.
+
+Et nous là où on se différencie c'est qu'on essaye de rendre ça un peu collaboratif et surtout de virer le besoin d'avoir des mails, d'avoir un Slack, éventuellement un WhatsApp à côté. Et le but en fait c'est que dans ton organe ou par exemple dans la team Upstream on est sept. Du coup on a notre organe et en plus de tes trades et de tes splits, t'as une partie de channel un peu comme sur Slack ou admettons tu peux avoir un channel engineering, t'as un channel customer feedback, bug etc.
+
+Et le truc qui est assez cool et où je ne pas que d'autres app le fassent, c'est que admettons un des co-fondateurs qui s'appelle Louis, il discute pas mal avec ses utilisateurs. Si admettons, sais pas, il discute avec... Il a une board d'un client qui s'appelle Thibaut, il peut discuter, il a un trap de message avec lui. Et plutôt que nous forwarder le mail si on a besoin d'avoir des infos sur la convo, lui, il le met sur le channel Customer Feedback. Moi du coup, je suis sur ce channel et je peux voir en fait le trap de message alors que je suis même pas dans la boucle, il n'y a pas besoin de forwarder, il n'y a pas besoin de...
+
+David Leuliette (14:34.063)
+Moi ?
+
+Gabriel (14:52.654)
+mettre un message sur Slack, j'ai discuté de tel truc etc. et en fait de faire le ping-pong avec différentes plateformes et tu peux suivre le fil de la conversation sans être du tout dans cette conversation et en plus de voir le thread sur chaque thread de message, as une conversation privée qui est propre, qui est interne à ta boîte où là tu peux discuter avec les gens de la team et le destinataire final du mail, lui il voit pas du tout ça quoi. Donc pareil sur l'exemple du client,
+
+Tesla et puis ils voient un bug à tel endroit. Dans la conversation privée, Louis peut me taguer, ok il a un bug regarde ça, je peux lui dire ok j'avance dessus et tu tout le contexte qui est dans tes mails versus on va dire le flow classique où c'est mélangé sur ta boîte mail, c'est mélangé sur Slack, éventuellement sur WhatsApp. Donc c'est vrai qu'on vise plus les petites boîtes, donc des fois ils ont même pas de Slack, ils font sur WhatsApp, sur WhatsApp si tu veux retrouver l'info c'est la galère.
+
+David Leuliette (15:47.356)
+non, Fero, tu peux pas. Une Farmation Fridge, s'appelle. Au bout d'un moment, c'est dobé. C'est ça. Est-ce que vous faites partie du front de libération des signatures d'emails ? Moi, j'en fais partie. Je trouve qu'en 2025, ça n'a aucun intérêt. Surtout si je vois là les gens qui mettent l'email en signature dans votre email. Enfin, tu sais ce ? Est-ce que ça, tripe parce que... Alors, je sais pas. Dis-moi, est-ce que c'est encore utilisé ou pas
+
+Gabriel (15:50.359)
+Ouais, le but c'est...
+
+David Leuliette (16:16.832)
+Ce genre de truc.
+
+Gabriel (16:18.171)
+Le truc c'est que du coup il l'avait buildé un peu avant que j'arrive mais il a pas de standard sur les mails et tout, sur ce que tu fous dans la signature, sur le payload que tu passes donc après chaque client mail repasse la conversation pour savoir est-ce que ça faut le collapse, est-ce que ça faut le montrer, est-ce que ça c'est la signature, est-ce que c'est le body... C'est un peu un enfer. Nous c'est vrai qu'on n'a même pas, bah du coup c'est en stage, mais on n'a même pas vraiment de signature... Ouais.
+
+David Leuliette (16:41.263)
+Pas de signature, pas de problème. Moi je... c'est bon, c'est décidé, tu as qu'à dire au CEO que j'avais parlé, c'est bon. David Ouellette il a dit pas de signature. On est en 2025, on arrête les conneries.
+
+Gabriel (16:50.223)
+Après je sais si je dis pas de bêtises, il a les app comme Superhuman où dans la signature ils te mettent une signature avec un lien de référal si quelqu'un s'inscrit, t'as un mois gratuit. Bon après c'est plus la strade pour faire de la quiz.
+
+David Leuliette (16:58.723)
+Ouais. Oui. non, là la vôtre, oui, mais toutes les autres, toutes les autres on les dégage. Les images et tout, allez hop, ça dégage. Parce que c'est bon. C'est... J'ai message à Intercom, votre produit bien, mais quand on répond, c'est un enfer. Voilà, c'est dit. C'est Intercom ou... Je crois que c'est Intercom. Ou ça se raide pas correctement. Bref.
+
+Gabriel (17:05.915)
+OK.
+
+Gabriel (17:22.235)
+pas trop utile ça.
+
+Ouais, ça se ferait que c'est galère à gérer le nesting des traders.
+
+Gabriel (17:35.547)
+All right.
+
+David Leuliette (17:39.006)
+Si demain Upstream disparaît, qui c'est qui hurle en premier ? Ah c'est vous, vous êtes propre utilisateur ? Ouais ok, très bien.
+
+Gabriel (17:45.531)
+C'est nous vu que on a quelques utilisateurs qui sont en bordé mais pas un paquet pour l'instant. Après clairement le but nous en tout cas qu'on a c'est au début pas forcément ouvrir les vannes à tout le monde et avoir quelques utilisateurs et c'est vraiment des gros fans et équipes vraiment le produit. Après ils pourront être ambassadeurs, on parle à d'autres personnes etc. Plutôt que d'ouvrir les vannes, avoir plein de monde sur l'app et que les gens ils s'en servent parce que bon c'est sympa mais sans plus le jour où ça disparaît bon ils s'en foutent ils passent sur notre client mail.
+
+Après, nous, c'est un usage un peu plus mail type, on va dire, peu entreprise. peux t'en servir en perso ou quoi, mais...
+
+David Leuliette (18:23.024)
+Je vous fais backlog en même temps. Ok ok donc produit on a compris.
+
+Gabriel (18:28.388)
+Ouais c'est ça tu peux faire quand pas mal de trucs. Après tu peux assigner sur un trait de mail tu peux assigner quelqu'un, mettre une deadline, mettre un status, en progresse tout doux. Après t'as tous les trucs de base des mails tu peux snooze, peux... Le mail de base.
+
+David Leuliette (18:40.208)
+Ouais, je vois. Parlons de la stack. Parce que là, donc, t'as rejoint, il n'y avait pas d'app mobile, c'est ça ?
+
+Gabriel (18:49.69)
+C'est ça, j'ai rejoint, ils avaient déjà une version web qui est honnêtement très très très bien, qui est assez complète en terme de features, mais pas du tout d'app mobile, le web il en React, mais pas du d'app mobile, tout le fait... Enfin quand t'as ça, les gens une fois qu'ils s'en servent sur le web, bon cool c'est très bien, mais quand ils sont en the go, bon quand t'as plus tes mails, bah du coup tu repasses sur Gmail ou sur un autre client, tu perds un peu la personne. Ouais.
+
+David Leuliette (19:15.224)
+Ouais tu perds des morceaux, c'est pareil.
+
+Gabriel (19:18.489)
+Et après justement si on a des histoires de channel, des prévettes condos et tout, si tu l'as plu quand t'es dans le métro ou quand t'es en réunion, un peu relou. Donc là le but c'est de faire les applications, là on touche un peu le bout où elle devrait pas trop tarder à voir le jour.
+
+de récupérer le gros des features qui sont déjà sur le web que t'es pas en paquet de trucs sur le web, tu arrives sur l'app mobile et tu peux juste envoyer un mail et répondre.
+
+David Leuliette (19:46.289)
+Donc on va parler de la stack en 5 points, Data layer, navigation, UI, graphisme, CI release. Premier point, zéro. Est-ce que c'est à monoripo, oui non, tout fonctionne, React Native Web ou pas du
+
+Gabriel (20:00.89)
+Mono repo, ouais. Et du coup on partage quand même quelques trucs avec le front où toute la partie data layer est partagée. Tous les cols API y sont.
+
+David Leuliette (20:14.614)
+Ok, trop bien. Vous avez fait le monorépo avec quoi ?
+
+David Leuliette (20:22.06)
+Sur Bo Ripo, NX.
+
+Gabriel (20:23.225)
+mais moins je pense qu'on a rien de particulier, je crois que c'est un Yarnwork Space, je suis même pas sûr.
+
+David Leuliette (20:26.286)
+Hi-Harn Workspace tout court et hop, point point slash impart et terminé. Y'a pas de outil qui orchestre tout ça quoi.
+
+Gabriel (20:28.971)
+J'en doute mais on n'a pas de...
+
+J'avoue j'ai un trou mais non on a rien de particulier dessus. C'est un workspace... Ouais je vérifie ça, y'a un workspace tout simple. Ça fait très bien le taf.
+
+David Leuliette (20:37.52)
+Classique. Ouais. Ouais, carrément. Ok, donc t'es arrivé, t'as clone le truc, t'as scaffold l'app et donc tu t'as dit, parlons du data ailleurs. Tout est partagé entre web et mobile.
+
+Gabriel (20:55.46)
+Ouais c'est ça. Du coup pour le data layer c'est du RTK où toutes les queries sont... il y a un code GEN qui tourne pour générer toutes les queries en fonction de l'aspect backend donc ça c'est assez cool on n'a pas besoin de s'embêter à écrire tous les ou tout les trucs. Oui pardon.
+
+David Leuliette (21:14.456)
+c'est Redux Toolkit. Pour ceux qui savent pas... Nan mais t'inquiètes, moi j'ai bugé aussi, fais attends, je sais mais je sais plus mais je précise quand même. Donc RTK Redux Toolkit, donc c'est du Redux moderne on va dire. Enfin tu vois, c'est pas...
+
+Gabriel (21:23.307)
+Gabriel (21:29.097)
+Ouais, on ne sert pas d'un... Honnêtement en termes de fonctionnalité Redux, on n'a pas beaucoup de slice, on en a même que deux si je ne pas de bêtises, mais toute la partie data layer est faite avec ça. Le truc qui est cool parce que c'était déjà en place vu que c'était déjà sur le web, c'est que absolument tout fonctionne avec des optimistic updates vu que tu veux que ce soit un peu snappy quand tu ton mail, quand tu le mets en lu, non lu.
+
+quand tu l'archives, enfin tu veux que soit tout de suite quoi, si tu archives un mail et que tu as deux secondes de délai avant qu'il se barre de ton inbox, c'est assez chiant. Sachant qu'en plus nous un mail il peut être dans ton inbox mais il peut être aussi dans un channel, il peut être dans un folder, donc en fait quand tu fais un optimistic update, faut checker tous les endroits où ton trade peut être pour le mettre à jour partout. Donc ça j'avoue, je suis content que c'était déjà en place.
+
+David Leuliette (22:17.744)
+Et y a... Ouais bah tu m'étonnes ! Et y a... Cancel ou pas ? Est-ce que tu peux envoyer un mail bourré à deux heures du mat' et te dire NON ! Je me suis trompé !
+
+Gabriel (22:27.193)
+tu peux cancel, bon t'as 10 secondes pour cancel mais tu peux le faire. ouais c'est ça, admettons si, enfin c'est sur toutes les actions quasiment, mais si t'envoies un mail, t'as un toast qui te propose de faire un undo, enfin du coup tout l'appel est en anglais en fait, je suis un peu...
+
+David Leuliette (22:29.68)
+10 secondes ça suffit. C'est beau.
+
+David Leuliette (22:45.456)
+Non mais t'inquiètes, ici c'est le cross-platform show, vois, donc déjà c'est foutu parce que de base c'est foutu. Je vais mettre la seule émission francophone où on parle plus en anglais que français. Ok donc tout ça c'était déjà fait entre guillemets, t'as rien eu, donc state management et data fetching, tout ça.
+
+Gabriel (22:50.313)
+Deux bases.
+
+Gabriel (23:03.352)
+La partie tout ce qui est state management, data layer, j'ai juste à importer les hook, y a certains trucs où on les change, admettons pour les queries pour get-on-utilisateur, ils sont liés à l'authentification, coup t'as des trucs qui sont propres au web, d'autres qui sont propres au mobile, mais c'est 98 % du data layer qui est partagé entre eux, donc c'est assez cool puisque quand ça évolue d'un côté ça évolue de l'autre.
+
+David Leuliette (23:29.378)
+Je vois, trop bien.
+
+Donc navigation, vu que tu as fait la stack en 2025, c'est Expo Router.
+
+Gabriel (23:43.206)
+Exactement, Expo, Expo Router... En vrai on n'a pas beaucoup d'écrans différents dans l'app, parce qu'il y en a beaucoup, au final c'est un thread, enfin un thread du coup c'est une discussion d'emails. Tu peux y accéder depuis plein d'intripones différents mais on n'a pas 50 pages quoi, je dirais... On a peut-être 10, grand max 15 écrans sur l'app. Donc franchement Expo Router ça marche très bien.
+
+David Leuliette (23:43.745)
+C'est beau, c'est beau.
+
+Gabriel (24:11.392)
+pas de soucis particuliers. C'est vrai qu'à la base j'avais pas forcément l'habitude du folder base routing mais du coup faut juste bien le faire trouver un truc qui fonctionne bien par rapport un peu à tes stacks et après c'est...
+
+David Leuliette (24:28.272)
+Est-ce que t'as...
+
+un modèle de nav particulier ou classique c'est des modal ou c'est des bottom sheets ou c'est euh...
+
+Gabriel (24:41.931)
+Sur la stack, l'app en elle-même c'est des tabs, on a 4 tabs en entrée, surtout des stacks navigatoires, on a quelques modèles, genre quand tu composes un message par exemple ça ouvre une modèle, on a peut-être une ou deux ou c'est des modèles, après c'est vrai qu'on a quand même pas mal de bottom sheets pour tout ce qui est...
+
+David Leuliette (24:47.408)
+...
+
+Gabriel (25:05.823)
+Side action, par exemple si dans un trade tu veux afficher toutes les actions qui sont possibles, donc je ne pas le marquer en spam, le forwarder, reply, reply all etc. toutes les actions tu peux faire sur un trade. On ouvre des bottom sheets, pareil sur le multi-select, si tu veux voir tous les récipients d'un mail, ça te trouve une bottom sheet. Ça pour le coup c'est vrai qu'on en a pas.
+
+David Leuliette (25:24.898)
+et c'est Gorom, c'est Gorom Bottom Sheet pour ceux qui connaissent pas
+
+Gabriel (25:26.879)
+Ouais c'est un peu le défaut, en vrai il fonctionne surtout que maintenant en plus il compute tout seul la haille de ta bottom sheet donc tu n'as plus besoin de le gérer tout seul donc franchement ça fonctionne bien. En tout cas pour notre cas de figure à nous là ça fonctionne bien.
+
+David Leuliette (25:42.924)
+Ouais, ouais ouais. Ok, donc ouais, t'as pas vraiment tombé dans un piège quand t'as fait ta nappe quoi.
+
+Gabriel (25:53.787)
+Non parce que dans l'absolu c'est du rack navigation donc les API sont les mêmes quoi, hormis le folder base routing et comme je dis on a pas un paquet d'écran donc c'est juste on l'a bien organisé entre les écrans qui sont protectives quand tu as besoin d'être sign in versus les autres et faire les stacks où on a par exemple dans tes channels tu as l'entrepone de la chaîne après tu as la stack quand tu ouvres une chaîne dans une chaîne tu peux naviguer dans un thread
+
+David Leuliette (25:55.951)
+Le lap existait déjà, Ouais, ouais ouais.
+
+Gabriel (26:23.028)
+Donc c'est bien décorer les trucs, faire les fichiers de layout au bien de l'endroit.
+
+David Leuliette (26:31.504)
+Ok, parfait. On va passer UI et Design System. Comment tu garantis la cohérence du design à l'échelle ? Ah non, vous êtes combien dans la Team Tech ?
+
+Gabriel (26:43.862)
+Simtech on est 4 plus le CTO, du coup 4 où on est vraiment full time dessus, pas forcément sur le mobile mais en tout cas 4, et après il a le CTO mais bon qui fait aussi pas mal de trucs à côté, on va dire 4 et demi.
+
+David Leuliette (26:55.158)
+des trucs de sitio des trucs de sitio ok et comment tu t'es plugé direct tu as pu importer tout dis moi tout
+
+Gabriel (27:06.166)
+Sur le design, déjà on utilise native wind et après, avant de cette lancée, on avait quand même les maquettes, on a un designer qui très bon et qui a mis en place la cohérence au niveau UI entre le web et le mobile, que ce ne pas sur deux expériences complètement différentes et du coup forcément il faut respecter un peu...
+
+un peu tout ça et native win avec le thème qui est le même quasiment que celui sur le web. Sur le web tu peux customiser l'app avec différents thèmes, crois qu'on a 6 ou 8 thèmes différents soit avec des couleurs simples genre du bleu, du vert, importe, tu as des thèmes avec des gradients. Pour l'instant si...
+
+David Leuliette (27:49.292)
+thème Halloween. Est-ce que le thème Halloween ?
+
+Gabriel (27:52.341)
+On l'a pas fait, c'est pas dans les friots tout de suite mais on fera peut-être le thème noël. On verra, j'en parlerai.
+
+David Leuliette (27:54.737)
+Bah pour... Ouais, vous mettez le Dark Mode Payant, paf ! C'est ce qu'il avait fait Théo sur UploadSync ou un truc du genre, de ses... Bah Théo c'est un YouTuber très connu aux US et sur un de ses prodocs, c'est UploadSync, un truc pour faire des uploads sur S3 facilement. Voilà, pour mettre des features payantes, il a mis le Dark Mode Payant. Trop bien ! Et en fait... Ouais bah moi oui, sur mon téléphone aussi parce que le soir...
+
+Gabriel (28:18.901)
+C'est vrai que moi je laisse sur toutes les apps.
+
+David Leuliette (28:24.08)
+sinon ça t'explose la tronche. Et en fait, les gens lui ont chié dessus parce que genre, ouais, c'est un scandale, mettre le thème payant et tout, en vrai, il faut le faire quand même, il faut réfléchir en amont, c'est pas si facile que ça. Donc...
+
+Gabriel (28:38.097)
+Ouais, faut le penser dès le début. Nous c'est vrai que vu que c'était déjà fait sur le web, même si on n'a pas intégré les autres thèmes, le jour où on les mettra, il aura juste à switcher le thème et théoriquement tout devrait apprendre les bonnes...
+
+David Leuliette (28:52.08)
+Et donc c'est séparé, donc tu m'as dit native wind pour le style et sur le web ça utilise Squash AdCN ou Tailwind Direct.
+
+Gabriel (29:02.285)
+Non c'est Telwind et ils utilisent... Oui ça y est et je sais plus je l'ai plus en tête mais il y avait une liste pour avoir des composants préfets mais faits Telwind que tu peux surcharger.
+
+David Leuliette (29:07.792)
+CVA.
+
+David Leuliette (29:23.46)
+Telwyn du High ? Telwyn du High alors ? euh... bah c'est peut-être ça, c'est peut-être Shadzen alors...
+
+Gabriel (29:28.308)
+Enfin sur mobile je sais qu'au tout début on avait utilisé quelques composants de Reactive Reusable. Je crois qu'on a les avatars de chez Ophiel, enfin au final on n'a pas beaucoup mais on a les avatars et peut-être un ou deux autres trucs. Au final après on a fait tout nous-mêmes. Donc on n'a pas vraiment de l'îme préfète, on les fait vraiment nous-mêmes. Et Tailwind. Après je suis pas forcément le plus grand fan de Tailwind mais c'est la direction qu'on a prise.
+
+David Leuliette (29:32.976)
+Réusé... Réusébelle, ouais.
+
+David Leuliette (29:53.426)
+Tu peux pas test contre les LLM,
+
+Gabriel (29:56.212)
+...
+
+Oui, ça c'est sûr qu'il... Bon après j'ai envie de dire la Pélistane Shit ou Unistyle, bon, l'homme il est plus que capable de le faire aussi.
+
+David Leuliette (30:07.457)
+Oui oui oui c'est vrai, c'est vrai mais moi je sais pas parce que j'utilise CVA donc quand ça commence à être bordel je fais une abstraction et hop j'ai un variant et terminé c'est tout caché donc euh...
+
+Gabriel (30:16.245)
+Non, pour ça je suis d'accord que c'est cool et sur certains points ça te facilite la vie, surtout que les devs qui venaient du web qui vont sur le mobile, ils connaissent très bien, c'est très simple d'être on-boardé. Après je sais pas, la perf, est-ce que... On pourrait peut-être en parler après mais du coup on a pas mal de sujets sur la perf et j'ai l'impression que Telwin c'est pas le...
+
+meilleur des candidats pour avoir la meilleure paire possible. Là j'ai vu que du coup il a une e-win, on était en train de regarder pour faire le switch. Mais ouais.
+
+David Leuliette (30:47.355)
+Ouais, c'est plus cher. le Switch ça coûte, parce que c'est style shit et donc...
+
+Gabriel (30:55.101)
+Uniewin c'est les bindings sur Unistyle mais avec la PI
+
+tu as les class names etc mais du coup ça utilise le runtime
+
+David Leuliette (31:06.164)
+Ah ! Ah, vrai, ok. Mais attends, c'est truc qu'il le chevole, là !
+
+Gabriel (31:10.686)
+Oui, mais du coup là ils ont sorti la V1 il y a peut-être quelques semaines et justement, j'ai plus son nom, mais il a balancé un bench entre Style Sheet, Style Uniewind et Native Wind. Et ouais, Native Wind il est deux fois moins bon en terme de perf. Donc tu gagnes en DX, enfin en Developer Experience, mais tu perds un peu en perf. Uniewind tu te rapproches quand même plus des perfs un peu natives.
+
+David Leuliette (31:29.265)
+Ok...
+
+David Leuliette (31:38.929)
+Pour ceux qui sont perdus dans l'audience, vous inquiétez pas, c'est normal. Moi, pareil, ça fait 10 ans que j'en fais, il me faut un papier crayon. C'est vrai que ça bouge souvent, mais c'est pour ça qu'on est là justement pour partager les bonnes expériences. Donc bonne expérience quand même !
+
+Gabriel (31:48.339)
+Ouais ça bouge tout le temps.
+
+Gabriel (31:57.469)
+Ouais en vrai quand même bonne expérience parce que on va quand même vite avec et en vrai ça fonctionne bien mais c'est vrai que si on pouvait grappiller un peu plus de perf on dirait pas non quoi.
+
+David Leuliette (32:07.217)
+Mais par contre, on est d'accord que là, duplication. La code base est dupliquée entre le web et pour l'ins...
+
+Gabriel (32:11.995)
+Ouais, sur la partie UI, on réutilise pas grand chose. Du coup, admettons quand on rendeur les avatars de key dans la discussion, toute la partie logique métier, on réutilise une bonne partie. Du coup, on est extrait dans des hook ou dans des utilitaires. Ou du coup, le mobile emporte un autre package. Mais tout ce qui est UI, clairement, c'est propre à chacune des plateformes.
+
+David Leuliette (32:15.952)
+Pas trop.
+
+David Leuliette (32:35.473)
+Ouais c'est split quoi. Et comment vous testez ? Est-ce que tu utilises le story beaucoup ou pas du tout
+
+Gabriel (32:44.339)
+On a un storybook, sur le web on a un et si je dis pas de bêtises il est assez fourni, quasiment tout. Sur le mobile c'est vrai qu'au début on l'avait, on le remplissait, c'est que dernièrement... Au début c'était faire toutes les primitives, tous les building blocks et tout, donc c'est très cool de l'avoir et de les mettre. Et à partir du où tu commences à faire un peu de la composition, d'écran, trucs un peu plus complexe, c'est vrai qu'on les laisse un peu de côté. Ça fait longtemps que...
+
+David Leuliette (33:00.719)
+Mais c'est ça. C'est ça.
+
+David Leuliette (33:07.121)
+Non mais ça sert à rien. Non mais normalement ça sert à rien de faire ça.
+
+Gabriel (33:10.707)
+Ouais enfin même on a rejeté des building blocks de certains trucs et ben je sais qu'on n'a pas pris le temps de les mettre après là aussi le but c'est... Je pense toujours... ou mettre du temps et de l'énergie mais le but c'est de sortir là assez vite et après bon pouvoir passer, remettre dans un storybook, tester les composants...
+
+David Leuliette (33:26.043)
+Ouais c'est ça, si vous avez besoin de faire une V2 c'est toujours bien d'avoir mais moi je sais que pareil au tout début du projet généralement je le mets comme ça je fais tout en mode atomique et après bah hop je m'en occupe trop mais au moins je sais que c'est là et si je dois faire quelque chose de très compliqué genre là j'ai dû faire un chart avec victory native et avec du drag and drop plot twist un enfer j'ai mis des sliders verticaux
+
+sans UI, ça fait le taf. hop là ! Mais un enfer, si j'avais dû faire ça, Outgo connectait tout, en plus la data et tout, data layer. Moi j'utilise Legend State mais c'est Enfin, je m'en serais pas sorti quoi. Parce que pareil, il a des states un peu... Tu vois, est-ce que j'ai data, est-ce que je les ai pas ? Faut que ça synchronise entre un Select et machin. Donc toujours bien d'avoir ce genre de trucs, d'outils.
+
+graphismes et animations. Est-ce qu'il y des animations delightful quand on a une inbox zéro
+
+Gabriel (34:26.45)
+...
+
+Du coup l'inbox 0 c'est pas une animation mais ouais t'as une UI spécifique et après ouais un peu comme sur toutes les applications de mail, t'as un minimum d'interactions, tu peux swiper sur ton trait pour les actions de base archivées, des lettres, des trucs comme ça. T'as des micro interactions quand t'appuies sur des éléments que ça ça est light, que t'aies de la petite feedback sur certains types d'actions qui sont moins importantes ou des confirmations.
+
+Gabriel (35:01.742)
+le switch de split. ouais on a quand même quelques animations pour l'instant c'est pas too much parce que c'est pas le but initial mais quand même la base pour avoir une expérience qui est quand même aussi bien que les autres.
+
+David Leuliette (35:13.521)
+Et pareil, il fait quoi Red May Teeth classique ?
+
+Gabriel (35:17.008)
+Ouais, reanimation, gesture angleur... Et ouais. Bon là, à la base... Là on n'a pas des trucs hyper complexes donc on n'est pas parti sur des trucs comme ce qu'il a à out pour l'instant, c'est... Ouais.
+
+David Leuliette (35:22.329)
+Ou avec des trucs que de toute façon c'est pas... Ouais, on n'est pas par...
+
+sur Slack. C'est pas Slack, c'est business, c'est compagnie.
+
+Gabriel (35:34.497)
+L'Ui en vrai est quand même sympa, c'est quand même beaucoup plus funky on va dire que sexy qu'une app mail basiquement. qui est dommage c'est que coup d'ici que le podcast sort peut-être que le site sera mis à jour. Là pour l'instant c'est vrai qu'il ne présente rien du tout de ce que fait l'app mais pour le coup dans l'Ui elle est quand même sexy et ça ne pas client mail d'entreprise.
+
+David Leuliette (35:57.595)
+Euuuuh... Cool.
+
+Et niveau euh... Ouais donc ça on a parlé graphisme animation. Comment ça déploie ? CI, release, déploiement. Le maillot faible actuel est ton plan pour l'améliorer
+
+Gabriel (36:13.361)
+Tout ce qui est release, bon du coup on est sur GitLab, on a la CIA qui tourne là dedans sur chaque PR en fonction de casquettes modifiées dans le monoripo histoire de pas tout faire tourner.
+
+On n'a pas de test mais on allait check Timescript et on utilise biome en l'inter.
+
+David Leuliette (36:39.526)
+Pourquoi ? Pareil, comme ça, et...
+
+Gabriel (36:42.353)
+On avait ESLint à la base mais c'est vrai que la lape est commencé à être assez grosse. J'ai plus de trucs en tête mais... Bon t'avais peut-être 10-15 secondes pour rener ESLint sur tout le monoripo avec biome clairement. C'est quoi ? C'est 2 secondes un truc comme ça. Ouais le delta est quand même assez flagrant et je pensais plus ton tacot base est grosse et plus le delta il est... il est moins.
+
+David Leuliette (36:57.553)
+c'est aussi flagrant le... Je savais que c'était plus performant, puis j'avais... J'avais vu...
+
+David Leuliette (37:06.377)
+Ok. Ce mois pour l'instant c'était... Ouais, good enough. 10 secondes, 2 secondes, bon.
+
+Gabriel (37:11.099)
+Ouais moi j'avoue sur la majorité des projets c'est ce qu'on a là, c'est le premier où j'ai ça. C'est vrai qu'il y a certaines règles qui sont pas les mêmes ou qui sont pas forcément supportées donc du coup avantage inconvénient mais en termes de temps et tout c'est quand même beaucoup plus rapide. Donc ça ça tourne en CIAI après les déploiements de même. En CIAI aussi qu'on a mis il y pas longtemps on fait tourner des reviews codex qui sont pas mal.
+
+David Leuliette (37:39.312)
+C'est quoi ça les reviews ou codex ?
+
+Gabriel (37:41.809)
+C'est le LLM OpenAI où tu lis fil ta PR et lui il va en review. C'est vrai qu'on ne pas forcément de code review, on regarde et tout en asynchrone. Mais du coup on est tous assez autonome pour merger. Enfin on passe tous par des PR mais du coup on n'a pas besoin d'une review de telle ou telle personne pour merger. Mais du coup cette review en plus, j'avoue des fois ça m'a chopé des trucs auxquels j'avais pas fait gaffe et tout, que peut-être quelqu'un d'autre dans la team aurait caché. Mais là du coup avant que tu merges, t'as déjà ton truc qui dit tiens fais gaffe à ci, fais gaffe
+
+David Leuliette (37:59.279)
+ok ouais je moi j'ai pas...
+
+Gabriel (38:12.677)
+Donc pas mal. Et après les builds en eux-mêmes de GitLab on les envoie sur EAS. Et après tout est automatisé, le truc classique où ça balance sur la Play Console ou sur Test Flight.
+
+David Leuliette (38:28.756)
+vous avez tout fait, vous utilisez IS Donc ouais, tout est dans GitLab quoi Pas de IS Workflow, c'est que pour Build, ok
+
+Gabriel (38:32.822)
+Ouais, non. Non, parce que comme tout était déjà là, le but n'était pas d'éclater un peu les outils et d'en avoir dans tous les sens. Déjà qu'on paye d'un côté, qu'on paye de l'autre.
+
+David Leuliette (38:36.538)
+Ouais. C'est ça.
+
+David Leuliette (38:42.736)
+Ouais c'est ça, puis après tu sais plus, puis sur Dain qui casse t'as oublié, puis un enfer.
+
+Gabriel (38:45.964)
+Ouais c'est ça, EAS c'est purement du build et pour l'instant ça fait le tas, je pense pas qu'il y ait des plans ou des besoins de switcher sur workflow vu que on aurait qu'une app mobile je dis pas mais là vu qu'on a quand pas mal d'autres choses concentrées sur GitLab.
+
+David Leuliette (39:01.86)
+Ok donc pas... Pas d'axe d'amélioration pour 2026. Que ce soit plus rapide. Tôt du coup... Ouais ouais.
+
+Gabriel (39:06.448)
+Sur la partie release non franchement on s'y est pris assez tôt pour ça même de... il a Ben qui a cette EP, y a S-Update où... t'as le... bah du coup comme on n'a pas la pan prod c'est moins nécessaire mais du coup bon potentiellement si tu veux faire que des updates en fonction du fingerprint on peut skipper les builds. C'est vrai qu'au début on faisait des builds à chaque PR mais la facture du premier mois était un peu piquante.
+
+David Leuliette (39:33.328)
+mais toujours ! De toute façon !
+
+Gabriel (39:35.022)
+Donc après on a revu un peu nos ambitions de Mild à la messe.
+
+David Leuliette (39:38.33)
+ouais, et vous avez pas utilisé Orbit pour share justement les builds ? non, c'est parce que vous ajoutiez des morceaux à chaque fois.
+
+Gabriel (39:43.856)
+Au début quand tu build-up, tu rajoutes une nouvelle lib natif presque toutes les semaines. C'est qu'hors-mid on s'en sert pour installer sur device. pour l'instant, la limite en axe d'amélioration c'est peut-être ça de mieux partager un peu les builds surtout que là on switche moins le binaire.
+
+David Leuliette (39:52.466)
+Oui.
+
+David Leuliette (40:07.826)
+pour ceux qui connaissent.
+
+David Leuliette (40:12.946)
+Pour ceux qui ne connaissent pas, Expo Orbit c'est un tool sur MacOS, Brow install orbit, un truc du genre. C'est une très bonne question. Et vous nous direz, ça permet de partager des builds, enfin vous avez une icône et fait vous pouvez sélectionner les builds sur...
+
+Gabriel (40:20.111)
+sais pas si il sur Win.
+
+Gabriel (40:27.759)
+direz en commentaire du podcast.
+
+David Leuliette (40:41.314)
+il a un exe, y a orbit 2.2.2.setup.exe sur le site d'Expo donc oui et ça permet de switcher rapidement de build donc si vous avez plusieurs c'est cool mais en fait si vous êtes en dev et que vous êtes une team de furieux et que voulez pas faire comme chez upstream et avoir une facture plus importante et bien on peut partager les builds de dev donc ça je sais comment j'utilise juste pour en fait c'est pas vraiment le
+
+Gabriel (41:07.587)
+Ouais c'est vrai que le dev, on se les build en local mais ouais.
+
+David Leuliette (41:11.922)
+C'est pas vraiment le prix, c'est juste le temps, parce que des fois c'est genre, ah vas-y c'est bon, trop long. Quoi que maintenant c'est crazy fast. Alors je sais pas, les 6 avec le SDK 54, mais maintenant j'ai l'impression qu'ils sont plus longs sur Android que sur iOS. Alors c'est peut-être qu'en fonction de la timezone, build pas la même timezone que les autres, mais... Ok. Alors...
+
+Gabriel (41:30.168)
+Ouais, à chaque fois je pense à...
+
+David Leuliette (41:39.603)
+Donc c'est là qu'on passe au top 5 des indispensables à ton avis, selon toi. Est-ce que tu 5 livres ou outils ? Alors on va élargir parce qu'en fait à chaque fois fait les 5 mêmes librairies. Les outils, genre si tu dis recast, ça passe quand même. Les outils que tu utilises au quotidien.
+
+Gabriel (41:52.354)
+Ouais je pense que souvent les mêmes pieds.
+
+Gabriel (41:58.702)
+Vite fait en termes de limes, c'est quand même toujours cool. Celles qu'on utilise pas du coup peut-être plus scopées sur upstream, Keyboard Controller qui est quand même très cool. Enfin je pense qu'elle a déjà été listé plusieurs fois mais...
+
+de pouvoir gérer le... Bah réactif les keyboards, contraire, sur quasiment toutes les apps en vrai t'as besoin d'un keyboard à un moment, formulaire, ton login, je sais pas. Et nous c'est vrai que bah du coup tu... Quand t'écris un mail t'as le rich text editor, bon potentiellement tu peux le mettre dans le keyboard extender, ça t'a grandit ton keyboard pour avoir tes des citiers en plus etc. T'as la sticky view, enfin t'as pas mal de trucs hyper cool. Et c'est vrai qu'au tout début ça a toujours été l'enfer de faire du... La gestion du kilavien.
+
+David Leuliette (42:20.355)
+sais pas, franchement ouais c'est ça.
+
+David Leuliette (42:43.676)
+Oups.
+
+Oui, après c'est pareil, dépend de quoi, certaines app, limite t'as pas vraiment besoin parce que t'as vraiment trop d'interactions. Mais là, typiquement, un client mail, le keyboard, en fait, on l'a sûrement déjà dit, mais on va le répéter, React Native Keyboard Controller, prend les 10 ans de librairie de keyboard en une.
+
+Gabriel (42:57.226)
+c'est problématique si l'input est sous le keyboard.
+
+David Leuliette (43:11.794)
+Parce qu'il en a plein qui sont sortis au gré des années et qui introduisaient une feature chacun et où il manquait quelque chose d'une autre. bref. un mec s'est dit, c'est fini les conneries, on va rebuild from scratch et on va tout mettre tel les Avengers. Et maintenant au moins on en a une qui est bien, qui est stable et qui fait tout. Donc utilisez-la. Ok keyboard controller, moi je valide aussi.
+
+Gabriel (43:42.978)
+du coup plus slim ou plus un petit mac
+
+David Leuliette (43:45.484)
+AD2, n'importe, c'est... As you want.
+
+Gabriel (43:49.326)
+C'est quoi on va te donner un peu de chaque en outils que j'utilise pas mal sur le Mac. J'utilise pas mal Super Whisper ou Whisper Flow pour dicter. Super Whisper pour le coup très cool où c'est... Tu parles, te le retranscrit, ça passe dans un modèle Whisper en général et après il te reformate ton message. Tu peux choisir avec LLM, reformates et tu peux lui donner des...
+
+David Leuliette (44:01.024)
+c'est quoi ça ?
+
+Gabriel (44:18.471)
+instructions en fonction de quelle application est focus au moment où tu dictes. peux faire des trucs j'écris un message professionnel ou du coup il va être formaté en mode un peu carré ou si tu discutes entre potes ça sera pas le même formatage. Et c'est vrai que pas mal de fois maintenant bon quand j'ai des bons trucs à écrire soit des mails ou même si je discute genre plus de codes ou des trucs comme ça je passe un coup de super whisper. Ouais.
+
+David Leuliette (44:43.155)
+Ah ouais donc c'est « to text at the OS level for any app ». Donc comment on le dit ça en français ? Paroles transformées en textes au niveau du système d'exploitation utilisable dans toutes vos applications de bureau et ou web. C'est... pas mal là. Ouais je vois. Ah c'est pas mal. Bon je connaissais pas du tout. En fait maintenant je vois... je vois...
+
+Gabriel (44:48.798)
+Ouais, c'est ça, et qui marche très bien.
+
+Euh... Paroles à l'écrit !
+
+David Leuliette (45:11.731)
+Alors je crois que j'avais déjà vu passer mais bon voilà. Mais c'est vrai que c'est smart parce que tu peux...
+
+Gabriel (45:15.244)
+SuperWizPAR, il en a pas mal qu'on parle mais ça fait gagner quand même pas mal de temps. Je sais que le CTO, justement, dans le bureau, est tout le temps en train de parler à son ordi.
+
+David Leuliette (45:23.379)
+ouais alors attends, non ça bosse remote ou il a des bureaux ?
+
+Gabriel (45:28.633)
+Non, y a des muraux dans Paris.
+
+David Leuliette (45:30.777)
+ok. Et donc est-ce que t'es obligé d'aller dans une boule, dans une room, dans une cloche... Non. Bah avec ça passe. Ça passe. Les gens qui parlent tout seuls, c'est bon. Oui.
+
+Gabriel (45:35.724)
+Non franchement ça passe, bon après si t'es en train de faire des trucs hyper longs ou quoi, ou si je sais pas, t'as créé un mail privé, bon tu vas pas le dicter là mais non.
+
+David Leuliette (45:48.721)
+Il a pas certains trucs... Non mais je capte, c'est vrai que... utile.
+
+Gabriel (45:53.644)
+autre outil, je le vois puisque du coup là c'est ouvert sur mon Mac mais celui-là un peu pas, pas dire niche mais qui pour le coup est hyper cool c'est Aerospace je crois que ça s'appelle ou du coup c'est gestion des fenêtres sur Mac ou du coup bah avant j'étais un gros utilisateur des, comment ils appellent ça, des Workspace où t'allais faire en bureau et j'en avais un avec mon éditeur, avec ton terminal, avec Slack etc.
+
+David Leuliette (46:07.692)
+oui, ok.
+
+David Leuliette (46:12.883)
+Right ?
+
+Gabriel (46:17.771)
+Et là c'est un tiling manager où en fait tu peux lui donner des règles et tu fais un shortcut et tu fais admettons moi si je fais mon shortcut et 1 ça met mes mails si je mets X ça met mon code si je mets shortcut S ça met mon terminal et du coup tout est au bon endroit et t'as plus les bureaux macOS une fois que tu as pris l'habitude et que tu as configurer franchement c'est hyper puissant
+
+David Leuliette (46:25.405)
+Ouais, left. Control.
+
+David Leuliette (46:37.043)
+J'y vais vous.
+
+C'est folie, j'utilise les cas, enfin maintenant j'ai tout migré sur les cas, c'est pareil quoi. Shortcut, fait Windows, soit tu splits ta Windows, pareil, j'ai un Shortcut, je tape le nom du client et paf, ça met tout d'un coup au bon endroit.
+
+Gabriel (46:45.324)
+Ouais ils ont le telling manager... ouais.
+
+Gabriel (46:54.188)
+Ouais c'est ça. Ouais moi quand j'ouvre une app elle est routée directement dans le bon truc.
+
+David Leuliette (46:58.139)
+dans le bon screen. ouais. Franchement, vous savez pourquoi faire aujourd'hui, passez une journée. Franchement, non mais c'est vrai. Tu vois, on va citer... Comment il s'appelle ? Sharpen your... If I have five hours to cut a tree, I will take four to sharpen my axe. Lincoln, je crois que c'est Lincoln, non ?
+
+Gabriel (47:02.124)
+On un peu de à configurer ça.
+
+Gabriel (47:18.101)
+Et voilà, c'est...
+
+Gabriel (47:24.716)
+Ouais, il l'attribue à lui, je suis pas sûr que ce soit vraiment ça. Personne n'est vraiment sûr de qui l'a vraiment dit ou si ça a vraiment été dit, mais on va laisser la légende.
+
+David Leuliette (47:27.411)
+C'est C'est
+
+Eguisez votre hash. Donc, installez AeroSpace si n'avez pas de Windows Management. Ok, on est à 3, qu'est-ce que tu utilises D'autres ou autres, carrément.
+
+Gabriel (47:50.764)
+et...
+
+outils qui est sympa, t'as Proxyman pour lissane un peu sur le trafic HTTP et c'est pas mal parce que tu peux moquer les réponses, tu peux vraiment voir le détail et c'est vrai que là maintenant bon t'as les DevTools avec le Network dans Ragnative donc c'est vrai que j'ai plus tendance à utiliser ça que lancer Proxyman mais c'est quand même assez puissant quand t'as besoin de faire ça.
+
+David Leuliette (48:00.539)
+Oui ça j'ai,
+
+David Leuliette (48:18.835)
+Mais après ouais quand tu l'as partout, c'est vrai que moi j'avais utilisé, j'avais fait wouah stylé et puis voilà, je jamais utiliser. Non mais c'est parce qu'en vrai j'ai pas l'occasion, enfin moi ça me sert à rien dans mon day to day souvent j'ai pas besoin de l'utiliser donc...
+
+Gabriel (48:26.123)
+ça va se faire.
+
+Gabriel (48:35.973)
+Ouais ça dépend où tu es. Là par exemple sur Upstream, début t'es quand pas mal en train de regarder ce qui passe dans le nettoire surtout que on fait des prefetch un peu de pas mal de en fond et de voir que tu lances sans query d'un coup c'est quand cool de savoir avant de lancer en prod.
+
+David Leuliette (48:52.487)
+Ouais directement ouais.
+
+Ouais que moi pour ça... ouais non mais maintenant j'utiliserais Rack DevTools. React Native DevTools.
+
+Gabriel (49:01.659)
+Ouais, moi ce que j'utilise par défaut.
+
+David Leuliette (49:04.699)
+Et j'en ai même un nouveau où j'ai réacquéris dedans. En fait j'ai les... Ouais en extension ouais. Mais je pense que t'as pareil maintenant. Avec Redux et tout c'est pareil.
+
+Gabriel (49:08.661)
+Ouais en extension... Ouais.
+
+Voilà, j'ai...
+
+Gabriel (49:17.237)
+Ouais tu l'as dedans ouais si tu veux. Mais j'ai vu justement, crois que c'était cette semaine, je sais plus quand mais du coup que je l'avais testé à un moment mais j'avais pas continué à radon ID, où ils sont passés sur un plan maintenant t'as un plan gratuit. Moi perso je pensais que, bon on l'avait vu justement à AppJS.
+
+David Leuliette (49:19.431)
+Ok.
+
+David Leuliette (49:28.102)
+Raiden AD
+
+Du coup je vais l'utiliser vu que c'est gratuit.
+
+David Leuliette (49:38.931)
+Ouais, ça va être la fin.
+
+Gabriel (49:39.143)
+Et justement je l'avais testé après et j'avais des trucs qui marchaient bien, d'autres qui marchaient un peu moins bien et c'était pas assez game changer dans mon développement pour que je le paye quoi. Sachant que j'ai quand même pas mal d'outils à droite à gauche.
+
+David Leuliette (49:49.296)
+dans le pricing, ouais c'est vrai, pour que je... Parce que... C'est pour ceux qui savent pas, radon, IDE c'est VS Code mais que pour React Native, donc une extension React Native qui transforme votre utilisation de VS Code, un peu comme ce qu'il y fait au tout début. C'était quoi Facebook ? Ils avaient leur propre éditeur aussi pour faire du React Native je sais pas si tu te rappelles.
+
+Gabriel (50:12.266)
+éditeur.
+
+David Leuliette (50:13.203)
+Ouais ouais, franchement je suis sûr et certain... Debugger, attends non c'était... Non non c'est un autre truc de flipper. Ah ou c'était Atom, crois qu'avec Atom il y avait un truc... Pareil une extension spéciale pour transformer ton éditeur Atom en machine de guerre pour React Native. Bah là Radon, voilà c'est la version 2025 de ce truc là.
+
+Gabriel (50:17.042)
+éditeur ou debugger ? flipper !
+
+Gabriel (50:25.681)
+!
+
+Gabriel (50:30.442)
+Ok.
+
+David Leuliette (50:38.739)
+Et cette semaine ils ont dit que c'était gratuit pour freelance et tout, ou que tu veux prendre des licences, à mon avis tu dois avoir d'autres...
+
+Gabriel (50:45.994)
+Par contre j'ai vu le prix, du coup j'étais pas sûr, mais j'ai vu le prix maintenant par user en enterprise, je crois que genre à 60 dollars par mois par user, alors que pour moi c'était genre 20 dollars avant. Donc c'est peut-être gratuit pour la majorité, mais ceux qui payent ils vont payer pour tout le monde.
+
+David Leuliette (50:51.827)
+me semble ouais... bah après.
+
+Ouais ou... Ouais c'est ça quoi.
+
+Gabriel (51:03.69)
+Mais après t'as quand même une plus-value à t'en servir je pense. Moi c'est vrai que j'ai mes habitudes donc des fois un peu dur de switcher sur autre chose mais...
+
+David Leuliette (51:12.083)
+Mais ça marche direct avec Expo ? Ou il build en folder iOS et tout ? Ça marche direct avec Expo maintenant ?
+
+Gabriel (51:18.417)
+Non là sur upstream au début je l'avais mis et ça fonctionne avec expo après il avait des trucs que j'avais dû configurer je les ai plus en tête mais non ça fonctionne. Le truc qui est très cool que j'avais bien aimé c'était le développer ton composant en isolation, t'as pas besoin de lancer ton storybook et tu focuses sur ton composant que t'es en train de builder, il n'y que ça à l'écran tu peux itérer dessus et ça te fait un truc un peu plus rapide que storybook même le truc tout con mais risquer tes permissions je sais pas si tu bosses sur...
+
+David Leuliette (51:25.583)
+Ok, mais où est-ce
+
+David Leuliette (51:45.288)
+oui, si,
+
+Gabriel (51:46.633)
+sur la photo library, une fois que t'as accepté ou refusé la permission, t'es fucké si tu veux la redemander. Avec eux tu pouvais reset tes permissions. Enfin pas mal de petits trucs qui font gagner du temps, mais pas assez pour que je passe à full time dessus.
+
+David Leuliette (51:52.691)
+Ouais je vois.
+
+David Leuliette (51:59.252)
+Ouais c'est ça, pas assez pour que je paye, moi si j'ai des permissions mais je fais du bluetooth donc en je suis obligé d'avoir un vrai device. Ok cool, trop bien. Là on va passer aux questions, s'il y a des gens dans le chat allez-y vous pouvez poser vos questions et tout sans filtre, il peu de problème. On verra si je filtre ou pas.
+
+Gabriel (52:05.641)
+Ouais tu peux pas se voir si mieux là...
+
+David Leuliette (52:28.485)
+Est-ce que tu as une idée d'une dernière feature, la dernière feature que tu as faite, de l'idée à la prod ? Combien temps ça prend ? C'est quoi les steps ? Comment on fait ?
+
+Gabriel (52:39.241)
+Dernière feature, tout cas ce sur quoi je suis en train de bosser. Du coup, upstream en client mail, tu as toutes tes threads. Forcément tu veux pouvoir ouvrir un thread et voir l'ensemble des messages dans la discussion. Et comme on disait au début, chacun des messages c'est de l'HTML, sauf que nous c'est une application ragnative. Donc on a la problématique de pouvoir afficher
+
+l'historique de la conversation proprement, facilement et rapidement. on a fait pas mal d'itérations là dessus où au début on utilisait un peu le use DOM pour rendre le contenu des messages ou du coup ça te met ton message dans une webview. qui est pas mal puisque t'as pas grand chose à configurer mais du coup bon ouvrir une webview, t'as le temps d'instanciation, t'as le temps du pain du contenu à l'intérieur.
+
+David Leuliette (53:19.731)
+Ok.
+
+Gabriel (53:36.184)
+Taper la taille en amont.
+
+quand tu ouvres ton thread tu as un peu les messages qui jump puisque au début la hauteur n'est pas compute, une fois que ton thread est rendu tu as du layout shift donc c'est assez moche là on a une...
+
+David Leuliette (53:48.82)
+Donc ça ressemble un peu à l'app des impôts quoi. Un truc tout moche et horrible à vomir. Donc, première hittérace. Première hittérace, mais faut commencer quelque part, truc, tu vois. Vous, oui.
+
+Gabriel (53:53.969)
+Merci pour la comparaison.
+
+Ouais, mais en vrai première itération pas mal là du coup on est toujours en train de voir c'est quoi la meilleure des solutions mais là on a un truc un peu hybride où on a un peu un algo un peu basique pour l'instant ou en fonction du type de message si on voit qu'il est un peu simple qui apparaît mettons de tables dedans de balises un peu chelou HTML on utilise une lib qui te parse l'HTML et qui t'output des composants natifs donc c'est
+
+David Leuliette (54:23.06)
+Allez, c'est au revoir.
+
+Gabriel (54:26.568)
+pas mal mais du coup pareil le coût d'instanciation de ces composants là il est un peu long. C'est pas aussi long que la webview et t'as pas de layout shift mais du coup ton initial render il est un petit peu plus long. Donc là pour l'instant on a un truc un peu hybride et après l'encreuse de voir est-ce que bah du coup ton ta liste de messages est-ce que c'est une single webview avec tout qui est dedans mais du coup bah chaque message tu peux faire un long press pour mettre une réaction pour le forward
+
+David Leuliette (54:49.16)
+Mh, ouais.
+
+Gabriel (54:54.291)
+du coup après t'as un peu un échange entre la webview et l'app native. Est-ce qu'on garde des webviews en cache qui sont instantiés quelque part, qui sont préloadés et qu'après on injecte dans la vue ? Il y a pas mal d'idées. D'ailleurs s'il a des gens qui déjà eu cette problématique de loader une succession de contenus HTML dans une app mobile, preneur de feedback.
+
+David Leuliette (55:17.524)
+Moi j'ai fait mais c'était pareil que votre deuxième strat. C'était le contenu vient de CMS WordPress et affichage d'articles. Mais pareil j'avais un... Alors attends c'était quoi ? Parse HTML, React Parseur, un truc du genre. Et en fait je récupérais un Parseur d'HTML, récupérais H1, H2, H3, tout ça et je rendais pareil, render composant nature.
+
+Gabriel (55:35.847)
+truc par sorte de...
+
+Gabriel (55:44.839)
+En vrai c'est un bon compromis mais...
+
+David Leuliette (55:46.427)
+Mais moi c'est assez contrôlé parce que... ouais, enfin ça allait parce que c'est des articles WordPress, tu y'a pas... C'est un truc contrôlé. Ouais. Le mail de la poste. Et ou... ouais tu sais pas...
+
+Gabriel (55:54.053)
+Ouais, nous c'est qu'on maîtrise jamais en fait ce qu'il dedans.
+
+les mails marketing ou quoi où tu as plein de tables des trucs qui sont très chers à un rendeur bon t'as pas d'autre choix que de le mettre dans une Moiview sinon ça serait impossible à redisigner mais du coup tu veux que ton chargement de ta liste soit rapide quand tu navigues que soit instant sachant qu'en plus on se compare avec des apps genre Gmail et autres où il bosse là dessus depuis des années le truc tu cliques c'est instant il se passe rien mais la distinction c'est que les apps comme Gmail
+
+David Leuliette (56:11.828)
+Right.
+
+Gabriel (56:28.801)
+pas toujours le cas mais en général les app de mail quand tu ouvres un trade ils t'expandent que le dernier et les autres ils sont collab c'est après c'est à toi de cliquer dessus pour faire le reveal sauf que nous bah vu qu'on veut une interface un peu qui s'assimile à Slack dans tes mails bah en fait t'as une conversation un peu en vrai tu regardes tes mails c'est vraiment une interface à la Slack où t'as le nom de la personne, t'as un message et c'est une liste de discussion donc en fait nous on a plein de messages qui sont tous expand par défaut donc ouais
+
+est assez complexe.
+
+David Leuliette (57:00.564)
+C'est pas... Moi je mets épique hein. C'était une épique, ça ressemble à une épique ce ticket là. Est-ce qu'on t'a dit il faut juste... C'est ça, est-ce qu'on t'a dit il faut juste afficher un thread ? Parce s'il avait le mot juste...
+
+Gabriel (57:05.617)
+Ouais mais au début là pour l'instant tout est une épique au début.
+
+Gabriel (57:14.631)
+La feature qu'on avait je pense dans le board c'était afficher les trades et après ça a fait un arbre tentaculaire de sous-features.
+
+David Leuliette (57:19.253)
+Juste... C'est ça.
+
+David Leuliette (57:24.176)
+Ok ouais, donc pour l'instant ouais, un peu compliqué. ça, enfin non, vous avez une version qui fonctionne, mais ouais, voilà.
+
+Gabriel (57:30.619)
+Ouais, on a une version qui fonctionne et là, justement, on est en train de voir pour optimiser, de charger vraiment tout ce qu'il faut bon endroit. Au début, en plus, on avait les djinns list pour la liste en elle-même, sauf que... Du coup, je suis peut-être biaisé puisque j'ai plus l'habitude de flash list. Mais du coup, nous, fait, quand tu loads une liste de messages, c'est une interface chat, donc le plus récent est en bas. Donc déjà, t'as ça. Et après, en fait, en fonction de ta liste de messages,
+
+Nous on t'amène au dernier message non lu, donc on t'amène pas forcément tout en bas de la liste et après si le tout dernier message de la liste du coup il est plus grand que le viewport, on t'amène au début du dernier message. Donc en fait on a pas mal de trucs et au final on tout bougé sur flashlist.
+
+David Leuliette (58:16.167)
+Ok.
+
+Gabriel (58:17.997)
+parce que le rendu initial était un petit peu mieux là-dessus.
+
+David Leuliette (58:21.428)
+Est-ce que... Ah non vous n'avez pas encore eu de disaster à la Cloudflare ? Ou tout panique, incident et... Qu'est-ce qui a changé depuis
+
+Gabriel (58:27.766)
+Non, non,
+
+Gabriel (58:34.565)
+Ouais, là c'est vrai que t'en as pas mal qui se suivent à des intervalles pas hyper éloignés. Après nous on a l'avantage de pas avoir un paquet d'utilisateurs donc bon, c'est plus simple et de façon bon en général ils sont tous un peu habitués à la tech quand ils ont été on-boardés et tout donc bon ils savent quand il un truc qui merde, ils savent que c'est pas notre faute. Après bon le jour où tu relises et que t'arrives pas à les re-t-mail, bon c'est autre chose surtout si tu relises au grand public.
+
+David Leuliette (58:47.79)
+oui.
+
+David Leuliette (58:57.844)
+Ouais ouais c'est ça, vous aurez Hard Time, plan de recover plus tard, dans 6 mois on va dire. Est-ce qu'il a des techniques que tu utilises chaque semaine pour des bugs et que les gens devraient savoir ?
+
+Gabriel (59:09.925)
+...
+
+Gabriel (59:13.829)
+En vrai, utilisateurs du console log, pas mal, les devtools qui sont built-in, j'utilise énormément en ce moment le profiler, pareil en ce moment on utilise les instruments de Xcode pour voir la consommation, CPU, memory, etc. Mais ouais, le cas de figure classique c'est du console log et des devtools.
+
+David Leuliette (59:17.502)
+Ouais, ça fonctionne.
+
+David Leuliette (59:25.726)
+Ouais ? Ok.
+
+David Leuliette (59:42.062)
+Ok, est-ce que tu as... Donc tu m'as dit iOS, Android, il a pas vraiment de différence ?
+
+Gabriel (59:50.495)
+Non, là pour l'instant on se focus plus sur la version iOS vu que en vrai les nautitateurs actuels je crois qu'il en a qu'un seul qui est sur Android donc bon pour l'instant tant pis pour lui. Mais non après je pense les distinctions qu'on aura c'est vrai que ce que je disais l'UI elle est quand même assez sexy, on a des gradients, a des animations et tout, on a du blur sur Android je pense qu'il faudrait peut-être revoir un peu à quel point on peau fine le truc et on... ouais.
+
+David Leuliette (59:57.515)
+ouais ok. Tu es testeur. Non mais ça fonctionne mais bon on avait...
+
+David Leuliette (01:00:14.846)
+Ouais, pas de blur. Pas de blur, pas de problème.
+
+Gabriel (01:00:18.157)
+on va simplifier les trucs quoi parce que sur un bon Android ça va le faire mais bon on peut pas trop stack d'animations
+
+David Leuliette (01:00:27.141)
+Est-ce que avant de rejoindre Upstream, tu avais une conviction que tu as abandonné depuis ou un truc qui t'a fait changer d'avis
+
+Gabriel (01:00:40.797)
+Je sais pas si c'est conviction ou un truc lié à... Ouais, peut-être plus aux expériences de manière générale et qui sont pas propres à ArrayAgnative mais... Avant, tout début, j'avais peut-être le défaut, on va dire, de me lancer un peu hyper rapidement dans les implémentations. T'as la spec ou la feature que tu veux faire et tu vas peut-être peu te baisser. Et là, c'est quand même prendre un peu plus le temps de réfléchir l'archi que tu vas mettre en place, la problématique dans son ensemble.
+
+qu'est ce que ça impact de faire d'une manière ou d'une autre et le but c'est un peu d'avoir un truc un peu plus future proof et de pas avoir soit refacto un truc qui est un peu bancal soit d'avoir un truc qui répond pas aux besoins initiales. C'est vrai que plus le temps passe et plus je prends du temps sur la réflexion initiale et après bon si tu as bien anticipé le truc l'implémentation est...
+
+David Leuliette (01:01:37.492)
+j'ai pas d'exemple là
+
+Gabriel (01:01:42.04)
+Ouais bon... Sinon ben pareil, pas forcément en conviction mais faire les abstractions aux bons endroits... Justement sur UQ Learn, projet que dans lequel tu m'as introduit, on avait un espèce de player de podcast on va dire, et du coup il y avait une abstraction par dessus l'audio player, donc en fait les composants ils appelaient jamais le player en lui-même, mais du coup c'était un composant qui faisait l'abstraction.
+
+un moment on a dû changer d'audio player tu modifie une fois ton abstraction et ça se répercute partout c'est le même truc que je fais un peu surtout sur le logur, sur le monitoring enfin tous les trucs les api un peu où tu veux pas être trop trop lié à l'api en elle-même tu fais ton abstraction par dessus et
+
+David Leuliette (01:02:10.964)
+N'aie.
+
+Allez,
+
+David Leuliette (01:02:18.527)
+Ouais.
+
+David Leuliette (01:02:24.437)
+C'était avec Armand qu'on avait parlé des règles un peu basiques, entre guillemets, réact. Moi ça me paraît... En fait ça me paraît la base, de faire l'abstraction par dessus ton player, comme ça tu peux swapper le player quand tu veux. Mais en fait tout le monde n'utilise pas cette technique et je pense...
+
+Gabriel (01:02:30.628)
+ça s'applique à tout en vrai...
+
+Gabriel (01:02:41.22)
+Sur les appels tierces, oui, après sur les composants c'est vrai que je le fais moins souvent là, j'avoue sur l'audio player j'étais content de l'avoir fait.
+
+David Leuliette (01:02:49.941)
+Ouais c'est ça, obligé de le faire partout en fait en vrai mais... pareil sur Victorie Native, sais que là je l'ai fait parce que je me suis dit oula... ça... 50 % de chance que ça fonctionne pas parce que surtout les charts, on les connaît les charts, Oh j'ai vu cette librairie, incroyable ! Et Reality... Ah mais c'est pas du tout le format de data attendu donc...
+
+Gabriel (01:02:51.78)
+Ouais
+
+Gabriel (01:03:00.484)
+Alright.
+
+Gabriel (01:03:12.163)
+Nous c'est vrai que... Bah du coup je pense que ça a pas mal évolué mais qu'on était chez Luko... Bah t'as vu, bah avec Ludwig on avait fait vraiment une libre de chartes mais on avait dû faire un chart et tout et c'est vrai que t'avais pas de trucs qui correspondaient à ce qu'on voulait et... Ouais ça reste quand même très kiff surtout quand t'affiches différents trucs, différentes temporalités, chaque barre potentiellement elle est splitée en différents segments de data, tu peux swiper dessus, t'as le hover... Ouais, vaut mieux faire une petite abstraction là.
+
+David Leuliette (01:03:40.548)
+Euh... Ouais, j'avoue, il a Ludwig qui est dans le chat justement. Pouh, là là, toute la connexion, il a question... Tu... Tu... C'est ça, tu codes avec DLLM si oui, lequel ?
+
+Gabriel (01:03:44.726)
+bah voilà, dédicace au bord de l'air.
+
+Gabriel (01:03:52.707)
+Ouais, j'utilise surtout cursor en IDE principalement parce que je trouve que le tab autocomplete, il est quand même très cool. J'ai utilisé pas mal zed parce que c'est très rapide mais j'arrivais pas à retrouver l'autocomplete comme sur cursor et en vrai la majorité du temps c'est dans Cloud Code. Du coup dans le terminal et quand j'ai un gros truc à traiter, ouais Cloud Code
+
+David Leuliette (01:04:08.693)
+Mmh, ok.
+
+Gabriel (01:04:21.737)
+et les trucs un peu plus rapides c'est vrai que plus dans du cursor.
+
+David Leuliette (01:04:26.517)
+Ok cool, moi j'ai pris un Gemini 3 pro hier
+
+Gabriel (01:04:33.237)
+Ouais, j'ai pas encore eu temps de tester mais on curieux de voir.
+
+David Leuliette (01:04:35.649)
+Bah non moi non plus mais sinon je suis toujours sur VS Code en fait je pense que j'attends la force tranquille j'attends parce que j'ai pas le temps de changer de setup tu vois donc mais pareil j'ai z
+
+Gabriel (01:04:47.034)
+Le switch VS Code Cursor en vrai il est transparent. Moi j'ai importé tous mes trucs, ça s'est fait et franchement l'autocomplete de ceux que j'ai testé ça reste quand même le mieux, le plus efficace et franchement une fois qu'il a compris ta code base, paternités.
+
+David Leuliette (01:04:51.407)
+Ouais, c'est vrai.
+
+David Leuliette (01:05:09.133)
+Et donc, si tu avais une app à h.ip dans les prochaines 48 heures, fait un câton, quoi ton advice ? Qu'est-ce qu'on fait ? Ouais.
+
+Gabriel (01:05:16.898)
+48 heures. sur coiffaire ou niveau tech ou coiffaire en termes de projet.
+
+David Leuliette (01:05:21.371)
+Comment... Ouais comment qu'on... Non euh... si quoi, faire un projet, je pense qu'on a tous une liste avec 50 000 trucs, mais vas-y tu peux faire les deux, tu peux merge les deux... Vas-y, merge les deux.
+
+Gabriel (01:05:32.106)
+Si vous voulez sur le projet en... enfin sur comment développer le truc, clairement je partirai sur Expo et je me ferai pas chier en tout cas au début avec un bac-haine hyper poussé genre un super base ou quelque chose comme ça et je pense que tu peux aller extrêmement vite pour avoir une première version et se focus sur une fonctionnalité principale qui est le corps de ton app et laisser les fiuritures de côté et tu ship.
+
+David Leuliette (01:05:49.365)
+Ouais, ouais.
+
+Gabriel (01:06:00.226)
+tu vois le feedback des utilisateurs et t'adapte plutôt que de dire toi dans ta chambre je pense que si c'est ça qui va marcher et au final pas du tout
+
+David Leuliette (01:06:08.213)
+C'est clair, c'est clair. coup appareil même staco native wind, juste tout backend tu ferais sans super base quoi. oui pas de native wind. vas-y alors qu'est qu'on prend comme librairie du high ? Vas-y dis-nous.
+
+Gabriel (01:06:15.961)
+Non pas de Natio Wind
+
+Gabriel (01:06:21.187)
+Unistyle. Là j'ai recommencé un autre projet à côté et ouais c'est du Unistyle. Avant j'étais biaisé avec Restyle de Shopify mais qui est plus trop maintenu donc j'ai laissé de côté la DX pour passer sur Unistyle. J'ai essayé de faire des primitifs par dessus qui correspondent un peu à ce que faisait Restyle.
+
+David Leuliette (01:06:23.477)
+Je sais pas... Ok.
+
+David Leuliette (01:06:30.804)
+Ouais, ouais.
+
+David Leuliette (01:06:44.565)
+Ouais je comprends pas pourquoi ça a pas plus marché que ça, je sais pas. Moi pareil, restyle trop bien, j'adore mais...
+
+Gabriel (01:06:44.65)
+Et ouais, je partirai là-dessus maintenant.
+
+Gabriel (01:06:49.43)
+Au style !
+
+Ouais la DX en vrai... Je vais pas dire qu'elle est parfaite mais c'est vrai qu'elle est très bien. Après ça peut s'assimiler un peu à du tailwind où au final là tu lis ton render et tu vois un peu à quoi ça ressemble.
+
+David Leuliette (01:07:04.859)
+T'as moins de caractère, du coup moins de caractère, moi c'est mieux, je préfère. Mais bon...
+
+Gabriel (01:07:05.163)
+Me ouin.
+
+sur une install je me suis refait mes box, mes blocs, mes rows et dessus j'ai exposé quelques props du coup dans pas mal de cas ça fait le taf et je pense que préfère privilégier un truc que je sais qui est vraiment très performant dès le début plutôt que me dire je fais un mini sacrifice sur la perf et qu'après il se tend plus tard tu t'en mord un peu et d'autre
+
+David Leuliette (01:07:30.409)
+Ouais, je vois.
+
+Gabriel (01:07:31.744)
+sachant que de base je ne pas fan de Telwin. Je suis parti là-dessus parce qu'il y avait une discussion entre toutes les équipes et j'étais minoritaire.
+
+David Leuliette (01:07:34.549)
+C'est ça !
+
+Ouais ouais... voilà... il a Ludwig qui nous dit, «Uni restyle, ce serait parfait». Ouais non mais là il commencé à avoir... Et comment on outboard les gens après là dessus, ils vont rien comprendre quoi... Cool cool... Donc je vois que t'as un clavier mécanique, t'es team keyboard mechanical, c'est quoi ton... On va parler gears, gears les gars ! Alors moi j'ai un... Moi c'est minimaliste zen, c'est le trackpad depuis...
+
+Gabriel (01:07:57.91)
+Ouais, ouais j'ai...
+
+Gabriel (01:08:02.889)
+Je...
+
+David Leuliette (01:08:06.613)
+2017 je crois, 2015 je ne sais pas et Magic Keyboard Apple, nickel. Et toi alors c'est quoi le...
+
+Gabriel (01:08:14.715)
+Ouais, moi j'ai eu une phase où j'ai acheté beaucoup trop de claviers. Du coup, il y en a qui servent de déco maintenant. Enfin du coup c'est bien parce que quand... Ah si, si, fonctionnent mais du coup j'en ai tellement que je peux en mettre dans les placards, dans les meubles, j'en ai un au bureau. Et à la maison, j'ai commencé il a pas si longtemps mais j'ai un speed keyboard. Je sais pas ce que ça va rendre mais... Alors je peux pas... Ouais, bon tu verras pas. Mais...
+
+David Leuliette (01:08:20.851)
+il fonctionne plus !
+
+David Leuliette (01:08:34.111)
+oui ! Pour ceux qui... Ouais non mais de toute façon on live pas trop, on touche pas trop, touche pas trop c'est pas grave. Pour ceux qui voient pas c'est une main de chaque et au milieu y'a le...
+
+les gorges de l'enfer.
+
+Gabriel (01:08:46.432)
+En fait le truc c'est que tu bien assis dans ton siège, tes bras sont droits, ils ne pas courbés pour être sur ton clavier. Et en plus ça te force vraiment d'avoir tes doigts sur la homero où tu bouges le moins possible. Et clairement on passe tellement de temps sur un bureau que j'ai pris le temps de perdre un peu en vitesse de frappe pour avoir un peu plus de confort. Et franchement le clavier est très cool. Et à la maison j'utilise que ça.
+
+David Leuliette (01:08:52.959)
+Ouais.
+
+David Leuliette (01:09:10.133)
+de confort.
+
+Gabriel (01:09:15.936)
+de le débrancher à chaque fois que tu vas chez les clients mais donc chez le client moi j'en ai un derrière mécanique classique mais ici j'ai toujours le split
+
+David Leuliette (01:09:15.965)
+Donc si ça... Ouais.
+
+David Leuliette (01:09:21.871)
+Ok. Et donc t'as choisi, toi-même, est-ce que t'as fait le... dig le Rabbit Hole et t'as... t'as... comparé les clicktis ?
+
+Gabriel (01:09:28.679)
+comparé à la différentes trucs ?
+
+Ah oui moi je suis de team linéaire silencieux. Après aussi quand tu bosses dans un open space, y a un clic clic clic à chaque fois, bon c'est pas cool pour les autres même si t'aimes ça, et moi de toute façon j'aime pas ça donc je préfère un linéaire et en plus le plus silencieux possible. Donc celui que j'ai ici il est hyper silencieux, le travail est assez court et après tu vois un peu la pression nécessaire, il en un des deux de derrière où il faut appuyer quand même assez fort pour quoi...
+
+David Leuliette (01:09:38.441)
+putain...
+
+David Leuliette (01:09:46.985)
+Ok D'accord
+
+David Leuliette (01:09:56.181)
+Non non, parce que je sais pas...
+
+Gabriel (01:10:01.92)
+ce soit ROGISTERN mais ouais j'ai beaucoup de switches différents aussi. Mais j'ai arrêté d'en acheter, faut passer à autre chose.
+
+David Leuliette (01:10:03.647)
+Ok.
+
+David Leuliette (01:10:07.133)
+I see. J'ai arrêté d'en acheter, c'est bien. Est-ce que tu achètes des devices pour tester ? Parce que nous, chez Wishy Pityoday, achète. Alors on a racheté une tablette. On a des Androids en voiture. On a des iOS aussi. Mais principalement là, c'est iPhone. Moi c'est iPhone 14 là. Et device Android. Samsung. Je ne plus lequel. Est-ce que tu as des trucs particuliers ?
+
+Gabriel (01:10:21.146)
+On device.
+
+Gabriel (01:10:30.377)
+Oui.
+
+Moi j'ai mon téléphone de tous les jours, c'est un iPhone.
+
+j'ai un 17 Pro donc c'est pas forcément hyper représentatif mais du coup un autre iPhone j'ai un XS où là du coup tu as un peu autre chose bon après en général sur iPhone tu n'as pas des gap énormes d'un iPhone à l'autre c'est plus faire gaffe sur un SE la taille de l'écran et tout et en Android j'en ai un qui est correct j'ai un OnePlus j'avoue je saurais pas dire lequel je crois c'est un OnePlus Nord que j'ai acheté il quelques années donc ça on va dire c'est un
+
+David Leuliette (01:10:44.32)
+Ouais... Ok.
+
+Gabriel (01:11:09.055)
+correct et j'ai un Android un peu de merde qui est un Asset ou un truc comme ça. Enfin j'avais regardé à l'époque où je l'avais acheté genre le téléphone Android médian en France et j'avais acheté celui-là qui était un petit peu en dessous du médian. Donc si ça tourne là dessus ça tourne partout.
+
+David Leuliette (01:11:22.422)
+Je vois. Ok, ok. Est-ce qu'il a un sujet que tu veux absolument aborder et qui te tient à coeur dont on n'a pas parlé ?
+
+Gabriel (01:11:34.558)
+sujet qui me tient à coeur non pas forcément pas forcément bon c'est ce qu'on disait c'est de faire des... du courrier en terre mais faire des apps qui répondent à un besoin utilisateur
+
+qui répondent vraiment à une problématique et le but c'est de kiffer quand tu build le truc.
+
+David Leuliette (01:11:58.166)
+Je vais vous procurer de la joie Marie Kondo big up Big up à Marie Kondo ! For your abshoes, Park Joy Qui c'est qu'on ? Qui c'est qu'on ? Pfff, faut que j'arrête de dire ça Qui invitons, qui devrions-nous inviter dans un prochain épisode ?
+
+Gabriel (01:12:15.07)
+invité
+
+David Leuliette (01:12:18.869)
+bah William on l'a dit au début. En plus il a dit ok, dans le chat il a dit oui. Ouais il a répondu dans le chat il a dit ok mais il était déjà dans la liste. il faut... William c'est janvier. Pas avant janvier, je suis busy avant. On est bouqués.
+
+Gabriel (01:12:22.899)
+il a répondu ? Ok. Cool.
+
+Gabriel (01:12:32.183)
+tu n'avais pas potentiellement quelqu'un sur de l'ASO ou du monétisation d'apps.
+
+David Leuliette (01:12:38.161)
+Bah si, bah c'est exact, c'est le prochain épisode. Prochain épisode...
+
+Gabriel (01:12:42.271)
+cool parce que ouais ça ça serait un truc sympa ou même genre je crois c'est aekillian de chez les ignobles ou voir un peu en mode studio comment tu balances ton app et moi je sais que ce qui me branche peut-être un peu plus de creuser maintenant c'est plus la partie bon je pense qu'on sait builder des apps après bon au final tu peux faire la meilleure app du monde si t'as pas de marketing t'as personne dessus bon c'est pas hyper utile donc ouais creuser peut-être un peu plus la partie marketing
+
+sur les stores, des choses comme ça.
+
+David Leuliette (01:13:13.205)
+C'est ça, c'est Julie de As... Julie de... de Neo Ads, voilà c'est ça, qui nous parlera ads, stratégie d'acquisition, tout ça, tout ça, ça va être épisode trop bien. Il a Ludwig dans le chat qui nous dit, quand j'ai un bug j'utilise Brother Stack. Ça marche aussi en vrai ! En vrai j'avais utilisé plus en web.
+
+Gabriel (01:13:22.011)
+Ok.
+
+Gabriel (01:13:27.07)
+Ok, cool.
+
+Gabriel (01:13:36.494)
+Ouais, je m'en sers pas souvent...
+
+David Leuliette (01:13:40.725)
+Bah non moi non plus mais c'est une solution qui pourrait peut-être vous aider. Ok, où est-ce qu'on te suit et on te retrouve sur les internets ? Si les gens...
+
+Gabriel (01:13:51.902)
+Sur les internets, suis un peu en sous-main, on va dire sur LinkedIn avec Gabriel Hoffman et à limite là où il y peut-être plus de trucs, sur GitHub où c'est T-S-Y-I-R-V-O. Et après moi il n'y pas de X ou Twitter, rien d'autre. T-S-Y-I-R-V-O.
+
+David Leuliette (01:14:07.03)
+C S Y R V O
+
+T S Y R V O
+
+Gabriel (01:14:16.134)
+T-S-Y-I-R-V-O. C'est pour essayer de se mettre d'autres.
+
+David Leuliette (01:14:20.533)
+Parce qu'en fait... Ouais non mais moi pendant des... En fait je comprends Back to 2015... Je comprends un truc genre... sais plus trop. Bah bref, deux ans après que j'ai fait mon compte GitHub, en fait je faisais que ça moi. Je faisais pas de veille. Enfin je lisais... Moi ma veille c'était GitHub. En fait je suivais plein de gens. Et je lisais juste le code qui poussait et où je regardais les stars qui le faisaient. Et après j'ai l'air le code, tout ça c'était tous les matins, c'était mon rituel. J'arrivais au taf, boum je lançais GitHub.
+
+Gabriel (01:14:36.126)
+Mmh... Ouais.
+
+Gabriel (01:14:44.678)
+N'est-ce ?
+
+David Leuliette (01:14:49.31)
+Et la HOME, c'est vrai que maintenant elle a un peu changé, elle un peu moins de filles d'actus.
+
+Gabriel (01:14:53.533)
+Ouais t'as la home où c'est un peu ce que tu follow mais t'as le truc explore, en temps que je check. Moi je sais que c'est un peu ça où je start quand même pas mal de projets ou en tout cas ceux qui me chauffent bien je subscribe ou release et du coup tu vois les trucs passer. Après sur de la veille t'as quand même pas mal de newsletter, t'as pas mal de blogs. Après faut juste être assis de mais c'est vrai que comme je suis subscribe à plein de trucs ils viennent à moi tout seul.
+
+David Leuliette (01:14:57.631)
+Ouais.
+
+David Leuliette (01:15:07.966)
+Alright, c'est ça tu vois ?
+
+David Leuliette (01:15:18.56)
+Ouais. Ok, moi c'est Twitter sur... Pfff, voilà. Moi c'est Flex. Ouais, exactement. Moi c'est Twitter sur Flexbox, c'est BlueSky sur Flexbox et c'est Flexbox sur GitHub. Pour soutenir l'émission, c'est podcast... Non, attends, on va faire correctement. Wishy-Pee Today slash podcast. Vous allez retrouver tous les liens dont le Slack, si vous voulez venir nous parler, il a le Slack de Ragnative Connection.
+
+Gabriel (01:15:26.277)
+Twitter sur Flexbox.
+
+David Leuliette (01:15:51.03)
+Donc ouais on a dit, prochaine fois on fera les ads pour tous les gens qui veulent hacker... Enfin non, faire de l'acquisition sur leur app justement une fois qu'on a build tout ça. Car ce n'est que le début quand l'application est ligne. C'est là que les difficultés commencent. Gabriel, merci pour cet épisode. J'espère que... Bah ça a toujours un plaisir. Prenez soin de vous et de vos proches.
+
+Gabriel (01:16:14.013)
+Merci d'avoir invité.
+
+David Leuliette (01:16:20.626)
+A la prochaine, ciao ciao !
+

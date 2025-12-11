@@ -1,0 +1,1222 @@
+David Leuliette (00:00.189)
+ça rien je sais pas trop c'est quoi le pire c'est perdre ses clés ou plus avoir une batterie sur son téléphone
+
+Armand (00:09.934)
+J'irais perdre ses clés, Parce qu'en vrai tu peux utiliser un autre téléphone du coup. Parce que tu as plusieurs comptes.
+
+David Leuliette (00:17.053)
+Euh... oui oui c'est vrai, j'étais à Shenzhen... Ah bah oui, attends, je... tac ! C'est bon, j'ai décidé, maintenant les intros, c'est direct des questions sharp. Ouais, parce que j'étais à Shenzhen, si tu perds ton... bah non, si tu perds tes clés... Non, si tu n'as plus de batterie sur ton téléphone là-bas, c'est un enfer, tu ne peux rien faire parce que tout se fait par ton téléphone, donc tu es vraiment un renegat. Euh...
+
+Armand (00:20.206)
+Tain, tu m'attendais pas à cette question.
+
+On va se débrouiller.
+
+Y que ton fait.
+
+Armand (00:36.302)
+...
+
+Armand (00:40.654)
+...
+
+Armand (00:44.81)
+Après, faut quand même savoir que aujourd'hui c'est très rare de ne avoir de batterie. Tu fais toujours attention à ne en avoir. Je crois qu'il y avait des études, j'ai pas de chiffre là-dessus mais je que j'avais vu passer des études sociologiques justement des gens qui avaient regardé le poursage de personnes qui n'avaient plus de batterie sur leur téléphone. En fait c'est tellement un usage du quotidien, vois. Très peu au final. Donc il a toujours cette question qui revient et dans tous les cas de toute on parlera après. Tu peux utiliser un autre téléphone justement pour te connecter avec ton compte.
+
+David Leuliette (00:51.361)
+Ouais, mais oui, c'est fou.
+
+David Leuliette (01:04.092)
+Ouais ? Que... Que...
+
+David Leuliette (01:13.664)
+oui ok, oui, trop là là, quelle introduction directe, oui. Bonjour Armand, merci à deux de te joindre à nous, vous êtes bien sur le Cross Platform Show, l'émission qui dissèque des applications mobiles et particulièrement avec la technologie React Native. Je suis David, développeur chez Wishy Pee Today, nous sommes en septembre 2025 et à Lille, la température extérieure est de 24°, sachez-le.
+
+Armand (01:16.288)
+oui
+
+David Leuliette (01:43.678)
+Heu... rarement. Il fait combien de degrés chez toi et t'es où en ce moment ?
+
+Armand (01:44.398)
+...
+
+Bonne question, moi je suis à Nantes, suis pur nantais, j'ai toujours vécu à Nantes. Vous voyez, doit faire à peu près pareil, mais là on a une bonne journée, il fait du soleil donc c'est cool.
+
+David Leuliette (01:49.563)
+Ok.
+
+David Leuliette (01:55.406)
+Ouais bah c'est ça, c'est apparemment ce week-end, genre il fait 30, c'est quoi ce bordel avec la météo ? C'est exactement ça, je suis ravi de... Alors du coup, vas-y, question directe, Airbus, VBA, ça te parle ?
+
+Armand (01:59.616)
+Allez à
+
+Armand (02:08.096)
+Ouais, non mais enfin c'est un peu, parcours il est un peu particulier mais en gros tu veux qu'on commence par quoi ? Tu veux qu'on commence par Airbus ? Tu qu'on commence par quoi ?
+
+David Leuliette (02:13.403)
+bah super, vas-y, présente-toi !
+
+je ne sais pas, ASV, vois normalement c'est ASV, H-Sexville, comme sur Carabelle.
+
+Armand (02:23.214)
+Alors âge, du coup 25, donc j'ai 25 ans, sexe masculin et ville du coup Nantes, et donc j'ai toujours vécu à Nantes. en fait, en gros donc, mon parcours rapidement, en fait du coup, moi ça fait 5 ans que je suis développement mobile, donc 5 ans que je fais du Rack Native. Je fais pas que ça, mais principalement c'est là-dedans que je suis devenu passionné, et c'est là-dedans que ça m'intéresse le plus. Et du coup j'ai commencé en gros, du coup...
+
+David Leuliette (02:31.259)
+Ok.
+
+Armand (02:50.35)
+en école d'ingé à découvrir, donc c'était une introduction en école d'ingé, donc c'était en 2020. J'ai eu un cours d'introduction mais en école d'ingé tu vois pas forcément de technique, à moins que tu sois dans des écoles informatiques on va dire. Moi j'étais dans une école assez généraliste, j'étais à l'IMT Atlantique, donc c'est l'anciennement l'école des mines de Nantes et du coup j'ai découvert ça dans un cours d'introduction. En fait c'était plus introduction, en ma formation c'était transformation digitale des systèmes industriels.
+
+David Leuliette (03:09.231)
+Et c'était
+
+David Leuliette (03:16.154)
+Coucou à vous
+
+Armand (03:16.814)
+C'est le nom un peu compliqué, te disais que c'est un peu verbeux pour dire qu'il a l'industrie 4.0 avec les nouvelles technologies, comment implémenter les nouvelles technologies dans l'industrie. que moi là bas je viens de l'industrie, tout ce qui est mécanique etc. C'est pour ça que j'ai bossé chez Airbus du coup. Et du coup en fait j'ai découvert ça à ce moment là parce qu'il y avait une introduction web, mobile, au cloud, choses comme ça. Pour justement avoir une vision macro. Et le truc c'est que ça m'a pris de passion et du coup je suis tombé là dedans et après du coup il y avait un incubateur de start-up dans mon école et du coup...
+
+au final du coup j'ai créé une startup qui s'appelle Osli Solutions. Parce que la startup dont on va parler c'est la mienne. Mais ça je ne mets pas forcément en avant sur LinkedIn.
+
+David Leuliette (03:56.315)
+Ah oui mais de toute façon, LinkedIn, on est tous au courant que tout monde ment sur LinkedIn. Et ici c'est principalement l'audience et des développeurs. Donc t'inquiète, on trash-talk tous sur LinkedIn. On n'est pas dans cette bulle de waouh ! Incroyable tout le monde il est beau. Enfin... Moi si vous voulez me suivre sur LinkedIn c'est hilarant. J'en dirais pas plus. Mais j'ai eu un call avec le comptable aujourd'hui donc...
+
+Armand (04:06.382)
+Exactement.
+
+Armand (04:17.108)
+pas mal, les fameux comptables. t'avoue que... Tu t'arrives à t'en sortir ou pas avec les comptables ?
+
+David Leuliette (04:22.25)
+Non mais en fait là je vais devoir recréer une nouvelle boîte.
+
+Bref, suivez-moi sur LinkedIn pour plus de news comptables, on n'est pas là pour parler de ça. Donc du coup, direct toi, paf, étude, paf. C'était quoi l'intro ? C'était directement sur RackNative ? Qu'est-ce que t'as fait ?
+
+Armand (04:38.126)
+...
+
+En fait, ce qui s'est passé c'est qu'en école d'ingé, coup il y avait un incubateur et en fait pendant notre école était vachement à accès vers la startup. En tout cas, elle voulait nous introduire là-dedans même si c'est de l'industrie et du coup en fait il y avait pendant un an un cursus où on nous apprenait à créer en gros une startup qui était fictive. C'était juste pour un unité d'enseignement. Et en fait au début du coup on a relevé une problématique qui est que du coup les syndics et les bailleurs, donc les gestionnaires
+
+d'immeubles, donc ceux qui s'occupent au final de tout gérer les parties communes d'un bâtiment, quand je dis les parties communes ça va être le hall d'entrée, le garage, le calabélo etc. Ils vont gérer tous les accès. Donc les accès, peut y en avoir de deux types, soit pour des prestataires, soit pour des résidents. Donc en fait quand on dit les accès, c'est les badges, c'est les petits badges vigiques qu'on a. post-its par exemple pour vous donner les courriers, c'est ce qu'ils utilisent pour accès à vos bâtiments. Et en fait on s'est rendu compte que tous ces accès c'était hyper chiant pour eux parce que c'est dans des pochettes plastifiées, ils peuvent les perdre, les prestataires les ramènent pas forcément.
+
+David Leuliette (05:24.559)
+ouais, le fameux...
+
+Armand (05:35.99)
+et du coup la solution en fait c'était de leur permettre de faire du contrôle d'accès et de gérer tous leurs accès via des plateformes digitales. Et du coup à la base c'était juste un projet étudiant et au final maintenant du coup on a créé la société en juin 2023 et du coup je suis encore actuellement dessus en tant que CTO mais plus développeur on dire CTO c'est un peu le nom pour dire voilà mais on est dessus du coup il y a mon nom LinkedIn pour mettre le truc mais en gros je suis développeur là bas donc moi je m'occupe de la partie technique et mon associé s'occupe de la partie relations commerciale et marché.
+
+David Leuliette (05:36.089)
+Ouais tu les oublies.
+
+David Leuliette (05:54.509)
+Ouais.
+
+Prédit
+
+David Leuliette (06:03.107)
+Parfait. Mais comment le syndic tout ça ? Parce que vous avez dû avoir accès à quelqu'un qui avait ce problème-là.
+
+Armand (06:08.686)
+En gros, la première phase qu'on t'apprend à l'école, c'est ta phase exploratoire où tu vas trouver des problèmes. du coup, c'était une amie à nous qui travaillait chez un syndicat. Elle dit « putain, c'est trop chiant, on ça ». Et on dit « bah vas-y, go
+
+David Leuliette (06:16.025)
+Ouais ouais.
+
+Ok ouais, ok.
+
+Je vois. Ok, ce n'est pas plus difficile. Ouais, c'est bien. Alignement des planètes incroyable parce que moi j'avais fait ça, un startup incubateur, je ne pas quoi. Mais bizarrement, gens qui avaient des problèmes, on ne les a jamais présentés. aucun intérêt, vois, nul. Bref, donc là, ouais, bien, bien, bien, bien.
+
+Armand (06:28.948)
+Exactement. Exactement.
+
+Armand (06:37.944)
+Exactement.
+
+David Leuliette (06:48.741)
+La solution, c'est Osly Solutions, il y a même le nom, il a la solution, c'est dedans. Super du coup, tu nous as pitché l'app mobile son. Donc c'est pour ça que je faisais la boutade de est-ce qu'on a des batteries ou des clés ? C'est littéralement avoir une clé sur ton smartphone, comme ça, ça débloque les portes.
+
+Armand (07:01.07)
+Ouais, c'est vrai.
+
+Armand (07:10.336)
+C'est En gros, solution... En fait, a trois trucs. Nos clients, c'est les gestionnaires. Et eux, ça va être les utilisateurs, mais pas forcément les utilisateurs finaux. Ils vont avoir l'application web qui va leur permettre de gérer leurs accès. Et ensuite, ça envoie un mail avec, par exemple, l'adresse mail du prestataire. Lui va recevoir ce mail en l'incitant à télécharger l'application.
+
+David Leuliette (07:12.025)
+Heu... Vas-y.
+
+Armand (07:37.452)
+il va télécharger l'application, va se connecter avec son compte et ensuite il va avoir accès à ce bâtiment en fonction d'une plage horaire ou pas. Et d'ailleurs c'est son téléphone qui communique avec un boîtier qui est dans le bâtiment pour justement ouvrir la porte.
+
+David Leuliette (07:51.001)
+Là on va diguer. ! Est-ce qu'on parle maintenant du boîtier ou après ? Vas-y on va parler après. Donc déjà c'est 5 points, on va voir la chose en 5 points. Il y a eu combien de versions à l'app ? Mobile ?
+
+Armand (07:53.102)
+Oui, oui.
+
+Armand (08:03.598)
+On est à 3.6.
+
+David Leuliette (08:08.696)
+du coup il y a eu plusieurs cycles ok on va je sais pas on verra tu me diras parce que je pense que au début quand t'ascaffoles le truc en tant qu'étudiant et maintenant il y a deux trois trucs que tu dis bon
+
+Armand (08:10.254)
+Alright.
+
+Armand (08:17.518)
+Il a plein de trucs qui changé, d'un point de vue règle de métier, même encore là on est en train de pivoter, donc plein de trucs évolués.
+
+David Leuliette (08:29.067)
+Ouais, Startup Live plus boîtier physique, plus du coup qui fonctionne en Bluetooth. Bluetooth, c'est bon, vous avez deux experts en Bluetooth, posez-nous toutes les questions sur les Bluetooth.
+
+Armand (08:33.102)
+ça.
+
+On fonctionne, on a tout fait. Bah tu connais, j'étais déjà entendu dans les podcasts, tu connais React Native VLEP LX, on utilise ça du coup. Et en fait du coup on fait du bloatot sur le NRD.
+
+David Leuliette (08:43.257)
+Oui, oui.
+
+David Leuliette (08:47.232)
+Et qui c'est le firmware guy ?
+
+Armand (08:49.506)
+c'est de l'Esp32 pour l'instant.
+
+David Leuliette (08:51.87)
+Et les boîtiers, c'est qu'il est fait ? Parce que oui, faut pour dire aux gens en fait quand vous allez sur le site...
+
+hostly solutions, tu peux pas te brancher n'importe où, il faut un boîtier de ce que j'ai compris.
+
+Armand (09:03.822)
+Oui, exactement. gros, mets un boîtier dans les bâtiments. fait, vous avez des interphones qui vous permettent justement d'appeler des personnes qui sont directement dans le bâtiment ou vous avez un petit encadré pour justement passer votre badge. En fait, vous avez une centrale d'accès qui est dedans. Nous, ce qu'on vient de faire, c'est qu'on vient juste reproduire le même signal qu'un badge, mais du coup dans le bâtiment. donc ce que ça fait, c'est que ça communique entre l'application mobile et le boîtier un Bluetooth, l'Energy. Et ensuite, ça lui dit juste
+
+ouvre la porte, transforme un signal électrique en signal mécanique du coup le boîtier. en fait le code en soi n'est pas très complexe dans le boîtier, on n'a pas réinventé la route, on a pris un truc assez simple.
+
+David Leuliette (09:44.74)
+c'est vous qui faites le boîtier, ou du coup
+
+Armand (09:46.263)
+Ouais en fait alors à la base du coup c'est nous qu'à en fait il faut savoir que du coup moi là bas j'étais en DUT GMP avant l'école d'ingé donc j'étais en génie mécanique et productique donc j'ai à la base moi l'informatique j'ai entendu pas mal de coup d'interviews sur ton podcast moi je suis tombé dedans à 14 ans ou à 13 ans c'est pas moi en fait j'étais pas trop intéressé par l'informatique jusqu'à qu'en DUT GMP je fasse un projet en VBA donc
+
+David Leuliette (09:53.057)
+Ok, ok, je vois pourquoi.
+
+David Leuliette (10:03.607)
+Ouais ouais ouais, c'est bon.
+
+David Leuliette (10:10.673)
+le fameux VBA, le fameux.
+
+Armand (10:12.782)
+Je VBA, c'était pour faire une bibliothèque, j'avais kiffé l'expérience du dev et de résoudre un problème, de passer du temps dessus, surtout qu'à l'époque il n'y avait pas l'IA, c'était hyper jouissif quand il arrivait.
+
+David Leuliette (10:19.896)
+C'est bien possible.
+
+David Leuliette (10:41.896)
+que du coup électrique... vas-y.
+
+Armand (10:43.284)
+Du coup, c'est nous qui avons tout construit à la base. on a fait le boîtier connecté. Mon associé faisait un peu d'hardware parce qu'il venait d'un débuter qui venait de l'électronique. Donc il a commandé les PCB en Chine. On les a fait commander. Ensuite, on tout monté ensemble. Et après, c'est moi qui m'est occupé de faire le code embarqué. Et après, j'ai fait le code de l'application Web. Et en fait, il faut savoir un truc, c'est que maintenant, les boîtiers, on les achète et ils sont déjà industrialisés. que t'as pas le droit. En fait, on se protège.
+
+Si on installe un boîtier qui n'est pas avec le marquage CE et qui pas la conformité, on peut avoir des problèmes si le bâtiment brûle. Pour les assureurs, vont dire que si on a un problème, c'est nous qui allons le Il faut qu'on s'assure. Pour l'instant, on n'a pas encore les sous pour l'industrialiser. On est toujours en phase de test avec des syndics et des bailleurs, mais on n'a pas suffisamment de fonds pour l'industrialiser. Ça coûte de l'argent. Mais à terme, on prévoit l'industrialiser et de faire notre propre boîtier qui sera tout petit comme on veut.
+
+David Leuliette (11:18.679)
+Ouais,
+
+David Leuliette (11:38.782)
+Ouais ok, je vois. Cool, bah super. Là on va parler des 5 points de l'application mobile. On va commencer par... Donc c'est Data Navigation, Styling, Graphic, Animation and CI Release. passer par Data Layer chez Hostly Solutions. Comment fait-on remonter la data ?
+
+Armand (12:02.764)
+du Tenstack Query.
+
+David Leuliette (12:05.637)
+Ah, directement ? Non mais directement ! Attends, t'as fait direct, tu t'as de stack query ? Ah ok, tu eu 2-3 phases à voir.
+
+Armand (12:10.159)
+Non non non, au début quand tu commences le truc t'apprends donc au début j'avais pas forcément les bases donc c'était commencer par du Axios, tu mets du Axios, tu mets un use effect, tu viens get des données et après tu les displayes et puis tu commences à vouloir complexifier un peu le truc, tu commences que comprends que React en fait c'est pas si simple, que peux gérer les renders correctement, ensuite tu interviens avec des Hooks, donc tu as les mémo, tu un machin, donc tu tu commences à faire dans la...
+
+et puis au fur et mesure d'itérer t'apprends et puis au bout d'un moment en fait moi je suis très je suis assez curieux comme personne du coup je me renseigne ça soit sur des podcasts tu vois maintenant j'ai découvert ton podcast j'écoute tout le temps je suis pas mal sur Twitter sur X pour justement en fait j'apprends énormément et quand j'ai découvert testa query directement je l'ai implementé donc ça a été assez tôt quand c'est sorti et en fait depuis j'ai eu de problèmes ça m'a ça m'a littéralement sauvé sur sur
+
+David Leuliette (12:52.47)
+Merci.
+
+David Leuliette (13:02.59)
+Ouais. Ah ouais bah, pareil ! Ouais, si c'est bien, puis ça te dit, ah ouais mais en fait c'est vrai que refetch, enfin, re-retry quand on a perdu le signal, et ou un peu offline, et ou le cache, ou... Ouais, mais en fait faut que je gère les erreurs correctement, et puis le... dumping de... Enfin, Y'a plein de magie qui solutionne pour toi. Et donc c'est quoi, la query ?
+
+Armand (13:16.587)
+Exactement.
+
+Armand (13:21.487)
+Exactement.
+
+Armand (13:25.967)
+16 ans.
+
+David Leuliette (13:30.485)
+si tu devais l'expliquer.
+
+Armand (13:34.235)
+Tu fais tes données directement, je ne sais pas comment tu veux que je l'explique exactement. Sous quel axe tu veux que je parte ? Tu peux parler des queries, peux carrer des mutations, tu as beaucoup de
+
+David Leuliette (13:39.925)
+Ouais parce qu'en fait...
+
+David Leuliette (13:46.761)
+C'est ça, parce qu'en fait quand tu dis c'est un hook pour fetch la data, pas du tout. oui mais en fait non, c'est une solution à synchrone pour gérer ton state, pour gérer ton server state. Bon parce qu'en fait ça a tellement évolué, là je suis sur la landing page maintenant, là plus rien à voir par rapport au tout début, mais ce qui est très cool c'est que c'est resté hyper simple pour démarrer. Ça c'est vraiment très bien.
+
+Armand (13:50.383)
+à croissant.
+
+Armand (14:12.013)
+Et surtout que tout le monde utilise 10Stacks Query, c'est ce que tout le monde connaît, mais y a plein, t'as 10Stacks Form, t'en as plein d'autres. En fait, y en a plein d'autres. On connaît que celui-là, mais en fait, je me suis pas plongé assez dans les autres. t'en as tellement de trucs.
+
+David Leuliette (14:19.528)
+A oui, on a plané tout.
+
+David Leuliette (14:28.081)
+Et euh... Ok donc tout ce qui est State Management et Data Fetching ça va passer par ça. Et votre back-end alors c'est quoi ? Vous gérez quoi comme type de données en plus ?
+
+Armand (14:37.743)
+ça va être du crud assez classique tu vois et du coup moi je suis parti sur du Django à la base du coup en gros comme ça faisait beaucoup de choses entre le hard, le front, le back, il a le déploiement, l'hébergement et tout moi je me suis beaucoup concentré sur le front au début pour déjà bien comprendre ça et le back c'est moins mon expertise aujourd'hui parce que du coup c'est moi qui fais tout donc je t'avoue que je suis pas je suis expert en React Native dans sens où ça fait longtemps que j'en fais d'un point de vue back du coup je suis parti d'abord sur Super Base au tout début parce que je gagnais vite
+
+David Leuliette (14:43.273)
+Ok.
+
+Armand (15:04.847)
+C'était le tout début de SuperBase, il commençait à être en vogue et du coup j'avais commencé à le set up. Et puis au bout d'un moment en fait, le truc c'est que je ne comprenais pas forcément ce que je faisais. C'est à que tu il y toujours le côté où j'avais envie d'apprendre et d'évoluer. Du coup je suis parti en fait, j'ai discuté avec un gars sur LinkedIn et il m'a dit bah écoute tu veux je peux te former sur Django. Donc c'est Jean-Baptiste Brasselet, je ne pense pas qu'il écoutera le podcast mais si jamais.
+
+David Leuliette (15:19.772)
+Et de la magie.
+
+David Leuliette (15:33.62)
+Big up à lui quand même.
+
+Armand (15:35.381)
+Exactement, en gros il m'a informé sur Django et du coup je suis parti sur ça et puis après Zeron. Je me rends compte que ce n'était pas forcément le meilleur choix parce que dans un environnement de TypeScript ça aurait été plus simple d'utiliser d'une note JS ou quelque comme ça. après je sais que en soi du crud, enfin c'est le langage qui va changer, maintenant j'ai compris un peu mieux la logique du bas, comment ça fonctionne etc.
+
+David Leuliette (15:55.756)
+Ouais, simple, je suis pas sûr. Parce que j'avais un script, c'est quand même bien le chaos. En fait, ta courbe d'apprentissage de development... En vrai Django, trop bien parce que tout est documenté, tout est hyper clair, si t'avais balancé Node.js, ça aurait été tiens, voilà les 15 milliards de solutions différentes, choisies en une, mais ce sera pas la bonne ! Parce que tu vas voir 200 articles qui disent que oui et 200 qui disent que non.
+
+Armand (16:00.953)
+Ouais, c'est pas fou.
+
+Armand (16:16.846)
+C'est ça.
+
+Armand (16:23.727)
+C'est faux.
+
+David Leuliette (16:24.919)
+Donc... ou alors... t'aurais fait du météor. Mais ça on fera un épisode exprès sur météor. J'inviterai un des frères... Oui oui oui, parce que pareil, météor c'est un peu le Django de... ou le Rebian Rails de JavaScript. qu'on n'a pas vraiment à l'heure actuelle... Enfin, il a plein de solutions en fait. Du coup tu serais peut-être un peu perdu dans la chose, mais... OK.
+
+Armand (16:44.014)
+Ok.
+
+Armand (16:48.271)
+Allez, vas-y.
+
+David Leuliette (16:53.722)
+Ok, ok. Et donc t'apprends tout ça en même temps, tout ça en même temps.
+
+Armand (16:58.399)
+Donc en fait au début j'étais en parallèle de mon école, j'étais en apprentissage chez Airbus. Donc du coup j'avais Airbus et je rentrais le soir et du coup je me mettais à bosser jusqu'à 23h30 dessus et puis je faisais ça. Donc je t'avoue que j'ai beaucoup appris par moi-même et c'est pas justement... bah j'avais besoin aussi d'apprendre d'autres personnes. C'est pour ça que je te dis que je suis très curieux donc sur les podcasts j'apprends de ouf.
+
+David Leuliette (17:11.239)
+Et donc...
+
+Oui.
+
+David Leuliette (17:24.851)
+Alright.
+
+Armand (17:26.031)
+J'essaye de me former au maximum, tu vois. Donc voilà.
+
+David Leuliette (17:36.781)
+Ok super, donc tu te rappelles avec lequel SDK t'a scaffold ton app ?
+
+Armand (17:43.893)
+Au début, me souviens si c'était pas avec Expo, parce que je l'ai fait en bare workflow du du rack navigué.
+
+David Leuliette (17:47.858)
+ouais tu la fais directement, ok.
+
+David Leuliette (17:52.445)
+Ouais, parce qu'il fallait le Bluetooth je pense du coup, je pense que c'était pas possible au début. Ok.
+
+Armand (17:55.631)
+Ouais, exactement. Mais en 2020, en 2021, c'était pas possible. Et puis surtout que c'était pas hyper bien représenté Expo. Enfin, à l'époque, il y avait beaucoup de critiques dessus. C'était pas aussi stable que maintenant, alors que maintenant je le prône. Mais du coup, ouais, en fait, c'était du RegNative BearWoreFlow, RegNavigation. C'est RegNative BLEPLX aussi que j'utilisais. Et puis la version, alors ça, c'est une bonne question. Je crois qu'en 2020, est à quelle version ? Je t'avoue que j'y réfléchis avant le podcast et je me souviens plus que j'étais à quelle version.
+
+David Leuliette (18:16.252)
+Ouais.
+
+David Leuliette (18:24.602)
+mais maintenant c'est stable, c'est tous les 4 mois à peu près mais avant c'était un peu... pas aussi carré que ça. Non c'était plus pour ça, pour la navigation, donc t'es resté sur avec navigation alors. t'as changé aussi !
+
+Armand (18:37.761)
+Non du coup j'ai changé au final parce que du coup au final en fait ce qui s'est passé c'est qu'on a avancé avec du coup le premier prototype donc c'est vraiment un proto-proto où on commençait à comprendre du coup Bluetooth-Low Energy parce que entre guillemets je me suis pas facilité la tâche à me lancer sur une app qui fait de la communication BLE. t'as fait un podcast avec Sherlock d'ailleurs vous en parliez.
+
+David Leuliette (18:58.564)
+c'est le pire truc que j'ai jamais fait moi.
+
+David Leuliette (19:04.594)
+Ouais, ouais.
+
+Armand (19:05.263)
+et tous les temps je les confirmais, on avait des problèmes de synchronisation entre le hardware et les devices Samsung notamment, ou même Xiaomi là, c'était la galère. Bref, du coup, fin 2022, début 2023, j'ai commencé à regarder un peu plus Expo, et je voyais des plutôt bons retours, et du coup je me suis dit, bah go faire la seconde version en Expo pour tester.
+
+David Leuliette (19:31.251)
+Ouais, ok. Et autant tout faire. Et autant tout faire d'un coup.
+
+Armand (19:34.851)
+autant t'offrir et du coup je suis parti là dessus et au final je passé à EXPROUTER.
+
+David Leuliette (19:41.234)
+En même temps, oui.
+
+Armand (19:42.671)
+Et du coup pour les besoins que j'en avais ça me suffisait à l'époque, aujourd'hui ça me suffit encore et puis maintenant j'ai aucun problème je pouvais inclure BLEPLX dans l'expo mais pas de soucis et après du coup je suis passé sur EAS pour le déploiement.
+
+David Leuliette (19:57.466)
+Ouais, directement. Et est-ce qu'il des patternes de navigation un peu particuliers que tu as mis en place ? Parce que l'app, c'est pour les gens, consumers normaux du... En fait, n'y a pas vraiment de... Il a rien en fait dans l'app, il n'y a pas grand chose. n'y a rien. Niveau UI, a... Allez, 10 screens max ? Ouais.
+
+Armand (20:09.845)
+l'app c'est pas non l'app elle est pas en fait
+
+Armand (20:16.543)
+Ce qui a surtout été complexe, de fiabiliser la partie communication BLE. Ça ça a été franchement, on a passé au moins 6-7 mois et encore des fois j'ai des problèmes et je ne pas pourquoi. Des fois faut peut-être que je me regarde d'un point de plus hardware. Et aussi par contre il a pas mal d'animations. que quand tu fais des apps de contrôle d'accès, fait sais pas si tu regardé sur Mobin, je sais pas si en as déjà vu, tu as beaucoup de sliders, tu as beaucoup d'animations pour justement...
+
+un site utilisateur qui comprenne les interactions vis-à-vis de l'ouverture de la porte.
+
+David Leuliette (20:48.785)
+Mobin c'est screenshot, c'est le site web Mobin
+
+Armand (20:53.261)
+C'est ce que... enfin, pour... Mais tu peux regarder justement, ?
+
+David Leuliette (20:56.434)
+Il a vidéo, c'est possible qu'il vidéo dans ma tête, c'était screenshot mais ça évolue tellement que... pense qu'ils sont... Moi j'ai connu quand le gars était tout seul et la dernière fois j'ai été voir, c'était genre on eu une type de 10 personnes, je fais... ouais ok, juste pour des screenshots, ok pas mal. Donc mobin.com pour ceux qui connaissent pas, ce site est incroyable.
+
+Armand (21:11.887)
+Pas mal.
+
+Non, t'as dribble aussi, c'est pas mal dribble.
+
+David Leuliette (21:18.961)
+Ouais ok ouais d'accord. Moi je ne dis pas du tout parce que dribble c'est un peu comme regarder les étoiles, c'est des choses qui sont déjà mortes. Mais c'est un autre débat ! C'est... ouais moi je préfère faire l'inverse tu vois, rétro-ingénieur des choses qui existent déjà, plutôt que te dire, hey j'ai une idée incroyable et en fait t'auras pas le temps de l'exécuter et ouh ça va prendre trop de temps. Mais c'est parce qu'en fait...
+
+Armand (21:27.519)
+C'est un autre débat.
+
+David Leuliette (21:43.889)
+je suis freelance, je bosse pas sur un produit, si je bossais sur un monoproduit j'aurais peut-être une vision différente et je me dirais, on va faire une app, l'UX, les gens ils ne vont rien comprendre, ce pas grave, on va faire le nouveau Snapchat et hop. Donc, c'est deux approches différentes. Mais ok, intéressant et donc styling et UI library, tu utilises une library ou ?
+
+Armand (21:56.559)
+On est là.
+
+Armand (22:05.793)
+Alors du coup, styling, style sheet. Parce que ça commencé, je me suis fait la main dessus et qu'aujourd'hui, bon ça me suffit en fait, j'avais pas besoin de faire plus. Donc reanimated, du geste sur handler, et puis après, tout roule. Tu mets tout dans un shared, tu fais ton design system et puis après, voilà. Je sais que par du coup mes expériences de freelance, j'ai fait aussi l'implémentation de Tamagui.
+
+David Leuliette (22:34.193)
+Ouais, t'as mal qu'à y aller, ouais.
+
+Armand (22:35.831)
+En fait dans 2 secondes j'en ai pas forcément... Au stade où on en est, quand j'ai fait du tamagui je me suis rendu compte de la complexité parce que la dodeau y en a pas.
+
+David Leuliette (22:43.761)
+Ouais, Tamagot et la duck c'est un peu... ouais c'est un peu... fin y en a mais... c'est pas...
+
+Armand (22:48.751)
+Pour te dire, j'ai bossé avec Théo Dau, je devais implémenter, on était au tout début du projet, but c'était d'implémenter Tamaggy pour avoir un design système unifié et de taming aussi. C'était pour une application web en Next, et notre site web en Next, et une application mobile en Expo qui fonctionne avec Ragnative Web. Donc au final tu te retrouves avec 4 supports, du coup l'intérêt était là.
+
+David Leuliette (23:08.72)
+Mm-hmm.
+
+Armand (23:16.739)
+Mais par contre, implémenter Tamaggy dans un shared package, dans un workspace, c'est un art.
+
+David Leuliette (23:21.969)
+c'est compliqué hein faut... ouais. C'est... t'es full stack ou quoi ? Moi je suis full stack ? moi je fais de la data. C'est ça. Tu peux pas tout faire. ouais ouais je partage le...
+
+Armand (23:35.535)
+Je me mis sur ce projet là, styling style sheet. Par curiosité je voulais voir si j'implémentais là, il a la V4 ou la V3 qui est sortie là, tu sais, la licorne avec la licorne là, ou le cheval. Unistyle. Juste par curiosité j'ai vu qu'ils avaient sorti du coup une nouvelle version et je me suis à l'implémenter mais j'ai d'autres priorités à faire donc voilà.
+
+David Leuliette (23:51.361)
+Unistyle !
+
+David Leuliette (24:02.599)
+En gros, Unisight, c'est un super set de style sheet, d'après ce que je me souviens. Et je sais que la migration, peux garder quand même toute ton implementation, juste changer l'import, avoir l'import d'Unisight et puis faire la migration au fur et à mesure. Donc ça c'est... ça c'est plutôt bien quand t'as pas vraiment le temps, mais en vrai, est-ce que c'est important ? Je ne sais pas. C'est la 3. C'est la 3 ou la 4 ?
+
+Armand (24:18.767)
+Ça va.
+
+Armand (24:31.599)
+Je crois que c'est la 3, je sais plus.
+
+David Leuliette (24:33.231)
+il y a deux heures 3.13 3.0.13 du coup c'est la 3 et ça permet d'avoir tout ce que style sheet n'a pas, système de theming, media query, genre de trucs. Si je me rappelle bien à Medo que je ne sais plus trop mais il faudra vérifier la doc. Ok super super super
+
+Est-ce que... Donc ouais tu m'as dit des petites animations, tout ça, pour... utilises des icônes, tu utilises... Comment tu fais les animations du coup des SVG si t'en as ?
+
+Armand (25:07.431)
+J'ai pas de SVG, mais fait ce que je fais, va être principalement en fait la grosse complexité ça a été du coup pour ouvrir la porte et montrer aux utilisateurs que la porte est ouverte. En fait j'ai un slider indicator, c'est un composant, je sais plus comment il s'appelle exactement d'ailleurs, faut que je re-check, mais donc c'est un simple slider en fait. Le plus compliqué c'est de pouvoir gérer en fait l'ouverture de la porte et le synchroniser avec le state.
+
+David Leuliette (25:09.132)
+Ok.
+
+David Leuliette (25:17.881)
+Ouais.
+
+David Leuliette (25:34.671)
+Hmm?
+
+Armand (25:35.171)
+ça ça a été un truc galère. début du coup j'ai toujours été, comme l'application n'a pas non plus énormément de complexité en soi, suis toujours passé par des states locaux avec du new state tu vois, je me suis pas complexifié la vie. En fait jusque là où j'avais un problème justement parce que là le props drilling commence à me saouler, je sais pas. Et du coup au bout d'un moment je me suis dit on va tester un store global et j'ai vu the stand, j'ai testé, j'ai juste créé un door opening.
+
+David Leuliette (25:51.225)
+Ouais.
+
+David Leuliette (26:04.281)
+Ouais.
+
+Armand (26:04.759)
+et après ça fonctionne.
+
+David Leuliette (26:06.767)
+Ouais bah ouais c'est ça, généralement c'est ça, puis ça suffit, vu que c'est partagé partout, ça simplifie et puis ça roule. Pour ceux qui ne pas, le props relink, puisque React c'est dans un seul, you need data flow, truc du genre, one flow data, je ne pas quoi, pas dans les deux sens, et du coup props relink c'est qu'on doit passer les props de, bon à niveau ça va, de, et après au bout d'un moment c'est KO et là tu dis.
+
+Armand (26:25.043)
+Ouais. Ouais, c'est lui. C'est la BF.
+
+Armand (26:35.481)
+Ouais, là tu commences à te des questions, c'est ça.
+
+David Leuliette (26:37.477)
+Non. Exactement. après, c'est ça. toute façon, que tu l'as pas, tu pouvais pas arriver up front avec une solution et te dire, ouais, je vais mettre du stent, ça va bien passer. En fait, si t'avais pas le problème, ça sert à rien. Et tu t'en rendais pas compte non plus.
+
+Armand (26:52.582)
+Mais même aujourd'hui, j'en discutais en plus avec un gars sur l'initi de récemment, lui il a 10 années d'XP et il me disait au final tous les trucs qu'on voit de faut utiliser la dernière solution, ce qu'il fait c'est qu'il utilise des stats locaux tant qu'il en a besoin et après comme tu l'as dit quand il doit évoluer il voit qu'il a un truc qui marche pas, là il utilise des user et du sir, là il utilise du contexte, là il utilise un store global mais sinon il reste sur du local et il se pose pas la question.
+
+David Leuliette (27:19.181)
+Ouais ça dépend. après moi je dirais aussi un truc qui change aussi à fond c'est la team quoi. Si là t'es tout seul sur ton pro, enfin ça va en fait en vrai tu vas t'y retrouver. Mais dès que tu commences à être à 3-4 et que ça ship comme des furieux, bon, on va changer de stratégie. Surtout si t'as que des juniors qui copient. Si tu fais un truc qui est mal fait, tu sais, mais en vrai c'est que t'as pas le temps, il faut shipper donc en fait ça va. Mais si...
+
+Armand (27:30.187)
+C'est sûr.
+
+Armand (27:37.071)
+...
+
+David Leuliette (27:45.896)
+les autres dans ta team sont peu plus juniors et se disent c'est comme ça qu'il faut faire après problème tu... on va citer Bill Gates si t'automatise un truc inefficace ça automatise l'inefficacité c'est ça, en fait la citation exacte c'est si t'automatise un système efficace t'automatise l'efficacité mais c'est pareil pour l'inefficacité si t'automatise un truc inefficient bah c'est plus le bordel qu'avant
+
+Armand (27:49.997)
+Hum hum. Clairement.
+
+Armand (27:58.231)
+vous la connaissez pas.
+
+Armand (28:15.63)
+Ok.
+
+David Leuliette (28:15.79)
+Et du coup en 2025, HowSleeSolution, comment ça marche pour déployer tout ça ? Est-ce qu'il y a une release toutes les deux semaines ?
+
+Armand (28:30.687)
+Non, on est vraiment... Alors déjà, truc c'est...
+
+David Leuliette (28:31.534)
+Non !
+
+Parce que attend, attend, on est d'accord, on a un site web, une admin tout ça là, ça c'est fait en Django, on a l'ADB tout ça là, ok ouais, on a une app mobile et on a un firmware aussi.
+
+David Leuliette (28:55.221)
+Ok.
+
+Armand (28:56.207)
+J'ai eu la chance.
+
+David Leuliette (28:58.638)
+C'est tout ? Y'a que ça ?
+
+Armand (29:00.393)
+Bah, attends, tu m'as dit code embarqué, applications web, applications mobiles. T'as un semblant de pipeline, on va dire, et t'as de l'hébergement. Quand je dis un semblant, c'est parce que le truc, c'est que comme du coup, je suis relativement jeune et je n'ai pas encore suffisamment d'expérience, vois, et ça demande du temps d'apprendre. Je ne pas être partout à la fois. J'ai beaucoup mis mon énergie sur React Native. Et à côté, là où j'ai délaissé un peu, du coup, ça va être sur le plat-panne de déploiement.
+
+David Leuliette (29:09.101)
+Ok, ok, ok.
+
+David Leuliette (29:28.312)
+mais après t'es
+
+Armand (29:31.867)
+Le truc c'est que j'en ai fait du coup je me suis fait un CICD avec du GitHub Action pour le backend tu vois pour pouvoir débloquer parce que j'ai pas commencé à le faire la mano avec une en connectant au SSA et puis encore plus à faire un gitpool
+
+David Leuliette (29:37.205)
+Ouais... Voilà.
+
+David Leuliette (29:44.589)
+Ouais non mais oui... T'as jamais fait ça ? T'as jamais dragon drop sur FTP ? T'as déjà fait ça ? Ah ok ouais, bon bah c'est vrai.
+
+Armand (29:52.159)
+J'ai fait ça, au début les sites web j'ai fait. Pour qu'ils me prennent, mais c'était quelque chose. Dans osstinger je faisais Donc ouais, y a ça. après sur le... j'ai jamais eu l'occasion du coup, là c'est un truc qui me tente pas mal, faut que trouve le temps. C'est EAS Workflow.
+
+David Leuliette (30:12.845)
+Ouais bah allez, suis avec mon client, on est en train de faire ça dessus. Vas-y explique ce que c'est, explique ce que c'est IAS Workflow. Pour ceux qui connaissent pas.
+
+Armand (30:15.343)
+Oui, parce que du coup je fais pour l'instant à la main l'autre.
+
+Armand (30:25.167)
+C'est quoi IaaS ? C'est Expo Application Services. C'est différents services qui te permettent de faciliter la release des applications au build sur les stores. Ils ont différents services. Le plus connu et celui qui a commencé, c'est EAS Build. Ça te permet de générer un build. Un build, c'est ton application qui est compilée, que tu vas donner au store pour qu'elle puisse ensuite la mettre directement sur les stores.
+
+Donc on a un peu...
+
+David Leuliette (30:50.668)
+avec le fameux vérification des certificats. Si vous n'avez jamais fait ça à la main... Ah mais t'as fait aussi à la main ! Ah ouais !
+
+Armand (30:55.33)
+Exactement. Voilà. Je vais la mettre la main du coup. ça... Ouais non mais franchement, c'était une galère. moi j'ai pété un câble, je ne pouvais plus. Je ne pouvais plus.
+
+David Leuliette (31:04.396)
+Y'a pas que toi, t'inquiète pas, on est des générations, on avoir fait ça, du coup... C'est bon. C'était... En fait, c'était... On va pas expliquer parce que ça pourrait prendre un épisode entier. Mais c'était très très très très compliqué. Et du coup, IAS, c'est ça. Et Workflow, en fait, ils se sortent du compte que le CI, tout monde faisait de la bidouille sur GitHub Action, mettre des actions et tout, et du coup ils se sont dit, mais... Bon les gars, arrêtez, on va faire une solution qui s'appelle IAS Workflow. La syntaxe, c'est les mêmes, c'est des fichiers IML.
+
+Armand (31:14.728)
+ouais... ouais, c'est pas si...
+
+David Leuliette (31:34.54)
+pouvez les mettre dans .is et hop ça fait des workflows tout pareil. Mais vu que c'est sur les serveurs d'expo on a accès aux tokens. Je sais pas en fait là je suis en train de jouer avec du coup je découvre en même temps mais c'est depuis là il a pas longtemps depuis cet été.
+
+Armand (31:54.223)
+Moi c'est assez récent. Justement, parce que pour l'instant ce que je fais c'est que j'ai setup le build, j'essaye de le submit, puis tu vois je fais mon build, une fois que c'est bon je fais mon submit. Pour les besoins que j'en ai vu qu'on est encore en mode du coup on n'est pas en production, on est encore en MVP tu vois. J'en ai pas forcément besoin de faire un pipeline pour le nombre de release que je fais. Tu sais je suis tout seul dans la startup en tant que technique.
+
+David Leuliette (32:17.58)
+Ouais bah même tu lances... Moi là, pour certains projets, je lance une commande et puis terminé quoi. J'ai juste un script, ça le fait sur ma machine, ça le hop, ça vérifie les trucs, ça build quand même sur expo mais ça envoie le notif, je reçois le QR code à la fin et puis terminé Donc... Ok ça réalise quand c'est ready quoi, quand on des trucs. Et le firmware du coup, ça réalise comment ?
+
+Armand (32:39.123)
+Le firmwares tu ne pas réaliser. C'est là où notre boîtier est en Bluetooth sur Energy et il inerte à la connexion Internet. C'est-à-dire qu'il ne communique pas avec l'extérieur, uniquement avec ton application mobile. Pour le moment, s'est concentré sur la fonctionnalité principale qui est tout simplement d'envoi un signal en Bluetooth sur Energy et c'est tout. Mais a pas de mise à jour du code à distance.
+
+Donc voilà.
+
+Parce que c'est pareil, tu veux faire ça, c'est à que tu dois connecter ton boîtier à la carte SIM. Du coup, veut dire que dans les bâtiments, faut que tu ajoutes une borne Wifi. Donc c'est à qu'il faut que tu fasses un abonnement à un FAI, donc un fournisseur d'accès à internet, que tu prennes la carte SIM, que tu la mets dans une borne Wifi, que tu la places dans le bâtiment. Sauf qu'il a pas beaucoup de place dans les bâtiments. On a énormément réfléchi sur ça.
+
+David Leuliette (33:16.651)
+bah oui, non mais c'est un dé.
+
+David Leuliette (33:34.059)
+en fait... bah en fait ça marche pas parce que c'est un sous-sol et du coup... à d'enfer.
+
+Armand (33:38.511)
+D'où pourquoi on est parti sur le... Enfin c'est pourquoi on est parti sur du Bluetooth WebEnergy. En fait le truc c'est que tu peux utiliser partout. Et il a un mode offline sur l'application mobile.
+
+David Leuliette (33:47.339)
+C'est vrai qu'on n'a pas dit ça. C'est important d'offline, parce que moi je fais plus Offline First depuis... Enfin en fait ça fait très longtemps que je me dis Offline First c'est très bien, mais là ça fait depuis quelques années que je focus là-dessus avec... Moi je fais Legend State parce que bah... Voilà quand j'ai choisi c'était Offline, puis voilà j'en ai choisi une et en fait bizarrement... Et bah c'est Offline... Par défaut. Ça marche comment toi du coup le Offline ?
+
+Armand (34:00.463)
+Oui.
+
+Armand (34:08.335)
+Bah oui.
+
+Du coup le offline c'est du MKKV. J'ai vu le benchmark Async Storage MKKV et j'ai fait bon bah go MKKV surtout que c'est pas très complexe puisque au final c'est de la clé valeur donc c'est exactement la même chose. Après tu vois je les instors les informations et puis c'est tout. Après tu vois j'ai juste un truc comme Spotify pour afficher quand la connexion internet est revenue ou pas. puis en ce moment pour la complexité de l'application il n'y a pas besoin d'aller plus loin.
+
+David Leuliette (34:17.291)
+Ok.
+
+David Leuliette (34:28.714)
+Alright.
+
+Armand (34:42.241)
+si on vient à complexer l'application, dans ce cas je partirai sur le Legend State. C'est toi qui m'a fait découvrir ça d'ailleurs dans un de tes épisodes dans le post-mast. Je connaissais déjà le Legend State mais je n'avais pas fouillé le côté pour avoir une approche Offline First. Ça te permet énormément de choses.
+
+David Leuliette (34:58.922)
+Ouais c'est différent de façon de réfléchir tu vois, c'est peut-être pas adapté à tout mais moi je sais que j'aime bien, ce qui m'a vraiment fait ça c'est quand j'avais pris l'avion que je faisais de la vodka, je me disais ouais Revolution c'est trop bien regarde cette app et en fait ça a fonctionné dans l'avion et j'étais mindblow parce que en fait bah non c'est pas compliqué c'est offline first, t'as tes data et puis ça les pull enfin en fait en
+
+C'est un peu pareil que ton système, ça a juste check ma biometrie si je l'avais, t'as pas besoin de faire un appel serveur pour ça, c'est juste local et ça ouvert et t'avais mes data et ça disait bien c'est pas les data up to date mais c'est ceux qu'on a déjà storé. Là je suis là, mais là ils sont des années lumières pour vérifier juste quelque chose. donc toi dans ton cas, pareil, Legend State en fait c'est que fait...
+
+Par défaut, c'est comme ça, c'est local first.
+
+Armand (35:57.839)
+Tu Tu setup c'est quoi ? Tu stores avec quoi ? Les gens saissent ton state manager et ce qui va te permettre de gérer la synchronisation. Tu fais du SQ lite.
+
+David Leuliette (36:06.579)
+Ouais.
+
+Ah mais ça dépend en fait les besoins. Là j'ai pas eu besoin d'SQLite, j'avais déjà testé une fois donc là c'est vraiment quand t'as besoin d'une database avec plein de choses mais là pour l'instant ce que j'ai avec LegendState ça suffisait, LegendState et MKKV aussi ça suffisait. Et en fait là pour la dernière app que j'ai lancé, la KitGo qui va shipper bientôt l'application des darons qui sont en détresse et qui veulent sortir avec leurs enfants et qui savent pas quoi faire, eh ben y'a KitGo.
+
+Armand (36:36.527)
+J'irai tester.
+
+David Leuliette (36:38.241)
+Carrément, faudrait que j'envoie là, aller sur les stores, faut envoyer moi un DM, je vous envoie une invite test fly direct. Et... Et... bah là c'est Super Base, et en fait du coup j'ai un rapper LegendState Super Base qui stocke en local... Franchement c'est fou, j'ai mis 4 lignes, 20 lignes, et hop ça store directement. Et en plus le truc complètement dingue c'est que...
+
+Armand (36:45.871)
+Vas-y.
+
+Armand (37:03.343)
+Ok
+
+David Leuliette (37:07.534)
+Donc là l'application c'est pour les parents des tresses et tu peux ajouter des lieux genre je suis à la ferme cueillette de fraises, je peux ajouter le lieu. en fait, donc ça je l'avais fait mais j'étais pas logué parce que j'ai oublié de me loguer sur mon app de test et j'avais pas capté, je comprends pas, j'ai l'appartement.
+
+Armand (37:21.711)
+Bon,
+
+David Leuliette (37:32.808)
+J'ai la data, mais elle n'est pas dans la database. ne comprenais pas. dis que ça marche pas, elle n'est pas remontée. Comment ça se fait ? Je cherche dans le code pendant deux heures. Je que je ne comprenais pas. Je me reloge sur mon app et ça l'a envoyé directement. J'ai mis la synchronisation en temps réel directement. Et ça marche.
+
+Direct ! Je ne pas coder la feature en fait. Donc de base il va stocker en local et dès qu'il retrouve le signal, paf il envoie sans aucun... sans rien ajouter. Et en fait je pensais que je devais coder la feature, mais en fait pas du tout. Avec Legend State et la synchronisation Super Bay ça marche direct. Du coup franchement folie. Folie ce truc là.
+
+Armand (37:55.887)
+...
+
+Armand (38:11.471)
+Franchement, il je me fasse des tests là-dessus parce que j'ai déjà testé. J'ai principalement utilisé la Legend List pour que ceux qui ne connaissent pas, simplement, il la Flat List de RegNative et après il y a deux alternatives. Soit vous avez du coup la Flash List qui a été faite par Shopify, soit vous avez la Legend List du coup. après il faut juste utiliser deux alternatives. Et qu'est-ce que vous dire ? Ouais du coup c'est principalement pour ça que je l'ai découvert avec Legend List.
+
+et le state je n'ai pas encore testé au final.
+
+David Leuliette (38:42.216)
+Ouais ouais bah après t'sais y'a pas vraiment de... Tant que ça marche ça marche hein, faut pas hein. Vu qu'il 50 000 solutions, c'est ça, ça dépend. Ça dépend vraiment des usages et où vous en êtes et si vous êtes comme moi et que vous chopez les bons trains en bon moment. Ou les mauvais ! J'en ai chopé plein des mauvais avant. Mais on fera un truc... Y'en a plus... Ah je crois qu'il a un podcast authentique quelque part sur internet où je raconte tous les trucs horribles que j'ai fait avant. Ok donc on a vu... On a vu les 5 points hein. Est-ce que...
+
+Armand (38:56.207)
+ça.
+
+Armand (39:10.799)
+D'accord.
+
+David Leuliette (39:12.36)
+C'est quoi ton top 5 des librairies que tu utilises depuis des années, que tu recommandes et que tu aimes ?
+
+Armand (39:20.239)
+Eeeemmmm
+
+En fait le truc c'est que à force d'écouter les podcasts au final...
+
+David Leuliette (39:25.873)
+C'est tous les mêmes, faudrait que je la change cette question, à plus !
+
+Armand (39:28.047)
+En fait, y en a une, j'allais dire du coût de query mais en vrai ça sera redondant. Il y en a une moi que j'aime beaucoup mais même elle est très connue, c'est le combo Zod-Resolver-React to Form. Franchement, en 2020 quand j'ai commencé et que tu devais faire du conditional pour afficher ton error en dessous et que au final le Ease loading fallait mettre un state, enfin bref c'était...
+
+David Leuliette (39:30.94)
+Bah oui.
+
+David Leuliette (39:52.84)
+Déjà tu mets un isloading, c'est déjà t'es f***é. Faut jamais ! Alors je vais le mettre dans les notes d'émission. Parce que... Alors si vous êtes chez vous, vous êtes appelé isloading. You can't see dots. Et vous prenez le premier article qui date de 2020. faut pas mettre de isloading because...
+
+Armand (39:56.714)
+Déjà tu plus...
+
+David Leuliette (40:21.351)
+Parce que... Faut pas. Ouais, faut pas. Parce qu'en fait, ouais, coup, voilà, c'est ça, t'as... Isloading, après tu mets oui, non, mais en fait c'est pas que ça, t'as... Est-ce que t'as commencé, est-ce que t'as pas commencé, est-ce que t'as une erreur, est-ce que ça est success ou rejected ? Enfin... C'est pas si... C'est pas si facile que ça.
+
+Armand (40:23.599)
+pas.
+
+Armand (40:33.859)
+Ouais c'était... pas si évident. Et bref, du coup au final pour gérer les formulaires, maintenant j'utilise que ça. ça soit de toute façon dans React environnement, dans l'environnement React j'utilise Zod, le résolveur, après du coup, bah du coup React to Form, et ça fonctionne nickel. Donc je te dirais ça. Et après en React Native, l'Elipe que j'utilise principalement, euh... En vrai je dirais...
+
+je dirais reanimated, et en vrai je dirais BLOPLX. que du coup, franchement moi, est toujours maintenue, la doc est super bien faite. D'ailleurs on ne pas expliqué, vous avez deux choses, avez le Bluetooth et le Bluetooth sur NRJ. En gros, faire simple, vraiment très simple, le Bluetooth vous avez besoin de vous appareiller. Quand vous avez votre casque et que voulez écouter la musique, devez vous appareiller au casque. Alors que le Bluetooth sur NRJ, n'avez pas besoin d'appareillage. Vous pouvez scanner l'environnement, détecter des devices et vous connecter à eux.
+
+David Leuliette (41:08.679)
+Oui.
+
+Armand (41:32.257)
+et du coup vous n'avez pas besoin d'appareillage. en fait il y a deux librairies qui existent, soit vous avez du coup c'est React Native BLE PLX, ou avez l'autre c'est BLE Manager je crois.
+
+David Leuliette (41:42.124)
+Ouais je... ouais je pense que c'est ça ouais.
+
+Armand (41:44.171)
+Et moi du coup, quand j'ai commencé, j'ai pris la première qui venait, c'était Regmenty Bellopelix. Il a une doc qui hyper bien faite, qui hyper maintenue, la communauté est hyper active. Ils essayent de résoudre au maximum les problèmes de fiabilité qu'il y a sur Android. Parce que sur iOS il n'y a pas de problème, mais sur Android il a beaucoup de problèmes. que certains fabricants ne suivent pas les recommandations du coup de Google.
+
+David Leuliette (42:03.782)
+Moi j'ai découvert ça aussi, comme la joie de la caméra aussi, que vous vous rendez compte que la caméra se comporte différemment sur les plateformes. Et en fait pourquoi ? Parce que ReicNative BLE PLX est maintenu par une entreprise directe et il me semble... Alors attends, je ne sais plus s'ils font vraiment du hardware. J'ai un petit doute, je ne peux pas vérifier mon téléphone, il exactement là. Et il me semble que... C'est ça, où ils ont des...
+
+Armand (42:06.831)
+...
+
+Armand (42:17.007)
+Bye bye.
+
+David Leuliette (42:33.318)
+Ils ont une incentive à maintenir ce truc, c'est pas juste un développeur qui va disparaître parce que burn out de l'open source vu que c'est une boîte derrière, moi c'est pour ça que j'avais choisi celle là et parce que la doc est grande par rapport à manager et pour le coup moi pour l'instant j'ai pas encore eu de mise à part le manque du doc du firmware
+
+Armand (42:58.145)
+Si a un truc à l'arrière, ce serait Expo Image. Je vois encore trop de gens qui utilisent image de React Native. Je crois qu'ils ne se rendent pas compte comment ça alourdit le build et comment ça détruit un peu les performances quand il a des images très grosses.
+
+David Leuliette (43:13.199)
+ouais, pourquoi Xpo Image ? Parce que pour moi c'est genre... ils optimisent, c'est vrai. Ok, au build. Ouais.
+
+Armand (43:15.329)
+On va optimiser.
+
+et après sinon en vrai le reste ça défaille
+
+David Leuliette (43:24.609)
+Pour ceux qui font un peu plus de racte, c'est comme Gatsby Images ou Next.js Images. En fait, vous lui filez une image et la magie fait que Next.js ou Gatsby vont découper votre image correctement pour les media query avec les bonnes tailles, les bons trucs, les bons machins. Expo Images, c'est un peu pareil. C'est un peu pareil, mais je savais qu'ils ajoutaient de base le isloading, enfin le fameux isloading, le fade in, on va pas dire isloading.
+
+le fade in, fade out animation gratuitement et ça je savais pas qu'il faisait un peu d'optimisation au build j'avais pas fait gaffe en fait moi je l'ai mis quand c'est arrivé et puis je me suis regardé et puis voilà
+
+Armand (44:06.883)
+Ouais. Mais ils font aussi... T'avais des formats d'image qui t'aient pas pris en compte. Et eux, ils ont rajouté, exemple, typiquement, tu vois.
+
+David Leuliette (44:15.202)
+ouais, y'avait pas WFP tout ça ?
+
+Armand (44:16.635)
+WebP, crois que c'était pris mais genre... Attends, je peux regarder sur le doc. Mais je crois par exemple ECNS, il y a des supports d'images qu'ils ont adoptés. Discs et Memory Caching. Ils ont adopté pas mal de trucs pour justement optimiser ça. Et je trouve que c'est pas assez utilisé.
+
+David Leuliette (44:29.328)
+Ouais, ok.
+
+David Leuliette (44:36.695)
+Bah c'est soit mes connaissances ou soit c'est arrivé. En fait t'as deux trucs, c'est que tu sais pas et tu fais une app maintenant et là la bombe taine qu'il faut gravir. Parce que tout à apprendre maintenant c'est vachement compliqué. Ou alors un peu comme toi et moi, t'as vu les évolutions au fur et mesure et t'étais sur le même produit et du coup tu les as mis au fur et mesure qu'ils arrivaient pour tester tout simplement. puis en fait, trop bien.
+
+Armand (44:45.871)
+Bonne nuit.
+
+Bonne nuit.
+
+David Leuliette (45:06.456)
+ou alors si t'as pas c'est que ça a été scaffold il y a mille ans et pour follow up est-ce que tu dois inclure des choses ou pas bah compliqué quoi donc
+
+David Leuliette (45:18.762)
+Ok, la dernière feature que tu as codé c'était quoi et combien de ça t'a pris ?
+
+Armand (45:24.879)
+La dernière feature que j'ai codé, dirais que celle qui m'a vraiment pris c'était sur le slider du Parce que en fait avant sur l'application mobile vous aviez un bouton, vous cliquez dessus, il avait un loading qui mettait votre porte en cours d'ouverture et après elle se fermait. Et en fait c'était bien mais ça représentait pas ce que je voulais faire et je voulais aussi me challenger sur la partie UI et aussi je suis pas mal de tuto notamment avec William Candion qui...
+
+David Leuliette (45:52.113)
+Big up à William. c'est vrai que je devrais l'inviter. hop, faut que je me mate à un reminder.
+
+Armand (45:56.495)
+Ça serait hyper intéressant, ouais. Je qu'il a plein de choses à dire.
+
+David Leuliette (46:00.95)
+En plus il habitait à Lens, big up au nordiste.
+
+Armand (46:03.511)
+bah voilà, un peu nordiste. du coup en fait la plus grosse feature ça a été de ça, ça a été de du coup synchroniser le state en fonction de l'ouverture, de gérer la reconnection avec le bluetooth, de gérer le scan. Donc en vrai je dirais ça. Et puis voilà.
+
+David Leuliette (46:22.596)
+Combien de temps pour faire... Tu te dis, ça je le ship en deux semaines ou tu te dis ça sortira quand ça sortira ? Parce que là, ouais tu bosses plus dessus en fait, tu plus full time dessus.
+
+Armand (46:30.735)
+C'est pour ça que c'est un peu particulier, c'est pour ça que sur mon profil LinkedIn je le mets pas forcément en avant, c'est que comme du coup on n'a pas de fonds, on ne pas se payer avec, moi à côté je me suis lancé en freelance pour que justement je puisse avoir des revenus et continuer à travailler dessus. Donc en fait je suis à temps partiel sur le
+
+David Leuliette (46:50.772)
+Ou quand tu rentres de mission, ou quand il a des choses à faire, que des fois, juste la maintenance ça suffit, hop, c'est l'un dans l'autre en Ce que tu apprends en freelance, peux l'investir dans le projet, le projet, enfin moi c'est pareil en fait en pour ça je calcule pas non plus.
+
+Armand (46:52.815)
+quand je suis entre deux missions exactement.
+
+Armand (47:05.132)
+C'est exactement le
+
+Armand (47:11.567)
+Je trouve que justement, je pense que j'ai beaucoup appris en mission. tu vois, notamment avec Théodo, ils m'ont pas mal aidé.
+
+David Leuliette (47:15.268)
+Oui.
+
+bah structure et c'était Odo, c'est une agence qui organise... REC, Native London d'ailleurs, si vous savez pas quoi faire en mois de novembre, venez à Londres, j'y serai avec Mathis, on pourra faire des selfies, ça serait incroyable. C'est en novembre.
+
+Armand (47:30.679)
+C'est quand les gars ? C'est quand ?
+
+Nous vamos ? Ok.
+
+David Leuliette (47:35.586)
+je plus quand exactement, et moi j'ai pris mes billets en blinde, parce que je prends les quand c'est moins cher. En fait en early c'est moins cher.
+
+Armand (47:44.419)
+Ok, c'est vrai. Je pense que je viendrai... Faut vraiment que je regarde. Là, novembre, serai pris. Mais... Faut que j'en fasse. Bah, AbjS la prochaine. Et du coup, qu'est-ce que je voulais te dire ? C'était quoi ? En fait, c'est que typiquement, tu commences... En fait, ils savaient que j'avais des compétences en React Native. Ça, c'était pas le souci parce que je me formais dessus et tout. Mais c'est toujours pareil quand... React, en tout cas, t'as toujours la notion de...
+
+David Leuliette (47:49.93)
+bah du coup faut à AbJS l'année prochaine. Donc t'es au dos et t'en structurer parce que bon, sérieux quoi.
+
+Armand (48:11.887)
+et de solide même si c'est moins présent en fronte qu'en back mais c'est quand même important tu vois et du coup ils m'ont pas mal formé sur comment ils faisaient pour eux leur vision en tant que séparation du data integration, le domaine, comment tu gères tes règles métier et ensuite tu vois sortir la logique métier de tes UI components et ça je trouve que du coup on n'en parle pas assez tu vois et c'est pareil quand tu commences à apprendre React ou même un langage on dit bah t'as les tutos Youtube
+
+Les fameux tutos indiens ont dit, c'est comme ça qu'il faut faire. Alors qu'en vrai de vrai, ton code est justement, tu dois séparer ta logique technique et ta logique métier.
+
+David Leuliette (48:43.583)
+Ouais tu mets tout et fuck it ça marche je vois
+
+David Leuliette (48:52.461)
+Ouais mais ça, tu l'as vu avec Django du coup
+
+Armand (48:55.119)
+Ben non, mais Django tu t'as le modèle MVC, donc c'est modèle contrôleur, mais en soit la logique métier, je peux très bien la mettre dans le contrôleur, personne ne me dit qu'il ne pas le faire tu vois. Après il y avait peut-être une ligne cachée dans la doc qui me dit qu'il faut bien séparer et faire des services spécifiques pour que ton contrôleur ne respecte que ça. Mais en soit, si rien ne me pèche de le faire, je sais juste que j'ai mon modèle, ma view et voilà, c'est tout. mes URL pour faire un message.
+
+David Leuliette (49:12.631)
+Ouais.
+
+Ouais rien ne t'empêche de le faire ouais.
+
+David Leuliette (49:22.339)
+Ouais ouais, non mais Client... Il y a maître Tofu dans une chat qui dit que mettre Arachnative Expo c'est un peu le bordel. Bah carrément c'est complètement le chaos ! Mais en fait c'est ça le truc, c'est que c'est un avantage et c'est là une d'épées de Damoclès. C'est un avantage et c'est aussi un inconvénient horrible parce que du coup... Ouais t'as pas de structure et ça peut vite partir en vrille si tu... Bah si tu mets pas les gardes-fous et ou...
+
+Et ou comme TO2, tu as une entreprise et tu as besoin de faire des trucs corporate pour des choses sérieuses, où tu as genre 15 développeurs qui vont mettre à jour. En fait c'est ça, moi je dis souvent c'est créer une app c'est pas dur, mais c'est la maintenir au travers du temps qui est le vrai challenge.
+
+Armand (50:07.119)
+Clairement tu vois, clairement. c'est c'est totalement ça. Et même maintenant je me dis que si on arrive à avoir les fonds, parce que là on est en bonne phase du coup en phase de test avec des syndics et des bailleurs, tu vois la première chose que je ferais d'un point de vue technique, c'est prendre un freelance en BAC pour qu'il puisse estimer s'il faut refactoriser ou pas. D'un point de vue front, en React Native et en React il n'y a pas de soucis, ça je sais. Et par contre d'un point de vue BAC tu vois où c'est là où moi je ne pas avoir des failles de sécurité, il a plein de trucs qui vont rentrer et puis même je préfère faire un truc qui propre tu vois. Si on scale.
+
+C'est uniquement dans le cadre de Au début t'en as pas besoin comme on l'a dit, mais si tu veux scale, tu dois investir dans des personnes qui sont expertes dans ce domaine là.
+
+David Leuliette (50:36.578)
+N'importe quoi.
+
+David Leuliette (50:44.17)
+Est-ce que tu as justement une anecdote sur un moment difficile dans le dev et comment vous l'avez géré ?
+
+Armand (50:52.316)
+Quand ça marche pas, on démo devant un client.
+
+David Leuliette (50:55.388)
+ouais t'as vu ? ça, attends ça va. En 98 quand Bill Gates il a présenté le nouveau driver avec Windows 98, paf ! Blue Screen of Death. Et là ce matin, ou hier je sais pas cette nuit j'en sais rien, il a Mark Zuckerberg qui a montré les nouvelles lunettes méta avec un call WhatsApp et en fait impossible de décrocher le call. Et bah moi je dis
+
+c'est carrément mieux que les boring présentations record parce qu'en fait tu sais que les innovateurs ils essayent des trucs ça marche pas mais en fait c'est pas grave l'important c'est de le montrer après c'est toujours un peu ennuyeux mais est-ce que t'avais le record en backup moi je fais tout le temps ça en fait quand je fais des présentations de démos ou quoi parce qu'en fait j'ai fait des formations pendant mille ans donc en fait je sais que ce qui peut mal se passer tout simplement genre t'as pas le wifi donc toi ça t'es arrivé quoi genre
+
+Armand (51:22.095)
+Salut
+
+Armand (51:26.895)
+Bye !
+
+Armand (51:31.631)
+C'est ça.
+
+David Leuliette (51:48.807)
+démo et en fait marche pas.
+
+Armand (51:50.575)
+Le truc c'est que les problèmes de synchronisation sur Android sont pas mal présents et encore plus à l'époque et du coup en fait la démo fonctionnait à moitié parce qu'en vrai j'ai pas tout dit mais fonctionnait sur iOS. Donc on avait un téléphone avec le client heureusement le client il avait deux personnes du coup deux intermédiaires au niveau du client il en avait un qui avait un iOS, un autre qui avait un Android donc il y en avait qu'un qui fonctionnait donc ça allait tu vois et surtout qu'il était content parce que ça répondait à son besoin donc c'était trop cool
+
+mais en vrai ça a surtout été ça et puis après faut trouver la source du problème et puis faut le corriger mais après sinon des gros trucs à gérer en soit tu sais moi j'avoue je l'ai pas forcément dit mais au final parmi tous les invités que tu as eu je pense que je suis la personne qui a le moins d'expérience dans le dev même si j'essaye d'apprendre tous les jours et je suis hyper curieux et tu vois 5 années tu vois 5 années et puis
+
+David Leuliette (52:38.209)
+Alors toi ça combien ? 5 ? ? 5 années Faudrait que je fasse un classement, j'ai pas fait de classement en
+
+Armand (52:46.135)
+Donc j'ai encore beaucoup de choses à apprendre, beaucoup de rigueur à développer. Donc je n'ai pas vécu de crise énorme ou de choses comme ça.
+
+David Leuliette (52:55.105)
+Mais c'est pas forcément un advantage parce que t'as le fameux... Moi clairement 80 % de ce que j'ai appris ça servait à rien. en vrai... Tu sais, le débugger du spaghetti jQuery de 4000 lignes je sais faire mais en fait en vrai... Est-ce que c'est efficace ? Est-ce que ça sert à quelque chose ? Je sais pas trop. Donc... Bon.
+
+Armand (53:05.518)
+Oui.
+
+Armand (53:14.223)
+C'est quoi cette cercle ?
+
+Oui, c'est
+
+David Leuliette (53:22.882)
+Au delà, enfin versus quelqu'un qui est arrivé qui a bah salut go j'ai shipé une app avec SuperBase comme le kick la semaine dernière là. vrai, quel est le plus valuable ? Je ne sais pas, c'est le marché qui sait. Après ça te change pareil, ça dépend dans quelle organisation tu tombes et à quel niveau est-ce que tu veux aller donc... Mais ouais c'est vrai, overall c'est peut-être pas beaucoup mais en vrai ça solutionne des problèmes quand même. vois, un firmware embarqué...
+
+Armand (53:38.287)
+C'est ça.
+
+David Leuliette (53:50.209)
+peux demander à tous mes potes Dev, il pas un qui l'a fait.
+
+Armand (53:55.183)
+Bah du... Ouais, ouais, faut... Ouais. Bah du coup, je devais apprendre le C++, du coup. C'est... Un deuxième, en fait, donc... Même si en soit le code dedans est pas relativement complexe en soit quand tu regardes, mais... au début, quand j'ai commencé, rien que comprendre le lien entre... Tu vois, un colapi entre ton front et ton back... En fait, comprendre les concepts, tu vois. C'est compliqué quand t'en fais les concepts. Si t'as pas les concepts, ça sert à rien. C'est d'ailleurs le problème. En ce moment, on m'envoie... J'ai pas mal de messages sur l'indie dans mode...
+
+David Leuliette (53:59.169)
+Voilà, voilà, pour la fin du game.
+
+David Leuliette (54:16.071)
+Ouais, ouais ok j'y
+
+Armand (54:24.879)
+pas de refund mais d'audit vis-à-vis d'apps. tu regardes les apps, tu vois que ça a été fait avec Dolly ils ont lancé un prompt et tu te rends compte qu'il n'y pas les concepts, tu as les clés à payer en dur. Tous les concepts qui sont avec les bonnes ou expo, l'a clairement mis au début quand tu fais un start d'une application, ça n'a pas été respecté. Et ça, c'est chiant, c'est un peu le problème de Dolly A, c'est qu'il faut quand même utiliser les concepts.
+
+David Leuliette (54:26.849)
+Oui, oui.
+
+David Leuliette (54:33.441)
+Ouais. Ouais.
+
+David Leuliette (54:43.211)
+Ok.
+
+David Leuliette (54:47.616)
+bah oui, non mais clairement c'est parce que déjà il est pas... En fait scaffold, c'est une merde, scaffold un projet entier à base d'IA, je sais pas ce que je fais, c'est de la merde. Par contre, un humain qui se... Moi c'est ce que je fais, moi je scaffold le truc, moi je fais du vibe coding là, mais en fait j'ai mis des règles de folie avant... Bah tu vois, j'ai construit la lausature et après je fais vas-y, REV party Berlin dans un hangar mais la...
+
+tout est déjà en place, versus festival de musique où il a pas de règles et c'est KO et voilà quoi, et tout se débrouille. Ok, mais du coup c'est intéressant, est-ce que tu pu réutiliser ton skill de débugage en C++ pour faire tes apprack natives ou est-ce que ça ne t'a pas servi du tout
+
+Armand (55:22.319)
+Merci beaucoup.
+
+Armand (55:36.591)
+En soit ça ne pas servi du tout. que c'est vraiment de monde différent. Et puis en plus c'est du hard. c'est... Non en vrai ça ne pas servi. En soit non.
+
+David Leuliette (55:38.814)
+Ok.
+
+David Leuliette (55:47.935)
+Et donc tu m'as dit, il n'y a pas de différence à ce Android. À mise à part, comme on l'a déjà dit, le Bluetooth, faites gaffe si vous faites du Bluetooth, achetez de vrais devices.
+
+Armand (55:54.199)
+Non.
+
+Armand (56:03.055)
+J'étais de vrai device. Et tout le métier sans travail.
+
+David Leuliette (56:13.567)
+Avec les stack trace, ouais c'est vrai que moi j'envoie les stack trace bluetooth de ce que je récupère En plus Sentry ils ont un article de blog appelé Bluetooth Sentry
+
+David Leuliette (56:26.464)
+pour envoyer les bonnes stacktraces, les bonnes infos Bluetooth, Sentry... Non, tapez pas ça dans Google ! C'est pas du tout ça, c'est pas du tout ça ! J'arriverai à le retrouver...
+
+Armand (56:36.943)
+Je viens de le trouver au centre.
+
+Armand (56:44.015)
+Je suis sûr que tu me le partages. Je suis peut-être allé déjà dessus mais ça me parle pas.
+
+David Leuliette (56:47.847)
+c'est tracking stability in a Bluetooth low energy based React Native app. C'est clairement ça, je le mettrai dans les notes de l'émission et moi c'est ça que j'ai mis en place. Et en gros tu mets un logger et puis ça envoie les bonnes stack traces. Et c'est intégré en fait. Dans React Native BLE PLX en fait tu races des erreurs mais moi j'ai dit que ça l'envoie à S &T. Et donc...
+
+En faisant ton app avec Rack Native, qu'est-ce que tu as appris sur le développement logiciel en général ?
+
+Armand (57:24.303)
+En général, on va dire la résolution de problèmes et comment y parvenir du coup. que le truc c'est c'est plein de micro-associations de plein de problèmes. Au final, tu fais du dev et de l'informatique en général, c'est plein de problèmes que tu rencontres. Par exemple, quand tu installes des libs et que des problèmes de mismatch entre les versions. Après, au final, tu te compte que tu n'as pas installé la bonne version.
+
+et au final tu te rends que tu n'as pas installé la bonne librairie. Je dirais plus que, apprends à comment on résout des problèmes en général.
+
+David Leuliette (58:03.871)
+Ouais, à scopé le truc genre, bah c'est bizarre, ça marchait hier, ça marchait plus ce matin. Qu'est-ce qui s'est passé ? Bah c'est simple, Mac OS s'est mis à jour pendant la nuit en mode silent, et du coup Xcode il a bump, et du coup ton simulateur, bah ça fonctionne plus. Euh... Ouais.
+
+Armand (58:08.335)
+C'est exactement ça.
+
+Armand (58:13.143)
+Voilà.
+
+Exactement. Du coup c'est comme dans le cerveau. Il faut passer du temps et je pense qu'il être têtu, vois, et curieux aussi.
+
+David Leuliette (58:27.965)
+Oui, lire les messages d'erreur du terminal, très important. Comment Ouais, t'as dit un peu comment tu fais pour te faire de la veille de la formation continue. Donc t'as dit LinkedIn, Twitter.
+
+Armand (58:45.749)
+Ouais, en fait du coup ce que je fais c'est que... Déjà j'ai pris Twitter, je me suis abonné à Expo React Native et en fait j'arrive à pas trop être distrait sur Twitter comparé à d'autres réseaux socials. fait mon feed il est que ça et du coup j'ai toutes les infos... Bah du coup je me suis abonné aussi avec Software Mansion du coup j'ai que ça dans mon feed. Là tu vois j'ai vu ce matin qu'ils avaient sorti React Native Wallet, Software Mansion, du coup je vais y jeter un coup d'œil tu vois.
+
+David Leuliette (58:57.809)
+Ouais... bah tu... Ouais, c'est ça, t'as fidifocus ouais.
+
+Armand (59:14.861)
+ça je me le note du coup dans une liste que j'ai. fait comme ça ça me permet de faire ma veille et comme il communique énormément, Expo, il y a Expo Blog aussi.
+
+David Leuliette (59:23.541)
+Le bloc d'Expo est très bien.
+
+Armand (59:25.103)
+Et très bien, t'as Beto, l'influenceur ambassadeur de l'Expo qui fait plein de vidéos. Exactement. Donc je dirais Twitter. X maintenant. LinkedIn c'est plus pour les contacts. Du coup sur Racknative il a pas de soucis. Mais quand par exemple j'ai des questions sur du bac, sur de l'hébergement ou des choses comme ça. fait j'ai plutôt maintenant le réseau, j'ai pas mal discuté avec des devs. Et du coup je vers qui me tourner.
+
+David Leuliette (59:32.057)
+Dave Rautations,
+
+David Leuliette (59:53.053)
+Ok ouais ouais, ok.
+
+Armand (59:53.673)
+du coup ça me permet aussi de voir des postes sur des façons de sur des méthodologies, comme ça. Et puis après tu tapes sur internet et puis la doc.
+
+David Leuliette (01:00:04.848)
+Ouais, c'est ça. Mais du coup... Ouais, parce que dans le chat il a maître Tofu qui pose... à part React et Expo vous avez rien tenté d'autre. non, parce que toi ouais, c'est ce que t'as dit. C'était en étude, paf, on t'a présenté Expo, du coup bah tu vas pas commencer à changer. Non, on t'a présenté à Knative. En école.
+
+Armand (01:00:18.863)
+...
+
+Armand (01:00:23.983)
+On m'a présenté avec... non, en fait c'est même pas ça. J'avoue que j'ai pas trop expliqué. En fait on m'a dit bah il a le mobile. Le mobile où vous avez... En gros soit vous avez du coup du native, donc du Kotlin, du Java ou alors du iOS et du coup c'est Objective-C, Swift et tout. Vous faites des applications spécifiques à la plateforme ou alors vous avez du cross-platform et du coup dans ce cas vous avez Flutter et Agnative. On nous a même pas présenté ce qu'il y avait avant avec... Voilà. Voilà.
+
+David Leuliette (01:00:30.48)
+Ouais.
+
+David Leuliette (01:00:39.517)
+Hmm?
+
+David Leuliette (01:00:46.269)
+Ok.
+
+David Leuliette (01:00:49.665)
+oui non mais j'étais là Gordalf, j'étais là il a 4000 ans, c'est bon.
+
+Armand (01:00:53.881)
+On a pas présenté ce qu'il avant, après j'ai dit c'est quoi le React Native ? Et je suis parti là dessus. Ça aurait pu être tout. Voilà. C'est ça. Et tu j'ai pas commencé par React, et c'est pour ça que je préfère le mobile au web. Parce que du coup, comme j'ai commencé par du React Native avec ma première application qui était en hardware, parce que j'avais une communication hardware, quand je suis allé sur du web, j'ai trouvé ça moins fun. Parce qu'au final, gérer le responsive, ça m'a saoulé. Et au-delà de ça...
+
+David Leuliette (01:00:58.297)
+Ouais là-dessus, ça aurait pu être l'inverse, c'est juste que ça a popé avant et est terminé quoi.
+
+Armand (01:01:23.521)
+En fait, la communication avec des éléments extérieurs, que soit du Bluetooth, du NFC, un QR code, une photo, la caméra, les permissions, tester les permissions ça va être sympa, vous allez vous embrouiller le cerveau surtout. En fait, tout ça c'est un environnement que je préfère au web, parce que même l'expérience utilisateur, est totalement différente.
+
+David Leuliette (01:01:43.741)
+Ouais, t'as des API directs, déjà le web c'est... Pouf, navigateur. T'as jamais fait d'email toi, ça se voit. T'as déjà intégré des emails ? Je pense que tu veux pas parce que j'ai déjà fait intégrer des emails et ça c'est vraiment le pire truc parce que t'as tous les moteurs. t'as... On va partir de l'utilisateur. T'as l'utilisateur, t'as son navigateur, t'as le client qui l'utilise. Est-ce qu'il utilise un client web ? Est-ce qu'il utilise un outlook ? Est-ce qu'il utilise un logiciel ?
+
+Ensuite, le moteur d'intégration... Un délire ! Du coup c'est pour ça, moi j'écris que du texte pour les emails, de toute façon c'était fait que pour ça à la base. Allez hop, terminé. Mais ouais c'est un peu ça le... C'est un peu ça, je vois l'expérience.
+
+Armand (01:02:14.809)
+Ouais, c'est un délire.
+
+Armand (01:02:20.644)
+Bon, bon, bon.
+
+David Leuliette (01:02:32.622)
+Et du coup c'est quoi ton setup ? Est-ce que tu des devices particuliers pour lesquels tu testes ? Ou pas du tout ?
+
+Armand (01:02:38.367)
+Moi du coup j'ai un Android et à côté j'ai récupéré l'ancien iPhone de ma copine. C'est un XR je crois. Un XR, donc c'est pas les plus, donc c'est pas mal parce que c'est sur petit écran. Et l'autre c'est un A54 donc j'ai mes propres devices. Je t'avoue que j'ai pas investi pour acheter d'autres devices, ça me suffit.
+
+David Leuliette (01:02:43.42)
+Mmh.
+
+Ok ouais, c'est juste...
+
+David Leuliette (01:02:57.748)
+Mais ok, on une question. coup, est-ce que chez toi tu rentres avec Osly Solutions ou pas du tout ? T'as pas BitBord chez toi ? Bah là là !
+
+Armand (01:03:04.207)
+Non, bah du coup... Ouais mais attends, c'est sur un bâtiment. Du coup, il faut avoir l'accord du syndic. Parce que c'est là où justement, c'est assez compliqué, nos solutions, c'est que nos clients sont les syndics et les bailleurs, nos utilisateurs finaux, c'est pas qu'eux. Parce que au final, ceux qui rentrent, c'est moi et des prestataires. Du coup, ça veut dire qu'il faut qu'on arrive à trouver un business model qui marche pour tout le monde. Et du coup, si tu veux installer, exemple, toi, ta solution dans un appartement...
+
+David Leuliette (01:03:11.104)
+!
+
+Oui.
+
+Armand (01:03:31.371)
+Déjà c'est que sur les portes communes, donc c'est pas sur ta porte pour entrer chez toi, on va dire ta porte d'appartement. Et ensuite il faut installer le boîtier, donc il faut l'accord du conseil syndical ou de l'assemblée générale. Donc c'est un vote. Donc voilà. C'est pas de la domotique comme si t'étais installé chez toi. En sur ta maison tu pourrais, mon père il voulait que je l'installe sur son portail.
+
+David Leuliette (01:03:54.363)
+Bah ouais, attends, premier utilisateur, tu vois ?
+
+Armand (01:03:56.627)
+Le truc c'est que j'ai pas trop envie de péter parce que du c'est un fabricant avec un portail spécifique et si je commence à péter le truc la garantie saute donc tu vois t'as plein de trucs qui rentrent... Puis du coup c'est pareil nous ce qu'on fait c'est qu'en gros vu que les portes sont déjà électrifiées sur les bâtiments alors que sur les maisons elles sont pas électrifiées c'est justement tu rajoutes une serrure connectée c'est là où justement il a une petite nuance c'est que nous on vient utiliser directement l'électricité du bâtiment et reproduire le même signal qui est déjà fait
+
+David Leuliette (01:04:24.142)
+Ok, donc ce sera pour plus tard. Et ou alors ce sera ta fierté ? Bah non, il faut escalader dans ton... faut aller aux assemblées, voilà, essayer de convaincre 50 personnes que, allez, on va mettre au SleeSolution. Voilà, avec... attendez, pour des années. Je pense que je récupérais meilleurs comptables avant que t'installes au SleeSolution dans ton appartement actuel.
+
+Armand (01:04:32.207)
+Exactement.
+
+Armand (01:04:36.079)
+On est une mardi tu vois.
+
+David Leuliette (01:04:48.737)
+On verra, on verra, on prend les paris l'année prochaine, on verra. Tu me fais un follow-up l'année prochaine pour voir qui de nous deux arrive au projet. Est-ce que... ouais, je sais pas, vous verrez, est-ce que je le dis là Il y aura peut-être un podcast dédié pour toute cette aventure-là, ou un documentaire, parce qu'en fait à chaque fois je me filme avec ma GoPro les conversations stratosphériques que j'ai, parce que les gens, je me dis, les gens ne pas me croire, c'est pas possible. Et bah si, j'ai la preuve !
+
+Armand (01:04:55.759)
+J'espère que ton contact va t'en sortir quand même, parce que c'est pas le temps pour le...
+
+Armand (01:05:16.313)
+OK.
+
+David Leuliette (01:05:18.202)
+J'ai la preuve ! Est-ce que t'as un sujet à aborder ?
+
+Armand (01:05:22.895)
+Non, n'ai pas de sujet à aborder. Mise à part que, soyez clément. Je suis un petit jeune qui a 50xP, donc j'apprends encore.
+
+David Leuliette (01:05:33.562)
+Ah ouais, pourquoi ? que sur LinkedIn non ? Je pas, je m'en rends pas compte.
+
+Armand (01:05:36.495)
+mais en fait c'est plus que vis à vis de tous les prospects pas pas les invités que tu as invité sur ton podcast tu vois il a côté un peu syndrome de l'imposteur et tu vois je suis loin de dire que je suis je suis comment dire c'est ça c'est plus là dessus tu vois et après un sujet non j'ai pas de sujet je voulais juste dire ça pour pour avoir mon côté humble on va dire
+
+David Leuliette (01:05:54.391)
+à le plus newbie de
+
+David Leuliette (01:06:03.78)
+Euh... certes, mais t'sais on est toujours le newbie de quelqu'un. Parce que, hein, dans toute la team là, je sais pas si y'en a beaucoup qui ont fait du C++ système embarqué. Euh... Ok, où est-ce qu'on peut te retrouver ?
+
+Armand (01:06:17.583)
+J'ai pas d'autres sujets à aborder.
+
+Armand (01:06:22.095)
+Et bah du coup vous pouvez me retrouver sur LinkedIn. Si, y'a un truc que j'ai pas dit en fait, j'ai dans ma grotte pendant 4 ans donc à me former et en fait sur RegNative j'ai appris plein de trucs. Depuis janvier j'ai décidé de le partager sur LinkedIn donc je fais un poste par jour sauf le week-end. En tout cas j'essaie de maintenir ce rythme. Et du coup je partage des news qui viennent de tomber, des astuces... Donc pouvez me retrouver sur...
+
+David Leuliette (01:06:42.241)
+Si j'ai vu d'ailleurs franchement c'est bien. Moi je n'ai pas le temps de lire mais c'est comme ça que je t'ai capté en fait. moment j'ai dit oui mais c'est vrai que ce gars là il pape souvent faut que je l'avite.
+
+Armand (01:06:53.199)
+Vous pouvez m'envoyer un message sur LinkedIn si vous avez des questions. Avec grand plaisir pour vous aider et vous répondre sur ces sujets-là.
+
+David Leuliette (01:07:01.786)
+C'est ça, moi c'est Flexbox sur Twitter, BlueSky, GitHub. Tous les liens de l'émission c'est sur wishypityoday.com slash podcast pour soutenir l'émission, voir la expo checklist et le lien du Slack de React Native Connection pour venir nous voir et demander de l'aide si vous êtes en galère avec le Bluetooth. Armand et moi on sera ravis de vous répondre.
+
+N'oubliez pas de mettre 5 étoiles sur Spotify et Apple Podcasts, je lis toutes les reviews.
+
+Et le prochain épisode, qui c'est qu'on invite ? Qui c'est que je dois inviter ?
+
+Armand (01:07:41.086)
+Franchement, moi j'étais dit à Jérémy Magrin, j'étais envoyé son nom et son... Je que tu l'as peut-être rajouté dans ta liste. Jérémy Magrin c'est un gars, il a commencé en 2015, de Ragnative. Franchement il a bossé chez Mistral là récemment.
+
+David Leuliette (01:07:55.034)
+oui mais attends il est encore chez Mistral, c'est le site CEO chez Mistral.
+
+Armand (01:07:57.711)
+Non,
+
+David Leuliette (01:08:02.761)
+ok bah y'a peut-être moyen parce qu'en fait Mistral je pourrais pas... En fait j'ai plein de gens qui bochent chez Mistral mais je pourrais pas pour NDA. Parce qu'en fait... non mais trop cool. Enfin là ils sont... Mistral ils sont sur la fusée du fil. en fait c'est pas qu'ils voulaient pas c'est qu'en fait il faut faire valider par le marketing avant tout ce qui va se dire et ça demande trop de taf au dev. Et voilà je le dis là parce que voilà parce que chiant que s'il faut commencer à...
+
+Armand (01:08:16.889)
+Oui, bien sûr.
+
+David Leuliette (01:08:32.136)
+tu vois ce que je comprends peut-être un peu plus tard quand ils seront moins dans l'oeil du cyclone je ne sais pas je ne sais pas mais je ne savais pas en fait ouais je n'avais pas capté je croyais qu'il bossait tout court chez Mistral mais du coup ok
+
+Armand (01:08:42.159)
+Non Non non non non non non non non non non non non non
+
+David Leuliette (01:08:56.364)
+Ouais, parce que moi aussi, parce que moi c'était au tout début, c'était un peu plus tard, 2016, 16-17, où j'ai vraiment commencé du coup à voir toute l'évolution, c'est vrai que c'est pas... Ouais, il se passe des trucs hein ! Il se passe des trucs ! Mais non, il a même une conférence où il a que du rack natif, c'est fou ! Il y a même deux ! non ! enfin un deux, un et demi quoi, en Pologne.
+
+Armand (01:09:09.519)
+...
+
+Armand (01:09:17.135)
+La communauté n'est pas énorme, mais elle très soudée. je trouve que le rendu aujourd'hui, ce qu'on arrive à faire avec les conférences, c'est trop bien. À BGS, j'avais qu'une envie, c'était y aller. Je ne pouvais pas parce que j'étais pris, mais quand je vois les retours, ça avait l'air vraiment top.
+
+David Leuliette (01:09:31.257)
+oui.
+
+David Leuliette (01:09:34.9)
+oui, c'est que c'est folie, c'est vrai que tous les ans et après pour ceux qui ont plus de sous et ou nos voisins francophones qui sont en US, Chain React revient cette année. Peut-être que j'aurai la chance d'y aller, je ne sais pas, on verra si les planètes sont alignées. No c'est... En tout cas, merci à tous d'avoir écouté, la prochaine fois on se retrouvera avec un invité spécial.
+
+Armand (01:09:45.551)
+...
+
+David Leuliette (01:10:02.549)
+N'hésitez pas vous abonner pour ne pas manquer l'épisode. Allez salut à tous, ciao !
+
+David Leuliette (01:10:12.024)
+Stop recording fail ! Ah ah ! Attends je peux... Ah je peux pas stop le recording !
+
+Armand (01:10:19.713)
+Attends mais moi je vois 99 % uploading.
+
+David Leuliette (01:10:23.721)
+Attends, je vais...
+
+Armand (01:10:24.367)
+que c'est en de te l'envoyer je sais pas je sais pas comment ça
+
+David Leuliette (01:10:26.936)
+99 %... attends... euh... il a... attends est-ce que... très gain cancel putain attends attends je peux pas ah mais quel enfer ça m'était jamais arrivé ça alors attend on encore en live ou quoi là euh... il me semble qu'on est encore en live mais très gain et attends si je cancel si je reload
+
+peux même pas reload, 100 % uploading.
+
+j'ai qu'un bouton on va aller sur normalement ça va en fait mais si je sais pas si si attends si je raccroche ça fait quoi
+
+euh leave, attends si je fais recording in progress, non ok ça upload, try again, try again, non je peux pas, c'est un enfer à ce truc hein, project, je suis en live, mais j'ai une idée, attends je record avec ça, mais là du coup je vais join en tant que host, je join le studio
+
+Armand (01:11:29.071)
+Tu raccordes aussi avec ça du coup ?
+

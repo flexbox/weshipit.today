@@ -180,13 +180,15 @@ export default function PodcastTranscriptPage({
                     </span>
                   </Text>
                 </div>
-                <div className="flex-shrink-0">
-                  <img
-                    src={episode.company_logo}
-                    alt={`Logo ${episode.name}`}
-                    className="w-24 h-24 rounded-xl object-cover shadow-lg"
-                  />
-                </div>
+                {episode.company_logo && (
+                  <div className="flex-shrink-0">
+                    <img
+                      src={episode.company_logo}
+                      alt={`Logo ${episode.name}`}
+                      className="w-24 h-24 rounded-xl object-cover shadow-lg"
+                    />
+                  </div>
+                )}
               </div>
             </div>
           </div>

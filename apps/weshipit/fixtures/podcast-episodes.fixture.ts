@@ -8,7 +8,7 @@ export interface PodcastEpisode {
   spotify_url: string;
   apple_podcast_url: string;
   youtube_embed_id?: string;
-  company_logo: string;
+  company_logo?: string;
   guest_full_name: string;
 }
 
@@ -299,17 +299,112 @@ export const podcastEpisodes: PodcastEpisode[] = [
       'https://www.autonomia.org/imgcache/7f/df/ef/be/9e/70/4a/c6/e0/5f/fc/2a/0c/fb/a9/ad/62102776_641813846335087_8272529151546621952_n.jpg',
     guest_full_name: 'Kim Chouard',
   },
-  // {
-  //   name: '',
-  //   slug: '',
-  //   title: '',
-  //   number: 16,
-  //   description_short: '',
-  //   description: '',
-  //   spotify_url: '',
-  //   apple_podcast_url: '',
-  //   youtube_embed_id: '',
-  //   company_logo: '',
-  //   guest_full_name: '',
-  // },
+  {
+    name: 'KicksFolio',
+    title:
+      'KicksFolio la collection de sneakers qui utilise Supabase et React Native — interview de Rémy Cassagne',
+    number: 17,
+    description_short:
+      "L'app ultime pour les collectionneurs de sneakers, construite avec Supabase et React Native",
+    description: `<p><strong>Sommaire</strong></p><p>Dans cet épisode, David Leuliette et Rémy Cassagne discutent de l'univers des sneakers, de la rivalité entre Nike et Adidas, et du parcours de Rémy en tant que développeur. Ils explorent la création de Kix Folio, une application dédiée à la collection de sneakers, ainsi que les choix technologiques qui ont guidé son développement. Rémy partage ses expériences de lancement, les défis rencontrés, et les outils qu'il utilise pour optimiser son application. La conversation aborde également les aspects techniques du développement mobile avec React Native et les meilleures pratiques pour gérer les données et les API. Dans cette conversation, David Leuliette et Rémy Cassagne explorent les défis et les succès du développement d'applications mobiles avec React Native. Ils discutent des outils et des bibliothèques, de l'expérience utilisateur, des tests, et des leçons apprises tout au long du processus. Rémy partage également sa vision éthique pour son application, Kixfolio, et les prochaines étapes de son développement.</p><p><br /></p><p><br /></p><p><strong>Notes de l'émission</strong></p><p><a href="https://supabase.com/" rel="ugc noopener noreferrer" target="_blank">https://supabase.com/</a></p><p><a href="https://www.nativewind.dev/" rel="ugc noopener noreferrer" target="_blank">https://www.nativewind.dev/</a></p><p><a href="https://nativewindui.com/" rel="ugc noopener noreferrer" target="_blank">https://nativewindui.com/</a></p><p><br /></p><p>StockX - Sneakers</p><p><a href="https://play.google.com/store/apps/details?id=com.stockx.stockx&amp;pli=1" rel="ugc noopener noreferrer" target="_blank">https://play.google.com/store/apps/details?id=com.stockx.stockx&amp;pli=1</a></p><p><a href="https://apps.apple.com/us/app/stockx-sneakers-and-apparel/id881599819" rel="ugc noopener noreferrer" target="_blank">https://apps.apple.com/us/app/stockx-sneakers-and-apparel/id881599819</a></p><p><a href="https://kicks.dev/" rel="ugc noopener noreferrer" target="_blank">https://kicks.dev/</a></p><p><br /></p><p><strong>David Leuliette</strong></p><ul><li><a href="https://twitter.com/intent/follow?screen_name=flexbox_" rel="ugc noopener noreferrer" target="_blank">⁠https://x.com/flexbox_⁠</a></li><li><a href="https://go.bsky.app/6QQemwz" rel="ugc noopener noreferrer" target="_blank">https://go.bsky.app/6QQemwz</a></li><li><a href="https://weshipit.today/" rel="ugc noopener noreferrer" target="_blank">https://weshipit.today/</a></li></ul><p><strong>Remy Cassagne</strong></p><ul><li><a href="https://x.com/https_remy_" target="_blank" rel="ugc noopener noreferrer">https://x.com/https_remy_</a></li><li><a href="https://www.linkedin.com/in/remy-cassagne/" target="_blank" rel="ugc noopener noreferrer">https://www.linkedin.com/in/remy-cassagne/</a></li></ul>`,
+    slug: 'kicksfolio',
+    spotify_url:
+      'https://open.spotify.com/episode/5O89q9TOfDhsJNCC9H89xV?si=4Gg7IssvT-WLdQraNmhhaA',
+    apple_podcast_url:
+      'https://podcasts.apple.com/jp/podcast/kicksfolio-la-collection-de-sneakers-qui-utilise/id1790867559?i=1000727138622&l=en-US',
+    youtube_embed_id: 'KOuANtl_IQM',
+    company_logo:
+      'https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/e0/63/d5/e063d54e-54f6-78c8-72f1-7d170215af94/Placeholder.mill/400x400bb-75.webp',
+    guest_full_name: 'Rémy Cassagne',
+  },
+  {
+    name: 'Osly Solutions',
+    title:
+      "Osly Solutions l'app React Native qui transforme ton smartphone en badge d'accès sécurisé — interview de Armand Petit",
+    number: 18,
+    description_short:
+      "Osly Solutions l'app React Native qui transforme ton smartphone en badge d’accès sécurisé — interview de Armand Petit",
+    description: `<p><strong>Sommaire</strong></p><p>David Leuliette et Armand Petit discutent de la création de la startup Osly Solutions, qui propose une application mobile pour la gestion des accès dans les bâtiments.</p><p><strong>Développement de l'Application</strong></p><p>Armand partage son parcours en développement mobile, son expérience avec React Native et les défis rencontrés lors du développement de l'application, notamment en matière de communication Bluetooth et de gestion des données.</p><p><strong>Défis et Solutions</strong></p><p>Au cours de cette conversation, Armand et David discutent des défis et des solutions en développement, notamment en utilisant des technologies comme MKKV et Legend State pour la gestion des données hors ligne. Ils partagent leurs expériences avec différentes librairies et l'importance de la structure dans le développement.</p><p><strong>Apprentissage et Communauté</strong></p><p>Armand évoque également son parcours d'apprentissage et l'importance de la communauté dans le développement logiciel.</p><p><br /></p><p><strong>Notes de l'émission</strong></p><p><strong></strong><a href="https://oslysolutions.fr/" rel="ugc noopener noreferrer" target="_blank">https://oslysolutions.fr/</a></p><p><a href="https://mobbin.com/" rel="ugc noopener noreferrer" target="_blank">https://mobbin.com/</a></p><p><a href="https://www.unistyl.es/v3/start/introduction" rel="ugc noopener noreferrer" target="_blank">https://www.unistyl.es/v3/start/introduction</a></p><p><a href="https://docs.expo.dev/versions/latest/sdk/image/" rel="ugc noopener noreferrer" target="_blank">https://docs.expo.dev/versions/latest/sdk/image/</a></p><p><a href="https://kentcdodds.com/blog/stop-using-isloading-booleans" rel="ugc noopener noreferrer" target="_blank">https://kentcdodds.com/blog/stop-using-isloading-booleans</a></p><p><a href="https://blog.sentry.io/tracking-stability-in-a-bluetooth-low-energy-based-react-native-app/" rel="ugc noopener noreferrer" target="_blank">https://blog.sentry.io/tracking-stability-in-a-bluetooth-low-energy-based-react-native-app/</a></p><p><br /></p><p><strong>David Leuliette</strong></p><ul><li><a href="https://twitter.com/intent/follow?screen_name=flexbox_" rel="ugc noopener noreferrer" target="_blank">⁠https://x.com/flexbox_⁠</a></li><li><a href="https://go.bsky.app/6QQemwz" rel="ugc noopener noreferrer" target="_blank">https://go.bsky.app/6QQemwz</a></li><li><a href="https://weshipit.today/" rel="ugc noopener noreferrer" target="_blank">https://weshipit.today/</a></li></ul><p><strong>Interviewee</strong></p><ul><li><a href="https://x.com/armandpasgrand" target="_blank" rel="ugc noopener noreferrer">https://x.com/armandpasgrand</a></li><li><a href="https://www.linkedin.com/in/armandpetit/" target="_blank" rel="ugc noopener noreferrer">https://www.linkedin.com/in/armandpetit/</a></li></ul>`,
+    slug: 'osly-solutions',
+    spotify_url:
+      'https://open.spotify.com/episode/2qQDkRi66lzMSKnZA39YOj?si=JdoJItAHQuCDNMQpxBBJRQ',
+    apple_podcast_url:
+      'https://podcasts.apple.com/fr/podcast/osly-solutions-lapp-react-native-qui-transforme-ton/id1790867559?i=1000728305223',
+    youtube_embed_id: '7JnveBtiWb4',
+    company_logo:
+      'https://play-lh.googleusercontent.com/oYXDBmmS787ECAwswssYo5gsyKWb2_gBaSNke0ZHnLRo3CJAsTqnEruyzf1KJ7gKfd-ejR9R8JGPX8bsaATNxg=w480-h960-rw',
+    guest_full_name: 'Armand Petit',
+  },
+  {
+    name: 'SaxoTools',
+    title:
+      'SaxoTools : de la mécanique des fluides au développement mobile avec React Native — interview de Rémy Ntshaykolo',
+    number: 19,
+    description_short:
+      'De la mécanique des fluides au développement mobile avec React Native',
+    description: `<p><strong>Sommaire</strong></p><p>Bienvenue dans cet épisode où nous plongeons dans l'univers de Saxo Tools, l'application mobile qui révolutionne l'apprentissage du saxophone. Aujourd'hui, David Leuliette et Rémi partagent leur passion pour la musique et les défis qu'ils ont rencontrés lors du développement de cette application.</p><p><strong>Le parcours de Rémi</strong></p><p>Rémi nous raconte son parcours en tant que musicien et développeur. Sa motivation pour créer Saxo Tools vient de son désir d'aider les musiciens, qu'ils soient débutants ou avancés, à maîtriser leur instrument. Il évoque les défis de la monétisation et des droits d'auteur, des aspects cruciaux pour assurer la viabilité de l'application.</p><p><strong>La stack technique</strong></p><p>Dans cette discussion, ils explorent la stack technique utilisée pour développer Saxo Tools. Rémi explique pourquoi ils ont choisi React Native, une technologie qui permet de créer des applications performantes et réactives. Ils abordent également les choix de design qui améliorent l'expérience utilisateur.</p><p><strong>Optimisation des performances</strong></p><p>David et Rémi soulignent l'importance de mesurer les performances de l'application. Ils partagent des stratégies pour optimiser l'expérience utilisateur, garantissant que chaque interaction soit fluide et agréable.</p><p><strong>L'impact de l'IA</strong></p><p>Un sujet fascinant abordé est l'impact de l'intelligence artificielle sur le rôle des développeurs. Rémi partage ses réflexions sur la manière dont l'IA peut faciliter le développement d'applications et améliorer l'apprentissage musical.</p><p><strong>Stratégies de marketing</strong></p><p>Pour accroître la visibilité de Saxo Tools, ils discutent des stratégies de marketing efficaces. Rémi propose des idées pour atteindre un public plus large et engager les utilisateurs de manière significative.</p><p><strong>Outils et librairies</strong></p><p>Enfin, ils évoquent des outils et des librairies qui facilitent la création de contenu engageant, en particulier dans le domaine de la musique. Ces ressources sont essentielles pour les développeurs souhaitant enrichir l'expérience utilisateur.</p><p><strong>Conclusion</strong></p><p>Cet épisode est une véritable mine d'informations pour les musiciens et les développeurs d'applications. Rejoignez-nous pour découvrir comment Saxo Tools transforme l'apprentissage du saxophone et comment ces deux passionnés surmontent les défis du développement d'applications.</p><p><br /></p><p><br /></p><p><strong>Notes de l'émission</strong></p><p><a href="https://www.youtube.com/saxplained" rel="ugc noopener noreferrer" target="_blank">https://www.youtube.com/saxplained</a></p><p><a href="https://apps.apple.com/fr/app/saxotools/id6448632359" rel="ugc noopener noreferrer" target="_blank">https://apps.apple.com/fr/app/saxotools/id6448632359</a></p><p><a href="https://www.remotion.dev/" rel="ugc noopener noreferrer" target="_blank">https://www.remotion.dev/</a></p><p><a href="https://www.tiktok.com/@saxotools" rel="ugc noopener noreferrer" target="_blank">https://www.tiktok.com/@saxotools</a></p><p><a href="https://amplitude.com/" rel="ugc noopener noreferrer" target="_blank">https://amplitude.com/</a></p><p><a href="https://valtio.dev/" rel="ugc noopener noreferrer" target="_blank">https://valtio.dev/</a></p><p><a href="https://flashlight.dev/" rel="ugc noopener noreferrer" target="_blank">https://flashlight.dev/</a></p><p><a href="https://docs.expo.dev/eas/workflows/get-started/" rel="ugc noopener noreferrer" target="_blank">https://docs.expo.dev/eas/workflows/get-started/</a></p><p><a href="https://docs.swmansion.com/react-native-audio-api/" rel="ugc noopener noreferrer" target="_blank">https://docs.swmansion.com/react-native-audio-api/</a></p><p><a href="https://github.com/mrousavy/react-native-vision-camera" rel="ugc noopener noreferrer" target="_blank">https://github.com/mrousavy/react-native-vision-camera</a></p><p><a href="https://github.com/mrousavy/react-native-fast-tflite" rel="ugc noopener noreferrer" target="_blank">https://github.com/mrousavy/react-native-fast-tflite</a></p><p><a href="https://github.com/tensorflow/tfjs" rel="ugc noopener noreferrer" target="_blank">https://github.com/tensorflow/tfjs</a></p><p><a href="https://docs.expo.dev/versions/latest/sdk/gl-view/" rel="ugc noopener noreferrer" target="_blank">https://docs.expo.dev/versions/latest/sdk/gl-view/</a></p><p><a href="https://rive.app/docs/runtimes/react-native/adding-rive-to-expo" rel="ugc noopener noreferrer" target="_blank">https://rive.app/docs/runtimes/react-native/adding-rive-to-expo</a></p><p><a href="https://opensheetmusicdisplay.org/" rel="ugc noopener noreferrer" target="_blank">https://opensheetmusicdisplay.org/</a></p><p><br /></p><p><strong>David Leuliette</strong></p><ul><li><a href="https://twitter.com/intent/follow?screen_name=flexbox_" rel="ugc noopener noreferrer" target="_blank">⁠https://x.com/flexbox_⁠</a></li><li><a href="https://go.bsky.app/6QQemwz" rel="ugc noopener noreferrer" target="_blank">https://go.bsky.app/6QQemwz</a></li><li><a href="https://weshipit.today/" rel="ugc noopener noreferrer" target="_blank">https://weshipit.today/</a></li></ul><p><strong>Rémy Ntshaykolo </strong></p><ul><li><a href="https://www.linkedin.com/in/r%C3%A9my-ntshaykolo-a98663b3/" target="_blank" rel="ugc noopener noreferrer">https://www.linkedin.com/in/r%C3%A9my-ntshaykolo-a98663b3/</a></li></ul>`,
+    slug: 'saxotools',
+    spotify_url:
+      'https://open.spotify.com/episode/3tYS4XStjhwtqqPenqRL2m?si=rov7RgV0TXK6jSHJoQkhuQ',
+    apple_podcast_url:
+      'https://podcasts.apple.com/fr/podcast/saxotools-de-la-m%C3%A9canique-des-fluides-au/id1790867559?i=1000731909014',
+    youtube_embed_id: '1NpUTq4sMeY',
+    company_logo:
+      'https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/95/6c/9f/956c9f46-2228-32fa-08f1-8f56e689def9/Placeholder.mill/400x400bb-75.webp',
+    guest_full_name: 'Rémy Ntshaykolo',
+  },
+  {
+    name: 'KidGo',
+    title:
+      "KidGo l'application React Native des darons qui n'ont pas le temps — interview de David Leuliette",
+    number: 20,
+    description_short:
+      "L'application React Native des darons qui n'ont pas le temps",
+    description: `<p>Dans cet épisode du <strong>Cross Platform Show</strong>, Ludwig interviewe <strong>David Leuliette</strong>, développeur freelance et indie hacker. Voici les points clés de leur conversation :</p><ul><li>Parcours de David : De webmaster à développeur mobile, David partage son évolution professionnelle.</li></ul><ul><li>Freelancing et revenus passifs : Il discute de ses expériences en tant que freelance, de l'écriture de livres, et de la création de revenus passifs.</li></ul><ul><li>Projets personnels : David présente ses projets, notamment <strong>KidGo</strong> et <strong>Wipit</strong>.</li></ul><ul><li>Sujets techniques : Gestion de l'état, choix de stack pour le développement d'applications, logique des maquettes, design responsive, importance du minimalisme dans les applications, API, observabilité, et librairies essentielles pour les développeurs.</li></ul><ul><li>Conférences et personal branding : David partage son expérience dans ces domaines.</li></ul><ul><li>Projets futurs : Il évoque ses ambitions et l'automatisation des podcasts.</li></ul><p><br /></p><p><strong>Notes de l'émission</strong></p><p><a href="https://www.sitepoint.com/" rel="ugc noopener noreferrer" target="_blank">https://www.sitepoint.com/</a></p><p><a href="https://www.producthunt.com/@flexbox" rel="ugc noopener noreferrer" target="_blank">https://www.producthunt.com/@flexbox</a></p><p><a href="https://www.indiehackers.com/" rel="ugc noopener noreferrer" target="_blank">https://www.indiehackers.com/</a></p><p><a href="https://displate.com/flexbox" rel="ugc noopener noreferrer" target="_blank">https://displate.com/flexbox</a></p><p><a href="https://go.setapp.com/invite/ibubjrhl" rel="ugc noopener noreferrer" target="_blank">https://go.setapp.com/invite/ibubjrhl</a></p><p><a href="https://supabase.com/blog/local-first-expo-legend-state" rel="ugc noopener noreferrer" target="_blank">https://supabase.com/blog/local-first-expo-legend-state</a></p><p><a href="https://github.com/joe-bell/cva" rel="ugc noopener noreferrer" target="_blank">https://github.com/joe-bell/cva</a></p><p><a href="https://www.fusejs.io/" rel="ugc noopener noreferrer" target="_blank">https://www.fusejs.io/</a></p><p><a href="https://github.com/gunnartorfis/sonner-native#readme" rel="ugc noopener noreferrer" target="_blank">https://github.com/gunnartorfis/sonner-native#readme</a></p><p><br /></p><p><strong>Animé par</strong></p><p>Ludwig Vantours</p><ul><li><a href="https://x.com/ludwig_vaan" target="_blank" rel="ugc noopener noreferrer">https://x.com/ludwig_vaan</a></li></ul><p>David Leuliette</p><ul><li><a href="https://twitter.com/intent/follow?screen_name=flexbox_" rel="ugc noopener noreferrer" target="_blank">⁠https://x.com/flexbox_⁠</a></li><li><a href="https://go.bsky.app/6QQemwz" rel="ugc noopener noreferrer" target="_blank">https://go.bsky.app/6QQemwz</a></li></ul><li><br /></li><p><strong>En vidéo :</strong></p><p>Live : <a href="https://www.twitch.tv/flexboxlive" rel="ugc noopener noreferrer" target="_blank">https://www.twitch.tv/flexboxlive</a></p><p>VOD : <a href="https://www.youtube.com/playlist?list=PLmewDYeBL3XIx7Lnga-jO3eRjOsKQ-HW0" rel="ugc noopener noreferrer" target="_blank">https://www.youtube.com/playlist?list=PLmewDYeBL3XIx7Lnga-jO3eRjOsKQ-HW0</a></p><p><br /></p><p><strong>Tous les liens :</strong> <a href="https://weshipit.today/podcast" rel="ugc noopener noreferrer" target="_blank">https://weshipit.today/podcast</a></p>`,
+    slug: 'kidgo',
+    spotify_url:
+      'https://open.spotify.com/episode/2XlvoUrRprj3ZfsLkSQqzl?si=Ex8EvZ9qQj28avhKr4uscA',
+    apple_podcast_url:
+      'https://podcasts.apple.com/fr/podcast/kidgo-lapplication-react-native-des-darons-qui-nont/id1790867559?i=1000736376336',
+    youtube_embed_id: 'Wxy_fj7eX_U',
+    company_logo:
+      'https://humancoders-formations.s3.eu-west-1.amazonaws.com/uploads/trainer/photo/209/thumb_david-leuliette.jpg',
+    guest_full_name: 'David Leuliette',
+  },
+  {
+    name: 'Upstream',
+    title:
+      'Upstream : transformer le chaos de Gmail pour discuter et travailler en équipe efficacement — interview de Gabriel Hofman Développeur React Native Freelance',
+    number: 21,
+    description_short:
+      'Transformer le chaos de Gmail pour discuter et travailler en équipe efficacement avec React Native',
+    description: `<p><strong>Notes de l'émission</strong></p><p><a href="https://www.nativewind.dev/" rel="ugc noopener noreferrer" target="_blank">https://www.nativewind.dev/</a></p><p><a href="https://uniwind.dev/" rel="ugc noopener noreferrer" target="_blank">https://uniwind.dev/</a></p><p><a href="https://cookbook.openai.com/examples/codex/secure_quality_gitlab" rel="ugc noopener noreferrer" target="_blank">https://cookbook.openai.com/examples/codex/secure_quality_gitlab</a></p><p><a href="https://expo.dev/orbit" rel="ugc noopener noreferrer" target="_blank">https://expo.dev/orbit</a></p><p><strong>top 5 libraries</strong></p><ul><li><a href="https://github.com/kirillzyusko/react-native-keyboard-controller" rel="ugc noopener noreferrer" target="_blank">https://github.com/kirillzyusko/react-native-keyboard-controller</a></li><li><a href="https://superwhisper.com/" rel="ugc noopener noreferrer" target="_blank">https://superwhisper.com/</a></li><li><a href="https://github.com/nikitabobko/AeroSpace" rel="ugc noopener noreferrer" target="_blank">https://github.com/nikitabobko/AeroSpace</a></li><li><a href="https://setapp.com/apps/proxyman" rel="ugc noopener noreferrer" target="_blank">https://setapp.com/apps/proxyman</a></li><li><a href="https://ide.swmansion.com/" rel="ugc noopener noreferrer" target="_blank">https://ide.swmansion.com/</a></li></ul><p><br /></p><p><strong>Animé par</strong></p><p>David Leuliette</p><ul><li><a href="https://twitter.com/intent/follow?screen_name=flexbox_" rel="ugc noopener noreferrer" target="_blank">⁠https://x.com/flexbox_⁠</a></li><li><a href="https://go.bsky.app/6QQemwz" rel="ugc noopener noreferrer" target="_blank">https://go.bsky.app/6QQemwz</a></li></ul><p>Gabriel Hofman</p><ul><li><a href="https://github.com/tsyirvo" target="_blank" rel="ugc noopener noreferrer">https://github.com/tsyirvo</a></li><li><a href="https://www.linkedin.com/in/gabrielhofman/" target="_blank" rel="ugc noopener noreferrer">https://www.linkedin.com/in/gabrielhofman/</a></li></ul><p><strong>En vidéo :</strong></p><p>Live : <a href="https://www.twitch.tv/flexboxlive" rel="ugc noopener noreferrer" target="_blank">https://www.twitch.tv/flexboxlive</a></p><p>VOD : <a href="https://www.youtube.com/playlist?list=PLmewDYeBL3XIx7Lnga-jO3eRjOsKQ-HW0" rel="ugc noopener noreferrer" target="_blank">https://www.youtube.com/playlist?list=PLmewDYeBL3XIx7Lnga-jO3eRjOsKQ-HW0</a></p><p><strong>Tous les liens :</strong> <a href="https://weshipit.today/podcast" rel="ugc noopener noreferrer" target="_blank">https://weshipit.today/podcast</a></p><p><br /></p>`,
+    slug: 'upstream',
+    spotify_url:
+      'https://open.spotify.com/episode/15c4xt4EuU3C2BLeaJAzyl?si=sJki3Op3TNCy-5XOF2D1mw',
+    apple_podcast_url:
+      'https://podcasts.apple.com/fr/podcast/upstream-transformer-le-chaos-de-gmail-pour-discuter/id1790867559?i=1000738463490',
+    youtube_embed_id: 'NhurGGdksqQ',
+    company_logo:
+      'https://s3-eu-west-1.amazonaws.com/tpd/logos/643d1b140a0d2e5cddc5a585/0x0.png',
+    guest_full_name: 'Gabriel Hofman',
+  },
+  {
+    name: 'ASO & Growth Mobile',
+    title:
+      'ASO, Apple Ads et Growth Mobile : Le guide pour votre app React Native avec Julie Tonna',
+    number: 22,
+    description_short:
+      'Le guide ASO, Apple Ads et Growth Mobile pour votre app React Native',
+    description: `<p><strong>Sommaire</strong></p><p>Dans cet épisode, David Leuliette et Julie Tonna abordent les certifications en marketing mobile, l'optimisation pour les stores (ASO) et les stratégies d'acquisition.</p><p><strong>Au programme :</strong></p><ul><li><strong>Visibilité</strong> : Retour sur l'expérience de Julie chez Apple et les techniques techniques pour améliorer le référencement sur les stores.</li></ul><ul><li><strong>Performance</strong> : Les métriques d'engagement essentielles pour évaluer une application.</li></ul><ul><li><strong>Stratégie</strong> : Modèles de monétisation, lancement d'application et les erreurs de soumission à éviter.</li></ul><ul><li><strong>Croissance</strong> : Les outils marketing recommandés, l'importance du testing et la publicité éthique.</li></ul><p><br /></p><p><strong>Notes de l'émission</strong></p><p><a href="https://superwall.com" rel="ugc noopener noreferrer" target="_blank">https://superwall.com</a></p><p><a href="https://www.appsflyer.com" rel="ugc noopener noreferrer" target="_blank">https://www.appsflyer.com</a></p><p><a href="https://www.purchasely.com" rel="ugc noopener noreferrer" target="_blank">https://www.purchasely.com</a></p><p><a href="https://www.revenuecat.com/docs/tools/paywalls/testing-paywalls" rel="ugc noopener noreferrer" target="_blank">https://www.revenuecat.com/docs/tools/paywalls/testing-paywalls</a></p><p><br /></p><p><br /></p><p><strong>Animé par</strong></p><p>David Leuliette</p><ul><li><a href="https://twitter.com/intent/follow?screen_name=flexbox_" rel="ugc noopener noreferrer" target="_blank">⁠https://x.com/flexbox_⁠</a></li><li><a href="https://go.bsky.app/6QQemwz" rel="ugc noopener noreferrer" target="_blank">https://go.bsky.app/6QQemwz</a></li></ul><p>Julie Tonna</p><ul><li><a href="https://www.linkedin.com/in/julietonna" target="_blank" rel="ugc noopener noreferrer">https://www.linkedin.com/in/julietonna</a></li><li><a href="https://neoads.substack.com" target="_blank" rel="ugc noopener noreferrer">https://neoads.substack.com</a></li></ul><p><strong>En vidéo :</strong></p><p>Live : <a href="https://www.twitch.tv/flexboxlive" rel="ugc noopener noreferrer" target="_blank">https://www.twitch.tv/flexboxlive</a></p><p>VOD : <a href="https://www.youtube.com/playlist?list=PLmewDYeBL3XIx7Lnga-jO3eRjOsKQ-HW0" rel="ugc noopener noreferrer" target="_blank">https://www.youtube.com/playlist?list=PLmewDYeBL3XIx7Lnga-jO3eRjOsKQ-HW0</a></p><p><strong>Tous les liens :</strong> <a href="https://weshipit.today/podcast" rel="ugc noopener noreferrer" target="_blank">https://weshipit.today/podcast</a></p>`,
+    slug: 'aso-growth-mobile',
+    spotify_url:
+      'https://open.spotify.com/episode/6yzYcFXqRvRQVephednDfB?si=xPDOfrWqQgC9q8YijLXtyg',
+    apple_podcast_url:
+      'https://podcasts.apple.com/fr/podcast/aso-apple-ads-et-growth-mobile-le-guide-pour-votre/id1790867559?i=1000739428306',
+    youtube_embed_id: 'zNKtaYLKsi8',
+    company_logo:
+      'https://media.licdn.com/dms/image/v2/D4E03AQGmXvTgKPQkkw/profile-displayphoto-crop_800_800/B4EZnC3uWVHMAI-/0/1759911012693?e=1766620800&v=beta&t=vlY1jb2K_GFK-KzjMVsB9CFf8E34xRPzFjif0oG7ge0',
+    guest_full_name: 'Julie Tonna',
+  },
 ];

@@ -192,11 +192,13 @@ export default function PodcastEpisodePage({
                         </span>
                       </Text>
                     </div>
-                    <img
-                      src={episode.company_logo}
-                      alt={`Logo ${episode.name}`}
-                      className="w-24 h-24 rounded-xl object-cover shadow-lg"
-                    />
+                    {episode.company_logo && (
+                      <img
+                        src={episode.company_logo}
+                        alt={`Logo ${episode.name}`}
+                        className="w-24 h-24 rounded-xl object-cover shadow-lg"
+                      />
+                    )}
                   </div>
                   <Card>
                     <Text as="h2" variant="h3" className="mb-6">

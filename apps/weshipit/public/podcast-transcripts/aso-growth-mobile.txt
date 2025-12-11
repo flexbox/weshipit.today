@@ -1,0 +1,1049 @@
+David Leuliette (00:02.35)
+J'ai ma certification Google Apple Ads et Apple Ads aussi. quatre certifications. dans la salle là, dans le... Attends, t'as les deux certifs aussi Julie ?
+
+Julie Tonna (00:18.036)
+Ouais, j'ai appelé Advo ça depuis un petit moment, mais Google Ads depuis récemment... Ouais, j'ai fait.
+
+David Leuliette (00:19.609)
+t'as les deux certifs, voilà.
+
+ok ouais parce que alors je sais plus dans quel sens si moi j'ai vu que tu l'avais fait et qu'après je me suis dit vas-y je vais les faire je ne plus comment ça s'est passé
+
+Julie Tonna (00:34.561)
+En fait, c'est un bon petit rappel.
+
+David Leuliette (00:37.794)
+Ouais carrément, franchement faut le faire. Si vous savez pas quoi faire, que vous êtes développeur mobile et que vous avez... Bon allez, une semaine. Franchement, une semaine pour chaque, ça va, ça se fait tranquillou. Comme ça vous pourrez être certifié Apple Ads et Google Ads App comme nous. Bonjour à tous et bienvenue. Vous êtes sur le Cross Platform Show, l'émission dédiée au développement d'applications mobiles avec React Native. Je suis David, développeur chez Wichipit Today. Nous sommes avec Julie aujourd'hui.
+
+Julie Tonna (00:45.414)
+Ouais, même pas, ouais, ouais.
+
+David Leuliette (01:07.362)
+Comment ça va Julie ? Est-ce que t'es dev Julie ?
+
+Julie Tonna (01:09.854)
+non, je ne pas. Je vais en énerver certains, des fois je fais du vibe code. Mais c'est...
+
+David Leuliette (01:12.315)
+Pas du tout, mais...
+
+David Leuliette (01:18.274)
+bah c'est bien tu vois ! Est-ce que... Alors attends, est-ce que... On peut faire du vibe marketing aussi ? Parce qu'en vrai le vibe coding...
+
+Julie Tonna (01:27.636)
+Ouais franchement ouais de ouf, bah moi je m'en sers beaucoup hein, là pour faire de l'ASO et tout c'est un outil vraiment qui me fait accélérer mes process mais tellement en fait donc ouais ouais carrément.
+
+David Leuliette (01:40.286)
+Ok, trop bien. C'est pour ça que... Oui donc, TODAY ça ne pas trop parler de tech, va plus parler... Mais il y aura des keywords aussi. ASO, stratégie d'acquisition, churn, growth hacking, tout ça tout ça dédié pour le développement d'applications mobiles, c'est ça qui va être cool. Merci de te joindre à nous.
+
+Et si vous voulez plus d'épisodes comme ça les amis, laissez-moi 5 étoiles comme stratégie d'acquisition number one, mettez 5 étoiles sur Apple Podcasts comme ça vous pourrez gagner.
+
+David Leuliette (02:21.005)
+Ce super t-shirt Expo, je vais l'envoyer à quelqu'un parce que j'ai été à une conférence il pas longtemps. On a du merch à drop et plus d'autres je l'ai usé donc oui, c'est ça. Je sélectionnerai quelqu'un de random.
+
+Julie Tonna (02:33.172)
+Bon, alors...
+
+David Leuliette (02:35.489)
+Apple Store ou Google Play ? Si tu devais aller impatuer...
+
+Julie Tonna (02:38.42)
+Moi je suis à Apple. J'ai plus l'habitude en fait, connais plus. J'ai travaillé chez Apple du coup je suis un peu biaisée aussi. ouais, Apple Star.
+
+David Leuliette (02:52.103)
+Ok, vas-y carrément, raconte-nous quelle est l'histoire de Julie. Comment t'es tombé... Comment tu t'es retrouvé chez la... Ouais, nan, tout début, étude, tout ça, on faire un truc classique, tu vois.
+
+Julie Tonna (02:57.108)
+Ooooo
+
+Julie Tonna (03:02.42)
+Ok, je pense que je vais faire un peu en accéléré, mais étude, fais DUT, marketing, enfin information communication, ensuite licence pro à Paris, ensuite master et ensuite j'ai décidé que je m'embêtais un peu à Paris et du coup je suis partie à Londres et de là en fait c'est grave accéléré.
+
+Donc j'ai bossé chez lastminute.com en account manager. Ensuite j'ai fait Iron Source, c'est peut-être pas connu mais dans le milieu du mobile c'est quand même gros. Ils se sont fait racheter par Unity il quelques années. en gros ils font de la pub sur les jeux mobiles. Et ensuite du coup j'étais chez eux pendant le Covid. Et malheureusement ils ont fermé le bureau de Londres et donc je me suis retrouvée sans emploi. Et là Apple cherchait à étendre son...
+
+sa team de jeu en fait, gaming et de là j'ai possulé, j'ai des prises. Donc voilà, de chez Apple, Apple As.
+
+David Leuliette (03:58.766)
+T'as été à Londres dans leur bureau méga loin, chez Apple.
+
+Julie Tonna (04:04.442)
+Euh... Non, ils ont deux bureaux. Alors nous on était dans un bureau dans la city, mais ils ont aussi un gros campus là vers Battersea. Magnifique, incroyable les gars. Ouais.
+
+David Leuliette (04:10.766)
+!
+
+Parce que moi je suis allé au campus en fait. En fait j'ai fait les processus de recrutement chez Apple. Est-ce que t'as fait les mêmes ? Genre c'est une journée ? ok. Parce que quand t'étais dev, c'était le marathon du processus de recrutement, tu vois 6 personnes dans la journée, tableau blanc, algorithme, papier crayon, enfin vraiment le truc.
+
+Julie Tonna (04:20.916)
+Hmm.
+
+Julie Tonna (04:25.409)
+Non. Bah moi c'était pendant le Covid déjà. Ouais.
+
+Julie Tonna (04:33.425)
+ouais !
+
+Julie Tonna (04:43.282)
+ouais...
+
+David Leuliette (04:43.454)
+horrible que moi je suis nul et j'ai pas été pris forcément parce que moi ces trucs là non ça marche pas je chip je veux pas
+
+Julie Tonna (04:51.188)
+Moi j'avoue que pour le processus de recrutement, c'était... Bon, je dirais pas simple, en fait vu qu'il cherchait vraiment quelqu'un avec mon profil, je suis arrivée pile au bon moment parce qu'il cherchait quelqu'un dans le gaming, qui avait bossé avec certains clients que j'avais déjà bossé en fait. Du coup ça s'est un peu fait... Enfin, je dis pas que c'était facile parce qu'il y a quand même des exercices, des presses, tout ça. Et ça a duré, je pas, un mois, c'était super long.
+
+David Leuliette (04:59.925)
+Ouais, ok.
+
+David Leuliette (05:08.92)
+Ouais.
+
+Julie Tonna (05:16.208)
+Mais ouais, ça s'est fait. Je suis trop contente, mais ouais, ça s'est fait.
+
+David Leuliette (05:21.175)
+bah ouais tu m'étonnes parce que de là en fait...
+
+Ouais c'est ça qui a vraiment été le point de bascule, genre t'as été pris pour bosser justement sur les ads chez Apple. Donc l'ASO, qu'est-ce que c'est l'ASO ?
+
+Julie Tonna (05:33.566)
+Ouais, c'est ça. La SO, ouais. Alors du coup, la SO, c'est pas les ads. C'est un peu la différence. La SO, ça va être plus organique, en fait. C'est-à-dire que quand... Je sais a sûrement des gens qui sont familiers avec le SEO, SEO, Search Engine Optimization, et ça, c'est pour les sites web. Donc du coup, c'est optimiser ton site pour qu'il soit référencé sur Google et le plus haut possible, qu'il apparaisse dans les résultats de recherche, tout ça. Et du coup, la SO...
+
+Pareil, il y a des différences, des nuances évidemment. Mais c'est pour les apps, c'est-à-dire essayer d'être référencé le plus haut possible sur certains mots-clés avec des hauts volumes sur les stores, donc ce soit l'Apple Store ou le Google Play Store. Et moi ce que je faisais, Apple Ads à SA, et en fait là c'est comme Google Ads avec les mots-clés, c'est-à-dire payer sur des mots-clés pour atteindre le tout en...
+
+des résultats de recherche sur l'histoire. Voilà.
+
+David Leuliette (06:34.206)
+Ouais, parce que ça c'est assez récent
+
+Julie Tonna (06:38.644)
+Ouais, ils sont sortis à genre 10 ans, non pas 10 ans, 2016 je crois qu'ils ont vraiment grossi et en fait depuis le Covid ça a explosé.
+
+David Leuliette (06:48.302)
+ok ouais, parce que je me rappelle qu'au tout début t'avais pas les ads justement sur les stores la search, ça arrivait... il a 10 ans déjà t'as dit ?
+
+Julie Tonna (06:49.396)
+Oui.
+
+Mmh mmh.
+
+Ça arrive un peu tard. Alors on est en 2025, ça va peu Mais il a bien évolué le produit. Franchement, c'est bien parce que c'est même lié à la recherche d'utilisateurs, donc ça reste quand même assez performant par rapport à d'autres plateformes ou d'autres canaux.
+
+David Leuliette (07:03.534)
+Alors faire... Ouais ouais ouais si c'est ça... Ok. Y'a un certain temps.
+
+Julie Tonna (07:25.524)
+C'est un peu cher, bon, ça marche plutôt bien.
+
+David Leuliette (07:27.906)
+Ouais bah c'est une stratégie oui parce qu'il a combien en tant que certifié on sait le nombre exact de personnes que l'on peut toucher avec les ASO on vous le dira avec volontiers si vous venez vous le demander en DM
+
+Julie Tonna (07:43.42)
+T'inquiètes, 600 millions il y a quelques années la somme quand t'as eu 800 millions sur la... Bah ouais mais j'ai bossé là-bas ! C'était le pitch !
+
+David Leuliette (07:46.863)
+ok tu sais par... j'ai oublié, j'avoue, ouais c'est ça ta bosse. Ok ouais du coup tu le répètes tout le temps, ouais c'est vrai que moi je fais plus du dev donc forcément les trucs de marketing je vois mais je sais pas exactement... Ok, super et donc maintenant alors qu'est que tu fais 80 % de ton temps ?
+
+Julie Tonna (07:57.908)
+Mmh.
+
+Julie Tonna (08:01.98)
+Non.
+
+Julie Tonna (08:10.036)
+Du coup je suis en freelance et je fais de l'ISO et de l'Apple Ads. Je fais de la growth en fait mais je me focus surtout sur l'ISO et Apple Ads même si derrière je peux aussi aider sur tout ce qui est rétention, engagement, tout ça. Et voilà, c'est assez cool.
+
+David Leuliette (08:29.874)
+avec donc ton agence, tu as une agence, Neo Ads, est-ce que tu es CEO ? CEO de neoads.tech t'es pas CEO ?
+
+Julie Tonna (08:35.732)
+Non, en vrai, ce n'est pas vraiment une agence, ça c'est plus un projet sur le côté, va dire, j'en parlerai plus tard. Mais du coup, non, je suis juste freelance à mon compte, je poste toute seule avec des agences justement ou des clients, des indés, ça dépend.
+
+David Leuliette (08:45.088)
+ok d'accord, ok ouais.
+
+David Leuliette (08:55.246)
+Fun fact c'est comme ça que je t'ai trouvé. J'étais sur Malte, j'ai tapé ASO, j'ai pris le premier. Ouais c'est comme ça que j'ai trouvé. En fait, en vrai je cherchais, donc j'ai passé ma certif et je cherchais quelqu'un, là, il faut absolument que j'interviewe quelqu'un, il que je trouve quelqu'un. J'ai tapé Freelance, bim. Voilà donc le référencement, bien joué, well done.
+
+Julie Tonna (09:00.046)
+C'est vrai ? Mais non. Très bien.
+
+Julie Tonna (09:13.78)
+Ouais. Tu sais qu'il a quelqu'un qui m'a trouvé comme ça avec Chagy Pity. Et du coup, j'ai travaillé avec un dev indépendant. En fait, c'était pas voulu, mais j'étais trop contente que ça ait marché. Ouais, c'est ça.
+
+David Leuliette (09:19.63)
+Ah ouais ? Ah donc tu fais déjà du LLM Poisoning ?
+
+David Leuliette (09:29.294)
+Bah ouais super, bah c'est que tu es active publiquement en fait, genre si tu sur Reddit ou tout ça, oui, ou des podcasts comme ici, y'a William qui est encore là, big up à William, tu connais William Candillon, très connu dans l'univers au Rack Native. William Candillon, pour une fois on n'a pas un dev avec nous, donc bienvenue. Super, donc...
+
+Je suis perdu, mais ça va bien se passer. Qu'est-ce qui te procure de la joie dans la growth ?
+
+Julie Tonna (10:01.652)
+Je pense que c'est cool d'avoir un impact selon les campagnes, selon les projets, mais on avoir un impact vraiment international. Des fois, je travaille sur des...
+
+J'ai travaillé sur des jeux quand j'étais chez Apple, mais même après, qui étaient joués par des millions de personnes. Tu pensais à du Candy Crush, du Angry Birds, du Supercell. Et en fait, je me souviens, j'étais dans le métro et je regardais autour de moi et je voyais des gens jouer aux jeux sur lesquels je travaillais. C'était fou. Du coup, j'avoue que c'est vraiment quelque chose que je trouve chouette. savoir qu'il a quand même un impact et de pouvoir toucher des gens un
+
+David Leuliette (10:31.345)
+ouais...
+
+Julie Tonna (10:42.547)
+partout et pouvoir proposer des appareils au plus grand nombre en
+
+David Leuliette (10:49.582)
+Je vois, vois. Trop bien, trop bien. va parler un peu... ouais, le format de l'émission, il va être un peu différent. Il aura plusieurs parties. On va pas trop parler code, comme j'ai dit. Mais prenons les fondamentaux. Donc dans un contexte d'application mobile. là, va parler... À chaque fois, je vais dire Agnative, mais... Retiens, c'est AppMobile, tu vois ?
+
+ça je vais le dire c'est sûr je vais confondre tout le temps c'est sûr donc pour répéter ouais qu'est ce que c'est vraiment et pourquoi c'est critique à ton avis parce que moi souvent en fait en vrai j'ai jamais eu affaire de la fin j'ai juste rempli à chaque fois que ship des apps je remplis juste l'affiche des stores tu vois genre en mode blé il faut shipper au place de 0 à 1 voilà c'est moi qui le fais parce que personne ne sait le faire mais c'était plus des apps B2B
+
+Julie Tonna (11:21.876)
+Sol.
+
+David Leuliette (11:45.992)
+ou pas vraiment besoin de faire une stratégie d'acquisition de dingue.
+
+Mais pour d'autres applications ça peut être plus critique. Est-ce que tu peux nous expliquer pourquoi ?
+
+Julie Tonna (11:59.06)
+Je pense qu'en fait il y a beaucoup, raisons, mais la principale c'est que les stores ils changent énormément, y a beaucoup de compétitions, les algorithmes ils changent tout le temps. en fait rien que le fait de mettre à jour sa page d'App Store, permet d'être déjà testé, qu'est-ce qui marche, qu'est-ce qui marche pas, et de voir qu'est-ce qui prend, qu'est-ce qui ramène des utilisateurs, et d'optimiser et d'avoir plus de conversion.
+
+David Leuliette (12:06.895)
+Ouais c'est vrai.
+
+David Leuliette (12:16.367)
+Salut !
+
+Julie Tonna (12:28.96)
+J'ai beaucoup bossé avec des développeurs indés et c'est cool parce qu'eux ils sont à fond produits etc. Mais une fois que l'appel sort, bah ça y c'est fini mais en fait c'est un peu le début du travail quoi.
+
+David Leuliette (12:37.067)
+ouais non, moi je dis toujours c'est que le début ! Oui oui c'est ça, c'est comme faire du software, faire une app c'est facile mais la maintenir over time c'est ça le challenge en fait de coder, bah non tu vibe code le truc, bon me donne ! Mais après, bah...
+
+Julie Tonna (12:50.068)
+Moi je suis incapable de le faire, mais du coup je respecte de fou d'avoir l'idée produit et mais de la sortir, de la chiper, tout ça. Mais après la fin grossière, c'est encore une autre paire de manches et en fait il y a des choses à savoir et des choses à tester. Et j'ai vu des devs qui se débrouillaient trop bien en solo et franchement qui avaient besoin des fois des petites aides, etc. mais qui faisaient tout tout seul et qui ont réussi à grossir mes deux oufs.
+
+David Leuliette (12:53.199)
+Tu vois ? Détrompe-toi.
+
+Julie Tonna (13:15.892)
+Et après, y en a d'autres, ils ont moins cette curiosité, on va dire, d'aller juste chercher les infos et les techniques et pour grossir l'app.
+
+David Leuliette (13:28.975)
+Et donc admettons, j'ai une app là, je veux la sortir. Est-ce que... Parce qu'il a les fameux mots-clés. En SIO, on sait que ça n'existe plus les mots-clés, les balises des mots-clés en haute page là. Est-ce que dans le monde de mobile c'est pareil, tout store confondu. Est-ce qu'on les met des wads ou où est-ce qu'on attend ? Qu'est-ce que je...
+
+Julie Tonna (13:51.38)
+Dès le premier jour, oui, évidemment, c'est important. Après, il pas s'attendre à ce qu'on soit référencé numéro un dès le premier jour. Mais après, c'est juste tester, expérimenter, voir qu'est-ce qui marche, qu'est-ce qui marche pas, qu'est-ce qu'on arrive à ranquer, à être référencé, qu'est-ce qui ne fonctionne pas, est peut-être abandonné, etc. Je pense que c'est important de le faire, mais après, les résultats, c'est long. Il faut toujours faire des tests, au moins.
+
+deux semaines, trois semaines selon le volume pour avoir des infos et de la data, pour ensuite pouvoir l'analyser et avoir des conclusions.
+
+David Leuliette (14:21.871)
+Oui.
+
+David Leuliette (14:29.167)
+C'est quoi comme tooling pour ce truc là
+
+Julie Tonna (14:32.692)
+Ça, moi, ça dépend. Il y en a plusieurs. Et selon les budgets, pense, les besoins, ça peut différer. Il y a les gros et plus connus, mais du coup un peu plus chers, genre AppTweak et Mobile Action, qui sont sympas. Après, AstroTools aussi, c'est un que j'ai utilisé récemment, mais c'est beaucoup plus basique, c'est rendu pour traquer les keywords. Mais c'est bien, en fait. Mais là, d'ailleurs...
+
+David Leuliette (14:53.487)
+Ouais pareil, c'est ce que je fais, c'est... Mais c'est parce que c'est pas cher ! C'est 100 balles par an ! 100 balles par an les c****
+
+Julie Tonna (15:01.236)
+Y a une offre Black Friday si ça intéresse des gens, j'ai renouvelé mon album.
+
+David Leuliette (15:04.463)
+Ah ouais ? Allez dans la description, je vous mettrai un lien, parce qu'il y aura sûrement mon lien. Je ne sais pas, je ne sais pas. ouais, AstroTools, c'est vrai que moi je dis, étape, je pense qu'on peut commencer comme ça et après passer sur des trucs... Ce que tu avais dit, c'était quoi ? HapTweak ?
+
+Julie Tonna (15:10.964)
+...
+
+Julie Tonna (15:25.054)
+AppTweak, c'est vraiment un gros. Il y a Mobile Action aussi qui est énorme. En fait, c'est un peu pour tous les budgets, je pense. Et justement, là, je vais faire placement de produits. Mais en gros, mon site Neoadze, il va sortir là début 2026. On va faire des revues et des comparaisons d'outils pour la SO et pour la Growth. Du coup, va... Ouais. Du coup, pour aider un peu les développeurs, les studios, etc., à trouver un peu ce qui leur convient selon les budgets et tout ça. Donc voilà.
+
+David Leuliette (15:33.421)
+Ouais, ça dépend vraiment.
+
+David Leuliette (15:44.778)
+ok, bah super !
+
+David Leuliette (15:54.607)
+C'est compliqué, comme tu dis, y a tous les budgets, a tous les trucs, c'est vrai qu'au tout début tu commences un peu paumé en mode « je commence par où, c'est quoi le point d'entrée ? »
+
+Julie Tonna (16:02.574)
+Ouais, j'ai besoin de quoi, enfin... Et puis il a beaucoup d'offres et du coup, c'est un peu compliqué des fois à s'y retrouver. pense AstroTools, c'est trop bien pour ça, c'est que c'est vraiment... On peut commencer assez facilement et pas la grand chose.
+
+David Leuliette (16:11.793)
+ouais, c'est un... Moi les amis dev, vous allez aimer AstroTools, c'est bon, ça fait trop le taf.
+
+Julie Tonna (16:18.452)
+Non mais de ouf. Mais après je pense si tu veux aller plus loin, faire de l'analyse compétitive et tout, là dans ces cas là faut voir d'autres choses peut-être.
+
+David Leuliette (16:29.007)
+C'est quoi le plus gros mythe sur la ASO que tu vois encore en 2025 ?
+
+Julie Tonna (16:38.14)
+Je pense qu'il y a une époque où on pouvait carrément grossir avec l'ASO et partir de rien et être dans les top 10 des apps etc. Je pense que maintenant c'est quasiment impossible tout seul. Il toujours faire de la stratégie hors ASO aussi d'acquisition. Du coup je pense que c'est ça. si quelqu'un vous vend, soyez numéro un des stores juste avec l'ASO. Je pense que pas forcément possible. Après je pense que c'est quand même essentiel pour...
+
+convertir au mieux les utilisateurs mais il falloir utiliser d'autres canaux pour amener les gens dans tous les cas.
+
+David Leuliette (17:08.783)
+Déjà tout simplement qu'il se trouve genre tu as une app manga, manga collect, big up à manga collect. Je prends un peu hasard parce que déjà que j'ai interviewé. Lui 0 to 1, a imprimé 2000 flyers, il a été les distribuer à une convention de manga. Comme un bourrin tu vois, donc voilà. Mais après c'est pareil si t'es...
+
+Julie Tonna (17:25.148)
+Trop bien !
+
+David Leuliette (17:30.881)
+Donc mettons manga collect, ok super tu fais ça trop bien, mais forcément les gens ils vont zapper, ils vont ouvrir le store, qu'est qu'ils vont faire ? Ils vont chercher manga et si t'es pas référencé manga collect, enfin si t'es bien pas référencé sur le store quand les gens ils search, bah en fait ça tombe ils vont donner du note app et là ce que ça fait ça va servir à rien.
+
+Julie Tonna (17:45.78)
+Ou alors ils ne pas aimer ce qu'ils vont voir tout simplement, ou ça ne pas leur parler, ils vont être là en mode « bah non en fait, ok c'est cool d'avoir une nappe comme ça pour collectionner les mangas, mais en fait si elle ne me plait pas, je juste voir un concurrent quoi. Du coup l'idée c'est que les gens téléchargent ton nappe et pas une autre.
+
+David Leuliette (18:08.544)
+ça, ce que tu aurais la checklist ? Donc maintenant j'ai une application là pour
+
+Une application de gaming... Allez attention ! Sujet du Bac, bib ! J'ai une application gaming, tu vois, pour connecter ma manette PS5 et pour contrôler, pour changer en Bluetooth. tu vois, c'est une application compagnon en fait, tu je peux changer des paramètres de ma manette, le bouton, les mappings, tout ça, tu vois. Donc ce serait quoi les cinq actions à faire ou la check-list ?
+
+selon toi, des choses qu'il faut faire. Là, j'ai même pas l'affiche sur les stores et on va parler que d'iOS. Mais Android, pouvez pas faire Android non plus. C'est grave similaire, mais minus Delta, les assets, pas les mêmes. Ça, connaît. Il y a toujours des ajustements à faire. Mais bon, on focus sur iOS parce que c'est déjà, regarde quand tu est comme truc. Mais oui, donc tu m'as dit, ouais, là, tu fais vraiment que de l'iOS.
+
+Julie Tonna (18:58.884)
+Ok. En vrai, Android, c'est grave similaire mais...
+
+Julie Tonna (19:07.386)
+Oui voilà. Oui, il y a des choses qui diffèrent.
+
+David Leuliette (19:20.173)
+où tu fais un peu... Ouais.
+
+Julie Tonna (19:20.436)
+Non, je fais des deux, je fais des deux. C'est juste que je m'y connais beaucoup plus sur iOS. Mais je commence à rattraper le retard.
+
+David Leuliette (19:29.461)
+Ok, ouais. Parce qu'il a pas... Ouais ok, ça revient, ça revient sensiblement. Donc, check-list, vas-y, à ton avis, c'est quoi les cinq choses à faire pour que ça se passe bien ?
+
+Julie Tonna (19:42.042)
+Alors de recherche de mots-clés, je pense que c'est important de savoir lesquels sont intéressants et du coup essayer de viser un peu pour avoir une idée de ce qu'on va mettre en fait dans notre fiche. Du coup, basé sur ces mots-clés, définir concrètement différentes options pour le titre, le sous-titre et la description. Il y a aussi le fil de mots-clés qui est caché, ça c'est pas mal pour pouvoir mettre des mots-clés de compétiteurs.
+
+générique, qui sont peut-être trop longs, Ça, sur Google, on ne pas faire grand-prix. Ça, c'est une différence. Ensuite, ça fait deux. Je pense que c'est cool de faire un tour sur les stores. Juste, vas sur le store et tu cherches les mots-clés que tu as sélectionnés pour voir un ce que font les compétiteurs, etc.
+
+David Leuliette (20:12.922)
+Ouais, c'est comme Blink, on connait ça. Ça s'appelle le piratage d'audience. Piratage d'audience, voilà. Si vous ne savez pas ce que c'est, vous...
+
+Julie Tonna (20:41.236)
+Donc faire un peu une analyse concurrentielle on va dire. Et ensuite je pense c'est un des plus importants, il en reste deux mais je vais le mettre en un, c'est énorme. Mais les screenshots, je peux m'en dire en français, les images... Ouais, les screenshots.
+
+David Leuliette (20:54.608)
+Ouais ScreaN, je sais pas. Nous on est franglais aussi, t'inquiète, y'a pas de problème.
+
+Julie Tonna (20:59.208)
+Ok, ça va. Du coup, les screenshots super importants qui reflètent bien l'app, même s'ils sont simples, vaut mieux simples mais bien faits, mettre du texte, tu vois c'est bête mais des fois les textes sont trop petits, genre juste penser à des textes assez gros pour que ce soit lisible en fait, c'est des petites choses comme ça, les petits détails.
+
+David Leuliette (21:18.072)
+Y a de l'OCR dans les textes ou pas ?
+
+Julie Tonna (21:20.308)
+C'est une rumeur, moi je pense pas mais...
+
+David Leuliette (21:28.4)
+Tu vois je... Parce que je me suis toujours demandé, je me suis dit c'est pas possible en fait mais... Ok. Et vidéo ou pas ?
+
+Julie Tonna (21:30.228)
+...
+
+Julie Tonna (21:34.516)
+Non après y a une vidéo franchement pas besoin dès le début genre c'est... Ben ça peut aider mais dès le début je pense ça prend beaucoup de ressources, ça prend beaucoup de temps à faire. Franchement c'est pas essentiel on va dire. Je pense de bon screenshot vaut mieux qu'une vidéo vite faite.
+
+David Leuliette (21:39.152)
+C'est pas le truc qui change le plus quoi.
+
+David Leuliette (21:56.017)
+beau on en fera un short de ce truc. Ayo c'est Androïd tu m'as dit c'est kif kif pareil il y a vraiment une grosse différence ou pas ?
+
+Julie Tonna (22:08.436)
+Je pense que les algos sont un peu différents et les stores sont différents, c'est-à-dire qu'ils montent pas les mêmes choses. Par exemple, le sous-titre va pas forcément apparaître, les screenshots vont apparaître juste à certains endroits. Je pense que le mieux, c'est de regarder les deux, si possible d'avoir quelqu'un qui te prête un téléphone de l'autre OS et de tester.
+
+David Leuliette (22:28.92)
+ouais moi j'en ai plein. Ils sont pas là mais j'en ai plein.
+
+Julie Tonna (22:34.068)
+Bah ouais, j'ai investi dans un Android il n'y a pas longtemps aussi. Mais juste comparer en fait. Bah oui, obligé genre. Donc voilà, je pense que c'est ça.
+
+David Leuliette (22:38.138)
+oui !
+
+David Leuliette (22:45.264)
+Et tablette,
+
+Julie Tonna (22:51.284)
+Trèche, moins tablette, Il faut juste voir comment ils sont... Il faut juste être conscient que ça va apparaître différemment sur tablette versus sur téléphone. Sur un téléphone, tu vas devoir scroller, ça sera vraiment une app par... Enfin, à chaque fois une app par une app. Alors que sur tablette, à iPad par exemple, je crois que c'est deux ou trois qui s'affichent. C'est déjà un peu plus compétitif parce que pour se démarquer, tu as quand plus de choix. Enfin, l'écran est plus grand, etc.
+
+David Leuliette (22:55.28)
+serais pareil pour l'instant.
+
+Julie Tonna (23:20.452)
+Donc je pense qu'il encore plus se sur les screenshots pour que ça flashe un peu et mettre les mots-clés vraiment en gros pour qu'on voit en fait c'est ce que l'utilisateur a à rechercher et c'est ce qu'il va trouver dans la...
+
+David Leuliette (23:34.225)
+Ok, trop bien, Donc là les amis fondamentaux, est entaqué. On va passer parti acquisition et growth in app. En 2026, elles des cutting edge ahead of the curve. Tu vois ça, je ne pas comment on dit en français.
+
+Julie Tonna (23:59.716)
+Eh... Mais je suis pas...
+
+David Leuliette (24:03.568)
+Donc pareil, j'ai mon app, là je lance, j'ai fait toute ma store, recherche, mes screenshots et tout, ils sont nickels, incroyables. C'est quoi mon kit de survie pour l'acquisition des nouveaux utilisateurs, les trois canaux à tester pour 2026.
+
+Julie Tonna (24:17.662)
+Alors les canaux à tester, moi déjà mon conseil c'est d'en tester un à la fois parce que vaut mieux je pense, focus sur un, bien le maîtriser, voir si ça marche etc. et ensuite passer à l'autre puisque c'est beaucoup de temps et beaucoup de ressources et chacun va être différent et je sais pas ça a marché peut-être aux US sur meta mais en fait sur Google c'est les UK qui marche le mieux par exemple.
+
+David Leuliette (24:42.266)
+Ouais.
+
+Julie Tonna (24:42.926)
+Donc moi je dis, il mieux tester un canal à la fois. Je pense, les classiques, mais t'as Google et ensuite, peut-être l'Apple Search Ads ou même du TikTok Ads, en vrai c'est pas mal. Et je pense les choses à tester, ce que je vois le plus en plus, c'est l'organique TikTok. Genre juste poster des vidéos, essayer de créer un peu le buzz, parce que tu peux avoir de la virilité assez vite grâce à cette plateforme.
+
+J'ai eu des retours comme quoi ça marchait plutôt bien, après les revenus ne pas forcément conséquents.
+
+Mais bon, c'est un canal entre guillemets gratuit. a pas, à part le temps, a pas vraiment d'investissement d'argent derrière. Donc c'est cool. Voilà. Je pense que...
+
+David Leuliette (25:20.014)
+Ok.
+
+David Leuliette (25:32.184)
+Et combien de temps ? Tu dis tester, on teste combien de temps un canal, on charbane un canal avant de changer ? Bah c'est pareil, ça dépend. Ça dépend de votre budget les amis !
+
+Julie Tonna (25:38.868)
+J'imagine jusqu'à que tu vois, c'est ça, jusqu'à ce que tu vois des résultats, jusqu'à ce que tu sois cont... Enfin moi je pense à partir du où t'es content de la performance.
+
+David Leuliette (25:50.512)
+Allez, next
+
+Julie Tonna (25:51.134)
+Mais si bout de trois mois, il y a une bonne performance, assez stable et tout, ben c'est peut passer à un autre peut-être.
+
+David Leuliette (26:02.158)
+Donc les ads, Apple ads, quand est-ce que je mets ça en place ? Au tout début ça vaut le coup ou c'est un peu burn de l'argent pour rien
+
+Julie Tonna (26:11.044)
+Ouais je pense que dépend de la catégorie en fait, Parce qu'il a des catégories, en vrai c'est hyper intéressant. Mais par exemple le gaming, je ne recommanderais pas parce que c'est très très compétitif. la finance. Et c'est hyper cher, on voit des coups par acquisition de genre 20, 30, 40, 50 dollars tu vois. C'est assez haut, Ouais mais j'ai vu pire hein. Ça dépend des catégories.
+
+David Leuliette (26:13.818)
+Ouais.
+
+David Leuliette (26:30.821)
+ouais. Serious business.
+
+Julie Tonna (26:38.708)
+Après, c'est vrai qu'on va avoir des utilisateurs plutôt engagés et qui vont avoir tendance à bien performer, donc ça va dépendre de l'ALTV.
+
+et du modèle de monétisation qu'il derrière.
+
+David Leuliette (26:57.388)
+Et comment tu... c'est quoi les critères de succès ? Genre j'ai lancé mon app, on a testé Instagram, TikTok... On a appris notre app de gaming et on a testé Facebook, tu vois ? Et le truc... Et on a remarqué que ça marche bien sur Facebook. Comment tu définis le critère de succès et quelle metrics tu regardes en premier ?
+
+Julie Tonna (27:22.292)
+Roas, ça c'est revenu en ad spend, ROI. Je pense que c'est ce que regardent quasiment tous les user acquisition managers. Mais après, y a d'autres critères qui vont être plus liés à la performance des créatives qu'on va utiliser, comme le...
+
+conversion rate, le taux de conversion ou alors le taux de clic. ça, tu vois, ça peut être un bon indicateur aussi. Est-ce qu'une créa va marcher, etc. Est-ce qu'il y a besoin de la changer ? Est-ce que peut-être on peut juste l'optimiser, la rendre encore mieux, ce genre de choses. Et ensuite, il y a les coûts d'install, etc. Mais tout ça, en fait, ça va être lié au ROAS. Le but ultime, en fait, c'est d'être ROAS positif. Donc ça veut dire d'être rentable tout simplement par rapport au ce qu'on a investi dans la plateforme.
+
+David Leuliette (28:18.936)
+Et parce que du coup, tu as accès aussi aux metrics de monetisation et tout ça quand tu bosses ou pas du tout pour corraller les deux ?
+
+Julie Tonna (28:25.94)
+Non mais c'est lié en fait, normalement c'est lié. Du coup tu utilises un MMP, après tu peux lier aussi le SDK Facebook à ton app et ils vont récupérer ces données ou même Google ou peu importe. Et sinon il y a une plateforme de mesurement aussi qui va pouvoir faire le lien, déjà ça va permettre de voir la data.
+
+David Leuliette (28:28.772)
+Ok.
+
+Julie Tonna (28:47.928)
+faire le tracking de l'attribution des dépenses de campagne par rapport à ce qui s'est passé dans l'application. Du coup, grâce à tu vas pouvoir comprendre quelle campagne performe bien, quel pays performe bien ou pas, et pouvoir optimiser par rapport à ça.
+
+David Leuliette (29:08.88)
+C'est fou ça que tu arrives à... et faut que tu utilises un... Genre exemple, j'ai mon app, j'ai RevenuCat dessus pour RevenuCat, c'est un truc de paiement, les gens ils savent du mobile, ils savent à peu près ce que c'est. J'ai besoin obligatoirement de... comment ça s'appelle le truc vert qui commence par un S ? Ah je sais plus. Un agrégateur de toutes tes datas en fait.
+
+Julie Tonna (29:19.796)
+...
+
+David Leuliette (29:34.542)
+Je sais plus, genre exemple, j'ai revenu 4, comment je fais pour... et je dépense de la thune sur Apple ads, comment je fais pour corraller les deux ? T'as parlé d'un outil pour connecter les deux ou je dois le faire à la main ou...
+
+Julie Tonna (29:47.068)
+Ouais, j'avoue que ça c'est pas du tout ma spécialité, donc faudrait que je regarde, il souvent des documentations.
+
+David Leuliette (29:51.376)
+Ok.
+
+Julie Tonna (29:55.636)
+Je sais pas si... J'ai pas trop utilisé Revenu 4 moi mais les devs avec qui j'ai bossé c'était surtout super ouf.
+
+David Leuliette (30:03.321)
+Ok.
+
+Julie Tonna (30:03.47)
+J'ai vite fait tous les revenus 4 donc je ne pas spécifiquement pour ça. Mais oui en fait tu peux connecter normalement les deux. En fait ce qui est conseillé c'est d'avoir un...
+
+Donc c'est une plateforme de mesurement, donc ça va être AppsFlyer ou Adjust Singular et en gros ils vont pouvoir faire la connexion entre tout ça et avoir une plateforme où tu vas avoir tous tes canaux en fait et tu vas pouvoir regarder l'avérence de chaque canal et par campagne tout ça, même par Keyword si tu veux vraiment aller plus granularement.
+
+David Leuliette (30:36.912)
+Je connais AppFlyer, je me suis toujours demandé ce qu'ils faisaient, makes sense. Non mais il faut plein de trucs, que moi je connaissais je crois que sur ABT, enfin peut-être pas sur ABT Stick, mais sur plein d'autres features à mon avis qui sont pas connus pour ça quoi. Mais je vois maintenant, c'est un sort d'adagraga, tu connectes tout et après t'as des by-charts de l'enfer.
+
+Julie Tonna (30:41.948)
+Elles sont énormes, elles sont énormes.
+
+Julie Tonna (31:01.126)
+C'est ça, c'est ce que j'adore. J'adore ça.
+
+David Leuliette (31:02.584)
+Est-ce que tu un exemple pour comment améliorer tes metrics d'engagement qui a eu un impact sur l'acquisition ? Exemple, fameux Love Funnel. Si votre app est cool, vous mettez 5 stars et quand vous mettez 5 stars, vous demandez aux gens de mettre 5 stars.
+
+Et si les gens mettent 4 étoiles, par contre là ça va dans un funnel de GitHub Issues par exemple, et comme ça les gens peuvent directement leur dire, t'as pas marché, c'est nul. Comme ça vous tapez pas des reviews nuls. Voilà ça c'est un exemple pour remonter dans les stores directement. T'en as un autre ?
+
+Julie Tonna (31:48.658)
+Euh... Bah moi je dirais...
+
+Tu parles dans l'app là ? Dans ces cas là, faire des tests de paywall. pense que c'est vraiment trop chouette. J'ai un exemple avec un dev avec qui je travaillais, on a fait des tests de son paywall, testé annuel versus au mois, versus à la semaine, Ouais, mais ça, ou alors sur ce qu'on dit, ou juste le design, ou sur...
+
+David Leuliette (31:56.696)
+Ouais, directement depuis l'application en fait.
+
+David Leuliette (32:03.137)
+Ouais, ok.
+
+David Leuliette (32:15.774)
+oui, sur directement le pr... Ouais ok, ok.
+
+Julie Tonna (32:23.124)
+sur le pricing, tout en fait. Et justement Revenu4 c'est un bon outil pour faire ça. Tu peux faire des AB tests en fait de paywall. Ouais ouais ouais c'est vraiment chouette, Superwall aussi ils font ça. Et il y en a un autre Pure Chaseley je crois que c'est... Ouais c'est ça. Ah ouais ? Ok c'est trop bien, je ne pas.
+
+David Leuliette (32:30.737)
+Directement, ouais.
+
+David Leuliette (32:39.149)
+Ouais c'est Purchase Lee ouais, C'est français en plus il me semble. Il me semble.
+
+Julie Tonna (32:45.364)
+Et du coup tu peux faire des tests, du coup avec ce dev on a fait 40 % sur 3 ou 4 mois, on a eu 40 % en plus de revenus. Franchement c'était cool, avec le même nombre d'installations tu on est resté vraiment plat sur les installs, malgré le fait qu'on a investi mais malheureusement ça a fonctionné. On n'arrivait pas trop à unlock Apple ads, mais en fait juste en faisant ce changement on a réussi à...
+
+David Leuliette (32:54.448)
+ouais c'est pas néglige... c'est pas...
+
+Julie Tonna (33:15.172)
+à convertir plus de gens en fait, et ça c'était vraiment chouette.
+
+David Leuliette (33:19.569)
+Je confirme purechaisely, Keemaventure Capital, tout ça, tout ça. Trop bien, trop bien. ouais, c'est vrai que là, on ne plus à l'étape 2h00. Là, c'est plus étape... Enfin, si quand même, parce que... On va dire que c'est 50 à 100 comme étape. Parce qu'il faut quand même que tu aies une machinerie pour avoir des gens, tout ça en entrée.
+
+Julie Tonna (33:20.606)
+Ouais.
+
+Julie Tonna (33:25.342)
+Ok.
+
+David Leuliette (33:46.962)
+Moi j'avoue à bêtise de paywall je n'en suis jamais arrivé là. Déjà avoir un paywall c'est déjà bien. bah non mais c'est toujours pareil. Moi en fait je bosse pas sur les mêmes types d'app en fait. Soit des clients, tu vois ça dépend quoi. n'est pas en mode Indie Hacking donc ça dépend.
+
+Julie Tonna (33:51.444)
+...
+
+Julie Tonna (33:56.956)
+Oui, c'est plus me to be.
+
+Julie Tonna (34:02.784)
+Là en fait c'était assez cool parce que lui c'est un devin D, il a un job full time à côté et tout. Et il avait plusieurs apps spécifiquement pour la watch, ce qui était encore à l'époque un peu moins fait, il y a beaucoup de volume etc. Et en fait il a une de ces apps qui a été virale sur TikTok, mais même pas lui qui a demandé, c'est quelqu'un qui a aimé, qui a fait une vidéo et que ça fait viral.
+
+David Leuliette (34:25.521)
+Au
+
+Julie Tonna (34:26.868)
+Et du coup, il a réinvesti, il m'a demandé de l'aide et on a bossé là-dessus. Franchement, c'était cool de voir des petits changements comme ça qu'on faisait et qu'ils pouvaient avoir un impact aussi gros. Franchement, 40%, c'est pas négligeable.
+
+David Leuliette (34:41.169)
+Bah ouais quand même ! Vu que ça parle monétisation donc au niveau paywall subscription et nina purchase, quelle erreur tu vois encore trop souvent ?
+
+Julie Tonna (34:55.348)
+Justement, peut-être pas assez testé, pas assez expérimenté avec et même au niveau de où c'est que ça va paraitre dans l'app, si ça va être direct après l'unboarding ou si ça va être même plus tard, où c'est tout le flow de l'install à l'engagement et comment les gens vont utiliser l'application. C'est pouvoir essayer de mettre la peau là des moments peut-être plus intéressants où il y a des...
+
+David Leuliette (34:55.948)
+C'est ton avis.
+
+Julie Tonna (35:23.324)
+où il a un fort engagement par exemple après une action dans l'app, etc. ça c'est... Ouais, pense que c'est pas assez fait, à mon avis, et ça devrait être plus testé.
+
+David Leuliette (35:37.81)
+Ok, très cool, très cool. On va parler maintenant pour les dev Racknative. Alors vas-y, je suis ready, là j'ai passé... Faites jamais ça les habits, ne passez pas un an de votre temps à faire une app et après vous launchez. Launchez le plus rapidement possible. Mais admettons, je lance mon application Racknative demain.
+
+Ce serait quoi les trois choses à faire avant de submit à l'Apple Store ? Est-ce qu'il a des choses en avant que je peux faire avant d'appuyer sur le bouton Make it public ?
+
+Julie Tonna (36:12.98)
+Déjà, voici ça suit toutes les guidelines d'Apple pour pas se faire rucheter.
+
+David Leuliette (36:18.649)
+Ça de façon on est vite... Ça on connaît, c'est doux, nous sommes en première ligne, on reçoit les mails genre oui mais là vous avez oublié un point, là vous avez pas les bons... Votre terms and conditions website est down, ça t'inquiète, on sait. Ou alors il est en français alors que c'est l'appel en anglais, ça... Admettons que on a passé toutes les guidelines d'Apple et toutes les guidelines Google et que tout est bien et que les certificats d'encryption tout ça...
+
+Julie Tonna (36:45.492)
+Ok.
+
+David Leuliette (36:47.597)
+Tout est carré, la petite bulle elle est verte et on peut appuyer sur le bouton pour publier la version 1.0 sur l'histoire. Est-ce que je fais ça et Inch'Allah ou est-ce que quand même je me mets en ordre de bataille, j'ai un plan à 90 jours de chaque jour je dois faire une action.
+
+Julie Tonna (36:55.761)
+Oui.
+
+Julie Tonna (37:04.775)
+Ouais ouais, bah peut-être pas chaque jour, mais moins une deux fois par semaine c'est cool pour voir comment ça va et tout. Mais en fait c'est marrant parce que là je travaille sur un lancement d'une app toute nouvelle, du coup c'est une des premières fois que je bosse la SU.
+
+du côté client, on va dire, et je peux dire, du coup, que je fais, moi en gros, ce que j'aime bien, c'est avoir ma liste de mots-clés dont je parlais tout à l'heure, et en fait, je me fais un petit tableau Excel, enfin sur Google Sheet, et en fait, je mets les mots-clés qui m'intéressent, je pas, j'en mets une vingtaine, et toutes les semaines, le mercredi, je regarde la position de ces mots-clés par rapport, enfin sur l'App Store, fait.
+
+la position de l'app sur App Store par rapport à ce mot-clé. Et du coup ça me permet de voir comment ça évolue, si y'en a qui prennent, si y'en a qui prennent pas, si peut-être je pousser un peu plus, essayer d'aller plus dans sens d'un mot-clé versus un autre, etc. Donc ça je pense serait la première chose. Ensuite, regardez les compétiteurs. pense pareil, avoir une petite liste de compétiteurs, peut-être 4, 5. en fait, peut-être pas toutes les semaines dans ces cas-là, mais toutes les 2, 3 semaines, je regarde un peu s'ils ont fait des changements sur leurs fiches, s'ils ont ajouté des features sur leur app, etc.
+
+David Leuliette (38:04.785)
+Bye bye.
+
+Julie Tonna (38:15.136)
+Et puis je pense, peut-être au bout de 2 mois, je pensais à peut-être changer les screenshots basés sur les premiers retours qu'il y a eu, soit dans les reviews, soit par les gens, par les mots-clés qui ont l'air de bien marcher. coup, peut-être changer les screenshots, les messages dessus ou quoi, en intégrant ces mots-clés. Ouais, voilà.
+
+David Leuliette (38:39.505)
+Non, je vais pas, je vais pas.
+
+T'as... T'as un truc justement...
+
+Quand on a pas de budget pour les screenshots ?
+
+Julie Tonna (38:51.636)
+Ouais ouais carrément il y a plusieurs outils en vrai. Bah pareil vous pouvez check sur le site neoads.tech j'ai fait des articles qui les listés mais il y a des... alors de un il y a des sites qui permettent de trouver l'inspiration donc voir un peu je suis pas dans plein de catégories.
+
+sont les designs des autres apps. Tu peux le faire sur l'app store mais c'est que c'est cool d'avoir une bibliothèque facile à naviguer. ensuite du coup il y a une app qui s'appelle Picasso qui est pas mal où tu peux faire des screenshots ensuite ta Figma, Classic.
+
+Tu peux avoir aussi des sites où il permet d'avoir des templates. Tu tapes « App Store Screenshot ouais tu as des templates, tu les changes. Ça va te coûter peut-être 10€ par mois, j'ai lancé des abonnements. Je sais pas, tu le fais peut-être une ou deux fois et puis voilà. Et ça permet en fait de le faire facilement, d'avoir quelque chose de plutôt propre. Mais ouais, je pense que c'est quand même une des parties très importantes des films.
+
+David Leuliette (39:34.583)
+Ouais directement, ouais y'en a plein.
+
+David Leuliette (39:53.875)
+Ouais souvent négligé, enfin moi je le dis 100 % des cas c'est négligé 100 % du temps c'est négligé dans ce que j'ai avec mes clients, puis c'est moi qui le fais et puis... Donc je comprends, il en a une question intéressante dans le chat attention, est-ce que tu aurais dit ? Mathieu est du monde, la première soumission combien de temps pour savoir en amont, pour savoir si on est bon ? Ouais ça dépend quel est le...
+
+Julie Tonna (39:57.62)
+Oui.
+
+Julie Tonna (40:07.508)
+Bye !
+
+Julie Tonna (40:13.061)
+suis prête.
+
+David Leuliette (40:23.45)
+On a dit que tout était bon. Combien de ça prend une première soumission ? Moi je dis un mois. À chaque fois quand mes clients me demandent combien temps ça prend pour Elise, un mois.
+
+Julie Tonna (40:30.832)
+ouais, en vrai c'est pas moi qui fais les soumissions donc je pas...
+
+David Leuliette (40:34.534)
+Ouais... Bah... C'est les allers, les retours... En fait, en vrai, c'est plus paperwork. Exemple... J'ai un pote indie hacker, big up à midi. Il a une app dans la crypto. Il a voulu launch. Et il l'a abandonné. Parce que... Bah non, non, enfin, c'est pas... Parce qu'en fait, il a déjà un site web qui fonctionne et tout. Get Rich, ça s'appelle.
+
+Julie Tonna (40:53.798)
+Naaaan
+
+David Leuliette (41:00.344)
+et ça fonctionne avec Twitter et bref, webtree et tout, tout ça. Et en fait, il s'est dit, ouais, bah c'est bon. Moi je le dis à peu près un mois, mais pareil, il est tombé dans la case. ça c'est finance, ça c'est regulations et voilà les 4 milliards de paperasses qu'il nous faut. Et à chaque fois, tu il demande un par un les papiers. Donc ça prend un temps infini parce que t'as pas tout d'un coup, en fait, forcément. Et donc ça, c'est long. Mais si là, on va dire, là, l'app de gaming que j'ai là, Bluetooth.
+
+En plus il n'y même pas de données, il n'y a pas de données utilisateurs, vraiment, s'il a l'email quand même. Il n'y a pas de chiffrage, parce qu'il n'y a pas de données utilisateurs, donc ça peut aller hyper vite. je dirais un mois, mais pareil les jeux vidéo je pense que un peu long. Et après...
+
+peut pas vraiment savoir comment, comme métrie, que je mets un mois à peu près. C'est pas vraiment un mois travail effectif, c'est parce que t'as vite fait de t'attends une réponse d'Apple, paf, ça dure trois jours et après, bah c'est réponse de Google Play, bah ça prend une semaine. Donc...
+
+Julie Tonna (42:04.979)
+Ouais.
+
+David Leuliette (42:13.01)
+C'est dur de le faire parce que le client est pressé, il savoir ça en amont. Ben ouais, c'est exactement ça. Si on en revient au store listing, est-ce qu'il a des erreurs qu'il faut éviter ? Qu'ils coûtent cher ? Est-ce qu'on peut se faire shadowman et se retrouver dans les limbes du store ou t'as pas eu ce genre de choses
+
+Julie Tonna (42:31.613)
+Euh...
+
+Julie Tonna (42:35.652)
+Non, pense pas. Après si... Enfin, je pense qu'il y a des nouvelles règles, je pense qu'il faut quand même se tenir au courant. Genre là, je sais pas, il a une ou deux semaines, a, je crois à Apple qui a dit qu'on pouvait pas utiliser de... par exemple le nom de compétiteur dans son titre ou sous-titre. Enfin, d'un des compétiteurs, mais des fois ça peut être... ouais, j'avais pas compris alors, mais je sais pas, des fois ça peut être...
+
+David Leuliette (42:41.35)
+Ouais, ça change tout le temps quoi.
+
+David Leuliette (42:53.612)
+oui ok ouais c'est ce que tu disais tout à l'heure
+
+Julie Tonna (43:01.876)
+assez connue ou qui peut être utilisé dans la langue quotidienne mais que quelqu'un utilise pour son app et du coup en fait tu peux pas...
+
+David Leuliette (43:06.434)
+Chocolatine, l'app de recherche de chocolatine, c'est un compétiteur aux petits pains et donc oui, non, est-ce qu'on peut ? De façon, c'est toujours pareil, ça dépend où est-ce que vous en êtes. Moi, si vous êtes à l'étape 0 et 1, dis faites le pirate et faites vous tester, vous allez vous prendre un petit bail et hop, vous changez, c'est pas grave. Après, si avez des millions d'useurs et que vous avez appelé King,
+
+Julie Tonna (43:15.821)
+C'est ça.
+
+Julie Tonna (43:23.441)
+Ouais, testé.
+
+Julie Tonna (43:31.268)
+oui c'est chaud. Bah tu prends moins de risques quoi.
+
+David Leuliette (43:33.618)
+Ou alors tu fais comme Swinny le mec de Epic
+
+Julie Tonna (43:44.026)
+Et tu... Ouais.
+
+David Leuliette (43:44.09)
+Et tu pars en croisade contre Apple comme Tim Sweeney, c'est ça, tu pars en croisade contre Apple et après tu fais plier Apple quand même au final. Mais bon ça peut coûter des millions de je sais pas combien ça a coûté.
+
+Julie Tonna (43:47.828)
+Oui.
+
+Julie Tonna (43:53.414)
+Et ça peut durer très très longtemps parce que Fortnite il n'était pas sur les stars pendant je ne pas combien d'années. C'était ouf. Mais c'était incroyable quand même comme histoire.
+
+David Leuliette (43:59.667)
+Franchement, ouais ouais, c'est clair que ça a compté en années quoi, ce truc là.
+
+Pour ceux qui ne pas, Fortnite était sur les stores, Fortnite a mis son propre coin dans le jeu, Apple a dit non, on veut notre commission et les mecs ont dit fuck you et du coup ils se sont fait kiquer du store et après procéder plusieurs années et à la fin maintenant on peut quand même ajouter un store, un third-part store.
+
+Julie Tonna (44:28.574)
+C'est un web store en fait.
+
+David Leuliette (44:30.418)
+on peut ajouter un web store et on peut ajouter aussi un moyen de paiement sur Apple, autre que le paiement officiel, mais versus une UX dégradée. Mais bon, c'est pareil, ça change tout. Ouais, c'est ça.
+
+Julie Tonna (44:44.292)
+Mais moins 30 % !
+
+David Leuliette (44:53.117)
+Ok, tooling, c'est parti. Outils et stacks, qu'est-ce que t'as ? Ton top 3 de tes outils, on en a parlé un peu tout à l'heure, mais qu'est-ce que tu utilises ?
+
+Julie Tonna (44:55.956)
+Let's go !
+
+Julie Tonna (45:03.604)
+Ouais bah moi j'utilise Mobile Action, puisqu'en fait j'ai un partenaire avec eux et avec le temps je me suis grave habituée et j'aime beaucoup la plateforme, je trouve l'interface elle est cool. Après il a AppTweak aussi que j'utilise avec un client et en gros c'est pas mal mais j'ai moins l'habitude de... Alors en fait les deux... Ouais ouais désolée je vais expliquer un peu. En gros c'est déjà pour que t'aies tous les outils ISO donc tu peux faire de la recherche qu'on peut...
+
+David Leuliette (45:20.242)
+Ça sert à quoi ça ? Du coup, AppTweak et MobileAction c'est les mêmes ?
+
+Julie Tonna (45:32.468)
+compétiteurs, peux faire la recherche de mots-clés, tu vois le volume des mots-clés, vois où tu ranks, vois où tes concurrents ils rank sur ces mots-clés, tu peux regarder tous les inapps et vêtres qui ont été créés ever par catégorie. C'est une plateforme, mais il vraiment toutes les infos dont tu aurais potentiellement besoin pour des apps. Après, c'est un peu cher, ça dépend en fait de où tu en es avec ton app. Et il y a aussi accès, je ne pas, au...
+
+aux infos du marché, app stores, au classement, tout ça. Donc ça, pour moi, c'est un des outils un peu indispensable, mais c'est vraiment parce que je fais ça, c'est mon métier. Après, AstroTools peut-être, ça fait le taf, dépend où vous en êtes aussi.
+
+si c'est plus le lancement ou si plus loin dans la vie de l'app.
+
+David Leuliette (46:26.643)
+C'est vrai qu'on va préciser, Mobile Action et AppTweaks c'est des sites web d'ESAS et AstroTools c'est un outil off, enfin pas offline, enfin c'est un outil que vous pouvez utiliser sur une app macOS en fait.
+
+Julie Tonna (46:39.156)
+Oui c'est vrai. Alors ensuite, qu'est-ce j'utilise ? Bon vieux Excel, franchement. Oui, fait Google Sheet si je dois partager des rapports, etc. Mais Excel, si je veux vraiment analyser de la donnée, oui.
+
+David Leuliette (46:48.179)
+Naaaan ! C'est bien. Excelles quoi ! Même pas Google Shit, excels carrément quoi !
+
+David Leuliette (47:03.098)
+donc, alors attends, et Ok, et donc Excel, et donc pas des CSV.
+
+Julie Tonna (47:10.452)
+Non, ça va être du XLXS, je ne sais comment c'est. XLS65.
+
+David Leuliette (47:14.931)
+Ouais, avec CLS quoi, ok. Parce que pareil, a Mathieu qui demande est-ce que tu utilises Cursor pour justement faire des agrégats de machins et tout, mais bah non, non. Non mais c'est les devs qui utilisent Cursor tu vois. Il y peut-être Cursor for Marketing, peut-être qu'un jour il y aura ce genre de truc où le Excel version IA pour faire de la catégorisation et tout, franchement.
+
+Julie Tonna (47:34.58)
+Alors on va dire que j'ai déjà essayé, enfin j'ai essayé mais malheureusement en Europe c'est pas trop possible. Je sais pas si vous connaissez Mixpanel en fait, c'est pour voir dans l'app l'engagement etc. Et en fait ils ont mis, enfin maintenant on peut connecter en mode mcp et du coup tu peux demander à Cloud des infos et ça prend les données direct de Mixpanel sauf que c'est pas...
+
+David Leuliette (47:44.027)
+Oui, moi je connais Wemmick's Panel.
+
+Julie Tonna (48:00.155)
+sortir en Europe encore, c'est close, je suis un peu degue, mais je pense que c'est le prochain step, c'est vrai que ce serait cool, mais on peut voir toutes les grosses plateformes, genre AppStyle vient de sortir ça, AppTweak, etc. Et de plus en plus on va le voir quoi.
+
+David Leuliette (48:02.055)
+ok ouais, ok.
+
+David Leuliette (48:11.163)
+Oui, non mais c'est ça, après ça va... En fait ça va être intégré dans les outils et puis voilà quoi. Donc là c'est un peu cutting edge, donc tu fais un peu de la bidouille, mais bon le problème c'est que tu vas passer ton temps à le faire ça et puis ça va casser et puis en fait on respote vraiment ton cœur de métier. Parce qu'après tu deviens une développeur de tools, c'est pas consommateur de tooling pour... Non mais c'est toujours pareil quoi. Ok, ok.
+
+Julie Tonna (48:16.348)
+Ouais, c'est ça.
+
+Julie Tonna (48:31.25)
+Ouais, c'est ça. Mais du coup Excel, après un moment j'utilisais Tableau vraiment quand j'avais des énormes campagnes. Tableau c'est juste pour visualiser en fait les courbes.
+
+David Leuliette (48:42.628)
+Google, pour des cohorts de données gargantuesques.
+
+Julie Tonna (48:47.344)
+Ouais, c'est ça. énorme. Franchement, ouais. Mais en vrai, c'est cool, moi, j'aime bien. Et voilà, après, Google Sheet, et sinon, classique, ChannJPT, Claude, etc. Mais ChannJPT, plus pour l'ASO, je sais pas, pour avoir des descriptions, pour avoir des idées sous-titres et tout. Moi, j'utilise pour... Parce que je sais guider, etc. Et je sais ce que je veux aussi, mais...
+
+David Leuliette (49:04.883)
+oui, il fonctionne quand même bien...
+
+Julie Tonna (49:13.214)
+Mais ouais ouais carrément pour avoir au moins des options et après moi j'affine derrière. Ouais. Ouais. Ouais. C'est ça.
+
+David Leuliette (49:17.203)
+Ouais, good enough, pour éviter le phénomène de page blanche quoi, tu sais pas où Donc moi ce que j'avais fait pour le podcast, j'avais regardé Manus Et pareil c'est un peu chez Agipiti, va te chercher des sources, il te le recompile Tout ça correctement, parce que chez Agipiti je me suis toujours dit, ouais il se galère, enfin c'est pas de l'actualité chaude Vu que ça change tout le temps en plus ces trucs là là, mais ouais, bah pareil ouais
+
+Julie Tonna (49:42.984)
+Oui.
+
+David Leuliette (49:46.713)
+Bah de façon tout le utilise en fait en vrai. Tout ce qui est texte en plus maintenant ça va.
+
+Julie Tonna (49:49.588)
+Franchement faut être honnête et puis ça va beaucoup plus vite du coup je vais pas passer 5 heures à écrire une description si en fait...
+
+David Leuliette (49:53.341)
+Ouais.
+
+David Leuliette (49:58.824)
+Ouais ouais c'est ça... Exactement. Est-ce que t'as... t'as un horde, un échec cuisant que tu as rencontré sur une campagne de stratégie ASO ? alors vas-y. Bah oui. Non mais c'est ça. Qu'est-ce qui s'est passé Zididou ? Et qu'est-ce que t'as changé depuis ? Oui.
+
+Julie Tonna (50:00.148)
+bon j'aurais proposé, tu vois, ça fait pas sens.
+
+Julie Tonna (50:15.334)
+bah oui évidemment, les gens ils mentiraient s'ils disaient que c'était pas possible. En vrai je peux pas me donner le nom mais moi je bosse sur le nom.
+
+David Leuliette (50:27.685)
+Non, on va l'appeler, appelons David Leliètte qui lance son app Kitgoo, tu vois, voilà.
+
+Julie Tonna (50:31.668)
+non, coup, ce n'était pas un lancement, c'était une énorme app, vraiment fatte, qui existait déjà et il lançait une collaboration, c'était il un an tout pile.
+
+David Leuliette (50:37.107)
+qui existait déjà, ok
+
+Julie Tonna (50:46.484)
+dessins animés. Et ils m'ont embauchée pour faire leur campagne. Donc on a tout préparé un mois et demi à préparer les campagnes, à tout lier et tout. Sauf qu'en fait, les bides sur Apple As, les actions ont été un peu trop hautes et du coup on a cramé du budget assez vite au début. Et j'avoue qu'on a mis du temps à récupérer ça et je m'en suis un peu voulue à faire parce que ça a impact quand même.
+
+David Leuliette (50:48.155)
+Ok.
+
+Julie Tonna (51:13.748)
+pas négligeable après je pense ça faisait peur parce que les chiffres étaient énormes et du coup c'est vrai que selon ce que tu gères ça peut un peu effrayer mais bon pour eux c'était une goutte d'eau tu vas dire
+
+David Leuliette (51:23.869)
+Ouais c'est virgule, c'est ça pour toi, c'est genre mais what c'est 50 CA et puis toi t'es là mais où ils s'en battent les couilles tout ce genre de ouf on regarde ça ouais
+
+Julie Tonna (51:30.1)
+Mais bon voilà du coup je pense que c'est un peu le danger, ça m'a appris une bonne leçon, c'est que quand tu lances des campagnes, moi je préfère y aller doucement, quitte à avoir une semaine où ça dépense très peu, fait augmenter, je pas, 10-20 % tes bids chaque jour, bon bah faut regarder deux-trois fois par jour, mais bon au moins t'es sûr que tu as pas cramé ton budget trop vite en fait, puisque après la performance elle y passe, tes revenus aussi seront pas aussi bons.
+
+on pour une
+
+David Leuliette (52:00.98)
+Ouais, puis ça peut être une erreur à la con, genre ok, dans le lien de fin j'ai mis une 404 parce qu'en vrai quand j'ai copié-collé le truc c'était pas la bonne URL du local et puis en fait voilà... ça tu t'en rends pas compte si tu lances et vas en mode « début » dès le début.
+
+Julie Tonna (52:16.478)
+Ouais, c'est ça. Mais bon après c'était ce qu'ils voulaient donc bon, d'un côté voilà, mais c'est vrai que ça peut être délicat donc c'est plus prendre, si vous lancez des campagnes etc. je vous refais attention à ça au début, quitte à être un peu réservé sur le début et augmenter au fur et mesure, plutôt que l'inverse où là ça a plus de conséquences quoi.
+
+David Leuliette (52:22.142)
+Ouais.
+
+David Leuliette (52:39.124)
+Ouais plutôt que de... Ouais ok, je vois comme ça tu vois comment ça se passe. Ah ouais mince on a juste oublié ça. comme ça tu disais tech. ouais. Oh c'est fou ! T'as eu une phase de test avant le vrai launch mais c'est incroyable ! C'est comme quand tu devs, c'est fou !
+
+Julie Tonna (52:46.388)
+Wait.
+
+Julie Tonna (52:51.966)
+Ouais. En fait, c'est relou parce que le marketing, les gens y pensent, ça va avoir des installes tout de suite, ça aller super vite parce que tu payes et je suis là en mode, en fait, oui, tu peux payer, mais il que ce rentable, en fait. Genre ça sert à rien sinon.
+
+David Leuliette (52:59.032)
+Oui, je me harry dans mes...
+
+David Leuliette (53:08.724)
+C'est trop rigolo, on a le même problème, enfin en dev c'est pareil, gens ils se disent ouais tu vas mettre ton site web en ligne, des milliards de personnes vont aller dessus, tout le monde s'en fout, personne en a rien à foutre, donc je vais l'utiliser. Donc ce que tu as changé depuis, c'est que maintenant plus stratégie de...
+
+Julie Tonna (53:11.188)
+Ouais !
+
+Julie Tonna (53:16.264)
+Ouais, bon, pas du tout.
+
+David Leuliette (53:30.548)
+C'est commencer tranquillou et après accélérer.
+
+Julie Tonna (53:30.896)
+Comment c'est tranquille, Mais surtout que je me fais... On vient me foutre des coups de pression, maintenant, mais vas-y, pousse et tout. suis là, mais vous êtes sûre ? Enfin maintenant, c'est l'inverse qui se produit, mais d'un autre côté... Voilà, c'est le risque.
+
+David Leuliette (53:44.392)
+Ouais... Ouais ouais... Donc est-ce que cette année, ou l'année dernière en fait, a une conviction que t'avais que t'as abandonné et ce qui t'a fait changer d'avis
+
+Julie Tonna (53:58.42)
+Je pense que je voulais faire beaucoup de choses, beaucoup de canaux et tout gérer à la fois mais juste... ouais... que je disais tout l'heure vaut mieux... Ouais ! Ce que je disais tout à l'heure vaut mieux faire moins mais mieux plutôt que essayer de tout trop faire et vite...
+
+David Leuliette (54:05.076)
+24 heures. 24 heures, voilà.
+
+David Leuliette (54:16.244)
+Ouais bah oui, forcément. En plus si tu lances tout d'un coup, tu sais pas d'où ça vient, en tu sais pas où accélérer après.
+
+Julie Tonna (54:24.5)
+Bah ouais, c'est ça. C'est beaucoup plus de taf et c'est beaucoup d'optinisation et je pense que c'est pas du bon travail en fait derrière. Ça peut paraître cool au début mais je pense que sur le long terme c'est pas du tout la stratégie qui va pouvoir croître de façon saine on va dire.
+
+David Leuliette (54:44.052)
+C'est quoi le meilleur advice growth que tu donnerais à Julie ?
+
+actionnellement 48 heures avec un livrable clair par rapport à quand t'es sorti de chez Apple. Ou non, avant que tu rentres chez Apple, je sais pas. On sait rien. Les deux ! Les deux !
+
+Julie Tonna (54:59.54)
+Ouais, les deux. J'apprends toujours nouvelles choses en vrai, donc ça peut être avant, après, pour n'importe Mais juste tester, pas avoir peur de tester et prendre le temps de Prendre assez de temps pour avoir de vraies données.
+
+juste faire ça avant une semaine et bon c'est plié pour avoir des résultats. Mais en fait le test c'est ce que je dis à tout le monde c'est qu'en vrai on peut pas savoir, tu peux avoir une intuition mais c'est juste une intuition tant que t'as pas testé tu peux pas savoir. je pense c'est tester tester tester, faire des comparaisons, regarder la data et voir ce qui marche et ce qui marche pas. Au final c'est les utilisateurs qui vont le dire et voilà ça va se transmettre sur les données quoi.
+
+David Leuliette (55:39.942)
+Ok, du coup c'est quoi le type de livrable, comment tu fais pour suivre ce truc ? Pareil, Excel, tous les jours où ton dashboard...
+
+Julie Tonna (55:46.11)
+Euh ouais, reporting, ouais ouais c'est ça. Je pense dashboard assez régulièrement et ensuite Excel, je sais pas, une fois par semaine toutes les deux semaines. Ce qui est cool ouais, d'avoir un cheat sur Google, je trouve ça chouette. Si c'est une campagne, ben mettre le nombre d'installs par campagne chaque semaine et le coup par install aussi. Et si c'est pour les référencements de mots-clés, ben...
+
+comme je l'ai dit, de mots-clés, juste toutes les semaines mettre où c'est qu'on est référencé.
+
+David Leuliette (56:18.8)
+Et ça voudrait le coup d'avoir une app mobile pour ça
+
+Julie Tonna (56:22.644)
+Je sais pas. Je sais pas. Je sais pas. En fait, je me dis, moi j'aime bien faire ça sur l'ordi donc avoir une app mobile, je sais pas. Mais après peut-être qu'il a des devs qui ont juste envie de checker ça.
+
+David Leuliette (56:24.244)
+C'est du mal.
+
+David Leuliette (56:37.716)
+Ouais non, que t'as pas... enfin vérifier tes numbers on the go, ouais non, t'es obligé d'avoir un mega dashboard en mode Overlord avec toutes les data et puis... ouais.
+
+Julie Tonna (56:47.016)
+Ouais, je pense que c'est cool sur le moment si tu veux checker aujourd'hui comment ça a performé ou la semaine dernière, mais si tu veux vraiment faire un suivi, je pense que c'est mieux sur un grand écran, mais bon après c'est chacun une préférence.
+
+David Leuliette (56:53.94)
+Ouais, non ça marche pas.
+
+David Leuliette (56:59.302)
+Non, parce que moi je vois ça, j'ai Mailchimp, j'ai installé l'app Mailchimp, je ouais c'est cool, il a mes nombres, puis j'ai jamais rouvert. Donc en vrai...
+
+Julie Tonna (57:06.836)
+Je trouve que ça dépend des gens, que moi je dois regarder les graves, je dois regarder les... ouais, je vraiment donnée, foulonnée quand même.
+
+David Leuliette (57:12.316)
+ouais ! bah oui, bah... Ok. Bah du coup, il te faut un widget... Il te faut juste un widget iOS alors.
+
+Julie Tonna (57:20.124)
+Ça, ça serait chouette. Ça, ça serait cool. Je pense que les widgets sont graves sous-cotés. D'ailleurs, c'est un tech que je suis prête à apprendre. Je trouve que ça marche vraiment bien les widgets sur téléphone. fait, ça permet aux gens d'avoir l'app direct sur le screen sans avoir besoin de l'ouvrir. Et je pense que ça doit être grave et de rétention, d'engagement et tout.
+
+David Leuliette (57:23.924)
+Ok les amis !
+
+David Leuliette (57:29.556)
+ouais ? Ahhhh ta bête.
+
+David Leuliette (57:46.34)
+Ok, euh... canon, canon, canon... euh...
+
+Est-ce qu'il a un sujet que tu voulais absolument aborder aujourd'hui et qu'on n'a pas abordé
+
+Julie Tonna (57:59.54)
+Franchement, pense que me paraît assez complet. Je me dis si, j'avoue, a un truc qui... Sur les pubs, on voit souvent des pubs un peu... Surtout pour les jeux un peu discriminants ou horribles par rapport aux femmes, des vidéos, des créas, fait. Et ça, c'est le genre de choses, si vous faites de la pub, s'il plaît, partez pas dans des choses...
+
+David Leuliette (58:14.175)
+Un peu. Ah oui, ok. Ah ouais, ça des trucs comme ça. Ok, mouche que je tombe ça.
+
+Julie Tonna (58:26.202)
+Comme ça, peut-être que ça a marché, il y aura des bonnes performances, mais en fait, sur le long terme, ça ne va pas ramener de bons utilisateurs.
+
+David Leuliette (58:32.018)
+ben vous avez... moi je vois les pubs sur X, tu vois t'sais les community notes, c'est genre... ce n'est pas du tout le gameplay du jeu vidéo.
+
+Julie Tonna (58:40.98)
+Oui c'est ça en fait, c'est C'est misleading ads et c'est un vrai problème sur Méta. Il y en a énormément sur Insta et tout. C'est horrible et je suis là en mode, ouais ok peut-être ça fait beaucoup de clics et tout mais je me dis là... Derrière...
+
+David Leuliette (58:56.54)
+ça fait beaucoup de clics mais est-ce que ça fait des installs ? donc ouais, tu peux faire beaucoup de clics mais pas d'installs.
+
+Julie Tonna (59:01.518)
+Ouais ou alors désinstaller, pas de monétisation quoi...
+
+David Leuliette (59:05.184)
+Ouais, ouais, ouais, c'est... Ouais, ouais, non, c'est vrai, ouais, ça vend pas vraiment le produit, je veux faire de la pub pour faire de la pub, mais au final, les pubs de jeux, c'est juste clivant. On ça dans le chat, bah ouais, non, mais... Ouais, non, mais c'est vrai que les pubs de jeux...
+
+Julie Tonna (59:10.576)
+N'oui.
+
+Julie Tonna (59:18.608)
+En fait, dépend des cas, mais c'est vrai qu'il en a qui sont armes, surtout les dernières années, je trouve, ça s'est un peu empiré. Il n'y a pas trop de régulation par rapport à ça et moi ça me choque. Des fois vraiment c'est choquant, je trouve.
+
+Ouais, bah moi je crois que je les ai plus parce que du coup maintenant je que j'ai pas intéressé mais ouais, c'est chaud quoi.
+
+David Leuliette (59:32.35)
+J'ai un anti-spam... Oui.
+
+Ouais, vu que tu bosses dedans tu fais plus attention forcément quoi donc... Ok, non mais je prends note. Qui c'est qu'on... Putain faut que j'arrête de dire ça, qui c'est qu'on Ou alors je le dirais tout le temps, qui c'est qu'on invite ensuite ? Est-ce que t'as quelqu'un à recommander ?
+
+Julie Tonna (59:43.22)
+Bye bye
+
+Julie Tonna (59:56.436)
+En vrai, j'ai deux meufs que j'adore ce qu'elles font. y en a une, c'est Marion Balinoff. fait de l'influenceur marketing. Elle a bossé avec des énormes genre Supercell.
+
+qu'elle a fait une campagne avec MrBeast, truc comme ça. Et très très forte, ouais elle est très très forte. Et ensuite il a Claire Rosin qui fait, elle de Loser Acquisition mais vraiment pour les jeux, a bossé chez Angry Birds et chez Product Mania, ils des gros noms. Et elle elle est trop forte, vraiment pour le coup moi je suis moins huée, je plus organique mais alors elle par contre c'est vraiment, trop trop forte. ouais, en vrai si elle soit intéressée.
+
+David Leuliette (01:00:13.759)
+A oui !
+
+David Leuliette (01:00:38.894)
+Ok, bah carrément, vas-y je demanderai...
+
+installeur mail, je m'en rendais. Trop bien, trop bien. Bah oui, parce que du coup, c'est bien. Moi, je galère en fait à avoir des populations féminines. sais pas, à chaque fois, je galère. Je sais pas pourquoi. dis peut-être dans les devs, plus, peut-être en marketing, j'en aurais peut-être plus. Mais y en a moins. puis à chaque fois, elles me disent non. Mais carrément, attends, c'est incroyable ce que tu fais. Et en fait, je sais pas pourquoi. les gentes dames qui écoutaient le podcast, je vous vois dans les stats. Je sais pas où.
+
+Julie Tonna (01:00:57.995)
+Dans les devs,
+
+Julie Tonna (01:01:03.615)
+ouais ?
+
+Julie Tonna (01:01:11.924)
+...
+
+David Leuliette (01:01:12.989)
+et vous venez venir en parler comme Julie, bah franchement, ça se fait, y'a pas de problème, j'serais ravi.
+
+Julie Tonna (01:01:16.785)
+Il faut avoir de la représentation, y aussi être à l'aise aussi, faire des choses, etc. Il y a tellement de choses qui rentrent en compte.
+
+David Leuliette (01:01:22.517)
+Ouais ouais, j'avoue, j'avoue. J'avoue. Où est-ce qu'on... Où te retrouve-t-on ? Pour... sur Internet, si on veut rentrer en contact avec toi.
+
+Julie Tonna (01:01:31.7)
+Eeeuuuh...
+
+En vrai, LinkedIn, je suis assez active. Si je voulais avoir des news, je commande souvent les news de l'actualité App Store, les trends, etc.
+
+du coup Julie Tonah sur LinkedIn. Ensuite j'ai un Substack, pareil je relais pas mal de news etc. direct dans votre newsletter dans votre boîte mail et ça c'est neo-ads.substack et puis voilà il a un site qui va sortir très bientôt pour avoir les tools, les reviews, tout ça neo-ads.tech et puis voilà j'utilise pas trop Blue Sky j'avoue donc j'ai un Blue Sky mais j'utilise pas trop
+
+David Leuliette (01:02:12.319)
+Ouais, moi je l'aime, on le met quand même. C'est pas grave, ça prend du temps. Pas le type. bah ouais, clairement, Tous les liens vous les retrouvez sur wishypytoday.com podcast. Qu'est-ce que tu vas shipper dans les 30 prochains jours ? En une phrase mémorable.
+
+Julie Tonna (01:02:15.092)
+Ouais, si vous voulez. Ouais, sais pas, deux plateformes, c'est déjà bien.
+
+Julie Tonna (01:02:32.341)
+Du coup le site, SydneyOasis.tech
+
+David Leuliette (01:02:34.805)
+Alors attends, on va trouver la punchline marketing ensemble. Neo-ads.tech.
+
+Julie Tonna (01:02:41.78)
+sais pas parce que c'est en anglais, non en langue. Je ne pas, être un truc genre... Ouais, Growth Tech for your app, un truc comme ça.
+
+David Leuliette (01:02:56.021)
+Ok, tu le toolkit de la mobile de 2026. Tu vas sur la route et rester sur la route. Boum, abonne-toi maintenant !
+
+Julie Tonna (01:03:01.868)
+ouais !
+
+Julie Tonna (01:03:10.388)
+Allez vas-y faut trop que je réfléchisse à ça ! Attends, your gross surviving tool kits for your app.
+
+David Leuliette (01:03:21.333)
+Voilà, franchement, si vous voulez les amis et vous avez besoin de plus de conseils marketing, pas de problème. Moi je suis chaud pour vous trouver un truc épique et il faut mettre la musique épique avec les feux d'artifices et tout ça. Merci à vous qui avez suivi cette émission, on se retrouve la fois prochaine et portez-vous bien. Ciao !
+
+Julie Tonna (01:03:38.196)
+Bye bye ! Merci !
+

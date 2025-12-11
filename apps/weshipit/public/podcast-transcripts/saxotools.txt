@@ -1,0 +1,1375 @@
+David Leuliette (00:01.865)
+C'est bon, on une super miniature YouTube normalement. On est live. oui c'est vrai du coup on est live. a deux, trois ans de délai. C'est pas grave, je ferai l'édit après. C'est parti.
+
+ctwm48y5m2 (00:05.08)
+et piqueur.
+
+David Leuliette (00:15.555)
+Merde ! si je sais, on le refaire, on refaire. Rémi du coup t'es plutôt... Eagle ou Birdie
+
+ctwm48y5m2 (00:29.865)
+En ce moment je suis plutôt birdie, il y a des jours où je fais des égales mais en ce moment c'est plutôt birdie, voire par, voire bokeh quoi.
+
+David Leuliette (00:32.906)
+plutôt birdie.
+
+David Leuliette (00:42.307)
+Parce que pour ceux qui ne pas, le golf, ont tout un langage... pour compter les points. Donc c'est soit Eagle, Birdie, Albatross, tout ça, avec des plus, des moins, les pars, tout ça. Ce que j'ai vu, tu fait une nappe, Golf Ultimate. Franchement, je suis deg, on va pas en parler, on va peut-être en parler, mais... Mais j'ai trouvé ça incroyable. Avant que tu fasses saxo...
+
+ctwm48y5m2 (00:59.913)
+En plus, oui.
+
+ctwm48y5m2 (01:09.023)
+Yes, je l'ai fait un peu après. que moi je fonctionne vraiment, j'ai une passion, je rencontre un problème, je développe une application qui résout le problème. Et en gros, vite fait, l'application qui s'appelle Ultimate Golf, c'est quand tu es sur le parcours et que tu as besoin de connaître tes distances par rapport aux trous, par rapport à un obstacle. En gros, vas avoir l'application où tu vas pouvoir enregistrer les distances que tu fais pour chaque club.
+
+David Leuliette (01:12.75)
+tu l'as fait après ? ouais.
+
+David Leuliette (01:21.602)
+Ok.
+
+ctwm48y5m2 (01:37.901)
+C'est à que quand tu t'entraînes, tu t'entraînes au practice. Donc tu prends des sauts de balles, 40, 80 tu vois. au practice, tu vas taper tout tes clubs et tu vas savoir à peu près à quelle distance tu tapes. Et là l'intérêt c'est quand tu arrives sur le parcours, tu dis ok, je dois atteindre ces zones là qui est à 180 mètres. J'utilise ma petite tape, j'ai la position GPS actuelle que j'ai, j'ai ma distance par rapport à l'obstacle et ça me donne automatiquement le club que je dois jouer en fait. Donc c'est une sorte de caddie virtuelle.
+
+David Leuliette (02:04.161)
+ok je vous...
+
+D'accord, ok, ok, trop bien. Du coup, tu reviendras dans un an pour nous dire, mec, j'ai sorti l'app sur les Meta Quest et plus besoin de téléphone. Vous êtes sur le cross-platform show, le podcast Didi au début du développement d'applications mobiles avec React Native. Je suis David, développeur chez Wishi P2D. Nous sommes en octobre 2025, Rémi. Merci de rejoindre le podcast. Est-ce que tu peux te présenter ?
+
+Quel est ton parcours ? D'où viens-tu ? Où es-tu ?
+
+ctwm48y5m2 (02:37.896)
+Yes, bah déjà merci de me recevoir et merci de me laisser l'opportunité de me présenter. Donc moi mon parcours, c'est classique, j'ai fait prépa, école d'ingénieur, ensuite j'ai été diplômé en mécanique des fluides, donc à l'Ainsem, c'est une école qui a Nancy.
+
+David Leuliette (02:42.018)
+Ça fait plaisir.
+
+David Leuliette (02:58.177)
+mais trop, franchement ça tue la classe quoi. Mécanique des fluides je trouve ça incroyable quoi.
+
+ctwm48y5m2 (03:03.451)
+Ouais. Bon. Moi, ce que je devais faire, c'était de la CFD, c'est de la Computational Fluid Dynamics, où en gros, va simuler des écoulements, que ce soit d'air ou de liquide dans l'espace. Et on a des logiciels qui font très bien ça, où on met des conditions initiales, on implément les différentes équations qui régissent en fait un système. Et ensuite, on appuie sur Simuler, puis ça va créer toute une simulation pour voir, par exemple,
+
+je ne pas, la répartition de chaleur dans une usine nucléaire, ce genre de choses. Donc j'ai fait ça pendant six mois et c'est le côté un peu industriel, manque de liberté qui me déplaissait un peu dans le sens où moi je suis quelqu'un qui a, je pense beaucoup d'idées et je cherchais un moyen de les mettre en application assez rapidement et j'ai découvert à l'époque, donc c'était en...
+
+2017. Donc j'étais diplômé en 2017. Je travaillais six mois en tant qu'ingé. C'était à Cadarache à côté d'Aix-en-Provence. Et en parallèle, j'apprenais un peu le JS, enfin JavaScript et l'HTML.
+
+Et en gros, bout de 6 mois, je me suis dit bon là, il que fasse un switch parce que je ne pas travailler là-dedans toute ma vie. Et j'ai fait une alternance en data science avec Open Classroom dans une société qui s'appelle Home Pulse. Et en gros, c'est une société qui créait à l'époque des jumeaux numériques des maisons pour essayer d'estimer un peu la consommation énergétique en se basant sur les habitudes de consommation et sur la météo extérieure, enfin sur les éléments qui sont exogènes.
+
+David Leuliette (04:43.101)
+Ok.
+
+ctwm48y5m2 (04:46.319)
+Et à la suite de cette alternance, on avait ce concept de jumonumérique qui était appliqué au foyer, donc c'était en 2019. Et en 2020, on a la CMA, la CGM qui était venue nous voir parce qu'ils avaient des problématiques de consommation de leurs reefers. Donc la CMA, la CGM, pour ceux qui ne connaissent pas, c'est l'armateur français qui transporte des conteneurs d'un port à un autre port. Et ils ont aussi des conteneurs frigorifiques qu'on appelle reefers.
+
+Et nous en gros ce qu'on a fait, c'est qu'on a pris nos modèles existants qui fonctionnaient pour la maison et on a essayé de les adapter pour les reefers, pour essayer de faire de la prédiction de maintenance, prédiction de consommation et après on a créé plein de solutions autour de ça. Et donc aujourd'hui moi je suis CITIO dans cette société et à côté je crée mon application mobile pour le saxophone.
+
+David Leuliette (05:34.848)
+Ok donc c'est ça, donc 80 % de ton temps c'est... si tu es 20 % je dirais que c'est 20 % du temps l'app mobile Saxo Tools
+
+ctwm48y5m2 (05:43.242)
+Comme je travaille le matin, le midi et le soir, ça prend quand même pas mal de temps. final, je vais travailler peut-être 4-5 heures dessus par jour. Donc j'irai plutôt 60-40 sur mon temps de travail actif. Après, j'ai mes loisirs à côté.
+
+David Leuliette (06:02.986)
+ici... Et du coup tu fais du saxophone alors ? Parce que c'est incroyable, tu l'as vu, t'en as eu Odyssey Musique et j'ai parlé avec aussi qui fait une app et qui fait aussi une app de musique du coup c'est parti pour l'arc, je vais faire toutes les apps musicales en fait !
+
+ctwm48y5m2 (06:10.014)
+Oui, non mais... Non mais... C'est ça. Et en plus j'ai vu que nos apps ressemblaient énormément. Lui la différence c'est qu'il a un produit physique il me semble. Non, non non, je l'ai découvert en même temps, enfin quand j'ai regardé un peu les podcasts précédents.
+
+David Leuliette (06:24.531)
+Mais tu le savais avant, tu le savais avant ou pas ok.
+
+David Leuliette (06:31.136)
+Bah franchement pareil, sais pas si c'est l'algorithme, mais juste après j'ai vu ton poste, me disais, mais c'est quoi ce délire ? En une semaine, y a deux âmes de saxophones ? Incroyable, je vais l'inviter parce que justement ça va être rigolo.
+
+ctwm48y5m2 (06:37.821)
+Allez.
+
+ctwm48y5m2 (06:44.138)
+Parce que moi à la base je faisais du piano et de la guitare et ensuite j'ai fait la bascule sur le saxophone. Et en gros le saxophone, sais pas si t'es musicien.
+
+David Leuliette (06:55.167)
+moi pas du tout, moi je groupie, je vais dans des festivals de musique mais c'est
+
+ctwm48y5m2 (06:58.222)
+Ok. Donc en gros, enfin si tu veux commencer un peu à improviser, t'amuser tout ça, il faut apprendre ces gammes. Et tu as plusieurs patterns de gamme, tu peux les jouer en tiers, tu peux les jouer en quarts, en quintes, enfin... Et tu plusieurs types de gammes pentatoniques, majeures, mineures, etc. Et en fait moi ce que je faisais à l'époque, c'est j'achetais des PDF d'influenceurs.
+
+David Leuliette (07:05.918)
+Oui.
+
+ctwm48y5m2 (07:19.433)
+où ils mettaient à disposition tout leur pattern, toute leur gamme, tout ça. J'ai acheté le pdf qui coûtait environ 50 balles. Je faisais deux trois exercices et après je passais à autre chose, je voyais un autre pdf, je l'ai racheté. Donc je m'étais mis un peu en tête. Je me suis dit ok, mais il a pas moyen de créer un système qui me permet de suivre un peu mon avancement dans l'apprentissage des gammes, etc. Et c'est de là où j'ai eu l'idée de Saxo Tools qui au départ était plutôt un outil pour aider les musiciens, on va dire intermédiaires, confirmés.
+
+David Leuliette (07:31.194)
+Ouais, c'est bon.
+
+ctwm48y5m2 (07:48.489)
+apprendre des nouvelles gammes et surtout suivre un peu leur évolution. Se dire ok là j'ai joué la gamme Do majeur à 80 bpm, donc 80 battements par minute, ensuite j'ai joué à 100 bpm, 120 et vraiment pouvoir avoir un historique et avoir des rappels. Se dire ok il y a un peu la duolingo quand tu apprends un démo. Des fois ils vont te les reproposer avec la pyramide de Leitner. En gros c'est histoire de... c'est ça oui.
+
+David Leuliette (07:57.855)
+Hmm.
+
+David Leuliette (08:12.55)
+Oui, et que tu répètes. C'est quoi, explique bien ce que c'est, la Pyramide de Leitner ?
+
+ctwm48y5m2 (08:18.121)
+En gros tu as plusieurs cases, tu as par exemple six cases. Quand tu vas apprendre un mot, par exemple il va être reproposé, enfin il va passer dans la deuxième case et il sera reproposé dans un jour. Et quand tu vas revenir le lendemain et que tu vas le réapprendre, si tu le revalides il sera proposé, enfin il va passer dans la prochaine case et il sera reproposé dans deux jours.
+
+après c'est des multiples de 2 ensuite il sera reproposé dans 4 jours dans 8 jours et si par exemple dans 8 jours tu n'y arrives pas et bien il repasser dans la classe précédente il sera reproposé dans 4 jours. En gros c'est ça et donc moi je voulais implémenter un peu le même système pour l'apprentissage des gammes c'est à dire où tu vas apprendre une gamme tu vas la valider avec l'intelligence de l'application qui était de reconnaître en fait les notes que tu joues.
+
+A l'époque pour faire ça, je récupérais le stream de ton micro et tu des algos qui vont faire des FFT, Fast Fourier Transform, et qui va donner la fréquence principale et en à partir de ça tu peux détecter la note que tu étais en train de jouer et tu peux valider oui ou non est-ce que l'utilisateur a joué la bonne note et à partir de ça tu peux calculer plein de métriques et valider si oui ou non il a bien joué la gamme avec tel niveau de précision à telle vitesse.
+
+David Leuliette (09:39.91)
+Ok.
+
+ctwm48y5m2 (09:41.04)
+Donc c'était la V1 de l'application.
+
+David Leuliette (09:44.478)
+Et c'était quand ? Quelle année ça ?
+
+ctwm48y5m2 (09:46.312)
+J'ai commencé en 2021-2022.
+
+David Leuliette (09:51.439)
+Et genre tu as tapé random... je connais JavaScript du coup, React Native ou... Pourquoi tu as choisi React Native justement ?
+
+ctwm48y5m2 (10:01.863)
+J'avais fait un peu de... Parce que dans ma société actuelle, moi j'étais plutôt vraiment orienté back front DevOps, cloud architect AWS.
+
+David Leuliette (10:11.665)
+Ouais j'ai vu. Attends faut dire ton titre sur LinkedIn, c'est... Serverless ADWs Architects. Ouais, trop bien. C'est beau, c'est beau.
+
+ctwm48y5m2 (10:18.472)
+C'est ça. Là-dessus, je vous confirme de me dire que je suis expert, parce que j'ai vraiment pensé le truc de AZ sur le système serverless, sur les systèmes qui sont moins managés comme EKS, Kubernetes, dans Amazon. je suis beaucoup moins à l'aise, mais surtout ce qui est service serverless, suis plutôt bon, on va dire. Et donc, tout ça pour dire oui, que moi je faisais plutôt ça de base. Et après, on a dû...
+
+David Leuliette (10:26.865)
+Ouais.
+
+ctwm48y5m2 (10:48.232)
+Parce que nous on est une société en fait plutôt d'analytique, on va récupérer des données qu'on va transformer en commentaire, puis revendre sous forme d'analyse. Et il a un moment quand on veut vendre, il faire des présentations, tout ça. Donc on a eu l'idée de créer des dashboards. Et pour créer ces dashboards, il falloir maîtriser une technologie front.
+
+Et c'est pas moi, c'est un de mes associés qui était parti sur du React, qui avait commencé à implémenter. Et de fil en aiguille, moi j'ai repris un peu ce qu'il a fait, j'ai appris la techno. Donc j'ai maîtrisé React et quand j'ai voulu faire mon application React Native, enfin mon application pour saxophones, naturellement je suis parti sur React Native.
+
+David Leuliette (11:20.869)
+Ouais, mobile c'était genre... ok.
+
+David Leuliette (11:26.7)
+Ok, et la V1 sur les stores, en quelle année tu l'as mis ? De Sexo Tools ?
+
+ctwm48y5m2 (11:30.963)
+La V1, il me semble que c'était 2023. Ouais.
+
+David Leuliette (11:36.973)
+Ok, assez récent. Et qu'est-ce qui te fait, qui fait quand tu codes en règle native pour faire Saxo Tools ? Ça pourrait être n'importe quel problème ou c'est l'association des deux ?
+
+ctwm48y5m2 (11:56.711)
+Moi ce qui me plaît vraiment c'est que j'ai des idées dans ma tête qui répondent à une problématique que j'ai dans l'apprentissage du saxophone. Ou même on verra plus tard mais pour créer de l'audience sur les réseaux. dis ok comment je peux créer ça. T'as l'idée et ensuite tu peux directement en fait l'implémenter en moins de... surtout là aujourd'hui avec les IAO c'est vitesse x10 quoi, x20 x100 tout ce que tu...
+
+David Leuliette (12:08.966)
+Ouais, ouais, ouais.
+
+David Leuliette (12:23.041)
+fois... fois... c'est fois dix... j'ai l'impression que moi là je suis dans la... je suis dans la... pas dans la vallée mais j'ai tanqué là. J'ai fait un fois cent et là j'ai un bug que j'arrive pas à résoudre et bah... poum ! La vélocité c'est pas la même ! Ouais c'est un peu ça ! Mais euh... ok.
+
+ctwm48y5m2 (12:35.896)
+Ouais, faut prendre le temps de refactorer,
+
+ctwm48y5m2 (12:44.461)
+Et ouais donc moi ce que j'aime c'est vraiment j'ai une idée, un problème physique vraiment sur une de mes passions et je peux très rapidement. C'est pour ça que je trouve que c'est un peu un super pouvoir de dev de pouvoir créer un système rapidement que tu peux tester directement sur ton mobile. C'est ça qui est aussi bien c'est qu'avant quand tu fais du back plutôt de la data c'est un peu abstrait tu vois bon c'est rigolo mais c'est plus abstrait. Alors créacNative
+
+David Leuliette (13:06.045)
+l'espace a rien à
+
+ctwm48y5m2 (13:09.062)
+la première fois que je développais et que je voyais les changements qui se faisaient en live sur mon téléphone, tu j'étais... Ouais.
+
+David Leuliette (13:14.577)
+ouais le hot reloading, c'est vrai que... ouais quand tu viens du backend que tu... Tu appuies sur S, paf, ça charge, enfin ça reload, non ça hot reload. Sans que... Donc ça change, le hot reloading c'est arrivé... Je crois que c'est arrivé assez vite en plus. Je me saurais plus dire. Mais moi je comprenais pas... Vous savez les gens qui recharger la page quand je faisais du web il a très longtemps... Je sais plus pourquoi tu recharges la page, ça sert à rien. T'as pas de hot reloading, c'est quoi ce bordel
+
+ctwm48y5m2 (13:23.418)
+Ouais, ouais...
+
+ctwm48y5m2 (13:41.199)
+Ouais.
+
+David Leuliette (13:44.124)
+C'est vrai que la première fois que tu le lances, c'est magique quoi.
+
+ctwm48y5m2 (13:44.939)
+D'accord ?
+
+Mais le fait de vraiment pouvoir voir ce que tu fais en direct, quand tu viens du back, c'est grisant on va dire.
+
+David Leuliette (13:53.926)
+Ouais. Et le chip est direct. Et euh... Attends t'es meilleur en saxophone ou pas alors ? C'est ça qu'on va savoir. Ou en code. Parce que c'est ça le truc maintenant. Parce que t'as le temps de faire du saxophone.
+
+ctwm48y5m2 (14:05.493)
+Non je pense que... Non mais je... Mais ouais, on en rigole mais effectivement en fait... j'ai...
+
+David Leuliette (14:12.517)
+mais c'est le syndrome du je vais faire un blog et du coup tu fais un truc de ouf pour faire le blog le SEO et tout pis y'a pas d'articles C'est
+
+ctwm48y5m2 (14:22.918)
+Mais c'est pour ça que la VA a un peu échoué dans le sens où c'était peut-être un overkill, pas forcément une feature dont moi au final j'avais besoin. Même si je pense que je pourrais réintégrer mais plutôt orienté vraiment pour les débutants. J'avais fait trop un truc pour les intermédiaires avancés. Et donc c'est vrai qu'au final comme je passais mon temps à développer...
+
+j'ai plus trop le temps de jouer du saxophone quoi, donc c'est ça qui est un peu dommage. Mais là du coup j'ai fait un virage et maintenant l'app est plutôt dédié à l'apprentissage de chansons. Mais bon, ça en verra après.
+
+David Leuliette (14:53.083)
+C'est ça, c'est ça, c'est ça.
+
+David Leuliette (15:06.638)
+Ok bah non vas-y on va le faire ça maintenant vas-y tu peux nous pitcher... Russie tu nous repeatches l'app Saxo Tools Qu'est que ça fait ? C'est pour qui ?
+
+ctwm48y5m2 (15:14.913)
+ctwm48y5m2 (15:19.161)
+Alors je dirais qu'aujourd'hui la Saxo Tools s'adresse surtout aux débutants intermédiaires, les gens qui ne pas forcément lire des partitions de musique et des gens qui connaissent pas encore les doigtés sur le saxophone. En gros l'idée c'est que moi il a peut-être un an ou deux je suis tombé sur une chaîne YouTube qui s'appelle Saxplained et en gros c'est des tutos de saxophones où il te montre où il faut appuyer sur le saxophone.
+
+et tu des barres verticales, enfin horizontales qui défilent, un peu à la guitareiro. Et je me suis dit, mais attends, moi je fais un truc, enfin c'était un peu théorique, plutôt théorique, ou qui s'adressait plutôt à un public intermédiaire avancé et pour lequel la création de contenu derrière n'était pas tip top. Et là je vois ce gars là qui a, je pense, 200, 300 000 abonnés sur YouTube.
+
+David Leuliette (15:54.075)
+Ouais ok, c'est ce que j'allais dire.
+
+ctwm48y5m2 (16:15.618)
+et qui génère des vidéos où me dis mais attends mais ces vidéos là moi je peux les générer programmatiquement assez facilement avec CREEMOTION je sais pas si tu connais
+
+David Leuliette (16:22.873)
+juste... oui avec Raymotion... ah ouais ! ouais ! Comment t'as découvert Raymotion ? Pour ceux qui connaissent pas, Raymotion c'est un outil qui permet de générer de la vidéo en réact. Pour faire simple...
+
+ctwm48y5m2 (16:36.036)
+Ouais.
+
+David Leuliette (16:38.01)
+Et t'as eu l'idée directe
+
+ctwm48y5m2 (16:41.337)
+J'avais déjà utilisé ReMotion dans le passé, c'était dans la création de contenu TikTok où je créais des quizs donc tu avais un LLM qui générait les questions, et puis après j'avais tout un template qui me permettait de générer une image, un hook, la musique, la voix qui va poser la question, enfin bref. Donc tout ça je maîtrisais, et quand j'ai vu ça je me suis dit, là c'est un exemple d'application évident pour ReMotion.
+
+David Leuliette (16:43.214)
+oui ok ouais, ok.
+
+ctwm48y5m2 (17:10.713)
+tu vas avoir en entrée en fait une partition format musique xml donc c'est une partition c'est tout simplement des notes de musique qui sont timestampées dans le temps et en gros à partir de ça moi je peux extraire un json que je veux injecter dans mon template remotion et qui va ensuite me générer des vidéos
+
+David Leuliette (17:33.345)
+Ouais c'est ça, typiquement comme vous voyez les textes qui s'allument là sur tous les shorts qu'on voit dans toute la terre, c'est même principe en On éteint les timestamps, sauf que là c'est des notes que t'aurais.
+
+ctwm48y5m2 (17:45.608)
+C'est ça. Et donc du coup là maintenant j'ai un compte TikTok qui s'appelle Saxo Tools. Et c'est aussi ce que j'ai fait différemment par rapport à la V1, c'est que là je me concentre beaucoup sur la partie marketing.
+
+David Leuliette (17:52.217)
+!
+
+David Leuliette (17:58.334)
+bah oui, c'est le nerf de la guerre.
+
+ctwm48y5m2 (18:01.867)
+Et en gros, je récupère des partitions, je génère, enfin j'ai juste appuyé sur un bouton, ça me génère la vidéo et je l'uploade sur mon compte TikTok que j'ai créé début juillet là. Et là, est en octobre, enfin le 9 octobre et on est déjà à 4 600 followers en full organique.
+
+David Leuliette (18:20.025)
+Ah ouais je vois t'as des 100, t'as des hits. Ouais après c'est TikTok quoi. 200 vues, 400 000. Non. Non 100 000 ouais c'est 100 000, 100 000, 400. Entre deux c'est tout pareil. Ouais non mais... c'est ceux qui sont pins. Ah ouais ok d'accord.
+
+ctwm48y5m2 (18:27.0)
+Ouais, non mais c'est les... celles qui sont épinglées ouais. Après t'as les nouvelles là qui vont pop plus tard mais en général c'est comme ça. Au début t'as 5-600 vues puis après ça augmente, ça augmente, ça augmente.
+
+David Leuliette (18:43.897)
+Parce que moi pour les shorts j'ai des coupes n'importe comment et des fois y'en a qui font 1000, des fois y'en a qui font 2 vues alors pourquoi aucune idée ?
+
+ctwm48y5m2 (18:49.453)
+Ouais.
+
+ctwm48y5m2 (18:53.017)
+Et t'es sur TikTok et YouTube Short ou t'es seulement sur...
+
+David Leuliette (18:55.225)
+Non, non, non, non, non, j'ai que, je balance que sur Youtube et sur... C'est tout, ouais, that's it. Faux...
+
+ctwm48y5m2 (19:02.275)
+Parce tu vois j'ai mis les mêmes vidéos sur TikTok et sur YouTube Short depuis juillet... juillet passé là. Et sur YouTube j'ai 100 abonnés, alors que sur TikTok j'en ai 4 700.
+
+David Leuliette (19:09.197)
+Ouais... Ouais... Ouais... bah c'est ça, c'est... ça ne va pas étonner.
+
+ctwm48y5m2 (19:15.692)
+Donc TikTok c'est vraiment pour avoir une audience, enfin ça dépend quelle audience tu vises.
+
+David Leuliette (19:21.089)
+Bah je sais pas ouais, enfin toi typiquement ça marche de ouf. Parce que c'est hyper enfin... Moi des gens qui parlent... Nul, je pense pas. Je ne sais pas. Faudra... Le prochain gros soccer chez Wispy2day, il aura la solution. Parce que faut que j'embauche quelqu'un. C'est dans le backlog. Parce que boss pareil, j'ai plus le temps quoi. Ça demande un temps assez conséquent.
+
+ctwm48y5m2 (19:24.417)
+Ouais, ça marche bien.
+
+ctwm48y5m2 (19:36.067)
+Ouais.
+
+Salut.
+
+ctwm48y5m2 (19:44.578)
+Oups.
+
+David Leuliette (19:48.834)
+Et si ton produit disparaissait demain, qui sait qui hurlerait en premier ? Parce que pour l'instant, t'as monétisé ou pas ?
+
+ctwm48y5m2 (20:00.515)
+j'ai monétisé la semaine dernière la V2. V1 était déjà monétisée mais j'ai enlevé les features de la V1. Et là sur la V2 j'ai eu ma première vente le courant de la semaine dernière. Et donc je crois que j'ai 1000 utilisateurs là sur l'application actuellement. Ils arrivent au fur et mesure depuis TikTok justement. Et pour l'instant j'ai qu'une musique parce que le problème c'est que quand tu mets des musiques sur ton...
+
+David Leuliette (20:03.091)
+Ok. Ok.
+
+David Leuliette (20:18.328)
+Ouais, cool.
+
+ctwm48y5m2 (20:29.058)
+application il faut des droits d'auteur déjà de 1 et j'ai découvert qu'il fallait aussi des droits d'éditeur. Les droits d'auteur c'est pour jouer la musique et les droits d'éditeur c'est pour afficher la partition. Donc... ouais.
+
+David Leuliette (20:37.432)
+Né
+
+ouais, pour afficher la partition carrément, tu dois payer quelqu'un quelque part.
+
+ctwm48y5m2 (20:44.483)
+C'est ça. Donc déjà les droits d'auteur, il voir avec la SACEM. Là, j'ai déjà commencé à parler avec eux, ils m'envoyaient un contrat, eux ils prennent 20 % de ton chiffre d'affaires. Et c'est seulement pour les territoires France, Luxembourg, Monaco. Si tu veux diffuser dans le reste du monde, il voir avec les organismes dans les pays concernés. Et ensuite, il faut payer les droits d'édition. Et ça, c'est un peu...
+
+David Leuliette (20:54.22)
+Ouais, ouais, ok.
+
+ctwm48y5m2 (21:09.068)
+Je suis encore un peu en train de creuser l'affaire, je crois que c'est Sony Universal Publishing France qui gère ça. J'ai essayé de le contacter mais j'ai... voilà. Pour l'instant...
+
+David Leuliette (21:19.124)
+vas-y, on va faire appel à internet. Franchement les habits, dans le chat, il y a des gens dans le chat ? S'il a des gens qui ont un contact, allez, on prend.
+
+ctwm48y5m2 (21:28.802)
+ça fait plaisir. donc du coup là pour l'instant je suis restreint à utiliser des musiques qui sont dans le domaine public. Bella Ciao, House of the Rising Sun, genre de choses. Donc pour l'instant j'ai très peu de musique, pour l'instant j'en ai qu'une à vrai dire. Donc il a pas tellement d'utilisateurs, même si je vois j'ai mis des petites sondes avec amplitude, je pas si tu connais.
+
+David Leuliette (21:50.368)
+Amplitude c'est un outil pour traquer un peu tout. Amplitude web, utiliser. Ils ont un SD card, je me rappelle plus. Ampli.
+
+ctwm48y5m2 (22:03.052)
+où ils ont un SDK pour le mobile. Après c'est assez simple, c'est juste ton utilisateur clique sur un bouton, ça envoie un event, l'utilisateur clique sur ce bouton, l'utilisateur va sur cet écran, ça envoie un event. Donc on va dire que cette technologie n'est pas très compliquée. Là où ils sont forts, c'est ensuite restituer les résultats. Il va créer des users journées, c'est à par quel écran est passé mon utilisateur, il y a eu combien % de drop-off quand ils sont passés par tel chemin, tel chemin, tel chemin.
+
+David Leuliette (22:31.841)
+Ouais.
+
+ctwm48y5m2 (22:32.757)
+Donc ça te permet vraiment de comprendre le comportement de l'utilisateur dans ton application et quelles features sont utilisées ou non. Et combien de temps il reste en général par session.
+
+David Leuliette (22:44.956)
+Ok, super. Vas-y on va parler un peu tech. C'est quoi la stack chez Saxo
+
+ctwm48y5m2 (22:52.417)
+C'est du React Native du coup avec Expo.
+
+David Leuliette (22:57.14)
+Ouais, niveau data layer, va parler de data layer, navigation, UI, graphisme, CI, release, peut-être cloud aussi sur AWS, back-end, niveau data layer, le back-end c'est en serverless du coup chez AWS.
+
+ctwm48y5m2 (23:10.657)
+Dét...
+
+Exactement, Pour tout ce qui est parti, authentification, utilisateur, tout ça, c'est SuperBase. Ça pour l'instant, c'est en mode manager. Ensuite, je vais l'héberger moi-même, ça me coûtera moins cher. Et ensuite, y a toute la partie backend qui est traitement de l'audio, même si aujourd'hui, c'est été installé directement sur le device. Donc tout ça, tourne sur des Lambdas, sur le cloud AWS en piton.
+
+David Leuliette (23:45.148)
+Ouais ok avec euh... ouais en fait bon ok d'accord avec serverless euh... Un truc serverless d'AWS quoi, pas celui-là ? Ok. Je vois, enfin je vois carrément, j'ai déjà bossé avec ça et j'ai fait waouh. C'est un autre métier. ! Ben c'est pas un autre métier mais c'est... mais c'est... ouais c'est comme tout... ouais c'est ça, c'est parce que moi j'ai pas bossé à ce...
+
+ctwm48y5m2 (23:50.081)
+Mais voilà, c'est ça.
+
+ctwm48y5m2 (24:01.801)
+Oui, après c'est comme tout quand tu prends le temps d'apprendre. Des fois il y a des gars qui me montent du kotlin, du swiss, c'est quoi chinois tu parce que je maîtrise pas, mais si tu prends le temps au final, tu comprendras quoi.
+
+David Leuliette (24:12.023)
+Bah ouais, clairement. Moi je voulais diguer plus Amplify, parce que du coup ça me semblait un peu plus simple, user-friendly. tu recommandes pas Amplify, enfin, mauvaise expérience, ouais, ok, j'avoue.
+
+ctwm48y5m2 (24:22.688)
+...
+
+À l'époque, j'étais parti sur Amplify pour créer tout le système d'utilisateurs, des tables, tout ça de manière serverless. Mais c'était tellement compliqué, il avait toujours des bugs au déploiement. C'était compliqué, tu voyais plein d'issues qui n'étaient pas forcément adressées.
+
+David Leuliette (24:35.007)
+Oui.
+
+David Leuliette (24:40.277)
+Ouais.
+
+ctwm48y5m2 (24:46.785)
+Donc je me suis dit, il a forcément un truc open source qui répond à ce besoin-là. Et quand j'ai découvert Supabase je me suis dit, mais attends, c'est magique ce truc, que ça gère l'authentique. Je suis passé d'Amplify à Supabase pour tout ce qui est authentification et pour store tout ce qui est, je sais pas, les scores des utilisateurs sur une musique, etc.
+
+David Leuliette (24:51.131)
+oui ?
+
+David Leuliette (24:56.271)
+ouais, t'as des morceaux sur SuperBiz.
+
+David Leuliette (25:03.455)
+Ok.
+
+David Leuliette (25:11.368)
+ok, donc maintenant tout est sur Supabase quoi.
+
+ctwm48y5m2 (25:13.962)
+Ouais, Amplify, j'ai complètement abandonné.
+
+David Leuliette (25:16.487)
+Ok. Ok, ok.
+
+ctwm48y5m2 (25:18.236)
+Après ça va peut-être changer, mais à l'époque je ne l'aurais pas recommandé. Aujourd'hui je ne pas.
+
+David Leuliette (25:21.557)
+Ouais ouais, c'est toujours pareil quand tu... Ok. Donc backend c'est ça, et après niveau data layer sur l'app mobile, c'est quoi tes choix ?
+
+ctwm48y5m2 (25:30.352)
+j'utilise val... pour le state management valcho je pas si tu connais
+
+David Leuliette (25:33.621)
+C'est ? Oui.
+
+J'ai jamais entendu... Alors attends... V-A-L-T-I-O
+
+ctwm48y5m2 (25:40.832)
+et c'est celui qui a créé ZXLand. Il a décliné en trois versions, Tavaltio, ZXLand et un autre. Et je ne pas, en fait c'était un choix qui avait été fait par mon associé dans mon entreprise pour gérer les states en React. Et du coup, vu que c'était comme si j'avais fait un peu la main dessus, je me suis demandé si ça fonctionnait en React Native et ça fonctionne extrêmement bien et c'est extrêmement simple. Parce que moi je viens de Redux.
+
+David Leuliette (25:55.455)
+Ok. Ok. Ouais.
+
+ctwm48y5m2 (26:10.29)
+Et Redux niveau boilerplate, c'était... Alors que là c'est tellement simple tu...
+
+David Leuliette (26:12.886)
+Il des morceaux hein, a des morceaux hein, faut... Bah quand t'es... ouais, bah en fait ça c'est quand t'es tout seul, pff... Vas-y quoi, j'ai pas que ça à faire.
+
+ctwm48y5m2 (26:22.297)
+Ouais, c'était vraiment un overkill. Après je pense que tu des fonctionnalités qui doivent quand même te servir, mais moi je veux dire au niveau d'avancement de mon application et au niveau des fonctionnalités que j'ai aujourd'hui, je retrouve, enfin je n'ai pas tellement de challenge technique donc pour l'instant Valtio c'est très très bien et c'est très très simple.
+
+David Leuliette (26:41.457)
+Et comment tu fais pour fetch la data alors
+
+ctwm48y5m2 (26:44.767)
+Pour tout ce qui est média, j'ai déployé sur CloudFront, enfin sur S3 et puis après tu CloudFront AWS, c'est un CDN en fait, qui met à disposition tes médias dans toutes les régions du monde pour réduire la latence utilisateur. Et tout ça c'est déployé, donc moi comme je plutôt à la base DevOps, j'utilise Terraform, je pas si tu connais.
+
+David Leuliette (27:09.543)
+Ouais je vois ce que c'est, c'est... Infrastructure as code pour ceux qui connaissent pas. Pour avoir des mots-clés pour briller en société. Ouais au lieu de faire... Je sais même pas comment... Moi je sais même pas comment tu fais sans ça.
+
+ctwm48y5m2 (27:14.559)
+C'est ça. Et ce qui est bien c'est...
+
+ctwm48y5m2 (27:28.159)
+Tu peux faire clic-clic dans la console, tu dis « je crée ça, je crée ça mais le problème c'est que tu vas l'oublier et tu vas plus savoir en plus dans AWS, tu peux déployer dans plusieurs régions. Donc tu peux vite retrouver à lancer des choses que tu oublies et après si tu veux dupliquer sur un autre environnement, tu vas refaire clic-clic dans l'autre environnement, dans l'autre compte AWS. Et l'intérêt de Terraform c'est que voilà, tu décris ton infrastructure dans le code, le code est versionné et une fois que la CIACD est passée,
+
+David Leuliette (27:30.663)
+Ouais.
+
+ctwm48y5m2 (27:57.407)
+teraforme a été apply, c'est à qu'il a pris la conf que tu as décrite dans ton code et qu'elle l'a appliquée sur ton cloud, ton code arrive sur ta branch main et là tu es sûr que l'infrastructure qui est décrite sur ta branch main correspond exactement à l'infrastructure qui a été déployée sur ton compte AWS. Et en gros tu as tout un système où tu peux ensuite déployer sur plusieurs comptes très très facilement, sur plusieurs stages, donc c'est très puissant.
+
+Et donc moi pour...
+
+David Leuliette (28:27.514)
+En plus, tu peux migrer facilement. Tu fais ton fichier Terraform sur AWS, tu peux aller sur Azure.
+
+ctwm48y5m2 (28:36.67)
+Ce pas les mêmes services, mais je crois qu'ils ont sorti dernièrement un multi cloud provider. En gros quand tu utilises Terraform, tu télécharges des providers qui font le lien entre ce que tu écris et les API AWS. C'est ça.
+
+David Leuliette (28:38.78)
+ok, ok.
+
+David Leuliette (28:44.18)
+Ok, on y va.
+
+David Leuliette (28:52.636)
+Ouais c'est vrai parce qu'ils n'ont pas les mêmes noms que genre EC2 ou je sais pas quoi, c'est pas les mêmes noms, puis du coup c'est pas les mêmes paramètres, etc. Ok je vois.
+
+ctwm48y5m2 (28:58.472)
+Mais il me semble que dernièrement ils ont sorti un truc qui faisait un peu l'harmonie des différents clas de provider. Et donc pour déployer tout ce qui est S3, CDN, Lambda, j'utilise Terraform.
+
+David Leuliette (29:10.382)
+Ok, ok, trop bien et tout.
+
+David Leuliette (29:16.636)
+Donc tu as ton app mobile, ok, elle branchée, donc une fois que je suis logé, paf, je récupère... utilises... Ouais justement pour fetch, je faire un query ou juste direct, fetch direct, ça fonctionne. En vrai, on va pas...
+
+ctwm48y5m2 (29:30.909)
+direct après peut-être si j'ai des problématiques de caching pour optimiser un peu les performances et réduire on va dire la facturation AWS. Il faudrait que je me penche sur use query mais pour l'instant comme je vais achiper rapidement et regarder l'adoption des features par l'utilisateur, j'aurais sur fetch, ça marchera bien.
+
+David Leuliette (29:52.179)
+Parfait. donc en termes de nav, navigation UX, tout ça, c'est sur quoi ?
+
+ctwm48y5m2 (30:01.689)
+Bon c'est expo router.
+
+David Leuliette (30:04.083)
+C'est Expo Routor, est-ce que tu l'as... Ouais parce que tu as commencé il deux ans en en vrai.
+
+ctwm48y5m2 (30:10.073)
+Non à l'époque je l'avais pas, j'utilisais navigation.
+
+David Leuliette (30:14.195)
+Rack Navigation 2 Core, oui. Et puis One Day, je l'ai fait. Est-ce qu'il a un piège que tu dirais à ton toit de... Ah non, ça marche pas. Mon script ne marche pas. À ton toit de un an qu'il a développé Golf Ultimate. Mais non, Golf Ultimate tu l'as fait après, c'est ça ? Ah ouais, ça marche pas du tout.
+
+ctwm48y5m2 (30:27.549)
+...
+
+ctwm48y5m2 (30:34.909)
+Ouais. Honnêtement, sur la navigation, n'ai jamais trop rencontré de problème. Juste l'histoire d'utiliser Replace à la place de Navigate pour éviter de garder les autres écrans en rendering derrière. Mais sinon...
+
+David Leuliette (30:47.026)
+Oui parce que...
+
+Oui parce que ça les garde et ils sont encore dans le back previous.
+
+ctwm48y5m2 (30:56.643)
+Et puis des fois tu peux re-naviguer et tu peux te retrouver avec une stack d'écran qui reste... enfin voilà, donc moi je préfère utiliser Replace.
+
+David Leuliette (31:03.122)
+exemple c'est si si si vous faites un login donc avec un hook et que vous faites on handle persiste ou je sais pas quoi là handle login quelque chose et que vous faites un router.navigate bah on pourra revenir dans les écrans d'avant c'est dommage c'est pas c'est dommage alors que vous faites juste replace paf c'est bon je crois qu'il est destroy oui il est destroy carrément le
+
+ctwm48y5m2 (31:35.717)
+Donc je dirais plutôt Utilize Replace. Des fois Navigate, c'est bien quand tu peux faire Back, revenir en arrière sur le prochain écran. Et ça c'est seulement pour des cas bien précis.
+
+David Leuliette (31:47.764)
+ça dépend vraiment de comment tu... comment elle est faite, ta nave. Ok et après ouais donc tu disais...
+
+David Leuliette (32:01.141)
+c'est des appâts assez simples quoi. C'est quoi tes sources d'inspiration justement pour tout ce qui est UI et tout ? Parce que vu que t'es un back-end guy, fondamentalement le design, non, on sait pas.
+
+ctwm48y5m2 (32:08.667)
+Oui.
+
+ctwm48y5m2 (32:12.727)
+Le design à l'époque j'avais pris une designer qui a fait du très très bon travail Florence, plus son nom mais vraiment c'était top Elle m'avait fait un Figma tout ça et là en fait je reprends un peu parce que moi je voulais vraiment une application
+
+David Leuliette (32:17.389)
+ok, quand même.
+
+ctwm48y5m2 (32:29.836)
+j'ai des concurrents en fait qui font un peu la même chose l'apprentissage de musique mais pour la clarinette, pour la flûte, pour etc. Et moi je voulais vraiment créer un univers autour du saxophone avec les couleurs du saxophone donc un peu noir, peu doré, un peu d'argenté, un peu de rouge et j'avais demandé de me faire toute une charte graphique autour de ça et puis des premiers éléments de design et à partir de ça moi j'ai repris ça à l'époque j'ai demandé de me réimplémenter des écrans
+
+Et puis après, la changer d'activité. puis moi, j'ai découvert aussi Tchadjapté. Et puis aujourd'hui, tu lui donnes un peu l'historique de ce que tu as fait. Tu lui dis, crée moi un composant un peu en mode liquid glass. Et puis, te fait tout ce qu'il faut avec les bonnes couleurs dans le bon thème.
+
+David Leuliette (33:13.178)
+ouais sérieux ? Attends tu lui files un figma et tu lui dis vas-y go file moi un truc...
+
+ctwm48y5m2 (33:14.587)
+Ouais ?
+
+ctwm48y5m2 (33:18.093)
+Non, c'est plutôt, il a l'historique, il a ta code base, tu tu ressors. Et comprends, ouais.
+
+David Leuliette (33:22.592)
+ouais,
+
+ctwm48y5m2 (33:26.299)
+Il comprend un peu ce que tu as fait avant. Il comprend que tu as utilisé 3 4 couleurs. Il comprend peu le thème, l'ambiance que tu demandes. Et puis après, il te le réimplément.
+
+David Leuliette (33:36.752)
+Oui, ça oui, des set-up... Oui, parce que je pensais que tu parlais de chat GPT en mode j'ouvre une fenêtre chat GPT, je pas... Bah non, il faut qu'il ait tout le contexte sinon il marche pas. C'est pour ça que...
+
+ctwm48y5m2 (33:42.018)
+Non.
+
+ctwm48y5m2 (33:46.395)
+Il y a des MCP qui le font aujourd'hui pour se connecter à Figma, mais...
+
+David Leuliette (33:51.512)
+Ouais... Troul.
+
+ctwm48y5m2 (33:52.731)
+suis pas convaincu, moi, d'EMCP, personnellement.
+
+David Leuliette (33:55.938)
+Bah c'est ce qu'on disait tout à l'heure. Après tu deviens développeur EA et tu déf plus tout court. C'est comme le saxophone tu vois, si tu fais une app pour apprendre à jouer au saxophone, bah tu fais une app et tu joues plus au saxophone. Je pense que c'est ça, tout ce qui est MCP et tout c'est folie. ouais attends faut expliquer pour ceux qui savent pas c'est quoi un MCP. C'est un... Moi d'après ce que je comprends c'est un Agent AI que tu peux... Tu colles la glu en fait entre les deux.
+
+ctwm48y5m2 (34:09.244)
+T'as plus le temps d'en jouer ouais. Ouais.
+
+David Leuliette (34:26.545)
+différents services. Et exemple ce un MCP, je le ferai un agent local qui va lire mon fichier Figma et qui me crache du code en fonction de... c'est ça la définition.
+
+ctwm48y5m2 (34:48.827)
+C'est fou pour moi toute la définition, en gros c'est ça. Pour moi c'est des sortes d'API qui vont interfacer plusieurs services, qui vont permettre à ton LLM de communiquer avec d'autres services, par exemple Postgre. Moi des fois j'ai souvent des courriers SQL bien précises, à chaque fois je obligé de lui rebalancer tout le schéma de la base de données. Et tu as des MCP qui se connectent directement à ta base de données et qui peuvent extraire le schéma et comme ça ton LLM tu n'as pas besoin de lui...
+
+David Leuliette (34:50.545)
+Ok, bon, bon,
+
+David Leuliette (34:56.241)
+Merci.
+
+ctwm48y5m2 (35:17.815)
+faire un copier-coller de ton schéma dans le contexte, naturellement il va le lire via le MCP dans ta base de données, schéma, et ensuite il crée ta query SQL quoi.
+
+David Leuliette (35:27.441)
+Ouais aussi c'est ça en fait, MCCAPI, un peu comme OpenAPI en fait, dirais ça, pas OpenAI mais OpenAPI, MCP c'est le protocole qui... c'est ce qu'ils devraient faire dans les domotiques, voilà. Ils se mettent tous d'accord sur un standard de comment ça fonctionne sauf qu'ils l'ont pas fait. Dans l'AI, ils l'ont fait, ça s'appelle MCP et c'est...
+
+ctwm48y5m2 (35:34.074)
+Bye.
+
+David Leuliette (35:53.558)
+Comet, navigateur Comet, c'est fait par Perplexity. Je crois que c'est Perplexity qui a sorti le format protocol si je ne m'abuse.
+
+ctwm48y5m2 (36:02.33)
+Je crois que c'était anthropique plutôt... Ouais.
+
+David Leuliette (36:04.576)
+c'est Anthropique ? Ouais bah Anthropique, c'est eux, c'est Perplexity.
+
+ctwm48y5m2 (36:08.118)
+En tropique c'est Claude, après je sais pas s'ils ont fait Perplexity aussi ouais...
+
+David Leuliette (36:10.31)
+ouais ? là là, vous n'êtes pas sur le podcast là les amis des Zoa, faudra vérifier tout ça. Ok cool, niveau UI, maintenant on en pas parlé, UI Design Systems, tu as fait appeler une designer, elle t'a fait tout ça et toi t'es parti sans libérer, t'as tout fait à la main.
+
+ctwm48y5m2 (36:25.114)
+Voilà.
+
+ctwm48y5m2 (36:34.618)
+En fait elle a vraiment traduit ce que moi j'avais en tête en éléments physiques, enfin en design, design système. Et ensuite bon moi en gros j'ai mes couleurs
+
+Moi c'est ça, j'ai mes couleurs qui sont définies et ensuite je feed ça à Cursor et lui il comprend en fait avec le design existant, différents composants que j'avais déjà créé qui répondait au design qu'elle avait implémenté, il comprend ce qu'il doit recréer et c'est comme ça je garde un peu l'harmonie, la cohérence entre les différents écrans quoi. Après voilà j'ai pas 10 000 écrans, non plus très très compliqué mais il me semble que si tu vas sur l'application c'est quand même assez cohérent.
+
+David Leuliette (37:05.783)
+Ok.
+
+David Leuliette (37:16.162)
+Et du coup, style sheet, direct. Pas du tout.
+
+de petites librairies rien du tout quoi j'ai pas le time moi les amis je ship c'est bien c'est et animation et donc en fait à ouais qu'est que tu fais pour ce que t'as le truc de guitareiro dans ton app kind of
+
+ctwm48y5m2 (37:25.305)
+Je connais pas les autres.
+
+ctwm48y5m2 (37:46.399)
+Voilà.
+
+En fait, parce que tu as vu les vidéos TikTok de tout à l'heure où c'était des barres qui défilent et en plus t'as la partition qui défilent, et en plus t'as un curseur qui défilent. pour faire tout ça, la partition, déjà premier challenge, il faut bien la créer la partition. Donc à la base j'ai utilisé Vexflow, Vexflow c'est un moteur de rendering de partitions JS.
+
+fonctionne très bien sur le web après si tu veux le mettre sur mobile t'as un peu de challenge à l'époque ça avait un peu challenge et en gros ça te rend ta partition avec plein d'éléments svg et ensuite chaque note a une position je sais pas si tu as joué doré minifin fin ça va pour chaque note tu vas avoir la position et tu vas avoir sa durée et à partir de ça tu peux
+
+David Leuliette (38:38.734)
+C'est bon.
+
+ctwm48y5m2 (38:47.881)
+prendre une petite barre verticale que tu vas animer et que tu vas translater d'une note à une autre en fonction de la durée pour laquelle elle doit être jouée en fait. Donc au début je faisais ça très très mal, je faisais tout ça dans le fret JS. Donc sur iOS, ça fonctionnait bien, sur Android c'était même pas la peine. Et donc ensuite je suis passé naturellement sur reanimated, enfin animated pardon, de Software Mansion.
+
+et les performances... oui, sur un intimidateur. Et là, oui, après c'était une évidence, ça fonctionnait beaucoup beaucoup mieux. Et pareil, sur l'app, en fait, t'as l'appartition qui défile avec les notes qui sont affichées. Et en plus, en bas, t'as les notes, les doigtés qui vont défiler, qui te disent où appuyer. Et en gros, tout ça, fait tout simplement avec des views. C'est des views qui translètent dans le...
+
+David Leuliette (39:18.286)
+C'est Ranimated. T'étais sur Ranimated et t'étais passé sur Ranimated.
+
+ctwm48y5m2 (39:48.449)
+dans une grosse grosse vue. voilà, et pour faire ça j'ai utilisé les flatlist. Des fois tu as des partitions qui durent une minute, deux minutes. Si tu rends tout d'un coup et qu'ensuite tu fais la translation suivant l'axe de X, pour des petites partitions ça fonctionne bien parce que tu n'as pas trop d'éléments qui sont rendus. Mais si tu as beaucoup beaucoup d'éléments ça commence à devenir laggy.
+
+David Leuliette (39:50.708)
+Ouais, c'est beau. Partition view.
+
+ctwm48y5m2 (40:16.8)
+Donc c'est là où Flatlist est utile, que tu peux rendre une à deux mesures après celle que tu en train de jouer pour éviter que quand la mesure arrive, tu vois, es un peu de, qu'on appelle ça, des glitchs.
+
+Mais en même temps tu ne rends pas toute la partition ce qui fait que tu gardes quand même des performances assez décentes. Et donc ça c'était vraiment un challenge et surtout de pouvoir mesurer les changements, enfin les améliorations de performance entre les différentes itérations parce qu'à chaque fois tu essaies de changer un petit élément. Au début je regardais les FPS directement tu sais quand tu secoues ton device tu peux faire performance, activity, truc. Voilà. Et ensuite c'est Armand Petit que tu as lu dans le podcast dernièrement.
+
+qui a fait un post sur LinkedIn où il parlait d'une librairie qui s'appelle Flashlight, ça c'est magique, et tu plug, et tu as...
+
+David Leuliette (41:10.733)
+Flashlight, pourvoir. C'est fait par Alexandre Mourau, ouais. Donc Flashlight, c'est ouais, bah vas-y, vas-y, j'explique ce que c'est, ouais.
+
+ctwm48y5m2 (41:18.52)
+C'est un système qui permet de monitorer les performances de ton application. Donc tu le FPS qui est monitoré, tu aussi la CPU, thread CPU qui est monitorée, et puis je crois que tu as la RAM aussi. pour moi vraiment ce qui est magnifique c'est que tu as besoin de rien installer sur ton application mobile. C'est juste un utilitaire que tu installes sur ton PC.
+
+David Leuliette (41:37.793)
+T'as la rame aussi,
+
+ctwm48y5m2 (41:48.029)
+ensuite qui va détecter ton application je sais pas comment ils font et qui va ensuite être capable de donner en temps réel les performances avec des courbes de ta CPU, de tes FPS et tu vas pouvoir vraiment benchmarker un peu les différents changements que tu fais et t'assurer qu'un changement n'enjante pas une régression de performance on va dire d'expérience utilisateur.
+
+David Leuliette (42:06.017)
+Ouais bah ouais c'est ça le truc, faut mesurer. Parce que tu peux faire des trucs, ça fonctionne, puis 6 mois après, ça fonctionne plus. que la performance, fait, faut mesurer. Il n'y a pas de secret. C'est les maths. Du coup, si tu ne mesures pas over time, bah...
+
+ctwm48y5m2 (42:13.047)
+B
+
+ctwm48y5m2 (42:24.151)
+ça. Puis des fois tu fais un petit changement pour une autre feature mais qui partage une même brique technologique qu'une autre feature. donc la nouvelle feature marche bien mais l'ancienne feature ne fonctionne plus comme avant. Et c'est là où si tu implémentes ce système dans une CI-CD qui va vérifier à chaque release est-ce que les performances sur toutes les features sont au moins égales aux performances passées. C'est là où tu as vraiment je pense un système robuste qui permet de t'assurer que tu pas de régression de performance et dégradation de l'expérience utilisateur.
+
+David Leuliette (42:25.406)
+Ça va.
+
+David Leuliette (42:54.96)
+Et du coup tu l'as mis dans... quand tu releases, lance flashlight ? Ah non, pas pour l'instant.
+
+ctwm48y5m2 (42:58.666)
+Non. Pas aujourd'hui, mais là je le fais manuellement sur les features qui sont gourmandes.
+
+David Leuliette (43:06.389)
+Je sais pas si tu ouais si je pense que tu peux, un flashlight en plus c'est gratuit
+
+Et il me semble que Run in the Cloud... Ok, il avoir un truc au moment où tu payes parce que le compute...
+
+ctwm48y5m2 (43:23.797)
+tu peux payer ou faire ta sauce avec des GitUp Action. Tu peux le déployer directement là-bas je pense.
+
+David Leuliette (43:32.364)
+Ah non, ils disent, parce que ça run sur theodo-the-server-and-aws-device-farm-account. Donc c'est complètement gratuit, mais par contre, ouais, il a une queue. Parce que bon, tes priorités, pense que les gars de chez theodo, passent avant, parce que bon, au bout d'un moment. Mais sinon après, c'est toujours pareil. Ouais, ouais, tu peux le lancer en local, ouais, carrément, carrément, carrément.
+
+ctwm48y5m2 (43:50.423)
+C'est ça.
+
+ctwm48y5m2 (43:54.327)
+Après sinon tu le lances en local, ça fonctionne très bien.
+
+David Leuliette (44:01.342)
+carrément où tu le lance ouais dans ton script de release, où j'ai un script de release, hop tu as un truc en bash et allez hop ça run le truc et c'est parti. En plus maintenant avec les high je sais faire du bash, c'est folie. J'avais déjà un petit peu à m'en faire mais là maintenant je me sens vraiment capable de l'écrire comme ça, ouais trop fort quand même.
+
+ctwm48y5m2 (44:07.447)
+C'est parti ouais !
+
+ctwm48y5m2 (44:12.887)
+Bah je suis plutôt... ouais.
+
+ctwm48y5m2 (44:19.735)
+Disons que des fois, tu as quand des syntaxes assez particulaires et le fait de pouvoir juste demander ce que tu veux puis te le balancer, c'est top quoi.
+
+David Leuliette (44:24.876)
+Ouais, c'est que tu sais pas quoi.
+
+Tu commentes le truc, t'écris, paf, il te le sort, tu fais tab. Ouais c'est bon, je suis trop fort. Ok, donc du coup vas-y, comment tu releases tout ce merdier ? L'app mobile, tout...
+
+ctwm48y5m2 (44:48.296)
+Ouais, mais...
+
+David Leuliette (44:48.364)
+Y'a le backend aussi ou... Non, non, en fait ouais, c'est ça ma question, c'est est-ce qu'il a un release strange, genre je réalise tous les mois ou... As you go.
+
+ctwm48y5m2 (44:55.018)
+Non, pas pour l'instant, il faudrait que je le fasse parce que des fois je me dis il que travaille sur une petite feature et je me retrouve à changer la moitié de l'application. Ça, il que j'arrête. Mais sinon, j'ai un make file où j'ai tous mes scripts de déploiement et en gros dans les scripts de déploiement, tu as trois étapes. as la partie migration de SuperBase où j'applique la migration de l'ADB. Tu as la partie... tout ce qui est...
+
+David Leuliette (45:01.814)
+Ouais, bah... c'est ça, c'est ça, ouais.
+
+ctwm48y5m2 (45:22.518)
+Ce qui tourne sur les Lambda Serverless AWS, c'est des images Docker en fait. Donc il que je build les images Docker. Donc tout ça c'est dans la CI-CD. Et bon la partie test pour l'instant il en a pas. Et la dernière étape c'est lancer le build des apps sur Expo IES quand il a de la place, sinon je le fais en local. Parce que j'ai pas pris l'offre payante.
+
+David Leuliette (45:49.239)
+ok ouais, t'as pas...
+
+David Leuliette (45:53.55)
+non même sans l'offre payante t'es pas obligé tu sais que tu peux parce que tu une partie maintenant IAS Workflow et c'est pareil c'est des Gitaback, c'est pareil que Gitabackshot en fait et du coup quand tu IAS Workflow ça s'appelle et exemple quand tu merges tout main, boum ça te fait les builds ça te fait les builds tout ça quoi et ça les balance sur les stores et tout ça
+
+ctwm48y5m2 (46:03.646)
+Ok.
+
+ctwm48y5m2 (46:15.462)
+Ouais, mais dans tous les cas si t'as pas un abonnement payant, te retrouves des fois à attendre. Moi je sais que pour iOS des fois je peux attendre 5-6 heures avant le build.
+
+David Leuliette (46:28.879)
+Mais ça c'était la semaine d'avant ! Parce que là, avec le Expo SDK 54, tout a changé ! Non pas tout a changé, mais maintenant c'est beaucoup plus rapide.
+
+ctwm48y5m2 (46:31.336)
+Ahahah...
+
+ctwm48y5m2 (46:40.181)
+Je ne suis pas encore emigré mais apparemment c'est...
+
+David Leuliette (46:42.602)
+ce qui veut dire c'est qu'on atteint aussi la limite plus rapidement donc donc là dans l'autre là dans l'autre ok
+
+ctwm48y5m2 (46:49.013)
+...
+
+Après si c'est plus rapide sur le cloud, c'est plus rapide aussi sur ton PC. Donc tu peux aussi lancer des IAS builds en local, puis ça fonctionne très bien. Après tu les uploads avec transport sur TestFlight. Et sur...
+
+David Leuliette (47:07.05)
+Ah tu... tu upload avec transporteur ? Ah oui c'est vrai. Ah... Moi j'utilise plus ça mais... Ouais. C'est vrai.
+
+ctwm48y5m2 (47:13.043)
+Et pour Google Play c'est juste drag and drop quoi. Bah quand je veux un truc rapidement et que voilà il a la queue sur Expo, je fais un local et puis je balance à la mano quoi.
+
+David Leuliette (47:25.418)
+C'est bien pour ceux qui savent pas, les vrais savent. Si on va dire que les vrais savent, transporter app, les vrais savent ce que c'est. C'est... Ouais non mais quand tu connais pas en fait, ouais non, c'est pour ceux qui connaissent pas. C'est une app... Attends je l'ai encore ? Non je l'ai même plus. Je l'ai même plus donné. Mais avant t'étais obligé. Parce que normalement pour upload sur une app sur les stores, il faut ouvrir XCode, faire clic clic archive et hop, ça part sur l'app store connect.
+
+ctwm48y5m2 (47:32.413)
+Bon, c'est génial, hein !
+
+David Leuliette (47:53.258)
+Ils ont aussi un stand-alone tool qui s'appelle Transporter et typiquement vous drag and dropz votre point.
+
+Quelque chose. Point adb. C'est quoi ? IPA. c'est un IPA. J'ai failli dire adb. C'est pas du tout ça, c'est Android. Donc vous draperez le point IPA et hop, ça part sur l'App Store Connect. L'Apple Console Developer maintenant. il n'arrête pas changer de nom ça roule. Ok. Ok, ok, trop bien. Est-ce que tu as un sac outil que tu utilises ?
+
+ctwm48y5m2 (48:04.372)
+IPA. IPA, j'en ai un sous les yeux là. IPA. IPA, ouais.
+
+David Leuliette (48:34.098)
+de façon quotidienne et que tu recommandes.
+
+ctwm48y5m2 (48:34.452)
+J'ai fait mes devoirs. Alors j'ai ReacNative Audio API. Donc tu as Expo Audio qui permet de lire de l'audio assez facilement. Mais là où j'avais des difficultés c'est que moi j'enregistre en fait le son de l'utilisateur et ensuite je vais le mixer avec la backtrack. Parce qu'en gros je le filme et j'enregistre au niveau de l'audio. Et après je crée une vidéo, déjà un preview de la vidéo dans l'application.
+
+David Leuliette (48:38.055)
+ctwm48y5m2 (49:04.078)
+il va avoir sa tête, le son de la backtrack et aussi le son de la performance qui va être mixé avec la backtrack et en plus il va avoir les partitions qui va défiler ou les fingerings qui vont défiler pour ensuite générer une vidéo qu'il pouvoir mettre sur ses réseaux sociaux. En gros c'est pour créer de l'audience sur ses réseaux.
+
+David Leuliette (49:20.347)
+ouais ! ça c'est beau, ça c'est de la feature, ça c'est incroyable comme feature.
+
+ctwm48y5m2 (49:26.868)
+Avant tu avais FFMPEG KIT qui était disponible sur React Native mais il a été déprécated en avril 2025 crois et il même plus les binaires donc tu ne peux plus du tout l'installer de toute manière je pense qu'elle n'est plus maintenue. Maintenant ce que je fais c'est que j'upload la performance utilisateur donc l'audio et le vidéo sur AWS et j'utilise Remotion du coup pour générer la vidéo complète.
+
+Ensuite, je rajouterai un système de branding où tu peux mettre ton logo, peux mettre des petites couleurs, des petites animations pour vraiment créer du contenu engageant et développer ton audience TikTok. directement connecter les appels TikTok, Instagram, Facebook pour publier directement depuis l'application.
+
+David Leuliette (50:13.481)
+Ah ouais ok ouais ok c'est plus juste euh... C'est la SaxoTool c'est la Vision 300 ça attend on peut faire un pitch marketing la Vision 300 votre compagnon 360 pour euh... pour euh... ouais ouais ouais ouais ouais euh...
+
+ctwm48y5m2 (50:27.633)
+C'est ça pour l'apprentissage et le développement de votre audience autour du saxophone.
+
+ctwm48y5m2 (50:35.919)
+Donc pour revenir dans nos boutons, enfin j'utiliserais Direct Native Audio API vraiment pour faire le mix entre du coup le son de l'utilisateur et la backtrack. quoi d'autre... et puis voilà, ouais. Et aussi pour faire le recording, parce que tu dois record. Et il faut trigger le record exactement quand l'audio se trigger. Donc j'ai mis un système avec le state. Parce que quand tu appuies sur play,
+
+l'audio se trigger pas forcément tout de suite et en gros avec Expo Audio comme avec Native Audio API tu peux récupérer le time à quel instant est ton audio et dès que lui il est update je trigger en fait un changement dans le state qui dit là on est en train de jouer l'audio trigger le record
+
+Voilà, puis React Native Audio API implément aussi un système de loop, c'est-à-dire moi dans mon application, tu peux sélectionner une partie de la partition que tu veux jouer. Donc tu as des braquettes que tu vas drag and drop sur la partition. Et à partir de là, ça va tourner en rond en fait dans cette braquette. Et tu peux aussi changer la vitesse de lecture. Donc ça, c'est React Native Audio API. incroyable.
+
+C'est la même équipe qui développe React Native Reanimated, donc c'est Software Mansion.
+
+David Leuliette (52:02.1)
+développer React Native to Core, les software benched, c'est la nation de React Native. oui c'est vrai, Breaking News, voilà. que avant, c'est vrai que pour ceux qui connaissent pas du tout, React Native c'est fait par méta et là à la ReactConf ils ont annoncé que ça branch out, donc maintenant React et React Native font
+
+ctwm48y5m2 (52:07.654)
+et qui font partie maintenant de la React Foundation.
+
+David Leuliette (52:32.044)
+parti d'un consortium de cinq entreprises qui sont AWS, Software Mention, Meta, a Verzel dedans et Microsoft. Je pense, je ne sais pas. Je pense qu'il doit y avoir Microsoft parce que vu que vous irez voir sur le blog de React. C'est ça, faites vos devoirs.
+
+ctwm48y5m2 (52:55.954)
+Ouais.
+
+David Leuliette (53:00.747)
+Et du coup, ça change parce que la gouvernance maintenant, veut dire que c'est vraiment indépendant. C'était déjà le cas plus ou moins, mais c'était pas officiel en fait. Mais maintenant, c'est vraiment officiel parce que Software Mansion, ils font plein de librairies. Ils font beaucoup de choses. Ils sont 500, 300 ou 500, crois. J'ai été les voir en fait. Enfin, je vais les voir souvent en Pologne. les bureaux, ils ont une tour. Ils ont une tour gigantesque.
+
+ctwm48y5m2 (53:17.426)
+ouais ? Ok.
+
+ctwm48y5m2 (53:25.97)
+Hmm.
+
+David Leuliette (53:28.903)
+Cool, ok du coup c'était RackNative Audio API. Ensuite, qu'est-ce qu'on a d'autre ?
+
+ctwm48y5m2 (53:29.274)
+Noces
+
+ctwm48y5m2 (53:34.766)
+Après il un autre petit génie dans l'espace ReacNative, s'appelle Marc, j'ai plus son nom là, mais qui a fait ReacNative Vision Camera, permet de... Ouais, trop fort. Et qui a fait ReacNative Vision Camera, qui permet du coup de filmer et en même temps, ça c'était utile pour une application de golf, où tu peux faire de l'inférence, enfin tu peux traiter en live les streams d'images qui sont émises par la vidéo.
+
+David Leuliette (53:42.883)
+marque sa vie, marque, marque, ouais, ouais.
+
+ctwm48y5m2 (54:04.656)
+et il a créé une autre libérique qui s'appelle Rack Native Fast TF Lite qui va te permettre de lancer des modèles de machine learning sous format TF Lite directement sur ton mobile en utilisant la GPU. donc tu vas lancer, moi en low-curse, pour l'application de golf, en gros tu vas faire un swing et ça détecte la position de tes mains, ça détecte la position de ton club et à partir de ça
+
+tu peux faire des arrêts un peu sur image sur les différentes parties de ton swing, t'as le back swing, t'as le follow throw, enfin voilà, t'as plein de trucs qui te permettent de bien segmenter ton swing pour comprendre ce qui fonctionne et ce fonctionne pas. Et dans le cas de mon application mobile pour le saxophone, donc j'utilise un algorithme qui a été open-sourcé par Spotify qui s'appelle Basic Pitch, qui en gros prend ton audio, ton enregistrement audio de ton saxophone ou n'importe quel instrument, et qui à partir de ça te donne un fichier MIDI.
+
+Donc un fichier MIDI, c'est un fichier avec le début et la fin de chaque note time stampé que tu as joué. Et en gros, pour lancer ça sur mobile, il faut cette librairie qui s'appelle Racknative Fast Deathlight et qui permet de faire l'inférence rapidement. Et une des limites de cette librairie, c'est que ça fait seulement l'inférence et en général dans les process de Machine Learning, tu as du...
+
+pré-processing et du post-processing qui vont être des opérations qui sont assez gourmantes on va dire, parce que c'est la manipulation de tensor de matrices et j'ai découvert bon déjà tu TensorFlow, TFJS, non TensorFlow, TFJS, donc en gros c'est TensorFlow pour ceux qui connaissent pas, c'est une librairie qui gère tous les modes LDA pour les entraîner, pour les déployer, pour les
+
+David Leuliette (55:51.705)
+Ouais. Merci au JavaScript. Ouais, c'est vrai.
+
+ctwm48y5m2 (56:00.049)
+Voilà pour les faire tourner. Et en gros TFJS, elle, sur le web, vous connaissez très bien, parce que ça utilise la GPU, mais sur le mobile, ça utilise la CPU. Donc en fait, mon inférence de l'audio était très rapide, mais tout ce qui était pré-processing et post-processing était très long. Et c'est là où j'ai découvert TFJS React Native combiné avec ExposGL. Et en gros, ExposGL permet de faire le pont entre la GPU.
+
+et TF, JS, React Native et en gros des process de post processing qui prenait 30 secondes avant, j'avais fait un post-link dessus, dure maintenant 3 secondes. C'est incroyable, j'ai vu la différence entre les deux. Et tu as vraiment un facteur x10 sur les pré-processing et post-processing du l'audio de l'utilisateur.
+
+David Leuliette (56:43.95)
+ouais... Ok...
+
+ctwm48y5m2 (56:59.012)
+Parce que avant, fait, que je faisais, c'est que là le Go Basic Pitch était sur une Lambda, donc une fonction serveur d'ARC AWS. J'uploadais la performance utilisateur sur S3. J'avais la Lambda qui lisait le fichier, qui lançait Basic Pitch, et qui ensuite restituait les notes qui étaient jouées. Et maintenant, tout est fait directement sur le mobile. Et ça tourne même beaucoup plus vite que sur les Lambdas, parce que les Lambdas n'ont pas de GPU, c'est que de la CPU. Donc voilà, c'est...
+
+Que dégain, moi je...
+
+David Leuliette (57:29.83)
+et puis il pas d'invoice. L'invoice c'est le téléphone donc cool. en local. Du coup ça marche presque en offline.
+
+ctwm48y5m2 (57:32.56)
+C'est
+
+ctwm48y5m2 (57:42.576)
+ça pourrait marcher en offline si tu télécharges. Tu peux télécharger une chanson comme sur YouTube, je sais quand tu enregistres, quand tu as les abonnements premium et que tu télécharges, tu peux télécharger des vidéos comme ça tu peux les relire offline. Là tu pourrais avoir le même système où tu pourrais télécharger en gros c'est juste un fichier mp3. l'image aussi, tu as la partition aussi que tu dois télécharger. Donc tu pourrais avoir un petit bouton, ça c'est une des features qui devrait arriver par la suite. Download.
+
+musique en gros tu la joues et après toute la partie ben toute la partie analyse de l'audio tout ça c'est sur les device voilà t'es indépendant quoi
+
+David Leuliette (58:25.413)
+Et ça marche les deux sur iOS, pense que oui ça roule, mais sur Android...
+
+ctwm48y5m2 (58:29.967)
+sur les deux, ouais. Et pour tester mes apps, moi j'ai un iPhone 8, vraiment un truc bien pourri et un Android, Motorola G53, pas un truc très très très puissant, vraiment en trait de gamme, je crois que j'avais payé 150€. Et voilà, moi je benchmark tout là-dessus, si ça fonctionne sur ces devices, ça fonctionnera sur le reste. Et pour l'Android, le process qui sur iOS dure 5 secondes,
+
+David Leuliette (58:34.927)
+Oui.
+
+ctwm48y5m2 (58:58.703)
+durer 10 secondes sur Android.
+
+David Leuliette (58:59.141)
+Ouais, ouais c'est juste un peu plus long. Ah ouais ça va quand même. Ok. Est-ce que t'as eu... Ouais c'est... Bah je pense là c'est bon. Niveau library, tout monde a suivi les amis ? Si vous avez pas suivi, attendez encore, attendez encore parce que là on en a balancé plein. Encore une. Vas-y, vas-y.
+
+ctwm48y5m2 (59:11.663)
+une petite dernière qui est top, pas si tu connais Rive.
+
+David Leuliette (59:20.129)
+oui, Rive, oui, c'est pour faire des animations. Donc, Rive.app, c'est ça ? Non, c'est pas Rive.app, si, c'est ça, c'est Rive.app.
+
+ctwm48y5m2 (59:22.159)
+pour faire des animations. Voilà.
+
+David Leuliette (59:35.838)
+Rive, React, Native
+
+ctwm48y5m2 (59:40.363)
+En gros, crois que Duolingo utilise Rive parce qu'ils ont montré un peu des screens. Et en gros, ça permet de des animations programmatiques. Des animations de base, c'est-à-dire on va avoir un petit bonhomme qui va pouvoir faire coucou, je ne pas quoi. Et sur ce petit bonhomme-là, on va pouvoir exposer via le fichier Rive qu'on va exporter par la suite, des paramètres. Et quand...
+
+David Leuliette (59:45.306)
+Ouais.
+
+ctwm48y5m2 (01:00:08.534)
+dans mon application React Native, quand j'utilisais React Native Rive, je vais vouloir interagir avec ce fichier Rive, je vais pouvoir lui donner, enfin déclencher certaines fonctions, qui va faire que le bonhomme va faire coucou, il va faire, je pas, il va jouer du saxophone, il va sauter, c'est ça. Ou même...
+
+David Leuliette (01:00:21.859)
+bouger des yeux, Pour ceux qui ne connaissent pas du tout, c'est un peu comme SVG. Quand vous exposez filter, certaines props, vous pouvez changer à la volée dynamiquement les couleurs du SVG. Pareil, c'est pareil, mais pour les animations, meilleur mode, beaucoup plus avancé.
+
+ctwm48y5m2 (01:00:35.756)
+Voilà.
+
+ctwm48y5m2 (01:00:41.486)
+Voilà, et l'interaction c'est que tu peux faire les choses directement, enfin je veux dire avec ta souris, faire des trucs assez propres, alors que sur React Native des fois tu veux faire des animations, tu veux créer un SVG, ça rend pas forcément ce que tu voulais. Là tu peux bien le créer à la mano où tu demandes à un designer de te le créer, tu as même ce qu'ils ont un truc qui s'appelle Community, où tu as plein de gens qui balancent ce qu'ils ont fait eux personnellement, et toi tu peux le reprendre et l'adapter à ta sauce.
+
+David Leuliette (01:00:54.883)
+Euh... C'est clair.
+
+David Leuliette (01:01:09.195)
+Ok, ouais je vois, trop bien. Et ça Riff, donc t'as un... C'est toi qui l'a fait ou t'as fait appel à quelqu'un pour faire les animations avec ce truc ?
+
+ctwm48y5m2 (01:01:18.222)
+C'est moi qui ai appris, parce que j'ai ma designer qui m'a fait mon écran d'accueil où en gros tu as des montagnes qui arrivent, tu as le logo de l'application et tu as un petit drapeau à la fin Made in France qui apparaît en bas. Donc ça me l'avait fait, ça marchait très très bien. J'ai essayé de le faire en React Native direct. Je pouvais le faire mais c'était pas responsif. Parce que c'était des éléments SVG qui m'avaient donné, que j'avais importé dans React Native.
+
+David Leuliette (01:01:23.843)
+Hmm?
+
+David Leuliette (01:01:32.547)
+C'est beau.
+
+David Leuliette (01:01:41.087)
+Ok, allez.
+
+ctwm48y5m2 (01:01:48.077)
+c'était compliqué. Et Rive justement gère la partie SVG, c'est à que si ton écran est plus grand il va stretch les composants et ça rendait un rendu beaucoup plus dynamique on va dire. au niveau des performances c'est fluide quoi alors que sur mobile des fois quand tu fais des trucs à la mano avec reanimated bon normalement c'est censé être rapide mais des fois tu peux avoir des trucs qui sont un peu moins performants quoi.
+
+David Leuliette (01:02:15.043)
+Ouais, mais c'est pas le même type d'animation, c'est vraiment pas... Moi je vois plus ça comme vraiment un flash pour ceux qui connaissent. C'est vraiment un outil d'animation en fait, donc ce sera pas les mêmes choses.
+
+ctwm48y5m2 (01:02:19.053)
+...
+
+ctwm48y5m2 (01:02:24.051)
+Ouais, non c'est sourd.
+
+ctwm48y5m2 (01:02:31.905)
+Et le seul petit bémol, il me semble, parce que j'ai testé et ça faisait cracher mon app directement, mais que ça fonctionne pas sur la nouvelle architecture. Enfin que le SDK qui sont créés pour React Native ne fonctionne pas encore sur la nouvelle architecture.
+
+David Leuliette (01:02:46.573)
+c'est bien possible !
+
+Arc, est-ce que supporte
+
+ctwm48y5m2 (01:02:57.726)
+Après c'était il y a une semaine ou deux, mais il me semble avoir passé des PR, des issues.
+
+David Leuliette (01:02:57.955)
+Bye !
+
+David Leuliette (01:03:06.627)
+Ouais ouais bah ça va arriver tu vois, Sinon, si de toute façon ça marche sur le web Rive.
+
+voilà ça marche sur le web on fait une vue use de dom et tu fous une webview et puis terminé quoi et hop ça ship
+
+ctwm48y5m2 (01:03:18.347)
+et nous abonner.
+
+ctwm48y5m2 (01:03:24.608)
+C'est parti.
+
+David Leuliette (01:03:28.678)
+Est-ce que t'as eu un problème ? On a rencontré un vrai problème sur un échec cuisant sur ton application et comment tu l'as géré.
+
+ctwm48y5m2 (01:03:40.413)
+Je dirais deux problèmes. premier problème c'est le fait que j'avais créé l'application plutôt pour des utilisateurs intermédiaires avancés et j'avais créé zéro contenu sur les réseaux donc j'avais pas au pouvoir peu de traction sur l'application, j'ai très peu de téléchargement.
+
+Comment j'ai résolu le problème ? Je me suis posé 5 minutes, j'essayais de chercher un peu comment je pouvais créer du contenu autour du saxophone et je suis tombé sur cette chaîne YouTube qui s'appelle Saxplane qui crée les petites vidéos animées et donc ensuite j'ai créé le template Trimotion et maintenant je crée une vidéo en 5 minutes et ça me permet de créer plein de vidéos pour croître l'audience et renvoyer les gens sur l'application.
+
+C'était le premier problème. Et le deuxième problème, parce que j'ai quand même beaucoup galéré là dessus, sur les performances de l'application. Parce qu'au final il a trois animations qui sont en parallèle. T'as le défilement de la partition, t'as le défilement du curseur sur la partition, et t'as le défilement des doigtés à la guitare Ero en bas. Donc j'avais trois animations qui tournaient en parallèle. Et sur mon petit Android, Motorola G53, c'était vraiment pas tip top. Et donc une des solutions que j'ai trouvées...
+
+en cherchant aussi un peu l'état de l'art de comment les applications qui géraient des partitions faisaient. En gros, au lieu de générer avec ZXflow la partition sur le mobile avec plein de SVG, que le truc qui est gourmand, c'est quand tu fais défiler des SVG dans une scroll view, c'est très gourmand. Donc là, ce que j'ai fait, c'est que j'ai un livre qui s'appelle Open Sheet Music Display, qui permet d'envoyer un fichier music.xml.
+
+David Leuliette (01:05:14.945)
+Oui.
+
+ctwm48y5m2 (01:05:25.927)
+de générer une partition et de avoir l'export en fichier JPEG ou en fichier PNG. Et donc gros ce PNG ensuite je l'importe dans l'application et quand je génère le PNG en même temps je récupère la position de chaque note pour ensuite animer mon cursor dans l'application. Donc je renvoie le fichier PNG plus le fichier JSON qui contient toute la position des notes.
+
+Et ensuite, suis capable, déjà les performances ça n'a rien à voir parce que tu n'as plus d'éléments SVG qui sont générés. Tu n'as qu'une image à faire défiler quoi. Et ensuite ton curseur il reprend la position. Il faut bien caler l'image qui n'est pas de margine ou quoi au casse pour faire en sorte que la position des notes que tu as créé dans ton System Back fonctionne correctement quand tu déplaces ton curseur dans ton application mobile.
+
+David Leuliette (01:05:58.579)
+Ouais, t'as qu'un seul élément,
+
+ctwm48y5m2 (01:06:21.515)
+Donc ça c'était quand un gros challenge, j'ai passé beaucoup de temps avec Flashlight, d'optimiser la performance et le fait que ça fonctionne. Après tu as encore d'autres trucs pour améliorer où tu vas segmenter ta partition en plein de petits fichiers PNG, tu vas utiliser Flashlist pour rendre seulement les éléments qui sont visibles à l'écran. Mais ça, voilà, pour l'instant ça fonctionne très bien sur iOS et Android donc pour l'instant on est bon.
+
+David Leuliette (01:06:43.616)
+Et on n'a pas encore les droits. Quand on aura les droits, peut-être, on a les droits. Ok. Qu'est-ce qui t'a rendu meilleur AWS Cloud Engineer en travaillant avec Racknative ?
+
+ctwm48y5m2 (01:06:46.763)
+Ça c'est notre histoire.
+
+ctwm48y5m2 (01:07:09.685)
+Je dirais qu'écrire avec Natis ne va pas apporter grand chose. C'est plutôt dans... C'est une expérience où j'ai ma startup mais à un moment on n'avait plus de cash. Donc j'avais dû trouver un CDI dans une boîte qui s'appelle FOOL qui est une solution pour les experts comptables. Et en gros c'est là où j'ai vraiment tout appris, où ils avaient implémenté toutes les best practices Terraform, Python, JS, tout bien les GitHub Action tout ça. Et moi ce que j'avais fait c'est que j'avais pris le temps de lire beaucoup de repos.
+
+bien m'imprégner de ce qui avait été fait, d'essayer de le réimplémenter. Et c'est ce que je vous conseille vraiment à des amis des connaissances. Et c'est comme ça qu'en fait du jour au lendemain, enfin pas du jour au lendemain mais après quelques semaines, quelques mois, je vais vraiment monter, monter en compétences, du moins sur la partie DevOps, Terraform, Python, Docker, qui au final est pas très très compliqué. Mais si t'as pas les best practices, un peu les boilerplate des best practices qui sont utilisés en entreprise, c'est pas...
+
+C'est pas évident de les deviner quoi.
+
+David Leuliette (01:08:10.29)
+ouais, tu sais pas... Bah ouais, puis pour trouver... Alors je sais pas comment ça marche en Python ou quoi, tout ça, mais ça doit être pareil. Terraform. Ok, il y a des fichiers d'import de Terraform, de façon les leaders toujours les mêmes.
+
+ctwm48y5m2 (01:08:23.141)
+Wesh...
+
+David Leuliette (01:08:24.256)
+Vous prenez la première ligne du fichier Terraform, vous allez dans la search de GitHub et vous tapez la ligne et vous faites entrer. Et vous tapez les dix premiers repos. Moi c'est ce que je fais des fois quand je connais pas un truc, je sais pas, je regarde les apports et je cherche. Parce que la ligne d'apport, va être la même. Import, LibreArea, XYZ, From, je ne pas quoi. Il y a plein de repos open source disponibles sur GitHub.
+
+ctwm48y5m2 (01:08:36.87)
+Non.
+
+David Leuliette (01:08:49.664)
+De coup, regardez ça et comme tu dis, faire un lire vraiment du code pour voir. ouais, en fait, c'est comme ça ça fonctionne ou même voir les sources.
+
+ctwm48y5m2 (01:08:55.889)
+Ouais. Mais je pense que vraiment la meilleure méthode d'apprentissage, c'est d'essayer de faire les choses par nous-mêmes, se challenger, c'est de se créer un peu une mind map de, oh, c'est techno, on fonctionne comme ça. Et se dire, mais pourquoi, pourquoi il a ça, pourquoi essayer, pourquoi il a ? Et après, soit parler avec un expert qui répond à tes questions et là, ça fait clic, tu dis, ah, d'accord, d'accord. Soit tomber sur des repos qualitatifs qui sont bien documentés. te dis, mais attends, mais ça s'est trop bien fait. Et qui, naturellement,
+
+quand tu le lis tu dis mais ça va soit tu comprends quand t'es... ouais.
+
+David Leuliette (01:09:27.744)
+Makes sense. J'avoue. J'avoue. Du coup, alors dans le tiers, est-ce que tout est bien fait ?
+
+ctwm48y5m2 (01:09:38.706)
+J'ai réimplémenté toutes les best practices. Aujourd'hui, je peux déployer une nouvelle version très rapidement. Puis tu as aussi Sémentic Release qui te permet de des numéros de release en fonction des commits que tu fais. Donc ça c'est très bien aussi ça.
+
+David Leuliette (01:09:42.781)
+Ouais ok ouais ouais.
+
+Ouais ouais... Oui.
+
+David Leuliette (01:09:55.166)
+Parce que moi là sur KitGo, l'app que je suis en train de faire là, tout est fait à l'arrache. Enfin tout est fait à l'arrache, non. Mais j'ai pas encore, en fait, c'est pas un projet client, tu vois. C'est un projet side project. Et pour l'instant, j'ai pas encore mis les best practices. Pour l'instant, l'objectif c'est go la prod. Donc... trucs c'est chier que... Non, non, non mon app sur le bluetooth, non, non. Ça c'est le projet client. Alors ça par contre, il a de la machinerie derrière. Là il y a tout, il a les tests, les trucs, les machins, voilà. Mais là sur la nouvelle app que je fais là en mode side project, j'ai pas...
+
+ctwm48y5m2 (01:10:11.411)
+Mais c'est ton app sur le Bluetooth, ?
+
+David Leuliette (01:10:25.118)
+les trucs c'est top correctement parce que bah voilà soit je fais du saxophone soit je fais une nappe pour faire le saxophone donc donc ça dépend mais là je suis arrivé à un point où en fait il faut que j'arrête les features et que j'aurai factor tu vois ce que je disais tout à l'heure parce que disais ce qu'on disait en off tout à l'heure il faut que je refactor parce que ça va pas mais faut que je le fasse
+
+ctwm48y5m2 (01:10:31.561)
+C'est ça.
+
+ctwm48y5m2 (01:10:48.169)
+L'IA ça te permet vraiment d'aller super super vite mais si à un moment tu prends pas le temps d'essayer de réapproprier ce qui a été généré...
+
+David Leuliette (01:10:54.81)
+faire la vaisselle, faire la vaisselle. Non c'est faire la vaisselle. T'as fait un gueule ton pour 50 personnes, faut faire la vaisselle. Au bout d'un moment c'est mathématique. Et bah là c'est pareil, sans zir tu Y tout à la mano parce que là c'est des trucs cons. En fait ils dupliquent tout, tout est dupliqué j'ai l'impression.
+
+ctwm48y5m2 (01:11:02.281)
+Allez.
+
+ctwm48y5m2 (01:11:14.159)
+Ouais refactorer, remettre en plot et backspraxities, de créer des hook, de créer des components et prendre le temps de décomposer par petites features et après ça se passe bien.
+
+David Leuliette (01:11:25.087)
+C'est quoi tes sources, ton système pour veille et monter vos compétences ? C'est lire des projets open source.
+
+ctwm48y5m2 (01:11:37.08)
+Ça c'est quand je vais dans des entreprises, j'en ai fait deux où j'étais en CDI. vraiment, je vois que tu des experts techniques qui font des trucs qui sont carré et qui fonctionnent bien. dis ok, je lis et j'essaye de comprendre ce qu'ils ont fait. après sinon, c'est plutôt moi quand je développe l'application, je rencontre des challenges. Je me dis comment je peux résoudre ce problème-là et je commence à chercher par moi-même. Et ensuite, soit je fais ma petite recherche sur Google ou je demande à Chat GPT
+
+David Leuliette (01:11:39.08)
+Ouais.
+
+ctwm48y5m2 (01:12:05.384)
+soit des fois ça tombe comme ça sur LinkedIn, par exemple Armand, où tu aussi Jérémy qui partage, je plus si on est une famille, mais qui partage vraiment du bon contenu sur React Native. Et en gros, vois passer ça, tu te dis, c'est un la veille qui vient avec moi, enfin c'est le fait d'être un peu sur LinkedIn pour lire un peu ce qui se passe là-bas, qui fait que des fois j'ai des best practices qui arrivent naturellement sur mon application.
+
+David Leuliette (01:12:14.728)
+Ouais, ouais, j'avoue.
+
+ctwm48y5m2 (01:12:34.066)
+mais j'ai pas de moment dédié ou chaque semaine même si je devrais le faire, me dis ok je me pose une heure et j'essaie de voir un peu les dernières nouveautés, tout ça qui sont sortis.
+
+David Leuliette (01:12:45.448)
+Ouais, moi je le fais plus en conférence, moi j'ai pas le temps mais je vais en conférence du coup comme ça après je suis obligé. Je suis obligé de me poser deux jours et aussi vous le savez c'est quand je fais des bootcops aussi. Quand je donne des bootcops je suis obligé d'expliquer à des beginners. Donc tu te dis, bah en fait c'est facile. Mais en fait non parce que vu que tous les ans t'as un nouveau SDK, t'as des trucs qui changent et du coup je dois revisiter...
+
+ctwm48y5m2 (01:12:50.408)
+Ouais.
+
+ctwm48y5m2 (01:13:10.567)
+Ouais.
+
+David Leuliette (01:13:11.385)
+des choses que j'avais pris pour acquises et qui fonctionnent plus du tout comme ça. je ouais, non mais en fait, on s'embêtait pour rien en fait avant. Mais non, a une meilleure façon de faire du coup. Du coup, aussi, essayer de l'expliquer à quelqu'un d'autre, ça c'est le conseil que je donnerais. Du coup, iOS, Android, t'as des... L'app, elle fonctionne aussi sur le web, t'as parlé un peu de web, mais là c'est qu'une app mobile pour l'instant.
+
+Et t'as des trucs où t'as divergé ? Ou c'est tout pareil ?
+
+ctwm48y5m2 (01:13:47.887)
+Non, non, deux sont exactement la même chose. C'est le même code, il a rien qui change. Peut-être des fois tu as des petites spécificités pour le clavier, je ne pas quoi, où tu dois utiliser certaines propriétés dans les libraires, mais sinon c'est exactement le même code. Et après pour le web, pour le web...
+
+Non, j'ai une autre idée. Où en fait t'as plein de saxophonistes. Parce que moi je veux vraiment être la référence dans le milieu du saxophone. Bon déjà pour l'apprentissage du saxophone, mais aussi pour ce qu'on appelle la créator économie. Donc créer du contenu en ligne. Et j'ai envie de créer un outil qui permet de créer du contenu plus engageant, mais en dehors de ma librairie de partition que j'ai actuellement, où j'ai pas forcément les droits d'auteur.
+
+moi je vais mettre en place un outil où moi je suis pas responsable des droits d'auteur, c'est les utilisateurs qui utilisent l'application pour générer. Donc ils prennent une partition qu'ils injectent dans l'application, ils vont avoir la partition qui les file, ils peuvent mettre toute la partie brand, leur nom, sais pas quoi, des petites animations pour vraiment faire la partie branding et ensuite se connecter à tous leurs réseaux sociaux pour exporter ça sur leur réseau et créer de l'audience.
+
+Donc ça c'est un peu... je pense une autre variante de Saxo Tools qui serait plutôt déployée sur le web en format SaaS avec un abonnement. Mais je trouve que c'est plus facile de vendre sur le web enfin des SaaS, des abonnements chers que sur mobile. Sur mobile j'ai l'impression que 10€ par mois c'est un peu la norme et si tu vas au dessus c'est cher. Alors que sur le web tu peux mettre un truc à 20, 30€, tu vois...
+
+pas forcément problématique.
+
+David Leuliette (01:15:39.984)
+Je reprise, c'est bon qu'il s'est l'audience quoi. pense. Tu moi je suis friand, c'est un tool qui me fait gagner du temps, bah go, bah en bon coup...
+
+ctwm48y5m2 (01:15:46.71)
+Oui. mais c'est sûr ouais, quand t'es tech et que t'es... Tu mets ça en frais de société.
+
+David Leuliette (01:15:51.566)
+Non, même pas forcément, pense que peut-être que dans ton outil SASS, là juste un truc pour vendre des cours et ou un truc boring, un calendly, adosser ce truc là ça fonctionnerait en plus parce que du coup c'est plus les profs que tu target, les gens, enfin sais pas, je m'en rends pas compte du tout en fait, mais c'est vrai que vendre, c'est pas la dernière fois que je me suis abonné sur un truc...
+
+One shot direct, payer 300€, voilà c'est plus des microtransactions, j'avoue, plus achat compulsif, bim je m'abonne puis après j'oublie.
+
+ctwm48y5m2 (01:16:27.686)
+Après moi je pense qu'aujourd'hui ce qui fonctionne en vente c'est soit les gens qui te vendent des... enfin le business de la formation quoi, l'infoprenariat soit c'est des gens qui te vendent des outils pour augmenter ton audience.
+
+David Leuliette (01:16:40.539)
+Ou alors il faut que tu check Revenu4, le PDF de 400 pages tu l'as lu ? Pareil, le fameux, fais ah ouais mais ça a l'air génial il y a plein de contenu ! Voilà ça s'est arrêté là. Pour ceux qui ne connaissent pas Revenu4 c'est le Stripe pour les app mobiles entre guillemets et ils font justement plein d'analytics de data, machin, de comment ça fonctionne.
+
+ctwm48y5m2 (01:16:44.358)
+Je suis d'ici, au revoir.
+
+ctwm48y5m2 (01:16:48.422)
+J'ai pas lu, j'ai lu la première page mais...
+
+Aie.
+
+David Leuliette (01:17:10.215)
+pourquoi et dont un pdf de 400 pages que nous n'avons pas lu donc si vous l'avez lu venez nous en parler je serais ravi de vous accueillir
+
+ctwm48y5m2 (01:17:19.416)
+Après t'as des résumés qui te disent... Je crois que c'est sur les weekly, enfin les abonnements weekly qui fonctionnent très bien en ce moment. Enfin t'as toute... Plein de sissames...
+
+David Leuliette (01:17:26.369)
+Ouais ? Ok, alors... Ouais, tsss... C'est plein de stratégies quoi...
+
+ctwm48y5m2 (01:17:33.19)
+C'est la partie avec laquelle j'essaie vraiment de chipper une version terminée où tu peux générer ton contenu, tout ça. Et ensuite vraiment commencer à mettre en place les stratégies de paywall, art paywall, relance, tout ça.
+
+David Leuliette (01:17:47.077)
+Ouais, ouais, bah oui. Ouais, je vois. Est-ce qu'il une correction que t'avais que t'as abandonnée depuis que t'as dev ton app mobile, les deux ?
+
+ctwm48y5m2 (01:17:57.701)
+La V1, tout ce qui est apprentissage de gamme, pour l'instant c'est dehors et ça reviendra peut-être par la suite.
+
+David Leuliette (01:18:06.364)
+Ouais, ok ouais. Est-ce que... Qu'est-ce qu'on aborde comme sujet ? Y un sujet qu'on n'a pas abordé dont je voulais parler.
+
+ctwm48y5m2 (01:18:17.027)
+Moi je dirais la place des développeurs dans les entreprises, dans tout ça avec l'arrivée de l'IA qui monte quand même en force mais de manière quand même assez poussée. Et c'est vrai que moi je vois pas mal de dev junior, ça devient assez difficile pour eux en fait de se positionner et de faire concurrence à des profils seniors qui utilisent plusieurs IAs.
+
+Donc je me questionne un peu là dessus sur quelles sont les stratégies à mettre en place pour rester compétitif. Parce que je pense que demain on codera. Moi aujourd'hui je code quasiment plus. suis plutôt en mode vraiment architecte de solution où je prends le temps de voir quelle future je vais développer. J'ai des coupes en plusieurs petites futures.
+
+Là j'ai vu derrière moi que Cursor avait lancé le mode plan qui permet de bien segmenter des instructions. Et ensuite, a un même codex d'OpenAI qui va te créer des PR directement sur ton repo GitHub et tu peux lancer plein de process en parallèle.
+
+David Leuliette (01:19:15.163)
+Mmh, ça fait longtemps ouais.
+
+David Leuliette (01:19:24.473)
+mais ça c'est ce que j'ai, moi je fais des issues et dans GitHub Copilot j'appuie en haut sur le plus, là je fais Fix Numéro Intel. Bon, Rack Native ça marche pas, mais en fait ça dépend, en fait en vrai je mens. Mais connect SuperBase Login, paf ça y est le fait.
+
+ctwm48y5m2 (01:19:32.164)
+Ok ?
+
+ctwm48y5m2 (01:19:42.602)
+C'est pour copilote ouais. Mais copilote derrière c'est quoi ? C'est le GPT ou c'est ?
+
+David Leuliette (01:19:46.028)
+Ouais, copilote...
+
+aucune idée, j'en sais rien. En vrai, je sais pas. Je sais pas, vu que c'est Microsoft OpenAid, franchement je sais pas quel modèle c'est. exemple, tu je rentrer dans le métro, je vais ouvrir GitHub sur mon téléphone, je vais faire fixe moi ça, boum, j'arrive au taf, paf, il m'a fait un draft et je rejecte ou pas. Je rejecte ou pas juste en lisant le code, parce qu'en fait, je n'ai pas travaillé dessus, vu que j'ai travaillé dessus quand je dormais.
+
+ctwm48y5m2 (01:19:53.028)
+C'est cl...
+
+ctwm48y5m2 (01:20:11.267)
+Ne c'est pas
+
+David Leuliette (01:20:19.777)
+et où je le clone en local et je teste et ça me fait mon premier draft pour itérer dessus quoi. Donc c'est pas mal mais pareil il faut des specs carrés quoi moi je pense que j'écris des issues avec beaucoup de contexte quoi.
+
+ctwm48y5m2 (01:20:35.104)
+Après je pense que c'est... Parce que moi à l'époque la partie coding c'est vraiment ce qui me stimulait. aussi le fait quand tu une idée en tête de vraiment prendre le temps de la poser, de bien écrire les issues, de bien tout décomposer, je trouve que c'est aussi stimulant. Et le fait de pouvoir ensuite donner ça à une IA qui va t'écrire le code à ta place rapidement, je ça toujours stimulant tu vois. Parce que tu peux aller beaucoup plus vite si tu mets en place les bonnes pratiques.
+
+David Leuliette (01:20:45.881)
+Hmm.
+
+ctwm48y5m2 (01:21:04.522)
+C'est là où je pense que les développeurs seniors d'aujourd'hui sont chanceux dans le sens où ils maîtrisent les technos et ils ont la vue globale parce qu'à l'époque ils ont implémenté par eux-mêmes à la main tout le code. Donc maintenant quand ils demandent quelque chose d'alias, ils ont le recul nécessaire déjà pour bien l'apprompter et pour analyser et corriger.
+
+David Leuliette (01:21:04.569)
+Allez, d'où tu me croisses.
+
+David Leuliette (01:21:20.035)
+Ouais, ouais c'est ça.
+
+David Leuliette (01:21:27.258)
+savoir les mots-clés et dire oui non ça c'est n'importe quoi ou pas du tout ouais je vois donc conseil aux jeunes générations ce serait devenir des builders et décomposer le problème en petites
+
+ctwm48y5m2 (01:21:33.301)
+Gardez une direction quoi.
+
+ctwm48y5m2 (01:21:42.883)
+Ouais et puis je dirais aussi de pas trop utiliser l'IA vraiment pour les génieurs mais ou d'ou moins de l'utiliser mais vraiment pour se former, de poser des questions mais essayer aussi de décrire un peu du code pour s'imprégner un peu des concepts et pour plus tard avoir un peu cette multicasquette qui va te permettre de piloter plusieurs IA spécialistes. Parce que pour moi c'est un peu dans cette direction que ça tend où tu auras un méga ingénieur qui maîtrise le bac, le front, le DevOps et qui sera en mesure.
+
+de dicter un peu les différentes dires, diriger les différentes dires.
+
+David Leuliette (01:22:17.593)
+C'est vrai.
+
+ctwm48y5m2 (01:22:18.903)
+Je ne pense pas qu'il aura une Megaya qui va contrôler les autres petits sillas. Je pense qu'il y aura toujours besoin d'un humain dans la loupe, c'est mon avis.
+
+David Leuliette (01:22:28.663)
+bah pour Gitpush, au bout d'un moment, erreur code build65, y'aura toujours un problème ça. Lire la stack trace d'erreurs.
+
+ctwm48y5m2 (01:22:31.171)
+Oui.
+
+ctwm48y5m2 (01:22:37.571)
+Parce que tu avais... comment il s'appelait... c'était il a deux ans je tu une société chinoise ou américaine qui t'avait promis un agent qui était capable de tout relis tout seul, de lire les logs, de bugs, je sais plus comment il s'appelle, Devin je
+
+David Leuliette (01:22:54.616)
+Ouais oui, oui, Devine. Ça va ? Où est passé Devine ? Où est passé Devine ? Devine, code. Devine, the AI software engineer. Ben ouais, Quelles sont les news ?
+
+ctwm48y5m2 (01:22:57.059)
+Il s'est perdu.
+
+ctwm48y5m2 (01:23:12.034)
+C'est bon. Dans tous les cas, je pense qu'il y aura toujours besoin d'un humain qui serait capable de chapeuter tout ça. Et donc je conseillerais aux jeunes devs, devs à la main, c'est important, et de prendre le temps de bien comprendre les différents concepts. fait, ce qui marche bien, c'est essayer de le faire par toi-même, faire un peu de la merde.
+
+ensuite voir les best practices et c'est là où vraiment tu dis ah putain oui on aurait pu faire comme ça c'est trop bien et c'est là où je pense que tu retiens le mieux et que tu... que ça clique.
+
+David Leuliette (01:23:50.337)
+Ouais donc shipper, shipper un truc, bah c'est ça comme d'hab quoi. C'est make it work, make it right and make it fast. C'est ça l'ordre ? Je crois que c'est ça ouais. Ok !
+
+ctwm48y5m2 (01:23:59.074)
+Ouais.
+
+David Leuliette (01:24:07.477)
+Qu'est-ce qui... qui c'est qu'on invite ensuite ?
+
+ctwm48y5m2 (01:24:11.554)
+...
+
+David Leuliette (01:24:12.523)
+On veut un nom.
+
+ctwm48y5m2 (01:24:14.946)
+connais 2 personnes, je Freddy Noffol, N-A-W-F-A-L, qui lui, ce qu'il fait, c'est qu'il aide les développeurs à lancer des micros apps sur les stores, mais il se focusse beaucoup plus sur la partie marketing. Au lieu de créer, ouais, au lieu de créer une mega app, comme moi je suis en train d'essayer de faire avec Saxo Tools, peut faire tout,
+
+David Leuliette (01:24:37.099)
+trop bien ! Oui je vois, oui je vois, ok.
+
+David Leuliette (01:24:43.76)
+va faire un compteur de victoire de jeu au Scrabble.
+
+ctwm48y5m2 (01:24:49.089)
+C'est ça, non mais si tu le marketes bien, c'est ce qu'ils essayent de faire.
+
+David Leuliette (01:24:53.591)
+Bah, moi yo, j'étais traumatisé, tu te rappelles de ce que que c'est ? Ah tu connais pas cette app, yo app ? C'était une app mobile, c'était au tout début où les gens étaient crazy et ça envoyait juste un yo aux gens et ça a été racheté, vendu je ne plus combien de millions de dollars juste parce que ça faisait yo et qu'il y avait plein de gens. Moi depuis ce temps là, je ne crois plus en...
+
+ctwm48y5m2 (01:24:59.937)
+Euh... non.
+
+ctwm48y5m2 (01:25:11.151)
+si, si, je vous en suis enrre.
+
+David Leuliette (01:25:22.141)
+mauvaise idée, trop petit, il n'y a pas de règle. Super, qu'est-ce que je lui pose comme question ?
+
+ctwm48y5m2 (01:25:26.472)
+Je pense que c'est bon.
+
+ctwm48y5m2 (01:25:30.145)
+Tu peux lui demander, je ne pas quel est un peu sa vision sur l'écosystème des app mobiles en France déjà.
+
+David Leuliette (01:25:40.353)
+ouais c'est beau ça, c'est beau ça, c'est beau, Première question paf.
+
+ctwm48y5m2 (01:25:43.941)
+Et qu'est-ce qui concernerait aux développeurs qui adorent passer du temps dans leur bureau pour développer des features mais qui ont du mal à passer du temps à être sur les réseaux.
+
+David Leuliette (01:25:56.823)
+Ah ouais, faut chipper. Tout le est un médium maintenant. Ça y est, c'est 2026. J'ai l'impression que c'est encore plus vrai maintenant qu'avant.
+
+ctwm48y5m2 (01:26:09.41)
+Je trouve qu'il y a une opportunité de business aussi sas pour tout ce qui est trafic organique sur TikTok. Dans le sens où tu croises, c'est un sap très simple, mais tu croises tes téléchargements avec tes différents vues et likes par jour sur TikTok et ça te permet ensuite d'affiner ta stratégie TikTok pour voir le contenu qui fonctionne vraiment.
+
+et avoir un peu un sens de comment l'algorithme fonctionne, parce que des fois il y des vidéos qui repopent, ça, en fonction, et voir quel est l'impact sur tes téléchargements. Parce que ça j'ai ce besoin là, mais j'ai pas trouvé d'outils, on va dire, simples et pas trop chers, qui le fait, ou il le fait mais plutôt pour la partie ads, où il récupère tes données d'ads TikTok, etc. où tu peux croiser ensuite à tes téléchargements. Mais sur l'organique, j'ai pas vu de solution existante.
+
+David Leuliette (01:27:02.3)
+Ok, on va à Julie. On est à Julie, on va voir une iOS growth ads expert dans... plus quand. Pas... je sais plus. De façon on est paquets jusqu'en 2026 les amis pour les invites donc... C'est... ouais. Cool cool, bah vas-y Freddy j'inviterais, trop bien. Où est-ce qu'on peut te suivre ou te contacter ? Si les gens veulent savoir plus sur le Deux Saxo. Est-ce que tu joues en live ?
+
+ctwm48y5m2 (01:27:07.553)
+Voilà.
+
+ctwm48y5m2 (01:27:16.001)
+Piquez-le !
+
+ctwm48y5m2 (01:27:29.025)
+Et à côté là, fait un petit moment que je ne l'ai pas sorti. Mais sinon vous pouvez me contacter sur LinkedIn. Ouais, principalement.
+
+David Leuliette (01:27:30.846)
+Tu joues au live du sexo ?
+
+David Leuliette (01:27:36.502)
+Chalala.
+
+ctwm48y5m2 (01:27:45.941)
+Voilà, puis après si vous voulez suivre des tutos pour jouer du saxophone, soit vous téléchargez l'app, soit vous allez sur TikTok, saxo tools.
+
+David Leuliette (01:27:53.328)
+Y'a 5 sautools, allez voir le TikTok, envoyez des likes, envoyez de la force. Moi c'est Twitter, BlueSky, GitHub, c'est Flexbox pour soutenir l'émission. Tous les liens sont sur wishypityoday.com slash podcast, vous verrez tout. N'oubliez pas de mettre 5 étoiles sur votre plateforme favorite pour envoyer de la force. Donc vas-y fais-nous un teaser. Qu'est-ce que tu shipes les 30 prochains jours en une phrase mémorable ?
+
+ctwm48y5m2 (01:28:23.775)
+Je l'ai préparé. Révolution de la création de contenu en ligne autour du saxophone avec Saxo Tools.
+
+David Leuliette (01:28:32.597)
+C'est beau, c'est beau. Ah ouais, ça, et tout ! Dans les 30 jours, je révolutionne tout. Ok, ok.
+
+ctwm48y5m2 (01:28:37.895)
+Il y a toute la partie création de vidéo à partir de ta performance sur l'application qui déjà dans la pipe et qui tourne déjà un peu sur Emotion. Et là il faut juste que je le termine et puis je balance ça d'ici fin octobre, ça sera fait.
+
+David Leuliette (01:28:52.88)
+Faut juste terminer le projet, t'as 30 jours on fera un follow up, on fera un follow up tu vois, en dessous on fera un follow up pour nous dire si c'est en prod ou comme ça on ira tester. Allez les amis on se voit la semaine prochaine, merci Rémi et... Ah oui non c'est vrai on se voit à Londres, enfin ceux qui... j'ai pas dit ouais, j'ai oublié, je voulais en parler mais j'ai oublié. Octobre, novembre, novembre, Rec Native London à Londres.
+
+ctwm48y5m2 (01:28:58.559)
+Pas de problème.
+
+ctwm48y5m2 (01:29:20.959)
+bien.
+
+David Leuliette (01:29:21.517)
+qui y vont, voilà, je serai là-bas. Allez, au revoir à tous, ciao !
+
+ctwm48y5m2 (01:29:26.047)
+Ciao !
+
