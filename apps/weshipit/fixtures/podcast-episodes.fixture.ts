@@ -404,7 +404,7 @@ export const podcastEpisodes: PodcastEpisode[] = [
       'https://podcasts.apple.com/fr/podcast/aso-apple-ads-et-growth-mobile-le-guide-pour-votre/id1790867559?i=1000739428306',
     youtube_embed_id: 'zNKtaYLKsi8',
     company_logo:
-      'https://media.licdn.com/dms/image/v2/D4E03AQGmXvTgKPQkkw/profile-displayphoto-crop_800_800/B4EZnC3uWVHMAI-/0/1759911012693?e=1766620800&v=beta&t=vlY1jb2K_GFK-KzjMVsB9CFf8E34xRPzFjif0oG7ge0',
+      'https://substackcdn.com/image/fetch/$s_!1f94!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc3829bb9-18a7-4a20-9097-6a4d2f541e30_657x657.png',
     guest_full_name: 'Julie Tonna',
   },
 ];

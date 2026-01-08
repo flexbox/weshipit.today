@@ -173,7 +173,7 @@ export const resources = {
           'All the snippets used everyday as a React Native developer.',
         name: 'React Native Snippets',
         type: ['Guide'],
-        website_url: 'https://davidl.fr/pattern',
+        website_url: 'https://davidl.fr/snippets',
         youtube_url:
           'https://www.youtube.com/channel/UCO0X5b0mQ4eIHitXHXSFUyw?sub_confirmation=1',
       },

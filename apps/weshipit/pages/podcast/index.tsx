@@ -30,11 +30,6 @@ export default function Podcast() {
         href: linksApi.notion.PODCAST_FORM,
         isExternalLink: true,
       }}
-      callToActionButton={{
-        name: 'Expo checklist',
-        href: 'https://flexbox.gumroad.com/l/expo-checklist',
-        isExternalLink: true,
-      }}
       withContainer
     >
       <div className="mt-8">
