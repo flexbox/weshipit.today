@@ -407,4 +407,40 @@ export const podcastEpisodes: PodcastEpisode[] = [
       'https://substackcdn.com/image/fetch/$s_!1f94!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc3829bb9-18a7-4a20-9097-6a4d2f541e30_657x657.png',
     guest_full_name: 'Julie Tonna',
   },
+  {
+    name: 'This Week in React',
+    title:
+      "L'art de la veille tech : Les secrets de la newsletter This Week in React avec Sébastien Lorber",
+    number: 23,
+    description_short:
+      'This Week in React, la newsletter de référence pour la veille tech React et React Native',
+    description: `<p>Dans cet épisode, David reçoit Sébastien Lorber pour une exploration de l'art de la veille technologique.</p><p><strong>Au programme :</strong></p><ul><li><strong>Parcours :</strong> Comment Sébastien est devenu le créateur de la newsletter This Week in React.</li></ul><ul><li><strong>La veille tech :</strong> Les méthodes et outils pour rester à jour dans l'écosystème React.</li></ul><ul><li><strong>This Week in React :</strong> L'histoire et l'évolution de la newsletter de référence.</li></ul><ul><li><strong>Conseils :</strong> Comment construire sa propre routine de veille technologique.</li></ul><p><br /></p><p><strong>Notes de l'émission</strong></p><ul><li><a href="https://shopify.github.io/react-native-skia/docs/skottie/" target="_blank" rel="ugc noopener noreferrer">https://shopify.github.io/react-native-skia/docs/skottie/</a></li><li><a href="https://www.shadertoy.com/" target="_blank" rel="ugc noopener noreferrer">https://www.shadertoy.com/</a></li><li><a href="https://github.com/software-mansion/TypeGPU" target="_blank" rel="ugc noopener noreferrer">https://github.com/software-mansion/TypeGPU</a></li><li><a href="https://shopify.engineering/webgpu-skia-web-graphics" target="_blank" rel="ugc noopener noreferrer">https://shopify.engineering/webgpu-skia-web-graphics</a></li><li><a href="https://shopify.github.io/react-native-skia/docs/skottie" target="_blank" rel="ugc noopener noreferrer">https://shopify.github.io/react-native-skia/docs/skottie</a></li></ul><p><br /></p><p><br /></p><p><strong>Animé par</strong></p><p>David Leuliette</p><ul><li><a href="https://twitter.com/intent/follow?screen_name=flexbox_" rel="ugc noopener noreferrer" target="_blank">⁠https://x.com/flexbox_⁠</a></li><li><a href="https://go.bsky.app/6QQemwz" rel="ugc noopener noreferrer" target="_blank">https://go.bsky.app/6QQemwz</a></li></ul><p>Sébastien Lorber</p><ul><li><a href="https://x.com/sebastienlorber" target="_blank" rel="ugc noopener noreferrer">https://x.com/sebastienlorber</a></li><li><a href="https://thisweekinreact.com" target="_blank" rel="ugc noopener noreferrer">https://thisweekinreact.com</a></li><li><a href="https://www.linkedin.com/in/sebastienlorber/" target="_blank" rel="ugc noopener noreferrer">https://www.linkedin.com/in/sebastienlorber/</a></li></ul><p><br /></p><p><strong>En vidéo :</strong></p><p>Live : <a href="https://www.twitch.tv/flexboxlive" rel="ugc noopener noreferrer" target="_blank">https://www.twitch.tv/flexboxlive</a></p><p>VOD : <a href="https://www.youtube.com/playlist?list=PLmewDYeBL3XIx7Lnga-jO3eRjOsKQ-HW0" rel="ugc noopener noreferrer" target="_blank">https://www.youtube.com/playlist?list=PLmewDYeBL3XIx7Lnga-jO3eRjOsKQ-HW0</a></p><p><strong>Tous les liens :</strong> <a href="https://weshipit.today/podcast" rel="ugc noopener noreferrer" target="_blank">https://weshipit.today/podcast</a></p>`,
+    slug: 'this-week-in-react',
+    spotify_url:
+      'https://open.spotify.com/episode/4u0abzAvJBiihcBPi36aTd?si=e8ffadee1b454688',
+    apple_podcast_url:
+      'https://podcasts.apple.com/fr/podcast/lart-de-la-veille-tech-les-secrets-de-la/id1790867559?i=1000740512355',
+    youtube_embed_id: 'XR5JUGV4ED0',
+    company_logo:
+      'https://thisweekinreact.com/fr/img/TWIR_LOGO_SIMPLE_NOBG.png',
+    guest_full_name: 'Sébastien Lorber',
+  },
+  {
+    name: 'Skia',
+    title:
+      "Du GPU à React Native : Dissection d'une stack graphique avec William Candillon",
+    number: 24,
+    description_short:
+      "Dissection d'une stack graphique avec William Candillon",
+    description: `<p>Dans cet épisode, David reçoit William Candillon pour une exploration technique du monde graphique.</p><p><strong>Au programme :</strong></p><ul><li><strong>Parcours :</strong> De Lille à Zurich, la découverte de la programmation graphique.</li></ul><ul><li><strong>L'évolution Tech :</strong> La transition d'OpenGL vers WebGPU et l'intégration de Skia dans React Native.</li></ul><ul><li><strong>Can It Be Done :</strong> L'impact de sa série YouTube et l'importance de l'Open Source (Software Mansion).</li></ul><ul><li><strong>Performance :</strong> Gestion explicite des ressources, évitement du Garbage Collection et contraintes de développement.</li></ul><p>Une plongée fascinante dans l'optimisation et l'innovation graphique sur mobile.</p><p><br /></p><p><strong>Notes de l'émission</strong></p><ul><li><a href="https://shopify.github.io/react-native-skia/docs/skottie/" target="_blank" rel="ugc noopener noreferrer">https://shopify.github.io/react-native-skia/docs/skottie/</a></li><li><a href="https://www.shadertoy.com/" target="_blank" rel="ugc noopener noreferrer">https://www.shadertoy.com/</a></li><li><a href="https://github.com/software-mansion/TypeGPU" target="_blank" rel="ugc noopener noreferrer">https://github.com/software-mansion/TypeGPU</a></li><li><a href="https://shopify.engineering/webgpu-skia-web-graphics" target="_blank" rel="ugc noopener noreferrer">https://shopify.engineering/webgpu-skia-web-graphics</a></li></ul><p><br /></p><p><strong>Animé par</strong></p><p>David Leuliette</p><ul><li><a href="https://twitter.com/intent/follow?screen_name=flexbox_" rel="ugc noopener noreferrer" target="_blank">⁠https://x.com/flexbox_⁠</a></li><li><a href="https://go.bsky.app/6QQemwz" rel="ugc noopener noreferrer" target="_blank">https://go.bsky.app/6QQemwz</a></li></ul><p>William Candillon</p><ul><li><a href="https://x.com/wcandillon" target="_blank" rel="ugc noopener noreferrer">https://x.com/wcandillon</a></li><li><a href="https://www.youtube.com/wcandillon" target="_blank" rel="ugc noopener noreferrer">https://www.youtube.com/wcandillon</a></li><li><a href="https://www.linkedin.com/in/wcandillon/" target="_blank" rel="ugc noopener noreferrer">https://www.linkedin.com/in/wcandillon/</a></li></ul><p><br /></p><p><strong>En vidéo :</strong></p><p>Live : <a href="https://www.twitch.tv/flexboxlive" rel="ugc noopener noreferrer" target="_blank">https://www.twitch.tv/flexboxlive</a></p><p>VOD : <a href="https://www.youtube.com/playlist?list=PLmewDYeBL3XIx7Lnga-jO3eRjOsKQ-HW0" rel="ugc noopener noreferrer" target="_blank">https://www.youtube.com/playlist?list=PLmewDYeBL3XIx7Lnga-jO3eRjOsKQ-HW0</a></p><p><strong>Tous les liens :</strong> <a href="https://weshipit.today/podcast" rel="ugc noopener noreferrer" target="_blank">https://weshipit.today/podcast</a></p>`,
+    slug: 'skia',
+    spotify_url:
+      'https://open.spotify.com/episode/5yEyIiz9pbvPZt9LRfL1Nz?si=wN6a0-9yQe68Fkhk7LupdA',
+    apple_podcast_url:
+      'https://podcasts.apple.com/fr/podcast/du-gpu-%C3%A0-react-native-dissection-dune-stack-graphique/id1790867559?i=1000745995827',
+    youtube_embed_id: 'ecZANWRWyms',
+    company_logo:
+      'https://user-images.githubusercontent.com/306134/146549218-b7959ad9-0107-4c1c-b439-b96c780f5230.png',
+    guest_full_name: 'William Candillon',
+  },
 ];

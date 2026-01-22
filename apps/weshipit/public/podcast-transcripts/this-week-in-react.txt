@@ -1,0 +1,1116 @@
+David Leuliette (00:01.884)
+Alors Seb, sans transition activity ça marche avec rarac native ou pas ?
+
+Seb (00:07.845)
+Bon, commence fort. Je ne sais pas encore parce que crois que React Native est un peu en retard sur React 19. de mémoire, c'était quoi ? C'était sur la version 19.2 qui est devenue stable. Donc je ne pas que React Native soit déjà encore...
+
+David Leuliette (00:26.484)
+19, ouais.
+
+Seb (00:31.776)
+encore sur cette version et je suis pas sûr que ce soit inclus dans la version expérimentale pour Ragnative. Après c'est compliqué de comprendre comment leurs features flag fonctionnent des fois donc...
+
+David Leuliette (00:40.564)
+Ouais il fonctionne exactement ouais. Non mais c'est clair pour ceux qui savent pas ce que c'est Activity, je parie que c'est parce que vous lisez pas la newsletter de Seb ici présent, This Week in React. C'est pour ça que vous avez aucune idée de pourquoi vous le faites. En plus si je me souviens bien, en vrai, instant pro-tip, avant je lisais plein de newsletter, et en plus c'est vrai, je te rappelle j'étais dans l'avion quand on était... quand on était en... à AbJS.
+
+Seb (00:51.637)
+Bah oui.
+
+Seb (01:08.546)
+Ouais, on peut l'un ou un.
+
+David Leuliette (01:09.0)
+Et je t'avais dit ouais ta lune zetteur elle est trop bien mais je suis busy j'ai pas le temps de la lire, je suis habitué d'abonner à plein d'autres. Et en fait résultat tu m'as convaincu, j'ai désabonné tous les autres et là c'est l'une des seules que je suis celle là et celle d'Infinite Red et j'ai arrêté tous les autres. bah de rien pour le pro tip. Bonjour et bienvenue vous êtes sur le cross-platform show, le podcast dédié au développement d'applications mobiles avec RecNative. Je suis David, développeur chez Wichipit.
+
+Seb (01:23.983)
+ben écoute, merci pour me lire régulièrement.
+
+David Leuliette (01:37.652)
+Nous sommes en décembre 2025. Je suis accompagné de Ludwig et Sébastien. Ludwig, comment ça va ?
+
+Ludwig (01:46.741)
+Ça va bien et toi ?
+
+David Leuliette (01:48.164)
+chroniqueur régulier, t'es passé voice. Voice, attends c'était quoi sur les statuts, sur IRC, quand t'étais voice, t'sais t'avais trois statuts, admin et tout là, on connait pas, moi c'est pas grave.
+
+Seb (01:50.478)
+...
+
+Ludwig (02:00.213)
+j'étais sur TeamSpeak, me souviens un peu, RC ça fait longtemps.
+
+David Leuliette (02:04.955)
+Bon bah c'est bon, t'as gagné un status, voilà. Chroniqueur régulier. Ravie de t'accueillir. Et Seb ! Comment ça va Seb ?
+
+Seb (02:06.254)
+Ben écoute ça va, il fait un peu froid là mais ça va on fait avec.
+
+David Leuliette (02:16.787)
+Température extérieure de 7°C, la météo, providée par David Lediette. Est-ce que tu peux te présenter à la communauté et partager un peu ton parcours pour ceux qui ne te connaissent pas encore ?
+
+Ludwig (02:22.933)
+...
+
+Seb (02:31.214)
+Je reviens un peu en arrière, comme ça, ça donne un peu plus de contexte. J'étais situé d'une startup...
+
+David Leuliette (02:39.603)
+Ouais carrément, juste plus études, études, et si tu peux commencer études ce serait parfait parce que je sais qu'il dans l'audience des gen A.I. vois, a peut-être pas des gen A.I. tu vois mais il en a qui savent pas encore pour dire que tu peux arriver à un parcours même si tu fais des études qui sont pas forcément relevantes
+
+Seb (02:46.818)
+ouais ouais, bon.
+
+Seb (02:54.606)
+Oui.
+
+Seb (03:00.526)
+Bon je vais passer très vite parce que du coup... Sinon on va passer une heure là dessus. en gros voilà, moi j'ai pas appris à coder quand j'avais 10 ans. gros les seuls trucs que je faisais, enfin j'ai découvert le code on va dire par vraiment des jeux vidéo genre Counter Strike. Je m'enfermais dans ma chambre et je jouais à ça et puis en fait il avait un truc qui s'appelait Bunny Hop qui permettait de sauter et d'accélérer en même temps.
+
+David Leuliette (03:05.811)
+C'est ça !
+
+Seb (03:28.43)
+J'avais fait un petit alias où fait tu presses juste un bouton sur ton clavier et ça fait un enchaînement de deux ou trois commandes. Voilà et donc c'était mon premier script on va dire. Je sais devais avoir entre 12 et 15 ans. Et puis après je me suis intéressé aussi un peu au piratage.
+
+Seb (03:48.782)
+Je reçois un appel et du coup ça fait un truc... malheureusement. Voilà, j'ai coupé le son mais apparemment c'est pas bon quand on t'appelle pendant les podcasts.
+
+David Leuliette (03:48.968)
+on a perdu ton son, vas-y, vas-y, vas-y, piratage informatique quoi.
+
+Ludwig (04:02.357)
+Tu faisais partie des mecs sur Counter Strike qui avaient scripté le bunny hop et tu pouvais faire les maps KZ et tu faisais de l'escalade
+
+Seb (04:12.718)
+Alors KZ ça me parle pas mais moi j'ai beaucoup aimé Team Fortress Classic et effectivement le bunny hop sur Team Fortress c'était un truc assez utile à l'époque on va dire. Bon ça c'était il très longtemps, je devais avoir 15 ans. Et puis ensuite je me suis intéressé au piratage informatique, les DVX, les MP3, les machins donc bon en gros j'étais un peu un script kiddie qui...
+
+lancer des points exe que j'avais pas codé sur ma machine pour essayer de pirater des trucs et héberger des machins à droite à gauche. Donc je comprenais absolument pas ce que je faisais mais en tout cas ça marchait bien parce que j'étais des broyards et bon j'ai appris à faire des petits scripts sur IRC justement dont on parlait où en fait bah voilà quand il a un message qui arrive sur Unchannel alors tu réagis en faisant en exécutant une commande sur ta machine avec un point byte ou des trucs comme ça pour faire des transferts de fichiers entre FTP.
+
+Voilà, c'est comme ça que j'ai appris à coder. Enfin, bon, coder, faire des petits scripts et avoir la passion pour l'informatique. Après, voilà, c'est ça, exactement.
+
+David Leuliette (05:18.6)
+Ouais, veux faire de l'informatique exactement, de l'info... Informaticien, comme on disait avant !
+
+Ludwig (05:24.949)
+la dernière fois que j'ai utilisé, on faisait des parties de loup-garou en ligne en scripté.
+
+Seb (05:30.638)
+ça ne parle pas, mais ça me surprend pas trop que ça existe. Donc, bon voilà, c'est comme ça que j'ai découvert là, on va dire le début, l'initiation, la programmation. Après, je suis allé, j'ai fait mes études au lycée, je suis rentré en école d'ingénieur justement dans le but de me spécialiser un peu dans la sécurité informatique, mais je me suis vite rendu compte que ce n'était pas forcément le truc qui allait me plaire de faire des mises à jour de pages de sécurité ou trucs comme ça.
+
+Donc finalement, je suis devenu développeur. J'ai vraiment appris à programmer dans l'école d'ingénieur, avant. On a fait du Java. Pour passer vite un peu sur le début de ma carrière, gros, j'ai rejoint Voyage SNCF qui était en Java. Je resté un an. Après, je rejoins une SS2Z qui s'appelle Zenica. Je suis resté trois ans là-bas. J'étais en mission sur des projets comme Renault Shop et Digipost.
+
+En 2014, j'ai rejoint une startup en tant que CTO sur laquelle je contribuais déjà depuis 2012 mais on va dire en temps partiel parce qu'il avait pas eu de levé de fond ou quoi que ce soit. bon, en gros, entre 2012 et 2017, j'ai été dans cette startup avec un poste de lead CTO. Bon, c'était une petite boîte, donc j'étais lead d'une équipe de entre une et cinq personnes.
+
+David Leuliette (06:53.321)
+moi même. quand même, 5 ça commence, commence.
+
+Ludwig (06:54.133)
+...
+
+Seb (06:59.51)
+Et voilà, bon après, moi je m'intéressais plus à la partie technique et c'est vrai que le projet en lui-même, c'était pas forcément ma vision, on avait pas mal de désaccords donc au bout d'un moment, j'ai arrêté de travailler avec cette entreprise et je me suis lancé en freelance en rejoignant d'autres collègues qui avaient créé un collectif de freelance avec qui je travaillais par le passé et en fait...
+
+La startup m'a permis de monter en compétence sur React puisqu'en fait dès que c'est sorti vers 2013, on s'y intéressait. Je crois qu'en décembre 2013, on avait déjà un prototype de refonte de notre app Frontend qui passait de backbone à React. Moi j'avais fait un POG sur Angular et puis voilà.
+
+David Leuliette (07:45.704)
+ok c'est bon, Backbone on connait, j'ai fait du Backbone aussi mais j'ai fait d'autres trucs, j'ai fait à Backbone Ember et après React. Et Angular entre les deux.
+
+Seb (07:54.164)
+Voilà, moi là bas j'étais pas du tout front-end en ce qui m'intéressait c'était surtout le backend, la programmation fonctionnelle, je faisais beaucoup de Scala à l'époque et en fait du coup j'ai vu que dans ma start-up là justement il avait un besoin front, donc en fait comme je voyais du code spaghetti en backbone je me suis dit bon il faut que je leur donne un coup de main, je le CTO, il faut que je maîtrise un peu tout le truc, pas juste le back.
+
+et du coup je me suis mis au front-end et c'est comme ça que ma passion pour React est née. en 2017, cette entreprise je l'ai quittée parce que ça ne passait pas très bien. la boîte était un peu... Elle survivait mais ça n'a jamais vraiment très bien fonctionné. j'ai rejoint un collectif de freelance avec qui j'avais travaillé. Enfin, c'était des anciens collègues qui avaient monté ça. Et du coup, ça m'a...
+
+mis le pied à l'étrier, va dire qu'ils m'ont pas mal aidé sur la partie admin, le choix des statuts, ils avaient aussi déjà des clients existants sur lesquels il y avait des besoins, donc moi j'ai tout de suite aidé sur la partie frontaine vu que j'avais une expertise là-dessus, que j'avais développé sur React justement qui était en train de vraiment se développer et puis en parallèle aussi j'avais aussi mes propres missions dont une avec un ami qui avait besoin d'une application React Native.
+
+David Leuliette (08:55.531)
+les trucs relous...
+
+Seb (09:17.998)
+dans l'immobilier, j'ai commencé à du expo en 2017 à peu près.
+
+David Leuliette (09:23.252)
+Ok, ok, Racknative, ok, bah au tout début en fait, un peu... Ok, donc là, on est en 2017, voilà, tu fais du Racknative, un peu d'XP, tout ça... Qu'est-ce qui... Mais là, il a toujours pas de newsletter.
+
+Seb (09:27.444)
+Voilà, c'est ça.
+
+Seb (09:36.6)
+Il toujours pas de newsletter.
+
+David Leuliette (09:38.388)
+Alors vas-y raconte nous pourquoi, pourquoi, de où s'est venu l'idée, pourquoi l'email en 2020 et plus...
+
+Seb (09:47.266)
+Alors pourquoi... Quand j'étais dans ce collectif de Freelance, c'est un collectif qui était plutôt spécialisé rubis. Moi j'étais un des seuls front-end avec... En tout cas, je suis arrivé, c'est moi qui ai peu initié... Il y avait une ou deux personnes qui faisaient du front-end et je les ai un peu initiés à React et formés sur cette partie-là. Mais globalement, le collectif dans son ensemble, avait une douzaine de personnes et...
+
+c'était plutôt des dev rubies, ils faisaient beaucoup de projets rubies, il y en avait quelques uns en React mais peut-être pas forcément suffisamment pour valoriser mon expertise, sachant que moi quand j'ai rejoint j'avais déjà trois ans d'expérience en React et mon but en fait c'était d'augmenter un peu mon TGM aussi en valorisant cette expertise donc j'ai commencé à poster sur LinkedIn en 2019 donc en gros je faisais de la veille et puis je commentais la veille que...
+
+que faisais, donc un poste par jour pour dire des trucs intéressants que j'avais trouvé dans tel ou tel article. Donc moi je faisais ça en fait, j'allais au sport, je lisais un article et puis en même temps, je prenais sur la séance, pendant que je faisais du vélo ou un peu de cardio doux, je réalisais un petit commentaire pour dire, voilà, j'ai trouvé certains articles intéressants pour telle ou telle raison. À l'époque, il avait pas grand monde qui faisait ça, donc je me suis vite démarqué du lot.
+
+David Leuliette (11:08.436)
+Ouais et puis c'était Twitter, c'était pas pareil, il pas les mêmes algos et ouais je me souviens qu'au tout début c'était ça.
+
+Seb (11:11.854)
+Twitter, je postais aussi des trucs mais c'était en anglais donc après ça c'est encore un autre sujet c'est le choix de la langue par plateforme. j'ai choisi d'utiliser, mon but c'était vraiment développer mon personnel branding pour vendre on va dire des missions de conseils un peu plus avec un TGM un peu plus élevé, des missions courtes on va dire du parle un audit d'une base de code ou du coaching un jour par semaine ou des choses comme ça.
+
+Et du coup c'est LinkedIn qui m'a permis de développer ça parce que j'ai décidé de poster en français sur LinkedIn alors que sur Twitter j'étais plutôt en anglais. Et... ouais c'est comme ça ouais. Donc la Niche des Teintes elle a vraiment démarré comme ça si je postais tous les jours à partir de 2019 sur LinkedIn en français.
+
+David Leuliette (11:46.328)
+tu postais sur LinkedIn, t'as je savais même pas, je savais même pas En vrai je... Ok je savais pas du tout
+
+Seb (11:59.25)
+Et à côté de ça, on m'a suggéré en fait, tu devrais créer une newsletter pour qu'on puisse s'abonner à tes trucs et suivre régulièrement plutôt que de... enfin, on va dire se reposer sur l'algo LinkedIn pour voir tes publications. Donc effectivement, j'avais déjà consulté une petite audience sur LinkedIn à ce moment-là qui me suivait régulièrement. Et quand j'ai créé la newsletter, va dire le premier jour, j'avais déjà 500 abonnés. Au bout d'une semaine...
+
+un millier on va dire parce qu'en fait j'ai converti l'audience que j'avais déjà sur la plateforme quoi et donc voilà en 2020 je commençais à me constituer une petite audience francophone React et ça n'a pas forcément grossi très vite mais ça suffisait pour trouver quelques missions de conseil de temps en temps et me faire une petite réputation
+
+Mais il se trouve qu'en fait j'ai une opportunité un peu particulière qui est tombée de nulle part, qui a un peu rebattu les cartes, c'est qu'en fait j'ai vu un tweet passé un jour d'un mec de chez Facebook, je crois que c'était le directeur de l'open source chez Facebook, un truc comme ça, qui disait, oui on cherche un freelance pour nous aider sur un projet, alors le projet c'était DocuSaurus.
+
+En gros, il cherchait plutôt un mec qui était aux Etats-Unis, disponible à temps plein, pour une mission de trois mois. ça collait pas forcément avec ma recherche parce que moi je cherchais, on va dire, des missions à temps partiel avec un gros TGM et sur une durée plus ou moins longue quoi. Parce qu'en fait, les newsletter me prenaient aussi beaucoup de temps, donc j'y liais déjà un jour par semaine. Donc je me suis dit, peux pas accepter des missions à temps complet. Mais il se trouve que j'ai répondu à cette offre en envoyant un DM sur...
+
+et en fait deux mois après je me suis retrouvé à travailler avec Facebook sur DocuSource qui est un projet open source assez populaire et
+
+David Leuliette (14:02.485)
+Pour ceux qui ne connaissent pas Dockusaurus et pour faire de la doc, vous mettez du Markdown et d'ailleurs au taf on en train d'utiliser ça et ça procure de la joie. Le message est passé !
+
+Seb (14:07.466)
+Voilà, c'est ça.
+
+Seb (14:13.774)
+Ah bon ? C'est la doc qui procure de la joie, c'est plutôt rare ça.
+
+David Leuliette (14:20.693)
+Exactement, donc tu vois.
+
+Ludwig (14:23.189)
+Et du coup tu dirais que c'est ton personal branding avec la newsletter qui a fait que tu as pu décrocher ce poste ou...
+
+Seb (14:30.67)
+Je pense que pour Facebook, c'est pas vraiment ça parce que j'étais plutôt connu en France mais sur Twitter, je postais un peu mais j'avais une petite audience, je devais avoir 1000 ou 2000 followers donc c'était pas non plus... Ça faisait longtemps que j'interagissais avec la communauté REAC mais sans vraiment être créateur de contenu. C'était plus de manière informelle, des discussions...
+
+Les gens me voyaient peut-être sur GitHub, je faisais peut-être quelques pull requests de manière opportuniste sur certains projets comme Gatsby, Rack Navigation ou des choses comme ça, j'étais pas quelqu'un de connu plus que ça dans la communauté à part quelques petites contributions sporadiques à droite à gauche. Donc je pense que ce qui a vraiment convaincu Meta de me faire travailler sur DocuSaurus, c'est que déjà j'avais quelques pull requests
+
+à mon actif sur différents projets dont certains qui étaient liés à React. Et surtout j'ai envoyé 2 3 pulleriquais sur DocuService tout de suite pour leur montrer que j'étais capable de faire du beau code open source avec des tests unitaires et tout ça. bon, j'en ai pas la certitude mais je pense que c'est quand même ça qui a vraiment joué à ma faveur dans le sens où fait, voilà, moi c'est la manière dont je vois les choses, c'est en fait si tu veux travailler sur un projet open source...
+
+qui financé par une entreprise et qui est prêt, les convaincre de payer pour faire le travail, tu peux déjà faire le travail gratuitement pour leur montrer que tu es capable de le faire. Et une fois que tu leur as prouvé que tu es capable de le faire, n'y a aucune raison qu'en fait ils n'y se pas. On a envie qu'ils continuent donc autant le payer.
+
+Ludwig (16:09.557)
+C'est un peu ton mantra, j'ai l'impression que savoir donner pour recevoir. Tu partages ton savoir, tu le partages sur l'open source et ça t'a débloqué des opportunités.
+
+Seb (16:19.64)
+Ouais c'est vrai que c'est un peu ma philosophie aussi sur plein d'autres aspects. Bon après c'est un truc rien à voir mais tu vois par exemple en tant que freelance, bon tu gères une petite entreprise mais moi quand on m'envoie une facture, bah je la paye dans l'heure quoi tu vois. Je suis pas là en mode condition de paiement à la fin du mois ou je sais pas quoi, c'est en fait tu je me mets à la place de l'autre et je me dis bon...
+
+David Leuliette (16:35.093)
+Ouais bah... Ouais c'est ça.
+
+Seb (16:42.99)
+Même il a certaines personnes avec qui je veux travailler et en qui j'ai confiance, typiquement Software Munchen qui mettent sur la newsletter aujourd'hui. Bon, s'ils me disent voilà on t'envoie une facture à l'avance pour les deux newsletters du mois, je les paye d'avance, je m'en fiche, vois, c'est pas... Moi je trouve que c'est bien d'établir la confiance de cette manière-là avec les partenaires. Et puis c'est pareil sur l'open source, si tu arrives à convaincre les responsables d'un projet open source que...
+
+David Leuliette (16:58.709)
+Ouais mais c'est clair.
+
+Seb (17:09.986)
+que tu peux faire le travail en amont en mettant un petit investissement qui raisonnable. n'ai pas passé non plus trois semaines sur les poudres de course que j'ai faites, mais bon, tu passes une demi-journée à un jour complet pour faire, prouver que tu es capable de faire le travail. C'est un peu ta période d'essai. Autant le faire, ça vaut le coup parce que derrière, tu vois, moi, je pensais que c'était pour une mission qui allait durer trois mois et que ce serait juste bien d'avoir Facebook sur le CV.
+
+Aujourd'hui ça fait cinq ans que je bosse pour eux en full remote à distance avec un bon TGM et au final, je ne m'attendais pas vraiment à ça et au final c'est assez particulier parce que ça a un peu remis en question la newsletter parce qu'en fait je me suis dit bon j'ai plus besoin de trouver un client maintenant puisque en fait j'en un qui est régulier ça a l'air d'être un contrat qui va durer.
+
+qu'est que je fais de cette newsletter ? Est ce que je passe un temps complet avec Facebook ou est ce que je la garde à côté et je ne qu'à mi-temps avec Facebook qui forcément me diminue mon chiffre d'affaires en freelance mais en même temps peut m'apporter quelque chose sur long terme. J'ai fait le choix de continuer la newsletter et la raison pour laquelle je l'ai fait c'est que je me suis dit il faut que je trouve un moyen de la monétiser parce qu'il dédiait deux jours par semaine
+
+ça fait quand même 40 % de chiffre d'affaires en moins sur mon revenu freelance donc si je monétise pas je vais pas tenir longtemps quoi.
+
+David Leuliette (18:41.429)
+Ouais tu peux pas continuer indéfiniment. super, parlons-en de la newsletter. Donc là, ok, t'as ta newsletter, tu passes deux jours semaine. Comment tu filtres, tu priorises, tu te dis quelles sources d'information méritent de l'attention dans tout ce bruit qui est le chaos que représente l'écosystème React et JavaScript, tu vois ?
+
+Seb (18:49.166)
+Mmh.
+
+Seb (19:02.298)
+Ah bah ça... C'est beaucoup de temps. C'est beaucoup de temps parce que... Comment dire... Bon en gros j'ai... Pour détailler un peu mon workflow de curation tel qu'il est aujourd'hui parce que ça a évolué forcément avec le temps quand on regarde la première newsletter et celle de maintenant elle ne se ressemble pas du tout. Donc mon workflow aujourd'hui c'est basé sur trois sources.
+
+Il a les flux RSS. Donc en gros, je suis abonné à un peu plus de 500 sources blogs RSS que j'ai collecté au fil du temps. Il y a des sites sur lesquels je suis abonné avec des sortes de flux RSS artificiels. Moi, j'utilise le lecteur InnoReader pour poursuivre les sources. Il y a certains sites qui n'ont pas de flux RSS. Donc, du coup, tu peux monitorer en fonction de...
+
+David Leuliette (19:33.992)
+Ouais, les vues.
+
+David Leuliette (19:56.247)
+Ah ouais Smart en fait ça fait... Attends c'était quoi ? C'est un flip... C'est quoi le truc rouge là ? Flip... Flip... Flipper ? Flipkart ? Un truc aussi ça ressemble... Flipboard ! C'est un peu Flipboard. C'est... Ouais ok tu mets un... Ouais...
+
+Ludwig (19:57.941)
+...
+
+Seb (20:04.27)
+oui oui...
+
+Ludwig (20:06.549)
+bon
+
+Seb (20:08.59)
+Flipboard, vais pas utiliser mes... ouais, InnoReader, c'est un lecteur de RSS sur lequel en fait tu agrèges toutes les sources au même endroit. Bon, j'utilise principalement pour le flux RSS, mais tu peux aussi suivre des sites en fonction de de sélecteurs CSS ou de chemins xpaf ou des trucs comme ça.
+
+David Leuliette (20:17.056)
+Ok.
+
+David Leuliette (20:26.528)
+Ouais et puis ça te crée un truc quoi. Ok, je vois.
+
+Seb (20:29.624)
+Ouais tu peux aussi t'abonner à des newsletters, bon je n'utilise pas toutes les features mais bon globalement tu peux même je crois t'abonner à des gens sur twitter ou sur des réseaux sociaux ou des trucs comme ça. Donc si tu veux vraiment être sûr de rien louper sur certaines sources tu peux t'inscrire sur ce truc là et puis monitorer différentes sources quoi. Donc c'est un outil parmi d'autres que moi j'aime bien. Un autre outil que je... enfin les...
+
+David Leuliette (20:38.144)
+Hmm... Ok.
+
+Ludwig (20:38.869)
+Très cool.
+
+David Leuliette (20:50.838)
+comment
+
+Seb (20:57.966)
+d'autres sources d'information que j'utilise, bah en fait je me suis abonné aussi à toutes les autres newsletters, mes concurrents et tout ça donc bon, si jamais il trouve un truc que moi j'ai pas trouvé non seulement ça me permet de découvrir éventuellement une nouvelle source que je connaissais pas donc je vais la rajouter comme ça la prochaine fois je manque pas la source et puis bah il a aussi de temps en temps des articles qui trouvent que moi j'ai pas trouvé et du coup bah si je juge que c'est pertinent je vais les inclure et voilà quoi bon après
+
+David Leuliette (21:03.022)
+Ah bah oui, c'est ça.
+
+Seb (21:26.476)
+J'ai pas vraiment de honte à prendre un article que j'ai trouvé dans leur newsletter parce que moi même aujourd'hui je pense que je suis plus compétent que pour trouver les articles. Je consacre plus de temps à ça que eux et du coup c'est plutôt l'inverse qui se passe aujourd'hui. C'est en fait c'est moi qui trouve les trucs intéressants dans l'écosystème et ensuite c'est relayé par toutes les autres newsletters parce qu'ils ont vu que c'était dans la mienne. Donc ça arrive.
+
+David Leuliette (21:48.707)
+Très rigolo. Ouais mais parce que les autres utilisateurs ils sont un peu généralistes tu vois. Moi c'est pour ça que je suis This Week in React parce que c'est que React Native. D'ailleurs en fait, en vrai j'aimerais qu'il ait This Week in React Native mais bon. Parce que scroller c'est chiant, ça me fatigue. Faut que je scroll, faut que je scroll. Ouais mais c'est... Non mais je pense pas parce qu'en vrai des fois ça m'arrive de cliquer quand même sur la section React pour un photo. Franchement ce serait vraiment très compliqué de segmenter...
+
+Ludwig (22:01.429)
+Une segmentation ?
+
+Seb (22:01.856)
+Oui, bah ouais peut-être, il faut...
+
+Ludwig (22:12.565)
+Oui.
+
+Seb (22:16.302)
+Oui, c'est ça. Moi, j'essaie de rester... Les news que je priorise dans ma curation, c'est vraiment les trucs qui touchent le plus grand public. Par exemple, semaine, sais plus, il avait un article sur faire brancher WordPress, Headless avec GraphQL et Next.js, ou je sais pas quoi, c'était un peu une sorte de tutoriel, mais qui était bien... relativement complet, donc c'était pas forcément une mauvaise ressource, mais c'est juste que c'est quand même ultra spécifique.
+
+David Leuliette (22:16.839)
+Les deux euh...
+
+Seb (22:44.082)
+Donc c'est un peu difficile d'inclure ce genre de choses et c'est pareil tu vois tu as des ressources un peu dev créatives avec Rectifyber ou des choses comme ça. J'en mets de temps en temps quand ça a l'air un peu plus abouti mais moi j'ai pas forcément les compétences vraiment pour juger si c'est une bonne ressource dans le domaine et puis ensuite, ensuite voilà ça touche qu'une minorité de la communauté.
+
+David Leuliette (23:01.032)
+Ouais pertinent, et où est-ce que c'est utile ?
+
+Seb (23:07.15)
+Donc je ne pas saouler les gens en incluant des ressources qui en fait ne vont servir qu'à 1 % des personnes qui lisent la newsletter. Donc globalement j'essaye de rester sur les news qui sont le plus proche de React Native Core, React Core et les news on va dire qui touchent vraiment un grand nombre de personnes et après je pense qu'il a d'autres médias aussi qui permettent de creuser sur d'autres sujets. vois si tu es passionné de TypeScript il a des newsletters qui sont plus dédiés à TypeScript.
+
+David Leuliette (23:14.985)
+Ok.
+
+Seb (23:36.174)
+Si t'es passionné des features JavaScript qui arrivent vraiment spécifiquement dans JavaScript, y a d'autres sources pour ça aussi. Je pense que les médias de manière générale se complètent. Tu peux t'abonner à plusieurs. Après tout le a une intention limitée, donc tu ne pas non plus t'abonner à mille newsletters. Mais voilà, tu as peut-être deux ou trois sujets sur lesquels tu peux t'abonner.
+
+et ça se complète bien et puis les gens, les médias ont des lignes éditoriales qui sont différentes et qui peuvent se compléter.
+
+David Leuliette (24:08.808)
+Et si demain il a quelqu'un qui disparaît, qui c'est qui hurle en premier et pourquoi ?
+
+Seb (24:16.628)
+Bah c'est toi ! Vas-y, hurle ! Je sais pas !
+
+David Leuliette (24:18.518)
+Ah bah ouais ! Moi euh... Non, en vrai, en vrai, ça me... Je me sentirais peut-être mieux parce que en fait c'est tous les jeudis que je reçois la newsletter. Et vendredi... Et le jeudi c'est le jour où c'est KO et j'ai pas le temps de me poser. Donc je vais voir régulièrement tout le reste de la semaine le lien. suis là, ouais faut que je lise la newsletter quand même et tout.
+
+Seb (24:36.078)
+...
+
+Seb (24:41.007)
+Ha !
+
+Ludwig (24:41.581)
+Est-ce que la newsletter peut vraiment mourir dans le sens où je vois que maintenant tu collabores de plus en plus avec d'autres personnes ? Je crois que j'ai vu Théo Daud, j'ai vu des mecs de Sauther Mansion. Maintenant c'est un travail à plusieurs mains ?
+
+Seb (24:52.396)
+Ouais, c'est... En fait, la newsletter, j'ai réussi à la rendre viable avec les sponsors, donc bon moi je...
+
+David Leuliette (25:01.174)
+Ouais donc c'est vrai qu'on a un peu se passé mais ouais maintenant il y a des sponsors directement avec des slots de newsletter.
+
+Seb (25:07.828)
+Voilà, c'est ça. c'est pas forcément simple de tout gérer parce qu'en fait, tu passes beaucoup de temps aussi à la gestion administrative, les sponsors, s'assurer qu'ils t'envoient les pubs temps, les images dans les bonnes dimensions, dans tous ces trucs-là. Donc, j'ai un process qui est plutôt bien rodé maintenant. J'ai aussi deux assistantes virtuelles qui m'aident, on va dire, à la fois sur la partie commerciale et sur la partie contenu, cross-posting et tout ça.
+
+Mais oui, ça mis un peu de temps. va dire que c'est que à partir de 2022-2023 où j'ai vraiment eu une organisation un peu rodée sur cette partie là où j'ai commencé à déléguer. Donc j'ai commencé à travailler avec Teodo sur les créations de newsletter. Moi, l'idée, c'était en fait de dire voilà, quand je pars en vacances, sachant qu'il faut deux jours de travail rien que sur le contenu pour faire une newsletter, il faut pas que ça s'arrête. Je n'ai pas envie que quand je pars à l'été,
+
+ou je sais pas, en mai, à Pâques, ou j'en sais rien, que pendant deux semaines il a pas de newsletter parce que je peux pas les faire et que en fait du coup moi ça me fait s'éculpabiliser aussi parce que j'essaye de faire en sorte que la newsletter soit exhaustive donc c'est à que si tu lis la newsletter t'es sûr de rien louper d'important mais pour autant voilà quand je reviens de vacances si je dois traiter trois semaines de news c'est pas possible quoi parce que déjà il y a trop de qui se passent en une semaine que je dois beaucoup filtrer si en plus je dois couvrir trois semaines
+
+David Leuliette (26:24.407)
+Ouais, bah oui.
+
+Seb (26:34.158)
+c'est mission impossible. Donc j'essaye aussi de garder la continuité de la newsletter et maintenant que le business model est, on va dire, bon c'est pas ultra rentable, ça n'aura jamais l'occasion de me rendre millionnaire parce que, enfin en tout cas pour l'instant je l'envisage pas. Le but c'est plus pour moi que en fait voilà si jamais moi j'ai pas envie de faire des newsletters, le projet puisse quand même continuer de vivre. Sachant que bon ça fait quand même cinq ans que je fais ça maintenant.
+
+Ça me manque un peu, on va dire, de faire du vrai dev et y consacrer 2 à 3 jours par semaine, sachant que tout compris si on gère la partie commerciale, l'admin, toute la gestion, les emails à envoyer à droite à gauche, on est vraiment sur du 2 et demi 3 jours par semaine. Et donc 2 jours vraiment consacrés au contenu, ce que me confirment aussi mes partenaires aujourd'hui Théo Do et Software Mansion, ils passent vraiment 2 jours par semaine sur le contenu. C'est pas une blague, c'est vraiment le temps que ça prend.
+
+David Leuliette (27:08.407)
+Ha
+
+Seb (27:34.446)
+Et du coup, bah moi j'aimerais bien effectivement que si je me retirais un peu de l'équation, de faire en sorte que le truc reste viable, on va dire sur le long terme, mais que ma présence ne soit pas indispensable. Bon, j'ai pas encore réussi parce que je travaille avec des entreprises pour prendre certaines éditions de la newsletter, donc ça m'allège un peu, ça me permet de partir en vacances sans me dire, voilà, en fait, si je pars en vacances, ça va être compliqué le retour ou alors...
+
+Il a des trous, ça fait pas très pro quoi on va dire. veux citer un média, tu vois quand tu lis les échos ou je sais pas quoi c'est tous les jours tu vois. Il n'y a pas un jour où en fait ils disent en fait aujourd'hui il a pas de journal parce que le mec le chef il est parti en vacances tu vois. donc donc
+
+David Leuliette (28:19.882)
+Parce qu'il se passe rien ! J'avoue, j'avoue, j'avoue. Et y a... Vas-y, dans les derniers mois, c'est quoi la news qui t'a particulièrement surpris, si tu te rappelles, puisque vu que tu dois faire plein de sujets ? Dans les six derniers mois, va dire 2025, 2025. Ouais, six derniers mois au 2025, le plus gros event.
+
+Seb (28:36.622)
+Aaaaahm...
+
+2025 ? Je sais pas, je dirais que le truc qui m'a le plus surpris c'est peut-être le truc d'hier quoi. Faille critique, React Server Components, Remote Code Exécution, score 10 sur 10 de faille de sécurité quoi. Je sais pas si t'as...
+
+David Leuliette (28:46.781)
+truc d'hier c'est quoi ?
+
+David Leuliette (28:57.535)
+ouais, c'est rien à voir avec NPM qui s'est fait attaquer.
+
+Ludwig (28:57.621)
+...
+
+Seb (29:02.304)
+Bah c'est un peu dans le même genre, mais bon.
+
+Ludwig (29:02.773)
+...
+
+David Leuliette (29:04.722)
+parce que moi je me suis fait attaquer en fait en vrai avec le verre Shaoan Oa Shaiulud là 17h30 je fais un yarn install, boum ça télécharge une dependencies je reste 10 minutes je me barre je reviens chez moi je comprends je veux mater un film je vois un prou alors mon Mac il a choisi enfin il sifflait enfin tu sais les ventilateurs se sont mis en route je fais what the comment c'est possible qu'un Mac M3 se mette en route
+
+Seb (29:09.55)
+Chariot l'eau de
+
+Seb (29:17.39)
+Allez.
+
+Seb (29:28.302)
+Hmm.
+
+Seb (29:32.556)
+Hehehehehe
+
+David Leuliette (29:33.143)
+Je regarde processus
+
+Seb (29:45.151)
+ouais, d'accord.
+
+Seb (29:56.54)
+Oui.
+
+Ludwig (30:04.756)
+dans l'écosystème réagmatif.
+
+David Leuliette (30:06.742)
+Ouais, que t'as eu grâce à la newsletter.
+
+Seb (30:11.822)
+Ouais bah je pensais à ça justement là
+
+Ludwig (30:14.581)
+Là comme ça je sais pas mais je sais que... Non mais je dis souvent en fait tu partages des threads Twitter et je sais que moi du coup je découvre des threads où même des fois tu partages des pull requests qui ont été mergés et des fois je me dis waouh ça y est maintenant c'est con mais genre dans React Native on pourra faire des grids dans CSS enfin... Et tu vois les choses...
+
+David Leuliette (30:16.822)
+Faa... Vas-y.
+
+Seb (30:41.432)
+Ouais, ça... Non, bah tu vois le progrès un peu en temps réel quoi. Comme par exemple, bon, hier... allez, on est en français. Ça va, mais bon, et Shared Element Transitions dans Reanimated s'émergait là. Je pense que Reanimated 4.2 ça sort très prochainement et donc bah voilà, c'est une bonne nouvelle.
+
+David Leuliette (30:43.023)
+Je vous... Ouais juste le t... Bon assez du...
+
+Ludwig (30:43.409)
+C'est un mind-blowing mais genre...
+
+Ludwig (30:49.589)
+...
+
+Seb (31:10.67)
+Je ne pas que ce soit encore annoncé mais bon globalement ça va arriver très bientôt.
+
+Ludwig (31:15.925)
+Mais c'est là où je me suis dit, tu quand même un travail monstrueux de curation parce que suivre Twitter, suivre une newsletter, me paraît plutôt classique quand tu fais de la veille. Et aller suivre quel EPR a été ouvert, quel EPR a été mergé. trouve ça, même quel... Des fois tu poses des choses sur la TC...
+
+Seb (31:24.846)
+Hmm.
+
+Seb (31:38.126)
+Oui,
+
+Ludwig (31:38.293)
+qui font les normes JavaScript et tu poses en mode ah bah là tel feature en JavaScript est passé du stage 2 au stage 3 donc bientôt on va pouvoir faire je sais pas des fast arrows en JavaScript ça y est ça arrive. pas, suis ouah ! Des pipes pardon je pensais aux pipes.
+
+Seb (31:49.422)
+Alors sur github tu peux chaque chaque repos à un flux atom avec les releases le problème c'est que tu peux rien filtrer donc en fait
+
+David Leuliette (31:53.688)
+Ouais mais ça c'est pareil, c'est des... Si je me trompe ça, mais tu peux faire des fluoresces custom pour chaque release d'un projet GitHub ou...
+
+David Leuliette (32:10.167)
+Ouais c'est ça, c'est bon ça c'est
+
+ouais, merde ! Ouais du coup t'as tout... ouais...
+
+Seb (32:17.501)
+T'as certains projets, vois, exemple React, je sais plus si c'est React ou d'autres mais t'en as certains, tu peux pas les suivre de cette manière là parce qu'en à chaque fois que genre il a un Nightly Build qui release la nuit, vois, en fait t'as un truc qui arrive dans ton flux donc tu te retrouves avec 300 news par toutes les prérilices, tous les machins, ils arrivent dessus donc moi j'aimerais bien, c'est un truc que j'aimerais développer, c'est un outil qui permet de suivre les releases GitHub mais avec des filtres, tu vois, du genre
+
+David Leuliette (32:25.079)
+Ouais c'est trop le bordel.
+
+David Leuliette (32:29.025)
+Ouais.
+
+David Leuliette (32:32.673)
+Ouais donc...
+
+Seb (32:47.23)
+que les minor releases de ce framework alors que celui-là tu veux faire aussi les patchs parce que chaque projet a sa cadence de release qui est différente et tu te retrouves vite à avoir beaucoup de bruit et le signal vraiment pertinent tu le loop parce qu'en fait il est noyé dans le bruit donc c'est ça qui est pas évident tu obligé de vraiment mettre des filtres sur les sources que tu mets sinon c'est compliqué
+
+David Leuliette (32:50.859)
+Ou que les majors.
+
+David Leuliette (33:05.111)
+Ouais, signal versus noise quoi.
+
+David Leuliette (33:11.703)
+C'est parfait, on a une transition parfaite. Pourquoi ce pas dans DocuService alors ? Ce genre de feature. Ce genre de feature là où tu pourrais avoir un plugin qui filtre, qui puisse te faire ton propre FluorSS que sur les majeurs release.
+
+Seb (33:17.634)
+Qu'est-ce qu'il pas dans l'Occusaurus ?
+
+Seb (33:29.486)
+Sur DocuSaurus, un générateur de sites statiques. Après, a un plugin qui génère un flux RSS, mais c'est un flux RSS pour le blog DocuSaurus. Donc tu t'abonnes à tous les articles de blog. Généralement, quand il a un article de blog, c'est une annonce relativement importante. Par exemple, le site React Native utilise DocuSaurus. C'est un site un peu customisé en DocuSaurus.
+
+David Leuliette (33:31.799)
+...
+
+David Leuliette (33:45.527)
+Ouais.
+
+Ouais, un vrai truc, ouais, ouais, un vrai truc, ouais, j'avoue.
+
+Seb (33:57.342)
+On peut s'abonner au blog React Native avec le flux RSS. Généralement quand il poste un article de blog c'est quand même un truc suffisamment pertinent pour que ça vaille le coup de s'abonner. Mais par contre si tu t'abonnes au release React Native sur le repo GitHub, tu vas avoir aussi tous les patchs. pour chaque, par exemple, ne pas, React Native 0.81, tu vas avoir 0.1.81.6
+
+Généralement, c'est e-bagport, certains fixes qui ont été émergés sur main pour faire une petite release patch. Moi je ne les inclut pas dans la newsletter, parce que c'est rarement des patchs qui sont suffisamment critiques pour que ça intéresse vraiment grand monde. c'est bien d'upgrader la version React Native, mais si tu pas affecté par le bug du patch en question, ça va te faire une belle jambe.
+
+David Leuliette (34:48.203)
+Ouais ouais, j'avoue, j'avoue. Mais là je suis en train regarder le site de... enfin la doc de React elle est fait en docusaurus ou pas ?
+
+Seb (34:55.784)
+React non, ils ont préféré faire un site custom parce qu'en fait ils ont besoin un peu de dog food, je ne pas comment on dit en français. Non c'est pas vraiment ça, c'est plus ils voulaient vraiment tester les React Server Components tu vois, ils voulaient que ce soit en XJS parce que voilà, l'idée c'est vraiment d'avoir un... ouais c'est ça.
+
+David Leuliette (34:57.257)
+Ouais, réactons, ouais ok.
+
+David Leuliette (35:02.43)
+beaucoup d'interactivités.
+
+David Leuliette (35:07.135)
+ouais, dog food. eating their own dog food. C'est genre t'as une boîte, t'as une boîte et tu utilises ton propre producteur. T'es type form, tu utilises type form pour faire des formes à l'intérieur. T'es notion, tu utilises notion pour gérer ta boîte quoi. Bah là c'est pareil, ils ont dû faire un site custom pour gérer les propres serveurs comprenons quoi.
+
+Seb (35:19.073)
+Ouais
+
+Seb (35:24.482)
+Ouais c'est ça, il voulait... Bah je pense que ça fait partie un peu du deal avec Versael Next.js, de dire bah voilà vous prenez... enfin vous intégrer les RSC, on va utiliser Next.js sur la doc, sachant qu'aussi il faut voir c'est que DocuSaurus c'est quand même un site avec un layout on va dire un peu imposé. Même si tu peux customiser des choses au final tu vois si tu veux faire un truc qui est totalement différent des opinions qu'on a, ce qui était un peu le cas ici.
+
+Ludwig (35:24.693)
+...
+
+Seb (35:53.934)
+tu vas plus te retrouver à combattre le framework qu'à quelque chose. Au final, n'était pas une mauvaise décision pour de partir sur NACJS. Elle leur a permis de tester les RSC sur un vrai site.
+
+David Leuliette (35:57.108)
+Fight, ouais, ouais, comment... ouais.
+
+David Leuliette (36:08.439)
+Ouais c'est ça, et puis c'est pareil, ils ont la ressource pour maintenir le truc. t'es une team et que t'as pas le time, tu prends d'Oculus orus, tu le ship, allez hop t'as un truc nickel. En plus la search est incroyable. la search, parce que j'ai toujours pensé qu'il fallait un index à Algolia, mais maintenant celle de base, le fusil search marche nickel en fait, j'ai vu ça hier, je fais ah ouais ! Franchement moi j'avais souvenir que c'était... c'est récent !
+
+Seb (36:11.861)
+Ouais voilà c'est
+
+Seb (36:21.71)
+Hmm.
+
+Seb (36:26.338)
+mais ça c'est... en fait c'est pas un truc officiel c'est un truc... je pense que c'est un plugin third party que tu utilises et après il y en a plusieurs je sais pas exactement lequel est le meilleur mais en tout cas il y en a plusieurs donc il y a pas mal de sites qui utilisent ça ouais
+
+David Leuliette (36:35.05)
+Ok ouais.
+
+David Leuliette (36:42.263)
+Et vu que t'es mainteneur, qu'est-ce qui a changé sur DocuSaurus depuis la V3.9 est sortie ? j'ai vu l'annonce, je suis sur l'annonce. Qu'est-ce qui... bah c'est ça, Doc Search V4 à mon avis, c'est peut-être ça ouais, je sais pas. C'est quoi les...
+
+Seb (36:56.494)
+Il a une mise à jour de Doc Search, peux poser des questions au LLM, ils ont un index IA. Tu peux poser des questions, c'est assez pratique parce que tu n'es pas obligé d'aller sur les pages de Doc, tu dis comment on fait ça avec ma technologie et ils te répondent directement des trucs pertinents. Moi je trouve ça assez pratique, même moi sur le site de Docusaurus, je ne me souviens plus comment on fait tel ou tel config.
+
+David Leuliette (37:04.855)
+Mmmh, ok, leca.
+
+David Leuliette (37:18.824)
+No cares.
+
+Seb (37:26.582)
+ou autre et tu lui poses ta question et puis il te répond.
+
+Ludwig (37:30.261)
+Est-ce que vous avez une feature pour générer les fameux LLM.text ?
+
+Seb (37:36.782)
+Il y a plusieurs plugins communautaires mais c'est pas officiel pour l'instant. J'aimerais bien fournir ça effectivement mais c'est pas officiel. Je sais pas s'il y a vraiment besoin que ce soit officiel à partir du moment où ça peut être développé par la communauté. Mais moi ce qui m'embête c'est qu'en fait tu vois, il y a plusieurs opinions que tu peux avoir sur le contenu de ce fichier, comment t'ordonnent les documents.
+
+Ludwig (37:43.312)
+Ok.
+
+Ludwig (37:55.125)
+Mmh.
+
+Seb (38:05.172)
+Donc si il trop d'opinions, c'est un peu compliqué pour nous de généraliser sans vraiment répondre à tous les besoins. il voir. Peut-être qu'en fait, c'est bien d'avoir deux plugins communautaires qui ont des opinions différentes et puis c'est à toi de choisir lequel convient le mieux.
+
+Ludwig (38:20.895)
+Et du coup moi je me demande, parce que là on a parlé un peu d'intelligence artificielle on va dire, guillemets, LLM. Est-ce que toutes les dernières techno qu'on a eu autour de ça ces dernières années, t'ont pu t'aider dans ta veille techno, ta façon de travailler avec la newsletter, est-ce que maintenant t'arrives à passer peut-être moins de temps où tu délègue à des agents ? T'as parlé d'agents virtuels mais je sais pas si tu parlais d'Ia.
+
+Seb (38:28.59)
+Oui.
+
+Seb (38:38.158)
+...
+
+Seb (38:45.006)
+Euh...
+
+Seb (38:49.442)
+Alors, non c'était des assistantes virtuelles, donc c'est des vrais humains mais qui travaillent à distance. Ouais, c'est des vrais humains. Voilà. Bon après je sais pas pourquoi on dit assistantes virtuelles, d'ailleurs c'est pas forcément que des femmes mais bon, bon voilà. C'est des vrais gens, Qui m'aident à contacter les sponsors, à faire des relances, à envoyer des factures, à...
+
+David Leuliette (38:55.276)
+Ouais, bah oui, c'est pas... Si sûr d'en avoir parlé il y a longtemps, je vous rappelle pour aider.
+
+David Leuliette (39:05.688)
+C'est des... C'est des vrais gens. C'est des gens qui t'aident à la... la maintenance, tu vois. Donc euh...
+
+Ludwig (39:15.178)
+Ok.
+
+Seb (39:15.496)
+à poster la newsletter sur Reddit, sur Dev, sur Medium et tous ces trucs là quoi.
+
+David Leuliette (39:21.144)
+oui c'est vrai parce que c'est vrai que t'es partout en fait en vrai je m'en rends pas compte mais sur quelle plateforme donc... Ouais donc la source... Ouais.
+
+Seb (39:25.046)
+Oui, il y a un travail de cross post. Après, globalement, non, c'est surtout par email, chaque plateforme est un peu une sorte de canal d'acquisition qui donne quelques vues en plus. Donc après, faut...
+
+David Leuliette (39:36.286)
+Ouais c'est toujours... et tu les fais tous quoi. Mais la source point d'entrée c'est le site The Sweetin' React, tu pond le... le Markdown. Et après invasion quoi. Ok, dans la post prod c'est ça le...
+
+Seb (39:42.382)
+Hmm.
+
+...
+
+Depuis que j'ai commencé à collaborer avec d'autres entreprises, on travaille sur Google Docs. là ce que j'aimerais voir, c'est que sur la newsletter, il y a vraiment un travail un peu fastidieux de formatage, vois, avec mettre un petit emoji, des trucs comme ça. ces trucs là, formater les liens, va dire, ça prend beaucoup de temps si tu le fais manuellement. Et je pense que ça, peut être automatisé.
+
+Donc je regardais un peu justement, je sais que...
+
+David Leuliette (40:16.702)
+si, avec Anuiten, avec Anuiten tu peux ça. En input, tu files ton Google Doc, tu lui dis va voir ma base de connaissance de toutes les newsletters que j'ai écrites et...
+
+Seb (40:28.238)
+Bah écoute, tu vas me montrer ça parce que moi ça m'intéresse effectivement. Mais pour l'instant ce que je regardais c'est en j'avais pas l'impression qu'il y avait beaucoup de trucs vraiment éprouvés pour travailler sur Google Docs. Donc je voulais voir justement Gemini, là je sais qu'ils ont des forfaits Google pour ajouter des IA sur Google Docs directement. Je me demandais la question de qu'est-ce que ça permettait de faire. Je sais qu'il a des...
+
+Ludwig (40:34.569)
+Voilà, nouvelle assistante.
+
+Seb (40:55.722)
+plug-in Google Docs fait par différents développeurs mais bon est que c'est vraiment fiable ou pas je sais pas donc bon
+
+David Leuliette (41:02.552)
+Ouais, directement. Non, non, pense que tu peux garder Google Docs pour l'aspect collaboratif, les... mais tout mettre en vrac. Après, faire un workflow N8N qui justement prend ton Google Docs. que tu as un Google Doc de Google Doc, il te l'envoie et il te file une moulinette et après il te le renvoie en Markdown et formaté correctement. Voilà ça, à mon avis, c'est un workflow que tu peux faire assez...
+
+Seb (41:09.678)
+Mmh.
+
+Seb (41:24.5)
+Oui oui,
+
+David Leuliette (41:29.906)
+Pas très très difficile mais je pense que se fait.
+
+Seb (41:33.386)
+Ouais bah il faut que j'étudie ça effectivement. Je connais pas trop Ed Newton encore, j'ai pas utilisé ça encore. Malheureusement c'est difficile de trouver le temps en ce moment pour lancer des trucs là donc... Ouais ouais...
+
+David Leuliette (41:36.427)
+Ouais.
+
+David Leuliette (41:40.204)
+Ouais ouais, c'est pareil moi aussi. C'est ça. I know. Oui, je sais. On est dans le même bateau mec, t'inquiètes, I know. Est-ce qu'il y a une fois quelque chose de désastreux qui est arrivé ? Est-ce que tu as propagé une fake news ?
+
+Ou dis quelque chose qui s'est révélé faux en fait. Ouais, qu'il fallait pas... Vas-y balance, Ludwig ! Vas-y balance, on veut tout, on va te dire. Dis-nous, dis-nous, dis Ludwig, qu'est-ce qui s'est passé ?
+
+Ludwig (42:01.359)
+ne pas dire. Moi j'ai déjà vu un truc comme ça. non mais...
+
+Seb (42:05.102)
+Ah bon ? Là comme ça j'ai rien qui me revient en tête.
+
+Ludwig (42:09.365)
+Une fois t'avais trouvé genre un commit ou un merge qui a eu sur je pense que c'était React ou React Native ils étaient pas prêts à communiquer dessus toi t'avais déjà communiqué dessus on t'a dit... Doucement doucement
+
+David Leuliette (42:18.634)
+ouais ok, oui c'est pas... ouais ok.
+
+Seb (42:19.63)
+Ah oui oui oui, non mais ça oui ça arrive régulièrement parce que ouais que bah après ça dépend vraiment des projets il en a certains qui sont contents parce qu'en fait ils sont un peu nuls en marketing donc du coup ils sont contents qu'on les aide mais c'est vrai que React il a ouais bon en gros il a des flags ou
+
+ou des news que je relaye un peu, qui sont un peu expérimentales, où ils m'ont dit, faut que tu précises bien dans ton tweet que c'est ultra expérimental. Il a des trucs qui sont, vois qu'en fait, fois ils committent des flags et des expériences qu'ils veulent faire tourner en interne chez Facebook. Et une fois seulement qu'en fait le truc a donné des résultats concluants, ils communiquent dessus auprès de la communauté. Et moi, truc, c'est forcément, en fait, je monitor un peu les flags qui sont committés dans le Racket et Rack Native pour regarder ce qui arrive.
+
+Et des fois en fait il faut que je prenne un peu des pincettes parce que effectivement ça se trouve le truc il va jamais arriver dans le monde open source tu vois ils vont juste faire une expérience en interne et ça va pas être concluant et à la fin le truc va jamais arriver dans l'open source donc au final les gens normaux qui font du React ou de React Native n'ont pas besoin d'être au courant de cette news bon typiquement un truc que j'avais le relayé où je m'étais fait un peu taper sur les doigts c'est
+
+ils avaient introduit une API de contexte selector tu vois. ils avaient fait des tests de un use contexte sur lequel tu pouvais passer un sélecteur à la fin pour optimiser l'error render et trucs comme ça. Et en fait ils ont fait des tests chez Facebook et ils ont reverté ce flag et ils l'ont retiré plus tard. Donc moi j'avais communiqué dessus et le truc n'est jamais arrivé parce qu'en d'après leur test en interne
+
+ils ont conclu qu'en fait le compiler React donnait de meilleures performances que l'introduction de ce système de sélecteur.
+
+Ludwig (44:15.605)
+Tu penses que tout ça va changer ? Par exemple sur React Native, y a une nouvelle fondation, une nouvelle gouvernance. Facebook avait sa partie cachée, propre code base. Après, y avait celle qui était open source. Maintenant, ça va un peu changer. Celle qui open source, va être la branche principale et c'est Facebook qui se débrouillera pour rajouter les nouvelles features dessus. Tu penses qu'on aura peut-être plus de transparence sur ces features expérimentales
+
+Seb (44:40.398)
+Je ne pas sûr que ça change grand chose puisque en soit je crois que React et React Native fonctionnent peut-être un peu différemment parce que sur React Native ils un process où ils ferment les PR mais ils ont leur outil qui va importer le code et tout ça donc c'est pas comme React je ne pas très familier avec ce process là mais
+
+Globalement si tu regardes vraiment le repo, tu regardes tous les commits, en fait tu vois tout quoi. Il n'y pas de features cachés qui n'est pas comité à ma connaissance sur la code base. Si vraiment ils veulent cacher un peu des trucs, vois, va peut-être y avoir un contributeur qui va forquer le repo et qui va travailler sur son propre fork en espérant que personne ne le voit. Et si vraiment ils veulent vraiment cacher le truc, alors ils vont peut-être faire un repo qui est privé sur lequel ils vont pas poucher ou...
+
+ça va pas être sur github quoi donc ça c'est vraiment niveau privé max mais sinon globalement la plupart des trucs qui sont pas ultra sensibles tu regardes sur github tu les trouves il suffit de regarder les flags react native tu verras en fait il a plein de flags qui sont activés pour pour metas pour les apps metas que ce soit react ou react native tu as en fait tu as des fichiers qui qui donnent les flags par plateforme donc
+
+T'as les flags React qui sont pour META, t'as les flags React pour la version Canary, pour la version expérimentale. Il y a un fichier qui s'appelle www.flags.js ou un truc comme ça. Grosso modo, c'est-à-dire le site facebook.com. Après, t'as genre React Native-OSS. Donc ça, c'est la version open source de React Native. Donc t'as les flags React pour la version open source.
+
+tu as les flags React pour la version React Native de Interne chez Facebook. Donc voilà, tu as tout un jeu de flags et en fait les flags, n'ont pas les mêmes valeurs selon la cible qui va intégrer React. Et par cible, tu en as plusieurs, tu as les tests unitaires, React Native Open Source, React Native Interne.
+
+Seb (47:03.246)
+le site Facebook.com et les Facebook internes et puis la version web pour le grand public. Bon c'est pas forcément hyper bien organisé, je suis pas sûr d'avoir une connaissance parfaite du truc mais en tout cas moi c'est ma compréhension, c'est qu'en fait t'as plein de boules à un qui peuvent être activées ou désactivées selon le consommateur de Donc t'as des flags pour React et t'as des flags pour React Native.
+
+qui ont chacun des environnements en quelque sorte qui permettent d'activer ou non certaines features.
+
+David Leuliette (47:37.848)
+Ouais, makes sense. Donc épisode de décembre, on est bientôt en 2026. De ta perspective, qu'est-ce qui va changer le game en React Native dans les six prochains mois ? Oui, il faut qu'on apprenne.
+
+Ludwig (47:38.101)
+Ok.
+
+Seb (47:45.39)
+...
+
+David Leuliette (47:56.121)
+Moi je dis c'est la 1.0 d'ici 6 mois. Allez à toi Seb ! Non ? En fait en vrai moi je m'en fous. Moi ce truc là ça me fait trop rire. C'est juste un numéro, ça devait un running gag. fait ouais parce que... Pour ceux qui savent pas c'est qu'ils l'auront annoncé 1.0 à la conférence React Universe. Et c'était genre ouais tout le monde était en mode ouais excellent et tout mais en fait...
+
+Seb (48:01.78)
+Non, c'est pas la 1.0
+
+Non, ouais oui, ça on s'en fout un peu, c'est sûr. Non mais en vrai, ouais ouais c'est...
+
+Ouais.
+
+Ludwig (48:18.771)
+cou...
+
+Seb (48:20.846)
+Hmm.
+
+Oui oui oui, bah oui c'est vrai.
+
+David Leuliette (48:23.736)
+on s'en fout que c'est juste un numéro c'est juste les nerds qui veulent ça, à la fin les apps sont en prod, voilà quoi.
+
+Seb (48:28.75)
+Si les gens ont peur d'utiliser React Native parce que c'est pas 1.0, bon après... vont... Voilà, c'est ça. Non mais... Ouais, je pense que non, ça va pas arriver cette année. Il y a eu le calendrier des releases 2026 qui a été publié là, donc on voit que jusqu'à 0.89... C'est la fin... Jusqu'à la fin de 2026, auras la release 0.89. Donc peut-être qu'ils changeront d'avis et qu'ils nous feront un petit tour de passe-passe.
+
+David Leuliette (48:33.688)
+Faites pas de JavaScript. À tout court !
+
+David Leuliette (48:53.144)
+Ok. Ok.
+
+Seb (48:58.414)
+pour qu'elle ait une release 1.0 mais honnêtement je pense que de toute façon on sent quand même qu'il un travail de stabilisation sur RackNative tu vois ils ont viré les imports profonds là les deep import path ou je sais pas quoi qu'ils disaient ou en fait tu pouvais importer un peu tout ce que tu voulais donc en fait moi ça me rappelle un peu ce que j'ai fait pour DocuSaurus 2 tu vois c'est en à un moment donné je me disais comment on fait pour réaliser un truc comme ça et ensuite garantir la rétro-compatibilité
+
+Le premier travail que tu dois faire avant de penser à quoi que ce soit, c'est de définir la pays publique. La pays publique, c'est tout ce qui exporté, tout ce que tu documentes, tout ce que... Il faut tu puisses définir clairement si c'est un breaking change ou pas. Sinon, ne pas faire du sémantique versioning où tu incrémentes la version majeure que lorsque tu as des breaking change.
+
+David Leuliette (49:33.816)
+Noyla.
+
+Seb (49:54.414)
+Si tu n'es pas capable de définir précisément c'est quoi un breaking change, tu ne pas faire du semantique versionning. là comme fait Ragnative, avait une API surface qui est énorme. vois, tu as le code natif, as le code JavaScript. Tu pouvais importer un peu, c'était la fois à la saucisse, tu importais des trucs de la librairie interne sans problème dans tes apps et au final, à la fin tu peux...
+
+te plaindre auprès de l'équipe React en disant vous avez réfectoré tel truc, ça a cassé nos trappes, voilà.
+
+David Leuliette (50:25.153)
+mais c'est ta faute, c'est ta faute, bah oui c'est ça.
+
+Seb (50:28.91)
+Donc là l'idée c'est vraiment de clarifier cette surface API, ce soit côté natif, côté build, côté JS et tout ça, pour que ce soit ultra clair et qu'en fait le jour où ils sont prêts, ils disent à partir de maintenant la API surface c'est ça et si on casse quelque chose, ce sera une version majeure et si on casse rien ce sera une version mineure, sauf si vraiment tu vas aller...
+
+chercher à importer des trucs internes qui seront vraiment clairement explicitement marqués comme internes normalement tu peux tu peux upgrader des versions mineures sans sans que ça casse quoi que ce soit quoi donc c'est ça l'avantage aussi c'est bah ouais tu vois par exemple moi je te donne mon point de vue sur docuSaurus tu vois on a réalisé la 3.0 il a je sais pas un an ou deux on a fait neuf release mineur sur lequel il y a eu pas mal de nouvelles features
+
+David Leuliette (51:11.737)
+C'est mieux.
+
+Seb (51:26.318)
+Le premier truc que tu mets dans la release note c'est une version mineure, il a pas de breaking change, normalement si tu n'as pas... Enfin, à moins que tu fasses des trucs bizarres, normalement tu peux upgrader, n'as même pas le souci de quoi que ce soit, c'est censé marcher quoi. Et si ça marche pas... Ouais voilà, c'est ça, c'est en fait... Après je sais pas exactement qu'est-ce qu'ils ont prévu, mais je pense que tu peux envisager que...
+
+David Leuliette (51:34.339)
+A la
+
+David Leuliette (51:41.841)
+mettre des panda bots en place.
+
+Seb (51:51.63)
+Tu vois, tu une release expo et tu puisses tout simplement bump dans ton package.json la nouvelle version Drake Native et que le truc fonctionne, je sais pas... Faut voir.
+
+David Leuliette (52:01.913)
+Ouais, ça, les dernières versions, je sais pas ce que t'appostes Ludwig, mais... Ouais, non, en c'est toujours pareil, ça dépend qu'est-ce que tu utilises, fait. Quel appellé natif tu utilises, toujours... Tu peux bump YOLO et ça passe, mais si ton app est gigantesque et que forcément t'as des certes, par exemple, tu laborises dans tous les sens, faut que checks métro config ou ce genre de truc, mais c'est vrai que c'est mieux.
+
+Seb (52:07.726)
+...
+
+Ludwig (52:08.725)
+...
+
+Seb (52:16.632)
+Oui. Oui.
+
+Ludwig (52:22.389)
+Ils ont leur CLI qui permet de bien aligner les dépendances pour être sûr que tout fonctionne normalement ensemble. Mais d'un certain côté, du coup, ça peut être limité à choper certains patchs fixe qui vont être relisés sur des mineurs. Donc c'est toujours un peu compliqué de maintenir tout ça correctement.
+
+David Leuliette (52:25.689)
+Mh... Ouais.
+
+Ludwig (52:41.917)
+Moi en tout cas à titre perso, trouve que dernièrement je vois un peu plus d'instabilité côté Expo. Mais je dirais que pas que Expo au React Native est moins stable, c'est qu'il y a tellement de features qui sortent et tellement de SDK, tellement de choses se passent en parallèle, que tu as toujours un petit truc en fait, ça n'a pas été testé et ça pète. Du coup tu fais édition.
+
+Seb (52:43.086)
+Après
+
+David Leuliette (53:03.129)
+Ou alors planning, Quand Reanimated a tout cassé parce qu'ils ont introduit le work-led, que V4 c'est juste que les gens ne font pas gaffe et que c'était le V3 et puis tu n'as pas le bon métro config, le babel config, tu vois c'est les trucs que tu ne pas savoir si tu releases un truc, quelque chose, l'impact que tu vois, tu le vois après. Moi je suis habitué de... Ça me semble pas en Rails, c'est pareil.
+
+Seb (53:11.438)
+Oui.
+
+David Leuliette (53:30.041)
+Quand je faisais du Ruby on rails c'était la même chose à NocoGiri, connaît, les trucs qui pétaient sans raison, bah... C'est pareil, faut juste suivre et puis... Et puis c'est pour ça que... Y la newsletter de Seb qui existe, comme ça t'es au courant, ahead of the curve ! C'est quoi ton conseil pour qu'on ne out pas en 2026 ? Tout en restant à jour !
+
+Seb (53:30.981)
+Ouais. Bah voilà.
+
+Seb (53:57.337)
+Changer ça à rien. Pour suivre les news ? Je sais pas, après je créer une newsletter juste pour ça. Moi l'idée à la base c'était de faire en sorte que voilà, a un mec de la communauté qui suit les news et qui vraiment filtre un max les trucs pour que justement la plupart des gens n'aient plus à faire ça.
+
+David Leuliette (53:58.874)
+tout en restant à jour.
+
+David Leuliette (54:03.641)
+Salut !
+
+David Leuliette (54:08.011)
+Ouais, j'avoue, j'avoue, dédiquez.
+
+Seb (54:20.302)
+Parce qu'effectivement, vois, tu peux passer des heures et des heures sur Twitter à lire des tweets et tout ça. Bon, il y a quand même beaucoup de bruit. vas forcément te faire raper par le côté social du truc qui est fait aussi pour te rendre addictif. Donc forcément, je pense qu'il des gens qui volontairement ne vont pas sur ces plateformes là parce qu'ils savent que... En fait, quand t'es entre 20 et 30 ans, t'as peut-être un peu plus de temps, mais une fois que t'as des enfants, tu te rends compte qu'en fait le temps, c'est quand même précieux.
+
+David Leuliette (54:49.975)
+Ouais, c'est ça, tu ne peux plus... ouais...
+
+Seb (54:50.03)
+et du coup tu t'essayes de limiter un peu les activités qui sont pas vraiment indispensables dont aller sur les réseaux sociaux et scroller pour regarder des trucs qui t'apportent pas forcément grand chose. Donc moi l'idée c'est vraiment la newsletter c'est de mettre vraiment que le pertinent. C'est un peu un supermarché quand même parce qu'il y a beaucoup de liens mais tu vois tu peux scanner facilement toute la newsletter en 5 minutes.
+
+Et puis s'il a vraiment un ou deux sujets qui nous intéressent en particulier, bah tu peux les approfondir tout de suite et tu peux aussi te souvenir que t'as vu telle chose passer dans une newsletter précédente et puis le jour où t'en as besoin, et bah tu peux venir dessus quoi. Donc l'idée c'est vraiment de pas... De toute façon il y a personne qui lit tous les liens de la newsletter, c'est pas possible, même moi il en a certains tu vois j'ai pas le temps de les lire, je les scanne juste et je me dis bon ça c'est quand même un truc pertinent mais bon je connais déjà...
+
+David Leuliette (55:38.275)
+Ouais on fait...
+
+Seb (55:46.414)
+ou j'ai pas envie de le lire parce que ça ne touche pas directement. bon voilà, tu fais ton supermarché, t'as des liens intéressants. Tu sais que quand tu cliques sur l'un d'entre eux, globalement tu vas pas être trop déçu, ça va quand même être un minimum pertinent. Et puis après tu cliques deux ou trois liens par édition, ça suffit quoi.
+
+David Leuliette (56:07.225)
+ce que je fais, 1 ou 2 max. après, mets la semaine à lire l'article. En plus, de VZero, Je suis arrivé à un quart. How we built the VZero iOS app de Fernando chez Verzel, parce qu'ils ont une build de Vibe Coding. L'article est franchement... S'il a que des articles comme ça tous les jours, c'est clairement impossible à lire le truc. Tu peux scroller pendant 5 minutes.
+
+Seb (56:11.061)
+Ouais bah c'est déjà bien.
+
+Seb (56:16.654)
+Hmm.
+
+Seb (56:24.398)
+Ouais ouais...
+
+Seb (56:32.814)
+Bah ouais... Non mais oui oui c'est sûr... Mais...
+
+David Leuliette (56:37.209)
+Et il est incroyable mais je l'avais vu avant ta newsletter mec. Mais ça me l'a rappelé de cliquer et de le relire. C'est ça qui est beau. Et toi Ludwig, fais comment toi pour rester à jour ? Tu passes du temps ? Combien de tu passes ? Je fais de la veille.
+
+Seb (56:44.884)
+Oui, petit reminder.
+
+Ludwig (56:54.879)
+En vrai, c'est beaucoup de tweeters, c'est de la veille quotidienne on va dire. pareil, dès que je vois un truc passer, je deep dive. Tout ce que j'ai raté, je le vois sur This Week in React. Et je rate beaucoup de choses. Moi, je suis surpris du nombre de sources que tu arrives à agréger. Et du coup, fait, ça me fait penser à question parce que moi, ce qui me surprend, c'est que j'ai l'impression que maintenant, quand tu veux suivre la tech des projets open source, etc., c'est plus... pour moi, j'y vois de moins en moins de flux RSS, de blog post ou...
+
+David Leuliette (56:58.233)
+ok, ouais.
+
+Ludwig (57:23.091)
+ou de Release Notes par exemple, je vois de plus en plus les développeurs qui communiquent en temps réel sur ce qu'ils font sur Twitter. Et le problème c'est que Twitter ça reste un réseau social, il y a énormément de bruit et je me dis mais si demain en fait tu pouvais avoir une petite baguette magique et changer un peu comment le flux d'informations arrive, serait quoi toi le truc qui ferait que tu pourrais digérer toutes ces informations de manière beaucoup plus simple parce que je trouve que Twitter c'est une mine d'or mais dans un broyat...
+
+Seb (57:49.87)
+Ben ouais, non mais je suis totalement d'accord avec toi. En fait, moi, dès que je vois quelqu'un qui poste les news que sur Twitter
+
+des fois je les incite, je les interpelle et je leur dis bah tu veux pas créer une release note propre, un blog post ou un truc comme ça et en fait tu vas me massacrer parce que Twitter en t'as pas une bonne expérience si t'as pas un compte tu vois par exemple si aujourd'hui je fais un lien vers un tweet dans ma newsletter la personne elle peut juste voir le premier tweet et en fait si par exemple il une conversation tu peux pas voir les commentaires et maintenant en plus les gens ce qu'ils font c'est qu'ils mettent
+
+David Leuliette (58:17.634)
+Ouais, le P, ouais. Mais après, peut pas.
+
+Seb (58:26.366)
+un premier tweet et ils mettent le lien en second commentaire parce qu'il a des raisons, l'Algo il pénalise les liens en premier tweet ou je sais pas quoi. en fait, tu vois, toi t'as un lecteur qui a pas de compte sur Twitter, tu vois juste le premier tweet, mais tu peux pas accéder aux liens. Donc après, t'es obligé d'aller sur Google. Bon, du coup, tu cliques pas, tu vois, tu passes à autre chose. Donc moi, pour moi, c'est un vrai problème. Et justement, c'est ce que je dis aussi à mes partenaires chez Software Mansion et tout ça.
+
+c'est il ne pas faire des liens vers Twitter en priorité et même des fois il y a des gens même de chez eux je leur ai dit bon quand vous faites une release pour telle ou telle feature vous mettez les belles vidéos sur Twitter mais sur vos release notes elles sont toutes moches en fait on voit juste des commits et on comprend rien à votre release note et moi en tant que auteur de newsletter je suis obligé de faire un lien vers quelque chose qui n'est pas Twitter parce que c'est bien beau d'avoir la vidéo de ta belle feature mais en fait on sait pas
+
+David Leuliette (59:08.846)
+Ouais.
+
+Seb (59:23.258)
+on voit pas ton changelog complet, ne sait même pas dans quelle version c'est arrivé, on ne même pas si c'est déjà réalisé ou je pas quoi. Moi j'aimerais bien que les gens postent la vidéo directement dans leur release note GitHub ou qu'ils fassent un blog post avec... qu'ils mettent autant de soin à créer des releases notes propres que ce qu'ils font sur les réseaux sociaux. Il faut pas qu'en fait la ressource canonique de ta release...
+
+soit moins beau ou moins compréhensible que ce que tu postes sur Twitter. Il faut que ce soit au moins du même niveau. Si tu as posté une vidéo sur Twitter, poste une vidéo sur tes release notes. Fais en sorte que les gens comme moi puissent s'abonner par Flue RSS facilement pour suivre parce que sur Twitter moi aussi je loupe des choses de temps en temps et voilà ce serait beaucoup mieux pour tout le monde et en particulier pour ceux qui sont pas sur ces plateformes là.
+
+David Leuliette (01:00:00.612)
+Ouais faut changer, je suis d'accord.
+
+Ludwig (01:00:21.217)
+C'est vrai que je me suis déjà trouvé à rechercher une info, ne pas la trouver sur une doc et de retourner dans mes signés Twitter en disant, en fait il leur a parlé là, il a partagé le lien. C'est vrai que c'est pas... il a un manque d'accessibilité. Et du coup tu arrives à faire bouger les lignes comme ça.
+
+Seb (01:00:31.022)
+Mmh.
+
+Seb (01:00:34.67)
+Même...
+
+Bah non mais bon, c'est impossible.
+
+David Leuliette (01:00:42.018)
+J'essaye, j'essaye. mais voilà, qui s'ennuient les devs là, faites un outil... En plus il y en a plein des outils de changelogs j'ai l'impression et qui ont tous crevé puisque personne ne veut payer. C'était pareil, c'est un truc pour faire des beaux changelogs, ça te fait sur github et ça te les balancer partout. T'as une interface et ça t'agréger... Il y en a plein en fait pour LinkedIn mais c'est vrai que pour github t'en as pas pour vraiment faire une bonne release lot et qu'après tu consumes le contenu comme tu disais que.
+
+Seb (01:00:45.742)
+Ouais.
+
+Seb (01:00:53.08)
+Mais non, même GitHub, tu vois ?
+
+David Leuliette (01:01:08.666)
+ça devient, un guitar devient la ressource principale.
+
+Seb (01:01:09.07)
+Non mais tu n'as même pas besoin d'un outil, tu as les releases GitHub, enfin tu vois je veux dire tu peux poster une vidéo dedans, c'est pas obligé d'être un changelog moche avec juste des hash de commit et...
+
+David Leuliette (01:01:19.566)
+Tu peux faire... Ouais ouais carrément mais tu peux faire un drag and drop de la vidéo et tout direct. Je pense que c'est peut-être plus ça qui... C'est comme les issues. Ils font pas d'efforts. Franchement, les gens font pas d'efforts. Ça y est. On est en guerre. C'est parti.
+
+Seb (01:01:24.59)
+Moi c'est comme les issues hein. Mais de façon, de façon c'est même pas, ouais mais, non mais c'est même pas juste les releases. Tu vois par exemple comme je fais des liens vers des pull requests intéressantes aussi, des fois tu vois en fait moi j'ai vu le commentaire sur Twitter donc je sais de quoi parle la pull request, j'ai vu une démo vidéo machin, mais genre des fois la pull request a juste le titre, un titre vague et t'as plein de votes et tout mais genre le commentaire il est vide tu vois.
+
+David Leuliette (01:01:40.292)
+Ouais.
+
+David Leuliette (01:01:44.708)
+Ouais.
+
+David Leuliette (01:01:49.733)
+Ouais y'a rien dedans Ouais ouais ou alors c'est peut-être parce qu'ils utilisent un autre outil, ils utilisent l'hénéar ou t'as un truc qui... t'as le backlog qui échappe... bah non même pas parce que la flemme, la puissance de la flemme
+
+Seb (01:01:58.126)
+Non non non non, c'est juste qu'en fait voilà, sont... Ouais, des fois c'est de la pull request, est work in progress tu vois, donc le mec, voilà, il dit bon, je t'ai fait une preview sur Twitter, machin, c'est bien. Mais tu vois, par exemple, si moi je fais un lien vers la pull request, et bah du coup, est-ce que je fais un lien vers Twitter ? Et dans ce cas là, personne, ceux qui n'ont pas de compte, ils pourront pas accéder à la pull request parce qu'elle est postée dans le second lien, ou alors est-ce que je fais le lien vers la pull request mais qui donne aucun contexte
+
+David Leuliette (01:02:13.85)
+Hmm.
+
+Seb (01:02:25.774)
+peux voir le code mais c'est bien parce que vois le code, va lire le de Reanimated Shared Transitions, pense que tu vois, s'il a pas une description qui explique ce c'est, les gens ne pas s'amuser à lire le code de comment c'est implémenté et ce qu'ils veulent savoir c'est c'est quoi la pire du truc, qu'est-ce que ça va permettre de faire et tu vois un usage grand public. c'est important, quand tu fais un Change Log, d'avoir les highlights. Tu vois, React Native, tu dis le Change Log de base.
+
+incompréhensible. Il faut chercher une aiguille dans une botte de foin, c'est moi ce que je fais. Mais le commun des mortels qui fait sa veille ne peut pas regarder tous les commits faits sur React ou sur React Native.
+
+David Leuliette (01:02:57.22)
+Ouais, non mais ouais, je suis d'accord.
+
+David Leuliette (01:03:13.3)
+non c'est sûr, c'est sûr.
+
+Ludwig (01:03:15.434)
+Du coup, d'où le travail de curation qui est assez encore manuel, il a pas le choix.
+
+Seb (01:03:21.272)
+Ouais.
+
+David Leuliette (01:03:22.86)
+Est-ce qu'il a un sujet que tu voulais absolument aborder aujourd'hui et que te tient à coeur ?
+
+Seb (01:03:24.302)
+Le sujet que je veux aborder, j'aime bien l'activity par laquelle on a commencé, j'aime beaucoup ces nouveaux composants React. Pourquoi je pense que c'est particulièrement pertinent pour React Native mais que les devs React Native ne l'ont pas encore trop compris ? Déjà parce qu'ils n'y ont pas accès, me semble encore vu que c'est 19.2 et je
+
+David Leuliette (01:03:35.791)
+c'est beau, c'est beau, belle trois yeux !
+
+David Leuliette (01:03:53.21)
+19
+
+Seb (01:03:54.386)
+pas sûr que ce soit... je sais pas à quel moment ça deviendra accessible à ragnative mais sûrement très bientôt donc pourquoi c'est intéressant parce qu'en fait tu vois en fait ça permet de faire un rendu réact mais en tâche de fond en quelque sorte et donc c'est un composant un peu primitif comme ça tu dis bon qu'est que je vais pouvoir rendre en tâche de fond et bah par exemple tu vois quand tu as sur ragnative tu vois tu as la stack
+
+tu vois React Native, je ne sais pas si on voit mes mains là, mais bon tu as les écrans, comment faire, je ne pas, bref tu vois tu as les écrans qui s'empilent les uns sur les autres et le truc c'est que tu vois tu as des écrans qui sont couverts par d'autres donc ça ne à rien en de gâcher des performances de rendu en s'assurant qu'en fait les écrans qui sont cachés soient rendus en permanence tu vois. exemple tu as un state partagé entre plusieurs
+
+plusieurs écrans de ta stack. Typiquement tu fais un flow de checkout ou un truc comme ça où il a le prix qui est indiqué sur plusieurs étapes parce que le cartes il est indiqué à plusieurs endroits. bien quand tu incrémente le prix ou tu ajoutes ou tu enlèves des éléments, t'as peut-être tous tes screens qui vont re-render parce qu'en fait ton prix est affiché sur tous les écrans de ta stack. Donc tu vas perdre en performance parce qu'en fait tu vas vas t'amuser à re-render des trucs qui sont cachés en fait.
+
+il a des solutions qui permettent d'éviter ça c'est je crois React Freeze de Software Mention qui permet de s'assurer qu'en fait les écrans derrière ne réunderent pas. La problématique de ça c'est voilà tu fais pas du pré-rérendering donc du coup quand tu appuies sur le bouton back et bah avant de pouvoir vraiment naviguer en arrière t'es obligé de remettre à jour tes écrans qui étaient cachés qui sont devenus pas à jour parce qu'en fait ils n'updater pas.
+
+Ludwig (01:05:24.287)
+Ouais, c'est ce que je voulais dire.
+
+Ludwig (01:05:29.653)
+Mais tu fais pas du prerendering.
+
+Seb (01:05:49.902)
+Activity ça va permettre de résoudre ça de manière plus propre dans le sens où en fait tu vas pouvoir donner la priorité à ton écran qui est réellement visible tout en haut de ta stack et tous ceux qui sont derrière tu peux les rerender en background et le jour où tu feras un back en globalement ils seront déjà à jour puisqu'en fait ils auront rerundu mais avec une priorité un peu plus faible en fait donc ça permet vraiment de prioriser les renders et c'est pareil sur sur d'autres navigateurs type par exemple les tabs
+
+Tu vois, tu peux très bien dire, j'arrive sur mon application React Native, tes tabs peuvent être soit eager, soit lazy, ou fait, quand tu appuies sur le bouton du tab suivant, le truc peut déjà être pré-rendu et caché. Et du coup, quand tu appuies sur le bouton, ça devient instantané, t'affiches tout de suite. Mais du coup, ça consomme beaucoup de ressources parce que si tu as cinq tabs sur ton application React Native et que tu fais un rendu des cinq panneaux, je ne sais pas comment dire, un panel, je ne sais pas quoi possible pour les tabs,
+
+Ludwig (01:06:41.749)
+Oui.
+
+Seb (01:06:49.526)
+tu vas te retrouver à faire trop de rendus, trop en avance et du coup ton app va peut-être démarrer moins vite parce qu'en fait elle n'affichera rien tant que toutes tes tables ne pas rendues. Donc après tu peux aussi faire un rendu lazy où en fait tu vas dire je ne que le premier table mais les autres ils sont cachés. Le problème c'est quand tu cliques sur un table et tu vas switcher sur le nouveau table que quand le nouveau table a fini de rendre.
+
+Après tu as peut-être une autre stratégie, j'ai pas trop... Je connais pas exactement comment fonctionnerait avec navigation aujourd'hui, peut-être qu'aujourd'hui il est assez intelligent pour dire bah voilà, tu rends le premier table et puis les autres tu vas les rendre de manière lazy juste après tout de suite, mais c'est pas vraiment du background dans le sens où c'est bloquant tu vois, c'est à dire qu'en ça va peut-être baisser un peu le FPS de ton app parce qu'en fait il considère que c'est quand même du haut de priorité.
+
+et pas un truc qu'il peut faire en prenant son temps. si tu as des animations, des trucs comme ça qui se jouent en même temps, ça peut saccader un peu tes animations parce que il se dit, il faut absolument rendre ces quatre autres tables qui sont cachées parce qu'il n'y a pas de mécanisme pour faire le rendu en tâches de fond. Alors que Activity tu pourras vraiment mettre tes tables cachées dans une Activity Hidden. là du coup React comprend qu'il peut faire le rendu de ces autres tables.
+
+Ludwig (01:07:50.677)
+Oui.
+
+David Leuliette (01:08:05.594)
+Ouais.
+
+Seb (01:08:15.47)
+avec une priorité basse et s'il a besoin de trucs hauts de performance comme des animations sur le tap principal tu vas pas tout bloquer, vas pas perdre du FPS et ça se passera mieux quoi.
+
+David Leuliette (01:08:29.601)
+intéressant, vas-y faut que je tape parce que justement en fait faut que je refasse j'ai des screens pour l'instant je me suis dit vas-y faut que je mette des tabs vas-y allez change accepted je mettrai tabs activity react native activity tabs je testerai
+
+Seb (01:08:37.912)
+Ouais, après, ça c'est des trucs qui devraient être à un moment donné intégrés dans React Navigation donc t'as même pas trop à t'en soucier, suis pas sûr que tu puisses trop... Si, tu dois pouvoir l'utiliser un peu, tu dois pouvoir optimiser déjà tout seul mais ce serait mieux que ce soit intégré dans le navigateur directement.
+
+David Leuliette (01:08:48.047)
+Ouais... Ouais...
+
+David Leuliette (01:08:59.779)
+Ouais directement, non pour moi dans ma tête c'était vraiment les trucs de gueule plus dans un screen qui est déjà monté plutôt que de le mettre, c'est sûr ça va arriver directement dans Core et puis t'auras peut-être même avec un peu de chance rien à faire, il le fronte dans le hood pour toi et ce sera magique ou avec très peu de choses à faire, on espère, on espère. Où est-ce qu'on peut te suivre sur les internets si on veut plus de réact...
+
+Seb (01:09:08.053)
+Oui.
+
+Seb (01:09:14.178)
+ouais bah écoute on verra
+
+Sur la newsletter, sur Twitter, LinkedIn et puis un peu partout mais principalement ces trois là. C'est ça.
+
+David Leuliette (01:09:29.943)
+thisweekinreact.com. Ludwig, où est-ce qu'on te retrouve sur les internets ?
+
+Ludwig (01:09:38.581)
+sur twitter x mais je sais même plus moi ondel, faudra que tu le partages
+
+David Leuliette (01:09:40.635)
+Bye !
+
+Seb (01:09:41.87)
+...
+
+David Leuliette (01:09:47.014)
+ouais, Ludwig, cherchez Ludwig. Ou bien suivez Flexbox sur Twitter et après vous allez chercher Ludwig comme ça. Et pour soutenir la mission et retrouver tous les liens c'est wishypity.today.com podcast. N'hésitez pas à mettre... ouais le concours pour gagner des t-shirts Expo est toujours en cours. Donc laissez un 5 star reviews sur Apple Podcast et je prendrai quelqu'un de random pour envoyer du Expo Swag.
+
+Qui sait qu'on invite la fois prochaine ?
+
+Seb (01:10:23.374)
+Qui c'est qu'on invite ? C'est une question pour moi ou pas ? En rete native ? Peut-être mon comment dire... Ah non je crois que tu l'as déjà invité mince. Armand Petit là, tu l'avais déjà invité je sais plus. Qui m'avait aidé ? Il me semble que tu l'avais déjà invité. Du coup, t'as déjà invité beaucoup de monde hein ?
+
+David Leuliette (01:10:27.493)
+Ouais, ouais carrément !
+
+David Leuliette (01:10:42.893)
+Ouais, ouais, ouais, si, si, j'ai déjà invité. Ouais.
+
+David Leuliette (01:10:50.221)
+bah ça commence à être compliqué cette affaire !
+
+Seb (01:10:50.862)
+J'ai pas eu le temps d'écouter beaucoup de podcasts mais je vois beaucoup de noms, beaucoup de noms passés.
+
+David Leuliette (01:10:57.563)
+Bah c'est ça, c'est ça... Tu vois faut... Faut... On trouvera. Tu vois, on trouvera. t'as... Voilà, si t'as... vas-y, tu vas enverra DM avec une source FR. T'as des sources FR ? Ouais, c'est que des sources anglaises, que t'as, vrai qu'on n'a pas dit, mais principalement c'est...
+
+Seb (01:11:11.662)
+Ouais, aussi j'ai une petite section francophone dans la newsletter mais il a trois liens par semaine parce qu'il n'y a pas beaucoup de ressources francophones.
+
+David Leuliette (01:11:19.931)
+Ouais, Bah écoute, si quelqu'un FR, un dev FR et actnative que tu vois popper, je serais ravi de le recevoir dans l'émission, s'il veut. Est-ce que tu as un teaser sur ce que tu vas publier dans les 30 prochains jours en une phrase mémorable digne d'un film hollywoodien ?
+
+Seb (01:11:28.846)
+Ok.
+
+Seb (01:11:38.958)
+Euh... Non. Non franchement... Non bah après je pense que... Non là ça va être la période des fêtes donc il va pas se passer grand chose. Moi je vais être pas mal occupé sur des trucs perso donc... Bon honnêtement je sais pas ce qu'ils vont annoncer. Je sais qu'il a Renumeted qui va faire des shards d'Element Transitions bientôt mais sinon... Sinon je ne sais pas trop ce qui risque d'arriver.
+
+Ludwig (01:11:50.613)
+...
+
+Seb (01:12:08.318)
+A court terme, non, c'est vrai que les annonces principales, à court terme, ouais, ça... Enfin, j'ai pas trop de trucs en stock...
+
+David Leuliette (01:12:18.172)
+on va... Allez on dira qu'il a le State of React 2025 où il y aura les résultats donc on saura tous si Tailwind c'est bien ou ShadCN ou les milliards d'autres librairies du high sont les mieux et qu'il faudra tout rechanger en 2026. Merci... Ah ! Ah ! Pour ceux jusqu'à la fin, vas-y vas-y !
+
+Ludwig (01:12:28.053)
+...
+
+Seb (01:12:37.346)
+si, y'a peut-être un truc quand même. c'est Ouais... C'est pas Ragnative mais y'a BaseUI qui devrait sortir en décembre qui est peu une sorte de successeur de RadixUI par leur équipe initiale. Donc en fait c'est le mec de RadixUI qui était chez WorkOS, qui ont démissionné, qui maintenant se sont alliés avec MUI pour...
+
+David Leuliette (01:12:49.756)
+Ok.
+
+Seb (01:13:04.222)
+va dire financer le développement d'une nouvelle librairie qui devrait remplacer plus ou moins Radix. Enfin en tout cas qui serait plus maintenu que Radix puisque Radix n'est pas une activité plutôt réduite. n'y a plus beaucoup de ressources dessus. Et pour autant tout le monde repose sur Radix vu que ChadCN utilise.
+
+David Leuliette (01:13:19.74)
+Ok, faudrait que je fasse un... Ouais... Oui, oui... Ouais non mais oui, pour ceux qui savent pas trop c'est... Franchement c'est un épisode de 3 heures. Faudrait que je fasse pareil en React Native Ludwig. Faut qu'on fasse l'histoire des Component Libraries over time depuis le début de React Native. Là franchement...
+
+Seb (01:13:30.158)
+...
+
+Ludwig (01:13:39.143)
+Wow ! On va revenir avec le Emotion, les Style Components.
+
+David Leuliette (01:13:42.076)
+Non mais pas forcément que React Native, après oui après on va pas parler de Side Component mais ouais on pourrait mais laisse tomber. Parce que j'avais fait des épisodes théoristes, je voulais le faire tous les ans puis voilà j'ai plus le time maintenant bébé machin. Bon allez en tout cas merci beaucoup de nous avoir rejoint et à bientôt tout le monde ciao.
+
+Seb (01:13:42.446)
+oui...
+
+Seb (01:14:01.006)
+Merci, salut !
+
+Ludwig (01:14:02.588)
+Salut, ciao ciao !
+
