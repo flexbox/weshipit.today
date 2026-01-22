@@ -1,0 +1,1122 @@
+David Leuliette (00:01.751)
+Alors Tizot, comment je suis à moi aujourd'hui ? Oui, je comprends avec un peu de gel. Du coup, je penche qu'on fera mieux haute-fort l'épisode du podcast. se dit, qu'est-ce je t'en penche ?
+
+William (00:16.046)
+Tu parles beaucoup mieux que moi, je serais incapable de... Je ne pas comment tu as appris, je ne serais pas capable.
+
+David Leuliette (00:18.639)
+Ah oui ! Mais j'ai pas appris. J'ai... Ouais, j'ai vécu plus longtemps que toi, je pense. Ça doit être ça. Bonjour et bienvenue sur le Crossplatform Show, l'émission qui parle à Aknative. Aujourd'hui, nous sommes avec William pour parler OpenGL, 3D, ce qui a tous des mots encore plus compliqués que le j'ti.
+
+pas ça dépend des gens comment ça va William
+
+William (00:51.694)
+Super, content d'être là.
+
+David Leuliette (00:55.919)
+Alors aujourd'hui, comme j'ai dit, on va faire des choses un peu plus différentes que d'habitude. On va vraiment parler shader, GSI. Donc je vais te poser des questions comme en introtier d'embauche et tu vas devoir me dire la définition exacte. Attention la pression ! Mais ça va bien se passer. D'abord, avant de deep dive, on remercie...
+
+Cam 2091 qui a gagné le T-shirt Expo et qui nous a laissé un super review 5 stars sur Apple Podcasts qui dit merci David de nous raconter le quotidien d'un freelance développeur mobile j'ai reçu un excellent hack pour automatiser ma comptabilité et tes podcasts tout en écoutant des news tech merci à toi envoie moi un DM je crois que je vois qui t'es mais double follow up sur LinkedIn, Twitter ou tout n'importe quel réseau sociaux pour que je t'envoie ton T-shirt Expo
+
+William, Can It Be Done et Ragnative, la série sur Youtube a-t-elle que c'est fidi ou est-ce que ce qu'il a a tout résolu ?
+
+William (02:00.365)
+Bon, c'est vraiment... non, Skia n'a pas tout résolu. Et... ouais. J'ai une liste, il y a vraiment des épisodes que j'ai très très envie de faire. Je suis très occupé justement à construire Skia et React Native Skia et travailler sur WebGPU, etc. Ça prend beaucoup de temps. Je peux promettre que d'ici la fin du trimestre, il aura un épisode, ça c'est sûr.
+
+David Leuliette (02:06.88)
+C'est bon, je peux encore faire 1000 épisodes.
+
+David Leuliette (02:27.255)
+Ouais.
+
+William (02:29.653)
+mais j'ai une liste vraiment d'exemples super intéressantes mais effectivement je n'ai pas forcément le temps en ce moment de travailler là-dessus. Mais c'est vrai que React Native Skia ça vient de cette série en fait parce que justement on les...
+
+David Leuliette (02:39.982)
+T'inquiètes, on connaît.
+
+William (02:53.428)
+les obstacles devenaient
+
+David Leuliette (02:53.678)
+Alors vas-y attends on va en parler, on va en parler, on va en parler. Pour ceux qui connaissent pas du tout, va plus se... vas-y. Présentation, ton parcours. C'est pour ça qu'on faisait la blague quand je t'ai au début. C'est parce que nous sommes tous les deux originaire du Haut de France. Et vas-y, présente un peu ton parcours après YouTube et après projet open source.
+
+William (03:11.245)
+Ouais donc effectivement j'ai étudié à Lille, je suis de Lens à la base et j'ai fait un stage à Zurich qui m'a tout de suite, pendant mes études, j'ai tout de suite adoré et du coup j'ai décidé d'y rester, ça a été mon premier job. Je sais plus le nom de l'école a changé mais c'était Télécom Lille. Maintenant c'est l'école des mines de doué je crois.
+
+David Leuliette (03:28.558)
+C'était quoi tes études ? titre d'étude à l'époque, te souviens ?
+
+David Leuliette (03:35.095)
+Ok.
+
+David Leuliette (03:41.364)
+donc c'est un peu plus généraliste, c'est un peu plus généraliste réseau ou...
+
+William (03:41.704)
+ça a merdé ou...
+
+C'était un peu plus généraliste réseau, ouais. Mais il avait quand même pas mal de... Il y avait un peu d'informatique, c'était pas très informatique en fait. Par contre ce qui est rigolo c'est que du coup maintenant je bosse énormément sur les graphiques, la partie mathématique, algèbre linéaire, etc.
+
+David Leuliette (04:03.342)
+...
+
+William (04:07.533)
+même si sinon on ne faisait pas dans le contexte de la programmation, je l'utilise pas mal.
+
+David Leuliette (04:11.424)
+Ouais ça aide un peu quoi.
+
+C'est moi le seul souvenir que j'ai, c'est GL Matrix, Push Matrix en OpenGL justement. Mais j'ai fait 3D, j'ai lancé 3DS Max et je me suis dit, trop compliqué cette affaire. je reste dans la 2D, ce sera très bien. Mais après... Vas-y.
+
+William (04:29.879)
+Ouais, mais justement OpenGL, moi j'ai jamais plus non plus accroché. Et pourtant j'ai du bosser beaucoup avec quand même récemment. Mais c'est pour ça que WebGPU, pense que les développeurs vont interagir avec de façon vraiment différente.
+
+David Leuliette (04:49.408)
+Ouais, et donc, ouais, t'es en étude là, machin, ok. Donc c'est ton stage, c'est ton stage où tu fais du rack native ou tu découvres ça avant ?
+
+William (04:56.525)
+Non, pas du tout. Je faisais que du back-end. Mon premier job à Zurich, c'était plutôt du back-end. C'est vraiment quand React Native est sorti que... J'ai trouvé que la technologie était vraiment intéressante. C'est rigolo parce que justement, dans mon job, on bossait sur des bases de données. J'ai vu le modèle de programmation React Native.
+
+Enfin de React, et après avec React Native j'ai eu une opportunité parce que en purese c'est vraiment cool qu'on puisse... Le modèle de programmation React en fait avec les snapshots, les diffs, etc. Ça se rapprochait énormément de ce qu'on faisait avec des bases de données en fait. Et c'est pour ça que tout de suite vraiment je trouvais qu'il y avait des choses avec le framework qui étaient vraiment très intéressantes. Et donc même si je faisais pas de front-end en fait je...
+
+David Leuliette (05:36.718)
+Ok.
+
+William (05:49.748)
+regardais beaucoup ce qui se passait parce que je trouvais qu'il y avait vraiment une ressemblance et d'ailleurs aussi avec JSX, nous en fait on bossait sur une base de données, où pareil XML était inclus dans, tu sais pouvais faire une variable equals comme en JSX et du coup voilà c'était intéressant et après quand React Native est sorti, fais là vraiment, je trouvais que c'est génial que tu pouvais vraiment faire une app complètement native avec ce modèle de programmation.
+
+David Leuliette (05:59.873)
+Ouais, ouais.
+
+David Leuliette (06:09.313)
+Ouais, je vois.
+
+William (06:19.839)
+Et c'est là où je me suis mis en indépendant et j'ai commencé à travailler avec Rack Native.
+
+David Leuliette (06:24.618)
+Ok ouais directement ok ok I see I see et donc tout de suite tu t'es dit vas-y go je vais faire du youtube Bah si dis nous que c'était le plan depuis le début on le sait on le sait
+
+William (06:37.677)
+En fait, je voulais quand j'ai arrêté mon premier taf, en fait, j'adore le fitness, on s'est vu à AbJS quand je visite Krakow, j'ai toujours au CrossFit, machin. Je voulais mêler les... Il y a Kim qui a commencé, il m'a promis qu'il viendrait. Mais je voulais joindre les deux passions, fait, le côté développement.
+
+David Leuliette (06:52.792)
+A la prochaine fois, vas-y, je viens, je viens.
+
+David Leuliette (06:59.535)
+ouais ? là là... Vas-y...
+
+William (07:07.245)
+et fitness. Donc en fait, je voulais développer une app de fitness, un truc comme ça. Et en fait, c'est en me lançant dans React Native et en essayant de développer une app que je suis devenu tellement intéressé par les aspects techniques que j'ai commencé à faire des tutoriels, etc. Parce qu'au final, plutôt que de bosser sur une application en elle-même, j'étais vraiment complètement aspiré par des aspects techniques.
+
+justement comment faire certains effets, C'est comme ça que Can It Be Done, Direct Native, etc. est apparu.
+
+David Leuliette (07:43.535)
+Ok, donc ça continue... Donc ouais, pour expliquer ceux qui connaissent pas du tout... C'est vrai que c'est en anglais, donc pas forcément, les gens savent pas forcément. C'est une série où on prend n'importe quel screen et le challenge c'est est-ce qu'on peut le faire en rack native ? Parce que à l'époque c'était genre, oui non mais ça on peut pas faire rack native. Alors que, après 200 vidéos plus, je pense, je ne sais plus...
+
+peut dire que 95 % des choses peuvent être faites avec règle native. Bon allez, va dire 90%. Ça dépend vraiment. Donc tu continues la série et là t'as plus le temps parce que full time sur Uskia.
+
+William (08:25.257)
+En fait, la série, on se rendait compte que c'est surtout les visual candies, les high candies, les effets visuels. Et en fait, en React Native, n'y vraiment pas de primitives graphiques très intéressantes. Et la série, c'était vraiment commun avec ce... Avoir seulement quelques primitives, on peut essayer de contourner, d'utiliser l'obstacle en fait, plutôt comme une inspiration.
+
+Et au bout d'un moment, fait, on s'est dit, ben non, ok, c'est cool. En fait, c'est génial parce que c'est un jeu, en fait. Il faut essayer de faire quelque chose. Et les règles sont très strictes parce qu'il n'y avait pas beaucoup de primitives. Au bout d'un moment, on s'est dit, bon, ok, quand même, on casse la barrière et on ajoute ces primitives et c'était le projet, qu'il a. Et en fait, pour moi, un des déclencheurs, c'était parce qu'en final, tu t'amuses, tu t'amuses à, un puzzle et tu réfléchis pas forcément, ok, bon.
+
+C'est rigolo mais peut-être faudrait vraiment... dans la vraie vie. Voilà, exactement.
+
+David Leuliette (09:28.75)
+Oui, la vraie vie en fait en vrai personne fait ça, tu vois dans la vraie vie, tu vois on va dire moi, moi en tant que freelance qui passe de 0 1 et qui est des clients normaux on va dire entre guillemets jamais de la vie je vais passer trois semaines sur une innovation on est d'accord c'est rigolo mais en vrai il faudrait un truc un peu plus straightforward et plug-in-play comme ça moi je fais yarn ads qui a non pnpm tu utilises quoi comme package manager en ce moment en fait
+
+William (09:42.839)
+Voilà.
+
+William (09:51.24)
+Et en ce moment, je n'utilise Yarn parce que Monoripo et Monoripo avec React Native, c'était la seule combinaison pour le moment qui fonctionne. Donc je suis avec Yarn et Monoripo.
+
+David Leuliette (09:56.206)
+Ok.
+
+Ok. Ouais, ok.
+
+Je suis en train d'évaluer comme chaque année ce qu'est qu'on change mais ok allez on va rester avec yarn c'est bien tu utilises yarn ça me va
+
+William (10:10.22)
+Mais le déclencheur en fait c'était vraiment je faisais mes vidéos et je m'amusais bien, je me posais pas de questions. Et en fait c'est Rimotion, le projet de Johnny Burger qui permet de faire des... Donc je commence à l'utiliser dans mes vidéos.
+
+David Leuliette (10:22.753)
+Donc ouais, faut expliquer. En fait, Remotion, permet de faire des vidéos avec React. Donc programmatie. Ouais. Pour les programmeurs.
+
+William (10:26.636)
+Voilà, c'est un peu comme After Effects mais pour les programmeurs exactement. Et donc je commence à l'utiliser dans mes vidéos et quand tu utilises Remotion, c'est les primitives graphiques, c'est le web, c'est pas... Et là du coup, d'utiliser un Canva où vraiment tout est... Il n'y a pas les limites de React Native, ça a commencé à me mettre une pression de malade et au bout d'un moment je fais, mais trop c'est trop, il faut... Et c'est comme ça qu'on a commencé...
+
+David Leuliette (10:46.575)
+Oui.
+
+David Leuliette (10:52.601)
+Ouais.
+
+William (10:57.358)
+On dit ok, on fait React Native Ski en fait.
+
+David Leuliette (11:00.981)
+Ok, c'est rigolo, donc en fait c'est la pression sociale de la YouTube... de la chaîne YouTube qui a émergé de cette librairie open source fantastique. Trop bien.
+
+William (11:15.086)
+Absolument. Et du coup j'ai tellement été aspiré par ça et du coup ça ça entraînait WebGPU parce qu'on fait ok comment on améliore ce qu'il y a c'est WebGPU etc. que je voilà je me suis retrouvé très très occupé par le open source work.
+
+David Leuliette (11:30.319)
+bah oui, open source work, c'est bizzare, les gens ne rendent pas compte mais c'est vraiment du boulot. Qu'est-ce qu'il te fait qu'il fait quand tu codes ?
+
+William (11:42.215)
+Il a pas mal de choses, que j'adore avec le... vraiment ce qui m'a attiré énormément avec React Native au début, c'était vraiment le côté... je trouvais que l'innovation était... wow ! L'innovation était importante et c'était toujours du bidouillage, y avait toujours le côté hacking. Et chez Purée, c'est vraiment le meilleur des deux mondes, parce que là, on est assis sur une innovation vraiment substantielle.
+
+David Leuliette (11:54.767)
+Ouais t'es folle. J'avoue.
+
+William (12:10.646)
+et à la fois on garde le plaisir bidouilleur donc ça j'adore et vraiment ce qui en ce moment me fait kiffer donc je suis plus sur la partie GPU graphique etc c'est vraiment le côté
+
+David Leuliette (12:23.535)
+possible en plus. surface du framework elle est tellement dingue que chacun va y trouver son compte en fait quand tu réfléchis bien. Moi c'est ça, pareil, moi je me dis j'ai plein de fois de stacks et là je reste sur RackNative depuis ça va faire maintenant 10 ans et je sais rien en vrai quand tu te rends compte de...
+
+William (12:25.806)
+...
+
+David Leuliette (12:44.833)
+tout ce que tu peux diguer et toutes les verticales dans lesquelles tu peux aller mais c'est complètement fou genre tu dis ouais t'aimes bien la CIA et tout machin tu vas dig dive expo machin les bills tout le bordel là GPU bah c'est que ça t'as vraiment gargantuesque en fait
+
+William (12:56.782)
+Ouais, c'est...
+
+Ouais effectivement ouais.
+
+David Leuliette (13:02.2)
+Donc à ici. Et alors.
+
+William (13:19.174)
+On se sent sur les cibles de giants.
+
+William (13:32.042)
+justement c'est beaucoup de maths, etc. C'est des choses qui sont comprises mais depuis 10, 20, 30 ans voire plus. Et à la fois, qu'il a WebGPU, qu'il y a un contexte actuel qui fait qu'il a un côté nouveau. Et ce mélange pareil, il y a des choses qui sont vraiment sincèrement nouvelles et à la fois il y a quand même une fondation très très mature.
+
+David Leuliette (13:37.623)
+Oui depuis très longtemps.
+
+David Leuliette (13:54.883)
+Ouais, basé sur...
+
+William (14:00.117)
+et d'avoir ces deux c'est génial.
+
+David Leuliette (14:00.319)
+T'as regardé la code base de Doom alors
+
+William (14:05.677)
+Ah ah ah
+
+David Leuliette (14:08.207)
+Parce le mime c'est Doom, c'est le software le plus portable du monde parce que tu peux le lire partout, ça a été fait en C par John Carmack il a mille ans pour ceux qui étaient pas nés, ou ceux qui connaissent pas. Et moi je sais que j'ai déjà regardé en mode j'essaye de comprendre et tout, bon je sais pas faire de C mais... Ouais c'est en C.
+
+William (14:26.987)
+il y a quoi ? y a euh... séance C. Séance C, ok.
+
+David Leuliette (14:32.303)
+Et en fait le truc c'est que ça a été porté, mais même en fait si vous regardez un peu des vidéos sur comment ça a été pensé et tout, c'est trop smart parce qu'à l'époque déjà, bah en fait c'était RackNative, la code base de Doom, parce qu'en fait il a un module de build par plateforme et c'est pour ça en fait que depuis 30 ans on nous bassine et que c'est portable partout, parce que de base il a le core et de base il s'est dit ah ouais en fait je pourrais le build sur plusieurs plateformes. Et inclus depuis, alors qu'à l'époque il y avait rien quoi.
+
+Il n'y avait rien. Ok donc ouais la fin... Donc oui ! Donc stack moderne, explique d'où ? C'est quoi la fin d'OpenGL et pourquoi... C'est quoi un modern GPU ?
+
+William (15:04.173)
+Me Heur
+
+William (15:12.589)
+Ah ouais, justement le GPU en fait il y a deux aspects, y a la carte graphique, a ce que tu utilises, donc Web GPU OpenGL et tu as le développeur en Et si tu prends OpenGL, vraiment en fait côté développeur il a un gros problème, c'est c'est vraiment un global state.
+
+William (15:39.535)
+Tu vois par exemple dans le contexte de Skia où tu as plusieurs Canva etc. qui tournent en même temps etc. ça devient très très compliqué. Et parce que tu as ce global state, ça devient très très compliqué aussi côté carte graphique pour les gens qui implémentent les drivers d'optimiser les choses, de faire que ce soit rapide etc. Personnellement OpenGL j'ai jamais pu accrocher... Bon bref.
+
+David Leuliette (15:56.143)
+vous remercie.
+
+William (16:04.814)
+Il y a aussi côté développeur en fait WebGL c'est une API C, c'est une API C qu'ils ont juste fait one to one en JavaScript. WebGPU c'est une API JavaScript. T'as des promesses, t'as des... Et alors, ouais, et un autre aspect, c'est l'aspect aussi qui me fait kiffer en ce moment qui... En fait, donc en WebGL c'est une rendering pipeline, tu fais des triangles, tu mets des couleurs sur tes triangles, c'est tout. En WebGPU...
+
+David Leuliette (16:08.901)
+Right.
+
+David Leuliette (16:14.476)
+Ok ouais, Donc t'es plus à la maison quoi.
+
+William (16:34.478)
+tu as cet aspect là, mais tu as un nouvel aspect qui s'appelle compute shaders où tu peux juste faire des calculations, general purpose GPU computations. Tu peux faire, tu vois, des modèles de machine learning, Plein de choses. Et le côté rigolo, c'est de se dire, bah ouais, donc cette partie non spécifique, si on s'en servait aussi pour faire des graphiques.
+
+David Leuliette (16:59.76)
+WTF
+
+William (17:00.846)
+Et en fait c'est super intéressant parce que justement tu peux faire des nouvelles choses, des choses vraiment nouvelles en fait. Et ouais, c'est passionnant.
+
+David Leuliette (17:02.306)
+C'est possible !
+
+David Leuliette (17:14.544)
+Et du coup pour ceux qui n'ont jamais entendu parler de Vulkan sur Android et Metal sur iOS, ça s'insère où là dedans ?
+
+William (17:22.41)
+Ouais, ouais, pardon, parce que donc là, j'ai parlé de la partie développeur, mais la partie... Du coup, comme la pays est plus proche de comment les cartes graphiques modernes fonctionnent, ça permet aussi de... Ça permet pas mal de choses, en fait, au niveau des drivers, etc., donc Metal, Vulcan, pour être plus rapide, etc. C'est juste qu'à l'époque...
+
+David Leuliette (17:49.68)
+DirectX, c'est pareil, Windows c'est DirectX. Voilà, pour ceux qui connaissent pas trop...
+
+William (17:51.936)
+Ouais exactement, exactement. c'est juste qu'à l'époque...
+
+On ne pas l'architecture que les GPU au niveau hardware auraient aujourd'hui.
+
+David Leuliette (18:05.671)
+Ouais c'est ça, il avait pas besoin. Donc maintenant au moins c'est plus unifié tout ça.
+
+William (18:12.01)
+D'ailleurs c'est rigolo parce que tu parlais de Doom et on pourrait revenir parce que Doom en fait justement est-ce que tu peux compiler les instructions, les faire tourner dans un compute shader etc. On peut en parler mais il aussi en parlant de technologie plus ancienne, je purée les mecs ils étaient balaises à l'époque je réfléchissais Tomb Raider avec les triangles machin etc. A l'époque il n'y avait pas de GPU le truc tourné parce qu'aujourd'hui tu regardes ça tu dis oui c'est facile
+
+David Leuliette (18:35.152)
+Ben non. Ouais.
+
+William (18:40.814)
+T'as des modèles relativement simples, etc. Mais non en fait, comment tu faisais pour que ça tourne en temps réel ? Enfin bref.
+
+David Leuliette (18:48.764)
+Bah ouais, non mais on pourrait diguer bilan. Moi j'adore regarder des vieilles code base ou des vieux trucs parce que déjà bosser les fondamentaux on adore. Et je me suis toujours dit ouais pourquoi... Enfin maintenant en fait si je refaisais un... Si j'étais prof de computer science tu vois, et bah c'est comme ça que je ferais. Je ferais bon les gars, ça c'est la code base de Doom et on a...
+
+on va diguer la code base de Doom et va refaire le Doom et expliquer par là quoi. Plutôt que d'expliquer par la partie, bon alors ça c'est Cosinus, machin, tu vois, et tu perds tout monde et puis personne ça intéresse pas forcément les gens et dix ans après ils se rendent compte, ouais en fait je faisais des maths fondamentaux c'était hyper utile à l'époque mais je trouvais ça nul parce que c'était pas le présenté alors que là tu présentes direct le résultat final en mode, bon allez on va faire Tomb Raider, on va refaire Tomb Raider, tout de suite tu hookes les gens et après tu peux deep dive sur des trucs, sur des...
+
+William (19:29.902)
+Mmh.
+
+David Leuliette (19:42.672)
+technique comme tu disais vraiment vraiment compliqué c'est vrai qu'on n'a pas parlé ce qui a c'est le moteur de rendu de chrome
+
+William (19:54.734)
+Mmh. Ouais.
+
+David Leuliette (19:57.261)
+Et comment... Comment tu... Comment ça s'intègre... Comment ça s'insère là-dedans alors ?
+
+William (20:05.698)
+Alors, fait, ce qui est vraiment cool, c'est que Google fait vraiment ses librairies en mode standalone. Tu peux vraiment l'utiliser. Et pareil pour WebGPU, ce qui est génial, fait, parce qu'ils ont une implémentation WebGPU qui est vraiment super. Et c'est cool qu'on puisse l'utiliser parce qu'ils auraient pu faire que ce soit complètement coupé.
+
+David Leuliette (20:21.86)
+Ouais, direct un peu pas. Ok.
+
+William (20:34.942)
+avec Chrome et parce qu'en plus eux faut que leur build système tout ça marche, que ça soit testé donc c'est assez cool que ça fonctionne en standalone et du coup ça nous permet de l'intégrer et puis les équipes sont sympas que ce soit sur d'ailleurs pas mal de français sur la partie web gpu que ce soit sur web gpu sur skia
+
+David Leuliette (20:36.976)
+Ouais, ouais,
+
+William (20:59.842)
+Il y a une bonne communauté, les gens sont assez cool. y a une bonne stewardship de Google, dirais, sur ces deux projets.
+
+David Leuliette (21:06.832)
+Ok, cool. Et WebJPW, c'est un standard ? gère ça ? C'est le W3C et tout ça ? Ok, ouais, d'accord. Pour ceux qui ne connaissent pas, c'est un standard. Avant le W3C, il y avait plusieurs versions de JavaScript, c'était un bordel.
+
+William (21:11.534)
+Ouais, c'est un standard W3C.
+
+William (21:21.77)
+J'ai beaucoup de respect pour les gens qui bossent sur ces comités de... Parce que c'est... C'est un enfer, enfin...
+
+David Leuliette (21:24.976)
+Ah mais c'est un enfer ! C'est... faut... Alors maintenant je sais pas quelle astrade protéger l'internet... si ! Parce que techniquement si tu fais du JavaScript comme en 95 il fonctionne encore maintenant dans Google Chrome ou... Ouais ouais... Ouais ouais si si si si du coup le rétro-compatibilité... Rétro-compatibilité pardon ? Hé ! Y'a deux trois trucs à savoir hein ! Franchement ! Plus créer du nouveau et arriver en mode oui mais en fait on va...
+
+William (21:49.644)
+Ouais...
+
+David Leuliette (21:54.326)
+faire de l'innovation et c'est hyper compliqué.
+
+William (21:55.15)
+Et puis il a des specs, je sais pas trop, mais par exemple, je trouve WebGPU, tu regardes les mecs qui ont designé le machin, il y a du talent. Parce qu'après, je pense qu'il y a d'autres specs. Moi, ne pas, ça fait longtemps que n'ai pas regardé, je ne pas faire de name drop-in, mais j'ai une spec que j'ai en tête où je pense qu'au final, n'a pris, la sauce n'a pas pris, mais...
+
+David Leuliette (22:05.178)
+Allez.
+
+David Leuliette (22:10.112)
+Pas de name drop. Ouais. Ouais.
+
+David Leuliette (22:21.402)
+Ouais.
+
+William (22:22.881)
+Mais WebGPU, je me dis purée, les mecs qui ont designé ça, il y a du talent. Et aussi, alors quelque chose que j'aime bien, c'est qu'il un bon équilibre entre ces low levels, de toute évidence, mais pas complètement non plus débridés, tu vois. Et je trouve qu'ils ont choisi un bon équilibre. Parce que justement, des fois, les contraintes, c'est bien, sinon ça donne les règles du jeu. Et je trouve que les mecs, ont...
+
+David Leuliette (22:34.85)
+Ouais donc y'a un peu de magie quand même.
+
+William (22:52.245)
+les gens qui bossent dessus, la communauté, ils ont... je disais ça dans le sens colloquial. J'ai plus l'habitude de parler français en plus mais moi je trouve qu'il a du talent.
+
+David Leuliette (22:52.546)
+La communauté, les gens, les dames et les gentes dames et messieurs, tu vois ?
+
+David Leuliette (23:02.38)
+Ouais, non mais c'est pareil, moi c'est un enfer, t'inquiète pas, je les bise sur eux.
+
+David Leuliette (23:11.504)
+Je vois. donc là va remonter un petit peu. Alors niveau middleware, le pont vers le mobile. Comment on connecte un moteur Skia à l'infrastructure d'Android et iOS ?
+
+William (23:23.053)
+C'est une bonne question. En fait, c'est intéressant parce que... Donc pour nous c'est...
+
+David Leuliette (23:25.744)
+Allez
+
+William (23:35.199)
+Donc il a Hermes enfin y a le moteur JavaScript de Rack Native. Je pense que maintenant Hermes c'est le défaut et c'est le seul qu'on supporte nous sur Skia et WebGPU.
+
+David Leuliette (23:38.992)
+Un miss. Ouais.
+
+David Leuliette (23:43.184)
+de... ok c'est vrai que oui on peut pour dire aux gens qui savent pas on pouvait avoir plusieurs différents avant Hermes il y avait différentes versions si je me rappelle bien surtout sur Android c'était un bordel
+
+William (23:55.585)
+Ouais, et techniquement c'est toujours le cas mais nous on est, maintenant on commence à devenir relativement couplé avec Hermes. Pas sur le papier mais à côté pragmatique on l'est je pense. Et donc on doit, donc on a cet API C++ que ce soit WebGPU, alors WebGPU c'est bien parce que c'est un standard donc la partie JavaScript elle est...
+
+On doit respecter. D'ailleurs on génère les bindings. fait ce qu'on fait, on a pris le... il y a un fichier TypeScript. Ça c'est l'API WebGPU. On génère le code C++ qui permet de se connecter à la librairie C++. Alors la librairie que j'utilisais s'appelle ts-morph. ts et...
+
+David Leuliette (24:31.771)
+Ouais, à trop bien.
+
+David Leuliette (24:44.369)
+Très très bien, vous le générez avec quoi ?
+
+David Leuliette (24:52.413)
+Ok, tu y es smurf, tu lui files un truc et...
+
+William (24:54.038)
+ça permet de... non non, ça permet d'analyser en fait le code TypeScript mais de façon vraiment high level, donc tu peux rapidement écrire un code GEN. Et...
+
+David Leuliette (25:06.349)
+Ok, ouais code GEN c'est une commande allez taper et hop, magie, ça soit migrer de version genre vous passez de React 18 à 19 ou alors comme là tout général.
+
+William (25:10.986)
+Voilà,
+
+William (25:16.814)
+Ouais, y'a un...
+
+Et un aspect vraiment cool c'est que le C++ moderne ça se map one to one sur du JavaScript mais de façon impeccable. Par exemple en JavaScript tu peux avoir propriété Foo, intérêts Gaussian Mark, c'est un nul ou un type fou ou un type bar. Ça en C++ tu peux l'écrire en une ligne. Ça va être std optional of std variant of Foo bar null pointer type.
+
+David Leuliette (25:43.441)
+Ok.
+
+William (25:49.806)
+ou alors j'imagine en typescript si tu fais Foo, equal, propriété Foo c'est un nul et un undefined et un bar, c'est différent que si t'as le interrogation mark. Parce que ça veut dire là t'es obligé de spécifier même si c'est undefined la valeur, bah ça tu peux l'exprimer pareil de façon aussi claire en C++ moderne et c'est génial parce que justement pour générer ces bindings, aucun problème. Et en C++ t'as les templates.
+
+David Leuliette (26:02.425)
+Ouais, on dit ça ouais.
+
+William (26:18.399)
+Donc ça va permettre de façon complètement transparente, passer du type JavaScript au type C++ en fait. Donc toi tu récupères ton type C++ directement et toute la conversion, sais, regarder, sais, en fait il a une API Hermes en C++ qui te permet de faire get property, machin, etc. de manipuler le JavaScript. Tout ça est géré de façon complètement transparente.
+
+David Leuliette (26:27.281)
+Ok.
+
+William (26:46.485)
+Et c'est comme ça en fait qu'on connecte...
+
+Il y a d'autres aspects un peu plus durs à gérer, le côté garbage collection et aussi Hermes, ça évolue. y avait des API aujourd'hui qui n'existaient pas quand on a commencé SkiA, etc.
+
+David Leuliette (26:50.892)
+directement.
+
+David Leuliette (27:07.321)
+Et pareil, vous devez gérer la mémoire ou pas alors ? Parce que si je me rappelle dans les cours de C c'était ça, gestion de mémoire, segmentation fault, bim
+
+William (27:10.441)
+Ouais alors euh...
+
+William (27:16.717)
+En C++ moderne, as des choses qui s'appellent par exemple les sharp pointers, Donc tu des memories pattern qui aident beaucoup. Pour nous, vrai sujet c'est comment en quand on commence à faire Skia, on met ces bindings C++, on les expose en JavaScript et en fait pour Hermes, si tu crées un Canva Skia,
+
+Pour lui c'était juste un pointeur. Donc il ne pas que derrière il y peut-être 60 MB de mémoire. Du coup il fait, c'est bon, je n'ai jamais besoin de détruire l'objet. D'ailleurs c'est un problème que les gens... Parce que généralement quand j'ai un problème d'architecture comme ça, je me dis qui devrait avoir le même problème et regarder ce qu'ils font en fait.
+
+David Leuliette (27:52.689)
+D'accord, bye-bye.
+
+David Leuliette (27:58.962)
+ça ?
+
+William (28:13.325)
+C'est pareil, si à un moment on avait des problèmes d'intégration avec Android, on s'est dit ok, si ces problèmes sont réels, on peut faire l'hypothèse que tel produit va avoir le même problème et puis on va regarder ce qui se passe. Par exemple, en WebAssembly, ont le même problème. Tu crées des objets C++ qui sont exposés en JavaScript. Le garbage collector, ça tu peux le tester sur Chrome. Ne sais pas en fait combien il a de mémoire associée avec l'objet. Et du coup, l'objet...
+
+tu dois le détruire de façon explicite, soit pour un dispose, ou maintenant avec WebAssembly ils ont garbage collection, WebAssembly, bon ça pose d'autres problèmes. Donc nous en fait avec Skia et WebGPU, on doit donner pour chaque objet une estimation de la mémoire. En fait on peut pas lui dire exactement combien il de mémoire qui est prise, que soit il faudrait qu'on le recalcule à chaque fois, ça ça prendrait trop de temps.
+
+soit on peut s'est associé à des ressources GPU etc. on ne pas vraiment. Donc on lui donne une estimation et puis on sait en fait comment le garbage collector va fonctionner. Donc généralement il n'y a pas besoin d'une valeur précise on va juste être capable de déclencher le garbage collector sur ces objets en fait. Donc ça c'est le premier aspect. Bon le second aspect c'est c'est par rapport à des changements de la PIE Hermès mais ça serait peut-être un peu je sais pas si...
+
+Ce serait peut-être un peu trop niche pour en parler. Un peu trop niche.
+
+David Leuliette (29:43.118)
+un peu trop. Si vous voulez bien diguer, par contre tout est open source, si vous voulez diguer vous pouvez cloner direct le repo, faire un slash explain dans votre LLM favori et prendre la première issue. Il a beaucoup d'issues sur le repo ou pas en ce moment ? Ou ça va, c'est assez niche pour pas qu'il ait de regas genre comment ça marche.
+
+William (29:49.079)
+Ouais.
+
+William (30:03.021)
+Pas trop...
+
+William (30:07.947)
+Ben pas trop et vraiment quelque chose qui me surprend en fait, il n'y a pas trop de de LLM pour le request. Et ça me surprend en fait parce qu'il y a quand même pas mal de choses tu vois en one prompt il te le fait et je suis surpris en fait que...
+
+David Leuliette (30:16.468)
+ok ouais.
+
+David Leuliette (30:24.561)
+Ouais mais faut savoir, c'est toujours pareil, faut savoir le bon... Faut savoir ce que tu cherches tu vois. C'est comme si je dis, l'LM c'est vitamines, c'est pas painkiller. C'est genre, tu vas travailler 30 % plus rapide mais si tu sais pas ce que tu cherches bah... Tu vois ? Alors que Versus c'est un framework un peu plus tu sais, je prends n'importe quoi, je vais prendre Bootstrap, c'est un peu plus visuel, bah... C'est un peu plus simple à diguer quoi. Là faut... Eh, y a une surface de choses déjà à faire, mais peut-être !
+
+William (30:26.518)
+Ouais.
+
+Ouais, ouais, ouais.
+
+William (30:33.527)
+L'air.
+
+William (30:39.405)
+Ouais c'est vrai.
+
+David Leuliette (30:53.431)
+Malheureusement je suis désolé d'avance William, après cet épisode tout le monde aura une vision claire de comment travailler avec Skia et du coup tu te feras envahir de pull requests désolé d'avance Ok ok Donc on va monter un petit peu là, va passer à la couche React Native et JavaScript et donc comment Skia il communique avec React Native sans tuer les perfs
+
+David Leuliette (31:24.323)
+ou comment ça communique tout court en fait en Là...
+
+William (31:28.173)
+Alors le... en fait, bon le... on a changé de modèle alors c'est pareil qu'on a commencé Ski-A, il y avait donc déjà Fabric, c'était pas le défaut... Les choses ont pas mal...
+
+David Leuliette (31:38.241)
+Ah c'est vrai, Favre. Attends, faut expliquer chaque... Faut expliquer chaque mot à chaque fois qu'on parle. Alors Fabrique, qu'est-ce que c'est ? Ah oui, oui, oui. Ah c'était quand ? C'était quand que t'as commencé ? C'est vrai ? Ouais... Ok, ok. Donc c'était l'ancienne façon de faire...
+
+William (31:43.821)
+En fait, était sur l'ancienne architecture. C'était 2022-2023. On oublie maintenant, la nouvelle architecture, c'est l'architecture. La façon dont on communique avec le module, c'est cette notion de Canva, comme dans le web où tu le Canva Element. Et en fait, selon...
+
+David Leuliette (31:59.139)
+Ouais, c'est c'est vrai.
+
+William (32:13.682)
+plateforme Android, iOS ou...
+
+Ce Canva n'est pas forcément disponible immédiatement. C'est des choses qui sont un peu insynchrones. Donc en fait, qu'on fait, c'est le Canva, a la taille du Canva. Ça, on l'a immédiatement grâce à, j'allais dire, nouvelle architecture, grâce à l'architecture. Et en fait, ce qu'on va faire, nous, c'est qu'on va créer un Canva off-screen immédiatement. Parce qu'on a la taille, on a la dimension du Canva. Et dès que le...
+
+il a un Canva on screen qui est disponible, qui se dessine, on envoie le dessin sur... Et en fait il y a la API Java Script, enfin la API C++ qu'on expose dans Java Script que j'ai déjà mentionné, et dans le cas de Skia, en fait on a créé un Reconsaliers où tu peux créer tes composants Skia en React Native comme le fait...
+
+David Leuliette (32:50.927)
+Deux signes.
+
+William (33:16.205)
+Donc en fait tu fais Canva, groupe, transform, path et nous derrière en fait on fait un...
+
+on envoie ça sur un dessin Ski-A. Et en fait, on avait un modèle pour le faire au début, était un modèle à l'addobe, où t'ajoutais des nœuds, machin, etc. Et puis on s'est rendu compte qu'en fait, c'était pas performant du tout, et on a changé sur un immutable. Et en fait, c'est rigolo parce que c'est exactement ce qu'a fait React Native de son côté, fait. Où ils utilisaient un réconseilleur sur l'ancienne architecture, qui était non...
+
+David Leuliette (33:52.506)
+oui
+
+William (33:59.551)
+immutable, ils sont passés sur un modèle immutable et on est passé sur un modèle immutable aussi. C'est à qu'en quand t'animes on vraiment fait tout pour que tout soit rapide, le plus rapide possible et que t'aies la même performance que si tu t'avais écrit le code en C++ directement et quand en fait t'as un changement dans le React très concilié, donc là un changement non animé, je sais pas tu vois t'as un set state, un machin.
+
+David Leuliette (34:13.01)
+60 FPS tout ça
+
+William (34:27.912)
+On reconstruit l'arbre en fait. L'arbre est immutable, on le reconstruit et on le renvoie. C'est le modèle actuel.
+
+Tu peux toujours faire les choses en impératif si tu as besoin. Tu fais du JavaScript, comme Canva2D API. Draw this, draw that.
+
+David Leuliette (34:51.698)
+Ouais ouais c'est ce que j'allais dire en fait c'est compatible tu peux encore faire des animations comme à l'ancienne ou plus du tout là maintenant
+
+William (35:01.164)
+Est-ce que tu as pas des animations à l'ancienne
+
+David Leuliette (35:02.418)
+comme avant l'ancienne architecture. Vous avez de la rétro-compatibilité ou pas du tout
+
+William (35:11.532)
+Sur Skiha, oui. Sur WebGPU, pas du tout. Parce que sur WebGPU, fait de ne avoir la taille du Canva de façon synchrone, on avait une version qui marchait, c'était complètement cassé. C'était du bidouillage. Donc là, on s'est dit, ça servait à rien. plus, faut être symétrique avec le web. Là, l'API, c'est pas nous qui décidons, c'est un standard. Donc on peut pas se permettre de dire...
+
+David Leuliette (35:14.106)
+Ouais ? Ok.
+
+David Leuliette (35:19.858)
+Ouais, ok. Ouais.
+
+David Leuliette (35:24.956)
+Ouais.
+
+Ouais donc ça sert à
+
+David Leuliette (35:36.178)
+Ouais.
+
+William (35:40.46)
+Donc là on l'a enlevé, ça nous a permis de réparer plein de bugs, j'arrive plus à parler français sur les sujets, vois, bugs fixes, machin...
+
+David Leuliette (35:50.547)
+Ah non mais tu peux franchement en vrai tu peux tu vois le nombre de donklysis qu'il dans l'épisode pour ces... Oui de kiker toute cette partie
+
+William (35:57.677)
+Mais pour nous ça a été un soulagement en tout cas sur la partie WebGPU. Et ce qui était cool aussi c'est que, tu je parlais des resources management, garbage collector etc. Ce qui est cool aussi c'est qu'avec WebGPU qui est un standard, on n'avait pas le choix. C'est à qu'on pouvait dire bah non mais on met une méthode .dispose, .delete pour forcer le explicit resource management. Et en fait c'est génial parce que comme là ça revient à un standard, on sait, non je vraiment, peut pas.
+
+Donc comme ça, permet de dire, ben non, il vraiment qu'on fasse que ça fonctionne bien avec le garbage collector, etc. Dans WebDPU, tu des méthodes pour faire du... Du explicite ressource management, mais juste aux endroits où c'est... Où t'en as vraiment besoin, pas partout, en fait. donc ça, c'est assez bien aussi quand les règles du jeu nous sont données par quelqu'un d'autre. que sinon, justement, c'est ça le pouvoir des contraintes, des fois, c'est que...
+
+David Leuliette (36:44.242)
+Ouais, I see.
+
+William (36:53.057)
+Si t'as pas ces contraintes là, des fois tu pars dans des voies, des directions qui sont un peu hasardeuses en fait. ouais.
+
+David Leuliette (36:57.744)
+Ouais, même faire les deux en même temps c'est très très compliqué je trouve. Moi quand je fais des productes et que t'es pareil en tant que freelance, le client il sait pas trop ce qu'il veut et que tu dois décider toi-même et après l'exécuter t'es là mais non mais alors déjà tu triches un petit peu genre ça je vais pas le faire et ou pareil tu peux pas te concentrer sur vraiment exécuter, trouver le meilleur plan si t'as pas les règles du jeu en fait en vrai c'est très compliqué. t'es jugé parti, pfff... Moi je trouve ça plus simple quand t'as des règles strictes.
+
+William (37:18.796)
+Ouais... Ouais...
+
+David Leuliette (37:26.69)
+des contraintes comme tu disais et exécuter derrière et trouver une solution plutôt que de chercher à qu'est qu'il faut faire et faire la solution en même temps. Mais c'est vrai que t'as dit, vous êtes combien dans la team là, bosser full time sur le projet ?
+
+William (37:37.58)
+pardon, c'était le... On Royal, c'est juste moi.
+
+David Leuliette (37:42.468)
+Ouais, ok ouais. Non, c'était au cas où il y avait d'autres gens qui viennent on-side par time ou pas. Ouais. Ouais.
+
+William (37:48.429)
+Beaucoup de collaboration avec Software Mansion, énormément. ce soit sur la partie Web GPU, enfin ils sont très impliqués sur la partie Web GPU, que ce soit le module natif, Type GPU, il a pas mal de collaboration avec Type GPU. Sur la partie Skia, y a énormément de contributions qui viennent de Software Mansion. Si j'ai des questions, donc je dirais Software Mansion énormément. On a aussi quand pas mal de contributeurs dans la communauté.
+
+David Leuliette (38:11.013)
+Ouais directement.
+
+David Leuliette (38:18.482)
+Ouais je vois, c'est de l'open source classique, y'a pas de corps comme... Y'a pas de team de 10 personnes.
+
+William (38:23.884)
+mais je suis toujours en discussion avec beaucoup de gens en fait, et notamment beaucoup Software Mansion en fait.
+
+David Leuliette (38:29.05)
+plein de gens.
+
+David Leuliette (38:34.212)
+Big up à Kataline qui est dans le chat. Hey ! Il voulait juste nous celluer. Ça fait longtemps qu'on ne vous a pas vu. App.js cette année. Ben oui, bien sûr App.js. Big up à App.js. On sera là. App.js, pas de problème. Kataline, on se verra là-bas. Ok, ok. Donc là, on a parlé un peu de tout ça. Hermes, garbage collection, comment ça fonctionne, Fabrique New Architecture et tout.
+
+William (38:37.171)
+C'est l'OE l'OE.
+
+William (38:42.326)
+oui oui oui, ouais, absolument ouais.
+
+Absolument, ouais.
+
+David Leuliette (38:58.77)
+Il y a un peu plus terre à terre, day to day, facilité d'utilisation, c'est quoi ton top 3 des librairies pour travailler avec Skia ? Parce que j'ai vu que ta Skia, t'avais shippé une libre pour le load hash des animations, si je ne m'abuse. C'était jadis, c'est so 2000 ça de Monsieur Le Lietain !
+
+William (39:16.086)
+Ouais, mais ça c'était vraiment avant...
+
+William (39:23.236)
+En fait, c'est rigolo parce que dans cette librairie, il y avait pas mal de primitifs par rapport à la gestion des paths SVGs, faire de l'interpolation, etc. Mais maintenant, qu'il a fait, ce ce qui contient, c'est beaucoup plus puissant. Pareil, il avait des choses par rapport aux calculs de matrices que maintenant, fait... Puis à l'époque, moi, ça me semblait balèze. Maintenant, je trouve ça nul, en fait. Enfin, pas nul, mais maintenant, est... Je me dis...
+
+David Leuliette (39:31.612)
+ok, ouais.
+
+David Leuliette (39:36.06)
+Ok. Ok.
+
+David Leuliette (39:40.889)
+Ouais, inutile.
+
+David Leuliette (39:47.27)
+oui mais ça c'est... oui non mais je... On a changé de classe, on est passé en business. Non mais je comprends.
+
+William (39:54.476)
+D'ailleurs, en parlant du pouvoir des contraintes, me fait penser, justement en parlant de Redash, machin, etc., ça me fait penser qu'heureusement, à l'époque, on a commencé ce qu'il a, donc on cherchait une solution. Heureusement qu'à l'époque, j'avais aucune idée de comment ces primitives graphiques fonctionnaient, etc. Mais au final, c'était une bénédiction. Parce que sinon, j'aurais fait un truc moi-même par passion, tu vois, qui aurait été pas super forcément fonctionnel pour la communauté. Parce que je disais « Ah tiens, je vais faire mon propre moteur graphique, etc.
+
+David Leuliette (40:12.26)
+Oui, oui, c'est clair.
+
+William (40:22.367)
+Et au final, le fait que j'ai aucune idée de comment ces choses-là marchent, ça a été une bénédiction parce qu'on a été obligé de prendre une solution mature et tester. Sinon, je serais parti dans des expérimentations parce que moi je fais ça vraiment pour le love of the game. Du coup, j'aurais fait une contribution, je pense, qui n'aurait pas été très utile pour la communauté. Enfin, tout cas moins utile que ce qu'il a. Et justement, encore une fois de plus, les contraintes, fait, c'est vraiment très pratique.
+
+David Leuliette (40:40.893)
+Ouais, ici.
+
+David Leuliette (40:49.939)
+Et euh... ouais donc maintenant pour vraiment bosser avec ce qui est y'a pas vraiment de...
+
+y a pas vraiment... enfin moi en fait je comprends mon cas tu vois, j'installe une libe de chart, prends victoria native, je vois qu'à fonction des xkia, je fais vois, stylé, j'installe tout et hop ! Le seul truc que j'aurais peut-être c'est les worklets pour tu synchroniser le state, synchroniser le state de data genre exemple le chart et tout mais c'est déjà inclus dans les librairies généralement, j'ai plus d'exemples là comme ça
+
+William (41:22.827)
+C'est bon exemple, Victoria Native Chart. pense que Software Mansion bosse pas mal sur le côté maintenant aussi shippé, faire des bundles qui vont dans les work-led threads. y a pas mal de... Non, pense qu'il doit y avoir des librairies. Je suis pas forcément très au courant, parce que je suis vraiment sur la partie fondation.
+
+David Leuliette (41:27.707)
+Native.
+
+David Leuliette (41:43.027)
+Ah ouais, Focus. Bah oui, vois, normal.
+
+David Leuliette (41:53.14)
+Non mais intéressant parce que ça sert plus à rien, c'était une bonne expérience, le fameux low dash pour les... Je pensais que c'était encore utile tu vois. en fait non, mais c'est parce que c'est pareil, j'en fais jamais en fait. Si j'avais été sur le repo, j'aurais fait ouais en fait... Ça peut être depuis 4 ans, depuis 3 semaines.
+
+William (42:07.307)
+Oui et puis à l'époque, avait Reanimated One, il n'y avait même pas les worklettes donc là il fallait vraiment créer des abstractions, c'était vraiment pratique. Et puis fur et mesure, ce qui est cool c'est un peu comme GQuery, maintenant tu n'en as plus besoin vraiment, c'est un peu sauvage, à une échelle moindre en fait.
+
+David Leuliette (42:11.751)
+Ouais, ouais.
+
+David Leuliette (42:16.551)
+Ouais c'est
+
+David Leuliette (42:22.995)
+Ouais c'est vrai. Non mais si... Ouais mais c'est exactement ça, tu vois l'histoire se répète et les patterns c'est un peu les mêmes. Ok. Cas concret et futur, donc à quel moment un développeur lambda comme moi doit-il utiliser Ragnative Skia versus des webviews et du CSS ? Des views pardon, pas des webviews, oula ! Des views tout court !
+
+William (42:31.797)
+Ouais.
+
+William (42:48.551)
+Euh... Ouais. Des vues natives. Ouais c'est vraiment je pense... Y'a pas mal d'effets en fait visuels que tu vois dans beaucoup d'apps. Tu tout ce qui est shader, blur... Donc dès que tu veux faire un effet visuel vraiment qui... D'ailleurs, notamment des effets visuels qui sont relativement simples à faire dans le web. Mais euh...
+
+qui ne pas faisables en React Native. Alors je suis assez content parce que j'ai l'impression que dans les prochaines versions de React Native, va y avoir support pour Gratians et des primitives graphiques plus riches sur la vue. C'est génial.
+
+David Leuliette (43:32.2)
+Ouais, Bah là ils ont déjà commencé, là il y eu GAP il n'y a pas longtemps, Flexbox GAP qu'on a demandé pendant mille ans, l'épisode avec Thibaut qui nous a expliqué, pour ceux qui ne pas vous pouvez aller écouter l'épisode, c'était avec Thibaut de Brigade, c'était il a 4 épisodes je crois. Mais là récemment ce que j'ai vu c'est quoi ? C'est en CSS, c'est les animations justement, animations CSS de BASIC. Il me semble hein.
+
+William (43:38.471)
+Ouais c'est génial, voilà ouais.
+
+William (43:57.906)
+animation CSS...
+
+Et ouais, mais il y a pas mal d'aspects. Donc tout ce qui est path, geometry, fais hello et tu veux l'animer, machin, etc. Donc là tu vas utiliser ce qu'il a. Tout ce qui est shader, des filtres, filtres d'image, Animation scoti, l'OT animations.
+
+David Leuliette (44:02.596)
+Donc euh...
+
+David Leuliette (44:26.515)
+Ah oui alors, est-ce que l'hôti on utilise encore ou pas ? Alors est-ce que c'est utile ?
+
+William (44:30.673)
+Ouais c'est pas mal je trouve.
+
+David Leuliette (44:33.369)
+L'hôti c'est en gros vous faites une animation sur After Effects, vous faites export, vous exportez en G-Zone, vous l'importez dans vos tables, vous utilisez Recknative Lhôti qui est une libe faite par... Ok ouais. ok ouais directement. ok ok.
+
+William (44:44.299)
+Enfin nous on utilise Skia qui a sa propre implémentation de...
+
+Et en fait, nous, tu peux le composer avec un dessin SkiR. C'est-à-dire que dans ton dessin, tu dis « Ah là, j'ai mon background, j'ai un loti, j'ai un autre truc, j'ai un autre loti ». Tu peux customiser les fentes, les couleurs du loti, tu peux dire « Ah, les propriétés En fait, tu peux assigner des thèmes. Tu peux dire La propriété qui s'appelle Fou », « Bah maintenant, la couleur, j'anime la couleur ». Tu peux faire des choses assez puissantes.
+
+David Leuliette (44:59.553)
+ouais !
+
+David Leuliette (45:11.507)
+peux mettre un light et dark background.
+
+William (45:14.667)
+Ouais, tu peux faire pas mal de choses. Ajouter, changer les images, changer les...
+
+les polices de caractère, etc. Tu peux faire pas mal de trucs assez balèzes.
+
+David Leuliette (45:27.859)
+Et tu peux injecter de la data de façon dynamique aussi.
+
+William (45:30.897)
+Ouais, le texte, tu changes le texte, etc. On a des exemples dans la doc.
+
+David Leuliette (45:32.669)
+Ouais, ouais bah oui oui.
+
+David Leuliette (45:37.811)
+C'est quoi le lien de l'exemple de la doc ? C'est skia, example...
+
+William (45:41.355)
+ce scoti...
+
+David Leuliette (45:43.995)
+loti.
+
+David Leuliette (45:47.507)
+Scotty... c'est Scotty l'autre... non, Scotty ?
+
+William (45:48.637)
+Ouais, Scotty. Scotty, c'est ce qu'il a l'hôti, en fait.
+
+Ouais.
+
+David Leuliette (45:54.746)
+Attends, j'ai jamais vu ce truc, attends mais faut que... J'ai jamais vu ce truc, c'est que depuis quand ce truc ? J'ai jamais... Non ?
+
+David Leuliette (46:06.579)
+Ah si si, je vois, skia.org, blablabla, Scotty. Ok, sexe de piquants ce truc.
+
+William (46:12.01)
+Quelques mois depuis, je l'ai sortie je crois deux semaines après App.js cette année, quelque chose comme ça.
+
+David Leuliette (46:21.503)
+ouais bah c'est peut-être pour ça ok ok ok Ok je mettrai le lien dans la doc Je mettrai euh...
+
+William (46:25.683)
+Oui, ça, c'est récent.
+
+David Leuliette (46:32.748)
+le lien dans les notes de l'épisode, pardon, fous là là. Hop.
+
+William (46:38.332)
+Il a aspect qui est cool avec Skiya par rapport au web. Le web c'est Skiya, mais fait dans le web, les primitives graphiques sont dans des silos. Si prends SVG, tu as SVG Filters. Tu ne pas écrire un shaders qui va être utilisé dans un SVG Filters.
+
+Tu peux créer des SVG filters qui sont utilisés dans certains éléments. Google Chrome le supporte mais il ne me semble pas ce soit un standard et il ne me semble pas que ce soit supporté par Safari, etc. Tout est dans des silos. vois, tu SVG, Canva2D, WebGL et ils peuvent pas vraiment se parler entre eux. Alors qu'avec Skia, toutes ces primitives existent dans le même environnement, fait. Dans le même univers. Tu peux créer un shader qui un image filter qui est appliqué sur un...
+
+David Leuliette (47:26.737)
+dans le même univers et tu peux les faire communiquer. Ok.
+
+William (47:35.756)
+un path2d ou des choses comme ça fait, qui est pas mal. Et c'est pour ça notamment qu'on utilise, tu sais, CanvaKit Wasm, qui est le Skia compilé en WebAssembly. Donc c'est rigolo, parce que tu utilises Google Chrome, bah c'est Skia, pourquoi tu aurais besoin de faire tourner un Skia en top of it ? Bah c'est justement en fait pour pouvoir casser ces silos entre les... Tu vois, en Skia, as un paragraphe layout, tu text rendering,
+
+David Leuliette (47:41.651)
+...
+
+David Leuliette (47:48.691)
+Ok.
+
+William (48:06.035)
+tu vas appliquer un shader dessus, tout est vraiment le même runtime. Alors que dans le web, pas du tout en fait.
+
+David Leuliette (48:12.98)
+Ouais ok d'ailleurs, qui veulent aller explorer, Shader Toy, c'est toujours d'actualité ou pas ce site web ?
+
+William (48:22.215)
+Ouais, absolument. C'est génial, c'est une communauté que j'adore. C'est vraiment une communauté qui est très spéciale, c'est très cool. Après, les développeurs React natives, ce que je recommanderais, c'est de regarder un peu TypeGPU. TypeGPU, en fait, tu as la capacité d'écrire des shaders en JavaScript, TypeScript, qui est plutôt cool, je trouve. Mais en fait...
+
+David Leuliette (48:45.661)
+Ok.
+
+William (48:52.587)
+Type GPU pour la partie écrire des shaders, mais shader toy pour la partie inspiration. C'est vraiment les gens dans cette communauté, c'est ceux vraiment qui développent les techniques qui sont utilisées par tout le monde.
+
+David Leuliette (49:01.14)
+comment ça marche.
+
+David Leuliette (49:13.94)
+Si vous ne l'utilisez pas, ce cas, je ne pas mettre en live, mais ça va être trop galère. Ce n'est pas grave, va le décrire. Qu'est-ce que c'est chez Northoy ? Franchement, vous vous connectez, l'impression de tomber sur le site de plugin de 3ds Max version 2000, kind of, mais le site fonctionne et tu as...
+
+William (49:26.164)
+Donc, hein !
+
+William (49:32.971)
+Alors c'est ça qui génial, c'est que le site est tellement old school et le fait qu'il soit tellement... Voilà. Mais justement le fait qu'il soit tellement populaire, ça montre bien la puissance du concept et de la communauté. Que Inigo Quiles, donc qui le mec qui développe ça, n'a même pas besoin de le mettre à jour. Parce que... Et ça c'est un aspect je trouve qui est vraiment vraiment intéressant. Mais un shader, c'est un programme qui est exécuté sur GPU.
+
+David Leuliette (49:38.404)
+brutaliste design ça s'appelle.
+
+David Leuliette (49:47.39)
+Ouais.
+
+David Leuliette (49:58.901)
+Né.
+
+William (50:02.836)
+On te donne un coordonné X Y et tu dois retourner une couleur. À la base c'est ça. Et c'est exécuté pour chaque pixel et à la fin tu as une image en résultat.
+
+David Leuliette (50:17.18)
+Et donc ça commence avec les teapots. Les teapots pour ceux qui ne pas en 3D... Attends, c'est en 3D ? Attends, ça vient de 400, teapot... Ah non, c'est un endpoint ! Ça vient de où la blague de la teapot ? Ça vient de la 3D ou ça vient du web ? Je sais plus. Bah bref, en fait les teapots, c'est les teillères. Dans 3DS Max, pro... Ouais, c'est ça. N'importe quel logiciel 3D, l'ouvrez, quelque part où il a une teillère. Bref.
+
+William (50:29.322)
+Je suis pas sûr...
+
+William (50:34.698)
+Oui elle était hier, c'est le Hello World de la 3D.
+
+David Leuliette (50:45.02)
+Et donc vous pouvez ça le faire, l'écrire carrément à base de float const égale p equals minus dot vertex
+
+William (50:47.517)
+Voilà.
+
+En utilisant la technique, si tu as vu la vidéo chez Durst Gambit, c'est la même technique. Tu crées une forme, tu ajoutes et tu soustrais d'autres formes et tu arrondis les choses et tu auras une théière.
+
+David Leuliette (50:56.487)
+Exactement, c'est ce que j'allais dire.
+
+David Leuliette (51:11.32)
+C'est ça. Donc ça va de ça à carrément des scènes gigantesques à d'eau, des modèles 3D de ne sais pas quoi de robots, en passant par les fameux fond d'écran Windows 95. Voilà, a vraiment, c'est vraiment tout. Tu te souviens qu'au tout début tu dis ouais mais c'est quoi ce site ? Puis quand tu commences à diguer, tu...
+
+William (51:31.149)
+Absolument.
+
+David Leuliette (51:39.797)
+Ah ouais il y a carrément... Attends il y a des mecs qui ont mis journée. Journée c'est un jeu vidéo sur PS3... PS4 ? Oh mais Doom c'est sûr mais Doom c'est... Limite Doom c'est... Doom c'est trop facile tu vois c'est la base ! Mais euh... Mais euh... Oui du coup si vous avez 10 minutes à perdre, allez sur Shader Toy vous verrez ! Et le but c'est ça ouais ! Donc vous allez sur Shader Toy, vous téléchargez une texture euh...
+
+William (51:47.012)
+Y'a Doom hein, y'a Doom dessus.
+
+William (51:54.203)
+C'est la base, ouais.
+
+David Leuliette (52:08.844)
+n'importe laquelle et le challenge ça va être l'intégrer vous faites un nouveau projet Arachnative et vous essayez d'ajouter un texte et vous mettez le shader sur le texte voilà vous avez... ça se fait en 30 minutes ça... Est-ce que l'LLM du coup ça output bien ou alors ça fait n'importe quoi
+
+William (52:20.138)
+Mmh.
+
+William (52:27.412)
+Ouais.
+
+William (52:32.874)
+Non, non, les LLM sont... Ils captent bien, notamment en fait les shaders-kiha, il a des toutes petites différences entre le shader language qu'ils utilisent par WebGL et donc dans Shader Toy. Et si tu lui donnes un exemple, il a shaders.skiha.org, tu lui dis ça, c'est un shader-skiha. Il piche tout de suite. Et en fait, des fois, c'est un peu dur parce qu'il y a aussi sur cette communauté...
+
+David Leuliette (52:35.028)
+Décap'ed
+
+David Leuliette (52:57.32)
+ouais, la translation, ouais bah oui, c'est pour ça que fort.
+
+William (53:02.666)
+Il y a énormément d'algorithmes très très fins et d'algorithmes graphiques très puissants qui ont été développés. Je te dis, il y vraiment des gens dans cette communauté, c'est incroyable. Et c'est un peu dur parce que les LLM sont capables de les ressortir tels quels. Alors que tu sais très bien que ça vient de...
+
+David Leuliette (53:20.68)
+Ouais, ouais, ça vient des années de pratique et là ils te le sort en 2-2 et là tu fais mes what-2
+
+William (53:27.242)
+Et je crois que c'est... Là je suis pas sûr complètement mais je crois que c'est pire que ça parce qu'en fait les LLM aussi du coup font énormément de requêtes sur Shedder Toy. Alors je sais pas si c'est pour le training ou si plus les gens quand tu tapes ils disent « Ah let me look » Mais je sais que du Inigokoules a dû mettre le site derrière un CloudFlare. Maintenant si tu vas sur le site il te dit « Ah tu dois mettre I'm not a robot » etc. Avant ça n'existait pas avant les LLM parce que le site tournait tranquille.
+
+David Leuliette (53:37.745)
+David Leuliette (53:52.703)
+Ouais... mais c'est pas depuis longtemps parce qu'il me semble que j'avais été... Moi les trucs... Ouais moi ça me soule aussi dès qu'il a du Cloudfarm et je comprends pourquoi mais justement...
+
+William (53:57.163)
+Ouais c'est
+
+Mais bon... Notamment la propriété intellectuelle a été pillée, quote-un-quote. Mais en plus, ça c'est le problème que tout le a, que les machins ont été entraînés sur toutes les données possibles, inimaginables. Mais en plus de ça, le site web de Inigo Cuillès a été spammé, entre guillemets. Je sais pas si on peut appeler ça du spam, mais... Dida. Ouais, ouais.
+
+David Leuliette (54:25.18)
+DDoS spam... Non spam c'est dans l'autre sens, c'est dans l'autre sens ce spam, c'est plus DDoS par piller... Siphonner, siphonner c'est pas mal ça c'est un bon terme français Siphonner par les robots de... Ok Donc allez sur le site les amis Faites pas comme les gens qui font mourir Comment on fait pour supporter du coup les communautés pour pas que ça finisse comme Tailwind alors
+
+William (54:35.764)
+Ouais siphoné ouais.
+
+William (54:51.914)
+Ouais je... ! Bah... Ouais, alors je sais pas trop mais y'a quand même... Si si, je pense qu'y'a quand même des aspects où... Se concentrer en fait, y'a quand pas mal d'aspects sur lesquels on peut se concentrer qui peuvent pas être siphonnés justement par les... Par exemple dans le cas de Tailwind c'est des templates, etc. Bon je veux dire, si tu travailles plus sur des problèmes de fond...
+
+David Leuliette (55:09.64)
+Ouais, ok.
+
+David Leuliette (55:16.648)
+Ouais, ouais, c'est un peu différent.
+
+William (55:20.104)
+ça devient quand même plus dur à... Bon après j'ai aucune idée mais...
+
+David Leuliette (55:21.748)
+Pour ceux qui n'ont pas suivi le drama, le drama c'est qu'en gros HotelWin, c'est pour ça que je vous demandais tout l'heure, ils sont 10 dans la team, donc framework CSS hyper connu dans le monde de plus web mais en rack native ça fonctionne aussi et en fait il a une perte de revenus énorme, y du licencié des gens parce que les LLM hotputent directement les composants et en fait les gens...
+
+William (55:42.575)
+les templates, tous les templates.
+
+David Leuliette (55:50.645)
+vont plus sur la doc et comme ils vont plus sur la doc ils voient plus trop les pubs et en plus le modèle économique c'était qu'ils vendaient des composants premium en fait donc vu que les gens vont plus voir la doc bah en fait ils voient plus que c'est possible d'en acheter et du coup ils savent pas et donc voilà, perte de revenus. bah parce que sur Shader Toy il n'y a rien en fait quand tu regardes il y a... si tu peux faire un compte... ah si, un donné toy.
+
+William (56:14.953)
+Non, y a rien. Et d'ailleurs, les contraintes... Non, mais c'est pire que ça. C'est que... Non seulement y a rien, mais les contraintes, fait, pour... Parce qu'en fait, quand tu fais un shader comme ça, tu voudrais donner des données. Tu vois, ça, c'est ma géométrie, ça, c'est mes... Et tu peux même pas faire ça. Enfin... Les contraintes sont gigantesques. Et le fait que ça soit tellement populaire, quand même, malgré ces contraintes gargantuesques, ça montre bien, en fait, le pouvoir du...
+
+David Leuliette (56:25.971)
+Ouais.
+
+William (56:44.553)
+de la communauté je dirais.
+
+David Leuliette (56:46.42)
+Ah mais c'est clair parce que là c'est fou, tu regardes les trucs, fais... Mais l'image elle est complètement dingue et il a... Faut aller... Sans ligne...
+
+William (56:53.673)
+En fait, moi là je fais des shaders, c'est comme des shader toy sur ma machine, mais j'ai besoin de buffers où je mets des données que je peux même pas mettre sur le... Les mecs aussi sont créatifs, ils trouvent des... des subterfuges, notamment, j'ai vu un exemple, c'est une police de... je sais pas, une fonte. Bah les mecs...
+
+David Leuliette (56:59.476)
+Right ?
+
+David Leuliette (57:10.509)
+des subterfuges.
+
+William (57:20.521)
+la data de la fonte elle est inline dans le shader, des trucs comme ça. Donc tu sais que les gars ils génèrent ça en local probablement, ils font un copier, il y a des techniques.
+
+David Leuliette (57:32.724)
+C'est ça, allez voir, allez voir. Ouais, ok. on connaît les pirates, on connaît quoi. Trop bien, trop bien. Donc l'avenir... Est-ce qu'on va tous finir par dessiner l'UI en skia comme flotteur ou est-ce qu'on va rester sur des composants natifs ?
+
+William (57:35.433)
+où tu mets des données dans une image. Donc en fait, ce n'est pas une image, c'est un étudiage.
+
+...
+
+William (57:57.45)
+Je pense qu'on va rester sur les expériences natives parce que... Enfin déjà je connais pas bien Flouter mais de se dire que les mecs, je ne pas si prennent le nouveau design iOS, ils sont obligés de cloner le...
+
+David Leuliette (58:08.916)
+Ah ça marche pas. Ah bah ça marche pas. est-ce que l'issue est encore up du coup ? Parce que... Ah ouais ! Attends, il faut qu'on réexplique. C'est ça. Il faut qu'on réexplique. La différence principale avec Flutter, c'est que justement c'est du full-skier. Flutter c'est ça, c'est full-skier ? Un petit peu, ouais.
+
+William (58:14.382)
+Enfin ça me semble fou en fait qu'ils essayent de reproduire une expérience native à chaque...
+
+William (58:26.867)
+Enfin maintenant ils changent sur certaines plateformes, mais sur ce autre plateforme ils ont changé le moteur graphique, c'est un autre moteur graphique. C'est full ski hein.
+
+David Leuliette (58:31.764)
+Ok, mais pour rester simple on va dire que Flutter c'est genre vous avez un Canva c'est full ski as à draw et l'expérience est parfaite enfin one to one sur n'importe quelle plateforme ce serait exactement la même puisque on redraw un truc versus Ragnative c'est l'inverse où on compile chaque plateforme et chaque rendu est différent en fonction de la plateforme donc quand iOS 26 sort Liquid Glass Evan Bacon il fait no reason
+
+Je download Xcode, ça prend trois heures, je recompile, hop, done ! On a le nouveau iOS Liquid Glass compatible. Et les gens de Flutter, ils ne peuvent pas puisqu'il faut réimplémenter le design iOS Liquid Glass. Donc fait, c'est ça vraiment la différence pour ceux qui n'auraient pas capté.
+
+William (59:01.619)
+Ouais.
+
+Ouais.
+
+William (59:22.121)
+La partie fascinante en fait c'est que donc Fluteur, ils ont ce problème là qui est gigantesque et ils essayent d'intégrer des vues natives de façon rapide et évidemment ils ont du mal parce que c'est pas fait pour ça. Et nous on vient de l'autre côté où on a ce qu'il y a et on essaye de l'intégrer avec des vues natives parce que aussi ça peut permettre de faire des trucs cool comme des layouts machin. Evidemment il y a aussi des contraintes liées à ça et donc en fait on part à deux extrêmes.
+
+David Leuliette (59:39.102)
+Ouais c'est ça.
+
+William (59:51.666)
+on utilise tous les deux skis qu'il a et on essaie quasiment de se retrouver au milieu.
+
+David Leuliette (59:57.919)
+ça mais je sais pas je suis sur le site de flotteur là et l'oeuvre elle est encore la l'issue elle est encore à l'aide d'être ouvert parce que c'est du ouais c'est beaucoup de taf donc
+
+William (01:00:09.865)
+Ben, liquid glass en plus, je veux dire, c'est des shaders propriétaires, enfin, tu pourras jamais... C'est là aussi, ils sont forts, Apple, c'est qu'en plus, ils essayent vraiment de trouver des trucs qui sont durs à imiter ou à... Et sur l'aspect liquid glass, en fait, il a pas mal d'aspects sont durs à... Qui sont vraiment propriétaires, dirais, qui seraient durs à imiter. Et c'est rigolo, alors... Bref... Je suis content que c'est pas le genre de problème qu'on c'est d'essayer de... Ouais.
+
+David Leuliette (01:00:14.687)
+Ouais !
+
+David Leuliette (01:00:33.685)
+On refraint. Ouais, ouais, bah oui. Je vois. Je vois. Et attends, on l'a dit tout à l'heure, je ne sais plus, WebGPU dans RackNative, c'est possible maintenant ou pas du tout ? Ouais, ok.
+
+William (01:00:46.959)
+Ouais c'est possible et c'est génial. ça marche bien. Au début le module je l'ai sorti vraiment en mode expérimental et là depuis quelques mois ça s'est en maturité, ça s'est vraiment bien solidifié. Je suis assez content et je suis assez content aussi de ce qu'on peut faire avec, faire tourner FreeJS. Là je te dis en ce moment je bosse beaucoup sur les compute shaders. Tu peux faire des trucs vraiment cool.
+
+Type GPU, y a pas mal de l'aspect assez intéressant en Justement, si on parlait de Shader Toy, là, t'écris du TypeScript directement. Et là, je bosse sur Skia et WebGPU, c'est-à-dire, t'as WebGPU, t'as Skia qui tourne en top of it, et tu vois, peux avoir FreeJS, etc. C'est le même runtime en fait.
+
+David Leuliette (01:01:25.906)
+Ouais, directement, ouais.
+
+David Leuliette (01:01:41.534)
+Ok.
+
+William (01:01:42.078)
+Donc tu pourrais avoir une texture, qu'il a dans une scène 3D ou vice versa. Ça coûte zéro parce que c'est le même runtime, c'est WebGPU qui fait tourner les deux librairies. Et ce qui fait que si tu rajoutes une troisième librairie, tu vois, tu mets un Shader Toy et un machin, ben en fait, c'est pareil, elles sont toutes dans le même environnement. Et il y a des implications en fait assez ouf par rapport à ça, je pense.
+
+David Leuliette (01:01:54.47)
+ok, ici, trop bien.
+
+David Leuliette (01:02:02.135)
+dans le même univers.
+
+David Leuliette (01:02:11.431)
+Je mettrai en ref l'article que t'as fait sur Shopify. En fait, ouais, parce que moi j'ai juste vu la vidéo, la fameuse Gaimon. D'ailleurs, vous savez pas, allez voir cet article-là que je mettrai dans les notes d'émission. Si vous avez pas encore vu à quoi doit ressembler une vidéo promotionnelle pour une librairie, c'est bon, c'est ce de William qu'il faut regarder.
+
+William (01:02:17.84)
+Ouais, exactement.
+
+William (01:02:36.329)
+Il a la prochaine qui arrive bientôt.
+
+David Leuliette (01:02:41.065)
+teaser, vas-y c'est quand ? Dis-d'où ? Quelle date ? ça t'as... Soon. Pas de date. Quand c'est prêt. Quand c'est prêt. Ouais, après, juste avant les conférences. Nickel. Parfait. c'est quoi le titre ?
+
+William (01:02:43.849)
+Non, ça va être plus avril je pense, ça va être plus avril, mais je peux te donner le titre déjà.
+
+Drawn together.
+
+David Leuliette (01:03:00.501)
+Stylé. Stylé.
+
+William (01:03:01.457)
+MIA
+
+David Leuliette (01:03:04.553)
+Euh... Oui, parce que t'as réfléchi au titre, à la miniature, comme un bon youtubeur, avant de faire tout le reste, bien sûr, évidemment.
+
+William (01:03:11.379)
+Ouais exactement, on commence par ça et... Bah en fait c'est... Tu rigoles mais en fait c'est pas mal parce que... Justement le fait qu'à chaque fois je dois expliquer... Je dois donner l'histoire en fait... Tu présentes le travail que tu fais, tu dois... Si l'histoire ne fait pas sens... Donc en fait c'est cool qu'en Amon, genre une année avant, tu réfléchis déjà... Parce qu'Amon on avait un problème, tu sais le... J'ai pas mentionné mais... React Native Skia à la base c'était Christian, Folk et moi on...
+
+David Leuliette (01:03:23.391)
+Ouais.
+
+William (01:03:40.649)
+on bossait en équipe et des fois on réfléchissait à des problèmes etc. et si l'histoire ne fait pas sens c'est qu'il a quelque chose qui cloche en fait. Donc à moi on avait des problèmes d'intégration par exemple avec Android et on s'était donné, on s'était dit ok on avait tous les deux vraiment beaucoup enquêtés sur ce qui se passait etc. on est arrivé à une conclusion mais si je devais raconter l'histoire en termes d'ingénierie ça ne faisait pas sens.
+
+Et en fait c'était un bon indicateur qu'il fallait continuer de creuser. Et effectivement c'était le cas, il fallait continuer de creuser. Et donc de toujours de se dire... Quelle est l'histoire que je vais raconter aux gens quand je vais présenter mon travail en fait ? En fait c'est vraiment puissant parce que du coup ça te... Tu te dis tout de suite ah non mais là ça va pas en fait. Mon histoire elle est cassée en fait.
+
+David Leuliette (01:04:09.109)
+ok.
+
+David Leuliette (01:04:13.909)
+Ok, c'est marrant.
+
+David Leuliette (01:04:29.781)
+Je vois. Ok, cool, cool. On arrive à la fin d'épisode. William, où est-ce qu'on te retrouve sur les internets ?
+
+William (01:04:38.728)
+Twitter, YouTube et puis GitHub.
+
+David Leuliette (01:04:42.441)
+Sur Youtube, a plein de trucs de GitHub, je mettrai tous les liens dans les notes de l'émission. Est-ce qu'il a un sujet qu'on n'a pas abordé dont tu aimerais parler ?
+
+William (01:04:52.312)
+Non euh...
+
+David Leuliette (01:04:55.829)
+Je pense qu'on a vu, si vous avez plus de questions, venez nous voir à App.js. On sera ravis de parler JT à et WebGL en même temps. Donne-nous un teaser sur ce que tu vas shipper dans les 30 prochains jours en une phrase mémorable.
+
+William (01:04:56.825)
+on tout euh...
+
+William (01:05:13.896)
+30 prochains jours, pense que je suis beaucoup sur Skia et WebGPU et les faire tourner en même temps en Là on a WebGPU qui marche bien, Skia qui marche bien et maintenant c'est de ok de les avoir deux en un dans le même runtime mais plus sur le long terme, plus sur les trois, quatre prochains mois, c'est vraiment de se dire en
+
+Ok, quand on a amené Skia en React Native, c'était phase 1. C'est-à-dire qu'on n'avait pas de primitives, on prend les primitives graphiques du web, on les amène dans React Native, c'était phase 1. Après on a fait phase 2, c'était avec React Native Web, où en fait, on s'est rendu compte que les primitives du web, étaient vraiment dans des silos, comme on en a discuté tout à l'heure. Et c'est d'amener Skia dans le web pour casser ses primitives en fait.
+
+David Leuliette (01:06:03.209)
+On va parler de la...
+
+William (01:06:10.504)
+Donc en fait on part du web pour aller en React Native et après on dit mais non fait ce qu'on a c'est mieux que le web et on retourne vers le web ça c'était phase 2 et là on va passer à phase 3 je pense.
+
+David Leuliette (01:06:19.509)
+Ok
+
+David Leuliette (01:06:23.953)
+Ok. C'est comme un cycle Marvel quoi. là là, puis bientôt il aura, tu sais, l'annonce pour les prochaines années du retour de Doctor Doom joué par le même mec qui était au début. c'est incroyable. Incroyable.
+
+William (01:06:39.868)
+D'ailleurs c'est fou qu'ils se sont sentis obligés de le spoiler en fait. C'est là où tu te rends compte que les incentives commerciales gâchent fou en fait. Parce que je pense que s'ils l'auraient gardé jusqu'au dernier moment, pense que les gens seraient devenus fous, Enfin je sais pas mais... Je m'y connais pas mais justement en terme de storytelling ça me semblait un peu faible en fait mais bon... Ouais.
+
+David Leuliette (01:06:46.856)
+N'nouais !
+
+...
+
+Bah ouais ouais...
+
+David Leuliette (01:07:03.165)
+Bah ouais, pareil, c'est Disney, mec. C'est depuis que Disney a tout racheté, on sait que c'est nul. Voilà, ce sera notre message.
+
+William (01:07:09.161)
+C'est la pression commerciale des fois.
+
+David Leuliette (01:07:14.293)
+En tout cas super épisode, trop bien. Les amis, j'espère que vous en savez plus sur WebGPU, comment ça s'utilise, essayez chez vous, allez sur Shader Toy, voilà voilà. Et on se retrouve en conférence. oui, moi c'est vrai, j'ai pas dit. Moi on retrouve c'est wishypityoday.com slash podcast où il a tous les liens. Voilà. prochain épisode, ciao !
+
+William (01:07:33.019)
+Ouais, absolument.
+
+William (01:07:42.703)
+Allez, à bientôt, ciao
+
