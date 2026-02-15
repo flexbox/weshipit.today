@@ -40,6 +40,7 @@ export function PodcastEpisodeCard({ episode }: PodcastEpisodeCardProps) {
         <div className="p-6 pt-0">
           <div className="flex gap-3">
             <Button
+              as="a"
               href={episode.spotify_url}
               isExternalLink={true}
               size="md"
@@ -49,6 +50,7 @@ export function PodcastEpisodeCard({ episode }: PodcastEpisodeCardProps) {
               Spotify
             </Button>
             <Button
+              as="a"
               href={episode.apple_podcast_url}
               isExternalLink={true}
               size="md"

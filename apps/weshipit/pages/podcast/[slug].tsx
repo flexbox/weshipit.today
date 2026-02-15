@@ -206,6 +206,7 @@ export default function PodcastEpisodePage({
                     </Text>
                     <div className="flex flex-wrap gap-4">
                       <Button
+                        as="a"
                         href={episode.spotify_url}
                         isExternalLink={true}
                         size="lg"
@@ -216,6 +217,7 @@ export default function PodcastEpisodePage({
                       </Button>
 
                       <Button
+                        as="a"
                         href={episode.apple_podcast_url}
                         isExternalLink={true}
                         size="lg"
