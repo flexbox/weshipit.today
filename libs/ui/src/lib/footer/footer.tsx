@@ -17,6 +17,7 @@ const navigation = {
       href: 'https://flexbox.notion.site/Jobs-1c65e7a956a64a07b60a401f8747f1af',
       name: 'Jobs',
     },
+    { href: '/terms-of-service', name: 'Terms' },
   ],
   social: [
     {
