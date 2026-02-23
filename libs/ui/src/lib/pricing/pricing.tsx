@@ -15,7 +15,7 @@ const tiers = [
   {
     name: 'Kickstart',
     id: 'tier-kickstart',
-    href: 'https://buy.stripe.com/14k3fSdbhdQOcWA28e',
+    href: 'https://buy.stripe.com/bJefZi5umh140FAfwt4wM0d',
     price: { onetime: '5000 €' },
     description:
       'Transform your React Native app with our award-winning expertise. Our comprehensive audit and strategic roadmap will unlock mobile development optimization and accelerate your growth with proven methodologies.',
