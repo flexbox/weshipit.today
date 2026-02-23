@@ -33,7 +33,8 @@ export function HeroBanner({
           >
             <SpotLeft spotsLeft={spotsLeft} />
             <Text as="h1" variant="h1" className="tracking-tighter">
-              React Native Experts on demand.
+              We prevent your React Native app from dying while you scale your
+              business.
             </Text>
             <Text
               as="p"

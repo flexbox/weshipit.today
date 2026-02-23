@@ -23,5 +23,7 @@ export const linksApi = {
   notion: {
     PODCAST_FORM:
       'https://flexbox.notion.site/17af478bcb8c8018b4a9db6b13d1df38?pvs=105',
+    CLIENT_CRM_FORM:
+      'https://flexbox.notion.site/2fbf478bcb8c8033859bf78cf7646db9?pvs=105',
   },
 };

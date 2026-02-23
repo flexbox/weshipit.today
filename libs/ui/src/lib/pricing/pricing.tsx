@@ -16,7 +16,7 @@ const tiers = [
     name: 'Kickstart',
     id: 'tier-kickstart',
     href: 'https://buy.stripe.com/14k3fSdbhdQOcWA28e',
-    price: { onetime: '10000 €' },
+    price: { onetime: '5000 €' },
     description:
       'Transform your React Native app with our award-winning expertise. Our comprehensive audit and strategic roadmap will unlock mobile development optimization and accelerate your growth with proven methodologies.',
     features: [
@@ -66,7 +66,7 @@ const tiers = [
   {
     name: 'Enterprise',
     id: 'tier-enterprise',
-    href: 'https://cal.com/davidl/weshipit-onboarding',
+    href: 'https://flexbox.notion.site/2fbf478bcb8c8033859bf78cf7646db9?pvs=105',
     price: 'Custom',
     description:
       'Custom-tailored solutions for large-scale enterprises. Experience dedicated team support, premium infrastructure, and personalized React Native development strategies for your mission-critical projects.',
@@ -74,10 +74,10 @@ const tiers = [
       'Custom hours of software development',
       '1-hour, dedicated support response time',
       'Daily backlog calls',
-      'Marketing automations',
+      'I talk about your company on my podcast',
     ],
     featured: true,
-    cta: 'Book a call with David',
+    cta: 'View Proposal',
   },
 ];
 

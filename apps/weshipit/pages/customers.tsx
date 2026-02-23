@@ -1,6 +1,6 @@
 import { Layout } from '../components/layout';
 import { Customer, getAllClients } from './api/client';
-import { LinkButton, Text, ClientsList, Prose } from '@weshipit/ui';
+import { ClientsList, Prose } from '@weshipit/ui';
 import { linksApi } from './api/links';
 
 interface CustomersPageProps {
@@ -44,7 +44,7 @@ export default function CustomersPage({ clients }: CustomersPageProps) {
       <div className="mb-24">
         <ClientsList
           clients={clients}
-          hrefOnboarding={linksApi.cal.ONBOARDING}
+          hrefOnboarding={linksApi.notion.CLIENT_CRM_FORM}
         />
       </div>
     </Layout>

@@ -1,5 +1,4 @@
 import {
-  Bento,
   Button,
   Card,
   FadeIn,
@@ -7,7 +6,6 @@ import {
   FaqProps,
   Hyperlink,
   Prose,
-  SpotLeft,
   Text,
   WorkflowCard,
   Avatar,
@@ -252,26 +250,6 @@ export default function IndexPage({ clients, faqs, steps }: IndexPageProps) {
             >
               Talk to us
             </Button>
-          </div>
-          <div className="mb-16 py-0 pb-12 lg:py-24" id="services">
-            <div>
-              <div className="m-auto max-w-2xl">
-                <Prose className="mb-12" size="xl">
-                  <h2>Transform Your Business with Powerful Mobile Apps</h2>
-                  <p>
-                    Our expert team delivers market-ready iOS and Android apps
-                    that drive engagement and boost revenue. Don't let technical
-                    challenges hold you back.
-                  </p>
-                </Prose>
-              </div>
-              <Bento
-                expertLink={linksApi.cal.ONBOARDING}
-                auditLink={'/audit'}
-                slackLink="https://join.slack.com/t/weblille/shared_invite/zt-87i4ozyq-K5GRJKAFqKp_w9IHjleW~Q"
-                gumroadLink="https://flexbox.gumroad.com/l/expo-checklist"
-              />
-            </div>
           </div>
         </div>
 

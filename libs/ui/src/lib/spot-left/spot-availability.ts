@@ -4,11 +4,11 @@
  */
 export const SPOT_AVAILABILITY = {
   /** Number of spots available for general team/hero banner */
-  team: 3,
+  team: 1,
   /** Number of spots available for Essential tier */
-  essential: 2,
+  essential: 0,
   /** Number of spots available for Growth tier */
-  growth: 1,
+  growth: 0,
   /** Number of spots available for Enterprise tier */
   enterprise: 1,
 } as const;
