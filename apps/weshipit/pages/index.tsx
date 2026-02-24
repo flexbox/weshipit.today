@@ -63,10 +63,9 @@ function ProblemAgitation() {
   return (
     <>
       <p>
-        <strong>99% of apps</strong> have 1000 users or less and{' '}
-        <strong>will never stand out</strong> because of a{' '}
-        <strong>broken design and UX</strong>. Users typically decide within 5
-        seconds whether to uninstall an app.
+        Weekly bugs cause <strong>40% of users to uninstall</strong>. We fix
+        stability issues in days. Our clients cut development time by{' '}
+        <strong>50%</strong> and boost retention by over <strong>35%</strong>.
       </p>
 
       <div className="relative flex h-[164px] w-[124px] flex-row items-center sm:h-[124px]">
