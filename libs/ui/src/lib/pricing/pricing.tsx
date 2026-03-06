@@ -13,12 +13,13 @@ const frequencies = [
 
 const tiers = [
   {
-    name: 'Kickstart',
+    name: 'Kickstart Audit Premium',
     id: 'tier-kickstart',
     href: 'https://buy.stripe.com/bJefZi5umh140FAfwt4wM0d',
-    price: { onetime: '5000 €' },
+    price: { onetime: '10000 €' },
     description:
-      'Transform your React Native app with our award-winning expertise. Our comprehensive audit and strategic roadmap will unlock mobile development optimization and accelerate your growth with proven methodologies.',
+      'Get a senior-level React Native audit that prevents 6+ months of trial-and-error and saves you 50k€ in tech debt.',
+    audience: 'For startups with a legacy app that’s lagging',
     features: [
       'Comprehensive stack audit and assessment',
       '2 phases implementation: investigation and execution',
@@ -29,7 +30,7 @@ const tiers = [
       '2 follow-up strategy calls within the first three months',
     ],
     featured: false,
-    cta: 'Get Started',
+    cta: 'Reserve now',
   },
   {
     name: 'Essential',
@@ -38,26 +39,28 @@ const tiers = [
     price: { monthly: '2500 €' },
     description:
       'Build your mobile app with confidence through our monthly guidance. Our expert team provides responsive support and weekly strategic sessions to ensure your development success and continuous improvement.',
+    audience: 'For companies with more than 1 mobile developer.',
     features: [
       '40 hours of software development',
       '24-hour support response time on Slack',
       'Weekly backlog calls',
     ],
     featured: false,
-    cta: 'Get Started',
+    cta: 'Reserve now',
     spotsLeft: SPOT_AVAILABILITY.essential,
   },
   {
     name: 'Growth',
     id: 'tier-growth',
     href: 'https://buy.stripe.com/5kA03G1sz8wu8GkfZ6',
-    price: { monthly: '6750 €' },
+    price: { monthly: '5000 €' },
     description:
       'Accelerate your app development with our premium package. Get a dedicated team, priority support, and in-depth strategic sessions to maximize your growth potential and scale efficiently.',
+    audience: 'For companies with more than 1 mobile developer.',
     features: [
-      '120 hours of software development',
-      '24-hour support response time on Slack',
-      'Weekly backlog calls',
+      '80 hours of software development',
+      '12-hour support response time on Slack',
+      'Daily backlog calls',
     ],
     featured: false,
     cta: 'Get Started',
@@ -70,6 +73,7 @@ const tiers = [
     price: 'Custom',
     description:
       'Custom-tailored solutions for large-scale enterprises. Experience dedicated team support, premium infrastructure, and personalized React Native development strategies for your mission-critical projects.',
+    audience: 'For companies with more than 1 mobile developer.',
     features: [
       'Custom hours of software development',
       '1-hour, dedicated support response time',
@@ -88,12 +92,11 @@ export function Pricing() {
         <div className="mx-auto max-w-4xl text-center">
           <h2 className="text-base/7 font-semibold text-blue-600">Pricing</h2>
           <p className="mt-2 text-balance text-5xl font-semibold tracking-tight text-gray-900 dark:text-white sm:text-6xl">
-            Pricing that fits your needs
+            Pricing that scales with you
           </p>
         </div>
         <p className="mx-auto mt-6 max-w-2xl text-pretty text-center text-lg font-medium text-gray-600 sm:text-xl/8">
-          Our plans are designed to meet your company's needs. Begin with
-          Kickstart, and scale to more advanced plans as your mobile app evolve.
+          Choose your entry point, upgrade anytime. No contracts, no BS.
         </p>
         <div className="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-4">
           {tiers.map((tier) => (
@@ -107,7 +110,7 @@ export function Pricing() {
                 <h3
                   id={tier.id}
                   className={clsx(
-                    'mb-4 text-lg/8 font-semibold',
+                    'mb-2 text-xl font-semibold',
                     tier.featured
                       ? 'text-white dark:text-gray-900'
                       : 'text-gray-900 dark:text-white',
@@ -115,6 +118,18 @@ export function Pricing() {
                 >
                   {tier.name}
                 </h3>
+                {tier.audience && (
+                  <p
+                    className={clsx(
+                      'mt-4 text-sm/6',
+                      tier.featured
+                        ? 'text-gray-300 dark:text-gray-600'
+                        : 'text-gray-600 dark:text-gray-300',
+                    )}
+                  >
+                    {tier.audience}
+                  </p>
+                )}
                 {(tier.spotsLeft || tier.spotsLeft === 0) && (
                   <SpotLeft spotsLeft={tier.spotsLeft} />
                 )}

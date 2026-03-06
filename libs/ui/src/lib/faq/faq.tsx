@@ -6,7 +6,6 @@ import {
 } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
 import { Text } from '../text/text';
-import Hyperlink from '../hyperlink/hyperlink';
 
 export interface FaqProps {
   id: string;

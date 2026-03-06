@@ -68,22 +68,21 @@ function ProblemAgitation() {
         <strong>50%</strong> and boost retention by over <strong>35%</strong>.
       </p>
 
-      <div className="relative flex h-[164px] w-[124px] flex-row items-center sm:h-[124px]">
-        <Avatar
-          className="rounded-full border-4 border-white bg-slate-300 dark:bg-slate-700"
-          size={64}
-          email="ducrocq.matthys@gmail.com"
-        />
-        <Avatar
-          className="-ml-4 mr-4 rounded-full border-4 border-white bg-slate-300 dark:bg-slate-700"
-          size={64}
-          email="dleuliette@gmail.com"
-        />
-      </div>
-
       <Text as="h2" variant="h4">
         Join the top 1% of mobile apps that actually succeed.
       </Text>
+      <div className="relative flex h-[72px] w-[124px] flex-row items-center">
+        <Avatar
+          className="rounded-full border-4 border-white bg-slate-300 dark:bg-slate-700 z-50"
+          size={64}
+          email="dleuliette@gmail.com"
+        />
+        <Avatar
+          className="rounded-full border-4 border-white bg-slate-300 dark:bg-slate-700 -ml-4 mr-4 "
+          size={64}
+          email="ducrocq.matthys@gmail.com"
+        />
+      </div>
       <p>
         I'm David, a{' '}
         <Hyperlink href={'https://x.com/flexbox_/status/1801588179687936329'}>
@@ -129,24 +128,98 @@ function ProblemAgitation() {
   );
 }
 
+function MeetYourTeam() {
+  const currentYear = new Date().getFullYear();
+  const davidXpYears = currentYear - 2007;
+  const matthysXpYears = currentYear - 2021;
+
+  return (
+    <section className="py-16 bg-white dark:bg-slate-900">
+      <div className="container px-4 mx-auto">
+        <div className="max-w-2xl mx-auto">
+          <Prose size="xl">
+            <div className="text-center">
+              <h2>Meet Your React Native Team</h2>
+              <p>
+                We're a specialized duo <br />
+                combining strategic expertise with reliable execution.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <Avatar
+                  className="rounded-full border-4 border-white bg-slate-300 dark:bg-slate-700"
+                  size={128}
+                  email="dleuliette@gmail.com"
+                />
+                <p>
+                  <strong>David Leuliette</strong>
+                  <br />
+                  Senior Expert ({davidXpYears}+ years)
+                </p>
+                <strong>Handles</strong>
+                <ul className="mt-0">
+                  <li className="mt-0">Strategic audits</li>
+                  <li>Complex architecture</li>
+                  <li>Enterprise clients</li>
+                </ul>
+                <p>
+                  <strong>Works on</strong>
+                  <br />
+                  Kickstart & Enterprise plans
+                </p>
+              </div>
+              <div>
+                <Avatar
+                  className="rounded-full border-4 border-white bg-slate-300 dark:bg-slate-700"
+                  size={128}
+                  email="ducrocq.matthys@gmail.com"
+                />
+                <p>
+                  <strong>Matthys Ducrocq</strong>
+                  <br />
+                  Lead Developer ({matthysXpYears}+ years)
+                </p>
+                <strong>Handles</strong>
+                <ul className="mt-0">
+                  <li className="mt-0">Sprint execution</li>
+                  <li>Continuous delivery</li>
+                  <li>Scaling support</li>
+                </ul>
+                <p>
+                  <strong>Works on</strong>
+                  <br />
+                  Essential & Growth plans
+                </p>
+              </div>
+            </div>
+          </Prose>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function HowDoesItWorks({ steps }: { steps: Steps[] }) {
   return (
-    <div className="mx-auto flex flex-col gap-4 mt-16">
-      <Prose size="xl">
-        <h2>How does it work?</h2>
-      </Prose>
-      <div className="flex flex-col gap-12">
-        {steps.map((step) => (
-          <WorkflowCard
-            key={step.id}
-            step={step.data.step_number}
-            title={step.data.title}
-            image={step.data.image}
-          >
-            <PrismicRichText field={step.data.description} />
-          </WorkflowCard>
-        ))}
-        {/* @todo: refactor this section
+    <div className="container px-4 py-16 mx-auto">
+      <div className="flex flex-col gap-4">
+        <Prose size="xl">
+          <h2>How does it work?</h2>
+        </Prose>
+        <div className="flex flex-col gap-12">
+          {steps.map((step) => (
+            <WorkflowCard
+              key={step.id}
+              step={step.data.step_number}
+              title={step.data.title}
+              image={step.data.image}
+            >
+              <PrismicRichText field={step.data.description} />
+            </WorkflowCard>
+          ))}
+          {/* @todo: refactor this section
         <Card variant="green">
           <Prose size="xl">
             <ol>
@@ -183,6 +256,7 @@ function HowDoesItWorks({ steps }: { steps: Steps[] }) {
             </ol>
           </Prose>
         </Card> */}
+        </div>
       </div>
     </div>
   );
@@ -260,6 +334,7 @@ export default function IndexPage({ clients, faqs, steps }: IndexPageProps) {
           </div>
         </div>
 
+        <MeetYourTeam />
         <Pricing />
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
