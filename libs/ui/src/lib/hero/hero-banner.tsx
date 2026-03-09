@@ -6,7 +6,7 @@ import { PhoneAnimation } from './phone-animation';
 import { CalendarIcon } from '@heroicons/react/24/solid';
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import { LinkButton, SpotLeft, Text } from '@weshipit/ui';
-import { SPOT_AVAILABILITY } from '../spot-left/spot-availability';
+import { SPOT_AVAILABILITY } from '../spot-left/spot-left';
 
 export function HeroBanner({
   onboardingHref,

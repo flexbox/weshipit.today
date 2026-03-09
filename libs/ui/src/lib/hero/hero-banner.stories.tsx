@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { HeroBanner } from './hero-banner';
-import { SPOT_AVAILABILITY } from '../spot-left/spot-availability';
+import { SPOT_AVAILABILITY } from '../spot-left/spot-left';
 
 export default {
   component: HeroBanner,
@@ -19,7 +19,8 @@ export const Default: HeroBannerStory = {
   parameters: {
     docs: {
       description: {
-        story: 'Default HeroBanner using centralized spot availability configuration.',
+        story:
+          'Default HeroBanner using centralized spot availability configuration.',
       },
     },
   },
@@ -33,7 +34,8 @@ export const NoSpotsAvailable: HeroBannerStory = {
   parameters: {
     docs: {
       description: {
-        story: 'HeroBanner when no spots are available - should show "Fully booked" state.',
+        story:
+          'HeroBanner when no spots are available - should show "Fully booked" state.',
       },
     },
   },
@@ -97,7 +99,9 @@ export const AllScenarios = {
         <HeroBanner onboardingHref="#" teamSpotsLeft={5} />
       </div>
       <div>
-        <h3 className="mb-4 text-lg font-semibold">Centralized Config ({SPOT_AVAILABILITY.team} spots)</h3>
+        <h3 className="mb-4 text-lg font-semibold">
+          Centralized Config ({SPOT_AVAILABILITY.team} spots)
+        </h3>
         <HeroBanner onboardingHref="#" />
       </div>
     </div>

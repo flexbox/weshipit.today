@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, ElementType } from 'react';
 import Button from '../button/button';
 import {
   CalendarIcon,
@@ -15,95 +15,206 @@ import {
   ArrowRightIcon,
 } from '@heroicons/react/24/outline';
 import clsx, { ClassValue } from 'clsx';
-import { SpotLeft } from '../spot-left/spot-left';
+import { SpotLeft, SPOT_AVAILABILITY } from '../spot-left/spot-left';
 import { Card } from '../card/card';
-import { SPOT_AVAILABILITY } from '../spot-left/spot-availability';
 import { twMerge } from 'tailwind-merge';
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-const frequencies = [
-  { value: 'monthly', label: 'Monthly', priceSuffix: '/monthly' },
-  { value: 'onetime', label: 'One time', priceSuffix: '/one time' },
-];
+type PlanKey = 'kickstart' | 'essential' | 'growth' | 'enterprise';
 
-const tiers = [
+interface Tier {
+  key: PlanKey;
+  name: string;
+  id: string;
+  href: string;
+  price: { monthly?: string; onetime?: string } | string;
+  description: string;
+  audience: string;
+  features: string[];
+  highlights: string[];
+  deliveredBy: string;
+  featured: boolean;
+  cta: string;
+  spotsLeft?: number;
+  icon: ElementType<{ className?: string }>;
+  color: string;
+  bgColor: string;
+  borderColor: string;
+  textColor: string;
+}
+
+const tiers: Tier[] = [
   {
+    key: 'kickstart',
     name: 'Kickstart Audit',
     id: 'tier-kickstart',
     href: 'https://buy.stripe.com/bJefZi5umh140FAfwt4wM0d',
-    price: { onetime: '10000 €' },
+    price: { onetime: '10 000 €' },
     description:
       'Get a senior-level React Native audit that prevents 6+ months of trial-and-error and saves you 50k€ in tech debt.',
-    audience: 'For startups with a legacy app that’s lagging',
+    audience: 'Before raising your next funding round',
     features: [
-      'Comprehensive stack audit and assessment',
-      '2 phases implementation: investigation and execution',
-      'Definition of key objectives and success metrics',
-      'High-level strategy document',
-      'DX improvements and performance optimizations',
-      'Recommendations for library and tooling updates',
-      '2 follow-up strategy calls within the first three months',
+      'Complete codebase audit and performance analysis',
+      'Technical debt assessment with priority matrix',
+      'DX improvements and tooling recommendations',
+      'Library updates and architecture optimization strategy',
+      'High-level optimization roadmap (4–12 weeks)',
+      'Key success metrics and implementation phases',
+      '2 strategic follow-up calls within 3 months',
+      'Slack access for critical questions',
     ],
+    highlights: ['Stack assessment', 'Roadmap document', '3 months follow-up'],
+    deliveredBy: 'David Leuliette (React Native expert)',
     featured: false,
     cta: 'Reserve now',
+    icon: MagnifyingGlassIcon,
+    color: 'from-amber-500 to-orange-500',
+    bgColor: 'bg-amber-500/10',
+    borderColor: 'border-amber-500/30',
+    textColor: 'text-amber-600',
   },
   {
+    key: 'essential',
     name: 'Essential',
     id: 'tier-essential',
     href: 'https://buy.stripe.com/bIY2bOb39fYWe0E8wD',
-    price: { monthly: '2500 €' },
+    price: { monthly: '2 500 €' },
     description:
-      'Build your mobile app with confidence through our monthly guidance. Our expert team provides responsive support and weekly strategic sessions to ensure your development success and continuous improvement.',
-    audience: 'For companies with more than 1 mobile developer.',
+      'Reliable React Native development with weekly strategic alignment. Your go-to execution partner for consistent delivery.',
+    audience: 'Post-PMF startups building features consistently',
     features: [
       '40 hours of software development',
-      '24-hour support response time on Slack',
+      'Feature development and bug fixes',
+      'Code reviews and technical documentation',
+      'Performance optimizations',
       'Weekly backlog calls',
+      'Sprint planning and priority alignment',
+      '24-hour Slack response time',
+      'Proactive recommendations',
     ],
+    highlights: ['40 dev hours', 'Weekly calls', '24h Slack'],
+    deliveredBy: 'Matthys Ducrocq (Lead Developer)',
     featured: false,
     cta: 'Reserve now',
     spotsLeft: SPOT_AVAILABILITY.essential,
+    icon: BeakerIcon,
+    color: 'from-blue-500 to-cyan-500',
+    bgColor: 'bg-blue-500/10',
+    borderColor: 'border-blue-500/30',
+    textColor: 'text-blue-600',
   },
   {
+    key: 'growth',
     name: 'Growth',
     id: 'tier-growth',
     href: 'https://buy.stripe.com/5kA03G1sz8wu8GkfZ6',
-    price: { monthly: '5000 €' },
+    price: { monthly: '5 000 €' },
     description:
-      'Accelerate your app development with our premium package. Get a dedicated team, priority support, and in-depth strategic sessions to maximize your growth potential and scale efficiently.',
-    audience: 'For companies with more than 1 mobile developer.',
+      'Accelerate development with doubled capacity and daily alignment. Scale your mobile app faster with dedicated support.',
+    audience: 'Scale-ups in rapid growth phase',
     features: [
       '80 hours of software development',
-      '12-hour support response time on Slack',
+      'Complex feature development',
+      'Architecture improvements',
+      'Migration and refactoring projects',
       'Daily backlog calls',
+      'Continuous priority alignment',
+      '12-hour Slack response time',
+      'Monthly performance reports',
     ],
+    highlights: ['80 dev hours', 'Daily calls', '12h Slack'],
+    deliveredBy: 'Matthys Ducrocq (Lead Developer)',
     featured: false,
     cta: 'Get Started',
     spotsLeft: SPOT_AVAILABILITY.growth,
+    icon: RocketLaunchIcon,
+    color: 'from-emerald-500 to-teal-500',
+    bgColor: 'bg-emerald-500/10',
+    borderColor: 'border-emerald-500/30',
+    textColor: 'text-emerald-600',
   },
   {
+    key: 'enterprise',
     name: 'Enterprise',
     id: 'tier-enterprise',
     href: 'https://flexbox.notion.site/2fbf478bcb8c8033859bf78cf7646db9?pvs=105',
-    price: 'Custom',
+    price: { monthly: '18,000 €' },
     description:
-      'Custom-tailored solutions for large-scale enterprises. Experience dedicated team support, premium infrastructure, and personalized React Native development strategies for your mission-critical projects.',
-    audience: 'For companies with more than 1 mobile developer.',
+      'Work directly with our award-winning senior expert. Strategic partnership for mission-critical React Native projects.',
+    audience: 'Series A+ companies with complex mobile apps',
     features: [
-      'Custom hours of software development',
-      '1-hour, dedicated support response time',
-      'Daily backlog calls',
-      'I talk about your company on my podcast',
+      '4 days/week senior expertise (David)',
+      'Strategic architecture and technical leadership',
+      'Code reviews and team mentorship',
+      'Long-term technical roadmap planning',
+      'Daily calls for continuous alignment',
+      'Direct access to decision-maker',
+      '1-hour dedicated response time',
+      'Monthly strategy sessions',
+      'David talks about your company on his podcast',
     ],
+    highlights: ['4 days/week David', 'Daily calls', '1h response'],
+    deliveredBy: 'David Leuliette (Award-winning expert, 10+ years)',
     featured: true,
     cta: 'View Proposal',
+    icon: BuildingStorefrontIcon,
+    color: 'from-purple-500 to-pink-500',
+    bgColor: 'bg-purple-500/10',
+    borderColor: 'border-purple-500/30',
+    textColor: 'text-purple-600',
   },
 ];
 
-type PlanKey = 'kickstart' | 'essential' | 'growth' | 'enterprise';
+// Derived from tiers — do not edit directly
+type PlanInfo = {
+  name: string;
+  icon: ElementType<{ className?: string }>;
+  price: string;
+  period: string;
+  color: string;
+  bgColor: string;
+  borderColor: string;
+  textColor: string;
+  description: string;
+  highlights: string[];
+  cta: string;
+  href: string;
+};
+
+const plansByKey = Object.fromEntries(
+  tiers.map((tier) => {
+    const price =
+      typeof tier.price === 'string'
+        ? tier.price
+        : (tier.price.monthly ?? tier.price.onetime ?? 'Custom');
+    const period =
+      typeof tier.price === 'string'
+        ? ''
+        : tier.price.monthly
+          ? '/month'
+          : 'one-time';
+    return [
+      tier.key,
+      {
+        name: tier.name,
+        icon: tier.icon,
+        price,
+        period,
+        color: tier.color,
+        bgColor: tier.bgColor,
+        borderColor: tier.borderColor,
+        textColor: tier.textColor,
+        description: tier.description,
+        highlights: tier.highlights,
+        cta: tier.cta,
+        href: tier.href,
+      } satisfies PlanInfo,
+    ];
+  }),
+) as Record<PlanKey, PlanInfo>;
 
 interface Question {
   id: string;
@@ -192,65 +303,6 @@ const questions: Question[] = [
   },
 ];
 
-const plans = {
-  kickstart: {
-    name: 'Kickstart',
-    icon: MagnifyingGlassIcon,
-    price: '5,000€',
-    period: 'one-time',
-    color: 'from-amber-500 to-orange-500',
-    bgColor: 'bg-amber-500/10',
-    borderColor: 'border-amber-500/30',
-    textColor: 'text-amber-600',
-    description: 'Comprehensive audit & strategic roadmap',
-    highlights: ['2 strategy calls', 'Stack assessment', 'Roadmap document'],
-    cta: 'Get Started',
-    href: '#',
-  },
-  essential: {
-    name: 'Essential',
-    icon: BeakerIcon,
-    price: '2,500€',
-    period: '/month',
-    color: 'from-blue-500 to-cyan-500',
-    bgColor: 'bg-blue-500/10',
-    borderColor: 'border-blue-500/30',
-    textColor: 'text-blue-600',
-    description: 'Monthly guidance with 40h development',
-    highlights: ['Weekly backlog calls', '24h Slack support', '40 dev hours'],
-    cta: 'Get Started',
-    href: '#',
-  },
-  growth: {
-    name: 'Growth',
-    icon: RocketLaunchIcon,
-    price: '6,750€',
-    period: '/month',
-    color: 'from-emerald-500 to-teal-500',
-    bgColor: 'bg-emerald-500/10',
-    borderColor: 'border-emerald-500/30',
-    textColor: 'text-emerald-600',
-    description: 'Premium package with 120h development',
-    highlights: ['Weekly backlog calls', '24h Slack support', '120 dev hours'],
-    cta: 'Get Started',
-    href: '#',
-  },
-  enterprise: {
-    name: 'Enterprise',
-    icon: BuildingStorefrontIcon,
-    price: 'Custom',
-    period: '',
-    color: 'from-purple-500 to-pink-500',
-    bgColor: 'bg-purple-500/10',
-    borderColor: 'border-purple-500/30',
-    textColor: 'text-purple-600',
-    description: 'Dedicated team for mission-critical apps',
-    highlights: ['Daily calls', '1h response time', 'Custom hours'],
-    cta: 'View Proposal',
-    href: '#',
-  },
-};
-
 const upgradePaths = [
   {
     title: 'Audit → Execution',
@@ -290,8 +342,8 @@ export function PlanFinderSection() {
       const question = questions.find((q) => q.id === questionId);
       if (question && question.options[optionIndex]) {
         const points = question.options[optionIndex].points;
-        (Object.keys(points) as PlanKey[]).forEach((plan) => {
-          scores[plan] += points[plan];
+        (Object.keys(points) as PlanKey[]).forEach((p) => {
+          scores[p] += points[p];
         });
       }
     });
@@ -319,7 +371,7 @@ export function PlanFinderSection() {
   };
 
   const recommendedPlan = showResult ? calculateRecommendation() : null;
-  const plan = recommendedPlan ? plans[recommendedPlan] : null;
+  const plan = recommendedPlan ? plansByKey[recommendedPlan] : null;
 
   return (
     <section className="py-20 px-4 bg-gradient-to-b from-muted/30 to-background">
@@ -501,51 +553,51 @@ export function PlanFinderSection() {
 
         {mode === 'compare' && (
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {(Object.entries(plans) as [PlanKey, typeof plans.kickstart][]).map(
-              ([key, plan]) => (
+            {(Object.entries(plansByKey) as [PlanKey, PlanInfo][]).map(
+              ([key, p]) => (
                 <Card
                   key={key}
                   className={cn(
                     'relative border-2 transition-all hover:shadow-xl hover:-translate-y-1',
-                    plan.borderColor,
+                    p.borderColor,
                   )}
                 >
                   <div
                     className={cn(
                       'absolute top-0 left-0 right-0 h-1 rounded-t-lg bg-gradient-to-r',
-                      plan.color,
+                      p.color,
                     )}
                   />
                   <div
                     className={cn(
                       'w-12 h-12 rounded-xl flex items-center justify-center mb-4',
-                      plan.bgColor,
+                      p.bgColor,
                     )}
                   >
-                    <plan.icon className={cn('w-6 h-6', plan.textColor)} />
+                    <p.icon className={cn('w-6 h-6', p.textColor)} />
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-1">
-                    {plan.name}
+                    {p.name}
                   </h3>
                   <div className="flex items-baseline gap-1 mb-3">
-                    <span className={cn('text-2xl font-bold', plan.textColor)}>
-                      {plan.price}
+                    <span className={cn('text-2xl font-bold', p.textColor)}>
+                      {p.price}
                     </span>
                     <span className="text-sm text-muted-foreground">
-                      {plan.period}
+                      {p.period}
                     </span>
                   </div>
                   <p className="text-sm text-muted-foreground mb-4">
-                    {plan.description}
+                    {p.description}
                   </p>
                   <ul className="space-y-2 mb-6">
-                    {plan.highlights.map((highlight, index) => (
+                    {p.highlights.map((highlight, index) => (
                       <li
                         key={index}
                         className="flex items-center gap-2 text-sm"
                       >
                         <CheckIcon
-                          className={cn('w-4 h-4 shrink-0', plan.textColor)}
+                          className={cn('w-4 h-4 shrink-0', p.textColor)}
                         />
                         <span className="text-foreground">{highlight}</span>
                       </li>
@@ -554,10 +606,10 @@ export function PlanFinderSection() {
                   <Button
                     className={cn(
                       'w-full bg-gradient-to-r text-white',
-                      plan.color,
+                      p.color,
                     )}
                   >
-                    {plan.cta}
+                    {p.cta}
                   </Button>
                 </Card>
               ),
@@ -666,6 +718,9 @@ export function Pricing() {
                 >
                   {tier.name}
                 </h3>
+                {(tier.spotsLeft || tier.spotsLeft === 0) && (
+                  <SpotLeft spotsLeft={tier.spotsLeft} />
+                )}
                 {tier.audience && (
                   <p
                     className={clsx(
@@ -677,9 +732,6 @@ export function Pricing() {
                   >
                     {tier.audience}
                   </p>
-                )}
-                {(tier.spotsLeft || tier.spotsLeft === 0) && (
-                  <SpotLeft spotsLeft={tier.spotsLeft} />
                 )}
                 <p
                   className={clsx(
@@ -702,9 +754,9 @@ export function Pricing() {
                   >
                     {typeof tier.price === 'string'
                       ? tier.price
-                      : tier.price.monthly || tier.price.onetime}
+                      : (tier.price.monthly ?? tier.price.onetime)}
                   </span>
-                  {typeof tier.price !== 'string' ? (
+                  {typeof tier.price !== 'string' && (
                     <span
                       className={clsx(
                         'text-sm/6 font-semibold',
@@ -713,10 +765,9 @@ export function Pricing() {
                           : 'text-gray-600 dark:text-gray-300',
                       )}
                     >
-                      {tier.price.monthly && frequencies[0].priceSuffix}
-                      {tier.price.onetime && frequencies[1].priceSuffix}
+                      {tier.price.monthly ? '/monthly' : '/one time'}
                     </span>
-                  ) : null}
+                  )}
                 </p>
                 <a
                   href={tier.href}
@@ -768,10 +819,20 @@ export function Pricing() {
               </div>
               <p
                 className={clsx(
-                  'mt-auto pt-6 text-center text-xs font-medium uppercase tracking-wider',
+                  'mt-auto pt-4 text-xs',
                   tier.featured
-                    ? 'text-gray-300 dark:text-gray-600'
-                    : 'text-gray-600 dark:text-gray-300',
+                    ? 'text-gray-400 dark:text-gray-500'
+                    : 'text-gray-500 dark:text-gray-400',
+                )}
+              >
+                Delivered by {tier.deliveredBy}
+              </p>
+              <p
+                className={clsx(
+                  'mt-2 pt-4 text-center text-xs font-medium uppercase tracking-wider border-t',
+                  tier.featured
+                    ? 'text-gray-300 dark:text-gray-600 border-white/10'
+                    : 'text-gray-600 dark:text-gray-300 border-gray-200 dark:border-gray-700',
                 )}
               >
                 NO CONTRACTS, CANCEL ANYTIME

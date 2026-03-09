@@ -4,6 +4,17 @@ export interface SpotLeftProps {
   spotsLeft: number;
 }
 
+export const SPOT_AVAILABILITY = {
+  /** Number of spots available for general team/hero banner */
+  team: 1,
+  /** Number of spots available for Essential tier */
+  essential: 0,
+  /** Number of spots available for Growth tier */
+  growth: 0,
+  /** Number of spots available for Enterprise tier */
+  enterprise: 1,
+} as const;
+
 export function SpotLeft({ spotsLeft = 2 }: SpotLeftProps) {
   const currentDate = new Date();
   const nextMonth = new Date();
