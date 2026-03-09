@@ -26,7 +26,6 @@ export const resources = {
     {
       fields: {
         conference_country: '🇫🇷 France',
-        conference_date: '2024-04-23',
         description:
           '1 day conference entirely dedicated to the community of React Native developers.',
         name: 'React Native Connection',
@@ -41,7 +40,6 @@ export const resources = {
     {
       fields: {
         conference_country: '🇩🇪 Germany',
-        conference_date: '2024-07-25',
         description:
           "Backed by the World's Largest React Native Meet-up Group. Co-organized by the world’s largest React Native meet-up group — with 7000+ members and 100+ events.",
         name: 'The Geek Conf',
@@ -77,7 +75,6 @@ export const resources = {
     {
       fields: {
         conference_country: '🇵🇱 Poland',
-        conference_date: '2024-05-22',
         description: 'Conference focused on everything related to Expo.',
         discord_url: 'https://discord.gg/wqncvaFz',
         name: 'App.js Conf',
@@ -108,7 +105,6 @@ export const resources = {
     {
       fields: {
         conference_country: '🇬🇧 United Kingdom',
-        conference_date: '2024-11-15',
         description: 'The largest React Native community in the UK.',
         name: 'RNLConf',
         private_note: 'https://x.com/RNLConf',
@@ -142,7 +138,6 @@ export const resources = {
     {
       fields: {
         conference_country: '🇵🇱 Poland',
-        conference_date: '2024-09-05',
         description:
           'First conference in the world to focused on anything and everything React Native',
         discord_url: 'https://discord.gg/rxPKYf9w',
@@ -187,7 +182,6 @@ export const resources = {
     {
       fields: {
         conference_country: '🇺🇸 United States',
-        conference_date: '2024-07-17',
         description:
           'The US conference with the best announcement trailers of all time.',
         name: 'ChainReact',
@@ -201,7 +195,6 @@ export const resources = {
     {
       fields: {
         conference_country: '🇮🇹 Italy',
-        conference_date: '2024-05-31',
         description: "Because heroes don't just save lives, they change them.",
         name: 'React Native Heroes',
         type: ['Conference'],

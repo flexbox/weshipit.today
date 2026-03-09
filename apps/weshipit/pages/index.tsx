@@ -11,6 +11,7 @@ import {
   Avatar,
   Pricing,
   HeroBanner,
+  Badge,
 } from '@weshipit/ui';
 import { linksApi } from './api/links';
 import { Layout } from '../components/layout';
@@ -23,6 +24,14 @@ import { PrismicRichText } from '@prismicio/react';
 
 import { useState, useEffect } from 'react';
 import { TrustedConsultantsSection } from '../components/trusted-consultants-section';
+import {
+  ArrowPathIcon,
+  ArrowTrendingUpIcon,
+  BoltIcon,
+  BuildingOffice2Icon,
+  RocketLaunchIcon,
+  SparklesIcon,
+} from '@heroicons/react/24/solid';
 
 interface IndexPageProps {
   steps: Steps[];
@@ -128,73 +137,149 @@ function ProblemAgitation() {
   );
 }
 
-function MeetYourTeam() {
+interface TeamMember {
+  name: string;
+  email: string;
+  role: string;
+  experienceStarted: number;
+  handles: { icon: React.ReactNode; text: string }[];
+  worksOn: string[];
+  accent: string;
+}
+
+const teamMembers: TeamMember[] = [
+  {
+    name: 'David Leuliette',
+    email: 'dleuliette@gmail.com',
+    role: 'Senior Expert',
+    experienceStarted: 2007,
+    handles: [
+      { icon: <SparklesIcon className="size-4" />, text: 'Strategic audits' },
+      {
+        icon: <BuildingOffice2Icon className="size-4" />,
+        text: 'Complex architecture',
+      },
+      {
+        icon: <RocketLaunchIcon className="size-4" />,
+        text: 'Enterprise clients',
+      },
+    ],
+    worksOn: ['Kickstart', 'Enterprise'],
+    accent: 'from-blue-600 to-cyan-300',
+  },
+  {
+    name: 'Matthys Ducrocq',
+    email: 'ducrocq.matthys@gmail.com',
+    role: 'Lead Developer',
+    experienceStarted: 2021,
+    handles: [
+      { icon: <BoltIcon className="size-4" />, text: 'Sprint execution' },
+      {
+        icon: <ArrowPathIcon className="size-4" />,
+        text: 'Continuous delivery',
+      },
+      {
+        icon: <ArrowTrendingUpIcon className="size-4" />,
+        text: 'Scaling support',
+      },
+    ],
+    worksOn: ['Essential', 'Growth'],
+    accent: 'from-amber-500 to-emerald-600',
+  },
+];
+
+export function TeamSection() {
   const currentYear = new Date().getFullYear();
-  const davidXpYears = currentYear - 2007;
-  const matthysXpYears = currentYear - 2021;
 
   return (
-    <section className="py-16 bg-white dark:bg-slate-900">
-      <div className="container px-4 mx-auto">
-        <div className="max-w-2xl mx-auto">
-          <Prose size="xl">
-            <div className="text-center">
-              <h2>Meet Your React Native Team</h2>
-              <p>
-                We're a specialized duo <br />
-                combining strategic expertise with reliable execution.
-              </p>
-            </div>
+    <section className="py-24 px-4 bg-white dark:bg-slate-900">
+      <div className="max-w-5xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-base/7 font-semibold text-blue-600">
+            Trusted Experts
+          </h2>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-4 text-balance">
+            Meet your React Native team
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
+            We’re a specialized duo combining strategic expertise with reliable
+            execution.
+          </p>
+        </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <Avatar
-                  className="rounded-full border-4 border-white bg-slate-300 dark:bg-slate-700"
-                  size={128}
-                  email="dleuliette@gmail.com"
-                />
-                <p>
-                  <strong>David Leuliette</strong>
-                  <br />
-                  Senior Expert ({davidXpYears}+ years)
-                </p>
-                <strong>Handles</strong>
-                <ul className="mt-0">
-                  <li className="mt-0">Strategic audits</li>
-                  <li>Complex architecture</li>
-                  <li>Enterprise clients</li>
-                </ul>
-                <p>
-                  <strong>Works on</strong>
-                  <br />
-                  Kickstart & Enterprise plans
-                </p>
+        {/* Team Cards */}
+        <div className="grid md:grid-cols-2 gap-8">
+          {teamMembers.map((member) => (
+            <Card
+              key={member.name}
+              className="group relative overflow-hidden border-0 bg-card shadow-lg hover:shadow-xl transition-all duration-300"
+            >
+              {/* Gradient accent line */}
+              <div
+                className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${member.accent}`}
+              />
+
+              <div className="p-8">
+                {/* Avatar & Info */}
+                <div className="flex items-start gap-5 mb-6">
+                  <div
+                    className={`relative p-1 rounded-full bg-gradient-to-br ${member.accent}`}
+                  >
+                    <div className="relative size-20 rounded-full overflow-hidden">
+                      <Avatar
+                        className="bg-slate-300 dark:bg-slate-700"
+                        size={128}
+                        email={member.email}
+                      />
+                    </div>
+                  </div>
+                  <div className="pt-1">
+                    <h3 className="text-xl font-semibold text-foreground">
+                      {member.name}
+                    </h3>
+                    <p className="text-muted-foreground">{member.role}</p>
+                    <Badge variant="gray-lighter" className="mt-2" size="sm">
+                      {currentYear - member.experienceStarted}+ years
+                    </Badge>
+                  </div>
+                </div>
+
+                {/* Handles */}
+                <div className="mb-6">
+                  <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
+                    Handles
+                  </h4>
+                  <div className="space-y-2.5">
+                    {member.handles.map((item) => (
+                      <div
+                        key={item.text}
+                        className="flex items-center gap-3 text-foreground"
+                      >
+                        <span className="text-muted-foreground">
+                          {item.icon}
+                        </span>
+                        <span className="text-sm">{item.text}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Works On */}
+                <div>
+                  <h4 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-3">
+                    Works on
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {member.worksOn.map((plan) => (
+                      <Badge key={plan} className="px-3 py-1">
+                        {plan}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
               </div>
-              <div>
-                <Avatar
-                  className="rounded-full border-4 border-white bg-slate-300 dark:bg-slate-700"
-                  size={128}
-                  email="ducrocq.matthys@gmail.com"
-                />
-                <p>
-                  <strong>Matthys Ducrocq</strong>
-                  <br />
-                  Lead Developer ({matthysXpYears}+ years)
-                </p>
-                <strong>Handles</strong>
-                <ul className="mt-0">
-                  <li className="mt-0">Sprint execution</li>
-                  <li>Continuous delivery</li>
-                  <li>Scaling support</li>
-                </ul>
-                <p>
-                  <strong>Works on</strong>
-                  <br />
-                  Essential & Growth plans
-                </p>
-              </div>
-            </div>
-          </Prose>
+            </Card>
+          ))}
         </div>
       </div>
     </section>
@@ -334,7 +419,7 @@ export default function IndexPage({ clients, faqs, steps }: IndexPageProps) {
           </div>
         </div>
 
-        <MeetYourTeam />
+        <TeamSection />
         <Pricing />
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
