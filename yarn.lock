@@ -23849,6 +23849,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tailwind-merge@npm:^3.5.0":
+  version: 3.5.0
+  resolution: "tailwind-merge@npm:3.5.0"
+  checksum: 10/888861e2fc685dc282e6c0d735a2ca7656c3f13da6947896401f50aea924e481ab6dc7629b6f6a28125505f1b06ee97381ad792849204f34ee1ede375b119e0c
+  languageName: node
+  linkType: hard
+
 "tailwindcss@npm:3.4.17":
   version: 3.4.17
   resolution: "tailwindcss@npm:3.4.17"
@@ -25604,6 +25611,7 @@ __metadata:
     regenerator-runtime: "npm:0.14.1"
     remark-gfm: "npm:^4.0.1"
     storybook: "npm:9.1.9"
+    tailwind-merge: "npm:^3.5.0"
     tailwindcss: "npm:3.4.17"
     ts-jest: "npm:29.4.5"
     ts-node: "npm:10.9.2"

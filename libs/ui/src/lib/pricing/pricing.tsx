@@ -1,10 +1,41 @@
 'use client';
 
-import { CheckIcon } from '@heroicons/react/20/solid';
-import clsx from 'clsx';
+import { useState } from 'react';
+
+// import {
+//   Search,
+//   Package,
+//   Rocket,
+//   Crown,
+//   ArrowRight,
+//   Check,
+//   Calendar,
+//   MessageCircle,
+//   Sparkles,
+//   ChevronRight,
+// } from 'lucide-react';
+import Button from '../button/button';
+import {
+  CalendarIcon,
+  MagnifyingGlassIcon,
+  SparklesIcon,
+  BeakerIcon,
+  BuildingStorefrontIcon,
+  RocketLaunchIcon,
+  CheckIcon,
+  ChatBubbleBottomCenterIcon,
+  ChevronRightIcon,
+  ArrowRightIcon,
+} from '@heroicons/react/24/outline';
+import clsx, { ClassValue } from 'clsx';
 import { SpotLeft } from '../spot-left/spot-left';
 import { Card } from 'libs/ui/src/lib/card/card';
 import { SPOT_AVAILABILITY } from '../spot-left/spot-availability';
+import { twMerge } from 'tailwind-merge';
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
 
 const frequencies = [
   { value: 'monthly', label: 'Monthly', priceSuffix: '/monthly' },
@@ -84,6 +115,536 @@ const tiers = [
     cta: 'View Proposal',
   },
 ];
+
+type PlanKey = 'kickstart' | 'essential' | 'growth' | 'enterprise';
+
+interface Question {
+  id: string;
+  question: string;
+  options: {
+    label: string;
+    description: string;
+    points: Record<PlanKey, number>;
+  }[];
+}
+
+const questions: Question[] = [
+  {
+    id: 'stage',
+    question: 'What stage is your React Native project in?',
+    options: [
+      {
+        label: 'Planning or evaluating',
+        description: "We're considering React Native or need an expert review",
+        points: { kickstart: 3, essential: 1, growth: 0, enterprise: 0 },
+      },
+      {
+        label: 'Active development',
+        description: 'We have an app and need ongoing development help',
+        points: { kickstart: 0, essential: 3, growth: 2, enterprise: 1 },
+      },
+      {
+        label: 'Scaling rapidly',
+        description: 'Our app is growing and we need more development power',
+        points: { kickstart: 0, essential: 1, growth: 3, enterprise: 2 },
+      },
+      {
+        label: 'Mission-critical',
+        description:
+          'We need a dedicated strategic partner for our enterprise app',
+        points: { kickstart: 0, essential: 0, growth: 1, enterprise: 3 },
+      },
+    ],
+  },
+  {
+    id: 'hours',
+    question: 'How many development hours do you need monthly?',
+    options: [
+      {
+        label: 'One-time engagement',
+        description: 'I need a strategic audit or assessment',
+        points: { kickstart: 3, essential: 0, growth: 0, enterprise: 0 },
+      },
+      {
+        label: 'Up to 40 hours',
+        description: 'Part-time development support',
+        points: { kickstart: 1, essential: 3, growth: 0, enterprise: 0 },
+      },
+      {
+        label: '40-120 hours',
+        description: 'Substantial development capacity',
+        points: { kickstart: 0, essential: 1, growth: 3, enterprise: 1 },
+      },
+      {
+        label: '120+ hours',
+        description: 'Full-time dedicated team',
+        points: { kickstart: 0, essential: 0, growth: 1, enterprise: 3 },
+      },
+    ],
+  },
+  {
+    id: 'support',
+    question: 'What level of communication do you need?',
+    options: [
+      {
+        label: 'Periodic check-ins',
+        description: 'Follow-up calls within the engagement period',
+        points: { kickstart: 3, essential: 1, growth: 0, enterprise: 0 },
+      },
+      {
+        label: 'Weekly sync',
+        description: 'Regular backlog calls and 24h Slack response',
+        points: { kickstart: 0, essential: 3, growth: 2, enterprise: 0 },
+      },
+      {
+        label: 'Daily communication',
+        description: 'Daily calls and 1-hour response time',
+        points: { kickstart: 0, essential: 0, growth: 1, enterprise: 3 },
+      },
+    ],
+  },
+];
+
+const plans = {
+  kickstart: {
+    name: 'Kickstart',
+    icon: MagnifyingGlassIcon,
+    price: '5,000€',
+    period: 'one-time',
+    color: 'from-amber-500 to-orange-500',
+    bgColor: 'bg-amber-500/10',
+    borderColor: 'border-amber-500/30',
+    textColor: 'text-amber-600',
+    description: 'Comprehensive audit & strategic roadmap',
+    highlights: ['2 strategy calls', 'Stack assessment', 'Roadmap document'],
+    cta: 'Get Started',
+    href: '#',
+  },
+  essential: {
+    name: 'Essential',
+    icon: BeakerIcon,
+    price: '2,500€',
+    period: '/month',
+    color: 'from-blue-500 to-cyan-500',
+    bgColor: 'bg-blue-500/10',
+    borderColor: 'border-blue-500/30',
+    textColor: 'text-blue-600',
+    description: 'Monthly guidance with 40h development',
+    highlights: ['Weekly backlog calls', '24h Slack support', '40 dev hours'],
+    cta: 'Get Started',
+    href: '#',
+  },
+  growth: {
+    name: 'Growth',
+    icon: RocketLaunchIcon,
+    price: '6,750€',
+    period: '/month',
+    color: 'from-emerald-500 to-teal-500',
+    bgColor: 'bg-emerald-500/10',
+    borderColor: 'border-emerald-500/30',
+    textColor: 'text-emerald-600',
+    description: 'Premium package with 120h development',
+    highlights: ['Weekly backlog calls', '24h Slack support', '120 dev hours'],
+    cta: 'Get Started',
+    href: '#',
+  },
+  enterprise: {
+    name: 'Enterprise',
+    icon: BuildingStorefrontIcon,
+    price: 'Custom',
+    period: '',
+    color: 'from-purple-500 to-pink-500',
+    bgColor: 'bg-purple-500/10',
+    borderColor: 'border-purple-500/30',
+    textColor: 'text-purple-600',
+    description: 'Dedicated team for mission-critical apps',
+    highlights: ['Daily calls', '1h response time', 'Custom hours'],
+    cta: 'View Proposal',
+    href: '#',
+  },
+};
+
+const upgradePaths = [
+  {
+    title: 'Audit → Execution',
+    path: ['Kickstart', 'Essential or Growth'],
+    description: 'Most startups start here',
+    icon: '🔍',
+  },
+  {
+    title: 'Audit → Strategic Partnership',
+    path: ['Kickstart', 'Enterprise'],
+    description: 'For companies ready to scale with senior guidance',
+    icon: '🎯',
+  },
+  {
+    title: 'Scale Your Execution',
+    path: ['Essential', 'Growth', 'Enterprise'],
+    description: 'Natural growth path',
+    icon: '📈',
+  },
+];
+
+export function PlanFinderSection() {
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [answers, setAnswers] = useState<Record<string, number>>({});
+  const [showResult, setShowResult] = useState(false);
+  const [mode, setMode] = useState<'quiz' | 'compare'>('quiz');
+
+  const calculateRecommendation = (): PlanKey => {
+    const scores: Record<PlanKey, number> = {
+      kickstart: 0,
+      essential: 0,
+      growth: 0,
+      enterprise: 0,
+    };
+
+    Object.entries(answers).forEach(([questionId, optionIndex]) => {
+      const question = questions.find((q) => q.id === questionId);
+      if (question && question.options[optionIndex]) {
+        const points = question.options[optionIndex].points;
+        (Object.keys(points) as PlanKey[]).forEach((plan) => {
+          scores[plan] += points[plan];
+        });
+      }
+    });
+
+    return (Object.entries(scores) as [PlanKey, number][]).reduce((a, b) =>
+      a[1] > b[1] ? a : b,
+    )[0];
+  };
+
+  const handleAnswer = (optionIndex: number) => {
+    const question = questions[currentQuestion];
+    setAnswers({ ...answers, [question.id]: optionIndex });
+
+    if (currentQuestion < questions.length - 1) {
+      setCurrentQuestion(currentQuestion + 1);
+    } else {
+      setShowResult(true);
+    }
+  };
+
+  const resetQuiz = () => {
+    setCurrentQuestion(0);
+    setAnswers({});
+    setShowResult(false);
+  };
+
+  const recommendedPlan = showResult ? calculateRecommendation() : null;
+  const plan = recommendedPlan ? plans[recommendedPlan] : null;
+
+  return (
+    <section className="py-20 px-4 bg-gradient-to-b from-muted/30 to-background">
+      <div className="max-w-6xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-primary/10 mb-6">
+            <SparklesIcon className="w-4 h-4 text-primary" />
+            <span className="text-sm font-medium text-primary">
+              Find Your Perfect Plan
+            </span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-4 text-balance">
+            Not Sure Which Plan Fits?
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
+            Answer a few quick questions and we&apos;ll recommend the best plan
+            for your needs, or compare all plans side by side.
+          </p>
+        </div>
+
+        {/* Mode Toggle */}
+        <div className="flex justify-center mb-10">
+          <div className="inline-flex rounded-lg border border-border p-1 bg-muted/50">
+            <button
+              onClick={() => {
+                setMode('quiz');
+                resetQuiz();
+              }}
+              className={cn(
+                'px-5 py-2.5 rounded-md text-sm font-medium transition-all',
+                mode === 'quiz'
+                  ? 'bg-background text-foreground shadow-sm'
+                  : 'text-muted-foreground hover:text-foreground',
+              )}
+            >
+              <ChatBubbleBottomCenterIcon className="w-4 h-4 inline-block mr-2" />
+              Quick Quiz
+            </button>
+            <button
+              onClick={() => setMode('compare')}
+              className={cn(
+                'px-5 py-2.5 rounded-md text-sm font-medium transition-all',
+                mode === 'compare'
+                  ? 'bg-background text-foreground shadow-sm'
+                  : 'text-muted-foreground hover:text-foreground',
+              )}
+            >
+              <MagnifyingGlassIcon className="w-4 h-4 inline-block mr-2" />
+              Compare Plans
+            </button>
+          </div>
+        </div>
+
+        {mode === 'quiz' && !showResult && (
+          <div className="max-w-2xl mx-auto">
+            {/* Progress */}
+            <div className="mb-8">
+              <div className="flex justify-between items-center mb-2">
+                <span className="text-sm text-muted-foreground">
+                  Question {currentQuestion + 1} of {questions.length}
+                </span>
+                <span className="text-sm text-muted-foreground">
+                  {Math.round(((currentQuestion + 1) / questions.length) * 100)}
+                  %
+                </span>
+              </div>
+              <div className="h-2 bg-muted rounded-full overflow-hidden">
+                <div
+                  className="h-full bg-primary transition-all duration-500 ease-out rounded-full"
+                  style={{
+                    width: `${((currentQuestion + 1) / questions.length) * 100}%`,
+                  }}
+                />
+              </div>
+            </div>
+
+            {/* Question Card */}
+            <Card className="border-2 shadow-lg">
+              <h3 className="text-2xl font-semibold mb-6 text-foreground">
+                {questions[currentQuestion].question}
+              </h3>
+              <div className="space-y-3">
+                {questions[currentQuestion].options.map((option, index) => (
+                  <button
+                    key={index}
+                    onClick={() => handleAnswer(index)}
+                    className="w-full p-4 text-left rounded-xl border-2 border-border hover:border-primary/50 hover:bg-primary/5 transition-all group"
+                  >
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <p className="font-medium text-foreground group-hover:text-primary transition-colors">
+                          {option.label}
+                        </p>
+                        <p className="text-sm text-muted-foreground mt-1">
+                          {option.description}
+                        </p>
+                      </div>
+                      <ChevronRightIcon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </Card>
+          </div>
+        )}
+
+        {mode === 'quiz' && showResult && plan && (
+          <div className="max-w-3xl mx-auto">
+            <Card
+              className={cn(
+                'border-2 shadow-xl overflow-hidden',
+                plan.borderColor,
+              )}
+            >
+              <div className={cn('h-2 bg-gradient-to-r', plan.color)} />
+
+              <div className="text-center mb-8">
+                <div
+                  className={cn(
+                    'w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4',
+                    plan.bgColor,
+                  )}
+                >
+                  <plan.icon className={cn('w-8 h-8', plan.textColor)} />
+                </div>
+                <p className="text-sm font-medium text-muted-foreground mb-2">
+                  We recommend
+                </p>
+                <h3 className="text-3xl font-bold text-foreground">
+                  {plan.name}
+                </h3>
+                <div className="flex items-baseline justify-center gap-1 mt-2">
+                  <span className={cn('text-4xl font-bold', plan.textColor)}>
+                    {plan.price}
+                  </span>
+                  <span className="text-muted-foreground">{plan.period}</span>
+                </div>
+                <p className="text-muted-foreground mt-3">{plan.description}</p>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-4 mb-8">
+                {plan.highlights.map((highlight, index) => (
+                  <div
+                    key={index}
+                    className={cn(
+                      'flex items-center gap-3 p-3 rounded-lg',
+                      plan.bgColor,
+                    )}
+                  >
+                    <CheckIcon
+                      className={cn('w-5 h-5 shrink-0', plan.textColor)}
+                    />
+                    <span className="text-sm font-medium text-foreground">
+                      {highlight}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                <Button
+                  size="lg"
+                  className={cn(
+                    'bg-gradient-to-r text-white shadow-lg',
+                    plan.color,
+                  )}
+                >
+                  {plan.cta}
+                  <ArrowRightIcon className="w-4 h-4 ml-2" />
+                </Button>
+                <Button size="lg" variant="outline" onClick={resetQuiz}>
+                  Retake Quiz
+                </Button>
+              </div>
+            </Card>
+          </div>
+        )}
+
+        {mode === 'compare' && (
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {(Object.entries(plans) as [PlanKey, typeof plans.kickstart][]).map(
+              ([key, plan]) => (
+                <Card
+                  key={key}
+                  className={cn(
+                    'relative border-2 transition-all hover:shadow-xl hover:-translate-y-1',
+                    plan.borderColor,
+                  )}
+                >
+                  <div
+                    className={cn(
+                      'absolute top-0 left-0 right-0 h-1 rounded-t-lg bg-gradient-to-r',
+                      plan.color,
+                    )}
+                  />
+                  <div
+                    className={cn(
+                      'w-12 h-12 rounded-xl flex items-center justify-center mb-4',
+                      plan.bgColor,
+                    )}
+                  >
+                    <plan.icon className={cn('w-6 h-6', plan.textColor)} />
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground mb-1">
+                    {plan.name}
+                  </h3>
+                  <div className="flex items-baseline gap-1 mb-3">
+                    <span className={cn('text-2xl font-bold', plan.textColor)}>
+                      {plan.price}
+                    </span>
+                    <span className="text-sm text-muted-foreground">
+                      {plan.period}
+                    </span>
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    {plan.description}
+                  </p>
+                  <ul className="space-y-2 mb-6">
+                    {plan.highlights.map((highlight, index) => (
+                      <li
+                        key={index}
+                        className="flex items-center gap-2 text-sm"
+                      >
+                        <CheckIcon
+                          className={cn('w-4 h-4 shrink-0', plan.textColor)}
+                        />
+                        <span className="text-foreground">{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Button
+                    className={cn(
+                      'w-full bg-gradient-to-r text-white',
+                      plan.color,
+                    )}
+                  >
+                    {plan.cta}
+                  </Button>
+                </Card>
+              ),
+            )}
+          </div>
+        )}
+
+        {/* CTA Banner */}
+        <div className="mt-16 relative overflow-hidden rounded-2xl bg-gradient-to-r from-primary to-primary/80 p-8 md:p-10">
+          <div className="absolute inset-0 bg-grid-white/10 [mask-image:linear-gradient(0deg,transparent,black)]" />
+          <div className="relative flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="text-center md:text-left">
+              <h3 className="text-2xl md:text-3xl font-bold text-primary-foreground mb-2">
+                Still unsure? Let&apos;s talk.
+              </h3>
+              <p className="text-primary-foreground/80 max-w-md">
+                Book a free 20-minute discovery call and we&apos;ll help you
+                find the perfect fit for your team.
+              </p>
+            </div>
+            <Button
+              size="lg"
+              variant="secondary"
+              className="shrink-0 shadow-lg hover:shadow-xl transition-shadow"
+            >
+              <CalendarIcon className="w-5 h-5 mr-2" />
+              Book a Discovery Call
+            </Button>
+          </div>
+        </div>
+
+        {/* Upgrade Paths */}
+        <div className="mt-20">
+          <div className="text-center mb-10">
+            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
+              Common Upgrade Paths
+            </h3>
+            <p className="text-muted-foreground">
+              See how companies typically grow with us over time
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {upgradePaths.map((item, index) => (
+              <Card
+                key={index}
+                className="group border-2 hover:border-primary/30 transition-all hover:shadow-lg"
+              >
+                <div className="text-3xl mb-4">{item.icon}</div>
+                <h4 className="text-lg font-semibold text-foreground mb-3">
+                  {item.title}
+                </h4>
+                <div className="flex items-center gap-2 flex-wrap mb-4">
+                  {item.path.map((step, stepIndex) => (
+                    <span key={stepIndex} className="flex items-center gap-2">
+                      <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
+                        {step}
+                      </span>
+                      {stepIndex < item.path.length - 1 && (
+                        <ArrowRightIcon className="w-4 h-4 text-muted-foreground" />
+                      )}
+                    </span>
+                  ))}
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  {item.description}
+                </p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export function Pricing() {
   return (
@@ -231,6 +792,8 @@ export function Pricing() {
             </Card>
           ))}
         </div>
+
+        <PlanFinderSection />
       </div>
     </div>
   );
