@@ -198,13 +198,17 @@ export function TeamSection() {
           <h2 className="text-base/7 font-semibold text-blue-600">
             Trusted Experts
           </h2>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-4 text-balance">
+          <Text variant="h1" as="p">
             Meet your React Native team
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
+          </Text>
+          <Text
+            as="p"
+            variant="p1"
+            className="max-w-2xl mx-auto mt-4 text-muted-foreground"
+          >
             We’re a specialized duo combining strategic expertise with reliable
             execution.
-          </p>
+          </Text>
         </div>
 
         {/* Team Cards */}

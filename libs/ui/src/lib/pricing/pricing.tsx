@@ -1,19 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-
-// import {
-//   Search,
-//   Package,
-//   Rocket,
-//   Crown,
-//   ArrowRight,
-//   Check,
-//   Calendar,
-//   MessageCircle,
-//   Sparkles,
-//   ChevronRight,
-// } from 'lucide-react';
 import Button from '../button/button';
 import {
   CalendarIcon,
@@ -29,7 +16,7 @@ import {
 } from '@heroicons/react/24/outline';
 import clsx, { ClassValue } from 'clsx';
 import { SpotLeft } from '../spot-left/spot-left';
-import { Card } from 'libs/ui/src/lib/card/card';
+import { Card } from '../card/card';
 import { SPOT_AVAILABILITY } from '../spot-left/spot-availability';
 import { twMerge } from 'tailwind-merge';
 
@@ -44,7 +31,7 @@ const frequencies = [
 
 const tiers = [
   {
-    name: 'Kickstart Audit Premium',
+    name: 'Kickstart Audit',
     id: 'tier-kickstart',
     href: 'https://buy.stripe.com/bJefZi5umh140FAfwt4wM0d',
     price: { onetime: '10000 €' },
