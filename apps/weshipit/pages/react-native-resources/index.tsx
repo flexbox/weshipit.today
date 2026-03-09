@@ -1,11 +1,8 @@
 import { Layout } from '../../components/layout';
 import { resources } from '../../fixtures/resources.fixture';
 
-import { Text, Hero, CallToActionCards, Card, Button } from '@weshipit/ui';
+import { Text, Hero, Card } from '@weshipit/ui';
 import round from 'lodash/round';
-import { HeaderLinksForTools } from '../../components/header-links-for-tools';
-import { format } from 'date-fns';
-import { linksApi } from '../api/links';
 
 /**
  * @deprecated we should use codegen
@@ -21,7 +18,6 @@ interface ResourceRecord {
     youtube_url?: string;
     discord_url?: string;
     conference_country?: string;
-    conference_date?: string;
   };
 }
 
@@ -36,7 +32,6 @@ function ResourceList({ records }) {
       {records.map((record: ResourceRecord) => {
         const {
           conference_country,
-          conference_date,
           description,
           discord_url,
           name,
@@ -63,11 +58,6 @@ function ResourceList({ records }) {
               >
                 {name}
               </Text>
-              {conference_date && (
-                <Text as="p" variant="p2" className="mb-4 text-gray-500">
-                  {format(new Date(conference_date), 'cccc dd MMMM yyyy')}
-                </Text>
-              )}
 
               {description && (
                 <Text as="p" variant="p1" className="mb-4 text-gray-600">
@@ -82,7 +72,7 @@ function ResourceList({ records }) {
                   href={website_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300 text-xs font-medium px-2.5 py-0.5 rounded-full border border-blue-300 dark:border-blue-700 hover:bg-blue-200 dark:hover:bg-blue-800 hover:border-blue-400 dark:hover:border-blue-600 transition-colors"
+                  className="inline-flex items-center bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300 text-md font-medium px-4 py-2 rounded-full border border-blue-300 dark:border-blue-700 hover:bg-blue-200 dark:hover:bg-blue-800 hover:border-blue-400 dark:hover:border-blue-600 transition-colors"
                 >
                   <span>Website</span>
                   <svg
@@ -106,7 +96,7 @@ function ResourceList({ records }) {
                   href={youtube_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-300 text-xs font-medium px-2.5 py-0.5 rounded-full border border-red-300 dark:border-red-700 hover:bg-red-200 dark:hover:bg-red-800 hover:border-red-400 dark:hover:border-red-600 transition-colors"
+                  className="inline-flex items-center bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-300 text-md font-medium px-4 py-2 rounded-full border border-red-300 dark:border-red-700 hover:bg-red-200 dark:hover:bg-red-800 hover:border-red-400 dark:hover:border-red-600 transition-colors"
                 >
                   <span>Youtube</span>
                   <svg
@@ -130,7 +120,7 @@ function ResourceList({ records }) {
                   href={slack_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-300 text-xs font-medium px-2.5 py-0.5 rounded-full border border-purple-300 dark:border-purple-700 hover:bg-purple-200 dark:hover:bg-purple-800 hover:border-purple-400 dark:hover:border-purple-600 transition-colors"
+                  className="inline-flex items-center bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-300 text-md font-medium px-4 py-2 rounded-full border border-purple-300 dark:border-purple-700 hover:bg-purple-200 dark:hover:bg-purple-800 hover:border-purple-400 dark:hover:border-purple-600 transition-colors"
                 >
                   <span>Slack</span>
                   <svg
@@ -154,7 +144,7 @@ function ResourceList({ records }) {
                   href={discord_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center bg-indigo-100 text-indigo-700 dark:bg-indigo-900 dark:text-indigo-300 text-xs font-medium px-2.5 py-0.5 rounded-full border border-indigo-300 dark:border-indigo-700 hover:bg-indigo-200 dark:hover:bg-indigo-800 hover:border-indigo-400 dark:hover:border-indigo-600 transition-colors"
+                  className="inline-flex items-center bg-indigo-100 text-indigo-700 dark:bg-indigo-900 dark:text-indigo-300 text-md font-medium px-4 py-2 rounded-full border border-indigo-300 dark:border-indigo-700 hover:bg-indigo-200 dark:hover:bg-indigo-800 hover:border-indigo-400 dark:hover:border-indigo-600 transition-colors"
                 >
                   <span>Discord</span>
                   <svg
@@ -207,6 +197,7 @@ export default function ReactNativeResourcesPage({
       seoDescription={`Most effective resources for learning React Native, online guides and tutorials, podcast and newsletter.`}
       ogImageTitle="React Native Resources"
       withHeader
+      withFooter
       navigation={[
         { name: 'Guides', href: '#guides' },
         { name: 'Newsletters', href: '#newsletters' },
@@ -249,7 +240,7 @@ export default function ReactNativeResourcesPage({
         </div>
       </div>
 
-      <div className="mx-auto max-w-screen-2xl px-4 pb-12 sm:px-6 grid gap-16 md:gap-24">
+      <div className="mx-auto max-w-screen-xl px-4 pb-12 sm:px-6 grid gap-16 md:gap-24">
         <section id="guides">
           <Text
             as="h2"
@@ -292,14 +283,6 @@ export default function ReactNativeResourcesPage({
             React Native conferences
           </Text>
           <ResourceList records={conferences} />
-        </section>
-      </div>
-      <div className="mx-auto mb-24 max-w-7xl px-4 sm:px-6">
-        <section className="mb-12">
-          <Text as="h2" variant="h2" className="my-4">
-            Level up your skills
-          </Text>
-          <CallToActionCards />
         </section>
       </div>
     </Layout>
