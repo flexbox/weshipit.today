@@ -49,7 +49,7 @@ const card = cva(
         ],
         'gradient-pink': [
           'text-white',
-          'bg-gradient-to-tr from-purple-700 to-pink-200',
+          'bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-400',
           'dark:from-[#803C71] dark:via-[#74376D] dark:to-[#215E86]',
           'ring-white/20',
         ],

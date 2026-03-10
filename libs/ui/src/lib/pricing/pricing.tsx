@@ -5,7 +5,6 @@ import Button from '../button/button';
 import {
   CalendarIcon,
   MagnifyingGlassIcon,
-  SparklesIcon,
   BeakerIcon,
   BuildingStorefrontIcon,
   RocketLaunchIcon,
@@ -75,10 +74,10 @@ const tiers: Tier[] = [
     cta: 'Reserve now',
     spotsLeft: SPOT_AVAILABILITY.kickstart,
     icon: MagnifyingGlassIcon,
-    color: 'from-amber-500 to-orange-500',
-    bgColor: 'bg-amber-500/10',
-    borderColor: 'border-amber-500/30',
-    textColor: 'text-amber-600',
+    color: 'from-emerald-500 to-teal-500',
+    bgColor: 'bg-emerald-500/10',
+    borderColor: 'border-emerald-500/30',
+    textColor: 'text-emerald-600',
   },
   {
     key: 'essential',
@@ -105,7 +104,7 @@ const tiers: Tier[] = [
     cta: 'Reserve now',
     spotsLeft: SPOT_AVAILABILITY.essential,
     icon: BeakerIcon,
-    color: 'from-blue-500 to-cyan-500',
+    color: 'from-blue-500 to-cyan-300',
     bgColor: 'bg-blue-500/10',
     borderColor: 'border-blue-500/30',
     textColor: 'text-blue-600',
@@ -135,10 +134,10 @@ const tiers: Tier[] = [
     cta: 'Get Started',
     spotsLeft: SPOT_AVAILABILITY.growth,
     icon: RocketLaunchIcon,
-    color: 'from-emerald-500 to-teal-500',
-    bgColor: 'bg-emerald-500/10',
-    borderColor: 'border-emerald-500/30',
-    textColor: 'text-emerald-600',
+    color: 'from-blue-500 to-cyan-300',
+    bgColor: 'bg-blue-500/10',
+    borderColor: 'border-blue-500/30',
+    textColor: 'text-blue-600',
   },
   {
     key: 'enterprise',
@@ -166,10 +165,10 @@ const tiers: Tier[] = [
     cta: 'View Proposal',
     spotsLeft: SPOT_AVAILABILITY.enterprise,
     icon: BuildingStorefrontIcon,
-    color: 'from-purple-500 to-pink-500',
-    bgColor: 'bg-purple-500/10',
-    borderColor: 'border-purple-500/30',
-    textColor: 'text-purple-600',
+    color: 'from-indigo-500 via-purple-500 to-pink-400',
+    bgColor: 'bg-indigo-500/10',
+    borderColor: 'border-indigo-500/30',
+    textColor: 'text-indigo-600',
   },
 ];
 
@@ -384,7 +383,7 @@ export function PlanFinderSection({ ctaLink }: { ctaLink: string }) {
         {/* Header */}
         <div className="text-center mb-12">
           <Text as="h2" variant="h2">
-            Not Sure Which Plan Fits?
+            Not sure which plan fits?
           </Text>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
             Answer a few quick questions and we’ll recommend the best plan for
@@ -637,9 +636,9 @@ export function PlanFinderSection({ ctaLink }: { ctaLink: string }) {
         {/* Upgrade Paths */}
         <div className="mt-20">
           <div className="text-center mb-10">
-            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
-              Common Upgrade Paths
-            </h3>
+            <Text as="h3" variant="h4" className="mb-3 text-foreground">
+              Common upgrade paths
+            </Text>
             <p className="text-muted-foreground">
               See how companies typically grow with us over time
             </p>
