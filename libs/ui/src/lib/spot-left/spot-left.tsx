@@ -5,13 +5,10 @@ export interface SpotLeftProps {
 }
 
 export const SPOT_AVAILABILITY = {
-  /** Number of spots available for general team/hero banner */
-  team: 1,
-  /** Number of spots available for Essential tier */
+  team: 2,
+  kickstart: 1,
   essential: 0,
-  /** Number of spots available for Growth tier */
   growth: 0,
-  /** Number of spots available for Enterprise tier */
   enterprise: 1,
 } as const;
 

@@ -18,6 +18,8 @@ import clsx, { ClassValue } from 'clsx';
 import { SpotLeft, SPOT_AVAILABILITY } from '../spot-left/spot-left';
 import { Card } from '../card/card';
 import { twMerge } from 'tailwind-merge';
+import { Text } from '../text/text';
+import { Badge } from '../badge/badge';
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -38,7 +40,7 @@ interface Tier {
   deliveredBy: string;
   featured: boolean;
   cta: string;
-  spotsLeft?: number;
+  spotsLeft: number;
   icon: ElementType<{ className?: string }>;
   color: string;
   bgColor: string;
@@ -55,7 +57,7 @@ const tiers: Tier[] = [
     price: { onetime: '10 000 €' },
     description:
       'Get a senior-level React Native audit that prevents 6+ months of trial-and-error and saves you 50k€ in tech debt.',
-    audience: 'Before raising your next funding round',
+    audience: 'Before raising your next funding round.',
     features: [
       'Complete codebase audit and performance analysis',
       'Technical debt assessment with priority matrix',
@@ -70,6 +72,7 @@ const tiers: Tier[] = [
     deliveredBy: 'David Leuliette (React Native expert)',
     featured: false,
     cta: 'Reserve now',
+    spotsLeft: SPOT_AVAILABILITY.kickstart,
     icon: MagnifyingGlassIcon,
     color: 'from-amber-500 to-orange-500',
     bgColor: 'bg-amber-500/10',
@@ -84,7 +87,7 @@ const tiers: Tier[] = [
     price: { monthly: '2 500 €' },
     description:
       'Reliable React Native development with weekly strategic alignment. Your go-to execution partner for consistent delivery.',
-    audience: 'Post-PMF startups building features consistently',
+    audience: 'Post-PMF startups building features consistently.',
     features: [
       '40 hours of software development',
       'Feature development and bug fixes',
@@ -114,7 +117,7 @@ const tiers: Tier[] = [
     price: { monthly: '5 000 €' },
     description:
       'Accelerate development with doubled capacity and daily alignment. Scale your mobile app faster with dedicated support.',
-    audience: 'Scale-ups in rapid growth phase',
+    audience: 'Scale-ups in rapid growth phase.',
     features: [
       '80 hours of software development',
       'Complex feature development',
@@ -141,10 +144,10 @@ const tiers: Tier[] = [
     name: 'Enterprise',
     id: 'tier-enterprise',
     href: 'https://flexbox.notion.site/2fbf478bcb8c8033859bf78cf7646db9?pvs=105',
-    price: { monthly: '18,000 €' },
+    price: 'Custom',
     description:
       'Work directly with our award-winning senior expert. Strategic partnership for mission-critical React Native projects.',
-    audience: 'Series A+ companies with complex mobile apps',
+    audience: 'Series A+ companies with complex mobile apps.',
     features: [
       '4 days/week senior expertise (David)',
       'Strategic architecture and technical leadership',
@@ -160,6 +163,7 @@ const tiers: Tier[] = [
     deliveredBy: 'David Leuliette (Award-winning expert, 10+ years)',
     featured: true,
     cta: 'View Proposal',
+    spotsLeft: SPOT_AVAILABILITY.enterprise,
     icon: BuildingStorefrontIcon,
     color: 'from-purple-500 to-pink-500',
     bgColor: 'bg-purple-500/10',
@@ -378,18 +382,12 @@ export function PlanFinderSection() {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-primary/10 mb-6">
-            <SparklesIcon className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium text-primary">
-              Find Your Perfect Plan
-            </span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-4 text-balance">
+          <Text as="h2" variant="h2">
             Not Sure Which Plan Fits?
-          </h2>
+          </Text>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Answer a few quick questions and we&apos;ll recommend the best plan
-            for your needs, or compare all plans side by side.
+            Answer a few quick questions and we’ll recommend the best plan for
+            your needs, or compare all plans side by side.
           </p>
         </div>
 
@@ -587,7 +585,7 @@ export function PlanFinderSection() {
                       {p.period}
                     </span>
                   </div>
-                  <p className="text-sm text-muted-foreground mb-4">
+                  <p className="text-sm text-muted-foreground mb-4 md:min-h-24">
                     {p.description}
                   </p>
                   <ul className="space-y-2 mb-6">
@@ -623,11 +621,11 @@ export function PlanFinderSection() {
           <div className="relative flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">
               <h3 className="text-2xl md:text-3xl font-bold text-primary-foreground mb-2">
-                Still unsure? Let&apos;s talk.
+                Still unsure? Let’s talk.
               </h3>
               <p className="text-primary-foreground/80 max-w-md">
-                Book a free 20-minute discovery call and we&apos;ll help you
-                find the perfect fit for your team.
+                Book a free 30-minute discovery call and we’ll help you find the
+                perfect fit for your team.
               </p>
             </div>
             <Button
@@ -664,9 +662,9 @@ export function PlanFinderSection() {
                 <div className="flex items-center gap-2 flex-wrap mb-4">
                   {item.path.map((step, stepIndex) => (
                     <span key={stepIndex} className="flex items-center gap-2">
-                      <span className="px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium">
+                      <Badge variant="gray-lighter" size="md">
                         {step}
-                      </span>
+                      </Badge>
                       {stepIndex < item.path.length - 1 && (
                         <ArrowRightIcon className="w-4 h-4 text-muted-foreground" />
                       )}
@@ -710,7 +708,7 @@ export function Pricing() {
                 <h3
                   id={tier.id}
                   className={clsx(
-                    'mb-2 text-xl font-semibold',
+                    'mb-4 text-xl font-semibold',
                     tier.featured
                       ? 'text-white dark:text-gray-900'
                       : 'text-gray-900 dark:text-white',
