@@ -188,7 +188,7 @@ export default function ReactNativeStartersPage({
       }}
       withFooter
     >
-      <div className="bg-gradient-to-br from-cyan-500 via-sky-500 to-blue-600 py-12 md:py-20 mb-12">
+      <div className="bg-gradient-to-tr from-blue-600 to-cyan-300 py-12 md:py-20 mb-12">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <Hero
             title={
@@ -199,7 +199,7 @@ export default function ReactNativeStartersPage({
               </>
             }
             description={
-              <span className="!text-sky-100">
+              <span className="text-sky-100">
                 We have curated essential resources for the success of your
                 React Native app.
                 <br />

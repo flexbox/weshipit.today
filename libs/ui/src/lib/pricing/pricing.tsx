@@ -437,9 +437,9 @@ export function PlanFinderSection({ ctaLink }: { ctaLink: string }) {
                   %
                 </span>
               </div>
-              <div className="h-2 bg-muted rounded-full overflow-hidden">
+              <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
                 <div
-                  className="h-full bg-primary transition-all duration-500 ease-out rounded-full"
+                  className="h-full bg-blue-600 transition-all duration-500 ease-out rounded-full"
                   style={{
                     width: `${((currentQuestion + 1) / questions.length) * 100}%`,
                   }}
@@ -711,9 +711,21 @@ export function Pricing({ ctaLink }: { ctaLink: string }) {
                   {tier.name}
                 </h3>
                 {(tier.spotsLeft || tier.spotsLeft === 0) && (
-                  <SpotLeft spotsLeft={tier.spotsLeft} />
+                  <SpotLeft spotsLeft={tier.spotsLeft} invert={tier.featured} />
                 )}
-                {tier.audience && (
+                <div className="md:min-h-32">
+                  {tier.audience && (
+                    <p
+                      className={clsx(
+                        'mt-4 text-sm/6',
+                        tier.featured
+                          ? 'text-gray-300 dark:text-gray-600'
+                          : 'text-gray-600 dark:text-gray-300',
+                      )}
+                    >
+                      {tier.audience}
+                    </p>
+                  )}
                   <p
                     className={clsx(
                       'mt-4 text-sm/6',
@@ -722,19 +734,9 @@ export function Pricing({ ctaLink }: { ctaLink: string }) {
                         : 'text-gray-600 dark:text-gray-300',
                     )}
                   >
-                    {tier.audience}
+                    {tier.description}
                   </p>
-                )}
-                <p
-                  className={clsx(
-                    'mt-4 text-sm/6',
-                    tier.featured
-                      ? 'text-gray-300 dark:text-gray-600'
-                      : 'text-gray-600 dark:text-gray-300',
-                  )}
-                >
-                  {tier.description}
-                </p>
+                </div>
                 <p className="mt-6 flex items-baseline gap-x-1">
                   <span
                     className={clsx(

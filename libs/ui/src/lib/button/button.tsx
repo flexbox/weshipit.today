@@ -22,7 +22,7 @@ export const buttonVariants = cva(
     },
     variants: {
       disabled: {
-        true: ['!cursor-not-allowed', '!opacity-50'],
+        true: ['cursor-not-allowed!', 'opacity-50!'],
       },
       size: {
         sm: ['rounded', 'px-2', 'py-1', 'text-sm'],

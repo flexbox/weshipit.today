@@ -1,6 +1,5 @@
 const { createGlobPatternsForDependencies } = require('@nx/react/tailwind');
 const { join } = require('path');
-const { text } = require('stream/consumers');
 
 module.exports = {
   content: [
@@ -20,6 +19,12 @@ module.exports = {
         shine: {
           '100%': { left: '125%' },
         },
+      },
+      colors: {
+        primary: 'hsl(var(--primary))',
+        background: 'hsl(var(--background))',
+        muted: 'hsl(var(--muted))',
+        'muted-foreground': 'hsl(var(--muted-foreground))',
       },
     },
     fontFamily: {
