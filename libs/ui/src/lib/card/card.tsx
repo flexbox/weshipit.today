@@ -44,13 +44,13 @@ const card = cva(
         'gradient-blue': [
           'text-white',
           'bg-gradient-to-tr from-blue-600 to-cyan-300',
-          'dark:bg-gradient-to-tr dark:from-sky-900/50 dark:to-sky-800/50',
+          'dark:bg-gradient-to-bl dark:from-blue-900 dark:to-slate-900',
           'ring-white/20 dark:ring-emerald-200/20',
         ],
         'gradient-pink': [
           'text-white',
           'bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-400',
-          'dark:from-[#803C71] dark:via-[#74376D] dark:to-[#215E86]',
+          'dark:bg-gradient-to-bl dark:from-pink-900 dark:via-purple-900 dark:to-slate-900',
           'ring-white/20',
         ],
         'gradient-purple': [

@@ -63,7 +63,7 @@ const tiers: Tier[] = [
       'Technical debt assessment with priority matrix',
       'DX improvements and tooling recommendations',
       'Library updates and architecture optimization strategy',
-      'High-level optimization roadmap (4–12 weeks)',
+      'High-level optimization roadmap (4-12 weeks)',
       'Key success metrics and implementation phases',
       '2 strategic follow-up calls within 3 months',
       'Slack access for critical questions',
@@ -378,7 +378,7 @@ export function PlanFinderSection({ ctaLink }: { ctaLink: string }) {
   const plan = recommendedPlan ? plansByKey[recommendedPlan] : null;
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-muted/30 to-background">
+    <section className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
@@ -393,7 +393,7 @@ export function PlanFinderSection({ ctaLink }: { ctaLink: string }) {
 
         {/* Mode Toggle */}
         <div className="flex justify-center mb-10">
-          <div className="inline-flex rounded-lg border border-border p-1 bg-muted/50">
+          <div className="inline-flex rounded-lg border border-border p-1 bg-muted/50 dark:bg-muted/10 dark:border-muted/20">
             <button
               onClick={() => {
                 setMode('quiz');
@@ -437,9 +437,9 @@ export function PlanFinderSection({ ctaLink }: { ctaLink: string }) {
                   %
                 </span>
               </div>
-              <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
+              <div className="h-2 bg-muted rounded-full overflow-hidden dark:bg-muted/20">
                 <div
-                  className="h-full bg-blue-600 transition-all duration-500 ease-out rounded-full"
+                  className="h-full bg-primary transition-all duration-500 ease-out rounded-full"
                   style={{
                     width: `${((currentQuestion + 1) / questions.length) * 100}%`,
                   }}
@@ -457,7 +457,7 @@ export function PlanFinderSection({ ctaLink }: { ctaLink: string }) {
                   <button
                     key={index}
                     onClick={() => handleAnswer(index)}
-                    className="w-full p-4 text-left rounded-xl border-2 border-border hover:border-primary/50 hover:bg-primary/5 transition-all group"
+                    className="w-full p-4 text-left rounded-xl border-2 border-border hover:border-primary/50 hover:bg-primary/5 transition-all group dark:hover:bg-primary/10 dark:border-muted/20"
                   >
                     <div className="flex items-center justify-between">
                       <div>
@@ -480,10 +480,7 @@ export function PlanFinderSection({ ctaLink }: { ctaLink: string }) {
         {mode === 'quiz' && showResult && plan && (
           <div className="max-w-3xl mx-auto">
             <Card
-              className={cn(
-                'border-2 shadow-xl overflow-hidden p-0',
-                plan.borderColor,
-              )}
+              className={cn('shadow-xl overflow-hidden !p-0', plan.borderColor)}
             >
               <div className={cn('h-2 bg-gradient-to-r', plan.color)} />
 
