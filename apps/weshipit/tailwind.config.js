@@ -20,6 +20,12 @@ module.exports = {
           '100%': { left: '125%' },
         },
       },
+      colors: {
+        primary: 'hsl(var(--primary))',
+        background: 'hsl(var(--background))',
+        muted: 'hsl(var(--muted))',
+        'muted-foreground': 'hsl(var(--muted-foreground))',
+      },
     },
     fontFamily: {
       inter: ['Inter', 'sans-serif'],

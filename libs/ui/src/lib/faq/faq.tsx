@@ -39,9 +39,9 @@ export function Faq({
           >
             <DisclosureButton className="group flex w-full items-center justify-between px-4 py-3">
               <Text
-                as="h2"
-                variant="s2"
-                className="my-4 text-left font-semibold"
+                as="h3"
+                variant="p1"
+                className="my-2 text-left font-semibold"
               >
                 {asText(item.data.question)}
               </Text>

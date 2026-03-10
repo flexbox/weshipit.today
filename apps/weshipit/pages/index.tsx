@@ -198,13 +198,17 @@ export function TeamSection() {
           <h2 className="text-base/7 font-semibold text-blue-600">
             Trusted Experts
           </h2>
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-4 text-balance">
+          <Text variant="h1" as="p">
             Meet your React Native team
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
+          </Text>
+          <Text
+            as="p"
+            variant="p1"
+            className="max-w-2xl mx-auto mt-4 text-muted-foreground"
+          >
             We’re a specialized duo combining strategic expertise with reliable
             execution.
-          </p>
+          </Text>
         </div>
 
         {/* Team Cards */}
@@ -288,7 +292,7 @@ export function TeamSection() {
 
 function HowDoesItWorks({ steps }: { steps: Steps[] }) {
   return (
-    <div className="container px-4 py-16 mx-auto">
+    <div className="container px-4 py-16 mx-auto" id="services">
       <div className="flex flex-col gap-4">
         <Prose size="xl">
           <h2>How does it work?</h2>
@@ -304,43 +308,6 @@ function HowDoesItWorks({ steps }: { steps: Steps[] }) {
               <PrismicRichText field={step.data.description} />
             </WorkflowCard>
           ))}
-          {/* @todo: refactor this section
-        <Card variant="green">
-          <Prose size="xl">
-            <ol>
-              <li>Get acces to top-noch talent.</li>
-              <li>Unlimited revisions and one request at a time.</li>
-              <li>Pause anytime and cancel whenever.</li>
-            </ol>
-          </Prose>
-        </Card>
-
-        <Card variant="red">
-          <Prose size="xl">
-            <h3 className="mt-0">Do not work with us if you want</h3>
-            <ol>
-              <li>A quote is sent after an initial call.</li>
-              <li>The quote is then validated.</li>
-              <li>
-                A service contract is signed, which describes the list of tasks
-                to be accomplished and includes the elements of the quote.
-              </li>
-              <li>The developments are then carried out.</li>
-              <li>
-                A delivery report is validated, which triggers the payment of
-                the invoice.
-              </li>
-              <li>
-                Finally, the intellectual property rights transfer contract is
-                signed.
-              </li>
-              <li>
-                Loop of back and forth emails with accounting because the
-                payment was not sent.
-              </li>
-            </ol>
-          </Prose>
-        </Card> */}
         </div>
       </div>
     </div>
@@ -420,44 +387,10 @@ export default function IndexPage({ clients, faqs, steps }: IndexPageProps) {
         </div>
 
         <TeamSection />
-        <Pricing />
+        <Pricing ctaLink={linksApi.cal.ONBOARDING} />
 
-        <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <div className="m-auto max-w-2xl" id="faq">
-            <Faq faqs={faqs} />
-          </div>
-          <div className="m-auto max-w-4xl py-24">
-            <Card
-              size="xl"
-              className="my-24 flex flex-col items-center justify-center gap-8 text-center"
-              variant="gradient-blue"
-            >
-              <Text
-                variant="h4"
-                as="h2"
-                className="bg-gradient-to-b from-white to-white/75 bg-clip-text font-bold tracking-tight text-transparent drop-shadow"
-              >
-                See if weshipit.today is right for your needs
-              </Text>
-              <Text
-                variant="p1"
-                as="p"
-                className="bg-gradient-to-b from-white to-white/75 bg-clip-text tracking-tight text-transparent drop-shadow"
-              >
-                Book a call and find out how you and your team can change your
-                mobile app development forever.
-              </Text>
-              <Button
-                href={linksApi.cal.ONBOARDING}
-                size="xxl"
-                variant="outline"
-                as="a"
-                isExternalLink
-              >
-                Book a call with David
-              </Button>
-            </Card>
-          </div>
+        <div className="mx-auto max-w-2xl px-4 sm:px-6 " id="faq">
+          <Faq faqs={faqs} />
         </div>
       </Layout>
     </>

@@ -6,7 +6,7 @@ import { PhoneAnimation } from './phone-animation';
 import { CalendarIcon } from '@heroicons/react/24/solid';
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
 import { LinkButton, SpotLeft, Text } from '@weshipit/ui';
-import { SPOT_AVAILABILITY } from '../spot-left/spot-availability';
+import { SPOT_AVAILABILITY } from '../spot-left/spot-left';
 
 export function HeroBanner({
   onboardingHref,
@@ -53,7 +53,7 @@ export function HeroBanner({
                 variant="outline"
                 className="group"
                 size="xl"
-                href={'#pricing'}
+                href="#pricing"
               >
                 See pricing
                 <ArrowRightIcon className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
