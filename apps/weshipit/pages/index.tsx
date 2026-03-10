@@ -424,44 +424,10 @@ export default function IndexPage({ clients, faqs, steps }: IndexPageProps) {
         </div>
 
         <TeamSection />
-        <Pricing />
+        <Pricing ctaLink={linksApi.cal.ONBOARDING} />
 
-        <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <div className="m-auto max-w-2xl" id="faq">
-            <Faq faqs={faqs} />
-          </div>
-          <div className="m-auto max-w-4xl py-24">
-            <Card
-              size="xl"
-              className="my-24 flex flex-col items-center justify-center gap-8 text-center"
-              variant="gradient-blue"
-            >
-              <Text
-                variant="h4"
-                as="h2"
-                className="bg-gradient-to-b from-white to-white/75 bg-clip-text font-bold tracking-tight text-transparent drop-shadow"
-              >
-                See if weshipit.today is right for your needs
-              </Text>
-              <Text
-                variant="p1"
-                as="p"
-                className="bg-gradient-to-b from-white to-white/75 bg-clip-text tracking-tight text-transparent drop-shadow"
-              >
-                Book a call and find out how you and your team can change your
-                mobile app development forever.
-              </Text>
-              <Button
-                href={linksApi.cal.ONBOARDING}
-                size="xxl"
-                variant="outline"
-                as="a"
-                isExternalLink
-              >
-                Book a call with David
-              </Button>
-            </Card>
-          </div>
+        <div className="mx-auto max-w-2xl px-4 sm:px-6 " id="faq">
+          <Faq faqs={faqs} />
         </div>
       </Layout>
     </>

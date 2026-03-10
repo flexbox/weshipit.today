@@ -20,6 +20,7 @@ import { Card } from '../card/card';
 import { twMerge } from 'tailwind-merge';
 import { Text } from '../text/text';
 import { Badge } from '../badge/badge';
+import LinkButton from '../button/link-button';
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -328,7 +329,7 @@ const upgradePaths = [
   },
 ];
 
-export function PlanFinderSection() {
+export function PlanFinderSection({ ctaLink }: { ctaLink: string }) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<Record<string, number>>({});
   const [showResult, setShowResult] = useState(false);
@@ -615,29 +616,23 @@ export function PlanFinderSection() {
           </div>
         )}
 
-        {/* CTA Banner */}
-        <div className="mt-16 relative overflow-hidden rounded-2xl bg-gradient-to-r from-primary to-primary/80 p-8 md:p-10">
-          <div className="absolute inset-0 bg-grid-white/10 [mask-image:linear-gradient(0deg,transparent,black)]" />
+        <Card variant="gradient-blue" className="mt-16 md:p-10">
           <div className="relative flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">
-              <h3 className="text-2xl md:text-3xl font-bold text-primary-foreground mb-2">
+              <Text as="h3" variant="h4" className="mb-2 text-white">
                 Still unsure? Let’s talk.
-              </h3>
-              <p className="text-primary-foreground/80 max-w-md">
+              </Text>
+              <p className="text-primary-foreground/80 max-w-md text-muted">
                 Book a free 30-minute discovery call and we’ll help you find the
                 perfect fit for your team.
               </p>
             </div>
-            <Button
-              size="lg"
-              variant="secondary"
-              className="shrink-0 shadow-lg hover:shadow-xl transition-shadow"
-            >
+            <LinkButton href={ctaLink} variant="outline" size="lg">
               <CalendarIcon className="w-5 h-5 mr-2" />
               Book a Discovery Call
-            </Button>
+            </LinkButton>
           </div>
-        </div>
+        </Card>
 
         {/* Upgrade Paths */}
         <div className="mt-20">
@@ -683,7 +678,7 @@ export function PlanFinderSection() {
   );
 }
 
-export function Pricing() {
+export function Pricing({ ctaLink }: { ctaLink: string }) {
   return (
     <div className="py-24 sm:py-32" id="pricing">
       <div className="mx-auto max-w-8xl px-6 lg:px-8">
@@ -839,7 +834,7 @@ export function Pricing() {
           ))}
         </div>
 
-        <PlanFinderSection />
+        <PlanFinderSection ctaLink={ctaLink} />
       </div>
     </div>
   );
