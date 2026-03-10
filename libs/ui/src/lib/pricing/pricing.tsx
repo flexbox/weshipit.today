@@ -385,7 +385,7 @@ export function PlanFinderSection({ ctaLink }: { ctaLink: string }) {
           <Text as="h2" variant="h2">
             Not sure which plan fits?
           </Text>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
+          <p className="mx-auto mt-6 max-w-2xl text-pretty text-center text-lg font-medium text-gray-600 sm:text-xl/8">
             Answer a few quick questions and we’ll recommend the best plan for
             your needs, or compare all plans side by side.
           </p>
@@ -448,7 +448,7 @@ export function PlanFinderSection({ ctaLink }: { ctaLink: string }) {
             </div>
 
             {/* Question Card */}
-            <Card className="border-2 shadow-lg">
+            <Card className="shadow-lg">
               <h3 className="text-2xl font-semibold mb-6 text-foreground">
                 {questions[currentQuestion].question}
               </h3>
@@ -481,69 +481,74 @@ export function PlanFinderSection({ ctaLink }: { ctaLink: string }) {
           <div className="max-w-3xl mx-auto">
             <Card
               className={cn(
-                'border-2 shadow-xl overflow-hidden',
+                'border-2 shadow-xl overflow-hidden p-0',
                 plan.borderColor,
               )}
             >
               <div className={cn('h-2 bg-gradient-to-r', plan.color)} />
 
-              <div className="text-center mb-8">
-                <div
-                  className={cn(
-                    'w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4',
-                    plan.bgColor,
-                  )}
-                >
-                  <plan.icon className={cn('w-8 h-8', plan.textColor)} />
-                </div>
-                <p className="text-sm font-medium text-muted-foreground mb-2">
-                  We recommend
-                </p>
-                <h3 className="text-3xl font-bold text-foreground">
-                  {plan.name}
-                </h3>
-                <div className="flex items-baseline justify-center gap-1 mt-2">
-                  <span className={cn('text-4xl font-bold', plan.textColor)}>
-                    {plan.price}
-                  </span>
-                  <span className="text-muted-foreground">{plan.period}</span>
-                </div>
-                <p className="text-muted-foreground mt-3">{plan.description}</p>
-              </div>
-
-              <div className="grid md:grid-cols-3 gap-4 mb-8">
-                {plan.highlights.map((highlight, index) => (
+              <div className="p-12">
+                <div className="text-center mb-8">
                   <div
-                    key={index}
                     className={cn(
-                      'flex items-center gap-3 p-3 rounded-lg',
+                      'w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4',
                       plan.bgColor,
                     )}
                   >
-                    <CheckIcon
-                      className={cn('w-5 h-5 shrink-0', plan.textColor)}
-                    />
-                    <span className="text-sm font-medium text-foreground">
-                      {highlight}
-                    </span>
+                    <plan.icon className={cn('w-8 h-8', plan.textColor)} />
                   </div>
-                ))}
-              </div>
+                  <p className="text-sm font-medium text-muted-foreground mb-2">
+                    We recommend
+                  </p>
+                  <h3 className="text-3xl font-bold text-foreground">
+                    {plan.name}
+                  </h3>
+                  <div className="flex items-baseline justify-center gap-1 mt-2">
+                    <span className={cn('text-4xl font-bold', plan.textColor)}>
+                      {plan.price}
+                    </span>
+                    <span className="text-muted-foreground">{plan.period}</span>
+                  </div>
+                  <p className="text-muted-foreground mt-3">
+                    {plan.description}
+                  </p>
+                </div>
 
-              <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <Button
-                  size="lg"
-                  className={cn(
-                    'bg-gradient-to-r text-white shadow-lg',
-                    plan.color,
-                  )}
-                >
-                  {plan.cta}
-                  <ArrowRightIcon className="w-4 h-4 ml-2" />
-                </Button>
-                <Button size="lg" variant="outline" onClick={resetQuiz}>
-                  Retake Quiz
-                </Button>
+                <div className="grid md:grid-cols-3 gap-4 mb-8">
+                  {plan.highlights.map((highlight, index) => (
+                    <div
+                      key={index}
+                      className={cn(
+                        'flex items-center gap-3 p-3 rounded-lg',
+                        plan.bgColor,
+                      )}
+                    >
+                      <CheckIcon
+                        className={cn('w-5 h-5 shrink-0', plan.textColor)}
+                      />
+                      <span className="text-sm font-medium text-foreground">
+                        {highlight}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                  <Button size="lg" variant="outline" onClick={resetQuiz}>
+                    Retake Quiz
+                  </Button>
+                  <LinkButton
+                    href={plan.href}
+                    size="lg"
+                    className={cn(
+                      'bg-gradient-to-r text-white shadow-lg group',
+                      plan.color,
+                    )}
+                  >
+                    {plan.cta}
+                    <ArrowRightIcon className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </LinkButton>
+                </div>
               </div>
             </Card>
           </div>
@@ -556,7 +561,7 @@ export function PlanFinderSection({ ctaLink }: { ctaLink: string }) {
                 <Card
                   key={key}
                   className={cn(
-                    'relative border-2 transition-all hover:shadow-xl hover:-translate-y-1',
+                    'relative transition-all hover:shadow-xl',
                     p.borderColor,
                   )}
                 >
@@ -601,14 +606,16 @@ export function PlanFinderSection({ ctaLink }: { ctaLink: string }) {
                       </li>
                     ))}
                   </ul>
-                  <Button
+                  <LinkButton
+                    href={p.href}
                     className={cn(
-                      'w-full bg-gradient-to-r text-white',
+                      'w-full bg-gradient-to-r text-white group',
                       p.color,
                     )}
                   >
                     {p.cta}
-                  </Button>
+                    <ArrowRightIcon className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </LinkButton>
                 </Card>
               ),
             )}
@@ -647,7 +654,7 @@ export function PlanFinderSection({ ctaLink }: { ctaLink: string }) {
             {upgradePaths.map((item, index) => (
               <Card
                 key={index}
-                className="group border-2 hover:border-primary/30 transition-all hover:shadow-lg"
+                className="group hover:border-primary/30 transition-all hover:shadow-lg"
               >
                 <div className="text-3xl mb-4">{item.icon}</div>
                 <h4 className="text-lg font-semibold text-foreground mb-3">
