@@ -38,11 +38,23 @@ export default function Podcast() {
             <Prose>
               <h1>Le Cross Platform Show Podcast</h1>
               <p>
-                Conversations sur la{' '}
-                <strong>programmation en React Native</strong> pour les
-                plateformes iOS, Android et web en apportant une touche de joie
-                et de passion au quotidien des développeurs.
+                Le podcast React Native qui décortique les apps que tu utilises
+                chaque jour : Alan, Cdiscount, Swan... Code, archi, coulisses de
+                prod. Pour devenir meilleur dev cross-platform avec React
+                Native.
               </p>
+
+              <h2>Pourquoi écouter le podcast ?</h2>
+              <ul>
+                <li>
+                  Décortique des apps real-world (pas des tutos théoriques)
+                </li>
+                <li>Interview les devs qui codent les apps que tu utilises</li>
+                <li>
+                  Apprends les choix d'archi, les erreurs, les optimisations de
+                  prod
+                </li>
+              </ul>
 
               <ol>
                 <li>
@@ -126,29 +138,27 @@ export default function Podcast() {
                   </Hyperlink>
                   .
                 </li>
-                <li>
-                  Pour participer au podcast, veuillez consulter le{' '}
-                  <Hyperlink href={linksApi.notion.PODCAST_FORM} isExternal>
-                    formulaire d'inscription
-                  </Hyperlink>
-                  .
-                </li>
               </ol>
             </Prose>
           </div>
           <div className="lg:w-64 lg:flex-shrink-0 mt-6 lg:mt-0">
-            <img
-              src="/images/podcast.jpeg"
-              alt="Logo du podcast Le Cross Platform Show par David Leuliette"
-              className="w-full h-auto rounded-lg shadow-lg"
-            />
-
-            <Text as="h2" variant="p1" className="mt-12 mb-4 font-bold">
-              S’abonner au podcast
-            </Text>
+            <div className="grid gap-6">
+              <img
+                src="/images/podcast.jpeg"
+                alt="Logo du podcast Le Cross Platform Show par David Leuliette"
+                className="w-full h-auto rounded-lg shadow-lg"
+              />
+              <Text as="p" variant="c1" className="italic">
+                Écouté par 200+ développeurs React Native francophones
+              </Text>
+              <Text as="h2" variant="p1" className="font-bold">
+                Abonne-toi sur ta plateforme préférée
+              </Text>
+            </div>
             <div className="flex mt-4 mb-12 gap-3 flex-wrap">
               <LinkButton
                 variant="outline"
+                size="xl"
                 isExternalLink
                 href="https://open.spotify.com/show/69dZrIeMZ2S2QELCGp6gW1?si=27c63da998b8487d"
               >
