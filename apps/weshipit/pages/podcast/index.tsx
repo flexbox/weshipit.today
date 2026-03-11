@@ -4,20 +4,23 @@ import { PodcastEpisodeCard } from '../../components/podcast-episode-card';
 import { podcastEpisodes } from '../../fixtures/podcast-episodes.fixture';
 import { linksApi } from 'apps/weshipit/pages/api/links';
 import { useState } from 'react';
-import { ArrowDownIcon, ArrowUpIcon } from '@heroicons/react/20/solid';
 
 const YOUTUBE_URL = 'https://www.youtube.com/@flexbox_?sub_confirmation=1';
+const APPLE_PODCAST_URL =
+  'https://podcasts.apple.com/fr/podcast/le-cross-platform-show/id1790867559';
+const SPOTIFY_URL =
+  'https://open.spotify.com/show/69dZrIeMZ2S2QELCGp6gW1?si=27c63da998b8487d';
+const DEEZER_URL = 'https://www.deezer.com/show/1001735451';
+const RSS_URL = 'https://anchor.fm/s/ffc13f2c/podcast/rss';
+
+const EPISODES_PREVIEW_COUNT = 6;
 
 export default function Podcast() {
-  const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
+  const [showAll, setShowAll] = useState(false);
 
-  const toggleSortOrder = () => {
-    setSortOrder(sortOrder === 'desc' ? 'asc' : 'desc');
-  };
-
-  const sortedEpisodes = [...podcastEpisodes].sort((a, b) =>
-    sortOrder === 'desc' ? b.number - a.number : a.number - b.number,
-  );
+  const latestEpisodes = [...podcastEpisodes]
+    .sort((a, b) => b.number - a.number)
+    .slice(0, showAll ? undefined : EPISODES_PREVIEW_COUNT);
 
   return (
     <Layout
@@ -66,24 +69,15 @@ export default function Podcast() {
                 </li>
                 <li>
                   Abonnez-vous sur{' '}
-                  <Hyperlink
-                    href="https://podcasts.apple.com/fr/podcast/le-cross-platform-show/id1790867559"
-                    isExternal
-                  >
+                  <Hyperlink href={APPLE_PODCAST_URL} isExternal>
                     Apple Podcasts
                   </Hyperlink>
                   ,{' '}
-                  <Hyperlink
-                    href="https://open.spotify.com/show/69dZrIeMZ2S2QELCGp6gW1?si=27c63da998b8487d"
-                    isExternal
-                  >
+                  <Hyperlink href={SPOTIFY_URL} isExternal>
                     Spotify
                   </Hyperlink>{' '}
                   et{' '}
-                  <Hyperlink
-                    href="https://anchor.fm/s/ffc13f2c/podcast/rss"
-                    isExternal
-                  >
+                  <Hyperlink href={RSS_URL} isExternal>
                     RSS
                   </Hyperlink>
                   . Si vous appréciez le podcast, n'hésitez pas à lui attribuer
@@ -160,66 +154,49 @@ export default function Podcast() {
                 variant="outline"
                 size="xl"
                 isExternalLink
-                href="https://open.spotify.com/show/69dZrIeMZ2S2QELCGp6gW1?si=27c63da998b8487d"
+                href={SPOTIFY_URL}
               >
                 Spotify
               </LinkButton>
-              <LinkButton
-                variant="outline"
-                isExternalLink
-                href="https://www.youtube.com/@flexbox_/podcasts?sub_confirmation=1"
-              >
+              <LinkButton variant="outline" isExternalLink href={YOUTUBE_URL}>
                 Youtube
               </LinkButton>
-              <LinkButton
-                variant="outline"
-                isExternalLink
-                href="https://www.deezer.com/show/1001735451"
-              >
+              <LinkButton variant="outline" isExternalLink href={DEEZER_URL}>
                 Deezer
               </LinkButton>
               <LinkButton
                 variant="outline"
                 isExternalLink
-                href="https://podcasts.apple.com/fr/podcast/le-cross-platform-show/id1790867559"
+                href={APPLE_PODCAST_URL}
               >
                 Apple Podcast
               </LinkButton>
-              <LinkButton
-                variant="outline"
-                isExternalLink
-                href="https://anchor.fm/s/ffc13f2c/podcast/rss"
-              >
+              <LinkButton variant="outline" isExternalLink href={RSS_URL}>
                 RSS
               </LinkButton>
             </div>
           </div>
         </div>
       </div>
-      <div className="flex items-center justify-between mt-12 mb-8">
+      <div className="mt-12 mb-8">
         <Prose>
           <h2>Derniers épisodes</h2>
         </Prose>
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={toggleSortOrder}
-          accessoryRight={
-            sortOrder === 'desc' ? (
-              <ArrowDownIcon className="w-4 h-4 ml-2" />
-            ) : (
-              <ArrowUpIcon className="w-4 h-4 ml-2" />
-            )
-          }
-        >
-          Épisodes
-        </Button>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-        {sortedEpisodes.map((episode) => (
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        {latestEpisodes.map((episode) => (
           <PodcastEpisodeCard key={episode.slug} episode={episode} />
         ))}
       </div>
+
+      {!showAll && (
+        <div className="flex justify-center mb-12">
+          <Button variant="outline" size="xl" onClick={() => setShowAll(true)}>
+            Voir tous les épisodes
+          </Button>
+        </div>
+      )}
     </Layout>
   );
 }
