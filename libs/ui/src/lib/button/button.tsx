@@ -82,6 +82,13 @@ export const buttonVariants = cva(
           'hover:bg-[#a13ed1]',
           'border-0',
         ],
+        youtube: [
+          'shadow-sm',
+          'bg-[#FF0000]',
+          'text-white',
+          'hover:bg-[#e60000]',
+          'border-0',
+        ],
       },
     },
   },

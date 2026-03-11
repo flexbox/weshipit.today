@@ -37,7 +37,7 @@ export default function Podcast() {
     >
       <div className="mt-8">
         <div className="flex flex-col lg:flex-row lg:items-start lg:gap-8">
-          <div className="flex">
+          <div className="">
             <Prose>
               <h1>Le Cross Platform Show Podcast</h1>
               <p>
@@ -58,82 +58,37 @@ export default function Podcast() {
                   prod
                 </li>
               </ul>
-
-              <ol>
-                <li>
-                  Abonnez-vous à la{' '}
-                  <Hyperlink href={YOUTUBE_URL} isExternal>
-                    chaine YouTube de David Leuliette
-                  </Hyperlink>
-                  .
-                </li>
-                <li>
-                  Abonnez-vous sur{' '}
-                  <Hyperlink href={APPLE_PODCAST_URL} isExternal>
-                    Apple Podcasts
-                  </Hyperlink>
-                  ,{' '}
-                  <Hyperlink href={SPOTIFY_URL} isExternal>
-                    Spotify
-                  </Hyperlink>{' '}
-                  et{' '}
-                  <Hyperlink href={RSS_URL} isExternal>
-                    RSS
-                  </Hyperlink>
-                  . Si vous appréciez le podcast, n'hésitez pas à lui attribuer
-                  5 étoiles.
-                </li>
-                <li>
-                  Suivez-nous sur{' '}
-                  <Hyperlink
-                    href="https://x.com/intent/follow?screen_name=flexbox_"
-                    isExternal
-                  >
-                    Twitter
-                  </Hyperlink>
-                  ,{' '}
-                  <Hyperlink
-                    href="https://bsky.app/profile/flexbox.bsky.social"
-                    isExternal
-                  >
-                    Bluesky
-                  </Hyperlink>
-                  ,{' '}
-                  <Hyperlink
-                    href="https://www.linkedin.com/in/david-leuliette/"
-                    isExternal
-                  >
-                    LinkedIn
-                  </Hyperlink>
-                  , et{' '}
-                  <Hyperlink href="https://github.com/flexbox" isExternal>
-                    GitHub
-                  </Hyperlink>
-                  .
-                </li>
-                <li>
-                  Rejoins la communauté des développeurs React Native
-                  francophones sur{' '}
-                  <Hyperlink
-                    href="https://join.slack.com/t/reactnativeconnection/shared_invite/zt-1j5jigyph-MJURqXxpWHXTcYSH8PwhrQ"
-                    isExternal
-                  >
-                    le Slack React Native Connection
-                  </Hyperlink>
-                  .
-                </li>
-                <li>
-                  La meilleure façon de soutenir ce podcast est de{' '}
-                  <Hyperlink
-                    href="https://github.com/sponsors/flexbox"
-                    isExternal
-                  >
-                    faire un don sur GitHub
-                  </Hyperlink>
-                  .
-                </li>
-              </ol>
+              <h2>Abonne-toi sur ta plateforme préférée</h2>
             </Prose>
+            <div className="flex gap-3 mt-4">
+              <LinkButton
+                variant="spotify"
+                size="xl"
+                isExternalLink
+                withExternalLinkIcon
+                href={SPOTIFY_URL}
+              >
+                Spotify
+              </LinkButton>
+              <LinkButton
+                variant="apple"
+                size="xl"
+                isExternalLink
+                withExternalLinkIcon
+                href={APPLE_PODCAST_URL}
+              >
+                Apple Podcast
+              </LinkButton>
+              <LinkButton
+                variant="youtube"
+                size="xl"
+                isExternalLink
+                withExternalLinkIcon
+                href={YOUTUBE_URL}
+              >
+                YouTube
+              </LinkButton>
+            </div>
           </div>
           <div className="lg:w-64 lg:flex-shrink-0 mt-6 lg:mt-0">
             <div className="grid gap-6">
@@ -145,35 +100,6 @@ export default function Podcast() {
               <Text as="p" variant="c1" className="italic">
                 Écouté par 200+ développeurs React Native francophones
               </Text>
-              <Text as="h2" variant="p1" className="font-bold">
-                Abonne-toi sur ta plateforme préférée
-              </Text>
-            </div>
-            <div className="flex mt-4 mb-12 gap-3 flex-wrap">
-              <LinkButton
-                variant="outline"
-                size="xl"
-                isExternalLink
-                href={SPOTIFY_URL}
-              >
-                Spotify
-              </LinkButton>
-              <LinkButton variant="outline" isExternalLink href={YOUTUBE_URL}>
-                Youtube
-              </LinkButton>
-              <LinkButton variant="outline" isExternalLink href={DEEZER_URL}>
-                Deezer
-              </LinkButton>
-              <LinkButton
-                variant="outline"
-                isExternalLink
-                href={APPLE_PODCAST_URL}
-              >
-                Apple Podcast
-              </LinkButton>
-              <LinkButton variant="outline" isExternalLink href={RSS_URL}>
-                RSS
-              </LinkButton>
             </div>
           </div>
         </div>
@@ -197,6 +123,65 @@ export default function Podcast() {
           </Button>
         </div>
       )}
+
+      <div className="border-t border-gray-200 dark:border-gray-800 py-6 mb-8 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-gray-400">
+        <span>Aussi disponible sur</span>
+        <Hyperlink
+          href={DEEZER_URL}
+          isExternal
+          className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200"
+        >
+          Deezer
+        </Hyperlink>
+        <span>·</span>
+        <Hyperlink
+          href={RSS_URL}
+          isExternal
+          className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200"
+        >
+          RSS
+        </Hyperlink>
+        <span>·</span>
+        <Hyperlink
+          href="https://x.com/intent/follow?screen_name=flexbox_"
+          isExternal
+          className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200"
+        >
+          Twitter
+        </Hyperlink>
+        <span>·</span>
+        <Hyperlink
+          href="https://bsky.app/profile/flexbox.bsky.social"
+          isExternal
+          className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200"
+        >
+          Bluesky
+        </Hyperlink>
+        <span>·</span>
+        <Hyperlink
+          href="https://www.linkedin.com/in/david-leuliette/"
+          isExternal
+          className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200"
+        >
+          LinkedIn
+        </Hyperlink>
+        <span>·</span>
+        <Hyperlink
+          href="https://join.slack.com/t/reactnativeconnection/shared_invite/zt-1j5jigyph-MJURqXxpWHXTcYSH8PwhrQ"
+          isExternal
+          className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200"
+        >
+          Slack React Native Connection
+        </Hyperlink>
+        <span>·</span>
+        <Hyperlink
+          href="https://github.com/sponsors/flexbox"
+          isExternal
+          className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200"
+        >
+          Soutenir sur GitHub
+        </Hyperlink>
+      </div>
     </Layout>
   );
 }

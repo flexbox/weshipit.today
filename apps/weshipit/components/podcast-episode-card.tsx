@@ -44,7 +44,7 @@ export function PodcastEpisodeCard({ episode }: PodcastEpisodeCardProps) {
               href={episode.spotify_url}
               isExternalLink={true}
               size="md"
-              variant="spotify"
+              variant="outline"
               accessoryLeft={<SpotifyIcon />}
             >
               Spotify
@@ -54,7 +54,7 @@ export function PodcastEpisodeCard({ episode }: PodcastEpisodeCardProps) {
               href={episode.apple_podcast_url}
               isExternalLink={true}
               size="md"
-              variant="apple"
+              variant="outline"
               accessoryLeft={<ApplePodcastIcon />}
             >
               Apple Podcast
