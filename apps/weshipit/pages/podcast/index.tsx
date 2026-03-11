@@ -41,10 +41,10 @@ export default function Podcast() {
             <Prose>
               <h1>Le Cross Platform Show Podcast</h1>
               <p>
-                Le podcast React Native qui décortique les apps que tu utilises
-                chaque jour : Alan, Cdiscount, Swan... Code, archi, coulisses de
-                prod. Pour devenir meilleur dev cross-platform avec React
-                Native.
+                Le podcast React Native pour CTO qui veulent éviter 300K€ de
+                dette technique, scaler leur équipe et livrer 40% plus vite.
+                Retours d'expérience d'Alan, Cdiscount, Swan qui gèrent des
+                millions d'utilisateurs.
               </p>
 
               <h2>Pourquoi écouter le podcast ?</h2>
