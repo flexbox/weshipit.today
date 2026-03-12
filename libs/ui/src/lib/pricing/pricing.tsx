@@ -53,7 +53,7 @@ const tiers: Tier[] = [
     key: 'kickstart',
     name: 'Kickstart Audit',
     id: 'tier-kickstart',
-    href: 'https://buy.stripe.com/bJefZi5umh140FAfwt4wM0d',
+    href: 'https://buy.stripe.com/14k3fSdbhdQOcWA28e',
     price: { onetime: '10 000 €' },
     description:
       'Get a senior-level React Native audit that prevents 6+ months of trial-and-error and saves you 50k€ in tech debt.',
