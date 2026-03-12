@@ -24,8 +24,8 @@ export default function Podcast() {
 
   return (
     <Layout
-      seoTitle="Le Cross Platform Show, le podcast francophone React Native animé par David Leuliette"
-      seoDescription="Interviews de développeurs React Native, discussions sur les dernières tendances et conseils pratiques pour améliorer vos compétences en développement cross-platform."
+      seoTitle="Podcast React Native : Scale ton Équipe & Livre 40% Plus Vite"
+      seoDescription="Le podcast React Native pour CTO : évite la dette technique, scale ton équipe de 2 à 15 devs, réduis ton time-to-market. Retours d'expérience Alan, Cdiscount, Swan."
       ogImageTitle="Le Cross Platform Show"
       withHeader
       callToActionLink={{
@@ -54,9 +54,10 @@ export default function Podcast() {
                 </li>
                 <li>Interview les devs qui codent les apps que tu utilises</li>
                 <li>
-                  Apprends les choix d'archi, les erreurs, les optimisations de
-                  prod
+                  Prends les bonnes décisions d'architecture, évite les erreurs,
+                  les optimisations de production
                 </li>
+                <li>Réduire ton time-to-market de 40%</li>
               </ul>
               <h2>Abonne-toi sur ta plateforme préférée</h2>
             </Prose>

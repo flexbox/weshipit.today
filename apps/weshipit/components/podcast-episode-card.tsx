@@ -1,8 +1,8 @@
-import { Card, Button } from '@weshipit/ui';
+import { Card, Button, LinkButton } from '@weshipit/ui';
 import { PodcastEpisode } from '../fixtures/podcast-episodes.fixture';
-import Link from 'next/link';
 import { SpotifyIcon, ApplePodcastIcon } from '@weshipit/ui';
 import { Text } from '@weshipit/ui';
+import Link from 'next/link';
 
 interface PodcastEpisodeCardProps {
   episode: PodcastEpisode;
@@ -10,11 +10,15 @@ interface PodcastEpisodeCardProps {
 
 export function PodcastEpisodeCard({ episode }: PodcastEpisodeCardProps) {
   return (
-    <Link href={`/podcast/${episode.slug}`} className="block">
-      <Card variant="link" className="h-full flex flex-col">
-        <div className="flex-1 p-4">
-          <div className="flex items-center justify-between mb-8">
-            <Text as="h3" variant="h3">
+    <Card className="h-full flex flex-col" variant="link">
+      <Link href={`/podcast/${episode.slug}`} className="group">
+        <div className="grid p-4 group gap-3">
+          <div className="flex items-center justify-between">
+            <Text
+              as="h3"
+              variant="h3"
+              className="group-hover:text-primary transition-colors"
+            >
               {episode.name}
             </Text>
             {episode.company_logo && (
@@ -26,42 +30,40 @@ export function PodcastEpisodeCard({ episode }: PodcastEpisodeCardProps) {
             )}
           </div>
 
-          <div className="my-4">
-            <Text variant="p2" className="font-semibold">
+          <div className="min-h-56">
+            <Text variant="p2" className="font-semibold mb-4">
               {episode.title}
             </Text>
-          </div>
 
-          <Text variant="c1" className="leading-relaxed">
-            {episode.description_short}
-          </Text>
-        </div>
-
-        <div className="p-6 pt-0">
-          <div className="flex gap-3">
-            <Button
-              as="a"
-              href={episode.spotify_url}
-              isExternalLink={true}
-              size="md"
-              variant="outline"
-              accessoryLeft={<SpotifyIcon />}
-            >
-              Spotify
-            </Button>
-            <Button
-              as="a"
-              href={episode.apple_podcast_url}
-              isExternalLink={true}
-              size="md"
-              variant="outline"
-              accessoryLeft={<ApplePodcastIcon />}
-            >
-              Apple Podcast
-            </Button>
+            <Text variant="c1">{episode.description_short}</Text>
           </div>
         </div>
-      </Card>
-    </Link>
+      </Link>
+
+      <div className="p-4 pt-0">
+        <div className="flex gap-3">
+          <Button
+            as="a"
+            href={episode.spotify_url}
+            isExternalLink={true}
+            size="md"
+            variant="outline"
+            accessoryLeft={<SpotifyIcon />}
+          >
+            Spotify
+          </Button>
+          <Button
+            as="a"
+            href={episode.apple_podcast_url}
+            isExternalLink={true}
+            size="md"
+            variant="outline"
+            accessoryLeft={<ApplePodcastIcon />}
+          >
+            Apple Podcast
+          </Button>
+        </div>
+      </div>
+    </Card>
   );
 }
