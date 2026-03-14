@@ -12,6 +12,8 @@ import {
   Pricing,
   HeroBanner,
   Badge,
+  ClientsListHomepage,
+  ClientsListMarkee,
 } from '@weshipit/ui';
 import { linksApi } from './api/links';
 import { Layout } from '../components/layout';
@@ -355,30 +357,20 @@ export default function IndexPage({ clients, faqs, steps }: IndexPageProps) {
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <FadeIn>
-            <HeroBanner onboardingHref={linksApi.cal.ONBOARDING} />
+            <HeroBanner onboardingHref={linksApi.cal.ONBOARDING}>
+              <ClientsListMarkee clients={clients} />
+            </HeroBanner>
           </FadeIn>
-          <div className="m-auto max-w-2xl">
+          <div className="m-auto max-w-2xl mb-24">
             <FadeIn>
-              <Prose className="mb-12" size="2xl">
+              <Prose size="2xl">
                 <ProblemAgitation />
               </Prose>
             </FadeIn>
-
-            <Button
-              href={linksApi.cal.ONBOARDING}
-              as="a"
-              size="xxl"
-              variant="outline"
-              isExternalLink
-              withExternalLinkIcon={false}
-              className="mb-24 flex w-full justify-center"
-            >
-              Talk to us
-            </Button>
           </div>
         </div>
 
-        <TrustedConsultantsSection clients={clients} />
+        <TrustedConsultantsSection />
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="m-auto max-w-5xl">

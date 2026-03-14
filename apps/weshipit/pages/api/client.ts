@@ -31,12 +31,14 @@ export async function getAllClients() {
   }
 }
 
-export async function getVisibleClients() {
+export async function getVisibleClients({
+  visibleOnHomepage = true,
+}: { visibleOnHomepage?: boolean } = {}) {
   try {
     const { results } = await prismicClient.get({
       filters: [
         prismic.filter.at('document.type', 'client'),
-        prismic.filter.at('my.client.is_visible_homepage', true),
+        prismic.filter.at('my.client.is_visible_homepage', visibleOnHomepage),
       ],
     });
 

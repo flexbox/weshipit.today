@@ -6,7 +6,7 @@ module.exports = {
   content: [
     join(
       __dirname,
-      '{src,pages,components}/**/*!(*.stories|*.spec).{ts,tsx,html}'
+      '{src,pages,components}/**/*!(*.stories|*.spec).{ts,tsx,html}',
     ),
     ...createGlobPatternsForDependencies(__dirname),
   ],
@@ -15,11 +15,22 @@ module.exports = {
     extend: {
       animation: {
         shine: 'shine 1s',
+        marquee: 'marquee 15s linear infinite',
       },
       keyframes: {
         shine: {
           '100%': { left: '125%' },
         },
+        marquee: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
+      },
+      colors: {
+        primary: 'hsl(var(--primary))',
+        background: 'hsl(var(--background))',
+        muted: 'hsl(var(--muted))',
+        'muted-foreground': 'hsl(var(--muted-foreground))',
       },
     },
     fontFamily: {

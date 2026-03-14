@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, ReactNode } from 'react';
 
 import { PhoneAnimation } from './phone-animation';
 import { CalendarIcon } from '@heroicons/react/24/solid';
@@ -11,9 +11,11 @@ import { SPOT_AVAILABILITY } from '../spot-left/spot-left';
 export function HeroBanner({
   onboardingHref,
   teamSpotsLeft,
+  children,
 }: {
   onboardingHref: string;
   teamSpotsLeft?: number;
+  children?: ReactNode;
 }) {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -66,6 +68,7 @@ export function HeroBanner({
             <PhoneAnimation />
           </div>
         </div>
+        {children}
       </div>
     </section>
   );

@@ -1,11 +1,5 @@
 import Image from 'next/image';
-import {
-  Text,
-  Prose,
-  Card,
-  LinkButton,
-  ClientsListHomepage,
-} from '@weshipit/ui';
+import { Text, Prose, Card, LinkButton } from '@weshipit/ui';
 import {
   SiGithub,
   SiApplepodcasts,
@@ -14,11 +8,11 @@ import {
 
 import { MicrophoneIcon } from '@heroicons/react/20/solid';
 
-export function TrustedConsultantsSection({ clients }) {
+export function TrustedConsultantsSection() {
   return (
     <section className="py-16 bg-white dark:bg-slate-900">
       <div className="container px-4 mx-auto">
-        <div className="max-w-3xl mx-auto text-center pt-12">
+        <div className="max-w-3xl mx-auto text-center py-12">
           <Text as="h2" variant="h2" className="mb-4">
             Industry-leading React Native experts trusted by top companies
           </Text>
@@ -30,10 +24,6 @@ export function TrustedConsultantsSection({ clients }) {
             Not just consultants — we're active community leaders shaping the
             future of React Native
           </Text>
-        </div>
-
-        <div className="pb-12">
-          <ClientsListHomepage clients={clients} />
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
@@ -104,8 +94,8 @@ export function TrustedConsultantsSection({ clients }) {
                 collaborating with friends like Infinite Red and Expo. Our
                 open-source work demonstrates our deep technical expertise.
               </p>
-              <div className="flex items-center gap-3 mb-6">
-                <SiGithub className="h-5 w-5 text-primary" />
+              <div className="flex items-center gap-3">
+                <SiGithub className="h-5 w-5 text-muted-foreground" />
                 <p>
                   Contributors to @aws-amplify, @expo, @facebook, and
                   @infinitered
@@ -116,6 +106,7 @@ export function TrustedConsultantsSection({ clients }) {
                 isExternalLink
                 size="xl"
                 className="not-prose"
+                variant="outline"
               >
                 View our open source work
               </LinkButton>
@@ -126,7 +117,7 @@ export function TrustedConsultantsSection({ clients }) {
         <div className="max-w-2xl mx-auto sm:py-12">
           <Card>
             <div className="flex items-center gap-4 mb-8">
-              <div className="bg-primary/20 p-3 rounded-full dark:bg-primary/30">
+              <div className="bg-primary/10 p-3 rounded-full dark:bg-primary/30">
                 <MicrophoneIcon className="h-6 w-6 text-black dark:text-white" />
               </div>
               <div>

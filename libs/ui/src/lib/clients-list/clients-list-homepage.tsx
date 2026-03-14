@@ -5,9 +5,14 @@ import LinkButton from '../button/link-button';
 
 export interface ClientsListHomepageProps {
   clients: ClientProps[];
+  withIndustry?: boolean;
 }
 
-export function ClientsListHomepage({ clients }: ClientsListHomepageProps) {
+export function ClientsListHomepage({
+  clients,
+  withIndustry = true,
+}: ClientsListHomepageProps) {
+  console.log('🚀 ~ ClientsListHomepage ~ clients:', clients);
   return (
     <div className="my-12">
       <div className="group relative grid grid-cols-3 content-around gap-4 md:grid-cols-5">
@@ -24,7 +29,7 @@ export function ClientsListHomepage({ clients }: ClientsListHomepageProps) {
 
         {clients.map(
           (client: ClientProps) =>
-            client.data.is_visible_homepage && (
+            client.data && (
               <div
                 className="flex flex-col items-center justify-center gap-4 opacity-50 grayscale transition-all hover:opacity-100 hover:grayscale-0 group-hover:blur-sm"
                 key={client.id}
@@ -36,11 +41,13 @@ export function ClientsListHomepage({ clients }: ClientsListHomepageProps) {
                   height={250}
                   className="size-32 transition duration-300 ease-in-out dark:rounded-xl dark:bg-white/90 dark:p-2"
                 />
-                <Text as="p" variant="p2">
-                  {client.data.industry}
-                </Text>
+                {withIndustry && (
+                  <Text as="p" variant="p2">
+                    {client.data.industry}
+                  </Text>
+                )}
               </div>
-            )
+            ),
         )}
       </div>
     </div>
