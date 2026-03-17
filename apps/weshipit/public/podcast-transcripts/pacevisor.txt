@@ -1,5 +1,5 @@
 David Leuliette (00:01.451)
-Bonjour et bienvenue sur le cross... Putain, je dois recommencer. C'est pas grave, on est déjà en live, c'est pas grave. Je queuterai à l'édit. Allez. Bonjour et bienvenue sur le cross-platform show, le podcast qui parle développement d'applications mobiles avec Racknative. Je suis David, développeur chez Wipit Today. Nous sommes en février 2025. Baptiste, je suis ravi de t'avoir. Est-ce que tu peux te présenter à la communauté pour ceux qui ne te connaissent pas ?
+Bonjour et bienvenue sur le cross... Putain, je dois recommencer. C'est pas grave, on est déjà en live, c'est pas grave. Je queuterai à l'édit. Allez. Bonjour et bienvenue sur le cross-platform show, le podcast qui parle développement d'applications mobiles avec Racknative. Je suis David, développeur chez weshipit Today. Nous sommes en février 2025. Baptiste, je suis ravi de t'avoir. Est-ce que tu peux te présenter à la communauté pour ceux qui ne te connaissent pas ?
 
 Baptiste (00:29.822)
 Bonjour mon cher Dalil. Baptiste Lecoq, j'ai 31 ans. Maintenant, ça y est. devient vieux. Je ne plus, Millenials, ils n'y sont plus. On est déjà trop vieux, ça c'est sûr. J'ai 31 ans, je suis développeur...

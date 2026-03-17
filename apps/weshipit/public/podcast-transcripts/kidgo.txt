@@ -246,7 +246,7 @@ David Leuliette (21:33.584)
 Mais le plan est toujours là, le mindmap est dispo, a toujours plein de trucs mais en plus ça bougeait tellement vite qu'il fallait vraiment diguer la pays et en fait on peut pas tout faire. Donc voilà les tentatives de writing.
 
 Ludwig (21:51.64)
-du coup, recentrage sur le développement, développement mobile, création de Wipit. Tu peux nous pitcher Wipit ?
+du coup, recentrage sur le développement, développement mobile, création de weshipit. Tu peux nous pitcher weshipit ?
 
 David Leuliette (22:00.177)
 Ah, weshipit.today ! Pourquoi... Oh j'ai... Ah je l'ai jamais dit ? Ah je croyais que je l'avais dit dans les épisodes de Podcast ok. Pourquoi weshipit.today c'est vrai ? Bah c'est parce que... On était en coding retreat avec mes potes Indiehacker, Karl Matthys qui bossent avec moi. Et on était à Lisbonne et je sais plus c'était une blague, parce qu'on regardait... Silicon Valley ? Non attends. C'est la série ? C'est Silicon Valley ? Ok.
