@@ -31,8 +31,8 @@ export function TrustedConsultantsSection() {
             <h3>Community leadership that sets us apart</h3>
             <p>
               Our team doesn’t just build with React Native —we help define its
-              future. We regularly share our expertise at prestigious events
-              like Chain React and App.js Conf, empowering developers worldwide.
+              future. We share our expertise at prestigious events like Chain
+              React and React Summit, empowering developers worldwide.
             </p>
             <ul>
               <li>Delivering workshops at major React conferences</li>
