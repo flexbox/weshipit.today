@@ -497,7 +497,7 @@ export function PhoneAnimation() {
       <canvas
         ref={canvasRef}
         className="w-full h-full"
-        style={{ touchAction: 'none' }}
+        style={{ touchAction: 'pan-y' }}
       />
     </div>
   );
