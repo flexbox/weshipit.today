@@ -6,11 +6,11 @@ export interface SpotLeftProps {
 }
 
 export const SPOT_AVAILABILITY = {
-  team: 2,
-  kickstart: 1,
+  team: 0,
+  kickstart: 0,
   essential: 0,
   growth: 0,
-  enterprise: 1,
+  enterprise: 0,
 } as const;
 
 export function SpotLeft({ spotsLeft = 2, invert = false }: SpotLeftProps) {
