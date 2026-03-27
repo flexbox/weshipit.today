@@ -6,6 +6,7 @@ import truncate from 'lodash/truncate';
 import Link from 'next/link';
 import { CompanyLogo } from './company-logo';
 import { Badge, getVariantFromType } from '@weshipit/ui';
+import ReactMarkdown from 'react-markdown';
 
 export function ToolCard({
   id,
@@ -62,7 +63,7 @@ export function ToolCard({
             </div>
 
             <Text as="p" variant="p1" className="mb-6 text-slate-400">
-              {truncatedDescription}
+              <ReactMarkdown>{truncatedDescription}</ReactMarkdown>
             </Text>
           </div>
 

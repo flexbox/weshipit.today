@@ -5,7 +5,6 @@ import {
   CompanyLogo,
   ToolTypeBadge,
   Card,
-  CallToActionCards,
   Prose,
   ToolList,
   NotFound,
@@ -131,6 +130,7 @@ export function ReactNativeSlugPage({
       seoDescription={seoDescription}
       ogImageTitle={`${name} for React Native`}
       withHeader
+      withFooter
       callToActionLink={{
         name: 'Expo Launch Checklist',
         href: 'https://flexbox.gumroad.com/l/expo-checklist',
@@ -257,20 +257,14 @@ export function ReactNativeSlugPage({
       </section>
 
       {recommendedRecords.length > 0 && (
-        <section className="py-12">
+        <section className="py-12 max-w-6xl mx-auto">
           <Text as="h2" variant="h3" className="my-4">
-            Other React Native tools
+            Other {type} React Native tools
           </Text>
+
           <ToolList records={recommendedRecords} />
         </section>
       )}
-
-      <section className="mb-12 py-24">
-        <Text as="h2" variant="h3" className="my-4">
-          Useful resources
-        </Text>
-        <CallToActionCards />
-      </section>
     </Layout>
   );
 }

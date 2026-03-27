@@ -33,7 +33,6 @@ export * from './lib/stack/avenger-stack';
 export * from './lib/stylized-image/stylized-image';
 export * from './lib/tag-list/tag-list';
 export * from './lib/text/text';
-export * from './lib/tool-list/call-to-action-cards';
 export * from './lib/tool-list/get-variant-from-type';
 export * from './lib/tool-list/record-types';
 export * from './lib/tool-list/company-logo';

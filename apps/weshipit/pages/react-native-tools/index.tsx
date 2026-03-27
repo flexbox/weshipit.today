@@ -1,24 +1,11 @@
 import { Layout } from '../../components/layout';
 import { tools } from '../../fixtures/tools.fixture';
 
-import {
-  ToolList,
-  Text,
-  SearchBar,
-  Hero,
-  CallToActionCards,
-  TypeFilter,
-} from '@weshipit/ui';
-import { useEffect, useState } from 'react';
+import { ToolList, SearchBar, Hero, TypeFilter } from '@weshipit/ui';
+import { useState } from 'react';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
 import { linksApi } from '../api/links';
-
-function filterByDescription(records, searchTerm: string) {
-  return records.filter((record) => {
-    const description = record.description;
-    return description?.toLowerCase().includes(searchTerm);
-  });
-}
 
 export async function getStaticProps() {
   const records = tools;
@@ -50,21 +37,24 @@ export async function getStaticProps() {
 
 export default function ReactNativeToolsPage({ records, itemListSchema }) {
   const numberOfTools = records.length;
+  const router = useRouter();
+  const toolType = router.query.type as string | undefined;
 
   const [searchTerm, setSearchTerm] = useState('');
-  const [searchResults, setSearchResults] = useState(records);
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
   };
 
-  useEffect(() => {
-    if (!searchTerm) {
-      setSearchResults(records);
-      return;
-    }
-    setSearchResults(filterByDescription(records, searchTerm));
-  }, [records, searchTerm]);
+  const searchResults = records.filter((record) => {
+    const matchesType = toolType
+      ? record.type?.toLowerCase() === toolType.toLowerCase()
+      : true;
+    const matchesSearch = searchTerm
+      ? record.description?.toLowerCase().includes(searchTerm.toLowerCase())
+      : true;
+    return matchesType && matchesSearch;
+  });
 
   return (
     <Layout
@@ -72,6 +62,7 @@ export default function ReactNativeToolsPage({ records, itemListSchema }) {
       seoDescription={`${numberOfTools}+ curated tools and libraries for React Native developers — analytics, CI/CD, debugging, UI components, and more.`}
       ogImageTitle="React Native Tools"
       withHeader
+      withFooter
       callToActionLink={{
         name: 'Add a tool',
         href: linksApi.airtable.TOOLS_FORM,
@@ -93,7 +84,13 @@ export default function ReactNativeToolsPage({ records, itemListSchema }) {
           hintLink="https://www.producthunt.com/@flexbox"
           title={
             <>
-              The best tools
+              The best{' '}
+              {toolType && (
+                <span className="text-indigo-600">
+                  {toolType.toLowerCase()}
+                </span>
+              )}{' '}
+              tools
               <br />
               and resources for busy developers.
             </>
@@ -129,14 +126,6 @@ export default function ReactNativeToolsPage({ records, itemListSchema }) {
             <ToolList records={searchResults} />
           </div>
         </div>
-      </div>
-      <div className="mx-auto mb-24 max-w-7xl px-4 sm:px-6">
-        <section className="mb-12">
-          <Text as="h2" variant="h3" className="my-4">
-            More React Native resources
-          </Text>
-          <CallToActionCards />
-        </section>
       </div>
     </Layout>
   );
