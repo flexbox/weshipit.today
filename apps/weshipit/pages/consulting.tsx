@@ -15,7 +15,7 @@ export function Consulting() {
     <Layout
       withFooter
       seoTitle="React Native Consulting"
-      seoDescription="Looking to improve your skills as a React Native developer? Our coaching services are here to help. Our experienced team will provide personalized guidance and support to help you take your skills to the next level. Whether you're a beginner or an experienced developer, we have a coaching program that's right for you."
+      seoDescription="Expert React Native consulting for engineering teams. We help you ship faster, reduce technical debt, and level up your mobile development practices. Book a call today."
       ogImageTitle="Helping you to ship your vision in production"
       withHeader
       callToActionButton={{

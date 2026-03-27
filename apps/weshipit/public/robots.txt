@@ -1,3 +1,6 @@
-Allow: /api/og/*
+User-agent: *
+Allow: /
+Allow: /api/og/
+Disallow: /api/
 
-sitemap: https://weshipit.today/sitemap-0.xml
+Sitemap: https://weshipit.today/sitemap-0.xml

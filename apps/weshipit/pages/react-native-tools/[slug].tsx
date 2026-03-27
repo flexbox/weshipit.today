@@ -49,7 +49,7 @@ export function ReactNativeSlugPage({ recommendedRecords, record }) {
   return (
     <Layout
       seoTitle={`${name} for React Native`}
-      seoDescription="The best tools and resources for busy developers in React Native. Find the best tools to help you grow and be more successful."
+      seoDescription={`${name} for React Native — ${description_success || description || 'A curated tool for React Native developers.'}`}
       ogImageTitle={`${name} for React Native`}
       withHeader
       callToActionLink={{

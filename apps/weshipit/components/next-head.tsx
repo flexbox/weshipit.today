@@ -15,6 +15,8 @@ export interface NextHeadProps {
   ogImageAlt?: string;
   ogImagePodcast?: PodcastOgImageData;
   seoDescription: string;
+  locale?: string;
+  noindex?: boolean;
 }
 
 export function NextHead({
@@ -23,6 +25,8 @@ export function NextHead({
   ogImagePodcast,
   seoDescription,
   seoTitle,
+  locale = 'en_US',
+  noindex = false,
 }: NextHeadProps) {
   const defaultSeoTitle = 'React Native Development Agency';
   const defaultSeoDescription =
@@ -61,6 +65,7 @@ export function NextHead({
         }
         description={seoDescription || defaultSeoDescription}
         canonical={canonicalUrl}
+        noindex={noindex}
         twitter={{
           handle: '@flexbox_',
           site: '@flexbox_',
@@ -107,7 +112,6 @@ export function NextHead({
           content={seoTitle || defaultSeoTitle}
         />
         <meta
-          name="description"
           property="og:description"
           content={seoDescription || defaultSeoDescription}
         />
@@ -125,7 +129,7 @@ export function NextHead({
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:locale" content="en_US" />
+        <meta property="og:locale" content={locale} />
         <meta property="og:site_name" content="weshipit.today" />
         <meta name="author" content="David Leuliette" />
       </Head>

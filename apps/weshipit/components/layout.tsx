@@ -20,6 +20,8 @@ export function Layout({
   ogImageAlt,
   seoDescription,
   seoTitle,
+  locale,
+  noindex,
   withHeader = false,
   callToActionButton,
   callToActionLink,
@@ -37,6 +39,8 @@ export function Layout({
         ogImageTitle={ogImageTitle}
         ogImageAlt={ogImageAlt}
         ogImagePodcast={ogImagePodcast}
+        locale={locale}
+        noindex={noindex}
       />
       <div className="flex min-h-screen flex-col justify-between">
         {withProductHunt && <BannerProductHunt />}

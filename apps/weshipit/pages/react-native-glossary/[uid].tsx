@@ -2,6 +2,7 @@ import { Layout } from '../../components/layout';
 import { PrismicRichText } from '@prismicio/react';
 import { asText } from '@prismicio/client';
 import Link from 'next/link';
+import Head from 'next/head';
 import { LinkButton } from '@weshipit/ui';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { GlossaryTerm, getAllGlossaryTerms } from '../api/glossary';
@@ -16,6 +17,9 @@ interface GlossaryTermPageProps {
   nextTerm: GlossaryTerm | null;
   relatedArticles: any[];
   termsByTitle: Record<string, GlossaryTerm>;
+  seoDescription: string;
+  definedTermSchema: object;
+  breadcrumbSchema: object;
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -92,6 +96,46 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     }
   }
 
+  // Build SEO description from Prismic rich text content
+  const descriptionText = asText(term.data.description);
+  const seoDescription = descriptionText
+    ? `${descriptionText.slice(0, 152)}...`
+    : `Learn about ${term.data.title} in React Native development.`;
+
+  const termUrl = `https://weshipit.today/react-native-glossary/${slug}`;
+
+  const definedTermSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'DefinedTerm',
+    name: term.data.title,
+    description: descriptionText || undefined,
+    url: termUrl,
+    inDefinedTermSet: {
+      '@type': 'DefinedTermSet',
+      name: 'React Native Glossary',
+      url: 'https://weshipit.today/react-native-glossary',
+    },
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'React Native Glossary',
+        item: 'https://weshipit.today/react-native-glossary',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: term.data.title,
+        item: termUrl,
+      },
+    ],
+  };
+
   return {
     props: {
       term,
@@ -99,6 +143,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       nextTerm,
       relatedArticles,
       termsByTitle,
+      seoDescription,
+      definedTermSchema,
+      breadcrumbSchema,
     },
     revalidate: 60,
   };
@@ -110,6 +157,9 @@ export default function GlossaryTermPage({
   nextTerm,
   relatedArticles,
   termsByTitle,
+  seoDescription,
+  definedTermSchema,
+  breadcrumbSchema,
 }: GlossaryTermPageProps) {
   if (!term) {
     return null;
@@ -117,13 +167,27 @@ export default function GlossaryTermPage({
 
   return (
     <Layout
-      seoTitle={`${term.data.title} | React Native Glossary | weshipit.today`}
-      seoDescription={`Learn about ${term.data.title} in React Native development.`}
+      seoTitle={`${term.data.title} | React Native Glossary`}
+      seoDescription={seoDescription}
       ogImageTitle={`${term.data.title} | React Native Glossary`}
       withHeader
       withFooter
       withContainer
     >
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(definedTermSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(breadcrumbSchema),
+          }}
+        />
+      </Head>
       <article className="py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-8">
@@ -139,7 +203,7 @@ export default function GlossaryTermPage({
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
             <section className="lg:col-span-2">
               <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                {term.data.title}
+                {term.data.title} in React Native
               </h1>
 
               <div className="prose dark:prose-invert max-w-none">
@@ -153,9 +217,7 @@ export default function GlossaryTermPage({
                   </h2>
                   <div className="flex flex-wrap gap-2">
                     {term.data.related_to.map((related: any, index: number) => {
-                      // Get the text of the related term
                       const relatedText = asText(related);
-                      // Look up the term in our map of terms by title
                       const matchingTerm = relatedText
                         ? termsByTitle[relatedText]
                         : undefined;

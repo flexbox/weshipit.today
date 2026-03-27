@@ -377,6 +377,17 @@ export default function BonjourPage({ clients, feedback }: BonjourPageProps) {
   return (
     <>
       <Head>
+        <link
+          rel="alternate"
+          hrefLang="fr"
+          href="https://weshipit.today/bonjour"
+        />
+        <link rel="alternate" hrefLang="en" href="https://weshipit.today/" />
+        <link
+          rel="alternate"
+          hrefLang="x-default"
+          href="https://weshipit.today/"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
@@ -385,6 +396,7 @@ export default function BonjourPage({ clients, feedback }: BonjourPageProps) {
       <Layout
         seoTitle="Applications Mobiles React Native pour Votre Entreprise | weshipit.today"
         seoDescription="Dans un monde avec 4,88 milliards d’utilisateurs de smartphones, ne perdez pas vos clients potentiels. Créez une application mobile performante avec notre expertise React Native."
+        locale="fr_FR"
         withHeader
         withFooter
         callToActionButton={{

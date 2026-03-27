@@ -57,6 +57,16 @@ export default function Podcast() {
   return (
     <>
       <Head>
+        <link
+          rel="alternate"
+          hrefLang="fr"
+          href="https://weshipit.today/podcast"
+        />
+        <link
+          rel="alternate"
+          hrefLang="x-default"
+          href="https://weshipit.today/podcast"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
@@ -66,6 +76,7 @@ export default function Podcast() {
         seoTitle="Podcast React Native : Scale ton Équipe & Livre 40% Plus Vite"
         seoDescription="Le podcast React Native pour CTO : évite la dette technique, scale ton équipe de 2 à 15 devs, réduis ton time-to-market. Retours d'expérience Alan, Cdiscount, Swan."
         ogImageTitle="Le Cross Platform Show"
+        locale="fr_FR"
         withHeader
         callToActionLink={{
           name: 'Participer au podcast',

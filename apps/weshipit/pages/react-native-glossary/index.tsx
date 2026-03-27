@@ -3,13 +3,10 @@ import { GlossaryTerm, getAllGlossaryTerms } from '../api/glossary';
 import { PrismicRichText } from '@prismicio/react';
 import { asText } from '@prismicio/client';
 import Link from 'next/link';
+import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import { GlossaryCTA } from '../../components/GlossaryCTA';
 import { slugify } from '../../utils/slugify';
-
-interface GlossaryPageProps {
-  glossaryTerms: GlossaryTerm[];
-}
 
 export async function getStaticProps() {
   const { glossaryTerms } = await getAllGlossaryTerms();
@@ -29,33 +26,68 @@ export async function getStaticProps() {
     groupedTerms[category].push(term as unknown as GlossaryTerm);
   });
 
+  const termCount = glossaryTerms.filter((t) => t.data.title).length;
+
+  // Build DefinedTermSet schema
+  const definedTermSetSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'DefinedTermSet',
+    name: 'React Native Glossary',
+    description:
+      'A comprehensive glossary of React Native terms and concepts for mobile developers.',
+    url: 'https://weshipit.today/react-native-glossary',
+    hasDefinedTerm: glossaryTerms
+      .filter((t) => t.data.title)
+      .map((t) => ({
+        '@type': 'DefinedTerm',
+        name: t.data.title,
+        url: `https://weshipit.today/react-native-glossary/${slugify(t.data.title)}`,
+      })),
+  };
+
   return {
     props: {
       groupedTerms,
+      termCount,
+      definedTermSetSchema,
     },
+    revalidate: 3600,
   };
 }
 
 export default function ReactNativeGlossary({
   groupedTerms,
-}: GlossaryPageProps & { groupedTerms: { [key: string]: GlossaryTerm[] } }) {
+  termCount,
+  definedTermSetSchema,
+}: {
+  groupedTerms: { [key: string]: GlossaryTerm[] };
+  termCount: number;
+  definedTermSetSchema: object;
+}) {
   const alphabet = '#ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
   const [activeLetters, setActiveLetters] = useState<string[]>([]);
 
   useEffect(() => {
-    // Set active letters based on available terms
     setActiveLetters(Object.keys(groupedTerms));
   }, [groupedTerms]);
 
   return (
     <Layout
-      seoTitle="React Native Glossary | weshipit.today"
-      seoDescription="A comprehensive glossary of React Native terms and concepts to help you better understand React Native development."
+      seoTitle="React Native Glossary"
+      seoDescription={`${termCount}+ React Native terms explained — from core concepts like JSX and Flexbox to advanced topics like the New Architecture, Fabric, and Turbo Modules.`}
       ogImageTitle="React Native Glossary"
       withHeader
       withFooter
       withContainer
     >
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(definedTermSetSchema),
+          }}
+        />
+      </Head>
       <article className="py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <header className="lg:text-center">
@@ -71,20 +103,22 @@ export default function ReactNativeGlossary({
           <nav className="mt-8 flex flex-wrap justify-center gap-2 sm:gap-4">
             {alphabet.map((letter) => {
               const isActive = activeLetters.includes(letter);
-              return (
+              return isActive ? (
                 <Link
                   key={letter}
-                  href={isActive ? `#${letter}` : '#'}
-                  className={`inline-flex h-10 w-10 items-center justify-center rounded-md text-lg font-medium shadow-sm
-                    ${
-                      isActive
-                        ? 'bg-blue-600 text-white hover:bg-blue-500 focus-visible:outline-blue-600 dark:bg-blue-700 dark:text-white dark:hover:bg-blue-800 dark:focus-visible:outline-blue-700'
-                        : 'border border-gray-300 bg-white text-gray-500 hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-400 dark:hover:bg-gray-700'
-                    }`}
-                  aria-disabled={!isActive}
+                  href={`#${letter}`}
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-md text-lg font-medium shadow-sm bg-blue-600 text-white hover:bg-blue-500 focus-visible:outline-blue-600 dark:bg-blue-700 dark:text-white dark:hover:bg-blue-800 dark:focus-visible:outline-blue-700"
                 >
                   {letter}
                 </Link>
+              ) : (
+                <span
+                  key={letter}
+                  aria-disabled="true"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-md text-lg font-medium shadow-sm border border-gray-300 bg-white text-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-600 cursor-default select-none"
+                >
+                  {letter}
+                </span>
               );
             })}
           </nav>
@@ -124,14 +158,29 @@ export default function ReactNativeGlossary({
                               </span>
                               <div className="mt-1 flex flex-wrap gap-2">
                                 {item.data.related_to.map(
-                                  (related: any, index: number) => (
-                                    <span
-                                      key={index}
-                                      className="inline-flex items-center rounded-md bg-gray-100 px-2.5 py-0.5 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-200"
-                                    >
-                                      {asText(related)}
-                                    </span>
-                                  ),
+                                  (related: any, index: number) => {
+                                    const relatedText = asText(related);
+                                    const relatedSlug = relatedText
+                                      ? slugify(relatedText)
+                                      : null;
+                                    return (
+                                      <span
+                                        key={index}
+                                        className="inline-flex items-center rounded-md bg-gray-100 px-2.5 py-0.5 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-200"
+                                      >
+                                        {relatedSlug ? (
+                                          <Link
+                                            href={`/react-native-glossary/${relatedSlug}`}
+                                            className="hover:text-blue-600 dark:hover:text-blue-400"
+                                          >
+                                            {relatedText}
+                                          </Link>
+                                        ) : (
+                                          relatedText
+                                        )}
+                                      </span>
+                                    );
+                                  },
                                 )}
                               </div>
                             </div>

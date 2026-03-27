@@ -43,7 +43,7 @@ export default function AboutPage({ clients }) {
   return (
     <Layout
       seoTitle="About"
-      seoDescription="Our philosophy is simple: the more you automate, the more you innovate. We are dedicated to creating delightful React Native applications."
+      seoDescription="Meet the React Native development agency behind weshipit.today — a remote team helping companies ship high-quality mobile apps faster."
       withHeader
       callToActionLink={{
         name: 'Star Us on GitHub',
