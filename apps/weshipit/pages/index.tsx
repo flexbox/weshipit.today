@@ -447,9 +447,13 @@ export default function IndexPage({ clients, steps }: IndexPageProps) {
         <TeamSection />
         <Pricing ctaLink={linksApi.cal.ONBOARDING} />
 
-        <section className="bg-white dark:bg-slate-900">
-          <div className="mx-auto max-w-2xl px-4 sm:px-6" id="faq">
-            <Faq faqs={faqs} />
+        <section
+          className="bg-white dark:bg-slate-900"
+          id="faq"
+          aria-labelledby="faq-heading"
+        >
+          <div className="mx-auto max-w-2xl px-4 sm:px-6">
+            <Faq faqs={faqs} headingId="faq-heading" />
           </div>
         </section>
       </Layout>
@@ -466,5 +470,6 @@ export async function getStaticProps() {
       clients,
       steps,
     },
+    revalidate: 86400,
   };
 }

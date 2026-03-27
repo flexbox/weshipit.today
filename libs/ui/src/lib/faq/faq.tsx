@@ -15,24 +15,26 @@ export interface FaqProps {
 interface FaqListProps {
   faqs: FaqProps[];
   title?: string;
+  headingId?: string;
 }
 
 export function Faq({
   faqs,
   title = 'Frequently Asked Questions',
+  headingId,
 }: FaqListProps) {
   return (
     <div className="flex flex-col gap-6 py-24">
-      <Text as="h2" variant="h3" className="px-4">
+      <Text as="h2" variant="h3" className="px-4" id={headingId}>
         {title}
       </Text>
 
-      {faqs.map((item) => (
+      {faqs.map((item, index) => (
         <div key={item.id}>
           <Disclosure
             as="div"
             className="cursor-pointer rounded-md transition-colors duration-200 ease-in-out hover:bg-white dark:hover:bg-slate-800"
-            defaultOpen={false}
+            defaultOpen={index === 0}
           >
             <DisclosureButton className="group flex w-full items-center justify-between px-4 py-3">
               <Text
