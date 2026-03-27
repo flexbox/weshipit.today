@@ -191,7 +191,7 @@ export default function DevToolsPage({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
         />
       </Head>
-      <div className="bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-400 py-12 md:py-20 mb-12">
+      <div className="bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-400 py-12 md:py-4 mb-12">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <Hero
             title={

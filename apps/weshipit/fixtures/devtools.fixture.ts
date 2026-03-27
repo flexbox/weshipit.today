@@ -176,7 +176,7 @@ export const devtoolsFixture: DevToolsFixture = {
         'AnimateReactNative is an interactive showcase of animations built with React Native Reanimated. Browse, preview, and explore animation recipes.',
       description_success:
         'Get inspired and copy animation patterns directly into your React Native project.',
-      features: ['Animations', 'Reanimated'],
+      features: ['Animations'],
       ios_url: 'https://apps.apple.com/app/id6738016513',
       platform: ['iOS'],
     },
@@ -188,7 +188,7 @@ export const devtoolsFixture: DevToolsFixture = {
         'Make It Animated is a collection of ready-to-use animations for React Native. Browse examples and copy the source code into your project.',
       description_success:
         'Find the perfect animation for your app and paste the Reanimated code straight into your project.',
-      features: ['Animations', 'Reanimated'],
+      features: ['Animations'],
       ios_url: 'https://apps.apple.com/app/id6742489722',
       platform: ['iOS'],
     },
@@ -218,6 +218,32 @@ export const devtoolsFixture: DevToolsFixture = {
       website_url: 'https://v0.dev/',
     },
     {
+      id: 'devtools-accessibility-scanner',
+      name: 'Accessibility Scanner',
+      slug: 'accessibility-scanner',
+      description:
+        'Accessibility Scanner scans your Android app\u2019s UI and suggests improvements to make it more accessible \u2014 checking content labels, touch target sizes, and color contrast ratios.',
+      description_success:
+        'Audit your Android app for accessibility issues before shipping to catch missing labels and contrast failures.',
+      features: ['Design', 'Testing'],
+      android_url:
+        'https://play.google.com/store/apps/details?id=com.google.android.apps.accessibility.auditor',
+      platform: ['Android'],
+    },
+    {
+      id: 'devtools-sensors-multitool',
+      name: 'Sensors Multitool',
+      slug: 'sensors-multitool',
+      description:
+        'Sensors Multitool gives you real-time access to all hardware sensors on your Android device \u2014 accelerometer, gyroscope, compass, barometer, proximity, and more \u2014 with live data visualization.',
+      description_success:
+        'Verify real device sensor data while building React Native features that use accelerometer, gyroscope, or compass.',
+      features: ['Sensors', 'Debugging', 'Hardware'],
+      android_url:
+        'https://play.google.com/store/apps/details?id=com.wered.sensorsmultitool',
+      platform: ['Android'],
+    },
+    {
       id: 'devtools-github',
       name: 'GitHub',
       slug: 'github',
@@ -225,7 +251,7 @@ export const devtoolsFixture: DevToolsFixture = {
         "The GitHub mobile app lets you manage issues, review pull requests, merge code, and follow your team's activity from anywhere.",
       description_success:
         'Review and merge pull requests, triage issues, and stay on top of notifications while away from your desk.',
-      features: ['CI / CD', 'Collaboration'],
+      features: ['CI / CD'],
       ios_url: 'https://apps.apple.com/fr/app/github/id1477376905',
       platform: ['iOS', 'Android'],
       website_url: 'https://github.com/',

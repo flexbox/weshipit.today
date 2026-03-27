@@ -102,18 +102,6 @@ export const tools = {
       id: 'rec8VkLjRUcNej4eS',
     },
     {
-      createdTime: '2024-07-23T12:11:04.000Z',
-      fields: {
-        ios_url: 'https://apps.apple.com/app/id1234793120',
-        name: 'App Store Connect',
-        platform: ['iOS', 'macOS'],
-        slug: 'app-store-connect',
-        type: 'App',
-        website_url: 'https://appstoreconnect.apple.com/login',
-      },
-      id: 'rec9bu4YFX8mh8Bui',
-    },
-    {
       createdTime: '2025-02-17T14:20:12.000Z',
       fields: {
         description:
@@ -280,28 +268,6 @@ export const tools = {
       id: 'recLvcsE6QmzdBZoZ',
     },
     {
-      createdTime: '2024-03-04T13:34:32.000Z',
-      fields: {
-        android_url:
-          'https://play.google.com/store/apps/details?id=no.nordicsemi.android.mcp',
-
-        description:
-          'nRF Connect for Mobile is a robust tool that enables you to scan, explore, and communicate with your Bluetooth Low Energy devices. It supports various Bluetooth SIG adopted profiles, as well as the Device Firmware Update profile (DFU) from Nordic Semiconductor and Eddystone from Google.\n',
-        description_success: 'Debug Bluetooth issues on Android and iOS.\n',
-        features: ['Bluetooth'],
-        github_url: 'https://github.com/NordicSemiconductor/IOS-nRF-Connect',
-        ios_url:
-          'https://apps.apple.com/pl/app/nrf-connect-for-mobile/id1054362403',
-        name: 'nRF Connect',
-        platform: ['iOS', 'Android'],
-        slug: 'nrf-connect',
-        type: 'App',
-        website_url:
-          'https://www.nordicsemi.com/Products/Development-tools/nrf-connect-for-mobile',
-      },
-      id: 'recMDtgjXclE4We62',
-    },
-    {
       createdTime: '2024-01-24T09:01:24.000Z',
       fields: {
         description:
@@ -336,22 +302,6 @@ export const tools = {
         website_url: 'https://posthog.com',
       },
       id: 'recMXZGNue9gXJ2oD',
-    },
-    {
-      createdTime: '2024-03-04T13:54:47.000Z',
-      fields: {
-        description:
-          'The TestFlight app allows you to install and beta test apps on your iOS devices. The app is available for free on the App Store.\n',
-        description_success:
-          'Receive a push notification when the status of your app is updated.\n',
-        ios_url: 'https://apps.apple.com/app/id899247664',
-        name: 'Testflight',
-        platform: ['macOS', 'iOS'],
-        slug: 'testflight',
-        type: 'App',
-        website_url: 'https://testflight.apple.com/',
-      },
-      id: 'recPmAB07ROC8odrt',
     },
     {
       createdTime: '2022-01-13T09:34:49.000Z',
@@ -511,22 +461,6 @@ export const tools = {
         website_url: 'https://www.flurry.com/',
       },
       id: 'recUrA2AQOxjmNcvq',
-    },
-    {
-      createdTime: '2024-07-23T12:15:04.000Z',
-      fields: {
-        android_url:
-          'https://play.google.com/store/apps/details?id=org.eu.exodus_privacy.exodusprivacy&hl=fr&gl=US',
-
-        description:
-          'εxodus analyzes Android applications in order to list the embedded trackers.\n',
-        name: 'Exodus Privacy',
-        platform: ['Android'],
-        slug: 'exodus-privacy',
-        type: 'App',
-        website_url: 'https://reports.exodus-privacy.eu.org/en/',
-      },
-      id: 'recWjVg8R7DXZ6Gx5',
     },
     {
       createdTime: '2022-01-13T09:36:32.000Z',
@@ -787,36 +721,6 @@ export const tools = {
       id: 'rechLPQrH2pc7o9WY',
     },
     {
-      createdTime: '2024-07-23T12:12:56.000Z',
-      fields: {
-        android_url:
-          'https://play.google.com/store/apps/details?id=com.google.android.apps.playconsole&pli=1',
-
-        description:
-          "- Manage your app's orders and issue refunds\n- View and reply to app reviews\n- Track and monitor the availability of your apps across different tracks and releases\n\n",
-        name: 'Google Play Console',
-        platform: ['Android'],
-        slug: 'google-play-console',
-        type: 'App',
-      },
-      id: 'rechpJsggMYdxgEcn',
-    },
-    {
-      createdTime: '2024-07-23T12:12:11.000Z',
-      fields: {
-        android_url:
-          'https://play.google.com/store/apps/details?id=com.absinthe.libchecker',
-
-        description:
-          'Discover what languages and libraries were used to build any given app.\n',
-        name: 'LibChecker',
-        platform: ['Android'],
-        slug: 'libchecker',
-        type: 'App',
-      },
-      id: 'reci4WamlBzT55w2B',
-    },
-    {
       createdTime: '2022-09-14T10:34:53.000Z',
       fields: {
         description:
@@ -1046,26 +950,6 @@ export const tools = {
         website_url: 'https://supabase.com',
       },
       id: 'recx8kDZRBP3jj79y',
-    },
-    {
-      createdTime: '2024-07-24T09:12:22.000Z',
-      fields: {
-        android_url:
-          'https://play.google.com/store/apps/details?id=com.adafruit.bluefruit.le.connect&hl=fr',
-
-        description:
-          'The Bluefruit LE Connect app provides iOS & Android devices with a variety of tools to communicate with Bluefruit LE devices. These tools cover basic communication and info reporting as well as more project specific uses such as Arduino Pin Control and a Color Picker.\n',
-        features: ['Bluetooth'],
-        ios_url: 'https://apps.apple.com/ci/app/bluefruit-connect/id830125974',
-        name: 'Bluefruit Connect',
-        platform: ['iOS', 'Android'],
-        slug: 'bluefruit-connect',
-        twitter_url: 'https://x.com/adafruit/',
-        type: 'App',
-        website_url:
-          'https://learn.adafruit.com/bluefruit-le-connect/ios-setup',
-      },
-      id: 'recxVC2Qar9y4cu4J',
     },
     {
       createdTime: '2021-08-31T15:22:43.000Z',
