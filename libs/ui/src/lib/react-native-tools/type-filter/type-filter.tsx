@@ -2,7 +2,7 @@ import { ChevronRightIcon, XMarkIcon } from '@heroicons/react/20/solid';
 import { usePathname, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { useCallback } from 'react';
-import { Badge } from '../../badge/badge';
+
 import { Text } from '../../text/text';
 import kebabCase from 'lodash/kebabCase';
 import { types } from '../../tool-list/get-variant-from-type';
@@ -21,7 +21,7 @@ export function TypeFilter({ numberOfTools }: { numberOfTools: number }) {
 
       return params.toString();
     },
-    [searchParams]
+    [searchParams],
   );
 
   return (

@@ -3,68 +3,73 @@ import { tools } from '../../fixtures/tools.fixture';
 
 import {
   ToolList,
-  TypeFilter,
   Text,
   SearchBar,
   Hero,
   CallToActionCards,
+  TypeFilter,
 } from '@weshipit/ui';
 import { useEffect, useState } from 'react';
-import round from 'lodash/round';
-import { useSearchParams } from 'next/navigation';
+import Head from 'next/head';
 import { linksApi } from '../api/links';
 
-/**
- * Search throught airtable records by filtering by description
- */
 function filterByDescription(records, searchTerm: string) {
   return records.filter((record) => {
-    const description = record.fields.description;
+    const description = record.description;
     return description?.toLowerCase().includes(searchTerm);
   });
 }
 
-/**
- * Filter airtable records by type
- */
-function filterRecordsByType(records, type) {
-  return records.filter((record) => {
-    const recordType = record.fields.type?.toLowerCase();
-    return recordType === type.toLowerCase();
-  });
+export async function getStaticProps() {
+  const records = tools;
+
+  const itemListSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'React Native Tools & Resources',
+    description:
+      'Curated tools and libraries for React Native developers — analytics, CI/CD, debugging, UI components, and more.',
+    url: 'https://weshipit.today/react-native-tools',
+    numberOfItems: records.length,
+    itemListElement: records.map((record, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: record.name,
+      url: record.website_url || null,
+    })),
+  };
+
+  return {
+    props: {
+      records,
+      itemListSchema,
+    },
+    revalidate: 3600,
+  };
 }
 
-export default function ReactNativeToolsPage({ initialToolType, records }) {
-  const numberOfTools = round(records.length, -1);
+export default function ReactNativeToolsPage({ records, itemListSchema }) {
+  const numberOfTools = records.length;
 
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState(records);
-  const handleChange = (e) => {
-    setSearchTerm(e.target.value);
+
+  const handleChange = (event) => {
+    setSearchTerm(event.target.value);
   };
 
   useEffect(() => {
-    const results = filterByDescription(records, searchTerm);
-    setSearchResults(results);
+    if (!searchTerm) {
+      setSearchResults(records);
+      return;
+    }
+    setSearchResults(filterByDescription(records, searchTerm));
   }, [records, searchTerm]);
-
-  const searchParams = useSearchParams();
-  const [toolType, setToolType] = useState(initialToolType || '');
-
-  useEffect(() => {
-    const clientToolType = searchParams?.get('type')?.toLowerCase() || '';
-    setToolType(clientToolType);
-  }, [searchParams]);
-
-  let seoTitle = `Repository of ${numberOfTools}+ resources and tools to elevate your React Native game`;
-  if (toolType) {
-    seoTitle = `Best React Native ${toolType} tools: Boost your mobile app development`;
-  }
 
   return (
     <Layout
-      seoTitle={seoTitle}
-      seoDescription={`The best tools & apis for React Native developers. Accelerate your product development and improvement with more than ${numberOfTools}+ design resources and tools.`}
+      seoTitle={`${numberOfTools}+ React Native Tools & Resources`}
+      seoDescription={`${numberOfTools}+ curated tools and libraries for React Native developers — analytics, CI/CD, debugging, UI components, and more.`}
       ogImageTitle="React Native Tools"
       withHeader
       callToActionLink={{
@@ -74,6 +79,12 @@ export default function ReactNativeToolsPage({ initialToolType, records }) {
       }}
       callToActionButton={{ name: 'Work with us', href: '/' }}
     >
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+        />
+      </Head>
       <div className="mx-auto mb-6 max-w-6xl px-4 sm:px-6">
         <Hero
           badgeStyle="bg-orange-200 dark:bg-orange-900 text-[#ed6c5c] ring-[#ed6c5c] dark:ring-[#ed6c5c]"
@@ -82,9 +93,7 @@ export default function ReactNativeToolsPage({ initialToolType, records }) {
           hintLink="https://www.producthunt.com/@flexbox"
           title={
             <>
-              The best{' '}
-              {toolType && <span className="text-indigo-600">{toolType}</span>}{' '}
-              tools
+              The best tools
               <br />
               and resources for busy developers.
             </>
@@ -131,23 +140,4 @@ export default function ReactNativeToolsPage({ initialToolType, records }) {
       </div>
     </Layout>
   );
-}
-
-export async function getServerSideProps(context) {
-  const records = tools.records;
-
-  const searchQuery = context.query.type;
-  const initialToolType = searchQuery ? searchQuery.toLowerCase() : '';
-
-  let filteredRecords = records;
-  if (searchQuery) {
-    filteredRecords = filterRecordsByType(records, searchQuery);
-  }
-
-  return {
-    props: {
-      initialToolType,
-      records: filteredRecords,
-    },
-  };
 }

@@ -15,16 +15,95 @@ import { tools } from '../../fixtures/tools.fixture';
 
 import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
+import Head from 'next/head';
 import isNil from 'lodash/isNil';
 import take from 'lodash/take';
 import ChevronLeftIcon from '@heroicons/react/20/solid/ChevronLeftIcon';
+import { GetStaticPaths, GetStaticProps } from 'next';
 
-export function ReactNativeSlugPage({ recommendedRecords, record }) {
-  if (record === undefined || record.fields === undefined) {
+export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = tools
+    .filter((r) => r.slug)
+    .map((r) => ({ params: { slug: r.slug } }));
+
+  return { paths, fallback: false };
+};
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const slug = params?.slug as string;
+  const record = tools.find((r) => r.slug === slug);
+
+  if (!record) {
+    return { notFound: true };
+  }
+
+  const { name, description, description_success, website_url, platform } =
+    record;
+
+  const rawDesc = description_success || description || '';
+  const seoDescription = `${name} for React Native${rawDesc ? ` — ${rawDesc.slice(0, 130)}...` : '.'}`;
+
+  const recommendedRecords = take(
+    tools.filter((r) => r.slug !== slug),
+    3,
+  );
+
+  const toolUrl = `https://weshipit.today/react-native-tools/${slug}`;
+
+  const softwareAppSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name,
+    description: rawDesc.slice(0, 300) || undefined,
+    url: website_url || undefined,
+    applicationCategory: 'DeveloperApplication',
+    operatingSystem: platform?.join(', ') || undefined,
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'React Native Tools',
+        item: 'https://weshipit.today/react-native-tools',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name,
+        item: toolUrl,
+      },
+    ],
+  };
+
+  return {
+    props: {
+      record,
+      recommendedRecords,
+      seoDescription,
+      softwareAppSchema,
+      breadcrumbSchema,
+    },
+    revalidate: 86400,
+  };
+};
+
+export function ReactNativeSlugPage({
+  recommendedRecords,
+  record,
+  seoDescription,
+  softwareAppSchema,
+  breadcrumbSchema,
+}) {
+  if (record === undefined) {
     return (
       <Layout
-        seoTitle={'Not found'}
-        seoDescription={''}
+        seoTitle="Not found"
+        seoDescription="This React Native tool page could not be found."
+        noindex
         withHeader
         withContainer
       >
@@ -44,12 +123,12 @@ export function ReactNativeSlugPage({ recommendedRecords, record }) {
     twitter_url,
     type,
     website_url,
-  } = record.fields;
+  } = record;
 
   return (
     <Layout
       seoTitle={`${name} for React Native`}
-      seoDescription={`${name} for React Native — ${description_success || description || 'A curated tool for React Native developers.'}`}
+      seoDescription={seoDescription}
       ogImageTitle={`${name} for React Native`}
       withHeader
       callToActionLink={{
@@ -61,6 +140,20 @@ export function ReactNativeSlugPage({ recommendedRecords, record }) {
       withContainer
       withProductHunt
     >
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(softwareAppSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(breadcrumbSchema),
+          }}
+        />
+      </Head>
       <div className="mt-4 flex">
         <Link
           href="/react-native-tools"
@@ -78,7 +171,7 @@ export function ReactNativeSlugPage({ recommendedRecords, record }) {
           <div className="col-span-1 md:col-span-8">
             <CompanyLogo name={name} websiteUrl={website_url} size={64} />
             <Text as="h1" variant="h2" className="my-6">
-              {name}
+              {name} for React Native
             </Text>
 
             <div className="mb-4 flex flex-wrap">
@@ -166,7 +259,7 @@ export function ReactNativeSlugPage({ recommendedRecords, record }) {
       {recommendedRecords.length > 0 && (
         <section className="py-12">
           <Text as="h2" variant="h3" className="my-4">
-            Other tools from the category {type.toLowerCase()}
+            Other React Native tools
           </Text>
           <ToolList records={recommendedRecords} />
         </section>
@@ -180,36 +273,6 @@ export function ReactNativeSlugPage({ recommendedRecords, record }) {
       </section>
     </Layout>
   );
-}
-
-export async function getServerSideProps({ query, res }) {
-  try {
-    const { slug } = query;
-    const records = tools.records;
-    const record = records.find((record) => record.fields.slug === slug);
-
-    if (!record) {
-      res.statusCode = 404;
-      return { props: { error: 'Not Found' } };
-    }
-
-    const type = record.fields.type;
-
-    const recommendedRecords = take(
-      records.filter((r) => r.fields.type === type && r.fields.slug !== slug),
-      3,
-    );
-
-    return {
-      props: {
-        recommendedRecords,
-        record,
-      },
-    };
-  } catch (error) {
-    res.statusCode = 500;
-    return { props: { error: 'Server Error' } };
-  }
 }
 
 export default ReactNativeSlugPage;

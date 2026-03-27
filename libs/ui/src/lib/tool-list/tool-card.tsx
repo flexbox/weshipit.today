@@ -1,21 +1,26 @@
 import { RecordProps } from './record-types';
-import { Badge } from '../badge/badge';
 import { Card } from '../card/card';
 import { Text } from '../text/text';
 
 import truncate from 'lodash/truncate';
 import Link from 'next/link';
 import { CompanyLogo } from './company-logo';
-import { getVariantFromType } from './get-variant-from-type';
+import { Badge, getVariantFromType } from '@weshipit/ui';
 
-export function ToolCard({ fields, id }: RecordProps) {
-  const { name, pricing, slug, type, website_url } = fields;
-
+export function ToolCard({
+  id,
+  name,
+  slug,
+  description,
+  pricing,
+  website_url,
+  type,
+}: RecordProps) {
   if (!name) {
     return null;
   }
 
-  const description = truncate(fields.description, {
+  const truncatedDescription = truncate(description, {
     length: 160,
     separator: '…',
   });
@@ -36,7 +41,7 @@ export function ToolCard({ fields, id }: RecordProps) {
               <Text as="h3" variant="s2" className="font-semibold">
                 {name}
               </Text>
-              {pricing && (
+              {pricing && pricing.length > 0 && (
                 <div className="group relative flex items-center justify-center overflow-hidden rounded-2xl border-2 border-dashed border-slate-400 px-4">
                   <Text
                     as="p"
@@ -57,12 +62,11 @@ export function ToolCard({ fields, id }: RecordProps) {
             </div>
 
             <Text as="p" variant="p1" className="mb-6 text-slate-400">
-              {description}
+              {truncatedDescription}
             </Text>
           </div>
 
           <div className="flex justify-start">
-            {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
             <Badge size="sm" variant={variantType as any}>
               {type}
             </Badge>
