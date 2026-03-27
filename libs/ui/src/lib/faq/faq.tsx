@@ -1,4 +1,3 @@
-import { RichTextField, asText } from '@prismicio/client';
 import {
   Disclosure,
   DisclosureButton,
@@ -9,10 +8,8 @@ import { Text } from '../text/text';
 
 export interface FaqProps {
   id: string;
-  data: {
-    question: RichTextField;
-    answer: RichTextField;
-  };
+  question: string;
+  answer: string;
 }
 
 interface FaqListProps {
@@ -43,13 +40,13 @@ export function Faq({
                 variant="p1"
                 className="my-2 text-left font-semibold"
               >
-                {asText(item.data.question)}
+                {item.question}
               </Text>
               <ChevronDownIcon className="size-5 group-data-[open]:rotate-180  dark:fill-white/60" />
             </DisclosureButton>
             <DisclosurePanel className="px-4 pb-4">
               <Text as="p" variant="p2">
-                {asText(item.data.answer)}
+                {item.answer}
               </Text>
             </DisclosurePanel>
           </Disclosure>
