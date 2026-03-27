@@ -1,3 +1,21 @@
+export interface Tool {
+  id: string;
+  name: string;
+  slug: string;
+  description?: string;
+  description_success?: string;
+  website_url?: string;
+  platform?: string[];
+  pricing?: string[];
+  features?: string[];
+  ios_url?: string;
+  android_url?: string;
+}
+
+export interface ToolsFixture {
+  records: Tool[];
+}
+
 export const tools = {
   records: [
     {
@@ -22,7 +40,7 @@ export const tools = {
         description:
           'Purchasely is a paywall and monetization platform that can help you create and manage paywalls for your React Native apps. It offers a no-code paywall builder, real-time paywall previews, and integrations with other marketing tools. This can help you to easily monetize your apps and increase your revenue.\n',
         description_success:
-          "1. No-code paywall builder: Purchasely's paywall builder is easy to use and doesn't require any coding experience. You can create paywalls for your apps in minutes.\n2. Real-time paywall previews: Purchasely allows you to preview your paywalls in real time before you publish them. This helps you to ensure that your paywalls look and work the way you want them to.\n3. Integrations with other marketing tools: Purchasely integrates with other marketing tools, such as Google Analytics and Mixpanel. This allows you to track your paywall performance and measure your results.\n\n",
+          "1. No-code paywall builder: Purchasely's paywall builder is easy to use and doesn't require any coding experience. You can create paywalls for your apps in minutes.\n2. Real-time paywall previews: Purchasely allows you to preview your paywalls in real time before you publish them. This helps you to ensure that your paywalls look and work the way you want them to.\n3. Integrations with other marketing tools: Purchasely integrates with other marketing tools, such as Google Analytics and Mixpanel. This allows you to track your paywall performance and measure your results.\n\n",
         features: ['A / B testing'],
         github_url: 'https://github.com/Purchasely/Purchasely-ReactNative',
         name: 'Purchasely',

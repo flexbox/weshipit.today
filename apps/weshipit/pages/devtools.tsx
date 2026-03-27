@@ -47,7 +47,7 @@ async function fetchPlayStoreIcon(androidUrl: string): Promise<string | null> {
 }
 
 export async function getStaticProps() {
-  const sorted = [...devtoolsFixture.records].sort((a, b) =>
+  const sorted = [...devtoolsFixture].sort((a, b) =>
     a.name.localeCompare(b.name),
   );
 
