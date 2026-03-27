@@ -34,7 +34,7 @@ export function TypeFilter({ numberOfTools }: { numberOfTools: number }) {
       {canResetFilter && (
         <li>
           <Link href="/react-native-tools">
-            <Button variant={'primary'} className="flex w-full justify-between">
+            <Button variant="outline" className="flex w-full justify-between">
               Reset filter
               <XMarkIcon className="ml-1 size-6" />
             </Button>
@@ -47,7 +47,7 @@ export function TypeFilter({ numberOfTools }: { numberOfTools: number }) {
           <li key={kebabCase(type.name)}>
             <Link href={pathname + '?' + createQueryString('type', type.name)}>
               <Button
-                variant={isSelected ? 'ghost' : 'outline'} // Change variant if selected
+                variant={isSelected ? 'primary' : 'outline'} // Change variant if selected
                 className="flex w-full justify-between"
               >
                 {type.name}

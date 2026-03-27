@@ -26,8 +26,6 @@ export function ToolCard({
     separator: '…',
   });
 
-  const variantType = getVariantFromType(type);
-
   return (
     <Card variant="link">
       <Link
@@ -67,10 +65,12 @@ export function ToolCard({
             </Text>
           </div>
 
-          <div className="flex justify-start">
-            <Badge size="sm" variant={variantType as any}>
-              {type}
-            </Badge>
+          <div className="flex flex-wrap gap-1">
+            {type.map((t) => (
+              <Badge key={t} size="sm" variant={getVariantFromType(t) as any}>
+                {t}
+              </Badge>
+            ))}
           </div>
         </div>
       </Link>

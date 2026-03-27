@@ -48,7 +48,7 @@ export default function ReactNativeToolsPage({ records, itemListSchema }) {
 
   const searchResults = records.filter((record) => {
     const matchesType = toolType
-      ? record.type?.toLowerCase() === toolType.toLowerCase()
+      ? record.type.some((t) => t.toLowerCase() === toolType.toLowerCase())
       : true;
     const matchesSearch = searchTerm
       ? record.description?.toLowerCase().includes(searchTerm.toLowerCase())

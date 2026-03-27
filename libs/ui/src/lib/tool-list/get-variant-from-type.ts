@@ -3,18 +3,20 @@ export function getVariantFromType(type: string) {
     // types
     case 'Analytics':
       return 'lime';
-    case 'Authentication':
+    case 'Auth & Identity':
       return 'indigo';
-    case 'Backend':
+    case 'Backend & APIs':
       return 'green';
-    case 'Crash reporting':
+    case 'Error Monitoring':
       return 'pink';
-    case 'Persistent storage':
+    case 'Database & Storage':
       return 'cyan';
-    case 'Infrastructure':
+    case 'CI/CD & Release':
       return 'blue';
-    case 'Payment':
+    case 'Payments & Subscriptions':
       return 'yellow';
+    case 'CMS & Content':
+      return 'green';
     // platform
     case 'Android':
       return 'lime';
@@ -63,26 +65,30 @@ export const types: Type[] = [
   },
   {
     color: 'indigo',
-    name: 'Authentication',
+    name: 'Auth & Identity',
   },
   {
     color: 'green',
-    name: 'Backend',
+    name: 'Backend & APIs',
   },
   {
     color: 'pink',
-    name: 'Crash reporting',
+    name: 'Error Monitoring',
   },
   {
     color: 'blue',
-    name: 'Infrastructure',
+    name: 'CI/CD & Release',
   },
   {
     color: 'yellow',
-    name: 'Payment',
+    name: 'Payments & Subscriptions',
   },
   {
     color: 'cyan',
-    name: 'Persistent storage',
+    name: 'Database & Storage',
+  },
+  {
+    color: 'green',
+    name: 'CMS & Content',
   },
 ];

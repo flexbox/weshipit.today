@@ -174,8 +174,10 @@ export function ReactNativeSlugPage({
               {name} for React Native
             </Text>
 
-            <div className="mb-4 flex flex-wrap">
-              <ToolTypeBadge type={type} size="sm" />
+            <div className="mb-4 flex flex-wrap gap-2">
+              {type.map((t) => (
+                <ToolTypeBadge key={t} type={t} size="sm" />
+              ))}
             </div>
             <Prose size="lg" className="mb-12">
               <ReactMarkdown>{description}</ReactMarkdown>

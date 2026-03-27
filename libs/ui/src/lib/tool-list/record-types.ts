@@ -10,7 +10,7 @@ export interface RecordProps {
   features?: string[];
   ios_url?: string;
   android_url?: string;
-  type: string;
+  type: string[];
 }
 
 export interface ToolListProps {
