@@ -12,12 +12,14 @@ export interface PodcastOgImageData {
 export interface NextHeadProps {
   seoTitle: string;
   ogImageTitle?: string;
+  ogImageAlt?: string;
   ogImagePodcast?: PodcastOgImageData;
   seoDescription: string;
 }
 
 export function NextHead({
   ogImageTitle = 'React Native Development Agency',
+  ogImageAlt,
   ogImagePodcast,
   seoDescription,
   seoTitle,
@@ -26,10 +28,10 @@ export function NextHead({
   const defaultSeoDescription =
     'Software development is a service, not a product. We offer a subscription-based service for React Native developers. One flat fee. Pause or cancel whenever.';
 
-  // Generate the full canonical URL based on current path
+  // Generate the full canonical URL based on current path (use pathname to exclude query params)
   const router = useRouter();
   const baseUrl = 'https://weshipit.today';
-  const path = router.asPath;
+  const path = router.pathname;
   const canonicalUrl = `${baseUrl}${path === '/' ? '' : path}`;
 
   const generateOgImageUrl = () => {
@@ -119,7 +121,7 @@ export function NextHead({
         <meta property="og:image:type" content="image/png" />
         <meta
           property="og:image:alt"
-          content="Hire React Native Developers as a Service"
+          content={ogImageAlt || 'Hire React Native Developers as a Service'}
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />

@@ -11,7 +11,6 @@ import {
 } from '@weshipit/ui';
 import { useEffect, useState } from 'react';
 import round from 'lodash/round';
-import { HeaderLinksForTools } from '../../components/header-links-for-tools';
 import { useSearchParams } from 'next/navigation';
 import { linksApi } from '../api/links';
 

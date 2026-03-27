@@ -17,6 +17,7 @@ interface LayoutProps extends NextHeadProps {
 export function Layout({
   children,
   ogImageTitle,
+  ogImageAlt,
   seoDescription,
   seoTitle,
   withHeader = false,
@@ -34,6 +35,7 @@ export function Layout({
         seoTitle={seoTitle}
         seoDescription={seoDescription}
         ogImageTitle={ogImageTitle}
+        ogImageAlt={ogImageAlt}
         ogImagePodcast={ogImagePodcast}
       />
       <div className="flex min-h-screen flex-col justify-between">

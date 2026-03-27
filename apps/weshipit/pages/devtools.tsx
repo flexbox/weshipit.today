@@ -4,10 +4,10 @@ import { InferGetStaticPropsType } from 'next/types';
 import { devtoolsFixture, DevTool } from '../fixtures/devtools.fixture';
 import { useEffect, useMemo, useState } from 'react';
 import Image from 'next/image';
+import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useSearchParams } from 'next/navigation';
-import { CalendarIcon } from '@heroicons/react/24/outline';
-import { linksApi } from './api/links';
+import round from 'lodash/round';
 
 type DevToolWithIcon = DevTool & { icon_url: string | null };
 
@@ -71,10 +71,28 @@ export async function getStaticProps() {
     new Set(devtools.flatMap((t) => t.features ?? [])),
   ).sort();
 
+  const itemListSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'React Native Developer Tools',
+    description:
+      'A curated collection of apps React Native developers need to debug, test, and ship mobile apps.',
+    url: 'https://weshipit.today/devtools',
+    numberOfItems: devtools.length,
+    itemListElement: devtools.map((tool, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: tool.name,
+      description: tool.description || tool.description_success || null,
+      url: tool.website_url || null,
+    })),
+  };
+
   return {
     props: {
       devtools,
       allFeatures,
+      itemListSchema,
     },
   };
 }
@@ -82,6 +100,7 @@ export async function getStaticProps() {
 function DevToolCard({ tool }: { tool: DevToolWithIcon }) {
   const {
     name,
+    description,
     description_success,
     website_url,
     ios_url,
@@ -107,13 +126,13 @@ function DevToolCard({ tool }: { tool: DevToolWithIcon }) {
           {name}
         </Text>
       </div>
-      {description_success && (
+      {(description || description_success) && (
         <Text
           variant="p2"
           as="p"
           className="text-gray-600 dark:text-gray-400 line-clamp-3"
         >
-          {description_success}
+          {description || description_success}
         </Text>
       )}
       {features && features.length > 0 && <TagList tags={features} size="sm" />}
@@ -129,10 +148,12 @@ function DevToolCard({ tool }: { tool: DevToolWithIcon }) {
 export default function DevToolsPage({
   devtools,
   allFeatures,
+  itemListSchema,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [activeFeature, setActiveFeature] = useState<string>('');
+  const numberOfTools = round(devtools.length, -1);
 
   useEffect(() => {
     const feature = searchParams?.get('feature') ?? '';
@@ -160,8 +181,16 @@ export default function DevToolsPage({
       withHeader
       callToActionLink={{ name: 'Work with us', href: '/' }}
       seoTitle="React Native Developer Tools"
-      seoDescription="A collection of all the apps React Native developers need on their phone to debug and work efficiently."
+      seoDescription={`Discover ${numberOfTools}+ apps React Native developers need to debug, test, and ship mobile apps — curated tools for iOS, Android & Bluetooth testing.`}
+      ogImageTitle="React Native Developer Tools"
+      ogImageAlt="React Native Developer Tools — weshipit.today"
     >
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+        />
+      </Head>
       <div className="bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-400 py-12 md:py-20 mb-12">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <Hero
@@ -205,7 +234,9 @@ export default function DevToolsPage({
           {allFeatures.map((feature) => (
             <Button
               key={feature}
-              onClick={() => handleFeatureClick(feature)}
+              onClick={() => {
+                handleFeatureClick(feature);
+              }}
               variant={
                 activeFeature.toLowerCase() === feature.toLowerCase()
                   ? 'primary'
