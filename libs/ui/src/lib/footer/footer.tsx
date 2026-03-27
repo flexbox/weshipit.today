@@ -1,6 +1,7 @@
 import { Hyperlink } from '../hyperlink/hyperlink';
 import Link from 'next/link';
 import { JSX, SVGProps } from 'react';
+import { usePathname } from 'next/navigation';
 import LinkButton from '../button/link-button';
 
 const navigation = {
@@ -78,6 +79,7 @@ const navigation = {
   resources: [
     { href: '/react-native-resources', name: 'Start Learning' },
     { href: '/react-native-tools', name: 'React Native Tools' },
+    { href: '/devtools', name: 'React Native Dev Tools' },
     { href: '/react-native-starters', name: 'React Native Starters' },
     { href: '/audit', name: 'React Native Audit' },
     { href: '/french-react-native-apps', name: 'React Native Apps 🇫🇷 ' },
@@ -87,6 +89,9 @@ const navigation = {
 };
 
 function FooterLink(item: { name: string; href: string }) {
+  const pathname = usePathname();
+  const isActive = pathname === item.href;
+
   if (item.href.startsWith('https')) {
     return (
       <Hyperlink
@@ -102,7 +107,11 @@ function FooterLink(item: { name: string; href: string }) {
   return (
     <Link
       href={item.href}
-      className="text-base text-slate-400 hover:text-slate-900 dark:hover:text-white"
+      className={
+        isActive
+          ? 'text-base text-slate-900 dark:text-white'
+          : 'text-base text-slate-400 hover:text-slate-900 dark:hover:text-white'
+      }
     >
       {item.name}
     </Link>
