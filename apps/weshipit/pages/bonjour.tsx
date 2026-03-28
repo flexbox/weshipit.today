@@ -18,10 +18,8 @@ import { Layout } from '../components/layout';
 import { Customer, getVisibleClients } from './api/client';
 import { getAllFeedback, FeedbackPrismicDocument } from './api/feedback';
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import {
-  PhoneIcon,
   DevicePhoneMobileIcon,
   RocketLaunchIcon,
   UserIcon,
@@ -304,55 +302,59 @@ function NosRealisations({
   );
 }
 
-function createFaqData() {
-  const faqData = [
-    {
-      question:
-        'Combien de temps faut-il pour développer une application mobile ?',
-      answer:
-        "Le délai de développement dépend de la complexité du projet. Une application simple peut être développée en 2-3 mois, tandis qu'une application plus complexe peut prendre 4-6 mois. Nous travaillons en cycles courts pour vous livrer des versions fonctionnelles rapidement.",
-    },
-    {
-      question:
-        'Pourquoi choisir React Native plutôt que le développement natif ?',
-      answer:
-        'React Native permet de développer une application qui fonctionne à la fois sur iOS et Android, tout en offrant des performances proches du natif. Cela réduit considérablement les coûts et les délais de développement, tout en maintenant une excellente expérience utilisateur.',
-    },
-    {
-      question: 'Comment assurez-vous la qualité de vos applications ?',
-      answer:
-        "Nous suivons un processus rigoureux de tests à chaque étape du développement. Cela inclut des tests unitaires, des tests d'intégration, et des tests utilisateurs réels. Nous utilisons également des outils de monitoring pour détecter et résoudre les problèmes rapidement.",
-    },
-    {
-      question: "Que se passe-t-il après le lancement de l'application ?",
-      answer:
-        "Nous proposons des services de maintenance et d'évolution pour garantir que votre application reste performante et à jour. Nous pouvons également vous aider à analyser les données d'utilisation pour optimiser l'expérience utilisateur et augmenter l'engagement.",
-    },
-  ];
-
-  return faqData.map((faq, index) => ({
-    id: `faq-${index}`,
-    data: {
-      question: [
-        {
-          type: 'heading2',
-          text: faq.question,
-          spans: [],
-        },
-      ] as any,
-      answer: [
-        {
-          type: 'paragraph',
-          text: faq.answer,
-          spans: [],
-        },
-      ] as any,
-    },
-  }));
-}
+const faqs = [
+  {
+    id: 'faq-fr-1',
+    question: 'Combien de temps avant de voir les premiers résultats ?',
+    answer:
+      'Vous recevez votre premier livrable en quelques jours, pas en quelques mois. On travaille en cycles courts : une tâche à la fois, livrée en production dès qu’elle est prête.',
+  },
+  {
+    id: 'faq-fr-2',
+    question:
+      'Pourquoi pas recruter un développeur React Native à plein temps ?',
+    answer:
+      'Un senior React Native coûte entre 60 000 € et 90 000 € par an, sans compter les charges, les avantages et les mois de recrutement. Notre abonnement vous donne accès à une équipe senior immédiatement, sans engagement long terme.',
+  },
+  {
+    id: 'faq-fr-3',
+    question: 'Est-ce qu’on peut mettre en pause le service ?',
+    answer:
+      'Oui. Vous n’avez pas toujours des tâches à nous confier. Mettez en pause votre abonnement et reprenez quand vous êtes prêt. Vous ne payez que pour ce dont vous avez besoin.',
+  },
+  {
+    id: 'faq-fr-4',
+    question: 'Avec qui allons-nous travailler concrètement ?',
+    answer:
+      'Directement avec David et Matthys, les deux développeurs seniors de l’équipe. Pas d’account managers, pas de junior qui découvre React Native sur votre projet.',
+  },
+  {
+    id: 'faq-fr-5',
+    question: 'Comment se passe la collaboration au quotidien ?',
+    answer:
+      'Vous ajoutez des tâches dans votre backlog GitHub, on les traite une par une. Vous êtes notifié sur Slack quand une pull request est prête pour review. Pas de réunions quotidiennes, pas de reporting interminable.',
+  },
+  {
+    id: 'faq-fr-6',
+    question: 'Peut-on voir du code avant de s’abonner ?',
+    answer:
+      'Bien sûr. Explorez notre travail open source sur GitHub. Vous verrez exactement comment on code, comment on documente et comment on collabore en équipe.',
+  },
+  {
+    id: 'faq-fr-7',
+    question: 'Quels types de tâches pouvez-vous traiter ?',
+    answer:
+      'Features, bugs, migrations de bibliothèques, audits de performance, refactoring, mise en place de CI/CD, soumission App Store… Si ça concerne votre application React Native, on s’en occupe.',
+  },
+  {
+    id: 'faq-fr-8',
+    question: 'Est-ce qu’il y a des remboursements ?',
+    answer:
+      'Non. La qualité de notre travail parle d’elle-même — c’est pourquoi nous ne proposons pas de remboursements. En revanche, vous pouvez annuler à tout moment.',
+  },
+];
 
 export default function BonjourPage({ clients, feedback }: BonjourPageProps) {
-  const faqs = createFaqData();
   const router = useRouter();
   const { name } = router.query;
 
@@ -360,12 +362,12 @@ export default function BonjourPage({ clients, feedback }: BonjourPageProps) {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: faqs.map((faq, index) => ({
+    mainEntity: faqs.map(({ question, answer }) => ({
       '@type': 'Question',
-      name: faq.data.question[0].text,
+      name: question,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: faq.data.answer[0].text,
+        text: answer,
       },
     })),
   };
@@ -451,27 +453,17 @@ export default function BonjourPage({ clients, feedback }: BonjourPageProps) {
           <div className="mx-auto max-w-7xl px-4 sm:px-6">
             <NosRealisations feedback={feedback} />
 
-            <section id="faq" className="my-0 py-8">
-              <div className="text-center max-w-3xl mx-auto mb-8">
-                <h2 className="text-base/7 font-semibold text-blue-600">FAQ</h2>
-                <Text
-                  variant="h2"
-                  as="h2"
-                  className="mb-4 text-slate-900 dark:text-white"
-                >
-                  Questions fréquentes
-                </Text>
-                <Text
-                  variant="p1"
-                  as="p"
-                  className="text-slate-600 dark:text-slate-400"
-                >
-                  Tout ce que vous devez savoir sur notre service de
-                  développement d’applications mobiles
-                </Text>
-              </div>
+            <section
+              id="faq"
+              className="my-0 py-8"
+              aria-labelledby="faq-fr-heading"
+            >
               <div className="max-w-4xl mx-auto">
-                <Faq faqs={faqs} title="Questions fréquentes" />
+                <Faq
+                  faqs={faqs}
+                  title="Questions fréquentes"
+                  headingId="faq-fr-heading"
+                />
               </div>
             </section>
           </div>
