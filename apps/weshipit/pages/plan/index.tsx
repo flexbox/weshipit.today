@@ -17,7 +17,14 @@ export async function getStaticProps() {
 
 export default function PlanPage({ content }: PlanPageProps) {
   return (
-    <Layout seoTitle={'Plan your week'} seoDescription={''} withHeader={true}>
+    <Layout
+      seoTitle={'Plan your week'}
+      seoDescription={
+        'Weekly sprint plan for the weshipit.today engineering team.'
+      }
+      noindex
+      withHeader={true}
+    >
       <div className="mx-auto max-w-4xl px-6 py-16">
         <Prose>
           <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>

@@ -8,12 +8,8 @@ module.exports = {
     policies: [
       {
         userAgent: '*',
-        allow: '/',
+        allow: ['/', '/api/og/'],
         disallow: ['/api/'],
-      },
-      {
-        userAgent: '*',
-        allow: '/api/og/',
       },
     ],
   },

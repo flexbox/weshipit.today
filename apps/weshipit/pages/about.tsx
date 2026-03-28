@@ -33,7 +33,7 @@ const links = [
 
 export const getStaticProps = (async (context) => {
   const { clients } = await getVisibleClients();
-  return { props: { clients } };
+  return { props: { clients }, revalidate: 86400 };
 }) satisfies GetStaticProps<{
   clients: Customer[];
 }>;
@@ -42,8 +42,9 @@ export default function AboutPage({ clients }) {
   const currentYear = new Date().getFullYear();
   return (
     <Layout
-      seoTitle="About"
-      seoDescription="Meet the React Native development agency behind weshipit.today — a remote team helping companies ship high-quality mobile apps faster."
+      seoTitle="About weshipit.today"
+      seoDescription="Meet the React Native development agency behind weshipit.today — David Leuliette and Matthys Ducroq, a remote team helping companies ship high-quality mobile apps faster."
+      ogImageTitle="Meet our React Native team"
       withHeader
       callToActionLink={{
         name: 'Star Us on GitHub',

@@ -1,4 +1,4 @@
-import { DefaultSeo } from 'next-seo';
+import { NextSeo } from 'next-seo';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
@@ -19,6 +19,8 @@ export interface NextHeadProps {
   noindex?: boolean;
 }
 
+const BASE_URL = 'https://weshipit.today';
+
 export function NextHead({
   ogImageTitle = 'React Native Development Agency',
   ogImageAlt,
@@ -28,28 +30,27 @@ export function NextHead({
   locale = 'en_US',
   noindex = false,
 }: NextHeadProps) {
-  const defaultSeoTitle = 'React Native Development Agency';
-  const defaultSeoDescription =
-    'Software development is a service, not a product. We offer a subscription-based service for React Native developers. One flat fee. Pause or cancel whenever.';
-
-  // Generate the full canonical URL based on current path (use pathname to exclude query params)
   const router = useRouter();
-  const baseUrl = 'https://weshipit.today';
   const path = router.pathname;
-  const canonicalUrl = `${baseUrl}${path === '/' ? '' : path}`;
+  const canonicalUrl = `${BASE_URL}${path === '/' ? '' : path}`;
 
-  const generateOgImageUrl = () => {
+  const generateOgImagePath = () => {
     if (ogImagePodcast) {
       const { title, guest, episode, type } = ogImagePodcast;
       return `/api/podcast-og?title=${encodeURIComponent(title)}&guest=${encodeURIComponent(guest)}&episode=${episode}&type=${type}`;
     }
-
     if (ogImageTitle?.startsWith('/api/') || ogImageTitle?.startsWith('http')) {
       return ogImageTitle;
     }
-
     return `/api/og?title=${encodeURI(ogImageTitle || '')}`;
   };
+
+  const ogImagePath = generateOgImagePath();
+  const ogImageUrl = ogImagePath.startsWith('http')
+    ? ogImagePath
+    : `${BASE_URL}${ogImagePath}`;
+
+  const imageAlt = ogImageAlt || 'Hire React Native Developers as a Service';
 
   return (
     <>
@@ -58,28 +59,35 @@ export function NextHead({
         name="viewport"
         content="width=device-width, initial-scale=1, viewport-fit=cover"
       />
-      <DefaultSeo
-        title={
-          `${seoTitle} — weshipit.today` ||
-          'React Native Development Agency - weshipit.today'
-        }
-        description={seoDescription || defaultSeoDescription}
+      <NextSeo
+        title={seoTitle}
+        description={seoDescription}
         canonical={canonicalUrl}
         noindex={noindex}
+        openGraph={{
+          title: seoTitle,
+          description: seoDescription,
+          url: canonicalUrl,
+          type: 'website',
+          locale,
+          siteName: 'weshipit.today',
+          images: [
+            {
+              url: ogImageUrl,
+              width: 1200,
+              height: 630,
+              alt: imageAlt,
+              type: 'image/png',
+            },
+          ],
+        }}
         twitter={{
           handle: '@flexbox_',
           site: '@flexbox_',
           cardType: 'summary_large_image',
-          // we don't use these, to avoid duplication because Twitter will read the og:title, og:image and og:description
-          // twitter:title,
-          // twitter:image
-          // twitter:description
         }}
         additionalLinkTags={[
-          {
-            href: '/favicon.ico',
-            rel: 'icon',
-          },
+          { href: '/favicon.ico', rel: 'icon' },
           {
             href: '/apple-touch-icon.png',
             rel: 'apple-touch-icon',
@@ -98,40 +106,15 @@ export function NextHead({
             type: 'image/png',
           },
         ]}
+        additionalMetaTags={[{ name: 'author', content: 'David Leuliette' }]}
       />
       <Head>
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#f3f4f6" />
-
         <meta name="msapplication-TileColor" content="#f3f4f6" />
         <meta name="theme-color" content="#f3f4f6" />
-
-        <meta
-          name="title"
-          property="og:title"
-          content={seoTitle || defaultSeoTitle}
-        />
-        <meta
-          property="og:description"
-          content={seoDescription || defaultSeoDescription}
-        />
-        <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:type" content="website" />
-        <meta
-          name="image" // this is for LinkedIn preview https://github.com/garmeeh/next-seo/issues/1311
-          property="og:image"
-          content={generateOgImageUrl()}
-        />
-        <meta property="og:image:type" content="image/png" />
-        <meta
-          property="og:image:alt"
-          content={ogImageAlt || 'Hire React Native Developers as a Service'}
-        />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:locale" content={locale} />
-        <meta property="og:site_name" content="weshipit.today" />
-        <meta name="author" content="David Leuliette" />
+        {/* LinkedIn og:image workaround — requires both name and property on the same tag */}
+        <meta name="image" property="og:image" content={ogImageUrl} />
       </Head>
     </>
   );

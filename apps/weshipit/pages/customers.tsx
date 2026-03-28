@@ -12,8 +12,8 @@ export default function CustomersPage({ clients }: CustomersPageProps) {
     <Layout
       withContainer
       withFooter
-      seoTitle="Customers"
-      seoDescription="Our clients are at the heart of everything we do. We are proud to have worked with a diverse range of businesses and organizations, helping them achieve their goals with our high-quality React Native development services. Visit our customer page to see a selection of our satisfied clients and learn more about the projects we have completed for them."
+      seoTitle="React Native Client Success Stories"
+      seoDescription="Companies that shipped faster with weshipit.today — see how we helped funded startups and scale-ups build, improve, and maintain their React Native apps."
       ogImageTitle="weshipit.today success stories"
       withHeader
       callToActionLink={{

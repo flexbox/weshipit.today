@@ -10,6 +10,7 @@ export default function NotFoundPage() {
       seoTitle="404 : Page not found"
       seoDescription="We are sorry but the page you are looking for does not exist."
       ogImageTitle="weshipit - 404"
+      noindex
     >
       <div className="m-auto mb-64 w-2/3 py-24">
         <Text variant="h2" as="h1" className="mb-12">
