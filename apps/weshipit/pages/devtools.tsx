@@ -2,11 +2,10 @@ import { AppBadge, Button, Card, Hero, TagList, Text } from '@weshipit/ui';
 import { Layout } from '../components/layout';
 import { InferGetStaticPropsType } from 'next/types';
 import { devtoolsFixture, DevTool } from '../fixtures/devtools.fixture';
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import Image from 'next/image';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { useSearchParams } from 'next/navigation';
 import round from 'lodash/round';
 
 type DevToolWithIcon = DevTool & { icon_url: string | null };
@@ -151,14 +150,8 @@ export default function DevToolsPage({
   itemListSchema,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const [activeFeature, setActiveFeature] = useState<string>('');
+  const activeFeature = (router.query.feature as string) ?? '';
   const numberOfTools = round(devtools.length, -1);
-
-  useEffect(() => {
-    const feature = searchParams?.get('feature') ?? '';
-    setActiveFeature(feature);
-  }, [searchParams]);
 
   const filteredDevtools = useMemo(() => {
     if (!activeFeature) return devtools;
