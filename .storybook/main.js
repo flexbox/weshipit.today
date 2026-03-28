@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   stories: [],
 
   addons: ['@storybook/addon-a11y', '@storybook/addon-docs'],

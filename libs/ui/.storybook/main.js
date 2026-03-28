@@ -1,6 +1,6 @@
-const rootMain = require('../../../.storybook/main');
+import rootMain from '../../../.storybook/main.js';
 
-module.exports = {
+export default {
   ...rootMain,
 
   addons: [
@@ -10,6 +10,5 @@ module.exports = {
     '@nx/react/plugins/storybook',
   ],
 
-  core: { ...rootMain.core, builder: 'webpack5' },
   stories: [...rootMain.stories, '../src/lib/**/*.stories.@(js|jsx|ts|tsx)'],
 };
