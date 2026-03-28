@@ -1,7 +1,6 @@
 import { ChevronRightIcon, XMarkIcon } from '@heroicons/react/20/solid';
-import { usePathname, useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { useCallback } from 'react';
 
 import { Text } from '../../text/text';
 import kebabCase from 'lodash/kebabCase';
@@ -9,20 +8,9 @@ import { types } from '../../tool-list/get-variant-from-type';
 import { Button } from '../../button/button';
 
 export function TypeFilter({ numberOfTools }: { numberOfTools: number }) {
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-  const canResetFilter = searchParams.has('type');
-  const selectedType = searchParams.get('type'); // Get the current type from the URL
-
-  const createQueryString = useCallback(
-    (name: string, value: string) => {
-      const params = new URLSearchParams(searchParams.toString());
-      params.set(name, value);
-
-      return params.toString();
-    },
-    [searchParams],
-  );
+  const router = useRouter();
+  const selectedType = router.query.type as string | undefined;
+  const canResetFilter = !!selectedType;
 
   return (
     <ul className="grid grid-flow-row gap-4">
@@ -42,12 +30,14 @@ export function TypeFilter({ numberOfTools }: { numberOfTools: number }) {
         </li>
       )}
       {types.map((type) => {
-        const isSelected = selectedType === type.name; // Check if this type is selected
+        const isSelected = selectedType === type.name;
         return (
           <li key={kebabCase(type.name)}>
-            <Link href={pathname + '?' + createQueryString('type', type.name)}>
+            <Link
+              href={`/react-native-tools?type=${encodeURIComponent(type.name)}`}
+            >
               <Button
-                variant={isSelected ? 'primary' : 'outline'} // Change variant if selected
+                variant={isSelected ? 'primary' : 'outline'}
                 className="flex w-full justify-between"
               >
                 {type.name}

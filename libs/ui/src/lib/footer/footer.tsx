@@ -1,7 +1,7 @@
 import { Hyperlink } from '../hyperlink/hyperlink';
 import Link from 'next/link';
 import { JSX, SVGProps } from 'react';
-import { usePathname } from 'next/navigation';
+import { useRouter } from 'next/router';
 import LinkButton from '../button/link-button';
 
 const navigation = {
@@ -89,7 +89,7 @@ const navigation = {
 };
 
 function FooterLink(item: { name: string; href: string }) {
-  const pathname = usePathname();
+  const { pathname } = useRouter();
   const isActive = pathname === item.href;
 
   if (item.href.startsWith('https')) {

@@ -53,10 +53,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
     name,
-    description: rawDesc.slice(0, 300) || undefined,
-    url: website_url || undefined,
+    description: rawDesc.slice(0, 300) || null,
+    url: website_url || null,
     applicationCategory: 'DeveloperApplication',
-    operatingSystem: platform?.join(', ') || undefined,
+    operatingSystem: platform?.join(', ') || null,
   };
 
   const breadcrumbSchema = {
