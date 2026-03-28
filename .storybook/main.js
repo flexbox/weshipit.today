@@ -11,7 +11,7 @@ module.exports = {
   //   return config;
   // },
   framework: {
-    name: '@storybook/nextjs',
+    name: '@storybook/nextjs-vite',
     options: {},
   },
 
