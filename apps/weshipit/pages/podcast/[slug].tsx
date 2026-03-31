@@ -52,6 +52,7 @@ export const getStaticProps: GetStaticProps<PodcastEpisodePageProps> = async ({
         previousEpisode: null,
         nextEpisode: null,
         hasTranscript: false,
+        articleContent: null,
       },
     };
   }
