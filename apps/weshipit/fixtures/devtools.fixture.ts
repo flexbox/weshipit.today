@@ -239,6 +239,19 @@ export const devtoolsFixture: DevTool[] = [
     platform: ['Android'],
   },
   {
+    id: 'devtools-12-testers',
+    name: '12 Testers - Testers Community',
+    slug: '12-testers',
+    description:
+      '12 Testers is a community platform for mobile app beta testing. Connect with testers, distribute builds, and collect feedback before your app goes live.',
+    description_success:
+      'Get real feedback from a community of testers before shipping your app to production.',
+    features: ['Beta testing', 'Distribution', 'Testing'],
+    android_url:
+      'https://play.google.com/store/apps/details?id=com.testerscommunity',
+    platform: ['Android'],
+  },
+  {
     id: 'devtools-github',
     name: 'GitHub',
     slug: 'github',
