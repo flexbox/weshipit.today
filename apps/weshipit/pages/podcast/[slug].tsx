@@ -16,12 +16,15 @@ import fs from 'fs';
 import path from 'path';
 import { ChevronLeftIcon } from '@heroicons/react/20/solid';
 import { linksApi } from '../api/links';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 interface PodcastEpisodePageProps {
   episode: (typeof podcastEpisodes)[0] | null;
   previousEpisode: (typeof podcastEpisodes)[0] | null;
   nextEpisode: (typeof podcastEpisodes)[0] | null;
   hasTranscript: boolean;
+  articleContent: string | null;
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -68,12 +71,22 @@ export const getStaticProps: GetStaticProps<PodcastEpisodePageProps> = async ({
   );
   const hasTranscript = fs.existsSync(transcriptPath);
 
+  const articlePath = path.join(
+    process.cwd(),
+    'content/podcast-articles',
+    `${slug}.md`,
+  );
+  const articleContent = fs.existsSync(articlePath)
+    ? fs.readFileSync(articlePath, 'utf8')
+    : null;
+
   return {
     props: {
       episode,
       previousEpisode,
       nextEpisode,
       hasTranscript,
+      articleContent,
     },
   };
 };
@@ -83,6 +96,7 @@ export default function PodcastEpisodePage({
   previousEpisode,
   nextEpisode,
   hasTranscript,
+  articleContent,
 }: PodcastEpisodePageProps) {
   const contentRef = useRef<HTMLDivElement>(null);
 
@@ -248,8 +262,19 @@ export default function PodcastEpisodePage({
                   <div
                     ref={contentRef}
                     className="text-slate-700 dark:text-slate-200 leading-relaxed prose prose-slate dark:prose-invert max-w-none prose-a:no-underline prose-a:text-blue-600 hover:prose-a:text-blue-700 dark:prose-a:text-blue-400 dark:hover:prose-a:text-blue-300"
-                    dangerouslySetInnerHTML={{ __html: episode.description }}
-                  />
+                  >
+                    {articleContent ? (
+                      <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                        {articleContent}
+                      </ReactMarkdown>
+                    ) : (
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: episode.description,
+                        }}
+                      />
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
