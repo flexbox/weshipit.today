@@ -1,20 +1,19 @@
 import {
-  Button,
   Card,
-  FadeIn,
-  Hero,
   Prose,
   Text,
   Avatar,
   Hyperlink,
+  StatisticsGrid,
+  FeatureGrid,
+  FadeIn,
+  Hero,
+  Button,
   Section,
   ClientsListHomepage,
   Faq,
-  StatisticsGrid,
-  FeatureGrid,
 } from '@weshipit/ui';
-import { linksApi } from './api/links';
-import { Layout } from '../components/layout';
+
 import { Customer, getVisibleClients } from './api/client';
 import { getAllFeedback, FeedbackPrismicDocument } from './api/feedback';
 import Image from 'next/image';
@@ -31,6 +30,8 @@ import Head from 'next/head';
 import { PrismicRichText, PrismicText } from '@prismicio/react';
 import { PrismicNextImage } from '@prismicio/next';
 import { useRouter } from 'next/router';
+import { Layout } from '../components/layout';
+import { linksApi } from './api/links';
 
 interface BonjourPageProps {
   clients: Customer[];
@@ -73,12 +74,13 @@ function ProblemAgitation() {
         </Hyperlink>{' '}
         avec {yearsOfExperience}+ années d'
         <strong>expérience ciblée en React Native</strong>. Avec mon bras droit
-        Matthys, nous transformons les applications en difficulté en expériences
-        qui convertissent les utilisateurs et se démarquent sur le marché.
+        Matthys, notre <strong>agence web React Native</strong> transforme les
+        applications en difficulté en expériences qui convertissent les
+        utilisateurs et se démarquent sur le marché.
       </p>
       <p>
-        Contrairement aux contrats de longue durée qui vous lient pendant des
-        mois et nécessitent un processus administratif en six étapes,{' '}
+        Contrairement aux agences web traditionnelles avec des contrats de
+        longue durée qui vous lient pendant des mois,{' '}
         <strong>notre service est disponible quand vous en avez besoin</strong>.
         Vous avez la liberté de mettre en pause ou d'annuler à tout moment et de
         redémarrer quand cela vous convient.
@@ -202,10 +204,13 @@ function NotreSolution() {
   return (
     <div className="mx-auto flex flex-col gap-4 mt-12">
       <Prose size="xl" className="mx-auto">
-        <h2>Notre approche : des applications qui convertissent</h2>
+        <h2>
+          Notre agence web React Native : des applications qui convertissent
+        </h2>
         <p>
-          Chez weshipit.today, nous développons des applications React Native
-          qui respectent les trois piliers essentiels du succès mobile :
+          Chez weshipit.today, agence web spécialisée React Native, nous
+          développons des applications qui respectent les trois piliers
+          essentiels du succès mobile :
         </p>
 
         <ol className="flex flex-col mx-auto max-w-lg">
@@ -227,8 +232,8 @@ function NotreSolution() {
         </ol>
 
         <p>
-          Notre équipe d’experts React Native vous accompagne de la conception à
-          la publication sur les stores, en garantissant une qualité qui place
+          Notre agence web React Native vous accompagne de la conception à la
+          publication sur les stores, en garantissant une qualité qui place
           votre application dans le top 1% des applications mobiles.
         </p>
       </Prose>
@@ -352,6 +357,19 @@ const faqs = [
     answer:
       'Non. La qualité de notre travail parle d’elle-même — c’est pourquoi nous ne proposons pas de remboursements. En revanche, vous pouvez annuler à tout moment.',
   },
+  {
+    id: 'faq-fr-9',
+    question:
+      'Pourquoi choisir une agence web React Native plutôt qu’une agence mobile classique ?',
+    answer:
+      'Une agence web React Native comme weshipit.today développe une seule base de code qui fonctionne sur iOS et Android, ce qui réduit les coûts de 40 à 60 % par rapport à deux applications natives séparées. React Native permet aussi de partager la logique avec une application web, ce qui accélère encore les développements futurs.',
+  },
+  {
+    id: 'faq-fr-10',
+    question: 'Qu’est-ce qu’une agence web React Native ?',
+    answer:
+      'Une agence web React Native est une agence spécialisée dans le développement d’applications mobiles cross-platform avec le framework React Native de Meta. Elle maîtrise à la fois le développement iOS, Android et web avec une seule équipe, ce qui la distingue des agences mobiles natives ou des agences web généralistes.',
+  },
 ];
 
 export default function BonjourPage({ clients, feedback }: BonjourPageProps) {
@@ -359,7 +377,7 @@ export default function BonjourPage({ clients, feedback }: BonjourPageProps) {
   const { name } = router.query;
 
   /** @type {import('schema-dts').FAQPage} */
-  const schema = {
+  const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: faqs.map(({ question, answer }) => ({
@@ -372,9 +390,52 @@ export default function BonjourPage({ clients, feedback }: BonjourPageProps) {
     })),
   };
 
+  const professionalServiceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    name: 'weshipit.today — Agence Web React Native',
+    description:
+      'Agence web spécialisée dans le développement d’applications mobiles React Native pour iOS et Android. Experts React Native depuis 2016.',
+    url: 'https://weshipit.today/bonjour',
+    foundingDate: '2016',
+    knowsAbout: [
+      'React Native',
+      'iOS',
+      'Android',
+      'applications mobiles',
+      'développement cross-platform',
+    ],
+    serviceType: 'Développement d’applications mobiles React Native',
+    areaServed: { '@type': 'Country', name: 'France' },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Services de développement React Native',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Développement application React Native',
+            description:
+              'Création d’applications iOS et Android avec React Native',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Audit et performance React Native',
+            description:
+              'Audit de performance et optimisation d’applications React Native existantes',
+          },
+        },
+      ],
+    },
+  };
+
   const heroTitle = name
-    ? `Bonjour ${name}, L’ère mobile est là. Voulez-vous commencer ?`
-    : 'L’ère mobile est là. Voulez-vous commencer ?';
+    ? `Bonjour ${name} — votre agence web React Native est là`
+    : 'Agence web React Native — des applications qui convertissent';
 
   return (
     <>
@@ -392,12 +453,18 @@ export default function BonjourPage({ clients, feedback }: BonjourPageProps) {
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(professionalServiceSchema),
+          }}
         />
       </Head>
       <Layout
-        seoTitle="Applications Mobiles React Native pour Votre Entreprise | weshipit.today"
-        seoDescription="Dans un monde avec 4,88 milliards d’utilisateurs de smartphones, ne perdez pas vos clients potentiels. Créez une application mobile performante avec notre expertise React Native."
+        seoTitle="Agence Web React Native | Développement Applications iOS & Android | weshipit.today"
+        seoDescription="Agence web spécialisée React Native depuis 2016. Nous développons des applications iOS et Android performantes pour votre entreprise. David & Matthys, seniors React Native, livrables en quelques jours."
         locale="fr_FR"
         withHeader
         withFooter
@@ -412,7 +479,7 @@ export default function BonjourPage({ clients, feedback }: BonjourPageProps) {
             <div className="mx-auto max-w-4xl">
               <Hero
                 title={heroTitle}
-                description="Dans un monde dominé par les smartphones, la qualité de votre application mobile détermine le succès de votre entreprise."
+                description="Votre agence web React Native depuis 2016. Nous livrons des applications iOS et Android performantes — en jours, pas en mois."
               />
             </div>
           </FadeIn>
