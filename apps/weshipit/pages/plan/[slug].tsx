@@ -2,10 +2,10 @@ import { Prose } from '@weshipit/ui';
 import { Layout } from 'apps/weshipit/components/layout';
 import fs from 'fs';
 import path from 'path';
-import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { GetStaticPaths, GetStaticProps } from 'next';
+import { PlanSidebar } from 'apps/weshipit/components/plan-sidebar';
 
 interface Issue {
   slug: string;
@@ -78,31 +78,7 @@ export default function PlanSlugPage({
     >
       <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="flex gap-12">
-          {/* Sidebar */}
-          <aside className="hidden md:block w-56 shrink-0">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
-              Previous issues
-            </p>
-            <nav className="flex flex-col gap-1">
-              {issues.map((issue) => {
-                const isActive =
-                  issue.slug.toLowerCase() === currentSlug.toLowerCase();
-                return (
-                  <Link
-                    key={issue.slug}
-                    href={`/plan/${issue.slug}`}
-                    className={
-                      isActive
-                        ? 'rounded-md px-3 py-2 text-sm font-medium bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-white'
-                        : 'rounded-md px-3 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800/50 dark:hover:text-white'
-                    }
-                  >
-                    {issue.slug.toUpperCase()}
-                  </Link>
-                );
-              })}
-            </nav>
-          </aside>
+          <PlanSidebar issues={issues} currentSlug={currentSlug} />
 
           {/* Content */}
           <main className="min-w-0 flex-1">
