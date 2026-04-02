@@ -1,4 +1,4 @@
-name: Generate Newsletter from Issue
+name: Generate Plan from Issue
 
 on:
   issues:
@@ -10,8 +10,8 @@ permissions:
   issues: write
 
 jobs:
-  create-newsletter-pr:
-    if: contains(github.event.issue.labels.*.name, 'newsletter')
+  create-plan-pr:
+    if: contains(github.event.issue.labels.*.name, 'plan')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -38,10 +38,10 @@ jobs:
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "feat: add newsletter ${{ steps.week.outputs.filename }}"
-          title: "Newsletter ${{ steps.week.outputs.filename }}"
+          commit-message: "feat: add plan ${{ steps.week.outputs.filename }}"
+          title: "Plan ${{ steps.week.outputs.filename }}"
           body: "Automated PR created from issue #${{ github.event.issue.number }}\n\nCloses #${{ github.event.issue.number }}"
-          branch: "newsletter/${{ steps.week.outputs.filename }}"
+          branch: "plan/${{ steps.week.outputs.filename }}"
           delete-branch: true
 
       - name: Enable Auto-Merge
