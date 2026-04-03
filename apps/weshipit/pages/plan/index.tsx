@@ -14,11 +14,17 @@ interface Issue {
 interface PlanPageProps {
   content: string;
   issues: Issue[];
+  description: string;
 }
 
 function extractTitle(content: string): string {
   const firstLine = content.split('\n')[0];
   return firstLine.replace(/^#+\s*/, '').trim();
+}
+
+function extractDescription(content: string): string {
+  const blockquote = content.split('\n').find((line) => line.startsWith('>'));
+  return blockquote ? blockquote.replace(/^>\s*/, '').trim() : '';
 }
 
 export async function getStaticProps() {
@@ -36,18 +42,20 @@ export async function getStaticProps() {
 
   const latestFile = files[0];
   const content = fs.readFileSync(path.join(planDir, latestFile), 'utf8');
+  const description = extractDescription(content);
 
-  return { props: { content, issues } };
+  return { props: { content, issues, description } };
 }
 
-export default function PlanPage({ content, issues }: PlanPageProps) {
+export default function PlanPage({
+  content,
+  issues,
+  description,
+}: PlanPageProps) {
   return (
     <Layout
       seoTitle={'Plan your week'}
-      seoDescription={
-        'Weekly sprint plan for the weshipit.today engineering team.'
-      }
-      noindex
+      seoDescription={description}
       withHeader={true}
     >
       <div className="mx-auto max-w-7xl px-6 py-16">

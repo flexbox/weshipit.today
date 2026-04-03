@@ -16,11 +16,17 @@ interface PlanSlugPageProps {
   issues: Issue[];
   content: string;
   currentSlug: string;
+  description: string;
 }
 
 function extractTitle(content: string): string {
   const firstLine = content.split('\n')[0];
   return firstLine.replace(/^#+\s*/, '').trim();
+}
+
+function extractDescription(content: string): string {
+  const blockquote = content.split('\n').find((line) => line.startsWith('>'));
+  return blockquote ? blockquote.replace(/^>\s*/, '').trim() : '';
 }
 
 function readIssues(planDir: string): { files: string[]; issues: Issue[] } {
@@ -62,18 +68,20 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const content = fs.readFileSync(path.join(planDir, match), 'utf8');
 
-  return { props: { issues, content, currentSlug: slug } };
+  const description = extractDescription(content);
+  return { props: { issues, content, currentSlug: slug, description } };
 };
 
 export default function PlanSlugPage({
   issues,
   content,
   currentSlug,
+  description,
 }: PlanSlugPageProps) {
   return (
     <Layout
       seoTitle={`Plan ${currentSlug.toUpperCase()}`}
-      seoDescription=""
+      seoDescription={description}
       withHeader={true}
     >
       <div className="mx-auto max-w-7xl px-6 py-16">
