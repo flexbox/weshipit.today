@@ -19,25 +19,31 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Create Markdown file
+      - name: Extract week identifier and create Markdown file
+        id: plan
         env:
           ISSUE_BODY: ${{ github.event.issue.body }}
           ISSUE_TITLE: ${{ github.event.issue.title }}
         run: |
+          WEEK_ID=$(echo "$ISSUE_TITLE" | grep -oE '[0-9]{4}-[Ww][0-9]+')
+          if [ -z "$WEEK_ID" ]; then
+            echo "No YYYY-W## pattern found in issue title: $ISSUE_TITLE"
+            exit 1
+          fi
+          echo "week_id=$WEEK_ID" >> $GITHUB_OUTPUT
           DIRECTORY="apps/weshipit/pages/plan"
-          FILEPATH="$DIRECTORY/${ISSUE_TITLE}.md"
           mkdir -p "$DIRECTORY"
-          printf '%s' "$ISSUE_BODY" > "$FILEPATH"
+          printf '%s' "$ISSUE_BODY" > "$DIRECTORY/${WEEK_ID}.md"
 
       - name: Create Pull Request
         id: cpr
         uses: peter-evans/create-pull-request@v7
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "feat: 🎸 add plan ${{ github.event.issue.title }}"
-          title: "Plan ${{ github.event.issue.title }}"
+          commit-message: "feat: 🎸 add plan ${{ steps.plan.outputs.week_id }}"
+          title: "Plan ${{ steps.plan.outputs.week_id }}"
           body: "Automated PR created from issue #${{ github.event.issue.number }}\n\nCloses #${{ github.event.issue.number }}"
-          branch: "plan/${{ github.event.issue.title }}"
+          branch: "plan/${{ steps.plan.outputs.week_id }}"
           delete-branch: true
 
       - name: Enable Auto-Merge
