@@ -17,19 +17,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Derive week filename
-        id: week
-        run: |
-          YEAR=$(date +'%Y')
-          WEEK=$(date +'%-V')
-          echo "filename=${YEAR}-W${WEEK}" >> $GITHUB_OUTPUT
-
       - name: Create Markdown file
         env:
           ISSUE_BODY: ${{ github.event.issue.body }}
+          ISSUE_TITLE: ${{ github.event.issue.title }}
         run: |
           DIRECTORY="apps/weshipit/pages/plan"
-          FILEPATH="$DIRECTORY/${{ steps.week.outputs.filename }}.md"
+          FILEPATH="$DIRECTORY/${ISSUE_TITLE}.md"
           mkdir -p "$DIRECTORY"
           printf '%s' "$ISSUE_BODY" > "$FILEPATH"
 
@@ -38,10 +32,10 @@ jobs:
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "feat: add plan ${{ steps.week.outputs.filename }}"
-          title: "Plan ${{ steps.week.outputs.filename }}"
+          commit-message: "feat: 🎸 add plan ${{ github.event.issue.title }}"
+          title: "Plan ${{ github.event.issue.title }}"
           body: "Automated PR created from issue #${{ github.event.issue.number }}\n\nCloses #${{ github.event.issue.number }}"
-          branch: "plan/${{ steps.week.outputs.filename }}"
+          branch: "plan/${{ github.event.issue.title }}"
           delete-branch: true
 
       - name: Enable Auto-Merge
