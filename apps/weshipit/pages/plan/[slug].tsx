@@ -78,7 +78,7 @@ export default function PlanSlugPage({
     >
       <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="flex gap-12">
-          <PlanSidebar issues={issues} currentSlug={currentSlug} />
+          <PlanSidebar issues={issues} />
 
           {/* Content */}
           <main className="min-w-0 flex-1">

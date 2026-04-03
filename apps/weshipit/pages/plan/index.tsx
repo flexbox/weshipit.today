@@ -14,7 +14,6 @@ interface Issue {
 interface PlanPageProps {
   content: string;
   issues: Issue[];
-  currentSlug: string;
 }
 
 function extractTitle(content: string): string {
@@ -37,16 +36,11 @@ export async function getStaticProps() {
 
   const latestFile = files[0];
   const content = fs.readFileSync(path.join(planDir, latestFile), 'utf8');
-  const currentSlug = latestFile.replace('.md', '');
 
-  return { props: { content, issues, currentSlug } };
+  return { props: { content, issues } };
 }
 
-export default function PlanPage({
-  content,
-  issues,
-  currentSlug,
-}: PlanPageProps) {
+export default function PlanPage({ content, issues }: PlanPageProps) {
   return (
     <Layout
       seoTitle={'Plan your week'}
@@ -58,7 +52,7 @@ export default function PlanPage({
     >
       <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="flex gap-12">
-          <PlanSidebar issues={issues} currentSlug={currentSlug} />
+          <PlanSidebar issues={issues} />
           <main className="min-w-0 flex-1">
             <Prose>
               <ReactMarkdown remarkPlugins={[remarkGfm]}>
