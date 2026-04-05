@@ -686,10 +686,10 @@ export function Pricing({ ctaLink }: { ctaLink: string }) {
     <div className="py-24 sm:py-32" id="pricing">
       <div className="mx-auto max-w-8xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          <h2 className="text-base/7 font-semibold text-blue-600">Pricing</h2>
-          <p className="mt-2 text-balance text-5xl font-semibold tracking-tight text-gray-900 dark:text-white sm:text-6xl">
+          <p className="text-base/7 font-semibold text-blue-600">Pricing</p>
+          <h2 className="mt-2 text-balance text-5xl font-semibold tracking-tight text-gray-900 dark:text-white sm:text-6xl">
             Pricing that scales with you
-          </p>
+          </h2>
         </div>
         <p className="mx-auto mt-6 max-w-2xl text-pretty text-center text-lg font-medium text-gray-600 sm:text-xl/8">
           Choose your entry point, upgrade anytime. No contracts, no BS.

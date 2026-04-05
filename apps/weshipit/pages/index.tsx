@@ -263,10 +263,10 @@ export function TeamSection() {
     <section className="py-24 px-4 bg-white dark:bg-slate-900">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-base/7 font-semibold text-blue-600">
+          <p className="text-base/7 font-semibold text-blue-600">
             Trusted Experts
-          </h2>
-          <Text variant="h1" as="p">
+          </p>
+          <Text variant="h1" as="h2">
             Meet your React Native team
           </Text>
           <Text
@@ -384,7 +384,7 @@ function HowDoesItWorks({ steps }: { steps: Steps[] }) {
 
 export default function IndexPage({ clients, steps }: IndexPageProps) {
   /** @type {import('schema-dts').FAQPage} */
-  const schema = {
+  const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: faqs.map(({ question, answer }) => ({
@@ -397,17 +397,71 @@ export default function IndexPage({ clients, steps }: IndexPageProps) {
     })),
   };
 
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'weshipit.today',
+    url: 'https://weshipit.today',
+    foundingDate: '2016',
+    description:
+      'Subscription-based React Native development agency. We build and maintain iOS and Android apps for startups and scale-ups.',
+    knowsAbout: [
+      'React Native',
+      'iOS',
+      'Android',
+      'Expo',
+      'Mobile Development',
+    ],
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://weshipit.today',
+      },
+    ],
+  };
+
   return (
     <>
       <Head>
+        <link rel="alternate" hrefLang="en" href="https://weshipit.today/" />
+        <link
+          rel="alternate"
+          hrefLang="fr"
+          href="https://weshipit.today/bonjour"
+        />
+        <link
+          rel="alternate"
+          hrefLang="x-default"
+          href="https://weshipit.today/"
+        />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(breadcrumbSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       </Head>
       <Layout
         seoTitle="Hire React Native Developers as a Service"
-        seoDescription="Software development is a service, not a product. We offer a subscription-based service for React Native developers. One flat fee. Zero billable hours. Pause or cancel whenever."
+        seoDescription="Subscription-based React Native developers. One flat fee, zero billable hours. Pause or cancel anytime."
+        ogImageAlt="weshipit.today — Hire React Native Developers as a Service"
         withHeader
         navigation={[
           { name: 'Services', href: '#services' },
