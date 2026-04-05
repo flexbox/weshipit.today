@@ -249,9 +249,9 @@ function NosRealisations({
   return (
     <section id="testimonials" className="my-0 py-20">
       <div className="text-center max-w-3xl mx-auto mb-16">
-        <h2 className="text-base/7 font-semibold text-blue-600">
+        <p className="text-base/7 font-semibold text-blue-600">
           Témoignages clients
-        </h2>
+        </p>
         <Text
           variant="h2"
           as="h2"
@@ -390,6 +390,25 @@ export default function BonjourPage({ clients, feedback }: BonjourPageProps) {
     })),
   };
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Accueil',
+        item: 'https://weshipit.today',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Agence React Native',
+        item: 'https://weshipit.today/bonjour',
+      },
+    ],
+  };
+
   const professionalServiceSchema = {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
@@ -457,6 +476,12 @@ export default function BonjourPage({ clients, feedback }: BonjourPageProps) {
         />
         <script
           type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(breadcrumbSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
         <script
@@ -469,6 +494,8 @@ export default function BonjourPage({ clients, feedback }: BonjourPageProps) {
       <Layout
         seoTitle="Votre Application Mobile iOS & Android en 14 Jours | weshipit.today"
         seoDescription="Transformez votre idée en application iOS et Android performante en 14 jours. Experts React Native depuis 2016, nous livrons des apps qui convertissent — sans exploser votre budget."
+        ogImageTitle="Votre application mobile iOS & Android en 14 jours"
+        ogImageAlt="weshipit.today — Agence web spécialisée React Native pour iOS et Android"
         locale="fr_FR"
         withHeader
         withFooter
