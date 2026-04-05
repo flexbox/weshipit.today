@@ -434,8 +434,12 @@ export default function BonjourPage({ clients, feedback }: BonjourPageProps) {
   };
 
   const heroTitle = name
-    ? `Bonjour ${name} — votre agence web React Native est là`
-    : 'Agence web React Native — des applications qui convertissent';
+    ? `${name}, transformez votre idée en application iOS & Android en 14 jours`
+    : 'Transformez votre idée en application iOS & Android en 14 jours';
+
+  const heroDescription = name
+    ? `${name}, 99% des apps échouent à cause d'un mauvais design. Nos experts React Native livrent votre application — en jours, pas en mois.`
+    : '99% des apps échouent à cause d’un mauvais design. Nos experts React Native livrent votre application — en jours, pas en mois.';
 
   return (
     <>
@@ -463,8 +467,8 @@ export default function BonjourPage({ clients, feedback }: BonjourPageProps) {
         />
       </Head>
       <Layout
-        seoTitle="Agence Web React Native | Développement Applications iOS & Android | weshipit.today"
-        seoDescription="Agence web spécialisée React Native depuis 2016. Nous développons des applications iOS et Android performantes pour votre entreprise. David & Matthys, seniors React Native, livrables en quelques jours."
+        seoTitle="Votre Application Mobile iOS & Android en 14 Jours | weshipit.today"
+        seoDescription="Transformez votre idée en application iOS et Android performante en 14 jours. Experts React Native depuis 2016, nous livrons des apps qui convertissent — sans exploser votre budget."
         locale="fr_FR"
         withHeader
         withFooter
@@ -477,10 +481,7 @@ export default function BonjourPage({ clients, feedback }: BonjourPageProps) {
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <FadeIn>
             <div className="mx-auto max-w-4xl">
-              <Hero
-                title={heroTitle}
-                description="Votre agence web React Native depuis 2016. Nous livrons des applications iOS et Android performantes — en jours, pas en mois."
-              />
+              <Hero title={heroTitle} description={heroDescription} />
             </div>
           </FadeIn>
 
