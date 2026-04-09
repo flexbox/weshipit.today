@@ -427,6 +427,46 @@ export default function IndexPage({ clients, steps }: IndexPageProps) {
     ],
   };
 
+  const webSiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'weshipit.today',
+    url: 'https://weshipit.today',
+    description:
+      'Subscription-based React Native developers. One flat fee, zero billable hours. Pause or cancel anytime.',
+  };
+
+  const siteNavigationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: [
+      {
+        '@type': 'SiteNavigationElement',
+        position: 1,
+        name: 'Customers',
+        url: 'https://weshipit.today/customers',
+      },
+      {
+        '@type': 'SiteNavigationElement',
+        position: 2,
+        name: 'About',
+        url: 'https://weshipit.today/about',
+      },
+      {
+        '@type': 'SiteNavigationElement',
+        position: 3,
+        name: 'Podcast',
+        url: 'https://weshipit.today/podcast',
+      },
+      {
+        '@type': 'SiteNavigationElement',
+        position: 4,
+        name: 'React Native Audit',
+        url: 'https://weshipit.today/audit',
+      },
+    ],
+  };
+
   return (
     <>
       <Head>
@@ -456,6 +496,18 @@ export default function IndexPage({ clients, steps }: IndexPageProps) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(webSiteSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(siteNavigationSchema),
+          }}
         />
       </Head>
       <Layout
