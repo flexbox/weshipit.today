@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const planDir = path.join(process.cwd(), 'pages/plan');
   const files = fs
     .readdirSync(planDir)
