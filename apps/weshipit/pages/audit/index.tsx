@@ -10,6 +10,8 @@ import {
   Text,
   ClientProps,
   Section as SectionDivider,
+  Faq,
+  FaqProps,
 } from '@weshipit/ui';
 import { linksApi } from '../api/links';
 
@@ -237,6 +239,44 @@ function Benefits() {
   );
 }
 
+const faqs: FaqProps[] = [
+  {
+    id: 'audit-faq-1',
+    question: 'How long does the audit take?',
+    answer:
+      '2 weeks from kickoff to delivery. Phase 1 (investigation) = 3 days. Phase 2 (execution) = 7-10 days.',
+  },
+  {
+    id: 'audit-faq-2',
+    question: 'Do we need to pause development during the audit?',
+    answer:
+      'No. We work in parallel with your team. You keep shipping features while we audit/upgrade.',
+  },
+  {
+    id: 'audit-faq-3',
+    question: "What if you find issues that can't be fixed in 2 weeks?",
+    answer:
+      'We prioritize by ROI. Critical fixes go first. Anything beyond 2 weeks gets added to a long-term roadmap with effort estimates.',
+  },
+  {
+    id: 'audit-faq-4',
+    question: 'Can we execute the roadmap ourselves or do we need you?',
+    answer:
+      'Your choice. We deliver a complete roadmap you can execute internally, or you can upgrade to Essential/Growth for ongoing support.',
+  },
+  {
+    id: 'audit-faq-5',
+    question: 'What React Native versions do you support?',
+    answer: "We've upgraded apps from RN 0.59 to 0.76+. No version is too old.",
+  },
+  {
+    id: 'audit-faq-6',
+    question: 'Do you guarantee the upgrade will work?',
+    answer:
+      'Yes. We run full QA testing before release. If something breaks post-launch, we fix it (included in the 2 follow-up calls).',
+  },
+];
+
 export function Audit({ clients }: AuditProps) {
   return (
     <Layout
@@ -297,6 +337,11 @@ export function Audit({ clients }: AuditProps) {
           your team in releasing and iterating more quickly.
         </p>
       </Prose>
+      <Faq
+        faqs={faqs}
+        headingId="faq-heading"
+        title="Common questions about our audit"
+      />
       <div className="m-auto max-w-4xl py-8 lg:py-24">
         <Card
           size="xl"
