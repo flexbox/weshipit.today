@@ -252,6 +252,22 @@ export const devtoolsFixture: DevTool[] = [
     platform: ['Android'],
   },
   {
+    id: 'devtools-pulsar',
+    name: 'Pulsar',
+    slug: 'pulsar',
+    description:
+      'Pulsar is a haptics design tool by Software Mansion that lets you create, preview, and fine-tune haptic feedback patterns on your device. Design custom haptic presets and export them for use in your apps.',
+    description_success:
+      'Design and test haptic patterns directly on your device before integrating them into your React Native app.',
+    features: ['Haptics', 'Design'],
+    ios_url:
+      'https://apps.apple.com/es/app/haptics-presets-pulsar/id6761362104?l=en-GB&platform=vision',
+    android_url:
+      'https://play.google.com/store/apps/details?id=com.swmansion.pulsar.app',
+    platform: ['iOS', 'Android'],
+    website_url: 'https://pulsar.swmansion.com/',
+  },
+  {
     id: 'devtools-github',
     name: 'GitHub',
     slug: 'github',
