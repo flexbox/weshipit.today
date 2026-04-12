@@ -1,0 +1,1138 @@
+David Leuliette (00:02.234)
+Carl, Godot, est-ce qu'on est tous condamnés à avoir de l'AI Slop par des pull requests qui sont donnés sur les projets open source et qui font perdre du temps au mainteneur ? Ne faites pas ça chez vous s'il plaît. Vous avez su... T'as rien tu l'as fait ? Mais Ludwig bordel ! Ça va pas du... C'est ça l'intro ! Nous on commence sharp ! Est-ce que t'as suivi l'actu Thibaut avec Godot justement
+
+Ludwig (00:18.317)
+J'avoue j'ai pécé.
+
+Thibault Lenclos (00:22.488)
+C'est ça l'intro ?
+
+Thibault Lenclos (00:27.613)
+ouais !
+
+David Leuliette (00:30.643)
+de la EISO parce qu'il le mainteneur de Curl qui a dit ouais maintenant je passe plus de temps à un review des pull requests générés par EI je le vois, faire des pull requests et du coup je vais arrêter mon programme de bug bounty parce qu'en fait c'est les gens qui essayent de grappiller de l'argent comme ça au secours
+
+Thibault Lenclos (00:55.182)
+...
+
+David Leuliette (00:55.219)
+Bonjour et bienvenue, êtes sur le Cross Platform Show, l'émission dédiée au développement d'applications mobiles avec Rack Native. Je suis David, développeur chez WishyPit Today. Nous sommes en janvier 2026 et on a des nouveaux slots chez WishyPit pour l'année à venir Q1. Donc n'hésitez pas à faire un tour sur le site web si vous voulez bosser avec moi et Mathis. Merci aux auditeurs. Grâce à vous, ça génère des interactions Apple Podcasts et on remonte dans le classement. Force à vous.
+
+Aujourd'hui on a Ludwig et Thibaut. Ludwig qu'on ne présente plus, chroniqueur émérite de... Comment ça va Ludwig ?
+
+Ludwig (01:27.419)
+...
+
+Ludwig (01:32.089)
+Ça va, ça va, très bien. Bon début d'année et toi ?
+
+David Leuliette (01:34.899)
+Cool, parfait. Euh... Bonne année. On n'a pas souhaité la bonne année. Eh ouais, bonne année ! Eh Thibaut, comment ça va, ça va ?
+
+Ludwig (01:39.483)
+Bonne année, à vous !
+
+Thibault Lenclos (01:39.621)
+Bonne année à vous
+
+Thibault Lenclos (01:43.63)
+ça roule aussi, très bon début d'année. Je la pêche.
+
+David Leuliette (01:46.867)
+Sur quoi tu passes 80 % de ton temps en ce moment ?
+
+Thibault Lenclos (01:52.462)
+Je bosse. On va parler que du boulot.
+
+David Leuliette (01:54.387)
+Ça bosse !
+
+David Leuliette (02:00.418)
+Ouais, tu peux digresser, 80 % du temps j'ai pas dit, Techniquement, si tu fais que 20 % de boulot, c'est plutôt pas mal. En vrai.
+
+Thibault Lenclos (02:04.91)
+C'est vrai, c'est vrai. Il a pas que le boulot dans la vie. Je vais parler surtout du boulot. Je suis un des associés de ma boîte de 1er octet. On fait dans cette boîte beaucoup de réact et de réact native. J'ai des clients aussi. suis développeur au jour le jour. Je dirais que je fais justement 80 % de développement sur mon temps de travail.
+
+Mais il a quand même beaucoup de choses en plus qui sont de la gestion d'équipe, de la gestion commerciale, de la prospection. Je suis un peu un profil développeur hybride depuis que j'ai créé cette société-là. Ce qui me plaît, c'est super cool, il a un aspect très social que j'adore, un aspect un peu challenge, décrocher des contrats, décrocher du travail, faire bosser l'équipe.
+
+David Leuliette (02:59.57)
+T'as une équipe, est-ce que c'est pas que des agents qui ont été remplacés par l'IA ? Parce que moi j'en veux plus de LinkedIn, les gens disent le dev est mort tout ça. Moi je suis d'accord, ok on va dire maintenant, les développeurs sont morts ça n'existe plus, je suis d'accord. Mais trouvez-moi la prochaine profession qui va disparaître. Si ça peut être les comptables, ça serait super bien. Dites-moi quel service permet de remplacer la comptabilité par des agents.
+
+Thibault Lenclos (03:05.207)
+Et bien non pas du tout, mais c'est une...
+
+David Leuliette (03:27.388)
+Ouais non, c'est la blague entre nous. Moi tous les jours je vois genre les comptes... Le dernier post que j'ai vu c'est les développeurs frontaines des morts.
+
+Thibault Lenclos (03:35.79)
+Je suis vraiment pas trop d'accord sur tout ça. fait, déjà j'ai du mal avec les propos alarmistes.
+
+David Leuliette (03:42.194)
+Ouais, je suis webmaster depuis 2010 les amis. Ouais, webmaster ça marche.
+
+Thibault Lenclos (03:47.052)
+ouais, donc t'en fais !
+
+Non, j'ai plus un avis sur... Je me dis plus que c'est un outil comme un autre. Il y en a eu plein des outils qui ont apporté des révolutions à la fois tech et du grand public. Là, on a un cas qui est quand même assez particulier qui nous débranche un peu le cerveau. C'est plus cette révolution-là qui me perturbe. On tendance à prendre des raccourcis monumentaux et selon...
+
+David Leuliette (04:12.947)
+Ouais, je vois.
+
+Thibault Lenclos (04:18.738)
+apprécie vraiment ce que tu fais ou si ton salon c'était plus sur que de la prod, ben tu n'auras pas les mêmes avis. Mais pour moi ça reste un outil et les humains apprendront à s'en servir dans leur job ou dans leur prochain job s'ils disparaissent mais je ne pas aussi défaitiste quoi.
+
+Ludwig (04:35.139)
+Vous avez vu la dernière vidéo de Micode du coup ? Peut-être sur le sujet ?
+
+David Leuliette (04:35.175)
+Ouais, ouais.
+
+Non pas encore non euh...
+
+Thibault Lenclos (04:38.606)
+Oui, elle était passionnante d'ailleurs. Justement sur le raccourci, en plus j'ai beaucoup de profs dans mon réseau. C'était hyper intéressant. Ça parlait justement du parallèle... Ouais pardon, vas-y.
+
+Ludwig (04:48.507)
+Est-ce les développeurs vont finir par artroupier leur hippocampe et ne puissent souvenir de comment écrire du code ?
+
+David Leuliette (04:59.141)
+Bah on va voir la doc et puis c'est tout hein. Attends elle s'est connue... Moi je sais pas, je sais pas mec.
+
+Thibault Lenclos (04:59.522)
+Meilleur.
+
+Thibault Lenclos (05:03.615)
+Mais justement dans cette vidéo là il y avait un parallèle super intéressant avec l'éducation où les élèves avaient tendance à prendre des raccourcis monumentaux et donc ils passaient pas par la phase d'apprentissage comme on avait avant et il fait... c'était ça ouais et on retourne au crayon papier quoi.
+
+David Leuliette (05:16.744)
+oui, ok je vois, où tu faisais des lignes.
+
+Ludwig (05:24.571)
+et du coup, Micode s'apercevait dans tout ça, parce que c'est un constat qu'il a fait au sein de son équipe, il a forcé son stagiaire ou son alternant, je ne plus, à coder pendant trois mois sans agent IA, juste pour qu'il puisse vraiment avoir les fondations de ce qu'il faisait, de son travail au quotidien et du code et de comprendre, avant de déléguer complètement un agent.
+
+David Leuliette (05:41.947)
+Ouais, là, ici
+
+David Leuliette (05:47.422)
+avec les raccourcis clavier tout ça on connaît. Mathis, t'es dans le chat ? S'il écoute le chat c'est bon. La fête est finie, vais te passer NEOVIM. Tu vas installer NEOVIM et tu devras... ...apprendre à coder The Hard Way en commençant par les short codes de l'enfer. Moi je les connais. Cool cool. Mais... Thibaut, t'as fait quoi comme étude vite fait ?
+
+Thibault Lenclos (06:14.862)
+Alors j'ai fait un parcours assez classique je pense, en tout cas de l'époque où on avait des parcours informatiques donc c'était il a 15 ans. Waouh, ça fait vieux hein. Du coup c'était DUT SRC qui s'appelle maintenant MMI. Il est tellement répandu celui-là que je pense qu'il y a eu du monde qui passé dessus, qui était très généraliste mais je me suis bien amusé. Bon pas sur la partie dev parce que du coup j'avais quand même un gros bagage déjà quand je suis arrivé dedans.
+
+David Leuliette (06:26.291)
+Ouais.
+
+David Leuliette (06:30.329)
+je vois, je vois, ok. Moi j'étais...
+
+David Leuliette (06:36.924)
+C'est du informatique. Ouais, ouais, ok.
+
+Thibault Lenclos (06:45.166)
+et après j'ai continué sur l'ESGI, est une école d'informatique un généraliste à Paris. J'ai fait un cursus de 1 an en web et je me suis un peu ennuyé, donc je suis parti sur 2 années de développement mobile, j'ai fait du dev native.
+
+David Leuliette (06:54.739)
+Ok.
+
+David Leuliette (07:02.931)
+Ah ok donc c'est pour ça que... Ok donc on va en parler les origines et des clics. Parce que quand on a fait la préparation de l'émission, il y a eu plein de mots-clés. Donc il y a eu Titanium, ReacNative, Tauri, Godot...
+
+Euh... raconte-nous. Ouais, c'est carrément le cross-platform. Moi franchement, j'avais jamais... Enfin non, Titanium, non, kind of. Je ne sais plus. Raconte-nous. L'ère Titanium, comment c'était Mediapart à l'époque, le contexte... Tout ça.
+
+Thibault Lenclos (07:22.636)
+On m'a dit que c'était cross-platform, je suis là pour ça.
+
+Thibault Lenclos (07:39.374)
+Alors Citanium, c'était ce qui m'a fait vraiment venir dans le mobile de manière professionnelle parce que via mes études j'avais beaucoup de déminatifs, parfois même très bas de niveau avec un du C++ sur des en marqué. ce qui m'intéressait plus c'était quand même le résultat final, l'appli que les gens ont dans la main, idéalement sur d'autres plateformes aussi. Moi je voulais aller vite à cette époque là, pas d'IA et je voulais chercher vraiment
+
+comme moi déployé partout avec une seule techno. Et il n'y avait que Titanium à cette époque-là dans l'écosystème JavaScript que je maîtrisais parfaitement. On n'avait que ça. Et c'était vraiment l'ancêtre de Rack Native. On avait un SDK avec un process, un JS Front-Time qui tournait, s'était mapé sur des API natives derrière.
+
+et on faisait des vues avec du JavaScript. C'est exactement la technodraque native mais il a 15 ans.
+
+David Leuliette (08:44.691)
+C'était quoi la gif
+
+Thibault Lenclos (08:47.51)
+non mais Cordova c'est une mauvaise vue là, on était pas du dans un contexte de suède vue, t'as un runtime.js.
+
+David Leuliette (08:52.323)
+Ok, je vois. pareil, ouais en fait c'est direct notes.
+
+Thibault Lenclos (08:55.909)
+Ils avaient déjà ce que fait Facebook avec Kermes, ils faisaient ça juste avec un V8 un peu customisé. Bon ça donnait des APKs monumentaux qui dépassaient 40 mégas pour un Hello World, c'était pas trop une problématique. Du coup quand j'ai commencé à faire ça professionnellement, j'ai fait des petites applis, un ERP dans mon premier job.
+
+Effectivement l'application qui m'a le plus intéressé c'était Mediapart. Alors c'était un pari risqué mais c'était une petite équipe à l'époque et ils n'avaient que le site web, ils voulaient aller sur le mobile. Ça répondait parfaitement à leurs besoins parce que leur dev web pouvait du coup travailler dessus. C'est en fait les mêmes problématiques qu'on a avec Racknative aujourd'hui. tiens je sais faire du JS, bah tiens je peux faire du mobile.
+
+avec la problématique en plus que c'était une application de journal en ligne et qui dit journal, dit contenu très dynamique. du coup, on des articles, les articles de Mediapart c'est des très longs mais qui ont quand même des médias, donc il des vidéos, des graphs, etc. Comment on rend ça sur un téléphone ? Donc il y a un mix de webviews et de rendus natifs dedans.
+
+J'ai rencontré ce contexte de WebView et de Dell Native beaucoup dans mon parcours. C'est assez courant.
+
+David Leuliette (10:25.059)
+Ok. Super du coup. Je pense qu'on va avancer un petit peu. en fait dans la chronologie tu m'as dit, ouais ça fait Titanium après React Native. Tauri et Godot. C'est quoi le... Godot ? Godot... Ouais j'ai bugué. Godot, j'ai bugué. Alors attends, qu'est-ce qui t'a poussé à explorer chaque techno ? C'était genre, vas-y, je teste ou il fallait vraiment comme t'as dit...
+
+Thibault Lenclos (10:38.58)
+C'est Godot.
+
+Ludwig (10:42.345)
+Samuel Beckett, Samuel Beckett.
+
+David Leuliette (10:53.893)
+Avec Mediapart, y avait un sujet particulier et puis t'as digué la technologie.
+
+Thibault Lenclos (11:00.846)
+Pour faire un peu le parcours, j'ai quand même deux boîtes. La première octet, c'est celle que j'ai depuis sept ans. Avant, j'étais chez Jolly Code, est notre partenaire de première octet, qui se fait spécialiser plutôt dans Symfony. C'est avec eux que je choisis du titanium. La mission Mediapart était dans ce contexte-là. Dans cette boîte-là, on a une couture d'entreprise qui très axée sur la veille. On fait beaucoup d'expérimentations.
+
+de publications, donc il a un blog sur chaque site des boîtes et on est dans un process de conférences, de meet-up, bref, on s'informe et on joue beaucoup. Et à l'époque où on a sorti l'appli Mediapart, 2-3 ans après, il a Facebook qui sort React, un an après il Racknative qui pointe le bout de son nez, titanium qui...
+
+doutement ne fait pas grand chose quoi, il y a peu d'appli qui continuent de sortir avec. Et il a React Native qui arrive qui le successeur. En tout cas on retrouve exactement les mêmes paradigmes sauf que on est monté un peu en compétence sur React pendant quelques années, on a fait des supers applis avec, on a vu la puissance du truc. À ce moment là on jouait beaucoup avec Redux, on avait du debug temps réel avec la timeline là, on pouvait revenir en arrière, c'était un peu...
+
+David Leuliette (12:19.38)
+C'était la folie ça, j'avoue, le time travel...
+
+Thibault Lenclos (12:20.69)
+C'était la folie, on a l'impression d'être dans le futur, le time travel. Et donc on a tout ça dans un contexte web, on s'amuse trop et là d'un coup on dit on peut faire du mobile avec, on pense dessus. C'est même en fait via toutes ces expérimentations qu'on a créé la boîte avec Jolicone en partenaire parce qu'on faisait tellement de JavaScript qu'on a voulu faire une démarcation commerciale et d'équipe.
+
+David Leuliette (12:44.596)
+Ouais ok ouais, c'est plus simple en fait d'avoir une niche. Pareil moi quand les gens me contactent, je dis que je fais du réact natif même si on peut faire du réact tout court en fait mais trop chiant à expliquer la diff. Donc je comprends.
+
+Thibault Lenclos (13:02.638)
+Nous c'était plus l'explication de gens qui avaient une application web avec React et dire « Eh en fait, on peut aussi faire votre app immobile, est-ce que ça vous dit ? » avec les mêmes technos et la même montée de compétences.
+
+David Leuliette (13:10.398)
+Ouais.
+
+Thibault Lenclos (13:15.822)
+C'était un gros win pour eux, même en termes de prospection, de leur dire que tu peux faire avec les mêmes technos une appli mobile et que leurs devs à eux vont avoir quelques jours de formation et ils pourront dev dessus.
+
+David Leuliette (13:15.924)
+ça
+
+David Leuliette (13:27.924)
+Ah bah oui, oui, c'est pour ça que Flutter c'est mieux que Rack Native mais dans toutes les choses qui importent pas comme le fameux blog post de Jamin, vous y sur Medium pour ceux qui connaissent pas. mec d'Infinitrade il dit que Flutter c'est techniquement mieux que Rack Native mais en fait tu dois faire du Dart et du coup tout le monde s'en fout parce que tout le monde fait du JavaScript en fait en vrai donc désolé les amis c'est ça là. Vas-y, vas-y Ludwig.
+
+Ludwig (13:51.707)
+Je me pose une question du coup, que tu dit. Grâce à React, as pu vendre des projets mobiles. Et moi je suis curieux de savoir, est-ce qu'avec le temps, maintenant on est arrivé à une étape où maintenant on vend des apps mobiles en disant, si tu veux je peux te faire ton site web en même temps ? Est-ce qu'il y a eu un shift ?
+
+Thibault Lenclos (14:09.87)
+C'est juste via mon prisme de société de service, je ne savais pas dire de manière générale, je ne l'ai pas constaté, mais via la prospection et nos clients actuels, c'est déjà arrivé qu'on arrive par le créneau app mobile et on se rend compte que c'est ce qui a drivé leur site web. Il y a eu un peu l'effet inverse aussi.
+
+Mais on est dans un contexte un peu particulier où des gens non tech ont accès à des technos et prennent des décisions drivées par de l'IA, de l'IA qui a été feed ces dernières années sur des projets NEXT et des projets React. en fait, a une sorte d'uniformisation un peu de la tech, mais qui n'est pas forcément liée à la tech en elle-même. Elle peut même venir de l'extérieur. Ça, c'est fou.
+
+David Leuliette (14:53.684)
+Ouais.
+
+Ludwig (15:03.44)
+C'est marrant, me pose la question, parce que je me dis en terme d'usage, sait que le mobile maintenant ça a vraiment dépassé tout le reste.
+
+David Leuliette (15:03.892)
+ici
+
+David Leuliette (15:09.308)
+Non mais nous oui mais les moldus non.
+
+Ludwig (15:12.303)
+Non mais je parle des utilisateurs finaux, tu vois tout se passe sur mobile. Et je me disais, est-ce qu'en termes de business maintenant, pareil, ce paradigme s'est mis en place ou il a encore de la latence ?
+
+David Leuliette (15:15.016)
+Oui mais... oui.
+
+Thibault Lenclos (15:23.71)
+Je constate que tous les clients veulent ou ont déjà une app mobile. Ce qui intéressant, c'est qu'on peut un peu moduler le produit final par rapport à ce qu'ils ont comme budget. Il nous est arrivé plusieurs fois de livrer un wrapper, une webview qui wrappe le site avec des adaptations pour un petit budget. Alors c'est beau.
+
+David Leuliette (15:23.813)
+sais pas, ça dépend.
+
+David Leuliette (15:45.33)
+là là, c'est beau, c'est beau.
+
+Mais vous en saurez plus dans quelques minutes. Faut pas digresser, attends, attends, attends là. va passer vite fait sur Tory et Godot. Alors Tory, pourquoi... Pour ceux qui connaissent pas Tory, c'est Electron. C'est pareil qu'Electron c'est ça ? C'est pour faire des apps desktop, Tory ? Je sais pas, j'avais jamais entendu parler. J'avais confondu avec les systèmes d'exploitation mobile de Samsung. Qui ne s'appelle pas Tory, qui s'appelle... Je ne sais pas.
+
+Ludwig (15:52.091)
+Ha !
+
+Thibault Lenclos (15:53.47)
+Je suis pas... C'est pas un plaisir hein !
+
+David Leuliette (16:18.724)
+Mais vas-y dis-donc, qu'est-ce que t'as chippé avec Tori ?
+
+Thibault Lenclos (16:21.25)
+C'est assez... Alors j'ai pas chipé, j'ai beaucoup joué. J'ai beaucoup expérimenté. En fait ce qui me plaît, toujours dans l'aspect cross-platform, c'est tout ce qui peut s'apparenter à Titanium Ragnative. On peut mettre du JS un peu partout, comment ça marche le mieux, qu'est-ce que ça répond comme besoin. Toril, ça répond... C'est un peu le successeur d'Electron, mais ça répond plutôt à une première thèque de performance. Ça fait un peu comme Electron.
+
+Sauf que, on n'est plus dans un contexte rendu web. On a du Rust, a un runtime JS et on peut potentiellement avoir un rendu dans une WebView. Mais le cœur de votre projet va pouvoir être du Rust et donc être hyper performant. Alors ça a bien marché sur tout ce qui est wrapper.ia, sur tout ce qui est enregistrement de desktop.
+
+transcription de meetings, y a eu plein de petits applis comme ça. Moi je suis arrivé par parce que Lennola, il y a deux ans quand on on commençait à jouer avec de l'IA assez fort, plutôt un an et demi, et on s'est dit tiens, on peut enregistrer l'audio de l'ordi, faire une transcription, comment ça marcherait et tout. Et du coup j'ai fait du Rust pour la partie driver vraiment, supporter le SDK d'OSX, comment ça marcherait sur Windows, comment ça marcherait sur Linux.
+
+tu fais ta partie vraiment au bas niveau et après ta vue, bah ça serait une webview, tu mets du rack dedans et là tu déroules quoi.
+
+David Leuliette (17:57.204)
+Ok.
+
+Thibault Lenclos (17:58.624)
+et je me suis retrouvé à bosser sur un projet dont j'ai oublié le nom, était un autre mec qui avait fait ça et qui avait beaucoup plus avancé. a bossé un peu ensemble dessus. Je crois que c'est dans les torii apps, les meilleurs torii apps, a un truc d'enregistrement, les awesome apps,
+
+David Leuliette (18:12.036)
+oui sur les... ok Faudra aller voir la doc Ok ouais Tori au Sommab... oui je vois je vois
+
+Thibault Lenclos (18:19.31)
+Je me suis beaucoup amusé mais j'ai pas chipé grand chose avec. En tout cas je garde ça sous le coude.
+
+David Leuliette (18:23.839)
+bah... Sous le coude, et go do ! Alors tu t'es dit, vas-y, je vais devenir hyper successful en sortant un jeu sur...
+
+Thibault Lenclos (18:30.798)
+Alors pas du tout. Je suis gamer depuis tout petit. C'est un truc qui... C'est l'autre 20 % de mon temps. Du coup je dors jamais.
+
+David Leuliette (18:34.929)
+ok.
+
+David Leuliette (18:39.316)
+oui voilà, toi aussi quand t'avais 16 ans, tu t'es dit ouais je veux faire des jeux vidéo plus tard.
+
+Thibault Lenclos (18:45.358)
+Et j'en ai fait beaucoup de flashs à l'époque, j'en postais sur Armored Games et tout, c'était une bonne époque, ça m'a un peu mis dans le dev en fait, c'était un peu les origines quand j'avais 15-16 ans. Et là je reviens dessus, me dis bah tiens j'ai envie de rem'amuser, et Godot c'est un peu le, je sais pas si vous connaissez Unity ou Unreal Engine, mais c'est un peu le moteur, c'est un peu le vilain petit canard de ceux-là, c'est le moteur open source.
+
+David Leuliette (18:47.54)
+Ok, ok, ouais.
+
+Thibault Lenclos (19:13.842)
+libre, on en fait ce qu'on en veut, on le met où on veut. Il est un peu méta aussi parce que le moteur est lui-même construit avec le moteur, ça j'aime beaucoup. Donc Godot est fait en Godot. C'est un moteur de jeu qui permet aussi de faire des applications.
+
+J'aime beaucoup ces technologies un peu de rupture dans le sens où on peut faire plein de trucs avec. C'est un intérêt à la fois des game designers, à la fois des développeurs. Et je suis dans un contexte aussi où j'ai du game design en ce moment. Et de l'IA, je peux mélanger un peu tout ça. Je trouve ça hyper intéressant. Et je me suis dit en 2026, je sors un jeu.
+
+David Leuliette (19:48.048)
+Et du coup quand tu... trop bien, on veut savoir, veut... Et donc tu le ship ou ça partout ?
+
+Ludwig (19:50.924)
+Oui.
+
+Thibault Lenclos (19:56.834)
+Alors mon goal est simple, c'est un petit jeu 2D et je le shipper sur Steam. Ça sera déjà bien.
+
+David Leuliette (20:02.681)
+juste sur Steam, donc Steam Mac OS, parce que vas-y si tu le mets sur Steam Mac OS, je m'engage à le télécharger et à tester. Mais pas React Native alors, parce que j'ai vu t'as un truc pour embed des jeux faits en Godot. C'est à tester.
+
+Thibault Lenclos (20:06.882)
+Alors ça sera la cross-platform, j'aurai tout.
+
+Ludwig (20:18.586)
+Voilà, c'est Ouais, c'est sortir et saler ça.
+
+Thibault Lenclos (20:21.754)
+ouais, je vais tester un peu. En fait, justement, dans la dernière version de Godot, quand je te dis qu'il pousse l'ouverture à son paroxysme, c'est que carrément, le moteur, il est maintenant chipé depuis la dernière version en libre statique. Donc tu peux l'incorporer dans un projet et lui dire, tiens, compile mon code ou exécute ce projet Godot. donc forcément,
+
+David Leuliette (20:25.521)
+Ok parce que...
+
+David Leuliette (20:45.525)
+Ok.
+
+Thibault Lenclos (20:47.406)
+Je pense que la semaine après que ce truc-là soit sorti sur la dev branche de Godot, a un gars qui s'est dit mais je vais le mettre dans Racknative. ouais, ça marche. ouais, en fait, c'était quand même, c'était quand même drivé par un business derrière. C'est une appli un peu d'apprentissage, je crois. Ils ont un petit pingouin et une sorte de mini-game avec. Et donc, ils ont quand même un projet derrière avec.
+
+David Leuliette (20:55.093)
+What could go wrong et hop là !
+
+David Leuliette (21:13.973)
+oui, t'as Ludwig, tu m'as dit Simon qui a fait des vidéos sur Godot. Simon c'est le gars qui fait du Rack Native. Ok ouais, ok.
+
+Ludwig (21:19.66)
+Ouais c'est ça. Je crois qu'il a posté une série de vidéos là, il a fait un jeu de farming et c'est en prod. Il fait de l'argent avec. Battle testé.
+
+David Leuliette (21:23.973)
+oui, et donc c'est en gode.
+
+David Leuliette (21:28.539)
+là là c'est beau c'est vous allez voir ce rabbit hole aussi. Thibaut qu'est qui te met en état de instantanément quand tu codes ?
+
+Thibault Lenclos (21:39.502)
+En ce moment j'avoue que c'est le dev de jeux vidéo. Pour reprendre ce qui se passe avec Micode et justement son analyse sur le cerveau, je me suis dit que dans l'apprentissage de développement de jeux vidéo, qui rien à voir avec le développement web, il y a des problématiques de performance notamment ou de visualisation qui rien à voir, j'allais faire le moins possible d'IA. Alors je m'en fais quand même...
+
+David Leuliette (21:43.207)
+Ouais, parce que...
+
+Thibault Lenclos (22:08.59)
+mais c'est vraiment en mode je demande plutôt que je le laisse faire et je suis.
+
+David Leuliette (22:13.013)
+moi pareil, agent... Non pas trop, suis plus pareil en mode demande que...
+
+Thibault Lenclos (22:19.896)
+En gros, c'est ça, ouais. Et j'essaie de passer plus en mode sur tout ça, sur tout ce que je fais et de me dire un truc que je connais par cœur mais qui est chiant. Là, je le laisse faire, je regarde ce qu'il et je passe en mode agent mais sinon j'essaie plutôt de me dire je demande, j'analyse et je reproduis pour être vraiment dans cette notion d'apprentissage continuel.
+
+Et dans le jeu vidéo, qui est trop bien, c'est qu'en plus t'as des bugs de l'espace, des trucs qui se duplicent, des crashes physiques. ça me remet un petit peu dans ma passion initiale du développement, où je faisais ça avec des jeux flash à l'époque.
+
+David Leuliette (23:00.551)
+Ouais ok ouais je vois, trop cool. Mais on va revenir sur ce que tu avais dit donc WebView plus React Native c'est le projet Altered si je ne m'abuse. Et donc Altered c'est le TCG.
+
+Thibault Lenclos (23:15.016)
+Yes, ça c'est le dernier projet qu'on a fait.
+
+Ouais, c'est le jeu de cartes à collectionner à Altered. C'est un des premiers jeux de cartes français d'ailleurs. Ils sont à Paris.
+
+David Leuliette (23:21.717)
+C'est incroyable.
+
+Ah c'est français, savais pas ! je... Ok, trop bien, parce que moi je suis joueur de Magic depuis POUF ! Revendez jamais vos cartes les amis, ! Conseil de... j'ai... Hein ? Non, mais non ! Parce que j'ai revendu ma collection jadis pour acheter... des bières. Faites pas ça ! Ne faites pas ça ! Et du coup, j'ai du tout re-acheter insupportable. Bref !
+
+Thibault Lenclos (23:38.331)
+ouais, c'était à vous, copains.
+
+Thibault Lenclos (23:49.07)
+Ha
+
+David Leuliette (23:54.582)
+Donc ouais, Altered TCG, on explique que ton trading card game et en fait les jeux de cartes généralement c'est que vous avez plusieurs versions de la même carte et là le pitch de Altered c'est comme un NFT, c'est ça ? Tu peux l'update la carte ? Non. Ouais, mots dangereux j'avoue !
+
+Thibault Lenclos (24:11.214)
+Oula, mot dangereux. non, c'est pas... Il y a le sens de la propriété numérique, oui, ça peut se rapprocher de ça, mais ça s'arrête là. Il y a deux grosses évolutions par rapport à d'autres TCG, c'est effectivement les cartes ont des QR codes et donc du coup tu scans ta carte et ça devient ta carte aussi avec un droit numérique. L'autre gros... Ça permet de faire des choses du genre, rien plus mettre tes cartes, il n'y a plus de...
+
+David Leuliette (24:20.148)
+Ouais voilà.
+
+Thibault Lenclos (24:39.842)
+il a plus de vétusté de la carte en fait puisque tu peux la réimprimer comme tu veux. Et l'échanger aussi, donc si tu es japonais, tu une carte japonaise, tu peux l'échanger à un français et il réimprime sa carte en français. Ça évite un peu tout ce qui est inflation mais il y a un terme pour en gros faire monter les prix.
+
+David Leuliette (24:57.961)
+Oui, on va dire inflation. Ouais, les scalpers et tout ça. Ouais, c'est vrai que c'est insupportable. Dans Pokémon, c'est tout ça. Enfin, ça détruit vraiment tout. Enfin, ça détruit. C'est un autre univers. Magic un peu moins et pense que Altered, c'était en réponse à ça. Après, ça dépend. C'était là pour jouer ou c'était là pour gagner de l'argent. Moi, après, je suis ok sur les deux, mais je sais que je préfère jouer. Donc, dans ce contexte-là, il fallait une application mobile. Est-ce qu'elle était là dès la V1 ?
+
+Thibault Lenclos (25:05.038)
+Je sors.
+
+Thibault Lenclos (25:10.998)
+Voilà, ça plaît à des gens.
+
+Thibault Lenclos (25:28.018)
+Elle était obligatoire pour la sortie du jeu officiel. On ne pas faire sans parce que les cartes sont imprimées avec un QR code. Dès que les gens ouvraient leur premier booster, ils auraient un QR code mais pourquoi faire ? Ils retrouveraient leur collection sur le site. C'est un produit un peu digital, qui veut dire physique et digital. Ils retrouvent leur collection directement en ligne. Ils peuvent l'échanger. Dans un second temps, y a eu un produit qui est après qui est la Marketplace. Ils peuvent aussi revendre leurs cartes.
+
+David Leuliette (25:31.068)
+Ok.
+
+David Leuliette (25:58.006)
+Ok.
+
+Thibault Lenclos (25:58.126)
+Ce qui a un très gros intérêt car le deuxième gros atout que j'avais pas fini sur Altered, c'est qu'il a des réels uniques. Donc tu ouvres un booster et tu as une carte qui n'est que à toi. Donc ça la version Altered, d'où le nom du jeu.
+
+David Leuliette (26:08.671)
+Ouais c'est pour ça que je disais euh... Noël de la carte, c'est pour ça que je disais NFT tu vois, kind of, mais bon c'est vrai que... on va pas trop dire ça parce que trop de raccourci pas bien. Euh ok donc moi je parie que y'avait déjà un site web et il fallait shipper rapidement du coup Webview. Non ? c'est beau, c'est beau.
+
+Thibault Lenclos (26:26.254)
+Exactement, petite équipe, pas d'appétence mobile. Moi c'est un projet que je suivais un jour par semaine depuis le début de la création du jeu, maintenant je suis devenu CTO de cette boîte là, en mission. quand j'étais en audit et en suivi, un jour par semaine, y avait une problématique, c'était de shipper une app mobile qui puisse faire du scan. Alors on parle pas que de scan, ce pas une photo de QR code, c'est du multi-scan, c'est à qu'il faut que tu aies...
+
+tu puisses défiler tes cartes en rack super vite sur ta table et que ça scanne instantanément. Donc on a eu de la chance et à cette époque là il y eu aussi les modèles embarqués de scan de QR code natif dans les deux plateformes. en fait les API, même Android et iOS natifs, permettaient de faire ce genre de truc, du scan peu augmenté avec du machine learning. Et la contrainte c'était de faire une appli mobile avec ça.
+
+On est parti sur les WebView parce que le site web était déjà mobile-first, hyper clean. c'était aberrant de refaire tout le site, il y avait plein de pages différentes de toute façon. Donc en quelques jours, on a réussi à faire un wrapper. Et les problématiques, a été de communiquer entre cette WebView et cet appui mobile. Typiquement, il a un gros bouton scan qui apparaît sur le site web quand t'es dans le contexte de la WebView. On a pris le parti d'avoir le moins de logique possible.
+
+dans l'appli mobile, c'est vraiment un wrapper qui ouvre la WebView, qui dit, je suis une WebView et tu peux m'envoyer des trucs et moi je les affiche mais je ne pas comment récupérer des infos. Donc typiquement dans le contexte du scan, vous imaginez, vous avez un gros bouton, avez votre appli, vous scannez la carte, l'appli mobile elle n'envoie que l'identification du QR code au site web, le site web, il fait ses requêtes pour récupérer le nom de la carte, récupérer l'image, il les renvoie à la WebView et c'est le WebView qui affiche
+
+C'est l'appli M1, qui affiche les vrais composants derrière. Il y avait très peu au final de Rack Native dedans. y a donc la WebView, plus quelques previews de scan en réel qui s'affichent au dessus de la caméra. D'ailleurs Rack Native Vision, incroyable. Ça c'était le module Rack Native qui nous a vraiment changé la vie. puis en plus il bossait à fond dessus au moment où on est sorti l'appli. on n'arrêtait pas de mettre à jour. Toutes les semaines on remettait à jour l'appli.
+
+Thibault Lenclos (28:52.462)
+ça a super bien répondu aux besoins.
+
+David Leuliette (28:53.711)
+Et... Ok donc c'est ça là, c'est access WebView, vision caméra, terminé.
+
+Thibault Lenclos (29:00.206)
+Et donc API PostMessage, la problématique c'était de avoir une API commune en fait. le problème du PostMessage c'est que tu t'envoies des trucs et tu sais pas trop à quoi tu les envoies.
+
+David Leuliette (29:13.109)
+Ouais, faut expliquer West Message, c'est dans la webview, t'as une props, t'as un jack du JS. C'est ça, si je m'en rappelle bien.
+
+Thibault Lenclos (29:21.262)
+Alors ça c'est le côté React Native vers le web, tu injectes du JavaScript. Donc tu injectes des méthodes par exemple. Dans mon cas là, de scan d'une carte, fait j'injectais une méthode onScan et du coup ça donnait l'API de mon appli. Et le site web il peut l'appeler derrière.
+
+David Leuliette (29:28.799)
+Ouais.
+
+Ludwig (29:46.531)
+C'est un injecte des callbacks. Je crois que tout doit être sériealisable aussi. du texte qui est transmis.
+
+Thibault Lenclos (29:50.934)
+Oui bien sûr que c'est réalisable.
+
+Ludwig (29:54.075)
+Petite question du coup par rapport à ce système-là. que ça a beaucoup évolué côté réactif avec Expo Web qui est venue rajouter des nouvelles solutions, Expo Dom pour rajouter du sucre syntaxique entre la communication native et Web. Est-ce que c'est des choses que vous utilisez maintenant ? Ou vous êtes très vainillard ?
+
+Thibault Lenclos (30:16.814)
+On a fait des proto d'appli Racknative Web complet avec du coup plutôt expo par dessus mais vraiment le même code base web et mobile parce qu'on voulait absolument faire une appli prod avec un client là-dessus.
+
+On a jamais eu le cas concret client pour faire ça. fait, la plupart du temps, on n'arrivait pas à un résultat assez fin sur le web. On dépréciait trop le web. On arrivait aussi à des problématiques de monorepo qui nous saoulait un peu, honnêtement. Des problématiques de bundling. Bon, Expose, a beaucoup évolué sur la dernière année sur ces problématiques de web. Mais en tout cas, il a un an ou deux, c'était un peu cauchemardesque.
+
+Donc on n'a pas eu ce cas client qui... Mais je le cherche vraiment, j'ai hâte d'avoir une appli full cross-platform web mobile, la même code base, quelques ifs qui traînent pour adapter un composant web ou l'inverse.
+
+David Leuliette (31:19.647)
+Ouais, je pense que c'est un mythe. Ça n'existe pas, vois. Les foules... Ouais, si en de c'est WeChat, tu vois. Ouais.
+
+Ludwig (31:24.118)
+La Universal App ne l'a très peu.
+
+Thibault Lenclos (31:29.706)
+Il a Blue Sky, j'ai passé quelques soirées sur Blue Sky à lire du code, notamment parce qu'il y a Dan Abramov qui était dessus à l'époque. C'est le plus gros projet Ragnative Web, pense qu'on est en open source.
+
+David Leuliette (31:36.345)
+à check... ouais, vous pouvez regarder la code base sur github.
+
+David Leuliette (31:48.821)
+Euh... je vous...
+
+Ludwig (31:49.051)
+Et du coup, me disais, si vous faites une pompe Alteret, une levée de fond, on a le temps, on a l'argent, on peut refaire l'application mobile. Vu que c'est très gamifié, est-ce que tu pars sur du React Native avec par exemple du Rail Limited pour les animations ? Ou est-ce que tu vas faire du Godot pour pousser encore plus loin sur les animations, un peu à la Pokémon, tu sais ? Tu peux ouvrir des boosters, des sparkles dans tous les sens.
+
+David Leuliette (32:16.822)
+Des fusées comme les trucs Apple... Attends, est-ce que ça me...
+
+Ludwig (32:23.002)
+Ce serait quoi du coup ta stag technique pour un projet gamifié comme ça ?
+
+Thibault Lenclos (32:29.326)
+Ça dépend beaucoup de l'ambition. Si c'est pas vraiment un jeu, si on parle plus de visualisation, comme tu as dit, imagine, tu ouvres un booster, il est un peu shiny, tu des cartes qui s'ouvrent, etc. Là, je partirais plutôt sur ce qu'on a avec Ragnative et Skia. J'essaierai de pousser vraiment à fond avec ça, rester vraiment dans mon écosystème Ragnative. Et si j'ai atteint des limites, typiquement, il me faut un moteur de jeu.
+
+parce qu'il y a des problématiques d'animation hyper poussée, il faut que je gère un système d'entité, c'est un pattern qui est beaucoup utilisé dans jeu vidéo, le CS. Enfin je sais pas, des problématiques de réseau multiplayer par exemple. Là j'irais vraiment sur plutôt un moteur de jeu, parce que c'est un autre univers vraiment, n'est plus sur des formulaires, on est plutôt de raclette HTTP.
+
+On est sur de l'optime d'entité, est sur du FPS qui tourne tout le temps, on cherche la milliseconde sur notre code, ce plus du tout les mêmes problématiques.
+
+Thibault Lenclos (33:36.162)
+Et en plus maintenant on peut faire du Godot dans Ragnative, alors pourquoi pas voir une appli hybride où tu aurais du Ragnative et hop, un petit jeu qui démarque.
+
+Ludwig (33:39.066)
+...
+
+David Leuliette (33:44.693)
+ouais ça franchement ce serait folie donc l'état du cross-platform en 2026 vas-y prédictions depuis l'époque Mediapart qu'est ce que
+
+Qu'est que tu as appris de la transition depuis toutes les stacks que tu as fait qui est assez universel ?
+
+Thibault Lenclos (34:14.286)
+Alors déjà, la Pymedia Part elle est passée en Racknative. Ils ont recruté le dev du monde et donc on avait démarré la migration. voilà, ils ont gagné. Non mais je vois Racknative partout, toujours. C'est pas anodin qu'on ait fait une société très axée quand même sur cette technologie là. On est persuadé que c'était une technologie futuriste il a huit ans.
+
+David Leuliette (34:17.056)
+oui, c'est vrai ! Ok.
+
+Ludwig (34:19.658)
+!
+
+Thibault Lenclos (34:43.022)
+que maintenant elle est hyper ancrée. On voit tout le temps des applis dans le top 10 de tous les stores qui sont avec React Native Expo qui est là pour débloquer la DX la meilleure possible. Ils essaient de tendre aussi sur tout ce qui est CI-CD, sur justement les bundlers web un peu cross-platformes. C'est pour moi une techno qui reste.
+
+confiance de démarrer une appli React Native aujourd'hui. Et effectivement, on a utilisé Flutter, mais comme tu dis, en tout cas dans un contexte industriel, nous on recherche l'écosystème aussi. On va pas faire du rescript, je sais très bien qui en fait d'ailleurs, parce qu'il ne pas s'empêcher d'en parler.
+
+David Leuliette (35:26.39)
+Ouais c'est ça, bah c'est ça la fin.
+
+Y'en a qui en font, y'en a qui en font.
+
+Ludwig (35:40.57)
+et ciao !
+
+Thibault Lenclos (35:40.934)
+Je parle de Freddy du coup qui fait manga collect, qui est passé aussi dans ce podcast.
+
+David Leuliette (35:43.722)
+Oui, qu'on a fait, tout à fait.
+
+Ludwig (35:47.995)
+Vous avez testé Floater et je dirais, React Native, tu peux faire des grosses plateformes. Moi j'ai toujours le sentiment que on fait un app React Native, Android est toujours un peu en dessous de iOS. C'est très dur d'avoir le même niveau de performance, ou des fois on va volontairement faire des animations moins fancy, que les devices Android, il y en a beaucoup plus.
+
+Est-ce que tu as encore ce choix en mode peut-être que là je vais faire du flotteur parce que j'ai des grosses performances sur Android et que React Native ne pas subvenir à tous mes besoins ? Ou pour toi, React Native est vraiment LA solution de cross-platform ?
+
+Thibault Lenclos (36:32.888)
+Alors oui pour moi c'est la solution parce que l'écosystème est omniprésent et on a une techno qui est dans un écosystème JavaScript, donc tu peux on-boarder des gens qui font du web. Alors que là si je regarde Flutter, c'est lunaire, personne fait du dart. Leur premier implème aussi qui a été de faire comme un Canva et de ne pas utiliser les API natives, c'était lunaire. Ils ont fait des moves que j'adhère pas du tout.
+
+Pourquoi pas, pour des problématiques de performance, peut-être que ça a du sens en tout cas. Nous on fera pas d'appli avec, c'est sûr. Après les concurrents, il a NativScript aussi qui est assez similaire à AgNative mais qui n'a pas pris le... Je sais pas, ils n'ont pas le même créneau commercial. J'en ai fait un petit peu eux, ils sont basés un peu sur Vue au départ. Je sais pas trop où ça en est ça. Qui c'est qu'il a d'autres comme concurrent ? Bah Cordova, j'imagine que ça...
+
+un peu utilisé mais au final on préfère faire un vrai rappeur ragnatif avec une web bio et contrôler un peu ce qu'on et se dire que si un jour il y a un peu plus de budget, un peu plus de choses, on fait une vraie appli avec ragnatif pur. Donc même pour ces technos là, ça nous intéresse pas beaucoup Cordoba.
+
+...
+
+David Leuliette (37:50.744)
+Mais après, ça dépensait quoi la définition du cross-platform aujourd'hui ? Est-ce que ton app cross-platform, tu dois pouvoir la shipper ? Donc iOS Android c'est ok, web c'est ok tu vois. Mais est-ce que tu inclus tout le reste ? Ouais ouais mais est-ce que tu inclus WebTV ? Est-ce que tu inclus les wearables ? Est-ce que tu inclus les watch ? Est-ce que...
+
+Thibault Lenclos (38:04.664)
+Après, on a toujours un peu du partage de code aussi.
+
+Ludwig (38:18.102)
+Les casques !
+
+David Leuliette (38:19.456)
+les helmets de VR. C'est collo...
+
+Thibault Lenclos (38:19.566)
+C'est ça.
+
+En plus, bien sûr, si je prends le parallèle de Godot, leur éditeur marche en web. Ils compilent en JS, leur C++. Ils ont vraiment fait le pari, on le met partout et vous vous débrouillez avec. Il marche sur Android, tu peux avoir un éditeur de jeu complet. Ragnative, ils ont fait pareil, mais via la communauté, il y a toujours des gens, j'aime le casque, je veux mettre Ragnative dessus, j'ai ma petite montre, trop content, je l'ai payé 1000 balles.
+
+David Leuliette (38:35.155)
+Ok.
+
+Thibault Lenclos (38:52.238)
+je veux mettre Ragnatifs dessus. Et il s'en sort en fait, j'ai l'impression que ça s'est propagé partout. Mais c'est aussi la force de React, c'est une abstraction de vue, de visuel. Donc même quand il avait que React et qu'on avait des renderers React Canva, React PDF, on commençait à avoir des trucs un peu what the fuck maintenant qu'on... a du sens en fait, on fait des PDF avec React, c'est normal. C'est ok.
+
+David Leuliette (39:17.463)
+Mais c'est normal j'avoue ! Bah ouais tu fais des mails avec React, c'est carrément normal. Tu fais un CLI avec React, c'est carrément normal. Tu fais Raycast, un outil de productivité qui est incroyable. Bah c'est direct, on s'en bat les couilles, c'est normal. Par contre, rien à voir, j'ai regardé, ça prend un peu de place quand même. En fait, j'avoue, il a 800 mecs de Raycast, tu fais... Bon, heureusement qu'il y a 1.1 sur mon disque dur. Mais ouais, big up à Jeff !
+
+Thibault Lenclos (39:21.867)
+Exactement.
+
+David Leuliette (39:45.48)
+Any application that can be written in JavaScript will eventually be written in JavaScript. Voilà, c'est lui qui avait raison depuis... depuis très longtemps. Vas-y, on va switch technique, task stack, rack native, actuel de choix. Normalement, c'est ça le format de l'épisode. donne cinq... sujets, data layer, navigation, UI, CI, release. Qu'est-ce que... Nous, va tout faire d'un
+
+vu que tu bosses sur plein d'apps différents. C'est quoi les choix et compromis que tu fais et qu'est-ce que tu as laissé de côté depuis ces années ? ce qui est du state management et data fetching.
+
+Thibault Lenclos (40:28.48)
+Alors, le premier, State Management, était sur du Redux au début. C'était l'architecture qu'on avait en web. On s'est dit, on la porte en mobile. On a eu les mêmes bonheurs de pouvoir débugger un State Redux et les mêmes horreurs de pouvoir gérer des actions insynchrones, de pouvoir gérer des merges de states. Donc, c'est plus trop d'actualités.
+
+Pour info, Redux, nous on l'a quand même encore sur des applis web à très forte complexité visuelle et avec du state dans tous les sens. Typiquement des maps enrichis avec plein de volets partout, Du window management directement dans l'appli. Et honnêtement, les possibilités de débugs qu'apportent une architecture de type Redux sont incroyables. Et toujours aujourd'hui.
+
+David Leuliette (41:21.889)
+bah oui, tout cas, faire rien.
+
+Thibault Lenclos (41:25.548)
+On l'a remplacé par, je pense comme toute la communauté, du Rack Query pour tout ce qui est du State Network, du State vraiment de DAPI. Et selon les cas, du Rack State classique, soit on met un State Manager, j'ai le taille ou l'équivalent, mais on n'a pas notre State Manager dans un tableau incrusté et on ne prend pas pour tous les projets, c'est au besoin.
+
+David Leuliette (41:52.408)
+Ouais ouais c'est pas... Ouais non moi c'est pareil, moi ça change en fonctionnalité brée mais là moi je suis focus offline first avec Legend State et comme ça bah je fais de la magie, je réconcilie quand il a internet et puis voilà. En navigation le piège que tu éviterais à ton toit d'il y a 15 ans maintenant.
+
+Ouais, on va dire les trois dernières années. Niveau navigation. Niveau navigation.
+
+Thibault Lenclos (42:25.377)
+Je ne pas si c'est le 3e année, mais il avait plein de... Je remonte un peu haut, mais y avait 15 manières de faire de la navigation dans React Native. Il avait pas le grade de React Navigation qui marche partout, avec tous les cas. On avait un mix de JS, peut faire le truc native pour iOS.
+
+Après il Wix qui a sorti Ragnative de négligation et là on trouvait ça trop bien, c'est le plus proche du natif, on va le prendre. Ça a été un enfer en fait. On a eu des crashes internes, monumentaux. On avait des belles animations certes mais une fois sur deux on comprenait pas pourquoi ça plantait quoi.
+
+Ludwig (43:05.018)
+C'était dur à maintenir.
+
+Thibault Lenclos (43:06.51)
+Et les montées de version de ce truc là aussi c'était breaking change de folie. Donc maintenant je dirais plus de se caler sur Rack Navigation, de se caler sur Expo, d'essayer de ne pas trop sortir des sentiers battus sur un sujet aussi critique de l'app. Et pourquoi pas après itérer quand l'appli est stable, qu'on a fait notre navigation, itérer et essayer de mettre des animations. Donc c'est qu'on fait assez régulièrement.
+
+David Leuliette (43:10.423)
+Ouais c'est un enfer
+
+Thibault Lenclos (43:36.564)
+d'ouvrir la liste. Par exemple, ça, a les listes où t'ouvres l'image, t'as l'image qui s'ouvre en zoom en premier avec un effet de transition. Donc ajoutez ça par la suite, mais pas chercher directement à faire ça.
+
+David Leuliette (43:39.063)
+Bottom shit.
+
+David Leuliette (43:53.776)
+assez fou vous faites du progressive enhancement comme en 2012 qu'il fallait faire des sites qui fonctionnent sur JavaScript, incroyable je valide
+
+Ludwig (44:04.25)
+Est-ce que ExpoRouter est devenu un no-brainer, ou a toujours des projets où des fois vous préférez prendre le parti pris de rester sur Rack Navigation, par exemple
+
+Thibault Lenclos (44:18.414)
+C'est une très bonne question. Il a un aspect un peu philosophique derrière qui est le vendeur lock-in que j'essaye d'éviter au C'est dans nos valeurs de la boîte d'essayer d'être indépendant à la fois de manière commerciale mais aussi de manière technologique. Avec Expo qui a roulé sur le marché de la DX, de la DREC NATIVE depuis quelques années. Voilà, c'est vrai, c'est ça.
+
+David Leuliette (44:42.999)
+créé le marché en fait parce qu'il en avait pas tout court il l'a créé.
+
+Thibault Lenclos (44:47.246)
+Mais il y avait besoin, je suis entièrement d'accord qu'il fallait prendre ce créneau et qu'il y avait besoin d'uniformité, y avait des bundles partout qui se baladent, des modules qui font n'importe quoi, trois fois le même module pour faire le même truc. Il fallait ce expo SDK. Après ils ont aussi un argument commercial, il faut qu'ils fassent de l'argent, une société, il faut qu'ils vendent des trucs, donc ils vendent une CI, vendent pourquoi pas peut-être un jour des modules propriétaires. Donc il y a une histoire de lock-in derrière.
+
+Là on parle que d'expo open source, donc expo router c'est hyper pertinent et très dur de ne le mettre dans une appli Expo. Mais effectivement des fois on se pose quand la question. On l'a pas fait, on garde expo router et puis j'ai toujours ce rêve d'avoir une appli cross-platform complète web mobile avec 100 % de partagés et ça sera pas sans expo router à mon avis. Parce qu'il fulifice quand même beaucoup ces problématiques là.
+
+David Leuliette (45:42.071)
+Vous avez testé Solito ou pas
+
+Thibault Lenclos (45:47.071)
+Non, je vais beaucoup renseigner dessus mais... Après ça va prendre le parti de déployer que sur Next. C'est encore un autre parti pris.
+
+David Leuliette (45:49.943)
+J'avais testé
+
+Ouais, ouais c'est un... Mais c'est pareil en fait, en fait c'est génial mais faut une vision, faut que les gens soient alignés, que ça suive et qu'ils captent quoi, parce que... Bah en fait le problème c'était les humains. Dans le projet que j'avais bossé. Non mais ils comprenaient pas et leur expliquaient que... Tu fais du cross-platform et que la navigation il faut qu'elle soit shared donc en fait il faut que sur desktop, enfin que ce soit pareil, que tu peux pas jouer à saute mouton avec tes boutons parce que ton écran est plus grand certes mais...
+
+Ludwig (46:06.074)
+Ha !
+
+David Leuliette (46:22.488)
+tu vas pas changer carrément ton UI. C'était plus... Enfin l'effort était plus de convaincre des humains que d'assembler la technologie. Donc pareil, j'ai abandonné. Enfin j'ai abandonné non, mais enfin j'ai pas plus investi que ça parce que c'était trop de travail versus deadline à faire. a splitté en deux. en parlant d'humains, UI et Design Systems, comment tu garantis...
+
+la cohérence à l'échelle puisque dans la boîte vous avez un parti pris, fait du design avec toute la même librairie ou freestyle chaque projet.
+
+Thibault Lenclos (47:00.142)
+Non, c'est vraiment plus chaque projet, surtout que ça bouge beaucoup les livreries de vie.
+
+David Leuliette (47:04.856)
+Je devais faire ma checklist, ma tier list, parce que je le faisais chaque année du UI en live sur Twitch. là, il y a de quoi faire parce que ça fait deux ans que je l'ai pas fait, laisse tomber quoi ! Le nouveau venu c'est Udyweed. Mais vas-y dis nous tout.
+
+Thibault Lenclos (47:22.326)
+Bah effectivement, selon les projets, toujours, si tu as une volonté de partager du code avec du web, typiquement ça sera le plus bas niveau possible et on fera du rec native pur.
+
+On a eu des projets avec Native Wind, des projets avec Native Base, est en version 2, alors ils ont refait depuis.
+
+David Leuliette (47:48.382)
+Oui bah oui, ils ont changé, ils ont changé dedans parce que du coup les gens disaient ouais c'est trop lent et tout c'est pour ça en fait qu'ils ont changé, gloustack
+
+Thibault Lenclos (47:54.968)
+est devenu gloustack. effectivement, les problématiques, on a eu deux projets, on a été un peu vide sur celui-là, on a eu deux projets mobiles en parallèle sur native base 2, qui est devenu gloustack je crois sur la nouvelle version. Et les problématiques de Monumental sur Android, on a carrément fait des prestations pour des boîtes qui voulaient améliorer leur perf de leur appli mobile sur native base, parce que du coup on avait réécrit en fait des composants de base, donc boutons, text view qui est
+
+David Leuliette (48:06.591)
+Ouais, c'est ça, c'est gloustack ouais.
+
+David Leuliette (48:21.08)
+Mmh ouais.
+
+Thibault Lenclos (48:24.686)
+qui étaient les composants les plus majoritaires dans une appli et qui dégradaient carrément les perches sur Android.
+
+David Leuliette (48:31.768)
+Je suis pas étonné mais il faut remettre dans le contexte qu'il n'y avait rien et que Native Bass était genre... Waouh stylé ! La promesse était belle mais déjà de base moi j'étais pas très fan qui est 15 fois la même props pour la même chose. genre... Je me souviens qu'il avait plusieurs variants pour la même chose et moi ça me rendait ouf !
+
+Thibault Lenclos (48:31.886)
+...
+
+Thibault Lenclos (48:37.806)
+C'est ça, c'était une belle promesse.
+
+David Leuliette (48:59.355)
+MacOS style, tu un bouton, un truc, pas Windows. vois Windows il a 15 façons de faire la même action, surtout quand tu fais du code, tu as de l'over-ride, de partager du coup je pense que à la fin ça sort santé. Mais donc maintenant, ça dépend quoi. Il n'y a pas vraiment de recommandation, ça dépend du projet.
+
+Thibault Lenclos (49:17.678)
+Oui, a toujours, je dirais que l'on a 50-50, des projets avec des 8 kits et on n'en a pas un de favoris particulièrement. On avait beaucoup en web chaque A8 mais qui n'avait pas de résonance côté mobile, ça n'existait pas. C'était Emotion. Alors ce n'est plus le cas maintenant sur la 3 mais c'était Emotion.
+
+David Leuliette (49:29.944)
+C'est motion, Chakra ? Il me semble derrière. ouais ! Pfff, mais c'est aborder la sueur à ce truc-là.
+
+Thibault Lenclos (49:42.589)
+C'est aussi pas non plus la partie du métier que je suis le plus pertinent. L'interface, je laisse plutôt à mes collègues cette connaissance là. Je vais chercher l'industrialisation, les bonnes liées pour le data fetching notamment. C'est ma paroisse un peu, dans tous mes clients. C'est le contrat entre...
+
+l'API et ton API. Je trouve encore des projets qui ne génèrent pas de clients d'API. Orval, c'est le plus connu. J'ai vraiment beaucoup misé sur Swagger, Tabscript, API, qui est le premier libraire qui permet de faire ça et qui est un peu plus simple.
+
+David Leuliette (50:19.596)
+ouais, genre avec Orval. Un truc...
+
+David Leuliette (50:27.336)
+c'est un... Faut expliquer aux gens qui connaissent pas en fait. Donc... Ouais.
+
+Ludwig (50:32.449)
+Côte-Gene aussi.
+
+Thibault Lenclos (50:33.964)
+Carrément, le... le... bah vas-y, je le fasse ou...
+
+David Leuliette (50:39.113)
+vas-y, vas-y, j'explique au webscanner, ils savent pas vraiment ce que c'est, fin...
+
+Thibault Lenclos (50:43.126)
+Disons que l'approche classique c'est de faire un API, on fait un fetch dessus, on écrit notre domaine slash users, on va récupérer les données. Ces données dans notre code client, notre code mobile, fait on n'a pas du de typing, si ce données là ça peut être n'importe quoi. Donc cette fois on fait des types à la main.
+
+David Leuliette (51:02.308)
+soit on est un peu smart, on fait un copier-coller du G-Zone dans votre éditeur TypeScript. G-Zone, ouais, gzone.gzone.twewe.typescript. Et là, c'est déjà une bonne étape. En vrai, est étape 1.
+
+Thibault Lenclos (51:07.029)
+Transform.Tools.
+
+Thibault Lenclos (51:13.614)
+ça C'est un premier, ça fait le job, ça fait le job jusqu'à ce que le contrat d'API change et une API ça bouge. Et là on n'est plus du tout raccord, on a un bug, ne pas pourquoi, on a que ça d'une propriété qui n'existe plus, qui a changé de type carrément. Donc idéalement, on a un contrat fort entre l'API et le client, que ce soit web ou mobile et on génère à partir de la spécification d'API. Donc ça peut être du GraphQL, ça peut être un schéma OpenAPI.
+
+David Leuliette (51:20.258)
+Et là, problème. C'est ça.
+
+Thibault Lenclos (51:42.862)
+on génère un client d'API. on va avoir toutes nos méthodes directement dans un fichier et on aura juste à appeler nos méthodes, elles nous retourneront les réponses typées et avec ça on peut détecter des trucs trop bien aussi, des erreurs d'implémentation de l'API. Le dev aussi qui n'est peut-être pas full stack, qui ne que de l'API ou qui ne fait que du front, il va se retrouver à avoir une sorte de pont technique vers un univers qu'il ne pas trop et dans lequel il pourra contribuer.
+
+David Leuliette (52:09.337)
+Ouais, puis pour Adyghe, Thor à la doc et tout, moi je sais que j'utilise avec Orval et du coup ça génère... ouais j'écris plus mes clients, enfin j'ajoute juste le modifier reacquiry et hop, il me chie tout mes mutations et mes use query et... de ouf ! je mets le point YAML et done quoi ! Allez c'est bon, next ! Et au moins c'est ce que tu disais quoi !
+
+Thibault Lenclos (52:26.538)
+Puis un gain de temps énorme, ouais.
+
+Ludwig (52:28.09)
+...
+
+David Leuliette (52:36.473)
+S'ils update quelque chose, moins je update le truc, je vérifie. y a 4000 erreurs TypeScript. Ok, it's un accepted. Pas de problème.
+
+Thibault Lenclos (52:42.382)
+On va plus loin, on le met dans la CIAI. Donc s'il a un diff sur la génération, on régénère le client dans la CIAI et s'il a un diff, on pète. On ne pas bulle.
+
+David Leuliette (52:52.811)
+Ouais ok bah parlons vas-y CI qu'est ce tu... Vous êtes sur quoi ? êtes sur EAS Workflows ou GitHub Actions ? Ou autre chose ? GitLab Action !
+
+Thibault Lenclos (53:01.358)
+On a un peu de GitLab, un peu de GitHub, on a plein de contexte et plein de clients donc il y a un peu de tout. Le de base c'est quand GitHub Action, sur le dessus on va juste faire les tests et la compilation JS, on va s'arrêter là. Et sinon on part sur Expo, OEAS du coup pour tout ce qui est build, d'appli, déploiement aussi. On a des vieux setups où il a encore du Fastlane.
+
+Ludwig (53:05.343)
+Bitrise.
+
+David Leuliette (53:08.309)
+Oui, mais ouais, bah c'est ça.
+
+David Leuliette (53:26.265)
+Ok.
+
+Thibault Lenclos (53:30.254)
+un peu de travail à la main, c'est des setups très hybrides, peut-être on n'est pas expo, mais on a encore des setups là qui traînent. On a fait quand même 3 ou 4 migrations fast lane vers expo. Parce que gain de temps monumental sur le déploiement. Oui, être en vie c'est ça, c'est chiant, t'as pas envie.
+
+David Leuliette (53:43.897)
+Ouais, attends encore...
+
+Ouais, c'est ça. Tu ne pas gérer ce truc. n'as pas envie. Plus personne ne veut gérer ça. Et puis les gens, faut bien le faire. Moi, je sais que je l'ai fait, mais ce n'est pas que je ne veux plus le faire. que ça n'a aucun intérêt. Parce que là, c'est leur job de faire ça full type. Et puis la DX d'Expo, tu fais une PX Test Flight, donnes. C'est quand même incroyable.
+
+Thibault Lenclos (54:11.022)
+Je veux plus aller dans les développeurs portales d'Apple.
+
+David Leuliette (54:14.617)
+C'est ça ! Juste pour approuver comme quoi j'ai bien lu les nouveaux Terms and Conditions. Et encore ça, ça me saoule parce que quand je me connecte, ils ne me remembrent pas mon browser et ça me saoule.
+
+Ludwig (54:29.626)
+grosse nouveauté d'ailleurs sur ce problème là, la dernière fois que j'utilisais la Cielide Expo. Maintenant tu peux savoir l'erreur directement avec la Cielide. T'as plus besoin de te connecter pour dire c'est parce que les termes et conditions n'ont pas été acceptés.
+
+David Leuliette (54:41.369)
+Ah oui maintenant ils te le mettent plus, erreur 512 ils te mettent direct les Terrain Conditions ne pas acceptés. c'est beau, il aurait fallu attendre 2025 pour voir ça 2025 ou 2026 c'est depuis quand ?
+
+Thibault Lenclos (54:42.495)
+A bientôt !
+
+Ludwig (54:52.184)
+Je l'ai eu récemment, je l'ai posté sur le Slack, Ragnative Connection.
+
+David Leuliette (54:54.165)
+Ouais trop. Ok.
+
+Thibault Lenclos (54:55.906)
+Bon après c'est probablement contrainte côté Apple, plus qu'Expo, parce qu'il aurait fait jour 1 sinon.
+
+David Leuliette (54:59.545)
+Ouais, je pense aussi. Ouais, c'est clair, puisque ça éviterait tellement de demandes de support genre pourquoi ça marche pas ? C'est quoi ton top 5 des tools indispensables avec des usages réels que tu as ? Au quotidien. Un peu de tout, vas-y. Ouais, tu peux faire libre projet, mais Productivity Tool, ça fonctionne aussi.
+
+Thibault Lenclos (55:14.862)
+On parle de lib dans le projet ou plus... ou qui tout ?
+
+Thibault Lenclos (55:23.534)
+Ok, alors depuis un an, avoir un peu plus, c'est honnêtement un cursor, je pense qu'il a changé beaucoup de choses. Donc un IDE, il a First, limite, c'est les premiers à implémenter tous les concepts de développement avec IA et du coup en tant qu'entreprise, c'est hyper important d'uniformiser ça et de partager les connaissances. en fait, a un peu forcé, on n'a pas vraiment eu mal faire, mais on a mis tout monde dessus.
+
+David Leuliette (55:31.267)
+Ouais, ok, bah ça va, ouais.
+
+Thibault Lenclos (55:53.454)
+On peut traquer les usages de l'équipe en termes de commit IA. Parfois, se rend compte que le démarrage d'un projet, on est à 30 % par exemple de codes commit IA. On peut faire des analyses un peu là-dessus. Ouais, c'est trop bien. Et puis on peut partager nos cas. En quelques cas, j'utilise Asks, Plans, Le mode Debug.
+
+David Leuliette (56:09.11)
+y'a des analytics aussi poussés, je savais pas ça.
+
+Ludwig (56:09.451)
+Lecture de Pupix L90
+
+David Leuliette (56:13.525)
+C'est folie.
+
+Thibault Lenclos (56:22.094)
+Je dirais pas qu'on est pro IA parce qu'on est quand même dans un contexte où on vend du jour au mais on cherche à avoir des humains derrière qui font des applis, on cherche pas à tout automatiser. Par contre, on est aussi dans un contexte où on veut vendre le plus possible de jour au meilleur prix et donc l'IA ça nous permet de faire plus pour un peu moins cher. C'est devenu un outil indispensable dans
+
+David Leuliette (56:45.515)
+Ouais bah c'est ça.
+
+Thibault Lenclos (56:49.898)
+dans ma journée, ce soit pour du code ou pour parfois challenger des idées et pour toute l'équipe.
+
+Ludwig (56:56.236)
+Est-ce que vous avez commencé à intégrer vos propres MCP, vos propres skills, des rules au sein de l'agence ?
+
+Thibault Lenclos (57:03.114)
+Oui, par exemple on a des commandes, ce n'est pas en esquisse dans Cursor mais c'est des commandes qu'on a pour créer une pair par exemple. ça va demander, tiens à chaque fois tu fais un diagramme de code s'il a beaucoup de fichiers, tu résumes. En fait c'est ce que fait déjà Bugbot ou CodeRabbit mais on l'a fait sur une commande à nous pour éviter de dépendre encore dans notre service. Et on commence à avoir des commandes partagées sur des projets. Donc là c'est plus sur la génération de code typiquement.
+
+Ce qu'on pouvait faire avec un code GEN avant, donc générer un CRUD par exemple, on va le faire sur un prompt partagé avec une commande.
+
+David Leuliette (57:41.145)
+Ouais parce que du coup il update automatiquement parce qu'en fait les codes gênants c'est chiant parce qu'il faut les updates et du coup personne veut le faire et...
+
+Thibault Lenclos (57:46.67)
+Ça pète au bout de trois semaines en fait et après il repasser dessus quoi. Et donc en fait tu repasses dessus et tu fais autant de temps que si avais fait le truc à la main.
+
+David Leuliette (57:50.007)
+Ouin.
+
+David Leuliette (57:55.158)
+Ouais ouais alors que là, vu que ça le génère, est jamais... C'est jamais exactement le même résultat mais ça fait ce que tu as demandé quand même donc ça fonctionne. Je vois.
+
+Thibault Lenclos (58:08.27)
+En autre outil que je trouve hyper cool, qui se rapproche un peu de ce que je disais tout début avec Tori, c'est l'application Granola qui permet de faire des enregistrements de réunions, ce soit Slack, Meet, etc. et de faire un récap IA derrière. Alors là, dans une optique commerciale où tu partages des notes de réu, des prospection, c'est la vie. Vraiment, ça nous a fait gagner un temps énorme et c'est carré.
+
+David Leuliette (58:19.993)
+Mmmh
+
+David Leuliette (58:24.099)
+Ouais bah oui, non mais ça c'est...
+
+David Leuliette (58:33.055)
+C'est clair, moi j'ai sur... c'est des notes dans Apple ? ouais, ça les balance partout ! Moi j'ai ça dans Notion en Et du coup ça me fait une checklist. Parce que moi le Notion c'est mon OS pour tout en fait. Ça va pareil, ça je m'en sers de fou pour...
+
+Thibault Lenclos (58:44.078)
+Ca gère
+
+Thibault Lenclos (58:54.414)
+Salut !
+
+David Leuliette (59:01.145)
+faire des outputs, faire des meetings et dire « Hé, tu sais, comptable X, je t'ai envoyé tel truc, telle date, pourquoi tu n'as pas fait d'updates ? » Voilà.
+
+Thibault Lenclos (59:09.962)
+Y'a un truc, si le comptable de David nous écoute, y'a un truc.
+
+David Leuliette (59:14.473)
+Franchement, répondez-moi s'il vous plaît, parce qu'après je suis obligé d'être agressif et qu'autorisation en danse, c'est ennuyeux pour tout le monde.
+
+Ludwig (59:21.176)
+Moi je me demande s'il est encore capable de nous écouter ce comptable-là, ce qu'il est vivant.
+
+David Leuliette (59:24.601)
+Ouais non mais... Alala, je vous ferai... Franchement le documentaire je vous le ferai un jour avec... Chaque fois je me recorde, faut que je me chauffe. Bah en fait je devais embaucher quelqu'un pour faire tout ce qui est grosses hacks et tout, et dites de ce super podcast, mais je peux pas à cause de comptables. donc voilà. Si... Bref.
+
+Ludwig (59:45.882)
+Il faudrait faire une plateforme pour se recommander des comptables entre Free and Sack Native.
+
+David Leuliette (59:49.114)
+Franchement, je te jure, je suis premier client direct. Ludwig, t'as pas un tool là que tu utilises récemment et un indispensable qui s'est hibissé dans ta vie pour être... ou une librairie, n'importe. Ouais, depuis 2026 exactement.
+
+Ludwig (01:00:07.421)
+Depuis 2026, j'utilisais beaucoup Cursor et Cloud Code. Et c'est vrai que depuis 2026, je me suis mis de plus en plus à faire des Git Worktri, et à faire des sessions de Cloud Code en parallèle. en gros, c'est vraiment du multitasking en permanence. Et pour gérer tout ça, j'utilise un tool qui s'appelle Conductor.
+
+Thibault Lenclos (01:00:11.278)
+Spenda.
+
+Ludwig (01:00:30.362)
+Dans Conductors, vais avoir une zen de repo React Native. Pour chaque repo, je peux créer à la volée de nouvelles sessions de travail avec Cloud Code. Moi, j'ai cavité tout ça avec des MCP, notamment pour Jira. On travaille beaucoup avec Jira chez mes clients. Ils vont lire les tickets, ils vont me faire des...
+
+Ils vont challenger les specs des fois, ils vont comprendre les feedbacks des QA. Moi, je fais beaucoup de reviews de plans, et après de reviews d'implémentation, on charge beaucoup les specs de Cloud Code. Il fait l'implémentation selon mes rôles, va dire, et après je review l'APR. Des fois, il la review avec moi.
+
+Et du coup je me rends compte que je suis capable de plus facilement bosser sur 3 4 projets pour 3 à 4 clients différents en même temps. Donc gros multitasking. Je ne pas ce que tu en penses Thibaut, mais je vois que moi en agence, même si tu bosses pour des clients particuliers sur des jours donnés, tu vas avoir quand même des feedbacks ou des retours à autre manière asynchrone.
+
+Donc en gros, tous les jours tu peux être pingé pour différents clients. du coup, le côté Workstri conducteur avec Cloud Code, me résout un peu cette problématique de faire plusieurs choses en même temps. Tout en pourrant garder mon vrai focus sur un seul client.
+
+David Leuliette (01:01:56.762)
+Ou alors tu fais les... Tu... Ouais. Tu paralyses un truc, genre une feature importante et upgrade Rack Native, bobs, tu paralyses tout et... Normalement... ! Est-ce que t'as tout bump les SDK de quatre projets en même temps ? Avec succès. En production. Point. Ok Super ! Voilà, super ! Franchement... non, 2000 watts.
+
+Ludwig (01:02:16.41)
+Il a toujours de la friction, pas se mentir. En fait tu peux l'upgrade, y a pas de soucis, mais après y a quand une grosse phase de QA, y a toujours des trucs qui pètent, des side effects en fait. Mais Expo a sorti un skill sur ça récemment. Expo Upgrade.
+
+Thibault Lenclos (01:02:18.894)
+J'en moi.
+
+David Leuliette (01:02:29.314)
+il un Q.
+
+Thibault Lenclos (01:02:29.984)
+Ouais, et...
+
+David Leuliette (01:02:32.953)
+Hmm... Ok.
+
+Thibault Lenclos (01:02:35.022)
+Pour moi cette année c'est vraiment ça la problématique, c'est qu'on a les outils IA qui nous permettent de multitask, de générer les choses qu'on ferait en plusieurs semaines, mais il y a toujours de l'AQA, y toujours de la validation et ça il faut qu'il un humain et c'est plus là-dessus qu'il faut qu'on travaille je pense en tant qu'écosystème, il a Dev, donc sur le web ça serait tout ce qui est preview branch.
+
+les branches de DB notamment, ce genre de qui sont faisables mais voilà, il être dans un écosystème bien contrôlé, donc un vendor lock-in, genre Superbase par exemple. En mobile, on l'a grâce à Expo. oui, t'as tout fait eux. Alors ça reste open source, mais quand tu restes tu vas au open source Superbase quoi. Et t'as pas tout.
+
+David Leuliette (01:03:03.683)
+Ouais ça c'est folie. oui mais ça avec je pas, c'est folie ça.
+
+David Leuliette (01:03:10.477)
+Bye.
+
+David Leuliette (01:03:14.339)
+Ouais bah... C'est Vendor Lock-In Super Base !
+
+David Leuliette (01:03:26.574)
+T'as DB, tu peux... si parce que t'as le SDK Super Base et après t'es foutu en fait.
+
+Thibault Lenclos (01:03:31.63)
+Ils ont tout, ont le user, ont le storage et clairement ils sont sur le créneau à l'aversel en mode et regardez vous pouvez vibecoder avec notre plateforme et ça vous fait un super projet propriétaire super base avec tout votre DB, votre données dedans et puis tu peux pas aller sur autre chose après quoi. Tu peux mais il faut un technicien qui t'accompagne.
+
+David Leuliette (01:03:46.529)
+oui.
+
+David Leuliette (01:03:50.329)
+...
+
+Ludwig (01:03:52.851)
+des très bons MCP.
+
+David Leuliette (01:03:55.185)
+Bah oui, non mais ça va.
+
+Thibault Lenclos (01:03:55.214)
+Clairement ils sont pro IA mais c'est aussi un créneau commercial.
+
+David Leuliette (01:04:01.707)
+Ouais, euh... Moi vite fait le tool de la semaine c'est RNSEC pour... Si vous faites npm install-g RNSEC... Non, npx RNSEC scan. Faites ça chez vous. Vous verrez. S'il y a du rouge, pas bon. C'est un outil de sécurité qui scanne en les règles de sécurité de base. Des fois t'as des clés API... ! Genre ma clé API private...
+
+J'avais oublié que je l'avais mis dans un fichier obscur et bah hop ça vous dit instantanément. Plus c'est avec de base franchement stylé. Et en plus c'est un CI un outil en ligne de commande, de coup j'adore.
+
+Thibault Lenclos (01:04:41.21)
+C'est cool, c'est que c'est assez rare, la sécurité mobile, il est moins...
+
+David Leuliette (01:04:44.442)
+Ouais, sécurité, jamais. Tu vois, c'est comme l'accessibilité. Tout le monde en parle, mais personne ne veut payer pour. Donc, Hard Time, Story, Thibaut, est-ce qu'il a un échec cuisant ou un incident en production que tu as rencontré ? Comment tu l'as détecté ? Qu'est-ce que tu as appris et qu'est-ce qui a changé depuis ?
+
+Thibault Lenclos (01:05:08.782)
+Alors c'est pas du mobile, c'est du web. J'ai fait plusieurs fois que je parle d'indépendance et de vendor locking, mais même sur nos projets internes ou certains clients, fait on cherche à leur donner la puissance de l'auto-hébergement. Ça veut dire qu'on va pas les mettre sur AWS ou les mettre sur GCP ou etc.
+
+David Leuliette (01:05:12.361)
+c'est bon.
+
+Ouais.
+
+Thibault Lenclos (01:05:35.722)
+parfois des petits projets ou des projets qui doivent être indépendants, des projets de l'État. Donc on cherche à être souverain à dessus. On cherche aussi à se simplifier le déploiement. Donc on utilise beaucoup un outil qui s'appelle Coolify, est un outil imaginé vers celle, mais en open source. Tu branches ton repo GitHub et pouf, tu peux déploier n'importe quel appli. Ça peut être un projet Docker comme un WordPress en one-click.
+
+Donc on a quelques serveurs qui tournent avec ça et il y en a un au nouvel an qui a décidé de se faire attaquer. J'ai passé un premier jour de l'année à remonter un serveur de zéro, à essayer de comprendre les failles possibles. Et les failles possibles étaient notamment un projet Next qui traînait dans Next.js si vous êtes dans l'écosystème. En décembre on a eu un sale mois avec deux failles critiques.
+
+David Leuliette (01:06:29.69)
+Oui.
+
+Thibault Lenclos (01:06:31.552)
+clairement qui est donc Remote Code Execution à deux semaines d'affilée. n'y a aucun doute là dessus, c'est ça qui nous a mis dans la sauce. Donc remonter un serveur de zéro parce que clairement c'est des serveurs où tu as peut-être seulement 10 app's ou 15 app's, donc c'est des gros serveurs. Tu ne peux pas te permettre de dire, je vais patcher et puis je verrai ce qui se passe. Non, la faille elle est là, il y a eu des trucs installés, c'est dur de...
+
+David Leuliette (01:06:39.972)
+Ok.
+
+Thibault Lenclos (01:06:59.712)
+de trouver exactement ce qui a été installé. Donc on repart de zéro. Et donc c'était tant mieux parce que ça nous a permis de battle tester tout ce qui est backup, remonter une infra et c'était hyper agréable en fait. C'est un produit incroyable, coolify. Et notamment le créateur, Andras, je sais plus son nom, Andras, fait beaucoup d'IA et il utilise comme toi le Dweeg, y un peu cette notion de paralysation et lui il dans un contexte...
+
+David Leuliette (01:07:08.89)
+Oui.
+
+David Leuliette (01:07:13.799)
+Ok c'était
+
+Thibault Lenclos (01:07:26.892)
+On est deux les gars, on fait un méga projet énorme qui gère plein d'appli plein de plateformes différentes comment on gère tous ces tickets et kit-up etc. et donc il a des set-up monumentaux et Claude et je crois qu'il dépense assez cher en automatisation il y de son côté quoi. Et je crois que d'un point il vibe code un outil qui est comme conducteur justement mais open source.
+
+David Leuliette (01:07:51.168)
+Ok, adras bascaille, c'est ça ?
+
+Thibault Lenclos (01:07:55.822)
+Et très cool de streamer quand il dev, c'est hyper agréable.
+
+David Leuliette (01:07:57.402)
+...
+
+David Leuliette (01:08:04.138)
+Ok, allez on regardera ça. Une conviction que tu as vu et que tu as abandonné. Enfin, une conviction que tu avais en faisant du rack native et que tu as abandonné depuis que tu fais du cross-platform, d'autres formes de cross-platform.
+
+Thibault Lenclos (01:08:28.045)
+C'est difficile ça hein ? Moi j'ai des convictions, je les garde. Non, mais je dirais que c'était un peu ce qu'on a dit tout à l'heure, où au départ de ma carrière je me disais un outil pour les gouverner tous en gros. en fait quand on veut être très très qualitatif sur le rendu, parfois il faut dupliquer des choses et les adapter vraiment spécifiquement. Donc j'y crois de moins en moins à cet cet appli universel.
+
+David Leuliette (01:08:29.634)
+ben, ça va !
+
+Ouais, ça fous quoi.
+
+David Leuliette (01:08:42.474)
+Ouais, ouais, je vois, je vois.
+
+Thibault Lenclos (01:08:56.243)
+web et mobile très qualitatives en tout cas. Donc je suis un peu revenu dessus.
+
+David Leuliette (01:08:58.65)
+Ouais, j'avoue, copy paste over wrong abstraction, ça fonctionne.
+
+Thibault Lenclos (01:09:04.97)
+Voilà, surtout en plus maintenant où on est dans un contexte où le volume de code est pas plus trop ce qui nous bloque en fait. C'est plus le rendu final, la QA et les bons outils pour régénérer tout ça derrière. c'est plus trop une problématique en fait de se dire on a deux fois la même vue mais un peu adaptée.
+
+David Leuliette (01:09:25.824)
+J'avoue, est-ce qu'il a un sujet que tu voulais absolument aborder, qu'on n'a pas abordé aujourd'hui ?
+
+Thibault Lenclos (01:09:31.566)
+Non, pas particulièrement. En plus j'ai un peu digressé sur le développement de jeux vidéo, c'était... C'était ce que je voulais. C'est vrai.
+
+David Leuliette (01:09:36.13)
+bah c'est le but, tu vois, c'est carrément le but en vrai, ! C'est écrit Cross Platform dans le titre, les amis, si vous avez tenu jusque là, on vous a pas menti, c'est littéralement le nom du podcast, donc...
+
+Thibault Lenclos (01:09:48.014)
+Moi ce qui m'a plu depuis le début de notre plateforme, c'était l'accès à la productivité un peu rapide. On pouvait déployer le même code sur plein de projets. en fait, si je reviens sur ces années à utiliser des technos similaires, ce qui est hyper cool, c'est qu'on apprend plein d'écosystèmes différents, que ça nous plaise ou non. On est capable de développer une application si besoin, d'aller voir sur le Store Apple, on sait comment.
+
+marche tout cet écosystème et c'est aussi pour ça que j'ai été voir côté jeux vidéo parce qu'en fait ils ont des paradigmes de développement qui sont différents, des problématiques différentes aussi de performances et en fait on a beaucoup à apprendre d'autres plateformes en fait que ça soit sur des plateformes mais aussi sur des trucs plus natifs et plus bas niveau quoi donc il toujours resté curieux là dessus
+
+David Leuliette (01:10:30.938)
+Ouais, je suis d'accord.
+
+David Leuliette (01:10:39.194)
+Qui est-ce qu'on doit inviter ensuite
+
+David Leuliette (01:10:44.799)
+dans ce podcast.
+
+Thibault Lenclos (01:10:48.814)
+T'as déjà invité
+
+David Leuliette (01:10:49.146)
+en plus ouais bah oui français en plus ça devient compliqué à cette affaire parce que... ouais faudrait... ouais j'avoue
+
+Thibault Lenclos (01:10:54.721)
+en C-Cross-Placeform.
+
+Ludwig (01:10:54.938)
+quelqu'un qui fait un jeu vidéo cross-platform peut-être ?
+
+Thibault Lenclos (01:11:01.55)
+J'avoue que n'ai pas de nom français comme ça là. Je vais réfléchir.
+
+David Leuliette (01:11:06.657)
+mais si ! Attends, euh... Qui c'est... Qui gère... Vous gérez encore l'appli Mediapart ? En règle native.
+
+Thibault Lenclos (01:11:14.254)
+Non, maintenant ils avaient embauché quasiment toute l'équipe du monde, donc on était plus nécessaire.
+
+David Leuliette (01:11:18.842)
+Ouais des gens ? Ah ouais bah... Ah bah vas-y ! Il faut que... Vas-y, ça va être ma mission. Si tu me trouves la personne, eh ben... Ah bah vas-y. Je serais ravi comme ça on pourra deep dive. Pour voir si... Est-ce que ça a survécu ? Après où est-ce qu'on peut te suivre et te contacter ?
+
+Thibault Lenclos (01:11:28.969)
+Bien sûr ouais.
+
+Je t'en verrai ça.
+
+Thibault Lenclos (01:11:44.494)
+Professionnellement c'est le site de la boite premierrokté.com et en perso c'est Twitter ou BlueSky donc tips.tvpibz
+
+David Leuliette (01:11:55.5)
+Ok, moi c'est tous les liens de l'émission sur wishyp2day.com podcast, le slack de Renative Connection, vous me verrez moi et Ludwig. Ludwig on te retrouve où ? Sur les internets.
+
+Ludwig (01:12:09.178)
+que j'ai toujours pas appris mon handle Twitter. Ludwig underscore van avec deux a.
+
+David Leuliette (01:12:18.907)
+Sinon, demandez-moi, vous me pinguez et je ferai l'intro. non, attends, si tu veux, sur Twitter, X, whatever, je m'en fous, je continuerai d'appeler ça Twitter. Je ne t'ai même pas pingué. Je pinguerai, at, attends, on va le faire, on va prendre deux minutes, at, je vais vérifier en live. Tu m'as dit, load, vig.
+
+Ludwig (01:12:40.346)
+LUDWIG underscore van vaan. Mais sinon en fait on peut nous retrouver ailleurs David, on peut nous retrouver sur React Native Cowboys, Legacy Mobile Specialist.
+
+David Leuliette (01:12:45.627)
+Bon,
+
+David Leuliette (01:12:54.779)
+Ah oui le site web React Native Cowboys et attend si je tape juste ça dans internet, j'ai tapé ça n'importe comment et ouais c'est beau c'est franchement faudra changer l'e-call de nos vebles mais bon c'est pas grave pour aussi vous voyez l'histoire de ce site incroyable React Native Cowboys il faudra venir nous voir à la prochaine conférence React Native où on sera voilà
+
+Faudrez de la farce, n'oubliez pas de mettre 5 étoiles si vous avez survécu jusqu'ici sur Spotify ou Apple Podcasts, ça nous fait remonter dans les trends. Et Thibaut, hook de fin, qu'est-ce que tu vas shipper dans les prochains jours en une phrase mémorable pour que Internet n'oublie pas
+
+Thibault Lenclos (01:13:42.518)
+Une très grosse migration d'API sur un tunnel de paiement pour une grande marque de vêtements. C'est pas hyper passionnant mais très gros risque. Très gros risque, très peu d'IA et beaucoup de legacy, beaucoup de QA. Là on vibe code pas trop quoi.
+
+David Leuliette (01:13:55.43)
+Et ouais, faut pas faire l'andouille.
+
+David Leuliette (01:14:03.899)
+Simple currency ou multi currency ?
+
+Thibault Lenclos (01:14:08.141)
+multisites, multicurrency, tout ce que tu veux.
+
+David Leuliette (01:14:11.086)
+Multisite, Multicurrency, est-ce que tu géreras mieux que la TVA, que mon comptable ? Je te fais confiance là-dessus parce que le mien est très nul. Allez ! Ah non mais c'est bon, vas-y, ils vont saouler là, ils vont re-souler. Je suis reparti dans la tunnel, ça y est. En tout cas, merci à vous, j'ai passé un très bon moment, j'espère que vous aussi, on se retrouve bientôt. Allez, ciao à tous !
+
+Thibault Lenclos (01:14:16.046)
+C'était la troisième batte sur le comptable.
+
+Thibault Lenclos (01:14:28.622)
+Faites de même.
+
+Ludwig (01:14:32.183)
+Merci, tchao tchao
+
+Thibault Lenclos (01:14:32.446)
+Merci, ciao, bye bye !
+

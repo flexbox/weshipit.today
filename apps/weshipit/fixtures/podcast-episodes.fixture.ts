@@ -13,6 +13,36 @@ export interface PodcastEpisode {
 }
 
 export const podcastEpisodes: PodcastEpisode[] = [
+  // {
+  //   name: '',
+  //   title: '',
+  //   number: 24,
+  //   description_short: "",
+  //   description: ``,
+  //   slug: '',
+  //   spotify_url: '',
+  //   apple_podcast_url: '', // grab it here https://podcasts.apple.com/fr/podcast/le-cross-platform-show-le-talk-show-francophone-sur/id1790867559
+  //   youtube_embed_id: '', // grab it here https://www.youtube.com/@flexbox_/streams
+  //   company_logo: '',
+  //   guest_full_name: '',
+  // },
+  {
+    name: 'Premier Octet',
+    title:
+      'De Titanium à Godot en passant par React Native : le parcours cross-platform de Thibault Lenclos',
+    number: 25,
+    description_short:
+      "Retour sur 15 ans de cross-platform : Titanium, React Native, Tauri, Godot et l'app Altered TCG avec WebView et Vision Camera.",
+    description: `<p>Dans cet épisode, David et Ludwig reçoivent Thibault Lenclos, associé et développeur chez Premier Octet, pour un voyage à travers 15 ans de développement cross-platform.</p><p><strong>Au programme :</strong></p><ul><li><strong>Parcours :</strong> De Titanium et l'app Mediapart à React Native, en passant par Tauri et Godot — l'évolution du cross-platform JavaScript.</li></ul><ul><li><strong>Altered TCG :</strong> Comment shipper une app mobile avec WebView, React Native Vision Camera et PostMessage pour un jeu de cartes à collectionner français.</li></ul><ul><li><strong>Stack technique :</strong> State management (Redux → React Query), navigation (React Navigation vs Expo Router), UI libraries (Native Base, Native Wind), CI/CD (Fastlane → EAS) et génération de clients API avec Orval.</li></ul><ul><li><strong>Outils & IA :</strong> Cursor en équipe, Granola pour les réunions, Coolify pour l'auto-hébergement et la philosophie anti vendor lock-in.</li></ul><ul><li><strong>Game dev :</strong> L'aventure Godot, le développement de jeux vidéo comme terrain d'apprentissage et l'intégration de Godot dans React Native.</li></ul><p><br /></p><p><strong>Notes de l'émission</strong></p><ul><li><a href="https://premieroctet.com" target="_blank" rel="ugc noopener noreferrer">https://premieroctet.com</a></li><li><a href="https://www.altered.gg" target="_blank" rel="ugc noopener noreferrer">https://www.altered.gg</a></li><li><a href="https://coolify.io" target="_blank" rel="ugc noopener noreferrer">https://coolify.io</a></li><li><a href="https://orval.dev" target="_blank" rel="ugc noopener noreferrer">https://orval.dev</a></li><li><a href="https://godotengine.org" target="_blank" rel="ugc noopener noreferrer">https://godotengine.org</a></li><li><a href="https://v2.tauri.app" target="_blank" rel="ugc noopener noreferrer">https://v2.tauri.app</a></li><li><a href="https://mrousavy.github.io/react-native-vision-camera/" target="_blank" rel="ugc noopener noreferrer">https://mrousavy.github.io/react-native-vision-camera/</a></li></ul><p><br /></p><p><strong>Animé par</strong></p><p>David Leuliette</p><ul><li><a href="https://twitter.com/intent/follow?screen_name=flexbox_" rel="ugc noopener noreferrer" target="_blank">⁠https://x.com/flexbox_⁠</a></li><li><a href="https://go.bsky.app/6QQemwz" rel="ugc noopener noreferrer" target="_blank">https://go.bsky.app/6QQemwz</a></li></ul><p>Thibault Lenclos</p><ul><li><a href="https://x.com/tibz" target="_blank" rel="ugc noopener noreferrer">https://x.com/tibz</a></li><li><a href="https://premieroctet.com" target="_blank" rel="ugc noopener noreferrer">https://premieroctet.com</a></li></ul><p><br /></p><p><strong>En vidéo :</strong></p><p>Live : <a href="https://www.twitch.tv/flexboxlive" rel="ugc noopener noreferrer" target="_blank">https://www.twitch.tv/flexboxlive</a></p><p>VOD : <a href="https://www.youtube.com/playlist?list=PLmewDYeBL3XIx7Lnga-jO3eRjOsKQ-HW0" rel="ugc noopener noreferrer" target="_blank">https://www.youtube.com/playlist?list=PLmewDYeBL3XIx7Lnga-jO3eRjOsKQ-HW0</a></p><p><strong>Tous les liens :</strong> <a href="https://weshipit.today/podcast" rel="ugc noopener noreferrer" target="_blank">https://weshipit.today/podcast</a></p>`,
+    slug: 'thibault-lenclos',
+    spotify_url:
+      'https://open.spotify.com/episode/2RlleLgTgvQ7YszwxRTzGg?si=76f5b5cce42c4084',
+    apple_podcast_url:
+      'https://podcasts.apple.com/fr/podcast/de-mediapart-en-titanium-%C3%A0-altered-en-react-native/id1790867559?i=1000746973817',
+    youtube_embed_id: 'bDrN8ddY2Eo',
+    company_logo: '',
+    guest_full_name: 'Thibault Lenclos',
+  },
   {
     name: 'Skia',
     title:
