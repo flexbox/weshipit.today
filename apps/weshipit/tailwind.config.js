@@ -28,8 +28,17 @@ module.exports = {
       colors: {
         primary: 'hsl(var(--primary))',
         background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
         muted: 'hsl(var(--muted))',
         'muted-foreground': 'hsl(var(--muted-foreground))',
+        card: 'hsl(var(--card))',
+        border: 'hsl(var(--border))',
+        secondary: 'hsl(var(--secondary))',
+        accent: 'hsl(var(--accent))',
+        destructive: 'hsl(var(--destructive))',
+      },
+      borderColor: {
+        DEFAULT: 'hsl(var(--border))',
       },
     },
     fontFamily: {

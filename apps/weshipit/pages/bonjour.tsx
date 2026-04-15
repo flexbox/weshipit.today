@@ -1,27 +1,29 @@
-import {
-  Card,
-  Text,
-  FadeIn,
-  Button,
-  Section,
-  ClientsListHomepage,
-  Faq,
-} from '@weshipit/ui';
+import { Text, Button, ClientsListHomepage, Faq } from '@weshipit/ui';
 
 import { Customer, getVisibleClients } from './api/client';
 import { getAllFeedback, FeedbackPrismicDocument } from './api/feedback';
-import { motion } from 'framer-motion';
-import {
-  CheckIcon,
-  XMarkIcon,
-  ExclamationTriangleIcon,
-} from '@heroicons/react/24/outline';
-import { StarIcon as StarIconSolid } from '@heroicons/react/24/solid';
 import Head from 'next/head';
 import { PrismicRichText, PrismicText } from '@prismicio/react';
 import { PrismicNextImage } from '@prismicio/next';
 import { Layout } from '../components/layout';
 import { linksApi } from './api/links';
+import {
+  ClockIcon,
+  BugAntIcon,
+  ExclamationTriangleIcon,
+  UsersIcon,
+  CubeIcon,
+  EyeSlashIcon,
+  XMarkIcon,
+  MagnifyingGlassIcon,
+  CogIcon,
+  BoltIcon,
+  CheckIcon,
+  ArrowRightIcon,
+  PlayIcon,
+  ArrowTrendingDownIcon,
+  CurrencyDollarIcon,
+} from '@heroicons/react/24/outline';
 
 interface BonjourPageProps {
   clients: Customer[];
@@ -30,216 +32,301 @@ interface BonjourPageProps {
 
 const CTA_LABEL = 'Prendre un premier mois';
 
-function StickyCta() {
-  return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 py-3 px-4 sm:hidden">
-      <Button
-        href={linksApi.cal.ONBOARDING}
-        as="a"
-        size="xl"
-        variant="primary"
-        isExternalLink
-        withExternalLinkIcon={false}
-        className="w-full justify-center"
-      >
-        {CTA_LABEL} &rarr;
-      </Button>
-    </div>
-  );
-}
-
-// SECTION 1: HOOK — ATTENTION
 function HeroSection() {
   const currentYear = new Date().getFullYear();
   const yearsOfExperience = currentYear - 2016;
 
   return (
-    <div className="mx-auto max-w-3xl text-center py-12 lg:py-24">
-      <Text variant="h2" as="h1">
-        Si ton app React Native devient plus lente à chaque feature… ce n'est
-        pas normal.
-      </Text>
+    <section className="relative overflow-hidden pt-32 pb-24">
+      <div className="relative mx-auto max-w-6xl px-6">
+        <div className="mx-auto max-w-4xl text-center">
+          <Text variant="h1" as="h1" className="mb-6 mt-12 text-balance">
+            Si ton app React Native devient{' '}
+            <span className="text-neutral-500 dark:text-neutral-400">
+              plus lente
+            </span>{' '}
+            à chaque feature…{' '}
+            <span className="text-accent">ce n’est pas normal.</span>
+          </Text>
 
-      <div className="my-8 aspect-video rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-800 flex items-center justify-center">
-        <p className="text-slate-400 text-lg">[Vidéo VSL — 16:9]</p>
+          <p className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-neutral-500 dark:text-neutral-400 md:text-xl">
+            Une bonne app devient plus rapide à faire évoluer avec le temps. La
+            tienne te ralentit. Et ça te coûte déjà des users, du temps et du
+            cash.
+          </p>
+
+          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Button
+              href={linksApi.cal.ONBOARDING}
+              as="a"
+              size="lg"
+              variant="primary"
+              isExternalLink
+              withExternalLinkIcon={false}
+            >
+              {CTA_LABEL}
+              <ArrowRightIcon className="ml-2 h-4 w-4" />
+            </Button>
+            <Button as="a" href="#video" size="lg" variant="outline">
+              <PlayIcon className="mr-2 h-4 w-4" />
+              Voir la vidéo
+            </Button>
+          </div>
+        </div>
+
+        {/* Video */}
+        <div id="video" className="mx-auto mt-16 max-w-4xl">
+          <div className="aspect-video overflow-hidden rounded-xl border border-border bg-card">
+            <iframe
+              src="https://player.vimeo.com/video/1183545111?badge=0&autopause=0&title=0&byline=0&portrait=0&sidedock=0&controls=1&color=22c55e&transparent=0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              referrerPolicy="strict-origin-when-cross-origin"
+              title="weshipit.today — VSL"
+              className="h-full w-full border-0"
+            />
+          </div>
+        </div>
+
+        {/* Intro */}
+        <div className="mx-auto mt-16 max-w-2xl text-center">
+          <p className="text-lg leading-relaxed text-neutral-500 dark:text-neutral-400">
+            Je m&apos;appelle{' '}
+            <span className="font-medium text-neutral-950 dark:text-neutral-200">
+              David
+            </span>
+            . Ça fait{' '}
+            <span className="font-medium text-neutral-950 dark:text-neutral-200">
+              {yearsOfExperience} ans
+            </span>{' '}
+            que je travaille uniquement sur React Native. Aujourd&apos;hui,
+            j&apos;aide des scale-ups à faire une chose simple :{' '}
+            <span className="font-semibold text-accent">
+              shipper. Tous les jours.
+            </span>
+          </p>
+        </div>
       </div>
-
-      <Text
-        variant="p1"
-        as="p"
-        className="text-slate-600 dark:text-slate-400 mb-4 max-w-2xl mx-auto"
-      >
-        Une bonne app devient plus rapide à faire évoluer avec le temps. La
-        tienne te ralentit. Et ça te coûte déjà des users, du temps et du cash.
-      </Text>
-      <Text
-        variant="p2"
-        as="p"
-        className="text-slate-500 dark:text-slate-500 mb-8 max-w-xl mx-auto"
-      >
-        Je m'appelle David. Ça fait {yearsOfExperience} ans que je travaille
-        uniquement sur React Native. Aujourd'hui, j'aide des scale-ups à faire
-        une chose simple : shipper. Tous les jours.
-      </Text>
-
-      <Button
-        href={linksApi.cal.ONBOARDING}
-        as="a"
-        size="xxl"
-        variant="primary"
-        isExternalLink
-        withExternalLinkIcon={false}
-        className="mx-auto justify-center"
-      >
-        {CTA_LABEL} &rarr;
-      </Button>
-    </div>
+    </section>
   );
 }
 
-// SECTION 2: PROBLÈME
-function ProblemeSection() {
-  const symptoms = [
-    'Chaque feature prend plus de temps que la précédente',
-    "Les bugs s'accumulent",
-    'Personne ne sait vraiment pourquoi ça casse',
-    "Tes devs n'ont même plus envie de travailler dessus",
-  ];
-
-  return (
-    <div className="py-20 max-w-3xl mx-auto">
-      <Text variant="h3" as="h2" className="mb-4 text-center">
-        Le problème, ce n'est pas ton équipe. C'est ton app.
-      </Text>
-      <ul className="space-y-4 mt-8">
-        {symptoms.map((item) => (
-          <li key={item} className="flex items-start gap-3">
-            <XMarkIcon className="h-6 w-6 text-red-500 shrink-0 mt-0.5" />
-            <Text variant="p1" as="span">
-              {item}
-            </Text>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
-
-// SECTION 3: POURQUOI
-function PourquoiSection() {
-  const causes = [
-    'Des dépendances jamais mises à jour',
-    'Des librairies incohérentes',
-    'Zéro observabilité',
-  ];
-
-  return (
-    <div className="py-20 max-w-3xl mx-auto">
-      <Text variant="h3" as="h2" className="mb-4 text-center">
-        Ce que personne ne te dit
-      </Text>
-      <Text
-        variant="p1"
-        as="p"
-        className="text-slate-600 dark:text-slate-400 text-center mb-8"
-      >
-        Ton app ne ralentit pas par hasard. Tu accumules :
-      </Text>
-      <ul className="space-y-3 mb-8">
-        {causes.map((item) => (
-          <li key={item} className="flex items-start gap-3">
-            <ExclamationTriangleIcon className="h-6 w-6 text-yellow-500 shrink-0 mt-0.5" />
-            <Text variant="p1" as="span">
-              {item}
-            </Text>
-          </li>
-        ))}
-      </ul>
-      <Card className="text-center">
-        <Text variant="p1" as="p" className="font-semibold mb-2">
-          Résultat : tu ne maîtrises plus rien.
-        </Text>
-        <Text
-          variant="p2"
-          as="p"
-          className="text-slate-500 dark:text-slate-400"
-        >
-          Vendredi soir. Release prévue. Tout casse. Et tu n'as plus que deux
-          options : rebuild from scratch ou patcher en espérant que ça tienne.
-          Dans les deux cas, tu brûles du cash.
-        </Text>
-      </Card>
-    </div>
-  );
-}
-
-// SECTION 4: AUTORITÉ
-function AutoriteSection() {
-  const results = [
+// ─── PROBLEMS ────────────────────────────────────────────────────────────────
+function ProblemsSection() {
+  const problems = [
     {
-      metric: '90%',
+      icon: ClockIcon,
+      text: 'Chaque feature prend plus de temps que la précédente',
+    },
+    { icon: BugAntIcon, text: "Les bugs s'accumulent" },
+    {
+      icon: ExclamationTriangleIcon,
+      text: 'Personne ne sait vraiment pourquoi ça casse',
+    },
+    {
+      icon: UsersIcon,
+      text: "Tes devs n'ont même plus envie de travailler dessus",
+    },
+  ];
+
+  const hiddenProblems = [
+    { icon: CubeIcon, text: 'Des dépendances jamais mises à jour' },
+    { icon: XMarkIcon, text: 'Des librairies incohérentes' },
+    { icon: EyeSlashIcon, text: 'Zéro observabilité' },
+  ];
+
+  return (
+    <section id="probleme" className="border-t border-border py-24">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="grid gap-16 lg:grid-cols-2">
+          {/* Left */}
+          <div>
+            <Text variant="h3" as="h2" className="mb-8">
+              Le problème, ce n&apos;est pas ton équipe.{' '}
+              <span className="text-accent">C&apos;est ton app.</span>
+            </Text>
+            <ul className="space-y-4">
+              {problems.map((p, i) => (
+                <li
+                  key={i}
+                  className="flex items-start gap-4 rounded-lg border border-border bg-card p-4"
+                >
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-secondary">
+                    <p.icon className="h-5 w-5 text-neutral-500 dark:text-neutral-400" />
+                  </div>
+                  <span className="pt-2 text-neutral-950 dark:text-neutral-200">
+                    {p.text}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Right */}
+          <div>
+            <Text variant="h4" as="h3" className="mb-8">
+              Ce que personne ne te dit
+            </Text>
+            <p className="mb-6 leading-relaxed text-neutral-500 dark:text-neutral-400">
+              Ton app ne ralentit pas par hasard. Tu accumules :
+            </p>
+            <ul className="mb-8 space-y-3">
+              {hiddenProblems.map((p, i) => (
+                <li key={i} className="flex items-center gap-3">
+                  <p.icon className="h-5 w-5 text-destructive" />
+                  <span className="text-neutral-950 dark:text-neutral-200">
+                    {p.text}
+                  </span>
+                </li>
+              ))}
+            </ul>
+            <div className="rounded-xl border border-destructive/30 bg-destructive/5 p-6">
+              <p className="mb-4 font-medium text-destructive">
+                Résultat : tu ne maîtrises plus rien.
+              </p>
+              <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+                Vendredi soir. Release prévue. Tout casse. Et tu n&apos;as plus
+                que deux options : rebuild from scratch ou patcher en espérant
+                que ça tienne.{' '}
+                <span className="font-medium text-neutral-950 dark:text-neutral-200">
+                  Dans les deux cas, tu brûles du cash.
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─── STATS / AUTORITÉ ────────────────────────────────────────────────────────
+function StatsSection() {
+  const stats = [
+    {
+      value: '90%',
       label: 'de réutilisation de code',
-      detail:
+      description:
         'Architecture designée chez Malo — onboarding rapide, coût technique réduit',
     },
     {
-      metric: '100%',
+      value: '100%',
       label: 'des releases automatisées',
-      detail: 'Shipping continu pendant 5 ans sur des projets complexes',
+      description: 'Shipping continu pendant 5 ans sur des projets complexes',
     },
     {
-      metric: 'IoT',
+      value: 'IoT',
       label: 'offline-first, apps complexes',
-      detail:
+      description:
         'Des apps qui tournent dans des environnements hostiles, sans réseau',
     },
   ];
 
   return (
-    <div className="py-20">
-      <div className="text-center max-w-3xl mx-auto mb-12">
-        <Text variant="h3" as="h2" className="mb-4">
-          J'ai vu ça des dizaines de fois.
-        </Text>
-        <Text
-          variant="p1"
-          as="p"
-          className="text-slate-600 dark:text-slate-400"
-        >
-          Je ne fais pas du code. Je règle des problèmes de vélocité.
-        </Text>
-      </div>
+    <section className="border-t border-border py-24">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="mb-16 text-center">
+          <p className="mb-4 text-sm font-medium uppercase tracking-wider text-accent">
+            J&apos;ai vu ça des dizaines de fois.
+          </p>
+          <Text variant="h3" as="h2" className="mx-auto max-w-2xl">
+            Je ne fais pas du code.{' '}
+            <span className="text-neutral-500 dark:text-neutral-400">
+              Je règle des problèmes de vélocité.
+            </span>
+          </Text>
+        </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-        {results.map((item) => (
-          <FadeIn key={item.label}>
-            <Card className="h-full text-center">
-              <p className="text-4xl font-bold text-blue-600 mb-2">
-                {item.metric}
+        <div className="grid gap-px overflow-hidden rounded-xl border border-border bg-border md:grid-cols-3">
+          {stats.map((stat, i) => (
+            <div key={i} className="flex flex-col justify-between bg-card p-8">
+              <div>
+                <div className="mb-2 text-5xl font-bold tracking-tight text-neutral-950 dark:text-neutral-200 md:text-6xl">
+                  {stat.value}
+                </div>
+                <div className="mb-4 text-lg font-medium text-neutral-950 dark:text-neutral-200">
+                  {stat.label}
+                </div>
+              </div>
+              <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+                {stat.description}
               </p>
-              <Text variant="p1" as="p" className="font-semibold mb-2">
-                {item.label}
-              </Text>
-              <Text
-                variant="p2"
-                as="p"
-                className="text-slate-500 dark:text-slate-400"
-              >
-                {item.detail}
-              </Text>
-            </Card>
-          </FadeIn>
-        ))}
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 
-// SECTION 5: SOLUTION + MÉTHODE
-function MethodeSection() {
+// ─── TESTIMONIALS ────────────────────────────────────────────────────────────
+function TestimonialsSection({
+  feedback,
+}: {
+  feedback: FeedbackPrismicDocument[];
+}) {
+  return (
+    <section id="testimonials" className="border-t border-border py-24">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="mb-16 text-center">
+          <Text variant="h3" as="h2" className="mb-4">
+            Ils ont transformé leur app avec nous
+          </Text>
+          <p className="text-neutral-500 dark:text-neutral-400">
+            Des apps lentes devenues des plateformes scalables. Des années de
+            releases automatisées.
+          </p>
+        </div>
+
+        <div className="mb-16 grid gap-6 md:grid-cols-3">
+          {feedback.slice(0, 3).map((item) => (
+            <div
+              key={item.id}
+              className="group relative flex flex-col rounded-xl border border-border bg-card p-6 transition-colors hover:border-accent/50"
+            >
+              <svg
+                className="mb-4 h-8 w-8 text-accent opacity-50"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+              </svg>
+              <div className="mb-6 flex-1 text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+                <PrismicRichText field={item.data.review} />
+              </div>
+              <div className="border-t border-border pt-4">
+                <div className="flex items-center gap-3">
+                  <PrismicNextImage
+                    field={item.data.avatar}
+                    width={40}
+                    height={40}
+                    className="h-10 w-10 rounded-full bg-secondary object-cover"
+                    imgixParams={{ fit: 'crop', ar: '1:1' }}
+                  />
+                  <div>
+                    <div className="font-medium text-neutral-950 dark:text-neutral-200">
+                      <PrismicText field={item.data.full_name} />
+                    </div>
+                    <div className="text-sm text-neutral-500 dark:text-neutral-400">
+                      <PrismicText field={item.data.job_title} />,{' '}
+                      <PrismicText field={item.data.company} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─── PROCESS ─────────────────────────────────────────────────────────────────
+function ProcessSection() {
   const steps = [
     {
-      number: 1,
+      number: '1',
+      icon: MagnifyingGlassIcon,
       title: 'Fondations',
       description: 'On identifie ce qui bloque. On nettoie.',
       items: [
@@ -249,7 +336,8 @@ function MethodeSection() {
       ],
     },
     {
-      number: 2,
+      number: '2',
+      icon: CogIcon,
       title: 'Écosystème',
       description: 'On met en place les outils pour ship.',
       items: [
@@ -259,7 +347,8 @@ function MethodeSection() {
       ],
     },
     {
-      number: 3,
+      number: '3',
+      icon: BoltIcon,
       title: 'Accélération',
       description: 'On optimise perf, data, release.',
       items: [
@@ -271,366 +360,356 @@ function MethodeSection() {
   ];
 
   return (
-    <div className="py-20">
-      <div className="text-center max-w-3xl mx-auto mb-4">
-        <Text variant="h3" as="h2" className="mb-4">
-          Je prends ton app et je la transforme en machine à shipper.
-        </Text>
-        <Text
-          variant="p1"
-          as="p"
-          className="text-slate-600 dark:text-slate-400"
-        >
-          Pas dans 6 mois. Maintenant.
-        </Text>
-      </div>
-
-      <div className="text-center mb-12">
-        <div className="inline-flex items-center gap-4 text-lg">
-          <span className="text-slate-400 line-through">
-            "on espère que ça passe"
-          </span>
-          <span className="text-2xl">&rarr;</span>
-          <span className="font-bold text-blue-600">"on ship aujourd'hui"</span>
+    <section id="process" className="border-t border-border py-24">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="mb-16 text-center">
+          <Text variant="h3" as="h2" className="mb-4">
+            Je prends ton app et je la transforme en{' '}
+            <span className="text-accent">machine à shipper.</span>
+          </Text>
+          <p className="text-neutral-500 dark:text-neutral-400">
+            Pas dans 6 mois.{' '}
+            <span className="font-medium text-neutral-950 dark:text-neutral-200">
+              Maintenant.
+            </span>
+          </p>
         </div>
-      </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        {steps.map((step) => (
-          <FadeIn key={step.number}>
-            <Card className="h-full flex flex-col">
-              <div className="flex items-center gap-3 mb-4">
-                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-600 text-white font-bold text-lg">
+        <div className="mb-12 flex items-center justify-center gap-4 text-center">
+          <span className="rounded-lg border border-border bg-card px-4 py-2 text-sm text-neutral-500 dark:text-neutral-400 line-through">
+            &ldquo;on espère que ça passe&rdquo;
+          </span>
+          <span className="text-2xl text-accent">&rarr;</span>
+          <span className="rounded-lg border border-accent bg-accent/10 px-4 py-2 text-sm font-medium text-accent">
+            &ldquo;on ship aujourd&apos;hui&rdquo;
+          </span>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-3">
+          {steps.map((step) => (
+            <div
+              key={step.number}
+              className="group relative rounded-xl border border-border bg-card p-6 transition-colors hover:border-accent/50"
+            >
+              <div className="mb-6 flex items-center gap-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-xl font-bold text-neutral-950 dark:text-neutral-200">
                   {step.number}
-                </span>
-                <Text variant="p1" as="h3" className="font-bold">
-                  {step.title}
-                </Text>
+                </div>
+                <step.icon className="h-6 w-6 text-accent" />
               </div>
-              <Text
-                variant="p2"
-                as="p"
-                className="text-slate-600 dark:text-slate-400 mb-4"
-              >
-                {step.description}
+              <Text variant="s2" as="h3" className="mb-2 font-bold">
+                {step.title}
               </Text>
-              <ul className="space-y-2 flex-grow">
-                {step.items.map((item) => (
-                  <li key={item} className="flex items-start gap-2">
-                    <CheckIcon className="h-5 w-5 text-green-500 shrink-0 mt-0.5" />
-                    <span className="text-sm text-slate-600 dark:text-slate-400">
-                      {item}
-                    </span>
+              <p className="mb-4 text-sm text-neutral-500 dark:text-neutral-400">
+                {step.description}
+              </p>
+              <ul className="space-y-2">
+                {step.items.map((item, i) => (
+                  <li
+                    key={i}
+                    className="flex items-start gap-2 text-sm text-neutral-500 dark:text-neutral-400"
+                  >
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                    {item}
                   </li>
                 ))}
               </ul>
-            </Card>
-          </FadeIn>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-// SECTION 6: OFFRE + GARANTIE
-function OffreSection() {
-  return (
-    <div className="py-20 max-w-3xl mx-auto text-center">
-      <Text variant="h3" as="h2" className="mb-4">
-        5k par mois. C'est tout.
-      </Text>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 my-8 text-left">
-        <Card>
-          <div className="flex items-center gap-2 mb-2">
-            <CheckIcon className="h-5 w-5 text-green-500" />
-            <span className="font-semibold">Pas de contrat long</span>
-          </div>
-          <p className="text-sm text-slate-500 dark:text-slate-400">
-            Tu prends un mois. On ship. Tu continues si ça fonctionne.
-          </p>
-        </Card>
-        <Card>
-          <div className="flex items-center gap-2 mb-2">
-            <CheckIcon className="h-5 w-5 text-green-500" />
-            <span className="font-semibold">Pas d'engagement</span>
-          </div>
-          <p className="text-sm text-slate-500 dark:text-slate-400">
-            Pause ou annule quand tu veux. Le code t'appartient à 100%.
-          </p>
-        </Card>
-        <Card>
-          <div className="flex items-center gap-2 mb-2">
-            <CheckIcon className="h-5 w-5 text-green-500" />
-            <span className="font-semibold">Pas de remboursement</span>
-          </div>
-          <p className="text-sm text-slate-500 dark:text-slate-400">
-            Si ça ne fonctionne pas, tu arrêtes. Simple.
-          </p>
-        </Card>
-      </div>
-
-      <Button
-        href={linksApi.stripe.MONTHLY_PLAN}
-        as="a"
-        size="xxl"
-        variant="primary"
-        isExternalLink
-        withExternalLinkIcon={false}
-        className="mx-auto justify-center"
-      >
-        {CTA_LABEL} &rarr;
-      </Button>
-    </div>
-  );
-}
-
-// SECTION 7: LOGIQUE
-function LogiqueSection() {
-  const rows = [
-    {
-      label: 'Coût',
-      sans: 'Dev senior en CDI : 60-90k €/an + charges',
-      avec: '5 000 €/mois, sans engagement',
-    },
-    {
-      label: 'Délai premier impact',
-      sans: '3-6 mois de recrutement + onboarding',
-      avec: 'Première semaine',
-    },
-    {
-      label: 'Risque',
-      sans: 'Mauvais recrutement = 6 mois perdus',
-      avec: 'Tu arrêtes si ça ne marche pas',
-    },
-    {
-      label: 'Résultat',
-      sans: 'Un dev de plus dans une app qui ralentit',
-      avec: 'Une app qui ship tous les jours',
-    },
-  ];
-
-  return (
-    <div className="py-20">
-      <div className="text-center max-w-3xl mx-auto mb-12">
-        <Text variant="h3" as="h2" className="mb-4">
-          Combien ça te coûte de continuer comme ça ?
-        </Text>
-        <div className="flex flex-col sm:flex-row justify-center gap-8 mt-8 mb-4">
-          <div className="text-center">
-            <p className="text-4xl font-bold text-blue-600">-50%</p>
-            <p className="text-sm text-slate-500 mt-1">de temps de dev</p>
-          </div>
-          <div className="text-center">
-            <p className="text-4xl font-bold text-blue-600">+35%</p>
-            <p className="text-sm text-slate-500 mt-1">
-              de rétention utilisateur
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div className="max-w-4xl mx-auto overflow-x-auto">
-        <table className="w-full text-left text-sm">
-          <thead>
-            <tr className="border-b border-slate-200 dark:border-slate-700">
-              <th className="py-4 px-4 font-medium text-slate-500"></th>
-              <th className="py-4 px-4 text-center font-medium text-slate-500">
-                Sans nous
-              </th>
-              <th className="py-4 px-4 text-center font-semibold text-blue-600">
-                Avec weshipit.today
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((row) => (
-              <tr
-                key={row.label}
-                className="border-b border-slate-100 dark:border-slate-800"
-              >
-                <td className="py-4 px-4 font-medium text-slate-900 dark:text-white">
-                  {row.label}
-                </td>
-                <td className="py-4 px-4 text-center text-slate-600 dark:text-slate-400">
-                  {row.sans}
-                </td>
-                <td className="py-4 px-4 text-center font-semibold text-slate-900 dark:text-white bg-blue-50/50 dark:bg-blue-900/10">
-                  {row.avec}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  );
-}
-
-// SECTION 8: URGENCE + RARETÉ
-function UrgenceSection() {
-  return (
-    <div className="py-20 max-w-3xl mx-auto text-center">
-      <Text variant="h3" as="h2" className="mb-8">
-        Chaque semaine sans agir te coûte
-      </Text>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
-        <Card>
-          <p className="text-3xl font-bold text-red-500 mb-2">40%</p>
-          <p className="text-sm text-slate-600 dark:text-slate-400">
-            des users désinstallent une app instable chaque semaine
-          </p>
-        </Card>
-        <Card>
-          <p className="text-3xl font-bold text-red-500 mb-2">+</p>
-          <p className="text-sm text-slate-600 dark:text-slate-400">
-            Tes concurrents shippent pendant que ton app vieillit
-          </p>
-        </Card>
-        <Card>
-          <p className="text-3xl font-bold text-red-500 mb-2">$$$</p>
-          <p className="text-sm text-slate-600 dark:text-slate-400">
-            Ta dette technique augmente chaque jour
-          </p>
-        </Card>
-      </div>
-      <Card className="inline-block">
-        <Text variant="p1" as="p" className="font-bold">
-          On prend 3 clients max. Il reste une place.
-        </Text>
-      </Card>
-    </div>
-  );
-}
-
-// SECTION 9: TÉMOIGNAGES
-function Reassurance({ feedback }: { feedback: FeedbackPrismicDocument[] }) {
-  return (
-    <section id="testimonials" className="py-20">
-      <div className="text-center max-w-3xl mx-auto mb-16">
-        <Text variant="h3" as="h2" className="mb-4">
-          Ils ont transformé leur app avec nous
-        </Text>
-        <Text
-          variant="p1"
-          as="p"
-          className="text-slate-600 dark:text-slate-400"
-        >
-          Des apps lentes devenues des plateformes scalables. Des années de
-          releases automatisées. Des projets complexes livrés sans ralentir.
-        </Text>
-      </div>
-
-      <div className="flex overflow-x-auto gap-8 pb-4 justify-start">
-        {feedback.map((item) => (
-          <Card key={item.id} className="border-none max-w-md min-w-[350px]">
-            <div className="pt-6 flex flex-col h-full">
-              <div className="flex items-center gap-1 mb-4">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <StarIconSolid key={i} className="h-5 w-5 text-yellow-500" />
-                ))}
-              </div>
-              <div className="prose prose-slate dark:prose-invert text-slate-600 dark:text-slate-400 mb-6 flex-grow">
-                <PrismicRichText field={item.data.review} />
-              </div>
-              <div className="flex items-center gap-4 mt-auto pt-4 border-t border-slate-200 dark:border-slate-800">
-                <PrismicNextImage
-                  field={item.data.avatar}
-                  width={48}
-                  height={48}
-                  className="h-12 w-12 rounded-full bg-slate-200 dark:bg-slate-700 object-cover"
-                  imgixParams={{ fit: 'crop', ar: '1:1' }}
-                />
-                <div>
-                  <p className="font-semibold text-slate-900 dark:text-white">
-                    <PrismicText field={item.data.full_name} />
-                  </p>
-                  <p className="text-sm text-slate-600 dark:text-slate-400">
-                    <PrismicText field={item.data.job_title} />,{' '}
-                    <PrismicText field={item.data.company} />
-                  </p>
-                </div>
-              </div>
             </div>
-          </Card>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
 }
 
-// CTA FINAL
-function CtaFinal() {
+// ─── PRICING ─────────────────────────────────────────────────────────────────
+function PricingSection() {
+  const features = [
+    {
+      positive: true,
+      title: 'Pas de contrat long',
+      description: 'Tu prends un mois. On ship. Tu continues si ça fonctionne.',
+    },
+    {
+      positive: true,
+      title: "Pas d'engagement",
+      description:
+        "Pause ou annule quand tu veux. Le code t'appartient à 100%.",
+    },
+    {
+      positive: false,
+      title: 'Pas de remboursement',
+      description: 'Si ça ne fonctionne pas, tu arrêtes. Simple.',
+    },
+  ];
+
   return (
-    <div className="mx-auto max-w-4xl py-16 mb-16">
-      <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
-        <Card
-          className="flex flex-col items-center justify-center gap-6 overflow-hidden relative text-center"
-          variant="gradient-blue"
-        >
-          <motion.div
-            className="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-blue-600/30 blur-3xl"
-            animate={{
-              x: [0, 30, 0],
-              y: [0, -30, 0],
-              opacity: [0.5, 0.8, 0.5],
-            }}
-            transition={{
-              repeat: Infinity,
-              duration: 8,
-              ease: 'easeInOut',
-            }}
-          />
+    <section id="pricing" className="border-t border-border py-24">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="mx-auto max-w-3xl">
+          <div className="overflow-hidden rounded-2xl border border-border bg-card">
+            <div className="border-b border-border bg-secondary/30 px-8 py-12 text-center">
+              <div className="mb-2 text-sm font-medium uppercase tracking-wider text-accent">
+                Tarif unique
+              </div>
+              <div className="mb-4 flex items-baseline justify-center gap-2">
+                <span className="text-6xl font-bold tracking-tight text-neutral-950 dark:text-neutral-200 md:text-7xl">
+                  5k&euro;
+                </span>
+                <span className="text-xl text-neutral-500 dark:text-neutral-400">
+                  /mois
+                </span>
+              </div>
+              <p className="text-neutral-500 dark:text-neutral-400">
+                C&apos;est tout.
+              </p>
+            </div>
 
-          <Text
-            variant="h4"
-            as="h2"
-            className="bg-gradient-to-b from-white to-white/75 bg-clip-text font-bold tracking-tight text-transparent drop-shadow"
-          >
-            Je ne promets pas du code. Je promets du shipping.
-          </Text>
-          <Text
-            variant="p1"
-            as="p"
-            className="bg-gradient-to-b from-white to-white/75 bg-clip-text tracking-tight text-transparent drop-shadow max-w-xl"
-          >
-            Prends un premier mois. Et vois par toi-même si ton app peut enfin
-            ship.
-          </Text>
+            <div className="p-8">
+              <div className="mb-8 grid gap-6 md:grid-cols-3">
+                {features.map((f, i) => (
+                  <div key={i} className="text-center">
+                    <div
+                      className={`mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full ${
+                        f.positive
+                          ? 'bg-accent/20 text-accent'
+                          : 'bg-secondary text-neutral-500 dark:text-neutral-400'
+                      }`}
+                    >
+                      {f.positive ? (
+                        <CheckIcon className="h-5 w-5" />
+                      ) : (
+                        <XMarkIcon className="h-5 w-5" />
+                      )}
+                    </div>
+                    <div className="mb-1 font-medium text-neutral-950 dark:text-neutral-200">
+                      {f.title}
+                    </div>
+                    <div className="text-sm text-neutral-500 dark:text-neutral-400">
+                      {f.description}
+                    </div>
+                  </div>
+                ))}
+              </div>
 
-          <Button
-            href={linksApi.stripe.MONTHLY_PLAN}
-            size="xxl"
-            variant="outline"
-            as="a"
-            isExternalLink
-            withExternalLinkIcon={false}
-            className="mx-auto"
-          >
-            {CTA_LABEL} &rarr;
-          </Button>
-
-          <div className="flex flex-col sm:flex-row gap-4 text-sm text-white/80">
-            <span className="flex items-center gap-1">
-              <CheckIcon className="h-4 w-4" /> Sans engagement
-            </span>
-            <span className="flex items-center gap-1">
-              <CheckIcon className="h-4 w-4" /> 3 clients max
-            </span>
-            <span className="flex items-center gap-1">
-              <CheckIcon className="h-4 w-4" /> Le code t'appartient
-            </span>
+              <Button
+                href={linksApi.stripe.MONTHLY_PLAN}
+                as="a"
+                size="xl"
+                variant="primary"
+                isExternalLink
+                withExternalLinkIcon={false}
+                className="w-full justify-center"
+              >
+                {CTA_LABEL}
+                <ArrowRightIcon className="ml-2 h-4 w-4" />
+              </Button>
+            </div>
           </div>
-        </Card>
-      </motion.div>
-    </div>
+        </div>
+      </div>
+    </section>
   );
 }
 
+// ─── COMPARISON ──────────────────────────────────────────────────────────────
+function ComparisonSection() {
+  const rows = [
+    {
+      category: 'Coût',
+      without: 'Dev senior en CDI : 60-90k €/an + charges',
+      withUs: '5 000 €/mois, sans engagement',
+    },
+    {
+      category: 'Délai premier impact',
+      without: '3-6 mois de recrutement + onboarding',
+      withUs: 'Première semaine',
+    },
+    {
+      category: 'Risque',
+      without: 'Mauvais recrutement = 6 mois perdus',
+      withUs: 'Tu arrêtes si ça ne marche pas',
+    },
+    {
+      category: 'Résultat',
+      without: 'Un dev de plus dans une app qui ralentit',
+      withUs: 'Une app qui ship tous les jours',
+    },
+  ];
+
+  return (
+    <section className="border-t border-border py-24">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="mb-16 text-center">
+          <Text variant="h3" as="h2" className="mb-4">
+            Combien ça te coûte de continuer comme ça ?
+          </Text>
+          <div className="flex items-center justify-center gap-8">
+            <div className="flex items-center gap-2">
+              <span className="text-4xl font-bold text-accent">-50%</span>
+              <span className="text-sm text-neutral-500 dark:text-neutral-400">
+                de temps de dev
+              </span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-4xl font-bold text-accent">+35%</span>
+              <span className="text-sm text-neutral-500 dark:text-neutral-400">
+                de rétention utilisateur
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div className="overflow-hidden rounded-xl border border-border">
+          <div className="grid grid-cols-3 border-b border-border bg-secondary">
+            <div className="p-4" />
+            <div className="border-l border-border p-4 text-center font-medium text-neutral-950 dark:text-neutral-200">
+              Sans nous
+            </div>
+            <div className="border-l border-border bg-accent/10 p-4 text-center font-medium text-accent">
+              Avec weshipit.today
+            </div>
+          </div>
+          {rows.map((row, i) => (
+            <div
+              key={i}
+              className={`grid grid-cols-3 ${
+                i !== rows.length - 1 ? 'border-b border-border' : ''
+              }`}
+            >
+              <div className="flex items-center p-4 font-medium text-neutral-950 dark:text-neutral-200">
+                {row.category}
+              </div>
+              <div className="flex items-center gap-2 border-l border-border bg-card p-4 text-sm text-neutral-500 dark:text-neutral-400">
+                <XMarkIcon className="h-4 w-4 shrink-0 text-destructive" />
+                {row.without}
+              </div>
+              <div className="flex items-center gap-2 border-l border-border bg-accent/5 p-4 text-sm text-neutral-950 dark:text-neutral-200">
+                <CheckIcon className="h-4 w-4 shrink-0 text-accent" />
+                {row.withUs}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─── URGENCY ─────────────────────────────────────────────────────────────────
+function UrgencySection() {
+  const items = [
+    {
+      icon: ArrowTrendingDownIcon,
+      value: '40%',
+      text: 'des users désinstallent une app instable chaque semaine',
+    },
+    {
+      icon: BoltIcon,
+      value: '+',
+      text: 'Tes concurrents shippent pendant que ton app vieillit',
+    },
+    {
+      icon: CurrencyDollarIcon,
+      value: '$$$',
+      text: 'Ta dette technique augmente chaque jour',
+    },
+  ];
+
+  return (
+    <section className="border-t border-border py-24">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="mb-12 text-center">
+          <Text variant="h3" as="h2" className="mb-4">
+            Chaque semaine sans agir te coûte
+          </Text>
+        </div>
+
+        <div className="mb-12 grid gap-6 md:grid-cols-3">
+          {items.map((item, i) => (
+            <div
+              key={i}
+              className="flex flex-col items-center rounded-xl border border-border bg-card p-8 text-center"
+            >
+              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-destructive/10">
+                <item.icon className="h-7 w-7 text-destructive" />
+              </div>
+              <div className="mb-2 text-3xl font-bold text-neutral-950 dark:text-neutral-200">
+                {item.value}
+              </div>
+              <p className="text-sm text-neutral-500 dark:text-neutral-400">
+                {item.text}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        <div className="rounded-xl border border-accent bg-accent/10 p-8 text-center">
+          <p className="text-xl font-bold text-neutral-950 dark:text-neutral-200">
+            On prend <span className="text-accent">3 clients max</span>. Il
+            reste une place.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─── CTA FINAL ───────────────────────────────────────────────────────────────
+function CtaFinalSection() {
+  return (
+    <section className="border-t border-border py-24">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="relative overflow-hidden rounded-2xl border border-border bg-card">
+          <div className="pointer-events-none absolute inset-0">
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:2rem_2rem] opacity-30" />
+          </div>
+
+          <div className="relative px-8 py-16 text-center md:py-24">
+            <Text variant="h2" as="h2" className="mb-6">
+              Je ne promets pas du code.{' '}
+              <span className="text-accent">Je promets du shipping.</span>
+            </Text>
+            <p className="mx-auto mb-10 max-w-xl text-lg text-neutral-500 dark:text-neutral-400">
+              Prends un premier mois. Et vois par toi-même si ton app peut enfin
+              ship.
+            </p>
+
+            <Button
+              href={linksApi.stripe.MONTHLY_PLAN}
+              as="a"
+              size="xxl"
+              variant="primary"
+              isExternalLink
+              withExternalLinkIcon={false}
+              className="mx-auto justify-center"
+            >
+              {CTA_LABEL}
+              <ArrowRightIcon className="ml-2 h-4 w-4" />
+            </Button>
+
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-neutral-500 dark:text-neutral-400">
+              <span className="flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+                Sans engagement
+              </span>
+              <span className="flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-accent" />3 clients
+                max
+              </span>
+              <span className="flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+                Le code t&apos;appartient
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+// ─── FAQ DATA ────────────────────────────────────────────────────────────────
 const faqs = [
   {
     id: 'faq-fr-1',
@@ -677,18 +756,15 @@ const faqs = [
   },
 ];
 
+// ─── PAGE ────────────────────────────────────────────────────────────────────
 export default function BonjourPage({ clients, feedback }: BonjourPageProps) {
-  /** @type {import('schema-dts').FAQPage} */
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: faqs.map(({ question, answer }) => ({
       '@type': 'Question',
       name: question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: answer,
-      },
+      acceptedAnswer: { '@type': 'Answer', text: answer },
     })),
   };
 
@@ -799,100 +875,28 @@ export default function BonjourPage({ clients, feedback }: BonjourPageProps) {
           isExternalLink: true,
         }}
       >
-        <StickyCta />
-
-        {/* HOOK — ATTENTION */}
-        <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <FadeIn>
-            <HeroSection />
-          </FadeIn>
-        </div>
-
-        {/* PROBLÈME */}
-        <Section variant="transparent" className="py-0">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6">
-            <ProblemeSection />
-          </div>
-        </Section>
-
-        {/* POURQUOI */}
-        <div className="bg-slate-50 dark:bg-slate-900/50">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6">
-            <PourquoiSection />
-          </div>
-        </div>
-
-        {/* AUTORITÉ */}
-        <Section variant="transparent" className="py-0">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6">
-            <AutoriteSection />
-          </div>
-        </Section>
-
-        {/* TÉMOIGNAGES + CLIENTS */}
-        <div className="bg-slate-50 dark:bg-slate-900/50">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6">
-            <Reassurance feedback={feedback} />
-          </div>
-        </div>
-        <div className="py-16 dark:bg-slate-900">
-          <ClientsListHomepage clients={clients} />
-        </div>
-
-        {/* SOLUTION + MÉTHODE */}
-        <Section variant="transparent" className="py-0">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6">
-            <MethodeSection />
-          </div>
-        </Section>
-
-        {/* OFFRE + GARANTIE */}
-        <div className="bg-slate-50 dark:bg-slate-900/50">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6">
-            <OffreSection />
-          </div>
-        </div>
-
-        {/* LOGIQUE — Comparaison */}
-        <Section variant="transparent" className="py-0">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6">
-            <LogiqueSection />
-          </div>
-        </Section>
-
-        {/* URGENCE + RARETÉ */}
-        <div className="bg-slate-50 dark:bg-slate-900/50">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6">
-            <UrgenceSection />
-          </div>
-        </div>
+        <HeroSection />
+        <ProblemsSection />
+        <StatsSection />
+        <TestimonialsSection feedback={feedback} />
+        <ProcessSection />
+        <PricingSection />
+        <ComparisonSection />
+        <UrgencySection />
 
         {/* FAQ */}
-        <Section variant="transparent" className="py-12">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6">
-            <section
-              id="faq"
-              className="my-0 py-8"
-              aria-labelledby="faq-fr-heading"
-            >
-              <div className="max-w-4xl mx-auto">
-                <Faq
-                  faqs={faqs}
-                  title="Questions fréquentes"
-                  headingId="faq-fr-heading"
-                />
-              </div>
-            </section>
+        <section id="faq" className="border-t border-border py-24">
+          <div className="mx-auto max-w-3xl px-6">
+            <div className="mb-12 text-center">
+              <Text variant="h3" as="h2" className="mb-4">
+                Questions fréquentes
+              </Text>
+            </div>
+            <Faq faqs={faqs} title="" headingId="faq-fr-heading" />
           </div>
-        </Section>
+        </section>
 
-        {/* CTA FINAL */}
-        <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <CtaFinal />
-        </div>
-
-        {/* Bottom padding for sticky CTA on mobile */}
-        <div className="h-20 sm:hidden" />
+        <CtaFinalSection />
       </Layout>
     </>
   );
