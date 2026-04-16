@@ -1,10 +1,7 @@
 import { Text, Button, ClientsListHomepage, Faq } from '@weshipit/ui';
 
 import { Customer, getVisibleClients } from './api/client';
-import { getAllFeedback, FeedbackPrismicDocument } from './api/feedback';
 import Head from 'next/head';
-import { PrismicRichText, PrismicText } from '@prismicio/react';
-import { PrismicNextImage } from '@prismicio/next';
 import { Layout } from '../components/layout';
 import { linksApi } from './api/links';
 import {
@@ -27,8 +24,28 @@ import {
 
 interface BonjourPageProps {
   clients: Customer[];
-  feedback: FeedbackPrismicDocument[];
 }
+
+const testimonials = [
+  {
+    quote:
+      "Capacité d'adaptation à notre environnement de travail. Travailler avec des petites entreprises n'est pas toujours facile, mais David et Matthys ont su s'intégrer parfaitement à notre équipe.",
+    author: 'Ludovic Borie',
+    role: 'CTO, Karnott',
+  },
+  {
+    quote:
+      "Énergie positive, envie d'avancer, proposer des solutions. Grâce à son coaching automation, je suis plus productive — merci !",
+    author: 'Clémentine Lourme',
+    role: 'Business developer, Retail Shake',
+  },
+  {
+    quote:
+      "Des connaissances pratiques et une expertise impressionnantes, avec beaucoup d'informations utiles pour se lancer dans le développement le plus facilement et efficacement possible.",
+    author: 'Alice Jodra',
+    role: 'Chef de projet IT, Saint-Gobain PAM Canalisation',
+  },
+];
 
 const CTA_LABEL = 'Prendre un premier mois';
 
@@ -40,7 +57,7 @@ function HeroSection() {
     <section className="relative overflow-hidden pt-32 pb-24">
       <div className="relative mx-auto max-w-6xl px-6">
         <div className="mx-auto max-w-4xl text-center">
-          <Text variant="h1" as="h1" className="mb-6 mt-12 text-balance">
+          <Text variant="h1" as="h1" className="mb-6 text-balance">
             Si ton app React Native devient{' '}
             <span className="text-neutral-500 dark:text-neutral-400">
               plus lente
@@ -206,7 +223,7 @@ function StatsSection() {
       value: '90%',
       label: 'de réutilisation de code',
       description:
-        'Architecture designée chez Malo — onboarding rapide, coût technique réduit',
+        'Architecture designée chez Mahalo Banking — onboarding rapide, coût technique réduit',
     },
     {
       value: '100%',
@@ -259,11 +276,7 @@ function StatsSection() {
 }
 
 // ─── TESTIMONIALS ────────────────────────────────────────────────────────────
-function TestimonialsSection({
-  feedback,
-}: {
-  feedback: FeedbackPrismicDocument[];
-}) {
+function TestimonialsSection() {
   return (
     <section id="testimonials" className="border-t border-border py-24">
       <div className="mx-auto max-w-6xl px-6">
@@ -278,9 +291,9 @@ function TestimonialsSection({
         </div>
 
         <div className="mb-16 grid gap-6 md:grid-cols-3">
-          {feedback.slice(0, 3).map((item) => (
+          {testimonials.map((item, index) => (
             <div
-              key={item.id}
+              key={index}
               className="group relative flex flex-col rounded-xl border border-border bg-card p-6 transition-colors hover:border-accent/50"
             >
               <svg
@@ -290,27 +303,15 @@ function TestimonialsSection({
               >
                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
               </svg>
-              <div className="mb-6 flex-1 text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
-                <PrismicRichText field={item.data.review} />
-              </div>
+              <p className="mb-6 flex-1 text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+                {item.quote}
+              </p>
               <div className="border-t border-border pt-4">
-                <div className="flex items-center gap-3">
-                  <PrismicNextImage
-                    field={item.data.avatar}
-                    width={40}
-                    height={40}
-                    className="h-10 w-10 rounded-full bg-secondary object-cover"
-                    imgixParams={{ fit: 'crop', ar: '1:1' }}
-                  />
-                  <div>
-                    <div className="font-medium text-neutral-950 dark:text-neutral-200">
-                      <PrismicText field={item.data.full_name} />
-                    </div>
-                    <div className="text-sm text-neutral-500 dark:text-neutral-400">
-                      <PrismicText field={item.data.job_title} />,{' '}
-                      <PrismicText field={item.data.company} />
-                    </div>
-                  </div>
+                <div className="font-medium text-neutral-950 dark:text-neutral-200">
+                  {item.author}
+                </div>
+                <div className="text-sm text-neutral-500 dark:text-neutral-400">
+                  {item.role}
                 </div>
               </div>
             </div>
@@ -757,7 +758,7 @@ const faqs = [
 ];
 
 // ─── PAGE ────────────────────────────────────────────────────────────────────
-export default function BonjourPage({ clients, feedback }: BonjourPageProps) {
+export default function BonjourPage({ clients }: BonjourPageProps) {
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -878,7 +879,7 @@ export default function BonjourPage({ clients, feedback }: BonjourPageProps) {
         <HeroSection />
         <ProblemsSection />
         <StatsSection />
-        <TestimonialsSection feedback={feedback} />
+        <TestimonialsSection />
         <ProcessSection />
         <PricingSection />
         <ComparisonSection />
@@ -903,15 +904,11 @@ export default function BonjourPage({ clients, feedback }: BonjourPageProps) {
 }
 
 export async function getStaticProps() {
-  const [{ clients }, { feedback }] = await Promise.all([
-    getVisibleClients(),
-    getAllFeedback(),
-  ]);
+  const { clients } = await getVisibleClients();
 
   return {
     props: {
       clients: clients ?? [],
-      feedback: feedback ?? [],
     },
   };
 }

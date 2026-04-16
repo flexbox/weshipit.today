@@ -18,7 +18,7 @@ export const linksApi = {
     ONBOARDING: 'https://cal.com/davidl/weshipit-onboarding',
   },
   stripe: {
-    MONTHLY_PLAN: 'https://buy.stripe.com/5kA17K2wD4ge9Ko7sv',
+    MONTHLY_PLAN: 'https://buy.stripe.com/5kA03G1sz8wu8GkfZ6',
   },
   notion: {
     PODCAST_FORM:
