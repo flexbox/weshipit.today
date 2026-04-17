@@ -11,7 +11,7 @@ const inter = Inter({
   display: 'swap',
   style: ['normal'],
   subsets: ['latin'],
-  weight: ['400', '700', '800'],
+  weight: ['400', '500', '600', '700', '800'],
 });
 
 function CustomApp({ Component, pageProps }: AppProps) {

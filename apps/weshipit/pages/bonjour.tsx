@@ -66,7 +66,7 @@ function HeroSection() {
             <span className="text-accent">ce n’est pas normal.</span>
           </Text>
 
-          <p className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-neutral-500 dark:text-neutral-400 md:text-xl">
+          <p className="mx-auto mb-10 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-500 dark:text-neutral-400 md:text-xl">
             Une bonne app devient plus rapide à faire évoluer avec le temps. La
             tienne te ralentit. Et ça te coûte déjà des users, du temps et du
             cash.
@@ -106,7 +106,7 @@ function HeroSection() {
 
         {/* Intro */}
         <div className="mx-auto mt-16 max-w-2xl text-center">
-          <p className="text-lg leading-relaxed text-neutral-500 dark:text-neutral-400">
+          <p className="text-pretty text-lg leading-relaxed text-neutral-500 dark:text-neutral-400">
             Je m&apos;appelle{' '}
             <span className="font-medium text-neutral-950 dark:text-neutral-200">
               David
@@ -157,7 +157,7 @@ function ProblemsSection() {
         <div className="grid gap-16 lg:grid-cols-2">
           {/* Left */}
           <div>
-            <Text variant="h3" as="h2" className="mb-8">
+            <Text variant="h3" as="h2" className="mb-8 text-balance">
               Le problème, ce n&apos;est pas ton équipe.{' '}
               <span className="text-accent">C&apos;est ton app.</span>
             </Text>
@@ -245,7 +245,7 @@ function StatsSection() {
           <p className="mb-4 text-sm font-medium uppercase tracking-wider text-accent">
             J&apos;ai vu ça des dizaines de fois.
           </p>
-          <Text variant="h3" as="h2" className="mx-auto max-w-2xl">
+          <Text variant="h3" as="h2" className="mx-auto max-w-2xl text-balance">
             Je ne fais pas du code.{' '}
             <span className="text-neutral-500 dark:text-neutral-400">
               Je règle des problèmes de vélocité.
@@ -281,7 +281,7 @@ function TestimonialsSection() {
     <section id="testimonials" className="border-t border-border py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-16 text-center">
-          <Text variant="h3" as="h2" className="mb-4">
+          <Text variant="h3" as="h2" className="mb-4 text-balance">
             Ils ont transformé leur app avec nous
           </Text>
           <p className="text-neutral-500 dark:text-neutral-400">
@@ -364,7 +364,7 @@ function ProcessSection() {
     <section id="process" className="border-t border-border py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-16 text-center">
-          <Text variant="h3" as="h2" className="mb-4">
+          <Text variant="h3" as="h2" className="mb-4 text-balance">
             Je prends ton app et je la transforme en{' '}
             <span className="text-accent">machine à shipper.</span>
           </Text>
@@ -398,7 +398,7 @@ function ProcessSection() {
                 </div>
                 <step.icon className="h-6 w-6 text-accent" />
               </div>
-              <Text variant="s2" as="h3" className="mb-2 font-bold">
+              <Text variant="h4" as="h3" className="mb-2">
                 {step.title}
               </Text>
               <p className="mb-4 text-sm text-neutral-500 dark:text-neutral-400">
@@ -542,7 +542,7 @@ function ComparisonSection() {
     <section className="border-t border-border py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-16 text-center">
-          <Text variant="h3" as="h2" className="mb-4">
+          <Text variant="h3" as="h2" className="mb-4 text-balance">
             Combien ça te coûte de continuer comme ça ?
           </Text>
           <div className="flex items-center justify-center gap-8">
@@ -621,7 +621,7 @@ function UrgencySection() {
     <section className="border-t border-border py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mb-12 text-center">
-          <Text variant="h3" as="h2" className="mb-4">
+          <Text variant="h3" as="h2" className="mb-4 text-balance">
             Chaque semaine sans agir te coûte
           </Text>
         </div>
@@ -667,7 +667,7 @@ function CtaFinalSection() {
           </div>
 
           <div className="relative px-8 py-16 text-center md:py-24">
-            <Text variant="h2" as="h2" className="mb-6">
+            <Text variant="h2" as="h2" className="mb-6 text-balance">
               Je ne promets pas du code.{' '}
               <span className="text-accent">Je promets du shipping.</span>
             </Text>
@@ -889,7 +889,7 @@ export default function BonjourPage({ clients }: BonjourPageProps) {
         <section id="faq" className="border-t border-border py-24">
           <div className="mx-auto max-w-3xl px-6">
             <div className="mb-12 text-center">
-              <Text variant="h3" as="h2" className="mb-4">
+              <Text variant="h3" as="h2" className="mb-4 text-balance">
                 Questions fréquentes
               </Text>
             </div>
