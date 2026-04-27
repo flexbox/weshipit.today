@@ -625,10 +625,14 @@ export function PlanFinderSection({ ctaLink }: { ctaLink: string }) {
               <Text as="h3" variant="h4" className="mb-2 text-white">
                 Still unsure? Let’s talk.
               </Text>
-              <p className="text-primary-foreground/80 max-w-md text-muted">
+              <Text
+                as="p"
+                variant="p1"
+                className="text-primary-foreground/80 max-w-md text-muted"
+              >
                 Book a free 30-minute discovery call and we’ll help you find the
                 perfect fit for your team.
-              </p>
+              </Text>
             </div>
             <LinkButton href={ctaLink} variant="outline" size="lg">
               <CalendarIcon className="w-5 h-5 mr-2" />
