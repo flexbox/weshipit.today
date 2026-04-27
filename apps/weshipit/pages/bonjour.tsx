@@ -4,6 +4,8 @@ import { Customer, getVisibleClients } from './api/client';
 import Head from 'next/head';
 import { Layout } from '../components/layout';
 import { linksApi } from './api/links';
+import LiteYouTubeEmbed from 'react-lite-youtube-embed';
+import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
 import {
   ClockIcon,
   BugAntIcon,
@@ -93,13 +95,12 @@ function HeroSection() {
 
         {/* Video */}
         <div id="video" className="mx-auto mt-16 max-w-4xl">
-          <div className="aspect-video overflow-hidden rounded-xl border border-border bg-card">
-            <iframe
-              src="https://player.vimeo.com/video/1183545111?badge=0&autopause=0&title=0&byline=0&portrait=0&sidedock=0&controls=1&color=22c55e&transparent=0"
-              allow="autoplay; fullscreen; picture-in-picture"
-              referrerPolicy="strict-origin-when-cross-origin"
+          <div className="overflow-hidden rounded-2xl shadow-2xl">
+            <LiteYouTubeEmbed
+              id="s3x1jFzSrZY"
               title="weshipit.today — VSL"
-              className="h-full w-full border-0"
+              poster="maxresdefault"
+              webp
             />
           </div>
         </div>
