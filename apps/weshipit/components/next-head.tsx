@@ -31,7 +31,7 @@ export function NextHead({
   noindex = false,
 }: NextHeadProps) {
   const router = useRouter();
-  const path = router.pathname;
+  const path = router.asPath;
   const canonicalUrl = `${BASE_URL}${path === '/' ? '' : path}`;
 
   const generateOgImagePath = () => {
