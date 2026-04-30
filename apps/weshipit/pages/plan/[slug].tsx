@@ -2,8 +2,10 @@ import { Prose } from '@weshipit/ui';
 import { Layout } from 'apps/weshipit/components/layout';
 import fs from 'fs';
 import path from 'path';
+import matter from 'gray-matter';
 import Head from 'next/head';
 import ReactMarkdown from 'react-markdown';
+import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { PlanSidebar } from 'apps/weshipit/components/plan-sidebar';
@@ -53,7 +55,8 @@ function readIssues(planDir: string): { files: string[]; issues: Issue[] } {
 
   const issues: Issue[] = files.map((filename) => {
     const slug = filename.replace('.md', '');
-    const content = fs.readFileSync(path.join(planDir, filename), 'utf8');
+    const raw = fs.readFileSync(path.join(planDir, filename), 'utf8');
+    const { content } = matter(raw);
     return { slug, title: extractTitle(content) };
   });
 
@@ -82,10 +85,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   if (!match) return { notFound: true };
 
-  const content = fs.readFileSync(path.join(planDir, match), 'utf8');
+  const raw = fs.readFileSync(path.join(planDir, match), 'utf8');
+  const { data: frontmatter, content } = matter(raw);
 
   const title = extractTitle(content);
-  const description = extractDescription(content);
+  const description = frontmatter.description || extractDescription(content);
   const datePublished = isoWeekToDate(slug);
   return {
     props: {
@@ -182,7 +186,10 @@ export default function PlanSlugPage({
           {/* Content */}
           <main className="min-w-0 flex-1">
             <Prose>
-              <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                rehypePlugins={[rehypeRaw]}
+              >
                 {content}
               </ReactMarkdown>
             </Prose>
