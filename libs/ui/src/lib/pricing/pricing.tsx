@@ -625,11 +625,7 @@ export function PlanFinderSection({ ctaLink }: { ctaLink: string }) {
               <Text as="h3" variant="h4" className="mb-2 text-white">
                 Still unsure? Let’s talk.
               </Text>
-              <Text
-                as="p"
-                variant="p1"
-                className="text-primary-foreground/80 max-w-md text-muted"
-              >
+              <Text as="p" variant="p1" className="text-white max-w-md">
                 Book a free 30-minute discovery call and we’ll help you find the
                 perfect fit for your team.
               </Text>
