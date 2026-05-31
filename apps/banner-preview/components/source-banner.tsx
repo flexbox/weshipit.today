@@ -6,7 +6,7 @@ interface SourceBannerProps {
 }
 
 const DEFAULTS = {
-  headline: 'Podcast #1 sur React Native',
+  headline: 'Le podcast React Native pour CTO',
   url: 'weshipit.today/podcast',
 };
 
@@ -55,7 +55,7 @@ export function SourceBanner({
         <div
           style={{
             display: 'flex',
-            fontSize: '90px',
+            fontSize: '84px',
             fontWeight: 800,
             color: COLORS.foreground,
             letterSpacing: '-0.025em',
