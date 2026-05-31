@@ -8,43 +8,44 @@ import { MobileFrame } from '../components/mobile-frame';
 import { LinkedInProfilePreview } from '../components/linkedin-profile-preview';
 import { YouTubeChannelPreview } from '../components/youtube-channel-preview';
 import { XProfilePreview } from '../components/x-profile-preview';
+import { SAFE_BAND } from '../components/source-banner';
 
 const SITE_URL = 'https://banner-preview.weshipit.today';
 
 interface BannerSpec {
   platform: string;
+  slug: 'linkedin' | 'youtube' | 'x';
   width: number;
   height: number;
   description: string;
-  imageUrl: string;
 }
 
 const BANNERS: BannerSpec[] = [
   {
     platform: 'LinkedIn',
+    slug: 'linkedin',
     width: 1584,
     height: 396,
     description: 'Personal profile banner (4:1)',
-    imageUrl:
-      'https://placehold.co/1584x396/0a66c2/ffffff?text=LinkedIn+Banner+1584x396',
   },
   {
     platform: 'YouTube',
+    slug: 'youtube',
     width: 2560,
     height: 1440,
     description: 'Channel art (16:9). Mobile safe area is 1235x338 centered.',
-    imageUrl:
-      'https://placehold.co/2560x1440/ff0000/ffffff?text=YouTube+Banner+2560x1440',
   },
   {
     platform: 'Twitter / X',
+    slug: 'x',
     width: 1500,
     height: 500,
     description: 'Profile header (3:1)',
-    imageUrl:
-      'https://placehold.co/1500x500/000000/ffffff?text=X+Banner+1500x500',
   },
 ];
+
+const bannerUrlFor = (slug: BannerSpec['slug']) =>
+  `/api/banner?platform=${slug}`;
 
 function PlatformContext({
   title,
@@ -74,6 +75,14 @@ function PlatformContext({
 
 function BannerPreview({ banner }: { banner: BannerSpec }) {
   const aspectRatio = `${banner.width} / ${banner.height}`;
+  const imageUrl = bannerUrlFor(banner.slug);
+
+  const safeBandStyle = {
+    left: `${((banner.width - SAFE_BAND.width) / 2 / banner.width) * 100}%`,
+    top: `${((banner.height - SAFE_BAND.height) / 2 / banner.height) * 100}%`,
+    width: `${(SAFE_BAND.width / banner.width) * 100}%`,
+    height: `${(SAFE_BAND.height / banner.height) * 100}%`,
+  };
 
   return (
     <article>
@@ -95,12 +104,32 @@ function BannerPreview({ banner }: { banner: BannerSpec }) {
         style={{ aspectRatio }}
       >
         <Image
-          src={banner.imageUrl}
-          alt={`${banner.platform} banner placeholder`}
+          src={imageUrl}
+          alt={`${banner.platform} banner`}
           fill
           sizes="(min-width: 1024px) 64rem, 100vw"
           className="object-cover"
+          unoptimized
         />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute border-2 border-dashed border-emerald-400/80 bg-emerald-400/5"
+          style={safeBandStyle}
+        >
+          <span className="absolute -top-6 left-0 rounded bg-emerald-500 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white">
+            Safe band {SAFE_BAND.width}×{SAFE_BAND.height}
+          </span>
+        </div>
+      </div>
+
+      <div className="mt-3">
+        <a
+          href={imageUrl}
+          download={`banner-${banner.slug}-${banner.width}x${banner.height}.png`}
+          className="inline-flex items-center gap-1.5 rounded-md border border-border bg-card px-3 py-1.5 text-sm font-medium text-foreground hover:bg-muted"
+        >
+          Download PNG ({banner.width}×{banner.height})
+        </a>
       </div>
     </article>
   );
@@ -141,15 +170,15 @@ export default function Index() {
               title="LinkedIn Preview"
               description="See how the banner looks with the profile photo overlap on desktop and mobile."
             >
-              <BrowserFrame url="linkedin.com/in/dleuliette">
+              <BrowserFrame url="linkedin.com/in/david-leuliette">
                 <LinkedInProfilePreview
-                  bannerUrl={BANNERS[0].imageUrl}
+                  bannerUrl={bannerUrlFor('linkedin')}
                   variant="desktop"
                 />
               </BrowserFrame>
               <MobileFrame width={320}>
                 <LinkedInProfilePreview
-                  bannerUrl={BANNERS[0].imageUrl}
+                  bannerUrl={bannerUrlFor('linkedin')}
                   variant="mobile"
                 />
               </MobileFrame>
@@ -162,15 +191,15 @@ export default function Index() {
               title="YouTube Preview"
               description="Desktop crops the 16:9 asset to a wide stripe; mobile crops it further. The safe area (1235×338) is the only region guaranteed visible on both."
             >
-              <BrowserFrame url="youtube.com/@dleuliette">
+              <BrowserFrame url="youtube.com/@flexbox_">
                 <YouTubeChannelPreview
-                  bannerUrl={BANNERS[1].imageUrl}
+                  bannerUrl={bannerUrlFor('youtube')}
                   variant="desktop"
                 />
               </BrowserFrame>
               <MobileFrame width={320}>
                 <YouTubeChannelPreview
-                  bannerUrl={BANNERS[1].imageUrl}
+                  bannerUrl={bannerUrlFor('youtube')}
                   variant="mobile"
                 />
               </MobileFrame>
@@ -185,13 +214,13 @@ export default function Index() {
             >
               <BrowserFrame url="x.com/flexbox_">
                 <XProfilePreview
-                  bannerUrl={BANNERS[2].imageUrl}
+                  bannerUrl={bannerUrlFor('x')}
                   variant="desktop"
                 />
               </BrowserFrame>
               <MobileFrame width={320}>
                 <XProfilePreview
-                  bannerUrl={BANNERS[2].imageUrl}
+                  bannerUrl={bannerUrlFor('x')}
                   variant="mobile"
                 />
               </MobileFrame>

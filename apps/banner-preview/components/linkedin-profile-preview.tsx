@@ -51,6 +51,7 @@ export function LinkedInProfilePreview({
           fill
           sizes={isMobile ? '320px' : '(min-width: 1024px) 48rem, 100vw'}
           className="object-cover"
+          unoptimized
         />
       </div>
 
