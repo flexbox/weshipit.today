@@ -1,6 +1,13 @@
+import { ReactNode } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import { Text } from '@weshipit/ui';
+
+import { BrowserFrame } from '../components/browser-frame';
+import { MobileFrame } from '../components/mobile-frame';
+import { LinkedInProfilePreview } from '../components/linkedin-profile-preview';
+import { YouTubeChannelPreview } from '../components/youtube-channel-preview';
+import { XProfilePreview } from '../components/x-profile-preview';
 
 const SITE_URL = 'https://banner-preview.weshipit.today';
 
@@ -39,11 +46,37 @@ const BANNERS: BannerSpec[] = [
   },
 ];
 
+function PlatformContext({
+  title,
+  description,
+  children,
+}: {
+  title: string;
+  description: string;
+  children: ReactNode;
+}) {
+  return (
+    <section>
+      <header className="mb-6">
+        <Text as="h3" variant="h3" className="mb-2">
+          {title}
+        </Text>
+        <Text as="p" variant="p2" className="text-muted-foreground">
+          {description}
+        </Text>
+      </header>
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1fr)_340px]">
+        {children}
+      </div>
+    </section>
+  );
+}
+
 function BannerPreview({ banner }: { banner: BannerSpec }) {
   const aspectRatio = `${banner.width} / ${banner.height}`;
 
   return (
-    <article className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+    <article>
       <header className="mb-4 flex items-baseline justify-between gap-4">
         <Text as="h2" variant="h3">
           {banner.platform}
@@ -90,7 +123,7 @@ export default function Index() {
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
       </Head>
 
-      <main className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
+      <main className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <header className="mb-12">
           <Text as="h1" variant="h1" className="mb-3">
             Social Banner Preview
@@ -101,10 +134,69 @@ export default function Index() {
           </Text>
         </header>
 
-        <div className="flex flex-col gap-8">
-          {BANNERS.map((banner) => (
-            <BannerPreview key={banner.platform} banner={banner} />
-          ))}
+        <div className="flex flex-col gap-16">
+          <div className="flex flex-col gap-8">
+            <BannerPreview banner={BANNERS[0]} />
+            <PlatformContext
+              title="LinkedIn Preview"
+              description="See how the banner looks with the profile photo overlap on desktop and mobile."
+            >
+              <BrowserFrame url="linkedin.com/in/dleuliette">
+                <LinkedInProfilePreview
+                  bannerUrl={BANNERS[0].imageUrl}
+                  variant="desktop"
+                />
+              </BrowserFrame>
+              <MobileFrame width={320}>
+                <LinkedInProfilePreview
+                  bannerUrl={BANNERS[0].imageUrl}
+                  variant="mobile"
+                />
+              </MobileFrame>
+            </PlatformContext>
+          </div>
+
+          <div className="flex flex-col gap-8">
+            <BannerPreview banner={BANNERS[1]} />
+            <PlatformContext
+              title="YouTube Preview"
+              description="Desktop crops the 16:9 asset to a wide stripe; mobile crops it further. The safe area (1235×338) is the only region guaranteed visible on both."
+            >
+              <BrowserFrame url="youtube.com/@dleuliette">
+                <YouTubeChannelPreview
+                  bannerUrl={BANNERS[1].imageUrl}
+                  variant="desktop"
+                />
+              </BrowserFrame>
+              <MobileFrame width={320}>
+                <YouTubeChannelPreview
+                  bannerUrl={BANNERS[1].imageUrl}
+                  variant="mobile"
+                />
+              </MobileFrame>
+            </PlatformContext>
+          </div>
+
+          <div className="flex flex-col gap-8">
+            <BannerPreview banner={BANNERS[2]} />
+            <PlatformContext
+              title="X Preview"
+              description="See how the banner looks behind the profile photo overlap on desktop and mobile."
+            >
+              <BrowserFrame url="x.com/flexbox_">
+                <XProfilePreview
+                  bannerUrl={BANNERS[2].imageUrl}
+                  variant="desktop"
+                />
+              </BrowserFrame>
+              <MobileFrame width={320}>
+                <XProfilePreview
+                  bannerUrl={BANNERS[2].imageUrl}
+                  variant="mobile"
+                />
+              </MobileFrame>
+            </PlatformContext>
+          </div>
         </div>
       </main>
     </>

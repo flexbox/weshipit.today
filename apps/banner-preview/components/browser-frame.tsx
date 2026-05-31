@@ -1,16 +1,12 @@
-import Image from 'next/image';
+import { ReactNode } from 'react';
 
 interface BrowserFrameProps {
-  imageUrl: string;
-  alt: string;
-  aspectRatio: string;
+  children: ReactNode;
   url?: string;
 }
 
 export function BrowserFrame({
-  imageUrl,
-  alt,
-  aspectRatio,
+  children,
   url = 'example.com',
 }: BrowserFrameProps) {
   return (
@@ -46,15 +42,7 @@ export function BrowserFrame({
           {url}
         </text>
       </svg>
-      <div style={{ aspectRatio }} className="relative bg-muted">
-        <Image
-          src={imageUrl}
-          alt={alt}
-          fill
-          sizes="(min-width: 1024px) 64rem, 100vw"
-          className="object-cover"
-        />
-      </div>
+      <div className="bg-white">{children}</div>
     </div>
   );
 }
