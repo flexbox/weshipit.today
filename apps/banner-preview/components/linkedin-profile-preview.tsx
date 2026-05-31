@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import {
-  CheckBadgeIcon,
+  ShieldCheckIcon,
   SpeakerWaveIcon,
   ArrowTopRightOnSquareIcon,
   EllipsisHorizontalIcon,
@@ -57,49 +57,51 @@ export function LinkedInProfilePreview({
       <div className={`relative ${isMobile ? 'px-3 pb-4' : 'px-6 pb-6'}`}>
         <div
           className={`absolute ${
-            isMobile ? '-top-7 left-3' : '-top-14 left-6'
+            isMobile ? '-top-8 left-3' : '-top-16 left-6'
           }`}
         >
           <div
             className={`relative overflow-hidden rounded-full ring-4 ring-white ${
-              isMobile ? 'h-14 w-14' : 'h-28 w-28'
+              isMobile ? 'h-16 w-16' : 'h-32 w-32'
             }`}
           >
             <Image
               src={avatarUrl}
               alt={name}
               fill
-              sizes={isMobile ? '56px' : '112px'}
+              sizes={isMobile ? '64px' : '128px'}
               className="object-cover"
             />
           </div>
         </div>
 
-        <div className={isMobile ? 'h-8' : 'h-16'} />
+        <div className={isMobile ? 'h-10' : 'h-20'} />
 
         <div className="flex items-center gap-1.5">
           <h3
             className={`font-bold text-gray-900 ${
-              isMobile ? 'text-base' : 'text-2xl'
+              isMobile ? 'text-lg' : 'text-3xl'
             }`}
           >
             {name}
           </h3>
-          <CheckBadgeIcon
-            className={`text-gray-500 ${isMobile ? 'h-4 w-4' : 'h-5 w-5'}`}
+          <ShieldCheckIcon
+            className={`text-gray-500 ${isMobile ? 'h-4 w-4' : 'h-6 w-6'}`}
           />
           <SpeakerWaveIcon
             className={`text-gray-700 ${isMobile ? 'h-3.5 w-3.5' : 'h-4 w-4'}`}
           />
         </div>
 
-        <p className={`mt-1 text-gray-900 ${isMobile ? 'text-xs' : 'text-sm'}`}>
+        <p
+          className={`mt-2 text-gray-900 ${isMobile ? 'text-xs' : 'text-base'}`}
+        >
           {headline}
         </p>
 
         <p
-          className={`mt-1 text-gray-500 ${
-            isMobile ? 'text-[11px]' : 'text-xs'
+          className={`mt-2 text-gray-500 ${
+            isMobile ? 'text-[11px]' : 'text-sm'
           }`}
         >
           {location} ·{' '}
@@ -111,7 +113,7 @@ export function LinkedInProfilePreview({
         <a
           href="#"
           className={`mt-1 inline-flex items-center gap-1 font-semibold text-[#0a66c2] hover:underline ${
-            isMobile ? 'text-[11px]' : 'text-xs'
+            isMobile ? 'text-[11px]' : 'text-sm'
           }`}
         >
           {ctaLabel}
@@ -121,14 +123,14 @@ export function LinkedInProfilePreview({
         </a>
 
         <p
-          className={`mt-1 font-semibold text-[#0a66c2] ${
-            isMobile ? 'text-[11px]' : 'text-xs'
+          className={`mt-2 font-semibold text-[#0a66c2] ${
+            isMobile ? 'text-[11px]' : 'text-sm'
           }`}
         >
           {followers} · {connections}
         </p>
 
-        <div className="mt-3 flex flex-wrap items-center gap-2">
+        <div className="mt-4 flex flex-wrap items-center gap-2">
           <button
             type="button"
             className={`rounded-full bg-[#0a66c2] font-semibold text-white hover:bg-[#004182] ${
