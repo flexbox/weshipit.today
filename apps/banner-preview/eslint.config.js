@@ -40,7 +40,7 @@ export default [
     rules: {
       '@next/next/no-html-link-for-pages': [
         'error',
-        'apps/preview-banner/pages',
+        'apps/banner-preview/pages',
       ],
     },
   },

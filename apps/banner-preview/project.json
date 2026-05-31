@@ -1,7 +1,7 @@
 {
-  "name": "preview-banner",
+  "name": "banner-preview",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/preview-banner",
+  "sourceRoot": "apps/banner-preview",
   "projectType": "application",
   "tags": [],
   "targets": {
@@ -10,11 +10,11 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/apps/preview-banner"
+        "outputPath": "dist/apps/banner-preview"
       },
       "configurations": {
         "development": {
-          "outputPath": "apps/preview-banner"
+          "outputPath": "apps/banner-preview"
         },
         "production": {}
       }
@@ -23,26 +23,26 @@
       "executor": "@nx/next:server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "preview-banner:build",
+        "buildTarget": "banner-preview:build",
         "dev": true,
         "port": 4300
       },
       "configurations": {
         "development": {
-          "buildTarget": "preview-banner:build:development",
+          "buildTarget": "banner-preview:build:development",
           "dev": true
         },
         "production": {
-          "buildTarget": "preview-banner:build:production",
+          "buildTarget": "banner-preview:build:production",
           "dev": false
         }
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/apps/preview-banner"],
+      "outputs": ["{workspaceRoot}/coverage/apps/banner-preview"],
       "options": {
-        "jestConfig": "apps/preview-banner/jest.config.ts"
+        "jestConfig": "apps/banner-preview/jest.config.ts"
       }
     },
     "lint": {
