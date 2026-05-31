@@ -2,7 +2,7 @@
 
 module.exports = {
   generateRobotsTxt: true,
-  outDir: 'dist/apps/weshipit/public',
+  outDir: 'dist/apps/web/public',
   exclude: ['/qr', '/live', '/welcome', '/brand', '/onboarding', '/home'],
   robotsTxtOptions: {
     policies: [
@@ -14,5 +14,5 @@ module.exports = {
     ],
   },
   siteUrl: 'https://weshipit.today/',
-  sourceDir: 'dist/apps/weshipit/.next',
+  sourceDir: 'dist/apps/web/.next',
 };

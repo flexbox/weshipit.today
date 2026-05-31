@@ -31,7 +31,7 @@ jobs:
             exit 1
           fi
           echo "week_id=$WEEK_ID" >> $GITHUB_OUTPUT
-          DIRECTORY="apps/weshipit/pages/plan"
+          DIRECTORY="apps/web/pages/plan"
           mkdir -p "$DIRECTORY"
           printf '%s' "$ISSUE_BODY" > "$DIRECTORY/${WEEK_ID}.md"
 

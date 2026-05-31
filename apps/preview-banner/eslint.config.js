@@ -38,7 +38,10 @@ export default [
     files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
 
     rules: {
-      '@next/next/no-html-link-for-pages': ['error', 'apps/weshipit/pages'],
+      '@next/next/no-html-link-for-pages': [
+        'error',
+        'apps/preview-banner/pages',
+      ],
     },
   },
   {

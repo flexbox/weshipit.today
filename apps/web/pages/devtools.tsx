@@ -261,7 +261,7 @@ export default function DevToolsPage({
                 </p>
               </div>
               <Button
-                href="https://github.com/flexbox/weshipit.today/blob/main/apps/weshipit/fixtures/devtools.fixture.ts"
+                href="https://github.com/flexbox/weshipit.today/blob/main/apps/web/fixtures/devtools.fixture.ts"
                 size="xl"
                 variant="outline"
                 as="a"

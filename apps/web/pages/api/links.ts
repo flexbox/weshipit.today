@@ -5,14 +5,14 @@ export const linksApi = {
     CONSULTATION_FORM_EMBED:
       'https://airtable.com/embed/app9rX548UNFBnnCt/shryVoJ3nzyeq2P4s',
     FRENCH_REACT_NATIVE_APPS_FORM:
-      'https://github.com/flexbox/weshipit.today/blob/main/apps/weshipit/fixtures/french-apps.fixture.ts',
+      'https://github.com/flexbox/weshipit.today/blob/main/apps/web/fixtures/french-apps.fixture.ts',
     OFFICE_HOUR_FORM_EMBED: 'https://airtable.com/embed/shrbgrlfblUkIFovF',
     PAIR_PROGRAMMING_FORM_EMBED: 'https://airtable.com/embed/shrbgrlfblUkIFovF',
     RESOURCES_FORM: 'https://airtable.com/appLcVC7NmRBu1itw/shrWiSoEoiToGa7pB',
     TEMPLATE_FORM:
-      'https://github.com/flexbox/weshipit.today/blob/main/apps/weshipit/fixtures/starters.fixture.ts',
+      'https://github.com/flexbox/weshipit.today/blob/main/apps/web/fixtures/starters.fixture.ts',
     TOOLS_FORM:
-      'https://github.com/flexbox/weshipit.today/blob/main/apps/weshipit/fixtures/tools.fixture.ts',
+      'https://github.com/flexbox/weshipit.today/blob/main/apps/web/fixtures/tools.fixture.ts',
   },
   cal: {
     ONBOARDING: 'https://cal.com/davidl/weshipit-onboarding',

@@ -25,7 +25,7 @@ yarn
 Set up environment variables
 
 ```bash
-cd apps/weshipit
+cd apps/web
 vercel env pull
 ```
 

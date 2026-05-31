@@ -28,6 +28,6 @@
     "**/*.jsx",
     "**/*.ts",
     "**/*.tsx",
-    "../../apps/weshipit/components/footer-book.tsx"
+    "../../apps/web/components/footer-book.tsx"
   ]
 }

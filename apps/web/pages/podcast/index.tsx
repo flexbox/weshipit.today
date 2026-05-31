@@ -2,7 +2,7 @@ import { Button, Hyperlink, LinkButton, Prose, Text } from '@weshipit/ui';
 import { Layout } from '../../components/layout';
 import { PodcastEpisodeCard } from '../../components/podcast-episode-card';
 import { podcastEpisodes } from '../../fixtures/podcast-episodes.fixture';
-import { linksApi } from 'apps/weshipit/pages/api/links';
+import { linksApi } from 'apps/web/pages/api/links';
 import { useState } from 'react';
 import Head from 'next/head';
 

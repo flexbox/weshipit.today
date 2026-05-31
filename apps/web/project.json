@@ -1,7 +1,7 @@
 {
-  "name": "weshipit",
+  "name": "web",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/weshipit",
+  "sourceRoot": "apps/web",
   "projectType": "application",
   "tags": [],
   "targets": {
@@ -10,11 +10,11 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/apps/weshipit"
+        "outputPath": "dist/apps/web"
       },
       "configurations": {
         "development": {
-          "outputPath": "apps/weshipit"
+          "outputPath": "apps/web"
         },
         "production": {}
       }
@@ -24,7 +24,7 @@
       "options": {
         "commands": [
           {
-            "command": "next-sitemap --config apps/weshipit/next-sitemap.config.js"
+            "command": "next-sitemap --config apps/web/next-sitemap.config.js"
           }
         ]
       }
@@ -33,16 +33,16 @@
       "executor": "@nx/next:server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "weshipit:build",
+        "buildTarget": "web:build",
         "dev": true
       },
       "configurations": {
         "development": {
-          "buildTarget": "weshipit:build:development",
+          "buildTarget": "web:build:development",
           "dev": true
         },
         "production": {
-          "buildTarget": "weshipit:build:production",
+          "buildTarget": "web:build:production",
           "dev": false
         }
       }
@@ -50,14 +50,14 @@
     "export": {
       "executor": "@nx/next:export",
       "options": {
-        "buildTarget": "weshipit:build:production"
+        "buildTarget": "web:build:production"
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/apps/weshipit"],
+      "outputs": ["{workspaceRoot}/coverage/apps/web"],
       "options": {
-        "jestConfig": "apps/weshipit/jest.config.ts"
+        "jestConfig": "apps/web/jest.config.ts"
       }
     },
     "lint": {

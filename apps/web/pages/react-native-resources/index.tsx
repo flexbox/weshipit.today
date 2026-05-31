@@ -206,7 +206,7 @@ export default function ReactNativeResourcesPage({
       ]}
       callToActionButton={{
         name: 'Add resource',
-        href: 'https://github.com/flexbox/weshipit.today/blob/main/apps/weshipit/fixtures/resources.fixture.ts',
+        href: 'https://github.com/flexbox/weshipit.today/blob/main/apps/web/fixtures/resources.fixture.ts',
         isExternalLink: true,
       }}
     >

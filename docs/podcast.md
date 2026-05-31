@@ -7,6 +7,7 @@ Ce guide explique le processus pour ajouter un nouvel épisode au podcast "Cross
 Avant d'ajouter l'épisode au site, vous devez avoir :
 
 1. **Enregistré et publié l'épisode** sur les plateformes de streaming :
+
    - Spotify
    - Apple Podcasts
    - (Optionnel) YouTube
@@ -22,12 +23,12 @@ Avant d'ajouter l'épisode au site, vous devez avoir :
 
 ### 1. Modifier le fichier de données
 
-Ouvrir le fichier `apps/weshipit/fixtures/podcast-episodes.fixture.ts` et ajouter un nouvel objet à la fin du tableau `podcastEpisodes` :
+Ouvrir le fichier `apps/web/fixtures/podcast-episodes.fixture.ts` et ajouter un nouvel objet à la fin du tableau `podcastEpisodes` :
 
 ```typescript
 {
   name: 'NomEntreprise',
-  title: 'Titre complet de l\'épisode avec le nom de l\'invité',
+  title: 'Titre complet de l’épisode avec le nom de l’invité',
   number: 17, // Incrémenter depuis le dernier épisode
   description_short: 'Description courte pour les cartes (1-2 lignes)',
   description: `<p><strong>Sommaire</strong></p><p>Description HTML complète...</p>`,
@@ -65,7 +66,7 @@ Ouvrir le fichier `apps/weshipit/fixtures/podcast-episodes.fixture.ts` et ajoute
 
 Si vous avez une transcription de l'épisode :
 
-1. Créer un fichier texte dans `apps/weshipit/public/podcast-transcripts/{slug}.txt`
+1. Créer un fichier texte dans `apps/web/public/podcast-transcripts/{slug}.txt`
 2. Utiliser l'un des formats supportés :
 
 **Format 1 : Parenthèses**
@@ -93,7 +94,7 @@ Le nom du fichier doit correspondre exactement au `slug` de l'épisode.
 ## Structure des fichiers
 
 ```
-apps/weshipit/
+apps/web/
 ├── fixtures/
 │   └── podcast-episodes.fixture.ts    # Données des épisodes
 ├── pages/

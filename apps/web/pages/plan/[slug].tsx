@@ -1,5 +1,5 @@
 import { Prose } from '@weshipit/ui';
-import { Layout } from 'apps/weshipit/components/layout';
+import { Layout } from 'apps/web/components/layout';
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -8,7 +8,7 @@ import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { PlanSidebar } from 'apps/weshipit/components/plan-sidebar';
+import { PlanSidebar } from 'apps/web/components/plan-sidebar';
 
 interface Issue {
   slug: string;

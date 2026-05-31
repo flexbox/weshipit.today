@@ -1,7 +1,4 @@
-import {
-  filteredApp,
-  frenchApp,
-} from 'apps/weshipit/fixtures/french-apps.fixture';
+import { filteredApp, frenchApp } from 'apps/web/fixtures/french-apps.fixture';
 
 function extractAppData(app): filteredApp {
   return {

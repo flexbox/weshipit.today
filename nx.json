@@ -60,7 +60,7 @@
       }
     }
   },
-  "defaultProject": "weshipit",
+  "defaultProject": "web",
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
     "sharedGlobals": ["{workspaceRoot}/babel.config.json"],
