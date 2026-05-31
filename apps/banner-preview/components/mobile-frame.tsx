@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 interface MobileFrameProps {
   imageUrl: string;
   alt: string;
@@ -59,8 +61,13 @@ export function MobileFrame({ imageUrl, alt, aspectRatio }: MobileFrameProps) {
           aspectRatio,
         }}
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={imageUrl} alt={alt} className="h-full w-full object-cover" />
+        <Image
+          src={imageUrl}
+          alt={alt}
+          fill
+          sizes={`${PHONE_WIDTH - BEZEL * 2}px`}
+          className="object-cover"
+        />
       </div>
     </div>
   );

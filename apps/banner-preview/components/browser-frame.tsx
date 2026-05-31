@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 interface BrowserFrameProps {
   imageUrl: string;
   alt: string;
@@ -44,9 +46,14 @@ export function BrowserFrame({
           {url}
         </text>
       </svg>
-      <div style={{ aspectRatio }} className="bg-muted">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={imageUrl} alt={alt} className="h-full w-full object-cover" />
+      <div style={{ aspectRatio }} className="relative bg-muted">
+        <Image
+          src={imageUrl}
+          alt={alt}
+          fill
+          sizes="(min-width: 1024px) 64rem, 100vw"
+          className="object-cover"
+        />
       </div>
     </div>
   );

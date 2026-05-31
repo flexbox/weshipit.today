@@ -1,5 +1,8 @@
 import Head from 'next/head';
+import Image from 'next/image';
 import { Text } from '@weshipit/ui';
+
+const SITE_URL = 'https://banner-preview.weshipit.today';
 
 interface BannerSpec {
   platform: string;
@@ -55,14 +58,15 @@ function BannerPreview({ banner }: { banner: BannerSpec }) {
       </Text>
 
       <div
-        className="w-full overflow-hidden rounded-lg bg-muted"
+        className="relative w-full overflow-hidden rounded-lg bg-muted"
         style={{ aspectRatio }}
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src={banner.imageUrl}
           alt={`${banner.platform} banner placeholder`}
-          className="h-full w-full object-cover"
+          fill
+          sizes="(min-width: 1024px) 64rem, 100vw"
+          className="object-cover"
         />
       </div>
     </article>
@@ -75,9 +79,15 @@ export default function Index() {
       <Head>
         <title>Social Banner Preview</title>
         <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, viewport-fit=cover"
+        />
+        <meta
           name="description"
           content="Preview LinkedIn, YouTube and Twitter/X banners side by side."
         />
+        <link rel="canonical" href={SITE_URL} />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
       </Head>
 
       <main className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
