@@ -86,7 +86,7 @@ function BannerPreview({ banner }: { banner: BannerSpec }) {
   };
 
   return (
-    <article>
+    <article className="overflow-hidden rounded-xl border border-border bg-white p-6 shadow-md">
       <header className="mb-4 flex items-baseline justify-between gap-4">
         <Text as="h2" variant="h3">
           {banner.platform}
