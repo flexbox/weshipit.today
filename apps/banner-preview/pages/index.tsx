@@ -1,7 +1,8 @@
 import { ReactNode } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
-import { Text } from '@weshipit/ui';
+import { Button, Text } from '@weshipit/ui';
+import { ArrowDownTrayIcon } from '@heroicons/react/24/outline';
 
 import { BrowserFrame } from '../components/browser-frame';
 import { MobileFrame } from '../components/mobile-frame';
@@ -135,6 +136,19 @@ function BannerPreview({ banner }: { banner: BannerSpec }) {
   );
 }
 
+function downloadAllBanners() {
+  BANNERS.forEach((banner, i) => {
+    setTimeout(() => {
+      const link = document.createElement('a');
+      link.href = bannerUrlFor(banner.slug);
+      link.download = `banner-${banner.slug}.png`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }, i * 200);
+  });
+}
+
 export default function Index() {
   return (
     <>
@@ -153,14 +167,27 @@ export default function Index() {
       </Head>
 
       <main className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <header className="mb-12">
-          <Text as="h1" variant="h1" className="mb-3">
-            Social Banner Preview
-          </Text>
-          <Text as="p" variant="p1" className="text-muted-foreground">
-            Preview LinkedIn, YouTube and Twitter/X banners side by side at
-            their real aspect ratios.
-          </Text>
+        <header className="mb-12 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <Text as="h1" variant="h1" className="mb-3">
+              Social Banner Preview
+            </Text>
+            <Text as="p" variant="p1" className="text-muted-foreground">
+              Preview LinkedIn, YouTube and Twitter/X banners side by side at
+              their real aspect ratios.
+            </Text>
+          </div>
+          <div className="flex items-center gap-4">
+            <Button
+              variant="outline"
+              size="lg"
+              onClick={downloadAllBanners}
+              accessoryLeft={<ArrowDownTrayIcon className="mr-2 h-4 w-4" />}
+              className="self-end"
+            >
+              Download all assets
+            </Button>
+          </div>
         </header>
 
         <div className="flex flex-col gap-16">

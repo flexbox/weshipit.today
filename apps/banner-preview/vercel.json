@@ -1,0 +1,7 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "cd ../.. && npx nx build banner-preview --prod",
+  "outputDirectory": "../../dist/apps/banner-preview/.next",
+  "installCommand": "cd ../.. && yarn install --frozen-lockfile",
+  "framework": "nextjs"
+}
