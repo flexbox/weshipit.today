@@ -1,5 +1,6 @@
 import { AppProps } from 'next/app';
 import { Inter } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/react';
 
 import './styles.css';
 
@@ -14,6 +15,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
   return (
     <div className={inter.className}>
       <Component {...pageProps} />
+      <Analytics />
     </div>
   );
 }
