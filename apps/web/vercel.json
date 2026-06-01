@@ -1,4 +1,9 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "cd ../.. && npx nx build web --prod && npx nx postbuild web",
+  "outputDirectory": "../../dist/apps/web/.next",
+  "installCommand": "cd ../.. && yarn install --frozen-lockfile",
+  "framework": "nextjs",
   "redirects": [
     {
       "source": "/work-with-us",
