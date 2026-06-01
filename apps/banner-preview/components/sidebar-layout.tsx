@@ -25,7 +25,7 @@ export function SidebarLayout({ children }: SidebarLayoutProps) {
 
   return (
     <div className="flex min-h-screen bg-muted/30">
-      <aside className="sticky top-0 hidden h-screen w-60 shrink-0 flex-col border-r border-border bg-white px-4 py-6 md:flex">
+      <aside className="sticky top-0 hidden h-screen w-60 shrink-0 flex-col border-r border-border bg-card px-4 py-6 md:flex">
         <Link
           href="/"
           className="mb-8 px-2 text-base font-semibold tracking-tight text-foreground"
@@ -58,7 +58,7 @@ export function SidebarLayout({ children }: SidebarLayoutProps) {
       </aside>
 
       <div className="flex min-w-0 flex-1 flex-col">
-        <nav className="flex gap-1 border-b border-border bg-white px-4 py-2 md:hidden">
+        <nav className="flex gap-1 border-b border-border bg-card px-4 py-2 md:hidden">
           {NAV_ITEMS.map((item) => {
             const isActive =
               item.href === '/'
