@@ -9,6 +9,22 @@ import { BANNERS, BannerSpec, bannerUrlFor } from '../components/banners';
 
 const SITE_URL = 'https://banner-preview.weshipit.today';
 
+const APP_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'Social Banner Preview',
+  description:
+    'Free banner generator for LinkedIn, YouTube and X. Generate, preview and download social headers at the right aspect ratios.',
+  applicationCategory: 'DesignApplication',
+  operatingSystem: 'Web',
+  url: SITE_URL,
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'USD',
+  },
+};
+
 function BannerPreview({ banner }: { banner: BannerSpec }) {
   const aspectRatio = `${banner.width} / ${banner.height}`;
   const imageUrl = bannerUrlFor(banner.slug);
@@ -125,6 +141,10 @@ export default function Index() {
         <meta
           name="twitter:image"
           content={`${SITE_URL}/api/banner?platform=x`}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(APP_SCHEMA) }}
         />
       </Head>
 
