@@ -9,6 +9,13 @@ import { LinkedInProfilePreview } from '../components/linkedin-profile-preview';
 import { YouTubeChannelPreview } from '../components/youtube-channel-preview';
 import { XProfilePreview } from '../components/x-profile-preview';
 import { bannerUrlFor } from '../components/banners';
+import { CONFIG } from '../config/config';
+
+const PROFILE_URLS = {
+  linkedin: `linkedin.com/in/${CONFIG.linkedIn.slug}`,
+  youtube: `youtube.com/${CONFIG.youtube.handle}`,
+  x: `x.com/${CONFIG.x.handle.replace(/^@/, '')}`,
+};
 
 const SITE_URL = 'https://banner-preview.weshipit.today/preview';
 const OG_IMAGE = 'https://banner-preview.weshipit.today/api/banner?platform=x';
@@ -93,7 +100,7 @@ export default function Preview() {
               title="LinkedIn Preview"
               description="See how the banner looks with the profile photo overlap on desktop and mobile."
             >
-              <BrowserFrame url="linkedin.com/in/david-leuliette">
+              <BrowserFrame url={PROFILE_URLS.linkedin}>
                 <LinkedInProfilePreview
                   bannerUrl={bannerUrlFor('linkedin')}
                   variant="desktop"
@@ -111,7 +118,7 @@ export default function Preview() {
               title="YouTube Preview"
               description="Desktop crops the 16:9 asset to a wide stripe; mobile crops it further. The safe area (1235×338) is the only region guaranteed visible on both."
             >
-              <BrowserFrame url="youtube.com/@flexbox_">
+              <BrowserFrame url={PROFILE_URLS.youtube}>
                 <YouTubeChannelPreview
                   bannerUrl={bannerUrlFor('youtube')}
                   variant="desktop"
@@ -129,7 +136,7 @@ export default function Preview() {
               title="X Preview"
               description="See how the banner looks behind the profile photo overlap on desktop and mobile."
             >
-              <BrowserFrame url="x.com/flexbox_">
+              <BrowserFrame url={PROFILE_URLS.x}>
                 <XProfilePreview
                   bannerUrl={bannerUrlFor('x')}
                   variant="desktop"

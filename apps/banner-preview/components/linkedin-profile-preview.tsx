@@ -6,6 +6,8 @@ import {
   EllipsisHorizontalIcon,
 } from '@heroicons/react/24/solid';
 
+import { CONFIG } from '../config/config';
+
 interface LinkedInProfilePreviewProps {
   bannerUrl: string;
   variant?: 'desktop' | 'mobile';
@@ -19,9 +21,8 @@ interface LinkedInProfilePreviewProps {
 }
 
 const DEFAULTS = {
-  name: 'David Leuliette',
-  headline:
-    'React Native since 2016 — Award winning front-end developer — Speaker with 50+ talks',
+  name: CONFIG.linkedIn.name,
+  headline: CONFIG.linkedIn.description,
   location: 'Paris, Île-de-France, France',
   ctaLabel: 'Book React Native Experts',
   followers: '19,361 followers',

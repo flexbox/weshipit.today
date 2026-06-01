@@ -2,6 +2,8 @@ import Image from 'next/image';
 import { CheckBadgeIcon } from '@heroicons/react/24/solid';
 import { BellIcon } from '@heroicons/react/24/outline';
 
+import { CONFIG } from '../config/config';
+
 interface YouTubeChannelPreviewProps {
   bannerUrl: string;
   variant?: 'desktop' | 'mobile';
@@ -13,12 +15,16 @@ interface YouTubeChannelPreviewProps {
   avatarUrl?: string;
 }
 
+// YouTube collapses the description to a teaser in the channel header; we mirror
+// that by taking just the first paragraph from the long-form config value.
+const DESCRIPTION_TEASER = CONFIG.youtube.description.split('\n\n')[0];
+
 const DEFAULTS = {
-  channelName: 'David Leuliette',
-  handle: '@dleuliette',
+  channelName: CONFIG.youtube.name,
+  handle: CONFIG.youtube.handle,
   subscribers: '12.4K subscribers',
   videos: '87 videos',
-  description: 'React Native tutorials, talks, and live coding sessions.',
+  description: DESCRIPTION_TEASER,
   avatarUrl: 'https://placehold.co/300x300/d1d5db/4b5563?text=DL',
 };
 

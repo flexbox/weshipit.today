@@ -49,6 +49,10 @@ export default async function handler(req: NextRequest) {
 
     const headline = searchParams.get('headline') ?? undefined;
     const url = searchParams.get('url') ?? undefined;
+    const name = searchParams.get('name') ?? undefined;
+    const handle = searchParams.get('handle') ?? undefined;
+    const eyebrowLabel = searchParams.get('eyebrowLabel') ?? undefined;
+    const eyebrowAccent = searchParams.get('eyebrowAccent') ?? undefined;
 
     const [mediumData, extraBoldData] = await Promise.all([
       interMedium,
@@ -60,6 +64,10 @@ export default async function handler(req: NextRequest) {
         <SourceBanner
           width={width}
           height={height}
+          name={name}
+          handle={handle}
+          eyebrowLabel={eyebrowLabel}
+          eyebrowAccent={eyebrowAccent}
           headline={headline}
           url={url}
         />

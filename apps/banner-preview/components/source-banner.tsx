@@ -1,14 +1,17 @@
+import { CONFIG } from '../config/config';
+
+const BANNER = CONFIG.banner;
+
 interface SourceBannerProps {
   width: number;
   height: number;
+  name?: string;
+  handle?: string;
+  eyebrowLabel?: string;
+  eyebrowAccent?: string;
   headline?: string;
   url?: string;
 }
-
-const DEFAULTS = {
-  headline: "REACT NATIVE POUR LES CTO'S",
-  url: 'weshipit.today',
-};
 
 // Smallest rectangle visible across LinkedIn 1584×396, YouTube mobile-safe 1546×423,
 // and X 1500×500. Anything inside this band is guaranteed visible on every platform.
@@ -58,8 +61,12 @@ function ReactAtom({
 export function SourceBanner({
   width,
   height,
-  headline = DEFAULTS.headline,
-  url = DEFAULTS.url,
+  name = BANNER.name,
+  handle = BANNER.handle,
+  eyebrowLabel = BANNER.eyebrow.label,
+  eyebrowAccent = BANNER.eyebrow.accent,
+  headline = BANNER.headline,
+  url = BANNER.url,
 }: SourceBannerProps) {
   const safeWidth = Math.min(SAFE_BAND.width, width);
   const safeHeight = Math.min(SAFE_BAND.height, height);
@@ -155,7 +162,7 @@ export function SourceBanner({
             textTransform: 'uppercase',
           }}
         >
-          <span style={{ display: 'flex' }}>LE PODCAST</span>
+          <span style={{ display: 'flex' }}>{eyebrowLabel}</span>
           <span
             style={{
               display: 'flex',
@@ -163,7 +170,7 @@ export function SourceBanner({
               textShadow: `0 0 24px ${COLORS.hotGlow}, 0 0 8px ${COLORS.hotGlow}`,
             }}
           >
-            #1
+            {eyebrowAccent}
           </span>
         </div>
 
@@ -194,9 +201,9 @@ export function SourceBanner({
             color: COLORS.muted,
           }}
         >
-          <span style={{ display: 'flex' }}>David Leuliette</span>
+          <span style={{ display: 'flex' }}>{name}</span>
           <span style={{ display: 'flex', color: COLORS.cyan }}>·</span>
-          <span style={{ display: 'flex' }}>@flexbox_</span>
+          <span style={{ display: 'flex' }}>{handle}</span>
         </div>
 
         {/* weshipit lockup — anchored inside the safe band's top-right

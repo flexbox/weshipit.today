@@ -2,6 +2,8 @@ import Image from 'next/image';
 import { CheckBadgeIcon } from '@heroicons/react/24/solid';
 import { MapPinIcon, CalendarDaysIcon } from '@heroicons/react/24/outline';
 
+import { CONFIG } from '../config/config';
+
 interface XProfilePreviewProps {
   bannerUrl: string;
   variant?: 'desktop' | 'mobile';
@@ -16,9 +18,9 @@ interface XProfilePreviewProps {
 }
 
 const DEFAULTS = {
-  name: 'David Leuliette',
-  handle: '@flexbox_',
-  bio: 'React Native since 2016 · Award-winning front-end dev · 50+ talks',
+  name: CONFIG.x.name,
+  handle: CONFIG.x.handle,
+  bio: CONFIG.x.description,
   location: 'Paris, France',
   joinedDate: 'Joined January 2014',
   following: '892',
