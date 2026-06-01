@@ -87,7 +87,7 @@ export function XProfilePreview({
           </button>
         </div>
 
-        <div className={isMobile ? 'mt-2' : 'mt-2'}>
+        <div className={isMobile ? 'mt-2' : 'mt-6'}>
           <div className="flex items-center gap-1">
             <h3
               className={`font-extrabold ${isMobile ? 'text-base' : 'text-xl'}`}

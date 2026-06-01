@@ -88,27 +88,54 @@ export default function Index() {
   return (
     <>
       <Head>
-        <title>Create — Social Banner Preview</title>
+        <title>Free LinkedIn, YouTube & X Banner Generator | weshipit</title>
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, viewport-fit=cover"
         />
         <meta
           name="description"
-          content="Generate LinkedIn, YouTube and Twitter/X banners at their real aspect ratios."
+          content="Free banner generator for LinkedIn (1584×396), YouTube (2560×1440) and X (1500×500). Generate, preview and download social headers at the right aspect ratios."
         />
         <link rel="canonical" href={SITE_URL} />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta
+          property="og:title"
+          content="Free LinkedIn, YouTube & X Banner Generator"
+        />
+        <meta
+          property="og:description"
+          content="Generate, preview and download LinkedIn, YouTube and X banners at the right aspect ratios. Free, no signup."
+        />
+        <meta
+          property="og:image"
+          content={`${SITE_URL}/api/banner?platform=x`}
+        />
+        <meta property="og:url" content={SITE_URL} />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Free LinkedIn, YouTube & X Banner Generator"
+        />
+        <meta
+          name="twitter:description"
+          content="Generate, preview and download LinkedIn, YouTube and X banners at the right aspect ratios. Free, no signup."
+        />
+        <meta
+          name="twitter:image"
+          content={`${SITE_URL}/api/banner?platform=x`}
+        />
       </Head>
 
       <SidebarLayout>
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <header className="mb-12 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <Text as="h1" variant="h1" className="mb-3">
+              <Text as="p" variant="h1" className="mb-3">
                 Create
               </Text>
-              <Text as="p" variant="p1" className="text-muted-foreground">
+              <Text as="h1" variant="p1" className="text-muted-foreground">
                 Generate LinkedIn, YouTube and Twitter/X banners at their real
                 aspect ratios.
               </Text>

@@ -11,6 +11,7 @@ import { XProfilePreview } from '../components/x-profile-preview';
 import { bannerUrlFor } from '../components/banners';
 
 const SITE_URL = 'https://banner-preview.weshipit.today/preview';
+const OG_IMAGE = 'https://banner-preview.weshipit.today/api/banner?platform=x';
 
 function PlatformContext({
   title,
@@ -24,7 +25,7 @@ function PlatformContext({
   return (
     <section>
       <header className="mb-6">
-        <Text as="h3" variant="h3" className="mb-2">
+        <Text as="h2" variant="h3" className="mb-2">
           {title}
         </Text>
         <Text as="p" variant="p2" className="text-muted-foreground">
@@ -42,28 +43,48 @@ export default function Preview() {
   return (
     <>
       <Head>
-        <title>Preview — Social Banner Preview</title>
+        <title>Preview LinkedIn, YouTube & X Banners Side by Side</title>
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, viewport-fit=cover"
         />
         <meta
           name="description"
-          content="See how LinkedIn, YouTube and Twitter/X banners look on desktop and mobile."
+          content="Live preview of LinkedIn, YouTube and X banners behind real profile chrome on desktop and mobile. Check crops, safe areas and avatar overlap before you publish."
         />
         <link rel="canonical" href={SITE_URL} />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta
+          property="og:title"
+          content="Preview LinkedIn, YouTube & X Banners Side by Side"
+        />
+        <meta
+          property="og:description"
+          content="See your LinkedIn, YouTube and X banners behind real profile chrome on desktop and mobile before you publish."
+        />
+        <meta property="og:image" content={OG_IMAGE} />
+        <meta property="og:url" content={SITE_URL} />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Preview LinkedIn, YouTube & X Banners Side by Side"
+        />
+        <meta
+          name="twitter:description"
+          content="See your LinkedIn, YouTube and X banners behind real profile chrome on desktop and mobile before you publish."
+        />
+        <meta name="twitter:image" content={OG_IMAGE} />
       </Head>
 
       <SidebarLayout>
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <header className="mb-12">
-            <Text as="h1" variant="h1" className="mb-3">
+            <Text as="p" variant="h1" className="mb-3">
               Preview
             </Text>
-            <Text as="p" variant="p1" className="text-muted-foreground">
-              See how each banner looks behind real profile chrome on desktop
-              and mobile.
+            <Text as="h1" variant="p1" className="text-muted-foreground">
+              Live Banner Preview for LinkedIn, YouTube & X.
             </Text>
           </header>
 
