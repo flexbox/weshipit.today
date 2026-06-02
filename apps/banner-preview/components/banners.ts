@@ -1,6 +1,6 @@
 export interface BannerSpec {
   platform: string;
-  slug: 'linkedin' | 'youtube' | 'x';
+  slug: 'linkedin' | 'youtube' | 'x' | 'spotify';
   width: number;
   height: number;
   description: string;
@@ -27,6 +27,14 @@ export const BANNERS: BannerSpec[] = [
     width: 1500,
     height: 500,
     description: 'Profile header (3:1)',
+  },
+  {
+    platform: 'Spotify',
+    slug: 'spotify',
+    width: 3000,
+    height: 3000,
+    description:
+      'Podcast cover art (1:1). Min 1400×1400, recommended 3000×3000.',
   },
 ];
 

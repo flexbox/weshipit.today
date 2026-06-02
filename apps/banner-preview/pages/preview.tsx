@@ -8,6 +8,7 @@ import { MobileFrame } from '../components/mobile-frame';
 import { LinkedInProfilePreview } from '../components/linkedin-profile-preview';
 import { YouTubeChannelPreview } from '../components/youtube-channel-preview';
 import { XProfilePreview } from '../components/x-profile-preview';
+import { SpotifyPodcastPreview } from '../components/spotify-podcast-preview';
 import { bannerUrlFor } from '../components/banners';
 import { CONFIG } from '../config/config';
 
@@ -15,6 +16,7 @@ const PROFILE_URLS = {
   linkedin: `linkedin.com/in/${CONFIG.linkedIn.slug}`,
   youtube: `youtube.com/${CONFIG.youtube.handle}`,
   x: `x.com/${CONFIG.x.handle.replace(/^@/, '')}`,
+  spotify: 'open.spotify.com/show/cross-platform-show',
 };
 
 const SITE_URL = 'https://banner-preview.weshipit.today/preview';
@@ -145,6 +147,24 @@ export default function Preview() {
               <MobileFrame width={320}>
                 <XProfilePreview
                   bannerUrl={bannerUrlFor('x')}
+                  variant="mobile"
+                />
+              </MobileFrame>
+            </PlatformContext>
+
+            <PlatformContext
+              title="Spotify Preview"
+              description="See how the cover art reads on the Spotify show page (desktop) and in the mobile app."
+            >
+              <BrowserFrame url={PROFILE_URLS.spotify}>
+                <SpotifyPodcastPreview
+                  coverUrl={bannerUrlFor('spotify')}
+                  variant="desktop"
+                />
+              </BrowserFrame>
+              <MobileFrame width={320}>
+                <SpotifyPodcastPreview
+                  coverUrl={bannerUrlFor('spotify')}
                   variant="mobile"
                 />
               </MobileFrame>
