@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { CheckBadgeIcon } from '@heroicons/react/24/solid';
 import { BellIcon } from '@heroicons/react/24/outline';
 
-import { CONFIG } from '../config/config';
+import { AVATAR_URL, CONFIG } from '../config/config';
 
 interface YouTubeChannelPreviewProps {
   bannerUrl: string;
@@ -25,7 +25,7 @@ const DEFAULTS = {
   subscribers: '12.4K subscribers',
   videos: '87 videos',
   description: DESCRIPTION_TEASER,
-  avatarUrl: 'https://placehold.co/300x300/d1d5db/4b5563?text=DL',
+  avatarUrl: AVATAR_URL,
 };
 
 const TABS = ['Home', 'Videos', 'Shorts', 'Live', 'Playlists'];

@@ -11,6 +11,10 @@ const nextConfig = {
         hostname: 'placehold.co',
         protocol: 'https',
       },
+      {
+        hostname: 'gravatar.com',
+        protocol: 'https',
+      },
     ],
     dangerouslyAllowSVG: true,
     contentDispositionType: 'attachment',

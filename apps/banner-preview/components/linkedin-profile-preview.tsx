@@ -6,7 +6,7 @@ import {
   EllipsisHorizontalIcon,
 } from '@heroicons/react/24/solid';
 
-import { CONFIG } from '../config/config';
+import { AVATAR_URL, CONFIG } from '../config/config';
 
 interface LinkedInProfilePreviewProps {
   bannerUrl: string;
@@ -27,7 +27,7 @@ const DEFAULTS = {
   ctaLabel: 'Book React Native Experts',
   followers: '19,361 followers',
   connections: '500+ connections',
-  avatarUrl: 'https://placehold.co/300x300/d1d5db/4b5563?text=DL',
+  avatarUrl: AVATAR_URL,
 };
 
 export function LinkedInProfilePreview({

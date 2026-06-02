@@ -2,6 +2,11 @@
 // Iterate here when you tweak voice or branding so the banner and every
 // preview frame stay consistent.
 
+// Gravatar URL derived from md5('dleuliette@gmail.com'). Re-compute the hash
+// (md5 of the lowercased trimmed email) if the canonical email ever changes.
+export const AVATAR_URL =
+  'https://gravatar.com/avatar/66ecc55f1bc2e5863eb516ee6f20794e?s=300';
+
 export const CONFIG = {
   linkedIn: {
     name: 'David Leuliette',

@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { CheckBadgeIcon } from '@heroicons/react/24/solid';
 import { MapPinIcon, CalendarDaysIcon } from '@heroicons/react/24/outline';
 
-import { CONFIG } from '../config/config';
+import { AVATAR_URL, CONFIG } from '../config/config';
 
 interface XProfilePreviewProps {
   bannerUrl: string;
@@ -25,7 +25,7 @@ const DEFAULTS = {
   joinedDate: 'Joined January 2014',
   following: '892',
   followers: '19,361',
-  avatarUrl: 'https://placehold.co/300x300/d1d5db/4b5563?text=DL',
+  avatarUrl: AVATAR_URL,
 };
 
 const TABS = ['Posts', 'Replies', 'Highlights', 'Media', 'Likes'];
