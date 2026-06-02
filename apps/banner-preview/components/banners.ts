@@ -31,12 +31,12 @@ export const BANNERS: BannerSpec[] = [
   {
     platform: 'Spotify',
     slug: 'spotify',
-    width: 3000,
-    height: 3000,
+    width: 1000,
+    height: 1000,
     description:
-      'Podcast cover art (1:1). Min 1400×1400, recommended 3000×3000.',
+      'Podcast cover art (1:1). Served as a static image from public/.',
   },
 ];
 
 export const bannerUrlFor = (slug: BannerSpec['slug']) =>
-  `/api/banner?platform=${slug}`;
+  slug === 'spotify' ? '/spotify-show-art.png' : `/api/banner?platform=${slug}`;
