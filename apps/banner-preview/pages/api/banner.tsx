@@ -61,7 +61,6 @@ export default async function handler(req: NextRequest) {
     const tagline = searchParams.get('tagline') ?? undefined;
     const status = searchParams.get('status') ?? undefined;
     const url = searchParams.get('url') ?? undefined;
-    const handle = searchParams.get('handle') ?? undefined;
 
     const [mediumData, extraBoldData, monoRegularData] = await Promise.all([
       interMedium,
@@ -74,8 +73,8 @@ export default async function handler(req: NextRequest) {
         <SourceBanner
           width={width}
           height={height}
+          platform={platformParam}
           status={status}
-          handle={handle}
           headline={headline}
           tagline={tagline}
           url={url}

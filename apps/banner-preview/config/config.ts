@@ -11,7 +11,7 @@ export const CONFIG = {
   linkedIn: {
     name: 'David Leuliette',
     description:
-      'Host du Cross Platform Show — Le podcast #1 sur React Native en France · 10 000+ écoutes · React Native depuis 2016 · 50+ talks',
+      'Host du Cross Platform Show — Le podcast #1 sur React Native en France · 10k+ écoutes · React Native depuis 2016 · 50+ talks',
     slug: 'david-leuliette',
   },
   youtube: {
@@ -20,7 +20,7 @@ export const CONFIG = {
 
 Bienvenue sur la chaîne N°1 dédiée à React Native en France.
 
-Je suis David Leuliette, host du Cross Platform Show, le podcast incontournable pour les développeurs mobiles (avec plus de 10 000 écoutes) et passionnés de tech.
+Je suis David Leuliette, host du Cross Platform Show, le podcast incontournable pour les développeurs mobiles (avec plus de 10k+ écoutes) et passionnés de tech.
 
 Ici, tu trouveras :
 
@@ -47,12 +47,10 @@ Abonne-toi et partage cet épisode avec un collègue développeur !`,
   },
   banner: {
     name: 'David Leuliette',
-    handle: '@flexbox_',
-    status: 'Le Podcast #1 React Native FR',
-    headline:
-      'On empêche ton app React Native de mourir pendant que tu scales ton business.',
+    status: 'Nouvel épisode chaque mercredi',
+    headline: 'Scale ton app React Native sans 300k€ de dette technique.',
     tagline:
-      '🇫🇷 #1 Podcast React Native  ·  👯‍♀️ 10k+ écoutes  ·  💰 Évite 300k€ de dette technique',
+      '🇫🇷 Podcast #1 React Native · 🎧 10k+ écoutes · ⚡ Livre 40% plus vite',
     url: 'weshipit.today/podcast',
   },
 } as const;
