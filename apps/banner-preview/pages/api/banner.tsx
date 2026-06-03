@@ -2,7 +2,6 @@ import { ImageResponse } from '@vercel/og';
 import { NextRequest } from 'next/server';
 
 import { SourceBanner } from '../../components/source-banner';
-import { SpotifyCover } from '../../components/spotify-cover';
 
 export const config = {
   runtime: 'edge',
@@ -29,18 +28,13 @@ const jetbrainsMonoRegular = fetch(
   ),
 ).then((res) => res.arrayBuffer());
 
-const jetbrainsMonoBold = fetch(
-  new URL(
-    'https://cdn.jsdelivr.net/npm/@fontsource/jetbrains-mono/files/jetbrains-mono-latin-700-normal.woff',
-    import.meta.url,
-  ),
-).then((res) => res.arrayBuffer());
-
+// Generator handles social banner sizes + a 1200×630 og:image variant.
+// The Spotify cover is served as a static image from public/.
 const PLATFORM_SIZES = {
   linkedin: { width: 1584, height: 396 },
   youtube: { width: 2560, height: 1440 },
   x: { width: 1500, height: 500 },
-  spotify: { width: 3000, height: 3000 },
+  og: { width: 1200, height: 630 },
 } as const;
 
 type Platform = keyof typeof PLATFORM_SIZES;
@@ -56,7 +50,7 @@ export default async function handler(req: NextRequest) {
 
     if (!isPlatform(platformParam)) {
       return new Response(
-        'Missing or invalid "platform" query param. Use linkedin, youtube, x, or spotify.',
+        'Missing or invalid "platform" query param. Use linkedin, youtube, x, or og.',
         { status: 400 },
       );
     }
@@ -64,66 +58,55 @@ export default async function handler(req: NextRequest) {
     const { width, height } = PLATFORM_SIZES[platformParam];
 
     const headline = searchParams.get('headline') ?? undefined;
+    const tagline = searchParams.get('tagline') ?? undefined;
+    const status = searchParams.get('status') ?? undefined;
     const url = searchParams.get('url') ?? undefined;
-    const name = searchParams.get('name') ?? undefined;
     const handle = searchParams.get('handle') ?? undefined;
-    const eyebrowLabel = searchParams.get('eyebrowLabel') ?? undefined;
-    const eyebrowAccent = searchParams.get('eyebrowAccent') ?? undefined;
 
-    const [mediumData, extraBoldData, monoRegularData, monoBoldData] =
-      await Promise.all([
-        interMedium,
-        interExtraBold,
-        jetbrainsMonoRegular,
-        jetbrainsMonoBold,
-      ]);
+    const [mediumData, extraBoldData, monoRegularData] = await Promise.all([
+      interMedium,
+      interExtraBold,
+      jetbrainsMonoRegular,
+    ]);
 
-    const element =
-      platformParam === 'spotify' ? (
-        <SpotifyCover width={width} height={height} />
-      ) : (
+    return new ImageResponse(
+      (
         <SourceBanner
           width={width}
           height={height}
-          name={name}
+          status={status}
           handle={handle}
-          eyebrowLabel={eyebrowLabel}
-          eyebrowAccent={eyebrowAccent}
           headline={headline}
+          tagline={tagline}
           url={url}
         />
-      );
-
-    return new ImageResponse(element, {
-      width,
-      height,
-      fonts: [
-        {
-          name: 'Inter',
-          data: mediumData,
-          style: 'normal',
-          weight: 500,
-        },
-        {
-          name: 'Inter',
-          data: extraBoldData,
-          style: 'normal',
-          weight: 800,
-        },
-        {
-          name: 'JetBrains Mono',
-          data: monoRegularData,
-          style: 'normal',
-          weight: 400,
-        },
-        {
-          name: 'JetBrains Mono',
-          data: monoBoldData,
-          style: 'normal',
-          weight: 700,
-        },
-      ],
-    });
+      ),
+      {
+        width,
+        height,
+        emoji: 'twemoji',
+        fonts: [
+          {
+            name: 'Inter',
+            data: mediumData,
+            style: 'normal',
+            weight: 500,
+          },
+          {
+            name: 'Inter',
+            data: extraBoldData,
+            style: 'normal',
+            weight: 800,
+          },
+          {
+            name: 'JetBrains Mono',
+            data: monoRegularData,
+            style: 'normal',
+            weight: 400,
+          },
+        ],
+      },
+    );
   } catch (e) {
     const message = e instanceof Error ? e.message : 'Unknown error';
     console.error(message);

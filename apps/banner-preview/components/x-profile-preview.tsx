@@ -74,6 +74,7 @@ export function XProfilePreview({
               fill
               sizes={isMobile ? '64px' : '128px'}
               className="object-cover"
+              unoptimized
             />
           </div>
         </div>

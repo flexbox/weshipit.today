@@ -20,7 +20,46 @@ const PROFILE_URLS = {
 };
 
 const SITE_URL = 'https://banner-preview.weshipit.today/preview';
-const OG_IMAGE = 'https://banner-preview.weshipit.today/api/banner?platform=x';
+const SITE_ROOT = 'https://banner-preview.weshipit.today';
+const OG_IMAGE = `${SITE_ROOT}/api/banner?platform=og`;
+
+const META = {
+  title: 'Preview LinkedIn, YouTube, X & Spotify Banners Side by Side',
+  description:
+    'Live preview of LinkedIn, YouTube, X and Spotify banners behind real profile chrome on desktop and mobile. Check crops, safe areas and avatar overlap before you publish.',
+  shortDescription:
+    'See your LinkedIn, YouTube, X and Spotify banners behind real profile chrome on desktop and mobile before you publish.',
+};
+
+const PAGE_SCHEMA = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: META.title,
+  description: META.description,
+  url: SITE_URL,
+  isPartOf: {
+    '@type': 'WebSite',
+    name: 'Social Banner Preview',
+    url: SITE_ROOT,
+  },
+  breadcrumb: {
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Create',
+        item: SITE_ROOT,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Preview',
+        item: SITE_URL,
+      },
+    ],
+  },
+};
 
 function PlatformContext({
   title,
@@ -52,38 +91,30 @@ export default function Preview() {
   return (
     <>
       <Head>
-        <title>Preview LinkedIn, YouTube & X Banners Side by Side</title>
+        <title>{META.title}</title>
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, viewport-fit=cover"
         />
-        <meta
-          name="description"
-          content="Live preview of LinkedIn, YouTube and X banners behind real profile chrome on desktop and mobile. Check crops, safe areas and avatar overlap before you publish."
-        />
+        <meta name="description" content={META.description} />
         <link rel="canonical" href={SITE_URL} />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta
-          property="og:title"
-          content="Preview LinkedIn, YouTube & X Banners Side by Side"
-        />
-        <meta
-          property="og:description"
-          content="See your LinkedIn, YouTube and X banners behind real profile chrome on desktop and mobile before you publish."
-        />
+        <meta name="theme-color" content="#F1F5F9" />
+        <meta property="og:title" content={META.title} />
+        <meta property="og:description" content={META.shortDescription} />
         <meta property="og:image" content={OG_IMAGE} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta property="og:url" content={SITE_URL} />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Preview LinkedIn, YouTube & X Banners Side by Side"
-        />
-        <meta
-          name="twitter:description"
-          content="See your LinkedIn, YouTube and X banners behind real profile chrome on desktop and mobile before you publish."
-        />
+        <meta name="twitter:title" content={META.title} />
+        <meta name="twitter:description" content={META.shortDescription} />
         <meta name="twitter:image" content={OG_IMAGE} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(PAGE_SCHEMA) }}
+        />
       </Head>
 
       <SidebarLayout>
@@ -93,7 +124,7 @@ export default function Preview() {
               Preview
             </Text>
             <Text as="h1" variant="p1" className="text-muted-foreground">
-              Live Banner Preview for LinkedIn, YouTube & X.
+              Live Banner Preview for LinkedIn, YouTube, X & Spotify.
             </Text>
           </header>
 

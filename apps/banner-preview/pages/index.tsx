@@ -109,43 +109,48 @@ export default function Index() {
   return (
     <>
       <Head>
-        <title>Free LinkedIn, YouTube & X Banner Generator | weshipit</title>
+        <title>
+          Free LinkedIn, YouTube, X & Spotify Banner Generator | weshipit
+        </title>
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1, viewport-fit=cover"
         />
         <meta
           name="description"
-          content="Free banner generator for LinkedIn (1584×396), YouTube (2560×1440) and X (1500×500). Generate, preview and download social headers at the right aspect ratios."
+          content="Free banner generator for LinkedIn (1584×396), YouTube (2560×1440), X (1500×500) and Spotify (3000×3000). Generate, preview and download social headers at the right aspect ratios."
         />
         <link rel="canonical" href={SITE_URL} />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="theme-color" content="#F1F5F9" />
         <meta
           property="og:title"
-          content="Free LinkedIn, YouTube & X Banner Generator"
+          content="Free LinkedIn, YouTube, X & Spotify Banner Generator"
         />
         <meta
           property="og:description"
-          content="Generate, preview and download LinkedIn, YouTube and X banners at the right aspect ratios. Free, no signup."
+          content="Generate, preview and download LinkedIn, YouTube, X and Spotify banners at the right aspect ratios. Free, no signup."
         />
         <meta
           property="og:image"
-          content={`${SITE_URL}/api/banner?platform=x`}
+          content={`${SITE_URL}/api/banner?platform=og`}
         />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
         <meta property="og:url" content={SITE_URL} />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content="Free LinkedIn, YouTube & X Banner Generator"
+          content="Free LinkedIn, YouTube, X & Spotify Banner Generator"
         />
         <meta
           name="twitter:description"
-          content="Generate, preview and download LinkedIn, YouTube and X banners at the right aspect ratios. Free, no signup."
+          content="Generate, preview and download LinkedIn, YouTube, X and Spotify banners at the right aspect ratios. Free, no signup."
         />
         <meta
           name="twitter:image"
-          content={`${SITE_URL}/api/banner?platform=x`}
+          content={`${SITE_URL}/api/banner?platform=og`}
         />
         <script
           type="application/ld+json"

@@ -5,48 +5,47 @@ const BANNER = CONFIG.banner;
 interface SourceBannerProps {
   width: number;
   height: number;
-  name?: string;
+  status?: string;
   handle?: string;
-  eyebrowLabel?: string;
-  eyebrowAccent?: string;
   headline?: string;
   tagline?: string;
   url?: string;
 }
 
-// Smallest rectangle visible across LinkedIn 1584×396, YouTube mobile-safe 1546×423,
-// and X 1500×500. Anything inside this band is guaranteed visible on every platform.
+// Smallest rectangle visible across LinkedIn 1584×396, YouTube mobile-safe
+// 1546×423, and X 1500×500. Anything inside this band is guaranteed visible.
 export const SAFE_BAND = { width: 1500, height: 396 };
 
-// iTerm2 Snazzy palette — github.com/sindresorhus/iterm2-snazzy
+// Blueprint palette — mirrors libs/ui/src/lib/hero/phone-animation.tsx and the
+// website hero (slate-100 canvas, sky-500 blueprint lines, slate-900 type).
 const COLORS = {
-  bg: '#282A36',
-  phosphor: '#57C7FF', // ANSI 4 blue — headline, border, prompt, corner tags
-  phosphorDim: '#686868',
-  cyberWash: '#EFF0EB',
-  magenta: '#FF6AC1',
-  magentaGlow: 'rgba(255, 106, 193, 0.55)',
-  greenGlow: 'rgba(87, 199, 255, 0.55)',
-  scanline: 'rgba(87, 199, 255, 0.06)',
+  canvas: '#F1F5F9', // slate-100
+  ink: '#0F172A', // slate-900
+  muted: '#64748B', // slate-500
+  blueprint: '#0EA5E9', // sky-500
+  blueprintFaint: 'rgba(14, 165, 233, 0.10)',
+  blueprintInk: 'rgba(14, 165, 233, 0.65)',
+  pill: '#FFFFFF',
+  pillBorder: '#E2E8F0', // slate-200
+  status: '#F97316', // orange-500
 };
 
-// Block-glyph wall: pre-baked pseudo-random rows of demo-scene characters.
-const BLOCK_WALL_ROWS = [
-  '█▓▒░ ▓██▒ ░▒▓█ ▓▒░█',
-  '▒▓██ ░░▓▒ ██▓░ ▒▓█▓',
-  '░▓█▓ ▒██░ ▓▒█▓ █▓▒░',
-  '▓██▒ ▓░▒▓ ░█▓▒ ▒▓█░',
-  '█▓▒░ ▒▓█▓ ▓░▒█ ░█▓▒',
-  '░▓█▒ ▓█▒░ ▒░▓█ █▓▒░',
-];
+// Phone blueprint geometry, lifted straight from phone-animation.tsx
+// (180×360 in CSS pixels at 1x, scaled here to safe-band height).
+const PHONE = {
+  width: 180,
+  height: 360,
+  radius: 30,
+  screenInset: 10,
+  screenInsetY: 30,
+  innerRadius: 20,
+};
 
 export function SourceBanner({
   width,
   height,
-  name = BANNER.name,
+  status = BANNER.status,
   handle = BANNER.handle,
-  eyebrowLabel = BANNER.eyebrow.label,
-  eyebrowAccent = BANNER.eyebrow.accent,
   headline = BANNER.headline,
   tagline = BANNER.tagline,
   url = BANNER.url,
@@ -54,14 +53,23 @@ export function SourceBanner({
   const safeWidth = Math.min(SAFE_BAND.width, width);
   const safeHeight = Math.min(SAFE_BAND.height, height);
 
-  // Scale typography to the safe band so all platforms read consistently.
-  const headlineSize = Math.round(safeHeight * 0.16);
-  const infoSize = Math.round(safeHeight * 0.06);
-  const tagSize = Math.round(safeHeight * 0.05);
+  // Type scale — anchored on safe-band height so all three platforms read
+  // consistently regardless of the surrounding canvas.
+  const headlineSize = Math.round(safeHeight * 0.135);
+  const taglineSize = Math.round(safeHeight * 0.05);
+  const pillSize = Math.round(safeHeight * 0.045);
+  const chipSize = Math.round(safeHeight * 0.045);
 
-  // Suppress lint warning for fields kept for runtime override surface but unused
-  // at the JSX level (the eyebrowLabel is folded into the corner tag content).
-  void eyebrowLabel;
+  // Phone illustration sized to fill the safe-band height (minus padding).
+  const phoneScale = (safeHeight * 0.85) / PHONE.height;
+  const phoneW = PHONE.width * phoneScale;
+  const phoneH = PHONE.height * phoneScale;
+
+  // Layout: left column takes ~62% of safe-band width, phone takes the rest.
+  const padX = Math.round(safeWidth * 0.04);
+  const padY = Math.round(safeHeight * 0.08);
+  const leftColWidth = Math.round(safeWidth * 0.62);
+  const headlineWidth = leftColWidth - padX;
 
   return (
     <div
@@ -70,14 +78,12 @@ export function SourceBanner({
         position: 'relative',
         width: `${width}px`,
         height: `${height}px`,
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: COLORS.bg,
-        fontFamily: '"JetBrains Mono", monospace',
+        backgroundColor: COLORS.canvas,
+        fontFamily: 'Inter, sans-serif',
         overflow: 'hidden',
       }}
     >
-      {/* Scanline overlay — fakes a CRT phosphor screen */}
+      {/* Graph-paper grid background (10px lines, like the phone animation) */}
       <div
         style={{
           display: 'flex',
@@ -86,216 +92,289 @@ export function SourceBanner({
           left: 0,
           width: `${width}px`,
           height: `${height}px`,
-          backgroundImage: `repeating-linear-gradient(to bottom, ${COLORS.scanline} 0px, ${COLORS.scanline} 1px, transparent 1px, transparent 3px)`,
+          backgroundImage: `repeating-linear-gradient(to right, ${COLORS.blueprintFaint} 0 1px, transparent 1px 20px), repeating-linear-gradient(to bottom, ${COLORS.blueprintFaint} 0 1px, transparent 1px 20px)`,
         }}
       />
 
-      {/* Subtle radial glow from center */}
+      {/* Safe-band content container, centered in the canvas */}
       <div
         style={{
           display: 'flex',
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          width: `${width}px`,
-          height: `${height * 1.4}px`,
-          transform: 'translate(-50%, -50%)',
-          backgroundImage: `radial-gradient(ellipse at center, rgba(51, 255, 102, 0.10) 0%, rgba(0, 0, 0, 0) 60%)`,
-        }}
-      />
-
-      {/* Right-side block-glyph wall (demoscene noise) */}
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          position: 'absolute',
-          top: '50%',
-          right: `${Math.round(width * 0.02)}px`,
-          transform: 'translateY(-50%)',
-          color: COLORS.phosphorDim,
-          fontSize: `${Math.round(safeHeight * 0.08)}px`,
-          lineHeight: 1.1,
-          letterSpacing: '0.05em',
-          fontWeight: 700,
-          opacity: 0.45,
-        }}
-      >
-        {BLOCK_WALL_ROWS.map((row) => (
-          <div key={row} style={{ display: 'flex' }}>
-            {row}
-          </div>
-        ))}
-      </div>
-
-      {/* Left-side block-glyph wall (mirror, even dimmer) */}
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          position: 'absolute',
-          top: '50%',
-          left: `${Math.round(width * 0.02)}px`,
-          transform: 'translateY(-50%)',
-          color: COLORS.phosphorDim,
-          fontSize: `${Math.round(safeHeight * 0.08)}px`,
-          lineHeight: 1.1,
-          letterSpacing: '0.05em',
-          fontWeight: 700,
-          opacity: 0.25,
-        }}
-      >
-        {BLOCK_WALL_ROWS.map((row) => (
-          <div key={row} style={{ display: 'flex' }}>
-            {row}
-          </div>
-        ))}
-      </div>
-
-      {/* Safe band with double-line border */}
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
           position: 'relative',
           width: `${safeWidth}px`,
           height: `${safeHeight}px`,
-          border: `2px solid ${COLORS.phosphor}`,
-          backgroundColor: 'rgba(0, 0, 0, 0.55)',
-          paddingTop: `${Math.round(safeHeight * 0.12)}px`,
-          paddingBottom: `${Math.round(safeHeight * 0.12)}px`,
-          paddingLeft: `${Math.round(safeWidth * 0.04)}px`,
-          paddingRight: `${Math.round(safeWidth * 0.04)}px`,
-          // Stacked outer shadow fakes the demoscene double-line border
-          // (Satori 0.12.2 crashes on border-style: double).
-          boxShadow: `0 0 0 4px ${COLORS.bg}, 0 0 0 6px ${COLORS.phosphor}, 0 0 32px ${COLORS.greenGlow}`,
+          margin: 'auto',
         }}
       >
-        {/* Top-left corner tag — interrupts the border */}
-        <div
-          style={{
-            display: 'flex',
-            position: 'absolute',
-            top: `-${Math.round(tagSize * 0.7)}px`,
-            left: `${Math.round(safeWidth * 0.04)}px`,
-            alignItems: 'center',
-            paddingLeft: `${Math.round(tagSize * 0.6)}px`,
-            paddingRight: `${Math.round(tagSize * 0.6)}px`,
-            fontSize: `${tagSize}px`,
-            fontWeight: 700,
-            color: COLORS.phosphor,
-            backgroundColor: COLORS.bg,
-            letterSpacing: '0.1em',
-            textShadow: `0 0 6px ${COLORS.greenGlow}`,
-          }}
-        >
-          [ {handle} ]
-        </div>
-
-        {/* Top-right corner tag — interrupts the border */}
-        <div
-          style={{
-            display: 'flex',
-            position: 'absolute',
-            top: `-${Math.round(tagSize * 0.7)}px`,
-            right: `${Math.round(safeWidth * 0.04)}px`,
-            alignItems: 'center',
-            paddingLeft: `${Math.round(tagSize * 0.6)}px`,
-            paddingRight: `${Math.round(tagSize * 0.6)}px`,
-            fontSize: `${tagSize}px`,
-            fontWeight: 700,
-            color: COLORS.phosphor,
-            backgroundColor: COLORS.bg,
-            letterSpacing: '0.1em',
-            textShadow: `0 0 6px ${COLORS.greenGlow}`,
-          }}
-        >
-          [ {url} ]
-        </div>
-
-        {/* Headline row — brand name + [#1] punctuation pop */}
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'baseline',
-            gap: `${Math.round(headlineSize * 0.3)}px`,
-            fontSize: `${headlineSize}px`,
-            fontWeight: 700,
-            color: COLORS.phosphor,
-            letterSpacing: '0.02em',
-            lineHeight: 1,
-            textShadow: `0 0 12px ${COLORS.greenGlow}, 0 0 32px rgba(51, 255, 102, 0.3)`,
-          }}
-        >
-          <span style={{ display: 'flex', color: COLORS.phosphorDim }}>
-            &gt;
-          </span>
-          <span style={{ display: 'flex' }}>{headline}</span>
-          <span
-            style={{
-              display: 'flex',
-              color: COLORS.magenta,
-              textShadow: `0 0 12px ${COLORS.magentaGlow}, 0 0 4px ${COLORS.magentaGlow}`,
-            }}
-          >
-            [{eyebrowAccent}]
-          </span>
-        </div>
-
-        {/* Separator */}
-        <div
-          style={{
-            display: 'flex',
-            marginTop: `${Math.round(safeHeight * 0.06)}px`,
-            marginBottom: `${Math.round(safeHeight * 0.04)}px`,
-            color: COLORS.phosphorDim,
-            fontSize: `${infoSize}px`,
-            letterSpacing: '0',
-            fontWeight: 400,
-          }}
-        >
-          ==============================
-        </div>
-
-        {/* Terminal info block */}
+        {/* LEFT — type stack */}
         <div
           style={{
             display: 'flex',
             flexDirection: 'column',
-            fontSize: `${infoSize}px`,
-            fontWeight: 400,
-            color: COLORS.cyberWash,
-            lineHeight: 1.4,
-            letterSpacing: '0.02em',
+            width: `${leftColWidth}px`,
+            paddingTop: `${padY}px`,
+            paddingLeft: `${padX}px`,
+            paddingBottom: `${padY}px`,
           }}
         >
-          <div style={{ display: 'flex' }}>
+          {/* Status pill */}
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              alignSelf: 'flex-start',
+              gap: `${Math.round(pillSize * 0.5)}px`,
+              paddingLeft: `${Math.round(pillSize * 0.75)}px`,
+              paddingRight: `${Math.round(pillSize * 0.95)}px`,
+              paddingTop: `${Math.round(pillSize * 0.35)}px`,
+              paddingBottom: `${Math.round(pillSize * 0.35)}px`,
+              fontSize: `${pillSize}px`,
+              fontWeight: 500,
+              color: COLORS.ink,
+              backgroundColor: COLORS.pill,
+              border: `1px solid ${COLORS.pillBorder}`,
+              borderRadius: `${pillSize * 2}px`,
+              marginBottom: `${Math.round(safeHeight * 0.04)}px`,
+            }}
+          >
             <span
               style={{
                 display: 'flex',
-                color: COLORS.phosphorDim,
-                width: `${infoSize * 7}px`,
+                width: `${Math.round(pillSize * 0.55)}px`,
+                height: `${Math.round(pillSize * 0.55)}px`,
+                backgroundColor: COLORS.status,
+                borderRadius: '999px',
               }}
-            >
-              host&nbsp;&nbsp;:
-            </span>
-            <span style={{ display: 'flex' }}>
-              {name} / {handle}
-            </span>
+            />
+            <span style={{ display: 'flex' }}>{status}</span>
           </div>
-          <div style={{ display: 'flex' }}>
-            <span
-              style={{
-                display: 'flex',
-                color: COLORS.phosphorDim,
-                width: `${infoSize * 7}px`,
-              }}
-            >
-              topic&nbsp;:
-            </span>
-            <span style={{ display: 'flex' }}>{tagline}</span>
+
+          {/* Headline — bold, near-black, mirrors the website hero */}
+          <div
+            style={{
+              display: 'flex',
+              width: `${headlineWidth}px`,
+              fontSize: `${headlineSize}px`,
+              fontWeight: 800,
+              color: COLORS.ink,
+              lineHeight: 1.05,
+              letterSpacing: '-0.025em',
+            }}
+          >
+            {headline}
+          </div>
+
+          {/* Tagline — metrics with emoji */}
+          <div
+            style={{
+              display: 'flex',
+              width: `${headlineWidth}px`,
+              marginTop: `${Math.round(safeHeight * 0.05)}px`,
+              fontSize: `${taglineSize}px`,
+              fontWeight: 500,
+              color: COLORS.muted,
+              lineHeight: 1.4,
+            }}
+          >
+            {tagline}
+          </div>
+
+          {/* Handle + URL chip row (bottom of left column) */}
+          <div
+            style={{
+              display: 'flex',
+              marginTop: 'auto',
+              gap: `${Math.round(chipSize * 0.6)}px`,
+              fontSize: `${chipSize}px`,
+              fontFamily: '"JetBrains Mono", monospace',
+              color: COLORS.blueprint,
+              fontWeight: 400,
+            }}
+          >
+            <span style={{ display: 'flex' }}>{handle}</span>
+            <span style={{ display: 'flex', color: COLORS.muted }}>·</span>
+            <span style={{ display: 'flex' }}>{url}</span>
           </div>
         </div>
+
+        {/* RIGHT — phone blueprint */}
+        <div
+          style={{
+            display: 'flex',
+            position: 'relative',
+            flex: 1,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <PhoneBlueprint
+            width={phoneW}
+            height={phoneH}
+            labelSize={Math.round(safeHeight * 0.04)}
+            originalW={PHONE.width}
+            originalH={PHONE.height}
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// Static SVG version of the animated phone blueprint. Same proportions,
+// same stroke weight feel, same dimension annotations.
+function PhoneBlueprint({
+  width,
+  height,
+  labelSize,
+  originalW,
+  originalH,
+}: {
+  width: number;
+  height: number;
+  labelSize: number;
+  originalW: number;
+  originalH: number;
+}) {
+  // Drawing in PhoneBlueprint's own viewBox (PHONE coordinate space) for
+  // pixel-perfect parity with phone-animation.tsx; we scale via width/height.
+  const w = PHONE.width;
+  const h = PHONE.height;
+  const cx = w / 2;
+  const cy = h / 2;
+  const screenW = w - PHONE.screenInset * 2;
+  const screenH = h - PHONE.screenInsetY * 2;
+  const atomR = 30;
+
+  return (
+    <div
+      style={{
+        display: 'flex',
+        position: 'relative',
+        width: `${width + labelSize * 4}px`,
+        height: `${height + labelSize * 3}px`,
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
+      <svg
+        width={width}
+        height={height}
+        viewBox={`0 0 ${w} ${h}`}
+        style={{ display: 'flex' }}
+      >
+        {/* Phone body */}
+        <rect
+          x={0.75}
+          y={0.75}
+          width={w - 1.5}
+          height={h - 1.5}
+          rx={PHONE.radius}
+          ry={PHONE.radius}
+          fill="none"
+          stroke={COLORS.blueprint}
+          strokeWidth={1.5}
+        />
+        {/* Screen */}
+        <rect
+          x={PHONE.screenInset}
+          y={PHONE.screenInsetY}
+          width={screenW}
+          height={screenH}
+          rx={PHONE.innerRadius}
+          ry={PHONE.innerRadius}
+          fill="none"
+          stroke={COLORS.blueprint}
+          strokeWidth={1.5}
+        />
+        {/* Camera notch */}
+        <rect
+          x={cx - 30}
+          y={PHONE.screenInsetY + 5}
+          width={60}
+          height={15}
+          rx={10}
+          ry={10}
+          fill="none"
+          stroke={COLORS.blueprint}
+          strokeWidth={1.5}
+        />
+        {/* Home indicator */}
+        <line
+          x1={cx - 30}
+          y1={h - PHONE.screenInsetY - 15}
+          x2={cx + 30}
+          y2={h - PHONE.screenInsetY - 15}
+          stroke={COLORS.blueprint}
+          strokeWidth={1.5}
+        />
+        {/* React atom */}
+        <ellipse
+          cx={cx}
+          cy={cy}
+          rx={atomR}
+          ry={atomR / 3}
+          fill="none"
+          stroke={COLORS.blueprint}
+          strokeWidth={1.5}
+        />
+        <ellipse
+          cx={cx}
+          cy={cy}
+          rx={atomR}
+          ry={atomR / 3}
+          fill="none"
+          stroke={COLORS.blueprint}
+          strokeWidth={1.5}
+          transform={`rotate(60 ${cx} ${cy})`}
+        />
+        <ellipse
+          cx={cx}
+          cy={cy}
+          rx={atomR}
+          ry={atomR / 3}
+          fill="none"
+          stroke={COLORS.blueprint}
+          strokeWidth={1.5}
+          transform={`rotate(-60 ${cx} ${cy})`}
+        />
+        <circle cx={cx} cy={cy} r={5} fill="rgba(14, 165, 233, 0.5)" />
+        {/* Corner dots */}
+        <circle cx={0} cy={0} r={2} fill={COLORS.blueprint} />
+        <circle cx={w} cy={0} r={2} fill={COLORS.blueprint} />
+        <circle cx={0} cy={h} r={2} fill={COLORS.blueprint} />
+        <circle cx={w} cy={h} r={2} fill={COLORS.blueprint} />
+      </svg>
+
+      {/* Width label (top) */}
+      <div
+        style={{
+          display: 'flex',
+          position: 'absolute',
+          top: 0,
+          width: `${width}px`,
+          fontFamily: '"JetBrains Mono", monospace',
+          fontSize: `${labelSize}px`,
+          color: COLORS.blueprintInk,
+          justifyContent: 'center',
+        }}
+      >
+        {originalW}px
+      </div>
+
+      {/* Height label (right side) */}
+      <div
+        style={{
+          display: 'flex',
+          position: 'absolute',
+          right: 0,
+          top: '50%',
+          transform: 'translateY(-50%) rotate(90deg)',
+          fontFamily: '"JetBrains Mono", monospace',
+          fontSize: `${labelSize}px`,
+          color: COLORS.blueprintInk,
+        }}
+      >
+        {originalH}px
       </div>
     </div>
   );

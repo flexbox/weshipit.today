@@ -83,6 +83,7 @@ export function YouTubeChannelPreview({
               fill
               sizes={isMobile ? '80px' : '160px'}
               className="object-cover"
+              unoptimized
             />
           </div>
         </div>

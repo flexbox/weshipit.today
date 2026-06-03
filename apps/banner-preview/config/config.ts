@@ -48,13 +48,11 @@ Abonne-toi et partage cet épisode avec un collègue développeur !`,
   banner: {
     name: 'David Leuliette',
     handle: '@flexbox_',
-    eyebrow: {
-      label: 'LE PODCAST',
-      accent: '#1',
-    },
-    headline: 'LE CROSS PLATFORM SHOW',
+    status: 'Le Podcast #1 React Native FR',
+    headline:
+      'On empêche ton app React Native de mourir pendant que tu scales ton business.',
     tagline:
-      'React Native pour les CTO · Scale 40% plus vite · Évite 300k€ de dette technique',
+      '🇫🇷 #1 Podcast React Native  ·  👯‍♀️ 10k+ écoutes  ·  💰 Évite 300k€ de dette technique',
     url: 'weshipit.today/podcast',
   },
 } as const;

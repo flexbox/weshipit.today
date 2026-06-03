@@ -1,10 +1,10 @@
 We're in apps/banner-preview, which previews one banner across LinkedIn, YouTube, and Twitter/X for cross-platform consistency. I want the banner to match the visual identity of my YouTube channel (David Leuliette / @flexbox\_, React Native, "Cross Platform Show").
 
-Step 0 — Reference. I've put 3–4 of my actual YouTube thumbnails in ./refs/thumbnails/.
+Step 0 — Reference. I have the main reference from my spotify playlist cover, which is the most recent and cohesive expression of my channel's visual identity. I also have a few older YouTube thumbnails that share a similar style ./refs/
 Analyze them and produce a short STYLE SPEC before anything else:
 
 - Color palette as hex values (background, primary, accent, text), ranked by dominance
-- Typography: font family/feel, weights, casing, how headlines are treated
+- Typography: font family/feel, weights, casing, how headlines are treated the source is libs/ui/src/lib/text/text.tsx
 - Recurring motifs (face crop, bold outlined text, arrows/circles, code snippets, emoji, logos, textures)
 - Overall vibe in one sentence
   Show me the STYLE SPEC and wait for my OK before coding.
