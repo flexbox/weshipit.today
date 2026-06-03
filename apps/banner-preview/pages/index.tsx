@@ -4,7 +4,6 @@ import { Button, Text } from '@weshipit/ui';
 import { ArrowDownTrayIcon } from '@heroicons/react/24/outline';
 
 import { SidebarLayout } from '../components/sidebar-layout';
-import { SAFE_BAND } from '../components/source-banner';
 import { BANNERS, BannerSpec, bannerUrlFor } from '../components/banners';
 
 const SITE_URL = 'https://banner-preview.weshipit.today';
@@ -25,19 +24,77 @@ const APP_SCHEMA = {
   },
 };
 
+// Per-platform safe-area overlays. YouTube has two (mobile-safe + text/logo
+// all-device); LinkedIn/X use the cross-platform intersection; Spotify is a
+// square cover with no safe-area concept.
+type SafeArea = {
+  width: number;
+  height: number;
+  label: string;
+  emphasis: 'primary' | 'secondary';
+};
+
+const SAFE_AREAS_BY_SLUG: Record<BannerSpec['slug'], SafeArea[]> = {
+  linkedin: [
+    { width: 1500, height: 396, label: 'Safe band', emphasis: 'primary' },
+  ],
+  x: [{ width: 1500, height: 396, label: 'Safe band', emphasis: 'primary' }],
+  youtube: [
+    {
+      width: 1546,
+      height: 423,
+      label: 'Mobile safe',
+      emphasis: 'secondary',
+    },
+    {
+      width: 1235,
+      height: 338,
+      label: 'Text & logo (all-device)',
+      emphasis: 'primary',
+    },
+  ],
+  spotify: [],
+};
+
+function SafeAreaOverlay({
+  area,
+  bannerWidth,
+  bannerHeight,
+}: {
+  area: SafeArea;
+  bannerWidth: number;
+  bannerHeight: number;
+}) {
+  const style = {
+    left: `${((bannerWidth - area.width) / 2 / bannerWidth) * 100}%`,
+    top: `${((bannerHeight - area.height) / 2 / bannerHeight) * 100}%`,
+    width: `${(area.width / bannerWidth) * 100}%`,
+    height: `${(area.height / bannerHeight) * 100}%`,
+  };
+  const isPrimary = area.emphasis === 'primary';
+  const borderClass = isPrimary
+    ? 'border-emerald-400/80 bg-emerald-400/5'
+    : 'border-sky-400/70 bg-sky-400/5';
+  const labelClass = isPrimary ? 'bg-emerald-500' : 'bg-sky-500';
+  return (
+    <div
+      aria-hidden="true"
+      className={`pointer-events-none absolute border-2 border-dashed ${borderClass}`}
+      style={style}
+    >
+      <span
+        className={`absolute -top-6 left-0 rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white ${labelClass}`}
+      >
+        {area.label} {area.width}×{area.height}
+      </span>
+    </div>
+  );
+}
+
 function BannerPreview({ banner }: { banner: BannerSpec }) {
   const aspectRatio = `${banner.width} / ${banner.height}`;
   const imageUrl = bannerUrlFor(banner.slug);
-
-  // Spotify cover is square (1:1) — the cross-platform safe band doesn't apply.
-  const showSafeBand = banner.slug !== 'spotify';
-
-  const safeBandStyle = {
-    left: `${((banner.width - SAFE_BAND.width) / 2 / banner.width) * 100}%`,
-    top: `${((banner.height - SAFE_BAND.height) / 2 / banner.height) * 100}%`,
-    width: `${(SAFE_BAND.width / banner.width) * 100}%`,
-    height: `${(SAFE_BAND.height / banner.height) * 100}%`,
-  };
+  const safeAreas = SAFE_AREAS_BY_SLUG[banner.slug];
 
   return (
     <article className="overflow-hidden rounded-xl border border-border bg-white p-6 shadow-md">
@@ -66,17 +123,14 @@ function BannerPreview({ banner }: { banner: BannerSpec }) {
           className="object-cover"
           unoptimized
         />
-        {showSafeBand && (
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute border-2 border-dashed border-emerald-400/80 bg-emerald-400/5"
-            style={safeBandStyle}
-          >
-            <span className="absolute -top-6 left-0 rounded bg-emerald-500 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white">
-              Safe band {SAFE_BAND.width}×{SAFE_BAND.height}
-            </span>
-          </div>
-        )}
+        {safeAreas.map((area) => (
+          <SafeAreaOverlay
+            key={`${area.width}x${area.height}`}
+            area={area}
+            bannerWidth={banner.width}
+            bannerHeight={banner.height}
+          />
+        ))}
       </div>
 
       <div className="mt-3">

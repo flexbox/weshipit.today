@@ -12,9 +12,15 @@ interface SourceBannerProps {
   url?: string;
 }
 
-// Smallest rectangle visible across LinkedIn 1584×396, YouTube mobile-safe
-// 1546×423, and X 1500×500. Anything inside this band is guaranteed visible.
+// Cross-platform intersection: LinkedIn 1584×396 ∩ YouTube mobile-safe
+// 1546×423 ∩ X 1500×500. Used as the default layout basis for any platform
+// that doesn't override (LinkedIn, OG).
 export const SAFE_BAND = { width: 1500, height: 396 };
+
+// YouTube's own mobile-safe area, per the official channel-art template.
+// Wider AND taller than the cross-platform intersection, so YouTube banners
+// get more breathing room when targeted explicitly.
+const YOUTUBE_MOBILE_SAFE = { width: 1546, height: 423 };
 
 // Blueprint palette — mirrors libs/ui/src/lib/hero/phone-animation.tsx and the
 // website hero (slate-100 canvas, sky-500 blueprint lines, slate-900 type).
@@ -50,14 +56,23 @@ export function SourceBanner({
   tagline = BANNER.tagline,
   url = BANNER.url,
 }: SourceBannerProps) {
-  const safeWidth = Math.min(SAFE_BAND.width, width);
-
-  // X has 500px of vertical room vs LinkedIn's 396 — and a more aggressive
-  // mobile avatar overlap — so we let it use the full canvas height for
-  // layout (everything scales to safeHeight). This auto-bumps every type
-  // size on X by ~26% over LinkedIn without an explicit scale factor.
+  // Per-platform layout basis:
+  // - YouTube uses its own mobile-safe area (1546×423) so the layout fills
+  //   the strip that actually shows on phones, with extra breathing room
+  //   compared to the cross-platform intersection.
+  // - X uses the full canvas (no safe-area concept; just clear the avatar).
+  // - LinkedIn / OG fall back to the cross-platform 1500×396 intersection.
+  const isYouTube = platform === 'youtube';
   const isX = platform === 'x';
-  const safeHeight = isX ? height : Math.min(SAFE_BAND.height, height);
+
+  const safeWidth = isYouTube
+    ? Math.min(YOUTUBE_MOBILE_SAFE.width, width)
+    : Math.min(SAFE_BAND.width, width);
+  const safeHeight = isYouTube
+    ? Math.min(YOUTUBE_MOBILE_SAFE.height, height)
+    : isX
+      ? height
+      : Math.min(SAFE_BAND.height, height);
 
   const headlineSize = Math.round(safeHeight * 0.16);
   // Tagline stays compact on X so all three metrics fit on one line.

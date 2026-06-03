@@ -25,7 +25,7 @@ export function SidebarLayout({ children }: SidebarLayoutProps) {
 
   return (
     <div className="flex min-h-screen bg-muted/30">
-      <aside className="sticky top-0 hidden h-screen w-60 shrink-0 flex-col border-r border-border bg-card px-4 py-6 md:flex">
+      <aside className="sticky top-0 hidden h-screen w-60 shrink-0 flex-col border-r border-border bg-card px-4 py-6 dark:bg-slate-900 md:flex">
         <Link
           href="/"
           className="mb-8 px-2 text-base font-semibold tracking-tight text-foreground"
