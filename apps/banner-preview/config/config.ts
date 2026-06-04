@@ -15,7 +15,10 @@ export const CONFIG = {
     slug: 'david-leuliette',
   },
   youtube: {
+    // handle: 50 characters max
     name: 'David Leuliette | weshipit',
+    handle: '@flexbox_',
+    // description: 1000 characters max
     description: `Tu cherches à exceller dans le développement mobile ?
 
 Bienvenue sur la chaîne N°1 dédiée à React Native en France.
@@ -31,7 +34,6 @@ Ici, tu trouveras :
 -  Des analyses d'applications mobiles innovantes et des études de cas pour inspirer ton travail.
 
 Abonne-toi et partage cet épisode avec un collègue développeur !`,
-    handle: '@flexbox_',
   },
   x: {
     name: 'David Leuliette',
