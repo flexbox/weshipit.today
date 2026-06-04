@@ -21,9 +21,9 @@ interface SpotifyPodcastPreviewProps {
 }
 
 const DEFAULTS = {
-  title: CONFIG.spotify.title,
-  author: CONFIG.spotify.author,
-  about: truncate(CONFIG.spotify.about, {
+  title: CONFIG.spotify.showName,
+  author: CONFIG.spotify.creatorName,
+  about: truncate(CONFIG.spotify.description, {
     length: 190,
     separator: '... Show more',
   }),

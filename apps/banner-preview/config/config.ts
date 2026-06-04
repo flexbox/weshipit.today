@@ -40,10 +40,14 @@ Abonne-toi et partage cet épisode avec un collègue développeur !`,
     handle: '@flexbox_',
   },
   spotify: {
-    title:
+    // showName: 100 characters max
+    showName:
       'Le Cross Platform Show - Le talk-show francophone sur le dev React Native',
-    author: 'David Leuliette',
-    about: `Le Cross Platform Show est le podcast de référence pour maîtriser React Native et le développement mobile. Animé par David Leuliette, chaque épisode offre des retours d'expérience concrets pour créer des apps performantes suriOS et Android. Freelance, CTO ou Indie Hacker, découvre les meilleures stacks (Expo, TypeScript), architectures et stratégies de déploiement. Des discussions techniques avec des experts dignes de formations avancées pour booster ta carrière de développeur. La veille audio incontournable pour exceller dans l'écosystème JavaScript mobile et rejoindre la communauté.`,
+    // creatorName: 80 characters max
+    creatorName: 'David Leuliette',
+    // description: 600 characters max
+    description: `Le Cross Platform Show est le podcast de référence pour maîtriser React Native et le développement mobile. Animé par David Leuliette, chaque épisode offre des retours d'expérience concrets pour créer des apps performantes suriOS et Android. Freelance, CTO ou Indie Hacker, découvre les meilleures stacks (Expo, TypeScript), architectures et stratégies de déploiement. Des discussions techniques avec des experts dignes de formations avancées pour booster ta carrière de développeur. La veille audio incontournable pour exceller dans l'écosystème JavaScript mobile et rejoindre la communauté.`,
+    category: 'Technology',
   },
   banner: {
     name: 'David Leuliette',
