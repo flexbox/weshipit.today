@@ -9,10 +9,13 @@ export const AVATAR_URL =
 
 export const CONFIG = {
   linkedIn: {
-    name: 'David Leuliette',
-    description:
-      'Host du Cross Platform Show — Le podcast #1 sur React Native en France · 10k+ écoutes · React Native depuis 2016 · 50+ talks',
     slug: 'david-leuliette',
+    name: 'David Leuliette',
+    // headline: 220 characters max
+    headline:
+      'Host du Cross Platform Show — Le podcast #1 sur React Native en France · 10k+ écoutes · React Native depuis 2016 · 50+ talks',
+    ctaLabel: 'Book React Native Experts',
+    ctaUrl: 'https://weshipit.today',
   },
   youtube: {
     // handle: 50 characters max

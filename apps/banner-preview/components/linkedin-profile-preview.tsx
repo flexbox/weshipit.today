@@ -15,6 +15,7 @@ interface LinkedInProfilePreviewProps {
   headline?: string;
   location?: string;
   ctaLabel?: string;
+  ctaUrl?: string;
   followers?: string;
   connections?: string;
   avatarUrl?: string;
@@ -22,9 +23,10 @@ interface LinkedInProfilePreviewProps {
 
 const DEFAULTS = {
   name: CONFIG.linkedIn.name,
-  headline: CONFIG.linkedIn.description,
+  headline: CONFIG.linkedIn.headline,
   location: 'Paris, Île-de-France, France',
-  ctaLabel: 'Book React Native Experts',
+  ctaLabel: CONFIG.linkedIn.ctaLabel,
+  ctaUrl: CONFIG.linkedIn.ctaUrl,
   followers: '19,361 followers',
   connections: '500+ connections',
   avatarUrl: AVATAR_URL,
@@ -37,6 +39,7 @@ export function LinkedInProfilePreview({
   headline = DEFAULTS.headline,
   location = DEFAULTS.location,
   ctaLabel = DEFAULTS.ctaLabel,
+  ctaUrl = DEFAULTS.ctaUrl,
   followers = DEFAULTS.followers,
   connections = DEFAULTS.connections,
   avatarUrl = DEFAULTS.avatarUrl,
@@ -114,7 +117,7 @@ export function LinkedInProfilePreview({
         </p>
 
         <a
-          href="#"
+          href={ctaUrl}
           className={`mt-1 inline-flex items-center gap-1 font-semibold text-[#0a66c2] hover:underline ${
             isMobile ? 'text-[11px]' : 'text-sm'
           }`}
@@ -149,14 +152,6 @@ export function LinkedInProfilePreview({
             }`}
           >
             Add section
-          </button>
-          <button
-            type="button"
-            className={`rounded-full border-2 border-[#0a66c2] font-semibold text-[#0a66c2] hover:bg-blue-50 ${
-              isMobile ? 'px-3 py-1 text-xs' : 'px-4 py-1.5 text-sm'
-            }`}
-          >
-            Enhance profile
           </button>
           <button
             type="button"
