@@ -7,6 +7,7 @@ import {
   Text,
   Badge,
   Card,
+  Prose,
 } from '@weshipit/ui';
 import { Layout } from '../../components/layout';
 import { podcastEpisodes } from '../../fixtures/podcast-episodes.fixture';
@@ -131,7 +132,7 @@ export default function PodcastEpisodePage({
   return (
     <Layout
       seoTitle={`${episode.name} avec ${episode.guests.join(', ')} — Le Cross Platform Show Podcast`}
-      seoDescription={episode.description}
+      seoDescription={episode.description_short}
       ogImagePodcast={{
         title: episode.name,
         guest: episode.guests.join(', '),
@@ -232,7 +233,6 @@ export default function PodcastEpisodePage({
                         <iframe
                           src={`https://www.youtube.com/embed/${episode.youtube_embed_id}`}
                           title={`YouTube video player - ${episode.name}`}
-                          frameBorder="0"
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                           allowFullScreen
                           className="w-full h-full rounded-lg"
@@ -240,19 +240,13 @@ export default function PodcastEpisodePage({
                       </div>
                     </Card>
                   )}
-                  <div className="text-slate-700 dark:text-slate-200 leading-relaxed prose prose-slate dark:prose-invert max-w-none prose-a:no-underline prose-a:text-blue-600 hover:prose-a:text-blue-700 dark:prose-a:text-blue-400 dark:hover:prose-a:text-blue-300 [&_a[target=_blank]]:inline-flex [&_a[target=_blank]]:items-center">
-                    {articleContent ? (
+                  <Prose size="lg">
+                    {articleContent && (
                       <ReactMarkdown remarkPlugins={[remarkGfm]}>
                         {articleContent}
                       </ReactMarkdown>
-                    ) : (
-                      <div
-                        dangerouslySetInnerHTML={{
-                          __html: episode.description,
-                        }}
-                      />
                     )}
-                  </div>
+                  </Prose>
                 </div>
               </div>
             </div>

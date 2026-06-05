@@ -126,7 +126,7 @@ export default function PodcastTranscriptPage({
   return (
     <Layout
       seoTitle={`Transcript - Épisode ${episode.number} - ${episode.name} avec ${episode.guests.join(', ')}`}
-      seoDescription={`Transcript complet de l'épisode ${episode.number} du podcast avec ${episode.guests.join(', ')} de ${episode.name}. ${episode.description}`}
+      seoDescription={`Transcript complet de l'épisode ${episode.number} du podcast avec ${episode.guests.join(', ')} de ${episode.name}. ${episode.description_short}`}
       ogImagePodcast={{
         title: episode.name,
         guest: episode.guests.join(', '),
