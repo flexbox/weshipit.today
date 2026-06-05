@@ -1,5 +1,4 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { useEffect, useRef } from 'react';
 import {
   Hyperlink,
   Button,
@@ -8,6 +7,7 @@ import {
   Text,
   Badge,
   Card,
+  Prose,
 } from '@weshipit/ui';
 import { Layout } from '../../components/layout';
 import { podcastEpisodes } from '../../fixtures/podcast-episodes.fixture';
@@ -18,6 +18,7 @@ import { ChevronLeftIcon } from '@heroicons/react/20/solid';
 import { linksApi } from '../api/links';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import Link from 'next/link';
 
 interface PodcastEpisodePageProps {
   episode: (typeof podcastEpisodes)[0] | null;
@@ -99,26 +100,6 @@ export default function PodcastEpisodePage({
   hasTranscript,
   articleContent,
 }: PodcastEpisodePageProps) {
-  const contentRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (contentRef.current) {
-      const links = contentRef.current.querySelectorAll('a');
-      links.forEach((link) => {
-        const isExternal = link.getAttribute('target') === '_blank';
-        if (isExternal) {
-          link.setAttribute('rel', 'noopener noreferrer nofollow');
-          const linkContent = link.innerHTML;
-          link.innerHTML = '';
-          const span = document.createElement('span');
-          span.className = 'inline-flex items-center';
-          span.innerHTML = linkContent;
-          link.appendChild(span);
-        }
-      });
-    }
-  }, [episode]);
-
   if (!episode) {
     return (
       <Layout
@@ -137,12 +118,12 @@ export default function PodcastEpisodePage({
           >
             L'épisode que vous recherchez n'existe pas.
           </Text>
-          <Hyperlink
+          <Link
             href="/podcast"
             className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700"
           >
             <ChevronLeftIcon className="h-4 w-4 mr-1" /> Retour aux épisodes
-          </Hyperlink>
+          </Link>
         </div>
       </Layout>
     );
@@ -150,11 +131,11 @@ export default function PodcastEpisodePage({
 
   return (
     <Layout
-      seoTitle={`${episode.name} avec ${episode.guest_full_name} — Le Cross Platform Show Podcast`}
-      seoDescription={episode.description}
+      seoTitle={`${episode.name} avec ${episode.guests.join(', ')} — Le Cross Platform Show Podcast`}
+      seoDescription={episode.description_short}
       ogImagePodcast={{
         title: episode.name,
-        guest: episode.guest_full_name,
+        guest: episode.guests.join(', '),
         episode: episode.number,
         type: 'podcast',
       }}
@@ -164,21 +145,21 @@ export default function PodcastEpisodePage({
       <div className="mt-8">
         <div className="max-w-4xl mx-auto">
           <div className="inline-flex mb-8 gap-4">
-            <Hyperlink
+            <Link
               href="/podcast"
               className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200 transition-colors"
             >
               <ChevronLeftIcon className="h-4 w-4 mr-1" />
               Retour aux épisodes
-            </Hyperlink>
+            </Link>
             <div className="text-slate-400">•</div>
             {hasTranscript && (
-              <Hyperlink
+              <Link
                 href={`/podcast/${episode.slug}/transcript`}
                 className="text-slate-600 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200 transition-colors"
               >
                 Transcript
-              </Hyperlink>
+              </Link>
             )}
           </div>
 
@@ -203,7 +184,7 @@ export default function PodcastEpisodePage({
                       >
                         avec{' '}
                         <span className="font-semibold">
-                          {episode.guest_full_name}
+                          {episode.guests.join(', ')}
                         </span>
                       </Text>
                     </div>
@@ -252,7 +233,6 @@ export default function PodcastEpisodePage({
                         <iframe
                           src={`https://www.youtube.com/embed/${episode.youtube_embed_id}`}
                           title={`YouTube video player - ${episode.name}`}
-                          frameBorder="0"
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                           allowFullScreen
                           className="w-full h-full rounded-lg"
@@ -260,22 +240,13 @@ export default function PodcastEpisodePage({
                       </div>
                     </Card>
                   )}
-                  <div
-                    ref={contentRef}
-                    className="text-slate-700 dark:text-slate-200 leading-relaxed prose prose-slate dark:prose-invert max-w-none prose-a:no-underline prose-a:text-blue-600 hover:prose-a:text-blue-700 dark:prose-a:text-blue-400 dark:hover:prose-a:text-blue-300"
-                  >
-                    {articleContent ? (
+                  <Prose size="lg">
+                    {articleContent && (
                       <ReactMarkdown remarkPlugins={[remarkGfm]}>
                         {articleContent}
                       </ReactMarkdown>
-                    ) : (
-                      <div
-                        dangerouslySetInnerHTML={{
-                          __html: episode.description,
-                        }}
-                      />
                     )}
-                  </div>
+                  </Prose>
                 </div>
               </div>
             </div>
