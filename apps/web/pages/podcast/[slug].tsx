@@ -1,5 +1,4 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { useEffect, useRef } from 'react';
 import {
   Hyperlink,
   Button,
@@ -100,26 +99,6 @@ export default function PodcastEpisodePage({
   hasTranscript,
   articleContent,
 }: PodcastEpisodePageProps) {
-  const contentRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (contentRef.current) {
-      const links = contentRef.current.querySelectorAll('a');
-      links.forEach((link) => {
-        const isExternal = link.getAttribute('target') === '_blank';
-        if (isExternal) {
-          link.setAttribute('rel', 'noopener noreferrer nofollow');
-          const linkContent = link.innerHTML;
-          link.innerHTML = '';
-          const span = document.createElement('span');
-          span.className = 'inline-flex items-center';
-          span.innerHTML = linkContent;
-          link.appendChild(span);
-        }
-      });
-    }
-  }, [episode]);
-
   if (!episode) {
     return (
       <Layout
@@ -261,10 +240,7 @@ export default function PodcastEpisodePage({
                       </div>
                     </Card>
                   )}
-                  <div
-                    ref={contentRef}
-                    className="text-slate-700 dark:text-slate-200 leading-relaxed prose prose-slate dark:prose-invert max-w-none prose-a:no-underline prose-a:text-blue-600 hover:prose-a:text-blue-700 dark:prose-a:text-blue-400 dark:hover:prose-a:text-blue-300"
-                  >
+                  <div className="text-slate-700 dark:text-slate-200 leading-relaxed prose prose-slate dark:prose-invert max-w-none prose-a:no-underline prose-a:text-blue-600 hover:prose-a:text-blue-700 dark:prose-a:text-blue-400 dark:hover:prose-a:text-blue-300 [&_a[target=_blank]]:inline-flex [&_a[target=_blank]]:items-center">
                     {articleContent ? (
                       <ReactMarkdown remarkPlugins={[remarkGfm]}>
                         {articleContent}
