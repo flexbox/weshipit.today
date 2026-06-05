@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import { PrismicProvider } from '@prismicio/react';
 import { client } from './api/prismic';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import { DefaultSeo } from 'next-seo';
 
 import './styles.css';
@@ -37,6 +38,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
         <Component {...pageProps} />
       </div>
       <Analytics />
+      <SpeedInsights />
     </PrismicProvider>
   );
 }
