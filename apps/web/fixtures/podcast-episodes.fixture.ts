@@ -216,7 +216,7 @@ export const podcastEpisodes: PodcastEpisode[] = [
   {
     number: 13,
     slug: 'appjs-conf-2025',
-    name: 'AppjsConf',
+    name: 'App.js Conf',
     title:
       'App.js Conf 2025 rétrospective de la plus grosse conférence React Native',
     description_short: "La conférence React Native la plus attendue de l'année",
