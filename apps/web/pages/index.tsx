@@ -15,6 +15,10 @@ import {
   ClientsListMarkee,
 } from '@weshipit/ui';
 import { linksApi } from './api/links';
+import {
+  headerNavigation,
+  headerCallToActionButton,
+} from '../utils/navigation';
 import { Layout } from '../components/layout';
 import Head from 'next/head';
 import { Customer, getVisibleClients } from './api/client';
@@ -515,16 +519,8 @@ export default function IndexPage({ clients, steps }: IndexPageProps) {
         seoDescription="Subscription-based React Native developers. One flat fee, zero billable hours. Pause or cancel anytime."
         ogImageAlt="weshipit.today — Hire React Native Developers as a Service"
         withHeader
-        navigation={[
-          { name: 'Services', href: '#services' },
-          { name: 'Pricing', href: '#pricing' },
-          { name: 'Faq', href: '#faq' },
-        ]}
-        callToActionButton={{
-          name: 'Book a call',
-          href: linksApi.cal.ONBOARDING,
-          isExternalLink: true,
-        }}
+        navigation={headerNavigation}
+        callToActionButton={headerCallToActionButton}
         withFooter
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6">

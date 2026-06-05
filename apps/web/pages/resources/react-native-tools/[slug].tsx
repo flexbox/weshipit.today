@@ -9,8 +9,8 @@ import {
   ToolList,
   NotFound,
 } from '@weshipit/ui';
-import { Layout } from '../../components/layout';
-import { tools } from '../../fixtures/tools.fixture';
+import { Layout } from '../../../components/layout';
+import { tools } from '../../../fixtures/tools.fixture';
 
 import ReactMarkdown from 'react-markdown';
 import Link from 'next/link';
@@ -156,7 +156,7 @@ export function ReactNativeSlugPage({
       </Head>
       <div className="mt-4 flex">
         <Link
-          href="/react-native-tools"
+          href="/resources/react-native-tools"
           className="flex py-4 text-slate-400 hover:text-slate-500 dark:text-slate-500 dark:hover:text-slate-400"
         >
           <div className="flex items-center">

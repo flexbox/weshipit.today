@@ -5,11 +5,18 @@ import { useRouter } from 'next/router';
 import LinkButton from '../button/link-button';
 
 const navigation = {
+  services: [
+    { href: '/', name: 'Subscription Dev' },
+    { href: '/services/consulting', name: 'Consulting' },
+    { href: '/services/audit', name: 'React Native Audit' },
+    { href: '/pricing', name: 'Pricing' },
+  ],
   company: [
-    { href: '/consulting', name: 'Consulting' },
-    { href: '/customers', name: 'Customers' },
     { href: '/about', name: 'About' },
+    { href: '/customers', name: 'Customers' },
     { href: '/podcast', name: 'Podcast' },
+    { href: '/plan', name: 'Plan' },
+    { href: '/contact', name: 'Contact' },
     {
       href: 'https://github.com/sponsors/flexbox?frequency=one-time&sponsor=flexbox',
       name: 'Sponsorship',
@@ -18,7 +25,10 @@ const navigation = {
       href: 'https://flexbox.notion.site/Jobs-1c65e7a956a64a07b60a401f8747f1af',
       name: 'Jobs',
     },
-    { href: '/terms-of-service', name: 'Terms' },
+  ],
+  legal: [
+    { href: '/terms', name: 'Terms' },
+    { href: '/privacy', name: 'Privacy' },
   ],
   social: [
     {
@@ -77,14 +87,16 @@ const navigation = {
     },
   ],
   resources: [
-    { href: '/react-native-resources', name: 'Start Learning' },
-    { href: '/react-native-tools', name: 'React Native Tools' },
-    { href: '/devtools', name: 'React Native Dev Tools' },
-    { href: '/react-native-starters', name: 'React Native Starters' },
-    { href: '/audit', name: 'React Native Audit' },
-    { href: '/french-react-native-apps', name: 'React Native Apps 🇫🇷 ' },
-    { href: '/react-native-migration', name: 'React Native Migration' },
-    { href: '/react-native-glossary', name: 'React Native Glossary' },
+    { href: '/resources/learn', name: 'Start Learning' },
+    { href: '/resources/react-native-tools', name: 'React Native Tools' },
+    { href: '/resources/dev-tools', name: 'React Native Dev Tools' },
+    { href: '/resources/react-native-starters', name: 'React Native Starters' },
+    {
+      href: '/resources/react-native-migration',
+      name: 'React Native Migration',
+    },
+    { href: '/resources/react-native-glossary', name: 'React Native Glossary' },
+    { href: '/resources/french-apps', name: 'React Native Apps 🇫🇷 ' },
   ],
 };
 
@@ -355,6 +367,18 @@ export function Footer() {
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div className="mb-6">
                 <p className="text-base font-bold text-slate-900 dark:text-slate-200">
+                  Services
+                </p>
+                <ul className="mt-6 space-y-4">
+                  {navigation.services.map((item) => (
+                    <li key={item.name}>
+                      <FooterLink {...item} />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="mb-6">
+                <p className="text-base font-bold text-slate-900 dark:text-slate-200">
                   Resources
                 </p>
                 <ul className="mt-6 space-y-4">
@@ -365,12 +389,26 @@ export function Footer() {
                   ))}
                 </ul>
               </div>
-              <div>
+            </div>
+            <div className="md:grid md:grid-cols-2 md:gap-8">
+              <div className="mb-6">
                 <p className="text-base font-bold text-slate-900 dark:text-slate-200">
                   Company
                 </p>
-                <ul className="mt-4 space-y-4">
+                <ul className="mt-6 space-y-4">
                   {navigation.company.map((item) => (
+                    <li key={item.name}>
+                      <FooterLink {...item} />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <p className="text-base font-bold text-slate-900 dark:text-slate-200">
+                  Legal
+                </p>
+                <ul className="mt-6 space-y-4">
+                  {navigation.legal.map((item) => (
                     <li key={item.name}>
                       <FooterLink {...item} />
                     </li>
@@ -420,7 +458,7 @@ export function Footer() {
           </p>
         </div>
         <p className="text-base text-slate-400">
-          Website 100% Over-engineered made with React,{' '}
+          Website Monorepo 100% Over-engineered made with Nx, React, Next.js and{' '}
           <Hyperlink
             href="https://design.weshipit.today/"
             isExternal
@@ -428,7 +466,7 @@ export function Footer() {
           >
             Storybook
           </Hyperlink>
-          , Next.js and Nx monorepo. You can hack the{' '}
+          . You can hack the{' '}
           <Hyperlink
             href="https://github.com/flexbox/weshipit.today/"
             isExternal

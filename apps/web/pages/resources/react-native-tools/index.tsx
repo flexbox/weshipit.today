@@ -1,11 +1,11 @@
-import { Layout } from '../../components/layout';
-import { tools } from '../../fixtures/tools.fixture';
+import { Layout } from '../../../components/layout';
+import { tools } from '../../../fixtures/tools.fixture';
 
 import { ToolList, SearchBar, Hero, TypeFilter } from '@weshipit/ui';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
-import { linksApi } from '../api/links';
+import { linksApi } from '../../api/links';
 
 export async function getStaticProps() {
   const records = tools;

@@ -1,10 +1,10 @@
-import { Layout } from '../../components/layout';
+import { Layout } from '../../../components/layout';
 import {
   CategorizedStarters,
   ReactNativeStartersPageProps,
   StarterLevel,
   starters,
-} from '../../fixtures/starters.fixture';
+} from '../../../fixtures/starters.fixture';
 
 import {
   Badge,
@@ -17,7 +17,7 @@ import {
 } from '@weshipit/ui';
 import round from 'lodash/round';
 
-import { linksApi } from '../api/links';
+import { linksApi } from '../../api/links';
 import { extractUsernameFromGithubUrl } from '@weshipit/utils';
 
 const BadgeLevel = ({ level }: { level: StarterLevel }) => {
