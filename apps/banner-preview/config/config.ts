@@ -1,4 +1,16 @@
 // Single source of truth for cross-platform identity.
+//
+// Canonical brand pillars — repeat verbatim across surfaces to keep the
+// profile crystal clear for both humans and AI search engines:
+//   Show name:    "Cross Platform Show"
+//   Positioning:  "Podcast 🇫🇷 #1 React Native "
+//   Listeners:    "10k+ écoutes"
+//   Experience:   "React Native depuis 2016"
+//   Authority:    "50+ talks"
+//   Domain:       "weshipit.today"
+//   Handle:       "@flexbox_"
+//   Separator:    " · "  (U+00B7 middle dot)
+//
 // Iterate here when you tweak voice or branding so the banner and every
 // preview frame stay consistent.
 
@@ -13,24 +25,25 @@ export const CONFIG = {
     name: 'David Leuliette',
     // headline: 220 characters max
     headline:
-      'Host du Cross Platform Show — Le podcast #1 sur React Native en France · 10k+ écoutes · React Native depuis 2016 · 50+ talks',
-    ctaLabel: 'Book React Native Experts',
+      'React Native depuis 2016 · 50+ talks · Host du Cross Platform Show · Podcast 🇫🇷 #1 React Native · 10k+ écoutes',
+    ctaLabel: 'Réserver un expert React Native',
     ctaUrl: 'https://weshipit.today',
   },
   youtube: {
-    // handle: 50 characters max
-    name: 'David Leuliette | weshipit',
+    // title: 100 characters max
+    title: 'Cross Platform Show — David Leuliette',
+    // handle: 30 characters max (3–30)
     handle: '@flexbox_',
     // description: 1000 characters max
     description: `Tu cherches à exceller dans le développement mobile ?
 
-Bienvenue sur la chaîne N°1 dédiée à React Native en France.
+Bienvenue sur la chaîne #1 dédiée à React Native en France.
 
 Je suis David Leuliette, host du Cross Platform Show, le podcast incontournable pour les développeurs mobiles (avec plus de 10k+ écoutes) et passionnés de tech.
 
 Ici, tu trouveras :
 
--  Des interviews avec des experts de React Native, où nous décryptons leurs retours d’expérience et astuces pratiques.
+-  Des interviews avec des experts de React Native, où nous décryptons leurs retours d'expérience et astuces pratiques.
 
 -  Des discussions approfondies sur les dernières tendances en matière de développement cross-platform et des conseils pour améliorer tes compétences.
 
@@ -40,18 +53,18 @@ Abonne-toi et partage cet épisode avec un collègue développeur !`,
   },
   x: {
     name: 'David Leuliette',
+    // description (bio): 160 characters max
     description:
-      'Host du Cross Platform Show · Podcast #1 React Native 🇫🇷 · 10K+ écoutes · React Native depuis 2016 · weshipit.today',
+      'Host du Cross Platform Show · Podcast 🇫🇷 #1 React Native  · 10k+ écoutes · RN depuis 2016 · 50+ talks',
     handle: '@flexbox_',
   },
   spotify: {
     // showName: 100 characters max
-    showName:
-      'Le Cross Platform Show - Le talk-show francophone sur le dev React Native',
+    showName: 'Cross Platform Show',
     // creatorName: 80 characters max
     creatorName: 'David Leuliette',
     // description: 600 characters max
-    description: `Le Cross Platform Show est le podcast de référence pour maîtriser React Native et le développement mobile. Animé par David Leuliette, chaque épisode offre des retours d'expérience concrets pour créer des apps performantes suriOS et Android. Freelance, CTO ou Indie Hacker, découvre les meilleures stacks (Expo, TypeScript), architectures et stratégies de déploiement. Des discussions techniques avec des experts dignes de formations avancées pour booster ta carrière de développeur. La veille audio incontournable pour exceller dans l'écosystème JavaScript mobile et rejoindre la communauté.`,
+    description: `Le podcast #1 React Native en France 🇫🇷. Host : David Leuliette, React Native depuis 2016, 50+ talks. 10k+ écoutes cumulées. Chaque mercredi, retours d'expérience concrets pour Expo, TypeScript, architecture et déploiement d'apps performantes sur iOS et Android. Discussions techniques avec des experts pour Freelances, CTO et Indie Hackers de l'écosystème JavaScript mobile. Abonne-toi sur weshipit.today/podcast.`,
     category: 'Technology',
   },
   banner: {

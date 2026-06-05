@@ -20,7 +20,7 @@ interface YouTubeChannelPreviewProps {
 const DESCRIPTION_TEASER = CONFIG.youtube.description.split('\n\n')[0];
 
 const DEFAULTS = {
-  channelName: CONFIG.youtube.name,
+  channelName: CONFIG.youtube.title,
   handle: CONFIG.youtube.handle,
   subscribers: '12.4K subscribers',
   videos: '87 videos',
