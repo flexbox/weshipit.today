@@ -1,5 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { Hyperlink, Text, Button, Badge, Card } from '@weshipit/ui';
+import { Text, Badge } from '@weshipit/ui';
 import { Layout } from '../../../components/layout';
 import { podcastEpisodes } from '../../../fixtures/podcast-episodes.fixture';
 import { Transcript } from '../../../components/transcript';
@@ -11,6 +11,7 @@ import { PodcastNavigation } from '../../../components/podcast-navigation';
 import fs from 'fs';
 import path from 'path';
 import { ChevronLeftIcon } from '@heroicons/react/20/solid';
+import Link from 'next/link';
 
 interface PodcastTranscriptPageProps {
   episode: (typeof podcastEpisodes)[0] | null;
@@ -114,12 +115,9 @@ export default function PodcastTranscriptPage({
           >
             Le transcript que vous recherchez n'existe pas.
           </Text>
-          <Hyperlink
-            href="/podcast"
-            className="text-blue-600 hover:text-blue-700"
-          >
+          <Link href="/podcast" className="text-blue-600 hover:text-blue-700">
             <ChevronLeftIcon className="h-4 w-4 mr-1" /> Retour aux épisodes
-          </Hyperlink>
+          </Link>
         </div>
       </Layout>
     );
@@ -141,20 +139,20 @@ export default function PodcastTranscriptPage({
       <div className="mt-8">
         <div className="max-w-4xl mx-auto">
           <div className="inline-flex mb-8 gap-4">
-            <Hyperlink
+            <Link
               href="/podcast"
               className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200 transition-colors"
             >
               <ChevronLeftIcon className="h-4 w-4 mr-1" />
               Retour aux épisodes
-            </Hyperlink>
+            </Link>
             <div className="text-slate-400">•</div>
-            <Hyperlink
+            <Link
               href={`/podcast/${episode.slug}`}
               className="text-slate-600 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200 transition-colors"
             >
               Écouter l'épisode
-            </Hyperlink>
+            </Link>
           </div>
 
           <div className="flex flex-col lg:flex-row lg:items-start lg:gap-8">

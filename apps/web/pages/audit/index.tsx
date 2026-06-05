@@ -4,6 +4,7 @@ import {
   FadeIn,
   Hero,
   Button,
+  LinkButton,
   ClientsListAudit,
   Prose,
   Card,
@@ -97,14 +98,14 @@ function Discover() {
           We can also provide recommendations for improving your application.
         </p>
         <div className="not-prose">
-          <Button
+          <LinkButton
             href="/onboarding"
             size="xl"
             className="no-underline"
             variant="outline"
           >
             Start now
-          </Button>
+          </LinkButton>
         </div>
       </div>
     </Section>
@@ -225,14 +226,14 @@ function Benefits() {
           </li>
         </ol>
         <div className="not-prose">
-          <Button
+          <LinkButton
             href="/onboarding"
             size="xl"
             className="mt-6 no-underline"
             variant="outline"
           >
             Book a call
-          </Button>
+          </LinkButton>
         </div>
       </ol>
     </Section>
