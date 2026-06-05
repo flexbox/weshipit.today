@@ -1,6 +1,6 @@
-import { getAllClients } from '../api/client';
-import { getAllFeedback, FeedbackPrismicDocument } from '../api/feedback';
-import { Layout } from '../../components/layout';
+import { getAllClients } from '../../api/client';
+import { getAllFeedback, FeedbackPrismicDocument } from '../../api/feedback';
+import { Layout } from '../../../components/layout';
 import {
   Button,
   Card,
@@ -8,7 +8,7 @@ import {
   ClientProps,
   ClientsListHomepage,
 } from '@weshipit/ui';
-import { linksApi } from '../api/links';
+import { linksApi } from '../../api/links';
 import {
   ClockIcon,
   CheckCircleIcon,
@@ -19,7 +19,7 @@ import {
   BanknotesIcon,
 } from '@heroicons/react/24/outline';
 import { StarIcon as StarIconSolid } from '@heroicons/react/24/solid';
-import { Container } from '../audit';
+import { Container } from '../../services/audit';
 import { PrismicRichText, PrismicText } from '@prismicio/react';
 import { PrismicNextImage } from '@prismicio/next';
 import Image from 'next/image';

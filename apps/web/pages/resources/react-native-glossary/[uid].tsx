@@ -1,15 +1,15 @@
-import { Layout } from '../../components/layout';
+import { Layout } from '../../../components/layout';
 import { PrismicRichText } from '@prismicio/react';
 import { asText } from '@prismicio/client';
 import Link from 'next/link';
 import Head from 'next/head';
 import { LinkButton } from '@weshipit/ui';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { GlossaryTerm, getAllGlossaryTerms } from '../api/glossary';
+import { GlossaryTerm, getAllGlossaryTerms } from '../../api/glossary';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
-import { client as prismicClient } from '../api/prismic';
-import { GlossaryCTA } from '../../components/GlossaryCTA';
-import { slugify } from '../../utils/slugify';
+import { client as prismicClient } from '../../api/prismic';
+import { GlossaryCTA } from '../../../components/GlossaryCTA';
+import { slugify } from '../../../utils/slugify';
 
 interface GlossaryTermPageProps {
   term: GlossaryTerm;
@@ -192,7 +192,7 @@ export default function GlossaryTermPage({
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-8">
             <Link
-              href="/react-native-glossary"
+              href="/resources/react-native-glossary"
               className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 flex items-center"
             >
               <ChevronLeftIcon className="h-4 w-4 mr-1" />

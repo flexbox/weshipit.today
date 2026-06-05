@@ -21,7 +21,7 @@ export function TypeFilter({ numberOfTools }: { numberOfTools: number }) {
       </li>
       {canResetFilter && (
         <li>
-          <Link href="/react-native-tools">
+          <Link href="/resources/react-native-tools">
             <Button variant="outline" className="flex w-full justify-between">
               Reset filter
               <XMarkIcon className="ml-1 size-6" />

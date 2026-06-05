@@ -55,15 +55,26 @@ export function Header({
           <LogoToBrandPage />
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
-          {navigation?.map((item) => (
-            <a
-              key={item.name}
-              href={item.href}
-              className="text-sm/6 font-semibold text-gray-900 dark:text-white"
-            >
-              {item.name}
-            </a>
-          ))}
+          {navigation?.map((item) => {
+            const className =
+              'text-sm/6 font-semibold text-gray-900 dark:text-white';
+            return item.isExternalLink || !item.href.startsWith('/') ? (
+              <a
+                key={item.name}
+                href={item.href}
+                className={className}
+                {...(item.isExternalLink
+                  ? { target: '_blank', rel: 'noopener noreferrer' }
+                  : {})}
+              >
+                {item.name}
+              </a>
+            ) : (
+              <Link key={item.name} href={item.href} className={className}>
+                {item.name}
+              </Link>
+            );
+          })}
         </div>
         <div className="flex flex-1 items-center justify-end gap-x-6">
           {callToActionLink && (
@@ -130,16 +141,32 @@ export function Header({
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
-                {navigation?.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                  >
-                    {item.name}
-                  </a>
-                ))}
+                {navigation?.map((item) => {
+                  const className =
+                    '-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50';
+                  return item.isExternalLink || !item.href.startsWith('/') ? (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={className}
+                      {...(item.isExternalLink
+                        ? { target: '_blank', rel: 'noopener noreferrer' }
+                        : {})}
+                    >
+                      {item.name}
+                    </a>
+                  ) : (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={className}
+                    >
+                      {item.name}
+                    </Link>
+                  );
+                })}
               </div>
               <div className="py-6">
                 {callToActionLink && (

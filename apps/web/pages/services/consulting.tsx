@@ -1,5 +1,5 @@
 import { Button, Card, Hero, Hyperlink, Prose, Text } from '@weshipit/ui';
-import { Layout } from '../components/layout';
+import { Layout } from '../../components/layout';
 import Cal, { getCalApi } from '@calcom/embed-react';
 import { useEffect } from 'react';
 

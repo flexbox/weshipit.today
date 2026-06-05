@@ -1,9 +1,9 @@
 import { AppBadge, Button, Card, Hero, Prose, Text } from '@weshipit/ui';
-import { Layout } from '../components/layout';
+import { Layout } from '../../components/layout';
 import { InferGetStaticPropsType } from 'next/types';
 import Image from 'next/image';
-import { formatAppsByCategory } from '../components/french-react-native-apps/format-apps-by-category';
-import { linksApi } from './api/links';
+import { formatAppsByCategory } from '../../components/french-react-native-apps/format-apps-by-category';
+import { linksApi } from '../api/links';
 import kebabCase from 'lodash/kebabCase';
 import { useMemo, useState } from 'react';
 
@@ -11,7 +11,7 @@ import {
   filteredApp,
   frenchApp,
   frenchAppsFixture,
-} from '../fixtures/french-apps.fixture';
+} from '../../fixtures/french-apps.fixture';
 
 type ViewMode =
   | 'category'

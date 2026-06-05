@@ -1,5 +1,5 @@
-import { Layout } from '../../components/layout';
-import { resources } from '../../fixtures/resources.fixture';
+import { Layout } from '../../../components/layout';
+import { resources } from '../../../fixtures/resources.fixture';
 
 import { Text, Hero, Card } from '@weshipit/ui';
 import round from 'lodash/round';

@@ -1,12 +1,12 @@
-import { Layout } from '../../components/layout';
-import { GlossaryTerm, getAllGlossaryTerms } from '../api/glossary';
+import { Layout } from '../../../components/layout';
+import { GlossaryTerm, getAllGlossaryTerms } from '../../api/glossary';
 import { PrismicRichText } from '@prismicio/react';
 import { asText } from '@prismicio/client';
 import Link from 'next/link';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
-import { GlossaryCTA } from '../../components/GlossaryCTA';
-import { slugify } from '../../utils/slugify';
+import { GlossaryCTA } from '../../../components/GlossaryCTA';
+import { slugify } from '../../../utils/slugify';
 
 export async function getStaticProps() {
   const { glossaryTerms } = await getAllGlossaryTerms();

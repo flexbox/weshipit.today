@@ -1,7 +1,7 @@
 import { AppBadge, Button, Card, Hero, TagList, Text } from '@weshipit/ui';
-import { Layout } from '../components/layout';
+import { Layout } from '../../components/layout';
 import { InferGetStaticPropsType } from 'next/types';
-import { devtoolsFixture, DevTool } from '../fixtures/devtools.fixture';
+import { devtoolsFixture, DevTool } from '../../fixtures/devtools.fixture';
 import { useMemo } from 'react';
 import Image from 'next/image';
 import Head from 'next/head';
