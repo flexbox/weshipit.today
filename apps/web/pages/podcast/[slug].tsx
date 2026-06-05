@@ -18,6 +18,7 @@ import { ChevronLeftIcon } from '@heroicons/react/20/solid';
 import { linksApi } from '../api/links';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import Link from 'next/link';
 
 interface PodcastEpisodePageProps {
   episode: (typeof podcastEpisodes)[0] | null;
@@ -137,12 +138,12 @@ export default function PodcastEpisodePage({
           >
             L'épisode que vous recherchez n'existe pas.
           </Text>
-          <Hyperlink
+          <Link
             href="/podcast"
             className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700"
           >
             <ChevronLeftIcon className="h-4 w-4 mr-1" /> Retour aux épisodes
-          </Hyperlink>
+          </Link>
         </div>
       </Layout>
     );
@@ -164,21 +165,21 @@ export default function PodcastEpisodePage({
       <div className="mt-8">
         <div className="max-w-4xl mx-auto">
           <div className="inline-flex mb-8 gap-4">
-            <Hyperlink
+            <Link
               href="/podcast"
               className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200 transition-colors"
             >
               <ChevronLeftIcon className="h-4 w-4 mr-1" />
               Retour aux épisodes
-            </Hyperlink>
+            </Link>
             <div className="text-slate-400">•</div>
             {hasTranscript && (
-              <Hyperlink
+              <Link
                 href={`/podcast/${episode.slug}/transcript`}
                 className="text-slate-600 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200 transition-colors"
               >
                 Transcript
-              </Hyperlink>
+              </Link>
             )}
           </div>
 
