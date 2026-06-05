@@ -127,11 +127,11 @@ export default function PodcastTranscriptPage({
 
   return (
     <Layout
-      seoTitle={`Transcript - Épisode ${episode.number} - ${episode.name} avec ${episode.guest_full_name}`}
-      seoDescription={`Transcript complet de l'épisode ${episode.number} du podcast avec ${episode.guest_full_name} de ${episode.name}. ${episode.description}`}
+      seoTitle={`Transcript - Épisode ${episode.number} - ${episode.name} avec ${episode.guests.join(', ')}`}
+      seoDescription={`Transcript complet de l'épisode ${episode.number} du podcast avec ${episode.guests.join(', ')} de ${episode.name}. ${episode.description}`}
       ogImagePodcast={{
         title: episode.name,
-        guest: episode.guest_full_name,
+        guest: episode.guests.join(', '),
         episode: episode.number,
         type: 'transcript',
       }}
@@ -176,7 +176,7 @@ export default function PodcastTranscriptPage({
                   >
                     avec{' '}
                     <span className="font-semibold">
-                      {episode.guest_full_name}
+                      {episode.guests.join(', ')}
                     </span>
                   </Text>
                 </div>

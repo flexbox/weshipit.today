@@ -150,11 +150,11 @@ export default function PodcastEpisodePage({
 
   return (
     <Layout
-      seoTitle={`${episode.name} avec ${episode.guest_full_name} — Le Cross Platform Show Podcast`}
+      seoTitle={`${episode.name} avec ${episode.guests.join(', ')} — Le Cross Platform Show Podcast`}
       seoDescription={episode.description}
       ogImagePodcast={{
         title: episode.name,
-        guest: episode.guest_full_name,
+        guest: episode.guests.join(', '),
         episode: episode.number,
         type: 'podcast',
       }}
@@ -203,7 +203,7 @@ export default function PodcastEpisodePage({
                       >
                         avec{' '}
                         <span className="font-semibold">
-                          {episode.guest_full_name}
+                          {episode.guests.join(', ')}
                         </span>
                       </Text>
                     </div>

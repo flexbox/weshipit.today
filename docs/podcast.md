@@ -10,12 +10,12 @@ Avant d'ajouter l'épisode au site, vous devez avoir :
 
    - Spotify
    - Apple Podcasts
-   - (Optionnel) YouTube
+   - YouTube
 
 2. **Récupéré les informations suivantes** :
    - URL Spotify de l'épisode
    - URL Apple Podcasts de l'épisode
-   - (Optionnel) ID de la vidéo YouTube
+   - ID de la vidéo YouTube
    - Logo de l'entreprise/invité (URL d'une image, idéalement depuis l'App Store)
    - Nom complet de l'invité
 
@@ -23,7 +23,7 @@ Avant d'ajouter l'épisode au site, vous devez avoir :
 
 ### 1. Modifier le fichier de données
 
-Ouvrir le fichier `apps/web/fixtures/podcast-episodes.fixture.ts` et ajouter un nouvel objet à la fin du tableau `podcastEpisodes` :
+Ouvrir le fichier `apps/web/fixtures/podcast-episodes.fixture.ts` et ajouter un nouvel objet à `podcastEpisodes` :
 
 ```typescript
 {
@@ -121,8 +121,3 @@ Après avoir ajouté l'épisode :
 - L'image OG est générée automatiquement pour chaque épisode
 - Le tri des épisodes peut être ascendant ou descendant sur la page liste
 - Les liens vers Spotify permettent de sauter à un timestamp spécifique depuis la transcription
-
-## Liens utiles
-
-- Formulaire de participation au podcast : [Notion](https://flexbox.notion.site/17af478bcb8c8018b4a9db6b13d1df38)
-- Page podcast : [/podcast](https://weshipit.today/podcast)
