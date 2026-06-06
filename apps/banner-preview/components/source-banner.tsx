@@ -10,6 +10,11 @@ interface SourceBannerProps {
   headline?: string;
   tagline?: string;
   url?: string;
+  // Absolute URLs to the interview logos. Rendered as a centered row at the
+  // bottom of the safe band. Edge runtime can't read /public from arbitrary
+  // paths, so the caller builds these from req.url.
+  logos?: string[];
+  logoLabel?: string;
 }
 
 // Cross-platform intersection: LinkedIn 1584×396 ∩ YouTube mobile-safe
@@ -55,6 +60,8 @@ export function SourceBanner({
   headline = BANNER.headline,
   tagline = BANNER.tagline,
   url = BANNER.url,
+  logos,
+  logoLabel = 'Interview de',
 }: SourceBannerProps) {
   // Per-platform layout basis:
   // - YouTube uses its own mobile-safe area (1546×423) so the layout fills
@@ -64,6 +71,7 @@ export function SourceBanner({
   // - LinkedIn / OG fall back to the cross-platform 1500×396 intersection.
   const isYouTube = platform === 'youtube';
   const isX = platform === 'x';
+  const isLinkedIn = platform === 'linkedin';
 
   const safeWidth = isYouTube
     ? Math.min(YOUTUBE_MOBILE_SAFE.width, width)
@@ -74,26 +82,41 @@ export function SourceBanner({
       ? height
       : Math.min(SAFE_BAND.height, height);
 
-  const headlineSize = Math.round(safeHeight * 0.16);
+  // Reserve a horizontal strip at the bottom of the safe band for the
+  // interview-logo row. Everything else scales against the remaining height so
+  // the headline / tagline / phone keep their original proportions.
+  const hasLogos = !!logos && logos.length > 0;
+  const footerH = hasLogos ? Math.round(safeHeight * 0.22) : 0;
+  const mainH = safeHeight - footerH;
+
+  const headlineSize = Math.round(mainH * 0.16);
   // Tagline stays compact on X so all three metrics fit on one line.
-  const taglineSize = Math.round(safeHeight * (isX ? 0.05 : 0.065));
-  const pillSize = Math.round(safeHeight * 0.055);
-  const chipSize = Math.round(safeHeight * 0.055);
+  const taglineSize = Math.round(mainH * (isX ? 0.05 : 0.065));
+  const pillSize = Math.round(mainH * 0.055);
+  const chipSize = Math.round(mainH * 0.055);
 
   // Phone sized to fit fully inside the safe band, with a touch of padding.
-  const phoneH = Math.round(safeHeight * 0.95);
+  const phoneH = Math.round(mainH * 0.95);
   const phoneW = Math.round((PHONE.width / PHONE.height) * phoneH);
 
   // Layout: phone on the left, content stack on the right. On X, push the
   // content further right so the bottom-left avatar overlap on mobile doesn't
   // clip the start of the headline.
   const padX = Math.round(safeWidth * 0.04);
-  const padY = Math.round(safeHeight * 0.08);
-  const contentLeftShift = isX ? Math.round(safeWidth * 0.06) : 0;
-  const phoneColWidth =
-    phoneW + Math.round(safeHeight * 0.08) + contentLeftShift;
+  const padY = Math.round(mainH * 0.08);
+  const contentLeftShift = isX
+    ? Math.round(safeWidth * 0.06)
+    : isLinkedIn
+      ? 100
+      : 0;
+  const phoneColWidth = phoneW + Math.round(mainH * 0.08) + contentLeftShift;
   const contentColWidth = safeWidth - phoneColWidth - padX;
   const headlineWidth = contentColWidth - padX;
+
+  // Logo footer geometry — square logos with consistent gaps.
+  const logoH = Math.round(footerH * 0.82);
+  const logoGap = Math.round(safeWidth * 0.012);
+  const logoLabelSize = Math.round(footerH * 0.22);
 
   return (
     <div
@@ -120,136 +143,192 @@ export function SourceBanner({
         }}
       />
 
-      {/* Safe-band content container, centered in the canvas */}
+      {/* Safe-band content container, centered in the canvas. Column flex so
+          the main row (phone + type stack) sits on top and the interview-logo
+          strip sits at the bottom. */}
       <div
         style={{
           display: 'flex',
+          flexDirection: 'column',
           position: 'relative',
           width: `${safeWidth}px`,
           height: `${safeHeight}px`,
           margin: 'auto',
         }}
       >
-        {/* LEFT — phone blueprint, bottom-aligned with cut */}
+        {/* MAIN ROW — phone + content */}
         <div
           style={{
             display: 'flex',
-            flexDirection: 'column',
-            width: `${phoneColWidth}px`,
-            alignItems: 'center',
-            justifyContent: 'flex-end',
-            paddingLeft: `${padX}px`,
+            width: `${safeWidth}px`,
+            height: `${mainH}px`,
           }}
         >
-          {/* Width label above the phone */}
+          {/* LEFT — phone blueprint, bottom-aligned with cut */}
           <div
             style={{
               display: 'flex',
-              marginBottom: `${Math.round(safeHeight * 0.02)}px`,
-              fontFamily: '"JetBrains Mono", monospace',
-              fontSize: `${Math.round(safeHeight * 0.04)}px`,
-              color: COLORS.blueprintInk,
-            }}
-          >
-            {PHONE.width}px
-          </div>
-          <PhoneBlueprint width={phoneW} height={phoneH} />
-        </div>
-
-        {/* RIGHT — type stack */}
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            width: `${contentColWidth}px`,
-            paddingTop: `${padY}px`,
-            paddingLeft: `${padX}px`,
-            paddingBottom: `${padY}px`,
-          }}
-        >
-          {/* Top row — status pill (left) + URL chip (right) */}
-          <div
-            style={{
-              display: 'flex',
+              flexDirection: 'column',
+              width: `${phoneColWidth}px`,
               alignItems: 'center',
-              justifyContent: 'space-between',
-              width: '100%',
-              marginBottom: `${Math.round(safeHeight * 0.04)}px`,
+              justifyContent: 'flex-end',
+              paddingLeft: `${padX}px`,
             }}
           >
+            {/* Width label above the phone */}
+            <div
+              style={{
+                display: 'flex',
+                marginBottom: `${Math.round(safeHeight * 0.02)}px`,
+                fontFamily: '"JetBrains Mono", monospace',
+                fontSize: `${Math.round(safeHeight * 0.04)}px`,
+                color: COLORS.blueprintInk,
+              }}
+            >
+              {PHONE.width}px
+            </div>
+            <PhoneBlueprint width={phoneW} height={phoneH} />
+          </div>
+
+          {/* RIGHT — type stack */}
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              width: `${contentColWidth}px`,
+              paddingTop: `${padY}px`,
+              paddingLeft: `${padX}px`,
+              paddingBottom: `${padY}px`,
+            }}
+          >
+            {/* Top row — status pill (left) + URL chip (right) */}
             <div
               style={{
                 display: 'flex',
                 alignItems: 'center',
-                gap: `${Math.round(pillSize * 0.5)}px`,
-                paddingLeft: `${Math.round(pillSize * 0.75)}px`,
-                paddingRight: `${Math.round(pillSize * 0.95)}px`,
-                paddingTop: `${Math.round(pillSize * 0.35)}px`,
-                paddingBottom: `${Math.round(pillSize * 0.35)}px`,
-                fontSize: `${pillSize}px`,
-                fontWeight: 500,
-                color: COLORS.ink,
-                backgroundColor: COLORS.pill,
-                border: `1px solid ${COLORS.pillBorder}`,
-                borderRadius: `${pillSize * 2}px`,
+                justifyContent: 'space-between',
+                width: '100%',
+                marginBottom: `${Math.round(safeHeight * 0.04)}px`,
               }}
             >
-              <span
+              <div
                 style={{
                   display: 'flex',
-                  width: `${Math.round(pillSize * 0.55)}px`,
-                  height: `${Math.round(pillSize * 0.55)}px`,
-                  backgroundColor: COLORS.status,
-                  borderRadius: '999px',
+                  alignItems: 'center',
+                  gap: `${Math.round(pillSize * 0.5)}px`,
+                  paddingLeft: `${Math.round(pillSize * 0.75)}px`,
+                  paddingRight: `${Math.round(pillSize * 0.95)}px`,
+                  paddingTop: `${Math.round(pillSize * 0.35)}px`,
+                  paddingBottom: `${Math.round(pillSize * 0.35)}px`,
+                  fontSize: `${pillSize}px`,
+                  fontWeight: 500,
+                  color: COLORS.ink,
+                  backgroundColor: COLORS.pill,
+                  border: `1px solid ${COLORS.pillBorder}`,
+                  borderRadius: `${pillSize * 2}px`,
                 }}
-              />
-              <span style={{ display: 'flex' }}>{status}</span>
+              >
+                <span
+                  style={{
+                    display: 'flex',
+                    width: `${Math.round(pillSize * 0.55)}px`,
+                    height: `${Math.round(pillSize * 0.55)}px`,
+                    backgroundColor: COLORS.status,
+                    borderRadius: '999px',
+                  }}
+                />
+                <span style={{ display: 'flex' }}>{status}</span>
+              </div>
+
+              <div
+                style={{
+                  display: 'flex',
+                  fontSize: `${chipSize}px`,
+                  fontFamily: '"JetBrains Mono", monospace',
+                  color: COLORS.blueprint,
+                  fontWeight: 400,
+                  paddingRight: `${padX}px`,
+                }}
+              >
+                {url}
+              </div>
             </div>
 
+            {/* Headline — bold, near-black, mirrors the website hero */}
             <div
               style={{
                 display: 'flex',
-                fontSize: `${chipSize}px`,
-                fontFamily: '"JetBrains Mono", monospace',
-                color: COLORS.blueprint,
-                fontWeight: 400,
-                paddingRight: `${padX}px`,
+                width: `${headlineWidth}px`,
+                fontSize: `${headlineSize}px`,
+                fontWeight: 800,
+                color: COLORS.ink,
+                lineHeight: 1.05,
+                letterSpacing: '-0.025em',
               }}
             >
-              {url}
+              {headline}
+            </div>
+
+            {/* Tagline — metrics with emoji */}
+            <div
+              style={{
+                display: 'flex',
+                width: `${headlineWidth}px`,
+                marginTop: `${Math.round(mainH * 0.05)}px`,
+                fontSize: `${taglineSize}px`,
+                fontWeight: 500,
+                color: COLORS.muted,
+                lineHeight: 1.4,
+              }}
+            >
+              {tagline}
             </div>
           </div>
-
-          {/* Headline — bold, near-black, mirrors the website hero */}
-          <div
-            style={{
-              display: 'flex',
-              width: `${headlineWidth}px`,
-              fontSize: `${headlineSize}px`,
-              fontWeight: 800,
-              color: COLORS.ink,
-              lineHeight: 1.05,
-              letterSpacing: '-0.025em',
-            }}
-          >
-            {headline}
-          </div>
-
-          {/* Tagline — metrics with emoji */}
-          <div
-            style={{
-              display: 'flex',
-              width: `${headlineWidth}px`,
-              marginTop: `${Math.round(safeHeight * 0.05)}px`,
-              fontSize: `${taglineSize}px`,
-              fontWeight: 500,
-              color: COLORS.muted,
-              lineHeight: 1.4,
-            }}
-          >
-            {tagline}
-          </div>
         </div>
+
+        {/* FOOTER — interview-logo row. Centered, label on the left. */}
+        {hasLogos && (
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: `${safeWidth}px`,
+              height: `${footerH}px`,
+              gap: `${logoGap}px`,
+              paddingLeft: `${padX}px`,
+              paddingRight: `${padX}px`,
+            }}
+          >
+            <span
+              style={{
+                display: 'flex',
+                fontFamily: '"JetBrains Mono", monospace',
+                fontSize: `${logoLabelSize}px`,
+                color: COLORS.blueprintInk,
+                marginRight: `${logoGap}px`,
+                whiteSpace: 'nowrap',
+              }}
+            >
+              {logoLabel}
+            </span>
+            {logos!.map((src) => (
+              <img
+                key={src}
+                src={src}
+                width={logoH}
+                height={logoH}
+                style={{
+                  display: 'flex',
+                  width: `${logoH}px`,
+                  height: `${logoH}px`,
+                  objectFit: 'contain',
+                  borderRadius: `${Math.round(logoH * 0.18)}px`,
+                }}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

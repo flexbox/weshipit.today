@@ -43,6 +43,20 @@ function isPlatform(value: string | null): value is Platform {
   return value !== null && value in PLATFORM_SIZES;
 }
 
+// Interview logos rendered in the banner footer. Files live under
+// /public/images/podcast-logos/. Stored as PNG because Satori's webp decoder
+// silently drops images, and odisei-music originally came in as JPG.
+const INTERVIEW_LOGOS: ReadonlyArray<{ slug: string; ext: 'png' | 'jpg' }> = [
+  { slug: 'cdiscount', ext: 'png' },
+  { slug: 'alan', ext: 'png' },
+  { slug: 'karnott', ext: 'png' },
+  { slug: 'swan', ext: 'png' },
+  { slug: 'ekklo', ext: 'png' },
+  { slug: 'ornikar', ext: 'png' },
+  { slug: 'shine', ext: 'png' },
+  { slug: 'odisei-music', ext: 'jpg' },
+];
+
 export default async function handler(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
@@ -62,6 +76,13 @@ export default async function handler(req: NextRequest) {
     const status = searchParams.get('status') ?? undefined;
     const url = searchParams.get('url') ?? undefined;
 
+    // Build absolute URLs to the public-served interview logos. Satori
+    // can't resolve relative paths — it fetches each URL at render time.
+    const origin = new URL(req.url).origin;
+    const logos = INTERVIEW_LOGOS.map(
+      ({ slug, ext }) => `${origin}/images/podcast-logos/${slug}.${ext}`,
+    );
+
     const [mediumData, extraBoldData, monoRegularData] = await Promise.all([
       interMedium,
       interExtraBold,
@@ -78,6 +99,7 @@ export default async function handler(req: NextRequest) {
           headline={headline}
           tagline={tagline}
           url={url}
+          logos={logos}
         />
       ),
       {
