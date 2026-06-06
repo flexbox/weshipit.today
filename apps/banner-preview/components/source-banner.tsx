@@ -33,7 +33,7 @@ const COLORS = {
   canvas: '#F1F5F9', // slate-100
   ink: '#0F172A', // slate-900
   muted: '#64748B', // slate-500
-  blueprint: '#0EA5E9', // sky-500
+  blueprint: '#2b7fff', // sky-500
   blueprintFaint: 'rgba(14, 165, 233, 0.10)',
   blueprintInk: 'rgba(14, 165, 233, 0.65)',
   pill: '#FFFFFF',
@@ -44,8 +44,8 @@ const COLORS = {
 // Phone blueprint geometry, lifted straight from phone-animation.tsx
 // (180×360 in CSS pixels at 1x, scaled here to safe-band height).
 const PHONE = {
-  width: 180,
-  height: 360,
+  width: 200,
+  height: 380,
   radius: 30,
   screenInset: 10,
   screenInsetY: 30,
@@ -117,6 +117,11 @@ export function SourceBanner({
   const logoH = Math.round(footerH * 0.82);
   const logoGap = Math.round(safeWidth * 0.012);
   const logoLabelSize = Math.round(footerH * 0.22);
+
+  // Single vertical-rhythm value applied between every row in the type stack
+  // (top row → headline → tagline → footer). Keeps the layout breathing
+  // consistently regardless of platform aspect ratio.
+  const rowGap = Math.round(mainH * 0.07);
 
   return (
     <div
@@ -190,7 +195,8 @@ export function SourceBanner({
             <PhoneBlueprint width={phoneW} height={phoneH} />
           </div>
 
-          {/* RIGHT — type stack */}
+          {/* RIGHT — type stack. All rows share a single vertical gap and
+              hang from the same left edge. */}
           <div
             style={{
               display: 'flex',
@@ -198,17 +204,17 @@ export function SourceBanner({
               width: `${contentColWidth}px`,
               paddingTop: `${padY}px`,
               paddingLeft: `${padX}px`,
-              paddingBottom: `${padY}px`,
+              paddingBottom: '0px',
+              gap: `${rowGap}px`,
             }}
           >
-            {/* Top row — status pill (left) + URL chip (right) */}
+            {/* Top row — status pill + URL chip, both left-aligned. */}
             <div
               style={{
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'space-between',
-                width: '100%',
-                marginBottom: `${Math.round(safeHeight * 0.04)}px`,
+                justifyContent: 'flex-start',
+                gap: `${Math.round(padX * 0.6)}px`,
               }}
             >
               <div
@@ -247,7 +253,6 @@ export function SourceBanner({
                   fontFamily: '"JetBrains Mono", monospace',
                   color: COLORS.blueprint,
                   fontWeight: 400,
-                  paddingRight: `${padX}px`,
                 }}
               >
                 {url}
@@ -274,7 +279,6 @@ export function SourceBanner({
               style={{
                 display: 'flex',
                 width: `${headlineWidth}px`,
-                marginTop: `${Math.round(mainH * 0.05)}px`,
                 fontSize: `${taglineSize}px`,
                 fontWeight: 500,
                 color: COLORS.muted,
@@ -286,17 +290,18 @@ export function SourceBanner({
           </div>
         </div>
 
-        {/* FOOTER — interview-logo row. Centered, label on the left. */}
+        {/* FOOTER — interview-logo row. Left-aligned to the same edge as the
+            type stack above. */}
         {hasLogos && (
           <div
             style={{
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'center',
+              justifyContent: 'flex-start',
               width: `${safeWidth}px`,
               height: `${footerH}px`,
               gap: `${logoGap}px`,
-              paddingLeft: `${padX}px`,
+              paddingLeft: `${phoneColWidth + padX}px`,
               paddingRight: `${padX}px`,
             }}
           >
@@ -305,7 +310,7 @@ export function SourceBanner({
                 display: 'flex',
                 fontFamily: '"JetBrains Mono", monospace',
                 fontSize: `${logoLabelSize}px`,
-                color: COLORS.blueprintInk,
+                color: COLORS.blueprint,
                 marginRight: `${logoGap}px`,
                 whiteSpace: 'nowrap',
               }}
@@ -436,7 +441,7 @@ function PhoneBlueprint({ width, height }: { width: number; height: number }) {
           strokeWidth={1.5}
           transform={`rotate(-60 ${cx} ${cy})`}
         />
-        <circle cx={cx} cy={cy} r={5} fill="rgba(14, 165, 233, 0.5)" />
+        <circle cx={cx} cy={cy} r={5} fill={COLORS.blueprint} />
         {/* Corner dots */}
         <circle cx={0} cy={0} r={2} fill={COLORS.blueprint} />
         <circle cx={w} cy={0} r={2} fill={COLORS.blueprint} />

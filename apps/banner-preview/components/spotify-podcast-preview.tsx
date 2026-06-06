@@ -16,8 +16,6 @@ interface SpotifyPodcastPreviewProps {
   title?: string;
   author?: string;
   about?: string;
-  followers?: string;
-  episodes?: string;
 }
 
 const DEFAULTS = {
@@ -27,8 +25,6 @@ const DEFAULTS = {
     length: 190,
     separator: '... Show more',
   }),
-  followers: '1,247 followers',
-  episodes: '23 episodes',
 };
 
 export function SpotifyPodcastPreview({
@@ -37,8 +33,6 @@ export function SpotifyPodcastPreview({
   title = DEFAULTS.title,
   author = DEFAULTS.author,
   about = DEFAULTS.about,
-  followers = DEFAULTS.followers,
-  episodes = DEFAULTS.episodes,
 }: SpotifyPodcastPreviewProps) {
   const isMobile = variant === 'mobile';
 
