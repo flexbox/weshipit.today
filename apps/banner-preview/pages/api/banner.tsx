@@ -43,18 +43,22 @@ function isPlatform(value: string | null): value is Platform {
   return value !== null && value in PLATFORM_SIZES;
 }
 
-// Interview logos rendered in the banner footer. Files live under
-// /public/images/podcast-logos/. Stored as PNG because Satori's webp decoder
-// silently drops images, and odisei-music originally came in as JPG.
+// Interview logos rendered in the banner footer, ordered by episode number
+// (oldest interview first). Files live under /public/images/podcast-logos/.
+// Stored as PNG because Satori's webp decoder silently drops images, and
+// odisei-music originally came in as JPG.
 const INTERVIEW_LOGOS: ReadonlyArray<{ slug: string; ext: 'png' | 'jpg' }> = [
-  { slug: 'cdiscount', ext: 'png' },
-  { slug: 'alan', ext: 'png' },
-  { slug: 'karnott', ext: 'png' },
-  { slug: 'swan', ext: 'png' },
-  { slug: 'ekklo', ext: 'png' },
-  { slug: 'ornikar', ext: 'png' },
-  { slug: 'shine', ext: 'png' },
-  { slug: 'odisei-music', ext: 'jpg' },
+  { slug: 'cdiscount', ext: 'png' }, // #1
+  { slug: 'alan', ext: 'png' }, // #2
+  { slug: 'karnott', ext: 'png' }, // #4
+  { slug: 'swan', ext: 'png' }, // #5
+  { slug: 'ekklo', ext: 'png' }, // #6
+  { slug: 'ornikar', ext: 'png' }, // #11
+  { slug: 'shine', ext: 'png' }, // #14
+  { slug: 'rosk', ext: 'png' }, // #15
+  { slug: 'odisei-music', ext: 'jpg' }, // #16
+  { slug: 'this-week-in-react', ext: 'png' }, // #23
+  { slug: 'skia', ext: 'png' }, // #24
 ];
 
 export default async function handler(req: NextRequest) {

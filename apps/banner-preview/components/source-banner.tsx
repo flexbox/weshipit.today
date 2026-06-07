@@ -113,10 +113,28 @@ export function SourceBanner({
   const contentColWidth = safeWidth - phoneColWidth - padX;
   const headlineWidth = contentColWidth - padX;
 
-  // Logo footer geometry — square logos with consistent gaps.
-  const logoH = Math.round(footerH * 0.82);
-  const logoGap = Math.round(safeWidth * 0.012);
+  // Logo footer geometry — square logos with consistent gaps. The ideal
+  // logo height is 82% of the footer strip, but if that overflows the
+  // available row width we shrink to fit. JetBrains Mono ≈ 0.72em per char
+  // (pessimistic estimate for mixed glyphs in `logoLabel`). The footer is
+  // a flex row with `gap` between every child, so for N logos plus a label
+  // there are N gaps total. A 4% width buffer absorbs rendering rounding.
+  const logoCount = logos?.length ?? 0;
+  const logoGap = Math.round(safeWidth * 0.01);
   const logoLabelSize = Math.round(footerH * 0.22);
+  const labelWidthEst = Math.round(logoLabel.length * logoLabelSize * 0.72);
+  const footerInnerWidth =
+    safeWidth - (phoneColWidth + padX) - padX - Math.round(safeWidth * 0.04);
+  const widthLimitedLogoH =
+    logoCount > 0
+      ? Math.floor(
+          (footerInnerWidth - labelWidthEst - logoGap * logoCount) / logoCount,
+        )
+      : 0;
+  const logoH = Math.max(
+    24,
+    Math.min(Math.round(footerH * 0.82), widthLimitedLogoH),
+  );
 
   // Single vertical-rhythm value applied between every row in the type stack
   // (top row → headline → tagline → footer). Keeps the layout breathing
@@ -259,7 +277,9 @@ export function SourceBanner({
               </div>
             </div>
 
-            {/* Headline — bold, near-black, mirrors the website hero */}
+            {/* Headline — bold, near-black, mirrors the website hero.
+                whiteSpace: pre-line honors explicit \n in the config so the
+                copywriter controls the line break, not the layout engine. */}
             <div
               style={{
                 display: 'flex',
@@ -269,6 +289,7 @@ export function SourceBanner({
                 color: COLORS.ink,
                 lineHeight: 1.05,
                 letterSpacing: '-0.025em',
+                whiteSpace: 'pre-line',
               }}
             >
               {headline}
@@ -311,26 +332,38 @@ export function SourceBanner({
                 fontFamily: '"JetBrains Mono", monospace',
                 fontSize: `${logoLabelSize}px`,
                 color: COLORS.blueprint,
-                marginRight: `${logoGap}px`,
                 whiteSpace: 'nowrap',
               }}
             >
               {logoLabel}
             </span>
             {logos!.map((src) => (
-              <img
+              // Fixed-square clip container — Satori sometimes ignores
+              // objectFit on <img>, so we force the slot size with a div
+              // and let the image fill it via objectFit: 'cover' inside.
+              <div
                 key={src}
-                src={src}
-                width={logoH}
-                height={logoH}
                 style={{
                   display: 'flex',
                   width: `${logoH}px`,
                   height: `${logoH}px`,
-                  objectFit: 'contain',
+                  overflow: 'hidden',
                   borderRadius: `${Math.round(logoH * 0.18)}px`,
+                  backgroundColor: COLORS.pill,
                 }}
-              />
+              >
+                <img
+                  src={src}
+                  width={logoH}
+                  height={logoH}
+                  style={{
+                    display: 'flex',
+                    width: `${logoH}px`,
+                    height: `${logoH}px`,
+                    objectFit: 'cover',
+                  }}
+                />
+              </div>
             ))}
           </div>
         )}

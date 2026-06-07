@@ -25,7 +25,7 @@ export const CONFIG = {
     name: 'David Leuliette',
     // headline: 220 characters max
     headline:
-      'React Native depuis 2016 · 50+ talks · Host du Cross Platform Show · Podcast 🇫🇷 #1 React Native · 10k+ écoutes',
+      'React Native depuis 2016 · Host du Cross Platform Show · Podcast 🇫🇷 #1 React Native',
     ctaLabel: 'Réserver un expert React Native',
     ctaUrl: 'https://weshipit.today',
   },
@@ -55,7 +55,7 @@ Abonne-toi et partage cet épisode avec un collègue développeur !`,
     name: 'David Leuliette',
     // description (bio): 160 characters max
     description:
-      'Host du Cross Platform Show · Podcast 🇫🇷 #1 React Native  · 10k+ écoutes · RN depuis 2016 · 50+ talks',
+      'React Native depuis 2016 · Host du Cross Platform Show · Podcast 🇫🇷 #1 React Native',
     handle: '@flexbox_',
   },
   spotify: {
@@ -70,7 +70,9 @@ Abonne-toi et partage cet épisode avec un collègue développeur !`,
   banner: {
     name: 'David Leuliette',
     status: 'Nouvel épisode chaque mercredi',
-    headline: 'Scale ton app React Native sans 300k€ de dette technique.',
+    // \n is honored by the renderer (white-space: pre-line) so the break
+    // lands exactly here rather than wherever the text would naturally wrap.
+    headline: 'Scale ton app React Native,\nsans 300k€ de dette technique.',
     tagline:
       '🇫🇷 Podcast #1 React Native · 🎧 10k+ écoutes · ⚡ Livre 40% plus vite',
     url: 'weshipit.today/podcast',
