@@ -113,6 +113,18 @@ export function SourceBanner({
   const contentColWidth = safeWidth - phoneColWidth - padX;
   const headlineWidth = contentColWidth - padX;
 
+  // X overlays the avatar onto the bottom-left of the banner (≈32% of the
+  // banner width, full bottom). The headline is safe because the avatar only
+  // intrudes at the bottom, but the footer logo row sits exactly in that zone
+  // and would get covered. Push only the footer past the avatar — no need to
+  // crowd the headline above. Drop the "Interview de" label too: 11 logos +
+  // label do not fit in the ~400px that remain to the right of the avatar at
+  // X's actual 600px display width, and the row of brand icons reads as
+  // interview proof on its own.
+  const avatarClearance = isX ? Math.round(safeWidth * 0.32) : 0;
+  const footerPaddingLeft = Math.max(phoneColWidth + padX, avatarClearance);
+  const showLogoLabel = !isX;
+
   // Logo footer geometry — square logos with consistent gaps. The ideal
   // logo height is 82% of the footer strip, but if that overflows the
   // available row width we shrink to fit. JetBrains Mono ≈ 0.72em per char
@@ -122,13 +134,18 @@ export function SourceBanner({
   const logoCount = logos?.length ?? 0;
   const logoGap = Math.round(safeWidth * 0.01);
   const logoLabelSize = Math.round(footerH * 0.22);
-  const labelWidthEst = Math.round(logoLabel.length * logoLabelSize * 0.72);
+  const labelWidthEst = showLogoLabel
+    ? Math.round(logoLabel.length * logoLabelSize * 0.72)
+    : 0;
   const footerInnerWidth =
-    safeWidth - (phoneColWidth + padX) - padX - Math.round(safeWidth * 0.04);
+    safeWidth - footerPaddingLeft - padX - Math.round(safeWidth * 0.04);
+  // Gap count = (N logos with a label) → N (one between each pair, plus one
+  // between label and first logo). Without a label it's N-1.
+  const gapCount = showLogoLabel ? logoCount : Math.max(0, logoCount - 1);
   const widthLimitedLogoH =
     logoCount > 0
       ? Math.floor(
-          (footerInnerWidth - labelWidthEst - logoGap * logoCount) / logoCount,
+          (footerInnerWidth - labelWidthEst - logoGap * gapCount) / logoCount,
         )
       : 0;
   const logoH = Math.max(
@@ -312,7 +329,8 @@ export function SourceBanner({
         </div>
 
         {/* FOOTER — interview-logo row. Left-aligned to the same edge as the
-            type stack above. */}
+            type stack above, except on X where it's pushed further right to
+            clear the avatar that overlaps the bottom-left. */}
         {hasLogos && (
           <div
             style={{
@@ -322,21 +340,23 @@ export function SourceBanner({
               width: `${safeWidth}px`,
               height: `${footerH}px`,
               gap: `${logoGap}px`,
-              paddingLeft: `${phoneColWidth + padX}px`,
+              paddingLeft: `${footerPaddingLeft}px`,
               paddingRight: `${padX}px`,
             }}
           >
-            <span
-              style={{
-                display: 'flex',
-                fontFamily: '"JetBrains Mono", monospace',
-                fontSize: `${logoLabelSize}px`,
-                color: COLORS.blueprint,
-                whiteSpace: 'nowrap',
-              }}
-            >
-              {logoLabel}
-            </span>
+            {showLogoLabel && (
+              <span
+                style={{
+                  display: 'flex',
+                  fontFamily: '"JetBrains Mono", monospace',
+                  fontSize: `${logoLabelSize}px`,
+                  color: COLORS.blueprint,
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                {logoLabel}
+              </span>
+            )}
             {logos!.map((src) => (
               // Fixed-square clip container — Satori sometimes ignores
               // objectFit on <img>, so we force the slot size with a div

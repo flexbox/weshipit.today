@@ -52,6 +52,7 @@ Ici, tu trouveras :
 Abonne-toi et partage cet épisode avec un collègue développeur !`,
   },
   x: {
+    // edit here : https://x.com/settings/profile
     name: 'David Leuliette',
     // description (bio): 160 characters max
     description:
