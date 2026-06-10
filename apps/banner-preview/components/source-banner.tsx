@@ -89,11 +89,16 @@ export function SourceBanner({
   const footerH = hasLogos ? Math.round(safeHeight * 0.22) : 0;
   const mainH = safeHeight - footerH;
 
-  const headlineSize = Math.round(mainH * 0.16);
+  // LinkedIn renders profile covers small enough that the smallest UI text
+  // (status pill, URL chip, tagline) loses subpixel detail and reads soft on
+  // upload. Boost the secondary type sizes — and nudge the headline — so they
+  // survive LinkedIn's downscale. X / YouTube already render large enough.
+  const linkedinBoost = isLinkedIn ? 1.3 : 1;
+  const headlineSize = Math.round(mainH * 0.16 * (isLinkedIn ? 1.1 : 1));
   // Tagline stays compact on X so all three metrics fit on one line.
-  const taglineSize = Math.round(mainH * (isX ? 0.05 : 0.065));
-  const pillSize = Math.round(mainH * 0.055);
-  const chipSize = Math.round(mainH * 0.055);
+  const taglineSize = Math.round(mainH * (isX ? 0.05 : 0.065) * linkedinBoost);
+  const pillSize = Math.round(mainH * 0.055 * linkedinBoost);
+  const chipSize = Math.round(mainH * 0.055 * linkedinBoost);
 
   // Phone sized to fit fully inside the safe band, with a touch of padding.
   const phoneH = Math.round(mainH * 0.95);
