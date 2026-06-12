@@ -9,6 +9,7 @@
     "postbuild": "nx run-many --all --target=postbuild",
     "test": "nx run-many --all --target=test",
     "lint": "nx lint",
+    "typecheck": "nx run-many --all --target=typecheck",
     "graph": "nx graph",
     "cache:clear": "nx reset",
     "nuke": "rm -rf dist && nx reset && rm -rf node_modules && rm yarn.lock && yarn install",

@@ -40,6 +40,12 @@
           "quiet": true
         }
       }
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc --noEmit -p {projectRoot}/tsconfig.json"
+      }
     }
   }
 }
