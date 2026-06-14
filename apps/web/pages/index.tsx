@@ -132,10 +132,14 @@ function useGetLocalTimeInFrance() {
   return localTime;
 }
 
+function LocalTimeInFrance() {
+  const localTime = useGetLocalTimeInFrance();
+  return <>{localTime}</>;
+}
+
 function ProblemAgitation() {
   const currentYear = new Date().getFullYear();
   const yearsOfExperience = currentYear - 2016;
-  const localTimeInFrance = useGetLocalTimeInFrance();
 
   return (
     <>
@@ -172,7 +176,7 @@ function ProblemAgitation() {
       </p>
       <p>
         We are based in France, speak english for all our communications and use{' '}
-        <code>qwerty</code> keyboards. It&apos;s {localTimeInFrance} for us
+        <code>qwerty</code> keyboards. It&apos;s <LocalTimeInFrance /> for us
         right now,{' '}
         <Hyperlink href={linksApi.cal.ONBOARDING}>
           book a call to see if we can help you
