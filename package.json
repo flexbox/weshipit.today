@@ -1,6 +1,6 @@
 {
   "name": "weshipit",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "license": "MIT",
   "scripts": {
     "--nx--": "-------------------------------------------------------",
@@ -157,5 +157,5 @@
       "path": "git-cz"
     }
   },
-  "packageManager": "yarn@4.13.0"
+  "packageManager": "yarn@4.17.0"
 }
