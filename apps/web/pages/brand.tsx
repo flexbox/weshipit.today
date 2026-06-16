@@ -117,9 +117,10 @@ export default function BrandPage() {
             Short Description
           </Text>
           <Text variant="p1">
-            In response to the growing demands of software development,
-            weshipit.today has shifted its focus to daily releases of React
-            Native Apps on production.
+            weshipit.today is a senior React Native agency based in France. We
+            work with scale-ups to turn slow, brittle mobile apps into machines
+            that ship every day. We also host Le Cross-Platform Show, a podcast
+            featuring interviews with CTOs building React Native apps at scale.
           </Text>
         </section>
 
@@ -128,15 +129,25 @@ export default function BrandPage() {
             Long Description
           </Text>
           <Text variant="p1" className="mb-4">
-            weshipit.today is a remote React Native design and development
-            agency based in France. We specialize in React Native with Expo,
-            offering expertise in mobile design and development. Our teams build
-            robust apps and contribute to libraries that drive the React Native
-            movement.
+            Founded in 2016, weshipit.today is a French agency working
+            exclusively on React Native. We help scale-ups whose apps have
+            become slow to evolve — accumulated dependencies, missing
+            observability, fragile releases — and transform them into platforms
+            that ship daily through three steps: foundations, ecosystem, and
+            acceleration.
+          </Text>
+          <Text variant="p1" className="mb-4">
+            Our model is intentionally narrow: a senior-only team, three clients
+            maximum, and a monthly engagement with no long-term commitment.
+            Clients see up to 90% code reuse, 100% automated releases, and apps
+            that run offline-first in hostile environments — outcomes shaped by
+            nearly a decade of shipping in production.
           </Text>
           <Text variant="p1">
-            With our React Native Bootcamps, we've enabled more than 400 happy
-            developers to successfully ship outstanding apps to their users.
+            We also produce Le Cross-Platform Show, a podcast where we interview
+            the CTOs and engineering leaders behind production React Native apps
+            — including Alan, Cdiscount, and Swan — to share the architectures,
+            costs, and trade-offs behind shipping mobile at scale.
           </Text>
         </section>
       </div>
