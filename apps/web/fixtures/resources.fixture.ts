@@ -234,5 +234,15 @@ export const resources = {
       },
       id: 'recZt7n9sH8Xo2m1i',
     },
+    {
+      fields: {
+        description:
+          'Weekly React Native newsletter mixing news, tools, and industry updates with memes and humor.',
+        name: 'React Native Rewind',
+        type: ['Newsletter'],
+        website_url: 'https://reactnativerewind.com/',
+      },
+      id: 'recRnRewind001abc',
+    },
   ],
 };
