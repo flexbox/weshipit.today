@@ -7,10 +7,7 @@ export const config = {
 };
 
 const interBold = fetch(
-  new URL(
-    'https://cdn.jsdelivr.net/npm/@fontsource/inter/files/inter-latin-700-normal.woff',
-    import.meta.url,
-  ),
+  new URL('../../public/fonts/inter-latin-700-normal.woff', import.meta.url),
 ).then((res) => res.arrayBuffer());
 
 const MAX_TITLE_LEN = 200;
