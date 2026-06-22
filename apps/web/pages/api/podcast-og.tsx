@@ -13,14 +13,22 @@ const interBold = fetch(
   ),
 ).then((res) => res.arrayBuffer());
 
+const MAX_TITLE_LEN = 200;
+const MAX_GUEST_LEN = 200;
+const MAX_SLUG_LEN = 100;
+const clampParam = (value: string | null, max: number): string =>
+  (value ?? '').slice(0, max);
+
 export default async function handler(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
 
-    const title = searchParams.get('title') || 'Le Cross Platform Show';
-    const guest = searchParams.get('guest') || '';
+    const title =
+      clampParam(searchParams.get('title'), MAX_TITLE_LEN) ||
+      'Le Cross Platform Show';
+    const guest = clampParam(searchParams.get('guest'), MAX_GUEST_LEN);
     const episodeNumber = searchParams.get('episode') || '';
-    const slug = searchParams.get('slug') || '';
+    const slug = clampParam(searchParams.get('slug'), MAX_SLUG_LEN);
 
     const currentEpisode = (() => {
       if (slug) {
