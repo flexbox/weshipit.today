@@ -12,11 +12,17 @@ const interBold = fetch(
   ),
 ).then((res) => res.arrayBuffer());
 
+const MAX_TITLE_LEN = 200;
+const clampParam = (value: string | null, max: number): string =>
+  (value ?? '').slice(0, max);
+
 export default async function handler(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
-    const hasTitle = searchParams.has('title');
-    const title = hasTitle ? searchParams.get('title') : 'weshipit.today';
+    const rawTitle = searchParams.get('title');
+    const title = rawTitle
+      ? clampParam(rawTitle, MAX_TITLE_LEN)
+      : 'weshipit.today';
 
     // Load the fonts
     const [interBoldData] = await Promise.all([interBold]);
