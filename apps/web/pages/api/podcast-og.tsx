@@ -23,6 +23,13 @@ export default async function handler(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
 
+    const origin = new URL(req.url).origin;
+    const toAbsoluteUrl = (url: string | undefined): string | undefined => {
+      if (!url) return undefined;
+      if (url.startsWith('http://') || url.startsWith('https://')) return url;
+      return `${origin}${url.startsWith('/') ? '' : '/'}${url}`;
+    };
+
     const title =
       clampParam(searchParams.get('title'), MAX_TITLE_LEN) ||
       'Le Cross Platform Show';
@@ -50,8 +57,8 @@ export default async function handler(req: NextRequest) {
       return url.replace(/\.webp(\?.*)?$/i, '.png$1');
     };
 
-    const currentEpisodeLogo = toSupportedImageType(
-      currentEpisode?.company_logo,
+    const currentEpisodeLogo = toAbsoluteUrl(
+      toSupportedImageType(currentEpisode?.company_logo),
     );
 
     const allOtherLogos = podcastEpisodes
@@ -69,6 +76,7 @@ export default async function handler(req: NextRequest) {
     const TARGET_COUNT = 15;
     const randomLogos = Array.from(new Set(shuffled))
       .map((u) => toSupportedImageType(u))
+      .map((u) => toAbsoluteUrl(u))
       .filter(Boolean)
       .slice(0, TARGET_COUNT) as string[];
 
