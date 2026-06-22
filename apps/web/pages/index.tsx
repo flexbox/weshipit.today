@@ -471,6 +471,38 @@ export default function IndexPage({ clients, steps }: IndexPageProps) {
     ],
   };
 
+  const combinedSchema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: breadcrumbSchema.itemListElement,
+      },
+      {
+        '@type': 'Organization',
+        name: organizationSchema.name,
+        url: organizationSchema.url,
+        foundingDate: organizationSchema.foundingDate,
+        description: organizationSchema.description,
+        knowsAbout: organizationSchema.knowsAbout,
+      },
+      {
+        '@type': 'FAQPage',
+        mainEntity: faqSchema.mainEntity,
+      },
+      {
+        '@type': 'WebSite',
+        name: webSiteSchema.name,
+        url: webSiteSchema.url,
+        description: webSiteSchema.description,
+      },
+      {
+        '@type': 'ItemList',
+        itemListElement: siteNavigationSchema.itemListElement,
+      },
+    ],
+  };
+
   return (
     <>
       <Head>
@@ -488,29 +520,7 @@ export default function IndexPage({ clients, steps }: IndexPageProps) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(breadcrumbSchema),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(webSiteSchema),
-          }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(siteNavigationSchema),
+            __html: JSON.stringify(combinedSchema),
           }}
         />
       </Head>
