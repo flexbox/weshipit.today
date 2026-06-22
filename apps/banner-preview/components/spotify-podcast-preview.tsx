@@ -1,14 +1,8 @@
 import Image from 'next/image';
-import {
-  PlayIcon,
-  HeartIcon,
-  EllipsisHorizontalIcon,
-  ArrowDownTrayIcon,
-} from '@heroicons/react/24/solid';
-import { CheckBadgeIcon } from '@heroicons/react/24/solid';
+import { EllipsisHorizontalIcon } from '@heroicons/react/24/solid';
 
 import { CONFIG } from '../config/config';
-import { trim, truncate } from 'lodash';
+import truncate from 'lodash/truncate';
 
 interface SpotifyPodcastPreviewProps {
   coverUrl: string;

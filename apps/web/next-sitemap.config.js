@@ -3,7 +3,7 @@
 module.exports = {
   generateRobotsTxt: true,
   outDir: 'dist/apps/web/public',
-  exclude: ['/qr', '/live', '/welcome', '/brand', '/onboarding', '/home'],
+  exclude: ['/qr', '/brand', '/onboarding', '/home'],
   robotsTxtOptions: {
     policies: [
       {

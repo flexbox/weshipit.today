@@ -21,8 +21,8 @@ Execute in the order below unless dependencies say otherwise. Each executor: rea
 | 007  | Fix homepage `setInterval(1000ms)` causing whole-page re-renders             | P1       | S      | —          | DONE — commit `3874a8a` on branch `advisor/007-isolate-homepage-time-widget`, awaiting operator merge |
 | 008  | Inline Inter font in OG handlers (remove jsdelivr fetch)                     | P2       | S      | —          | DONE — commit `9ac7b85` on branch `advisor/008-inline-og-inter-font`, awaiting operator merge         |
 | 009  | Replace lone lodash barrel import in `banner-preview`                        | P3       | S      | —          | TODO                                                                                                  |
-| 010  | Merge 5 JSON-LD `<script>` blocks into a single `@graph`                     | P3       | S      | —          | DONE — branch `advisor/010-merge-homepage-jsonld`, awaiting operator merge                            |
-| 011  | Delete dead pages: `welcome.tsx` (Kid-GO) and `live.tsx` (placeholder ID)    | P3       | S      | —          | TODO                                                                                                  |
+| 010  | Merge 5 JSON-LD `<script>` blocks into a single `@graph`                     | P3       | S      | —          | DONE — merged to `main` via #320                                                                      |
+| 011  | Delete dead pages: `welcome.tsx` (Kid-GO) and `live.tsx` (placeholder ID)    | P3       | S      | —          | DONE — branch `advisor/011-delete-dead-pages`, awaiting operator merge                                |
 | 012  | Add `.env.example` + initial `CLAUDE.md` + remove root cruft                 | P2       | S      | —          | TODO                                                                                                  |
 
 Status values: `TODO` | `IN PROGRESS` | `DONE` | `BLOCKED` (with one-line reason) | `REJECTED` (with one-line rationale).
