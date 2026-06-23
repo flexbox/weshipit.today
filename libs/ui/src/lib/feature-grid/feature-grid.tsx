@@ -44,9 +44,15 @@ export function FeatureGrid({
             }}
             viewport={{ once: true }}
           >
-            <div className="h-8 w-8 text-blue-600 mb-2">{item.icon}</div>
-            <h3 className="mt-0 text-xl font-bold">{item.title}</h3>
-            <p>{item.description}</p>
+            <div className="h-8 w-8 text-blue-600 dark:text-blue-400 mb-2">
+              {item.icon}
+            </div>
+            <h3 className="mt-0 text-xl font-bold text-slate-900 dark:text-white">
+              {item.title}
+            </h3>
+            <p className="text-slate-700 dark:text-slate-300">
+              {item.description}
+            </p>
           </motion.div>
         );
       })}

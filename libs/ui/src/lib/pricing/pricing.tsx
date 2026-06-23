@@ -3,7 +3,6 @@
 import { useState, ElementType } from 'react';
 import Button from '../button/button';
 import {
-  CalendarIcon,
   MagnifyingGlassIcon,
   BeakerIcon,
   BuildingStorefrontIcon,
@@ -20,6 +19,7 @@ import { twMerge } from 'tailwind-merge';
 import { Text } from '../text/text';
 import { Badge } from '../badge/badge';
 import LinkButton from '../button/link-button';
+import { BookDiscoveryCta } from '../book-discovery-cta/book-discovery-cta';
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -619,23 +619,7 @@ export function PlanFinderSection({ ctaLink }: { ctaLink: string }) {
           </div>
         )}
 
-        <Card variant="gradient-blue" className="mt-16 md:p-10">
-          <div className="relative flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="text-center md:text-left">
-              <Text as="h3" variant="h4" className="mb-2 text-white">
-                Still unsure? Let’s talk.
-              </Text>
-              <Text as="p" variant="p1" className="text-white max-w-md">
-                Book a free 30-minute discovery call and we’ll help you find the
-                perfect fit for your team.
-              </Text>
-            </div>
-            <LinkButton href={ctaLink} variant="outline" size="lg">
-              <CalendarIcon className="w-5 h-5 mr-2" />
-              Book a Discovery Call
-            </LinkButton>
-          </div>
-        </Card>
+        <BookDiscoveryCta ctaLink={ctaLink} className="mt-16" />
 
         {/* Upgrade Paths */}
         <div className="mt-20">

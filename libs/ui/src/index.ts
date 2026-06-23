@@ -37,3 +37,4 @@ export * from './lib/tool-list/tool-type-badge';
 export * from './lib/count-up/count-up';
 export * from './lib/statistics-grid/statistics-grid';
 export * from './lib/feature-grid/feature-grid';
+export * from './lib/book-discovery-cta/book-discovery-cta';
