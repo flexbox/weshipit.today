@@ -11,6 +11,7 @@ import {
 } from '@weshipit/ui';
 import Head from 'next/head';
 import {
+  ArrowRightIcon,
   BookOpenIcon,
   ChatBubbleBottomCenterIcon,
   CheckCircleIcon,
@@ -21,8 +22,6 @@ import {
   DocumentTextIcon,
   MapIcon,
   ShieldCheckIcon,
-  SparklesIcon,
-  TrophyIcon,
   VideoCameraIcon,
   WrenchScrewdriverIcon,
   XCircleIcon,
@@ -343,107 +342,74 @@ function WhoItsFor() {
 }
 
 function SocialProof() {
-  const monacoPrices = [
-    { tier: 'Club VIP weekend', price: '5,256 €' },
-    { tier: 'Club VIP Sunday', price: '4,416 €' },
-    { tier: 'Club VIP Saturday', price: '2,376 €' },
-    { tier: 'Tribune (non-VIP)', price: 'from 45 €' },
+  const before = [
+    '0 end-to-end tests',
+    '3h+ of manual QA per release',
+    'Bugs caught in production by users',
+  ];
+  const after = [
+    'Maestro flows running iOS + Android',
+    'CI green on every PR',
+    'E-commerce checkout covered too',
   ];
 
   return (
-    <section className="mx-auto max-w-7xl px-4 sm:px-6 py-16">
-      <div className="text-center mb-12">
+    <section className="mx-auto max-w-5xl px-4 sm:px-6 py-16">
+      <div className="text-center mb-10">
         <Badge variant="blue" size="sm">
           Recent work
         </Badge>
         <Text as="h2" variant="h2" className="mt-4">
-          Trusted by teams that ship
+          Real before / after
         </Text>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
-        <Card className="lg:col-span-3 flex flex-col">
-          <div className="flex items-center gap-3 mb-4">
-            <SparklesIcon className="h-7 w-7 text-blue-600" />
-            <Badge variant="gray-lighter" size="sm">
-              Case study
-            </Badge>
+      <Card variant="featured" className="!p-8 md:!p-12">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-8 pb-6 border-b border-white/10 dark:border-slate-300/30">
+          <div>
+            <p className="text-lg font-semibold">Maxence Cottel</p>
+            <p className="text-sm opacity-80">QA engineer · Nacon</p>
           </div>
-          <Text as="h3" variant="h4" className="mb-3" style={{ marginTop: 0 }}>
-            Nacon — end-to-end coverage across mobile and commerce
-          </Text>
-          <p className="text-gray-600 dark:text-gray-300 mb-4">
-            I worked alongside{' '}
-            <strong className="text-gray-900 dark:text-white">
-              Maxence Cottel
-            </strong>
-            , QA engineer at Nacon, to put end-to-end testing in place for the
-            Nacon mobile app and the Nacon e-commerce website. The flows cover
-            the critical purchase paths and run automatically on every release.
-          </p>
-          <ul className="space-y-2 text-gray-600 dark:text-gray-300">
-            <li className="flex gap-3">
-              <CheckCircleIcon className="h-5 w-5 text-green-600 shrink-0 mt-1" />
-              <span>
-                Mobile flows wired with Maestro — same scripts running iOS and
-                Android.
-              </span>
-            </li>
-            <li className="flex gap-3">
-              <CheckCircleIcon className="h-5 w-5 text-green-600 shrink-0 mt-1" />
-              <span>
-                E-commerce coverage extended to the web checkout from the same
-                playbook.
-              </span>
-            </li>
-            <li className="flex gap-3">
-              <CheckCircleIcon className="h-5 w-5 text-green-600 shrink-0 mt-1" />
-              <span>
-                Handoff complete — Maxence&apos;s team now owns the suite end to
-                end.
-              </span>
-            </li>
-          </ul>
-          <p className="mt-6 text-sm text-gray-500">
-            Nacon · Maxence Cottel · QA engineer
-          </p>
-        </Card>
+          <Badge variant="gray-lighter" size="sm">
+            Mobile + e-commerce
+          </Badge>
+        </div>
 
-        <Card variant="gradient-blue" className="lg:col-span-2 flex flex-col">
-          <div className="flex items-center gap-3 mb-4">
-            <TrophyIcon className="h-7 w-7 text-white" />
-            <span className="text-xs font-semibold uppercase tracking-widest text-white/80">
-              For perspective
-            </span>
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-6 md:gap-8 items-center">
+          <div>
+            <p className="text-xs font-bold uppercase tracking-widest opacity-70 mb-4">
+              Before
+            </p>
+            <ul className="space-y-3">
+              {before.map((item) => (
+                <li key={item} className="flex gap-3">
+                  <XCircleIcon className="h-5 w-5 shrink-0 mt-1 text-red-400 dark:text-red-500" />
+                  <span className="opacity-90">{item}</span>
+                </li>
+              ))}
+            </ul>
           </div>
-          <Text
-            as="h3"
-            variant="h4"
-            className="mb-2 text-white"
-            style={{ marginTop: 0 }}
-          >
-            Less than a Monaco GP weekend
-          </Text>
-          <p className="text-white/90 mb-6">
-            A single Club VIP weekend ticket at the Monaco Grand Prix runs
-            around <strong>5,256 €</strong>. Our flat fee is a fraction of that
-            — and the tests keep working long after the race is over.
-          </p>
-          <ul className="space-y-2 text-sm">
-            {monacoPrices.map((p) => (
-              <li
-                key={p.tier}
-                className="flex items-center justify-between text-white/90 border-b border-white/10 last:border-0 py-1"
-              >
-                <span>{p.tier}</span>
-                <span className="font-mono font-semibold text-white">
-                  {p.price}
-                </span>
-              </li>
-            ))}
-          </ul>
-        </Card>
-      </div>
+
+          <ArrowRightIcon
+            className="hidden md:block h-10 w-10 opacity-50"
+            aria-hidden="true"
+          />
+
+          <div>
+            <p className="text-xs font-bold uppercase tracking-widest opacity-70 mb-4">
+              After
+            </p>
+            <ul className="space-y-3">
+              {after.map((item) => (
+                <li key={item} className="flex gap-3">
+                  <CheckCircleIcon className="h-5 w-5 shrink-0 mt-1 text-green-400 dark:text-green-500" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </Card>
     </section>
   );
 }
