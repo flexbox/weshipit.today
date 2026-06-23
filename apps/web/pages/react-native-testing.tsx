@@ -21,6 +21,8 @@ import {
   DocumentTextIcon,
   MapIcon,
   ShieldCheckIcon,
+  SparklesIcon,
+  TrophyIcon,
   VideoCameraIcon,
   WrenchScrewdriverIcon,
   XCircleIcon,
@@ -74,16 +76,10 @@ function HeroSection() {
               Mobile testing for React Native
             </Badge>
           </div>
-          <Text
-            as="h1"
-            variant="h1"
-            className="uppercase text-black md:tracking-widest"
-          >
+          <Text as="h1" variant="h1" className="uppercase text-black">
             Most React Native teams skip e2e tests.
             <br />
-            <small className="tracking-tight md:tracking-wide">
-              Until the first production crash.
-            </small>
+            <small>Until the first production crash.</small>
           </Text>
           <p className="mt-6 text-lg leading-8 text-gray-500 max-w-xl mx-auto lg:mx-0">
             We set up{' '}
@@ -346,6 +342,112 @@ function WhoItsFor() {
   );
 }
 
+function SocialProof() {
+  const monacoPrices = [
+    { tier: 'Club VIP weekend', price: '5,256 €' },
+    { tier: 'Club VIP Sunday', price: '4,416 €' },
+    { tier: 'Club VIP Saturday', price: '2,376 €' },
+    { tier: 'Tribune (non-VIP)', price: 'from 45 €' },
+  ];
+
+  return (
+    <section className="mx-auto max-w-7xl px-4 sm:px-6 py-16">
+      <div className="text-center mb-12">
+        <Badge variant="blue" size="sm">
+          Recent work
+        </Badge>
+        <Text as="h2" variant="h2" className="mt-4">
+          Trusted by teams that ship
+        </Text>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
+        <Card className="lg:col-span-3 flex flex-col">
+          <div className="flex items-center gap-3 mb-4">
+            <SparklesIcon className="h-7 w-7 text-blue-600" />
+            <Badge variant="gray-lighter" size="sm">
+              Case study
+            </Badge>
+          </div>
+          <Text as="h3" variant="h4" className="mb-3" style={{ marginTop: 0 }}>
+            Nacon — end-to-end coverage across mobile and commerce
+          </Text>
+          <p className="text-gray-600 dark:text-gray-300 mb-4">
+            I worked alongside{' '}
+            <strong className="text-gray-900 dark:text-white">
+              Maxence Cottel
+            </strong>
+            , QA engineer at Nacon, to put end-to-end testing in place for the
+            Nacon mobile app and the Nacon e-commerce website. The flows cover
+            the critical purchase paths and run automatically on every release.
+          </p>
+          <ul className="space-y-2 text-gray-600 dark:text-gray-300">
+            <li className="flex gap-3">
+              <CheckCircleIcon className="h-5 w-5 text-green-600 shrink-0 mt-1" />
+              <span>
+                Mobile flows wired with Maestro — same scripts running iOS and
+                Android.
+              </span>
+            </li>
+            <li className="flex gap-3">
+              <CheckCircleIcon className="h-5 w-5 text-green-600 shrink-0 mt-1" />
+              <span>
+                E-commerce coverage extended to the web checkout from the same
+                playbook.
+              </span>
+            </li>
+            <li className="flex gap-3">
+              <CheckCircleIcon className="h-5 w-5 text-green-600 shrink-0 mt-1" />
+              <span>
+                Handoff complete — Maxence&apos;s team now owns the suite end to
+                end.
+              </span>
+            </li>
+          </ul>
+          <p className="mt-6 text-sm text-gray-500">
+            Nacon · Maxence Cottel · QA engineer
+          </p>
+        </Card>
+
+        <Card variant="gradient-blue" className="lg:col-span-2 flex flex-col">
+          <div className="flex items-center gap-3 mb-4">
+            <TrophyIcon className="h-7 w-7 text-white" />
+            <span className="text-xs font-semibold uppercase tracking-widest text-white/80">
+              For perspective
+            </span>
+          </div>
+          <Text
+            as="h3"
+            variant="h4"
+            className="mb-2 text-white"
+            style={{ marginTop: 0 }}
+          >
+            Less than a Monaco GP weekend
+          </Text>
+          <p className="text-white/90 mb-6">
+            A single Club VIP weekend ticket at the Monaco Grand Prix runs
+            around <strong>5,256 €</strong>. Our flat fee is a fraction of that
+            — and the tests keep working long after the race is over.
+          </p>
+          <ul className="space-y-2 text-sm">
+            {monacoPrices.map((p) => (
+              <li
+                key={p.tier}
+                className="flex items-center justify-between text-white/90 border-b border-white/10 last:border-0 py-1"
+              >
+                <span>{p.tier}</span>
+                <span className="font-mono font-semibold text-white">
+                  {p.price}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </Card>
+      </div>
+    </section>
+  );
+}
+
 const faqs: FaqProps[] = [
   {
     id: 'rnt-faq-flat-fee',
@@ -447,6 +549,7 @@ export default function ReactNativeTesting() {
         <WhatYouGet />
         <Timeline />
         <WhoItsFor />
+        <SocialProof />
         <Faqs />
         <FinalCta />
       </main>
