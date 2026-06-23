@@ -3,10 +3,13 @@ import {
   BookDiscoveryCta,
   Button,
   Card,
+  Faq,
+  FaqProps,
   FeatureGrid,
   Hyperlink,
   Text,
 } from '@weshipit/ui';
+import Head from 'next/head';
 import {
   BookOpenIcon,
   ChatBubbleBottomCenterIcon,
@@ -343,6 +346,61 @@ function WhoItsFor() {
   );
 }
 
+const faqs: FaqProps[] = [
+  {
+    id: 'rnt-faq-flat-fee',
+    question: 'What does "flat fee" actually mean?',
+    answer:
+      "One number, agreed upfront, covers everything in scope: setup, the 5 flows, CI wiring, runbook, recorded handoff session, and 14 days of post-handoff support. No hourly billing, no scope-creep invoices. If the work takes longer than 2 weeks because of something on our end, that's our problem, not yours. The exact number depends on your app's complexity — book a 30-minute call and we'll quote on the spot.",
+  },
+  {
+    id: 'rnt-faq-after-14-days',
+    question: 'What happens after the 14-day support window ends?',
+    answer:
+      "You own the test suite outright — it's YAML files in your repo. The runbook we wrote makes adding new flows a copy-paste-tweak operation that any teammate can do. If you'd rather we keep maintaining or extending the suite, you can book a follow-up engagement or fold it into a weshipit.today subscription. There's never a renewal lock-in.",
+  },
+  {
+    id: 'rnt-faq-flows-break',
+    question: 'What if my flows break after the support window?',
+    answer:
+      'Flows usually break because the UI changed — a renamed test ID, a new modal in the navigation path, a redesigned login screen. The runbook walks your team through diagnosing and fixing common breakages in under 10 minutes. For deeper issues, ping me directly — most one-off fixes take less than an hour and we keep DMs open even after the engagement.',
+  },
+  {
+    id: 'rnt-faq-expo-vs-bare',
+    question: 'Does this work with Expo, bare React Native, or both?',
+    answer:
+      "Both. Maestro tests the running app, not the build system — as long as your app boots on an iOS simulator or Android emulator, we can wire it up. We've set Maestro up for Expo managed workflow, Expo bare workflow, and bare React Native indistinguishably. EAS Build, Fastlane, or a hand-rolled CI all work too.",
+  },
+  {
+    id: 'rnt-faq-more-than-5-flows',
+    question: 'Can you cover more than 5 flows?',
+    answer:
+      "Yes, but the 5-flow productized scope is the sharpest one — it's the smallest set that meaningfully covers your highest-risk user journeys, which is where E2E tests pay back fastest. If you need 10, 20, or a full regression suite, we'll scope a custom engagement on the discovery call. Same flat-fee philosophy, just a bigger number and longer timeline.",
+  },
+  {
+    id: 'rnt-faq-team-no-maestro-experience',
+    question: 'What if my team has never used Maestro?',
+    answer:
+      "Most of our clients hadn't. Maestro flows are YAML — closer to a step-by-step checklist than test code. The 30-minute recorded handoff session and the runbook are designed so a non-expert teammate can add their first flow within an afternoon. No prior Maestro experience required from your side.",
+  },
+];
+
+function Faqs() {
+  return (
+    <section
+      id="faq"
+      className="mx-auto max-w-4xl px-4 sm:px-6 py-16 scroll-mt-24"
+    >
+      <div className="text-center mb-8">
+        <Badge variant="blue" size="sm">
+          FAQ
+        </Badge>
+      </div>
+      <Faq faqs={faqs} title="Common questions" headingId="rnt-faq-heading" />
+    </section>
+  );
+}
+
 function FinalCta() {
   return (
     <section className="mx-auto max-w-7xl px-4 sm:px-6 py-16 mb-12">
@@ -356,6 +414,19 @@ function FinalCta() {
 }
 
 export default function ReactNativeTesting() {
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(({ question, answer }) => ({
+      '@type': 'Question',
+      name: question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: answer,
+      },
+    })),
+  };
+
   return (
     <Layout
       withFooter
@@ -369,12 +440,19 @@ export default function ReactNativeTesting() {
         isExternalLink: true,
       }}
     >
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      </Head>
       <main>
         <HeroSection />
         <WhyMaestro />
         <WhatYouGet />
         <Timeline />
         <WhoItsFor />
+        <Faqs />
         <FinalCta />
       </main>
     </Layout>
