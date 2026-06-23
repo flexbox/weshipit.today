@@ -75,12 +75,16 @@ function HeroSection() {
               Mobile testing for React Native
             </Badge>
           </div>
-          <Text as="h1" variant="h1" className="uppercase text-black">
+          <Text
+            as="h1"
+            variant="h1"
+            className="uppercase text-slate-900 dark:text-white"
+          >
             Most React Native teams skip e2e tests.
             <br />
             <small>Until the first production crash.</small>
           </Text>
-          <p className="mt-6 text-lg leading-8 text-gray-500 max-w-xl mx-auto lg:mx-0">
+          <p className="mt-6 text-lg leading-8 text-gray-500 dark:text-gray-400 max-w-xl mx-auto lg:mx-0">
             We set up{' '}
             <Hyperlink href="https://maestro.mobile.dev">Maestro</Hyperlink>{' '}
             end-to-end tests for your React Native app — YAML flows, CI
@@ -124,7 +128,7 @@ function WhyMaestro() {
         <Text as="h2" variant="h2" className="mt-4">
           A simpler stack for mobile tests
         </Text>
-        <p className="mt-4 text-lg leading-8 text-gray-500 max-w-2xl mx-auto">
+        <p className="mt-4 text-lg leading-8 text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
           Most React Native teams skip mobile end-to-end tests or wrestle with
           Detox flakiness for months. Maestro takes a different approach.
         </p>
@@ -178,7 +182,7 @@ function WhatYouGet() {
         <Text as="h2" variant="h2" className="mt-4">
           A productized engagement
         </Text>
-        <p className="mt-4 text-lg leading-8 text-gray-500 max-w-2xl mx-auto">
+        <p className="mt-4 text-lg leading-8 text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
           Fixed scope, fixed timeline. Two weeks from kickoff to handoff.
         </p>
       </div>
@@ -263,7 +267,7 @@ function Timeline() {
         {steps.map((step) => (
           <Card key={step.number} className="relative">
             <div className="flex items-baseline justify-between mb-4">
-              <span className="text-4xl font-extrabold text-blue-600">
+              <span className="text-4xl font-extrabold text-blue-600 dark:text-blue-400">
                 {step.number}
               </span>
               <Badge variant="gray-lighter" size="sm">
@@ -365,7 +369,7 @@ function SocialProof() {
       </div>
 
       <Card variant="featured" className="!p-8 md:!p-12">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-8 pb-6 border-b border-white/10 dark:border-slate-300/30">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-8 pb-6 border-b border-white/15 dark:border-slate-300">
           <div>
             <p className="text-lg font-semibold">Maxence Cottel</p>
             <p className="text-sm opacity-80">QA engineer · Nacon</p>
