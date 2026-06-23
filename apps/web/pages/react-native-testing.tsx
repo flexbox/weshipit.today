@@ -77,12 +77,12 @@ function HeroSection() {
           <Text
             as="h1"
             variant="h1"
-            className="uppercase tracking-tight text-black md:tracking-widest"
+            className="uppercase text-black md:tracking-widest"
           >
-            End-to-end mobile testing
+            Most React Native teams skip e2e tests.
             <br />
             <small className="tracking-tight md:tracking-wide">
-              shipped in 2 weeks
+              Until the first production crash.
             </small>
           </Text>
           <p className="mt-6 text-lg leading-8 text-gray-500 max-w-xl mx-auto lg:mx-0">
@@ -391,11 +391,6 @@ function Faqs() {
       id="faq"
       className="mx-auto max-w-4xl px-4 sm:px-6 py-16 scroll-mt-24"
     >
-      <div className="text-center mb-8">
-        <Badge variant="blue" size="sm">
-          FAQ
-        </Badge>
-      </div>
       <Faq faqs={faqs} title="Common questions" headingId="rnt-faq-heading" />
     </section>
   );
