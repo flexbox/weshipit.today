@@ -10,6 +10,7 @@ import {
   Text,
 } from '@weshipit/ui';
 import Head from 'next/head';
+import Image from 'next/image';
 import {
   ArrowRightIcon,
   BookOpenIcon,
@@ -418,6 +419,97 @@ function SocialProof() {
   );
 }
 
+function WhoAmI() {
+  const credentials = [
+    {
+      label: 'Top 20 React Native contributor on Stack Overflow',
+    },
+    {
+      label: 'Shipping production React Native apps since 2016',
+    },
+    {
+      label: 'Direct relationship with the Mobile.dev / Maestro team',
+    },
+    {
+      label:
+        'Solo operator — the person writing your YAML is the person answering your DM',
+    },
+  ];
+
+  return (
+    <section className="mx-auto max-w-7xl px-4 sm:px-6 py-16">
+      <div className="text-center mb-12">
+        <Badge variant="blue" size="sm">
+          Who you&apos;re hiring
+        </Badge>
+        <Text as="h2" variant="h2" className="mt-4">
+          Hi, I&apos;m David
+        </Text>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-center">
+        <div className="lg:col-span-2">
+          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl ring-1 ring-slate-200 dark:ring-slate-800">
+            <Image
+              src="/images/david-with-maestro-team.jpg"
+              alt="David Leuliette with Jacob Krupski and the Maestro team"
+              fill
+              sizes="(min-width: 1024px) 40vw, 100vw"
+              className="object-cover"
+              priority={false}
+            />
+          </div>
+          <p className="mt-3 text-sm text-gray-500 dark:text-gray-400 text-center">
+            With Jacob Krupski (right) and the team behind Maestro.
+          </p>
+        </div>
+
+        <div className="lg:col-span-3">
+          <div className="space-y-4 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+            <p>
+              I&apos;ve been shipping React Native apps since 2016 — through
+              every breaking-change cycle, every Expo SDK, every New
+              Architecture migration. I&apos;m a{' '}
+              <Hyperlink href="https://x.com/flexbox_/status/1801588179687936329">
+                top 20 contributor on Stack Overflow
+              </Hyperlink>{' '}
+              for React Native questions.
+            </p>
+            <p>
+              I picked Maestro early because it solves the right problem for
+              mobile end-to-end: write a test in YAML, run it on iOS and
+              Android, sleep at night. I&apos;ve spent time directly with{' '}
+              <Hyperlink href="https://x.com/jacobkrupski">
+                Jacob Krupski
+              </Hyperlink>{' '}
+              and the Mobile.dev team — so when you hit a weird edge case,
+              you&apos;re not the first person hearing about it.
+            </p>
+            <p>
+              This page is a solo engagement at a flat fee. That means
+              you&apos;re hiring me — not an agency, not a junior contractor.
+              The same person who wrote your YAML is the one answering your DM
+              when a flow goes red.
+            </p>
+          </div>
+
+          <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {credentials.map((c) => (
+              <li
+                key={c.label}
+                className="flex gap-3 items-start text-gray-700 dark:text-gray-300"
+              >
+                <CheckCircleIcon className="h-5 w-5 shrink-0 mt-1 text-blue-600 dark:text-blue-400" />
+                <span>{c.label}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 const faqs: FaqProps[] = [
   {
     id: 'rnt-faq-flat-fee',
@@ -520,6 +612,7 @@ export default function ReactNativeTesting() {
         <Timeline />
         <WhoItsFor />
         <SocialProof />
+        <WhoAmI />
         <Faqs />
         <FinalCta />
       </main>
