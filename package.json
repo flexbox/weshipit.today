@@ -80,7 +80,6 @@
     "@babel/core": "^7.26.9",
     "@babel/preset-react": "^7.26.3",
     "@babel/preset-typescript": "7.26.0",
-    "@nrwl/cli": "15.9.3",
     "@nx/cypress": "22.7.5",
     "@nx/eslint": "22.7.5",
     "@nx/eslint-plugin": "22.7.5",
