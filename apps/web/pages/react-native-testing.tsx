@@ -1,4 +1,12 @@
-import { Button, Card, Hero, Hyperlink, Prose, Text } from '@weshipit/ui';
+import {
+  BookDiscoveryCta,
+  Button,
+  Card,
+  Hero,
+  Hyperlink,
+  Prose,
+  Text,
+} from '@weshipit/ui';
 import { Layout } from '../components/layout';
 import { linksApi } from './api/links';
 
@@ -179,28 +187,13 @@ export default function ReactNativeTesting() {
         </Card>
       </Prose>
 
-      <Prose className="mx-auto mt-12 max-w-3xl mb-24">
-        <Card>
-          <Text as="h2" variant="h3" style={{ marginTop: 0 }}>
-            Ready to ship with confidence?
-          </Text>
-          <Text as="p">
-            Book a 30-minute call. We&apos;ll look at your app, scope the 5
-            flows, and confirm the timeline. If it&apos;s not the right fit,
-            we&apos;ll say so.
-          </Text>
-          <div className="mt-8 flex justify-center">
-            <Button
-              href={linksApi.cal.ONBOARDING}
-              as="a"
-              isExternalLink={true}
-              size="xl"
-            >
-              Book a call
-            </Button>
-          </div>
-        </Card>
-      </Prose>
+      <div className="mx-auto mt-12 max-w-3xl mb-24 px-4">
+        <BookDiscoveryCta
+          ctaLink={linksApi.cal.ONBOARDING}
+          title="Ready to ship with confidence?"
+          description="Book a 30-minute call. We’ll look at your app, scope the 5 flows, and confirm the timeline. If it’s not the right fit, we’ll say so."
+        />
+      </div>
     </Layout>
   );
 }
