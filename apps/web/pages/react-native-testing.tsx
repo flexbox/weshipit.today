@@ -422,13 +422,7 @@ function SocialProof() {
 function WhoAmI() {
   const credentials = [
     {
-      label: 'Top 20 React Native contributor on Stack Overflow',
-    },
-    {
       label: 'Shipping production React Native apps since 2016',
-    },
-    {
-      label: 'Direct relationship with the Mobile.dev / Maestro team',
     },
     {
       label:
@@ -452,7 +446,7 @@ function WhoAmI() {
           <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl ring-1 ring-slate-200 dark:ring-slate-800">
             <Image
               src="/images/david-with-maestro-team.jpg"
-              alt="David Leuliette with Jacob Krupski and the Maestro team"
+              alt="David Leuliette with Jacob Krupski and Mazen Chami"
               fill
               sizes="(min-width: 1024px) 40vw, 100vw"
               className="object-cover"
@@ -460,7 +454,8 @@ function WhoAmI() {
             />
           </div>
           <p className="mt-3 text-sm text-gray-500 dark:text-gray-400 text-center">
-            With Jacob Krupski (right) and the team behind Maestro.
+            With Jacob Krupski (right) behind Maestro and Mazen Chami (left)
+            from Infinite Red.
           </p>
         </div>
 
