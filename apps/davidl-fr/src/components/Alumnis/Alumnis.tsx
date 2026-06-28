@@ -53,7 +53,9 @@ export function Alumnis() {
     return <SkeletonAlumnis />;
   }
 
+  // @ts-ignore
   const alumnisLastFive = data.bootcampOnboarding.slice(55, 60);
+  // @ts-ignore
   const alumnisNumber = data.bootcampOnboarding.length;
 
   return (
