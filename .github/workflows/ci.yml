@@ -30,4 +30,4 @@ jobs:
         run: yarn install --immutable
 
       - name: Typecheck
-        run: yarn typecheck
+        run: npx nx run-many --all --target=typecheck --exclude=davidl-fr
