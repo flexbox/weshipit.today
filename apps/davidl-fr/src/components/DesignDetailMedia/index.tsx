@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import VisibilitySensor from 'react-visibility-sensor';
+import React from 'react';
+import { useInView } from 'react-intersection-observer';
 import { DesignDetail } from '~/types/design';
 import Markdown from '~/components/MarkdownRenderer';
 import { DetailContainer, MediaContainer, Video } from './style';
@@ -10,35 +10,30 @@ type Props = {
 
 export default function DesignDetailMedia(props: Props) {
   const { detail } = props;
-  const [isVisible, setIsVisible] = useState(false);
+  const { ref, inView } = useInView({ triggerOnce: true });
 
   return (
-    <VisibilitySensor
-      partialVisibility
-      onChange={(visible: boolean) => !isVisible && setIsVisible(visible)}
-    >
-      <DetailContainer data-cy="detail-media-container">
-        <h3>{detail.title}</h3>
-        <Markdown>{detail.description}</Markdown>
+    <DetailContainer ref={ref} data-cy="detail-media-container">
+      <h3>{detail.title}</h3>
+      <Markdown>{detail.description}</Markdown>
 
-        {isVisible && (
-          <MediaContainer>
-            {detail.media.map((src) => (
-              <Video
-                playsInline
-                muted
-                loop
-                autoPlay
-                preload="metadata"
-                key={src}
-                landscape={detail.orientation === 'landscape'}
-              >
-                <source src={`${src}#t=0.1`} />
-              </Video>
-            ))}
-          </MediaContainer>
-        )}
-      </DetailContainer>
-    </VisibilitySensor>
+      {inView && (
+        <MediaContainer>
+          {detail.media.map((src) => (
+            <Video
+              playsInline
+              muted
+              loop
+              autoPlay
+              preload="metadata"
+              key={src}
+              landscape={detail.orientation === 'landscape'}
+            >
+              <source src={`${src}#t=0.1`} />
+            </Video>
+          ))}
+        </MediaContainer>
+      )}
+    </DetailContainer>
   );
 }

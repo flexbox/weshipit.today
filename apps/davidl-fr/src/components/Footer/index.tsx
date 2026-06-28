@@ -22,7 +22,8 @@ export default function Footer({
           <H3>{title}</H3>
           <LargeSubheading style={{ maxWidth: '100%' }}>{text}</LargeSubheading>
           <Subheading style={{ maxWidth: '100%' }}>
-            <Link href="/onboarding" passHref legacyBehavior>
+            <Link href="/onboarding">
+              {/* @next-codemod-error This Link previously used the now removed `legacyBehavior` prop, and has a child that might not be an anchor. The codemod bailed out of lifting the child props to the Link. Check that the child component does not render an anchor, and potentially move the props manually to Link. */}
               <Button
                 size="large"
                 style={{

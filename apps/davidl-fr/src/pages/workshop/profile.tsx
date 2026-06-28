@@ -35,8 +35,8 @@ const LearningPathWithUser = ({ email }: { email: string }) => {
         <p className="my-4">
           You need to complete your first challenge and fill the form.
         </p>
-
-        <Link href="/workshop/challenges/foundation-01" passHref legacyBehavior>
+        <Link href="/workshop/challenges/foundation-01">
+          {/* @next-codemod-error This Link previously used the now removed `legacyBehavior` prop, and has a child that might not be an anchor. The codemod bailed out of lifting the child props to the Link. Check that the child component does not render an anchor, and potentially move the props manually to Link. */}
           <PrimaryButton size="default">
             Go to the first exercice <Rarr />
           </PrimaryButton>

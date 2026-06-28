@@ -40,7 +40,8 @@ export default function ContactPage() {
             plan for you or your business, request a 30-minute call and we’ll do
             amazing things together.
           </P>
-          <Link href="/coaching" passHref legacyBehavior>
+          <Link href="/coaching">
+            {/* @next-codemod-error This Link previously used the now removed `legacyBehavior` prop, and has a child that might not be an anchor. The codemod bailed out of lifting the child props to the Link. Check that the child component does not render an anchor, and potentially move the props manually to Link. */}
             <PrimaryButton size="large" style={{ marginTop: 24 }}>
               Book a coaching session
             </PrimaryButton>
