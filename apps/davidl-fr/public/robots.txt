@@ -1,0 +1,11 @@
+# *
+User-agent: *
+Allow: /
+
+Disallow: /workshop
+
+# Host
+Host: https://davidl.fr
+
+# Sitemaps
+Sitemap: https://davidl.fr/sitemap.xml

@@ -1,0 +1,69 @@
+{
+  "name": "davidl-fr",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/davidl-fr",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/next:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/davidl-fr"
+      },
+      "configurations": {
+        "development": {
+          "outputPath": "apps/davidl-fr"
+        },
+        "production": {}
+      }
+    },
+    "postbuild": {
+      "executor": "nx:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "next-sitemap --config apps/davidl-fr/next-sitemap.config.js"
+          }
+        ]
+      }
+    },
+    "serve": {
+      "executor": "@nx/next:server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "davidl-fr:build",
+        "dev": true,
+        "port": 4400
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "davidl-fr:build:development",
+          "dev": true
+        },
+        "production": {
+          "buildTarget": "davidl-fr:build:production",
+          "dev": false
+        }
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/apps/davidl-fr"],
+      "options": {
+        "jestConfig": "apps/davidl-fr/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc --noEmit -p {projectRoot}/tsconfig.json"
+      }
+    }
+  }
+}

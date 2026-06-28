@@ -1,0 +1,23 @@
+.contains-task-list {
+  padding: 12px 24px;
+  border-radius: 8px;
+  background-color: #e5e6eb;
+}
+
+@media (prefers-color-scheme: dark) {
+  .contains-task-list {
+    background-color: #191a1b;
+  }
+}
+
+.task-list-item {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.task-list-item [type='checkbox'] {
+  padding: 5px;
+  margin: 0 !important;
+  margin-right: 6px !important;
+}
