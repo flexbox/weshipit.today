@@ -7,7 +7,7 @@ import LookingFor from './mdx/lookingFor.mdx';
 import Hiring from './mdx/hiring.mdx';
 import ReduceRisk from './mdx/reduceRisk.mdx';
 import Story from './mdx/story.mdx';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import AvatarAvenger from '~/components/AvatarAvenger/AvatarAvenger';
 import Companies from '~/components/Companies/Companies';
 import { ProseContainer } from '~/components/Container/ProseContainer';

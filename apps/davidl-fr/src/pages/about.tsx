@@ -21,7 +21,7 @@ import { NativeLink } from '~/components/Link/NativeLink';
 import { ContributionImg } from '~/components/Page/style';
 import Link from 'next/link';
 import defaultTheme from '~/components/Theme';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import GlobalSeo from '~/components/SEO/GlobalSeo';
 import { ProseContainer } from '~/components/Container/ProseContainer';
 import { allShows } from '~/pages/api/shows';

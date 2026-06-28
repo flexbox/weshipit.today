@@ -4,6 +4,8 @@ import { Analytics } from '@vercel/analytics/react';
 import Providers from '~/components/Providers/Providers';
 import { Inter } from 'next/font/google';
 import lightTheme from '~/components/Theme/light';
+import darkTheme from '~/components/Theme/dark';
+import Head from 'next/head';
 import { UserProvider } from '~/lib/UserContext';
 
 import 'tailwindcss/tailwind.css';
@@ -72,14 +74,13 @@ export default function App({ Component, pageProps }: AppProps) {
             {
               rel: 'mask-icon',
               href: '/metadata/safari-pinned-tab.svg',
-              color: lightTheme.text.primary,
+              color: lightTheme.bg.accent,
             },
           ]}
           additionalMetaTags={[
-            { name: 'theme-color', content: lightTheme.accent.blue },
             {
               name: 'msapplication-TileColor',
-              content: lightTheme.accent.blue,
+              content: lightTheme.bg.accent,
             },
             {
               name: 'msapplication-TileImage',
@@ -95,6 +96,18 @@ export default function App({ Component, pageProps }: AppProps) {
             },
           ]}
         />
+        <Head>
+          <meta
+            name="theme-color"
+            media="(prefers-color-scheme: light)"
+            content={lightTheme.bg.accent}
+          />
+          <meta
+            name="theme-color"
+            media="(prefers-color-scheme: dark)"
+            content={darkTheme.bg.accent}
+          />
+        </Head>
         <div className={inter.className}>
           <Component {...pageProps} />
         </div>

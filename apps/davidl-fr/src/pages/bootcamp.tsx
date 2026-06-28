@@ -1,5 +1,5 @@
 import Avatar from '~/components/Avatar';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import React from 'react';
 import Page, { ContentContainer } from '~/components/Page';
 import { H1, Subheading } from '~/components/Typography';

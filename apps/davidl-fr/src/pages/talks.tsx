@@ -40,7 +40,7 @@ export default function TalksPage({ source }: MDXProps): ReactElement {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   // MDX text - can be from a local file, database, anywhere
   const rawContent = await fetch(
     'https://raw.githubusercontent.com/flexbox/talks/master/README.md',
@@ -48,5 +48,5 @@ export async function getServerSideProps() {
   const mdxContent = await rawContent.text();
   const mdxSource = await serialize(mdxContent);
 
-  return { props: { source: mdxSource } };
+  return { props: { source: mdxSource }, revalidate: 3600 };
 }
