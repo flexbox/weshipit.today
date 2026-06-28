@@ -91,30 +91,30 @@ export const Button = styled.button`
 
 export const PrimaryButton = styled.button`
   ${base}
-  border: 1px solid ${(props) => props.theme.accent.blue};
+  border: 1px solid ${(props) => props.theme.bg.accent};
   color: ${(props) => props.theme.bg.secondary};
-  background-color: ${(props) => props.theme.accent.blue};
+  background-color: ${(props) => props.theme.bg.accent};
   background-image: ${(props) =>
-    `linear-gradient(to bottom, ${props.theme.accent.blue}, ${props.theme.accent.blue})`};
+    `linear-gradient(to bottom, ${props.theme.bg.accent}, ${props.theme.bg.accent})`};
 
   &:hover {
     color: ${(props) => props.theme.text.onPrimary};
     background-image: ${(props) =>
-      `linear-gradient(to bottom, ${tint(props.theme.accent.blue, 16)}, ${tint(props.theme.accent.blue, 16)})`};
+      `linear-gradient(to bottom, ${tint(props.theme.bg.accent, 16)}, ${tint(props.theme.bg.accent, 16)})`};
     box-shadow: ${(props) =>
       props.disabled ? 'none' : props.theme.shadows.button};
   }
 
   &:active {
-    border: 1px solid ${(props) => props.theme.accent.blue};
+    border: 1px solid ${(props) => props.theme.bg.accent};
     background-image: ${(props) =>
-      `linear-gradient(to top, ${props.theme.accent.blue}, ${props.theme.accent.blue})`};
+      `linear-gradient(to top, ${props.theme.bg.accent}, ${props.theme.bg.accent})`};
   }
 
   &:focus {
     box-shadow:
       0 0 0 1px ${(props) => props.theme.bg.secondary},
-      0 0 0 3px ${(props) => hexa(props.theme.accent.blue, 0.16)};
+      0 0 0 3px ${(props) => hexa(props.theme.bg.accent, 0.16)};
   }
 `;
 
@@ -210,7 +210,7 @@ export const ButtonSegmentRow = styled.div`
     &:focus {
       box-shadow:
         0 0 0 1px ${(props) => props.theme.bg.primary},
-        0 0 0 3px ${(props) => hexa(props.theme.accent.blue, 0.16)};
+        0 0 0 3px ${(props) => hexa(props.theme.bg.accent, 0.16)};
     }
   }
 `;
