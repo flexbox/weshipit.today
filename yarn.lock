@@ -7274,15 +7274,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-helmet@npm:^6.1.11":
-  version: 6.1.11
-  resolution: "@types/react-helmet@npm:6.1.11"
-  dependencies:
-    "@types/react": "npm:*"
-  checksum: 10/e329d8ad82c365fec7dd7d91c8b6d167faac30cef0d9f1e27d7e895172a0ebfa65829fb4acabbe79283b01cbbe5840a845caeb50148ceef6f3fad42b3c2c4bdc
-  languageName: node
-  linkType: hard
-
 "@types/react@npm:*":
   version: 19.2.17
   resolution: "@types/react@npm:19.2.17"
@@ -10997,7 +10988,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"debug@npm:2.6.9, debug@npm:^2.1.3":
+"debug@npm:2.6.9":
   version: 2.6.9
   resolution: "debug@npm:2.6.9"
   dependencies:
@@ -16844,15 +16835,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jsonp@npm:^0.2.1":
-  version: 0.2.1
-  resolution: "jsonp@npm:0.2.1"
-  dependencies:
-    debug: "npm:^2.1.3"
-  checksum: 10/90aabd9deb3a9ba83aedf8d40e1aaff1fc29f3f3fe42985a661782498dde526a7cd9b7bec4b8721f7d0beafab9e5ccfdafd46640f7dd6c58d529a6bb5238e2b8
-  languageName: node
-  linkType: hard
-
 "jsprim@npm:^2.0.2":
   version: 2.0.2
   resolution: "jsprim@npm:2.0.2"
@@ -20836,7 +20818,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.5.10, prop-types@npm:^15.6.0, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
+"prop-types@npm:^15.6.0, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:
@@ -21040,13 +21022,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-fast-compare@npm:^3.1.1":
-  version: 3.2.2
-  resolution: "react-fast-compare@npm:3.2.2"
-  checksum: 10/a6826180ba75cefba1c8d3ac539735f9b627ca05d3d307fe155487f5d0228d376dac6c9708d04a283a7b9f9aee599b637446635b79c8c8753d0b4eece56c125c
-  languageName: node
-  linkType: hard
-
 "react-gravatar@npm:^2.6.3":
   version: 2.6.3
   resolution: "react-gravatar@npm:2.6.3"
@@ -21057,20 +21032,6 @@ __metadata:
   peerDependencies:
     react: "*"
   checksum: 10/5286241f96f700919165381f49dc105419cbcde5740734c5713212f8af850ad64e75f5c43b8c98e60e5bce0ea235417ff66b5c225e8ee7bab6e754422678675e
-  languageName: node
-  linkType: hard
-
-"react-helmet@npm:^6.1.0":
-  version: 6.1.0
-  resolution: "react-helmet@npm:6.1.0"
-  dependencies:
-    object-assign: "npm:^4.1.1"
-    prop-types: "npm:^15.7.2"
-    react-fast-compare: "npm:^3.1.1"
-    react-side-effect: "npm:^2.1.0"
-  peerDependencies:
-    react: ">=16.3.0"
-  checksum: 10/eff25231384bb0a229870a0552839953a59af17f0ff5e8bca1b8c8fdf19a329e4c00c7fa2fcedc8be5d73f5c7bebb30cf9a32ea58efc7c8f726a10dba51f48a2
   languageName: node
   linkType: hard
 
@@ -21118,19 +21079,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-mailchimp-subscribe@npm:^2.1.3":
-  version: 2.1.3
-  resolution: "react-mailchimp-subscribe@npm:2.1.3"
-  dependencies:
-    jsonp: "npm:^0.2.1"
-    prop-types: "npm:^15.5.10"
-    to-querystring: "npm:^1.0.4"
-  peerDependencies:
-    react: ">=15"
-  checksum: 10/cc128e1a73954e5cb32c792621d1aa6d8d11edd38569ce0394e90ceca34c7a619483a788c82d0dc7961216b05b3d9cccbf73a909a078dc1fc0f12cf36aefbf87
-  languageName: node
-  linkType: hard
-
 "react-markdown@npm:^10.0.0":
   version: 10.0.1
   resolution: "react-markdown@npm:10.0.1"
@@ -21157,15 +21105,6 @@ __metadata:
   version: 0.14.2
   resolution: "react-refresh@npm:0.14.2"
   checksum: 10/512abf97271ab8623486061be04b608c39d932e3709f9af1720b41573415fa4993d0009fa5138b6705b60a98f4102f744d4e26c952b14f41a0e455521c6be4cc
-  languageName: node
-  linkType: hard
-
-"react-side-effect@npm:^2.1.0":
-  version: 2.1.2
-  resolution: "react-side-effect@npm:2.1.2"
-  peerDependencies:
-    react: ^16.3.0 || ^17.0.0 || ^18.0.0
-  checksum: 10/8c31aaec5b383d942ff1775b12c45022239d1250d1a00a238bac3c07e0fe266c71991e2814ae16a5d9b855bcd96ba95817d48ab3f34738f0bb32036ebb1abb1a
   languageName: node
   linkType: hard
 
@@ -23936,13 +23875,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"to-querystring@npm:^1.0.4":
-  version: 1.2.0
-  resolution: "to-querystring@npm:1.2.0"
-  checksum: 10/23de905b88c4e8e3f4fc9bd1bd5a0f44a8de487d55d15651fb5988f52d67d171e726096ddc181327d761ebc4c0d7e414026a28e0890fec976ddd5797befc0ddc
-  languageName: node
-  linkType: hard
-
 "to-regex-range@npm:^5.0.1":
   version: 5.0.1
   resolution: "to-regex-range@npm:5.0.1"
@@ -25471,7 +25403,6 @@ __metadata:
     "@types/react": "npm:19.0.10"
     "@types/react-dom": "npm:19.0.4"
     "@types/react-gravatar": "npm:^2.6.14"
-    "@types/react-helmet": "npm:^6.1.11"
     "@types/styled-components": "npm:^5.1.34"
     "@typescript-eslint/eslint-plugin": "npm:8.46.2"
     "@typescript-eslint/parser": "npm:8.46.2"
@@ -25533,10 +25464,8 @@ __metadata:
     react: "npm:19.0.0"
     react-dom: "npm:19.0.0"
     react-gravatar: "npm:^2.6.3"
-    react-helmet: "npm:^6.1.0"
     react-intersection-observer: "npm:^9.16.0"
     react-lite-youtube-embed: "npm:^2.4.0"
-    react-mailchimp-subscribe: "npm:^2.1.3"
     react-markdown: "npm:^10.0.0"
     react-typed: "npm:^1.2.0"
     regenerator-runtime: "npm:0.14.1"

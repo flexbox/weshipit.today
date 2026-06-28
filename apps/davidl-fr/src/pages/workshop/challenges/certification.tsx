@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Layout from '~/components/Workshop/Layout';
 import React from 'react';
 import { NativeLink } from '~/components/Link/NativeLink';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import { random } from 'lodash';
 import { ProseContainer } from '~/components/Container/ProseContainer';
 
@@ -34,7 +34,7 @@ export default function CertificationPage() {
           className="bg-slate-200"
           width={480}
           height={200}
-          layout="responsive"
+          style={{ width: '100%', height: 'auto' }}
         />
         <p>
           🎉 Congratulations, you finished this bootcamp. Let the world know
@@ -63,7 +63,7 @@ export default function CertificationPage() {
             className="bg-slate-200"
             width={740}
             height={698}
-            layout="responsive"
+            style={{ width: '100%', height: 'auto' }}
           />
           <li>
             Add Certification URL: <pre>{urlToCertification}</pre>
@@ -77,7 +77,7 @@ export default function CertificationPage() {
           className="bg-slate-200"
           width={815}
           height={363}
-          layout="responsive"
+          style={{ width: '100%', height: 'auto' }}
         />
 
         <h2>Next step</h2>

@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import Typed from 'react-typed';
+import dynamic from 'next/dynamic';
 
 import { H1, Rarr, Subheading, LargeSubheading } from '~/components/Typography';
 import { PrimaryButton } from '~/components/Button';
@@ -8,14 +8,7 @@ import Avatar from '~/components/Avatar';
 
 import { AnimatedText, AvatarGrid, HeroGrid } from './style';
 
-const pitch = [
-  'I build mobile applications for iOS',
-  'I build mobile applications for Android',
-  'I craft scalable and clean design systems',
-  'You should hire me for your next success',
-  'I can turn your casual visitors into customers…',
-  '… then ambassadors of your product',
-];
+const Typewriter = dynamic(() => import('./Typewriter'), { ssr: false });
 
 export default function Hero() {
   return (
@@ -28,13 +21,7 @@ export default function Hero() {
           <LargeSubheading>Hi, I’m David</LargeSubheading>
           <AnimatedText>
             <H1 style={{ textTransform: 'none' }}>
-              <Typed
-                strings={pitch}
-                typeSpeed={40}
-                loop={true}
-                smartBackspace={true}
-                backDelay={1000}
-              />
+              <Typewriter />
             </H1>
           </AnimatedText>
           <LargeSubheading>

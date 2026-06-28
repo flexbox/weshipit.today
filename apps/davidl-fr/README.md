@@ -10,15 +10,9 @@
 
 ```console
 cp .env.local.example .env.local
-# fill in the values, then:
+# fill in the values, then from the monorepo root:
 yarn
-yarn dev
-```
-
-If you have access to the Vercel project, you can pull the env vars instead:
-
-```console
-vercel env pull
+yarn davidl-fr:start
 ```
 
 ## Environment variables
@@ -34,7 +28,7 @@ See [`.env.local.example`](./.env.local.example) for the full list. Required to 
 
 If you encounter the following error:
 
-`error This project's package.json defines "packageManager": "yarn@4.1.0". However the current global version of Yarn is 1.22.22.`
+`error This project's package.json defines "packageManager": "yarn@4.17.0". However the current global version of Yarn is 1.22.22.`
 
 To resolve this issue, you need to change to Node.js version 22. You can use a version manager like `nvm` to switch to the required Node.js version.
 
@@ -45,11 +39,3 @@ To resolve this issue, you need to change to Node.js version 22. You can use a v
 1. Search "app store `slug`" on Google for the icon
 1. Open [vimeo](https://vimeo.com/manage/videos)
 1. Select a video > Distribution > Links
-
-## `/courses`
-
-Presentations are using remark, here is [the markdown documentation](https://github.com/gnab/remark/wiki/Markdown)
-
-```console
-yarn slide
-```

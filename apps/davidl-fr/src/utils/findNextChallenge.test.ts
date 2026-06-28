@@ -23,11 +23,11 @@ describe('findNextChallenge', () => {
   it('gives the name of the exercice for `ecosystem-05`', () => {
     const source = '/workshop/challenges/ecosystem-05';
     const result = findNextChallenge(source);
-    expect(result).toBe('/workshop/challenges/react-navigation-01');
+    expect(result).toBe('/workshop/challenges/ecosystem-06');
   });
 
-  it('gives the name of the exercice for `react-navigation-04`', () => {
-    const source = '/workshop/challenges/react-navigation-04';
+  it('gives the name of the exercice for `expo-router-05`', () => {
+    const source = '/workshop/challenges/expo-router-05';
     const result = findNextChallenge(source);
     expect(result).toBe('/workshop/challenges/release-01');
   });
