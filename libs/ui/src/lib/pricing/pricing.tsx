@@ -620,46 +620,6 @@ export function PlanFinderSection({ ctaLink }: { ctaLink: string }) {
         )}
 
         <BookDiscoveryCta ctaLink={ctaLink} className="mt-16" />
-
-        {/* Upgrade Paths */}
-        <div className="mt-20">
-          <div className="text-center mb-10">
-            <Text as="h3" variant="h4" className="mb-3 text-foreground">
-              Common upgrade paths
-            </Text>
-            <p className="text-muted-foreground">
-              See how companies typically grow with us over time
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {upgradePaths.map((item, index) => (
-              <Card
-                key={index}
-                className="group hover:border-primary/30 transition-all hover:shadow-lg"
-              >
-                <div className="text-3xl mb-4">{item.icon}</div>
-                <h4 className="text-lg font-semibold text-foreground mb-3">
-                  {item.title}
-                </h4>
-                <div className="flex items-center gap-2 flex-wrap mb-4">
-                  {item.path.map((step, stepIndex) => (
-                    <span key={stepIndex} className="flex items-center gap-2">
-                      <Badge variant="gray-lighter" size="md">
-                        {step}
-                      </Badge>
-                      {stepIndex < item.path.length - 1 && (
-                        <ArrowRightIcon className="w-4 h-4 text-muted-foreground" />
-                      )}
-                    </span>
-                  ))}
-                </div>
-                <p className="text-sm text-muted-foreground">
-                  {item.description}
-                </p>
-              </Card>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );
