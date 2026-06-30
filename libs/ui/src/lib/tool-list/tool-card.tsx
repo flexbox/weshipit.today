@@ -30,7 +30,7 @@ export function ToolCard({
     <Card variant="link">
       <Link
         href={{
-          pathname: '/react-native-tools/[slug]',
+          pathname: '/resources/react-native-tools/[slug]',
           query: { id, slug },
         }}
       >

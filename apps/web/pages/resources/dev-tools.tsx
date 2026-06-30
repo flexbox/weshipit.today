@@ -164,7 +164,9 @@ export default function DevToolsPage({
     const next =
       activeFeature.toLowerCase() === feature.toLowerCase() ? '' : feature;
     router.push(
-      next ? `/devtools?feature=${encodeURIComponent(next)}` : '/devtools',
+      next
+        ? `/resources/dev-tools?feature=${encodeURIComponent(next)}`
+        : '/resources/dev-tools',
     );
   }
 
@@ -218,7 +220,7 @@ export default function DevToolsPage({
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="my-6 flex flex-wrap gap-2">
           <Button
-            onClick={() => router.push('/devtools')}
+            onClick={() => router.push('/resources/dev-tools')}
             variant={!activeFeature ? 'primary' : 'outline'}
             size="md"
           >

@@ -10,7 +10,6 @@ export default function TermsPage() {
     <Layout
       withHeader
       withFooter
-      noindex
       seoTitle="Terms of Service — weshipit.today"
       seoDescription="Terms of Service for weshipit.today."
       ogImageAlt="weshipit.today — Terms"
