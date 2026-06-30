@@ -26,4 +26,8 @@ export const linksApi = {
     CLIENT_CRM_FORM:
       'https://flexbox.notion.site/2fbf478bcb8c8033859bf78cf7646db9?pvs=105',
   },
+  affiliate: {
+    INCUBATEUR_SOLOPRENEUR:
+      'https://leboard.systeme.io/vente-incubateur-vsl?sa=sa0008533529f4b7755bbd60631b2e3bc0e25f648148',
+  },
 };
