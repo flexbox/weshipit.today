@@ -166,9 +166,9 @@ function CestQuoiSection() {
     },
     {
       icon: SparklesIcon,
-      title: 'Un Sprint par mois',
+      title: 'Un Sprint par mois — tech + business',
       description:
-        'Un thème par mois (IA, sponsoring, podcast, offre productisée, automation…) avec cadre, deadlines et livrables.',
+        'IA/Claude, CustomGPTs, automation, SaaS solo côté tech ; sponsoring, offre productisée, podcast, newsletter côté business. Cadre, deadlines, livrables — pas de théorie.',
     },
     {
       icon: RocketLaunchIcon,

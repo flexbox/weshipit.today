@@ -9,6 +9,7 @@ import {
   MicrophoneIcon,
   NewspaperIcon,
   RocketLaunchIcon,
+  ScaleIcon,
   ShieldCheckIcon,
   SparklesIcon,
   UserCircleIcon,
@@ -465,6 +466,16 @@ function PourAllerPlusLoinSection() {
         label: 'Voir le code réduction Solopreneur',
       },
     },
+    {
+      icon: ScaleIcon,
+      title: 'Comparer avec Marketing Mania',
+      description:
+        'Comparaison indépendante entre l’Incubateur Solopreneur de Flavie et le Bootcamp Marketing Mania de Stan Leloup. Recommandation par cas d’usage — utile si tu hésites.',
+      cta: {
+        href: '/incubateur-solopreneur-vs-marketing-mania',
+        label: 'Lire le comparatif',
+      },
+    },
   ];
 
   return (
@@ -475,11 +486,11 @@ function PourAllerPlusLoinSection() {
             Pour aller plus loin
           </Text>
           <p className="mx-auto max-w-2xl text-neutral-500 dark:text-neutral-400">
-            Trois chemins possibles selon où tu en es dans ta réflexion.
+            Quatre chemins possibles selon où tu en es dans ta réflexion.
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {routes.map((r) => (
             <div
               key={r.title}

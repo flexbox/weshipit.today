@@ -1,7 +1,7 @@
 # Incubateur Solopreneur — keyword cluster map
 
 > Author: David Leuliette
-> Last updated: 2026-07-01
+> Last updated: 2026-07-01 (2nd rev)
 > Owner: organic growth — weshipit.today
 > Goal: rank for the Incubateur Solopreneur commercial cluster (FR), funnel traffic to `/code-reduction-solopreneur` (affiliate conversion page).
 
@@ -22,7 +22,7 @@ Hub-and-spoke architecture. The transactional spoke (`/code-reduction-solopreneu
 │   /code-    │  │   /avis-   │  │ /flavie-      │ │ /…vs-      │ │ /temoignages-   │
 │  reduction- │◀─│ incubateur-│  │ prevot-avis   │ │ marketing- │ │ incubateur-     │
 │ solopreneur │  │ solopreneur│  │               │ │ mania      │ │ solopreneur     │
-│  (BUILT)    │  │  (BUILT)   │  │   (BUILT)     │ │  (future)  │ │   (future)      │
+│  (BUILT)    │  │  (BUILT)   │  │   (BUILT)     │ │  (BUILT)   │ │   (future)      │
 └─────────────┘  └────────────┘  └───────────────┘ └────────────┘ └─────────────────┘
    Transactional   Commercial-Inv     Brand-nav       Comparison         UGC / proof
 ```
@@ -30,9 +30,9 @@ Hub-and-spoke architecture. The transactional spoke (`/code-reduction-solopreneu
 - **Pillar** (`/incubateur-solopreneur`, _future, optional_) — broad informational. Build last, only after spokes prove demand.
 - **Spoke 1** `/code-reduction-solopreneur` _(built)_ — Transactional intent.
 - **Spoke 2** `/avis-incubateur-solopreneur` _(built)_ — Commercial investigation.
-- **Spoke 3** `/flavie-prevot-avis` _(built — this iteration)_ — Brand-name / navigational.
-- **Spoke 4** `/incubateur-solopreneur-vs-marketing-mania` _(next)_ — Comparison.
-- **Spoke 5** `/temoignages-incubateur-solopreneur` _(later)_ — Aggregated UGC / proof.
+- **Spoke 3** `/flavie-prevot-avis` _(built)_ — Brand-name / navigational.
+- **Spoke 4** `/incubateur-solopreneur-vs-marketing-mania` _(built — this iteration)_ — Comparison.
+- **Spoke 5** `/temoignages-incubateur-solopreneur` _(next)_ — Aggregated UGC / proof.
 
 ---
 
@@ -53,7 +53,7 @@ Volume and difficulty are estimates (use Ahrefs/Semrush to confirm before publis
 | Long-tail | incubateur solopreneur prix réduit 2026 | Transactional            | 10–30     | Low        |
 | Long-tail | flavie prevot code promo                | Transactional            | 10–30     | Low        |
 
-### `/avis-incubateur-solopreneur` _(built — this iteration)_
+### `/avis-incubateur-solopreneur` _(built)_
 
 | Type      | Keyword                                       | Intent         | Est. vol. | Difficulty |
 | --------- | --------------------------------------------- | -------------- | --------- | ---------- |
@@ -67,7 +67,7 @@ Volume and difficulty are estimates (use Ahrefs/Semrush to confirm before publis
 | Long-tail | est-ce que l’incubateur solopreneur ça marche | Commercial-Inv | 10–30     | Low        |
 | Long-tail | combien coûte incubateur solopreneur          | Commercial-Inv | 30–80     | Low        |
 
-### `/flavie-prevot-avis` _(built — this iteration)_
+### `/flavie-prevot-avis` _(built)_
 
 | Type      | Keyword                       | Intent             | Est. vol. | Difficulty |
 | --------- | ----------------------------- | ------------------ | --------- | ---------- |
@@ -79,7 +79,7 @@ Volume and difficulty are estimates (use Ahrefs/Semrush to confirm before publis
 | Long-tail | flavie prevot linkedin        | Navigational-Brand | 50–100    | Low        |
 | Long-tail | flavie prevot newsletter avis | Navigational-Brand | 10–30     | Low        |
 
-### `/incubateur-solopreneur-vs-marketing-mania` _(next)_
+### `/incubateur-solopreneur-vs-marketing-mania` _(built — this iteration)_
 
 | Type      | Keyword                                            | Intent         | Est. vol. | Difficulty |
 | --------- | -------------------------------------------------- | -------------- | --------- | ---------- |
@@ -89,7 +89,7 @@ Volume and difficulty are estimates (use Ahrefs/Semrush to confirm before publis
 | Long-tail | quelle formation solopreneur choisir               | Commercial-Inv | 100–200   | Med        |
 | Long-tail | meilleure formation solopreneur france             | Commercial-Inv | 50–100    | Med        |
 
-### `/temoignages-incubateur-solopreneur` _(later)_
+### `/temoignages-incubateur-solopreneur` _(next)_
 
 | Type      | Keyword                            | Intent         | Est. vol. | Difficulty |
 | --------- | ---------------------------------- | -------------- | --------- | ---------- |
@@ -144,9 +144,9 @@ Anchor text suggestions (rewrite at write-time to avoid identical anchors across
 
 1. ✅ `/code-reduction-solopreneur` — _built (existing)_
 2. ✅ `/avis-incubateur-solopreneur` — _built_
-3. ✅ `/flavie-prevot-avis` — _built (this iteration)_
-4. ▶ `/incubateur-solopreneur-vs-marketing-mania` — captures comparison shoppers. Mid effort (requires honest comparison work).
-5. `/temoignages-incubateur-solopreneur` — UGC aggregator. Curate Trustpilot + LinkedIn snippets + Mighty Networks posts (with permission).
+3. ✅ `/flavie-prevot-avis` — _built_
+4. ✅ `/incubateur-solopreneur-vs-marketing-mania` — _built (this iteration)_
+5. ▶ `/temoignages-incubateur-solopreneur` — UGC aggregator. Curate Trustpilot + LinkedIn snippets + Mighty Networks posts (with permission).
 6. `/prix-incubateur-solopreneur` — only if `/code-reduction-solopreneur` doesn’t rank top-5 for `prix incubateur solopreneur` after 60 days.
 7. `/incubateur-solopreneur` (pillar hub) — build last, after spokes are indexed. Acts as the cluster’s consolidator.
 
@@ -184,4 +184,6 @@ flavie prevot parcours                            → /flavie-prevot-avis
 
 - **2026-06-30** — Cluster doc created. Built `/avis-incubateur-solopreneur` and added cross-link from `/code-reduction-solopreneur`. Next: `/flavie-prevot-avis`.
 - **2026-07-01** — Built `/flavie-prevot-avis` (Person + FAQPage + BreadcrumbList schema, biographical/navigational tone, soft CTA to `/avis-incubateur-solopreneur` and `/code-reduction-solopreneur`). Added inline links from both existing cluster pages to the new profile page (FAQ #5 answer in avis; disclosure paragraph in code-reduction). Next: `/incubateur-solopreneur-vs-marketing-mania`.
+- **2026-07-01** — Iterated `/code-reduction-solopreneur` after real user feedback ("ça dit pas le service proposé"): H1 now includes "Incubateur" (SEO + comprehension), subtitle explains the product in one sentence, new "C'est quoi l'Incubateur ?" section inserted between hero and comparatif for warm-share visitors. Saved lesson as feedback memory (`feedback-landing-pages-explain-product`).
+- **2026-07-01** — Built `/incubateur-solopreneur-vs-marketing-mania` (Article + FAQPage + BreadcrumbList schema, 11 sections including verdict TL;DR, side-by-side overview, criteria head-to-head, 6 persona-based recommendations, "peut-on faire les deux", final recommendation with disclosure). Fair to both products (recommends Marketing Mania where objectively better). Reciprocal links: link below alternatives table on `/avis-incubateur-solopreneur`; new 4th route on `/flavie-prevot-avis` (grid bumped to `md:grid-cols-2 lg:grid-cols-4`). Next: `/temoignages-incubateur-solopreneur`.
 - _(Append new decisions below as the cluster evolves.)_
