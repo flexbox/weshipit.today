@@ -101,15 +101,23 @@ function HeroSection() {
         </div>
 
         <Text variant="h1" as="h1" className="mb-6 text-balance">
-          Code réduction <span className="text-accent">Solopreneur</span>&nbsp;:
+          Code réduction{' '}
+          <span className="text-accent">Incubateur Solopreneur</span>&nbsp;:
           1&nbsp;490 € au lieu de 2&nbsp;400 €
         </Text>
 
         <p className="mx-auto mb-10 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-500 dark:text-neutral-400 md:text-xl">
-          Le tarif le plus bas disponible sur l&apos;Incubateur Solopreneur de
-          Flavie Prevot. 910 € d&apos;économie sur la première année, aucun code
-          à saisir, remise appliquée automatiquement via le lien d&apos;affilié
-          officiel.
+          L&apos;Incubateur Solopreneur, c&apos;est le programme annuel de{' '}
+          <a
+            href="/flavie-prevot-avis"
+            className="font-semibold text-neutral-950 underline-offset-2 hover:underline dark:text-neutral-100"
+          >
+            Flavie Prevot
+          </a>{' '}
+          pour construire des actifs (newsletter, podcast, offre, sponsoring,
+          SaaS solo) avec 300+ solopreneurs&nbsp;: un Sprint thématique chaque
+          mois, un live-atelier le vendredi, des experts invités. Ici, tu
+          obtiens le tarif affilié — 910 € d&apos;économie, sans code à saisir.
         </p>
 
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -142,6 +150,80 @@ function HeroSection() {
             <CheckIcon className="h-4 w-4 text-accent" />
             Paiement Systeme.io officiel
           </span>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function CestQuoiSection() {
+  const bullets = [
+    {
+      icon: UsersIcon,
+      title: 'Une communauté active',
+      description:
+        '300+ solopreneurs francophones (freelances, créateurs, SaaS solo, consultants), noyau très actif sur Mighty Networks.',
+    },
+    {
+      icon: SparklesIcon,
+      title: 'Un Sprint par mois',
+      description:
+        'Un thème par mois (IA, sponsoring, podcast, offre productisée, automation…) avec cadre, deadlines et livrables.',
+    },
+    {
+      icon: RocketLaunchIcon,
+      title: 'Un live-atelier chaque vendredi',
+      description:
+        'Format « on monte un meuble Ikea ensemble » : tu arrives avec ton projet, tu repars avec un livrable. Replays disponibles.',
+    },
+  ];
+
+  return (
+    <section className="border-t border-border py-16">
+      <div className="mx-auto max-w-4xl px-6">
+        <div className="rounded-2xl border border-border bg-card p-6 md:p-10">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary px-3 py-1 text-xs font-medium text-neutral-500 dark:text-neutral-400">
+            <SparklesIcon className="h-3.5 w-3.5" />
+            Tu découvres ? L&apos;essentiel en 3 points
+          </div>
+          <Text variant="h3" as="h2" className="mb-3">
+            C&apos;est quoi l&apos;Incubateur Solopreneur&nbsp;?
+          </Text>
+          <p className="mb-8 max-w-2xl text-pretty leading-relaxed text-neutral-500 dark:text-neutral-400">
+            Un programme d&apos;accompagnement de 12 mois pour solopreneurs déjà
+            en activité qui veulent construire des actifs (newsletter, podcast,
+            offre productisée, sponsoring, SaaS solo) avec un cercle de pairs
+            plutôt qu&apos;une formation vidéo passive. Prix public&nbsp;:
+            2&nbsp;400&nbsp;€ HT. Tarif affilié via cette page&nbsp;:
+            1&nbsp;490&nbsp;€ HT (le prix le plus bas verrouillé par Flavie).
+          </p>
+
+          <div className="grid gap-4 md:grid-cols-3">
+            {bullets.map((b) => (
+              <div
+                key={b.title}
+                className="rounded-xl border border-border bg-secondary/50 p-4"
+              >
+                <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-lg bg-card">
+                  <b.icon className="h-5 w-5 text-accent" />
+                </div>
+                <div className="mb-1 text-sm font-semibold text-neutral-950 dark:text-neutral-100">
+                  {b.title}
+                </div>
+                <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+                  {b.description}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <a
+            href="/avis-incubateur-solopreneur"
+            className="mt-8 inline-flex items-center gap-1 text-sm font-medium text-accent underline-offset-2 hover:underline"
+          >
+            Lire mon avis détaillé après 6 mois d&apos;incubation
+            <ArrowRightIcon className="h-3.5 w-3.5" />
+          </a>
         </div>
       </div>
     </section>
@@ -736,9 +818,9 @@ export default function CodeReductionSolopreneurPage() {
         />
       </Head>
       <Layout
-        seoTitle="Code Réduction Solopreneur 2026 : 1 490 € au lieu de 2 400 € (-910 €)"
-        seoDescription="Code réduction Incubateur Solopreneur de Flavie Prevot : 1 490 € HT au lieu de 2 400 €. Le tarif le plus bas du marché via le lien affilié officiel. 910 € d'économie sur 12 mois d'incubation."
-        ogImageTitle="Code Réduction Solopreneur : -910 €"
+        seoTitle="Code Réduction Incubateur Solopreneur 2026 : 1 490 € au lieu de 2 400 € (-910 €)"
+        seoDescription="Code réduction Incubateur Solopreneur de Flavie Prevot : 1 490 € HT au lieu de 2 400 €. Le tarif le plus bas du marché via le lien affilié officiel. 910 € d'économie sur 12 mois d'incubation avec 300+ solopreneurs, Sprints mensuels et lives-ateliers."
+        ogImageTitle="Code Réduction Incubateur Solopreneur"
         ogImageAlt="Code réduction Incubateur Solopreneur — 1 490 € HT au lieu de 2 400 €"
         locale="fr_FR"
         withHeader
@@ -750,6 +832,7 @@ export default function CodeReductionSolopreneurPage() {
         }}
       >
         <HeroSection />
+        <CestQuoiSection />
         <ComparatifSection />
         <CommentCaMarcheSection />
         <CeQuiEstInclusSection />
