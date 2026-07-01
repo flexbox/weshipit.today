@@ -10,5 +10,6 @@ export default {
 export const List = {
   args: {
     clients: clientsListFixture,
+    hrefOnboarding: 'https://cal.com/davidl/weshipit-onboarding',
   },
 };

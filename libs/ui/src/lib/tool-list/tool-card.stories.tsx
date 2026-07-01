@@ -8,7 +8,5 @@ export default {
 } as Meta<typeof ToolCard>;
 
 export const Card = {
-  args: {
-    fields: apiListFixture[1].fields,
-  },
+  args: apiListFixture[1],
 };

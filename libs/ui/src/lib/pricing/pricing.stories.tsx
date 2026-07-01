@@ -5,4 +5,6 @@ export default {
   component: Pricing,
 };
 
-export const Default = () => <Pricing />;
+export const Default = () => (
+  <Pricing ctaLink="https://cal.com/davidl/weshipit-onboarding" />
+);

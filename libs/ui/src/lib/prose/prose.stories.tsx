@@ -1,24 +1,38 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Prose } from './prose';
 
-import { within } from '@storybook/testing-library';
-import { expect } from '@storybook/jest';
-
 const meta: Meta<typeof Prose> = {
   component: Prose,
   title: 'Prose',
+  argTypes: {
+    size: {
+      control: 'select',
+      options: ['sm', 'base', 'lg', 'xl', '2xl'],
+    },
+  },
 };
 export default meta;
 type Story = StoryObj<typeof Prose>;
 
-export const Primary = {
-  args: {},
-};
-
-export const Heading: Story = {
-  args: {},
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    await expect(canvas.getByText(/Welcome to Prose!/gi)).toBeTruthy();
+export const Primary: Story = {
+  args: {
+    size: 'base',
+    children: (
+      <>
+        <h1>Shipping React Native, faster</h1>
+        <p>
+          Prose applies typographic defaults to rich text content such as blog
+          posts and documentation. It supports light and dark mode out of the
+          box.
+        </p>
+        <ul>
+          <li>Readable line length</li>
+          <li>Styled links, lists and headings</li>
+        </ul>
+        <p>
+          Read more on <a href="https://weshipit.today">weshipit.today</a>.
+        </p>
+      </>
+    ),
   },
 };

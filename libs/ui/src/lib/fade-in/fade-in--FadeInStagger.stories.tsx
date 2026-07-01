@@ -1,7 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { FadeInStagger } from './fade-in';
-import { within } from '@storybook/testing-library';
-import { expect } from '@storybook/jest';
+import { FadeIn, FadeInStagger } from './fade-in';
 
 const meta: Meta<typeof FadeInStagger> = {
   component: FadeInStagger,
@@ -10,20 +8,28 @@ const meta: Meta<typeof FadeInStagger> = {
 export default meta;
 type Story = StoryObj<typeof FadeInStagger>;
 
-export const Primary = {
+const items = ['One', 'Two', 'Three', 'Four'];
+
+export const Primary: Story = {
   args: {
-    faster: '',
-    props: '',
+    faster: false,
+    children: (
+      <div className="flex flex-col gap-4">
+        {items.map((item) => (
+          <FadeIn key={item}>
+            <div className="rounded-xl bg-slate-100 p-8 text-center dark:bg-slate-800">
+              {item}
+            </div>
+          </FadeIn>
+        ))}
+      </div>
+    ),
   },
 };
 
-export const Heading: Story = {
+export const Faster: Story = {
   args: {
-    faster: '',
-    props: '',
-  },
-  play: async ({ canvasElement }) => {
-    const canvas = within(canvasElement);
-    expect(canvas.getByText(/Welcome to FadeInStagger!/gi)).toBeTruthy();
+    ...Primary.args,
+    faster: true,
   },
 };

@@ -9,7 +9,7 @@ import { Button } from '../../button/button';
 
 export function TypeFilter({ numberOfTools }: { numberOfTools: number }) {
   const router = useRouter();
-  const selectedType = router.query.type as string | undefined;
+  const selectedType = router.query['type'] as string | undefined;
   const canResetFilter = !!selectedType;
 
   return (
