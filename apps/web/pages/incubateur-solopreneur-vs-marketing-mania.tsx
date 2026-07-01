@@ -80,7 +80,7 @@ const faqs = [
     question:
       'Je suis développeur / builder — lequel choisir pour un effet levier ?',
     answer:
-      "L'Incubateur Solopreneur, sans hésiter. Le programme contient des Sprints IA/Claude, CustomGPTs, automation et SaaS solo — le tech est déjà dans le format, tu n'as qu'à l'appliquer. Un dev qui rejoint l'Incubateur obtient un effet 10x sur ces Sprints : ce qui prend 3 semaines à un non-dev te prend l'après-midi (mise en place d'un agent, déploiement d'un mini-SaaS, automation d'une chaîne d'outils). Marketing Mania reste utile pour la persuasion et le copywriting, mais son terrain n'est pas la construction tech.",
+      "L'Incubateur Solopreneur, sans hésiter. Le programme contient des Sprints IA/Claude, Custom GPT’s, automation et SaaS solo — le tech est déjà dans le format, tu n'as qu'à l'appliquer. Un dev qui rejoint l'Incubateur obtient un effet 10x sur ces Sprints : ce qui prend 3 semaines à un non-dev te prend l'après-midi (mise en place d'un agent, déploiement d'un mini-SaaS, automation d'une chaîne d'outils). Marketing Mania reste utile pour la persuasion et le copywriting, mais son terrain n'est pas la construction tech.",
   },
   {
     id: 'faq-vs-9',
@@ -192,7 +192,7 @@ function VerdictSection() {
             </div>
             <p className="text-sm leading-relaxed text-neutral-950 dark:text-neutral-200">
               L’Incubateur de Flavie Prevot est un format communauté + Sprints
-              mensuels sur 12 mois. Contenu tech dense (IA/Claude, CustomGPTs,
+              mensuels sur 12 mois. Contenu tech dense (IA/Claude, Custom GPT’s,
               automation, SaaS solo) en plus des actifs classiques (newsletter,
               podcast, offre, sponsoring). Chaque vendredi, un actif construit
               en live avec un cercle de pairs qui te tient le rythme.
@@ -209,7 +209,7 @@ function VerdictSection() {
             <p className="text-sm leading-relaxed text-neutral-950 dark:text-neutral-200">
               Marketing Mania est excellent mais reste axé
               marketing/copywriting. L’Incubateur, lui, contient des Sprints
-              CustomGPTs, IA, automation et SaaS solo — terrain où un dev
+              Custom GPT’s, IA, automation et SaaS solo — terrain où un dev
               applique immédiatement ce que les autres découvrent. Ton skill
               tech compose avec le programme : l’édition d’un agent IA ou d’un
               mini-SaaS te prend l’après-midi alors qu’elle prend 3 semaines à
@@ -251,7 +251,7 @@ function VueDensembleSection() {
       duration: '12 mois',
       rythme: '1 à 3h / semaine',
       focus:
-        'IA (CustomGPTs, Claude), automation, SaaS solo, actifs (podcast, newsletter, sponsoring, offre)',
+        'IA (Custom GPT’s, Claude), automation, SaaS solo, actifs (podcast, newsletter, sponsoring, offre)',
       icon: UsersIcon,
       accent: true,
     },
@@ -475,7 +475,7 @@ function CasDUsageSection() {
     {
       persona: 'Dev solopreneur / builder (SaaS solo, agents IA, automation)',
       recommend: 'Incubateur Solopreneur (effet 10x)',
-      why: 'Les Sprints IA/Claude, CustomGPTs, automation et SaaS solo sont ton terrain de jeu. Là où les autres galèrent à comprendre l’outil, tu ships. Marketing Mania t’apprendra la persuasion, mais l’Incubateur te donne le contexte pour appliquer ton edge tech — et le format « un actif par vendredi » colle exactement à la façon dont un dev construit.',
+      why: 'Les Sprints IA/Claude, Custom GPT’s, automation et SaaS solo sont ton terrain de jeu. Là où les autres galèrent à comprendre l’outil, tu ships. Marketing Mania t’apprendra la persuasion, mais l’Incubateur te donne le contexte pour appliquer ton edge tech — et le format « un actif par vendredi » colle exactement à la façon dont un dev construit.',
       accent: true,
     },
     {

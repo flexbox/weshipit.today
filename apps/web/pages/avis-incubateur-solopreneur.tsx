@@ -75,7 +75,7 @@ const faqs = [
     id: 'faq-avis-7',
     question: 'L’Incubateur est-il adapté aux développeurs / SaaS solo ?',
     answer:
-      'Oui — et c’est probablement le meilleur programme du paysage FR pour un dev solopreneur. Le tech est explicitement présent dans les Sprints (IA/Claude, CustomGPTs, automation, SaaS solo), et le format « un actif construit chaque vendredi en live » colle exactement à la façon dont un dev avance. Effet levier concret : ce qui prend 3 semaines à un non-dev (mettre en place un agent, déployer un mini-SaaS, connecter une chaîne d’outils) te prend l’après-midi. Ton edge tech compose avec le programme.',
+      'Oui — et c’est probablement le meilleur programme du paysage FR pour un dev solopreneur. Le tech est explicitement présent dans les Sprints (IA/Claude, Custom GPT’s, automation, SaaS solo), et le format « un actif construit chaque vendredi en live » colle exactement à la façon dont un dev avance. Effet levier concret : ce qui prend 3 semaines à un non-dev (mettre en place un agent, déployer un mini-SaaS, connecter une chaîne d’outils) te prend l’après-midi. Ton edge tech compose avec le programme.',
   },
   {
     id: 'faq-avis-8',
@@ -785,7 +785,7 @@ function AvisExternesSection() {
 
 function PourQuiSection() {
   const yes = [
-    'Tu es dev / builder et tu veux 10x sur les Sprints tech (IA, CustomGPTs, automation, SaaS solo).',
+    'Tu es dev / builder et tu veux 10x sur les Sprints tech (IA, Custom GPT’s, automation, SaaS solo).',
     'Tu es déjà solopreneur en activité (freelance, créateur, SaaS solo, consultant).',
     'Tu veux construire un actif durable (newsletter, podcast, offre, sponsoring).',
     'Tu peux bloquer 1h le vendredi midi sans négociation possible.',

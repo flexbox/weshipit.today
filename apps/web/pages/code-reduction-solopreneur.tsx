@@ -168,7 +168,7 @@ function CestQuoiSection() {
       icon: SparklesIcon,
       title: 'Un Sprint par mois — tech + business',
       description:
-        'IA/Claude, CustomGPTs, automation, SaaS solo côté tech ; sponsoring, offre productisée, podcast, newsletter côté business. Cadre, deadlines, livrables — pas de théorie.',
+        'IA/Claude, Custom GPT’s, automation, SaaS solo côté tech ; sponsoring, offre productisée, podcast, newsletter côté business. Cadre, deadlines, livrables — pas de théorie.',
     },
     {
       icon: RocketLaunchIcon,
