@@ -479,6 +479,10 @@ function PreuvesSection() {
       quote:
         "Je passe une heure le vendredi avec une vingtaine de solopreneurs. En 6 mois j'ai relancé mon podcast vidéo et structuré mon offre. Le tarif affilié rembourse l'investissement dès le premier Sprint.",
       source: 'weshipit.today',
+      link: {
+        href: '/avis-incubateur-solopreneur',
+        label: 'Lire mon avis détaillé après 6 mois d’incubation →',
+      },
     },
   ];
 
@@ -518,6 +522,14 @@ function PreuvesSection() {
                 <div className="text-sm text-neutral-500 dark:text-neutral-400">
                   {p.source}
                 </div>
+                {p.link && (
+                  <a
+                    href={p.link.href}
+                    className="mt-2 inline-block text-sm font-medium text-accent underline-offset-2 hover:underline"
+                  >
+                    {p.link.label}
+                  </a>
+                )}
               </div>
             </div>
           ))}
@@ -538,9 +550,16 @@ function PourquoiCettePageSection() {
         <div className="space-y-4 text-pretty leading-relaxed text-neutral-500 dark:text-neutral-400">
           <p>
             Je m&apos;appelle David Leuliette, je suis solopreneur depuis 2016
-            et incubé chez Flavie Prevot. L&apos;Incubateur m&apos;a aidé à
-            relancer mon podcast, structurer mon offre et trouver des sponsors —
-            donc Flavie m&apos;a proposé de devenir ambassadeur.
+            et incubé chez{' '}
+            <a
+              href="/flavie-prevot-avis"
+              className="font-semibold text-accent underline-offset-2 hover:underline"
+            >
+              Flavie Prevot
+            </a>
+            . L&apos;Incubateur m&apos;a aidé à relancer mon podcast, structurer
+            mon offre et trouver des sponsors — donc Flavie m&apos;a proposé de
+            devenir ambassadeur.
           </p>
           <p>
             En passant par mon lien d&apos;affilié, tu paies{' '}
