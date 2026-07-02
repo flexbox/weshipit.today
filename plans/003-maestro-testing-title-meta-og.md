@@ -6,7 +6,7 @@
 > report — do not improvise. When done, update the status row for this plan
 > in `plans/README.md`.
 >
-> **Drift check (run first)**: `git diff --stat 99172de..HEAD -- apps/web/pages/react-native-testing.tsx apps/web/components/next-head.tsx`
+> **Drift check (run first)**: `git diff --stat 8454ad0..HEAD -- apps/web/pages/react-native-testing.tsx apps/web/components/next-head.tsx`
 > If either file changed since this plan was written, compare the "Current
 > state" excerpts against the live code before proceeding; on a mismatch,
 > treat it as a STOP condition.
@@ -18,7 +18,7 @@
 - **Risk**: LOW
 - **Depends on**: none (independent of 002; both edit the same file's different regions)
 - **Category**: seo (on-page)
-- **Planned at**: commit `99172de`, 2026-07-02
+- **Planned at**: commit `99172de`, 2026-07-02 (rebased to `8454ad0` on 2026-07-02 after plan 002 landed on `main` — 002 added the JSON-LD schema block above the `<Layout>` props, shifting line numbers but leaving 003's target strings byte-identical)
 
 ## Why this matters
 
@@ -35,7 +35,7 @@ page-specific OG alt are pure-upside on-page SEO with zero rendering risk.
 ## Current state
 
 - `apps/web/pages/react-native-testing.tsx` — the target page. The SEO strings
-  live on the `Layout` props in the default export, `react-native-testing.tsx:584-596`:
+  live on the `Layout` props in the default export, `react-native-testing.tsx:640-646` (line numbers as of commit `8454ad0`):
 
   ```tsx
     return (
