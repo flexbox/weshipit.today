@@ -581,6 +581,61 @@ export default function ReactNativeTesting() {
     })),
   };
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://weshipit.today',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'React Native E2E Testing with Maestro',
+        item: 'https://weshipit.today/react-native-testing',
+      },
+    ],
+  };
+
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'React Native End-to-End Testing with Maestro',
+    serviceType: 'Mobile app end-to-end test automation',
+    description:
+      'Productized end-to-end testing setup for React Native apps using Maestro: YAML flows for your 5 core user journeys, CI/CD integration, a tailored runbook, and a recorded team handoff — delivered in 2 weeks for a flat fee.',
+    url: 'https://weshipit.today/react-native-testing',
+    category: 'Software Testing',
+    areaServed: 'Worldwide',
+    provider: {
+      '@type': 'ProfessionalService',
+      name: 'weshipit.today',
+      url: 'https://weshipit.today',
+      founder: { '@type': 'Person', name: 'David Leuliette' },
+    },
+    offers: {
+      '@type': 'Offer',
+      url: 'https://cal.com/davidl/weshipit-onboarding',
+      description:
+        'Flat-fee productized engagement: Maestro installed and wired, 5 core user-journey flows, CI/CD integration, runbook & README, recorded handoff session, and 14 days of follow-up support.',
+      availability: 'https://schema.org/InStock',
+    },
+    review: {
+      '@type': 'Review',
+      author: {
+        '@type': 'Person',
+        name: 'Maxence Cottel',
+        jobTitle: 'QA engineer',
+        worksFor: { '@type': 'Organization', name: 'Nacon' },
+      },
+      reviewBody:
+        'Went from zero end-to-end tests and 3+ hours of manual QA per release to Maestro flows running on iOS and Android, with CI green on every PR and the e-commerce checkout covered.',
+    },
+  };
+
   return (
     <Layout
       withFooter
@@ -595,6 +650,16 @@ export default function ReactNativeTesting() {
       }}
     >
       <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(breadcrumbSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
