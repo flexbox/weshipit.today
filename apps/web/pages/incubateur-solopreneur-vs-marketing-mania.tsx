@@ -1,4 +1,4 @@
-import { Button, Faq, Text } from '@weshipit/ui';
+import { AuthorDisclosure, Button, Faq, Text } from '@weshipit/ui';
 
 import {
   AcademicCapIcon,
@@ -729,53 +729,45 @@ function RecommandationSection() {
 
 function DisclosureSection() {
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-3xl px-6">
-        <Text variant="h3" as="h2" className="mb-6 text-balance">
-          Pourquoi et comment j’ai écrit ce comparatif
-        </Text>
-
-        <div className="space-y-4 text-pretty leading-relaxed text-neutral-500 dark:text-neutral-400">
-          <p>
-            Je m’appelle David Leuliette, solopreneur depuis 2016 et incubé chez{' '}
-            <a
-              href={FLAVIE_URL}
-              className="font-semibold text-accent underline-offset-2 hover:underline"
-            >
-              Flavie Prevot
-            </a>{' '}
-            depuis 2025. J’ai également suivi les contenus gratuits de Stan
-            Leloup pendant plusieurs années (YouTube, podcast, articles). Je
-            n’ai pas fait le Bootcamp Marketing Mania — le comparatif s’appuie
-            sur ses contenus publics, le programme officiel et les retours
-            d’anciens élèves recueillis dans les communautés francophones.
-          </p>
-          <p>
-            <span className="font-semibold text-neutral-950 dark:text-neutral-200">
-              Divulgation d’affiliation.
-            </span>{' '}
-            Je suis ambassadeur affilié de l’Incubateur Solopreneur. Si tu
-            rejoins via{' '}
-            <a
-              href={CODE_REDUCTION_URL}
-              className="font-semibold text-accent underline-offset-2 hover:underline"
-            >
-              mon lien
-            </a>
-            , je touche une commission — sans surcoût pour toi (au contraire, tu
-            paies le tarif plancher). Je ne suis pas affilié Marketing Mania ni
-            Stan Leloup — aucun lien financier, aucune commission.
-          </p>
-          <p>
-            Cela crée un biais potentiel en faveur de l’Incubateur. J’ai
-            volontairement structuré le comparatif pour recommander Marketing
-            Mania à chaque fois qu’il est objectivement mieux adapté (voir la
-            section « Cas d’usage »). Si un point te semble unfair, dis-le moi —
-            je mets à jour la page.
-          </p>
-        </div>
-      </div>
-    </section>
+    <AuthorDisclosure title="Pourquoi et comment j’ai écrit ce comparatif">
+      <p>
+        Je m’appelle David Leuliette, solopreneur depuis 2016 et incubé chez{' '}
+        <a
+          href={FLAVIE_URL}
+          className="font-semibold text-accent underline-offset-2 hover:underline"
+        >
+          Flavie Prevot
+        </a>{' '}
+        depuis 2025. J’ai également suivi les contenus gratuits de Stan Leloup
+        pendant plusieurs années (YouTube, podcast, articles). Je n’ai pas fait
+        le Bootcamp Marketing Mania — le comparatif s’appuie sur ses contenus
+        publics, le programme officiel et les retours d’anciens élèves
+        recueillis dans les communautés francophones.
+      </p>
+      <p>
+        <span className="font-semibold text-neutral-950 dark:text-neutral-200">
+          Divulgation d’affiliation.
+        </span>{' '}
+        Je suis ambassadeur affilié de l’Incubateur Solopreneur. Si tu rejoins
+        via{' '}
+        <a
+          href={CODE_REDUCTION_URL}
+          className="font-semibold text-accent underline-offset-2 hover:underline"
+        >
+          mon lien
+        </a>
+        , je touche une commission — sans surcoût pour toi (au contraire, tu
+        paies le tarif plancher). Je ne suis pas affilié Marketing Mania ni Stan
+        Leloup — aucun lien financier, aucune commission.
+      </p>
+      <p>
+        Cela crée un biais potentiel en faveur de l’Incubateur. J’ai
+        volontairement structuré le comparatif pour recommander Marketing Mania
+        à chaque fois qu’il est objectivement mieux adapté (voir la section «
+        Cas d’usage »). Si un point te semble unfair, dis-le moi — je mets à
+        jour la page.
+      </p>
+    </AuthorDisclosure>
   );
 }
 

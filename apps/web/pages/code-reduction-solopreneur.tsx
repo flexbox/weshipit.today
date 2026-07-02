@@ -1,4 +1,4 @@
-import { Button, Faq, Text } from '@weshipit/ui';
+import { AuthorDisclosure, Button, Faq, Text } from '@weshipit/ui';
 
 import {
   ArrowRightIcon,
@@ -501,7 +501,7 @@ function PourQuiSection() {
         <div className="grid gap-8 md:grid-cols-2">
           <div className="rounded-xl border border-accent/30 bg-accent/5 p-6">
             <Text variant="h4" as="h3" className="mb-4 text-accent">
-              ✓ Oui, fonce
+              ✅ Oui, fonce
             </Text>
             <ul className="space-y-3">
               {yes.map((item) => (
@@ -522,7 +522,7 @@ function PourQuiSection() {
               as="h3"
               className="mb-4 text-neutral-500 dark:text-neutral-400"
             >
-              ✗ Passe ton chemin
+              ❌ Passe ton chemin
             </Text>
             <ul className="space-y-3">
               {no.map((item) => (
@@ -623,51 +623,43 @@ function PreuvesSection() {
 
 function PourquoiCettePageSection() {
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-3xl px-6">
-        <Text variant="h3" as="h2" className="mb-6 text-balance">
-          Pourquoi je publie ce code réduction Solopreneur
-        </Text>
-
-        <div className="space-y-4 text-pretty leading-relaxed text-neutral-500 dark:text-neutral-400">
-          <p>
-            Je m&apos;appelle David Leuliette, je suis solopreneur depuis 2016
-            et incubé chez{' '}
-            <a
-              href="/flavie-prevot-avis"
-              className="font-semibold text-accent underline-offset-2 hover:underline"
-            >
-              Flavie Prevot
-            </a>
-            . L&apos;Incubateur m&apos;a aidé à relancer mon podcast, structurer
-            mon offre et trouver des sponsors — donc Flavie m&apos;a proposé de
-            devenir ambassadeur.
-          </p>
-          <p>
-            En passant par mon lien d&apos;affilié, tu paies{' '}
-            <span className="font-semibold text-neutral-950 dark:text-neutral-200">
-              le prix le plus bas du marché ({PRICE_AFFILIATE} € HT au lieu de{' '}
-              {PRICE_PUBLIC} € HT)
-            </span>
-            . Tu n&apos;as accès à aucune fonctionnalité bonus secrète —
-            simplement la meilleure remise possible, car Flavie a verrouillé son
-            programme d&apos;affiliation : aucune promo publique ne descend en
-            dessous de ce tarif.
-          </p>
-          <p>
-            En contrepartie, je touche une commission d&apos;apporteur
-            d&apos;affaires. C&apos;est gagnant-gagnant : tu paies moins,
-            l&apos;Incubateur recrute des solopreneurs investis (recommandés par
-            leurs pairs), et la communauté grandit avec des profils qualifiés.
-          </p>
-          <p className="text-sm">
-            Si tu préfères payer le tarif public, la page officielle reste
-            accessible directement sur leboard.systeme.io. Le contenu et
-            l&apos;accès sont strictement identiques.
-          </p>
-        </div>
-      </div>
-    </section>
+    <AuthorDisclosure title="Pourquoi je publie ce code réduction Solopreneur">
+      <p>
+        Je m&apos;appelle David Leuliette, je suis solopreneur depuis 2016 et
+        incubé chez{' '}
+        <a
+          href="/flavie-prevot-avis"
+          className="font-semibold text-accent underline-offset-2 hover:underline"
+        >
+          Flavie Prevot
+        </a>
+        . L&apos;Incubateur m&apos;a aidé à relancer mon podcast, structurer mon
+        offre et trouver des sponsors — donc Flavie m&apos;a proposé de devenir
+        ambassadeur.
+      </p>
+      <p>
+        En passant par mon lien d&apos;affilié, tu paies{' '}
+        <span className="font-semibold text-neutral-950 dark:text-neutral-200">
+          le prix le plus bas du marché ({PRICE_AFFILIATE} € HT au lieu de{' '}
+          {PRICE_PUBLIC} € HT)
+        </span>
+        . Tu n&apos;as accès à aucune fonctionnalité bonus secrète — simplement
+        la meilleure remise possible, car Flavie a verrouillé son programme
+        d&apos;affiliation : aucune promo publique ne descend en dessous de ce
+        tarif.
+      </p>
+      <p>
+        En contrepartie, je touche une commission d&apos;apporteur
+        d&apos;affaires. C&apos;est gagnant-gagnant : tu paies moins,
+        l&apos;Incubateur recrute des solopreneurs investis (recommandés par
+        leurs pairs), et la communauté grandit avec des profils qualifiés.
+      </p>
+      <p className="text-sm">
+        Si tu préfères payer le tarif public, la page officielle reste
+        accessible directement sur leboard.systeme.io. Le contenu et
+        l&apos;accès sont strictement identiques.
+      </p>
+    </AuthorDisclosure>
   );
 }
 

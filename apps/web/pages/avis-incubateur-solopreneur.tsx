@@ -1,4 +1,4 @@
-import { Button, Faq, Text } from '@weshipit/ui';
+import { AuthorDisclosure, Button, Faq, Text } from '@weshipit/ui';
 
 import {
   ArrowRightIcon,
@@ -813,7 +813,7 @@ function PourQuiSection() {
         <div className="grid gap-8 md:grid-cols-2">
           <div className="rounded-xl border border-accent/30 bg-accent/5 p-6">
             <Text variant="h4" as="h3" className="mb-4 text-accent">
-              ✓ Achète sans hésiter
+              ✅ Achète sans hésiter
             </Text>
             <ul className="space-y-3">
               {yes.map((item) => (
@@ -834,7 +834,7 @@ function PourQuiSection() {
               as="h3"
               className="mb-4 text-neutral-500 dark:text-neutral-400"
             >
-              ✗ Passe ton chemin
+              ❌ Passe ton chemin
             </Text>
             <ul className="space-y-3">
               {no.map((item) => (
@@ -934,55 +934,47 @@ function PrixEtCodeReductionSection() {
 
 function DisclosureSection() {
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-3xl px-6">
-        <Text variant="h3" as="h2" className="mb-6 text-balance">
-          Pourquoi je publie cet avis
-        </Text>
-
-        <div className="space-y-4 text-pretty leading-relaxed text-neutral-500 dark:text-neutral-400">
-          <p>
-            Je m’appelle David Leuliette, je suis solopreneur depuis 2016 et
-            incubé chez{' '}
-            <a
-              href="/flavie-prevot-avis"
-              className="font-semibold text-accent underline-offset-2 hover:underline"
-            >
-              Flavie Prevot
-            </a>{' '}
-            depuis 2025. J’ai payé l’Incubateur de ma poche, au tarif public en
-            vigueur à l’époque. Personne ne m’a payé pour écrire cet avis.
-          </p>
-          <p>
-            Après 6 mois, j’ai été invité à devenir ambassadeur — concrètement,
-            je touche une commission d’apporteur d’affaires si tu rejoins via{' '}
-            <a
-              href={CODE_REDUCTION_URL}
-              className="font-semibold text-accent underline-offset-2 hover:underline"
-            >
-              mon lien d’affilié
-            </a>
-            . En contrepartie, tu paies le tarif le plus bas du marché (1 490 €
-            HT au lieu de 2 400 € HT).
-          </p>
-          <p>
-            Cet avis est volontairement structuré autour des{' '}
-            <span className="font-semibold text-neutral-950 dark:text-neutral-200">
-              points faibles autant que des points forts
-            </span>
-            . Si je trouve un sujet décevant dans les 6 prochains mois, je le
-            mettrai à jour ici — la page est datée, les modifications visibles
-            dans le commit history du site.
-          </p>
-          <p className="text-sm">
-            Tu peux aussi acheter l’Incubateur au tarif public directement sur
-            leboard.systeme.io. Le contenu et l’accès sont strictement
-            identiques. Le seul intérêt de passer par cette page&nbsp;: 910 €
-            d’économie immédiate.
-          </p>
-        </div>
-      </div>
-    </section>
+    <AuthorDisclosure>
+      <p>
+        Je m’appelle David Leuliette, je suis solopreneur depuis 2016 et incubé
+        chez{' '}
+        <a
+          href="/flavie-prevot-avis"
+          className="font-semibold text-accent underline-offset-2 hover:underline"
+        >
+          Flavie Prevot
+        </a>{' '}
+        depuis 2025. J’ai payé l’Incubateur de ma poche, au tarif public en
+        vigueur à l’époque. Personne ne m’a payé pour écrire cet avis.
+      </p>
+      <p>
+        Après 6 mois, j’ai été invité à devenir ambassadeur — concrètement, je
+        touche une commission d’apporteur d’affaires si tu rejoins via{' '}
+        <a
+          href={CODE_REDUCTION_URL}
+          className="font-semibold text-accent underline-offset-2 hover:underline"
+        >
+          mon lien d’affilié
+        </a>
+        . En contrepartie, tu paies le tarif le plus bas du marché (1 490 € HT
+        au lieu de 2 400 € HT).
+      </p>
+      <p>
+        Cet avis est volontairement structuré autour des{' '}
+        <span className="font-semibold text-neutral-950 dark:text-neutral-200">
+          points faibles autant que des points forts
+        </span>
+        . Si je trouve un sujet décevant dans les 6 prochains mois, je le
+        mettrai à jour ici — la page est datée, les modifications visibles dans
+        le commit history du site.
+      </p>
+      <p className="text-sm">
+        Tu peux aussi acheter l’Incubateur au tarif public directement sur
+        leboard.systeme.io. Le contenu et l’accès sont strictement identiques.
+        Le seul intérêt de passer par cette page&nbsp;: 910 € d’économie
+        immédiate.
+      </p>
+    </AuthorDisclosure>
   );
 }
 

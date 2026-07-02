@@ -1,4 +1,4 @@
-import { Button, Faq, Text } from '@weshipit/ui';
+import { AuthorDisclosure, Button, Faq, Text } from '@weshipit/ui';
 
 import {
   ArrowRightIcon,
@@ -521,46 +521,36 @@ function PourAllerPlusLoinSection() {
 
 function DisclosureSection() {
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-3xl px-6">
-        <Text variant="h3" as="h2" className="mb-6 text-balance">
-          Pourquoi je publie ce profil
-        </Text>
-
-        <div className="space-y-4 text-pretty leading-relaxed text-neutral-500 dark:text-neutral-400">
-          <p>
-            Je m’appelle David Leuliette, je suis solopreneur depuis 2016 et
-            incubé chez Flavie Prevot depuis 2025. Cette page synthétise mon
-            observation directe et les sources publiques disponibles sur elle
-            (newsletter, podcast, LinkedIn, pages de vente, avis Trustpilot).
-          </p>
-          <p>
-            Je suis{' '}
-            <span className="font-semibold text-neutral-950 dark:text-neutral-200">
-              ambassadeur affilié
-            </span>{' '}
-            de son Incubateur. Concrètement&nbsp;: si tu rejoins l’Incubateur
-            via{' '}
-            <a
-              href={CODE_REDUCTION_URL}
-              className="font-semibold text-accent underline-offset-2 hover:underline"
-            >
-              mon lien
-            </a>{' '}
-            (au tarif plancher de 1 490 € HT), je touche une commission — sans
-            coût supplémentaire pour toi, tu paies le prix le plus bas du
-            marché.
-          </p>
-          <p>
-            Cette page n’est pas une vitrine promotionnelle&nbsp;: j’ai
-            volontairement inclus les canaux gratuits (newsletter, podcast) en
-            premier, et j’encourage la découverte en gratuit avant tout
-            engagement payant. L’objectif&nbsp;: te donner une base factuelle
-            pour décider, pas te pousser à acheter.
-          </p>
-        </div>
-      </div>
-    </section>
+    <AuthorDisclosure title="Pourquoi je publie ce profil">
+      <p>
+        Je m’appelle David Leuliette, je suis solopreneur depuis 2016 et incubé
+        chez Flavie Prevot depuis 2025. Cette page synthétise mon observation
+        directe et les sources publiques disponibles sur elle (newsletter,
+        podcast, LinkedIn, pages de vente, avis Trustpilot).
+      </p>
+      <p>
+        Je suis{' '}
+        <span className="font-semibold text-neutral-950 dark:text-neutral-200">
+          ambassadeur affilié
+        </span>{' '}
+        de son Incubateur. Concrètement&nbsp;: si tu rejoins l’Incubateur via{' '}
+        <a
+          href={CODE_REDUCTION_URL}
+          className="font-semibold text-accent underline-offset-2 hover:underline"
+        >
+          mon lien
+        </a>{' '}
+        (au tarif plancher de 1 490 € HT), je touche une commission — sans coût
+        supplémentaire pour toi, tu paies le prix le plus bas du marché.
+      </p>
+      <p>
+        Cette page n’est pas une vitrine promotionnelle&nbsp;: j’ai
+        volontairement inclus les canaux gratuits (newsletter, podcast) en
+        premier, et j’encourage la découverte en gratuit avant tout engagement
+        payant. L’objectif&nbsp;: te donner une base factuelle pour décider, pas
+        te pousser à acheter.
+      </p>
+    </AuthorDisclosure>
   );
 }
 
