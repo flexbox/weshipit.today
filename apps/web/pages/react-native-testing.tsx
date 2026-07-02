@@ -11,6 +11,7 @@ import {
 } from '@weshipit/ui';
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 import {
   ArrowRightIcon,
   BookOpenIcon,
@@ -463,12 +464,14 @@ function WhoAmI() {
           <div className="space-y-4 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
             <p>
               I&apos;ve been shipping React Native apps since 2016 — through
-              every breaking-change cycle, every Expo SDK, every New
+              every breaking-change cycle, every{' '}
+              <Link href="/react-native-migration">Expo SDK</Link>, every New
               Architecture migration. I&apos;m a{' '}
               <Hyperlink href="https://x.com/flexbox_/status/1801588179687936329">
                 top 20 contributor on Stack Overflow
               </Hyperlink>{' '}
-              for React Native questions.
+              for React Native questions, and I curate a directory of{' '}
+              <Link href="/react-native-tools">React Native tools</Link>.
             </p>
             <p>
               I picked Maestro early because it solves the right problem for
