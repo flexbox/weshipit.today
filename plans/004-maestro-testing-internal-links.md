@@ -6,7 +6,7 @@
 > report — do not improvise. When done, update the status row for this plan
 > in `plans/README.md`.
 >
-> **Drift check (run first)**: `git diff --stat 99172de..HEAD -- apps/web/pages/react-native-testing.tsx`
+> **Drift check (run first)**: `git diff --stat dab4340..HEAD -- apps/web/pages/react-native-testing.tsx`
 > If that file changed since this plan was written, compare the "Current state"
 > excerpts against the live code before proceeding; on a mismatch, treat it as
 > a STOP condition.
@@ -18,7 +18,7 @@
 - **Risk**: LOW
 - **Depends on**: none (independent; edits a different region than plans 002/003)
 - **Category**: seo (internal-links)
-- **Planned at**: commit `99172de`, 2026-07-02
+- **Planned at**: commit `99172de`, 2026-07-02 (rebased to `dab4340` on 2026-07-02 after plans 002 + 003 landed on `main`; both edit other regions, so 004's `WhoAmI` excerpt is byte-identical — only line numbers shifted)
 
 ## Why this matters
 
@@ -33,12 +33,26 @@ section (`WhoAmI`), **not** the hero or CTA, so there is no conversion risk.
 
 ## Current state
 
-- `apps/web/pages/react-native-testing.tsx` — the target page. The `Hyperlink`
-  component (imported at line 9 from `@weshipit/ui`) renders a plain, crawlable
-  `<a href>` when used **without** `isExternal` (confirmed in
-  `libs/ui/src/lib/hyperlink/hyperlink.tsx:42` → `return <a {...rest}>...`).
-  Internal links must be plain (no `isExternal`) so they stay `dofollow` and
-  same-tab.
+- `apps/web/pages/react-native-testing.tsx` — the target page. **`apps/web` is a
+  Next.js site (Pages Router, Next 16).** Internal links MUST use the `next/link`
+  `Link` component, NOT the `@weshipit/ui` `Hyperlink` component (which renders a
+  bare `<a>` and forces a full page reload). `next/link` gives client-side
+  navigation + route prefetching and is the repo's standard for in-site links.
+  The `Hyperlink` component is for **external** links only.
+
+  - Convention exemplar — `apps/web/pages/about.tsx:10,280`:
+    ```tsx
+    import Link from 'next/link';
+    // ...
+    <Link href="/">weshipit.today</Link>;
+    ```
+    Next 16 renders the underlying `<a>` automatically — no `legacyBehavior`, no
+    nested `<a>`. A `className` may be passed directly to `<Link>` (see
+    `apps/web/pages/podcast/[slug]/transcript.tsx:118`), but these two links need
+    no styling.
+  - The target file does **not** currently import `Link` — you will add the
+    import. It keeps using `Hyperlink` (from `@weshipit/ui`) for its existing
+    external links; leave those untouched.
 
 - The two link targets exist as real routes:
 
@@ -99,11 +113,20 @@ monorepo eslint-config error, not caused by your change.
 
 ## Steps
 
-### Step 1: Add an internal link to `/react-native-migration`
+### Step 1: Add the `next/link` import
 
-In the `WhoAmI` paragraph at `react-native-testing.tsx:464-472`, wrap the words
-"every Expo SDK" so "Expo SDK" links to the migration page. Replace this exact
-text:
+At the top of `apps/web/pages/react-native-testing.tsx`, add the `Link` import
+next to the other imports (the file already imports `Head` from `next/head` and
+`Image` from `next/image` — put this alongside them):
+
+```tsx
+import Link from 'next/link';
+```
+
+### Step 2: Add an internal link to `/react-native-migration`
+
+In the `WhoAmI` paragraph, wrap the words "Expo SDK" so they link to the
+migration page. Replace this exact text:
 
 ```tsx
               I&apos;ve been shipping React Native apps since 2016 — through
@@ -116,11 +139,11 @@ with:
 ```tsx
               I&apos;ve been shipping React Native apps since 2016 — through
               every breaking-change cycle, every{' '}
-              <Hyperlink href="/react-native-migration">Expo SDK</Hyperlink>,
+              <Link href="/react-native-migration">Expo SDK</Link>,
               every New Architecture migration. I&apos;m a{' '}
 ```
 
-### Step 2: Add an internal link to `/react-native-tools`
+### Step 3: Add an internal link to `/react-native-tools`
 
 In the same paragraph, extend the Stack Overflow sentence with a natural link to
 the tools directory. Replace this exact text:
@@ -140,37 +163,39 @@ with:
                 top 20 contributor on Stack Overflow
               </Hyperlink>{' '}
               for React Native questions, and I curate a directory of{' '}
-              <Hyperlink href="/react-native-tools">
-                React Native tools
-              </Hyperlink>
-              .
+              <Link href="/react-native-tools">React Native tools</Link>.
             </p>
 ```
 
+Note: the two NEW internal links use `<Link>` (next/link). The pre-existing
+external link to `x.com` stays a `<Hyperlink>` — do not change it.
+
 **Verify**: `npx nx typecheck web` → exit 0.
 
-### Step 3: Confirm both internal links are present and are plain (dofollow) anchors
+### Step 4: Confirm both internal links use `next/link`
 
 ```bash
-grep -c 'href="/react-native-migration"\|href="/react-native-tools"' apps/web/pages/react-native-testing.tsx
-grep -c 'isExternal' apps/web/pages/react-native-testing.tsx
+grep -c "import Link from 'next/link'" apps/web/pages/react-native-testing.tsx
+grep -c '<Link href="/react-native-migration">\|<Link href="/react-native-tools">' apps/web/pages/react-native-testing.tsx
+grep -c '<Hyperlink href="/' apps/web/pages/react-native-testing.tsx
 ```
 
 **Verify**:
 
-- first command → `2`
-- second command → `0` (the two new links must NOT use `isExternal`, so they stay
-  crawlable `dofollow` same-tab links — and the file had no `isExternal` before)
+- first command → `1` (the `next/link` import was added)
+- second command → `2` (both internal links use `<Link>`)
+- third command → `0` (no internal link uses `Hyperlink` — that component is for
+  external links only)
 
-### Step 4: Full build
+### Step 5: Full build
 
 **Verify**: `npx nx build web` → exit 0, "Successfully ran target build for project web".
 
 ## Test plan
 
-No page-level unit tests exist and none are warranted for adding two anchor tags.
-Do not scaffold a test framework. Verification is typecheck + build + the Step 3
-greps.
+No page-level unit tests exist and none are warranted for adding two `<Link>`
+tags. Do not scaffold a test framework. Verification is typecheck + build + the
+Step 4 greps.
 
 (Optional runtime proof, not a gate: `npx nx serve web`, open
 `http://localhost:4200/react-native-testing`, scroll to the "Hi, I'm David"
@@ -184,16 +209,17 @@ Machine-checkable. ALL must hold:
 
 - [ ] `npx nx typecheck web` exits 0
 - [ ] `npx nx build web` exits 0
-- [ ] `grep -c 'href="/react-native-migration"\|href="/react-native-tools"' apps/web/pages/react-native-testing.tsx` → `2`
-- [ ] `grep -c 'isExternal' apps/web/pages/react-native-testing.tsx` → `0`
+- [ ] `grep -c '<Link href="/react-native-migration">\|<Link href="/react-native-tools">' apps/web/pages/react-native-testing.tsx` → `2`
+- [ ] `grep -c "import Link from 'next/link'" apps/web/pages/react-native-testing.tsx` → `1`
+- [ ] `grep -c '<Hyperlink href="/' apps/web/pages/react-native-testing.tsx` → `0` (no internal link uses `Hyperlink`)
 - [ ] `git status --porcelain` shows only `apps/web/pages/react-native-testing.tsx` modified
-- [ ] `plans/README.md` status row for 004 updated
+- [ ] `plans/README.md` status row for 004 updated (reviewer maintains the index)
 
 ## STOP conditions
 
 Stop and report back (do not improvise) if:
 
-- The drift check shows the file changed since `99172de` and the `WhoAmI`
+- The drift check shows the file changed since `dab4340` and the `WhoAmI`
   excerpt no longer matches.
 - Either target route (`apps/web/pages/react-native-migration/index.tsx` or
   `apps/web/pages/react-native-tools/index.tsx`) no longer exists — do not link
