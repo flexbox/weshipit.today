@@ -65,10 +65,13 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     ? `${prefix} — ${truncateAtWord(plainDesc, 155 - prefix.length - 3)}`
     : `${prefix}.`;
 
-  const recommendedRecords = take(
-    tools.filter((r) => r.slug !== slug),
-    3,
+  const sameType = tools.filter(
+    (r) => r.slug !== slug && r.type.some((t) => record.type.includes(t)),
   );
+  const others = tools.filter(
+    (r) => r.slug !== slug && !r.type.some((t) => record.type.includes(t)),
+  );
+  const recommendedRecords = take([...sameType, ...others], 3);
 
   const toolUrl = `https://weshipit.today/react-native-tools/${slug}`;
 
@@ -284,7 +287,7 @@ export function ReactNativeSlugPage({
       {recommendedRecords.length > 0 && (
         <section className="py-12 max-w-6xl mx-auto">
           <Text as="h2" variant="h3" className="my-4">
-            Other {type} React Native tools
+            Other {type[0]} React Native tools
           </Text>
 
           <ToolList records={recommendedRecords} />
