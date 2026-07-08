@@ -878,4 +878,19 @@ export const tools: Tool[] = [
     website_url: 'https://magic.link',
     id: 'reczZoVhsonfN26FS',
   },
+  {
+    description:
+      'RevoPush is a **CodePush-compatible over-the-air (OTA) update platform** for React Native that lets you ship JavaScript and asset fixes directly to installed apps — skipping the App Store and Google Play review queues for any non-native change. It is positioned as a drop-in replacement for Microsoft App Center CodePush, which has been deprecated.\n\nBuilt for **React Native 0.76+ and the New Architecture**, RevoPush generates delta patches that make OTA payloads 10–20× smaller, plugs into CI/CD pipelines like GitHub Actions, Bitrise, CircleCI, Codemagic, and Expo, and ships production-grade features: staged rollouts, instant rollbacks, code signing, and granular install/update analytics.\n',
+    description_success:
+      '1. **Ship critical fixes in minutes, not days.** Push a JavaScript or asset update straight to your users’ installed apps with the CodePush-compatible SDK — a production bug reaches everyone without waiting on an App Store review cycle.\n2. **Migrate off deprecated CodePush without rewriting.** RevoPush works with the existing open-source CodePush client SDK, so teams stuck on App Center can switch backends and keep their release workflow intact.\n3. **Roll out safely and cut bandwidth costs.** DIFF updates shrink payloads 10–20×, while staged rollouts, code signing, and one-click rollbacks let your team release to a percentage of users and instantly revert if something breaks.\n',
+    features: ['Over the Air Updates', 'CLI'],
+    github_url: 'https://github.com/revopush',
+    name: 'RevoPush',
+    platform: ['iOS', 'Android'],
+    pricing: ['Free tier', 'Premium tiers', 'Open source'],
+    slug: 'revopush',
+    type: ['CI/CD & Release'],
+    website_url: 'https://revopush.org/',
+    id: 'recRevoPushOTA001',
+  },
 ];
