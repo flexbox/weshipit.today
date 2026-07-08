@@ -20,6 +20,25 @@ import take from 'lodash/take';
 import ChevronLeftIcon from '@heroicons/react/20/solid/ChevronLeftIcon';
 import { GetStaticPaths, GetStaticProps } from 'next';
 
+function stripMarkdown(md: string): string {
+  return md
+    .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1') // [text](url) -> text
+    .replace(/(\*\*|__|\*|_|`)/g, '') // emphasis + code markers
+    .replace(/^\s*\d+\.\s+/gm, '') // numbered-list markers
+    .replace(/^\s*[-*+]\s+/gm, '') // bullet markers
+    .replace(/\s+/g, ' ') // newlines/multi-space -> single space
+    .trim();
+}
+
+function truncateAtWord(text: string, max: number): string {
+  if (text.length <= max) {
+    return text;
+  }
+  const cut = text.slice(0, max);
+  const lastSpace = cut.lastIndexOf(' ');
+  return `${cut.slice(0, lastSpace > 0 ? lastSpace : max)}…`;
+}
+
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = tools
     .filter((r) => r.slug)
@@ -39,13 +58,20 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { name, description, description_success, website_url, platform } =
     record;
 
-  const rawDesc = description_success || description || '';
-  const seoDescription = `${name} for React Native${rawDesc ? ` — ${rawDesc.slice(0, 130)}...` : '.'}`;
+  const proseSource = description || description_success || '';
+  const plainDesc = stripMarkdown(proseSource);
+  const prefix = `${name} for React Native`;
+  const seoDescription = plainDesc
+    ? `${prefix} — ${truncateAtWord(plainDesc, 155 - prefix.length - 3)}`
+    : `${prefix}.`;
 
-  const recommendedRecords = take(
-    tools.filter((r) => r.slug !== slug),
-    3,
+  const sameType = tools.filter(
+    (r) => r.slug !== slug && r.type.some((t) => record.type.includes(t)),
   );
+  const others = tools.filter(
+    (r) => r.slug !== slug && !r.type.some((t) => record.type.includes(t)),
+  );
+  const recommendedRecords = take([...sameType, ...others], 3);
 
   const toolUrl = `https://weshipit.today/react-native-tools/${slug}`;
 
@@ -53,7 +79,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
     name,
-    description: rawDesc.slice(0, 300) || null,
+    description: plainDesc ? truncateAtWord(plainDesc, 300) : null,
     url: website_url || null,
     applicationCategory: 'DeveloperApplication',
     operatingSystem: platform?.join(', ') || null,
@@ -261,7 +287,7 @@ export function ReactNativeSlugPage({
       {recommendedRecords.length > 0 && (
         <section className="py-12 max-w-6xl mx-auto">
           <Text as="h2" variant="h3" className="my-4">
-            Other {type} React Native tools
+            Other {type[0]} React Native tools
           </Text>
 
           <ToolList records={recommendedRecords} />
