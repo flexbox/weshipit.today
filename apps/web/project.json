@@ -21,6 +21,7 @@
     },
     "postbuild": {
       "executor": "nx:run-commands",
+      "dependsOn": ["build"],
       "options": {
         "commands": [
           {
