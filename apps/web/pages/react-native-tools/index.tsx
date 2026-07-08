@@ -84,12 +84,12 @@ export default function ReactNativeToolsPage({ records, itemListSchema }) {
           hintLink="https://www.producthunt.com/@flexbox"
           title={
             <>
-              The best{' '}
+              The best React Native{' '}
               {toolType && (
                 <span className="text-indigo-600">
-                  {toolType.toLowerCase()}
+                  {toolType.toLowerCase()}{' '}
                 </span>
-              )}{' '}
+              )}
               tools
               <br />
               and resources for busy developers.
