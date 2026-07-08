@@ -130,9 +130,10 @@ function HeroSection() {
         </Text>
 
         <p className="mx-auto mb-8 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-500 dark:text-neutral-400 md:text-xl">
-          12 mois d’incubation avec Flavie Prevot, 300+ solopreneurs, un Sprint
-          par mois, des lives le vendredi. Mon verdict après 6 mois&nbsp;:
-          recommandé, sous conditions précises que je détaille plus bas.
+          12 mois d’incubation avec Flavie Prevot, 300+ solopreneurs, 10
+          bootcamps (Sprints) par an, des lives le vendredi. Mon verdict après 6
+          mois&nbsp;: recommandé, sous conditions précises que je détaille plus
+          bas.
         </p>
 
         <div className="mb-10 flex flex-col items-center justify-center gap-2">
@@ -266,10 +267,10 @@ function NotesParCriteresSection() {
         '300+ incubés, noyau actif de 50–80 personnes très engagées. Bienveillance et exigence cohabitent.',
     },
     {
-      label: 'Pertinence des Sprints',
+      label: 'Pertinence des bootcamps (Sprints)',
       score: 4.7,
       justification:
-        'Sprints mensuels concrets : IA & Claude, podcasting vidéo, sponsoring, offre, automation. Aucun Sprint gadget.',
+        '10 bootcamps concrets par an : IA & Claude, podcasting vidéo, sponsoring, offre, automation. +50 experts invités et 50+ templates à la clé. Aucun bootcamp gadget.',
     },
     {
       label: 'Animation des lives',

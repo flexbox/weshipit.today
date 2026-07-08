@@ -28,6 +28,6 @@ export const linksApi = {
   },
   affiliate: {
     INCUBATEUR_SOLOPRENEUR:
-      'https://leboard.systeme.io/vente-incubateur-vsl?sa=sa0008533529f4b7755bbd60631b2e3bc0e25f648148',
+      'https://leboard.systeme.io/paiement-incubateur-masterclass-2026-affilies?sa=sa00062484176dd1b8da591704d36473138ed9a63630',
   },
 };

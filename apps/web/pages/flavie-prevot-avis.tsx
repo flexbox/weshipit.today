@@ -149,6 +149,10 @@ function EnBrefSection() {
       value: '300+ incubés actifs (Mighty Networks)',
     },
     {
+      label: 'Satisfaction',
+      value: '4,85/5 · +50 experts · 50+ templates',
+    },
+    {
       label: 'Prix Incubateur',
       value: '1 490 € HT (affilié) / 2 400 € HT (public)',
     },
@@ -281,16 +285,16 @@ function EcosystemeSection() {
     },
     {
       icon: SparklesIcon,
-      title: 'Sprint mensuel',
+      title: 'Sprint (bootcamp) mensuel',
       description:
-        'Format d’essai : 1 mois d’accès à un Sprint thématique (IA, sponsoring, podcast, offre…) avec corrections. Pour tester sans s’engager sur 12 mois.',
+        'Format d’essai : 1 mois d’accès à un bootcamp thématique (IA, sponsoring, podcast, offre…) avec corrections. Pour tester sans s’engager sur 12 mois.',
       access: '990 € HT',
     },
     {
       icon: UsersIcon,
       title: 'Incubateur Solopreneur (annuel)',
       description:
-        'Programme phare : 12 mois d’incubation, communauté de 300+ solopreneurs, Sprint chaque mois, lives du vendredi, experts invités. C’est le cœur de son business.',
+        'Programme phare : 12 mois d’incubation, communauté de 300+ solopreneurs, 10 bootcamps (Sprints) par an, lives du vendredi, +50 experts invités, 50+ templates. C’est le cœur de son business.',
       access: '1 490 € HT (affilié)',
     },
     {

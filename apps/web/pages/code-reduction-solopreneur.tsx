@@ -55,7 +55,7 @@ const faqs = [
     id: 'faq-cr-5',
     question: "Qu'est-ce qui est inclus dans l'Incubateur Solopreneur ?",
     answer:
-      "12 mois d'accès à la communauté de 300+ solopreneurs, un Sprint thématique chaque mois (IA, automation, podcasting, sponsoring, offre, design…), des lives pratico-pratiques chaque vendredi, l'accès aux replays, des office hours avec des experts invités, et un canal #mes-réussites pour partager tes wins. L'Incubateur est orienté passage à l'action et construction d'actifs, pas formation passive.",
+      "12 mois d'accès à la communauté de 300+ solopreneurs, 10 bootcamps (Sprints) thématiques par an (IA, automation, podcasting, sponsoring, offre, design…), des lives pratico-pratiques chaque vendredi, l'accès aux replays, +50 experts invités, 50+ templates et un canal #mes-réussites pour partager tes wins. L'Incubateur est orienté passage à l'action et construction d'actifs, pas formation passive.",
   },
   {
     id: 'faq-cr-6',
@@ -115,9 +115,10 @@ function HeroSection() {
             Flavie Prevot
           </a>{' '}
           pour construire des actifs (newsletter, podcast, offre, sponsoring,
-          SaaS solo) avec 300+ solopreneurs&nbsp;: un Sprint thématique chaque
-          mois, un live-atelier le vendredi, des experts invités. Ici, tu
-          obtiens le tarif affilié — 910 € d&apos;économie, sans code à saisir.
+          SaaS solo) avec 300+ solopreneurs&nbsp;: 10 bootcamps (Sprints)
+          thématiques dans l&apos;année, un live-atelier le vendredi, +50
+          experts invités et 50+ templates. Ici, tu obtiens le tarif affilié —
+          910 € d&apos;économie, sans code à saisir.
         </p>
 
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -144,7 +145,7 @@ function HeroSection() {
           </span>
           <span className="flex items-center gap-2">
             <CheckIcon className="h-4 w-4 text-accent" />
-            Avis Trustpilot vérifiés
+            4,85/5 de satisfaction
           </span>
           <span className="flex items-center gap-2">
             <CheckIcon className="h-4 w-4 text-accent" />
@@ -166,9 +167,9 @@ function CestQuoiSection() {
     },
     {
       icon: SparklesIcon,
-      title: 'Un Sprint par mois — tech + business',
+      title: 'Un bootcamp (Sprint) par mois — tech + business',
       description:
-        'IA/Claude, Custom GPT’s, automation, SaaS solo côté tech ; sponsoring, offre productisée, podcast, newsletter côté business. Cadre, deadlines, livrables — pas de théorie.',
+        '10 bootcamps thématiques par an : IA/Claude, Custom GPT’s, automation, SaaS solo côté tech ; sponsoring, offre productisée, podcast, newsletter côté business. Cadre, deadlines, livrables (50+ templates) — pas de théorie.',
     },
     {
       icon: RocketLaunchIcon,
@@ -407,9 +408,9 @@ function CeQuiEstInclusSection() {
     },
     {
       icon: SparklesIcon,
-      title: 'Un Sprint thématique chaque mois',
+      title: '10 bootcamps (Sprints) thématiques par an',
       description:
-        "IA & Claude, Cloud Designer, Bye Bye TJM, Sugar Daddy (sponsoring), Glow Up, podcasting vidéo, automation, SaaS solo… Tous orientés construction d'actifs.",
+        "IA & Claude, Cloud Designer, Bye Bye TJM, Sugar Daddy (sponsoring), Glow Up, podcasting vidéo, automation, SaaS solo… Un bootcamp par mois, tous orientés construction d'actifs.",
     },
     {
       icon: RocketLaunchIcon,
@@ -419,9 +420,9 @@ function CeQuiEstInclusSection() {
     },
     {
       icon: ShieldCheckIcon,
-      title: 'Experts invités sur tes problématiques',
+      title: '+50 experts invités sur tes problématiques',
       description:
-        "Spécialistes Notion, IA, design, vente, copywriting, podcasting. Tu peux les recruter en dehors si besoin, mais tu les rencontres d'abord en live.",
+        "Un réseau de +50 spécialistes (Notion, IA, design, vente, copywriting, podcasting…). Tu peux les recruter en dehors si besoin, mais tu les rencontres d'abord en live.",
     },
     {
       icon: ClipboardDocumentCheckIcon,
@@ -770,7 +771,7 @@ export default function CodeReductionSolopreneurPage() {
     },
     aggregateRating: {
       '@type': 'AggregateRating',
-      ratingValue: '4.9',
+      ratingValue: '4.85',
       reviewCount: '47',
       bestRating: '5',
       worstRating: '1',

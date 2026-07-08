@@ -245,13 +245,13 @@ function VueDensembleSection() {
     {
       name: 'Incubateur Solopreneur',
       by: 'Flavie Prevot',
-      tagline: 'Communauté + Sprints mensuels sur 12 mois',
+      tagline: 'Communauté + 10 Sprints/an (bootcamps) sur 12 mois',
       format: 'Programme long, format atelier',
       price: '1 490 € HT (affilié) / 2 400 € HT (public)',
       duration: '12 mois',
       rythme: '1 à 3h / semaine',
       focus:
-        'IA (Custom GPT’s, Claude), automation, SaaS solo, actifs (podcast, newsletter, sponsoring, offre)',
+        'IA (Custom GPT’s, Claude), automation, SaaS solo, actifs (podcast, newsletter, sponsoring, offre) — +50 experts, 50+ templates',
       icon: UsersIcon,
       accent: true,
     },
@@ -399,7 +399,7 @@ function ComparaisonCriteresSection() {
       icon: BoltIcon,
       label: 'Prise en charge (support)',
       incubateur:
-        'Flavie anime elle-même, office hours, experts invités récurrents.',
+        'Flavie anime elle-même, office hours, +50 experts invités récurrents.',
       marketingMania:
         'Stan Leloup + équipe pédagogique pendant la cohorte, contenu vidéo structuré.',
     },
