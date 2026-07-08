@@ -31,7 +31,7 @@ export function ToolCard({
       <Link
         href={{
           pathname: '/react-native-tools/[slug]',
-          query: { id, slug },
+          query: { slug },
         }}
       >
         <div className="flex h-full flex-col justify-between">

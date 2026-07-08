@@ -22,7 +22,7 @@ export async function getStaticProps() {
       '@type': 'ListItem',
       position: index + 1,
       name: record.name,
-      url: record.website_url || null,
+      url: `https://weshipit.today/react-native-tools/${record.slug}`,
     })),
   };
 
