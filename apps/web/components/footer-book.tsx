@@ -19,7 +19,7 @@ export default function FooterBook() {
           <Button
             as="a"
             className="my-4 w-44"
-            href="https://gumroad.com/l/road-react-native"
+            href="https://flexbox.gumroad.com/l/road-react-native"
             isExternalLink={true}
           >
             Check it out !

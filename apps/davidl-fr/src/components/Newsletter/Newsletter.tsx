@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { track } from '@vercel/analytics';
 import { PrimaryButton } from '~/components/Button';
 import { H5, P } from '~/components/Typography';
 import { Container, Input, Form, Success, Error } from './style';
@@ -32,6 +33,7 @@ export default function Newsletter() {
 
     setEmail('');
     setStatus('succeeded');
+    track('newsletter_signup', { page: window.location.pathname });
   }
 
   return (

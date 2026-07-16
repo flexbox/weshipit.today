@@ -29,8 +29,6 @@ export const resources = {
         description:
           '1 day conference entirely dedicated to the community of React Native developers.',
         name: 'React Native Connection',
-        slack_url:
-          'https://join.slack.com/t/reactnativeconnection/shared_invite/zt-1msk6xg0k-5kAkJt_Gc_9BZTDjzzA~ow',
         type: ['Conference'],
         website_url: 'https://reactnativeconnection.io/',
         youtube_url: 'https://www.youtube.com/@ZTechConnection/playlists',
