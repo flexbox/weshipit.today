@@ -4,6 +4,7 @@ import {
   Hyperlink,
   LinkButton,
   Prose,
+  Text,
   AvatarAvenger,
   AvengerStack,
 } from '@weshipit/ui';
@@ -116,9 +117,9 @@ export default function AboutPage({ clients }) {
         </Prose>
         <div className="mx-auto flex flex-col justify-between md:mx-8 md:flex-row dark:text-white">
           <div className="m-auto w-3/4 md:w-1/2">
-            <h3 className="mb-8 mr-8 pt-8 text-center text-3xl font-bold">
+            <Text as="h3" variant="h3" className="mb-8 mr-8 pt-8 text-center">
               David contributions
-            </h3>
+            </Text>
             <Image
               src="https://ghchart.rshah.org/409ba5/flexbox"
               alt="Open source contributions by David Leuliette"
@@ -127,9 +128,9 @@ export default function AboutPage({ clients }) {
             />
           </div>
           <div className=" m-auto w-3/4 md:w-1/2">
-            <h3 className="mb-8 mr-8 pt-8 text-center text-3xl font-bold">
+            <Text as="h3" variant="h3" className="mb-8 mr-8 pt-8 text-center">
               Matthys contributions
-            </h3>
+            </Text>
             <Image
               src="https://ghchart.rshah.org/409ba5/matthysdev"
               alt="Open source contributions by David Leuliette"

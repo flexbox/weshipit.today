@@ -259,7 +259,7 @@ export default function PodcastEpisodePage({
             <Text
               variant="h4"
               as="h2"
-              className="bg-gradient-to-b from-white to-white/75 bg-clip-text font-bold tracking-tight text-transparent drop-shadow"
+              className="bg-gradient-to-b from-white to-white/75 bg-clip-text font-bold text-transparent drop-shadow"
             >
               Venez parler de votre stack sur le podcast
             </Text>

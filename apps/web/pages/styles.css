@@ -8,6 +8,12 @@ a:hover {
     pointer !important;
 }
 
+.prose :is(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--font-space-grotesk), 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
 @layer base {
   :root {
     --background: 210 40% 96.1%;

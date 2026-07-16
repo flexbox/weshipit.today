@@ -449,9 +449,9 @@ export function PlanFinderSection({ ctaLink }: { ctaLink: string }) {
 
             {/* Question Card */}
             <Card className="shadow-lg">
-              <h3 className="text-2xl font-semibold mb-6 text-foreground">
+              <Text as="h3" variant="h4" className="mb-6">
                 {questions[currentQuestion].question}
-              </h3>
+              </Text>
               <div className="space-y-3">
                 {questions[currentQuestion].options.map((option, index) => (
                   <button
@@ -497,11 +497,16 @@ export function PlanFinderSection({ ctaLink }: { ctaLink: string }) {
                   <p className="text-sm font-medium text-muted-foreground mb-2">
                     We recommend
                   </p>
-                  <h3 className="text-3xl font-bold text-foreground">
+                  <Text as="h3" variant="h3">
                     {plan.name}
-                  </h3>
+                  </Text>
                   <div className="flex items-baseline justify-center gap-1 mt-2">
-                    <span className={cn('text-4xl font-bold', plan.textColor)}>
+                    <span
+                      className={cn(
+                        'font-display text-4xl font-bold tracking-[-0.03em]',
+                        plan.textColor,
+                      )}
+                    >
                       {plan.price}
                     </span>
                     <span className="text-muted-foreground">{plan.period}</span>
@@ -576,11 +581,16 @@ export function PlanFinderSection({ ctaLink }: { ctaLink: string }) {
                   >
                     <p.icon className={cn('w-6 h-6', p.textColor)} />
                   </div>
-                  <h3 className="text-xl font-bold text-foreground mb-1">
+                  <Text as="h3" variant="h5" className="mb-1">
                     {p.name}
-                  </h3>
+                  </Text>
                   <div className="flex items-baseline gap-1 mb-3">
-                    <span className={cn('text-2xl font-bold', p.textColor)}>
+                    <span
+                      className={cn(
+                        'font-display text-2xl font-bold tracking-[-0.03em]',
+                        p.textColor,
+                      )}
+                    >
                       {p.price}
                     </span>
                     <span className="text-sm text-muted-foreground">
@@ -631,7 +641,7 @@ export function Pricing({ ctaLink }: { ctaLink: string }) {
       <div className="mx-auto max-w-8xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-base/7 font-semibold text-blue-600">Pricing</p>
-          <h2 className="mt-2 text-balance text-5xl font-semibold tracking-tight text-gray-900 dark:text-white sm:text-6xl">
+          <h2 className="font-display mt-2 text-balance text-5xl font-bold tracking-[-0.03em] text-gray-900 dark:text-white sm:text-6xl">
             Pricing that scales with you
           </h2>
         </div>
@@ -652,7 +662,7 @@ export function Pricing({ ctaLink }: { ctaLink: string }) {
                   <h3
                     id={tier.id}
                     className={clsx(
-                      'mb-4 text-xl font-semibold',
+                      'font-display mb-4 text-xl font-bold tracking-[-0.03em]',
                       tier.featured
                         ? 'text-white dark:text-gray-900'
                         : 'text-gray-900 dark:text-white',
@@ -693,7 +703,7 @@ export function Pricing({ ctaLink }: { ctaLink: string }) {
                   <p className="mt-6 flex items-baseline gap-x-1">
                     <span
                       className={clsx(
-                        'text-4xl font-semibold tracking-tight',
+                        'font-display text-4xl font-semibold tracking-[-0.03em]',
                         tier.featured
                           ? 'text-white dark:text-gray-900'
                           : 'text-gray-900 dark:text-white',

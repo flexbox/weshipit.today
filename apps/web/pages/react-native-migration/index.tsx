@@ -159,7 +159,7 @@ export function Migration({ clients, feedback }: MigrationProps) {
               <Text
                 as="h1"
                 variant="h1"
-                className="tracking-tight text-slate-900 dark:text-white"
+                className="text-slate-900 dark:text-white"
               >
                 Transform Your{' '}
                 <span className="text-primary">React Native</span> App with Expo
@@ -260,9 +260,9 @@ export function Migration({ clients, feedback }: MigrationProps) {
                   <div className="rounded-full bg-primary/10 p-3 w-fit mb-4">
                     <CheckCircleIcon className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold mb-2 text-slate-900 dark:text-white">
+                  <Text as="h3" variant="h5" className="mb-2">
                     Proven Expertise
-                  </h3>
+                  </Text>
                   <p className="text-slate-600 dark:text-slate-400">
                     With {yearsOfExperience}+ years of specialized experience in
                     React Native and Expo migrations since {startYear}, we've
@@ -277,9 +277,9 @@ export function Migration({ clients, feedback }: MigrationProps) {
                   <div className="rounded-full bg-primary/10 p-3 w-fit mb-4">
                     <ClockIcon className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold mb-2 text-slate-900 dark:text-white">
+                  <Text as="h3" variant="h5" className="mb-2">
                     30% Faster Development
-                  </h3>
+                  </Text>
                   <p className="text-slate-600 dark:text-slate-400">
                     Our clients report 30% faster development cycles after
                     migration. We handle the complex technical work so your team
@@ -293,9 +293,9 @@ export function Migration({ clients, feedback }: MigrationProps) {
                   <div className="rounded-full bg-primary/10 p-3 w-fit mb-4">
                     <BoltIcon className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold mb-2 text-slate-900 dark:text-white">
+                  <Text as="h3" variant="h5" className="mb-2">
                     Seamless Integration
-                  </h3>
+                  </Text>
                   <p className="text-slate-600 dark:text-slate-400">
                     Your app will work flawlessly with the latest Expo features.
                     We ensure zero downtime during transition with our parallel
@@ -309,9 +309,9 @@ export function Migration({ clients, feedback }: MigrationProps) {
                   <div className="rounded-full bg-primary/10 p-3 w-fit mb-4">
                     <BanknotesIcon className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold mb-2 text-slate-900 dark:text-white">
+                  <Text as="h3" variant="h5" className="mb-2">
                     Fixed Pricing Guarantee
-                  </h3>
+                  </Text>
                   <p className="text-slate-600 dark:text-slate-400">
                     No surprises or hidden costs. We provide a clear,
                     transparent budget upfront with our satisfaction guarantee -
@@ -325,9 +325,9 @@ export function Migration({ clients, feedback }: MigrationProps) {
                   <div className="rounded-full bg-primary/10 p-3 w-fit mb-4">
                     <Cog6ToothIcon className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold mb-2 text-slate-900 dark:text-white">
+                  <Text as="h3" variant="h5" className="mb-2">
                     Tailored Migration Plan
-                  </h3>
+                  </Text>
                   <p className="text-slate-600 dark:text-slate-400">
                     Every app is unique. We create custom migration strategies
                     based on your specific needs, codebase complexity, and
@@ -341,9 +341,9 @@ export function Migration({ clients, feedback }: MigrationProps) {
                   <div className="rounded-full bg-primary/10 p-3 w-fit mb-4">
                     <UsersIcon className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold mb-2 text-slate-900 dark:text-white">
+                  <Text as="h3" variant="h5" className="mb-2">
                     Comprehensive Support
-                  </h3>
+                  </Text>
                   <p className="text-slate-600 dark:text-slate-400">
                     Our relationship doesn't end after migration. We provide 3
                     months of post-migration support to ensure your team is
@@ -387,9 +387,9 @@ export function Migration({ clients, feedback }: MigrationProps) {
                     {index + 1}
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-2 text-slate-900 dark:text-white">
+                    <Text as="h3" variant="h5" className="mb-2">
                       {step.title}
-                    </h3>
+                    </Text>
                     <p className="text-slate-600 dark:text-slate-400">
                       {step.description}
                     </p>
@@ -521,9 +521,9 @@ export function Migration({ clients, feedback }: MigrationProps) {
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {faqData.map((faq, index) => (
                 <div key={index}>
-                  <h3 className="text-xl font-bold mb-2 text-slate-900 dark:text-white">
+                  <Text as="h3" variant="h5" className="mb-2">
                     {faq.question}
-                  </h3>
+                  </Text>
                   <p className="text-slate-600 dark:text-slate-400">
                     {faq.answer}
                   </p>
@@ -540,7 +540,7 @@ export function Migration({ clients, feedback }: MigrationProps) {
               <Text
                 variant="h3"
                 as="h2"
-                className="bg-gradient-to-b from-white to-white/75 bg-clip-text font-bold tracking-tight text-transparent drop-shadow"
+                className="bg-gradient-to-b from-white to-white/75 bg-clip-text font-bold text-transparent drop-shadow"
               >
                 Ready to Migrate?
               </Text>

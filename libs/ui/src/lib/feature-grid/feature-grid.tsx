@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import { motion } from 'framer-motion';
+import { Text } from '../text/text';
 
 interface FeatureItem {
   icon: ReactNode;
@@ -47,9 +48,9 @@ export function FeatureGrid({
             <div className="h-8 w-8 text-blue-600 dark:text-blue-400 mb-2">
               {item.icon}
             </div>
-            <h3 className="mt-0 text-xl font-bold text-slate-900 dark:text-white">
+            <Text as="h3" variant="h5" className="mt-0">
               {item.title}
-            </h3>
+            </Text>
             <p className="text-slate-700 dark:text-slate-300">
               {item.description}
             </p>

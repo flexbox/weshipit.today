@@ -209,7 +209,7 @@ export default function FrenchReactNativePage({
           <Text
             variant="h4"
             as="h2"
-            className="bg-gradient-to-b from-white to-white/75 bg-clip-text font-bold tracking-tight text-transparent drop-shadow"
+            className="bg-gradient-to-b from-white to-white/75 bg-clip-text font-bold text-transparent drop-shadow"
           >
             Join the elite network of <br />
             french companies using React Native

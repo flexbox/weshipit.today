@@ -1,4 +1,5 @@
 import { Layout } from '../../components/layout';
+import { Text } from '@weshipit/ui';
 import { GlossaryTerm, getAllGlossaryTerms } from '../api/glossary';
 import { PrismicRichText } from '@prismicio/react';
 import { asText } from '@prismicio/client';
@@ -91,9 +92,9 @@ export default function ReactNativeGlossary({
       <article className="py-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <header className="lg:text-center">
-            <h1 className="mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+            <Text as="h1" variant="h2" className="mt-2">
               React Native Glossary
-            </h1>
+            </Text>
             <p className="mt-4 max-w-2xl text-xl text-gray-500 dark:text-gray-400 lg:mx-auto">
               A glossary of all the terms around React Native development.
             </p>
@@ -127,9 +128,9 @@ export default function ReactNativeGlossary({
             <section className="lg:col-span-2">
               {activeLetters.sort().map((letter) => (
                 <div key={letter} id={letter} className="mb-12">
-                  <h2 className="mb-6 text-4xl font-bold text-gray-900 dark:text-white">
+                  <Text as="h2" variant="h2" className="mb-6">
                     {letter}
-                  </h2>
+                  </Text>
 
                   <dl className="space-y-8">
                     {groupedTerms[letter]?.map((item) => (
@@ -138,14 +139,14 @@ export default function ReactNativeGlossary({
                         className="relative border-b border-gray-200 dark:border-gray-700 pb-6"
                       >
                         <dt>
-                          <h3 className="text-lg font-medium leading-6 text-gray-900 dark:text-white">
+                          <Text as="h3" variant="h6">
                             <Link
                               href={`/react-native-glossary/${slugify(item.data.title)}`}
                               className="hover:text-blue-600 dark:hover:text-blue-400 cursor-pointer"
                             >
                               {item.data.title}
                             </Link>
-                          </h3>
+                          </Text>
                         </dt>
                         <dd className="mt-2 text-base text-gray-500 dark:text-gray-400">
                           <PrismicRichText field={item.data.description} />

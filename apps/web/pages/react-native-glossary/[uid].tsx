@@ -3,7 +3,7 @@ import { PrismicRichText } from '@prismicio/react';
 import { asText } from '@prismicio/client';
 import Link from 'next/link';
 import Head from 'next/head';
-import { LinkButton } from '@weshipit/ui';
+import { LinkButton, Text } from '@weshipit/ui';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { GlossaryTerm, getAllGlossaryTerms } from '../api/glossary';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
@@ -202,9 +202,9 @@ export default function GlossaryTermPage({
 
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
             <section className="lg:col-span-2">
-              <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+              <Text as="h1" variant="h2" className="mb-6">
                 {term.data.title} in React Native
-              </h1>
+              </Text>
 
               <div className="prose dark:prose-invert max-w-none">
                 <PrismicRichText field={term.data.description} />
@@ -212,9 +212,9 @@ export default function GlossaryTermPage({
 
               {term.data.related_to && term.data.related_to.length > 0 && (
                 <div className="mt-8">
-                  <h2 className="text-xl font-medium text-gray-900 dark:text-white mb-4">
+                  <Text as="h2" variant="h5" className="mb-4">
                     Related Terms
-                  </h2>
+                  </Text>
                   <div className="flex flex-wrap gap-2">
                     {term.data.related_to.map((related: any, index: number) => {
                       const relatedText = asText(related);
@@ -246,23 +246,23 @@ export default function GlossaryTermPage({
 
               {relatedArticles && relatedArticles.length > 0 && (
                 <div className="mt-12">
-                  <h2 className="text-xl font-medium text-gray-900 dark:text-white mb-4">
+                  <Text as="h2" variant="h5" className="mb-4">
                     Relevant Articles
-                  </h2>
+                  </Text>
                   <div className="space-y-4">
                     {relatedArticles.map((article) => (
                       <div
                         key={article.id}
                         className="border border-gray-200 dark:border-gray-700 rounded-lg p-4"
                       >
-                        <h3 className="text-lg font-medium text-gray-900 dark:text-white">
+                        <Text as="h3" variant="h6">
                           <Link
                             href={`/blog/${article.uid}`}
                             className="hover:text-blue-600 dark:hover:text-blue-400"
                           >
                             {article.data.title}
                           </Link>
-                        </h3>
+                        </Text>
                         {article.data.excerpt && (
                           <p className="mt-2 text-gray-500 dark:text-gray-400">
                             {article.data.excerpt}

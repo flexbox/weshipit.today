@@ -15,21 +15,23 @@ export const TextVariants = cva(['text-pretty'], {
         'dark:text-neutral-200',
       ],
       h1: [
+        'font-display',
         'text-neutral-950',
-        'text-4xl',
-        'font-extrabold',
-        'tracking-tight',
+        'text-5xl',
+        'font-bold',
+        'tracking-[-0.03em]',
         'dark:text-neutral-200',
-        'sm:text-5xl',
-        'md:text-6xl',
-        'lg:text-5xl',
-        'xl:text-6xl',
+        'sm:text-6xl',
+        'md:text-7xl',
+        'lg:text-6xl',
+        'xl:text-7xl',
       ],
       h2: [
+        'font-display',
         'text-neutral-950',
         'text-3xl',
         'font-bold',
-        'tracking-tight',
+        'tracking-[-0.03em]',
         'dark:text-neutral-200',
         'sm:text-4xl',
         'md:text-5xl',
@@ -37,10 +39,11 @@ export const TextVariants = cva(['text-pretty'], {
         'xl:text-5xl',
       ],
       h3: [
+        'font-display',
         'text-neutral-950',
         'text-2xl',
         'font-bold',
-        'tracking-tight',
+        'tracking-[-0.03em]',
         'dark:text-neutral-200',
         'sm:text-3xl',
         'md:text-4xl',
@@ -48,15 +51,32 @@ export const TextVariants = cva(['text-pretty'], {
         'xl:text-4xl',
       ],
       h4: [
+        'font-display',
         'text-neutral-950',
         'text-xl',
         'font-bold',
-        'tracking-tight',
+        'tracking-[-0.03em]',
         'dark:text-neutral-200',
         'sm:text-2xl',
         'md:text-3xl',
         'lg:text-2xl',
         'xl:text-3xl',
+      ],
+      h5: [
+        'font-display',
+        'text-neutral-950',
+        'text-xl',
+        'font-bold',
+        'tracking-[-0.03em]',
+        'dark:text-neutral-200',
+      ],
+      h6: [
+        'font-display',
+        'text-neutral-950',
+        'text-lg',
+        'font-semibold',
+        'tracking-[-0.03em]',
+        'dark:text-neutral-200',
       ],
       p1: [
         'text-neutral-950',
@@ -105,6 +125,8 @@ export interface TextProps
     | 'h2'
     | 'h3'
     | 'h4'
+    | 'h5'
+    | 'h6'
     | 's1'
     | 's2'
     | 'p1'

@@ -34,7 +34,7 @@ export function HeroBanner({
             className={`space-y-4 ${isVisible ? 'animate-fadeIn' : 'opacity-0'}`}
           >
             <SpotLeft spotsLeft={spotsLeft} />
-            <Text as="h1" variant="h1" className="tracking-tighter">
+            <Text as="h1" variant="h1">
               We prevent your React Native app from dying while you scale your
               business.
             </Text>

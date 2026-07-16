@@ -310,9 +310,9 @@ export function TeamSection() {
                     </div>
                   </div>
                   <div className="pt-1">
-                    <h3 className="text-xl font-semibold text-foreground">
+                    <Text as="h3" variant="h5">
                       {member.name}
-                    </h3>
+                    </Text>
                     <p className="text-muted-foreground">{member.role}</p>
                     <Badge variant="gray-lighter" className="mt-2" size="sm">
                       {currentYear - member.experienceStarted}+ years

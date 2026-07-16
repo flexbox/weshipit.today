@@ -81,7 +81,9 @@ export default function HomePage() {
         {/* Value Proposition */}
         <div className="grid md:grid-cols-2 gap-8">
           <div className="bg-white rounded-xl p-6 shadow-md border border-slate-100 space-y-4">
-            <h3 className="text-xl font-bold">No Lock-In Contracts</h3>
+            <Text as="h3" variant="h5">
+              No Lock-In Contracts
+            </Text>
             <p className="text-slate-600">
               Forget those 6-month minimum commitments and mountains of
               paperwork. Our service is available on-demand—start, pause, or
@@ -95,7 +97,9 @@ export default function HomePage() {
             </div>
           </div>
           <div className="bg-white rounded-xl p-6 shadow-md border border-slate-100 space-y-4">
-            <h3 className="text-xl font-bold">Custom Partnership Options</h3>
+            <Text as="h3" variant="h5">
+              Custom Partnership Options
+            </Text>
             <p className="text-slate-600">
               Choose between ongoing development partnership or targeted
               skill-building workshops for your team. We adapt our services to
@@ -109,9 +113,9 @@ export default function HomePage() {
 
         {/* Urgency CTA */}
         <div className="text-center space-y-6 bg-gradient-to-r from-blue-50 to-indigo-50 py-10 px-6 rounded-2xl">
-          <h2 className="text-3xl font-bold">
+          <Text as="h2" variant="h3">
             Don't Let Your App Become Another Statistic
-          </h2>
+          </Text>
           <p className="text-lg text-slate-700 max-w-2xl mx-auto">
             It's {new Date().toLocaleTimeString()} for us right now, but we're
             ready to discuss how we can transform your app into a user-magnet.

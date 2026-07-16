@@ -17,6 +17,15 @@ const VariantExamples = () => (
     <Text as="h3" variant="h3">
       Title h3
     </Text>
+    <Text as="h4" variant="h4">
+      Title h4
+    </Text>
+    <Text as="h5" variant="h5">
+      Title h5
+    </Text>
+    <Text as="h6" variant="h6">
+      Title h6
+    </Text>
     <Text as="p" variant="s1">
       Subtitle s1
     </Text>

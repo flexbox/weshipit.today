@@ -258,7 +258,7 @@ function StatsSection() {
           {stats.map((stat, i) => (
             <div key={i} className="flex flex-col justify-between bg-card p-8">
               <div>
-                <div className="mb-2 text-5xl font-bold tracking-tight text-neutral-950 dark:text-neutral-200 md:text-6xl">
+                <div className="font-display mb-2 text-5xl font-bold tracking-[-0.03em] text-neutral-950 dark:text-neutral-200 md:text-6xl">
                   {stat.value}
                 </div>
                 <div className="mb-4 text-lg font-medium text-neutral-950 dark:text-neutral-200">
@@ -455,7 +455,7 @@ function PricingSection() {
                 Tarif unique
               </div>
               <div className="mb-4 flex items-baseline justify-center gap-2">
-                <span className="text-6xl font-bold tracking-tight text-neutral-950 dark:text-neutral-200 md:text-7xl">
+                <span className="font-display text-6xl font-bold tracking-[-0.03em] text-neutral-950 dark:text-neutral-200 md:text-7xl">
                   5k&euro;
                 </span>
                 <span className="text-xl text-neutral-500 dark:text-neutral-400">
