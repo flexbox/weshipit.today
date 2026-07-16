@@ -1,35 +1,35 @@
-import fetch from 'isomorphic-unfetch';
-
 export default async (req, res) => {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
+
   const { email } = req.body;
 
-  if (!email) {
-    return res.status(400).json({ error: 'Email is required' });
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return res.status(400).json({ error: 'A valid email is required' });
   }
 
   try {
-    const LIST_ID = process.env.MAILCHIMP_LIST_ID;
-    const API_KEY = process.env.MAILCHIMP_API_KEY;
-    const DATACENTER = API_KEY?.split('-')[1];
-
-    const data = {
-      email_address: email,
-      status: 'subscribed',
-    };
+    const API_KEY = process.env.MAILERLITE_API_KEY;
+    // Optional: assign new subscribers to a MailerLite group
+    const GROUP_ID = process.env.MAILERLITE_GROUP_ID;
 
     const response = await fetch(
-      `https://${DATACENTER}.api.mailchimp.com/3.0/lists/${LIST_ID}/members`,
+      'https://connect.mailerlite.com/api/subscribers',
       {
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          email,
+          ...(GROUP_ID ? { groups: [GROUP_ID] } : {}),
+        }),
         headers: {
-          Authorization: `apikey ${API_KEY}`,
+          Authorization: `Bearer ${API_KEY}`,
           'Content-Type': 'application/json',
         },
         method: 'POST',
       },
-    ).then((res) => res.json());
+    );
 
-    if (response.status >= 400) {
+    if (!response.ok) {
       return res.status(400).json({
         error:
           'Hm, couldn’t add you to the newsletter - ping me directly at dleuliette@gmail.com and I’ll add you to this list!',
