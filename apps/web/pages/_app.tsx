@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { AppProps } from 'next/app';
 import { Inter } from 'next/font/google';
 import { PrismicProvider } from '@prismicio/react';
@@ -5,6 +6,7 @@ import { client } from './api/prismic';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import { DefaultSeo } from 'next-seo';
+import { listenForConversionClicks } from '../utils/track-conversions';
 
 import './styles.css';
 
@@ -16,6 +18,8 @@ const inter = Inter({
 });
 
 function CustomApp({ Component, pageProps }: AppProps) {
+  useEffect(() => listenForConversionClicks(), []);
+
   return (
     <PrismicProvider client={client}>
       <DefaultSeo
