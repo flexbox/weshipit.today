@@ -31,9 +31,6 @@ export default function LinksPage() {
         <NativeLink href="https://flexbox.gumroad.com/l/road-react-native/HELLO_FRIEND">
           <Button className="mt-4 h-12 w-80">The Road to React Native</Button>
         </NativeLink>
-        <NativeLink href="https://flexbox.gumroad.com/l/job-hunt-automation/HELLO_FRIEND">
-          <Button className="mt-4 h-12 w-80">Job Hunt Automation</Button>
-        </NativeLink>
         <NativeLink href="https://displate.com/flexbox?art=5de0d8e5f393a">
           <Button className="mt-4 h-12 w-80">
             Best French Artists Punchlines

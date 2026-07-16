@@ -242,14 +242,6 @@ export default function Podcast() {
           </Hyperlink>
           <span>·</span>
           <Hyperlink
-            href="https://join.slack.com/t/reactnativeconnection/shared_invite/zt-1j5jigyph-MJURqXxpWHXTcYSH8PwhrQ"
-            isExternal
-            className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200"
-          >
-            Slack React Native Connection
-          </Hyperlink>
-          <span>·</span>
-          <Hyperlink
             href="https://github.com/sponsors/flexbox"
             isExternal
             className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200"
