@@ -64,7 +64,7 @@ const faqs = [
     id: 'faq-as-6',
     question: 'Les lives sont à 12h30, je ne peux pas toujours être là.',
     answer:
-      'Les 4 lives sont enregistrés et les replays sont disponibles le jour même, à vie. Le support async sur Discord couvre tes questions entre deux lives — tu peux suivre le sprint entier en décalé.',
+      'Les 4 lives sont enregistrés et les replays sont disponibles le jour même, à vie. Le support async sur Slack couvre tes questions entre deux lives — tu peux suivre le sprint entier en décalé.',
   },
   {
     id: 'faq-as-7',
@@ -431,7 +431,7 @@ function InclusSection() {
       icon: ChatBubbleLeftRightIcon,
       title: 'Bonus 3 — 30 jours de support async',
       description:
-        'Discord privé du batch, réponses de David & Matthys jusqu’au 9 novembre — le temps que tes agents tournent sans nous.',
+        'Slack privé du batch, réponses de David & Matthys jusqu’au 9 novembre — le temps que tes agents tournent sans nous.',
     },
     {
       icon: BookOpenIcon,
@@ -515,7 +515,7 @@ function PrixSection() {
     '4 lives + replays à vie',
     '10 skills & agents RN prêts à l’emploi',
     'Stability Checklist guidée sur ton app',
-    '30 jours de support async (Discord)',
+    '30 jours de support async (Slack)',
     'Le livre React Native inclus',
     'Garantie : une PR d’agent en semaine 1 ou remboursé',
   ];

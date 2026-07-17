@@ -56,7 +56,7 @@ Inclus / pas inclus (écrit noir sur blanc) :
 | ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------- |
 | « Je ne saurai pas quoi écrire comme prompts » | **10 skills/agents RN prêts à l'emploi** (Maestro, upgrade Expo, triage Sentry, release EAS, revue de PR RN…) | comparable : Solo Squad se vend 300 € |
 | « Mon app est trop instable pour automatiser » | **React Native Stability Checklist** + session de scoring de ton app                                          | le lead magnet, version guidée        |
-| « Je vais rester bloqué après »                | **30 jours de support async** post-sprint (Discord)                                                           | —                                     |
+| « Je vais rester bloqué après »                | **30 jours de support async** post-sprint (Slack)                                                             | —                                     |
 | « Il me manque les bases RN pour en profiter » | **Le livre inclus** (relance Q2 → synergie directe)                                                           | prix public du livre                  |
 
 Total bonus < 2× le prix. Pas de « valeur 5 000 € » inventée — voix de marque : des chiffres, pas des adjectifs.

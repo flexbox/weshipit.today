@@ -108,7 +108,7 @@ Ce workflow n'est pas une théorie de conférence : c'est celui qui fait tourner
 | **Le sprint complet**                                             | 4 lives de 1h30 + replays à vie + exercices guidés sur ton repo                                                               |
 | **Bonus 1 — 10 skills & agents RN prêts à l'emploi**              | Triage Sentry, tests Maestro, upgrade Expo, release EAS, revue de PR RN, et 5 autres. À installer tels quels, puis à adapter. |
 | **Bonus 2 — La React Native Stability Checklist, version guidée** | On score ton app ensemble en live : tu sais quoi automatiser en premier.                                                      |
-| **Bonus 3 — 30 jours de support async**                           | Discord privé de la cohorte, réponses de David & Matthys jusqu'au 25 octobre.                                                 |
+| **Bonus 3 — 30 jours de support async**                           | Slack privé de la cohorte, réponses de David & Matthys jusqu'au 25 octobre.                                                   |
 | **Bonus 4 — Le livre inclus**                                     | Notre livre React Native, en version numérique, dès ton inscription.                                                          |
 
 Pas de « valeur totale : 4 997 € ». Les bonus sont là pour lever tes objections, pas pour gonfler une addition.
