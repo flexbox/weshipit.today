@@ -29,7 +29,7 @@ Personne d'autre ne peut vendre ça : ça demande 8 ans de React Native + la sta
 
 ### 3.1 Nom
 
-**« Agentic Sprint — React Native »**
+**« Agentic Sprint React Native »**
 
 Test SMS : _« Je me suis inscrit à l'Agentic Sprint, c'est 490 €, en 2 semaines tu montes une CI où des agents IA corrigent les bugs et écrivent les tests E2E de ton app. »_ ✅ Ça se répète.
 
@@ -112,7 +112,7 @@ Même si le sprint ne se lance pas : chaque module du bootcamp existant reçoit 
 ```
 190 €      Workshop 2 h « Ton premier agent sur une app RN » (low-ticket, liste + froid)
    ↓ déductible 30 j
-490–690 €  Agentic Sprint — React Native (cette offre)
+490–690 €  Agentic Sprint React Native (cette offre)
    ↓ upsell naturel pour les devs en poste → leur CTO
 10 K€      Audit weshipit.today / retainer 2,5–5 K€/mois (l'agent, on l'installe pour vous)
 ```
@@ -123,7 +123,7 @@ Le sprint est aussi un **générateur de leads B2B** : un dev salarié convaincu
 
 1. ✅ **Format : batch d'1 mois, un live par semaine** (vocabulaire officiel : « batch », pas « cohorte ») (mardi 12h30–14h) — remplace le format « 2 semaines » de la v1
 2. ✅ **Batch 1 : du lundi 14 septembre au vendredi 9 octobre 2026** — lives les mardis 15, 22, 29 sept et 6 oct ; démo finale vendredi 9 oct ; inscriptions closes le vendredi 11 septembre
-3. ✅ **Nom définitif : Agentic Sprint — React Native**
+3. ✅ **Nom définitif : Agentic Sprint React Native**
 4. ✅ **Prix founding : 490 € HT** — paiement en une fois, pas de split — 690 € HT dès le batch 2
 5. ✅ **Page intégrée → `apps/web/pages/agentic-sprint.tsx`** (source de vérité du copy désormais ; `page-vente-agentic-sprint.md` = brouillon v1 au format 2 semaines)
 6. ✅ **Formulaire d'inscription : Notion** (`linksApi.notion.AGENTIC_SPRINT_FORM`) — branché sur les 4 CTAs de la page ; après soumission, David envoie le lien de paiement Stripe sous 48 h (paiement en une fois)

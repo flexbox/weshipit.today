@@ -7,7 +7,7 @@
 **Langue :** FR, tutoiement, voix dev-credible — chiffres, pas d'adjectifs
 **Règle appliquée :** le hero explique _ce que c'est_ et _pour qui_ avant le prix ; nom complet du produit dans le H1
 
-**Meta title :** Agentic Sprint — React Native · Fais coder, tester et release ton app par des agents IA
+**Meta title :** Agentic Sprint React Native · Fais coder, tester et release ton app par des agents IA
 **Meta description :** Cohorte en ligne de 2 semaines pour développeurs React Native. Tu montes des agents IA qui triagent tes crashs Sentry, écrivent tes tests Maestro et préparent tes releases EAS. Prochaine cohorte : 14 septembre 2026, 25 places.
 
 ---
@@ -16,7 +16,7 @@
 
 **Surtitre (eyebrow) :** Cohorte en ligne · 14 – 25 septembre 2026 · 25 places
 
-# Agentic Sprint — React Native
+# Agentic Sprint React Native
 
 **Une cohorte de 2 semaines pour développeurs React Native : tu montes des agents IA qui triagent tes crashs Sentry, écrivent tes tests Maestro et préparent tes releases EAS — sur ton app, pas sur un projet d'exemple.**
 

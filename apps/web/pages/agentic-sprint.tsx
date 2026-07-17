@@ -90,7 +90,8 @@ function HeroSection() {
         </div>
 
         <Text variant="h1" as="h1" className="mb-6 text-balance">
-          Agentic Sprint — <span className="text-accent">React Native</span>
+          Agentic Sprint <br />
+          <span className="text-accent">React Native</span>
         </Text>
 
         <p className="mx-auto mb-10 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-500 dark:text-neutral-400 md:text-xl">
@@ -721,7 +722,7 @@ export default function AgenticSprintPage() {
       {
         '@type': 'ListItem',
         position: 2,
-        name: 'Agentic Sprint — React Native',
+        name: 'Agentic Sprint React Native',
         item: 'https://weshipit.today/agentic-sprint',
       },
     ],
@@ -730,7 +731,7 @@ export default function AgenticSprintPage() {
   const courseSchema = {
     '@context': 'https://schema.org',
     '@type': 'Course',
-    name: 'Agentic Sprint — React Native',
+    name: 'Agentic Sprint React Native',
     description:
       "Batch en ligne d'un mois pour développeurs React Native : montez des agents IA qui triagent vos crashs Sentry, écrivent vos tests Maestro et préparent vos releases EAS. Un live par semaine, exercices sur votre propre app.",
     provider: {
@@ -786,9 +787,9 @@ export default function AgenticSprintPage() {
         />
       </Head>
       <Layout
-        seoTitle="Agentic Sprint — React Native : fais coder, tester et release ton app par des agents IA"
+        seoTitle="Agentic Sprint React Native : fais coder, tester et release ton app par des agents IA"
         seoDescription="Batch en ligne d'un mois pour développeurs React Native : monte des agents IA qui triagent tes crashs Sentry, écrivent tes tests Maestro et préparent tes releases EAS — sur ta propre app. Un live par semaine, du 14 septembre au 9 octobre 2026. 25 places, 490 € HT."
-        ogImageTitle="Agentic Sprint — React Native"
+        ogImageTitle="Agentic Sprint React Native"
         ogImageAlt="Agentic Sprint — batch d'un mois pour développeurs React Native : des agents IA sur ta propre app"
         locale="fr_FR"
         withHeader
