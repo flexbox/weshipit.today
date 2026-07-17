@@ -21,6 +21,8 @@ export const linksApi = {
     MONTHLY_PLAN: 'https://buy.stripe.com/5kA03G1sz8wu8GkfZ6',
   },
   notion: {
+    AGENTIC_SPRINT_FORM:
+      'https://flexbox.notion.site/6b32a3a0d6534d2aa90fcde1efb5513d?pvs=105',
     PODCAST_FORM:
       'https://flexbox.notion.site/17af478bcb8c8018b4a9db6b13d1df38?pvs=105',
     CLIENT_CRM_FORM:
