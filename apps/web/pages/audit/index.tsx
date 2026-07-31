@@ -94,10 +94,6 @@ function Section({ children, title }) {
     <Container>
       <div className="lg:flex lg:items-center lg:justify-center lg:gap-x-8 lg:group-even/section:justify-start xl:gap-x-20">
         <div className="mx-auto mt-12 lg:mt-0 lg:w-[37rem] lg:flex-none lg:group-even/section:order-first">
-          <div
-            className="text-base font-semibold before:text-neutral-300 dark:after:text-neutral-300"
-            aria-hidden="true"
-          />
           <Text as="h2" variant="h3" className="mt-2">
             {title}
           </Text>
@@ -259,7 +255,11 @@ function Benefits() {
             <li>better web-dev compatibility with flexbox gap support,</li>
             <li>
               and many{' '}
-              <a href="https://github.com/facebook/react-native/blob/main/CHANGELOG.md">
+              <a
+                href="https://github.com/facebook/react-native/blob/main/CHANGELOG.md"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 more features from the React Native changelog
               </a>
               .
@@ -368,7 +368,7 @@ export function Audit({ clients }: AuditProps) {
         />
       </Head>
       <FadeIn>
-        <div className="mx-auto mt-24 w-2/3">
+        <div className="mx-auto mt-12 w-full sm:mt-24 lg:w-2/3">
           <Hero
             title="React Native Codebase Audit"
             description="A fixed-fee, 2-week audit of your React Native app: we map your technical debt, upgrade your dependencies, and hand you a prioritized backlog — while your team keeps shipping features without a drop in development pace."
@@ -391,7 +391,7 @@ export function Audit({ clients }: AuditProps) {
         <ClientsListAudit clients={clients} />
       </FadeIn>
 
-      <div className="mt-12 space-y-24 [counter-reset:section] sm:mt-32 sm:space-y-32 lg:mt-8 lg:space-y-40">
+      <div className="mt-12 space-y-24 sm:mt-32 sm:space-y-32 lg:mt-8 lg:space-y-40">
         <Discover />
         <Workflow />
         <Benefits />
@@ -425,7 +425,7 @@ export function Audit({ clients }: AuditProps) {
       <div className="m-auto max-w-4xl py-8 lg:py-24">
         <Card
           size="xl"
-          className="m-auto my-24 flex flex-col items-center justify-center gap-8 text-center"
+          className="flex flex-col items-center justify-center gap-8 text-center"
           variant="gradient-blue"
         >
           <Text

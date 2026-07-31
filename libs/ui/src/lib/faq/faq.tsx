@@ -33,10 +33,10 @@ export function Faq({
         <div key={item.id}>
           <Disclosure
             as="div"
-            className="cursor-pointer rounded-md transition-colors duration-200 ease-in-out hover:bg-white dark:hover:bg-slate-800"
+            className="rounded-md transition-colors duration-200 ease-in-out hover:bg-white dark:hover:bg-slate-800"
             defaultOpen={index === 0}
           >
-            <DisclosureButton className="group flex w-full items-center justify-between px-4 py-3">
+            <DisclosureButton className="group flex w-full cursor-pointer items-center justify-between px-4 py-3">
               <Text
                 as="h3"
                 variant="p1"
@@ -44,7 +44,7 @@ export function Faq({
               >
                 {item.question}
               </Text>
-              <ChevronDownIcon className="size-5 group-data-[open]:rotate-180  dark:fill-white/60" />
+              <ChevronDownIcon className="size-5 shrink-0 transition-transform duration-200 ease-out group-data-[open]:rotate-180 dark:fill-white/60" />
             </DisclosureButton>
             <DisclosurePanel className="px-4 pb-4">
               <Text as="p" variant="p2">

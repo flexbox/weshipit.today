@@ -26,6 +26,7 @@ export function LinkButton({
       <Link
         className={buttonVariants({ className, size, variant })}
         target="_blank"
+        rel="noopener noreferrer"
         {...rest}
       >
         <div className="flex">

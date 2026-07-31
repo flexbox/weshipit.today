@@ -11,7 +11,7 @@ export const buttonVariants = cva(
     'font-semibold',
     'transition',
     'hover:cursor-pointer',
-    'active:scale-105',
+    'active:scale-[0.96]',
     'disabled:opacity-50',
     'disabled:cursor-not-allowed',
   ],
@@ -125,6 +125,7 @@ export const Button: React.FC<ButtonProps> = ({
       <Element
         className={buttonVariants({ className, size, variant })}
         target="_blank"
+        rel="noopener noreferrer"
         {...rest}
       >
         {accessoryLeft && accessoryLeft}

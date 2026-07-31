@@ -1,6 +1,6 @@
 import { Button, Card, LinkButton, Text } from '@weshipit/ui';
 import clsx from 'clsx';
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 
 // MailerLite → Forms → Embedded form → HTML code → action URL
 // https://assets.mailerlite.com/jsonp/ACCOUNT_ID/forms/FORM_ID/subscribe
@@ -178,6 +178,9 @@ export function StackAudit({ headingAs = 'h2' }: StackAuditProps) {
   const [answers, setAnswers] = useState<Record<string, number>>({});
   const [currentStep, setCurrentStep] = useState(0);
   const [showResults, setShowResults] = useState(false);
+  const [formStatus, setFormStatus] = useState<
+    'idle' | 'submitting' | 'success' | 'error'
+  >('idle');
 
   const categoryScore = (category: AuditCategory) => {
     let sum = 0;
@@ -219,6 +222,22 @@ export function StackAudit({ headingAs = 'h2' }: StackAuditProps) {
     setAnswers({});
     setCurrentStep(0);
     setShowResults(false);
+    setFormStatus('idle');
+  };
+
+  const handleSubscribe = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setFormStatus('submitting');
+    try {
+      const response = await fetch(MAILERLITE_FORM_ACTION, {
+        method: 'POST',
+        body: new FormData(event.currentTarget),
+      });
+      const result = await response.json();
+      setFormStatus(result.success ? 'success' : 'error');
+    } catch {
+      setFormStatus('error');
+    }
   };
 
   if (showResults) {
@@ -331,69 +350,104 @@ export function StackAudit({ headingAs = 'h2' }: StackAuditProps) {
             </ul>
           </div>
 
-          <form
-            action={MAILERLITE_FORM_ACTION}
-            method="post"
-            target="_blank"
-            noValidate
-            className="flex flex-col justify-center"
-          >
-            <div className="mb-4">
-              <label
-                htmlFor="stack-audit-name"
-                className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300"
+          {formStatus === 'success' ? (
+            <div className="flex flex-col items-center justify-center text-center">
+              <Text
+                as="p"
+                variant="h4"
+                className="text-green-600 dark:text-green-400"
               >
-                Prénom
-              </label>
-              <input
-                type="text"
-                id="stack-audit-name"
-                name="fields[name]"
-                placeholder="Ton prénom"
-                autoComplete="given-name"
-                className="w-full rounded-md border-0 bg-white px-3.5 py-2.5 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 dark:bg-white/5 dark:text-white dark:ring-white/10"
-              />
-            </div>
-
-            <div className="mb-6">
-              <label
-                htmlFor="stack-audit-email"
-                className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300"
+                Rapport en route ✓
+              </Text>
+              <Text
+                as="p"
+                variant="p2"
+                className="mt-3 text-slate-600 dark:text-slate-300"
               >
-                Email pro
-              </label>
-              <input
-                type="email"
-                id="stack-audit-email"
-                name="fields[email]"
-                placeholder="toi@entreprise.com"
-                required
-                autoComplete="email"
-                className="w-full rounded-md border-0 bg-white px-3.5 py-2.5 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 dark:bg-white/5 dark:text-white dark:ring-white/10"
-              />
+                Vérifiez votre boîte mail (et le dossier spam) dans les
+                prochaines minutes.
+              </Text>
             </div>
-
-            <input type="hidden" name="fields[audit_score]" value={scorePct} />
-            <input type="hidden" name="ml-submit" value="1" />
-
-            <Button
-              as="button"
-              variant="primary"
-              size="xl"
-              className="w-full justify-center"
+          ) : (
+            <form
+              onSubmit={handleSubscribe}
+              className="flex flex-col justify-center"
             >
-              Recevoir mon rapport
-            </Button>
+              <div className="mb-4">
+                <label
+                  htmlFor="stack-audit-name"
+                  className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300"
+                >
+                  Prénom
+                </label>
+                <input
+                  type="text"
+                  id="stack-audit-name"
+                  name="fields[name]"
+                  placeholder="Ton prénom"
+                  autoComplete="given-name"
+                  className="w-full rounded-md border-0 bg-white px-3.5 py-2.5 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 dark:bg-white/5 dark:text-white dark:ring-white/10"
+                />
+              </div>
 
-            <Text
-              as="p"
-              variant="c2"
-              className="mt-4 text-slate-400 dark:text-slate-500"
-            >
-              Un email, zéro spam. Désinscription possible à tout moment via
-              chaque email envoyé.
-            </Text>
-          </form>
+              <div className="mb-6">
+                <label
+                  htmlFor="stack-audit-email"
+                  className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300"
+                >
+                  Email pro
+                </label>
+                <input
+                  type="email"
+                  id="stack-audit-email"
+                  name="fields[email]"
+                  placeholder="toi@entreprise.com"
+                  required
+                  autoComplete="email"
+                  className="w-full rounded-md border-0 bg-white px-3.5 py-2.5 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 dark:bg-white/5 dark:text-white dark:ring-white/10"
+                />
+              </div>
+
+              <input
+                type="hidden"
+                name="fields[audit_score]"
+                value={scorePct}
+              />
+              <input type="hidden" name="ml-submit" value="1" />
+
+              <Button
+                as="button"
+                variant="primary"
+                size="xl"
+                className="w-full justify-center"
+                disabled={formStatus === 'submitting'}
+              >
+                {formStatus === 'submitting'
+                  ? 'Envoi en cours…'
+                  : 'Recevoir mon rapport'}
+              </Button>
+
+              {formStatus === 'error' && (
+                <Text
+                  as="p"
+                  variant="c1"
+                  className="mt-4 text-red-600 dark:text-red-400"
+                >
+                  Une erreur est survenue. Réessayez, ou écrivez-nous
+                  directement.
+                </Text>
+              )}
+
+              <Text
+                as="p"
+                variant="c2"
+                className="mt-4 text-slate-400 dark:text-slate-500"
+              >
+                Un email, zéro spam. Désinscription possible à tout moment via
+                chaque email envoyé.
+              </Text>
+            </form>
+          )}
         </Card>
 
         <div className="mt-10 text-center">
