@@ -1,6 +1,7 @@
 import { Button, Hyperlink, LinkButton, Prose, Text } from '@weshipit/ui';
 import { Layout } from '../../components/layout';
 import { PodcastEpisodeCard } from '../../components/podcast-episode-card';
+import { AuditGratuitCta } from '../../components/audit-gratuit-cta';
 import { podcastEpisodes } from '../../fixtures/podcast-episodes.fixture';
 import { linksApi } from 'apps/web/pages/api/links';
 import { useState } from 'react';
@@ -180,6 +181,10 @@ export default function Podcast() {
             </Button>
           </div>
         )}
+
+        <div className="mt-16 mb-12">
+          <AuditGratuitCta />
+        </div>
 
         <div className="mt-16 mb-12">
           <Prose>
