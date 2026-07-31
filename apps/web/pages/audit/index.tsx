@@ -17,7 +17,42 @@ import {
 import { linksApi } from '../api/links';
 
 import clsx from 'clsx';
+import Head from 'next/head';
 import { PropsWithChildren } from 'react';
+
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  description:
+    'A 2-week React Native codebase audit: prioritized technical debt backlog, dependency and React Native/Expo upgrades, and an unblocked release process.',
+  name: 'React Native Codebase Audit',
+  provider: {
+    '@type': 'Organization',
+    name: 'weshipit.today',
+    url: 'https://weshipit.today',
+  },
+  serviceType: 'Software code audit',
+  url: 'https://weshipit.today/audit',
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      item: 'https://weshipit.today',
+      name: 'Home',
+      position: 1,
+    },
+    {
+      '@type': 'ListItem',
+      item: 'https://weshipit.today/audit',
+      name: 'React Native Audit',
+      position: 2,
+    },
+  ],
+};
 
 // Define the shape of the props expected by the Audit component
 interface AuditProps {
@@ -149,28 +184,32 @@ function Workflow() {
             your stack.
           </li>
           <li>We upgrade 3rd-party libraries and tools.</li>
-          <li>We prepare the upgrade process and share the plan with you.</li>
-          <ol>
-            <li>
-              We decide whether to upgrade to the latest React Native version or
-              Expo SDK.
-            </li>
-            <li>
-              We use tools like <code>dep-check</code> and
-              <code>@rnx-kit/align-deps</code> to identify compatibility issues
-              for your app dependencies.
-            </li>
-          </ol>
-          <li>We run tests to ensure a successful upgrade:</li>
-          <ol>
-            <li>
-              this step ideally engages your existing test suite and testing
-              team.
-            </li>
-            <li>
-              if necessary we can engage our QA engineers for manual testing.
-            </li>
-          </ol>
+          <li>
+            We prepare the upgrade process and share the plan with you.
+            <ol>
+              <li>
+                We decide whether to upgrade to the latest React Native version
+                or Expo SDK.
+              </li>
+              <li>
+                We use tools like <code>dep-check</code> and{' '}
+                <code>@rnx-kit/align-deps</code> to identify compatibility
+                issues for your app dependencies.
+              </li>
+            </ol>
+          </li>
+          <li>
+            We run tests to ensure a successful upgrade:
+            <ol>
+              <li>
+                this step ideally engages your existing test suite and testing
+                team.
+              </li>
+              <li>
+                if necessary we can engage our QA engineers for manual testing.
+              </li>
+            </ol>
+          </li>
           <li>
             We help you upload the upgraded version to App Store Connect and
             Google Play Store if necessary.
@@ -191,51 +230,79 @@ function Benefits() {
       </p>
       <ol>
         <li>
-          Reduced time and effort —unfortunately, auditing some React Native
-          apps can be quite complex, so we can save your time and own the entire
-          process to allow you to{' '}
+          Reduced time and effort — auditing a React Native app can be quite
+          complex, so we save your time and own the entire process to allow you
+          to{' '}
           <strong className="font-semibold">
             focus on other important aspects of your project
           </strong>
           .
         </li>
         <li>
-          Make sure your app is compatible with libraries —The React Native
-          ecosystem is constantly evolving with various libraries, tools, and
-          community resources. Ensuring that you have the latest version of
-          React Native will make your app compatible with the latest versions of
-          these dependencies, reduce compatibility issues, and{' '}
+          Compatibility with the ecosystem — React Native evolves fast, with new
+          libraries, tools, and community resources every month. Running a
+          recent version of React Native keeps your app compatible with the
+          latest versions of these dependencies, reduces compatibility issues,
+          and{' '}
           <strong className="font-semibold">
-            make it easier to integrate new functionalities into your app
+            makes it easier to integrate new functionalities into your app
           </strong>
           .
         </li>
         <li>Unblocked release process for App Store and Google Play.</li>
-        <li>Access new features and improve DX:</li>
-        <ol>
-          <li>
-            easier debugging with React DevTools and better error messages,
-          </li>
-          <li>better web-dev compatibility with flexbox gap support,</li>
-          <li>
-            and many{' '}
-            <a href="https://github.com/facebook/react-native/blob/main/CHANGELOG.md">
-              more feature from the React Native changelog
-            </a>
-            .
-          </li>
-        </ol>
+        <li>
+          Access new features and improve DX:
+          <ol>
+            <li>
+              easier debugging with React DevTools and better error messages,
+            </li>
+            <li>better web-dev compatibility with flexbox gap support,</li>
+            <li>
+              and many{' '}
+              <a href="https://github.com/facebook/react-native/blob/main/CHANGELOG.md">
+                more features from the React Native changelog
+              </a>
+              .
+            </li>
+          </ol>
+        </li>
+      </ol>
+      <div className="not-prose">
+        <LinkButton
+          href="/onboarding"
+          size="xl"
+          className="mt-6 no-underline"
+          variant="outline"
+        >
+          Book a call
+        </LinkButton>
+      </div>
+    </Section>
+  );
+}
+
+// SelfAudit component
+function SelfAudit() {
+  return (
+    <Section title="Not ready for a full audit yet?">
+      <div className="space-y-6">
+        <p>
+          Score your stack yourself first. We turned our audit grid into a{' '}
+          <strong className="font-semibold">free 25-question self-audit</strong>{' '}
+          covering foundations, ecosystem, data layer, and devops. You get a
+          score out of 100 in 3 minutes — no call, no commitment (in French).
+        </p>
         <div className="not-prose">
           <LinkButton
-            href="/onboarding"
+            href="/audit-gratuit"
             size="xl"
-            className="mt-6 no-underline"
+            className="no-underline"
             variant="outline"
           >
-            Book a call
+            Try the free self-audit
           </LinkButton>
         </div>
-      </ol>
+      </div>
     </Section>
   );
 }
@@ -281,19 +348,30 @@ const faqs: FaqProps[] = [
 export function Audit({ clients }: AuditProps) {
   return (
     <Layout
-      seoTitle="Audit React Native App - Identify and Address Technical Debt"
+      seoTitle="React Native Audit: Fix Technical Debt in 2 Weeks"
       seoDescription={
-        'Our React Native Audit Package helps organizations identify and address technical debt in their codebase, improving app performance and stability. Book a call today to learn more.'
+        'Full React Native codebase audit in 2 weeks: prioritized backlog, dependency upgrades, unblocked releases. Trusted by apps serving millions of users.'
       }
+      ogImageTitle="React Native Codebase Audit"
       withHeader
       withFooter
       withContainer
     >
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
+      </Head>
       <FadeIn>
         <div className="mx-auto mt-24 w-2/3">
           <Hero
-            title="React Native Codebase Audit."
-            description="Eradicating your technical debt caused by a lack of expertise or capacity within your team. We can support your team by conducting the audit and allowing your organization to focus on its priorities without a drop in its development pace."
+            title="React Native Codebase Audit"
+            description="A fixed-fee, 2-week audit of your React Native app: we map your technical debt, upgrade your dependencies, and hand you a prioritized backlog — while your team keeps shipping features without a drop in development pace."
           >
             <div className="my-12">
               <Button
@@ -317,6 +395,7 @@ export function Audit({ clients }: AuditProps) {
         <Discover />
         <Workflow />
         <Benefits />
+        <SelfAudit />
       </div>
       <Prose size="lg" className="mx-auto my-4 lg:my-32">
         <h2>What else can we do for you?</h2>
