@@ -30,7 +30,7 @@ import {
   BuildingOffice2Icon,
   RocketLaunchIcon,
   SparklesIcon,
-} from '@heroicons/react/24/solid';
+} from '@heroicons/react/24/outline';
 
 const faqs: FaqProps[] = [
   {
@@ -134,7 +134,7 @@ function useGetLocalTimeInFrance() {
 
 function LocalTimeInFrance() {
   const localTime = useGetLocalTimeInFrance();
-  return <>{localTime}</>;
+  return <span className="tabular-nums">{localTime}</span>;
 }
 
 function ProblemAgitation() {
@@ -154,12 +154,12 @@ function ProblemAgitation() {
       </Text>
       <div className="relative flex h-[72px] w-[124px] flex-row items-center">
         <Avatar
-          className="rounded-full border-4 border-white bg-slate-300 dark:bg-slate-700 z-50"
+          className="rounded-full border-4 border-white dark:border-slate-900 bg-slate-300 dark:bg-slate-700 z-50"
           size={64}
           email="dleuliette@gmail.com"
         />
         <Avatar
-          className="rounded-full border-4 border-white bg-slate-300 dark:bg-slate-700 -ml-4 mr-4 "
+          className="rounded-full border-4 border-white dark:border-slate-900 bg-slate-300 dark:bg-slate-700 -ml-4 mr-4 "
           size={64}
           email="ducrocq.matthys@gmail.com"
         />
@@ -288,7 +288,7 @@ export function TeamSection() {
           {teamMembers.map((member) => (
             <Card
               key={member.name}
-              className="group relative overflow-hidden border-0 bg-card shadow-lg hover:shadow-xl transition-all duration-300"
+              className="group relative overflow-hidden ring-0 bg-card shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
               {/* Gradient accent line */}
               <div

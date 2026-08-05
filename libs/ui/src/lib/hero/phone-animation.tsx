@@ -654,13 +654,30 @@ export function PhoneAnimation() {
       rafRef.current = requestAnimationFrame(frame);
     };
 
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)',
+    ).matches;
+
+    const drawStatic = () => {
+      const rect = canvas.getBoundingClientRect();
+      ctx.clearRect(0, 0, rect.width, rect.height);
+      draw(1);
+    };
+
     resize();
-    rafRef.current = requestAnimationFrame(frame);
+    if (prefersReducedMotion) {
+      drawStatic();
+    } else {
+      rafRef.current = requestAnimationFrame(frame);
+    }
 
     let resizeTimer: ReturnType<typeof setTimeout>;
     const onResize = () => {
       clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(resize, 150);
+      resizeTimer = setTimeout(() => {
+        resize();
+        if (prefersReducedMotion) drawStatic();
+      }, 150);
     };
     window.addEventListener('resize', onResize);
 

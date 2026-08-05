@@ -7,6 +7,7 @@ import {
 } from '@icons-pack/react-simple-icons';
 
 import { MicrophoneIcon } from '@heroicons/react/20/solid';
+import { GlobeAltIcon } from '@heroicons/react/24/outline';
 
 export function TrustedConsultantsSection() {
   return (
@@ -49,7 +50,7 @@ export function TrustedConsultantsSection() {
                 alt="David Leuliette at Chain React conference with John and Mazen Chami"
                 width={500}
                 height={300}
-                className="w-full object-cover"
+                className="w-full object-cover outline outline-1 -outline-offset-1 outline-black/10 dark:outline-white/10"
               />
               <div className="p-4 bg-muted/30 dark:bg-slate-800/50">
                 <Text
@@ -72,7 +73,7 @@ export function TrustedConsultantsSection() {
                 alt="David Leuliette at App.js Conf with Catalyn and Aman"
                 width={500}
                 height={300}
-                className="w-full object-cover"
+                className="w-full object-cover outline outline-1 -outline-offset-1 outline-black/10 dark:outline-white/10"
               />
               <div className="p-4 bg-muted/30 dark:bg-slate-800/50">
                 <Text
@@ -158,9 +159,10 @@ export function TrustedConsultantsSection() {
                 variant="outline"
                 className="flex items-center justify-center gap-2"
               >
-                <span className="text-2xl" aria-hidden="true">
-                  🌐
-                </span>
+                <GlobeAltIcon
+                  className="h-6 w-6 text-blue-600 dark:text-blue-400"
+                  aria-hidden="true"
+                />
                 <span className="font-medium dark:text-white">Web</span>
               </LinkButton>
             </div>

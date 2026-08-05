@@ -1,20 +1,27 @@
 import React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 
-export const TextVariants = cva(['text-pretty'], {
+export const TextVariants = cva([], {
   defaultVariants: {
     variant: 'p1',
   },
   variants: {
     variant: {
-      c1: ['text-neutral-950', 'text-base', 'dark:text-neutral-200'],
+      c1: [
+        'text-pretty',
+        'text-neutral-950',
+        'text-base',
+        'dark:text-neutral-200',
+      ],
       c2: [
+        'text-pretty',
         'text-neutral-950',
         'text-sm',
         'font-medium',
         'dark:text-neutral-200',
       ],
       h1: [
+        'text-balance',
         'font-display',
         'text-neutral-950',
         'text-5xl',
@@ -27,6 +34,7 @@ export const TextVariants = cva(['text-pretty'], {
         'xl:text-7xl',
       ],
       h2: [
+        'text-balance',
         'font-display',
         'text-neutral-950',
         'text-3xl',
@@ -39,6 +47,7 @@ export const TextVariants = cva(['text-pretty'], {
         'xl:text-5xl',
       ],
       h3: [
+        'text-balance',
         'font-display',
         'text-neutral-950',
         'text-2xl',
@@ -51,6 +60,7 @@ export const TextVariants = cva(['text-pretty'], {
         'xl:text-4xl',
       ],
       h4: [
+        'text-balance',
         'font-display',
         'text-neutral-950',
         'text-xl',
@@ -63,6 +73,7 @@ export const TextVariants = cva(['text-pretty'], {
         'xl:text-3xl',
       ],
       h5: [
+        'text-balance',
         'font-display',
         'text-neutral-950',
         'text-xl',
@@ -71,6 +82,7 @@ export const TextVariants = cva(['text-pretty'], {
         'dark:text-neutral-200',
       ],
       h6: [
+        'text-balance',
         'font-display',
         'text-neutral-950',
         'text-lg',
@@ -79,6 +91,7 @@ export const TextVariants = cva(['text-pretty'], {
         'dark:text-neutral-200',
       ],
       p1: [
+        'text-pretty',
         'text-neutral-950',
         'text-base',
         'dark:text-neutral-200',
@@ -88,6 +101,7 @@ export const TextVariants = cva(['text-pretty'], {
         'xl:text-xl',
       ],
       p2: [
+        'text-pretty',
         'text-neutral-950',
         'text-sm',
         'font-medium',
@@ -97,12 +111,14 @@ export const TextVariants = cva(['text-pretty'], {
         'lg:text-base',
         'xl:text-lg',
       ],
-      quote: ['text-neutral-950', 'text-lg', 'font-bold'],
+      quote: ['text-pretty', 'text-neutral-950', 'text-lg', 'font-bold'],
       s1: [
+        'text-pretty',
         'text-neutral-950',
         'text-xl sm:text-2xl md:text-3xl lg:text-2xl xl:text-3xl dark:text-neutral-200',
       ],
       s2: [
+        'text-pretty',
         'text-neutral-950',
         'text-lg',
         'dark:text-neutral-200',

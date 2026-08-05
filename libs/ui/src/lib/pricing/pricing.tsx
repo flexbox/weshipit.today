@@ -400,7 +400,7 @@ export function PlanFinderSection({ ctaLink }: { ctaLink: string }) {
                 resetQuiz();
               }}
               className={cn(
-                'px-5 py-2.5 rounded-md text-sm font-medium transition-all',
+                'px-5 py-2.5 rounded-md text-sm font-medium transition-[background-color,color,box-shadow]',
                 mode === 'quiz'
                   ? 'bg-background text-foreground shadow-sm'
                   : 'text-muted-foreground hover:text-foreground',
@@ -412,7 +412,7 @@ export function PlanFinderSection({ ctaLink }: { ctaLink: string }) {
             <button
               onClick={() => setMode('compare')}
               className={cn(
-                'px-5 py-2.5 rounded-md text-sm font-medium transition-all',
+                'px-5 py-2.5 rounded-md text-sm font-medium transition-[background-color,color,box-shadow]',
                 mode === 'compare'
                   ? 'bg-background text-foreground shadow-sm'
                   : 'text-muted-foreground hover:text-foreground',
@@ -429,17 +429,17 @@ export function PlanFinderSection({ ctaLink }: { ctaLink: string }) {
             {/* Progress */}
             <div className="mb-8">
               <div className="flex justify-between items-center mb-2">
-                <span className="text-sm text-muted-foreground">
+                <span className="text-sm text-muted-foreground tabular-nums">
                   Question {currentQuestion + 1} of {questions.length}
                 </span>
-                <span className="text-sm text-muted-foreground">
+                <span className="text-sm text-muted-foreground tabular-nums">
                   {Math.round(((currentQuestion + 1) / questions.length) * 100)}
                   %
                 </span>
               </div>
               <div className="h-2 bg-muted rounded-full overflow-hidden dark:bg-muted/20">
                 <div
-                  className="h-full bg-primary transition-all duration-500 ease-out rounded-full"
+                  className="h-full bg-primary transition-[width] duration-500 ease-out rounded-full"
                   style={{
                     width: `${((currentQuestion + 1) / questions.length) * 100}%`,
                   }}
@@ -457,7 +457,7 @@ export function PlanFinderSection({ ctaLink }: { ctaLink: string }) {
                   <button
                     key={index}
                     onClick={() => handleAnswer(index)}
-                    className="w-full p-4 text-left rounded-xl border-2 border-border hover:border-primary/50 hover:bg-primary/5 transition-all group dark:hover:bg-primary/10 dark:border-muted/20"
+                    className="w-full p-4 text-left rounded-xl border-2 border-border hover:border-primary/50 hover:bg-primary/5 transition-[border-color,background-color] group dark:hover:bg-primary/10 dark:border-muted/20"
                   >
                     <div className="flex items-center justify-between">
                       <div>
@@ -563,7 +563,7 @@ export function PlanFinderSection({ ctaLink }: { ctaLink: string }) {
                 <Card
                   key={key}
                   className={cn(
-                    'relative transition-all hover:shadow-xl',
+                    'relative transition-shadow hover:shadow-xl',
                     p.borderColor,
                   )}
                 >
@@ -730,7 +730,7 @@ export function Pricing({ ctaLink }: { ctaLink: string }) {
                     href={tier.href}
                     aria-describedby={tier.id}
                     className={clsx(
-                      'mt-6 block rounded-md px-3 py-2 text-center text-sm/6 font-semibold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2',
+                      'mt-6 block rounded-md px-3 py-2 text-center text-sm/6 font-semibold transition-[background-color,transform] duration-150 ease-out active:scale-[0.96] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2',
                       tier.featured
                         ? 'bg-white/10 text-white hover:bg-white/20 focus-visible:outline-white dark:bg-gray-900 dark:text-white dark:hover:bg-gray-800'
                         : 'bg-blue-600 text-white shadow-sm hover:bg-blue-500 focus-visible:outline-blue-600 dark:bg-blue-500 dark:hover:bg-blue-400',
