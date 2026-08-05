@@ -126,10 +126,10 @@ export default function AuditGratuit() {
           <dl className="mt-6 divide-y divide-gray-200 dark:divide-gray-800">
             {FAQ_ITEMS.map(({ question, answer }) => (
               <div key={question} className="py-6">
-                <dt className="text-base font-semibold text-gray-900 dark:text-gray-100">
+                <dt className="text-balance text-base font-semibold text-gray-900 dark:text-gray-100">
                   {question}
                 </dt>
-                <dd className="mt-2 text-base text-gray-600 dark:text-gray-400">
+                <dd className="mt-2 text-pretty text-base text-gray-600 dark:text-gray-400">
                   {answer}
                 </dd>
               </div>

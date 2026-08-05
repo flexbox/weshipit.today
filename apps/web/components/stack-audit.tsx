@@ -1,4 +1,12 @@
-import { Button, Card, LinkButton, Text } from '@weshipit/ui';
+import {
+  Button,
+  Card,
+  FadeIn,
+  FadeInStagger,
+  LinkButton,
+  Text,
+} from '@weshipit/ui';
+import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/20/solid';
 import clsx from 'clsx';
 import { FormEvent, useState } from 'react';
 
@@ -244,230 +252,245 @@ export function StackAudit({ headingAs = 'h2' }: StackAuditProps) {
     return (
       <section aria-labelledby="stack-audit-title">
         <Button variant="outline" size="lg" onClick={handleReset}>
-          ← Recommencer l'audit
+          <ArrowLeftIcon className="-ml-0.5 mr-2 size-4" aria-hidden="true" />
+          Recommencer l'audit
         </Button>
 
-        <Card size="lg" className="mt-6">
-          <div className="flex flex-col items-center gap-8 text-center md:flex-row md:text-left">
-            <Text
-              as="p"
-              variant="h2"
-              className="whitespace-nowrap text-green-600 dark:text-green-400"
-            >
-              {scorePct}
-              <span className="text-2xl text-slate-400">/100</span>
-            </Text>
-            <div>
-              <Text
-                as="h3"
-                variant="c2"
-                className="uppercase tracking-wide text-blue-600 dark:text-blue-400"
-              >
-                {verdict.label}
-              </Text>
-              <Text
-                as="p"
-                variant="p2"
-                className="mt-2 text-slate-600 dark:text-slate-300"
-              >
-                {verdict.text}
-              </Text>
-            </div>
-          </div>
-        </Card>
+        <FadeInStagger faster>
+          <FadeIn>
+            <Card size="lg" className="mt-6">
+              <div className="flex flex-col items-center gap-8 text-center md:flex-row md:text-left">
+                <Text
+                  as="p"
+                  variant="h2"
+                  className="whitespace-nowrap text-green-600 dark:text-green-400"
+                >
+                  {scorePct}
+                  <span className="text-2xl text-slate-400">/100</span>
+                </Text>
+                <div>
+                  <Text
+                    as="h3"
+                    variant="c2"
+                    className="uppercase tracking-wide text-blue-600 dark:text-blue-400"
+                  >
+                    {verdict.label}
+                  </Text>
+                  <Text
+                    as="p"
+                    variant="p2"
+                    className="mt-2 text-slate-600 dark:text-slate-300"
+                  >
+                    {verdict.text}
+                  </Text>
+                </div>
+              </div>
+            </Card>
+          </FadeIn>
 
-        <div className="mt-6 grid grid-cols-2 gap-4 lg:grid-cols-4">
-          {CATEGORIES.map((category) => {
-            const score = categoryScore(category);
-            const catPct = Math.round((score.sum / score.total) * 100);
-            return (
-              <Card key={category.key} size="md">
+          <FadeIn>
+            <div className="mt-6 grid grid-cols-2 gap-4 lg:grid-cols-4">
+              {CATEGORIES.map((category) => {
+                const score = categoryScore(category);
+                const catPct = Math.round((score.sum / score.total) * 100);
+                return (
+                  <Card key={category.key} size="md">
+                    <Text
+                      as="p"
+                      variant="c2"
+                      className="uppercase tracking-wide text-slate-500 dark:text-slate-400"
+                    >
+                      {category.label}
+                    </Text>
+                    <Text
+                      as="p"
+                      variant="h5"
+                      className="mt-2 text-blue-600 dark:text-blue-400"
+                    >
+                      {catPct}%
+                    </Text>
+                    <div className="mt-3 h-1 rounded-full bg-slate-200 dark:bg-slate-700">
+                      <div
+                        className="h-1 rounded-full bg-green-500"
+                        style={{ width: `${catPct}%` }}
+                      />
+                    </div>
+                  </Card>
+                );
+              })}
+            </div>
+          </FadeIn>
+
+          <FadeIn>
+            <Card size="lg" className="mt-8 grid gap-10 md:grid-cols-2">
+              <div>
                 <Text
                   as="p"
                   variant="c2"
-                  className="uppercase tracking-wide text-slate-500 dark:text-slate-400"
+                  className="uppercase tracking-wide text-green-600 dark:text-green-400"
                 >
-                  {category.label}
+                  Rapport détaillé
+                </Text>
+                <Text as="h3" variant="h4" className="mt-3">
+                  Recevez votre rapport d'audit complet
                 </Text>
                 <Text
                   as="p"
-                  variant="h5"
-                  className="mt-2 text-blue-600 dark:text-blue-400"
+                  variant="p2"
+                  className="mt-4 text-slate-600 dark:text-slate-300"
                 >
-                  {catPct}%
+                  Le détail de vos réponses, priorisé par impact et effort
+                  (comme un vrai audit d'architecture), envoyé directement dans
+                  votre boîte mail.
                 </Text>
-                <div className="mt-3 h-1 rounded-full bg-slate-200 dark:bg-slate-700">
-                  <div
-                    className="h-1 rounded-full bg-green-500"
-                    style={{ width: `${catPct}%` }}
-                  />
-                </div>
-              </Card>
-            );
-          })}
-        </div>
+                <ul className="mt-6 space-y-3">
+                  {[
+                    'Vos points faibles classés par priorité (impact / effort)',
+                    'Des recommandations concrètes par item, pas de généralités',
+                    'Le même format utilisé pour les audits clients',
+                  ].map((bullet) => (
+                    <li
+                      key={bullet}
+                      className="flex gap-3 text-sm text-slate-600 dark:text-slate-300"
+                    >
+                      <span
+                        aria-hidden="true"
+                        className="text-blue-600 dark:text-blue-400"
+                      >
+                        →
+                      </span>
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-        <Card size="lg" className="mt-8 grid gap-10 md:grid-cols-2">
-          <div>
-            <Text
-              as="p"
-              variant="c2"
-              className="uppercase tracking-wide text-green-600 dark:text-green-400"
-            >
-              Rapport détaillé
-            </Text>
-            <Text as="h3" variant="h4" className="mt-3">
-              Recevez votre rapport d'audit complet
-            </Text>
-            <Text
-              as="p"
-              variant="p2"
-              className="mt-4 text-slate-600 dark:text-slate-300"
-            >
-              Le détail de vos réponses, priorisé par impact et effort (comme un
-              vrai audit d'architecture), envoyé directement dans votre boîte
-              mail.
-            </Text>
-            <ul className="mt-6 space-y-3">
-              {[
-                'Vos points faibles classés par priorité (impact / effort)',
-                'Des recommandations concrètes par item, pas de généralités',
-                'Le même format utilisé pour les audits clients',
-              ].map((bullet) => (
-                <li
-                  key={bullet}
-                  className="flex gap-3 text-sm text-slate-600 dark:text-slate-300"
-                >
-                  <span
-                    aria-hidden="true"
-                    className="text-blue-600 dark:text-blue-400"
+              {formStatus === 'success' ? (
+                <div className="flex flex-col items-center justify-center text-center">
+                  <Text
+                    as="p"
+                    variant="h4"
+                    className="text-green-600 dark:text-green-400"
                   >
-                    →
-                  </span>
-                  {bullet}
-                </li>
-              ))}
-            </ul>
-          </div>
+                    Rapport en route ✓
+                  </Text>
+                  <Text
+                    as="p"
+                    variant="p2"
+                    className="mt-3 text-slate-600 dark:text-slate-300"
+                  >
+                    Vérifiez votre boîte mail (et le dossier spam) dans les
+                    prochaines minutes.
+                  </Text>
+                </div>
+              ) : (
+                <form
+                  onSubmit={handleSubscribe}
+                  className="flex flex-col justify-center"
+                >
+                  <div className="mb-4">
+                    <label
+                      htmlFor="stack-audit-name"
+                      className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300"
+                    >
+                      Prénom
+                    </label>
+                    <input
+                      type="text"
+                      id="stack-audit-name"
+                      name="fields[name]"
+                      placeholder="Ton prénom"
+                      autoComplete="given-name"
+                      className="w-full rounded-md border-0 bg-white px-3.5 py-2.5 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 dark:bg-white/5 dark:text-white dark:ring-white/10"
+                    />
+                  </div>
 
-          {formStatus === 'success' ? (
-            <div className="flex flex-col items-center justify-center text-center">
-              <Text
-                as="p"
-                variant="h4"
-                className="text-green-600 dark:text-green-400"
-              >
-                Rapport en route ✓
-              </Text>
+                  <div className="mb-6">
+                    <label
+                      htmlFor="stack-audit-email"
+                      className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300"
+                    >
+                      Email pro
+                    </label>
+                    <input
+                      type="email"
+                      id="stack-audit-email"
+                      name="fields[email]"
+                      placeholder="toi@entreprise.com"
+                      required
+                      autoComplete="email"
+                      className="w-full rounded-md border-0 bg-white px-3.5 py-2.5 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 dark:bg-white/5 dark:text-white dark:ring-white/10"
+                    />
+                  </div>
+
+                  <input
+                    type="hidden"
+                    name="fields[audit_score]"
+                    value={scorePct}
+                  />
+                  <input type="hidden" name="ml-submit" value="1" />
+
+                  <Button
+                    as="button"
+                    variant="primary"
+                    size="xl"
+                    className="w-full justify-center"
+                    disabled={formStatus === 'submitting'}
+                  >
+                    {formStatus === 'submitting'
+                      ? 'Envoi en cours…'
+                      : 'Recevoir mon rapport'}
+                  </Button>
+
+                  {formStatus === 'error' && (
+                    <Text
+                      as="p"
+                      variant="c1"
+                      className="mt-4 text-red-600 dark:text-red-400"
+                    >
+                      Une erreur est survenue. Réessayez, ou écrivez-nous
+                      directement.
+                    </Text>
+                  )}
+
+                  <Text
+                    as="p"
+                    variant="c2"
+                    className="mt-4 text-slate-400 dark:text-slate-500"
+                  >
+                    Un email, zéro spam. Désinscription possible à tout moment
+                    via chaque email envoyé.
+                  </Text>
+                </form>
+              )}
+            </Card>
+          </FadeIn>
+
+          <FadeIn>
+            <div className="mt-10 text-center">
               <Text
                 as="p"
                 variant="p2"
-                className="mt-3 text-slate-600 dark:text-slate-300"
+                className="text-slate-600 dark:text-slate-300"
               >
-                Vérifiez votre boîte mail (et le dossier spam) dans les
-                prochaines minutes.
+                Score en dessous de 70 ? Notre équipe réalise le même audit en
+                profondeur sur votre codebase, avec un plan d'action priorisé.
               </Text>
-            </div>
-          ) : (
-            <form
-              onSubmit={handleSubscribe}
-              className="flex flex-col justify-center"
-            >
-              <div className="mb-4">
-                <label
-                  htmlFor="stack-audit-name"
-                  className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300"
-                >
-                  Prénom
-                </label>
-                <input
-                  type="text"
-                  id="stack-audit-name"
-                  name="fields[name]"
-                  placeholder="Ton prénom"
-                  autoComplete="given-name"
-                  className="w-full rounded-md border-0 bg-white px-3.5 py-2.5 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 dark:bg-white/5 dark:text-white dark:ring-white/10"
-                />
-              </div>
-
-              <div className="mb-6">
-                <label
-                  htmlFor="stack-audit-email"
-                  className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300"
-                >
-                  Email pro
-                </label>
-                <input
-                  type="email"
-                  id="stack-audit-email"
-                  name="fields[email]"
-                  placeholder="toi@entreprise.com"
-                  required
-                  autoComplete="email"
-                  className="w-full rounded-md border-0 bg-white px-3.5 py-2.5 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 dark:bg-white/5 dark:text-white dark:ring-white/10"
-                />
-              </div>
-
-              <input
-                type="hidden"
-                name="fields[audit_score]"
-                value={scorePct}
-              />
-              <input type="hidden" name="ml-submit" value="1" />
-
-              <Button
-                as="button"
-                variant="primary"
+              <LinkButton
+                href="/audit"
+                variant="outline"
                 size="xl"
-                className="w-full justify-center"
-                disabled={formStatus === 'submitting'}
+                className="group mt-4"
               >
-                {formStatus === 'submitting'
-                  ? 'Envoi en cours…'
-                  : 'Recevoir mon rapport'}
-              </Button>
-
-              {formStatus === 'error' && (
-                <Text
-                  as="p"
-                  variant="c1"
-                  className="mt-4 text-red-600 dark:text-red-400"
-                >
-                  Une erreur est survenue. Réessayez, ou écrivez-nous
-                  directement.
-                </Text>
-              )}
-
-              <Text
-                as="p"
-                variant="c2"
-                className="mt-4 text-slate-400 dark:text-slate-500"
-              >
-                Un email, zéro spam. Désinscription possible à tout moment via
-                chaque email envoyé.
-              </Text>
-            </form>
-          )}
-        </Card>
-
-        <div className="mt-10 text-center">
-          <Text
-            as="p"
-            variant="p2"
-            className="text-slate-600 dark:text-slate-300"
-          >
-            Score en dessous de 70 ? Notre équipe réalise le même audit en
-            profondeur sur votre codebase, avec un plan d'action priorisé.
-          </Text>
-          <LinkButton
-            href="/audit"
-            variant="outline"
-            size="xl"
-            className="mt-4"
-          >
-            Découvrir l'audit complet →
-          </LinkButton>
-        </div>
+                Découvrir l'audit complet
+                <ArrowRightIcon
+                  className="-mr-0.5 ml-2 size-4 transition-transform group-hover:translate-x-1"
+                  aria-hidden="true"
+                />
+              </LinkButton>
+            </div>
+          </FadeIn>
+        </FadeInStagger>
       </section>
     );
   }
@@ -500,7 +523,7 @@ export function StackAudit({ headingAs = 'h2' }: StackAuditProps) {
           <div
             key={category.key}
             className={clsx(
-              'h-1 flex-1 rounded-full',
+              'h-1 flex-1 rounded-full transition-colors duration-300 ease-out',
               index < currentStep && 'bg-green-500',
               index === currentStep && 'bg-blue-600',
               index > currentStep && 'bg-slate-200 dark:bg-slate-700',
@@ -509,15 +532,15 @@ export function StackAudit({ headingAs = 'h2' }: StackAuditProps) {
         ))}
       </div>
       <div className="mt-3 flex justify-between text-xs font-medium uppercase tracking-wide text-slate-400">
-        <span>
+        <span className="tabular-nums">
           Étape {currentStep + 1}/{CATEGORIES.length} · {currentCategory.label}
         </span>
-        <span className="hidden sm:block">
+        <span className="hidden tabular-nums sm:block">
           {currentScore.answered} / {currentScore.total} répondues
         </span>
       </div>
 
-      <Card className="mt-6 p-0" size="sm">
+      <Card className="mt-6 !p-0" size="sm">
         <div className="flex items-center justify-between border-b border-slate-200 px-6 py-5 dark:border-slate-800">
           <Text as="h3" variant="h6">
             <span className="mr-3 text-blue-600 dark:text-blue-400">
@@ -525,7 +548,7 @@ export function StackAudit({ headingAs = 'h2' }: StackAuditProps) {
             </span>
             {currentCategory.label}
           </Text>
-          <Text as="span" variant="c2" className="text-slate-400">
+          <Text as="span" variant="c2" className="text-slate-400 tabular-nums">
             {currentScore.sum % 1 === 0
               ? currentScore.sum
               : currentScore.sum.toFixed(1)}
@@ -551,7 +574,7 @@ export function StackAudit({ headingAs = 'h2' }: StackAuditProps) {
                     aria-pressed={isActive}
                     onClick={() => handleAnswer(question.id, option.value)}
                     className={clsx(
-                      'rounded-md px-3 py-2 text-xs font-semibold uppercase tracking-wide transition',
+                      'min-h-11 rounded-md px-3.5 py-2 text-xs font-semibold uppercase tracking-wide transition-[color,background-color,box-shadow,transform] duration-150 ease-out active:scale-[0.96] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600',
                       !isActive &&
                         'text-slate-500 ring-1 ring-inset ring-slate-300 hover:ring-blue-500 dark:text-slate-400 dark:ring-slate-700',
                       isActive &&
@@ -579,17 +602,27 @@ export function StackAudit({ headingAs = 'h2' }: StackAuditProps) {
           disabled={currentStep === 0}
           onClick={() => setCurrentStep(currentStep - 1)}
         >
-          ← Précédent
+          <ArrowLeftIcon className="-ml-0.5 mr-2 size-4" aria-hidden="true" />
+          Précédent
         </Button>
         <Button
           variant="primary"
           size="lg"
+          className="group"
           disabled={currentScore.answered < currentScore.total}
           onClick={handleNext}
         >
-          {isLastStep
-            ? 'Voir mon score'
-            : `Suivant : ${CATEGORIES[currentStep + 1].label} →`}
+          {isLastStep ? (
+            'Voir mon score'
+          ) : (
+            <>
+              Suivant : {CATEGORIES[currentStep + 1].label}
+              <ArrowRightIcon
+                className="-mr-0.5 ml-2 size-4 transition-transform group-hover:translate-x-1"
+                aria-hidden="true"
+              />
+            </>
+          )}
         </Button>
       </div>
     </section>
