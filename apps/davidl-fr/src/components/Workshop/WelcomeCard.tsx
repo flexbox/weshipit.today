@@ -32,17 +32,17 @@ export function WelcomeCard({}: Props) {
           </h4>
           <div className="flex w-full flex-wrap items-center justify-between">
             <div className="my-5 grid w-full grid-flow-row gap-3 sm:w-auto sm:grid-flow-col-dense">
-              <div className="rounded-md shadow-sm">
+              <div className="rounded-md shadow-xs">
                 <NativeLink
-                  className="flex items-center justify-center rounded-md border border-transparent bg-blue-800 px-4 py-2 text-sm font-semibold leading-6 text-white transition duration-150 ease-in-out hover:bg-blue-900 focus:outline-none dark:bg-orange-800 dark:hover:bg-orange-900"
+                  className="flex items-center justify-center rounded-md border border-transparent bg-blue-800 px-4 py-2 text-sm font-semibold leading-6 text-white transition duration-150 ease-in-out hover:bg-blue-900 focus:outline-hidden dark:bg-orange-800 dark:hover:bg-orange-900"
                   href={navigation.solutions[0].href}
                 >
                   🌍 Join World Slack
                 </NativeLink>
               </div>
-              <div className="rounded-md shadow-sm">
+              <div className="rounded-md shadow-xs">
                 <NativeLink
-                  className="flex items-center justify-center rounded-md border border-transparent bg-blue-800 px-4 py-2 text-sm font-semibold leading-6 text-white transition duration-150 ease-in-out hover:bg-blue-900 focus:outline-none dark:bg-orange-800 dark:hover:bg-orange-900"
+                  className="flex items-center justify-center rounded-md border border-transparent bg-blue-800 px-4 py-2 text-sm font-semibold leading-6 text-white transition duration-150 ease-in-out hover:bg-blue-900 focus:outline-hidden dark:bg-orange-800 dark:hover:bg-orange-900"
                   href={navigation.solutions[1].href}
                 >
                   🇫🇷 Join French Slack
@@ -65,7 +65,7 @@ export function WelcomeCard({}: Props) {
           <button
             onClick={dismiss}
             type="button"
-            className="flex rounded-md p-2 transition duration-150 ease-in-out hover:bg-blue-500 focus:bg-blue-500 focus:outline-none dark:hover:bg-orange-500 dark:focus:bg-orange-500"
+            className="flex rounded-md p-2 transition duration-150 ease-in-out hover:bg-blue-500 focus:bg-blue-500 focus:outline-hidden dark:hover:bg-orange-500 dark:focus:bg-orange-500"
             aria-label="Dismiss"
           >
             <svg

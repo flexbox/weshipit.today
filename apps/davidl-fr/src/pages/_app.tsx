@@ -8,7 +8,7 @@ import darkTheme from '~/components/Theme/dark';
 import Head from 'next/head';
 import { UserProvider } from '~/lib/UserContext';
 
-import 'tailwindcss/tailwind.css';
+import '../stylesheets/tailwind.css';
 import '../stylesheets/task-list.css';
 
 import { DefaultSeo } from 'next-seo';
