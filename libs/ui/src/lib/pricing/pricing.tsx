@@ -402,7 +402,7 @@ export function PlanFinderSection({ ctaLink }: { ctaLink: string }) {
               className={cn(
                 'px-5 py-2.5 rounded-md text-sm font-medium transition-[background-color,color,box-shadow]',
                 mode === 'quiz'
-                  ? 'bg-background text-foreground shadow-sm'
+                  ? 'bg-background text-foreground shadow-xs'
                   : 'text-muted-foreground hover:text-foreground',
               )}
             >
@@ -414,7 +414,7 @@ export function PlanFinderSection({ ctaLink }: { ctaLink: string }) {
               className={cn(
                 'px-5 py-2.5 rounded-md text-sm font-medium transition-[background-color,color,box-shadow]',
                 mode === 'compare'
-                  ? 'bg-background text-foreground shadow-sm'
+                  ? 'bg-background text-foreground shadow-xs'
                   : 'text-muted-foreground hover:text-foreground',
               )}
             >
@@ -733,7 +733,7 @@ export function Pricing({ ctaLink }: { ctaLink: string }) {
                       'mt-6 block rounded-md px-3 py-2 text-center text-sm/6 font-semibold transition-[background-color,transform] duration-150 ease-out active:scale-[0.96] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2',
                       tier.featured
                         ? 'bg-white/10 text-white hover:bg-white/20 focus-visible:outline-white dark:bg-gray-900 dark:text-white dark:hover:bg-gray-800'
-                        : 'bg-blue-600 text-white shadow-sm hover:bg-blue-500 focus-visible:outline-blue-600 dark:bg-blue-500 dark:hover:bg-blue-400',
+                        : 'bg-blue-600 text-white shadow-xs hover:bg-blue-500 focus-visible:outline-blue-600 dark:bg-blue-500 dark:hover:bg-blue-400',
                     )}
                   >
                     {tier.cta}

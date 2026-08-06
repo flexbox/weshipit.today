@@ -14,7 +14,7 @@ export const TweetComposer = () => {
   return (
     <>
       <textarea
-        className="mt-4 w-full rounded-md border-2 border-gray-300 p-2 pb-16 text-black focus:border-yellow-500 focus:outline-none"
+        className="mt-4 w-full rounded-md border-2 border-gray-300 p-2 pb-16 text-black focus:border-yellow-500 focus:outline-hidden"
         placeholder="I want to reach you because ..."
         value={text}
         onChange={(e) => setText(e.target.value)}

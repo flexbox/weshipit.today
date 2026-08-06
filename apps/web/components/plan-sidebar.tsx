@@ -45,7 +45,7 @@ export function PlanNavSelect({ issues }: PlanSidebarProps) {
         id="plan-nav-select"
         value={current?.slug ?? ''}
         onChange={(event) => router.push(`/plan/${event.target.value}`)}
-        className="w-full rounded-lg border border-gray-200 bg-white px-3 py-2.5 text-sm font-medium tabular-nums text-gray-900 shadow-sm transition-colors duration-150 hover:border-gray-300 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30 dark:border-gray-700 dark:bg-gray-900 dark:text-white dark:hover:border-gray-600"
+        className="w-full rounded-lg border border-gray-200 bg-white px-3 py-2.5 text-sm font-medium tabular-nums text-gray-900 shadow-xs transition-colors duration-150 hover:border-gray-300 focus:border-blue-500 focus:outline-hidden focus:ring-2 focus:ring-blue-500/30 dark:border-gray-700 dark:bg-gray-900 dark:text-white dark:hover:border-gray-600"
       >
         {sorted.map((issue) => (
           <option key={issue.slug} value={issue.slug}>

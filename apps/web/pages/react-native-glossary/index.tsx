@@ -108,7 +108,7 @@ export default function ReactNativeGlossary({
                 <Link
                   key={letter}
                   href={`#${letter}`}
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-md text-lg font-medium shadow-sm bg-blue-600 text-white hover:bg-blue-500 focus-visible:outline-blue-600 dark:bg-blue-700 dark:text-white dark:hover:bg-blue-800 dark:focus-visible:outline-blue-700"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-md text-lg font-medium shadow-xs bg-blue-600 text-white hover:bg-blue-500 focus-visible:outline-blue-600 dark:bg-blue-700 dark:text-white dark:hover:bg-blue-800 dark:focus-visible:outline-blue-700"
                 >
                   {letter}
                 </Link>
@@ -116,7 +116,7 @@ export default function ReactNativeGlossary({
                 <span
                   key={letter}
                   aria-disabled="true"
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-md text-lg font-medium shadow-sm border border-gray-300 bg-white text-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-600 cursor-default select-none"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-md text-lg font-medium shadow-xs border border-gray-300 bg-white text-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-600 cursor-default select-none"
                 >
                   {letter}
                 </span>

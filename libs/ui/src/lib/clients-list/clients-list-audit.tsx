@@ -22,7 +22,7 @@ export function ClientsListAudit({ clients }: ClientsListHomepageProps) {
         (client: ClientProps) =>
           client.data.is_audit && (
             <div
-              className="flex flex-col items-center justify-center gap-4 opacity-50 grayscale transition-all hover:opacity-100 hover:grayscale-0 group-hover:blur-sm"
+              className="flex flex-col items-center justify-center gap-4 opacity-50 grayscale transition-all hover:opacity-100 hover:grayscale-0 group-hover:blur-xs"
               key={client.id}
             >
               <Image
@@ -36,7 +36,7 @@ export function ClientsListAudit({ clients }: ClientsListHomepageProps) {
                 {client.data.industry}
               </Text>
             </div>
-          )
+          ),
       )}
     </div>
   );

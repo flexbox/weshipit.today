@@ -429,7 +429,7 @@ export function StackAudit({ headingAs = 'h2' }: StackAuditProps) {
                       name="fields[name]"
                       placeholder="Ton prénom"
                       autoComplete="given-name"
-                      className="w-full rounded-md border-0 bg-white px-3.5 py-2.5 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 dark:bg-white/5 dark:text-white dark:ring-white/10"
+                      className="w-full rounded-md border-0 bg-white px-3.5 py-2.5 text-slate-900 shadow-xs ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 dark:bg-white/5 dark:text-white dark:ring-white/10"
                     />
                   </div>
 
@@ -447,7 +447,7 @@ export function StackAudit({ headingAs = 'h2' }: StackAuditProps) {
                       placeholder="toi@entreprise.com"
                       required
                       autoComplete="email"
-                      className="w-full rounded-md border-0 bg-white px-3.5 py-2.5 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 dark:bg-white/5 dark:text-white dark:ring-white/10"
+                      className="w-full rounded-md border-0 bg-white px-3.5 py-2.5 text-slate-900 shadow-xs ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 dark:bg-white/5 dark:text-white dark:ring-white/10"
                     />
                   </div>
 

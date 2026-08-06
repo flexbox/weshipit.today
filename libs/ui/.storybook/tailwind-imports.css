@@ -1,11 +1,63 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-a:hover {
-  cursor:
-    url('/cursor/hand2.svg') 16 16,
-    pointer !important;
+@plugin '@tailwindcss/typography';
+
+/* Fonts in `@theme inline` so `--font-space-grotesk` (defined by next/font on a
+   wrapper element, not :root) resolves at the point of use — see apps/web. */
+@theme inline {
+  --font-*: initial;
+  --font-inter: Inter, sans-serif;
+  --font-display: var(--font-space-grotesk), Space Grotesk, sans-serif;
+}
+
+@theme {
+  --animate-shine: shine 1s;
+  --animate-marquee: marquee 15s linear infinite;
+
+  --color-primary: hsl(var(--primary));
+  --color-background: hsl(var(--background));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  @keyframes shine {
+    100% {
+      left: 125%;
+    }
+  }
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@layer utilities {
+  a:hover {
+    cursor:
+      url('/cursor/hand2.svg') 16 16,
+      pointer !important;
+  }
 }
 
 @layer base {
