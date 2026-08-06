@@ -8,7 +8,7 @@ const FAQ_ITEMS = [
   {
     question: "Combien de temps prend l'audit gratuit ?",
     answer:
-      '3 minutes environ. 25 questions réparties en 4 catégories : fondations, écosystème, couche data et devops. Vous répondez par Oui, Incertain ou Non.',
+      '3 minutes environ. 32 questions réparties en 4 catégories : fondations, écosystème, couche data et devops. Vous répondez par Oui, Incertain ou Non.',
   },
   {
     question: 'Dois-je donner mon email pour voir mon score ?',
@@ -16,7 +16,7 @@ const FAQ_ITEMS = [
       "Non. Votre score sur 100 et le détail par catégorie s'affichent immédiatement. L'email sert uniquement à recevoir le rapport détaillé avec les recommandations priorisées.",
   },
   {
-    question: "D'où viennent les 25 questions ?",
+    question: "D'où viennent les 32 questions ?",
     answer:
       "C'est la grille utilisée lors de nos audits d'architecture React Native pour des apps qui gèrent des millions d'utilisateurs (Alan, Cdiscount, Swan). Nous l'avons transformée en checklist auto-administrée.",
   },
@@ -61,7 +61,7 @@ export default function AuditGratuit() {
       </Head>
       <Layout
         seoTitle="Audit React Native Gratuit : Scorez votre Stack en 3 Minutes"
-        seoDescription="25 questions pour auditer votre stack React Native : fondations, écosystème, couche data, devops. Score sur 100 immédiat + rapport détaillé par email. Gratuit."
+        seoDescription="32 questions pour auditer votre stack React Native : fondations, écosystème, couche data, devops. Score sur 100 immédiat + rapport détaillé par email. Gratuit."
         ogImageTitle="Audit React Native Gratuit"
         locale="fr_FR"
         withHeader
@@ -82,7 +82,7 @@ export default function AuditGratuit() {
               à contourner l'architecture qu'à livrer des features.
             </p>
             <p>
-              Ces 25 questions couvrent les points que nous vérifions en premier
+              Ces 32 questions couvrent les points que nous vérifions en premier
               lors d'un audit d'architecture : error boundaries, virtualisation
               des listes, data fetching, tests E2E, gestion des versions et des
               secrets. Si vous répondez « Non » ou « Incertain » à plus d'un

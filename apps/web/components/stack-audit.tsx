@@ -54,11 +54,23 @@ const CATEGORIES: AuditCategory[] = [
       },
       {
         id: 'f6',
-        text: "Vous utilisez react-native-vision-camera plutôt qu'expo-camera pour les besoins performance (scan…).",
+        text: "Vous utilisez react-native-vision-camera plutôt qu'expo-camera pour les besoins performance (scan…), le cas échéant.",
       },
       {
         id: 'f7',
-        text: 'Votre navigation repose sur un Native Stack, pas un JS Navigator.',
+        text: 'Votre navigation repose sur un Native Stack (native-stack), pas un JS Navigator.',
+      },
+      {
+        id: 'f8',
+        text: 'Votre app tourne sur la New Architecture (Fabric + TurboModules), pas encore sur Paper et le Bridge historique.',
+      },
+      {
+        id: 'f9',
+        text: 'Vos images passent par expo-image (cache disque, placeholders, priorités), pas le composant Image de React Native.',
+      },
+      {
+        id: 'f10',
+        text: 'Vos animations et gestes complexes tournent via Reanimated sur le thread UI (transform/opacity), pas via Animated sur le thread JS.',
       },
     ],
   },
@@ -102,7 +114,7 @@ const CATEGORIES: AuditCategory[] = [
       },
       {
         id: 'd2',
-        text: "Vous utilisez un statut typé ('idle' | 'pending' | 'resolved' | 'rejected') plutôt que des booléens isLoading.",
+        text: 'Vos hooks data maison (hors TanStack Query) exposent un statut typé, pas des booléens isLoading empilés.',
       },
       {
         id: 'd3',
@@ -120,6 +132,18 @@ const CATEGORIES: AuditCategory[] = [
         id: 'd6',
         text: 'Votre tracking GPS background (si applicable) adapte sa précision selon l’activité, pas un intervalle fixe.',
       },
+      {
+        id: 'd7',
+        text: 'Votre stockage clé-valeur pour données non sensibles utilise MMKV (ou équivalent) plutôt qu’AsyncStorage, pour des accès synchrones et rapides.',
+      },
+      {
+        id: 'd8',
+        text: 'Vos tokens d’auth et secrets sont stockés dans expo-secure-store (Keychain/Keystore), jamais dans AsyncStorage ou MMKV en clair.',
+      },
+      {
+        id: 'd9',
+        text: 'Vos appels réseau vérifient response.ok, remontent des erreurs typées et gèrent les échecs (retry / backoff), pas juste un try/catch silencieux.',
+      },
     ],
   },
   {
@@ -136,7 +160,7 @@ const CATEGORIES: AuditCategory[] = [
       },
       {
         id: 'o3',
-        text: "Vous êtes sur une version récente d'Expo SDK (53+).",
+        text: "Vous êtes sur une version d'Expo SDK encore supportée (l'une des plus récentes), pas une version en fin de vie.",
       },
       {
         id: 'o4',
@@ -149,6 +173,10 @@ const CATEGORIES: AuditCategory[] = [
       {
         id: 'o6',
         text: 'Vous avez scanné votre app avec un outil de sécurité dédié (clés API en dur, secrets exposés…).',
+      },
+      {
+        id: 'o7',
+        text: 'Vous livrez vos correctifs JS via EAS Update (OTA) sans repasser systématiquement par une review des stores.',
       },
     ],
   },
@@ -512,7 +540,7 @@ export function StackAudit({ headingAs = 'h2' }: StackAuditProps) {
         variant="p2"
         className="mt-4 max-w-3xl text-slate-600 dark:text-slate-300"
       >
-        25 questions, 4 catégories, un score en 3 minutes. La même grille
+        32 questions, 4 catégories, un score en 3 minutes. La même grille
         utilisée pour challenger l'architecture d'apps qui gèrent des millions
         d'utilisateurs — transformée en checklist que vous pouvez faire passer à
         votre propre codebase.
