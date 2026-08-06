@@ -16,7 +16,7 @@ const prose = cva(['prose dark:prose-invert'], {
     },
     variant: {
       slate: [
-        'prose-slate prose-a:text-blue-600 hover:prose-a:text-blue-500 dark:prose-a:text-blue-700 dark:hover:prose-a:text-blue-800',
+        'prose-slate prose-a:text-blue-600 hover:prose-a:text-blue-500 dark:prose-a:text-blue-400 dark:hover:prose-a:text-blue-300',
       ],
     },
   },

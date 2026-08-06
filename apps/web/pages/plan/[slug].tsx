@@ -8,7 +8,7 @@ import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { PlanSidebar } from 'apps/web/components/plan-sidebar';
+import { PlanNavSelect, PlanSidebar } from 'apps/web/components/plan-sidebar';
 
 interface Issue {
   slug: string;
@@ -180,15 +180,26 @@ export default function PlanSlugPage({
         />
       </Head>
       <div className="mx-auto max-w-7xl px-6 py-16">
+        <PlanNavSelect issues={issues} />
+
         <div className="flex gap-12">
           <PlanSidebar issues={issues} />
 
           {/* Content */}
           <main className="min-w-0 flex-1">
-            <Prose>
+            <Prose className="prose-headings:text-balance prose-p:text-pretty">
               <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
                 rehypePlugins={[rehypeRaw]}
+                components={{
+                  // Wide tables scroll inside their own container instead of
+                  // forcing the whole page to scroll horizontally on mobile.
+                  table: ({ node, ...props }) => (
+                    <div className="overflow-x-auto">
+                      <table {...props} />
+                    </div>
+                  ),
+                }}
               >
                 {content}
               </ReactMarkdown>
