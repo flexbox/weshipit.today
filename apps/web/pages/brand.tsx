@@ -1,6 +1,21 @@
-import { Card, LinkButton, Text } from '@weshipit/ui';
+import { Card, Hyperlink, LinkButton, Text } from '@weshipit/ui';
 import Image from 'next/image';
 import { Layout } from '../components/layout';
+
+const links = [
+  {
+    href: 'https://twitter.com/intent/follow?screen_name=flexbox_',
+    label: 'X',
+  },
+  {
+    href: 'https://github.com/flexbox/',
+    label: 'GitHub',
+  },
+  {
+    href: 'https://www.youtube.com/channel/UCO0X5b0mQ4eIHitXHXSFUyw?sub_confirmation=1',
+    label: 'Youtube',
+  },
+];
 
 export default function BrandPage() {
   return (
@@ -149,6 +164,19 @@ export default function BrandPage() {
             — including Alan, Cdiscount, and Swan — to share the architectures,
             costs, and trade-offs behind shipping mobile at scale.
           </Text>
+        </section>
+
+        <section className="my-16">
+          <Text as="h2" variant="h3" className="mb-8">
+            Links
+          </Text>
+          <ul className="list-inside list-disc space-y-2">
+            {links.map((link) => (
+              <Text as="li" variant="p1" key={link.href}>
+                <Hyperlink href={link.href}>{link.label}</Hyperlink>
+              </Text>
+            ))}
+          </ul>
         </section>
       </div>
     </Layout>

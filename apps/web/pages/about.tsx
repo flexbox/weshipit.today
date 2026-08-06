@@ -1,14 +1,11 @@
 import {
   Button,
   ClientsListHomepage,
-  Hyperlink,
-  LinkButton,
   Prose,
   Text,
   AvatarAvenger,
   AvengerStack,
 } from '@weshipit/ui';
-import Link from 'next/link';
 import Image from 'next/image';
 import { Layout } from '../components/layout';
 import { Customer, getVisibleClients } from './api/client';
@@ -16,21 +13,6 @@ import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
 import { linksApi } from './api/links';
 import { GetStaticProps } from 'next';
-
-const links = [
-  {
-    href: 'https://twitter.com/intent/follow?screen_name=flexbox_',
-    label: 'X',
-  },
-  {
-    href: 'https://github.com/flexbox/',
-    label: 'GitHub',
-  },
-  {
-    href: 'https://www.youtube.com/channel/UCO0X5b0mQ4eIHitXHXSFUyw?sub_confirmation=1',
-    label: 'Youtube',
-  },
-];
 
 export const getStaticProps = (async (context) => {
   const { clients } = await getVisibleClients();
@@ -100,7 +82,7 @@ export default function AboutPage({ clients }) {
         <p>You dont know where to start..</p>
         <p>The good news is, you are in the right place.</p>
       </Prose>
-      <div className="my-24 w-screen bg-white py-32  dark:bg-slate-900">
+      <div className="my-24 w-full bg-white py-32 dark:bg-slate-900">
         <Prose className="m-auto mb-12">
           <h2>Hiring is hard and time-consuming</h2>
           <p>
@@ -133,7 +115,7 @@ export default function AboutPage({ clients }) {
             </Text>
             <Image
               src="https://ghchart.rshah.org/409ba5/matthysdev"
-              alt="Open source contributions by David Leuliette"
+              alt="Open source contributions by Matthys Ducroq"
               width={700}
               height={100}
             />
@@ -145,14 +127,14 @@ export default function AboutPage({ clients }) {
         <p>
           Working with us, you can always be sure the project will be delivered.
           We keep monitoring our performance to ensure you’re satisfied.
-          Everything we do is tracked on Togglr
+          Everything we do is tracked on Togglr{' '}
           <a href="https://github.com/flexbox/react-native-bootcamp/pull/35/files">
             associated with the GitHub issue number.
           </a>
-          <blockquote>
-            <p>Hiring freelancers has never been so easy</p>
-          </blockquote>
         </p>
+        <blockquote>
+          <p>Hiring freelancers has never been so easy</p>
+        </blockquote>
       </Prose>
       <div className="flex justify-center py-12">
         <Button
@@ -194,7 +176,7 @@ export default function AboutPage({ clients }) {
         />
         <br />
       </Prose>
-      <div className="my-24 w-screen bg-white py-32  dark:bg-slate-900">
+      <div className="my-24 w-full bg-white py-32 dark:bg-slate-900">
         <Prose className="m-auto mb-12">
           <h2>Tech stack</h2>
           <p>
@@ -208,7 +190,7 @@ export default function AboutPage({ clients }) {
         <h2 className="text-center">Let’s make something great together</h2>
         <h3 className="text-center">Your next coworkers</h3>
       </Prose>
-      <div className="m-auto mb-16 flex h-48 w-1/3 flex-row justify-around">
+      <div className="m-auto mb-16 flex h-48 w-3/4 flex-row justify-around md:w-1/3">
         <AvatarAvenger
           email={'dleuliette@gmail.com'}
           emailhover={'dleuliette+tony@gmail.com'}
@@ -247,62 +229,6 @@ export default function AboutPage({ clients }) {
         >
           Schedule an appointment
         </Button>
-      </div>
-      <div className="my-24 w-screen bg-white py-32  dark:bg-slate-900">
-        <Prose className="m-auto my-12">
-          <h2>Logo</h2>
-          <Image
-            src="/images/weshipit.today-logo.png"
-            alt={'weshipit.today logo'}
-            width={100}
-            height={100}
-          />
-          <div className="not-prose">
-            <LinkButton
-              href="/images/weshipit.today-logo.png"
-              variant="outline"
-            >
-              Download
-            </LinkButton>
-          </div>
-          <h3>Styleguide</h3>
-          <p>
-            A collection of packages use to share styles and icons across
-            websites and projects.
-          </p>
-          <div className="not-prose">
-            <LinkButton href="https://design.weshipit.today" variant="outline">
-              Check it out
-            </LinkButton>
-          </div>
-          <h2>Short description</h2>
-          <p>
-            In response to the growing demands of software development,{' '}
-            <Link href="/">weshipit.today</Link> has shifted its focus to daily
-            releases of React Native Apps on production.
-          </p>
-          <p></p>
-          <h2>Long description</h2>
-          <p>
-            <Link href="/">weshipit.today</Link> is a remote React Native design
-            and development agency based in France. We specialize in React
-            Native with Expo, offering expertise in mobile design and
-            development. Our teams build robust apps and contribute to libraries
-            that drive the React Native movement.
-          </p>
-          <p>
-            With our React Native Bootcamps, we’ve enabled more than 400 happy
-            developers to successfully ship outstanding apps to their users.
-          </p>
-          <h2>Links</h2>
-          <ul>
-            {links.map((link) => (
-              <li key={link.href}>
-                <Hyperlink href={link.href}>{link.label}</Hyperlink>
-              </li>
-            ))}
-          </ul>
-        </Prose>
       </div>
     </Layout>
   );
