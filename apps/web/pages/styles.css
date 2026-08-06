@@ -6,11 +6,18 @@
 
 @plugin '@tailwindcss/typography';
 
-@theme {
+/* Fonts live in `@theme inline` so the `font-*` utilities inline the value and
+   resolve `--font-space-grotesk` (defined by next/font on a wrapper element, not
+   on :root) at the point of use — matching the v3 behavior. A plain `@theme`
+   emits `--font-display` on :root, where `--font-space-grotesk` is undefined, so
+   the Space Grotesk headings would silently fall back to sans-serif. */
+@theme inline {
   --font-*: initial;
   --font-inter: Inter, sans-serif;
   --font-display: var(--font-space-grotesk), Space Grotesk, sans-serif;
+}
 
+@theme {
   --animate-shine: shine 1s;
   --animate-marquee: marquee 20s linear infinite;
 

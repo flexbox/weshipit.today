@@ -2,11 +2,15 @@
 
 @plugin '@tailwindcss/typography';
 
-@theme {
+/* Fonts in `@theme inline` so `--font-space-grotesk` (defined by next/font on a
+   wrapper element, not :root) resolves at the point of use — see apps/web. */
+@theme inline {
   --font-*: initial;
   --font-inter: Inter, sans-serif;
   --font-display: var(--font-space-grotesk), Space Grotesk, sans-serif;
+}
 
+@theme {
   --animate-shine: shine 1s;
   --animate-marquee: marquee 15s linear infinite;
 
