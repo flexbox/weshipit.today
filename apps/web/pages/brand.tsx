@@ -62,6 +62,72 @@ export default function BrandPage() {
 
         <section className="my-16">
           <Text as="h2" variant="h3" className="mb-8">
+            Wordmark
+          </Text>
+          <div className="grid gap-8 sm:grid-cols-2">
+            <Card size="lg">
+              <div className="mb-4 flex h-32 items-center justify-center rounded-md bg-white p-6">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/weshipit-today-wordmark.svg"
+                  alt="weshipit.today wordmark"
+                  className="max-h-full w-full object-contain"
+                />
+              </div>
+              <Text variant="p2" className="mb-4">
+                Primary wordmark - for light backgrounds
+              </Text>
+              <div className="flex gap-3">
+                <a
+                  href="/images/weshipit-today-wordmark.svg"
+                  download="weshipit-today-wordmark.svg"
+                  className="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 dark:border-gray-600 dark:bg-slate-800 dark:text-gray-200 dark:hover:bg-slate-700"
+                >
+                  Download SVG
+                </a>
+                <a
+                  href="/images/weshipit-today-wordmark.png"
+                  download="weshipit-today-wordmark.png"
+                  className="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 dark:border-gray-600 dark:bg-slate-800 dark:text-gray-200 dark:hover:bg-slate-700"
+                >
+                  Download PNG
+                </a>
+              </div>
+            </Card>
+            <Card size="lg">
+              <div className="mb-4 flex h-32 items-center justify-center rounded-md bg-slate-900 p-6">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/images/weshipit-today-wordmark-reversed.svg"
+                  alt="weshipit.today wordmark, reversed"
+                  className="max-h-full w-full object-contain"
+                />
+              </div>
+              <Text variant="p2" className="mb-4">
+                Reversed wordmark - for dark backgrounds
+              </Text>
+              <div className="flex gap-3">
+                <a
+                  href="/images/weshipit-today-wordmark-reversed.svg"
+                  download="weshipit-today-wordmark-reversed.svg"
+                  className="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 dark:border-gray-600 dark:bg-slate-800 dark:text-gray-200 dark:hover:bg-slate-700"
+                >
+                  Download SVG
+                </a>
+                <a
+                  href="/images/weshipit-today-wordmark-reversed.png"
+                  download="weshipit-today-wordmark-reversed.png"
+                  className="inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 dark:border-gray-600 dark:bg-slate-800 dark:text-gray-200 dark:hover:bg-slate-700"
+                >
+                  Download PNG
+                </a>
+              </div>
+            </Card>
+          </div>
+        </section>
+
+        <section className="my-16">
+          <Text as="h2" variant="h3" className="mb-8">
             Styleguide
           </Text>
           <Text variant="p1" className="mb-4">
