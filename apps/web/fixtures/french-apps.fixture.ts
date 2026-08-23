@@ -53,6 +53,15 @@ export const frenchAppsFixture: frenchApps = {
     //   podcast_url: '', // get it from https://open.spotify.com/show/69dZrIeMZ2S2QELCGp6gW1
     // },
     {
+      name: 'Upstream',
+      category: 'Productivity',
+      website_url: 'https://www.upstream.do/',
+      ios_url: 'https://apps.apple.com/fr/app/upstream-email/id6751403722',
+      logo_url:
+        'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/f7/dd/d9/f7ddd9f6-7a82-e124-5041-094930c91366/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/350x350.png',
+      podcast_url: 'https://open.spotify.com/episode/15c4xt4EuU3C2BLeaJAzyl',
+    },
+    {
       name: 'SaxoTools',
       category: 'Music',
       website_url: 'https://www.saxotools.com/',
@@ -321,6 +330,7 @@ export const frenchAppsFixture: frenchApps = {
       logo_url:
         'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/24/4e/af/244eaf1e-fa84-898a-535b-2a2fa7abd8dc/AppIcon-0-0-1x_U007epad-0-85-220.png/460x0w.webp',
       website_url: 'https://www.shine.fr/',
+      podcast_url: 'https://open.spotify.com/episode/273rWVjbCwhsAUUibuxHQF',
     },
     {
       name: 'Matera',
@@ -536,6 +546,7 @@ export const frenchAppsFixture: frenchApps = {
         'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/6d/f3/a2/6df3a215-ea30-6e7a-9994-8c10c37327ab/AppIcon-0-0-1x_U007epad-0-1-85-220.png/460x0w.webp',
       name: 'Ekklo',
       website_url: 'https://www.ekklo.com/',
+      podcast_url: 'https://open.spotify.com/episode/06y8m0c9yQyrkp9ZDmQKRq',
     },
     {
       android_url:
@@ -546,6 +557,7 @@ export const frenchAppsFixture: frenchApps = {
         'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/d9/02/d6/d902d64d-7b2b-bff6-bb72-2e13adbf6b12/AppIcon_ilevia-0-0-1x_U007epad-0-1-0-85-220.png/460x0w.webp',
       name: 'Ilévia',
       website_url: 'https://www.ilevia.com/',
+      podcast_url: 'https://open.spotify.com/episode/5Ul1mOJ5iCg1JhJgkTCMmO',
     },
   ],
 };
