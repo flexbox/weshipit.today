@@ -42,7 +42,9 @@ function CustomApp({ Component, pageProps }: AppProps) {
           cardType: 'summary_large_image',
         }}
       />
-      <div className={`${inter.className} ${spaceGrotesk.variable}`}>
+      <div
+        className={`${inter.className} ${spaceGrotesk.variable} antialiased`}
+      >
         <Component {...pageProps} />
       </div>
       <Analytics />

@@ -10,7 +10,7 @@ export interface PodcastEpisode {
   spotify_url: string;
   apple_podcast_url: string;
   // Raw YouTube video id only — no query string. Consumer builds the embed URL.
-  youtube_embed_id?: string;
+  youtube_embed_id: string;
   // Path under /public, e.g. "/images/podcast-logos/<slug>.webp".
   company_logo?: string;
   // ISO 8601 date string. Optional — backfill from RSS later.
@@ -443,6 +443,7 @@ export const podcastEpisodes: PodcastEpisode[] = [
     spotify_url: 'https://open.spotify.com/episode/5Ul1mOJ5iCg1JhJgkTCMmO',
     apple_podcast_url:
       'https://podcasts.apple.com/fr/podcast/il%C3%A9via-lapplication-react-native-en-marque-blanche/id1790867559?i=1000705449282',
+    youtube_embed_id: 'JNtl1K2XIIA',
     company_logo: '/images/podcast-logos/ilevia.webp',
   },
   {

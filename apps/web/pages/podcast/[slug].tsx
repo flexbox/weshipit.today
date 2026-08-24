@@ -122,7 +122,7 @@ export default function PodcastEpisodePage({
             href="/podcast"
             className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700"
           >
-            <ChevronLeftIcon className="h-4 w-4 mr-1" /> Retour aux épisodes
+            <ChevronLeftIcon className="h-4 w-4" /> Retour aux épisodes
           </Link>
         </div>
       </Layout>
@@ -149,7 +149,7 @@ export default function PodcastEpisodePage({
               href="/podcast"
               className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200 transition-colors"
             >
-              <ChevronLeftIcon className="h-4 w-4 mr-1" />
+              <ChevronLeftIcon className="h-4 w-4" />
               Retour aux épisodes
             </Link>
             <div className="text-slate-400">•</div>
@@ -175,7 +175,7 @@ export default function PodcastEpisodePage({
                           Podcast
                         </Badge>
                       </div>
-                      <Text as="h1" variant="h2" className="mb-3">
+                      <Text as="h1" variant="h2" className="mb-3 text-balance">
                         {episode.name}
                       </Text>
                       <Text
@@ -192,7 +192,7 @@ export default function PodcastEpisodePage({
                       <img
                         src={episode.company_logo}
                         alt={`Logo ${episode.name}`}
-                        className="w-24 h-24 rounded-xl object-cover shadow-lg"
+                        className="w-24 h-24 rounded-xl object-cover shadow-md outline outline-1 -outline-offset-1 outline-black/10 dark:outline-white/10"
                       />
                     )}
                   </div>
@@ -240,7 +240,7 @@ export default function PodcastEpisodePage({
                       </div>
                     </Card>
                   )}
-                  <Prose size="lg">
+                  <Prose size="lg" className="text-pretty">
                     {articleContent && (
                       <ReactMarkdown remarkPlugins={[remarkGfm]}>
                         {articleContent}
@@ -259,14 +259,14 @@ export default function PodcastEpisodePage({
             <Text
               variant="h4"
               as="h2"
-              className="bg-gradient-to-b from-white to-white/75 bg-clip-text font-bold text-transparent drop-shadow"
+              className="text-balance bg-gradient-to-b from-white to-white/75 bg-clip-text font-bold text-transparent drop-shadow"
             >
               Venez parler de votre stack sur le podcast
             </Text>
             <Text
               variant="p1"
               as="p"
-              className="bg-gradient-to-b from-white to-white/75 bg-clip-text tracking-tight text-transparent drop-shadow"
+              className="text-pretty bg-gradient-to-b from-white to-white/75 bg-clip-text tracking-tight text-transparent drop-shadow"
             >
               Vous avez développé une application avec React Native et souhaitez
               partager votre expérience ? Rejoignez le Cross Platform Show et

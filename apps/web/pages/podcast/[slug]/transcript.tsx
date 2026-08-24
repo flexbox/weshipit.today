@@ -143,7 +143,7 @@ export default function PodcastTranscriptPage({
               href="/podcast"
               className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200 transition-colors"
             >
-              <ChevronLeftIcon className="h-4 w-4 mr-1" />
+              <ChevronLeftIcon className="h-4 w-4" />
               Retour aux épisodes
             </Link>
             <div className="text-slate-400">•</div>
@@ -165,7 +165,7 @@ export default function PodcastTranscriptPage({
                       Transcript
                     </Badge>
                   </div>
-                  <Text as="h1" variant="h2" className="mb-3">
+                  <Text as="h1" variant="h2" className="mb-3 text-balance">
                     {episode.name}
                   </Text>
                   <Text
@@ -183,7 +183,7 @@ export default function PodcastTranscriptPage({
                     <img
                       src={episode.company_logo}
                       alt={`Logo ${episode.name}`}
-                      className="w-24 h-24 rounded-xl object-cover shadow-lg"
+                      className="w-24 h-24 rounded-xl object-cover shadow-md outline-1 -outline-offset-1 outline-black/10 dark:outline-white/10"
                     />
                   </div>
                 )}
