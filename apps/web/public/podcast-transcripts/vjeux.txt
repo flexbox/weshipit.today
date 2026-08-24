@@ -1,0 +1,736 @@
+David Leuliette (00:07.472)
+En 2015, une équipe de quelques ingénieurs de chez Facebook a pris la décision qui allait définir comment des millions de développeurs construiraient des applications mobiles pour la décennie suivante. Aujourd'hui, Racknative tourne dans certaines applications de Meta, Microsoft, Shopify et plein d'autres. Et on a l'homme qui a co-conçu la pays de ses composants et sa bibliothèque d'animation. Il est français, il est là.
+
+Bienvenue à Fuchs ! Comment ça va Christopher ?
+
+vjeux (00:41.862)
+Ça va super bien, je suis super content d'être là pour parler de ça. Après, ça fait plus de 10 ans, donc ma mémoire sera peut-être un peu légère, mais super content de parler avec toi David.
+
+David Leuliette (00:54.816)
+T'inquiète pas, internet s'en souviendra et on se fera une joie de te faire un feedback genre mec t'as oublié ? Moi du jour au lendemain j'ai oublié alors 10 ans c'est bon ça va aller plus. Pour ceux qui te connaissent pas encore tu es software engineer chez Meta co-créateur de Racknative au tout début créateur de pretieurs ça c'est vrai que j'ai su longtemps après Excalibro que tout le monde utilise bien sûr Yoga du mouvement CSS in JS et récemment catapulté architecte
+
+de chez Artstrix, le design système que Meta a open sourcé genre il y a 12 heures. C'est ça, si je ne me trompe. Architecte, c'est bien ça.
+
+vjeux (01:35.098)
+la semaine dernière mais c'est il a 12 heures.
+
+David Leuliette (01:42.555)
+Bienvenue dans le Cross Platform Show, aujourd'hui on va parler mobile mais pas que, on va étendre aussi nos chakras pour parler open source et divers sujets. Paris, SF en ce moment, t'es où ? Est-ce que t'as été à Paris récemment qui faisait 50 000°C ou t'es resté à SF
+
+vjeux (02:02.134)
+Du coup, je suis resté SF et j'habite dans la BRR. Mais toute ma famille vit encore en France. Donc, j'entends toutes les informations. Et aussi que tu es capable de mettre une poêle sur ton toit et de faire chauffer un oeuf. Ça a l'air super sympa.
+
+David Leuliette (02:18.752)
+Je fais un œuf, ça c'est fou ! ouais. Ouais. Heureusement qu'en Amérique... Ouais, si, allez on va faire une take, tu En Amérique, il a de la AC partout, tu vois. En France, on met des couvertures de survie sur les... Enfin des... Ouais, couvertures de survie, ouais, sur les fenêtres dans les hôpitaux, quoi. Voilà, deux salles, deux ambiances.
+
+vjeux (02:36.726)
+Après je viens à Paris la vendredi qui arrive donc je vais me voir.
+
+David Leuliette (02:41.946)
+Ok ! Ready pour la vague 2. Parce qu'apparemment il a une deuxième vague qui va arriver donc voilà tu seras fin après. La bonne nouvelle c'est que t'auras besoin que d'un seul t-shirt. Ça c'est plutôt pas mal. Donc oui, la semaine dernière vous avez opourcé Astrix, donc c'est le design de système que Meta utilise en interne depuis 8 ans. C'était quoi le...
+
+vjeux (02:48.31)
+Je suis là pour ça.
+
+vjeux (02:52.838)
+Ouais, c'est vrai.
+
+David Leuliette (03:08.832)
+Comment vous avez shipé ça ? Vous avez juste appuyé sur le bouton comme ça pour vous dire que c'est cool ? il y avait un... Comment ça se fait que ça prend 8 ans ? Aussi...
+
+vjeux (03:16.006)
+Donc du coup ce qui s'est passé c'est il a 8 ans, ok je reprends, il 8 ans la boîte s'appelait Facebook et pas Meta et on était connu pour avoir plein d'outils internes qui étaient excellents. Et comparé à toutes les autres sociétés on utilise du SAS, enfin des boîtes qui font tout, par exemple pour ton calendrier, pour...
+
+David Leuliette (03:25.653)
+Ouais.
+
+vjeux (03:42.81)
+comment faire du recrutement, comment parler en interne, etc. Du coup, Facebook, vu qu'on était une des plus grosses boîtes technologiques et on avait beaucoup de bons ingénieurs, du coup, on a décidé d'investir en interne et de créer tous nos outils internes. Ce qui se passait à la base, c'est qu'on avait plein de design systems, plein de bibliothèques de composants.
+
+David Leuliette (04:08.863)
+Ouais le fameux... On va en faire un en plus et hop t'as 11 oeufs ! 11 oeufs, truc ouais je vois.
+
+vjeux (04:13.829)
+Voilà. du coup, problème c'était que l'idée qu'on avait c'était n'importe qui peut faire des outils internes pour accélérer le développement. Et donc il y a les ingénieurs front-ends mais il a aussi les ingénieurs back-ends, a aussi les product managers, il a aussi les designers, etc. Donc c'était vraiment ça l'idée. Et une des choses qu'on s'est rendu compte c'est que la façon de démarrer
+
+un projet c'est qu'est-ce que quoi tous les composants de UI, faut une navigation, faut plein de trucs de base que personne n'a envie de faire et que tout le monde passait leur temps à recréer à chaque fois. Donc du coup on s'est dit, on va implémenter une bibliothèque de composants qui va être utilisée partout pour simplifier ça.
+
+et ça a marché extrêmement bien. Et partir du moment où on a fait ça, tous les outils internes ont commencé à utiliser ça. je crois qu'à un moment, on avait un tiers des employés qui contribuaient aux outils internes parce qu'on avait réussi à bien faire ça. Et donc on a fait ça pendant des années et ça a marché super bien.
+
+Et la question que je pensais c'était, bah, on peut faire ça pour Facebook, mais ça serait sûrement utile pour tout le reste de l'Internet et pour tous les gens qui nous écoutent. Mais le problème c'était qu'on était lié à plein d'infrastructures internes qui n'étaient pas open source et donc du coup ça a toujours été trop de travail d'extraire ça pour pouvoir, enfin l'open source. Et du coup ce qui s'est passé c'est en janvier,
+
+David Leuliette (05:57.132)
+Ok.
+
+David Leuliette (06:02.266)
+Ok.
+
+vjeux (06:06.565)
+Comme plein de gens ici, Cloud Code est arrivé et on s'est rendu compte que en fait c'était super bien. Et une des choses qui s'est passée avec ça, c'est Cloud Code, c'est assez génial pour pouvoir convertir une grosse base de code dans un nouveau langage, dans une nouvelle variation.
+
+David Leuliette (06:24.319)
+Pour ceux qui n'ont pas follow up, aussi fait ça pareil, Rust, enfin du TypeScript en Rust, ils vont voir sur ton blog, en genre, je ne pas Rust, en un mois, allez hop, c'est fait et ça fonctionne. Ok, donc vous avez fait la même logique pour ce design system.
+
+vjeux (06:30.159)
+Il faut.
+
+vjeux (06:34.469)
+...
+
+vjeux (06:38.305)
+Et donc du coup, a fait la même logique. On a dit, est-ce que Cloud Code, tu peux nous convertir toute notre base de code qu'on a fait sur 800 ? On a commencé ça en février et là, on a open source ça. là, le repo, a 2000 commits qui ont été faits par une petite équipe. Et donc du coup, ce...
+
+David Leuliette (06:58.041)
+Ok. Là c'est marrant, j'ai fait exactement la même chose pour mon oripo il a deux jours en vrai. C'était genre j'avais la flemme, ça fait trois ans que je dois le faire, je là vas-y. Et je me suis à la tunnel, une soirée, suis là, hop, done. Et il m'a trouvé des trucs, des failles de sécurité et tout parce que c'était pas un truc open source, et là je l'ai open source et puis voilà, pareil. Trop bien.
+
+vjeux (07:16.677)
+Et donc du coup ça nous a aussi permis de repenser pas mal de choses qu'on avait parce que par exemple quand on a commencé le projet il y a huit ans le navigateur il n'y avait pas de façon de faire des layers et des models etc. Et donc on a réutilisé l'implémentation de facebook.com qui était compatible avec Internet Explorer 5.5 et
+
+David Leuliette (07:34.527)
+Hmm.
+
+vjeux (07:46.315)
+du coup on a gardé ça pendant des années et des années, mais là maintenant du coup on a dit bon on n'a pas besoin de régler ça, maintenant avec le CSS le navigateur peut le faire, donc du coup ça nous a permis aussi de moderniser et de repenser pas mal de ces décisions.
+
+David Leuliette (08:00.639)
+Excellent. On va reparler après, j'ai un peu checké les API. Trop bien les amis, je vous adore. Il y a Text component, la base. que div, ça n'a aucun sens. Comme dirait Jamon, il serait trop fier tu vois. Parce que Jamon, je vais le dire maintenant en fait, il a dit que React Native c'est l'API qu' aurait dû être React. Parce que View c'est logique et Text est logique aussi. Div, ça n'a aucun sens. Mais on en parlera juste après.
+
+vjeux (08:10.085)
+Peace out.
+
+vjeux (08:19.141)
+...
+
+vjeux (08:24.267)
+Tu veux que je te parle de ça ou pas ?
+
+David Leuliette (08:27.866)
+Allez, allez, tunnel, vas-y, c'est parti !
+
+vjeux (08:29.701)
+Ok vas-y, c'est une bonne transition. du coup, on flashback de il y a 14 ans quand j'ai rejoint la boîte. coup, Marc Zuckerberg quand j'ai rejoint la boîte, il a parlé à TechCrunchyStropped. Donc pour contexte, quand il a 15 ans, j'étais en France et j'ai été...
+
+David Leuliette (08:38.686)
+Oui oui.
+
+vjeux (08:58.393)
+recruté par Facebook dans la Silicon Valley et donc du coup moi j'étais enfin en mode enfin je veux aller dans la Silicon Valley c'est mon but ultime et le plus gros event des startups dans la Silicon Valley c'est TechRod Distrupt et donc du coup quand je suis allé j'ai pris des tickets direct et il a Mark Zuckerberg qui était là pour parler et du coup j'étais trop trop content
+
+C'était ma première grosse event dans la VLRA, etc. Et Marc Dekarberg, il arrive sur scène et il dit, HTML5, c'était la plus grosse erreur que la boîte ait jamais faite. Et du coup, j'étais livide parce que j'ai quand même quitté toute ma famille, etc. Du coup, j'avais ma copine, on s'est mariés, on a tout quitté pour aller ici.
+
+David Leuliette (09:26.45)
+Ouais, grosse cronf, ouais ouais ouais...
+
+David Leuliette (09:39.335)
+Ok.
+
+vjeux (09:53.186)
+et il dit que tout ce que moi j'aimais avec le web, c'était une grosse erreur. Du coup, j'ai réévalué toutes mes décisions de vie, etc. Et ce que j'ai fait, c'est... Bon, j'accepte. Si c'est ça la direction de la boîte, ils nous ont offert des...
+
+du training pour apprendre à coder en iOS et tout ce qu'il y a pendant une semaine, enfin, deep dive, comment faire. Et du coup, j'ai fait ça et à la fin, je me suis rendu compte qu'en développer en iOS, c'est horrible parce qu'il y a eu plein plein de problèmes à l'époque. Un, c'est le temps de compilation. Du coup, tu fais un truc, voulu tout recompiler pour voir.
+
+David Leuliette (10:33.825)
+Noi...
+
+David Leuliette (10:40.772)
+ça prend la vie, ça m'en rendait ouf le hot reloading, moi je faisais du hot reloading et que les dev mobiles n'en avaient pas, je faisais mais mec tu t'es malade ou quoi ?
+
+vjeux (10:45.381)
+Bon, allez.
+
+Après la deuxième la deuxième truc c'était Tu peux pas partager ce que tu fais avec personne d'autre du coup sur le web on bat à ton serveur tu tu le host en moi et t'envoie une url et puis la personne peut l'utiliser là c'était en mode à t'es obligé de y'avait même pas test flight à l'époque donc c'était obligé de compiler le binaire le mettre sur un registry enfin le publish et c'est en gros
+
+David Leuliette (11:04.67)
+Hmm.
+
+vjeux (11:18.229)
+Et la dernière chose c'était pour afficher n'importe quel pixel à l'écran, t'étais obligé de bon bah c'est le rectangle que ça, je veux que ça soit le top left width and height, soit ces trucs, c'est la computation, enfin les calculs manuellement. Voilà. Et du coup je me suis rendu compte mais c'est horrible ! C'est horrible. Et du coup il y avait Jordan Wouk qui a inventé React.
+
+David Leuliette (11:32.146)
+Ouais ouais tout... tout spécifié quoi.
+
+vjeux (11:47.436)
+et du coup je parlais avec lui et on a décidé de lancer React Native. Et un des trucs sur lequel j'ai passé beaucoup de temps, c'est essayer de trouver c'est quoi la différence entre iOS, Android et Web. Parce que tu te dis, la façon dont je pensais c'était si on veut pouvoir coder la même app
+
+sur toutes ces plateformes, il faut savoir c'est quoi le dénominateur commun et pour pouvoir coder par dessus. Et un des trucs que j'ai réalisé, c'était si tu dois ajouter un import ou un require en haut ton fichier qui est spécifique, du coup ça veut dire que ce fichier entier va être spécifique.
+
+tous les fichiers qui importent ce fichier vont être aussi la plateforme spécifique. donc du coup, c'était si on voulait la moindre chance d'avoir du cross-platform, il fallait que le truc de base que tu importes soit générique et puisse marcher sur toutes les plateformes. Donc du coup, ce que j'ai fait, et c'était vraiment similaire avec Asterix, c'est j'ai regardé tous les composants de base qu'il y a sur iOS.
+
+David Leuliette (13:10.642)
+Ouais pas mal.
+
+vjeux (13:12.621)
+qui a sur Android, qui a sur Web, enfin j'ai regardé plein plein de bibliothèques de composants etc à l'époque. Et un des trucs que je me suis rendu compte, c'est qu'en fait les composants de base de toutes ces plateformes, ont les mêmes propriétés. Il n'y a pas de trucs différents, elles sont toutes nommées différemment enfin.
+
+David Leuliette (13:34.95)
+Ouais, c'est ça qui est insupportable.
+
+vjeux (13:37.25)
+Mais il y a tout le temps un moyen de faire un rectangle, d'écrire du texte, de rajouter... enfin c'est quoi la police, c'est quoi la taille de la police, c'est quoi la bordure, la couleur de la bordure, la taille de la bordure... Tu peux mettre un background et tout comme ça, enfin... Tous ces trucs là c'était de base. Et donc du coup je me suis dit, bon bah ce qu'on va vouloir faire, c'est faire trois composants primitifs de base qui sont image, texte et view.
+
+et avec ces trois composants tu vas pouvoir les composer de partout et de pouvoir faire tout ce que tu veux, toute l'application par dessus. Et après ce qu'il va falloir aussi faire c'est pouvoir réutiliser tous les composants natifs qui sont des agrégations. Par exemple tout ce qui est navigation sur iOS ils ont plein d'animations super fancy etc. Donc du coup pouvoir les réutiliser.
+
+Donc du coup ça a été ça le but principal. Et je me rappelle, j'avais une conversation avec le directeur de l'organisation à l'époque. du coup je lui avais pitché ça. Et lui m'a dit non mais ça va pas, tu vas jamais pouvoir y arriver. Et du coup j'étais en mode là là, ne me dis pas que je vais pas pouvoir y arriver. Et du coup ça m'a...
+
+David Leuliette (14:51.23)
+Tchao Jacksepticeye, ouais ça t'a mis encore plus... oui ok je vois.
+
+vjeux (14:56.997)
+Ça m'a donné le feu sacré et tout. du coup, six mois après, je l'ai reparlé, il m'a fait « tu avais raison, ça a bien marché », etc.
+
+David Leuliette (15:05.144)
+Excellent. oui, donc sur les early days aussi, au tout début, la team a choisi de construire un bridge entre JavaScript et le natif. C'est une décision fondamentale parce que c'était comme ça. Et si tu devais refaire aujourd'hui, tu ferais tout pareil ou tu changerais quelque chose ?
+
+vjeux (15:32.485)
+Donc du coup, pour ça, le bridge, c'était une décision qui à l'époque était vraiment bien parce qu'un des gros problèmes de réact natives, c'est qu'on recrée tout l'écosystème. du coup, le problème, c'est si tu essaies de recréer tout l'écosystème de base en même temps, du coup, tu vas jamais y arriver, il a trop de travail.
+
+David Leuliette (15:41.569)
+ouais c'est ça quoi.
+
+vjeux (15:58.499)
+Et du coup, le fait d'avoir un bridge asynchrone, a été une façon de pouvoir réutiliser énormément de choses. Donc par exemple, au début, on n'avait pas de debugger JavaScript. Et du coup, la façon dont on debugger JavaScript, c'est on faisait tourner le JavaScript de React Native dans ton navigateur. Et en WebSockets, le navigateur parlait à ton téléphone.
+
+David Leuliette (16:12.232)
+sorry.
+
+vjeux (16:27.585)
+et du coup ça lui envoyait les commandes à exécuter. du coup c'est dans le navigateur on pouvait réutiliser tous les dev tools donc du coup on pouvait avoir un vrai debugger, tous les breakpoints, une console, enfin tout l'environnement qui était fait. Après, une des choses qu'on voulait aussi pouvoir faire c'est server-side rendering. Donc faire le rendu du côté serveur. Et malheureusement ça n'a pas été poussé jusqu'à récemment.
+
+David Leuliette (16:27.726)
+Une fois sur deux.
+
+vjeux (16:56.803)
+Mais grâce à ça, on avait des démos où on exécuter le JavaScript sur une petite box sur Heroku et avoir ton truc qui run client-side. Et du coup, pouvait faire cette abstraction qu'on utilise dans Facebook Lite pour les pays d'Inde, etc., qui n'ont pas beaucoup de power sur leur device.
+
+David Leuliette (17:22.138)
+Ok, ouais je vois, ouais ok.
+
+vjeux (17:25.125)
+Donc du coup il y avait beaucoup beaucoup de bénéfices à ça. Le gros trade-off c'est la latence. Et du coup pour la latence des interactions, du coup tu peux pas faire appeler JavaScript native, JavaScript native, JavaScript native super rapidement. Et donc du coup il y avait plein de trucs que tu pouvais pas faire, exemple tout ce qui est Web Skia, pardon Skia...
+
+David Leuliette (17:53.48)
+Ouais.
+
+vjeux (17:54.539)
+le rendering et faire des super complexes animations, mais ça c'était en mode, c'est plus une optimisation.
+
+David Leuliette (18:05.638)
+Ouais c'est ça, tout début il fallait sortir quelque chose, qu'il faut que ça existe, a rien, étape 1, bah on fait quelque chose et puis... ça a quand même fait 10 ans, donc très bonne décision en fait en vrai.
+
+vjeux (18:14.404)
+et du coup, dix ans après, a enfin pu faire vraiment l'optimisation et tout ça. Donc je pense que cette partie-là, je la changerai pas. Après, on aurait peut-être pu faire en sorte d'avoir un mode asynchrone et synchrone de façon parallèle et pas juste faire, non, on ne aucun synchrone.
+
+David Leuliette (18:39.149)
+Ouais. Ouais mais bon fallait prendre une décision puis voilà, tu au moins c'est plus simple parce que sinon... Ah ouais mais en fait là t'es en asynchrone et puis là c'est tellement le bordel en JavaScript en asynchrone que au tout début en plus t'arrives on te dit « Eh mec tu vas faire du natif avec JavaScript » et t'es en train de faire « Quoi ? » Jamais de la vie ! Et désolé les amis c'est comme comics sans MS si vous avez pas JavaScript, si vous avez pas comics sans MS c'est victorieux quand même.
+
+vjeux (18:47.492)
+...
+
+vjeux (18:53.572)
+...
+
+...
+
+vjeux (19:05.812)
+Après, maintenant, ne code vraiment qu'une autre code ou un codex.
+
+David Leuliette (19:09.565)
+C'est ça en plus, c'est ça, vois, donc c'est bon quoi. Et donc, Yoga, c'est le layout engine que tu as designé, il tourne sur certaines UI mobile de chez Meta et d'autres aussi. Comment tu décides qu'un composant de niveau doit être partagé entre iOS, Android et web plutôt que d'avoir une implémentation par plateforme ?
+
+vjeux (19:31.652)
+Alors du coup pour Yoga ce qui était intéressant, n'a pas du tout commencé comme ça, j'ai eu mon premier bébé et du coup j'étais en parental leave et du coup un truc avec les bébés qui est intéressant que j'ai appris c'est qu'en fait ils ont le cycle de jour nuit qui est inversé.
+
+David Leuliette (19:56.036)
+Ouais, carrément, je confirme.
+
+vjeux (19:58.373)
+Donc en gros ils dorment pendant la journée et ils sont réveillés pendant la nuit. donc du coup pendant la journée, le Vére dormait et du coup j'avais plein de temps et du coup je me suis dit bon bah je vais coder un truc et du coup j'avais toujours cette idée de comment ça marche CSS et comment le layout engine de CSS marche.
+
+Et du coup, que j'ai fait, c'est j'ai ouvert une page HTML et j'ai rajouté trois DOM elements, enfin une div et une div à l'intérieur avec des margines et des paddings. Et j'ai envoyé ça dans une fonction JavaScript. il a deux divs qui sont comme ça avec margines et paddings. Et j'ai essayé d'écrire un petit algorithme.
+
+qui va prendre ses margin padding, height et tout ça et essayer de match, enfin de faire correspondre ce que fait le navigateur et avec mon algorithme. Et du coup je me suis dit bon vas-y je vais essayer de faire ça donc j'ai rajouté margin padding et à un moment il fallait que je trouve des cas compliqués et du coup ce que j'ai fait, j'ai fait un petit script qui génère aléatoirement
+
+plein de DOM structure et plein de paramètres que je voulais. Et du coup, je suis en mode, ah bon, maintenant je veux supporter Flexbox. Et donc Flexinline. Et donc du coup, je rajoute dans mon script et je corrige. Je run le script pendant 10 000 itérations. Il y a un nouveau problème, je le corrige. Il a un nouveau problème, je le corrige. Il un nouveau problème, je le corrige. Et après un mois de congé parental, j'avais une implémentation
+
+David Leuliette (21:27.613)
+Hmm.
+
+vjeux (21:46.061)
+de tout ce layout en JavaScript qui était compatible avec le navigateur. du coup, retourne après trois mois travailler. Et du coup, me suis dit, ça pourrait être super utile pour React Native. Mais le problème, c'est que comme tu disais, on avait un bridge asynchrone. Et du coup, tout ce qui était du côté JavaScript, enfin du côté React était en JavaScript.
+
+mais tout ce qui était du côté natif c'était écrit soit en Java soit en Objective-C et du coup je me suis dit bon bah j'ai mon truc en JavaScript et il est à tous les tests etc comment est-ce que je fais pour le faire tourner dans les autres et je me suis rendu compte qu'en c'était une fonction qui était quasiment pure qui prenait juste en entrée une structure d'objet et en sortie des left, width and height et donc du coup ce que j'ai fait
+
+c'est que j'ai transformé le code pour qu'avec des regex je puisse convertir mon fichier JavaScript en fichier Java ou en fichier C. du coup comme ça on a pu faire tourner l'algorithme de layout sur React Native sur le codé. Et ça c'était encore un truc où c'était un gros hack qu'on a utilisé pour pouvoir aller vite.
+
+David Leuliette (22:52.576)
+Ok.
+
+vjeux (23:12.406)
+Et après ce qui s'est passé, c'est qu'il Emile qui est venu et qui était un ingénieur Android, il a fait non mais c'est n'importe quoi ce truc et il a réimplémenté ça en C++ de façon propre et tout ça. Mais ça nous a permis de faire ça et du coup c'est ça le début du projet Yoga. Donc c'était pas du tout tiens je vais architecter un gros projet, ça c'était plutôt un hack que je voulais faire et après on s'est rendu compte qu'en fait ça allait être utile.
+
+David Leuliette (23:23.632)
+correct, ok, ok.
+
+David Leuliette (23:35.692)
+Ouais.
+
+vjeux (23:39.914)
+Et du coup on l'a utilisé et on a continué à bosser dessus.
+
+David Leuliette (23:43.119)
+Et puis c'est pareil quoi, étape par étape, tu t'éteins et puis tu fais c'est bon, tu réfactors et puis voilà quoi. du coup en parlant d'Htecture, donc on voit des boîtes, enfin certaines boîtes qui utilisent Rack Native, qui abandonnent, d'autres qui passent à Flutter ou qui reviennent au Natif Pure ou d'autres qui restent sur Rack Native, toi qui l'as créé, bon t'en fais peut-être pas forcément encore maintenant, mais est-ce que t'as encore des signaux qui indiquent que... Est-ce que tu vois ?
+
+les signaux qui indiquent qu'une équipe a fait le mauvais choix de stack mobile en 2026.
+
+vjeux (24:18.18)
+Un truc qui est super intéressant c'est, on est tous ingénieurs, et on passe énormément de temps à réfléchir à c'est quoi la bonne stack etc. Et en pratique, c'est pas ce qui fait ou ce qui fait pas ton business. Et ça c'est un des trucs qui est vraiment vraiment... Enfin, ce que je dis à tout le monde c'est...
+
+David Leuliette (24:38.0)
+Ouais, c'est clair. La distribution, c'est...
+
+vjeux (24:45.904)
+Tu peux avoir des... Ton business, il peut être super successful que tu bosses sur React Native, sur Flutter, sur Natif, sur Web. à part... y a des exceptions, sûr, c'est pas noir et blanc, mais dans la grande majorité des cas, ça n'a pas d'importance. donc du coup, même si tu bosses sur Flutter, tu vas pouvoir faire des trucs bien, etc. Maintenant, quand je vois...
+
+David Leuliette (24:55.93)
+WordPress, fait le taf.
+
+vjeux (25:14.436)
+Kevin Bacon de chez Expo qui fait des stats de tout l'App Store et du coup il y a 10, 20, 30 % ça dépend des catégories ou 40 % même des catégories des top 100 apps sur l'App Store qui utilisent React Native.
+
+David Leuliette (25:34.556)
+C'est Evan Bacon sur son blog Expo Apps in 2026 2500 apps
+
+vjeux (25:39.94)
+Ouais.
+
+vjeux (25:45.157)
+Et donc du coup, c'est vraiment utilisé. Et quand tu regardes tout les... A.I. c'est le gros truc. Et par exemple l'application de Replit, de Anthropic, Claude Code Mobile et plusieurs autres, elles utilisent tous React Native. Et pareil pour v0 aussi. Donc du coup, c'est pas juste une technologie qui est abandonnée, c'est vraiment un truc qui marche.
+
+David Leuliette (26:04.829)
+v0 aussi.
+
+vjeux (26:14.902)
+Après, je n'ai pas énormément d'expérience avec Flutter, mais j'ai aussi vu des applications sur Flutter qui marchent très bien. Je ne pas qu'il y ait vraiment...
+
+David Leuliette (26:22.812)
+Ah ouais, ils sont hyper succesfous. Non, moi plus en France c'est juste le recrutement tu vois, parce que trouver des dev flutters, trouver des devs qui font du React, bon il y en a plein. Et du mobile, c'est plus le homeboarding, un peu plus facile quoi. Mais euh...
+
+vjeux (26:37.284)
+Un des choix techniques qu'on a fait avec React Native, c'est de pouvoir s'intégrer avec Native. Si jamais tu as un composant écrit pour iOS ou Android, avec React Native, vas pouvoir...
+
+juste faire un petit wrapper, dire c'est quoi ces props en JavaScript et tu vas pouvoir l'utiliser dans ton application. donc du coup ça permet de jamais être vraiment bloqué. Alors qu'avec Flutter, ils ont décidé de prendre le contrôle entier du rendering. Donc du coup, tu peux pas réutiliser les composants aussi facilement. Il y a des moyens où tu peux dire que cette partie là de l'écran c'est natif.
+
+Mais du coup tu peux pas avoir un élément natif, un élément réacnatif, un élément natif. Du coup ça casse avec ça. Après le flipside c'est que tu peux vraiment tout contrôler. du coup, si tu veux aller vraiment vraiment au niveau de la performance, t'as aucune des barrières qui existent. Donc c'est des trade-off à voir.
+
+David Leuliette (27:56.093)
+Et admettons, là tu reviens en France. Imaginez, à cela j'imagine. T'es CTO et t'as 500k de budget, parce qu'on sait que 500k en France, c'est pas pareil que 500k en Amérique, en plus de la Silicon Valley, pour construire une app native. Est-ce que, je sais pas si t'as de l'expérience avec Expo ou...
+
+vjeux (28:05.637)
+Merci.
+
+David Leuliette (28:24.54)
+truc du genre, mais tu partirais sur un truc du genre ou tu prendrais React Native ou un autre truc. Bon, comme tu disais, ça n'a pas trop d'importance.
+
+vjeux (28:30.487)
+Moi, personnellement, que je fais, c'est j'utilise RExpo et j'utilise aussi Cloud Codes ou Codex ou tous ces applications de l'ALM et je lui dis, crée moi une application pour faire ça et tu peux l'avoir super vite et après tu launches
+
+David Leuliette (28:38.598)
+Bye bye.
+
+vjeux (28:50.436)
+le truc et après tu hitters mais enfin ça serait enfin c'est toujours ma stack et la raison pour laquelle j'ai enfin je suis plus day to day à bosser sur react et react native c'est parce que fin de ma perspective ça marche et donc du coup on a fait ça ça marche et bon bah c'est quoi le prochain problème que je dois résoudre ça c'est un des trucs
+
+David Leuliette (29:06.362)
+Ouais, problème suivant.
+
+vjeux (29:16.644)
+qui est vraiment un différent mindset de plein de gens à qui j'ai parlé. C'est, ils réfléchissent plus en mode, bon bah il faut que je travaille sur un truc et enfin il que je continue à travailler dessus forever pour que ça continue. Et moi c'est plutôt en mode, comment est-ce que je fais pour résoudre le problème. Et enfin je m'adresse et est-ce que le problème est résolu et après il y a une date de fin du projet dans ma tête.
+
+Et maintenant le problème est résolu, je peux passer à autre chose.
+
+David Leuliette (29:52.061)
+Ouais ok je vois. bah tiens super en parlant de problèmes, bib, l'open source, modèle économique oui non parce que PréTier, c'est utilisé par 80 % des devs en JavaScript en 2021. Le total des donations sur la durée de vie 200 000 dollars. C'est pas fou ça pour une libe qui est utilisée par une chier de gens. Et comment est-ce qu'Astio devrait penser à sa relation à l'open source en mode consommateur ou contributeur ou sponsoring directement ?
+
+vjeux (29:57.38)
+Bon.
+
+vjeux (30:22.212)
+Du coup, pour l'open source et la monétisation c'est vraiment super intéressant parce qu'en pratique si tu donnes quelque chose gratuit, tu ne peux pas t'attendre à ce que des gens paient pour ça. ça n'a jamais été le but de Prettier, c'est de le monétiser.
+
+David Leuliette (30:32.188)
+C'est dur de le vendre.
+
+vjeux (30:42.816)
+Après on eu la chance d'avoir cet argent, du coup on utilise cet argent pour payer des contributeurs. Donc du coup on avait deux contributeurs qui ont payé quelques milliers de dollars par mois pour pouvoir le maintenir. du coup ça leur permet de le garder à jour, etc.
+
+Et ce qui se passe avec l'open source aussi, c'est du coup il y a plein de contributions de partout dans le monde. Donc du coup il faut quelques maintainers qui continuent à le faire et après avoir des contributions. Donc après pour la partie c'est quoi niveau de la société, l'intérêt d'open source. Du coup il y plusieurs, il différentes parties. Pour méta, l'idée qu'on a c'est
+
+Marc Zuckerberg quand il était au college il a commencé Facebook en utilisant PHP, Apache, Memcache, MySQL et du coup il s'est dit bon bah s'il n'y pas ça open source j'aurais jamais pu lancer le truc et du coup il a toujours cette idée de bon bah j'ai envie de enfin à la communauté enfin ce qui m'a permis de lancer et donc du coup il a toujours été un gros fan de l'open source et par exemple on l'a vu avec Lama
+
+tous les modèles ont été open source. Et tout ce qui est notre infrar, elle est aussi open source. Une des choses qui est intéressante pour ça, niveau financier, c'est par exemple tout ce qui est niveau hardware et data center. Du coup, on a un projet qui s'appelle Open Compute. Et du coup, on met tous nos plans de comment nos racks, nos serveurs, etc. sont design open source.
+
+Et la raison pour ça, c'est si Facebook, Méta Maintenant et plein d'autres boîtes utilisent les mêmes specs, Ça veut dire que les gens qui manufacturent ces trucs-là auront plus d'économie de scale et pourront plus investir dans ces plans-là. donc, du coup, ça veut dire qu'on pourra avoir ces choses-là de façon moins chère. Donc, du coup, c'est un avantage économique. Après, pour tout ce qui est React,
+
+David Leuliette (32:55.259)
+...
+
+vjeux (33:00.164)
+et prêt-tiers etc. Par exemple, préacnétif ça a été super intéressant, c'est du coup on voulait que les gens l'utilisent en interne, mais du coup que les gens l'utilisent en interne et que ça soit bien, il faut de la documentation. Mais je ne pas toi, tout ce que tu fais en interne, tu vas jamais le documenter et donc du coup ça va être un peu...
+
+David Leuliette (33:24.88)
+Moi oui, moi je veux d'Occupant parce que pour moi c'est ce je me rappelle plus.
+
+vjeux (33:28.708)
+Voilà. du coup, dans les sociétés, c'est un peu bancal et ça. Mais du coup, le fait d'open source, tu peux juste open source un truc sans documentation ou sans getting started qui soit super facile, etc. Donc du coup, cette étape, ironiquement, c'est, enfin, c'est meilleur.
+
+ça fait un meilleur projet pour aussi ta société. Et après, si tu open source et si ton projet marche, etc., du coup tu vas avoir des contributions et donc du coup tu vas avoir des gens qui contribuent et qui améliorent ça et que toi tu vas utiliser dans le same. Donc par exemple au prêt-tier, du coup les six premiers mois, enfin j'avais la moitié des commits, mais ça veut dire qu'il avait aussi la moitié des commits qui étaient faits par plein de gens différents.
+
+Donc ça veut dire que la société, elle m'a payé, mais moi en tant qu'individu, j'ai réussi à avoir deux fois plus d'outputs que j'aurais pu sans ça. Et les six mois d'après, moi je n'avais que un quart et après, j'ai arrêté de vraiment contribuer Day to Day. donc du coup, ça, c'est aussi une des choses que tu peux avoir. Après, il faut être...
+
+David Leuliette (34:27.387)
+Mmmh, oui.
+
+vjeux (34:47.007)
+j'ai pas envie de que tous les projets votent comme ça. La majorité des projets, y'a personne qui va l'utiliser, etc. Donc enfin, c'est aussi vraiment aux gens qui bossent dessus, à la société, d'investir dedans et de faire en sorte que ça va être un vrai truc pour avoir les bénéfices. Et par exemple pour React, du coup on a pu avoir des gens qui veulent rejoindre la société, qui étaient extrêmement bons, parce que s'ils ont le choix de rejoindre n'importe quelle boîte, ils vont rejoindre la boîte.
+
+qui va utiliser. Et aussi, les gens rejoignent la boîte, du coup, si React était super populaire, du coup, les gens connaissent déjà tout notre stack et du coup, vont pouvoir rejoindre React Productif beaucoup plus rapidement.
+
+David Leuliette (35:31.181)
+Ouais c'est clair, on à vous. Et pour ceux qui veulent plus d'infos là-dessus, il regarder le documentaire React. Top Air React Documentary, il est incroyable. T'es dedans en plus, je crois si je m'en publie. Et donc t'as investi dans ReMotion, donc un outil de vidéo en React. C'était une décision, vas-y c'est cool ! Ou est-ce que tu dis que le modèle...
+
+vjeux (35:43.908)
+...
+
+David Leuliette (36:00.523)
+OpenCamp en fait c'est open source mais le compute il est payant ça va devenir un truc un peu obligatoire tu parce que là c'est pareil il y Tailwind en fait maintenant il perd beaucoup d'argent parce que tout est open source, l'LLM est output correctement, il n'a plus aucun intérêt elle est sur le site voilà la documentation
+
+vjeux (36:18.53)
+Du coup, j'ai réfléchi beaucoup au modèle... Ok, tu as open source, comment tu fais de l'argent autour de ça ? le vraiment gros business model que j'ai vu, c'est du SaaS et du hosting. En gros, tu open source toute la partie client, etc. Mais tu payes, tu fais payer...
+
+David Leuliette (36:37.411)
+Mmmh, oui.
+
+vjeux (36:46.372)
+un truc qui run sur le serveur que les gens n'ont pas accès. Donc par exemple, pour Excalibro que j'ai fait, du coup on a un plan 7 dollars par mois par personne et du coup on host ça, on peut sauvegarder les file system, a user management etc. Et donc du coup les gens paient ça et du coup ça nous permet d'avoir une boîte de 10 personnes qui est profitable.
+
+et de garder Excalibre open source si jamais les gens veulent l'utiliser. Et t'as aussi, par exemple, Versel qui est gros dans le business, du coup la façon dont ils font c'est Next, JS, c'est open source. Mais si t'as envie de l'hoster ou si t'as envie d'avoir CI, du coup tu vas devoir payer pour ça. Donc du coup ce modèle où t'as un truc open source qui attire les gens et qui est gratuit, etc. Mais si t'as envie d'utiliser des ressources serveurs,
+
+là c'est là où tu vas devoir payer c'est un truc qui est totalement accepté par tout le monde et c'est un business model qui marche très bien et donc du coup, ReMotion ils ont le même système où c'est la bibliothèque pour pouvoir créer, coder tes vidéos etc. c'est open source tu peux l'utiliser etc. mais à un moment si tu fais vraiment ça de façon professionnelle
+
+du coup tu vas vouloir avoir ton rendering qui marche partout etc. et pouvoir l'upload sur tous les réseaux sociaux ou je sais pas quoi. Là tu vas utiliser le serveur. Donc je pense que c'est ce business qui marche.
+
+David Leuliette (38:24.762)
+Ouais je vois garder une partie et avoir une partie un peu... ouais, intéressant. Et euh... Ouais on va reparler un peu d'Astrix. Et donc ouais, on n'a pas dit tout l'heure mais il y avait plus de 150 composants. Il a TextInput les amis, moi je valide la P.I. C'est bon, maintenant ce sera TextInputForever, pas Input.
+
+vjeux (38:45.22)
+Ouais.
+
+David Leuliette (38:49.338)
+Donc ça utilise Style X, ça est utilisé par 13 000 produits en interne chez Meta. Donc pour l'instant c'est que sur le web.
+
+Et il a volonté que ça fonctionne sur du rack native aussi ou pas ?
+
+vjeux (39:06.404)
+Pour l'instant non. En interne, ce qui se passe en interne c'est qu'on avait à la fois la moyen de faire du React Native et du web. Mais le problème c'est que si tu React Native et Web, tu as deux codes base. Et coup, toutes les équipes qui bossent sur des produits internes...
+
+c'est une ou personnes qui bossent sur cinq ou six outils, qui sont semi-abandonnés, mais qui marchent toujours, etc. Du coup, il a pas le staffing pour avoir deux codebase. Ce qu'on s'est rendu compte, c'est que les gens font en sorte que la codebase où il a le plus d'utilisateurs, c'est elle qui va être maintenue. En pratique, pour les outils internes,
+
+David Leuliette (39:42.058)
+ok.
+
+vjeux (39:59.076)
+la majorité des utilisateurs sont encore sur leur écran, et donc du coup la version mobile a été délaissée par plein de trucs. Après il y en a certains qui sont beaucoup plus mobile first et cela ça marche encore mais du coup ce qu'on a investi plus c'est de faire que la version web soit responsive par défaut.
+
+David Leuliette (40:25.146)
+Bye !
+
+vjeux (40:25.944)
+Tu peux se voir bien par défaut et après si tu veux optimiser tu peux faire, si c'est mobile on va faire ça. Dans tout notre code review, il a vraiment beaucoup d'optimisation dans la version web pour faire bien marcher sur mobile. Mais c'est plutôt ça la logique. Du coup, vu que c'était ça qu'on a en interne, du coup on n'a pas voulu forcer un truc natif qu'on va pas utiliser.
+
+David Leuliette (40:55.61)
+Ouais forcément. Et... Non vas-y, vas-y. Et parce que j'ai vu que c'était écrit... C'est obligé, tu vois maintenant. On est en 2026. C'est peut-être pas le premier, mais c'est première fois que je vois ça. Design System AI Fluent. Qu'est-ce que... Est-ce qu'il a des vrais trucs ? Parce que moi j'ai des opinions que... Là-dessus. Parce qu'en fait, si t'arrives dans une code base et que tu nommes les choses un peu n'importe comment...
+
+vjeux (41:06.852)
+Ouais.
+
+vjeux (41:13.284)
+Ouais.
+
+vjeux (41:25.22)
+Ouais.
+
+David Leuliette (41:25.252)
+Enfin pas n'importe comment mais que tu inventes un nouveau nommage et tout machin que justement le travail que tu as fait c'est de trouver le point commun déterminant entre différentes API. LLM il s'empoisonne lui-même et après ça c'est comme le cancer tu vois ça se propage dans ta code DAZE. Est-ce que là vous avez fait une étape de polish manuelle à la main ou est-ce que Léa était assez intelligente pour...
+
+vjeux (41:40.868)
+Ouais.
+
+David Leuliette (41:52.716)
+pour éliminer ces problèmes pour pas que ça arrive par la suite. serais curieux, qu'est-ce que ça veut dire AI Fluent by Design ?
+
+vjeux (41:59.716)
+Donc du coup, la façon qu'on a codé Asterix, c'est via LLM. Et y a une des choses qu'on a réfléchies, c'est quoi tous les APIs. Donc du coup, comment nommer les composants, comment faire la structure. Et du coup, y a Cindy dans l'équipe qui a inventé Vibe Testing. Donc du coup, ce qu'on fait, c'est on fait un prompt que les gens vont écrire. Par exemple, hey, code moi une
+
+l'application qui fait ça et on va donner plusieurs options au LLM. Un, c'est on lui donne rien et on voit ce qu'il fait. Une, c'est on lui donne un fichier Markdown qui va utiliser ChatCN ou utilise Radix ou utilise des trucs comme ça.
+
+David Leuliette (42:48.761)
+Ok.
+
+vjeux (42:50.499)
+On va utiliser Asterix et après on va faire plein de variations de Asterix. Une avec un composant qui s'appelle Unchose2, une avec Stylex, une avec PureCSS, tout comme ça. Et on run tous ces tests. Et après on a une évaluation qui dit est-ce qu'il a réussi à créer une app qui marche, qui tourne et après on fait visualement est-ce ça ressemble à quelque chose etc.
+
+Et du coup, on a fait ça pour toutes les décisions qu'on a faites là et avec plusieurs LLM. donc, coup, ce qui est bien avec ça, c'est il y a beaucoup de décisions qu'on doit prendre en tant qu'humain qui maintenant, c'est toujours l'humain à la fin qui prend la décision. Mais au moins, a toutes ces décisions, toutes ces informations qui vont nous aider à décider.
+
+Et du coup, ce qu'on s'est rendu compte, c'est en designant l'API comme ça, en fonction avec tous nos composants qu'on avait déjà, ça permet d'avoir un truc qui marche avec les LLM, avec une bien meilleure chance que si juste on avait fait un truc, enfin un software de base. Et la raison pour laquelle on a fait ça, c'est parce que maintenant on utilise beaucoup de LLM en interne.
+
+et on a vu exactement les mêmes problèmes que tu as dit. Le LLM va faire de la merde et après il va se copier-coller lui-même, etc. On arrive à faire une API qui fait en sorte que le LLM par défaut va plutôt tendance à faire ça. Ça va bien marcher. Après, la deuxième chose qu'on a faite, c'est le LLM aime inventer des choses. Et il aime halluciner, c'est le terme que les gens utilisent.
+
+David Leuliette (44:20.695)
+Ouais c'est ça.
+
+vjeux (44:42.857)
+Et un truc que tu peux faire pour éviter que le LLM hallucine, c'est lui donner une source de référence, c'est ça, toutes les APIs qui existent, et lui demander, avant d'implémenter un truc, regarde la référence. Et du coup, on a fait un petit CLI, command line interface script, qui le LLM va pouvoir demander, c'est quoi tous les composants, c'est quoi toutes leurs props, c'est quoi les exemples que tu peux utiliser, etc.
+
+et on a trouvé que ça marchait beaucoup mieux que d'essayer de rajouter tout dans le contexte parce que le problème c'est...
+
+David Leuliette (45:21.09)
+Ok après une seconde étape, one shot, seconde étape. Il s'appelle comment ? LLMLint ?
+
+vjeux (45:27.811)
+Si tu installes Astrix, tu installes aussi le CLI dont tu peux faire NPM à Astrix, même au l'an.
+
+David Leuliette (45:36.617)
+Allez direct, allez c'est dedans, ok.
+
+Ok, ok, excellent. on va parler peu de l'article que tu as fait. En janvier de cette année, tu portes 100 000 lignes de TypeScript en Rust en un mois avec Cloud Code. Dans ton article de blog, tu as dit que tu n'as jamais fait de Rust de ma life. Tu disais clairement que c'est software engineer qui BBC tu NIA.
+
+vjeux (46:07.619)
+...
+
+David Leuliette (46:10.441)
+ça a vraiment changé maintenant la façon dont... Est-ce que ça change la façon dont on construit une app mobile où il a encore des edge case ?
+
+vjeux (46:19.971)
+Donc le truc qui super intéressant avec les LLM, la façon dont je réfléchis, c'est genre un élève super intelligent, mais qui essaie de... qui essaie de faire le moins d'efforts possible. Donc du coup, c'est un truc qu'il faut vraiment se rendre à tête, c'est si tu demandes à l'app de faire... à l'IA de faire une app mobile...
+
+David Leuliette (46:33.62)
+PhD... PhD de 6 ans quoi !
+
+vjeux (46:47.583)
+elle va te faire une app mobile mais elle va faire le strict minimum pour que ça le goûte mais plein de décisions horribles derrière donc du coup c'est toujours il faut toujours qu'il un ingénieur derrière enfin pas obligé d'avoir l'ingénieur dans le titre mais qui va quand même réfléchir à bon si j'ai envie de coder une app il faut que j'ai une séparation entre ma logique
+
+et tous mes dédats structurels.
+
+David Leuliette (47:16.153)
+Ah oui, pas foutre, ouais, ça dépend, faut qu'on invite Levels, tu vois qui c'est ? Peter Levels, 10 000 lignes de l'index.php ça fonctionne, mais quand on bosse dans une team et dans une grosse boîte on va dire, tu vois c'est ça le contexte.
+
+vjeux (47:22.115)
+Ah ouais, et pour Tinali.
+
+vjeux (47:32.323)
+Et du coup, des trucs, c'est vraiment, enfin, réfléchir et un truc, c'est, enfin, j'ai pris plein d'heures avec des LLM, c'est la première heure où le premier jour c'est magique. Et après, tu passes la prochaine semaine ou mois à trouver tous les trucs débiles qu'il a fait et à les retirer et à lui demander de refactorer, etc.
+
+David Leuliette (47:48.505)
+20%, les derniers 20 % du temps, oui oui.
+
+vjeux (47:59.556)
+Donc du coup c'est pour ça qu'il faut vraiment faire attention. Et en plus quand tu parles de CTO, il y a plein de CTO qui sont en mode, bah je vais... AI c'est magique, on n'a plus besoin d'ingénieur, etc. Mais en fait non ça marche pas du tout, t'as une belle démo mais après il faut quand de l'ingénieur pour bosser sur le truc.
+
+David Leuliette (48:15.603)
+non c'est pire oui il faut savoir aussi les mots clés genre exemple nouvelle version de React Native qui a je sais plus quoi en fait il faut le savoir que c'est old art et que en fait c'est new art c'est pour ça que moi je continue quand même à aller en conférence
+
+vjeux (48:27.427)
+Ouais...
+
+vjeux (48:35.779)
+ouais...
+
+David Leuliette (48:36.009)
+pour savoir ce qui se passe et quoi les mots-clés parce que juste un mot-clés ça peut te débloquer tout quand tu dis « ouais en fait c'est ça, ok je reviens chez moi, easy » Je sais faire mais si t'as pas le syndrome du inventer quelque chose, tu sais pas comment ça fonctionne, bah tu sais pas en fait en vrai, t'en sais rien.
+
+vjeux (48:48.211)
+Après ce qui est bien c'est que avec l'AI tu peux lui demander est-ce que tu peux m'expliquer tout ça. Donc du coup ça aide et on a vu en interne les gens qui n'ont pas beaucoup d'expérience du coup ils sont capables d'utiliser l'AI pour poser plein de questions qu'ils n'auraient jamais vraiment posé avant pour pas...
+
+David Leuliette (49:09.785)
+Ouais, ouais, ou « vous n'aurez jamais osé demander », ou ouais, je vais passer pour un débile et tout Ouais non, pas du tout. Moi je pose vraiment des questions, ouais, j'ai la flemme aussi. Des fois j'ai la flemme de chercher et récast, c'est un shortcut d'avoir la réponse, donc j'avoue, moi aussi j'en pose plein. De toute façon, bosser les fondamentaux c'est hyper important parce qu'ils changent tout le temps, tu vois. Donc moi j'aime bien aussi.
+
+vjeux (49:35.627)
+Non, les fondamentaux ne changent pas, mais tout ce qui autour change tout le temps.
+
+David Leuliette (49:39.193)
+Ouais enfin oui, c'est vrai qu'il y a les vrais fondamentaux, donc il l'étape au-dessus des fondamentaux, entre les fondamentaux et... c'est vrai, c'est vrai, c'est vrai, j'ai pas précisé lesquels les fondamentaux, j'avoue bonne réponse. Alors Lead Dev, va Dev, vas-y on va dire Dev Mobile, Software Engineer en 2030, ça ressemble à quoi ?
+
+vjeux (49:44.707)
+...
+
+vjeux (50:05.252)
+à mon avis ça va être vraiment... il y a des choses qui vont rester c'est de réfléchir à comment traduire le besoin produit en solution logicielle et ça c'est vraiment un truc... je pense...
+
+et c'est ce que je disais au début quand tu m'as parlé de flutter et hacknative etc. C'est il y a beaucoup d'ingénieurs qui sont en mode je veux coder et qui se définissent par le code. Et donc je pense vraiment qu'il faut retourner enfin en arrière le but d'un ingénieur informatique c'est avant tout de résoudre un problème qui existe. Et donc du coup je pense que si tu te définis en tant que je suis là pour résoudre un problème qui existe
+
+du coup tu auras toujours une carrière, futur etc. Après la façon spécifique de faire ça, pense que c'est déjà fini, il a plus personne qui code à la main. ça je pense que juste apprendre l'art de coder etc. va pas, c'est pas le futur.
+
+David Leuliette (50:56.289)
+Navite.
+
+vjeux (51:18.451)
+Après, tout ce qui est réfléchir à c'est quoi l'architecture à utiliser, c'est comment débugger les problèmes qui se passent, comment réfléchir à c'est quoi la façon de créer une application qui va dans le futur après les 50 requêtes différentes, les 50 pivots qu'on va faire niveau business pour faire ça et avoir toujours un truc qu'on va pouvoir continuer d'avancer. Tous ces skills, pense que ça va pas vraiment changer.
+
+David Leuliette (51:47.033)
+Ça va réduire la feedback loop, que ce soit... Est-ce que le code sera vivant ? C'est-à-dire que ce sera carrément les clients qui feront du feedback assez cassé, le LLM va savoir, il va coder à la place et hop, en 10 minutes, c'est corrigé.
+
+vjeux (52:03.896)
+Alors ça, un des trucs que j'ai appris avec mes 15 ans de carrière, c'est en pratique, ne jamais demander au client, à l'utilisateur, qu'est-ce que tu veux.
+
+David Leuliette (52:10.251)
+Ça marche pas, j'avoue.
+
+vjeux (52:18.915)
+Parce que si demandes ce que tu veux, il va te dire des trucs complètement allumés sur la comète et si tu les impléments, va pas être vraiment ce qu'il veut. la technique que j'ai utilisée qui marche super bien, que demandes ce qui marche pas. Qu'est-ce qui t'embête, qu'est-ce qui est cassé, etc. Et tu demandes ça à tout le monde.
+
+et par exemple tu as 10 personnes qui utilisent ton truc, tu le montres à 10 personnes et après tu essaies de trouver, enfin vu ce qu'ils te disent, c'est quoi le vrai root cause, c'est quoi le vrai problème en amont et après ce qui va se passer c'est, t'auras sûrement 6 sur les 10 qui vont te dire, ah moi j'aimerais avoir ça où ça s'est cassé mais en fait le vrai, enfin c'est un problème qui existe et donc du coup maintenant tu réduis tous ces 10 trucs, 10 feature requests en
+
+un problème ou deux problèmes et après maintenant que tu sais c'est quoi le problème là tu réfléchis à c'est quoi les solutions pour régler ce problème et après tu par exemple tu vas avoir deux solutions différentes et après du coup tu vas retourner voir tes clients et leur demander j'ai ces deux solutions laquelle enfin déjà est ce que ça résoudrait ton problème que tu avais et laquelle tu préfères
+
+Et là, c'est vraiment une approche qui marche beaucoup mieux. du coup, si tu implémentes ces solutions, tu vas résoudre les problèmes que les gens te demandent maintenant, mais aussi plein de gens dans le futur. Donc du coup, c'est vraiment la technique que j'utilise. Et du coup, pense que avec AI, si tu promptes ton AI bien, ça va être vraiment similaire.
+
+Après, ça c'est pour vraiment résoudre les problèmes de fonds. Après, si tu es dans une boîte de conseils qui va être payée à l'heure pour faire ce que les clients veulent, du coup, un des trucs que tu peux faire avec Lea et que j'ai vu des boîtes qui font, c'est ils ont des calls avec tous les clients et pendant le call, ils recordent les trucs et ils l'envoient au LLM.
+
+vjeux (54:33.091)
+et à la fin du call, ils sont en mode, hey, regarde, tu veux tester ce que tu nous as demandé ? Et du coup, ça, pour réussir à signer des contrats, c'est le meilleur truc que tu peux faire. Donc ça, je conseille vivement de faire ça. Après, ce que le LLM t'a généré pendant ton call, tu vas sûrement le jeter à la poubelle vite fait après et le réimplémenter de façon propre. Mais enfin...
+
+David Leuliette (54:53.976)
+Non tu l'utilises pas, ouais non tu utilises.
+
+vjeux (55:01.739)
+C'est stratégique.
+
+David Leuliette (55:01.976)
+Ça te fait une bonne base d'étape 1. C'est une étape 1 et puis après la feedback loop tu la réduis, tu as une architecture, enfin à la limite dans ton monoripo tu as un slash tmp qui est son qui sert de tout ce truc là pour... génères les tests après sur ce edge case et après tu vires le folder tmp et ta architecture correctement. C'est beau, c'est beau. On va arriver à... Vas-y, vas-y. Non mais en fait c'est pas ce que je dis, on a...
+
+vjeux (55:12.939)
+Ouais.
+
+vjeux (55:18.979)
+Ouais.
+
+David Leuliette (55:30.136)
+Je sais pas si t'as le temps tu vois mais on va arriver un peu à la fin de l'épisode tu vois.
+
+vjeux (55:32.611)
+Je vais parler de ça parce que c'est important. Là, mon rêve, c'est d'avoir toute la feedback loop qui aide les agents. Du coup, là, je bosse sur un projet d'un CLI pour faire tout ce qu'un employé peut faire dans la boîte. Et ça marche super bien. Et maintenant, les agents internes, utilisent ça. Par exemple, si tu veux inviter un visiteur sur le campus...
+
+David Leuliette (55:44.222)
+oui.
+
+David Leuliette (55:58.84)
+Ouais c'est ce qu'on avait fait quand on s'était capté, allez hop vas-y ajoute les gars, pouf, boum, done. Ça va voir l'invitation, ça fait de la magie, trop bien.
+
+vjeux (56:03.539)
+Et du coup ce qui est intéressant avec ça c'est que tout le code a été codé par les agents.
+
+et les utilisateurs de ça c'est que les agents. Et donc du coup t'as un système où t'as des agents qui codent le truc et des agents qui utilisent le truc et du coup ce que je pense qu'on va pouvoir réussir à faire c'est d'avoir un agent en plus qui va lire tout ce que les agents ont fait et regarder où est-ce que les agents ont merdé ou ont passé enfin 10 minutes à essayer de trouver comment ça marche et à essayer de trouver comment le résoudre et
+
+l'implémenter, le chip, voir si ça résolut le problème et si ça résout le problème, continuer c'est quoi le prochain truc. Et en plus vu que c'est que les agents qui utilisent ça, du coup on peut aussi demander aux agents qui l'ont utilisé, si on avait fait ces changements, est-ce ça t'aurait aidé ? Et donc du coup réduire la loupe. Et donc ça je pense que si on arrive à le faire, c'est vraiment le rêve de pouvoir vraiment...
+
+à la scalaise, optimiser le truc. La réalité c'est que si tu fais juste des agents faire ça, en ce moment avec la qualité des agents, ça a parti en couille et ça n'a pas marché. Mais je pense que dans quelques années ça va vraiment pouvoir fonctionner.
+
+David Leuliette (57:29.576)
+Ok cool, intéressant. On va passer à la partie questions rapides. Alors attention, React Native ou React Strict Dom si tu devais faire une startup en 2026 ?
+
+vjeux (57:35.555)
+Merci.
+
+vjeux (57:42.961)
+Rien que nature.
+
+David Leuliette (57:45.08)
+Un outil de dev, on va faire dev tout court ou dev mobile que tu utilises tous les jours et que trop peu de gens connaissent.
+
+David Leuliette (57:59.37)
+un plugin Whatever Terminal.
+
+vjeux (58:02.307)
+Le key binding de macOS command shift 4 space et control c'est pour faire des screenshots de ton appliqué de toute la window avec le petit gradient dégradé autour etc.
+
+David Leuliette (58:15.604)
+À de toute la page !
+
+David Leuliette (58:23.755)
+oui je vois, ouais carrément ok je viens de tester. moi j'utilise screenshot ex pour ça mais ouais je vois. Il le fait direct bien, il le met dans le clipboard voilà c'est beau ça. Ça on adore tu vois, ça on adore. La plus grosse erreur qu'une équipe mobile fait en face de scaling.
+
+vjeux (58:36.674)
+...
+
+vjeux (58:46.932)
+c'est de penser que tu vas scale de façon disproportionnée et de ne pas être réaliste et du coup d'over engineer beaucoup de choses.
+
+David Leuliette (58:58.704)
+Ouais, ouais, Prêtilleurs ou biomes, tu utilises quoi en ce moment ?
+
+vjeux (59:04.804)
+Après tueur, ça marche.
+
+David Leuliette (59:07.357)
+Ouais, c'est pareil, j'ai vu biome passer et j'ai fait pfff, chiant. C'est bon, je prends pas le train, tu vois. Et chez Meta, vous utilisez RackNativeVania ou Expo ?
+
+vjeux (59:20.401)
+Vanilla.
+
+David Leuliette (59:23.938)
+Carte blanche, est-ce que tu un sujet que tu vas absolument aborder, que tu tiens à cœur, tu n'as pas eu ou n'as pu encore dire dans les autres interviews ?
+
+vjeux (59:31.65)
+Je pense que le futur, va être tous ces vidéos editing. que tu vois avec YouTube, avec maintenant les réactions sont super bonnes. ce que je veux, c'est pouvoir faire du video editing dans le navigateur. Et pour pouvoir le partager avec toutes les tech web, etc. et les agents.
+
+Je pense qu'il a un gros business là-dessus et que c'est encore sous-sous-sous-exploité. si les gens veulent bosser là-dessus, je pense qu'il a du marché.
+
+David Leuliette (01:00:05.24)
+Il y en a plein en plus, j'avoue. En fait le truc c'est bon, il en a plein mais ils sont tous clanky donc ouais un vrai truc 60fps qui soit à char, pas beaucoup de features mais en plus je reconnais des potes, je leur enverrai le truc. William aussi il est sur preture, bah ouais voilà, on n'a pas le time on ship dans le chat. Est-ce que tu connais une personne qu'on devrait inviter ensuite ?
+
+vjeux (01:00:10.207)
+Ouais.
+
+vjeux (01:00:29.026)
+Je pense que Julien Verlaguet qui bosse sur Skip, c'est une façon réactive de bosser sur toute ton infrastructure, toute ton app, etc. Il a un projet où il peut faire réactive du côté serveur, qu'il envoie au côté client et toute la loupe.
+
+update instant sur tous les mobo labs, des desktops etc. Donc je pense que tu dois lui parler.
+
+David Leuliette (01:01:00.909)
+bah vas-y, je lui demanderai. Où est-ce qu'on peut te suivre, te contacter ? J'ai parlé du blog blogvje.com, github pareil, twitter pareil.
+
+vjeux (01:01:13.896)
+C'est là où je suis principalement.
+
+David Leuliette (01:01:17.271)
+Si vous avez appris des trucs, amis, envoyez-le à un des collègues. Le lien de l'émission c'est wishypity.today.slashpodcast. N'hésitez pas, mettre 5 étoiles comme ça, ça me permettra de remonter dans le top 100 des podcasts. J'étais monté, mais je suis redescendu parce que je suis d'une régularité pas exemplaire, mais vous inquiétez pas, ça va changer.
+
+décidé de me faire un agent cloud code local qui prend contrôle de mon ordi qui fait les clics clics au bon endroit pour poster les trucs les machins d'aller sur riverside et de noter les épisodes et tout ça arrive ça demande un peu de taf quand même je n'ai pas fait du one liner
+
+vjeux (01:01:56.578)
+Tu m'as montré tout ce que tu as généré sur moi, ma biographie, toutes les questions et tout. C'était super stylé.
+
+David Leuliette (01:02:04.818)
+Ah ouais mais ça c'est... Ouais bah ça c'était dur, c'était l'étape 1, ça c'était l'étape... Pas automate. Là euh... Oui ça oui, ça c'est pour la partie pré-prod, la partie post-prod après, y'a quand même une machinerie à faire, y'a 5 étapes dans un... de board notion mais j'ai donné à Claude Code, lis-moi mon notion et crée-moi des agents basé sur ce truc là et va cliquer dans le navigateur pour faire les actions. Ça arrive, ça arrive, ça arrive. Ça arrive tu vois.
+
+vjeux (01:02:24.962)
+Allez, tu passes.
+
+David Leuliette (01:02:28.375)
+Qu'est-ce que tu vas shipper dans les 30 prochains jours en une phrase immorable que l'internet n'oubliera jamais ?
+
+vjeux (01:02:34.402)
+Alors là je vais, suis un bon français, je vais en vacances. Donc je vais chipper de la piscine, des activités, des jeux à la société en famille.
+
+David Leuliette (01:02:45.021)
+Très bien, c'est ça qu'on veut ! vas-y, recommandations de jeux sociétés alors !
+
+vjeux (01:02:48.962)
+Franchement, toujours Katan. Après, j'ai découvert le 6 qui prend. C'est assez sympa. Après, c'est envie d'avoir des amis dans ta famille, pas trop, mais c'est sympa.
+
+David Leuliette (01:03:02.619)
+Le 6 qui prend, on ira voir ça. Ok Christopher, merci beaucoup. Allez les amis, on se retrouve à la prochaine. Ciao à tous !
+
+vjeux (01:03:12.034)
+Bye !
+

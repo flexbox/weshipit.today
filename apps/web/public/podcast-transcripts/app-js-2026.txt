@@ -1,0 +1,998 @@
+David Leuliette (00:07.399)
+React Native est-il en train de devenir le framework le plus important de la décennie ou l'IA va-t-il rendre obsolète avant qu'on ait fini de débattre ? Cette semaine, on parle app.js, Craco, où il y avait 500 développeurs il y a deux semaines qui ont tenté de répondre à cette question. J'ai amené avec moi deux personnes pour faire le debrief que vous ne trouverez nulle part ailleurs. Mathis et Gabriel.
+
+Attention, Epic, il est où le son ? Il est perdu, il là ! Je vais garder ce truc à chaque fois, mais non c'est bon c'est ça, on a plus de son, on a plus de budget, pardon, pour les intros mais ça c'est pas mal. Qu'est-ce t'en penses Mathis ? Toi qui a fait les montages dans l'épisode d'avant.
+
+Matthys (00:54.542)
+Franchement c'est pas mal, épique. J'espère que la soundboard va s'améliorer au fur et mesure des podcasts. Il faut en mettre plus.
+
+David Leuliette (00:57.063)
+Ça réveille, ça réveille.
+
+David Leuliette (01:03.719)
+bah oui carrément, ça faut sponsoriser. C'est vrai que c'est dans GitHub sponsor. Si vous voulez que la soundboard s'améliore, a un slot. je mettrais un slot. Et toi Gabriel, comment ça va ? Comment ça va ?
+
+Matthys (01:15.342)
+proposer vos sons.
+
+Gabriel (01:18.615)
+Euh... bah très bien. Moi je suis parti en vacances après AbJS donc je t'ouvrai.
+
+David Leuliette (01:24.647)
+Ah excellent ! Ça va donc tu as eu le temps de digérer un peu les annonces et de tout oublier. Parfait ! Du coup là on a à peu près dix jours de recul, on va en parler, c'est parti. Première impression, on va commencer simple, une image, une sensation, un truc marquant des trois jours.
+
+quatre jours qu'on a passé à Cracovie, qui vira en tête. non, Gabriel, commence par toi. Si je te dis AppJS 2026 tu me réponds.
+
+Gabriel (02:00.407)
+En vrai comme tous les ans, Bonne ambiance, c'est l'occasion de voir un peu au-delà des confs, c'est l'occasion de voir un peu toute la commune et d'échanger sur tous les sujets réac natif et dévo global. Donc très cool.
+
+David Leuliette (02:15.908)
+Et toi Mathis, posait quoi de cette édition ?
+
+Matthys (02:19.309)
+encore une très bonne édition et si je dois mettre un mot-clé sur les trois jours ça serait performance parce que sur les trois jours c'est vraiment le mot qui est revenu et ce qu'il a à retenir des trois jours
+
+David Leuliette (02:31.958)
+ouais faudrait qu'on fasse un edit de Laftive Jobs quand les keynote Apple faisaient genre Wonderful, Gorgeous, Awesome. On pourrait faire pareil avec Performance, Performance, Performance, la Go Speaker, combien de fois ils le disent. Ouais c'est vrai, bonne édition, déjà on a eu du beau temps, il faut le dire. Une semaine de décalage, c'était parfait.
+
+Et ouais, moi j'aurais dit stabilisation, pas de nouvelles crazy features comme on a eu les éditions précédentes, mais le SDK56 release.
+
+David Leuliette (03:14.182)
+Et voilà, on va en parler de différentes conférences, pardon, des différentes talks qui a eu lieu. C'est vrai qu'on a fait le workshop CAP, tu avais fait quoi comme workshop ? Ah, tu n'as pas fait, Trop de skill.
+
+Gabriel (03:22.871)
+Je l'ai pas fait. En ce moment, je l'ai fait jamais. Je suis arrivé au milieu de mercredi, je crois.
+
+David Leuliette (03:28.638)
+oui ok, c'est On est arrivé, on a fait Rack Native Web. Pareil Mathis, a appris quoi à ce truc ?
+
+Matthys (03:38.221)
+les useDOM, dans quel contexte vraiment les utiliser. Donc évitez d'utiliser des WebView et faire des composants avec le useDOM.
+
+David Leuliette (03:43.107)
+C'est vrai.
+
+David Leuliette (03:49.134)
+on veut encapsuler un Canva HTML ou si on a déjà une code base
+
+Gabriel (03:54.775)
+Ils vous ont donné une diff entre le fer à la mano versus l'utilisation de l'usedom ? Est-ce qu'il a vraiment un intérêt à utiliser l'un ou l'autre ?
+
+David Leuliette (04:00.142)
+C'est quoi le film ?
+
+C'est-à-dire le faire à la mano à faire une webview et tout.
+
+n'a pas posé la question.
+
+Matthys (04:08.202)
+crois que c'est au niveau performance. Ils ont certainement dû en parler, mais on a perdu l'information dans la vague de données qu'on a reçue.
+
+David Leuliette (04:16.166)
+Ouais c'est vrai, je pense que c'est plus où tu en es, si tu veux, rapidement, ça dépend du contexte, vois, parce que à mon avis il a pas vraiment de percertibles, bon y a sûrement un mais ça doit être minime.
+
+Gabriel (04:33.176)
+Tu t'embêtes moins à juste définir les directives en haut que de se taper toi-même.
+
+David Leuliette (04:36.24)
+Ouais c'est ça, tu me le directives, terminé quoi. Si t'es dans un monoripo, que t'as déjà tout bien setup, l'ACI, le test, machin, boum tu mets use-dom, tu l'importes et terminé. Si tu dois, tu commencer à faire du clic-clic, copier-coller de fichiers dans un autre folder, bah là vaut peut-être mieux le faire à la main. Mais qui fait du copier-coller à la main en 2026, quoi je veux dire ? Léa, fait tout maintenant. Du coup ouais, c'est vrai qu'on a un sujet important. On va en parler par la suite.
+
+Donc c'était la 6ème édition par rapport aux années précédentes. Qu'est-ce qu'il y a changé ? Mathis... Bon, non, c'est tout pareil, ! Non, mais non, nous... Ça se calme !
+
+Matthys (05:15.598)
+Moi je trouve que ça se calme. Avant c'était annonce sur annonce et maintenant c'est plus on fait du code propre, on l'optimise et on arrête de sortir des grosses features qui sont buggées pendant six mois.
+
+David Leuliette (05:29.958)
+Ouais, c'est vrai, c'est Et toi Gabriel, par rapport aux éditions précédentes, à les prochaines. À les dernières,
+
+Gabriel (05:43.159)
+avant sur 100 ans. Non, ça aurait pas de grosses annonces particulières, c'est vrai, ouais, peut-être plus stabilisation, des sujets un peu... des retours de différents speakers ou différents sujets, mais...
+
+David Leuliette (05:44.645)
+Ouais.
+
+David Leuliette (06:01.798)
+Moi je sais le truc qui est différent, c'est que j'ai vu tout le monde qui burnait des tokens pendant la confin. Tout le laptop à moitié ouvert, hop c'est les gens, on s'en bat les couilles. Genre je vais chercher une assiette à manger, je laisse mon laptop à moitié fermé. Là la security bridge qu'il y a. tout le monde tenait son laptop à moitié ouvert. Genre allez vas-y je lance juste un prof, le temps 20 minutes, le truc il va loop et hop après je follow up.
+
+Mais du coup on va en parler ! Alors est-ce que Lya elle va tuer React Native ? Parce que le talk qui a lancé le débat c'est Pertu de Ravenucat qui a posé la question frontalement, is AI making React Native obsolete ? Parce que justement j'ai vu un de... mec qui fait VLC là... Je sais plus comment il s'appelle...
+
+Gabriel (06:56.407)
+...
+
+Gabriel (06:59.831)
+C'est pas... Camp-Fu ou quelque chose ? Non, j'ai un truc de mémoire.
+
+David Leuliette (07:03.928)
+Jean-Baptiste Kempf, voilà. En fait il a donné un talk et il dit ouais bah en fait avec les I's ça à on va juste coder en binaire et en...
+
+assembleur parce qu'en vrai c'est hyper optimisé et coup voilà et donc intéressant comme take et perthue il a fait la même analyse son talk c'était qu'il a pris une app mobile il a codé en swift en Kotlin et en ragnative pour savoir
+
+Quel est le meilleur, le plus performant, le plus rapide ? Vous en avez pensé quoi de ce talk ? À votre avis, c'est légitime ou clic bête de conf ?
+
+Mathis, mixe des deux ?
+
+Gabriel (07:50.871)
+Mix D2
+
+Matthys (07:52.463)
+C'est spécifique parce que lui il a pris un cas d'usage assez particulier où ça serait une app qui est seulement sur iOS ou Android et il veut la porter sur les deux plateformes. C'est spécifique.
+
+David Leuliette (08:08.226)
+C'est certain.
+
+Moi c'que... Vas-y.
+
+Gabriel (08:11.447)
+Après sais pas à quel point ces chiffres étaient véridiques sur le gain de temps, la complexité d'arriver au bout avec un truc qui fonctionne.
+
+David Leuliette (08:21.861)
+Le truc que je me souviens c'était qu'il avait utilisé 3 fois plus de tokens, 8 fois plus de Il a passé de 0 à 80 % easy. Mais en fait c'est les derniers 20 % où quand il utilisait des apps natifs par rapport à ACK native, ça partait en freestyle parce qu'il changeait sur une plateforme, il devait aussi prompter l'autre plateforme et avec certaines différences de la code base, il n'arrivait pas exactement au résultat qu'il voulait.
+
+Et...
+
+Donc les AIs ça réduit forcément le codage mais ça ne réduit pas le co-ordinatio, on a qu'il avait quand même deux stacks à maintenir en code liné en Swift. L'avantage de Rack Native c'est qu'il avait qu'une seule code base à maintenir et il pouvait shipper plus rapidement et ne pas coordonner les changements. après le truc c'est que comme tu dis Gab c'est un peu orienté parce que Revenu 4
+
+dans leur state of paid apps, donc le résultat dont on a parlé la semaine dernière, ils disent que c'est Racknative qui fait le plus d'argent sur les...
+
+les apps en prod donc forcément un peu biaisé quoi mais moi je trouvais l'analyse intéressant
+
+Gabriel (09:47.498)
+sur leur stade je sais pas, enfin sur le report revenu 4 je sais pas c'est quoi la majorité, enfin la proportion d'après AgNative versus Native mais je suppose que tous les gens qui qui va avec code et qui essayent de chipper des trucs là pour monétiser bah ça doit être du cross-platform avec AgNative
+
+David Leuliette (10:06.693)
+Ah oui bah directement ouais je pense. Bah attends qui c'est qui m'a dit ça ? dans le master prompt c'était ouais tu dois faire du mobile, fais du rack native. Qui c'est qui m'a dit ça pendant la conf il me semble ? Ouais bah t'es d'accord.
+
+Gabriel (10:10.007)
+Donc est-ce que ça fausse pas un peu les résultats, sais pas.
+
+Gabriel (10:21.447)
+Y'a quelqu'un qui parlait, sais plus c'était qui... Par défaut il disait d'utiliser au AracNative ou au Expo, je sais plus qui disait ça...
+
+David Leuliette (10:27.973)
+Directement, ouais.
+
+que du coup de base, tu connais pas forcément Bob, c'était grabé dans l'écosystème sans forcément... Et on n'a pas parlé des big annonces qui ont été faites, il en a eu plein de Charlie qui a parlé de ExpoTV... mais ça c'est vrai, on va en parler plus tard après la super annonce, j'ai resté jusqu'au bout comme ça vous saurez.
+
+Mais donc dans les projets réels par rapport à l'année dernière, dans le quotidien des développeurs React Native en 2026, l'IA ça a changé beaucoup de choses. Le talk de Gant, incroyable Gant, Gant Laborde, vous le suivez pas sur internet suivez-le, il est incroyable. Forcément il fait des ads, il fait des vidéos pour promouvoir Tchénaryact. Elles sont
+
+Incroyable, tu sens qu'ils mettent tout le budget dans la communication là, tu vois ? Et franchement, c'est hilarant à regarder. En fait, a une année, il avait fait une vidéo, je que c'était il a trois ans, il mis sur Fever, il avait payé 100 dollars et il avait eu un truc pour 100 dollars qui était incroyable. Et il s'est dit, vas-y, je vais continuer ce truc là. Et du coup, leur plan, c'est de dépenser le moins d'argent possible, de garder l'argent pour la con.
+
+Stylé, franchement stylé. Mais du coup, Gant, d'Infinite Thread, il a fait un tour de magie sur scène avec une app en expo, Super Base et avec un magic trick fait en live. C'était impressionnant, bon, est-ce que c'est actionnable dans notre vie au travail ? donc ce qu'ils ont proposé, c'était d'avoir trois personnes. Donc maintenant, en fait, il a plus de rôle.
+
+David Leuliette (12:26.696)
+On a vu ça dans plein de boîtes, a plein de boîtes où ils shipent directement en prod. C'était qui déjà le wallet récemment
+
+le wallet de crypto.
+
+Matthys (12:42.575)
+Euh... fantômes ?
+
+David Leuliette (12:45.11)
+Non non pas Phantom, euh...
+
+Je sais plus, c'est faire un hack native l'application. Bref, ça me reviendra. Ouais, con base. Ils ont dit que c'était les products guy people ou marketing people qui chipper en prod. Puisque maintenant avec les high tu peux le faire. Et make sense. du coup, le talk de Gantt c'était le point. C'était que maintenant il a plus vraiment de rôle. Vu que tu es dev, tu peux faire un peu de tout. Mais par contre, ils ont introduit un système de... des classes.
+
+Matthys (12:52.111)
+bise.
+
+David Leuliette (13:20.488)
+Et donc tu as l'Integrity Engineer qui vérifie les choses, tu le Product Experience Architect et le System Engineer. Ils ont chacun des rôles bien définis. Genre l'Integrity Engineer, lui, il a le droit de dire non tout le temps. Il n'a pas le droit de casser des trucs. Par contre, le Product Experience Engineer, lui, c'est vas-y go, ça ship des features. Mais ce pas lui qui vérifie. Je pense que c'est le System Engineer ou l'Integrity Engineer.
+
+Question les amis, est-ce que vous codez encore des features de A à Z vous-même ? êtes passé en mode un peu integrity engineer comme le suggérait Gantt. Est-ce qu'il quelqu'un qui review ? Ou ça peut être une AI qui review notre travail, parle votre.
+
+Matthys (14:07.095)
+pense qu'il a une triforce AI avec le prompteur, le builder et le reviewer. On est plus AI manager qu'integrity engineer.
+
+David Leuliette (14:13.963)
+A directement !
+
+David Leuliette (14:20.732)
+Parce que tu l'as bien en place toi, genre avec une loupe et tout et que le système il vérifie par lui-même et ça code quand tu dors.
+
+Matthys (14:25.305)
+Ouais. Alors pas quand je dors, pas encore mais on y est presque.
+
+David Leuliette (14:29.508)
+faut encore manager le truc. Mais t'as fait ça avec quoi ?
+
+Matthys (14:35.631)
+des skills et des bonnes règles au En plus, maintenant, il a les workflows. c'est ça.
+
+David Leuliette (14:39.214)
+Ouais. Ouais ok ouais mais il faut que...
+
+Gabriel (14:41.137)
+qui tourne sur ta machine du coup.
+
+David Leuliette (14:45.336)
+Mais faut... Ouais, si c'est ça.
+
+Gabriel (14:45.871)
+en reviewer, t'as que CodeRabbit qui était sponsor d'ailleurs de la conf ou dans la SIER, ou même en locale si tu veux, peuvent te checker ce que tu fais et après tu peux faire une boucle en fonction de cette feedback qui s'autocorrigent tout seul. Comme ça tu pousses ta PR et au moins t'as une review à tierce. C'est un peu ce qu'ils disaient dans la conf au final de quand même vérifier quoi. Ouais il y avait Test Army et l'autre truc, ça c'était sur les end to end.
+
+Matthys (15:02.287)
+Il y a aussi... c'est Test Army, ?
+
+David Leuliette (15:10.808)
+truc c'est... il y avait un autre sujet où elle serait sur les tests end to end. Et il parlait de... Oui oui si, il parlait de que maintenant...
+
+Gabriel (15:21.271)
+Tester Army et Auto Sana.
+
+David Leuliette (15:24.26)
+ça c'est des tests faits par Yaya parce que tout ce qui est Maestro, unit test et tout faut vraiment décrire là clic sur bouton login mais la next generation de
+
+de tests c'est dire en gros bah là je veux sign in et je veux créer un compte et les high figure LFL trouve tout seul comment faire et où elle fait des tests non déterministiques ce qui est comme les vrais useurs qui font n'importe quoi ou qui testent les cas qu'on n'a jamais vu genre oui si je fais back et que je reviens et que je viens que je vais sur profile et que je reviens hop bizarrement j'ai plus la modal qui fait que je peux revenir donc ça ouais c'est vrai que
+
+C'était intéressant et du coup, pour gérer la revue de code quand c'est shipé avec vos agents, comment vous faites en ce moment ? Est-ce que vous avez introduit des outils d'AI ou pas du tout
+
+Gabriel (16:20.235)
+Du coup ce que je disais perso, dans un CIR j'ai Connor Rabbit et à chaque fois qu'il fait des feedbacks il a Clone qui listenne sur les... j'ai plus le nom de l'event mais l'event de review submitted et après il corrige les feedbacks de Connor Rabbit et ça fait la loupe jusqu'à qu'il n'y ait plus de feedback quoi.
+
+Matthys (16:20.493)
+NON.
+
+David Leuliette (16:24.141)
+Ouais.
+
+David Leuliette (16:36.796)
+ouais, automatiquement du coup.
+
+Gabriel (16:38.697)
+Ouais dans la CIA il fait sa petite loupe, il en un qui poste, l'autre qui corrige, il a review les corrections et ainsi de suite.
+
+David Leuliette (16:46.421)
+Et il se merge tout seul ou c'est toi qui a le final à Provol ?
+
+Gabriel (16:48.819)
+Non c'est moi qui marche. Je recheck quand même le code toujours parce que des fois il te fait une archi foireuse. Je relis toujours mais je balance l'APR et je relis une fois que lui il a fait tous ses premiers feedbacks. Mais je... ouais je relis quand même tout le Bon en tout cas les trucs qui sont importants.
+
+David Leuliette (17:04.22)
+Et tu testes ou... Comment tu fais pour tester si ça fonctionne vraiment ? Bah ça dépend, tu sais à peu près.
+
+Gabriel (17:11.127)
+Dans les règles quand je code, y toujours des unitaires et d'intégration vu que ça coûte plus rien maintenant. j'avoue les end-to-end, vu que là pour l'instant je fais des apps pour moi et que ça bouge tout le temps, j'ai pas assez top. Mais curieux de tester ce que Mastro faisait, enfin proposait avec leur MCP où il peut décrire tes end-to-end automatiques et du coup t'as ta loop où tu codes et à la fin ta maestro en bout de course qui te le check.
+
+David Leuliette (17:23.251)
+Non, ça va,
+
+David Leuliette (17:40.419)
+C'est vrai qu'il y a des Maestro MCP, ça je vais me le noter en fait.
+
+Bon, non mais il y a eu tellement de trucs que je devais me noter. Donc j'ai pas tout.
+
+MCP. a des trucs que j'ai oublié. Par contre, les annonces qui vont changer le quotidien des développeurs web qui font du mobile. Les intégrateurs CSS qui sont devenus Software Mobile Engineer. C'est Reanimated Cat avec les worklet. Maintenant, il va y avoir les transitions CSS et animations CSS.
+
+Avec la séparation de Ragnative Worklet qui est un package indépendant maintenant pour le multithreading au delà des animations. Mathis, toi qui es obsédé par la performance, est-ce que tu trouves que c'est une bonne nouvelle ?
+
+Matthys (18:40.761)
+Du coup, oui, que si on est sur un écran où ça lag pas mal à cause des animations, pour utiliser worklet, on petit peu split les threads et gagner en performance ultra rapidement.
+
+David Leuliette (18:52.639)
+Et en ce moment, fais comment les animations Were animated simples ou est-ce que tu es...
+
+Matthys (18:57.808)
+Il a le reanimated simple. Les animations c'est cool mais quand il y a trop sur des vieux téléphones Android avec pas beaucoup de RAM, pas beaucoup de stockage, ça peut vite faire péter les plombs et la batterie allait drainer ultra rapidement.
+
+David Leuliette (19:13.323)
+Ouais, j'avoue, j'avoue, j'avoue. Puis souvent les animations c'est... si, il faut quelqu'un full time, genre la Katalin... C'est vrai, il nous a pas dit, il a pas voulu nous dire. Il bossait... Donc, Katalin Miron qui fait aussi les animations, lui il bosse... Il nous a pas dit. Il a dit, c'est secret défense. Mais je pense que ouais, doit être 80 % de son temps, ça doit être l'animation quoi. Parce qu'en vrai, moi je sais qu'une fois j'avais bossé aussi là-dessus en tant qu'animation guy et je faisais que ça en fait en vrai. Parce que ça prend vite du temps.
+
+vérifier que ce soit bien sur tous les devices. Maintenant même si c'est de plus en plus simple, justement faut pas vérifier que ça casse pas.
+
+Voilà voilà. Et toi Gab t'en fais des animations en tant que Indie Hacker ou pas le time ?
+
+Gabriel (19:57.912)
+mes appas moi j'avoue pas un paquet ou là pour l'instant c'est plus faire de la kiss que faire des petits trucs feel good dedans
+
+David Leuliette (20:06.56)
+des trucs cool, faire de la magie, je vois.
+
+Gabriel (20:10.165)
+Mais c'est ce qui fait aussi la diff au final d'avoir ces petits trucs dans tes app qui se différencient du reste. Mais c'est vrai que ça prend du temps de finir ça, d'avoir le bon feeling, ça mange bien. ouais, avec parcimonie mais c'est toujours cool d'en avoir.
+
+David Leuliette (20:24.291)
+Et en plus il y a le nouveau pattern aussi, enfin pas le nouveau pattern mais le truc est la personne qui a créé React Native Keyboard Controller, qui a réalisé React Native Teleport. Donc c'est pour faire des views qui ne se render pas dans un modèle mais qui sont on top of the screen. Mettons que vous avez une preview vidéo et vous voulez que... Sur Android ça y a beaucoup je
+
+ton écran en 2 et avoir une vidéo qui est à l'intérieur du nap donc ça le truc logique de faire en ce moment c'est de faire une modal mais le truc c'est que tu perds le state quand tu en train de play une et là il React Native Teleport qui a été release et qui use une native view et donc elle ne demande pas quand on change la position du nœud
+
+David Leuliette (21:18.717)
+ça pourrait permettre des UI incroyables comme Snapchat que personne ne comprendrait et que ça n'utiliserait plus les screens non plus. Follie hein, ça pourrait...
+
+Gabriel (21:34.231)
+il me présentait pas mal de use case qui était cool dans sa démo.
+
+David Leuliette (21:37.751)
+Ouais, c'est vrai qu'il faudrait que je le re-revoie le talk pour vraiment savoir...
+
+Matthys (21:44.338)
+Pour moi c'est surtout le chat, qu'on parlait avec Pablo des réactions sur le chat, donc quand on reste à appuyer longtemps sur un message pour pouvoir afficher les animations, avoir cet effet de flou derrière. Avant on était obligé de fake un petit peu une nouvelle view avec le même message pour pouvoir avoir cet aperçu. Et maintenant avec Teleport on va juste pouvoir utiliser le même composant et éviter d'unmount comme ça si on a des photos, elles ne pas décharger, recharger en boucle le temps qu'on réagit sur le message.
+
+David Leuliette (21:53.475)
+Hmm.
+
+David Leuliette (22:12.237)
+oui c'est vrai ça, oui dans les... ouais ça carrément. ouais j'avoue, faudrait faire une liste de toutes les use case en fait.
+
+Gabriel (22:22.595)
+exemple le plus flagrant qui présente c'était genre ton fil admettons LinkedIn où t'as ta vidéo qui est en inline dans un post et tu presses et du coup il exprime d'y prendre tout l'écran et du coup tu gardes bah déjà t'as la transition et tu gardes le contexte là où tu en es dans ton player et c'est hyper calique même pour de la perf de préloader des trucs en fond et de téléporter là où tu as besoin chez upstream c'est ce qu'ils faisaient sur sur des trucs
+
+David Leuliette (22:42.766)
+Ouais ça j'avoue ça fait...
+
+David Leuliette (22:47.363)
+Ouais, ah ok ouais. Et même de toute façon, surtout qu'il était bien présenté, il a vraiment expliqué pourquoi, comment, de où ça vient, pourquoi je ne l'ai pas appelé React Native portals d'ailleurs. Parce que ça existe les portals sur le web justement. Très intéressant, c'était The Illusion of Portals in React Native. Ok.
+
+Gabriel (23:16.383)
+Il est toujours très bon pour expliquer ces sujets. Il une dernière sur le keyboard cette année là-dessus et est toujours très clair. Au-delà que ces livres sont toujours top, il est toujours hyper clair dans ces explications.
+
+David Leuliette (23:24.611)
+Bah sur le keyboard j'ai trouvé que c'était... Ouais. Ouais.
+
+C'est hyper clair parce que je savais de quoi y parler sur le keyboard. Et je savais qu'il avait 15 000 libs. je savais à peu près, même si je n'avais pas exactement toute la timeline, je savais pourquoi il fallait une nouvelle lib. Mais là oui, en fait c'est clairement un sujet que je maîtrise pas et que j'ai déjà utilisé. Mais pas le time de dig. Et hop ça marche. Let's go. Mais si vous avez un talk à voir, celui-là on peut le conseiller.
+
+Ce matin j'ai eu un problème en plus sur mon build, est-ce que vous pensez que c'est à cause de CocoaPods et que si j'avais été sur Swift Package Manager j'aurais pas eu de problème mes amis ? Alors ça c'est le grand addon ça ! Personne... Enfin si, les gens étaient chauds, moi personnellement. Est-ce que ça change quelque chose dans mon quotidien ?
+
+Non. Non.
+
+Matthys (24:26.379)
+C'est parce qu'on utilise Expo pour faire les builds, alors on ne s'occupe pas de cette partie là.
+
+David Leuliette (24:31.01)
+Ouais mais attends t'as toujours... Ouais t'auras la vitesse donc oui Swift... Ouais Coco... Puisque ça paye au build. c'est vrai. ouais mais non tu pourras payer plus cher parce que les builds se font encore plus vite. Là c'était Ricardo de chez Meta et Christiane d'Expo qui annonçait Racknative sans CocoaPod avec Swift Pack & Manager. Donc CocoaPod c'est historiquement la librairie Ruby pour fetch des librairies en...
+
+Gabriel (24:31.319)
+moins la vitesse.
+
+Matthys (24:34.103)
+Oui, mais tu vas payer pareil.
+
+Gabriel (24:37.495)
+Ça sent comme un chose, hein ?
+
+David Leuliette (25:03.113)
+en iOS, Et donc là ils vont utiliser Swiss Packet Verager. Donc c'était déjà valable depuis le Rack Native 0.4.1, vous ne le savez pas. Et ça réduit les build time de 40%.
+
+David Leuliette (25:22.178)
+J'arrive pas à dire si récemment j'ai des problèmes, c'est plus avec Android où j'ai des problèmes de gradele, de build, tout ça, mais c'est vrai que CocoaPods...
+
+Bah si, récemment j'ai eu un truc avec Datadog il me semble, mais en fait c'était un problème de version de Mitchmatch version. c'est pas vraiment lié à CocoPod lui-même quoi, c'est juste que j'ai clair le cache, j'ai resupprimé toutes les dépendantes, j'ai re-tout installé et voilà, c'est clair que sur Payne...
+
+Gabriel (25:55.639)
+Pareil, n'ai pas eu de soucis un cocoapone depuis quelque temps. C'est vachement abstrait et bien géré en général avec expo.
+
+David Leuliette (26:03.551)
+Ouais, j'arrive pas à dire euh...
+
+tout le monde est aussi content que ça, que nous, tu vois, pour les affaires que...
+
+Gabriel (26:13.911)
+De façon t'as pas le choix que de migrer, CocoaPod devient Riddle-ly du coup en décembre de cette année. Donc dans tous les cas, c'est pour ça qu'ils font la migration. en fait tu pourras plus... Les livres qui vont updater après décembre, du coup elles pourront plus publier sur CocoaPod les nouvelles versions natives. Donc tu migres ou tu meurs quoi.
+
+David Leuliette (26:19.983)
+ouais, OK, ouais.
+
+David Leuliette (26:34.935)
+Tu migres ou tu meurs ? c'est beau ça, je vais le noter.
+
+Gabriel (26:40.033)
+Mais après par contre inversement la timeline à voir comment va se passer. Enfin je pense qu'il a pas un... Enfin je ne pas du tout mais je pense pas que le taf soit énorme pour les mainteneurs de Limes vu que c'est assez démocratisé sur le natif. Mais par exemple la nouvelle architecture c'était beaucoup plus complexe mais du coup il migrer toutes les Libs. Ça a pris plus que... Du coup il reste que 6 mois quoi. Et les RFC je crois datent du mois dernier donc bon à voir.
+
+David Leuliette (27:03.692)
+Ouais, je vous vois.
+
+David Leuliette (27:08.194)
+J'arrive... Oui non, mon avis Newark c'était vraiment plus compliqué, là c'est juste, entre guillemets, de... Enfin je me rends pas compte, je sais que c'est hyper facile en JavaScript à changer de BUN à YARN à whatever.
+
+ça change des trucs mais en vrai ça fait depuis très longtemps que c'est disponible donc
+
+et je disais tout l'heure ou à l'annonce qu'a fait Charlie Cheever le CEO chez Expo que maintenant Expo on desktop parce que Jamie Birch qui a présenté Expo desktop un outil non officiel pour faire tourner des apps Expo sur macOS et Windows
+
+Est-ce que Gabriel, ça t'aurait aidé chez Upstream d'avoir une app iOS, Android, Desktop, tout faite par Expo ? Parce que c'est vrai que le pitch c'était que Electron c'est le slow as fuck et que... Erect Native c'est très rapide par rapport à une app Electron. Tu mens.
+
+Gabriel (28:16.951)
+C'est vrai qu'ils montraient et et j'ai plus du tout les valeurs en tête mais la consommation de RAM ou je sais plus qu'est qu'ils mettaient en metrics mais le gap entre rack native et électron est assez vénère. Après dans le cas de upstream ça te fait une plateforme en plus à maintenir donc faut être sûr que tu veille vraiment une app desktop vraiment native.
+
+David Leuliette (28:41.794)
+En plus on vient de faire l'expérience avec Riverside, les gars votre app desktop elle marche pas. Je suis désolé, ça ne marche pas. Déjà il n'y pas toutes les features. C'est pareil pour Shadjipity, ça me rend fou, je ne comprends pas. Shadjipity sur macOS, tu le lances, tu n'as pas le... En fait en mode web quand tu fais un customjpt tu as les quatre boutons en gros. Genre ce customjpt peut faire...
+
+whatever, vois, générer une image, demander l'heure, envoyer une recette, tout ça. Et en fait quand tout lave des stops, ben t'as pas. Et je me dis...
+
+Gabriel (29:16.983)
+tu me tens sur la desktop en plus.
+
+David Leuliette (29:20.094)
+ouais bah en fait t'as moins de C'est vrai comme tu dis, ça fait une plateforme à maintenir en plus. Et est-ce qu'on sera condamné à avoir des app électrons jusqu'à la fin des temps qui embedent juste une WaveView ?
+
+Gabriel (29:35.479)
+tu peux partager la logique. Enfin chez upstream on avait le web et le mobile et toute la partie métier elle était au moins partagée donc tu l'écris qu'une fois mais ça fait quand même deux plateformes enfin une plateforme en plus à tester et de ce qu'ils disaient il avait pas un gros écosystème de package disponible donc je pense que c'est bien parce que ce sera moins en retard qu'avant ou avant ça avait toujours moins je sais pas combien mais plusieurs versions de retard par rapport au mobile enfin les versions de React Native qui étaient sur le desktop
+
+David Leuliette (29:49.292)
+ouais, fououui.
+
+David Leuliette (30:03.552)
+Oui, ouais c'est...
+
+Gabriel (30:04.798)
+Là maintenant sera plus rapide les monter en version mais je pense que pas tout monde qui devrait faire une app desktop juste parce que maintenant c'est mieux maintenu et plus rapide versus du électron.
+
+David Leuliette (30:21.025)
+si je regarde
+
+en gros là toutes les apps que j'ai c'est que des électrons base juste d'ouvert là j'ai juste simulator slack c'est électron aussi via scode je sais plus tu vois notion ça doit être un électron aussi cette affaire donc et après sublime texte mais ouais ouais j'avoue ouais c'est vrai
+
+Gabriel (30:40.791)
+...
+
+Parce que c'est beaucoup plus coûteux, t'as une code base et... Enfin faut être pragmatique des fois, même si du coup ça bouffe toute ta mémoire de ton mec.
+
+David Leuliette (30:52.321)
+Ouais, c'est plus de rame, mais t'en as jamais assez. Jamais assez de rame. Mais en tout cas, initiative intéressante, et je pense que oui, c'est ça, c'est que ça va quand bénir, même si c'est un projet qui est non officiel et qui va peut-être pas être...
+
+adoptés massivement, vont quand même faire certaines optimisations pour le reste du mobile, que ça charge plus vite, ce genre de choses.
+
+Gabriel (31:16.503)
+c'est peut-être mieux de faire un truc si tu veux faire une application pure desktop et pas juste faire un truc pour accompagner ton app mobile ou ton app web là c'est cool mais te taper une plateforme en plus
+
+David Leuliette (31:27.393)
+Ouais, je suis d'accord. Donc on va passer à la partie potain. Alors les conversations de couloirs, qu'est-ce qu'on a eu ? Parce que souvent les meilleurs anecdotes, c'est ceux qu'on a entre deux conférences, quand on parle pendant le lunch ou ce genre de truc. Qu'est-ce que vous avez appris à AbJS 2026 qui n'était pas dans les slides ?
+
+Vas-y Maty, c'est un truc à bien nous dire.
+
+Matthys (31:56.37)
+suis en train de chercher franchement là...
+
+David Leuliette (32:02.946)
+Parce qu'on a eu toutes les after-parties tous les jours, tu vois. Donc... Il y en avait pas mal, parce que si on a... Il y avait beaucoup de français, tu vois. Ce que je retiens, c'est que français premier rang. On est dans les photos officielles en plus. Tous les ans en même place.
+
+Gabriel (32:22.231)
+les ont à la même place.
+
+David Leuliette (32:31.187)
+Moi je m'étais noté que y'a des clients de chez SoftwareMention qui utilisent ReactStrictDom. Donc ReactStrictDom c'est l'inverse de React Native. En fait y'a React Native qui est sorti. faire une app web, y'a React Native Web qui est sorti qui permet de mettre une app React Native en web. Et en fait y'a aussi l'inverse. qui ReactStrictDom. Ouais c'est ça, ReactStrictDom qui permet de...
+
+d'écrire du HTML et de compiler une app Wack Native. Et quand on était au workshop, me disais, non mais qui sait qu'ils utilisent ça ? Personne, vas-y, quoi, c'est pour vrai que ça... C'est déjà tellement relou, enfin... Qui est deux projets en parallèle qui résouvent le même problème mais avec une approche différente. Et non, le mec de Software Manchaine m'a dit, ouais, des gros clients qui ont des millions d'useurs et par contre, on peut pas dire qui c'est.
+
+Matthys (33:27.461)
+Donc c'est sûrement une banque.
+
+David Leuliette (33:29.217)
+Ouais ça ouais ! Peut-être, c'est peut-être une banque... Ouais, ouais, correct. Correct, correct. Donc euh... Ouais. Et toi Gabriel, est-ce qu'il a des bruits de couloirs euh...
+
+que tu nous as dit que tu as eu vent et que tu peux partager.
+
+Gabriel (33:50.712)
+pas forcément. Discussion cool mais du coup c'est purement personnel mais discuter avec Vadim parce que il fait un peu... Il fait d'autres choses mais entre autres il build ses propres apps et c'est ce que je fais en ce moment. D'échanger sur comment il gère le marketing, l'automatisation, la gestion des PO, les offers qu'il met en place etc. vrai c'était cool. Même les funnels qu'il met il fait du web to app, des trucs auxquels j'avais pas pensé donc...
+
+purement égoiste mais j'ai aimé la discussion.
+
+David Leuliette (34:23.329)
+Ouais, c'est vrai, je me souviens carrément, c'était au coin, juste quand on est sorti du taxi pour aller manger, je crois qu'on est allé manger, je me rappelle carrément. Donc on était avec Vadim, oui, c'est vrai que lui en mode IndieHacker et tout, il parlait, lui pareil, il fasse plus de temps à faire de l'acquisition qu'à coder, puisqu'au final, coder, c'est devenu très facile. C'est vrai qu'aussi, moi, je me souviens, il y avait un talk, il y a une phrase qui en dit, j'ai trouvé ça trop smart, enfin trop smart.
+
+c'est qu'en gros eux ils ont une app mobile, font de l'acquisition web to app pub Facebook ça ouvre le navigateur Facebook et après ils partent dans le funnel email tout ça
+
+Gabriel (35:08.439)
+C'est que faisait Fadima.
+
+David Leuliette (35:08.489)
+Et en gros, ouais c'est ça, bien ce qu'ils disaient c'est que pareil eux c'était une quatrième plateforme, donc avaient iOS, Android, web et web into app parce qu'ils disaient que les browsers web into app c'était pas les mêmes. Enfin ils targuettent, ils considèrent ça comme une autre plateforme et pas exactement comme le web parce qu'il y des subtilités notamment sur
+
+Quand tu fais du tout FA et que tu demandes le numéro de téléphone, crois un truc du genre, je sais qu'ils avaient un problème, ils avaient dit ouais bah... Donc on a vraiment taragé d'une autre plateforme en plus, alors que c'est un Navigator Web. Mais ouais, intéressant, j'ai pas eu le temps de le capter le mec, parce que bah forcément tu peux pas... Quand tu veux aller quelque part, c'est difficile là. Franchement, à pièce, si tu veux aller prendre un café et revenir, t'en as pour 5 minutes, t'es parti pour un...
+
+un tunnel de 3 heures si tu classes quelqu'un c'est tervillado ou alors si tu as un petit QR code à aller scanner pour faire partie du drop qui aura à la fin est que vous avez gagné quoi cette année vous avez gagné un truc
+
+Matthys (36:15.891)
+J'étais à 2 pixels de gagner la tablette magique de Infinite Red.
+
+David Leuliette (36:20.512)
+oui, c'était entre toi et moi, me souviens. Mais au final, ça s'est joué à 2 pixels avec Wheel of Fortune. D'ailleurs, ceux qui sont à Lille demain, jeudi, bah c'est demain, demain c'est le Dev Lille. Je serai au Dev Lille. c'est après demain, on est mardi.
+
+Gabriel (36:41.687)
+je dis ? Non, après demain.
+
+David Leuliette (36:49.44)
+Donc voilà, vous pouvez venir me parler Rack Native si ça vous dit. On va faire notre classique. La question du CTO, vas-y Gabriel, c'est bon. Vu que tu es parti en mode Indie Hacker, machin, on te donne 500k de budget vu que tu reviens d'AbJS. Est-ce que tu changes des trucs dans ta stack, dans ta roadmap ? Qu'est-ce qu'on fait ?
+
+Gabriel (37:14.839)
+dans la stack... Non en vrai tech pas grand chose parce que comme tu disais tout à l'heure le coût il est pas énorme pour y térer sur les features et tout. Ça paierait mes abonnements. au final... Bon c'est ça, mine de rien, mi bout à bout, ça fait un petit budget à la fin du mois. Mais sinon non, un designer pour se démarquer un peu et avoir une app un peu plus quali, un bel icône, des screenshots et tout le reste après sur du marketing.
+
+David Leuliette (37:17.606)
+actuel.
+
+David Leuliette (37:26.88)
+Ça paraît
+
+Gabriel (37:45.213)
+la quiz de l'UGC des ads
+
+David Leuliette (37:49.312)
+Donc il y a encore besoin de designer pour toi en 2026 même si on a des outils folies qui peuvent tout créer.
+
+Gabriel (37:55.223)
+Mouais mouais...
+
+Je pense que même avec une app pas hyper sexy, tu réponds bien à une problématique, tu peux bien marcher mais c'est plus simple de se démarquer. En vrai, même je le vois sur les stats de mes app, le nombre de personnes qui voient l'app dans la liste, qui cliquent dessus et qui donnent l'autre, du coup d'avoir des bons screenshots, un bon icon, une vidéo de promo, tu peux gratter quelques points là et moi c'est pas tellement montable de faire ça même si...
+
+peux vachement t'aider maintenant mais mes trucs ils sont pas parfaits je pourrais jamais remplacer un designer sur cette partie et ça permet de se différencier vachement et d'avoir vraiment une expérience nickel. En comparer des animations il aura peut-être plus d'idées que moi de l'ouvrage des trucs comme Skiha ou Redraw de William
+
+David Leuliette (38:43.936)
+Ouais, c'est vrai qu'on a pas parlé ça, y avait... Ouais comme chaque année, William qui fait une masterclass pour sa courbe avec une entrée. L'année dernière je lui demandé, mec il faut que tu mettes des flammes quand tu arrives sur scène pour qu'il ait vraiment un next level. Parce que la qualité de la prod vidéo, ok, elle est là, ça y a pas de débat, hein, mais des flammes ou de la fumée.
+
+Au choix, tu vois ?
+
+Mais ok toi Mathis, en revenant d'Abjs, qu'est-ce qu'on change ?
+
+Matthys (39:21.931)
+Je sais comment gagner des points rapidement et gratuitement, en tout cas pour le moment. Expo observe. Pour moi c'est le must-have de cette année parce que du coup on peut vérifier le time to interact, les performances de démarrage à froid, à chaud et c'est quand même des indicateurs qui sont utilisés par les stores pour rank l'application. Donc quelques minutes secondes grattées par ci par là ça peut faire augmenter la visibilité d'une application.
+
+donc des revenus.
+
+David Leuliette (39:53.184)
+Ouais quand t'es en beat aussi quoi, ouais c'est clair, j'avoue. J'avoue, en plus c'est valid depuis quand ce truc euh... Parce que t...
+
+Matthys (40:00.942)
+C'était en bêta en avril et l'on release le jour de la conf.
+
+David Leuliette (40:05.44)
+Ok.
+
+Parce que ouais, moi je connaissais Insight. Mais Expo Observe, c'est vraiment ce que tu dis quoi.
+
+Matthys (40:15.005)
+Inside c'est vraiment pour la population de l'application avec les versions utilisées, les updates etc. et Observe c'est plus pour la performance sans avoir la population.
+
+David Leuliette (40:27.039)
+Les événements, la navigation, tout ces trucs là il y déjà moyen de le faire dans Sentry, dans Datadog, dans whatever, dans... C'est quoi le truc avec le chien là ?
+
+Gabriel (40:40.023)
+à
+
+David Leuliette (40:40.699)
+qui fait les futures flags. Non, non, datadog c'est les logs post-hog. Post-hog, pense qu'il a moi aussi de faire ça. c'est un irrisson. Mais ça demande un peu de travail en plus. Là, il me semble qu'il a rien à faire. Tu mets t'installe observe et boom, c'est ça.
+
+Matthys (40:43.47)
+post-hug. C'est un errisson.
+
+Gabriel (40:43.481)
+ouais, pas de problème.
+
+Matthys (40:57.108)
+En gros, un wrapper au bout de l'application.
+
+Gabriel (41:01.383)
+Sur les navigations de page, j'ai doute puisque ça serait chanmé si ça pouvait vraiment de monitorer les navigations de A Z. J'ai l'impression qu'ils se plugent sur l'événement de début mais qu'il faut stopper à la fin.
+
+David Leuliette (41:12.159)
+Bah en fait, y'a Explorouter, vas-y Mathis si tu le sais un peu plus, vas-y nous tous.
+
+Matthys (41:12.212)
+Ouais.
+
+Matthys (41:16.788)
+Il a le App Startup, donc Time to Interactive, Warm Launch, Code Launch. On peut mettre des Custom Events. Je ne pas jusqu'où on peut le pousser. Ensuite, on a les IAS Updates. J'imagine l'acquisition des utilisateurs selon la version push telle nuit ou un autre jour pour vérifier si les updates ont bien été prises en compte sur tous les appareils. Ensuite, on a la navigation. Là, ils mettent pas plus de détails.
+
+David Leuliette (41:46.655)
+Moi je me souviens que je mettais ça sur la navigation avec Sentry mais du coup ça faisait ramer l'app.
+
+Matthys (41:52.821)
+La navigation c'est plus du time to interactive. exemple on est sur le screen home, on va aller dans paramètres, combien de temps ça va prendre pour under toutes les views. C'est plus comme ça.
+
+Gabriel (42:05.368)
+intéressant comme Matrix. Je suis upstream, on l'a veut pour ouvrir tes mails et on se l'est tapé à la mano sur Suntree et si tu fais à la mano, tu risques de mal intégrer ta trace et d'avoir des mauvais résultats. Donc si ça peut être built-in dans Expo Routa, ça serait vraiment parfait.
+
+David Leuliette (42:15.199)
+Ouais peace !
+
+David Leuliette (42:19.615)
+tu changes que tu oublies que tu updates et qu'en fait le truc il est perdu et que tu as des mauvaises métriques et que tu fais mais pourquoi les chiffres ne sont pas bons ? désolé, j'ai refactor, j'ai bougé le bouton, j'ai oublié. Non mais ça ça arrive, tout ce qui est manuel de toute façon, observabilité, c'est pareil, c'est un full time job. Mais de toute façon ils disent ouais pour l'instant c'est en open beta, donc les 10 000 premiers monthly active user c'est free.
+
+For higher usage, contact sales. Par email, tu vois, y rien d'autre. Ok.
+
+Matthys (42:53.428)
+Il détaille les scénarios en dessous. C'est pour monitor le start-up performance en production, comparer les performances entre les releases et les over-the-air updates, investiguer pour les slow sessions sur des devices spécifiques. Par contre, il déconseille pour le crash reporting et error tracking, le custom analytics et event tracking, et le profiling et debugging.
+
+David Leuliette (43:19.187)
+Oui pour l'instant, parce qu'en fait le mec qui faisait le SD-Con chez Sentry, comment il s'appelle ? Je ne sais plus. Je vois que c'est Bosch et Expo maintenant. je pense que... Ouais je pense que c'est vraiment deux outils différents quoi. De toute façon battre Sentry ça va être très compliqué. Et en plus Sentry le truc c'est que tu peux le mettre avec ton back-end et tout ça et avec tous les langages de la terre. Enfin peut-être pas tous mais beaucoup. Donc ouais je pense que c'est un autre tool.
+
+Gabriel (43:46.711)
+ils vont vouloir faire un truc tout en même temps où au final après ils vont gérer eux-mêmes les crash reports
+
+David Leuliette (43:53.919)
+Ouais, à terme,
+
+Gabriel (43:58.271)
+mais curieux de voir le pressing quand c'est marqué contactus, je suis jamais hyper sourd.
+
+David Leuliette (44:04.96)
+Ouais, j'avoue. oui, c'est clair. Moi c'est c'est pas encore clair non plus donc bon.
+
+Gabriel (44:10.27)
+Oui, sûrement.
+
+David Leuliette (44:14.119)
+Euuuuh... Ok !
+
+David Leuliette (44:20.955)
+Euh... On va passer à la partie question rapide ! Le tolk que vous auriez voulu voir mais qui n'était pas à la conf, Mathis.
+
+Matthys (44:35.092)
+C'est pas quelque chose que j'aurais voulu voir mais on a manqué d'un talk sur du style.
+
+David Leuliette (44:43.179)
+design, state of design, vas-y mec bah voilà c'est ça que je vais faire, je vais proposer un talk Le style, of reactive style, un truc du genre Parce que tu utilises quoi toi en ce moment ?
+
+Matthys (44:44.552)
+Ouais.
+
+Matthys (45:05.268)
+moi je suis passé sur Uniewind
+
+David Leuliette (45:08.548)
+Uniewind, ok ouais donc Tailwind Ok et toi Gab, tu utilises quoi en ce moment ?
+
+Gabriel (45:14.519)
+Un style.
+
+David Leuliette (45:16.965)
+Uniside, oui, donc Uniside c'est une wind. Santé le wind, pardon. Oui, faut suivre, c'est vrai que faut suivre. J'avais fait un épisode, ça serait vrai qu'il faudrait que je fasse un épisode spécial. Ouais. Et...
+
+Gabriel (45:20.408)
+Halloween que j'aime pas.
+
+Gabriel (45:27.296)
+Unirwind est build on top of Unistyle.
+
+David Leuliette (45:36.607)
+C'est vrai qu'en avait pas mais par contre on a bien parlé
+
+David Leuliette (45:44.223)
+Zach, pardon, la personne qui fait React Native Reusable. Et faut aller en conférence à les amis parce que quand il m'a dit je suis Zach, en fait j'étais persuadé que je l'avais déjà vu à Chain React mais en fait pas du tout. C'était pas lui. Et donc quand l'année dernière j'étais à Chain React et que je parlais avec un mec, j'ai cru que c'était Zach de Reusable. Et donc je pense qu'il a dû me prendre pour un taré parce que je lui parlé de trucs qu'il ne devait pas comprendre.
+
+Et là pareil un jour après je mais t'es le mec de Razéble ? Bah oui ! Ah bah ok ! Qui pro quo de fou quoi ! Trop rigolo ! ouais alors pour... Mettez vos vraies photos sur les avatars comme ça on sait à peu près à quoi avoir semblé. Et toi Gab le talk que t'as pas eu... Mais que t'aurais voulu voir.
+
+Gabriel (46:33.655)
+Par exemple chez PES c'est forcément un talk mais c'est question plus par rapport à Expo UI où je m'en sers sur mes apps et c'est vraiment top d'avoir les API natives et les patternes sont vraiment stylées pour avoir une app qui matche vraiment l'IOS natif avec SwiftUI ou Jetpack Compose sauf que là j'ai l'impression qu'on repart sur un truc où on définit
+
+plusieurs fichiers par plateforme et curieux de savoir c'est quoi un peu la vision moyen long terme qu'ils ont là dessus. Est-ce que c'est de rester de trucs différents pour que ce hyper malable ou de retourner au truc tu l'écris une fois et tu le run partout ? Donc c'est plus une question qu'un talk mais ça aurait été cool un peu d'expander là dessus.
+
+David Leuliette (47:13.15)
+Parce que là ils ont annoncé que c'était stable, expo UI v.1 donc ouais c'est vrai qu'ils n'y avaient pas de talk dédié dessus quoi. C'était...
+
+Gabriel (47:23.767)
+C'est ça, je sais pas si ça mérite vraiment un talk puisqu'ils en ont... Je sais pas si ils ont déjà fait des talks mais ils en ont pas mal parlé dans leurs blogs, sur d'autres supports mais...
+
+David Leuliette (47:32.912)
+Ouais c'est ça mais un peu voir tous les cas d'usage, tout ce qui est possible, une overview de tout ce qu'il a Ouais, c'est clair Et euh... Moi un truc que j'aurais voulu voir c'est... Comment on gère les deep links, réconciliation des data, tout ça quoi Parce c'est un peu ce qu'on a au taf en ce moment
+
+Et tu sais dois passer par AppFlyer, ce genre de truc... J'ai l'impression qu'il a 40 000 outils qui font chacun un petit bout et qu'à la fin t'es obligé d'avoir...
+
+Gabriel (48:06.967)
+Bon.
+
+Gabriel (48:10.955)
+outils cool là-dessus que j'ai cette EP là, c'est software mansion qui le fait mais t'as détour ou du coup c'est hyper. Ça dépend de que tu veux faire EC plus les deferred deep links.
+
+David Leuliette (48:17.86)
+Ouais, détour. Ouais mais ça fait pas tout en fait. Ouais ça fait pour le 10 prix.
+
+Ouais, c'est ça, c'est faire le deep link. Non moi ce serait genre t'as un deep link par email et tu veux le tracker jusqu'à ce que le mec il soit sign in tu vois. Donc c'est vrai que Dettour règle une partie de ce truc donc c'est Software Mention Dettour si vous voulez voir ce que c'est. Mais t'es obligé de combiner encore deux morceaux parce que tu perds un morceau entre l'email et je clique et le lien tu perds quand même...
+
+Un truc de toute façon, c'est un truc compliqué, c'est pas pour rien que Upflier. Mais le truc c'est que c'est ça, c'est qu'après tu prends Upflier ou les autres solutions, là t'as un provider qui fait 4 milliards de features et t'as juste besoin d'un petit truc. Du coup, c'est pour vas-y, en un week-end il y moyen que tu unbundles la feature du SDK à les Cloud Codes. De toute façon, Cloud Codes, non c'est quoi ? Yarn, attends c'est quoi ? Qui était réécrit en Rust, qui était en Zig et qui a été réécrit en Rust en une semaine.
+
+en trois jours ? Qui c'est qui m'a dit ça ? Je crois que c'est Pablo qui m'a dit ça, je sais plus. je crois que si c'est ça, Ben ! Si si c'est ça ! C'est Ben qui était en ZIG, enfin un langage de programmation qui était réécrit dans un autre langage de programmation en quatre jours.
+
+Gabriel (49:23.639)
+...
+
+si j'ai vu passer une grosse migration... C'est pas Ben ? Non, je dis des bêtises. C'est le quel cas ?
+
+Gabriel (49:46.455)
+...
+
+David Leuliette (49:46.648)
+Ok, challenge accepted, ouais ouais, why not. C'est possible, bah comme quoi apparemment c'est possible.
+
+Gabriel (49:54.96)
+Après quand t'as toccane illimité, il y a beaucoup de choses qui sont plus simples.
+
+David Leuliette (49:58.6)
+Ouais, c'est ça, une libe que vous avez découvert à BGS que vous allez installer dès demain.
+
+David Leuliette (50:06.878)
+Vas-y Mathis. Ah ouais, on continue. C'est bien. Tu vois, on a choisi un truc. On est bon. On est droit dans nos bottes jusqu'au bout. Et toi, Gabriel, qu'est que tu as installé en rentrant ?
+
+Matthys (50:07.218)
+Expo observe.
+
+Gabriel (50:22.391)
+C'est vrai que je l'avais zappé observe mais je le mettrai bien en effet et sinon ouais les portales.
+
+Gabriel (50:30.795)
+enfin, Teleport plutôt.
+
+David Leuliette (50:30.974)
+Moi ce serait SimCam. Alors je savais pas du tout ce que c'était SimCam de software mention. En fait ça permet d'en... Je comprends pas. On a... Hey ! La keynote d'Apple, elle a eu lieu hier, y'a pas ce truc là. Parce qu'en fait quand on un simulateur, y'a pas la caméra. Quoi ? Oui. Et donc si voulez faire des trucs genre tester la caméra et ou scanner un QR code, bah en fait vous pouvez pas.
+
+Et donc SimCam, ça résout ce problème, fait ça ajoute une caméra. Donc vous pouvez ouvrir un simulateur et qu'il va scanner votre ré. En fait, tu peux lui donner ce que tu veux. Soit tu lui donnes ta webcam, soit tu lui donnes ton écran. Et donc ça permet notamment de tester des QR codes en local, direct depuis sa machine. J'ai trouvé ça trop smart. me dit, bah ouais, c'est vrai, pourquoi il n'y pas... Enfin tu sais, c'est ce genre de truc que tu réalises. te mais ouais, en fait, pourquoi il n'y a pas ça ? Pourquoi ce n'est pas built-in ? Ça en fout. Donc je l'ai installé.
+
+Gabriel (51:27.377)
+Avant, à chaque fois se le mettre à la mano sur son tel.
+
+David Leuliette (51:30.75)
+Ouais bah c'est ça, pour scanner un QR code des fois t'as besoin quoi, bah... Là, plus besoin. Avec SimCam.
+
+David Leuliette (51:43.57)
+l'écosystème React Native dans deux ans à votre avis est ce qu'il y aura plus de gens ou moins de gens ? Gabriel qu'est ce que double on fait fois deux le nombre de downloads ou comment ça se passe ? Parce que là on est déjà des millions
+
+Gabriel (51:58.072)
+je pense que oui beaucoup plus d'utilisateurs parce qu'on disait tout l'heure ou ceux qui va mcode etc qui check pas par défaut ils vont partir là dessus donc beaucoup plus d'utilisation après de gens dans la commune vraiment actifs je sais pas si ça sera pas linéaire l'un avec l'autre mais je pense ça va quand même continuer de lever la part
+
+David Leuliette (52:17.405)
+A la WebS...
+
+Là on est arrivé à 6 millions de downloads
+
+Expo et 50k star, est-ce que va y avoir un plateau où ça va encore exploser et on va lâcher encore un étage à la fusée ? D'ailleurs le premier talk, c'est vrai qu'il était bien de KZZZF, c'est le CEO de Software Mansion je avait tout un délire avec
+
+une requête qui perd des étages au fur et du coup on a perdu le bridge on a perdu ces trucs là et que maintenant on est un requête to the moon c'était intéressant donc peut-être que ça va doubler que chacun aura sa propre app sur les stores bon ça reste quand même une petite complexité à voir quand même mais Mathis dans deux ans est ce que tu seras senior software engineer mobile rack native confirmé
+
+Matthys (53:21.046)
+Dans deux ans je pense qu'il y aura de plus de monde qui sont en train d'ouvrir tous les MCP. Chaque librairie a son propre MCP ouvert pour les agents IA. Maintenant dès qu'on demande de faire une application mobile, c'est Expo qui recommandait parce qu'ils ont leur propre MCP aussi qui est ouvert. Je crois qu'ils veulent l'ouvrir à version gratuite. Pour le moment il faut payer le starter mais l'objectif c'est de le rendre disponible à tout monde.
+
+David Leuliette (53:45.757)
+Je pense que c'est bon, le Expo MCP tu peux l'ouvrir en Customer Player, mais maintenant même en Gratos tu peux l'avoir.
+
+Matthys (53:56.215)
+Parce qu'il a Software Mention qui font aussi leurs skills, leur MCP, Callstack avec native performance. c'est de plus en plus facile de faire des apps.
+
+David Leuliette (54:04.09)
+Il a Margello aussi, Margello qui ont fait leurs skills aussi. Alors du coup, il faudrait un skill qui choisisse lequel skill on doit utiliser. Ça rend fou cette affaire. Vous êtes sur lequel vous en ce moment ? Deux skills.
+
+Matthys (54:11.943)
+C'est ça.
+
+Matthys (54:18.374)
+Expo MCP classique pour... C'est surtout pour lire la documentation comme les SDK changent tout le temps. Ouais, c'est ça.
+
+David Leuliette (54:21.629)
+Ouais ok. Ouais, la flim. Ouais la flim.
+
+Et toi Gavrey, utilises le quel de skill en ce moment ? rien du tout
+
+Gabriel (54:33.175)
+ceux d'Expo majoritairement et j'avoue j'ai pas testé leur MCP mais lorsqu'il après pour la doc j'ai Context Seven qui va la choper je sais pas si fait la même chose que leur MCP mais ça fait le taf
+
+David Leuliette (54:47.933)
+Ok, un speaker que tout le monde devrait suivre et qui n'est pas encore dans tous les podcasts.
+
+Matthys (54:58.77)
+Pour moi le speaker c'est Kadhi en fait. Kadhi elle donne des talks qui parlent à tout le monde même si on ne pas forcément la couche profonde React Native. Ça va parler à tout le monde, ça va être de la performance sur les stores, de la performance in-app, comment on fait une bonne application. sais qu'il a plusieurs années elle donnait un talk qui était comment faire une application qui ramène 5 étoiles. En fait c'est des petits détails qui sont bons d'être appelés régulièrement même pour des développeurs expérimentés.
+
+David Leuliette (55:22.653)
+Alright.
+
+Matthys (55:29.062)
+Donc moi j'aime bien. Je trouve qu'à chaque fois les talks sont différents et...
+
+David Leuliette (55:34.194)
+C'est Actionable tout de suite quoi ! J'avoue ! Et Gabriel, est-ce que tu vas mettre l'accessibilité sur tes Zapps ou pas ?
+
+Matthys (55:36.329)
+Ouais c'est ça.
+
+Gabriel (55:45.528)
+En vrai le talk était cool. Moi je le fais sur les trucs de base, petites prompts, mais j'ai du mal à vraiment visualiser comment les gens s'en servent vraiment, genre du voice over ou des trucs comme ça, donc j'avoue je le fais pas. Mais très cool de savoir tout ce qui est possible et comment les gens s'en servent concrètement, mais c'est pas un truc que quand tu vas vite, que tu mets en avant quoi, ce qui est peu dommage.
+
+David Leuliette (55:48.501)
+De Brita
+
+David Leuliette (56:09.51)
+Ouais.
+
+Matthys (56:11.793)
+C'est la dernière feature qui est mise en ligne. qu'après vérification, même WhatsApp, l'accessibilité, c'est un enfer. La scalabilité du texte, rien que ça, donne pas envie de faire de l'accessibilité.
+
+David Leuliette (56:13.884)
+J'accède si vite.
+
+David Leuliette (56:19.932)
+oui, vous êtes si chouette.
+
+David Leuliette (56:25.756)
+Non je ne pas étonné. Ok, moi ce serait plus... On en a eu un mais... Offline... mais non mais n'était pas là en fait ! Offline's first designing for production.
+
+David Leuliette (56:43.724)
+si c'était Aston Martin mais oui mais euh... Je sais pas, alors soit Offline First, je suis déjà on top of The Hill et puis... Ouais je sais pas, ça me semble pas ouf avec Les Jones States, ça me semble tellement easy que... Ça me semble tellement easy que... Voilà mais je pensais que ça allait être vraiment plus énervé que ça en fait mais là c'était vraiment high level, oui il faut faire du offline. Oui mais il pas dit exactement comment.
+
+Matthys (56:58.109)
+Ouais on utilise déjà les John State.
+
+David Leuliette (57:12.188)
+Quelles sont les limites ? Combien d'offline on peut mettre ? bah voilà, il a William qui est dans le chat, big up à William. Alors attends, on va passer à Bjs.
+
+Matthys (57:26.279)
+Voilà, un speaker que tout le monde devrait suivre, William !
+
+David Leuliette (57:29.52)
+bah oui, non mais ça oui j'avoue, j'avoue, j'avoue justement on disait William que l'année prochaine t'arrives avec soit des flammes, soit une machine à fumer, voilà parce que là le level de vidéo, ok, il est déjà au maximum, qu'est qu'on peut faire de plus, compliqué, mais ouais j'avoue, en plus Pablo il m'avait dit ouais non j'ai pas vu les vidéos de William avec Gambit
+
+Chess Gambit et tout là. Je sais plus exactement le terme mais il m'a dit, je faisais, mais quoi tu... Queens Gambit voilà. Il m'a dit, je lui quoi, tu as jamais vu, faut absolument que ailles les voir. Rien que pour la démo, enfin rien que pour... Tu peux le regarder avec n'importe qui. Avec le niveau de montage et de mise en scène, peux regarder n'importe qui. Donc, AbJS 2026, 5 étoiles ou 4 étoiles et pourquoi ? Vas-y Mathis, qu'est-ce que...
+
+Matthys (58:02.017)
+en gambite.
+
+David Leuliette (58:30.172)
+Combien d'étoiles on met dans la review de notre Airbnb ?
+
+Matthys (58:35.223)
+5 étoiles, a les workshops, on a appris plein de trucs, on sait pas si on va les utiliser mais au moins on sait que ça existe. Voilà, dans ce présent peut-être. Les talks c'était divers, variés, y eu de la release, de l'accessibilité, un petit peu de tout. On a eu des after-parties tous les soirs et la French Team a mis le feu à l'official after-party.
+
+David Leuliette (58:36.924)
+5 étoiles pour court mais...
+
+David Leuliette (58:43.74)
+dans trois ans peut-être.
+
+David Leuliette (58:56.348)
+Chut !
+
+David Leuliette (59:01.66)
+J'avoue c'est vrai que c'est ça qu'il faut préciser, c'est qu'en fait avant c'était... il y a eu des évents non officiels mais du coup vu qu'internet, Twitter, machin, on se retrouvait tous plus loin mais là il a des vrais évents organisés par tout le monde et du coup j'ai l'impression que c'est la compétition parce que tout le monde veut son évents et en fait il a une semaine d'évents qui commence par un meet-up le mardi dans les locaux de Surf Time Mansion donc... il y a des trucs à faire.
+
+J'avoue, Gab, l'année prochaine, tu reviens avec nous ? Ou tu prends ton Airbnb dans un autre appart ?
+
+Gabriel (59:33.591)
+J'étais bien dans mon air bien mis, c'était juste au dessus de la deuxième Afterparty. Mais non, non, 5 étoiles aussi, très cool, un peu de tout sur les talks. Bon, Afterparty est toujours très cool. Mais ouais, c'est une fois par an où tu vois un peu tout monde. Bah vous, en vrai, je vous vois que l'APJS.
+
+David Leuliette (59:41.143)
+Ok, ridicule.
+
+David Leuliette (59:54.877)
+C'est ça ! Moi je mets 5 étoiles pour stanner le DJ Kim qui a permis de prendre les platines pour faire son DJ set sur le...
+
+en haut de... rooftop pardon. En plus il faisait beau et tout, c'était incroyable. Donc on arrive à la fin de l'épisode, on va passer au sujet carte blanche, chacun 2 minutes sur un sujet que vous voulez absolument aborder et qui vous tient à coeur. Mathis, qu'est-ce que...
+
+Matthys (01:00:39.319)
+sujet important, si vous voulez soutenir la communauté React Native, pouvez venir à la React Native Connection 2026 le 24 septembre à Paris.
+
+David Leuliette (01:00:47.952)
+c'est beau ! oui carrément ! Oui c'est vrai, correct, on sera là-bas. Très bonne annonce, franchement excellent. Tu vois, marketing, CFO, officer, excellent. On va faire gagner des places aussi, une place, on fera gagner une place ouais.
+
+Abonnez-vous à l'annouciliateur qui est quelque... débrouillez-vous, il a un newsletter quelque part. Vous pourrez gagner une place. Donc c'est quand ? Oui, septembre. Notez les dates, l'Arc Native Connection, tout ça. Très bonne annonce. Vas-y Gabriel, c'est quoi l'annonce que t'as à faire à la communauté Arc Native francophone ?
+
+Matthys (01:01:06.752)
+deuxième œuf.
+
+Gabriel (01:01:24.503)
+pas d'annonce, c'est vrai que du coup, il est coûté à % à ce que dit Matisse, mais c'est cool. Cracovie, peut-être un peu loin et il faut plus d'organisations pour y aller, donc c'est logique.
+
+Connections à Paris et c'est toujours cool de voir les gens en vrai au-delà des talks puisque tu peux voir en replay si tu veux mais c'est pas la même quoi.
+
+David Leuliette (01:01:46.695)
+Oui c'est pareil, c'est moi la question que la icebreaker que j'ai tout le temps même si tu connais personne tu fais hey salut qu'est tu pensé du talk ou qu'est ce que tu as appris ? puis après c'est bon tu fais ça à tout le monde, c'est bon tu vas te faire des potes au bout de deux minutes et après tu connais EarBod et après tu te retrouves à connaître tout le type d'expo et à plus pouvoir faire 5 mètres sans dire bonjour à quelqu'un. a William qui nous dit j'espère que le live de Kim ça va devenir une tradition.
+
+Mais carrément je suis complètement d'accord. Moi en plus je suis chaud de lui donner deux trois idées de playlist aussi. Vas-y on va... On va dire ça à Pauline. Moi je viens seulement si y'a Kim qui fait le live après. Voilà plus de taf que ça lui demande. si parce qu'il a quand même fait du sax et tout. C'est vrai qu'il a fait du saxophone. Il a pas juste fait le DJ set et tout. Il a... tant que musicien...
+
+Gabriel (01:02:41.839)
+faut se ramener le matos et tout.
+
+David Leuliette (01:02:43.384)
+Ouais, revenir le matin c'est tout ça quoi. Ouais ouais ouais c'est clair.
+
+Gabriel (01:02:46.625)
+en plus il a raté son vol au retour.
+
+David Leuliette (01:02:49.764)
+ouais !
+
+Gabriel (01:02:50.967)
+Ils ont raté leur val, ils ont repris le même que nous, est parti avec 15h, oui ils ont loupé le val.
+
+David Leuliette (01:02:53.657)
+Euh... le matin !
+
+David Leuliette (01:03:02.108)
+Ah ouais bah on a raté... Mais c'était ça le potin qu'il fallait dire ! Ouais... Ouais... Ouais... Nous 10 heures c'est bien, 10 heures ça va. Tu te lèves à 7, hop, t'as le temps...
+
+Matthys (01:03:03.348)
+Donc le conseil de prendre l'avion à 7 heures du matin est une mauvaise idée.
+
+Gabriel (01:03:14.263)
+Voilà ce qu'il y en tout cas.
+
+David Leuliette (01:03:17.564)
+Oui mais le powernap n'est que plus efficace. Ah par contre c'est vrai qu'on a attendu une heure... Ouais j'avoue, j'avoue, j'avoue, j'avoue, j'avoue, j'avoue, j'avoue, j'avoue,
+
+Gabriel (01:03:21.015)
+Sauf si tu ne travailles pas quoi.
+
+Matthys (01:03:31.384)
+Je sais, tu peux prendre les autres membres de la core team de use-effect.sh.
+
+David Leuliette (01:03:38.333)
+oui, non mais je pense qu'on est déjà tous passés. Faut que je réinvite des gens sur use-effect doter ça. Bah si, si, si, si. Si justement, parce que dans les photos officielles et tout, je regardais, fais, qui sait que j'ai pas invité sur le podcast. Et en fait, tout le monde est déjà, bah en fait c'est ça, je vais reprendre depuis le début, voilà. Et je vais refaire, je vais refaire la liste. C'est bon.
+
+Matthys (01:03:56.216)
+Tout monde est passé.
+
+Matthys (01:04:06.117)
+Le prochain live, c'est une séance de CrossFit avec tout monde et William.
+
+David Leuliette (01:04:09.532)
+Exact, ouais vas-y. Ça... Si si en plus on avait dit qu'on le ferait mais on a pas eu le crossfit mais on n'a pas eu le temps de... Enfin ça à l'année prochaine. Ok les amis, on va clore l'épisode de Gabriel où est-ce qu'on te retrouve sur les internets en ce moment tu disais quelle app faut download. C'est que tu étais en train de... Ouais bah oui justement laquelle, laquelle, qu'est-ce qu'on download les gens, les gens ils download quoi.
+
+Gabriel (01:04:10.903)
+Je sais pas si je suis dispoissé d'être là mais...
+
+Gabriel (01:04:32.557)
+Les miennes.
+
+Gabriel (01:04:38.651)
+Si vous aimez les bouquins, j'ai une app qui s'appelle Mos qui permet de suivre vos bouquins et vos lectures. Et si vous aimez le café, binouise pour suivre un peu les grains que vous achetez et vos préparations.
+
+sinon sur LinkedIn. Be noise !
+
+David Leuliette (01:04:51.128)
+Been with... Been with... Been wise. Ok.
+
+Gabriel (01:04:56.735)
+A ça le feedback aussi que je me suis fait faut des noms hyper uniques et spécifiques sinon galère d'être référencé.
+
+David Leuliette (01:05:01.689)
+mais ça c'est chou, je t'enverrai, j'ai un agent qui fait ça.
+
+mais avec toi même pour savoir market et tout machin, réseaux sociaux tout ça.
+
+Gabriel (01:05:10.963)
+Ouais pour retrouver... Ouais je vais napp' où le nom il est en plusieurs mots et... ouais hyper galère de le faire référencer.
+
+David Leuliette (01:05:19.248)
+Ouais je vois. Ok sinon c'est sur LinkedIn, Gabriel Ofman, Matisse, où est-ce qu'on se retrouve sur les internets ?
+
+Gabriel (01:05:23.735)
+Ouais.
+
+Matthys (01:05:26.813)
+LinkedIn Twitter X
+
+David Leuliette (01:05:30.524)
+Mathis Dev, ok, pour soutenir l'émission, si vous voulez retrouver tous les liens c'est wishipit2day.com podcast en espérant que vous avez appris quelque chose. Vous pouvez mettre 5 étoiles sur Spotify et sur Apple Podcast. Une phrase mémorable, dans les 30 prochains jours, vous allez shipper quoi grâce à Abjise 2026 Mathis ?
+
+Matthys (01:05:55.284)
+Expo observe, je améliorer mes performances.
+
+David Leuliette (01:05:59.238)
+Ok, ça marche, une heure c'est fait. Tu nous feras des metrics, tu nous feras un recap de Oui. ok, ça on adore, on aime ça. Alors mettre des tools en place, mais observer les tools d'observabilité, c'est ça qu'on veut. Vas-y Gabriel, tu vas faire quoi du coup, toi ?
+
+Matthys (01:06:04.724)
+Non, le maître c'est facile, mais améliorer les performances là ça va être compliqué.
+
+Gabriel (01:06:21.367)
+Je vais balancer une nouvelle version de l'app de café où je refais toute l'Ui, donc en principe ça devrait être fini même cette semaine, pas besoin d'un mois.
+
+David Leuliette (01:06:33.26)
+Ok, qu'est-ce que... Tu refais tout ? Pourquoi genre ? C'est quoi le problème ?
+
+Gabriel (01:06:38.423)
+l'interface, elle était pas dingue. C'est beaucoup de formulaires vu que c'est des trucs de tracking et au début j'ai fait une version de padingo et avec ma tête c'est pour ça qu'elle était pas dingue. Non, j'ai tout fait, je suis pas fan d'utiliser des trucs multinous, au bout d'un moment il y a toujours un truc qui correspond pas à ce que je veux et tu dois le surcharger et ça devient plus gaire qu'autre chose. Donc non, unistyle et je fais mon design système.
+
+David Leuliette (01:06:46.332)
+Tu es fêque quoi.
+
+David Leuliette (01:06:50.148)
+Non non mais euh, t'as utilisé une libe et tout, machin de formulaire ou...
+
+Gabriel (01:07:05.813)
+Et là par contre pour designer j'ai utilisé Pencil.dev qui est assez cool. Parce qu'à l'époque il n'y avait pas l'autre design et même j'ai testé à posteriori et j'ai pas eu le même feeling.
+
+David Leuliette (01:07:19.002)
+Oui non mais ces trucs là quand tu veux faire entrer quelque chose dedans ça marche pas Pour générer c'est bon mais pour update y'a plus personne que Pensyn je ne connaissais pas Ok Cool
+
+David Leuliette (01:07:36.12)
+Oula j'ai failli, je vais éternuer, je vais close avant que j'éternue. Allez ciao les amis, à la prochaine, tchuss !
+
+Matthys (01:07:40.609)
+Tcha Tchao
+
+Gabriel (01:07:41.816)
+Ciao !
+

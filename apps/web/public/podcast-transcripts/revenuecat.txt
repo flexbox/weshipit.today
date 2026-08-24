@@ -1,0 +1,964 @@
+David Leuliette (00:08.015)
+Apple prend 30 % sur chaque abonnement in-app que tes utilisateurs payent, Google aussi, et depuis 2024, l'Europe nous dit que c'est peut-être plus légal de forcer ça. Mais concrètement pour toi, développeur qui ship une app en 2026, qu'est-ce que ça change vraiment dans ta poche et dans ton code ? Bonjour les amis ! Alors aujourd'hui on a deux invités exceptionnels, Tarek,
+
+Armand PETIT (00:26.493)
+David Leuliette (00:33.903)
+qui était lead dev, non qui est développeur pardon support chez Revenue Cat, Indie Maker depuis qu'il a quitté il le salarié il y a 12 ans et créateur de Soumiko, une app de transcription sur Mac. De l'autre on a Armand, CTO et co-fondateur d'Osli Solutions qui est déjà passé sur le podcast pendant qu'on parlait de son appréhendant native, qui transforme le smartphone en badge d'accès. Aujourd'hui tu reviens
+
+parce que tu as des questions sur la monetisation, comment on fait une stratégie de monetisation, comment on est quand on est sitio. Bienvenue à vous deux les amis, comment ça va Tarek ?
+
+Tarek (01:12.056)
+Ça va bien, merci.
+
+Armand PETIT (01:14.323)
+Et c'est vraiment nickel. Ouais, c'est Ouais, c'est bon. C'est plus le même setup. J'ai juste déplacé le bureau. Je l'ai mis là où il avait plus de lumière parce qu'il a pas trop de lumière dans mon appart. Donc... Sinon, je n'ai pas bougé. Toujours à Nantes !
+
+David Leuliette (01:15.381)
+Et Armand, Armand t'as changé de setup, c'est plus le même setup, osh.
+
+David Leuliette (01:26.559)
+Ok ok. toujours à Nantes. bah cool est-ce que tu vas à la free party de Nantes ?
+
+Armand PETIT (01:35.932)
+C'est quand ? demain là ?
+
+David Leuliette (01:37.615)
+Le truc... Ah c'est demain ! sais pas, le truc de Flavie là, sur tous les freelance. Le truc de Flavie sur tous les freelance là. Y'a une boom avec plein de freelance là-bas.
+
+Armand PETIT (01:39.571)
+Bah attends, je sais pas si on parle de la même chose.
+
+Armand PETIT (01:46.355)
+Peut-être, non je pense qu'on parle pas de même chose. Il a un truc sur l'IA demain justement, côté des machines. Ouais c'est pas mal en vrai, ça bouge bien. Mais je savais pas, il faudrait de la free-party du coup.
+
+David Leuliette (01:50.147)
+bah ça bouge à Nantes. Ça bouge à Nantes. AES ! Franchement, après c'est plus business que machin mais moi en fait c'est parce que j'ai fait trop de conférences. J'ai fait SF Francisco, j'ai fait Craco, AbJS. D'ailleurs on va faire un épisode spécial Craco, on va essayer de caler ça. J'ai envoyé les mails, il que Mathis qui a répondu pour l'instant, on verra. Mais du coup Tarek, donc développeur support en ingénieur chez Revenu 4 et une D-Maker en parallèle.
+
+T'as quitté le salariat après 12 ans, c'est quoi la première chose que t'as chipé depuis que t'es libre de tes mouvements ?
+
+Tarek (02:30.2)
+première chose que j'ai chipé c'est en effet ce micro, c'était une petite app que j'ai fait à la base pour moi-même parce que je consommais pas mal de vidéos sur YouTube et j'avais ma watch later list qui était très longue et donc voilà le backlog de vidéos et donc je me suis fait une petite app pour envoyer directement le lien YouTube dedans, avoir la piste audio qui se télécharge, la transcrire
+
+David Leuliette (02:44.974)
+Le backlog de vidéos.
+
+Tarek (02:58.622)
+La résumé vient à LLM et puis j'ai mis ça sur l'App Store. Bon ça n'a pas trop marché. Et ensuite ce que j'ai shipé qui était intéressant c'est que j'ai commencé à faire des MVP à 500 dollars, des petits MVP en une ou deux semaines. L'objectif c'était de scaler après avoir mes premiers clients. Ça n'a pas marché non plus. Enfin ça a marché au début mais le scale n'a pas marché.
+
+Et voilà. Et depuis, je continue à shipper des petites app Indie. Je continue à essayer tout en étant développeur support engineer chez Roman Lucat en contracteur.
+
+David Leuliette (03:40.398)
+Et vas-y digue un peu, c'est quoi support ingénieur ? Qu'est-ce que ça veut dire ? Ça doit être horrible, tu dois avoir tous les problèmes à la con que personne a, et ben on vient de se voir, c'est ça le... Ah ok.
+
+Tarek (03:49.785)
+Non, ben justement, c'est intéressant parce parce qu'en tant que dev, il a un truc que j'ai toujours aimé, c'est débugger et essayer de comprendre.
+
+les problèmes qu'une app a. puis justement, développeur support engineer, c'est un de mes jobs, une de mes responsabilités. En gros, chez Revenu 4, les clients sont des développeurs, en tout cas c'est le cœur des clients.
+
+Et donc le support à nos clients, ne pas être juste un support comme chez n'importe quelle entreprise. Il faut que ce soit aussi des ingénieurs et des développeurs qui donnent ce support là parce qu'il faut débugger le code, faut essayer de comprendre ce qui fonctionne pas, il faut investiguer dans les logs, voir les traces serveurs, voir la configuration.
+
+comprendre comment le SDK fonctionne etc. Et donc c'est mon job. Mon job c'est de recevoir toute la journée des tickets que les développeurs ouvrent parce qu'ils ont un problème avec Revenu 4 ou pas, ou en tout cas ils perçoivent que le problème est avec Revenu 4 et mon job c'est de les débloquer et plus généralement...
+
+David Leuliette (05:08.63)
+Et c'est quoi en pourcentage que t'as problème chez ce clavier ? Parce qu'ils disent, alors ça aurait du 4 c'est sûr. Mais tu digue un peu, mais en fait pas du tout. Les gars vous avez oublié, whatever. Tu l'as souvent ou pas ce truc ?
+
+Armand PETIT (05:11.251)
+...
+
+Tarek (05:19.188)
+Alors en pourcentage je ne pas parce que les développeurs sont quand même plutôt bons généralement pour ne pas trop tomber dans ce piège là mais c'est vrai que très souvent c'est des problèmes côté App Store ou Play Store tout simplement un problème de configuration de produits, de clés, de...
+
+d'accès, de credentials, de subscription avec la mauvaise durée ou bien d'avoir soumis le truc trop tôt. C'est très très très souvent ça.
+
+Armand PETIT (05:55.827)
+Mmh.
+
+David Leuliette (05:58.351)
+Ouais normal quoi. Ouais de toute façon on va en parler plus après. Mais du coup Armand, c'est quoi les news avec Osli situe ? Parce que tu étais déjà passé dans un épisode d'ailleurs, si vous voulez voir, allez taper sur internet. du coup depuis cet épisode, c'était quoi ta plus grosse surprise côté business et pas côté tech ?
+
+Armand PETIT (06:11.059)
+Ouais ouais.
+
+Armand PETIT (06:23.091)
+C'est une bonne question. fait, on s'est rendu compte que, au final, la partie texte est surtout la partie la plus facile. Nous, du coup, en gros, au niveau du projet, on fait du contrôle d'accès pour les syndics pour leur permettre de gérer tous les accès de leur patrimoine à distance. du coup, la prestataire qui intervient, qui est envoyée, utilise son téléphone. Donc ça fonctionne en Bluetooth Low Energy. Et en fait, la surprise, c'est juste de dire que...
+
+Le plus compliqué dans le projet, c'est pas forcément la tech. La tech, c'est en quelques mois, va dire, alors que le business, en dernier an, c'est l'adoption qui hyper compliquée. Surtout qu'au final, nos clients sont les syndics, mais les utilisateurs finaux qui vont utiliser l'application sont les prestataires qui interviennent dans les bâtiments. C'est là où tu te rends compte qu'en fait, notre cycle de demande est assez lent. On avance bien avec les clients. Là, on est à quasiment une quinzaine de syndics. Maintenant, il faut installer un bâtiment, faut le déployer. La solution à la problématique, elle est vraiment...
+
+ciblé. Comment tu fais pour justement mettre en œuvre ? Là c'est le plus compliqué, en ce moment c'est le plus chaud.
+
+David Leuliette (07:26.488)
+Ouais, parler à des gens insupportables. Voir des vrais gens au secours comme moi, jamais. Ouais, je vois. Et en plus tous les trucs de bâtiments, les quatre trucs à la coin. Ouais mais non, là il a du soleil du coup, le truc il a fondu. t'sais, les problématiques.
+
+Armand PETIT (07:30.291)
+Exactement, Non mais c'est ça, c'est ça vraiment. Exactement ça.
+
+Armand PETIT (07:43.079)
+Et du coup il faut gérer le offline parce que quand tu ouvres une porte qui est dans la cave tu vois donc il que mets du offline. Donc ouais c'est un peu tricky mais au final c'est vraiment la partie business qui prime. Maintenant ce que j'ai dit à mon CEO c'est on développe une future que si elle est demandée vraiment que tes business est produit sinon on va pas s'embêter à faire un truc qui sert à rien en fait c'est pour faire gadget.
+
+David Leuliette (07:48.494)
+Aight.
+
+David Leuliette (08:01.614)
+Ouais parce qu'après en fait faut le maintenir over time. En plus c'est easy maintenant, dis ouais une feature c'est bon, LLM, Cloud Code vas-y go, ship moi ça, donne, en 30 minutes c'est en prod. Mais après bah faut le maintenir avec quoi dans 6 boîtes ? C'était quoi ce truc ? Aucune idée. Mais en 2026 vous êtes plutôt App Store ou Play Store si vous deviez en un bon éménage ? Demain ce serait lequel que vous sacrifieriez en premier ?
+
+Armand PETIT (08:09.939)
+C'est ça.
+
+ça.
+
+Armand PETIT (08:17.69)
+C'est tout.
+
+David Leuliette (08:29.35)
+Moi ce serait... Pfff, assez trickeé hein. En fait, moi ce serait play, parce qu'en fait j'y vais tellement jamais, que qu'à chaque fois que je me log, l'UI elle a changé. Je te jure. Ou alors je trouve pas les trucs. Vas-y, Armand, vas-y Armand. Lequel on kick.
+
+Armand PETIT (08:40.906)
+Moi en vrai je sais pas... Moi je sais pas... En fait ça dépend, j'ai envie de te dire du contexte. Je t'explique, quand t'as un compte je crois indépendant sur Play Store, t'as 14 jours tu sais... quand t'es en individuel, t'as compte individuel, t'as 14 jours où justement tu dois quand tu relises une app la faire tester par 10 ou 12 personnes je crois, tout comme ça. que quand t'as... Voilà. Mais quand par contre t'as un compte organisation, bah là tu vois c'est différent.
+
+David Leuliette (08:59.413)
+oui, c'est tout au début le premier truc, ouais, le premier, Ouais.
+
+Armand PETIT (09:05.595)
+Et donc t'as pas besoin d'avoir ça. en fait le temps de release déjà est plus chiant donc je dirais que je garderai Apple pour ça. Par contre Apple là tu vois actuellement je suis en train de sortir une app pour une cliente parce qu'à côté je fais du freelance. Et elle tu vois là où on galère c'est sur Apple parce qu'il y a tellement de demandes. En plus avec les iPi pp codés etc. Ils demandent des détails tu vois sur les premiers releases. En fait on perd un temps fou à faire des aller-retour. Puis en fait ils répondent pas aussi vite que Google.
+
+Donc d'un côté, enfin je sais pas, du coup c'est assez compliqué. Je pense que je garderais Apple parce que t'as quand une visibilité énorme avec l'App Store au final. Mais ça joue sur des détails quoi. Les deux sont importants je pense.
+
+David Leuliette (09:42.638)
+Et si vous êtes en galère, allez sur wishyp2day.deftools et dedans il a un lien vers une app pour justement onboarder des utilisateurs et avoir des testeurs. Il a un mec qui s'est à l'air saoulé, du coup il a fait une app exprès pour grab des testeurs. Et c'est ça le nom de l'app, Inception quoi, c'est une app pour être approuvé par les autres apps, c'est folie. Et toi Tarek, qu'est-ce qu'on kique ?
+
+Armand PETIT (10:05.022)
+Non, c'est
+
+Tarek (10:10.169)
+Alors moi sans surprise je clique le Play Store, malheureusement. J'ai rien contre Google mais chez les indies en fait, t'as plein d'indies qui shipent uniquement sur l'App Store, qui font même pas de version Android. que... ouais. Bah il y a de la tune mais pas autant que sur iOS. Je crois que dans le...
+
+David Leuliette (10:24.802)
+oui, ça embête même pas, y'a pas de thune.
+
+Tarek (10:35.481)
+Dans le SOSA, State of Subscription Apps de Revue du 4, qui est publié chaque année, dernier, 77 % des app lancés, des nouvelles app lancés, sont lancés sur iOS uniquement. Ou en tout cas sur iOS, je ne sais pas si c'est iOS uniquement, je n'ai pas envie de dire de bêtises. voilà. Donc les utilisateurs iOS historiquement dépensent plus que les utilisateurs Android.
+
+David Leuliette (11:01.025)
+Ouais parce que c'est mieux intégré en fait je pense l'expérience elle est si messe et du coup... Je vois. Ok alors on n'a pas expliqué c'était quoi Revenu 4. Revenu 4 en gros c'est Stripe pour tout ce qui est mobile. Si vous avez du paiement à faire à l'échelle Revenu 4 les gens sont sympas tu vois. Tarek il est très sympa je suis sûr. Et même si c'est première fois qu'on se voit j'avais eu ton contact avec...
+
+Je sais plus son nom. Comment ? Ouais voilà, exactement. J'oserais pas prononcer son nom correctement parce que voilà. Ouais c'est ça. Et je l'ai vu plein de fois en fait en reconférence du coup. C'est lui qui m'a fait le contact, on lui fait un big up. Mais donc ton rôle c'est de voir les intégrations chez Revenues de plantées en temps réel. C'est quoi l'erreur que tu vois encore souvent chez les développeurs ? Pas les juniors que je sais ce clavier de tout à l'heure mais ceux qui attègrent les inapp purchase pour la première fois.
+
+Tarek (11:36.473)
+Il est développeur advocate chez Reunicat.
+
+Tarek (12:03.095)
+ceux qui intègrent pour la première fois, s'ils des développeurs expérimentés, donc pas des juniors, et bien souvent c'est en effet de croire qu'il a un souci dans le code, ou alors qu'il a un souci dans les SDK, que le back-end est de revenu cathédin ou quelque chose comme ça, alors que généralement c'est juste un problème sur le store, encore une fois.
+
+Le truc classique chez iOS, enfin sur Apple, c'est quand tu crées une subscription, vas-y, on voir.
+
+David Leuliette (12:31.301)
+Je sais ce que c'est.
+
+Je sais ce que c'est, vas-y dis mais je PENSE savoir ce que c'est. vas-y attends c'est quoi ton hypoth... Vas-y c'est quoi ton hypothèse Arman ? Vas-y Arman c'est quoi ton hypothèse ?
+
+Armand PETIT (12:37.123)
+J'ai une hypothèse aussi.
+
+Armand PETIT (12:44.403)
+Moi je me demande si c'est pas les trucs des metadata.
+
+David Leuliette (12:48.285)
+Ok, ils sont pas bonnes. Moi je dis c'est le owner du compte qui a pas cliqué sur la modal approuve et du coup on peut rien faire. Ok mais c'est pas celui là. Ok vas-y.
+
+Tarek (12:48.792)
+ça peut être ça, c'est pas loin.
+
+Tarek (12:56.472)
+Celui-là aussi, il est dans le top 5. Les deux sont dans le top 5, mais le top 1, c'est de soumettre ta subscription séparément pour une nouvelle app.
+
+Armand PETIT (12:58.815)
+il est pas mal, il est pas mal celui-là.
+
+Tarek (13:09.72)
+parce que quand tu la créé, tu peux submit for review mais en fait faut jamais faire ça parce que ça tu le fais uniquement quand ton app a déjà été approuvé une fois et que tu veux ajouter une subscription ou une nouvelle in-app purchase mais si c'est la première fois, il faut surtout pas soumettre il faut attendre de soumettre ton app et quand tu vas soumettre ton app, le process va te demander d'attacher des in-app purchase que tu veux soumettre en même temps et là tu les attaches et si tu soumets séparément
+
+ça peut s'arrêter de fonctionner mais en plus Apple met une plombe à rejeter les inappurchase et quand tu soumets ton app juste après ils vont dire bah les inappurchase ne fonctionnent pas donc ils vont rejeter ton app et c'est un cercle vicieux, ouais, sans fin donc voilà ça c'est une cause très fréquente
+
+David Leuliette (13:55.565)
+Chicken egg problem quoi, c'est un sueur tape quoi.
+
+Armand PETIT (13:58.132)
+...
+
+David Leuliette (14:00.845)
+J'ai eu...
+
+Tarek (14:05.635)
+Et généralement, c'est pour ça je pense que RevenuCat existe, c'est que gérer la monétisation, l'aspect financier dans une app, que ce soit App Store ou Play Store, c'est très complexe. quand j'étais développeur, j'ai fait quelques intégrations, StoreKit et Google Play Billing, c'est extrêmement complexe. Encore plus si tu veux faire de la validation server side pour être sûr que la...
+
+la transaction est légitime. Encore plus si tu veux du cross-platform, ça tombe bien vu le nom du show, si tu veux que tes utilisateurs Android puissent bénéficier de leur abonnement sur iOS et vice versa, ça aujourd'hui les stores ne communiquent pas entre eux. C'est ce que Revenicat fait, il permet de faire le lien entre ces... C'est une surcouche, c'est une couche de traduction.
+
+Armand PETIT (14:41.523)
+...
+
+David Leuliette (14:50.38)
+ouais c'est vrai, j'avais jamais pensé ça.
+
+Tarek (15:02.156)
+mais ça va beaucoup plus loin que ça. Ça c'est la base de Revenu 4, mais aujourd'hui c'est toute une plateforme de monétisation avec des charts, avec des analytics, les paywalls bien sûr. Avec l'IA aussi aujourd'hui.
+
+Armand PETIT (15:12.011)
+Les pégôles.
+
+David Leuliette (15:15.02)
+Ouais, l'EPWALL, l'EPWALL qu'on peut faire, qu'on peut éditer direct dans le back-end de... Ça c'est smart aussi parce que tu peux changer, swapper les écrans et tout... C'est vrai que c'est pas juste...
+
+Armand PETIT (15:18.419)
+Bonsoir.
+
+Tarek (15:24.548)
+Exactement. Et tu aussi tout ce qui est analytics, Experiments, A-B testing. voilà, normalement c'est une boîte à outils où l'objectif c'est d'aider les développeurs à faire plus d'argent. C'est la mission de l'entreprise, c'est ce qu'on dit.
+
+David Leuliette (15:45.388)
+C'est bon ! bah si, je vais mettre 100 en épisode. Attends, il faut que je me note. Le nom de l'épisode, ça doit être ça. Ok, Armand, aider les développeurs, rien de plus d'argent.
+
+Tarek (15:54.998)
+aider les développeurs à faire plus d'argent. C'est Help Developers Make More Money. C'est ça, c'est la mission.
+
+Armand PETIT (15:59.165)
+C'est ça la recette.
+
+David Leuliette (16:00.685)
+Du coup Armand, Hossly Solutions c'est principalement du B2B donc tu vas à des gesteurs d'immeubles, pas vraiment au grand public et pour la monetisation t'as re-choisi Revenu 4 dès le début, Stripe, une purchase classique ou autre chose. Et pourquoi ?
+
+Armand PETIT (16:15.827)
+Du coup nous c'est un peu particulier parce que du coup en fait on a du coup une application mobile qui est destinée aux prestataires et celle là elle est gratuite en fait parce que c'est pas les prestataires qui vont payer par contre on a une autre app qui est en cours qui est pour les résidents et actuellement quand t'es résident t'as ton petit badge ou ta petite clé pour accéder à ton immeuble et en fait l'idée c'est que le syndic quand il est appelé par le résident et qu'il a perdu son badge et lui disent bah on a deux solutions soit tu rachètes un badge physique ça te coûte 40 euros par exemple soit tu prends un abonnement
+
+David Leuliette (16:23.148)
+Hmm
+
+Armand PETIT (16:44.947)
+par exemple, c'est deux euros par mois. Et là, tu payes du coup un badge Osley qui est digital, qui est numérisable, etc. La question qu'on s'est posée, c'est est-ce qu'on part du coup sur du bien numérique ou du bien physique ? Et ça, c'est une question, je pense, de la règle que tu dois. Je trouve que nous, en tant que développeurs, il n'y a pas assez de personnes, même de fundeurs ou de indie hackers ou d'indie devs, qui se posent la question, c'est qu'est-ce que je vends ?
+
+Parce qu'il y en a plein que je connais qui sont partis sur du Stripe parce qu'ils viennent du web et qui font une app mobile et au final ils se rendent compte que, ah merde en fait je vends des abonnements pour je sais pas du streaming de musique. Ah mais attends c'est du numérique je savais pas pourquoi j'ai mis du Stripe. Ah bah je suis refusé alors que du coup je viens de sortir mon app. Et du coup c'est la question à se poser je fais que de le répéter du coup. J'essaye de bien le promouvoir aux gens c'est qu'est que vous vendez. Alors nous du coup comme c'est de l'ouverture physique, nous c'est un peu tricky.
+
+c'est qu'on voit un abonnement mais pour au final un service qui a une ouverture de porte. Donc on ne passe pas par du revenu 4, on va passer par du stripe. Si j'ai fait ma bonne analyse, normalement c'est en cours de développement donc ce pas encore finalisé mais du coup je me suis pas mal posé et j'ai un peu brainstormé sur ça.
+
+Tarek (17:58.475)
+Alors, en théorie dans les guidelines...
+
+quand c'est un service du monde réel, guillemets, que n'est pas un service numérique, digital, en effet, tu n'es pas obligé de passer par les IAP. Normalement, tu peux facturer direct Apple Pay, Stripe, que sais-je. Par exemple, c'est ce qu'on voit avec Uber, avec toutes les apps de livraison à domicile ou bien même de VTC, etc. Ce n'est pas des in-app purchase, c'est des paiements classiques.
+
+Armand PETIT (18:20.595)
+dans le
+
+David Leuliette (18:32.704)
+Ok, cool, bah du coup on sait comme ça. Et on va parler de la fameuse taxe. Ah ok, ouais, il y a aussi la partie web. C'est vrai qu'on n'a pas... C'est vrai qu'au tout début, on l'a pas dit. C'était pas dès le début, non. Au début c'était que Inap et après forcément ça aggro parce qu'on demande... Bah oui, c'est ça quoi. De façon tous les services, ils vont imprimer des PDF et chier des Excel.
+
+Tarek (18:37.44)
+Mais Revenucat propose Web Billing. peut aider.
+
+Armand PETIT (18:41.361)
+oui, c'est la partie où...
+
+David Leuliette (18:55.756)
+On le sait, on le sait. Donc la commission à 30%, donc tout le monde en parle mais en fait c'est incompréhensible à comprendre. En plus il y a des conditions pour la faire tomber à 15, il y a des cas légaux sans risquer la suspension. Qu'est que tu peux nous dire là-dessus Tarek ?
+
+Armand PETIT (18:57.267)
+...
+
+Tarek (19:17.524)
+Alors, la commission, donc tu dit que c'était compliqué à comprendre et je pense que c'est volontaire parce que... tous ces... Voilà !
+
+David Leuliette (19:24.268)
+Comme ça tout le met 30 % et hop là !
+
+Armand PETIT (19:25.395)
+...
+
+Tarek (19:28.184)
+tous ces va et vient judiciaires en Europe, aux US et dans différents pays, fait c'est très complexe et je pense que c'est, voilà, encore une fois c'est pour empêcher justement de peut-être être sûr de ce à quoi tu as droit mais ce qui est sûr c'est que déjà t'as le small business programme qui est très facile chez Apple, c'est à dire que, que t'es en dessous d'un million de
+
+David Leuliette (19:51.518)
+Ça c'est 10 je crois, c'est 10 ou 15 ? C'est ça c'est 15.
+
+Armand PETIT (19:53.811)
+C'est 15.
+
+Tarek (19:58.091)
+de dollar de proceeds sur l'année, tu es à 15 % dès le premier jour. Ça, tu remplis juste un formulaire, tu attends quelques jours, tu es accepté et chez Google, c'est même automatique.
+
+et sur les subscriptions auto-renewable chez Apple, l'année d'après, même si tu pas dans le Small Business Programme, mais à partir de la deuxième année de subscription, la commission est que de 15%. Donc déjà, le 30%, c'est un peu un mythe, en tout cas pour les petits. C'est vraiment quand tu as un problème de riche, entre guillemets, quand tu as vraiment des gros revenus, là tu vas commencer à te poser la question de ça. Mais généralement pour un...
+
+pour un petit dev, voilà, t'es déjà à 15 %
+
+David Leuliette (20:44.081)
+Ouais, t'es pas un gars une petit quoi, t'es pas assez... Y a pas assez bonne figure dégage-toi, qu'est-ce tu fais là ? Je vois.
+
+Tarek (20:52.281)
+Et ensuite, ça passe au DMA, au procès Epic vs Apple aux US, là ça devient plus compliqué.
+
+Armand PETIT (21:03.533)
+C'est ça justement parce que j'ai envoyé un message à David, c'était que ça serait bien qu'il quelqu'un du domaine qui s'y connaisse, qui puisse nous en parler. que moi j'ai fait un petit peu de recherche là-dessus, donc il y avait la notion des 15 % comme t'as expliqué. Mais quand j'ai creusé un peu plus sur la DMA, c'est bien entre le procès entre Apple et Epic, tu te rends compte avec des commissions avec la Core Technology, des frais avec des store services, et au final tu te perds un peu et tu sais pas d'ailleurs si c'est à jour ou pas.
+
+Est-ce que tu restes sur l'ancien schéma ou sur le nouveau ?
+
+Tarek (21:36.793)
+En fait, il a des développements quasiment tous les mois au fil des appels en justice, au fil des nouveaux règlements de l'Union européenne, etc. Mais aujourd'hui, ce que je peux dire, c'est que pour l'instant, aux États-Unis...
+
+peut en sortir à 0%. C'est-à-dire que Apple a fait appel actuellement. Je crois que c'est assez récent, c'est début mai, la Cour suprême a refusé le sursis qu'Apple demandait, donc c'est toujours en cours. Mais aujourd'hui c'est à 0 % et Apple cherche à fixer un...
+
+un certain pourcentage parce qu'Apple estime que à partir du moment où tu utilises l'App Store, ils ont une grande, ils sont d'une grande aide à acquérir des utilisateurs donc tu leur dois quelque chose et donc c'est ce quelque chose qui est en train d'être défini. La cour a demandé un...
+
+raisonnable fee mais on sait pas du tout ce que ça va donner donc pour l'instant c'est 0 % quand tu sors après il a tout un tas de règles il faut faire un bouton qui sort vers le web le bouton il ouvrir safari doit pas ouvrir safari view contrôleur dans l'app
+
+quand tu ouvres Safari il faut quand même proposer l'IA napper chase etc etc etc donc ça rajoute de la friction c'est compliqué c'est pas sûr que tu t'en sortes et ça c'est que pour les us parce qu'après quand tu rentres quand tu passes côté UE
+
+Tarek (23:08.012)
+et bien c'est différent. Ça aussi ça évolue mais les derniers chiffres que j'ai c'est que t'as 2 % Apple prend 2 % pour l'acquisition, ils prennent entre 5 et 13 % pour les services. Auparavant il y avait 50 centimes fixes de core technology fee, ça a été rebuté par la commission européenne, maintenant c'est devenu 5 % de core technology commission. Donc ça veut dire que voilà c'est peut-être volontaire
+
+Armand PETIT (23:25.035)
+Hmm
+
+Tarek (23:37.899)
+flou mais aujourd'hui tu t'en sors à 10 % au mieux je dirais 20 % au pire et c'est alors ça faut savoir que quand tu fais des paiements web aussi en tout cas dans l'ueb ou même dans les autres pays
+
+C'est déclaratif. Apple te demande d'utiliser une API et de déclarer les paiements externes dont tu as bénéficié parce qu'ils n'ont aucun contrôle dessus, bien entendu. Le fait que quelqu'un appuie sur « buy from web », ça ne pas dire qu'ils vont aller jusqu'au bout, donc c'est déclaratif. Mais il se réserve un droit d'audit. Après...
+
+David Leuliette (24:17.739)
+Ok, normal, c'est écrit dans les petites lignes. Et justement, parlant de petites lignes, si on n'a pas envie de se faire kiquer comme Brice de l'épisode précédent avec son app TicTools. Donc la légende urbaine, c'est que avant, je fais payer mes users sur le web, je les dirige vers une landing page externe et grâce à ça, je bypass le store.
+
+Et donc ouais, tu parlais avec le jugement épique versus Apple 2006, c'est encore viable ou c'est du suicide pour ton compte de développeur ?
+
+Tarek (24:51.586)
+Alors c'est viable, techniquement, parce que Apple ne peut pas te kick à cause de ça. ça, mon avis personnel, c'est que si veux être un bon citoyen de l'App Store et que Apple te mette en avance, que tu aies de bonnes performances à ISO...
+
+David Leuliette (24:54.091)
+Mmh.
+
+Armand PETIT (25:06.739)
+Oui.
+
+David Leuliette (25:10.79)
+rembourse les cartes, vérifie les relances, machin, qu'est pas d'autre, je suis à honte de tout ce bordel là.
+
+Tarek (25:15.048)
+Voilà, à mon avis tu as envie d'être en bon terme avec Apple. Parce que ça, on parle d'Epic justement. Epic c'est gigantesque, Fortnite et les revenus de leurs jeux, ils sont immenses donc ils peuvent se permettre ça. Mais un petit ou même un moyen développeur, petite équipe...
+
+Armand PETIT (25:17.863)
+N'importe quoi.
+
+Tarek (25:35.582)
+je ne pas sûr qu'il puisse se permettre d'être en mauvais terme avec Apple. En tout cas, il bien faire le calcul parce que ce que tu perds, enfin ce que tu gagnes plutôt en commission, en réduction de commission, tu risques de le perdre en friction, en complexité, en...
+
+Tarek (25:57.849)
+parce qu'après il faut voir les tu as pas implémenté ton propre système de paiement par carte et même si c'était le cas tu devrais payer des frais donc Stripe aussi à certains frais tous les autres types de paiement web ont des frais donc c'est c'est c'est viable techniquement
+
+David Leuliette (26:19.179)
+Ouais, et c'est pareil, c'est ça, c'est réponse ultime, c'est que si tu embauches quelqu'un, il va rien comprendre à ton système custom fait et l'IA non plus. Donc, ouais, peut-être, ah si, peut-être qu'ils vont comprendre, parce que justement, à App.js, Charlie l'a dit, ouais, React Native, ça marche très bien. Pourquoi ? Parce que va faire très bien le code React Native.
+
+Tarek (26:29.176)
+C'est ça.
+
+Armand PETIT (26:30.195)
+J'ai envie
+
+Tarek (26:45.112)
+Il me semble d'ailleurs que dans les promptes système des outils type Cloud Code, Codex, etc. Il me semble avoir vu, soit c'était leak, soit c'était rendu public, qu'une des instructions c'était si c'est une app mobile, fais durer agnatif sauf si on te dit que c'est une app...
+
+David Leuliette (26:52.362)
+Ouais.
+
+David Leuliette (27:03.207)
+ouais ! oui ! bah c'est sûr ! Bah ça m'étonne pas, c'est comme ça de ship du Next.js et du Tailwind et puis voilà en fait. Ouais.
+
+Armand PETIT (27:04.147)
+C'est drôle.
+
+Ça m'étonne pas.
+
+David Leuliette (27:17.099)
+Je suis pas étonné.
+
+Armand PETIT (27:17.162)
+Mais tu vois au niveau de la... Est-ce que c'est rentable ? Honnêtement, peut-être aux États-Unis parce que du coup il a 0%. Donc là on va dire que sur des gros SAP où tu du revenu ça peut peut-être être intéressant. Mais par contre, c'est quand même à sa reste un parcours du combattant et je me dis en Europe, enfin franchement ça envoie pas la chandelle quoi. C'est beaucoup en fait.
+
+Tarek (27:37.054)
+Sachant qu'il faut apporter une petite précision. Aujourd'hui, en beaucoup qui explorent ce dont on parle, on appelle ça le app to web, c'est-à-dire que l'acquisition se fait dans l'app store, mais ensuite quand tu arrives sur le paiement, tu le rediriges sur le web. Mais aussi, il le web to app, c'est-à-dire qu'aujourd'hui,
+
+L'ASO c'est de plus en plus difficile. les développeurs essayent d'acquérir des utilisateurs via meta-ads ou TikTok ou que sais-je. Et dans ce cas-là, au lieu de rediriger les potentiels utilisateurs directement vers l'app, ils les redirigent vers un funnel web, une landing page, sur laquelle ils font leur premier paiement sur le web.
+
+David Leuliette (28:17.021)
+Landing page, Classic, Email, Bim, il récupère.
+
+Armand PETIT (28:24.595)
+...
+
+Tarek (28:24.632)
+Et ce premier paiement du coup, n'a pas du tout eu lieu sur l'App Store donc Apple n'a absolument aucun droit dessus. Et ensuite une fois que le premier paiement est fait, que l'acquisition est faite, là il télécharge l'App. Et ça c'est quelque chose qui se fait pas mal et d'ailleurs qui marche aussi avec Revenu 4 au passage.
+
+David Leuliette (28:43.935)
+Ouais bah non mais c'est ça les mecs ils ont tout compris quoi De façon c'est comme à Paris le vendeur de falafel dans la rue je sais plus laquelle là T'arrives, il a une queue de ouf Il te fait payer avant que tu rentres dans le restaurant Comme ça après t'es obligé d'attendre et t'es obligé d'y aller C'est des génies les mecs, là c'est L'as du falafel ça s'appelle ouais
+
+Armand PETIT (28:44.289)
+Bye.
+
+Tarek (29:03.336)
+c'est ça voilà eux au lieu d'attendre l'onboarding ils te font payer enfin ils un onboarding web un funnel donc t'as tout l'onboarding comme d'habitude à la fin t'as ton payment sheet voilà ça peut être sur le sur ton mobile la plupart des gens ils font pas la différence et à la fin ils font un bouton download
+
+David Leuliette (29:10.154)
+Ouais.
+
+David Leuliette (29:23.659)
+Ouais non, en plus ça se fait facile maintenant avec Expo, tu peux hosteler ça, on l'a fait avec Mathis sur une app qu'on est en de faire là. En fait, on faisait l'app mobile et on s'est dit au bout d'un moment, ah ouais, en fait, il une landing page web, vois. je suis, ouais non, pas de problème, if platform web, boum, done, ça vaut une home page et terminé. fait, c'est dans la même code base et tout est lié. puis grâce à ça, on a super base et tout, machin. Et puis si demain on nous dit, ouais, bah go, faut faire l'unboarding via mes Facebook ads, par exemple.
+
+tout est déjà en place quoi. Donc le seul truc...
+
+Armand PETIT (29:55.389)
+Et ce qui est très bien c'est que...
+
+David Leuliette (29:58.719)
+Le seul truc c'est que quand on fait agafe c'est que c'est pas un vrai navigator web, c'est un browser kind of de Facebook et donc je sais qu'il double check quand même, c'est une plateforme à part entière, c'est pas du vrai internet.
+
+Armand PETIT (30:16.339)
+Et ouais bah je voulais juste mettre en avant aussi Revenu 4 sur le fait que ce qui est très fort aussi c'est que vous avez plein d'articles de blog et notamment là tu vois j'ai tapé rapidement web to app, il y a tout un article de blog qui explique comment le faire avec des conseils etc et sur ça en vrai c'est des bonnes ressources parce que tout simplement ça met en avant juste la stratégie de comment s'y prendre quoi.
+
+Tarek (30:36.46)
+Alors moi à Revenu 4 j'étais un client avant d'être un travailleur et c'est en effet, c'est une référence parce qu'il gère la partie technique mais aussi il y a une énorme partie marketing, monétisation, stratégie, tout ça qui est vraiment intéressant à creuser en effet.
+
+David Leuliette (31:01.522)
+Et du coup, tes clients se dit, ouais, ce mec-là, il qu'il bosse avec nous ou c'est toi qui en applies one day, toi sans random ?
+
+Tarek (31:10.712)
+Non, d'ailleurs je suivais un développeur support engineer sur Twitter et un jour il a posté le...
+
+David Leuliette (31:19.806)
+Ouais. T'as déjà un compte ? Allez le voir !
+
+Tarek (31:22.2)
+c'est intéressant, je me suis dit c'est intéressant ça ce serait pas mal parce que je cherche à bifurquer un peu du dev, j'étais intéressé par tous les postes de type développeur advocate, évangélisme, support etc. et je me suis dit bah écoute c'est l'occasion et ça a marché
+
+Armand PETIT (31:23.635)
+...
+
+David Leuliette (31:31.658)
+oui.
+
+David Leuliette (31:46.346)
+les planètes étaient alignées. Excellent. Moi j'ai eu pareil avec Contentful.
+
+Armand PETIT (31:48.243)
+Et d'ailleurs, tu disais que tu fais beaucoup d'iOS, mais au niveau des SDK, tu réponds à tout type de SDK au niveau des questions, sauf le T-Rack native ou t'es plus spécialisé dans un SDK ?
+
+Tarek (32:03.576)
+Non, non, on répond absolument tout, mobile, web, les langages et tous les frameworks.
+
+Et même la culture chez Revenu 4 c'est que pas de dev iOS ou de dev mobile. Les dev sont des software engineers et tout le monde intervient sur tout type de code. Alors si il y a peut-être une petite différence sur back-end, infra et framework, enfin SDK et paywalls, des trucs comme ça. Mais si tu un dev paywall, allez, il y a peut-être une différence back-end et SDK mais mise à part ça,
+
+Armand PETIT (32:41.811)
+Merci.
+
+Armand PETIT (32:48.531)
+Merci.
+
+David Leuliette (32:48.764)
+ouais, a un ity ! Attends, il en en vue 4 et ils un ity ! ouais...
+
+Tarek (32:50.68)
+Il a y a Amazon, App Store.
+
+Armand PETIT (32:55.746)
+Insane
+
+David Leuliette (32:57.85)
+Ok, alors vas-y on va faire la liste. Platform revenue cat. C'est quoi la plateforme la plus weird ?
+
+David Leuliette (33:11.658)
+ouais bah oui ouais c'est un... ah ouais là comme ça tu peux même pas les sortir. là là ! Mais ouais normal bah normal mais du coup... ah oui il a macOS aussi donc ouais ça makes sense. C'est quoi ça Roku ? J'ai jamais entendu parler de ce truc, c'est GRIMOBILE.
+
+Tarek (33:24.536)
+Roku, c'est bah c'est... bah Apple TV mais justement c'est Roku, c'est des petites... c'est des box TV aux US.
+
+David Leuliette (33:34.138)
+Ok, j'avais jamais entendu parler de ce truc. Ouais bah c'est pareil quand tu connais pas, tu vois. Mais ok, Capacitor et tout ça, Cordova tout ça, Kotlin flutter expo avec native forcément. Ok ouais c'est déjà pas mal la surface. ouais je savais pas que ça expandait ce niveau là quoi. Unity, j'avais pas du tout. En vrai, bros. Ouais.
+
+Armand PETIT (33:35.748)
+Je connaissais pas du tout.
+
+Armand PETIT (33:59.773)
+Allez, je mobile.
+
+Tarek (34:03.672)
+Galaxy Store, Amazon, c'est tout sur un sous Android aussi.
+
+David Leuliette (34:03.794)
+Ok.
+
+David Leuliette (34:08.746)
+Donc voilà, si vous faites une app pour Amazon Store, appelez-moi parce que je serais chaud que vous veniez en parler. J'ai fait une app Vega OS. En plus, elle est là. J'ai un Firestick TV quelque part là que j'ai fait un peu workshop à Londres. C'était folie. J'ai fait clic, install, boum, ça a marché. Je sais faire une app TV, mais bon.
+
+Armand PETIT (34:19.539)
+C'est fou
+
+David Leuliette (34:37.61)
+c'est de constater que trouver des clients comme ça, il vraiment faire de la petite vie. Mais au moins je sais que si j'ai besoin de revenus 4, je mettrai revenus 4 en premier direct. Ouais carrément, je ferai un monshot direct. Et donc on a un peu parlé des différences US, Europe. En 2026, c'est quoi là
+
+Armand PETIT (34:46.099)
+...
+
+Tarek (34:49.73)
+Ok, si il a
+
+David Leuliette (35:07.92)
+stratégie de monétisation, je vais la poser à vous deux. Vas-y Armensi, donc aujourd'hui t'es sitio, ouais, on va dire si t'as 500k de budget pour lancer une app en Europe, c'est quoi la stratégie de monétisation ? Ouais, tu vas me dire, ça dépend. On va dire sur Osly, on te file 500k pour, voilà, improve le système. Qu'est-ce que tu fais pour niveau d'utilisation ? Tu prends un app store, paiement, hybride, t'intègres une U4D1 ou t'attends de voir l'attraction.
+
+Armand PETIT (35:21.79)
+pas la classique.
+
+Armand PETIT (35:38.324)
+fraise que je fais 500 000 je pense c'est beaucoup tu vois et vu que nous du coup on a une app qui est vraiment en fait vu qu'on a on va avoir deux apps une app B2B donc côté prestataire on n'a pas forcément besoin de la mettre en avant parce que de façon ils vont venir l'utiliser parce que nos clients vont leur dire de l'utiliser par contre avec la B2C pour les résidents qui vont l'utiliser là pour le coup tu vois tu peux en fait faire un funnel du style mettre en avant tu vois du TikTok ads ou justement en fait les gens si on a envie d'avoir l'application
+
+En fait tu vas d'abord mettre une pub où tu vas juste faire des formats Vatican, que ce soit sur TikTok ou même autre. fait les gens tu vas les rediriger pour que derrière tu puisses capter leur intention, pourquoi ils veulent avoir l'application, pourquoi ils veulent avoir ça. Et comme on doit avoir un boîtier qui doit s'installer dans le bâtiment pour qu'ils puissent utiliser l'application, en ce cas je sais pas ils soumettent un formulaire ou choses comme ça. Le but c'est de se faire connaître par au final les résidents qui derrière vont nous permettre d'avoir une force pour convaincre les syndicats.
+
+David Leuliette (36:37.065)
+Mmmh, c'est bon.
+
+Armand PETIT (36:38.617)
+Donc je pense que ça serait plus ça, puis après maintenant en vrai, enfin je sais que TikTok c'est très fort pour réussir à capter des utilisateurs. Tant que tes indies, enfin peut-être que tu pourras en parler Tarek mais quand tes indies, Formal Vertigo ça marche de fou avec les créateurs UGC aussi. C'est très très puissant et quand t'as la bonne formule, ça marche du feu de Dieu.
+
+David Leuliette (37:01.115)
+Qu'est-ce que... Vas-y t'arrêtes, on te file ça sans cas... Qu'est-ce que tu fais ?
+
+Tarek (37:06.668)
+Alors, même si moi c'est plutôt côté indie, ma réponse elle rejoint clairement Armand. C'est qu'aujourd'hui avec l'IA, le code, c'est plus du tout le problème, les features, etc. Donc ça, sera vraiment une partie minime du budget. vraiment, ouais, ça burn des tokens. Il faut avoir des abonnements subventionnés type Claude Max.
+
+David Leuliette (37:23.953)
+Ouais ça burn des tokens quand même à ça, faut quand même... sais... Hé ça va vite !
+
+Armand PETIT (37:26.131)
+C'est pas fou.
+
+Tarek (37:36.28)
+Non, clairement ce sera 100%, pas 100%, mais en tout cas une énorme majorité en marketing, ce soit paye de marketing ou distribution, ou même de l'organique.
+
+David Leuliette (37:42.441)
+Ouais, distribution.
+
+Tarek (37:47.784)
+Donc de l'UGC, des paid ads, meta, TikTok, des collaborations avec des influenceurs, de tout. Et ensuite, en fait, c'est un cercle vertueux parce que si jamais ton app, elle a du succès, qu'elle a des ratings, etc. Elle remonte dans les rankings de l'app store. Si elle remonte, les gens tombent plus facilement dessus avec la recherche. Et puis après, tu fais partie du top tiers et tu n'as plus qu'à bien
+
+David Leuliette (38:18.729)
+Tu peux être sur la WWDC, Up Of The Year.
+
+Tarek (38:22.922)
+Ouais, un app design award éventuellement. ouais, c'est carrément ça. Et puis après, bah tu peux commencer à optimiser comédieurement, faire du web to web, des landing page, des funnels. Ouais.
+
+David Leuliette (38:36.041)
+de la b-testing tout ça et du coup on va parler un peu d'analytics ça gère quoi les analytics chez Revenu 4 est ce que tu as tout ? genre deep link et tout le merdier de comment les gens ils ont parce qu'en mobile ça c'est hyper compliqué faire la reconciliation d'exemple j'envoie un email et le mec il a un bordé dans mon app et il a subscribe pour faire le lien total c'est un enfer vas-y parle nous des analytics comment ça va
+
+Armand PETIT (38:38.131)
+...
+
+Tarek (39:04.28)
+T'as les ads attribution dans les analytics, t'as plusieurs types. On s'intègre à plusieurs providers, types apps flyer, etc. Et en fonction de ce que le SDK collecte, on surface ce que le SDK collecte tout simplement.
+
+Mais si tu veux aller plus loin, généralement tu vas devoir demander le ATT, le ATT Consent donc c'est App Tracking Transparency, c'est un truc qui fait du bruit il quelques années quand Apple l'a...
+
+la mis derrière une modale justement parce que désormais sur iOS depuis quelques versions tu dois demander à l'utilisateur le droit de le suivre via des cookies et via des petites traces laissées un peu partout c'est ce que Facebook fait c'est ce que tous les grands acteurs des ads font et ça quand tu le fais tu as juste à lancer ça lance une modale dans ton app
+
+Armand PETIT (40:22.419)
+Et ça c'est une config qu'il doit rajouter en plus et coup automatiquement revenue 4 le détecte. Comment ça fonctionne exactement ?
+
+Tarek (40:30.583)
+Tu appelles le bon call dans le SDK. Dans ton app, tu fais les bons calls. Ça peut être App Flyer, peut être Meta Ads, peut être Apple Search Ads, qui est le plus facile forcément parce que c'est intégré via Apple et donc Apple simplifie beaucoup son petit jardin.
+
+Armand PETIT (41:02.768)
+Ok.
+
+Armand PETIT (41:10.327)
+Ok.
+
+David Leuliette (41:11.28)
+Si je prends un exemple, je fais une campagne d'SMS et je veux traquer si ça fonctionne ou pas. c'est pareil, tu obligé d'avoir Hubs Flyer entre les deux pour récupérer l'info. Hubs Flyer, oui, il en a plein.
+
+Tarek (41:23.497)
+Oui, c'est via des providers. Après, moi, il faut que je mette un petit avertissement. C'est que le pod dans lequel je suis, au support, c'est le pod Implémentation SDK. Donc, c'est un pod où on s'occupe surtout des problèmes des utilisateurs avant. Donc, c'est le pod qui gère les analytics, l'attribution, etc. C'est un autre pod.
+
+Armand PETIT (41:50.484)
+après. C'est un sujet que tu vois assez, enfin tu le vois plus tard en fait. début tu ne te penches pas forcément là dessus, c'est vraiment quand tu vas aller chercher des trucs poussés.
+
+David Leuliette (41:50.5)
+Le problème de riche, le problème de riche. Ok. Oui, non, mais de toute façon, ces trucs-là, faut pas croire que c'est easy. C'est genre ouais, c'est Google c'est click-click, Google Analytics, dot quoi. ouais, c'est le mobile, c'est pouquet aussi, 15 milliards de trucs, c'est hyper compliqué.
+
+David Leuliette (42:11.28)
+oui !
+
+David Leuliette (42:14.856)
+Oui oui, clairement. oui oui, c'est sûr que les analytics ce n'est pas priorité des ones. Moi je pense que l'observabilité, ce serait quand même avant... Ouais si, si, faut mettre de l'observabilité... Avant, en on a perdu Tarik, il se parier vers Rejoin. Je pense que l'observabilité, ça doit être mis avant pour savoir si Tasta, qu'elle craque ou pas, Sentry et tout, machin. Avant de faire des logs type... Whatever pour...
+
+pour savoir ce qui se passe. De toute façon tu peux faire un peu des deux.
+
+Armand PETIT (42:44.077)
+maintenant on a ESO. Observe maintenant.
+
+David Leuliette (42:47.78)
+oui c'est vrai ça a été annoncé, ralala, armo il est chaud, armo il est cuty gauge sur euh... Bah oui bah next time to a next year vas-y tu nous joineras avec tout ça. Tarik aussi, Tarik l'année prochaine vas-y, debord. En plus ce sera payé par Revenu 4. Et alors le stand Revenu 4 il était incroyable. Il nous a fait des scratch cards et tout, il était franchement il était trop stylé. Euh à Krakow, Krakow en Pologne.
+
+Armand PETIT (42:51.091)
+C'est magnifique. J'étais pas là en plus.
+
+À !
+
+Tarek (43:08.481)
+C'était où ? Parce qu'il a tellement de conférences... Ah, à Crocov. Elle s'appelait comment ? Je crois que j'ai vu des tweets passer, me semble. App.js, ok, ok. Je viens du monde iOS, excusez-moi, je connais pas trop trop les...
+
+David Leuliette (43:16.889)
+AbJS.
+
+Donc euh... Ouais ouais, nan mais tu peux pas connaître toutes les conférences. Déjà en React Native y'en a beaucoup donc tu peux pas connaître toutes les conférences. En plus toi, t'es sur le Storefront Direct, enfin tu vois, toutes les... En fait en vrai, si tu voulais, pouvais aller à toutes les conférences quoi, vrai. Parce qu'il y en a tellement. En plus, revue du cut, il devait être un peu partout. Si t'as la droidcon dans le monde Android, t'en as 40 des droidcon un peu partout donc tu peux pas suivre tout...
+
+Armand PETIT (43:22.515)
+Ha ha ha
+
+David Leuliette (43:49.001)
+Il y a Maxime Colle qui pose une question, tu peux poser tes questions en live Maxime, pas de problème. On va passer aux questions rapides, 30 max. Alors c'est Armand, vu qu'il a rechangé de fenêtre, c'est toi qui commence. Fri trial ou Fri miom, lequel convertit selon vous ?
+
+Armand PETIT (44:13.549)
+Euh... j'ai envie de te dire ça dépend mais vas-y je vais te donner une réponse. Je vais te dire... Non non bah non non, je vais te dire Fritrial quand même. Je vais te dire Fritrial parce que d'expérience en fait, le fait que justement tu laisses... Enfin moi je suis plus déjà de base dans les hard paywall que les soft paywall, je trouve que ça marche mieux, d'espérance, sur les apps sur lesquels j'ai bossé. Et donc Fritrial, même si du coup ça reste du soft paywall, mettre une durée 3 jours par exemple...
+
+et direct enchaîner sur, bah en fait tu peux pas aller plus loin si tu payes. Je que ça marche beaucoup mieux parce qu'en fait l'utilisateur il est impliqué et du coup t'as pas de vanity metrics des gens qui utilisent juste et au final qui utilisent jamais.
+
+David Leuliette (44:50.108)
+Ouais, oui oui, je jamais, veux dire, t'arrêtes, confirmes ou pas ? Free trial ou free biome
+
+Tarek (44:56.645)
+Pareil, Free Trial, Hard Beowall, encore une fois c'est dans le SOSA, je crois que le Hard Beowall y convertit 5 fois mieux que le FreeMium.
+
+David Leuliette (44:59.208)
+Allez.
+
+David Leuliette (45:05.192)
+Le Sosa c'est le State of subscription app comme State of JS comme State of et c'est à Ovenucat qui le fait tous les ans, c'est un PDF de 40 000 pages avec des charts et tout. Franchement c'est hyper instructif à lire parce que tu te dis, il a plein de choses...
+
+Tarek (45:23.201)
+Il y a des bonnes leçons dedans pour tous les app-makers.
+
+David Leuliette (45:30.323)
+Donc en Europe en 2026, qu'est-ce qui performe le mieux ? Plan annuel ou mensuel ? Allez vas-y on va essayer de te deviner. Moi je dis c'est annuel qui performe le mieux. Armand tu dis quoi ? Annuel ou mensuel ? En Europe.
+
+Armand PETIT (45:47.091)
+Attends, quand tu dis qu'il performe le mieux, c'est quoi ? C'est le plus rentable pour le... pour la personne qui fait l'app du coup ? Comment tu vois ça toi ?
+
+David Leuliette (45:51.592)
+ce qui fonctionne le mieux, qui vende le plus.
+
+Armand PETIT (45:56.278)
+ce qui me vende le plus pour moi c'est le mensuel. Pour moi je tirerais mensuel.
+
+David Leuliette (45:58.584)
+Ouais alors, t'as rien que tu dis, c'est quoi ?
+
+Tarek (46:01.545)
+Alors moi j'ai préparé les stats donc je triche un peu, je triche un peu mais l'annuel il renouvelle plus que le mensuel mais le problème c'est que si l'annuel annule il revient presque jamais alors que le mensuel quand il annule il peut revenir il revient plus souvent que l'annuel
+
+Armand PETIT (46:06.047)
+Ah ah ah ah ah ah ah
+
+David Leuliette (46:11.879)
+Ouais parce que t'oublies, t'oublies.
+
+Armand PETIT (46:11.911)
+Ok.
+
+David Leuliette (46:17.287)
+Oui.
+
+Armand PETIT (46:22.097)
+Ça va, je gagne un demi-point, ça va.
+
+David Leuliette (46:25.415)
+Ouais j'aurais dû faire des trucs de points et tout mais euh... Ouais si c'est vrai parce que regarde moi c'est les trucs de... en ce moment c'est Disney +, je m'abonne un mois je pars direct parce que un, faut aller aux enfants sinon ils passent mille ans devant la télé hein. Du coup bah y'a plus de la terre d'aide donc c'est bon. Mais après ouais y'a early euh...
+
+Tarek (46:43.681)
+et s'il avait qu'un abonnement annuel, peut-être que tu ne prendrais même pas la peine de le faire.
+
+David Leuliette (46:49.347)
+ça dépend je suis assez sur le budget je check donc j'hésite pas à que tu aies même si je sais pas donc la question alors un outil une ressource qu'on recommande à dev qui veut comprendre sa monétisation armant à un truc
+
+Armand PETIT (47:01.459)
+intéressant.
+
+Armand PETIT (47:14.65)
+La doc de Revenu4. Sans vouloir mettre en avant Revenu4, si je dois mettre un outil ou une ressource, c'est celle-ci. Ce que j'aime beaucoup, et c'est pour ça je suis toujours allé vers Revenu4, c'est rien que par exemple, tu en as discuté au début du podcast, pour moi c'est hyper important quand tu développes, c'est la différence entre bien physique et bien numérique, qu'est-ce que tu vends. ça, Revenu4 t'explique extrêmement bien, il y a plein d'articles de blogs, c'est hyper complet.
+
+Et c'est pas forcément que la mise en avant de Revenu 4, c'est plus des articles généraux des fois sur le sujet des app mobiles en fait. Donc ouais. C'est ça, exactement. Donc je tirer ça, sinon ça me reviendra peut-être après mais j'ai pas plus.
+
+Tarek (47:49.505)
+les lire même sans intégrer au revenu 4.
+
+David Leuliette (47:58.216)
+Ouais non, la ressource c'est exactement ce qu'on a dit avant, le state of payment, revenue cat, 400... En plus ça fait genre 4 ans qu'il y ait... 3 ans ? Non. 2024 ? Je crois que j'avais 2024. 2004, 2025, ? Ouais. Plusieurs années que c'est fait. Donc euh...
+
+Tarek (48:11.622)
+en plus il a la version web donc tu peux la donner à un élève et poser tes questions si tu veux mais c'est ça ouais je dirais aussi le SOSA mais je parlerai aussi de Appfigures qui est une très bonne ressource aussi eux ils sont plutôt sur l'ASO et sur
+
+David Leuliette (48:17.159)
+Ah ouais ? Ah la la la la, incroyable quoi. Même pas besoin de Dragon Drop quoi, pfff, oh la la. Donc, App Store ou...
+
+Armand PETIT (48:32.051)
+...
+
+David Leuliette (48:49.735)
+oui, c'est comme AstroTools, TriAstro, TriAstroApp, truc du genre. Dans ces trucs-là, après, pareil, il 40 000 outils différents. Ok. Ouais, c'est ça, que tire. AppStore ou PlayStore, lequel est le plus dev-friendly pour les API ? Moi, je dirais que c'est quand même AppStore. Parce que...
+
+Tarek (49:00.305)
+Oui, il faut choisir parce que sinon t'es perdu.
+
+David Leuliette (49:16.455)
+Dans l'IPI, il Fastlane qui est mieux exposé, et en plus avec Expo, tu peux pull direct les metadata. Mais ça tombe, je me trompe pas. Armand, c'est quoi la meilleure, à ton avis, App Store ou Play Store, niveau DX ?
+
+Armand PETIT (49:27.187)
+niveau D que j'aurais dit App Store quand même. C'est mieux guidé.
+
+David Leuliette (49:29.883)
+Alors ta REC, c'est le bordel, toutes les docs de Google c'est inhabitable, tu ne jamais où...
+
+Armand PETIT (49:40.391)
+Non mais en plus c'est...
+
+Tarek (49:40.417)
+C'est pas moi qui l'ai dit. En tant que déva iOS, non en tant que ancien déva iOS, même encore déva iOS, je suis biaisé donc voilà c'est pas moi qui l'ai dit. Mais app store ouais.
+
+David Leuliette (49:40.647)
+Tu coffirmes ou alors on est des junior développeurs ?
+
+David Leuliette (49:51.811)
+Ouais ? Ok ouais. Bah ouf, ouch.
+
+Armand PETIT (49:53.828)
+En fait, dans Google, moi ce qui me dérange, c'est que tu vois quand tu dois faire des releases et tout, enfin quand tu débutes et que tu tagles ton compte Play Console pour la première fois, tu tu ton tableau de bord avec l'onboarding au début et tu dois d'abord créer une... alors tu as une release en test interne. Ensuite, il créer une release en test fermé ou ouvert. Après, faut... en fait, tu... voilà, déjà tu débutes, tu te comprends pas et du coup, il créer une version, mais du coup, tu peux rajouter un... enfin, c'est un peu le bordel. Alors que sur Apple, c'est quoi ? C'est TestFly, Prod, Bastard.
+
+David Leuliette (50:12.536)
+Ouais, tu sais jamais, c'est colladif déjà ! Pourquoi ?
+
+Armand PETIT (50:24.338)
+Y'a pas de... Y'a pas de chichi quoi.
+
+David Leuliette (50:25.882)
+Ouais, j'avoue même si pour on-boarder des gens c'est plus facile sur Google. Parce que tu as un lien à partager, boum c'est bon quoi. Dans TestFlight il faut inviter les gens, après ça dépend. En fait, un public ouais, ouais un public. Mais sinon le truc c'est que du coup quand tu fais ton build public il faut refaire un build public, enfin il faut aller connecter la console en fait c'est chiant. Ouais, enfin là faut pas se... Ouais, trop long.
+
+Tarek (50:27.969)
+pour une force de plus simple.
+
+Tarek (50:37.281)
+Alors, il y a un lien, tu peux faire un lien aussi pour TESLAIT PUBLIQUE.
+
+Tarek (50:49.889)
+et il passer une petite review qui est normalement plus légère.
+
+Armand PETIT (50:52.915)
+...
+
+David Leuliette (50:55.238)
+que ça va faire moi. Mais ça dépend, ça dépend de l'audience. S'il y avait un flow, toutes les deux semaines on fait un truc public et tout, ça carrément je le ferais mais là moi je n'avais pas à le faire. Revenu 4, à partir de quelle taille d'app ça fait sens de vraiment l'intégrer ? moi un chiffre armant. partir de combien ? Moi je le mets de 1. hop.
+
+Armand PETIT (51:05.843)
+...
+
+Armand PETIT (51:21.907)
+Bah ouais, c'est un mode... Tu sais qu'il va y avoir du paiement, tu le mets hein. Ouais, des ones.
+
+David Leuliette (51:27.138)
+Mais... bah voilà, ça coûte... bah c'est quand ce qu'on disait ! Vous êtes trop petits les habits ! Allez, va récupérer tes sentibles, pour te payer je sais pas quoi, tes noms de domaine. Vas-y dis-nous.
+
+Tarek (51:27.384)
+Début ça coûte rien
+
+Tarek (51:40.316)
+En fait, revenu 4 ça fait partie des services où tu es content de payer parce que si tu commences à payer ça veut dire que tu commences à faire de l'argent. Je crois que le seuil, si je ne me trompe pas, il est à 2500 dollars de revenu mensuel. Donc tu commences à payer à partir de ça. Donc ça va, c'est quand confortable.
+
+Armand PETIT (52:04.884)
+Ouais ça va. Et puis c'est quoi ? C'est 1 % ? C'est ça ?
+
+David Leuliette (52:12.196)
+Ouais, de toute façon c'est no brainer versus 1, tu peux pas le faire tout seul. Et y Patrick, le sein dans le chat, il nous dit sur les abonnements weekly, ça marche très bien aussi. C'est vrai que j'ai commencé à voir ça, en gros, que ça découpe le truc, tu peux payer à la semaine aussi. Je pense que ça va dépendre. Genre, sais que moi les plans weekly j'avais utilisé pour une app qui fait Slopes, la best app pour traquer quand tu fais du ski. Ouais, tu connais, elle est folle cette app.
+
+Et weekly, parce qu'en fait c'est pareil le business il weekly genre tu vas pas prendre un abonnement. Enfin moi je suis pas au ski tous les... C'est ça. Et donc j'avais juste besoin d'une semaine et voilà du coup weekly payment.
+
+Tarek (52:51.617)
+autre rap aussi qui très connu qui est FLYTEA Moi je ne pas toutes les deux semaines mais quand je vole j'aime bien savoir où est mon vol est-ce que mon avion est à l'heure est-ce qu'il a du retard quelle est la porte vers laquelle je dois aller le tapis de bagages etc et FLYTEA c'est pareil tu prends un abonnement à la semaine il me semble ça coûte un truc genre
+
+David Leuliette (52:54.223)
+Oui.
+
+David Leuliette (53:23.13)
+pour un truc vraiment spécifique.
+
+Là c'est la partie carte blanche, est-ce qu'il a un sujet que vous vouliez absolument aborder et qui vous tient à cœur ? vous laisse le armant. Vas-y, tu peux faire un funnel de questions là, c'est parti.
+
+Armand PETIT (53:40.692)
+En fait, surtout la grosse question c'était sur la partie Europe et les DMA. du coup, fait, t'as rien qui a répondu. J'ai pas plus de questions comme ça. Moi, si j'avais juste une question, c'est il n'y a pas longtemps, j'ai dû intégrer des... Tu sais, tu peux mettre des codes promo aussi, parce qu'on n'en parle pas. Là, on a parlé beaucoup d'abonnements. tu les codes promo et en fait, il y a une différence entre la gestion des codes promo côté Android et côté iOS.
+
+Est-ce que c'est... enfin moi j'ai trouvé ça assez galère des fois parce que ils ont pas les mêmes règles. Alors du coup Revenu 4 c'est parfait, enfin c'est parfait parce que t'as la même... enfin c'est un seul SDK quoi, c'est comme tu l'as dit, c'est une lique qui permet de lire les deux. Mais je crois que la gestion native n'est pas la même entre les deux si je dis pas de bêtises. Et du coup est-ce que t'as beaucoup de retours vis-à-vis de ça ? Ou c'est juste moi qui ai pas capté très bien comment ça fonctionnait parce que j'ai mis un peu plus de temps que...
+
+Tarek (54:35.458)
+pas que toi, les codes promo c'est compliqué et d'ailleurs Apple a fait une refonte relativement récemment, je crois que c'était l'année dernière, ils ont remplacé les offer codes par les promo codes ou l'inverse je sais plus et ils ont refait tout le et alors maintenant c'est censé être alors c'est mieux pensé le système après est-ce que le système est très stable ?
+
+Armand PETIT (54:48.051)
+Ok.
+
+Armand PETIT (55:07.303)
+Hmm.
+
+Armand PETIT (55:25.491)
+Pour ceux qui nous écoutent, a les codes d'introduction. Tu tu plusieurs types de codes. en as plusieurs. Ouais, parce qu'il y a ça aussi.
+
+Tarek (55:34.616)
+Ah, ça c'est autre chose. Ça c'est autre chose. En fait, ça c'est pas les codes, ça c'est les offers peut-être que tu parles. C'est-à-dire quand tu fais la première année à 50%, ou bien Free Trial ça fait partie de ça aussi. Et chez Google, tu as encore autre chose, tu as le multi-phase. Donc, un mois gratuit, un mois à 50%, un mois à...
+
+Armand PETIT (55:43.101)
+Ou les offeurs,
+
+David Leuliette (55:44.912)
+oui.
+
+Tarek (56:00.401)
+tarif plein etc et ça il faut creuser ou alors il faut rester simple et faire du free trial
+
+dirais que, parce que oui, il a beaucoup de choses qui sont possibles chez Apple comme chez Google. Le plus important c'est d'arriver à savoir ce que toi tu veux faire, ce qui va vraiment bénéficier à tes utilisateurs. Et une fois que tu as ça, rechercher ce qu'il possible de faire sur les stores. Ce serait comme ça que j'aborderais la question.
+
+Armand PETIT (56:26.931)
+...
+
+Armand PETIT (56:38.035)
+Ouais mais en fait c'est que maintenant avec Lya on est tellement habitué à... tu demandes un truc, il y va. Là il n'y a pas dit à la fois aller fouiller dans la doc comme à l'ancienne. Et faut bien comprendre les concepts parce que comme tu l'as dit c'est pas des trucs qu'on fait de base.
+
+David Leuliette (56:50.769)
+Et puis il faut que tout soit à jour en plus. Est-ce que tout monde est en SDK 56 les amis ? Sinon allez sur Wish me today et cliquez sur le bouton, on peut vous aider là dessus.
+
+Tarek (57:03.601)
+Ce qui bien c'est que quand tu le fais une fois, ensuite tu ne le touches plus normalement.
+
+David Leuliette (57:09.196)
+Ouais normalement, ouais, ça je connais, ouais ça va, ouais, on me l'a fait aussi, j'étais webmaster avant monsieur, normalement, sais. Bah si, en fait ça marche, mais ça dépend, c'est le lifetime forever, non, parce que comme on vient de dire, les API peuvent changer, machin, si t'es plus actif, si tu fais pas de release de ton app au bout d'un an, Google, là c'est nouveau, ils te ferment carrément son compte, ça dégage.
+
+Armand PETIT (57:11.827)
+...
+
+Tarek (57:13.217)
+...
+
+David Leuliette (57:38.022)
+Donc c'est pas infini non plus. Tarek du coup tu as un sujet carte blanche que tu voulais aborder.
+
+Tarek (57:46.289)
+C'est pas vraiment une question, c'est plus une remarque. Le secteur des apps est en train d'exploser. Tout monde commence à faire son app avec les outils de vibecoding, avec Lya, etc. C'est très très bien. Je dirais juste un petit conseil aux vibecoders, déjà bienvenue à vous. Vous allez vous amuser, c'est très bien.
+
+La compréhension du code n'est pas obligatoire, pense. L'IA fait ça très bien aujourd'hui. Par contre, comprendre le store, comprendre les mécaniques, comprendre les subscriptions, l'acquisition, tout ça, la distribution, ça c'est crucial. L'IA ne pas le faire pour vous.
+
+et voilà concentrez-vous là dessus si vous voulez arriver à quelque chose parce que venant de quelqu'un qui a un MRR très très bas ça peut être mon conseil c'est de se concentrer là dessus parce que c'est là que vous ferez la différence parce qu'aujourd'hui le code avoir une app qui tourne c'est vraiment plus difficile mais avoir une app qui marche ça l'est plus que jamais
+
+David Leuliette (58:58.278)
+Ouais, enfin... oui, avec... maintenant la barrière, enfin le premier marche de la qualité, faut qu'elle soit vraiment folle, quoi. Une appauquetteière qui ressemble à un truc du vieux WordPress qui date de 2012, qui ressemble au fameux site pro des impôts, hein ? Voilà, ça c'est juste parce que... Allez, bim ! Allez, j'étais obligé de le casser, celle-là. Euh... Non, j'ai encore eu un problème, je te jure, ça me sou... ça me rend dingue. Mais...
+
+Tarek (59:15.681)
+Voilà, c'est gratuit !
+
+Armand PETIT (59:16.541)
+T'avais envie de la mettre celle-là.
+
+Tarek (59:24.723)
+Le site pro mais particulier aussi.
+
+David Leuliette (59:27.372)
+Ouais, le site particulier, est encore mieux que le pro, sachant qu'il est pété aussi le site particulier. Mais ouais, distribution, MRR, c'est code X distribution, une distribution hyper important. Voilà, super. Qui sait qu'on doit inviter par la suite ? Est-ce que tu as une idée, Tarek, et la question que tu lui poserais ?
+
+Tarek (59:55.777)
+C'est toujours lié aux apps, je ne pas s'il code en React Native, je ne pas sûr, mais c'est un indie dev qui s'appelle Damien qui est actif sur Twitter. Enfin, son pseudo c'est Damts, j'imagine que c'est Damien.
+
+David Leuliette (01:00:02.266)
+Enfin, s'il fait du mobile, ouais.
+
+Tarek (01:00:22.344)
+ce que j'ai pu comprendre et lui ça pourrait être... ouais alors je t'enverrai son pseudo, attends je vais essayer de le trouver en live. Ce serait intéressant de connaître son histoire, voir un peu comment il approche ça, voir un peu sa stratégie.
+
+David Leuliette (01:00:23.577)
+C'est quoi D-A-M-S ?
+
+David Leuliette (01:00:47.717)
+Comme question, demande c'est quoi sa stratégie d'acquisition. Allez bim, en 2026. C'est bien ça ?
+
+Tarek (01:00:53.121)
+...
+
+David Leuliette (01:01:01.176)
+bah voilà, Dams Underscore App. bah voilà, allez hop, ils dans le tchat pour ceux qui sont en live.
+
+Ok, aller, bim, follow, creating, signes vidéo, iOS, dev. il fait de l'iOS. Parfait, trop bien. Vas-y, on notera ça. Où est-ce qu'on vous retrouve, les amis Armand ? C'est toujours sur LinkedIn.
+
+Armand PETIT (01:01:29.213)
+Toujours sur LinkedIn pour donner de la valeur et des légendes.
+
+David Leuliette (01:01:32.895)
+C'est bien, stylé, stylé. Sur le site, c'est toujours le même.
+
+Armand PETIT (01:01:37.845)
+le même, toujours le même exactement.
+
+David Leuliette (01:01:39.178)
+Osli Solutions, voilà. Si vous avez un syndic un nul et que vous voulez aller dans le futur... mais vous avez refait le site ou pas là, non ? il est pas mal là le truc, la vibe et tout derrière. Franchement on aime bien. Allez-y les amis, allez voir le site franchement. En plus, ça charge Crazy Fast. Tu vois, ça va. Et... Et...
+
+Armand PETIT (01:01:46.469)
+Ouais j'ai refait le site.
+
+Armand PETIT (01:01:52.787)
+Ça claque hein. Merci de chat GPT image hein.
+
+Armand PETIT (01:02:04.148)
+C'est du WP.
+
+David Leuliette (01:02:07.414)
+Et... ça va, niveau animation ça va, parce que moi les trucs qui freaking out partout ça me rend ouf, mais là ça va, c'est assez smooth, vois, il y a juste l'intro et après c'est ok quoi. Parce que les trucs qui arrivent de tous les sens on en peut plus. Là il a la line, tu sais... Pas de scrolljacking, less is more, tout ce qu'on adore. Moi j'aurais peut-être pas mis sur la FAQ mais c'est juste un choix personnel. Tarek, où est-ce qu'on te retrouve sur les internets ?
+
+Tarek (01:02:20.673)
+Il n'y a pas de scrolling donc moi ça me va.
+
+Tarek (01:02:35.778)
+un peu partout mais ouais je dirais principalement X
+
+Armand PETIT (01:02:42.323)
+...
+
+David Leuliette (01:02:47.671)
+Bilkisium, B-I-L-K-I-S-I-M, ce sera dans les notes de l'épisode. C'est vrai que l'app, elle est juste sur Mac en fait, c'est une app Mac ou une app iOS ? On en pas trop.
+
+Tarek (01:03:00.257)
+C'est un micro ? Non, non, c'est une APIOS aussi.
+
+David Leuliette (01:03:03.007)
+Ok ouais, oui du coup mais la magie c'est que... les sur Mac aussi ? ok, excellent, bah voilà.
+
+Tarek (01:03:06.805)
+Oui, c'est une app universelle. Mais le Mac a une mise à jour de retard. que j'ai... Si j'ai fait quelques ventes sur iOS, mais aucune sur Mac.
+
+David Leuliette (01:03:18.117)
+Ouais, bah parce que oui, ok logique. Ok, excellent. Si vous avez appris quelque chose de nouveau les amis, mettez, oubliez pas de mettre 5 étoiles sur Spotify, pardon, 5 étoiles sur un podcast. Si vous faites du vibe code aussi, mettez-moi 5 étoiles. Parce qu'il a Patrick qui dit qu'il faut le vibe code et 12 K de MRR. Ouais bah, hé, hé, ça c'est un beau post LinkedIn, vas-y.
+
+Avant de se quitter, donnez-nous un teaser, une phrase mémorable. Qu'est-ce que vous avez shippé dans les 30 prochains jours Tarek ? Vas-y, qu'est-ce que tu vas faire les 30 prochains jours ? 30 apps, une par jour, une par jour pour chaque client.
+
+Tarek (01:04:00.521)
+Alors moi je suis en train de presque, dans les 30 prochains jours je vais essayer de au moins une et dans l'idéal deux apps, pourquoi pas. J'ai une nouvelle stratégie pour trouver des niches, on va voir si ça marche. Je suis en train d'expérimenter là, j'ai...
+
+David Leuliette (01:04:23.383)
+Pendant qu'on faisait le tol... bah voilà, ok sans appuyer sur enter, excellent. Ok vas-y Armand, Armand est-ce que ça ship quand ça dort ou... Pas encore.
+
+Armand PETIT (01:04:32.787)
+Moi ça ship pas mal, sprochly en ce moment mais aussi pas mal pour Crisp. A côté je suis en freelance du coup et j'ai la compagne Crisp sur leur SDK donc il y a des petites modifications à faire. Je vais tourner une vidéo avec eux mi-juin pour présenter le SDK. Et à côté peut-être une app aussi, une app de soirée, j'ai une idée depuis longtemps. du coup là je me forme sur la partie marketing quand j'ai du temps. que de toute façon comme la littérac c'est plus important. Donc j'essaie de sortir ça cet été.
+
+David Leuliette (01:05:03.684)
+Ok, et bien parfait, a parlé... Ah tiens, la notif Cloud Code, c'est bon, c'est bon, ça a été payé. Les quotas sont remis à zéro, youhou ! Allez, c'est reparti ! Ok, bah les cops, ça colosse l'épisode, les amis, on se retrouve à la prochaine, ciao à tous !
+
+Armand PETIT (01:05:12.179)
+Let's go!
+
+Tarek (01:05:12.897)
+Yes, c'est parti !
+
+Armand PETIT (01:05:24.019)
+...
+

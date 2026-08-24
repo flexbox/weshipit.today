@@ -1,0 +1,687 @@
+David Leuliette (00:00.964)
+Ah si je sais ! Ça y est pour ceux qui ne pas, j'ai 40 ans je dois mettre des lunettes. Bim j'ai plus 0,5, plus 0, attend moins 0,5 pardon. gauche ou droit du coup c'est parti. Je vais mettre des lunettes les amis. Bonjour et bienvenue dans le cross-platform show, l'émission dédiée au développement d'applications mobiles avec Racknative, nous sommes en mars 2026. Je suis avec Xavier, collègue de... attends c'était quand ? Il a 10 ans ? Non. Oh ouais, ouais 5 ans. Oui oui oui.
+
+Xavier Carpentier (00:27.182)
+5 ans peut-être.
+
+David Leuliette (00:31.46)
+Il y a plus de cinq années qu'on a travaillé ensemble. C'était Expo 30, 34, 35, je ne sais pas. Un truc du genre... Comment ça va Xavier ?
+
+Xavier Carpentier (00:40.481)
+Xavier Carpentier (00:48.814)
+Ben écoute, ça va bien. Je fais quasiment plus d'expo donc... Mais je vais peut-être bientôt en refaire en fait. t'ai dit ça. Ouais, je t'ai dit ça. Mais... sur un projet sympa où ça va être vraiment depuis le tout début. Mais bon, avec l'aide de l'IA, on va essayer de convertir un projet web en projet expo.
+
+David Leuliette (01:00.085)
+voilà, du coup c'est bon.
+
+David Leuliette (01:17.604)
+Ok.
+
+Xavier Carpentier (01:18.382)
+Mais là actuellement je suis, ça fait un an et demi, deux ans, j'ai eu des petites missions dernièrement sur du expo, enfin pas sur du expo, sur Direct Native à nu.
+
+David Leuliette (01:26.852)
+Ok super. Direct Native tout court. Ah bah super, excellent. Parce que le sujet du titre, c'est officiel. On est déjà en live et tout, donc c'est 10 ans de... Presque ! Eh ! C'est pas un titre mensonger, c'est presque 10 ans de Direct Native en production, avec des retours au terrain. Donc... Excellent. Bah qu'est-ce que tu dis C'est quoi ta définition de Direct Native en 2026 ? Si tu le devais dire en une phrase.
+
+Xavier Carpentier (01:44.494)
+Oui.
+
+Xavier Carpentier (01:56.814)
+Ça reste un outil pour moi qui est super intéressant pour pouvoir développer rapidement des applications encore plus. commence avec le contexte IA parce que React, quand même, il est là depuis un moment en open source. Du coup, on a pas mal de bons contextes, de bonnes documentations. Et pour faire des applications multiplatformes, surtout avec les dernières évolutions.
+
+et la dernière architecture, ça, c'est vraiment une bonne plateforme. Donc je pense que si on devait faire repartir d'un projet de zéro, enfin en tout cas, dans mon point de vue, il a pas faux tout, ça reste encore une techno.
+
+David Leuliette (02:36.171)
+Ouais, Variant Project, j'avoue. Parce qu'au tout début, t'as commencé en faisant du...
+
+C'est quoi la techno que tu m'avais dit au tout d'avant ? C'était Dev Backend Scala c'est ça si je me souviens bien ?
+
+Xavier Carpentier (02:48.824)
+Oui, en fait j'étais full stack, je suis toujours un peu full stack mais après je me suis spécialisé sur des applications mobiles. Mais grosso modo j'ai touché un peu au tout début de React Native vraiment au moment où on ne faire que du iOS et c'était un peu en concurrence avec Ionic à l'époque, ça s'appelle plus Ionic maintenant, c'est... Non même plus, c'est un autre... ils ont encore changé.
+
+David Leuliette (03:05.251)
+Cordova. Non. Attends. non, ils ont cho... Ouais, Je... Ok.
+
+Xavier Carpentier (03:14.961)
+du WebView. Quand c'est sorti, j'avais un peu joué avec et j'ai eu mon premier client, c'était que du EOS à l'époque. J'étais vraiment au tout début de Rack Native. Avant ça, j'avais pas tant de doute technologies, c'était juste des essais sur d'autres. Mais grosso modo, j'ai trouvé que...
+
+Déjà à l'époque, c'était quand même assez fun. C'était fun de pouvoir faire du... Comment dire ? D'appeler des composants natifs depuis JS et tout ça. C'était plutôt pas mal. À l'époque, je te raconte pas, il n'y avait pas de typage dans le JS. Il avait du flow. Moi j'ai utilisé flow à l'époque pour le typage au tout début. Mais n'était pas du tout facile comme ça l'est avec TypeScript aujourd'hui.
+
+David Leuliette (03:51.647)
+non, je sais, je connais.
+
+Xavier Carpentier (04:05.226)
+Donc oui, je te dis ça, c'est presque le siècle dernier.
+
+David Leuliette (04:10.212)
+Et donc pourquoi, c'était quoi l'élément déclencheur ? Tu t'es dit, ouais le mobile c'est sérieux ? C'était une opportunité ou c'était, tu t'es dit, ouais là je vois qu'il a plus de gens qui utilisent le mobile.
+
+Xavier Carpentier (04:21.678)
+Au tout début, c'était vraiment la bascule entre deux frameworks, soit faire du WebView avec AngularJS, au tout début d'AngularJS, j'ai AngularJS 1, et React commençait vraiment à devenir intéressant.
+
+et je me suis dit mais si vraiment ça c'était surtout porté par par facebook et je trouve que c'était plutôt pas mal d'avoir la concurrence entre les deux donc j'ai testé j'ai trouvé clairement que ça avait plus de ça c'était forcément plus performant parce que tu passais pas par les couches de webview et t'appelait directement les composants et j'ai embrassé dès le début l'idée de pouvoir faire du natif et faire des composants qui vont évoluer
+
+avec les OS, voilà toutes ces parties là, j'étais assez rapidement convertible, c'était facile. Et après Android est arrivé, puis ça a pu me nuire. Après ça avait le vent en poupe, il y avait plein de gens qui voulaient l'utiliser. Donc c'était le bon pari.
+
+David Leuliette (05:22.308)
+Après ça a fonctionné, ça a dépilé.
+
+David Leuliette (05:32.036)
+Après dix ans, prod, tu vois en 2020. Ah, vas-y, on veut savoir les pièges et les choses sous-estimées. Vas-y, dis tout tout.
+
+Xavier Carpentier (05:34.179)
+aujourd'hui je le dis mais par contre il y a quand même des écueils
+
+Oui alors en fait tout ce qui est performance au niveau du bridge, de toute façon on le sait, c'est pour ça qu'on change d'archi, tout ce qui est par exemple si tu veux faire de l'écoute des capteurs sensoriels genre accéléromètre, gyroscope, si tu veux le faire en temps réel, c'est pas une bonne idée de stocker par exemple les données via le bridge ou vouloir
+
+le faire totalement full côté JS. J'ai des expériences comme ça où on a frisé les interfaces, où on a dû revoir un peu l'architecture. C'est ça l'avantage, c'est que t'es pas bloqué sur le JS Core. Tu peux aller dans du natif. Donc on est allé sur du natif.
+
+pour pouvoir collecter les données en natif et après quand même être capable de le driver côté JS. tu collectes et après tu récupères la donnée, tu la stockes au niveau natif et tu envoies le lien du fichier stocké. Tu ne aucun échange par contre entre les deux stacks.
+
+Mais ce qui intéressant, c'est que vu que c'est côté natif, c'est hyper performant. Pour la collecte de données sensorielles, c'est, voilà, je te raconte, de 50 Hz sur du gyroscope. C'était une application de collecte de données dans un contexte de test cognitif. Donc il y avait des applications où...
+
+David Leuliette (07:08.484)
+Si au pire tu veux...
+
+David Leuliette (07:27.15)
+Et coup...
+
+Xavier Carpentier (07:30.366)
+où tu collectais les données des utilisateurs touchés à l'écran, des jeux de pinch par exemple, des choses comme ça, qui étaient en parallèle de la collecte des données sensorielles. Donc c'était pour des maladies neurodégénératives, c'était pour un assez gros client, biogène. Et ça effectivement, au niveau des perfs, on n'était pas bon au tout début.
+
+David Leuliette (07:55.853)
+Et Nitro Module, c'était pas encore sorti à l'époque, c'est ça ?
+
+Xavier Carpentier (07:59.306)
+Nitro Module.
+
+David Leuliette (08:00.804)
+C'est un framework fait par Margielo, enfin Mark Roussavi, celui qui fait plein d'autres librairies, qui fait librairies mais vision caméra. Et en fait, c'est des native modules mais rapides type safe avec les bindings JavaScript. voilà, non, c'est assez récent quand même, c'est nitro.margielo.com
+
+Xavier Carpentier (08:13.102)
+Mmh.
+
+Xavier Carpentier (08:20.251)
+Je ne pas, mais certainement par exemple. C'est récent ?
+
+David Leuliette (08:31.746)
+Et voilà, ça permet d'avoir une API la même et que ça compile plus rapidement. Mais je pense que quand tu as dû le faire, ça ne va pas exister. Sûr et certain.
+
+Xavier Carpentier (08:37.038)
+D'accord.
+
+Xavier Carpentier (08:41.418)
+Ouais, soit ça, soit ça répondait pas mais je crois pas que ça listait. Soit ça répondait peut-être pas aux besoins, enfin je connais pas trop en fait donc je peux pas te dire. Des coups en live.
+
+David Leuliette (08:45.344)
+Ouais non, c'est sûr.
+
+David Leuliette (08:49.92)
+Et donc, ouais, à l'époque, quand tu l'avais fait, t'as dû réécrire, c'est ça ? T'as dû réécrire toute ta couche.
+
+Xavier Carpentier (08:54.286)
+Ce qu'on a fait, c'est qu'on a réécrit la partie collecte de données de capteurs en Swift et en Kotlin. Effectivement, on a écrit un peu de deux fois. On l'a fait en sorte que ce soit clean, que ça respecte la même architecture. C'est-à-dire qu'au côté Swift et Kotlin, on avait une architecture...
+
+modulaires orientés un peu à la clean architecture avec des factories, des adapteurs, mêmes interfaces, toute façon il fallait qu'on ait exactement les mêmes interfaces. Donc c'était plutôt lisible des deux côtés en réalité, les deux langages se ressemblent beaucoup, Swift et Clean franchement.
+
+Et voilà, à part ça, on a quand même aussi fait un autre module dans la même idée. fait, on avait besoin de faire des calculs sur cette masse de données, mais le faire le même algo dans les deux langages était plutôt pénible, donc on avait choisi.
+
+de le faire en Rust. gros, on lui confie une librairie Rust qu'on met à disposition des deux plateformes. C'est la même librairie de calcul, par exemple des calculs de distance. Un des tests, c'était, tu mets le téléphone dans ta poche pendant 6 minutes et tu fais le tour du quartier. Le calcul de distance, ça permettait de, la fois, ça collectait pas seulement les données sensorielles, ça collectait aussi les données GPS. Alors le tracé du...
+
+David Leuliette (09:56.143)
+Ok.
+
+Xavier Carpentier (10:24.602)
+parcours et c'est quand même sur 6 minutes à 50 Hz donc c'est genre beaucoup de données et là dans Rust ça se trouve que c'était pinot pour lui. Donc on a fait ça un module en Rust, compilé dans les deux plateformes. C'était assez challengeant en terme de techno, c'était plutôt pas mal, ça va beaucoup plus loin qu'une application React Native classique donc on est vraiment à les bas niveaux.
+
+Donc, l'Algo en lui-même, ce pas moi qui l'ai développé. Moi, j'ai intégré la Lib. C'était les data scientists qui ont développé l'Algo en Rust. Moi, j'ai pris la Lib, je l'ai intégré dans notre module en Kotlin en Swift. J'ai un peu touché à Rust quand même parce que des fois, il a des choses qui n'étaient pas toutes bien.
+
+Mais je trouve qu'on a quand même cette liberté et quand on a des trucs un peu comme ça, va dire des modules de calcul qu'on a besoin de faire offline parce qu'on a besoin d'avoir un résultat, on n'a pas envie d'attendre que le...
+
+la partie back-end, serveur nous fait le calcul, récupère la donnée, il y a les de l'attente réseau, on peut faire déjà avec la donnée qu'on a des choses en local. Ça peut être intéressant si on a des grosses données d'explorer ça, qu'effectivement Rust, tu peux le compiler dans plusieurs plateformes et peux l'utiliser finalement en natif. Voilà.
+
+David Leuliette (11:50.283)
+Excellent, ça je savais pas. Si c'est... Ouais, non mais tu pouvais pas savoir. Les débuts tu pouvais pas savoir. que question que j'aurais eue c'était si t'avais... Ce que t'aurais fait différemment si c'était à refaire. Mais le truc c'est que tu pouvais pas savoir avant. Ouais, mais c'était peut-être pas sorti, c'était quand à l'époque ? C'était... Il me semble que ça j'ai vu à AbJS il y a deux ans. Il me semble, un truc du genre. Vraiment.
+
+Xavier Carpentier (12:06.407)
+Là j'aurais exploré Nitro.
+
+Xavier Carpentier (12:12.366)
+Euh...
+
+Xavier Carpentier (12:20.326)
+Mais ouais j'aurais exploré ça, voir si ça correspond un peu à ça. Effectivement si tu as une interface côté front et que peux tout faire côté front c'est pas mal. Mais il n'y avait pas non plus une ou l'hélergie. Donc on passait par le bridge, il y aussi ça. On n'était pas en synchrone.
+
+David Leuliette (12:34.67)
+Ouais.
+
+Xavier Carpentier (12:41.268)
+Donc, gestion des événements dans un self-read frise de l'interface parce qu'on envoyait à fond plein d'événements. C'était aussi lié à l'archi, mais ça a été changé. Peut-être qu'aujourd'hui, on se pose la question, on se pose la question, est-ce que vraiment on va passer ça en natif parce que l'archi est meilleur maintenant ? Peut-être pas, peut-être qu'on ne l'aurait pas fait.
+
+David Leuliette (12:51.877)
+Trop de trucs, ouais trop de trucs.
+
+David Leuliette (13:09.679)
+Ouais, je vois. ouais donc tu me disais là pour une autre cliente, as vécu aussi une autre bascule quand t'es passé de Rack Native à Kotlin multiplatform, c'est ça ? Allez vas-y, dis nous tout. Pourquoi ? Probe. Ouais, truc de chat. Pour ceux qui connaissent pas, c'est une interface de chat avant que le chat soit cool.
+
+Xavier Carpentier (13:19.201)
+Oui.
+
+Xavier Carpentier (13:23.896)
+Oui, alors là c'était... En fait, moi je suis contributeur du projet React Native, la GIF de chat, je pas si tu vois ce que c'est le...
+
+David Leuliette (13:37.766)
+Avant que toutes les apps soient des apps de chat, il a un projet d'open source qui s'appelle Gifted Chat qui est fait pour faire des apps de chat. Donc de discussion, de discussion. Et maintenant, pense que ça va être réutilisé avec tous les AI modèles en messaging.
+
+Xavier Carpentier (13:39.182)
+Et nous allons.
+
+Xavier Carpentier (13:47.022)
+C'est un projet à la base.
+
+Xavier Carpentier (13:54.176)
+Oui mais moi je l'ai utilisé à fond, je l'ai tweaked, mais c'était bien avant la sortie de ChatGPT. J'ai failli au tout début avoir un client comme ça qui me disait oui, au tout début de ChatGPT il voulait l'utiliser finalement, mais oui c'était bien avant ça. sur le projet...
+
+David Leuliette (14:01.711)
+Allez.
+
+David Leuliette (14:13.059)
+Et donc c'est une librairie
+
+Xavier Carpentier (14:17.51)
+C'est Ouais, j'ai fait en open source, moi ce que j'avais fait, c'était que j'avais au début, c'était encore la... avant de passer sur du flatlist, c'était encore la scroll view. Donc, c'était pas hyper performant. il y avait des problèmes de perf, pas mal d'issues dessus. ça, on est passé en flatlist. Après, on a aussi un petit peu amélioré certaines fonctionnalités. Par exemple, on a ajouté du...
+
+Pour un autre client on avait besoin d'avoir une fonctionnalité de quick reply, un peu comme un BOD justement, où n'as pas besoin de rentrer quelque chose dans ton input.
+
+avoir des options de réponse intégrée. a pas mal de choses comme ça qui ont été ajoutées et c'est quand vachement utilisé en GIF de chat même si aujourd'hui je pense que ça se justifierait de ne le prendre parce que l'IA pourrait faire la chose mais moi je pencherais quand même j'aimerais bien qu'on aborde ce sujet là par rapport à l'IA par rapport à à est ce qu'on code tout dans le projet vu que l'IA qui
+
+peut le faire mieux que n'importe quelle librairie ou est-ce qu'on utilise des librairies qui le font ? Et là j'ai une opinion sur ça, parce que pour moi en fait, je ne souviens plus de ta question à l'origine mais j'enchaîne sur ça, pour moi en fait, et je le vois dans mes projets, c'est que pour moi, c'est mon expérience mais on l'entend aussi, c'est la gestion du contexte. En fait quand tu travailles avec une IA derrière, as...
+
+David Leuliette (15:35.013)
+Vas-y.
+
+Xavier Carpentier (15:56.91)
+tu as besoin de lui fournir vraiment un contexte le plus propre possible pour qu'elle consomme le moins de tokens possible. C'est là qu'intervient ta librairie. C'est-à-dire que si toi tu codes toi-même ton chat, d'ailleurs j'ai écouté votre podcast la dernière fois et ton collègue Mathis, non ?
+
+David Leuliette (16:13.999)
+Ouais Mathis, c'est possible. Oui il a recode, il a repiré.
+
+Xavier Carpentier (16:16.59)
+il a codé tout, recodé un chat, je me dis oui effectivement ça se discute. Je me dis oui et non parce que si vraiment ta feature centrale au niveau de ton client, c'est pas le chat, ça vaut le coup en fait d'utiliser Nib parce qu'alors tu vas concentrer tous tes tokens sur les features du client.
+
+et éviter de polluer le contexte de... Ça va juste un appel de librairie et puis pas l'intelligence d'un chat s'il plaît. Voilà, donc ça se justifie d'avoir des librairies encore aujourd'hui dans le de l'IA plutôt que de faire parce que l'IA sait tout faire. Et je le vois dans mes projets par exemple là. On a une interface web avec... On a une API derrière.
+
+David Leuliette (16:44.965)
+Ouais, pas l'intégralité.
+
+Xavier Carpentier (17:06.542)
+on voudrait quand même que le contexte soit concentré sur l'UX, l'UXutilisers. Donc ce qu'on fait, au lieu de dire au web d'aller chercher directement les informations sur la PII, on fait un middleware au milieu qui va gérer tous les échanges un peu inutiles au niveau features, les échanges de tokens, les choses qui sont vraiment purement techniques avec un middleware. Je le mets de côté.
+
+et moi je me focus, je fais en sorte que mon IA soit focalisé sur le contexte de la future. Uniquement sur ça. Du coup, trouve que ça redonne un petit peu, moi j'ai fait beaucoup d'open source, ça redonne un petit peu de lumière sur l'open source en fait. Il a les deux chemins et j'argumente sur le fait que les librairies ça peut être intéressant dans le monde de l'IA parce que justement ça va te permettre d'économiser des tokens sur la future en même temps. Et c'était quoi ?
+
+David Leuliette (17:39.797)
+Oui, sur ce qu'elle a besoin, je vous...
+
+David Leuliette (18:01.573)
+Ah oui, carrément, a des choses qui sont déjà faites. La question c'était pourquoi RN to KMP. React native to Kotlin multiplatform. Vas-y, didou.
+
+Xavier Carpentier (18:10.008)
+oui, en fait, j'avais un client qui faisait un super chat, enfin ce n'est pas que un chat mais c'était des choses intéressantes et sur le chat en lui-même, surtout Android, il trouvait que des gros gros problèmes de performance, autant iOS mais sur les Androids un peu anciens ça devenait compliqué.
+
+Donc j'ai exploré un petit peu pendant un mois comment faire pour améliorer la librairie. Donc j'allais essayer d'utiliser les dernières librairies de listes qui sont sorties. Legend list, flashlist et legend list. J'ai essayé les deux.
+
+David Leuliette (18:55.717)
+les journalistes face flash list pardon flash list les journalistes
+
+Xavier Carpentier (19:05.119)
+Donc flashlist c'est du natif, légende list c'est que du... y'a pas de natif en fait. C'est la JS pure. Et en fait, j'ai pas trouvé non plus quelque chose qui était capable d'arriver finalement. J'avais des bons résultats mais lui voulait un chat qui ressemblait vraiment à... qui avait la même UX que Signal.
+
+David Leuliette (19:09.317)
+Non c'est G.S.
+
+Xavier Carpentier (19:28.622)
+et React Native arrivait au bout en fait. Donc ils avaient récupéré React Native en interne, un peu modifié, tweaker les choses. Donc je vais continuer vers ce chemin-là, mais finalement en fait, ça correspondait pas. Donc là, ils ont carrément dit, bon, on va abandonner, carrément React Native, parce que le tchat était un peu, ok, d'accord. Donc KMP, Kotlin Multiplatform.
+
+Donc en gros tu écris en disant, voilà, je vais pas leur inventer un code KMP, donc ils sont partis sur ça, ils ont itéré et j'en entends plus parler, donc je pense qu'ils ont continué sur ça. Et oui, voilà, au niveau des performances, y a des fois des choses qui ne pas évidentes en réact native, si tu pas vraiment...
+
+Focuse dessus et financer. Voilà, il pensait que juste en quelques temps, on arriverait à régler les problèmes. Mais oui, sur les vieux Android, ce n'était pas évident. Il y avait encore des choses qui n'étaient pas...
+
+hyper performance. voilà, c'est un peu le côté réac native ok d'accord mais il a des fois où si tu n'as pas le financement pour passer plus de temps sur la R &D et savoir voilà, si le client n'est pas prêt à mettre un peu plus, il s'acquince et puis... C'est ça en plus à l'éclair de l'IA
+
+David Leuliette (20:56.262)
+forcément.
+
+Xavier Carpentier (20:59.808)
+Ils sont prêts à se dire carrément, les clients aujourd'hui, enfin je sais pas si tu as déjà eu ça, mais les clients ils se disent j'abandonne tout, je recommence à zéro. Et c'est pas la première fois, c'est déjà moi là, c'est la deuxième fois. C'est deuxième fois que ça m'arrive. Et que ça recommence.
+
+David Leuliette (21:11.59)
+là, que ça abandonne... c'est vrai que moi la reco que j'avais c'était, ouais on va migrer petit à petit, ça va aller et en interne pareil, ils ont décidé, de, bon vas-y, reboot tout et on repart sur un socle carré pour, justement, l'appert, peut-être, est amélioré, partir en mode Evergreen Project pour que Brownfield...
+
+J'ai eu une fois, parce que en fait tu ne jamais savoir. Mais là en fait le truc c'est que le produit, ils voulaient lancer aussi le produit et changer des flots qui n'étaient pas vraiment pertinents. Donc en fait en vrai je pense qu'ils auront plus envie quand même de reboot tout que de maintenir.
+
+Xavier Carpentier (21:53.78)
+Oui. Moi j'ai un contexte de projet, c'est un projet qui a environ 5 ans.
+
+David Leuliette (22:00.856)
+Ouais, non mais ouais c'est ça quoi. Si le projet a 5 ans et que tu veux continuer, bah oui tu peux toujours continuer quoi.
+
+Xavier Carpentier (22:05.774)
+Non mais non non non le projet il a 5 ans et c'est reboot, reboot de 5 ans. Reboot au bout de 5 ans et en fait on se retrouve aujourd'hui à réaliser que c'est possible, tu ne pas 5 ans pour le refaire mais tu arrives avec l'IA à pas toutes les fonctionnalités mais effectivement tu arrives très vite à mettre les choses en place quand même.
+
+David Leuliette (22:10.818)
+Reboot.
+
+David Leuliette (22:15.856)
+Ouais.
+
+David Leuliette (22:32.07)
+Ouais, t'arrives à 80 % très rapidement.
+
+Xavier Carpentier (22:33.278)
+Donc ça justifie, alors peut-être pas pour tous les business, mais pour certains ça justifie de le faire. C'est un projet où ils n'avaient pas vraiment mis en production. quand tu ne pas vraiment en production pendant 50 ans, long.
+
+David Leuliette (22:51.878)
+Oui tout de suite c'est facile. J'avoue s'il a pas du orbeil à migrer tout de suite ça va.
+
+Xavier Carpentier (22:57.364)
+Donc tu peux faire ça. Après, en a qui le font même si c'est en production. Ils font le switch, la balance, ça m'est arrivé.
+
+David Leuliette (23:08.166)
+Facebook aussi il le fait les amis. Facebook il a dit fuck you Messenger c'est une app externe tout monde a gueulé et un an après tout le monde avait oublié. Tu avais parlé aussi Expo avis durancé et upgrade douloureuse est-ce que tu te souviens le chaos est...
+
+Xavier Carpentier (23:15.022)
+Oui.
+
+Xavier Carpentier (23:25.486)
+Oui mais ça je pense que tout le monde est ok avec ça ? C'est à dire que si tu reviens sur un projet client, au bout de 2, 3, 4 versions peut-être plus simple mais des fois c'est douloureux.
+
+Peut-être plus aujourd'hui, que aujourd'hui j'ai pas encore fait expérience justement je regardais votre dernier podcast vous en parliez avec l'IA et avec la techno enfin les différents process qui avaient déjà été mis en place avant pour faire un upgrade de React Native ça a l'air d'être possible. si tu es sur du expo sans module universel à toi natif je pense que c'est plus facile. C'est sûr.
+
+David Leuliette (24:06.822)
+Ouais je pense que c'est plus facile, oui c'est sûr.
+
+Xavier Carpentier (24:09.262)
+Il a pas de problème. contre effectivement, si tu fais du custom natif, alors là c'est rigolo. Mais avec LIA on devrait s'en sortir. Mais si tu as beaucoup de projets comme ça, c'est sûr que si tu as des clients qui te permettent de payer la maintenance, te fait travailler. Mais c'est pas hyper fun quand même. C'est pas hyper fun. Donc je trouve que c'est un peu douloureux. Mais c'est normal. Tu peux pas vraiment faire autrement. Tu es sur trois plateformes.
+
+David Leuliette (24:36.07)
+Ouais, c'est ça, ou plus, ouais, 3, 4. Tu vois, on a fait la plateforme web, en fait c'était gratuit, le client il pas demandé. Et il nous a dit, ouais en fait j'ai besoin d'une landing page. On a fait, bah ouais, les mecs, expo hosting, go, la page elle existe. Ça fonctionne, hop, et puis pour tester, bah tu tu peux tester sur la web. Et là il a fait, quoi ? J'ai une app web ? On lui a même pas dit en fait, on fait, bon vas-y, fume pas le time. Et hop, on a shippé le truc, ça fonctionne.
+
+Xavier Carpentier (24:39.649)
+Non, pff, allez.
+
+Xavier Carpentier (24:44.206)
+Oui.
+
+Xavier Carpentier (24:58.35)
+Ha oui !
+
+David Leuliette (25:04.902)
+Je ne savais pas, je n'étais pas sûr mais if web redirect to slash landing, quand tu launches le site, tu as la landing et la landing n'est jamais vue sur l'app mobile en fait. Landing marketing en fait. Et tout ça c'est une app expo universelle, fonction du feu de Dieu donc franchement folie.
+
+Xavier Carpentier (25:26.35)
+Moi je me souviens avoir travaillé sur un projet comme ça effectivement.
+
+où on avait fait travailler le stagiaire justement sur la partie web. On avait connu la partie native, c'était intéressant, c'était de lioter un cadenas de motos connectés. Et j'avais un peu travaillé, Sébastien Lorbert avait travaillé sur projet aussi, travaillait ensemble dessus. Et alors le stagiaire a travaillé sur la partie web, on a juste effectivement, il avait quelques petites adaptations quand même à faire, mais voilà, au sommeau d'eau le code est déjà là.
+
+David Leuliette (25:42.566)
+Ok.
+
+Xavier Carpentier (25:59.744)
+à React Native Web et c'est bon.
+
+David Leuliette (26:02.902)
+Ouais ça marche très bien, l'impact il est fou. Ok, ok on a parlé un peu...
+
+Flatlist, open source, tout ça tout ça.
+
+David Leuliette (26:20.486)
+Est-ce que, ouais, en tant que freelance, tu recommandes toujours l'open source pour être marketable ou pas ? Ça t'apporte encore des clients, toi ?
+
+Xavier Carpentier (26:29.688)
+Oui, ça m'a apporté beaucoup d'allers-retours clients. Ce n'est forcément les plus gros, mais ça permet quand même de faire des petites missions.
+
+de consulting, dirais, vois, pas forcément rentrer dans le projet à fond, mais donner des conseils, des conseils sur la façon d'utiliser la techno, des choses comme ça. je trouve que ça apporte beaucoup, mais aussi par rapport à ce que je disais avant.
+
+Je pense que ce que je disais avant par rapport au fait de séparer ton code, de mettre en open source, j'ai eu beaucoup cette stratégie là, c'est à que j'avais quelque chose dans deux app, je les ai codés à deux endroits, il que j'en fais une libre, et puis ça me permettra de simplement être visible un peu sur GitHub. Donc j'ai fait ça pour plein de petits projets, j'ai fait ça pour...
+
+ça s'appelle React Native Country List ou un truc comme ça. Pour la liste des pays que tu quand tu appuies sur l'input du téléphone, vois, pour pouvoir sélectionner ton indicateur, ton indicatif international. ça, c'est un truc, vu que c'est international, ça a bougé à fond, il y a eu plein de plein de, pas des contacts, mais des échanges avec les développeurs qui voulaient rentrer sur le projet pour pouvoir l'adapter, ajouter leur pays et tout ça.
+
+David Leuliette (27:59.272)
+X0
+
+Xavier Carpentier (28:00.75)
+du coup il y a plein de contacts internationaux sur ça juste pour ça parce que c'est international et c'était utilisé un peu partout dans toutes les apps donc et ça je trouve ça ça permet d'avoir des contacts un peu bon ça va pas très loin mais ça permet d'être visible même en quelque sorte
+
+David Leuliette (28:13.639)
+Ouais mais toujours après tu connectes, machin, conférence et tout, tac, moi c'est comme ça que je fais volontiers... Ouais.
+
+Xavier Carpentier (28:18.56)
+Après ce n'est pas des librairies structurantes, vois, ce des petites libes que tu as un peu partout. n'ai pas de librairies hyper structurantes qui nous permettraient de passer tout mon temps dessus. Je le mets en open source parce que j'ai dans 2-3 projets et le client n'est pas contre.
+
+et puis on avance comme ça et ça permet d'être un peu visible. Une autre c'était, ça je l'ai utilisé justement sur les petites applications de Biogène, les petits tests cognitifs, c'était les tour guides. Il y avait un premier tour guide qui était sorti il a longtemps, que j'ai retapé un petit peu avec du SVG animé. Et ça pareil, ça intéressait beaucoup de monde, les PDF, petites livres de PDF.
+
+David Leuliette (29:04.871)
+Les femmes, les petites, je sais pas si PDF et petite librairie dans la même phrase, parce que c'est vite. Ouais. Ouais, ok.
+
+Xavier Carpentier (29:09.742)
+Non, c'est à dire que la libe que j'ai travaillée, sur laquelle j'ai travaillé, c'était du webview, vois. j'allais pas dans du natif. Et ça faisait le job. Ça faisait vraiment le job. Ça faisait la job, comme dirait les Québécois. C'est vraiment suffisant pour faire du PDF. En plus, bref, ça allait vraiment loin. C'était un peu trop, c'était un peu gynagaz. Mais...
+
+David Leuliette (29:35.079)
+bah c'est sûr, parce que après fallait download, fallait edit, fallait plein de trucs.
+
+Xavier Carpentier (29:39.512)
+Ouais non, en PDF, il faut réussir à convaincre ton client qu'il n'a pas besoin de toutes les filières. Sinon, c'est... Mais il en a beaucoup qui le veulent, c'est courant. Et effectivement, j'ai eu pas mal de contacts. Bon, bien sûr, ce n'est pas les clients principaux. Mais voilà.
+
+David Leuliette (29:46.484)
+C'est pas ma gueule.
+
+Oui.
+
+David Leuliette (30:04.271)
+Oui mais ça te fait quand même du brand awareness, voilà je connais un mec qui connait... oui tu utilises cette libra et du coup c'est vrai que c'est un peu... C'est un nouveau canile à l'exécution si vous êtes freelance, oui l'open source ça peut être très utile mais comme tu me disais en début d'épisode là ça y est tu fais plus du tout de rack native, on va parler un peu virage back-end IA
+
+Xavier Carpentier (30:08.298)
+Voilà, c'est ça.
+
+Xavier Carpentier (30:29.461)
+Oui, oui.
+
+David Leuliette (30:30.343)
+T'es passé de... Donc tu as abandonné Next.js pour React SPA. Ah là là, Bun, Fastify, qu'est-ce qu'il... Vas-y dis nous tout. Ah oui, parce que Bun, Bun comme... Package manager, Bun. Donc... Ah, Bun runtime, ah oui, carrément, c'est vrai, c'est vrai, j'en ai oublié... Là c'est... Le virage total.
+
+Xavier Carpentier (30:36.033)
+AY
+
+Xavier Carpentier (30:43.938)
+Non non non, bonne runtime.
+
+Xavier Carpentier (30:49.678)
+Oui alors BUN pour le package mais le runtime avec Fastify. Là le pari il est gros quand même parce que BUN c'est pas forcément hyper stable. Mais là encore une fois c'est le virage franchement je veux dire là c'était le pari et puis voilà c'est Enfin je veux dire ça a soit un petit peu BUN le fait qu'il soit fait racheter par Anthropeak. Mais oui là pourquoi en fait j'arrive sur un projet qui a 2, 3,
+
+David Leuliette (30:54.961)
+Alors, poc...
+
+Ça a été racheté par Anthropique donc...
+
+Xavier Carpentier (31:19.632)
+de legacy code en Next. Next a été choisi pour du SEO et puis il a l'IA qui est arrivé et puis le SEO est plus trop important. du coup là on se pose des questions. En fait il y a eu énormément de legacy code sur du Next avec des mélanges de paradigmes qui au fur et mesure du temps ça te fait une application qui n'est pas performante. Là où Next normalement c'est bien...
+
+David Leuliette (31:43.579)
+Ouais, et puis...
+
+Bah faut... ouais render... c'est du quoi ? C'est du SSR, du Dynamic Island, du SVG, du SG, je sais pas quoi, du... la 12 ? Et la 12 je crois des... ouais.
+
+Xavier Carpentier (31:51.638)
+C'est RST, React Server Components, c'est super. Mais vraiment, les concepts sont géniaux avec du streaming, avec du rendu qui est excellent, avec des super concepts. Nous, est emballé au début, c'est sûr. On fait les premières migrations, Next 14 et tout ça. Ça casse un peu tout. Mais il y avait trop de choses.
+
+Le projet en lui-même faisait encore des choses impossibles à faire. On réacte, il faisait de la manipulation d'hommes. Et en plus, c'était le cœur du projet. c'est posé la question. Mais en plus, c'était une application qui avait énormément de features vraiment côté client. Donc vraiment comme une app mobile.
+
+David Leuliette (32:39.121)
+Ok.
+
+Xavier Carpentier (32:40.91)
+Donc voilà, on trouvait que faire du... Et puis le SEO, encore une fois, le SEO aujourd'hui, bon bien sûr c'est bien pour... Mais plus tend à l'ère des chatbots. Plus tend. Donc on a fait le pari de passer sur du React, React router et faire tout en SPA. Alors c'est sûr que là au niveau des perfs, c'est... Bon déjà on repart sur un projet neuf mais c'est radical.
+
+avec une API derrière, une API bien sûr load balancée sur un Kubernetes avec du microservice. voilà, au niveau de l'infrastructure, l'architecture qu'on a mis en place, on est vraiment sur du béton là, on tient la charge, ont quand même, donc là c'est une chaîne.
+
+une chaîne de télé qui a à peu près 2 millions de followers sur Youtube. ils estiment que la première année on aura 100 000 qui viendront se connecter. La deuxième année ça va augmenter ainsi de suite. Ils estiment à 10 000 utilisateurs actifs la première année.
+
+Donc là avec notre solution Next, commençait déjà un petit peu à s'essouffler avec à peine 10, 15, 20. On s'est dit, il faut vraiment faire un virage. Et on l'a fait. On l'a fait et il n'y a pas photo. Pour le type d'application un peu vraiment où tu as full feature côté client, il n'y a pas photo, c'est beaucoup plus rapide. Et puis le loader du départ,
+
+c'est vraiment orienté pour applications full client où tu as beaucoup beaucoup de fonctionnalités dans le client donc ça se prêtait plutôt bien et normalement là pour le moment c'est vrai que ça fait un an et demi deux ans que je suis plus sur du mobile mais l'objectif c'est d'avoir en fait les patterns au niveau web d'extraire un peu la documentation des ETC patterns là et de faire l'application mobile sur le même
+
+David Leuliette (34:24.872)
+Mais y'a un beau SVG,
+
+Xavier Carpentier (34:53.758)
+sur la même idée mais en React Native. Donc on aurait déjà vraiment une bonne vue web de toutes les fonctionnalités et on pourrait faire une sorte de conversion presque web to mobile.
+
+à l'aide de l'IA. Là justement c'est là ça aide d'être modulaire, d'avoir par exemple la partie middleware. On a une librairie middleware qu'on a développée nous. On utilise des technos de 10 stack query, utilise du index DB, beaucoup d'index DB pour pouvoir avoir beaucoup de contenu. On essaie d'être full offline. Donc là il suffira de remplacer la couche index DB par du SQLite. 10 stack query ça restera 10 stack query.
+
+côté ragnatif tout ça avec le clean architecture où tu peux avoir des factories et des interfaces qui répondent en fonction de là où tu es quoi ça va être ça va être très rapide normalement une fois qu'on aura qu'on a le ras web oui
+
+David Leuliette (35:54.521)
+Normalement. Attention, attention, Xavier, si tu CTO, je te donne 504 budgets. Qu'est que tu fais ? Tu m'as dit que c'était très rapide.
+
+Xavier Carpentier (36:02.862)
+ce que je fais en premier avec 500k ou 50k
+
+David Leuliette (36:07.24)
+Ouais 500. 50 fous chaud 500.
+
+Xavier Carpentier (36:13.454)
+500K je veux dire pour ce projet là
+
+David Leuliette (36:18.472)
+Ouais, bah oui, vas-y, on va prendre celui-là, tu vois.
+
+Xavier Carpentier (36:21.598)
+Ouais, je pense que...
+
+Je change pas en fait, je reste sur la ligne. Franchement je ne pas pourquoi. Je reste sur la même trajectoire parce qu'elle est bonne en fait.
+
+David Leuliette (36:28.434)
+Ouais, continue la trajectoire.
+
+Xavier Carpentier (36:42.518)
+parce qu'en fait je ne vois pas trop déplacer les choses. Ça n'a plus de sens aujourd'hui maintenant l'état du projet d'aller de nouveau vers quelque chose de plus natif même si le budget donnerait l'impression qu'on pourrait.
+
+Mais voilà, je suis fortement, j'ai des grosses opinions sur le sujet. pense pas que... Ouais, continue à croire que... C'est peut-être biaisé, mais je continue à croire que le natif pour une plateforme donnée, je trouve que c'est pas adapté. Le natif a vraiment du potentiel suffisant pour pouvoir adresser 80...
+
+15 voire 98 % des projets. Donc... Je continuerai sur cette ligne là. Et toi ?
+
+David Leuliette (37:33.289)
+Ouais c'est une bonne réponse. Moi pour l'instant là 500k, ça dépend toujours du contexte. Tu vois là si je prends le client qu'on a avec Matisse, ce serait de la moitié en marketing tu vois. Parce qu'il passe de 0 à 1, il en étape conquête. Donc est-ce que CTO il fait le marketing aussi ? Je sais pas. Ça dépend de l'organisation du truc mais si je prends là, il est tout seul, le founder, je lui dirais mec mets la moitié, on va t'aider à faire des...
+
+Xavier Carpentier (37:48.757)
+Oui, bah oui.
+
+David Leuliette (38:03.64)
+à faire un truc pour on-boarding les gens. va mettre de la tech dans l'on-boarding, vois ce que je veux dire. Ça va pas être corrélé à l'app mobile directement, mais ça participera aux critères de succès qui est avoir plus de gens sur l'app. Ok, super.
+
+Xavier Carpentier (38:08.014)
+Oui oui.
+
+Xavier Carpentier (38:21.74)
+Oui, là en fait le projet, le contexte, c'est pas le même. Ils ont beaucoup, ils ont déjà beaucoup. Et ils pensent vraiment que... Ils en parlent depuis un moment. Ils pensent vraiment qu'il va y avoir une adoption. C'est un peu ça le problème en fait. Le problème c'est l'adoption. C'est juste qu'il faut vraiment gérer, il faut gérer la... Comment dire, les latences au niveau du réseau, il faut gérer la charge en fait. Parce que là...
+
+David Leuliette (38:24.709)
+Ouais, c'est ça, ça dépend.
+
+David Leuliette (38:40.482)
+Ouais, c'est toujours pareil.
+
+David Leuliette (38:47.41)
+Ouais c'est ça, et est-ce que ça va arriver d'un coup ? Est-ce que tu vas aller faire Christmas time, genre salut on passe tous de 0 à 4000 user concurrents d'un coup ?
+
+Xavier Carpentier (38:55.342)
+C'est pour ça que ça valait le coup de tout revoir et pour avoir quelque chose qui est escalable tout de suite dès maintenant. qu'ils n'étaient pas vraiment en mode startup MVP. Pas du tout en mode startup MVP. J'irais pas qu'ils se sont retournés au projet en cyclant V. C'est un peu des techniques assez anciennes de management de projet on va dire.
+
+David Leuliette (39:08.808)
+...
+
+Xavier Carpentier (39:25.068)
+mais ils ont l'avantage d'avoir vraiment beaucoup de clients derrière, enfin pas de clients mais de personnes qui vont utiliser l'application.
+
+David Leuliette (39:35.944)
+N'importe quoi.
+
+Xavier Carpentier (39:36.598)
+ça me fait la fois un peu flipper et à la fois ça me rend heureux de me dire le jour où tout ça sera là on va vraiment apprendre parce que eux ils ont vraiment eu des écueils comme ça à cause de la charge ils ont eu des gros soucis sur leur interface ils ont dû faire plein de plein d'adaptations sur leur infra à cause de ça quoi donc là ils viennent avec un package là enfin avec un bagage pardon de ces informations là ils nous disent ouais il faut qu'on
+
+David Leuliette (39:44.36)
+Ouais, tu vas vraiment en scale, ceci.
+
+Xavier Carpentier (40:06.512)
+qu'il tienne la route parce que le jour où ça va sortir on veut pas que ça soit déjà down.
+
+David Leuliette (40:13.448)
+Ouais bah je vois, pas il fait World of Warcraft, Diablo 4, on lance et boum tout fonctionne pas. Est-ce que en 2026 l'avantage de l'écosystème pour faire du réact c'est bien positionné pour faire ça ? Bah oui en fait en vrai, because tu prends n'importe quel projet. Je sais pas si dans... Tiens faudrait que je demande en fait en vrai mais j'ai des potes qui font du VJS, je sais pas si ça output bien correctement. J'ai tendance à dire que non.
+
+Xavier Carpentier (40:17.786)
+Donc, c'est ça.
+
+David Leuliette (40:42.68)
+peut-être un peu moins bien mais j'en fais pas assez je m'en rends pas compte mais ton pari perso c'est qu'est qui devient plus important qu'avant c'est la DX le produit la distribution le tooling est ce que le tooling c'est plus important qu'avant est ce que ça change un petit peu
+
+Xavier Carpentier (41:03.166)
+ça bouge tellement en ce moment avec Lya, c'est difficile de savoir. je pense que c'est intéressant, par exemple sur le tooling, de faire de la veille sur le tooling c'est super important.
+
+J'aimerais bien développer plus de skills sur mes projets, des skills adaptés au pour l'IA et adaptés à l'infra, adaptés au projet Expo ou React.
+
+David Leuliette (41:34.599)
+Ouais.
+
+David Leuliette (41:42.168)
+Les skills, c'est les markdowns que tu mets directement dans le projet, c'est ça ?
+
+Xavier Carpentier (41:46.766)
+l'esquise dans le sens Claude du terme où en fait c'est tout simplement des sortes de fichiers Claude.md++ même au-delà de ça, c'est-à-dire que tu vas avoir du markdown qui va être vraiment extrêmement peu consommateur en token mais très ciblé.
+
+Donc tu ne pas avoir le cloud ou bien la doc énorme qui va changer tout ton contexte, mais tu vas vraiment dire à ton diable, j'ai un panel d'outils, de skills, de compétences que tu peux aller, ce qu'a fait Next, ce que fait Expo, c'est fournir des skills comme ça, plutôt généralistes, mais là, aller plutôt vers justement des skills plutôt orientés sur le projet, donc plutôt features ou utiliser bien sûr les skills déjà fournis, mais augmenter, augmenter la
+
+la capacité tout simplement, les compétences de ton IA, parce que tu es le seul à vraiment savoir quelles sont les bonnes skills sur ton projet, c'est à toi de lui dire quoi. Donc je pense qu'il faut aller vers là.
+
+plus que les commandes au niveau IA. Les commandes, c'est ça, c'est le skill, c'est des commandes plus plus. C'est vraiment adapté pour bien gérer ton contexte. Et puis tout ce qui est tooling de parallélisation, je suis à fond dedans par rapport à paralléliser des tâches. Quand j'ai plein d'issues, je les parallélise avec des outils comme... Tu peux le faire avec des work trees maintenant de base avec Cloud, mais avant j'utilisais Conductor.
+
+tu peux faire plein de choses pour aller plus vite, ça va tellement vite. On n'est plus en monotache en fait, on est en multitache maintenant. Ça c'est une conversion à avoir aussi dans l'esprit, savoir comment tu fais pour gérer tous ces... il faut que tes cinq cerveaux qui tournent en même temps. Ou alors faut que tu switches d'un truc à l'autre sans perdre le contexte toi-même de ce que c'est la tâche. Donc c'est un nouvel exercice où il faut vraiment...
+
+Xavier Carpentier (43:53.58)
+Ouais, moi je l'embrasse à fond ce genre de choses maintenant, c'est ce qu'il faut faire pour pouvoir continuer. ouais voilà, donc je pense que ça ne répond pas forcément à ta question de ce qui le plus important, je ne pas trop.
+
+David Leuliette (44:04.955)
+Ouais, chic, quand même, tu vois, après ça dépend quel est le plus important. Ça dépend. Il n'y avait pas de bonne réponse. Est-ce que il a un sujet qu'on n'a pas couvert qui te tient à cœur et que tu voudrais aborder ?
+
+Xavier Carpentier (44:22.606)
+Bouf.
+
+Je pas... Qu'est-ce qui est...
+
+David Leuliette (44:27.241)
+Halala
+
+David Leuliette (44:33.245)
+Ça c'est quand même...
+
+Xavier Carpentier (44:34.658)
+Je pense la partie IA en dehors de l'utilisation de générations de codes. Là aussi, pense que ça, c'est important aujourd'hui d'avoir des projets où tu as ça, vois, des projets où tu, par exemple, tu as une base de données vectorielle derrière, où c'est toi qui vas faire des embeddings et tout ça, vraiment embrasser le...
+
+David Leuliette (44:39.155)
+Ouais ?
+
+Xavier Carpentier (44:52.03)
+les nouveaux paradigmes, IA, et voir ce que ça va transformer dans les applications et l'intégrer. Là, par exemple, j'ai mis en place une base de données qui fait une recherche à la fois...
+
+lexical, le elastic search à papa. Et puis à côté de ça un vecteur pour pouvoir faire de la recherche sémantique. C'est hyper puissant, c'est hyper intéressant. Et il a des domaines qui vont l'utiliser à fond, qui vont pouvoir l'utiliser à fond. Le domaine sur lequel je suis, c'est un corpus d'anciens textes. C'est déjà super intéressant, mais j'imagine que sur plein plein de domaines...
+
+David Leuliette (45:13.065)
+Mm-hmm.
+
+Xavier Carpentier (45:41.622)
+un peu plus séculier, va dire, ça va apporter les choses. Et ça, pour moi, c'est un point qu'on pourrait, enfin, qu'il manquait un petit peu peut-être. Comment fait, comment marier ça avec le développement d'applications mobiles ? Est-ce qu'on est prêt à faire de l'embedding local déjà maintenant ?
+
+ça fait longtemps qu'on en parle, je me souviens encore, il y a des ponts qui sont faits avec le natif pour pouvoir faire par exemple des suivis, enfin qui vont utiliser la vidéo, qui vont utiliser la caméra pour pouvoir faire des suivis des yeux ou des trucs comme ça, je pense qu'il y a des ponts qui étaient déjà fait dans Expo. Mais qu'est qu'on en fait ? Ouais déjà il a un moment.
+
+David Leuliette (46:28.526)
+Avec TensorFlow aussi tu pouvais déjà faire ça.
+
+Xavier Carpentier (46:33.09)
+mais ça génère de la donnée mais on n'en fait pas forcément pour le moment quelque chose. Est-ce qu'il va y avoir peut-être quelque chose au niveau local pendant un certain temps, un... un... rag local ? Pourquoi pas.
+
+C'est des questions qui me tarotent un peu en ce moment, savoir à quelle il y a l'architecture la plus performante. Parce que ça consomme pas mal sur les serveurs, quand tu veux MBD quelque chose, créer un vecteur, consomme pas mal. Donc ça pourrait être intéressant d'avoir des choses en local quand même. Et c'est peut-être des choses qui vont arriver, qui sont peut-être déjà utilisées à droite à gauche. Donc voilà, je pense que ça c'est des sujets qui vont m'occuper dans les prochains temps.
+
+David Leuliette (47:18.185)
+Dans les prochains temps, la prochaine semaine, ce sera réglé, il y aura un nouvel outil et hop, non, un mois, on va dire un mois. Un mois, c'est bien. Le temps de, on va pas, non plus. J'avoue. qu'est-ce qu'on invite ensuite ? Je me souviens, t'avais une idée, puis en fait, tu l'as oublié, puis tu me l'as redit, non ? Tu te souviens ? Qu'est-ce qu'on doit inviter ?
+
+Xavier Carpentier (47:20.558)
+A
+
+Xavier Carpentier (47:23.96)
+Et voilà.
+
+Xavier Carpentier (47:28.002)
+Oui, ça bouge très vite.
+
+Xavier Carpentier (47:39.803)
+Attends, faut que je le retrouve.
+
+David Leuliette (47:42.888)
+Ahahahaha Parce que cette émission a été préparée. D'habitude je prépare pas les épisodes, mais Xav on s'est dit on va préparer avant. Et après on a re-oublié. bien j'ai ajouté un challenge. C'est qu'il faut un nom, un angle d'épisode et une question d'ouverture qui tue.
+
+Xavier Carpentier (47:47.916)
+Ahem
+
+Oui.
+
+Xavier Carpentier (48:02.254)
+Je sais plus comment il s'appelle.
+
+David Leuliette (48:04.481)
+Xavier Carpentier (48:15.515)
+pas vrai, la honte. Mais si en plus je le dis maintenant, tu vois, ça le fait pas.
+
+Je garde secret.
+
+Xavier Carpentier (48:33.934)
+Mais moi, j'avais une suggestion peut-être, ne pas si ça fait partie de ça, mais toi tu parles, mais en fait c'est déjà fait, tu as invité William Candillon, donc c'est plutôt la francophonie. Toi tu parlais avant des développeurs React en France, mais c'est francophonie aussi, ? C'est ouvert la francophonie ? Parce que là c'est assez vaste.
+
+David Leuliette (48:49.001)
+Ah oui carrément ! Ah oui oui, clairement ! En fait j'hésite à faire en anglais, vois, en vrai parce que j'ai plein de potes, pareil, ils pourraient passer mais quand je leur dis « bah vas-y, go, faut juste parler une heure » ils savent parler français mais peut-être pas tenir un podcast complet, mais je verrai en fait au fur et mesure, peut-être que je ferai juste un épisode en anglais et puis voilà, terminé.
+
+Xavier Carpentier (48:56.119)
+Oui.
+
+Xavier Carpentier (49:02.478)
+Mmh.
+
+Xavier Carpentier (49:14.062)
+Mmh.
+
+David Leuliette (49:17.797)
+il n'y a pas de soucis si tu le retrouves tu m'en verras en tout cas Xavier où est qu'on peut te retrouver sur les internets pour si on veut te contacter facilement sur github
+
+Xavier Carpentier (49:27.835)
+Bon, sur github, sur... Ouais, github, Je suis toujours... Vous me créez une issue.
+
+David Leuliette (49:33.481)
+bien.
+
+David Leuliette (49:37.577)
+Ouais, c'est pareil. Moi j'avais, tu vois, je t'y retrouvais hyper facilement en vrai pour refaire l'interview. Donc c'est que c'est facile. Qu'est-ce que donne-nous un teaser sur ce que tu vas faire ou apprendre dans les 30 prochains jours en une phrase mémorable qui restera sur les internets.
+
+Xavier Carpentier (49:46.455)
+Oui.
+
+Xavier Carpentier (49:58.894)
+Oulala
+
+Xavier Carpentier (50:02.663)
+C'est dans sujet de l'IA, une phrase mémorable. Je dirais...
+
+David Leuliette (50:08.046)
+Pas forcément, vois. Comment, vas-y ?
+
+Xavier Carpentier (50:08.17)
+Comment deviner l'intention d'un utilisateur grâce à l'IA, vois, genre avec les recherches.
+
+David Leuliette (50:19.657)
+Wow, t'as 30 jours pour ça ! Ok ! ! Donc nous sommes le 23 mars, ceux qui écoutent l'épisode en avril, vous pouvez pinguer Xavier et lui dire, bon mec ça fait 30 jours, est-ce que t'as la réponse ? Et 42 n'est pas une réponse, tu vois. Donc... Dommage. Mais ouais ouais ok, intéressant. En tout cas, tu me diras, beau challenge ! vois, y'en a, c'est, moi c'était plus simple et...
+
+Xavier Carpentier (50:37.985)
+bon...
+
+Xavier Carpentier (50:43.758)
+Mmh.
+
+David Leuliette (50:49.575)
+Je te fais confiance en tout cas pour réussir.
+
+Xavier Carpentier (50:49.646)
+C'est le cas, ça va être le cas dans les 30 prochains jours. Créer des bases de données de recherche pour pouvoir déterminer ce qu'un utilisateur vraiment... C'est quoi ? En fait, qu'est-ce qu'il a voulu demander ? Voilà l'intention.
+
+David Leuliette (51:05.075)
+Ouais, ok. Trop bien, trop bien. Allez, l'épisode était un peu rapide mais là j'étais... Tu on a fait une heure... non, on a fait 50 minutes. Bon, ce sera un épisode quick. Il faut que je me limite, tu vois, normalement. Des fois, parce que des fois ça part dans une heure. fait, on aurait pu parler pendant trois heures en vrai avec Xavier. Mais on va se limiter. En tout cas, j'espère que cet épisode vous a plu et on se retrouve au prochain. Allez, ciao à tous.
+
+Xavier Carpentier (51:32.366)
+Salut !
+

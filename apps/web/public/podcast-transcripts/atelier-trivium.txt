@@ -1,0 +1,842 @@
+David Leuliette (00:02.602)
+un dev solo, un agent IA, un sérum en production, est-ce la nouvelle réalité du développement logiciel ou un cas particulier qui ne scale pas tout ? vais lui faire une intro à la Nolan et tout. Et surtout si c'est vrai, qu'est-ce que ça change complètement pour toi en tant que CTO ou tech lead ? Terence ? Terence ? On dit comment on dit ? Terence ?
+
+Terence (00:25.55)
+Terence, Terence, les deux vont très bien, comme tu préfères.
+
+David Leuliette (00:27.81)
+Les deux vont très bien. Ouais, on va faire American, tu vas poursuivre l'introduction des films alihoudiens. Donc, 10 ans de Tech Lead.
+
+Terence (00:32.398)
+Allez Allez
+
+David Leuliette (00:40.46)
+Et donc ouais, en fait je t'ai contacté parce que, histoire incroyable, c'est vrai que j'avais vu ton LinkedIn, jadis tu faisais pas du de tech.
+
+Terence (00:53.518)
+du tout j'étais comptable enfin j'étais gestinaire locatif mais bon grosso-nos c'est de la compta quoi
+
+David Leuliette (01:01.2)
+Ah ouais c'est pareil, Excel, spreadsheet, tout ça. après il eu un tournant, Vibecoding, production, as confondé ARK, ARK ouais c'est qu'on appelle ça, un CRM avec des insights IA pour les équipes Sales et Customer Success. Et avec ton autre activité, l'atelier Trivium, tu apprends à des experts non techniques à créer leur propre SaaS avec l'IA sans avoir besoin de développeurs. C'est bon, ça y est. Tu...
+
+Terence (01:12.526)
+ça.
+
+David Leuliette (01:28.112)
+Franchement génial vu qu'il n'y plus de dev, t'aide les gens à nous remplacer. Franchement on adore. Bienvenue dans le Cross-plat de Manche-feu, l'émission qui parle de développement d'applications mobiles avec RecNative. Le sujet aujourd'hui c'est qu'est-ce que ça change vraiment de coder avec un agent IA, le ROI, les vraies limites, les questions que tout CTO devrait se poser en 2026.
+
+Donc ouais pour ceux qui découvrent, tu m'as dit ouais Techlead depuis 10 ans, ouais comptable, machin, gestion locative et après si tu devais rencontrer quelqu'un dans l'ascenseur tu lui dis quoi ? Genre on mettre la musique d'ascenseur, tu tu tu tu, bonjour.
+
+Terence (02:08.846)
+Salut, alors du coup en quelques mots, aujourd'hui ce que je fais c'est que j'aide des experts métiers à construire leurs produits avec l'IA, donc sans avoir besoin de dev comme tu disais. On pourra approfondir un peu plus tout à l'heure. Pour moi le métier de développeur ne disparaît pas et il va juste, il est en train de se métamorphoser plutôt je dirais.
+
+David Leuliette (02:38.376)
+oui carrément, après je sais plus avec qui j'en discutais il a pas longtemps, c'est que moi la seule constante que j'ai connue depuis que je fais du dev c'est le changement. En fait, faisais toujours... attends, et avant, jadis, tu vois, j'ai fait des sites avec des tables et après il a le CSS qui arrivé, ça remettait tout en cause. Et après, il y a le responsive design qui arrivé et ça remettait tout en cause, fallait plus faire des grids avec des flottes.
+
+Terence (02:47.502)
+C'est clair.
+
+David Leuliette (03:07.766)
+il fallait enfin bref et donc pour moi ça me paraît normal ça me servait juste une évolution de plus voilà et mais ouais donc explique nous est qu'il a un moment où tu t'es donc passé de comptable à dev comment ça s'est passé
+
+Terence (03:14.478)
+C'est
+
+Terence (03:25.87)
+En fait, j'ai toujours été passionné par le développement. j'étais ado, je gagnais mon argent de poche en faisant des WordPress.
+
+David Leuliette (03:35.448)
+excellent ! Excellent, trop bien ! Et les clients, c'était quoi, bouche à oreille ou dépouche ?
+
+Terence (03:42.286)
+Ouais beaucoup du bouche à oreille, mon père avait une association donc ça a démarré par là. puis de fil en aiguille, trouver des petits clients quoi. Bon après le hasard a fait que je me suis pas dirigé vers l'informatique, en tout cas pas tout de suite. Je suis parti vers l'économie, etc. Ce qui m'a amené du coup à devenir gestionnaire locatif. Et en fait quand j'étais gestionnaire locatif, fait il a plein de tâches qui sont...
+
+récurrentes et que tu peux automatiser et donc c'est ce que je faisais alors j'ai rien fait de fou c'était c'est ça des macros excède des macros je sais pas si on peut appeler ça des macrosystèmes et en gros j'avais un logiciel qui s'appelait macro d'ailleurs qui permettait en gros de programmer ta souris elle va cliquer là ensuite elle va faire ça ensuite elle va taper tel texte machin et donc c'est ça
+
+David Leuliette (04:16.263)
+faisais des macro Excel ! ouais, là là !
+
+David Leuliette (04:32.879)
+ça c'était un agent il a avant l'heure quoi... Ohlala, incroyable !
+
+Terence (04:37.102)
+et donc il avait un ordi qui était dispo dans le bureau et donc c'est lui qui tournait, qui faisait ces trucs là et pendant ce temps là je faisais d'autres choses. Donc j'ai fait ça pendant 3-4 ans, ça marchait plutôt pas mal et puis au bout d'un moment j'ai voulu en faire mon métier donc je me suis reconverti dans l'informatique. Bon après des années de WordPress etc, j'ai voulu faire du mobile donc j'ai commencé par l'android natif puis du flotteur.
+
+J'ai un tout petit peu expérimenté Reign Native mais pas bien longtemps, faut être honnête.
+
+David Leuliette (05:11.841)
+il choisir. veux pas faire tout... Il a un train qui passe, bon je l'ai pris et... Tu peux pas tout faire.
+
+Terence (05:18.862)
+J'ai chopé le train flotteur, j'étais déjà bien dans l'écosystème Google, toujours bien aujourd'hui d'ailleurs en vrai. J'y travaille beaucoup dans des startups, ça fait un peu plus de deux ans maintenant que je suis à mon compte et que j'essaye actuellement de prendre le nouveau wagon de l'IA et que je me rends compte que ça change beaucoup de choses et je trouve ça assez passionnant.
+
+David Leuliette (05:49.345)
+Et tu shipes quoi en ce moment ?
+
+Terence (05:52.111)
+En ce moment, comme tu disais, je suis passé CTO de ARC. Là, on est en train de travailler sur beaucoup de choses là-dedans, et notamment d'automatiser encore plein de choses pour les clients et pour optimiser les flux internes. Je travaille toujours sur Trivium Coach, la partie accompagnement avec coding, où là, je suis en train de créer des agents qui vont aider à cet accompagnement et cadrer l'accompagnement.
+
+David Leuliette (06:23.561)
+Ok cool. Du coup on va en parler. Vibe Coding, réalité ou hype ? C'est quoi ta définition du Vibe Coding, toi qui le fait vraiment en prod pour des vrais clients ?
+
+Terence (06:37.998)
+Pour moi le webcoding, je l'utilise régulièrement mais en vrai je n'aime pas tant que ça parce que il a le côté, je trouve un peu gourou tu vraiment le barbu avec son micro machin qui parle et qui génère du code. que je fais, ressemble plus à... il a Carpathique qui a donné un nouveau terme il n'y a pas si longtemps, je crois c'était en février ou en mars, bref.
+
+qui appelle ça de l'agentique engineering et finalement c'est travailler
+
+David Leuliette (07:10.029)
+Ouais. Car Patti, tu peux rappeler qui c'est pour ceux qui connaissent pas.
+
+Terence (07:14.33)
+Carpati, c'est le mec qui avait inventé le terme Vape Coding sur Twitter. Si je ne pas de bêtises, c'est un mec d'OpenAI, un des fondateurs je crois, en tout cas c'est une des grosses têtes d'OpenAI, qui a voulu tester en fait en Proof of Concept que OpenAI, que Chatch.jpt est capable de générer du code.
+
+David Leuliette (07:18.681)
+Mais voilà, c'est
+
+David Leuliette (07:39.811)
+ça. Est-ce que tu as un exemple précis avec Arc, une feature que tu as publié, que tu as buildé ? Donc tu utilises Cloud Code là
+
+Terence (07:53.612)
+Oui, là je suis passé sur Cloud Code depuis pas si longtemps d'ailleurs, depuis 3 semaines, exactement Avant ça j'utilisais Cursor
+
+David Leuliette (07:59.386)
+Ok, et t'as un exemple genre... Ok ouais, t'as migré la semaine prochaine, ce sera... Quoi que j'ai l'impression qu'en fait quand même Cloud... sais pas, moi déjà ça se lance dans le terminal du coup j'aime bien. Ça se lance dans le terminal et c'est rapide, voilà ça on adore, tu vois. Deux doigts... Est-ce que... Ouais donc tu dis t'aider les gens à faire du webcoding, donc les founders tout ça. Tu leur mets Cloud Code et un terminal dans les mains ?
+
+Terence (08:04.27)
+point.
+
+Terence (08:13.038)
+Oui.
+
+Terence (08:30.553)
+Alors en fait, à la base je leur mettrais Cursor dans les mains. En gros il a une phase de setup quand même où je fais avec eux toute la mise en place de Cursor etc. Ensuite Cursor, si tu le configures bien ça tourne un peu tout seul quoi, il est un peu autonome. Et si la personne s'est utilisée de chat GPT, elle s'est utilisée Cursor.
+
+David Leuliette (08:34.746)
+Ouais.
+
+Terence (08:56.32)
+Moi ce que je vais rajouter derrière c'est un peu de cadre sur les méthodologies. Déjà on apprend, et j'apprends, personne n'a utilisé Github.
+
+David Leuliette (09:05.392)
+Quitte à aller... Ouais bah oui ! C'est ça, oui. J'ai des cours de get-up pendant mille ans, du coup je vois exactement par quelle phase ils vont se passer. T'inquiètes.
+
+Terence (09:09.026)
+oui !
+
+GitHub, les commits, indispensable sur le vibe coding, ce que c'est un push, ce que c'est une pull request. Et puis après leur expliquer que finalement il n'y pas besoin de connaître les commandes terminales. Tu dis à cursor ou à cloud code commit ou sauvegarde d'ailleurs.
+
+David Leuliette (09:33.488)
+Ah ouais ? Ah tu peux... Ah putain je savais pas ! Ah oui bah oui c'est logique parce qu'il me sort des greppes de la moireté genre quand je chair des trucs et il fait des scripts pitons à la volée mais c'est vrai que... Si tu lui dis sauvegarde mon projet il va push, poule et tout ça ? Ah putain je savais pas...
+
+Terence (09:46.817)
+Ouais, alors moi j'ai en plus rajouté une couche dans le cursor rose dans cloud.md qui va lui dire explicitement quand on dit sauvegarde tu se commit mais sinon de base quand tu dis
+
+David Leuliette (09:58.064)
+Ah ok, c'est parce que je... Putain ouais, je ne savais même pas. Parce que moi j'utilise Shortcut, All the Way, GCO, GSCS, parce que je les ai appris, tu vois, The Hard Way. Et non, je trouve ça plus facile, mais je ne savais pas, mais c'est logique. Ok, excellent. Et donc, de temps la dernière feature... Enfin, avant la dernière feature que tu as faite avec Cloud Code, sans Cloud Code, ça t'aurait pris combien de temps
+
+Terence (10:25.871)
+Là par exemple sur Ark, il a une feature où on va aller faire de la recherche sur plusieurs tables et avec un rag qui est branché aussi en plus. En vrai, si j'avais dû faire ça à la mano, ça m'aurait bien pris deux mois on va dire, peut-être un peu plus, sachant qu'en plus, suis pas... enfin j'ai une formation en frontaine, donc voilà, il faut déjà capter tous ces trucs là quoi.
+
+David Leuliette (10:45.154)
+Noé.
+
+David Leuliette (10:50.159)
+Ouais.
+
+Terence (10:55.215)
+Là du coup avec Cloud Code ça m'a pris 2-3 heures quoi. Sans compter la review parce que du coup il faut quand même que je review moi même derrière. Mais 2-3 heures à avoir un truc fonctionnel.
+
+David Leuliette (11:00.463)
+Allez !
+
+David Leuliette (11:09.679)
+Ouais, excellent.
+
+m'intéresse, c'est pas la vitesse en démo, c'est la durabilité en prod. Est-ce que du coup le fameux code généré en deux heures, tu penses qu'il a géré de la détechnique ou pas et comment tu le gères ?
+
+Terence (11:32.655)
+C'est une question qui revient régulièrement. C'était forcément une des premières questions que je me suis posé en tant que dev. La dette technique aujourd'hui, je vois un peu l'IA comme un super stagiaire. Le premier de la classe, le mec qui a lu tous les bouquins, tout ce que tu veux. Il a toute la théorie, a tout machin et c'est du code comme on dit. Mais il faut l'encadrer.
+
+David Leuliette (12:03.471)
+Ouais, je suis d'accord.
+
+Terence (12:03.661)
+Si tu l'encades mal, il va faire un peu n'importe quoi. Si tu l'encades bien, t'as moyen d'en faire un super collaborateur. Et donc c'est un peu comme ça que je gère la dette technique.
+
+David Leuliette (12:16.975)
+Ouais, parce que tu le cadres et tout, puis au pire tu réflector.
+
+Terence (12:21.475)
+C'est ça, tu le cadres et tout, alors y a plusieurs façons de Déjà le cloud.nd, un maximum de documentation à mettre dans le repo. Alors moi je travaille beaucoup en mono repo, qui facilite la centralisation de toutes les infos. La documentation du coup en markdown, c'est plus facile à gérer par l'IA. Donc grosso modo j'ai un dossier documentation où je tous les records d'architecture et tout y compti.
+
+et aussi une partie plus test, va dire tout ce qui est test, CI, linter, etc. façon très stricte, de façon à ce que du coup il y une boucle qui se fasse donc quand je lui demandé de développer une feature, il sait quelle guideline prendre, il sait comment découper le truc et derrière il y a un truc, y a toute cette partie CI
+
+qui va lui dire, bah là t'as peut-être mal fait ci, t'as peut-être mal fait ça.
+
+David Leuliette (13:22.479)
+Ouais, ou tu as oublié un morceau, le build passe pas, casse. coup, va vérifier l'email qui est nullable et que... Et t'as déjà eu un incident en prod sur du code full généré par IA ?
+
+Terence (13:27.119)
+Voilà.
+
+Terence (13:36.943)
+Un incident en prod ? En vrai, pas tant. Ce que j'ai pu voir pour du code généré par Yam, alors qu'avant, en début de parcours, c'était des clients qui avaient des clés secret stripe, exemple, qui se baladaient un peu en coulère. Ils se dit « Ah tchad, j'ai pété, il fait un truc bien, ça fonctionne et tout, c'est trop bien ».
+
+David Leuliette (13:53.167)
+Ah oui ! Ah oui, oui, puis ils ne savaient
+
+David Leuliette (14:02.851)
+Ouais c'était plus au niveau sécurité qu'il ne savait pas mais pas vraiment un bug d'une feature qui ne pas du tout ce que tu avais demandé quoi.
+
+Terence (14:07.246)
+Ouais.
+
+Terence (14:13.967)
+Non, non, tout cas rien de bien méchant. Il a des fois un bouton qui ne pas ou des redirection qui ne font pas bien. Mais ça, en fait, ça se voit très rapidement lors des reviews, lors du test, lorsque tu mets en prod.
+
+David Leuliette (14:25.017)
+Ouais.
+
+David Leuliette (14:29.091)
+Ouais c'est ça ouais. Et donc ouais tu m'as dit t'as pas de casquette flotteur. Donc tu vois ça prouve que le merge nul. Moi j'ai une casquette réacnative je dire. donc t'as... Non ! En fait c'est Expo qui me l'a envoyé. voilà. Pour mes contributions à l'écosystème. Donc t'as dit ouais toi pourquoi t'as choisi flotteur... Ouais t'as dit tout à l'heure c'était plus...
+
+Terence (14:40.335)
+Faire que j'ai investi dans du merch.
+
+Terence (14:51.055)
+Magnifique.
+
+David Leuliette (14:58.409)
+Je faisais l'Android et puis voilà j'ai pris le train
+
+Terence (15:01.923)
+C'est ça, je faisais l'androïde, j'ai fait un peu de freelance, ensuite je suis reparti en ESN et en fait en ESN j'étais sur du mobile mais ma première grosse mission on va dire était sur du flotteur.
+
+David Leuliette (15:14.671)
+Ok, c'est pour ça. Et voilà, il était resté dessus.
+
+Terence (15:16.621)
+Et du coup je suis resté dessus quoi.
+
+David Leuliette (15:22.351)
+Et si demain il a quelqu'un qui t'appelle, qui dit oui je veux bosser avec toi, je veux que tu me setup le truc mais je absolument faire du rack native parce que mon cousin il fait du JavaScript. Est-ce que tu gardes flutter ou ça te dérange pas de changer ? En fait, notamment en terme de... d'auto-complete, il a tout ça parce que moi j'ai un problème, moi je fais du rack native et du rack parce que ça outputte...
+
+bien. Genre là récemment je suis passé à native wind parce que du coup c'était le wind et donc les modèles d'IA ils compilent, enfin ils outputent correctement. Mais toi de ce que tu as vu en flotteur ça fonctionne aussi tout pareil ?
+
+Terence (16:06.767)
+Bah écoute, oui ça fonctionne tout pareil. Aujourd'hui, alors si, comme tu prenais l'exemple du client qui va absolument partir sur du reg native, pour être honnête, ouais je propose Flutter, et s'il ne pas, il faudra passer par quelqu'un d'autre parce que je ne pas faire en vrai. tout hein ! Ah ouais, avec l'IA, il y aurait moyen de se débrouiller quoi, mais bon...
+
+David Leuliette (16:24.304)
+Quoi ? Bah ouais, non mais c'est... Bah attends, avec qui je comprends pas !
+
+Terence (16:37.647)
+Le long jeu c'est toujours de faire la review derrière.
+
+David Leuliette (16:41.674)
+Ouais c'est ça et tout ce qui est store et tout c'est pareil comment ça marche pour les releases. Tu fais le release à la main, clic clic ou est-ce que tu peux automatiser un peu avec de la CI, des overs et updates et tout.
+
+Terence (16:50.447)
+1 c'est automatiser un maximum avec de la CI alors je n'ai plus les noms en là en tête mais tu peux tout automatiser dans la CI ça marche très très bien
+
+David Leuliette (17:03.429)
+C'est juste que les technos, les noms, n'est pas exactement les mêmes, c'est différent, mais les concepts, ça reste...
+
+Terence (17:08.943)
+les concepts sont très proches, d'ailleurs la gestion du stake est assez proche j'avais fait un petit peu de Native, sais que c'est pas exactement la même chose mais c'est vraiment très proche et en plus je crois que Dart à la base ça a été créé par des gens qui aimaient beaucoup JavaScript donc la syntaxe aussi est très proche
+
+Ouais c'est un peu... De ce point de vue là c'est un peu kiff kiff en vrai.
+
+David Leuliette (17:45.74)
+Et est-ce qu'en termes de time to market et de coût de maintenance sur deux ans, tu verrais une différence ? Ouais entre les deux tu ne savais pas trop quoi.
+
+Terence (17:55.311)
+Par rapport à React Native, je ne savais pas trop, par rapport à du natif. Par contre, la différence est assez flagrante. Et aussi par rapport à l'onboarding. Moi j'ai plus une vision d'onboarding de devs étaient sur React Native qui sont passés sur Uflater. Et je vois que la prise en main est hyper rapide. D'après eux, les développements sont aussi extrêmement rapides.
+
+David Leuliette (18:12.601)
+Ouais, ok.
+
+Terence (18:25.199)
+par rapport à ce qu'il Donc voilà.
+
+David Leuliette (18:36.559)
+Donc repasser sur la partie où tu parles plus de ARC, c'est A-H-A-A-R-K donc c'est un CRM-IA en production. donc vas-y tu peux nous pitcher le truc, problème ça résout et qu'est ce qui t'a poussé à le faire.
+
+Terence (18:45.558)
+C'est ça, Arc-Rail.
+
+Terence (18:59.885)
+Alors, Arc, le problème que ça résout c'est que grosso modo, aujourd'hui les équipes ça, ont leurs propres données dans les CRM, Côté Customer Success, on a moins ces outils. Customer Success ça te parle ?
+
+David Leuliette (19:17.269)
+Ouais, c'est Customer Success, yes, I know. Je vois qui sont les Customer Success. Exemple, on va prendre Victor. Il est responsable du Customer Success chez WeShipItToday, vois. Il travaille avec moi. Et sa mission, ce serait qu'il follow up avec les clients chaque semaine pour leur dire, regardez les milliards de features qu'on a shipé la semaine dernière, est-ce que ça vous va
+
+Terence (19:20.81)
+Yes, alright.
+
+David Leuliette (19:47.449)
+Oui, machin...
+
+Terence (19:51.471)
+C'est c'est tout à fait ça. C'est l'équipe qui gère le follow-up, qui gère aussi les upsells et puis grosso modo qui s'assure que les clients restent avec nous. Et donc nous on agrège en gros toutes les données sales et on les met en forme de façon à optimiser les objectifs customer success.
+
+David Leuliette (19:52.271)
+C'est ça.
+
+Terence (20:21.495)
+En vrai c'est rien de magique, on les donnez, existent déjà, on les contextualise et on aide à prendre en forme, enfin mettre en forme tout ça pour les équipes quoi.
+
+David Leuliette (20:35.175)
+Et tu déjà eu un vrai retour client qui vous a dit que c'était le bon produit. Parce que justement avec Lya, es en mode, ah vas-y, je vais shipper de la feature par wagon entier. Et donc tu peux être tenté dans le piège de faire trop.
+
+Terence (20:48.271)
+Ouais.
+
+Terence (20:53.391)
+Les vrais retours clients, c'est là où on a assigné nos premiers clients qui nous ont dit que, un truc qui est assez récurrent en dans les équipes de Customer Success, c'est qu'il y a beaucoup de turnovers. Donc beaucoup de personnes ont onboardé très régulièrement. Et en fait, l'outil ça permet de très rapidement onboarder des nouveaux équipiers, qu'ils sachent tout de suite tel client a tel besoin, voilà ce qu'il a fait ces dernières actions, etc. Et donc ils sont tout de suite très vite opérationnels.
+
+David Leuliette (21:19.929)
+Ok, cool. donc, tu m'as dit que tourne en prod, tu as une partie qui s'appelle les Insights. Est-ce que c'est Just A Rapper ou est-ce tu as adopté comme stratégie pour faire ça
+
+Terence (21:42.031)
+Au son de nous, a branché un LLM. Nous, là où ça va être le petit chain, ça a été d'agréger toutes les données. Parce qu'aujourd'hui, il beaucoup de sociétés qui ont d'un côté des données sur un CRN, d'autre côté sur un Excel, etc.
+
+David Leuliette (21:58.992)
+Moi j'ai Airtable, Notion, Mailing List Gumroad, Mailing List Mailchimp, tu vois je suis solo avec Mathis, est deux. Donc j'imagine que les plus grosses boîtes ça doit être un peu plus le chaos.
+
+Terence (22:19.247)
+Oui, tout à fait. Surtout qu'il a certaines boîtes qui sont beaucoup moins avancées au niveau de la tech que toi au niveau des outils. C'est un peu KO au niveau des données. Le challenge c'est de tout rassembler et tout interpréter pour ensuite sortir les beaux insights.
+
+David Leuliette (22:28.804)
+Ouais.
+
+Terence (22:44.375)
+Donc du coup on passe par une partie rags, une partie aussi nettoyage de la donnée etc. Avec ensuite un moteur qui permet d'afficher le bon truc quoi.
+
+David Leuliette (22:44.931)
+et
+
+David Leuliette (22:56.331)
+Ouais, les choses classiques de pipeline de données. C'est quoi derrière ? C'est des trucs avec RabbitMQ genre de trucs ou pas du tout
+
+Terence (23:02.158)
+C'est ça.
+
+Terence (23:09.365)
+Euh... Non pas du tout. Alors là pour le coup on est sur du pur OpenAI sur le... sur le... sur le rag.
+
+David Leuliette (23:15.971)
+Ok ouais, ouai parce que en vrai, en vrai qu'est qu'on va se faire tuer à monter un truc de ouf, une usine de nucléaire alors qu'en vrai il n'y a pas de quoi être juste tuer openAI tac tac il arrive à recoller les morceaux et t'arrives à gérer le fait que ça hallucine tu qu'il sort des données fuyables genre pour les sales ou comment vous gérez ce truc là ?
+
+Terence (23:28.974)
+C'est ça.
+
+Terence (23:38.063)
+Oui, on a des plutôt bons résultats. On l'a paramétré pour qu'il se base vraiment absolument sur les données qu'il a en input et qu'il ait le moins de créativité possible. Sauf sur la génération de documents, de mails, des choses comme ça. Et aussi en essayant... Enfin, il y avait un petit challenge aussi au niveau du prompting sur lui donner des consignes précises.
+
+David Leuliette (23:56.121)
+Ouais, ok.
+
+Terence (24:07.715)
+pour que justement il n'aille pas trop chercher non plus à droite à gauche mais qu'il aille chercher pile ce qu'on veut quoi.
+
+David Leuliette (24:14.416)
+Cool.
+
+Donc tu m'as dit, ouais t'es tout seul à faire le produit ?
+
+Terence (24:24.367)
+Non, on est deux. Alors en fait, Arc en vrai c'était les premiers clients d'Atelier Trivium. Donc à la base c'est deux experts en CSM, c'est des anciens collègues du Node Startup qui ont voulu lancer la leur. Je les ai accompagnés au début en webcoding. Et donc c'est Gianluca qui du coup à la base commerciale qui va webcoder.
+
+Je l'ai accompagné là-dessus et puis bon le feeling passant bien et puis étant des anciens collègues. puis moi j'avais aussi besoin d'éprouver un peu plus aussi mon modèle. J'ai rejoint l'aventure en tant que CTO et donc aujourd'hui c'est toujours Gian qui va avec Code, moi qui gère on va dire la partie infra, la partie cadrage de l'IA. donc voilà on est deux sur la partie produit tech.
+
+David Leuliette (25:16.336)
+Et est-ce que ce bordel, t'étais pas censé remplacer les gens, je comprends rien. Attends, tu me dis que le mec il vient pour vibecoder, il c'est cool, je vais pouvoir remplacer, et ben non vous êtes deux, mais ça va pas du tout ça. Non mais comme quoi en fait en vrai c'est juste que la magnitude des changements est différente. T'aurais jamais pu faire toutes les features que t'avais avant, c'est juste que le scope de ce que tu peux prendre en input il grandit quoi. Et si il avait pas eu l'IA ?
+
+Terence (25:38.511)
+C'est ça.
+
+David Leuliette (25:41.713)
+Avec une équipe classique, aurais besoin de combien de devs et de combien de mois à ton avis ?
+
+Terence (25:48.015)
+A mon avis il fallu minimum deux devs sur six mois peut-être, un truc comme ça.
+
+David Leuliette (25:56.16)
+Et avec Cloud Code, t'a pris la réalité ?
+
+Terence (25:59.511)
+Bah avec Cloud Code, la première version était prête en un mois et on est parti en prod au bout de 2 mois quoi.
+
+Terence (26:11.04)
+Donc, oui.
+
+David Leuliette (26:14.191)
+Et tout ce qui est testeur, designer et infrastructure,
+
+Terence (26:22.639)
+Testeur designer infrastructure, non pas pris. Là pareil, c'est fait l'IA qui a pris les rôles successifs. Designer Gimini 3, je trouve très très bon avec Figma Make aussi. L'association des deux fonctionne plutôt pas mal. Pour la partie testing du coup c'était Cloud, Cursor mais avec Cloud Sonnet.
+
+David Leuliette (26:26.383)
+Pas besoin.
+
+David Leuliette (26:30.787)
+Oui.
+
+David Leuliette (26:39.982)
+Ok.
+
+Terence (26:51.663)
+Voilà, en fait c'est l'assemblage vraiment de tous ces agents qui nous permet d'avoir un truc plutôt pas mal quoi.
+
+David Leuliette (27:02.063)
+Et ouais on a une question, vrai que je dois poser à tous les invités des fois j'oublie, si t'étais CTO aujourd'hui avec 500k de budget tech qu'est que tu ferais avec le budget ? Enfin tu es CTO, voilà, bib, tiens, on te donne 500k, qu'est ce qu'on fait pour ARK ? ARK ou la télé... Ouais on dire pour ARK tu vois.
+
+Terence (27:14.159)
+Merci ça fait plaisir.
+
+David Leuliette (27:25.103)
+299 000 de tokens
+
+Terence (27:29.167)
+Bah non justement en vrai la première dépense que je ferais ce serait je ne pas peut-être entre 50 et 100k peut-être dans une infrastructure pour pouvoir faire tourner en local des IA de generation de code Bon le budget peut-être enfin je ne sais pas si le budget est réaliste mais bref en tout cas ce serait le premier truc que je mettrais
+
+Ensuite, recruter peut-être un ou deux profils très seniors en sécurité, en architecture.
+
+David Leuliette (28:05.871)
+Ouais.
+
+Terence (28:09.001)
+C'est les deux gros points où il faut faire attention pour moi.
+
+David Leuliette (28:13.711)
+Bah ouais, c'est clair. Si tu sais plus la sécurité, ça improvise pas. Il y a des notions... Enfin... Ouais non, c'est sûr.
+
+Terence (28:18.798)
+tellement.
+
+Terence (28:23.503)
+Finalement, fin 2025, avait encore une étude qui disait que 40 % des projets web codés étaient truffés de bugs et de failles de sécurité. C'est magique parce que tu mets des outils qui génèrent du code dans les mains de personnes qui ne pas tech, mais il faut réussir à le suivre.
+
+David Leuliette (28:43.649)
+Oui c'est ça après les peaux de l'ici, le truc t'as la endpoint qui ouvre et tu peux withdraw sans rien et tu peux changer la main comme ça, t'as juste à changer le payload et hop ! Des trucs comme ça moi je serais pas du tout étonné.
+
+Terence (28:52.631)
+C'est ça.
+
+Terence (28:59.663)
+Et puis la fin de mon budget, je le mettrai dans des profils métiers, des gens qui savent exactement ce que le produit doit faire, mais pas seulement le coder, finalement, c'est un peu le... PM finalement. Ils sont en capacité d'avoir une bonne vision du produit, de le découper, de traduire ça en user stories avec des critères d'acceptation, Des spécifications.
+
+David Leuliette (29:20.127)
+des spécifications qui sont tellement précises que ça décrit exactement le comportement attendu mais c'est fou ! Pour ceux qui n'ont pas la ref, il que vous tapez commit strip commit strip et ça doit être lequel je ne sais pas il y a un commit strip c'est exactement ça spécification je crois que c'est celui là very c'est ça
+
+A very comprehensive and precise spec. Voilà c'est ça. Et ça date de quand cette affaire ? 2016. Pouf ! Commit strip spécification. Et donc vas-y on va parler un peu de l'atelier Trivium. Donc quand tu donnes de l'IA dans des personnes non techniques, profil tips c'est que tu m'as dit c'est des gens qui sont experts dans leur métier et qui veulent créer leur sas avec l'IA quoi.
+
+Terence (30:14.415)
+ça
+
+C'est ça, grosso modo c'est un consultant, un expert indépendant, ne pas RH juridique, peu importe, qui a déjà une méthode qui voit des problématiques quotidiennes récurrentes et qui se dit si je pouvais packager ça dans un outil, je pourrais toucher beaucoup plus de clients sans forcément travailler plus, ce qu'il est quoi. Mais avant le blocage c'était je ne pas dev, aujourd'hui ce blocage il n'existe plus finalement.
+
+David Leuliette (30:39.695)
+Ouais c'est plus quels sont les keywords et comment je peux articuler ça et... Rempup... Fin tu vois filer le guide parce que je dis toujours ce facile... Enfin maintenant la première marche dans la tech elle est assez hardcore. Avant c'était facile parce que tu devais monter une montagne, maintenant c'est tiens, là lève reste, tu vas monter tout en haut en moins de deux jours.
+
+Terence (31:02.959)
+C'est ça.
+
+David Leuliette (31:06.203)
+Et si t'as pas le chemin exactement sur tous les paliers, qu'est-ce qu'il faut faire ? Comme tu disais, étape 1, terminale, git. Si tu fais pas ça, c'est foutu. Je vois que t'as un exemple concret de quelqu'un qui a chipé grâce à ton accompagnement.
+
+Terence (31:24.431)
+ARK, avant que j'arrive, qui ont du coup shippé grâce à mon accompagnement, ils ont trouvé leurs deux premiers clients comme ça. Ils étaient partis eux d'un proto qu'ils avaient fait sur V0. Je les ai fait passer sur...
+
+David Leuliette (31:27.555)
+Ouais.
+
+David Leuliette (31:43.316)
+connaissait déjà V... Comment ça se fait ? Qui connaissait V0 ?
+
+Terence (31:47.715)
+Euh... Bonne question Google Internet
+
+David Leuliette (31:50.582)
+Internet, internet, v0.app, enfin .dev, .app, sais plus où, .dev, .app maintenant ils ont rebrandé, c'est le truc de Verzel, justement pour faire des... c'est assez advanced, enfin je dirais que c'est un outil pour les connaître, c'est pas lovable, parce que lovable c'est genre clic clic, v0 c'est un peu quand même à destination des devs, c'est marrant qu'ils aient commencé là-dessus, ok.
+
+Terence (31:56.476)
+.app je crois ouais
+
+Terence (32:16.887)
+Au niveau de l'interface et de l'expérience utilisateur, c'est quand même très très très proche je trouve de l'OEB finalement.
+
+David Leuliette (32:23.664)
+Ah ouais ? Ok, je sais pas, je m'en rends pas compte. J'ai pas testé... Non mais bon.
+
+Terence (32:27.615)
+c'est que vraiment à gauche la fin de la partie où tu promptes et à droite ton interface et voilà quand tu lui dis ce que tu vas faire et go quoi
+
+David Leuliette (32:33.667)
+Ok ouais.
+
+Moi je teste V0, je teste vite fait quand je veux des petits trucs. Bah l'ancien CodePen en fait, enfin ou CodePen ou JSFeedle où il fallait un éditeur online web pour avoir un rendu, hop moi je lance V0 et puis hop comme ça je sais que peu près ce que ça me lance, je peux faire de la merde dessus et terrer rapidement en mode sandbox. Et... Ok et...
+
+Est-ce le plus grand blocage des personnes non techniques, est-ce que c'est le terminal ou c'est autre chose ? Tu vois, je sais qu'au début les gens ils flippent quand tu leur montres un terminal, puis en fait, tu as quatre commandes à savoir, et en fait ça va quoi !
+
+Terence (33:22.703)
+Bah oui, c'est ça. Le grand mur que j'ai en général, c'est Git en vrai. Quand on parle de Git, ils font wouah, wouah, qu'est-ce que c'est que ce truc ? Et puis après tu leur parles, tu expliques que c'est juste un système de sauvegarde avec des branches, machin. Et puis une fois qu'ils ont capté...
+
+David Leuliette (33:32.258)
+Ouais.
+
+David Leuliette (33:36.144)
+Je peux revenir dans le temps, c'est fou.
+
+David Leuliette (33:44.848)
+tu leur montres les branches quand même ? Ça branch out ou ça trunque ?
+
+Terence (33:47.843)
+Oui, je leur explique les branques parce que je les accompagne sur un système de... Je leur dis de créer des pull requests à chaque fois qu'ils veulent faire des trucs. Et moi j'organise la review derrière, donc du coup ils doivent passer par une branche, etc. Donc ça c'est le gros truc quand on parle de Git, surtout sur la même séance, je fais Git, Terminal, et du coup l'installation potentiellement de NPM, etc. Et CurSor, et là en plus CurSor tu l'eux la première fois, tu vois le...
+
+David Leuliette (33:55.632)
+Ouais. Ouais.
+
+David Leuliette (34:11.939)
+Fierce, fierce, ouais.
+
+Terence (34:17.167)
+Donc ils font wouah, pourquoi je m'embarque ?
+
+David Leuliette (34:19.535)
+Ouais, ouais, ouais, je vois. qu'en vrai, faut juste lire, tu vois, c'est écrit...
+
+Terence (34:24.551)
+Et puis ça, finalement une demi-heure après, une fois que tout fonctionne, ils se rendent compte que le code, ils n'ont pas tant à s'en soucier, c'est l'IA qui gère le truc, que s'ils ne comprennent pas, ils demandent à l'IA et puis ils lui répondent.
+
+David Leuliette (34:35.972)
+Et puis du
+
+David Leuliette (34:39.543)
+Et c'est quoi du coup que ça chip ? du react ? Enfin c'est du next yes ? Ou c'est quoi qu'ils font comme code ? Ouais ok ouais. Ouais donc en fait c'est assez facile. Ouais tu leur balances pas du flotteur direct ?
+
+Terence (34:43.073)
+Oui, c'est du Next.js,
+
+Terence (34:49.583)
+euuuuh pas encore pas encore non mais j'ai... j'ai un...
+
+David Leuliette (34:53.059)
+bizarrement voilà c'est bon on a trouvé rec native 1 flotteur 0 parce que tu peux pas balancer flotteur à des gens non techniques rec native peut-être ouais ça se lit plus quoi je pense je m'en rends pas compte
+
+Terence (35:07.727)
+En fait là je vais commencer très prochainement avec un autre projet qui lui veut démarrer en fait ils avaient hésité longtemps sur une première version mobile ou web et en fait le mobile leur plaisait plus et donc là on va commencer sur une première version flutter mais en finir ce sera de leur point de vue ce sera ce sera la même chose quoi
+
+David Leuliette (35:22.478)
+Ouais.
+
+David Leuliette (35:33.904)
+Oui parce que de façon en fait ils n'auront jamais appris. Moi je dis ça parce que j'ai flemme de réapprendre un truc mais quand tu... De toute façon, si t'es sur la plainte et que tu dois monter les verrestes qu'au milieu ce sera le lac de glace mais tu t'en fous parce que c'est la première fois donc t'en sais rien que ça va être horrible. Moi c'est parce que j'ai pas envie, non non j'ai déjà fait le lac de glace avant c'est bon quoi, ça m'a... non c'est bon. voilà autant les mettre direct.
+
+Terence (35:49.933)
+Ahahah
+
+David Leuliette (36:01.884)
+C'est exactement ce que j'ai fait Big Up Mathis, je sais pas s'il est dans le chat ou pas, c'est vrai il a des gens dans le chat, j'ai pas dit bonjour. C'est que je l'ai embauché en alternance, je lui direct mis les outils de senior software engineer, du coup il a pas fait, je lui pas montré comment les trucs simples pour commit click-click c'était direct hardcore terminal et après tous les shortcuts, donc la première marche était assez hardcore mais après ça va, ça a été.
+
+Terence (36:17.295)
+Aie
+
+David Leuliette (36:32.515)
+Et pareil, lui ai dit, le truc que je te disais tout l'heure, recast et tout. Maintenant, setup stylé. Et il a un situ qui écoute, qui se dit peut-être, si n'importe qui peut créer un SaaS, est-ce qu'on a encore besoin d'une équipe de dev ? Tu lui réponds quoi ? Bah oui, regarde, je vais devoir embaucher un mec en sécurité, un mec en QA, un product.
+
+Terence (36:59.663)
+Non, bien.
+
+David Leuliette (37:02.511)
+Moi à la base je voulais remplacer tout le monde mais maintenant en fait je embaucher plein de gens
+
+Terence (37:08.303)
+Non en fait pour moi il y a toujours besoin de devs c'est comme on disait tout l'heure c'est juste que la fenêtre bouge un peu C'est plus la question à quoi servent les devs aujourd'hui Parce que finalement aujourd'hui il a un PO il écrit des user stories avec un maximum de détails etc. Tu prends ces user stories tu les fous dans un LLM il va te développer le truc Avant c'était
+
+complécité de développer, de traduire des user stories en code et en code fonctionnel, c'était la responsabilité du développeur. Maintenant, l'IA le fait très bien. Mais par contre, responsabilité, la deuxième responsabilité du développeur qu'on voit un peu moins, mais que le produit voit bien, c'est est-ce que ça marche et est-ce que c'est durable. Et ça, du coup, ça reste toujours, ça reste toujours le fameux ça marche sur la machine.
+
+David Leuliette (37:59.581)
+en bas ça marche, ça marche sur ma machine, ça marche pas en prod
+
+Terence (38:07.519)
+Mais ça c'est toujours la responsabilité du développeur donc il y aura toujours besoin de dev Il y toujours besoin de senior, il toujours besoin de junior parce qu'il faut relire le code derrière il faut s'assurer aussi que l'IA soit bien cadré par rapport aux besoins du projet et ça c'est un dev aussi qui doit le faire il faut gérer la sécurité, faut gérer
+
+la partie DevOps donc toujours besoin de ces métiers là.
+
+David Leuliette (38:39.951)
+formation des gens
+
+leur disent non mais là clique attention cliquez pas sur n'importe quoi ouais ce que tu dis quoi sécurité tu vois tout ce qui après ça dépend moi j'ai pas vraiment trop ça dépend si là quand même un petit peu dans la boîte que je travaille maintenant mais tout ce qui est shadow et it attention exfiltration des données tout ça j'ai bossé dans un environnement crypto et là c'était aller à niveau 10 quoi, l'air de chaque truc c'était paranoïde mode parce que bah
+
+C'était un autre contexte.
+
+Terence (39:16.591)
+Oui, je m'étonne. C'est ça, il faut faire attention. D'un côté, la partie fonctionnelle qui est hyper facilité, mais la technique pure reste la même et c'est ça qui fait la différence entre un projet vibecoded amateur et un professionnel.
+
+David Leuliette (39:34.287)
+Ouais, je vois. Et donc, ouais, la vision long terme, à ton avis, dans trois ans avec les agents IA qui progressent vitesse très rapide, tech lead, qu'est-ce que ça va dire ? Ça va être quoi quand t'es tech lead ? Tu gères une armée d'agents IA ou tu gères une armée de gens qui gèrent une armée qui gère des agents IA ?
+
+Terence (39:55.959)
+Ahahahah
+
+Pour moi c'est plus le mec qui gère une armée de gens qui gère des IA. Parce que là en fait je travaille aussi en free sur un projet pour un grand compte que je ne pas citer. Mais en l'occurrence on est 40 devs pour faire une application en flotteur. Et donc on tourne tous avec de l'IA.
+
+David Leuliette (39:59.216)
+...
+
+Terence (40:28.225)
+Mais c'est toujours indispensable d'avoir ces devs parce que du coup on est tous focus sur chacun notre scope. Et le tech lead, coup son rôle c'est d'avoir la vision plus une vision d'ensemble, savoir comment le système doit fonctionner, va avoir une vision aussi architecturale, et aussi d'avoir une vision moyen long terme sur les décisions qui sont faites sur les implémentations.
+
+Et donc ça, restera toujours dans trois ans, ce sera pour moi toujours d'actualité.
+
+David Leuliette (41:01.968)
+Il y a peut-être plus de bandes passantes sur...
+
+Sur les erreurs qui devraient pas arriver avec l'IA qui sont réglées une fois et après il va plus jamais les refaire, tu un peu comme des tests et où ça lui laisse du temps pour oui non mais là dans cinq ans dans combien j'ai besoin de serveurs, est-ce que je veux faire des trucs d'infrastructure, gérer les coûts et tout, je vois. Plutôt que de faire du day to day prod, vas-y.
+
+Terence (41:30.789)
+C'est ça.
+
+David Leuliette (41:31.312)
+encore un mec qui avait une virgule alors qu'on avait dit pas de virgule putain encore un mec qui a fait des space alors qu'on a dit des tables le fab le fab et qu'est que tu ferais plus jamais sans IA ? un truc que tu pourrais plus tu dis ah non maintenant c'est terminé même si tu pouvais en fait
+
+Terence (41:52.299)
+euh... aujourd'hui en vrai ce serait... serait... alors c'est peut-être caricatural mais ce serait tout dev à la mano euh... je t'avoue qu'aujourd'hui ça... si je devais tout réécrire à la main ça me ferait bien bien chier parce qu'aujourd'hui ça va tellement plus vite de le laisser faire et puis de corriger derrière euh... ouais je me vois pas tout refaire à l'ancienne
+
+David Leuliette (42:18.351)
+Ouais après ça dépend vraiment ce que tu écris tu vois. Je que moi là je refais un peu de rails et en fait écrire du rails à la main, du rubis à la main sur l'aim texte ça c'est... mais après j'en ai fait pendant mille ans sans. Mais ça va tu vois. Déjà j'étais plus ce team texte éditeur qu'idée tu vois. Il y a trop de magie j'aimais pas. Mais là en fait le truc c'est que rubis de base le langage il rien. Enfin c'est...
+
+Terence (42:33.935)
+Oui.
+
+David Leuliette (42:46.319)
+Il n'y a pas des accolades de la moireté, des trucs incompréhensibles, t'écris littéralement ce qu'il faut faire. en fait, le langage aussi te force un peu à le faire. Et moi, suis hardcore user sur le même texte avec tous les shortcuts, multi-line edit et tout. Et donc ça, ne me dérangerait pas, vois. Mais j'avoue, faire du réact, préfère dire hop, si moi je poute tout le truc.
+
+Terence (43:06.223)
+Ouais.
+
+Terence (43:13.443)
+Et d'ailleurs puisque tu parles de rugby, Stripe, je sais pas si t'as vu qu'il a posté il y a pas très longtemps, peut-être un mois, un peu moins d'un mois, deux articles sur la stack qu'ils sont en train de créer, justement sur l'automatisation comme ça du développement. Alors ils ont fait leur stack mignon. Et grosso modo l'idée c'est que...
+
+David Leuliette (43:25.593)
+Ouais.
+
+Terence (43:40.033)
+Ils ont un Slack sur lequel on peut décrire la feature à développer. Et du coup, ont après des agents qui vont développer tout ça, qui vont faire une boucle, comme je disais tout à l'heure, avec une partie déterministe sur du linter, des tests, etc. Très strictes. Et en bout de course, tu as le développeur qui a la responsabilité de faire de la review.
+
+David Leuliette (43:46.156)
+Ouais.
+
+David Leuliette (44:01.744)
+...
+
+Terence (44:09.653)
+et de s'assurer que tout est carré etc. Avec la possibilité de reboucler si il a besoin de fixer des choses etc. c'est en train de venir petit à petit dans pas mal de DSI ce système. Eux ils ont fait un truc maison, c'est pour ça qu'ils ont fait mignon parce que déjà Stripe c'est du banquet etc. Donc ils ont besoin d'être sûrs de ce qu'ils font. Ensuite...
+
+Sur le premier article ils expliquent que par rapport à leur usage de rubis ils avaient besoin de des besoins particuliers. Mais bref ils ont réussi à vraiment customiser le truc à fond. Et apparemment du coup c'est en prod là déjà et ça tombe plutôt pas mal.
+
+David Leuliette (44:57.923)
+Oui, que oui, l'origine Stripe en fait c'est du rubis leur backhand.
+
+...
+
+Ok cool intéressant, moi j'irai voir je mettrai le minions, stripe, one shot, end to end coding, agents. C'est marrant parce que ouais moi je fais un peu ça aussi quoi, c'est ce que je commence à faire si j'ai tout dans Slack, hop j'invoque des agents dust et ça me fait de la magie quoi. je vois.
+
+Terence (45:26.279)
+C'est un peu le même principe que là, tu vas mettre ton agent Cloud Code dans un environnement fermé, où tu vas pouvoir enlever toutes ces restrictions d'ailleurs, et il va tourner à fond.
+
+David Leuliette (45:29.039)
+Ouais c'est
+
+Mmh mmh.
+
+David Leuliette (45:37.945)
+Ok, intéressant, vous nous direz les stiou qu'est ce que vous avez, est que vous faites la même logique ? On veut savoir. Vas-y on va passer à la partie question rapide. Attention, flutter ou reac native pour un MVP B2B en 2026 ?
+
+Terence (45:55.509)
+Profiteur. Pas une grosse surprise.
+
+David Leuliette (45:59.596)
+Alors Cloud Code Cursor au Copilot lequel tu gardes si tu dois en supprimer deux
+
+Terence (46:08.591)
+Je garde Claude Code pour avoir testé les deux autres.
+
+David Leuliette (46:13.231)
+Ouais pareil, moi je suis avec Nethi mais Cloud Code, il a survécu copilot, peut-être que je devrais le remettre, je ne sais pas, je ne sais plus, j'ai perdu...
+
+Terence (46:20.303)
+Je trouve pas mal sur les reviews et encore parfois il faut bien le configurer mais pas indispensable.
+
+David Leuliette (46:31.535)
+Le plus grand mythe sur le vibe coding que tu entends encore trop souvent.
+
+Terence (46:38.127)
+que c'est fait pour ceux qui savent pas coder et que les devs vont disparaître.
+
+David Leuliette (46:45.143)
+Parce que moi la définition du Vibe Coding c'était vraiment... T'as une UI, tu tapes des trucs et tu vois pas du tout le code. Là ce que tu fais, enfin ce qu'on fait tous, moi c'est l'agentique engineering en fait.
+
+Terence (47:01.793)
+Oui finalement oui. Le fait de pas voir le code c'est voilà pour le fonctionnel mais avant de mettre en prod il faut quand même checker le truc quoi.
+
+David Leuliette (47:03.951)
+Enfin moi c'est ma définition que...
+
+David Leuliette (47:09.945)
+All right.
+
+David Leuliette (47:14.767)
+Une décision à rares architectures sur un de tes projets que tu referais différemment ?
+
+Terence (47:22.158)
+Sur un des projets, c'était un projet au fond de l'eau sur l'atelier Trivia pour automatiser les reviews et les audits, etc. J'avais créé un petit système qui orchestrait des agents et j'avais laissé Lya gérer l'architecture de ce truc-là. Très mauvaise erreur, très mauvaise idée.
+
+David Leuliette (47:42.287)
+T'as hésité !
+
+Terence (47:47.599)
+Parce que du coup c'était pas ce cas là ça m'a fait n'importe quoi j'ai dû vraiment refaire pratiquement zéro. ouais. Pas laisser...
+
+David Leuliette (47:55.684)
+Ouais, ouais, mais ça, c'est le coût d'apprentissage. n'était pas ouf. Tu vois, n'était pas élevé. Pour ça, tu peux tester hyper rapidement. fais, ouah, c'est parti sur cette. Et hop, son reboot. puis voilà quoi. Un outil ou une ressource que tu recommandes absolument à quelqu'un qui écouterait cet épisode de podcast.
+
+Terence (48:09.583)
+C'est ça.
+
+Terence (48:19.119)
+Eeeeeuh...
+
+Alors c'est pas vraiment un outil, dirais c'est plus une discipline mais un bon fichier cloud.md ou cursor rules si vous préférez, si vous êtes sur cursor. C'est vraiment pour moi, c'est ce qui fait vraiment la différence entre un bon IA, un bon chasseur, le bon chasseur, le bon chasseur, suis... Mais c'est vraiment ça qui fait la différence quoi.
+
+David Leuliette (48:39.087)
+Oui.
+
+Ça c'est marrant, moi je n'utilise pas du tout ça, j'utilise que les skills.
+
+Terence (48:50.327)
+Bah en les deux tu serras vraiment croiser les deux ça va être pas mal parce que du coup le cloud.md pose les bases puis les skis après c'est juste...
+
+David Leuliette (48:56.431)
+...
+
+David Leuliette (49:04.077)
+Ouais ça va chercher... Ok, donc cloud.md tu dis hey mec, oublie pas y'a des skills, va les chercher.
+
+Terence (49:10.159)
+ou alors, mon projet il est architecturé de telle façon voici les conventions de code que j'ai dans mon projet surtout, fais pas ci, fais pas ça, machin et du coup ça il va le prendre en compte à chaque fois que tu vas le solliciter
+
+David Leuliette (49:26.575)
+Ouais à chaque fois, faut lui donner de l'adox et folie ! Ok, mais je vois, c'est parce que... vu que moi je switch tout temps de projet, j'ai installé les skills de façon globaux et puis, hop, je les appelle à la volée. ok, vas-y, je me note ça de changer ce truc. On arrive au moment carte blanche, est-ce que tu as un sujet que tu veux aborder et qu'on n'a pas encore parlé ?
+
+Terence (49:30.735)
+...
+
+Terence (49:57.263)
+J'aurais voulu avoir ton avis en tant que dev req native sur tout ça, sur l'IA et sur comment tu l'utilises et est-ce que ça te change vraiment ?
+
+David Leuliette (50:11.983)
+Ah qu'est que ça change ? Bah c'est vrai que ça va plus vite hein. Après c'est toujours pareil, ça dépend du contexte. Est-ce que c'est Vergrine Project ? Est-ce qu'on start from scratch ? Est-ce qu'il faut s'imbriquer dans un système existant ? Est-ce qu'on fait du Brownfield Project ? C'est à dire un projet qui quitte déjà et il faut le dedans. Parce que j'ai pas encore vraiment de feedback sur un projet horrible où Lya il se poisonne lui-même tu vois. En fait il y a plein de mauvaises pratiques qui sont mises dedans mais du coup quand tu...
+
+appelle un agent dedans, il s'empoisonne tout seul parce qu'il répète des trucs qu'il ne devrait pas répéter. Et ça justement, j'avais demandé à la Team Expo, il m'avait dit, bonne question. Mais ça, c'était l'année dernière, donc c'était avant, vu que je vais à l'APJS, j'aurais plus de vision là-dessus. moi, de façon assez simple, c'est qu'on le veuille ou non les amis, c'est chaque application qui sera possiblement écrite en JavaScript sera écrite en JavaScript.
+
+Donc, en fait, c'est ça, c'est JavaScript. après, peut-être que ça va changer. Peut-être qu'après, tu vois, il y aura peut-être un autre langage et tout, et ça va vous l'apporter que maintenant, tu n'as plus besoin, tu peux jump. Ce matin, j'ai fait du Kotlin multiplatform. Moi, je n'étais pas tout seul. C'était en vrai pair programming, pour le coup. Je n'aurais pas pu balancer ça tout seul.
+
+Mais en vrai si j'avais dû faire la feature tout seul, j'aurais fait slash explain, what the fuck, qu'est que c'est que ça, comment on fait pour ajouter un fil de email et j'aurais pu y aller tu vois. avant, mais no way que... Enfin que tu comprennes comment ça marche, tu peux pas jump, tu vois c'est impossible. Donc je pense que maintenant c'est ça que la barrière à l'entrée...
+
+Terence (52:01.007)
+Bye bye.
+
+David Leuliette (52:06.585)
+Elle est plus rapide mais sur le pareil les gens qui veulent chercher, tu cherches. Faut toujours savoir lire Zami, ça. Lire ce que lis. Et c'est vrai que ça, pense que du coup...
+
+Terence (52:14.255)
+toujours.
+
+David Leuliette (52:21.977)
+ou alors tout plie carrément mais lire vraiment les messages d'erreur et tout je pense qu'il faut faire gaffe à habituer le cerveau à faire aucun effort mais là je vois en fait genre un message d'erreur tu vois je pense que les gens c'est ce qu'ils font les gens que t'aident les logs d'erreur ils doivent les mettre dans clodcode ou je sais pas quoi
+
+Alors qu'en fait, ça fait juste de lire, c'était écrit, il manque un fichier là, tel endroit. Donc oui, ils vont quand même demander. Enfin, c'était écrit.
+
+Terence (52:55.279)
+Oui, et finalement il y a des cas où c'est beaucoup plus rapide de juste lire, mettre le bon truc et voilà, c'est évident.
+
+David Leuliette (53:02.813)
+Oui.
+
+Ouais c'est ça ouais donc faire gaffe. Mais après non en tant que rack native je sais que ça marche bien. Là il a Expo qui a sorti justement son agent tout court pour shipper des apps Expo en mode Agentsic Engineering. donc on verra. Alors ce qui serait fou...
+
+Terence (53:16.463)
+Oui.
+
+Terence (53:23.087)
+Yeah.
+
+David Leuliette (53:29.199)
+2026. Allez en 2028 tu auras une app sur les stores IOS Expo que tu pourras à la voice créer une autre app qui sera sur les stores sans bouger ton téléphone. Voilà c'est ma take dans 2028.
+
+Terence (53:36.975)
+Mmh.
+
+Terence (53:48.207)
+Ah oui, sais pas, je suis plutôt sceptique parce que de ce que j'ai vu, les stores sont de plus en plus vigilants par rapport vibecoding. J'ai lu que Reppelit s'est fait ban les apps Reppelit de l'Apple Store parce que trop mauvaise qualité et Apple est extrêmement vigilant par rapport à ça. Donc je sais pas.
+
+David Leuliette (53:52.335)
+Ouais !
+
+David Leuliette (53:58.351)
+C'est vrai.
+
+David Leuliette (54:03.131)
+ils sont fait ba... ouais ! ok ouais. Ok.
+
+David Leuliette (54:15.415)
+la fête est bientôt finie, dépêchez-vous les amis de faire ça, de mettre des apps de coups Saint-Péter sur les stores parce que c'est fini. Ok, qui est-ce qu'on devrait absolument inviter dans ce podcast ?
+
+Terence (54:24.14)
+A oui.
+
+Terence (54:36.815)
+moi je suis en train de chercher son nom Gabin Cornier qui est co-fondateur d'une de l'ILOA qui s'appelle ERION qui font l'IA en fait pour la conformité au niveau de la santé etc. Passionné d'IA, passionné de développement et un projet passionnant.
+
+David Leuliette (55:06.809)
+Et Rion, confédateur et Rion. trop bien. plus Lille. oui c'est vrai on n'a pas parlé de Ratek, ça. Dommage. Et l'angle d'attaque, quelle première question tu lui poserais ?
+
+Terence (55:11.087)
+Et réunion avec un Y.
+
+Terence (55:28.53)
+Euh... bonne question, tiens. En vrai, j'ai pas trop d'idées pour l'angle d'attaque, première question. Déjà, eux ils ont une grosse problématique, c'est que vu que c'est du pharmaceutique, a beaucoup de... enfin, il doit faire cloisonner au niveau sécurité.
+
+et donc être sûr que les données ne pas exfiltrées, donc comment est-ce qu'ils gèrent ça par exemple, peut être intéressant.
+
+David Leuliette (56:03.311)
+où est ce que on peut te retrouver sur les internets
+
+Terence (56:12.719)
+Alors, du coup, ARK, il y a donc h-a-a-r-k.fr et sinon sur le site de Atelier Trivium, atelier-trivium.fr et sinon sur mon link de din.
+
+David Leuliette (56:25.287)
+Ok, super. Tous les liens, notes de l'émission, c'est sur Wishy Pitty Today slash podcast. Si vous voulez m'aider, si vous avez survécu jusqu'ici et nous aider à faire découvrir le podcast à plus de personnes, pouvez mettre cinq étoiles sur Apple Podcasts. Et si vous voulez m'aider à faire découvrir le podcast pour plus de personnes, pouvez mettre cinq étoiles sur Spotify Podcasts. Et je pense que c'est tout. Il a d'autres.
+
+On est sur 10 heures aussi, je ne sais pas si on peut mettre des étoiles. c'est ça, tu es obligé. Le truc, c'est que les vacances. J'étais monté dans le top 100 et dès que tu arrêtes de publier, c'est comme Google. Tu es dans la sandbox, es parti, page 4000. C'est ouf. Ça prend 10 secondes et ça change beaucoup pour nous.
+
+Terence (57:00.355)
+Il est partout !
+
+Terence (57:10.15)
+oui !
+
+David Leuliette (57:21.935)
+Avant qu'on se quitte, est-ce que tu un teaser sur ce que tu vas shipper dans les 30 prochains jours en une phrase mémorable ?
+
+Terence (57:30.031)
+Dans les 30 prochains jours, suis en train de bosser sur la V2 de ma suite d'agents enorchestrés qui va permettre d'automatiser les développements de ARK, en tout cas une bonne partie, et des personnes que j'accompagne. On pourra peut-être en parler un peu plus tard.
+
+David Leuliette (57:56.015)
+Merci les amis, c'était le Cross Platform Show, merci Terence, on se retrouve très vite, ciao !
+
+Terence (58:01.517)
+Merci David.
+

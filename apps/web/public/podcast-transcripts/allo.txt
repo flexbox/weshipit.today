@@ -1,0 +1,737 @@
+David Leuliette (00:07.27)
+Merde. la vache, c'est pas grave je faire une édite.
+
+David Leuliette (00:14.198)
+Combien d'euros ton application mobile a-t-elle brûlé à cause d'une mauvaise décision technique prise il y a 18 mois ? La plupart des CTO ne savent pas et c'est précisément ça le problème. Aujourd'hui on démonte erreur par erreur ce qui coûte vraiment cher dans une stratégie mobile et comment l'éviter avant qu'il soit trop tard ? J'ai un message Pablo. Comment ça va Pablo ?
+
+Pablo (00:33.998)
+Salut, ça va ? Très bien, très bien et toi ?
+
+David Leuliette (00:36.988)
+ben euh... En vrai je suis éclaté SF back dans l'autre sens. Minus 9 ça va mais quand tu te prends un plus 9... Oui pourtant j'avais un plan, j'avais un plan. J'ai demandé à Gemini vas-y c'est quoi le plan, faut arriver dans l'avion, tac tu dors direct. Un gramme de mélatonine. Et après tout va bien, smoothly. Bah... Pas du tout. Mais ça va aller.
+
+Pablo (00:48.302)
+Tu le sens.
+
+Pablo (01:01.918)
+Non.
+
+David Leuliette (01:04.698)
+Alors tu fais partie de l'équipe fondatrice de The Mobile First Company et tu es la personne derrière Allo, un système téléphonique boosté ailleurs disponible sur iOS, Android qui enregistre ses appels, rédige des relances et met à jour le CRM automatiquement. Et c'est pareil que On-Off, tu as un numéro en plus ou pas ?
+
+Pablo (01:10.668)
+Exactement.
+
+Pablo (01:29.102)
+Oui c'est comparable, peut aussi acheter des numéros, tu peux porter ton numéro existant chez nous directement.
+
+David Leuliette (01:34.478)
+Ok. Voilà, parce que moi j'ai on-off, parce que je voulais pas que mon numéro soit partout malgré le fait que... Big on aussi les amis. Si vous avez pas big on, et que vous vous faites harceler par des numéros de téléphone un peu chelou, très bonne application aussi. Et donc, ouais, stratégie mobile, builder, tu la vis chaque jour. Dans cet épisode, on va passer en revue 5h les plus coûteuses que commettent les sitios.
+
+On va faire un bon épisode à le TOP 5 ! Pour chaque erreur, le coup réel, le signal d'arme que tu aurais dû le voir venir, est-ce que tu fais concrètement pour corriger le tir ? Pour les gens qui ne te connaissent pas encore, sur quoi tu passes 80 % de ton temps en ce moment ?
+
+Pablo (02:23.278)
+Alors aujourd'hui je passe 80 % de mon temps à Mobile First, du coup sur Halo principalement aujourd'hui ça fait un an et demi qu'on a lancé l'app donc on est encore au tout début et puis ça prend encore énormément de temps. Après de manière générale j'aime bien passer le reste de mes 20 % sur d'autres projets. Je suis quelqu'un qui adore faire dix projets à la fois donc mon 80 % s'étend rapidement sur du 100-110 % de mon temps mais...
+
+J'aime bien bille de manière générale.
+
+David Leuliette (02:53.323)
+Ok ouais, du coup tu fais le... Attends, a combien de personnes sur Allo
+
+Pablo (02:59.886)
+d'utilisateurs qui travaillent. en en mobile, j'étais tout seul jusqu'à y a 3-4 mois et du coup maintenant j'ai recruté deux ingénieurs supplémentaires. Après on a aussi notre équipe bien sûr back-end, une équipe web. Donc aujourd'hui en tout, en dev on est une dizaine.
+
+David Leuliette (03:01.39)
+Euh non, qui ship, qui travaille sur le produit.
+
+David Leuliette (03:21.35)
+Ok ouais, donc quelle étape ? Là c'est gross tu dirais. Vous n'étiez pas gross ? Gross scale ou... Est-ce que tu des métriques que tu peux partager ?
+
+Pablo (03:25.742)
+Ouais, exactement.
+
+Pablo (03:32.609)
+Oui, petit peu. Je peux partager aujourd'hui sur Halo, on opère plus de business. En ce moment même, j'ai regardé cette semaine, on était à environ 50 000 appels par jour. Et en ce moment, on est à entre 20 et 30 % de grosses par mois. Donc, il a pas mal de challenge technique sur la scalabilité, surtout l'infra.
+
+David Leuliette (04:00.976)
+Ouais je vois. euh... Donc ouais, Confounder The Mobile First, et toi comment... Dis-moi, comment vous avez choisi le nom, The Mobile First ? Parce que c'est un nom, c'est genre... C'est un... C'est... Ça me fait penser à t'sais, Responsive First, First... Attends, Mobile... Comment on dit Mobile Design First ? Mobile Design First ? Ouais je...
+
+Pablo (04:11.361)
+Alors c'est...
+
+Pablo (04:25.203)
+Ouais, et après il y a pas mal de Coca Cola Company où c'est un peu une forme qu'on connaît assez bien maintenant. Pourquoi de Mobile First Company ?
+
+David Leuliette (04:32.536)
+A très vous.
+
+Pablo (04:34.445)
+Bon c'est pas moi qui choisi le nom directement mais en fait ça vient quand même d'une conviction qui est qu'en fait il y a plus en plus de monde qui passe de plus en plus de temps sur le téléphone et qu'aujourd'hui on n'a pas encore forcément les outils adaptés pour pouvoir gérer un business depuis le téléphone. Aujourd'hui si tu ouvres la partie productivité des stores ça reste encore assez faible alors il a beaucoup d'applications qui sont en fait des compagnons d'applications web donc nous notre premier objectif The Mobile First c'était de pouvoir peu remplacer des outils
+
+un peu old school par des outils plus modernes et plus adaptés aux mobiles aussi. c'est souvent des outils plus light et moins chers aussi. voilà après notre...
+
+David Leuliette (05:16.998)
+Je suis sur StatCounter et ils que c'est 63 % de mobile Moi jadis j'étais genre la fling flexion point où ça allait arriver, genre oui ça arrivera one day qu'il aura plus d'users mobile que des stops Bah c'est le cas
+
+Pablo (05:37.485)
+maintenant tout le a un téléphone dans la poche et en plus on est tous ultra mobiles tout va de plus en plus vite donc un téléphone ça devient de plus en plus indispensable quand tu as besoin d'envoyer un document à quelqu'un aujourd'hui tu as envie de l'envoyer en cinq minutes tu n'as pas envie de rentrer chez toi d'envoyer un fax, j'exagère un peu mais l'idée est là quoi
+
+David Leuliette (05:54.983)
+Non j'avoue, j'avoue que tout ça sync et que tu puisses le faire très rapidement. J'avoue. Donc ouais vas-y on va deep dive, c'est parti. Erreur numéro 1, je faire sa stack mobile sans critter objectif. Donc je prends Rack Native parce que... Alors attend vous étiez déjà sur Rack Native au tout début ?
+
+Pablo (06:19.657)
+Ouais, on a commencé en React Native dès le début. Moi ça fait 10 ans presque que je travaille avec React Native aujourd'hui, c'est aussi pour cette raison là, mais on m'a aussi choisi pour cette stack.
+
+David Leuliette (06:33.09)
+Et pareil, c'était par conviction, c'était genre on va faire direct native parce qu'il faut prendre une stack, c'est plus simple de développer des dev JavaScript et à la fin toute application JavaScript sera écrite en JavaScript ou c'était quelque chose d'autre.
+
+Pablo (06:48.129)
+Non c'est quand même par conviction. C'est sûr que moi je viens pas du développement natif, donc peut-être que c'est facile d'adverser ça dans ma position parce que je viens pas de... Je suis pas quelqu'un qui est commencé avec Swift et qui est switch sur du React Native. Pour autant j'ai quand un profil full stack, c'est à qu'avant de faire du mobile j'ai fait beaucoup d'autres choses, j'ai fait du backend, j'ai fait de l'embarqué, j'ai fait du web aussi.
+
+à l'époque où j'avais commencé React Native, vrai que c'était un langage qui resté très récent et on en voyait déjà quand même les avantages parce qu'on a réussi à développer des applications à un à deux ingénieurs compatibles sur Android, iOS. Donc clairement, a quand même cette conviction de se dire qu'avec React Native, au-delà du fait que déjà c'est en JavaScript, qu'il une communauté derrière et qu'il y a beaucoup de briques qui sont déjà faites, ça reste un langage qui nous permet de réduire les coûts, d'accélérer, d'avoir une sorte de parité.
+
+entre Android et tout ça c'est le côté un peu happy pass et positif de se dire que React Native c'est génial parce qu'il y a une grosse communauté et ça va super vite et ça coûte moins cher.
+
+Après, moi je ne le recommanderai pas forcément dans toutes les configurations. Aujourd'hui, là, on travaille dans des apps B2B, c'est des applications à priori relativement statiques, ça reste des interfaces en fait, la complexité reste côté backend, donc je trouve que React Native a complètement sa place.
+
+Après il y a d'autres points à prendre en compte et que j'avais trouvé assez intéressant parce qu'on n'y pense pas forcément tout de suite. On pense tout de suite aux performances en fait. C'est peut-être le premier argument qui vient, c'est ouais mais en natif c'est beaucoup plus performant. Ouais c'est vrai, si tu développes un jeu vidéo...
+
+Pablo (08:33.993)
+Peut-être que t'as intérêt à aller en natif, si tu fais une app iOS only, peut-être que t'as intérêt à aller en natif. Mais en fait, il y a d'autres contraintes aussi qui viennent en React Native, que je connais un peu moins en Swift et en Kotlin, mais je peux quand même l'avoir aujourd'hui en tant que head of mobile, du coup je passe beaucoup de temps à recruter. Et du coup, je viens sur ce point-là, c'est que en fait, React Native, c'est soit stratégique sur la technologie utilisée, mais aussi sur toute la stratégie de la boîte derrière, la taille des équipes, la structure des équipes, puis le recrutement.
+
+Et donc il être conscient aussi que ça a un impact cette décision sur les talents à recruter, la taille de l'équipe, la disponibilité des personnes sur le marché, les salaires demandés. Moi aujourd'hui, ça pour le coup, c'est quelque chose que je n'ai pas vu tout de suite parce que j'ai quand même dû passer par deux entreprises différentes et des contextes complètement différents pour vraiment comprendre ce point-là. Parce ça m'a permis vraiment de un peu face à face deux stratégies différentes.
+
+Donc aujourd'hui, React Native, ça reste quand même quelque chose qui est assez récent. En Europe, c'est moins développé peut-être qu'aux États-Unis. Et moi, je trouve que, en tout cas, la recherche de talents et de bons profils en React Native peut être plus compliquée, sachant qu'il a aussi beaucoup de personnes qui viennent du web. Et selon le ton cas d'utilisation, ça peut être une contrainte.
+
+David Leuliette (09:54.887)
+Ouais, exactement.
+
+David Leuliette (09:59.924)
+Et vois des gens qui viennent te voir direct, enfin vous voir en disant non moi je veux faire absolument du Swift, because XYZ. Ouais ok ouais ok.
+
+Pablo (10:10.409)
+Bah ouais, complètement. Et dans les deux sens, je vais absolument faire du swift ou vais absolument faire du Kotlin. C'est marrant parce que c'est souvent ceux qui font du natif qui vont aller cracher sur Rack Native. Alors que quand je parle aux personnes qui font du Rack Native, je les trouve plutôt ouvertes sur le sujet. Je pense que c'est un peu un sujet un peu débile. Nous aujourd'hui dans Halo par exemple, on a une grosse partie qui est faite en natif.
+
+David Leuliette (10:17.191)
+Hmm?
+
+Pablo (10:34.089)
+Et pour autant, c'est une app, React Native, Expo, puis encore plus aujourd'hui où Expo permet vraiment de pouvoir faire du natif facilement. fait, encore une fois, sauf si toute ton app repose sur sa complexité, peut-être que t'as intérêt à faire du natif directement, mais dans le cas contraire, nous aujourd'hui, on a un module particulier qui est vraiment complexe et qui a besoin d'une rapidité, de performance, de fonctionner quand l'app ne tourne pas. Donc c'est toute la partie appels. Je reçois un appel sur mon téléphone. Il faut qu'en moins d'une seconde, j'aie pu traiter la donnée et
+
+afficher l'appel sur le téléphone et en plus l'appel ne tourne pas la plupart du temps. L'appel se lance avec un démon assez léger, il faut lancer toute la logique et reporte l'appel. Donc ça par exemple cette partie là elle est en native.
+
+ça a été compliqué au début parce que j'étais tout seul, il fallait que je fasse la partie iOS puis la partie Android. Mais aujourd'hui, en plus avec tous les outils, avec Cloud, etc., c'est de moins en moins une contrainte. Je ferais peut-être pas toute une app entière, full, vibe codé en natif, mais aujourd'hui pour certains modules, ça m'est arrivé encore il pas longtemps, il me manquait une libre en React Native. En 30 minutes, j'ai pu la vibe coder et ça m'a permis d'utiliser la détection de données dans le texte, exemple, pour détecter les adresses, les numérotés.
+
+David Leuliette (11:43.942)
+Oui.
+
+Good enough quoi. pour faire de l'OCR ouais. je vois. Et est-ce que vous avez un exemple de Gnap que vous avez construit où il a eu un mauvais choix de stack ?
+
+Pablo (11:47.951)
+Ouais exactement.
+
+David Leuliette (12:02.151)
+Enfin vous, peut-être pas vous, mais quelqu'un qui venu vous voir en mode « Eh ! Panique ! » parce que c'était une simple app et par conviction il s'est dit Non, je vais faire ça en flotteur » et puis en fait il galère à recruter.
+
+Pablo (12:02.284)
+...
+
+Pablo (12:15.724)
+J'ai pas d'exemple précis, par contre nous c'est une question qu'on s'est quand même beaucoup posé. Et en vrai le principal bloqueur justement, c'était enquel je ne m'attendais pas forcément, c'était le recrutement. Nous on essaie d'être très sélect sur le recrutement qu'on fait.
+
+parce qu'on a envie de garder une équipe très petite, on a envie d'avoir chaque personne qui a une grosse responsabilité sur ce qu'il fait. Donc on cherche des profils assez variés, quand on parle de full stack, on parle d'être capable de développer un projet, de faire la partie produit, le concept, parler à des utilisateurs, donc ce n'est pas quelque chose que tous les ingénieurs font. Donc ça filtre énormément et nous, à chaque fois qu'on s'est posé ces questions-là, c'était plus pour des raisons stratégiques sur le recrutement que sur des raisons technologiques.
+
+après autour de moi, pour l'instant je ne connais personne qui regrette être parti sur React Native. Mais pas l'inverse non plus.
+
+David Leuliette (13:08.935)
+Euh... Ouais bah après euh...
+
+David Leuliette (13:15.623)
+Si tu commences à re-write et tout, on dire que t'es pas vraiment bloqué quoi. Mais c'est à l'avantage.
+
+Pablo (13:19.692)
+ça reste une techno, après il faut faire un choix au début mais après la techno aujourd'hui elle est suffisamment avancée que ce soit du natif de toute façon, natif est souvent avancé, le réact native aujourd'hui il limite en rien parce qu'on est capable de faire du natif là où on va avoir des limitations donc je pense que c'est une question qui fait de moins en moins de sens en plus aujourd'hui avec la capacité de développer en vaille prudente.
+
+David Leuliette (13:47.004)
+J'avoue, j'avoue, j'avoue. va passer à l'erreur numéro 2, c'est sous-estimer le courriel de la maintenance mobile. Ça on connaît, on a chipé, c'est beau, tout est beau, les stores cliquent, hop. Et six mois après, l'app est en dette. Parce que sachez que c'est tous les quatre mois qu'il a un SDK d'expo qui sort. Donc il faut...
+
+Le maintenir à jour, parce que souvent ça, ça se voit pas tout de suite à beaucoup de gens qui budgetent le truc, qui dev le mobile, mais pas l'immanentance et la maintenance en fait, je pense que vous en avez aussi un des... Il faut... Last minute, bah tiens, il faut mettre à jour NOW ! Et en fait, bah non mec, t'as 4 SDK de retard, c'est mort, enfin je vais pas pouvoir le faire ça, comme ça le corriger tout de suite.
+
+Pablo (14:34.06)
+...
+
+Pablo (14:39.656)
+Je pense que l'exemple le plus marquant que j'ai, c'est une boîte qui à un moment voulait me recruter pour refaire leur app. Et en fait ce qu'ils avaient fait, c'est qu'ils avaient fait externaliser le développement de leur application en se disant, c'est nickel, on se fait notre app, on paye un billet pour avoir notre app et puis on la sort. Et puis après on verra plus tard comment on fait. en fait, ils l'ont sortie, il y avait des choses qui fonctionnaient pas ou qui n'étaient pas claires. Ils ont essayé de continuer avec l'entreprise pour qu'ils s'en retrouvaillent des coups de malade et puis ils n'ont jamais réussi à maintenir leur app. Et en fait ils ont recommencé de zéro.
+
+Donc clairement, après je pense, il a un truc aussi c'est que de toute façon la version qu'on va sortir en mobile, la première version, elle ne sera jamais parfaite. Surtout si tu chips sur Android aussi. Moi ce que je me suis rendu compte, c'est que voilà, je pense que tu connais le sujet mais sur Android en fait, il y a tellement d'OS, de taille d'écran différent, de mise à jour, de...
+
+David Leuliette (15:09.127)
+Mmh.
+
+Pablo (15:36.945)
+choses qui fonctionnent pas forcément comme on veut. puis en plus on utilise React Native. Ce qui fait qu'il a double layer. à qu'un OS Android de base, chaque fabricant va faire sa propre surcouche par dessus, qui va rajouter soit des nouvelles permissions, soit des nouvelles contraintes. Et en plus React Native, eux ils essayent un peu de se débattouiller avec ça, de faire une app, un langage qui fonctionne sur iOS, et puis sur toutes les versions d'Android différentes. Ce qui fait que ça m'est arrivé assez régulièrement de devoir déjà faire des sortes de magouilles
+
+David Leuliette (15:48.583)
+clavier quoi. Le clavier c'est un enfer.
+
+Pablo (16:06.798)
+pour réussir à faire marcher tout ce que je veux sur Android comme je le veux. Et puis après quand tu fais sortir ton app et que tu commences à avoir des utilisateurs, tu commences à avoir des devices que tu n'avais jamais testé, que tu ne connaissais pas, que tu pensais même pas qu'ils étaient encore sur le marché. Et en général ça, crée des vrais problèmes. La plupart du temps, ce des problèmes de performance. Clairement, un Android avec une version qui date d'il a 6 ans...
+
+Un Android à 100 balles ça peut vite être très compliqué de faire tourner ton app dessus donc des fois tu essaies juste de la faire survivre mais au moins qu'elles sont un peu utilisables et puis après ça peut être aussi au niveau des tailles d'écran
+
+D'autres choses, des exemples pas trop mal là-dessus où je me suis pas mal cassé la tête à comprendre pourquoi ça marchait pas sur un Android en particulier. Et en fait, je me suis rendu compte que la surcouche qui était développée, je crois que c'était par Xiaomi, rajoutait des permissions supplémentaires pour pouvoir faire certaines choses. Donc c'était lié à l'appel en fait, c'est pour afficher un appel quand ton écran est verrouillé. Ça marchait sur tous les téléphones sauf sur un téléphone. Et en fait, j'ai juste fini par acheter ce téléphone parce que je n'en pouvais plus.
+
+David Leuliette (17:04.626)
+Ok.
+
+David Leuliette (17:10.418)
+Ouais bah pareil, j'achète, vous avez envie, c'est bon. Ça m'a saoulé, je vous vois.
+
+Pablo (17:12.222)
+Voilà, de toute façon on finit tous avec 10 androïdes.
+
+Et en fait il se trouve que Xiaomi ajoute deux permissions supplémentaires qui ne pas détectables par le téléphone directement, en tout cas pas avec les libs de base. Et on ne pas aussi trigger la permission depuis l'application. Donc ça veut dire que ça a été construire un flot complètement différent pour ces appareils précisément.
+
+Donc je pense qu'il a ça déjà qu'il y une maintenance un peu qui aura toujours à faire et que plus on aura d'utilisateurs plus on va trouver de cas comme ça un peu particuliers. Après un autre truc pour moi qui est important sur ce point là, sur les coûts un peu de la maintenance, c'est que, et c'est peut-être quelque chose pour ceux qui viennent du web et qui veulent passer sur du mobile, une grosse différence marquante c'est qu'une mise à jour qu'on fait sur un...
+
+sur un téléphone, c'est potentiellement une version qui persiste dans le temps potentiellement pour beaucoup d'années. Et ça, change beaucoup de choses. Ça demande d'être rétro-compatible si on a envie que la continue de fonctionner, c'est même pas obligatoire mais quand même. on opère un service, moi par exemple, j'étais celui qui a développé l'application de IEGO, je sais pas si tu connais, c'est des scooters en libre service.
+
+David Leuliette (18:08.162)
+Ouais, forever. C'est ça.
+
+Pablo (18:32.504)
+commencé à Barcelone et il se trouve que ça en finale je m'en fous si l'utilisateur a une version avec cinq ans de moi je veux qu'il puisse louer un scooter quoi je veux pas lui dire bah écoute va chez nos concurrents parce que là elle marche plus donc on a eu beaucoup de cas comme ça et puis pour le coup mobile first ça fait deux ans aujourd'hui donc pour l'instant on vit avec déjà notre bête technique de il a un an et demi deux ans iégo j'y suis resté sept ans je peux te dire que après sept ans j'avais encore un workaround dans mon app qui déplaçait le
+
+David Leuliette (18:46.184)
+...
+
+Pablo (19:02.418)
+cache d'un endroit à un autre pour ceux qui venaient avec une version, une vieille version et j'avais un event, 7 ans après ou 6 ans après je continuais de voir des utilisateurs qui rouvraient leur app, je ne pas comment, ne se sont jamais mis à jour et passaient par ce Worker en Co.
+
+David Leuliette (19:16.23)
+Ouais, bah ils l'ont installé une fois, ils étaient à Barcelone, ils sont revenus cinq ans après et puis... Ouais mais si ça m'est jamais été mis à jour.
+
+Pablo (19:20.83)
+Ouais exactement.
+
+Pablo (19:25.138)
+Je sais pas, parce qu'aujourd'hui ça arrive de moins en moins, parce que maintenant les téléphones ils offloadent les apps quand tu l'utilises pas, ils font les mises à jour automatiquement, donc ça arrive quand de moins en moins. Et puis après il y a quand même quelque chose qui arrive, qu'ils utilisent depuis longtemps en mobile, mais qui est de plus en plus stable, c'est les over the air updates. Donc ça c'est quelque chose qui expos...
+
+David Leuliette (19:30.822)
+Ouais, c'est...
+
+Pablo (19:47.66)
+et c'est vrai que ça permet de un peu compenser ces problèmes là parce que du coup une version qui est live peut quand même être mise à jour, certaines parties de là peuvent toujours être mise à jour mais moi personnellement je me...
+
+pas trop sur le Over the Air Update. Donc j'ai plutôt tendance à me dire ok mon API Live c'est un produit physique qui est dans l'aimant de mes utilisateurs. Si je fais des changements côté API, si j'ai des breaking change, je vais toujours essayer d'être rétro compatible.
+
+David Leuliette (20:18.76)
+Ok, tu mets pas de hard stop genre, cette version n'est plus compatible, téléchargez une nouvelle. Moi je sais que moi j'ai déjà fait parce que si tu changes le back-end pour whatever reason...
+
+Pablo (20:28.009)
+c'est peut-être la première facture que je développe dans mes apps.
+
+Pablo (20:38.709)
+C'est la première feature que j'ai développée dans mes app parce que, pareil, je me dis c'est un cas de problème. Tu peux toujours kill l'app et avoir une modal qui demande aux gens de l'update.
+
+David Leuliette (20:48.082)
+Oui. Ouais. Si tu le fais plus tard, plus tard égale trop tard.
+
+Pablo (20:54.795)
+Ouais, exactement. Et finalement, j'utilise de moins en moins parce qu'à force, a pris... En fait, ça arrive beaucoup au début parce qu'au début, tu développes ta solution, tu pars dans une direction, tu te rends compte que ton marché est dans une autre. Donc tu changes de direction, tout ce que tu as fait devient dépréhensé.
+
+toute ta structure doit changer et ça peut devenir très complexe de garder tout rétro-compatible. après aujourd'hui, y quand même normalement les API, tu te débrouilles avec des CHV1, CHV2, enfin tu as quand même beaucoup moyens de garder ta rétro-compatibilité. Après si tu fais des gros changements vraiment majeurs dans ta base de données et que bon ça devient vraiment complexe, t'as toujours cette solution là quoi. Mais c'est pas natif, donc c'est vrai que c'est peut-être un bon conseil de penser au tout début de ton app
+
+avoir un moyen à distance de pouvoir la bloquer et demander aux suiteurs de se mettre à jour, ça t'évitera de mauvaises surprises ou de perte des utilisateurs pour ça quoi.
+
+David Leuliette (21:53.034)
+Ouais. Euh... En fait, ça, l'erreur numéro 3, c'est construire sa stratégie sans distribution dès le jour 1. Donc le cas typique, c'est la paye belle, excellent, euh... Mais personne ne la télécharge. Et personne n'a prévu le budget pour ça. Euh... Et donc ça aussi, c'est un sacré truc.
+
+Pablo (22:10.942)
+Ouais.
+
+David Leuliette (22:15.153)
+Parce que c'est une erreur qui touche moins au code et plus au produit. Le CTO peut livrer une app techniquement impeccable. se retrouvera avec 200 téléchargements organiques qui seront 100 bots et 50 testeurs internes. La distribution mobile, c'est la responsabilité du CTO ou c'est du marketing ?
+
+Pablo (22:38.411)
+C'est un travail en collaboration. Moi, tout cas, dans ma manière de le travailler, ce n'est pas quelque chose que je pense que c'est ma responsabilité. Maintenant, c'est un sujet qui m'intéresse énormément. Moi, vais plutôt intervenir après. C'est-à-dire qu'en fait, on va collaborer ensemble. Je trouve qu'il y a une grosse différence pour commencer. Il a une grosse différence pour moi entre des applications B2C et des applications B2B. Parce qu'on ne pas pouvoir distribuer nos ads de la même manière.
+
+David Leuliette (23:01.651)
+Ouais, mais clairement oui. C'est J'ai déjà fait des apps où il a 200 DL, mais en vrai c'était parce que c'était interne et puis voilà, c'est pas des Skyrockets, millions de téléchargements. déjà clairement...
+
+Pablo (23:16.331)
+Ouais, on ne pas chercher la même cible, on ne pas le même nombre de personnes, on cherche pas la même qualité d'utilisateur. Et il faut savoir que nous à Mobile First, a testé quand même la stratégie B2C sur des applications B2B. Donc c'est quoi pour moi la stratégie B2C ? En tout cas aujourd'hui, celle qui marche le mieux, reste quand même de la...
+
+distribution ads driven. Aujourd'hui avec TikTok, avec Insta, si tu développes ton app B2C même sans budget à la limite, tu sais qu'en faisant des vidéos sur TikTok, en essayant de la promouvoir et en essayant d'avoir une vidéo un peu virale, tu peux faire du téléchargement. Nous on a testé ça avec du budget.
+
+David Leuliette (23:57.449)
+YouTube.
+
+Hmm.
+
+Pablo (24:01.385)
+mais on se rend compte que forcément la qualité des leads va être plus basse. Et pour une application B2B, ce que tu cherches, pas forcément d'avoir un million de téléchargements, un million d'utilisateurs actifs, plutôt des vrais utilisateurs avec des vrais use case et un vrai problème que tu règles. C'est un peu moins intéressant, ça fait beaucoup beaucoup de travail derrière.
+
+Parce que aussi en B2B, s'attend souvent quand même à faire... Et la stratégie qui fonctionne le mieux, ça reste quand même le sales driven. Une boîte qui veut faire un contrat de plusieurs centaines d'euros par mois chez toi, elle a envie de parler à un sales, elle a envie d'être accompagnée, elle a envie d'être rassurée sur la fiabilité de ton produit, que ce soit pas juste une app d'un solopreneur qui fait ça en parallèle de quatre autres trucs.
+
+Donc c'est ce que je peux dire un peu sur la distribution. moi je travaille pas directement dessus. Par contre, je vais beaucoup travailler en collaboration avec l'équipe marketing pour notre onboarding. que ce qui va beaucoup changer, et nous on a fait l'expérience par exemple avec Halo, c'est qu'en fonction des leads qui rentrent dans l'application, on a des onboardings très différents. En fonction de si on a envie de faire un gros filtrage en entrée, si on a envie de pousser, si on sait qu'on cible quelqu'un pour une fonctionnalité en particulier, il faut pouvoir le rassurer dans l'app.
+
+dès les premiers écrans sur cette fonctionnalité-là précise. Et ça c'est pour du B2B. Après du B2C c'est un peu différent mais ça reste quand même un onboarding à peaufiner en fonction des leads que tu ramènes dans ton app.
+
+David Leuliette (25:37.865)
+Et vous le faites comment ? Vous le avec un truc genre UpFlyer ou Branch pour traquer de où il vient et lui proposer un onboarding différent ?
+
+Pablo (25:46.795)
+Oui exactement, a deux manières, déjà en fonction des types d'ads qu'on fait. Allo par exemple, on peut très bien mettre en avant le fait qu'on enregistre les appels, qu'on fait des résumés, comme le fait que tout est enregistré dans ton CRM et que tu n'as plus besoin de prendre de notes à cet endroit là, ou le fait de pouvoir travailler en équipe et d'avoir tous tes numéros avec des cascades, avec des systèmes comme ça.
+
+David Leuliette (25:51.528)
+Ouais.
+
+David Leuliette (26:07.025)
+Ouais du coup c'est des personnes à différents avec des aides différentes et du coup tu fais le... Smart ! C'est Smart
+
+Pablo (26:13.448)
+Et donc en fait, les cibles sont complètement différentes. Voir leur business aussi est complètement différent. Et dans l'appel par exemple, a ce qu'on appelle l'in-band ou l'out-band. Donc c'est juste fait de recevoir des appels et d'en émettre. En fait, on se rend compte que c'est deux cibles complètement différentes. Il y a des entreprises qui font que de l'in-band quasi. Par exemple, si tu prends des agences immobilières, eux, reçoivent énormément d'appels. Si tu prends des équipes de sales, eux, c'est principalement de l'out-band. Et donc les fonctionnalités qu'ils vont chercher sont complètement différentes. Et pour autant, peuvent utiliser le même produit.
+
+Donc après, si on vise les deux types de clients, on va avoir un onboarding assez flexible. Mais surtout au début, quand on est peu et qu'on n'a besoin de faire connaître l'app, en général, on va plutôt se concentrer sur une cible et faire en sorte que notre onboarding soit orienté vers voilà. Nous, ce qui est assez marrant pour l' onboarding, qu'on avait fait, c'était un peu acquis comme solution, mais on utilisait RevenuCat. RevenuCat, il nous donne un payload qu'on peut custom. Et en fait, dans ce payload, on avait un
+
+David Leuliette (27:07.145)
+Alors, vidéo 4, ouais.
+
+Pablo (27:12.748)
+une config qui nous permettait d'ajouter, de supprimer des étapes, changer l'ordre. coup, côté app, avait une vingtaine d'étapes différentes implémentées pour l'endboarding. Et puis, depuis Revenu 4, on customer un petit peu, regarder l'impact.
+
+David Leuliette (27:27.529)
+Ouais, je vois. Quand on vient de voir, as une app qui va avoir un problème de distribution. Tu le vois venir comment dans les conversations que avec les CTO ?
+
+Pablo (27:44.203)
+Alors peut-être qu'un premier point c'est vraiment quand tu vas avoir des discussions qui sont uniquement orientées sur les features et la plus-value que tu vas créer avec ton app. En fait ça c'est qu'une toute petite partie et je pense que c'est un truc en tant que développeur, ingénieur, on comprend très vite c'est que t'as beau développer une pépite tant que tu sais pas la vendre ça reste un caillou quoi.
+
+David Leuliette (28:10.599)
+Ouais, well done.
+
+Pablo (28:12.008)
+Et en fait c'est vrai à grande échelle aussi, tu peux développer un diamant, c'est génial mais en fait il falloir réussir à le vendre. donc en fait nous nous rendus compte aussi, je suis content qu'on ait pris une stratégie assez différente, c'est qu'en fait on a une stratégie complètement opposée, c'est qu'avant de développer ce diamant en ce caillou, on va d'abord apprendre à le vendre. Et en fait c'est des discussions qui doivent venir très rapidement sur la table.
+
+tu crées un outil super, tu une grosse phase qui est l'adoption, faut que les personnes comprennent comment ton outil fonctionne et qu'ils arrivent à l'incorporer dans leurs outils de tous les jours. Mais même avant ça, faut qu'ils aient envie d'utiliser ton produit, donc il faut déjà leur faire comprendre rapidement.
+
+Quand ils téléchargent l'application, pourquoi c'est la plus-value pour eux. Et encore avant ça, il faut qu'ils le connaissent. Et si tu n'as pas de stratégie pour faire connaître ton app, pour ensuite montrer la valeur très rapidement et faire en sorte qu'il y ait de l'adoption, tu as beau avoir un super projet derrière, ça marchera pas. Donc je pense qu'un CTO qui ne veut pas parler de ça, il risque vite de rencontrer un mur.
+
+David Leuliette (29:14.843)
+Et puis ça n'a pas besoin d'être hyper compliqué, j'ai fait un épisode avec Freddy de Manga Collect, donc collection de manga, Japan Expo, il a imprimé 5000 flyers, ils se distribuaient un par un pour avoir ses premiers utilisateurs. Donc ça n'a pas vraiment besoin de faire un funnel, d'ad, hyper compliqué des fois. Mais encore, ça dépend du type de marché, du type de produit, tout ça.
+
+Pablo (29:42.333)
+Ouais honnêtement je pense qu'on est en in-air où c'est peut-être le plus simple. Ça ne veut pas dire que tout est super simple, mais on reste quand à moment c'est vraiment super simple de faire un petit peu de bruit avec des réseaux comme Insta, TikTok. Il n'y a pas besoin de thunes, il y a juste besoin de se lancer sur des vidéos.
+
+David Leuliette (29:53.565)
+OUI
+
+David Leuliette (29:57.819)
+mais c'est clair, d'automate le truc, tu fais un cloud code, tac, vas-y FFmpeg, génère-moi des images... Enfin y'a moyen... Les outils sont fous.
+
+Pablo (30:06.076)
+Ouais, même toi, aujourd'hui tu t'enregistres à la TikTok avec ta main vers le haut, tu montes ton app et si tu arrives à sortir des phrases suffisamment fortes qui parlent à des gens, ta vidéo peut vite faire des centaines de milliers de vues. En tout cas des dizaines de milliers déjà et ça peut déjà faire des premiers téléchargements et créer un premier engouement.
+
+David Leuliette (30:10.708)
+Ouais.
+
+David Leuliette (30:21.558)
+ouais.
+
+David Leuliette (30:29.13)
+Yes. Et est-ce qu'on optimisera plus tard Tu l'entends souvent ça. L'erreur numéro 4, c'est il n'y aura la performance jusqu'à la première bad review. Donc la performance, c'est souvent la variable qu'on sacrifie pour les délais, pour tenir les délais. Puis le jour du launch, les avios arrivent, crash rate d'Apple ou le Google Throttle app. Enfin, dans Google, dans Android, il y a des metrics. Vous voyez assez rapidement.
+
+qu'est ce qui va pas ? C'est quoi le vrai prix de cette erreur de ne prendre en compte la performance ?
+
+Pablo (31:06.826)
+Le vrai prix, tu l'as dit un petit peu, c'est un crash rate qui s'envole, c'est des utilisateurs qui ne pas utiliser ton app, et puis c'est aussi pour toi potentiellement un gros frein à un moment où tu es obligé de t'arrêter, voire pire, si vraiment tu n'arrives pas à prendre ton recul, une app qui n'est pas maintenable. Et ça c'est un calvaire parce que même si tu te dis que ce pas grave, là c'est vraiment le bordel mais je vais en faire quelque chose.
+
+David Leuliette (31:27.924)
+Ouais.
+
+Pablo (31:33.778)
+Alors peut-être que oui, mais les trois mois, quatre mois sur lesquels tu vas travailler dessus, tu vas corriger un bug à gauche, va en créer un autre à droite, tu vas créer un sentiment d'instabilité pour tes utilisateurs, tu vas perdre de la trust. Même si ton app devient stable dans quatre mois, et déjà il y arriver parce que à mon avis, ton code sera plus propre dans quatre mois. Mais même une app qui a une très bonne architecture a des bugs. Donc de toute façon, ça paraît très compliqué. Après, c'est un peu inhabitable. Et moi, mon play là-dessus, c'est que
+
+Moi à la base je d'une école d'ingénieur, ce que j'ai appris c'est la rigueur, la rigueur, la rigueur, le clean code c'est ce plus important dans la vie. Depuis je quand même, j'ai fait pas mal de marche arrière.
+
+David Leuliette (32:17.77)
+Ouais.
+
+Pablo (32:19.226)
+Le code, c'est surtout pour servir un business. À la base, la vraie chose que tu fais, c'est répondre à des problèmes, c'est soit créer des opportunités, soit corriger des problèmes. Mais ce n'est pas faire une super architecture magnifique sur laquelle on peut lire. n'est pas ça le plus important. Donc du coup, il a forcément un équilibre à trouver et ce n'est pas forcément tout le temps négatif de privilégier la vitesse face à la performance. Par contre, tu sais qu'à un moment, tu vas le payer. Et ça, pour le coup, c'est
+
+Je pense qu'il un truc niveau performance en mobile aussi c'est que surtout avec React Native il y a beaucoup de développeurs qui viennent du web et qui se mettent sur du mobile et en fait on mélange souvent un petit peu React et React Native. On se peut-être pas suffisamment sur les différences or il y a beaucoup de différences quand même surtout niveau des performances et au niveau de l'interface etc bien sûr mais au niveau des performances
+
+David Leuliette (33:14.01)
+Ouais, même offline. Offline, souvent les gens, oublient que c'est un téléphone. coup, Internet is not reliable. C'est pas censé y avoir Internet H24, quoi.
+
+Pablo (33:23.594)
+Exactement, tu as la conception de batterie, la conception de data, surtout si tu as une app qui s'utilise dans la rue. Donc il y a beaucoup de sujets comme ça qui n'existent pas forcément en web. Une application, elle tourne pas quand on est en background, tout cas pas longtemps. Un téléphone, peut souvent passer en ligne, hors ligne. Donc il y a quand même beaucoup de choses à gérer en parallèle de juste ton interface. Après, voilà, nous, par exemple...
+
+si je reprends l'exemple d'Alo, on développait un phone système. Un phone système, dirait pas comme ça, mais ça fait des années que ça existe. ce qu'on imagine être la base pour un phone système, c'est déjà énormément de fonctionnalités. Déjà, juste le fait d'avoir une communication fluide qui fonctionne bien, c'est du taf. Mais en fait, maintenant, on s'attend à beaucoup plus. s'attend sur les messages, on a envie de pouvoir répondre à un message, interagir avec un message, sur les appels, on veut pouvoir transférer, on veut pouvoir faire beaucoup de fonctionnalités à faire qui sont
+
+la base pour que quelqu'un puisse utiliser, ce qui fait que notre produit n'était pas vraiment utilisable tant qu'on n'arrivait pas à cette base de fonctionnalité là. Donc on a fait le choix dès le début et en étant conscient des risques de se concentrer sur du développement de fonctionnalité et donc on s'est retrouvé pendant six mois, un an à faire feature, feature, feature, feature, feature, feature, feature.
+
+On est avec des personnes qui ont quand une grosse expérience, on a quand pu se baser là-dessus, se baser sur l'expérience passée pour éviter de certaines erreurs.
+
+N'empêche qu'on est arrivé à la fin avec un phone système complet, des problèmes de stabilité. On commençait à avoir une user base qui grossissait, donc les problèmes de stabilité étaient côté client, mais aussi côté serveur. On ne se rend pas compte, mais quand d'un coup on se prend x10, x100, x1000 en utilisation, ça peut changer beaucoup de choses sur la manière dont on lit la base de données, etc. Et donc, on s'en est suivi 2, 3 mois.
+
+Pablo (35:17.225)
+avec son bug de refacto mais bon au final dans ce cas là par exemple pour nous c'était Worset parce que ça nous a permis de très vite arriver sur le marché
+
+David Leuliette (35:23.818)
+Meuh.
+
+David Leuliette (35:27.252)
+Est-ce qu'il des métriques de performance que tout sitio devrait mesurer dès le premier sprint ? Genre les 2, 3 incontournables
+
+Pablo (35:36.169)
+de performances pures, c'est sûr et certain, déjà un crashlytics dans une app en prod c'est indispensable, c'est bien d'avoir... alors moi j'utilise Sentry
+
+David Leuliette (35:43.722)
+Ah ouais c'est Crashlytics ou c'est... ouais ou... Waw Sentry ou etc... Ah oui je pensais que tu passais de Firebase, Crashlytics mais euh...
+
+Pablo (35:52.678)
+Non, celui-là est très bien aussi. D'ailleurs nous on en a deux maintenant, on décrachait dix parce qu'on trouve qu'on récupère pas toujours les mêmes infos des deux côtés.
+
+David Leuliette (35:59.294)
+Ouais, non mais clairement oui Firebase Crashlytics et Sentry pendant longtemps en fait Sentry tu aurais récupéré que la JS Stack Trace et maintenant tu aurais récupéré les deux mais je suis pas étonné et aussi Datadog on top enfin je sais qu'il des boîtes qui utilisent plein de niveaux pour avoir de l'information de façon granulaire donc
+
+Pablo (36:07.369)
+Ouais.
+
+Pablo (36:21.385)
+Donc pour moi ça c'est un indispensable pour pouvoir observer un peu ce qui se passe et c'est même le minimum. C'est peut-être même pas suffisant mais déjà une app de base ça a un crashlytics ça regarde les crash rates et les crashs natifs sur la plateforme d'Apple et la plateforme de Google. Après tout dépend de la complexité de l'app.
+
+Après, tu as forcément aussi de l'analytics classique, c'est un peu moins pour les performances, mais ça peut quand aider à comprendre certains comportements. Ensuite, quand on a des flows très complexes, donc encore une fois nous, sur la partie VIP, ça le l'est, on va aller beaucoup plus loin sur le monitoring et on va utiliser d'autres outils comme, par exemple, New Relic qui nous permet de faire du monitoring. donc concrètement, c'est quoi ? C'est tout simplement des logs qu'on envoie à différentes étapes de la logique. C'est presque comme du debug à des moments stratégiques du flow.
+
+pour comprendre à la fois avoir des stats un peu sur notre stabilité, combien d'appels entrant, sortant fonctionnent, mais aussi pouvoir rapidement trouver des erreurs qu'on ne trouverait pas autrement. A Iégo c'était assez...
+
+David Leuliette (37:29.515)
+Il est fait en quoi votre back-end pour Halo ?
+
+Pablo (37:36.959)
+C'est du Java. Kotlin plutôt.
+
+David Leuliette (37:38.428)
+Ok, ok, ok, ok, Parce que tu m'as dit que vous traitez des appels en temps réel, donc enregistrement. Les appels sont enregistrés, Il a de l'IA on top. Et comment vous gérez la perf sur des trucs aussi gourmands ? Parce qu'il a des tricks hors notes.
+
+Pablo (37:59.23)
+Alors oui, il y a des tricks. Certains, oui certains d'autres. En fait, déjà il faut savoir que toute la vraie complexité va se passer côté backend. Donc ça a énormément d'avantages au delà de ne pas rely sur les performances du téléphone de ton utilisateur.
+
+David Leuliette (38:01.388)
+là c'est secret défense.
+
+Pablo (38:24.019)
+un mec qui un iPhone 17 Pro ça marche super bien et celui qui a le Xiaomi d'il 10 ans ça marche pas. Après ça permet aussi garder la tech de notre côté et puis en plus de pouvoir se mettre à jour très facilement sur n'importe quelle version. Après aujourd'hui nous les gros process, il y a des systèmes de queue, tu finis un appel tu vas pas avoir ton résumé qui va être généré instantanément. Et après c'est à nous tout le jeu est de réussir à la fois accélérer la manière dont on résume un appel
+
+David Leuliette (38:44.949)
+Ouais, ok.
+
+Pablo (38:53.963)
+en général nos textes, donc faire en sorte que ce plus performant, tester des modèles différents pour balancer un peu entre qualité et vitesse et combien on est capable de paralléliser en même temps. Pour les performances côté back, a toujours ça, soit tu grossis verticalement soit horizontalement.
+
+Mais une fois que côté back, ça n'a pas le service de front. Là on va avoir plus de problèmes de performance, c'est surtout sur les listes. En fait, toutes les apps statiques marcheront bien de manière générale jusqu'à ce que tu aies besoin de gérer une liste avec beaucoup d'items.
+
+David Leuliette (39:28.639)
+Une verticale horizontal avec plein... avec des items... Attends... Ouais une liste verticale, une liste horizontale à l'intérieur avec des cartes et des vidéos et des trucs ça commence à partir en sucéta.
+
+Pablo (39:38.825)
+Ouais alors ça déjà on...
+
+ça c'est un enfer et en fait ça devient super intéressant parce qu'après tu testes des apps comme...
+
+Instagram, Reddit, TikTok, tout ça qui ont un peu des scrolls mélangés et tu te rends compte à quel point ils sont allés précis sur les gestures. Quand tu commences une gesture verticale, la gesture horizontale est désactivée, mais dans le cas inverse non, il y a plein de subtilités comme ça. Et puis après, c'est surtout quand tu as des milliers d'items à afficher avec des vidéos, des images, du texte et que as envie que des utilisateurs, ce qu'ils ne feront probablement très rarement, mais tu quand même envie que ça marche.
+
+si tu scrolls super vite dans la liste il faut que ça fonctionne et ça c'est souvent un enfer en mobile
+
+David Leuliette (40:20.683)
+Mmh.
+
+David Leuliette (40:24.651)
+Vous êtes sur quoi du coup pour les listes en ce moment ?
+
+Pablo (40:28.328)
+Honnêtement j'ai commencé par Flatlist, suis passé sur Flashlist, suis passé sur Legendlist. Aujourd'hui on utilise un peu des trois en fonction du contexte, fonction de l'affichage et des performances des différents clips. Et j'ai aussi un patch qui existe toujours sur Flashlist que j'utilise pour certaines listes pour ajouter des fonctionnalités qu'ils n'avaient pas.
+
+David Leuliette (40:56.063)
+Ok.
+
+On verra, parce qu'on sera à AbJS les amis, donc on verra si il une nouvelle librairie de listes et où, si ça a été corrigé et où une nouvelle version. C'est pas suspensif. J'ai même pas regardé les tolls qu'il a en plus. Je ne sais pas.
+
+Pablo (41:11.528)
+La Expo 56, ça a l'air super intéressant, j'y ai pas encore testé mais j'ai vu qu'il des gros travails sur les perfs.
+
+David Leuliette (41:19.627)
+Ouais, bah ça, il y en a tout le temps, tu vois, c'est toujours meilleur, c'est comme le dernier iPhone, quoi. C'est toujours le meilleur et toujours les performances sont toujours vieuses. Donc, mais c'est vrai qu'il en a où c'est plus le focus que d'autres. quand tu regardes une code base, c'est quoi le truc qui dit que la performance, ça va être un problème d'ici trois mois ?
+
+Pablo (41:25.992)
+Oui.
+
+Pablo (41:45.297)
+Alors déjà de base, en React Native, c'est la mémorisation, mémoriser tes components, ne pas avoir la logique directement dans tes components et tout ça. Après aujourd'hui, y a React Compiler qui permet de mémoriser un peu automatiquement.
+
+David Leuliette (41:51.691)
+...
+
+David Leuliette (42:03.698)
+Ouais, comprenez-vous.
+
+Pablo (42:07.216)
+Pour moi un vrai signe de tu vas rencontrer un gros problème bientôt, c'est surtout la partie un peu design structure de ton code. Si tu n'as pas les bases qui sont quand même un component par fichier déjà, puis après un design un peu modulaire atomique, tu risques vite de rencontrer des problèmes. Ceux qui ont leur page avec tout le code dans la même page.
+
+au delà du problème de scalabilité et de maintenance du code, ça a des gros problèmes de performance aussi parce qu'on ne se rend pas compte, mais quand on comprend comment fonctionne React Native, tout l'arbre qui est rendu par ce component-là, déjà il va avoir beaucoup plus de variables dans le même component pour fonctionner, mais en plus à chaque rerender, il va régénérer tout l'arbre qui est dedans.
+
+David Leuliette (42:51.045)
+oui, je vois de quoi tu parles. Quand t'as app et à l'intérieur t'as redéfonction. Ouais, ouais, je vois, je vois, je vois.
+
+Pablo (42:56.584)
+Tout le lab !
+
+Donc j'aurais tendance à dire ça. Un autre point pour moi qui est super important et c'est marrant parce que je trouve que c'est très spécifique à React Native, c'est vraiment l'utilisation de lib externes. C'est quelque chose où moi, toute ma vie avant React Native, on m'avait plutôt déconseillé d'utiliser beaucoup de lib. C'était plutôt, si tu veux faire un petit truc, tu n'as peut-être pas une lib, c'est vachement lourd quand même. Ce n'est pas vraiment vrai en React Native. En React Native, c'est plutôt l'inverse.
+
+David Leuliette (43:24.331)
+C'est en JavaScript tout court en fait en vrai, en JavaScript tout court.
+
+Pablo (43:29.224)
+sauf qu'en React Native, les libs sont écrites en natif et ça, change tout. C'est-à-dire que si tu as envie de refaire ton carousel, je te donne un exemple opif, peut-être pas le meilleur exemple, mais ta caméra, tu as envie de faire une caméra super performante et tu te dis, je vais tout faire moi-même pour qu'elle ait que les fonctionnalités que j'utilise, c'est une très grosse erreur parce que à part si tu veux la faire vraiment bien, tu as un module natif et même dans ce cas-là, je pense que c'est une erreur. Mais il savoir que des libs comme React Native Vision Camera, exemple, ça a été complètement réécrit avec Nitro Module,
+
+David Leuliette (43:32.626)
+Oui. bah oui oui.
+
+Pablo (43:59.131)
+c'est plus c'est quelque chose tu pourras pas battre les performances tout les elle est utilisée par des milliers des milliers de personnes il ya des bugs qui sont suivis corriger tracé
+
+et c'est le cas pour la plupart des différentes fonctionnalités que tu peux avoir dans ton app. Donc moi ce que je vais faire quand même, c'est que je quand vérifier les libres libres que j'utilise. Je vais pas utiliser une libe si elle est faite en JavaScript pure et qu'elle n'apporte rien à ce que je vais faire. Par contre quand j'ai envie d'utiliser quelque chose d'un peu gourmand, je vais tout suite chercher une libe qui est capable de reporter la logique un peu dans la partie native. Faut savoir que le thread JavaScript de React Native est très faible. Tu ne peux pas faire tourner beaucoup de logique.
+
+fois juste avoir quelques conditions dans ce thread là ou d'écouter une gesture quand tu slides, avoir le code en JS, tu vois le thread JavaScript perdre tous ses FPS. en comparaison, le thread natif, en comparaison au thread JavaScript, est presque illimité. Après, tu arrives aussi à atteindre les performances en fonction de ce que tu fais, mais clairement utiliser les lib open source en React Native, c'est...
+
+David Leuliette (45:09.548)
+Et du coup, qu'est-ce que tu conseillerais aux CTO pour se protéger de ce risque justement ? Parce que c'était la cinquième heure, t'as fait une tradition incroyable ! C'est quand la paye change, le store ou bien ses règles. Ça on connaît le fameux, le store qu'il faut clic-clic. Ça c'est le conseil, je vais le redonner hein, parce que je le donne tout le temps. Faites attention à l'e-mail que vous utilisez pour l'owner de l'app store.
+
+parce qu'il doit les 4 mois se connecter sur l'app store et faire clic clic, il accepte les nouveaux termes et conditions. Si vous utilisez un mail perso, que vous avez une hygiène pas très dingue pour garder ce compte, y a moyen que les devs après ne puissent plus les réaliser en production. Voilà, c'est arrivé. Mais là on parlait plus des libraires extérieurs.
+
+Comment tu... C'est quoi tes conseils en fait ?
+
+Pablo (46:10.631)
+C'est vrai que c'est utilisé des libs qui ne pas supportés par Expo, parce qu'ils ont clairement adressé ce problème là.
+
+David Leuliette (46:18.06)
+Humm, c'est vous.
+
+Pablo (46:21.233)
+depuis le début, sauf qu'au début c'était une contrainte, maintenant c'est vraiment devenu quelque chose qui aide énormément. C'est que eux ils gèrent pour toi les numéros de version, ils protègent ton app sur des versions qui ne pas forcément suffisamment testées et ils te recommandent des mises à jour. Par contre, ça marche uniquement pour les libs qui sont compatibles d'Expo. Et quelque chose qui me manque toujours aujourd'hui dans mes process, et sur lequel je n'ai toujours pas trouvé de solution parfaite, c'est de pouvoir facilement lister les libs qui ne pas gérés par Expo. qu'en prenant l'habitude d'avoir Expo qui me recommande des mises à jour,
+
+à moins regarder les libs qui ne pas gérés par expo et qui pourraient ne pas être mis à jour pendant des mois. En général, n'est pas très grave mais c'est plus pour des questions de sécurité. Des fois, a des failles qui peuvent être trouvées dans des libs que ta libe utilise, des choses très deep que tu connais pas du tout et qui sont super importantes à mettre à jour. Après, l'autre problème qui peut arriver, c'est une mise à jour iOS, une mise à jour Kotlin avec des
+
+nouvelles déprékated ou carrément un breaking change qui n'est pas censé arriver mais voilà, arrive, c'est déjà arrivé. Et dans ce cas là, c'est important de suivre un peu les mises à jour. Moi ce que je fais de manière générale, c'est que quand je vais créer une nouvelle version avec une nouvelle fonctionnalité qui touche déjà beaucoup de choses, j'en profite pour mettre à jour mes libs avec Expo, tester tout ce que Expo me recommande. Les libs qui ne pas maintenus par Expo, je les mets quand même à jour beaucoup moins souvent.
+
+Heureusement, a de la chance aujourd'hui qu'on parait il y a 5 ans, tu faisais une mise à jour, tu en avais pour 3 jours. Tout qui pétait, des gros breaking change, des mises à jour à faire à la main avec React Native, ça c'était vraiment un calvaire. Aujourd'hui, c'est vrai que j'y pense plus trop. Je lance la commande expo install-check, je lui dis oui, mise à jour, je teste. Parfois, il des breaking change.
+
+David Leuliette (48:11.364)
+Et si il un breaking change, on lance le mcp cloud code et hop il le fait tout seul et inshallah ça fonctionne. en vrai, bon, c'est pas non plus full automate, c'est à faire, moi j'ai pas encore testé ça mais...
+
+Pablo (48:16.986)
+Exactement.
+
+David Leuliette (48:28.868)
+mais ça peut se faire. Moi ce que j'aurais dit c'était regarder State of Reignative, le survey qui liste à peu près toutes les libes utilisées par l'écosystème.
+
+Ouais c'est une bonne ressource pour ne pas prendre des choses exotiques Genre ouais tu parlais de vision caméra, y a des standards en fait qui existent dans l'écosystème pour un peu diguer Et c'est sûr que ouais elle est... Deux ?
+
+Pablo (49:02.927)
+Et ses standards...
+
+Et ces standards peuvent changer aussi. C'est vraiment la particularité, je trouve, langage comme React Native, c'est que ça reste super récent. Et donc c'est un langage où si tu veux développer en React Native, devenir expert en React Native, tu n'as pas le choix que d'être aussi, partir des communautés, être très à l'écoute de ce qui se passe. On peut dire que c'est vrai d'un n'importe quel langage, mais React Native c'est vraiment, tous les trois jours, il a une révolution. Et il a encore plein de problèmes qui ne pas réglés par React Native de base. Donc il y a beaucoup beaucoup de gens qui sortent des nouvelles libs,
+
+David Leuliette (49:08.086)
+Ouais.
+
+Pablo (49:35.593)
+qui parlent de... Dans les issues par exemple, y a beaucoup de communication, moi ça m'arrive très régulièrement de lire ou participer à des discussions dans les issues pour trouver des workers-on d'un certain problème.
+
+David Leuliette (49:49.417)
+Ouais, c'est clair. On va passer à la partie 5, question rapide. native ou cross-platform pour une nouvelle app B2B en 2026 ?
+
+Pablo (50:07.049)
+B2B cross-platform.
+
+David Leuliette (50:10.636)
+Le pire conseil qu'un sitio t'a demandé de valider sans détail
+
+Pablo (50:19.879)
+je disais le fait de supporter Android plus tard
+
+David Leuliette (50:25.14)
+ouais ! Bah, ça dépend si c'est un truc un peu élitiste, genre ouais vas-y go on est que sur iOS.
+
+Pablo (50:29.167)
+C'est...
+
+Pablo (50:37.517)
+En général, plus tard, ça veut dire jamais. Quand ce pas le cas, tu peux le regretter parce que tout ce que tu mis en place sur iOS, tu n'as jamais testé sur Android. Ok, tu en cross-platformes, spoiler alert, tu vas avoir plein de problèmes. Plein de problèmes. Et ces problèmes ne se répartiront que sur Android, mais aussi sur iOS parce que tu vas devoir faire des changements, tu vas être contraint de faire des changements pour Android qui vont re-changer la façon dont ça fonctionne sur iOS. C'est un enfer.
+
+David Leuliette (50:39.436)
+ouais, égal never, ouais, égal never, ouais, je suis d'accord.
+
+David Leuliette (50:49.27)
+Ouais ça va pas marcher, 100 % de chance que ça ne fonctionne pas.
+
+David Leuliette (51:06.622)
+c'est sûr, le clavier on adore. Un outil que tu utilises chaque semaine et que tu recommandes dev, produit, whatever.
+
+Pablo (51:15.975)
+Allo, super application de téléphonie qui enregistre ses appels.
+
+David Leuliette (51:17.708)
+C'est bon. Attends, du coup, que je regarde. C'est quoi le... Allo.coi ? C'est quoi le... whiz, allo.
+
+Pablo (51:25.703)
+withalo.com
+
+C'est super pour arrêter de prendre des notes, c'est un outil dans l'air du temps. Sinon, un autre outil pas très connu peut-être, c'est Claude. Vraiment super, ça emplace tous mes outils je crois.
+
+David Leuliette (51:38.796)
+Ouais bah oui, c'est l'un quel. Il est vraiment trop bien celui-là. L'App Store ou le Play Store lequel te donne le plus de difficultés ?
+
+Pablo (51:51.271)
+Honnêtement les deux, mais en j'ai de Moi j'aurais même tendance à dire, et je pense que c'est un peu inverse à la populaire opinion, mais je préfère dealer avec les Apple reviewers qu'avec les Google reviewers. Parce que sur Google tout va bien, jusqu'à ce que ça n'aille plus.
+
+David Leuliette (52:05.901)
+Avec vous, c'est automatique. Et là, c'est dans un funnel automatique et impossible d'avoir un humain.
+
+Pablo (52:11.596)
+Moi, le dernier problème que j'ai eu, ils m'ont dit il y a tel flow qui n'est pas en accord avec nos guidelines, tu as 10 jours pour le retirer ou on supprime ton app-destor. Il propose de pouvoir faire un uphill pour pouvoir parler à un support. 21 jours, le délai de réponse.
+
+David Leuliette (52:25.965)
+Mmh.
+
+Pablo (52:29.004)
+Donc j'ai fini par supprimer la feature. Impossible d'avoir une réponse. De toute façon le délai était deux fois plus long. Donc c'est un enfer. Apple, ils vont te rejette pour des raisons à la con parfois. Par contre ils sont très patients, ils parlent avec toi, ils peuvent te rejette 3-4-5 fois de suite. je trouve quand même même si ça fait jamais plaisir de te faire rejette par Apple, ils sont plus patients sur le support.
+
+David Leuliette (52:33.399)
+Ouais.
+
+David Leuliette (52:54.098)
+Dans 5 ans, les apps mobiles s'existent encore où tout passe par un agent IA conversationnel.
+
+Pablo (53:02.008)
+Personnellement je pense que ça existera encore. Je pense que nous on est un peu dans une bulle où on est à fond hypé par l'IA mais je pense qu'il encore beaucoup de gens qui ne sont pas autant voire des personnes qui sont contre. Donc je pense que de toute façon ça existera toujours mais probablement dans une forme différente. Je pense que nous tous les fanatiques d'IA, envie de dire parce qu'en tout cas on l'utilise dans peut-être la plupart des choses qu'on fait aujourd'hui, on va trouver des manières de subtilement l'intégrer dans la vie de ceux qui n'ont pas envie de l'avoir.
+
+les jours et donc ça va passer par des apps mobiles que les gens vont adorer mais j'ai du mal à me projeter sur la perte des apps mobiles dans cinq ans ça me paraît compliqué.
+
+David Leuliette (53:43.882)
+Ouais t'auras toujours des trucs, suis d'accord. Si t'avais 500k pour rebuild, allô, qu'est-ce que tu fais Non peut-être pas rebuild mais là on a un budget, tiens t'as 500k, qu'est-ce que fais pour améliorer le produit ?
+
+Pablo (54:04.32)
+je sors des dépendances externes qu'on a. On passe par un fournisseur pour la partie un infrastructure des appels. C'est vachement bien pour commencer, mais en fait c'est aussi vachement contraignant. Et le problème c'est que quand tu builds ton infrastructure pour du VoIP call via un provider externe, fait tout ton business dépend de ce provider parce que tout ton business dépend de ses appels.
+
+David Leuliette (54:20.47)
+Ok.
+
+Pablo (54:34.324)
+toute la logique qu'on a dépend de ça. Donc aujourd'hui c'est un choix qu'on a envie de faire mais on essaie de le placer bien stratégiquement dans le temps parce que c'est un très très gros travail ça nous demande de refaire 80 % de toute notre logique métier on va dire.
+
+David Leuliette (54:52.397)
+dans le backlog, il est one day, arrivera. Alors vous le savez en tout cas. Est-ce qu'il a un sujet qui tient à coeur que tu voulais aborder aujourd'hui et que tu veux absolument dire à ceux qui nous écoutent
+
+Pablo (55:11.11)
+Un sujet intéressant, pense, c'est... Aujourd'hui, on parle beaucoup en React Native. On continue de parler beaucoup de langage, des erreurs qu'on fait sur la manière d'utiliser le langage. Je pense qu'il a une sixième erreur dont on ne pas trop et qui, moi, m'intéresse énormément en ce moment parce qu'on n'a aucun recul dessus. C'est, du coup, l'utilisation de l'IA dans le développement de l'application React Native. Je pense que c'est un argument de plus pour React Native. Savoir qu'en ligne, la quantité d'aide et de...
+
+sur du JS est énorme comparé à d'autres langages donc c'est une très très grosse force pour l'IA. Par contre ce qui est aujourd'hui on voit qu'on peut aller peut-être trois fois plus vite dans tout ce qu'on développe. Là en une semaine j'ai développé toute une plateforme pour aider notre support à gérer leurs utilisateurs qui m'aurait pris deux mois ou plus avant. Par contre on n'a pas de recul aujourd'hui sur l'impact que ça a d'utiliser cette techno là et je pense qu'on a des idées aujourd'hui on se dit bah oui peut-être que ça va impacter sur le AI Slop
+
+la I-Slope, à la qualité du code qu'on délive d'un général, la quantité de code qu'on a d'un général, mais je pense qu'il a d'autres choses auxquelles on pense pas comme la transmission de connaissances, l'apprentissage pour des juniors et...
+
+quel point ça va changer à la fois les équipes d'ingénieurs et la manière dont une application est codée. Pour moi ça va vraiment changer beaucoup de choses, c'est déjà en train de le faire mais je suis très curieux de savoir dans deux ans, dans trois ans, dans cinq ans si on devait refaire un podcast comme ça sur les cinq erreurs en utilisant de l'IA qu'est que ça donnerait parce que je pense qu'il des choses auxquelles on ne s'attend pas forcément aujourd'hui qui vont vite surgir dans les prochaines années.
+
+David Leuliette (56:44.791)
+bah vas-y mec.
+
+David Leuliette (56:50.829)
+Bye.
+
+Bah vas-y ouais, change accepted, on vous note les amis, attend.
+
+met un rappel calendrier hop t'as dit quelle année 2026
+
+Pablo (57:06.682)
+Dans 5 ans ?
+
+David Leuliette (57:11.737)
+C'est bon, j'ai update. Alors, c'est bon, le rendez-vous est pris.
+
+David Leuliette (57:29.933)
+Ok, excellent. Qui devraient y en avoir invité ensuite
+
+Pablo (57:37.478)
+Récemment je pensais à Armand Pothique que tu dois connaître, j'avais pensé à lui parce qu'il pas longtemps il poste pas mal sur LinkedIn
+
+David Leuliette (57:46.253)
+Mais je l'ai déjà eu, rarement.
+
+Pablo (57:49.959)
+il est déjà venu... bah génial. Ok.
+
+David Leuliette (57:52.373)
+Ouais ouais ouais, si si si c'est euh... C'est C'est quoi son truc déjà ? HossKey Solutions
+
+Pablo (58:03.337)
+Il a fait des sujets intéressants sur comment fonctionnait l'architecture React Native. trouvais ça très intéressant puisque c'est vraiment la pièce du puzzle qui va permettre pour moi à des devs front-end ou web de passer sur du React Native. Vraiment la pièce à bien maîtriser, bien comprendre. Donc je trouvais que c'est un sujet assez intéressant. S'il est déjà passé, si je devais citer peut-être quelqu'un d'autre. J'avais un autre nom, il ne pas du React Native mais c'est quelqu'un qui s'y connaît très bien en mobile, il s'appelle Yacine Charey, travaille dans mon équipe.
+
+C'est un product manager, un ex de AMO et il a beaucoup de connaissances sur la partie viralité et acquisition qui je pense est très intéressante.
+
+David Leuliette (58:38.167)
+Ok.
+
+David Leuliette (58:42.936)
+bah ça c'est...
+
+David Leuliette (58:46.994)
+bah ça c'est super tu vois Franchement trop bien puisque vu que le code maintenant c'est easy et qu'on fait ça en deux secondes Je pense que ça aidera aussi vu qu'il a une communauté de Hindi hackers Trop bien je note Donc ouais où est-ce qu'on peut te retrouver c'est Allo sur iOS Android Le site web c'est weasallow.com
+
+Vas-y, où est-ce qu'on peut te retrouver pour les gens qui veulent plus de Pablo ?
+
+Pablo (59:18.965)
+Exactement après on peut me retrouver sur LinkedIn ou sur Twitter, sur LinkedIn c'est Pablo Gero Carrier, sur Twitter c'est Pablo GDCR. après on pourra me retrouver dans différents événements, j'essaie d'organiser des événements en ce moment sur Paris entre autres liés à React Native. J'ai fait un premier event il a deux mois.
+
+Je voulais en refaire un mais bon le mois de mai c'est un peu compliqué, c'est un peu un mois gruyère.
+
+David Leuliette (59:50.284)
+bah là tu as toutes les conférences et tout donc c'est mort mec, faut t'abandonner là-dessus faut...
+
+Pablo (59:55.646)
+Exactement, il y a ça, a les conférences en juin, en tout cas voilà on va faire une deuxième session, elle prend plus de temps que prévu mais on a envie d'en faire une, que sera probablement sur des sujets de design cette fois et ça devrait probablement être vers juin ou juillet avant les vacances d'été.
+
+David Leuliette (01:00:10.143)
+Ok.
+
+David Leuliette (01:00:18.222)
+Excellent ! Nous, si vous voulez retrouver tous les épisodes sur wishypittoday.wishypitt.today.com podcast n'oubliez pas de mettre 5 étoiles pour remonter la ladeur sur Spotify et Apple Podcasts. putain, attends il faut que je regarde. Parce que quand j'étais à SF, je suis allé dans un Apple Store et j'ai mis 5 stars à toutes les...
+
+tous les funs que j'ai trouvé mais je pense qu'en fait ça marche pas en vrai parce que si mais si c'est l'application podcast tu vois en fait ça marche pas je pense que les comptes en fait ils sont trop forts Apple ça marchait avant je pense que oui tu vois mais maintenant ça doit plus marcher en fait je pense qu'ils doivent capter que tu mets des stars depuis un Apple Store parce qu'ils ont de la géologue ou alors ils ont des comptes ils ont le nom des comptes et
+
+Pablo (01:00:53.517)
+Si t'as pas téléchargé là, peut-être...
+
+Pablo (01:01:14.405)
+sur le compte qui est connecté.
+
+David Leuliette (01:01:16.02)
+Ouais c'est ça ouais, et en fait non ça fonctionne pas. Donc même les techniques de grosses hacks de bas étages ne fonctionnent pas les amis, il faut des vrais humains. Donc need you, c'est gratuit et ça permet de découvrir le podcast pour les autres. Pablo une dernière chose avant qu'on te laisse partir en une phrase mémorable, qu'est que tu vas shipper dans les 30 prochains jours ?
+
+Pablo (01:01:37.849)
+Dans les prochains jours, on reste sur Halo. Nous, va travailler sur d'autres apps plus tard, mais pour l'instant, on a encore plein de choses à faire sur cet app là. En ce moment, on travaille beaucoup sur les résumés intelligents, on essaie de pousser ça un peu plus loin. On développe pas mal d'autres cas d'utilisation sur Halo. Et puis, je travaille sur un sujet qui m'intéresse beaucoup, qui est un peu le fait de sortir de l'application mobile et de passer un peu plus sur un écosystème. Comment faire bien fonctionner ensemble l'application web, l'application mobile.
+
+et puis d'autres types d'interfaces qu'on a aujourd'hui avec les MCP, Donc c'est un travail un peu cross-platform qui m'intéresse, des cohésions entre différentes applications, un peu comme fait Apple avec leur écosystème sur tous les appareils.
+
+David Leuliette (01:02:25.294)
+C'est beau, c'est Ok, et bien merci à vous, merci à toi, pardon, et on se retrouve une prochaine fois. Ciao. non, on se retrouve en Pologne, en Pologne, à Krakow. Les amis à Krakow, last time, pouvez encore prendre le flight, c'est encore possible. Allez, ciao à tous.
+
+Pablo (01:02:33.366)
+Merci.
+
+Exactement.
+
+Pablo (01:02:42.789)
+Salut !
+

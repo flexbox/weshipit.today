@@ -1,0 +1,869 @@
+Brice Zele (00:00.137)
+la plateforme je ne connaissais pas du tout River.
+
+David Leuliette (00:02.888)
+Alors franchement en vrai Riverside c'est faux, ça marche hyper bien. Nous sommes en live pour ceux qui veulent mon code invitation à Riverside. Je vous l'enverrai directement et comme ça vous aurez un mois gratuit et comme ça on partage les revenus. crois que c'est un peu moins cher. Aidez-moi à faire que du coup je paye moins cher à Riverside. Comme ça je pourrais augmenter le tiers et comme ça je pourrais mettre en live du 1080p. Parce que là je paye pas, c'est que du... Comme ça les gens sur YouTube, le peuple de YouTube, voient une qualité dégueulasse. Tu vois ?
+
+Et en live aussi.
+
+Brice Zele (00:32.201)
+...
+
+Il a un peu du mal à m'imaginer mais ça compte bien, un abonnement pour du 1080p.
+
+David Leuliette (00:40.622)
+Ouais ça coûte quoi ? Ça va c'est good enough, c'est 300, 250 dollars tu vois donc c'est cool mais en vrai si on pouvait avoir une meilleure qualité c'est vrai que... bah ce serait... Ouais sur un an. En vrai franchement ça va pour la qualité du truc et tout franchement c'est trop cool. Ne vous inquiétez pas les amis vous êtes en live directement, je les recorde direct. Ça va mieux c'est bon, je suis désolé pour l'épisode d'avant où j'étais mort, Brice il me confirme, il m'a dit mec t'étais malade, je fais oui carrément.
+
+Brice Zele (00:49.673)
+300 dollars sur un an.
+
+David Leuliette (01:12.01)
+Et du coup voilà, mais là ça va mieux, on reprend du poil de la bête, on est reparti en mode indie hacker, on va parler rec native. La question aujourd'hui c'est est-ce que un développeur tout seul peut coder, déployer, faire le marketing d'une app sur l'app store et le play store sans équipe, sans sitio, sans se nouer dans la dette technique. Brice tu l'as fait aujourd'hui, on explique comment. Comment ça va Brice ? Est-ce que ta machine ça va ?
+
+Brice Zele (01:35.395)
+Oui.
+
+David Leuliette (01:41.634)
+Elle a pas été piratée avec le Worm git, gitub et tout là ?
+
+Brice Zele (01:46.761)
+Je t'avoue que n'ai pas vérifié. En tout cas, moi déjà, ça va super bien. Je t'avoue que n'ai pas un peu déconnecté des raisons en ce moment. Je regarde pas beaucoup ce qui se passe. Je crois que je te l'avais dit, mais par rapport à une situation personnelle, suis un peu clé.
+
+David Leuliette (01:49.774)
+Merde !
+
+David Leuliette (02:04.929)
+bah oui, ça y est, Pour ceux qui ne pas, ouais je pas si on le dit mais congratulations, voilà c'est bon, la d'aronie, voilà, force, force à toi. Je sais, au bout de 1000 jours, ce sera pire donc... Non, en vrai non. Mais les premiers 1000 jours, compliqué. Ouais c'est vrai, c'est pour ça, on avait prévu de faire l'épisode, on a dû décaler une ou deux fois. Donc...
+
+Brice Zele (02:14.505)
+Je vais me faire...
+
+Brice Zele (02:24.361)
+Ouais.
+
+Hmm.
+
+Brice Zele (02:32.474)
+Oui, exactement.
+
+David Leuliette (02:34.797)
+Donc oui, Brice, es développeur mobile senior spécialisé en rack native. Le jour, tu travailles sur des projets à grande échelle et la nuit, avant d'essayer de dormir, tu es CTO, dev designer et product owner. dit product owner, dire TIC. TICTools, une application indie disponible sur Android, mais pas sur iOS. On va s'arranger.
+
+Brice Zele (03:01.509)
+Oui, on aura l'occasion de le réparer. Je me suis fait retirer de l'App Store pour les moyens.
+
+David Leuliette (03:04.708)
+va
+
+Brice Zele (03:11.273)
+l'idée aussi c'est de parler de ça et de dire un petit peu ce qu'il faut faire et ce qu'il faut pas faire pour ne pas se faire band par Apple.
+
+David Leuliette (03:22.029)
+faut lire les petites lignes, voilà personne les lit mais voilà les petites lignes, c'est écrit dedans. On te prévient avant le début du film, on te le re-rappelle, voilà si ta sonnerie de téléphone portable est encore allumée après je suis désolé on te kick du film. Donc dans cet épisode ça va parler d'architecture solo, des vraies décisions techniques sous contrainte, ce que ça change de builder sans filer, sans équipe, sans budget limité avec un objectif shippé.
+
+Brice Zele (03:24.041)
+...
+
+Brice Zele (03:36.595)
+Yes.
+
+David Leuliette (03:49.005)
+Pour ceux qui ne te connaissent pas encore, comment tu te décris en une phrase ?
+
+Brice Zele (03:54.025)
+Moi je suis développeur mobile comme tu l'as dit Pendant longtemps j'ai fait de l'android natif avant de migrer sur du RIAG native et aujourd'hui je fais que ça d'ailleurs donc j'utilise au quotidien dans mon travail en tant que freelance et pour surtout shipper des apps sur le côté donc dans les grandes lignes je suis développeur, je suis free
+
+c'est mon travail au quotidien et j'essaie sur mon temps libre après le boulot ou le week-end de faire des petits side projects sur le côté d'Antique Pool dont on aura l'occasion de parler dans ce podcast.
+
+David Leuliette (04:36.905)
+Et donc tu faisais dev Android direct après les études ou comment t'es tombé dedans ?
+
+Brice Zele (04:42.729)
+Je suis tombé dedans. Tout a commencé quand j'étais encore sur les bancs de l'école d'ingé. Faut savoir que moi, j'ai fait tout mon cursus en Afrique et j'ai commencé d'ailleurs ma carrière là-bas. C'était le choix logique en fait que de faire de l'Android parce qu'à ce moment-là, je te parle de 2017, 2018, à ce moment-là, une grosse partie des utilisateurs, ils sont sur Android.
+
+Il n'y avait même pas de sujet de se dire qu'on fait le mal.
+
+David Leuliette (05:14.314)
+Y'a même pas... Attends c'est marrant ! C'est marrant que ce soit l'inverse, parce qu'ici c'est plus genre, ouais on s'en fout, les gens sur les Android on s'en fout. Mais là-bas du coup c'est l'inverse ! Excellent ! Ouais excellent, excellent.
+
+Brice Zele (05:25.421)
+Après j'imagine que ça a dû beaucoup évoluer depuis puisque là je pense qu'il a pas mal de personnes. D'ailleurs la raison pour laquelle j'ai dû migrer sur RIAGNATIVE c'est qu'au bout d'un moment j'ai dû bosser sur un projet où il y avait besoin de faire de l'IOS donc c'était pareil un projet à destination de l'Afrique et c'est comme ça que je me suis retrouvé à faire avec du RIAGNATIVE.
+
+Pendant longtemps, j'ai fait de l'android de Natif avant de passer sur React Native. Et depuis lors, c'est le coup de cœur et je fais que ça depuis.
+
+David Leuliette (06:00.365)
+Ok, excellent. Et en ce moment, qu'est-ce que tu shipes Est-ce que TickTool ça tourne encore ? T'ajoutes des features ou c'est plus maintenant ce mode ?
+
+Brice Zele (06:08.401)
+En ce moment, t'avoue que TikTok, je l'ai un petit peu mis sur le côté et ça, c'est surtout suite au fait que ça a été retiré de l'App Store. Ça m'a pas mal démotivé, surtout que j'avais plein d'éléments dans ma roadmap par rapport à ça. Et j'avais commencé une grosse migration puisque historiquement, fait, le projet, je l'avais commencé sur du React Native CLI.
+
+Donc au bout de mon moment j'avais accumulé pas mal de dettes techniques et je me suis dit bon l'application commence à être stable, commence à avoir pas mal d'utilisateurs, j'ai pas mal de remontées par rapport au fait que l'application peut être un petit peu plus speed, smooth et tout ce que tu veux. Donc je me suis dit pour ce faire je vais faire une grosse migration vers Expo. J'avais commencé d'ailleurs à...
+
+David Leuliette (06:47.597)
+Hmm
+
+David Leuliette (06:53.449)
+Ce que tu l'as fait, ouais tu l'as fait tout seul. fait, enfin, pourquoi t'es parti direct sans Expo ?
+
+Brice Zele (06:59.817)
+Déjà le projet, je l'ai commencé en 2022 et à ce moment là, tous les projets RIAGNATIVE que je faisais, à ce moment là, je trouvais pas que EXPO c'était déjà suffisamment mature. C'était mon avis. Ce n'est qu'à partir du moment que la doc de RIAGNATIVE a commencé à recommander d'utiliser EXPO pour...
+
+pour commencer un nouveau projet RIAG Native que j'ai véritablement adopté le truc. Sinon au moment où j'ai commencé le projet, je faisais tout en expo. Donc c'est pour ça. là depuis... J'avais un projet, j'avais d'ailleurs commencé, j'étais plutôt pas mal avancé dessus à faire la migration sur expo. Mais j'ai dû mettre tout en standby parce que voilà...
+
+Après le ban pour le Panda Apple, m'a pas mal refroidi sur ça. voilà, il y a aussi eu la petite qui est arrivée, ça chamboulé pas mal de choses.
+
+David Leuliette (07:54.755)
+Bah tu m'étonnes.
+
+David Leuliette (08:00.424)
+Ouais en plus, bah oui en plus. Donc j'en imagine t'es là, tu te prépares, tu dis allez ce soir on va en soirée et tout, tu t'apprêtes, tu dis allez, je vais au smoking et là le mec à l'entrée de la boîte te dit non. Non, la fête c'est pas là-bas, toi tu vas au bout du jardin là. Je te suis dit vas-y c'est bon quoi, ça m'a saoulé.
+
+Brice Zele (08:10.633)
+...
+
+Exactement.
+
+Brice Zele (08:19.753)
+Donc, non, à côté de ça, je me suis dit je vais commencer un tout nouveau truc même si c'est toujours dans les tiroirs et tic-touls. Là, j'ai commencé une toute nouvelle app, tout nouveau projet. pense que j'en avais besoin.
+
+de me faire un peu du son neuf. C'est une app, on va dire, plus orientée à productivité, contrôle du temps d'écran. Et là, je ne pas si tu connais l'app Push Scroll. En gros, fais des pompes. Ça te de détecter si tu arrives à faire des pompes et tout. Ça te permet de gagner du temps. il y aura un petit...
+
+David Leuliette (09:01.516)
+du temps de scroll, du temps de scroll, ah mais non mais pfff, non je connais pas mais le nom, je suis certain ça fait un carton, je suis certain que ça fait un carton.
+
+Brice Zele (09:05.705)
+J'ai trouvé un...
+
+Ouais, ils ont sorti l'app, ça fait même pas un an. Ils sont déjà à plus de 100 000 balles de MRR et je trouvais ça fou.
+
+me dit, il a peut-être un truc à faire. surtout, l'idée c'était un petit peu de voir ce qu'on peut faire avec React Native puisque là on touche vraiment aux composants natifs qui est la caméra. Montrer que voilà, on peut tout à fait ship une app comme ça avec du React Native. Donc il n'y aura pas juste de l'analyse d'exercices ou quoi, y aura des petits jeux ludiques. L'idée c'est de permettre à l'utilisateur de gagner vraiment son temps d'écran en faisant des
+
+David Leuliette (09:49.343)
+Ok.
+
+Brice Zele (09:49.819)
+petites affaires, des choses comme ça. je bosse dessus depuis un petit moment, ça se passe plutôt bien. Mais TikTok c'est toujours dans les tiroirs. D'ailleurs là je me fais la réflexion de pourquoi pas en faire un SaaS parce qu'en fait quand j'ai lancé l'app, je me suis rendu compte qu'au bout d'un moment, peut-être je me suis trompé de cible en fait puisque là c'est une app, ça avait été pensé pour être du B2C.
+
+mais au fur et mesure des remontées que j'avais des utilisateurs puisque j'ai mis un chat en fait, j'ai utilisé Crisp pour mettre un chat dans l'app et les utilisateurs ils peuvent me contacter directement. Je me suis rendu compte en fait le profil des utilisateurs qui paye l'app et qui l'utilise c'est pas, c'est c'est c'est pas monsieur tout le monde qui est sur TikTok quoi, c'est vraiment des professionnels du truc qui vont essayer d'analyser.
+
+David Leuliette (10:34.518)
+Ouais, et qui n'ont pas le time, ils ont du bise et tout et puis voilà, ils veulent un vrai truc, ils ont un camion, ils ont un pipeline de prod et on arrête de faire mumuse avec le téléphone quoi, je comprends carrément. ouais carrément, on va en parler plus en profondeur, mais avant une question que je voulais te poser c'était, il me semble qu'il a un post sur IndieMD où tu dit que tu as adopté RecNative par nécessité.
+
+Brice Zele (10:46.089)
+...
+
+Brice Zele (11:00.025)
+Ouais, bye bye !
+
+David Leuliette (11:01.169)
+dis nous tout, on veut du gossip, vas-y balance.
+
+Brice Zele (11:05.577)
+Ça rejoint ce que je disais au début, moi de base je faisais que de l'Android et à un moment il s'est présenté, j'ai eu un client, c'est l'un de mes tout premier clients d'ailleurs, qui avait besoin de faire une app, une app d'actualité un petit peu à l'e-parisien ou des choses comme ça et lui vraiment il avait une grosse contrainte par rapport fait que l'app devait être disponible à la fois sur Android et sur iOS.
+
+Et moi je ne faisais que de l'endroit mais c'était mon tout premier client. Donc il m'a fait confiance, je me suis dit je vais me démener comme je peux pour lui produire quelque chose. Donc à ce moment là, est en 2017, donc j'ai commencé un petit peu à chercher comment faire des apps. L'idée vraiment c'était de pouvoir chip à partir d'une même code base. Donc à ce moment là, je suis tombé sur...
+
+David Leuliette (11:57.741)
+C'est un de
+
+Brice Zele (12:02.905)
+les applis Bride avec notamment Unique. ne pas si ça te parle Unique avec Corvo.
+
+David Leuliette (12:06.155)
+Ouais j'en ai fait, moi j'ai fait de l'ionic. Moi le truc c'est que j'ai fait du cordova et après j'ai fait du... Donc je connais tout ce truc là et moi justement j'ai changé, je suis parti à Londres exprès parce qu'ils faisaient du ragnativ parce que j'en avais marre que ce soit pas une expérience... Mais en même temps faut se remettre dans le contexte, moi c'était 2015, t'avais pas le choix en fait et ragnativ en 2015, bah c'était au tout début quoi. Donc c'est pour ça qu'en prod, en fait en vrai moi j'avais une part, j'avais une team, un projet à faire et je faisais non vas-y bon on pas faire du ragnativ maintenant parce que...
+
+Brice Zele (12:27.539)
+Oui, ça veut des deux sorties.
+
+David Leuliette (12:35.126)
+Au bout d'un moment, j'avais une type de sac bonhomme qui savait faire de l'angular, je on va pas commencer hein. Et du coup j'ai fait ça mais après ouais j'étais un peu deg parce que l'expérience c'était pas... C'était pas folle parce que c'était une webview. Mais après ça marchait, en vrai ça fonctionnait très bien. Voilà quoi.
+
+Brice Zele (12:35.433)
+...
+
+Brice Zele (12:51.661)
+Exactement, bravo, ça marchait. J'ai eu le même ressenti que toi. J'ai réussi à faire un truc qui marchait plutôt bien avec Ionic, mais en fait, j'avais plus le sentiment d'avoir un site web responsif sous les yeux qu'une vraie application mobile. C'est surtout pour moi qui avait l'anglais de natif. Je n'avais pas vraiment ce même ressenti et je me suis dit, j'ai commencé à chercher...
+
+David Leuliette (12:55.508)
+Bon.
+
+David Leuliette (13:06.08)
+Ouais c'est ça, c'est exactement ça.
+
+Brice Zele (13:18.341)
+comment véritablement faire une vraie app où on aura à peu près le même ressenti que sur du natif mais tout en restant avec une seule code base. C'est de là que je suis sur React Native qui répondait exactement à cette problématique-là et c'est de là je suis parti sur ça. Donc c'est un petit peu l'histoire derrière mon adoption de React Native.
+
+David Leuliette (13:46.412)
+Ok cool. Donc vas-y, on va passer de Tiktool de Zéro à l'App Store. Ah oui parce que Tiktool ça a été sur l'App Store pendant un moment. Ah ! Attends, on va d'abord parler dans la chronologie. Enfin dans l'ordre des choses pardon. Combien de temps première version, V0 en prod, combien de temps ça t'a pris ?
+
+Brice Zele (13:56.167)
+Oui, ça a été sur l'App Store.
+
+Brice Zele (14:04.489)
+...
+
+David Leuliette (14:14.075)
+Comment tu t'es dit, quel backend je choisis, quoi.
+
+Brice Zele (14:19.033)
+Alors déjà pour comprendre comment j'ai... je pense que avant de répondre je pense que c'est important de... d'expliquer ce que c'est et comment j'ai su arriver à...
+
+David Leuliette (14:24.939)
+C'est vrai, faut expliquer c'est quoi TikToks. Pitch le do TikToks, vas-y vas-y. Sors de les slides et tout, vas-y c'est parti.
+
+Brice Zele (14:34.097)
+Oui en fait le projet, l'idée a commencé véritablement à germer en 2022. Moi j'ai une amie qui, de base j'étais pas trop sur TikTok et tout ça. En 2022 déjà je pense que c'était déjà un assez gros réseau, je crois que ça grossit pas mal pendant le Covid et tout. Mais j'étais pas trop dessus. Mais par contre j'avais une amie qui faisait pas mal de contenu dessus et qui réalisait assez bons chiffres et surtout...
+
+elle était dans le programme Beta et elle arrivait déjà en dégagée du revenu. Mais elle avait une problématique, qu'elle faisait du contenu faceless.
+
+Et chaque fois, fallait que le surfe... Elle était en constante recherche de contenu viro, des créateurs qui faisaient du contenu qui marche. Et pour ce faire, elle devait analyser contenu par contenu et créateur par créateur. Donc elle allait dans... Elle prenait un créateur, elle essayait d'aller dans telle ou telle vidéo, essayait de comprendre pourquoi la vidéo elle a marché, qu'est-ce qu'elle a fait de différent, qu'est-ce que... Et du coup, là, je me suis dit, si elle a cette problématique, forcément, il a...
+
+d'autres personnes qui ont le même problème. Donc j'ai commencé un petit peu à regarder sur Reddit, des traits de Reddit spécialisés, plusieurs personnes avaient ce problème-là. Il y avait déjà des solutions qui existaient et c'était les SaaS. D'ailleurs, je crois que j'aurais peut-être mieux fait de rester dans le courant du SaaS. Donc je me dit, bon, je vais aller à contre-courant, yo !
+
+presque aucune application qui fait ça. Je me suis dit, l'essentiel des utilisateurs de TikTok, sont sur mobile. ça me paraissait logique que de faire une app mobile. Et c'est vraiment comme ça que j'ai commencé à mettre au supérieur l'application. Donc avant de véritablement commencer sur la partie mobile, j'ai voulu être sûr que j'aurais toutes les données dont j'ai besoin.
+
+Brice Zele (16:30.093)
+avant de vraiment faire la partie front. J'ai commencé par le bac, surtout que l'application en fait, pour ceux qui ne pas, gros elle permet d'analyser n'importe quel compte sur TikTok sans forcément avoir besoin du mot de passe. C'est un petit peu un équivalent de YouTube analytique ou de TikTok analytique, mais appliqué à n'importe quel compte. Donc avec ça, tu es en mesure de savoir...
+
+tel utilisateur, c'est quoi ses contenus qui marchent le mieux, à quelle heure il a posté tel ou tel contenu, quel jour. Tu as plein de métriques comme ça qui te permettent en fait de toi, peut-être essayer de répliquer la même stratégie pour pas arriver au même résultat. Donc là, je ne pas vraiment de l'analyse de la vidéo en elle-même, je fais plus de l'analyse de tous les métas données qui vont accompagner la vidéo.
+
+Parce que fait, analyser la vidéo en elle-même, ce serait un petit peu trop galère, comprendre vraiment ce qui se passe dans la vidéo. Mais je vais analyser les métriques, le nombre de vues, le nombre de likes, le nombre de commentaires, les hashtags d'associés, l'heure de publication. toutes ces informations-là qui en soi peuvent donner nos idées sur telle ou telle vidéo qui marche le mieux.
+
+Donc j'ai commencé comme ça, j'ai commencé à faire l'app, enfin le backend pardon, le backend je suis parti sur du NestJS. Faut savoir que j'avais fait un petit peu de Node.js auparavant. Et vu que j'avais fait l'application mobile en Angular, NestJS ça reprend pas mal de concepts d'angular avec le système de module et tout le reste. Donc je me suis dit je vais partir sur ça.
+
+J'étais vraiment dans une optique de me dire que je vais limiter au maximum les API tierces que je pourrais être amené à API. Par exemple, même au niveau de l'infra, j'ai pris un VPS sur OVH que je payais, 3 fois rien.
+
+David Leuliette (18:25.099)
+5 dollars, ouais ouais.
+
+Brice Zele (18:26.089)
+5 euros ou quelque chose comme ça, ne sais plus. Sur lequel j'ai installé manuellement l'OS. J'ai tout installé à la main. J'ai tout fait vraiment de A à Z sur ce truc là. les données, vu que ce des données qui ne pas forcément publiques, il fallait faire pas mal de Scraping en fait. c'était un petit peu galère mais je suis arrivé à quelque chose de plutôt courant qui marchait plutôt bien.
+
+C'est à partir du moment où le BAC était prêt que j'ai commencé avec la partie front. C'est comme ça que je me suis pris. Le BAC m'a pris 3-4 mois. C'était pas encore l'époque du full-vide coding. On était en fin 2020.
+
+David Leuliette (18:59.755)
+Ok.
+
+David Leuliette (19:14.171)
+ouais bah oui c'est vrai c'était avant, ouais c'était avant ! Avant les A.I. prenait 6 mois cette affaire là ! Mais non !
+
+Brice Zele (19:21.161)
+Tchadjpt venait juste, je crois qu'il était sorti, ça faisait quelques mois à peine.
+
+David Leuliette (19:26.411)
+Ouais il était vraiment mauvais, enfin mauvais, au tout début c'était vraiment mauvais. Maintenant c'est folie mais... Moi je dirais que ça fait 6 mois, 6 mois que c'est vraiment bien, avant c'était cool mais bon.
+
+Brice Zele (19:33.459)
+Mais ouais.
+
+Brice Zele (19:39.92)
+Donc oui, j'ai fait pas mal de temps dessus et c'est en 2023 que j'ai vraiment commencé avec l'application mobile. début, je faisais l'app vraiment en mode... Quand je voyais une animation qui était cool, je voulais absolument la refaire en fait. Donc l'idée de l'app, je la faisais pas vraiment dans un but de me dire que je vais shape une app, après je vais faire un max de thunes derrière ou quoi. Vraiment une app portfolio si tu veux, histoire de montrer...
+
+David Leuliette (20:02.986)
+Hmm...
+
+David Leuliette (20:06.858)
+Ok.
+
+Brice Zele (20:08.873)
+Je suis capable de faire parce qu'à ce moment là, il documentait d'ailleurs pas mal ce que je faisais autour de l'app. Donc j'ai build l'app vraiment en building public. C'est comme ça que j'ai commencé sur l'app. quand j'arrivais sur, pareil pour le design, j'avais pas de design de base en fait. Je voyais des trucs, des écrans cool qui montraient des métriques sur bien et tout. Je me disais ça, il que je le fasse quoi. Du coup, l'app ça m'a pris, je pense bien six mois.
+
+David Leuliette (20:37.737)
+bah oui !
+
+Brice Zele (20:38.627)
+mettre en place parce que j'avais envie de tout faire les trucs cool que je trouvais.
+
+David Leuliette (20:43.978)
+Si tu vois un niveau de polish, animation et tout, genre fan, sea level, duolingo style, c'est sûr. Et puis après c'est le piège, parce qu'une fois que tu as fait un screen comme ça, il que tu fasses tous les screens comme ça. Parce que si on aille où il a rien, du coup, je vois. Moi c'est pas le truc que j'aurais fait le premier, mais en vrai c'est pareil. C'est que là t'étais en optique Apple portfolio, donc il remettre plein la vue direct. C'est ça le truc.
+
+Brice Zele (20:50.179)
+Exactement.
+
+Brice Zele (21:13.353)
+Donc ouais entre le bac et le front je pense que j'en ai eu pour bien neuf Neuf mois et fin 2023 que j'ai publié.
+
+David Leuliette (21:19.017)
+Ouais.
+
+Ouais solo quoi. Bon en vrai ça va tu vois solo react native, typescript, nest, js, tu vois ça peut faire peur un petit peu mais en vrai est-ce que tu penses que c'était bien de mettre tout ça en place ou est-ce que maintenant tu te dis ouais en fait j'aurais juste dû mettre un Firebase et puis go.
+
+Brice Zele (21:42.793)
+Je pense que je dirais oui et non parce que d'une part j'ai vraiment la main sur quasiment tout. Je n'ai presque pas d'API externe ou des choses comme ça. Ce qui fait que l'application au final elle me coûte à tourner. J'ai juste le VPS API et puis c'est tout. Donc ça d'un côté c'est bien.
+
+David Leuliette (21:58.027)
+Ouais, tout coup t'as rien.
+
+Brice Zele (22:08.413)
+Mais d'un autre côté, effectivement, pense que j'ai un peu trop de temps à la mettre en place. Je ferais peut-être pas les mêmes choix aujourd'hui. D'ailleurs, pour la nouvelle application que je fais, c'est pas du tout la même stack que j'utilise. on reste toujours sur du React Native, mais au niveau back-end, je suis parti sur du SOPA Base.
+
+David Leuliette (22:27.888)
+Ouais je pas baison... Bah enfin c'est difficile de lutter à contre je pas baison... 20 balles par mois... Ouais t'inquiètes tu peux déco... Pire tu... Si c'est maman t'as le droit de décrocher en live, t'as le droit de lui dire maman je passe à la télé.
+
+Brice Zele (22:36.202)
+J'ai les démarches qui me la reflètent déjà, est midi.
+
+Brice Zele (22:44.713)
+...
+
+David Leuliette (22:46.506)
+Mais oui du coup ouais c'est ça quoi tu te dis ouais Super Base après c'est toujours pareil quand t'es freelance tu te dis mais vas-y Super Base 20 balles par mois versus passer 6 mois à refaire From VPS tout le bordel et si t'as juste besoin de je sais pas d'un bucket S3 bah tu fais clic clic boum t'as un bucket si t'as besoin de juste la search en vecteur bah tiens elle est déjà disponible direct donc c'est vrai que lutter contre Super Base quand t'es en mode
+
+Vas-y go, je build, Indie Hacker Style. Moi je dis, n'y a pas de débat. Si t'es en mode, vas-y, c'est pour un à un portfolio. bah là, c'est différent. C'est le critère de succès, c'est pas de faire du bis avec. C'est clair que c'est différent. Mais là, du coup, la solution, c'est que Nest.js dès le début, dans une app solo, peut-être un peu trop over engineer, mais en vrai, au moins, je maîtrise les coûts et ça me coûte pas cher.
+
+Brice Zele (23:25.961)
+...
+
+Brice Zele (23:44.825)
+Exactement. pense que c'est principal intérêt que j'en tire d'avoir fait tout à la main.
+
+David Leuliette (23:52.331)
+On parle souvent de la dette technique dans une équipe, mais est-ce que toi en solo t'as accumulé de la dette technique et comment tu gères tout seul ?
+
+Brice Zele (24:04.617)
+Sur ce projet là, puisque comme je t'ai dit, j'ai commencé avec Reignative CLI et chaque fois faire les montées de version c'était assez galère.
+
+David Leuliette (24:16.586)
+Si t'es pas payé pour les faire, moi j'ai toujours été payé pour les faire les bontés. Ou alors c'était du expo, donc en fait ça va. Donc quand t'as un client qui te paye pour faire les bontés de version et que c'est hyper douloureux, bah ça va. Mais j'avoue que si j'avais dû le faire pour une app moi-même, j'aurais fait... Puis ça prend des... Des fois ça peut prendre des mois quoi. Donc... Douloureux !
+
+Brice Zele (24:39.099)
+Ouais, vraiment j'ai connu ça. Super dolorose. Je crois que quand j'ai créé le projet, je devais être sur React Native 0.72 ou quelque chose comme ça. Et je pensais que je devais faire une version. sais, c'était un peu à l'ancienne avec l'outil React Native Upgrade Helper.
+
+David Leuliette (24:50.558)
+Ouais... Ok ouais. Ok.
+
+David Leuliette (24:58.628)
+Upgrade helper, pour ceux qui ne pas, c'est un site web en ligne où tu mets la version que as et tu mets la version de Target et il te fait le diff de tout ce qu'il faut faire. Donc tu fais les copier-coller à la main dans les fichiers, notamment les gradle files et les, je ne plus quoi, les fichiers iOS, tout ça là. Et Inshallah, tu pries pour que ça se passe bien parce que forcément, toi, ce que tu as fait dans ton React Native CLI, c'est que tu as modifié ces fichiers.
+
+Brice Zele (25:13.821)
+Voilà.
+
+Brice Zele (25:20.393)
+...
+
+David Leuliette (25:26.684)
+Et du coup t'as mis GQ Compose, Jetpack version qui compile, telle version de la librairie obscure tu utilises. Mais elle est pas dans le diff, mais en fait t'en sais rien, mais du coup tu l'enlèves, tu la remets, tu rebuilds, t'attends 20 minutes, tu fais ça marche pas, et puis après... Ouais non. Je connais. Ceux qui connaissent savent, mais pour les autres, c'est vrai que c'est difficile à imaginer, mais c'est vraiment vrai, faire les diffs à la main, on fait du Linux kernel development, et on s'envoie les patchs par email quoi.
+
+Brice Zele (25:55.401)
+Donc ouais, pendant longtemps c'est ce que je faisais, ça devenait juste plus possible quoi. pense que je suis bien resté sur une version de React Native pendant plus d'un an parce que déjà j'étais arrivé à un qui marchait plutôt bien. Je me suis dit déjà il y avait un petit peu cette appréhension de dire que tu fais une mise à jour, tu sais pas comment elle va se comporter puisque à ce moment-là entre les versions de React Native, avait pas mal de breaking change. Du coup, passer d'une version à une autre, bah...
+
+Tu risquais de prendre des régressions donc tu ne comprenais pas forcément ce qui se passait derrière. quand j'ai commencé la migration sur Expo, ça s'est plutôt fait assez facilement je dirais. J'ai eu quelques fichiers surtout que j'avais fait.
+
+Dans l'application il y avait des modules natifs que j'avais dû mettre en place notamment pour faire tout ce qui est widget. Il y a juste ça que j'ai peut-être dû réécrire mais en soi c'était plutôt simple à faire. en termes d'aide technique, c'est vrai que là ça fait un petit moment que je n'ai pas touché à l'application mais je pense que quand je revenir dessus ça va être un peu chaud.
+
+David Leuliette (27:10.437)
+Je sais pas, tu mets clodcode mcp, tac, fais moi les migrations et hop ! Je sais pas, en vrai j'ai pas test, en fait j'ai pas encore eu le temps de tester vraiment le vrai mcp expo officiel qui dit MAJ migre moi l'app. Donc en fait qui lit le diff, qui analyse ta stack, il lit ton diff, en fait il fait comme upgrade helper mais en mode sous stéroïde quoi. Là où on le faisait clic clic à la main, là il te le fait donc peut-être que ça marche, je sais pas, je vous dirais.
+
+Brice Zele (27:13.769)
+...
+
+En vrai c'est vrai.
+
+Brice Zele (27:25.097)
+...
+
+David Leuliette (27:39.914)
+Mais ok, donc, ouais, TikTok, tu m'as dit, ouais, c'est une app autour de TikTok, donc des prodances extérieures, donc en fait, les API, elles peuvent changer du jour lendemain, mais toi, tu m'as dit que tu as scrapé, mais c'est pareil pour le scrapping, l'Ui, peut changer du jour au lendemain. Est-ce que tu fait un truc de design particulier pour absorber ce type de risque ou l'eau, casse et il faut fixer la prod ?
+
+Brice Zele (28:10.577)
+Pendant longtemps, j'ai fait du Scrapping. Je crois que d'ailleurs ça aussi qui m'a peut-être aussi valu le band sur Apple. Ils n'ont pas disait cette manière, je suis sûr qu'il avait ça aussi parce qu'ils se doutaient bien que pour avoir ces données, je devais un petit peu m'agouiller. Mais en gros, pour le Scrapping en soi...
+
+J'ai eu pas mal de problèmes au début parce que chaque fois mon IP se faisait blacklister. j'ai dû trouver des process pour contourner ça. Au final, crois que sur les toutes dernières versions, je me tais résili à prendre une API sur... Je crois que je l'avais trouvée sur Rapid API. Un mec qui arrivait à scraper toutes les données.
+
+Parce qu'en fait chaque fois que je mettais mon truc en place, ça tombait quasiment chaque fois. Je suis passé aussi par, comment ça s'appelle, Bray Data, il me semble qu'il te permet d'avoir des IP rotatifs et tout.
+
+David Leuliette (29:17.359)
+Ouais, bah oui, et là tu commences à faire du scrapping de... Oui, oui, après bonjour les proxys, les machins, c'est un full time job ce truc à faire juste du scrapping donc...
+
+Brice Zele (29:24.777)
+...
+
+Brice Zele (29:29.619)
+Mais du coup ouais, au final j'avais pris cet API là et ça marchait plutôt bien, ça coûtait vraiment trois fois rien quasiment. après c'était pas les seules données que je scrapais en fait parce que je faisais du scraping de plein d'autres plateformes pour récupérer des données tierces parce qu'en fait dans l'application tu pouvais avoir ton classement en fonction de ton nombre d'abonnés et tout. Ça pareil c'était une autre plateforme qui me fournissait. Bref, je faisais du scraping sur plusieurs plateformes et...
+
+Et oui, là pour le coup, sur la toute dernière version, l'application repose quasiment presque que sur l'API que j'ai pris sur RapidAPI. Et ça, c'est vrai problème pour moi parce que je ne sais pas comment ça va se comporter du jour au lendemain. Pour le moment, ça marche. Ça va faire presque six mois que ça marche comme ça.
+
+Mais j'avoue bah le fait de dépendre entièrement, presque entièrement de cet API là c'est peut-être un vrai problème pour moi.
+
+David Leuliette (30:31.465)
+Et t'as eu des breaking chains que tu as dû gérer ?
+
+Brice Zele (30:38.729)
+Breaking Change par rapport à l'API que j'utilise.
+
+David Leuliette (30:41.129)
+Par rapport à l'API, justement, rapide API, ils gèrent tout ce truc là. Et vu que c'est un middleware entre les deux, tu les payes. C'est payant, je crois, c'est 50 balles par mois, je vais regarder vite fait.
+
+Brice Zele (30:46.289)
+Ouais.
+
+Brice Zele (30:49.801)
+Ça dépend de l'application que tu prends. Chaque appli a son propre pricing. Mais pour celui que j'utilise, il ne pas très cher. Je crois que j'en suis à 5 euros ou quelque chose comme ça. Donc ça va.
+
+David Leuliette (30:53.907)
+Ok, ok.
+
+David Leuliette (31:01.798)
+Ok.
+
+Ok ouais parce que t'as la cul donc du coup ouais ça va encore. Donc t'as ça ce truc là qui gère et en fait t'as déporté la dépendance externe sur un service qui le fait bien quoi. Ok donc ouais tu m'as dit que t'étais freelance et que tu travaillais sur des apps à grande échelle, t'as un projet solo, est-ce que t'apprends des trucs l'un de l'autre et est-ce que Tiktool t'a rendu meilleur en tant que développeur salarié et vice versa ?
+
+Brice Zele (31:16.009)
+Bon.
+
+Brice Zele (31:34.333)
+Oui, pense que dans les deux cas, pour le coup ma casquette de solo preneur ça met grandement dans ma carrière professionnelle. De même que ma carrière pro met un petit peu dans les side projects que je peux shipper sur le côté. Donc je dirais que pour les projets pro ça me permet d'explorer un peu plus large le champ des possibles que juste de me cantonner à shipper du code et tout.
+
+David Leuliette (32:00.553)
+Ticket à Jira quoi je prends le ticket Jira et je le mets et je teste pas parce que c'est pas écrit dans le ticket
+
+Brice Zele (32:05.577)
+Voilà, donc... Tout à fait. Je dirais que, ouais, dans ma carrière, le fait de pouvoir faire des apps sur le côté, ça m'apporte une meilleure vision produit que je peux justement apporter dans ma carrière pro. Et pas juste être un simple exécutant, mais être force de proposition ici aussi, vraiment le produit en lui-même. Ça, c'est ce que je vais dire le côté...
+
+le côté perso m'apporte sur le pro. Le côté pro, je dirais que ça m'apporte la rigueur. fait des apps. Là, par exemple, sur la dernière mission que je fais en cleanarchie, c'est quelque chose que je faisais pas de base. là, sur TikTok, ça devenait assez galère parce que j'avais...
+
+n'ai fait forcément les choses super bien, maintenant ça devient un petit peu compliqué et tout. Mais là, depuis que j'ai découvert la cleanarchie, franchement, je trouve ça super et tout. Ouais, je dirais.
+
+David Leuliette (33:03.27)
+Ouais bah oui. Dans l'effet c'est bien. Parce que du coup là t'es en mono-ripo en fait sur Tiktools ou pas ? Parce que t'as un backing d'un front-end, c'est tout mélangé ou...
+
+Brice Zele (33:12.585)
+Ouais, à la base j'avais fait deux ripos différents, le back d'un côté et le front de l'autre.
+
+Je crois qu'il a un an, j'ai fait une grosse migration où je les ai tous mis dans un même monoripo. Et ça justement, c'est quelque chose que j'ai appris dans une mission que j'ai fait en free. J'ai tout de suite compris tout l'intérêt de faire du monoripo. Le fait que le bas soit en TypeScript et le front soit en TypeScript aussi. peux justement partager pas mal de choses entre les deux. je trouve que là pour le coup, c'est beaucoup plus intéressant.
+
+David Leuliette (33:43.876)
+bah oui.
+
+David Leuliette (33:52.328)
+Oui, ça partage vraiment du coup, c'est pas juste un monolithe. Et ça part c'est quoi ? T'as utilisé un outil pour gérer le monoripo ou tu fais ça à la main
+
+Brice Zele (33:59.397)
+Non je l'ai fait à la main, enfin je n'ai utilisé d'outils, c'est vrai qu'après j'ai vu qu'il y avait pas mal d'outils qui permettaient de le faire mais... Bah ouais c'est juste...
+
+David Leuliette (34:06.116)
+Y'en a plein, moi j'utilise NX parce que dans le Corporate World. Parce qu'en fait c'est utilisé par plein de trucs, par plein d'entreprises, par des générateurs et en gros si t'as une team, moi je l'avais mis en place parce que j'avais une team de 10 bonhommes. Donc forcément, faut des trucs sérieux, parce que c'est documenté tout ça, l'état de l'art, t'as un vrai façon, un peu comme Kynarchy et tout, t'as une vraie façon. Tout le build system est géré par NX en fait.
+
+Brice Zele (34:13.394)
+Bon.
+
+Brice Zele (34:36.434)
+Right.
+
+David Leuliette (34:36.648)
+Et ça c'est bien, parce qu'après tu peux faire du turbo repo ou ce de truc, mais c'est un peu de la plomberie manuelle. Qui se fait hein ? Mais c'est sûr pareil quand t'es tout seul en fait en vrai ça fonctionne. Quand tu commences à être à 5-6. Surtout quand je suis freelance, j'aime pas mettre en place des outils puis me barrer et puis tu que la mission se termine et qu'après bah pff comment ça marche ? J'en sais rien ! Parce que là Enix... Voilà mais c'est sûr pareil ça dépend de la team mais là au moins déjà avoir tout dans un seul...
+
+Brice Zele (34:48.764)
+Ouais, c'est sûr.
+
+David Leuliette (35:07.086)
+Un seul repo en mode monolithe, c'est cool si tu le fais partager les deux. C'est bien aussi, c'est la prochaine étape. donc si... Ouais, j'avais demandé, tu as mis revenu 4 ou un paiement en place sur Tiktool ou pas du tout ?
+
+Brice Zele (35:24.894)
+Oui, y a ces runes une-quatre que j'ai utilisées pour la partie abonnement.
+
+David Leuliette (35:30.648)
+Excellent, t'as des chiffres à partager, t'as combien de customers payants versus euh...
+
+Brice Zele (35:34.589)
+Alors, pic, enfin avant le ban sur Apple d'ailleurs, faudrait qu'on en parle de ce ban d'ailleurs, au pic il me semble que j'avais, attends, je crois que j'étais à 70 abonnés payants, faut savoir que j'ai quasiment jamais fait du marketing quoi, j'ai fait vraiment du marketing à mon développeur, à mon dieu.
+
+David Leuliette (35:39.517)
+oui, vas-y on en parle juste après le bât de Justin.
+
+David Leuliette (35:55.625)
+J'ai tapé comment faire du marketing dans Google et baf premier résultat quoi
+
+Brice Zele (36:01.077)
+J'avais 70 abonnés payants pour un peu plus de 450 euros de MRA. C'était vraiment quand j'étais au pire.
+
+David Leuliette (36:08.122)
+Ok, bah ça va ça commence euh... Ouais.
+
+Ouais sans effort, sans effort, enfin sans vrai effort marketing en étant tout seul et en gérant l'intégralité du truc donc c'est déjà incroyable quoi. T'es déjà arrivé là.
+
+Brice Zele (36:19.657)
+C'est que de l'organique. Quand j'ai eu ça, quand j'avais fait la migration vers Expo, je comptais faire une campagne marketing. J'étais parti sur une plateforme qui te permet de... Tu vas écrire un script.
+
+un script que tu vas venir publier dessus et tu plein de créateurs de contenu sur TikTok notamment qui vont te faire des vidéos par rapport à ça. en gros tu as l'attitude de choisir telle ou telle vidéo ils te proposent un prix par rapport à ça et lorsque tu payes, non seulement ils postent la vidéo sur son compte à lui donc avant de poster tu peux voir ses statistiques en combien il fait et tout.
+
+Et toi tu as possibilité d'utiliser, tu as tous les droits sur la vidéo en fait, de l'utiliser derrière pour faire des campagnes et tout. Donc j'avais fait ça, j'avais mis un petit peu de budget, je crois que j'avais une bonne dizaine de vidéos que je comptais utiliser pour faire une grosse campagne marketing. Mais voilà, le band Apple est arrivé.
+
+David Leuliette (37:26.216)
+ouais, on t'a claqué à la porte au nez quoi. Ready pour la soirée et puis ouais. Et ouais donc pourquoi alors, pourquoi on tabane ouais.
+
+Brice Zele (37:34.345)
+Alors déjà ils m'ont reproché plusieurs choses. Au tout début quand j'ai posté l'application sur App Store, j'ai utilisé pas mal le terme TikTok, que ce soit dans l'app, même dans les screenshots et c'est protégé quoi.
+
+David Leuliette (37:47.176)
+Hmm.
+
+David Leuliette (37:52.617)
+C'est écrit. C'est écrit dans les petites lignes. Ça, là, c'est entièrement ta faute. Là, là, on peut pas. On va dire un point pour Apple, brice zéro. Vas-y, continue.
+
+Brice Zele (38:02.501)
+Donc ce qui est bien en fait c'est qu'ils m'ont pas tout de suite ban à ce moment là pour ça. Ils m'ont fait l'aroma, ils m'ont dit voilà il y a ça qui va pas. Donc j'ai dû tout changer parce que même dans le contenu de l'application il y avait ces termes qui revenaient chaque fois en fait. Donc du coup j'ai fait toutes les modifications, ça m'a pris une bonne semaine pour m'ajuster par rapport à ça. Donc j'ai reposté. Donc ça c'est le filtre, enfin ça c'est le retour qu'avait fait Apple. Mais après...
+
+Il y a eu, je crois, la plupart des gros réseaux sociaux, TikTok, Facebook et Instagram et tout ça, ont des services juridiques qui sont là que pour regarder au niveau des sports.
+
+David Leuliette (38:41.54)
+mais c'est... Mais clairement, moi je me suis déjà pris des scutes genre oui, enlevez cette photo d'internet parce que vous l'avez prise sur un site obscur, sinon payez 4000 balles.
+
+Brice Zele (38:51.689)
+Voilà. Donc du coup, y a eu un service, je sais plus comment s'appelle. En gros, ont, enfin, j'ai reçu un mail de ce service là qui me disait, ils ont dit que j'utilise des termes TikTok et tout. À ce moment là, j'avais déjà fait toutes les modifications. Mais en fait, ce qui me reprochait, il disait que j'utilise la notoriété de TikTok pour me faire de l'argent. je me suis dit, bon, OK. Par rapport à ça.
+
+David Leuliette (39:18.328)
+Mec, tu as 500 balles, fais pas chier, mais bon... Why not ? Why not Je comprends. Je... Je comprends.
+
+Brice Zele (39:24.381)
+Il y a aussi un autre point qu'ils ont mentionné et ça au final je trouvais que c'était plutôt vrai c'est que le nom que j'ai adopté qui était Tiktool parfois ça prêtait à confusion il y avait des utilisateurs qui arrivaient sur mon app
+
+j'ai eu des gens comme ça qui arrivaient sur l'app et ils me contaptaient via le truc de support ou ils me suppliaient de rétablir leur compte, voilà. Enfin, ils s'étaient fait ban sur TikTok et ils croyaient qu'en au travers de mon app, c'était une app de support. gros, ils croyaient qu'ils étaient sur TikTok. Et j'ai eu plein de gens comme ça et je me suis dit, peut-être faudrait que je modifie le nom ou je sais pas quoi parce que TikTok, TikTok, fait...
+
+David Leuliette (39:47.73)
+Ouais.
+
+David Leuliette (39:52.989)
+Ouais.
+
+David Leuliette (40:02.94)
+Ouais, c'est un peu shady ouais. J'avoue.
+
+Brice Zele (40:06.441)
+Ils ont aussi parlé du look global de l'application, ça rappelle... L'idée aussi c'est de rester dans l'univers de TikTok. Je n'ai pas forcément repris les couleurs, mais j'ai peu repris pas mal d'éléments pour vraiment rester dans cet environnement-là. Apple, quand ils ont reçu ce mail, ils m'ont dit que je dois trouver un accord à l'amiable avec eux.
+
+Et quand eux ils vont faire un mail leur disant que tout est réglé, ils vont rétablir mon app. Il n'y a pas de discussion qui possible avec ces gens là. Donc voilà, c'est le concept. Je me suis fait retirer là.
+
+David Leuliette (40:46.608)
+Ouais donc ouais en fait c'était trop proche et tu t'es retrouvé wire dans le département legacy enfin le département juridique pardon le département juridique lui son job c'est de kiquer tous les gens qui veulent après faire des chédis techniques quoi donc sachant que si tu l'avais appelé vidéo tools for social media tu vois peut-être que
+
+Brice Zele (41:03.497)
+...
+
+Brice Zele (41:14.678)
+Ouais, j'ai dit ça.
+
+David Leuliette (41:15.08)
+Peut-être que tu n'aurais pas eu ce truc là, mais en gros en vrai c'est pareil, n'aurais pas, admettons, tu l'aurais appelé vidéo-maker. Peut-être que du coup les gens n'auraient pas compris l'intérêt de vidéo-analyseur, tu si tu avais trouvé un truc complètement différent, peut-être que tu n'aurais pas eu justement les gens qui paient parce qu'ils comprennent direct, instant la chose quoi.
+
+Brice Zele (41:43.273)
+Là je me fais la conclusion de plus en plus de pourquoi pas en faire un SaaS parce qu'il y a un autre outil qui existe qui fait peu près pareil et qui d'ailleurs au niveau même de l'abonnement qu'il propose c'est bien supérieur à ce que moi je proposais et au final je trouve que l'app telle que je l'ai fait elle est peut-être pas optimisée pour le mobile en fait parce que je manipule pas mal de données par exemple quand l'utilisateur arrive sur l'app et que
+
+David Leuliette (41:43.345)
+Je vois.
+
+Brice Zele (42:13.299)
+analyse son compte ça va je vais me prendre un gros gissant qui fait peut-être 3 mégas et je fais ça comme ça en fonction du nombre de vidéos qu'il a posté donc pour des utilisateurs qui ont plus de 1000 vidéos t'as pas mal de données du coup quand il faut faire des files parce qu'en fait les files tout se passe au niveau du mobile en fait donc du moment où tu as récupéré les données tu peux les exploiter hors ligne sans avoir besoin de faire de nouvelles requêtes au backend
+
+Et du coup, juste faire les filtres dans ces données-là, ça faisait que l'application pouvait parfois un peu laguer. Là, on me dit peut-être que serait intéressant, plutôt de partir sur un SaaS plutôt qu'une lab mobile.
+
+David Leuliette (42:53.639)
+Je sais pas parce que après là je pense que c'était avant Expo et donc là c'est Expo Heavy, j'ai utilisé Expo Heavy je pense pour les vidéos et maintenant c'est Expo Vidéo il me semble ou l'inverse je ne sais plus peut-être que maintenant le...
+
+Brice Zele (43:03.817)
+Je parle pas vraiment des vidéos en elles-mêmes, mais je parle de l'analyse des métas données associés à la vidéo. Par exemple, filtrer toutes les vidéos de l'utilisateur par vidéo les plus vues. Ça, faut parcourir tout le gisson, les classer par le nombre de vues et Et ça, bah...
+
+David Leuliette (43:09.753)
+juste l'analyse, ok. Ok.
+
+Brice Zele (43:25.769)
+Autant sur les devices assez récents, ça marchait bien. Mais sur des devices un peu plus anciens, franchement, c'était pas fou.
+
+David Leuliette (43:29.767)
+Ouais.
+
+David Leuliette (43:35.801)
+Ouais je vois, je vois. Ouais de toute façon c'est pareil, la performance c'est un full time job et c'est quand tu te rends compte après, quand t'as shippé des trucs, quand t'as bien itéré au fur et mesure, ça prend du temps. Donc vite fait, tu m'as dit, donc là t'étais sur un nouveau projet, c'était quoi ?
+
+Brice Zele (43:53.993)
+Oui, c'est une app autour de la gestion du temps d'écran. J'ai vu qu'il a pas mal d'apps. Il a pas mal d'apps qui nous font...
+
+David Leuliette (44:00.392)
+Ah oui c'est gestion du temps décor. Ok, ok, si je vois. Ouais, il y en a plein. C'est parce qu'en fait, la question signature, c'est avec... bah vas-y, go. De façon, en vrai, t'es CTO de Bryce Inc. Tu vois, Bryce Inc. Et on va dire t'es CTO, CIO, tu fais tout. T'as 504 budgets pour construire une app mobile. Qu'est-ce que tu ferais ? Quel stack ? Alors tu peux reprendre soit rebuild de ton app, soit améliorer une, soit en faire une nouvelle.
+
+500 codes budget serait quoi ta stack et la première erreur que tu éviterais ? Je prends un designer qui check si le lion est pas pris. Moi attends, je te coupe désolé mais moi j'ai ça, j'ai un agent dust en fait qui fait ça mais non. Enfin j'ai un agent ya avant parce qu'en fait en gros là y'a... Béto... Je sais pas si tu veux que c'est... Enfin bref...
+
+Brice Zele (44:39.113)
+...
+
+Brice Zele (44:54.601)
+Oui, mais non, c'est pas ça.
+
+David Leuliette (44:56.383)
+En fait, il m'a filé accès à son truc pour faire des apps nano-banana-rapper. J'en ai fait une pour... Comment ? Lui, l'utilise en fait, gros, il fait une app pour les tatouages. Du coup, il a extract la code base commune et fait maintenant, il vend le template en mode starter kit, tu te connectes et tu peux faire une app.
+
+Brice Zele (45:03.881)
+On faire des tatouages, il me semble. On peut faire des tatouages.
+
+Brice Zele (45:19.635)
+d'accord.
+
+David Leuliette (45:21.017)
+Et du coup il m'a filé ça, je fais ok stylé, j'ai fait une app de intérieur design 3D et il rentrait en deux secondes, vois. Je fais ok, j'ai mis mes clés et tout, machin. Et après j'ai commencé à diguer niveau marketing, marketing et distribution. Et là fais putain parce que j'avais eu une idée vite fait. Et là tu vois que réseaux sociaux saturés, marché saturé, tous ces trucs là. Donc là je me suis dit vas-y, j'en ai eu une autre idée. Je vais d'abord poncer pendant deux semaines.
+
+distribution et marketing avant de chipper l'app comme ça au moins j'aurai pas les problèmes que tu as eu et où je vois j'ai eu un truc gros smile à peu près sur quel marché je peux attaquer parce que des fois genre bah comme tu dis quoi juste faire du B2B ou du B2C en tant que dev tu t'en fous tu dis ouais c'est des useurs c'est bon mais en vrai en terme de marché ça peut changer du tout au tout ou faire un projet qui est viable ou pas du tout parce que vendre un truc de 10 balles à des gens faut en trouver
+
+Pas mal alors que tu vends un abonnement 200 euros par mois à une cible hyper bien identifiée. Ça est easy et tu n'as besoin que de mille clients, enfin un peu moins et puis tu fais... Mais vas-y. Alors tu peux reprendre Bryce incorporation, tu 500 cas, qu'est-ce que fais ?
+
+Brice Zele (46:35.529)
+C'est une bonne question. Je pense que je tâcherai de faire des choix judicieux en fonction des besoins du projet. Donc pas sûr que je partirai automatiquement sur du réagnatif. pense que en fonction des besoins, réagnatif ça peut être très bien dans plein de cas. Mais c'est clair qu'il y a d'autres cas de figure où c'est pas forcément l'idéal. Où le natif est mieux. Et ensuite...
+
+C'est sûr que je ferais enfin je mettrais plus en avant mes convictions personnelles en mode je veux avoir la main sur tout, on va faire le back-end même ou des trucs comme ça donc ouais je dirais que fonction de si il y a besoin de faire du back-end à la main on le fera pareil si il y a besoin de assez de shipper assez rapidement on peut prendre du shippaby ça marche très bien franchement depuis que j'utilise et
+
+C'est vraiment, ça marche. Je pense que je ferai des choix vraiment qui sont dans l'intérieur du projet, ce soit côté stack ou même côté gestion de budget en gros. C'est vrai que c'est des...
+
+David Leuliette (47:50.919)
+Et ouais, c'est... ça se verra au fur et Mais t'as un exemple justement où genre faire une app que native ce serait mieux que de choisir une stack avec native ?
+
+Brice Zele (48:02.217)
+Ouais, exemple je te prendrais une app comme Snapchat. pense que Snapchat en React Native, pas sûr que ce soit ouf. Ils utilisent tellement des capteurs au niveau du device entre la géologue, la caméra, tout ce que tu veux. pense que là tu touches vraiment les limites de ce clip, de ce que React Native peut t'offrir.
+
+Je pense que pour toutes les apps où tu vas vraiment faire pas mal d'interactions avec les capteurs natifs du téléphone ou faire même des grosses opérations d'analyse ou des choses comme ça, c'est pas le style que je conseille en tout cas pour une app de son.
+
+David Leuliette (48:35.985)
+Ouais je vois.
+
+David Leuliette (48:41.607)
+genre Bump. Bump, c'est les anciens de Zenly. Zenly, c'est une app mobile qui est sortie à l'époque et c'était fait racheter par Snapchat et qui avait été intégré justement dans la carte, crois, un truc du genre. Et du coup, là, ils ont ressorti une app qui s'appelle Bump, c'est pour voir tes amis pas loin de chez toi.
+
+tu vois tes potes et tout, machin, puis tu peux voir le partage de localisation, tu peux voir tes amis, machin, tout le bordel. Du coup, me demande, pareil, c'est quoi la stack ? Je sais pas, je serais curieux, faudrait que je vous demande. Si vous savez, s'il a des gens qui savent sur internet, ping et moi. serais... Oh, alors pas du tout ! Ben non, justement, il faut les inviter absolument dans le cross-platform, je crois comme ça ils pourront nous dire pourquoi ils n'ont utilisé que du natif dès le début, tu vois. Ok.
+
+Brice Zele (49:09.225)
+Merci.
+
+David Leuliette (49:38.393)
+C'est là va passer la partie question rapide. La première réponse qui te vient tu la donnes direct. En 2026 est-ce que tu fais du rec native ou du expo
+
+Brice Zele (49:52.905)
+Ouais, expo sans hésitation.
+
+David Leuliette (49:54.375)
+Une libe que tu utilises sur chaque projet sans exception.
+
+Brice Zele (50:00.905)
+Pour chaque projet mobile, je dirais c'est reanimate. Bon, c'est vrai que ça paraît un peu bateau de dire ça comme ça, mais je pense que dans les...
+
+David Leuliette (50:06.146)
+Ouais, mec, c'est pas... Non mais c'est pas à taux, c'est pas à taux du tout. J'ai fait les 20 premiers épisodes, à chaque fois les gens me disaient « Animated ».
+
+Brice Zele (50:12.873)
+Ouais.
+
+Brice Zele (50:18.685)
+En fait, moi je trouve que vraiment dans l'écosystème réagnatif c'est peut-être sans doute la meilleure librairie que ce soit en terme de documentation, terme de tout ce que ça permet de faire et je pense d'ailleurs que le dernier state of réagnatif, la test, tout le monde est unanime pour dire que franchement c'est une super libre avec la...
+
+David Leuliette (50:40.71)
+Pour ceux qui jump in, qui n'arrivent que maintenant dans cet épisode parce que Bryce va le partager à tes amis pour expliquer à ta maman, Réanimated ça permet de faire des animations hyper simplement, comme si on utilisait du CSS transition versus faire décortiquer toute l'animation avec les sinuses, cosinus qui étaient obligés de faire. Ça permet vraiment de gagner du temps et d'avoir des primitives d'animation vraiment simples.
+
+ou derrière ça fait plein de maths. Donc le truc le plus sous-estimé dans le dev mobile solo.
+
+Brice Zele (51:18.537)
+Je dirais que c'est le marketing sans hésitation. pense que oui, autant on peut faire des très bonnes apps, pour les vendre c'est une autre histoire quand même.
+
+David Leuliette (51:29.542)
+et marketing, c'est toujours pareil, c'est location, le store il faut qu'il soit au coin de la rue, s'il y a deux rues plus loin c'est bon. Un outil, une ressource que tu recommandes souvent, niveau dev, productivité peu importe.
+
+Brice Zele (51:45.513)
+Je vais peut-être parler d'une libe que j'utilise en ce moment, que j'ai commencé à utiliser dans le projet que j'ai commencé récemment, c'est React Native Vision Camera. Je ne l'avais pas utilisé mais depuis que j'ai utilisé...
+
+Franchement, c'est fou tout ce que ça permet de faire quoi. Surtout couper à RIAI Nativistia, parce que moi dans mon cas de figure, j'affiche une sorte de squelette sur l'utilisateur et tout. Et franchement, je crois que c'est l'équipe de Marjelou qui l'a fait.
+
+David Leuliette (52:24.354)
+Margello, c'est marque... Donc en fait, y a cinq... En gros, y a cinq agences dans le monde qui font du ragnasique, sont stylées. Il y a Software Mansion, Infinite Red, Callstack... Ben Margello, justement. Et je ne plus laquelle, il une autre que j'ai oubliée. Et Vision Camera, c'est justement Margello qui a fait... Donc il a un remplacement de Expo Camera et qui est stylé, notamment toutes les features, c'est...
+
+Brice Zele (52:39.784)
+De l'aide.
+
+David Leuliette (52:54.712)
+barcode scanner qui est mieux custom, on peut customiser les fps on peut résolution, peut faire du 4k, peut faire du fichail style, peut faire du frame processing, plein de trucs et c'est ça en fait qui permet de foutre un squelette par dessus ton truc carrément et dernière question tiktok ça survit ou ça disparaît dans deux ans
+
+Brice Zele (52:59.492)
+Exactement.
+
+Brice Zele (53:11.14)
+Ok, tout à fait.
+
+Brice Zele (53:23.913)
+Je pense qu'il n'y a aucun moyen que ça disparaître. Franchement, tel qu'on est parti, je pense que ça va devenir encore plus gros. Moi, je n'étais pas trop dessus au tout début, mais le projet m'a obligé de regarder un petit peu c'est quoi l'app et tout. Et là, je me retrouve quasiment à faire mes recherches, des limites des recherches que j'aurais fait sur Google dessus. C'est fou.
+
+David Leuliette (53:51.371)
+ouais ? c'est aussi euh... En fait, j'ai pas le time, mais...
+
+Brice Zele (53:56.233)
+Franchement... Après c'est des recherches bien spécifiques, typiquement là par exemple la semaine dernière j'étais à Saint-Emilion, c'est un petit village qui fait du vin autour de Bordeaux et tout, je voulais voir ce qui est possible de faire sur place, je suis pas allé sur Google ou quoi, je suis allé sur TikTok pour voir, je trouve que dans ce cas de figure là par exemple c'est plus intéressant.
+
+David Leuliette (54:25.023)
+Ok... Ouais comme si... pouvoir de l'actu chaud sur des trucs... whatever... TikTok.
+
+Brice Zele (54:25.289)
+...
+
+Brice Zele (54:33.077)
+Je ne sais pas comment ça pourrait disparaître. Tout le monde l'utilise, autant les devs. Franchement tout le monde est dessus. D'ailleurs je ne pas si tu dessus ou pas du tout.
+
+David Leuliette (54:43.301)
+Non, non, j'ai pas le time. En fait, j'ai un compte, mais j'ai jamais poncé le truc. J'ai déjà du trop de retard dans la post prod. Faudrait en fait. C'est pas en fait si j'aurais des idées, tu vois, je me dis, ouais, vas-y, ce serait rigolo de le faire, faire des tests et tout. Je pourrais, mais je n'ai pas le temps d'exécuter en fait. non.
+
+Brice Zele (54:51.113)
+...
+
+Brice Zele (55:05.139)
+En vrai je pense que tu devrais essayer, même juste de les short des podcasts, les vidéos, les podcasts en forme d'un short, juste vraiment découpé comme ça.
+
+David Leuliette (55:16.325)
+Bah ouais c'est ça hein, mais en fait en gros il faudrait que... Faudrait que je foute Claude là dessus quoi, qui me le publie pour moi quoi. En fait il faudrait que je foute ça dans un...
+
+Ça fait déjà trop de clics. la post-pro, il y a trop de trucs. Mais je vois, faudrait. J'y ai pensé, mais... Ouais, ça fait une plateforme en plus. Pour l'instant, j'essaye de resserrer sur YouTube, Déjà, les shorts, j'en fais... Le pipeline de shorts, il est bloqué on hold sur je dois faire ou assis, j'en ai six de retard. Donc... C'est pas grave, j'ai pas le time de les faire.
+
+Brice Zele (55:32.425)
+...
+
+David Leuliette (55:58.52)
+C'est vraiment les uplots dans chaque plateforme et cliquet cliquet et mettre la description et tout quoi. Tu vois ça prend quand même un peu de temps. Donc faudrait soon.
+
+Brice Zele (56:05.353)
+Après je pense qu'il a quand même pas mal de titres aujourd'hui qui m'ont décidé de tout ça. Après j'avais posté 2-3...
+
+David Leuliette (56:15.147)
+Ouais si, non mais c'est...
+
+Il y a sûrement plein d'outils qui le font, c'est juste pareil, j'ai pas eu le temps de regarder en fait. Mais c'est bien.
+
+Brice Zele (56:23.401)
+En fait, c'est juste que trouve que TikTok par rapport à d'autres plateformes comme YouTube, j'avais posté deux, trois vidéos juste pour parler de TikTok dessus et sans abonner, sans rien du tout, tu arrives quand même à faire des stats qui peuvent quand être vachement intéressants. Donc, je trouve que c'est beaucoup plus facile de toucher des personnes que tu ne toucherais pas forcément avec.
+
+David Leuliette (56:51.565)
+Ouais, tu pourrais pas... Ouais, pour la disco-verbilité. mais ça je suis convaincu aussi que pour la disco-verbilité c'est stylé quoi. Ça, y'a pas de dévoile. Faudrait que je regarde. Si y'a un sujet qu'on n'a pas encore abordé et qui te tient à cœur.
+
+Brice Zele (57:09.897)
+Un sujet qu'on n'a pas abordé, c'est vrai qu'on a rapidement parlé mais je pense que c'est le marketing. pense que l'ère où l'IAP peut quasiment produire tout le code que vous voulez, la seule manière de s'y démarquer c'est vraiment à travers le marketing. C'est vraiment ça qui fait toute la différence, à la fois pour promouvoir ses apps, ou même juste dans sa carrière professionnelle en fait, bah parler...
+
+Je pense que vraiment la compétence qui fera toute la différence aujourd'hui c'est savoir vendre et savoir se vendre. ouais le marketing aujourd'hui je pense que c'est vraiment ça qui est game changer sur tous les volets.
+
+David Leuliette (57:53.221)
+Tu as fait un peu de ASO ou pas du ? euh... as pas eu le temps là.
+
+Brice Zele (57:57.545)
+Je n'ai pas eu le temps, crois que l'app, ça a duré de vie sur l'app store, il a fait un an et demi. Donc entre les premiers retours que je devais, j'étais plus focus sur vraiment le chip des futures. J'étais vraiment en mode développeur, je n'étais pas vraiment en mode je vais vendre le truc. Je ne suis pas trop dans cet optique là.
+
+David Leuliette (58:08.677)
+Bye !
+
+David Leuliette (58:19.685)
+Business Guy quoi. Oui, mais après la trajectoire que tu as eue, c'était plus genre, vas-y, je fais ça par mon portfolio et je le mets en prod et puis après je continue le rat trace versus tu t'es dit, c'est simple pour faire 1 million, il me faut autant d'useurs et je vends mon produit à 200 par exemple.
+
+200 dollars par personne à 5000 personnes, boum ça fait un million. Et où 500 personnes à 160 par mois, ça fait un million aussi. Donc tu vois, si t'es plus comme ça, là du coup tu dis, bah là en fait vu que je le vends à X par personne, il me faut autant de personnes et du coup je peux me permettre de mettre autant en ads et tu sais, as plus un plan comme ça, c'est pareil, ça demande full time job.
+
+C'est déjà stylé que tu as réussi à faire ça ça dans l'MRR en mode... Allez hop ! I don't know what I'm doing !
+
+Brice Zele (59:17.225)
+...
+
+Brice Zele (59:24.393)
+Oui.
+
+David Leuliette (59:27.013)
+Est-ce que tu as une idée de quelqu'un dans la communauté qu'on pourrait inviter, quelqu'un que tu respectes et que aimerais entendre dans ce podcast ?
+
+Brice Zele (59:38.025)
+Il y a un gars que je suis sur LinkedIn qui s'appelle David Grammatico. C'est un dev réagnatif mais il a aussi la casquette de formateur. Je suis bien sûr de savoir comment il aborde l'aspect formation à l'ère de l'IA.
+
+David Leuliette (59:49.292)
+Ok.
+
+David Leuliette (59:58.117)
+Ah c'est clair. moi j'ai un peu de retour là-dessus parce que moi je fais des bootcamp et... Et voilà. Et en fait ça dépend l'audience. En fait, autant on a des gens réfractaires à l'IA, autant on en a pas du tout. Mais dans un problématique de learning. Donc je pense que quand t'apprends, faire de l'IA c'est peut-être pas forcément judicieux. Tu vois, faut un peu de struggle et un peu de pratique pour pas qu'il ait la réponse qui s'affiche tout de suite.
+
+Mais après aussi on a eu des students, le bootcamp c'est trois jours et c'est pas moi qui l'ai donné, le bootcamp c'est Mathis et il avait des students en face de lui genre en bac plus 5 un truc du genre. Et lui c'était en mode Claude Code max, ils ont shippé tout le truc en une demi journée, c'était torché quoi. Mais du coup, voilà, from zero to production, voilà en trois jours ils ont mis du super base, ils ont mis tout, ils avaient eu une app en prod quoi.
+
+Brice Zele (01:00:46.025)
+All right.
+
+David Leuliette (01:00:57.601)
+Donc après, euh...
+
+David Leuliette (01:01:03.197)
+Je dis ça dépend que le critère de succès il est atteint quand même parce que...
+
+Brice Zele (01:01:06.217)
+...
+
+David Leuliette (01:01:09.6)
+Parce que pour eux, avoir un truc en prod c'est quand même incroyable quoi. T'as écrit ça comment ? Gramatico t'as dit ?
+
+Brice Zele (01:01:10.281)
+Ouais, je suis bien plus au-dessus.
+
+David Leuliette (01:01:25.036)
+Ouais tu me l'enverras. Tu me l'enverras. Et du coup l'angle c'est la formation.
+
+Brice Zele (01:01:31.919)
+à l'ère de Lya ou quelque chose comme ça.
+
+David Leuliette (01:01:35.364)
+Non mais si c'est bien ça, je prends. Ok. où est-ce qu'on peut te suivre et te contacter si on veut plus de conseils pour les avocats et pour éviter de se faire striker des stores ?
+
+Brice Zele (01:01:51.219)
+Je suis disponible sur LinkedIn, pouvez trouver sur LinkedIn, vous m'envoyer petit message, je vous répondrai dans la foulée. Sinon aussi je suis sur Twitter, alors je postais pas mal sur Twitter quand je développais l'application. C'est vrai que dessus je pose plus en anglais, mais ouais, enfin je dirais LinkedIn.
+
+David Leuliette (01:02:16.254)
+Ouais, sur Twitter c'est Bryce, Zilber, I-C-E-Z-E-L-E LinkedIn, c'est pareil, attends t'as un site internet aussi
+
+Brice Zele (01:02:26.921)
+Ouais bah enfin c'est un portrait lieu que j'ai fait il a plus de temps je ne l'ai pas mis à jour depuis
+
+David Leuliette (01:02:32.324)
+Y'a l'autre en pass qui met longtemps à charger. Omg mec. Incroyable. Incroyable, ça faisait hyper longtemps que j'avais pas vu ça. Y'a un nuage de cloud tel les trucs qu'il avait sur WordPress. Trop stylé. Ah là là, on adore. On adore ça. On adore, on adore.
+
+Brice Zele (01:02:46.729)
+...
+
+Il est fait en WordPress d'ailleurs
+
+David Leuliette (01:02:54.052)
+oui ça, ok. Au moins, tu vois, il y en a un en prog. Je veux dire, tu vois, c'est compliqué. Souvent il a des gens qui n'ont pas de site. Voilà, ça on adore. Et bien super. Donc si cet épisode t'a donné envie d'apprendre le Dev Mobile, l'archi-irak native, retrouve tous nos épisodes sur wishypid.today.com podcast. Vous étiez sur le cross-platform show. Si vous avez bien aimé...
+
+Envoyez-nous 5 étoiles sur Spotify et Apple Podcast pour remonter et repartir dans le top 100. Avant de te laisser une dernière question, une phrase mémorable, qu'est-ce que tu vas shipper dans les 30 prochains jours ?
+
+Brice Zele (01:03:37.937)
+Alors dans les troncs, je suis pas sûr que dans les troncs prochainement ça sortira.
+
+David Leuliette (01:03:41.444)
+Rien, focus baby ! Salut !
+
+Brice Zele (01:03:45.257)
+Mais oui, y a moyen que l'app, alors j'ai appuyé Scroll If You Can.
+
+David Leuliette (01:03:55.044)
+Scroll if you can, attention ! Attention, scroll if you can !
+
+Brice Zele (01:04:01.225)
+Oui, il y a moyen que ça arrive assez rapidement donc je bosse dessus et je m'active pour que ça puisse sortir le plus rapidement possible.
+
+David Leuliette (01:04:07.712)
+Voilà. Ok, bah scrollifucane.com, ce sera dot com.
+
+Brice Zele (01:04:13.513)
+Ce sera d'autres
+
+David Leuliette (01:04:16.292)
+Faux ! Mauvaise réponse ce sera scrollifyoucan.bricezil.com et quand tu feras 100 euros de vente, là tu pourras acheter le nom de domaine. Allez les amis parce que c'est tout le temps le conseil que je donne aux potes de groupe de IndieHacker, c'est non t'achètes pas le nom de domaine avant d'avoir fait des ventes. Bah oui tu l'as dit, il faut se focus sur le marketing avant.
+
+Brice Zele (01:04:43.145)
+Yeah.
+
+David Leuliette (01:04:43.18)
+pas le droit d'acheter un autre domaine avant d'avoir fait des ventes.
+
+Brice Zele (01:04:46.953)
+C'est vrai que je n'avais pas pensé comme ça, je m'étais dit autant il faudrait que je se secuose du domaine comme ça.
+
+David Leuliette (01:04:52.229)
+Non, je vais le faire à nom de domaine, tu fais 100 € devant ta vente. Allez hop ! On se reparle dans 30 jours. Ciao les amis ! Allez, au revoir à tous !
+
+Brice Zele (01:04:55.815)
+Ok.
+
+Brice Zele (01:05:02.441)
+...
+

@@ -90,7 +90,7 @@ Quinze ans après Titanium, React Native reste la technologie de référence pou
 
 Ce qui ressort de cet épisode, c'est une philosophie de développeur expérimenté : choisir ses batailles, rester curieux des technologies périphériques, et ne pas abandonner les fondamentaux au profit des raccourcis.
 
-**Abonnez-vous au Cross Platform Show** sur Apple Podcasts ou Spotify, laissez 5 étoiles si cet épisode vous a appris quelque chose, et retrouvez Thibault sur [premieroctet.com](https://premieroctet.com) et BlueSky à `@tpbiz`.
+Retrouvez Thibault sur [premieroctet.com](https://premieroctet.com) et BlueSky (`@tpbiz`).
 
 ---
 

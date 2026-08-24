@@ -54,8 +54,6 @@ Le bug qui le hante ? Un double paiement introuvable pendant deux semaines chez 
 
 Scaler une application mobile en hypercroissance, chez Doctolib, ce n'est pas une recette d'archi idéale : c'est un équilibre permanent entre protéger le cœur critique, avancer par petits paliers mesurés, et outiller l'équipe pour que vingt développeurs ne se marchent pas dessus. Un retour de terrain concret, à écouter en entier dans l'épisode.
 
-🎧 Écoute l'épisode complet avec Louis Zawadzki sur [weshipit.today/podcast](https://weshipit.today/podcast), abonne-toi et laisse 5 étoiles sur Spotify et Apple Podcasts pour soutenir l'émission.
-
 ## Key Takeaways
 
 - **La WebView comme bouclier** : le cœur de l'app patient Doctolib est resté une WebView jusqu'en 2024-2025, limitant l'exposition aux incidents mobiles.

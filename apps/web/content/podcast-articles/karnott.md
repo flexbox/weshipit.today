@@ -101,7 +101,7 @@ La réponse d'Audrey est sans appel : **Expo**. Pas parce que c'est à la mode, 
 
 Ce que l'épisode avec Audrey démontre surtout, c'est que la migration React Native vers Expo n'est pas juste une décision technique — c'est un investissement dans la durabilité du projet. Quand une seule développeuse peut faire tourner, builder et shipper une app de production complexe avec de la cartographie et du suivi GPS, c'est que l'outillage fait vraiment le travail.
 
-🎙️ **Écoutez l'épisode complet** du Cross Platform Show et suivez Audrey sur [BlueSky](https://bsky.app/profile/shinelia.bsky.social) pour suivre les aventures de Karnott.
+Audrey partage les aventures de Karnott sur [BlueSky](https://bsky.app/profile/shinelia.bsky.social).
 
 ---
 

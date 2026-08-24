@@ -22,6 +22,21 @@ export interface PodcastEpisode {
 // Ordered newest first (highest episode number first).
 export const podcastEpisodes: PodcastEpisode[] = [
   {
+    number: 38,
+    slug: 'vjeux',
+    name: 'React Native',
+    title:
+      'React Native, Flutter ou natif en 2026 ? Le créateur de RN tranche - Christopher Chedeau',
+    description_short:
+      'vjeux (Christopher Chedeau), co-créateur de React Native, raconte les origines du framework : bridge asynchrone, Yoga, open source et sa vision 2026.',
+    hosts: ['David Leuliette'],
+    guests: ['Christopher Chedeau'],
+    spotify_url: '' /* ⚠️ TODO à compléter */,
+    apple_podcast_url: '' /* ⚠️ TODO à compléter */,
+    youtube_embed_id: 'a0gdoC5n-pw',
+    company_logo: '/images/podcast-logos/vjeux.png',
+  },
+  {
     number: 37,
     slug: 'doctolib',
     name: 'Doctolib',
@@ -36,6 +51,113 @@ export const podcastEpisodes: PodcastEpisode[] = [
       'https://podcasts.apple.com/fr/podcast/scaler-une-app-mobile-en-hypercroissance-doctolib-50m/id1790867559?i=1000784243567',
     youtube_embed_id: 'PaIacBM6Kmk',
     company_logo: '/images/podcast-logos/doctolib.webp',
+  },
+  {
+    number: 36,
+    slug: 'app-js-2026',
+    name: 'App.js 2026',
+    title: 'App.js 2026 — Ce que la conf ne vous a pas dit',
+    description_short:
+      "Débrief d'App.js 2026 à Cracovie : stabilisation, IA, perf et les vrais outils React Native 2026, avec Gabriel Hofman et Matthys Ducrocq.",
+    hosts: ['David Leuliette'],
+    guests: ['Gabriel Hofman', 'Matthys Ducrocq'],
+    spotify_url: '' /* ⚠️ TODO à compléter */,
+    apple_podcast_url: '' /* ⚠️ TODO à compléter */,
+    youtube_embed_id: '1OQM5jR-EN8',
+    company_logo: '/images/podcast-logos/app-js-2026.jpg',
+  },
+  {
+    number: 35,
+    slug: 'revenuecat',
+    name: 'RevenueCat',
+    title: 'RevenueCat : La vérité sur les stores en 2026',
+    description_short:
+      'Commission App Store à 30 %, DMA, RevenueCat : Tarek et Armand Petit démontent les mythes de la monétisation mobile en 2026.',
+    hosts: ['David Leuliette'],
+    guests: ['Tarek', 'Armand Petit'],
+    spotify_url: 'https://open.spotify.com/episode/5S8cWrGkWlkbyXFYaUn5FS',
+    apple_podcast_url:
+      'https://podcasts.apple.com/fr/podcast/le-cross-platform-show-le-talk-show-francophone-sur/id1790867559?i=1000771974481',
+    youtube_embed_id: 'JO46PLqG040',
+    company_logo: '/images/podcast-logos/revenuecat.png',
+  },
+  {
+    number: 34,
+    slug: 'tiktools',
+    name: 'TikTools',
+    title:
+      "Du dev salarié à l'indie maker : comment j'ai shippé TikTools seul avec React Native",
+    description_short:
+      'Du dev salarié à indie maker : Brice Zele raconte comment il a shippé TikTools seul en React Native, backend fait main et ban Apple compris.',
+    hosts: ['David Leuliette'],
+    guests: ['Brice Zele'],
+    spotify_url: 'https://open.spotify.com/episode/2UasjGWdgW72Wp0klGIRo4',
+    apple_podcast_url:
+      'https://podcasts.apple.com/fr/podcast/le-cross-platform-show-le-talk-show-francophone-sur/id1790867559?i=1000770886841',
+    youtube_embed_id: 'tXC0Qnazm3o',
+    company_logo: '/images/podcast-logos/tiktools.png',
+  },
+  {
+    number: 33,
+    slug: 'allo',
+    name: 'Allo',
+    title: 'Les 5 erreurs coûteuses des CTO mobile',
+    description_short:
+      'Les 5 erreurs coûteuses des CTO mobile, décryptées par Pablo (Allo) : choix de stack, maintenance, distribution et performance.',
+    hosts: ['David Leuliette'],
+    guests: ['Pablo'],
+    spotify_url: 'https://open.spotify.com/episode/0AXbU04Fm2c1P8FAzm361p',
+    apple_podcast_url:
+      'https://podcasts.apple.com/fr/podcast/le-cross-platform-show-le-talk-show-francophone-sur/id1790867559?i=1000769761596',
+    youtube_embed_id: 'roDhUYjIED8',
+    company_logo: '/images/podcast-logos/allo.webp',
+  },
+  {
+    number: 32,
+    slug: 'recruter-devs-rn',
+    name: 'Mobiskill',
+    title: 'Comment recruter des devs React Native seniors',
+    description_short:
+      'Recruter un développeur React Native senior : marché de niche, vrais critères et erreurs de process, avec Carla Rainaud (Mobiskill).',
+    hosts: ['David Leuliette'],
+    guests: ['Carla Rainaud'],
+    spotify_url: 'https://open.spotify.com/episode/7M80x8p5Q3peRxbaFYv8xJ',
+    apple_podcast_url:
+      'https://podcasts.apple.com/fr/podcast/le-cross-platform-show-le-talk-show-francophone-sur/id1790867559?i=1000768680693',
+    youtube_embed_id: 'GkY4mZRJu6Y',
+    company_logo: '/images/podcast-logos/mobiskill_logo.jpg',
+  },
+  {
+    number: 31,
+    slug: 'atelier-trivium',
+    name: 'Atelier Trivium',
+    title:
+      'Vibe coding en production : shipper un SaaS en solo avec Claude Code — Terence',
+    description_short:
+      "Vibe coding et agentic engineering en production : dette technique, ROI, et apprendre aux non-devs à créer un SaaS avec l'IA, avec Terence (ARK / Atelier Trivium).",
+    hosts: ['David Leuliette'],
+    guests: ['Terence Zafindratafa Ferhah'],
+    spotify_url: 'https://open.spotify.com/episode/3yYveE5Wv5S8bVbEewMGff',
+    apple_podcast_url:
+      'https://podcasts.apple.com/fr/podcast/le-cross-platform-show-le-talk-show-francophone-sur/id1790867559?i=1000760977444',
+    youtube_embed_id: '-f9IHOXy61Y',
+    company_logo: '/images/podcast-logos/atelier-trivium.png',
+  },
+  {
+    number: 30,
+    slug: 'xavier-carpentier',
+    name: 'Biogen',
+    title:
+      '10 ans de React Native en prod : perf, Kotlin Multiplatform et virage IA — Xavier Carpentier',
+    description_short:
+      'Presque 10 ans de React Native en production : écueils du bridge, modules natifs Rust, bascule vers Kotlin Multiplatform et virage back-end/IA, avec Xavier Carpentier.',
+    hosts: ['David Leuliette'],
+    guests: ['Xavier Carpentier'],
+    spotify_url: 'https://open.spotify.com/episode/56jYsfd6SQA5AvVRq6VOK3',
+    apple_podcast_url:
+      'https://podcasts.apple.com/fr/podcast/le-cross-platform-show-le-talk-show-francophone-sur/id1790867559?i=1000757191810',
+    youtube_embed_id: 'x18i2Hr2s-w',
+    company_logo: '/images/podcast-logos/biogen.png',
   },
   {
     number: 25,

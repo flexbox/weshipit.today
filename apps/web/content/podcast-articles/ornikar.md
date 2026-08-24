@@ -17,10 +17,7 @@ Conseils et Expériences Partagées
 - Design System : Pourquoi est-il crucial pour une expérience utilisateur fluide ?
 - Migrations Technologiques : Comment gérer les changements technologiques à venir ?
 - Outils de Développement : Quels sont les outils indispensables comme Expo et Circle CI ?
-
-Écoutez cet épisode pour en savoir plus sur le développement mobile avec React Native, les défis et les succès rencontrés, et pour bénéficier de conseils pratiques de deux experts du domaine !
-
-**Notes de l'émission**
+  **Notes de l'émission**
 
 https://www.ornikar.com/
 

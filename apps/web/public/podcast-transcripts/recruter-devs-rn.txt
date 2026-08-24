@@ -1,0 +1,716 @@
+David Leuliette (00:04.318)
+Si toi aussi tu as une œuvre de DevRel ReacNative Senior ouverte depuis trois mois, donc tu as vu 15 CV, passé 6 entretiens, tu as fait deux tests techniques et tu n'as toujours pas trouvé. Est-ce que le problème c'est le marché, ton process ou tes critères ? Aujourd'hui on répond à cette question avec quelqu'un qui voit les deux côtés de la table depuis plus de 12 ans. Carla, comment ça va ?
+
+Carla (00:26.079)
+Ça va très bien et toi David ?
+
+David Leuliette (00:27.918)
+Bah nickel hein, on se prépare pour... Là, San Francisco, après conférence, voilà c'est... Mais c'est compliqué hein, ouais, busy. Donc t'es lead tech recruteur chez MobileSkill Freelance, spécialisé dans les profils mobile et tech depuis 12 ans. T'as compris une startup escalope dans les recrutements les plus critiques. Donc t'as vu des centaines de faux seniors, des milliers de juniors sous-évalués.
+
+Carla (00:36.641)
+...
+
+David Leuliette (00:56.686)
+et des process de recrutement qui coûtent 6 mois à des équipes entières. Tu confirmes ? Alors attends, quand j'étais sur ton LinkedIn, je trouvais ça excellent. Donc t'es l'ITech recruteur.
+
+Carla (01:07.393)
+C'est ça. Et après, juste pour corriger, je fais pas ce métier depuis 12 ans, mais depuis 5 ans. Donc il est tout. On réajuste. Je suis peut-être pas senior++ +, et j'ai peut-être vu des centaines plutôt que des milliers on va dire, mais je pense que je pourrais répondre aux questions quand même.
+
+David Leuliette (01:19.854)
+...
+
+David Leuliette (01:25.454)
+Bah oui, t'inquiètes, parce que je crois que c'est la première fois que je vois ça. Chez Mobilskill, vous avez le même niveau. Tu sais, genre tu es junior, après tu es senior recruteur et après tu es lead recruteur. C'est dans tous les métiers du recrutement, c'est ça ou c'est moi qui hallucine ?
+
+Carla (01:41.345)
+Non, après là c'est vrai que c'est un titre assez spécial parce qu'en général quand tu passes senior après tu passes manager moi c'est quelque chose que j'ai pas voulu forcément faire tout de suite en tout cas. Sur la partie freelance on est quand même une petite équipe, on est trois personnes aujourd'hui donc c'est pour ça qu'on m'a donné ce titre de lead.
+
+David Leuliette (01:52.632)
+Ouais, ok.
+
+David Leuliette (02:01.165)
+Ouais non mais franchement j'ai trouvé ça excellent, suis ravita c'est comme dans les techs et tout, après il aura un VP off recruiting tu vois Donc cool, donc pour ceux qui te connaissent pas encore, comment, sur quoi tu passes 80 % de ton temps en ce moment ?
+
+Carla (02:06.625)
+Bonne chance !
+
+Carla (02:17.991)
+En ce moment, je passe mon temps à échanger avec des freelances, des freelances tech, tu l'as bien résumé, depuis cinq ans. Moi, je me décris vraiment comme l'intermédiaire entre les freelances avec qui je vais être en contact, qui sont des développeurs principalement web et mobile, et les clients finaux qu'on va appeler les entreprises tech. Moi, mon rôle concrètement au quotidien, va être d'accompagner les deux parties du lancement de la recherche jusqu'à la fin de mission.
+
+David Leuliette (02:49.245)
+Ok, canon, et le profil le plus dur à trouver en ce moment.
+
+Carla (02:55.877)
+Comme je te le disais, déjà moi je travaille pas uniquement sur le placement de profils React Native. Donc c'est vrai que je vais également placer, et en plus en ce moment, plus de profils web que mobiles de manière générale.
+
+David Leuliette (03:07.991)
+Ouais, forcément.
+
+Carla (03:09.573)
+mais sur le mobile, c'est vrai qu'en React Native, c'est un marché qui reste assez restreint par rapport aux postes de développeurs web, c'est ce que je vois au quotidien, mais on a quand même de la demande qui arrive assez régulièrement. Et en fait, je pense que de manière plus générale, ce qui est compliqué aujourd'hui, c'est de trouver un profil qui va être expert sur sa techno, donc React Native, mais pas que. On va chercher quelqu'un qui va avoir si possible un esprit full sac.
+
+quelqu'un qui va être en mesure d'élargir son scope et d'intervenir sur d'autres projets au sein d'une boîte.
+
+David Leuliette (03:43.693)
+Et tu dirais que c'est plus dur à recruter du rack natif ou du natif ? D'après ton expérience ? Ouais après ça dépend, dur...
+
+Carla (03:52.801)
+D'après les derniers placements que j'ai pu faire, c'est vrai que React Native ça reste quand même des profils assez niches, donc je pense que c'est plus compliqué que du natif.
+
+David Leuliette (04:04.846)
+Ouais, ok ouais. C'est marrant, moi je pensais que ce serait plus facile. Tu vois, c'est comme quoi. C'est pour moi c'est du JavaScript, coup. Enfin bon, je suis dev du coup JavaScript, donc en fait c'est bon. Tu peux on-boarder, mais c'est vrai que, ouais, côté de l'autre côté, c'est pas forcément... ta perspective. Alors, attention. Donc attends, tu m'as dit que ça fait 5 ans que tu fais ça, mais ça fait combien de temps que tu fais de recrutement ?
+
+Carla (04:31.969)
+5 ans. Avant, c'est plutôt une reconversion. J'étais dans le monde de la mode, donc rien à voir. Donc là, vraiment 5 ans, mais vraiment de pire opérationnel où je fais ça toute la journée, d'échanger avec des freelances, de trouver des missions à ces freelances justement.
+
+David Leuliette (04:33.153)
+Thank you.
+
+David Leuliette (04:39.406)
+Ok
+
+David Leuliette (04:50.424)
+Ok ok ok ok, ouais donc 5 ans ça va, bah si je sais ce que tu vas me répondre. En 5 ans de regroupement tech c'est quoi le changement le plus radical que t'as vu sur le marché du mobile ?
+
+Carla (05:01.021)
+pense qu'il va y avoir la première réponse c'est l'IA, évidemment. après, en vrai, si on donne une autre réponse que l'IA, je pense qu'en cinq ans il a le niveau d'exigence qui a évolué.
+
+David Leuliette (05:02.446)
+Pas forcément.
+
+David Leuliette (05:14.282)
+bah ça j'aime bien, ça j'aime bien parce que l'IA trop facile en vrai trop...
+
+Carla (05:17.249)
+En fait, rapport à quand j'ai commencé chez Mobiskill, c'est vrai qu'aujourd'hui, trouve que les fiches de poste des partenaires vont être plus précises qu'avant. fait, je m'explique, que les boîtes, je pense qu'elles vont faire le...
+
+plus possible pour éviter de se tromper sur la personne qu'elles vont prendre dans leur équipe. Donc en fait, elles savent ce qu'elles veulent dès le début. Donc les entretiens peuvent être plus poussés, pas forcément plus d'étapes, mais il a vraiment plus d'exigences dans les process et ça, c'est quelque chose qu'on ressent depuis quelque temps maintenant.
+
+David Leuliette (05:53.145)
+Ouais, ça avance des plus genre, faut quelqu'un, un informaticien. Et maintenant c'est vraiment quelqu'un de spécialisé avec une liste longue pour des cas plus spéciaux. Ouais, ou alors ça dépend de la boîte, vois. Vu que maintenant ça tombe, tu travailles avec des plus grosses boîtes et du coup dans les plus grosses boîtes, bah il y a plus de gens spécialisés. Je ne pourrais pas dire mais je suis d'accord avec toi sur le niveau d'exigence générale.
+
+Carla (06:02.657)
+C'est une bouton à 5 notes.
+
+Carla (06:13.249)
+...
+
+Carla (06:19.787)
+Oui après, nous Mobile Skill, est vraiment très orienté accompagnement de start-up, de scale-up. groupe on en fait mais c'est moins notre cœur de métier donc c'est vrai qu'on a plus tendance à chercher quelqu'un qui va être en mesure de travailler sur un scope plus large et intervenir sur d'autres équipes que la sienne dans des plus...
+
+David Leuliette (06:43.86)
+Ok, je capte. du coup tu me disais que c'était compliqué de recruter en RAC Native, alors pourquoi ? Pourquoi c'est compliqué à recruter concrètement ? C'est un problème d'offre, de demande ou de définition des postes
+
+Carla (07:03.147)
+Je pense peut-être au niveau des offres. C'est vrai qu'au sein de Mobiskill, on observe moins de postes sur le mobile de manière générale, pas forcément que sur le React Native. a quand même nos clients qui continuent à nous mandater dès qu'ils ont un besoin sur le mobile. On échange avec d'excellents candidats tout au long de la journée. Mais en fait, le volume a baissé et ça, c'est une réalité. Et en fait, quand tu combines ça avec des exigences qui ont augmenté et des critères de plus en plus précis, ça a un impact direct sur le ressenti marché.
+
+Donc en fait, tu moins d'offres, plus d'exigences, donc mécaniquement le nombre de profils qui match vraiment va se réduire.
+
+David Leuliette (07:40.441)
+Ouais ou alors ça a changé vu que tu vois avec les high maintenant tu ship une un peu hyper rapidement tu vas plus chercher quelqu'un qui est chaud en data, backend, architecture, microservices tout ce bordel là plutôt que juste du front-end, truc qui met qui pourrait être généré la volée quoi.
+
+Carla (07:56.673)
+C'est ça.
+
+Carla (08:00.435)
+Et après, pense que c'est pas une spécificité du monde tech. Nous chez Mobiskill, fait aussi du placement non tech. La dernière fois, j'ai discuté avec un de mes collègues qui est plus sur la partie RH. On fait le même constat, que quand on publie une offre, en quelques heures, on va avoir des centaines de candidats. Alors qu'il quelque temps, on en avait aussi, ça fonctionnait très bien, mais on calculait plus ça en dizaines que centaines. Je pense que c'est le recrutement de
+
+David Leuliette (08:20.142)
+Allez !
+
+David Leuliette (08:28.463)
+oui.
+
+Carla (08:30.339)
+plus globalement qui est plus tendu.
+
+David Leuliette (08:34.252)
+Et quand vous publiez, vous publiez ou neuf.
+
+Carla (08:37.569)
+sur nos sites directement. Après c'est vrai que sur la partie freelance on travaille pas mal avec collective work en ce moment. Mais après principalement, ouais.
+
+David Leuliette (08:44.34)
+Ok, ok. Bisous.
+
+sur LinkedIn aussi, parce que le one click apply... en fait quand tu réduis la friction à apply forcément bah t'as du tout le chalutage profond.
+
+Carla (08:57.185)
+Non, après en fait on va systématiquement publier des annonces sur collective. Moi je vais même pas les republier sur LinkedIn parce que c'est vrai que sur collective on a déjà beaucoup de visibilité. Mais dans un premier temps en fait Mobiskill ça existe depuis 15 ans. l'avantage c'est qu'on a une base de données en interne qui est assez conséquente et on va faire appel à notre réseau avant de passer sur les plateformes pour trouver des profils.
+
+David Leuliette (09:24.142)
+Ouais forcément, et puis du coup vu que t'as plein de gens, t'as forcément des gens qui appellent. Ok, je vois. Mais ouais ouais, c'est intéressant à dire quoi. Passer de dizaines à centaines, bah donc pour éplucher, faire la diff.
+
+C'est devenu plus compliqué. Alors la question à 1000 dollars, c'est quoi la vraie différence entre un dev, ragnative, junior, confirmé et senior ? Et pourquoi dans les entreprises on n'arrive pas à faire la distinction dans les process ?
+
+Carla (09:37.857)
+Oui.
+
+Carla (09:59.989)
+Déjà nous en tant que cabinet, on nous sollicite quasiment exclusivement pour des profils donc senior. De temps en temps confirmé mais c'est vrai qu'on a encore plus sur l'aspect freelance. Je suis moins en contact avec des juniors. Après ce qui revient assez souvent dans les attentes des partenaires, c'est plusieurs choses mais l'essentiel ça reste vraiment le plug and play. Donc sur le freelance, l'enjeu, on le sait tous, c'est vraiment de faire percevoir sa valeur ajoutée le plus rapidement possible.
+
+David Leuliette (10:27.224)
+Ouais, dévoile.
+
+Carla (10:28.587)
+Et donc ce qu'on remarque toujours sur la partie freelance parce que c'est ce que je maîtrise le mieux, c'est que les années d'expérience, pas forcément ce qui va compter le plus finalement. C'est que tu prends l'exemple d'un développeur senior qui va avoir, je ne pas, huit ans d'expérience, mais qui n'a jamais pris de décision d'architecture seule, qui n'a jamais développé un projet from scratch. À l'inverse, tu un profil qui a quatre, cinq ans d'expérience, mais qui lui a déjà fait tout ça. On va favoriser ce profil à envoyer au partenaire plutôt que le...
+
+le dev de 8 ans d'expérience.
+
+David Leuliette (11:01.198)
+Ouais, parce que c'est pas de l'IoT, un truc très obscur qu'un seigneur sort à faire, c'est plus la culture du SHIP, start-up, ce qu'est le bac comme tu disais quoi. Un audience quoi, ça dépend pourquoi tu recherches.
+
+Carla (11:14.497)
+...
+
+Carla (11:18.981)
+Et après je pense que c'est aussi dans la posture, il y a un bon élément parce que nous en fait on passe du temps au téléphone avec chaque candidat et en fait quand tu as un candidat au téléphone qui est en mesure de t'expliquer pour quelle raison il a intervenu chez le client, quel était son rôle, qu'est qu'il a mis en place en donnant des exemples concrets, des chiffres, ça c'est un bon indicateur que c'est un profil senior.
+
+David Leuliette (11:46.128)
+Et donc ouais c'est ça quoi, si tu dois évaluer les gens... Pour les noter de A à 10, on ne le note pas mais bon ! Il faut quand même sur... Est-ce que c'est quoi les questions que tu poses en moins de 30 minutes pour savoir, tu te dis ah oui ça c'est un good match ou un mauvais match ? Est-ce qu'en 30 minutes t'arrives à peu près à savoir ? Et s'il a une question que tu poses qui fait mouche à chaque fois c'est laquelle ?
+
+Carla (12:10.189)
+Ça reprend un peu ce que j'ai dit. Dans les qualifications, je vais chercher à comprendre quelqu'un qui va te présenter quel a été son rôle, qu'est-ce qu'il a mis en place, comment il a fait pour résoudre les problèmes, quelles ont été les difficultés. C'est encore une fois dans la posture. Après, précise que chez Mobisquill, notre rôle, c'est vraiment d'apporter un profil devant la bonne personne. Mais les compétences techniques, n'est pas nous qui allons les évaluer, c'est les partenaires techniques.
+
+Donc, après, c'est toujours compliqué parce que ça nous est arrivé de se foirer complètement. Un candidat qui se présente hyper bien et techniquement, ça ne fait pas du tout. c'est toujours... Un candidat qui ne pas se vendre, effectivement.
+
+David Leuliette (12:49.859)
+Ou l'inverse, peux aussi avoir l'inverse en fait, avoir quelqu'un qui n'est pas bon et qui... C'est ça ou alors dans une entreprise X ça fonctionnerait très bien et dans une entreprise Y ça fonctionnerait pas du tout parce que Windows vs Mac OS, c'est simple que ça, des trucs comme ça qui vraiment pas faire la personne ou les skills mais en vrai erreur de casting tu vois.
+
+Carla (13:11.733)
+En fait, chose aussi, c'est que chez Mobisquill, n'a aucun consultant en interne. Donc, fait, à chaque fois qu'on a un nouveau besoin chez un de nos partenaires, on va vraiment faire une recherche spécifique. Donc, c'est dur de donner des réponses assez généralistes parce qu'on fait beaucoup de cas par cas, finalement.
+
+David Leuliette (13:28.687)
+Parmi les profils les plus recherchés par tes clients, est-ce que tu as vu une tendance qui émerge ou des compétences nouvelles qui deviennent critiques
+
+Carla (13:41.729)
+Là dernièrement, enfin c'est encore une fois ce que je disais, c'est le mindset full stack, j'ai l'impression qu'il ressort à chaque... Au final, sur ce mindset de, on veut quelqu'un qui sorte de sa zone de confort et qui puisse intervenir si urgence ou quoi que ce soit sur d'autres problématiques. On demandera pas que la personne soit experte, mais qu'elle soit ouverte.
+
+David Leuliette (13:50.197)
+on est reparti du full star, lalalala !
+
+Carla (14:10.377)
+intervenir si besoin. après je pense que la question aussi c'est sur l'IA. Aujourd'hui ça apparaît pas explicitement encore sur les fiches de poste, en tout cas dans les fiches de poste que moi je reçois, mais implicitement c'est attendu. C'est vrai que... Ouais après en plus je pense que c'est plus une demande des candidats. J'ai plus des candidats qui me demandent comment...
+
+David Leuliette (14:26.703)
+Ouais ouais qu'on maîtrise quand même... Ok.
+
+Carla (14:36.531)
+comment l'entreprise fonctionne par rapport à l'IA plutôt que l'inverse. Ce pas les partenaires.
+
+David Leuliette (14:42.095)
+Ouais mais toi t'as des freelance aussi, t'as des gens qui s'en foutent de payer un SaaS, enfin t'sais moi je paye 1000 balles de SaaS par mois, sinon je ne bosse pas quoi, je ne pas travailler quoi. Donc en fait une fois que t'as tout l'outil en place, ouais je comprends que ce soit plus l'inverse. Après ça, ouais, ok ouais c'est rigolo ouais. C'est rigolo, ça, Back in the day c'était genre...
+
+Moi c'était les licences de logiciels. J'ai bossé dans des boîtes où genre, bah non vous avez pas Photoshop, vous le piratez et puis voilà. Je me de ma gueule, genre, licence c'est que dalle en fait en vrai, de quoi tu me parles. Versu ça s'alerte par an, bref. Mais vu que maintenant t'es un SaaS, c'est obligé, tu vois les modèles de paiement, enfin les modélités de paiement ont changé, c'est plus des box, software in a box. Ouais j'ai l'impression que ce truc là t'as toujours eu
+
+Carla (15:08.065)
+OK.
+
+Carla (15:20.929)
+...
+
+David Leuliette (15:35.536)
+Mais là c'est accéléré parce que... Parce que... Là ouais, une fois que t'as commencé à travailler 10 fois plus vite, bah pff... Le faire à la main c'est possible mais... La flemme, trop long. Donc je comprends. Donc qu'est-ce qui... Donc si on va passer à Vartio, est-ce qu'il distingue vraiment un seniorac native ? Je sais qu'à l'actu, tu as toutes les réponses, tel l'oracle, le dorant, Matrix...
+
+Carla (15:50.529)
+...
+
+Carla (16:02.016)
+...
+
+David Leuliette (16:03.873)
+Si tu devais garder que trois compétences techniques non négociables pour valider un candidat. Ce serait lesquels, même si tu sais pas trop mais je pense que tu saurais... Tu saurais dire... quand même.
+
+Carla (16:15.041)
+Très bonne question. Après je le redis, c'est pas forcément du coup de mon point d'évaluation.
+
+David Leuliette (16:19.275)
+Ouais, mais pas forcément accurate mais c'est toujours bien d'avoir ton point de vue.
+
+Carla (16:25.633)
+Ouais, bah en fait...
+
+En revanche, que je vais observer, pas forcément sur les compétences techniques pures, mais les candidats qui passent bien cette étape, en général, ils ont tous un point commun. C'est quelqu'un qui va être capable d'expliquer les choix de manière simple, qui va savoir dire pourquoi ils ont fait telle ou telle chose. Et ce n'est pas uniquement technique, c'est encore une fois la posture qui est hyper importante. Et ça, pour le coup, c'est quelque chose que j'arrive à évaluer après les compétences techniques pures.
+
+Je pense que tu auras peut-être plus de réponses que moi sur cette partie.
+
+David Leuliette (17:00.909)
+Ouais ouais non mais bah ça ça dépend moi c'est toujours quand je jouais une boîte je trouve que hyper important c'est euh... Les mots ont une importance euh... Alors parce que techniquement hein voilà Est-ce que c'est quoi la différence entre une modal et une popine ? Tu vois les trucs de merde là qui s'affichent sur les sites, enfin les trucs de merde, les composants du X qui s'affichent tu vois ben c'est pareil et ça rend fou quand les dev ils disent mais ça c'est une modal et que le marketing il dit c'est une popine mais c'est pareil
+
+Parce qu'après dans la code base, on se retrouve avec deux composants qui font la même chose, ça rend fou ! Donc moi ce que j'aime bien c'est making bridges between people, enfin faire des ponts entre les gens pour qu'ils utilisent le même langage tu vois. Et donc expliquer simplement, moi c'est ce que je fais, je fais souvent ça, j'explique simplement même au tech ou non tech pour qu'on parle la même chose en fait parce que...
+
+Carla (17:47.073)
+Il faut s'adapter à ton interlocuteur, finalement, c'est de la communication.
+
+David Leuliette (17:52.624)
+Ouais ouais, c'est ça, communication. Et au contraire, les compétences que les entreprises mettent dans leurs offres, mais en fait au final, c'est vraiment secondaire.
+
+Carla (18:11.905)
+Après je pense que c'est plus au niveau des sub skills finalement où on revoit souvent sur les fiches de poste, il faut être autonome, proactif, non non non, c'est des choses qui sont moins importantes.
+
+David Leuliette (18:24.419)
+Ouais, c'était freelance généralement, l'autonomie.
+
+Carla (18:26.945)
+C'est naturel, c'est rare d'avoir des personnes qui n'ont pas toutes ces soft skills aujourd'hui.
+
+David Leuliette (18:32.505)
+Ouais, directement, je vois. l'erreur la plus fréquente que tu vois dans les critères de recrutement des entreprises qui éliminent les candidats mais qui fait passer les mauvais, enfin mauvais, qui fait passer les personnes qui ne matchent pas forcément.
+
+Carla (18:51.667)
+pense que ça peut être, je ne pas si je réponds vraiment à la question, mais ça peut être un process trop long. C'est vrai que si on a un partenaire qui met plusieurs jours, voire plusieurs semaines à nous faire rien qu'un retour sur CV et qu'il a trop de laps de temps entre deux entretiens dans le processus, ça c'est quelque chose qui peut faire perdre des bons candidats parce que c'est rare qu'un candidat aujourd'hui, même que ce soit freelance ou CDI,
+
+David Leuliette (18:58.147)
+Allez !
+
+Carla (19:19.905)
+qu'il n'y ait qu'un seul process en cours. en fait, si toi tu n'as pas de réactivité du côté de ton partenaire, il y a de fortes chances qu'il ait accepté une mission ou même une offre ailleurs avec quelqu'un qui a été réactif.
+
+David Leuliette (19:22.393)
+non.
+
+David Leuliette (19:32.687)
+Ouais ouais, si c'est possible. Moi je dis toujours pour aligner les planètes, moi c'est compliqué.
+
+Carla (19:39.233)
+En fait, la réactivité, c'est ce qui fonctionne le mieux. Encore une fois, on l'a vécu encore il a deux mois. On avait le profil parfait, mais en interne, y a eu énormément d'allers-retours pour la logistique. en fait, le temps que ça se décide et qu'ils fassent leur choix, le candidat, c'est vrai qu'il a eu un processus qui a démarré le lundi. C'était un entretien one shot. Il a eu l'offre le vendredi et il est parti avec l'autre client. C'est méga frustrant.
+
+David Leuliette (20:05.658)
+Ouais bah c'est sûr, c'était pour un freelance aussi ?
+
+Carla (20:09.267)
+parce qu'on était convaincus que ça pouvait matcher mais c'est vrai que manque de réactivité et tu passes à côté d'en haut.
+
+David Leuliette (20:17.2)
+Et dans les freelances tu proposes pas des slots de test genre en fait je bosse à moi, si ça va on continue, sinon no thing.
+
+Enfin c'est un pote aux US qui fait ça en fait. Lui il fait « Discovery Week ». Tu bosses avec moi une semaine, tu payes upfront, si t'es content on continue, sinon bah non. Mais après, enfin on continue pas tu vois. Mais après j'ai l'impression que c'est un peu quelque chose d'anglo-saxon ou payer à la semaine, tu vois c'est plus simple. Moi je sais que je le propose en France mais bizarrement ça marche pas. Alors c'est culturel ou c'est euh... ou c'est parce que tu vois, versus le truc à la... là que tu dis là, ils se sont mis 1000 ans à se décider alors que s'ils l'avaient embauché une semaine et qu'en fait ils auraient vu. Ah mais ouais mais...
+
+Carla (20:46.497)
+...
+
+Carla (20:52.385)
+...
+
+David Leuliette (21:02.96)
+c'est bon ça marche plutôt que de passer mille ans à se poser des questions ça va peut-être plus marcher.
+
+Carla (21:08.513)
+C'est vrai que c'est une tendance que nous on ne pas régulièrement mais après c'est vrai que j'ai eu l'exemple il n'y a pas si longtemps que ça, c'était la semaine dernière où justement pour évaluer le candidat techniquement ils ont fait une journée de test donc il est allé dans les locaux c'était une journée payée bien évidemment et en fait il a travaillé sur une problématique concrète et là donc il débrief pour savoir en fait s'ils avancent sur une mission plus longue ou non. Donc c'est vrai que c'est un bon exercice et en général
+
+c'est bien accepter côté freelance et côté partenaire quand ils sont en clin à le faire, c'est quelque chose qui fonctionne bien.
+
+David Leuliette (21:45.873)
+Ouais parce que en plus c'est un green flag en fait. Parce que moi si tu peux pas on-boarder en une journée, bah c'est que t'as un problème dans tes process d'on-boarding en fait en vrai. Et donc si y'a déjà ça, un problème que tu peux pas commit tes pushes en prod, enfin mettre en prod, c'est littéralement dans le long de ma boîte, c'est wish me today. Donc forcément, moi j'ai un peu poursé le curseur à fond, mais ouais ça peut être... Ok, ok.
+
+Carla (22:04.417)
+...
+
+David Leuliette (22:15.502)
+Et comment tu repères quelqu'un qui connaît le mobile et pas juste du web en fait ?
+
+Carla (22:23.553)
+Ça, en fait, sur l'aspect...
+
+L'aspect Mobiskill, ce qui est intéressant, qu'en fait, le cabinet existe depuis 15 ans. Donc, on a développé un réseau de partenaires et de candidats qui est assez important, qu'on entretient encore aujourd'hui tous les jours. Et c'est très peu fréquent qu'on place une seule personne chez un de nos partenaires. Donc, l'avantage, c'est qu'on va pouvoir s'appuyer sur les feedbacks des candidats qui ont déjà pu passer les process, les feedbacks aussi des partenaires techniques qui ont évalué
+
+les candidats et ça nous permet de savoir ce qui va fonctionner ou non pour ce client et encore une fois c'est plutôt du cas par cas.
+
+David Leuliette (23:08.4)
+Ok, Et donc, tu disais tout à l'heure start-up scale up. va passer à la partie les erreurs classiques des start-up. Donc, l'erreur de recrutement qui coûte 6 mots au start-up. Selon toi, c'est laquelle et pourquoi elle est si répandue?
+
+Carla (23:34.045)
+pense que encore une fois, c'est du cas par cas. Après, il a un exemple qui me vient en tête. L'année dernière, ce n'est pas moi qui avais géré ce process, mais je crois que c'était un candidat en CDI qui avait été validé par tous les interlocuteurs, normalement. en fait, on s'est rendu compte à la fin qu'il manquait, je crois que c'était le tech lead de l'équipe qui était en vacances ou un truc comme ça. Et en fait, on s'est rendu compte que le feed quand la personne est rentrée, ça fonctionnait pas forcément, que le brief avait changé parce que c'était le tech
+
+qui avait fait l'affiche de poste mais il y avait les mauvaises compétences qui avaient été évaluées pendant le process et en fait on a dû repartir de zéro et on est parti sur une recherche où on a perdu deux mois et on a dû reprendre tout ça. Après honnêtement je pense pas que c'est ça qui fait perdre six mois
+
+David Leuliette (24:18.8)
+Non. Ok, ouais.
+
+Carla (24:24.449)
+à une start-up, mais en fait ça illustre aussi pourquoi on insiste autant sur le cadrage en amont, comme on disait tout à l'heure. C'est parce que ce temps qu'on investit dans le lancement de la recherche, d'aligner les bonnes interlocuteurs, de clarifier le brief, etc. Ça évite beaucoup de mauvaises surprises derrière. Et ça, c'est le rôle d'un cabinet, normalement, d'assurer que tout le monde est aligné dès le départ pour éviter ce genre de soucis par la suite.
+
+David Leuliette (24:43.29)
+Ouais.
+
+David Leuliette (24:49.584)
+Ouais si, non mais, make sense. C'est clair, parce que moi c'est pareil, moi j'ai pas recruté des masses mais juste alternant Big Up Mathis. Mathis, je sais pas si il là dans le chat. Ouais c'est ça. euh... Bah l'offre dans le poids, elle est gargantua, c'est un notion et il a un pfff. Et en fait, en vrai, j'ai écrit tout au kilomètre de tout ce que... Toutes les missions qu'ils allaient faire à peu près. Et en gros c'était, ouais, sur le backlog, le backlog qu'ils allaient faire quoi.
+
+Carla (24:58.177)
+Ouf ! Ils m'entendent beaucoup parler !
+
+David Leuliette (25:20.424)
+Parce que moi, de l'autre côté, j'avais été pas frustré, les offres où t'as quatre lignes, me dit non mais c'est pas assez précis. J'avais hyper longtemps, j'avais mis plus d'un mois à l'écrire, mais je me suis forcé à écrire quelque chose de super long, même si ce n'était pas forcément relevant de tout ce qu'on a fait, mais vraiment d'être sûr pour éviter ce que t'as dit.
+
+Carla (25:48.669)
+gagne du temps et c'est vrai qu'on parlait d'exigences des boîtes aujourd'hui sur le fait de prendre la bonne personne mais en fait ça va aussi dans l'autre sens. Les freelancers ils s'attendent à vraiment avoir le maximum d'informations avant d'aller dans un process et c'est hyper important d'avoir du détail sur qu'est que va faire la personne au sein de la boîte et pas juste 4 lignes comme tu disais, c'est moins vendeur.
+
+David Leuliette (25:49.104)
+Merci.
+
+David Leuliette (26:12.337)
+Ouais ouais c'est clair. J'ai une anecdote là-dessus. Je crois que j'avais fait deux entretiens. Et à la fin de la deuxième entretien, je trouvais une question random. Ouais comment ça va se passer si je bosse chez vous ? Et là on m'a dit ouais bah... Bah t'auras un PC Windows et puis bla bla bla et puis j'ai fait quoi ? Un PC sur Windows ? Bah non, moi je bosse sur MacOS parce qu'il a Raycast et puis c'est mort, enfin... Et puis j'ai fait bah non en fait, moi je viendrai jamais bosser chez vous.
+
+C'est pas possible ! je sais plus c'était euh... Ouais ouais c'était il a 4-5 ans je dirais je sais plus, franchement je saurai plus trop. Mais je sais que le truc t'es la question qui semble innocente. ouais mais c'était un no go direct en fait. Parce que j'ai mis habitude mes trucs.
+
+Carla (27:00.001)
+Mais c'est pour ça que nous, en fait, tout est dans le détail. vois, ça en fin de process, cette information, elle arrive, ça peut tuer un placement justement si toi tu as eu ce truc, tu n'as pas voulu travailler. nous, notre rôle, c'est aussi d'avoir toutes ces réponses en amont pour avoir le maximum d'infos et qu'il ait pas de mauvaise surprise en fin de process justement.
+
+David Leuliette (27:23.668)
+Et donc je sais pas si tu sais, est-ce qu'il a beaucoup d'entreprises qui recrutent un dev react, parce que tu peux faire soit du web soit du mobile, et beaucoup d'entreprises qui recrutent juste un dev react qui fait du JavaScript au lieu d'un vrai ingénieur mobile. Est-ce que tu as déjà eu le cas et ça a apporté préjudice aux produits qui eux valaient vraiment un mobile ? Exemple, tu es chez
+
+Be Real, c'est l'app de social media française qui prend des photos. Tu dis, ok, en fait, on va prendre un dev, le fameux mouton à cinq pattes, qui full stack, qui saura tout faire. donc, il sait faire du web, ça n'a pas de problème. Mais du coup, l'expérience mobile qui est vraiment le cœur du producte, n'est pas folle. Du coup, peut être que ça mettra en péril le produit tout simplement. C'est que tu as eu...
+
+des exemples d'approproductions qui portent encore les cicatrices d'un mauvais recrutement.
+
+Carla (28:25.281)
+Non, honnêtement je n'ai pas eu d'exemple, puisque je pense que c'est peut-être un peu trop technique et j'ai pas d'exemple à donner. Après c'est vrai qu'en fait j'ai eu plusieurs cas où c'est vrai que dernièrement on va plus avoir tendance à chercher un dev, réact, donc plus généraliste. En fait c'est une discussion que j'avais eu avec l'un de mes partenaires techniques justement qui disait pour lui c'est plus simple de venir du web et de switcher sur du mobile que l'inverse.
+
+David Leuliette (28:52.145)
+Oui.
+
+Carla (28:53.811)
+Et ça c'est vrai que dernièrement c'est plus les retours que j'ai eus. Alors qu'il a quelques temps en arrière c'était plus on veut vraiment quelqu'un de focus sur du React Native et pas quelqu'un qui a fait du web et qu'après il est passé sur du mobile.
+
+David Leuliette (29:11.825)
+ouais, je veux vous...
+
+Parce que... ouais c'est marrant parce que moi c'est l'inverse. moi je fais du... mais fait moi j'ai... j'ai fait le parcours, pire, Ruby on Rails et après Mobile et après... non, mais non, enfin tu me demandes... en fait en vrai je dis non, que je sais pas faire de site web. Mais en fait si, je sais. Tu me donnes de faire une expérience web, ça y'a pas de problème en fait. De faire un dashboard, tu sais, pour accompagner l'app Mobile, ça en fait je sais. Mais je dis pas que je le faire parce que... bah... non c'est pas que j'ai pas envie en fait, c'est que je peux pas tout faire.
+
+Carla (29:40.097)
+pas envie.
+
+Carla (29:44.609)
+...
+
+David Leuliette (29:44.626)
+Moi j'ai choisi une niche, une niche dans une niche, donc j'ai choisi la niche du mobile, j'ai choisi la niche ragnative dans le mobile. Parce que juste marqueur différentieux en fait. Et j'ai juste pas le temps de me former, et c'est vraiment des choses spécifiques différentes quoi. Et vu qu'il y a combien de mobiles dans le monde ? Plus que d'ordinateurs. Allez je dis, je pense qu'en plus la trend elle est pas longtemps.
+
+qui a plus de mobile que de laptop. Donc mathématiquement j'aurais plus d'offre de job dans le mobile que sur le web. Mais après moi c'est juste le chemin que j'ai choisi.
+
+Carla (30:22.561)
+En soit là ce que tu décris c'est quelque chose qui est ok avec ce qu'on voit aujourd'hui. que les boîtes elles savent que tu as une expertise mais que si besoin t'es en mesure de pouvoir aider sur d'autres sujets même si c'est pas ton coeur de métier. Et en fait c'est typiquement les profils qui sont recherchés et qui sont rares finalement sur le marché aujourd'hui. C'est ça qu'on recherche.
+
+David Leuliette (30:39.121)
+Salut !
+
+Carla (30:50.215)
+On ne s'attend pas à ce que la personne soit excellente de partout. Effectivement, il y a un cœur de métier, mais il a la capacité à s'intéresser à d'autres choses.
+
+David Leuliette (30:50.289)
+Je vois.
+
+David Leuliette (31:00.611)
+La curiosité, mettez-les dans vos... dans vos qualités défauts, je suis curieux. Alors vas-y, en 5 heures du coup, as eu le temps de voir les tests techniques. Donc tech home test, live coding, revue de code. Est-ce que... Qu'est-ce qui fonctionne ? Est-ce que tu as eu les retours du... ce qui fonctionne vraiment pour évaluer un dev senior ? Parce que ça filtre, tu les bons candidats souvent.
+
+qui ont un job et qui ont peu le temps. Mais ceux qui ont du temps, bien du coup ils ont pas de job, donc ils réussissent peut-être le take home test. Mais maintenant il a l'IA, donc comment on fait ? Explique, dis nous tout.
+
+Carla (31:45.793)
+Les Tech Home, vrai, moi j'en ai vraiment très peu sur la partie freelance. Après je sais que j'en discutais avec mes collègues sur la partie CDI, eux ils en ont encore de temps en temps. Mais c'est vrai qu'aujourd'hui ce qu'on voit le plus ça va être les entretiens techniques plutôt les live coding.
+
+Et encore plus sur l'aspect freelance, fait, qu'on préconise quand c'est pas déjà le cas, c'est vraiment de faire un échange d'une heure, d'un échange technique un peu plus poussé ou partager un bout de code et en discuter. aujourd'hui, c'est ce qui fonctionne le mieux parce qu'en fait, ce qu'on disait tout à l'heure, c'est qu'un candidat, a rarement qu'un seul process en cours. Donc imagine si, je sais pas, il a cinq propositions de mission et qu'il doit faire cinq tests techniques chez lui. Un candidat, a aussi une vie perso. Donc tu peux pas demander à un candidat de passer en général.
+
+le minimum 3-4 heures sur un test. S'il doit le faire ça 5 fois, maximises tes chances de perdre le candidat. Il va logiquement aller avec la boîte qui va lui proposer de faire un one shot. On fait ça en une heure et on prend une décision. Et ce que je te disais tout à l'heure, ce qui fonctionne et ce qui est aussi bien, c'est de tester directement plus sur le freelance, mais de faire une journée test. Et si ça va, on continue. Si ça va pas, on arrête.
+
+David Leuliette (32:45.554)
+il fait pas, ouais.
+
+Carla (33:07.137)
+Mais c'est vrai que suis à la maison, c'est vraiment pas ce qu'on préconise.
+
+David Leuliette (33:07.269)
+Ouais bah oui, clairement.
+
+David Leuliette (33:12.082)
+Moi ce que je proposais c'était... Above la mon profil GitHub, j'ai x projets en cours, je fais une issue et puis... Enfin je vais améliorer mon site en fait. Et c'est pareil ! Ou alors, proposez-moi pareil, je fixe un problème, un bug sur votre site en production. Parce que tu les fameux take-home test one shot où tout monde s'en fout et ça fait chier les gens de les faire, personne les review et ça n'apporte aucune valeur et tout le monde a l'impression de perdre son temps.
+
+Moi je comprenais pas pourquoi on proposait pas la logique de bug bounty, c'est à dire sur notre site, bon allez on sait qu'il a un bug, y a personne en interne qui peut le faire parce que bah, toujours relou quoi. du coup proposer directement des cas, des vrais cas quoi, mais ça rejoint à ce qu'on disait tout à l'heure quoi, tu prends quelqu'un une journée et puis hop tu dépiles des trucs, vraies choses quoi.
+
+Carla (34:08.897)
+Dis-le tout le monde.
+
+David Leuliette (34:12.338)
+Et eeeuh...
+
+David Leuliette (34:18.15)
+Et les signaux qui te font dire que... T'as déjà eu cet effet là où tu vois quelqu'un, son CV il est fou et tu te rends compte en creusant un peu que... Il y a peut-être Anguille sous Roche. Est-ce que t'as déjà eu ce cas là ou pas du tout
+
+Carla (34:36.489)
+Oui ça arrive après c'est vrai comme je te disais tout à l'heure vu qu'en fait nous on a quand même un réseau assez conséquent on va prioriser d'appeler les candidats avant de regarder un CV. j'ai souvent le CV après avoir déjà eu le candidat au téléphone donc je me fixe moins sur le CV. Mais en fait si tu prends l'exemple d'un premier échange téléphonique tu connais pas la personne et tu sens que la personne en face tu dois lui tirer les verres du nez ou il n'est pas réceptif.
+
+En fait tu as l'impression de lui faire perdre son temps. C'est quelque chose qui s'annonce compliqué pour la suite en général. C'est encore une posture donc...
+
+David Leuliette (35:12.486)
+Ouais, ouais je vois, ouais. Du coup faut...
+
+Ouais ouais, je vois. Ça dépend comment se présenter les amis. Faux conseil, mettez une autre ligne comme ça vous savez. Moi je sais en fait. Moi j'ai deux numéros sur mon téléphone, j'utilise on off, enfin un numéro pro et un numéro perso. Du mon numéro perso et infesté de spam de partout parce que je ne sais pas il a liqué dans les nombres je sais pas quoi. Et j'ai un numéro pro et du coup en fait dès que j'ai un numéro pro qui achète je me dis ! Donc soit je décroche pas, soit quand je décroche c'est que ok quoi.
+
+Il n'y a pas Adam trois heures derrière qui va crier et où. Tu vois, ce genre de truc, sais que, ah, voilà, il que je me pose et que j'écoute tout ce qu'il à la personne parce que ça peut être important. OK, alors, ouais, t'as peut-être déjà aidé à structurer une équipe mobile. Et pour une startup, quand elle doit recruter son premier DevMobile.
+
+Carla (35:50.113)
+...
+
+David Leuliette (36:15.474)
+Et comment t'évites de le faire trop tôt ou trop tard ? Est-ce que t'as un peu près une métrix ? Ou c'est comme tu avais dit, ça dépend du projet, c'est totalement random, mais de toute façon aligner les planètes c'est très compliqué, donc il a pas de recette.
+
+Carla (36:29.745)
+Ça dépend du projet. il y a un truc que j'aime bien faire et je ne pas la seule à le faire au sein de Mobiskill. ce qu'on dit toujours à nos partenaires, c'est que si tu n'es pas capable d'expliquer en deux minutes ce que le développeur va faire dans les trois prochains mois, en général, c'est peut-être trop tôt pour lancer ta recherche. qu'après, si tu recrutes trop tôt, tu mets quelqu'un dans une situation qui est complexe. Parce qu'en fait, le dev arrive, il n'y a pas de roadmap,
+
+David Leuliette (36:31.154)
+...
+
+Carla (36:59.759)
+rien qui a été mis en place et au bout de ciment en fait tout le monde est frustré parce que ça n'a pas fonctionné et on a peut-être perdu du temps donc voilà, c'est une question qu'on...
+
+David Leuliette (37:10.578)
+Ou alors il faut le dire up front. Tu dis bah mec t'es mobile, y'a pas de roadmap donc débrouille toi. Chippe, enfin... Enfin ça dépend ouais. Si c'est clair que si ça dépend ouais. La personne que... Si tu te regrettes quelqu'un qui va juste dépiler de la feature entre guillemets et qui s'attend à avoir un plan clair bah forcément frustré. Ouais. Ouais.
+
+Carla (37:30.817)
+Mais ça tu le précises du coup pendant le process, justement avant de travailler avec la personne, tu fais une sorte d'audit ou de recos pour justement dire on attend ça de toi et la personne le sait dès le début. Après un bon indicateur, c'est par exemple, je ne sais pas s'il y a une boîte qui est sur un produit web et qu'il y a les utilisateurs qui demandent à passer au mobile, ça peut être aussi un bon indicateur pour justement se lancer sur la partie mobile.
+
+David Leuliette (38:00.434)
+et
+
+La taille qui fonctionne le mieux selon toi et comment tu t'organises les rôles à peu près. Enfin, comment si t'étais CTO, on va dire, ça y t'es catapulté CTO. Hé, en vrai ça fonctionne parce que techniquement le CTO il doit pas coder. Son rôle c'est de gérer la team. Donc, enfin après ça dépend parce que après ça dépend des entreprises aussi, vois les CTO qui sont hands-on, tu savais pas ce que c'était ça, hands-on CTO. J'ai dû chercher, je c'est quoi hands-on CTO ? c'est un CTO qui code.
+
+Carla (38:14.204)
+Ouh, commotion
+
+Carla (38:22.855)
+Voilà.
+
+David Leuliette (38:34.386)
+Ah ok ouais mais je comprends rien, c'était pas... Bah du coup... Il fait quoi le VP of Engineering ? Oh là là, c'est compliqué cette affaire, je comprends plus rien ! Mais donc selon toi, serait quoi les tailles d'équipe mobile ou React Native qui fonctionneraient le mieux ?
+
+Carla (38:34.644)
+Oui.
+
+Carla (38:39.041)
+...
+
+Carla (38:53.685)
+Ce qu'on voit le plus souvent, c'est des équipes de 3-4 personnes. Après, peut varier selon la taille de la boîte, selon le produit, etc. Mais en vrai, là, j'ai un exemple qui me vient en tête. J'avais accompagné un client, je crois que c'était il y a deux ans. Et en fait, ils avaient une problématique où ils ont...
+
+c'était vraiment une startup early stage. ont pris un premier dev qui a tout développé tout seul. en fait aujourd'hui, ce dev, je crois qu'il y a des soucis de fit humain et en fait, il partage pas sa connaissance et c'est très dur de travailler avec cette personne. En fait, la boîte aujourd'hui, elle se retrouve bloquée parce qu'elle a absolument besoin de cette personne parce que c'est lui qui connaît mieux que tout monde le projet. Et s'il s'en va, il n'y a personne pour le remplacer. Donc en fait, c'est une situation assez délicate.
+
+David Leuliette (39:29.98)
+Hmm, ok.
+
+Carla (39:44.957)
+Donc je pense que déjà être seule sur la durée c'est compliqué, c'est pas viable. Donc au moins trois, quatre personnes tu construis vraiment un socle qui va être assez solide et tu cette capacité de transmission, de communication et de monter en compétences collectives qui je pense sur la durée est hyper importante.
+
+David Leuliette (40:03.379)
+bah ici il faut toujours un backup, qui t'as le BusFactor ça s'appelle. voilà tu pourras sortir ça. Tu sais c'est quoi le BusFactor ? Alors, on va aller sur Wikipédia. BusFactor. C'est un truc hyper connu en entreprise, donc c'est le Factor Autobus, de l'anglais BusFactor. C'est une mesure du risque ou l'absence de partage d'information et de compétences entre les membres de l'équipe. Donc en fait, c'est combien de personnes clés dans votre équipe peuvent se faire renverser par un autobus avant que votre projet échoue.
+
+Carla (40:09.505)
+Non.
+
+David Leuliette (40:33.651)
+Donc si t'as un bus factor de 1, danger. Parce que le mec qui vient au travail là, pouf, reversé par un bus, problème. Donc faut avoir un bus factor, tu dis, un bus factor de 3, 4, c'est bien, comme ça la connaissance est partagée.
+
+Euh... Donc tu vas poser ça en question. Quel est votre boss factor ? Quoi ?
+
+Carla (40:58.081)
+Je l'ai noté, mais en plus j'avais plus le mot en tête mais j'avais déjà entendu cette théorie.
+
+David Leuliette (41:03.535)
+bah c'est ça, ça a peut-être un autre nom mais moi je sais que j'ai toujours disais BuzzFactor donc... Vas-y on va sortir un peu la boule de cristal et parler le futur du marché. Est-ce que à ton avis le marché du dev, rec, native, il va croître ou est-ce que tu vois d'autres technos qui pourraient rogner la demande de ce que tu vois ?
+
+Carla (41:31.617)
+Pour le moment, pense que la demande React Native, elle va rester stable. Si tu prends d'autres exemples, par exemple flotteur, c'est vrai que nous chez Mobiskill, on a peu de poste sur cette techno, pas parce qu'on veut pas. Et après attention, c'est pas forcément représentatif du marché global, mais c'est vrai qu'on a très peu d'offres en flotteur, alors que React Native, on en a quand même de manière assez régulière. Nous on est à Paris.
+
+David Leuliette (41:39.752)
+Ouais.
+
+David Leuliette (41:49.98)
+zut.
+
+David Leuliette (41:56.628)
+Vous êtes basé où ? Ouais c'est Paris ouais. Ouais bah en c'est ça. Bah en vrai je te dis moi dans le nord en fait j'ai l'impression que t'as peut-être un peu plus de flotteurs. C'est comme Java, enfin dans le monde en fait historiquement Java, J2E tout ça dans les Hauts-de-France c'est ça parce que Mulier tout ça tout ce groupe là en fait c'est que du Java. Et en fait même si tu veux faire du mobile on va te demander de faire du Java parce que tu pourras peut-être toucher whatever un truc qui est enfin un bout de quelque chose qui est déjà dans la boîte qui a été fait en Java il a mille ans.
+
+Et donc c'est juste ça en fait. Moi c'est pour ça que je suis parti à Londres parce qu'en fait ils faisaient pas de Ruby on Rails en... Enfin dans le Nord je trouvais pas d'offres en Rails, c'est pour ça que je suis parti. Et en fait ça tombe c'est juste... Locale... Tu vois ? Tombe c'est juste ça quoi. Mais du coup Westable et par rapport au Dev Native, t'as déjà eu un client qui dit non, nous on veut pas de React Native ici parce que... XYZ. Non pas vraiment.
+
+Carla (42:35.937)
+OK.
+
+Carla (42:54.305)
+J'ai pas eu ce genre de problématique pour l'instant. Mais après, en soi je que React Native, non, va continuer en tout cas pour le moment. Et après, dans tous les cas, trouve que la techno, ça peut devenir presque secondaire par rapport à la capacité d'adaptation. C'est ça qui est important.
+
+David Leuliette (42:58.765)
+plus jamais de PHP. Je vous aime les gens qui font du PHP.
+
+David Leuliette (43:18.739)
+C'est ça, ce que je disais. L'IA, maintenant, ce pas explicite mais on demande quand même. Donc choisissez... En ce moment, je suis sur Cloud Code, marche bien.
+
+David Leuliette (43:35.047)
+Mais donc dans les compétences qu'on aurait besoin les trois prochaines années ce serait full stack, IA et capacité d'adaptation.
+
+Carla (43:45.073)
+C'est ça, t'as bien résumé mais franchement, t'as bien écouté. c'est vrai que oui, effectivement, on va s'attendre à des profils qui vont être capables de travailler avec Lya, voire même en fait, il y a certains partenaires qui parlent d'orchestrer, Lya. Mais en fait, on s'attend oui plus à quelqu'un qui va être en mesure de faire ça plutôt que de tout coder from scratch.
+
+David Leuliette (43:50.067)
+...
+
+David Leuliette (44:10.205)
+Ouais ouais, forcément ouais. Euh... Ok, intéressant. Euh... Et euh oui, alors y'a une question signature que je mets là, c'est bon. Y'a un slot dédié, ça y est. Faudrait même un jingle. Pour ça. Peut-être que ça va arriver les jingles, attention. Je vous teasing, teasing. Euh, la question signature c'est euh... On va terminer euh... Alors attends, ouais la question c'était, si tu étais sitio aujourd'hui, donc j'étais catapulté sitio, ça y est.
+
+Carla (44:26.945)
+...
+
+David Leuliette (44:38.963)
+tu as 500 000 euros de budget pour recruter et structurer une équipe mobile règle native from scratch. fais quoi, combien de personnes, quel profil en premier et l'erreur que tu voudrais éviter à tout.
+
+Carla (44:39.137)
+3, 2,
+
+Carla (44:56.609)
+Je pense qu'on peut reprendre un peu tous les éléments qu'on a dit auparavant. Donc si j'ai 500k, je pense que je pars sur 3 à 4 profils. Le premier recrutement, pense que ce serait un...
+
+un lit tech en premier pour poser les fondations, choisir l'architecture et ensuite pouvoir monter une équipe. Idéalement, ce lit tech, il serait accompagné d'un PM, Product Manager, pour tout ce qui est des définitions de la roadmap. Et après, pourquoi pas prendre un ou deux profils, des devs confirmés ou seniors selon le projet, etc.
+
+dire mais je pense que je ferai ça sur la taille d'équipe et après c'était quoi le reste de la question
+
+David Leuliette (45:47.892)
+Quelle erreur de cette liste tu assure d'éviter en priorité ? Enfin dans ce sens là, qu'est que tu éviterais de faire ? Bah typiquement, on va prendre l'inverse, vois, j'embauche un junior au début et bah du coup, faut tout recommencer dans 6 mois. Quoi que... On sait pas parce que maintenant, grâce à JusteBorlia et tout... Bah non, en fait c'est ça. C'est que si tu prends un senior machin, ok.
+
+un junior qui n'a aucun skill mais par contre ça fait le fameux leapfrog ça fait quatre ans que lui dev et il fait que des apps fait par Aya et il a déjà 12 apps sur les stores et qui lui rapporte la modique somme de 1000 euros par mois. Peut-être que ça peut mieux marcher plutôt qu'un expert machin qui va te dire non architecture hexagonal on va faire...
+
+on va te sortir la centrale nucléaire alors que t'as peut-être pas forcément besoin tu vois t'as plus besoin d'un indy hacker que d'un architecte, d'un urbaniste, urbaniste ça s'appelle je crois que c'est je crois que c'est urbaniste enfin ouais un truc du genre
+
+Carla (46:46.997)
+Ouais, je vois.
+
+Carla (47:01.437)
+Après en réel l'erreur à éviter c'est que je pense que oui tu peux prendre un dev senior ou junior en fait on voit ce qui fonctionne mais encore une fois je pense que le vrai fond c'est de recruter trop vite sans avoir cadré le besoin.
+
+David Leuliette (47:15.538)
+Ouais bah oui carrément, va réfléchir
+
+Carla (47:17.545)
+c'est qu'après tu peux prendre le profit, tout.
+
+Certains profils peuvent, enfin, tel ou tel profil va pouvoir fonctionner selon le cas. Mais c'est vrai que prends le temps de, réfléchir à ce qu'il te faut pour ton produit et cadre le besoin avant de lancer les recrutements. Parce que c'est vrai qu'en fait, dans startup, on a tendance à vouloir aller vite et c'est légitime. Mais en fait, si les bons interlocuteurs ne sont pas alignés dès le départ, perd du temps et de l'argent sur le long terme. Donc, c'est là où normalement je suis censée intervenir.
+
+David Leuliette (47:45.203)
+Mmh
+
+David Leuliette (47:49.331)
+Chauveur.
+
+Carla (47:50.241)
+pour essayer de mettre tout monde d'accord avant qu'on se force sur le process.
+
+David Leuliette (47:55.933)
+Voilà, si vous avez un problème à pied Carla, elle sera ravie de vous répondre. On va passer aux questions rapides. Alors attention, c'est questions sans réfléchir. si, tu ne dois pas trop réfléchir. Take home test ou live coding ? Lequel tu choisis pour évoluer un seigneur ?
+
+Carla (48:15.233)
+live coding.
+
+David Leuliette (48:17.268)
+Un Red Flag absolu dans un CV Rack Native, ce qui te fait passer au suivant immédiatement.
+
+Carla (48:26.465)
+Pas dans le CV mais encore une fois sur un call, celui qui prend pas le temps de se présenter ou j'ai vraiment l'impression de le saouler, je passe, j'insiste pas.
+
+David Leuliette (48:37.34)
+Ouais ok. Un outil ou une ressource que tu recommandes pour les gens qui recrutent des devs.
+
+Carla (48:46.689)
+suis un très bon outil, contactez-moi !
+
+David Leuliette (48:48.916)
+Ha ha ha !
+
+Bonne réponse ! ouais mais celle-là je l'avais pas eue dire, incroyable ! Incroyable ! faut que j'en fasse un short de celui-là ! Attends, je me note. Je me note, 49. ouais carrément, oui si je mettrai dans les notes de l'émission et tout, y aura LinkedIn et tout, pas de problème. Freelance ou CDI pour un premier dev mobile dans une startup, tu conseilles quoi ?
+
+Carla (49:00.737)
+Tu mettra mes cordes au nid.
+
+Carla (49:18.001)
+Ma réponse, elle peut être biaisée parce que je vais te répondre freelance. Mais après, encore une fois, ça dépend, early stage, start-up. En général, si tu as besoin de quelqu'un de rapidement et opérationnel, tu prends un freelance et après, tu fais attention à sa posture pour qu'il puisse partager ses connaissances et pas qu'on se retrouve, s'il part, on se retrouve sans rien.
+
+David Leuliette (49:38.637)
+Et React Native dans cinq ans, toujours là ou remplacé par autre chose.
+
+Ah, on en revirer un. Bah moi je stick quand même. Alors en plus, attends plot twist, je vais voir... ...Vie, Jeux. Donc Christopher Chedot. Donc le mec qui a créé React Native, enfin un des co-créateurs de la technologie créative à... ...à chez Meta, next week. Donc je lui demanderais aussi. Est-ce que c'est encore la temps 5 ? Bah moi oui, tu vois, toi Libit en vrai. Bon. Ça change... Tu vois ça changera mais il aura toujours du recrutement. En vrai.
+
+Carla (50:06.657)
+C'est trop chiant.
+
+Carla (50:17.01)
+Après ça va évoluer, il y aura du recrutement mais ce sera d'une autre manière je pense.
+
+David Leuliette (50:24.372)
+Est-ce qu'il a un sujet qui te tient à coeur, quelque chose que tu vas absolument dire aux CTO et aux devs qui nous écoutent et qu'on n'a pas abordé aujourd'hui ?
+
+Carla (50:40.575)
+On en avait parlé un peu en off mais sachez que du coup on a des locaux à Paris, dans le 9ème arrondissement. Si justement vous cherchez un lieu pour des meet-ups, des
+
+David Leuliette (50:46.273)
+oui c'est vrai !
+
+David Leuliette (51:00.007)
+bah voilà, attention, l'annonce est invité, tu vas te retrouver avec ça sans personne ? Non, c'est pas vrai. Je sais, c'est quoi la cr...
+
+Carla (51:04.929)
+Franchement, c'est avec grand plaisir. C'est vrai qu'on fait vraiment beaucoup d'événements. On a des grands locaux, on peut accueillir jusqu'à 80, 100 personnes. Donc on a quand même un bel espace. Autant en en profiter notre communauté.
+
+David Leuliette (51:15.121)
+C'est que je demandais.
+
+David Leuliette (51:23.419)
+bah excellent, qui c'est qu'on doit inviter ensuite ? Quelqu'un que t'as recruté, que tu coto ou que tu admire ?
+
+Carla (51:33.921)
+Qui est-ce qu'on pourrait inviter ? Si je pense, en face de nos locaux, toujours en fait, a Nicolas Renoux. Coucou Nicolas, si tu nous écoutes. En fait, c'est le fondateur de Free Up. Free Up, c'est une communauté qui est dédiée aux freelance ou aux solopreneurs qui vont vouloir développer leur visibilité et créer des opportunités business. en fait, lui, il intervient là-dessus. Il a lancé Free Up il y a quelques mois maintenant. je pense que ça pourrait être cool de l'inviter.
+
+Et tu m'as demandé quoi la question ?
+
+David Leuliette (52:06.521)
+Et... Non mais si, à un angle d'épisode et la question que tu lui poserais.
+
+Carla (52:19.709)
+comment FreeUp aide un freelance à développer son activité ou sa visibilité. en fait, je pense que ça pourrait coller avec ce qu'on disait juste au-dessus, où l'importance de savoir se vendre en tant que freelance et de se présenter, ça peut être cool.
+
+David Leuliette (52:37.364)
+notes, je prends des notes. Cool, merci en tout cas, c'était très cool. Où est-ce que les gens peuvent te suivre et te contacter sur internet ? Donc j'ai dit LinkedIn Carla Reno, R-A-I-N-A-U-D, ton email c'est Carla à robazmobilskill.fr, Mobiskill, j'ai dit Mobiskill, attention les amis, le site
+
+Carla (52:44.449)
+Je
+
+Carla (52:51.777)
+Oui.
+
+Carla (53:01.011)
+mais au bistin.
+
+Carla (53:05.981)
+Et Mobis' un qui vient de Mobile. Initialement.
+
+David Leuliette (53:09.012)
+Oui, bah oui. Attention hein. Ah oui si c'était ça, bah oui, c'est vrai que je l'ai même pas dit. J'ai oublié. Ouais j'avoue, j'avoue, mais mobiskill.fr Et moi c'est David Leliette, Wish Me Today, pour retrouver tous les épisodes c'est wishmeetoday.com slash podcast. Si vous avez suivi les cues jusqu'ici, donnez-moi 5 étoiles pour remonter dans le top 100. Alors je crois que je redescendu là, parce que c'était les vacances mais...
+
+Carla (53:16.283)
+Il est jamais trop tard mais j'aurais pu me dire aussi.
+
+David Leuliette (53:39.152)
+Compliqué, il faut publier une fois par semaine. Peut-être que j'ai une solution pour publier une fois par semaine. On verra. Car là, une dernière chose avant de te laisser partir, une phrase mémorable. Qu'est-ce que tu vas chipper dans les 30 prochains jours ? Ouais, non, c'est pas... si, je te laisse avec ça.
+
+Carla (53:57.857)
+Moi personnellement là tu me prends un peu de cours après non si j'ai une idée justement on l'a dit on fête les 15 ans de Mobiskill dans pas longtemps et on va faire une super soirée dans nos locaux donc là plus d'excuses pour venir donc si vous êtes intéressé vous me contactez et avec grand plaisir pour vous y retrouver ce sera en juin
+
+David Leuliette (54:25.652)
+bah super, une boom en vrai, plus gérer des gens tout ça, un bordel du coup, excellent excellent excellent, on joue un si vous voulez free food, y'aura de la free food, y'aura des pizzas et des trucs ou... y'aura... ou... un DJ !
+
+Carla (54:38.315)
+On a même un DJ je Allez, j'en dis pas plus, on garde l'effet surprise.
+
+David Leuliette (54:45.964)
+Voilà, inscrivez-vous, je sais pas, débrouillez-vous sur les internet pour trouver où ça se passe mais allez-y. Et ben, trop cool en tout cas. Allez, merci et à la prochaine. Prend soin de toi, prenez soin de vous et des autres. Ciao !
+
+Carla (54:51.617)
+vous émettrez.
+
+Carla (54:59.745)
+Ciao !
+
