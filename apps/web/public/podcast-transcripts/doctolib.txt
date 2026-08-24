@@ -1,0 +1,850 @@
+David Leuliette (00:01.88)
+Imagine tu as 50 millions d'utilisateurs, 400 000 praticiens et 15 millions de rendez-vous pris chaque mois. Et une app mobile qui doit tenir parce que si ça tombe, les gens râtent leurs médecins. Et ça c'est triste les amis, comment est-ce que tu gères ça sans que ça parte en KO ? C'est exactement ce qu'on va décortiquer avec Louis Senior, software engineer chez Doctolib. Comment ça va Louis ?
+
+Louis Zawadzki (00:27.933)
+Écoute, ça va très bien, je suis content.
+
+David Leuliette (00:29.56)
+C'est c'est senior software engineer, je me suis pas trompé.
+
+Louis Zawadzki (00:33.192)
+Exactement, exactement.
+
+David Leuliette (00:35.5)
+Donc c'est combien d'ayant d'expérience à Senior Software Engineer ?
+
+Louis Zawadzki (00:38.83)
+ça dépend mais chez nous ça va être entre on va dire qu'on se mordent une petite dizaine quoi ça va de 10, va dire entre 7 et 15
+
+David Leuliette (00:48.019)
+Ok, c'est marrant parce que... ça change en fonction des boîtes, c'est ça qui est rigolo, moi j'ai découvert ça. Ça dépend, vois, tu peux être senior quelque part et junior one day, tu vois. Mais bienvenue à tous dans le cross-platform show, je suis David Leliette et aujourd'hui on parle d'un défi que beaucoup d'équipes croisent au mauvais moment. Comment scalaise une app mobile quand le produit explose ?
+
+Louis Zawadzki (01:01.869)
+oui.
+
+David Leuliette (01:16.888)
+sans y laisser des mois de dev et des centaines de milliers d'euros. Donc Louis tu me disais que tu venais de finir ta loop jusqu'à 15 secondes avant qu'on commence le call, c'est ça ?
+
+Louis Zawadzki (01:29.358)
+Exactement, là on est en plein dedans. On découvre cette nouvelle façon de travailler. Je pense que si je me téléportais un an en arrière, je ne comprendrais rien à ce que je fais aujourd'hui.
+
+David Leuliette (01:36.45)
+Ok.
+
+David Leuliette (01:43.128)
+Ah ouais, clairement, le loop. Attends, moi je suis dans quel loop ? Non, moi je core un Vibecoder là. Putain, je suis so old. Enfin, il faut que je refasse le setup en fait. Non, mais il faut... Mais je sais ce qu'il faut faire. Mais il faut, tu vois, c'est toujours pareil. Non, tu sais quoi ? Ce matin, j'ai codé à la main, je voulais voir la doc de React Navigation, mec. C'est fou. Je me suis connecté sur Internet et j'ai lu comment on fait du type checking correct parce que j'avais oublié forcément.
+
+Louis Zawadzki (01:55.534)
+...
+
+Louis Zawadzki (01:59.171)
+en le donnant.
+
+Louis Zawadzki (02:14.587)
+C'est le risque qu'ils nous gâtent tous.
+
+David Leuliette (02:16.833)
+Ouais c'est ça. Mais t'étais chez Datadog, étais software engineer chez Datadog avant Doctolib, c'est un autre univers, c'est pas pareil, la santé, l'agglémentation, et ça fait quoi la plus grosse différence que t'as eu quand t'es arrivé entre Datadog et Doctolib ?
+
+Louis Zawadzki (02:37.87)
+Je pense que les deux, il y a quand même des points en commun parce qu'on est dans des choses où on a énormément de choses de gens qui dépendent de nous en fait. Quand tu chez Datadog et que Datadog est down, t'as plein d'équipes qui ont besoin de Datadog pour lancer des mises en prod pour savoir en ce moment, par exemple, c'est la Coupe du Monde. Je me souviens de la dernière Coupe du Monde où j'étais chez Datadog, c'était un peu le moment où tous les jours c'était...
+
+On était sur le TV. Il a des gros événements pour les clients de Datadog. C'est des gros événements pour Datadog aussi. donc chez Doctolib, on retrouve aussi ce côté-là. Après, ce qui est différent, je pense, c'est dans la culture de l'entreprise. Datadog, c'est une boîte américaine, avec certes des bureaux à Paris et un peu partout en Europe, mais la culture reste très internationale.
+
+David Leuliette (03:07.863)
+La Wharr ! Wharr ! Wharr Wharr Wharr Wharr Wharr ! ! ! Wharr !
+
+Louis Zawadzki (03:37.062)
+et puis il y a des clients qui sont vraiment basés partout dans le monde. il faut que le service soit up 24 heures sur 24.
+
+David Leuliette (03:44.631)
+Ouais, hop, H24, ouais. J'avoue. Alors que chez Doctolib, t'as plus l'effet TF1, quoi. Ah ! Nous sommes le 2 février ! Tout le monde prend des rendez-vous, car tout le monde est malade ! À cause de la grippe ou des vacances ou je sais pas quoi. Est-ce qu'il a de la saisonnalité de pics de rendez-vous
+
+Louis Zawadzki (03:48.558)
+Ouais, je suis tout le temps n'y parie.
+
+Louis Zawadzki (03:57.967)
+...
+
+Louis Zawadzki (04:01.838)
+...
+
+Oui, tout à fait. Ce qu'on voit le plus, aussi dans la semaine. On voit qu'il a beaucoup plus de rendez-vous en début de semaine et beaucoup moins les jours fériés. Donc ça, on le voit...
+
+David Leuliette (04:13.687)
+Ah, comme par hasard ! Les gens sont moins malades les gens ferriers, c'est fou ça ! Mais ok, et pour...
+
+Louis Zawadzki (04:23.016)
+En fait, pense que les gens prennent moins de rendez-vous.
+
+David Leuliette (04:26.519)
+Ouais oui oui forcément. Ouais oui c'est ça au pire t'es malade chez toi, t'es en mode ah vas-y c'est bon ça va passer quoi. Et pour les auditeurs qui connaissent pas encore Doctolib aujourd'hui en une minute côté mobile. Donc ouais je vais te dire, tu vas me dire si je me trompe dans 50 millions d'useurs, 400 000 praticiens, 15 millions de rendez-vous par mois en Allemagne et en France. Vous avez d'autres pays où il me semble non ?
+
+Louis Zawadzki (04:55.47)
+Oui, alors pas qu'en Allemagne et en France, on a aussi en Italie. Et Doctolib, en fait, ce n'est pas qu'une appli pour les patients, c'est aussi une application pour les professionnels. Et donc, il y a aussi tout ce côté-là qu'il faut assurer. en fait, les professionnels, il a beaucoup de médecins. La première chose qu'ils font le matin, ils ouvrent l'application Doctolib pour regarder leur emploi du temps de la journée.
+
+Et donc, y a ces deux facettes de la consultation qui sont exactement...
+
+David Leuliette (05:24.385)
+Ouais, c'est leur backlog quoi.
+
+Louis Zawadzki (05:34.57)
+Donc il y a quand même un gros... J'ai l'impression qu'on a un peu de décalage.
+
+David Leuliette (05:42.551)
+Ouais, non mais ça va aller, la réconciliation du montage ça va aller je pense. J'espère, on verra.
+
+Louis Zawadzki (05:43.744)
+Passez bien chez moi.
+
+David Leuliette (05:54.871)
+Oui oui, donc y a deux parties, vraiment un parti backlog pour les médecins en gros c'est leur CRM, peu, la partie mobile où les utilisateurs prennent rendez-vous et ont tout le suivi. donc, je ne pas si tu étais là avant, mais parce que tu es arrivé il a pas si longtemps, tu n'y étais pas depuis le début.
+
+Louis Zawadzki (06:07.214)
+Le problème, c'est ça, ça, ça.
+
+David Leuliette (06:23.803)
+Doctolib mais est-ce que tu as senti un moment que la team s'est dit ouais ok à ce moment là on change d'échelle et tu n'as pas le droit de dire Covid.
+
+Louis Zawadzki (06:37.998)
+J'ai pas le droit de dire Covid, c'est ça ? Ouais, je...
+
+David Leuliette (06:38.743)
+Si c'était vraiment le pic, en fait moi depuis l'utilisateur, parce que je connais aussi depuis longtemps, j'ai vraiment l'impression que le Covid ça a fait exploser le produit, alors qu'avant c'était démocratisé mais pas vraiment nécessaire entre guillemets. C'était un goût nice to have et après le Covid c'est vraiment devenu nécessaire. Ce que je me trompe.
+
+Louis Zawadzki (07:05.304)
+Oui. Je pense qu'il y a eu surtout une utilisation pendant le Covid qui était les rendez-vous pour les injections de vaccins qui s'est faite quasiment exclusivement sur Doctolib et du coup là je pense que ce moment-là ça a été un gros changement d'échelle très rapide. Mais d'ailleurs dans plein de, je pense dans plein de domaines, il y a eu ce changement d'échelle au moment du Covid où on a dû passer sur du remote. Il y a plein de projets à l'époque où j'ai travaillé pour...
+
+qui s'appelle TO2 maintenant. Je me souviens que le premier week-end de confinement, a eu des projets qui se sont faits en un week-end pour des clients pour arriver à chipper un truc qui devait être là dès le lundi suivant. il a beaucoup de choses qui ont changé à ce moment-là. Je pense qu'on passe des paliers presque sans s'en rendre compte, mais très régulièrement il y a un nouveau palier. Tu vois, ce soit à début, la prise de rendez-vous.
+
+augmente de petit à petit, on lance de nouveaux pays, donc ça fait des nouveaux paliers. Et aujourd'hui, les nouveaux paliers qu'on franchit, c'est qu'on essaye sur l'application Patient de diversifier un peu l'offre qu'on a dessus. On pourra peut-être en parler un petit peu après, de passer d'une app qui sert juste à faire de la réservation. On passe à une app où on commence à offrir d'autres choses, mais le cœur de l'application, ça reste évidemment la prise de rendez-vous.
+
+on arrive à garder, à protéger cette partie-là tout en apportant des nouvelles améliorations. C'est aussi, je pense, un cap qu'on essaie de franchir en ce moment.
+
+David Leuliette (08:44.823)
+super app quoi le health hub est ce que on pourra enfin arrêter de donner d'autres cartes vitales ouais je sais pas parce que du coup je sais pas si ça fonctionne tu sais le fait moi ça me rouffe que je peux donner ma carte que je peux pas juste utiliser ma mon téléphone ma watch tu vois
+
+Louis Zawadzki (08:52.718)
+...
+
+David Leuliette (09:06.527)
+Mais bon, je pense que c'est pas si simple que ça, tu vois.
+
+Louis Zawadzki (09:09.006)
+C'est une bonne question.
+
+En effet, dès tu touches à des systèmes de l'état derrière, tu touches à des trucs très sensibles et donc c'est sûr que ce pas évident.
+
+David Leuliette (09:20.475)
+t'as pas envie de toucher. Genre, force à tous ceux qui maintiennent le site des impôts, hein. Je vous adore le site pro des impôts. franchement faut qu'un jour je qui c'est qui fait le site pro des impôts. J'ai 2-3 suggestions à lui dire. Mais on va pas en parler ! Et est-ce que t'as eu...
+
+Oui, ils ont parlé des paliers, est-ce que tu as eu des signaux qui montraient que le côté explose, le côté mobile genre ? Est-ce que tu as des chiffres à partager avec ton trafic, onboarding, tu des gros incidents qui a eu chez vous
+
+David Leuliette (09:59.653)
+tu peux en partager aussi tu vois.
+
+Louis Zawadzki (10:00.608)
+En fait, a eu de la chance côté mobile. On a eu de la chance qu'on a été relativement protégés pendant très longtemps parce que l'application, fait, la partie qui est prise d'un rendez-vous, la gens ne s'en rendent peut-être pas forcément compte, mais en fait, c'est simplement une WebView qui affiche le site Web. Donc toute la partie de l'application, on va dire, telle qu'elle était jusqu'en 2024-2025.
+
+David Leuliette (10:18.071)
+Hmm, c'est bon.
+
+Louis Zawadzki (10:26.094)
+C'était principalement une webview et donc côté mobile, il y avait des petites surcouches pour gérer les notifications, gérer certains trucs, gérer la téléconsultation notamment, qui elle, elle est faite complètement côté ragnative, mais la téléconsultation aujourd'hui, ce n'est pas quelque chose qui est forcément au centre de Doctolib. Ce n'est pas tellement dans la philosophie de pousser vers plus de téléconsultations. Aujourd'hui, c'est plus vu comme un supplément pour un médecin que tu connais déjà.
+
+par exemple un psychologue qui va beaucoup l'utiliser pour certains patients qui ne pas forcément avoir envie de se déplacer et fait tu peux être dans un environnement plus safe, peux faire la téléconsultation à distance mais on ne pas pousser forcément à prendre rendez-vous avec n'importe quel médecin via la téléconsultation. Et donc en fait on a été protégé pendant très très longtemps. J'ai perdu David.
+
+...
+
+Louis Zawadzki (11:30.678)
+Bon, je vais continuer au cas où David tu reviennes. Et donc oui, sur les incidents, on a été très protégés. donc tout le boulot pour nous, c'est d'essayer de se retrouver, faire des changements sur d'autres parties sans que ça impacte le reste.
+
+Louis Zawadzki (11:55.758)
+quand même vérifier que c'est moi qui est là pendant tout.
+
+Louis Zawadzki (12:10.727)
+David, tu l'as ?
+
+Louis Zawadzki (12:26.03)
+J'ai David.
+
+Et bon.
+
+David Leuliette (12:29.494)
+ça a bugué. Oula j'ai eu un petit dégrouchage justement. Je ne sais pas ce qui s'est passé en plus j'étais en train de checker. Ok, t'étais en train de dire téléconsultation, c'est ça que j'ai retenu. non attends, si c'est bon.
+
+Louis Zawadzki (12:39.598)
+...
+
+Louis Zawadzki (12:48.878)
+J'ai hésité à continuer, je me disais, mince, si ça se trouve, il falloir que je reprenne tout. Mais ouais, du coup...
+
+David Leuliette (12:53.782)
+Non non non en fait en gros ça... Vas-y t'inquiète. En fait en vrai ça synchronise, ça upload et du coup les tracks vont être alignés après. Mais vas-y. On va reprendre ici. Téléconsultation. Du coup tu me parlais de la téléconsultation !
+
+Louis Zawadzki (13:12.044)
+Voilà, et donc voilà, téléconsultation qui est la partie que nous on fait dans l'application React Native historiquement. Et là-dessus, a eu en vrai assez peu de soucis. Les plus gros soucis qu'on a eus, c'est que nous on va développer derrière plein d'autres fonctionnalités et on veut pas que ça casse l'application, le reste de l'application. On veut avoir une WebView qui continue de fonctionner avec toute la prise de rendez-vous, la gestion de ton compte, et derrière qu'on arrive à développer des nouvelles fonctionnalités.
+
+Et si je peux partager, on n'a pas eu beaucoup d'incidents, mais il en un qui est un peu symptomatique de ça. a remarqué en fait, tu prends rendez-vous chez Dr Ibb, on t'envoie une push notification un jour avant ton rendez-vous pour te rappeler que demain, tu as un rendez-vous, il pas oublier d'y aller. Et si jamais l'utilisateur ne reçoit pas la notification, en fait, on lui renvoie un SMS.
+
+Bon, je continue sur David. C'est parti. Et donc, du coup, on envoie un SMS si cet auteur ne reçoit pas une notification. Alors, on sait s'il a reçu la notification ou pas ? Nous, a un petit hook dans l'application. Quand l'application se réveille et reçoit une notification, on appelle une pointe chez nous pour dire « j'ai bien reçu la push-notif ». Et en fait, il un moment, on s'est rendu compte que notre coup de SMS commençait à exploser et que ça correspondait à peu près à une certaine release.
+
+qu'on a eu fait. Et en fait...
+
+David Leuliette (14:43.799)
+Grâce à Datadog ou pas, vous avez su ou pas ?
+
+Louis Zawadzki (14:47.234)
+grâce, même pas à Data Dog, juste à regarder notre pricing et on voyait vraiment le top de coût et on voyait que ça correspondait au roll-out. Là, on se disait, bon, OK, c'est peut-être dû à ça. Et on a galéré à trouver la solution. en fait, a eu un déclic et en fait, la feature qui nous a cassé ça, c'est on a rajouté une lib qui est utilisée pour nos tests end-to-end. Donc vraiment un truc rien à voir qui doit juste nous permettre de charger des...
+
+David Leuliette (14:50.734)
+Ok... Ok...
+
+Louis Zawadzki (15:15.616)
+de charger des variables dynamiques dans le cas de test end to end ou pas. donc on a quand même obligé de... s'est dit, on l'intègre quand même dans l'application de prod, juste faire le check et voir, ok, je suis pas en test end to end, donc je charge pas de serveur de mock, etc. Et en fait, il y avait un petit souci de sur cette libre dans le cas où je réveillais l'application, il a une push notif. Et donc, en fait, on se retrouvait dans un deadlock et l'application, en fait, elle n'envoyait jamais...
+
+elle ne l'avait jamais appelé pour dire qu'elle avait reçu la bouche notif et du coup ça nous a coûté quand un peu peu d'argent puisque c'est des coûts en sms ça coûte beaucoup plus cher que la bouche notif et donc voilà, tu mets ça à la fois le nombre de rendez-vous ça pique un peu et donc en fait c'est assez symptomatique des problèmes qu'on peut avoir sur notre application mobile c'est plus des choses où on va faire un petit changement qui paraît un peu anodin
+
+David Leuliette (15:55.934)
+Et multiplié par le nombre d'useurs, ça t'invite.
+
+Louis Zawadzki (16:14.742)
+et en fait ça va casser un autre truc parce que le produit est tellement tentaculaire, y tellement de petits trucs à droite à gauche que des fois ça va être ça qui va casser.
+
+David Leuliette (16:23.793)
+Ouais, juste, t'sais, c'est le fameux juste. De toute façon, on découpe des justes, je pète un cap direct, fais ça. Pour qu'on en parle, c'est déjà 10 000 euros. Tu vois, juste, investigué, je viens de dire juste. Ça coûte 10 000 euros. Souvent les plus petits changements ont une magnitude des changements, enfin une magnitude vraiment énorme. T'sais, un point virgule, quelque part, ça peut soit casser, voilà, impacter...
+
+Louis Zawadzki (16:46.926)
+Bye !
+
+David Leuliette (16:53.616)
+plein de
+
+David Leuliette (16:59.623)
+Est-ce que, suite à cet incident, comment vous gérez ce truc-là ? Est-ce que tu des slides de post mortem ou c'est tout le temps le chaos quotidien et tu as des problèmes de cet ordre qui pop toutes les semaines ?
+
+Louis Zawadzki (17:17.23)
+Non, en vrai on a pas mal de processus en place pour tous ces incidents. Donc évidemment, là il y eu des post mortem là-dessus. Et sur le mobile, on essaye d'être vraiment très très safe parce que, on est dans une boîte qui a une culture très web. Et en fait, quand tu fais du web, tu peux te dire, ah bah ok, je réalise ça, ça marche à 80%. C'est pas grave, dans deux heures ça marchera à 100 % et c'est bon.
+
+David Leuliette (17:43.194)
+Easy. Ouais ouais, c'est bon.
+
+Ouais.
+
+Louis Zawadzki (17:47.287)
+Dans le mobile, on n'a pas encore de système d'update over the air à la code push ou expo update. Donc, si on push un truc en prod, il faire une nouvelle mise en prod native pour fixer s'il a un bug.
+
+David Leuliette (18:04.77)
+Oui c'est ça et c'est pareil après ta version elle est dans la nature et il faut la maintenir. Parce que tu sais pas les gens sur Android ils téléchargent et puis hop ils téléchargent plus et puis pour une raison whatever ils ont plus d'espace disque sur leur téléphone parce que je pense que c'est la population que vous avez à gérer ça doit être insupportable sur Android les...
+
+Louis Zawadzki (18:10.823)
+Exactement.
+
+David Leuliette (18:32.868)
+les oui, attends c'est quoi les téléphones que tu peux acheter au supermarché à côté des chewing gum ?
+
+Louis Zawadzki (18:41.206)
+On a un public très varié. essaye de... Nous, notre boulot, c'est de faire en sorte que les anciennes versions d'applications continuent de fonctionner. en fait, on fait beaucoup de versioning de tous nos API pour s'assurer que quelqu'un qui a toujours une app d'il a deux ans, parce qu'il ne pas la mettre à jour parce qu'il est sur Android 6, l'application fonctionne toujours, elle tourne toujours.
+
+Alors on a un mécanisme pour si par exemple on se rend compte qu'il a un petit bug sur une version, on va pousser les utilisateurs après un certain temps à mettre à jour leur application via un petit message et du coup ça te permet de dire bon bah ça nous permet de migrer petit à petit les utilisateurs qui sont sur une version qui ne pas.
+
+David Leuliette (19:27.028)
+Je vois. est-ce qu'un jour on vous a dû vous forcer la main par notamment une contrainte réglementaire ? Genre, c'est Lorde des Béissins qui a dit X Y Z.
+
+Louis Zawadzki (19:43.959)
+C'est une bonne question. Moi, je n'ai pas connaissance de choses comme ça. Il y a eu vraiment un retour, tu dernier moment. Par contre, c'est quelque chose avec lequel on travaille vraiment tous les jours. Donc, c'est-à-dire qu'on fait vraiment, on construit nos produits avec des médecins. On a des médecins qui sont là pour répondre à toutes les questions vraiment médicales, validées, que tout ce qu'on fait médicalement, a du sens, ça fonctionne. Et c'est aussi encore une fois.
+
+David Leuliette (19:49.264)
+Merci.
+
+Louis Zawadzki (20:13.366)
+un milieu qui est très très réglementé. dès qu'on veut faire quelque chose qui touche vraiment à de la donnée médicale, s'assure de faire les choses correctement et que ce soit en accord avec la recommandation et la réglementation. Donc ça, je pense que ça doit arriver quand même très rarement que ce soit quelque chose qu'on pousse en prod et là on se prenne un retour une fois que c'est en prod.
+
+David Leuliette (20:26.24)
+Ouais, c'est
+
+David Leuliette (20:32.88)
+Ouais vous êtes pas trop... Il y a des règles, elles sont claires et puis il faut suivre les règles. Y a pas de coups, vous avez pas fait l'inverse, genre vous avez été un peu trop vite par rapport à... ...ceux de la réglementation, soit... Ah bah... ...tu sais, la...la...la... pense avec ce qui se passe avec Apple en ce moment, tout avec le DMA et tout le bordel qu'il a... C'est que y a une règle mais en fait elle est pas vraiment claire donc tu sais pas trop et donc tu chipes une feature et puis après on dit ah bah non en fait c'était pas ça. Bah ouais mais dès le début la règle...
+
+C'est pas très clair donc... Vous...
+
+Louis Zawadzki (21:05.693)
+Je pense que de toute façon, ce qu'on a essayé de faire aussi, c'est d'être... d'être... d'être... d'être... d'être... d'être... d'être... d'être... médicalement. donc à partir du moment où tu as des médecins qui te disent que ça a du sens et c'est en accord avec les réglementations, as peu de chances que derrière ça déraille. Et ils sont là de toute façon aussi pour nous dire quand il a un risque sur un point. Donc on essaye d'être au mieux et c'est vrai que...
+
+David Leuliette (21:25.648)
+No.
+
+Louis Zawadzki (21:35.471)
+Tout le but, c'est d'être le moins embêté possible. Aujourd'hui, on a de la chance, on n'est pas aux États-Unis. Je pense que si on était aux États-Unis, ce serait une autre histoire de... Une autre paire de manches, on va dire. Mais... Niveau réglementation, oui. J'ai pas de nouvelles de mes collègues de Datadog là-dessus, mais je pense que dernièrement, y dû y avoir des petits revirements de réglementation sur certains trucs. Des dernières minutes, possiblement.
+
+David Leuliette (21:47.536)
+niveau réglementation au niveau... ah oui, ah bah oui c'est pas...
+
+David Leuliette (22:06.083)
+J'avouerais, bah oui, ça c'est sûr. Et justement, vu l'échelle qu'il a chez Doctolib, si on te dit, ouais, là il a un changement, faut plus faire bleu, faut faire vert, tu vois, parce que c'est comme ça. Tu dans les solutions classiques de refactor, tu dis, vas-y, go, je dépréquite des trucs et tout, machin, et hop, ça va bien se passer. Mais à l'échelle de Doctolib...
+
+Est-ce que tu te lances comme ça ou vous réfléchissez un peu ? Que serait quoi la stratégie pour lancer un gros réfecteur ?
+
+Louis Zawadzki (22:40.994)
+Il y a toujours une partie de stratégie à mettre en place. Sans parler de changer rouge, bleu, vert, l'exemple qui est le plus symptomatique, c'est quand on va faire des mises à jour de Rack Native. Récemment, on est passé sur la nouvelle architecture. Dans mes anciens projets, quand je faisais ça, il avait un ticket, mettre à jour Rack Native. On mettait le ticket, on déployait, il avait quelques petits bugs, on fixait et c'était bon.
+
+David Leuliette (22:56.656)
+Ah oui, les fameuses !
+
+David Leuliette (23:06.678)
+One-liner.
+
+Louis Zawadzki (23:10.945)
+Là, non, non, c'est vraiment... Alors on a essayé de le faire comme ça au début, ça s'est pas bien passé. Du coup, maintenant, c'est vraiment tout un travail en amont et on essaye d'optimiser ça au maximum. C'est-à-dire qu'on essaye, par exemple, de migrer toutes les librairies qui peuvent être à cheval sur deux versions, on essaie de les migrer en amont et comme ça, la PR qu'il faut merger, c'est vraiment tout petit. puis, ce qu'on a fait, par exemple, sur la nouvelle archi, on a fait des réalises à 1 % des utilisateurs qu'on arrête tout de suite et puis on regarde...
+
+sur Sentry pendant une semaine, comment ça se passe. Et puis on y terre comme ça et ça nous permet d'arriver à la fin avec un coût minimal pour les utilisateurs à avoir un truc qui fonctionne. puisqu'on sait que ça va prendre du temps et qu'on va probablement, vu la taille de notre application, le fait qu'on ait une énorme web view, en fait, on se retrouve dans des cas qui ne pas des cas courants. Et en plus, a des utilisateurs qui... en est une app qui est très utilisée et si tout va bien, tu l'ouvres trois, quatre fois par an.
+
+David Leuliette (24:01.602)
+Oui.
+
+Louis Zawadzki (24:09.531)
+et elle n'est pas à jouer. Donc tu te retrouves dans des cas...
+
+David Leuliette (24:10.192)
+J'avoue, j'avoue, oui, c'est clair. Et en plus, c'est dans l'urgence. Tu l'ouvres, soit au bout de ta vie, t'es malade, ou alors ton enfant est sous 38 de fièvre, donc t'es pas dans un état mental hyper bienveillant, quoi. Le moindre truc qui marche pas, tu vas blame Dr. Lib, ou le médecin que tu peux pas trouver, ou alors t'as mal aux dents et tu pètes un câble, Donc... Ouais. Je vous...
+
+Louis Zawadzki (24:30.926)
+Bonne heure.
+
+Donc voilà, on sait qu'il faut y aller doucement et bien réfléchir, mais voilà, on est outillés aussi pour ça. Le stress est limité. Tout le but de tous nos processus, d'ailleurs, c'est qu'on soit le plus étendu possible quand on fait ça.
+
+David Leuliette (24:41.52)
+Ouais ouais, makes sense.
+
+David Leuliette (24:49.776)
+Ouais, ça va progressivre là, j'avoue je dis pas tant que ça.
+
+Mais oui, quand t'es à la scale comme vous, bah oui t'es obligé quoi, en vrai, tu mets une stratégie comme ça. Y'a des QA chez vous, des manuals QA avec une armée de téléphone ou pas ? Tu genre avec un Device Lab avec 50 téléphones ou vous faites ça sur AWS, tu sais un truc de genre AWS Device Farm qui vous file un rapport mais c'est un peu une émulation quoi.
+
+Louis Zawadzki (25:14.552)
+Oui, exactement.
+
+Louis Zawadzki (25:23.278)
+Oui, en fait, on a plusieurs processus. notamment quand on va faire une nouvelle release, on a une phase de QA où c'est des développeurs qui vont tester en général sur des vrais devices. Du coup, chacun teste une partie du scope, prend une heure par personne. Mais c'est un temps non négligeable, on est en train d'extraire tout ça dans des tests end-to-end pour que ça prenne le moins de temps possible. puis on a aussi des devices, on a accès à Brothers Stack qui est un peu comme...
+
+David Leuliette (25:50.22)
+Ok.
+
+Louis Zawadzki (25:51.343)
+du Vice Farm et du coup ça nous permet de un bug sur une marque de téléphone. Voilà, tu peux le tester avec ça.
+
+David Leuliette (25:52.688)
+Ouais ouais c'est pareil, c'est pareil j'avoue. Vu que c'est plus web j'avoue.
+
+David Leuliette (26:00.824)
+Ouais ouais c'est vrai qu'en fait vous pouvez lancer en en mode web et vous savez que si ça pète le web ça fonctionne et si ça fonctionne sur le il a quand même de fortes chances que ça fonctionne mais ça n'empêche pas faut toujours tester sur des vrais devices parce que le clavier on connaît le clavier tout ça les custom font sur les androïdes au code
+
+Et tu parlais au tout début que c'était l'app mobile de Doctolib, c'était juste une WebView. Est-ce que... Donc vous avez entamé la migration de la navigation, si je me rappelle bien, il y avait un talk là-dessus. Vous avez fait un talk là-dessus.
+
+Louis Zawadzki (26:48.36)
+Oui, tout à fait.
+
+David Leuliette (26:52.356)
+Ouais c'est ça, à Rack Native Connection. D'ailleurs si vous voulez venir à Rack Native Connection, suivez-nous car c'est bon, on va faire gagner des places. Enfin une place, c'est déjà bien. Est-ce que la décision qui a changé la trajectoire, l'organisation de votre app, niveau modularisation, CI-CD, organisation d'équipe, parce que maintenant tout monde fait des loops, même les...
+
+Les PM font des product loops ? Comment ça marche un peu au niveau stack, feature flag, est-ce que c'est des micro services ou monorepo style ? Dis-nous tout.
+
+Louis Zawadzki (27:39.439)
+Historiquement, Docto-Hipps, c'est un gros monorépo. Un gros monolithe, un seul serveur Ruby on Raids. La stratégie technique, on s'est rendu compte que depuis un an, c'était difficile à scale et on veut garder l'indépendance dans chacune des équipes.
+
+David Leuliette (27:43.824)
+Parce que Rubian Rays on adore, tu vois ?
+
+Louis Zawadzki (28:06.542)
+Si jamais il a main qui rouge pendant deux heures, ça bloque pas complètement tous tes développements sur toutes tes réponses. Ce qui était un peu le cas quand je suis arrivé. a un gros travail pour maintenant sortir du Smonolith des parties dans des runtime en Java. On fait du Spring Boot Java, fait un peu de Kotlin aussi principalement.
+
+Sur l'application mobile, a aussi sorti de ce monorepo, en fait on a un repo dédié. par contre, on est quand même une grosse équipe à bosser sur cette application mobile. fait, on est plusieurs équipes à travailler. On est 5-6 équipes avec à chaque fois dans chaque équipe 4-5 devs qui bossent dessus et qui peuvent aller très vite aujourd'hui avec, enfin, surtout notre apparti coding à proprement parler. Ça peut aller très très vite. Donc peut avoir beaucoup de PR qui arrive d'un coup.
+
+Et il y a une vraie problématique, je trouve, qui très intéressante chez Doctolib, que j'ai pas forcément retrouvée dans beaucoup de projets, c'est comment tu fais en sorte que t'aies presque une vingtaine de devs qui bossent sur une appli en même temps, sans que ça explose, sans que machins qui font un changement à un endroit de l'application et en fait, ralentit toute l'application et du coup, il a un autre bug qui apparaît ailleurs. Comment t'assures que les dépendances soient bien mises à jour partout sur l'app en même temps, etc.
+
+Et donc l'approche qu'on a eue, c'est vraiment de créer des packages pour chacune des features. Et on a une commune, ce qui nous permet de nous repérer un peu dans chaque package. On a tout découpé, manière assez simple, on suit un peu le DDD. Donc on a trois, quatre couches et puis tout est un peu architecturel de la même façon. notre gros travail en ce moment, va dire, c'est que là on...
+
+Quand on a commencé, on avait cinq, six packages. Ça fonctionnait parfaitement. puis là, est... Quand je regarde, je pense qu'on ne pas être loin de 10 fois plus. On a énormément de codes maintenant. Et donc, il y a des questions de comment est-ce qu'on arrive à inverser un peu nos dépendances entre les différents packages. Parce que forcément, y a bien un moment où dans ta navigation, il que tu registers tous les écrans.
+
+David Leuliette (30:26.832)
+Ouais.
+
+Louis Zawadzki (30:27.718)
+Donc tu as évité d'avoir un truc qui va importer tout le reste de ton application et que le jour où tu as quelque chose qui a besoin de t'importer ça, il importe du coup tout reste de la navigation et puis si lui il importait ailleurs, hop, ça te fait une magnifique dépente circulaire. Voilà.
+
+David Leuliette (30:40.816)
+Ouais on les connaît les... Avec les barrel files et tout des enfers où t'es là tu fais mais je comprends pas je sais pas et là une fois que c'est dans... C'est mort une fois que c'est dans le code c'est foutu c'est déjà trop tard parce qu'il n'y a aucun dans aucun monde tu vas te rappeler de où ça vient faut traiter le truc à la source sinon sinon c'est mort ouais
+
+Louis Zawadzki (31:01.714)
+Non, non, non, non, non.
+
+Louis Zawadzki (31:05.934)
+On compte pas les fois où on a innocemment rajouté, importé un helper et en fait tous les tests cassent. On ne pas pourquoi mais en fait, tu as une dépendance circulaire et du coup, as un mock dans la chaîne qui casse et du coup c'est fini. C'est un test qui n'a rien à voir avec ce que tu as changé, rien à voir avec le helper que tu as rajouté et en fait, tout pète. du coup, nous on est en train d'essayer d'inverser ça et ça met un peu de temps parce que ça n'a pas un truc qui je pense, hyper répandu dans les applications aujourd'hui d'avoir...
+
+un peu une gestion de plug-in, où en fait chaque fonctionnalité, tu peux avoir des fonctionnalités qui vivent un peu séparément et puis en fait t'arrives à casser facilement les chaînes.
+
+David Leuliette (31:46.736)
+Moi je que je l'ai fait, j'ai souvent eu ça, domain driven, design, bordel, tout ça. Mais en fait c'était avant les high et en fait ça part en sucette à chaque fois parce qu'il y a des humains, les humains respectent pas le process. La seule fois où je l'ai eu success full, ça c'est quand j'avais Enix. Et en fait Enix, un monoripo, était obligé, en fait c'est juste chiant de créer les trucs à la main. Du coup tu utilises le générateur, un peu comme en rails tu vois.
+
+Générateur Rails, fais rails-g, enfin là tu fais nx-g component et hop il te met tout au bon endroit avec les tests, les trucs, les machins, il update le barrel file qui importe et du coup il n'y a justement d'histoire de circular dependencies et tout. En fait nx c'est un peu chiant à mais en fait il de la contrainte et donc tout est un endroit. Et ça ouais dans les projets où j'ai bossé où c'était fait un peu à la main, au début tout le monde est plein de volonté et tout et après tu sens ça drift un petit peu.
+
+Et après, un an après, plus rien à voir, en fait c'est whatever, chacun fait sa sauce quoi. Ou alors tu sais pas, ou alors les équipes elles ont changé, y'a pas forcément de communication et tout, machin. Mais après j'ai l'impression qu'avec les haïs, peut-être ce genre de... va justement être carré. Ou alors ce sera 15 fois pire. Parce que vu que c'est pas consistant, ça dépend. Ah ! Bonne réponse ! Vas-y.
+
+Louis Zawadzki (33:04.011)
+Alors, ça dépend.
+
+Louis Zawadzki (33:08.686)
+Je pense que tu peux avoir de la tolérance en fait dans l'expérience que j'ai maintenant avec ce système là. C'est un truc où tu peux marchander un peu et ça va passer à l'intérieur de ton package si tu n'as pas exactement la même structure. En fait ça va passer, ça ne pas impacter le reste. Par contre, les entrées et sorties de tes packages, c'est là où il pas se voir.
+
+Je pense que là Léa va beaucoup nous aider, c'est surtout pour faire des refactos de ces trucs-là. Avant, qui était hyper chiant surtout, c'est que un dev qui a bossé deux jours sur une PR, qui te sort une PR, une feature compliquée, et en fait l'architecture est complètement à revoir. En fait, tu peux être sûr que tu ne revois pas en rentrant.
+
+David Leuliette (33:42.768)
+Mmh, ouais.
+
+David Leuliette (33:56.304)
+Mais ça fonctionne. Le critère de succès est rempli. Le product marketing, product guy, est content. Les utilisateurs sont contents parce que ça fonctionne. Mais la tech, pas content. Parce que t'as codé ça n'importe comment, entre guillemets. C'est parce que c'est un peu organique et puis voilà, tu sais pas. On t'a demandé, t'as eu les requirements au fur et mesure. C'est empirique et tu te retrouves avec un truc horrible à la fin. Mais là, du coup, l'A.I., tu peux lui dire, là les tests refactor tout.
+
+suivant le fameux guide.md 6 juin et hop ça coûte pas cher en fait enfin ça coûte pas cher ça coûte en token 10 dollars de token
+
+Louis Zawadzki (34:33.742)
+Même si c'est un dev, tu récupères ça en code review, fait tu sais que ça n'a pas lieu prendre trois jours de tout rechanger son architecture. en fait, je pense qu'il a ce côté-là où il y a des retours qu'il avant. Tu savais que c'était un peu compliqué de le demander et du coup, il a un moment où dis est-ce que je prends deux jours de plus pour livrer un truc ou alors faut qu'on se prévoit, parce qu'on faisait la technique habituelle de marchandage, on se prend un ticket.
+
+David Leuliette (34:44.752)
+Ouais, voilà.
+
+David Leuliette (34:58.552)
+Vas-y,
+
+Louis Zawadzki (35:03.98)
+pour le fixer après la release, puis comme ça, la technique, c'est... Voilà, et en fait, le ticket, il y a une chance sur deux qu'il soit perdu au fin fond après, et en fait, pendant ce temps-là, du coup, la personne qui fait la PR, elle n'a toujours pas appris comment on faisait le truc selon les guidelines, donc la prochaine PR, on reballote. Voilà, donc... Voilà, et...
+
+David Leuliette (35:07.296)
+plus tard, il le Never et c'est ça.
+
+David Leuliette (35:21.264)
+Oui, donc elle fait pareil, donc elle fait revalotte et après tu pars en vacances et donc quand tu reviens, il y en a 6 de features que tu aies faites comme ça et après c'est foutu quoi, enfin foutu.
+
+Louis Zawadzki (35:35.809)
+Et donc aujourd'hui, pense que les A.I. nous permet aussi beaucoup de régler des problèmes de technique au fur et mesure. pense que c'est... Voilà, arriver à faire des loops engineering, Je pense que c'est encore une étape d'après et je pense que va prendre un petit peu de temps parce que ça demande de changer complètement le modèle mental de comment on travaille. Ça demande aussi de repenser à où est-ce que tu mets ton effort. En fait, j'ai l'impression que l'effort cognitif se passe beaucoup plus en amont.
+
+au moment où tu réfléchis à comment tu vas faire ta fonctionnalité, etc. Ce qui demande de capable d'un peu de visualiser, presque en trois dimensions, comment ça va se passer, comment ça va interagir, etc. Sans avoir du concret, ce qui peut être très difficile, ce qui est très différent en tout cas. Alors qu'en fait, cette partie-là de l'EI, qui est de dire, je peux faire rapidement des changements, je peux rapidement changer les trucs qui sont très simples, mais qui avant étaient très relous et que personne ne voulait faire. Je pense que ça, c'est un truc qui apporte directement une rayon de bénéfice aujourd'hui.
+
+David Leuliette (36:30.469)
+le gars qui savait faire des reggae, il était chaud, t'inquiète, il le faisait, le gars qui sait faire les reggae, ça à la main, il disait ouais t'inquiète, ça je vais le faire, je vais me faire des reggae, c'est tout, tu fais...
+
+impossible comment tu as fait mais oui oui très relou sur des trucs de naming tout ça pour rien non surement faut réimporter tous les trucs et tout là là supportable
+
+Louis Zawadzki (36:47.566)
+...
+
+David Leuliette (36:58.324)
+Est-ce qu'il avait quelqu'un en interne qui portait le changement quand vous êtes passé le...
+
+David Leuliette (37:10.587)
+le gardien du temple, va dire, ouais, l'architecte c'était, ok, c'était un architecte qui avait la vision, qui se disait, ouais, on fait comme ça et puis voilà. Et est-ce qu'il en a qui étaient, qui étaient genre un peu résistants sous le changement face à ça, où tout le monde a embrassé le truc en mode, ouais, c'est une bonne idée, vas-y.
+
+Louis Zawadzki (37:11.252)
+Bien, merci.
+
+Louis Zawadzki (37:15.957)
+Ouais, dis-le.
+
+Bien sûr, bien sûr.
+
+Louis Zawadzki (37:28.11)
+fait, je pense qu'on a eu de la chance et je pense qu'il a une personne qui a beaucoup porté ça. C'est Morgan Belcadie dont on parlait avant, qui fait de talks sur comment est-ce qu'on est passé d'une app complètement web-you à intégrer du natif. En fait, lui, quand il arrivé, il s'est un peu battu pour ça. Et en fait, à l'époque, l'équipe Mobi était vraiment toute petite. Il n'y avait pas grand monde dedans.
+
+Et en fait, a des personnes qui sont parties et y a beaucoup de personnes qui sont arrivées d'un coup. On est, je crois, un des 4-5 qui est arrivé en 3 mois sur l'appli. Et que des personnes qui étaient super réceptives à ça. Et donc, ça fait qu'on a pu porter le truc très vite et apporter beaucoup de valeur là-dessus. je pense qu'il a encore des débats sur certains détails de l'implémentation interne, mais c'est des choses qu'on va pouvoir régler petit à petit.
+
+Je pense que la partie faire une archi propre, on nous est tous convaincus, en tout cas dans l'équipe, la grande majorité des personnes qui avaient une opinion assez formée sur le sujet étaient tous bavis de, il faut qu'on fasse quelque chose qui est propre niveau architecture parce que ça on sait qu'au moins, il a très peu de chances que ça nous pique, ou ça nous revienne derrière la tête à un moment. On sait qu'en faisant des bonnes bases, derrière, s'il faut adapter.
+
+sera beaucoup plus simple que si on garde un peu.
+
+David Leuliette (38:54.168)
+Ouais bah ouais c'est ça, en plus maintenant c'est ça avec ce que tu dis, loop engineering et tout, si les bases elles sont bonnes après ça dépile mais ça c'est facile entre guillemets dans les nouveaux Evergreen Project mais dans une code base comme vous qui a 10 ans, non ça a 10 ans DrLib
+
+Louis Zawadzki (39:13.742)
+Oui, au moins oui. L'app mobile, là on a eu de la chance, que l'app mobile, la code base était vraiment toute petite. C'était vraiment tout petit. Il n'y avait pas beaucoup d'existent, donc on a pu partir. Et ce n'est pas la même chose sur le web. Là, y a beaucoup de... a beaucoup de legacy et je pense que... Je sais plus exactement le terme, mais c'est un terme qu'on retrouve pas mal de lava.
+
+David Leuliette (39:15.088)
+Au revoir.
+
+David Leuliette (39:21.776)
+Oui,
+
+Louis Zawadzki (39:43.407)
+Lava code base, c'est-à-dire qu'en gros, tu as une personne qui arrive, il a un standard, et puis ensuite on dit non mais en fait on va faire les choses autrement, donc tu as une nouvelle couche de lave qui arrive dessus, on change un petit peu à moitié l'autre, mais là y a déjà un troisième truc qui arrive avant que tu aies fini de tout migrer, et donc voilà, tu te retrouves avec des patterns, tu as quatre, cinq patterns différents qui coexistent, de différentes époques, et...
+
+David Leuliette (39:52.342)
+Ouais.
+
+David Leuliette (40:05.846)
+Oui c'est ça, et du coup quand tu plonges à la code base tu sais les époques, tu te dis tu connais, tu vois, tu t'arriver à refaire le truc...
+
+Louis Zawadzki (40:15.97)
+Donc il y a un gros effort qui a été fait là-dessus pour unifier ça et partir sur des schémas un plus simples. Je pense qu'aujourd'hui, on est en train de migrer petit à petit et de se faire, mais depuis tout cas, depuis deux ans que je suis là, je suis arrivé quasiment au moment où cet effort-là d'unification a été lancé et il en pas eu de nouveau depuis. Donc c'est plutôt bon signe. Ça veut dire qu'on n'est pas rajouté encore une couche de verre par-dessus.
+
+David Leuliette (40:37.654)
+Ouais donc deux ans JavaScript ça fait plus de 600 jours, fou là, folie hein ! C'était euh...
+
+Je j'ai pété deux, non ? À cette époque là !
+
+Louis Zawadzki (40:57.038)
+C'était le moment où on disait, il a complètement halluciné. C'est ce qu'on dit beaucoup moins aujourd'hui.
+
+David Leuliette (41:01.552)
+Ouais ouais ouais ça marchera jamais, ça marchera jamais ce truc tu vois. Et est-ce que justement du coup pendant ce changement il a un compromis que vous avez accepté vous vous êtes dit ouais ok bon là c'est pas parfait mais là ça fonctionne et que vous auriez rendu compte après que c'était pas le bon vous avez dû suivre une autre voie ou ça a été en fait.
+
+Louis Zawadzki (41:27.274)
+Oui, le premier, première chose qu'on a développé avec cette mentalité là, avec cette nouvelle architecture, c'est un nouveau tab qui a apparu sur l'application Doctolib il y a un an, qui est l'onglet santé, qu'on retrouve au milieu de l'application, et dans laquelle on va retrouver nos documents et puis on va retrouver aussi, on va pouvoir mettre plein d'ensaisons, d'entessais dans médicaux. Alors l'intérêt pour nous, c'est déjà de ne les oublier, en occupation.
+
+David Leuliette (41:43.28)
+Good.
+
+Louis Zawadzki (41:54.585)
+Et aussi, ça permet de les transmettre plus facilement aux médecins. y a certains médecins maintenant qui peuvent te demander en préparation un rendez-vous, par exemple, tu vas voir un cardiologue, et à te demander merci de remplir tes décédents médicaux cardiaques dans ta famille. Et ça permet de gagner du temps sur la consultation parce que lui, sait directement quand tu arrives, il a pu préparer ça, ça apparaît lui sur son logiciel Doctolib en tant que pro. Et donc, il sait que tu as...
+
+tels ontécedants, il ne pas les oublier. Quand on a fait ces nouvelles onglets, ça a été développé par une équipe et on mettait en place un peu les guidelines et donc forcément, toujours des moments où tu as des trucs, on se dit, ça fait, ça marche pas tellement, c'était la première fois qu'on l'appliquait, on a un peu payé les pots cassés. Et en fait, ça fonctionnait, ça marchait très bien et puis petit à petit, cet onglet santé, s'est dit, on va rajouter d'autres fonctionnalités dessus.
+
+Donc on va rajouter pour les parents, va rajouter la possibilité pour certains parents par exemple, tu vas avoir la possibilité de traquer les biberons, donc de savoir en fait quand est-ce que tu donné ton dernier biberon à ton enfant, le sommeil de ton enfant, les courbes de croissance, ce genre de trucs. Et donc en fait, la base qui marchait, qui était pas très propre, mais qui marchait bien au tout début, petit à petit, fait, ça commençait à exploser un petit peu. Et arrivé le moment où on a dû se dire bon ben ok là.
+
+qu'on resplitte tout ça, qu'on reprenne ça au propre si on veut être capable. en fait là on a eu de la chance, c'est que cet effort-là qui nous paraissait très compliqué pendant un an, on se disait ce truc-là il a un jour il falloir le changer et ça va être la galère parce qu'il falloir bouger des composants à droite à gauche et extraire plein de trucs et en fait ça va faire une méga PR et on va se planter. Aujourd'hui en fait avec Lya ça a été beaucoup plus simple que prévu.
+
+David Leuliette (43:43.76)
+oui, c'est clair, le refactor, tu le lances, il file des règles et hop. Ouais, j'avoue, créer des nouvelles features, il m'a rien dit ça pète un câble, mais refactor, remettre, bouger des dossiers et tout, j'avoue ça c'est très très très fort. J'avoue, moi là suis en train de connecter Cloud Code à mon Ocean pour qu'il organise mon Ocean, puisque c'est le bordel absolu. Enfin c'est le bordel.
+
+Louis Zawadzki (43:51.89)
+Pour ça, il est quand assez
+
+David Leuliette (44:12.692)
+C'est pas organisé, c'est flat tu vois, mais forcément ça fait empirique et mais là je lui commande et hop là il automatise tout seul et des petits trucs bien rogés, nickel. Cool. on va passer à la question signature, c'était CTO aujourd'hui chez Doctolib avec 500k de budget à louer sur les 12 prochains mois entre plateforme, produit, recrutement, tooling, qu'est qu'on fait ?
+
+Louis Zawadzki (44:18.67)
+Oui.
+
+David Leuliette (44:42.436)
+Qu'est-ce que tu fais Louis ? Dis-moi tout.
+
+Louis Zawadzki (44:45.742)
+C'est une excellente question. Déjà, je jamais été CTO. Donc avoir une idée des cours réels de tout ça en live, je avoir du mal te le dire, mais sur la répartition, je pense que...
+
+David Leuliette (44:50.928)
+Ouah !
+
+David Leuliette (44:59.298)
+Ouais non mais c'est clair, c'est clair, c'était... tu vois. Je me doute que c'est pas la même scale, c'est pas le même CTO chez Doctolib que chez une entreprise... Tu vois.
+
+Louis Zawadzki (45:02.584)
+Ok, voilà.
+
+Exactement. Sans surprise, pense que le sujet numéro 1 en ce moment, c'est comment utiliser l'intelligence artificielle et comment adapter tes équipes. Et donc ça, ça passe par différentes phases. je pense que la phase avec laquelle on est aujourd'hui, on en train de changer de phase, mais il a une première phase qui était de l'expérimentation où c'était un peu du...
+
+et on expérimente, on essaie de trouver des nouveaux trucs. là, on est un peu dans la phase, on rationnalise un peu les coûts, c'est-à-dire qu'on contrôle un peu plus les expériences qu'on fait, on essaie de rapprocher au plus possible des expérimentations qui font la même chose. Je pense qu'à un moment, on avait à peu près trois outils ou quatre outils qui nous permettaient de faire des workflows qui faisaient à peu près tous la même chose, mais chacun codé par une personne différente.
+
+David Leuliette (46:02.968)
+c'est
+
+Louis Zawadzki (46:06.478)
+Donc voilà, on se dit un peu comment est-ce qu'on arrive à faire ça. Et je pense qu'il a vraiment un sujet de, aujourd'hui, comment est-ce que ça change complètement notre métier. Et comment est-ce que ça veut dire quoi être développeur dans cet environnement-là ? Qu'est-ce que ça change sur la formation ? Je pense que c'est un sujet aussi, aujourd'hui, qu'on est encore en train de découvrir ce qu'est-ce en train de changer. aujourd'hui, je pense que les trajectoires des développeurs...
+
+qui, comme nous, ont une dizaine d'années d'expérience, versus les développeurs qu'on a deux trois ou les développeurs qui arrivent sur le marché, va être complètement différente. Parce qu'on n'a pas du tout les mêmes expériences, on ne pas se prendre les mêmes murs quand on va essayer d'utiliser IA. Et on n'est pas non plus au même endroit dans notre progression. donc, je pense qu'il y a énormément de réflexions à apporter là-dessus. Et je pense que c'est hyper important que les équipes...
+
+interne et prendre le temps de prendre cette réflexion. Et je pense que ça c'est un coup en interne de dire qu'il faut allouer du temps là-dessus, il qu'il ait des rencontres qui se passent entre les équipes, que le temps soit dédié à la réflexion sur ces sujets-là, du temps d'expérimentation aussi, soit fait, qu'il soit contrôlé. Je pense que ça c'est...
+
+David Leuliette (47:30.362)
+Oui, pas forcément sur Docteur L'Anselon, un side project ou un autre projet en interne, ne pas bosser que sur l'app main prise d'endevous hyper critique où là tu ne pas explorer en fait ce que tu dis est-ce que je vais casser un truc ?
+
+Louis Zawadzki (47:42.189)
+Tu as un autre type d'exploration, mais tu as quand même besoin d'avoir... Tu peux quand même utiliser l'IA là-dessus, mais tu auras besoin, toi, d'apporter peut-être plus de vérifications. Je pense que c'est aujourd'hui, c'est un sujet où il y a besoin de... C'est vraiment... impacte tout. Toutes les strates de ce que tu me citais avant, as besoin de recruter des gens qui sont experts là-dedans, mais aussi...
+
+les gens qui sont experts dans la conduite du changement et dans comment t'arrives à driver un sujet qui touche autant d'équipes en même temps et arriver à mutualiser tout ça. Et ça va aussi impacter ton coût évidemment d'outils puisque je pense qu'il a en 2024 le coût des outils IA était bien loin de ce qu'il est aujourd'hui.
+
+David Leuliette (48:35.504)
+Je... Je pense qu'il y avait pas... En fait je pourrais pas dire. Je pourrais pas dire si il y avait une ligne... Ouais je pense qu'il y a une nouvelle...
+
+nouvelle ligne en fait budgétaire parce qu'avant en fait le truc c'était dedans enfin moi je prends Notion tu vois bah t'as Notion IA qui est là depuis trois ans bon tu paies un peu plus mais c'est pas genre budget cloud code quoi c'est pas une ligne dédiée en plus parce que t'as plein d'outils qui intègrent l'IA plus ou moins avec du succès quoi mais là t'as carrément oui une ligne en plus qui dit oui bah là autant de tokens par
+
+jour par utilisateur ou par mois ou whatever pour travailler plus vite, peut-être pas plus vite, je sais pas si ça travailler plus vite. Moi je dis que la magnitude des changements est plus importante. Est-ce qu'on travaille plus vite ? Ça je pourrais pas dire.
+
+Louis Zawadzki (49:37.359)
+Je pense que là-dessus, a beaucoup de discussions à avoir. que ce je spondis souvent, c'est que la partie que tu codes, elle va plus vite. Mais ça veut dire que ce qui change, c'est qu'avant, notre réflexion sur une fonctionnalité a été plus étalée dans le temps. Alors tu commences et tu te dis OK, comment je vais faire telle fonctionnalité ? »
+
+David Leuliette (49:48.56)
+Ouin.
+
+Louis Zawadzki (49:59.855)
+Puis tu commences, fais les premiers tickets et là, tu te rends compte que, ah, ben attends, j'ai réfléchi. Pour la suite, c'est peut-être ça qui va me poser problème, etc. Puisque tu commences à avoir du concret devant les yeux. Et aujourd'hui, t'es obligé de quasiment tout imaginer avant. Et en fait, ça va tellement vite que dès que t'as un changement, en fait, il faut le faire vite et il être capable de gérer rapidement ce changement. Surtout quand tu travailles à plusieurs où t'as une personne qui va dire, hey, j'ai peut-être un petit problème. Et en fait, il en a trois autres qui sont en train d'attendre derrière que ce problème-là soit résolu.
+
+Et forcément, quand tu bloques là-dessus, prendre un jour de retard sur la partie coding, avant ça voulait dire que tu shiftes peut-être 3 % de ta fonctionnalité qui va prendre plus de temps. Et aujourd'hui, vu qu'on va 10 fois plus vite sur cette partie-là, ça veut dire que t'as 30 % de ce que t'as livré qui va être décalé. Je ne pas si c'est clair ce que je dis, mais voilà.
+
+David Leuliette (50:48.752)
+...
+
+c'est aussi clair que combien de temps ça prend à les évaluations. Moi je suis toujours incapable de faire des évaluations, ça y'a pas encore plus, mais non, parce qu'on dit que c'est plus rapide, mais vu que tu fais plus de changements, ben t'as plus de bugs, ou peut-être moins, je ne sais pas, je ne pourrais pas dire. Mais ok, cool, on va passer à la partie question rapide, il y en a cinq, mais là j'en ai trouvé une sixième qui s'est glissée pendant qu'on parlait.
+
+Louis Zawadzki (50:53.55)
+c'est responsable.
+
+David Leuliette (51:22.064)
+Est-ce qu'il y a une erreur que tu as faite précédemment, tech, orga, produit dans tes différentes expériences que tu regrettes encore aujourd'hui ? Tu y penses, ça te hante ?
+
+Louis Zawadzki (51:37.007)
+Oh, qui me hante. Alors c'est une très bonne question. que une question que j'aimais beaucoup posséder à l'entretien, alors aujourd'hui c'est plus dans le script, mais c'était demander à un candidat de me raconter un bug. Un bug qui m'a marqué... Ah oui, il en a un je pense qui m'a pas mal marqué. Je travaillais sur une appli et on avait un client qui nous rapporte que...
+
+David Leuliette (51:48.717)
+Ouais, ok.
+
+Louis Zawadzki (52:07.37)
+en fait il achète un produit et fait au moment de passer commande en fait son produit il l'achète deux fois. qui est un peu peu gênant quoi. Voilà, problème pratique et on n'arrive pas à reproduire pendant deux semaines.
+
+David Leuliette (52:15.76)
+problème problème
+
+David Leuliette (52:20.846)
+Il payait deux fois ou il l'achetait deux fois ? Attends, il payait deux fois ?
+
+Louis Zawadzki (52:24.974)
+Il payait deux fois. C'est un truc où tu avais une monnaie interne, en fait, tu n'avais pas besoin de mettre ta carte deux fois, du coup, son compte interne était débité deux fois. Et du coup, on a fini par reproduire ce bug en ayant notre client à nous, le COO qui allait directement chez la personne, l'avoir fait, et en fait, c'était quand il fermait l'app avec le bouton back Android.
+
+David Leuliette (52:26.554)
+Ok.
+
+Louis Zawadzki (52:54.254)
+Voilà, donc ça, me souviens que c'était un bug qui avait marqué. en suite à ce bug-là, on s'est dit, j'étais chez BAM à l'époque, j'ai testé toutes mes apps précédentes et je pense qu'il y en avait 80 % où il y avait ce bug-là où tu fermais l'app avec le bouton back Android et tu l'a rouvrait toutes les actions si tu faisais en double.
+
+David Leuliette (53:14.62)
+Ouais, c'est sûr. Bah oui, c'est pour ça, ce qu'on a dit tout à l'heure. Toujours avoir un Android device physique pour tester ce genre de trucs parce que ça, a... Ouais.
+
+Louis Zawadzki (53:22.35)
+Voilà. Et là, c'est même plus qu'un Android physique. C'est avoir un utilisateur qui est vraiment un utilisateur Android parce que je pense qu'il y a beaucoup de devs à iOS qui ferment jamais leur app en appuyant sur le bouton back jusqu'à ce qu'elle se ferme parce que sur un iOS, ça n'existe pas.
+
+David Leuliette (53:37.69)
+Ouais, j'avoue. Carrément. Est-ce que y'a un outil ou une pratique que tu recommandes à toutes tes équipes qui passent de sa marche à sa scale ?
+
+Louis Zawadzki (53:52.974)
+!
+
+Moi je pense qu'il une pratique, je ne pas si c'est forcément la pratique que je recommanderais la plus importante, mais la première qui me vient à l'esprit, pense que ce qui important, ce qu'on rate souvent, c'est le partage de connaissances.
+
+David Leuliette (54:12.15)
+Ouais ça vous rit de DPR...
+
+Louis Zawadzki (54:17.038)
+Oui, fait, RIDDPR, mais sur plein de choses. Et aujourd'hui, exemple, dans mon équipe, on a des développeurs plutôt back-end, des développeurs plutôt mobiles. Et un des pain points, c'est qu'on a une personne qui on duty tous les jours quand il a un problème. Et les développeurs back-end, arrivent bien à débugger quand c'est back. Mais par contre, quand c'est mobile, c'est plus compliqué, inversement. Et du coup, on fait ce qu'on appelle des kata. En fait, on répète, on prend un incident.
+
+David Leuliette (54:17.674)
+un peu disparu.
+
+Louis Zawadzki (54:46.218)
+et on débugge tous ensemble et on répète le geste et on répète le geste. ça, pense que c'est quelque chose qui marche beaucoup pour des gestes qui sont importants et où les équipes perdent beaucoup de temps. Je pense que c'est un bon principe qui me vient du coup de mon époque Théo de Aubame et que j'aime beaucoup.
+
+David Leuliette (55:06.16)
+Ok.
+
+Excellent, je valide parce que bosser les fondamentaux toujours important parce que pour s'en rappeler et le plus, le pire c'est que les fondamentaux et ben ils changent donc en fait peut-être qu'une technique que tu faisais avant est carrément obsolète. C'est pour ça que tout à l'heure j'étais en train de lire la doc de rectification tu vois parce que j'avais oublié ou ça a changé je ne sais plus franchement je pourrais pas dire.
+
+Louis Zawadzki (55:31.694)
+N'a-t-il pas ?
+
+David Leuliette (55:35.312)
+les tests automatisés chez Doctolib, indispensable ou sur-côté ?
+
+Louis Zawadzki (55:41.166)
+Voilà. Moi je que tu connais ma réponse. Mais oui, bien sûr, indispensable.
+
+David Leuliette (55:44.718)
+Oui, non mais c'était parce que... en fait c'est parce que t'as fait un talk TDD, non DDD, attends TDD ou... Arrack Native... Ok ouais, Arrack Native EU, c'est pour ça que je t'avais lancé quoi.
+
+Louis Zawadzki (55:54.834)
+TDD, j'avais fait un truc TDD aussi.
+
+David Leuliette (56:03.744)
+Et si tu parles à un dev qui devait joindre une boîte en hyper croissance demain, s'il a un seuil advice que tu pourrais lui dire, ce serait quoi ?
+
+Louis Zawadzki (56:17.294)
+tu rejoins une boîte en hypercroissance
+
+Je pense qu'il a, surtout au moment de l'hyper-croissance, beaucoup de choses qui se font via des opportunités où il faut être peu réactif et sauter sur le truc. C'est-à-dire que n'es pas dans une boîte hyper grosse où tout est processisé et ça roule. Tu n'es pas dans une petite start-up où tout le est au courant de tout.
+
+Je pense que les petits moments où tu arrives à avoir des moments un peu machine à café entre guillemets avec les personnes, c'est un truc qui peut vraiment t'aider à arriver à choper les bonnes informations ou avoir les bons échanges avec les personnes et à te retrouver au bon endroit au bon moment.
+
+David Leuliette (57:11.933)
+Je veux être proactif, il aller chercher l'info parce que personne ne sait rien. faut être proactif, j'avoue.
+
+Louis Zawadzki (57:23.495)
+Et pas être négligé, c'est bon.
+
+David Leuliette (57:26.288)
+Ouais, j'avoue. Du coup tu m'as dit, Rack Native chez Doctolib, Nouvelle Arche, Rack Native 086 ou Expo SDK 56. Tout est à jour ?
+
+Louis Zawadzki (57:37.55)
+54 encore... 54.
+
+David Leuliette (57:39.632)
+54.
+
+Louis Zawadzki (57:42.542)
+On a mis la nouvelle archi pour passer à 55, mais il faut encore migrer reanimated.
+
+David Leuliette (57:43.223)
+Y'a pas d'e-e-e-e-
+
+David Leuliette (57:51.321)
+oui bah oui, puis ça se migre pas comme ça, y a des trucs à faire hein, en plus c'est ça hein. Non mais c'est bien tu vois ça vaut.
+
+Louis Zawadzki (57:57.367)
+RANIMATED, ça va encore mais il en une autre qui est un peu plus costaud, sais plus ce que c'est. UNISTYLE, UNISTYLE qu'il faut qu'on migre aussi. Là, va être un peu plus costaud.
+
+David Leuliette (58:03.056)
+Ah oui, ok. Ok, oui, oui, oui, oui, parce que l'impact il est un peu plus vénère, j'avoue. Et dernière question, est-ce que le synchronisation de data de HealthKit ou de Android Health sur l'app DoctorLib, c'est dans le pipe ou pas ? C'est dans le backlog ? Comme ça le médecin, a accès à toutes les data. Tu as 30 secondes pour répondre.
+
+Louis Zawadzki (58:25.539)
+Allo.
+
+Louis Zawadzki (58:29.262)
+Je vais te dire, je pense que nulle part dans le backlog parce qu'il n'y a pas aujourd'hui d'opportunités qui justifient que ce soit vraiment bien. à chaque hackathon qu'il y a en interne, il a un projet où on synchronise des data LSD, parce que c'est toujours un truc cool à faire, mais aujourd'hui, non, on n'a pas ça dans le pipe exactement.
+
+David Leuliette (58:43.312)
+Mmh.
+
+David Leuliette (58:52.984)
+y'a pas... Et c'est même pas une demande des médecins ? Genre ouais j'aimerais avoir vos données depuis euh...
+
+Louis Zawadzki (59:00.334)
+Je pense qu'il y a une... Derrière tout ça, y quand même... Il y a plusieurs questions derrière de quels produits ont construit, pour quels besoins exactement et comment on présente cette donnée-là, qui font qu'aujourd'hui, ce n'est pas l'apriol numéro 1. Peut-être ça la deviendra dans les prochaines années. Voilà.
+
+David Leuliette (59:09.648)
+Ouais.
+
+David Leuliette (59:17.988)
+Ok, ok.
+
+Bah ouais, je sais pas, on continuera d'exporter nos données sur Cloud Code et qu'il nous fasse un dashboard web pour le présenter aux médecins, tu vois. C'est ce que j'avais fait en 2.2, j'étais impressionné par...
+
+Bah est-ce qu'il va te sortir ? ouais, quand même.
+
+Louis Zawadzki (59:39.79)
+Bon, allez, allez.
+
+David Leuliette (59:41.708)
+Ok, donc est-ce qu'il a un sujet que tu voudrais absolument aborder aujourd'hui et quelque chose qui tient à coeur qu'on n'a pas encore abordé
+
+Louis Zawadzki (59:53.263)
+J'ai envie de parler d'un truc, rapidement, il nous reste un peu de temps, c'est parler aussi de conférences un petit peu rapidement, de la RAC Native Connection.
+
+David Leuliette (01:00:05.689)
+oui c'est vrai, bah oui t'es dans l'organisation, mais vas-y faut faire un tunnel, vas-y pas de problème, carrément vas-y !
+
+Louis Zawadzki (01:00:12.878)
+J'ai eu la chance d'intégrer l'équipe organisatrice cette année après avoir parlé deux fois à cette conférence. Je pense que toujours l'occasion d'en parler. Je pense qu'il beaucoup de personnes aussi qui se posent la question, et moi le premier, suis posé la question de « est-ce que c'est un intérêt aujourd'hui de continuer à aller à des conférences quand t'as le code qui te fait un truc ? »
+
+David Leuliette (01:00:34.8)
+Mais si encore, oui. Mais si encore plus, parce que du coup tu ne pas quoi. Moi, mon avis c'est que tu ne sais pas que ça existe. Et si tu ne sais pas que ça existe, le code non plus ne saura pas que ça existe. Enfin, le prompter correctement et même exprimer ton besoin tu ne sauras pas en fait, tu ne sauras pas que ça existe. en fait plus que... Moi c'est comme ça que j'ai toujours appris, aller en conférence, même quand je savais rien. Et maintenant, je continue quand même à y aller même si...
+
+David Leuliette (01:01:03.886)
+Ouais je sais pas... Forcément d'apprendre, peut-être moins.
+
+Louis Zawadzki (01:01:06.229)
+Je pense que tu apprends ça et si tu ne l'apprends pas, a des trucs. Je me souviens de la dernière conférence Rack Native Connection où y a eu des talks très poussés sur le fonctionnement de Rack Native. Et sur le coup, tu n'as pas le temps de retenir 10 heures de conférences super intenses. Mais par contre, sais, dans ta coin de ta tête, tu Ah oui, si un jour, j'ai besoin de ce truc-là, je sais qu'il a un mec qui donné une conférence là-dessus. » Et ça m'est arrivé de retrouver des conférences...
+
+celle de Anno, de Margelo en particulier, ça m'est arrivé d'aller la revoir. en fait, parce que j'avais eu un bug qui touchait un truc similaire, on dirait « maintenant je comprends bien » et en fait, ça m'aide. Et je pense qu'il y a ce truc-là aussi des conférences et que de plus en plus, je pense que de plus en plus, tu vois, les agents IA vont être capables de faire des trucs très complexes, de débugger des bugs, surtout dans du debug, quand tu vas trouver des bugs un peu bizarres, d'aller comprendre un peu le truc.
+
+mais ils vont être quand même capables de t'inventer des trucs aussi. Et toi, il que tu sois capable à ce moment-là de dire, attends, là, il est en train de me boule-cheater, ça, c'est pas bon. Ça, il me dit que là, il n'a pas de de mais en fait, non, non, non, moi, je sais qu'il a pas ça. Alors après, on va voir quand Fab sera de retour. Est-ce qu'il est meilleur encore ? mais au final, c'est toujours l'humain qui doit prendre la décision. Et donc, il y toujours un moment où il y aura une personne.
+
+David Leuliette (01:02:09.232)
+c'est nul. je vous...
+
+David Leuliette (01:02:20.848)
+Ahahahah
+
+Louis Zawadzki (01:02:30.83)
+qui devra dire, oui, je confirme que ce qui est fait là, ça fonctionne. en fait, les trucs que tu vois très rarement, comment ça fonctionne avec Native, comment tel truc fonctionne derrière, le jour où tu en as besoin. Et en fait, tu es content de le savoir. en fait, pour moi, c'est pour ça que c'est toujours intéressant de continuer à aller aux conférences. fait, le besoin de faire le truc, tu n'auras plus besoin forcément de... Enfin, n'auras peut-être moins de conférences.
+
+comme des conférences qu'on voyait il y a quelques années, je pas, il 10 ans quand je commençais à aller aux conférences, tu voyais comment intégrer GraphQL dans ton app. Peut-être que ça aujourd'hui, ça perd un peu d'intérêt.
+
+David Leuliette (01:03:09.616)
+Ouais c'est plus des tutos, les tutos t'auras un peu moins Ouais quoi ouais
+
+Louis Zawadzki (01:03:14.188)
+Ouais, peut-être un peu moins, mais en fait... Enfin, je pense que les deep dives sur les sujets, ça reste toujours aussi pertinent. D'un point, puis intellectuellement, trouve que c'est super intéressant d'aller comprendre des choses très pointues, hyper satisfaisant, et puis je pense que ça a toujours énormément de valeur pour tout le monde.
+
+David Leuliette (01:03:34.788)
+Ouais c'est pareil, même fait d'un workshop, là c'est pareil, j'ai refait un workshop avec Native Web à App.js Sans y à
+
+Et oui monsieur on a tapé à la main, juste avec l'auto complete. Puis à midi on a arrêté parce que ça nous rendait fous. Mais... avec Matisse on a craqué, enfin vas-y, vas-y. Mais c'est parce qu'en fait on savait déjà, entre guillemets. Enfin c'est des choses qu'on savait déjà donc bon. Mais toujours bien de rebosser à la base. Super, qui c'est qu'on invite ensuite ?
+
+tu as une idée avec un angle d'attaque ouais carrément
+
+Louis Zawadzki (01:04:18.318)
+Merci beaucoup.
+
+Louis Zawadzki (01:04:21.934)
+à proposer un prochain speaker. Qui est-ce qu'on invite ? Allez, j'ai envie de dire mes amis de la conférence React Native Connection.
+
+David Leuliette (01:04:39.344)
+Ah bah oui oui carrément ! Vas-y vas-y, avoir la bonne chance ! Bah je sais pas, vas-y propose, ça va être compliqué hein...
+
+Louis Zawadzki (01:04:42.318)
+Je sais pas lesquels tu as déjà eu.
+
+Louis Zawadzki (01:04:49.902)
+Ah oui, alors j'ai vu qu'il y avait Ludwig dans le chat, mais alors je crois que tu l'as déjà eu. Est-ce que tu as déjà eu Alexandre Mourau aussi ?
+
+David Leuliette (01:04:53.513)
+Oui, on a déjà eu Thibaut aussi.
+
+David Leuliette (01:05:01.04)
+non je n'ai pas eu l'été dans le backlog tu veux aller hop c'est bon ce sera parfait ça me va
+
+Louis Zawadzki (01:05:05.998)
+Bon.
+
+Louis Zawadzki (01:05:10.574)
+Tu vois, je comprends même pas que je sois passé à avoir Alexandre Mourau.
+
+David Leuliette (01:05:14.32)
+C'est parce qu'on blémera le community manager du cross-platform show qui fait n'importe quoi avec le backlog des invités.
+
+Louis Zawadzki (01:05:17.646)
+...
+
+Louis Zawadzki (01:05:25.166)
+Et si t'as pas eu d'elfine non plus, je te recommande RGC que chez...
+
+David Leuliette (01:05:32.418)
+Si si mais ça c'est parce que Oeil du Cyclone, c'est classé secret défense.
+
+Louis Zawadzki (01:05:42.798)
+C'est pas évident mais je suis ok.
+
+David Leuliette (01:05:43.824)
+Enfin, ouais, c'est ça, c'est parce qu'en fait en ce moment, Mistralet, ils sont un peu sous l'oeil des projecteurs. Et il faut faire tout valider par le marketing avant. Et du coup, pff, ouais, chiant quoi. Enfin, ça demande beaucoup trop de travail en ce moment, je pense qu'ils ont pas trop la tête à ça, Ce que je comprends carrément. Mais peut-être, one day, tu vois, peut-être qu'on aura des Elphides, vas-y. On va, on reproposera, tu vois, jusqu'à ce qu'elles viennent. Excellent.
+
+Louis, les gens, où est-ce qu'ils peuvent te retrouver sur Internet s'ils veulent suivre ton travail ou te contacter ?
+
+Louis Zawadzki (01:06:19.63)
+Internet, écoute, moi je ne pas trop sur les réseaux sociaux mais s'ils veulent me joindre, a toujours LinkedIn en vrai, et sinon il faut venir au meetup Racknative Paris ou aux conférences comme la Racknative Connection.
+
+David Leuliette (01:06:37.936)
+Ah bah ouais carrément pour venir discuter en vrai, folie vous dites bonjour et tout ça va bien se passer on est très sympa. Ok super si vous avez appris quelque chose dans cet épisode, si vous voulez nous aider il vous mettre 5 étoiles sur Spotify et 5 étoiles sur Apple Podcasts. Le lien est dans la description et c'est wishypity.today.podcast pour retrouver tous les liens Louis
+
+En une phrase mémorable, qu'est-ce que tu vas chiper dans les 30 prochains jours ?
+
+Louis Zawadzki (01:07:10.862)
+Qu'est-ce que je vais chipper dans les 30 prochains jours ? Alors, j'aimerais bien pouvoir te le dire, mais je ne pas encore te le
+
+David Leuliette (01:07:19.888)
+C'est beau, c'est génial, on va couper là dessus. Allez les amis, ciao ! C'est confidentiel, revenez dans 30 jours, ce sera peut-être en ligne. Ce sera en ligne dans 30 jours ou pas ?
+
+Louis Zawadzki (01:07:31.521)
+Oui normalement.
+
+David Leuliette (01:07:33.36)
+Essayez de deviner ce qui a changé sur Doctolib les 30 prochains jours. Ou venez en parler en off à Louis. c'est vrai on a même pas dit quand c'était Ragnative Connection, c'est en septembre. Le 24 septembre.
+
+Louis Zawadzki (01:07:47.444)
+Exactement.
+
+David Leuliette (01:07:50.56)
+Allez, merci d'avoir suivi l'épisode et à bientôt. Ciao !
+

@@ -22,6 +22,22 @@ export interface PodcastEpisode {
 // Ordered newest first (highest episode number first).
 export const podcastEpisodes: PodcastEpisode[] = [
   {
+    number: 26,
+    slug: 'doctolib',
+    name: 'Doctolib',
+    title:
+      'Scaler une app mobile en hypercroissance : Doctolib (50M users) avec Louis Zawadzki',
+    description_short:
+      "Comment Doctolib fait tenir une app mobile critique à 50M d'utilisateurs : WebView, incidents, migration React Native et architecture à 20 devs, avec Louis Zawadzki.",
+    hosts: ['David Leuliette'],
+    guests: ['Louis Zawadzki'],
+    spotify_url: 'https://open.spotify.com/episode/6DJaZSwTFJTK8SIT5O7EMF',
+    apple_podcast_url:
+      'https://podcasts.apple.com/fr/podcast/scaler-une-app-mobile-en-hypercroissance-doctolib-50m/id1790867559?i=1000784243567',
+    youtube_embed_id: 'PaIacBM6Kmk',
+    company_logo: '/images/podcast-logos/doctolib.webp',
+  },
+  {
     number: 25,
     slug: 'thibault-lenclos',
     name: 'Premier Octet',

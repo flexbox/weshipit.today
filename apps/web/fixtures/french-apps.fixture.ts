@@ -374,6 +374,7 @@ export const frenchAppsFixture: frenchApps = {
         'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/9a/09/4b/9a094bd4-54b6-4f58-9c1c-c5cff1135deb/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/460x0w.webp',
       name: 'Doctolib',
       website_url: 'https://www.doctolib.fr/',
+      podcast_url: 'https://open.spotify.com/episode/6DJaZSwTFJTK8SIT5O7EMF',
     },
     {
       android_url:
