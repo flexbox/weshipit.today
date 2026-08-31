@@ -29,6 +29,10 @@ const NavLinks = ({ activeRoute }: { activeRoute: string }) => {
         <Link href="/about">Why me</Link>
       </Label>
 
+      <Label $isActive={activeRoute === 'Customers'}>
+        <Link href="/customers">Customers</Link>
+      </Label>
+
       <Label $isActive={activeRoute === 'Talks'}>
         <Link href="/talks">Talks</Link>
       </Label>
@@ -50,6 +54,10 @@ export default function Header() {
 
   let activeRoute = '';
   let activePath = '/';
+  if (router.pathname.includes('/customers')) {
+    activeRoute = 'Customers';
+    activePath = '/customers';
+  }
   if (router.pathname.includes('/products')) {
     activeRoute = 'Products';
     activePath = '/products';
