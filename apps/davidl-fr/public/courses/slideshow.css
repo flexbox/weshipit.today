@@ -123,3 +123,8 @@ a:hover {
 .no-padding {
   padding: 0 !important;
 }
+
+/* opt-in: shrink code so side-by-side snippets don't overflow a column */
+.compact .remark-code {
+  font-size: 0.62em;
+}
