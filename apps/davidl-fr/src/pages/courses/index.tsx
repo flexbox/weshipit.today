@@ -17,6 +17,10 @@ const SEO_DATA = {
 
 const coursesList = [
   {
+    title: 'Fighting legacy codebase to improve velocity',
+    link: '/courses/legacy.html',
+  },
+  {
     title: 'Git & GitHub 101 —introduction to version control',
     link: '/courses/git-101.html',
   },
