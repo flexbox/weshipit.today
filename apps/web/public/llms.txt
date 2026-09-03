@@ -1,13 +1,49 @@
 # weshipit.today
 
-> weshipit helps startups teams to release their mobile apps build with React Native.
+> weshipit.today is a remote React Native agency run by David Leuliette and Matthys Ducroq. We help funded startups and product teams ship, audit, test, and maintain their mobile apps — on a flat monthly fee instead of billable hours.
+
+Site content is bilingual: service and reference pages are mostly in English, the podcast and a few offers are in French. The canonical host is https://weshipit.today. The full URL list lives at https://weshipit.today/sitemap.xml.
+
+## Services
+
+- [Hire React Native Developers as a Service](https://weshipit.today/): Subscription-based React Native developers. One flat fee, zero billable hours. Pause or cancel anytime.
+- [React Native Audit](https://weshipit.today/audit): Full codebase audit in 2 weeks — prioritized backlog, dependency upgrades, unblocked releases.
+- [React Native E2E Testing with Maestro](https://weshipit.today/react-native-testing): Done-for-you end-to-end testing. We write YAML flows for your 5 core user journeys, wire CI/CD, and hand off in 2 weeks. A simpler alternative to Detox.
+- [Migrate to Expo](https://weshipit.today/react-native-migration): Migration package to move an existing React Native codebase to Expo, with EAS Build and EAS Update.
+- [React Native Consulting](https://weshipit.today/consulting): Consulting for engineering teams that want to ship faster, cut technical debt, and level up their mobile practices.
+- [Machine à shipper (FR)](https://weshipit.today/bonjour): 5k€/mois sans engagement — on reprend ton app React Native : fondations, observabilité, CI/CD, performance.
+
+## Free tools and resources
+
+- [Audit React Native gratuit (FR)](https://weshipit.today/audit-gratuit): 32-question self-assessment of a React Native stack (foundations, ecosystem, data layer, devops). Instant score out of 100 plus a detailed report by email.
+- [React Native Tools](https://weshipit.today/react-native-tools): 50+ curated tools and libraries — analytics, CI/CD, debugging, UI components — each with its own page.
+- [React Native Developer Tools](https://weshipit.today/devtools): Desktop and mobile apps developers need to debug, test, and ship — iOS, Android, and Bluetooth testing.
+- [React Native Glossary](https://weshipit.today/react-native-glossary): React Native terms explained, from JSX and Flexbox to the New Architecture, Fabric, and Turbo Modules.
+- [React Native Starters](https://weshipit.today/react-native-starters): Starter templates and boilerplate repos to bootstrap a React Native project.
+- [React Native Resources](https://weshipit.today/react-native-resources): Guides, tutorials, podcasts, and newsletters for learning React Native.
+- [React Native Weekly Plan](https://weshipit.today/plan): Weekly roundup of what shipped in the React Native, Expo, and React ecosystem, one page per ISO week.
+
+## Podcast
+
+- [Le Cross Platform Show](https://weshipit.today/podcast): French-language React Native podcast for CTOs and mobile leads — scaling a team from 2 to 15 devs, avoiding technical debt, cutting time-to-market. Guests from Alan, Doctolib, Cdiscount, Swan, Shine, Ornikar, and more.
+- Every episode has a page at `/podcast/{slug}` and a full transcript at `/podcast/{slug}/transcript`.
 
 ## Company
-- [Getting Started] (https://weshipit.today): Step-by-step guide to work with us
-- [Customers] (https://weshipit.today/customers): List of our customers
-- [React Native Audits] (https://weshipit.today/audit): Eradicating your technical debt caused by a lack of expertise or capacity within your team.
-- [React Native Podcast] (https://weshipit.today/podcast): Le podcast francophone incontournable pour les développeurs cross-platform, explorant React Native.
 
-## Tutorials
-- [React Native Resources] (https://weshipit.today/react-native-resources): Starting mobile app development with React Native.
-- [React Native Starters] (https://weshipit.today/react-native-starters): The best Starter Templates for busy developers.
+- [About](https://weshipit.today/about): The team behind weshipit.today — David Leuliette and Matthys Ducroq.
+- [Customer stories](https://weshipit.today/customers): Funded startups and scale-ups we helped build, improve, and maintain React Native apps.
+- [React Native usage among French companies](https://weshipit.today/french-react-native-apps): How BlaBlaCar, Doctolib, Ledger, Shine, and others use React Native.
+
+## Solopreneur reviews (FR)
+
+Independent French-language reviews and comparisons, published with affiliate links.
+
+- [Avis Incubateur Solopreneur](https://weshipit.today/avis-incubateur-solopreneur): Honest review of Flavie Prevot's Incubateur Solopreneur after 6 months inside.
+- [Flavie Prevot : avis et parcours](https://weshipit.today/flavie-prevot-avis): Who Flavie Prevot is — background, newsletter, podcast, public reviews and reputation.
+- [Incubateur Solopreneur vs Marketing Mania](https://weshipit.today/incubateur-solopreneur-vs-marketing-mania): Side-by-side comparison of the two programs — format, price, pace, community.
+- [Code réduction Incubateur Solopreneur](https://weshipit.today/code-reduction-solopreneur): Current pricing and the official affiliate discount.
+
+## Optional
+
+- [Agentic Sprint React Native (FR)](https://weshipit.today/agentic-sprint): One-month online batch for React Native developers — build AI agents that triage Sentry crashes, write Maestro tests, and prepare EAS releases on your own app.
+- [Indie Hackers Coding Retreat](https://weshipit.today/retreat): A week of immersive coding, learning, and networking.
