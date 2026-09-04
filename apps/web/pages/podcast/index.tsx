@@ -44,6 +44,8 @@ const APPLE_PODCAST_URL =
 const SPOTIFY_URL =
   'https://open.spotify.com/show/69dZrIeMZ2S2QELCGp6gW1?si=27c63da998b8487d';
 const DEEZER_URL = 'https://www.deezer.com/show/1001735451';
+const PODSTAN_URL =
+  'https://podstan.com/podcast/le-cross-platform-show-le-talk-show-francophone-sur-le-dev-r-7172021';
 const RSS_URL = 'https://anchor.fm/s/ffc13f2c/podcast/rss';
 
 const EPISODES_PREVIEW_COUNT = 6;
@@ -212,6 +214,14 @@ export default function Podcast() {
             className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200"
           >
             Deezer
+          </Hyperlink>
+          <span>·</span>
+          <Hyperlink
+            href={PODSTAN_URL}
+            isExternal
+            className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200"
+          >
+            Podstan
           </Hyperlink>
           <span>·</span>
           <Hyperlink
