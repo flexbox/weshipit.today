@@ -7,8 +7,21 @@ module.exports = {
   // (The previous value, dist/apps/web/public, is neither served nor committed,
   // so the generated sitemap was silently dropped and /sitemap-0.xml 404'd.)
   outDir: 'apps/web/public',
-  exclude: ['/qr', '/brand', '/onboarding', '/home'],
+  exclude: [
+    '/qr',
+    '/brand',
+    '/onboarding',
+    '/home',
+    // Invite-only and admin surfaces.
+    '/testimonial/*',
+    '/testimonials/moderation',
+    // Published testimonials are ISR pages that don't exist at build time —
+    // they are listed by /testimonials-sitemap.xml instead.
+    '/testimonials/*',
+    '/testimonials-sitemap.xml',
+  ],
   robotsTxtOptions: {
+    additionalSitemaps: ['https://weshipit.today/testimonials-sitemap.xml'],
     policies: [
       {
         userAgent: '*',
