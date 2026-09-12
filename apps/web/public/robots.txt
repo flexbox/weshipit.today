@@ -4,6 +4,51 @@ Allow: /
 Allow: /api/og/
 Disallow: /api/
 
+# GPTBot
+User-agent: GPTBot
+Allow: /
+Disallow: /api/
+
+# OAI-SearchBot
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /api/
+
+# ChatGPT-User
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /api/
+
+# ClaudeBot
+User-agent: ClaudeBot
+Allow: /
+Disallow: /api/
+
+# Claude-User
+User-agent: Claude-User
+Allow: /
+Disallow: /api/
+
+# PerplexityBot
+User-agent: PerplexityBot
+Allow: /
+Disallow: /api/
+
+# Perplexity-User
+User-agent: Perplexity-User
+Allow: /
+Disallow: /api/
+
+# Google-Extended
+User-agent: Google-Extended
+Allow: /
+Disallow: /api/
+
+# Applebot-Extended
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /api/
+
 # Host
 Host: https://weshipit.today/
 

@@ -10,6 +10,7 @@ import {
   resolveTermSlug,
   type GlossaryTerm,
 } from '../../utils/glossary';
+import { AUTHOR_SCHEMA, PUBLISHER_SCHEMA } from '../../utils/schema';
 
 const SITE_URL = 'https://weshipit.today';
 const GLOSSARY_PATH = '/react-native-glossary';
@@ -21,6 +22,8 @@ interface TermLink {
 
 interface GlossaryTermPageProps {
   title: string;
+  summary: string;
+  aliases: string[];
   content: string;
   previousTerm: TermLink | null;
   nextTerm: TermLink | null;
@@ -30,6 +33,7 @@ interface GlossaryTermPageProps {
   termUrl: string;
   seoDescription: string;
   definedTermSchema: object;
+  articleSchema: object;
   breadcrumbSchema: object;
 }
 
@@ -82,23 +86,54 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     )
     .map(toTermLink);
 
-  const seoDescription = term.plainText
-    ? `${term.plainText.slice(0, 152)}...`
-    : `Learn about ${term.title} in React Native development.`;
+  // The hand-written summary beats a truncated body: it is a complete
+  // sentence, so it survives being quoted in a SERP or an AI answer.
+  const seoDescription =
+    term.summary || `Learn about ${term.title} in React Native development.`;
 
   const termUrl = `${SITE_URL}${GLOSSARY_PATH}/${term.slug}`;
 
   const definedTermSchema = {
     '@context': 'https://schema.org',
     '@type': 'DefinedTerm',
+    '@id': termUrl,
     name: term.title,
-    description: term.plainText || undefined,
+    alternateName: term.aliases.length ? term.aliases : undefined,
+    description: term.summary || undefined,
     url: termUrl,
+    inLanguage: 'en',
+    dateModified: term.updated ?? undefined,
+    author: AUTHOR_SCHEMA,
+    publisher: PUBLISHER_SCHEMA,
     inDefinedTermSet: {
       '@type': 'DefinedTermSet',
       name: 'React Native Glossary',
       url: `${SITE_URL}${GLOSSARY_PATH}`,
     },
+  };
+
+  // DefinedTerm alone carries no article body. Pairing it with TechArticle
+  // gives crawlers the full definition text, the author and the update date.
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'TechArticle',
+    headline: `What is ${term.title} in React Native?`,
+    description: term.summary || undefined,
+    articleBody: term.plainText || undefined,
+    wordCount: term.wordCount,
+    url: termUrl,
+    inLanguage: 'en',
+    dateModified: term.updated ?? undefined,
+    datePublished: term.updated ?? undefined,
+    author: AUTHOR_SCHEMA,
+    publisher: PUBLISHER_SCHEMA,
+    about: { '@id': termUrl },
+    isPartOf: {
+      '@type': 'CollectionPage',
+      name: 'React Native Glossary',
+      url: `${SITE_URL}${GLOSSARY_PATH}`,
+    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': termUrl },
   };
 
   const breadcrumbSchema = {
@@ -123,6 +158,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   return {
     props: {
       title: term.title,
+      summary: term.summary,
+      aliases: term.aliases,
       content: term.content,
       previousTerm,
       nextTerm,
@@ -132,6 +169,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       termUrl,
       seoDescription,
       definedTermSchema,
+      articleSchema,
       breadcrumbSchema,
     },
   };
@@ -207,6 +245,8 @@ function TermChips({ terms }: { terms: TermLink[] }) {
 
 export default function GlossaryTermPage({
   title,
+  summary,
+  aliases,
   content,
   previousTerm,
   nextTerm,
@@ -216,6 +256,7 @@ export default function GlossaryTermPage({
   termUrl,
   seoDescription,
   definedTermSchema,
+  articleSchema,
   breadcrumbSchema,
 }: GlossaryTermPageProps) {
   const formattedDate = updatedAt
@@ -240,6 +281,12 @@ export default function GlossaryTermPage({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(definedTermSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(articleSchema),
           }}
         />
         <script
@@ -275,6 +322,12 @@ export default function GlossaryTermPage({
             {title}
           </h1>
 
+          {aliases.length > 0 && (
+            <p className="mt-5 text-center text-neutral-400 dark:text-neutral-500">
+              Also called {aliases.join(', ')}
+            </p>
+          )}
+
           <div className="mt-10">
             <CopyLinkButton url={termUrl} />
           </div>
@@ -288,6 +341,10 @@ export default function GlossaryTermPage({
                 React Native Glossary
               </Link>
             </MetaRow>
+
+            {aliases.length > 0 && (
+              <MetaRow label="Also known as">{aliases.join(', ')}</MetaRow>
+            )}
 
             {relatedTerms.length > 0 && (
               <MetaRow label="Related">
@@ -314,6 +371,12 @@ export default function GlossaryTermPage({
           <h2 className="font-display text-3xl font-bold tracking-[-0.03em] text-balance text-neutral-950 sm:text-4xl dark:text-neutral-100">
             What is {title} in React Native?
           </h2>
+
+          {/* The lede repeats the summary so the answer is complete within the
+              first 40 words — the window an AI answer usually quotes. */}
+          <p className="mt-6 text-xl leading-relaxed font-medium text-balance text-neutral-900 sm:text-2xl dark:text-neutral-100">
+            {summary}
+          </p>
 
           <div className="mt-6 text-lg leading-relaxed text-neutral-700 sm:text-xl [&_a:hover]:text-blue-600 [&_a]:underline [&_a]:underline-offset-2 [&>*+*]:mt-5 dark:text-neutral-300 dark:[&_a:hover]:text-blue-400">
             <GlossaryMarkdown>{content}</GlossaryMarkdown>

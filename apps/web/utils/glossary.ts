@@ -15,6 +15,14 @@ export interface GlossaryTerm {
   title: string;
   /** Section heading: the first letter, or `#` for anything starting with a digit. */
   letter: string;
+  /**
+   * One- or two-sentence blurb. Shown on the index and used as the meta
+   * description, so the listing stays scannable while the term page carries
+   * the full definition.
+   */
+  summary: string;
+  /** Other names for the same concept — feeds search and `alternateName`. */
+  aliases: string[];
   /** ISO date (YYYY-MM-DD) from frontmatter, or null when unset. */
   updated: string | null;
   /** Titles of terms the author explicitly linked. */
@@ -23,6 +31,8 @@ export interface GlossaryTerm {
   content: string;
   /** Body stripped of markdown syntax — for search, meta descriptions and schema. */
   plainText: string;
+  /** Words in the body — used by the content-coverage check in the tests. */
+  wordCount: number;
 }
 
 function firstLetterOf(title: string) {
@@ -66,6 +76,20 @@ function toIsoDate(value: unknown): string | null {
   return null;
 }
 
+/** First one or two sentences, used when a file declares no explicit summary. */
+function firstSentences(plainText: string, max = 240) {
+  if (plainText.length <= max) return plainText;
+  const clipped = plainText.slice(0, max);
+  const lastStop = clipped.lastIndexOf('. ');
+  return lastStop > 60 ? clipped.slice(0, lastStop + 1) : `${clipped.trim()}…`;
+}
+
+function toStringArray(value: unknown): string[] {
+  return Array.isArray(value)
+    ? value.filter((item): item is string => typeof item === 'string')
+    : [];
+}
+
 function parseTerm(filename: string): GlossaryTerm | null {
   const raw = fs.readFileSync(path.join(GLOSSARY_DIR, filename), 'utf8');
   const { data, content } = matter(raw);
@@ -74,17 +98,22 @@ function parseTerm(filename: string): GlossaryTerm | null {
   if (!title) return null;
 
   const body = content.trim();
+  const plainText = toPlainText(body);
 
   return {
     slug: filename.replace(/\.md$/, ''),
     title,
     letter: firstLetterOf(title),
+    summary:
+      typeof data.summary === 'string' && data.summary.trim()
+        ? data.summary.trim()
+        : firstSentences(plainText),
+    aliases: toStringArray(data.aliases),
     updated: toIsoDate(data.updated),
-    related: Array.isArray(data.related)
-      ? data.related.filter((item): item is string => typeof item === 'string')
-      : [],
+    related: toStringArray(data.related),
     content: body,
-    plainText: toPlainText(body),
+    plainText,
+    wordCount: plainText ? plainText.split(/\s+/).length : 0,
   };
 }
 

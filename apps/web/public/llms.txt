@@ -23,6 +23,51 @@ Site content is bilingual: service and reference pages are mostly in English, th
 - [React Native Resources](https://weshipit.today/react-native-resources): Guides, tutorials, podcasts, and newsletters for learning React Native.
 - [React Native Weekly Plan](https://weshipit.today/plan): Weekly roundup of what shipped in the React Native, Expo, and React ecosystem, one page per ISO week.
 
+## React Native Glossary
+
+Plain-English definitions of 40 React Native terms, written for developers new to the ecosystem. Index: https://weshipit.today/react-native-glossary
+
+- [Animated Component](https://weshipit.today/react-native-glossary/animated-component): An animated component is a React Native view whose style values are driven by an animation library — Reanimated or the built-in Animated API — rather than by plain state.
+- [Bridge](https://weshipit.today/react-native-glossary/bridge): The bridge was React Native’s original asynchronous, JSON-serialised channel between JavaScript and native code. The New Architecture replaces it with JSI.
+- [Codegen](https://weshipit.today/react-native-glossary/codegen): Codegen generates the native C++, Java and Objective-C binding code for TurboModules and Fabric components from TypeScript spec files, at build time.
+- [Communication Layer](https://weshipit.today/react-native-glossary/communication-layer): The communication layer is everything that lets JavaScript talk to native platform code — historically the bridge, and today JSI, TurboModules and Codegen.
+- [Continuous Native Generation](https://weshipit.today/react-native-glossary/continuous-native-generation): Continuous Native Generation (CNG) regenerates the ios and android folders from app config and config plugins, so native projects are build artefacts rather than hand-edited source.
+- [Core Components](https://weshipit.today/react-native-glossary/core-components): Core components are the built-in building blocks React Native ships with — View, Text, Image, ScrollView, TextInput — each backed by a real native view on iOS and Android.
+- [Dev Menu](https://weshipit.today/react-native-glossary/dev-menu): The dev menu is the in-app debugging panel available in development builds, offering reload, the element inspector, performance monitor and debugger connection.
+- [Development Build](https://weshipit.today/react-native-glossary/development-build): A development build is a debug build of your own app containing your native dependencies plus the Expo dev client, so you can load JavaScript from Metro and use any native library.
+- [EAS](https://weshipit.today/react-native-glossary/eas): EAS (Expo Application Services) is Expo’s hosted cloud service for building, submitting and updating React Native apps without maintaining your own Xcode and Gradle infrastructure.
+- [Expo](https://weshipit.today/react-native-glossary/expo): Expo is a framework and toolchain built on React Native. It supplies routing, native modules, build services and updates so teams do not assemble that stack themselves.
+- [Expo Router](https://weshipit.today/react-native-glossary/expo-router): Expo Router is a file-based routing library for React Native. Files in the app directory become routes, with deep links and typed navigation derived automatically.
+- [Fabric Renderer](https://weshipit.today/react-native-glossary/fabric-renderer): Fabric is React Native’s rendering system. It builds the view tree in C++ and mounts real native views, replacing the legacy Paper renderer.
+- [Fast Refresh](https://weshipit.today/react-native-glossary/fast-refresh): Fast Refresh reloads edited React components in a running app within a second, preserving component state where it safely can.
+- [FlatList](https://weshipit.today/react-native-glossary/flatlist): FlatList is React Native’s virtualised list component. It renders only the rows near the viewport, keeping memory flat no matter how long the data is.
+- [Flexbox](https://weshipit.today/react-native-glossary/flexbox): Flexbox is the layout system React Native uses for every view. It matches CSS Flexbox closely, with a column default direction and a few React Native specific differences.
+- [Hermes](https://weshipit.today/react-native-glossary/hermes): Hermes is the JavaScript engine Meta built for React Native. Default since version 0.70, it precompiles code to bytecode for faster startup and lower memory use.
+- [Host Platform](https://weshipit.today/react-native-glossary/host-platform): The host platform is the operating system embedding React Native — iOS, Android, macOS, Windows, tvOS or the web — and the source of the real views your components render to.
+- [JavaScript Bundle](https://weshipit.today/react-native-glossary/javascript-bundle): The JavaScript bundle is the single file Metro produces from your source code. It ships inside the app binary and is what the JavaScript engine actually executes.
+- [JavaScript Runtime](https://weshipit.today/react-native-glossary/javascript-runtime): The JavaScript runtime is the engine that executes your app’s JavaScript on the device. React Native ships Hermes by default, with JavaScriptCore as the alternative.
+- [JavaScript Thread](https://weshipit.today/react-native-glossary/javascript-thread): The JavaScript thread is where your React components, business logic and event handlers run. Blocking it makes the app feel frozen even though native rendering continues.
+- [JSI](https://weshipit.today/react-native-glossary/jsi): JSI (JavaScript Interface) is a lightweight C++ API that lets JavaScript hold direct references to native objects and call them synchronously, replacing the bridge.
+- [JSX](https://weshipit.today/react-native-glossary/jsx): JSX is a syntax extension for JavaScript that lets you write UI markup directly inside component code. React Native compiles it to plain function calls.
+- [Keys](https://weshipit.today/react-native-glossary/keys): A key is a stable identifier you give each item in a rendered list so React can tell which item is which across renders instead of re-creating them all.
+- [Legacy vs New Architecture](https://weshipit.today/react-native-glossary/legacy-vs-new-architecture): The New Architecture replaces the asynchronous bridge with JSI, Fabric and TurboModules. It has been the default since React Native 0.76.
+- [Metro](https://weshipit.today/react-native-glossary/metro): Metro is React Native’s JavaScript bundler. It resolves imports, transforms code, serves the bundle to the app in development and powers Fast Refresh.
+- [Native Module](https://weshipit.today/react-native-glossary/native-module): A native module is platform code — Swift, Kotlin, Objective-C, Java or C++ — exposed to JavaScript, letting an app reach APIs React Native does not wrap itself.
+- [Over-the-Air Update](https://weshipit.today/react-native-glossary/over-the-air-update): An over-the-air update ships new JavaScript and assets straight to installed apps, skipping app store review. Native code changes still require a new store build.
+- [Platform-Specific Code](https://weshipit.today/react-native-glossary/platform-specific-code): Platform-specific code lets one codebase behave differently per platform, through the Platform module or file extensions such as Button.ios.tsx that Metro resolves automatically.
+- [Props and State](https://weshipit.today/react-native-glossary/props-and-state): Props are the read-only inputs a component receives from its parent. State is the data a component owns and can change, triggering a re-render.
+- [React Elements](https://weshipit.today/react-native-glossary/react-elements): A React element is a lightweight plain-object description of what should appear on screen. React compares elements between renders to work out the smallest native update.
+- [React Navigation](https://weshipit.today/react-native-glossary/react-navigation): React Navigation is the standard navigation library for React Native, providing stack, tab and drawer navigators built on native primitives.
+- [Reanimated](https://weshipit.today/react-native-glossary/reanimated): Reanimated is the standard React Native animation library. It runs animation logic as worklets on the UI thread, so motion stays smooth while JavaScript is busy.
+- [Refs](https://weshipit.today/react-native-glossary/refs): A ref is an escape hatch that holds a mutable value or points at a native component instance, letting you call imperative methods without triggering a re-render.
+- [Safe Area](https://weshipit.today/react-native-glossary/safe-area): The safe area is the part of the screen not covered by the notch, status bar, home indicator or rounded corners. Content must be inset to stay usable.
+- [StyleSheet](https://weshipit.today/react-native-glossary/stylesheet): StyleSheet is React Native’s API for defining styles as JavaScript objects. Styles are plain objects with camelCase properties, not CSS files.
+- [TurboModules](https://weshipit.today/react-native-glossary/turbomodules): TurboModules are the New Architecture’s native modules. They are typed by Codegen, built on JSI, and loaded lazily so startup only pays for what the app actually uses.
+- [UI Thread (Main Thread)](https://weshipit.today/react-native-glossary/ui-thread-main-thread): The UI thread is the platform thread that measures, lays out and draws native views. Everything the user sees is painted here, at 60 or 120 frames per second.
+- [View Component](https://weshipit.today/react-native-glossary/view-component): View is the most basic layout container in React Native — the equivalent of a div on the web, a UIView on iOS and an android.view on Android.
+- [Worklet](https://weshipit.today/react-native-glossary/worklet): A worklet is a small JavaScript function marked to run on the UI thread instead of the JavaScript thread, so animations and gestures stay smooth while JS is busy.
+- [Yoga](https://weshipit.today/react-native-glossary/yoga): Yoga is the cross-platform C++ layout engine React Native uses to implement Flexbox, producing identical layout results on iOS and Android.
+
 ## Podcast
 
 - [Le Cross Platform Show](https://weshipit.today/podcast): French-language React Native podcast for CTOs and mobile leads — scaling a team from 2 to 15 devs, avoiding technical debt, cutting time-to-market. Guests from Alan, Doctolib, Cdiscount, Swan, Shine, Ornikar, and more.

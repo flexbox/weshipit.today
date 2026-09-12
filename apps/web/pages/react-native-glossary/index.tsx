@@ -14,6 +14,7 @@ import {
   resolveTermSlug,
   type GlossaryTerm,
 } from '../../utils/glossary';
+import { AUTHOR_SCHEMA, PUBLISHER_SCHEMA } from '../../utils/schema';
 
 const SITE_URL = 'https://weshipit.today';
 const GLOSSARY_PATH = '/react-native-glossary';
@@ -22,12 +23,52 @@ interface GlossaryEntry {
   title: string;
   slug: string;
   letter: string;
-  /** Markdown body of the definition. */
-  content: string;
-  /** Lowercased title + definition, used for client-side filtering. */
+  /** Short blurb shown in the listing; the full definition lives on the term page. */
+  summary: string;
+  /** Other names for the concept, matched by search and shown under the title. */
+  aliases: string[];
+  /** Lowercased title + aliases + definition, used for client-side filtering. */
   haystack: string;
   relatedTo: { label: string; slug: string }[];
 }
+
+/**
+ * Question-shaped entries for the bottom of the index. These target the
+ * "what is / what's the difference" queries newcomers actually type, and each
+ * answer is self-contained so it can be quoted without the surrounding page.
+ */
+const FAQ = [
+  {
+    question: 'What is React Native in one sentence?',
+    answer:
+      'React Native is an open-source framework from Meta for building iOS and Android apps with React. You write components in JavaScript or TypeScript, and React Native renders them as real native views — a `<View>` becomes a `UIView` on iOS and a `ViewGroup` on Android — rather than drawing them in a web view.',
+  },
+  {
+    question: 'What is the difference between React Native and Expo?',
+    answer:
+      '[React Native](/react-native-glossary/core-components) is the renderer and the bridge to native code. [Expo](/react-native-glossary/expo) is a framework on top of it that adds routing, a library of vetted native modules, cloud builds and over-the-air updates. The React Native docs now recommend starting new apps with a framework, and `npx create-expo-app` is the usual entry point.',
+  },
+  {
+    question: 'What is the New Architecture, and do I need to care?',
+    answer:
+      'The [New Architecture](/react-native-glossary/legacy-vs-new-architecture) replaced the asynchronous [bridge](/react-native-glossary/bridge) with [JSI](/react-native-glossary/jsi), the [Fabric renderer](/react-native-glossary/fabric-renderer) and [TurboModules](/react-native-glossary/turbomodules). It became the default in React Native 0.76 in October 2024. New apps get it automatically — the reason to care is that tutorials written before then describe bridge behaviour that no longer applies.',
+  },
+  {
+    question: 'Why does my app need a rebuild sometimes but not others?',
+    answer:
+      'Anything inside the [JavaScript bundle](/react-native-glossary/javascript-bundle) — components, logic, styles — reloads instantly with [Fast Refresh](/react-native-glossary/fast-refresh) and can even ship as an [over-the-air update](/react-native-glossary/over-the-air-update). Anything outside it — adding a [native module](/react-native-glossary/native-module), changing permissions, upgrading React Native — changes the binary and needs a new build.',
+  },
+  {
+    question: 'Which terms should a React Native beginner learn first?',
+    answer:
+      'Start with the ones you meet on day one: [Core Components](/react-native-glossary/core-components), [JSX](/react-native-glossary/jsx), [Props and State](/react-native-glossary/props-and-state), [Flexbox](/react-native-glossary/flexbox) and [StyleSheet](/react-native-glossary/stylesheet). Then the toolchain — [Expo](/react-native-glossary/expo), [Metro](/react-native-glossary/metro) and [Development Build](/react-native-glossary/development-build) — which is where most setup confusion comes from.',
+  },
+  {
+    question: 'Is this glossary free to use?',
+    answer:
+      'Yes. Every definition is a public page with no signup, maintained by the React Native team at weshipit.today. If a term is missing or a definition has aged badly, the site is open source on [GitHub](https://github.com/flexbox/weshipit.today).',
+  },
+];
 
 export async function getStaticProps() {
   const terms = getAllGlossaryTerms();
@@ -36,25 +77,41 @@ export async function getStaticProps() {
     title: term.title,
     slug: term.slug,
     letter: term.letter,
-    content: term.content,
-    haystack: `${term.title} ${term.plainText}`.toLowerCase(),
+    summary: term.summary,
+    aliases: term.aliases,
+    haystack:
+      `${term.title} ${term.aliases.join(' ')} ${term.plainText}`.toLowerCase(),
     relatedTo: term.related.map((label) => ({
       label,
       slug: resolveTermSlug(label, terms),
     })),
   }));
 
+  const lastUpdated =
+    terms
+      .map((term) => term.updated)
+      .filter((date): date is string => Boolean(date))
+      .sort()
+      .at(-1) ?? null;
+
+  // Carrying each term's definition and alternate names in the set schema lets
+  // an AI crawler answer from this one document without fetching 40 pages.
   const definedTermSetSchema = {
     '@context': 'https://schema.org',
     '@type': 'DefinedTermSet',
     name: 'React Native Glossary',
-    description:
-      'A comprehensive glossary of React Native terms and concepts for mobile developers.',
+    description: `Plain-English definitions of ${terms.length} React Native terms, written for developers new to the ecosystem.`,
     url: `${SITE_URL}${GLOSSARY_PATH}`,
-    hasDefinedTerm: entries.map((entry) => ({
+    inLanguage: 'en',
+    dateModified: lastUpdated ?? undefined,
+    author: AUTHOR_SCHEMA,
+    publisher: PUBLISHER_SCHEMA,
+    hasDefinedTerm: terms.map((term) => ({
       '@type': 'DefinedTerm',
-      name: entry.title,
-      url: `${SITE_URL}${GLOSSARY_PATH}/${entry.slug}`,
+      name: term.title,
+      alternateName: term.aliases.length ? term.aliases : undefined,
+      description: term.summary,
+      url: `${SITE_URL}${GLOSSARY_PATH}/${term.slug}`,
     })),
   };
 
@@ -161,7 +218,7 @@ export default function ReactNativeGlossary({
   return (
     <Layout
       seoTitle="React Native Glossary"
-      seoDescription={`${termCount}+ React Native terms explained — from core concepts like JSX and Flexbox to advanced topics like the New Architecture, Fabric, and Turbo Modules.`}
+      seoDescription={`${termCount} React Native terms explained in plain English for developers new to the ecosystem — Expo, Metro, JSX, Flexbox, Hermes, the New Architecture, Fabric and TurboModules.`}
       ogImageTitle="React Native Glossary"
       withHeader
       withFooter
@@ -238,6 +295,84 @@ export default function ReactNativeGlossary({
             : `${termCount} terms that come up when you build, ship and debug a React Native app.`}
         </p>
 
+        {!isSearching && (
+          <div className="mx-auto mt-8 max-w-2xl text-base leading-relaxed text-neutral-600 dark:text-neutral-400">
+            <p>
+              The React Native glossary is a plain-English reference to the{' '}
+              {termCount} words you meet in React Native tutorials, release
+              notes and pull requests — from{' '}
+              <Link
+                href={`${GLOSSARY_PATH}/jsx`}
+                className="underline underline-offset-2 hover:text-blue-600 dark:hover:text-blue-400"
+              >
+                JSX
+              </Link>{' '}
+              and{' '}
+              <Link
+                href={`${GLOSSARY_PATH}/flexbox`}
+                className="underline underline-offset-2 hover:text-blue-600 dark:hover:text-blue-400"
+              >
+                Flexbox
+              </Link>{' '}
+              to the{' '}
+              <Link
+                href={`${GLOSSARY_PATH}/legacy-vs-new-architecture`}
+                className="underline underline-offset-2 hover:text-blue-600 dark:hover:text-blue-400"
+              >
+                New Architecture
+              </Link>
+              ,{' '}
+              <Link
+                href={`${GLOSSARY_PATH}/fabric-renderer`}
+                className="underline underline-offset-2 hover:text-blue-600 dark:hover:text-blue-400"
+              >
+                Fabric
+              </Link>{' '}
+              and{' '}
+              <Link
+                href={`${GLOSSARY_PATH}/turbomodules`}
+                className="underline underline-offset-2 hover:text-blue-600 dark:hover:text-blue-400"
+              >
+                TurboModules
+              </Link>
+              . Every entry is written for someone new to the ecosystem: what
+              the term means, why it exists, and the mistake it usually causes.
+            </p>
+            <p className="mt-4">
+              New here? Start with{' '}
+              <Link
+                href={`${GLOSSARY_PATH}/expo`}
+                className="underline underline-offset-2 hover:text-blue-600 dark:hover:text-blue-400"
+              >
+                Expo
+              </Link>
+              ,{' '}
+              <Link
+                href={`${GLOSSARY_PATH}/core-components`}
+                className="underline underline-offset-2 hover:text-blue-600 dark:hover:text-blue-400"
+              >
+                Core Components
+              </Link>{' '}
+              and{' '}
+              <Link
+                href={`${GLOSSARY_PATH}/metro`}
+                className="underline underline-offset-2 hover:text-blue-600 dark:hover:text-blue-400"
+              >
+                Metro
+              </Link>
+              , then read{' '}
+              <Link
+                href={`${GLOSSARY_PATH}/legacy-vs-new-architecture`}
+                className="underline underline-offset-2 hover:text-blue-600 dark:hover:text-blue-400"
+              >
+                Legacy vs New Architecture
+              </Link>{' '}
+              to understand why older tutorials describe React Native
+              differently.
+            </p>
+          </div>
+        )}
+
         {sections.length === 0 ? (
           <div className="mx-auto mt-24 max-w-md text-center">
             <p className="font-display text-2xl font-bold tracking-[-0.03em] text-neutral-950 dark:text-neutral-200">
@@ -286,8 +421,13 @@ export default function ReactNativeGlossary({
                               />
                             </Link>
                           </dt>
+                          {term.aliases.length > 0 && (
+                            <p className="mt-1 text-sm text-neutral-400 dark:text-neutral-500">
+                              Also called {term.aliases.join(', ')}
+                            </p>
+                          )}
                           <dd className="mt-3 text-base leading-relaxed text-neutral-600 [&_a:hover]:text-blue-600 [&_a]:underline [&_a]:underline-offset-2 [&>*+*]:mt-3 dark:text-neutral-400 dark:[&_a:hover]:text-blue-400">
-                            <GlossaryMarkdown>{term.content}</GlossaryMarkdown>
+                            <GlossaryMarkdown>{term.summary}</GlossaryMarkdown>
                           </dd>
 
                           {term.relatedTo.length > 0 && (
@@ -347,6 +487,33 @@ export default function ReactNativeGlossary({
               </ul>
             </nav>
           </div>
+        )}
+
+        {!isSearching && (
+          <section
+            aria-labelledby="glossary-faq"
+            className="mx-auto mt-24 max-w-2xl border-t border-neutral-200 pt-12 dark:border-neutral-800"
+          >
+            <h2
+              id="glossary-faq"
+              className="font-display text-2xl font-bold tracking-[-0.03em] text-neutral-950 sm:text-3xl dark:text-neutral-200"
+            >
+              React Native jargon, answered
+            </h2>
+
+            <dl className="mt-8 space-y-8">
+              {FAQ.map((item) => (
+                <div key={item.question}>
+                  <dt className="font-display text-lg font-semibold tracking-[-0.02em] text-neutral-950 dark:text-neutral-200">
+                    {item.question}
+                  </dt>
+                  <dd className="mt-2 leading-relaxed text-neutral-600 [&_a:hover]:text-blue-600 [&_a]:underline [&_a]:underline-offset-2 dark:text-neutral-400 dark:[&_a:hover]:text-blue-400">
+                    <GlossaryMarkdown>{item.answer}</GlossaryMarkdown>
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </section>
         )}
 
         <aside className="mx-auto mt-24 max-w-3xl">
