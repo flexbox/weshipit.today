@@ -21,47 +21,54 @@ Guten Tag. 30 minutes. One idea: the device owns the truth.
 
 ---
 
-class: center, middle
+class: center, bsod
 
 # Who remembers this?
 
 --
 
-## The blue screen of death
+## The Blue Screen of Death
+
+.crash-shot[![Windows 9x blue screen of death](./images/offline-first/Windows_9X_BSOD.png)]
 
 --
 
 Microsoft
+
+--
 
 ???
 ~25s. Hands up. Wait for it.
 
 ---
 
-class: center, middle
+class: center, rrod
 
 # And this one?
 
 --
 
-## The red ring of death
+## The Red Ring of Death
+
+.crash-shot[![Xbox 360 red ring of death](./images/offline-first/Xbox360-ringofdeath.jpg)]
 
 --
 
 Xbox 360
 
+--
+
 ???
-~25s. "Red ring", not "red light".
 
 ---
 
-class: center, middle
+class: center
 
 # And this one?
 
 --
 
-## The white screen of death
+## The White Screen of Hell
 
 --
 
@@ -69,26 +76,23 @@ David Leuliette — Microsoft MVP
 
 ???
 ~30s. Deadpan. If no hands go up, that's the joke — say so.
-This is your whole intro. No bio slide.
 
 ---
 
-class: center, middle
+class: center
 
-![White screen](img/white-screen-of-hell-iphone.png)
+.phone-shot[![White screen of hell on iPhone](./images/offline-first/white-screen-of-hell-iphone-shadow.png)]
 
 ???
 ~10s. Say nothing. Let them look.
 
 ---
 
-class: middle
-
-# This app didn't crash
+# This app didn’t crash
 
 --
 
-## It's waiting for a server it can't reach
+## It’s waiting for a server it can't reach
 
 --
 
@@ -101,7 +105,7 @@ It will wait forever.
 
 class: center, middle
 
-> Why don't we design something as seemingly obvious
+> Why don’t we design something as seemingly obvious
 > and trivial as error messages first?
 
 Vitaly Friedman — founder, Smashing Magazine
@@ -114,7 +118,7 @@ This quote is basically my whole career." That's all — save the rest for the h
 
 class: center, middle
 
-> Why don't we design something as seemingly obvious
+> Why don’t we design something as seemingly obvious
 > and trivial as offline data first?
 
 David Leuliette
@@ -123,8 +127,6 @@ David Leuliette
 ~20s. Through-line. Call back once per decision.
 
 ---
-
-class: middle
 
 # The easy part
 
@@ -150,8 +152,6 @@ export const todos$ = observable(
 Point at fieldDeleted: "remember this line" — pays off in decision 2.
 
 ---
-
-class: middle
 
 # Reads and writes
 

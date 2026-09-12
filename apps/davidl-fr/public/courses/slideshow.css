@@ -128,3 +128,43 @@ a:hover {
 .compact .remark-code {
   font-size: 0.62em;
 }
+
+/* crash screens — `class: center, middle, bsod` / `class: center, middle, rrod`
+   double class beats the dark-mode rule above, so they hold in both themes */
+.remark-slide-content.bsod {
+  background-color: #0000aa; /* Windows blue screen of death */
+}
+
+.remark-slide-content.rrod {
+  background-color: #cc0000; /* Xbox 360 red ring of death */
+}
+
+.remark-slide-content.bsod,
+.remark-slide-content.rrod,
+.remark-slide-content.bsod a,
+.remark-slide-content.rrod a {
+  color: #ffffff;
+}
+
+.remark-slide-content.bsod .remark-inline-code,
+.remark-slide-content.rrod .remark-inline-code {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.remark-slide-content.bsod .remark-slide-number,
+.remark-slide-content.rrod .remark-slide-number {
+  color: #ffffff;
+}
+
+/* screenshot revealed under a heading — px, not vh: remark scales a fixed-size
+   slide, so viewport units overflow the slide box */
+.crash-shot img {
+  max-height: 320px;
+  margin-top: 1rem;
+}
+
+/* portrait screenshot filling a slide of its own */
+.phone-shot img {
+  max-height: 600px;
+}
