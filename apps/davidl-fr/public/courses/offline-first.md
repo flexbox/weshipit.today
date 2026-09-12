@@ -128,6 +128,62 @@ David Leuliette
 
 ---
 
+> because "Milliseconds Matter"
+
+???
+
+for me the answer is clear: optimize for latency.
+The Amazon Benchmark: a famous study showing that every 100ms of added latency costs 1% in sales.
+
+---
+
+- useState (or setState)
+- Context
+- Redux
+- MobX-State-tree
+- Immer
+- Unstated
+- Recoil
+- xState
+- Jotai
+- zustand
+
+<https://github.com/GantMan/ReactStateMuseum>
+
+???
+
+I am in the react ecosystem since 10+ years. I have seen many state management libraries come and go, but the core challenges of offline-first and latency optimization remain the same.
+
+---
+
+## One day, I landed on this
+
+--
+
+.legend-state-brenchmark[![Legendapp State on iPhone](./images/offline-first/legendapp-state.png)]
+
+???
+
+an extremely fast, lightweight (4kb) state management and sync library for and React
+
+---
+
+## And then, one day I got in
+
+--
+
+.legend-state-brenchmark[![Legendapp State on iPhone](./images/offline-first/appjs-2022.png)]
+
+The moment I realized the power of offline-first state management was when I could make changes on my phone without worrying about network connectivity.
+
+???
+
+it's important to come to conferences and hang out with the community.
+
+I hanged out with Catalin Miron, and he shared with me some input on using legend-state.
+
+---
+
 # The easy part
 
 ```js
@@ -172,3 +228,30 @@ It is not why your app breaks.
 
 ???
 ~45s. The pivot. Four decisions come after this.
+
+---
+
+## YOU
+
+--
+
+- Inspired to learn offline-first patterns?
+- Inspired to contribute to talk to your neighbors about offline-first state management?
+
+--
+
+- because Milliseconds Matter
+
+---
+
+David Leuliette
+
+Mobile Engineer @ sunday
+
+<!-- weshipit.today -->
+
+???
+
+I am David aka @flexbox on the internet.
+
+That was my talk. Thanks you.
