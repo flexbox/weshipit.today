@@ -17,6 +17,10 @@ const SEO_DATA = {
 
 const coursesList = [
   {
+    title: 'Offline First Mobile Apps with React Native & LegendState',
+    link: '/courses/offline-first.html',
+  },
+  {
     title: 'Fighting legacy codebase to improve velocity',
     link: '/courses/legacy.html',
   },

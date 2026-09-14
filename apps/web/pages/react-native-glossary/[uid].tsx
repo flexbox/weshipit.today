@@ -1,39 +1,53 @@
 import { Layout } from '../../components/layout';
-import { PrismicRichText } from '@prismicio/react';
-import { asText } from '@prismicio/client';
 import Link from 'next/link';
 import Head from 'next/head';
-import { LinkButton, Text } from '@weshipit/ui';
+import { useState } from 'react';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { GlossaryTerm, getAllGlossaryTerms } from '../api/glossary';
-import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
-import { client as prismicClient } from '../api/prismic';
-import { GlossaryCTA } from '../../components/GlossaryCTA';
-import { slugify } from '../../utils/slugify';
+import { CheckIcon, LinkIcon } from '@heroicons/react/24/outline';
+import { GlossaryMarkdown } from '../../components/glossary-markdown';
+import {
+  getAllGlossaryTerms,
+  resolveTermSlug,
+  type GlossaryTerm,
+} from '../../utils/glossary';
+import { AUTHOR_SCHEMA, PUBLISHER_SCHEMA } from '../../utils/schema';
+
+const SITE_URL = 'https://weshipit.today';
+const GLOSSARY_PATH = '/react-native-glossary';
+
+interface TermLink {
+  title: string;
+  slug: string;
+}
 
 interface GlossaryTermPageProps {
-  term: GlossaryTerm;
-  previousTerm: GlossaryTerm | null;
-  nextTerm: GlossaryTerm | null;
-  relatedArticles: any[];
-  termsByTitle: Record<string, GlossaryTerm>;
+  title: string;
+  summary: string;
+  aliases: string[];
+  content: string;
+  previousTerm: TermLink | null;
+  nextTerm: TermLink | null;
+  relatedTerms: TermLink[];
+  mentionedIn: TermLink[];
+  updatedAt: string | null;
+  termUrl: string;
   seoDescription: string;
   definedTermSchema: object;
+  articleSchema: object;
   breadcrumbSchema: object;
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const { glossaryTerms } = await getAllGlossaryTerms();
+const toTermLink = (term: GlossaryTerm): TermLink => ({
+  title: term.title,
+  slug: term.slug,
+});
 
-  const paths = glossaryTerms
-    .filter((term) => term.data.title)
-    .map((term) => ({
-      params: { uid: slugify(term.data.title) },
-    }));
+export const getStaticPaths: GetStaticPaths = async () => {
+  const terms = getAllGlossaryTerms();
 
   return {
-    paths,
-    fallback: 'blocking',
+    paths: terms.map((term) => ({ params: { uid: term.slug } })),
+    fallback: false,
   };
 };
 
@@ -43,78 +57,83 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     return { notFound: true };
   }
 
-  // Get all glossary terms
-  const { glossaryTerms } = await getAllGlossaryTerms();
+  const terms = getAllGlossaryTerms();
+  const index = terms.findIndex((term) => term.slug === slug);
 
-  // Find the term that matches the slug
-  const term = glossaryTerms.find((term) => slugify(term.data.title) === slug);
-
-  if (!term) {
+  if (index === -1) {
     return { notFound: true };
   }
 
-  // Sort terms alphabetically for prev/next navigation
-  const sortedTerms = [...glossaryTerms].sort((a, b) =>
-    a.data.title.localeCompare(b.data.title),
-  );
-
-  const currentIndex = sortedTerms.findIndex(
-    (t) => slugify(t.data.title) === slug,
-  );
-
-  const previousTerm = currentIndex > 0 ? sortedTerms[currentIndex - 1] : null;
+  const term = terms[index];
+  const previousTerm = index > 0 ? toTermLink(terms[index - 1]) : null;
   const nextTerm =
-    currentIndex < sortedTerms.length - 1
-      ? sortedTerms[currentIndex + 1]
-      : null;
+    index < terms.length - 1 ? toTermLink(terms[index + 1]) : null;
 
-  // Create a map of terms by title for quick lookup
-  const termsByTitle: Record<string, GlossaryTerm> = {};
-  glossaryTerms.forEach((term) => {
-    if (term.data.title) {
-      termsByTitle[term.data.title] = term as unknown as GlossaryTerm;
-    }
-  });
+  const relatedTerms: TermLink[] = term.related.map((label) => ({
+    title: label,
+    slug: resolveTermSlug(label, terms),
+  }));
 
-  // Fetch related articles from Prismic
-  let relatedArticles: any[] = [];
-  if (term.data.related_articles && term.data.related_articles.length > 0) {
-    try {
-      const articlePromises = term.data.related_articles.map(
-        async (article: any) => {
-          if (article.article && article.article.id) {
-            return await prismicClient.getByID(article.article.id);
-          }
-          return null;
-        },
-      );
+  // Terms rarely link each other explicitly, so derive the reverse index:
+  // other definitions that name this one.
+  const titlePattern = new RegExp(
+    `\\b${term.title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`,
+    'i',
+  );
+  const mentionedIn: TermLink[] = terms
+    .filter(
+      (other) => other.slug !== term.slug && titlePattern.test(other.plainText),
+    )
+    .map(toTermLink);
 
-      const articles = await Promise.all(articlePromises);
-      relatedArticles = articles.filter(Boolean);
-    } catch (error) {
-      console.error('Error fetching related articles', error);
-    }
-  }
+  // The hand-written summary beats a truncated body: it is a complete
+  // sentence, so it survives being quoted in a SERP or an AI answer.
+  const seoDescription =
+    term.summary || `Learn about ${term.title} in React Native development.`;
 
-  // Build SEO description from Prismic rich text content
-  const descriptionText = asText(term.data.description);
-  const seoDescription = descriptionText
-    ? `${descriptionText.slice(0, 152)}...`
-    : `Learn about ${term.data.title} in React Native development.`;
-
-  const termUrl = `https://weshipit.today/react-native-glossary/${slug}`;
+  const termUrl = `${SITE_URL}${GLOSSARY_PATH}/${term.slug}`;
 
   const definedTermSchema = {
     '@context': 'https://schema.org',
     '@type': 'DefinedTerm',
-    name: term.data.title,
-    description: descriptionText || undefined,
+    '@id': termUrl,
+    name: term.title,
+    alternateName: term.aliases.length ? term.aliases : undefined,
+    description: term.summary || undefined,
     url: termUrl,
+    inLanguage: 'en',
+    dateModified: term.updated ?? undefined,
+    author: AUTHOR_SCHEMA,
+    publisher: PUBLISHER_SCHEMA,
     inDefinedTermSet: {
       '@type': 'DefinedTermSet',
       name: 'React Native Glossary',
-      url: 'https://weshipit.today/react-native-glossary',
+      url: `${SITE_URL}${GLOSSARY_PATH}`,
     },
+  };
+
+  // DefinedTerm alone carries no article body. Pairing it with TechArticle
+  // gives crawlers the full definition text, the author and the update date.
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'TechArticle',
+    headline: `What is ${term.title} in React Native?`,
+    description: term.summary || undefined,
+    articleBody: term.plainText || undefined,
+    wordCount: term.wordCount,
+    url: termUrl,
+    inLanguage: 'en',
+    dateModified: term.updated ?? undefined,
+    datePublished: term.updated ?? undefined,
+    author: AUTHOR_SCHEMA,
+    publisher: PUBLISHER_SCHEMA,
+    about: { '@id': termUrl },
+    isPartOf: {
+      '@type': 'CollectionPage',
+      name: 'React Native Glossary',
+      url: `${SITE_URL}${GLOSSARY_PATH}`,
+    },
+    mainEntityOfPage: { '@type': 'WebPage', '@id': termUrl },
   };
 
   const breadcrumbSchema = {
@@ -125,12 +144,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
         '@type': 'ListItem',
         position: 1,
         name: 'React Native Glossary',
-        item: 'https://weshipit.today/react-native-glossary',
+        item: `${SITE_URL}${GLOSSARY_PATH}`,
       },
       {
         '@type': 'ListItem',
         position: 2,
-        name: term.data.title,
+        name: term.title,
         item: termUrl,
       },
     ],
@@ -138,41 +157,124 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   return {
     props: {
-      term,
+      title: term.title,
+      summary: term.summary,
+      aliases: term.aliases,
+      content: term.content,
       previousTerm,
       nextTerm,
-      relatedArticles,
-      termsByTitle,
+      relatedTerms,
+      mentionedIn,
+      updatedAt: term.updated,
+      termUrl,
       seoDescription,
       definedTermSchema,
+      articleSchema,
       breadcrumbSchema,
     },
-    revalidate: 60,
   };
 };
 
-export default function GlossaryTermPage({
-  term,
-  previousTerm,
-  nextTerm,
-  relatedArticles,
-  termsByTitle,
-  seoDescription,
-  definedTermSchema,
-  breadcrumbSchema,
-}: GlossaryTermPageProps) {
-  if (!term) {
-    return null;
+function CopyLinkButton({ url }: { url: string }) {
+  const [copied, setCopied] = useState(false);
+
+  async function copy() {
+    try {
+      await navigator.clipboard.writeText(url);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      // Clipboard is unavailable (insecure context, denied permission) — the
+      // URL is in the address bar anyway, so fail quietly.
+    }
   }
 
   return (
+    <button
+      type="button"
+      onClick={copy}
+      aria-live="polite"
+      className="mx-auto flex size-12 items-center justify-center rounded-full border border-neutral-300 text-neutral-600 transition hover:border-neutral-400 hover:text-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:hover:border-neutral-500 dark:hover:text-neutral-100"
+    >
+      {copied ? (
+        <CheckIcon aria-hidden="true" className="size-5" />
+      ) : (
+        <LinkIcon aria-hidden="true" className="size-5" />
+      )}
+      <span className="sr-only">
+        {copied ? 'Link copied' : 'Copy link to this term'}
+      </span>
+    </button>
+  );
+}
+
+function MetaRow({
+  label,
+  children,
+}: {
+  label: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="grid grid-cols-[7rem_minmax(0,1fr)] items-baseline gap-4 sm:block">
+      <dt className="text-sm text-neutral-400 dark:text-neutral-500">
+        {label}
+      </dt>
+      <dd className="text-sm font-medium text-neutral-900 sm:mt-2 dark:text-neutral-200">
+        {children}
+      </dd>
+    </div>
+  );
+}
+
+function TermChips({ terms }: { terms: TermLink[] }) {
+  return (
+    <span className="flex flex-wrap gap-x-2 gap-y-1">
+      {terms.map((related) => (
+        <Link
+          key={related.slug}
+          href={`${GLOSSARY_PATH}/${related.slug}`}
+          className="underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-900 dark:decoration-neutral-600 dark:hover:decoration-neutral-100"
+        >
+          {related.title}
+        </Link>
+      ))}
+    </span>
+  );
+}
+
+export default function GlossaryTermPage({
+  title,
+  summary,
+  aliases,
+  content,
+  previousTerm,
+  nextTerm,
+  relatedTerms,
+  mentionedIn,
+  updatedAt,
+  termUrl,
+  seoDescription,
+  definedTermSchema,
+  articleSchema,
+  breadcrumbSchema,
+}: GlossaryTermPageProps) {
+  const formattedDate = updatedAt
+    ? new Intl.DateTimeFormat('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        timeZone: 'UTC',
+      }).format(new Date(updatedAt))
+    : null;
+
+  return (
     <Layout
-      seoTitle={`${term.data.title} | React Native Glossary`}
+      seoTitle={`${title} | React Native Glossary`}
       seoDescription={seoDescription}
-      ogImageTitle={`${term.data.title} | React Native Glossary`}
+      ogImageTitle={`${title} | React Native Glossary`}
       withHeader
       withFooter
-      withContainer
     >
       <Head>
         <script
@@ -184,132 +286,134 @@ export default function GlossaryTermPage({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
+            __html: JSON.stringify(articleSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
             __html: JSON.stringify(breadcrumbSchema),
           }}
         />
       </Head>
-      <article className="py-12">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-8">
+
+      <article className="mx-auto max-w-[100rem] px-4 pb-24 sm:px-6">
+        {/* Hero: breadcrumb, oversized title, copy link, then the term's facts. */}
+        <header className="mt-6 rounded-[2rem] bg-white px-6 py-16 sm:px-12 sm:py-20 dark:bg-neutral-900">
+          <nav
+            aria-label="Breadcrumb"
+            className="flex items-center justify-center gap-2 text-sm"
+          >
             <Link
-              href="/react-native-glossary"
-              className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 flex items-center"
+              href={GLOSSARY_PATH}
+              className="text-neutral-400 hover:text-neutral-900 dark:text-neutral-500 dark:hover:text-neutral-100"
             >
-              <ChevronLeftIcon className="h-4 w-4 mr-1" />
-              Back to Glossary
+              Glossary
             </Link>
+            <span aria-hidden="true" className="text-neutral-300">
+              /
+            </span>
+            <span className="font-medium text-neutral-900 dark:text-neutral-100">
+              {title}
+            </span>
+          </nav>
+
+          <h1 className="mt-20 text-center font-display text-4xl font-bold leading-[1.05] tracking-[-0.04em] text-balance text-neutral-950 sm:mt-28 sm:text-6xl lg:text-7xl dark:text-neutral-100">
+            {title}
+          </h1>
+
+          {aliases.length > 0 && (
+            <p className="mt-5 text-center text-neutral-400 dark:text-neutral-500">
+              Also called {aliases.join(', ')}
+            </p>
+          )}
+
+          <div className="mt-10">
+            <CopyLinkButton url={termUrl} />
           </div>
 
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-            <section className="lg:col-span-2">
-              <Text as="h1" variant="h2" className="mb-6">
-                {term.data.title} in React Native
-              </Text>
+          <dl className="mt-20 grid gap-6 border-t border-neutral-200 pt-8 sm:mt-28 sm:grid-cols-2 lg:grid-cols-4 dark:border-neutral-800">
+            <MetaRow label="Part of">
+              <Link
+                href={GLOSSARY_PATH}
+                className="underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-900 dark:decoration-neutral-600 dark:hover:decoration-neutral-100"
+              >
+                React Native Glossary
+              </Link>
+            </MetaRow>
 
-              <div className="prose dark:prose-invert max-w-none">
-                <PrismicRichText field={term.data.description} />
-              </div>
+            {aliases.length > 0 && (
+              <MetaRow label="Also known as">{aliases.join(', ')}</MetaRow>
+            )}
 
-              {term.data.related_to && term.data.related_to.length > 0 && (
-                <div className="mt-8">
-                  <Text as="h2" variant="h5" className="mb-4">
-                    Related Terms
-                  </Text>
-                  <div className="flex flex-wrap gap-2">
-                    {term.data.related_to.map((related: any, index: number) => {
-                      const relatedText = asText(related);
-                      const matchingTerm = relatedText
-                        ? termsByTitle[relatedText]
-                        : undefined;
+            {relatedTerms.length > 0 && (
+              <MetaRow label="Related">
+                <TermChips terms={relatedTerms} />
+              </MetaRow>
+            )}
 
-                      return (
-                        <span
-                          key={index}
-                          className="inline-flex items-center rounded-md bg-gray-100 px-2.5 py-0.5 text-sm font-medium text-gray-800 dark:bg-gray-700 dark:text-gray-200"
-                        >
-                          {matchingTerm ? (
-                            <Link
-                              href={`/react-native-glossary/${slugify(matchingTerm.data.title)}`}
-                              className="hover:text-blue-600 dark:hover:text-blue-400"
-                            >
-                              {relatedText}
-                            </Link>
-                          ) : (
-                            relatedText
-                          )}
-                        </span>
-                      );
-                    })}
-                  </div>
-                </div>
-              )}
+            {mentionedIn.length > 0 && (
+              <MetaRow label="Mentioned in">
+                <TermChips terms={mentionedIn} />
+              </MetaRow>
+            )}
 
-              {relatedArticles && relatedArticles.length > 0 && (
-                <div className="mt-12">
-                  <Text as="h2" variant="h5" className="mb-4">
-                    Relevant Articles
-                  </Text>
-                  <div className="space-y-4">
-                    {relatedArticles.map((article) => (
-                      <div
-                        key={article.id}
-                        className="border border-gray-200 dark:border-gray-700 rounded-lg p-4"
-                      >
-                        <Text as="h3" variant="h6">
-                          <Link
-                            href={`/blog/${article.uid}`}
-                            className="hover:text-blue-600 dark:hover:text-blue-400"
-                          >
-                            {article.data.title}
-                          </Link>
-                        </Text>
-                        {article.data.excerpt && (
-                          <p className="mt-2 text-gray-500 dark:text-gray-400">
-                            {article.data.excerpt}
-                          </p>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
+            {formattedDate && (
+              <MetaRow label="Updated">
+                <time dateTime={updatedAt ?? undefined}>{formattedDate}</time>
+              </MetaRow>
+            )}
+          </dl>
+        </header>
 
-              {/* Previous / Next Navigation */}
-              <div className="mt-20 border-t border-gray-200 dark:border-gray-700 pt-8 flex justify-between">
-                <div>
-                  {previousTerm && (
-                    <LinkButton
-                      href={`/react-native-glossary/${slugify(previousTerm.data.title)}`}
-                      size="lg"
-                      variant="ghost"
-                      className="flex items-center"
-                    >
-                      <ChevronLeftIcon className="h-4 w-4 mr-2" />
-                      {previousTerm.data.title}
-                    </LinkButton>
-                  )}
-                </div>
-                <div>
-                  {nextTerm && (
-                    <LinkButton
-                      href={`/react-native-glossary/${slugify(nextTerm.data.title)}`}
-                      size="lg"
-                      variant="ghost"
-                      className="flex items-center"
-                    >
-                      {nextTerm.data.title}
-                      <ChevronRightIcon className="h-4 w-4 ml-2" />
-                    </LinkButton>
-                  )}
-                </div>
-              </div>
-            </section>
+        {/* Definition */}
+        <div className="mx-auto mt-20 max-w-2xl">
+          <h2 className="font-display text-3xl font-bold tracking-[-0.03em] text-balance text-neutral-950 sm:text-4xl dark:text-neutral-100">
+            What is {title} in React Native?
+          </h2>
 
-            {/* Call to Action Card */}
-            <aside className="sticky top-8 h-fit lg:col-span-1">
-              <GlossaryCTA />
-            </aside>
+          {/* The lede repeats the summary so the answer is complete within the
+              first 40 words — the window an AI answer usually quotes. */}
+          <p className="mt-6 text-xl leading-relaxed font-medium text-balance text-neutral-900 sm:text-2xl dark:text-neutral-100">
+            {summary}
+          </p>
+
+          <div className="mt-6 text-lg leading-relaxed text-neutral-700 sm:text-xl [&_a:hover]:text-blue-600 [&_a]:underline [&_a]:underline-offset-2 [&>*+*]:mt-5 dark:text-neutral-300 dark:[&_a:hover]:text-blue-400">
+            <GlossaryMarkdown>{content}</GlossaryMarkdown>
           </div>
+
+          {/* Prev / next, alphabetically through the glossary. */}
+          <nav
+            aria-label="Glossary navigation"
+            className="mt-20 grid grid-cols-2 gap-8 border-t border-neutral-200 pt-12 dark:border-neutral-800"
+          >
+            <div>
+              {previousTerm && (
+                <Link
+                  href={`${GLOSSARY_PATH}/${previousTerm.slug}`}
+                  className="group block font-display text-2xl font-bold tracking-[-0.03em] text-neutral-400 sm:text-3xl dark:text-neutral-500"
+                >
+                  <span className="block">Prev:</span>
+                  <span className="underline decoration-neutral-300 underline-offset-4 group-hover:text-neutral-900 group-hover:decoration-neutral-900 dark:decoration-neutral-600 dark:group-hover:text-neutral-100 dark:group-hover:decoration-neutral-100">
+                    {previousTerm.title}
+                  </span>
+                </Link>
+              )}
+            </div>
+            <div className="text-right">
+              {nextTerm && (
+                <Link
+                  href={`${GLOSSARY_PATH}/${nextTerm.slug}`}
+                  className="group block font-display text-2xl font-bold tracking-[-0.03em] text-neutral-400 sm:text-3xl dark:text-neutral-500"
+                >
+                  <span className="block">Next:</span>
+                  <span className="underline decoration-neutral-300 underline-offset-4 group-hover:text-neutral-900 group-hover:decoration-neutral-900 dark:decoration-neutral-600 dark:group-hover:text-neutral-100 dark:group-hover:decoration-neutral-100">
+                    {nextTerm.title}
+                  </span>
+                </Link>
+              )}
+            </div>
+          </nav>
         </div>
       </article>
     </Layout>

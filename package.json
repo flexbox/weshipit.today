@@ -26,6 +26,7 @@
     "davidl-fr:lint": "nx lint davidl-fr",
     "davidl-fr:test": "nx test davidl-fr",
     "davidl-fr:build": "nx build davidl-fr",
+    "davidl-fr:slide": "node tools/create-slide.mjs",
     "--libs--": "------------------------------------------------------",
     "ui:lint": "nx lint ui",
     "ui:test": "nx test ui",
