@@ -96,7 +96,12 @@
     --card: 0 0% 98%;
     --border: 0 0% 89.8%;
     --secondary: 0 0% 96.1%;
-    --accent: 142 71% 45%;
+    /* Light mode needs a deeper green: the vivid 45% lightness reads at 2.2:1
+       against --card, well under the 4.5:1 AA floor for the accent-coloured
+       links, metrics and badge labels. 25% clears 4.5:1 on --card,
+       --background and the accent/5 + accent/10 tints. Dark mode keeps the
+       vivid value, where it already measures 8.2:1. */
+    --accent: 142 80% 25%;
     --destructive: 0 84% 60%;
   }
   @media (prefers-color-scheme: dark) {

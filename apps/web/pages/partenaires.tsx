@@ -1,4 +1,4 @@
-import { AuthorDisclosure, Button, Faq, Text } from '@weshipit/ui';
+import { AuthorDisclosure, Button, CountUp, Faq, Text } from '@weshipit/ui';
 
 import {
   ArrowRightIcon,
@@ -76,7 +76,7 @@ function HeroSection() {
     <section className="relative overflow-hidden pt-32 pb-20">
       <div className="relative mx-auto max-w-5xl px-6 text-center">
         <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent">
-          <MicrophoneIcon className="h-4 w-4" />
+          <MicrophoneIcon strokeWidth={2.25} className="h-4 w-4" />
           Kit média · Le Cross Platform Show
         </div>
 
@@ -102,26 +102,33 @@ function HeroSection() {
             variant="primary"
             isExternalLink
             withExternalLinkIcon={false}
+            className="min-h-11"
           >
             {CTA_LABEL}
-            <ArrowRightIcon className="ml-2 h-4 w-4" />
+            <ArrowRightIcon strokeWidth={2.25} className="ml-2 h-4 w-4" />
           </Button>
-          <Button as="a" href="#activations" size="xl" variant="outline">
+          <Button
+            as="a"
+            href="#activations"
+            size="xl"
+            variant="outline"
+            className="min-h-11"
+          >
             Voir les formats
           </Button>
         </div>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-neutral-500 dark:text-neutral-400">
           <span className="flex items-center gap-2">
-            <CheckIcon className="h-4 w-4 text-accent" />
+            <CheckIcon strokeWidth={2.25} className="h-4 w-4 text-accent" />
             Le co-créateur de React Native au micro
           </span>
           <span className="flex items-center gap-2">
-            <CheckIcon className="h-4 w-4 text-accent" />
+            <CheckIcon strokeWidth={2.25} className="h-4 w-4 text-accent" />
             Animé par un Microsoft MVP
           </span>
           <span className="flex items-center gap-2">
-            <CheckIcon className="h-4 w-4 text-accent" />
+            <CheckIcon strokeWidth={2.25} className="h-4 w-4 text-accent" />
             Media partner de React Native Connection
           </span>
         </div>
@@ -131,20 +138,18 @@ function HeroSection() {
 }
 
 function ProofSection() {
+  // Numbers, not strings: CountUp animates the value and Intl puts the French
+  // thousands separator back (a narrow no-break space, so a figure never wraps).
   const stats = [
+    { value: 20000, label: 'abonnés LinkedIn', detail: '61 % Senior ou plus' },
+    { value: 40, label: 'épisodes publiés', detail: 'format interview' },
     {
-      value: '20 000',
-      label: 'abonnés LinkedIn',
-      detail: '61 % Senior ou plus',
-    },
-    { value: '40', label: 'épisodes publiés', detail: 'format interview' },
-    {
-      value: '3 500',
+      value: 3500,
       label: 'écoutes audio cumulées',
       detail: 'Spotify, Apple, Deezer',
     },
     {
-      value: '1 100',
+      value: 1100,
       label: 'abonnés YouTube',
       detail: 'plusieurs vidéos à 1k+ vues',
     },
@@ -166,7 +171,7 @@ function ProofSection() {
           <Text variant="h2" as="h2" className="mb-4 text-balance">
             Ce qu&apos;il faut savoir avant de continuer
           </Text>
-          <p className="mx-auto max-w-2xl text-neutral-500 dark:text-neutral-400">
+          <p className="mx-auto max-w-2xl text-pretty text-neutral-500 dark:text-neutral-400">
             Pas des millions d&apos;écoutes. Une niche sans alternative
             francophone, et les personnes qu&apos;on n&apos;entend
             d&apos;habitude qu&apos;en anglais.
@@ -179,8 +184,8 @@ function ProofSection() {
               key={stat.label}
               className="rounded-xl border border-border bg-card p-5 text-center"
             >
-              <div className="text-3xl font-bold text-neutral-950 dark:text-neutral-100">
-                {stat.value}
+              <div className="text-3xl font-bold tabular-nums text-neutral-950 dark:text-neutral-100">
+                <CountUp end={stat.value} locale="fr-FR" />
               </div>
               <div className="mt-1 text-sm font-medium text-neutral-950 dark:text-neutral-200">
                 {stat.label}
@@ -199,7 +204,10 @@ function ProofSection() {
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {guests.map((guest) => (
               <div key={guest.name} className="flex items-start gap-3">
-                <MicrophoneIcon className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
+                <MicrophoneIcon
+                  strokeWidth={1.8}
+                  className="mt-0.5 h-5 w-5 shrink-0 text-accent"
+                />
                 <div>
                   <div className="text-sm font-semibold text-neutral-950 dark:text-neutral-100">
                     {guest.name}
@@ -276,7 +284,7 @@ function AudienceSection() {
           <Text variant="h2" as="h2" className="mb-4 text-balance">
             Une audience qui arbitre des budgets
           </Text>
-          <p className="mx-auto max-w-2xl text-neutral-500 dark:text-neutral-400">
+          <p className="mx-auto max-w-2xl text-pretty text-neutral-500 dark:text-neutral-400">
             Sur LinkedIn, 35 % des abonnés sont Senior et 26 % occupent une
             fonction de direction, de management ou de décision. Ce ne sont pas
             des débutants en quête de tutos.
@@ -298,7 +306,10 @@ function AudienceSection() {
                     key={item}
                     className="flex items-start gap-3 text-sm text-neutral-500 dark:text-neutral-400"
                   >
-                    <CheckIcon className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
+                    <CheckIcon
+                      strokeWidth={1.8}
+                      className="mt-0.5 h-5 w-5 shrink-0 text-accent"
+                    />
                     {item}
                   </li>
                 ))}
@@ -366,7 +377,7 @@ function ChannelsSection() {
           <Text variant="h2" as="h2" className="mb-4 text-balance">
             Quatre canaux, une même audience
           </Text>
-          <p className="mx-auto max-w-2xl text-neutral-500 dark:text-neutral-400">
+          <p className="mx-auto max-w-2xl text-pretty text-neutral-500 dark:text-neutral-400">
             Un partenariat ne se limite pas à un message dans un épisode. La
             même personne croise ton produit dans son feed, dans ses écouteurs
             et dans une démo vidéo.
@@ -377,11 +388,14 @@ function ChannelsSection() {
           {channels.map((channel) => (
             <div
               key={channel.title}
-              className="rounded-xl border border-border bg-card p-6 transition-colors hover:border-accent/50"
+              className="rounded-xl border border-border bg-card p-6"
             >
               <div className="mb-3 flex items-center justify-between gap-4">
                 <div className="flex items-center gap-2">
-                  <channel.icon className="h-5 w-5 shrink-0 text-accent" />
+                  <channel.icon
+                    strokeWidth={1.8}
+                    className="h-5 w-5 shrink-0 text-accent"
+                  />
                   <Text variant="h4" as="h3">
                     {channel.title}
                   </Text>
@@ -438,8 +452,11 @@ function WhyItWorksSection() {
               key={reason.title}
               className="rounded-xl border border-border bg-card p-6"
             >
-              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-secondary">
-                <reason.icon className="h-5 w-5 text-accent" />
+              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10">
+                <reason.icon
+                  strokeWidth={1.8}
+                  className="h-5 w-5 text-accent"
+                />
               </div>
               <Text variant="h4" as="h3" className="mb-2">
                 {reason.title}
@@ -502,7 +519,7 @@ function ActivationsSection() {
           <Text variant="h2" as="h2" className="mb-4 text-balance">
             Les formats possibles
           </Text>
-          <p className="mx-auto max-w-2xl text-neutral-500 dark:text-neutral-400">
+          <p className="mx-auto max-w-2xl text-pretty text-neutral-500 dark:text-neutral-400">
             Chaque collaboration combine plusieurs de ces formats selon ton
             objectif : essais de ton outil, notoriété dans l&apos;écosystème, ou
             recrutement de développeurs React Native.
@@ -513,10 +530,10 @@ function ActivationsSection() {
           {activations.map((item) => (
             <div
               key={item.title}
-              className="rounded-xl border border-border bg-card p-6 transition-colors hover:border-accent/50"
+              className="rounded-xl border border-border bg-card p-6"
             >
-              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-secondary">
-                <item.icon className="h-5 w-5 text-accent" />
+              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10">
+                <item.icon strokeWidth={1.8} className="h-5 w-5 text-accent" />
               </div>
               <Text variant="h4" as="h3" className="mb-2">
                 {item.title}
@@ -581,7 +598,7 @@ function OffersSection() {
           <Text variant="h2" as="h2" className="mb-4 text-balance">
             Trois niveaux d&apos;engagement
           </Text>
-          <p className="mx-auto max-w-2xl text-neutral-500 dark:text-neutral-400">
+          <p className="mx-auto max-w-2xl text-pretty text-neutral-500 dark:text-neutral-400">
             Tester, s&apos;installer, s&apos;associer. Le tarif se définit avec
             toi selon le format retenu, pendant l&apos;appel.
           </p>
@@ -612,7 +629,10 @@ function OffersSection() {
                     key={item}
                     className="flex items-start gap-3 text-sm text-neutral-950 dark:text-neutral-200"
                   >
-                    <CheckIcon className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
+                    <CheckIcon
+                      strokeWidth={1.8}
+                      className="mt-0.5 h-5 w-5 shrink-0 text-accent"
+                    />
                     {item}
                   </li>
                 ))}
@@ -632,9 +652,10 @@ function OffersSection() {
             variant="primary"
             isExternalLink
             withExternalLinkIcon={false}
+            className="min-h-11"
           >
             {CTA_LABEL}
-            <ArrowRightIcon className="ml-2 h-4 w-4" />
+            <ArrowRightIcon strokeWidth={2.25} className="ml-2 h-4 w-4" />
           </Button>
         </div>
       </div>
@@ -667,7 +688,11 @@ function AudienceFitSection() {
 
         <div className="grid gap-8 md:grid-cols-2">
           <div className="rounded-xl border border-accent/30 bg-accent/5 p-6">
-            <Text variant="h4" as="h3" className="mb-4 text-accent">
+            <Text
+              variant="h4"
+              as="h3"
+              className="mb-4 flex items-center gap-2 text-accent"
+            >
               ✅ On devrait se parler
             </Text>
             <ul className="space-y-3">
@@ -676,7 +701,10 @@ function AudienceFitSection() {
                   key={item}
                   className="flex items-start gap-3 text-sm text-neutral-950 dark:text-neutral-200"
                 >
-                  <CheckIcon className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
+                  <CheckIcon
+                    strokeWidth={1.8}
+                    className="mt-0.5 h-5 w-5 shrink-0 text-accent"
+                  />
                   {item}
                 </li>
               ))}
@@ -687,7 +715,7 @@ function AudienceFitSection() {
             <Text
               variant="h4"
               as="h3"
-              className="mb-4 text-neutral-500 dark:text-neutral-400"
+              className="mb-4 flex items-center gap-2 text-neutral-500 dark:text-neutral-400"
             >
               ❌ Ce n&apos;est pas le bon média
             </Text>
@@ -697,7 +725,10 @@ function AudienceFitSection() {
                   key={item}
                   className="flex items-start gap-3 text-sm text-neutral-500 dark:text-neutral-400"
                 >
-                  <XMarkIcon className="mt-0.5 h-5 w-5 shrink-0 text-destructive" />
+                  <XMarkIcon
+                    strokeWidth={1.8}
+                    className="mt-0.5 h-5 w-5 shrink-0 text-destructive"
+                  />
                   {item}
                 </li>
               ))}
@@ -749,9 +780,9 @@ function ProcessSection() {
           {steps.map((item) => (
             <div
               key={item.step}
-              className="grid gap-4 rounded-xl border border-border bg-card p-6 md:grid-cols-[64px_1fr]"
+              className="grid gap-4 rounded-xl border border-border bg-card p-6 md:grid-cols-[40px_1fr]"
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-lg font-bold text-accent">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 text-lg font-bold tabular-nums text-accent">
                 {item.step}
               </div>
               <div>
@@ -833,14 +864,14 @@ function FinalCtaSection() {
 
           <div className="relative px-8 py-16 text-center md:py-24">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent">
-              <BriefcaseIcon className="h-4 w-4" />
+              <BriefcaseIcon strokeWidth={2.25} className="h-4 w-4" />
               Un seul sponsor par trimestre
             </div>
             <Text variant="h2" as="h2" className="mb-6 text-balance">
               Construisons l&apos;activation{' '}
               <span className="text-accent">adaptée à ton objectif</span>
             </Text>
-            <p className="mx-auto mb-10 max-w-xl text-lg text-neutral-500 dark:text-neutral-400">
+            <p className="mx-auto mb-10 max-w-xl text-pretty text-lg text-neutral-500 dark:text-neutral-400">
               Vingt minutes pour savoir si ton produit a sa place devant cette
               audience. Si ce n&apos;est pas le cas, je te le dirai.
             </p>
@@ -855,7 +886,7 @@ function FinalCtaSection() {
               className="mx-auto justify-center"
             >
               {CTA_LABEL}
-              <ArrowRightIcon className="ml-2 h-4 w-4" />
+              <ArrowRightIcon strokeWidth={2.25} className="ml-2 h-4 w-4" />
             </Button>
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-neutral-500 dark:text-neutral-400">
