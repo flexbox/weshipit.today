@@ -130,7 +130,7 @@ function HeroSection() {
   );
 }
 
-function PreuvesSection() {
+function ProofSection() {
   const stats = [
     {
       value: '20 000',
@@ -327,7 +327,7 @@ function AudienceSection() {
   );
 }
 
-function CanauxSection() {
+function ChannelsSection() {
   const channels = [
     {
       icon: MegaphoneIcon,
@@ -401,7 +401,7 @@ function CanauxSection() {
   );
 }
 
-function PourquoiSection() {
+function WhyItWorksSection() {
   const reasons = [
     {
       icon: CodeBracketIcon,
@@ -532,7 +532,7 @@ function ActivationsSection() {
   );
 }
 
-function OffresSection() {
+function OffersSection() {
   const offers = [
     {
       name: 'One shot',
@@ -642,7 +642,7 @@ function OffresSection() {
   );
 }
 
-function PourQuiSection() {
+function AudienceFitSection() {
   const yes = [
     'Outils pour développeurs mobile : CI/CD, monitoring, paiements in-app, backend, OTA updates, tests.',
     'Agences et studios mobile qui vendent de la prestation à des CTO.',
@@ -770,7 +770,7 @@ function ProcessSection() {
   );
 }
 
-function QuiSection() {
+function AuthorSection() {
   return (
     <AuthorDisclosure
       title="Qui est derrière le micro"
@@ -822,7 +822,7 @@ function QuiSection() {
   );
 }
 
-function CtaFinalSection() {
+function FinalCtaSection() {
   return (
     <section className="border-t border-border py-24">
       <div className="mx-auto max-w-6xl px-6">
@@ -879,7 +879,7 @@ function CtaFinalSection() {
   );
 }
 
-export default function PartenairesPage() {
+export default function PartnersPage() {
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -947,13 +947,13 @@ export default function PartenairesPage() {
         }}
       >
         <HeroSection />
-        <PreuvesSection />
+        <ProofSection />
         <AudienceSection />
-        <CanauxSection />
-        <PourquoiSection />
+        <ChannelsSection />
+        <WhyItWorksSection />
         <ActivationsSection />
-        <OffresSection />
-        <PourQuiSection />
+        <OffersSection />
+        <AudienceFitSection />
         <ProcessSection />
         <section className="border-t border-border">
           <div className="mx-auto max-w-4xl px-6">
@@ -964,8 +964,8 @@ export default function PartenairesPage() {
             />
           </div>
         </section>
-        <QuiSection />
-        <CtaFinalSection />
+        <AuthorSection />
+        <FinalCtaSection />
       </Layout>
     </>
   );
