@@ -6,6 +6,7 @@ import { podcastEpisodes } from '../../fixtures/podcast-episodes.fixture';
 import { linksApi } from 'apps/web/pages/api/links';
 import { useState } from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 
 const FAQ_ITEMS = [
   {
@@ -271,6 +272,13 @@ export default function Podcast() {
           >
             Soutenir sur GitHub
           </Hyperlink>
+          <span>·</span>
+          <Link
+            href="/partenaires"
+            className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200"
+          >
+            Sponsoriser le podcast
+          </Link>
         </div>
       </Layout>
     </>
