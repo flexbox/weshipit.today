@@ -19,6 +19,7 @@ import {
 import Head from 'next/head';
 import Link from 'next/link';
 import { Layout } from '../components/layout';
+import { PodcastPhonePreview } from '../components/podcast-phone-preview';
 import { linksApi } from './api/links';
 
 const CTA_LABEL = 'Réserver un appel de 20 min';
@@ -73,64 +74,72 @@ const faqs = [
 
 function HeroSection() {
   return (
-    <section className="relative overflow-hidden pt-32 pb-20">
-      <div className="relative mx-auto max-w-5xl px-6 text-center">
-        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent">
-          <MicrophoneIcon strokeWidth={2.25} className="h-4 w-4" />
-          Kit média · Le Cross Platform Show
-        </div>
+    <section className="relative overflow-hidden">
+      <div className="mx-auto max-w-7xl px-6 py-12 md:py-24 lg:py-28">
+        {/* Same shape as the homepage hero: copy on the left, phone on the right. */}
+        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
+          <div>
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent">
+              <MicrophoneIcon strokeWidth={2.25} className="h-4 w-4" />
+              Kit média · Le Cross Platform Show
+            </div>
 
-        <Text variant="h1" as="h1" className="mb-6 text-balance">
-          Parle aux CTO qui choisissent
-          <br />
-          <span className="text-accent">la stack mobile</span>
-        </Text>
+            <Text variant="h1" as="h1" className="mb-6 text-balance">
+              Parle aux CTO qui choisissent{' '}
+              <span className="text-accent">la stack mobile</span>
+            </Text>
 
-        <p className="mx-auto mb-10 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-500 dark:text-neutral-400 md:text-xl">
-          Le Cross Platform Show est le seul podcast francophone sur React
-          Native en production. Chaque épisode, une équipe qui fait tourner une
-          app à des millions d&apos;utilisateurs raconte ses coulisses. Les
-          personnes qui écoutent sont celles qui décident quel SDK, quel outil
-          et quel prestataire entrent dans leur app.
-        </p>
+            <p className="mb-10 max-w-xl text-pretty text-lg leading-relaxed text-neutral-500 dark:text-neutral-400">
+              Le Cross Platform Show est le seul podcast francophone sur React
+              Native en production. Chaque épisode, une équipe qui fait tourner
+              une app à des millions d&apos;utilisateurs raconte ses coulisses.
+              Les personnes qui écoutent sont celles qui décident quel SDK, quel
+              outil et quel prestataire entrent dans leur app.
+            </p>
 
-        <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Button
-            href={CTA_URL}
-            as="a"
-            size="xl"
-            variant="primary"
-            isExternalLink
-            withExternalLinkIcon={false}
-            className="min-h-11"
-          >
-            {CTA_LABEL}
-            <ArrowRightIcon strokeWidth={2.25} className="ml-2 h-4 w-4" />
-          </Button>
-          <Button
-            as="a"
-            href="#activations"
-            size="xl"
-            variant="outline"
-            className="min-h-11"
-          >
-            Voir les formats
-          </Button>
-        </div>
+            <div className="flex flex-col gap-4 sm:flex-row">
+              <Button
+                href={CTA_URL}
+                as="a"
+                size="xl"
+                variant="primary"
+                isExternalLink
+                withExternalLinkIcon={false}
+                className="min-h-11 justify-center"
+              >
+                {CTA_LABEL}
+                <ArrowRightIcon strokeWidth={2.25} className="ml-2 h-4 w-4" />
+              </Button>
+              <Button
+                as="a"
+                href="#activations"
+                size="xl"
+                variant="outline"
+                className="min-h-11 justify-center"
+              >
+                Voir les formats
+              </Button>
+            </div>
 
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-neutral-500 dark:text-neutral-400">
-          <span className="flex items-center gap-2">
-            <CheckIcon strokeWidth={2.25} className="h-4 w-4 text-accent" />
-            Le co-créateur de React Native au micro
-          </span>
-          <span className="flex items-center gap-2">
-            <CheckIcon strokeWidth={2.25} className="h-4 w-4 text-accent" />
-            Animé par un Microsoft MVP
-          </span>
-          <span className="flex items-center gap-2">
-            <CheckIcon strokeWidth={2.25} className="h-4 w-4 text-accent" />
-            Media partner de React Native Connection
-          </span>
+            <div className="mt-8 flex flex-col gap-2 text-sm text-neutral-500 dark:text-neutral-400">
+              <span className="flex items-center gap-2">
+                <CheckIcon strokeWidth={2.25} className="h-4 w-4 text-accent" />
+                Le co-créateur de React Native au micro
+              </span>
+              <span className="flex items-center gap-2">
+                <CheckIcon strokeWidth={2.25} className="h-4 w-4 text-accent" />
+                Animé par un Microsoft MVP
+              </span>
+              <span className="flex items-center gap-2">
+                <CheckIcon strokeWidth={2.25} className="h-4 w-4 text-accent" />
+                Media partner de React Native Connection
+              </span>
+            </div>
+          </div>
+
+          <div className="flex items-center justify-center">
+            <PodcastPhonePreview className="max-w-[570px] text-primary" />
+          </div>
         </div>
       </div>
     </section>
