@@ -16,6 +16,7 @@ export const linksApi = {
   },
   cal: {
     ONBOARDING: 'https://cal.com/davidl/weshipit-onboarding',
+    PARTNER: 'https://cal.com/davidl/partner',
   },
   stripe: {
     MONTHLY_PLAN: 'https://buy.stripe.com/5kA03G1sz8wu8GkfZ6',

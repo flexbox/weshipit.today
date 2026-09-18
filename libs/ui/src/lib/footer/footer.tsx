@@ -10,6 +10,7 @@ const navigation = {
     { href: '/customers', name: 'Customers' },
     { href: '/about', name: 'About' },
     { href: '/podcast', name: 'Podcast' },
+    { href: '/partenaires', name: 'Partenaires' },
     {
       href: 'https://github.com/sponsors/flexbox?frequency=one-time&sponsor=flexbox',
       name: 'Sponsorship',
