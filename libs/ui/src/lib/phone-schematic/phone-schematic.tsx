@@ -131,19 +131,60 @@ export function PhoneSchematic({
           shared `--animate-*` token would render in one and not the other.
         */}
         <style>{`
+          /*
+            Paper and ink change with the theme. Light mode is graph paper
+            with blue ink, so the grid can sit fairly high. Dark mode is a
+            lit drafting table: the same grid at the same opacity becomes a
+            dense mesh, so it drops back and the phone gets a glow instead.
+          */
+          .ps-figure {
+            --ps-grid: 0.18;
+            --ps-frame: 0.25;
+            --ps-glow: 0;
+            --ps-screen-ring: rgb(0 0 0 / 0.12);
+          }
+          @media (prefers-color-scheme: dark) {
+            .ps-figure {
+              --ps-grid: 0.09;
+              --ps-frame: 0.16;
+              --ps-glow: 0.35;
+              --ps-screen-ring: rgb(255 255 255 / 0.1);
+            }
+          }
           .ps-figure [data-draw] {
             stroke-dasharray: 1;
             stroke-dashoffset: 1;
           }
           .ps-figure [data-fade] { opacity: 0; }
+          .ps-figure [data-glow] { opacity: 0; }
+          .ps-figure [data-screen] {
+            opacity: 0;
+            transform: scale(0.97);
+          }
           .ps-figure[data-play='true'] [data-draw] {
             animation: ps-draw 900ms cubic-bezier(0.2, 0, 0, 1) forwards;
           }
           .ps-figure[data-play='true'] [data-fade] {
             animation: ps-fade 500ms cubic-bezier(0.2, 0, 0, 1) forwards;
           }
+          .ps-figure[data-play='true'] [data-glow] {
+            animation: ps-glow 1400ms cubic-bezier(0.2, 0, 0, 1) forwards;
+          }
+          .ps-figure[data-play='true'] [data-screen] {
+            animation: ps-screen-on 700ms cubic-bezier(0.2, 0, 0, 1) forwards;
+          }
           @keyframes ps-draw { to { stroke-dashoffset: 0; } }
-          @keyframes ps-fade { to { opacity: 1; } }
+          /* Faded elements land on --ps-to (default 1) so a dimmed part of
+             the drawing keeps its weight instead of snapping to full ink. */
+          @keyframes ps-fade { to { opacity: var(--ps-to, 1); } }
+          @keyframes ps-glow { to { opacity: var(--ps-glow); } }
+          /* An OLED panel waking: a brief overshoot in brightness, then it
+             settles. The scale is small enough to read as a bloom, not a pop. */
+          @keyframes ps-screen-on {
+            0% { opacity: 0; transform: scale(0.97); filter: brightness(1.6); }
+            45% { opacity: 1; transform: scale(1.005); filter: brightness(1.25); }
+            100% { opacity: 1; transform: scale(1); filter: brightness(1); }
+          }
           @media (prefers-reduced-motion: reduce) {
             .ps-figure [data-draw],
             .ps-figure[data-play='true'] [data-draw] {
@@ -152,7 +193,18 @@ export function PhoneSchematic({
             }
             .ps-figure [data-fade],
             .ps-figure[data-play='true'] [data-fade] {
+              opacity: var(--ps-to, 1);
+              animation: none;
+            }
+            .ps-figure [data-glow],
+            .ps-figure[data-play='true'] [data-glow] {
+              opacity: var(--ps-glow);
+              animation: none;
+            }
+            .ps-figure [data-screen],
+            .ps-figure[data-play='true'] [data-screen] {
               opacity: 1;
+              transform: none;
               animation: none;
             }
           }
@@ -170,9 +222,17 @@ export function PhoneSchematic({
               fill="none"
               stroke="currentColor"
               strokeWidth="0.6"
-              opacity="0.18"
+              style={{ opacity: 'var(--ps-grid)' }}
             />
           </pattern>
+          {/* Backlight behind the handset. Its opacity is themed: nothing on
+              paper, a soft halo on the dark sheet so the black screen does
+              not vanish into the black page. */}
+          <radialGradient id="ps-halo" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="currentColor" stopOpacity="1" />
+            <stop offset="55%" stopColor="currentColor" stopOpacity="0.35" />
+            <stop offset="100%" stopColor="currentColor" stopOpacity="0" />
+          </radialGradient>
           <marker
             id="ps-arrow"
             viewBox="0 0 8 8"
@@ -205,9 +265,25 @@ export function PhoneSchematic({
           fill="none"
           stroke="currentColor"
           strokeWidth="2"
-          opacity="0.25"
           data-fade
-          style={{ animationDelay: '0ms' }}
+          style={
+            {
+              animationDelay: '0ms',
+              '--ps-to': 'var(--ps-frame)',
+            } as React.CSSProperties
+          }
+        />
+
+        {/* Halo lands with the screen, so the phone lights the sheet as it
+            wakes rather than glowing before it exists. */}
+        <ellipse
+          cx={CHASSIS.x + CHASSIS.width / 2}
+          cy={CHASSIS.y + CHASSIS.height / 2}
+          rx={CHASSIS.width * 1.1}
+          ry={CHASSIS.height * 0.72}
+          fill="url(#ps-halo)"
+          data-glow
+          style={{ animationDelay: '1900ms' }}
         />
 
         <g
@@ -236,6 +312,7 @@ export function PhoneSchematic({
             height="474"
             rx="27"
             strokeWidth="1.4"
+            opacity="0.8"
             pathLength={1}
             data-draw
             style={{ animationDelay: '420ms' }}
@@ -248,6 +325,7 @@ export function PhoneSchematic({
             height={SCREEN.height}
             rx={SCREEN.radius}
             strokeWidth="1.4"
+            opacity="0.8"
             pathLength={1}
             data-draw
             style={{ animationDelay: '620ms' }}
@@ -261,6 +339,7 @@ export function PhoneSchematic({
             height="54"
             rx="3.5"
             strokeWidth="1.4"
+            opacity="0.8"
             pathLength={1}
             data-draw
             style={{ animationDelay: '900ms' }}
@@ -272,6 +351,7 @@ export function PhoneSchematic({
             height="20"
             rx="3.5"
             strokeWidth="1.4"
+            opacity="0.8"
             pathLength={1}
             data-draw
             style={{ animationDelay: '960ms' }}
@@ -283,6 +363,7 @@ export function PhoneSchematic({
             height="34"
             rx="3.5"
             strokeWidth="1.4"
+            opacity="0.8"
             pathLength={1}
             data-draw
             style={{ animationDelay: '1010ms' }}
@@ -294,6 +375,7 @@ export function PhoneSchematic({
             height="34"
             rx="3.5"
             strokeWidth="1.4"
+            opacity="0.8"
             pathLength={1}
             data-draw
             style={{ animationDelay: '1060ms' }}
@@ -303,6 +385,7 @@ export function PhoneSchematic({
           <path
             d={`M70 ${CHASSIS.y} L70 ${CHASSIS.y + CHASSIS.height}`}
             strokeWidth="1"
+            opacity="0.6"
             pathLength={1}
             data-draw
             style={{ animationDelay: '1150ms' }}
@@ -312,6 +395,7 @@ export function PhoneSchematic({
               CHASSIS.y + CHASSIS.height
             } L77 ${CHASSIS.y + CHASSIS.height}`}
             strokeWidth="1"
+            opacity="0.6"
             pathLength={1}
             data-draw
             style={{ animationDelay: '1300ms' }}
@@ -329,6 +413,7 @@ export function PhoneSchematic({
               <path
                 d={callout.d}
                 strokeWidth="1"
+                opacity="0.7"
                 markerEnd="url(#ps-arrow)"
                 pathLength={1}
                 data-draw
@@ -351,9 +436,13 @@ export function PhoneSchematic({
             textAnchor="middle"
             transform="rotate(-90 70 325)"
             dy="-6"
-            opacity="0.75"
             data-fade
-            style={{ animationDelay: '1400ms' }}
+            style={
+              {
+                animationDelay: '1400ms',
+                '--ps-to': 0.75,
+              } as React.CSSProperties
+            }
           >
             147,6 MM
           </text>
@@ -362,9 +451,13 @@ export function PhoneSchematic({
             y="325"
             textAnchor="middle"
             transform="rotate(-90 26 325)"
-            opacity="0.55"
             data-fade
-            style={{ animationDelay: '200ms' }}
+            style={
+              {
+                animationDelay: '200ms',
+                '--ps-to': 0.55,
+              } as React.CSSProperties
+            }
           >
             {figure}
           </text>
@@ -375,7 +468,12 @@ export function PhoneSchematic({
               y={callout.textY}
               textAnchor={callout.anchor}
               data-fade
-              style={{ animationDelay: `${callout.delay + 600}ms` }}
+              style={
+                {
+                  animationDelay: `${callout.delay + 600}ms`,
+                  '--ps-to': 0.9,
+                } as React.CSSProperties
+              }
             >
               {callout.label}
             </text>
@@ -396,9 +494,19 @@ export function PhoneSchematic({
           borderRadius: `${(SCREEN.radius / SHEET_WIDTH) * 100}cqw`,
           animationDelay: '1900ms',
         }}
-        data-fade
+        data-screen
       >
         {children}
+        {/* Hairline at the glass edge. On the dark sheet the black panel and
+            the black page otherwise meet with nothing between them. */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0"
+          style={{
+            borderRadius: 'inherit',
+            boxShadow: 'inset 0 0 0 1px var(--ps-screen-ring)',
+          }}
+        />
       </div>
     </div>
   );

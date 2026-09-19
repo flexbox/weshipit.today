@@ -138,7 +138,7 @@ function HeroSection() {
           </div>
 
           <div className="flex items-center justify-center">
-            <PodcastPhonePreview className="max-w-[570px] text-primary" />
+            <PodcastPhonePreview className="max-w-[570px] text-primary dark:text-blue-400" />
           </div>
         </div>
       </div>

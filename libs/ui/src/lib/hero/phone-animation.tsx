@@ -12,13 +12,57 @@ import { useEffect, useRef } from 'react';
 const VW = 700; // virtual canvas width
 const VH = 820; // virtual canvas height
 
-// Blueprint palette (fixed — this is a technical "sheet", independent of theme)
-const PAPER = '#eef1fa';
-const INK = '#2f5fe0';
-const INK_SOFT = 'rgba(47, 95, 224, 0.55)';
-const FILL = 'rgba(47, 95, 224, 0.06)';
-const GRID = 'rgba(47, 95, 224, 0.09)';
-const GRID_MAJOR = 'rgba(47, 95, 224, 0.16)';
+/**
+ * Paper and ink follow the colour scheme. Light mode is graph paper with blue
+ * ink. Dark mode is a lit drafting table: the same grid at the same opacity
+ * becomes a dense mesh, so it drops back and the phone gets a glow instead.
+ * The canvas cannot read `currentColor`, so the palette is swapped from a
+ * `prefers-color-scheme` listener. The paper itself is the container's
+ * background, set with Tailwind so it never flashes the wrong theme.
+ */
+interface Palette {
+  ink: string;
+  /** Secondary ink for the interface inside the screen. */
+  inkUi: string;
+  inkSoft: string;
+  fill: string;
+  buttonFill: string;
+  screenFill: string;
+  grid: string;
+  gridMajor: string;
+  /** Peak opacity of the backlight behind the handset. 0 disables it. */
+  halo: number;
+}
+
+const rgba = (rgb: string, alpha: number) => `rgba(${rgb}, ${alpha})`;
+
+const LIGHT_RGB = '47, 95, 224';
+const DARK_RGB = '122, 158, 255';
+
+const PALETTES: Record<'light' | 'dark', Palette> = {
+  light: {
+    ink: `rgb(${LIGHT_RGB})`,
+    inkUi: rgba(LIGHT_RGB, 0.85),
+    inkSoft: rgba(LIGHT_RGB, 0.55),
+    fill: rgba(LIGHT_RGB, 0.06),
+    buttonFill: rgba(LIGHT_RGB, 0.16),
+    screenFill: rgba(LIGHT_RGB, 0.035),
+    grid: rgba(LIGHT_RGB, 0.09),
+    gridMajor: rgba(LIGHT_RGB, 0.16),
+    halo: 0,
+  },
+  dark: {
+    ink: `rgb(${DARK_RGB})`,
+    inkUi: rgba(DARK_RGB, 0.85),
+    inkSoft: rgba(DARK_RGB, 0.5),
+    fill: rgba(DARK_RGB, 0.08),
+    buttonFill: rgba(DARK_RGB, 0.22),
+    screenFill: rgba(DARK_RGB, 0.05),
+    grid: rgba(DARK_RGB, 0.06),
+    gridMajor: rgba(DARK_RGB, 0.11),
+    halo: 0.28,
+  },
+};
 
 const DURATION = 6200; // ms for a full draw
 const PAUSE = 1600; // ms hold once complete, before looping
@@ -44,6 +88,9 @@ export function PhoneAnimation() {
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
+
+    const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    let C: Palette = darkQuery.matches ? PALETTES.dark : PALETTES.light;
 
     let scale = 1;
     let offsetX = 0;
@@ -187,7 +234,7 @@ export function PhoneAnimation() {
     const drawGrid = () => {
       const step = 20;
       ctx.lineWidth = 1 / scale;
-      ctx.strokeStyle = GRID;
+      ctx.strokeStyle = C.grid;
       ctx.beginPath();
       for (let x = 0; x <= VW; x += step) {
         ctx.moveTo(x, 0);
@@ -199,7 +246,7 @@ export function PhoneAnimation() {
       }
       ctx.stroke();
 
-      ctx.strokeStyle = GRID_MAJOR;
+      ctx.strokeStyle = C.gridMajor;
       ctx.beginPath();
       for (let x = 0; x <= VW; x += step * 5) {
         ctx.moveTo(x, 0);
@@ -226,11 +273,11 @@ export function PhoneAnimation() {
       const e = ease(prog);
       ctx.save();
       ctx.globalAlpha = Math.min(1, prog * 1.5);
-      ctx.strokeStyle = INK_SOFT;
+      ctx.strokeStyle = C.inkSoft;
       ctx.lineWidth = 1 / scale;
 
       // anchor dot
-      ctx.fillStyle = INK;
+      ctx.fillStyle = C.ink;
       ctx.beginPath();
       ctx.arc(ax, ay, 2.4, 0, Math.PI * 2);
       ctx.fill();
@@ -256,7 +303,7 @@ export function PhoneAnimation() {
 
       // text
       ctx.globalAlpha = Math.max(0, (prog - 0.55) / 0.45);
-      ctx.fillStyle = INK;
+      ctx.fillStyle = C.ink;
       ctx.font = `600 ${12.5}px ui-monospace, SFMono-Regular, Menlo, monospace`;
       ctx.textBaseline = 'middle';
       ctx.textAlign = align === 'right' ? 'left' : 'right';
@@ -272,14 +319,31 @@ export function PhoneAnimation() {
 
       drawGrid();
 
+      // Backlight lands as the screen is drawn, so the phone lights the sheet
+      // as it wakes rather than glowing before it exists.
+      const wakeP = ease(seg(p, 0.2, 0.42));
+      if (C.halo > 0 && wakeP > 0) {
+        const hx = CX;
+        const hy = PHONE.y + PHONE.h / 2;
+        const halo = ctx.createRadialGradient(hx, hy, 0, hx, hy, PHONE.h * 0.7);
+        halo.addColorStop(0, rgba(DARK_RGB, C.halo));
+        halo.addColorStop(0.55, rgba(DARK_RGB, C.halo * 0.35));
+        halo.addColorStop(1, rgba(DARK_RGB, 0));
+        ctx.save();
+        ctx.globalAlpha = wakeP;
+        ctx.fillStyle = halo;
+        ctx.fillRect(0, 0, VW, VH);
+        ctx.restore();
+      }
+
       ctx.lineJoin = 'round';
       ctx.lineCap = 'round';
-      ctx.fillStyle = FILL;
+      ctx.fillStyle = C.fill;
 
       // ---- sheet markings ----
       ctx.save();
       ctx.globalAlpha = seg(p, 0, 0.1);
-      ctx.fillStyle = INK;
+      ctx.fillStyle = C.ink;
       ctx.font = '600 13px ui-monospace, SFMono-Regular, Menlo, monospace';
       ctx.textAlign = 'left';
       ctx.textBaseline = 'alphabetic';
@@ -294,7 +358,7 @@ export function PhoneAnimation() {
       ctx.restore();
 
       // ---- 1. phone body ----
-      ctx.strokeStyle = INK;
+      ctx.strokeStyle = C.ink;
       ctx.lineWidth = 2 / 1;
       roundedRect(
         PHONE.x,
@@ -320,6 +384,19 @@ export function PhoneAnimation() {
       ctx.lineWidth = 1.5;
 
       // ---- 2. screen ----
+      // The panel wakes once its outline closes: a brief overshoot in the
+      // fill, then it settles, the way an OLED comes on.
+      const screenOn = seg(p, 0.28, 0.4);
+      if (screenOn > 0) {
+        const bloom =
+          screenOn < 0.45 ? screenOn / 0.45 : 1 - (screenOn - 0.45) * 0.6;
+        ctx.save();
+        ctx.globalAlpha = 0.6 + bloom;
+        roundedPath(SCREEN.x, SCREEN.y, SCREEN.w, SCREEN.h, SCREEN.r);
+        ctx.fillStyle = C.screenFill;
+        ctx.fill();
+        ctx.restore();
+      }
       ctx.lineWidth = 1.5;
       roundedRect(
         SCREEN.x,
@@ -329,6 +406,10 @@ export function PhoneAnimation() {
         SCREEN.r,
         ease(seg(p, 0.16, 0.3)),
       );
+
+      // Everything inside the glass sits a step below the chassis in weight,
+      // so the figure reads as a drawing with a subject instead of uniform wire.
+      ctx.strokeStyle = C.inkUi;
 
       // ---- 3. dynamic island ----
       const islandP = ease(seg(p, 0.3, 0.4));
@@ -340,7 +421,7 @@ export function PhoneAnimation() {
         ctx.save();
         ctx.globalAlpha = islandP;
         roundedPath(ix, iy, iw, ih, 11);
-        ctx.fillStyle = FILL;
+        ctx.fillStyle = C.fill;
         ctx.fill();
         ctx.stroke();
         if (islandP > 0.8) {
@@ -359,7 +440,7 @@ export function PhoneAnimation() {
         ctx.globalAlpha = statusP;
         const sy = SCREEN.y + 27;
         // time
-        ctx.fillStyle = INK;
+        ctx.fillStyle = C.ink;
         ctx.font = '700 12px ui-monospace, monospace';
         ctx.textBaseline = 'middle';
         ctx.textAlign = 'left';
@@ -369,14 +450,14 @@ export function PhoneAnimation() {
         for (let i = 0; i < 4; i++) {
           const bh = 4 + i * 2.5;
           roundedPath(bx + i * 6, sy + 5 - bh, 3.5, bh, 1);
-          ctx.fillStyle = INK;
+          ctx.fillStyle = C.ink;
           ctx.fill();
         }
         // battery
         roundedPath(bx + 30, sy - 4, 18, 9, 2);
         ctx.stroke();
         ctx.beginPath();
-        ctx.fillStyle = INK;
+        ctx.fillStyle = C.ink;
         ctx.fillRect(bx + 32, sy - 2, 11, 5);
         ctx.beginPath();
         ctx.fillRect(bx + 48, sy - 1, 2, 3);
@@ -406,7 +487,7 @@ export function PhoneAnimation() {
           ctx.lineTo(gx + 11, gy);
           ctx.lineTo(gx - 6, gy + 9);
           ctx.closePath();
-          ctx.fillStyle = FILL;
+          ctx.fillStyle = C.fill;
           ctx.fill();
           ctx.stroke();
         }
@@ -428,11 +509,11 @@ export function PhoneAnimation() {
         // text lines
         const lineX = heroX + rowH + 12;
         const lineMax = heroW - rowH - 12;
-        ctx.strokeStyle = INK_SOFT;
+        ctx.strokeStyle = C.inkSoft;
         ctx.lineWidth = 4;
         partialLine(lineX, ry + 11, lineX + lineMax * 0.75, ry + 11, rp);
         partialLine(lineX, ry + 23, lineX + lineMax * 0.45, ry + 23, rp);
-        ctx.strokeStyle = INK;
+        ctx.strokeStyle = C.inkUi;
         ctx.lineWidth = 1.5;
         ctx.restore();
       }
@@ -447,12 +528,12 @@ export function PhoneAnimation() {
         ctx.save();
         ctx.globalAlpha = btnA;
         roundedPath(abX, abY, abW, abH, 21);
-        ctx.fillStyle = 'rgba(47, 95, 224, 0.16)';
+        ctx.fillStyle = C.buttonFill;
         ctx.fill();
         ctx.stroke();
         if (btnA > 0.6) {
           ctx.globalAlpha = (btnA - 0.6) / 0.4;
-          ctx.fillStyle = INK;
+          ctx.fillStyle = C.ink;
           ctx.font = '700 13px ui-monospace, monospace';
           ctx.textAlign = 'center';
           ctx.textBaseline = 'middle';
@@ -521,7 +602,7 @@ export function PhoneAnimation() {
         ctx.globalAlpha = homeP;
         const hw = 92 * homeP;
         roundedPath(CX - hw / 2, SCREEN.y + SCREEN.h - 16, hw, 5, 2.5);
-        ctx.fillStyle = INK;
+        ctx.fillStyle = C.ink;
         ctx.fill();
         ctx.restore();
       }
@@ -531,36 +612,51 @@ export function PhoneAnimation() {
       if (dimP > 0) {
         ctx.save();
         ctx.globalAlpha = dimP;
-        ctx.strokeStyle = INK_SOFT;
+        ctx.strokeStyle = C.inkSoft;
         ctx.lineWidth = 1;
-        ctx.fillStyle = INK;
+        ctx.fillStyle = C.ink;
         ctx.font = '11px ui-monospace, monospace';
+
+        // The label sits in a gap in the line rather than on a painted patch
+        // of paper, which would punch a hole through the backlight.
+        const gap = 28;
 
         // width dimension (top)
         const dy = PHONE.y - 22;
-        partialLine(PHONE.x, dy, PHONE.x + PHONE.w, dy, dimP);
+        const halfW = PHONE.w / 2 - gap;
+        partialLine(PHONE.x, dy, PHONE.x + halfW, dy, Math.min(1, dimP * 2));
+        partialLine(
+          PHONE.x + PHONE.w,
+          dy,
+          PHONE.x + PHONE.w - halfW,
+          dy,
+          Math.min(1, dimP * 2),
+        );
         partialLine(PHONE.x, dy - 5, PHONE.x, dy + 5, 1);
         partialLine(PHONE.x + PHONE.w, dy - 5, PHONE.x + PHONE.w, dy + 5, 1);
         ctx.textAlign = 'center';
-        ctx.textBaseline = 'bottom';
-        ctx.save();
-        ctx.fillStyle = PAPER;
-        ctx.fillRect(CX - 26, dy - 8, 52, 14);
-        ctx.restore();
-        ctx.fillStyle = INK;
-        ctx.fillText('390 PT', CX, dy + 4);
+        ctx.textBaseline = 'middle';
+        ctx.fillStyle = C.ink;
+        ctx.fillText('390 PT', CX, dy);
 
         // height dimension (left)
         const dx = PHONE.x - 22;
-        partialLine(dx, PHONE.y, dx, PHONE.y + PHONE.h, dimP);
+        // Sits below centre so the LIST ROW leader does not run through it.
+        const midY = PHONE.y + PHONE.h * 0.72;
+        partialLine(dx, PHONE.y, dx, midY - gap, Math.min(1, dimP * 2));
+        partialLine(
+          dx,
+          PHONE.y + PHONE.h,
+          dx,
+          midY + gap,
+          Math.min(1, dimP * 2),
+        );
         partialLine(dx - 5, PHONE.y, dx + 5, PHONE.y, 1);
         partialLine(dx - 5, PHONE.y + PHONE.h, dx + 5, PHONE.y + PHONE.h, 1);
         ctx.save();
-        ctx.translate(dx - 4, PHONE.y + PHONE.h / 2);
+        ctx.translate(dx, midY);
         ctx.rotate(-Math.PI / 2);
-        ctx.fillStyle = PAPER;
-        ctx.fillRect(-26, -8, 52, 14);
-        ctx.fillStyle = INK;
+        ctx.fillStyle = C.ink;
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         ctx.fillText('844 PT', 0, 0);
@@ -569,7 +665,7 @@ export function PhoneAnimation() {
       }
 
       // ---- labels with leader lines ----
-      ctx.strokeStyle = INK;
+      ctx.strokeStyle = C.ink;
       ctx.lineWidth = 1;
       // left side
       drawLabel(
@@ -664,12 +760,37 @@ export function PhoneAnimation() {
       draw(1);
     };
 
+    const play = () => {
+      if (prefersReducedMotion || rafRef.current !== null) return;
+      rafRef.current = requestAnimationFrame(frame);
+    };
+    const pause = () => {
+      if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
+      rafRef.current = null;
+    };
+
     resize();
     if (prefersReducedMotion) {
       drawStatic();
-    } else {
-      rafRef.current = requestAnimationFrame(frame);
     }
+
+    // Repaint in the new palette when the OS theme flips under us.
+    const onSchemeChange = (event: MediaQueryListEvent) => {
+      C = event.matches ? PALETTES.dark : PALETTES.light;
+      if (prefersReducedMotion) drawStatic();
+    };
+    darkQuery.addEventListener('change', onSchemeChange);
+
+    // A looping canvas costs a frame budget for as long as it runs, so the
+    // loop only runs while the sheet is actually on screen.
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) play();
+        else pause();
+      },
+      { threshold: 0.1 },
+    );
+    observer.observe(canvas);
 
     let resizeTimer: ReturnType<typeof setTimeout>;
     const onResize = () => {
@@ -683,15 +804,14 @@ export function PhoneAnimation() {
 
     return () => {
       window.removeEventListener('resize', onResize);
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      darkQuery.removeEventListener('change', onSchemeChange);
+      observer.disconnect();
+      pause();
     };
   }, []);
 
   return (
-    <div
-      className="relative w-full max-w-2xl overflow-hidden rounded-xl border"
-      style={{ borderColor: INK_SOFT, backgroundColor: PAPER }}
-    >
+    <div className="relative w-full max-w-2xl overflow-hidden rounded-xl border border-[rgba(47,95,224,0.55)] bg-[#eef1fa] dark:border-[rgba(122,158,255,0.3)] dark:bg-[#0b0f1a]">
       <div className="relative aspect-[7/8] w-full">
         <canvas ref={canvasRef} className="h-full w-full" />
       </div>
