@@ -79,9 +79,9 @@ test('the screen slot renders children and shares the reveal system', () => {
     </PhoneSchematic>,
   );
   getByText('épisode');
-  // The slot fades with the drawing rather than through an inline transition,
-  // so the reduced-motion rule reaches it too.
-  const slot = container.querySelector('.ps-figure > div[data-fade]');
+  // The slot wakes through the same data-attribute system as the drawing
+  // rather than an inline transition, so the reduced-motion rule reaches it.
+  const slot = container.querySelector('.ps-figure > div[data-screen]');
   expect(slot).not.toBeNull();
 });
 
