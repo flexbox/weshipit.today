@@ -109,6 +109,15 @@ It will wait forever.
 
 ---
 
+background-image: url(./images/offline-first/scene-1-classic.svg)
+
+???
+~30s. This is every app in the room. The truth lives on the server,
+the phone asks for it, and when the phone can't ask, it has nothing.
+`isPending: forever` is the whole problem in two words.
+
+---
+
 class: center, middle
 
 > Why don’t we design something as seemingly obvious
@@ -135,93 +144,44 @@ class: center, middle
 David Leuliette
 
 ???
-//@todo add note
+~15s. Same sentence, one word changed. Offline is an error state we ship
+to every user, every day, and we still design it last.
 
 ---
 
-> ...because "Milliseconds Matter"
+## We should. Because milliseconds matter.
 
 --
 
 .phone-shot[![Instagram on iPhone](./images/offline-first/instagram.webp)]
 
 ???
+~45s. Offline-first is not a feature for people with no signal.
+It is the fastest possible app for everyone, because nothing awaits the network.
 
-for me the answer is clear: optimize for latency.
-
-Many examples:
-
-1. The Amazon Benchmark: a famous study saying that every 100ms of added latency costs 1% in sales.
-
-2. Instagram: From a UX perspective, one of the key reasons the first version felt so fast and magical was that the app started uploading the photo immediately after the user selected it, in the background. While the user was busy adding a caption, choosing filters, or tweaking settings, the upload was already underway or even finished by the time they hit “Share.”
+Instagram, first version: the upload started the moment you picked the photo,
+in the background. While you were writing the caption and picking a filter,
+the upload was already done. Tap "Share": instant. That is the same trick.
+Local first, network later.
 
 ---
 
-## 10 years+ in the React ecosystem
+## 10 years of React state
 
 --
 
-- `useState` (or `setState`)
-- Context
-- Redux
-- MobX-State-tree
-- GraphQL Apollo
-- Immer
-- Unstated
-- Recoil
-- xState
-- Jötai
-- zustand
-
-<https://github.com/GantMan/ReactStateMuseum>
-
-???
-
-I am in the react ecosystem since 10+ years. I have seen many state management libraries come and go, but the core challenges of offline-first and latency optimization remain the same.
-
----
-
-## One day, I landed on this
+`setState` · Context · Redux · MobX-State-Tree · Apollo · Recoil · xState · Jotai · zustand
 
 --
 
 .legend-shot[![Legendapp State benchmark](./images/offline-first/legendapp-state.png)]
 
 ???
-
-an extremely fast, lightweight (4kb) state management and sync library for and React
-
----
-
-## And then, one day I got in
-
---
-
-.legend-shot[![App.js Conf 2022](./images/offline-first/appjs-2022.jpg)]
-
-The moment I realized the power of offline-first state management was when I could make changes on my phone without worrying about network connectivity.
-
-???
-
-it's important to come to conferences and hang out with the community.
-
-I hung out with Catalin Miron, and he shared with me some input on using legend-state.
-
----
-
-# Why Legend State is awesome
-
---
-
-### It just works
-
-???
-
-Trust me bro
-
----
-
-background-image: url(./images/offline-first/scene-1-classic.svg)
+~40s. Ten years in the ecosystem, a new state library every eighteen months.
+None of them cared about the network. Then this one: 4kb, fast, and the
+sync engine is built in. Catalin Miron pointed me at it at App.js 2022.
+That is the extent of the library pitch. The rest of the talk is not about
+Legend State. It is about the four things Legend State can't decide for you.
 
 ---
 
@@ -284,13 +244,18 @@ Decision 4 is where I admit I lied.
 
 background-image: url(./images/offline-first/scene-2-offline-write.svg)
 
+???
+~30s. Same drawing, flipped. The truth lives on the phone. Tap, re-render,
+queue. Nothing in this picture awaited the network. The cloud is grey on
+purpose. Every choice that follows is about what happens in that queue.
+
 ---
 
 # Four decisions
 
 --
 
-1. Who generates the id?
+1. Who makes the id?
 
 --
 
@@ -337,8 +302,16 @@ Your primary key is now a guess made by the client.
 - UUID **v4** is random: it shreds your Postgres index. Use **v7**, it sorts by time
 - a client picks its own ids now, so RLS is not optional anymore
 
+--
+
+You can't flip a live table from identity to UUID. That is a migration, with users on it.
+
 ???
 ~1m45.
+
+The last line is the point of the whole talk: this is a one-way door.
+Every foreign key, every URL, every analytics event carries the old id.
+Decide before the first row, or pay for it with a migration and a maintenance window.
 
 Start with the obvious: you tap "add", you are in a basement, the row needs
 a primary key right now. The server is not there to give you one.
@@ -375,6 +348,10 @@ It has no way to tell "deleted" from "never existed".
 --
 
 So you don't delete. You tombstone.
+
+--
+
+The rows you already hard-deleted? Gone. No device will ever learn about them.
 
 ???
 ~1m45.
@@ -444,8 +421,18 @@ updatePartial: true, // send only the fields that changed
 
 Without it, device B reverts a field it never touched.
 
+--
+
+And "last" is decided by `updated_at`. **The phone never writes that column.**
+A Postgres trigger does.
+
 ???
 ~2m.
+
+The clock line: `changesSince: 'last-sync'` and last-write-wins both read
+`updated_at`. If the device stamps it, you are trusting a clock the user can
+set by hand, that drifts, that crosses time zones. Server trigger, always.
+This is a schema decision, not a config flag.
 
 The honest framing: LegendState has no conflict resolution. It does not
 pretend to. It is a sync engine, not a CRDT.
@@ -548,6 +535,12 @@ which. Silence is the one option that is always wrong.
 
 background-image: url(./images/offline-first/scene-3-reconciliation.svg)
 
+???
+~30s. Signal is back. Read the arrows once, left to right: the queue drains
+as upserts, ids came from the phone so retries are safe. A delta comes back
+with tombstones. Fields merge, last write wins. That is the four decisions
+drawn as one picture. Next slide is the same thing as code.
+
 ---
 
 # The whole thing
@@ -582,6 +575,58 @@ Four lines more than the README. That is the whole talk.
 
 "Ids. Deletes. Conflicts. Retries. Four lines. Everything else in this config,
 the README gave you."
+
+---
+
+# The trade-offs
+
+--
+
+- You now run a **distributed system**. Two sources of truth, permanently.
+
+--
+
+- Bugs reproduce on one device, in one sync state.
+  Build a "dump the local store" screen on **day one**.
+
+--
+
+- Read-mostly app? You don't need this. React Query plus a persister is enough.
+
+--
+
+- Two people editing the same text? You don't need this either. You need a CRDT.
+
+???
+~1m15. This is where the abstract's "hard-won" claim gets paid.
+
+The store-dump screen is not optional. The first bug report you get will be
+"it works on my phone". You need to see their queue, their last-sync, their
+tombstones. If you can't, you are debugging blind.
+
+Then the honest part: most apps in this room are read-mostly. A feed with a
+like button does not need a sync engine. Cache it, persist the cache, ship.
+And if it is Google Docs, this is the wrong tool. LWW is not a merge.
+
+---
+
+class: center
+
+# Same app. Airplane mode.
+
+.phone-shot[![Airplane mode, the app just works](./images/offline-first/airplane-mode.gif)]
+
+--
+
+No spinner. No error screen.
+
+???
+~30s. Callback to the three spinners from the open. Don't narrate the GIF.
+Let it loop twice. Then the one line.
+
+TODO record: airplane mode toggle visible in the status bar, add a todo, tap
+delete on another, swipe-kill the app, reopen, both changes still there.
+Under 8 seconds, looped.
 
 ---
 
