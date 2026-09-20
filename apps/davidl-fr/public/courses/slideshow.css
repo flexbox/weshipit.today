@@ -166,5 +166,12 @@ a:hover {
 
 /* portrait screenshot filling a slide of its own */
 .phone-shot img {
-  max-height: 600px;
+  max-height: 360px;
+}
+
+/* product screenshot / photo sitting under a heading, smaller than a crash-shot
+   so the heading and the reveal below it stay on the slide */
+.legend-shot img {
+  max-height: 380px;
+  margin-top: 1rem;
 }
