@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap');
 
 body {
   font-family:
@@ -41,7 +41,8 @@ h3 {
 
 .remark-code,
 .remark-inline-code {
-  font-family: 'Ubuntu Mono';
+  font-family: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-variant-ligatures: none;
 }
 
 .remark-container {
@@ -125,8 +126,8 @@ a:hover {
 }
 
 /* opt-in: shrink code so side-by-side snippets don't overflow a column */
-.compact .remark-code {
-  font-size: 0.62em;
+.remark-slide-content .compact pre code.remark-code {
+  font-size: 10px;
 }
 
 /* crash screens — `class: center, middle, bsod` / `class: center, middle, rrod`
@@ -174,4 +175,160 @@ a:hover {
 .legend-shot img {
   max-height: 380px;
   margin-top: 1rem;
+}
+
+/* ---------------------------------------------------------------------------
+   Code blocks — ray.so "Tailwind" theme, padding 64
+   https://www.ray.so/#theme=tailwind&padding=64
+   Structure emitted by remark: pre > code.remark-code > div.remark-code-line
+   `pre` is the padded frame, `code` is the window (title bar + editor).
+   Palette is the Tailwind theme's dark token set, kept dark in both colour
+   schemes (like the Tailwind docs); only the frame background follows the
+   scheme so the slide never shows a dark slab on a white page.
+   ------------------------------------------------------------------------ */
+.remark-slide-content pre {
+  --ray-frame: transparent;
+  --ray-window: #1e293b;
+  --ray-window-border: rgba(210, 241, 255, 0.25);
+  --ray-foreground: #f9fafb;
+  --ray-line-number: rgba(148, 163, 184, 0.55);
+  --ray-highlight: rgba(193, 178, 249, 0.12);
+  --ray-highlight-border: #c1b2f9;
+
+  margin: 1rem 0;
+  padding: 2rem; /* ray.so padding=64, scaled to the 908px slide */
+  border-radius: 12px;
+  background: var(--ray-frame);
+}
+
+.remark-slide-content pre code.remark-code {
+  display: block;
+  overflow: hidden;
+  padding: 0;
+  border: 1px solid var(--ray-window-border);
+  border-radius: 8px;
+  background: var(--ray-window);
+  color: var(--ray-foreground);
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: 0.1px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  tab-size: 2;
+  counter-reset: line;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* title bar with the three window controls */
+.remark-slide-content pre code.remark-code::before {
+  content: '';
+  display: block;
+  height: 34px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background-image:
+    radial-gradient(circle, #475569 5px, transparent 5.5px),
+    radial-gradient(circle, #475569 5px, transparent 5.5px),
+    radial-gradient(circle, #475569 5px, transparent 5.5px);
+  background-repeat: no-repeat;
+  background-size: 10px 10px;
+  background-position:
+    12px 12px,
+    31px 12px,
+    50px 12px;
+}
+
+.remark-slide-content pre code.remark-code::after {
+  content: '';
+  display: block;
+  height: 16px;
+}
+
+/* one line = one row: gutter number, then the code */
+.remark-slide-content .remark-code-line {
+  position: relative;
+  padding: 0 16px 0 3.25rem;
+  min-height: 1.5em;
+}
+
+.remark-slide-content .remark-code-line::before {
+  counter-increment: line;
+  content: counter(line);
+  position: absolute;
+  left: 0;
+  width: 2.25rem;
+  color: var(--ray-line-number);
+  text-align: right;
+  user-select: none;
+}
+
+/* `* ` prefixed lines in the fence */
+.remark-slide-content .remark-code-line-highlighted {
+  background-color: var(--ray-highlight);
+  box-shadow: inset 2px 0 0 var(--ray-highlight-border);
+}
+
+/* tokens — ray.so tailwind/dark.json mapped onto highlight.js classes */
+.remark-slide-content .remark-code .hljs-comment,
+.remark-slide-content .remark-code .hljs-quote {
+  color: #9ca3af;
+  font-style: italic;
+}
+.remark-slide-content .remark-code .hljs-keyword,
+.remark-slide-content .remark-code .hljs-built_in,
+.remark-slide-content .remark-code .hljs-selector-attr,
+.remark-slide-content .remark-code .hljs-doctag {
+  color: #c4b5fd;
+}
+.remark-slide-content .remark-code .hljs-string,
+.remark-slide-content .remark-code .hljs-regexp,
+.remark-slide-content .remark-code .hljs-link {
+  color: #7dd3fc;
+}
+.remark-slide-content .remark-code .hljs-number,
+.remark-slide-content .remark-code .hljs-literal,
+.remark-slide-content .remark-code .hljs-symbol {
+  color: #fde68a;
+}
+.remark-slide-content .remark-code .hljs-title,
+.remark-slide-content .remark-code .hljs-type,
+.remark-slide-content .remark-code .hljs-name,
+.remark-slide-content .remark-code .hljs-selector-tag,
+.remark-slide-content .remark-code .hljs-selector-class,
+.remark-slide-content .remark-code .hljs-selector-id,
+.remark-slide-content .remark-code .hljs-selector-pseudo,
+.remark-slide-content .remark-code .hljs-section {
+  color: #f472b6;
+}
+.remark-slide-content .remark-code .hljs-variable,
+.remark-slide-content .remark-code .hljs-template-variable {
+  color: #fda4af;
+}
+.remark-slide-content .remark-code .hljs-attr,
+.remark-slide-content .remark-code .hljs-attribute,
+.remark-slide-content .remark-code .hljs-params,
+.remark-slide-content .remark-code .hljs-tag,
+.remark-slide-content .remark-code .hljs-subst {
+  color: #d1d5db;
+}
+.remark-slide-content .remark-code .hljs-meta {
+  color: #93c5fd;
+}
+.remark-slide-content .remark-code .hljs-addition {
+  color: #34d399;
+}
+.remark-slide-content .remark-code .hljs-deletion {
+  color: #fb7185;
+}
+.remark-slide-content .remark-code .hljs-emphasis {
+  font-style: italic;
+}
+.remark-slide-content .remark-code .hljs-strong {
+  font-weight: 500;
+}
+
+@media (prefers-color-scheme: dark) {
+  .remark-slide-content pre {
+    --ray-frame: #0f172a;
+  }
 }
