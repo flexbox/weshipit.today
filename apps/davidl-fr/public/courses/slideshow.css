@@ -335,10 +335,21 @@ a:hover {
 
 /* full-bleed animated SVG scenes: <object> so the SVG can load Inter and follow prefers-color-scheme */
 .remark-slide-content.scene {
-  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.remark-slide-content.scene h2 {
+  margin-bottom: 0;
+}
+.remark-slide-content.scene p {
+  margin-top: 0.25em;
+  font-size: 0.7em;
+  letter-spacing: 0.12em;
+  opacity: 0.6;
 }
 .remark-slide-content.scene object {
   display: block;
+  flex: 1;
+  min-height: 0;
   width: 100%;
-  height: 100%;
 }

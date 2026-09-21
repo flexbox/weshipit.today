@@ -111,6 +111,10 @@ It will wait forever.
 
 class: scene
 
+## Classic
+
+THE TRUTH LIVES ON THE SERVER · THE PHONE ASKS FOR IT
+
 <object data="./images/offline-first/scene-1-classic.svg" type="image/svg+xml" aria-label="scene-1-classic"></object>
 
 ???
@@ -118,8 +122,6 @@ Say it, don't show it: "The server is fine. The phone is not, and it has no data
 
 On screen (Classic: server holds the truth):
 
-- Classic
-- THE TRUTH LIVES ON THE SERVER · THE PHONE ASKS FOR IT
 - API
 - POSTGRES
 - NO SIGNAL
@@ -261,6 +263,10 @@ Decision 4 is where I admit I lied.
 
 class: scene
 
+## Offline-first · the write
+
+THE TRUTH LIVES ON THE PHONE · THE NETWORK IS NOT INVITED
+
 <object data="./images/offline-first/scene-2-offline-write.svg" type="image/svg+xml" aria-label="scene-2-offline-write"></object>
 
 ???
@@ -268,8 +274,6 @@ Say it, don't show it: "Three hops, all on the device. Nothing in this picture a
 
 On screen (Offline-first: the write):
 
-- Offline-first · the write
-- THE TRUTH LIVES ON THE PHONE · THE NETWORK IS NOT INVITED
 - RE-RENDERED AT ~0 MS
 - listeners fire before disk
 - LOCAL STORE · SOURCE OF TRUTH
@@ -570,6 +574,10 @@ which. Silence is the one option that is always wrong.
 
 class: scene
 
+## Reconciliation
+
+SIGNAL RETURNS · THE QUEUE DRAINS · A DELTA COMES BACK
+
 <object data="./images/offline-first/scene-3-reconciliation.svg" type="image/svg+xml" aria-label="scene-3-reconciliation"></object>
 
 ???
@@ -577,8 +585,6 @@ Say it, don't show it: "A change the server will never accept retries forever. C
 
 On screen (Reconciliation):
 
-- Reconciliation
-- SIGNAL RETURNS · THE QUEUE DRAINS · A DELTA COMES BACK
 - API
 - POSTGRES
 - UPSERTS, OLDEST FIRST
@@ -667,6 +673,10 @@ And if it is Google Docs, this is the wrong tool. LWW is not a merge.
 
 class: scene
 
+## Airplane mode
+
+SAME APP · SAME BASEMENT · THE TRUTH IS ALREADY ON THE PHONE
+
 <object data="./images/offline-first/scene-4-airplane-mode.svg" type="image/svg+xml" aria-label="scene-4-airplane-mode"></object>
 
 ???
@@ -674,8 +684,6 @@ Say it, don't show it: "No spinner. No error screen. Two changes waiting for a s
 
 On screen (Airplane mode: same app, it just works):
 
-- Airplane mode
-- SAME APP · SAME BASEMENT · THE TRUTH IS ALREADY ON THE PHONE
 - deleted: true
 - SWIPE UP · KILLED
 - AIRPLANE MODE
