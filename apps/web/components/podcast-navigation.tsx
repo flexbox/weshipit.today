@@ -1,6 +1,6 @@
 import React from 'react';
 import { PodcastEpisode } from '../fixtures/podcast-episodes.fixture';
-import { Hyperlink } from '@weshipit/ui';
+import Link from 'next/link';
 import { ChevronLeftIcon } from '@heroicons/react/20/solid';
 
 export function PodcastNavigation({
@@ -16,7 +16,7 @@ export function PodcastNavigation({
     <div className={`flex justify-between items-center pt-8 my-4 ${className}`}>
       <div className="flex items-center gap-4">
         {previousEpisode ? (
-          <Hyperlink
+          <Link
             href={`/podcast/${previousEpisode.slug}`}
             className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200 transition-colors"
           >
@@ -28,20 +28,20 @@ export function PodcastNavigation({
                 E{previousEpisode.number} - {previousEpisode.title}
               </div>
             </div>
-          </Hyperlink>
+          </Link>
         ) : (
-          <Hyperlink
+          <Link
             href="/podcast"
             className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200 transition-colors"
           >
             <ChevronLeftIcon className="w-4 h-4" />
             Retour à tous les épisodes
-          </Hyperlink>
+          </Link>
         )}
       </div>
 
       {nextEpisode && (
-        <Hyperlink
+        <Link
           href={`/podcast/${nextEpisode.slug}`}
           className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200 transition-colors"
         >
@@ -53,7 +53,7 @@ export function PodcastNavigation({
               Épisode {nextEpisode.number} - {nextEpisode.title}
             </div>
           </div>
-        </Hyperlink>
+        </Link>
       )}
     </div>
   );

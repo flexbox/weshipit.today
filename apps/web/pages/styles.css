@@ -20,6 +20,7 @@
 @theme {
   --animate-shine: shine 1s;
   --animate-marquee: marquee 20s linear infinite;
+  --animate-glyph-draw: glyph-draw 2.4s cubic-bezier(0.65, 0, 0.35, 1) both;
 
   --color-primary: hsl(var(--primary));
   --color-background: hsl(var(--background));
@@ -43,6 +44,15 @@
     }
     100% {
       transform: translateX(-50%);
+    }
+  }
+  /* Traces an SVG path that has `pathLength="1"` and `stroke-dasharray: 1`. */
+  @keyframes glyph-draw {
+    0% {
+      stroke-dashoffset: 1;
+    }
+    100% {
+      stroke-dashoffset: 0;
     }
   }
 }

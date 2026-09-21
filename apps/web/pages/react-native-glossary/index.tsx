@@ -8,6 +8,7 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline';
 import { GlossaryCTA } from '../../components/GlossaryCTA';
+import { GlossaryHeroGlyphs } from '../../components/glossary-hero-glyphs';
 import { GlossaryMarkdown } from '../../components/glossary-markdown';
 import {
   getAllGlossaryTerms,
@@ -233,14 +234,9 @@ export default function ReactNativeGlossary({
       </Head>
 
       <div className="mx-auto max-w-[100rem] px-4 pb-24 sm:px-6">
-        {/* Hero: oversized "Aa" behind a search field, Mobbin-style. */}
+        {/* Hero: oversized "Aa" traced as a stroke behind a search field, Mobbin-style. */}
         <header className="relative isolate mt-6 flex min-h-[20rem] items-center justify-center overflow-hidden rounded-[2rem] bg-white px-4 py-16 sm:min-h-[22rem] dark:bg-neutral-900">
-          <span
-            aria-hidden="true"
-            className="pointer-events-none absolute left-1/2 top-1/2 -z-10 -translate-x-1/2 -translate-y-1/2 select-none font-display text-[13rem] font-bold leading-none tracking-[-0.05em] text-neutral-900 [mask-image:linear-gradient(to_bottom,transparent,black_18%,black_72%,transparent)] sm:text-[18rem] md:text-[22rem] dark:text-neutral-50"
-          >
-            Aa
-          </span>
+          <GlossaryHeroGlyphs className="pointer-events-none absolute left-1/2 top-1/2 -z-10 w-[16rem] -translate-x-1/2 -translate-y-1/2 text-neutral-900 [mask-image:linear-gradient(to_bottom,transparent,black_18%,black_72%,transparent)] sm:w-[22rem] md:w-[27rem] dark:text-neutral-50" />
 
           <div className="w-full max-w-2xl">
             <label htmlFor="glossary-search" className="sr-only">

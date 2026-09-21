@@ -109,7 +109,9 @@ It will wait forever.
 
 ---
 
-background-image: url(./images/offline-first/scene-1-classic.svg)
+class: scene
+
+<object data="./images/offline-first/scene-1-classic.svg" type="image/svg+xml" aria-label="scene-1-classic"></object>
 
 ???
 ~30s. This is every app in the room. The truth lives on the server,
@@ -242,7 +244,9 @@ Decision 4 is where I admit I lied.
 
 ---
 
-background-image: url(./images/offline-first/scene-2-offline-write.svg)
+class: scene
+
+<object data="./images/offline-first/scene-2-offline-write.svg" type="image/svg+xml" aria-label="scene-2-offline-write"></object>
 
 ???
 ~30s. Same drawing, flipped. The truth lives on the phone. Tap, re-render,
@@ -533,7 +537,9 @@ which. Silence is the one option that is always wrong.
 
 ---
 
-background-image: url(./images/offline-first/scene-3-reconciliation.svg)
+class: scene
+
+<object data="./images/offline-first/scene-3-reconciliation.svg" type="image/svg+xml" aria-label="scene-3-reconciliation"></object>
 
 ???
 ~30s. Signal is back. Read the arrows once, left to right: the queue drains
@@ -610,23 +616,14 @@ And if it is Google Docs, this is the wrong tool. LWW is not a merge.
 
 ---
 
-class: center
+class: scene
 
-# Same app. Airplane mode.
-
-.phone-shot[![Airplane mode, the app just works](./images/offline-first/airplane-mode.gif)]
-
---
-
-No spinner. No error screen.
+<object data="./images/offline-first/scene-4-airplane-mode.svg" type="image/svg+xml" aria-label="scene-4-airplane-mode"></object>
 
 ???
-~30s. Callback to the three spinners from the open. Don't narrate the GIF.
-Let it loop twice. Then the one line.
-
-TODO record: airplane mode toggle visible in the status bar, add a todo, tap
-delete on another, swipe-kill the app, reopen, both changes still there.
-Under 8 seconds, looped.
+~30s. Callback to the three spinners from the open. Don't narrate it, it
+loops every 12 seconds: add, delete, force-quit, reopen, still there.
+Let it run twice. Then the one line: no spinner, no error screen.
 
 ---
 

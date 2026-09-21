@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-80 0 1160 540" width="1160" height="540" role="img" aria-label="A phone in airplane mode: a row is added instantly, another is tombstoned, the app is force-quit and reopened with both changes still there; the cloud and database on the right are greyed out">
+<title>Airplane mode: same app, it just works</title>
+<defs>
+  <pattern id="hatch" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+    <line x1="0" y1="0" x2="0" y2="5" stroke="var(--ink)" stroke-width="0.9" opacity="0.32"/>
+  </pattern>
+  <pattern id="hatchm" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+    <line x1="0" y1="0" x2="0" y2="5" stroke="var(--faint)" stroke-width="0.9" opacity="0.5"/>
+  </pattern>
+</defs>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap');
+  :root {
+    --bg: #ffffff; --ink: #1A1A17; --muted: #8C8A80; --faint: #B4B1A6; --rule: #DCD9D0; --accent: #2440FF;
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #051626; --ink: #F2EFE8; --muted: #8FA0B3; --faint: #3A4A5C; --rule: #1E3346; --accent: #8B9BFF; }
+  }
+  svg { background: var(--bg); }
+  text { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; }
+  .ser { fill: var(--ink); font-weight: 500; }
+  .mo  { font-weight: 400; }
+  .ttl { font-size: 21px; font-weight: 700; letter-spacing: -0.2px; }
+  .sub { font-size: 11.5px; fill: var(--muted); letter-spacing: 1.4px; }
+  .lab { font-size: 10.5px; fill: var(--ink); letter-spacing: 1.3px; }
+  .lab2{ font-size: 10.5px; fill: var(--muted); letter-spacing: .6px; }
+</style>
+<rect x="-80" width="1160" height="540" fill="var(--bg)"/>
+<text x="48" y="54" class="ser ttl">Airplane mode</text>
+<text x="48" y="76" class="mo sub">SAME APP &#183; SAME BASEMENT &#183; THE TRUTH IS ALREADY ON THE PHONE</text>
+<line x1="48" y1="90" x2="952" y2="90" stroke="var(--ink)" stroke-width="1"/>
+
+<!-- phone -->
+<rect x="337" y="115" width="220" height="370" rx="24" fill="url(#hatch)" stroke="var(--ink)" stroke-width="1.2"/>
+<rect x="330" y="108" width="220" height="370" rx="24" fill="var(--bg)" stroke="var(--ink)" stroke-width="1.7"/>
+<rect x="340" y="120" width="200" height="346" rx="14" fill="none" stroke="var(--ink)" stroke-width="1.1"/>
+<rect x="420" y="130" width="40" height="11" rx="5.5" fill="var(--ink)"/>
+<line x1="551" y1="178" x2="551" y2="220" stroke="var(--ink)" stroke-width="3"/>
+<line x1="329" y1="193" x2="329" y2="220" stroke="var(--ink)" stroke-width="3"/>
+<line x1="329" y1="232" x2="329" y2="259" stroke="var(--ink)" stroke-width="3"/>
+<!-- airplane glyph in the status bar -->
+<path transform="translate(352 130) scale(0.5)" d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z" fill="var(--ink)"/>
+
+<!-- list, three rows always there -->
+<rect x="362" y="164" width="12" height="12" fill="none" stroke="var(--ink)" stroke-width="1.1"/><line x1="382" y1="170" x2="512" y2="170" stroke="var(--ink)" stroke-width="1.3"/><rect x="362" y="188" width="12" height="12" fill="none" stroke="var(--ink)" stroke-width="1.1"/><line x1="382" y1="194" x2="478" y2="194" stroke="var(--ink)" stroke-width="1.3"/><rect x="362" y="212" width="12" height="12" fill="none" stroke="var(--ink)" stroke-width="1.1"/><line x1="382" y1="218" x2="494" y2="218" stroke="var(--ink)" stroke-width="1.3"/>
+
+<!-- the add button -->
+<rect x="362" y="426" width="156" height="22" rx="11" fill="none" stroke="var(--ink)" stroke-width="1.2"/>
+<line x1="436" y1="431" x2="436" y2="443" stroke="var(--ink)" stroke-width="1.4"/>
+<line x1="430" y1="437" x2="442" y2="437" stroke="var(--ink)" stroke-width="1.4"/>
+
+<!-- ADD: tap, fourth row appears instantly, first pending stub -->
+<circle cx="436" cy="437" r="4" fill="none" stroke="var(--accent)" stroke-width="2" opacity="0"><animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="0;0;1;0;0" keyTimes="0.0000;0.1833;0.1850;0.2250;1.0000"/><animate attributeName="r" dur="12s" repeatCount="indefinite" values="4;4;4;18;18" keyTimes="0.0000;0.1833;0.1850;0.2250;1.0000"/></circle>
+<g opacity="0"><animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="0;0;1;1" keyTimes="0.0000;0.1917;0.2042;1.0000"/>
+  <rect x="362" y="236" width="12" height="12" fill="none" stroke="var(--ink)" stroke-width="1.1"/><line x1="382" y1="242" x2="462" y2="242" stroke="var(--ink)" stroke-width="1.3"/>
+  <line x1="382" y1="242" x2="462" y2="242" stroke="var(--accent)" stroke-width="1.3">
+    <animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="1;1;0;0" keyTimes="0;0.1917;0.2833;1"/>
+  </line>
+  <rect x="408" y="371" width="64" height="14" rx="2" fill="var(--bg)" stroke="var(--ink)" stroke-width="1.2"/><line x1="416" y1="378" x2="464" y2="378" stroke="var(--ink)" stroke-width="1" stroke-dasharray="3 3"/>
+</g>
+
+<!-- DELETE: tap row 2, it becomes a tombstone, second pending stub -->
+<circle cx="368" cy="194" r="4" fill="none" stroke="var(--accent)" stroke-width="2" opacity="0"><animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="0;0;1;0;0" keyTimes="0.0000;0.4000;0.4017;0.4417;1.0000"/><animate attributeName="r" dur="12s" repeatCount="indefinite" values="4;4;4;18;18" keyTimes="0.0000;0.4000;0.4017;0.4417;1.0000"/></circle>
+<g opacity="0"><animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="0;0;1;1" keyTimes="0.0000;0.4083;0.4208;1.0000"/>
+  <rect x="362" y="188" width="12" height="12" fill="url(#hatch)" stroke="var(--ink)" stroke-width="1.1"/>
+  <line x1="382" y1="194" x2="478" y2="194" stroke="var(--bg)" stroke-width="3"/>
+  <line x1="382" y1="194" x2="440" y2="194" stroke="var(--faint)" stroke-width="1.3"/>
+  <text x="448" y="197.5" class="mo lab2" text-anchor="start" font-size="8.5">deleted: true</text>
+  <rect x="408" y="391" width="64" height="14" rx="2" fill="var(--bg)" stroke="var(--ink)" stroke-width="1.2"/><line x1="416" y1="398" x2="464" y2="398" stroke="var(--ink)" stroke-width="1" stroke-dasharray="3 3"/>
+</g>
+
+<!-- FORCE-QUIT: the screen goes inactive, then comes back with everything still there -->
+<g opacity="0"><animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="0;0;1;1;0;0" keyTimes="0.0000;0.6167;0.6292;0.7333;0.7458;1.0000"/>
+  <rect x="340" y="120" width="200" height="346" rx="14" fill="var(--bg)"/>
+  <rect x="340" y="120" width="200" height="346" rx="14" fill="url(#hatch)" stroke="var(--ink)" stroke-width="1.1"/>
+  <rect x="395" y="284" width="90" height="16" fill="var(--bg)"/>
+  <text x="440" y="296" class="mo lab" text-anchor="middle">SWIPE UP &#183; KILLED</text>
+</g>
+
+<!-- left annotations, accumulate as the story plays -->
+<circle cx="352" cy="136" r="2.6" fill="var(--ink)"/>
+<polyline points="352,136 286,136" fill="none" stroke="var(--ink)" stroke-width="1"/>
+<text x="278" y="140" class="mo lab" text-anchor="end">AIRPLANE MODE</text>
+<text x="278" y="156" class="mo lab2" text-anchor="end">no signal, on purpose</text>
+
+<g opacity="0"><animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="0;0;1;1" keyTimes="0.0000;0.1917;0.2042;1.0000"/>
+  <circle cx="362" cy="437" r="2.6" fill="var(--ink)"/>
+  <polyline points="362,437 286,437" fill="none" stroke="var(--ink)" stroke-width="1"/>
+  <text x="278" y="441" class="mo lab" text-anchor="end">ADD &#183; RE-RENDERED AT ~0 MS</text>
+  <text x="278" y="457" class="mo lab2" text-anchor="end">no spinner, nothing awaited</text>
+</g>
+
+<g opacity="0"><animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="0;0;1;1" keyTimes="0.0000;0.4083;0.4208;1.0000"/>
+  <circle cx="362" cy="194" r="2.6" fill="var(--ink)"/>
+  <polyline points="362,194 286,194" fill="none" stroke="var(--ink)" stroke-width="1"/>
+  <text x="278" y="198" class="mo lab" text-anchor="end">DELETE &#183; TOMBSTONE</text>
+  <text x="278" y="214" class="mo lab2" text-anchor="end">the row stays, flagged</text>
+</g>
+
+<!-- right annotation: pending queue, then the reopen verdict -->
+<g opacity="0"><animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="0;0;1;1" keyTimes="0.0000;0.1917;0.2042;1.0000"/>
+  <circle cx="472" cy="388" r="2.6" fill="var(--ink)"/>
+  <polyline points="472,388 574,388" fill="none" stroke="var(--ink)" stroke-width="1"/>
+  <text x="582" y="392" class="mo lab" text-anchor="start">PENDING QUEUE</text>
+  <text x="582" y="408" class="mo lab2" text-anchor="start">on disk &#183; retrySync: true</text>
+</g>
+<g opacity="0"><animate attributeName="opacity" dur="12s" repeatCount="indefinite" values="0;0;1;1" keyTimes="0.0000;0.7500;0.7625;1.0000"/>
+  <text x="582" y="436" class="mo lab" text-anchor="start" fill="var(--accent)">FORCE-QUIT &#183; REOPEN</text>
+  <text x="582" y="452" class="mo lab2" text-anchor="start">still there. all of it.</text>
+</g>
+
+<!-- the network, greyed out, not invited -->
+<clipPath id="cl4cloud"><path d="M670 272 C632 272 636 224 674 224 C674 182 736 176 752 208 C774 182 832 198 824 234 C856 236 854 272 822 272 Z"/></clipPath>
+<path d="M670 272 C632 272 636 224 674 224 C674 182 736 176 752 208 C774 182 832 198 824 234 C856 236 854 272 822 272 Z" fill="var(--bg)" stroke="var(--faint)" stroke-width="1.6"/>
+<rect x="630" y="258" width="230" height="16" fill="url(#hatchm)" clip-path="url(#cl4cloud)"/>
+<text x="740" y="296" class="mo lab" text-anchor="middle" fill="var(--faint)">API</text>
+<path d="M900 206 L900 306 A40 13.6 0 0 0 980 306 L980 206" fill="var(--bg)" stroke="var(--faint)" stroke-width="1.6"/>
+<path d="M900 206 L900 306 A40 13.6 0 0 0 916.8 318.512 L916.8 218.512 Z" fill="url(#hatchm)" stroke="none"/>
+<path d="M900 242 A40 13.6 0 0 0 980 242" fill="none" stroke="var(--faint)" stroke-width="1"/>
+<path d="M900 274 A40 13.6 0 0 0 980 274" fill="none" stroke="var(--faint)" stroke-width="1"/>
+<ellipse cx="940" cy="206" rx="40" ry="13.6" fill="var(--bg)" stroke="var(--faint)" stroke-width="1.6"/>
+<text x="940" y="337.6" class="mo lab" text-anchor="middle" fill="var(--faint)">POSTGRES</text>
+<line x1="558" y1="250" x2="636" y2="250" stroke="var(--faint)" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="1.2 7.3"/>
+<rect x="582" y="244" width="30" height="12" fill="var(--bg)"/>
+<line x1="591" y1="244" x2="603" y2="256" stroke="var(--ink)" stroke-width="1.4"/>
+<line x1="603" y1="244" x2="591" y2="256" stroke="var(--ink)" stroke-width="1.4"/>
+<text x="597" y="234" class="mo lab" text-anchor="middle">NO SIGNAL</text>
+<line x1="852" y1="250" x2="898" y2="250" stroke="var(--faint)" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="1.2 7.3"/>
+
+<line x1="48" y1="488" x2="952" y2="488" stroke="var(--rule)" stroke-width="1"/>
+<text x="48" y="510" class="ser" font-size="13" font-style="italic">No spinner. No error screen. Two changes waiting for a signal that can take its time.</text>
+</svg>

@@ -1,4 +1,4 @@
-import { AuthorDisclosure, Button, Faq, Text } from '@weshipit/ui';
+import { AuthorDisclosure, Button, Faq, LinkButton, Text } from '@weshipit/ui';
 
 import {
   AcademicCapIcon,
@@ -15,6 +15,7 @@ import {
   UsersIcon,
 } from '@heroicons/react/24/outline';
 import Head from 'next/head';
+import Link from 'next/link';
 import { Layout } from '../components/layout';
 import { linksApi } from './api/links';
 
@@ -113,12 +114,12 @@ function HeroSection() {
 
         <p className="mx-auto mb-10 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-500 dark:text-neutral-400 md:text-xl">
           Deux programmes phares du paysage francophone. L’Incubateur de{' '}
-          <a
+          <Link
             href={FLAVIE_URL}
             className="font-semibold text-neutral-950 underline-offset-2 hover:underline dark:text-neutral-100"
           >
             Flavie Prevot
-          </a>{' '}
+          </Link>{' '}
           (communauté + Sprints sur 12 mois) et le Bootcamp de Stan Leloup
           (formation intensive marketing/copywriting). Comparaison honnête,
           critère par critère, sans straw-man.
@@ -687,20 +688,20 @@ function RecommandationSection() {
               n’avance pas sur mes actifs »
             </span>{' '}
             → l’Incubateur Solopreneur de{' '}
-            <a
+            <Link
               href={FLAVIE_URL}
               className="font-semibold text-accent underline-offset-2 hover:underline"
             >
               Flavie Prevot
-            </a>{' '}
+            </Link>{' '}
             est plus adapté. C’est mon cas, et c’est ce que j’ai choisi. Tu peux
             lire mon{' '}
-            <a
+            <Link
               href={AVIS_URL}
               className="font-semibold text-accent underline-offset-2 hover:underline"
             >
               avis détaillé après 6 mois d’incubation
-            </a>{' '}
+            </Link>{' '}
             avant de te décider.
           </p>
           <p>
@@ -732,12 +733,12 @@ function DisclosureSection() {
     <AuthorDisclosure title="Pourquoi et comment j’ai écrit ce comparatif">
       <p>
         Je m’appelle David Leuliette, solopreneur depuis 2016 et incubé chez{' '}
-        <a
+        <Link
           href={FLAVIE_URL}
           className="font-semibold text-accent underline-offset-2 hover:underline"
         >
           Flavie Prevot
-        </a>{' '}
+        </Link>{' '}
         depuis 2025. J’ai également suivi les contenus gratuits de Stan Leloup
         pendant plusieurs années (YouTube, podcast, articles). Je n’ai pas fait
         le Bootcamp Marketing Mania — le comparatif s’appuie sur ses contenus
@@ -750,12 +751,12 @@ function DisclosureSection() {
         </span>{' '}
         Je suis ambassadeur affilié de l’Incubateur Solopreneur. Si tu rejoins
         via{' '}
-        <a
+        <Link
           href={CODE_REDUCTION_URL}
           className="font-semibold text-accent underline-offset-2 hover:underline"
         >
           mon lien
-        </a>
+        </Link>
         , je touche une commission — sans surcoût pour toi (au contraire, tu
         paies le tarif plancher). Je ne suis pas affilié Marketing Mania ni Stan
         Leloup — aucun lien financier, aucune commission.
@@ -794,18 +795,17 @@ function CtaFinalSection() {
             </p>
 
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button
-                as="a"
+              <LinkButton
                 href={CODE_REDUCTION_URL}
                 size="xxl"
                 variant="primary"
               >
                 {CTA_LABEL_SHORT}
                 <ArrowRightIcon className="ml-2 h-4 w-4" />
-              </Button>
-              <Button as="a" href={AVIS_URL} size="xxl" variant="outline">
+              </LinkButton>
+              <LinkButton href={AVIS_URL} size="xxl" variant="outline">
                 Lire l’avis Incubateur (6 mois)
-              </Button>
+              </LinkButton>
             </div>
 
             <p className="mt-8 text-xs text-neutral-500 dark:text-neutral-400">

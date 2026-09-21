@@ -1,4 +1,4 @@
-import { AuthorDisclosure, Button, Faq, Text } from '@weshipit/ui';
+import { AuthorDisclosure, Button, Faq, LinkButton, Text } from '@weshipit/ui';
 
 import {
   ArrowRightIcon,
@@ -16,6 +16,7 @@ import {
   UsersIcon,
 } from '@heroicons/react/24/outline';
 import Head from 'next/head';
+import Link from 'next/link';
 import { Layout } from '../components/layout';
 import { linksApi } from './api/links';
 
@@ -510,10 +511,10 @@ function PourAllerPlusLoinSection() {
                 {r.description}
               </p>
               {r.cta && (
-                <Button as="a" href={r.cta.href} size="md" variant="outline">
+                <LinkButton href={r.cta.href} size="md" variant="outline">
                   {r.cta.label}
                   <ArrowRightIcon className="ml-2 h-4 w-4" />
-                </Button>
+                </LinkButton>
               )}
             </div>
           ))}
@@ -538,12 +539,12 @@ function DisclosureSection() {
           ambassadeur affilié
         </span>{' '}
         de son Incubateur. Concrètement&nbsp;: si tu rejoins l’Incubateur via{' '}
-        <a
+        <Link
           href={CODE_REDUCTION_URL}
           className="font-semibold text-accent underline-offset-2 hover:underline"
         >
           mon lien
-        </a>{' '}
+        </Link>{' '}
         (au tarif plancher de 1 490 € HT), je touche une commission — sans coût
         supplémentaire pour toi, tu paies le prix le plus bas du marché.
       </p>
@@ -583,18 +584,17 @@ function CtaFinalSection() {
             </p>
 
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button as="a" href={AVIS_URL} size="xxl" variant="primary">
+              <LinkButton href={AVIS_URL} size="xxl" variant="primary">
                 {CTA_LABEL_SHORT}
                 <ArrowRightIcon className="ml-2 h-4 w-4" />
-              </Button>
-              <Button
-                as="a"
+              </LinkButton>
+              <LinkButton
                 href={CODE_REDUCTION_URL}
                 size="xxl"
                 variant="outline"
               >
                 Voir le code réduction
-              </Button>
+              </LinkButton>
             </div>
           </div>
         </div>

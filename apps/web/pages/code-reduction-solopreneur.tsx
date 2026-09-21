@@ -14,6 +14,7 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline';
 import Head from 'next/head';
+import Link from 'next/link';
 import { Layout } from '../components/layout';
 import { linksApi } from './api/links';
 
@@ -108,12 +109,12 @@ function HeroSection() {
 
         <p className="mx-auto mb-10 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-500 dark:text-neutral-400 md:text-xl">
           L&apos;Incubateur Solopreneur, c&apos;est le programme annuel de{' '}
-          <a
+          <Link
             href="/flavie-prevot-avis"
             className="font-semibold text-neutral-950 underline-offset-2 hover:underline dark:text-neutral-100"
           >
             Flavie Prevot
-          </a>{' '}
+          </Link>{' '}
           pour construire des actifs (newsletter, podcast, offre, sponsoring,
           SaaS solo) avec 300+ solopreneurs&nbsp;: 10 bootcamps (Sprints)
           thématiques dans l&apos;année, un live-atelier le vendredi, +50
@@ -218,13 +219,13 @@ function CestQuoiSection() {
             ))}
           </div>
 
-          <a
+          <Link
             href="/avis-incubateur-solopreneur"
             className="mt-8 inline-flex items-center gap-1 text-sm font-medium text-accent underline-offset-2 hover:underline"
           >
             Lire mon avis détaillé après 6 mois d&apos;incubation
             <ArrowRightIcon className="h-3.5 w-3.5" />
-          </a>
+          </Link>
         </div>
       </div>
     </section>
@@ -606,12 +607,12 @@ function PreuvesSection() {
                   {p.source}
                 </div>
                 {p.link && (
-                  <a
+                  <Link
                     href={p.link.href}
                     className="mt-2 inline-block text-sm font-medium text-accent underline-offset-2 hover:underline"
                   >
                     {p.link.label}
-                  </a>
+                  </Link>
                 )}
               </div>
             </div>
@@ -628,12 +629,12 @@ function PourquoiCettePageSection() {
       <p>
         Je m&apos;appelle David Leuliette, je suis solopreneur depuis 2016 et
         incubé chez{' '}
-        <a
+        <Link
           href="/flavie-prevot-avis"
           className="font-semibold text-accent underline-offset-2 hover:underline"
         >
           Flavie Prevot
-        </a>
+        </Link>
         . L&apos;Incubateur m&apos;a aidé à relancer mon podcast, structurer mon
         offre et trouver des sponsors — donc Flavie m&apos;a proposé de devenir
         ambassadeur.

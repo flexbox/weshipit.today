@@ -1,4 +1,4 @@
-import { AuthorDisclosure, Button, Faq, Text } from '@weshipit/ui';
+import { AuthorDisclosure, Button, Faq, LinkButton, Text } from '@weshipit/ui';
 
 import {
   ArrowRightIcon,
@@ -18,6 +18,7 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline';
 import Head from 'next/head';
+import Link from 'next/link';
 import { Layout } from '../components/layout';
 import { linksApi } from './api/links';
 
@@ -149,15 +150,14 @@ function HeroSection() {
         </div>
 
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Button
-            as="a"
+          <LinkButton
             href={`${CODE_REDUCTION_URL}#comparatif`}
             size="xl"
             variant="primary"
           >
             Voir le code réduction (-910 €)
             <ArrowRightIcon className="ml-2 h-4 w-4" />
-          </Button>
+          </LinkButton>
           <Button as="a" href="#verdict" size="xl" variant="outline">
             {SECONDARY_CTA}
           </Button>
@@ -705,12 +705,12 @@ function ComparatifAlternativesSection() {
 
         <p className="mt-6 text-center text-sm text-neutral-500 dark:text-neutral-400">
           Comparaison détaillée avec Marketing Mania&nbsp;:{' '}
-          <a
+          <Link
             href="/incubateur-solopreneur-vs-marketing-mania"
             className="font-medium text-accent underline-offset-2 hover:underline"
           >
             Incubateur Solopreneur vs Marketing Mania →
-          </a>
+          </Link>
         </p>
       </div>
     </section>
@@ -913,14 +913,13 @@ function PrixEtCodeReductionSection() {
             {CTA_LABEL}
             <ArrowRightIcon className="ml-2 h-4 w-4" />
           </Button>
-          <Button
-            as="a"
+          <LinkButton
             href={`${CODE_REDUCTION_URL}#comparatif`}
             size="lg"
             variant="outline"
           >
             Voir tous les tarifs
-          </Button>
+          </LinkButton>
         </div>
 
         <p className="mt-6 text-center text-xs text-neutral-500 dark:text-neutral-400">
@@ -939,24 +938,24 @@ function DisclosureSection() {
       <p>
         Je m’appelle David Leuliette, je suis solopreneur depuis 2016 et incubé
         chez{' '}
-        <a
+        <Link
           href="/flavie-prevot-avis"
           className="font-semibold text-accent underline-offset-2 hover:underline"
         >
           Flavie Prevot
-        </a>{' '}
+        </Link>{' '}
         depuis 2025. J’ai payé l’Incubateur de ma poche, au tarif public en
         vigueur à l’époque. Personne ne m’a payé pour écrire cet avis.
       </p>
       <p>
         Après 6 mois, j’ai été invité à devenir ambassadeur — concrètement, je
         touche une commission d’apporteur d’affaires si tu rejoins via{' '}
-        <a
+        <Link
           href={CODE_REDUCTION_URL}
           className="font-semibold text-accent underline-offset-2 hover:underline"
         >
           mon lien d’affilié
-        </a>
+        </Link>
         . En contrepartie, tu paies le tarif le plus bas du marché (1 490 € HT
         au lieu de 2 400 € HT).
       </p>
