@@ -127,7 +127,4 @@
 <line x1="603" y1="244" x2="591" y2="256" stroke="var(--ink)" stroke-width="1.4"/>
 <text x="597" y="234" class="mo lab" text-anchor="middle">NO SIGNAL</text>
 <line x1="852" y1="250" x2="898" y2="250" stroke="var(--faint)" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="1.2 7.3"/>
-
-<line x1="48" y1="488" x2="952" y2="488" stroke="var(--rule)" stroke-width="1"/>
-<text x="48" y="510" class="ser" font-size="13" font-style="italic">No spinner. No error screen. Two changes waiting for a signal that can take its time.</text>
 </svg>

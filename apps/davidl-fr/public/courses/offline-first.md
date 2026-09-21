@@ -114,6 +114,21 @@ class: scene
 <object data="./images/offline-first/scene-1-classic.svg" type="image/svg+xml" aria-label="scene-1-classic"></object>
 
 ???
+Say it, don't show it: "The server is fine. The phone is not, and it has no data of its own to fall back on."
+
+On screen (Classic: server holds the truth):
+
+- Classic
+- THE TRUTH LIVES ON THE SERVER · THE PHONE ASKS FOR IT
+- API
+- POSTGRES
+- NO SIGNAL
+- SOURCE OF TRUTH
+- EVERY TAP WAITS HERE
+- reads and writes
+- isPending: true
+- isPending: forever
+
 ~30s. This is every app in the room. The truth lives on the server,
 the phone asks for it, and when the phone can't ask, it has nothing.
 `isPending: forever` is the whole problem in two words.
@@ -249,6 +264,22 @@ class: scene
 <object data="./images/offline-first/scene-2-offline-write.svg" type="image/svg+xml" aria-label="scene-2-offline-write"></object>
 
 ???
+Say it, don't show it: "Three hops, all on the device. Nothing in this picture awaited anything."
+
+On screen (Offline-first: the write):
+
+- Offline-first · the write
+- THE TRUTH LIVES ON THE PHONE · THE NETWORK IS NOT INVITED
+- RE-RENDERED AT ~0 MS
+- listeners fire before disk
+- LOCAL STORE · SOURCE OF TRUTH
+- persisted on device
+- PENDING QUEUE
+- waits for signal
+- API
+- POSTGRES
+- NO SIGNAL
+
 ~30s. Same drawing, flipped. The truth lives on the phone. Tap, re-render,
 queue. Nothing in this picture awaited the network. The cloud is grey on
 purpose. Every choice that follows is about what happens in that queue.
@@ -542,6 +573,24 @@ class: scene
 <object data="./images/offline-first/scene-3-reconciliation.svg" type="image/svg+xml" aria-label="scene-3-reconciliation"></object>
 
 ???
+Say it, don't show it: "A change the server will never accept retries forever. Count the failures, then decide."
+
+On screen (Reconciliation):
+
+- Reconciliation
+- SIGNAL RETURNS · THE QUEUE DRAINS · A DELTA COMES BACK
+- API
+- POSTGRES
+- UPSERTS, OLDEST FIRST
+- ids came from the phone, so a retry is idempotent
+- DELTA SINCE last_sync
+- changed rows + tombstones (deleted: true)
+- a hard DELETE would have arrived as nothing
+- LOCAL STORE · STILL THE TRUTH
+- server rows merge in per field
+- last write wins, updatePartial: true
+- DURABLE REPLICA
+
 ~30s. Signal is back. Read the arrows once, left to right: the queue drains
 as upserts, ids came from the phone so retries are safe. A delta comes back
 with tombstones. Fields merge, last write wins. That is the four decisions
@@ -621,6 +670,28 @@ class: scene
 <object data="./images/offline-first/scene-4-airplane-mode.svg" type="image/svg+xml" aria-label="scene-4-airplane-mode"></object>
 
 ???
+Say it, don't show it: "No spinner. No error screen. Two changes waiting for a signal that can take its time."
+
+On screen (Airplane mode: same app, it just works):
+
+- Airplane mode
+- SAME APP · SAME BASEMENT · THE TRUTH IS ALREADY ON THE PHONE
+- deleted: true
+- SWIPE UP · KILLED
+- AIRPLANE MODE
+- no signal, on purpose
+- ADD · RE-RENDERED AT ~0 MS
+- no spinner, nothing awaited
+- DELETE · TOMBSTONE
+- the row stays, flagged
+- PENDING QUEUE
+- on disk · retrySync: true
+- FORCE-QUIT · REOPEN
+- still there. all of it.
+- API
+- POSTGRES
+- NO SIGNAL
+
 ~30s. Callback to the three spinners from the open. Don't narrate it, it
 loops every 12 seconds: add, delete, force-quit, reopen, still there.
 Let it run twice. Then the one line: no spinner, no error screen.
