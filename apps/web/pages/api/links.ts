@@ -31,6 +31,6 @@ export const linksApi = {
   },
   affiliate: {
     INCUBATEUR_SOLOPRENEUR:
-      'https://leboard.systeme.io/paiement-incubateur-masterclass-2026-affilies?sa=sa00062484176dd1b8da591704d36473138ed9a63630',
+      'https://www.incubateursolopreneur.fr/rejoindre/david-leuliette',
   },
 };

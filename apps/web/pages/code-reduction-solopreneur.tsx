@@ -658,7 +658,7 @@ function PourquoiCettePageSection() {
       </p>
       <p className="text-sm">
         Si tu préfères payer le tarif public, la page officielle reste
-        accessible directement sur leboard.systeme.io. Le contenu et
+        accessible directement sur incubateursolopreneur.fr. Le contenu et
         l&apos;accès sont strictement identiques.
       </p>
     </AuthorDisclosure>

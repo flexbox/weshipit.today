@@ -970,9 +970,9 @@ function DisclosureSection() {
       </p>
       <p className="text-sm">
         Tu peux aussi acheter l’Incubateur au tarif public directement sur
-        leboard.systeme.io. Le contenu et l’accès sont strictement identiques.
-        Le seul intérêt de passer par cette page&nbsp;: 910 € d’économie
-        immédiate.
+        incubateursolopreneur.fr. Le contenu et l’accès sont strictement
+        identiques. Le seul intérêt de passer par cette page&nbsp;: 910 €
+        d’économie immédiate.
       </p>
     </AuthorDisclosure>
   );
