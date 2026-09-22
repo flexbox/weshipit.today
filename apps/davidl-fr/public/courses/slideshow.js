@@ -3,6 +3,7 @@ const slug = path.split('/').pop().split('.').shift();
 
 const slideshow = remark.create({
   sourceUrl: `${slug}.md`,
+  ratio: '16:9',
   highlightStyle: 'solarized-light',
 
   navigation: {
