@@ -35,8 +35,6 @@ class: center, bsod
 
 Microsoft Windows
 
---
-
 ???
 ~25s. Hands up. Wait for it.
 
@@ -55,8 +53,6 @@ class: center, rrod
 --
 
 Microsoft Xbox 360
-
---
 
 ???
 
@@ -168,7 +164,7 @@ to every user, every day, and we still design it last.
 
 ---
 
-## We should. Because milliseconds matter.
+## We should. Because milliseconds matter
 
 --
 

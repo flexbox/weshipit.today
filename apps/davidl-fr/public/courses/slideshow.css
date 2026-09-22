@@ -333,16 +333,20 @@ a:hover {
   }
 }
 
-/* full-bleed animated SVG scenes: <object> so the SVG can load Inter and follow prefers-color-scheme */
+/* animated SVG scenes: <object> so the SVG can load Inter and follow prefers-color-scheme.
+   The slide is a fixed 16:9 box; the heading takes one band at the top and the
+   illustration gets everything below it, centred, with an even gutter around it.
+   Each SVG's viewBox is cropped to its drawing, so "meet" scaling fills the area. */
 .remark-slide-content.scene {
   display: flex;
   flex-direction: column;
+  padding: 1em 2em 1.25em;
 }
 .remark-slide-content.scene h2 {
-  margin-bottom: 0;
+  margin: 0;
 }
 .remark-slide-content.scene p {
-  margin-top: 0.25em;
+  margin: 0.25em 0 0;
   font-size: 0.7em;
   letter-spacing: 0.12em;
   opacity: 0.6;
@@ -352,4 +356,5 @@ a:hover {
   flex: 1;
   min-height: 0;
   width: 100%;
+  margin-top: 0.75em;
 }
