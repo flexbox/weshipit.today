@@ -2391,12 +2391,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@icons-pack/react-simple-icons@npm:^12.5.0":
-  version: 12.5.0
-  resolution: "@icons-pack/react-simple-icons@npm:12.5.0"
+"@icons-pack/react-simple-icons@npm:^13.15.1":
+  version: 13.15.1
+  resolution: "@icons-pack/react-simple-icons@npm:13.15.1"
   peerDependencies:
     react: ^16.13 || ^17 || ^18 || ^19
-  checksum: 10/4de301a833d2d1666c2b52f7c7aab5ceb2d3fdd8d3c6be3c19677fdcc224a7b89c1476ff78781a2173f9fd51c50c990048a37fe0a1d750395c11fdca12e7b08d
+  checksum: 10/dfdde04ab42b1e386cc03abdf1f037a5ebc51890ca912da3f807a8bbf99aacb6647987a0ae871473feddb4d1f6f09d02953a83db9767980a9badb557cc5017ef
   languageName: node
   linkType: hard
 
@@ -17547,6 +17547,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lodash@npm:^4.18.1":
+  version: 4.18.1
+  resolution: "lodash@npm:4.18.1"
+  checksum: 10/306fea53dfd39dad1f03d45ba654a2405aebd35797b673077f401edb7df2543623dc44b9effbb98f69b32152295fff725a4cec99c684098947430600c6af0c3f
+  languageName: node
+  linkType: hard
+
 "log-symbols@npm:4.1.0, log-symbols@npm:^4.0.0, log-symbols@npm:^4.1.0":
   version: 4.1.0
   resolution: "log-symbols@npm:4.1.0"
@@ -23490,9 +23497,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"styled-components@npm:^6.1.15":
-  version: 6.4.3
-  resolution: "styled-components@npm:6.4.3"
+"styled-components@npm:^6.5.3":
+  version: 6.5.3
+  resolution: "styled-components@npm:6.5.3"
   dependencies:
     "@emotion/is-prop-valid": "npm:1.4.0"
     css-to-react-native: "npm:3.2.0"
@@ -23510,7 +23517,7 @@ __metadata:
       optional: true
     react-native:
       optional: true
-  checksum: 10/99f95375fd74c60c9c0cffdcb5fc65c27ed35bbd124f57fac829baacdacf17deee96ddb96724452fdb5f715a53e62b6e8c1a250064d4c48455c1d416312bbb4b
+  checksum: 10/58f19a1ea02d8a2288f865e51ac62961453549969a646936b0ca335038286dbc64d7163f740adc817b5a4e96dc412d919797e246d2cb5a46caabde905929b791
   languageName: node
   linkType: hard
 
@@ -25407,7 +25414,7 @@ __metadata:
     "@emotion/is-prop-valid": "npm:^1.4.0"
     "@headlessui/react": "npm:^2.2.0"
     "@heroicons/react": "npm:^2.2.0"
-    "@icons-pack/react-simple-icons": "npm:^12.5.0"
+    "@icons-pack/react-simple-icons": "npm:^13.15.1"
     "@magic-sdk/admin": "npm:^2.8.2"
     "@mdx-js/loader": "npm:^3.1.0"
     "@mdx-js/react": "npm:^3.1.0"
@@ -25497,7 +25504,7 @@ __metadata:
     jiti: "npm:2.4.2"
     jsdom: "npm:~26.0.0"
     lint-staged: "npm:^15.4.3"
-    lodash: "npm:^4.17.21"
+    lodash: "npm:^4.18.1"
     magic-sdk: "npm:^33.7.1"
     md5: "npm:^2.3.0"
     next: "npm:^16.2.9"
@@ -25523,7 +25530,7 @@ __metadata:
     rehype-raw: "npm:^7.0.0"
     remark-gfm: "npm:^4.0.1"
     storybook: "npm:10.3.3"
-    styled-components: "npm:^6.1.15"
+    styled-components: "npm:^6.5.3"
     swr: "npm:^2.3.2"
     tailwind-merge: "npm:^3.5.0"
     tailwindcss: "npm:^4.3.3"
