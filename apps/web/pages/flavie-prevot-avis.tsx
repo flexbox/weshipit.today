@@ -37,7 +37,7 @@ const faqs = [
     id: 'faq-flavie-2',
     question: 'Flavie Prevot, arnaque ou pas ?',
     answer:
-      "Non. Rien dans son parcours public ne pointe vers une arnaque : aucune promesse de revenus irréalistes, aucun upsell caché à 5 000 €, aucun avis Trustpilot négatif significatif, paiements gérés par Systeme.io (plateforme officielle et traçable). Le terme « arnaque » revient dans les recherches simplement parce que le tarif de l'Incubateur (2 400 € HT) déclenche une vérification réflexe — c'est sain. Ma propre expérience après 6 mois d'incubation confirme : le programme livre ce qu'il annonce.",
+      "Non. Rien dans son parcours public ne pointe vers une arnaque : aucune promesse de revenus irréalistes, aucun upsell caché à 5 000 €, aucun avis Trustpilot négatif significatif, paiements gérés sur incubateursolopreneur.fr avec un programme de parrainage officiel et traçable. Le terme « arnaque » revient dans les recherches simplement parce que le tarif de l'Incubateur (2 400 € HT) déclenche une vérification réflexe — c'est sain. Ma propre expérience après 6 mois d'incubation confirme : le programme livre ce qu'il annonce.",
   },
   {
     id: 'faq-flavie-3',
@@ -55,7 +55,7 @@ const faqs = [
     id: 'faq-flavie-5',
     question: 'Combien coûtent les programmes de Flavie Prevot ?',
     answer:
-      "Deux formules payantes principales. Le Sprint mensuel : 990 € HT pour 1 mois (bon pour tester). L'Incubateur Solopreneur annuel : 2 400 € HT au tarif public, 1 900 € HT en remise VSL (3-4 jours après la vidéo), 1 490 € HT via lien affilié (le tarif plancher). Le tarif affilié à 1 490 € HT est verrouillé par Flavie : aucune promo publique ne descend en-dessous.",
+      "Deux formules payantes principales. Le Sprint mensuel : autour de 1 490 € HT pour 1 mois seul, ou 1 990 € HT avec les 12 mois d'Incubateur. L'Incubateur Solopreneur annuel : 2 400 € HT au tarif public, 1 900 € HT en remise VSL (3-4 jours après la vidéo), 1 490 € HT via lien affilié (le tarif plancher). Le tarif affilié à 1 490 € HT est verrouillé par Flavie : aucune promo publique ne descend en-dessous.",
   },
   {
     id: 'faq-flavie-6',
@@ -288,8 +288,8 @@ function EcosystemeSection() {
       icon: SparklesIcon,
       title: 'Sprint (bootcamp) mensuel',
       description:
-        'Format d’essai : 1 mois d’accès à un bootcamp thématique (IA, sponsoring, podcast, offre…) avec corrections. Pour tester sans s’engager sur 12 mois.',
-      access: '990 € HT',
+        '1 mois d’accès à un bootcamp thématique (SaaS, clients, IA, sponsoring, podcast…). Vendu seul ou couplé aux 12 mois d’Incubateur pour 500 € de plus. Au tarif parrainage, l’année coûte le prix du Sprint seul.',
+      access: '~1 490 € HT',
     },
     {
       icon: UsersIcon,
@@ -430,7 +430,7 @@ function ReputationSection() {
           </div>
           <p className="text-pretty text-sm leading-relaxed text-neutral-950 dark:text-neutral-200">
             Aucun signal d’arnaque. Pas de promesse irréaliste, pas d’upsell
-            caché, paiement via Systeme.io (plateforme officielle française),
+            caché, parrainage officiel et traçable sur incubateursolopreneur.fr,
             avis Trustpilot cohérents avec l’expérience réelle en incubation.
             Flavie Prevot est un profil sérieux du paysage solopreneur FR. Reste
             à savoir si son approche te correspond — c’est l’objet des sections

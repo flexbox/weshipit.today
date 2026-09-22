@@ -76,7 +76,7 @@ const faqs = [
     id: 'faq-avis-7',
     question: 'L’Incubateur est-il adapté aux développeurs / SaaS solo ?',
     answer:
-      'Oui — et c’est probablement le meilleur programme du paysage FR pour un dev solopreneur. Le tech est explicitement présent dans les Sprints (IA/Claude, Custom GPT’s, automation, SaaS solo), et le format « un actif construit chaque vendredi en live » colle exactement à la façon dont un dev avance. Effet levier concret : ce qui prend 3 semaines à un non-dev (mettre en place un agent, déployer un mini-SaaS, connecter une chaîne d’outils) te prend l’après-midi. Ton edge tech compose avec le programme.',
+      'Oui — et c’est probablement le meilleur programme du paysage FR pour un dev solopreneur. Le tech est explicitement présent dans les Sprints (IA/Claude, Custom GPT’s, automation, SaaS solo), et le format « un actif construit chaque vendredi en live » colle exactement à la façon dont un dev avance. Effet levier concret : ce qui prend 3 semaines à un non-dev (mettre en place un agent, déployer un mini-SaaS, connecter une chaîne d’outils) te prend l’après-midi. Ton edge tech compose avec le programme. Bon point d’entrée : le Sprint « Solo SaaS » d’octobre 2026, détaillé sur /sprint-solo-saas.',
   },
   {
     id: 'faq-avis-8',
@@ -206,7 +206,7 @@ function VerdictSection() {
     {
       icon: ExclamationTriangleIcon,
       positive: false,
-      text: 'Pas de période d’essai, pas de remboursement. Le format Sprint mensuel (990 € HT) reste l’alternative pour tester.',
+      text: 'Pas de période d’essai, pas de remboursement. La masterclass gratuite avant chaque Sprint est le seul moyen de tester l’approche de Flavie avant de payer.',
     },
     {
       icon: ExclamationTriangleIcon,
@@ -428,7 +428,7 @@ function PointsFaiblesSection() {
       reality:
         'Tu paies les 12 mois en une fois (ou en mensualités), sans clause de retour. Si tu changes d’avis au bout de 2 semaines, tu perds la totalité.',
       mitigation:
-        'Le Sprint mensuel à 990 € HT (1 mois) est l’alternative pour tester avant de basculer en formule annuelle. Demande à Flavie si la bascule est possible.',
+        'Va d’abord à la masterclass gratuite que Flavie anime avant chaque Sprint (ouverte à tous, replay dispo) : tu vois sa façon de travailler en 1 h. Le Sprint seul (1 mois, autour de 1 490 € HT) existe, mais au tarif parrainage l’année entière coûte le même prix, donc il n’a d’intérêt que si tu es certain de ne pas continuer.',
     },
     {
       title: 'Rythme exigeant, décrochage rapide si tu manques 3 lives',
@@ -792,6 +792,7 @@ function PourQuiSection() {
     'Tu peux bloquer 1h le vendredi midi sans négociation possible.',
     'Tu cherches un cercle qui tient le rythme et qui te tire vers le haut.',
     'Tu veux un programme qui pousse au shipping, pas une formation vidéo de plus.',
+    'Tu utilises déjà un peu l’IA (Claude, ChatGPT, Codex) et tu aimes apprendre en faisant.',
   ];
 
   const no = [
@@ -800,6 +801,7 @@ function PourQuiSection() {
     'Tu attends un coach personnel qui te tient la main 1:1.',
     'Tu refuses Mighty Networks et veux absolument du Slack/Discord.',
     'Tu cherches un raccourci pour faire 10 000 €/mois en 90 jours.',
+    'Tu n’es pas à l’aise avec les outils digitaux : ça va vite, personne ne te tient la main sur chaque clic.',
   ];
 
   return (
@@ -1022,7 +1024,7 @@ function CtaFinalSection() {
               </span>
               <span className="flex items-center gap-2">
                 <ShieldCheckIcon className="h-4 w-4 text-accent" />
-                Paiement Systeme.io officiel
+                Page de parrainage officielle
               </span>
               <span className="flex items-center gap-2">
                 <UsersIcon className="h-4 w-4 text-accent" />

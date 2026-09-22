@@ -1,7 +1,8 @@
-import { AuthorDisclosure, Button, Faq, Text } from '@weshipit/ui';
+import { AuthorDisclosure, Button, Faq, LinkButton, Text } from '@weshipit/ui';
 
 import {
   ArrowRightIcon,
+  CalendarDaysIcon,
   CheckCircleIcon,
   CheckIcon,
   ClipboardDocumentCheckIcon,
@@ -50,7 +51,7 @@ const faqs = [
     id: 'faq-cr-4',
     question: "Combien d'économies avec le code réduction Solopreneur ?",
     answer:
-      "Tu économises 910 € HT par rapport au tarif public de 2 400 € HT, et 410 € HT par rapport à la remise VSL temporaire de 1 900 € HT. C'est l'équivalent d'un Sprint mensuel (990 € HT) presque offert.",
+      "Tu économises 910 € HT par rapport au tarif public de 2 400 € HT, et 410 € HT par rapport à la remise VSL temporaire de 1 900 € HT. Autre façon de le voir : un Sprint seul (1 mois) coûte 1 490 € HT. Avec le lien affilié, tu as les 12 mois et les 12 Sprints pour le prix d'un seul.",
   },
   {
     id: 'faq-cr-5',
@@ -63,7 +64,7 @@ const faqs = [
     question:
       'Le code réduction Solopreneur fonctionne aussi sur le Sprint mensuel ?',
     answer:
-      "Le Sprint seul (un mois, 990 € HT) avec 4 corrections offertes peut aussi être réservé via un lien d'affilié. La remise est proportionnellement plus faible. Pour maximiser l'économie, le tarif annuel à 1 490 € HT reste le meilleur rapport qualité-prix : pour 500 € de plus qu'un sprint isolé tu obtiens l'année complète.",
+      "Chaque Sprint est vendu à deux prix : le Sprint seul (1 mois) autour de 1 490 € HT, ou le Sprint + 12 mois d'Incubateur autour de 1 990 € HT. Le tarif affilié est plus simple : 1 490 € HT pour les 12 mois, Sprint en cours inclus. Autrement dit, tu paies le prix du Sprint seul et tu obtiens l'année entière. C'est le prix « sous le manteau » que Flavie réserve aux personnes recommandées par un incubé, et qu'elle n'affiche nulle part.",
   },
   {
     id: 'faq-cr-7',
@@ -75,7 +76,7 @@ const faqs = [
     id: 'faq-cr-8',
     question: 'Y a-t-il un risque à utiliser le lien de réduction ?',
     answer:
-      "Aucun. Le paiement passe par Systeme.io, la plateforme officielle de Flavie. Tu obtiens exactement le même accès (mêmes lives, mêmes Sprints, même Slack/Mighty, mêmes experts) qu'un client direct, simplement à un meilleur prix. Le seul effet : un incubé existant touche une commission d'apporteur d'affaires, ce qui permet à la communauté de grandir.",
+      "Aucun. Le lien ouvre ma page de parrainage officielle sur incubateursolopreneur.fr (avec ma photo et ma recommandation), puis la page de paiement de l'Incubateur où le « tarif parrainage » est déjà appliqué. Tu obtiens exactement le même accès (mêmes lives, mêmes Sprints, même communauté Mighty, mêmes experts) qu'un client direct, simplement à un meilleur prix. Le seul effet : un incubé existant touche une commission d'apporteur d'affaires, ce qui permet à la communauté de grandir.",
   },
   {
     id: 'faq-cr-9',
@@ -88,7 +89,19 @@ const faqs = [
     id: 'faq-cr-10',
     question: 'Puis-je avoir un essai ou un remboursement ?',
     answer:
-      "Il n'y a pas de période d'essai. Pour réduire le risque, Flavie propose désormais le format Sprint mensuel (990 € HT) qui permet de tester un mois complet avant de basculer en Incubateur annuel. Le code réduction couvre uniquement la formule annuelle.",
+      "Il n'y a pas de période d'essai ni de remboursement. Deux façons de réduire le risque : assister à la masterclass gratuite que Flavie anime avant chaque Sprint (ouverte à tous, replay disponible) pour voir sa façon de travailler, ou réserver un Sprint seul (1 mois, autour de 1 490 € HT). Mais à ce prix-là, le tarif affilié te donne l'année entière, donc le Sprint seul n'a d'intérêt que si tu es sûr de ne pas vouloir continuer.",
+  },
+  {
+    id: 'faq-cr-11',
+    question: 'Quel est le prochain Sprint de l’Incubateur Solopreneur ?',
+    answer:
+      "Le Sprint « Solo SaaS : construire un SaaS qui bosse à ta place » du 9 au 30 octobre 2026, animé avec Pierre Thomassina (développeur agentique). 4 lives : trouver la bonne idée de SaaS, installer son environnement de vibe coding (base de données, déploiement, sécurité), construire les premières features, puis organiser un bêta-test pour trouver ses premiers utilisateurs. Ensuite : « Client Express » (4 semaines pour trouver 10 clients) en novembre, puis « Indé blindé » (optimisation fiscale, financière et rémunération) en fin d'année. Il y a 12 Sprints par an : tu rejoins pour un Sprint, les 11 autres sont inclus. Voir le détail sur /sprint-solo-saas.",
+  },
+  {
+    id: 'faq-cr-12',
+    question: 'Faut-il être à l’aise avec les outils digitaux et l’IA ?',
+    answer:
+      "Oui, c'est le vrai critère de filtrage. L'Incubateur va vite : une app communautaire (Mighty), des prompts à copier-coller, des outils comme Claude, Codex, Notion ou n8n manipulés en live. Ce n'est pas un programme materné : si tu as besoin qu'on te tienne la main sur chaque clic, tu vas te sentir perdu. Si tu utilises déjà un peu l'IA au quotidien et que tu aimes apprendre en faisant, tu es dans la cible.",
   },
 ];
 
@@ -98,7 +111,7 @@ function HeroSection() {
       <div className="relative mx-auto max-w-5xl px-6 text-center">
         <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent">
           <TagIcon className="h-4 w-4" />
-          Mis à jour pour 2026 — Tarif affilié vérifié
+          Mis à jour septembre 2026 — Tarif parrainage vérifié
         </div>
 
         <Text variant="h1" as="h1" className="mb-6 text-balance">
@@ -150,7 +163,7 @@ function HeroSection() {
           </span>
           <span className="flex items-center gap-2">
             <CheckIcon className="h-4 w-4 text-accent" />
-            Paiement Systeme.io officiel
+            Page de parrainage officielle
           </span>
         </div>
       </div>
@@ -318,6 +331,15 @@ function ComparatifSection() {
           ))}
         </div>
 
+        <div className="mx-auto mt-8 max-w-2xl rounded-xl border border-accent/30 bg-accent/5 p-5 text-sm leading-relaxed text-neutral-950 dark:text-neutral-200">
+          <span className="font-semibold text-accent">
+            Le calcul qui change tout&nbsp;:
+          </span>{' '}
+          chaque Sprint est aussi vendu seul, autour de 1&nbsp;490&nbsp;€ HT le
+          mois (ou 1&nbsp;990&nbsp;€ HT avec l&apos;année). Avec le tarif
+          parrainage, tu paies le prix d&apos;un Sprint et tu as les 12.
+        </div>
+
         <div className="mt-10 flex justify-center">
           <Button
             href={AFFILIATE_URL}
@@ -336,21 +358,136 @@ function ComparatifSection() {
   );
 }
 
+function ProchainSprintSection() {
+  const lives = [
+    'Trouver la bonne idée de SaaS (back-office ou produit à vendre)',
+    'Installer ton setup technique : base de données, déploiement, environnement de vibe coding sécurisé',
+    'Construire tes premières features avec Claude ou Codex',
+    'Organiser ton bêta-test et trouver tes premiers utilisateurs',
+  ];
+
+  const roadmap = [
+    {
+      when: 'Octobre 2026',
+      name: 'Solo SaaS',
+      pitch: 'Construire un SaaS qui bosse à ta place, avec Pierre Thomassina.',
+    },
+    {
+      when: 'Novembre 2026',
+      name: 'Client Express',
+      pitch:
+        '4 semaines pour trouver 10 clients : relances, setting, prospection sans forcer.',
+    },
+    {
+      when: 'Décembre 2026',
+      name: 'Indé blindé',
+      pitch:
+        'Optimisation fiscale, financière et rémunération : capter plus de valeur sur ton entreprise.',
+    },
+  ];
+
+  return (
+    <section id="prochain-sprint" className="border-t border-border py-24">
+      <div className="mx-auto max-w-5xl px-6">
+        <div className="mb-12 text-center">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent">
+            <CalendarDaysIcon className="h-4 w-4" />
+            Du 9 au 30 octobre 2026
+          </div>
+          <Text variant="h3" as="h2" className="mb-4 text-balance">
+            Le prochain Sprint&nbsp;: construire un SaaS qui bosse à ta place
+          </Text>
+          <p className="mx-auto max-w-2xl text-neutral-500 dark:text-neutral-400">
+            On rejoint l&apos;Incubateur pour un Sprint précis, puis les 11
+            autres deviennent des bonus. Celui d&apos;octobre est animé avec
+            Pierre Thomassina, développeur agentique et ancien incubé. Si tu
+            arrives par cette page, tu commences par celui-là.
+          </p>
+        </div>
+
+        <div className="grid gap-8 md:grid-cols-2">
+          <div className="rounded-xl border border-border bg-card p-6">
+            <Text variant="h4" as="h3" className="mb-4">
+              4 lives, de l&apos;idée aux premiers utilisateurs
+            </Text>
+            <ol className="space-y-3">
+              {lives.map((live, i) => (
+                <li
+                  key={live}
+                  className="flex items-start gap-3 text-sm text-neutral-950 dark:text-neutral-200"
+                >
+                  <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-secondary text-xs font-bold">
+                    {i + 1}
+                  </span>
+                  {live}
+                </li>
+              ))}
+            </ol>
+            <p className="mt-4 text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+              Pensé pour les freelances et solopreneurs qui refont la même chose
+              chaque mois pour leurs clients et veulent un logiciel qui le fait
+              à leur place. Pas réservé aux devs.
+            </p>
+            <LinkButton
+              href="/sprint-solo-saas"
+              size="md"
+              variant="outline"
+              className="mt-6"
+            >
+              Voir le programme complet du Sprint
+              <ArrowRightIcon className="ml-2 h-4 w-4" />
+            </LinkButton>
+          </div>
+
+          <div className="rounded-xl border border-border bg-card p-6">
+            <Text variant="h4" as="h3" className="mb-4">
+              Et après&nbsp;? La suite du programme
+            </Text>
+            <ul className="space-y-4">
+              {roadmap.map((item) => (
+                <li key={item.name} className="flex items-start gap-3">
+                  <CalendarDaysIcon className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
+                  <div>
+                    <div className="text-xs font-semibold uppercase tracking-wide text-accent">
+                      {item.when}
+                    </div>
+                    <div className="font-medium text-neutral-950 dark:text-neutral-200">
+                      {item.name}
+                    </div>
+                    <p className="text-sm text-neutral-500 dark:text-neutral-400">
+                      {item.pitch}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-4 text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+              12 Sprints par an. Tu n&apos;es pas obligé de tous les
+              suivre&nbsp;: tu choisis ceux qui servent ton business, et les
+              replays restent disponibles.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function CommentCaMarcheSection() {
   const steps = [
     {
       number: '1',
       icon: TagIcon,
-      title: 'Clique sur le lien affilié',
+      title: 'Clique sur le lien de parrainage',
       description:
-        "Tu arrives directement sur la page de vente officielle de l'Incubateur Solopreneur. Le tarif réduit à 1 490 € HT est déjà appliqué — pas besoin de saisir un code promo.",
+        "Tu arrives sur ma page de parrainage officielle sur incubateursolopreneur.fr : ma photo, pourquoi je recommande l'Incubateur, et le tarif parrainage à 1 490 € HT déjà affiché. Pas de code promo à saisir.",
     },
     {
       number: '2',
       icon: ClipboardDocumentCheckIcon,
-      title: 'Remplis ton inscription',
+      title: 'Passe sur la page de paiement',
       description:
-        'Paiement sécurisé via Systeme.io, la plateforme officielle de Flavie. Tu choisis paiement en une fois ou en plusieurs mensualités selon les options affichées.',
+        "La page de paiement de l'Incubateur reprend le « tarif parrainage », le prix le plus bas pour toi puisque tu connais un incubé. Paiement en une fois ou en plusieurs mensualités selon les options affichées.",
     },
     {
       number: '3',
@@ -482,6 +619,8 @@ function PourQuiSection() {
     'Tu veux construire des actifs (newsletter, podcast, SaaS, offre).',
     'Tu veux un cercle de solopreneurs qui shippent vraiment.',
     'Tu cherches des sponsors pour ton podcast, ta newsletter ou ta chaîne YouTube.',
+    "Tu utilises déjà un peu l'IA (Claude, ChatGPT, Codex) et tu veux en mettre plus dans ton business.",
+    'Tu aimes l’esprit « salle de sport » : chaque vendredi on construit un truc ensemble, imparfait mais livré.',
   ];
 
   const no = [
@@ -489,6 +628,7 @@ function PourQuiSection() {
     'Tu préfères travailler seul dans ton coin, sans communauté.',
     "Tu n'as pas 1 h/semaine à investir pour avancer.",
     "Tu attends qu'on te livre une activité clé en main.",
+    "Tu débutes complètement ou tu n'es pas à l'aise avec les outils digitaux : le rythme va te perdre.",
   ];
 
   return (
@@ -704,7 +844,7 @@ function CtaFinalSection() {
             <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-neutral-500 dark:text-neutral-400">
               <span className="flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-                Paiement Systeme.io officiel
+                Page de parrainage officielle
               </span>
               <span className="flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" />
@@ -830,6 +970,7 @@ export default function CodeReductionSolopreneurPage() {
         <ComparatifSection />
         <CommentCaMarcheSection />
         <CeQuiEstInclusSection />
+        <ProchainSprintSection />
         <PourQuiSection />
         <PreuvesSection />
         <PourquoiCettePageSection />
