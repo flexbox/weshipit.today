@@ -196,34 +196,40 @@ export default function PodcastEpisodePage({
                       />
                     )}
                   </div>
-                  <Card>
-                    <Text as="h2" variant="h3" className="mb-6">
-                      Écouter l'épisode
-                    </Text>
-                    <div className="flex flex-wrap gap-4">
-                      <Button
-                        as="a"
-                        href={episode.spotify_url}
-                        isExternalLink={true}
-                        size="lg"
-                        variant="spotify"
-                        accessoryLeft={<SpotifyIcon />}
-                      >
-                        Écouter sur Spotify
-                      </Button>
+                  {(episode.spotify_url || episode.apple_podcast_url) && (
+                    <Card>
+                      <Text as="h2" variant="h3" className="mb-6">
+                        Écouter l'épisode
+                      </Text>
+                      <div className="flex flex-wrap gap-4">
+                        {episode.spotify_url && (
+                          <Button
+                            as="a"
+                            href={episode.spotify_url}
+                            isExternalLink={true}
+                            size="lg"
+                            variant="spotify"
+                            accessoryLeft={<SpotifyIcon />}
+                          >
+                            Écouter sur Spotify
+                          </Button>
+                        )}
 
-                      <Button
-                        as="a"
-                        href={episode.apple_podcast_url}
-                        isExternalLink={true}
-                        size="lg"
-                        variant="apple"
-                        accessoryLeft={<ApplePodcastIcon />}
-                      >
-                        Écouter sur Apple Podcast
-                      </Button>
-                    </div>
-                  </Card>
+                        {episode.apple_podcast_url && (
+                          <Button
+                            as="a"
+                            href={episode.apple_podcast_url}
+                            isExternalLink={true}
+                            size="lg"
+                            variant="apple"
+                            accessoryLeft={<ApplePodcastIcon />}
+                          >
+                            Écouter sur Apple Podcast
+                          </Button>
+                        )}
+                      </div>
+                    </Card>
+                  )}
                   {episode.youtube_embed_id && (
                     <Card className="my-6">
                       <Text as="h2" variant="h4" className="mb-4">
