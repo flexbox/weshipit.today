@@ -22,6 +22,20 @@ export interface PodcastEpisode {
 // Ordered newest first (highest episode number first).
 export const podcastEpisodes: PodcastEpisode[] = [
   {
+    number: 39,
+    slug: 'react-native-reusables',
+    name: 'React Native Reusables',
+    title: 'Ton design system mobile te coûte 100 K€ par an — Zach Nugent',
+    description_short:
+      "Zach Nugent (React Native Reusables) chiffre le coût d'un design system mobile maison : six mois pour huit devs, trois semaines pour un date picker.",
+    hosts: ['David Leuliette'],
+    guests: ['Zach Nugent'],
+    spotify_url: 'https://open.spotify.com/episode/2ZAHFbRxza6magVMXD8hxt',
+    apple_podcast_url: '' /* ⚠️ TODO à compléter */,
+    youtube_embed_id: 'Dl4HXU6N1Q8',
+    company_logo: '' /* ⚠️ TODO logo react-native-reusables */,
+  },
+  {
     number: 38,
     slug: 'vjeux',
     name: 'React Native',
