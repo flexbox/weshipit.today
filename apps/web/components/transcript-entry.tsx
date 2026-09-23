@@ -10,16 +10,22 @@ export function TranscriptEntry({
   spotify_url?: string;
 }) {
   const seconds = timecodeToSeconds(entry.time);
-  const spotifyUrl = `${spotify_url}${spotify_url?.includes('?') ? '&' : '?'}t=${seconds}`;
+  const spotifyUrl = spotify_url
+    ? `${spotify_url}${spotify_url.includes('?') ? '&' : '?'}t=${seconds}`
+    : undefined;
 
   return (
     <div className="mb-4">
       <div className="flex items-baseline gap-2 mb-1">
         <span className="font-semibold">{entry.speaker}</span>
         <span className="text-slate-500">-</span>
-        <Hyperlink href={spotifyUrl} isExternal>
-          {entry.time}
-        </Hyperlink>
+        {spotifyUrl ? (
+          <Hyperlink href={spotifyUrl} isExternal>
+            {entry.time}
+          </Hyperlink>
+        ) : (
+          <span className="text-slate-500">{entry.time}</span>
+        )}
       </div>
       <p className="whitespace-pre-line pl-2 border-l-2 border-blue-200 dark:border-blue-800 mt-0">
         {entry.text}

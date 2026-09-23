@@ -40,30 +40,36 @@ export function PodcastEpisodeCard({ episode }: PodcastEpisodeCardProps) {
         </div>
       </Link>
 
-      <div className="p-4 pt-0">
-        <div className="flex gap-3">
-          <Button
-            as="a"
-            href={episode.spotify_url}
-            isExternalLink={true}
-            size="md"
-            variant="outline"
-            accessoryLeft={<SpotifyIcon />}
-          >
-            Spotify
-          </Button>
-          <Button
-            as="a"
-            href={episode.apple_podcast_url}
-            isExternalLink={true}
-            size="md"
-            variant="outline"
-            accessoryLeft={<ApplePodcastIcon />}
-          >
-            Apple Podcast
-          </Button>
+      {(episode.spotify_url || episode.apple_podcast_url) && (
+        <div className="p-4 pt-0">
+          <div className="flex gap-3">
+            {episode.spotify_url && (
+              <Button
+                as="a"
+                href={episode.spotify_url}
+                isExternalLink={true}
+                size="md"
+                variant="outline"
+                accessoryLeft={<SpotifyIcon />}
+              >
+                Spotify
+              </Button>
+            )}
+            {episode.apple_podcast_url && (
+              <Button
+                as="a"
+                href={episode.apple_podcast_url}
+                isExternalLink={true}
+                size="md"
+                variant="outline"
+                accessoryLeft={<ApplePodcastIcon />}
+              >
+                Apple Podcast
+              </Button>
+            )}
+          </div>
         </div>
-      </div>
+      )}
     </Card>
   );
 }
