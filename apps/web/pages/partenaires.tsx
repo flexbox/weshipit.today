@@ -601,9 +601,11 @@ function OffersSection() {
       items: [
         'Message sponsor dans 1 épisode',
         '1 post LinkedIn de lancement',
+        '1 mention dans la newsletter',
         'Lien traçable permanent',
       ],
-      result: 'Clics, inscriptions et essais mesurés.',
+      result:
+        'Trois points de contact pour un seul épisode : les écouteurs, le feed et la boîte mail. Clics, inscriptions et essais mesurés.',
     },
     {
       name: 'Trimestre',
