@@ -367,9 +367,9 @@ function ChannelsSection() {
     {
       icon: MicrophoneIcon,
       title: 'Podcast audio',
-      metric: '200 écoutes par épisode · 2 épisodes par mois',
+      metric: '200 écoutes par épisode',
       description:
-        'Une audience plus petite que LinkedIn, mais qui écoute 45 minutes de retour d’expérience React Native. Spotify, Apple Podcasts, Deezer. Chaque épisode a sa page permanente sur weshipit.today, indexée par Google et les IA.',
+        'Deux épisodes par mois. Une audience plus petite que LinkedIn, mais qui écoute 45 minutes de retour d’expérience React Native. Spotify, Apple Podcasts, Deezer. Chaque épisode a sa page permanente sur weshipit.today, indexée par Google et les IA.',
     },
     {
       icon: PlayCircleIcon,
@@ -427,11 +427,28 @@ function ChannelsSection() {
             </div>
           ))}
         </div>
+
+        <div className="mt-10 flex flex-col items-center gap-3">
+          <Button
+            href={CTA_URL}
+            as="a"
+            size="xl"
+            variant="primary"
+            isExternalLink
+            withExternalLinkIcon={false}
+            className="min-h-11 justify-center"
+          >
+            {CTA_LABEL}
+            <ArrowRightIcon strokeWidth={2.25} className="ml-2 h-4 w-4" />
+          </Button>
+          <p className="text-sm text-neutral-500 dark:text-neutral-400">
+            Proposition écrite sous 48 h, aucun engagement avant.
+          </p>
+        </div>
       </div>
     </section>
   );
 }
-
 function ActivationsSection() {
   const activations = [
     {
