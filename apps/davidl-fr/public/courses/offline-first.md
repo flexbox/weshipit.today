@@ -38,6 +38,8 @@ Microsoft Windows
 ???
 ~25s. Hands up. Wait for it.
 
+I am officially at the same level as Bill Gates, because I had a blue screen of death on stage.
+
 ---
 
 class: center, rrod
@@ -56,6 +58,8 @@ Microsoft Xbox 360
 
 ???
 
+The Red Ring was a hardware failure indicator on the Xbox 360.
+
 ---
 
 class: center
@@ -66,14 +70,17 @@ class: center
 
 ### The White Screen of Hell
 
---
-
 .phone-shot[![White screen of hell on iPhone](./images/offline-first/white-screen-of-hell-iphone-shadow.png)]
+
+--
 
 David Leuliette Microsoft MVP
 
 ???
 ~30s. Deadpan. If no hands go up, that's the joke — say so.
+
+As a Microsoft MVP, I have seen my fair share of device failures.
+And I can officially name the "White Screen of Hell" as one of them.
 
 ---
 
@@ -86,7 +93,7 @@ class: center
 .phone-shot[![Vinted spinner on iPhone](./images/offline-first/vinted.gif)]
 
 ???
-and if you are lucky you have a spinner
+If you are lucky you will have an infinite spinner
 
 ---
 
@@ -133,50 +140,59 @@ the phone asks for it, and when the phone can't ask, it has nothing.
 
 ---
 
-class: center, middle
-
-> Why don’t we design something as seemingly obvious
-> and trivial as error messages first?
+> Why don’t we design
+> something as seemingly obvious and trivial
+> as error messages first?
 
 Vitaly Friedman — founder, Smashing Magazine
 
 ???
-~15s. "I learned this job from Smashing Magazine books.
+~15s
 
 I am so happy to give this talk in Berlin today.
 
 For the people who don't know Smashing Magazine, it is a popular online resource for web designers and developers, from Germany.
 
+That's how I learned my job, by reading Smashing Magazine books.
+
+and
+
 This quote is basically my whole career. Design for failure seems obvious, right?
 
 ---
 
-class: center, middle
-
-> Why don’t we design something as seemingly obvious
-> and trivial as offline data first?
+> Why don’t we design
+> something as seemingly obvious and trivial
+> as **offline data first**?
 
 David Leuliette
 
 ???
-~15s. Same sentence, one word changed. Offline is an error state we ship
-to every user, every day, and we still design it last.
+~15s
+
+Same sentence, one word changed.
+
+Offline is an error state we ship to every user, every day,
+and we still design it last.
 
 ---
 
 ## We should. Because milliseconds matter
+
+???
+Offline-first is not a feature for people with no signal.
+It is the fastest possible app for everyone, because nothing awaits the network.
 
 --
 
 .phone-shot[![Instagram on iPhone](./images/offline-first/instagram.webp)]
 
 ???
-~45s. Offline-first is not a feature for people with no signal.
-It is the fastest possible app for everyone, because nothing awaits the network.
-
 Instagram, first version: the upload started the moment you picked the photo,
 in the background. While you were writing the caption and picking a filter,
-the upload was already done. Tap "Share": instant. That is the same trick.
+the upload was already done.
+
+Tap "Share": instant. That is the same trick.
 Local first, network later.
 
 ---
@@ -185,16 +201,32 @@ Local first, network later.
 
 --
 
-`setState` · Context · Redux · MobX-State-Tree · Apollo · Recoil · xState · Jotai · zustand
+- `setState`
+- Context
+- Redux
+- MobX-State-Tree
+- Apollo
+- Recoil
+- xState
+- Jotai
+- zustand
+
+???
+~40s. Ten years in the ecosystem, a new state library every eighteen months.
+None of them cared about the network or was easy to setup.
+
+---
+
+## 10 years of React state
 
 --
 
 .legend-shot[![Legendapp State benchmark](./images/offline-first/legendapp-state.png)]
 
-???
-~40s. Ten years in the ecosystem, a new state library every eighteen months.
-None of them cared about the network. Then this one: 4kb, fast, and the
-sync engine is built in. Catalin Miron pointed me at it at App.js 2022.
+Then this one: `4kb`, fast, and the sync engine is built in.
+
+Catalin Miron pointed me at it at `App.js` 2022 (That's why it's important to come to conference to meet people and have random conversations).
+
 That is the extent of the library pitch. The rest of the talk is not about
 Legend State. It is about the four things Legend State can't decide for you.
 
@@ -207,11 +239,14 @@ import { observable } from '@legendapp/state';
 import { syncedSupabase } from '@legendapp/state/sync-plugins/supabase';
 import { ObservablePersistMMKV } from '@legendapp/state/persist-plugins/mmkv';
 
-export const todos$ = observable(
+export const games$ = observable(
   syncedSupabase({
     supabase,
-    collection: 'todos',
-    persist: { name: 'todos', plugin: ObservablePersistMMKV },
+    collection: 'games',
+    persist: {
+      name: 'games',
+      plugin: ObservablePersistMMKV,
+    },
     changesSince: 'last-sync',
     fieldUpdatedAt: 'updated_at',
     fieldDeleted: 'deleted',
@@ -220,7 +255,10 @@ export const todos$ = observable(
 ```
 
 ???
-~60s. One pass, don't explain every option.
+~60s.
+
+It just works
+
 Point at fieldDeleted: "remember this line" — pays off in decision 2.
 
 This is the README config. It is deliberately incomplete — four lines are
@@ -232,9 +270,9 @@ Do NOT call this production-ready.
 # Reads and writes
 
 ```js
-const todos = useValue(todos$);
+const games = useValue(games$);
 
-todos$[id].text.set('Buy milk');
+games$[id].title.set('The Legend Of Zelda');
 ```
 
 --
@@ -536,7 +574,7 @@ the write never existed. This is the bug that shipped to production for me.
 
 ```js
 persist: {
-  name: 'todos',
+  name: 'games',
   plugin: ObservablePersistMMKV,
   retrySync: true,   // pending changes go to MMKV, not just memory
 },
@@ -605,16 +643,16 @@ drawn as one picture. Next slide is the same thing as code.
 ```js
 configureSyncedSupabase({ generateId: () => uuidv7() }); // 1
 
-export const todos$ = observable(
+export const games$ = observable(
   syncedSupabase({
     supabase,
-    collection: 'todos',
+    collection: 'games',
     changesSince: 'last-sync',
     fieldUpdatedAt: 'updated_at',
     fieldDeleted: 'deleted', // 2
     updatePartial: true, // 3
     persist: {
-      name: 'todos',
+      name: 'games',
       plugin: ObservablePersistMMKV,
       retrySync: true, // 4
     },
