@@ -38,7 +38,7 @@ const faqs = [
     id: 'faq-partenaires-2',
     question: 'Votre audience est petite. Pourquoi payer pour la toucher ?',
     answer:
-      'Parce qu’elle décide. 61 % des abonnés sont Senior ou plus, et un quart occupent des fonctions de direction ou de management. Un CTO qui intègre ton SDK dans une app en production devient client pour plusieurs années. C’est une audience qu’on ne cible pas avec de la pub classique, et personne d’autre ne lui parle de React Native en français.',
+      'Parce qu’elle décide. Sur LinkedIn, 61 % des abonnés sont Senior ou plus, et un quart occupent des fonctions de direction ou de management. Un CTO qui intègre ton SDK dans une app en production devient client pour plusieurs années. C’est une audience qu’on ne cible pas avec de la pub classique, et personne d’autre ne lui parle de React Native en français.',
   },
   {
     id: 'faq-partenaires-3',
@@ -76,7 +76,7 @@ const faqs = [
 // mirror ChannelsSection and ProofSection; keep them in sync.
 const HERO_CHANNELS = [
   { icon: MegaphoneIcon, label: 'LinkedIn', metric: '20 000 abonnés' },
-  { icon: MicrophoneIcon, label: 'Podcast', metric: '40 épisodes' },
+  { icon: MicrophoneIcon, label: 'Podcast', metric: '200 écoutes / épisode' },
   { icon: PlayCircleIcon, label: 'YouTube', metric: '1 100 abonnés' },
   { icon: EnvelopeIcon, label: 'Email', metric: '600 contacts' },
   { icon: UserGroupIcon, label: 'Communauté', metric: 'Slack et confs' },
@@ -180,11 +180,15 @@ function ProofSection() {
   // thousands separator back (a narrow no-break space, so a figure never wraps).
   const stats = [
     { value: 20000, label: 'abonnés LinkedIn', detail: '61 % Senior ou plus' },
-    { value: 40, label: 'épisodes publiés', detail: 'format interview' },
     {
-      value: 3500,
-      label: 'écoutes audio cumulées',
+      value: 200,
+      label: 'écoutes par épisode',
       detail: 'Spotify, Apple, Deezer',
+    },
+    {
+      value: 2,
+      label: 'épisodes par mois',
+      detail: '40 épisodes publiés',
     },
     {
       value: 1100,
@@ -210,8 +214,9 @@ function ProofSection() {
             Ce qu&apos;il faut savoir avant de continuer
           </Text>
           <p className="mx-auto max-w-2xl text-pretty text-neutral-500 dark:text-neutral-400">
-            Pas des millions d&apos;écoutes. Une niche sans alternative
-            francophone, et les personnes qu&apos;on n&apos;entend
+            Pas des millions d&apos;écoutes. Chaque canal a sa propre audience :
+            les chiffres ci-dessous ne s&apos;additionnent pas. Une niche sans
+            alternative francophone, et les personnes qu&apos;on n&apos;entend
             d&apos;habitude qu&apos;en anglais.
           </p>
         </div>
@@ -388,9 +393,9 @@ function ChannelsSection() {
     {
       icon: MicrophoneIcon,
       title: 'Podcast audio',
-      metric: '40 épisodes',
+      metric: '200 écoutes par épisode · 2 épisodes par mois',
       description:
-        'Spotify, Apple Podcasts, Deezer. Chaque épisode a sa page permanente sur weshipit.today, indexée par Google et les IA.',
+        'Une audience plus petite que LinkedIn, mais qui écoute 45 minutes de retour d’expérience React Native. Spotify, Apple Podcasts, Deezer. Chaque épisode a sa page permanente sur weshipit.today, indexée par Google et les IA.',
     },
     {
       icon: PlayCircleIcon,
@@ -1003,7 +1008,7 @@ export default function PartnersPage() {
       </Head>
       <Layout
         seoTitle="Sponsoriser Le Cross Platform Show : accède aux équipes qui choisissent leur stack mobile"
-        seoDescription="Kit média du podcast Le Cross Platform Show. Le seul podcast francophone sur React Native en production : 20 000 abonnés LinkedIn, 40 épisodes, le co-créateur de React Native et Doctolib au micro. Message sponsor, épisode co-produit, live code, étude co-brandée. Réserve un appel de 20 min."
+        seoDescription="Kit média du podcast Le Cross Platform Show. Le seul podcast francophone sur React Native en production : 20 000 abonnés LinkedIn, 200 écoutes par épisode, 2 épisodes par mois, le co-créateur de React Native et Doctolib au micro. Message sponsor, épisode co-produit, live code, étude co-brandée. Réserve un appel de 20 min."
         ogImageTitle="Partenaires · Le Cross Platform Show"
         ogImageAlt="Kit média sponsoring du podcast Le Cross Platform Show, le podcast francophone React Native"
         locale="fr_FR"
