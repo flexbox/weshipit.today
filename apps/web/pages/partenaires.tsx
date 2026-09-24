@@ -6,13 +6,11 @@ import {
   CalendarDaysIcon,
   ChatBubbleLeftRightIcon,
   CheckIcon,
-  CodeBracketIcon,
   CubeIcon,
   EnvelopeIcon,
   MegaphoneIcon,
   MicrophoneIcon,
   PlayCircleIcon,
-  ShieldCheckIcon,
   UserGroupIcon,
   XMarkIcon,
 } from '@heroicons/react/24/outline';
@@ -41,34 +39,10 @@ const faqs = [
       'Parce qu’elle décide. Sur LinkedIn, 61 % des abonnés sont Senior ou plus, et un quart occupent des fonctions de direction ou de management. Un CTO qui intègre ton SDK dans une app en production devient client pour plusieurs années. C’est une audience qu’on ne cible pas avec de la pub classique, et personne d’autre ne lui parle de React Native en français.',
   },
   {
-    id: 'faq-partenaires-3',
-    question: 'Est-ce que je peux choisir ce qui est dit ?',
-    answer:
-      'Tu valides les faits (nom du produit, fonctionnalités, offre, lien). Le ton et l’angle restent les miens : je présente ton produit comme je l’utiliserais dans une vraie app. C’est ce qui fait qu’un message sponsor est écouté au lieu d’être zappé.',
-  },
-  {
-    id: 'faq-partenaires-4',
-    question: 'Un épisode avec un ingénieur de notre équipe, c’est un pitch ?',
-    answer:
-      'Non. C’est un épisode d’interview classique, sur un sujet de fond que ton équipe maîtrise : une migration, un incident, une architecture. Le produit apparaît parce qu’il fait partie de l’histoire, pas parce qu’il est le sujet. Les auditeurs le savent et c’est annoncé comme sponsorisé.',
-  },
-  {
     id: 'faq-partenaires-5',
     question: 'Comment je mesure les résultats ?',
     answer:
       'Chaque activation a un lien traçable (UTM ou code promo) qui reste en ligne dans les descriptions Spotify, YouTube et sur la page épisode. Tu reçois un récapitulatif avec les écoutes, les vues, les impressions LinkedIn et les clics. Les inscriptions et les essais, tu les vois de ton côté.',
-  },
-  {
-    id: 'faq-partenaires-6',
-    question: 'On n’est pas un outil pour développeurs. Ça marche quand même ?',
-    answer:
-      'Si ton client est un CTO, un lead dev ou une équipe qui recrute des développeurs React Native, oui. Agences mobile, plateformes de freelancing, cabinets de recrutement tech et conférences ont la même cible que ce podcast. Si ton client n’est ni un dev, ni quelqu’un qui en emploie, on te le dira pendant l’appel.',
-  },
-  {
-    id: 'faq-partenaires-7',
-    question: 'Quel est le délai entre l’appel et la première diffusion ?',
-    answer:
-      'Compte 3 à 4 semaines pour un message sponsor sur un épisode déjà planifié. Un live code ou un épisode co-produit demande 6 à 8 semaines, le temps de préparer le sujet et de caler l’invité.',
   },
 ];
 
@@ -458,63 +432,6 @@ function ChannelsSection() {
   );
 }
 
-function WhyItWorksSection() {
-  const reasons = [
-    {
-      icon: CodeBracketIcon,
-      title: 'Ton produit, intégré dans une vraie app',
-      description:
-        'Je suis développeur React Native avant d’être animateur. J’audite et je maintiens des apps en production toute la semaine. Quand je parle d’un SDK, je l’ai installé.',
-    },
-    {
-      icon: UserGroupIcon,
-      title: 'Une niche qu’on ne touche pas en pub',
-      description:
-        'Les CTO mobile francophones ne cliquent pas sur les bannières. Ils écoutent leurs pairs raconter comment ils ont résolu un problème qu’ils ont aussi.',
-    },
-    {
-      icon: ShieldCheckIcon,
-      title: 'La crédibilité de l’écosystème',
-      description:
-        'Microsoft MVP, speaker à next.app Berlin, invité de React Native Radio, media partner de React Native Connection. Relations directes avec les équipes Expo, Infinite Red et Callstack.',
-    },
-  ];
-
-  return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-5xl px-6">
-        <div className="mb-12 text-center">
-          <Text variant="h2" as="h2" className="mb-4 text-balance">
-            Pourquoi ça marche mieux qu&apos;une campagne
-          </Text>
-        </div>
-
-        <div className="grid gap-6 md:grid-cols-3">
-          {reasons.map((reason) => (
-            <div
-              key={reason.title}
-              className="rounded-xl border border-border bg-card p-6"
-            >
-              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10">
-                <reason.icon
-                  strokeWidth={1.8}
-                  className="h-5 w-5 text-accent"
-                />
-              </div>
-              <Text variant="h4" as="h3" className="mb-2">
-                {reason.title}
-              </Text>
-              <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
-                {reason.description}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function ActivationsSection() {
   const activations = [
     {
@@ -790,62 +707,6 @@ function AudienceFitSection() {
   );
 }
 
-function ProcessSection() {
-  const steps = [
-    {
-      step: '1',
-      title: 'Un appel de 20 minutes',
-      description:
-        'Tu me dis qui tu veux toucher et ce que tu attends : essais, notoriété, candidatures. Je te dis franchement si l’audience correspond.',
-    },
-    {
-      step: '2',
-      title: 'Une proposition sous 48 h',
-      description:
-        'Formats, calendrier, livrables et tarif, par écrit. Tu ajustes, on signe. Pas de plaquette de 30 pages.',
-    },
-    {
-      step: '3',
-      title: 'Diffusion et récapitulatif',
-      description:
-        'Tu valides les faits avant chaque diffusion. À la fin, tu reçois les chiffres : écoutes, vues, impressions, clics sur ton lien.',
-    },
-  ];
-
-  return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-4xl px-6">
-        <div className="mb-12 text-center">
-          <Text variant="h2" as="h2" className="mb-4 text-balance">
-            Comment ça se passe
-          </Text>
-        </div>
-
-        <div className="space-y-4">
-          {steps.map((item) => (
-            <div
-              key={item.step}
-              className="grid gap-4 rounded-xl border border-border bg-card p-6 md:grid-cols-[40px_1fr]"
-            >
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 text-lg font-bold tabular-nums text-accent">
-                {item.step}
-              </div>
-              <div>
-                <Text variant="h4" as="h3" className="mb-2">
-                  {item.title}
-                </Text>
-                <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
-                  {item.description}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function AuthorSection() {
   return (
     <AuthorDisclosure
@@ -1026,11 +887,9 @@ export default function PartnersPage() {
         <ProofSection />
         <AudienceSection />
         <ChannelsSection />
-        <WhyItWorksSection />
         <ActivationsSection />
         <OffersSection />
         <AudienceFitSection />
-        <ProcessSection />
         <section className="border-t border-border">
           <div className="mx-auto max-w-4xl px-6">
             <Faq
