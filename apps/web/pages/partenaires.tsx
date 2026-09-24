@@ -72,6 +72,16 @@ const faqs = [
   },
 ];
 
+// The channels a brand buys into, visible from the first screen. Metrics
+// mirror ChannelsSection and ProofSection; keep them in sync.
+const HERO_CHANNELS = [
+  { icon: MegaphoneIcon, label: 'LinkedIn', metric: '20 000 abonnés' },
+  { icon: MicrophoneIcon, label: 'Podcast', metric: '40 épisodes' },
+  { icon: PlayCircleIcon, label: 'YouTube', metric: '1 100 abonnés' },
+  { icon: EnvelopeIcon, label: 'Email', metric: '600 contacts' },
+  { icon: UserGroupIcon, label: 'Communauté', metric: 'Slack et confs' },
+];
+
 function HeroSection() {
   return (
     <section className="relative overflow-hidden">
@@ -85,17 +95,36 @@ function HeroSection() {
             </div>
 
             <Text variant="h1" as="h1" className="mb-6 text-balance">
-              Parle aux CTO qui choisissent{' '}
-              <span className="text-accent">la stack mobile</span>
+              Accède aux équipes qui choisissent{' '}
+              <span className="text-accent">
+                les outils de leur stack mobile
+              </span>
             </Text>
 
-            <p className="mb-10 max-w-xl text-pretty text-lg leading-relaxed text-neutral-500 dark:text-neutral-400">
-              Le Cross Platform Show est le seul podcast francophone sur React
-              Native en production. Chaque épisode, une équipe qui fait tourner
-              une app à des millions d&apos;utilisateurs raconte ses coulisses.
-              Les personnes qui écoutent sont celles qui décident quel SDK, quel
-              outil et quel prestataire entrent dans leur app.
+            <p className="mb-6 max-w-xl text-pretty text-lg leading-relaxed text-neutral-500 dark:text-neutral-400">
+              Le seul écosystème francophone dédié à React Native en production.
+              Les personnes qui le suivent décident quel SDK, quel outil et quel
+              prestataire entrent dans leur app.
             </p>
+
+            <ul className="mb-10 flex flex-wrap gap-2" aria-label="Canaux">
+              {HERO_CHANNELS.map((channel) => (
+                <li
+                  key={channel.label}
+                  className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1 text-sm text-neutral-700 dark:text-neutral-300"
+                >
+                  <channel.icon
+                    strokeWidth={2}
+                    className="h-4 w-4 text-accent"
+                    aria-hidden="true"
+                  />
+                  <span className="font-medium">{channel.label}</span>
+                  <span className="text-neutral-500 dark:text-neutral-400">
+                    {channel.metric}
+                  </span>
+                </li>
+              ))}
+            </ul>
 
             <div className="flex flex-col gap-4 sm:flex-row">
               <Button
@@ -973,7 +1002,7 @@ export default function PartnersPage() {
         />
       </Head>
       <Layout
-        seoTitle="Sponsoriser Le Cross Platform Show : parle aux CTO React Native francophones"
+        seoTitle="Sponsoriser Le Cross Platform Show : accède aux équipes qui choisissent leur stack mobile"
         seoDescription="Kit média du podcast Le Cross Platform Show. Le seul podcast francophone sur React Native en production : 20 000 abonnés LinkedIn, 40 épisodes, le co-créateur de React Native et Doctolib au micro. Message sponsor, épisode co-produit, live code, étude co-brandée. Réserve un appel de 20 min."
         ogImageTitle="Partenaires · Le Cross Platform Show"
         ogImageAlt="Kit média sponsoring du podcast Le Cross Platform Show, le podcast francophone React Native"
