@@ -202,7 +202,6 @@ a:hover {
   --ray-highlight-border: #c1b2f9;
 
   margin: 1rem 0;
-  padding: 2rem; /* ray.so padding=64, scaled to the 908px slide */
   border-radius: 12px;
   background: var(--ray-frame);
 }
@@ -336,6 +335,10 @@ a:hover {
 @media (prefers-color-scheme: dark) {
   .remark-slide-content pre {
     --ray-frame: #0f172a;
+  }
+
+  .remark-inline-code {
+    background-color: transparent;
   }
 }
 

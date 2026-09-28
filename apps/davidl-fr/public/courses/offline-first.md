@@ -86,7 +86,7 @@ And I can officially name the "White Screen of Hell" as one of them.
 
 class: center
 
-# Spinners that never stops
+### Spinners that never stops
 
 .phone-shot[![Mighty spinner on iPhone](./images/offline-first/mighty.gif)]
 .phone-shot[![Pennylane spinner on iPhone](./images/offline-first/pennylane.gif)]
@@ -140,8 +140,10 @@ the phone asks for it, and when the phone can't ask, it has nothing.
 
 ---
 
-> Why don’t we design
-> something as seemingly obvious and trivial
+class: center, middle
+
+> Why don’t we design<br />
+> something as seemingly obvious and trivial<br />
 > as error messages first?
 
 Vitaly Friedman — founder, Smashing Magazine
@@ -161,8 +163,10 @@ This quote is basically my whole career. Design for failure seems obvious, right
 
 ---
 
-> Why don’t we design
-> something as seemingly obvious and trivial
+class: center, middle
+
+> Why don’t we design<br />
+> something as seemingly obvious and trivial<br />
 > as **offline data first**?
 
 David Leuliette
@@ -177,7 +181,11 @@ and we still design it last.
 
 ---
 
-## We should. Because milliseconds matter
+## We should
+
+--
+
+## Because milliseconds matter
 
 ???
 Offline-first is not a feature for people with no signal.
@@ -217,13 +225,29 @@ None of them cared about the network or was easy to setup.
 
 ---
 
-## 10 years of React state
+## Why Legend State
+
+--
+
+### It just works
+
+.it-works[![Slack feedback](./images/offline-first/legend-state-works.png)]
+
+???
+Even a human can write the code correctly, can you believe that it works?
+
+“The key to building the fastest apps is to minimize the amount of work that React Native do. That means having smaller renders, and rendering less often. useState and useContext are just fundamentally incompatible with that goal.” — Jay Meistrich
+
+---
+
+## Why Legend State
 
 --
 
 .legend-shot[<object data="./images/offline-first/scene-state-benchmark.svg" type="image/svg+xml" data-play-on-show aria-label="Legend State benchmark"></object>]
 
-Then this one: `4kb`, fast, and the sync engine is built in.
+???
+The lib is `4kb`, fast, and the sync engine is built in.
 
 Catalin Miron pointed me at it at `App.js` 2022 (That's why it's important to come to conference to meet people and have random conversations).
 
@@ -257,8 +281,6 @@ export const games$ = observable(
 ???
 ~60s.
 
-It just works
-
 Point at fieldDeleted: "remember this line" — pays off in decision 2.
 
 This is the README config. It is deliberately incomplete — four lines are
@@ -287,9 +309,6 @@ It is not why your app breaks.
 ???
 ~45s. The pivot. Four decisions come after this.
 
-If asked: `useValue` replaced `useSelector` and `use$` in v3 —
-`use$` still works but is not React Compiler compatible.
-
 Say "it syncs when you land" with full confidence.
 Decision 4 is where I admit I lied.
 
@@ -304,7 +323,17 @@ THE TRUTH LIVES ON THE PHONE · THE NETWORK IS NOT INVITED
 <object data="./images/offline-first/scene-2-offline-write.svg" type="image/svg+xml" aria-label="scene-2-offline-write"></object>
 
 ???
-Say it, don't show it: "Three hops, all on the device. Nothing in this picture awaited anything."
+~30s
+
+Same drawing, flipped. The truth lives on the phone.
+
+Tap, re-render, queue.
+
+Nothing in this picture awaited the network.
+
+The cloud is grey on purpose.
+
+Every choice that follows is about what happens in that queue.
 
 On screen (Offline-first: the write):
 
@@ -317,10 +346,6 @@ On screen (Offline-first: the write):
 - API
 - POSTGRES
 - NO SIGNAL
-
-~30s. Same drawing, flipped. The truth lives on the phone. Tap, re-render,
-queue. Nothing in this picture awaited the network. The cloud is grey on
-purpose. Every choice that follows is about what happens in that queue.
 
 ---
 
@@ -420,7 +445,7 @@ It has no way to tell "deleted" from "never existed".
 
 --
 
-So you don't delete. You tombstone.
+So you don't delete. You tombstone 🪦.
 
 --
 
@@ -755,11 +780,15 @@ If they remember one sentence from twenty minutes, it is this one.
 
 ---
 
-## YOU
+## Your mission today
 
 --
 
 - Open your app. Turn on airplane mode. Tap something. **Today.**
+
+--
+
+- Identify the "White Screen's of hell" in your app and fix them.
 
 --
 
