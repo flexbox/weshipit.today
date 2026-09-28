@@ -637,20 +637,19 @@ export function PlanFinderSection({ ctaLink }: { ctaLink: string }) {
 
 interface PricingProps {
   ctaLink: string;
-  /** Use `h1` when the pricing block is the main topic of the page (e.g. /pricing). */
-  headingLevel?: 'h1' | 'h2';
+  /** Set to false when the page renders `PlanFinderSection` elsewhere. */
+  withPlanFinder?: boolean;
 }
 
-export function Pricing({ ctaLink, headingLevel = 'h2' }: PricingProps) {
-  const Heading = headingLevel;
+export function Pricing({ ctaLink, withPlanFinder = true }: PricingProps) {
   return (
     <div className="py-24 sm:py-32" id="pricing">
       <div className="mx-auto max-w-8xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-base/7 font-semibold text-blue-600">Pricing</p>
-          <Heading className="font-display mt-2 text-balance text-5xl font-bold tracking-[-0.03em] text-gray-900 dark:text-white sm:text-6xl">
+          <h2 className="font-display mt-2 text-balance text-5xl font-bold tracking-[-0.03em] text-gray-900 dark:text-white sm:text-6xl">
             Pricing that scales with you
-          </Heading>
+          </h2>
         </div>
         <p className="mx-auto mt-6 max-w-2xl text-pretty text-center text-lg font-medium text-gray-600 sm:text-xl/8">
           Choose your entry point, upgrade anytime. No contracts, no BS.
@@ -806,7 +805,7 @@ export function Pricing({ ctaLink, headingLevel = 'h2' }: PricingProps) {
           })}
         </div>
 
-        <PlanFinderSection ctaLink={ctaLink} />
+        {withPlanFinder && <PlanFinderSection ctaLink={ctaLink} />}
       </div>
     </div>
   );

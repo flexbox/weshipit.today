@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { Pricing, pricingTiers } from '@weshipit/ui';
+import { PlanFinderSection, Pricing, Text, pricingTiers } from '@weshipit/ui';
 import { Layout } from '../components/layout';
 import { FaqSection, faqPageSchema, faqs } from '../components/faq-section';
 import { linksApi } from './api/links';
@@ -87,7 +87,13 @@ export default function PricingPage() {
         }}
         withFooter
       >
-        <Pricing ctaLink={linksApi.cal.ONBOARDING} headingLevel="h1" />
+        <header className="mx-auto max-w-4xl px-6 pt-24 text-center sm:pt-32">
+          <Text as="h1" variant="h1">
+            React Native development pricing
+          </Text>
+        </header>
+        <PlanFinderSection ctaLink={linksApi.cal.ONBOARDING} />
+        <Pricing ctaLink={linksApi.cal.ONBOARDING} withPlanFinder={false} />
         <FaqSection items={pricingFaqs} />
       </Layout>
     </>
