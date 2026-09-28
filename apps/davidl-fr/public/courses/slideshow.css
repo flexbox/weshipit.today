@@ -176,6 +176,12 @@ a:hover {
   max-height: 380px;
   margin-top: 1rem;
 }
+.legend-shot object {
+  display: block;
+  width: 100%;
+  height: 380px;
+  margin-top: 1rem;
+}
 
 /* ---------------------------------------------------------------------------
    Code blocks — ray.so "Tailwind" theme, padding 64

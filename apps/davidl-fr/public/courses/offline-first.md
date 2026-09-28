@@ -221,7 +221,7 @@ None of them cared about the network or was easy to setup.
 
 --
 
-.legend-shot[![Legendapp State benchmark](./images/offline-first/legendapp-state.png)]
+.legend-shot[<object data="./images/offline-first/scene-state-benchmark.svg" type="image/svg+xml" data-play-on-show aria-label="Legend State benchmark"></object>]
 
 Then this one: `4kb`, fast, and the sync engine is built in.
 
