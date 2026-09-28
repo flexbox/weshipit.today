@@ -27,7 +27,7 @@ export function cn(...inputs: ClassValue[]) {
 
 type PlanKey = 'kickstart' | 'essential' | 'growth' | 'enterprise';
 
-interface Tier {
+export interface Tier {
   key: PlanKey;
   name: string;
   id: string;
@@ -48,7 +48,7 @@ interface Tier {
   textColor: string;
 }
 
-const tiers: Tier[] = [
+export const pricingTiers: Tier[] = [
   {
     key: 'kickstart',
     name: 'Kickstart Audit',
@@ -189,7 +189,7 @@ type PlanInfo = {
 };
 
 const plansByKey = Object.fromEntries(
-  tiers.map((tier) => {
+  pricingTiers.map((tier) => {
     const price =
       typeof tier.price === 'string'
         ? tier.price
@@ -635,21 +635,28 @@ export function PlanFinderSection({ ctaLink }: { ctaLink: string }) {
   );
 }
 
-export function Pricing({ ctaLink }: { ctaLink: string }) {
+interface PricingProps {
+  ctaLink: string;
+  /** Use `h1` when the pricing block is the main topic of the page (e.g. /pricing). */
+  headingLevel?: 'h1' | 'h2';
+}
+
+export function Pricing({ ctaLink, headingLevel = 'h2' }: PricingProps) {
+  const Heading = headingLevel;
   return (
     <div className="py-24 sm:py-32" id="pricing">
       <div className="mx-auto max-w-8xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-base/7 font-semibold text-blue-600">Pricing</p>
-          <h2 className="font-display mt-2 text-balance text-5xl font-bold tracking-[-0.03em] text-gray-900 dark:text-white sm:text-6xl">
+          <Heading className="font-display mt-2 text-balance text-5xl font-bold tracking-[-0.03em] text-gray-900 dark:text-white sm:text-6xl">
             Pricing that scales with you
-          </h2>
+          </Heading>
         </div>
         <p className="mx-auto mt-6 max-w-2xl text-pretty text-center text-lg font-medium text-gray-600 sm:text-xl/8">
           Choose your entry point, upgrade anytime. No contracts, no BS.
         </p>
         <div className="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-          {tiers.map((tier) => {
+          {pricingTiers.map((tier) => {
             if (tier.key === 'essential') return null;
             return (
               <Card

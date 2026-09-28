@@ -7,6 +7,7 @@ import LinkButton from '../button/link-button';
 const navigation = {
   company: [
     { href: '/consulting', name: 'Consulting' },
+    { href: '/pricing', name: 'Pricing' },
     { href: '/customers', name: 'Customers' },
     { href: '/about', name: 'About' },
     { href: '/podcast', name: 'Podcast' },

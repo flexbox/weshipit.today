@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<title>Le Cross Platform Show — showreel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@700&display=block"
+  rel="stylesheet"
+/>
+<script src="glyphs.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1920px; height: 1080px; overflow: hidden; background: #0a1e3c; }
+  #stage { position: relative; width: 1920px; height: 1080px; overflow: hidden; }
+  #grid, #svg, .layer { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+  .abs { position: absolute; left: 0; top: 0; }
+  .mono {
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #61dafb;
+    white-space: nowrap;
+  }
+  .grotesk {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    color: #f0f6fc;
+    letter-spacing: -0.03em;
+    line-height: 0.95;
+    white-space: nowrap;
+  }
+  .inter { font-family: 'Inter', sans-serif; color: #f0f6fc; white-space: nowrap; }
+  .dim { color: rgba(240, 246, 252, 0.55); }
+  .draw { fill: none; stroke-dasharray: 1 1; stroke-dashoffset: 1; }
+  /* word masks: the inner span slides up from below the clip */
+  .w { display: inline-block; overflow: hidden; vertical-align: top; padding: 0.06em 0.03em 0.16em; margin: -0.06em -0.03em -0.16em; }
+  .wi { display: inline-block; }
+  #vignette { background: radial-gradient(ellipse 80% 80% at 50% 50%, rgba(3, 10, 24, 0) 55%, rgba(3, 10, 24, 0.55) 100%); }
+  #flash {
+    opacity: 0;
+    mix-blend-mode: screen;
+    background: radial-gradient(circle at 1440px 540px, rgba(170, 238, 255, 0.95) 0%, rgba(97, 218, 251, 0.35) 22%, rgba(97, 218, 251, 0) 55%);
+  }
+</style>
+</head>
+<body>
+<div id="stage">
+  <canvas id="grid" width="1920" height="1080"></canvas>
+
+  <svg id="svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+    <defs>
+      <filter id="glow" filterUnits="userSpaceOnUse" x="-200" y="-200" width="2320" height="1480" color-interpolation-filters="sRGB">
+        <feGaussianBlur stdDeviation="5" result="b" />
+        <feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge>
+      </filter>
+      <filter id="glow-soft" filterUnits="userSpaceOnUse" x="-200" y="-200" width="2320" height="1480" color-interpolation-filters="sRGB">
+        <feGaussianBlur stdDeviation="2.5" result="b" />
+        <feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge>
+      </filter>
+      <linearGradient id="refl-grad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#fff" stop-opacity="0.55" />
+        <stop offset="1" stop-color="#fff" stop-opacity="0" />
+      </linearGradient>
+      <mask id="refl-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080">
+        <rect id="refl-mask-rect" x="0" y="465" width="1920" height="240" fill="url(#refl-grad)" />
+      </mask>
+      <!-- keeps the lockup rings off the title block -->
+      <linearGradient id="rings-grad" gradientUnits="userSpaceOnUse" x1="760" y1="0" x2="1060" y2="0">
+        <stop offset="0" stop-color="#fff" stop-opacity="0" />
+        <stop offset="1" stop-color="#fff" stop-opacity="1" />
+      </linearGradient>
+      <mask id="rings-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="1920" height="1080">
+        <rect x="0" y="0" width="1920" height="1080" fill="url(#rings-grad)" />
+      </mask>
+    </defs>
+
+    <!-- Shot 1: app skyline on the horizon -->
+    <g id="s1">
+      <g id="refl-wrap" mask="url(#refl-mask)"><use id="refl" href="#phones" /></g>
+      <g id="phones"></g>
+      <g filter="url(#glow-soft)">
+        <path id="wave" class="draw" pathLength="1" stroke="#61dafb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+      </g>
+      <circle id="wave-head" r="6" fill="#f0f6fc" filter="url(#glow)" />
+    </g>
+
+    <!-- Shot 2: guest circuit, drawn in world space -->
+    <g id="world">
+      <path id="bus" fill="none" stroke="#61dafb" stroke-width="2" vector-effect="non-scaling-stroke" />
+      <g id="branches"></g>
+      <g id="nodes"></g>
+    </g>
+    <g id="signal" filter="url(#glow)">
+      <path id="trail" fill="none" stroke="#61dafb" stroke-width="2.5" stroke-linecap="round" />
+      <g id="packets" stroke="#f0f6fc" stroke-width="3" stroke-linecap="round"></g>
+      <circle id="sig-head" r="6" fill="#f0f6fc" />
+    </g>
+
+    <!-- Shots 2-3: the React atom the camera flies into -->
+    <g id="atom" filter="url(#glow)"></g>
+
+    <!-- Shot 3 -->
+    <g id="s3svg">
+      <path id="s3-rule" class="draw" pathLength="1" d="M144 652 H560" stroke="#61dafb" stroke-width="3" />
+    </g>
+
+    <!-- Shot 4: lockup -->
+    <g id="s4">
+      <g id="s4-fx" filter="url(#glow)"></g>
+      <g id="rings" mask="url(#rings-mask)"></g>
+      <g id="guides"></g>
+      <g id="mic" filter="url(#glow-soft)" stroke="#f0f6fc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"></g>
+      <g id="title"></g>
+      <g id="cta" stroke="#61dafb" stroke-width="2" fill="none"></g>
+    </g>
+
+    <g id="hud-svg" stroke="#61dafb" stroke-width="1.5" fill="none"></g>
+  </svg>
+
+  <div class="layer" id="html">
+    <div id="s1-head" class="abs grotesk" style="top: 648px; width: 1920px; text-align: center; font-size: 112px"></div>
+    <div id="s2-head" class="abs grotesk" style="left: 136px; top: 126px; font-size: 88px"></div>
+    <div id="labels"></div>
+    <div id="s3" class="abs" style="width: 1920px; height: 1080px; transform-origin: 1440px 540px">
+      <div id="s3-tag" class="abs mono" style="left: 142px; top: 290px; font-size: 20px">Invité · EP.038</div>
+      <div id="s3-l1" class="abs grotesk" style="left: 132px; top: 326px; font-size: 150px"><span class="w"><span class="wi">Christopher</span></span></div>
+      <div id="s3-l2" class="abs grotesk" style="left: 132px; top: 468px; font-size: 150px"><span class="w"><span class="wi">Chedeau</span></span></div>
+      <div id="s3-sub" class="abs inter" style="left: 140px; top: 678px; font-size: 38px; color: rgba(240, 246, 252, 0.82)"></div>
+    </div>
+    <div id="s4-html" class="abs" style="width: 1920px; height: 1080px; transform-origin: 960px 540px">
+      <div id="s4-tag1" class="abs inter" style="left: 140px; top: 672px; font-size: 32px; color: rgba(240, 246, 252, 0.82)"></div>
+      <div id="s4-tag2" class="abs inter" style="left: 140px; top: 714px; font-size: 32px; color: rgba(240, 246, 252, 0.82)"></div>
+      <div id="s4-url" class="abs mono" style="left: 140px; top: 790px; width: 540px; height: 76px; line-height: 76px; text-align: center; font-size: 28px; text-transform: none; letter-spacing: 0.02em; color: #f0f6fc">weshipit.today/podcast →</div>
+      <div id="s4-platforms" class="abs mono dim" style="left: 142px; top: 896px; font-size: 16px">Spotify · Apple Podcasts · YouTube · Deezer</div>
+      <div id="c1-label" class="abs mono" style="left: 1400px; width: 400px; top: 180px; text-align: right">
+        <div style="font-size: 19px; color: #f0f6fc">40 épisodes</div>
+        <div style="font-size: 14px; margin-top: 5px">2 par mois</div>
+      </div>
+      <div id="c2-label" class="abs mono" style="left: 1400px; width: 400px; top: 854px; text-align: right">
+        <div style="font-size: 19px; color: #f0f6fc">45 min</div>
+        <div style="font-size: 14px; margin-top: 5px">de retour d’expérience</div>
+      </div>
+    </div>
+    <div id="hud"></div>
+  </div>
+  <div class="layer" id="flash"></div>
+  <div class="layer" id="vignette"></div>
+</div>
+
+<script>
+  // =====================================================================
+  // Timeline (seconds). The soundtrack runs at 80 BPM, so one beat = 0.75 s
+  // and every cut, node ping and impact lands on the beat grid.
+  //   0.0 – 3.0   SIGNAL   app skyline on a blueprint horizon
+  //   3.0 – 7.6   GUESTS   camera tilts down, a signal lights up each guest
+  //   7.6 – 10.5  ORIGIN   zoom through the React atom: Christopher Chedeau
+  //  10.5 – 15.0  ON AIR   shockwave, lockup drawn stroke by stroke, CTA
+  // =====================================================================
+  const W = 1920, H = 1080, FPS = 30, DURATION = 15;
+  const NS = 'http://www.w3.org/2000/svg';
+  const BG = '#0a1e3c', GRID = '#1e3a5f', CYAN = '#61dafb', WHITE = '#f0f6fc';
+  const BPM = 80, BEAT = 60 / BPM;
+
+  const T = {
+    tiltStart: 3.0, tiltEnd: 3.9,
+    signal: 3.47, morphEnd: 3.6,
+    panStart: 3.3, panEnd: 6.95,
+    zoomStart: 6.95, zoomEnd: 7.6,
+    implode: 10.05, impact: 10.5,
+  };
+
+  const GUESTS = [
+    { name: 'Doctolib', meta: '50M d’utilisateurs', ep: 37 },
+    { name: 'Cdiscount', meta: '10M+ utilisateurs', ep: 1 },
+    { name: 'Alan', meta: '500K+ utilisateurs', ep: 2 },
+    { name: 'RevenueCat', meta: 'Paiements in-app', ep: 35 },
+    { name: 'Swan', meta: 'Banking as a service', ep: 5 },
+    { name: 'Skia', meta: 'William Candillon', ep: 24 },
+    { name: 'This Week in React', meta: 'Sébastien Lorber', ep: 23 },
+  ];
+  const NODE_T = GUESTS.map((_, i) => 4.125 + 0.375 * i); // eighth notes
+  const ATOM_T = 6.75;
+
+  // Beat grid shared by the visuals and the soundtrack
+  const KICKS_INTRO = [0.75, 1.5, 2.25];
+  const KICKS = [];
+  for (let b = 0; b < 10; b++) KICKS.push(3 + b * BEAT); // 3.00 → 9.75
+  for (let b = 0; b < 4; b++) KICKS.push(12 + b * BEAT); // 12.00 → 14.25
+  const CLAPS = [3.75, 5.25, 6.75, 8.25, 9.75, 12.75, 14.25];
+  const HITS = [...KICKS_INTRO.map((t) => [t, 0.4]), ...KICKS.map((t) => [t, 1]), [T.impact, 1.6]];
+
+  // World layout for the guest circuit
+  const BUS_Y = 620;
+  const HERO = { x: 1440, y: 540 };
+  const NODE_X = GUESTS.map((_, i) => 330 + 230 * i);
+  const NODE_Y = GUESTS.map((_, i) => (i % 2 === 0 ? 460 : 780));
+  const ATOM = { x: 1995, y: BUS_Y, rx: 30, ry: 11.25 };
+  const PAN = ATOM.x - HERO.x;
+  const ZOOM = 16; // atom grows 16×: its screen size in shot 3 and one full cycle of the infinite grid
+
+  // Perspective floor for shot 1
+  const PERSP_D = 1100, PHI0 = (75 * Math.PI) / 180, PIVOT0 = 760;
+  const HORIZON0 = PIVOT0 - PERSP_D / Math.tan(PHI0);
+  const SCROLL_V = 240 / 3.45; // floor speed; lands on a multiple of the major grid
+
+  // Lockup
+  const TITLE_LINES = ['Le Cross', 'Platform', 'Show'];
+  const TITLE_X = 140, TITLE_BASE = [330, 480, 630];
+  const RING_R = [230, 300, 380, 470, 570, 680, 800, 930];
+  const WAVES = [T.impact, ...KICKS.filter((k) => k >= 12)];
+
+  // ---------- math ----------
+  const clamp = (x) => Math.max(0, Math.min(1, x));
+  const prog = (t, a, b) => clamp((t - a) / (b - a));
+  const eio = (x) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2);
+  const eo = (x) => 1 - Math.pow(1 - x, 3);
+  const lerp = (a, b, p) => a + (b - a) * p;
+  const mod = (a, n) => ((a % n) + n) % n;
+  const pad2 = (n) => String(n).padStart(2, '0');
+
+  function beat(t) {
+    let v = 0;
+    for (const [h, a] of HITS) if (t >= h) v = Math.max(v, a * Math.exp(-(t - h) / 0.16));
+    return v;
+  }
+
+  // ---------- DOM helpers ----------
+  function svgEl(tag, attrs, parent) {
+    const el = document.createElementNS(NS, tag);
+    for (const k in attrs) el.setAttribute(k, attrs[k]);
+    parent.appendChild(el);
+    return el;
+  }
+  function div(cls, html, style, parent) {
+    const el = document.createElement('div');
+    el.className = 'abs ' + cls;
+    el.innerHTML = html;
+    Object.assign(el.style, style);
+    parent.appendChild(el);
+    return el;
+  }
+  function setDraw(el, p) {
+    el.style.strokeDashoffset = 1 - p;
+    el.style.opacity = p <= 0.0005 ? 0 : 1;
+  }
+  function wipe(el, p) {
+    el.style.clipPath = `inset(-12px ${(1 - p) * 100}% -12px -12px)`;
+    el.style.opacity = p > 0 ? 1 : 0;
+  }
+  function splitWords(el, text) {
+    el.innerHTML = text.split(' ').map((w) => `<span class="w"><span class="wi">${w}</span></span>`).join(' ');
+    return [...el.querySelectorAll('.wi')];
+  }
+  // Words rise through their mask, then leave upward.
+  function riseWords(words, t, tIn, stagger, dur, tOut = 1e9) {
+    words.forEach((w, i) => {
+      const pin = eo(prog(t, tIn + i * stagger, tIn + i * stagger + dur));
+      const pout = eio(prog(t, tOut + i * 0.04, tOut + i * 0.04 + 0.42));
+      w.style.transform = `translateY(${((1 - pin) - pout) * 108}%)`;
+      const blur = (1 - pin) * 10 + pout * 6;
+      w.style.filter = blur > 0.05 ? `blur(${blur.toFixed(2)}px)` : 'none';
+      // hide the blur halo that would otherwise peek out of the mask edges
+      w.style.opacity = clamp(pin * 3) * (1 - pout * pout);
+    });
+  }
+  function partialPolyline(pts, p) {
+    const lens = pts.slice(1).map((q, i) => Math.hypot(q[0] - pts[i][0], q[1] - pts[i][1]));
+    let rem = p * lens.reduce((a, b) => a + b, 0);
+    let d = `M${pts[0][0]} ${pts[0][1]}`;
+    for (let i = 1; i < pts.length && rem > 0; i++) {
+      const f = Math.min(1, rem / lens[i - 1]);
+      d += ` L${lerp(pts[i - 1][0], pts[i][0], f)} ${lerp(pts[i - 1][1], pts[i][1], f)}`;
+      rem -= lens[i - 1];
+    }
+    return d;
+  }
+
+  // ---------- camera ----------
+  // One continuous camera drives the grid, the circuit and the atom, so the
+  // tilt, the pan and the fly-through never cut.
+  function camera(t) {
+    const tilt = eio(prog(t, T.tiltStart, T.tiltEnd));
+    const phi = (1 - tilt) * PHI0;
+    const pivotY = lerp(PIVOT0, 540, tilt);
+    const tau = Math.min(Math.max(t - 3, 0), 0.9);
+    const scroll = SCROLL_V * (Math.min(t, 3) + tau - (tau * tau) / 1.8);
+    let z = 1, ox, oy;
+    if (t < T.zoomStart) {
+      ox = -PAN * eio(prog(t, T.panStart, T.panEnd));
+      oy = 0;
+    } else {
+      const u = eio(prog(t, T.zoomStart, T.zoomEnd));
+      z = Math.pow(ZOOM, u) * (1 + 0.05 * eio(prog(t, T.zoomEnd, T.implode + 0.4))) * (1 + 0.03 * eio(prog(t, T.impact, DURATION)));
+      const cy = lerp(BUS_Y, HERO.y, u);
+      ox = HERO.x - z * ATOM.x;
+      oy = cy - z * ATOM.y;
+    }
+    return { phi, pivotY, z, ox, oy, gx: ox, gy: oy + z * scroll };
+  }
+
+  // =====================================================================
+  // Canvas: blueprint grid (perspective floor → flat → infinite zoom)
+  // =====================================================================
+  const cv = document.getElementById('grid');
+  const g2 = cv.getContext('2d');
+
+  function perspectiveGrid(cam, a0) {
+    const sinp = Math.sin(cam.phi), cosp = Math.cos(cam.phi), d = PERSP_D, py = cam.pivotY;
+    const nearRel = Math.min(1600, (0.9 * d) / sinp), farRel = -30000;
+    const proj = (x, y) => {
+      const s = d / (d - (y - py) * sinp);
+      return [960 + (x - 960) * s, py + (y - py) * cosp * s, s];
+    };
+    const mult = (k) => 1 + (mod(k, 4) === 0) + (mod(k, 16) === 0);
+    const k0 = Math.ceil((-9000 - cam.gx) / 60), k1 = Math.floor((10900 - cam.gx) / 60);
+    const j0 = Math.ceil((py + farRel - cam.gy) / 60), j1 = Math.floor((py + nearRel - cam.gy) / 60);
+    for (let n = 1; n <= 3; n++) {
+      g2.globalAlpha = Math.min(1, 1 - Math.pow(1 - a0, n));
+      g2.beginPath();
+      for (let k = k0; k <= k1; k++) {
+        if (mult(k) !== n) continue;
+        const x = cam.gx + 60 * k;
+        const a = proj(x, py + farRel), b = proj(x, py + nearRel);
+        g2.moveTo(a[0], a[1]);
+        g2.lineTo(b[0], b[1]);
+      }
+      for (let j = j0; j <= j1; j++) {
+        if (mult(j) !== n) continue;
+        const y = cam.gy + 60 * j;
+        const L = proj(-40000, y);
+        if (L[2] < 0.03) continue;
+        const R = proj(41920, y);
+        g2.moveTo(L[0], L[1]);
+        g2.lineTo(R[0], R[1]);
+      }
+      g2.stroke();
+    }
+  }
+
+  // Levels 4× apart fade in as they grow, so zooming 16× lands on the same grid.
+  function flatGrid(cam, a0) {
+    for (let j = -4; j <= 3; j++) {
+      const sp = 60 * cam.z * Math.pow(4, j);
+      if (sp < 20 || sp > 5000) continue;
+      g2.globalAlpha = Math.min(1, a0 * clamp((sp - 20) / 40));
+      g2.beginPath();
+      for (let x = mod(cam.gx, sp); x <= W; x += sp) { g2.moveTo(x, 0); g2.lineTo(x, H); }
+      for (let y = mod(cam.gy, sp); y <= H; y += sp) { g2.moveTo(0, y); g2.lineTo(W, y); }
+      g2.stroke();
+    }
+  }
+
+  function atmosphere(t, cam, fadeIn) {
+    const hy = cam.pivotY - (PERSP_D * Math.cos(cam.phi)) / Math.sin(cam.phi);
+    if (hy < -900) return;
+    g2.globalAlpha = 1;
+    g2.fillStyle = BG;
+    g2.fillRect(0, -10, W, hy + 10);
+    const fog = g2.createLinearGradient(0, hy, 0, hy + 240);
+    fog.addColorStop(0, 'rgba(10,30,60,1)');
+    fog.addColorStop(1, 'rgba(10,30,60,0)');
+    g2.fillStyle = fog;
+    g2.fillRect(0, hy, W, 240);
+    const glow = g2.createRadialGradient(960, hy, 0, 960, hy, 820);
+    glow.addColorStop(0, `rgba(97,218,251,${0.15 * fadeIn})`);
+    glow.addColorStop(1, 'rgba(97,218,251,0)');
+    g2.fillStyle = glow;
+    g2.fillRect(0, hy - 820, W, 1640);
+    // horizon line draws out from the centre, then flares on the first drop
+    const w = W * eio(prog(t, 0.3, 1.4));
+    if (w > 1) {
+      const flash = t >= 3 ? Math.exp(-(t - 3) / 0.22) : 0;
+      const lg = g2.createLinearGradient(960 - w / 2, 0, 960 + w / 2, 0);
+      lg.addColorStop(0, 'rgba(97,218,251,0)');
+      lg.addColorStop(0.5, 'rgba(97,218,251,1)');
+      lg.addColorStop(1, 'rgba(97,218,251,0)');
+      g2.save();
+      g2.strokeStyle = lg;
+      g2.lineWidth = 1.5 + 3 * flash;
+      g2.shadowColor = CYAN;
+      g2.shadowBlur = 14 + 34 * flash;
+      g2.beginPath();
+      g2.moveTo(960 - w / 2, hy);
+      g2.lineTo(960 + w / 2, hy);
+      g2.stroke();
+      g2.restore();
+    }
+  }
+
+  function drawCanvas(t, cam) {
+    g2.globalAlpha = 1;
+    g2.fillStyle = BG;
+    g2.fillRect(0, 0, W, H);
+    const fadeIn = eo(prog(t, 0, 0.9));
+    const a0 = Math.min(0.95, 0.6 * fadeIn * (1 + 0.4 * beat(t)));
+    g2.strokeStyle = GRID;
+    g2.lineWidth = 1;
+    if (cam.phi > 0.0005) {
+      perspectiveGrid(cam, a0);
+      atmosphere(t, cam, fadeIn);
+    } else {
+      flatGrid(cam, a0);
+    }
+    // soft plate behind the shot-1 headline
+    const plate = eo(prog(t, 0.8, 1.6)) * (1 - eio(prog(t, 2.9, 3.3)));
+    if (plate > 0) {
+      g2.save();
+      g2.translate(960, 712);
+      g2.scale(1, 0.24);
+      const pg = g2.createRadialGradient(0, 0, 0, 0, 0, 1000);
+      pg.addColorStop(0, `rgba(10,30,60,${0.9 * plate})`);
+      pg.addColorStop(1, 'rgba(10,30,60,0)');
+      g2.globalAlpha = 1;
+      g2.fillStyle = pg;
+      g2.fillRect(-1000, -1000, 2000, 2000);
+      g2.restore();
+    }
+    g2.globalAlpha = 1;
+  }
+
+  // =====================================================================
+  // HUD
+  // =====================================================================
+  const hudSvg = document.getElementById('hud-svg');
+  const hud = document.getElementById('hud');
+  const crops = [[60, 60, 1, 1], [1860, 60, -1, 1], [60, 1020, 1, -1], [1860, 1020, -1, -1]].map(([x, y, sx, sy]) =>
+    svgEl('path', { d: `M${x} ${y + sy * 40} V${y} H${x + sx * 40}`, class: 'draw', pathLength: 1 }, hudSvg)
+  );
+  const hudTL = div(
+    'mono',
+    '<span id="rec-dot" style="display:inline-block;width:11px;height:11px;border-radius:6px;background:#3dff88;margin-right:10px;vertical-align:1px"></span><span id="rec-txt" style="color:#3dff88">Rec</span><span class="dim">&nbsp;&nbsp;·&nbsp;&nbsp;Le Cross Platform Show</span>',
+    { left: '120px', top: '92px', fontSize: '17px' },
+    hud
+  );
+  const hudTR = div('mono dim', '', { left: '1400px', width: '400px', textAlign: 'right', top: '92px', fontSize: '17px' }, hud);
+  const hudBL = div('mono dim', '', { left: '120px', top: '978px', fontSize: '16px' }, hud);
+  const hudBR = div('mono', 'weshipit.today/podcast', { left: '1400px', width: '400px', textAlign: 'right', top: '978px', fontSize: '16px' }, hud);
+  const recDot = document.getElementById('rec-dot');
+  const recTxt = document.getElementById('rec-txt');
+  const SHEETS = [[0, '01/04 · Signal'], [3, '02/04 · Guests'], [7.6, '03/04 · Origin'], [T.impact, '04/04 · On air']];
+
+  function renderHud(t) {
+    crops.forEach((el, i) => setDraw(el, eio(prog(t, 0.1 + i * 0.06, 0.7 + i * 0.06))));
+    const lab = eo(prog(t, 0.35, 0.95));
+    [hudTL, hudTR, hudBL, hudBR].forEach((el) => wipe(el, lab));
+    const frame = Math.min(Math.floor(t * FPS + 1e-6), DURATION * FPS - 1);
+    hudTR.textContent = `TC 00:00:${pad2(Math.floor(frame / FPS))}:${pad2(frame % FPS)}`;
+    hudBL.textContent = 'Sht ' + SHEETS.filter(([s]) => t >= s).pop()[1];
+    recDot.style.opacity = mod(t, BEAT) < BEAT / 2 ? 1 : 0.25;
+    recTxt.textContent = t >= T.impact ? 'On air' : 'Rec';
+  }
+
+  // =====================================================================
+  // Shot 1 — "Les apps que tu utilises."
+  // =====================================================================
+  const phonesG = document.getElementById('phones');
+  const reflUse = document.getElementById('refl');
+  const reflWrap = document.getElementById('refl-wrap');
+  const reflMaskRect = document.getElementById('refl-mask-rect');
+  const wave = document.getElementById('wave');
+  const waveHead = document.getElementById('wave-head');
+  const s1Words = splitWords(document.getElementById('s1-head'), 'Les apps que tu utilises.');
+
+  const PH = [150, 205, 265, 320, 265, 205, 150];
+  const PW = PH.map((h) => h * 0.49);
+  const phones = [];
+  {
+    let x = 960 - (PW.reduce((a, b) => a + b, 0) + 34 * (PH.length - 1)) / 2;
+    PH.forEach((h, i) => {
+      const w = PW[i], x0 = x, y0 = HORIZON0 - h;
+      x += w + 34;
+      const g = svgEl('g', {}, phonesG);
+      const draw = (tag, attrs, stroke = CYAN, sw = 1.3) =>
+        svgEl(tag, { ...attrs, class: 'draw', pathLength: 1, stroke, 'stroke-width': sw, 'stroke-linecap': 'round' }, g);
+      const line = (x1, y1, x2, y2) => draw('path', { d: `M${x1} ${y1} L${x2} ${y2}` });
+      const circ = (cx, cy, r) => draw('circle', { cx, cy, r });
+      const body = draw('rect', { x: x0, y: y0, width: w, height: h, rx: w * 0.16 }, WHITE, 1.7);
+      const card = draw('rect', { x: x0 + w * 0.1, y: y0 + h * 0.17, width: w * 0.8, height: h * 0.2, rx: w * 0.05 });
+      card.style.fill = CYAN;
+      card.style.fillOpacity = 0;
+      const parts = [
+        draw('rect', { x: x0 + w * 0.36, y: y0 + h * 0.035, width: w * 0.28, height: h * 0.03, rx: h * 0.015 }),
+        line(x0 + w * 0.12, y0 + h * 0.115, x0 + w * 0.55, y0 + h * 0.115),
+        circ(x0 + w * 0.84, y0 + h * 0.115, w * 0.05),
+        card,
+      ];
+      for (let k = 0; k < 3; k++) {
+        const ry = y0 + h * (0.47 + 0.11 * k);
+        parts.push(circ(x0 + w * 0.18, ry, w * 0.06));
+        parts.push(line(x0 + w * 0.32, ry - h * 0.016, x0 + w * 0.86, ry - h * 0.016));
+        parts.push(line(x0 + w * 0.32, ry + h * 0.022, x0 + w * (0.58 + 0.1 * ((i + k) % 3)), ry + h * 0.022));
+      }
+      parts.push(line(x0 + w * 0.06, y0 + h * 0.86, x0 + w * 0.94, y0 + h * 0.86));
+      for (let m = 0; m < 4; m++) parts.push(circ(x0 + w * (0.2 + 0.2 * m), y0 + h * 0.925, w * 0.035));
+      phones.push({ body, card, parts, delay: 0.7 + 0.14 * Math.abs(i - 3) });
+    });
+  }
+  // app cards light up on the heartbeat, everything flashes on the drop
+  const CARD_PULSES = [[1.5, [3]], [2.25, [2, 4]], [3.0, [0, 1, 2, 3, 4, 5, 6]]];
+
+  function waveD(t, amp, y0, xa, xb) {
+    let d = '';
+    for (let i = 0; i <= 420; i++) {
+      const u = i / 420;
+      const env = Math.pow(Math.sin(Math.PI * u), 0.8);
+      const speech = 0.45 + 0.55 * Math.abs(Math.sin(u * 9.3 + t * 0.9) * Math.sin(u * 3.1 + 1.3 + t * 0.4));
+      const y = y0 + amp * 44 * env * speech * Math.sin(u * 92 + t * 5);
+      d += (i ? 'L' : 'M') + lerp(xa, xb, u).toFixed(1) + ' ' + y.toFixed(2);
+    }
+    return d;
+  }
+
+  function renderShot1(t, cam) {
+    const on = t < T.morphEnd;
+    document.getElementById('s1').style.display = on ? '' : 'none';
+    document.getElementById('s1-head').style.display = t < 3.4 ? '' : 'none';
+    if (!on) return;
+    const hy = cam.phi > 0.0005 ? cam.pivotY - PERSP_D / Math.tan(cam.phi) : -9999;
+    const lift = Math.min(HORIZON0 - hy, 900);
+    const push = 1 + 0.05 * eio(prog(t, 0, 3));
+    const vis = 1 - eio(prog(t, 3.0, 3.45));
+    phonesG.setAttribute('transform', `translate(0 ${-lift}) translate(960 ${HORIZON0}) scale(${push}) translate(-960 ${-HORIZON0})`);
+    phonesG.style.opacity = vis;
+    reflUse.setAttribute('transform', `matrix(1 0 0 -1 0 ${2 * (HORIZON0 - lift)})`);
+    reflMaskRect.setAttribute('y', HORIZON0 - lift);
+    reflWrap.style.opacity = 0.45;
+    phones.forEach((p, i) => {
+      setDraw(p.body, eio(prog(t, p.delay, p.delay + 0.7)));
+      p.parts.forEach((el, j) => {
+        const s = p.delay + 0.45 + j * 0.03;
+        setDraw(el, eo(prog(t, s, s + 0.35)));
+      });
+      let fill = 0;
+      for (const [tp, ids] of CARD_PULSES) if (t >= tp && ids.includes(i)) fill = Math.max(fill, 0.3 * Math.exp(-(t - tp) / 0.35));
+      p.card.style.fillOpacity = fill;
+    });
+
+    // audio waveform: draws on the floor, beats with the heartbeat, then flattens into the circuit bus
+    const m = eio(prog(t, 3.0, T.morphEnd));
+    const amp = (1 + 0.9 * beat(t)) * (1 - m);
+    wave.setAttribute('d', waveD(t, amp, lerp(560, BUS_Y, m), lerp(120, -40, m), lerp(1800, ATOM.x - 40, m)));
+    const wp = eio(prog(t, 0.55, 1.95));
+    setDraw(wave, wp);
+    wave.style.opacity = wp > 0 ? lerp(1, 0.45, m) * (1 - prog(t, T.signal, T.morphEnd)) : 0;
+    const hp = wave.getPointAtLength(wp * wave.getTotalLength());
+    waveHead.setAttribute('cx', hp.x);
+    waveHead.setAttribute('cy', hp.y);
+    waveHead.style.opacity = wp > 0 && wp < 1 ? 1 : 0;
+
+    riseWords(s1Words, t, 0.95, 0.11, 0.75, 2.8);
+  }
+
+  // =====================================================================
+  // Shot 2 — "Les devs qui les codent." + guest circuit
+  // =====================================================================
+  const worldG = document.getElementById('world');
+  const bus = document.getElementById('bus');
+  bus.setAttribute('d', `M-40 ${BUS_Y} H${ATOM.x - 40}`);
+  const branchesG = document.getElementById('branches');
+  const nodesG = document.getElementById('nodes');
+  const labelsDiv = document.getElementById('labels');
+  const signalG = document.getElementById('signal');
+  const trail = document.getElementById('trail');
+  const sigHead = document.getElementById('sig-head');
+  const packetsG = document.getElementById('packets');
+  const packets = Array.from({ length: 9 }, () => svgEl('path', {}, packetsG));
+  const s2Words = splitWords(document.getElementById('s2-head'), 'Les devs qui les codent.');
+
+  const nodes = GUESTS.map((guest, i) => {
+    const x = NODE_X[i], y = NODE_Y[i], up = y < BUS_Y, s = up ? -1 : 1;
+    const nsw = { 'vector-effect': 'non-scaling-stroke' };
+    const branch = svgEl('path', { fill: 'none', stroke: CYAN, 'stroke-width': 2, 'stroke-linejoin': 'round', ...nsw }, branchesG);
+    const pulse = svgEl('circle', { cx: x, cy: y, r: 16, fill: 'none', stroke: CYAN, 'stroke-width': 1.5, ...nsw }, nodesG);
+    const ring = svgEl('circle', { cx: x, cy: y, r: 16, class: 'draw', pathLength: 1, stroke: CYAN, 'stroke-width': 2, ...nsw }, nodesG);
+    ring.style.fill = BG;
+    const dot = svgEl('circle', { cx: x, cy: y, r: 0, fill: CYAN }, nodesG);
+    const label = div(
+      '',
+      `<div class="mono" style="font-size:17px">EP.${String(guest.ep).padStart(3, '0')}</div>` +
+        `<div class="grotesk" style="font-size:46px;margin-top:8px">${guest.name}</div>` +
+        `<div class="inter dim" style="font-size:20px;margin-top:7px">${guest.meta}</div>`,
+      { width: '520px', textAlign: 'center', transformOrigin: '0 0' },
+      labelsDiv
+    );
+    return { x, y, up, pts: [[x - 36, BUS_Y], [x, BUS_Y + 36 * s], [x, y - 16 * s]], branch, pulse, ring, dot, label, t: NODE_T[i] };
+  });
+  const atomLabel = div('mono', 'EP.038', { fontSize: '17px', transformOrigin: '0 0' }, labelsDiv);
+
+  // the signal slows down as it reaches each guest
+  const HEAD_KF = [[T.signal, -40], ...NODE_T.map((nt, i) => [nt - 0.2, NODE_X[i]]), [ATOM_T - 0.05, ATOM.x - 40]];
+  function headX(t) {
+    if (t <= HEAD_KF[0][0]) return HEAD_KF[0][1];
+    for (let i = 1; i < HEAD_KF.length; i++) {
+      const [t1, x1] = HEAD_KF[i];
+      if (t <= t1) {
+        const [t0, x0] = HEAD_KF[i - 1];
+        return lerp(x0, x1, (t - t0) / (t1 - t0));
+      }
+    }
+    return HEAD_KF[HEAD_KF.length - 1][1];
+  }
+
+  function renderWorld(t, cam) {
+    const on = t >= T.signal && cam.z < 12;
+    worldG.style.display = signalG.style.display = on ? '' : 'none';
+    labelsDiv.style.display = on && t < 7.3 ? '' : 'none';
+    document.getElementById('s2-head').style.display = t > 3.2 && t < 7.4 ? '' : 'none';
+    riseWords(s2Words, t, 3.35, 0.1, 0.75, 6.8);
+    if (!on) return;
+    const { z, ox, oy } = cam;
+    worldG.setAttribute('transform', `matrix(${z} 0 0 ${z} ${ox} ${oy})`);
+    bus.style.opacity = 0.45 * prog(t, T.signal, T.morphEnd);
+    const labelFade = 1 - clamp((z - 1) / 1.2);
+
+    nodes.forEach((n) => {
+      const bp = eio(prog(t, n.t - 0.24, n.t));
+      n.branch.setAttribute('d', partialPolyline(n.pts, bp));
+      n.branch.style.opacity = bp > 0 ? 1 : 0;
+      setDraw(n.ring, eo(prog(t, n.t, n.t + 0.3)));
+      n.dot.setAttribute('r', 6 * eo(prog(t, n.t + 0.05, n.t + 0.25)));
+      const pu = prog(t, n.t, n.t + 0.9);
+      n.pulse.setAttribute('r', 16 + 40 * eo(pu));
+      n.pulse.style.opacity = pu > 0 && pu < 1 ? 0.8 * (1 - pu) : 0;
+      const lp = eo(prog(t, n.t + 0.02, n.t + 0.6));
+      const sx = ox + z * n.x, sy = oy + z * n.y;
+      const off = (n.up ? -46 : 46) + (n.up ? 1 : -1) * 16 * (1 - lp);
+      n.label.style.transform = `translate(${sx}px, ${sy}px) scale(${z}) translate(-50%, ${n.up ? '-100%' : '0%'}) translate(0, ${off}px)`;
+      n.label.style.opacity = lp * labelFade;
+      n.label.style.filter = lp < 1 ? `blur(${(1 - lp) * 6}px)` : 'none';
+    });
+    const ap = eo(prog(t, ATOM_T + 0.1, ATOM_T + 0.5));
+    atomLabel.style.transform = `translate(${ox + z * ATOM.x}px, ${oy + z * (ATOM.y - 34)}px) scale(${z}) translate(-50%, -100%)`;
+    atomLabel.style.opacity = ap * labelFade;
+
+    // lit trail, travelling packets and the signal head, in screen space
+    const hx = headX(t);
+    const X = (x) => ox + z * x, Y = oy + z * BUS_Y;
+    trail.setAttribute('d', `M${X(-40)} ${Y} H${X(hx)}`);
+    sigHead.setAttribute('cx', X(hx));
+    sigHead.setAttribute('cy', Y);
+    sigHead.style.opacity = t < ATOM_T - 0.05 ? 1 : 0;
+    packets.forEach((p, k) => {
+      const spawn = 3.95 + 0.42 * k;
+      const x = -40 + 430 * (t - spawn);
+      const vis = t > spawn && x < hx - 14 && z < 3;
+      p.setAttribute('d', vis ? `M${X(Math.max(-40, x - 18))} ${Y} H${X(x)}` : 'M0 0');
+      p.style.opacity = vis ? 0.9 : 0;
+    });
+  }
+
+  // =====================================================================
+  // The React atom (screen space so strokes stay crisp through the 16× zoom)
+  // =====================================================================
+  const atomG = document.getElementById('atom');
+  const ellipses = [0, 1, 2].map(() => svgEl('ellipse', { class: 'draw', pathLength: 1, stroke: CYAN, 'stroke-width': 2 }, atomG));
+  const comets = [0, 1, 2].map(() => [
+    svgEl('ellipse', { fill: 'none', pathLength: 1, stroke: CYAN, 'stroke-linecap': 'round', 'stroke-dasharray': '0.2 0.8', 'stroke-opacity': 0.35 }, atomG),
+    svgEl('ellipse', { fill: 'none', pathLength: 1, stroke: WHITE, 'stroke-linecap': 'round', 'stroke-dasharray': '0.07 0.93', 'stroke-opacity': 0.9 }, atomG),
+  ]);
+  const electrons = [0, 1, 2].map(() => svgEl('circle', { r: 4, fill: WHITE }, atomG));
+  const nucleus = svgEl('circle', { r: 4, fill: CYAN }, atomG);
+  const atomPulse = svgEl('circle', { fill: 'none', stroke: CYAN, 'stroke-width': 1.5 }, atomG);
+  // arc-length table so the comet tails sit exactly behind their electrons
+  const ELL_TABLE = (() => {
+    const N = 720, arr = new Float32Array(N + 1), ratio = ATOM.ry / ATOM.rx;
+    let acc = 0, px = 1, py = 0;
+    for (let i = 1; i <= N; i++) {
+      const a = (i / N) * 2 * Math.PI, x = Math.cos(a), y = ratio * Math.sin(a);
+      acc += Math.hypot(x - px, y - py);
+      arr[i] = acc;
+      px = x;
+      py = y;
+    }
+    return arr.map((v) => v / acc);
+  })();
+  function ellFrac(a) {
+    const u = (mod(a, 2 * Math.PI) / (2 * Math.PI)) * 720, i = Math.floor(u);
+    return lerp(ELL_TABLE[i], ELL_TABLE[Math.min(720, i + 1)], u - i);
+  }
+
+  function renderAtom(t, cam) {
+    const on = t >= ATOM_T - 0.05 && t < T.impact;
+    atomG.style.display = on ? '' : 'none';
+    if (!on) return;
+    const collapse = eio(prog(t, T.implode, T.impact - 0.05));
+    const ls = 1 - collapse;
+    const sx = cam.ox + cam.z * ATOM.x, sy = cam.oy + cam.z * ATOM.y;
+    const rx = ATOM.rx * cam.z * ls, ry = ATOM.ry * cam.z * ls;
+    const zN = clamp((cam.z - 1) / (ZOOM - 1));
+    const theta = -18 + 10 * t + 540 * collapse * collapse;
+    const eOn = eo(prog(t, ATOM_T + 0.35, ATOM_T + 0.8));
+    const geo = (el, k) => {
+      el.setAttribute('cx', sx);
+      el.setAttribute('cy', sy);
+      el.setAttribute('rx', Math.max(0.01, rx));
+      el.setAttribute('ry', Math.max(0.01, ry));
+      el.setAttribute('transform', `rotate(${theta + k * 60} ${sx} ${sy})`);
+    };
+    ellipses.forEach((el, k) => {
+      geo(el, k);
+      el.setAttribute('stroke-width', 1.6 + 0.6 * zN);
+      setDraw(el, eio(prog(t, ATOM_T + k * 0.07, ATOM_T + 0.45 + k * 0.07)));
+    });
+    electrons.forEach((el, k) => {
+      const psi = 2 * Math.PI * 0.42 * t + (k * 2 * Math.PI) / 3;
+      const rot = ((theta + k * 60) * Math.PI) / 180;
+      const ex = rx * Math.cos(psi), ey = ry * Math.sin(psi);
+      el.setAttribute('cx', sx + ex * Math.cos(rot) - ey * Math.sin(rot));
+      el.setAttribute('cy', sy + ex * Math.sin(rot) + ey * Math.cos(rot));
+      el.setAttribute('r', (2 + 4 * zN) * (0.4 + 0.6 * ls));
+      el.style.opacity = eOn;
+      const f = ellFrac(psi);
+      comets[k].forEach((c, j) => {
+        geo(c, k);
+        c.setAttribute('stroke-width', (j ? 2 : 3) + 2 * zN);
+        c.style.strokeDashoffset = (j ? 0.07 : 0.2) - f;
+        c.style.opacity = eOn;
+      });
+    });
+    nucleus.setAttribute('cx', sx);
+    nucleus.setAttribute('cy', sy);
+    nucleus.setAttribute('r', (3.5 + 14 * zN) * (1 + 0.9 * collapse));
+    nucleus.style.opacity = eo(prog(t, ATOM_T + 0.1, ATOM_T + 0.4));
+    const pu = prog(t, ATOM_T, ATOM_T + 1);
+    atomPulse.setAttribute('cx', sx);
+    atomPulse.setAttribute('cy', sy);
+    atomPulse.setAttribute('r', (ATOM.rx + 70 * eo(pu)) * cam.z);
+    atomPulse.style.opacity = pu > 0 && pu < 1 ? 0.8 * (1 - pu) : 0;
+  }
+
+  // =====================================================================
+  // Shot 3 — Christopher Chedeau
+  // =====================================================================
+  const s3 = document.getElementById('s3');
+  const s3svg = document.getElementById('s3svg');
+  const s3Tag = document.getElementById('s3-tag');
+  const s3Lines = [document.querySelector('#s3-l1 .wi'), document.querySelector('#s3-l2 .wi')];
+  const s3Words = splitWords(document.getElementById('s3-sub'), 'Le co-créateur de React Native, au micro.');
+  const s3Rule = document.getElementById('s3-rule');
+
+  function renderShot3(t) {
+    const on = t >= 7.55 && t < T.impact;
+    s3.style.display = s3svg.style.display = on ? '' : 'none';
+    if (!on) return;
+    const out = eio(prog(t, T.implode, T.impact - 0.08));
+    s3.style.opacity = 1 - out;
+    s3.style.transform = `scale(${1 - 0.06 * out}) translateX(${-14 * eio(prog(t, 7.6, 10.4))}px)`;
+    s3.style.filter = out > 0.01 ? `blur(${(6 * out).toFixed(2)}px)` : 'none';
+    wipe(s3Tag, eo(prog(t, 7.65, 8.1)));
+    s3Lines.forEach((el, i) => {
+      const p = eo(prog(t, 7.75 + i * 0.14, 8.6 + i * 0.14));
+      el.style.transform = `translateY(${(1 - p) * 108}%)`;
+      el.style.filter = p < 1 ? `blur(${((1 - p) * 10).toFixed(2)}px)` : 'none';
+    });
+    riseWords(s3Words, t, 8.45, 0.05, 0.6);
+    setDraw(s3Rule, eio(prog(t, 8.55, 9.25)));
+    s3svg.style.opacity = 1 - out;
+  }
+
+  // =====================================================================
+  // Shot 4 — lockup
+  // =====================================================================
+  const s4G = document.getElementById('s4');
+  const s4Html = document.getElementById('s4-html');
+  const fxG = document.getElementById('s4-fx');
+  const shocks = [0, 1].map(() => svgEl('circle', { cx: HERO.x, cy: HERO.y, r: 0, fill: 'none', stroke: CYAN }, fxG));
+  const waves = WAVES.map(() => svgEl('circle', { cx: HERO.x, cy: HERO.y, r: 0, fill: 'none', stroke: CYAN, 'stroke-width': 1.5 }, fxG));
+  const ringsG = document.getElementById('rings');
+  const rings = RING_R.map((r, i) => {
+    const dashed = i % 2 === 1;
+    const el = svgEl('circle', { cx: HERO.x, cy: HERO.y, r, fill: 'none', stroke: CYAN, 'stroke-width': i < 3 ? 1.6 : 1.2, 'stroke-opacity': lerp(0.85, 0.22, i / 7) }, ringsG);
+    if (dashed) el.setAttribute('stroke-dasharray', '2 10');
+    else {
+      el.setAttribute('pathLength', 1);
+      el.classList.add('draw');
+    }
+    return { el, r, dashed, i };
+  });
+
+  const micG = document.getElementById('mic');
+  micG.setAttribute('transform', `translate(${HERO.x - 330} ${HERO.y - 185 - 330})`);
+  const micParts = [
+    svgEl('rect', { x: 262, y: 330, width: 136, height: 236, rx: 68 }, micG),
+    svgEl('path', { d: 'M292 420 H368 M292 450 H368 M292 480 H368', stroke: CYAN }, micG),
+    svgEl('path', { d: 'M222 470 V500 A108 108 0 0 0 438 500 V470' }, micG),
+    svgEl('path', { d: 'M330 608 V700' }, micG),
+    svgEl('path', { d: 'M262 700 H398' }, micG),
+  ];
+  micParts.forEach((el) => {
+    el.setAttribute('pathLength', 1);
+    el.classList.add('draw');
+  });
+
+  const titleG = document.getElementById('title');
+  const guidesG = document.getElementById('guides');
+  const letters = [];
+  const guides = [];
+  TITLE_BASE.forEach((b) => {
+    [b, b - GLYPHS.cap].forEach((y) => guides.push(svgEl('path', { d: `M96 ${y} H1010`, class: 'draw', pathLength: 1, stroke: CYAN, 'stroke-width': 1 }, guidesG)));
+  });
+  guides.push(svgEl('path', { d: `M${TITLE_X} 190 V660`, class: 'draw', pathLength: 1, stroke: CYAN, 'stroke-width': 1 }, guidesG));
+
+  // Letter positions come from the browser's own text layout (kerning included).
+  function setupTitle() {
+    const probe = document.createElement('span');
+    probe.style.cssText = `position:absolute;left:0;top:-2000px;font:700 ${GLYPHS.size}px 'Space Grotesk';letter-spacing:${-0.03 * GLYPHS.size}px;white-space:pre`;
+    document.body.appendChild(probe);
+    const range = document.createRange();
+    TITLE_LINES.forEach((line, li) => {
+      probe.textContent = line;
+      const left = probe.getBoundingClientRect().left;
+      [...line].forEach((ch, ci) => {
+        if (ch === ' ') return;
+        range.setStart(probe.firstChild, ci);
+        range.setEnd(probe.firstChild, ci + 1);
+        const x = TITLE_X + range.getBoundingClientRect().left - left;
+        const g = svgEl('g', { transform: `translate(${x.toFixed(2)} ${TITLE_BASE[li]})` }, titleG);
+        const glyph = GLYPHS.glyphs[ch];
+        const fill = svgEl('path', { d: glyph.contours.join(''), fill: WHITE, 'fill-opacity': 0 }, g);
+        const strokes = glyph.contours.map((d) => svgEl('path', { d, class: 'draw', pathLength: 1, stroke: CYAN, 'stroke-width': 1.8, 'stroke-linejoin': 'round' }, g));
+        letters.push({ fill, strokes, start: 10.75 + letters.length * 0.045 });
+      });
+    });
+    probe.remove();
+  }
+
+  const ctaG = document.getElementById('cta');
+  const pill = svgEl('rect', { x: 140, y: 790, width: 540, height: 76, rx: 38, class: 'draw', pathLength: 1 }, ctaG);
+  const CALLOUTS = [-65, 65].map((deg) => {
+    const a = (deg * Math.PI) / 180;
+    const px = HERO.x + 300 * Math.cos(a), py = HERO.y + 300 * Math.sin(a), s = Math.sign(deg);
+    return {
+      dot: svgEl('circle', { cx: px, cy: py, r: 0, fill: CYAN, stroke: 'none' }, ctaG),
+      leader: svgEl('path', { d: `M${px} ${py} L${px + 32} ${py + 32 * s} H1800`, class: 'draw', pathLength: 1, 'stroke-width': 1.2 }, ctaG),
+    };
+  });
+  const s4Tag = [...splitWords(document.getElementById('s4-tag1'), 'Le seul podcast francophone'), ...splitWords(document.getElementById('s4-tag2'), 'sur React Native en production.')];
+  const s4Url = document.getElementById('s4-url');
+  const s4Platforms = document.getElementById('s4-platforms');
+  const c1Label = document.getElementById('c1-label');
+  const c2Label = document.getElementById('c2-label');
+
+  function renderShot4(t) {
+    const on = t >= T.impact - 0.01;
+    s4G.style.display = s4Html.style.display = on ? '' : 'none';
+    if (!on) return;
+    const k = 1 + 0.03 * eio(prog(t, T.impact, DURATION));
+    s4G.setAttribute('transform', `translate(960 540) scale(${k}) translate(-960 -540)`);
+    s4Html.style.transform = `scale(${k})`;
+
+    shocks.forEach((c, i) => {
+      const u = prog(t, T.impact + i * 0.1, T.impact + i * 0.1 + 1.0);
+      c.setAttribute('r', 20 + 1500 * eo(u));
+      c.setAttribute('stroke-width', 1 + 5 * (1 - u));
+      c.style.opacity = u > 0 && u < 1 ? Math.pow(1 - u, 1.5) : 0;
+    });
+    waves.forEach((c, i) => {
+      const u = prog(t, WAVES[i], WAVES[i] + 1.3);
+      c.setAttribute('r', 230 + 780 * eo(u));
+      c.style.opacity = u > 0 && u < 1 ? 0.55 * Math.pow(1 - u, 2) : 0;
+    });
+    const breathe = 6 * beat(t);
+    rings.forEach(({ el, r, dashed, i }) => {
+      const p = eio(prog(t, 10.55 + i * 0.07, 11.35 + i * 0.07));
+      const spin = (dashed ? (i % 4 === 1 ? 1 : -1) * 5 * t : 0) - 90 + i * 47;
+      el.setAttribute('transform', `rotate(${spin} ${HERO.x} ${HERO.y})`);
+      if (dashed) {
+        el.setAttribute('r', r * (0.9 + 0.1 * p) + breathe);
+        el.style.opacity = p;
+      } else {
+        el.setAttribute('r', r + breathe);
+        setDraw(el, p);
+      }
+    });
+    micParts.forEach((el, j) => setDraw(el, eio(prog(t, 10.65 + j * 0.12, 11.25 + j * 0.12))));
+
+    guides.forEach((el, i) => {
+      setDraw(el, eio(prog(t, 10.6 + i * 0.06, 11.3 + i * 0.06)));
+      el.style.opacity = Math.min(el.style.opacity, lerp(0.5, 0.18, eio(prog(t, 12.2, 12.9))));
+    });
+    letters.forEach((L) => {
+      const dp = eio(prog(t, L.start, L.start + 0.8));
+      L.strokes.forEach((s) => {
+        setDraw(s, dp);
+        s.style.opacity = dp > 0 ? 1 - 0.8 * prog(t, L.start + 1.0, L.start + 1.4) : 0;
+      });
+      L.fill.setAttribute('fill-opacity', eo(prog(t, L.start + 0.6, L.start + 1.1)));
+    });
+
+    riseWords(s4Tag, t, 12.05, 0.035, 0.6);
+    setDraw(pill, eio(prog(t, 12.45, 13.05)));
+    wipe(s4Url, eo(prog(t, 12.75, 13.2)));
+    wipe(s4Platforms, eo(prog(t, 12.95, 13.5)));
+    CALLOUTS.forEach((c, i) => {
+      const t0 = 12.95 + i * 0.2;
+      c.dot.setAttribute('r', 4 * eo(prog(t, t0, t0 + 0.2)));
+      setDraw(c.leader, eio(prog(t, t0, t0 + 0.55)));
+    });
+    wipe(c1Label, eo(prog(t, 13.3, 13.75)));
+    wipe(c2Label, eo(prog(t, 13.5, 13.95)));
+  }
+
+  // =====================================================================
+  // render(t) — pure function of time, so any frame can be rendered alone
+  // =====================================================================
+  const flash = document.getElementById('flash');
+  let titleReady = false;
+  window.render = function (t) {
+    if (!titleReady) return;
+    const cam = camera(t);
+    drawCanvas(t, cam);
+    renderShot1(t, cam);
+    renderWorld(t, cam);
+    renderAtom(t, cam);
+    renderShot3(t);
+    renderShot4(t);
+    renderHud(t);
+    flash.style.opacity = t >= T.impact ? 0.55 * Math.exp(-(t - T.impact) / 0.14) : 0;
+  };
+
+  // =====================================================================
+  // Soundtrack — synthesised offline so it is locked to the frame timeline.
+  // D minor → Bb → F → C, drop into Bbmaj9 at the impact, resolve on Fmaj9.
+  // =====================================================================
+  function mulberry32(a) {
+    return function () {
+      a |= 0;
+      a = (a + 0x6d2b79f5) | 0;
+      let r = Math.imul(a ^ (a >>> 15), 1 | a);
+      r = (r + Math.imul(r ^ (r >>> 7), 61 | r)) ^ r;
+      return ((r ^ (r >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+
+  window.renderAudio = async function () {
+    const SR = 48000, LEN = DURATION;
+    const ctx = new OfflineAudioContext(2, Math.round(SR * LEN), SR);
+    const rnd = mulberry32(20260926);
+    const mtof = (m) => 440 * Math.pow(2, (m - 69) / 12);
+
+    const noiseBuf = ctx.createBuffer(2, SR * 4, SR);
+    for (let c = 0; c < 2; c++) {
+      const d = noiseBuf.getChannelData(c);
+      for (let i = 0; i < d.length; i++) d[i] = rnd() * 2 - 1;
+    }
+    const noise = (t, dur) => {
+      const s = ctx.createBufferSource();
+      s.buffer = noiseBuf;
+      s.loop = true;
+      s.start(t, rnd() * 3, dur);
+      return s;
+    };
+    const osc = (type, f, t, dur) => {
+      const o = ctx.createOscillator();
+      o.type = type;
+      o.frequency.value = f;
+      o.start(t);
+      o.stop(t + dur);
+      return o;
+    };
+    const bq = (type, f, q = 0.7) => {
+      const b = ctx.createBiquadFilter();
+      b.type = type;
+      b.frequency.value = f;
+      b.Q.value = q;
+      return b;
+    };
+    const gain = (v = 1) => {
+      const g = ctx.createGain();
+      g.gain.value = v;
+      return g;
+    };
+    const chain = (...n) => {
+      for (let i = 0; i < n.length - 1; i++) n[i].connect(n[i + 1]);
+      return n[n.length - 1];
+    };
+    const send = (from, to, amount) => chain(from, gain(amount), to);
+    const perc = (g, t, peak, a, d) => {
+      g.gain.setValueAtTime(0.0001, t);
+      g.gain.exponentialRampToValueAtTime(peak, t + a);
+      g.gain.exponentialRampToValueAtTime(0.0001, t + a + d);
+    };
+    const curve = (fn, rate = 200) => Float32Array.from({ length: Math.round(LEN * rate) + 1 }, (_, i) => fn(i / rate));
+
+    // ---- buses ----
+    const comp = ctx.createDynamicsCompressor();
+    comp.threshold.value = -18;
+    comp.knee.value = 10;
+    comp.ratio.value = 3;
+    comp.attack.value = 0.01;
+    comp.release.value = 0.25;
+    const master = gain(1);
+    master.gain.setValueAtTime(1, 14.3);
+    master.gain.linearRampToValueAtTime(0.0001, LEN);
+    const lowShelf = bq('lowshelf', 120);
+    lowShelf.gain.value = -3;
+    const presence = bq('peaking', 3000, 0.8);
+    presence.gain.value = 3;
+    const highShelf = bq('highshelf', 4500);
+    highShelf.gain.value = 5;
+    chain(master, lowShelf, presence, highShelf, comp, ctx.destination);
+
+    const verb = ctx.createConvolver();
+    {
+      const len = Math.round(SR * 2.8), ir = ctx.createBuffer(2, len, SR);
+      for (let c = 0; c < 2; c++) {
+        const d = ir.getChannelData(c);
+        let lp = 0;
+        for (let i = 0; i < len; i++) {
+          lp += 0.35 * (rnd() * 2 - 1 - lp);
+          d[i] = lp * Math.pow(1 - i / len, 2.2) * Math.min(1, i / 480);
+        }
+      }
+      verb.buffer = ir;
+    }
+    const verbIn = gain(1);
+    chain(verbIn, verb, gain(0.55), master);
+
+    const delay = ctx.createDelay(2);
+    delay.delayTime.value = BEAT * 0.75; // dotted eighth
+    const delayLp = bq('lowpass', 3200);
+    const delayIn = gain(1);
+    chain(delayIn, delay, delayLp, gain(0.32), delay);
+    chain(delayLp, gain(0.5), master);
+
+    // sidechain: music ducks under every kick and impact
+    const duck = gain(1);
+    duck.connect(master);
+    const duckers = [...KICKS_INTRO.map((k) => [k, 0.15]), ...KICKS.map((k) => [k, 0.5]), [T.impact, 0.65]];
+    duck.gain.setValueCurveAtTime(
+      curve((t) => {
+        let d = 0;
+        for (const [k, depth] of duckers) {
+          const x = t - k;
+          if (x >= 0 && x < 0.8) d = Math.max(d, depth * (x < 0.008 ? x / 0.008 : Math.exp(-(x - 0.008) / 0.13)));
+        }
+        return 1 - d;
+      }),
+      0,
+      LEN
+    );
+
+    // ---- pad ----
+    const CHORDS = [
+      { t0: 0.0, t1: 3.05, notes: [50, 53, 57, 60, 64], a: 1.6, r: 0.25 }, // Dm9
+      { t0: 3.0, t1: 6.05, notes: [46, 50, 53, 57, 60], a: 0.08, r: 0.25 }, // Bbmaj9
+      { t0: 6.0, t1: 9.05, notes: [53, 57, 60, 64, 67], a: 0.08, r: 0.25 }, // Fmaj9
+      { t0: 9.0, t1: 10.28, notes: [48, 55, 62, 67], a: 0.08, r: 0.04 }, // Csus2
+      { t0: 10.5, t1: 12.05, notes: [46, 53, 57, 60, 62, 65], a: 0.03, r: 0.25 }, // Bbmaj9(13)
+      { t0: 12.0, t1: 13.55, notes: [48, 52, 55, 62, 67], a: 0.08, r: 0.25 }, // Cadd9
+      { t0: 13.5, t1: 15.0, notes: [53, 57, 60, 64, 67, 72], a: 0.08, r: 0.4 }, // Fmaj9
+    ];
+    const padLp = bq('lowpass', 800, 0.6);
+    padLp.frequency.setValueCurveAtTime(
+      curve((t) => {
+        if (t < 3) return 320 * Math.pow(2200 / 320, t / 3);
+        if (t < 9) return 3000;
+        if (t < 10.3) return lerp(3000, 4500, (t - 9) / 1.3);
+        if (t < 10.5) return 600;
+        if (t < 12) return lerp(5000, 3200, (t - 10.5) / 1.5);
+        return 3200;
+      }, 100),
+      0,
+      LEN
+    );
+    const padHp = bq('highpass', 170);
+    chain(padLp, padHp, duck);
+    send(padHp, verbIn, 0.3);
+    for (const ch of CHORDS)
+      for (const m of ch.notes)
+        for (const det of [-9, 7]) {
+          const o = osc('sawtooth', mtof(m), ch.t0, ch.t1 - ch.t0 + ch.r + 0.05);
+          o.detune.value = det;
+          const g = gain(0);
+          g.gain.setValueAtTime(0, ch.t0);
+          g.gain.linearRampToValueAtTime(0.03, ch.t0 + ch.a);
+          g.gain.setValueAtTime(0.03, ch.t1);
+          g.gain.linearRampToValueAtTime(0, ch.t1 + ch.r);
+          const p = ctx.createStereoPanner();
+          p.pan.value = det < 0 ? -0.45 : 0.45;
+          chain(o, g, p, padLp);
+        }
+
+    // ---- bass ----
+    const bassLp = bq('lowpass', 700, 0.8);
+    chain(bassLp, duck);
+    for (const [t0, t1, root] of [[3.0, 6.0, 34], [6.0, 9.0, 41], [9.0, 10.28, 36], [12.0, 13.5, 36], [13.5, 14.8, 41]]) {
+      let step = 0;
+      for (let t = t0; t < t1 - 0.01; t += BEAT / 2, step++) {
+        const m = root + (step % 4 === 3 ? 12 : 0);
+        const dur = Math.min((BEAT / 2) * 0.92, t1 - t);
+        const g = gain(0);
+        g.gain.setValueAtTime(0.0001, t);
+        g.gain.exponentialRampToValueAtTime(0.36, t + 0.008);
+        g.gain.exponentialRampToValueAtTime(0.13, t + dur * 0.8);
+        g.gain.linearRampToValueAtTime(0.0001, t + dur);
+        chain(osc('sine', mtof(m), t, dur + 0.02), g);
+        chain(osc('triangle', mtof(m + 12), t, dur + 0.02), gain(0.3), g);
+        g.connect(bassLp);
+      }
+    }
+    {
+      const g = gain(0);
+      g.gain.setValueAtTime(0, 0.3);
+      g.gain.linearRampToValueAtTime(0.1, 2.4);
+      g.gain.linearRampToValueAtTime(0, 3.05);
+      chain(osc('sine', mtof(38), 0.3, 2.8), g, bassLp);
+    }
+
+    // ---- pluck arpeggio ----
+    const arpOut = gain(1);
+    arpOut.connect(duck);
+    send(arpOut, delayIn, 0.35);
+    send(arpOut, verbIn, 0.2);
+    const PATTERN = [0, 2, 4, 1, 3, 4, 2, 1];
+    for (const [t0, t1] of [[3.0, 10.28], [12.0, 14.3]]) {
+      let step = 0;
+      for (let t = t0; t < t1 - 0.01; t += BEAT / 4, step++) {
+        const ch = CHORDS.filter((c) => t + 0.001 >= c.t0 && t + 0.001 < c.t1).pop();
+        const tones = ch.notes.map((m) => m + 12).sort((a, b) => a - b);
+        const m = tones[PATTERN[step % 8] % tones.length];
+        const vel = (step % 4 === 0 ? 1 : 0.7) * (t < 4.5 ? lerp(0.4, 1, (t - 3) / 1.5) : 1);
+        const f = bq('lowpass', 6500, 3);
+        f.frequency.setValueAtTime(6500, t);
+        f.frequency.exponentialRampToValueAtTime(900, t + 0.16);
+        const g = gain(0);
+        perc(g, t, 0.085 * vel, 0.004, 0.24);
+        const p = ctx.createStereoPanner();
+        p.pan.value = step % 2 ? 0.3 : -0.3;
+        chain(osc('sawtooth', mtof(m), t, 0.3), f, g, p, arpOut);
+      }
+    }
+
+    // ---- bells: guest pings, hero shimmer, post-impact sparkle ----
+    function bell(t, m, lv) {
+      const g = gain(0);
+      perc(g, t, lv, 0.004, 1.1);
+      chain(osc('sine', mtof(m), t, 1.3), g);
+      chain(osc('sine', mtof(m) * 2.005, t, 1.3), gain(0.35), g);
+      g.connect(master);
+      send(g, delayIn, 0.35);
+      send(g, verbIn, 0.45);
+    }
+    const PING = [74, 77, 79, 81, 84, 86, 89]; // D minor pentatonic, one note per guest
+    NODE_T.forEach((t, i) => bell(t, PING[i], 0.055));
+    bell(ATOM_T, 86, 0.06);
+    bell(ATOM_T, 93, 0.045);
+    [86, 93, 100].forEach((m, i) => bell(7.5 + i * 0.02, m, 0.05));
+    [74, 77, 81, 84].forEach((m, i) => bell(10.875 + i * 0.375, m, 0.05));
+
+    // ---- drums ----
+    const drums = gain(0.9);
+    drums.connect(master);
+    function kick(t, vel, muffled) {
+      const o = ctx.createOscillator();
+      o.frequency.setValueAtTime(155, t);
+      o.frequency.exponentialRampToValueAtTime(52, t + 0.1);
+      o.frequency.exponentialRampToValueAtTime(42, t + 0.4);
+      o.start(t);
+      o.stop(t + 0.55);
+      const g = gain(0);
+      perc(g, t, vel, 0.003, 0.34);
+      chain(o, g, ...(muffled ? [bq('lowpass', 180)] : []), drums);
+      if (!muffled) {
+        const ng = gain(0);
+        perc(ng, t, 0.22 * vel, 0.001, 0.02);
+        chain(noise(t, 0.03), bq('highpass', 2500), ng, drums);
+      }
+    }
+    KICKS_INTRO.forEach((t) => kick(t, 0.55, true));
+    KICKS.forEach((t) => kick(t, 0.95, false));
+
+    function clap(t, vel = 1) {
+      const g = gain(0);
+      [0, 0.012, 0.024].forEach((d) => {
+        g.gain.setValueAtTime(0.55 * vel, t + d);
+        g.gain.exponentialRampToValueAtTime(0.06 * vel, t + d + 0.01);
+      });
+      g.gain.setValueAtTime(0.45 * vel, t + 0.035);
+      g.gain.exponentialRampToValueAtTime(0.0001, t + 0.3);
+      chain(noise(t, 0.45), bq('bandpass', 1900, 0.7), g, drums);
+      send(g, verbIn, 0.35);
+    }
+    CLAPS.forEach((t) => clap(t));
+
+    function hat(t, vel, open) {
+      const g = gain(0);
+      perc(g, t, 0.36 * vel, 0.001, open ? 0.28 : 0.035);
+      const p = ctx.createStereoPanner();
+      p.pan.value = 0.25;
+      chain(noise(t, open ? 0.4 : 0.08), bq('highpass', 6500), g, p, drums);
+    }
+    const HAT_VEL = [0.35, 0.16, 0.7, 0.2];
+    for (const [t0, t1] of [[3.0, 10.28], [12.0, 14.4]]) {
+      let s = 0;
+      for (let t = t0; t < t1 - 0.01; t += BEAT / 4, s++) {
+        const open = Math.abs(mod(t - 3, 3) - 2.625) < 0.01;
+        hat(t, HAT_VEL[s % 4] * (open ? 1.2 : 1), open);
+      }
+    }
+    // snare roll into the big impact
+    const roll = [9.0, 9.1875, 9.375, 9.5625, 9.75, 9.84375, 9.9375, 10.03125, 10.125, 10.21875];
+    roll.forEach((t, i) => {
+      const k = i / (roll.length - 1);
+      const g = gain(0);
+      perc(g, t, lerp(0.12, 0.55, k * k), 0.001, 0.07);
+      chain(noise(t, 0.12), bq('bandpass', 1800 + 1500 * k, 1.2), g, drums);
+      send(g, verbIn, 0.25);
+    });
+
+    // ---- risers, whoosh, impacts ----
+    function riser(t0, t1, lv, pitched) {
+      const f = bq('bandpass', 400, 2.5);
+      f.frequency.setValueAtTime(350, t0);
+      f.frequency.exponentialRampToValueAtTime(7500, t1);
+      const g = gain(0);
+      g.gain.setValueAtTime(0.0001, t0);
+      g.gain.exponentialRampToValueAtTime(lv, t1 - 0.02);
+      g.gain.linearRampToValueAtTime(0.0001, t1);
+      chain(noise(t0, t1 - t0 + 0.05), f, g, master);
+      send(g, verbIn, 0.4);
+      if (pitched) {
+        const o = osc('sawtooth', 110, t0, t1 - t0);
+        o.frequency.setValueAtTime(110, t0);
+        o.frequency.exponentialRampToValueAtTime(880, t1);
+        const og = gain(0);
+        og.gain.setValueAtTime(0.0001, t0);
+        og.gain.exponentialRampToValueAtTime(0.05, t1 - 0.02);
+        og.gain.linearRampToValueAtTime(0.0001, t1);
+        chain(o, bq('lowpass', 2600), og, master);
+      }
+    }
+    riser(1.1, 3.0, 0.2, false);
+    riser(8.9, 10.28, 0.3, true);
+    {
+      // reverse cymbal into the first drop
+      const g = gain(0);
+      g.gain.setValueAtTime(0.0001, 2.1);
+      g.gain.exponentialRampToValueAtTime(0.22, 2.99);
+      g.gain.linearRampToValueAtTime(0.0001, 3.0);
+      chain(noise(2.1, 0.95), bq('highpass', 5000), g, master);
+    }
+    {
+      // whoosh through the atom
+      const t0 = 6.9, t1 = 7.55, peak = 7.42;
+      const f = bq('bandpass', 500, 1.1);
+      f.frequency.setValueAtTime(380, t0);
+      f.frequency.exponentialRampToValueAtTime(4200, peak);
+      f.frequency.exponentialRampToValueAtTime(1500, t1);
+      const g = gain(0);
+      g.gain.setValueAtTime(0.0001, t0);
+      g.gain.exponentialRampToValueAtTime(0.42, peak);
+      g.gain.exponentialRampToValueAtTime(0.0001, t1);
+      const p = ctx.createStereoPanner();
+      p.pan.setValueAtTime(-0.6, t0);
+      p.pan.linearRampToValueAtTime(0.6, t1);
+      chain(noise(t0, t1 - t0 + 0.05), f, g, p, master);
+      send(g, verbIn, 0.4);
+      const o = osc('sine', 80, 7.5, 0.9);
+      o.frequency.setValueAtTime(80, 7.5);
+      o.frequency.exponentialRampToValueAtTime(42, 7.9);
+      const og = gain(0);
+      perc(og, 7.5, 0.5, 0.005, 0.6);
+      chain(o, og, master);
+    }
+    function impact(t, size) {
+      const o = ctx.createOscillator();
+      o.frequency.setValueAtTime(75, t);
+      o.frequency.exponentialRampToValueAtTime(34, t + 0.5);
+      o.start(t);
+      o.stop(t + 2.6);
+      const g = gain(0);
+      perc(g, t, 0.95 * size, 0.004, 0.9 + 1.2 * size);
+      chain(o, g, master);
+      const ng = gain(0);
+      perc(ng, t, 0.5 * size, 0.002, 0.5);
+      chain(noise(t, 1.2), bq('lowpass', 1100), ng, master);
+      send(ng, verbIn, 0.6);
+      const cg = gain(0);
+      perc(cg, t, 0.16 * size, 0.003, 1.6 + 0.6 * size);
+      chain(noise(t, 2.6), bq('highpass', 5500), cg, master);
+      send(cg, verbIn, 0.5);
+      if (size > 0.8) {
+        const d = ctx.createOscillator();
+        d.frequency.setValueAtTime(120, t);
+        d.frequency.exponentialRampToValueAtTime(30, t + 1.2);
+        d.start(t);
+        d.stop(t + 1.8);
+        const dg = gain(0);
+        perc(dg, t, 0.45, 0.01, 1.3);
+        chain(d, dg, master);
+      }
+    }
+    impact(3.0, 0.6);
+    impact(T.impact, 1);
+    {
+      const cg = gain(0);
+      perc(cg, 14.25, 0.1, 0.003, 0.7);
+      chain(noise(14.25, 1.0), bq('highpass', 6000), cg, master);
+    }
+
+    const buf = await ctx.startRendering();
+    return wavBase64(buf);
+  };
+
+  // 16-bit PCM WAV, peak-normalised to -1 dBFS (loudness is set by ffmpeg)
+  function wavBase64(buf) {
+    const chs = buf.numberOfChannels, len = buf.length, data = [];
+    let peak = 0;
+    for (let c = 0; c < chs; c++) {
+      data.push(buf.getChannelData(c));
+      for (const v of data[c]) peak = Math.max(peak, Math.abs(v));
+    }
+    const k = peak > 0 ? 0.89 / peak : 1;
+    const bytes = new ArrayBuffer(44 + len * chs * 2);
+    const v = new DataView(bytes);
+    const str = (o, s) => [...s].forEach((c, i) => v.setUint8(o + i, c.charCodeAt(0)));
+    str(0, 'RIFF');
+    v.setUint32(4, 36 + len * chs * 2, true);
+    str(8, 'WAVE');
+    str(12, 'fmt ');
+    v.setUint32(16, 16, true);
+    v.setUint16(20, 1, true);
+    v.setUint16(22, chs, true);
+    v.setUint32(24, buf.sampleRate, true);
+    v.setUint32(28, buf.sampleRate * chs * 2, true);
+    v.setUint16(32, chs * 2, true);
+    v.setUint16(34, 16, true);
+    str(36, 'data');
+    v.setUint32(40, len * chs * 2, true);
+    let o = 44;
+    for (let i = 0; i < len; i++)
+      for (let c = 0; c < chs; c++) {
+        const s = Math.max(-1, Math.min(1, data[c][i] * k));
+        v.setInt16(o, s < 0 ? s * 0x8000 : s * 0x7fff, true);
+        o += 2;
+      }
+    const u8 = new Uint8Array(bytes);
+    let bin = '';
+    for (let i = 0; i < u8.length; i += 0x8000) bin += String.fromCharCode.apply(null, u8.subarray(i, i + 0x8000));
+    return btoa(bin);
+  }
+
+  // ---------- boot ----------
+  window.META = { FPS, DURATION, W, H, NAME: 'podcast-showreel-16x9', SAMPLES: 6, SHUTTER: 0.5 };
+  window.ready = Promise.all([
+    document.fonts.load('700 100px "Space Grotesk"'),
+    document.fonts.load('400 20px "JetBrains Mono"'),
+    document.fonts.load('400 20px "Inter"'),
+  ])
+    .then(() => document.fonts.ready)
+    .then(() => {
+      setupTitle();
+      titleReady = true;
+    });
+
+  // live preview when opened in a browser (?t=5 freezes a frame)
+  const qs = new URLSearchParams(location.search);
+  window.ready.then(() => {
+    if (qs.has('t')) window.render(parseFloat(qs.get('t')));
+    else if (!navigator.webdriver) {
+      const start = performance.now();
+      const loop = () => {
+        window.render(((performance.now() - start) / 1000) % (DURATION + 1));
+        requestAnimationFrame(loop);
+      };
+      loop();
+    } else window.render(0);
+  });
+</script>
+</body>
+</html>
