@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<title>Le Cross Platform Show — motion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=block"
+  rel="stylesheet"
+/>
+<style>
+  :root {
+    --bg: #0a1e3c;
+    --grid: #1e3a5f;
+    --cyan: #61dafb;
+    --white: #f0f6fc;
+    --green: #3dff88;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1920px; height: 1080px; overflow: hidden; background: var(--bg); }
+  #stage { position: relative; width: 1920px; height: 1080px; }
+  svg { position: absolute; inset: 0; }
+  .draw { fill: none; stroke-dasharray: 1 1; stroke-dashoffset: 1; }
+  .layer { position: absolute; inset: 0; }
+  .abs { position: absolute; will-change: transform, opacity; }
+  .mono {
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--cyan);
+  }
+  .grotesk { font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: var(--white); letter-spacing: -0.03em; line-height: 0.95; }
+  .inter { font-family: 'Inter', sans-serif; color: var(--white); }
+  .dim { color: rgba(240, 246, 252, 0.55); }
+</style>
+</head>
+<body>
+<div id="stage">
+  <svg id="svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+    <g id="grid"></g>
+    <g id="crops" stroke="#61dafb" stroke-width="1.5"></g>
+    <g id="wave-g"><path id="wave" class="draw" pathLength="1" stroke="#61dafb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" /></g>
+    <circle id="wave-head" r="6" fill="#61dafb" />
+
+    <!-- Scene 1: microphone line art -->
+    <g id="mic" stroke="#f0f6fc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <rect class="draw" pathLength="1" x="262" y="330" width="136" height="236" rx="68" />
+      <path class="draw" pathLength="1" d="M292 420 H368 M292 450 H368 M292 480 H368" stroke="#61dafb" />
+      <path class="draw" pathLength="1" d="M222 470 V500 A108 108 0 0 0 438 500 V470" />
+      <path class="draw" pathLength="1" d="M330 608 V700" />
+      <path class="draw" pathLength="1" d="M262 700 H398" />
+      <!-- dimension line on the mic -->
+      <path class="draw" pathLength="1" d="M200 330 V566 M190 330 H210 M190 566 H210" stroke="#61dafb" stroke-width="1" />
+    </g>
+
+    <!-- Scene 2: circuit through guests -->
+    <g id="circuit">
+      <path id="route" class="draw" pathLength="1" stroke="#61dafb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+      <circle id="route-head" r="6" fill="#61dafb" />
+      <g id="nodes"></g>
+    </g>
+
+    <!-- Scene 3: dimension lines under stats -->
+    <g id="dims" stroke="#61dafb" stroke-width="1.5"></g>
+
+    <!-- Scene 4: platform pills + url underline -->
+    <g id="cta" stroke="#61dafb" stroke-width="2"></g>
+
+    <!-- title block (cartouche) -->
+    <g id="cartouche" stroke="#61dafb" stroke-width="1.2">
+      <rect class="draw" pathLength="1" x="1452" y="918" width="388" height="112" />
+      <path class="draw" pathLength="1" d="M1452 956 H1840 M1452 994 H1720 M1720 956 V1030" />
+    </g>
+  </svg>
+
+  <div class="layer" id="html"></div>
+</div>
+
+<script>
+  // ---------- constants ----------
+  const W = 1920, H = 1080, FPS = 30, DURATION = 19.5;
+  const NS = 'http://www.w3.org/2000/svg';
+  const CYAN = '#61dafb', GRID = '#1e3a5f', WHITE = '#f0f6fc', BG = '#0a1e3c';
+
+  const GUESTS = [
+    { name: 'Cdiscount', ep: 1 },
+    { name: 'Alan', ep: 2 },
+    { name: 'Swan', ep: 5 },
+    { name: 'Shine', ep: 14 },
+    { name: 'Skia', ep: 24 },
+    { name: 'RevenueCat', ep: 35 },
+    { name: 'Doctolib', ep: 37 },
+  ];
+
+  // ---------- math ----------
+  const clamp = (x) => Math.max(0, Math.min(1, x));
+  const prog = (t, a, b) => clamp((t - a) / (b - a));
+  const eio = (x) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2);
+  const eo = (x) => 1 - Math.pow(1 - x, 3);
+  const lerp = (a, b, p) => a + (b - a) * p;
+  // fade in over [a,b], fade out over [c,d]
+  const window4 = (t, a, b, c, d) => eo(prog(t, a, b)) * (1 - eio(prog(t, c, d)));
+
+  function setDraw(el, p) {
+    el.style.strokeDashoffset = 1 - p;
+    el.style.opacity = p <= 0.0005 ? 0 : 1;
+  }
+  function svgEl(tag, attrs, parent) {
+    const el = document.createElementNS(NS, tag);
+    for (const k in attrs) el.setAttribute(k, attrs[k]);
+    parent.appendChild(el);
+    return el;
+  }
+  function htmlEl(cls, html, style, parent = document.getElementById('html')) {
+    const el = document.createElement('div');
+    el.className = 'abs ' + cls;
+    el.innerHTML = html;
+    Object.assign(el.style, style);
+    parent.appendChild(el);
+    return el;
+  }
+  function place(el, opacity, dx = 0, dy = 0, clipRight = 0) {
+    el.style.opacity = opacity;
+    el.style.transform = `translate(${dx}px, ${dy}px)`;
+    el.style.clipPath = clipRight > 0 ? `inset(-20px ${clipRight}% -20px -20px)` : 'none';
+  }
+
+  // ---------- grid ----------
+  const gridG = document.getElementById('grid');
+  const gridLines = [];
+  for (let x = 60; x < W; x += 60) {
+    gridLines.push({ el: svgEl('line', { x1: x, y1: 0, x2: x, y2: H, class: 'draw', pathLength: 1, stroke: GRID, 'stroke-width': x % 240 === 0 ? 1.2 : 0.6 }, gridG), k: x / W });
+  }
+  for (let y = 60; y < H; y += 60) {
+    gridLines.push({ el: svgEl('line', { x1: 0, y1: y, x2: W, y2: y, class: 'draw', pathLength: 1, stroke: GRID, 'stroke-width': y % 240 === 0 ? 1.2 : 0.6 }, gridG), k: y / H });
+  }
+
+  // ---------- crop marks ----------
+  const cropsG = document.getElementById('crops');
+  const crops = [];
+  [[60, 60, 1, 1], [1860, 60, -1, 1], [60, 1020, 1, -1]].forEach(([x, y, sx, sy]) => {
+    crops.push(svgEl('path', { d: `M${x} ${y + sy * 40} V${y} H${x + sx * 40}`, class: 'draw', pathLength: 1 }, cropsG));
+  });
+  [[1200, 120], [960, 960], [240, 960]].forEach(([x, y]) => {
+    crops.push(svgEl('path', { d: `M${x - 10} ${y} H${x + 10} M${x} ${y - 10} V${y + 10}`, class: 'draw', pathLength: 1, 'stroke-width': 1 }, cropsG));
+  });
+
+  // ---------- waveform ----------
+  const wave = document.getElementById('wave');
+  const waveG = document.getElementById('wave-g');
+  const waveHead = document.getElementById('wave-head');
+  const WX0 = 120, WX1 = 1800;
+  function waveD(phase, ampScale) {
+    let d = '';
+    for (let x = WX0; x <= WX1; x += 3) {
+      const u = (x - WX0) / (WX1 - WX0);
+      const env = Math.pow(Math.sin(Math.PI * u), 0.8);
+      const speech = 0.45 + 0.55 * Math.abs(Math.sin(u * 9.3 + phase * 0.7) * Math.sin(u * 3.1 + 1.3));
+      const y = 540 + ampScale * 120 * env * speech * Math.sin(x * 0.055 + phase * 3);
+      d += (x === WX0 ? 'M' : 'L') + x + ' ' + y.toFixed(2);
+    }
+    return d;
+  }
+
+  // ---------- microphone ----------
+  const micParts = [...document.querySelectorAll('#mic .draw')];
+
+  // ---------- circuit ----------
+  const route = document.getElementById('route');
+  const routeHead = document.getElementById('route-head');
+  const nodesG = document.getElementById('nodes');
+  const NX0 = 230, NX1 = 1690, TOP = 470, BOT = 650, R = 26;
+  const nodePts = GUESTS.map((g, i) => ({ ...g, x: NX0 + (i * (NX1 - NX0)) / (GUESTS.length - 1), y: i % 2 === 0 ? BOT : TOP }));
+  let rd = `M120 ${BOT} H${nodePts[0].x}`;
+  for (let i = 1; i < nodePts.length; i++) {
+    const a = nodePts[i - 1], b = nodePts[i];
+    const mid = (a.x + b.x) / 2, s = Math.sign(b.y - a.y);
+    rd += ` H${mid - R} Q${mid} ${a.y} ${mid} ${a.y + s * R} V${b.y - s * R} Q${mid} ${b.y} ${mid + R} ${b.y} H${b.x}`;
+  }
+  rd += ` H1800`;
+  route.setAttribute('d', rd);
+  const routeLen = route.getTotalLength();
+  nodePts.forEach((n) => {
+    let best = 0, bestD = Infinity;
+    for (let l = 0; l <= routeLen; l += 2) {
+      const p = route.getPointAtLength(l);
+      const d = Math.hypot(p.x - n.x, p.y - n.y);
+      if (d < bestD) { bestD = d; best = l; }
+    }
+    n.at = best / routeLen;
+    n.pulse = svgEl('circle', { cx: n.x, cy: n.y, r: 12, fill: 'none', stroke: CYAN, 'stroke-width': 1.5 }, nodesG);
+    n.ring = svgEl('circle', { cx: n.x, cy: n.y, r: 12, class: 'draw', pathLength: 1, stroke: CYAN, 'stroke-width': 2.5, fill: BG }, nodesG);
+    n.dot = svgEl('circle', { cx: n.x, cy: n.y, r: 5, fill: CYAN }, nodesG);
+    n.tick = svgEl('path', { d: n.y === TOP ? `M${n.x} ${n.y - 20} V${n.y - 48}` : `M${n.x} ${n.y + 20} V${n.y + 48}`, class: 'draw', pathLength: 1, stroke: CYAN, 'stroke-width': 1 }, nodesG);
+    const above = n.y === TOP;
+    n.label = htmlEl('', `<div class="mono" style="font-size:18px">EP.${String(n.ep).padStart(3, '0')}</div><div class="grotesk" style="font-size:44px;margin-top:8px">${n.name}</div>`, {
+      left: n.x - 200 + 'px', width: '400px', textAlign: 'center',
+      top: above ? n.y - 150 + 'px' : n.y + 62 + 'px',
+    });
+  });
+
+  // ---------- stats dimension lines ----------
+  const dimsG = document.getElementById('dims');
+  function dimLine(x0, x1, y) {
+    const c = (x0 + x1) / 2;
+    return {
+      left: svgEl('path', { d: `M${c} ${y} H${x0}`, class: 'draw', pathLength: 1 }, dimsG),
+      right: svgEl('path', { d: `M${c} ${y} H${x1}`, class: 'draw', pathLength: 1 }, dimsG),
+      ends: svgEl('path', { d: `M${x0} ${y - 14} V${y + 14} M${x1} ${y - 14} V${y + 14}`, class: 'draw', pathLength: 1 }, dimsG),
+    };
+  }
+  const dimA = dimLine(160, 760, 620);
+  const dimB = dimLine(900, 1640, 620);
+
+  // ---------- CTA pills ----------
+  const ctaG = document.getElementById('cta');
+  const PILLS = [
+    { label: 'Spotify', x: 160, w: 250 },
+    { label: 'Apple Podcasts', x: 440, w: 370 },
+    { label: 'YouTube', x: 840, w: 250 },
+  ];
+  PILLS.forEach((p) => {
+    p.rect = svgEl('rect', { x: p.x, y: 640, width: p.w, height: 84, rx: 42, class: 'draw', pathLength: 1 }, ctaG);
+    p.text = htmlEl('mono', p.label, { left: p.x + 'px', top: '640px', width: p.w + 'px', height: '84px', lineHeight: '84px', textAlign: 'center', fontSize: '24px', color: WHITE });
+  });
+  const urlLine = svgEl('path', { d: 'M160 560 H790', class: 'draw', pathLength: 1, 'stroke-width': 2.5 }, ctaG);
+
+  // ---------- HTML text ----------
+  const cornerTL = htmlEl('mono', '[ Podcast · React Native · FR ]', { left: '120px', top: '96px', fontSize: '18px' });
+  const cornerTR = htmlEl('mono dim', 'Grid 60 px · 30 fps · 1920×1080', { right: '120px', top: '96px', fontSize: '16px', textAlign: 'right', color: 'rgba(240,246,252,.45)' });
+  const cartA = htmlEl('mono', 'weshipit.today', { left: '1470px', top: '928px', fontSize: '16px', color: WHITE });
+  const cartB = htmlEl('mono', 'Le Cross Platform Show', { left: '1470px', top: '966px', fontSize: '15px' });
+  const cartC = htmlEl('mono', 'Réf. /podcast', { left: '1470px', top: '1004px', fontSize: '15px', color: 'rgba(240,246,252,.55)' });
+  const cartSheet = htmlEl('mono', 'Sht 01/04', { left: '1720px', width: '120px', textAlign: 'center', top: '983px', fontSize: '14px', color: WHITE });
+
+  // Scene 1
+  const s1Tag = htmlEl('mono', 'Le podcast pour CTO mobile', { left: '520px', top: '342px', fontSize: '22px' });
+  const s1Title = htmlEl('grotesk', 'Le Cross<br/>Platform Show', { left: '514px', top: '390px', fontSize: '150px' });
+  const s1Sub = htmlEl('inter dim', 'Les coulisses des apps React Native qui tournent en production.', { left: '520px', top: '700px', fontSize: '32px' });
+  const s1Dim = htmlEl('mono', 'H 236', { left: '118px', top: '436px', fontSize: '14px', transformOrigin: 'left' });
+
+  // Scene 2
+  const s2Tag = htmlEl('mono', 'Retours d’expérience · en production', { left: '120px', top: '176px', fontSize: '20px' });
+  const s2Title = htmlEl('grotesk', 'Ils shippent. Ils racontent.', { left: '116px', top: '214px', fontSize: '84px' });
+
+  // Scene 3
+  const s3Tag = htmlEl('mono', 'Des apps real-world, pas des tutos', { left: '160px', top: '220px', fontSize: '20px' });
+  const statA = htmlEl('grotesk', '0', { left: '160px', top: '300px', width: '600px', textAlign: 'center', fontSize: '260px', fontVariantNumeric: 'tabular-nums' });
+  const statALabel = htmlEl('mono', 'épisodes', { left: '160px', top: '650px', width: '600px', textAlign: 'center', fontSize: '22px' });
+  const statB = htmlEl('grotesk', '0', { left: '900px', top: '300px', width: '740px', textAlign: 'center', fontSize: '260px', fontVariantNumeric: 'tabular-nums' });
+  const statBLabel = htmlEl('mono', 'devs React Native à l’écoute', { left: '900px', top: '650px', width: '740px', textAlign: 'center', fontSize: '22px' });
+
+  // Scene 4
+  const s4Title = htmlEl('grotesk', 'Abonne-toi.', { left: '152px', top: '300px', fontSize: '170px' });
+  const s4Url = htmlEl('mono', 'weshipit.today/podcast', { left: '160px', top: '494px', fontSize: '44px', letterSpacing: '0.02em', textTransform: 'none' });
+  const s4Air = htmlEl('mono', '<span id="air-dot" style="display:inline-block;width:12px;height:12px;border-radius:6px;background:#3dff88;margin-right:12px;vertical-align:1px"></span>On air', { left: '160px', top: '250px', fontSize: '20px', color: '#3dff88' });
+  const airDot = document.getElementById('air-dot');
+
+  // ---------- render(t) ----------
+  window.render = function (t) {
+    // grid: lines draw in with a stagger from top-left
+    gridLines.forEach(({ el, k }) => setDraw(el, eio(prog(t, 0.05 + k * 0.6, 0.75 + k * 0.6))));
+    crops.forEach((el, i) => setDraw(el, eo(prog(t, 0.4 + i * 0.1, 1.1 + i * 0.1))));
+
+    // corner labels & cartouche
+    const chrome = eo(prog(t, 0.8, 1.5));
+    place(cornerTL, chrome, lerp(-16, 0, chrome));
+    place(cornerTR, chrome, lerp(16, 0, chrome));
+    document.querySelectorAll('#cartouche .draw').forEach((el, i) => setDraw(el, eio(prog(t, 0.9 + i * 0.3, 2.0 + i * 0.3))));
+    const cart = eo(prog(t, 1.8, 2.6));
+    [cartA, cartB, cartC].forEach((el, i) => place(el, eo(prog(t, 1.8 + i * 0.15, 2.5 + i * 0.15)), 0, 0, (1 - eo(prog(t, 1.8 + i * 0.15, 2.5 + i * 0.15))) * 100));
+    const sheet = t < 6.9 ? 1 : t < 11.9 ? 2 : t < 15.0 ? 3 : 4;
+    cartSheet.textContent = `Sht 0${sheet}/04`;
+    place(cartSheet, cart);
+
+    // waveform: draws across the middle, then settles as a faint baseline at the bottom
+    const settle = eio(prog(t, 3.0, 4.2));
+    const amp = lerp(1, 0.28, settle) * (t > 3 ? 1 : 1);
+    wave.setAttribute('d', waveD(t, amp));
+    const wp = eio(prog(t, 0.9, 3.2));
+    setDraw(wave, wp);
+    const dy = lerp(0, 300, settle);
+    waveG.setAttribute('transform', `translate(0 ${dy})`);
+    waveG.style.opacity = lerp(1, 0.45, settle);
+    const hp = wave.getPointAtLength(wp * wave.getTotalLength());
+    waveHead.setAttribute('cx', hp.x);
+    waveHead.setAttribute('cy', hp.y + dy);
+    waveHead.style.opacity = wp > 0 && wp < 1 ? 1 : 0;
+
+    // ---- Scene 1 (3.0 → 6.9) ----
+    const s1out = 1 - eio(prog(t, 6.3, 6.9));
+    micParts.forEach((el, i) => {
+      setDraw(el, eio(prog(t, 3.0 + i * 0.22, 4.0 + i * 0.22)));
+      el.style.opacity = Math.min(el.style.opacity, s1out);
+    });
+    const tag1 = eo(prog(t, 3.6, 4.2));
+    place(s1Tag, tag1 * s1out, 0, 0, (1 - tag1) * 100);
+    const title1 = eo(prog(t, 3.8, 4.9));
+    place(s1Title, title1 * s1out, 0, lerp(40, 0, title1) - (1 - s1out) * 30);
+    const sub1 = eo(prog(t, 4.6, 5.4));
+    place(s1Sub, sub1 * s1out, 0, lerp(20, 0, sub1));
+    const d1 = eo(prog(t, 4.6, 5.2));
+    place(s1Dim, d1 * s1out);
+    s1Dim.style.transform = 'rotate(-90deg)';
+
+    // ---- Scene 2 (6.9 → 11.9) ----
+    const s2in = eo(prog(t, 6.9, 7.6));
+    const s2out = 1 - eio(prog(t, 11.3, 11.9));
+    place(s2Tag, s2in * s2out, 0, 0, (1 - s2in) * 100);
+    place(s2Title, eo(prog(t, 7.0, 7.8)) * s2out, 0, lerp(30, 0, eo(prog(t, 7.0, 7.8))));
+    const rp = eio(prog(t, 7.4, 10.8));
+    setDraw(route, rp);
+    route.style.opacity = rp > 0 ? s2out : 0;
+    const rh = route.getPointAtLength(rp * routeLen);
+    routeHead.setAttribute('cx', rh.x);
+    routeHead.setAttribute('cy', rh.y);
+    routeHead.style.opacity = rp > 0 && rp < 1 ? s2out : 0;
+    nodePts.forEach((n) => {
+      // time at which the draw head reaches this node
+      const hit = t >= 7.4 && rp >= n.at;
+      const local = hit ? prog(t, tHit(n), tHit(n) + 0.5) : 0;
+      setDraw(n.ring, eo(clamp(local * 1.6)));
+      n.ring.style.opacity = local > 0 ? s2out : 0;
+      n.dot.style.opacity = local > 0 ? s2out : 0;
+      n.dot.setAttribute('r', 5 * eo(clamp(local * 2)));
+      const pl = hit ? prog(t, tHit(n), tHit(n) + 0.9) : 0;
+      n.pulse.setAttribute('r', 12 + 34 * eo(pl));
+      n.pulse.style.opacity = pl > 0 && pl < 1 ? (1 - pl) * 0.8 * s2out : 0;
+      setDraw(n.tick, eo(clamp(local * 2)));
+      n.tick.style.opacity = local > 0 ? s2out : 0;
+      const lab = eo(hit ? prog(t, tHit(n) + 0.05, tHit(n) + 0.55) : 0);
+      place(n.label, lab * s2out, 0, (n.y === TOP ? 1 : -1) * lerp(14, 0, lab));
+    });
+
+    // ---- Scene 3 (11.9 → 15.0) ----
+    const s3out = 1 - eio(prog(t, 14.5, 15.0));
+    const s3tag = eo(prog(t, 11.9, 12.5));
+    place(s3Tag, s3tag * s3out, 0, 0, (1 - s3tag) * 100);
+    const cA = eio(prog(t, 12.0, 13.4));
+    statA.textContent = Math.round(36 * cA);
+    place(statA, eo(prog(t, 12.0, 12.4)) * s3out, 0, lerp(30, 0, eo(prog(t, 12.0, 12.6))));
+    const cB = eio(prog(t, 12.3, 13.7));
+    statB.textContent = Math.round(200 * cB) + (cB >= 1 ? '+' : '');
+    place(statB, eo(prog(t, 12.3, 12.7)) * s3out, 0, lerp(30, 0, eo(prog(t, 12.3, 12.9))));
+    [[dimA, 12.4], [dimB, 12.7]].forEach(([d, t0]) => {
+      const p = eio(prog(t, t0, t0 + 0.8));
+      setDraw(d.left, p); setDraw(d.right, p);
+      setDraw(d.ends, eo(prog(t, t0 + 0.7, t0 + 1.0)));
+      [d.left, d.right, d.ends].forEach((el) => (el.style.opacity = Math.min(el.style.opacity, s3out)));
+    });
+    place(statALabel, eo(prog(t, 13.0, 13.5)) * s3out);
+    place(statBLabel, eo(prog(t, 13.3, 13.8)) * s3out);
+
+    // ---- Scene 4 (15.0 → end) ----
+    const air = eo(prog(t, 15.0, 15.4));
+    place(s4Air, air);
+    airDot.style.opacity = t > 15 ? (Math.floor((t - 15) * 2) % 2 === 0 ? 1 : 0.25) : 0;
+    const t4 = eo(prog(t, 15.1, 16.0));
+    place(s4Title, t4, 0, lerp(40, 0, t4));
+    const u4 = eo(prog(t, 15.6, 16.2));
+    place(s4Url, u4, 0, 0, (1 - u4) * 100);
+    setDraw(urlLine, eio(prog(t, 16.0, 16.8)));
+    PILLS.forEach((p, i) => {
+      const pp = eio(prog(t, 16.4 + i * 0.25, 17.3 + i * 0.25));
+      setDraw(p.rect, pp);
+      place(p.text, eo(prog(t, 16.9 + i * 0.25, 17.4 + i * 0.25)));
+    });
+  };
+
+  // head time lookup for a node: invert the eased route progress
+  function tHit(n) {
+    if (n._t !== undefined) return n._t;
+    let lo = 7.4, hi = 10.8;
+    for (let i = 0; i < 40; i++) {
+      const mid = (lo + hi) / 2;
+      if (eio(prog(mid, 7.4, 10.8)) < n.at) lo = mid; else hi = mid;
+    }
+    return (n._t = hi);
+  }
+
+  window.META = { FPS, DURATION, W, H };
+  window.ready = Promise.all([
+    document.fonts.load('700 100px "Space Grotesk"'),
+    document.fonts.load('400 20px "JetBrains Mono"'),
+    document.fonts.load('400 20px "Inter"'),
+  ]).then(() => document.fonts.ready);
+
+  // live preview when opened in a browser (?t=5 freezes a frame)
+  const qs = new URLSearchParams(location.search);
+  if (qs.has('t')) {
+    window.render(parseFloat(qs.get('t')));
+  } else if (!navigator.webdriver) {
+    const start = performance.now();
+    const loop = () => {
+      window.render(((performance.now() - start) / 1000) % (DURATION + 1));
+      requestAnimationFrame(loop);
+    };
+    window.ready.then(loop);
+  } else {
+    window.render(0);
+  }
+</script>
+</body>
+</html>

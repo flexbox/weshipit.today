@@ -27,7 +27,7 @@ export function cn(...inputs: ClassValue[]) {
 
 type PlanKey = 'kickstart' | 'essential' | 'growth' | 'enterprise';
 
-interface Tier {
+export interface Tier {
   key: PlanKey;
   name: string;
   id: string;
@@ -48,7 +48,7 @@ interface Tier {
   textColor: string;
 }
 
-const tiers: Tier[] = [
+export const pricingTiers: Tier[] = [
   {
     key: 'kickstart',
     name: 'Kickstart Audit',
@@ -189,7 +189,7 @@ type PlanInfo = {
 };
 
 const plansByKey = Object.fromEntries(
-  tiers.map((tier) => {
+  pricingTiers.map((tier) => {
     const price =
       typeof tier.price === 'string'
         ? tier.price
@@ -635,7 +635,13 @@ export function PlanFinderSection({ ctaLink }: { ctaLink: string }) {
   );
 }
 
-export function Pricing({ ctaLink }: { ctaLink: string }) {
+interface PricingProps {
+  ctaLink: string;
+  /** Set to false when the page renders `PlanFinderSection` elsewhere. */
+  withPlanFinder?: boolean;
+}
+
+export function Pricing({ ctaLink, withPlanFinder = true }: PricingProps) {
   return (
     <div className="py-24 sm:py-32" id="pricing">
       <div className="mx-auto max-w-8xl px-6 lg:px-8">
@@ -649,7 +655,7 @@ export function Pricing({ ctaLink }: { ctaLink: string }) {
           Choose your entry point, upgrade anytime. No contracts, no BS.
         </p>
         <div className="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-          {tiers.map((tier) => {
+          {pricingTiers.map((tier) => {
             if (tier.key === 'essential') return null;
             return (
               <Card
@@ -799,7 +805,7 @@ export function Pricing({ ctaLink }: { ctaLink: string }) {
           })}
         </div>
 
-        <PlanFinderSection ctaLink={ctaLink} />
+        {withPlanFinder && <PlanFinderSection ctaLink={ctaLink} />}
       </div>
     </div>
   );
