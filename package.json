@@ -40,6 +40,9 @@
     "prepare": "husky install"
   },
   "private": true,
+  "engines": {
+    "node": "24.x"
+  },
   "dependencies": {
     "@calcom/embed-react": "^1.5.2",
     "@emotion/is-prop-valid": "^1.4.0",
@@ -134,7 +137,7 @@
     "@types/jest": "30.0.0",
     "@types/lodash": "^4.17.16",
     "@types/mdx-js__react": "^1.5.8",
-    "@types/node": "22.13.5",
+    "@types/node": "24.19.0",
     "@types/prismjs": "^1.26.5",
     "@types/react": "19.0.10",
     "@types/react-dom": "19.0.4",
