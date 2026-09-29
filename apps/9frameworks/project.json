@@ -1,0 +1,65 @@
+{
+  "name": "9frameworks",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/9frameworks",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/next:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/9frameworks"
+      },
+      "configurations": {
+        "development": {
+          "outputPath": "apps/9frameworks"
+        },
+        "production": {}
+      }
+    },
+    "serve": {
+      "executor": "@nx/next:server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "9frameworks:build",
+        "dev": true,
+        "port": 4500
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "9frameworks:build:development",
+          "dev": true
+        },
+        "production": {
+          "buildTarget": "9frameworks:build:production",
+          "dev": false
+        }
+      }
+    },
+    "icons": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node apps/9frameworks/scripts/generate-icons.mjs"
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/apps/9frameworks"],
+      "options": {
+        "jestConfig": "apps/9frameworks/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "outputs": ["{options.outputFile}"]
+    },
+    "typecheck": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc --noEmit -p {projectRoot}/tsconfig.json"
+      }
+    }
+  }
+}
