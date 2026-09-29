@@ -68,7 +68,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             rel="noreferrer"
             target="_blank"
           >
-            David Leuliette
+            David Leuliette (@flexbox_)
           </a>{' '}
           ·{' '}
           <a
