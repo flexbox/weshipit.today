@@ -1,0 +1,7 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "cd ../.. && npx nx build 9frameworks --prod",
+  "outputDirectory": "../../dist/apps/9frameworks/.next",
+  "installCommand": "cd ../.. && yarn install --frozen-lockfile",
+  "framework": "nextjs"
+}
