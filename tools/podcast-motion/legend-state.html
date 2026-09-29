@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Legend State × React Native — how it works</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=block"
+  rel="stylesheet"
+/>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1920px; height: 1080px; overflow: hidden; background: #051626; }
+  #stage { position: relative; width: 1920px; height: 1080px; overflow: hidden; }
+  #grid, #svg, .layer { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+  .abs { position: absolute; left: 0; top: 0; }
+  .head {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 66px;
+    letter-spacing: -0.025em;
+    line-height: 1;
+    color: #f2efe8;
+    white-space: nowrap;
+  }
+  .mono {
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #8fa0b3;
+    white-space: nowrap;
+  }
+  .chip {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 28px;
+    line-height: 30px;
+    white-space: pre;
+    color: #f2efe8;
+    padding: 12px 24px;
+    border: 1.5px solid #2a4560;
+    border-radius: 10px;
+    background: rgba(10, 34, 54, 0.92);
+  }
+  .caret { display: inline-block; width: 0.55em; height: 1.05em; margin-left: 2px; vertical-align: -0.17em; background: #8b9bff; }
+  /* SVG text inside the world */
+  .wm { font-family: 'JetBrains Mono', monospace; }
+  .wi { font-family: 'Inter', sans-serif; }
+  .wl { font-family: 'Inter', sans-serif; font-size: 16px; letter-spacing: 2.2px; }
+  .draw { fill: none; stroke-dasharray: 1 1; stroke-dashoffset: 1; }
+  /* word masks: the inner span slides up from below the clip */
+  .w { display: inline-block; overflow: hidden; vertical-align: top; padding: 0.06em 0.03em 0.16em; margin: -0.06em -0.03em -0.16em; }
+  .wr { display: inline-block; }
+  #vignette { background: radial-gradient(ellipse 80% 80% at 50% 50%, rgba(2, 9, 17, 0) 55%, rgba(2, 9, 17, 0.6) 100%); }
+  #flash {
+    opacity: 0;
+    mix-blend-mode: screen;
+    background: radial-gradient(circle at 960px 540px, rgba(200, 208, 255, 0.9) 0%, rgba(139, 155, 255, 0.3) 25%, rgba(139, 155, 255, 0) 60%);
+  }
+</style>
+</head>
+<body>
+<div id="stage">
+  <canvas id="grid" width="1920" height="1080"></canvas>
+
+  <svg id="svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+    <defs>
+      <pattern id="hatch" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <line x1="0" y1="0" x2="0" y2="5" stroke="#f2efe8" stroke-width="0.9" opacity="0.32" />
+      </pattern>
+      <pattern id="hatcha" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <line x1="0" y1="0" x2="0" y2="5" stroke="#8b9bff" stroke-width="1.1" opacity="0.8" />
+      </pattern>
+      <pattern id="hatchm" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+        <line x1="0" y1="0" x2="0" y2="5" stroke="#3a4a5c" stroke-width="0.9" opacity="0.7" />
+      </pattern>
+      <filter id="glow" filterUnits="userSpaceOnUse" x="-500" y="-500" width="3000" height="2000" color-interpolation-filters="sRGB">
+        <feGaussianBlur stdDeviation="4" result="b" />
+        <feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge>
+      </filter>
+      <clipPath id="bind-clip"><rect id="bind-clip-rect" x="560" y="370" width="0" height="370" /></clipPath>
+    </defs>
+    <g id="world">
+      <g id="tree"></g>
+      <g id="bindings" clip-path="url(#bind-clip)"></g>
+      <g id="remote"></g>
+      <g id="phone"></g>
+      <g id="wlabels"></g>
+      <g id="packets" filter="url(#glow)"></g>
+    </g>
+    <g id="screen"></g>
+  </svg>
+
+  <div class="layer" id="html">
+    <div id="head" class="abs head" style="left: 136px; top: 100px"></div>
+    <div id="chip" class="abs chip" style="left: 138px; top: 192px"></div>
+    <div id="lockup" class="abs" style="width: 1920px; height: 1080px">
+      <div id="lk-tag" class="abs mono" style="top: 318px; width: 1920px; text-align: center; font-size: 19px; color: #8b9bff">Local-first state for React Native</div>
+      <div id="lk-title" class="abs head" style="top: 368px; width: 1920px; text-align: center; font-size: 168px; letter-spacing: -0.035em"></div>
+      <div id="lk-sub" class="abs head" style="top: 606px; width: 1920px; text-align: center; font-size: 36px; font-weight: 400; letter-spacing: -0.01em; color: rgba(242, 239, 232, 0.8)"></div>
+      <div id="lk-url" class="abs mono" style="left: 660px; top: 690px; width: 600px; height: 68px; line-height: 68px; text-align: center; font-size: 24px; text-transform: none; letter-spacing: 0.02em; color: #f2efe8">legendapp.com/open-source/state →</div>
+    </div>
+    <div id="hud"></div>
+  </div>
+  <div class="layer" id="flash"></div>
+  <div class="layer" id="vignette"></div>
+</div>
+
+<script>
+  // =====================================================================
+  // Timeline (seconds). 80 BPM, one beat = 0.75 s; state changes land on beats.
+  //   0.00 – 2.75  OBSERVABLE   code types in, the state tree grows
+  //   2.75 – 6.40  FINE-GRAINED set() on one node re-renders one row only
+  //   6.40 – 10.1  PERSIST      offline: writes land in MMKV + pending queue
+  //  10.10 – 12.55 SYNC         back online: the queue flushes to Supabase
+  //  12.55 – 15.0  LOCKUP
+  // Look: the talk's scene SVGs, dark variant (ink line art, hatch, dotted wires).
+  // =====================================================================
+  const W = 1920, H = 1080, FPS = 30, DURATION = 15;
+  const NS = 'http://www.w3.org/2000/svg';
+  const BG = '#051626', INK = '#F2EFE8', MUTED = '#8FA0B3', FAINT = '#3A4A5C', RULE = '#1E3346', ACCENT = '#8B9BFF', WARM = '#FFC98B';
+  const BPM = 80, BEAT = 60 / BPM;
+
+  const T = {
+    root: 1.0,
+    kids: [1.3, 1.45, 1.6],
+    phone: 3.05,
+    rows: 3.5,
+    bind: 3.95,
+    set: 4.5, // zelda node fires
+    arrive: 5.25, // …and only the zelda row re-renders
+    offline: 6.9,
+    online: 10.5,
+    lockup: 12.75,
+  };
+  // offline writes: row → MMKV (on the beat) → pending queue
+  const WRITES = [8.25, 9.0, 9.75].map((mm, i) => ({ row: i, mm, tap: i ? mm - 0.9 : null, leave: mm - 0.45, slot: mm + 0.25 }));
+  // when each game's `done` flips: zelda via set() in code, the others via taps
+  const CHANGE_T = [T.set, WRITES[1].tap, WRITES[2].tap];
+  // back online: the queue flushes, first in first out
+  const FLUSH = [10.875, 11.25, 11.625].map((f, i) => ({ slot: i, leave: f, land: f + 0.75 }));
+
+  const HEADS = [
+    { text: 'State is an observable.', tin: 0.45, tout: 2.6 },
+    { text: 'Only what changed re-renders.', tin: 3.3, tout: 6.3 },
+    { text: 'Saved on device, even offline.', tin: 7.05, tout: 10.05 },
+    { text: 'Synced when you’re back online.', tin: 10.55, tout: 12.5 },
+  ];
+  const CHIPS = [
+    { code: 'const games$ = observable(…)', tin: 0.75, tout: 2.6 },
+    { code: 'games$.zelda.done.set(true)', tin: 3.55, tout: 6.3 },
+    { code: 'persist: { plugin: ObservablePersistMMKV }', tin: 7.35, tout: 10.05 },
+    { code: "changesSince: 'last-sync'", tin: 10.75, tout: 12.5 },
+  ];
+  const CPS = 42; // typing speed
+  const typeStart = (c) => c.tin + 0.3;
+
+  // camera: world point C sits at screen point S, zoom z (+ a slow push while holding)
+  const SHOTS = [
+    { at: 0, dur: 0, C: [405, 560], z: 1.45, S: [1080, 640], drift: 0.07 },
+    { at: 2.75, dur: 1.0, C: [700, 635], z: 1.02, S: [960, 650], drift: 0.035 },
+    { at: 6.4, dur: 0.95, C: [1010, 660], z: 1.08, S: [1000, 655], drift: 0.035 },
+    { at: 10.1, dur: 0.9, C: [1190, 630], z: 0.98, S: [960, 660], drift: 0.03 },
+    { at: 12.55, dur: 1.2, C: [1000, 640], z: 0.52, S: [960, 620], drift: 0.03 },
+  ];
+  const SHEETS = [[0, '01/05 · Observable'], [2.75, '02/05 · Fine-grained'], [6.4, '03/05 · Persist'], [10.1, '04/05 · Sync'], [12.55, '05/05 · Legend State']];
+
+  // ---------- math ----------
+  const clamp = (x) => Math.max(0, Math.min(1, x));
+  const prog = (t, a, b) => clamp((t - a) / (b - a));
+  const eio = (x) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2);
+  const eo = (x) => 1 - Math.pow(1 - x, 3);
+  const lerp = (a, b, p) => a + (b - a) * p;
+  const mod = (a, n) => ((a % n) + n) % n;
+  const pad2 = (n) => String(n).padStart(2, '0');
+  const pulse = (t, t0, dur) => (t >= t0 && t < t0 + dur ? Math.exp(-(t - t0) / (dur / 4)) : 0);
+
+  // ---------- DOM helpers ----------
+  function svgEl(tag, attrs, parent) {
+    const el = document.createElementNS(NS, tag);
+    for (const k in attrs) el.setAttribute(k, attrs[k]);
+    parent.appendChild(el);
+    return el;
+  }
+  function drawEl(tag, attrs, parent) {
+    const el = svgEl(tag, { ...attrs, class: 'draw', pathLength: 1 }, parent);
+    return el;
+  }
+  function text(x, y, str, attrs, parent) {
+    const el = svgEl('text', { x, y, ...attrs }, parent);
+    el.textContent = str;
+    return el;
+  }
+  function div(cls, html, style, parent) {
+    const el = document.createElement('div');
+    el.className = 'abs ' + cls;
+    el.innerHTML = html;
+    Object.assign(el.style, style);
+    parent.appendChild(el);
+    return el;
+  }
+  function setDraw(el, p) {
+    el.style.strokeDashoffset = 1 - p;
+    el.style.opacity = p <= 0.0005 ? 0 : 1;
+  }
+  function wipe(el, p) {
+    el.style.clipPath = `inset(-14px ${(1 - p) * 100}% -14px -14px)`;
+    el.style.opacity = p > 0 ? 1 : 0;
+  }
+  function splitWords(el, str) {
+    el.innerHTML = str.split(' ').map((w) => `<span class="w"><span class="wr">${w}</span></span>`).join(' ');
+    return [...el.querySelectorAll('.wr')];
+  }
+  // Words rise through their mask, then leave upward.
+  function riseWords(words, t, tIn, stagger, dur, tOut = 1e9) {
+    words.forEach((w, i) => {
+      const pin = eo(prog(t, tIn + i * stagger, tIn + i * stagger + dur));
+      const pout = eio(prog(t, tOut + i * 0.04, tOut + i * 0.04 + 0.4));
+      w.style.transform = `translateY(${((1 - pin) - pout) * 108}%)`;
+      const blur = (1 - pin) * 10 + pout * 6;
+      w.style.filter = blur > 0.05 ? `blur(${blur.toFixed(2)}px)` : 'none';
+      w.style.opacity = clamp(pin * 3) * (1 - pout * pout);
+    });
+  }
+  // a moving segment [a, b] of a pathLength=1 path
+  function segment(el, a, b) {
+    a = clamp(a);
+    b = clamp(b);
+    el.style.strokeDasharray = `0 ${a} ${Math.max(0, b - a)} 2`;
+    el.style.opacity = b > a ? 1 : 0;
+  }
+  function pointAt(el, p) {
+    return el.getPointAtLength(clamp(p) * el.getTotalLength());
+  }
+
+  // =====================================================================
+  // Camera
+  // =====================================================================
+  function shotState(i, t) {
+    const s = SHOTS[i], end = SHOTS[i + 1] ? SHOTS[i + 1].at : DURATION;
+    return { C: s.C, S: s.S, z: s.z * (1 + s.drift * prog(t, s.at, end)) };
+  }
+  function camera(t) {
+    let i = 0;
+    while (SHOTS[i + 1] && t >= SHOTS[i + 1].at) i++;
+    let st = shotState(i, t);
+    if (i > 0) {
+      const p = eio(prog(t, SHOTS[i].at, SHOTS[i].at + SHOTS[i].dur));
+      const a = shotState(i - 1, SHOTS[i].at);
+      st = {
+        C: [lerp(a.C[0], st.C[0], p), lerp(a.C[1], st.C[1], p)],
+        S: [lerp(a.S[0], st.S[0], p), lerp(a.S[1], st.S[1], p)],
+        z: Math.exp(lerp(Math.log(a.z), Math.log(st.z), p)),
+      };
+    }
+    return { z: st.z, ox: st.S[0] - st.C[0] * st.z, oy: st.S[1] - st.C[1] * st.z };
+  }
+
+  // =====================================================================
+  // Canvas: world-locked dot grid
+  // =====================================================================
+  const cv = document.getElementById('grid');
+  const g2 = cv.getContext('2d');
+  function drawGrid(t, cam) {
+    g2.globalAlpha = 1;
+    g2.fillStyle = BG;
+    g2.fillRect(0, 0, W, H);
+    const glow = g2.createRadialGradient(1000, 620, 0, 1000, 620, 900);
+    glow.addColorStop(0, 'rgba(139,155,255,0.07)');
+    glow.addColorStop(1, 'rgba(139,155,255,0)');
+    g2.fillStyle = glow;
+    g2.fillRect(0, 0, W, H);
+    const a = eo(prog(t, 0, 0.8)) * lerp(1, 0.55, eio(prog(t, 12.55, 13.4)));
+    const sp = 40 * cam.z;
+    const r = Math.max(1.2, 1.4 * cam.z);
+    g2.fillStyle = '#284360';
+    const x0 = mod(cam.ox, sp), y0 = mod(cam.oy, sp);
+    for (let x = x0, i = Math.round((x0 - cam.ox) / sp); x < W; x += sp, i++)
+      for (let y = y0, j = Math.round((y0 - cam.oy) / sp); y < H; y += sp, j++) {
+        const major = mod(i, 5) === 0 && mod(j, 5) === 0;
+        g2.globalAlpha = a * (major ? 0.9 : 0.45);
+        if (major) {
+          g2.fillRect(x - 4 * cam.z, y - 0.6, 8 * cam.z, 1.2);
+          g2.fillRect(x - 0.6, y - 4 * cam.z, 1.2, 8 * cam.z);
+        } else g2.fillRect(x - r / 2, y - r / 2, r, r);
+      }
+    g2.globalAlpha = 1;
+  }
+
+  // =====================================================================
+  // World: state tree
+  // =====================================================================
+  const world = document.getElementById('world');
+  const treeG = document.getElementById('tree');
+  const ROOT = { x: 250, y: 560 };
+  const KIDS = [
+    { id: 'zelda', y: 430 },
+    { id: 'mario', y: 560 },
+    { id: 'metroid', y: 690 },
+  ].map((k) => ({ ...k, x: 450 }));
+
+  const root = {
+    pulse: svgEl('circle', { cx: ROOT.x, cy: ROOT.y, r: 12, fill: 'none', stroke: INK, 'stroke-width': 1.4 }, treeG),
+    ring: drawEl('circle', { cx: ROOT.x, cy: ROOT.y, r: 12, stroke: INK, 'stroke-width': 2 }, treeG),
+    dot: svgEl('circle', { cx: ROOT.x, cy: ROOT.y, r: 0, fill: INK }, treeG),
+    label: text(ROOT.x, ROOT.y + 44, 'games$', { class: 'wm', 'font-size': 22, 'text-anchor': 'middle', fill: ACCENT }, treeG),
+  };
+  root.ring.style.fill = BG;
+  const kids = KIDS.map((k, i) => {
+    const d = k.y === ROOT.y
+      ? `M${ROOT.x + 12} ${ROOT.y} H${k.x - 10}`
+      : `M${ROOT.x + 12} ${ROOT.y} H320 C372 ${ROOT.y} 368 ${k.y} 420 ${k.y} H${k.x - 10}`;
+    const branch = drawEl('path', { d, stroke: INK, 'stroke-width': 1.6, 'stroke-linecap': 'round' }, treeG);
+    const pulse = svgEl('circle', { cx: k.x, cy: k.y, r: 10, fill: 'none', stroke: INK, 'stroke-width': 1.4 }, treeG);
+    const ring = drawEl('circle', { cx: k.x, cy: k.y, r: 10, stroke: INK, 'stroke-width': 1.8 }, treeG);
+    ring.style.fill = BG;
+    const dot = svgEl('circle', { cx: k.x, cy: k.y, r: 0, fill: INK }, treeG);
+    const label = text(k.x + 22, k.y + 7, '.' + k.id, { class: 'wm', 'font-size': 20, fill: INK }, treeG);
+    const value = text(k.x + 22, k.y + 32, '', { class: 'wm', 'font-size': 15, fill: MUTED }, treeG);
+    return { ...k, branch, pulse, ring, dot, label, value, t: T.kids[i] };
+  });
+
+  function renderTree(t) {
+    setDraw(root.ring, eio(prog(t, T.root, T.root + 0.4)));
+    root.dot.setAttribute('r', 4.5 * eo(prog(t, T.root + 0.1, T.root + 0.3)));
+    const rp = prog(t, T.root, T.root + 0.9);
+    root.pulse.setAttribute('r', 12 + 34 * eo(rp));
+    root.pulse.style.opacity = rp > 0 && rp < 1 ? 0.8 * (1 - rp) : 0;
+    wipe(root.label, eo(prog(t, T.root + 0.15, T.root + 0.55)));
+    kids.forEach((k, i) => {
+      setDraw(k.branch, eio(prog(t, k.t, k.t + 0.4)));
+      setDraw(k.ring, eio(prog(t, k.t + 0.35, k.t + 0.65)));
+      // zelda changes from code in act 2, mario and metroid from taps in act 3
+      const ch = CHANGE_T[i], hotEnd = i === 0 ? 6.2 : ch + 1.2;
+      const hot = t >= ch && t < hotEnd;
+      const heat = Math.max(pulse(t, ch, 1.6), hot ? 0.5 : 0);
+      const col = hot ? ACCENT : INK;
+      k.value.textContent = `done: ${t >= ch}`;
+      k.value.setAttribute('fill', hot ? ACCENT : MUTED);
+      wipe(k.value, eo(prog(t, k.t + 0.6, k.t + 1.0)));
+      k.ring.setAttribute('stroke', col);
+      k.dot.setAttribute('fill', col);
+      k.dot.setAttribute('r', (3.5 + 2.5 * heat) * eo(prog(t, k.t + 0.45, k.t + 0.65)));
+      k.label.setAttribute('fill', col);
+      wipe(k.label, eo(prog(t, k.t + 0.45, k.t + 0.85)));
+      // birth pulse, then the set() pulse on zelda
+      const bp = prog(t, k.t + 0.35, k.t + 1.1);
+      const sp = prog(t, ch, ch + 0.9);
+      const pp = sp > 0 ? sp : bp;
+      k.pulse.setAttribute('r', 10 + (sp > 0 ? 40 : 26) * eo(pp));
+      k.pulse.setAttribute('stroke', sp > 0 ? ACCENT : INK);
+      k.pulse.style.opacity = pp > 0 && pp < 1 ? 0.8 * (1 - pp) : 0;
+    });
+  }
+
+  // =====================================================================
+  // World: the phone (list rows, MMKV, pending queue)
+  // =====================================================================
+  const phoneG = document.getElementById('phone');
+  const PH = { x: 720, y: 330, w: 300, h: 610 };
+  const ROWS = [
+    { title: 'Zelda', y: 455 },
+    { title: 'Mario Kart', y: 520 },
+    { title: 'Metroid', y: 585 },
+  ];
+  const MM = { cx: 870, top: 660, rx: 44, ry: 14, h: 64 };
+  const SLOT_Y = [784, 806, 828];
+
+  const phone = {};
+  phone.shadow = svgEl('rect', { x: PH.x + 8, y: PH.y + 8, width: PH.w, height: PH.h, rx: 32, fill: 'url(#hatch)', stroke: INK, 'stroke-width': 1.2 }, phoneG);
+  phone.fill = svgEl('rect', { x: PH.x, y: PH.y, width: PH.w, height: PH.h, rx: 32, fill: BG }, phoneG);
+  phone.body = drawEl('rect', { x: PH.x, y: PH.y, width: PH.w, height: PH.h, rx: 32, stroke: INK, 'stroke-width': 2 }, phoneG);
+  phone.screen = drawEl('rect', { x: PH.x + 12, y: PH.y + 12, width: PH.w - 24, height: PH.h - 24, rx: 20, stroke: INK, 'stroke-width': 1.1 }, phoneG);
+  phone.buttons = [`M${PH.x + PH.w + 1} 372 V412`].map((d) => drawEl('path', { d, stroke: INK, 'stroke-width': 3.2, 'stroke-linecap': 'round' }, phoneG));
+  phone.notch = svgEl('rect', { x: PH.x + PH.w / 2 - 30, y: PH.y + 22, width: 60, height: 14, rx: 7, fill: INK }, phoneG);
+  phone.clock = text(PH.x + 34, PH.y + 34, '9:41', { class: 'wi', 'font-size': 15, 'font-weight': 600, fill: INK }, phoneG);
+  phone.status = text(PH.x + PH.w - 30, PH.y + 34, 'ONLINE', { class: 'wl', 'font-size': 11, 'letter-spacing': 1.1, 'text-anchor': 'end', fill: MUTED }, phoneG);
+  phone.header = text(PH.x + 32, PH.y + 84, 'Games', { class: 'wi', 'font-size': 26, 'font-weight': 700, fill: INK }, phoneG);
+  phone.home = drawEl('path', { d: `M${PH.x + 110} 912 H${PH.x + 190}`, stroke: INK, 'stroke-width': 3, 'stroke-linecap': 'round' }, phoneG);
+
+  const rows = ROWS.map((r) => {
+    const g = svgEl('g', {}, phoneG);
+    const card = drawEl('rect', { x: 744, y: r.y - 25, width: 238, height: 50, rx: 10, stroke: INK, 'stroke-width': 1.2 }, g);
+    const flash = svgEl('rect', { x: 744, y: r.y - 25, width: 238, height: 50, rx: 10, fill: 'url(#hatcha)', stroke: ACCENT, 'stroke-width': 2 }, g);
+    const box = drawEl('rect', { x: 760, y: r.y - 10, width: 20, height: 20, rx: 4, stroke: INK, 'stroke-width': 1.4 }, g);
+    const check = drawEl('path', { d: `M764.5 ${r.y} L768.5 ${r.y + 4.5} L776 ${r.y - 5}`, stroke: ACCENT, 'stroke-width': 2.4, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, g);
+    const title = text(796, r.y + 7, r.title, { class: 'wi', 'font-size': 20, 'font-weight': 500, fill: INK }, g);
+    const strike = drawEl('path', { d: `M794 ${r.y} H800`, stroke: INK, 'stroke-width': 1.6, 'stroke-linecap': 'round' }, g);
+    const ripple = svgEl('circle', { cx: 770, cy: r.y, r: 8, fill: 'none', stroke: INK, 'stroke-width': 1.6 }, g);
+    return { ...r, card, flash, box, check, title, strike, ripple };
+  });
+
+  // MMKV cylinder, talk-scene style (body, hatched left strip, bands, lid)
+  function cylinder(parent, { cx, top, rx, ry, h }) {
+    const x0 = cx - rx, x1 = cx + rx, b = top + h;
+    const g = svgEl('g', {}, parent);
+    const fill = svgEl('path', { d: `M${x0} ${top} L${x0} ${b} A${rx} ${ry} 0 0 0 ${x1} ${b} L${x1} ${top} Z`, fill: BG }, g);
+    const hatch = svgEl('path', { d: `M${x0} ${top} L${x0} ${b} A${rx} ${ry} 0 0 0 ${x0 + 0.42 * rx} ${b + ry * 0.92} L${x0 + 0.42 * rx} ${top + ry * 0.92} Z`, fill: 'url(#hatch)' }, g);
+    const body = drawEl('path', { d: `M${x0} ${top} L${x0} ${b} A${rx} ${ry} 0 0 0 ${x1} ${b} L${x1} ${top}`, 'stroke-width': 1.7 }, g);
+    const bands = [0.36, 0.68].map((f) => drawEl('path', { d: `M${x0} ${top + h * f} A${rx} ${ry} 0 0 0 ${x1} ${top + h * f}`, 'stroke-width': 1.1 }, g));
+    const lidFill = svgEl('ellipse', { cx, cy: top, rx, ry, fill: BG }, g);
+    const lid = drawEl('ellipse', { cx, cy: top, rx, ry, 'stroke-width': 1.7 }, g);
+    const glowLid = svgEl('ellipse', { cx, cy: top, rx, ry, fill: 'url(#hatcha)', stroke: ACCENT, 'stroke-width': 2.2 }, g);
+    const ring = svgEl('ellipse', { cx, cy: top + h / 2, rx, ry, fill: 'none', stroke: ACCENT, 'stroke-width': 1.5 }, g);
+    return { g, fill, hatch, body, bands, lidFill, lid, glowLid, ring, cx, top, rx, ry, h };
+  }
+  function renderCylinder(c, t, t0, color, hits) {
+    const lines = [c.body, ...c.bands, c.lid];
+    lines.forEach((el, i) => {
+      setDraw(el, eio(prog(t, t0 + i * 0.06, t0 + 0.5 + i * 0.06)));
+      el.setAttribute('stroke', color);
+    });
+    const f = eo(prog(t, t0 + 0.35, t0 + 0.7));
+    c.fill.style.opacity = c.lidFill.style.opacity = f > 0 ? 1 : 0;
+    c.hatch.style.opacity = f;
+    c.hatch.setAttribute('fill', color === INK ? 'url(#hatch)' : 'url(#hatchm)');
+    let hit = 0, ringP = -1;
+    for (const h of hits) {
+      hit = Math.max(hit, pulse(t, h, 0.9));
+      const p = prog(t, h, h + 0.7);
+      if (p > 0 && p < 1) ringP = p;
+    }
+    c.glowLid.style.opacity = hit;
+    c.ring.style.opacity = ringP >= 0 ? 0.9 * (1 - ringP) : 0;
+    const k = ringP >= 0 ? eo(ringP) : 0;
+    c.ring.setAttribute('rx', c.rx + 40 * k);
+    c.ring.setAttribute('ry', c.ry + 16 * k);
+  }
+  const mmkv = cylinder(phoneG, MM);
+
+  const slots = SLOT_Y.map((y) => ({
+    y,
+    box: drawEl('rect', { x: 830, y, width: 80, height: 16, rx: 2, stroke: INK, 'stroke-width': 1.2 }, phoneG),
+    fill: svgEl('rect', { x: 830, y, width: 80, height: 16, rx: 2, fill: 'url(#hatcha)', stroke: ACCENT, 'stroke-width': 1.6 }, phoneG),
+    dash: svgEl('path', { d: `M838 ${y + 8} H902`, stroke: ACCENT, 'stroke-width': 1, 'stroke-dasharray': '3 3' }, phoneG),
+  }));
+
+  // =====================================================================
+  // World: bindings (useValue), remote side (Supabase → Postgres)
+  // =====================================================================
+  const bindG = document.getElementById('bindings');
+  const bindClip = document.getElementById('bind-clip-rect');
+  const bindings = KIDS.map((k, i) => {
+    const r = ROWS[i];
+    const d = `M578 ${k.y} C660 ${k.y} 662 ${r.y} 740 ${r.y}`;
+    return svgEl('path', { d, fill: 'none', stroke: MUTED, 'stroke-width': 2.4, 'stroke-linecap': 'round', 'stroke-dasharray': '1.2 7.3' }, bindG);
+  });
+  const bindRoute = svgEl('path', { d: bindings[0].getAttribute('d'), class: 'draw', pathLength: 1, stroke: ACCENT, 'stroke-width': 3, 'stroke-linecap': 'round' }, document.getElementById('packets'));
+  const bindHead = svgEl('circle', { r: 6, fill: '#e4e8ff' }, document.getElementById('packets'));
+
+  const wl = document.getElementById('wlabels');
+  const useValueLbl = text(652, 398, 'useValue()', { class: 'wm', 'font-size': 17, 'text-anchor': 'middle', fill: MUTED }, wl);
+
+  const remoteG = document.getElementById('remote');
+  const CONN_Y = 590;
+  const wire1 = svgEl('path', { d: `M${PH.x + PH.w + 4} ${CONN_Y} H1256`, fill: 'none', 'stroke-width': 2.4, 'stroke-linecap': 'round', 'stroke-dasharray': '1.2 7.3' }, remoteG);
+  const wire2 = svgEl('path', { d: `M1472 ${CONN_Y} H1594`, fill: 'none', 'stroke-width': 2.4, 'stroke-linecap': 'round', 'stroke-dasharray': '1.2 7.3' }, remoteG);
+  const CLOUD_D = 'M1290 607 C1252 607 1256 559 1294 559 C1294 517 1356 511 1372 543 C1394 517 1452 533 1444 569 C1476 571 1474 607 1442 607 Z';
+  const cloudFill = svgEl('path', { d: CLOUD_D, fill: BG }, remoteG);
+  const cloudHatch = svgEl('rect', { x: 1250, y: 593, width: 230, height: 16, fill: 'url(#hatchm)' }, remoteG);
+  const cloudClip = svgEl('clipPath', { id: 'cloud-clip' }, remoteG);
+  svgEl('path', { d: CLOUD_D }, cloudClip);
+  cloudHatch.setAttribute('clip-path', 'url(#cloud-clip)');
+  const cloud = drawEl('path', { d: CLOUD_D, 'stroke-width': 1.7 }, remoteG);
+  const cloudGlow = svgEl('path', { d: CLOUD_D, fill: 'url(#hatcha)', stroke: ACCENT, 'stroke-width': 2.2 }, remoteG);
+  const cloudLbl = text(1362, 646, 'SUPABASE', { class: 'wl', 'text-anchor': 'middle' }, remoteG);
+  const pg = cylinder(remoteG, { cx: 1640, top: 532, rx: 46, ry: 15, h: 100 });
+  const pgLbl = text(1640, 692, 'POSTGRES', { class: 'wl', 'text-anchor': 'middle' }, remoteG);
+  const pgSub = text(1640, 716, '', { class: 'wi', 'font-size': 16, 'text-anchor': 'middle', fill: MUTED }, remoteG);
+  const CROSS_X = 1140;
+  const cross = svgEl('g', {}, remoteG);
+  svgEl('rect', { x: CROSS_X - 16, y: CONN_Y - 8, width: 32, height: 16, fill: BG }, cross);
+  svgEl('path', { d: `M${CROSS_X - 7} ${CONN_Y - 7} L${CROSS_X + 7} ${CONN_Y + 7} M${CROSS_X + 7} ${CONN_Y - 7} L${CROSS_X - 7} ${CONN_Y + 7}`, stroke: INK, 'stroke-width': 2, 'stroke-linecap': 'round' }, cross);
+  const signalLbl = text(CROSS_X, CONN_Y - 22, 'NO SIGNAL', { class: 'wl', 'text-anchor': 'middle', fill: INK }, remoteG);
+
+  // leader labels on the right of the phone (dot, rule, title, subtitle)
+  function leader(y, title, sub) {
+    const g = svgEl('g', {}, wl);
+    const dot = svgEl('circle', { cx: PH.x + PH.w, cy: y, r: 3.2, fill: INK }, g);
+    const line = drawEl('path', { d: `M${PH.x + PH.w} ${y} H1062`, stroke: INK, 'stroke-width': 1.1 }, g);
+    const t1 = text(1072, y + 5, title, { class: 'wl', fill: INK }, g);
+    const t2 = sub != null ? text(1072, y + 29, sub, { class: 'wi', 'font-size': 16, fill: MUTED }, g) : null;
+    return { g, dot, line, t1, t2 };
+  }
+  function renderLeader(L, t, t0, t1 = 1e9, color = INK) {
+    const p = eio(prog(t, t0, t0 + 0.45));
+    const out = 1 - eio(prog(t, t1, t1 + 0.35));
+    L.g.style.opacity = out;
+    L.dot.setAttribute('r', 3.2 * eo(prog(t, t0, t0 + 0.2)));
+    L.dot.setAttribute('fill', color);
+    L.line.setAttribute('stroke', color);
+    setDraw(L.line, p);
+    L.t1.setAttribute('fill', color);
+    wipe(L.t1, eo(prog(t, t0 + 0.2, t0 + 0.6)));
+    if (L.t2) wipe(L.t2, eo(prog(t, t0 + 0.3, t0 + 0.7)));
+  }
+  const renderLbls = ROWS.map((r, i) => leader(r.y, i === 0 ? 'RE-RENDERED' : 'SKIPPED', null));
+  const mmkvLbl = leader(MM.top + 32, 'MMKV', 'saved on device in ~0 ms');
+  const queueLbl = leader(SLOT_Y[1] + 8, 'PENDING QUEUE', '0 changes');
+
+  // =====================================================================
+  // Packets: short glowing segments travelling along routes
+  // =====================================================================
+  const packetsG = document.getElementById('packets');
+  function route(d) {
+    const trail = svgEl('path', { d, fill: 'none', pathLength: 1, stroke: ACCENT, 'stroke-width': 3, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, packetsG);
+    const head = svgEl('circle', { r: 5.5, fill: '#e4e8ff' }, packetsG);
+    return { trail, head };
+  }
+  function renderPacket(P, t, t0, t1, tail = 0.35) {
+    const u = prog(t, t0, t1);
+    const on = t >= t0 && t < t1 + 0.12;
+    if (!on) {
+      P.trail.style.opacity = 0;
+      P.head.style.opacity = 0;
+      return;
+    }
+    const p = eio(u);
+    segment(P.trail, p - tail, p);
+    P.trail.style.opacity = u < 1 ? 1 : 1 - (t - t1) / 0.12;
+    const pt = pointAt(P.trail, p);
+    P.head.setAttribute('cx', pt.x);
+    P.head.setAttribute('cy', pt.y);
+    P.head.style.opacity = u < 1 ? 1 : 0;
+  }
+  const writeRoutes = WRITES.map((w) => {
+    const ry = ROWS[w.row].y, sy = SLOT_Y[w.row] + 8;
+    return {
+      toMM: route(`M982 ${ry} H996 V${MM.top + 32} H${MM.cx + MM.rx + 2}`),
+      toSlot: route(`M${MM.cx} ${MM.top + MM.h + MM.ry + 2} V${sy}`),
+    };
+  });
+  const flushRoutes = FLUSH.map((f) => route(`M910 ${SLOT_Y[f.slot] + 8} H996 V${CONN_Y} H1594`));
+
+  // =====================================================================
+  // World render
+  // =====================================================================
+  const rowCheckAt = (i) => (i === 0 ? T.arrive : WRITES[i].tap + 0.05);
+
+  function renderPhone(t) {
+    const t0 = T.phone;
+    setDraw(phone.body, eio(prog(t, t0, t0 + 0.7)));
+    setDraw(phone.screen, eio(prog(t, t0 + 0.2, t0 + 0.8)));
+    phone.buttons.forEach((b, i) => setDraw(b, eo(prog(t, t0 + 0.5 + i * 0.05, t0 + 0.75 + i * 0.05))));
+    const sh = eo(prog(t, t0 + 0.45, t0 + 0.9));
+    phone.shadow.style.opacity = sh;
+    phone.fill.style.opacity = sh > 0 || t > t0 ? 1 : 0;
+    phone.notch.style.opacity = eo(prog(t, t0 + 0.5, t0 + 0.8));
+    wipe(phone.clock, eo(prog(t, t0 + 0.6, t0 + 0.9)));
+    wipe(phone.header, eo(prog(t, t0 + 0.55, t0 + 0.95)));
+    setDraw(phone.home, eo(prog(t, t0 + 0.6, t0 + 0.9)));
+    const offline = t >= T.offline && t < T.online;
+    phone.status.textContent = offline ? 'OFFLINE' : 'ONLINE';
+    phone.status.setAttribute('fill', offline ? WARM : t >= T.online && t < T.online + 1.2 ? ACCENT : MUTED);
+    wipe(phone.status, eo(prog(t, t0 + 0.65, t0 + 0.95)));
+
+    rows.forEach((r, i) => {
+      const rt = T.rows + i * 0.1;
+      setDraw(r.card, eio(prog(t, rt, rt + 0.45)));
+      setDraw(r.box, eo(prog(t, rt + 0.2, rt + 0.45)));
+      wipe(r.title, eo(prog(t, rt + 0.2, rt + 0.55)));
+      const ct = rowCheckAt(i);
+      setDraw(r.check, eo(prog(t, ct, ct + 0.25)));
+      r.strike.setAttribute('d', `M794 ${r.y} H${798 + (r.titleW || 60)}`);
+      setDraw(r.strike, eio(prog(t, ct + 0.15, ct + 0.5)));
+      r.title.setAttribute('fill', t >= ct + 0.2 ? MUTED : INK);
+      const fl = Math.max(pulse(t, ct, 1.2), i === 0 ? pulse(t, WRITES[0].leave - 0.1, 0.8) * 0.8 : 0);
+      r.flash.style.opacity = fl;
+      const tp = i > 0 ? prog(t, WRITES[i].tap - 0.05, WRITES[i].tap + 0.5) : 0;
+      r.ripple.setAttribute('r', 8 + 26 * eo(tp));
+      r.ripple.style.opacity = tp > 0 && tp < 1 ? 0.9 * (1 - tp) : 0;
+    });
+
+    renderCylinder(mmkv, t, 6.85, INK, WRITES.map((w) => w.mm));
+    slots.forEach((s, i) => {
+      setDraw(s.box, eo(prog(t, 7.05 + i * 0.06, 7.35 + i * 0.06)));
+      const fin = eo(prog(t, WRITES[i].slot, WRITES[i].slot + 0.2));
+      const fout = prog(t, FLUSH[i].leave - 0.05, FLUSH[i].leave + 0.1);
+      const v = fin * (1 - fout);
+      s.fill.style.opacity = v;
+      s.dash.style.opacity = v;
+    });
+  }
+
+  function renderBindings(t) {
+    const p = eio(prog(t, T.bind, T.bind + 0.55));
+    bindClip.setAttribute('width', 190 * p);
+    const hot = t >= T.set && t < 6.2;
+    bindings.forEach((b, i) => {
+      b.style.strokeDashoffset = -t * 10.6;
+      b.setAttribute('stroke', i === 0 && hot ? ACCENT : MUTED);
+    });
+    wipe(useValueLbl, eo(prog(t, T.bind + 0.2, T.bind + 0.6)));
+    // the set() travels from the zelda node to its row, and nowhere else
+    const u = prog(t, T.set + 0.25, T.arrive);
+    const on = t >= T.set + 0.25 && t < T.arrive + 0.12;
+    segment(bindRoute, eio(u) - 0.45, eio(u));
+    bindRoute.style.opacity = on ? (u < 1 ? 1 : 1 - (t - T.arrive) / 0.12) : 0;
+    const pt = pointAt(bindRoute, eio(u));
+    bindHead.setAttribute('cx', pt.x);
+    bindHead.setAttribute('cy', pt.y);
+    bindHead.style.opacity = on && u < 1 ? 1 : 0;
+  }
+
+  function renderRemote(t) {
+    const t0 = 6.95;
+    const online = t >= T.online;
+    const wireA = eo(prog(t, t0, t0 + 0.4));
+    [wire1, wire2].forEach((w) => {
+      w.style.opacity = wireA;
+      w.setAttribute('stroke', online ? ACCENT : FAINT);
+      w.style.strokeDashoffset = online ? -t * 10.6 : 0;
+    });
+    const col = online ? INK : FAINT;
+    setDraw(cloud, eio(prog(t, t0 + 0.1, t0 + 0.7)));
+    cloud.setAttribute('stroke', col);
+    cloudFill.style.opacity = cloudHatch.style.opacity = eo(prog(t, t0 + 0.4, t0 + 0.8));
+    cloudHatch.setAttribute('fill', online ? 'url(#hatch)' : 'url(#hatchm)');
+    wipe(cloudLbl, eo(prog(t, t0 + 0.4, t0 + 0.8)));
+    cloudLbl.setAttribute('fill', online ? INK : FAINT);
+    renderCylinder(pg, t, t0 + 0.2, col, FLUSH.map((f) => f.land));
+    wipe(pgLbl, eo(prog(t, t0 + 0.5, t0 + 0.9)));
+    pgLbl.setAttribute('fill', online ? INK : FAINT);
+    const landed = FLUSH.filter((f) => t >= f.land).length;
+    pgSub.textContent = landed ? `${landed} change${landed > 1 ? 's' : ''} synced` : '';
+    // cloud glows while a packet passes through it
+    let near = 0;
+    flushRoutes.forEach((r, i) => {
+      if (r.head.style.opacity > 0) near = Math.max(near, Math.exp(-Math.abs(r.head.getAttribute('cx') - 1362) / 70));
+    });
+    cloudGlow.style.opacity = 0.9 * near;
+
+    // the cross leaves when the signal comes back
+    const cp = eo(prog(t, t0 + 0.35, t0 + 0.6)) * (1 - eio(prog(t, T.online, T.online + 0.3)));
+    cross.style.opacity = cp;
+    const k = 0.6 + 0.4 * cp;
+    cross.setAttribute('transform', `translate(${CROSS_X} ${CONN_Y}) scale(${k}) translate(${-CROSS_X} ${-CONN_Y})`);
+    signalLbl.textContent = online ? 'BACK ONLINE' : 'NO SIGNAL';
+    signalLbl.setAttribute('fill', online ? ACCENT : INK);
+    wipe(signalLbl, online ? eo(prog(t, T.online + 0.05, T.online + 0.4)) : eo(prog(t, t0 + 0.45, t0 + 0.85)));
+  }
+
+  function renderWorld(t, cam) {
+    world.setAttribute('transform', `matrix(${cam.z} 0 0 ${cam.z} ${cam.ox} ${cam.oy})`);
+    const dim = eio(prog(t, 12.55, 13.35));
+    world.style.opacity = 1 - 0.86 * dim;
+    world.style.filter = dim > 0.01 ? `blur(${(2.5 * dim).toFixed(2)}px)` : 'none';
+    renderTree(t);
+    renderPhone(t);
+    renderBindings(t);
+    renderRemote(t);
+
+    renderLbls.forEach((L, i) => renderLeader(L, t, T.arrive + 0.1 + (i ? 0.25 + i * 0.08 : 0), 6.35, i === 0 ? ACCENT : MUTED));
+    renderLeader(mmkvLbl, t, 7.2, 1e9);
+    renderLeader(queueLbl, t, 7.35, 1e9);
+    const queued = WRITES.filter((w) => t >= w.slot + 0.1).length - FLUSH.filter((f) => t >= f.leave).length;
+    queueLbl.t2.textContent = t >= FLUSH[2].leave ? 'empty · all synced' : `${queued} change${queued === 1 ? '' : 's'}`;
+    queueLbl.t2.setAttribute('fill', queued > 0 ? ACCENT : MUTED);
+
+    WRITES.forEach((w, i) => {
+      renderPacket(writeRoutes[i].toMM, t, w.leave, w.mm, 0.4);
+      renderPacket(writeRoutes[i].toSlot, t, w.mm + 0.02, w.slot, 0.6);
+    });
+    FLUSH.forEach((f, i) => renderPacket(flushRoutes[i], t, f.leave, f.land, 0.22));
+  }
+
+  // =====================================================================
+  // Screen space: headline, code chip, HUD, lockup
+  // =====================================================================
+  const headEl = document.getElementById('head');
+  const chipEl = document.getElementById('chip');
+  const heads = HEADS.map((h) => {
+    const span = document.createElement('span');
+    span.className = 'abs';
+    span.style.whiteSpace = 'nowrap';
+    headEl.appendChild(span);
+    return { ...h, span, words: splitWords(span, h.text) };
+  });
+
+  const KW = new Set(['const', 'true', 'false']);
+  function tokens(code) {
+    const toks = code.match(/'[^']*'|[A-Za-z_$][\w$]*|\s+|./g);
+    return toks.map((tk, i) => {
+      let color = MUTED;
+      const next = toks.slice(i + 1).find((x) => !/^\s+$/.test(x));
+      if (tk.startsWith("'")) color = WARM;
+      else if (KW.has(tk)) color = '#C3A6FF';
+      else if (/^[A-Za-z_$]/.test(tk)) color = next === '(' ? ACCENT : tk.endsWith('$') ? ACCENT : INK;
+      return [tk, color];
+    });
+  }
+  const chipToks = CHIPS.map((c) => tokens(c.code));
+  const esc = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  function chipHTML(i, n, caret) {
+    let out = '', left = n;
+    for (const [tk, color] of chipToks[i]) {
+      if (left <= 0) break;
+      out += `<span style="color:${color}">${esc(tk.slice(0, left))}</span>`;
+      left -= tk.length;
+    }
+    return out + `<span class="caret" style="opacity:${caret}"></span>`;
+  }
+
+  function renderCopy(t) {
+    heads.forEach((h) => {
+      h.span.style.display = t > h.tin - 0.1 && t < h.tout + 0.6 ? '' : 'none';
+      riseWords(h.words, t, h.tin, 0.06, 0.7, h.tout);
+    });
+    const i = CHIPS.findIndex((c) => t >= c.tin && t < c.tout + 0.45);
+    if (i < 0) {
+      chipEl.style.opacity = 0;
+      return;
+    }
+    const c = CHIPS[i];
+    const n = Math.max(0, Math.floor((t - typeStart(c)) * CPS));
+    const typing = n < c.code.length;
+    const caret = typing ? 1 : mod(t, 0.5) < 0.25 ? 1 : 0;
+    chipEl.innerHTML = chipHTML(i, n, t >= typeStart(c) ? caret : 0);
+    chipEl.style.width = c.w + 'px';
+    const pin = eo(prog(t, c.tin, c.tin + 0.35));
+    const pout = eio(prog(t, c.tout, c.tout + 0.4));
+    chipEl.style.clipPath = `inset(-4px ${(1 - pin) * 100}% -4px -4px)`;
+    chipEl.style.opacity = 1 - pout;
+    chipEl.style.transform = `translateY(${-16 * pout}px)`;
+    chipEl.style.filter = pout > 0.01 ? `blur(${(5 * pout).toFixed(2)}px)` : 'none';
+  }
+
+  // HUD
+  const screenG = document.getElementById('screen');
+  const hud = document.getElementById('hud');
+  const crops = [[60, 60, 1, 1], [1860, 60, -1, 1], [60, 1020, 1, -1], [1860, 1020, -1, -1]].map(([x, y, sx, sy]) =>
+    drawEl('path', { d: `M${x} ${y + sy * 40} V${y} H${x + sx * 40}`, stroke: MUTED, 'stroke-width': 1.5 }, screenG)
+  );
+  const hudTL = div('mono', '<span id="live-dot" style="display:inline-block;width:10px;height:10px;border-radius:5px;margin-right:10px;vertical-align:1px"></span><span id="live-txt"></span><span>&nbsp;&nbsp;·&nbsp;&nbsp;Legend State × React Native</span>', { left: '120px', top: '1000px', fontSize: '15px' }, hud);
+  const hudTR = div('mono', '', { left: '1400px', width: '400px', textAlign: 'right', top: '1000px', fontSize: '15px' }, hud);
+  const liveDot = document.getElementById('live-dot');
+  const liveTxt = document.getElementById('live-txt');
+  function renderHud(t) {
+    crops.forEach((el, i) => setDraw(el, eio(prog(t, 0.1 + i * 0.06, 0.7 + i * 0.06))));
+    const lab = eo(prog(t, 0.35, 0.95));
+    [hudTL, hudTR].forEach((el) => wipe(el, lab));
+    const frame = Math.min(Math.floor(t * FPS + 1e-6), DURATION * FPS - 1);
+    hudTR.textContent = `${SHEETS.filter(([s]) => t >= s).pop()[1]}  ·  TC 00:00:${pad2(Math.floor(frame / FPS))}:${pad2(frame % FPS)}`;
+    const offline = t >= T.offline && t < T.online;
+    liveDot.style.background = offline ? WARM : ACCENT;
+    liveDot.style.opacity = mod(t, BEAT) < BEAT / 2 ? 1 : 0.3;
+    liveTxt.textContent = offline ? 'Offline' : 'Online';
+    liveTxt.style.color = offline ? WARM : ACCENT;
+  }
+
+  // Lockup
+  const lk = document.getElementById('lockup');
+  const lkTag = document.getElementById('lk-tag');
+  const lkTitle = splitWords(document.getElementById('lk-title'), 'Legend State');
+  const lkSub = splitWords(document.getElementById('lk-sub'), 'High performance state and local first sync.');
+  const lkUrl = document.getElementById('lk-url');
+  const lkRule = drawEl('path', { d: 'M760 578 H1160', stroke: ACCENT, 'stroke-width': 3, 'stroke-linecap': 'round' }, screenG);
+  const lkPill = drawEl('rect', { x: 660, y: 690, width: 600, height: 68, rx: 34, stroke: ACCENT, 'stroke-width': 2 }, screenG);
+  const shocks = [0, 1].map(() => svgEl('circle', { cx: 960, cy: 540, r: 0, fill: 'none', stroke: ACCENT }, screenG));
+  function renderLockup(t) {
+    const on = t >= T.lockup - 0.3;
+    lk.style.display = on ? '' : 'none';
+    wipe(lkTag, eo(prog(t, 13.0, 13.45)));
+    riseWords(lkTitle, t, T.lockup + 0.05, 0.12, 0.8);
+    setDraw(lkRule, eio(prog(t, 13.25, 13.85)));
+    riseWords(lkSub, t, 13.45, 0.04, 0.6);
+    setDraw(lkPill, eio(prog(t, 13.75, 14.3)));
+    wipe(lkUrl, eo(prog(t, 13.95, 14.4)));
+    const k = 1 + 0.025 * eio(prog(t, T.lockup, DURATION));
+    lk.style.transform = `scale(${k})`;
+    lk.style.transformOrigin = '960px 540px';
+    shocks.forEach((c, i) => {
+      const u = prog(t, T.lockup + i * 0.1, T.lockup + i * 0.1 + 1.0);
+      c.setAttribute('r', 30 + 1300 * eo(u));
+      c.setAttribute('stroke-width', 1 + 4 * (1 - u));
+      c.style.opacity = u > 0 && u < 1 ? 0.8 * Math.pow(1 - u, 1.5) : 0;
+    });
+  }
+
+  // =====================================================================
+  // render(t) — pure function of time, so any frame can be rendered alone
+  // =====================================================================
+  const flash = document.getElementById('flash');
+  let setupDone = false;
+  function setup() {
+    rows.forEach((r) => (r.titleW = r.title.getComputedTextLength()));
+    // chip width from the full line, so it doesn't grow while typing
+    CHIPS.forEach((c, i) => {
+      chipEl.innerHTML = chipHTML(i, 1e9, 1);
+      chipEl.style.width = 'auto';
+      c.w = Math.ceil(chipEl.getBoundingClientRect().width);
+    });
+    setupDone = true;
+  }
+  window.render = function (t) {
+    if (!setupDone) return;
+    const cam = camera(t);
+    drawGrid(t, cam);
+    renderWorld(t, cam);
+    renderCopy(t);
+    renderLockup(t);
+    renderHud(t);
+    flash.style.opacity = Math.max(0.3 * pulse(t, T.online, 0.6), 0.55 * pulse(t, T.lockup, 0.7));
+  };
+
+  // =====================================================================
+  // Soundtrack — synthesised offline so it is locked to the frame timeline.
+  // Am9 intro → Fmaj9 groove → Dm9 muffled (offline) → C riser → Fmaj9 lockup.
+  // =====================================================================
+  function mulberry32(a) {
+    return function () {
+      a |= 0;
+      a = (a + 0x6d2b79f5) | 0;
+      let r = Math.imul(a ^ (a >>> 15), 1 | a);
+      r = (r + Math.imul(r ^ (r >>> 7), 61 | r)) ^ r;
+      return ((r ^ (r >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+
+  window.renderAudio = async function () {
+    const SR = 48000, LEN = DURATION;
+    const ctx = new OfflineAudioContext(2, Math.round(SR * LEN), SR);
+    const rnd = mulberry32(20260928);
+    const mtof = (m) => 440 * Math.pow(2, (m - 69) / 12);
+
+    const noiseBuf = ctx.createBuffer(2, SR * 4, SR);
+    for (let c = 0; c < 2; c++) {
+      const d = noiseBuf.getChannelData(c);
+      for (let i = 0; i < d.length; i++) d[i] = rnd() * 2 - 1;
+    }
+    const noise = (t, dur) => {
+      const s = ctx.createBufferSource();
+      s.buffer = noiseBuf;
+      s.loop = true;
+      s.start(t, rnd() * 3, dur);
+      return s;
+    };
+    const osc = (type, f, t, dur) => {
+      const o = ctx.createOscillator();
+      o.type = type;
+      o.frequency.value = f;
+      o.start(t);
+      o.stop(t + dur);
+      return o;
+    };
+    const bq = (type, f, q = 0.7) => {
+      const b = ctx.createBiquadFilter();
+      b.type = type;
+      b.frequency.value = f;
+      b.Q.value = q;
+      return b;
+    };
+    const gain = (v = 1) => {
+      const g = ctx.createGain();
+      g.gain.value = v;
+      return g;
+    };
+    const chain = (...n) => {
+      for (let i = 0; i < n.length - 1; i++) n[i].connect(n[i + 1]);
+      return n[n.length - 1];
+    };
+    const send = (from, to, amount) => chain(from, gain(amount), to);
+    const perc = (g, t, peak, a, d) => {
+      g.gain.setValueAtTime(0.0001, t);
+      g.gain.exponentialRampToValueAtTime(peak, t + a);
+      g.gain.exponentialRampToValueAtTime(0.0001, t + a + d);
+    };
+    const curve = (fn, rate = 200) => Float32Array.from({ length: Math.round(LEN * rate) + 1 }, (_, i) => fn(i / rate));
+    const panner = (v) => {
+      const p = ctx.createStereoPanner();
+      p.pan.value = v;
+      return p;
+    };
+
+    // ---- buses ----
+    const comp = ctx.createDynamicsCompressor();
+    comp.threshold.value = -18;
+    comp.knee.value = 10;
+    comp.ratio.value = 3;
+    comp.attack.value = 0.01;
+    comp.release.value = 0.25;
+    const master = gain(1);
+    master.gain.setValueAtTime(1, 14.2);
+    master.gain.linearRampToValueAtTime(0.0001, LEN);
+    const lowShelf = bq('lowshelf', 120);
+    lowShelf.gain.value = -2;
+    const presence = bq('peaking', 3000, 0.8);
+    presence.gain.value = 2.5;
+    const highShelf = bq('highshelf', 4500);
+    highShelf.gain.value = 4;
+    chain(master, lowShelf, presence, highShelf, comp, ctx.destination);
+
+    const verb = ctx.createConvolver();
+    {
+      const len = Math.round(SR * 2.6), ir = ctx.createBuffer(2, len, SR);
+      for (let c = 0; c < 2; c++) {
+        const d = ir.getChannelData(c);
+        let lp = 0;
+        for (let i = 0; i < len; i++) {
+          lp += 0.35 * (rnd() * 2 - 1 - lp);
+          d[i] = lp * Math.pow(1 - i / len, 2.2) * Math.min(1, i / 480);
+        }
+      }
+      verb.buffer = ir;
+    }
+    const verbIn = gain(1);
+    chain(verbIn, verb, gain(0.55), master);
+    const delay = ctx.createDelay(2);
+    delay.delayTime.value = BEAT * 0.75;
+    const delayLp = bq('lowpass', 3200);
+    const delayIn = gain(1);
+    chain(delayIn, delay, delayLp, gain(0.3), delay);
+    chain(delayLp, gain(0.45), master);
+
+    // "offline" = the whole band goes behind a wall: lowpass closes in act 3
+    const music = gain(1);
+    const offLp = bq('lowpass', 18000, 0.9);
+    offLp.frequency.setValueCurveAtTime(
+      curve((t) => {
+        if (t < 6.8) return 18000;
+        if (t < 7.4) return 18000 * Math.pow(620 / 18000, (t - 6.8) / 0.6);
+        if (t < 10.46) return 620;
+        if (t < 10.5) return lerp(620, 18000, (t - 10.46) / 0.04);
+        return 18000;
+      }, 200),
+      0,
+      LEN
+    );
+    // sidechain duck under kicks and impacts
+    const duck = gain(1);
+    chain(music, offLp, duck, master);
+    const KICKS = [3.0, 3.75, 4.5, 5.25, 6.0, 6.75, 7.5, 8.25, 9.0, 9.75, 11.25, 12.0, 13.5];
+    const IMPACTS = [[T.online, 0.7], [T.lockup, 1]];
+    const duckers = [...KICKS.map((k) => [k, 0.45]), ...IMPACTS.map(([t]) => [t, 0.65])];
+    duck.gain.setValueCurveAtTime(
+      curve((t) => {
+        let d = 0;
+        for (const [k, depth] of duckers) {
+          const x = t - k;
+          if (x >= 0 && x < 0.8) d = Math.max(d, depth * (x < 0.008 ? x / 0.008 : Math.exp(-(x - 0.008) / 0.13)));
+        }
+        return 1 - d;
+      }),
+      0,
+      LEN
+    );
+
+    // ---- pad ----
+    const CHORDS = [
+      { t0: 0.0, t1: 3.05, notes: [45, 52, 55, 59, 60, 64], a: 1.4, r: 0.25 }, // Am9
+      { t0: 3.0, t1: 6.8, notes: [41, 48, 52, 55, 57, 64], a: 0.06, r: 0.25 }, // Fmaj9
+      { t0: 6.75, t1: 10.3, notes: [38, 45, 50, 53, 57, 64], a: 0.3, r: 0.1 }, // Dm9
+      { t0: 10.5, t1: 12.8, notes: [36, 43, 50, 52, 55, 62], a: 0.03, r: 0.25 }, // Cadd9
+      { t0: 12.75, t1: 15.0, notes: [41, 48, 52, 55, 57, 60, 67], a: 0.03, r: 0.4 }, // Fmaj9
+    ];
+    const padLp = bq('lowpass', 800, 0.6);
+    padLp.frequency.setValueCurveAtTime(
+      curve((t) => {
+        if (t < 3) return 320 * Math.pow(2400 / 320, t / 3);
+        if (t < 10.5) return 2800;
+        if (t < 12.75) return lerp(4500, 3000, (t - 10.5) / 2.25);
+        return lerp(5200, 2600, clamp((t - 12.75) / 2.25));
+      }, 100),
+      0,
+      LEN
+    );
+    const padHp = bq('highpass', 170);
+    chain(padLp, padHp, music);
+    send(padHp, verbIn, 0.3);
+    for (const ch of CHORDS)
+      for (const m of ch.notes)
+        for (const det of [-8, 7]) {
+          const o = osc('sawtooth', mtof(m), ch.t0, ch.t1 - ch.t0 + ch.r + 0.05);
+          o.detune.value = det;
+          const g = gain(0);
+          g.gain.setValueAtTime(0, ch.t0);
+          g.gain.linearRampToValueAtTime(0.028, ch.t0 + ch.a);
+          g.gain.setValueAtTime(0.028, ch.t1);
+          g.gain.linearRampToValueAtTime(0, ch.t1 + ch.r);
+          chain(o, g, panner(det < 0 ? -0.45 : 0.45), padLp);
+        }
+
+    // ---- bass ----
+    const bassLp = bq('lowpass', 700, 0.8);
+    chain(bassLp, music);
+    for (const [t0, t1, root] of [[3.0, 6.75, 41], [6.75, 10.3, 38], [10.5, 12.75, 36], [12.75, 14.4, 41]]) {
+      let step = 0;
+      for (let t = t0; t < t1 - 0.01; t += BEAT / 2, step++) {
+        const m = root + (step % 4 === 3 ? 12 : 0);
+        const dur = Math.min((BEAT / 2) * 0.92, t1 - t);
+        const g = gain(0);
+        g.gain.setValueAtTime(0.0001, t);
+        g.gain.exponentialRampToValueAtTime(0.34, t + 0.008);
+        g.gain.exponentialRampToValueAtTime(0.12, t + dur * 0.8);
+        g.gain.linearRampToValueAtTime(0.0001, t + dur);
+        chain(osc('sine', mtof(m), t, dur + 0.02), g);
+        chain(osc('triangle', mtof(m + 12), t, dur + 0.02), gain(0.3), g);
+        g.connect(bassLp);
+      }
+    }
+
+    // ---- pluck arpeggio ----
+    const arpOut = gain(1);
+    arpOut.connect(music);
+    send(arpOut, delayIn, 0.35);
+    send(arpOut, verbIn, 0.2);
+    const PATTERN = [0, 2, 4, 1, 3, 4, 2, 1];
+    for (const [t0, t1, lv] of [[3.0, 10.3, 1], [10.5, 12.7, 1], [12.75, 14.4, 0.6]]) {
+      let step = 0;
+      for (let t = t0; t < t1 - 0.01; t += BEAT / 4, step++) {
+        const ch = CHORDS.filter((c) => t + 0.001 >= c.t0 && t + 0.001 < c.t1).pop();
+        const tones = ch.notes.map((m) => m + 12).sort((a, b) => a - b);
+        const m = tones[PATTERN[step % 8] % tones.length];
+        const vel = lv * (step % 4 === 0 ? 1 : 0.7) * (t < 4.5 ? lerp(0.4, 1, (t - 3) / 1.5) : 1);
+        const f = bq('lowpass', 6500, 3);
+        f.frequency.setValueAtTime(6500, t);
+        f.frequency.exponentialRampToValueAtTime(900, t + 0.16);
+        const g = gain(0);
+        perc(g, t, 0.08 * vel, 0.004, 0.24);
+        chain(osc('sawtooth', mtof(m), t, 0.3), f, g, panner(step % 2 ? 0.3 : -0.3), arpOut);
+      }
+    }
+
+    // ---- bells & UI sounds (dry of the offline filter, so the story stays audible) ----
+    function bell(t, m, lv, muffled = false) {
+      const g = gain(0);
+      perc(g, t, lv, 0.004, muffled ? 0.5 : 1.1);
+      chain(osc('sine', mtof(m), t, 1.3), g);
+      chain(osc('sine', mtof(m) * 2.005, t, 1.3), gain(muffled ? 0.1 : 0.35), g);
+      g.connect(master);
+      send(g, delayIn, muffled ? 0.15 : 0.35);
+      send(g, verbIn, 0.45);
+    }
+    function blip(t, f, lv) {
+      const g = gain(0);
+      perc(g, t, lv, 0.002, 0.06);
+      chain(osc('sine', f, t, 0.1), g, master);
+    }
+    function thunk(t, lv) {
+      const o = ctx.createOscillator();
+      o.frequency.setValueAtTime(260, t);
+      o.frequency.exponentialRampToValueAtTime(110, t + 0.12);
+      o.start(t);
+      o.stop(t + 0.3);
+      const g = gain(0);
+      perc(g, t, lv, 0.003, 0.2);
+      chain(o, g, master);
+      send(g, verbIn, 0.2);
+    }
+    // key clicks for the code chips
+    CHIPS.forEach((c) => {
+      for (let i = 0; i < c.code.length; i++) {
+        if (c.code[i] === ' ') continue;
+        const t = typeStart(c) + i / CPS;
+        const g = gain(0);
+        perc(g, t, 0.05 + 0.03 * rnd(), 0.001, 0.025);
+        chain(noise(t, 0.05), bq('bandpass', 2600 + 2400 * rnd(), 1.4), g, panner(rnd() * 0.6 - 0.3), master);
+      }
+    });
+    // tree grows: root + children
+    bell(T.root, 69, 0.05);
+    T.kids.forEach((k, i) => bell(k + 0.4, [76, 79, 81][i], 0.045));
+    // set() fires, lands on one row only
+    bell(T.set, 84, 0.05);
+    bell(T.arrive, 88, 0.07);
+    bell(T.arrive + 0.01, 76, 0.04);
+    // offline writes: tap, persist into MMKV, queue
+    WRITES.forEach((w, i) => {
+      if (w.tap) blip(w.tap, 1400, 0.06);
+      bell(w.mm, [81, 84, 88][i], 0.05, true);
+      thunk(w.slot, 0.18);
+    });
+    // back online: the queue flushes, each change rings on arrival
+    FLUSH.forEach((f, i) => {
+      blip(f.leave, 1800, 0.035);
+      bell(f.land, [84, 88, 91][i], 0.06);
+    });
+    [81, 84, 88, 93].forEach((m, i) => bell(T.lockup + 0.375 * (i + 1), m, 0.045));
+
+    // ---- drums ----
+    const drums = gain(0.9);
+    drums.connect(music);
+    function kick(t, vel) {
+      const o = ctx.createOscillator();
+      o.frequency.setValueAtTime(155, t);
+      o.frequency.exponentialRampToValueAtTime(52, t + 0.1);
+      o.frequency.exponentialRampToValueAtTime(42, t + 0.4);
+      o.start(t);
+      o.stop(t + 0.55);
+      const g = gain(0);
+      perc(g, t, vel, 0.003, 0.34);
+      chain(o, g, drums);
+      const ng = gain(0);
+      perc(ng, t, 0.2 * vel, 0.001, 0.02);
+      chain(noise(t, 0.03), bq('highpass', 2500), ng, drums);
+    }
+    KICKS.forEach((t) => kick(t, 0.95));
+    [0.75, 1.5, 2.25].forEach((t) => kick(t, 0.25));
+    function clap(t, vel = 1) {
+      const g = gain(0);
+      [0, 0.012, 0.024].forEach((d) => {
+        g.gain.setValueAtTime(0.5 * vel, t + d);
+        g.gain.exponentialRampToValueAtTime(0.06 * vel, t + d + 0.01);
+      });
+      g.gain.setValueAtTime(0.4 * vel, t + 0.035);
+      g.gain.exponentialRampToValueAtTime(0.0001, t + 0.3);
+      chain(noise(t, 0.45), bq('bandpass', 1900, 0.7), g, drums);
+      send(g, verbIn, 0.3);
+    }
+    [3.75, 5.25, 7.5, 9.0, 11.25].forEach((t) => clap(t));
+    function hat(t, vel, open) {
+      const g = gain(0);
+      perc(g, t, 0.34 * vel, 0.001, open ? 0.26 : 0.035);
+      chain(noise(t, open ? 0.4 : 0.08), bq('highpass', 6500), g, panner(0.25), drums);
+    }
+    const HAT_VEL = [0.35, 0.16, 0.7, 0.2];
+    for (const [t0, t1] of [[3.0, 10.3], [10.5, 12.0]]) {
+      let s = 0;
+      for (let t = t0; t < t1 - 0.01; t += BEAT / 4, s++) hat(t, HAT_VEL[s % 4], s % 16 === 14);
+    }
+    // snare roll into the lockup
+    const roll = [12.0, 12.1875, 12.375, 12.46875, 12.5625, 12.65625];
+    roll.forEach((t, i) => {
+      const k = i / (roll.length - 1);
+      const g = gain(0);
+      perc(g, t, lerp(0.12, 0.5, k * k), 0.001, 0.07);
+      chain(noise(t, 0.12), bq('bandpass', 1800 + 1500 * k, 1.2), g, drums);
+      send(g, verbIn, 0.25);
+    });
+
+    // ---- camera whooshes, risers, impacts ----
+    function whoosh(t0, dur, lv) {
+      const t1 = t0 + dur, peak = t0 + dur * 0.6;
+      const f = bq('bandpass', 500, 1.1);
+      f.frequency.setValueAtTime(380, t0);
+      f.frequency.exponentialRampToValueAtTime(3600, peak);
+      f.frequency.exponentialRampToValueAtTime(1200, t1);
+      const g = gain(0);
+      g.gain.setValueAtTime(0.0001, t0);
+      g.gain.exponentialRampToValueAtTime(lv, peak);
+      g.gain.exponentialRampToValueAtTime(0.0001, t1);
+      const p = ctx.createStereoPanner();
+      p.pan.setValueAtTime(-0.5, t0);
+      p.pan.linearRampToValueAtTime(0.5, t1);
+      chain(noise(t0, dur + 0.05), f, g, p, master);
+      send(g, verbIn, 0.35);
+    }
+    SHOTS.slice(1).forEach((s) => whoosh(s.at - 0.05, s.dur + 0.1, 0.22));
+    function riser(t0, t1, lv) {
+      const f = bq('bandpass', 400, 2.5);
+      f.frequency.setValueAtTime(350, t0);
+      f.frequency.exponentialRampToValueAtTime(7500, t1);
+      const g = gain(0);
+      g.gain.setValueAtTime(0.0001, t0);
+      g.gain.exponentialRampToValueAtTime(lv, t1 - 0.02);
+      g.gain.linearRampToValueAtTime(0.0001, t1);
+      chain(noise(t0, t1 - t0 + 0.05), f, g, master);
+      send(g, verbIn, 0.4);
+      const o = osc('sawtooth', 110, t0, t1 - t0);
+      o.frequency.setValueAtTime(110, t0);
+      o.frequency.exponentialRampToValueAtTime(880, t1);
+      const og = gain(0);
+      og.gain.setValueAtTime(0.0001, t0);
+      og.gain.exponentialRampToValueAtTime(0.04, t1 - 0.02);
+      og.gain.linearRampToValueAtTime(0.0001, t1);
+      chain(o, bq('lowpass', 2600), og, master);
+    }
+    riser(9.4, T.online, 0.26);
+    riser(11.9, T.lockup, 0.2);
+    function impact(t, size) {
+      const o = ctx.createOscillator();
+      o.frequency.setValueAtTime(75, t);
+      o.frequency.exponentialRampToValueAtTime(34, t + 0.5);
+      o.start(t);
+      o.stop(t + 2.6);
+      const g = gain(0);
+      perc(g, t, 0.9 * size, 0.004, 0.9 + 1.2 * size);
+      chain(o, g, master);
+      const ng = gain(0);
+      perc(ng, t, 0.45 * size, 0.002, 0.5);
+      chain(noise(t, 1.2), bq('lowpass', 1100), ng, master);
+      send(ng, verbIn, 0.6);
+      const cg = gain(0);
+      perc(cg, t, 0.15 * size, 0.003, 1.6 + 0.6 * size);
+      chain(noise(t, 2.6), bq('highpass', 5500), cg, master);
+      send(cg, verbIn, 0.5);
+    }
+    IMPACTS.forEach(([t, s]) => impact(t, s));
+    // radio-off "bloop" as the signal drops
+    {
+      const o = osc('sine', 880, T.offline, 0.4);
+      o.frequency.setValueAtTime(880, T.offline);
+      o.frequency.exponentialRampToValueAtTime(220, T.offline + 0.3);
+      const g = gain(0);
+      perc(g, T.offline, 0.08, 0.005, 0.3);
+      chain(o, g, master);
+      send(g, verbIn, 0.3);
+    }
+
+    const buf = await ctx.startRendering();
+    return wavBase64(buf);
+  };
+
+  // 16-bit PCM WAV, peak-normalised to -1 dBFS (loudness is set by ffmpeg)
+  function wavBase64(buf) {
+    const chs = buf.numberOfChannels, len = buf.length, data = [];
+    let peak = 0;
+    for (let c = 0; c < chs; c++) {
+      data.push(buf.getChannelData(c));
+      for (const v of data[c]) peak = Math.max(peak, Math.abs(v));
+    }
+    const k = peak > 0 ? 0.89 / peak : 1;
+    const bytes = new ArrayBuffer(44 + len * chs * 2);
+    const v = new DataView(bytes);
+    const str = (o, s) => [...s].forEach((c, i) => v.setUint8(o + i, c.charCodeAt(0)));
+    str(0, 'RIFF');
+    v.setUint32(4, 36 + len * chs * 2, true);
+    str(8, 'WAVE');
+    str(12, 'fmt ');
+    v.setUint32(16, 16, true);
+    v.setUint16(20, 1, true);
+    v.setUint16(22, chs, true);
+    v.setUint32(24, buf.sampleRate, true);
+    v.setUint32(28, buf.sampleRate * chs * 2, true);
+    v.setUint16(32, chs * 2, true);
+    v.setUint16(34, 16, true);
+    str(36, 'data');
+    v.setUint32(40, len * chs * 2, true);
+    let o = 44;
+    for (let i = 0; i < len; i++)
+      for (let c = 0; c < chs; c++) {
+        const s = Math.max(-1, Math.min(1, data[c][i] * k));
+        v.setInt16(o, s < 0 ? s * 0x8000 : s * 0x7fff, true);
+        o += 2;
+      }
+    const u8 = new Uint8Array(bytes);
+    let bin = '';
+    for (let i = 0; i < u8.length; i += 0x8000) bin += String.fromCharCode.apply(null, u8.subarray(i, i + 0x8000));
+    return btoa(bin);
+  }
+
+  // ---------- boot ----------
+  window.META = { FPS, DURATION, W, H, NAME: 'legend-state-react-native-16x9', SAMPLES: 5, SHUTTER: 0.5 };
+  window.ready = Promise.all([
+    document.fonts.load('700 100px "Inter"'),
+    document.fonts.load('500 20px "Inter"'),
+    document.fonts.load('400 20px "Inter"'),
+    document.fonts.load('400 20px "JetBrains Mono"'),
+  ])
+    .then(() => document.fonts.ready)
+    .then(setup);
+
+  // live preview when opened in a browser (?t=5 freezes a frame)
+  const qs = new URLSearchParams(location.search);
+  window.ready.then(() => {
+    if (qs.has('t')) window.render(parseFloat(qs.get('t')));
+    else if (!navigator.webdriver) {
+      const start = performance.now();
+      const loop = () => {
+        window.render(((performance.now() - start) / 1000) % (DURATION + 1));
+        requestAnimationFrame(loop);
+      };
+      loop();
+    } else window.render(0);
+  });
+</script>
+</body>
+</html>

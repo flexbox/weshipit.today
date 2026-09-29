@@ -8,15 +8,19 @@ layout: false
 
 # Offline First Mobile Apps
 
-## with React Native & LegendState
+## with React Native & Legend State
 
-📍 react nativeCon 3 - Berlin
+📍 reactCon · next.app devCon - Berlin
 
 🗓️ _8 October 2026_
 
 <small class="text-hint">`C` to clone a display; `P` to switch to presenter mode.</small>
 
 ???
+_00:15_
+
+Checkpoints: The easy part 05:05 · Four decisions 07:05 · 4. Does it survive? 14:40 · The whole thing 16:50 · end 20:00
+
 Guten Tag. 20 minutes. One idea: the device owns the truth.
 
 ---
@@ -24,6 +28,9 @@ Guten Tag. 20 minutes. One idea: the device owns the truth.
 class: center, bsod
 
 # Who remembers this?
+
+???
+_00:40_
 
 --
 
@@ -36,7 +43,7 @@ class: center, bsod
 Microsoft Windows
 
 ???
-~25s. Hands up. Wait for it.
+Hands up. Wait for it.
 
 I am officially at the same level as Bill Gates, because I had a blue screen of death on stage.
 
@@ -45,6 +52,9 @@ I am officially at the same level as Bill Gates, because I had a blue screen of 
 class: center, rrod
 
 # And this one?
+
+???
+_00:55_
 
 --
 
@@ -57,7 +67,6 @@ class: center, rrod
 Microsoft Xbox 360
 
 ???
-
 The Red Ring was a hardware failure indicator on the Xbox 360.
 
 ---
@@ -65,6 +74,9 @@ The Red Ring was a hardware failure indicator on the Xbox 360.
 class: center
 
 # And this one?
+
+???
+_01:20_
 
 --
 
@@ -77,7 +89,7 @@ class: center
 David Leuliette Microsoft MVP
 
 ???
-~30s. Deadpan. If no hands go up, that's the joke — say so.
+Deadpan. If no hands go up, that's the joke — say so.
 
 As a Microsoft MVP, I have seen my fair share of device failures.
 And I can officially name the "White Screen of Hell" as one of them.
@@ -86,18 +98,23 @@ And I can officially name the "White Screen of Hell" as one of them.
 
 class: center
 
-### Spinners that never stops
+### Spinners that never stop
 
 .phone-shot[![Mighty spinner on iPhone](./images/offline-first/mighty.gif)]
 .phone-shot[![Pennylane spinner on iPhone](./images/offline-first/pennylane.gif)]
 .phone-shot[![Vinted spinner on iPhone](./images/offline-first/vinted.gif)]
 
 ???
+_01:35_
+
 If you are lucky you will have an infinite spinner
 
 ---
 
 # This app didn’t crash
+
+???
+_01:45_
 
 --
 
@@ -108,7 +125,7 @@ If you are lucky you will have an infinite spinner
 It will wait forever.
 
 ???
-~10s. Grocery store. Basement. Regional train.
+Grocery store. Basement. Regional train.
 
 ---
 
@@ -121,6 +138,8 @@ THE TRUTH LIVES ON THE SERVER · THE PHONE ASKS FOR IT
 <object data="./images/offline-first/scene-1-classic.svg" type="image/svg+xml" aria-label="scene-1-classic"></object>
 
 ???
+_02:15_
+
 Say it, don't show it: "The server is fine. The phone is not, and it has no data of its own to fall back on."
 
 On screen (Classic: server holds the truth):
@@ -134,7 +153,7 @@ On screen (Classic: server holds the truth):
 - isPending: true
 - isPending: forever
 
-~30s. This is every app in the room. The truth lives on the server,
+This is every app in the room. The truth lives on the server,
 the phone asks for it, and when the phone can't ask, it has nothing.
 `isPending: forever` is the whole problem in two words.
 
@@ -146,10 +165,10 @@ class: center, middle
 > something as seemingly obvious and trivial<br />
 > as error messages first?
 
-Vitaly Friedman — founder, Smashing Magazine
+Vitaly Friedman — co-founder, Smashing Magazine
 
 ???
-~15s
+_02:40_
 
 I am so happy to give this talk in Berlin today.
 
@@ -172,7 +191,7 @@ class: center, middle
 David Leuliette
 
 ???
-~15s
+_02:55_
 
 Same sentence, one word changed.
 
@@ -182,6 +201,9 @@ and we still design it last.
 ---
 
 ## We should
+
+???
+_03:35_
 
 --
 
@@ -196,8 +218,8 @@ It is the fastest possible app for everyone, because nothing awaits the network.
 .phone-shot[![Instagram on iPhone](./images/offline-first/instagram.webp)]
 
 ???
-Instagram, first version: the upload started the moment you picked the photo,
-in the background. While you were writing the caption and picking a filter,
+Instagram, first version: the upload started in the background as soon as
+you picked a filter. While you were still writing the caption,
 the upload was already done.
 
 Tap "Share": instant. That is the same trick.
@@ -206,6 +228,9 @@ Local first, network later.
 ---
 
 ## 10 years of React state
+
+???
+_04:05_
 
 --
 
@@ -220,12 +245,15 @@ Local first, network later.
 - zustand
 
 ???
-~40s. Ten years in the ecosystem, a new state library every eighteen months.
-None of them cared about the network or was easy to setup.
+Ten years in the ecosystem, a new state library every eighteen months.
+None of them cared about the network or were easy to set up.
 
 ---
 
 ## Why Legend State
+
+???
+_04:30_
 
 --
 
@@ -236,11 +264,19 @@ None of them cared about the network or was easy to setup.
 ???
 Even a human can write the code correctly, can you believe that it works?
 
-“The key to building the fastest apps is to minimize the amount of work that React Native do. That means having smaller renders, and rendering less often. useState and useContext are just fundamentally incompatible with that goal.” — Jay Meistrich
+The screenshot is in French. Translate it:
+"What are the three things you liked about Legend State for offline?"
+"Second-hand: I handed it all to an intern, who turned out to be great and we hired him back.
+My feeling is that it just works for local vs remote state."
+
+“The key to building the fastest apps is to minimize the amount of work that React and React Native do. That means having smaller renders, and rendering less often. useState and useContext are just fundamentally incompatible with that goal.” — Jay Meistrich
 
 ---
 
 ## Why Legend State
+
+???
+_05:05_
 
 --
 
@@ -249,7 +285,7 @@ Even a human can write the code correctly, can you believe that it works?
 ???
 The lib is `4kb`, fast, and the sync engine is built in.
 
-Catalin Miron pointed me at it at `App.js` 2022 (That's why it's important to come to conference to meet people and have random conversations).
+Catalin Miron pointed me at it at `App.js` 2022 (That's why it's important to come to conferences to meet people and have random conversations).
 
 That is the extent of the library pitch. The rest of the talk is not about
 Legend State. It is about the four things Legend State can't decide for you.
@@ -279,11 +315,11 @@ export const games$ = observable(
 ```
 
 ???
-~60s.
+_05:55_
 
 Point at fieldDeleted: "remember this line" — pays off in decision 2.
 
-This is the README config. It is deliberately incomplete — four lines are
+This is the minimal config. It is deliberately incomplete — four lines are
 missing and the rest of the talk is those four lines.
 Do NOT call this production-ready.
 
@@ -297,6 +333,9 @@ const games = useValue(games$);
 games$[id].title.set('The Legend Of Zelda');
 ```
 
+???
+_06:35_
+
 --
 
 That write works on a plane. It syncs when you land.
@@ -307,7 +346,7 @@ This is the part everyone already gets right.
 It is not why your app breaks.
 
 ???
-~45s. The pivot. Four decisions come after this.
+The pivot. Four decisions come after this.
 
 Say "it syncs when you land" with full confidence.
 Decision 4 is where I admit I lied.
@@ -323,7 +362,7 @@ THE TRUTH LIVES ON THE PHONE · THE NETWORK IS NOT INVITED
 <object data="./images/offline-first/scene-2-offline-write.svg" type="image/svg+xml" aria-label="scene-2-offline-write"></object>
 
 ???
-~30s
+_07:05_
 
 Same drawing, flipped. The truth lives on the phone.
 
@@ -351,6 +390,9 @@ On screen (Offline-first: the write):
 
 # Four decisions
 
+???
+_07:40_
+
 --
 
 1. Who makes the id?
@@ -373,12 +415,15 @@ Nobody makes these on purpose.
 You inherit them from the defaults.
 
 ???
-~40s. This is the map. Say the four out loud, they are the spine of the talk.
+This is the map. Say the four out loud, they are the spine of the talk.
 "Every one of these has a default. Every default is wrong for offline."
 
 ---
 
 # 1. Who makes the id?
+
+???
+_09:10_
 
 --
 
@@ -405,8 +450,6 @@ Your primary key is now a guess made by the client.
 You can't flip a live table from identity to UUID. That is a migration, with users on it.
 
 ???
-~1m45.
-
 The last line is the point of the whole talk: this is a one-way door.
 Every foreign key, every URL, every analytics event carries the old id.
 Decide before the first row, or pay for it with a migration and a maintenance window.
@@ -425,6 +468,9 @@ Your row-level security policy is the only thing standing there.
 ---
 
 # 2. How do you delete?
+
+???
+_10:40_
 
 --
 
@@ -452,8 +498,6 @@ So you don't delete. You tombstone 🪦.
 The rows you already hard-deleted? Gone. No device will ever learn about them.
 
 ???
-~1m45.
-
 This one breaks people's mental model, so slow down here.
 
 `changesSince: 'last-sync'` asks the server: what changed since Tuesday?
@@ -468,6 +512,9 @@ The tombstone IS the message.
 # 2. How do you delete?
 
 ## What it costs
+
+???
+_11:55_
 
 --
 
@@ -484,7 +531,7 @@ The tombstone IS the message.
   Your GDPR erasure path is **not** `fieldDeleted`.
 
 ???
-~1m30. Berlin audience: the GDPR line lands. Do not rush it.
+Berlin audience: the GDPR line lands. Do not rush it.
 
 Soft delete is a sync primitive. It is not a legal delete.
 The day someone exercises Article 17 you need a real `DELETE` that also tells
@@ -497,6 +544,9 @@ If I get one question after this talk, it is this one.
 
 # 3. Who wins?
 
+???
+_13:40_
+
 --
 
 Two devices. Same row. Both offline.
@@ -507,7 +557,7 @@ Nothing detects anything. **Last write wins.**
 
 --
 
-And by default LegendState sends the **whole object**:
+And by default Legend State sends the **whole object**:
 
 --
 
@@ -525,14 +575,12 @@ And "last" is decided by `updated_at`. **The phone never writes that column.**
 A Postgres trigger does.
 
 ???
-~2m.
-
 The clock line: `changesSince: 'last-sync'` and last-write-wins both read
 `updated_at`. If the device stamps it, you are trusting a clock the user can
 set by hand, that drifts, that crosses time zones. Server trigger, always.
 This is a schema decision, not a config flag.
 
-The honest framing: LegendState has no conflict resolution. It does not
+The honest framing: Legend State has no conflict resolution. It does not
 pretend to. It is a sync engine, not a CRDT.
 
 `updatePartial` defaults to false, so an update ships the full row. Two people,
@@ -549,6 +597,9 @@ instead of twelve.
 
 ## So don't put these in the sync layer
 
+???
+_14:40_
+
 --
 
 - Counters and stock levels — `n = n + 1` is not a value, it's an operation
@@ -561,8 +612,6 @@ Move the contested value to the server.
 Let the device own everything else.
 
 ???
-~1m15.
-
 The real trade-off slide, and the most useful thing I can tell you.
 
 Offline-first is not "everything offline". It is "everything offline
@@ -577,6 +626,9 @@ Forty accidental ones is a bug.
 
 # 4. Does it survive?
 
+???
+_15:05_
+
 --
 
 > "It syncs when you land."
@@ -588,7 +640,7 @@ Forty accidental ones is a bug.
 Not with the config I showed you.
 
 ???
-~30s. Own it. The callback is the point — let it sit for a beat.
+Own it. The callback is the point — let it sit for a beat.
 
 Pending changes live in memory. Airplane mode, tap, swipe up, kill the app:
 the write never existed. This is the bug that shipped to production for me.
@@ -608,6 +660,9 @@ retry: {
 },
 ```
 
+???
+_16:20_
+
 --
 
 **The trap:** a change the server will _never_ accept
@@ -618,8 +673,6 @@ retry: {
 Infinite retry needs a poison-pill escape hatch.
 
 ???
-~1m30.
-
 `retrySync` is two words that separate a demo from a product.
 
 Then the honest part: `infinite: true` means infinite. I have watched a queue
@@ -640,6 +693,8 @@ SIGNAL RETURNS · THE QUEUE DRAINS · A DELTA COMES BACK
 <object data="./images/offline-first/scene-3-reconciliation.svg" type="image/svg+xml" aria-label="scene-3-reconciliation"></object>
 
 ???
+_16:50_
+
 Say it, don't show it: "A change the server will never accept retries forever. Count the failures, then decide."
 
 On screen (Reconciliation):
@@ -656,7 +711,7 @@ On screen (Reconciliation):
 - last write wins, updatePartial: true
 - DURABLE REPLICA
 
-~30s. Signal is back. Read the arrows once, left to right: the queue drains
+Signal is back. Read the arrows once, left to right: the queue drains
 as upserts, ids came from the phone so retries are safe. A delta comes back
 with tombstones. Fields merge, last write wins. That is the four decisions
 drawn as one picture. Next slide is the same thing as code.
@@ -686,19 +741,25 @@ export const games$ = observable(
 );
 ```
 
+???
+_17:40_
+
 --
 
-Four lines more than the README. That is the whole talk.
+Four lines more than the minimal config. That is the whole talk.
 
 ???
-~1m. Don't read it. Point at the four numbers, name each decision once.
+Don't read it. Point at the four numbers, name each decision once.
 
-"Ids. Deletes. Conflicts. Retries. Four lines. Everything else in this config,
-the README gave you."
+"Ids. Deletes. Conflicts. Retries. Four lines. Everything else was already
+in the minimal config."
 
 ---
 
 # The trade-offs
+
+???
+_18:40_
 
 --
 
@@ -718,7 +779,7 @@ the README gave you."
 - Two people editing the same text? You don't need this either. You need a CRDT.
 
 ???
-~1m15. This is where the abstract's "hard-won" claim gets paid.
+This is where the abstract's "hard-won" claim gets paid.
 
 The store-dump screen is not optional. The first bug report you get will be
 "it works on my phone". You need to see their queue, their last-sync, their
@@ -739,6 +800,8 @@ SAME APP · SAME BASEMENT · THE TRUTH IS ALREADY ON THE PHONE
 <object data="./images/offline-first/scene-4-airplane-mode.svg" type="image/svg+xml" aria-label="scene-4-airplane-mode"></object>
 
 ???
+_19:05_
+
 Say it, don't show it: "No spinner. No error screen. Two changes waiting for a signal that can take its time."
 
 On screen (Airplane mode: same app, it just works):
@@ -759,7 +822,7 @@ On screen (Airplane mode: same app, it just works):
 - POSTGRES
 - NO SIGNAL
 
-~30s. Callback to the three spinners from the open. Don't narrate it, it
+Callback to the three spinners from the open. Don't narrate it, it
 loops every 12 seconds: add, delete, force-quit, reopen, still there.
 Let it run twice. Then the one line: no spinner, no error screen.
 
@@ -769,12 +832,15 @@ class: center, middle
 
 # The device owns the truth
 
+???
+_19:25_
+
 --
 
 The server is just the **other** device — the one that syncs slowest.
 
 ???
-~30s. This is the takeaway. Say it, stop talking, let it land.
+This is the takeaway. Say it, stop talking, let it land.
 
 If they remember one sentence from twenty minutes, it is this one.
 
@@ -782,13 +848,16 @@ If they remember one sentence from twenty minutes, it is this one.
 
 ## Your mission today
 
+???
+_19:50_
+
 --
 
 - Open your app. Turn on airplane mode. Tap something. **Today.**
 
 --
 
-- Identify the "White Screen's of hell" in your app and fix them.
+- Identify the "White Screens of Hell" in your app and fix them.
 
 --
 
@@ -800,7 +869,7 @@ If they remember one sentence from twenty minutes, it is this one.
   grocery store with no signal.
 
 ???
-~45s. Make the airplane-mode thing feel like a dare.
+Make the airplane-mode thing feel like a dare.
 Most of them have never done it once.
 
 ---
@@ -816,7 +885,8 @@ Slides: [**davidl.fr/courses/offline-first.html**](https://davidl.fr/courses/off
 French React Native podcast: **Le Cross Platform Show**
 
 ???
+_20:00_
 
-I am David aka @flexbox on the internet.
+I am David aka @flexbox\_ on the internet.
 
 That was my talk. Thank you.
