@@ -64,9 +64,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           Made by{' '}
           <a
             className="text-zinc-400 underline-offset-4 hover:text-accent hover:underline"
-            href="https://davidl.fr"
+            href="https://twitter.com/intent/follow?screen_name=flexbox_"
+            rel="noreferrer"
+            target="_blank"
           >
-            David Leuliette
+            David Leuliette (@flexbox_)
           </a>{' '}
           ·{' '}
           <a
