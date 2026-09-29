@@ -19,9 +19,9 @@ layout: false
 ???
 _00:15_
 
-Checkpoints: The easy part 05:05 · Four decisions 07:05 · 4. Does it survive? 14:40 · The whole thing 16:50 · end 20:00
+Guten Tag.
 
-Guten Tag. 20 minutes. One idea: the device owns the truth.
+One idea: the device owns the truth.
 
 ---
 
@@ -31,6 +31,8 @@ class: center, bsod
 
 ???
 _00:40_
+
+Hands up. Wait for it.
 
 --
 
@@ -43,7 +45,6 @@ _00:40_
 Microsoft Windows
 
 ???
-Hands up. Wait for it.
 
 I am officially at the same level as Bill Gates, because I had a blue screen of death on stage.
 
@@ -67,7 +68,7 @@ _00:55_
 Microsoft Xbox 360
 
 ???
-The Red Ring was a hardware failure indicator on the Xbox 360.
+The Red Ring was a hardware failure indicator on the Microsoft Xbox 360.
 
 ---
 
@@ -89,10 +90,9 @@ _01:20_
 David Leuliette Microsoft MVP
 
 ???
-Deadpan. If no hands go up, that's the joke — say so.
-
 As a Microsoft MVP, I have seen my fair share of device failures.
-And I can officially name the "White Screen of Hell" as one of them.
+
+I can officially name the "White Screen of Hell" as one of them.
 
 ---
 
@@ -140,22 +140,17 @@ THE TRUTH LIVES ON THE SERVER · THE PHONE ASKS FOR IT
 ???
 _02:15_
 
-Say it, don't show it: "The server is fine. The phone is not, and it has no data of its own to fall back on."
-
 On screen (Classic: server holds the truth):
 
-- API
-- POSTGRES
-- NO SIGNAL
-- SOURCE OF TRUTH
-- EVERY TAP WAITS HERE
-- reads and writes
-- isPending: true
-- isPending: forever
+This is every app in the room.
 
-This is every app in the room. The truth lives on the server,
-the phone asks for it, and when the phone can't ask, it has nothing.
+The truth lives on the server, the phone asks for it, and when the phone can't ask, it has nothing.
+
 `isPending: forever` is the whole problem in two words.
+
+The server is fine.
+
+The phone is not, and it has no data of its own to fall back on.
 
 ---
 
@@ -176,8 +171,6 @@ For the people who don't know Smashing Magazine, it is a popular online resource
 
 That's how I learned my job, by reading Smashing Magazine books.
 
-and
-
 This quote is basically my whole career. Design for failure seems obvious, right?
 
 ---
@@ -193,7 +186,7 @@ David Leuliette
 ???
 _02:55_
 
-Same sentence, one word changed.
+Same sentence, one word changed: "offline data first"
 
 Offline is an error state we ship to every user, every day,
 and we still design it last.
@@ -211,6 +204,7 @@ _03:35_
 
 ???
 Offline-first is not a feature for people with no signal.
+
 It is the fastest possible app for everyone, because nothing awaits the network.
 
 --
@@ -219,10 +213,14 @@ It is the fastest possible app for everyone, because nothing awaits the network.
 
 ???
 Instagram, first version: the upload started in the background as soon as
-you picked a filter. While you were still writing the caption,
-the upload was already done.
+you picked a filter.
 
-Tap "Share": instant. That is the same trick.
+While you were still writing the caption, the upload was already done.
+
+Tap "Share": instant.
+
+That is the same trick.
+
 Local first, network later.
 
 ---
@@ -235,25 +233,36 @@ _04:05_
 --
 
 - `setState`
-- Context
 - Redux
 - MobX-State-Tree
-- Apollo
-- Recoil
-- xState
+- Context API (React 16.3)
+- Easy Peasy
+- `useState` / `useReducer` (16.8)
+- XState
+- Zustand
+- Redux Toolkit
+- React Query
 - Jotai
-- zustand
 
 ???
-Ten years in the ecosystem, a new state library every eighteen months.
-None of them cared about the network or were easy to set up.
+Ten years in react, a new state library every time I updated my résumé
+
+Most of them solved client state and treated the network as an afterthought — and the ones that got it right, we only figured out around 2020.
+
+A problem remained: offline and persistence across app kills
 
 ---
 
 ## Why Legend State
 
+--
+
+Tiny and fast
+
 ???
 _04:30_
+
+“The key to building the fastest apps is to minimize the amount of work that React and React Native do. That means having smaller renders, and rendering less often.” — Jay Meistrich
 
 --
 
@@ -268,8 +277,6 @@ The screenshot is in French. Translate it:
 "What are the three things you liked about Legend State for offline?"
 "Second-hand: I handed it all to an intern, who turned out to be great and we hired him back.
 My feeling is that it just works for local vs remote state."
-
-“The key to building the fastest apps is to minimize the amount of work that React and React Native do. That means having smaller renders, and rendering less often. useState and useContext are just fundamentally incompatible with that goal.” — Jay Meistrich
 
 ---
 
@@ -286,9 +293,6 @@ _05:05_
 The lib is `4kb`, fast, and the sync engine is built in.
 
 Catalin Miron pointed me at it at `App.js` 2022 (That's why it's important to come to conferences to meet people and have random conversations).
-
-That is the extent of the library pitch. The rest of the talk is not about
-Legend State. It is about the four things Legend State can't decide for you.
 
 ---
 
@@ -388,10 +392,14 @@ On screen (Offline-first: the write):
 
 ---
 
-# Four decisions
+# 4 decisions
 
 ???
 _07:40_
+
+That is the extent of the library pitch. The rest of the talk is not about Legend State.
+
+It is about the 4 things Legend State can't decide for you.
 
 --
 
