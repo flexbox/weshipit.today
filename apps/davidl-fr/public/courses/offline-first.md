@@ -125,7 +125,10 @@ _01:45_
 It will wait forever.
 
 ???
-Grocery store. Basement. Regional train.
+Grocery store
+Basement
+The ICE train
+A conference with 6,000 attendees
 
 ---
 
@@ -257,8 +260,6 @@ A problem remained: offline and persistence across app kills
 
 --
 
-Tiny and fast
-
 ???
 _04:30_
 
@@ -278,6 +279,8 @@ The screenshot is in French. Translate it:
 "Second-hand: I handed it all to an intern, who turned out to be great and we hired him back.
 My feeling is that it just works for local vs remote state."
 
+Catalin Miron pointed me at it at `App.js` 2022 (That's why it's important to come to conferences to meet people and have random conversations).
+
 ---
 
 ## Why Legend State
@@ -290,9 +293,11 @@ _05:05_
 .legend-shot[<object data="./images/offline-first/scene-state-benchmark.svg" type="image/svg+xml" data-play-on-show aria-label="Legend State benchmark"></object>]
 
 ???
-The lib is `4kb`, fast, and the sync engine is built in.
 
-Catalin Miron pointed me at it at `App.js` 2022 (That's why it's important to come to conferences to meet people and have random conversations).
+Tiny and fast
+The lib is `4kb`, fast, and the persistance layer with sync engine is built in.
+
+I will not talk about one global state or multiple atoms because you can do whatever you want.
 
 ---
 
@@ -333,12 +338,16 @@ Do NOT call this production-ready.
 
 ```js
 const games = useValue(games$);
+```
 
+```js
 games$[id].title.set('The Legend Of Zelda');
 ```
 
 ???
 _06:35_
+
+Legend State works with observable functions `get` and `set`, it lives outside of the react world so you can use it anywhere, notifications, background tasks, tests. No Provider, no Context.
 
 --
 
@@ -353,7 +362,6 @@ It is not why your app breaks.
 The pivot. Four decisions come after this.
 
 Say "it syncs when you land" with full confidence.
-Decision 4 is where I admit I lied.
 
 ---
 
@@ -865,11 +873,11 @@ _19:50_
 
 --
 
-- Identify the "White Screens of Hell" in your app and fix them.
+- Talk to random people about how their app behaves offline and make new friends.
 
 --
 
-- Then answer the four questions _before_ your first `observable()`.
+- Identify the "White Screens of Hell" in your app and fix them.
 
 --
 
@@ -877,8 +885,6 @@ _19:50_
   grocery store with no signal.
 
 ???
-Make the airplane-mode thing feel like a dare.
-Most of them have never done it once.
 
 ---
 
@@ -895,6 +901,8 @@ French React Native podcast: **Le Cross Platform Show**
 ???
 _20:00_
 
-I am David aka @flexbox\_ on the internet.
+I am David aka `@flexbox_` on the internet.
 
-That was my talk. Thank you.
+That was my talk.
+
+Thank you.
