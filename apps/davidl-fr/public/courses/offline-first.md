@@ -666,8 +666,6 @@ The day someone exercises Article 17 you need a real `DELETE` that also tells
 every device the row is gone — and a tombstone is the only way to tell them,
 so you keep a stub with the payload stripped.
 
-If I get one question after this talk, it is this one.
-
 ---
 
 # 3. Who wins?
