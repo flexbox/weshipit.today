@@ -21,6 +21,8 @@ _00:15_
 
 Guten Tag.
 
+Welcome to "Offline First Mobile Apps with React Native & Legend State"
+
 One idea: the device owns the truth.
 
 ---
@@ -32,7 +34,9 @@ class: center, bsod
 ???
 _00:40_
 
-Hands up. Wait for it.
+Hands up.
+
+Wait for it.
 
 --
 
@@ -125,10 +129,46 @@ _01:45_
 It will wait forever.
 
 ???
-Grocery store
-Basement
-The ICE train
-A conference with 6,000 attendees
+
+---
+
+### Regional Trains
+
+![](./images/offline-first/markus-winkler-3t3Tk-BYiA4-unsplash.jpg)
+
+thanks to[Markus Winkler](https://unsplash.com/photos/silver-and-red-bullet-train-3t3Tk-BYiA4) - Available for hire.
+
+???
+The same infinite spinner could arrive when you are on a regional train
+
+---
+
+### DIY Store
+
+![](./images/offline-first/tianlei-wu-sf6YUxvCoro-unsplash.jpg)
+
+thanks to [Tianlei Wu](https://unsplash.com/photos/person-walks-down-aisle-of-stocked-warehouse-shelves-sf6YUxvCoro) - Available for hire.
+
+???
+DIY store with the list of items you need to buy to fix your bathroom
+
+on a saturday
+
+with wife and kids running around
+
+---
+
+###  Fancy Bar
+
+![](./images/offline-first/qui-nguyen-S6atLH5Rf0U-unsplash.jpg)
+
+thanks to [qui nguyen](https://unsplash.com/photos/empty-chairs-and-tables-inside-lighte-room-cnTdKzMOBns) - Available for hire.
+
+---
+
+### A conference with 6,000 attendees
+
+![](./images/offline-first/nextapp-conf.jpg)
 
 ---
 
@@ -143,11 +183,11 @@ THE TRUTH LIVES ON THE SERVER · THE PHONE ASKS FOR IT
 ???
 _02:15_
 
-On screen (Classic: server holds the truth):
+Here is a classic situation: like most of the apps in the room.
 
-This is every app in the room.
+The truth lives on the server, the phone asks for it,
 
-The truth lives on the server, the phone asks for it, and when the phone can't ask, it has nothing.
+and when the phone can't ask, it has nothing.
 
 `isPending: forever` is the whole problem in two words.
 
@@ -168,13 +208,17 @@ Vitaly Friedman — co-founder, Smashing Magazine
 ???
 _02:40_
 
-I am so happy to give this talk in Berlin today.
+People from Berlin, today I am so happy to give this talk here.
 
-For the people who don't know Smashing Magazine, it is a popular online resource for web designers and developers, from Germany.
+For the ones who don't know, Smashing Magazine is a popular online resource for web designers and developers, from Germany.
 
 That's how I learned my job, by reading Smashing Magazine books.
 
-This quote is basically my whole career. Design for failure seems obvious, right?
+This quote is basically my whole career.
+
+Why don’t we design error messages first?
+
+Design for failure seems obvious, right?
 
 ---
 
@@ -189,10 +233,12 @@ David Leuliette
 ???
 _02:55_
 
-Same sentence, one word changed: "offline data first"
-
 Offline is an error state we ship to every user, every day,
 and we still design it last.
+
+Thank you Vitaly I will hack your quote and change one word
+
+Why don’t we design offline data first?
 
 ---
 
@@ -228,10 +274,12 @@ Local first, network later.
 
 ---
 
-## 10 years of React state
+## 10+ years of React state
 
 ???
 _04:05_
+
+I have been working with React state for over 3 600 days.
 
 --
 
@@ -250,7 +298,9 @@ _04:05_
 ???
 Ten years in react, a new state library every time I updated my résumé
 
-Most of them solved client state and treated the network as an afterthought — and the ones that got it right, we only figured out around 2020.
+Most of them solved client state and treated the network as an afterthought — and the ones that got it right,
+
+we only figured out around 2020.
 
 A problem remained: offline and persistence across app kills
 
@@ -263,41 +313,55 @@ A problem remained: offline and persistence across app kills
 ???
 _04:30_
 
-“The key to building the fastest apps is to minimize the amount of work that React and React Native do. That means having smaller renders, and rendering less often.” — Jay Meistrich
+The key to building the fastest apps
 
---
+is to minimize the amount of work that React do.
+
+That means having smaller renders,
+
+and rendering less often.
+
+–Jay Meistrich
+
+In the next session, he will talk about how desktop apps can benefit from the same principles.
+
+in 2022 at `App.js` Catalin Miron pointed me to this library (That's why it's important to come to conferences to meet people and have random conversations).
+
+---
+
+## Why Legend State
 
 ### It just works
 
 .it-works[![Slack feedback](./images/offline-first/legend-state-works.png)]
 
 ???
-Even a human can write the code correctly, can you believe that it works?
+Even a human can write the code correctly, can you believe that?
 
 The screenshot is in French. Translate it:
+
+I asked to my friend:
+
 "What are the three things you liked about Legend State for offline?"
+
 "Second-hand: I handed it all to an intern, who turned out to be great and we hired him back.
 My feeling is that it just works for local vs remote state."
-
-Catalin Miron pointed me at it at `App.js` 2022 (That's why it's important to come to conferences to meet people and have random conversations).
 
 ---
 
 ## Why Legend State
 
-???
-_05:05_
-
---
-
 .legend-shot[<object data="./images/offline-first/scene-state-benchmark.svg" type="image/svg+xml" data-play-on-show aria-label="Legend State benchmark"></object>]
 
 ???
 
-Tiny and fast
-The lib is `4kb`, fast, and the persistance layer with sync engine is built in.
+The lib is tiny and fast (only `4kb`)
 
-I will not talk about one global state or multiple atoms because you can do whatever you want.
+and the persistance layer with the sync engine is built in.
+
+I will not talk about one global state versus multiple atoms because you can do whatever you want.
+
+It's pure JavaScript.
 
 ---
 
