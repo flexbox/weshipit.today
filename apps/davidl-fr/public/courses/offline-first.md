@@ -682,27 +682,49 @@ Your table needs a `deleted` boolean column, default false.
 ???
 _11:55_
 
---
-
-- Rows never actually leave. You need a reaper job.
+Tombstones fix sync, but they are not free. Three costs.
 
 --
 
-- Every query, every view, every RLS policy filters `deleted = false`.
-  Forget once and deleted data reappears in a list.
-
---
-
-- "Delete my account" now means two different things.
-  Your GDPR erasure path is **not** `fieldDeleted`.
+1. **Deleted rows stay in your database.**<br>
+   <small>Add a cleanup job that really deletes old tombstones, e.g. after 30 days.</small>
 
 ???
-Berlin audience: the GDPR line lands. Do not rush it.
+Every delete is now an update, so the table only grows.
+A scheduled job (a cron, or `pg_cron` in Supabase) removes tombstones older than 30 days.
 
-Soft delete is a sync primitive. It is not a legal delete.
-The day someone exercises Article 17 you need a real `DELETE` that also tells
-every device the row is gone — and a tombstone is the only way to tell them,
-so you keep a stub with the payload stripped.
+_If asked: a phone offline for more than 30 days missed those tombstones.
+When it comes back, do a full sync instead of "changes since last sync"._
+
+--
+
+1. **Every read must skip deleted rows.**<br>
+   <small>Each query, each view, each Supabase access rule needs `deleted = false`.
+   Forget it once, and deleted games come back in a list.</small>
+
+???
+This is the bug you will ship: one screen, one query without the filter,
+and a game the user deleted last week shows up again.
+
+"Access rules" = Row Level Security policies in Supabase.
+Put the filter there or in a view, so nobody has to remember it.
+
+--
+
+1. **A tombstone is not a legal delete.**<br>
+   <small>With `deleted: true`, the data is still there.
+   "Delete my account" (GDPR) needs a real erase.</small>
+
+???
+Berlin audience: this one lands. Do not rush it.
+
+GDPR (Article 17, the "right to be forgotten"): when a user asks,
+their personal data must actually be erased.
+A tombstone only hides it: the name, the email, everything is still in the row.
+
+So for "delete my account": wipe every personal field,
+and keep only the id with `deleted: true`.
+The phones still learn the row is gone, and the data is really erased.
 
 ---
 
