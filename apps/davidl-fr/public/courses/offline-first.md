@@ -487,45 +487,61 @@ It is about the 4 things Legend State can't decide for you.
 
 --
 
-1. Who makes the id?
-
---
-
-1. How do you delete a row?
-
---
-
-1. Who wins?
-
---
-
-1. Does it survive a force-quit?
-
---
-
-Nobody makes these on purpose.
-You inherit them from the defaults.
+1. **Who makes the id?**<br>
+   <small>Offline, there is no server to number the new row.</small>
 
 ???
-This is the map. Say the four out loud, they are the spine of the talk.
+
+Ids: "Offline, nobody is there to bump the row number."
+
+--
+
+1. **How do you delete a row?**<br>
+   <small>A phone that was offline must still learn the row is gone.</small>
+
+???
+
+Deletes: "A phone that was offline still has to learn the row is gone."
+
+--
+
+1. **Who wins?**<br>
+   <small>Two phones edit the same row offline. Both sync. Which edit stays?</small>
+
+???
+
+Conflicts: "Two phones, same row, both offline. When they both sync, one edit replaces the other. Which one?"
+
+--
+
+1. **Does it survive a force-quit?**<br>
+   <small>Changes wait in the queue. The user kills the app. Are they still there?</small>
+
+???
+
+Force-quit: "Changes are waiting in the queue. The user kills the app.
+Are they still there?"
+
 "Every one of these has a default. Every default is wrong for offline."
 
 ---
 
 # 1. Who makes the id?
 
-???
-_09:10_
-
 --
 
-Offline, there is no server to ask.
+In space, there is no server to ask.
+
+???
+No one will help you.You are responsible for generating the id locally.
 
 --
 
 ```js
+// provide a function to generate ids locally
+const generateId = () => uuidv7();
 configureSyncedSupabase({
-  generateId: () => uuidv7(),
+  generateId,
 });
 ```
 
@@ -533,9 +549,17 @@ configureSyncedSupabase({
 
 Your primary key is now a guess made by the client.
 
-- `bigint generated always as identity` — gone
-- UUID **v4** is random: it shreds your Postgres index. Use **v7**, it sorts by time
-- a client picks its own ids now, so RLS is not optional anymore
+--
+
+`bigint generated always as identity` — gone
+
+--
+
+UUID **v4** is random: it shreds your Postgres index. Use **v7**, it sorts by time
+
+--
+
+a client picks its own ids now, so RLS is not optional anymore
 
 --
 
