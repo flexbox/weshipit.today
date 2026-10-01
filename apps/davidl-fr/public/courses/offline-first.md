@@ -128,6 +128,10 @@ _01:45_
 
 It will wait forever.
 
+--
+
+You may be online but not online.
+
 ???
 
 ---
@@ -397,8 +401,9 @@ But you can use `CRUD` operations with any backend.
 
 I use MMKV for local persistence because it's fast and reliable.
 
-It is deliberately incomplete — 4 lines are
-missing and the rest of the talk is those 4 lines.
+The setup is deliberately incomplete — 4 lines are missing.
+
+The rest of the talk is those 4 lines.
 
 ---
 
@@ -468,7 +473,7 @@ Follow the tap from top to bottom:
 On the right, Supabase is grey on purpose: I'm offline. The NO SIGNAL
 cross doesn't matter. The app never asked the network for anything.
 
-Key line: "Nothing in this picture waited for the network."
+Nothing in this picture waited for the network.
 
 Every choice that follows is about what happens in that queue.
 
@@ -528,58 +533,59 @@ Are they still there?"
 
 # 1. Who makes the id?
 
+???
+_09:10_
+
+Story: you tap "add" in a basement. The new row needs an id right now.
+Normally the database picks it (1, 2, 3…). The database is not there.
+
 --
 
-In space, there is no server to ask.
-
-???
-No one will help you.You are responsible for generating the id locally.
+Offline, there is no server to ask.
+**The phone creates the id.**
 
 --
 
 ```js
 // provide a function to generate ids locally
-const generateId = () => uuidv7();
+const generateId = () => uuidv4();
 configureSyncedSupabase({
   generateId,
 });
 ```
 
---
-
-Your primary key is now a guess made by the client.
-
---
-
-`bigint generated always as identity` — gone
+???
+`uuidv7()` comes from the `uuid` package.
+A UUID is a random-looking id like `0192f1c4-…`. Two phones will never make the same one.
 
 --
 
-UUID **v4** is random: it shreds your Postgres index. Use **v7**, it sorts by time
+Use **UUID v7**, not v4.
 
---
-
-a client picks its own ids now, so RLS is not optional anymore
-
---
-
-You can't flip a live table from identity to UUID. That is a migration, with users on it.
+<small>v7 starts with the time, so new rows are stored in order.<br>
+v4 is fully random, so the database index gets slower as the table grows.</small>
 
 ???
-The last line is the point of the whole talk: this is a one-way door.
-Every foreign key, every URL, every analytics event carries the old id.
-Decide before the first row, or pay for it with a migration and a maintenance window.
+If asked: v4 inserts land on random pages of the index (page splits, bloat).
+v7 always lands at the end, like an auto-increment. People thank me for this one.
 
-Start with the obvious: you tap "add", you are in a basement, the row needs
-a primary key right now. The server is not there to give you one.
+--
 
-The v4 vs v7 point is the one people thank me for afterwards. v4 is random, so
-every insert lands on a random B-tree page: page splits, bloated index. v7 is
-time-ordered, inserts go to the right-hand edge like a serial does.
+The phone now chooses ids, so the database must check every write.
 
-The RLS line is the scary one. An id is no longer something the server controls.
-A hostile client can send any id it wants, including one that already exists.
-Your row-level security policy is the only thing standing there.
+<small>In Supabase that is **Row Level Security** (RLS):
+rules in Postgres that say which rows each user can read and write.</small>
+
+???
+Without those rules, any client can send any id, including someone else's row.
+
+--
+
+Decide this **before the first row**. Changing ids later means a migration.
+
+???
+Even on a new project, this is day-one: every foreign key, URL and analytics
+event will carry these ids.
 
 ---
 
@@ -587,14 +593,6 @@ Your row-level security policy is the only thing standing there.
 
 ???
 _10:40_
-
---
-
-```js
-fieldDeleted: 'deleted',
-```
-
-_(you were told to remember this one)_
 
 --
 
@@ -611,7 +609,21 @@ So you don't delete. You tombstone 🪦.
 
 --
 
+```js
+export const games$ = observable(
+  syncedSupabase({
+    // ...
+    changesSince: 'last-sync',
+    fieldDeleted: 'deleted',
+  }),
+);
+```
+
+--
+
 The rows you already hard-deleted? Gone. No device will ever learn about them.
+
+--
 
 ???
 This one breaks people's mental model, so slow down here.
@@ -837,7 +849,7 @@ drawn as one picture. Next slide is the same thing as code.
 # The whole thing
 
 ```js
-configureSyncedSupabase({ generateId: () => uuidv7() }); // 1
+configureSyncedSupabase({ generateId: () => uuidv7() }); // 1 id generation
 
 export const games$ = observable(
   syncedSupabase({
@@ -845,14 +857,14 @@ export const games$ = observable(
     collection: 'games',
     changesSince: 'last-sync',
     fieldUpdatedAt: 'updated_at',
-    fieldDeleted: 'deleted', // 2
-    updatePartial: true, // 3
+    fieldDeleted: 'deleted', // 2 deletions
+    updatePartial: true, // 3 conflict resolution
     persist: {
       name: 'games',
       plugin: ObservablePersistMMKV,
-      retrySync: true, // 4
+      retrySync: true, // 4 offline-first persistence
     },
-    retry: { infinite: true }, // 4
+    retry: { infinite: true }, // 4 infinite retry
   }),
 );
 ```
