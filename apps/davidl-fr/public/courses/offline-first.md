@@ -365,7 +365,7 @@ It's pure JavaScript.
 
 ---
 
-# The easy part
+# Let's define the observable state
 
 ```js
 import { observable } from '@legendapp/state';
@@ -376,13 +376,12 @@ export const games$ = observable(
   syncedSupabase({
     supabase,
     collection: 'games',
+    // Persist data and pending changes locally
     persist: {
       name: 'games',
       plugin: ObservablePersistMMKV,
     },
-    changesSince: 'last-sync',
-    fieldUpdatedAt: 'updated_at',
-    fieldDeleted: 'deleted',
+    // ... 4 more lines are missing
   }),
 );
 ```
@@ -390,11 +389,16 @@ export const games$ = observable(
 ???
 _05:55_
 
-Point at fieldDeleted: "remember this line" — pays off in decision 2.
+This is the minimal config.
 
-This is the minimal config. It is deliberately incomplete — four lines are
-missing and the rest of the talk is those four lines.
-Do NOT call this production-ready.
+As you can see I rely on supabase for the remote sync.
+
+But you can use `CRUD` operations with any backend.
+
+I use MMKV for local persistence because it's fast and reliable.
+
+It is deliberately incomplete — 4 lines are
+missing and the rest of the talk is those 4 lines.
 
 ---
 
@@ -409,23 +413,34 @@ games$[id].title.set('The Legend Of Zelda');
 ```
 
 ???
-_06:35_
 
-Legend State works with observable functions `get` and `set`, it lives outside of the react world so you can use it anywhere, notifications, background tasks, tests. No Provider, no Context.
+In Legend State you work with observable functions `get` and `set`,
 
---
+it lives outside of the react world
 
-That write works on a plane. It syncs when you land.
+The benefit is that you can use it anywhere, notifications, background tasks, tests.
+
+No Provider, no Context.
 
 --
 
 This is the part everyone already gets right.
+
+--
+
+That write works on a plane.
+
+--
+
+It syncs when you land.
+
+--
+
 It is not why your app breaks.
 
 ???
-The pivot. Four decisions come after this.
 
-Say "it syncs when you land" with full confidence.
+**it syncs when you land**.
 
 ---
 
@@ -442,25 +457,22 @@ _07:05_
 
 Same drawing, flipped. The truth lives on the phone.
 
-Tap, re-render, queue.
+The cloud is grey on purpose, because you are offline.
 
 Nothing in this picture awaited the network.
 
-The cloud is grey on purpose.
+Tap, re-render, informations are added to the queue.
 
 Every choice that follows is about what happens in that queue.
 
-On screen (Offline-first: the write):
+The timeline is:
 
-- RE-RENDERED AT ~0 MS
+- re-rendered at ~0 ms
 - listeners fire before disk
-- LOCAL STORE · SOURCE OF TRUTH
+- local store · source of truth
 - persisted on device
-- PENDING QUEUE
+- pending queue
 - waits for signal
-- API
-- POSTGRES
-- NO SIGNAL
 
 ---
 
@@ -937,16 +949,16 @@ _19:50_
 
 --
 
-- Talk to random people about how their app behaves offline and make new friends.
-
---
-
 - Identify the "White Screens of Hell" in your app and fix them.
 
 --
 
+- Talk to random people about how their app behaves offline and make new friends.
+
+--
+
 - Because milliseconds matter — and so does the basement of a
-  grocery store with no signal.
+  DIY store with no signal.
 
 ???
 
@@ -958,9 +970,9 @@ Mobile Engineer @ sunday
 
 `@flexbox_`
 
-Slides: [**davidl.fr/courses/offline-first.html**](https://davidl.fr/courses/offline-first.html)
+Slides: [**davidl.fr/courses/offline-first.html**](https://davidl.fr/courses)
 
-French React Native podcast: **Le Cross Platform Show**
+French React Native podcast: [**Le Cross Platform Show**](https://weshipit.today/podcast)
 
 ???
 _20:00_
