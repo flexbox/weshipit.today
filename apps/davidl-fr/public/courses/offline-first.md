@@ -733,17 +733,35 @@ The phones still learn the row is gone, and the data is really erased.
 ???
 _13:40_
 
---
-
-Two devices. Same row. Both offline.
+Tell it as a story. One game, two phones, both offline.
 
 --
 
-Nothing detects anything. **Last write wins.**
+Two phones edit the same game. Both offline.
+
+```js
+// on the server  { title: 'Zelda',      done: false }
+// phone A        { title: 'Zelda TOTK', done: false }  renames it
+// phone B        { title: 'Zelda',      done: true  }  ticks it
+```
+
+???
+Phone A renames the game. Phone B ticks it as done.
+Different fields. Nobody is in conflict. Both edits should survive.
 
 --
 
-And by default Legend State sends the **whole object**:
+**The last phone to sync wins.**
+By default Legend State sends the **whole row**.
+
+<small>B syncs last and sends `title: 'Zelda'` too: A's rename is gone. No error.</small>
+
+???
+Legend State has no conflict resolution, and does not pretend to.
+The last write to reach the server replaces the row. That is "last write wins".
+
+The trap is the default: an update sends the whole row,
+so B also sends the old title it never touched, and erases A's rename.
 
 --
 
@@ -751,61 +769,63 @@ And by default Legend State sends the **whole object**:
 updatePartial: true, // send only the fields that changed
 ```
 
---
-
-Without it, device B reverts a field it never touched.
-
---
-
-And "last" is decided by `updated_at`. **The phone never writes that column.**
-A Postgres trigger does.
+<small>A sends only `title`, B sends only `done`: both edits are kept.</small>
 
 ???
-The clock line: `changesSince: 'last-sync'` and last-write-wins both read
-`updated_at`. If the device stamps it, you are trusting a clock the user can
-set by hand, that drifts, that crosses time zones. Server trigger, always.
-This is a schema decision, not a config flag.
+Same field on both phones? Still last to sync wins,
+but on one field, not the whole row.
 
-The honest framing: Legend State has no conflict resolution. It does not
-pretend to. It is a sync engine, not a CRDT.
+--
 
-`updatePartial` defaults to false, so an update ships the full row. Two people,
-same row, different fields, both offline: the second one to reconnect writes
-all of its fields over all of yours. Your edit is gone and nobody saw an error.
+**The server stamps the time, never the phone:** a Postgres trigger sets `updated_at`.
 
-`updatePartial: true` narrows the blast radius to the fields that actually
-changed. It is still last-write-wins. It is just last-write-wins on one field
-instead of twelve.
+???
+`changesSince: 'last-sync'` uses `updated_at` to find what changed.
+If the phone set it, a wrong phone clock (set by hand, wrong time zone)
+would hide changes from the other phones.
+So a trigger sets it in Postgres. Legend's Supabase docs give you the SQL.
 
 ---
 
 # 3. Who wins?
 
-## So don't put these in the sync layer
+## Keep these on the server
 
 ???
 _14:40_
 
---
-
-- Counters and stock levels — `n = n + 1` is not a value, it's an operation
-- Anything two people edit at once — that is a CRDT's job
-- Money
+Last write wins rule is fine for most data. Not for these three.
 
 --
 
-Move the contested value to the server.
-Let the device own everything else.
+1. **Counters and stock.**<br>
+   <small>Two phones sell the last 10 tickets: both write 9. You sold 2, the server says 9.</small>
+
+--
+
+1. **Text that two people edit at the same time.**<br>
+   <small>That needs a CRDT: a data type that merges edits, like Google Docs.</small>
+
+--
+
+1. **Money.**<br>
+   <small>Balances, payments, refunds. Being wrong is too expensive.</small>
+
+--
+
+For these: ask the server, and show a spinner.
+**Everything else lives on the phone.**
 
 ???
-The real trade-off slide, and the most useful thing I can tell you.
+The most useful thing I can tell you today.
 
 Offline-first is not "everything offline". It is "everything offline
-**except** the things where being wrong is expensive". Inventory, balances,
-seat reservations: those stay server-authoritative, and the UI is allowed
-to show a spinner for them.
+**except** the things where being wrong is expensive".
+Stock, balances, seat reservations: the server decides, and the UI
+is allowed to wait for it.
 
 One spinner in the whole app, on purpose, is a design decision.
+
 Forty accidental ones is a bug.
 
 ---
