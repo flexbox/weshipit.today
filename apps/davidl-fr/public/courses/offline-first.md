@@ -455,24 +455,22 @@ THE TRUTH LIVES ON THE PHONE · THE NETWORK IS NOT INVITED
 ???
 _07:05_
 
-Same drawing, flipped. The truth lives on the phone.
+Same drawing as before, flipped: the truth now lives on the phone.
 
-The cloud is grey on purpose, because you are offline.
+Follow the tap from top to bottom:
 
-Nothing in this picture awaited the network.
+1. **The list.** I tick a box. The row re-renders right away, before
+   anything is saved. Nothing waits.
+2. **The local store** (MMKV). The change is saved on the phone.
+   This is now the source of truth, not the server.
+3. **The pending queue.** The change also waits here, to be sent later.
 
-Tap, re-render, informations are added to the queue.
+On the right, Supabase is grey on purpose: I'm offline. The NO SIGNAL
+cross doesn't matter. The app never asked the network for anything.
+
+Key line: "Nothing in this picture waited for the network."
 
 Every choice that follows is about what happens in that queue.
-
-The timeline is:
-
-- re-rendered at ~0 ms
-- listeners fire before disk
-- local store · source of truth
-- persisted on device
-- pending queue
-- waits for signal
 
 ---
 
@@ -481,7 +479,9 @@ The timeline is:
 ???
 _07:40_
 
-That is the extent of the library pitch. The rest of the talk is not about Legend State.
+That is the extent of the library pitch.
+
+The rest of the talk is not about Legend State.
 
 It is about the 4 things Legend State can't decide for you.
 
