@@ -592,48 +592,86 @@ event will carry these ids.
 # 2. How do you delete?
 
 ???
+Slow down here. This one breaks people's mental model.
+
+--
+
+Phone A deletes a row. Phone B was offline.
+
+When B comes back, it asks: **"what changed since my last sync?"**
+
+???
+Story with two phones:
+Phone A deletes "Zelda". Phone B was offline the whole time.
+
+B comes back and asks the server for the changes since its last sync.
+
+That is what `changesSince: 'last-sync'` does.
+
+--
+
+A deleted row is not in the answer. **B keeps it forever.**
+
+???
+The server answers with the rows that changed.
+A deleted row is not a row anymore: it is simply missing from the answer.
+And for B, "missing" looks exactly like "nothing changed".
+So Zelda stays on phone B. Forever.
+
+---
+
+class: scene
+
+## Deleting offline
+
+HARD DELETE: PHONE B NEVER HEARS ABOUT IT · TOMBSTONE: IT DOES
+
+<object data="./images/offline-first/scene-5-delete.svg" type="image/svg+xml" aria-label="scene-5-delete"></object>
+
+???
 _10:40_
 
---
+The same story, played twice. It loops every 16 seconds.
 
-A hard `DELETE` is **invisible** to a device that was offline.
+1. Hard delete. Phone A deletes Zelda. Postgres removes the row.
+   Phone B comes back and asks "what changed since my last sync?"
+   The answer is empty. Phone B shows Zelda forever.
+2. Tombstone. Same tap. The row stays with `deleted: true`.
+   Phone B gets that change and removes Zelda.
 
---
+Key line: "A missing row says nothing. A tombstone says: I was deleted."
 
-A device cannot sync the absence of a row.
-It has no way to tell "deleted" from "never existed".
+---
 
---
+# 2. How do you delete?
 
-So you don't delete. You tombstone 🪦.
+So you don't delete. You mark it: `deleted: true` 🪦
+
+<small>This marker is called a **tombstone**: the row stays, and says "I was deleted".</small>
+
+???
+The row stays in the database with `deleted = true`.
+
+That is just an update, and updates sync like any other change.
+
+B receives it and removes Zelda from its list.
+
+The tombstone IS the message.
 
 --
 
 ```js
-export const games$ = observable(
-  syncedSupabase({
-    // ...
-    changesSince: 'last-sync',
-    fieldDeleted: 'deleted',
-  }),
-);
+syncedSupabase({
+  // ...
+  changesSince: 'last-sync',
+  fieldDeleted: 'deleted', // delete = set deleted to true
+}),
 ```
 
---
-
-The rows you already hard-deleted? Gone. No device will ever learn about them.
-
---
-
 ???
-This one breaks people's mental model, so slow down here.
-
-`changesSince: 'last-sync'` asks the server: what changed since Tuesday?
-Postgres answers with rows. A deleted row is not a row. It is nothing.
-And nothing is exactly what an empty response looks like.
-
-So the row stays, with a `deleted` boolean, and it syncs like any other change.
-The tombstone IS the message.
+`fieldDeleted` tells Legend State: when the app deletes a row,
+send `deleted: true` instead of a real DELETE.
+Your table needs a `deleted` boolean column, default false.
 
 ---
 
