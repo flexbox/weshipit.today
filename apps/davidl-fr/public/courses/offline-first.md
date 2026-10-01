@@ -845,11 +845,20 @@ _15:05_
 
 Not with the config I showed you.
 
-???
-Own it. The callback is the point — let it sit for a beat.
+--
 
-Pending changes live in memory. Airplane mode, tap, swipe up, kill the app:
-the write never existed. This is the bug that shipped to production for me.
+Airplane mode. Tick Zelda. Swipe up, kill the app. Land.<br>
+**Zelda never reaches the server.**
+
+<small>The list of changes waiting to be sent lived in memory. Killing the app erased it.</small>
+
+???
+Walk through it slowly, one action at a time.
+
+The tick itself is saved on the phone: MMKV has it.
+But the "still has to be sent" list was only in memory.
+Kill the app, and the phone forgets it owes the server anything.
+The server never hears about it.
 
 ---
 
@@ -859,68 +868,84 @@ the write never existed. This is the bug that shipped to production for me.
 persist: {
   name: 'games',
   plugin: ObservablePersistMMKV,
-  retrySync: true,   // pending changes go to MMKV, not just memory
+  retrySync: true, // 1. save the waiting changes on the phone
 },
 retry: {
-  infinite: true,    // keep retrying until it saves
+  infinite: true,  // 2. keep trying until the server says yes
 },
 ```
 
 ???
 _16:20_
 
---
-
-**The trap:** a change the server will _never_ accept
-— RLS reject, deleted parent row — retries forever.
+Two settings.
 
 --
 
-Infinite retry needs a poison-pill escape hatch.
+1. The waiting changes are saved in MMKV: **they survive a kill.**
+2. The phone retries until the change is saved.
 
 ???
 `retrySync` is two words that separate a demo from a product.
+Without it, everything you did offline can vanish on a swipe up.
 
-Then the honest part: `infinite: true` means infinite. I have watched a queue
-retry the same rejected insert for days because the parent row was gone. The
-device is offline-first and also permanently wrong, quietly, forever.
+--
 
-Count the retries, and after N failures surface it or drop it — but decide
-which. Silence is the one option that is always wrong.
+**The trap:** some changes the server will **never** accept.
+
+<small>An access rule blocks it, or the parent row was deleted. Infinite means forever, in silence.</small>
+
+???
+I have watched a phone retry the same rejected insert for days,
+because the game it belonged to was gone.
+
+Offline-first, and wrong forever, without anyone knowing.
+
+--
+
+So count the failures. After a few, **tell the user, or drop the change.**
+
+???
+Pick one. Both are fine. Silence is the one option that is always wrong.
+
+Legend's sync options have an `onError` callback. Start digging there.
 
 ---
 
 class: scene
 
-## Reconciliation
+## Airplane mode
 
-SIGNAL RETURNS · THE QUEUE DRAINS · A DELTA COMES BACK
+SAME APP · SAME BASEMENT · THE TRUTH IS ALREADY ON THE PHONE
 
-<object data="./images/offline-first/scene-3-reconciliation.svg" type="image/svg+xml" aria-label="scene-3-reconciliation"></object>
+<object data="./images/offline-first/scene-4-airplane-mode.svg" type="image/svg+xml" aria-label="scene-4-airplane-mode"></object>
 
 ???
-_16:50_
+_19:05_
 
-Say it, don't show it: "A change the server will never accept retries forever. Count the failures, then decide."
+Say it, don't show it: "No spinner. No error screen. Two changes waiting for a signal that can take its time."
 
-On screen (Reconciliation):
+On screen (Airplane mode: same app, it just works):
 
+- deleted: true
+- SWIPE UP · KILLED
+- AIRPLANE MODE
+- no signal, on purpose
+- ADD · RE-RENDERED AT ~0 MS
+- no spinner, nothing awaited
+- DELETE · TOMBSTONE
+- the row stays, flagged
+- PENDING QUEUE
+- on disk · retrySync: true
+- FORCE-QUIT · REOPEN
+- still there. all of it.
 - API
 - POSTGRES
-- UPSERTS, OLDEST FIRST
-- ids came from the phone, so a retry is idempotent
-- DELTA SINCE last_sync
-- changed rows + tombstones (deleted: true)
-- a hard DELETE would have arrived as nothing
-- LOCAL STORE · STILL THE TRUTH
-- server rows merge in per field
-- last write wins, updatePartial: true
-- DURABLE REPLICA
+- NO SIGNAL
 
-Signal is back. Read the arrows once, left to right: the queue drains
-as upserts, ids came from the phone so retries are safe. A delta comes back
-with tombstones. Fields merge, last write wins. That is the four decisions
-drawn as one picture. Next slide is the same thing as code.
+Callback to the three spinners from the open. Don't narrate it, it
+loops every 12 seconds: add, delete, force-quit, reopen, still there.
+Let it run twice. Then the one line: no spinner, no error screen.
 
 ---
 
@@ -994,43 +1019,6 @@ tombstones. If you can't, you are debugging blind.
 Then the honest part: most apps in this room are read-mostly. A feed with a
 like button does not need a sync engine. Cache it, persist the cache, ship.
 And if it is Google Docs, this is the wrong tool. LWW is not a merge.
-
----
-
-class: scene
-
-## Airplane mode
-
-SAME APP · SAME BASEMENT · THE TRUTH IS ALREADY ON THE PHONE
-
-<object data="./images/offline-first/scene-4-airplane-mode.svg" type="image/svg+xml" aria-label="scene-4-airplane-mode"></object>
-
-???
-_19:05_
-
-Say it, don't show it: "No spinner. No error screen. Two changes waiting for a signal that can take its time."
-
-On screen (Airplane mode: same app, it just works):
-
-- deleted: true
-- SWIPE UP · KILLED
-- AIRPLANE MODE
-- no signal, on purpose
-- ADD · RE-RENDERED AT ~0 MS
-- no spinner, nothing awaited
-- DELETE · TOMBSTONE
-- the row stays, flagged
-- PENDING QUEUE
-- on disk · retrySync: true
-- FORCE-QUIT · REOPEN
-- still there. all of it.
-- API
-- POSTGRES
-- NO SIGNAL
-
-Callback to the three spinners from the open. Don't narrate it, it
-loops every 12 seconds: add, delete, force-quit, reopen, still there.
-Let it run twice. Then the one line: no spinner, no error screen.
 
 ---
 
