@@ -1,7 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "cd ../.. && yarn nx build 9frameworks --prod",
-  "outputDirectory": "../../dist/apps/9frameworks/.next",
+  "buildCommand": "cd ../.. && yarn nx build davidl-fr --prod && yarn nx postbuild davidl-fr",
+  "outputDirectory": "../../dist/apps/davidl-fr/.next",
   "installCommand": "cd ../.. && yarn install --frozen-lockfile",
   "ignoreCommand": "git diff --quiet ${VERCEL_GIT_PREVIOUS_SHA:-HEAD^} HEAD -- . ../../package.json ../../yarn.lock ../../.yarnrc.yml ../../nx.json ../../tsconfig.base.json",
   "framework": "nextjs"
