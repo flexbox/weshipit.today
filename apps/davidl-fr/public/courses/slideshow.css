@@ -377,3 +377,19 @@ a:hover {
   width: 100%;
   height: 100%;
 }
+
+/* two columns: .pull-left[...] .pull-right[...] */
+.remark-slide-content .pull-left,
+.remark-slide-content .pull-right {
+  width: 46%;
+}
+.remark-slide-content .pull-left {
+  float: left;
+}
+.remark-slide-content .pull-right {
+  float: right;
+}
+.remark-slide-content .pull-left li,
+.remark-slide-content .pull-right li {
+  margin: 0.45em 0;
+}

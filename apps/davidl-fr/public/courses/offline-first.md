@@ -1021,40 +1021,43 @@ _19:05_
 
 --
 
-- You now run a **distributed system**. Two sources of truth, permanently.
+.pull-left[
+
+### ✅ We win
+
+- **Instant** UI on every tap
+- Works with **no signal**
+- **Nothing lost** on a force-quit
+- Only **changes** travel
+  ]
+
+???
+For the user: speed and resilience.
+
+The app never waits for the network, and offline is just another day.
 
 --
 
-- Bugs reproduce on one device, in one sync state.
-  Build a "dump the local store" screen on **day one**.
+.pull-right[
+
+### ⚠️ We lose
+
+- **Two sources of truth**
+- **Last write wins**
+- **Database rules**: UUIDs, tombstones, triggers
+- **Harder debugging**
+  ]
 
 ???
-The store-dump screen is not optional. The first bug report you get will be
-"it works on my phone". You need to see their queue, their last-sync, their
-tombstones. If you can't, you are debugging blind.
+For the developer: complexity.
 
---
+Every phone holds a copy, and they can disagree for a while.
 
-- Read-mostly app? You don't need a sync engine.
-  [TanStack Query + a persister](https://tanstack.com/query/latest/docs/framework/react/plugins/createAsyncStoragePersister) is enough.<br>
-  <small>The persister saves what the server said. Legend saves what the user did.</small>
+Bugs depend on one phone's state: build a "dump the local store" screen on day one.
 
-???
-Read-mostly = users mostly look at data, they rarely change it.
-A feed with a like button: cache it, save the cache on the phone, ship.
-The server stays the truth, and that is fine.
+We win speed for the user.
 
-You need Legend's sync when users change data offline:
-a shopping list you edit in the store basement.
-
-Send me a DM if you want a prompt to quickly add the Legend State TanStack Query plugin to migrate to observable queries.
-
---
-
-- Two people editing the same text? You don't need this either. You need a Conflict-free Replicated Data Type.
-
-???
-And if it is Google Docs, this is the wrong tool. Last-Write-Wins (LWW) is not a merge.
+We pay with complexity for the dev.
 
 ---
 
