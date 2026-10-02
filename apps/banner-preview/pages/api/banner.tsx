@@ -7,6 +7,13 @@ export const config = {
   runtime: 'edge',
 };
 
+const interRegular = fetch(
+  new URL(
+    'https://cdn.jsdelivr.net/npm/@fontsource/inter/files/inter-latin-400-normal.woff',
+    import.meta.url,
+  ),
+).then((res) => res.arrayBuffer());
+
 const interMedium = fetch(
   new URL(
     'https://cdn.jsdelivr.net/npm/@fontsource/inter/files/inter-latin-500-normal.woff',
@@ -14,9 +21,11 @@ const interMedium = fetch(
   ),
 ).then((res) => res.arrayBuffer());
 
-const interExtraBold = fetch(
+// Headlines mirror the website's `font-display` token (Space Grotesk 700).
+// Satori can't decode woff2, so pull the .woff build.
+const spaceGroteskBold = fetch(
   new URL(
-    'https://cdn.jsdelivr.net/npm/@fontsource/inter/files/inter-latin-800-normal.woff',
+    'https://cdn.jsdelivr.net/npm/@fontsource/space-grotesk/files/space-grotesk-latin-700-normal.woff',
     import.meta.url,
   ),
 ).then((res) => res.arrayBuffer());
@@ -87,11 +96,13 @@ export default async function handler(req: NextRequest) {
       ({ slug, ext }) => `${origin}/images/podcast-logos/${slug}.${ext}`,
     );
 
-    const [mediumData, extraBoldData, monoRegularData] = await Promise.all([
-      interMedium,
-      interExtraBold,
-      jetbrainsMonoRegular,
-    ]);
+    const [regularData, mediumData, displayData, monoRegularData] =
+      await Promise.all([
+        interRegular,
+        interMedium,
+        spaceGroteskBold,
+        jetbrainsMonoRegular,
+      ]);
 
     return new ImageResponse(
       (
@@ -113,15 +124,21 @@ export default async function handler(req: NextRequest) {
         fonts: [
           {
             name: 'Inter',
+            data: regularData,
+            style: 'normal',
+            weight: 400,
+          },
+          {
+            name: 'Inter',
             data: mediumData,
             style: 'normal',
             weight: 500,
           },
           {
-            name: 'Inter',
-            data: extraBoldData,
+            name: 'Space Grotesk',
+            data: displayData,
             style: 'normal',
-            weight: 800,
+            weight: 700,
           },
           {
             name: 'JetBrains Mono',
