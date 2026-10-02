@@ -399,7 +399,7 @@ As you can see I rely on supabase for the remote sync.
 
 But you can use `CRUD` operations with any backend.
 
-I use MMKV for local persistence because it's fast and reliable.
+I use MMKV for local persistence because it's fast and reliable. But you can use AsyncStorage or SQLite as well.
 
 The setup is deliberately incomplete — 4 lines are missing.
 
@@ -916,36 +916,26 @@ class: scene
 
 ## Airplane mode
 
-SAME APP · SAME BASEMENT · THE TRUTH IS ALREADY ON THE PHONE
+TICK · DELETE · KILL THE APP · REOPEN · LAND · NOTHING IS LOST
 
 <object data="./images/offline-first/scene-4-airplane-mode.svg" type="image/svg+xml" aria-label="scene-4-airplane-mode"></object>
 
 ???
 _19:05_
 
-Say it, don't show it: "No spinner. No error screen. Two changes waiting for a signal that can take its time."
+This is decision 4, in one picture. It loops every 16 seconds.
+Let it play once, quietly, then say the story:
 
-On screen (Airplane mode: same app, it just works):
+1. Airplane mode. I tick Zelda and delete Metroid.
+   The list changes at once: no spinner, nothing waits for the network.
+2. Both changes go into the "waiting to send" queue, saved on the phone
+   (that is `retrySync: true`).
+3. Swipe up, kill the app, reopen it. Both changes are still waiting.
+4. The plane lands. The queue sends itself: Zelda is done and Metroid
+   is deleted in Postgres. Nothing was lost.
 
-- deleted: true
-- SWIPE UP · KILLED
-- AIRPLANE MODE
-- no signal, on purpose
-- ADD · RE-RENDERED AT ~0 MS
-- no spinner, nothing awaited
-- DELETE · TOMBSTONE
-- the row stays, flagged
-- PENDING QUEUE
-- on disk · retrySync: true
-- FORCE-QUIT · REOPEN
-- still there. all of it.
-- API
-- POSTGRES
-- NO SIGNAL
-
-Callback to the three spinners from the open. Don't narrate it, it
-loops every 12 seconds: add, delete, force-quit, reopen, still there.
-Let it run twice. Then the one line: no spinner, no error screen.
+Then the one line, a callback to the spinners from the start:
+"No spinner. No error screen. Two changes waiting for a signal that can take its time."
 
 ---
 
