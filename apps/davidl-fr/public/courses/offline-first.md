@@ -118,7 +118,7 @@ If you are lucky you will have an infinite spinner
 # This app didn’t crash
 
 ???
-_01:45_
+_01:50_
 
 --
 
@@ -132,8 +132,6 @@ It will wait forever.
 
 You may be online but not online.
 
-???
-
 ---
 
 ### Regional Trains
@@ -143,6 +141,8 @@ You may be online but not online.
 thanks to[Markus Winkler](https://unsplash.com/photos/silver-and-red-bullet-train-3t3Tk-BYiA4) - Available for hire.
 
 ???
+_02:05_
+
 The same infinite spinner could arrive when you are on a regional train
 
 ---
@@ -154,6 +154,8 @@ The same infinite spinner could arrive when you are on a regional train
 thanks to [Tianlei Wu](https://unsplash.com/photos/person-walks-down-aisle-of-stocked-warehouse-shelves-sf6YUxvCoro) - Available for hire.
 
 ???
+_02:25_
+
 DIY store with the list of items you need to buy to fix your bathroom
 
 on a saturday
@@ -168,11 +170,17 @@ with wife and kids running around
 
 thanks to [qui nguyen](https://unsplash.com/photos/empty-chairs-and-tables-inside-lighte-room-cnTdKzMOBns) - Available for hire.
 
+???
+_02:35_
+
 ---
 
 ### A conference with 6,000 attendees
 
 ![](./images/offline-first/nextapp-conf.jpg)
+
+???
+_02:45_
 
 ---
 
@@ -185,7 +193,7 @@ THE TRUTH LIVES ON THE SERVER · THE PHONE ASKS FOR IT
 <object data="./images/offline-first/scene-1-classic.svg" type="image/svg+xml" aria-label="scene-1-classic"></object>
 
 ???
-_02:15_
+_03:15_
 
 Here is a classic situation: like most of the apps in the room.
 
@@ -210,7 +218,7 @@ class: center, middle
 Vitaly Friedman — co-founder, Smashing Magazine
 
 ???
-_02:40_
+_03:40_
 
 People from Berlin, today I am so happy to give this talk here.
 
@@ -235,7 +243,7 @@ class: center, middle
 David Leuliette
 
 ???
-_02:55_
+_03:55_
 
 Offline is an error state we ship to every user, every day,
 and we still design it last.
@@ -249,7 +257,7 @@ Why don’t we design offline data first?
 ## We should
 
 ???
-_03:35_
+_04:30_
 
 --
 
@@ -281,7 +289,7 @@ Local first, network later.
 ## 10+ years of React state
 
 ???
-_04:05_
+_05:00_
 
 I have been working with React state for over 3 600 days.
 
@@ -312,24 +320,25 @@ A problem remained: offline and persistence across app kills
 
 ## Why Legend State
 
+???
+_05:30_
+
 --
 
 ???
-_04:30_
-
 The key to building the fastest apps
 
-is to minimize the amount of work that React do.
+is to minimize the amount of work that React and React Native do.
 
-That means having smaller renders,
+That means having **smaller renders**,
 
-and rendering less often.
+and **rendering less often**.
 
 –Jay Meistrich
 
 In the next session, he will talk about how desktop apps can benefit from the same principles.
 
-in 2022 at `App.js` Catalin Miron pointed me to this library (That's why it's important to come to conferences to meet people and have random conversations).
+in 2022, I was in another conference called `App.js` Catalin Miron pointed me to this library (That's why it's important to come to conferences to meet people and have random conversations).
 
 ---
 
@@ -340,6 +349,8 @@ in 2022 at `App.js` Catalin Miron pointed me to this library (That's why it's im
 .it-works[![Slack feedback](./images/offline-first/legend-state-works.png)]
 
 ???
+_05:55_
+
 Even a human can write the code correctly, can you believe that?
 
 The screenshot is in French. Translate it:
@@ -358,6 +369,7 @@ My feeling is that it just works for local vs remote state."
 .legend-shot[<object data="./images/offline-first/scene-state-benchmark.svg" type="image/svg+xml" data-play-on-show aria-label="Legend State benchmark"></object>]
 
 ???
+_06:25_
 
 The lib is tiny and fast (only `4kb`)
 
@@ -391,7 +403,7 @@ export const games$ = observable(
 ```
 
 ???
-_05:55_
+_07:10_
 
 This is the minimal config.
 
@@ -418,6 +430,7 @@ games$[id].title.set('The Legend Of Zelda');
 ```
 
 ???
+_07:55_
 
 In Legend State you work with observable functions `get` and `set`,
 
@@ -458,7 +471,7 @@ THE TRUTH LIVES ON THE PHONE · THE NETWORK IS NOT INVITED
 <object data="./images/offline-first/scene-2-offline-write.svg" type="image/svg+xml" aria-label="scene-2-offline-write"></object>
 
 ???
-_07:05_
+_08:25_
 
 Same drawing as before, flipped: the truth now lives on the phone.
 
@@ -482,7 +495,7 @@ Every choice that follows is about what happens in that queue.
 # 4 decisions
 
 ???
-_07:40_
+_09:00_
 
 That is the extent of the library pitch.
 
@@ -534,7 +547,7 @@ Are they still there?"
 # 1. Who makes the id?
 
 ???
-_09:10_
+_10:20_
 
 Story: you tap "add" in a basement. The new row needs an id right now.
 Normally the database picks it (1, 2, 3…). The database is not there.
@@ -592,6 +605,8 @@ event will carry these ids.
 # 2. How do you delete?
 
 ???
+_11:05_
+
 Slow down here. This one breaks people's mental model.
 
 --
@@ -629,7 +644,7 @@ HARD DELETE: PHONE B NEVER HEARS ABOUT IT · TOMBSTONE: IT DOES
 <object data="./images/offline-first/scene-5-delete.svg" type="image/svg+xml" aria-label="scene-5-delete"></object>
 
 ???
-_10:40_
+_11:35_
 
 The same story, played twice. It loops every 16 seconds.
 
@@ -650,6 +665,8 @@ So you don't delete. You mark it: `deleted: true` 🪦
 <small>This marker is called a **tombstone**: the row stays, and says "I was deleted".</small>
 
 ???
+_12:10_
+
 The row stays in the database with `deleted = true`.
 
 That is just an update, and updates sync like any other change.
@@ -680,7 +697,7 @@ Your table needs a `deleted` boolean column, default false.
 ## What it costs
 
 ???
-_11:55_
+_13:20_
 
 Tombstones fix sync, but they are not free. Three costs.
 
@@ -731,7 +748,7 @@ The phones still learn the row is gone, and the data is really erased.
 # 3. Who wins?
 
 ???
-_13:40_
+_14:50_
 
 Tell it as a story. One game, two phones, both offline.
 
@@ -792,7 +809,7 @@ So a trigger sets it in Postgres. Legend's Supabase docs give you the SQL.
 ## Keep these on the server
 
 ???
-_14:40_
+_15:45_
 
 Last write wins rule is fine for most data. Not for these three.
 
@@ -833,7 +850,7 @@ Forty accidental ones is a bug.
 # 4. Does it survive?
 
 ???
-_15:05_
+_16:20_
 
 --
 
@@ -876,7 +893,7 @@ retry: {
 ```
 
 ???
-_16:20_
+_17:20_
 
 Two settings.
 
@@ -921,7 +938,7 @@ TICK · DELETE · KILL THE APP · REOPEN · LAND · NOTHING IS LOST
 <object data="./images/offline-first/scene-4-airplane-mode.svg" type="image/svg+xml" aria-label="scene-4-airplane-mode"></object>
 
 ???
-_19:05_
+_17:45_
 
 This is decision 4, in one picture. It loops every 16 seconds.
 Let it play once, quietly, then say the story:
@@ -963,7 +980,7 @@ export const games$ = observable(
 ```
 
 ???
-_17:40_
+_18:20_
 
 --
 
@@ -980,7 +997,7 @@ in the minimal config."
 # The trade-offs
 
 ???
-_18:40_
+_19:05_
 
 --
 
@@ -1051,8 +1068,6 @@ _19:50_
 
 - Because milliseconds matter — and so does the basement of a
   DIY store with no signal.
-
-???
 
 ---
 
