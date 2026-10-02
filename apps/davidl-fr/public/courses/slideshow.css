@@ -393,3 +393,27 @@ a:hover {
 .remark-slide-content .pull-right li {
   margin: 0.45em 0;
 }
+
+/* photo slides: heading, photo, credit line always visible.
+   remark slides are a fixed 1210×681 box laid out as a table cell, so the photo
+   gets a fixed max-height that leaves room for the heading and the credit. */
+.remark-slide-content.photo {
+  padding: 1em 2em 1em;
+}
+.remark-slide-content.photo h3 {
+  margin: 0 0 0.4em;
+}
+.remark-slide-content.photo p:has(img) {
+  margin: 0;
+}
+.remark-slide-content.photo p img {
+  display: block;
+  max-height: 540px;
+  max-width: 100%;
+  border-radius: 6px;
+}
+.remark-slide-content.photo p:not(:has(img)) {
+  margin: 0.5em 0 0;
+  font-size: 0.65em;
+  opacity: 0.75;
+}

@@ -134,11 +134,13 @@ You may be online but not online.
 
 ---
 
+class: photo
+
 ### Regional Trains
 
 ![](./images/offline-first/markus-winkler-3t3Tk-BYiA4-unsplash.jpg)
 
-thanks to[Markus Winkler](https://unsplash.com/photos/silver-and-red-bullet-train-3t3Tk-BYiA4) - Available for hire.
+<small>thanks to [Markus Winkler](https://unsplash.com/photos/silver-and-red-bullet-train-3t3Tk-BYiA4) - Available for hire.</small>
 
 ???
 _02:05_
@@ -147,11 +149,13 @@ The same infinite spinner could arrive when you are on a regional train
 
 ---
 
+class: photo
+
 ### DIY Store
 
 ![](./images/offline-first/tianlei-wu-sf6YUxvCoro-unsplash.jpg)
 
-thanks to [Tianlei Wu](https://unsplash.com/photos/person-walks-down-aisle-of-stocked-warehouse-shelves-sf6YUxvCoro) - Available for hire.
+<small>thanks to [Tianlei Wu](https://unsplash.com/photos/person-walks-down-aisle-of-stocked-warehouse-shelves-sf6YUxvCoro) - Available for hire.</small>
 
 ???
 _02:25_
@@ -164,16 +168,20 @@ with wife and kids running around
 
 ---
 
+class: photo
+
 ###  Fancy Bar
 
 ![](./images/offline-first/qui-nguyen-S6atLH5Rf0U-unsplash.jpg)
 
-thanks to [qui nguyen](https://unsplash.com/photos/empty-chairs-and-tables-inside-lighte-room-cnTdKzMOBns) - Available for hire.
+<small>thanks to [qui nguyen](https://unsplash.com/photos/empty-chairs-and-tables-inside-lighte-room-cnTdKzMOBns) - Available for hire.</small>
 
 ???
 _02:35_
 
 ---
+
+class: photo
 
 ### A conference with 6,000 attendees
 
