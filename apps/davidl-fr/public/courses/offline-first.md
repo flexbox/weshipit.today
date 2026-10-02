@@ -388,13 +388,13 @@ import { observable } from '@legendapp/state';
 import { syncedSupabase } from '@legendapp/state/sync-plugins/supabase';
 import { ObservablePersistMMKV } from '@legendapp/state/persist-plugins/mmkv';
 
-export const games$ = observable(
+export const items$ = observable(
   syncedSupabase({
     supabase,
-    collection: 'games',
+    collection: 'items',
     // Persist data and pending changes locally
     persist: {
-      name: 'games',
+      name: 'items',
       plugin: ObservablePersistMMKV,
     },
     // ... 4 more lines are missing
@@ -422,11 +422,11 @@ The rest of the talk is those 4 lines.
 # Reads and writes
 
 ```js
-const games = useValue(games$);
+const items = useValue(items$);
 ```
 
 ```js
-games$[id].title.set('The Legend Of Zelda');
+items$[id].bought.set(true); // in the cart
 ```
 
 ???
@@ -446,11 +446,11 @@ This is the part everyone already gets right.
 
 --
 
-That write works on a plane.
+That write works in the store basement.
 
 --
 
-It syncs when you land.
+It syncs when you walk out of the store.
 
 --
 
@@ -458,7 +458,7 @@ It is not why your app breaks.
 
 ???
 
-**it syncs when you land**.
+**it syncs when you walk out of the store**.
 
 ---
 
@@ -616,8 +616,9 @@ Phone A deletes a row. Phone B was offline.
 When B comes back, it asks: **"what changed since my last sync?"**
 
 ???
-Story with two phones:
-Phone A deletes "Zelda". Phone B was offline the whole time.
+Story with two phones, same shopping list:
+At home, I remove the mirror cabinet: we changed our mind.
+My partner is in the store basement, phone B, offline the whole time.
 
 B comes back and asks the server for the changes since its last sync.
 
@@ -631,7 +632,8 @@ A deleted row is not in the answer. **B keeps it forever.**
 The server answers with the rows that changed.
 A deleted row is not a row anymore: it is simply missing from the answer.
 And for B, "missing" looks exactly like "nothing changed".
-So Zelda stays on phone B. Forever.
+So the mirror cabinet stays on my partner's list. Forever.
+And they buy it.
 
 ---
 
@@ -648,11 +650,11 @@ _11:35_
 
 The same story, played twice. It loops every 16 seconds.
 
-1. Hard delete. Phone A deletes Zelda. Postgres removes the row.
+1. Hard delete. Phone A removes the mirror cabinet. Postgres deletes the row.
    Phone B comes back and asks "what changed since my last sync?"
-   The answer is empty. Phone B shows Zelda forever.
+   The answer is empty. Phone B shows the cabinet forever, and buys it.
 2. Tombstone. Same tap. The row stays with `deleted: true`.
-   Phone B gets that change and removes Zelda.
+   Phone B gets that change and removes the cabinet.
 
 Key line: "A missing row says nothing. A tombstone says: I was deleted."
 
@@ -671,7 +673,7 @@ The row stays in the database with `deleted = true`.
 
 That is just an update, and updates sync like any other change.
 
-B receives it and removes Zelda from its list.
+B receives it and removes the mirror cabinet from the list.
 
 The tombstone IS the message.
 
@@ -718,11 +720,11 @@ When it comes back, do a full sync instead of "changes since last sync"._
 
 1. **Every read must skip deleted rows.**<br>
    <small>Each query, each view, each Supabase access rule needs `deleted = false`.
-   Forget it once, and deleted games come back in a list.</small>
+   Forget it once, and removed items come back in a list.</small>
 
 ???
 This is the bug you will ship: one screen, one query without the filter,
-and a game the user deleted last week shows up again.
+and the cabinet you removed last week shows up again.
 
 "Access rules" = Row Level Security policies in Supabase.
 Put the filter there or in a view, so nobody has to remember it.
@@ -751,22 +753,22 @@ The phones still learn the row is gone, and the data is really erased.
 ???
 _14:50_
 
-Tell it as a story. One game, two phones, both offline.
+Tell it as a story. One shopping list, two phones, both offline.
 
 --
 
-Two phones edit the same game. Both offline.
+Two phones edit the same item. Both offline.
 
 ```js
-// on the server  { title: 'Zelda',      done: false }
-// phone A        { title: 'Zelda TOTK', done: false }  renames it
-// phone B        { title: 'Zelda',      done: true  }  ticks it
+// shower head, on the server  { qty: 1, bought: false }
+// phone A (you)               { qty: 2, bought: false }  "we need two"
+// phone B (your partner)      { qty: 1, bought: true  }  "in the cart"
 ```
 
 ???
-Phone A renames the game.
+At home, I realise we need two shower heads: quantity 2.
 
-Phone B ticks it as done.
+In the store, my partner puts one in the cart: bought.
 
 Different fields.
 
@@ -779,14 +781,15 @@ Both edits should survive.
 **The last phone to sync wins.**
 By default Legend State sends the **whole row**.
 
-<small>B syncs last and sends `title: 'Zelda'` too: A's rename is gone. No error.</small>
+<small>B syncs last and sends `qty: 1` too: your "we need two" is gone. No error.</small>
 
 ???
 Legend State has no conflict resolution, and does not pretend to.
 The last write to reach the server replaces the row. That is "last write wins".
 
 The trap is the default: an update sends the whole row,
-so B also sends the old title it never touched, and erases A's rename.
+so B also sends the old quantity it never touched, and erases mine.
+We go home with one shower head.
 
 --
 
@@ -794,7 +797,7 @@ so B also sends the old title it never touched, and erases A's rename.
 updatePartial: true, // send only the fields that changed
 ```
 
-<small>A sends only `title`, B sends only `done`: both edits are kept.</small>
+<small>A sends only `qty`, B sends only `bought`: both edits are kept.</small>
 
 ???
 Same field on both phones? Still last to sync wins,
@@ -824,7 +827,7 @@ Last write wins rule is fine for most data. Not for these three.
 --
 
 1. **Counters and stock.**<br>
-   <small>Two phones sell the last 10 tickets: both write 9. You sold 2, the server says 9.</small>
+   <small>Two customers take the last mirror cabinet: both phones write stock 0. Two sold, one on the shelf.</small>
 
 --
 
@@ -862,7 +865,7 @@ _16:20_
 
 --
 
-> "It syncs when you land."
+> "It syncs when you walk out of the store."
 >
 > — me, eight minutes ago
 
@@ -872,8 +875,8 @@ Not with the config I showed you.
 
 --
 
-Airplane mode. Tick Zelda. Swipe up, kill the app. Land.<br>
-**Zelda never reaches the server.**
+Store basement. Tick the silicone. Swipe up, kill the app. Walk out.<br>
+**The silicone never reaches the server.**
 
 <small>The list of changes waiting to be sent lived in memory. Killing the app erased it.</small>
 
@@ -894,7 +897,7 @@ The server never hears about it.
 
 ```js
 persist: {
-  name: 'games',
+  name: 'items',
   plugin: ObservablePersistMMKV,
   retrySync: true, // 1. save the waiting changes on the phone
 },
@@ -925,7 +928,7 @@ Without it, everything you did offline can vanish on a swipe up.
 
 ???
 I have watched a phone retry the same rejected insert for days,
-because the game it belonged to was gone.
+because the shopping list it belonged to was gone.
 
 Offline-first, and wrong forever, without anyone knowing.
 
@@ -942,24 +945,24 @@ Legend's sync options have an `onError` callback. Start digging there.
 
 class: scene
 
-## Airplane mode
+## The store basement
 
-TICK · DELETE · KILL THE APP · REOPEN · LAND · NOTHING IS LOST
+TICK · REMOVE · KILL THE APP · REOPEN · WALK OUT · NOTHING IS LOST
 
 <object data="./images/offline-first/scene-4-airplane-mode.svg" type="image/svg+xml" aria-label="scene-4-airplane-mode"></object>
 
 ???
 _17:45_
 
-Here is the entire scenario in Airplane mode
+Here is the entire scenario, in the store basement with no signal
 
-1. I tick Zelda and delete Metroid.
+1. I tick the silicone and remove the mirror cabinet.
    The list changes at once: no spinner, nothing waits for the network.
 2. Both changes go into the "waiting to send" queue, saved on the phone
    (that is `retrySync: true`).
 3. Swipe up, kill the app, reopen it. Both changes are still waiting.
-4. The plane lands. The queue sends itself: Zelda is done and Metroid
-   is deleted in Postgres. Nothing was lost.
+4. I walk out of the store. The queue sends itself: the silicone is bought
+   and the cabinet is deleted in Postgres. Nothing was lost.
 
 No spinner.
 
@@ -974,16 +977,16 @@ Two changes waiting for a signal that can take its time.
 ```js
 configureSyncedSupabase({ generateId: () => uuidv7() }); // 1 id generation
 
-export const games$ = observable(
+export const items$ = observable(
   syncedSupabase({
     supabase,
-    collection: 'games',
+    collection: 'items',
     changesSince: 'last-sync',
     fieldUpdatedAt: 'updated_at',
     fieldDeleted: 'deleted', // 2 deletions
     updatePartial: true, // 3 conflict resolution
     persist: {
-      name: 'games',
+      name: 'items',
       plugin: ObservablePersistMMKV,
       retrySync: true, // 4 offline-first persistence
     },
