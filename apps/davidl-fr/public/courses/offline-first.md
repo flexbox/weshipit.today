@@ -1097,20 +1097,16 @@ _19:50_
 
 ---
 
-# David Leuliette
+class: outro
 
-Mobile Engineer @ sunday
-
-`@flexbox_`
-
-Slides: [**davidl.fr/courses/offline-first.html**](https://davidl.fr/courses)
-
-French React Native podcast: [**Le Cross Platform Show**](https://weshipit.today/podcast)
+<object data="./images/offline-first/scene-6-thanks.svg" type="image/svg+xml" data-play-on-show aria-label="Thank you · weshipit.today"></object>
 
 ???
 _20:00_
 
-I am David aka `@flexbox_` on the internet.
+I am David, `@flexbox_` on the internet.
+
+If you speak French: Le Cross Platform Show, the podcast.
 
 That was my talk.
 

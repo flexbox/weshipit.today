@@ -367,3 +367,13 @@ a:hover {
   width: 100%;
   margin-top: 0.75em;
 }
+
+/* last slide: one full-bleed animated SVG (bento grid), no heading */
+.remark-slide-content.outro {
+  padding: 1.25em 1.5em;
+}
+.remark-slide-content.outro object {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
