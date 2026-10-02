@@ -28,14 +28,16 @@ export const SAFE_BAND = { width: 1500, height: 396 };
 const YOUTUBE_MOBILE_SAFE = { width: 1546, height: 423 };
 
 // Blueprint palette — mirrors libs/ui/src/lib/hero/phone-animation.tsx and the
-// website hero (slate-100 canvas, sky-500 blueprint lines, slate-900 type).
+// website hero (slate-100 canvas, one blueprint blue, neutral-950 type to match
+// the `Text` heading variants).
+const BLUEPRINT_RGB = '47, 95, 224'; // LIGHT_RGB in phone-animation.tsx
 const COLORS = {
   canvas: '#F1F5F9', // slate-100
-  ink: '#0F172A', // slate-900
+  ink: '#0A0A0A', // neutral-950
   muted: '#64748B', // slate-500
-  blueprint: '#2b7fff', // sky-500
-  blueprintFaint: 'rgba(14, 165, 233, 0.10)',
-  blueprintInk: 'rgba(14, 165, 233, 0.65)',
+  blueprint: `rgb(${BLUEPRINT_RGB})`,
+  blueprintFaint: `rgba(${BLUEPRINT_RGB}, 0.09)`,
+  blueprintInk: `rgba(${BLUEPRINT_RGB}, 0.65)`,
   pill: '#FFFFFF',
   pillBorder: '#E2E8F0', // slate-200
   status: '#F97316', // orange-500
@@ -51,6 +53,13 @@ const PHONE = {
   screenInsetY: 30,
   innerRadius: 20,
 };
+
+// Space Grotesk ships a `tt` ligature. Satori draws the ligature glyph but
+// lays out the line with the two separate `t` advances, leaving a visible gap
+// after words like "dette". A zero-width non-joiner keeps the glyphs apart.
+function breakLigatures(text: string) {
+  return text.replace(/tt/g, 't‌t');
+}
 
 export function SourceBanner({
   width,
@@ -271,7 +280,8 @@ export function SourceBanner({
                   color: COLORS.ink,
                   backgroundColor: COLORS.pill,
                   border: `1px solid ${COLORS.pillBorder}`,
-                  borderRadius: `${pillSize * 2}px`,
+                  // rounded-lg at text-sm, like the site's SpotLeft chip.
+                  borderRadius: `${Math.round(pillSize * 0.57)}px`,
                 }}
               >
                 <span
@@ -299,7 +309,8 @@ export function SourceBanner({
               </div>
             </div>
 
-            {/* Headline — bold, near-black, mirrors the website hero.
+            {/* Headline — Space Grotesk 700 at -0.03em, the website's
+                `font-display` heading token.
                 whiteSpace: pre-line honors explicit \n in the config so the
                 copywriter controls the line break, not the layout engine. */}
             <div
@@ -307,14 +318,15 @@ export function SourceBanner({
                 display: 'flex',
                 width: `${headlineWidth}px`,
                 fontSize: `${headlineSize}px`,
-                fontWeight: 800,
+                fontFamily: '"Space Grotesk", sans-serif',
+                fontWeight: 700,
                 color: COLORS.ink,
                 lineHeight: 1.05,
-                letterSpacing: '-0.025em',
+                letterSpacing: '-0.03em',
                 whiteSpace: 'pre-line',
               }}
             >
-              {headline}
+              {breakLigatures(headline)}
             </div>
 
             {/* Tagline — metrics with emoji */}
@@ -323,7 +335,7 @@ export function SourceBanner({
                 display: 'flex',
                 width: `${headlineWidth}px`,
                 fontSize: `${taglineSize}px`,
-                fontWeight: 500,
+                fontWeight: 400,
                 color: COLORS.muted,
                 lineHeight: 1.4,
               }}
