@@ -688,6 +688,7 @@ syncedSupabase({
 ???
 `fieldDeleted` tells Legend State: when the app deletes a row,
 send `deleted: true` instead of a real DELETE.
+
 Your table needs a `deleted` boolean column, default false.
 
 ---
@@ -763,8 +764,15 @@ Two phones edit the same game. Both offline.
 ```
 
 ???
-Phone A renames the game. Phone B ticks it as done.
-Different fields. Nobody is in conflict. Both edits should survive.
+Phone A renames the game.
+
+Phone B ticks it as done.
+
+Different fields.
+
+Nobody is in conflict.
+
+Both edits should survive.
 
 --
 
@@ -870,11 +878,14 @@ Airplane mode. Tick Zelda. Swipe up, kill the app. Land.<br>
 <small>The list of changes waiting to be sent lived in memory. Killing the app erased it.</small>
 
 ???
-Walk through it slowly, one action at a time.
+_slowly, one action at a time_.
 
 The tick itself is saved on the phone: MMKV has it.
+
 But the "still has to be sent" list was only in memory.
+
 Kill the app, and the phone forgets it owes the server anything.
+
 The server never hears about it.
 
 ---
@@ -940,10 +951,9 @@ TICK · DELETE · KILL THE APP · REOPEN · LAND · NOTHING IS LOST
 ???
 _17:45_
 
-This is decision 4, in one picture. It loops every 16 seconds.
-Let it play once, quietly, then say the story:
+Here is the entire scenario in Airplane mode
 
-1. Airplane mode. I tick Zelda and delete Metroid.
+1. I tick Zelda and delete Metroid.
    The list changes at once: no spinner, nothing waits for the network.
 2. Both changes go into the "waiting to send" queue, saved on the phone
    (that is `retrySync: true`).
@@ -951,8 +961,11 @@ Let it play once, quietly, then say the story:
 4. The plane lands. The queue sends itself: Zelda is done and Metroid
    is deleted in Postgres. Nothing was lost.
 
-Then the one line, a callback to the spinners from the start:
-"No spinner. No error screen. Two changes waiting for a signal that can take its time."
+No spinner.
+
+No error screen.
+
+Two changes waiting for a signal that can take its time.
 
 ---
 
@@ -987,10 +1000,11 @@ _18:20_
 Four lines more than the minimal config. That is the whole talk.
 
 ???
-Don't read it. Point at the four numbers, name each decision once.
 
-"Ids. Deletes. Conflicts. Retries. Four lines. Everything else was already
-in the minimal config."
+1. Ids created on the client.
+2. Deletes with a tombstone.
+3. Conflicts resolution
+4. Retries
 
 ---
 
@@ -1008,6 +1022,11 @@ _19:05_
 - Bugs reproduce on one device, in one sync state.
   Build a "dump the local store" screen on **day one**.
 
+???
+The store-dump screen is not optional. The first bug report you get will be
+"it works on my phone". You need to see their queue, their last-sync, their
+tombstones. If you can't, you are debugging blind.
+
 --
 
 - Read-mostly app? You don't need this. React Query plus a persister is enough.
@@ -1017,15 +1036,11 @@ _19:05_
 - Two people editing the same text? You don't need this either. You need a CRDT.
 
 ???
-This is where the abstract's "hard-won" claim gets paid.
+Then the honest part: most apps in this room are read-mostly.
 
-The store-dump screen is not optional. The first bug report you get will be
-"it works on my phone". You need to see their queue, their last-sync, their
-tombstones. If you can't, you are debugging blind.
+A feed with a like button does not need a sync engine. Cache it, persist the cache, ship.
 
-Then the honest part: most apps in this room are read-mostly. A feed with a
-like button does not need a sync engine. Cache it, persist the cache, ship.
-And if it is Google Docs, this is the wrong tool. LWW is not a merge.
+And if it is Google Docs, this is the wrong tool. Last-Write-Wins (LWW) is not a merge.
 
 ---
 
