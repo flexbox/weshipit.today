@@ -304,7 +304,7 @@ I have been working with React state for over 3 600 days.
 - XState
 - Zustand
 - Redux Toolkit
-- React Query
+- TanStack Query
 - Jotai
 
 ???
@@ -579,8 +579,11 @@ Use **UUID v7**, not v4.
 v4 is fully random, so the database index gets slower as the table grows.</small>
 
 ???
-If asked: v4 inserts land on random pages of the index (page splits, bloat).
-v7 always lands at the end, like an auto-increment. People thank me for this one.
+v4 inserts random indexes.
+
+v7 always lands at the end, like an auto-increment.
+
+You will thank me for this one.
 
 --
 
@@ -1032,17 +1035,25 @@ tombstones. If you can't, you are debugging blind.
 
 --
 
-- Read-mostly app? You don't need this. React Query plus a persister is enough.
+- Read-mostly app? You don't need a sync engine.
+  [TanStack Query + a persister](https://tanstack.com/query/latest/docs/framework/react/plugins/createAsyncStoragePersister) is enough.<br>
+  <small>The persister saves what the server said. Legend saves what the user did.</small>
+
+???
+Read-mostly = users mostly look at data, they rarely change it.
+A feed with a like button: cache it, save the cache on the phone, ship.
+The server stays the truth, and that is fine.
+
+You need Legend's sync when users change data offline:
+a shopping list you edit in the store basement.
+
+Send me a DM if you want a prompt to quickly add the Legend State TanStack Query plugin to migrate to observable queries.
 
 --
 
-- Two people editing the same text? You don't need this either. You need a CRDT.
+- Two people editing the same text? You don't need this either. You need a Conflict-free Replicated Data Type.
 
 ???
-Then the honest part: most apps in this room are read-mostly.
-
-A feed with a like button does not need a sync engine. Cache it, persist the cache, ship.
-
 And if it is Google Docs, this is the wrong tool. Last-Write-Wins (LWW) is not a merge.
 
 ---
@@ -1054,14 +1065,11 @@ class: center, middle
 ???
 _19:25_
 
+This is the takeaway.
+
 --
 
-The server is just the **other** device — the one that syncs slowest.
-
-???
-This is the takeaway. Say it, stop talking, let it land.
-
-If they remember one sentence from twenty minutes, it is this one.
+The server is just the **other device** and the one that syncs slowest.
 
 ---
 
