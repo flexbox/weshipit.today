@@ -3,7 +3,7 @@
   "buildCommand": "cd ../.. && yarn nx build web --prod && yarn nx postbuild web",
   "outputDirectory": "../../dist/apps/web/.next",
   "installCommand": "cd ../.. && yarn install --frozen-lockfile",
-  "ignoreCommand": "git diff --quiet ${VERCEL_GIT_PREVIOUS_SHA:-HEAD^} HEAD -- . ../../libs/ui ../../libs/utils ../../package.json ../../yarn.lock ../../.yarnrc.yml ../../nx.json ../../tsconfig.base.json",
+  "ignoreCommand": "sh ../../tools/vercel/ignore-build.sh . ../../libs/ui ../../libs/utils ../../package.json ../../yarn.lock ../../.yarnrc.yml ../../nx.json ../../tsconfig.base.json",
   "framework": "nextjs",
   "redirects": [
     {
