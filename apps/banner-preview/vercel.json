@@ -3,6 +3,6 @@
   "buildCommand": "cd ../.. && yarn nx build banner-preview --prod",
   "outputDirectory": "../../dist/apps/banner-preview/.next",
   "installCommand": "cd ../.. && yarn install --frozen-lockfile",
-  "ignoreCommand": "git diff --quiet ${VERCEL_GIT_PREVIOUS_SHA:-HEAD^} HEAD -- . ../../libs/ui ../../package.json ../../yarn.lock ../../.yarnrc.yml ../../nx.json ../../tsconfig.base.json",
+  "ignoreCommand": "sh ../../tools/vercel/ignore-build.sh . ../../libs/ui ../../package.json ../../yarn.lock ../../.yarnrc.yml ../../nx.json ../../tsconfig.base.json",
   "framework": "nextjs"
 }
