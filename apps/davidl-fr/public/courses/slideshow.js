@@ -21,8 +21,16 @@ const syncScene = (object) => {
   svg.setCurrentTime(0);
   if (object.closest('.remark-visible')) svg.unpauseAnimations();
 };
-const syncScenes = () =>
+// The shown slide gets a fresh copy of its <object>: a newly loaded SVG starts at
+// t=0 in every browser, whether or not the old document had loaded, started its
+// timeline or fired `load` yet (it can miss on the first visit to a slide).
+const restartScene = (object) => object.replaceWith(object.cloneNode(true));
+const syncScenes = () => {
+  document
+    .querySelectorAll('.remark-visible object[data-play-on-show]')
+    .forEach(restartScene);
   document.querySelectorAll('object[data-play-on-show]').forEach(syncScene);
+};
 
 slideshow.on('afterShowSlide', syncScenes);
 // <object> documents load after the slides render; `load` doesn't bubble, so capture it

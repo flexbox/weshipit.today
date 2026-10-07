@@ -463,10 +463,6 @@ That write works in the store basement.
 
 It syncs when you walk out of the store.
 
---
-
-It is not why your app breaks.
-
 ???
 
 **it syncs when you walk out of the store**.
@@ -494,8 +490,13 @@ Follow the tap from top to bottom:
    This is now the source of truth, not the server.
 3. **The pending queue.** The change also waits here, to be sent later.
 
-On the right, Supabase is grey on purpose: I'm offline. The NO SIGNAL
-cross doesn't matter. The app never asked the network for anything.
+On the right, Supabase is grey on purpose:
+
+I'm offline.
+
+The NO SIGNAL cross doesn't matter.
+
+The app never asked the network for anything.
 
 Nothing in this picture waited for the network.
 
@@ -551,7 +552,9 @@ Conflicts: "Two phones, same row, both offline. When they both sync, one edit re
 Force-quit: "Changes are waiting in the queue. The user kills the app.
 Are they still there?"
 
-"Every one of these has a default. Every default is wrong for offline."
+Every one of these has a default.
+
+Every default is wrong for offline.
 
 ---
 
@@ -560,8 +563,15 @@ Are they still there?"
 ???
 _10:20_
 
-Story: you tap "add" in a basement. The new row needs an id right now.
-Normally the database picks it (1, 2, 3…). The database is not there.
+Story:
+
+you tap "add" in a basement.
+
+The new row needs an id right now.
+
+Normally the database picks it (1, 2, 3…).
+
+The database is not there.
 
 --
 
@@ -572,29 +582,27 @@ Offline, there is no server to ask.
 
 ```js
 // provide a function to generate ids locally
-const generateId = () => uuidv4();
+const generateId = () => uuidv7();
 configureSyncedSupabase({
   generateId,
 });
 ```
 
 ???
-`uuidv7()` comes from the `uuid` package.
+Use the `uuid` package.
 A UUID is a random-looking id like `0192f1c4-…`. Two phones will never make the same one.
 
 --
 
 Use **UUID v7**, not v4.
 
-<small>v7 starts with the time, so new rows are stored in order.<br>
-v4 is fully random, so the database index gets slower as the table grows.</small>
+<small>v4 is fully random, so the database index gets slower as the table grows.<br>
+v7 starts with the time, so new rows are stored in order.</small>
 
 ???
 v4 inserts random indexes.
 
-v7 always lands at the end, like an auto-increment.
-
-You will thank me for this one.
+v7 puts a millisecond timestamp in the high bits, then random bits. New rows always lands at the end, like an auto-increment.
 
 --
 
@@ -611,7 +619,7 @@ Without those rules, any client can send any id, including someone else's row.
 Decide this **before the first row**. Changing ids later means a migration.
 
 ???
-Even on a new project, this is day-one: every foreign key, URL and analytics
+On a new project, this is day-one: every foreign key, URL and analytics
 event will carry these ids.
 
 ---
@@ -631,7 +639,9 @@ When B comes back, it asks: **"what changed since my last sync?"**
 
 ???
 Story with two phones, same shopping list:
+
 At home, I remove the mirror cabinet: we changed our mind.
+
 My partner is in the store basement, phone B, offline the whole time.
 
 B comes back and asks the server for the changes since its last sync.
@@ -882,10 +892,6 @@ _16:20_
 > "It syncs when you walk out of the store."
 >
 > — me, eight minutes ago
-
---
-
-Not with the config I showed you.
 
 --
 
