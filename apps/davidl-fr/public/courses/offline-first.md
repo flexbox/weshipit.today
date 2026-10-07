@@ -367,7 +367,10 @@ I asked to my friend:
 
 "What are the three things you liked about Legend State for offline?"
 
-"Second-hand: I handed it all to an intern, who turned out to be great and we hired him back.
+"I handed it all to an intern,
+
+who turned out to be great and we hired him back.
+
 My feeling is that it just works for local vs remote state."
 
 ---
