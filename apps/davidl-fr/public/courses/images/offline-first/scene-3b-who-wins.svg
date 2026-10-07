@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 52 985 372" role="img" aria-label="Two phones edit the same shower head offline: phone A sets quantity 2, phone B marks it bought. By default each phone sends the whole row, so B syncs last and its old quantity 1 erases the 2. With updatePartial true, A sends only qty and B sends only bought, and the server keeps both edits.">
+<title>Who wins? The whole row versus only the fields that changed</title>
+<defs>
+  <pattern id="hatch" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+    <line x1="0" y1="0" x2="0" y2="5" stroke="var(--ink)" stroke-width="0.9" opacity="0.32"/>
+  </pattern>
+</defs>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');
+  :root {
+    --bg: #ffffff; --ink: #1A1A17; --muted: #8C8A80; --faint: #B4B1A6; --rule: #DCD9D0; --accent: #2440FF;
+    color-scheme: light dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #051626; --ink: #F2EFE8; --muted: #8FA0B3; --faint: #3A4A5C; --rule: #1E3346; --accent: #8B9BFF; }
+  }
+  svg { background: var(--bg); }
+  text { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; }
+  .ser { fill: var(--ink); font-weight: 500; }
+  .mo  { font-weight: 400; }
+  .lab { font-size: 11.5px; fill: var(--ink); letter-spacing: 1.3px; }
+  .lab2{ font-size: 11px; fill: var(--muted); letter-spacing: .6px; }
+  .fld { font-size: 14px; }
+  .code { font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; font-variant-ligatures: none; }
+  .big { font-size: 15px; font-weight: 700; letter-spacing: 1.6px; }
+  .draw { fill: none; stroke-linecap: round; }
+</style>
+<rect x="20" y="52" width="985" height="372" fill="var(--bg)"/>
+
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.2s" dur="0.4s" fill="freeze"/><animate attributeName="opacity" from="1" to="0" begin="8.8s" dur="0.4s" fill="freeze"/><text x="512" y="84" class="mo lab" text-anchor="middle">DEFAULT · EACH PHONE SENDS THE WHOLE ROW</text></g>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="9.200000000000001s" dur="0.4s" fill="freeze"/><text x="512" y="84" class="code" text-anchor="middle" style="fill: var(--accent); font-size: 14px">updatePartial: true<tspan class="mo lab" style="fill: var(--ink)">  ·  ONLY THE FIELDS THAT CHANGED</tspan></text></g>
+<rect x="66" y="116" width="200" height="96" rx="12" fill="url(#hatch)" stroke="var(--ink)" stroke-width="1"/><rect x="60" y="110" width="200" height="96" rx="12" fill="var(--bg)" stroke="var(--ink)" stroke-width="1.5"/><text x="76" y="134" class="mo lab">PHONE A · YOU</text><line x1="76" y1="144" x2="244" y2="144" stroke="var(--rule)"/><text x="76" y="162" class="mo fld" style="fill: var(--muted)">qty</text><text x="76" y="188" class="mo fld" style="fill: var(--muted)">bought</text>
+<text x="244" y="162" class="ser fld" text-anchor="end" style="fill: var(--accent)" font-weight="700" opacity="1">2<animate attributeName="opacity" values="1" keyTimes="0.0000" calcMode="discrete" begin="0s" dur="15.0s" fill="freeze"/></text>
+<text x="244" y="188" class="ser fld" text-anchor="end" style="fill: var(--ink)" opacity="1">false<animate attributeName="opacity" values="1" keyTimes="0.0000" calcMode="discrete" begin="0s" dur="15.0s" fill="freeze"/></text>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.5s" dur="0.4s" fill="freeze"/><text x="60" y="230" class="mo lab2">offline at home · “we need two”</text></g>
+<rect x="66" y="276" width="200" height="96" rx="12" fill="url(#hatch)" stroke="var(--ink)" stroke-width="1"/><rect x="60" y="270" width="200" height="96" rx="12" fill="var(--bg)" stroke="var(--ink)" stroke-width="1.5"/><text x="76" y="294" class="mo lab">PHONE B · PARTNER</text><line x1="76" y1="304" x2="244" y2="304" stroke="var(--rule)"/><text x="76" y="322" class="mo fld" style="fill: var(--muted)">qty</text><text x="76" y="348" class="mo fld" style="fill: var(--muted)">bought</text>
+<text x="244" y="322" class="ser fld" text-anchor="end" style="fill: var(--ink)" opacity="1">1<animate attributeName="opacity" values="1" keyTimes="0.0000" calcMode="discrete" begin="0s" dur="15.0s" fill="freeze"/></text>
+<text x="244" y="348" class="ser fld" text-anchor="end" style="fill: var(--accent)" font-weight="700" opacity="1">true<animate attributeName="opacity" values="1" keyTimes="0.0000" calcMode="discrete" begin="0s" dur="15.0s" fill="freeze"/></text>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="0.8s" dur="0.4s" fill="freeze"/><text x="60" y="390" class="mo lab2">offline in the store · “in the cart”</text></g>
+<rect x="750" y="196" width="220" height="96" rx="12" fill="url(#hatch)" stroke="var(--ink)" stroke-width="1"/><rect x="744" y="190" width="220" height="96" rx="12" fill="var(--bg)" stroke="var(--ink)" stroke-width="1.5"/><text x="760" y="214" class="mo lab">SERVER · SHOWER HEAD</text><line x1="760" y1="224" x2="948" y2="224" stroke="var(--rule)"/><text x="760" y="242" class="mo fld" style="fill: var(--muted)">qty</text><text x="760" y="268" class="mo fld" style="fill: var(--muted)">bought</text>
+<rect x="752" y="228" width="204" height="22" rx="3" fill="var(--accent)" opacity="0"><animate attributeName="opacity" values="0;0.18;0" begin="2.7s" dur="0.9s" fill="freeze"/></rect>
+<rect x="752" y="228" width="204" height="48" rx="3" fill="var(--accent)" opacity="0"><animate attributeName="opacity" values="0;0.18;0" begin="5.0s" dur="0.9s" fill="freeze"/></rect>
+<rect x="752" y="228" width="204" height="22" rx="3" fill="var(--accent)" opacity="0"><animate attributeName="opacity" values="0;0.18;0" begin="10.7s" dur="0.9s" fill="freeze"/></rect>
+<rect x="752" y="254" width="204" height="22" rx="3" fill="var(--accent)" opacity="0"><animate attributeName="opacity" values="0;0.18;0" begin="12.799999999999999s" dur="0.9s" fill="freeze"/></rect>
+<text x="948" y="242" class="ser fld" text-anchor="end" style="fill: var(--ink)" opacity="1">1<animate attributeName="opacity" values="1;0;1;0" keyTimes="0.0000;0.1800;0.3333;0.7133" calcMode="discrete" begin="0s" dur="15.0s" fill="freeze"/></text>
+<text x="948" y="242" class="ser fld" text-anchor="end" style="fill: var(--accent)" font-weight="700" opacity="0">2<animate attributeName="opacity" values="0;1;0;1" keyTimes="0.0000;0.1800;0.3333;0.7133" calcMode="discrete" begin="0s" dur="15.0s" fill="freeze"/></text>
+<text x="948" y="268" class="ser fld" text-anchor="end" style="fill: var(--ink)" opacity="1">false<animate attributeName="opacity" values="1;0;1;0" keyTimes="0.0000;0.3333;0.5867;0.8533" calcMode="discrete" begin="0s" dur="15.0s" fill="freeze"/></text>
+<text x="948" y="268" class="ser fld" text-anchor="end" style="fill: var(--accent)" font-weight="700" opacity="0">true<animate attributeName="opacity" values="0;1;0;1" keyTimes="0.0000;0.3333;0.5867;0.8533" calcMode="discrete" begin="0s" dur="15.0s" fill="freeze"/></text>
+<path class="draw" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1" opacity="0" d="M262 158 C 500 158, 510 230, 742 230" stroke="var(--ink)" stroke-width="2.2"><set attributeName="opacity" to="1" begin="1.6s"/><animate attributeName="stroke-dashoffset" from="1" to="0" begin="1.6s" dur="1.1s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines=".45 0 .25 1"/><animate attributeName="opacity" from="1" to="0" begin="8.8s" dur="0.4s" fill="freeze"/></path>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.9000000000000001s" dur="0.4s" fill="freeze"/><animate attributeName="opacity" from="1" to="0" begin="8.8s" dur="0.4s" fill="freeze"/><rect x="388.0" y="185" width="196" height="22" rx="3" fill="var(--bg)" stroke="var(--ink)" stroke-width="1.3"/><text x="486" y="200" class="code" text-anchor="middle" style="fill: var(--ink)">{ qty: 2, bought: false }</text></g>
+<path class="draw" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1" opacity="0" d="M262 318 C 500 318, 510 250, 742 250" stroke="var(--ink)" stroke-width="2.2"><set attributeName="opacity" to="1" begin="3.9s"/><animate attributeName="stroke-dashoffset" from="1" to="0" begin="3.9s" dur="1.1s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines=".45 0 .25 1"/><animate attributeName="opacity" from="1" to="0" begin="8.8s" dur="0.4s" fill="freeze"/></path>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="4.2s" dur="0.4s" fill="freeze"/><animate attributeName="opacity" from="1" to="0" begin="8.8s" dur="0.4s" fill="freeze"/><rect x="392.0" y="279" width="188" height="22" rx="3" fill="var(--bg)" stroke="var(--ink)" stroke-width="1.3"/><text x="486" y="294" class="code" text-anchor="middle" style="fill: var(--ink)">{ qty: 1, bought: true }</text></g>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="5.5s" dur="0.4s" fill="freeze"/><animate attributeName="opacity" from="1" to="0" begin="8.8s" dur="0.4s" fill="freeze"/><path d="M760 308 l8 8 M768 308 l-8 8" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round"/><text x="778" y="316" class="mo lab" style="fill: var(--accent)">QTY 2 IS GONE</text><text x="778" y="332" class="mo lab2">B synced last, no error</text></g>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="6.4s" dur="0.4s" fill="freeze"/><animate attributeName="opacity" from="1" to="0" begin="8.8s" dur="0.4s" fill="freeze"/><text x="512" y="410" class="mo big" text-anchor="middle" style="fill: var(--ink)">THE LAST PHONE TO SYNC WINS THE WHOLE ROW</text></g>
+<path class="draw" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1" opacity="0" d="M262 158 C 500 158, 510 230, 742 230" stroke="var(--accent)" stroke-width="2.6"><set attributeName="opacity" to="1" begin="9.6s"/><animate attributeName="stroke-dashoffset" from="1" to="0" begin="9.6s" dur="1.1s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines=".45 0 .25 1"/></path>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="9.9s" dur="0.4s" fill="freeze"/><rect x="438.0" y="185" width="96" height="22" rx="3" fill="var(--bg)" stroke="var(--accent)" stroke-width="1.3"/><text x="486" y="200" class="code" text-anchor="middle" style="fill: var(--accent)">{ qty: 2 }</text></g>
+<path class="draw" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1" opacity="0" d="M262 318 C 500 318, 510 250, 742 250" stroke="var(--accent)" stroke-width="2.6"><set attributeName="opacity" to="1" begin="11.7s"/><animate attributeName="stroke-dashoffset" from="1" to="0" begin="11.7s" dur="1.1s" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines=".45 0 .25 1"/></path>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="12.0s" dur="0.4s" fill="freeze"/><rect x="418.0" y="279" width="136" height="22" rx="3" fill="var(--bg)" stroke="var(--accent)" stroke-width="1.3"/><text x="486" y="294" class="code" text-anchor="middle" style="fill: var(--accent)">{ bought: true }</text></g>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="13.299999999999999s" dur="0.4s" fill="freeze"/><path d="M759 312 l4 4 l7 -8" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><text x="778" y="316" class="mo lab" style="fill: var(--accent)">BOTH EDITS KEPT</text><text x="778" y="332" class="mo lab2">two shower heads, in the cart</text></g>
+<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="14.2s" dur="0.4s" fill="freeze"/><text x="512" y="410" class="mo big" text-anchor="middle" style="fill: var(--accent)">SEND ONLY WHAT CHANGED</text></g>
+</svg>

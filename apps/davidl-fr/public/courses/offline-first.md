@@ -765,60 +765,38 @@ The phones still learn the row is gone, and the data is really erased.
 
 ---
 
-# 3. Who wins?
+class: scene
+
+## 3. Who wins?
+
+TWO PHONES · SAME ITEM · BOTH OFFLINE
+
+<object data="./images/offline-first/scene-3b-who-wins.svg" type="image/svg+xml" data-play-on-show aria-label="Whole row versus only the fields that changed"></object>
 
 ???
 _14:50_
 
 Tell it as a story. One shopping list, two phones, both offline.
 
---
+1. At home, I realise we need two shower heads: quantity 2.
+   In the store, my partner puts one in the cart: bought.
+   Different fields. Nobody is in conflict. Both edits should survive.
+2. By default, each phone sends the **whole row**.
+   B syncs last, so it also sends the old quantity it never touched,
+   and erases mine. No error. We go home with one shower head.
+   Legend State has no conflict resolution, and does not pretend to: last write wins.
+3. With `updatePartial: true`, A sends only `qty`, B sends only `bought`.
+   Both edits are kept.
 
-Two phones edit the same item. Both offline.
+---
 
-```js
-// shower head, on the server  { qty: 1, bought: false }
-// phone A (you)               { qty: 2, bought: false }  "we need two"
-// phone B (your partner)      { qty: 1, bought: true  }  "in the cart"
-```
-
-???
-At home, I realise we need two shower heads: quantity 2.
-
-In the store, my partner puts one in the cart: bought.
-
-Different fields.
-
-Nobody is in conflict.
-
-Both edits should survive.
-
---
-
-**The last phone to sync wins.**
-By default Legend State sends the **whole row**.
-
-<small>B syncs last and sends `qty: 1` too: your "we need two" is gone. No error.</small>
-
-???
-Legend State has no conflict resolution, and does not pretend to.
-The last write to reach the server replaces the row. That is "last write wins".
-
-The trap is the default: an update sends the whole row,
-so B also sends the old quantity it never touched, and erases mine.
-We go home with one shower head.
-
---
+# 3. Who wins?
 
 ```js
 updatePartial: true, // send only the fields that changed
 ```
 
-<small>A sends only `qty`, B sends only `bought`: both edits are kept.</small>
-
-???
-Same field on both phones? Still last to sync wins,
-but on one field, not the whole row.
+<small>Same field on both phones? The last to sync still wins, but on one field, not the whole row.</small>
 
 --
 
