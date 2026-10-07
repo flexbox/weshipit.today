@@ -116,6 +116,14 @@ export default function AuditGratuit() {
               découvrez notre{' '}
               <Link href="/audit">audit de codebase complet</Link>.
             </p>
+            <p>
+              Vous voulez aussi vérifier vos secrets, votre stockage et vos API
+              ? Passez l'
+              <Link href="/audit-securite-react-native">
+                audit sécurité React Native gratuit
+              </Link>
+              .
+            </p>
           </Prose>
         </div>
 
