@@ -198,7 +198,7 @@ class: scene
 
 THE TRUTH LIVES ON THE SERVER · THE PHONE ASKS FOR IT
 
-<object data="./images/offline-first/scene-1-classic.svg" type="image/svg+xml" aria-label="scene-1-classic"></object>
+<object data="./images/offline-first/scene-1-classic.svg" type="image/svg+xml" data-play-on-show aria-label="The server holds the truth, the phone waits for it"></object>
 
 ???
 _03:15_
@@ -475,7 +475,7 @@ class: scene
 
 THE TRUTH LIVES ON THE PHONE · THE NETWORK IS NOT INVITED
 
-<object data="./images/offline-first/scene-2-offline-write.svg" type="image/svg+xml" aria-label="scene-2-offline-write"></object>
+<object data="./images/offline-first/scene-2-offline-write.svg" type="image/svg+xml" data-play-on-show aria-label="The write stays on the phone, the network is not invited"></object>
 
 ???
 _08:25_
@@ -654,11 +654,11 @@ That is what `changesSince: 'last-sync'` does.
 
 class: scene
 
-## Deleting offline
+## 2. How do you delete?
 
 HARD DELETE: PHONE B NEVER HEARS ABOUT IT · TOMBSTONE: IT DOES
 
-<object data="./images/offline-first/scene-5-delete.svg" type="image/svg+xml" aria-label="scene-5-delete"></object>
+<object data="./images/offline-first/scene-5-delete.svg" type="image/svg+xml" data-play-on-show aria-label="Hard delete versus tombstone"></object>
 
 ???
 _11:35_
@@ -962,7 +962,7 @@ class: scene
 
 TICK · REMOVE · KILL THE APP · REOPEN · WALK OUT · NOTHING IS LOST
 
-<object data="./images/offline-first/scene-4-airplane-mode.svg" type="image/svg+xml" aria-label="scene-4-airplane-mode"></object>
+<object data="./images/offline-first/scene-4-airplane-mode.svg" type="image/svg+xml" data-play-on-show aria-label="Tick, remove, kill, reopen, walk out: nothing is lost"></object>
 
 ???
 _17:45_
