@@ -1,10 +1,20 @@
 const path = location.pathname;
 const slug = path.split('/').pop().split('.').shift();
 
+// footer on every slide of every deck: link, then the slide counter
+const footerLink =
+  '<a class="remark-footer-link" href="https://weshipit.today" target="_blank" rel="noopener">weshipit.today</a>';
+
 const slideshow = remark.create({
   sourceUrl: `${slug}.md`,
   ratio: '16:9',
   highlightStyle: 'solarized-light',
+  slideNumberFormat: (current, total) => {
+    // figure spaces pad "1" to the width of "87" (or "128"), so the counter and
+    // the link before it never move; thin spaces make "18 / 87" read as one unit
+    const pad = ' '.repeat(String(total).length - String(current).length);
+    return `${footerLink}<span class="remark-slide-counter">${pad}${current} / ${total}</span>`;
+  },
 
   navigation: {
     // Enable or disable navigating using scroll

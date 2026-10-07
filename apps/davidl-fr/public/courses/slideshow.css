@@ -54,9 +54,32 @@ h3 {
 
 .remark-slide-number {
   bottom: 8px;
-  opacity: 0.2;
+  opacity: 1;
   right: 8px;
   font-size: 16px;
+}
+
+/* equal-width digits (slideshow.js pads with figure spaces): the counter and the
+   link before it stay put from slide 1 to the last one */
+.remark-slide-counter {
+  font-variant-numeric: tabular-nums;
+  opacity: 0.2;
+}
+
+/* footer link before the counter: same type as the counter, a shade stronger,
+   follows the text colour (white on the crash slides) */
+.remark-slide-number .remark-footer-link {
+  margin-right: 0.5em;
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.3;
+  transition-property: opacity;
+  transition-duration: 150ms;
+}
+
+.remark-slide-number .remark-footer-link:hover {
+  text-decoration: underline;
+  opacity: 0.6;
 }
 
 .remark-avatar img {
