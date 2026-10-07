@@ -21,9 +21,9 @@ _00:15_
 
 Guten Tag.
 
-Welcome to "Offline First Mobile Apps with React Native & Legend State"
+Welcome to my talk "Offline First Mobile Apps with React Native & Legend State"
 
-One idea: the device owns the truth.
+One idea: where is the truth?
 
 ---
 

@@ -140,6 +140,16 @@ a:hover {
   background-color: #cc0000; /* Xbox 360 red ring of death */
 }
 
+/* the slide is a fixed 16:9 box; paint the letterbox around it too so the
+   crash screen fills the whole window */
+.remark-container:has(.remark-visible .remark-slide-content.bsod) {
+  background-color: #0000aa;
+}
+
+.remark-container:has(.remark-visible .remark-slide-content.rrod) {
+  background-color: #cc0000;
+}
+
 .remark-slide-content.bsod,
 .remark-slide-content.rrod,
 .remark-slide-content.bsod a,
