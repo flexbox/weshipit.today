@@ -680,7 +680,9 @@ The same story, played twice. It loops every 16 seconds.
 2. Tombstone. Same tap. The row stays with `deleted: true`.
    Phone B gets that change and removes the cabinet.
 
-Key line: "A missing row says nothing. A tombstone says: I was deleted."
+A missing row says nothing.
+
+A tombstone says: I was deleted.
 
 ---
 
@@ -737,7 +739,7 @@ Tombstones fix sync, but they are not free. Three costs.
 Every delete is now an update, so the table only grows.
 A scheduled job (a cron, or `pg_cron` in Supabase) removes tombstones older than 30 days.
 
-_If asked: a phone offline for more than 30 days missed those tombstones.
+_a phone is offline for more than 30 days?.
 When it comes back, do a full sync instead of "changes since last sync"._
 
 --
