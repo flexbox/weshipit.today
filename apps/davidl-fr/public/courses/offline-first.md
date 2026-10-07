@@ -637,6 +637,8 @@ Phone A deletes a row. Phone B was offline.
 
 When B comes back, it asks: **"what changed since my last sync?"**
 
+A deleted row is not in the answer. **B keeps it forever.**
+
 ???
 Story with two phones, same shopping list:
 
@@ -647,17 +649,6 @@ My partner is in the store basement, phone B, offline the whole time.
 B comes back and asks the server for the changes since its last sync.
 
 That is what `changesSince: 'last-sync'` does.
-
---
-
-A deleted row is not in the answer. **B keeps it forever.**
-
-???
-The server answers with the rows that changed.
-A deleted row is not a row anymore: it is simply missing from the answer.
-And for B, "missing" looks exactly like "nothing changed".
-So the mirror cabinet stays on my partner's list. Forever.
-And they buy it.
 
 ---
 
@@ -672,7 +663,7 @@ HARD DELETE: PHONE B NEVER HEARS ABOUT IT · TOMBSTONE: IT DOES
 ???
 _11:35_
 
-The same story, played twice. It loops every 16 seconds.
+The same story, played twice.
 
 1. Hard delete. Phone A removes the mirror cabinet. Postgres deletes the row.
    Phone B comes back and asks "what changed since my last sync?"
