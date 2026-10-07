@@ -15,11 +15,67 @@ import { FormEvent, useState } from 'react';
 const MAILERLITE_FORM_ACTION =
   'https://assets.mailerlite.com/jsonp/ACCOUNT_ID/forms/FORM_ID/subscribe';
 
-const ANSWER_OPTIONS = [
-  { label: 'Oui', value: 1 },
-  { label: 'Incertain', value: 0.5 },
-  { label: 'Non', value: 0 },
-] as const;
+export interface SelfAuditLabels {
+  answers: { no: string; unknown: string; yes: string };
+  step: string;
+  answered: string;
+  previous: string;
+  next: string;
+  seeScore: string;
+  reportEyebrow: string;
+  nameLabel: string;
+  namePlaceholder: string;
+  emailLabel: string;
+  emailPlaceholder: string;
+  submit: string;
+  submitting: string;
+  successTitle: string;
+  successText: string;
+  error: string;
+  privacy: string;
+}
+
+export const FR_LABELS: SelfAuditLabels = {
+  answers: { no: 'Non', unknown: 'Incertain', yes: 'Oui' },
+  step: 'Étape',
+  answered: 'répondues',
+  previous: 'Précédent',
+  next: 'Suivant :',
+  seeScore: 'Voir mon score',
+  reportEyebrow: 'Rapport détaillé',
+  nameLabel: 'Prénom',
+  namePlaceholder: 'Ton prénom',
+  emailLabel: 'Email pro',
+  emailPlaceholder: 'toi@entreprise.com',
+  submit: 'Recevoir mon rapport',
+  submitting: 'Envoi en cours…',
+  successTitle: 'Rapport en route ✓',
+  successText:
+    'Vérifiez votre boîte mail (et le dossier spam) dans les prochaines minutes.',
+  error: 'Une erreur est survenue. Réessayez, ou écrivez-nous directement.',
+  privacy:
+    'Un email, zéro spam. Désinscription possible à tout moment via chaque email envoyé.',
+};
+
+export const EN_LABELS: SelfAuditLabels = {
+  answers: { no: 'No', unknown: 'Unknown', yes: 'Yes' },
+  step: 'Step',
+  answered: 'answered',
+  previous: 'Previous',
+  next: 'Next:',
+  seeScore: 'See my score',
+  reportEyebrow: 'Detailed report',
+  nameLabel: 'First name',
+  namePlaceholder: 'Your first name',
+  emailLabel: 'Work email',
+  emailPlaceholder: 'you@company.com',
+  submit: 'Get my report',
+  submitting: 'Sending…',
+  successTitle: 'Report on its way ✓',
+  successText: 'Check your inbox (and spam folder) in the next few minutes.',
+  error: 'Something went wrong. Try again, or email us directly.',
+  privacy: 'One email, zero spam. Unsubscribe anytime from any email.',
+};
 
 export interface AuditCategory {
   key: string;
@@ -45,6 +101,7 @@ export interface SelfAuditConfig {
   /** MailerLite custom field receiving the score. */
   scoreField: string;
   cta: { text: string; href: string; label: string };
+  labels?: SelfAuditLabels;
 }
 
 interface SelfAuditQuizProps {
@@ -62,6 +119,12 @@ export function SelfAuditQuiz({
     0,
   );
   const titleId = `${config.id}-title`;
+  const labels = config.labels ?? FR_LABELS;
+  const answerOptions = [
+    { label: labels.answers.no, value: 0 },
+    { label: labels.answers.unknown, value: 0.5 },
+    { label: labels.answers.yes, value: 1 },
+  ];
   const [answers, setAnswers] = useState<Record<string, number>>({});
   const [currentStep, setCurrentStep] = useState(0);
   const [showResults, setShowResults] = useState(false);
@@ -208,7 +271,7 @@ export function SelfAuditQuiz({
                   variant="c2"
                   className="uppercase tracking-wide text-green-600 dark:text-green-400"
                 >
-                  Rapport détaillé
+                  {labels.reportEyebrow}
                 </Text>
                 <Text as="h3" variant="h4" className="mt-3">
                   {config.report.title}
@@ -245,15 +308,14 @@ export function SelfAuditQuiz({
                     variant="h4"
                     className="text-green-600 dark:text-green-400"
                   >
-                    Rapport en route ✓
+                    {labels.successTitle}
                   </Text>
                   <Text
                     as="p"
                     variant="p2"
                     className="mt-3 text-slate-600 dark:text-slate-300"
                   >
-                    Vérifiez votre boîte mail (et le dossier spam) dans les
-                    prochaines minutes.
+                    {labels.successText}
                   </Text>
                 </div>
               ) : (
@@ -266,13 +328,13 @@ export function SelfAuditQuiz({
                       htmlFor={`${config.id}-name`}
                       className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300"
                     >
-                      Prénom
+                      {labels.nameLabel}
                     </label>
                     <input
                       type="text"
                       id={`${config.id}-name`}
                       name="fields[name]"
-                      placeholder="Ton prénom"
+                      placeholder={labels.namePlaceholder}
                       autoComplete="given-name"
                       className="w-full rounded-md border-0 bg-white px-3.5 py-2.5 text-slate-900 shadow-xs ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 dark:bg-white/5 dark:text-white dark:ring-white/10"
                     />
@@ -283,13 +345,13 @@ export function SelfAuditQuiz({
                       htmlFor={`${config.id}-email`}
                       className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300"
                     >
-                      Email pro
+                      {labels.emailLabel}
                     </label>
                     <input
                       type="email"
                       id={`${config.id}-email`}
                       name="fields[email]"
-                      placeholder="toi@entreprise.com"
+                      placeholder={labels.emailPlaceholder}
                       required
                       autoComplete="email"
                       className="w-full rounded-md border-0 bg-white px-3.5 py-2.5 text-slate-900 shadow-xs ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 dark:bg-white/5 dark:text-white dark:ring-white/10"
@@ -311,8 +373,8 @@ export function SelfAuditQuiz({
                     disabled={formStatus === 'submitting'}
                   >
                     {formStatus === 'submitting'
-                      ? 'Envoi en cours…'
-                      : 'Recevoir mon rapport'}
+                      ? labels.submitting
+                      : labels.submit}
                   </Button>
 
                   {formStatus === 'error' && (
@@ -321,8 +383,7 @@ export function SelfAuditQuiz({
                       variant="c1"
                       className="mt-4 text-red-600 dark:text-red-400"
                     >
-                      Une erreur est survenue. Réessayez, ou écrivez-nous
-                      directement.
+                      {labels.error}
                     </Text>
                   )}
 
@@ -331,8 +392,7 @@ export function SelfAuditQuiz({
                     variant="c2"
                     className="mt-4 text-slate-400 dark:text-slate-500"
                   >
-                    Un email, zéro spam. Désinscription possible à tout moment
-                    via chaque email envoyé.
+                    {labels.privacy}
                   </Text>
                 </form>
               )}
@@ -402,10 +462,11 @@ export function SelfAuditQuiz({
       </div>
       <div className="mt-3 flex justify-between text-xs font-medium uppercase tracking-wide text-slate-400">
         <span className="tabular-nums">
-          Étape {currentStep + 1}/{CATEGORIES.length} · {currentCategory.label}
+          {labels.step} {currentStep + 1}/{CATEGORIES.length} ·{' '}
+          {currentCategory.label}
         </span>
         <span className="hidden tabular-nums sm:block">
-          {currentScore.answered} / {currentScore.total} répondues
+          {currentScore.answered} / {currentScore.total} {labels.answered}
         </span>
       </div>
 
@@ -434,7 +495,7 @@ export function SelfAuditQuiz({
               {question.text}
             </p>
             <div className="flex shrink-0 gap-2">
-              {ANSWER_OPTIONS.map((option) => {
+              {answerOptions.map((option) => {
                 const isActive = answers[question.id] === option.value;
                 return (
                   <button
@@ -472,7 +533,7 @@ export function SelfAuditQuiz({
           onClick={() => setCurrentStep(currentStep - 1)}
         >
           <ArrowLeftIcon className="-ml-0.5 mr-2 size-4" aria-hidden="true" />
-          Précédent
+          {labels.previous}
         </Button>
         <Button
           variant="primary"
@@ -482,10 +543,10 @@ export function SelfAuditQuiz({
           onClick={handleNext}
         >
           {isLastStep ? (
-            'Voir mon score'
+            labels.seeScore
           ) : (
             <>
-              Suivant : {CATEGORIES[currentStep + 1].label}
+              {labels.next} {CATEGORIES[currentStep + 1].label}
               <ArrowRightIcon
                 className="-mr-0.5 ml-2 size-4 transition-transform group-hover:translate-x-1"
                 aria-hidden="true"

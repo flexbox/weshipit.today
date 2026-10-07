@@ -306,10 +306,10 @@ function SelfAudit() {
         <p>
           Worried about leaked API keys, insecure storage or exposed APIs? Run
           the{' '}
-          <Link href="/audit-securite-react-native">
+          <Link href="/react-native-security-audit">
             free React Native security self-audit
-          </Link>{' '}
-          (in French).
+          </Link>
+          .
         </p>
       </div>
     </Section>
