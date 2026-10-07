@@ -904,6 +904,28 @@ The server never hears about it.
 
 ---
 
+class: scene
+
+## 4. Does it survive?
+
+TICK · KILL THE APP · WALK OUT · NOTHING ARRIVES
+
+<object data="./images/offline-first/scene-4b-force-quit.svg" type="image/svg+xml" data-play-on-show aria-label="The tick survives the kill, the waiting list does not"></object>
+
+???
+Let it play. Point at the two lines.
+
+1. I tick the silicone. Two things leave the phone's screen:
+   the tick itself, and a note "still has to be sent".
+2. Swipe up, kill. The top line is on disk: it goes straight through.
+   The bottom line lived in memory: it's gone.
+3. I walk out. Signal is back. The phone looks for something to send…
+   and finds nothing.
+
+The silicone is ticked on my phone, and not bought in Postgres. Forever.
+
+---
+
 # 4. Does it survive?
 
 ```js
