@@ -1119,8 +1119,12 @@ _20:00_
 
 I am David, `@flexbox_` on the internet.
 
+That was my talk.
+
 If you speak French: Le Cross Platform Show, the podcast.
 
-That was my talk.
+If you speak English: weshipit.today, the website.
+
+If you want to test Legend State in your own app, send me a DM on Twitter | linkedin, i can share a prompt with you to install it.
 
 Thank you.

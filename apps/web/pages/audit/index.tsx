@@ -18,6 +18,7 @@ import { linksApi } from '../api/links';
 
 import clsx from 'clsx';
 import Head from 'next/head';
+import Link from 'next/link';
 import { PropsWithChildren } from 'react';
 
 const serviceSchema = {
@@ -302,6 +303,14 @@ function SelfAudit() {
             Try the free self-audit
           </LinkButton>
         </div>
+        <p>
+          Worried about leaked API keys, insecure storage or exposed APIs? Run
+          the{' '}
+          <Link href="/react-native-security-audit">
+            free React Native security self-audit
+          </Link>
+          .
+        </p>
       </div>
     </Section>
   );
