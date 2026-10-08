@@ -101,10 +101,9 @@ function getVerdict(scorePct: number) {
 
 const SECURITY_AUDIT: SelfAuditConfig = {
   id: 'security-audit',
-  eyebrow: 'Free tool',
-  title: 'Audit the security of your React Native app',
-  intro:
-    '12 checks, 4 categories, a score in 2 minutes. The first things we check on a React Native or Expo app before it goes to production — based on the OWASP MASVS and the vulnerabilities we find most often in audits.',
+  eyebrow: '12 checks · 2 minutes',
+  title: 'Your security checklist',
+  intro: 'Answer No, Unknown or Yes. Your score shows up instantly.',
   categories: CATEGORIES,
   getVerdict,
   resetLabel: 'Restart the security audit',
