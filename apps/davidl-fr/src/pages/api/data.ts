@@ -71,6 +71,10 @@ export const podcast = [
     link: 'https://soundcloud.com/juancho-fayard/nos-vies-de-devs-episode-00',
   },
   {
+    title: 'React Native Radio 289: Real Life React Native',
+    link: 'https://reactnativeradio.com/episodes/rnr-289-real-life-react-native-david-leuliette-talks-retail-shake-scanner',
+  },
+  {
     title: 'Comment vois-tu ton métier évoluer avec l’IA ?',
     link: 'https://www.humancoders.com/pages/podcast',
   },
