@@ -311,6 +311,13 @@ function SelfAudit() {
           </Link>
           .
         </p>
+        <p>
+          Still on CocoaPods? Check if your iOS app is ready for{' '}
+          <Link href="/react-native-swift-package-manager-migration">
+            Swift Package Manager
+          </Link>{' '}
+          before the December 2026 deadline.
+        </p>
       </div>
     </Section>
   );
