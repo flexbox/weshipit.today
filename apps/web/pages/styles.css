@@ -21,6 +21,9 @@
   --animate-shine: shine 1s;
   --animate-marquee: marquee 20s linear infinite;
   --animate-glyph-draw: glyph-draw 2.4s cubic-bezier(0.65, 0, 0.35, 1) both;
+  --animate-route-node: route-node 400ms cubic-bezier(0.2, 0, 0, 1) both;
+  --animate-route-label: route-label 500ms cubic-bezier(0.2, 0, 0, 1) both;
+  --animate-route-comet: route-comet 3.6s linear infinite both;
 
   --color-primary: hsl(var(--primary));
   --color-background: hsl(var(--background));
@@ -53,6 +56,43 @@
     }
     100% {
       stroke-dashoffset: 0;
+    }
+  }
+  /* A stop on an SVG route lands as the pen reaches it. */
+  @keyframes route-node {
+    0% {
+      opacity: 0;
+      scale: 0.25;
+    }
+    100% {
+      opacity: 1;
+      scale: 1;
+    }
+  }
+  @keyframes route-label {
+    0% {
+      opacity: 0;
+      translate: 0 4px;
+    }
+    100% {
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
+  /* Runs a short dash (`stroke-dasharray: 0.05 2` on a `pathLength="1"` path)
+     from the start of the path to its end. */
+  @keyframes route-comet {
+    0% {
+      stroke-dashoffset: 0.05;
+      opacity: 0;
+    }
+    8%,
+    88% {
+      opacity: 1;
+    }
+    100% {
+      stroke-dashoffset: -1;
+      opacity: 0;
     }
   }
 }

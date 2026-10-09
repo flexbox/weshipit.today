@@ -1,61 +1,33 @@
 import { getAllClients } from '../api/client';
 import { Layout } from '../../components/layout';
+import { AuditRouteAnimation } from '../../components/audit-route-animation';
 import {
   FadeIn,
-  Hero,
-  Button,
+  HeroSplit,
   LinkButton,
-  ClientsListAudit,
+  ClientsListMarkee,
   Prose,
   Card,
   Text,
   ClientProps,
-  Section as SectionDivider,
   Faq,
   FaqProps,
+  pricingTiers,
 } from '@weshipit/ui';
+import { ArrowRightIcon, CalendarIcon } from '@heroicons/react/24/solid';
 import { linksApi } from '../api/links';
 
-import clsx from 'clsx';
 import Head from 'next/head';
 import Link from 'next/link';
-import { PropsWithChildren } from 'react';
 
-const serviceSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  description:
-    'A 2-week React Native codebase audit: prioritized technical debt backlog, dependency and React Native/Expo upgrades, and an unblocked release process.',
-  name: 'React Native Codebase Audit',
-  provider: {
-    '@type': 'Organization',
-    name: 'weshipit.today',
-    url: 'https://weshipit.today',
-  },
-  serviceType: 'Software code audit',
-  url: 'https://weshipit.today/audit',
-};
+const AUDIT_URL = 'https://weshipit.today/audit';
 
-const breadcrumbSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
-  itemListElement: [
-    {
-      '@type': 'ListItem',
-      item: 'https://weshipit.today',
-      name: 'Home',
-      position: 1,
-    },
-    {
-      '@type': 'ListItem',
-      item: 'https://weshipit.today/audit',
-      name: 'React Native Audit',
-      position: 2,
-    },
-  ],
-};
+const kickstart = pricingTiers.find((tier) => tier.key === 'kickstart');
+// "10 000 €" -> "10000", for the Offer in the structured data.
+const PRICE =
+  typeof kickstart?.price === 'object' ? (kickstart.price.onetime ?? '') : '';
+const PRICE_AMOUNT = PRICE.replace(/[^\d]/g, '');
 
-// Define the shape of the props expected by the Audit component
 interface AuditProps {
   clients: ClientProps[];
 }
@@ -66,262 +38,83 @@ export async function getStaticProps() {
 
   return {
     props: {
-      clients: clients.slice(0, 6),
+      clients: clients.filter((client) => client.data?.is_audit),
     },
+    revalidate: 86400,
   };
 }
 
-// Container component
-interface ContainerProps extends PropsWithChildren {
-  className?: string;
-  as?: React.ElementType;
-}
+const STEPS = [
+  {
+    step: '01',
+    title: 'Scan',
+    when: 'Phase 1 · days 1 to 3',
+    text: 'We investigate your codebase, native config and dependencies, then estimate the effort behind every finding.',
+  },
+  {
+    step: '02',
+    title: 'Backlog',
+    when: 'Phase 1 · day 3',
+    text: 'Notes, feasibility studies and estimations land in a Notion backlog we share with you, ranked by ROI.',
+  },
+  {
+    step: '03',
+    title: 'Upgrade',
+    when: 'Phase 2',
+    text: 'We pick the target React Native version or Expo SDK with you, upgrade third-party libraries and add the tools your stack is missing.',
+  },
+  {
+    step: '04',
+    title: 'Release',
+    when: 'Phase 2 · day 14',
+    text: 'We test the upgrade with your test suite and QA team, or our QA engineers, then help you ship it to App Store Connect and Google Play.',
+  },
+];
 
-export function Container({
-  as: Component = 'div',
-  children,
-  className,
-}: ContainerProps) {
-  return (
-    <Component className={clsx('mx-auto max-w-7xl px-6 lg:px-8', className)}>
-      <div className="mx-auto max-w-2xl lg:max-w-none">{children}</div>
-    </Component>
-  );
-}
+const DELIVERABLES = [
+  {
+    label: 'Notion backlog',
+    text: 'Every finding written down, estimated and prioritized. You keep it, whoever executes it.',
+  },
+  {
+    label: 'Upgraded dependencies',
+    text: (
+      <>
+        Compatibility issues flagged with <code>dep-check</code> and{' '}
+        <code>@rnx-kit/align-deps</code>, then fixed.
+      </>
+    ),
+  },
+  {
+    label: 'Unblocked releases',
+    text: 'A tested build on its way to the App Store and Google Play, not a PDF of advice.',
+  },
+  {
+    label: '3 months of follow-up',
+    text: '2 strategic calls and Slack access for critical questions after delivery.',
+  },
+];
 
-// Section component
-function Section({ children, title }) {
-  return (
-    <Container>
-      <div className="lg:flex lg:items-center lg:justify-center lg:gap-x-8 lg:group-even/section:justify-start xl:gap-x-20">
-        <div className="mx-auto mt-12 lg:mt-0 lg:w-[37rem] lg:flex-none lg:group-even/section:order-first">
-          <Text as="h2" variant="h3" className="mt-2">
-            {title}
-          </Text>
-          <Prose className="prose-xl mt-6">{children}</Prose>
-        </div>
-      </div>
-    </Container>
-  );
-}
-
-// Discover component
-function Discover() {
-  return (
-    <Section title="What is React Native Audit?">
-      <div className="space-y-6">
-        <p>
-          Are you seeking someone to review your work and{' '}
-          <strong className="font-semibold">
-            provide specific recommendations
-          </strong>{' '}
-          regarding performance, structure, and tools?
-        </p>
-        <p>
-          Our team has been focused on React Native since 2016, and we can help
-          you by conducting an{' '}
-          <strong className="font-semibold">
-            audit or review of your application
-          </strong>
-          . Based on the findings, we can work together to address any issues,
-          taking into account availability and cost.
-        </p>
-        <p>
-          We can also provide recommendations for improving your application.
-        </p>
-        <div className="not-prose">
-          <LinkButton
-            href="/onboarding"
-            size="xl"
-            className="no-underline"
-            variant="outline"
-          >
-            Start now
-          </LinkButton>
-        </div>
-      </div>
-    </Section>
-  );
-}
-
-// Workflow component
-function Workflow() {
-  return (
-    <Section title="How does it work?">
-      <div className="space-y-6">
-        <p>
-          Our service is a fixed fee that covers a one-time project. The process
-          typically takes up to{' '}
-          <strong className="font-semibold">2 weeks to complete</strong>. If you
-          require more personalized work, you have the option to add additional
-          working hours to your package.
-        </p>
-        <h3>Phase 1</h3>
-        <ul>
-          <li>
-            We investigate your codebase and estimate efforts (3 working days).
-          </li>
-          <li>
-            We write down notes and recommendations, and share the Notion
-            database with you.
-          </li>
-        </ul>
-        <h4 className="mt-12 text-base font-semibold">
-          Included in this phase
-        </h4>
-        <ul>
-          <li>Notion Backlog</li>
-          <li>Feasibility studies</li>
-          <li>Estimations</li>
-        </ul>
-        <h3>Phase 2</h3>
-        <ol>
-          <li>
-            Based on our suggestions, we add new features and tools to improve
-            your stack.
-          </li>
-          <li>We upgrade 3rd-party libraries and tools.</li>
-          <li>
-            We prepare the upgrade process and share the plan with you.
-            <ol>
-              <li>
-                We decide whether to upgrade to the latest React Native version
-                or Expo SDK.
-              </li>
-              <li>
-                We use tools like <code>dep-check</code> and{' '}
-                <code>@rnx-kit/align-deps</code> to identify compatibility
-                issues for your app dependencies.
-              </li>
-            </ol>
-          </li>
-          <li>
-            We run tests to ensure a successful upgrade:
-            <ol>
-              <li>
-                this step ideally engages your existing test suite and testing
-                team.
-              </li>
-              <li>
-                if necessary we can engage our QA engineers for manual testing.
-              </li>
-            </ol>
-          </li>
-          <li>
-            We help you upload the upgraded version to App Store Connect and
-            Google Play Store if necessary.
-          </li>
-        </ol>
-      </div>
-    </Section>
-  );
-}
-
-// Benefits component
-function Benefits() {
-  return (
-    <Section title="What can you gain with our React Native Audit Package?">
-      <p>
-        Auditing the version of your React Native app can provide the following
-        benefits:
-      </p>
-      <ol>
-        <li>
-          Reduced time and effort — auditing a React Native app can be quite
-          complex, so we save your time and own the entire process to allow you
-          to{' '}
-          <strong className="font-semibold">
-            focus on other important aspects of your project
-          </strong>
-          .
-        </li>
-        <li>
-          Compatibility with the ecosystem — React Native evolves fast, with new
-          libraries, tools, and community resources every month. Running a
-          recent version of React Native keeps your app compatible with the
-          latest versions of these dependencies, reduces compatibility issues,
-          and{' '}
-          <strong className="font-semibold">
-            makes it easier to integrate new functionalities into your app
-          </strong>
-          .
-        </li>
-        <li>Unblocked release process for App Store and Google Play.</li>
-        <li>
-          Access new features and improve DX:
-          <ol>
-            <li>
-              easier debugging with React DevTools and better error messages,
-            </li>
-            <li>better web-dev compatibility with flexbox gap support,</li>
-            <li>
-              and many{' '}
-              <a
-                href="https://github.com/facebook/react-native/blob/main/CHANGELOG.md"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                more features from the React Native changelog
-              </a>
-              .
-            </li>
-          </ol>
-        </li>
-      </ol>
-      <div className="not-prose">
-        <LinkButton
-          href="/onboarding"
-          size="xl"
-          className="mt-6 no-underline"
-          variant="outline"
-        >
-          Book a call
-        </LinkButton>
-      </div>
-    </Section>
-  );
-}
-
-// SelfAudit component
-function SelfAudit() {
-  return (
-    <Section title="Not ready for a full audit yet?">
-      <div className="space-y-6">
-        <p>
-          Score your stack yourself first. We turned our audit grid into a{' '}
-          <strong className="font-semibold">free 25-question self-audit</strong>{' '}
-          covering foundations, ecosystem, data layer, and devops. You get a
-          score out of 100 in 3 minutes — no call, no commitment (in French).
-        </p>
-        <div className="not-prose">
-          <LinkButton
-            href="/audit-gratuit"
-            size="xl"
-            className="no-underline"
-            variant="outline"
-          >
-            Try the free self-audit
-          </LinkButton>
-        </div>
-        <p>
-          Worried about leaked API keys, insecure storage or exposed APIs? Run
-          the{' '}
-          <Link href="/react-native-security-audit">
-            free React Native security self-audit
-          </Link>
-          .
-        </p>
-        <p>
-          Still on CocoaPods? Check if your iOS app is ready for{' '}
-          <Link href="/react-native-swift-package-manager-migration">
-            Swift Package Manager
-          </Link>{' '}
-          before the December 2026 deadline.
-        </p>
-      </div>
-    </Section>
-  );
-}
+const FREE_TOOLS = [
+  {
+    href: '/audit-gratuit',
+    label: 'Stack self-audit · FR',
+    title: 'Score your React Native stack',
+    text: '32 questions on foundations, ecosystem, data layer and devops. A score out of 100 in 3 minutes.',
+  },
+  {
+    href: '/react-native-security-audit',
+    label: 'Security · 12 checks',
+    title: 'React Native security self-audit',
+    text: 'Leaked API keys, insecure storage, exposed APIs, deep links and WebViews.',
+  },
+  {
+    href: '/react-native-swift-package-manager-migration',
+    label: 'iOS · CocoaPods',
+    title: 'Swift Package Manager readiness',
+    text: 'Find out what blocks your iOS app before the December 2026 CocoaPods deadline.',
+  },
+];
 
 const faqs: FaqProps[] = [
   {
@@ -351,7 +144,8 @@ const faqs: FaqProps[] = [
   {
     id: 'audit-faq-5',
     question: 'What React Native versions do you support?',
-    answer: "We've upgraded apps from RN 0.59 to 0.76+. No version is too old.",
+    answer:
+      "We've upgraded apps from React Native 0.59 to the latest release. No version is too old.",
   },
   {
     id: 'audit-faq-6',
@@ -361,113 +155,402 @@ const faqs: FaqProps[] = [
   },
 ];
 
+const auditSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      '@id': `${AUDIT_URL}#service`,
+      areaServed: 'Worldwide',
+      description:
+        'A 2-week React Native codebase audit: prioritized technical debt backlog, dependency and React Native/Expo upgrades, and an unblocked release process.',
+      name: 'React Native Codebase Audit',
+      ...(PRICE_AMOUNT && {
+        offers: {
+          '@type': 'Offer',
+          price: PRICE_AMOUNT,
+          priceCurrency: 'EUR',
+          url: AUDIT_URL,
+        },
+      }),
+      provider: {
+        '@type': 'Organization',
+        name: 'weshipit.today',
+        url: 'https://weshipit.today',
+      },
+      serviceType: 'Software code audit',
+      url: AUDIT_URL,
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          item: 'https://weshipit.today',
+          name: 'Home',
+          position: 1,
+        },
+        {
+          '@type': 'ListItem',
+          item: AUDIT_URL,
+          name: 'React Native Audit',
+          position: 2,
+        },
+      ],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faqs.map(({ answer, question }) => ({
+        '@type': 'Question',
+        acceptedAnswer: { '@type': 'Answer', text: answer },
+        name: question,
+      })),
+    },
+  ],
+};
+
+const EYEBROW = 'uppercase tracking-wide text-blue-600 dark:text-blue-400';
+
+function SectionHeading({
+  children,
+  description,
+  eyebrow,
+  id,
+}: {
+  children: React.ReactNode;
+  description?: React.ReactNode;
+  eyebrow: string;
+  id?: string;
+}) {
+  return (
+    <div className="max-w-2xl">
+      <Text as="p" variant="c2" className={EYEBROW}>
+        {eyebrow}
+      </Text>
+      <Text as="h2" variant="h3" className="mt-2 text-balance" id={id}>
+        {children}
+      </Text>
+      {description && (
+        <Text
+          as="p"
+          variant="p1"
+          className="mt-4 text-pretty text-slate-600 dark:text-slate-300"
+        >
+          {description}
+        </Text>
+      )}
+    </div>
+  );
+}
+
+function Process() {
+  return (
+    <section
+      id="process"
+      aria-labelledby="process-heading"
+      className="scroll-mt-24"
+    >
+      <SectionHeading
+        eyebrow="Fixed fee · 2 weeks"
+        id="process-heading"
+        description="One project, one price, up to 2 weeks. Need more hands-on work? Add extra working hours to the package."
+      >
+        How does the React Native audit work?
+      </SectionHeading>
+      <ol className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {STEPS.map((step) => (
+          <li key={step.step}>
+            <Card size="md" className="h-full">
+              <p className="font-mono text-sm font-semibold tabular-nums text-blue-600 dark:text-blue-400">
+                {step.step}
+              </p>
+              <Text as="h3" variant="h6" className="mt-3">
+                {step.title}
+              </Text>
+              <Text
+                as="p"
+                variant="c2"
+                className="mt-1 text-slate-500 dark:text-slate-400"
+              >
+                {step.when}
+              </Text>
+              <Text
+                as="p"
+                variant="p2"
+                className="mt-3 text-pretty text-slate-600 dark:text-slate-300"
+              >
+                {step.text}
+              </Text>
+            </Card>
+          </li>
+        ))}
+      </ol>
+    </section>
+  );
+}
+
+function Deliverables() {
+  return (
+    <section
+      aria-labelledby="deliverables-heading"
+      className="grid gap-10 lg:grid-cols-[2fr_3fr] lg:gap-16"
+    >
+      <div>
+        <SectionHeading
+          eyebrow="What you get"
+          id="deliverables-heading"
+          description="Our team has focused on React Native since 2016. We review your app like we would our own: performance, structure and tooling, with recommendations you can act on."
+        >
+          A plan your team can ship, not a report that gathers dust
+        </SectionHeading>
+        {PRICE && (
+          <p className="mt-8 flex items-baseline gap-2">
+            <span className="font-display text-3xl font-bold tabular-nums">
+              {PRICE}
+            </span>
+            <span className="text-slate-500 dark:text-slate-400">
+              fixed fee
+            </span>
+          </p>
+        )}
+      </div>
+      <dl className="grid gap-4 sm:grid-cols-2">
+        {DELIVERABLES.map((item) => (
+          <Card key={item.label} size="md">
+            <dt>
+              <Text as="span" variant="h6">
+                {item.label}
+              </Text>
+            </dt>
+            <dd className="mt-2 text-pretty text-slate-600 dark:text-slate-300">
+              {item.text}
+            </dd>
+          </Card>
+        ))}
+      </dl>
+    </section>
+  );
+}
+
+function Benefits() {
+  return (
+    <section className="mx-auto max-w-2xl">
+      <Prose size="lg">
+        <h2>What can you gain from a React Native audit?</h2>
+        <ol>
+          <li>
+            <strong>Time back.</strong> Auditing a React Native app is complex,
+            so we own the entire process and you focus on other important
+            aspects of your project.
+          </li>
+          <li>
+            <strong>Compatibility with the ecosystem.</strong> React Native
+            evolves fast, with new libraries, tools and community resources
+            every month. A recent version keeps your dependencies compatible and
+            makes new functionality easier to integrate.
+          </li>
+          <li>
+            <strong>An unblocked release process</strong> for the App Store and
+            Google Play.
+          </li>
+          <li>
+            <strong>Better developer experience:</strong> easier debugging with
+            React DevTools, better error messages, and many{' '}
+            <a
+              href="https://github.com/facebook/react-native/blob/main/CHANGELOG.md"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              more features from the React Native changelog
+            </a>
+            .
+          </li>
+        </ol>
+      </Prose>
+    </section>
+  );
+}
+
+function FreeTools() {
+  return (
+    <section aria-labelledby="free-tools-heading">
+      <SectionHeading
+        eyebrow="Free · no call needed"
+        id="free-tools-heading"
+        description="We turned parts of our audit grid into self-audits. Run them first, then bring the results to the call."
+      >
+        Not ready for a full audit yet?
+      </SectionHeading>
+      <ul className="mt-10 grid gap-4 md:grid-cols-3">
+        {FREE_TOOLS.map((tool) => (
+          <li key={tool.href}>
+            <Link
+              href={tool.href}
+              className="group block h-full rounded-3xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+            >
+              <Card
+                size="md"
+                className="flex h-full flex-col group-hover:shadow-lg"
+              >
+                <Text as="p" variant="c2" className={EYEBROW}>
+                  {tool.label}
+                </Text>
+                <Text as="h3" variant="h6" className="mt-2 text-balance">
+                  {tool.title}
+                </Text>
+                <Text
+                  as="p"
+                  variant="p2"
+                  className="mt-2 mb-6 text-pretty text-slate-600 dark:text-slate-300"
+                >
+                  {tool.text}
+                </Text>
+                <span className="mt-auto inline-flex items-center text-sm font-semibold text-blue-600 dark:text-blue-400">
+                  Start for free
+                  <ArrowRightIcon className="ml-1.5 size-4 transition-transform group-hover:translate-x-1" />
+                </span>
+              </Card>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
 export function Audit({ clients }: AuditProps) {
   return (
     <Layout
-      seoTitle="React Native Audit: Fix Technical Debt in 2 Weeks"
+      seoTitle="React Native Audit: Fix Tech Debt in 2 Weeks"
       seoDescription={
         'Full React Native codebase audit in 2 weeks: prioritized backlog, dependency upgrades, unblocked releases. Trusted by apps serving millions of users.'
       }
       ogImageTitle="React Native Codebase Audit"
       withHeader
+      callToActionButton={{
+        name: 'Book a call',
+        href: linksApi.cal.ONBOARDING,
+        isExternalLink: true,
+      }}
       withFooter
       withContainer
     >
       <Head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(auditSchema) }}
         />
       </Head>
       <FadeIn>
-        <div className="mx-auto mt-12 w-full sm:mt-24 lg:w-2/3">
-          <Hero
-            title="React Native Codebase Audit"
-            description="A fixed-fee, 2-week audit of your React Native app: we map your technical debt, upgrade your dependencies, and hand you a prioritized backlog — while your team keeps shipping features without a drop in development pace."
-          >
-            <div className="my-12">
-              <Button
-                href={linksApi.cal.ONBOARDING}
-                as="a"
-                isExternalLink
-                withExternalLinkIcon={false}
-                size="xxl"
-                className="justify-center"
+        <HeroSplit
+          eyebrow={
+            <Text as="p" variant="c2" className={EYEBROW}>
+              React Native & Expo · Fixed fee · 2 weeks
+            </Text>
+          }
+          title="React Native codebase audit in 2 weeks"
+          description="We map your technical debt, upgrade your dependencies and hand you a prioritized backlog, while your team keeps shipping features."
+          actions={
+            <>
+              <LinkButton size="xl" href={linksApi.cal.ONBOARDING}>
+                <CalendarIcon className="mr-2 size-4" />
+                Book a call with David
+              </LinkButton>
+              <LinkButton
+                variant="outline"
+                className="group"
+                size="xl"
+                href="#process"
               >
-                Start now
-              </Button>
+                See how it works
+                <ArrowRightIcon className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
+              </LinkButton>
+            </>
+          }
+          visual={<AuditRouteAnimation />}
+        >
+          {clients.length > 0 && (
+            <div className="mt-16">
+              <Text
+                as="p"
+                variant="c2"
+                className="text-center uppercase tracking-wide text-slate-500 dark:text-slate-400"
+              >
+                Apps we audited
+              </Text>
+              <ClientsListMarkee clients={clients} />
             </div>
-          </Hero>
-        </div>
-
-        <ClientsListAudit clients={clients} />
+          )}
+        </HeroSplit>
       </FadeIn>
 
-      <div className="mt-12 space-y-24 sm:mt-32 sm:space-y-32 lg:mt-8 lg:space-y-40">
-        <Discover />
-        <Workflow />
-        <Benefits />
-        <SelfAudit />
+      <div className="space-y-24 pb-8 sm:space-y-32">
+        <FadeIn>
+          <Process />
+        </FadeIn>
+        <FadeIn>
+          <Deliverables />
+        </FadeIn>
+        <FadeIn>
+          <Benefits />
+        </FadeIn>
+        <FadeIn>
+          <FreeTools />
+        </FadeIn>
+        <FadeIn>
+          <section className="mx-auto max-w-2xl">
+            <Prose size="lg">
+              <h2>What else can we do for you?</h2>
+              <h3>Long-term maintenance</h3>
+              <p>
+                You gain peace of mind by freeing yourself from the task of
+                ensuring that the product is always available for users. This
+                allows you to focus on growing the product instead.
+              </p>
+              <h3>Improved performance and stability</h3>
+              <p>
+                Our team ensures that your app uses the most stable and
+                optimized version of React Native. Your app will not only be
+                more stable but will also offer better performance for its
+                users.
+              </p>
+              <h3>Streamlining your app distribution</h3>
+              <p>
+                We are extensive users of the Expo application service and can
+                assist your team in releasing and iterating more quickly.
+              </p>
+            </Prose>
+          </section>
+        </FadeIn>
       </div>
-      <Prose size="lg" className="mx-auto my-4 lg:my-32">
-        <h2>What else can we do for you?</h2>
-        <h3>Long-term maintenance</h3>
-        <p>
-          You gain peace of mind by freeing yourself from the task of ensuring
-          that the product is always available for users. This allows you to
-          focus on growing the product instead.
-        </p>
-        <h3>Improved performance and stability</h3>
-        <p>
-          Our team ensures that your app uses the most stable and optimized
-          version of React Native (RN). By doing so, your app will not only be
-          more stable but will also offer better performance for its users.
-        </p>
-        <h3>Streamlining your app distribution</h3>
-        <p>
-          We are extensive users of the Expo application service and can assist
-          your team in releasing and iterating more quickly.
-        </p>
-      </Prose>
-      <Faq
-        faqs={faqs}
-        headingId="faq-heading"
-        title="Common questions about our audit"
-      />
-      <div className="m-auto max-w-4xl py-8 lg:py-24">
+
+      <div className="mx-auto max-w-3xl">
+        <Faq
+          faqs={faqs}
+          headingId="faq-heading"
+          title="Common questions about our audit"
+        />
+      </div>
+
+      <div className="mx-auto mb-24 max-w-4xl">
         <Card
           size="xl"
-          className="flex flex-col items-center justify-center gap-8 text-center"
+          className="flex flex-col items-center justify-center gap-6 text-center"
           variant="gradient-blue"
         >
-          <Text
-            variant="h4"
-            as="h2"
-            className="bg-gradient-to-b from-white to-white/75 bg-clip-text font-bold text-transparent drop-shadow"
-          >
+          <Text as="h2" variant="h4" className="text-balance text-white">
             Improve your app today
           </Text>
-          <Text
-            variant="p1"
-            as="p"
-            className="bg-gradient-to-b from-white to-white/75 bg-clip-text font-bold tracking-tight text-transparent drop-shadow"
-          >
-            Get in touch and let's build memorable products together.
+          <Text as="p" variant="p1" className="max-w-xl text-pretty text-white">
+            Get in touch and let&apos;s build memorable products together.
           </Text>
-          <Button
-            size="xxl"
+          <LinkButton
             href={linksApi.cal.ONBOARDING}
-            as="a"
-            isExternalLink
-            withExternalLinkIcon={false}
             variant="outline"
+            size="xl"
           >
             Book a free call now
-          </Button>
+          </LinkButton>
         </Card>
       </div>
     </Layout>

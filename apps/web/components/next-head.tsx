@@ -31,7 +31,9 @@ export function NextHead({
   noindex = false,
 }: NextHeadProps) {
   const router = useRouter();
-  const path = router.asPath;
+  // asPath keeps the query string and hash (`?utm_source=…`, `#faq`), which
+  // would leak into the canonical URL once the page hydrates.
+  const path = router.asPath.split(/[?#]/)[0];
   const canonicalUrl = `${BASE_URL}${path === '/' ? '' : path}`;
 
   const generateOgImagePath = () => {
