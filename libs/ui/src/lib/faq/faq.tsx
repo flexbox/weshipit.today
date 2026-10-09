@@ -24,36 +24,52 @@ export function Faq({
   headingId,
 }: FaqListProps) {
   return (
-    <div className="flex flex-col gap-6 py-24">
-      <Text as="h2" variant="h3" className="px-4" id={headingId}>
-        {title}
-      </Text>
+    <div className="py-24">
+      {/* Pages that render their own heading pass title="" — skip the empty h2. */}
+      {title && (
+        <Text as="h2" variant="h3" className="mb-8 px-4" id={headingId}>
+          {title}
+        </Text>
+      )}
 
-      {faqs.map((item, index) => (
-        <div key={item.id}>
+      <div>
+        {faqs.map((item, index) => (
           <Disclosure
+            key={item.id}
             as="div"
-            className="rounded-md transition-colors duration-200 ease-in-out hover:bg-white dark:hover:bg-slate-800"
+            className="py-2"
             defaultOpen={index === 0}
           >
-            <DisclosureButton className="group flex w-full cursor-pointer items-center justify-between px-4 py-3">
-              <Text
-                as="h3"
-                variant="p1"
-                className="my-2 text-left font-semibold"
-              >
+            {/* The heading wraps the button: a heading inside a <button> is
+                invalid HTML and drops the question from the heading outline. */}
+            <Text as="h3" variant="p1" className="font-semibold">
+              <DisclosureButton className="group flex w-full cursor-pointer items-start justify-between gap-6 rounded-xl px-4 py-3 text-left transition-colors duration-150 hover:bg-slate-900/[0.03] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 dark:hover:bg-white/5">
                 {item.question}
-              </Text>
-              <ChevronDownIcon className="size-5 shrink-0 transition-transform duration-200 ease-out group-data-[open]:rotate-180 dark:fill-white/60" />
-            </DisclosureButton>
-            <DisclosurePanel className="px-4 pb-4">
-              <Text as="p" variant="p2">
+                {/* One line tall, so the chevron sits on the first line of a
+                    question that wraps. */}
+                <span className="flex h-lh shrink-0 items-center">
+                  <ChevronDownIcon
+                    aria-hidden="true"
+                    className="size-5 text-slate-400 transition-[rotate,color] duration-200 ease-out group-hover:text-slate-600 group-data-[open]:rotate-180 dark:text-slate-500 dark:group-hover:text-slate-300"
+                  />
+                </span>
+              </DisclosureButton>
+            </Text>
+            {/* unmount={false} keeps closed answers in the server-rendered
+                HTML (hidden), so they match the FAQPage structured data and
+                stay indexable. */}
+            <DisclosurePanel
+              unmount={false}
+              transition
+              className="px-4 pt-1 pb-4 pr-15 transition-[opacity,translate] duration-200 ease-out data-[closed]:-translate-y-1 data-[closed]:opacity-0"
+            >
+              <p className="max-w-prose text-base leading-relaxed text-pretty text-slate-600 sm:text-lg dark:text-slate-300">
                 {item.answer}
-              </Text>
+              </p>
             </DisclosurePanel>
           </Disclosure>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }
