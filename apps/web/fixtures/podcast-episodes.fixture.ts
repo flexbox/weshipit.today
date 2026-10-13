@@ -22,6 +22,21 @@ export interface PodcastEpisode {
 // Ordered newest first (highest episode number first).
 export const podcastEpisodes: PodcastEpisode[] = [
   {
+    number: 40,
+    slug: 'refus-stores',
+    name: 'Capgo',
+    title:
+      "6 refus App Store, 32 jours bloqués : que peut vraiment l'OTA ? — Martin Donadieu (Capgo)",
+    description_short:
+      'Martin Donadieu (Capgo) décortique 6 refus de stores : 30 à 50 % des apps recalées au premier envoi, des reviews de 6 heures à 3 semaines.',
+    hosts: ['David Leuliette'],
+    guests: ['Martin Donadieu'],
+    spotify_url: 'https://open.spotify.com/episode/2aqUlg7hqcsFxKheng9TZj',
+    apple_podcast_url: '' /* ⚠️ TODO à compléter */,
+    youtube_embed_id: 'T2Xw-iBD3wY',
+    company_logo: '' /* ⚠️ TODO logo capgo */,
+  },
+  {
     number: 39,
     slug: 'react-native-reusables',
     name: 'React Native Reusables',
