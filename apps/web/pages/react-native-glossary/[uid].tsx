@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { CheckIcon, LinkIcon } from '@heroicons/react/24/outline';
 import { GlossaryMarkdown } from '../../components/glossary-markdown';
+import { GlossaryFigure } from '../../components/glossary-figures';
 import {
   getAllGlossaryTerms,
   resolveTermSlug,
@@ -21,6 +22,7 @@ interface TermLink {
 }
 
 interface GlossaryTermPageProps {
+  slug: string;
   title: string;
   summary: string;
   aliases: string[];
@@ -157,6 +159,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   return {
     props: {
+      slug: term.slug,
       title: term.title,
       summary: term.summary,
       aliases: term.aliases,
@@ -244,6 +247,7 @@ function TermChips({ terms }: { terms: TermLink[] }) {
 }
 
 export default function GlossaryTermPage({
+  slug,
   title,
   summary,
   aliases,
@@ -377,6 +381,9 @@ export default function GlossaryTermPage({
           <p className="mt-6 text-xl leading-relaxed font-medium text-balance text-neutral-900 sm:text-2xl dark:text-neutral-100">
             {summary}
           </p>
+
+          {/* Interactive figure, for the terms that have one. */}
+          <GlossaryFigure slug={slug} className="mt-12 sm:-mx-12 lg:-mx-24" />
 
           <div className="mt-6 text-lg leading-relaxed text-neutral-700 sm:text-xl [&_a:hover]:text-blue-600 [&_a]:underline [&_a]:underline-offset-2 [&>*+*]:mt-5 dark:text-neutral-300 dark:[&_a:hover]:text-blue-400">
             <GlossaryMarkdown>{content}</GlossaryMarkdown>
