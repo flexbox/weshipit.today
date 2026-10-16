@@ -32,7 +32,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     hosts: ['David Leuliette'],
     guests: ['Martin Donadieu'],
     spotify_url: 'https://open.spotify.com/episode/2aqUlg7hqcsFxKheng9TZj',
-    apple_podcast_url: 'https://podcasts.apple.com/fr/podcast/live-update-ota-vs-refus-app-store-6-cas-r%C3%A9els-32-jours/id1790867559?i=1000793799309'
+    apple_podcast_url:
+      'https://podcasts.apple.com/fr/podcast/live-update-ota-vs-refus-app-store-6-cas-r%C3%A9els-32-jours/id1790867559?i=1000793799309',
     youtube_embed_id: 'T2Xw-iBD3wY',
     company_logo: '' /* ⚠️ TODO logo capgo */,
   },
