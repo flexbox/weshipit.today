@@ -46,7 +46,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     hosts: ['David Leuliette'],
     guests: ['Zach Nugent'],
     spotify_url: 'https://open.spotify.com/episode/2ZAHFbRxza6magVMXD8hxt',
-    apple_podcast_url: '' /* ⚠️ TODO à compléter */,
+    apple_podcast_url:
+      'https://podcasts.apple.com/fr/podcast/ton-design-system-mobile-te-co%C3%BBte-100-k%E2%82%AC-par-an-et/id1790867559?i=1000791219313',
     youtube_embed_id: 'Dl4HXU6N1Q8',
     company_logo: '' /* ⚠️ TODO logo react-native-reusables */,
   },
@@ -61,7 +62,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     hosts: ['David Leuliette'],
     guests: ['Christopher Chedeau'],
     spotify_url: '' /* ⚠️ TODO à compléter */,
-    apple_podcast_url: '' /* ⚠️ TODO à compléter */,
+    apple_podcast_url:
+      'https://podcasts.apple.com/fr/podcast/react-native-ou-flutter-en-2026-pourquoi-son-cr%C3%A9ateur/id1790867559?i=1000787302740',
     youtube_embed_id: 'a0gdoC5n-pw',
     company_logo: '/images/podcast-logos/vjeux.png',
   },
@@ -91,7 +93,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     hosts: ['David Leuliette'],
     guests: ['Gabriel Hofman', 'Matthys Ducrocq'],
     spotify_url: '' /* ⚠️ TODO à compléter */,
-    apple_podcast_url: '' /* ⚠️ TODO à compléter */,
+    apple_podcast_url:
+      'https://podcasts.apple.com/fr/podcast/impact-de-lia-sur-react-native-react-native-sans/id1790867559?i=1000783496467',
     youtube_embed_id: '1OQM5jR-EN8',
     company_logo: '/images/podcast-logos/app-js-2026.jpg',
   },
@@ -455,7 +458,7 @@ export const podcastEpisodes: PodcastEpisode[] = [
     guests: ['Adnan Aita'],
     spotify_url: 'https://open.spotify.com/episode/2zOddvp0or5uyg97FSGMkA',
     apple_podcast_url:
-      'https://podcasts.apple.com/fr/podcast/sharelock-lapplication-mobile-companion-pour/id1790867559?i=1000707011381',
+      'https://podcasts.apple.com/fr/podcast/sharelock-lapplication-mobile-companion-pour-s%C3%A9curiser/id1790867559?i=1000708562523',
     youtube_embed_id: 'H_lM_TU39tY',
     company_logo: '/images/podcast-logos/sharelock.webp',
   },
