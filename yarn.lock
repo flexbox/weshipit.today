@@ -8828,6 +8828,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"anatomy-figures@npm:^0.1.0":
+  version: 0.1.0
+  resolution: "anatomy-figures@npm:0.1.0"
+  peerDependencies:
+    react: ">=18"
+    react-dom: ">=18"
+  peerDependenciesMeta:
+    react:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: 10/7555551eef3835b2dd745407cc4caa2a81ccccc53b7c5e6c7e64bd6a52bb5ccfd002f2f246efbea4df4e84dce5b48c109316d3a4876f67941fb1183115b2673d
+  languageName: node
+  linkType: hard
+
 "ansi-colors@npm:4.1.3, ansi-colors@npm:^4.1.1, ansi-colors@npm:^4.1.3":
   version: 4.1.3
   resolution: "ansi-colors@npm:4.1.3"
@@ -25475,6 +25490,7 @@ __metadata:
     "@vercel/speed-insights": "npm:^2.0.0"
     "@vitejs/plugin-react": "npm:^4.3.4"
     "@vitest/ui": "npm:4.1.2"
+    anatomy-figures: "npm:^0.1.0"
     autoprefixer: "npm:^10.4.20"
     babel-jest: "npm:30.0.5"
     babel-loader: "npm:9.2.1"
