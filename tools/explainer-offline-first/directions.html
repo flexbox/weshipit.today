@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Offline-first explainer: directions</title>
+<style>
+  @font-face { font-family: 'Space Grotesk'; font-weight: 500; src: url(fonts/space-grotesk-latin-500-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Space Grotesk'; font-weight: 700; src: url(fonts/space-grotesk-latin-700-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'JetBrains Mono'; font-weight: 500; src: url(fonts/jetbrains-mono-latin-500-normal.woff2) format('woff2'); }
+  * { box-sizing: border-box; margin: 0; }
+  body { background: #ECE8DF; color: #0A1E3C; font: 500 18px/1.45 'Space Grotesk', sans-serif; padding: 56px; width: 1920px; }
+  h1 { font-size: 44px; letter-spacing: -0.02em; }
+  .sub { color: #4A5A6E; margin: 8px 0 40px; max-width: 1100px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px 32px; }
+  .card { background: #fff; border-radius: 14px; padding: 20px; }
+  .card.win { outline: 4px solid #0A6F8C; }
+  .tag { font: 500 14px 'JetBrains Mono', monospace; letter-spacing: 0.08em; text-transform: uppercase; color: #4A5A6E; }
+  .win .tag { color: #0A6F8C; }
+  h2 { font-size: 28px; margin: 6px 0 12px; letter-spacing: -0.01em; }
+  svg { display: block; width: 100%; height: auto; border-radius: 8px; }
+  ul { margin: 14px 0 0 20px; color: #2b3b52; }
+  .log { margin-top: 48px; background: #fff; border-radius: 14px; padding: 28px 32px; }
+  .log h2 { margin-top: 0; }
+  .log p { max-width: 1500px; margin-bottom: 10px; }
+</style>
+</head>
+<body>
+<h1>Offline-first in 45 s: four directions</h1>
+<p class="sub">Same frame in every direction: beat S5, no signal, three visits saved in phone storage, queue full. Judged on four things: can a founder read it on a phone, does it look like weshipit.today, does it show the real thing, and does motion have something to carry.</p>
+<div class="grid" id="grid"></div>
+
+<div class="log">
+  <h2>Decision: B, Warm plan</h2>
+  <p><b>Why B wins.</b> Its warm paper ground carries the brand's blueprint line language (grid, thin strokes, mono labels) at 14.7:1 ink contrast, and a single deep-cyan accent marks "saved". The brand guide recommends the light variant for LinkedIn feeds, where founders will meet this film. The phone UI stays legible as real UI. The diagram uses the same strokes as the UI, so a tap's dot can turn into a queue chip and then a server row without any change in style.</p>
+  <p><b>Why not A.</b> It's the most on-brand, but cyan on navy invites glow, and thin cyan lines drop below 3:1 once the video is compressed and watched on a small screen. We keep it for developer audiences (see <code>tools/podcast-motion/legend-state.html</code>).</p>
+  <p><b>Why not C.</b> The real UI reads instantly, but it hides the architecture, which is the whole point. You'd see that a save worked, never where it went.</p>
+  <p><b>Why not D.</b> The swimlane is the most accurate picture of order, but founders read it as a Gantt chart. We take one idea from it: the queue slots are numbered 1, 2, 3 left to right, so order stays visible.</p>
+</div>
+
+<script>
+  const D = [
+    { key: 'A', name: 'Blueprint night', tag: 'Brand dark', bg: '#0A1E3C', ink: '#F0F6FC', muted: '#8FA6C1', acc: '#61DAFB', grid: '#1E3A5F', paper: '#0F2A4F', mode: 'diagram',
+      notes: ['Most on-brand (YouTube thumbnails, talks)', 'Cyan line art turns into glow under compression', 'Thin lines at 390 px drop below 3:1'] },
+    { key: 'B', name: 'Warm plan', tag: 'Winner', bg: '#F4F1EA', ink: '#0A1E3C', muted: '#4A5A6E', acc: '#0A6F8C', grid: '#E3DED3', paper: '#FFFFFF', mode: 'diagram', win: true,
+      notes: ['Warm neutral ground, navy ink, one deep-cyan accent', 'Blueprint grammar from the brand: grid, mono labels, thin strokes', 'Contrast: ink 14.7:1, accent 5.1:1, muted 6.3:1'] },
+    { key: 'C', name: 'Real UI close-up', tag: 'UI-led', bg: '#F4F1EA', ink: '#0A1E3C', muted: '#4A5A6E', acc: '#0A6F8C', grid: 'none', paper: '#FFFFFF', mode: 'ui',
+      notes: ['The phone fills the frame, the diagram becomes a small inset', 'Instantly familiar, but the architecture disappears', 'Hard to show "where it went"'] },
+    { key: 'D', name: 'Swimlanes', tag: 'Sequence diagram', bg: '#F8FAFC', ink: '#0A1E3C', muted: '#4A5A6E', acc: '#0FA3C7', grid: '#D6E2F0', paper: '#FFFFFF', mode: 'lanes',
+      notes: ['Phone storage / queue / server lanes over time', 'Most accurate for order', 'Reads as a Gantt chart; no real UI'] },
+  ];
+
+  function frame(d) {
+    const g = [];
+    if (d.grid !== 'none') {
+      for (let x = 0; x <= 960; x += 24) g.push(`<line x1="${x}" y1="0" x2="${x}" y2="540" stroke="${d.grid}" stroke-width="1"/>`);
+      for (let y = 0; y <= 540; y += 24) g.push(`<line x1="0" y1="${y}" x2="960" y2="${y}" stroke="${d.grid}" stroke-width="1"/>`);
+    }
+    const head = (t) => `<text x="60" y="78" font-family="Space Grotesk" font-weight="700" font-size="46" fill="${d.ink}" letter-spacing="-1">${t}</text>`;
+    const cap = `<rect x="150" y="470" width="660" height="44" rx="6" fill="${d.ink === '#F0F6FC' ? '#F0F6FC' : '#0A1E3C'}"/><text x="480" y="500" text-anchor="middle" font-family="Space Grotesk" font-weight="500" font-size="22" fill="${d.ink === '#F0F6FC' ? '#0A1E3C' : '#F4F1EA'}">The queue holds all three. Nothing is lost.</text>`;
+    const label = (x, y, t, c = d.muted, a = 'start') => `<text x="${x}" y="${y}" font-family="JetBrains Mono" font-weight="500" font-size="13" letter-spacing="1.2" fill="${c}" text-anchor="${a}">${t}</text>`;
+    const phone = (x, y, s) => {
+      const rows = [1, 2, 3].map((n, i) => {
+        const ry = y + s * (88 + i * 52);
+        return `<rect x="${x + s * 12}" y="${ry}" width="${s * 156}" height="${s * 44}" rx="${s * 6}" fill="none" stroke="${d.grid === 'none' ? '#C9C3B6' : d.grid}" stroke-width="1.5"/>
+        <text x="${x + s * 22}" y="${ry + s * 27}" font-family="Space Grotesk" font-weight="500" font-size="${s * 13}" fill="${d.ink}">Visit ${n}</text>
+        <circle cx="${x + s * 146}" cy="${ry + s * 22}" r="${s * 11}" fill="${d.acc}"/>
+        <path d="M${x + s * 141} ${ry + s * 22} l${s * 4} ${s * 4} l${s * 7} ${-s * 8}" stroke="${d.paper}" stroke-width="${s * 2}" fill="none"/>`;
+      }).join('');
+      return `<rect x="${x}" y="${y}" width="${s * 180}" height="${s * 300}" rx="${s * 22}" fill="${d.paper}" stroke="${d.ink}" stroke-width="2"/>
+        <text x="${x + s * 16}" y="${y + s * 30}" font-family="JetBrains Mono" font-size="${s * 10}" fill="${d.muted}">09:41  NO SIGNAL</text>
+        <text x="${x + s * 14}" y="${y + s * 68}" font-family="Space Grotesk" font-weight="700" font-size="${s * 17}" fill="${d.ink}">Today's visits</text>${rows}`;
+    };
+    const chip = (x, y, n) => `<rect x="${x}" y="${y}" width="46" height="40" rx="6" fill="${d.acc}"/><text x="${x + 23}" y="${y + 26}" text-anchor="middle" font-family="JetBrains Mono" font-size="16" fill="${d.paper}">V${n}</text>`;
+    let body = '';
+    if (d.mode === 'diagram') {
+      body += head('Still no signal.') + phone(70, 120, 1.08);
+      body += `<rect x="300" y="250" width="150" height="76" rx="8" fill="none" stroke="${d.ink}" stroke-width="2"/>` + label(300, 240, 'PHONE STORAGE');
+      body += [0, 1, 2].map((i) => `<rect x="${308 + i * 47}" y="268" width="40" height="40" rx="5" fill="${d.acc}"/>`).join('');
+      body += `<line x1="266" y1="288" x2="300" y2="288" stroke="${d.ink}" stroke-width="2"/><line x1="450" y1="288" x2="500" y2="288" stroke="${d.ink}" stroke-width="2"/>`;
+      body += label(500, 240, 'QUEUE') + [0, 1, 2].map((i) => `<rect x="${500 + i * 56}" y="262" width="50" height="52" rx="6" fill="none" stroke="${d.muted}" stroke-dasharray="4 4"/>` + chip(502 + i * 56, 268, i + 1)).join('');
+      body += `<line x1="672" y1="288" x2="720" y2="288" stroke="${d.muted}" stroke-width="2"/><line x1="760" y1="288" x2="790" y2="288" stroke="${d.muted}" stroke-width="2"/>`;
+      body += `<path d="M728 276 l24 24 M752 276 l-24 24" stroke="${d.ink}" stroke-width="2.5"/>` + label(740, 330, 'NO SIGNAL', d.ink, 'middle');
+      body += `<rect x="790" y="220" width="130" height="140" rx="8" fill="none" stroke="${d.ink}" stroke-width="2"/>` + label(790, 210, 'SERVER') + label(855, 296, 'EMPTY', d.muted, 'middle');
+    } else if (d.mode === 'ui') {
+      body += phone(300, 30, 1.38);
+      body += `<rect x="640" y="300" width="250" height="110" rx="10" fill="#fff" stroke="${d.rule || '#C9C3B6'}"/>` + label(656, 326, 'QUEUE') + [0, 1, 2].map((i) => chip(656 + i * 56, 346, i + 1)).join('');
+      body += head('');
+    } else {
+      body += head('Still no signal.');
+      const lanes = ['PHONE STORAGE', 'QUEUE', 'SERVER'];
+      lanes.forEach((l, i) => { body += label(60, 170 + i * 100, l, d.ink) + `<line x1="220" y1="${165 + i * 100}" x2="900" y2="${165 + i * 100}" stroke="${d.grid}" stroke-width="2"/>`; });
+      [0, 1, 2].forEach((i) => { body += chip(260 + i * 110, 145, i + 1) + chip(300 + i * 110, 245, i + 1); });
+      body += `<line x1="640" y1="120" x2="640" y2="400" stroke="${d.ink}" stroke-dasharray="6 6" stroke-width="2"/>` + label(650, 410, 'SIGNAL BACK →', d.ink);
+    }
+    return `<svg viewBox="0 0 960 540"><rect width="960" height="540" fill="${d.bg}"/>${g.join('')}${body}${cap}</svg>`;
+  }
+
+  document.fonts.ready.then(() => {
+    document.getElementById('grid').innerHTML = D.map((d) => `
+      <div class="card ${d.win ? 'win' : ''}">
+        <div class="tag">${d.key} · ${d.tag}</div><h2>${d.name}</h2>
+        ${frame(d)}
+        <ul>${d.notes.map((n) => `<li>${n}</li>`).join('')}</ul>
+      </div>`).join('');
+    window.directionsReady = true;
+  });
+</script>
+</body>
+</html>

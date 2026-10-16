@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Offline-first, explained</title>
+<style>
+  @font-face { font-family: 'Space Grotesk'; font-weight: 500; src: url(fonts/space-grotesk-latin-500-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Space Grotesk'; font-weight: 700; src: url(fonts/space-grotesk-latin-700-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'JetBrains Mono'; font-weight: 500; src: url(fonts/jetbrains-mono-latin-500-normal.woff2) format('woff2'); }
+  html, body { margin: 0; overflow: hidden; background: #F4F1EA; }
+  svg { display: block; text-rendering: geometricPrecision; }
+</style>
+</head>
+<body>
+<svg id="stage" xmlns="http://www.w3.org/2000/svg"></svg>
+<script src="src/tokens.js"></script>
+<script src="src/timeline.js"></script>
+<script src="src/film.js"></script>
+<script src="src/audio.js"></script>
+<script>
+  // window.ready resolves once fonts are loaded and the first frame is painted.
+  // Preview in a browser: film.html?fmt=16x9&t=12.5 (or &play=1).
+  window.ready = Promise.all([
+    document.fonts.load('500 20px "Space Grotesk"'),
+    document.fonts.load('700 20px "Space Grotesk"'),
+    document.fonts.load('500 20px "JetBrains Mono"'),
+  ]).then(() => {
+    window.initFilm();
+    const q = new URLSearchParams(location.search);
+    window.seek(+(q.get('t') || 0));
+    if (q.get('play') === '1') {
+      const start = performance.now();
+      const tick = () => { window.seek(((performance.now() - start) / 1000) % window.TIMELINE.duration); requestAnimationFrame(tick); };
+      requestAnimationFrame(tick);
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+out/stills/
+out/log-*.txt
+out/*.wav
+out/captions.json
+out/*-silent.mp4

@@ -1,0 +1,1 @@
+VO duck depth after fix (caption-keyed, -8 dB target): -10.2 dB

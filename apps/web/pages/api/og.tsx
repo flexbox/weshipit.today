@@ -13,6 +13,18 @@ const MAX_TITLE_LEN = 200;
 const clampParam = (value: string | null, max: number): string =>
   (value ?? '').slice(0, max);
 
+// Slack, iMessage and others show a small square thumbnail cropped from the
+// center of the 1200×630 image, so the title must fit in the middle square.
+const SAFE_ZONE_WIDTH = 560;
+
+const fontSizeFor = (title: string): number => {
+  if (title.length <= 20) return 80;
+  if (title.length <= 40) return 64;
+  if (title.length <= 70) return 52;
+  if (title.length <= 110) return 42;
+  return 34;
+};
+
 export default async function handler(req: NextRequest) {
   try {
     const { searchParams } = new URL(req.url);
@@ -38,12 +50,15 @@ export default async function handler(req: NextRequest) {
         >
           <div
             style={{
-              fontSize: '5rem',
+              display: 'flex',
+              justifyContent: 'center',
+              width: SAFE_ZONE_WIDTH,
+              fontSize: fontSizeFor(title),
+              lineHeight: 1.15,
               textAlign: 'center',
               color: '#111827', // slate-900
               fontFamily: 'Inter, sans-serif',
               fontWeight: 'bold',
-              padding: '20px',
             }}
           >
             {title}

@@ -1,0 +1,25 @@
+  1.250s tap          +9.8 dB OK
+  3.750s error        +8.9 dB OK
+  6.250s tap         +15.4 dB OK
+  7.500s error       +11.0 dB OK
+ 10.625s tap         +16.8 dB OK
+ 11.250s motif       +19.6 dB OK
+ 15.000s tock        +17.2 dB OK
+ 18.750s tap         +16.3 dB OK
+ 19.375s save        +13.5 dB OK
+ 20.000s tock        +15.0 dB OK
+ 20.625s tap         +15.8 dB OK
+ 21.250s save        +13.2 dB OK
+ 21.875s tock        +15.4 dB OK
+ 29.375s land        +18.3 dB OK
+ 30.000s land        +16.9 dB OK
+ 30.625s land        +19.3 dB OK
+ 31.250s motifUp     +18.1 dB OK
+ 35.625s tap         +14.9 dB OK
+ 36.250s tap         +17.2 dB OK
+ 36.875s tap         +17.0 dB OK
+ 36.875s error       +17.0 dB OK
+ 37.500s error       +12.0 dB OK
+ 38.125s error       +11.3 dB OK
+ 42.500s motifEnd    +16.8 dB OK
+weakest cue: +8.9 dB

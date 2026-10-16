@@ -1,0 +1,56 @@
+1
+00:00:00,400 --> 00:00:04,400
+No signal in the basement.
+The technician taps Done.
+
+2
+00:00:04,700 --> 00:00:09,400
+Many apps send that tap to the
+server first. No signal, no save.
+
+3
+00:00:09,700 --> 00:00:13,600
+Offline-first apps save it in
+phone storage first. No waiting.
+
+4
+00:00:13,900 --> 00:00:17,300
+Each visit also joins
+a queue for the server.
+
+5
+00:00:17,600 --> 00:00:21,900
+Visits two and three, still in the
+basement. Each saves instantly.
+
+6
+00:00:22,000 --> 00:00:25,150
+The queue holds all
+three. Nothing is lost.
+
+7
+00:00:25,550 --> 00:00:29,150
+Signal’s back. The queue sends
+each visit to the server…
+
+8
+00:00:29,250 --> 00:00:32,550
+…in the order they happened.
+
+9
+00:00:32,950 --> 00:00:35,950
+Signal gone again. Now
+save on the server first.
+
+10
+00:00:36,050 --> 00:00:38,750
+Same three taps. Nothing saved.
+
+11
+00:00:39,050 --> 00:00:41,050
+That spinner is a design choice.
+
+12
+00:00:41,250 --> 00:00:45,000
+Ask your team: where
+does a tap save first?

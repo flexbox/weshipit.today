@@ -1,0 +1,6 @@
+Fix 01: frame determinism (t = 23.4 s, 16x9)
+Before: render twice → DIFFERENT. 1,930 pixels differ by 1 level (bbox 35,300 → 1890,1040): Chromium raster-thread noise.
+After:  flags --disable-gpu --disable-gpu-compositing --disable-partial-raster --num-raster-threads=1
+        --disable-skia-runtime-opts --run-all-compositor-stages-before-draw
+        → same page IDENTICAL, fresh browser IDENTICAL (16x9 t=23.4, 9x16 t=29.69, 1x1 t=41.6).
+Frames: out/stills/determinism-a-23.4.png and determinism-b-23.4.png (after; byte-identical).

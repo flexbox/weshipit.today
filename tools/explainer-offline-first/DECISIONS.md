@@ -1,0 +1,41 @@
+# Decisions
+
+One line per call, in the order they were made.
+
+- **Topic, audience, length:** the prompt's placeholders were unfilled; I asked the user, who chose: offline-first (Legend State), for founders/CTOs, 45 s.
+- **Inputs:** `/brand`, `/refs` and `./screens` don't exist. Brand comes from the weshipit.today design-system skill; the reference is `tools/podcast-motion/legend-state.html`; the phone UI is an SVG field-service app built for the film, since there are no product screenshots.
+- **One idea:** "a tap saves to phone storage first, syncs later". Conflicts, CRDTs and storage engines are on the cut list (IDEA.md).
+- **No metaphor:** the real path (phone storage → queue → server) is simpler than any metaphor.
+- **Library stays invisible:** Legend State is named in the README/SOURCES, not in the film. For founders, the pattern matters, not the package.
+- **Example:** a field technician in a basement (three visits) is a concrete case where losing signal is normal, not a bug.
+- **Direction B, Warm plan** (directions.html): the brand's light variant warmed to `#F4F1EA`; navy ink `#0A1E3C` (14.7:1); one accent `#0A6F8C` (5.1:1, the brand cyan darkened until it passes AA for text).
+- **Two typefaces:** Space Grotesk (headlines, captions, UI) + JetBrains Mono (labels). Inter dropped to stay at two.
+- **No red for errors:** failure is ✕ + "Not saved" in ink. Three colours max per the brand, and colour is never the only signal.
+- **Names:** "phone storage", "queue", "server", "offline-first". Each is used identically in heads, captions and labels.
+- **No voice-over shipped.** macOS system voices are licensed for personal, non-commercial use only, and no human VO was supplied. The film is designed muted-first: captions _are_ the narration line. `render.mjs audio --vo voice.wav` mixes a recorded VO with caption-keyed ducking when one exists.
+- **"Two lines on screen":** headline (1 line) + annotation labels count; captions are the accessibility layer and may wrap to 2 lines in 9:16 and 1:1.
+- **Order simplification:** the queue is shown FIFO. Real sync engines may batch; with no conflicts the outcome is the same (SOURCES.md).
+- **Formats:** each cut is laid out for its own aspect (horizontal wire in 16:9, vertical in 9:16, L-shaped in 1:1), not cropped from the master.
+- **Vertical labels:** in 9:16 and 1:1 the node labels move beside or below the box so the wire never crosses them (found in the first 9:16/1:1 contact sheet).
+- **S8 focus:** the pipeline fades fully out in the payoff; edge-clipped server pieces were stealing focus (first contact sheet).
+- **Determinism:** Chromium raster threads produced ±1-level noise on ~2k pixels; fixed with single-threaded software raster flags. Frames are now byte-identical (fixes/01).
+- **Audio determinism limit:** the Web Audio render differs run to run by ≤ −114 dBFS (Chromium's SIMD float paths; reproduced with convolver and compressor removed). Inaudible; kept Web Audio as briefed. Visual frames remain byte-identical.
+- **Loudness target:** loudnorm aims at −16 LUFS / −2.0 dBTP, giving 0.5 dB of margin under the −1.5 dBTP ceiling for AAC encoding.
+- **Masked cues:** queue tocks were buried by the save notes' ring (+0.0 dB onset). Shortened save tails, brightened the tock, and gave errors a knock attack (fixes/03).
+- **Ducking:** ffmpeg sidechain ducked only ~2 dB with a quiet voice. Replaced with ducking keyed to caption windows, since the voice reads the captions: −10 dB measured (fixes/04).
+- **Fonts vendored** (OFL) in `fonts/` so renders never hit the network.
+- **Design review (fixes/06):** chips relabelled `1 2 3` (a CTO read "V1" as a version), and "change" → "visit" in captions, so the saved thing has one name. "Underground" → "basement".
+- **Turn = one variable:** the signal drop gets its own beat (33.05) before the architecture flips (33.75). Head "Same taps. Server first." no longer repeats the caption.
+- **Pacing:** the S5 hold is cut by 2 beats (1.25 s) and given to S8. "Ask your team: where does a tap save first?" now has 3.75 s, and the sign-off arrives after it (43.4).
+- **Naming the pattern:** the S3 head is "Offline-first: phone storage first.", so the word the viewer must repeat is on screen. "Most apps" → "Many apps" (no unsourced majority claim).
+- **Caption lines ≤ 8 words:** captions wrap at 8 words per line (two lines max), in every format.
+- **16:9 close-up:** zoom 1.28 → 1.2, raised 70 px; the phone no longer runs under the caption box.
+- **Reduced motion keeps the spinner shape, held still** (fixes/05). The "Saving…" text replacement contradicted the caption "That spinner…".
+- **Stray S8 line** (design review): already gone in the current build (the pipeline fades fully out); no change needed.
+- **Accessibility pass (fixes/07):** 9:16 phone-cut text raised. Status 20→24, row subtitles and "Done" 22→26, "Basement level" 15→18, gap and empty-server labels to full label size (fitted to the box), server rows 30→34 in 9:16.
+- **Every state has a word:** a spinning row's subtitle reads "Saving…" (alongside the arc); errors read "Not saved"; offline reads "No signal".
+- **Reduced motion keeps cause and effect:** a still dot fades in where a tap stops, short of the gap, so "the tap gets stuck at the gap" survives with nothing travelling. Moving dots also stop 40 px short so the ✕ stays visible.
+- **Empty slots:** stroke moved from `rule` (1.56:1) to `muted` (6.25:1); they carry the queue's capacity.
+- **SRT line breaks:** ≤ 42 characters and ≤ 8 words per line, balanced, so players don't wrap them unpredictably. Ship it as an off-by-default subtitle track, since the captions are already burned in.
+- **Audio description (WCAG 1.2.5 AA) is open.** No licensed voice is available here (macOS system voices are personal, non-commercial). TRANSCRIPT.md is the descriptive transcript (1.2.3, A). A human VO reading the captions, mixed with `render.mjs audio --vo`, closes 1.2.5.
+- **16:9 is not the phone cut:** at 390 px wide its captions are ~10 px. Use cut_9x16 on phones (captions ~17 px).
