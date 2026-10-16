@@ -9,6 +9,11 @@ const FIGURES: Record<string, ComponentType> = {
   expo: dynamic(() =>
     import('./expo-anatomy/expo-figure').then((mod) => mod.ExpoAnatomyFigure),
   ),
+  hermes: dynamic(() =>
+    import('./hermes-anatomy/hermes-figure').then(
+      (mod) => mod.HermesAnatomyFigure,
+    ),
+  ),
 };
 
 export function GlossaryFigure({

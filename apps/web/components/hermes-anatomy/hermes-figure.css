@@ -1,0 +1,95 @@
+/* Hermes punch-card bench (glossary /react-native-glossary/hermes). */
+.hx {
+  cursor: pointer;
+  border-radius: 10px;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.hx:focus-visible {
+  outline: 1px solid var(--anatomy-muted);
+  outline-offset: 6px;
+}
+
+.hx .iso-svg {
+  overflow: visible;
+}
+
+.hx-shadow {
+  filter: blur(3px);
+  opacity: 0.5;
+  transform: translateY(1px);
+}
+
+.hx-needle {
+  fill: var(--anatomy-lit);
+  stroke: none;
+}
+
+.hx-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 28px;
+}
+
+.hx-controls button {
+  font-family: var(--anatomy-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--anatomy-text);
+  background: var(--anatomy-card);
+  border: 1px solid var(--anatomy-lo);
+  border-radius: 999px;
+  padding: 7px 14px;
+  cursor: pointer;
+  transition:
+    border-color 160ms var(--anatomy-ease),
+    color 160ms var(--anatomy-ease);
+}
+
+.hx-controls button:hover:not(:disabled) {
+  border-color: var(--anatomy-mid);
+  color: var(--anatomy-strong);
+}
+
+.hx-controls button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+@media (max-width: 640px) {
+  .iso-plate .hx {
+    overflow: hidden;
+  }
+
+  .iso-plate .hx .iso-svg {
+    width: 116%;
+    margin: -2% -8% -2%;
+  }
+}
+
+.hx-pointer {
+  stroke-width: 1.1;
+}
+
+.hx-engine {
+  display: inline-flex;
+  gap: 0;
+}
+
+.hx-engine button:first-child {
+  border-radius: 999px 0 0 999px;
+}
+
+.hx-engine button:last-child {
+  border-radius: 0 999px 999px 0;
+  margin-left: -1px;
+}
+
+.hx-controls .hx-engine button[aria-checked='true'] {
+  color: var(--anatomy-strong);
+  border-color: var(--anatomy-hi);
+}
