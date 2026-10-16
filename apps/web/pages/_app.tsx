@@ -7,6 +7,9 @@ import { SpeedInsights } from '@vercel/speed-insights/react';
 import { DefaultSeo } from 'next-seo';
 
 import './styles.css';
+import '../components/anatomy/kit/iso.css';
+import '../components/expo-anatomy/expo-figure.css';
+import '../components/hermes-anatomy/hermes-figure.css';
 
 const inter = Inter({
   display: 'swap',
