@@ -1,0 +1,1292 @@
+David Leuliette (00:01.934)
+Martin te vend de l'Over the Air Update. Et il te le dira toi-même, sur les six refus sur les stores, produit en aurait évité qu'un seul ! Qu'est-ce que c'est que ce bordel ? 32 jours de release bloqués ! Et les trois seuls cas où on peut encore livrer quand Apple dit non. Bienvenue sur le Cross Platform Show, Martin, c'est le podcast des gens qui shipent du mobile aujourd'hui, épisode spécial. On va parler de ce que les temps te prennent.
+
+pas les 15%, pas les 30%, pas la tune ni le DMA, mais est-ce que ça te coûte en temps ? Comment ça va Martin, fondateur de CapGo ? C'est quoi CapGo en deux mots ?
+
+Martin (00:46.479)
+Deux mots live update ! Salut ! Deux mots, c'était dur !
+
+David Leuliette (00:47.362)
+p***, well done, bien joué, franchement, excellent. Non mais franchement, sharp, tu on sent que le mec, il est bootstrap et rentable depuis 2022. Y a 6 personnes qui bouchent chez Capgoo
+
+Martin (01:04.307)
+Là, cinq depuis deux jours, il y en a une en moins.
+
+David Leuliette (01:08.67)
+Arrête, on sait tous qu'il a six personnes, c'est Claude qui bosse, tu vois. Faut le compter quand même. Est-ce qu'on peut paraître pas compte ?
+
+Martin (01:14.239)
+ouais, bah si tu comptes Claude, Codex, Grok, on est neuf !
+
+David Leuliette (01:18.195)
+bah, moi, pour le cobotcast, est au moins 5-6.
+
+Martin (01:25.019)
+Après tu peux aussi compter les multiples personnalités de chaque agent aussi. Là on est 25 !
+
+David Leuliette (01:29.486)
+Non, non, non, c'est mono. Tu vois, on va déjà faire simple, parce qu'après on va se faire taxer de, je pas, l'URSAF, ils vont nous dire « Hey Claude, là, faut le 1 ». On va, tu vois. Et donc, dans les nombres, on a 50 millions d'utilisateurs touchés via des apps clients et 150 plugins capacitors maintenus. Tu me dis si c'est à peu près accurate, hein.
+
+Martin (01:35.111)
+Ouais, mais tu aimes trop d'employés.
+
+Martin (01:48.945)
+On est à 90 millions de Reiss.
+
+David Leuliette (01:52.33)
+là là, c'était incroyable. Plus que la France, c'est beau. tu devrais faire ça en nombre de pays. À tout moment en plus, avant, c'était juste une idée, mais maintenant tu peux le faire, tu lances un prompt, paf ! Genre hier, j'ai fait 9 Framework parce que j'avais vu 9 Game. sais, sur Twitter en ce moment, c'est la traîne, tu mets tes 9 jeux.
+
+Martin (01:54.289)
+a plus que la France.
+
+Martin (02:01.107)
+J'ai combien de jetes de device en nombre de France ? Un et demi là.
+
+Martin (02:17.383)
+oui.
+
+David Leuliette (02:18.381)
+du coup je... tain excellent faudrait faire ça pour les frameworks de coding et puis hop voilà c'est ship voilà si vous voulez savoir tapez nine framework.wishipit.today voilà vous pouvez envoyer à LinkedIn et Twitter là dessus bref aujourd'hui spécial épisode spécial sur un... les app store fut ça le horror story c'est un article que je mettrais dans les liens de l'épisode
+
+Martin (02:45.695)
+que je continue de l'enrichir d'ailleurs parce que j'en ai tellement c'est juste que tu n'as jamais le temps de les mettre c'est juste tu essayes d'aider les mecs qui se font refuser pour des trucs débiles tu essayes de les aider après tu mets ça dans un coin après avoir passé des jours dessus mais il y en a plein c'est terrible je crois que c'est de pire en pire depuis qu'il des gens qui font du vibe coding parce que Apple et Google sont sous l'eau quoi surtout que
+
+Google, ont décidé récemment, je sais pas si c'était il un an ou deux, qu'ils ont décidé de faire de la review humaine aussi. Ça devient pire. Ouais. oui, ce qui fou, c'est qu'Apple est allé dans la direction de c'est plus rapide parfois. Genre tu peux avoir une review en, je pas, quatre heures si t'as de la chance et qu'il avait vraiment personne. C'est rare maintenant, mais ça peut arriver. Et par contre, Google s'est devenu plus long, alors qu'avant tu pouvais avoir...
+
+David Leuliette (03:19.541)
+Avant c'était full automatique, on est d'accord, avant c'était plus rapide.
+
+Martin (03:40.083)
+20-30 minutes peut-être des fois.
+
+une release quoi. Maintenant ça va être plus ça se compte en heures ou en jours.
+
+David Leuliette (03:50.03)
+C'est vrai que là en ce moment je sais pas trop, nous tout est full automate avec fastlane et en fait on fait un trunk base development du coup on ship tout sur main et hop, over the air update et incha'Allah on a renovate et qui fait les releases machin on a juste à appuyer sur un bouton et hop après tout se fait tout seul on n'a plus à les cliquer dans le dashboard et tout mais bon ça demande un peu d'engineering et de vrais gens qui surveillent donc je pourrais pas
+
+Martin (04:18.642)
+Oui.
+
+David Leuliette (04:19.613)
+vraiment dire
+
+Martin (04:21.338)
+Après si t'as une app qui est déjà ship depuis un moment, Apple ils sont un peu moins chiants sur la review humaine de ce que j'ai vu. Alors tu peux quand même avoir des délais same day. Par contre quand ton app vient de sortir, peux te taper des trois semaines. J'ai un copain là sur Twitter, ça fait deux mois qu'il est en review.
+
+David Leuliette (04:38.605)
+deux mois, bah voilà ça ça fait une très bonne refusale horror story là, là va falloir lui faire une petite interview. il est en pending ! oui !
+
+Martin (04:45.458)
+Il n'est pas vraiment refusé en plus, c'est ça le pire, c'est qu'il ne juste pas. Ouais, ouais, il dit « Ben pending ». On va regarder.
+
+David Leuliette (04:55.159)
+Ok. Ok ouais. C'est quoi les nouvelles du front ? Qu'est-ce que tu shipes chez Capgo en ce moment ?
+
+Martin (04:55.236)
+Fait trois semaines.
+
+Martin (05:04.21)
+Là, dernièrement, il y a eu le nouveau Opus et du coup, j'ai fait faire plein d'animations, plein de redesigns pour essayer d'améliorer l'UX, parce que j'ai beaucoup de gens qui viennent du Live Copying, donc ce pas des développeurs et donc il ne bite rien à mon software qui fait pour des développeurs. Forcément, quand tu leur dis « ben là, il faire ça dans ton terminal », c'est quoi le terminal ?
+
+David Leuliette (05:24.481)
+ouais ? Bah...
+
+David Leuliette (05:32.919)
+ok tu dois vraiment être du bas
+
+Martin (05:33.042)
+Moi, j'utilise que l'Ovable.
+
+David Leuliette (05:38.535)
+Ok, je capte. Je... je capte.
+
+Martin (05:40.371)
+C'est ça. Donc là j'essaie d'enlever ces difficultés pour eux, d'expliquer un peu mieux, de trouver des moyens de linker des choses. Alors le terminal tu peux pas mettre des links malheureusement. là en fait, un des trucs principaux c'est d'essayer de faire que toute la piérie de CapGo soit un MCP.
+
+ligne alors qu'à la base c'est un mcp CLI parce que tu dois faire des trucs sur ton device sur xcode sur le terminal sur ton code mais bref à la base ça marchait bien ça mais du coup là je suis en train de transférer le mcp sur du coup le web pour que des mecs qui sont lovable ils puissent utiliser le mcp sans avoir un terminal parce que je crois que c'est lovable ou base64 il en a un où tu n'as pas du tout accès à un terminal du coup tu peux pas
+
+savoir comment faire et tu comprends même pas en fait quand on te donne l'instruction du terminal.
+
+David Leuliette (06:33.357)
+Ouais ouais, pense que c'est l'oreble. L'oreble c'est complètement... T'as même pas le source code il me semble.
+
+Martin (06:39.378)
+seulement si tu connectes GitHub, je Mais tu ne pas le voir directement.
+
+David Leuliette (06:42.559)
+Ouais donc faut déjà être un peu euh... Ouais... Ok ok. Et euh... On a parlé vite fait ouais Capgo, t'as eu de l'équipe donc 5. T'as combien d'app clients ?
+
+Martin (06:47.986)
+Ouais.
+
+David Leuliette (06:57.197)
+millions.
+
+Martin (06:59.19)
+au total qui ont utilisé CapGo je pense qu'on a passé les 7000 et là Active en ce moment doit être autour des 2000.
+
+David Leuliette (07:10.611)
+Ok cool et par mois tu sais combien ça reprend d'updates ou pas du tout ? Ouais.
+
+Martin (07:15.827)
+Dupdate, je crois que j'ai cette data mais je ne pas en tête là. Laisse-moi regarder une petite seconde.
+
+David Leuliette (07:23.981)
+va bet chez vous, faites l'exercice, prenez un nombre, 2000 apps, combien ça fait d'oversies et d'updates par mois ? je dis ça a augmenté depuis deux ans, tu as doublé ton nombre d'updates depuis deux ans et pour les 2000 on est à 10 000 par mois, c'est beaucoup plus en fait.
+
+Martin (07:31.666)
+...
+
+Martin (07:51.856)
+Et oui, pas mal. Là, on est à 71 000 par jour. Ouais.
+
+David Leuliette (07:52.941)
+C'est au moins 4 par jour. Par jour ? ouais j'aurais dit 4000 par jour mais 71 000 par jour. Ok.
+
+Martin (08:00.932)
+Ouais, avec un success rate de 71 % !
+
+David Leuliette (08:05.228)
+Ok ouais parce que les gars, c'est ça, ils committent, ça pousse. Je change un S, ça pousse. Je change une locale, j'ai une virgule, paf. Ok.
+
+Martin (08:09.092)
+Ouais, c'est ça. Au début, j'avais des développeurs et des teams qui étaient là, du coup on va shipper une fois par semaine, et maintenant ils veulent shipper trois fois par jour. C'est comme ton website, vu que c'est super simple.
+
+David Leuliette (08:22.987)
+OUÈ !
+
+David Leuliette (08:28.662)
+Ouais c'est ça, ça devient transparent et puis on veut tout blip
+
+Martin (08:33.842)
+J'ai aussi une stat qui est sympa, là, je pense pas que c'est par jour, j'ai 1 840 000 updates en open source. Je pense que ce pas par jour, j'espère. Sinon je loupe un truc. Mais en gros, Capgo c'est open source et du coup j'ai des gens qui utilisent en open source et qui parfois oublient de...
+
+Les urls d'updates qui gèrent les statistiques de CapGo, quand t'es en open source, on te dit, ça, faut la changer pour mettre la tienne, pour en mettre une autre. Et il plein d'apps qui oublient de le faire, et donc ils m'envoient quand des stats, et donc je les compte pour savoir un petit peu combien j'ai de gens qui ne payent pas CapGo, qui utilisent CapGo. Donc là, j'en ai beaucoup plus qu'ils payent.
+
+David Leuliette (09:15.66)
+Noi.
+
+David Leuliette (09:19.02)
+Ouais. puis en plus celui qui utilise pas le terminal, ne verront jamais. Hey ! C'est Capgo, c'est open source, please achète-moi des stickers. Et du coup, niveau open source, tu disais c'est open source, tu maintiens 150 plug-in capacitors. C'est par choix, tu t'es dit, allez go, je vais les faire ou ça c'est une conséquence ? C'est imposé à toi. zut.
+
+Martin (09:30.576)
+C'est ça.
+
+Martin (09:47.988)
+C'est une bonne question. gros, déjà il y a tout le code source de Capgo, le backend, qui est open source, pas que les plugins, tout ce que je fais dans cet écosystème open source. Mais pour les plugins, fait, ça a commencé parce qu'il y avait des plugins de merde, parce qu'on a un écosystème un peu qui mourait, parce que la boîte principale à Ionic ne faisait pas bien son taf, et...
+
+David Leuliette (09:48.5)
+Mets-nous.
+
+Martin (10:13.683)
+Au-delà de ça, fait, on avait des plugins communautaires, mais les gens en fait ils ont un plugin, ils sont pas très bons en code natif. S'ils le font, c'est vraiment sur le côté. je suppose que tu as un peu le problème sur React Native, mais tu as des community plugins qui sont cool, mais qui sont pas maintenus, parce qu'il y a une nouvelle version de React Native tous les deux jours.
+
+David Leuliette (10:27.584)
+oui.
+
+Ouais c'est ça, fait souvent c'est trop bien, tu l'installes puis 3 mois après plus rien. là tu fais... Et puis 2 ans après forcément ça marche plus et puis t'as une update à faire et là t'es... Je pense que c'est pareil dans tous les Ecosystème.
+
+Martin (10:39.687)
+C'est ça.
+
+Martin (10:44.273)
+Du coup j'avais ce problème là sur mes app à moi parce qu'à la base j'ai fait Cabgo parce que j'avais besoin pour moi, je ne l'ai pas fait pour en faire un business. Je l'ai fait pour moi, je les release gratuit et puis les gens ils m'ont dit on peut payer. Du coup c'est devenu un truc payant. Mais du coup j'avais fait ça en fait pour moi parce que Ionic était super cher. Les live dates c'était minimum 500 balles par mois pour 200 device je crois, enfin aucun sens. Si tu voulais 1000 device c'était 2500 euros par mois.
+
+ça n'avait vraiment pas de sens pour moi, pour mon app qui avait 1000 utilisateurs et qui me rapportaient 700 balles par mois, de payer 3 fois le prix de... Mais bref, du coup, j'ai commencé à faire ça pour moi, j'ai fait d'autres plugins pour moi qui n'allaient pas, et je les ai publiés, et en fait j'ai commencé à avoir des gens qui reportent des issues sur des plugins, etc. ça avait un peu de...
+
+ça a créé un peu de buzz autour des plugins, je me suis rendu compte que les gens découvraient CapGo à la base ils étaient en mon nom propre, mais du coup je les ai tous, j'avais 15 plugins au début ou une dizaine de donc je les ai tous mis sur le nom CapGo et j'ai mis dans l'antenne du Ridme, voilà c'est fait par CapGo, on fait des live updates, blablabla.
+
+C'était cool, je suis resté comme ça un an, une année et Je faisais des plugins de temps en temps quand on me payait ou alors quand j'en fixais un pour moi ou pour des clients que je trouvais cool. Je faisais quelques plugins jusqu'à un jour où j'ai rencontré un mec de SEO et ce mec de SEO, lui demande un peu et comment en fait je comprends pas comment j'ai des clients à Capgo, je n'arrive pas à avancer sur le SEO etc.
+
+Il regarde mon site, il me dit mais t'es une brêle hein, ici haut, t'as zéro, haut. Y a personne qui vient sur ton site parce que t'as fait un bon article. Des chiaps, bah y a quand même des gens qui viennent donc... Ouais... C'est ça. Et du coup il me dit bah je comprends pas pourquoi t'as des gens sur ton site. Donc on va essayer de droider. Et donc on cherche, on cherche, on cherche et il comprend vraiment pas. Il me dit y un truc qui très très bizarre. C'est que la plupart des gens qui viennent sur ton site, viennent parce qu'ils connaissent ton nom. Ils cherchent CapGo.
+
+David Leuliette (12:36.968)
+C'est un métier, c'est un métier le monsieur tu vois.
+
+Martin (12:57.106)
+Et je comprends pas pourquoi ils feraient ça, d'où ils te connaissent. Et en fait, en cherchant, on a découvert que c'était les plugins. En fait, les plugins ça me fait une énorme réputation, parce que c'est des free tools, et souvent on te dit fais des free tools pour ton sas, etc. Et en fait, j'avais même pas capté que c'était des free tools, moi, et que c'était ça. Et du coup, quand il m'a dit ça, j'ai double down dessus, je suis passé de 15 plugins à 150 en un an.
+
+David Leuliette (13:00.364)
+Noi, aie.
+
+David Leuliette (13:04.93)
+Internet.
+
+David Leuliette (13:20.32)
+Ouais, ok, je en faire un par vertical et puis voilà, ok.
+
+Martin (13:23.25)
+J'ai pris la liste de tous ceux qui étaient pétés, que les gens se plaignaient et qu'il y avait le plus de stars et je les ai refaits un peu en un.
+
+David Leuliette (13:32.256)
+Ouais et du coup voilà vu que c'est consistant tu peux... Donc maintenant ton app, tu fais plus ton app quoi. Ton app que tu avais avant là pour les 700 users, termine. Terminado.
+
+Martin (13:41.476)
+Non, je l'ai vendue. C'est top. Je suis jamais arrivé à la faire passer à 700mR. Capgo, ça l'a doublé en... sais pas... Un mois.
+
+David Leuliette (13:51.756)
+Par accident, en fait c'est ça que les gens veulent, ok je capte. Et ça a été quoi le plus gros choc quand tu es passé de je fais mes apps à je fournis de l'infra de déploiements pour les autres.
+
+Martin (14:03.481)
+Le choc.
+
+Bah en fait je me suis retrouvé à vendre des assurances quoi. Fournir de l'infra c'est vendre des assurances.
+
+David Leuliette (14:13.961)
+Ouais j'avoue, j'avoue. Bonne analogie.
+
+Martin (14:17.106)
+surtout dans les live updates quoi, les gens ils veulent que ça marche, ils veulent que ça marche au moment où ils en ont besoin et donc ils veulent que tu la garantisses ça et en fait je suis passé de servir des gens en B2C qui s'en foutent un peu si ça marche pas, ils restartent l'app etc. à du B2B qui a beaucoup plus d'exigences en plus parce que je distribue pour eux des updates du coup ça...
+
+j'avais tendance sur mon app mobile à shipper facilement des trucs, aller plus vite, aller vite, etc. Et dans Capgo, à chaque fois que je vais vite, en fait, je les traumatise, les clients. Donc maintenant, on va vite sur du design, on va vite sur d'autres trucs, il y a des corps features que je ne pas toucher, vraiment, PR sur les live updates avant de prendre 10 jours pour vraiment tout checker ou sur le updater, alors que sur...
+
+David Leuliette (14:50.749)
+Oui oui, normal.
+
+Martin (15:11.19)
+sur plein d'autres topics, quoi, je peux ship le même jour, les updaters, j'ai besoin de vraiment checker à fond, voir s'il a pas le putain de Huawei qui ne fonctionne pas parce que j'ai utilisé un truc de Java, en fait, qui n'est pas supporté ou Huawei a cassé, Des trucs comme ça.
+
+David Leuliette (15:28.521)
+Ouais, je connais. On les connaît, les appels de Google. J'ai découvert tard qu'en fait il y avait caméra, caméra 2 et que sur Android en fait c'était pas la même caméra et qu'un truc qui fonctionne sur une caméra ne fonctionne pas sur une autre caméra d'Android mais c'est normal, c'est parce que c'est pas le même hardware. Et en fait en vrai c'est carrément logique, c'est comme Windows en fait. Et forcément voilà, l'appareil que...
+
+Martin (15:52.794)
+C'est fou.
+
+David Leuliette (15:57.164)
+client utilisait c'était un appareil qui fonctionnait pas tout le reste a fonctionné mais sur le one plus je l'ai lu plusieurs fois ça pour la fonte et pour la caméra et là tu fais mais pourquoi
+
+Martin (16:04.946)
+Bye.
+
+Pourquoi ? Tu que c'est un des plugins qu'on m'a payé le plus cher de Caméra Preview. Je pense qu'on m'a payé 15 000 dollars pour faire ça. Il m'a pas demandé de coder le plugin. Il m'a dit, fais que ça marche sur tous les devices.
+
+David Leuliette (16:13.771)
+Hmm?
+
+David Leuliette (16:22.225)
+ouais bah oui, je... oui...
+
+Martin (16:24.626)
+J'ai dit même à 15 000 bonnes, je suis même pas sûr que je vais y arriver.
+
+David Leuliette (16:28.347)
+Ouais c'est ça, c'est ça, donc tu l'as fait ? T'as réussi à le faire ou pas ?
+
+Martin (16:32.27)
+ça m'a pris six mois et on a la plupart des devices que les utilisateurs du mec fonctionnent. Mais il a des trucs où on a dû faire en dégradé. J'ai recodé le plugin de Caméra 2 ou Caméra... Non, il a Caméra, il Caméra 2, il a Caméra X. Je crois que je suis passé de Caméra à Caméra X, qui est la dernière version de ce truc-là. Mais il y a quand même des trucs qui doivent être faits en Caméra 2 parce que tu dois... ils voulaient par exemple...
+
+David Leuliette (16:33.834)
+Ouais.
+
+David Leuliette (16:39.292)
+Noi.
+
+Martin (17:02.358)
+qu'ils puissent changer de lens. C'est assez simple, tu dis, tu t'appelles l'API et tu vas à l'Lens 1, Lens 2, Lens 3. Mais non, sur Android, il a des lenses qui ne pas disponibles dans le hardware si tu n'utilises pas l'app native de Huawei.
+
+David Leuliette (17:19.509)
+ok ouais, genre de truc.
+
+Martin (17:21.522)
+Mais vraiment, n'est pas dispo dans CameraX, elle n'existe pas, caméra. Tu la vois, tu mets le doigt dessus, tu essaies de switch sur toutes les caméras et tu ne vois jamais ton doigt. Tu te mais elle est où cette... Donc il y a des trucs qu'on a dû abdiquer comme ça où en fait, y a des caméras qui ne pas dispo en dehors de l'app native. Ça n'a pas été codé par Java, ça n'a pas été codé par Google, par personne...
+
+David Leuliette (17:47.275)
+personne. Ok, super les amis. Ok, vas-y on va parler cœur business anthologie en quatre actes. Acte 1 en 2026. Combien de temps une équipe met entre le fixe et prêt et ses fixes chez l'utilisateur ?
+
+Martin (17:53.019)
+C'est ça.
+
+Martin (18:14.0)
+C'est la magie d'Apple et Google, c'est que sur une app mobile tu peux te dire peut-être si j'ai de la chance dans les 6 heures, il a un mec qui va l'avoir, peut-être. Ou si j'ai pas de chance, ça prend 3 semaines. Et ça dépend de plein de choses que même les gens ne se rendent pas forcément compte, c'est que même si tu as été approuvé par Apple et Google, genre tu as passé la review, tu es content, ça veut pas dire que les gens vont avoir ta mise à jour.
+
+David Leuliette (18:43.655)
+C'est vrai que c'est compliqué, je... tout le temps...
+
+Martin (18:47.812)
+Parce que ce qu'il faut savoir, c'est que quand tu veux avoir une mise à jour de ton app pour les gens, il faut que par défaut le téléphone soit branché. Il soit au moins 50 % de batterie ou quelque chose comme ça. faut qu'il soit... qu'il n'est pas en train de l'utiliser et qu'il soit en wifi. Si toutes les conditions ne sont pas remplies, il ne pas télécharger sauf si le mec va forcer le téléchargement ou... ou si... ouais voilà...
+
+David Leuliette (19:01.222)
+le wifi.
+
+David Leuliette (19:09.514)
+Personne ne fait. Enfin je le faisais avant. Et que si tu as un Android, que tu aies assez de place sur ton device.
+
+Martin (19:18.951)
+oui, J'avais oublié, ça.
+
+David Leuliette (19:21.354)
+Ce petit détail qui fait que...
+
+Martin (19:24.178)
+Ce petit détail. En vrai, même sur iOS, il a des gens qui galèrent. J'ai vu mon père qui ne pas iCloud, qui n'arrive pas à télécharger des trucs. Ça marche pas. Pay iCloud.
+
+David Leuliette (19:36.97)
+Ouais, moi j'ai pas cherché assez, bon je suis payé pour tout le monde, parce que ça me saoule. euh... Au secours, au secours de ne aider.
+
+Martin (19:40.818)
+C'est ce que je faisais mais à un moment il s'est enlevé lui-même de la famille. Il a dit non je ne partage pas mes données avec ta mère parce qu'ils ne plus ensemble. Je lui dit mais tu ne partages rien, qu'est-ce que tu racontes ?
+
+David Leuliette (19:54.463)
+ouais... ouais... la la... C'est compliqué la vie à redev...
+
+Martin (20:00.646)
+Ouais non, a déjà... J'ai dit va pas par les couteaux... Démerde-toi. Démerde-toi avec tes problèmes.
+
+David Leuliette (20:04.938)
+C'est ça, j'avoue. Donc ça c'est le process normal et quand t'as une OVR update, ça fait combien de temps ?
+
+Martin (20:12.562)
+sais pas, là actuellement avec le setup, si tu prends le meilleur setup de CapGo, c'est-à-dire ce qu'on appelle les direct updates en Delta Update. Donc Delta, ça veut dire que tu n'updates que ce qui a changé. C'est un concept, j'aimerais qu'il arrive dans native parce qu'actuellement en native, tu re-télécharges tout le temps toute l'app, pratiquement. Alors que nous, on va changer comme quand tu es en web, re-charges une page et un fichier qu'à changer et que celui-là qui est...
+
+téléchargé. on a Delta Update et le Direct Update en gros c'est quand tu ouvres l'app, il fait la requête à CapGo, il voit qu'il un fichier à télécharger, il télécharge, il installe avant même que l'utilisateur il voit l'app. Donc on fait ça dans un laps de temps de moins de 300 ms quoi. Donc si tu as mis ce setup là, à partir du moment où l'utilisateur ouvre l'app, il est à jour.
+
+David Leuliette (21:11.338)
+Ouais, c'est ça, c'est quand magique Expo, c'est pareil avec Native, c'est pas sensiblement pareil. Après tu peux avoir des mécanismes, mettre tout plein de trucs, est-ce que oui, breaking change, attention, tu peux mettre un force, le problème de ce truc là c'est que pareil, ton API, il faut qu'elle soit à corps, mais tous ces trucs là, c'est le truc logique. Et sur les apps que tu as passées, c'est quoi le taux à peu près de refus que as au premier envoi ?
+
+Martin (21:11.74)
+C'est comme ton site web quoi.
+
+Martin (21:18.578)
+Ouais, ouais, il faut.
+
+Martin (21:33.298)
+Oui.
+
+Martin (21:42.608)
+Tu veux dire pas ce qui a CapGo en général ?
+
+David Leuliette (21:45.166)
+Non mais en général t'as un mec qui vient te voir, ça oui j'ai fait une op sur Lowable, il a suivi ton guide App Store refusa le Horror Story tu vois.
+
+Moi je dirais 30 % à 50 % de refus au premier revoi.
+
+Martin (22:03.334)
+mais non, c'est un plus. Moi je pense que... bah oui. Mais oui, mais parce que toi t'as l'expérience. Moi j'ai l'expérience, je me fais refuser peut-être 30%. Les mecs qui sont en train de vibecoder, ils se font refuser 99 % du temps. Mais des fois pour des trucs nuls, genre...
+
+David Leuliette (22:06.874)
+Plus ! Oui, c'est parce que moi je l'ai fait, moi je sais ce que je fais. Ouais. Ouais.
+
+David Leuliette (22:18.181)
+oui !
+
+Oui, ils n'ont pas les assets marketing, ils mettent des mots sur les assets, leur truc est en espagnol.
+
+Martin (22:29.902)
+Ouais c'est ça, tu sais pas qu'en fait il faut mettre les CGV à la fin de ta description, parce que Apple je sais pas pourquoi il te demande de le remettre alors que tu le mets déjà ailleurs, parce que t'as une souscription et des trucs comme ça qu'il faut savoir qui sont débiles, t'as beau l'écrire dans le guide, enfin je peux faire le meilleur guide de tous les temps, il n'y toujours pas...
+
+Il n'y toujours pas de tout qui passe. Là, c'est un des trucs que j'essaie de faire d'ailleurs. C'est qu'on a le native build depuis un an. Et les gens adorent ça, de pouvoir faire un build native sans avoir un Mac. Et juste via la CLI. Donc c'est toujours pareil, il faut quand même avoir un terminal. Apparemment c'est compliqué pour les gens de l'Omable, mais je suis en train de bosser dessus. Mais en attendant, je veux faire une commande qui permet d'envoyer à nous.
+
+ton app et en fait on va faire une review Apple parce qu'il y des... on va faire un pré-check pour toi et on va te dire voilà au lieu d'attendre trois heures qu'Apple te dise que ça et ça ça va pas, voilà, on te l'a dit en quatre secondes quoi, pas le temps que t'as upload et qu'on l'a analysé, peut peut-être prendre une minute max quoi, mais bon la différence elle est brissante quoi, pour essayer de faire que ça passe mieux quoi mais...
+
+David Leuliette (23:20.746)
+Prêt de checke
+
+Martin (23:41.942)
+De mon expérience, si tu as compte nouveau, Apple, et que tu es nouveau dans le game, c'est sûr que tu te fais refuser. C'est rite de passage.
+
+David Leuliette (23:50.186)
+Ouais ok, du coup les guidelines tu connais par cœur quoi. Si je te dis guidelines 2.1, who will be the users of this app ? vois, c'est quoi les users ? Tu sais direct quoi répondre ou t'aide ?
+
+Martin (24:06.834)
+Je les ai toutes faites, les guidelines, tous les trucs. Nous on a souvent dans Capacitor, la guideline, je ne plus c'est quoi le nombre, ça ne justifie pas de faire une app mobile parce que c'est juste un site web et le mec il n'a pas fait d'efforts, il n'a pas mis un putain de plugin ou un usage natif.
+
+Donc ça c'est par exemple un truc qu'on a souvent, j'ai vraiment expliqué en disant, mais au moins des notifications, mais au moins Apple log-in, enfin un truc, respectez-les !
+
+David Leuliette (24:39.677)
+Ouais, j'avoue. oui, ok, je capte. Oui, ok, vous recédez pas du tout.
+
+Oui, c'est pas une feature, c'est website in a box quoi.
+
+Martin (24:52.793)
+En fait...
+
+Ouais, il des gens qui se disent, je veux que mon site soit sur l'App Store. Tu vois, on en est là. Et ils ne se disent même pas que c'est parce que ça a un intérêt, ou qu'il y a des règles d'Apple. Enfin, vraiment, on a des gens qui viennent... J'ai des fois eu des cas où le mec, il souscrit à Capgo et il me dit, ça marche pas !
+
+Du coup, je le prends en call et j'ai dit, t'as mis tes certificats et tout ça, donc il comprend pas ce que c'est. Donc je le guide à aller sur son compte pour aller les chercher. En fait, on se rend compte qu'il n'a pas de compte Apple payant. Tu vois, il n'a pas de compte développeur. oui ! Et comment tu comptes mettre une app sur le store, mon enfant ?
+
+David Leuliette (25:32.745)
+Bye !
+
+David Leuliette (25:36.681)
+Oui.
+
+David Leuliette (25:42.753)
+ça, ouais, ouais, donc beaucoup d'éducation encore.
+
+Martin (25:48.708)
+Ouais, là depuis cette année, ce côté-là est fou. Ce n'était pas le cas avant, mais ça a explosé depuis décembre. Ça a fait exploser le business aussi, mais... Ouais. Là, on était à 11 000 euros de MRR en décembre. 11 000 dollars, pardon. Et là, on est à 31 000 maintenant, en septembre. Donc... Donc on a eu une énorme...
+
+David Leuliette (25:58.58)
+oui ça a vraiment explosé
+
+David Leuliette (26:11.259)
+Ok.
+
+Martin (26:17.752)
+énorme growth mais aussi des nouveaux clients qui sont beaucoup plus difficiles à gérer, à garder, à satisfaire.
+
+David Leuliette (26:27.049)
+Ok ouais, qui sont plus exigeants aussi, ouais. Et est-ce que tu te souviens, t'as déjà eu des cas absurdes, genre refus sans cause technique ? T'as zéro crash, zéro bug, puis on te dit « non ». Comment tu... Un CTO, il... Tu lui dirais comment t'expliques ça à ton board qui dit « mais non, faut que là, pas soit off-road ». Et ben là, tu dis « bah Apple, j'ai juste aucune news, quoi ». C'est un peu la loterie à chaque fois ou...
+
+Moi ce que je fais c'est qu'à chaque fois je dis aux gens, non mais ça prend un mois, tu quitte à décevoir. Et les gens ils disent, un mois mais t'es mal, je fais... Un bitcoin, en Paris un BTC, que je serais pas loin. Et...
+
+Martin (26:58.962)
+Bye !
+
+Martin (27:03.698)
+premier review.
+
+Martin (27:10.556)
+Ouais, je suis plutôt d'accord avec toi sur la timeline, c'est un peu ça. Là, actuellement, j'ai un copain qui a créé une boîte mail qui s'appelle ShipMail, il fait l'app mobile. Et il se fait refuser parce que Apple dit que...
+
+C'est une app qui est payant sur le web. Il fait une app qui compagnon de ce service, comme Gmail. Tu ne peux pas payer Gmail dans l'application Gmail, tu ne payes qu'en web. Et Apple refuse en disant que c'est un service payant mais qu'il a pas d'opportunité de payer sur l'app. Lui, dit que la règle, c'est que je ne avoir pas de register sur l'app.
+
+qu'il n'y a pas de mention que c'est payant, alors que c'est stupide cette règle d'Apple que tu ne pas dire que c'est payant, tu ne dois pas dire à l'utilisateur qu'il a trop utilisé, qu'il doit payer maintenant sur le site, parce que c'est illégal, parce que c'est une app-compagnon. Donc le mec n'a plus rien qui marche, mais il ne pas pourquoi. Tu dois lui envoyer des emails, tu sais. Et en fait, tu vu, ton app, marche pas, là. C'est parce qu'il faut payer. Mais bref, il a fait tout ce qu'il fallait. Je l'ai aidé, je suis allé dans son app, j'ai revu, j'ai regardé.
+
+David Leuliette (28:10.793)
+Ouais, c'est bon.
+
+Martin (28:24.869)
+Il n'y a plus rien qui dit que l'application est payante ailleurs. Tu peux te connecter, ça marche. Mais Apple lui dit, non, c'est une application qui payante, tu dois mettre les in-app purchase dans ton app. C'est vos règles, c'est vous qui avez dit que l'app Compagnon c'était ok. Je fais comme Gmail, pas de plus, pas de moins.
+
+David Leuliette (28:50.629)
+Je fais... Ouais ! Bah oui, c'est ça, ça qui est insupportable, c'est que même quand tu prends des règles qui existent déjà, t'as l'impression que c'est vrai. Bah c'est ça, y a des humains in the loop. Et donc en fait, à tout moment, tu relances le truc, puis de toute façon, faudrait que j'invite Matisse pour qu'on fasse un deep dive là-dessus, parce qu'avec Éclo, eux ils ont 90 apps sur les stores en mode marque blanche. Et c'est toutes les mêmes.
+
+Martin (29:00.463)
+C'est à la tête du client que...
+
+Martin (29:11.121)
+Ouais.
+
+David Leuliette (29:13.513)
+mais en fait elles sont toutes différentes et je pense que des fois il des mismatch sachant que il y la même app qui a été approved et en fait l'autre que non. Du coup dans ce cas là c'était un lancement cramé on va faire l'acte 2 est-ce que ça a suivi la guideline 4.3b où on dit il y a déjà assez d'app comme ça. non là c'était vraiment faut mettre le paiement faut mettre le paiement.
+
+Martin (29:20.977)
+Non.
+
+Martin (29:40.294)
+Ouais, c'est juste le paiement qui ne pas contents alors que ce pas visible dans l'app. Mais le truc d'assets d'app, je n'ai pas eu pour le moment, en tout cas je n'ai pas eu de feedback de ça. J'ai eu des potes sur Twitter qui ont eu ce problème avec slapmac et des trucs comme ça où tu voulais faire la même app sur iOS et c'était...
+
+C'était déjà trop. Mais en fait j'ai l'impression que quand tu fais un SASS, il a pas trop ce truc-là de... il y a trop d'apps. C'est vraiment plus quand tu dans des catégories de divertissement où tu vas avoir le problème de... considère qu'il déjà trop d'apps. Ouais.
+
+David Leuliette (30:21.832)
+Ouais, Weather app, Calculator ou Flashlight ou la fameuse app Bière, qu'est-elle devenue ? Ou l'app Sabre laser ? Où est passé ce temps-là ? Les milléniens... Non, les Gen Z ne savent pas ce que c'est, mais putain, je sais pas si c'est encore disponible.
+
+Martin (30:32.562)
+...
+
+Martin (30:36.114)
+All good time !
+
+Martin (30:45.082)
+Je crois que non, la truc bière ils l'ont viré parce que c'était incitation à l'alcool ou je pas quoi. Ils sont super stricts. D'ailleurs le mec qui fait ship mail il avait fait il y a très très longtemps une app que tu fais des défis et si tu loupe le défi tu bois un shot ou un truc comme ça. C'était une de ces apps qui avait fait plein de sous et il s'est fait supprimer son app de l'app store à cause de ça. Il avait essayé de le transformer en disant que c'est des shots d'eau mais à peu les on.
+
+David Leuliette (30:52.304)
+ok,
+
+David Leuliette (31:03.912)
+Mm-hmm.
+
+David Leuliette (31:13.48)
+Ouais, Rejected t'as été ok. Et s'il a un mec, justement un founder, un lovable guy, il a des clients et tout, machin, mais quand il ship son app, Apple lui dit ouais le marché est plein, tu lui dis quoi ? Tu lui dis de pivoter, t'insiste, t'abandonnes, serait quoi ton conseil ?
+
+Martin (31:14.938)
+Ils ont dit
+
+Martin (31:36.785)
+D'abord, je dis toujours que Apple, je vais dire, as trois shots. Quand ils refusent un truc, tu peux faire trois shots d'essayer de parler avec eux par email. Il faut vraiment essayer de les appeler assez rapidement, leur dire j'aimerais avoir une personne, parce que c'est une personne en général. C'est plus simple. Parce qu'ils vont te donner des détails, fait. Parce que vraiment, quand ils répondent par message, il y a zéro détail. C'est va te faire foutre.
+
+David Leuliette (31:55.656)
+C'est vrai que le zoo... Ouais c'est vrai, j'ai réussi à...
+
+Martin (32:05.296)
+Et donc, si tu resubmit plusieurs fois, ils vont te dire « bah non, maintenant si tu resubmit, t'es viré de l'Apple Store ».
+
+David Leuliette (32:10.938)
+Ouais ça faut surtout pas faire, si t'as rien changé, surtout pas faire... ouais c'est clair. Faire...
+
+Martin (32:15.634)
+Donc il vaut mieux dire, j'aimerais avoir quelqu'un en appel de demander ça et t'espère qu'il te réponde oui. Et à partir de ce moment là, tu vas avoir des vrais feedbacks qui vont te dire, si tu changes ça, ça serait ok, ou si tu rajoutes une feature qui est différente, tu le marquettes différente. Des fois, c'est juste parce que ta description ressemble trop aux autres et tu pas vraiment mis en avant que tu as des features qui sont uniques.
+
+Et si tu changes ta description, fait ça peut suffire des fois. Des fois il faut recoder des trucs dans l'app, mais souvent ce que j'ai vu c'est qu'en fait ta description elle ne fait pas une Iq quoi, donc ils ont l'impression que ta app c'est la même que d'autres, alors qu'en vrai tu t'es déjà fait chier à coder d'autres trucs, mais tu as juste mal marketé pour Apple quoi.
+
+David Leuliette (33:05.416)
+Et du coup quand on vient de voir, on dit que la date de lancement c'est non engageable. Admettons il y a le marketing qui arrive, on a la presse, a acheté des murs dans le métro, c'est bon on sait que ça va être cette date là. Tu leur dis mauvaises idées ou vas-y ça va passer si tu utilises Capgo, c'est bon.
+
+Ouais mais non, sachant que c'est la première élise, forcément... Ouais.
+
+Martin (33:36.202)
+Il faut la première édition. Et souvent ce qui est drôle c'est que les gens essayent de une édition, ils en chient, ils y arrivent, après ils mettent capgo et ils ne plus. Ils disent bon, maintenant on a trouvé une solution. Donc Apple c'est mon meilleur vendeur en Parce qu'ils détestent Apple et une fois qu'ils détestent Apple ils disent bon comment on peut faire pour ne se retrouver dans cette merde.
+
+David Leuliette (33:48.456)
+Bye !
+
+Ouais ouais.
+
+David Leuliette (34:00.465)
+Ouais ok du coup il cherche alternatives et bim quoi.
+
+Martin (34:02.994)
+Mais du coup pour répondre à ta question, j'ai été dans cette situation là et en fait ce que je dis au team de marketing c'est qu'en fait on va faire une release et on va pas, on va la passer et une fois qu'on a passé la release et qu'on est prêt et qu'elle est en attente de nous cliquer sur le bouton, la mettre sur le store, dans ce cas là vous pouvez choisir une date pas avant. Avant on peut se donner un ordre d'idée mais...
+
+David Leuliette (34:27.826)
+Ouais, ouais, ouais, clairement. tu la mets même pas sur le store ? Personne va la télécharger en fait, en vrai.
+
+Martin (34:33.114)
+Oui, tu peux la mettre sur le store aussi, mais souvent, y a des gens du marketing qui sont un peu cons et ils se disent non, mais il faut pas qu'elle soit dispo avant qu'on l'annonce. la meilleure solution, c'est leur dire ça. Mais moi, je suis pour la mettre parce que personne ne va l'avoir, personne n'a été chargé. Mais tu quand même un mec du marketing qui va dire non, mais imagine.
+
+Et j'ai pas envie de faire l'explication au mec, donc je préfère lui dire, elle est là, elle est prête quand t'es prêt, tu nous dis. C'est ça.
+
+David Leuliette (34:55.769)
+Non si c'est vrai en fait on réalise
+
+C'est ça, allez là. Tu peux cliquer sur le bouton, c'est bon, il est ready. Il faudra juste que tu te souviennes de ton mot de passe iOS et ton compte Apple. Mais ça, c'est un autre débat.
+
+Martin (35:08.338)
+C'est ça.
+
+David Leuliette (35:15.848)
+Est-ce que tu as déjà eu un cas d'urgence quand on peut pas livrer ? Le cas euh... policier de permission, est-ce que tu sais ce que c'est
+
+Martin (35:24.708)
+policier de permission.
+
+David Leuliette (35:26.76)
+Parce qu'en fait dans ton refusal, y a eu une review qui a duré 13 jours à cause d'une permission. Donc je pense que peut-être caméra ou un genre de truc.
+
+Martin (35:31.762)
+Mmh.
+
+David Leuliette (35:42.522)
+Ils ont dû supprimer une feature ou qu'est-ce qu'ils ont fait pour résoudre ce truc-là ?
+
+Martin (35:49.107)
+En fait, y a cas de figure. Des fois, c'est un peu con. Mais en gros, je ne pas pour React Native si c'est toujours le cas, mais en tout cas, nous, pendant longtemps, on avait des plugins qui demandaient les permissions à partir du moment où vous étiez installé. Pas à partir du moment où vous étiez à la future. Et... Vas-y.
+
+David Leuliette (36:08.677)
+Ouais,
+
+Non mais tu peux faire en règle native... En fait t'as le build avant et ça te le dit avant quoi. Mais par contre tu peux demander, enfin faire on demand. Mais maintenant dès le build ça va dire, hé erreur, il manque ça. Et donc ça va pas passer.
+
+Martin (36:26.61)
+Ouais !
+
+Martin (36:31.954)
+Oui. Pendant longtemps, avait un peu le système des permissions qui n'était pas bien implémenté dans notre écosystème par les plugins. Donc t'installer un plugin sans vraiment savoir si tu allais l'utiliser, puis ça demandait au bout de l'application sans vraiment message clair. Donc tu pouvais te faire trigger par Apple qui te pourquoi tu demandes cette permission ? Ce pas logique, l'utilisateur n'a pas forcément besoin.
+
+David Leuliette (36:55.015)
+Ouais c'est ça. Et t'as même pas dit pourquoi tu la veux donc fuck you. Allez hop.
+
+Martin (37:00.018)
+Donc on avait ça beaucoup. Pour le cas de la caméra, je ne plus pourquoi c'était mais je pense que c'est par rapport au fait que... Par exemple si tu fais Snapchat, l'app Snapchat, si n'actives pas la caméra, elle ne à rien. Toute l'idée de Snapchat, c'est une app caméra.
+
+Et Apple, des fois, il comprend pas que... En fait, le mec de la review, va voir que c'est obligatoire d'utiliser la caméra, et il va pas aller essayer d'utiliser l'app, il va juste s'en servir pour te mettre une bad review parce que t'as pas bien expliqué que c'était vraiment obligatoire parce que c'est tout le pur post de l'app. Donc si ça, tu l'as pas bien expliqué pour l'utilisateur...
+
+du coup le mec va s'en servir dans la review pour se dire review facile, tac, on éjecte, ça n'a pas été bien expliqué. donc quant à feature principale, c'est un truc qui demande une autorisation et que du coup si tu l'utilises, si tu ne l'autorises pas et donc tu essaies de le forcer pour l'utilisateur parce que ça n'a aucun sens d'utiliser ton app sans, genre Google Maps si tu n'utilises pas le GPS, si tu n'actives pas le GPS ça ne vraiment à rien, c'est pareil.
+
+Mais il faut vraiment bien l'expliquer à l'utilisateur, sinon tu as une chance qu'Apple te dise qu'il essaie de forcer une autorisation alors qu'il a pas de raison où on peut utiliser ton absent. Alors que ce pas vrai, mais ils n'ont juste pas compris. Donc il faut l'expliquer à Apple, faut mieux l'expliquer à l'utilisateur, et après normalement ça passe. Je pense que c'était ce cas-là, c'était une app qui était basée sur la caméra.
+
+David Leuliette (38:38.289)
+Ouais c'est ça et ça a pris 13 jours donc pendant 13 jours t'es en mode qu'est ce que je fais ? non oui panique war room alors qu'en vrai...
+
+Voilà, il falloir le faire dès le début, je veux dire. Mais bon, c'est facile, le poste.
+
+Martin (38:52.882)
+un unboarding qui va t'expliquer que là on va te demander la caméra parce que cette application est une application de caméra donc si tu l'active pas l'application elle sert à rien
+
+David Leuliette (38:56.333)
+Ouais c'est
+
+David Leuliette (39:01.063)
+Donc, c'est ça.
+
+David Leuliette (39:06.573)
+Et il a aussi un autre cas admettons le checkout, c'est une app e-commerce, le checkout il est cassé et l'équipe elle livre volontairement moins bien pour livrer tout court. Le sitio jusqu'où il doit accepter ce compromis là de ta perspective.
+
+David Leuliette (39:28.451)
+Moi ce serait, on ship quand même et en vrai si c'est cassé, on a une expérience dégradée mais euh...
+
+David Leuliette (39:38.627)
+ça dépend, non ça dépend en fait.
+
+Martin (39:40.75)
+Ça dépend à quel point est cassé, si tout ton e-commerce arrive pas à vendre, ça va être difficile de le justifier quoi. Mais si l'expérience elle est cassée, tu peux arriver à vendre.
+
+ça dépend si c'est à ton app et que pour le moment t'as pas d'utilisateurs encore qui sont dessus et que tu peux faire un soft launch. Moi je pense que c'est pas très grave parce que déjà passer la review, déjà être chez Apple, peut-être mettre un truc de live update et tu pourras le fixer dans le flow quoi si c'est pas un problème natif. Je pense que c'est mieux d'essayer de passer les reviews même si ton app elle est pas parfaite que...
+
+David Leuliette (40:15.835)
+Allez c'est ça, !
+
+Martin (40:22.302)
+bloquer toi-même ta propre QA et après te retrouver à devoir faire la QA d'Apple sur leur truc à eux et du coup tu te mets des délais de fou. Je pense qu'il vaut mieux QA après Apple qu'avant Apple quoi en gros.
+
+David Leuliette (40:35.783)
+Ouais, ouais, clairement. si c'est ça, mais si ça fait parfait transition vers l'acte 4, ma solution c'était mettre des feature flags. y a des feature flags avec Appgo direct où il prendre un autre service.
+
+Martin (40:53.126)
+On ne pas de feature flag dans Capgo pour le moment. On avait à un moment donné de l'A-B testing sur les updates. Maintenant on fait... Du coup tu pouvais faire des feature flag. Ouais tu pouvais faire des feature flag avec ça. Mais en fait on s'est rendu compte que ce n'est pas vraiment notre métier. Parce que si tu fais ça, coup tu fais de l'A-B testing. Du coup les gens veulent avoir des résultats de leur A-B testing. Et donc il faut leur fournir des dashboards pour ça.
+
+David Leuliette (41:03.601)
+Ouais, fait des feature flags, Ça fait kind of du feature flag, mais bon.
+
+David Leuliette (41:20.423)
+Allez hop ! C'est la fille ! Il faut 15 personnes !
+
+Martin (41:22.81)
+de l'observabilité pour ça.
+
+Martin (41:27.846)
+Ouais, donc on ne pas vraiment et après le deuxième truc c'est qu'en fait on s'est rendu compte que les gens qui utilisent Capgo, qui utilisent Capacitor en fait c'est souvent des apps où l'app c'est une app compagnon d'un site web qui marche bien déjà et on essaie d'aller taper un peu de business en plus via le store.
+
+tout cas, jusque là, les boîtes où il y avait des devs, les mecs de vibecoding c'est différent. C'est une différente purpose. Mais en tout cas, les gens qui faisaient avant, de toute façon les gens qui vibecoding ne connaissent pas les futures flags, je pense.
+
+David Leuliette (42:09.382)
+Ne disons pas de mal des gens qui vibe-code, je suis certain que si tu leur dis...
+
+David Leuliette (42:19.818)
+multiples choix. Non faut trouver un terme français tu vois. Feature flag, aidez-nous. Franchement dans les commentaires, whatever, dites nous.
+
+Martin (42:22.962)
+Bye !
+
+Martin (42:26.738)
+fonctionnalité bêta.
+
+David Leuliette (42:32.427)
+Non bah non, parce que si tu mets bêta tu te fais ejected par Apple, c'est pas une fonctionnalité bêta, ça n'a rien à voir, c'est un...
+
+Une ffff... Un drapeau... Ouais ! Bah non, c'est pas une option parce que... Moi je dis c'est... Donc fonctionnalité premium ou fonctionnalité avancée.
+
+Martin (42:43.744)
+fonctionnalité optionnelle.
+
+Martin (42:48.69)
+C'est une option d'option.
+
+David Leuliette (43:01.542)
+Fonctionnalité VIP, ça c'est bien ça. Donc ouais, ok, feature flag. Là on digresse, on digresse. Et donc en gros, vas-y, vas-y.
+
+Martin (43:01.586)
+même pas... Mais ça ils vont penser que c'est parce que tu fais payer un truc. pas forcément le cas.
+
+Martin (43:15.346)
+Mais pour finir, on s'est rendu compte que les clients Enterprise qu'on avait originellement, ne pas intéressés trop par avoir des feature flags dans Capgo, parce qu'ils shipent un website à la base. Dans ce website, peuvent déjà avoir eux, de leur côté, feature flag soit fait à la main, soit fait avec un service, et ce service va marcher dans la Shell Capacitor.
+
+Donc c'est pas vraiment un truc qui a été demandé avant, je voulais le faire et puis je me suis rendu compte que tout le monde semble branler, que je le fasse ou que je le fasse pas, donc vaut mieux pas, allez là dedans !
+
+David Leuliette (43:55.419)
+Ouais je suis d'accord et donc sur les... Ouais sur les erreurs, les problèmes pardon, les refus qu'on vient de voir vite fait, c'est lequel que Capgo il aurait pu vraiment éviter en fait on a déjà dit la réponse on s'est spoilé. Normalement il est tout un build up mais...
+
+Martin (44:05.65)
+Mmh.
+
+Martin (44:15.218)
+Oui.
+
+David Leuliette (44:18.95)
+En vrai, il faut bien pour ceux qui découvrent, c'est vrai que l'audience, sais pas trop, mais il en a qui font pas forcément du natif plus que ça. Il bien comprendre la différence entre native build dès qu'on a un changement de build et dès qu'on a une over the air update. Donc là, c'est vraiment le cas du checkout. Le checkout est cassé, tu dois re-changer le bouton, allez hop, over the air update, terminé. Par contre, la permission, là...
+
+foutu faut refaire un build il faut refaire tout ça il ya des d'autres cas que tu as d'exemple où ce capgo sauve la vie
+
+Martin (44:49.074)
+C'est vrai,
+
+Mmh.
+
+Martin (45:02.61)
+Le cas que je vends le plus sur le site internet et partout aux gens quand je suis en call, c'est t'as shippé un bug dans ton JS et tu l'as envoyé en review. Et en fait là tu as deux cas de figure soit tu te dis bah voilà ça fait trois jours que je en review, j'annule ma review parce que je sais que j'ai un bug.
+
+et du coup, je vais relancer un cycle de review ou alors je l'envoie comme ça et en même temps, j'envoie une Live Update qui est compatible qu'avec ce binaire que j'ai déjà envoyé, je la publie déjà sur CapGo et au moment où Apple accepte l'app et les gens ouvrent cette app, si tu as bien fait ton setup, et ils voient jamais le bug.
+
+Martin (45:49.116)
+Et ça c'est trop bien. L'autre cas de figure quand t'as pas ça, c'est que t'enlèves de la review, et tu remets, puis tu es re dans la file d'attente. Ça fait trois jours que tu veux monter dans la file d'attente, et là tu repars en arrière. C'est ça l'une des meilleures fonctions de Capgo. Un des trucs qui se vend aussi bien, c'est... Je sais pas si t'as déjà eu le cas, tu parlais d'appli pas compatible.
+
+Des fois, tu le problème inverse. Tu as des gens qui ne jamais update leur app. Ils ont désactivé les updates automatiques. Ils ne pas les update parce qu'ils trouvent que c'est chiant, ça change leur app, etc. Et ce mec-là, ces mecs-là, ils vont ouvrir ton app, t'as changé ton API parce que tu as fait une nouvelle release native et il n'y a rien qui marche pour eux. Et qu'est-ce qu'ils vont faire ? Ils vont les splendre au support. l'app, elle est pétée.
+
+Et tu leur dis, bah faut update. Et tu ouais mais j'update jamais mon app. Et du coup, tu te retrouves avec des gens qui sont pas contents, qui vont dire, l'app elle marche plus, et il va aller te mettre une bad review. Parce que c'est ce genre de personne qui veut pas faire les updates, il est pas content, parce qu'on update tout le temps les apps, et du coup ça le fait chier, et donc il va aller te mettre des bad reviews, parce qu'il a pas fait le truc que tu lui demandé, qui est logique de faire. Mais il refuse par principe. Mais avec Capgo, en fait, tu peux lui envoyer une live update, target juste ton build à lui.
+
+et fixer juste l'API sans fixer autre chose si tu as envie. a un système de channel dans Capgo, donc on peut assigner un channel à n'importe quoi, à un build si on veut. Du coup, on met tous ces devices-là sur ce build-là et comme ça, on peut continuer à les updater et à fixer leurs vieilles apps, qu'elles marchent et que tu n'aies pas de bad review grâce à ça.
+
+David Leuliette (47:35.034)
+Ouais c'est ça, du coup c'est carrément un avantage. Mais c'est pour ça que moi je comprends pas la traine, enfin si je comprends mais je comprends pas. Tu t'as suivi, tu sais le truc de Shopify qui avait utilisé Racknative à fond et que là ils partent, ils roll back, partent, ça c'est parce qu'ils ont trop d'argent. Et il y a des agents, mais... Ben oui, mais ok, mais du coup même si t'es un business hyper successful et que t'as les ressources infinies pour faire ce genre de truc.
+
+Martin (47:48.753)
+C'est dans l'œuvre.
+
+Martin (47:54.327)
+Oui, c'est exactement ça.
+
+David Leuliette (48:05.189)
+Ben, t'as toujours pas un Dover the Air Update ? Moi je comprends pas le move en fait. Parce que tu peux pas faire Dover the Air Update en natif. T'as des solutions ou pas du tout
+
+Martin (48:12.745)
+Non, a zéro solution. En fait, pense que c'est juste qu'ils sont tellement gros Chopify que leur cycle de release est ultra long. Je pense que leur cycle de release est infini en fait. Et donc du coup...
+
+David Leuliette (48:23.365)
+Hmm.
+
+David Leuliette (48:27.949)
+ouais ok.
+
+Martin (48:31.011)
+ils ont des milliards de mecs qui QI, etc. Donc en fait ils comptent sur eux-mêmes. En fait ils pensent qu'ils sont des génies, vois, et qu'ils feront jamais de trucs débiles. Mais bon, ça, on en reparle dans un an. Peut-être qu'on aura un article. On regrette les live updates.
+
+David Leuliette (48:44.901)
+Ouais, en fait, moi c'est vraiment le truc qui fait que les petites... Puisque forcément personne n'est Shopify et quand on est plus petit business successful, voilà, une code base, l'over-the-update, c'est quand même stylé d'avoir iOS, Android, en même temps. Et... Le truc qu'on n'a pas dit aussi, c'est que pour l'OTA...
+
+ça update le JavaScript et le style mais tu peux aussi faire des rollbacks, rends compte que tu fais de la merde, tu rollbacks et donc les gens qui ont déjà eu l'update, vont re-télécharger l'update qui fixe le problème et les gens qui font dodo, ils vont se réveiller sans avoir... si ils vont télécharger quand même les deux ? Non, quand ça rollback ça fait cancel, ils vont pas télécharger le nouveau bundle.
+
+Martin (49:34.283)
+eu de problèmes. Non.
+
+Martin (49:42.866)
+Nous dans Capgo en plus je fais un truc un peu spécial par rapport à ça c'est que tu par défaut je garde le bundle précédent pendant quelques jours donc si tu roll back en fait tu vas même pas le re-télécharger c'est juste instant quoi tu reçois le API et dis l'ancien c'était mieux et tu reprends l'ancien quoi
+
+David Leuliette (49:54.981)
+Ouais, expo c'est pareil.
+
+David Leuliette (50:01.56)
+...
+
+David Leuliette (50:06.501)
+Et lignes rouges. Est-ce que tu connais par cœur ce que les guidelines Apple interdisent de changer en OTA ? Parce que c'est que c'est interdit par Apple les OTA, mais il a quand même beaucoup d'apps sur le store qui le font, donc c'est toléré on va dire.
+
+Martin (50:25.329)
+Je ne pas d'accord avec toi, mais pour moi c'est autorisé. Il y a une guideline qui est la 2.5.3 qui dit exactement que tu ne peux pas changer le bundle dans un device qui est déjà... enfin le bundle après qu'il soit publié sur l'App Store, sauf si c'est du code qui est interprété dans une machine virtuelle qui est le JavaScript Core ou il y en a une autre, je ne plus laquelle.
+
+David Leuliette (50:31.365)
+Allez !
+
+Martin (50:54.181)
+mais il y a deux types de trucs qui s'autorisent. Dans cette guideline, c'est là où ils disent que ça ne peut pas changer le pure pose de l'app. Donc ça ne peut pas changer ce en quoi l'app est faite, décrite, comprise par les utilisateurs. Ce qui est toléré, c'est le fait que tu fasses des updates, tu fais un redesign de ton app et puis voilà quoi.
+
+David Leuliette (51:07.566)
+Ouais, oui.
+
+David Leuliette (51:22.213)
+Ouais tu changes au fur et mais tu ne passes pas d'app de gestion de course à Paris en ligne. Ça interdit. Oui parce que dis ça parce que ce cas là en fait les apps de genre Visiro, tu où tu peux faire des apps, les apps où tu peux faire des apps, Replit et tout, ils avaient des problèmes, avaient été publiés et Apple a dit ouais non en fait c'est des apps de vibecoding maintenant c'est interdit.
+
+Martin (51:29.361)
+Surtout pas. Surtout pas.
+
+Martin (51:42.449)
+Mmh.
+
+Martin (51:51.375)
+Alors ça, c'était un truc différent. Ils se sont basés sur le fait que tu changes le propose de l'app, parce que ton app, tu peux l'utiliser pour faire autre chose, alors que c'est un truc que tu as développé toi. Mais du coup, Apple autorise maintenant...
+
+David Leuliette (51:51.789)
+Mais peut-être que ça.
+
+Martin (52:15.376)
+En fait, c'est très cadré. Moi, le fais aussi dans l'app CapGo. Tu peux tester une de tes bundles que tu m'as envoyé directement dans mon app, si on a les mêmes sortes de plugins. Et je mets tous les plugins qui existent dans mon app comme ça, ça devrait passer. Tant que ce pas des trucs qui demandent une connexion avec un service à compte, des trucs comme ça. Mais leur limite, c'est qu'ils disent qu'il faut vraiment que ça soit...
+
+David Leuliette (52:29.625)
+Et comme ça c'est bon.
+
+Martin (52:45.184)
+pour V0, pour toutes les apps rock, etc. C'est soit que ça a l'air de ne pas être une app native, donc tu peux charger un site web par exemple, ou un truc que tu dis que c'est un site web, que c'est pas une app, que c'est pas installable, que tu peux pas la partager. Parce qu'en fait c'est ça à un moment donné qui était parti en couille et que moi j'avais voulu faire un business là-dessus aussi. C'était de faire une app que tu peux...
+
+et dans l'app Builder, peux dire partager, tu le partages, ça fait un deep link, le mec il télécharge l'app sur l'app store et il récupère le truc que tu fabriqué. C'était génial ! Tout le monde était en train de faire ça, c'était yolo ! n'as plus besoin de passer par l'app store, tu vas juste avoir une app qui a toutes les apps du monde dedans. Et là, ils ont vu le truc arriver, ils ont dit non, !
+
+David Leuliette (53:30.309)
+C'est ouf !
+
+en fait... Non, j'avoue. Et...
+
+Martin (53:37.494)
+maintenant tu peux avoir ce qu'ils appellent du développement mode. Si tu dev, juste pour toi, tu peux pas la partager, que c'est vraiment lié à ton compte, à toi, etc. C'est ok.
+
+David Leuliette (53:42.487)
+Oui.
+
+David Leuliette (53:51.493)
+Et est-ce que tu as eu un cas où l'OTA n'est pas une bonne réponse pour une équipe
+
+Martin (54:02.946)
+où l'OTA c'est pas une bonne réponse ? Ouais, j'ai un peu ce truc-là. fait dans tous les secteurs où c'est très très régulé par exemple, actuellement j'essaie de faire un deal avec une des plus grosses assurances des Etats-Unis et en fait je pense que la vraie réponse c'est qu'ils peuvent pas faire d'OTA parce que juridiquement ils ont besoin de trop de trucs.
+
+David Leuliette (54:03.321)
+Alors qu'on te... Ouais... Tu... Tu...
+
+Martin (54:32.72)
+et tu peux pas... en fait ils pourraient pas utiliser CapGo, il faudrait qu'ils aient leur propre serveur d'OTA, faudrait qu'ils aient un moyen de vérifier que un device il a un certain truc et que ça soit, je pas, encrypté, que ça puisse plus être changé par revert, qu'il une trace de tout ce qui a été fait...
+
+David Leuliette (54:49.637)
+Ouais ouais. Ouais ouais. S'il a un device et tout, et que ce soit juste sur tel serveur en Europe et ou pas sur des serveurs machins, qu'on sache à tout moment où est-ce qu'elle est la donnée. Ça c'est trop marrant. C'est exactement ce que dit Jémon d'Infinitrade. Il dit, ouais quand vous faites du Rack Native et que vous n'utilisez pas Expo, vous êtes en train de construire votre propre Expo. En fait c'est exactement ça. Mais...
+
+Martin (55:13.968)
+Noi.
+
+David Leuliette (55:16.229)
+Des fois t'as juste pas le choix quoi, comme tu dis, régulation et tout, machin, process, il faut que tout soit carré et qu'on soit sûr de bout en bout qu'il n'y ait pas de... ...fuites de données et ou, pas vraiment des fuites de données mais... ...c'est des garanties en fait en vrai, alors que les garanties c'est le même en fait en vrai, enfin peut-être pas forcément mais... ...c'est juste une check-list dans un PDF que tout le monde s'en fout mais... ...moi on veut notre petit logo bicorp et ou notre petit logo... ...je sais pas quoi, donc...
+
+Martin (55:34.808)
+C'est ça.
+
+David Leuliette (55:44.611)
+On ne peut pas l'utiliser, donc on va reconstruire en interne une solution comme Capgo. C'est beau.
+
+Martin (55:50.801)
+l'assurance là en question dont je parle, ils m'ont demandé d'assurer mes live updates à un million de dollars. Il que je puisse avoir leur prouver que j'ai une assurance de un million de dollars que s'ils envoient une mauvaise live update et qu'ils prouvent que c'est ma faute parce que c'est des assurances très fort pour faire ça, bien du coup moi je veux avoir une assurance qui les assure jusqu'à un million de dollars que j'ai fait de la merde.
+
+David Leuliette (56:08.804)
+Mh-mh, ouais.
+
+Martin (56:15.664)
+Et je t'étais là, mais non, jamais de la vie. Tu prends des one-to-one dans le crypté bundle et tu me fais pas chier, c'est ton problème. je veux pas être dans ton problème.
+
+David Leuliette (56:22.932)
+Ouais c'est ça ! C'est ça, c'est beau ça ! Ils vont te facturer leur propre incompétence. Ça c'est quand même un beau business model les amis.
+
+Martin (56:35.6)
+bah l'insurance, sont trop forts pour ça. Et au début, tu je lis le papier vite fait, parce que les contrats, en général, c'est assez simple. Et puis je regarde, fais, mais quoi ? Mais heureusement, j'ai lu ! là là...
+
+David Leuliette (56:46.052)
+Ouais, oui oui c'est clair. Moi tout ce qui est les gueules et tout, moi c'est bon, maintenant c'est Claude, je refais tout lire parce que c'est insupportable en fait les petites lignes et tout. ouais c'est ça, mais c'est n'importe quoi en fait en vrai.
+
+Martin (56:57.537)
+Ouais, non, c'est abusé !
+
+David Leuliette (57:01.38)
+Et t'as vu que nous l'audience est un peu plus à rack native, de façon c'est pareil, CapGo, US Update ou Expo Update ou Hot Updateur, c'est pareil. Est-ce que t'as vu une diff toi entre Capacitor... C'est vrai qu'on n'a pas du tout dit c'était quoi Capacitor.
+
+Martin (57:11.632)
+Allez.
+
+Martin (57:18.416)
+C'est vrai.
+
+David Leuliette (57:21.444)
+quoi la différence entre capacitor et ACNET-CE ?
+
+Martin (57:23.184)
+Bah... Alors moi j'ai un penchant pour Capacitor mais en gros Capacitor c'est des gens qui sont honnêtes. C'est qu'ils ont pas envie de se faire chier avec du natif et ils font vraiment du web. Les gens de React Native c'est des gens qui ont pas envie de dire qu'ils font du web donc ils ont mis une ui native mais tout pareil derrière.
+
+David Leuliette (57:37.028)
+C'est beau. Ouais !
+
+David Leuliette (57:43.544)
+Ouais.
+
+Ouais, j'avoue c'est bon, non ça compile, je dirais que t'as une étape de compilation quand même où ça utilise des trucs natifs mais c'est vrai que c'est pas juste une Webview. Ouais ouais.
+
+Martin (57:54.993)
+Nous on compile aussi certains trucs, mais dans tous les cas si tu peux changer le placement d'un bouton dans ton UI en React Native, ça veut dire que ce pas fixe dans le code. Ça veut dire que c'est du JS qui décide. Donc au final c'est une belle surface. ce qui est bien en React Native, c'est que tu peux aller faire des choses qui ne pas possibles ou très difficiles en Capacitor.
+
+Par exemple, tu veux faire une app avec une map en Capacitor, ça va être chiant parce que la map, si tu veux qu'elle soit réactive, il falloir la faire en natif. Donc en Capacitor, ce que tu vas devoir faire, et c'est moche, c'est que tu prends ton app Capacitor, qui est une WebView, tu la rendes transparente, tu la mets par-dessus la map.
+
+Comme ça tu peux avoir tes boutons et du coup il faut que tu fasses passer les events touch, multitouch quand tu bouges la map dans le natif de la map et les boutons quand tu cliques sur les boutons que tu as fait en web. Ça c'est horrible à faire, c'est le cas le pire et si tu as ton app c'est une app de map je te recommande pas d'utiliser Capacitor. Nous par exemple, tout l'heure on parlait de la caméra, dans la caméra c'est plus faisable.
+
+David Leuliette (59:10.98)
+Ouais, ouais...
+
+Martin (59:15.716)
+On fait la même chose, le plugin de caméra fait la même chose et ça passe bien, c'est assez cool.
+
+David Leuliette (59:22.82)
+Est-ce qu'il a Watch et tout, c'est pareil, c'est possible ou très chiant ?
+
+Martin (59:26.508)
+Non, tout ce qui va être device externe, tu vas devoir le faire en natif.
+
+David Leuliette (59:31.766)
+Ouais c'est pareil ouais. Avec Naty, t'as des soucis. Et à l'accès à Elskit et tout ce genre de trucs, ça va aussi, c'est pareil de toute façon.
+
+Martin (59:33.27)
+C'est pareil, tu pas le...
+
+Martin (59:38.862)
+Alors ça c'est super simple pour le coup, n'y a vraiment pas de difficulté je dirais entre Capacitor React Native ou Pure Native. T'as pas de difficulté à part si la personne qui a fait le plugin qui te permet de connecter au Native, il ne le maintient pas, moi c'est moi qui ai créé le HealthKit Capacitor qui est le plus successful donc...
+
+je sais que j'ai tout et toutes les semaines j'ai mec qui me dit mais t'as pas la BMI de je sais pas quoi et du coup je dis à Claude vas-y ajoute ce truc là là mais non ça c'est assez simple pour le coup parce que ça n'est pas une feature native qui implique du display en fait si tu dois impliquer du display c'est là où ça devient
+
+compliqué dans Capacitor parce que t'as une WebView et tu dois dealer avec les deux. si par exemple un photo-picker, les dernières guidelines d'Apple et Google, c'est d'utiliser leur nouvelle librairie qui permet de pick une photo et pas de donner l'autorisation à toute la galerie du téléphone. Ça, par exemple, c'est très simple parce que le picker, vient par-dessus ta WebView pendant que tu fais la sélection, tu fais la sélection et il se referme.
+
+David Leuliette (01:00:55.78)
+Mmh, alright.
+
+Martin (01:01:03.999)
+tu reprends ta WebView. Donc ça c'est ok mais quand c'est quelque chose de plus interactif qui va durer longtemps et que tu veux avoir ton app dedans, exemple Map, etc. Là c'est plus difficile quoi, je pense React Native sera meilleur sur ce truc là. Maintenant si tu as déjà un site web et que ton app c'est vraiment une compagnon de ton site web, ça fait peu de sens d'avoir React Native.
+
+David Leuliette (01:01:29.056)
+Ouais c'est clair, ou que la TASTAQ est carrément différente, TASTAQ c'est du VUJS, hop Capacitor GO ça marche.
+
+Martin (01:01:36.922)
+Ouais, c'est ça. Maintenant si tu vas être pure player, on va dire app mobile, je pense que c'est un peu con d'aller chercher dans du capacitor parce que tu vas avoir moins d'opportunités de faire des trucs stylés en natif, moins d'opportunités de le vendre à des vc parce que ça va leur pas leur plaire que tu utilises une technologie qui est pas aussi trendy que React Native. En vrai React Native...
+
+David Leuliette (01:02:00.984)
+ouais c'est plus trendy quand même ? Ouais, bah ils sont plus forts en marketing. Ouais ouais ouais c'est plus...
+
+Martin (01:02:03.807)
+c'est beaucoup plus trendier avec Naty. En fait le truc c'est que derrière tu as Facebook enfin maintenant c'est même plus que Facebook mais c'est devenu un truc un peu plus global mais bref tu as les plus grosses boîtes iOS qui utilisent ça et de l'autre côté tu as des dinosaures de grosses boîtes qui utilisent Capacitor mais tu n'as pas des boîtes stylées nouvelles qui utilisent Capacitor en général parce que tu veux
+
+David Leuliette (01:02:14.435)
+C'est un... Ouais, ouais.
+
+Martin (01:02:31.341)
+quand tu une boîte stylée nouvelle qui a des sous etc. tu cherches des devs stylés nouveaux, trendy etc. et donc en fait tout va dans la trend. Donc tu perds beaucoup de qualité dans l'écosystème juste parce que tu n'es pas le mec stylé de la classe.
+
+David Leuliette (01:02:36.131)
+Non, c'est ça.
+
+Martin (01:02:49.807)
+...
+
+David Leuliette (01:02:51.331)
+Je le capte, on gardera ça, on fera un short avec.
+
+Martin (01:02:52.683)
+Et la boîte qui l'idée aussi en Capacitor, qui était Ionic, qui a été maintenant racheté par OutSystem, c'est un peu mieux maintenant, mais c'était vraiment des tâches. Genre ils ne répondaient pas à la communauté, ils fixaient pas les bugs, les issues, ils répondaient jamais. Là, ils ont clean tous les issues, il a quelques mois en disant maintenant, n'importe quel issue, on va la régler assez vite, etc. J'ai ouvert une issue directe, elle n'est toujours pas fermée, elle n'est toujours pas répondue.
+
+David Leuliette (01:03:02.339)
+Ok.
+
+David Leuliette (01:03:07.715)
+oui...
+
+David Leuliette (01:03:18.989)
+Ouais, ouais, ouais, ça après, faut des gens, tu vois, y a pas de secrets.
+
+Martin (01:03:22.735)
+...
+
+Ouais mais je pense qu'ils ont des gens, il y a une dizaine de personnes qui bossent sur le corps de capacitor mais ils ont pas les bons gens je pense.
+
+David Leuliette (01:03:35.532)
+oui, dédier carrément, sais, un devril ou un... C'est ça ! Et qui fait genre de la code review en live et puis terminé en fait en vrai. Mais il faut vraiment qu'il fasse que ça. Pas un ingénieur qui, on-side, va le faire, parce que en fait c'est un boulot... ça demande d'autres skills. Ça demande dans la pourdose skills aux gens qui n'ont pas suivi les rythmies. Et ça, c'est très chaud ! Ou genre qui te disent ça marche pas sans filer de change log ou de logs ou je pas quoi.
+
+Martin (01:03:39.183)
+A la
+
+Martin (01:04:03.279)
+Mais pour ça je pense qu'ils pourraient set up des agents. Ils ont commencé à essayer set up des agents pour review etc. Donc maintenant on a des reviews automatiques par copilote. Mais t'as quand pas de mec qui vient faire la review derrière quand copilote il a dit c'est tout bon. Et il pourrait aller plus loin et faire du triage tu vois quand c'est des trucs pourris, mec qui reporte un truc qui sert à rien. Tu lui dis.
+
+avec une IA et ils autoclosent mais en fait ils en sont pas là quoi. C'est juste que toute l'industrie c'est un peu des... c'est pas les meilleurs fruits du panier quoi, c'est tout.
+
+David Leuliette (01:04:38.723)
+Si vous avez la ref Microsoft versus Apple, c'est ça, c'est la vieille pub du Apple guy qui fait des trucs stylés versus Microsoft Business Corporate, Microsoft 360 même si Microsoft on les adore, on leur fait des bisous. Fast forward, ad béton que ton app a été successful.
+
+Martin (01:04:45.226)
+C'est ça.
+
+Martin (01:04:52.034)
+C'est ça, c'est ça.
+
+Martin (01:04:55.823)
+...
+
+David Leuliette (01:05:04.995)
+et que tu étais situé d'une boite qui fait 10 millions de CA par an avec ton app mobile et tu 500K de budget pour les 12 prochains mois pour ta plateforme mobile. Produis, recrutement, outillage, vidéo faite par Opus 5.5. Qu'est-ce qu'on fait ? Dans quoi tu investis ?
+
+Martin (01:05:30.767)
+Dans quoi j'investis ? En vrai je pense que... On parle du principe que l'appel est fait en capacitors ou pas ? Je pense que justement, vois, c'est un peu ce que j'ai fait Capgo et ça a aidé grave l'écosystème. On est passé d'un truc qui était en train de mourir à un truc que maintenant il coule. Parce que j'ai passé du temps à faire des alternatives en fait à un truc qui marchait pas bien.
+
+David Leuliette (01:05:41.109)
+Oui oui carrément...
+
+Martin (01:05:58.895)
+Et j'ai déjà commencé à faire ça avec Capgo, d'ailleurs j'ai créé un fork de capacitor que je maintiens moi où je fixe des bugs moi-même que les gens reportent. fais avec l'IA des issues automatiques, des pull requests automatiques. Et si ça passe tous les tests, c'est automergé et les gens peuvent utiliser ça quand ils ont un bug pour essayer de se sauver. J'ai fait ça et j'ai fait aussi un système de patch. Parce que ça c'était bien mais je me suis rendu compte que ça immergait tous les problèmes de tout le monde.
+
+Des fois, tu as envie de régler juste ton problème, pas de tester plein de nouveaux trucs qui n'ont pas été forcément testés. Donc maintenant, je crée un système de patch qui permet de juste récupérer un patch et auto-patcher ton projet. Un peu comme un NPM patch, je pense. Ouais, c'est ça. J'ai fait ça pour Capacitor.
+
+David Leuliette (01:06:47.455)
+Ouais, patchpackage.
+
+Martin (01:06:53.062)
+marche plutôt bien, que les gens sont plutôt contents d'utiliser. ce que je ferais, c'est que je mettrai des sous dans l'open source, dans l'écosystème pour l'améliorer. Si c'est possible, je sais même pas si en vrai ils accepteraient, ils en feraient quelque chose. Mais j'essaierai d'améliorer l'écosystème. Si j'ai un bon budget, j'essaierai d'améliorer l'écosystème parce que c'est ça qui va faire que tu ailles une meilleure app. Infini, en fait, même si je préfère Capacitor, que Rack Native ou quoi, ce qui fait qu'une technologie...
+
+marche bien pour ton problème, c'est qu'il a des sous dedans qui sont investis, des gens qui pensent et qui testent et qui fixent des bugs, etc. Pour moi, ce qui fait la qualité de React Native par rapport à n'importe quoi d'autre, c'est qu'en fait, il y a beaucoup de gens qui investissent beaucoup d'argent dedans et de temps. n'est pas qu'en soi, c'est une meilleure technologie, c'est juste qu'il a plus d'argent.
+
+David Leuliette (01:07:43.019)
+il y a plein de boîtes. En fait il y a des boîtes, il Soft Air Mansion, Callstack, Infinite Raid, peux checker sur leur gars, c'est vraiment des grosses boîtes qui investissent à mort. Soft Air Mansion ils sont 200 je crois, et ils ont genre une armée de 50 devs qui font que du rack native en mode open. Donc forcément...
+
+Martin (01:07:56.609)
+Bon,
+
+Martin (01:08:01.588)
+c'est des génies. Je lis tous leurs posts, je regarde tous leurs codes. Il y a plein de trucs que je me suis inspiré dans mes plugins de ce que eux font. Si on explique aux gens un petit peu React Native et Capacitor, c'est la même chose. T'as une partie qui est en JS, une partie qui est en Natif, et fait la partie qui est en Natif, peu importe la technologie, si c'est React Native, Cordova...
+
+David Leuliette (01:08:05.963)
+No !
+
+Martin (01:08:30.062)
+ou in App Native ou Flutter, en fait c'est le même code souvent qui fait la même chose. Et donc ça m'arrive assez souvent d'aller voir comment il fait un plugin de React Native ou Flutter quand je trouve des bons plugins pour améliorer les nôtres en fait. Et donc Software Mansion, je l'aurais piqué par pas mal de trucs.
+
+David Leuliette (01:08:51.01)
+Bah oui, de toute façon c'est le but vu que c'est open.
+
+Martin (01:08:55.501)
+Bye !
+
+David Leuliette (01:08:58.082)
+Cool, bonne réponse, investissement dans l'open source, on adore. On va passer à la partie question rapide, 5 réponses. 5 questions, pfff, voilà, c'est compliqué. 5 questions, 5 réponses, bas de chez vous, indice en bas de votre écran. Alors, une erreur coûteuse, tech, orga ou produit que tu regrettes encore.
+
+Martin (01:09:10.222)
+5 questions, 5 réponses. C'est le temps d'aller, il faut aller manger là.
+
+Martin (01:09:26.728)
+Ça c'est facile en général, on l'a tous fait une fois. T'as wipe la DB sans faire exprès.
+
+David Leuliette (01:09:32.21)
+ouais ! Drop database de prod sans faire gaffe !
+
+Martin (01:09:36.302)
+Sans faire gaffe, oui et non, si tu veux j'étais en train de dev et je voulais retester un truc et donc je voulais me refaire un clean environnement et j'ai ripé en fait en faisant up up up, j'ai pris up sur la prod et du coup j'ai reset la prod.
+
+David Leuliette (01:10:00.437)
+Mais à un vendredi... 20h.
+
+Martin (01:10:00.661)
+J'ai été rerun toutes les migrations depuis zéro et j'ai reset la prod. Et c'est là où on s'est rendu compte que peut-être qu'il fallait que dans un rendement de dev on ait pas laxé tout le temps la prod.
+
+David Leuliette (01:10:15.68)
+Et attends, t'avais un backup de la prod, t'as perdu beaucoup de trucs ou pas ?
+
+Martin (01:10:19.766)
+Alors on a tout perdu pendant je pense 24 heures parce qu'en fait nos backups étaient corrompus. Donc on avait des backups qui renaient toutes les 2 heures je crois aux 4 heures et en fait les backups tu pouvais pas les restaurer. Tu sais c'était à l'époque où t'avais pas d'IA donc on a codé un script et le script était pas bon. On n'avait jamais vérifié. Donc du coup on était dans la sauce de ouf.
+
+David Leuliette (01:10:43.074)
+Ma vie, c'est bon.
+
+Martin (01:10:45.364)
+et jusqu'à qu'un mec revienne de vacances, enfin pas de vacances mais il était parti, il était un jour off, et du coup on lui explique le problème et il nous dit, mais je viens de faire un backup de la DB parce que je voulais tester un truc sur des données prod similaires quoi.
+
+génie et du coup il nous a envoyé le backup et on a remis ça et on a perdu 24 heures de data.
+
+David Leuliette (01:11:04.161)
+ouais !
+
+David Leuliette (01:11:10.6)
+Ouais mais bon, 4 heures plus tôt, t'étais en mode ben j'ai plus de boîte.
+
+Martin (01:11:15.19)
+Ouais ouais, 4 heures plus tôt, on avait perdu je sais pas, 10 000 utilisateurs, enfin c'était... C'était dur. J'avais pleuré un paquet de fois !
+
+David Leuliette (01:11:23.422)
+des backups les amis. Vérifiez tout de suite, ce sera le message de l'épisode. Check tes backups parce que ton collègue ne rentrera peut-être pas de vacances.
+
+Martin (01:11:38.062)
+Les backups, en fait, il le faire. Maintenant, dans le Cap-Gauche, tu sautes tout, donc c'est un truc qui te demande de prouver que tes backups marchent, ce qui drôle. Et je me suis dit, je comprends pourquoi, parce que ça m'est déjà arrivé.
+
+David Leuliette (01:11:51.008)
+Oui, bah oui. Oui, bah c'est ça, c'est ça. Non mais c'est bien, bon exercice, coup d'apprentissage un peu élevé, mais bon apprentissage de test de résilience. vrai, sinon tu l'aurais jamais fait, donc bon.
+
+Martin (01:11:58.781)
+ouais.
+
+C'était ma deuxième année de dev, première ou deuxième année entre les deux je pense, pendant une nuit.
+
+David Leuliette (01:12:07.851)
+Ok. Est-ce que tu as un outil ou une pratique pour passer de sa marche à sa scale ?
+
+Martin (01:12:17.07)
+un outil ou une pratique... En fait, ça dépend un peu... Il y a plein de gens qui, sur le Southcale, ils se disent... Ils se disent, je vais faire un process, je vais penser à... à tous les codes figures. On avait ça avant l'IA. Il passait des jours à faire des trucs que finalement, fait, il trop d'utilisateurs. Et en fait, moi, maintenant...
+
+David Leuliette (01:12:33.469)
+Tous les cas de figure.
+
+Martin (01:12:46.766)
+j'essaie de me dire si demain j'ai un million d'utilisateurs de plus, est-ce que j'ai choisi un système qui va me coûter un million de plus mais qui ne pas péter ? Dans le sens où j'utilise souvent le serverless ou des trucs hébergés en cloud plutôt que moi hébergé pour que je pas ce problème là.
+
+Et actuellement, par exemple, qui sert à mes live updates, c'est des Cloud Fair Worker. Donc, les Cloud Fair Worker, n'est pas un problème de scalabilité, c'est un problème de porte-fait. Si tu as assez d'argent, ça marchera. Et ça, c'est un problème qui est assez bien à avoir, parce qu'en général, si tu scales et que n'as pas fait de conneries, ça veut dire que tu gagnes plus d'argent. Et du coup, ça devrait être linéaire, à peu près proportionnel. Donc, ton problème, après, c'est de l'optimisation d'argent.
+
+David Leuliette (01:13:25.857)
+Bonne réponse.
+
+Martin (01:13:43.617)
+plutôt que tout est pété et il a plus rien qui marche. Donc j'essaie d'avoir ça, malheureusement sur de la DB par exemple, n'est pas encore un truc que l'autoscaling marche très très bien et qui est très répandu, donc je n'en ai pas. Mais je suis over provisionné et j'ai des tests en fait de régression de performance qui sont faits en CI-CD. Donc quand je fais une update sur mes
+
+sur ce qui fait les updates dans CapGo, j'ai des tests qui vont run, genre 100 000 updates, et voir si la performance a baissé ou a augmenté. Alors, c'est pas très...
+
+fiable encore mais ça me sert un peu de george pour me dire ok là ça n'a pas bougé donc c'est que ça doit être plutôt bon ou alors ça a bougé peut-être si ça a bougé c'est juste parce que le serveur était occupé parce que c'est pas très fiable mais faut que je test quoi
+
+David Leuliette (01:14:46.498)
+La balaine. Non c'est plus la balaine, c'est le... L'Unicorn pardon, j'ai bugué avec la balaine de Twitter. L'Over the Air en 2026, indice. C'est la balaine de Twitter. Ouais la balaine de Docker aussi, mais il a la balaine de Twitter. Tu te rappelles plus ? La balaine de Twitter orange et bleu.
+
+Martin (01:14:51.694)
+Allez.
+
+Martin (01:14:56.287)
+La baleine de Dockheur non ?
+
+Martin (01:15:07.63)
+J'ai jamais vu ça.
+
+David Leuliette (01:15:08.188)
+Non ! mais attends, faut que tu vas sur wale twitter 500
+
+Ça te parle rien ? Twitter is overcapacity. T'as jamais vu ce truc ? Mais c'était... Hé, ça, m'a remis un flash de... Oula ! J'utilisais Firefox 3.6 avec ce truc-là ! L'OTA en 2026 indispensable ou sur-côté
+
+Martin (01:15:24.942)
+! Ok.
+
+Martin (01:15:32.032)
+ça y je la vois. ouais ça date.
+
+Martin (01:15:45.295)
+Après je veux vendre des OTA donc je pas te dire que c'est sur côté. Non pour moi c'est assez indispensable, c'est ce qu'on disait tout à l'heure avec Shopify, il faut être con pour se dire on va perdre ça, il faut vraiment avoir beaucoup trop d'argent jeté par les fenêtres.
+
+David Leuliette (01:16:02.429)
+Oui, j'avoue, une réponse dans 3 ans. Un dev mobile qui rejoint une boîte...
+
+Tu lui donnes quoi qu'on... Enfin un dev pardon, qui rejoint une boîte et qui ship du mobile demain, tu lui dis quoi comme conseil ?
+
+Martin (01:16:20.462)
+Je donne quoi comme conseil
+
+en fait une des qualités du mobile, ce qui fait que d'ailleurs un dev en général mobile est plus payé, c'est parce que t'as Apple et Google qui sont des cons et que tu peux pas faire ce que tu veux. Donc je te dirais qu'il faut vraiment être bien, se tenir informé en fait de ce qui change, ce qui va changer dans les nouvelles versions, les tester, avoir des devices de test pour tester les nouvelles versions.
+
+plusieurs devices et vraiment un peu il faut vraiment être fan en fait de l'écosystème même si tu sais qu'il est terrible et qu'il ya des trucs trop chiants tu pendant longtemps en fait j'ai détesté ça qu'Apple ça soit des cons en fait c'est mes meilleurs amis finalement parce que c'est grâce à eux que je fais de l'argent tu vois parce qu'ils sont cons donc c'est un peu c'est un peu une hate and love relationship tu vois
+
+David Leuliette (01:17:18.62)
+Je Je veux... Brouhaha...
+
+Martin (01:17:19.746)
+et je les déteste que ça soit pourri, je les déteste que la caméra soit pourrie, mais ça m'a fait gagner 15 000 balles, vois, le fait que les caméras sur Android soient pourries et qu'il 25 différentes API, Device Hardware, etc. Donc, il faut se tenir informé de ça et il faut en faire une force, de ces difficultés parce que c'est Tu c'est la barrière à l'entrée qui fait que ça a de la valeur, que ton métier a de la valeur et jusque-là, tant qu'on n'aura pas...
+
+David Leuliette (01:17:28.513)
+Non.
+
+David Leuliette (01:17:43.29)
+Allez, allez, au toi j'avoue.
+
+Martin (01:17:49.963)
+arriver à casser ce truc là, que Apple et Google seront détruits par l'Europe ou des trucs comme ça pour les reviews et ce système là, c'est ce qui fait en fait la beauté du métier. L'horreur, les horror stories, c'est la beauté du métier finalement.
+
+David Leuliette (01:18:07.361)
+Et donc les stores dans trois ans c'est plus souple, pareil ou pire.
+
+Martin (01:18:13.656)
+Ben écoute, moi j'ai vu l'Europe, la Californie détruire Apple en disant non mais maintenant vous pouvez plus faire payer, forcer les gens à payer via l'App Store, il faut autoriser d'autres méthodes de paiement. Et puis Apple ils ont dit ok, et puis ils ont mis des warnings partout en te disant que t'étais une mauvaise personne si tu passais en dehors de l'App Store. Et du coup c'est inutilisable. Donc je pense que...
+
+David Leuliette (01:18:28.289)
+Bon, c'est
+
+David Leuliette (01:18:36.562)
+clair oui c'est vraiment inutilisable j'ai même pas test en fait la puissance de la flemme oui by design
+
+Martin (01:18:41.662)
+C'est inutilisable. Essayez d'installer l'app store alternatif qui s'appelle AllStore. Pour l'installer, tu y arrives, chapeau, ça m'a pris 30 minutes. Donc tu te doutes bien que les gens en un recul. Et bien avant les 30 minutes. Et en dehors de ça, y a peu d'apps, parce qu'il personne qui va aller faire ce truc-là. En fait...
+
+C'est pas... C'est le game en fait, que ça soit chiant et qu'il soit chiant. Et c'est ça qui créé l'écosystème et en fait ça va être très très dur de le changer. Donc je pense que l'Europe va s'y casser les dents un bon nombre de fois et vu comment ils sont rapides, ça va prendre 10 ans quoi, peut-être 15 ans, pas 3. Dans 3 ans ça sera pareil.
+
+David Leuliette (01:19:27.905)
+limite c'est plus simple de jailbreak ton téléphone et d'installer cidi à côté
+
+Martin (01:19:33.806)
+Oui, c'est sûr.
+
+David Leuliette (01:19:35.361)
+ouais ! là là là là, parce que j'ai dit le vrai qu'il a mille ans mais je le fais plus parce que j'ai pas le time. Mais euh...
+
+Martin (01:19:41.294)
+Je ne même pas si ça existe encore, le jailbreak avec iOS N6.
+
+David Leuliette (01:19:45.698)
+Je sais pas, je suis sur le site là dit The IOS 17 to 27. c'est toujours pareil. Combien de temps ça va te prendre. Je pense que tout est possible mais voilà, faut juste savoir combien temps ça va te prendre. Est-ce qu'il a un sujet qui te tient à coeur qu'on n'a pas abordé
+
+Martin (01:19:53.246)
+Ok.
+
+Ahaha...
+
+Martin (01:20:07.168)
+sujet qui me tient un coeur sur ça qu'on n'a pas abordé
+
+Martin (01:20:15.502)
+Non, pense pas, je pense qu'on a fait un peu le tour de...
+
+David Leuliette (01:20:18.005)
+Alors on a fait pas mal le tour, on a bien digressé et tout. T'as un invité que j'invite dans le podcast et tu peux lui poser une question. Enfin que je lui poserai. Si t'as une idée de quel cas que je peux inviter dans ce podcast, je serais ravi.
+
+Martin (01:20:31.659)
+!
+
+Martin (01:20:39.758)
+La personne que j'ai mentionné plusieurs fois qui fait ship mail, s'appelle Julien Coulo. C'est un mec que j'ai rencontré parce que dans mon podcast je l'avais invité parce qu'il faisait des apps mobiles. Là, ça faisait un moment qu'il n'avait pas fait d'apps mobiles, il était beaucoup en web. Il revient sur les apps mobiles mais il a fait beaucoup d'apps. Il a bossé dans des gros studios d'apps mobiles en France. n'ai plus leur nom mais...
+
+Mais il ne fait que du raga native, il n'a jamais voulu essayer ma technologie. Mais... couloir.
+
+David Leuliette (01:21:12.161)
+C'est quoi, c'est Julia Comment ?
+
+Et c'est quoi ? C-O-U ?
+
+Martin (01:21:18.395)
+C'est OULAUD
+
+David Leuliette (01:21:25.69)
+Ok, ok, ok, parfait. Et euh...
+
+Martin (01:21:30.538)
+Donc lui il est assez cool sur le côté design d'AppMobile, il connaît pas mal de choses, a fait pas mal d'Apps, dont des grosses App en France et aussi des Apps crypto assez connus.
+
+David Leuliette (01:21:41.985)
+Et je lui pose quoi comme question
+
+Martin (01:21:46.286)
+Tu lui poses quoi comme question ?
+
+Je pense que c'est intéressant de savoir un petit peu les process qui ont en ce moment, enfin qui avaient quand lui faisait ça dans les boîtes qui utilisent React Native en France. Je qu'il y a des trucs intéressants, je que j'avais parlé un peu de ça avec lui, de comment en fait c'est quoi leur release cycle. Finalement en fait, si tu regardes, il y a plein de boîtes qui utilisent React Native et qui ne pas d'OTA quand même.
+
+David Leuliette (01:22:20.448)
+oui ?
+
+Martin (01:22:20.75)
+oui c'est pas si répandu que ça et même moi dans Capacitor tu vois moi je dois avoir 2000 apps, sur le store je pense plus de 10 000 apps, mon compétiteur je pense pas qu'il en a plus de 1000 mais deux compétiteurs je pense qu'ils en ont 1500 quoi donc on n'est même pas à 50 % de l'écosystème
+
+Et en réact natif je pense que ça doit être un peu plus répandu parce qu'Expo il le martèle depuis longtemps mais je suis pas convaincu que ça soit plus de 60 %
+
+David Leuliette (01:23:00.742)
+Ok ouais non... Ok... Je m'en rends pas compte parce que moi c'est le premier truc que je mets en place parce que pour aller dire feedback loop c'est pas une feedback loop... Rapide bah... Enfin c'est que t'avances pas c'est qu'il faut le faire... Non il faut le faire et puis c'est tout ! Mais ok intéressant vas-y je lui demanderai... Moi ce qu'on te retrouve... Pour les gens qui veulent te suivre...
+
+Martin (01:23:09.486)
+Ouin.
+
+Martin (01:23:23.854)
+Je suis le plus actif sur Twitter, Martin Donadieu. Sur Twitter, c'est simple, mon prénom, nom. Je parle de plein de choses, je parle de ma caisse, parle de mon chien, parle de faire des app mobiles, de créer CapGo, de faire de l'open source, de rager sur l'Europe. J'aime beaucoup ça.
+
+David Leuliette (01:23:46.966)
+bah voilà de tout ça en même temps, de dire que le Portugal c'est incroyable. On adore. Cool, n'hésitez pas, ambitions c'est capgo.app, le site web. Si vous avez appris des trucs, n'oubliez pas de mettre cinq étoiles sur Spotify et sur Apple Podcasts et de me laisser un avis. Comme ça, je peux augmenter, revenir dans le top 100 des podcasts. On va t'abandonner avec un hook de fin.
+
+Alors une phrase mémorable, qu'est-ce que tu vas chipper dans les 30 prochains jours ?
+
+Martin (01:24:21.718)
+dans les 30 prochains jours, mon rêve, là, c'est qu'on ait une nouvelle IA modèle qui est encore mieux qu'Opus 5.5, que j'arrive à reverse engineer iOS, les libs de base, les SDK de base, pour pouvoir builder des apps iOS sans Mac. Ça, serait mon rêve.
+
+David Leuliette (01:24:44.135)
+mieux que 5,5 en 30 jours, c'est possible. En fait, je ne pas si tu as suivi la scène de jeux vidéo gaming. Il a un truc qui se passe de dingue. C'est que tu peux décompiler des binaire, des jeux Néo Geo, des vieux jeux et fait, extracte toute la...
+
+Martin (01:24:47.022)
+Qui arrive à Rivers & Junior et les Walls, librairie d'Apple ?
+
+David Leuliette (01:25:10.247)
+toute la logique des jeux en faire des Markdown et en faire modeur physique. Exemple, tu prends Sonic 2, Megadrive, ça le lit et après ça te décompile le truc et tu récupères en Markdown la physique de comment Sonic doit avancer, sauter et tout. C'est déjà possible avec un Neo Geo, bon un jeu qui fait 60 mégas. iOS, est, ça ne fait que 10, 20 gigas, je ne sais pas combien il iOS mais...
+
+Martin (01:25:15.918)
+Bon, allez
+
+Martin (01:25:35.054)
+Hé !
+
+David Leuliette (01:25:41.821)
+C'est toujours pareil, moi je te dis, c'est un problème de portefeuille. Si... de tokens t'es prêt à dépenser pour ce truc là, moi je pense... Je pense c'est possible. On verra bien.
+
+Martin (01:25:46.434)
+c'est ça. C'est ça.
+
+Martin (01:25:55.862)
+À chaque fois qu'il a des mecs d'OpenAI ou d'Anthropy qui disent « tu ferais quoi si tu avais des tokens illimités ? et puis ils choisissent des gens pour leur donner, à chaque fois je dis ça. Donnez-moi tokens illimités, je détruis Apple. Je les reverse engineer.
+
+David Leuliette (01:26:14.177)
+Euh... ouais mais après du coup on arrivera à problème de distribution, tu vois, et ou problème de... Je ne sais pas, je ne sais pas, en tout cas on se donne rendez-vous dans 30 jours si vous êtes encore là.
+
+Martin (01:26:24.393)
+!
+
+David Leuliette (01:26:27.105)
+Allez, salut à tous et à la prochaine, merci encore Martin pour l'épisode, ciao !
+
+Martin (01:26:31.15)
+Salut ! Ciao !
