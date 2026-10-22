@@ -56,11 +56,6 @@ export function NextHead({
 
   return (
     <>
-      <meta charSet="utf-8" />
-      <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1, viewport-fit=cover"
-      />
       <NextSeo
         title={seoTitle}
         description={seoDescription}
@@ -110,7 +105,15 @@ export function NextHead({
         ]}
         additionalMetaTags={[{ name: 'author', content: 'David Leuliette' }]}
       />
+      {/* Must live inside <Head>: a bare <meta> is hoisted by React 19 and
+          then removed by next/head on navigation, crashing the unmount. */}
       <Head>
+        <meta key="charset" charSet="utf-8" />
+        <meta
+          key="viewport"
+          name="viewport"
+          content="width=device-width, initial-scale=1, viewport-fit=cover"
+        />
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#f3f4f6" />
         <meta name="msapplication-TileColor" content="#f3f4f6" />
