@@ -411,7 +411,7 @@ export function Footer() {
             ))}
           </div>
           <p className="mt-8 text-base text-slate-400 md:order-1 md:mt-0">
-            &copy; {fullYear} weshipit.today SASU, All rights reserved. <br />
+            &copy; {fullYear} weshipit.today EURL, All rights reserved. <br />
             <Hyperlink
               href="https://www.pappers.fr/entreprise/weshipittoday-919243923"
               isExternal
