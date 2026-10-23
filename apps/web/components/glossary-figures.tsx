@@ -14,6 +14,11 @@ const FIGURES: Record<string, ComponentType> = {
       (mod) => mod.HermesAnatomyFigure,
     ),
   ),
+  metro: dynamic(() =>
+    import('./metro-anatomy/metro-figure').then(
+      (mod) => mod.MetroAnatomyFigure,
+    ),
+  ),
 };
 
 export function GlossaryFigure({

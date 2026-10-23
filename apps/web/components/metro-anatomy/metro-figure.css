@@ -1,0 +1,141 @@
+/* Metro bench (glossary /react-native-glossary/metro). */
+.mx {
+  cursor: pointer;
+  border-radius: 10px;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.mx:focus-visible {
+  outline: 1px solid var(--anatomy-muted);
+  outline-offset: 6px;
+}
+
+.mx .iso-svg {
+  overflow: visible;
+}
+
+.mx-shadow {
+  filter: blur(3px);
+  opacity: 0.5;
+  transform: translateY(1px);
+}
+
+.mx-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 28px;
+}
+
+.mx-controls button {
+  font-family: var(--anatomy-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--anatomy-text);
+  background: var(--anatomy-card);
+  border: 1px solid var(--anatomy-lo);
+  border-radius: 999px;
+  padding: 7px 14px;
+  cursor: pointer;
+  transition:
+    border-color 160ms var(--anatomy-ease),
+    color 160ms var(--anatomy-ease);
+}
+
+.mx-controls button:hover:not(:disabled) {
+  border-color: var(--anatomy-mid);
+  color: var(--anatomy-strong);
+}
+
+.mx-controls button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+@media (max-width: 640px) {
+  .iso-plate .mx {
+    overflow: hidden;
+  }
+
+  .iso-plate .mx .iso-svg {
+    width: 116%;
+    margin: -2% -8% -2%;
+  }
+}
+
+.mx-pointer {
+  stroke-width: 1.1;
+}
+
+.mx-platform {
+  display: inline-flex;
+  gap: 0;
+}
+
+.mx-platform button:first-child {
+  border-radius: 999px 0 0 999px;
+}
+
+.mx-platform button:last-child {
+  border-radius: 0 999px 999px 0;
+  margin-left: -1px;
+}
+
+.mx-controls .mx-platform button[aria-checked='true'] {
+  color: var(--anatomy-strong);
+  border-color: var(--anatomy-hi);
+}
+
+.mx-edge {
+  stroke-width: 0.9;
+  transition: stroke 240ms var(--anatomy-ease);
+}
+
+.mx-edit {
+  fill: none;
+  stroke: var(--anatomy-lit);
+  stroke-width: 1.2;
+  vector-effect: non-scaling-stroke;
+}
+
+.mx-pulse {
+  fill: var(--anatomy-lit);
+}
+
+.mx-glass {
+  fill: var(--anatomy-paper);
+  stroke: var(--anatomy-lo);
+  stroke-width: 0.7;
+  vector-effect: non-scaling-stroke;
+}
+
+.mx-screen {
+  fill: var(--anatomy-face);
+}
+
+.mx-ui {
+  fill: var(--anatomy-mid);
+}
+
+.mx-ui-line {
+  fill: none;
+  stroke: var(--anatomy-hi);
+  stroke-width: 0.8;
+  vector-effect: non-scaling-stroke;
+}
+
+.mx-ui-glow {
+  fill: none;
+  stroke: var(--anatomy-lit);
+  stroke-width: 1.6;
+  vector-effect: non-scaling-stroke;
+}
+
+.mx-count {
+  font-family: var(--anatomy-mono);
+  font-size: 3.6px;
+  fill: var(--anatomy-hi);
+}

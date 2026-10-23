@@ -10,6 +10,7 @@ import './styles.css';
 import '../components/anatomy/kit/iso.css';
 import '../components/expo-anatomy/expo-figure.css';
 import '../components/hermes-anatomy/hermes-figure.css';
+import '../components/metro-anatomy/metro-figure.css';
 
 const inter = Inter({
   display: 'swap',
