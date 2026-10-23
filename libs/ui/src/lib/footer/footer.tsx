@@ -5,13 +5,36 @@ import { useRouter } from 'next/router';
 import LinkButton from '../button/link-button';
 
 const navigation = {
-  company: [
-    { href: '/consulting', name: 'Consulting' },
+  services: [
+    { href: '/consulting', name: 'React Native Consulting' },
     { href: '/pricing', name: 'Pricing' },
-    { href: '/customers', name: 'Customers' },
-    { href: '/about', name: 'About' },
+    { href: '/audit', name: 'React Native Audit' },
+    { href: '/audit-gratuit', name: 'Audit gratuit 🇫🇷' },
+    { href: '/react-native-security-audit', name: 'Security Audit' },
+    { href: '/agentic-sprint', name: 'Agentic Sprint 🇫🇷' },
+    { href: '/react-native-migration', name: 'Migrate to Expo' },
+  ],
+  guides: [
+    { href: '/react-native-testing', name: 'E2E Testing with Maestro' },
+    {
+      href: '/react-native-swift-package-manager-migration',
+      name: 'CocoaPods to SPM',
+    },
+    { href: '/react-native-glossary', name: 'React Native Glossary' },
+    { href: '/french-react-native-apps', name: 'React Native Apps 🇫🇷' },
     { href: '/podcast', name: 'Podcast' },
+  ],
+  resources: [
+    { href: '/react-native-resources', name: 'Start Learning' },
+    { href: '/react-native-tools', name: 'React Native Tools' },
+    { href: '/devtools', name: 'React Native Dev Tools' },
+    { href: '/react-native-starters', name: 'React Native Starters' },
+  ],
+  company: [
+    { href: '/about', name: 'About' },
+    { href: '/customers', name: 'Customers' },
     { href: '/partenaires', name: 'Partenaires' },
+    { href: '/bonjour', name: 'Version française' },
     {
       href: 'https://github.com/sponsors/flexbox?frequency=one-time&sponsor=flexbox',
       name: 'Sponsorship',
@@ -78,17 +101,14 @@ const navigation = {
       name: 'Slack',
     },
   ],
-  resources: [
-    { href: '/react-native-resources', name: 'Start Learning' },
-    { href: '/react-native-tools', name: 'React Native Tools' },
-    { href: '/devtools', name: 'React Native Dev Tools' },
-    { href: '/react-native-starters', name: 'React Native Starters' },
-    { href: '/audit', name: 'React Native Audit' },
-    { href: '/french-react-native-apps', name: 'React Native Apps 🇫🇷 ' },
-    { href: '/react-native-migration', name: 'React Native Migration' },
-    { href: '/react-native-glossary', name: 'React Native Glossary' },
-  ],
 };
+
+const footerColumns = [
+  { links: navigation.services, title: 'Services' },
+  { links: navigation.guides, title: 'Guides' },
+  { links: navigation.resources, title: 'Resources' },
+  { links: navigation.company, title: 'Company' },
+];
 
 function FooterLink(item: { name: string; href: string }) {
   const { pathname } = useRouter();
@@ -353,36 +373,24 @@ export function Footer() {
       </p>
       <div className="mx-auto max-w-7xl px-4 py-12 opacity-60 transition-opacity hover:opacity-100 sm:px-6 lg:px-8 lg:py-16">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-          <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-            <div className="md:grid md:grid-cols-2 md:gap-8">
-              <div className="mb-6">
+          <div className="grid grid-cols-2 gap-8 md:grid-cols-4 xl:col-span-2">
+            {footerColumns.map((column) => (
+              <div key={column.title}>
                 <p className="text-base font-bold text-slate-900 dark:text-slate-200">
-                  Resources
-                </p>
-                <ul className="mt-6 space-y-4">
-                  {navigation.resources.map((item) => (
-                    <li key={item.name}>
-                      <FooterLink {...item} />
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div>
-                <p className="text-base font-bold text-slate-900 dark:text-slate-200">
-                  Company
+                  {column.title}
                 </p>
                 <ul className="mt-4 space-y-4">
-                  {navigation.company.map((item) => (
-                    <li key={item.name}>
+                  {column.links.map((item) => (
+                    <li key={item.href}>
                       <FooterLink {...item} />
                     </li>
                   ))}
                 </ul>
               </div>
-            </div>
+            ))}
           </div>
 
-          <div className="mt-8 space-y-8 xl:mt-0">
+          <div className="mt-12 space-y-8 xl:mt-0">
             <p className="text-base font-bold text-slate-900 dark:text-slate-200">
               Are you looking to build a React Native app?
             </p>
@@ -391,7 +399,7 @@ export function Footer() {
               finding tools, discovering launch advices, and finding partners to
               successfully release your React Native app today.
             </p>
-            <LinkButton href="/" size="xl">
+            <LinkButton href="/pricing" size="xl">
               Work with us
             </LinkButton>
           </div>
@@ -403,7 +411,7 @@ export function Footer() {
                 key={item.name}
                 title={item.name}
                 href={item.href}
-                className="text-slate-400 hover:text-slate-400"
+                className="text-slate-400 hover:text-slate-900 dark:hover:text-white"
               >
                 <span className="sr-only">{item.name}</span>
                 <item.icon className="size-6" aria-hidden="true" />
@@ -436,7 +444,7 @@ export function Footer() {
             isExternal
             className="text-slate-400 hover:text-slate-900 dark:hover:text-white"
           >
-            source code source on GitHub
+            source code on GitHub
           </Hyperlink>
           .
         </p>
