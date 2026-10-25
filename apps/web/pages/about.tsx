@@ -1,11 +1,15 @@
 import {
   Button,
   ClientsListHomepage,
+  HeroSplit,
+  LinkButton,
   Prose,
+  TeamAnimation,
   Text,
   AvatarAvenger,
   AvengerStack,
 } from '@weshipit/ui';
+import { ArrowRightIcon, CalendarIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
 import { Layout } from '../components/layout';
 import { Customer, getVisibleClients } from './api/client';
@@ -37,16 +41,44 @@ export default function AboutPage({ clients }) {
       callToActionButton={{ name: 'Work with us', href: '/' }}
       withFooter
     >
-      <Prose className="m-auto my-16">
-        <h1>You might already know us</h1>
-        <p>
-          We are software developer, product makers, growth hackers, with a
-          focus on engineering community best practices.
-        </p>
-        <p>
-          We have written code for startups, established companies, and even
-          French Institutions.
-        </p>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <HeroSplit
+          eyebrow={
+            <Text
+              as="p"
+              variant="c2"
+              className="uppercase tracking-wide text-blue-600 dark:text-blue-400"
+            >
+              About · React Native agency
+            </Text>
+          }
+          title="You might already know us"
+          description="We are software developers, product makers and growth hackers, with a focus on engineering community best practices. We have written code for startups, established companies and even French institutions."
+          actions={
+            <>
+              <LinkButton
+                size="xl"
+                href={linksApi.cal.ONBOARDING}
+                isExternalLink
+              >
+                <CalendarIcon className="mr-2 h-4 w-4" />
+                Schedule an appointment
+              </LinkButton>
+              <LinkButton
+                variant="outline"
+                className="group"
+                size="xl"
+                href="#our-story"
+              >
+                Read our story
+                <ArrowRightIcon className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </LinkButton>
+            </>
+          }
+          visual={<TeamAnimation />}
+        />
+      </div>
+      <Prose className="m-auto my-12">
         <blockquote>
           <p>Automation has always helped people write code.</p>
         </blockquote>
@@ -149,7 +181,9 @@ export default function AboutPage({ clients }) {
         </Button>
       </div>
       <Prose className="m-auto my-12">
-        <h2>Our story</h2>
+        <h2 id="our-story" className="scroll-mt-24">
+          Our story
+        </h2>
         <p>
           David has been working as a freelancer since 2017. He delivered
           bootcamps at the university for 300+ students. One day, he decided to
