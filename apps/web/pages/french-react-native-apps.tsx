@@ -2,6 +2,7 @@ import { AppBadge, Button, Card, Hero, Prose, Text } from '@weshipit/ui';
 import { Layout } from '../components/layout';
 import { InferGetStaticPropsType } from 'next/types';
 import Image from 'next/image';
+import Link from 'next/link';
 import { formatAppsByCategory } from '../components/french-react-native-apps/format-apps-by-category';
 import { linksApi } from './api/links';
 import kebabCase from 'lodash/kebabCase';
@@ -150,6 +151,13 @@ export default function FrenchReactNativePage({
             add your app
           </a>{' '}
           to the list.
+        </p>
+        <p>
+          Not sure an app qualifies?{' '}
+          <Link href="/is-react-native">
+            Check if an app is built with React Native
+          </Link>{' '}
+          from its Google Play link.
         </p>
       </Prose>
 
