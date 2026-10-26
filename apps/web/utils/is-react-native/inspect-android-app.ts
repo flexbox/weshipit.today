@@ -10,8 +10,24 @@ const APKPURE_HEADERS = {
   'x-gp': '1',
   'x-sv': '29',
 };
-const DOWNLOAD_PREFIX = 'https://download.pureapk.com/b/';
+// The metadata also lists `/b/TORRENT/` links, which are not ZIP files.
+const DOWNLOAD_URL = /https:\/\/download\.pureapk\.com\/b\/X?APK\//;
 const TIMEOUT_MS = 15000;
+
+const HTML_ENTITIES: Record<string, string> = {
+  '&#39;': "'",
+  '&amp;': '&',
+  '&gt;': '>',
+  '&lt;': '<',
+  '&quot;': '"',
+};
+
+function decodeEntities(value: string) {
+  return value.replace(
+    /&(#39|amp|gt|lt|quot);/g,
+    (entity) => HTML_ENTITIES[entity],
+  );
+}
 
 export interface AndroidAppInspection extends FrameworkDetection {
   icon: string | null;
@@ -32,7 +48,7 @@ async function findDownloadUrl(packageId: string) {
 
   const body = new Uint8Array(await response.arrayBuffer());
   const text = new TextDecoder('latin1').decode(body);
-  const start = text.indexOf(DOWNLOAD_PREFIX);
+  const start = text.search(DOWNLOAD_URL);
   if (start === -1) {
     throw new AppNotFoundError(packageId);
   }
@@ -79,7 +95,7 @@ async function fetchStoreListing(packageId: string) {
     const response = await fetch(
       `https://play.google.com/store/apps/details?id=${encodeURIComponent(
         packageId,
-      )}&hl=en`,
+      )}&hl=en&gl=US`,
       { signal: AbortSignal.timeout(TIMEOUT_MS) },
     );
     if (!response.ok) {
@@ -91,9 +107,13 @@ async function fetchStoreListing(packageId: string) {
         new RegExp(`<meta property="og:${property}" content="([^"]+)"`),
       )?.[1] ?? null;
 
+    const title = meta('title');
+
     return {
       icon: meta('image'),
-      name: meta('title')?.replace(/ - Apps on Google Play$/, '') ?? null,
+      name: title
+        ? decodeEntities(title).replace(/ - Apps on Google Play$/, '')
+        : null,
     };
   } catch {
     return { icon: null, name: null };

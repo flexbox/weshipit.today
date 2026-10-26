@@ -1,7 +1,7 @@
 import { Badge, Button, Card, Text } from '@weshipit/ui';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { FormEvent, useCallback, useEffect, useState } from 'react';
+import { FormEvent, useCallback, useEffect, useRef, useState } from 'react';
 import type { Framework } from '../utils/is-react-native/detect-framework';
 import type { AndroidAppInspection } from '../utils/is-react-native/inspect-android-app';
 import { parseStoreUrl } from '../utils/is-react-native/parse-store-url';
@@ -35,9 +35,12 @@ export function IsReactNativeChecker() {
   const router = useRouter();
   const [input, setInput] = useState('');
   const [state, setState] = useState<State>({ status: 'idle' });
+  const lastChecked = useRef<string | null>(null);
 
   const check = useCallback(
     async (packageId: string) => {
+      lastChecked.current = packageId;
+      setInput(`https://play.google.com/store/apps/details?id=${packageId}`);
       setState({ status: 'loading' });
       router.replace({ query: { id: packageId } }, undefined, {
         scroll: false,
@@ -50,7 +53,7 @@ export function IsReactNativeChecker() {
         );
         if (response.status === 404) {
           return setState({
-            message: `No app found for "${packageId}" on Google Play.`,
+            message: `We could not get a copy of "${packageId}". Check the link: paid and region-locked apps cannot be inspected.`,
             status: 'error',
           });
         }
@@ -71,16 +74,15 @@ export function IsReactNativeChecker() {
     [router],
   );
 
-  // Shared links (`/is-react-native?id=com.example`) run the check on load.
+  // Shared links and the popular apps list (`?id=com.example`) run the check
+  // on load and whenever the id in the URL changes.
   useEffect(() => {
     if (!router.isReady) return;
     const id = router.query.id;
-    if (typeof id === 'string' && state.status === 'idle') {
-      setInput(`https://play.google.com/store/apps/details?id=${id}`);
-      const parsed = parseStoreUrl(id);
-      if ('packageId' in parsed) check(parsed.packageId);
-    }
-  }, [router.isReady, router.query.id, state.status, check]);
+    if (typeof id !== 'string' || id === lastChecked.current) return;
+    const parsed = parseStoreUrl(id);
+    if ('packageId' in parsed) check(parsed.packageId);
+  }, [router.isReady, router.query.id, check]);
 
   function handleSubmit(event: FormEvent) {
     event.preventDefault();
@@ -133,12 +135,7 @@ export function IsReactNativeChecker() {
           <button
             key={example.id}
             type="button"
-            onClick={() => {
-              setInput(
-                `https://play.google.com/store/apps/details?id=${example.id}`,
-              );
-              check(example.id);
-            }}
+            onClick={() => check(example.id)}
             className="rounded-full px-3 py-1 text-sm text-gray-600 ring-1 ring-inset ring-gray-300 transition-colors hover:bg-gray-50 dark:text-gray-300 dark:ring-white/10 dark:hover:bg-white/10"
           >
             {example.label}

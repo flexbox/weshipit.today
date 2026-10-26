@@ -23,3 +23,5 @@ What you get beyond bare React Native:
 - **[Continuous Native Generation](/react-native-glossary/continuous-native-generation)** — `ios/` and `android/` folders generated from config rather than hand-maintained
 
 A common misconception is that Expo restricts you to its own APIs. That stopped being true with [development builds](/react-native-glossary/development-build): any native library works.
+
+Curious whether a published app uses Expo? The [React Native app checker](/is-react-native) looks for Expo modules inside its Android APK.

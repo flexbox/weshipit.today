@@ -21,4 +21,6 @@ It is optimised for constraints a browser engine does not have:
 
 Two practical notes. Debugging targets React Native DevTools rather than a Chrome tab, because Hermes is not Chrome's V8. And engine gaps are real: an `Intl` or regex feature that works in a browser may be absent, so test on device rather than trusting a web preview.
 
+To see if a published app runs Hermes, paste its Google Play link in the [React Native app checker](/is-react-native).
+
 See [Hermes](https://reactnative.dev/docs/hermes).
