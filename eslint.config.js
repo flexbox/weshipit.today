@@ -70,7 +70,6 @@ const eslintConfig = [
     files: ['**/*.ts', '**/*.tsx'],
 
     rules: {
-      '@typescript-eslint/no-extra-semi': 'error',
       'no-extra-semi': 'off',
     },
   },
@@ -82,7 +81,6 @@ const eslintConfig = [
     files: ['**/*.js', '**/*.jsx'],
 
     rules: {
-      '@typescript-eslint/no-extra-semi': 'error',
       'no-extra-semi': 'off',
     },
   },

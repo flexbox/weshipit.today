@@ -2,21 +2,33 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import dts from 'vite-plugin-dts';
+import { copyFileSync } from 'node:fs';
 import * as path from 'path';
-import { nxViteTsPaths } from '@nx/vite/plugins/nx-tsconfig-paths.plugin';
 
 export default defineConfig({
-  root: __dirname,
+  resolve: {
+    tsconfigPaths: true,
+  },
+  root: import.meta.dirname,
   cacheDir: '../../node_modules/.vite/libs/utils',
 
   plugins: [
     react(),
-    nxViteTsPaths(),
     dts({
       entryRoot: 'src',
-      tsConfigFilePath: path.join(__dirname, 'tsconfig.lib.json'),
+      tsConfigFilePath: path.join(import.meta.dirname, 'tsconfig.lib.json'),
       skipDiagnostics: true,
     }),
+    {
+      // Ship package.json with the bundle, as nxViteTsPaths did before Nx 24.
+      name: 'copy-package-json',
+      writeBundle(options) {
+        copyFileSync(
+          path.join(import.meta.dirname, 'package.json'),
+          path.join(options.dir, 'package.json'),
+        );
+      },
+    },
   ],
 
   // Uncomment this if you are using workers.
@@ -41,7 +53,7 @@ export default defineConfig({
       // Don't forget to update your package.json as well.
       formats: ['es', 'cjs'],
     },
-    rollupOptions: {
+    rolldownOptions: {
       // External packages that should not be bundled into your library.
       external: ['react', 'react-dom', 'react/jsx-runtime'],
     },

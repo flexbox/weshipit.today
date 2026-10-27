@@ -1,8 +1,8 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const withNx = require('@nx/next/plugins/with-nx');
+const { PHASE_DEVELOPMENT_SERVER } = require('next/constants');
 
 /**
- * @type {import('@nx/next/plugins/with-nx').WithNxOptions}
+ * @type {import('next').NextConfig}
  **/
 const nextConfig = {
   images: {
@@ -44,7 +44,12 @@ const nextConfig = {
       },
     ],
   },
-  nx: {},
 };
 
-module.exports = withNx(nextConfig);
+// Production builds and `next start` use dist/apps/web/.next, the
+// outputDirectory in vercel.json. The dev server keeps .next in the app dir.
+module.exports = (phase) => ({
+  ...nextConfig,
+  distDir:
+    phase === PHASE_DEVELOPMENT_SERVER ? '.next' : '../../dist/apps/web/.next',
+});
