@@ -1,6 +1,6 @@
 // Bump when the OG templates change: social networks cache og:image per URL,
 // so a new version is the only way to make LinkedIn, X and Slack refetch.
-export const OG_IMAGE_VERSION = '2';
+export const OG_IMAGE_VERSION = '3';
 
 export type OgLang = 'en' | 'fr';
 
