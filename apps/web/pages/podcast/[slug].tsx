@@ -21,11 +21,11 @@ import remarkGfm from 'remark-gfm';
 import Link from 'next/link';
 
 interface PodcastEpisodePageProps {
-  episode: (typeof podcastEpisodes)[0] | null;
-  previousEpisode: (typeof podcastEpisodes)[0] | null;
-  nextEpisode: (typeof podcastEpisodes)[0] | null;
   hasTranscript: boolean;
   articleContent: string | null;
+  episode: (typeof podcastEpisodes)[0] | null;
+  nextEpisode: (typeof podcastEpisodes)[0] | null;
+  previousEpisode: (typeof podcastEpisodes)[0] | null;
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -34,8 +34,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }));
 
   return {
-    paths,
     fallback: false,
+    paths,
   };
 };
 
@@ -49,11 +49,11 @@ export const getStaticProps: GetStaticProps<PodcastEpisodePageProps> = async ({
   if (!episode) {
     return {
       props: {
-        episode: null,
-        previousEpisode: null,
-        nextEpisode: null,
-        hasTranscript: false,
         articleContent: null,
+        episode: null,
+        hasTranscript: false,
+        nextEpisode: null,
+        previousEpisode: null,
       },
     };
   }
@@ -84,21 +84,21 @@ export const getStaticProps: GetStaticProps<PodcastEpisodePageProps> = async ({
 
   return {
     props: {
-      episode,
-      previousEpisode,
-      nextEpisode,
-      hasTranscript,
       articleContent,
+      episode,
+      hasTranscript,
+      nextEpisode,
+      previousEpisode,
     },
   };
 };
 
 export default function PodcastEpisodePage({
-  episode,
-  previousEpisode,
-  nextEpisode,
-  hasTranscript,
   articleContent,
+  episode,
+  hasTranscript,
+  nextEpisode,
+  previousEpisode,
 }: PodcastEpisodePageProps) {
   if (!episode) {
     return (
@@ -134,9 +134,9 @@ export default function PodcastEpisodePage({
       seoTitle={`${episode.name} avec ${episode.guests.join(', ')} — Le Cross Platform Show Podcast`}
       seoDescription={episode.description_short}
       ogImagePodcast={{
-        title: episode.name,
-        guest: episode.guests.join(', '),
         episode: episode.number,
+        guest: episode.guests.join(', '),
+        title: episode.name,
         type: 'podcast',
       }}
       withHeader

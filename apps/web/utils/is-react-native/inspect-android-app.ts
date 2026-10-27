@@ -10,9 +10,9 @@ const XAPK_TAIL = 128 * 1024;
 const APK_TAIL = 1024 * 1024;
 
 export interface AndroidAppInspection extends FrameworkDetection {
+  packageId: string;
   icon: string | null;
   name: string | null;
-  packageId: string;
 }
 
 async function listAllEntries(url: string) {

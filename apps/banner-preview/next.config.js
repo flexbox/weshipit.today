@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const { PHASE_DEVELOPMENT_SERVER } = require('next/constants');
 
 /**
@@ -7,10 +6,10 @@ const { PHASE_DEVELOPMENT_SERVER } = require('next/constants');
 const nextConfig = {
   // /api/banner reads the interview logos with fs at runtime; make sure
   // Vercel bundles them with the function.
-  outputFileTracingIncludes: {
-    '/api/banner': ['./public/images/podcast-logos/**'],
-  },
   images: {
+    contentDispositionType: 'attachment',
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+    dangerouslyAllowSVG: true,
     remotePatterns: [
       {
         hostname: 'placehold.co',
@@ -21,9 +20,9 @@ const nextConfig = {
         protocol: 'https',
       },
     ],
-    dangerouslyAllowSVG: true,
-    contentDispositionType: 'attachment',
-    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
+  },
+  outputFileTracingIncludes: {
+    '/api/banner': ['./public/images/podcast-logos/**'],
   },
 };
 

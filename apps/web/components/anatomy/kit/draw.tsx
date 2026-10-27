@@ -11,27 +11,27 @@ import {
 import { Stage } from './live';
 
 interface SolidProps {
-  paths: SolidPaths;
   tone?: Tone;
-  crease?: Tone | 'none';
-  halo?: boolean;
   lit?: boolean;
+  halo?: boolean;
   flat?: boolean;
+  paths: SolidPaths;
   className?: string;
+  crease?: Tone | 'none';
   inner?: React.ReactNode;
   children?: React.ReactNode;
 }
 
 export function Solid({
+  children,
+  className,
+  crease = 'faint',
+  flat = false,
+  halo = false,
+  inner,
+  lit = false,
   paths,
   tone = 'hi',
-  crease = 'faint',
-  halo = false,
-  lit = false,
-  flat = false,
-  className,
-  inner,
-  children,
 }: SolidProps) {
   return (
     <g
@@ -77,22 +77,22 @@ export function Solid({
 
 interface LineProps {
   d: string;
+  flow?: boolean;
   tone?: LineTone;
   dotted?: boolean;
   dashed?: boolean;
-  flow?: boolean;
   className?: string;
   free?: boolean | 'start' | 'end';
 }
 
 export function Line({
-  d,
-  tone = 'lo',
-  dotted = false,
-  dashed = false,
-  flow = false,
   className,
+  d,
+  dashed = false,
+  dotted = false,
+  flow = false,
   free,
+  tone = 'lo',
 }: LineProps) {
   if (!d) return null;
   return (
@@ -109,29 +109,29 @@ export function Line({
 }
 
 interface WireProps {
-  from: Flat;
   to: Flat;
+  from: Flat;
   via?: Flat[];
+  size?: number;
+  flow?: boolean;
   tone?: LineTone;
   dotted?: boolean;
   dashed?: boolean;
-  flow?: boolean;
   ends?: 'both' | 'from' | 'to' | 'none';
-  size?: number;
 }
 
 const tenth = (value: number) => Math.round(value * 10) / 10;
 
 export function Wire({
-  from,
-  to,
-  via = [],
-  tone = 'lo',
-  dotted = false,
   dashed = false,
-  flow = false,
+  dotted = false,
   ends = 'both',
+  flow = false,
+  from,
   size = 1.2,
+  to,
+  tone = 'lo',
+  via = [],
 }: WireProps) {
   return (
     <g className="iso-wire" data-tone={tone}>
@@ -164,9 +164,9 @@ export function Wire({
 
 export function Dots({
   points,
+  pulse = false,
   size = 0.5,
   tone = 'mid',
-  pulse = false,
 }: {
   points: Array<Flat | [number, number, number]>;
   size?: number;
@@ -199,11 +199,11 @@ export function Dots({
 }
 
 export function FaceText({
-  transform,
+  anchor = 'start',
   children,
   size = 3,
   tone = 'mid',
-  anchor = 'start',
+  transform,
 }: {
   transform: string;
   children: React.ReactNode;
@@ -226,18 +226,18 @@ export function FaceText({
 
 interface IsoFigureProps {
   width: number;
-  height: number;
   label: string;
+  height: number;
   className?: string;
   children: React.ReactNode;
 }
 
 export function IsoFigure({
-  width,
+  children,
+  className,
   height,
   label,
-  className,
-  children,
+  width,
 }: IsoFigureProps) {
   return (
     <Stage className={className ? `iso-stage ${className}` : 'iso-stage'}>
@@ -293,21 +293,21 @@ function Swatch({ mark }: { mark: KeyMark }) {
 interface PlateProps {
   fig: string;
   title?: string;
+  keys?: LegendKey[];
   hint?: React.ReactNode;
   readout?: React.ReactNode;
-  keys?: LegendKey[];
   caption?: React.ReactNode;
   children: React.ReactNode;
 }
 
 export function Plate({
-  fig,
-  title,
-  hint,
-  readout,
-  keys = [],
   caption,
   children,
+  fig,
+  hint,
+  keys = [],
+  readout,
+  title,
 }: PlateProps) {
   return (
     <figure className="iso-figure">

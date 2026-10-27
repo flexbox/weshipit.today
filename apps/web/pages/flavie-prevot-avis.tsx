@@ -28,52 +28,52 @@ const CTA_LABEL_SHORT = 'Lire l’avis Incubateur';
 
 const faqs = [
   {
-    id: 'faq-flavie-1',
-    question: 'Qui est Flavie Prevot ?',
     answer:
       "Flavie Prevot est une entrepreneure française spécialisée dans l'accompagnement des solopreneurs. Elle a construit plusieurs business avant de lancer l'Incubateur Solopreneur en 2023. Son écosystème actuel repose sur trois piliers : une newsletter hebdomadaire (30 000+ abonnés), un podcast interviewant des solopreneurs francophones, et l'Incubateur Solopreneur (communauté payante + Sprints mensuels).",
+    id: 'faq-flavie-1',
+    question: 'Qui est Flavie Prevot ?',
   },
   {
-    id: 'faq-flavie-2',
-    question: 'Flavie Prevot, arnaque ou pas ?',
     answer:
       "Non. Rien dans son parcours public ne pointe vers une arnaque : aucune promesse de revenus irréalistes, aucun upsell caché à 5 000 €, aucun avis Trustpilot négatif significatif, paiements gérés sur incubateursolopreneur.fr avec un programme de parrainage officiel et traçable. Le terme « arnaque » revient dans les recherches simplement parce que le tarif de l'Incubateur (2 400 € HT) déclenche une vérification réflexe — c'est sain. Ma propre expérience après 6 mois d'incubation confirme : le programme livre ce qu'il annonce.",
+    id: 'faq-flavie-2',
+    question: 'Flavie Prevot, arnaque ou pas ?',
   },
   {
-    id: 'faq-flavie-3',
-    question: 'Quel est le parcours de Flavie Prevot avant l’Incubateur ?',
     answer:
       "Flavie a occupé des postes dans le retail et le marketing digital avant de basculer dans l'entrepreneuriat. Elle a lancé et développé plusieurs activités (conseil, formation, communauté) avant de structurer l'Incubateur Solopreneur en 2023. Sa légitimité vient à la fois de son expérience personnelle (elle a été solopreneur avant d'accompagner d'autres solopreneurs) et de la traction de sa newsletter et de son podcast.",
+    id: 'faq-flavie-3',
+    question: 'Quel est le parcours de Flavie Prevot avant l’Incubateur ?',
   },
   {
-    id: 'faq-flavie-4',
-    question: 'Que propose Flavie Prevot en gratuit ?',
     answer:
       "Trois canaux gratuits pour découvrir son approche avant de payer : (1) sa newsletter hebdomadaire (études de cas de solopreneurs, tactiques concrètes), (2) son podcast (interviews longues de solopreneurs francophones), (3) ses posts LinkedIn (réflexions courtes, format hebdo). C'est le meilleur point d'entrée si tu hésites à rejoindre l'Incubateur payant.",
+    id: 'faq-flavie-4',
+    question: 'Que propose Flavie Prevot en gratuit ?',
   },
   {
-    id: 'faq-flavie-5',
-    question: 'Combien coûtent les programmes de Flavie Prevot ?',
     answer:
       "Deux formules payantes principales. Le Sprint mensuel : autour de 1 490 € HT pour 1 mois seul, ou 1 990 € HT avec les 12 mois d'Incubateur. L'Incubateur Solopreneur annuel : 2 400 € HT au tarif public, 1 900 € HT en remise VSL (3-4 jours après la vidéo), 1 490 € HT via lien affilié (le tarif plancher). Le tarif affilié à 1 490 € HT est verrouillé par Flavie : aucune promo publique ne descend en-dessous.",
+    id: 'faq-flavie-5',
+    question: 'Combien coûtent les programmes de Flavie Prevot ?',
   },
   {
-    id: 'faq-flavie-6',
-    question: 'L’Incubateur Solopreneur de Flavie Prevot, ça vaut le coup ?',
     answer:
       "Oui pour les solopreneurs déjà en activité qui veulent construire des actifs (newsletter, podcast, offre, sponsoring, SaaS solo) avec un cercle de pairs. Le format « atelier » du vendredi et les Sprints mensuels poussent au shipping. À éviter si tu cherches un cours vidéo passif ou si tu n'as pas 1h/semaine garantie. Mon avis détaillé après 6 mois d'incubation est disponible sur la page dédiée.",
+    id: 'faq-flavie-6',
+    question: 'L’Incubateur Solopreneur de Flavie Prevot, ça vaut le coup ?',
   },
   {
-    id: 'faq-flavie-7',
-    question: 'Où trouver Flavie Prevot sur les réseaux ?',
     answer:
       "LinkedIn est son canal principal (posts hebdomadaires, threads sur le solopreneuriat). Elle publie aussi sur Instagram et sa newsletter est le point d'entrée le plus dense en valeur. Son podcast est disponible sur toutes les plateformes (Spotify, Apple Podcasts, YouTube). Elle est peu active sur X/Twitter.",
+    id: 'faq-flavie-7',
+    question: 'Où trouver Flavie Prevot sur les réseaux ?',
   },
   {
-    id: 'faq-flavie-8',
-    question: 'Faut-il rejoindre la communauté payante ou suivre en gratuit ?',
     answer:
       "Suivre en gratuit d'abord : newsletter + podcast pendant 2-3 mois. Ça te donne une vraie idée de son style et de son approche. Rejoindre la communauté payante si tu veux passer du contenu passif à la construction active d'actifs avec un cercle de pairs. La bascule gratuit → payant est plus efficace que l'inverse.",
+    id: 'faq-flavie-8',
+    question: 'Faut-il rejoindre la communauté payante ou suivre en gratuit ?',
   },
 ];
 
@@ -196,34 +196,34 @@ function EnBrefSection() {
 function ParcoursSection() {
   const stages = [
     {
-      period: 'Avant 2020',
-      title: 'Retail, marketing digital et premiers business',
       description:
         'Postes en entreprise dans le retail et le marketing digital. Premières activités entrepreneuriales en parallèle : conseil, formation, communauté. C’est là qu’elle construit son terrain de jeu autour de l’indépendance et du business creator.',
+      period: 'Avant 2020',
+      title: 'Retail, marketing digital et premiers business',
     },
     {
-      period: '2020–2022',
-      title: 'Lancement newsletter + podcast',
       description:
         'Structuration de sa présence publique via une newsletter hebdomadaire et un podcast d’interviews de solopreneurs francophones. La ligne éditoriale se précise : études de cas concrètes, tactiques applicables, pas de blabla motivationnel.',
+      period: '2020–2022',
+      title: 'Lancement newsletter + podcast',
     },
     {
-      period: '2023',
-      title: 'Fondation de l’Incubateur Solopreneur',
       description:
         'Passage de la communauté gratuite à un format payant structuré. Prix initial très bas (90 € puis 200 €), montées progressives jusqu’à 2 400 € HT pour la cohorte 2026. Logique : filtrer les solopreneurs investis, améliorer le rythme d’action des cohortes.',
+      period: '2023',
+      title: 'Fondation de l’Incubateur Solopreneur',
     },
     {
-      period: '2024–2025',
-      title: 'Consolidation et affiliation',
       description:
         'Format Sprints mensuels installé (IA, sponsoring, offre, podcast vidéo, automation). Programme d’affiliation ouvert aux incubés actifs pour recruter des solopreneurs recommandés par leurs pairs. Tarif affilié verrouillé à 1 490 € HT.',
+      period: '2024–2025',
+      title: 'Consolidation et affiliation',
     },
     {
-      period: '2026',
-      title: 'Écosystème mature',
       description:
         'Newsletter et podcast toujours actifs. Incubateur en régime de croisière avec 300+ incubés. Focus sur la qualité communautaire (cercle actif, pair pression, construction d’actifs) plutôt que la course au volume.',
+      period: '2026',
+      title: 'Écosystème mature',
     },
   ];
 
@@ -271,46 +271,46 @@ function ParcoursSection() {
 function EcosystemeSection() {
   const pillars = [
     {
-      icon: NewspaperIcon,
-      title: 'Newsletter hebdomadaire',
+      access: 'Gratuit',
       description:
         'Le canal éditorial principal : 30 000+ abonnés, un envoi par semaine, format études de cas et tactiques. C’est le meilleur point d’entrée pour goûter à son style avant de payer quoi que ce soit.',
-      access: 'Gratuit',
+      icon: NewspaperIcon,
+      title: 'Newsletter hebdomadaire',
     },
     {
-      icon: MicrophoneIcon,
-      title: 'Podcast solopreneurs',
+      access: 'Gratuit',
       description:
         'Interviews longues de solopreneurs francophones. Format conversation, pas format promo. Idéal pour comprendre la diversité des modèles couverts par sa communauté.',
-      access: 'Gratuit',
+      icon: MicrophoneIcon,
+      title: 'Podcast solopreneurs',
     },
     {
-      icon: SparklesIcon,
-      title: 'Sprint (bootcamp) mensuel',
+      access: '~1 490 € HT',
       description:
         '1 mois d’accès à un bootcamp thématique (SaaS, clients, IA, sponsoring, podcast…). Vendu seul ou couplé aux 12 mois d’Incubateur pour 500 € de plus. Au tarif parrainage, l’année coûte le prix du Sprint seul.',
-      access: '~1 490 € HT',
+      icon: SparklesIcon,
+      title: 'Sprint (bootcamp) mensuel',
     },
     {
-      icon: UsersIcon,
-      title: 'Incubateur Solopreneur (annuel)',
+      access: '1 490 € HT (affilié)',
       description:
         'Programme phare : 12 mois d’incubation, communauté de 300+ solopreneurs, 10 bootcamps (Sprints) par an, lives du vendredi, +50 experts invités, 50+ templates. C’est le cœur de son business.',
-      access: '1 490 € HT (affilié)',
+      icon: UsersIcon,
+      title: 'Incubateur Solopreneur (annuel)',
     },
     {
-      icon: BookOpenIcon,
-      title: 'LinkedIn',
+      access: 'Gratuit',
       description:
         'Canal social principal. Posts hebdomadaires sur le solopreneuriat, threads sur les mécaniques business. Rythme régulier, ton direct.',
-      access: 'Gratuit',
+      icon: BookOpenIcon,
+      title: 'LinkedIn',
     },
     {
-      icon: BuildingOffice2Icon,
-      title: 'Événements et partenariats',
+      access: 'Variable',
       description:
         'Interventions ponctuelles sur des événements solopreneurs francophones (conférences, retreats). Partenariats occasionnels avec d’autres créateurs FR.',
-      access: 'Variable',
+      icon: BuildingOffice2Icon,
+      title: 'Événements et partenariats',
     },
   ];
 
@@ -358,26 +358,26 @@ function EcosystemeSection() {
 function ReputationSection() {
   const signals = [
     {
-      source: 'Trustpilot',
       note: '4,5+ / 5',
+      source: 'Trustpilot',
       summary:
         'Avis vérifiés majoritairement positifs. Les points cités : qualité de l’animation, dynamique de la communauté, format Sprint concret.',
     },
     {
-      source: 'LinkedIn',
       note: 'Engagement soutenu',
+      source: 'LinkedIn',
       summary:
         'Posts hebdomadaires avec des commentaires nombreux et argumentés. Peu de trolls, communauté qualitative.',
     },
     {
-      source: 'Podcast',
       note: 'Écoutes régulières',
+      source: 'Podcast',
       summary:
         'Invités sérieux, format long, pas de promo déguisée. Bon signal sur la ligne éditoriale.',
     },
     {
-      source: 'Communauté (Mighty Networks)',
       note: 'Activité soutenue',
+      source: 'Communauté (Mighty Networks)',
       summary:
         'Noyau de 50 à 80 incubés très actifs sur ~300 membres. Ratio cohérent avec les communautés payantes qui fonctionnent.',
     },
@@ -445,41 +445,41 @@ function ReputationSection() {
 function PourAllerPlusLoinSection() {
   const routes = [
     {
-      icon: NewspaperIcon,
-      title: 'Découvrir en gratuit',
+      cta: null,
       description:
         'Sa newsletter et son podcast sont les meilleurs points d’entrée. Compte 2 à 3 mois de lecture pour te faire un avis solide avant de payer quoi que ce soit.',
-      cta: null,
+      icon: NewspaperIcon,
+      title: 'Découvrir en gratuit',
     },
     {
-      icon: SparklesIcon,
-      title: 'Lire mon avis détaillé sur l’Incubateur',
-      description:
-        'Retour d’expérience de 6 mois en tant qu’incubé actif : points forts, points faibles, résultats concrets. Utile si tu veux savoir à quoi t’attendre avant de rejoindre.',
       cta: {
         href: AVIS_URL,
         label: 'Lire l’avis Incubateur Solopreneur',
       },
+      description:
+        'Retour d’expérience de 6 mois en tant qu’incubé actif : points forts, points faibles, résultats concrets. Utile si tu veux savoir à quoi t’attendre avant de rejoindre.',
+      icon: SparklesIcon,
+      title: 'Lire mon avis détaillé sur l’Incubateur',
     },
     {
-      icon: RocketLaunchIcon,
-      title: 'Rejoindre avec le code réduction (-910 €)',
-      description:
-        'Si tu es déjà convaincu, le tarif affilié à 1 490 € HT (au lieu de 2 400 €) est le prix le plus bas verrouillé par Flavie. 910 € d’économie immédiate.',
       cta: {
         href: CODE_REDUCTION_URL,
         label: 'Voir le code réduction Solopreneur',
       },
+      description:
+        'Si tu es déjà convaincu, le tarif affilié à 1 490 € HT (au lieu de 2 400 €) est le prix le plus bas verrouillé par Flavie. 910 € d’économie immédiate.',
+      icon: RocketLaunchIcon,
+      title: 'Rejoindre avec le code réduction (-910 €)',
     },
     {
-      icon: ScaleIcon,
-      title: 'Comparer avec Marketing Mania',
-      description:
-        'Comparaison indépendante entre l’Incubateur Solopreneur de Flavie et le Bootcamp Marketing Mania de Stan Leloup. Recommandation par cas d’usage — utile si tu hésites.',
       cta: {
         href: '/incubateur-solopreneur-vs-marketing-mania',
         label: 'Lire le comparatif',
       },
+      description:
+        'Comparaison indépendante entre l’Incubateur Solopreneur de Flavie et le Bootcamp Marketing Mania de Stan Leloup. Recommandation par cas d’usage — utile si tu hésites.',
+      icon: ScaleIcon,
+      title: 'Comparer avec Marketing Mania',
     },
   ];
 
@@ -607,10 +607,10 @@ export default function FlaviePrevotAvisPage() {
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: faqs.map(({ question, answer }) => ({
+    mainEntity: faqs.map(({ answer, question }) => ({
       '@type': 'Question',
-      name: question,
       acceptedAnswer: { '@type': 'Answer', text: answer },
+      name: question,
     })),
   };
 
@@ -620,15 +620,15 @@ export default function FlaviePrevotAvisPage() {
     itemListElement: [
       {
         '@type': 'ListItem',
-        position: 1,
-        name: 'Accueil',
         item: 'https://weshipit.today',
+        name: 'Accueil',
+        position: 1,
       },
       {
         '@type': 'ListItem',
-        position: 2,
-        name: 'Flavie Prevot — avis et parcours',
         item: 'https://weshipit.today/flavie-prevot-avis',
+        name: 'Flavie Prevot — avis et parcours',
+        position: 2,
       },
     ],
   };
@@ -636,11 +636,9 @@ export default function FlaviePrevotAvisPage() {
   const personSchema = {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    name: 'Flavie Prevot',
-    jobTitle: 'Fondatrice de l’Incubateur Solopreneur',
-    nationality: 'French',
     description:
       'Entrepreneure française, fondatrice de l’Incubateur Solopreneur. Newsletter hebdomadaire (30 000+ abonnés), podcast d’interviews de solopreneurs francophones et communauté payante de 300+ incubés.',
+    jobTitle: 'Fondatrice de l’Incubateur Solopreneur',
     knowsAbout: [
       'Solopreneuriat',
       'Marketing digital',
@@ -650,6 +648,8 @@ export default function FlaviePrevotAvisPage() {
       'Sponsoring',
       'Offres productisées',
     ],
+    name: 'Flavie Prevot',
+    nationality: 'French',
     worksFor: {
       '@type': 'Organization',
       name: 'Incubateur Solopreneur',
@@ -698,8 +698,8 @@ export default function FlaviePrevotAvisPage() {
         withHeader
         withFooter
         callToActionButton={{
-          name: CTA_LABEL_SHORT,
           href: AVIS_URL,
+          name: CTA_LABEL_SHORT,
         }}
       >
         <HeroSection />

@@ -10,7 +10,7 @@ const isInternal = (href: string) =>
  * definition reads the same in the list and on its own page.
  */
 const components: Components = {
-  a: ({ href, children, ...props }) => {
+  a: ({ children, href, ...props }) => {
     if (href && isInternal(href)) {
       return (
         <Link href={href} {...props}>
@@ -25,12 +25,6 @@ const components: Components = {
       </a>
     );
   },
-  ul: ({ children }) => (
-    <ul className="list-disc space-y-1 pl-5">{children}</ul>
-  ),
-  ol: ({ children }) => (
-    <ol className="list-decimal space-y-1 pl-5">{children}</ol>
-  ),
   code: ({ children, className }) =>
     // react-markdown only sets `className` (language-*) on fenced blocks, so an
     // absent one means this is an inline span.
@@ -41,10 +35,16 @@ const components: Components = {
         {children}
       </code>
     ),
+  ol: ({ children }) => (
+    <ol className="list-decimal space-y-1 pl-5">{children}</ol>
+  ),
   pre: ({ children }) => (
     <pre className="overflow-x-auto rounded-xl bg-neutral-900 p-4 font-mono text-xs leading-relaxed text-neutral-100 dark:bg-neutral-950">
       {children}
     </pre>
+  ),
+  ul: ({ children }) => (
+    <ul className="list-disc space-y-1 pl-5">{children}</ul>
   ),
   // Wide tables scroll inside their own container instead of forcing the whole
   // page to scroll horizontally on mobile.
@@ -55,15 +55,15 @@ const components: Components = {
       </table>
     </div>
   ),
-  th: ({ children }) => (
-    <th className="border-b border-neutral-300 px-3 py-2 font-semibold whitespace-nowrap text-neutral-900 dark:border-neutral-700 dark:text-neutral-100">
-      {children}
-    </th>
-  ),
   td: ({ children }) => (
     <td className="border-b border-neutral-200 px-3 py-2 align-top dark:border-neutral-800">
       {children}
     </td>
+  ),
+  th: ({ children }) => (
+    <th className="border-b border-neutral-300 px-3 py-2 font-semibold whitespace-nowrap text-neutral-900 dark:border-neutral-700 dark:text-neutral-100">
+      {children}
+    </th>
   ),
 };
 

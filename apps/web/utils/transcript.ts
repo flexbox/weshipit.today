@@ -1,11 +1,11 @@
 export interface TranscriptEntryType {
-  speaker: string;
   time: string;
   text: string;
+  speaker: string;
 }
 
 export function timecodeToSeconds(time: string): number {
-  let t = time.replace(/\[|\]/g, '');
+  const t = time.replace(/\[|\]/g, '');
   const parts = t.split(':');
   if (parts.length === 2) {
     const [min, rest] = parts;
@@ -45,8 +45,8 @@ export function parseTranscript(raw: string): TranscriptEntryType[] {
       if (current) entries.push(current);
       current = {
         speaker: headerMatch[1].trim(),
-        time: headerMatch[2],
         text: '',
+        time: headerMatch[2],
       };
       lastSpeaker = headerMatch[1].trim();
       lastTime = headerMatch[2];
@@ -58,7 +58,7 @@ export function parseTranscript(raw: string): TranscriptEntryType[] {
         : timeBracketMatch
           ? timeBracketMatch[1]
           : '';
-      current = { speaker: lastSpeaker, time: timeVal, text: '' };
+      current = { speaker: lastSpeaker, text: '', time: timeVal };
       lastTime = timeVal;
       expectTimeAfterDash = false;
     } else if (line === '-') {
@@ -103,7 +103,7 @@ export function parseTranscript(raw: string): TranscriptEntryType[] {
         : timeBracketMatch
           ? timeBracketMatch[1]
           : '';
-      current = { speaker: lastSpeaker, time: timeVal, text: '' };
+      current = { speaker: lastSpeaker, text: '', time: timeVal };
       lastTime = timeVal;
       expectTimeAfterDash = false;
     } else if (current) {

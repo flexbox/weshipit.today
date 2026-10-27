@@ -92,7 +92,7 @@ function toStringArray(value: unknown): string[] {
 
 function parseTerm(filename: string): GlossaryTerm | null {
   const raw = fs.readFileSync(path.join(GLOSSARY_DIR, filename), 'utf8');
-  const { data, content } = matter(raw);
+  const { content, data } = matter(raw);
 
   const title = typeof data.title === 'string' ? data.title.trim() : '';
   if (!title) return null;
@@ -101,18 +101,18 @@ function parseTerm(filename: string): GlossaryTerm | null {
   const plainText = toPlainText(body);
 
   return {
-    slug: filename.replace(/\.md$/, ''),
-    title,
+    aliases: toStringArray(data.aliases),
+    content: body,
     letter: firstLetterOf(title),
+    plainText,
+    related: toStringArray(data.related),
+    slug: filename.replace(/\.md$/, ''),
     summary:
       typeof data.summary === 'string' && data.summary.trim()
         ? data.summary.trim()
         : firstSentences(plainText),
-    aliases: toStringArray(data.aliases),
+    title,
     updated: toIsoDate(data.updated),
-    related: toStringArray(data.related),
-    content: body,
-    plainText,
     wordCount: plainText ? plainText.split(/\s+/).length : 0,
   };
 }

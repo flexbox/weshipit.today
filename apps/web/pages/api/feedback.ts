@@ -9,11 +9,11 @@ import { client as prismicClient } from './prismic';
 
 // Define the structure for the data part of the feedback document
 interface FeedbackData {
-  full_name: KeyTextField;
-  job_title: KeyTextField;
+  avatar: ImageField;
   company: KeyTextField;
   review: RichTextField;
-  avatar: ImageField;
+  full_name: KeyTextField;
+  job_title: KeyTextField;
 }
 
 export type FeedbackPrismicDocument = PrismicDocument<any, 'feedback'>;
@@ -26,8 +26,8 @@ export async function getAllFeedback(): Promise<{
       filters: [prismic.filter.at('document.type', 'feedback')],
       orderings: [
         {
-          field: 'document.first_publication_date',
           direction: 'desc',
+          field: 'document.first_publication_date',
         },
       ],
       pageSize: 5,

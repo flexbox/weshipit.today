@@ -183,9 +183,9 @@ export default function ReactNativeStartersPage({
       ogImageKicker="Free directory"
       withHeader
       callToActionButton={{
-        name: 'Add a React Native Boilerplate',
         href: linksApi.airtable.TEMPLATE_FORM,
         isExternalLink: true,
+        name: 'Add a React Native Boilerplate',
       }}
       withFooter
     >
@@ -320,9 +320,9 @@ export async function getStaticProps() {
   });
 
   const categorizedRecords: CategorizedStarters[] = [
-    { title: 'Beginner', records: [] },
-    { title: 'Intermediate', records: [] },
-    { title: 'Advanced', records: [] },
+    { records: [], title: 'Beginner' },
+    { records: [], title: 'Intermediate' },
+    { records: [], title: 'Advanced' },
   ];
 
   records.forEach((record) => {

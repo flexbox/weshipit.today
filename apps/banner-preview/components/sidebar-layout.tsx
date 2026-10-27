@@ -9,14 +9,14 @@ interface SidebarLayoutProps {
 
 const NAV_ITEMS = [
   {
-    label: 'Create',
     href: '/',
     icon: PaintBrushIcon,
+    label: 'Create',
   },
   {
-    label: 'Preview',
     href: '/preview',
     icon: EyeIcon,
+    label: 'Preview',
   },
 ];
 

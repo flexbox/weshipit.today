@@ -32,52 +32,52 @@ const SPRINT_END = '2026-10-30';
 
 const faqs = [
   {
-    id: 'faq-saas-1',
-    question: 'Faut-il savoir coder pour suivre le Sprint Solo SaaS ?',
     answer:
       "Non. Le Sprint est justement conçu pour les freelances et solopreneurs qui ne sont pas développeurs. Le live 2 installe avec toi tout le setup technique (base de données type Supabase, déploiement, sécurité) que les non-devs ne comprennent pas seuls. Ensuite tu construis en vibe coding, c'est-à-dire en décrivant ce que tu veux à Claude ou Codex. Le prérequis, c'est d'être à l'aise avec les outils IA au quotidien, pas de savoir écrire du code.",
+    id: 'faq-saas-1',
+    question: 'Faut-il savoir coder pour suivre le Sprint Solo SaaS ?',
   },
   {
-    id: 'faq-saas-2',
-    question: 'Quel type de SaaS peut-on construire en 4 semaines ?',
     answer:
       "Deux familles. Le SaaS back-office : un logiciel que tu ne vends à personne mais qui automatise ce que tu refais chaque mois pour tes clients (reporting, suivi, onboarding, livraison de mission). Flavie a construit le back-office de l'Incubateur de cette façon. Ou le SaaS produit : un outil que tu vends pour générer des revenus scalables, comme plusieurs incubés le font déjà. Le Sprint accepte les deux profils.",
+    id: 'faq-saas-2',
+    question: 'Quel type de SaaS peut-on construire en 4 semaines ?',
   },
   {
-    id: 'faq-saas-3',
-    question: 'Qui est Pierre Thomassina ?',
     answer:
       "Un ancien incubé du bootcamp de Flavie devenu développeur agentique, c'est-à-dire spécialisé dans la construction de logiciels avec des agents IA. Il co-anime les 4 lives du Sprint : idée, setup, features, bêta-test. Les incubés qui rejoignent via un parrainage peuvent aussi demander une session de roast de 30 minutes où Pierre passe leur SaaS au crible.",
+    id: 'faq-saas-3',
+    question: 'Qui est Pierre Thomassina ?',
   },
   {
-    id: 'faq-saas-4',
-    question: 'Combien coûte le Sprint Solo SaaS ?',
     answer:
       "Flavie vend chaque Sprint à deux prix : le Sprint seul (1 mois) autour de 1 490 € HT, ou le Sprint + 12 mois d'Incubateur autour de 1 990 € HT. Les prix exacts sont sur sa page de vente. Via le lien de parrainage de cette page, tu paies 1 490 € HT pour les 12 mois complets, Sprint Solo SaaS inclus : le prix du Sprint seul, mais avec l'année entière et les 11 autres Sprints.",
+    id: 'faq-saas-4',
+    question: 'Combien coûte le Sprint Solo SaaS ?',
   },
   {
-    id: 'faq-saas-5',
-    question: 'Ce Sprint est-il adapté à un débutant en freelancing ?',
     answer:
       "Non, et Flavie le dit elle-même : c'est un Sprint avancé. Il faut déjà avoir eu plusieurs clients et trouvé sa niche pour identifier une offre réplicable qui mérite d'être outillée. Quelqu'un qui relance son bootcamp pour la deuxième fois, qui livre le même reporting chaque mois ou qui gère un produit avec des sponsors est dans la cible. Quelqu'un qui cherche encore ses premiers clients devrait plutôt viser le Sprint suivant, « Client Express ».",
+    id: 'faq-saas-5',
+    question: 'Ce Sprint est-il adapté à un débutant en freelancing ?',
   },
   {
-    id: 'faq-saas-6',
-    question: 'Que se passe-t-il si je rate un live ?',
     answer:
       "Tous les lives sont enregistrés et disponibles en replay dans l'espace live de la communauté. Avec une journée tranquille, tu peux rattraper deux replays et leurs exercices d'affilée. Les lives ont lieu le vendredi midi, le Sprint court du 9 au 30 octobre 2026.",
+    id: 'faq-saas-6',
+    question: 'Que se passe-t-il si je rate un live ?',
   },
   {
-    id: 'faq-saas-7',
-    question: 'Comment tester sans payer ?',
     answer:
       "Flavie anime une masterclass gratuite le jeudi midi avant le lancement du Sprint, ouverte à tout le monde. Elle y aide à trouver une idée de SaaS back-office, puis présente le Sprint. C'est le meilleur moyen de voir sa façon de travailler avant de t'engager. Écris-moi si tu veux le lien de la prochaine session.",
+    id: 'faq-saas-7',
+    question: 'Comment tester sans payer ?',
   },
   {
-    id: 'faq-saas-8',
-    question: 'Et si le SaaS n’est pas mon sujet ?',
     answer:
       "L'Incubateur programme 12 Sprints par an. Après Solo SaaS viennent « Client Express » (4 semaines pour trouver 10 clients) en novembre et « Indé blindé » (fiscalité, finances, rémunération) en fin d'année. Tu rejoins pour le Sprint qui te parle, les autres sont inclus dans les 12 mois. Beaucoup d'incubés découvrent qu'un Sprint qu'ils jugeaient inutile était exactement ce dont ils avaient besoin.",
+    id: 'faq-saas-8',
+    question: 'Et si le SaaS n’est pas mon sujet ?',
   },
 ];
 
@@ -149,22 +149,22 @@ function HeroSection() {
 function PourquoiSection() {
   const cards = [
     {
-      icon: WrenchScrewdriverIcon,
-      title: 'Un SaaS back-office',
       description:
         'Tu ne le vends à personne. Il fait à ta place ce que tu refais chaque mois : reporting client, suivi de mission, onboarding, livraison. Flavie gère l’Incubateur avec le sien. Tu gagnes du temps en delivery et tu livres un meilleur service.',
+      icon: WrenchScrewdriverIcon,
+      title: 'Un SaaS back-office',
     },
     {
-      icon: RocketLaunchIcon,
-      title: 'Un SaaS produit',
       description:
         'Tu veux des utilisateurs payants chaque mois. Plusieurs incubés vendent déjà le leur. Le Sprint t’emmène jusqu’au bêta-test avec de vrais utilisateurs, pas jusqu’à une maquette.',
+      icon: RocketLaunchIcon,
+      title: 'Un SaaS produit',
     },
     {
-      icon: SparklesIcon,
-      title: 'Ou les deux',
       description:
         'Un outil qui commence comme back-office pour ton activité et que tu finis par vendre à tes pairs. C’est souvent le chemin le plus court vers un revenu scalable pour un solopreneur.',
+      icon: SparklesIcon,
+      title: 'Ou les deux',
     },
   ];
 
@@ -210,32 +210,32 @@ function PourquoiSection() {
 function ProgrammeSection() {
   const lives = [
     {
-      number: '1',
-      icon: LightBulbIcon,
-      title: 'Trouver la bonne idée de SaaS',
       description:
         'Partir de ce que tu refais chaque mois pour tes clients, ou de la douleur que tes pairs te décrivent. Sortir du live avec une idée cadrée, ni trop grosse ni gadget.',
+      icon: LightBulbIcon,
+      number: '1',
+      title: 'Trouver la bonne idée de SaaS',
     },
     {
-      number: '2',
-      icon: CpuChipIcon,
-      title: 'Installer ton setup technique',
       description:
         'Base de données (type Supabase), déploiement, authentification, sécurité. Tout ce que les non-devs ne comprennent pas, installé ensemble avec Pierre. Tu repars avec un environnement de vibe coding propre et sécurisé.',
+      icon: CpuChipIcon,
+      number: '2',
+      title: 'Installer ton setup technique',
     },
     {
-      number: '3',
-      icon: CodeBracketIcon,
-      title: 'Construire tes premières features',
       description:
         'En décrivant ce que tu veux à Claude ou Codex. Une feature qui marche vaut mieux que dix à moitié faites. Tu construis en live, tu finis dans le mois.',
+      icon: CodeBracketIcon,
+      number: '3',
+      title: 'Construire tes premières features',
     },
     {
-      number: '4',
-      icon: UsersIcon,
-      title: 'Trouver tes premiers utilisateurs',
       description:
         'Organiser ton bêta-test : qui inviter, quoi mesurer, comment récolter les retours. Le Sprint se termine avec des vraies personnes sur ton outil, pas avec une démo.',
+      icon: UsersIcon,
+      number: '4',
+      title: 'Trouver tes premiers utilisateurs',
     },
   ];
 
@@ -367,22 +367,22 @@ function PourQuiSection() {
 function PrixSection() {
   const rows = [
     {
+      best: false,
+      duration: '1 mois',
       label: 'Sprint Solo SaaS seul (1 mois)',
       price: '~1 490 € HT',
-      duration: '1 mois',
-      best: false,
     },
     {
+      best: false,
+      duration: '12 mois',
       label: 'Sprint + 12 mois d’Incubateur (page de vente)',
       price: '~1 990 € HT',
-      duration: '12 mois',
-      best: false,
     },
     {
+      best: true,
+      duration: '12 mois, Sprint inclus',
       label: 'Tarif parrainage (lien de cette page)',
       price: '1 490 € HT',
-      duration: '12 mois, Sprint inclus',
-      best: true,
     },
   ];
 
@@ -615,10 +615,10 @@ export default function SprintSoloSaasPage() {
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: faqs.map(({ question, answer }) => ({
+    mainEntity: faqs.map(({ answer, question }) => ({
       '@type': 'Question',
-      name: question,
       acceptedAnswer: { '@type': 'Answer', text: answer },
+      name: question,
     })),
   };
 
@@ -628,21 +628,21 @@ export default function SprintSoloSaasPage() {
     itemListElement: [
       {
         '@type': 'ListItem',
-        position: 1,
-        name: 'Accueil',
         item: 'https://weshipit.today',
+        name: 'Accueil',
+        position: 1,
       },
       {
         '@type': 'ListItem',
-        position: 2,
-        name: 'Code réduction Solopreneur',
         item: 'https://weshipit.today/code-reduction-solopreneur',
+        name: 'Code réduction Solopreneur',
+        position: 2,
       },
       {
         '@type': 'ListItem',
-        position: 3,
-        name: 'Sprint Solo SaaS',
         item: 'https://weshipit.today/sprint-solo-saas',
+        name: 'Sprint Solo SaaS',
+        position: 3,
       },
     ],
   };
@@ -650,10 +650,8 @@ export default function SprintSoloSaasPage() {
   const eventSchema = {
     '@context': 'https://schema.org',
     '@type': 'Event',
-    name: 'Sprint Solo SaaS : construire un SaaS qui bosse à ta place',
     description:
       "Sprint de 4 semaines de l'Incubateur Solopreneur de Flavie Prevot, co-animé avec Pierre Thomassina. 4 lives : trouver l'idée, installer son setup technique, construire ses premières features, trouver ses premiers utilisateurs.",
-    startDate: SPRINT_START,
     endDate: SPRINT_END,
     eventAttendanceMode: 'https://schema.org/OnlineEventAttendanceMode',
     eventStatus: 'https://schema.org/EventScheduled',
@@ -661,19 +659,21 @@ export default function SprintSoloSaasPage() {
       '@type': 'VirtualLocation',
       url: 'https://www.incubateursolopreneur.fr',
     },
+    name: 'Sprint Solo SaaS : construire un SaaS qui bosse à ta place',
+    offers: {
+      '@type': 'Offer',
+      availability: 'https://schema.org/InStock',
+      price: '1490',
+      priceCurrency: 'EUR',
+      priceValidUntil: SPRINT_END,
+      url: 'https://weshipit.today/sprint-solo-saas',
+    },
     organizer: {
       '@type': 'Person',
       name: 'Flavie Prevot',
       url: 'https://www.incubateursolopreneur.fr',
     },
-    offers: {
-      '@type': 'Offer',
-      url: 'https://weshipit.today/sprint-solo-saas',
-      priceCurrency: 'EUR',
-      price: '1490',
-      priceValidUntil: SPRINT_END,
-      availability: 'https://schema.org/InStock',
-    },
+    startDate: SPRINT_START,
   };
 
   return (
@@ -716,9 +716,9 @@ export default function SprintSoloSaasPage() {
         withHeader
         withFooter
         callToActionButton={{
-          name: CTA_LABEL_SHORT,
           href: AFFILIATE_URL,
           isExternalLink: true,
+          name: CTA_LABEL_SHORT,
         }}
       >
         <HeroSection />

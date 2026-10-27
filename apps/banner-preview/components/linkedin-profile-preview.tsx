@@ -9,40 +9,40 @@ import {
 import { AVATAR_URL, CONFIG } from '../config/config';
 
 interface LinkedInProfilePreviewProps {
-  bannerUrl: string;
-  variant?: 'desktop' | 'mobile';
   name?: string;
+  ctaUrl?: string;
+  bannerUrl: string;
   headline?: string;
   location?: string;
   ctaLabel?: string;
-  ctaUrl?: string;
   followers?: string;
-  connections?: string;
   avatarUrl?: string;
+  connections?: string;
+  variant?: 'desktop' | 'mobile';
 }
 
 const DEFAULTS = {
-  name: CONFIG.linkedIn.name,
-  headline: CONFIG.linkedIn.headline,
-  location: 'Paris, Île-de-France, France',
+  avatarUrl: AVATAR_URL,
+  connections: '500+ connections',
   ctaLabel: CONFIG.linkedIn.ctaLabel,
   ctaUrl: CONFIG.linkedIn.ctaUrl,
   followers: '19,361 followers',
-  connections: '500+ connections',
-  avatarUrl: AVATAR_URL,
+  headline: CONFIG.linkedIn.headline,
+  location: 'Paris, Île-de-France, France',
+  name: CONFIG.linkedIn.name,
 };
 
 export function LinkedInProfilePreview({
+  avatarUrl = DEFAULTS.avatarUrl,
   bannerUrl,
-  variant = 'desktop',
-  name = DEFAULTS.name,
-  headline = DEFAULTS.headline,
-  location = DEFAULTS.location,
+  connections = DEFAULTS.connections,
   ctaLabel = DEFAULTS.ctaLabel,
   ctaUrl = DEFAULTS.ctaUrl,
   followers = DEFAULTS.followers,
-  connections = DEFAULTS.connections,
-  avatarUrl = DEFAULTS.avatarUrl,
+  headline = DEFAULTS.headline,
+  location = DEFAULTS.location,
+  name = DEFAULTS.name,
+  variant = 'desktop',
 }: LinkedInProfilePreviewProps) {
   const isMobile = variant === 'mobile';
 

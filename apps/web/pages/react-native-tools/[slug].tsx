@@ -44,7 +44,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     .filter((r) => r.slug)
     .map((r) => ({ params: { slug: r.slug } }));
 
-  return { paths, fallback: false };
+  return { fallback: false, paths };
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
@@ -55,7 +55,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     return { notFound: true };
   }
 
-  const { name, description, description_success, website_url, platform } =
+  const { description, description_success, name, platform, website_url } =
     record;
 
   const proseSource = description || description_success || '';
@@ -78,11 +78,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const softwareAppSchema = {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
-    name,
-    description: plainDesc ? truncateAtWord(plainDesc, 300) : null,
-    url: website_url || null,
     applicationCategory: 'DeveloperApplication',
+    description: plainDesc ? truncateAtWord(plainDesc, 300) : null,
+    name,
     operatingSystem: platform?.join(', ') || null,
+    url: website_url || null,
   };
 
   const breadcrumbSchema = {
@@ -91,37 +91,37 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     itemListElement: [
       {
         '@type': 'ListItem',
-        position: 1,
-        name: 'React Native Tools',
         item: 'https://weshipit.today/react-native-tools',
+        name: 'React Native Tools',
+        position: 1,
       },
       {
         '@type': 'ListItem',
-        position: 2,
-        name,
         item: toolUrl,
+        name,
+        position: 2,
       },
     ],
   };
 
   return {
     props: {
-      record,
+      breadcrumbSchema,
       recommendedRecords,
+      record,
       seoDescription,
       softwareAppSchema,
-      breadcrumbSchema,
     },
     revalidate: 86400,
   };
 };
 
 export function ReactNativeSlugPage({
+  breadcrumbSchema,
   recommendedRecords,
   record,
   seoDescription,
   softwareAppSchema,
-  breadcrumbSchema,
 }) {
   if (record === undefined) {
     return (
@@ -159,11 +159,11 @@ export function ReactNativeSlugPage({
       withHeader
       withFooter
       callToActionLink={{
-        name: 'Expo Launch Checklist',
         href: 'https://flexbox.gumroad.com/l/expo-checklist',
         isExternalLink: true,
+        name: 'Expo Launch Checklist',
       }}
-      callToActionButton={{ name: 'Work with us', href: '/' }}
+      callToActionButton={{ href: '/', name: 'Work with us' }}
       withContainer
       withProductHunt
     >

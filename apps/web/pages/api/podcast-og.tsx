@@ -148,7 +148,7 @@ export default async function handler(
           }
         }
         if (ok) {
-          placements.push({ url, x, y, size });
+          placements.push({ size, url, x, y });
           placed = true;
         }
       }
@@ -169,37 +169,37 @@ export default async function handler(
       (
         <div
           style={{
-            height: '100%',
-            width: '100%',
-            display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center',
             backgroundColor: 'white',
+            display: 'flex',
+            fontFamily: 'Inter',
+            height: '100%',
+            justifyContent: 'center',
             padding: '32px',
             position: 'relative',
-            fontFamily: 'Inter',
+            width: '100%',
           }}
         >
           <div
             style={{
-              position: 'absolute',
-              top: 32,
-              left: 32,
+              alignItems: 'flex-start',
               display: 'flex',
               flexDirection: 'column',
-              alignItems: 'flex-start',
               justifyContent: 'flex-start',
+              left: 32,
+              position: 'absolute',
               textAlign: 'left',
+              top: 32,
             }}
           >
             <div
               style={{
+                color: '#374151',
                 fontSize: '64px',
                 fontWeight: 700,
-                color: '#374151',
                 letterSpacing: '0.06em',
-                textTransform: 'uppercase',
                 marginBottom: '24px',
+                textTransform: 'uppercase',
               }}
             >
               Le Cross Platform Show
@@ -207,9 +207,9 @@ export default async function handler(
 
             <div
               style={{
+                color: '#111827',
                 fontSize: title && title.length > 50 ? '48px' : '56px',
                 fontWeight: 700,
-                color: '#111827',
                 lineHeight: 1.1,
                 marginBottom: '16px',
               }}
@@ -219,11 +219,11 @@ export default async function handler(
 
             <div
               style={{
-                display: 'flex',
                 alignItems: 'center',
+                color: '#6b7280',
+                display: 'flex',
                 fontSize: '22px',
                 fontWeight: 700,
-                color: '#6b7280',
                 marginTop: '18px',
               }}
             >
@@ -252,12 +252,12 @@ export default async function handler(
               src={currentEpisodeLogo}
               alt="Episode logo"
               style={{
-                position: 'absolute',
+                background: 'white',
+                borderRadius: '12px',
                 bottom: 32,
                 left: 32,
-                borderRadius: '12px',
                 objectFit: 'cover',
-                background: 'white',
+                position: 'absolute',
               }}
               width={200}
               height={200}
@@ -270,11 +270,11 @@ export default async function handler(
               src={p.url}
               alt="logo"
               style={{
-                position: 'absolute',
-                left: `${p.x}px`,
-                top: `${p.y}px`,
                 borderRadius: '9999px',
+                left: `${p.x}px`,
                 objectFit: 'cover',
+                position: 'absolute',
+                top: `${p.y}px`,
               }}
               width={p.size}
               height={p.size}
@@ -283,16 +283,16 @@ export default async function handler(
         </div>
       ),
       {
-        width: 1200,
-        height: 630,
         fonts: [
           {
-            name: 'Inter',
             data: interBoldData,
+            name: 'Inter',
             style: 'normal',
             weight: 700,
           },
         ],
+        height: 630,
+        width: 1200,
       },
     );
 

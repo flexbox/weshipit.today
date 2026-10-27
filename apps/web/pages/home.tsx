@@ -14,7 +14,7 @@ export default function HomePage() {
       seoTitle="React Native Experts"
       seoDescription="At our React Native Development Agency, we specialize in creating high-quality, performant, and scalable mobile applications using the latest technologies and best practices. Our team of experienced developers can help you bring your idea to life and deliver a seamless user experience across all platforms. Contact us today to discuss your project and get a free quote."
       ogImageTitle="React Native Experts"
-      callToActionButton={{ name: 'Work with us', href: '/' }}
+      callToActionButton={{ href: '/', name: 'Work with us' }}
     >
       <div className="max-w-5xl mx-auto px-4 py-12 space-y-16">
         {/* Hero Section */}

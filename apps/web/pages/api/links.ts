@@ -1,4 +1,8 @@
 export const linksApi = {
+  affiliate: {
+    INCUBATEUR_SOLOPRENEUR:
+      'https://www.incubateursolopreneur.fr/rejoindre/david-leuliette',
+  },
   airtable: {
     CODING_RETREAT_FORM:
       'https://airtable.com/appM394dCiLp3DoaF/shr3Ubj3BroW6DS5c',
@@ -18,19 +22,15 @@ export const linksApi = {
     ONBOARDING: 'https://cal.com/davidl/weshipit-onboarding',
     PARTNER: 'https://cal.com/davidl/partner',
   },
-  stripe: {
-    MONTHLY_PLAN: 'https://buy.stripe.com/5kA03G1sz8wu8GkfZ6',
-  },
   notion: {
     AGENTIC_SPRINT_FORM:
       'https://flexbox.notion.site/6b32a3a0d6534d2aa90fcde1efb5513d?pvs=105',
-    PODCAST_FORM:
-      'https://flexbox.notion.site/17af478bcb8c8018b4a9db6b13d1df38?pvs=105',
     CLIENT_CRM_FORM:
       'https://flexbox.notion.site/2fbf478bcb8c8033859bf78cf7646db9?pvs=105',
+    PODCAST_FORM:
+      'https://flexbox.notion.site/17af478bcb8c8018b4a9db6b13d1df38?pvs=105',
   },
-  affiliate: {
-    INCUBATEUR_SOLOPRENEUR:
-      'https://www.incubateursolopreneur.fr/rejoindre/david-leuliette',
+  stripe: {
+    MONTHLY_PLAN: 'https://buy.stripe.com/5kA03G1sz8wu8GkfZ6',
   },
 };

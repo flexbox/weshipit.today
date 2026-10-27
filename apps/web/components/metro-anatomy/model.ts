@@ -25,7 +25,7 @@ export const FILES = [
   'logo.png',
 ] as const;
 
-export const BUTTON_FILE: Record<Platform, number> = { ios: 3, android: 4 };
+export const BUTTON_FILE: Record<Platform, number> = { android: 4, ios: 3 };
 
 /** Import edges, as tray indexes. Header imports './Button', which forks. */
 export const EDGES: Array<[number, number]> = [
@@ -53,36 +53,36 @@ export const MODULES = 5;
 
 /** Figure seconds per step. The ratio, not the unit, is the point. */
 export const STEP = {
-  resolve: 0.32,
-  toLane: 0.45,
-  toHead: 0.55,
-  transform: 0.55,
   cached: 0.12,
-  toStack: 0.5,
+  resolve: 0.32,
   send: 0.9,
+  toHead: 0.55,
+  toLane: 0.45,
+  toStack: 0.5,
+  transform: 0.55,
 } as const;
 
 const name = (file: number) => FILES[file];
 
 export const readouts = {
-  rest: (platform: Platform) =>
-    `metro · :${PORT} · ${platform} · waiting for the app`,
-  resolving: (file: number, found: number) =>
-    `resolve ${name(file)} · ${found}/${MODULES} modules`,
-  transforming: (file: number, cached: boolean) =>
-    cached
-      ? `${name(file)} · transform cache hit`
-      : `babel ${name(file)} · transformed, cached`,
-  serving: (fresh: number) =>
-    `bundle · ${MODULES} modules · ${fresh} transformed · ${MODULES - fresh} cached`,
-  ready: (platform: Platform, fresh: number) =>
-    `${platform} bundle on :${PORT} · ${fresh}/${MODULES} transformed · socket open`,
-  saved: (file: number) => `save ${name(file)} · cache entry stale`,
-  refreshed: (file: number, count: number) =>
-    `Fast Refresh · 1 module sent · ${MODULES - 1} untouched · count ${count} kept`,
-  tapped: (count: number) => `tap · count ${count} · state lives in the app`,
   cleared: () => `--clear · transform cache emptied`,
   needsBundle: () => `no app connected · open it first`,
   platform: (platform: Platform) =>
     `${platform} · resolves ${name(BUTTON_FILE[platform])}`,
+  ready: (platform: Platform, fresh: number) =>
+    `${platform} bundle on :${PORT} · ${fresh}/${MODULES} transformed · socket open`,
+  refreshed: (file: number, count: number) =>
+    `Fast Refresh · 1 module sent · ${MODULES - 1} untouched · count ${count} kept`,
+  resolving: (file: number, found: number) =>
+    `resolve ${name(file)} · ${found}/${MODULES} modules`,
+  rest: (platform: Platform) =>
+    `metro · :${PORT} · ${platform} · waiting for the app`,
+  saved: (file: number) => `save ${name(file)} · cache entry stale`,
+  serving: (fresh: number) =>
+    `bundle · ${MODULES} modules · ${fresh} transformed · ${MODULES - fresh} cached`,
+  tapped: (count: number) => `tap · count ${count} · state lives in the app`,
+  transforming: (file: number, cached: boolean) =>
+    cached
+      ? `${name(file)} · transform cache hit`
+      : `babel ${name(file)} · transformed, cached`,
 };

@@ -24,8 +24,8 @@ const spaceGrotesk = Space_Grotesk({
   display: 'swap',
   style: ['normal'],
   subsets: ['latin'],
-  weight: ['700'],
   variable: '--font-space-grotesk',
+  weight: ['700'],
 });
 
 function CustomApp({ Component, pageProps }: AppProps) {
@@ -36,15 +36,15 @@ function CustomApp({ Component, pageProps }: AppProps) {
         defaultTitle="React Native Development Agency — weshipit.today"
         description="Software development is a service, not a product. We offer a subscription-based service for React Native developers. One flat fee. Pause or cancel whenever."
         openGraph={{
-          type: 'website',
           locale: 'en_US',
-          url: 'https://weshipit.today/',
           siteName: 'weshipit.today',
+          type: 'website',
+          url: 'https://weshipit.today/',
         }}
         twitter={{
+          cardType: 'summary_large_image',
           handle: '@flexbox_',
           site: '@flexbox_',
-          cardType: 'summary_large_image',
         }}
       />
       <div

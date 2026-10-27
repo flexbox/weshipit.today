@@ -15,20 +15,16 @@ export const CARDS = 5;
 
 /** Figure seconds per step. The ratio, not the unit, is the point. */
 export const STEP = {
-  toPress: 0.5,
+  feed: 0.42,
   punch: 0.45,
   toHopper: 0.55,
-  feed: 0.42,
+  toPress: 0.5,
 } as const;
 
 /** Full scale of the launch dial, in figure seconds. */
 export const DIAL_SPAN = 8;
 
 export const readouts = {
-  rest: (engine: Engine) =>
-    engine === 'hermes'
-      ? 'Hermes · bytecode precompiled at build'
-      : 'JSC · source text, parsed at launch',
   building: (done: number) =>
     `build · hermesc compiles ${done}/${CARDS} to bytecode`,
   built: () => `build done · ${CARDS} bytecode cards in the app`,
@@ -40,4 +36,8 @@ export const readouts = {
     engine === 'hermes'
       ? `Hermes ready · dial ${seconds.toFixed(1)} · nothing parsed at launch`
       : `JSC ready · dial ${seconds.toFixed(1)} · ${CARDS} cards parsed at launch`,
+  rest: (engine: Engine) =>
+    engine === 'hermes'
+      ? 'Hermes · bytecode precompiled at build'
+      : 'JSC · source text, parsed at launch',
 };

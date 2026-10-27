@@ -140,19 +140,18 @@ function ProblemAgitation() {
 
 interface TeamMember {
   name: string;
-  email: string;
   role: string;
+  email: string;
+  accent: string;
+  worksOn: string[];
   experienceStarted: number;
   handles: { icon: React.ReactNode; text: string }[];
-  worksOn: string[];
-  accent: string;
 }
 
 const teamMembers: TeamMember[] = [
   {
-    name: 'David Leuliette',
+    accent: 'from-blue-600 to-cyan-300',
     email: 'dleuliette@gmail.com',
-    role: 'Senior Expert',
     experienceStarted: 2007,
     handles: [
       { icon: <SparklesIcon className="size-4" />, text: 'Strategic audits' },
@@ -165,13 +164,13 @@ const teamMembers: TeamMember[] = [
         text: 'Enterprise clients',
       },
     ],
+    name: 'David Leuliette',
+    role: 'Senior Expert',
     worksOn: ['Kickstart', 'Enterprise'],
-    accent: 'from-blue-600 to-cyan-300',
   },
   {
-    name: 'Matthys Ducrocq',
+    accent: 'from-amber-500 to-emerald-600',
     email: 'ducrocq.matthys@gmail.com',
-    role: 'Lead Developer',
     experienceStarted: 2021,
     handles: [
       { icon: <BoltIcon className="size-4" />, text: 'Sprint execution' },
@@ -184,8 +183,9 @@ const teamMembers: TeamMember[] = [
         text: 'Scaling support',
       },
     ],
+    name: 'Matthys Ducrocq',
+    role: 'Lead Developer',
     worksOn: ['Essential', 'Growth'],
-    accent: 'from-amber-500 to-emerald-600',
   },
 ];
 
@@ -319,11 +319,9 @@ export default function IndexPage({ clients, steps }: IndexPageProps) {
   const organizationSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'weshipit.today',
-    url: 'https://weshipit.today',
-    foundingDate: '2016',
     description:
       'Subscription-based React Native development agency. We build and maintain iOS and Android apps for startups and scale-ups.',
+    foundingDate: '2016',
     knowsAbout: [
       'React Native',
       'iOS',
@@ -331,6 +329,8 @@ export default function IndexPage({ clients, steps }: IndexPageProps) {
       'Expo',
       'Mobile Development',
     ],
+    name: 'weshipit.today',
+    url: 'https://weshipit.today',
   };
 
   const breadcrumbSchema = {
@@ -339,9 +339,9 @@ export default function IndexPage({ clients, steps }: IndexPageProps) {
     itemListElement: [
       {
         '@type': 'ListItem',
-        position: 1,
-        name: 'Home',
         item: 'https://weshipit.today',
+        name: 'Home',
+        position: 1,
       },
     ],
   };
@@ -349,10 +349,10 @@ export default function IndexPage({ clients, steps }: IndexPageProps) {
   const webSiteSchema = {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'weshipit.today',
-    url: 'https://weshipit.today',
     description:
       'Subscription-based React Native developers. One flat fee, zero billable hours. Pause or cancel anytime.',
+    name: 'weshipit.today',
+    url: 'https://weshipit.today',
   };
 
   const siteNavigationSchema = {
@@ -361,26 +361,26 @@ export default function IndexPage({ clients, steps }: IndexPageProps) {
     itemListElement: [
       {
         '@type': 'SiteNavigationElement',
-        position: 1,
         name: 'Customers',
+        position: 1,
         url: 'https://weshipit.today/customers',
       },
       {
         '@type': 'SiteNavigationElement',
-        position: 2,
         name: 'About',
+        position: 2,
         url: 'https://weshipit.today/about',
       },
       {
         '@type': 'SiteNavigationElement',
-        position: 3,
         name: 'Podcast',
+        position: 3,
         url: 'https://weshipit.today/podcast',
       },
       {
         '@type': 'SiteNavigationElement',
-        position: 4,
         name: 'React Native Audit',
+        position: 4,
         url: 'https://weshipit.today/audit',
       },
     ],
@@ -395,18 +395,18 @@ export default function IndexPage({ clients, steps }: IndexPageProps) {
       },
       {
         '@type': 'Organization',
+        description: organizationSchema.description,
+        foundingDate: organizationSchema.foundingDate,
+        knowsAbout: organizationSchema.knowsAbout,
         name: organizationSchema.name,
         url: organizationSchema.url,
-        foundingDate: organizationSchema.foundingDate,
-        description: organizationSchema.description,
-        knowsAbout: organizationSchema.knowsAbout,
       },
       faqPageSchema(faqs),
       {
         '@type': 'WebSite',
+        description: webSiteSchema.description,
         name: webSiteSchema.name,
         url: webSiteSchema.url,
-        description: webSiteSchema.description,
       },
       {
         '@type': 'ItemList',
@@ -444,14 +444,14 @@ export default function IndexPage({ clients, steps }: IndexPageProps) {
         ogImageAlt="weshipit.today — Hire React Native Developers as a Service"
         withHeader
         navigation={[
-          { name: 'Services', href: '#services' },
-          { name: 'Pricing', href: '#pricing' },
-          { name: 'Faq', href: '#faq' },
+          { href: '#services', name: 'Services' },
+          { href: '#pricing', name: 'Pricing' },
+          { href: '#faq', name: 'Faq' },
         ]}
         callToActionButton={{
-          name: 'Book a call',
           href: linksApi.cal.ONBOARDING,
           isExternalLink: true,
+          name: 'Book a call',
         }}
         withFooter
       >

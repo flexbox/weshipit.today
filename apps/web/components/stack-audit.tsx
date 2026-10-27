@@ -179,29 +179,29 @@ function getVerdict(scorePct: number) {
 }
 
 const STACK_AUDIT: SelfAuditConfig = {
-  id: 'stack-audit',
+  categories: CATEGORIES,
+  cta: {
+    href: '/audit',
+    label: "Découvrir l'audit complet",
+    text: "Score en dessous de 70 ? Notre équipe réalise le même audit en profondeur sur votre codebase, avec un plan d'action priorisé.",
+  },
   eyebrow: 'Outil gratuit',
-  title: 'Auditez vous-même votre stack React Native',
+  getVerdict,
+  id: 'stack-audit',
   intro:
     "32 questions, 4 catégories, un score en 3 minutes. La même grille utilisée pour challenger l'architecture d'apps qui gèrent des millions d'utilisateurs — transformée en checklist que vous pouvez faire passer à votre propre codebase.",
-  categories: CATEGORIES,
-  getVerdict,
-  resetLabel: "Recommencer l'audit",
   report: {
-    title: "Recevez votre rapport d'audit complet",
-    text: "Le détail de vos réponses, priorisé par impact et effort (comme un vrai audit d'architecture), envoyé directement dans votre boîte mail.",
     bullets: [
       'Vos points faibles classés par priorité (impact / effort)',
       'Des recommandations concrètes par item, pas de généralités',
       'Le même format utilisé pour les audits clients',
     ],
+    text: "Le détail de vos réponses, priorisé par impact et effort (comme un vrai audit d'architecture), envoyé directement dans votre boîte mail.",
+    title: "Recevez votre rapport d'audit complet",
   },
+  resetLabel: "Recommencer l'audit",
   scoreField: 'audit_score',
-  cta: {
-    text: "Score en dessous de 70 ? Notre équipe réalise le même audit en profondeur sur votre codebase, avec un plan d'action priorisé.",
-    href: '/audit',
-    label: "Découvrir l'audit complet",
-  },
+  title: 'Auditez vous-même votre stack React Native',
 };
 
 interface StackAuditProps {

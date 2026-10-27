@@ -38,10 +38,10 @@ const jetbrainsMonoRegular = fetch(
 // Generator handles social banner sizes + a 1200×630 og:image variant.
 // The Spotify cover is served as a static image from public/.
 const PLATFORM_SIZES = {
-  linkedin: { width: 1584, height: 396 },
-  youtube: { width: 2560, height: 1440 },
-  x: { width: 1500, height: 500 },
-  og: { width: 1200, height: 630 },
+  linkedin: { height: 396, width: 1584 },
+  og: { height: 630, width: 1200 },
+  x: { height: 500, width: 1500 },
+  youtube: { height: 1440, width: 2560 },
 } as const;
 
 type Platform = keyof typeof PLATFORM_SIZES;
@@ -56,23 +56,23 @@ function isPlatform(value: string | null): value is Platform {
 // Stored as PNG because Satori's webp decoder silently drops images, and
 // odisei-music originally came in as JPG.
 const INTERVIEW_LOGOS: ReadonlyArray<{ slug: string; ext: 'png' | 'jpg' }> = [
-  { slug: 'cdiscount', ext: 'png' }, // #1
-  { slug: 'alan', ext: 'png' }, // #2
-  { slug: 'karnott', ext: 'png' }, // #4
-  { slug: 'swan', ext: 'png' }, // #5
-  { slug: 'ekklo', ext: 'png' }, // #6
-  { slug: 'ornikar', ext: 'png' }, // #11
-  { slug: 'shine', ext: 'png' }, // #14
-  { slug: 'rosk', ext: 'png' }, // #15
-  { slug: 'odisei-music', ext: 'jpg' }, // #16
-  { slug: 'this-week-in-react', ext: 'png' }, // #23
-  { slug: 'skia', ext: 'png' }, // #24
+  { ext: 'png', slug: 'cdiscount' }, // #1
+  { ext: 'png', slug: 'alan' }, // #2
+  { ext: 'png', slug: 'karnott' }, // #4
+  { ext: 'png', slug: 'swan' }, // #5
+  { ext: 'png', slug: 'ekklo' }, // #6
+  { ext: 'png', slug: 'ornikar' }, // #11
+  { ext: 'png', slug: 'shine' }, // #14
+  { ext: 'png', slug: 'rosk' }, // #15
+  { ext: 'jpg', slug: 'odisei-music' }, // #16
+  { ext: 'png', slug: 'this-week-in-react' }, // #23
+  { ext: 'png', slug: 'skia' }, // #24
 ];
 
 const LOGO_DIR = join(process.cwd(), 'public/images/podcast-logos');
 
 const logos = Promise.all(
-  INTERVIEW_LOGOS.map(async ({ slug, ext }) => {
+  INTERVIEW_LOGOS.map(async ({ ext, slug }) => {
     const data = await readFile(join(LOGO_DIR, `${slug}.${ext}`));
     const mime = ext === 'jpg' ? 'image/jpeg' : 'image/png';
     return `data:${mime};base64,${data.toString('base64')}`;
@@ -98,7 +98,7 @@ export default async function handler(
       return;
     }
 
-    const { width, height } = PLATFORM_SIZES[platformParam];
+    const { height, width } = PLATFORM_SIZES[platformParam];
 
     const headline = queryParam(req.query.headline) ?? undefined;
     const tagline = queryParam(req.query.tagline) ?? undefined;
@@ -128,35 +128,35 @@ export default async function handler(
         />
       ),
       {
-        width,
-        height,
         emoji: 'twemoji',
         fonts: [
           {
-            name: 'Inter',
             data: regularData,
+            name: 'Inter',
             style: 'normal',
             weight: 400,
           },
           {
-            name: 'Inter',
             data: mediumData,
+            name: 'Inter',
             style: 'normal',
             weight: 500,
           },
           {
-            name: 'Space Grotesk',
             data: displayData,
+            name: 'Space Grotesk',
             style: 'normal',
             weight: 700,
           },
           {
-            name: 'JetBrains Mono',
             data: monoRegularData,
+            name: 'JetBrains Mono',
             style: 'normal',
             weight: 400,
           },
         ],
+        height,
+        width,
       },
     );
 

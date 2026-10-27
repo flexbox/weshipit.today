@@ -10,7 +10,7 @@ export default function CodingRetreat() {
       seoTitle="Indie Hackers Coding Retreat"
       seoDescription="Looking to take your project to the next level? Join our Indie Hackers Coding Retreat for a week of immersive coding, learning, and networking. Get personalized guidance from experienced developers and connect with like-minded indie hackers."
       ogImageTitle="Join our next coding retreat!"
-      callToActionButton={{ name: 'Work with us', href: '/' }}
+      callToActionButton={{ href: '/', name: 'Work with us' }}
     >
       <div className="relative">
         <video

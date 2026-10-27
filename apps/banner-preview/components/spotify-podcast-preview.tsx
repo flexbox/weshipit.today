@@ -5,28 +5,28 @@ import { CONFIG } from '../config/config';
 import truncate from 'lodash/truncate';
 
 interface SpotifyPodcastPreviewProps {
+  title?: string;
+  about?: string;
+  author?: string;
   coverUrl: string;
   variant?: 'desktop' | 'mobile';
-  title?: string;
-  author?: string;
-  about?: string;
 }
 
 const DEFAULTS = {
-  title: CONFIG.spotify.showName,
-  author: CONFIG.spotify.creatorName,
   about: truncate(CONFIG.spotify.description, {
     length: 190,
     separator: '... Show more',
   }),
+  author: CONFIG.spotify.creatorName,
+  title: CONFIG.spotify.showName,
 };
 
 export function SpotifyPodcastPreview({
-  coverUrl,
-  variant = 'desktop',
-  title = DEFAULTS.title,
-  author = DEFAULTS.author,
   about = DEFAULTS.about,
+  author = DEFAULTS.author,
+  coverUrl,
+  title = DEFAULTS.title,
+  variant = 'desktop',
 }: SpotifyPodcastPreviewProps) {
   const isMobile = variant === 'mobile';
 

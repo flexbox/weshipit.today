@@ -195,9 +195,9 @@ const PAWL_BODY = (
 );
 
 function Pins({
-  x,
   base,
   fingerprint,
+  x,
 }: {
   x: number;
   base: number;
@@ -275,27 +275,27 @@ interface Eased {
 }
 
 interface Sim {
-  modules: number;
+  bay: Cart;
+  tray?: Cart;
+  feed?: Cart;
+  patch: number;
   binary: string;
   builds: number;
-  patch: number;
   nextId: number;
-  tray?: Cart;
-  bay: Cart;
-  feed?: Cart;
+  modules: number;
   /** Cartridges on their way out, drawn behind (back) or in front of (front) the pawl. */
-  leaving: Array<{ cart: Cart; front: boolean }>;
   lit: number;
-  motion: Map<number, Motion>;
-  cards: Array<{ z: number; a: number; tz: number; ta: number }>;
   pawl: Eased;
-  needle: Eased;
   lamp: number;
-  clock: number;
-  plan: Array<{ at: number; run: () => void }>;
   idle: number;
   tour: number;
+  needle: Eased;
+  clock: number;
   touched: boolean;
+  motion: Map<number, Motion>;
+  plan: Array<{ at: number; run: () => void }>;
+  leaving: Array<{ cart: Cart; front: boolean }>;
+  cards: Array<{ z: number; a: number; tz: number; ta: number }>;
 }
 
 const FIRST_BUILDS = 1;
@@ -315,45 +315,45 @@ const TOUR = [
 type Action = (typeof TOUR)[number];
 
 const placed = (x: number, z = 0, a = 1): Motion => ({
-  x,
-  z,
   a,
+  ta: a,
   tx: x,
   tz: z,
-  ta: a,
+  x,
+  z,
 });
 
 function initial(): Sim {
   const fp = fingerprintOf(FIRST_MODULES);
-  const tray = { id: 1, fp, patch: FIRST_PATCH - 1 };
-  const bay = { id: 2, fp, patch: FIRST_PATCH };
+  const tray = { fp, id: 1, patch: FIRST_PATCH - 1 };
+  const bay = { fp, id: 2, patch: FIRST_PATCH };
   return {
-    modules: FIRST_MODULES,
+    bay,
     binary: fp,
     builds: FIRST_BUILDS,
-    patch: FIRST_PATCH,
-    nextId: 3,
-    tray,
-    bay,
+    cards: MODULES.map((_, index) =>
+      index < FIRST_MODULES
+        ? { a: 1, ta: 1, tz: 0, z: 0 }
+        : { a: 0, ta: 0, tz: 26, z: 26 },
+    ),
+    clock: 0,
+    idle: 0,
+    lamp: 0,
     leaving: [],
     lit: bay.id,
+    modules: FIRST_MODULES,
     motion: new Map([
       [tray.id, placed(SLOT_X.tray)],
       [bay.id, placed(SLOT_X.bay)],
     ]),
-    cards: MODULES.map((_, index) =>
-      index < FIRST_MODULES
-        ? { z: 0, a: 1, tz: 0, ta: 1 }
-        : { z: 26, a: 0, tz: 26, ta: 0 },
-    ),
-    pawl: { v: 0, t: 0 },
-    needle: { v: FIRST_BUILDS, t: FIRST_BUILDS },
-    lamp: 0,
-    clock: 0,
+    needle: { t: FIRST_BUILDS, v: FIRST_BUILDS },
+    nextId: 3,
+    patch: FIRST_PATCH,
+    pawl: { t: 0, v: 0 },
     plan: [],
-    idle: 0,
-    tour: 0,
     touched: false,
+    tour: 0,
+    tray,
   };
 }
 
@@ -409,7 +409,7 @@ export function ExpoConsole() {
     }
     s.pawl.t = 1;
     later(0.4, () => {
-      if (s.tray) retire(s.tray, false, { tx: SLOT_X.gone, ta: 0 });
+      if (s.tray) retire(s.tray, false, { ta: 0, tx: SLOT_X.gone });
       s.tray = s.bay;
       s.bay = feed;
       s.feed = undefined;
@@ -425,21 +425,6 @@ export function ExpoConsole() {
   };
 
   const actions: Record<Action, () => void> = {
-    ship: () => {
-      const s = sim.current;
-      s.patch += 1;
-      const cart = {
-        id: s.nextId++,
-        fp: fingerprintOf(s.modules),
-        patch: s.patch,
-      };
-      if (s.feed) retire(s.feed, true, { tz: DROP_Z, ta: 0 });
-      s.feed = cart;
-      s.lit = cart.id;
-      s.motion.set(cart.id, { ...placed(SLOT_X.feed), z: DROP_Z, a: 0 });
-      rerender();
-      later(0.8, tryAdvance);
-    },
     add: () => {
       const s = sim.current;
       if (s.modules >= MOST_MODULES) {
@@ -464,18 +449,18 @@ export function ExpoConsole() {
         return;
       }
       s.pawl.t = 1;
-      retire(s.bay, false, { tz: DROP_Z, ta: 0 });
+      retire(s.bay, false, { ta: 0, tz: DROP_Z });
       later(0.5, () => {
         s.binary = target;
         s.builds += 1;
         s.needle.t = s.builds;
         // A new binary ships with the current JavaScript embedded in it.
         s.bay = {
-          id: s.nextId++,
           fp: target,
+          id: s.nextId++,
           patch: s.patch - (s.feed ? 1 : 0),
         };
-        s.motion.set(s.bay.id, { ...placed(SLOT_X.bay), z: DROP_Z, a: 0 });
+        s.motion.set(s.bay.id, { ...placed(SLOT_X.bay), a: 0, z: DROP_Z });
         rerender();
         say(readouts.built(s.builds, target));
         later(0.9, () => {
@@ -498,8 +483,8 @@ export function ExpoConsole() {
       s.needle.t = fresh.builds;
       s.cards.forEach((card, index) =>
         Object.assign(card, {
-          tz: fresh.cards[index].tz,
           ta: fresh.cards[index].ta,
+          tz: fresh.cards[index].tz,
         }),
       );
       const tray = { ...fresh.tray!, id: s.nextId++ };
@@ -513,6 +498,21 @@ export function ExpoConsole() {
       rerender();
       say(REST_READOUT);
       later(1.2, () => undefined);
+    },
+    ship: () => {
+      const s = sim.current;
+      s.patch += 1;
+      const cart = {
+        fp: fingerprintOf(s.modules),
+        id: s.nextId++,
+        patch: s.patch,
+      };
+      if (s.feed) retire(s.feed, true, { ta: 0, tz: DROP_Z });
+      s.feed = cart;
+      s.lit = cart.id;
+      s.motion.set(cart.id, { ...placed(SLOT_X.feed), a: 0, z: DROP_Z });
+      rerender();
+      later(0.8, tryAdvance);
     },
   };
 
@@ -592,12 +592,12 @@ export function ExpoConsole() {
 
   const onKey = (event: React.KeyboardEvent) => {
     const map: Record<string, Action> = {
-      u: 'ship',
       ' ': 'ship',
+      b: 'build',
       Enter: 'ship',
       m: 'add',
-      b: 'build',
       r: 'reset',
+      u: 'ship',
     };
     const action = map[event.key];
     if (!action) return;
@@ -754,9 +754,9 @@ export function ExpoAnatomyFigure() {
         hint="Tap to ship · M module · B build"
         readout={REST_READOUT}
         keys={[
-          { mark: 'lit', label: 'The newest JS bundle' },
-          { mark: 'raised', label: 'Native modules in the binary' },
-          { mark: 'edge', label: 'Runtime key pins' },
+          { label: 'The newest JS bundle', mark: 'lit' },
+          { label: 'Native modules in the binary', mark: 'raised' },
+          { label: 'Runtime key pins', mark: 'edge' },
         ]}
         caption="The console is the native binary, built with EAS Build and released through the stores. Its cards are Expo SDK native modules. The cartridge is the JavaScript bundle: EAS Update ships a new one over the air, and it seats only if its key pins match the binary's runtime fingerprint. Add a native module and the fingerprint changes, so the next update waits at the pawl until a new build re-keys the console."
       >

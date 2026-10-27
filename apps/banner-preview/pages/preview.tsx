@@ -14,9 +14,9 @@ import { CONFIG } from '../config/config';
 
 const PROFILE_URLS = {
   linkedin: `linkedin.com/in/${CONFIG.linkedIn.slug}`,
-  youtube: `youtube.com/${CONFIG.youtube.handle}`,
-  x: `x.com/${CONFIG.x.handle.replace(/^@/, '')}`,
   spotify: 'open.spotify.com/show/cross-platform-show',
+  x: `x.com/${CONFIG.x.handle.replace(/^@/, '')}`,
+  youtube: `youtube.com/${CONFIG.youtube.handle}`,
 };
 
 const SITE_URL = 'https://banner-preview.weshipit.today/preview';
@@ -24,47 +24,47 @@ const SITE_ROOT = 'https://banner-preview.weshipit.today';
 const OG_IMAGE = `${SITE_ROOT}/api/banner?platform=og`;
 
 const META = {
-  title: 'Preview LinkedIn, YouTube, X & Spotify Banners Side by Side',
   description:
     'Live preview of LinkedIn, YouTube, X and Spotify banners behind real profile chrome on desktop and mobile. Check crops, safe areas and avatar overlap before you publish.',
   shortDescription:
     'See your LinkedIn, YouTube, X and Spotify banners behind real profile chrome on desktop and mobile before you publish.',
+  title: 'Preview LinkedIn, YouTube, X & Spotify Banners Side by Side',
 };
 
 const PAGE_SCHEMA = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
-  name: META.title,
-  description: META.description,
-  url: SITE_URL,
-  isPartOf: {
-    '@type': 'WebSite',
-    name: 'Social Banner Preview',
-    url: SITE_ROOT,
-  },
   breadcrumb: {
     '@type': 'BreadcrumbList',
     itemListElement: [
       {
         '@type': 'ListItem',
-        position: 1,
-        name: 'Create',
         item: SITE_ROOT,
+        name: 'Create',
+        position: 1,
       },
       {
         '@type': 'ListItem',
-        position: 2,
-        name: 'Preview',
         item: SITE_URL,
+        name: 'Preview',
+        position: 2,
       },
     ],
   },
+  description: META.description,
+  isPartOf: {
+    '@type': 'WebSite',
+    name: 'Social Banner Preview',
+    url: SITE_ROOT,
+  },
+  name: META.title,
+  url: SITE_URL,
 };
 
 function PlatformContext({
-  title,
-  description,
   children,
+  description,
+  title,
 }: {
   title: string;
   description: string;

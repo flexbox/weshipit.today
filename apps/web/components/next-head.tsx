@@ -17,12 +17,12 @@ export interface NextHeadProps {
   /** Mono label above the title. Defaults to the agency label for the locale. */
   ogImageKicker?: string;
   /** Optional proof point under the title, e.g. "4,6/5 · avis vérifié". */
-  ogImageSubline?: string;
-  ogImageAlt?: string;
-  ogImagePodcast?: PodcastOgImageData;
-  seoDescription: string;
   locale?: string;
   noindex?: boolean;
+  ogImageAlt?: string;
+  seoDescription: string;
+  ogImageSubline?: string;
+  ogImagePodcast?: PodcastOgImageData;
 }
 
 const BASE_URL = 'https://weshipit.today';
@@ -33,15 +33,15 @@ const DEFAULT_KICKER: Record<OgLang, string> = {
 };
 
 export function NextHead({
-  ogImageTitle,
-  ogImageKicker,
-  ogImageSubline,
-  ogImageAlt,
-  ogImagePodcast,
-  seoDescription,
-  seoTitle,
   locale = 'en_US',
   noindex = false,
+  ogImageAlt,
+  ogImageKicker,
+  ogImagePodcast,
+  ogImageSubline,
+  ogImageTitle,
+  seoDescription,
+  seoTitle,
 }: NextHeadProps) {
   const router = useRouter();
   // asPath keeps the query string and hash (`?utm_source=…`, `#faq`), which
@@ -78,26 +78,26 @@ export function NextHead({
         canonical={canonicalUrl}
         noindex={noindex}
         openGraph={{
-          title: seoTitle,
           description: seoDescription,
-          url: canonicalUrl,
-          type: 'website',
-          locale,
-          siteName: 'weshipit.today',
           images: [
             {
+              alt: imageAlt,
+              height: 630,
+              type: 'image/png',
               url: ogImageUrl,
               width: 1200,
-              height: 630,
-              alt: imageAlt,
-              type: 'image/png',
             },
           ],
+          locale,
+          siteName: 'weshipit.today',
+          title: seoTitle,
+          type: 'website',
+          url: canonicalUrl,
         }}
         twitter={{
+          cardType: 'summary_large_image',
           handle: '@flexbox_',
           site: '@flexbox_',
-          cardType: 'summary_large_image',
         }}
         additionalLinkTags={[
           { href: '/favicon.ico', rel: 'icon' },
@@ -119,7 +119,7 @@ export function NextHead({
             type: 'image/png',
           },
         ]}
-        additionalMetaTags={[{ name: 'author', content: 'David Leuliette' }]}
+        additionalMetaTags={[{ content: 'David Leuliette', name: 'author' }]}
       />
       {/* Must live inside <Head>: a bare <meta> is hoisted by React 19 and
           then removed by next/head on navigation, crashing the unmount. */}

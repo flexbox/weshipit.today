@@ -25,8 +25,8 @@ const FIGURES: Record<string, ComponentType> = {
 };
 
 export function GlossaryFigure({
-  slug,
   className,
+  slug,
 }: {
   slug: string;
   className?: string;

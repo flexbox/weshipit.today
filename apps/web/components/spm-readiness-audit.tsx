@@ -100,29 +100,29 @@ function getVerdict(scorePct: number) {
 }
 
 const SPM_READINESS_AUDIT: SelfAuditConfig = {
-  id: 'spm-readiness',
-  eyebrow: '12 checks · 2 minutes',
-  title: 'Your SPM readiness check',
-  intro: 'Answer No, Unknown or Yes. Your score shows up instantly.',
   categories: CATEGORIES,
+  cta: {
+    href: '/audit',
+    label: 'Discover the full audit',
+    text: 'Scored below 80? We map every native dependency of your app and hand you a step-by-step plan to leave CocoaPods.',
+  },
+  eyebrow: '12 checks · 2 minutes',
   getVerdict,
-  resetLabel: 'Restart the readiness check',
+  id: 'spm-readiness',
+  intro: 'Answer No, Unknown or Yes. Your score shows up instantly.',
+  labels: EN_LABELS,
   report: {
-    title: 'Get your migration plan',
-    text: 'Your answers turned into an ordered migration plan, from the first blocker to the CocoaPods removal.',
     bullets: [
       'Your blockers ranked by effort (quick fix / library change / wait)',
       'The React Native 0.87 commands for each step',
       'What to do for each library without a Package.swift',
     ],
+    text: 'Your answers turned into an ordered migration plan, from the first blocker to the CocoaPods removal.',
+    title: 'Get your migration plan',
   },
+  resetLabel: 'Restart the readiness check',
   scoreField: 'spm_score',
-  cta: {
-    text: 'Scored below 80? We map every native dependency of your app and hand you a step-by-step plan to leave CocoaPods.',
-    href: '/audit',
-    label: 'Discover the full audit',
-  },
-  labels: EN_LABELS,
+  title: 'Your SPM readiness check',
 };
 
 interface SpmReadinessAuditProps {

@@ -2,12 +2,12 @@ import { filteredApp, frenchApp } from 'apps/web/fixtures/french-apps.fixture';
 
 function extractAppData(app): filteredApp {
   return {
-    name: app.name,
-    logo_url: app.logo_url,
     android_url: app.android_url || null,
     ios_url: app.ios_url || null,
-    website_url: app.website_url || null,
+    logo_url: app.logo_url,
+    name: app.name,
     podcast_url: app.podcast_url || null,
+    website_url: app.website_url || null,
   };
 }
 

@@ -16,65 +16,65 @@ const MAILERLITE_FORM_ACTION =
   'https://assets.mailerlite.com/jsonp/ACCOUNT_ID/forms/FORM_ID/subscribe';
 
 export interface SelfAuditLabels {
-  answers: { no: string; unknown: string; yes: string };
   step: string;
+  next: string;
+  error: string;
+  submit: string;
+  privacy: string;
   answered: string;
   previous: string;
-  next: string;
   seeScore: string;
-  reportEyebrow: string;
   nameLabel: string;
-  namePlaceholder: string;
   emailLabel: string;
-  emailPlaceholder: string;
-  submit: string;
   submitting: string;
-  successTitle: string;
   successText: string;
-  error: string;
-  privacy: string;
+  successTitle: string;
+  reportEyebrow: string;
+  namePlaceholder: string;
+  emailPlaceholder: string;
+  answers: { no: string; unknown: string; yes: string };
 }
 
 export const FR_LABELS: SelfAuditLabels = {
-  answers: { no: 'Non', unknown: 'Incertain', yes: 'Oui' },
-  step: 'Étape',
   answered: 'répondues',
-  previous: 'Précédent',
-  next: 'Suivant :',
-  seeScore: 'Voir mon score',
-  reportEyebrow: 'Rapport détaillé',
-  nameLabel: 'Prénom',
-  namePlaceholder: 'Ton prénom',
+  answers: { no: 'Non', unknown: 'Incertain', yes: 'Oui' },
   emailLabel: 'Email pro',
   emailPlaceholder: 'toi@entreprise.com',
-  submit: 'Recevoir mon rapport',
-  submitting: 'Envoi en cours…',
-  successTitle: 'Rapport en route ✓',
-  successText:
-    'Vérifiez votre boîte mail (et le dossier spam) dans les prochaines minutes.',
   error: 'Une erreur est survenue. Réessayez, ou écrivez-nous directement.',
+  nameLabel: 'Prénom',
+  namePlaceholder: 'Ton prénom',
+  next: 'Suivant :',
+  previous: 'Précédent',
   privacy:
     'Un email, zéro spam. Désinscription possible à tout moment via chaque email envoyé.',
+  reportEyebrow: 'Rapport détaillé',
+  seeScore: 'Voir mon score',
+  step: 'Étape',
+  submit: 'Recevoir mon rapport',
+  submitting: 'Envoi en cours…',
+  successText:
+    'Vérifiez votre boîte mail (et le dossier spam) dans les prochaines minutes.',
+  successTitle: 'Rapport en route ✓',
 };
 
 export const EN_LABELS: SelfAuditLabels = {
-  answers: { no: 'No', unknown: 'Unknown', yes: 'Yes' },
-  step: 'Step',
   answered: 'answered',
-  previous: 'Previous',
-  next: 'Next:',
-  seeScore: 'See my score',
-  reportEyebrow: 'Detailed report',
-  nameLabel: 'First name',
-  namePlaceholder: 'Your first name',
+  answers: { no: 'No', unknown: 'Unknown', yes: 'Yes' },
   emailLabel: 'Work email',
   emailPlaceholder: 'you@company.com',
+  error: 'Something went wrong. Try again, or email us directly.',
+  nameLabel: 'First name',
+  namePlaceholder: 'Your first name',
+  next: 'Next:',
+  previous: 'Previous',
+  privacy: 'One email, zero spam. Unsubscribe anytime from any email.',
+  reportEyebrow: 'Detailed report',
+  seeScore: 'See my score',
+  step: 'Step',
   submit: 'Get my report',
   submitting: 'Sending…',
-  successTitle: 'Report on its way ✓',
   successText: 'Check your inbox (and spam folder) in the next few minutes.',
-  error: 'Something went wrong. Try again, or email us directly.',
-  privacy: 'One email, zero spam. Unsubscribe anytime from any email.',
+  successTitle: 'Report on its way ✓',
 };
 
 export interface AuditCategory {
@@ -84,24 +84,24 @@ export interface AuditCategory {
 }
 
 export interface AuditVerdict {
-  label: string;
   text: string;
+  label: string;
 }
 
 export interface SelfAuditConfig {
   /** Prefix for DOM ids, unique per page. */
   id: string;
-  eyebrow: string;
   title: string;
   intro: string;
+  eyebrow: string;
+  resetLabel: string;
   categories: AuditCategory[];
   getVerdict: (scorePct: number) => AuditVerdict;
-  resetLabel: string;
   report: { title: string; text: string; bullets: string[] };
   /** MailerLite custom field receiving the score. */
   scoreField: string;
-  cta: { text: string; href: string; label: string };
   labels?: SelfAuditLabels;
+  cta: { text: string; href: string; label: string };
 }
 
 interface SelfAuditQuizProps {
@@ -180,8 +180,8 @@ export function SelfAuditQuiz({
     setFormStatus('submitting');
     try {
       const response = await fetch(MAILERLITE_FORM_ACTION, {
-        method: 'POST',
         body: new FormData(event.currentTarget),
+        method: 'POST',
       });
       const result = await response.json();
       setFormStatus(result.success ? 'success' : 'error');

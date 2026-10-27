@@ -17,15 +17,13 @@ function toSchemaPrice(price: string) {
 
 const offerCatalogSchema = {
   '@type': 'OfferCatalog',
-  name: 'React Native development plans',
-  url: PAGE_URL,
   itemListElement: pricingTiers.map((tier) => {
     const offer = {
       '@type': 'Offer',
-      name: tier.name,
       description: tier.description,
-      url: tier.href,
+      name: tier.name,
       seller: { '@type': 'Organization', name: 'weshipit.today' },
+      url: tier.href,
     };
     if (typeof tier.price === 'string') return offer;
     const amount = tier.price.monthly ?? tier.price.onetime;
@@ -39,6 +37,8 @@ const offerCatalogSchema = {
       },
     };
   }),
+  name: 'React Native development plans',
+  url: PAGE_URL,
 };
 
 const combinedSchema = {
@@ -49,11 +49,11 @@ const combinedSchema = {
       itemListElement: [
         {
           '@type': 'ListItem',
-          position: 1,
-          name: 'Home',
           item: 'https://weshipit.today',
+          name: 'Home',
+          position: 1,
         },
-        { '@type': 'ListItem', position: 2, name: 'Pricing', item: PAGE_URL },
+        { '@type': 'ListItem', item: PAGE_URL, name: 'Pricing', position: 2 },
       ],
     },
     offerCatalogSchema,
@@ -77,13 +77,13 @@ export default function PricingPage() {
         ogImageAlt="weshipit.today — React Native development pricing"
         withHeader
         navigation={[
-          { name: 'Plans', href: '#pricing' },
-          { name: 'Faq', href: '#faq' },
+          { href: '#pricing', name: 'Plans' },
+          { href: '#faq', name: 'Faq' },
         ]}
         callToActionButton={{
-          name: 'Book a call',
           href: linksApi.cal.ONBOARDING,
           isExternalLink: true,
+          name: 'Book a call',
         }}
         withFooter
       >

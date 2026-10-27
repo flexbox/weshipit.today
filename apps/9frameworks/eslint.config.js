@@ -1,28 +1,28 @@
+import nx from '@nx/eslint-plugin';
+import nextCoreWebVitals from 'eslint-config-next/core-web-vitals';
 import globals from 'globals';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
-import js from '@eslint/js';
-import { FlatCompat } from '@eslint/eslintrc';
 import rootConfig from '../../eslint.config.js';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-  recommendedConfig: js.configs.recommended,
-  allConfig: js.configs.all,
-});
-
-export default [
-  {
-    ignores: ['!**/*'],
-  },
-  ...compat.extends(
-    'plugin:@nx/react-typescript',
-    'next',
-    'next/core-web-vitals',
-  ),
+const eslintConfig = [
+  ...nx.configs['flat/react-typescript'].map((config) => ({
+    ...config,
+    files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx'],
+  })),
+  ...nextCoreWebVitals,
   ...rootConfig,
+  // The root config ignores every file: opt this project back in, then restore
+  // the ESLint and eslint-config-next ignores that `!**/*` also overrides.
+  {
+    ignores: [
+      '!**/*',
+      '**/node_modules/',
+      '.next/',
+      'out/',
+      'build/',
+      'next-env.d.ts',
+    ],
+  },
   {
     languageOptions: {
       globals: {
@@ -40,7 +40,7 @@ export default [
     rules: {
       '@next/next/no-html-link-for-pages': [
         'error',
-        'apps/9frameworks/src/app',
+        path.join(import.meta.dirname, 'src/app'),
       ],
     },
   },
@@ -53,3 +53,5 @@ export default [
     rules: {},
   },
 ];
+
+export default eslintConfig;

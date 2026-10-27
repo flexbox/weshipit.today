@@ -16,8 +16,8 @@ interface PodcastPhonePreviewProps {
 }
 
 export function PodcastPhonePreview({
-  slug = 'vjeux',
   className,
+  slug = 'vjeux',
 }: PodcastPhonePreviewProps) {
   const episode = podcastEpisodes.find((item) => item.slug === slug);
 
@@ -45,7 +45,7 @@ export function PodcastPhonePreview({
 
         <div
           className="flex flex-1 flex-col text-white"
-          style={{ padding: cq(16), gap: cq(7) }}
+          style={{ gap: cq(7), padding: cq(16) }}
         >
           <div
             className="font-medium uppercase text-primary"
@@ -91,14 +91,14 @@ export function PodcastPhonePreview({
               className="flex items-center justify-center text-white"
               style={{ gap: cq(19), marginTop: cq(11) }}
             >
-              <BackwardIcon style={{ width: cq(18), height: cq(18) }} />
+              <BackwardIcon style={{ height: cq(18), width: cq(18) }} />
               <span
                 className="flex items-center justify-center rounded-full bg-white text-neutral-950"
-                style={{ width: cq(36), height: cq(36) }}
+                style={{ height: cq(36), width: cq(36) }}
               >
-                <PlayIcon style={{ width: cq(18), height: cq(18) }} />
+                <PlayIcon style={{ height: cq(18), width: cq(18) }} />
               </span>
-              <ForwardIcon style={{ width: cq(18), height: cq(18) }} />
+              <ForwardIcon style={{ height: cq(18), width: cq(18) }} />
             </div>
           </div>
         </div>

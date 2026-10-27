@@ -47,27 +47,27 @@ export async function getStaticProps() {
 const STEPS = [
   {
     step: '01',
+    text: 'We investigate your codebase, native config and dependencies, then estimate the effort behind every finding.',
     title: 'Scan',
     when: 'Phase 1 · days 1 to 3',
-    text: 'We investigate your codebase, native config and dependencies, then estimate the effort behind every finding.',
   },
   {
     step: '02',
+    text: 'Notes, feasibility studies and estimations land in a Notion backlog we share with you, ranked by ROI.',
     title: 'Backlog',
     when: 'Phase 1 · day 3',
-    text: 'Notes, feasibility studies and estimations land in a Notion backlog we share with you, ranked by ROI.',
   },
   {
     step: '03',
+    text: 'We pick the target React Native version or Expo SDK with you, upgrade third-party libraries and add the tools your stack is missing.',
     title: 'Upgrade',
     when: 'Phase 2',
-    text: 'We pick the target React Native version or Expo SDK with you, upgrade third-party libraries and add the tools your stack is missing.',
   },
   {
     step: '04',
+    text: 'We test the upgrade with your test suite and QA team, or our QA engineers, then help you ship it to App Store Connect and Google Play.',
     title: 'Release',
     when: 'Phase 2 · day 14',
-    text: 'We test the upgrade with your test suite and QA team, or our QA engineers, then help you ship it to App Store Connect and Google Play.',
   },
 ];
 
@@ -99,59 +99,59 @@ const FREE_TOOLS = [
   {
     href: '/audit-gratuit',
     label: 'Stack self-audit · FR',
-    title: 'Score your React Native stack',
     text: '32 questions on foundations, ecosystem, data layer and devops. A score out of 100 in 3 minutes.',
+    title: 'Score your React Native stack',
   },
   {
     href: '/react-native-security-audit',
     label: 'Security · 12 checks',
-    title: 'React Native security self-audit',
     text: 'Leaked API keys, insecure storage, exposed APIs, deep links and WebViews.',
+    title: 'React Native security self-audit',
   },
   {
     href: '/react-native-swift-package-manager-migration',
     label: 'iOS · CocoaPods',
-    title: 'Swift Package Manager readiness',
     text: 'Find out what blocks your iOS app before the December 2026 CocoaPods deadline.',
+    title: 'Swift Package Manager readiness',
   },
 ];
 
 const faqs: FaqProps[] = [
   {
-    id: 'audit-faq-1',
-    question: 'How long does the audit take?',
     answer:
       '2 weeks from kickoff to delivery. Phase 1 (investigation) = 3 days. Phase 2 (execution) = 7-10 days.',
+    id: 'audit-faq-1',
+    question: 'How long does the audit take?',
   },
   {
-    id: 'audit-faq-2',
-    question: 'Do we need to pause development during the audit?',
     answer:
       'No. We work in parallel with your team. You keep shipping features while we audit/upgrade.',
+    id: 'audit-faq-2',
+    question: 'Do we need to pause development during the audit?',
   },
   {
-    id: 'audit-faq-3',
-    question: "What if you find issues that can't be fixed in 2 weeks?",
     answer:
       'We prioritize by ROI. Critical fixes go first. Anything beyond 2 weeks gets added to a long-term roadmap with effort estimates.',
+    id: 'audit-faq-3',
+    question: "What if you find issues that can't be fixed in 2 weeks?",
   },
   {
-    id: 'audit-faq-4',
-    question: 'Can we execute the roadmap ourselves or do we need you?',
     answer:
       'Your choice. We deliver a complete roadmap you can execute internally, or you can upgrade to Essential/Growth for ongoing support.',
+    id: 'audit-faq-4',
+    question: 'Can we execute the roadmap ourselves or do we need you?',
   },
   {
-    id: 'audit-faq-5',
-    question: 'What React Native versions do you support?',
     answer:
       "We've upgraded apps from React Native 0.59 to the latest release. No version is too old.",
+    id: 'audit-faq-5',
+    question: 'What React Native versions do you support?',
   },
   {
-    id: 'audit-faq-6',
-    question: 'Do you guarantee the upgrade will work?',
     answer:
       'Yes. We run full QA testing before release. If something breaks post-launch, we fix it (included in the 2 follow-up calls).',
+    id: 'audit-faq-6',
+    question: 'Do you guarantee the upgrade will work?',
   },
 ];
 
@@ -159,8 +159,8 @@ const auditSchema = {
   '@context': 'https://schema.org',
   '@graph': [
     {
-      '@type': 'Service',
       '@id': `${AUDIT_URL}#service`,
+      '@type': 'Service',
       areaServed: 'Worldwide',
       description:
         'A 2-week React Native codebase audit: prioritized technical debt backlog, dependency and React Native/Expo upgrades, and an unblocked release process.',
@@ -429,9 +429,9 @@ export function Audit({ clients }: AuditProps) {
       ogImageSubline="Fix tech debt in 2 weeks"
       withHeader
       callToActionButton={{
-        name: 'Book a call',
         href: linksApi.cal.ONBOARDING,
         isExternalLink: true,
+        name: 'Book a call',
       }}
       withFooter
       withContainer

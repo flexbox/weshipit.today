@@ -52,7 +52,7 @@ export async function getStaticProps() {
 
   const devtools: DevToolWithIcon[] = await Promise.all(
     sorted.map(async (tool) => {
-      const { ios_url, android_url } = tool;
+      const { android_url, ios_url } = tool;
       if (ios_url) {
         const appId = extractAppId(ios_url);
         const icon_url = appId ? await fetchAppStoreIcon(appId) : null;
@@ -73,24 +73,24 @@ export async function getStaticProps() {
   const itemListSchema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: 'React Native Developer Tools',
     description:
       'A curated collection of apps React Native developers need to debug, test, and ship mobile apps.',
-    url: 'https://weshipit.today/devtools',
-    numberOfItems: devtools.length,
     itemListElement: devtools.map((tool, index) => ({
       '@type': 'ListItem',
-      position: index + 1,
-      name: tool.name,
       description: tool.description || tool.description_success || null,
+      name: tool.name,
+      position: index + 1,
       url: tool.website_url || null,
     })),
+    name: 'React Native Developer Tools',
+    numberOfItems: devtools.length,
+    url: 'https://weshipit.today/devtools',
   };
 
   return {
     props: {
-      devtools,
       allFeatures,
+      devtools,
       itemListSchema,
     },
   };
@@ -98,13 +98,13 @@ export async function getStaticProps() {
 
 function DevToolCard({ tool }: { tool: DevToolWithIcon }) {
   const {
-    name,
+    android_url,
     description,
     description_success,
-    website_url,
-    ios_url,
-    android_url,
     features,
+    ios_url,
+    name,
+    website_url,
   } = tool;
 
   return (
@@ -145,8 +145,8 @@ function DevToolCard({ tool }: { tool: DevToolWithIcon }) {
 }
 
 export default function DevToolsPage({
-  devtools,
   allFeatures,
+  devtools,
   itemListSchema,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const router = useRouter();
@@ -172,7 +172,7 @@ export default function DevToolsPage({
     <Layout
       withFooter
       withHeader
-      callToActionLink={{ name: 'Work with us', href: '/' }}
+      callToActionLink={{ href: '/', name: 'Work with us' }}
       seoTitle="React Native Developer Tools"
       seoDescription={`Discover ${numberOfTools}+ apps React Native developers need to debug, test, and ship mobile apps — curated tools for iOS, Android & Bluetooth testing.`}
       ogImageTitle="React Native Developer Tools"

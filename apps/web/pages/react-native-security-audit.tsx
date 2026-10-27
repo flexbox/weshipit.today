@@ -15,64 +15,64 @@ import { SecurityAudit } from '../components/security-audit';
 
 const FAQ_ITEMS = [
   {
-    id: 'api-key',
-    question: 'Is an API key in a React Native app really exposed?',
     answer:
       'Yes. The JS bundle, even as Hermes bytecode, can be extracted from an APK or IPA in minutes. Anything shipped in the app, EXPO_PUBLIC_* variables included, is public. Keep secrets on the server.',
+    id: 'api-key',
+    question: 'Is an API key in a React Native app really exposed?',
   },
   {
-    id: 'score',
-    question: 'How is the score calculated?',
     answer:
       'Yes = 1 point, Unknown = 0.5, No = 0, scaled to 100. 80+ is a solid posture, 50 to 79 has blind spots to close, below 50 is high exposure.',
+    id: 'score',
+    question: 'How is the score calculated?',
   },
   {
-    id: 'rnsec',
-    question: 'How is this different from rnsec?',
     answer:
       'rnsec scans your code and native config. This checklist also covers what a static scanner cannot see, like Supabase or Firebase rules and backend access control. Use both.',
+    id: 'rnsec',
+    question: 'How is this different from rnsec?',
   },
   {
-    id: 'pentest',
-    question: 'Does it replace a penetration test?',
     answer:
       'No. It covers the baseline controls that prevent most incidents. Apps handling banking or health data still need a pentest or a full OWASP MASVS review.',
+    id: 'pentest',
+    question: 'Does it replace a penetration test?',
   },
 ];
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: FAQ_ITEMS.map(({ question, answer }) => ({
+  mainEntity: FAQ_ITEMS.map(({ answer, question }) => ({
     '@type': 'Question',
-    name: question,
     acceptedAnswer: {
       '@type': 'Answer',
       text: answer,
     },
+    name: question,
   })),
 };
 
 const CHECKED_AREAS = [
   {
-    title: 'Secrets & storage',
     masvs: 'MASVS-STORAGE',
     text: 'Embedded keys, tokens outside the Keychain, leaky logs.',
+    title: 'Secrets & storage',
   },
   {
-    title: 'Network & API',
     masvs: 'MASVS-NETWORK',
     text: 'Cleartext traffic, client-side access control, open APIs.',
+    title: 'Network & API',
   },
   {
-    title: 'Platform',
     masvs: 'MASVS-PLATFORM',
     text: 'Deep links, WebViews, Android backups.',
+    title: 'Platform',
   },
   {
-    title: 'Build & dependencies',
     masvs: 'MASVS-CODE',
     text: 'Debug artifacts, vulnerable packages, no CI scan.',
+    title: 'Build & dependencies',
   },
 ];
 

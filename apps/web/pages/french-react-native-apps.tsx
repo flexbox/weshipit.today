@@ -24,13 +24,13 @@ type ViewMode =
 
 export async function getStaticProps() {
   const records: frenchApp[] = frenchAppsFixture.records.map((record) => ({
-    name: record.name,
-    category: record.category,
-    logo_url: record.logo_url,
-    ios_url: record.ios_url,
     android_url: record.android_url,
-    website_url: record.website_url,
+    category: record.category,
+    ios_url: record.ios_url,
+    logo_url: record.logo_url,
+    name: record.name,
     podcast_url: record.podcast_url,
+    website_url: record.website_url,
   }));
 
   const categorizedApps = formatAppsByCategory(records);
@@ -132,11 +132,11 @@ export default function FrenchReactNativePage({
       withFooter
       withContainer
       withHeader
-      callToActionLink={{ name: 'Work with us', href: '/' }}
+      callToActionLink={{ href: '/', name: 'Work with us' }}
       callToActionButton={{
-        name: 'Add your app',
         href: linksApi.airtable.FRENCH_REACT_NATIVE_APPS_FORM,
         isExternalLink: true,
+        name: 'Add your app',
       }}
       seoTitle="React Native Usage Among French Companies"
       ogImageTitle="React Native usage among French companies"

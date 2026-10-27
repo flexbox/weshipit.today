@@ -30,53 +30,53 @@ const SPOTS = 25;
 
 const faqs = [
   {
-    id: 'faq-as-1',
-    question: "J'ai besoin de quel niveau en IA pour suivre le sprint ?",
     answer:
       "Aucun. Le prérequis, c'est React Native et Git : tu sais ouvrir une PR et lire un diff. Si tu n'as jamais lancé Claude Code ou un outil équivalent, le live 1 part de zéro et tu repars avec ton environnement configuré sur ton propre repo.",
+    id: 'faq-as-1',
+    question: "J'ai besoin de quel niveau en IA pour suivre le sprint ?",
   },
   {
-    id: 'faq-as-2',
-    question: 'Ça marche avec Expo ? Avec du bare React Native ?',
     answer:
       "Les deux. Les exemples des lives tournent sur Expo (builds EAS), et on couvre les différences du bare workflow quand elles comptent — notamment sur les builds natifs et l'upgrade de SDK.",
+    id: 'faq-as-2',
+    question: 'Ça marche avec Expo ? Avec du bare React Native ?',
   },
   {
-    id: 'faq-as-3',
-    question: 'Combien coûtent les outils IA en plus du sprint ?',
     answer:
       "Compte environ 20 $/mois d'abonnement ou de crédits API pendant le sprint. C'est le seul coût en plus du prix d'inscription, et tu le sais avant de payer.",
+    id: 'faq-as-3',
+    question: 'Combien coûtent les outils IA en plus du sprint ?',
   },
   {
+    answer:
+      'Prévu. Tous les exercices se font en local chez toi, et les reviews de repos en live se font uniquement sur les repos des volontaires. Tu ne partages que ce que tu choisis de montrer — une PR floutée suffit pour la démo finale.',
     id: 'faq-as-4',
     question:
       "Je travaille sur l'app d'un client, je ne peux pas partager le code.",
-    answer:
-      'Prévu. Tous les exercices se font en local chez toi, et les reviews de repos en live se font uniquement sur les repos des volontaires. Tu ne partages que ce que tu choisis de montrer — une PR floutée suffit pour la démo finale.',
   },
   {
-    id: 'faq-as-5',
-    question: "Je n'ai pas d'app en production, juste un side project.",
     answer:
       "Ça marche si le projet est réel : du code, des écrans, un backlog. Tu profiteras moins de la semaine « triage de crashs Sentry », mais les agents de test, d'upgrade et de release s'appliquent à l'identique.",
+    id: 'faq-as-5',
+    question: "Je n'ai pas d'app en production, juste un side project.",
   },
   {
-    id: 'faq-as-6',
-    question: 'Les lives sont à 12h30, je ne peux pas toujours être là.',
     answer:
       'Les 4 lives sont enregistrés et les replays sont disponibles le jour même, à vie. Le support async sur Slack couvre tes questions entre deux lives — tu peux suivre le sprint entier en décalé.',
+    id: 'faq-as-6',
+    question: 'Les lives sont à 12h30, je ne peux pas toujours être là.',
   },
   {
-    id: 'faq-as-7',
-    question: "Et si l'IA me remplace ?",
     answer:
       "C'est la mauvaise question. Les développeurs React Native qui savent orchestrer des agents reviewent le travail de trois ; ceux qui ne savent pas seront reviewés. Ce sprint te met du bon côté de la review.",
+    id: 'faq-as-7',
+    question: "Et si l'IA me remplace ?",
   },
   {
-    id: 'faq-as-8',
-    question: "C'est remboursable si je change d'avis ?",
     answer:
       "Intégralement jusqu'au 11 septembre, veille du sprint. Après le début, c'est la garantie semaine 1 qui s'applique : si ton agent n'a pas ouvert sa première PR sur ton app à la fin de la semaine 1, en ayant fait les exercices, on te rembourse à 100 %.",
+    id: 'faq-as-8',
+    question: "C'est remboursable si je change d'avis ?",
   },
 ];
 
@@ -147,22 +147,22 @@ function HeroSection() {
 function ProblemeSection() {
   const pains = [
     {
-      icon: WrenchScrewdriverIcon,
-      title: 'Tes crashs Sentry s’empilent',
       description:
         'Et c’est toujours toi qui les triages, un par un, le lundi matin.',
+      icon: WrenchScrewdriverIcon,
+      title: 'Tes crashs Sentry s’empilent',
     },
     {
-      icon: ClipboardDocumentCheckIcon,
-      title: 'Tes tests E2E n’existent pas',
       description:
         'Ou plus personne ne les maintient depuis le dernier upgrade d’Expo.',
+      icon: ClipboardDocumentCheckIcon,
+      title: 'Tes tests E2E n’existent pas',
     },
     {
-      icon: RocketLaunchIcon,
-      title: 'Chaque release est une demi-journée',
       description:
         'Changelog, builds EAS, screenshots stores — à la main, à chaque fois.',
+      icon: RocketLaunchIcon,
+      title: 'Chaque release est une demi-journée',
     },
   ];
 
@@ -219,36 +219,36 @@ function ProblemeSection() {
 function ProgrammeSection() {
   const weeks = [
     {
-      week: 'Semaine 1',
       date: 'Live mardi 15 septembre · 12h30–14h',
-      title: 'Ton repo, lisible par un agent',
       description:
         'Les 4 actifs IA appliqués à React Native : le CLAUDE.md de ton projet, tes skills, ton design system, tes tâches programmées. Le scaffolding se fait sur ton repo, en live. Objectif de la semaine — et condition de la garantie : ton agent ouvre sa première PR avant le vendredi 18.',
       icon: CommandLineIcon,
+      title: 'Ton repo, lisible par un agent',
+      week: 'Semaine 1',
     },
     {
-      week: 'Semaine 2',
       date: 'Live mardi 22 septembre · 12h30–14h',
-      title: "L'agent qui répare",
       description:
         'Pipeline crash → fix : Sentry en entrée, PR de correctif en sortie. Tu configures le triage automatique sur tes vrais crashs et tu apprends à cadrer ce que l’agent a le droit de toucher.',
       icon: WrenchScrewdriverIcon,
+      title: "L'agent qui répare",
+      week: 'Semaine 2',
     },
     {
-      week: 'Semaine 3',
       date: 'Live mardi 29 septembre · 12h30–14h',
-      title: "L'agent qui teste",
       description:
         'L’agent Maestro : chaque bug corrigé génère son test E2E de non-régression. Ta suite de tests arrête de pourrir — elle grandit toute seule, à chaque fix.',
       icon: ClipboardDocumentCheckIcon,
+      title: "L'agent qui teste",
+      week: 'Semaine 3',
     },
     {
-      week: 'Semaine 4',
       date: 'Live mardi 6 octobre · 12h30–14h',
-      title: "L'agent qui release",
       description:
         'Upgrade Expo SDK assisté par agent, builds EAS, changelog et notes de version générés. Démo finale le vendredi 9 octobre : chaque participant montre une PR d’agent mergée sur son app.',
       icon: RocketLaunchIcon,
+      title: "L'agent qui release",
+      week: 'Semaine 4',
     },
   ];
 
@@ -410,34 +410,34 @@ function PourQuiSection() {
 function InclusSection() {
   const items = [
     {
-      icon: CalendarDaysIcon,
-      title: 'Le sprint complet',
       description:
         '4 lives de 1h30 (replays à vie), exercices guidés sur ton repo, review de repos en groupe, démo finale le 9 octobre.',
+      icon: CalendarDaysIcon,
+      title: 'Le sprint complet',
     },
     {
-      icon: BoltIcon,
-      title: 'Bonus 1 — 10 skills & agents RN prêts à l’emploi',
       description:
         'Triage Sentry, tests Maestro, upgrade Expo, release EAS, revue de PR RN, et 5 autres. À installer tels quels, puis à adapter à ton app.',
+      icon: BoltIcon,
+      title: 'Bonus 1 — 10 skills & agents RN prêts à l’emploi',
     },
     {
-      icon: ShieldCheckIcon,
-      title: 'Bonus 2 — La Stability Checklist, version guidée',
       description:
         'On score ton app ensemble en live : tu sais quoi automatiser en premier, et quoi laisser tranquille.',
+      icon: ShieldCheckIcon,
+      title: 'Bonus 2 — La Stability Checklist, version guidée',
     },
     {
-      icon: ChatBubbleLeftRightIcon,
-      title: 'Bonus 3 — 30 jours de support async',
       description:
         'Slack privé du batch, réponses de David & Matthys jusqu’au 9 novembre — le temps que tes agents tournent sans nous.',
+      icon: ChatBubbleLeftRightIcon,
+      title: 'Bonus 3 — 30 jours de support async',
     },
     {
-      icon: BookOpenIcon,
-      title: 'Bonus 4 — Le livre inclus',
       description:
         'Notre livre React Native en version numérique, dès ton inscription. Pour consolider les bases pendant que les agents font le reste.',
+      icon: BookOpenIcon,
+      title: 'Bonus 4 — Le livre inclus',
     },
   ];
 
@@ -702,10 +702,10 @@ export default function AgenticSprintPage() {
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: faqs.map(({ question, answer }) => ({
+    mainEntity: faqs.map(({ answer, question }) => ({
       '@type': 'Question',
-      name: question,
       acceptedAnswer: { '@type': 'Answer', text: answer },
+      name: question,
     })),
   };
 
@@ -715,15 +715,15 @@ export default function AgenticSprintPage() {
     itemListElement: [
       {
         '@type': 'ListItem',
-        position: 1,
-        name: 'Accueil',
         item: 'https://weshipit.today',
+        name: 'Accueil',
+        position: 1,
       },
       {
         '@type': 'ListItem',
-        position: 2,
-        name: 'Agentic Sprint React Native',
         item: 'https://weshipit.today/agentic-sprint',
+        name: 'Agentic Sprint React Native',
+        position: 2,
       },
     ],
   };
@@ -731,29 +731,29 @@ export default function AgenticSprintPage() {
   const courseSchema = {
     '@context': 'https://schema.org',
     '@type': 'Course',
-    name: 'Agentic Sprint React Native',
     description:
       "Batch en ligne d'un mois pour développeurs React Native : montez des agents IA qui triagent vos crashs Sentry, écrivent vos tests Maestro et préparent vos releases EAS. Un live par semaine, exercices sur votre propre app.",
-    provider: {
-      '@type': 'Organization',
-      name: 'weshipit.today',
-      sameAs: 'https://weshipit.today',
-    },
     hasCourseInstance: {
       '@type': 'CourseInstance',
       courseMode: 'online',
       courseWorkload: 'PT3H',
-      startDate: '2026-09-14',
       endDate: '2026-10-09',
       inLanguage: 'fr',
+      startDate: '2026-09-14',
     },
+    name: 'Agentic Sprint React Native',
     offers: {
       '@type': 'Offer',
-      url: 'https://weshipit.today/agentic-sprint',
-      priceCurrency: 'EUR',
-      price: String(PRICE_FOUNDING),
-      priceValidUntil: '2026-09-11',
       availability: 'https://schema.org/InStock',
+      price: String(PRICE_FOUNDING),
+      priceCurrency: 'EUR',
+      priceValidUntil: '2026-09-11',
+      url: 'https://weshipit.today/agentic-sprint',
+    },
+    provider: {
+      '@type': 'Organization',
+      name: 'weshipit.today',
+      sameAs: 'https://weshipit.today',
     },
   };
 
@@ -796,9 +796,9 @@ export default function AgenticSprintPage() {
         withHeader
         withFooter
         callToActionButton={{
-          name: CTA_LABEL_SHORT,
           href: CTA_URL,
           isExternalLink: true,
+          name: CTA_LABEL_SHORT,
         }}
       >
         <HeroSection />

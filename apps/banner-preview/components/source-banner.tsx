@@ -3,13 +3,13 @@ import { CONFIG } from '../config/config';
 const BANNER = CONFIG.banner;
 
 interface SourceBannerProps {
+  url?: string;
   width: number;
   height: number;
-  platform?: 'linkedin' | 'youtube' | 'x' | 'og';
   status?: string;
-  headline?: string;
   tagline?: string;
-  url?: string;
+  headline?: string;
+  platform?: 'linkedin' | 'youtube' | 'x' | 'og';
   // Absolute URLs to the interview logos. Rendered as a centered row at the
   // bottom of the safe band. Edge runtime can't read /public from arbitrary
   // paths, so the caller builds these from req.url.
@@ -20,24 +20,24 @@ interface SourceBannerProps {
 // Cross-platform intersection: LinkedIn 1584×396 ∩ YouTube mobile-safe
 // 1546×423 ∩ X 1500×500. Used as the default layout basis for any platform
 // that doesn't override (LinkedIn, OG).
-export const SAFE_BAND = { width: 1500, height: 396 };
+export const SAFE_BAND = { height: 396, width: 1500 };
 
 // YouTube's own mobile-safe area, per the official channel-art template.
 // Wider AND taller than the cross-platform intersection, so YouTube banners
 // get more breathing room when targeted explicitly.
-const YOUTUBE_MOBILE_SAFE = { width: 1546, height: 423 };
+const YOUTUBE_MOBILE_SAFE = { height: 423, width: 1546 };
 
 // Blueprint palette — mirrors libs/ui/src/lib/hero/phone-animation.tsx and the
 // website hero (slate-100 canvas, one blueprint blue, neutral-950 type to match
 // the `Text` heading variants).
 const BLUEPRINT_RGB = '47, 95, 224'; // LIGHT_RGB in phone-animation.tsx
 const COLORS = {
-  canvas: '#F1F5F9', // slate-100
-  ink: '#0A0A0A', // neutral-950
-  muted: '#64748B', // slate-500
   blueprint: `rgb(${BLUEPRINT_RGB})`,
   blueprintFaint: `rgba(${BLUEPRINT_RGB}, 0.09)`,
   blueprintInk: `rgba(${BLUEPRINT_RGB}, 0.65)`,
+  canvas: '#F1F5F9', // slate-100
+  ink: '#0A0A0A', // neutral-950
+  muted: '#64748B', // slate-500
   pill: '#FFFFFF',
   pillBorder: '#E2E8F0', // slate-200
   status: '#F97316', // orange-500
@@ -46,12 +46,12 @@ const COLORS = {
 // Phone blueprint geometry, lifted straight from phone-animation.tsx
 // (180×360 in CSS pixels at 1x, scaled here to safe-band height).
 const PHONE = {
-  width: 200,
   height: 380,
+  innerRadius: 20,
   radius: 30,
   screenInset: 10,
   screenInsetY: 30,
-  innerRadius: 20,
+  width: 200,
 };
 
 // Space Grotesk ships a `tt` ligature. Satori draws the ligature glyph but
@@ -62,15 +62,15 @@ function breakLigatures(text: string) {
 }
 
 export function SourceBanner({
-  width,
+  headline = BANNER.headline,
   height,
+  logoLabel = 'Interview de',
+  logos,
   platform,
   status = BANNER.status,
-  headline = BANNER.headline,
   tagline = BANNER.tagline,
   url = BANNER.url,
-  logos,
-  logoLabel = 'Interview de',
+  width,
 }: SourceBannerProps) {
   // Per-platform layout basis:
   // - YouTube uses its own mobile-safe area (1546×423) so the layout fills
@@ -175,25 +175,25 @@ export function SourceBanner({
   return (
     <div
       style={{
+        backgroundColor: COLORS.canvas,
         display: 'flex',
+        fontFamily: 'Inter, sans-serif',
+        height: `${height}px`,
+        overflow: 'hidden',
         position: 'relative',
         width: `${width}px`,
-        height: `${height}px`,
-        backgroundColor: COLORS.canvas,
-        fontFamily: 'Inter, sans-serif',
-        overflow: 'hidden',
       }}
     >
       {/* Graph-paper grid background (10px lines, like the phone animation) */}
       <div
         style={{
+          backgroundImage: `repeating-linear-gradient(to right, ${COLORS.blueprintFaint} 0 1px, transparent 1px 20px), repeating-linear-gradient(to bottom, ${COLORS.blueprintFaint} 0 1px, transparent 1px 20px)`,
           display: 'flex',
+          height: `${height}px`,
+          left: 0,
           position: 'absolute',
           top: 0,
-          left: 0,
           width: `${width}px`,
-          height: `${height}px`,
-          backgroundImage: `repeating-linear-gradient(to right, ${COLORS.blueprintFaint} 0 1px, transparent 1px 20px), repeating-linear-gradient(to bottom, ${COLORS.blueprintFaint} 0 1px, transparent 1px 20px)`,
         }}
       />
 
@@ -204,39 +204,39 @@ export function SourceBanner({
         style={{
           display: 'flex',
           flexDirection: 'column',
-          position: 'relative',
-          width: `${safeWidth}px`,
           height: `${safeHeight}px`,
           margin: 'auto',
+          position: 'relative',
+          width: `${safeWidth}px`,
         }}
       >
         {/* MAIN ROW — phone + content */}
         <div
           style={{
             display: 'flex',
-            width: `${safeWidth}px`,
             height: `${mainH}px`,
+            width: `${safeWidth}px`,
           }}
         >
           {/* LEFT — phone blueprint, bottom-aligned with cut */}
           <div
             style={{
+              alignItems: 'center',
               display: 'flex',
               flexDirection: 'column',
-              width: `${phoneColWidth}px`,
-              alignItems: 'center',
               justifyContent: 'flex-end',
               paddingLeft: `${padX}px`,
+              width: `${phoneColWidth}px`,
             }}
           >
             {/* Width label above the phone */}
             <div
               style={{
+                color: COLORS.blueprintInk,
                 display: 'flex',
-                marginBottom: `${Math.round(safeHeight * 0.02)}px`,
                 fontFamily: '"JetBrains Mono", monospace',
                 fontSize: `${Math.round(safeHeight * 0.04)}px`,
-                color: COLORS.blueprintInk,
+                marginBottom: `${Math.round(safeHeight * 0.02)}px`,
               }}
             >
               {PHONE.width}px
@@ -250,47 +250,47 @@ export function SourceBanner({
             style={{
               display: 'flex',
               flexDirection: 'column',
-              width: `${contentColWidth}px`,
-              paddingTop: `${padY}px`,
-              paddingLeft: `${padX}px`,
-              paddingBottom: '0px',
               gap: `${rowGap}px`,
+              paddingBottom: '0px',
+              paddingLeft: `${padX}px`,
+              paddingTop: `${padY}px`,
+              width: `${contentColWidth}px`,
             }}
           >
             {/* Top row — status pill + URL chip, both left-aligned. */}
             <div
               style={{
-                display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'flex-start',
+                display: 'flex',
                 gap: `${Math.round(padX * 0.6)}px`,
+                justifyContent: 'flex-start',
               }}
             >
               <div
                 style={{
-                  display: 'flex',
                   alignItems: 'center',
+                  backgroundColor: COLORS.pill,
+                  border: `1px solid ${COLORS.pillBorder}`,
+                  color: COLORS.ink,
+                  display: 'flex',
+                  fontSize: `${pillSize}px`,
+                  fontWeight: 500,
                   gap: `${Math.round(pillSize * 0.5)}px`,
+                  paddingBottom: `${Math.round(pillSize * 0.35)}px`,
                   paddingLeft: `${Math.round(pillSize * 0.75)}px`,
                   paddingRight: `${Math.round(pillSize * 0.95)}px`,
                   paddingTop: `${Math.round(pillSize * 0.35)}px`,
-                  paddingBottom: `${Math.round(pillSize * 0.35)}px`,
-                  fontSize: `${pillSize}px`,
-                  fontWeight: 500,
-                  color: COLORS.ink,
-                  backgroundColor: COLORS.pill,
-                  border: `1px solid ${COLORS.pillBorder}`,
                   // rounded-lg at text-sm, like the site's SpotLeft chip.
                   borderRadius: `${Math.round(pillSize * 0.57)}px`,
                 }}
               >
                 <span
                   style={{
-                    display: 'flex',
-                    width: `${Math.round(pillSize * 0.55)}px`,
-                    height: `${Math.round(pillSize * 0.55)}px`,
                     backgroundColor: COLORS.status,
                     borderRadius: '999px',
+                    display: 'flex',
+                    height: `${Math.round(pillSize * 0.55)}px`,
+                    width: `${Math.round(pillSize * 0.55)}px`,
                   }}
                 />
                 <span style={{ display: 'flex' }}>{status}</span>
@@ -298,10 +298,10 @@ export function SourceBanner({
 
               <div
                 style={{
-                  display: 'flex',
-                  fontSize: `${chipSize}px`,
-                  fontFamily: '"JetBrains Mono", monospace',
                   color: COLORS.blueprint,
+                  display: 'flex',
+                  fontFamily: '"JetBrains Mono", monospace',
+                  fontSize: `${chipSize}px`,
                   fontWeight: 400,
                 }}
               >
@@ -315,15 +315,15 @@ export function SourceBanner({
                 copywriter controls the line break, not the layout engine. */}
             <div
               style={{
-                display: 'flex',
-                width: `${headlineWidth}px`,
-                fontSize: `${headlineSize}px`,
-                fontFamily: '"Space Grotesk", sans-serif',
-                fontWeight: 700,
                 color: COLORS.ink,
-                lineHeight: 1.05,
+                display: 'flex',
+                fontFamily: '"Space Grotesk", sans-serif',
+                fontSize: `${headlineSize}px`,
+                fontWeight: 700,
                 letterSpacing: '-0.03em',
+                lineHeight: 1.05,
                 whiteSpace: 'pre-line',
+                width: `${headlineWidth}px`,
               }}
             >
               {breakLigatures(headline)}
@@ -332,12 +332,12 @@ export function SourceBanner({
             {/* Tagline — metrics with emoji */}
             <div
               style={{
+                color: COLORS.muted,
                 display: 'flex',
-                width: `${headlineWidth}px`,
                 fontSize: `${taglineSize}px`,
                 fontWeight: 400,
-                color: COLORS.muted,
                 lineHeight: 1.4,
+                width: `${headlineWidth}px`,
               }}
             >
               {tagline}
@@ -351,23 +351,23 @@ export function SourceBanner({
         {hasLogos && (
           <div
             style={{
-              display: 'flex',
               alignItems: 'center',
-              justifyContent: 'flex-start',
-              width: `${safeWidth}px`,
-              height: `${footerH}px`,
+              display: 'flex',
               gap: `${logoGap}px`,
+              height: `${footerH}px`,
+              justifyContent: 'flex-start',
               paddingLeft: `${footerPaddingLeft}px`,
               paddingRight: `${padX}px`,
+              width: `${safeWidth}px`,
             }}
           >
             {showLogoLabel && (
               <span
                 style={{
+                  color: COLORS.blueprint,
                   display: 'flex',
                   fontFamily: '"JetBrains Mono", monospace',
                   fontSize: `${logoLabelSize}px`,
-                  color: COLORS.blueprint,
                   whiteSpace: 'nowrap',
                 }}
               >
@@ -381,12 +381,12 @@ export function SourceBanner({
               <div
                 key={src}
                 style={{
+                  backgroundColor: COLORS.pill,
+                  borderRadius: `${Math.round(logoH * 0.18)}px`,
                   display: 'flex',
-                  width: `${logoH}px`,
                   height: `${logoH}px`,
                   overflow: 'hidden',
-                  borderRadius: `${Math.round(logoH * 0.18)}px`,
-                  backgroundColor: COLORS.pill,
+                  width: `${logoH}px`,
                 }}
               >
                 <img
@@ -395,9 +395,9 @@ export function SourceBanner({
                   height={logoH}
                   style={{
                     display: 'flex',
-                    width: `${logoH}px`,
                     height: `${logoH}px`,
                     objectFit: 'cover',
+                    width: `${logoH}px`,
                   }}
                 />
               </div>
@@ -411,7 +411,7 @@ export function SourceBanner({
 
 // Static SVG version of the animated phone blueprint. The parent decides how
 // much of the phone is visible — this component just renders the full thing.
-function PhoneBlueprint({ width, height }: { width: number; height: number }) {
+function PhoneBlueprint({ height, width }: { width: number; height: number }) {
   // Drawing in PhoneBlueprint's own viewBox (PHONE coordinate space) for
   // pixel-perfect parity with phone-animation.tsx; we scale via width/height.
   const w = PHONE.width;
@@ -426,8 +426,8 @@ function PhoneBlueprint({ width, height }: { width: number; height: number }) {
     <div
       style={{
         display: 'flex',
-        width: `${width}px`,
         height: `${height}px`,
+        width: `${width}px`,
       }}
     >
       <svg

@@ -1,5 +1,10 @@
 export interface frenchApp {
   name: string;
+  logo_url: string;
+  ios_url?: string | null;
+  android_url?: string | null;
+  website_url?: string | null;
+  podcast_url?: string | null;
   category:
     | 'Books'
     | 'Business'
@@ -27,11 +32,6 @@ export interface frenchApp {
     | 'Travel'
     | 'Utilities'
     | 'Weather';
-  logo_url: string;
-  ios_url?: string | null;
-  android_url?: string | null;
-  website_url?: string | null;
-  podcast_url?: string | null;
 }
 
 export interface frenchApps {
@@ -53,189 +53,189 @@ export const frenchAppsFixture: frenchApps = {
     //   podcast_url: '', // get it from https://open.spotify.com/show/69dZrIeMZ2S2QELCGp6gW1
     // },
     {
-      name: 'Upstream',
       category: 'Productivity',
-      website_url: 'https://www.upstream.do/',
       ios_url: 'https://apps.apple.com/fr/app/upstream-email/id6751403722',
       logo_url:
         'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/f7/dd/d9/f7ddd9f6-7a82-e124-5041-094930c91366/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/350x350.png',
+      name: 'Upstream',
       podcast_url: 'https://open.spotify.com/episode/15c4xt4EuU3C2BLeaJAzyl',
+      website_url: 'https://www.upstream.do/',
     },
     {
-      name: 'SaxoTools',
-      category: 'Music',
-      website_url: 'https://www.saxotools.com/',
       android_url:
         'https://play.google.com/store/apps/details?id=com.saxotools&hl=fr',
+      category: 'Music',
       ios_url: 'https://apps.apple.com/fr/app/saxotools/id6448632359',
       logo_url:
         'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/0a/52/fa/0a52fa97-f0e0-9b31-879d-65b1bcf3ced1/AppIcon-0-0-1x_U007epad-0-1-85-220.png/460x0w.webp',
+      name: 'SaxoTools',
       podcast_url:
         'https://open.spotify.com/episode/3tYS4XStjhwtqqPenqRL2m?si=c18878edf75f48bc',
+      website_url: 'https://www.saxotools.com/',
     },
     {
-      name: 'Osly Solutions',
-      category: 'Utilities',
-      website_url: 'https://oslysolutions.fr/',
       android_url:
         'https://play.google.com/store/apps/details?id=com.oslysolutions&hl=fr',
+      category: 'Utilities',
       ios_url: 'https://apps.apple.com/fr/app/osly-solutions/id6462306150',
       logo_url:
         'https://play-lh.googleusercontent.com/oYXDBmmS787ECAwswssYo5gsyKWb2_gBaSNke0ZHnLRo3CJAsTqnEruyzf1KJ7gKfd-ejR9R8JGPX8bsaATNxg=w480-h960',
+      name: 'Osly Solutions',
       podcast_url:
         'https://open.spotify.com/episode/2qQDkRi66lzMSKnZA39YOj?si=d8549c280ab74432',
+      website_url: 'https://oslysolutions.fr/',
     },
     {
-      name: 'KicksFolio',
-      category: 'Shopping',
-      website_url: 'https://www.kicksfolio.com/',
       android_url:
         'https://play.google.com/store/apps/details?id=app.kicksfolio&hl=fr',
+      category: 'Shopping',
       ios_url: 'https://apps.apple.com/fr/app/kicksfolio/id6740185181',
       logo_url:
         'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/a3/2e/e1/a32ee136-3d13-baf8-16bd-8df2ce42cc45/AppIcon-0-0-1x_U007epad-0-1-85-220.png/460x0w.webp',
+      name: 'KicksFolio',
       podcast_url:
         'https://open.spotify.com/episode/5O89q9TOfDhsJNCC9H89xV?si=177c75f197ee4878',
+      website_url: 'https://www.kicksfolio.com/',
     },
     {
-      name: 'Odisei Play',
-      category: 'Music',
-      website_url: 'https://odiseimusic.com/fr/odisei-play/',
       android_url:
         'https://play.google.com/store/apps/details?id=com.travelsaxv2',
+      category: 'Music',
       ios_url: 'https://apps.apple.com/fr/app/odisei-play/id6748117099',
       logo_url:
         'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/8f/52/bd/8f52bdf6-2921-4f8d-1067-c9a819650162/AppIcon-0-0-1x_U007epad-0-1-85-220.png/460x0w.webp',
+      name: 'Odisei Play',
       podcast_url:
         'https://open.spotify.com/episode/1ym8Ydg6M3QTuP5xiThsIQ?si=b86c19c9ec12453b',
+      website_url: 'https://odiseimusic.com/fr/odisei-play/',
     },
     {
-      name: 'Rosk',
-      category: 'Business',
-      website_url: 'https://www.rosk.com/',
       android_url:
         'https://play.google.com/store/apps/details?id=com.rosk&hl=fr',
+      category: 'Business',
       ios_url: 'https://apps.apple.com/fr/app/rosk/id6741195304',
       logo_url:
         'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/19/4f/1c/194f1c93-84aa-517e-d989-5958ce66f60b/AppIcon-0-0-1x_U007epad-0-1-85-220.png/246x0w.webp',
+      name: 'Rosk',
       podcast_url:
         'https://open.spotify.com/episode/7oDLs8BUb1TFYUeBZ4Cnys?si=0af04e2dfe2e4596',
+      website_url: 'https://www.rosk.com/',
     },
     {
-      name: 'ControlResell',
-      category: 'Shopping',
       android_url:
         'https://play.google.com/store/apps/details?id=com.lyesbenchoubane.controlresell&hl=en',
+      category: 'Shopping',
       ios_url:
         'https://apps.apple.com/fr/app/controlresell-stock-inventaire/id6447619941',
       logo_url:
         'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/25/f8/fd/25f8fd8f-f7ad-7f3b-f804-0bd64c124532/AppIcon-0-0-1x_U007ephone-0-1-85-220.png/460x0w.webp',
-      website_url: 'https://www.controlresell.com/',
+      name: 'ControlResell',
       podcast_url:
         'https://open.spotify.com/episode/1Pet3tskRm0E64ftDt00n9?si=6fc1dcfdb4734c65',
+      website_url: 'https://www.controlresell.com/',
     },
     {
-      name: 'Mangacollec',
-      category: 'Books',
       android_url:
         'https://play.google.com/store/apps/details?id=com.mangacollec',
+      category: 'Books',
       ios_url: 'https://apps.apple.com/fr/app/mangacollec/id1178656045',
       logo_url:
         'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/13/60/fc/1360fc54-4755-0359-adab-2414d735ec68/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/460x0w.webp',
-      website_url: 'https://www.mangacollec.com/',
+      name: 'Mangacollec',
       podcast_url:
         'https://open.spotify.com/episode/6guQ03HE7yadwX369y0zjn?si=ee5c8f18db7c4595',
+      website_url: 'https://www.mangacollec.com/',
     },
     {
-      name: 'Pacevisor',
-      category: 'Health & Fitness',
       android_url:
         'https://pacevisor.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fandroid-download.9e23af6e.png&w=640&q=75',
+      category: 'Health & Fitness',
       ios_url:
         'https://apps.apple.com/fr/app/pacevisor-convertisseur-course/id1488948143',
       logo_url:
         'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/4b/f4/41/4bf4416f-f939-83ac-7d2b-d18f7fd888c2/AppIcon-0-0-1x_U007epad-0-1-85-220.png/460x0w.webp',
-      website_url: 'https://pacevisor.com/',
+      name: 'Pacevisor',
       podcast_url:
         'https://open.spotify.com/episode/4VyluvJMpxAOvTPS0Cbj3k?si=1e9e942c1cc64ee9',
+      website_url: 'https://pacevisor.com/',
     },
     {
-      name: 'Mūcho',
-      category: 'Lifestyle',
       android_url:
         'https://play.google.com/store/apps/details?id=fr.getmucho.app&pcampaignid=web_share',
+      category: 'Lifestyle',
       ios_url: 'https://apps.apple.com/fr/app/mucho/id6737886597',
       logo_url:
         'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/e8/fb/dd/e8fbdd06-cdf2-bc6c-7e3c-f9853f82aa1b/AppIcon-0-0-1x_U007epad-0-85-220.png/460x0w.webp',
-      website_url: 'https://www.getmucho.fr/',
+      name: 'Mūcho',
       podcast_url:
         'https://open.spotify.com/episode/1uF2VZH5rs5eXeUAPpVNQQ?si=e8fbd76d663642ef',
+      website_url: 'https://www.getmucho.fr/',
     },
     {
-      name: 'Swan',
-      category: 'Finance',
       android_url:
         'https://play.google.com/store/apps/dev?id=5935141824663336810',
+      category: 'Finance',
       ios_url: 'https://apps.apple.com/fr/app/swan/id1536581956',
       logo_url:
         'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/ec/ca/c7/eccac76a-0a83-5ff4-d878-1b0915922572/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/460x0w.webp',
-      website_url: 'https://swan.io/',
+      name: 'Swan',
       podcast_url:
         'https://open.spotify.com/episode/6OFwNSER1iNx1K5Scoge4t?si=d05827ceda464775',
+      website_url: 'https://swan.io/',
     },
     {
-      name: 'Cdiscount',
-      category: 'Shopping',
       android_url:
         'https://play.google.com/store/apps/details?id=cdiscount.mobile',
+      category: 'Shopping',
       ios_url: 'https://apps.apple.com/fr/app/cdiscount/id398364165',
       logo_url:
         'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/50/72/01/507201ee-d376-6f51-c94d-cf9d3bdd3c7b/AppIcon-0-0-1x_U007epad-0-1-85-220.png/460x0w.webp',
+      name: 'Cdiscount',
       podcast_url:
         'https://open.spotify.com/episode/4u0RkE3y1gkCpFtpppk25t?si=a6ed852bde0b4dfa',
       website_url: 'https://www.cdiscount.com/',
     },
     {
-      name: 'Finary',
-      category: 'Finance',
       android_url:
         'https://play.google.com/store/apps/details?id=com.finary.main',
+      category: 'Finance',
       ios_url:
         'https://apps.apple.com/fr/app/finary-patrimoine-bitcoin/id1569413444',
       logo_url:
         'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/c2/36/b9/c236b9c8-e3cf-42e0-9570-e486c4637995/AppIcon-0-0-1x_U007epad-0-1-85-220.png/460x0w.webp',
+      name: 'Finary',
       website_url: 'https://finary.com/',
     },
     {
-      name: 'Hivebrite',
       category: 'Social Networking',
       logo_url:
         'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/8d/24/e1/8d24e1ae-3675-0673-2d98-17e19f580ea7/AppIcon-0-0-1x_U007ephone-0-85-220.png/460x0w.webp',
+      name: 'Hivebrite',
       website_url: 'https://hivebrite.io/mobile-app',
     },
     {
-      name: 'Ledger',
-      category: 'Finance',
       android_url:
         'https://play.google.com/store/apps/details?id=com.ledger.live&hl=en&gl=US',
+      category: 'Finance',
       ios_url:
         'https://apps.apple.com/us/app/ledger-live-crypto-nft-app/id1361671700',
       logo_url:
         'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/dd/4b/6f/dd4b6f3c-a3e2-ed8d-0fc6-bea54a6be730/AppIcon-0-0-1x_U007emarketing-0-10-0-85-220.png/460x0w.webp',
+      name: 'Ledger',
       website_url: 'https://www.ledger.com/ledger-live',
     },
     {
-      name: 'Ornikar',
-      category: 'Education',
       android_url:
         'https://play.google.com/store/apps/details?id=com.ornikar.learning&hl=fr',
+      category: 'Education',
       ios_url:
         'https://apps.apple.com/fr/app/ornikar-code-et-permis/id1612432450',
       logo_url:
         'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/fc/6e/17/fc6e171e-cd14-d36a-91e7-387da9c61439/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/460x0w.webp',
-      website_url: 'https://www.ornikar.com/a-propos/app-mobile',
+      name: 'Ornikar',
       podcast_url:
         'https://open.spotify.com/episode/7nKJ4uxFPnhv2TMf28eqEJ?si=c84fbf441ad04acf',
+      website_url: 'https://www.ornikar.com/a-propos/app-mobile',
     },
     {
       android_url:
@@ -321,7 +321,6 @@ export const frenchAppsFixture: frenchApps = {
       website_url: 'https://morphy.fr/',
     },
     {
-      name: 'Shine',
       android_url:
         'https://play.google.com/store/apps/details?id=com.shine.app',
       category: 'Finance',
@@ -329,17 +328,18 @@ export const frenchAppsFixture: frenchApps = {
         'https://apps.apple.com/fr/app/shine-compte-pro-en-ligne/id1159779855',
       logo_url:
         'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/24/4e/af/244eaf1e-fa84-898a-535b-2a2fa7abd8dc/AppIcon-0-0-1x_U007epad-0-85-220.png/460x0w.webp',
-      website_url: 'https://www.shine.fr/',
+      name: 'Shine',
       podcast_url: 'https://open.spotify.com/episode/273rWVjbCwhsAUUibuxHQF',
+      website_url: 'https://www.shine.fr/',
     },
     {
-      name: 'Matera',
       android_url:
         'https://play.google.com/store/apps/details?id=eu.matera.app',
       category: 'Business',
       ios_url: 'https://apps.apple.com/fr/app/matera/id1501663391',
       logo_url:
         'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/2f/56/b7/2f56b72d-237c-98fe-94ae-9189b7d7a9f4/AppIcon-production-0-0-1x_U007emarketing-0-7-0-0-85-220.png/460x0w.webp',
+      name: 'Matera',
       website_url: 'https://matera.eu/fr',
     },
     {
@@ -373,8 +373,8 @@ export const frenchAppsFixture: frenchApps = {
       logo_url:
         'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/9a/09/4b/9a094bd4-54b6-4f58-9c1c-c5cff1135deb/AppIcon-0-0-1x_U007emarketing-0-7-0-85-220.png/460x0w.webp',
       name: 'Doctolib',
-      website_url: 'https://www.doctolib.fr/',
       podcast_url: 'https://open.spotify.com/episode/6DJaZSwTFJTK8SIT5O7EMF',
+      website_url: 'https://www.doctolib.fr/',
     },
     {
       android_url:
@@ -394,9 +394,9 @@ export const frenchAppsFixture: frenchApps = {
       logo_url:
         'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/9c/a7/a4/9ca7a47f-c6ef-41ea-4965-c746df6505df/AppIcon-0-0-1x_U007emarketing-0-5-0-0-85-220.png/460x0w.webp',
       name: 'ShareLock',
-      website_url: 'https://www.sharelock.co/',
       podcast_url:
         'https://open.spotify.com/episode/2zOddvp0or5uyg97FSGMkA?si=e6ace9e1ae6a4caf',
+      website_url: 'https://www.sharelock.co/',
     },
     {
       android_url:
@@ -546,8 +546,8 @@ export const frenchAppsFixture: frenchApps = {
       logo_url:
         'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/6d/f3/a2/6df3a215-ea30-6e7a-9994-8c10c37327ab/AppIcon-0-0-1x_U007epad-0-1-85-220.png/460x0w.webp',
       name: 'Ekklo',
-      website_url: 'https://www.ekklo.com/',
       podcast_url: 'https://open.spotify.com/episode/06y8m0c9yQyrkp9ZDmQKRq',
+      website_url: 'https://www.ekklo.com/',
     },
     {
       android_url:
@@ -557,8 +557,8 @@ export const frenchAppsFixture: frenchApps = {
       logo_url:
         'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/d9/02/d6/d902d64d-7b2b-bff6-bb72-2e13adbf6b12/AppIcon_ilevia-0-0-1x_U007epad-0-1-0-85-220.png/460x0w.webp',
       name: 'Ilévia',
-      website_url: 'https://www.ilevia.com/',
       podcast_url: 'https://open.spotify.com/episode/5Ul1mOJ5iCg1JhJgkTCMmO',
+      website_url: 'https://www.ilevia.com/',
     },
   ],
 };

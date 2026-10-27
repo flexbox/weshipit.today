@@ -6,37 +6,37 @@ import { StackAudit } from '../components/stack-audit';
 
 const FAQ_ITEMS = [
   {
-    question: "Combien de temps prend l'audit gratuit ?",
     answer:
       '3 minutes environ. 32 questions réparties en 4 catégories : fondations, écosystème, couche data et devops. Vous répondez par Oui, Incertain ou Non.',
+    question: "Combien de temps prend l'audit gratuit ?",
   },
   {
-    question: 'Dois-je donner mon email pour voir mon score ?',
     answer:
       "Non. Votre score sur 100 et le détail par catégorie s'affichent immédiatement. L'email sert uniquement à recevoir le rapport détaillé avec les recommandations priorisées.",
+    question: 'Dois-je donner mon email pour voir mon score ?',
   },
   {
-    question: "D'où viennent les 32 questions ?",
     answer:
       "C'est la grille utilisée lors de nos audits d'architecture React Native pour des apps qui gèrent des millions d'utilisateurs (Alan, Cdiscount, Swan). Nous l'avons transformée en checklist auto-administrée.",
+    question: "D'où viennent les 32 questions ?",
   },
   {
-    question: 'Que faire si mon score est faible ?',
     answer:
       'Un score sous 70 signale de la dette technique à traiter avant de scaler. Le rapport email priorise vos points faibles par impact et effort, et notre équipe peut réaliser un audit complet de votre codebase en 2 semaines.',
+    question: 'Que faire si mon score est faible ?',
   },
 ];
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: FAQ_ITEMS.map(({ question, answer }) => ({
+  mainEntity: FAQ_ITEMS.map(({ answer, question }) => ({
     '@type': 'Question',
-    name: question,
     acceptedAnswer: {
       '@type': 'Answer',
       text: answer,
     },
+    name: question,
   })),
 };
 
@@ -134,7 +134,7 @@ export default function AuditGratuit() {
             <h2>Questions fréquentes</h2>
           </Prose>
           <dl className="mt-6 divide-y divide-gray-200 dark:divide-gray-800">
-            {FAQ_ITEMS.map(({ question, answer }) => (
+            {FAQ_ITEMS.map(({ answer, question }) => (
               <div key={question} className="py-6">
                 <dt className="text-balance text-base font-semibold text-gray-900 dark:text-gray-100">
                   {question}

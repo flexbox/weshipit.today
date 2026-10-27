@@ -55,8 +55,8 @@ export function useInView<T extends Element>(ref: React.RefObject<T | null>) {
 }
 
 export function Stage({
-  className,
   children,
+  className,
 }: {
   className: string;
   children: React.ReactNode;

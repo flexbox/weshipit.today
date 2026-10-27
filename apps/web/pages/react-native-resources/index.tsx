@@ -200,15 +200,15 @@ export default function ReactNativeResourcesPage({
       withHeader
       withFooter
       navigation={[
-        { name: 'Guides', href: '#guides' },
-        { name: 'Newsletters', href: '#newsletters' },
-        { name: 'Podcasts', href: '#podcasts' },
-        { name: 'Conferences', href: '#conferences' },
+        { href: '#guides', name: 'Guides' },
+        { href: '#newsletters', name: 'Newsletters' },
+        { href: '#podcasts', name: 'Podcasts' },
+        { href: '#conferences', name: 'Conferences' },
       ]}
       callToActionButton={{
-        name: 'Add resource',
         href: 'https://github.com/flexbox/weshipit.today/blob/main/apps/web/fixtures/resources.fixture.ts',
         isExternalLink: true,
+        name: 'Add resource',
       }}
     >
       <div className="bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-400 py-12 md:py-20 mb-12">
