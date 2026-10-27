@@ -5,7 +5,10 @@ import { ClientsList } from './clients-list';
 describe('ClientsList', () => {
   it('should render successfully', () => {
     const { baseElement } = render(
-      <ClientsList clients={clientsListFixture} />
+      <ClientsList
+        clients={clientsListFixture}
+        hrefOnboarding="https://cal.com/davidl/weshipit-onboarding"
+      />,
     );
     expect(baseElement).toBeTruthy();
   });

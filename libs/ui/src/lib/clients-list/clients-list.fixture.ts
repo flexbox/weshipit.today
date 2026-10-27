@@ -1,7 +1,10 @@
-export const clientsListFixture = [
+import type { ClientProps } from './clients-list';
+
+export const clientsListFixture: ClientProps[] = [
   {
     data: {
       id: '2',
+      is_audit: false,
       is_visible_homepage: true,
       logo: {
         url: 'https://avatars.githubusercontent.com/u/4621061?s=200&v=4',
@@ -13,6 +16,7 @@ export const clientsListFixture = [
   {
     data: {
       id: '3',
+      is_audit: true,
       is_visible_homepage: true,
       logo: {
         url: 'https://avatars.githubusercontent.com/u/14985020?s=200&v=4',
@@ -24,6 +28,7 @@ export const clientsListFixture = [
   {
     data: {
       id: '3',
+      is_audit: false,
       is_visible_homepage: true,
       logo: {
         url: 'https://avatars.githubusercontent.com/u/12504344?s=200&v=4',
@@ -35,6 +40,7 @@ export const clientsListFixture = [
   {
     data: {
       id: '26',
+      is_audit: false,
       is_visible_homepage: true,
       logo: {
         url: 'https://avatars.githubusercontent.com/u/1261889?s=200&v=4',
@@ -46,6 +52,7 @@ export const clientsListFixture = [
   {
     data: {
       id: '12',
+      is_audit: false,
       is_visible_homepage: false,
       logo: {
         url: 'https://avatars.githubusercontent.com/u/23692104?s=200&v=4',
@@ -57,6 +64,7 @@ export const clientsListFixture = [
   {
     data: {
       id: '56',
+      is_audit: false,
       is_visible_homepage: true,
       logo: {
         url: 'https://avatars.githubusercontent.com/u/5470001?s=200&v=4',
@@ -68,6 +76,7 @@ export const clientsListFixture = [
   {
     data: {
       id: '312',
+      is_audit: false,
       is_visible_homepage: false,
       logo: {
         url: 'https://avatars.githubusercontent.com/u/9919?s=200&v=4',
@@ -79,6 +88,7 @@ export const clientsListFixture = [
   {
     data: {
       id: '312',
+      is_audit: false,
       is_visible_homepage: false,
       logo: {
         url: 'https://avatars.githubusercontent.com/u/3902527?s=200&v=4',
@@ -90,6 +100,7 @@ export const clientsListFixture = [
   {
     data: {
       id: '312',
+      is_audit: true,
       is_visible_homepage: false,
       logo: {
         url: 'https://avatars.githubusercontent.com/u/13966722?s=200&v=4',
