@@ -67,7 +67,6 @@
     "@tailwindcss/typography": "^0.5.16",
     "@types/md5": "^2.3.5",
     "@vercel/analytics": "^2.0.1",
-    "@vercel/og": "^1.0.3",
     "@vercel/speed-insights": "^2.0.0",
     "anatomy-figures": "^0.1.0",
     "autoprefixer": "^10.4.20",

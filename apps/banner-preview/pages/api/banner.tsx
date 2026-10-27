@@ -1,11 +1,9 @@
-import { ImageResponse } from '@vercel/og';
-import { NextRequest } from 'next/server';
+import { readFile } from 'node:fs/promises';
+import { join } from 'node:path';
+import type { NextApiRequest, NextApiResponse } from 'next';
+import { ImageResponse } from 'next/og';
 
 import { SourceBanner } from '../../components/source-banner';
-
-export const config = {
-  runtime: 'edge',
-};
 
 const interRegular = fetch(
   new URL(
@@ -53,7 +51,8 @@ function isPlatform(value: string | null): value is Platform {
 }
 
 // Interview logos rendered in the banner footer, ordered by episode number
-// (oldest interview first). Files live under /public/images/podcast-logos/.
+// (oldest interview first). Files live under /public/images/podcast-logos/
+// and are read from disk; next.config.js traces them into the function.
 // Stored as PNG because Satori's webp decoder silently drops images, and
 // odisei-music originally came in as JPG.
 const INTERVIEW_LOGOS: ReadonlyArray<{ slug: string; ext: 'png' | 'jpg' }> = [
@@ -70,41 +69,52 @@ const INTERVIEW_LOGOS: ReadonlyArray<{ slug: string; ext: 'png' | 'jpg' }> = [
   { slug: 'skia', ext: 'png' }, // #24
 ];
 
-export default async function handler(req: NextRequest) {
+const LOGO_DIR = join(process.cwd(), 'public/images/podcast-logos');
+
+const logos = Promise.all(
+  INTERVIEW_LOGOS.map(async ({ slug, ext }) => {
+    const data = await readFile(join(LOGO_DIR, `${slug}.${ext}`));
+    const mime = ext === 'jpg' ? 'image/jpeg' : 'image/png';
+    return `data:${mime};base64,${data.toString('base64')}`;
+  }),
+);
+
+const queryParam = (value: string | string[] | undefined) =>
+  (Array.isArray(value) ? value[0] : value) ?? null;
+
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse,
+) {
   try {
-    const { searchParams } = new URL(req.url);
-    const platformParam = searchParams.get('platform');
+    const platformParam = queryParam(req.query.platform);
 
     if (!isPlatform(platformParam)) {
-      return new Response(
-        'Missing or invalid "platform" query param. Use linkedin, youtube, x, or og.',
-        { status: 400 },
-      );
+      res
+        .status(400)
+        .send(
+          'Missing or invalid "platform" query param. Use linkedin, youtube, x, or og.',
+        );
+      return;
     }
 
     const { width, height } = PLATFORM_SIZES[platformParam];
 
-    const headline = searchParams.get('headline') ?? undefined;
-    const tagline = searchParams.get('tagline') ?? undefined;
-    const status = searchParams.get('status') ?? undefined;
-    const url = searchParams.get('url') ?? undefined;
+    const headline = queryParam(req.query.headline) ?? undefined;
+    const tagline = queryParam(req.query.tagline) ?? undefined;
+    const status = queryParam(req.query.status) ?? undefined;
+    const url = queryParam(req.query.url) ?? undefined;
 
-    // Build absolute URLs to the public-served interview logos. Satori
-    // can't resolve relative paths — it fetches each URL at render time.
-    const origin = new URL(req.url).origin;
-    const logos = INTERVIEW_LOGOS.map(
-      ({ slug, ext }) => `${origin}/images/podcast-logos/${slug}.${ext}`,
-    );
-
-    const [regularData, mediumData, displayData, monoRegularData] =
+    const [regularData, mediumData, displayData, monoRegularData, logoData] =
       await Promise.all([
         interRegular,
         interMedium,
         spaceGroteskBold,
         jetbrainsMonoRegular,
+        logos,
       ]);
 
-    return new ImageResponse(
+    const image = new ImageResponse(
       (
         <SourceBanner
           width={width}
@@ -114,7 +124,7 @@ export default async function handler(req: NextRequest) {
           headline={headline}
           tagline={tagline}
           url={url}
-          logos={logos}
+          logos={logoData}
         />
       ),
       {
@@ -149,9 +159,18 @@ export default async function handler(req: NextRequest) {
         ],
       },
     );
+
+    const png = Buffer.from(await image.arrayBuffer());
+    res.setHeader('Content-Type', 'image/png');
+    // Same header @vercel/og's ImageResponse sent before the migration.
+    res.setHeader(
+      'Cache-Control',
+      'public, immutable, no-transform, max-age=31536000',
+    );
+    res.status(200).send(png);
   } catch (e) {
     const message = e instanceof Error ? e.message : 'Unknown error';
     console.error(message);
-    return new Response('Failed to generate banner', { status: 500 });
+    res.status(500).send('Failed to generate banner');
   }
 }

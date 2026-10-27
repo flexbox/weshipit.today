@@ -5,6 +5,11 @@ const { PHASE_DEVELOPMENT_SERVER } = require('next/constants');
  * @type {import('next').NextConfig}
  **/
 const nextConfig = {
+  // /api/banner reads the interview logos with fs at runtime; make sure
+  // Vercel bundles them with the function.
+  outputFileTracingIncludes: {
+    '/api/banner': ['./public/images/podcast-logos/**'],
+  },
   images: {
     remotePatterns: [
       {
