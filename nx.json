@@ -1,11 +1,23 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "targetDefaults": {
-    "build": {
-      "dependsOn": ["^build"],
-      "inputs": ["production", "^production"],
-      "cache": true
-    },
+    "build": [
+      {
+        "dependsOn": ["^build"],
+        "inputs": ["production", "^production"],
+        "cache": true
+      },
+      {
+        "filter": {
+          "plugin": "@nx/next/plugin"
+        },
+        "defaultConfiguration": "production",
+        "configurations": {
+          "development": {},
+          "production": {}
+        }
+      }
+    ],
     "e2e": {
       "inputs": ["default", "^production"],
       "cache": true
@@ -20,28 +32,34 @@
       ],
       "cache": true
     },
-    "@nx/jest:jest": {
-      "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"],
-      "cache": true,
-      "options": {
-        "passWithNoTests": true
-      },
-      "configurations": {
-        "ci": {
-          "ci": true,
-          "codeCoverage": true
+    "test": [
+      {
+        "filter": {
+          "plugin": "@nx/jest/plugin"
+        },
+        "configurations": {
+          "ci": {
+            "ci": true,
+            "coverage": true
+          }
+        },
+        "options": {
+          "passWithNoTests": true
         }
       }
-    },
-    "@nx/eslint:lint": {
-      "inputs": [
-        "default",
-        "^default",
-        "{workspaceRoot}/eslint.config.js",
-        "{workspaceRoot}/tools/eslint-rules/**/*"
-      ],
-      "cache": true
-    }
+    ],
+    "serve": [
+      {
+        "filter": {
+          "plugin": "@nx/next/plugin"
+        },
+        "defaultConfiguration": "development",
+        "configurations": {
+          "development": {},
+          "production": {}
+        }
+      }
+    ]
   },
   "workspaceLayout": {
     "appsDir": "apps",
@@ -89,6 +107,14 @@
       }
     },
     {
+      "plugin": "@nx/js/typescript",
+      "options": {
+        "typecheck": {
+          "targetName": "typecheck"
+        }
+      }
+    },
+    {
       "plugin": "@nx/vite/plugin",
       "options": {
         "buildTargetName": "build",
@@ -102,8 +128,36 @@
       "options": {
         "testTargetName": "test"
       }
+    },
+    {
+      "plugin": "@nx/jest/plugin",
+      "options": {
+        "targetName": "test"
+      }
+    },
+    {
+      "plugin": "@nx/next/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "devTargetName": "serve",
+        "startTargetName": "start",
+        "serveStaticTargetName": "serve-static"
+      }
+    },
+    {
+      "plugin": "@nx/storybook/plugin",
+      "exclude": [".storybook/**"],
+      "options": {
+        "buildStorybookTargetName": "build-storybook",
+        "serveStorybookTargetName": "storybook",
+        "staticStorybookTargetName": "static-storybook",
+        "testStorybookTargetName": "test-storybook"
+      }
     }
   ],
   "defaultBase": "main",
-  "analytics": true
+  "analytics": true,
+  "affected": {
+    "legacy": true
+  }
 }

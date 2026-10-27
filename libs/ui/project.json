@@ -5,35 +5,24 @@
   "projectType": "library",
   "tags": [],
   "targets": {
-    "lint": {
-      "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"]
-    },
     "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/libs/ui"],
-      "options": {
-        "jestConfig": "libs/ui/jest.config.ts"
-      }
+      "outputs": ["{workspaceRoot}/coverage/libs/ui"]
     },
     "storybook": {
-      "executor": "@nx/storybook:storybook",
       "options": {
         "port": 4400,
-        "configDir": "libs/ui/.storybook"
+        "config-dir": ".storybook"
       },
       "configurations": {
         "ci": {
-          "quiet": true
+          "args": ["--quiet"]
         }
       }
     },
     "build-storybook": {
-      "executor": "@nx/storybook:build",
-      "outputs": ["{options.outputDir}"],
       "options": {
-        "configDir": "libs/ui/.storybook",
-        "outputDir": "dist/storybook/ui"
+        "config-dir": ".storybook",
+        "output-dir": "../../dist/storybook/ui"
       },
       "configurations": {
         "ci": {

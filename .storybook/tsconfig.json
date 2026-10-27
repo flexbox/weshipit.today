@@ -10,5 +10,8 @@
     "../**/*.spec.jsx",
     "../**/*.test.jsx"
   ],
-  "include": ["../**/*"]
+  "include": ["../**/*"],
+  "compilerOptions": {
+    "ignoreDeprecations": "6.0"
+  }
 }

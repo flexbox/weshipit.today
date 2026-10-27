@@ -1,14 +1,14 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require('path');
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const withNx = require('@nx/next/plugins/with-nx');
+const { PHASE_DEVELOPMENT_SERVER } = require('next/constants');
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/,
 });
 
 /**
- * @type {import('@nx/next/plugins/with-nx').WithNxOptions}
+ * @type {import('next').NextConfig}
  **/
 const nextConfig = {
   images: {
@@ -103,7 +103,14 @@ const nextConfig = {
       })),
     ];
   },
-  nx: {},
 };
 
-module.exports = withNx(withMDX(nextConfig));
+// Production builds and `next start` use dist/apps/davidl-fr/.next, the
+// outputDirectory in vercel.json. The dev server keeps .next in the app dir.
+module.exports = (phase) => ({
+  ...withMDX(nextConfig),
+  distDir:
+    phase === PHASE_DEVELOPMENT_SERVER
+      ? '.next'
+      : '../../dist/apps/davidl-fr/.next',
+});

@@ -5,49 +5,13 @@
   "projectType": "application",
   "tags": [],
   "targets": {
-    "build": {
-      "executor": "@nx/next:build",
-      "outputs": ["{options.outputPath}"],
-      "defaultConfiguration": "production",
-      "options": {
-        "outputPath": "dist/apps/banner-preview"
-      },
-      "configurations": {
-        "development": {
-          "outputPath": "apps/banner-preview"
-        },
-        "production": {}
-      }
-    },
     "serve": {
-      "executor": "@nx/next:server",
-      "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "banner-preview:build",
-        "dev": true,
         "port": 4300
-      },
-      "configurations": {
-        "development": {
-          "buildTarget": "banner-preview:build:development",
-          "dev": true
-        },
-        "production": {
-          "buildTarget": "banner-preview:build:production",
-          "dev": false
-        }
       }
     },
     "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/apps/banner-preview"],
-      "options": {
-        "jestConfig": "apps/banner-preview/jest.config.ts"
-      }
-    },
-    "lint": {
-      "executor": "@nx/eslint:lint",
-      "outputs": ["{options.outputFile}"]
+      "outputs": ["{workspaceRoot}/coverage/apps/banner-preview"]
     },
     "typecheck": {
       "executor": "nx:run-commands",
