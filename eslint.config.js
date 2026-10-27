@@ -50,7 +50,8 @@ const eslintConfig = [
         'error',
         {
           enforceBuildableLibDependency: true,
-          allow: [],
+          // Project eslint configs import this file by relative path.
+          allow: ['^.*/eslint(\\.base)?\\.config\\.[cm]?[jt]s$'],
 
           depConstraints: [
             {
