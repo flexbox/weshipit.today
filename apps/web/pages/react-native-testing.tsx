@@ -647,6 +647,8 @@ export default function ReactNativeTesting() {
       seoTitle="React Native E2E Testing with Maestro | weshipit.today"
       seoDescription="Done-for-you end-to-end (E2E) testing for React Native apps with Maestro. We write YAML flows for your 5 core user journeys, wire CI/CD, and hand off in 2 weeks — one flat fee. A simpler alternative to Detox."
       ogImageTitle="Mobile testing for React Native, done in 2 weeks"
+      ogImageKicker="React Native testing"
+      ogImageSubline="5 Maestro flows, wired into your CI"
       ogImageAlt="React Native E2E testing with Maestro — 5 flows, CI wired, handed off in 2 weeks. weshipit.today"
       withHeader
       callToActionButton={{

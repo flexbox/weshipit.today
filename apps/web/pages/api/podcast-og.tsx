@@ -1,38 +1,60 @@
-import { ImageResponse } from '@vercel/og';
-import { NextRequest } from 'next/server';
+import { readFile } from 'node:fs/promises';
+import { join } from 'node:path';
+import type { NextApiRequest, NextApiResponse } from 'next';
+import { ImageResponse } from 'next/og';
 import { podcastEpisodes } from '../../fixtures/podcast-episodes.fixture';
-
-export const config = {
-  runtime: 'edge',
-};
-
-const interBold = fetch(
-  new URL('../../public/fonts/inter-latin-700-normal.woff', import.meta.url),
-).then((res) => res.arrayBuffer());
+import {
+  clampParam,
+  loadFont,
+  ogLogoFileFor,
+  sendImage,
+} from '../../utils/og/og-server';
 
 const MAX_TITLE_LEN = 200;
 const MAX_GUEST_LEN = 200;
 const MAX_SLUG_LEN = 100;
-const clampParam = (value: string | null, max: number): string =>
-  (value ?? '').slice(0, max);
 
-export default async function handler(req: NextRequest) {
+const OG_LOGO_DIR = join(process.cwd(), 'public/images/podcast-logos/og');
+
+const logoCache = new Map<string, Promise<string | undefined>>();
+
+function loadLogo(companyLogo: string): Promise<string | undefined> {
+  let logo = logoCache.get(companyLogo);
+  if (!logo) {
+    logo = readFile(join(OG_LOGO_DIR, ogLogoFileFor(companyLogo)))
+      .then((data) => `data:image/png;base64,${data.toString('base64')}`)
+      .catch(() => undefined);
+    logoCache.set(companyLogo, logo);
+  }
+  return logo;
+}
+
+// Seeded PRNG (FNV-1a hash + mulberry32): the same episode always gets the
+// same logo cloud, so every crawler sees the same image.
+function seededRandom(seed: string): () => number {
+  let state = 2166136261;
+  for (let i = 0; i < seed.length; i++) {
+    state = Math.imul(state ^ seed.charCodeAt(i), 16777619);
+  }
+  return () => {
+    state = (state + 0x6d2b79f5) | 0;
+    let t = Math.imul(state ^ (state >>> 15), 1 | state);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse,
+) {
   try {
-    const { searchParams } = new URL(req.url);
-
-    const origin = new URL(req.url).origin;
-    const toAbsoluteUrl = (url: string | undefined): string | undefined => {
-      if (!url) return undefined;
-      if (url.startsWith('http://') || url.startsWith('https://')) return url;
-      return `${origin}${url.startsWith('/') ? '' : '/'}${url}`;
-    };
-
     const title =
-      clampParam(searchParams.get('title'), MAX_TITLE_LEN) ||
-      'Le Cross Platform Show';
-    const guest = clampParam(searchParams.get('guest'), MAX_GUEST_LEN);
-    const episodeNumber = searchParams.get('episode') || '';
-    const slug = clampParam(searchParams.get('slug'), MAX_SLUG_LEN);
+      clampParam(req.query.title, MAX_TITLE_LEN) || 'Le Cross Platform Show';
+    const guest = clampParam(req.query.guest, MAX_GUEST_LEN);
+    const episodeNumber = clampParam(req.query.episode, 6);
+    const slug = clampParam(req.query.slug, MAX_SLUG_LEN);
+    const isTranscript = clampParam(req.query.type, 20) === 'transcript';
 
     const currentEpisode = (() => {
       if (slug) {
@@ -49,61 +71,51 @@ export default async function handler(req: NextRequest) {
       return undefined;
     })();
 
-    const toSupportedImageType = (url?: string): string | undefined => {
-      if (!url) return undefined;
-      return url.replace(/\.webp(\?.*)?$/i, '.png$1');
-    };
-
-    const currentEpisodeLogo = toAbsoluteUrl(
-      toSupportedImageType(currentEpisode?.company_logo),
+    const random = seededRandom(
+      currentEpisode?.slug ?? `${episodeNumber}-${title}`,
     );
 
-    const allOtherLogos = podcastEpisodes
-      .filter((episode) =>
-        currentEpisode ? episode.slug !== currentEpisode.slug : true,
-      )
-      .map((episode) => episode.company_logo)
-      .filter(Boolean);
-
-    const shuffled = allOtherLogos
-      .map((logo) => ({ logo, sort: Math.random() }))
+    const otherLogos = Array.from(
+      new Set(
+        podcastEpisodes
+          .filter((episode) =>
+            currentEpisode ? episode.slug !== currentEpisode.slug : true,
+          )
+          .map((episode) => episode.company_logo)
+          .filter(Boolean),
+      ),
+    )
+      .map((logo) => ({ logo, sort: random() }))
       .sort((a, b) => a.sort - b.sort)
       .map(({ logo }) => logo);
 
-    const TARGET_COUNT = 15;
-    const randomLogos = Array.from(new Set(shuffled))
-      .map((u) => toSupportedImageType(u))
-      .map((u) => toAbsoluteUrl(u))
-      .filter(Boolean)
-      .slice(0, TARGET_COUNT) as string[];
+    const TARGET_COUNT = 8;
+    const [currentEpisodeLogo, ...loadedLogos] = await Promise.all([
+      currentEpisode?.company_logo
+        ? loadLogo(currentEpisode.company_logo)
+        : undefined,
+      ...otherLogos.slice(0, TARGET_COUNT).map(loadLogo),
+    ]);
+    const randomLogos = loadedLogos.filter(Boolean) as string[];
 
-    const FALLBACK_LOGO = 'https://weshipit.today/images/podcast.jpeg';
-    while (randomLogos.length < TARGET_COUNT) {
-      randomLogos.push(FALLBACK_LOGO);
-    }
-
-    const PADDING = 32;
     const CONTAINER_WIDTH = 1200;
     const CONTAINER_HEIGHT = 630;
     const EDGE_PADDING = 12;
-    const PLACEMENT_WIDTH = CONTAINER_WIDTH;
-    const PLACEMENT_HEIGHT = CONTAINER_HEIGHT;
-    const AREA_X0 = Math.floor(PLACEMENT_WIDTH * 0.4);
-    const AREA_Y0 = Math.floor(PLACEMENT_HEIGHT * 0.4);
+    const AREA_X0 = Math.floor(CONTAINER_WIDTH * 0.4);
+    const AREA_Y0 = Math.floor(CONTAINER_HEIGHT * 0.4);
     const placements: Array<{
       url: string;
       x: number;
       y: number;
       size: number;
     }> = [];
-    const MIN_SIZE = 64;
+    const MIN_SIZE = 72;
     const MAX_SIZE = 164;
     const MAX_ATTEMPTS = 220;
     const overlapPadding = 2;
 
-    function randomInt(min: number, max: number) {
-      return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
+    const randomInt = (min: number, max: number) =>
+      Math.floor(random() * (max - min + 1)) + min;
 
     for (const url of randomLogos) {
       let placed = false;
@@ -115,10 +127,10 @@ export default async function handler(req: NextRequest) {
           ),
         );
         const size = randomInt(MIN_SIZE, decreasingMax);
-        const maxX = PLACEMENT_WIDTH - size - EDGE_PADDING;
-        const maxY = PLACEMENT_HEIGHT - size - EDGE_PADDING;
-        const rx = 1 - Math.random() ** 4;
-        const ry = 1 - Math.random() ** 4;
+        const maxX = CONTAINER_WIDTH - size - EDGE_PADDING;
+        const maxY = CONTAINER_HEIGHT - size - EDGE_PADDING;
+        const rx = 1 - random() ** 4;
+        const ry = 1 - random() ** 4;
         const x = Math.floor(
           AREA_X0 + (Math.max(AREA_X0, maxX) - AREA_X0) * rx,
         );
@@ -142,9 +154,18 @@ export default async function handler(req: NextRequest) {
       }
     }
 
-    const [interBoldData] = await Promise.all([interBold]);
+    const episodeLine =
+      episodeNumber && guest
+        ? `Épisode ${episodeNumber} avec ${guest}`
+        : episodeNumber
+          ? `Épisode ${episodeNumber}`
+          : guest
+            ? `avec ${guest}`
+            : '';
 
-    return new ImageResponse(
+    const interBoldData = await loadFont('inter-latin-700-normal.woff');
+
+    const image = new ImageResponse(
       (
         <div
           style={{
@@ -156,8 +177,7 @@ export default async function handler(req: NextRequest) {
             backgroundColor: 'white',
             padding: '32px',
             position: 'relative',
-            fontFamily:
-              'Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, \n  \tNoto Sans, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji',
+            fontFamily: 'Inter',
           }}
         >
           <div
@@ -199,19 +219,31 @@ export default async function handler(req: NextRequest) {
 
             <div
               style={{
+                display: 'flex',
+                alignItems: 'center',
                 fontSize: '22px',
-                fontWeight: 600,
+                fontWeight: 700,
                 color: '#6b7280',
                 marginTop: '18px',
               }}
             >
-              {episodeNumber && guest
-                ? `Épisode ${episodeNumber} avec ${guest}`
-                : episodeNumber
-                  ? `Épisode ${episodeNumber}`
-                  : guest
-                    ? `avec ${guest}`
-                    : ''}
+              {isTranscript ? (
+                <div
+                  style={{
+                    backgroundColor: '#111827',
+                    borderRadius: '6px',
+                    color: 'white',
+                    fontSize: '18px',
+                    letterSpacing: '0.06em',
+                    marginRight: '14px',
+                    padding: '6px 12px',
+                    textTransform: 'uppercase',
+                  }}
+                >
+                  Transcription
+                </div>
+              ) : null}
+              {episodeLine}
             </div>
           </div>
 
@@ -258,21 +290,15 @@ export default async function handler(req: NextRequest) {
             name: 'Inter',
             data: interBoldData,
             style: 'normal',
-            weight: 400,
-          },
-          {
-            name: 'Inter',
-            data: interBoldData,
-            style: 'normal',
             weight: 700,
           },
         ],
       },
     );
-  } catch (e: any) {
-    console.error(`${e.message}`);
-    return new Response(`Failed to generate the podcast og image`, {
-      status: 500,
-    });
+
+    await sendImage(res, image);
+  } catch (e) {
+    console.error(e);
+    res.status(500).send('Failed to generate the podcast og image');
   }
 }

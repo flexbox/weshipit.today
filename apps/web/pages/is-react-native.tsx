@@ -156,6 +156,7 @@ export default function IsReactNative() {
         seoTitle="Is this app built with React Native? Free checker"
         seoDescription={SEO_DESCRIPTION}
         ogImageTitle="Is this app built with React Native?"
+        ogImageKicker="Free tool"
         withHeader
         withFooter
         withContainer

@@ -148,6 +148,7 @@ export default function ReactNativeSwiftPackageManagerMigration() {
         seoTitle="CocoaPods to Swift Package Manager in React Native (0.87)"
         seoDescription="CocoaPods goes read-only on December 2, 2026. Check if your React Native app is ready for Swift Package Manager in 12 questions, then follow the 0.87 migration steps."
         ogImageTitle="Migrate React Native from CocoaPods to SPM"
+        ogImageKicker="React Native guide"
         withHeader
         withFooter
         withContainer

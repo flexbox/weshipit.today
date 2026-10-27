@@ -426,6 +426,7 @@ export function Audit({ clients }: AuditProps) {
         'Full React Native codebase audit in 2 weeks: prioritized backlog, dependency upgrades, unblocked releases. Trusted by apps serving millions of users.'
       }
       ogImageTitle="React Native Codebase Audit"
+      ogImageSubline="Fix tech debt in 2 weeks"
       withHeader
       callToActionButton={{
         name: 'Book a call',

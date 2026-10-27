@@ -138,6 +138,8 @@ export function Migration({ clients, feedback }: MigrationProps) {
       </Head>
       <Layout
         seoTitle="Migrate to Expo - Simplify Your React Native Development"
+        ogImageTitle="Migrate your React Native app to Expo"
+        ogImageKicker="React Native migration"
         seoDescription={
           'Our React Native to Expo Migration Package helps organizations transition their codebase to Expo, improving development speed and efficiency. Book a call today to learn more.'
         }

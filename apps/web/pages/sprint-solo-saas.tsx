@@ -708,7 +708,9 @@ export default function SprintSoloSaasPage() {
       <Layout
         seoTitle="Sprint Solo SaaS (oct. 2026) : construire un SaaS qui bosse à ta place, sans coder"
         seoDescription="Le Sprint Solo SaaS de l'Incubateur Solopreneur, du 9 au 30 octobre 2026 : 4 lives avec Flavie Prevot et Pierre Thomassina pour trouver ton idée, installer ton setup, construire tes features et trouver tes premiers utilisateurs. Tarif parrainage : 12 mois d'Incubateur pour le prix du Sprint."
-        ogImageTitle="Sprint Solo SaaS — Incubateur Solopreneur"
+        ogImageTitle="Sprint Solo SaaS"
+        ogImageKicker="Incubateur Solopreneur"
+        ogImageSubline="Un SaaS qui bosse à ta place en 4 semaines"
         ogImageAlt="Sprint Solo SaaS : construire un SaaS qui bosse à ta place en 4 semaines"
         locale="fr_FR"
         withHeader

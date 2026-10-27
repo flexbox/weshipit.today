@@ -15,6 +15,7 @@ export default function Onboarding({ clients }) {
       withContainer
       withFooter
       seoTitle="Onboard with React Native Experts"
+      ogImageTitle="Onboard with React Native experts"
       seoDescription="We are excited to work with you! Please fill out the form below to get started."
       withHeader
     >

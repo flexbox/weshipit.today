@@ -438,6 +438,8 @@ export default function IndexPage({ clients, steps }: IndexPageProps) {
       </Head>
       <Layout
         seoTitle="Hire React Native Developers as a Service"
+        ogImageTitle="Hire React Native developers as a service"
+        ogImageSubline="One flat fee. Pause or cancel anytime."
         seoDescription="Subscription-based React Native developers. One flat fee, zero billable hours. Pause or cancel anytime."
         ogImageAlt="weshipit.today — Hire React Native Developers as a Service"
         withHeader

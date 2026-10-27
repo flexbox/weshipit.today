@@ -155,6 +155,7 @@ export function ReactNativeSlugPage({
       seoTitle={`${name} for React Native`}
       seoDescription={seoDescription}
       ogImageTitle={`${name} for React Native`}
+      ogImageKicker="React Native tools"
       withHeader
       withFooter
       callToActionLink={{

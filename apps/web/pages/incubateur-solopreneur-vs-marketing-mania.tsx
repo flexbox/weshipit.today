@@ -906,6 +906,7 @@ export default function IncubateurVsMarketingManiaPage() {
         seoTitle="Incubateur Solopreneur vs Marketing Mania : quelle formation choisir en 2026 ?"
         seoDescription="Comparaison indépendante entre l'Incubateur Solopreneur (Flavie Prevot) et le Bootcamp Marketing Mania (Stan Leloup) : format, prix, rythme, communauté, résultats. Recommandation par cas d'usage."
         ogImageTitle="Incubateur Solopreneur vs Marketing Mania"
+        ogImageKicker="Comparatif 2026"
         ogImageAlt="Comparaison Incubateur Solopreneur vs Bootcamp Marketing Mania — quelle formation choisir en 2026 ?"
         locale="fr_FR"
         withHeader

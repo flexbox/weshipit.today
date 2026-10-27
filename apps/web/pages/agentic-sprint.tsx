@@ -790,6 +790,7 @@ export default function AgenticSprintPage() {
         seoTitle="Agentic Sprint React Native : fais coder, tester et release ton app par des agents IA"
         seoDescription="Batch en ligne d'un mois pour développeurs React Native : monte des agents IA qui triagent tes crashs Sentry, écrivent tes tests Maestro et préparent tes releases EAS — sur ta propre app. Un live par semaine, du 14 septembre au 9 octobre 2026. 25 places, 490 € HT."
         ogImageTitle="Agentic Sprint React Native"
+        ogImageKicker="Batch IA pour devs React Native"
         ogImageAlt="Agentic Sprint — batch d'un mois pour développeurs React Native : des agents IA sur ta propre app"
         locale="fr_FR"
         withHeader

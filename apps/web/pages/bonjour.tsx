@@ -867,6 +867,7 @@ export default function BonjourPage({ clients }: BonjourPageProps) {
         seoTitle="Ton app React Native ralentit ? On la transforme en machine à shipper | weshipit.today"
         seoDescription="5k/mois, sans engagement. On prend ton app React Native et on la transforme : fondations, observabilité, CI/CD, performance. Tu ship tous les jours."
         ogImageTitle="Ton app React Native ralentit ? On la fixe."
+        ogImageSubline="Experts React Native · 5k/mois · ship tous les jours"
         ogImageAlt="weshipit.today — Experts React Native. 5k/mois. Ship tous les jours."
         locale="fr_FR"
         withHeader

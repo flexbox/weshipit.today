@@ -9,7 +9,8 @@ export default function NotFoundPage() {
       withFooter
       seoTitle="404 : Page not found"
       seoDescription="We are sorry but the page you are looking for does not exist."
-      ogImageTitle="weshipit - 404"
+      ogImageTitle="Page not found"
+      ogImageKicker="404"
       noindex
     >
       <div className="m-auto mb-64 w-2/3 py-24">
