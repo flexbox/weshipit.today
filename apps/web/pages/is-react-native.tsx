@@ -1,8 +1,16 @@
 import { Badge, Card, Faq, Hero, LinkButton, Prose, Text } from '@weshipit/ui';
 import Head from 'next/head';
 import Link from 'next/link';
-import { IsReactNativeChecker } from '../components/is-react-native-checker';
+import type { GetStaticProps } from 'next';
+import {
+  EXAMPLES,
+  IsReactNativeChecker,
+} from '../components/is-react-native-checker';
 import { Layout } from '../components/layout';
+import {
+  AndroidAppInspection,
+  inspectAndroidApp,
+} from '../utils/is-react-native/inspect-android-app';
 import { AUTHOR_SCHEMA, PUBLISHER_SCHEMA } from '../utils/schema';
 
 const PAGE_URL = 'https://weshipit.today/is-react-native';
@@ -143,7 +151,30 @@ const STEPS = [
   },
 ];
 
-export default function IsReactNative() {
+interface IsReactNativeProps {
+  results: AndroidAppInspection[];
+}
+
+// The popular apps and the examples are checked at build time, then once a
+// day, so opening one shows the result without waiting for the APK.
+export const getStaticProps: GetStaticProps<IsReactNativeProps> = async () => {
+  const ids = new Set([
+    ...POPULAR_APPS.map((app) => app.id),
+    ...EXAMPLES.map((example) => example.id),
+  ]);
+  const checks = await Promise.allSettled([...ids].map(inspectAndroidApp));
+
+  return {
+    props: {
+      results: checks.flatMap((check) =>
+        check.status === 'fulfilled' ? [check.value] : [],
+      ),
+    },
+    revalidate: 86400,
+  };
+};
+
+export default function IsReactNative({ results }: IsReactNativeProps) {
   return (
     <>
       <Head>
@@ -165,7 +196,7 @@ export default function IsReactNative() {
           description="Paste a Google Play link. We look inside the APK and tell you if the app runs React Native, with or without Expo, or another framework like Flutter."
         />
 
-        <IsReactNativeChecker />
+        <IsReactNativeChecker initialResults={results} />
 
         <section className="mt-24">
           <Text as="h2" variant="h4">
@@ -213,6 +244,7 @@ export default function IsReactNative() {
               <li key={app.id}>
                 <Link
                   href={`/is-react-native?id=${app.id}`}
+                  shallow
                   className="flex h-full flex-col gap-3 rounded-2xl bg-white p-6 ring-1 ring-slate-200 transition-shadow hover:shadow-md dark:bg-white/5 dark:ring-white/10"
                 >
                   <Text as="span" variant="h6">

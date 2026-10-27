@@ -1,12 +1,19 @@
 import { Badge, Button, Card, Text } from '@weshipit/ui';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { FormEvent, useCallback, useEffect, useRef, useState } from 'react';
+import {
+  ClipboardEvent,
+  FormEvent,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import type { Framework } from '../utils/is-react-native/detect-framework';
 import type { AndroidAppInspection } from '../utils/is-react-native/inspect-android-app';
 import { parseStoreUrl } from '../utils/is-react-native/parse-store-url';
 
-const EXAMPLES = [
+export const EXAMPLES = [
   { id: 'com.planet.centerparcs', label: 'Center Parcs' },
   { id: 'com.discord', label: 'Discord' },
   { id: 'com.spotify.music', label: 'Spotify' },
@@ -25,13 +32,49 @@ const FRAMEWORK_LABELS: Record<Framework, string> = {
 
 const MAX_EVIDENCE = 6;
 
-type State =
-  | { status: 'idle' }
-  | { status: 'loading' }
+type Outcome =
   | { message: string; status: 'error' }
   | { result: AndroidAppInspection; status: 'done' };
 
-export function IsReactNativeChecker() {
+type State = { status: 'idle' } | { status: 'loading' } | Outcome;
+
+async function requestCheck(packageId: string): Promise<Outcome> {
+  try {
+    const response = await fetch(
+      `/api/is-react-native?id=${encodeURIComponent(packageId)}`,
+    );
+    if (response.status === 404) {
+      return {
+        message: `We could not get a copy of "${packageId}". Check the link: paid and region-locked apps cannot be inspected.`,
+        status: 'error',
+      };
+    }
+    if (!response.ok) {
+      return {
+        message: 'We could not inspect this app right now. Try again.',
+        status: 'error',
+      };
+    }
+    return { result: await response.json(), status: 'done' };
+  } catch {
+    return {
+      message: 'Network error. Check your connection and try again.',
+      status: 'error',
+    };
+  }
+}
+
+// Results stay for the whole visit: checking an app again is instant.
+const results = new Map<string, AndroidAppInspection>();
+
+interface IsReactNativeCheckerProps {
+  /** Apps checked at build time, shown without a request. */
+  initialResults: AndroidAppInspection[];
+}
+
+export function IsReactNativeChecker({
+  initialResults,
+}: IsReactNativeCheckerProps) {
   const router = useRouter();
   const [input, setInput] = useState('');
   const [state, setState] = useState<State>({ status: 'idle' });
@@ -41,37 +84,29 @@ export function IsReactNativeChecker() {
     async (packageId: string) => {
       lastChecked.current = packageId;
       setInput(`https://play.google.com/store/apps/details?id=${packageId}`);
-      setState({ status: 'loading' });
       router.replace({ query: { id: packageId } }, undefined, {
         scroll: false,
         shallow: true,
       });
 
-      try {
-        const response = await fetch(
-          `/api/is-react-native?id=${encodeURIComponent(packageId)}`,
-        );
-        if (response.status === 404) {
-          return setState({
-            message: `We could not get a copy of "${packageId}". Check the link: paid and region-locked apps cannot be inspected.`,
-            status: 'error',
-          });
-        }
-        if (!response.ok) {
-          return setState({
-            message: 'We could not inspect this app right now. Try again.',
-            status: 'error',
-          });
-        }
-        setState({ result: await response.json(), status: 'done' });
-      } catch {
-        setState({
-          message: 'Network error. Check your connection and try again.',
-          status: 'error',
-        });
+      const known =
+        results.get(packageId) ??
+        initialResults.find((result) => result.packageId === packageId);
+      if (known) {
+        return setState({ result: known, status: 'done' });
+      }
+
+      setState({ status: 'loading' });
+      const outcome = await requestCheck(packageId);
+      if (outcome.status === 'done') {
+        results.set(packageId, outcome.result);
+      }
+      // Ignore the answer if another app was checked in the meantime.
+      if (lastChecked.current === packageId) {
+        setState(outcome);
       }
     },
-    [router],
+    [initialResults, router],
   );
 
   // Shared links and the popular apps list (`?id=com.example`) run the check
@@ -89,6 +124,7 @@ export function IsReactNativeChecker() {
     const parsed = parseStoreUrl(input);
 
     if ('error' in parsed) {
+      lastChecked.current = null;
       return setState({
         message:
           parsed.error === 'ios-not-supported'
@@ -98,6 +134,15 @@ export function IsReactNativeChecker() {
       });
     }
     check(parsed.packageId);
+  }
+
+  // A pasted Google Play link is checked right away, no click needed.
+  function handlePaste(event: ClipboardEvent<HTMLInputElement>) {
+    const parsed = parseStoreUrl(event.clipboardData.getData('text'));
+    if ('packageId' in parsed) {
+      event.preventDefault();
+      check(parsed.packageId);
+    }
   }
 
   return (
@@ -115,6 +160,7 @@ export function IsReactNativeChecker() {
           required
           value={input}
           onChange={(event) => setInput(event.target.value)}
+          onPaste={handlePaste}
           placeholder="https://play.google.com/store/apps/details?id=…"
           className="min-w-0 flex-1 rounded-md border-0 bg-white px-4 py-3 text-base text-gray-900 shadow-xs ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 dark:bg-white/5 dark:text-white dark:ring-white/10"
         />
@@ -193,6 +239,8 @@ function Result({ result }: { result: AndroidAppInspection }) {
             alt=""
             width={64}
             height={64}
+            // Already a 128 px icon on a CDN: skip the optimizer round trip.
+            unoptimized
             className="rounded-2xl"
           />
         )}
