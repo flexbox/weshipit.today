@@ -60,7 +60,8 @@ export function ToolCard({
               <CompanyLogo name={name} websiteUrl={website_url} />
             </div>
 
-            <Text as="p" variant="p1" className="mb-6 text-slate-400">
+            {/* A div, not a p: ReactMarkdown renders its own <p> elements. */}
+            <Text as="div" variant="p1" className="mb-6 text-slate-400">
               <ReactMarkdown>{truncatedDescription}</ReactMarkdown>
             </Text>
           </div>
