@@ -8,6 +8,7 @@ import { DefaultSeo } from 'next-seo';
 
 import './styles.css';
 import '../components/anatomy/kit/iso.css';
+import '../components/cng-anatomy/cng-figure.css';
 import '../components/expo-anatomy/expo-figure.css';
 import '../components/hermes-anatomy/hermes-figure.css';
 import '../components/metro-anatomy/metro-figure.css';
