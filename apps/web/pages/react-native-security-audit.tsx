@@ -89,6 +89,8 @@ export default function ReactNativeSecurityAudit() {
         seoTitle="Free React Native Security Audit: 12 Checks in 2 Minutes"
         seoDescription="Security checklist for React Native and Expo apps: secrets, storage, APIs, deep links, WebView, dependencies. Instant score out of 100 + detailed report by email. Free."
         ogImageTitle="Free React Native Security Audit"
+        ogImageKicker="Free tool"
+        ogImageSubline="12 checks in 2 minutes"
         withHeader
         withFooter
         withContainer

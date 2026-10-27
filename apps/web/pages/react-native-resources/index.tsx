@@ -196,6 +196,7 @@ export default function ReactNativeResourcesPage({
       seoTitle={`${numberOfRecords}+ best resources to start with React Native in mobile app development`}
       seoDescription={`Most effective resources for learning React Native, online guides and tutorials, podcast and newsletter.`}
       ogImageTitle="React Native Resources"
+      ogImageKicker="Free directory"
       withHeader
       withFooter
       navigation={[

@@ -21,6 +21,8 @@ export default function BrandPage() {
   return (
     <Layout
       seoTitle="Brand"
+      ogImageTitle="Brand assets & guidelines"
+      ogImageKicker="Brand"
       seoDescription="Download weshipit.today logos, assets, and brand guidelines."
       withHeader
       withFooter

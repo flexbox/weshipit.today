@@ -5341,13 +5341,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@resvg/resvg-wasm@npm:2.4.1":
-  version: 2.4.1
-  resolution: "@resvg/resvg-wasm@npm:2.4.1"
-  checksum: 10/00382a9ea2232c4b32d4095076dd66bc158202e5506ac0251c75a310b71ec5a8f9257e46f41f921bf7ed8397f4105edc02d5a6026ba815fe0ecff60a35bf3848
-  languageName: node
-  linkType: hard
-
 "@rolldown/binding-android-arm-eabi@npm:1.2.15":
   version: 1.2.15
   resolution: "@rolldown/binding-android-arm-eabi@npm:1.2.15"
@@ -5566,18 +5559,6 @@ __metadata:
     "@noble/hashes": "npm:~1.8.0"
     "@scure/base": "npm:~1.2.5"
   checksum: 10/63e60c40fa1bda2c1b50351546fee6d7b0947cc814aa7a4209dcedd3693b5053302c8fca28292f5f50735e11c613265359acdc019127393dbab17e53489fc449
-  languageName: node
-  linkType: hard
-
-"@shuding/opentype.js@npm:1.4.0-beta.0":
-  version: 1.4.0-beta.0
-  resolution: "@shuding/opentype.js@npm:1.4.0-beta.0"
-  dependencies:
-    fflate: "npm:^0.7.3"
-    string.prototype.codepointat: "npm:^0.2.1"
-  bin:
-    ot: bin/ot
-  checksum: 10/0a39d17ef88ff44db4e83590ec4ba3f98b9a9a4e3a8b3a99c55227b008647a1fa8788ea5920ac02b8dcf8b75ff33096996c539b874233f039d7d41fc58119785
   languageName: node
   linkType: hard
 
@@ -7629,20 +7610,6 @@ __metadata:
     vue-router:
       optional: true
   checksum: 10/ffef3eea08992e40e08d0fc9900396a9433855a4aaca90602bfea935c26faa30b6d208c034b6e249fb8a69c81cb5a11aa3acd725d5b9067fb30a4508879c6383
-  languageName: node
-  linkType: hard
-
-"@vercel/og@npm:^1.0.3":
-  version: 1.0.3
-  resolution: "@vercel/og@npm:1.0.3"
-  dependencies:
-    "@resvg/resvg-wasm": "npm:2.4.1"
-    satori: "npm:0.33.5"
-    sharp: "npm:^0.35.3"
-  dependenciesMeta:
-    sharp:
-      optional: true
-  checksum: 10/c7e02643d1ec286107042d645a2f3d2747b15534e224963cdb2624c2afca747d65dd00e1bcedf94f9c1e01a216b1b9506b0ce572ca813c029efc60a2215ead31
   languageName: node
   linkType: hard
 
@@ -9749,7 +9716,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"color-name@npm:1.1.4, color-name@npm:^1.1.4, color-name@npm:~1.1.4":
+"color-name@npm:1.1.4, color-name@npm:~1.1.4":
   version: 1.1.4
   resolution: "color-name@npm:1.1.4"
   checksum: 10/b0445859521eb4021cd0fb0cc1a75cecf67fceecae89b63f62b201cca8d345baf8b952c966862a9d9a2632987d4f6581f0ec8d957dfacece86f0a7919316f610
@@ -10200,20 +10167,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"css-background-parser@npm:^0.1.0":
-  version: 0.1.0
-  resolution: "css-background-parser@npm:0.1.0"
-  checksum: 10/6b606e45dc15afb682a9b9fee8c99cab8b0444f030de680c9c51067f29eeb53bab4b9365627025c1e02d85be329082adbd690ab78677648138d4b75b91505a5c
-  languageName: node
-  linkType: hard
-
-"css-box-shadow@npm:1.0.0-3":
-  version: 1.0.0-3
-  resolution: "css-box-shadow@npm:1.0.0-3"
-  checksum: 10/a52a3bcc9167146e696c4ace5667eded91deb419a95b97e44028f93cd5691d8c1ef834aef9b653f81774c9164ac990b6df958db4835dacb5a8a589c96177240e
-  languageName: node
-  linkType: hard
-
 "css-color-keywords@npm:^1.0.0":
   version: 1.0.0
   resolution: "css-color-keywords@npm:1.0.0"
@@ -10227,13 +10180,6 @@ __metadata:
   peerDependencies:
     postcss: ^8.0.9
   checksum: 10/2acb9c13f556fc8f05e601e66ecae4cfdec0ed50ca69f18177718ad5a86c3929f7d0a2cae433fd831b2594670c6e61d3a25c79aa7830be5828dcd9d29219d387
-  languageName: node
-  linkType: hard
-
-"css-gradient-parser@npm:^0.0.17":
-  version: 0.0.17
-  resolution: "css-gradient-parser@npm:0.0.17"
-  checksum: 10/7e4377eccbc35c1ded4869ab8181ca0f6c3b21e323eb76062e1cff373ce7fe1b9859ef5911cf9fa8855cda897103266b793b28dc9aab1442bc27fc3984d9f706
   languageName: node
   linkType: hard
 
@@ -10303,7 +10249,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"css-to-react-native@npm:3.2.0, css-to-react-native@npm:^3.0.0":
+"css-to-react-native@npm:3.2.0":
   version: 3.2.0
   resolution: "css-to-react-native@npm:3.2.0"
   dependencies:
@@ -11144,13 +11090,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"emoji-regex-xs@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "emoji-regex-xs@npm:2.0.1"
-  checksum: 10/b23eb4e9cc4485ea64c8c7a77097b50a5c9fee89edc13bb27aedcb0104ba97dea6bc388701378df4ffca0dfdc3fa3a5dde7582dceb5c4af440d9cc5bbde397b7
-  languageName: node
-  linkType: hard
-
 "emoji-regex@npm:8.0.0, emoji-regex@npm:^8.0.0":
   version: 8.0.0
   resolution: "emoji-regex@npm:8.0.0"
@@ -11613,7 +11552,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"escape-html@npm:^1.0.3, escape-html@npm:~1.0.3":
+"escape-html@npm:~1.0.3":
   version: 1.0.3
   resolution: "escape-html@npm:1.0.3"
   checksum: 10/6213ca9ae00d0ab8bccb6d8d4e0a98e76237b2410302cf7df70aaa6591d509a2a37ce8998008cbecae8fc8ffaadf3fb0229535e6a145f3ce0b211d060decbb24
@@ -12554,20 +12493,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fflate@npm:0.7.3":
-  version: 0.7.3
-  resolution: "fflate@npm:0.7.3"
-  checksum: 10/986fabcb4f003ccf00a9732d4c9d3835f7c9b39da96c47e03293c4ae5138ddfb6ee683d6886d35872ac91e1d42dc9244e5698961bb3b638660a06ab60a28e5dc
-  languageName: node
-  linkType: hard
-
-"fflate@npm:^0.7.3":
-  version: 0.7.4
-  resolution: "fflate@npm:0.7.4"
-  checksum: 10/27f61b3536c3a23b0ccdab4b616103be0e8e7241924cda063486822c50ae11930eb1ce6e34dedbfccb2705d04a66380d04e28c67387e1dd48159d41ea14bfda5
-  languageName: node
-  linkType: hard
-
 "fflate@npm:^0.8.2":
   version: 0.8.2
   resolution: "fflate@npm:0.8.2"
@@ -13455,13 +13380,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"harfbuzzjs@npm:0.10.0":
-  version: 0.10.0
-  resolution: "harfbuzzjs@npm:0.10.0"
-  checksum: 10/61dbfbbbca122c716ec998b0e5a1d986b7618d1bcdd4d9f3a9160e69d3a665b50abe2a51915c6140e664ae4379392b18bccc2020fc514b8dab4f8c296c016688
-  languageName: node
-  linkType: hard
-
 "harmony-reflect@npm:^1.4.6":
   version: 1.6.2
   resolution: "harmony-reflect@npm:1.6.2"
@@ -13720,13 +13638,6 @@ __metadata:
   version: 2.2.0
   resolution: "heroicons@npm:2.2.0"
   checksum: 10/f32d54d3bc23e6fcfc7c808e6609a8252e4a2b37d454e1bff244d6072e7982461c5ecb84c701098501969563f54de6e0d824e4ae1f64880a94c2e1076b04af86
-  languageName: node
-  linkType: hard
-
-"hex-rgb@npm:^4.1.0":
-  version: 4.3.0
-  resolution: "hex-rgb@npm:4.3.0"
-  checksum: 10/c0d59346b6e7c4523ef606154979b173d0e58be266e3a218d10d3298c1aa21bba124110604c8e4f9e9f76dac0196ced2bed04390879ba504d5ae412492f590cf
   languageName: node
   linkType: hard
 
@@ -19023,16 +18934,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"parse-css-color@npm:^0.2.1":
-  version: 0.2.1
-  resolution: "parse-css-color@npm:0.2.1"
-  dependencies:
-    color-name: "npm:^1.1.4"
-    hex-rgb: "npm:^4.1.0"
-  checksum: 10/319ff24afa6050b2fb1d87f52cf3a98760f20224c2ec38299f1619d9e5ae98375eda91c2ea2b15a9ff6c4693683679edd68208e186dec0a255391af291e1d5ee
-  languageName: node
-  linkType: hard
-
 "parse-entities@npm:^4.0.0":
   version: 4.0.2
   resolution: "parse-entities@npm:4.0.2"
@@ -21326,27 +21227,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"satori@npm:0.33.5":
-  version: 0.33.5
-  resolution: "satori@npm:0.33.5"
-  dependencies:
-    "@shuding/opentype.js": "npm:1.4.0-beta.0"
-    css-background-parser: "npm:^0.1.0"
-    css-box-shadow: "npm:1.0.0-3"
-    css-gradient-parser: "npm:^0.0.17"
-    css-to-react-native: "npm:^3.0.0"
-    emoji-regex-xs: "npm:^2.0.1"
-    escape-html: "npm:^1.0.3"
-    fflate: "npm:0.7.3"
-    harfbuzzjs: "npm:0.10.0"
-    linebreak: "npm:^1.1.0"
-    parse-css-color: "npm:^0.2.1"
-    postcss-value-parser: "npm:^4.2.0"
-    yoga-layout: "npm:^3.2.1"
-  checksum: 10/9be45eb8526c7a21d210e9514b40481b80a84bdd7ce64c5f642ba625ed111aa3cc0e0b78bd4cb4572cd56c0a9250c16d00b17881caca3ce517a81f614652b7cd
-  languageName: node
-  linkType: hard
-
 "sax@npm:^1.2.4, sax@npm:^1.5.0":
   version: 1.6.0
   resolution: "sax@npm:1.6.0"
@@ -21631,7 +21511,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sharp@npm:^0.35.3, sharp@npm:^0.35.5":
+"sharp@npm:^0.35.5":
   version: 0.35.5
   resolution: "sharp@npm:0.35.5"
   dependencies:
@@ -22286,13 +22166,6 @@ __metadata:
     get-east-asian-width: "npm:^1.5.0"
     strip-ansi: "npm:^7.1.2"
   checksum: 10/4cd652495ffb29964d83c341741264b45ffa9843070d553846907bc1f1e10c41399ea3742cb7bca202f2804659967ca713f5caac46675e200fc74fef58c63043
-  languageName: node
-  linkType: hard
-
-"string.prototype.codepointat@npm:^0.2.1":
-  version: 0.2.1
-  resolution: "string.prototype.codepointat@npm:0.2.1"
-  checksum: 10/bafa15844d7ea5bed24a01fa8954327c0c49226cefe68ab70573f1338f6a4680587db962724924f2cceb91abe408e11bd38c80095f25ee080f136a6c9d300f00
   languageName: node
   linkType: hard
 
@@ -24525,7 +24398,6 @@ __metadata:
     "@typescript-eslint/eslint-plugin": "npm:8.72.1"
     "@typescript-eslint/parser": "npm:8.72.1"
     "@vercel/analytics": "npm:^2.0.1"
-    "@vercel/og": "npm:^1.0.3"
     "@vercel/speed-insights": "npm:^2.0.0"
     "@vitejs/plugin-react": "npm:6.1.2"
     "@vitest/ui": "npm:5.0.5"

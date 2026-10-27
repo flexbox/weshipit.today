@@ -24,9 +24,11 @@ interface PlanSlugPageProps {
   datePublished: string;
 }
 
+// Plan files start with YAML frontmatter, so the title is the first heading,
+// not the first line.
 function extractTitle(content: string): string {
-  const firstLine = content.split('\n')[0];
-  return firstLine.replace(/^#+\s*/, '').trim();
+  const heading = content.split('\n').find((line) => /^#\s/.test(line));
+  return heading ? heading.replace(/^#+\s*/, '').trim() : '';
 }
 
 function extractDescription(content: string): string {
@@ -162,6 +164,8 @@ export default function PlanSlugPage({
   return (
     <Layout
       seoTitle={`Plan ${currentSlug.toUpperCase()}`}
+      ogImageTitle={title}
+      ogImageKicker={`Plan ${currentSlug.toUpperCase()}`}
       seoDescription={description}
       withHeader={true}
     >

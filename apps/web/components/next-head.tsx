@@ -1,17 +1,23 @@
 import { NextSeo } from 'next-seo';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import {
+  buildOgImagePath,
+  buildPodcastOgImagePath,
+  OgLang,
+  PodcastOgImageData,
+} from '../utils/og/og-image-path';
 
-export interface PodcastOgImageData {
-  title: string;
-  guest: string;
-  episode: number;
-  type: 'podcast' | 'transcript';
-}
+export type { PodcastOgImageData };
 
 export interface NextHeadProps {
   seoTitle: string;
+  /** Defaults to `seoTitle`. */
   ogImageTitle?: string;
+  /** Mono label above the title. Defaults to the agency label for the locale. */
+  ogImageKicker?: string;
+  /** Optional proof point under the title, e.g. "4,6/5 · avis vérifié". */
+  ogImageSubline?: string;
   ogImageAlt?: string;
   ogImagePodcast?: PodcastOgImageData;
   seoDescription: string;
@@ -21,8 +27,15 @@ export interface NextHeadProps {
 
 const BASE_URL = 'https://weshipit.today';
 
+const DEFAULT_KICKER: Record<OgLang, string> = {
+  en: 'React Native agency',
+  fr: 'Agence React Native',
+};
+
 export function NextHead({
-  ogImageTitle = 'React Native Development Agency',
+  ogImageTitle,
+  ogImageKicker,
+  ogImageSubline,
   ogImageAlt,
   ogImagePodcast,
   seoDescription,
@@ -36,23 +49,26 @@ export function NextHead({
   const path = router.asPath.split(/[?#]/)[0];
   const canonicalUrl = `${BASE_URL}${path === '/' ? '' : path}`;
 
-  const generateOgImagePath = () => {
-    if (ogImagePodcast) {
-      const { title, guest, episode, type } = ogImagePodcast;
-      return `/api/podcast-og?title=${encodeURIComponent(title)}&guest=${encodeURIComponent(guest)}&episode=${episode}&type=${type}`;
-    }
-    if (ogImageTitle?.startsWith('/api/') || ogImageTitle?.startsWith('http')) {
-      return ogImageTitle;
-    }
-    return `/api/og?title=${encodeURI(ogImageTitle || '')}`;
-  };
+  const lang: OgLang = locale.startsWith('fr') ? 'fr' : 'en';
+  const imageTitle = ogImageTitle || seoTitle;
 
-  const ogImagePath = generateOgImagePath();
-  const ogImageUrl = ogImagePath.startsWith('http')
-    ? ogImagePath
-    : `${BASE_URL}${ogImagePath}`;
+  const ogImageUrl = `${BASE_URL}${
+    ogImagePodcast
+      ? buildPodcastOgImagePath(ogImagePodcast)
+      : buildOgImagePath({
+          kicker: ogImageKicker ?? DEFAULT_KICKER[lang],
+          lang,
+          path,
+          subline: ogImageSubline,
+          title: imageTitle,
+        })
+  }`;
 
-  const imageAlt = ogImageAlt || 'Hire React Native Developers as a Service';
+  const imageAlt =
+    ogImageAlt ??
+    (ogImagePodcast
+      ? `${ogImagePodcast.title} avec ${ogImagePodcast.guest} — Le Cross Platform Show`
+      : `${imageTitle} — weshipit.today`);
 
   return (
     <>

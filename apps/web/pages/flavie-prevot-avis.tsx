@@ -692,6 +692,7 @@ export default function FlaviePrevotAvisPage() {
         seoTitle="Flavie Prevot : avis, parcours et Incubateur Solopreneur (2026)"
         seoDescription="Qui est Flavie Prevot ? Parcours, écosystème (newsletter 30k+ abonnés, podcast, Incubateur Solopreneur), avis publics, réputation Trustpilot et LinkedIn. Analyse neutre par un incubé actif."
         ogImageTitle="Flavie Prevot : avis et parcours"
+        ogImageKicker="Incubateur Solopreneur"
         ogImageAlt="Profil de Flavie Prevot, fondatrice de l’Incubateur Solopreneur"
         locale="fr_FR"
         withHeader

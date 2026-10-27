@@ -221,6 +221,7 @@ export default function ReactNativeGlossary({
       seoTitle="React Native Glossary"
       seoDescription={`${termCount} React Native terms explained in plain English for developers new to the ecosystem — Expo, Metro, JSX, Flexbox, Hermes, the New Architecture, Fabric and TurboModules.`}
       ogImageTitle="React Native Glossary"
+      ogImageKicker="Free resource"
       withHeader
       withFooter
     >

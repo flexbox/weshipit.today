@@ -276,7 +276,8 @@ export default function GlossaryTermPage({
     <Layout
       seoTitle={`${title} | React Native Glossary`}
       seoDescription={seoDescription}
-      ogImageTitle={`${title} | React Native Glossary`}
+      ogImageTitle={title}
+      ogImageKicker="React Native glossary"
       withHeader
       withFooter
     >

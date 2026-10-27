@@ -17,6 +17,8 @@ interface LayoutProps extends NextHeadProps {
 export function Layout({
   children,
   ogImageTitle,
+  ogImageKicker,
+  ogImageSubline,
   ogImageAlt,
   seoDescription,
   seoTitle,
@@ -37,6 +39,8 @@ export function Layout({
         seoTitle={seoTitle}
         seoDescription={seoDescription}
         ogImageTitle={ogImageTitle}
+        ogImageKicker={ogImageKicker}
+        ogImageSubline={ogImageSubline}
         ogImageAlt={ogImageAlt}
         ogImagePodcast={ogImagePodcast}
         locale={locale}

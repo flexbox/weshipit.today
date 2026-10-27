@@ -955,6 +955,8 @@ export default function CodeReductionSolopreneurPage() {
         seoTitle="Code Réduction Incubateur Solopreneur 2026 : 1 490 € au lieu de 2 400 € (-910 €)"
         seoDescription="Code réduction Incubateur Solopreneur de Flavie Prevot : 1 490 € HT au lieu de 2 400 €. Le tarif le plus bas du marché via le lien affilié officiel. 910 € d'économie sur 12 mois d'incubation avec 300+ solopreneurs, Sprints mensuels et lives-ateliers."
         ogImageTitle="Code Réduction Incubateur Solopreneur"
+        ogImageKicker="Incubateur Solopreneur"
+        ogImageSubline="1 490 € HT au lieu de 2 400 €"
         ogImageAlt="Code réduction Incubateur Solopreneur — 1 490 € HT au lieu de 2 400 €"
         locale="fr_FR"
         withHeader

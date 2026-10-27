@@ -176,6 +176,7 @@ export default function DevToolsPage({
       seoTitle="React Native Developer Tools"
       seoDescription={`Discover ${numberOfTools}+ apps React Native developers need to debug, test, and ship mobile apps — curated tools for iOS, Android & Bluetooth testing.`}
       ogImageTitle="React Native Developer Tools"
+      ogImageKicker="Free tool"
       ogImageAlt="React Native Developer Tools — weshipit.today"
     >
       <Head>

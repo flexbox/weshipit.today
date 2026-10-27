@@ -139,6 +139,9 @@ export default function FrenchReactNativePage({
         isExternalLink: true,
       }}
       seoTitle="React Native Usage Among French Companies"
+      ogImageTitle="React Native usage among French companies"
+      ogImageKicker="React Native in France"
+      ogImageSubline="BlaBlaCar, Doctolib, Ledger, Shine and more"
       seoDescription="Discover how French companies like BlaBlaCar, Doctolib, Ledger, and Shine are harnessing the power of React Native to create robust mobile applications."
     >
       <Hero title={heroTitle} />
