@@ -1,10 +1,17 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 
-import ClientListAudit from './clients-list-audit';
+import { ClientsListAudit } from './clients-list-audit';
+import { clientsListFixture } from './clients-list.fixture';
 
-describe('ClientListAudit', () => {
-  it('should render successfully', () => {
-    const { baseElement } = render(<ClientListAudit />);
+describe('ClientsListAudit', () => {
+  it('should render successfully with []', () => {
+    const { baseElement } = render(<ClientsListAudit clients={[]} />);
     expect(baseElement).toBeTruthy();
+  });
+
+  it('should only render audit clients', () => {
+    render(<ClientsListAudit clients={clientsListFixture} />);
+    expect(screen.getByAltText('Vercel logo')).toBeTruthy();
+    expect(screen.queryByAltText('Prismic logo')).toBeNull();
   });
 });
