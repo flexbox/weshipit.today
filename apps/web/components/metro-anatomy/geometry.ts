@@ -96,8 +96,8 @@ const lineOnY = (y: number, x0: number, x1: number, z: number) =>
 
 /* ---------- Bench ---------- */
 
-const RULER: Plan = { x: -150, y: 34, w: 168, d: 6, r: 1 };
-const LABEL: Plan = { x: 98, y: 27, w: 46, d: 12, r: 2 };
+const RULER: Plan = { d: 6, r: 1, w: 168, x: -150, y: 34 };
+const LABEL: Plan = { d: 12, r: 2, w: 46, x: 98, y: 27 };
 const TICKS = topTicks(
   RULER.x + 3,
   RULER.x + RULER.w - 3,
@@ -110,20 +110,12 @@ const TICKS = topTicks(
 );
 
 export const BENCH = {
-  halo: solid(BASE, -BASE_H - FOOT_H, BASE_H).fill,
   feet: byDepth(corners(BASE, 22)).map(([x, y]) => [
     post(x, y, 7, -BASE_H - FOOT_H, 1.6, 28),
     post(x, y, 5.4, -BASE_H - FOOT_H + 1.6, FOOT_H - 1.6, 28),
   ]),
-  slab: solid(BASE, -BASE_H, BASE_H, 8, 1.6),
   groove: planOutline(insetPlan(BASE, 5), 0, P),
-  screwRings: join(
-    corners(BASE, 10).map(([x, y]) => ring(x, y, 2.2, 0, P, 16)),
-  ),
-  screws: corners(BASE, 10).map(([x, y]) => at([x, y, 0])),
-  ruler: solid(RULER, 0, 0.6, 3),
-  ticksMinor: TICKS.minor,
-  ticksMajor: TICKS.major,
+  halo: solid(BASE, -BASE_H - FOOT_H, BASE_H).fill,
   label: solid(LABEL, 0, 0.8, 4),
   labelLine: planOutline(insetPlan(LABEL, 1.6), 0.8, P),
   labelRules: [0, 1, 2].map((row) =>
@@ -138,39 +130,35 @@ export const BENCH = {
     at([LABEL.x + 3.6, LABEL.y + LABEL.d / 2, 0.8]),
     at([LABEL.x + LABEL.w - 3.6, LABEL.y + LABEL.d / 2, 0.8]),
   ],
+  ruler: solid(RULER, 0, 0.6, 3),
+  screwRings: join(
+    corners(BASE, 10).map(([x, y]) => ring(x, y, 2.2, 0, P, 16)),
+  ),
+  screws: corners(BASE, 10).map(([x, y]) => at([x, y, 0])),
+  slab: solid(BASE, -BASE_H, BASE_H, 8, 1.6),
+  ticksMajor: TICKS.major,
+  ticksMinor: TICKS.minor,
 };
 
 /* ---------- Deck, trays and lane ---------- */
 
 const LANE_W = LANE_X1 - LANE_X0;
 const TRAY = (x: number): Plan => ({
-  x: x - 11,
-  y: TRAY_Y - 9,
-  w: 22,
   d: 18,
   r: 1.5,
+  w: 22,
+  x: x - 11,
+  y: TRAY_Y - 9,
 });
 
 export const DECK_ART = {
-  slab: solid(DECK, 0, FLOOR_Z, 4, 0.8),
   seam: sideSeam(DECK, 2.4, P, 4),
+  slab: solid(DECK, 0, FLOOR_Z, 4, 0.8),
   trays: join(TRAY_XS.map((x) => planOutline(TRAY(x), FLOOR_Z, P, 3))),
   /** Back corner pegs that square a sheet in its tray. */
-  pegs: TRAY_XS.flatMap((x) =>
-    [x - 10.4, x + 10.4].map((px) =>
-      post(px, TRAY_Y - 8.2, 1, FLOOR_Z, 3.4, 14),
-    ),
-  ),
-  pegTops: TRAY_XS.flatMap((x) =>
-    [x - 10.4, x + 10.4].map((px) => at([px, TRAY_Y - 8.2, FLOOR_Z + 3.4])),
-  ),
-  laneGrooves: join(
-    [LANE_Y0 + 0.6, LANE_Y1 - 0.6].map((y) =>
-      lineOnTop([LANE_X0, y], [LANE_X1, y], FLOOR_Z, P),
-    ),
-  ),
+  back: solid({ d: 2, r: 0.5, w: 80, x: -4, y: LANE_Y0 - 2 }, 0, LIP_Z, 2, 0.3),
   front: solid(
-    { x: LANE_X0, y: LANE_Y1, w: LANE_W, d: 2, r: 0.5 },
+    { d: 2, r: 0.5, w: LANE_W, x: LANE_X0, y: LANE_Y1 },
     0,
     LIP_Z,
     2,
@@ -179,16 +167,28 @@ export const DECK_ART = {
   frontScrews: [-150, -110, -70, -30, 10, 40, 68].map((x) =>
     at([x, LANE_Y1 + 1, LIP_Z]),
   ),
-  back: solid({ x: -4, y: LANE_Y0 - 2, w: 80, d: 2, r: 0.5 }, 0, LIP_Z, 2, 0.3),
+  laneGrooves: join(
+    [LANE_Y0 + 0.6, LANE_Y1 - 0.6].map((y) =>
+      lineOnTop([LANE_X0, y], [LANE_X1, y], FLOOR_Z, P),
+    ),
+  ),
+  pegs: TRAY_XS.flatMap((x) =>
+    [x - 10.4, x + 10.4].map((px) =>
+      post(px, TRAY_Y - 8.2, 1, FLOOR_Z, 3.4, 14),
+    ),
+  ),
+  pegTops: TRAY_XS.flatMap((x) =>
+    [x - 10.4, x + 10.4].map((px) => at([px, TRAY_Y - 8.2, FLOOR_Z + 3.4])),
+  ),
   stopLeft: solid(
-    { x: LANE_X0 - 3, y: LANE_Y0 - 2, w: 3, d: 22, r: 0.8 },
+    { d: 22, r: 0.8, w: 3, x: LANE_X0 - 3, y: LANE_Y0 - 2 },
     0,
     14,
     3,
     0.4,
   ),
   stopRight: solid(
-    { x: LANE_X1, y: LANE_Y0 - 2, w: 3, d: 22, r: 0.8 },
+    { d: 22, r: 0.8, w: 3, x: LANE_X1, y: LANE_Y0 - 2 },
     0,
     14,
     3,
@@ -210,25 +210,25 @@ const LAMP_Z = 20;
 const STAPLE_BACK = [2.2, 2.2, 2.2, 4.6, 7.2];
 
 export const CABINET_ART = {
-  plinth: solid(insetPlan(CABINET, -1.5), 0, 2, 4, 0.4),
   body: solid(CABINET, 2, CABINET_TOP - 2, 4, 1),
-  seam: sideSeam(CABINET, CABINET_TOP - 3, P, 4),
-  topGroove: planOutline(insetPlan(CABINET, 2.4), CABINET_TOP, P, 3),
-  topScrews: corners(CABINET, 1.4).map(([x, y]) => at([x, y, CABINET_TOP])),
   drawers: TRAY_XS.map((x) => {
-    const front: Plan = { x: x - 10.5, y: FACE_Y, w: 21, d: 1.2, r: 0.4 };
+    const front: Plan = { d: 1.2, r: 0.4, w: 21, x: x - 10.5, y: FACE_Y };
     const y = FACE_Y + 1.2;
     return {
       front: solid(front, DRAWER_Z0, DRAWER_Z1 - DRAWER_Z0, 2, 0.3),
-      window: rectOnY(y, x - 7, x + 7, 10.5, 16.5),
+      handle: solid({ d: 1.4, r: 0.6, w: 9, x: x - 4.5, y }, 6.2, 1.4, 3, 0.2),
+      lamp: at([x, y, LAMP_Z]),
+      lampRing: sideRing([x, y, LAMP_Z], 1.6, 'y', P, 18),
       rules: [0, 1].map((row) =>
         lineOnY(y, x - 5.2, x + [3.6, 0.4][row], 14.6 - row * 2.2),
       ),
-      handle: solid({ x: x - 4.5, y, w: 9, d: 1.4, r: 0.6 }, 6.2, 1.4, 3, 0.2),
-      lampRing: sideRing([x, y, LAMP_Z], 1.6, 'y', P, 18),
-      lamp: at([x, y, LAMP_Z]),
+      window: rectOnY(y, x - 7, x + 7, 10.5, 16.5),
     };
   }),
+  plinth: solid(insetPlan(CABINET, -1.5), 0, 2, 4, 0.4),
+  seam: sideSeam(CABINET, CABINET_TOP - 3, P, 4),
+  topGroove: planOutline(insetPlan(CABINET, 2.4), CABINET_TOP, P, 3),
+  topScrews: corners(CABINET, 1.4).map(([x, y]) => at([x, y, CABINET_TOP])),
   /** Terminal posts on the panel, one per file. */
   posts: TRAY_XS.map((x) => post(x, PANEL_Y, 1.3, CABINET_TOP, 1.6, 16)),
   postTops: TRAY_XS.map((x) => at([x, PANEL_Y, CABINET_TOP + 1.6])),
@@ -264,24 +264,25 @@ const CACHE_Y = 15;
 export const CACHE_XS = FILES.map((_, index) => TX - 7.5 + index * 3);
 
 export const TRANSFORMER = {
-  foot: solid(FOOT, FLOOR_Z, 2, 4, 0.5),
-  footScrews: corners(FOOT, 1.6).map(([x, y]) => at([x, y, FLOOR_Z + 2])),
+  arm: solid(ARM, ARM_Z, ARM_TOP - ARM_Z, 4, 0.8),
+  armScrews: [
+    at([ARM.x + 3, ARM.y + 3, ARM_TOP]),
+    at([ARM.x + ARM.w - 3, ARM.y + 3, ARM_TOP]),
+  ],
+  armSeam: sideSeam(ARM, ARM_Z + 2.6, P, 4),
   column: solid(COLUMN, FLOOR_Z + 2, COLUMN_TOP - FLOOR_Z - 2, 4, 0.8),
   columnSeam: sideSeam(COLUMN, 12, P, 4),
+  foot: solid(FOOT, FLOOR_Z, 2, 4, 0.5),
+  footScrews: corners(FOOT, 1.6).map(([x, y]) => at([x, y, FLOOR_Z + 2])),
   vents: join(
     [14, 17, 20, 23, 26].map((z) =>
       slotOnX(COLUMN.x + COLUMN.w, COLUMN.y + 2.5, COLUMN.y + 9.5, z, z + 1.4),
     ),
   ),
-  arm: solid(ARM, ARM_Z, ARM_TOP - ARM_Z, 4, 0.8),
-  armSeam: sideSeam(ARM, ARM_Z + 2.6, P, 4),
-  armScrews: [
-    at([ARM.x + 3, ARM.y + 3, ARM_TOP]),
-    at([ARM.x + ARM.w - 3, ARM.y + 3, ARM_TOP]),
-  ],
   /** A plate on the arm that carries the cache lamps. */
+  cacheLamps: CACHE_XS.map((x) => at([x, CACHE_Y, ARM_TOP + 0.5])),
   cachePlate: solid(
-    { x: TX - 9.5 + 0.8, y: CACHE_Y - 2.6, w: 17.4, d: 5.2, r: 1 },
+    { d: 5.2, r: 1, w: 17.4, x: TX - 9.5 + 0.8, y: CACHE_Y - 2.6 },
     ARM_TOP,
     0.5,
     3,
@@ -289,13 +290,12 @@ export const TRANSFORMER = {
   cacheRings: join(
     CACHE_XS.map((x) => ring(x, CACHE_Y, 1.05, ARM_TOP + 0.5, P, 14)),
   ),
-  cacheLamps: CACHE_XS.map((x) => at([x, CACHE_Y, ARM_TOP + 0.5])),
   head: solid(HEAD, HEAD_Z, ARM_Z - HEAD_Z, 3, 0.4),
-  headSeam: sideSeam(HEAD, HEAD_Z + 2.4, P, 3),
-  headLampRing: sideRing([TX, HEAD.y + HEAD.d, 18.4], 1.4, 'y', P, 16),
   headLamp: at([TX, HEAD.y + HEAD.d, 18.4]),
-  knobHub: post(KNOB[0], KNOB[1], 1.8, COLUMN_TOP, 1.2, 16),
+  headLampRing: sideRing([TX, HEAD.y + HEAD.d, 18.4], 1.4, 'y', P, 16),
+  headSeam: sideSeam(HEAD, HEAD_Z + 2.4, P, 3),
   knob: post(KNOB[0], KNOB[1], 4.2, COLUMN_TOP + 1.2, 2.6, 36),
+  knobHub: post(KNOB[0], KNOB[1], 1.8, COLUMN_TOP, 1.2, 16),
   knobKnurl: knurl(
     KNOB[0],
     KNOB[1],
@@ -306,50 +306,63 @@ export const TRANSFORMER = {
     P,
     0.3,
   ),
-  knobRing: ring(KNOB[0], KNOB[1], 3.2, COLUMN_TOP + 3.8, P, 30),
   knobMark: lineOnTop(
     [KNOB[0], KNOB[1]],
     [KNOB[0] + 2.6, KNOB[1] + 1],
     COLUMN_TOP + 3.8,
     P,
   ),
+  knobRing: ring(KNOB[0], KNOB[1], 3.2, COLUMN_TOP + 3.8, P, 30),
   /** Rollers on the lane floor either side of the head. */
   rollers: [TX - 8, TX + 8].map((x) => post(x, -1, 1.3, LIP_Z, 2.6, 16)),
 };
 
 /* ---------- Bundle stack and dev server ---------- */
 
-const HOLDER_BACK: Plan = { x: SX - 12, y: LANE_Y0 - 6, w: 24, d: 4, r: 1 };
+const HOLDER_BACK: Plan = { d: 4, r: 1, w: 24, x: SX - 12, y: LANE_Y0 - 6 };
 const SWITCH: Plane = [SERVER.x + 24, SERVER.y + 9];
 const SWITCH_Z = SERVER_TOP + 0.6;
 
 export const STACK_ART = {
   back: solid(HOLDER_BACK, 0, 22, 3, 0.5),
-  backSeam: sideSeam(HOLDER_BACK, 17, P, 3),
   backScrews: [at([SX - 8, LANE_Y0 - 4, 22]), at([SX + 8, LANE_Y0 - 4, 22])],
-  posts: [SX - 13.5, SX + 10.5].map((px) =>
-    solid({ x: px, y: LANE_Y1 + 2, w: 3, d: 3, r: 0.8 }, 0, 13, 2, 0.3),
-  ),
+  backSeam: sideSeam(HOLDER_BACK, 17, P, 3),
   postCaps: [SX - 12, SX + 12].map((px) => at([px, LANE_Y1 + 3.5, 13])),
+  posts: [SX - 13.5, SX + 10.5].map((px) =>
+    solid({ d: 3, r: 0.8, w: 3, x: px, y: LANE_Y1 + 2 }, 0, 13, 2, 0.3),
+  ),
 };
 
 export const SERVER_ART = {
   body: solid(SERVER, FLOOR_Z, SERVER_TOP - FLOOR_Z, 4, 1),
+  screws: corners(SERVER, 3.4).map(([x, y]) => at([x, y, SERVER_TOP])),
   seam: sideSeam(SERVER, FLOOR_Z + 4, P, 4),
   topGroove: planOutline(insetPlan(SERVER, 2.2), SERVER_TOP, P, 3),
-  screws: corners(SERVER, 3.4).map(([x, y]) => at([x, y, SERVER_TOP])),
   vents: join(
     [11, 14, 17, 20, 23, 26].map((z) =>
       slotOnX(SERVER.x + SERVER.w, SERVER.y + 3, SERVER.y + 8, z, z + 1.3),
     ),
   ),
   /** The one engraved label: the port the bundle is served on. */
+  detents: [-1, 1].map((side) =>
+    at([SWITCH[0] + side * 3.4, SWITCH[1] - 2.9, SWITCH_Z]),
+  ),
   port: topMatrix([SERVER.x + 9, SERVER.y + 18.5], SERVER_TOP, P, 'x'),
-  switchPlate: solid(
-    { x: SWITCH[0] - 5, y: SWITCH[1] - 4, w: 10, d: 8, r: 1.5 },
+  socket: solid(
+    { d: 7, r: 0.6, w: 2.4, x: SOCKET[0], y: SOCKET[1] - 3.5 },
+    SOCKET[2] - 3,
+    6,
+    2,
+    0.2,
+  ),
+  socketLamp: at([SERVER.x + SERVER.w - 4, SERVER.y + 22, SERVER_TOP]),
+  socketLampRing: ring(
+    SERVER.x + SERVER.w - 4,
+    SERVER.y + 22,
+    1.5,
     SERVER_TOP,
-    0.6,
-    3,
+    P,
+    16,
   ),
   switchKnob: post(SWITCH[0], SWITCH[1], 2.6, SWITCH_Z, 2.4, 24),
   switchKnurl: knurl(
@@ -362,25 +375,12 @@ export const SERVER_ART = {
     P,
     0.3,
   ),
-  detents: [-1, 1].map((side) =>
-    at([SWITCH[0] + side * 3.4, SWITCH[1] - 2.9, SWITCH_Z]),
-  ),
-  socket: solid(
-    { x: SOCKET[0], y: SOCKET[1] - 3.5, w: 2.4, d: 7, r: 0.6 },
-    SOCKET[2] - 3,
-    6,
-    2,
-    0.2,
-  ),
-  socketLampRing: ring(
-    SERVER.x + SERVER.w - 4,
-    SERVER.y + 22,
-    1.5,
+  switchPlate: solid(
+    { d: 8, r: 1.5, w: 10, x: SWITCH[0] - 5, y: SWITCH[1] - 4 },
     SERVER_TOP,
-    P,
-    16,
+    0.6,
+    3,
   ),
-  socketLamp: at([SERVER.x + SERVER.w - 4, SERVER.y + 22, SERVER_TOP]),
 };
 
 /** Platform switch pointer: -1 points at iOS (left detent), +1 at Android. */
@@ -422,55 +422,44 @@ export const CABLE = {
 
 export const PHONE_ART = {
   dock: solid(DOCK, 0, DOCK_TOP, 6, 1),
-  dockSeam: sideSeam(DOCK, 2.6, P, 6),
-  dockScrews: corners(DOCK, 3).map(([x, y]) => at([x, y, DOCK_TOP])),
   dockGroove: planOutline(
     {
-      x: PHONE.x - 1.4,
-      y: PHONE.y - 1.4,
-      w: PHONE.w + 2.8,
       d: PHONE.d + 2.8,
       r: 1.6,
+      w: PHONE.w + 2.8,
+      x: PHONE.x - 1.4,
+      y: PHONE.y - 1.4,
     },
     DOCK_TOP,
     P,
     3,
   ),
+  dockScrews: corners(DOCK, 3).map(([x, y]) => at([x, y, DOCK_TOP])),
+  dockSeam: sideSeam(DOCK, 2.6, P, 6),
   /** Back rest the phone leans on. */
+  body: solid(PHONE, PHONE_Z - 2, PHONE_TOP - PHONE_Z + 2, 6, 0.6),
   rest: solid(
-    { x: PHONE.x + 3, y: PHONE.y - 4, w: PHONE.w - 6, d: 3, r: 1 },
+    { d: 3, r: 1, w: PHONE.w - 6, x: PHONE.x + 3, y: PHONE.y - 4 },
     DOCK_TOP,
     30,
     3,
     0.4,
   ),
-  body: solid(PHONE, PHONE_Z - 2, PHONE_TOP - PHONE_Z + 2, 6, 0.6),
   sideButtons: [
     solid(
-      { x: PHONE.x + PHONE.w, y: PHONE.y + 1, w: 0.6, d: 2, r: 0.2 },
+      { d: 2, r: 0.2, w: 0.6, x: PHONE.x + PHONE.w, y: PHONE.y + 1 },
       48,
       6,
       2,
     ),
     solid(
-      { x: PHONE.x + PHONE.w, y: PHONE.y + 1, w: 0.6, d: 2, r: 0.2 },
+      { d: 2, r: 0.2, w: 0.6, x: PHONE.x + PHONE.w, y: PHONE.y + 1 },
       40,
       4,
       2,
     ),
   ],
   /** Front lip of the dock, in front of the phone's foot. */
-  lip: solid(
-    { x: PHONE.x - 2, y: SCREEN_Y + 0.4, w: PHONE.w + 4, d: 3, r: 1 },
-    DOCK_TOP,
-    4.5,
-    3,
-    0.4,
-  ),
-  lipScrews: [PHONE.x + 2, PHONE.x + PHONE.w - 2].map((x) =>
-    at([x, SCREEN_Y + 1.9, DOCK_TOP + 4.5]),
-  ),
-  glass: rectOnY(SCREEN_Y, SCREEN.x0, SCREEN.x1, SCREEN.z0, SCREEN.z1),
   bezel: rectOnY(
     SCREEN_Y,
     SCREEN.x0 - 0.8,
@@ -483,6 +472,17 @@ export const PHONE_ART = {
     SCREEN_Y,
     (SCREEN.z1 + PHONE_TOP) / 2,
   ]),
+  glass: rectOnY(SCREEN_Y, SCREEN.x0, SCREEN.x1, SCREEN.z0, SCREEN.z1),
+  lip: solid(
+    { d: 3, r: 1, w: PHONE.w + 4, x: PHONE.x - 2, y: SCREEN_Y + 0.4 },
+    DOCK_TOP,
+    4.5,
+    3,
+    0.4,
+  ),
+  lipScrews: [PHONE.x + 2, PHONE.x + PHONE.w - 2].map((x) =>
+    at([x, SCREEN_Y + 1.9, DOCK_TOP + 4.5]),
+  ),
   /** Screen plane: u along +x, v down from the top edge of the glass. */
   screen: sideMatrix([SCREEN.x0, SCREEN_Y], SCREEN.z1, P, 'left'),
 };
@@ -503,11 +503,11 @@ const SOURCE_ROWS = [
 
 export const CARD_ART = {
   body: solid(CARD, 0, CARD_H, 3, 0.3),
-  seam: sideSeam(CARD, CARD_H / 2, P, 3),
   fold: pathOf([
     at([CARD.x + CARD.w - 3, CARD.y, CARD_H]),
     at([CARD.x + CARD.w, CARD.y + 3, CARD_H]),
   ]),
+  seam: sideSeam(CARD, CARD_H / 2, P, 3),
   source: SOURCE_ROWS.map(([indent, length], row) =>
     lineOnTop(
       [CARD.x + 2.6 + indent, CARD.y + 2.6 + row * 2.2],
@@ -528,7 +528,7 @@ export const CARD_ART = {
   /** An image asset: a frame with a mountain in it. */
   picture: join([
     planOutline(
-      { x: CARD.x + 3, y: CARD.y + 2.4, w: 12, d: 9.2, r: 0.4 },
+      { d: 9.2, r: 0.4, w: 12, x: CARD.x + 3, y: CARD.y + 2.4 },
       CARD_H,
       P,
       1,

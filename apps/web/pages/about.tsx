@@ -34,11 +34,11 @@ export default function AboutPage({ clients }) {
       ogImageTitle="Meet our React Native team"
       withHeader
       callToActionLink={{
-        name: 'Star Us on GitHub',
         href: 'https://github.com/flexbox/weshipit.today',
         isExternalLink: true,
+        name: 'Star Us on GitHub',
       }}
-      callToActionButton={{ name: 'Work with us', href: '/' }}
+      callToActionButton={{ href: '/', name: 'Work with us' }}
       withFooter
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6">

@@ -4,9 +4,9 @@ import Link from 'next/link';
 import { ChevronLeftIcon } from '@heroicons/react/20/solid';
 
 export function PodcastNavigation({
-  previousEpisode,
-  nextEpisode,
   className,
+  nextEpisode,
+  previousEpisode,
 }: {
   previousEpisode: PodcastEpisode | null;
   nextEpisode: PodcastEpisode | null;

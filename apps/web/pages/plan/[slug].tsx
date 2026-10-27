@@ -16,11 +16,11 @@ interface Issue {
 }
 
 interface PlanSlugPageProps {
+  title: string;
   issues: Issue[];
   content: string;
   currentSlug: string;
   description: string;
-  title: string;
   datePublished: string;
 }
 
@@ -69,8 +69,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const planDir = path.join(process.cwd(), 'pages/plan');
   const { issues } = readIssues(planDir);
   return {
-    paths: issues.map((i) => ({ params: { slug: i.slug } })),
     fallback: false,
+    paths: issues.map((i) => ({ params: { slug: i.slug } })),
   };
 };
 
@@ -88,52 +88,52 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   if (!match) return { notFound: true };
 
   const raw = fs.readFileSync(path.join(planDir, match), 'utf8');
-  const { data: frontmatter, content } = matter(raw);
+  const { content, data: frontmatter } = matter(raw);
 
   const title = extractTitle(content);
   const description = frontmatter.description || extractDescription(content);
   const datePublished = isoWeekToDate(slug);
   return {
     props: {
-      issues,
       content,
       currentSlug: slug,
-      description,
-      title,
       datePublished,
+      description,
+      issues,
+      title,
     },
   };
 };
 
 export default function PlanSlugPage({
-  issues,
   content,
   currentSlug,
-  description,
-  title,
   datePublished,
+  description,
+  issues,
+  title,
 }: PlanSlugPageProps) {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'TechArticle',
-    headline: title,
-    description: description,
-    url: `https://weshipit.today/plan/${currentSlug}`,
-    datePublished: datePublished,
     author: {
       '@type': 'Person',
       name: 'David Leuliette',
       url: 'https://weshipit.today',
+    },
+    datePublished: datePublished,
+    description: description,
+    headline: title,
+    mainEntityOfPage: {
+      '@id': `https://weshipit.today/plan/${currentSlug}`,
+      '@type': 'WebPage',
     },
     publisher: {
       '@type': 'Organization',
       name: 'weshipit.today',
       url: 'https://weshipit.today',
     },
-    mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': `https://weshipit.today/plan/${currentSlug}`,
-    },
+    url: `https://weshipit.today/plan/${currentSlug}`,
   };
 
   const breadcrumbSchema = {
@@ -142,21 +142,21 @@ export default function PlanSlugPage({
     itemListElement: [
       {
         '@type': 'ListItem',
-        position: 1,
-        name: 'Home',
         item: 'https://weshipit.today',
+        name: 'Home',
+        position: 1,
       },
       {
         '@type': 'ListItem',
-        position: 2,
-        name: 'Plan',
         item: 'https://weshipit.today/plan',
+        name: 'Plan',
+        position: 2,
       },
       {
         '@type': 'ListItem',
-        position: 3,
-        name: `Plan ${currentSlug.toUpperCase()}`,
         item: `https://weshipit.today/plan/${currentSlug}`,
+        name: `Plan ${currentSlug.toUpperCase()}`,
+        position: 3,
       },
     ],
   };

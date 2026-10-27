@@ -49,9 +49,9 @@ export interface StarterFields {
 }
 
 export interface StarterRecord {
+  id: string;
   createdTime: string;
   fields: StarterFields;
-  id: string;
 }
 
 /**

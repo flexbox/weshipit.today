@@ -5,14 +5,14 @@ import { BellIcon } from '@heroicons/react/24/outline';
 import { AVATAR_URL, CONFIG } from '../config/config';
 
 interface YouTubeChannelPreviewProps {
-  bannerUrl: string;
-  variant?: 'desktop' | 'mobile';
-  channelName?: string;
   handle?: string;
-  subscribers?: string;
   videos?: string;
-  description?: string;
+  bannerUrl: string;
   avatarUrl?: string;
+  channelName?: string;
+  subscribers?: string;
+  description?: string;
+  variant?: 'desktop' | 'mobile';
 }
 
 // YouTube collapses the description to a teaser in the channel header; we mirror
@@ -20,25 +20,25 @@ interface YouTubeChannelPreviewProps {
 const DESCRIPTION_TEASER = CONFIG.youtube.description.split('\n\n')[0];
 
 const DEFAULTS = {
+  avatarUrl: AVATAR_URL,
   channelName: CONFIG.youtube.title,
+  description: DESCRIPTION_TEASER,
   handle: CONFIG.youtube.handle,
   subscribers: '12.4K subscribers',
   videos: '87 videos',
-  description: DESCRIPTION_TEASER,
-  avatarUrl: AVATAR_URL,
 };
 
 const TABS = ['Home', 'Videos', 'Shorts', 'Live', 'Playlists'];
 
 export function YouTubeChannelPreview({
+  avatarUrl = DEFAULTS.avatarUrl,
   bannerUrl,
-  variant = 'desktop',
   channelName = DEFAULTS.channelName,
+  description = DEFAULTS.description,
   handle = DEFAULTS.handle,
   subscribers = DEFAULTS.subscribers,
+  variant = 'desktop',
   videos = DEFAULTS.videos,
-  description = DEFAULTS.description,
-  avatarUrl = DEFAULTS.avatarUrl,
 }: YouTubeChannelPreviewProps) {
   const isMobile = variant === 'mobile';
   // Desktop YouTube crops the 16:9 asset to ~6.05:1; mobile crops to ~3.66:1.

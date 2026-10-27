@@ -5,42 +5,42 @@ import { MapPinIcon, CalendarDaysIcon } from '@heroicons/react/24/outline';
 import { AVATAR_URL, CONFIG } from '../config/config';
 
 interface XProfilePreviewProps {
-  bannerUrl: string;
-  variant?: 'desktop' | 'mobile';
+  bio?: string;
   name?: string;
   handle?: string;
-  bio?: string;
+  bannerUrl: string;
   location?: string;
-  joinedDate?: string;
   following?: string;
   followers?: string;
   avatarUrl?: string;
+  joinedDate?: string;
+  variant?: 'desktop' | 'mobile';
 }
 
 const DEFAULTS = {
-  name: CONFIG.x.name,
-  handle: CONFIG.x.handle,
-  bio: CONFIG.x.description,
-  location: 'Paris, France',
-  joinedDate: 'Joined January 2014',
-  following: '892',
-  followers: '19,361',
   avatarUrl: AVATAR_URL,
+  bio: CONFIG.x.description,
+  followers: '19,361',
+  following: '892',
+  handle: CONFIG.x.handle,
+  joinedDate: 'Joined January 2014',
+  location: 'Paris, France',
+  name: CONFIG.x.name,
 };
 
 const TABS = ['Posts', 'Replies', 'Highlights', 'Media', 'Likes'];
 
 export function XProfilePreview({
-  bannerUrl,
-  variant = 'desktop',
-  name = DEFAULTS.name,
-  handle = DEFAULTS.handle,
-  bio = DEFAULTS.bio,
-  location = DEFAULTS.location,
-  joinedDate = DEFAULTS.joinedDate,
-  following = DEFAULTS.following,
-  followers = DEFAULTS.followers,
   avatarUrl = DEFAULTS.avatarUrl,
+  bannerUrl,
+  bio = DEFAULTS.bio,
+  followers = DEFAULTS.followers,
+  following = DEFAULTS.following,
+  handle = DEFAULTS.handle,
+  joinedDate = DEFAULTS.joinedDate,
+  location = DEFAULTS.location,
+  name = DEFAULTS.name,
+  variant = 'desktop',
 }: XProfilePreviewProps) {
   const isMobile = variant === 'mobile';
 

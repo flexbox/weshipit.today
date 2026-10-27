@@ -86,8 +86,8 @@ function slotOnX(x: number, y0: number, y1: number, z0: number, z1: number) {
 
 /* ---------- Bench ---------- */
 
-const RULER: Plan = { x: -152, y: 46, w: 238, d: 6, r: 1 };
-const LABEL: Plan = { x: 100, y: 44, w: 52, d: 12, r: 2 };
+const RULER: Plan = { d: 6, r: 1, w: 238, x: -152, y: 46 };
+const LABEL: Plan = { d: 12, r: 2, w: 52, x: 100, y: 44 };
 const TICKS = topTicks(
   RULER.x + 3,
   RULER.x + RULER.w - 3,
@@ -100,20 +100,12 @@ const TICKS = topTicks(
 );
 
 export const BENCH = {
-  halo: solid(BASE, -BASE_H - FOOT_H, BASE_H).fill,
   feet: byDepth(corners(BASE, 22)).map(([x, y]) => [
     post(x, y, 7, -BASE_H - FOOT_H, 1.6, 28),
     post(x, y, 5.4, -BASE_H - FOOT_H + 1.6, FOOT_H - 1.6, 28),
   ]),
-  slab: solid(BASE, -BASE_H, BASE_H, 8, 1.6),
   groove: planOutline(insetPlan(BASE, 5), 0, P),
-  screwRings: join(
-    corners(BASE, 10).map(([x, y]) => ring(x, y, 2.2, 0, P, 16)),
-  ),
-  screws: corners(BASE, 10).map(([x, y]) => at([x, y, 0])),
-  ruler: solid(RULER, 0, 0.6, 3),
-  ticksMinor: TICKS.minor,
-  ticksMajor: TICKS.major,
+  halo: solid(BASE, -BASE_H - FOOT_H, BASE_H).fill,
   label: solid(LABEL, 0, 0.8, 4),
   labelLine: planOutline(insetPlan(LABEL, 1.6), 0.8, P),
   labelRules: [0, 1, 2].map((row) =>
@@ -128,6 +120,14 @@ export const BENCH = {
     at([LABEL.x + 3.6, LABEL.y + LABEL.d / 2, 0.8]),
     at([LABEL.x + LABEL.w - 3.6, LABEL.y + LABEL.d / 2, 0.8]),
   ],
+  ruler: solid(RULER, 0, 0.6, 3),
+  screwRings: join(
+    corners(BASE, 10).map(([x, y]) => ring(x, y, 2.2, 0, P, 16)),
+  ),
+  screws: corners(BASE, 10).map(([x, y]) => at([x, y, 0])),
+  slab: solid(BASE, -BASE_H, BASE_H, 8, 1.6),
+  ticksMajor: TICKS.major,
+  ticksMinor: TICKS.minor,
 };
 
 /* ---------- Update server rack (EAS Update) ---------- */
@@ -136,23 +136,12 @@ const RACK_FACE = RACK.y + RACK.d;
 const STUB_ZS = [12, 28, 44];
 
 export const RACK_ART = {
+  cap: solid(insetPlan(RACK, -1.4), RACK_TOP, 3, 4, 0.8),
+  capScrews: corners(RACK, 4).map(([x, y]) => at([x, y, RACK_TOP + 3])),
+  lights: [0, 1, 2].map((index) =>
+    at([RACK.x + 10 + index * 5, RACK_FACE, 62]),
+  ),
   plinth: solid(insetPlan(RACK, -1.6), 0, 4, 4, 0.6),
-  tower: solid(RACK, 4, RACK_TOP - 4, 4, 1),
-  towerSeams: sideSeam(RACK, 56, P, 4) + sideSeam(RACK, 10, P, 4),
-  vents: join(
-    [16, 20, 24, 28, 32, 36, 40].map((z) =>
-      slotOnX(RACK.x + RACK.w, RACK.y + 8, RACK.y + 38, z, z + 1.6),
-    ),
-  ),
-  stubs: STUB_ZS.map((z) =>
-    solid(
-      { x: RACK.x + 6, y: RACK_FACE - 4, w: 34, d: 8, r: 1.5 },
-      z,
-      10,
-      4,
-      0.5,
-    ),
-  ),
   stubRules: join(
     STUB_ZS.map((z) =>
       lineOnTop(
@@ -163,80 +152,91 @@ export const RACK_ART = {
       ),
     ),
   ),
-  lights: [0, 1, 2].map((index) =>
-    at([RACK.x + 10 + index * 5, RACK_FACE, 62]),
+  stubs: STUB_ZS.map((z) =>
+    solid(
+      { d: 8, r: 1.5, w: 34, x: RACK.x + 6, y: RACK_FACE - 4 },
+      z,
+      10,
+      4,
+      0.5,
+    ),
   ),
-  cap: solid(insetPlan(RACK, -1.4), RACK_TOP, 3, 4, 0.8),
-  capScrews: corners(RACK, 4).map(([x, y]) => at([x, y, RACK_TOP + 3])),
+  tower: solid(RACK, 4, RACK_TOP - 4, 4, 1),
+  towerSeams: sideSeam(RACK, 56, P, 4) + sideSeam(RACK, 10, P, 4),
+  vents: join(
+    [16, 20, 24, 28, 32, 36, 40].map((z) =>
+      slotOnX(RACK.x + RACK.w, RACK.y + 8, RACK.y + 38, z, z + 1.6),
+    ),
+  ),
 };
 
 /* ---------- Chassis back block, backplane and module cards ---------- */
 
-const PLANE: Plan = { x: -54, y: -44, w: 108, d: 34, r: 2 };
+const PLANE: Plan = { d: 34, r: 2, w: 108, x: -54, y: -44 };
 
 export const BACK_ART = {
   block: solid(BACK, 0, BACK_TOP, 6, 1.2),
-  seam: sideSeam(BACK, 6, P, 6),
-  vents: join(
-    [10, 14, 18, 22, 26].map((z) =>
-      slotOnX(BACK.x + BACK.w, BACK.y + 8, BACK.y + 40, z, z + 1.6),
-    ),
-  ),
-  screws: corners(BACK, 4).map(([x, y]) => at([x, y, BACK_TOP])),
-  plane: solid(PLANE, BACK_TOP, PLANE_TOP - BACK_TOP, 4, 0.5),
-  traces: join(
-    [-38, -32, -26].map((y) =>
-      lineOnTop([PLANE.x, y], [PLANE.x + PLANE.w, y], PLANE_TOP, P),
-    ),
-  ),
   connector: solid(
-    { x: PLANE.x + PLANE.w - 2, y: -24, w: 6, d: 10, r: 1 },
+    { d: 10, r: 1, w: 6, x: PLANE.x + PLANE.w - 2, y: -24 },
     BACK_TOP,
     PLANE_TOP - BACK_TOP + 3,
     3,
     0.4,
   ),
+  plane: solid(PLANE, BACK_TOP, PLANE_TOP - BACK_TOP, 4, 0.5),
+  screws: corners(BACK, 4).map(([x, y]) => at([x, y, BACK_TOP])),
+  seam: sideSeam(BACK, 6, P, 6),
+  traces: join(
+    [-38, -32, -26].map((y) =>
+      lineOnTop([PLANE.x, y], [PLANE.x + PLANE.w, y], PLANE_TOP, P),
+    ),
+  ),
+  vents: join(
+    [10, 14, 18, 22, 26].map((z) =>
+      slotOnX(BACK.x + BACK.w, BACK.y + 8, BACK.y + 40, z, z + 1.6),
+    ),
+  ),
 };
 
 export const SOCKETS = SOCKET_XS.map((x) => ({
   body: solid(
-    { x: x - 3, y: -42, w: 6, d: 30, r: 1 },
+    { d: 30, r: 1, w: 6, x: x - 3, y: -42 },
     PLANE_TOP,
     SOCKET_TOP - PLANE_TOP,
     3,
     0.4,
   ),
+  latch: solid(
+    { d: 1.6, r: 0.4, w: 3.2, x: x - 1.6, y: -12.4 },
+    SOCKET_TOP,
+    2,
+    2,
+  ),
   slot: planOutline(
-    { x: x - 0.8, y: -40, w: 1.6, d: 26, r: 0.8 },
+    { d: 26, r: 0.8, w: 1.6, x: x - 0.8, y: -40 },
     SOCKET_TOP,
     P,
     3,
-  ),
-  latch: solid(
-    { x: x - 1.6, y: -12.4, w: 3.2, d: 1.6, r: 0.4 },
-    SOCKET_TOP,
-    2,
-    2,
   ),
 }));
 
 /** One module card, built in its socket. */
 export const CARDS = SOCKET_XS.map((x) => ({
   board: solid(
-    { x: x - 0.9, y: -40, w: 1.8, d: 26, r: 0.3 },
+    { d: 26, r: 0.3, w: 1.8, x: x - 0.9, y: -40 },
     SOCKET_TOP - 1,
     CARD_TOP - SOCKET_TOP + 1,
     2,
   ),
   bracket: solid(
-    { x: x - 1.5, y: -15, w: 3, d: 2.4, r: 0.4 },
+    { d: 2.4, r: 0.4, w: 3, x: x - 1.5, y: -15 },
     SOCKET_TOP - 1,
     CARD_TOP - SOCKET_TOP + 3,
     2,
     0.3,
   ),
   chip: solid(
-    { x: x + 0.9, y: -34, w: 0.8, d: 9, r: 0.2 },
+    { d: 9, r: 0.2, w: 0.8, x: x + 0.9, y: -34 },
     SOCKET_TOP + 5,
     7,
     2,
@@ -247,28 +247,25 @@ export const CARDS = SOCKET_XS.map((x) => ({
 /* ---------- Track: bay floor, tray and feed rails ---------- */
 
 const rail = (x0: number, x1: number) => ({
+  back: solid(
+    { d: 3, r: 0.6, w: x1 - x0, x: x0, y: TRACK_Y0 - 3 },
+    0,
+    LIP_Z,
+    2,
+    0.4,
+  ),
   floor: solid(
-    { x: x0, y: TRACK_Y0, w: x1 - x0, d: TRACK_Y1 - TRACK_Y0, r: 0 },
+    { d: TRACK_Y1 - TRACK_Y0, r: 0, w: x1 - x0, x: x0, y: TRACK_Y0 },
     0,
     FLOOR_Z,
     2,
   ),
-  back: solid(
-    { x: x0, y: TRACK_Y0 - 3, w: x1 - x0, d: 3, r: 0.6 },
-    0,
-    LIP_Z,
-    2,
-    0.4,
-  ),
   front: solid(
-    { x: x0, y: TRACK_Y1, w: x1 - x0, d: 3, r: 0.6 },
+    { d: 3, r: 0.6, w: x1 - x0, x: x0, y: TRACK_Y1 },
     0,
     LIP_Z,
     2,
     0.4,
-  ),
-  screws: [x0 + 6, (x0 + x1) / 2, x1 - 6].map((x) =>
-    at([x, TRACK_Y1 + 1.5, LIP_Z]),
   ),
   groove: lineOnTop(
     [x0, (TRACK_Y0 + TRACK_Y1) / 2],
@@ -276,19 +273,23 @@ const rail = (x0: number, x1: number) => ({
     FLOOR_Z,
     P,
   ),
+  screws: [x0 + 6, (x0 + x1) / 2, x1 - 6].map((x) =>
+    at([x, TRACK_Y1 + 1.5, LIP_Z]),
+  ),
 });
 
 export const TRAY = rail(TRAY_X0, TRAY_X1);
 export const FEED = rail(FEED_X0, FEED_X1);
 
 export const STOPS = {
+  bumper: solid({ d: 8, r: 0.6, w: 2, x: FEED_X1 - 2, y: 6 }, FLOOR_Z, 6, 2),
   left: solid(
     {
-      x: TRAY_X0 - 3,
-      y: TRACK_Y0 - 3,
-      w: 3,
       d: TRACK_Y1 - TRACK_Y0 + 6,
       r: 0.8,
+      w: 3,
+      x: TRAY_X0 - 3,
+      y: TRACK_Y0 - 3,
     },
     0,
     16,
@@ -300,7 +301,7 @@ export const STOPS = {
     at([TRAY_X0 - 1.5, TRACK_Y1 - 2, 16]),
   ],
   right: solid(
-    { x: FEED_X1, y: TRACK_Y0 - 3, w: 3, d: TRACK_Y1 - TRACK_Y0 + 6, r: 0.8 },
+    { d: TRACK_Y1 - TRACK_Y0 + 6, r: 0.8, w: 3, x: FEED_X1, y: TRACK_Y0 - 3 },
     0,
     16,
     3,
@@ -310,7 +311,6 @@ export const STOPS = {
     at([FEED_X1 + 1.5, TRACK_Y0 + 2, 16]),
     at([FEED_X1 + 1.5, TRACK_Y1 - 2, 16]),
   ],
-  bumper: solid({ x: FEED_X1 - 2, y: 6, w: 2, d: 8, r: 0.6 }, FLOOR_Z, 6, 2),
 };
 
 export const BAY_ART = {
@@ -340,16 +340,20 @@ export const pinsOf = (x: number, base: number, key: number[]) =>
 
 /* ---------- Cartridge (the JS bundle) ---------- */
 
-const LABEL_RECESS: Plan = { x: -5, y: 3.5, w: 19, d: 13, r: 1.2 };
+const LABEL_RECESS: Plan = { d: 13, r: 1.2, w: 19, x: -5, y: 3.5 };
 
 export const CART_ART = {
-  shadow: solid(insetPlan(CART, 2), FLOOR_Z, 0.1).fill,
   body: solid(CART, FLOOR_Z, CART_TOP - FLOOR_Z, 4, 0.8),
-  seam: sideSeam(CART, FLOOR_Z + 5, P, 4),
   grips: join(
     [6, 10, 14].map((y) =>
       segment([CART_HALF, y, FLOOR_Z + 0.2], [CART_HALF, y, CART_TOP - 0.2]),
     ),
+  ),
+  pinBed: planOutline(
+    { d: 15.2, r: 1.4, w: 5.2, x: CART_PIN_X - 2.6, y: 2.4 },
+    CART_TOP,
+    P,
+    3,
   ),
   recess: planOutline(LABEL_RECESS, CART_TOP, P, 3),
   rules: [0, 1, 2].map((row) =>
@@ -360,12 +364,8 @@ export const CART_ART = {
       P,
     ),
   ),
-  pinBed: planOutline(
-    { x: CART_PIN_X - 2.6, y: 2.4, w: 5.2, d: 15.2, r: 1.4 },
-    CART_TOP,
-    P,
-    3,
-  ),
+  seam: sideSeam(CART, FLOOR_Z + 5, P, 4),
+  shadow: solid(insetPlan(CART, 2), FLOOR_Z, 0.1).fill,
 };
 
 /* ---------- Chassis front block: vents, label, dial, lamps ---------- */
@@ -383,29 +383,29 @@ const DIAL_TICKS = radialTicks(
 
 export const FRONT_ART = {
   block: solid(FRONT, 0, FRONT_TOP, 6, 1.2),
+  dialBand: sideArc(DIAL_X, DIAL_Y, DIAL_R, FRONT_TOP + 1, P, 32),
+  dialBezel: ring(DIAL_X, DIAL_Y, DIAL_R - 0.9, DIAL_TOP, P, 48),
+  dialHub: at([DIAL_X, DIAL_Y, DIAL_TOP]),
+  dialKnurl: knurl(DIAL_X, DIAL_Y, DIAL_R, FRONT_TOP, DIAL_TOP, 40, P, 0.3),
+  dialMajor: DIAL_TICKS.major,
+  dialMinor: DIAL_TICKS.minor,
+  dialPuck: post(DIAL_X, DIAL_Y, DIAL_R, FRONT_TOP, 3, 48),
+  label: topMatrix([-24, 33.2], FRONT_TOP, P, 'x'),
+  lampDots: [38, 45].map((x) => at([x, 31, FRONT_TOP + 1])),
+  lampRings: join([38, 45].map((x) => ring(x, 31, 2.6, FRONT_TOP, P, 16))),
+  lamps: [38, 45].map((x) => post(x, 31, 1.7, FRONT_TOP, 1, 16)),
+  screws: corners(FRONT, 3.2).map(([x, y]) => at([x, y, FRONT_TOP])),
   seam: sideSeam(FRONT, 4, P, 6),
   vents: join(
     [0, 1, 2, 3, 4].map((index) =>
       planOutline(
-        { x: -55 + index * 5, y: 26, w: 2.4, d: 10, r: 1.2 },
+        { d: 10, r: 1.2, w: 2.4, x: -55 + index * 5, y: 26 },
         FRONT_TOP,
         P,
         3,
       ),
     ),
   ),
-  label: topMatrix([-24, 33.2], FRONT_TOP, P, 'x'),
-  screws: corners(FRONT, 3.2).map(([x, y]) => at([x, y, FRONT_TOP])),
-  dialPuck: post(DIAL_X, DIAL_Y, DIAL_R, FRONT_TOP, 3, 48),
-  dialKnurl: knurl(DIAL_X, DIAL_Y, DIAL_R, FRONT_TOP, DIAL_TOP, 40, P, 0.3),
-  dialBand: sideArc(DIAL_X, DIAL_Y, DIAL_R, FRONT_TOP + 1, P, 32),
-  dialBezel: ring(DIAL_X, DIAL_Y, DIAL_R - 0.9, DIAL_TOP, P, 48),
-  dialMinor: DIAL_TICKS.minor,
-  dialMajor: DIAL_TICKS.major,
-  dialHub: at([DIAL_X, DIAL_Y, DIAL_TOP]),
-  lamps: [38, 45].map((x) => post(x, 31, 1.7, FRONT_TOP, 1, 16)),
-  lampRings: join([38, 45].map((x) => ring(x, 31, 2.6, FRONT_TOP, P, 16))),
-  lampDots: [38, 45].map((x) => at([x, 31, FRONT_TOP + 1])),
 };
 
 /** The dial needle, pointing at a build count. */

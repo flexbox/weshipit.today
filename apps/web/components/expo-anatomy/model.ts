@@ -40,16 +40,16 @@ export function keyOf(fingerprint: string): number[] {
 export const versionOf = (patch: number) => `1.0.${patch}`;
 
 export const readouts = {
-  rest: (patch: number, fp: string) =>
-    `bundle ${versionOf(patch)} · runtime ${fp}`,
-  shipped: (patch: number, fp: string) =>
-    `OTA ${versionOf(patch)} · runtime ${fp} · no store review`,
-  blocked: (patch: number, wants: string, has: string) =>
-    `${versionOf(patch)} wants ${wants} · binary is ${has}`,
   added: (name: string, from: string, to: string) =>
     `+ ${name} · fingerprint ${from} → ${to}`,
+  blocked: (patch: number, wants: string, has: string) =>
+    `${versionOf(patch)} wants ${wants} · binary is ${has}`,
   built: (build: number, fp: string) =>
     `EAS Build #${build} · runtime ${fp} · store release`,
   current: (fp: string) => `binary already on runtime ${fp}`,
   full: () => `all ${MOST_MODULES} module slots are full`,
+  rest: (patch: number, fp: string) =>
+    `bundle ${versionOf(patch)} · runtime ${fp}`,
+  shipped: (patch: number, fp: string) =>
+    `OTA ${versionOf(patch)} · runtime ${fp} · no store review`,
 };

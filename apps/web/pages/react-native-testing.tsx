@@ -139,34 +139,34 @@ function WhyMaestro() {
         columns={3}
         items={[
           {
-            icon: <DocumentTextIcon />,
-            title: 'Readable flows',
             description:
               'A login test is 10 lines of YAML — readable by product managers, not just engineers.',
+            icon: <DocumentTextIcon />,
+            title: 'Readable flows',
           },
           {
-            icon: <ShieldCheckIcon />,
-            title: 'Stable by default',
             description:
               'Built-in retry and wait logic means you stop chasing flaky tests at 2am.',
+            icon: <ShieldCheckIcon />,
+            title: 'Stable by default',
           },
           {
-            icon: <DevicePhoneMobileIcon />,
-            title: 'One flow, two platforms',
             description:
               'The same script runs on iOS and Android. No duplicated test code.',
+            icon: <DevicePhoneMobileIcon />,
+            title: 'One flow, two platforms',
           },
           {
-            icon: <CloudIcon />,
-            title: 'Cloud-ready',
             description:
               'Runs locally, in GitHub Actions, or on Maestro Cloud — you pick.',
+            icon: <CloudIcon />,
+            title: 'Cloud-ready',
           },
           {
-            icon: <CodeBracketSquareIcon />,
-            title: 'Open source',
             description:
               'No vendor lock-in. Your tests are YAML files in your repo.',
+            icon: <CodeBracketSquareIcon />,
+            title: 'Open source',
           },
         ]}
       />
@@ -192,40 +192,40 @@ function WhatYouGet() {
         columns={3}
         items={[
           {
-            icon: <WrenchScrewdriverIcon />,
-            title: 'Maestro installed and wired',
             description:
               'Wired to your existing React Native project — iOS and Android, simulator and device.',
+            icon: <WrenchScrewdriverIcon />,
+            title: 'Maestro installed and wired',
           },
           {
-            icon: <MapIcon />,
-            title: '5 critical user journeys',
             description:
               'Login, onboarding, payment, core feature — picked with you during kickoff.',
+            icon: <MapIcon />,
+            title: '5 critical user journeys',
           },
           {
-            icon: <CogIcon />,
-            title: 'CI/CD integration',
             description:
               'GitHub Actions workflow that runs your flows on every PR, or Maestro Cloud if you prefer.',
+            icon: <CogIcon />,
+            title: 'CI/CD integration',
           },
           {
-            icon: <BookOpenIcon />,
-            title: 'Runbook & README',
             description:
               'Tailored to your team — how to add a flow, debug a failure, run locally.',
+            icon: <BookOpenIcon />,
+            title: 'Runbook & README',
           },
           {
-            icon: <VideoCameraIcon />,
-            title: 'Recorded handoff session',
             description:
               '30-minute session recorded so your team can refer back whenever.',
+            icon: <VideoCameraIcon />,
+            title: 'Recorded handoff session',
           },
           {
-            icon: <ChatBubbleBottomCenterIcon />,
-            title: '14 days of follow-up',
             description:
               'Direct message me whenever a flow needs adjusting after handoff.',
+            icon: <ChatBubbleBottomCenterIcon />,
+            title: '14 days of follow-up',
           },
         ]}
       />
@@ -236,22 +236,22 @@ function WhatYouGet() {
 function Timeline() {
   const steps = [
     {
-      number: '01',
-      week: 'Week 1',
-      title: 'Kickoff & setup',
       body: '60-minute call to pick the 5 user journeys. We install Maestro, write the first flows, run them green on your simulator.',
+      number: '01',
+      title: 'Kickoff & setup',
+      week: 'Week 1',
     },
     {
-      number: '02',
-      week: 'Week 2',
-      title: 'CI & handoff',
       body: 'The remaining flows go in, GitHub Actions (or Maestro Cloud) is wired, runbook is written, and we record the handoff session.',
+      number: '02',
+      title: 'CI & handoff',
+      week: 'Week 2',
     },
     {
-      number: '03',
-      week: 'After handoff',
-      title: 'Follow-up support',
       body: 'Two weeks of message-based support so your team can ship flow #6 without rebuilding the setup from scratch.',
+      number: '03',
+      title: 'Follow-up support',
+      week: 'After handoff',
     },
   ];
 
@@ -512,40 +512,40 @@ function WhoAmI() {
 
 const faqs: FaqProps[] = [
   {
-    id: 'rnt-faq-flat-fee',
-    question: 'What does "flat fee" actually mean?',
     answer:
       "One number, agreed upfront, covers everything in scope: setup, the 5 flows, CI wiring, runbook, recorded handoff session, and 14 days of post-handoff support. No hourly billing, no scope-creep invoices. If the work takes longer than 2 weeks because of something on our end, that's our problem, not yours. The exact number depends on your app's complexity — book a 30-minute call and we'll quote on the spot.",
+    id: 'rnt-faq-flat-fee',
+    question: 'What does "flat fee" actually mean?',
   },
   {
-    id: 'rnt-faq-after-14-days',
-    question: 'What happens after the 14-day support window ends?',
     answer:
       "You own the test suite outright — it's YAML files in your repo. The runbook we wrote makes adding new flows a copy-paste-tweak operation that any teammate can do. If you'd rather we keep maintaining or extending the suite, you can book a follow-up engagement or fold it into a weshipit.today subscription. There's never a renewal lock-in.",
+    id: 'rnt-faq-after-14-days',
+    question: 'What happens after the 14-day support window ends?',
   },
   {
-    id: 'rnt-faq-flows-break',
-    question: 'What if my flows break after the support window?',
     answer:
       'Flows usually break because the UI changed — a renamed test ID, a new modal in the navigation path, a redesigned login screen. The runbook walks your team through diagnosing and fixing common breakages in under 10 minutes. For deeper issues, ping me directly — most one-off fixes take less than an hour and we keep DMs open even after the engagement.',
+    id: 'rnt-faq-flows-break',
+    question: 'What if my flows break after the support window?',
   },
   {
-    id: 'rnt-faq-expo-vs-bare',
-    question: 'Does this work with Expo, bare React Native, or both?',
     answer:
       "Both. Maestro tests the running app, not the build system — as long as your app boots on an iOS simulator or Android emulator, we can wire it up. We've set Maestro up for Expo managed workflow, Expo bare workflow, and bare React Native indistinguishably. EAS Build, Fastlane, or a hand-rolled CI all work too.",
+    id: 'rnt-faq-expo-vs-bare',
+    question: 'Does this work with Expo, bare React Native, or both?',
   },
   {
-    id: 'rnt-faq-more-than-5-flows',
-    question: 'Can you cover more than 5 flows?',
     answer:
       "Yes, but the 5-flow productized scope is the sharpest one — it's the smallest set that meaningfully covers your highest-risk user journeys, which is where E2E tests pay back fastest. If you need 10, 20, or a full regression suite, we'll scope a custom engagement on the discovery call. Same flat-fee philosophy, just a bigger number and longer timeline.",
+    id: 'rnt-faq-more-than-5-flows',
+    question: 'Can you cover more than 5 flows?',
   },
   {
-    id: 'rnt-faq-team-no-maestro-experience',
-    question: 'What if my team has never used Maestro?',
     answer:
       "Most of our clients hadn't. Maestro flows are YAML — closer to a step-by-step checklist than test code. The 30-minute recorded handoff session and the runbook are designed so a non-expert teammate can add their first flow within an afternoon. No prior Maestro experience required from your side.",
+    id: 'rnt-faq-team-no-maestro-experience',
+    question: 'What if my team has never used Maestro?',
   },
 ];
 
@@ -576,13 +576,13 @@ export default function ReactNativeTesting() {
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: faqs.map(({ question, answer }) => ({
+    mainEntity: faqs.map(({ answer, question }) => ({
       '@type': 'Question',
-      name: question,
       acceptedAnswer: {
         '@type': 'Answer',
         text: answer,
       },
+      name: question,
     })),
   };
 
@@ -592,15 +592,15 @@ export default function ReactNativeTesting() {
     itemListElement: [
       {
         '@type': 'ListItem',
-        position: 1,
-        name: 'Home',
         item: 'https://weshipit.today',
+        name: 'Home',
+        position: 1,
       },
       {
         '@type': 'ListItem',
-        position: 2,
-        name: 'React Native E2E Testing with Maestro',
         item: 'https://weshipit.today/react-native-testing',
+        name: 'React Native E2E Testing with Maestro',
+        position: 2,
       },
     ],
   };
@@ -608,37 +608,37 @@ export default function ReactNativeTesting() {
   const serviceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    name: 'React Native End-to-End Testing with Maestro',
-    serviceType: 'Mobile app end-to-end test automation',
+    areaServed: 'Worldwide',
+    category: 'Software Testing',
     description:
       'Productized end-to-end testing setup for React Native apps using Maestro: YAML flows for your 5 core user journeys, CI/CD integration, a tailored runbook, and a recorded team handoff — delivered in 2 weeks for a flat fee.',
-    url: 'https://weshipit.today/react-native-testing',
-    category: 'Software Testing',
-    areaServed: 'Worldwide',
-    provider: {
-      '@type': 'ProfessionalService',
-      name: 'weshipit.today',
-      url: 'https://weshipit.today',
-      founder: { '@type': 'Person', name: 'David Leuliette' },
-    },
+    name: 'React Native End-to-End Testing with Maestro',
     offers: {
       '@type': 'Offer',
-      url: 'https://cal.com/davidl/weshipit-onboarding',
+      availability: 'https://schema.org/InStock',
       description:
         'Flat-fee productized engagement: Maestro installed and wired, 5 core user-journey flows, CI/CD integration, runbook & README, recorded handoff session, and 14 days of follow-up support.',
-      availability: 'https://schema.org/InStock',
+      url: 'https://cal.com/davidl/weshipit-onboarding',
+    },
+    provider: {
+      '@type': 'ProfessionalService',
+      founder: { '@type': 'Person', name: 'David Leuliette' },
+      name: 'weshipit.today',
+      url: 'https://weshipit.today',
     },
     review: {
       '@type': 'Review',
       author: {
         '@type': 'Person',
-        name: 'Maxence Cottel',
         jobTitle: 'QA engineer',
+        name: 'Maxence Cottel',
         worksFor: { '@type': 'Organization', name: 'Nacon' },
       },
       reviewBody:
         'Went from zero end-to-end tests and 3+ hours of manual QA per release to Maestro flows running on iOS and Android, with CI green on every PR and the e-commerce checkout covered.',
     },
+    serviceType: 'Mobile app end-to-end test automation',
+    url: 'https://weshipit.today/react-native-testing',
   };
 
   return (
@@ -652,9 +652,9 @@ export default function ReactNativeTesting() {
       ogImageAlt="React Native E2E testing with Maestro — 5 flows, CI wired, handed off in 2 weeks. weshipit.today"
       withHeader
       callToActionButton={{
-        name: 'Book a call',
         href: linksApi.cal.ONBOARDING,
         isExternalLink: true,
+        name: 'Book a call',
       }}
     >
       <Head>

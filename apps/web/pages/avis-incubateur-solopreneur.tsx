@@ -36,65 +36,65 @@ const DATE_PUBLISHED = '2026-06-30';
 
 const faqs = [
   {
-    id: 'faq-avis-1',
-    question: 'L’Incubateur Solopreneur, ça vaut le coup en 2026 ?',
     answer:
       'Oui, à condition d’avoir 1h à 2h par semaine à investir et de venir construire un actif concret (newsletter, podcast, offre productisée, sponsoring, SaaS). Au tarif affilié (1 490 € HT), le rapport qualité-prix est très bon : c’est moins cher qu’un coach individuel sur un mois et tu accèdes à une communauté de 300+ solopreneurs investis. Au tarif public (2 400 € HT), le verdict est plus nuancé — voir la section « Rapport qualité-prix » plus bas.',
+    id: 'faq-avis-1',
+    question: 'L’Incubateur Solopreneur, ça vaut le coup en 2026 ?',
   },
   {
+    answer:
+      'Marketing Mania (Stan Leloup) est principalement un format formation : 6 à 8 semaines, vidéos structurées, focus copywriting / marketing direct. L’Incubateur Solopreneur de Flavie Prevot est un format communauté + sprints mensuels : 12 mois, lives hebdomadaires, focus passage à l’action et construction d’actifs durables (newsletter, podcast, sponsoring, IA). Si tu veux apprendre la persuasion écrite, Marketing Mania. Si tu veux te mettre en mouvement dans la durée avec un cercle de pairs, l’Incubateur.',
     id: 'faq-avis-2',
     question:
       'Quelle différence entre l’Incubateur Solopreneur et le Bootcamp de Marketing Mania ?',
-    answer:
-      'Marketing Mania (Stan Leloup) est principalement un format formation : 6 à 8 semaines, vidéos structurées, focus copywriting / marketing direct. L’Incubateur Solopreneur de Flavie Prevot est un format communauté + sprints mensuels : 12 mois, lives hebdomadaires, focus passage à l’action et construction d’actifs durables (newsletter, podcast, sponsoring, IA). Si tu veux apprendre la persuasion écrite, Marketing Mania. Si tu veux te mettre en mouvement dans la durée avec un cercle de pairs, l’Incubateur.',
   },
   {
-    id: 'faq-avis-3',
-    question: 'Combien de temps faut-il consacrer par semaine ?',
     answer:
       'Le format est conçu autour d’une heure le vendredi (le live « atelier ») et d’un Sprint mensuel qui demande 2 à 4 heures réparties dans le mois. À l’aise avec 1h à 3h par semaine, tu es dans le rythme. En-dessous, tu auras du mal à finir les Sprints. Au-dessus, tu peux aussi consommer les replays, les office hours et les canaux thématiques.',
+    id: 'faq-avis-3',
+    question: 'Combien de temps faut-il consacrer par semaine ?',
   },
   {
-    id: 'faq-avis-4',
-    question: 'Quels résultats peut-on espérer en 6 mois ?',
     answer:
       'Concrètement, sur 6 mois, j’ai relancé mon podcast vidéo, structuré une offre productisée, identifié 3 pistes de sponsoring pour ma newsletter, et automatisé une partie de ma prospection. La promesse n’est pas « tu vas faire 10k MRR » — c’est « tu vas shipper des actifs et tu seras dans un cercle qui te tient le rythme ». Les résultats financiers dépendent de ce que tu construis, pas du programme.',
+    id: 'faq-avis-4',
+    question: 'Quels résultats peut-on espérer en 6 mois ?',
   },
   {
-    id: 'faq-avis-5',
-    question: 'Est-ce que Flavie Prevot est sérieuse ? Quel est son parcours ?',
     answer:
       'Flavie Prevot a construit plusieurs business avant l’Incubateur. Elle a une newsletter qui dépasse les 30 000 abonnés, un podcast écouté, et anime la communauté de manière très présente (lives chaque vendredi, office hours, réponses dans les canaux). Le contenu n’est pas délégué : c’est elle qui orchestre les Sprints et qui anime. Aucun signal d’arnaque ni de promesse irréaliste dans ses contenus publics. Pour un profil détaillé de son parcours, de son écosystème et de sa réputation publique, voir la page dédiée /flavie-prevot-avis sur ce site.',
+    id: 'faq-avis-5',
+    question: 'Est-ce que Flavie Prevot est sérieuse ? Quel est son parcours ?',
   },
   {
-    id: 'faq-avis-6',
-    question: 'Faut-il être déjà solopreneur pour rejoindre ?',
     answer:
       'Pas obligatoirement, mais c’est mieux. L’Incubateur n’apprend pas « comment devenir solopreneur partant de zéro ». Il aide les solopreneurs déjà en activité (freelance, consultant, créateur, SaaS solo) à construire des actifs et à sortir du modèle 100 % temps facturé. Si tu es salarié sans aucune activité side, commence par poser ton premier projet avant de rejoindre.',
+    id: 'faq-avis-6',
+    question: 'Faut-il être déjà solopreneur pour rejoindre ?',
   },
   {
-    id: 'faq-avis-7',
-    question: 'L’Incubateur est-il adapté aux développeurs / SaaS solo ?',
     answer:
       'Oui — et c’est probablement le meilleur programme du paysage FR pour un dev solopreneur. Le tech est explicitement présent dans les Sprints (IA/Claude, Custom GPT’s, automation, SaaS solo), et le format « un actif construit chaque vendredi en live » colle exactement à la façon dont un dev avance. Effet levier concret : ce qui prend 3 semaines à un non-dev (mettre en place un agent, déployer un mini-SaaS, connecter une chaîne d’outils) te prend l’après-midi. Ton edge tech compose avec le programme. Bon point d’entrée : le Sprint « Solo SaaS » d’octobre 2026, détaillé sur /sprint-solo-saas.',
+    id: 'faq-avis-7',
+    question: 'L’Incubateur est-il adapté aux développeurs / SaaS solo ?',
   },
   {
-    id: 'faq-avis-8',
-    question: 'Comment résilier ou ne pas reconduire ?',
     answer:
       'Le tarif est verrouillé sur 12 mois sans engagement de reconduction tacite. En fin d’année, tu décides simplement de repartir ou non pour un nouveau cycle. Il n’y a pas de période d’essai et pas de remboursement après inscription — c’est l’une des limites à connaître avant d’acheter (voir « Points faibles »).',
+    id: 'faq-avis-8',
+    question: 'Comment résilier ou ne pas reconduire ?',
   },
   {
-    id: 'faq-avis-9',
-    question: 'Combien d’incubés sont vraiment actifs ?',
     answer:
       'Sur 300+ incubés affichés, j’estime à environ un tiers ceux qui se présentent régulièrement aux lives et postent des wins dans la communauté. C’est cohérent avec la plupart des communautés payantes. Le noyau actif (50 à 80 personnes) crée la vraie valeur : entraide, échanges asynchrones, retours sur les actifs en construction.',
+    id: 'faq-avis-9',
+    question: 'Combien d’incubés sont vraiment actifs ?',
   },
   {
-    id: 'faq-avis-10',
-    question: 'Existe-t-il un Trustpilot Incubateur Solopreneur ?',
     answer:
       'Oui, Flavie Prevot a une fiche Trustpilot avec des avis vérifiés positifs (note moyenne supérieure à 4,5/5). Les avis pointent surtout la qualité de l’animation et la dynamique communautaire. Pour un retour plus détaillé que les avis Trustpilot, cette page synthétise mon expérience après 6 mois d’incubation.',
+    id: 'faq-avis-10',
+    question: 'Existe-t-il un Trustpilot Incubateur Solopreneur ?',
   },
 ];
 
@@ -261,40 +261,40 @@ function VerdictSection() {
 function NotesParCriteresSection() {
   const criteria = [
     {
-      label: 'Qualité de la communauté',
-      score: 4.8,
       justification:
         '300+ incubés, noyau actif de 50–80 personnes très engagées. Bienveillance et exigence cohabitent.',
+      label: 'Qualité de la communauté',
+      score: 4.8,
     },
     {
-      label: 'Pertinence des bootcamps (Sprints)',
-      score: 4.7,
       justification:
         '10 bootcamps concrets par an : IA & Claude, podcasting vidéo, sponsoring, offre, automation. +50 experts invités et 50+ templates à la clé. Aucun bootcamp gadget.',
+      label: 'Pertinence des bootcamps (Sprints)',
+      score: 4.7,
     },
     {
-      label: 'Animation des lives',
-      score: 4.9,
       justification:
         'Format atelier exigeant. Flavie anime elle-même. Replays disponibles, peu de no-shows côté experts invités.',
+      label: 'Animation des lives',
+      score: 4.9,
     },
     {
-      label: 'Rapport qualité-prix (tarif affilié)',
-      score: 4.6,
       justification:
         '1 490 € HT pour 12 mois = ~125 €/mois. Excellent à ce tarif. Au prix public (2 400 €), la note descend à 3,8.',
+      label: 'Rapport qualité-prix (tarif affilié)',
+      score: 4.6,
     },
     {
-      label: 'Passage à l’action / résultats',
-      score: 4.4,
       justification:
         'Les résultats dépendent de toi, pas du programme. Le format pousse au shipping mais ne le garantit pas.',
+      label: 'Passage à l’action / résultats',
+      score: 4.4,
     },
     {
-      label: 'Support et accessibilité de Flavie',
-      score: 4.5,
       justification:
         'Présente en live et dans la communauté. Réponses asynchrones rapides. Pas de mentorat 1:1 inclus.',
+      label: 'Support et accessibilité de Flavie',
+      score: 4.5,
     },
   ];
 
@@ -348,40 +348,40 @@ function NotesParCriteresSection() {
 function PointsFortsSection() {
   const items = [
     {
-      icon: UsersIcon,
-      title: 'Une communauté qui pousse vraiment au shipping',
       description:
         'Ce qui change, c’est le canal #mes-réussites : tu vois des incubés poster des livrables concrets chaque semaine. L’effet de pair pression rend ton propre report de tâche socialement coûteux.',
+      icon: UsersIcon,
+      title: 'Une communauté qui pousse vraiment au shipping',
     },
     {
-      icon: SparklesIcon,
-      title: 'Des Sprints orientés actifs, pas formation passive',
       description:
         'Le Sprint Sponsoring m’a fait passer de 0 à 3 conversations sérieuses avec des sponsors en 4 semaines. Pas une heure de théorie : un cadre, des templates, des deadlines.',
+      icon: SparklesIcon,
+      title: 'Des Sprints orientés actifs, pas formation passive',
     },
     {
-      icon: RocketLaunchIcon,
-      title: 'Lives du vendredi, format atelier',
       description:
         '« On monte un meuble Ikea ensemble. » Pas de live magistral, pas de blabla. Tu arrives avec ton projet, tu repars avec un livrable. C’est rare dans le paysage français.',
+      icon: RocketLaunchIcon,
+      title: 'Lives du vendredi, format atelier',
     },
     {
-      icon: ScaleIcon,
-      title: 'Rapport qualité-prix imbattable au tarif affilié',
       description:
         'À 1 490 € HT sur 12 mois, c’est ~125 €/mois. Aucun coach individuel sérieux n’est sous 800 €/mois. Et ici tu as la communauté en plus.',
+      icon: ScaleIcon,
+      title: 'Rapport qualité-prix imbattable au tarif affilié',
     },
     {
-      icon: ShieldCheckIcon,
-      title: 'Experts invités vraiment expérimentés',
       description:
         'Sur 6 mois j’ai croisé des experts Notion, sponsoring, podcasting vidéo, IA appliquée. Pas des « gourous » : des praticiens qui montrent comment ils font, fichiers à l’appui.',
+      icon: ShieldCheckIcon,
+      title: 'Experts invités vraiment expérimentés',
     },
     {
-      icon: ClipboardDocumentCheckIcon,
-      title: 'Pas de pression à l’upsell',
       description:
         'Aucun module premium caché, aucun mastermind à 5 000 € en option. Tu paies une fois, tu as accès à tout pendant un an. Rare, et appréciable.',
+      icon: ClipboardDocumentCheckIcon,
+      title: 'Pas de pression à l’upsell',
     },
   ];
 
@@ -424,32 +424,32 @@ function PointsFortsSection() {
 function PointsFaiblesSection() {
   const items = [
     {
-      title: 'Pas de période d’essai, pas de remboursement',
-      reality:
-        'Tu paies les 12 mois en une fois (ou en mensualités), sans clause de retour. Si tu changes d’avis au bout de 2 semaines, tu perds la totalité.',
       mitigation:
         'Va d’abord à la masterclass gratuite que Flavie anime avant chaque Sprint (ouverte à tous, replay dispo) : tu vois sa façon de travailler en 1 h. Le Sprint seul (1 mois, autour de 1 490 € HT) existe, mais au tarif parrainage l’année entière coûte le même prix, donc il n’a d’intérêt que si tu es certain de ne pas continuer.',
+      reality:
+        'Tu paies les 12 mois en une fois (ou en mensualités), sans clause de retour. Si tu changes d’avis au bout de 2 semaines, tu perds la totalité.',
+      title: 'Pas de période d’essai, pas de remboursement',
     },
     {
-      title: 'Rythme exigeant, décrochage rapide si tu manques 3 lives',
-      reality:
-        'Sans 1 à 3h par semaine, tu accumules le retard et la culpabilité. J’ai vu des incubés disparaître au bout de 2 mois.',
       mitigation:
         'Bloquer le vendredi 12h-13h dans ton agenda dès l’inscription. Si tu sais que tu n’as pas ce créneau, ne rejoins pas — repousse à la prochaine fenêtre.',
+      reality:
+        'Sans 1 à 3h par semaine, tu accumules le retard et la culpabilité. J’ai vu des incubés disparaître au bout de 2 mois.',
+      title: 'Rythme exigeant, décrochage rapide si tu manques 3 lives',
     },
     {
-      title: 'Hébergement sur Mighty Networks (pas Slack)',
-      reality:
-        'UX correcte mais en-dessous de Slack ou Discord. Notifications parfois capricieuses, recherche médiocre, app mobile passable.',
       mitigation:
         'On s’y habitue en 2-3 semaines. Activer les notifs uniquement sur les canaux clés. Beaucoup d’échanges importants se font aussi en direct dans les lives.',
+      reality:
+        'UX correcte mais en-dessous de Slack ou Discord. Notifications parfois capricieuses, recherche médiocre, app mobile passable.',
+      title: 'Hébergement sur Mighty Networks (pas Slack)',
     },
     {
-      title: 'Pas de mentorat 1:1 inclus',
-      reality:
-        'Flavie n’est pas dispo pour des sessions individuelles. Si tu cherches du coaching personnalisé, ce n’est pas le bon produit.',
       mitigation:
         'Les office hours et le canal #aide remplacent partiellement. Pour du 1:1, prévoir un budget complémentaire (coach externe).',
+      reality:
+        'Flavie n’est pas dispo pour des sessions individuelles. Si tu cherches du coaching personnalisé, ce n’est pas le bon produit.',
+      title: 'Pas de mentorat 1:1 inclus',
     },
   ];
 
@@ -505,50 +505,50 @@ function PointsFaiblesSection() {
 function ExperienceMoisParMoisSection() {
   const milestones = [
     {
-      month: 'Mois 1',
-      title: 'Onboarding et premier Sprint « Offre »',
-      shipped:
-        'Cartographie de mes offres actuelles, identification d’une offre productisée à tester.',
       learned:
         'La discipline du cadre Sprint (objectif clair, deadline, livrable) vaut 10 fois un cours sur la productivité.',
+      month: 'Mois 1',
+      shipped:
+        'Cartographie de mes offres actuelles, identification d’une offre productisée à tester.',
+      title: 'Onboarding et premier Sprint « Offre »',
     },
     {
-      month: 'Mois 2',
-      title: 'Sprint IA & Claude',
-      shipped:
-        'Un agent IA documenté pour automatiser la préparation de mes podcasts.',
       learned:
         'Les promesses « IA pour solopreneur » sont souvent creuses. Ici, le cadre est utilitaire, pas hype.',
+      month: 'Mois 2',
+      shipped:
+        'Un agent IA documenté pour automatiser la préparation de mes podcasts.',
+      title: 'Sprint IA & Claude',
     },
     {
-      month: 'Mois 3',
-      title: 'Sprint Podcasting vidéo',
-      shipped:
-        'Relance de mon podcast au format vidéo, premier épisode publié après 18 mois de pause.',
       learned:
         'L’effet communauté est décisif. Annoncer son objectif dans #mes-réussites force à finir.',
+      month: 'Mois 3',
+      shipped:
+        'Relance de mon podcast au format vidéo, premier épisode publié après 18 mois de pause.',
+      title: 'Sprint Podcasting vidéo',
     },
     {
-      month: 'Mois 4',
-      title: 'Sprint Sponsoring (« Sugar Daddy »)',
-      shipped:
-        '3 conversations sérieuses lancées avec des sponsors potentiels pour la newsletter.',
       learned:
         'Les templates et les retours d’expérience d’autres incubés font gagner des mois de tâtonnement.',
+      month: 'Mois 4',
+      shipped:
+        '3 conversations sérieuses lancées avec des sponsors potentiels pour la newsletter.',
+      title: 'Sprint Sponsoring (« Sugar Daddy »)',
     },
     {
-      month: 'Mois 5',
-      title: 'Sprint Automation',
-      shipped: 'Automatisation de mon pipeline de leads avec n8n + Notion.',
       learned:
         'Un Sprint en « binôme » avec un autre incubé multiplie la qualité du livrable.',
+      month: 'Mois 5',
+      shipped: 'Automatisation de mon pipeline de leads avec n8n + Notion.',
+      title: 'Sprint Automation',
     },
     {
-      month: 'Mois 6',
-      title: 'Consolidation et préparation du prochain trimestre',
-      shipped: 'Audit de mes actifs, planification des 6 mois suivants.',
       learned:
         'Le rythme mensuel finit par s’installer. Le risque, c’est de ne plus savoir ralentir.',
+      month: 'Mois 6',
+      shipped: 'Audit de mes actifs, planification des 6 mois suivants.',
+      title: 'Consolidation et préparation du prochain trimestre',
     },
   ];
 
@@ -604,36 +604,36 @@ function ExperienceMoisParMoisSection() {
 function ComparatifAlternativesSection() {
   const rows = [
     {
+      best: true,
+      engagement: '1 à 3h / semaine sur 12 mois',
+      format: 'Communauté + Sprints mensuels',
       name: 'Incubateur Solopreneur',
       prix: '1 490 € HT (affilié) / 2 400 € HT (public)',
-      format: 'Communauté + Sprints mensuels',
-      engagement: '1 à 3h / semaine sur 12 mois',
       verdict: 'Construire des actifs dans la durée avec un cercle de pairs',
-      best: true,
     },
     {
+      best: false,
+      engagement: '6 à 8 semaines intensives',
+      format: 'Formation vidéo + cohorte limitée',
       name: 'Bootcamp Marketing Mania',
       prix: '~1 000 à 1 500 € HT',
-      format: 'Formation vidéo + cohorte limitée',
-      engagement: '6 à 8 semaines intensives',
       verdict: 'Apprendre la persuasion écrite et le copywriting',
-      best: false,
     },
     {
+      best: false,
+      engagement: 'À la demande',
+      format: 'Forums asynchrones',
       name: 'Indé Hacker / communautés gratuites',
       prix: '0 €',
-      format: 'Forums asynchrones',
-      engagement: 'À la demande',
       verdict: 'Tester sans budget, mais sans cadre ni discipline',
-      best: false,
     },
     {
+      best: false,
+      engagement: 'Quelques heures / mois',
+      format: 'Contenus publics',
       name: 'Suivre Flavie en gratuit (newsletter + podcast)',
       prix: '0 €',
-      format: 'Contenus publics',
-      engagement: 'Quelques heures / mois',
       verdict: 'Comprendre l’approche avant de payer, sans accès communauté',
-      best: false,
     },
   ];
 
@@ -720,22 +720,22 @@ function ComparatifAlternativesSection() {
 function AvisExternesSection() {
   const proofs = [
     {
-      title: 'Marion — 2ᵉ année d’incubation',
       quote:
         "C'est ma deuxième année et avec le concept des Sprints mensuels, ma marge de progression est encore plus impressionnante.",
       source: 'Trustpilot',
+      title: 'Marion — 2ᵉ année d’incubation',
     },
     {
-      title: 'Incubée anonyme — post LinkedIn',
       quote:
         "Le live du vendredi est devenu mon rendez-vous business le plus utile de la semaine. Je n'aurais jamais structuré mon offre sans ça.",
       source: 'LinkedIn',
+      title: 'Incubée anonyme — post LinkedIn',
     },
     {
-      title: 'Anne-Marie — call ambassadeur',
       quote:
         "À 1 200 € je le prends. Le lien d'affilié m'a fait gagner encore 200 € — c'est ce qui a déclenché l'achat.",
       source: 'Témoignage prospect',
+      title: 'Anne-Marie — call ambassadeur',
     },
   ];
 
@@ -1042,10 +1042,10 @@ export default function AvisIncubateurSolopreneurPage() {
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: faqs.map(({ question, answer }) => ({
+    mainEntity: faqs.map(({ answer, question }) => ({
       '@type': 'Question',
-      name: question,
       acceptedAnswer: { '@type': 'Answer', text: answer },
+      name: question,
     })),
   };
 
@@ -1055,15 +1055,15 @@ export default function AvisIncubateurSolopreneurPage() {
     itemListElement: [
       {
         '@type': 'ListItem',
-        position: 1,
-        name: 'Accueil',
         item: 'https://weshipit.today',
+        name: 'Accueil',
+        position: 1,
       },
       {
         '@type': 'ListItem',
-        position: 2,
-        name: 'Avis Incubateur Solopreneur',
         item: 'https://weshipit.today/avis-incubateur-solopreneur',
+        name: 'Avis Incubateur Solopreneur',
+        position: 2,
       },
     ],
   };
@@ -1071,25 +1071,25 @@ export default function AvisIncubateurSolopreneurPage() {
   const reviewSchema = {
     '@context': 'https://schema.org',
     '@type': 'Review',
-    itemReviewed: {
-      '@type': 'Product',
-      name: 'Incubateur Solopreneur',
-      brand: { '@type': 'Brand', name: 'Flavie Prevot' },
-    },
     author: {
       '@type': 'Person',
       name: 'David Leuliette',
       url: 'https://weshipit.today',
     },
-    reviewRating: {
-      '@type': 'Rating',
-      ratingValue: String(RATING_VALUE),
-      bestRating: String(RATING_BEST),
-      worstRating: '1',
+    datePublished: DATE_PUBLISHED,
+    itemReviewed: {
+      '@type': 'Product',
+      brand: { '@type': 'Brand', name: 'Flavie Prevot' },
+      name: 'Incubateur Solopreneur',
     },
     reviewBody:
       "Avis vérifié sur l'Incubateur Solopreneur de Flavie Prevot après 6 mois d'incubation. Communauté très active, Sprints mensuels concrets, format atelier du vendredi exigeant. Recommandé pour les solopreneurs déjà en activité qui veulent construire des actifs durables — à éviter si tu cherches un cours vidéo passif ou si tu n'as pas 1h/semaine garantie.",
-    datePublished: DATE_PUBLISHED,
+    reviewRating: {
+      '@type': 'Rating',
+      bestRating: String(RATING_BEST),
+      ratingValue: String(RATING_VALUE),
+      worstRating: '1',
+    },
   };
 
   return (
@@ -1135,9 +1135,9 @@ export default function AvisIncubateurSolopreneurPage() {
         withHeader
         withFooter
         callToActionButton={{
-          name: CTA_LABEL_SHORT,
           href: AFFILIATE_URL,
           isExternalLink: true,
+          name: CTA_LABEL_SHORT,
         }}
       >
         <HeroSection />

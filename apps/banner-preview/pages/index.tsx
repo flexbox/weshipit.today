@@ -11,17 +11,17 @@ const SITE_URL = 'https://banner-preview.weshipit.today';
 const APP_SCHEMA = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
-  name: 'Social Banner Preview',
+  applicationCategory: 'DesignApplication',
   description:
     'Free banner generator for LinkedIn, YouTube and X. Generate, preview and download social headers at the right aspect ratios.',
-  applicationCategory: 'DesignApplication',
-  operatingSystem: 'Web',
-  url: SITE_URL,
+  name: 'Social Banner Preview',
   offers: {
     '@type': 'Offer',
     price: '0',
     priceCurrency: 'USD',
   },
+  operatingSystem: 'Web',
+  url: SITE_URL,
 };
 
 // Per-platform safe-area overlays. YouTube has two (mobile-safe + text/logo
@@ -36,40 +36,40 @@ type SafeArea = {
 
 const SAFE_AREAS_BY_SLUG: Record<BannerSpec['slug'], SafeArea[]> = {
   linkedin: [
-    { width: 1500, height: 396, label: 'Safe band', emphasis: 'primary' },
-  ],
-  x: [{ width: 1500, height: 396, label: 'Safe band', emphasis: 'primary' }],
-  youtube: [
-    {
-      width: 1546,
-      height: 423,
-      label: 'Mobile safe',
-      emphasis: 'secondary',
-    },
-    {
-      width: 1235,
-      height: 338,
-      label: 'Text & logo (all-device)',
-      emphasis: 'primary',
-    },
+    { emphasis: 'primary', height: 396, label: 'Safe band', width: 1500 },
   ],
   spotify: [],
+  x: [{ emphasis: 'primary', height: 396, label: 'Safe band', width: 1500 }],
+  youtube: [
+    {
+      emphasis: 'secondary',
+      height: 423,
+      label: 'Mobile safe',
+      width: 1546,
+    },
+    {
+      emphasis: 'primary',
+      height: 338,
+      label: 'Text & logo (all-device)',
+      width: 1235,
+    },
+  ],
 };
 
 function SafeAreaOverlay({
   area,
-  bannerWidth,
   bannerHeight,
+  bannerWidth,
 }: {
   area: SafeArea;
   bannerWidth: number;
   bannerHeight: number;
 }) {
   const style = {
+    height: `${(area.height / bannerHeight) * 100}%`,
     left: `${((bannerWidth - area.width) / 2 / bannerWidth) * 100}%`,
     top: `${((bannerHeight - area.height) / 2 / bannerHeight) * 100}%`,
     width: `${(area.width / bannerWidth) * 100}%`,
-    height: `${(area.height / bannerHeight) * 100}%`,
   };
   const isPrimary = area.emphasis === 'primary';
   const borderClass = isPrimary

@@ -30,9 +30,9 @@ function decodeEntities(value: string) {
 }
 
 export interface AndroidAppInspection extends FrameworkDetection {
+  packageId: string;
   icon: string | null;
   name: string | null;
-  packageId: string;
 }
 
 export class AppNotFoundError extends Error {}

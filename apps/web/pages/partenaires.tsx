@@ -27,22 +27,22 @@ const PAGE_URL = 'https://weshipit.today/partenaires';
 
 const faqs = [
   {
-    id: 'faq-partenaires-1',
-    question: 'Combien ça coûte ?',
     answer:
       'Le tarif dépend du format et de la durée. Un épisode sponsorisé et un partenariat de 6 mois avec étude co-brandée ne se chiffrent pas de la même manière. On construit l’activation ensemble pendant l’appel, puis tu reçois une proposition écrite sous 48 h. Aucun engagement avant.',
+    id: 'faq-partenaires-1',
+    question: 'Combien ça coûte ?',
   },
   {
-    id: 'faq-partenaires-2',
-    question: 'Votre audience est petite. Pourquoi payer pour la toucher ?',
     answer:
       'Parce qu’elle décide. Sur LinkedIn, 61 % des abonnés sont Senior ou plus, et un quart occupent des fonctions de direction ou de management. Un CTO qui intègre ton SDK dans une app en production devient client pour plusieurs années. C’est une audience qu’on ne cible pas avec de la pub classique, et personne d’autre ne lui parle de React Native en français.',
+    id: 'faq-partenaires-2',
+    question: 'Votre audience est petite. Pourquoi payer pour la toucher ?',
   },
   {
-    id: 'faq-partenaires-5',
-    question: 'Comment je mesure les résultats ?',
     answer:
       'Chaque activation a un lien traçable (UTM ou code promo) qui reste en ligne dans les descriptions Spotify, YouTube et sur la page épisode. Tu reçois un récapitulatif avec les écoutes, les vues, les impressions LinkedIn et les clics. Les inscriptions et les essais, tu les vois de ton côté.',
+    id: 'faq-partenaires-5',
+    question: 'Comment je mesure les résultats ?',
   },
 ];
 
@@ -153,21 +153,21 @@ function ProofSection() {
   // Numbers, not strings: CountUp animates the value and Intl puts the French
   // thousands separator back (a narrow no-break space, so a figure never wraps).
   const stats = [
-    { value: 20000, label: 'abonnés LinkedIn', detail: '61 % Senior ou plus' },
+    { detail: '61 % Senior ou plus', label: 'abonnés LinkedIn', value: 20000 },
     {
-      value: 200,
-      label: 'écoutes par épisode',
       detail: 'Spotify, Apple, Deezer',
+      label: 'écoutes par épisode',
+      value: 200,
     },
     {
-      value: 2,
-      label: 'épisodes par mois',
       detail: '40 épisodes publiés',
+      label: 'épisodes par mois',
+      value: 2,
     },
     {
-      value: 1100,
-      label: 'abonnés YouTube',
       detail: 'plusieurs vidéos à 1k+ vues',
+      label: 'abonnés YouTube',
+      value: 1100,
     },
   ];
 
@@ -255,28 +255,28 @@ function ProofSection() {
 function AudienceSection() {
   const profile = [
     {
-      title: 'Qui écoute',
       items: [
         'Développeurs React Native confirmés',
         'Lead devs et CTO de scale-ups',
         'Indie hackers qui publient leurs apps',
       ],
+      title: 'Qui écoute',
     },
     {
-      title: 'Où ils travaillent',
       items: [
         'Startups et scale-ups avec une app en production (santé, fintech, e-commerce, assurance)',
         'Agences et ESN mobile',
         'France en priorité, puis Belgique, Suisse, Canada',
       ],
+      title: 'Où ils travaillent',
     },
     {
-      title: 'Ce qu’ils cherchent',
       items: [
         'Garder la vélocité une fois l’app en production',
         'Monter de version React Native sans casser la release',
         'Choisir la bonne stack, le bon SDK, le bon prestataire',
       ],
+      title: 'Ce qu’ils cherchent',
     },
   ];
 
@@ -358,32 +358,32 @@ function AudienceSection() {
 function ChannelsSection() {
   const channels = [
     {
-      icon: MegaphoneIcon,
-      title: 'LinkedIn',
-      metric: '20 000 abonnés',
       description:
         'Là où l’audience est la plus large. Un post sur un retour d’expérience React Native dépasse régulièrement les 30 000 impressions.',
+      icon: MegaphoneIcon,
+      metric: '20 000 abonnés',
+      title: 'LinkedIn',
     },
     {
-      icon: MicrophoneIcon,
-      title: 'Podcast audio',
-      metric: '200 écoutes par épisode',
       description:
         'Deux épisodes par mois. Une audience plus petite que LinkedIn, mais qui écoute 45 minutes de retour d’expérience React Native. Spotify, Apple Podcasts, Deezer. Chaque épisode a sa page permanente sur weshipit.today, indexée par Google et les IA.',
+      icon: MicrophoneIcon,
+      metric: '200 écoutes par épisode',
+      title: 'Podcast audio',
     },
     {
-      icon: PlayCircleIcon,
-      title: 'YouTube',
-      metric: '1 100 abonnés',
       description:
         'Version vidéo des épisodes, lives de code et shorts. Le format qui montre un produit au lieu d’en parler.',
+      icon: PlayCircleIcon,
+      metric: '1 100 abonnés',
+      title: 'YouTube',
     },
     {
-      icon: EnvelopeIcon,
-      title: 'Email et communauté',
-      metric: '600 contacts',
       description:
         '40 % d’ouverture. Plus le Slack React Native Connection et la présence en conférence : App.js, React Native Connection, next.app Berlin.',
+      icon: EnvelopeIcon,
+      metric: '600 contacts',
+      title: 'Email et communauté',
     },
   ];
 
@@ -452,40 +452,40 @@ function ChannelsSection() {
 function ActivationsSection() {
   const activations = [
     {
-      icon: MicrophoneIcon,
-      title: 'Message sponsor dans un épisode',
       description:
         'Lu par l’hôte, en intro et en milieu d’épisode, à partir d’un usage réel du produit. Pas de script publicitaire. Lien permanent dans les descriptions Spotify, YouTube et sur la page épisode.',
+      icon: MicrophoneIcon,
+      title: 'Message sponsor dans un épisode',
     },
     {
-      icon: ChatBubbleLeftRightIcon,
-      title: 'Épisode avec un expert de ta marque',
       description:
         'Ton ingénieur ou ton DevRel vient parler d’un sujet de fond : une migration, un incident, une architecture. Tu repars avec le transcript, des extraits vidéo et des shorts réutilisables.',
+      icon: ChatBubbleLeftRightIcon,
+      title: 'Épisode avec un expert de ta marque',
     },
     {
-      icon: PlayCircleIcon,
-      title: 'Live code YouTube',
       description:
         'J’intègre ton SDK dans une vraie app React Native, en direct. Les questions des développeurs arrivent en temps réel. Le replay reste en ligne.',
+      icon: PlayCircleIcon,
+      title: 'Live code YouTube',
     },
     {
-      icon: MegaphoneIcon,
-      title: 'Posts LinkedIn',
       description:
         'Retour d’expérience « j’ai intégré X dans une app en production » ou carrousel technique co-écrit. Le format qui touche l’audience la plus large.',
+      icon: MegaphoneIcon,
+      title: 'Posts LinkedIn',
     },
     {
-      icon: CubeIcon,
-      title: 'Étude co-brandée',
       description:
         '« L’état de React Native en France » : sondage de l’audience, résultats publiés avec ton logo. Un actif que tes concurrents n’ont pas.',
+      icon: CubeIcon,
+      title: 'Étude co-brandée',
     },
     {
-      icon: CalendarDaysIcon,
-      title: 'Contenus en conférence',
       description:
         'Interviews tournées à React Native Connection ou App.js avec ta marque. Meetup ou afterwork sponsorisé à Lille, Paris ou Bordeaux.',
+      icon: CalendarDaysIcon,
+      title: 'Contenus en conférence',
     },
   ];
 
@@ -529,7 +529,6 @@ function ActivationsSection() {
 function OffersSection() {
   const offers = [
     {
-      name: 'One shot',
       duration: '1 épisode',
       goal: 'Tester l’audience avec peu de risque.',
       items: [
@@ -538,25 +537,25 @@ function OffersSection() {
         '1 mention dans la newsletter',
         'Lien traçable permanent',
       ],
+      name: 'One shot',
       result:
         'Trois points de contact pour un seul épisode : les écouteurs, le feed et la boîte mail. Clics, inscriptions et essais mesurés.',
     },
     {
-      name: 'Trimestre',
       duration: '3 mois · exclusif',
       goal: 'Installer la marque par la répétition.',
+      highlighted: true,
       items: [
         'Sponsor exclusif de tous les épisodes du trimestre',
         '1 live code YouTube avec ton produit',
         '3 posts LinkedIn dont 1 retour d’expérience',
         '1 email dédié à la liste',
       ],
+      name: 'Trimestre',
       result:
         'Aucun concurrent sur le podcast pendant 3 mois, et une démo en conditions réelles.',
-      highlighted: true,
     },
     {
-      name: 'Semestre',
       duration: '6 mois · exclusif',
       goal: 'Devenir la marque associée à React Native en France.',
       items: [
@@ -566,6 +565,7 @@ function OffersSection() {
         'Contenus tournés en conférence',
         'Logo partenaire sur la page podcast',
       ],
+      name: 'Semestre',
       result: 'Un actif réutilisable et des données d’audience exclusives.',
     },
   ];
@@ -837,10 +837,10 @@ export default function PartnersPage() {
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: faqs.map(({ question, answer }) => ({
+    mainEntity: faqs.map(({ answer, question }) => ({
       '@type': 'Question',
-      name: question,
       acceptedAnswer: { '@type': 'Answer', text: answer },
+      name: question,
     })),
   };
 
@@ -850,21 +850,21 @@ export default function PartnersPage() {
     itemListElement: [
       {
         '@type': 'ListItem',
-        position: 1,
-        name: 'Accueil',
         item: 'https://weshipit.today',
+        name: 'Accueil',
+        position: 1,
       },
       {
         '@type': 'ListItem',
-        position: 2,
-        name: 'Podcast',
         item: 'https://weshipit.today/podcast',
+        name: 'Podcast',
+        position: 2,
       },
       {
         '@type': 'ListItem',
-        position: 3,
-        name: 'Partenaires',
         item: PAGE_URL,
+        name: 'Partenaires',
+        position: 3,
       },
     ],
   };
@@ -896,9 +896,9 @@ export default function PartnersPage() {
         withHeader
         withFooter
         callToActionButton={{
-          name: CTA_LABEL,
           href: CTA_URL,
           isExternalLink: true,
+          name: CTA_LABEL,
         }}
       >
         <HeroSection />

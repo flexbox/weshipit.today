@@ -54,46 +54,46 @@ const SIGNATURES = [
 
 const FAQ_ITEMS = [
   {
-    id: 'how',
-    question: 'How do you know if an app is built with React Native?',
     answer:
       'Every React Native Android app ships the React Native runtime as native libraries (libreactnative.so, or libreactnativejni.so on older versions) and a JavaScript bundle (index.android.bundle). We list the files inside the APK from Google Play and look for them.',
+    id: 'how',
+    question: 'How do you know if an app is built with React Native?',
   },
   {
-    id: 'popular',
-    question: 'Which popular apps are built with React Native?',
     answer:
       'Discord, Bluesky, Coinbase, Tesla, Microsoft Outlook and Microsoft Teams all ship React Native in their Android app. Bluesky, Coinbase and Tesla also use Expo.',
+    id: 'popular',
+    question: 'Which popular apps are built with React Native?',
   },
   {
-    id: 'download',
-    question: 'Do you download the whole app?',
     answer:
       'No. An APK is a ZIP file, and its table of contents sits at the end. We read only that part with HTTP range requests, usually a few hundred KB out of a 50 MB app.',
+    id: 'download',
+    question: 'Do you download the whole app?',
   },
   {
-    id: 'expo',
-    question: 'Can it tell if the app uses Expo?',
     answer:
       'Yes. Expo modules leave their own native files in the APK (expo-modules-core, expo-*.kotlin_module). If they are present, the app uses Expo.',
+    id: 'expo',
+    question: 'Can it tell if the app uses Expo?',
   },
   {
-    id: 'other',
-    question: 'How can I tell if an app uses Flutter instead?',
     answer:
       'Flutter apps ship libflutter.so and a flutter_assets folder. The checker detects Flutter, Capacitor, Cordova, .NET MAUI / Xamarin, NativeScript and Unity. If none of them match, the app is native Android (Kotlin or Java).',
+    id: 'other',
+    question: 'How can I tell if an app uses Flutter instead?',
   },
   {
-    id: 'accuracy',
-    question: 'Can the result be wrong?',
     answer:
       'Rarely. A company can rename or merge the React Native libraries in a custom build. The files we look for are then missing and the app shows as native.',
+    id: 'accuracy',
+    question: 'Can the result be wrong?',
   },
   {
-    id: 'ios',
-    question: 'Does it work with App Store links?',
     answer:
       'Not yet. iOS apps are encrypted on the App Store, so they cannot be inspected the same way. Most apps ship with the same stack on both stores: paste the Google Play link instead.',
+    id: 'ios',
+    question: 'Does it work with App Store links?',
   },
 ];
 
@@ -101,28 +101,28 @@ const schema = {
   '@context': 'https://schema.org',
   '@graph': [
     {
-      '@type': 'WebApplication',
       '@id': `${PAGE_URL}#app`,
-      name: 'Is this app built with React Native?',
-      url: PAGE_URL,
-      description: SEO_DESCRIPTION,
+      '@type': 'WebApplication',
       applicationCategory: 'DeveloperApplication',
-      operatingSystem: 'Any',
-      isAccessibleForFree: true,
-      offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
       author: AUTHOR_SCHEMA,
+      description: SEO_DESCRIPTION,
+      isAccessibleForFree: true,
+      name: 'Is this app built with React Native?',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
+      operatingSystem: 'Any',
       publisher: PUBLISHER_SCHEMA,
+      url: PAGE_URL,
     },
     {
-      '@type': 'FAQPage',
       '@id': `${PAGE_URL}#faq`,
-      mainEntity: FAQ_ITEMS.map(({ question, answer }) => ({
+      '@type': 'FAQPage',
+      mainEntity: FAQ_ITEMS.map(({ answer, question }) => ({
         '@type': 'Question',
-        name: question,
         acceptedAnswer: {
           '@type': 'Answer',
           text: answer,
         },
+        name: question,
       })),
     },
   ],
@@ -130,16 +130,16 @@ const schema = {
 
 const STEPS = [
   {
-    title: 'Paste a Google Play link',
     text: 'Any locale works, or just the package id like com.discord.',
+    title: 'Paste a Google Play link',
   },
   {
-    title: 'We open the APK',
     text: 'Only the file list is read, never the whole app.',
+    title: 'We open the APK',
   },
   {
-    title: 'Get a yes or no',
     text: 'Plus Expo, Hermes and the files that prove it.',
+    title: 'Get a yes or no',
   },
 ];
 

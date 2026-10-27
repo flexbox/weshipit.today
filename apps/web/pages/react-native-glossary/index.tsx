@@ -21,8 +21,8 @@ const SITE_URL = 'https://weshipit.today';
 const GLOSSARY_PATH = '/react-native-glossary';
 
 interface GlossaryEntry {
-  title: string;
   slug: string;
+  title: string;
   letter: string;
   /** Short blurb shown in the listing; the full definition lives on the term page. */
   summary: string;
@@ -40,34 +40,34 @@ interface GlossaryEntry {
  */
 const FAQ = [
   {
-    question: 'What is React Native in one sentence?',
     answer:
       'React Native is an open-source framework from Meta for building iOS and Android apps with React. You write components in JavaScript or TypeScript, and React Native renders them as real native views — a `<View>` becomes a `UIView` on iOS and a `ViewGroup` on Android — rather than drawing them in a web view.',
+    question: 'What is React Native in one sentence?',
   },
   {
-    question: 'What is the difference between React Native and Expo?',
     answer:
       '[React Native](/react-native-glossary/core-components) is the renderer and the bridge to native code. [Expo](/react-native-glossary/expo) is a framework on top of it that adds routing, a library of vetted native modules, cloud builds and over-the-air updates. The React Native docs now recommend starting new apps with a framework, and `npx create-expo-app` is the usual entry point.',
+    question: 'What is the difference between React Native and Expo?',
   },
   {
-    question: 'What is the New Architecture, and do I need to care?',
     answer:
       'The [New Architecture](/react-native-glossary/legacy-vs-new-architecture) replaced the asynchronous [bridge](/react-native-glossary/bridge) with [JSI](/react-native-glossary/jsi), the [Fabric renderer](/react-native-glossary/fabric-renderer) and [TurboModules](/react-native-glossary/turbomodules). It became the default in React Native 0.76 in October 2024. New apps get it automatically — the reason to care is that tutorials written before then describe bridge behaviour that no longer applies.',
+    question: 'What is the New Architecture, and do I need to care?',
   },
   {
-    question: 'Why does my app need a rebuild sometimes but not others?',
     answer:
       'Anything inside the [JavaScript bundle](/react-native-glossary/javascript-bundle) — components, logic, styles — reloads instantly with [Fast Refresh](/react-native-glossary/fast-refresh) and can even ship as an [over-the-air update](/react-native-glossary/over-the-air-update). Anything outside it — adding a [native module](/react-native-glossary/native-module), changing permissions, upgrading React Native — changes the binary and needs a new build.',
+    question: 'Why does my app need a rebuild sometimes but not others?',
   },
   {
-    question: 'Which terms should a React Native beginner learn first?',
     answer:
       'Start with the ones you meet on day one: [Core Components](/react-native-glossary/core-components), [JSX](/react-native-glossary/jsx), [Props and State](/react-native-glossary/props-and-state), [Flexbox](/react-native-glossary/flexbox) and [StyleSheet](/react-native-glossary/stylesheet). Then the toolchain — [Expo](/react-native-glossary/expo), [Metro](/react-native-glossary/metro) and [Development Build](/react-native-glossary/development-build) — which is where most setup confusion comes from.',
+    question: 'Which terms should a React Native beginner learn first?',
   },
   {
-    question: 'Is this glossary free to use?',
     answer:
       'Yes. Every definition is a public page with no signup, maintained by the React Native team at weshipit.today. If a term is missing or a definition has aged badly, the site is open source on [GitHub](https://github.com/flexbox/weshipit.today).',
+    question: 'Is this glossary free to use?',
   },
 ];
 
@@ -75,17 +75,17 @@ export async function getStaticProps() {
   const terms = getAllGlossaryTerms();
 
   const entries: GlossaryEntry[] = terms.map((term: GlossaryTerm) => ({
-    title: term.title,
-    slug: term.slug,
-    letter: term.letter,
-    summary: term.summary,
     aliases: term.aliases,
     haystack:
       `${term.title} ${term.aliases.join(' ')} ${term.plainText}`.toLowerCase(),
+    letter: term.letter,
     relatedTo: term.related.map((label) => ({
       label,
       slug: resolveTermSlug(label, terms),
     })),
+    slug: term.slug,
+    summary: term.summary,
+    title: term.title,
   }));
 
   const lastUpdated =
@@ -100,35 +100,35 @@ export async function getStaticProps() {
   const definedTermSetSchema = {
     '@context': 'https://schema.org',
     '@type': 'DefinedTermSet',
-    name: 'React Native Glossary',
-    description: `Plain-English definitions of ${terms.length} React Native terms, written for developers new to the ecosystem.`,
-    url: `${SITE_URL}${GLOSSARY_PATH}`,
-    inLanguage: 'en',
-    dateModified: lastUpdated ?? undefined,
     author: AUTHOR_SCHEMA,
-    publisher: PUBLISHER_SCHEMA,
+    dateModified: lastUpdated ?? undefined,
+    description: `Plain-English definitions of ${terms.length} React Native terms, written for developers new to the ecosystem.`,
     hasDefinedTerm: terms.map((term) => ({
       '@type': 'DefinedTerm',
-      name: term.title,
       alternateName: term.aliases.length ? term.aliases : undefined,
       description: term.summary,
+      name: term.title,
       url: `${SITE_URL}${GLOSSARY_PATH}/${term.slug}`,
     })),
+    inLanguage: 'en',
+    name: 'React Native Glossary',
+    publisher: PUBLISHER_SCHEMA,
+    url: `${SITE_URL}${GLOSSARY_PATH}`,
   };
 
   return {
     props: {
+      definedTermSetSchema,
       entries,
       termCount: entries.length,
-      definedTermSetSchema,
     },
   };
 }
 
 export default function ReactNativeGlossary({
+  definedTermSetSchema,
   entries,
   termCount,
-  definedTermSetSchema,
 }: {
   entries: GlossaryEntry[];
   termCount: number;

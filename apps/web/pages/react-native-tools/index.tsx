@@ -13,29 +13,29 @@ export async function getStaticProps() {
   const itemListSchema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: 'React Native Tools & Resources',
     description:
       'Curated tools and libraries for React Native developers — analytics, CI/CD, debugging, UI components, and more.',
-    url: 'https://weshipit.today/react-native-tools',
-    numberOfItems: records.length,
     itemListElement: records.map((record, index) => ({
       '@type': 'ListItem',
-      position: index + 1,
       name: record.name,
+      position: index + 1,
       url: `https://weshipit.today/react-native-tools/${record.slug}`,
     })),
+    name: 'React Native Tools & Resources',
+    numberOfItems: records.length,
+    url: 'https://weshipit.today/react-native-tools',
   };
 
   return {
     props: {
-      records,
       itemListSchema,
+      records,
     },
     revalidate: 3600,
   };
 }
 
-export default function ReactNativeToolsPage({ records, itemListSchema }) {
+export default function ReactNativeToolsPage({ itemListSchema, records }) {
   const numberOfTools = records.length;
   const router = useRouter();
   const toolType = router.query.type as string | undefined;
@@ -65,11 +65,11 @@ export default function ReactNativeToolsPage({ records, itemListSchema }) {
       withHeader
       withFooter
       callToActionLink={{
-        name: 'Add a tool',
         href: linksApi.airtable.TOOLS_FORM,
         isExternalLink: true,
+        name: 'Add a tool',
       }}
-      callToActionButton={{ name: 'Work with us', href: '/' }}
+      callToActionButton={{ href: '/', name: 'Work with us' }}
     >
       <Head>
         <script

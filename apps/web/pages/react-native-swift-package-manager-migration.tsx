@@ -15,97 +15,97 @@ import { SpmReadinessAudit } from '../components/spm-readiness-audit';
 
 const FAQ_ITEMS = [
   {
-    id: 'break',
-    question: 'Will my React Native app stop building on December 2, 2026?',
     answer:
       'No. CocoaPods trunk becomes read-only, so existing pod versions keep installing. What stops is new releases: SDKs that move to Swift Package Manager only (Firebase already did) will no longer ship fixes or security patches through CocoaPods.',
+    id: 'break',
+    question: 'Will my React Native app stop building on December 2, 2026?',
   },
   {
-    id: 'now',
-    question: 'Should I migrate to Swift Package Manager now?',
     answer:
       'Not in production yet. SPM support is experimental in React Native 0.87 and its commands may change. Do the groundwork now: upgrade to 0.87, map your native dependencies, remove Podfile hacks and run a spike on a branch.',
+    id: 'now',
+    question: 'Should I migrate to Swift Package Manager now?',
   },
   {
-    id: 'expo',
-    question: 'Does it work with Expo?',
     answer:
       'Only in expo@canary releases for now. On a managed or CNG project, wait for a stable Expo SDK with SPM support and use the waiting time to check which of your config plugins and native modules ship a Package.swift.',
+    id: 'expo',
+    question: 'Does it work with Expo?',
   },
   {
-    id: 'library',
-    question: 'What if a library has no Package.swift?',
     answer:
       'Run npx react-native spm scaffold to generate one from its podspec. Libraries that mix Swift and C++ in one target or rely on podspec script phases need an upstream fix, a patch, or a replacement.',
+    id: 'library',
+    question: 'What if a library has no Package.swift?',
   },
   {
-    id: 'revert',
-    question: 'Can I go back to CocoaPods?',
     answer:
       'Yes. The migration keeps your .xcodeproj in place, and npx react-native spm deinit removes the injected package references. CocoaPods stays the default and supported path in React Native 0.87.',
+    id: 'revert',
+    question: 'Can I go back to CocoaPods?',
   },
 ];
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: FAQ_ITEMS.map(({ question, answer }) => ({
+  mainEntity: FAQ_ITEMS.map(({ answer, question }) => ({
     '@type': 'Question',
-    name: question,
     acceptedAnswer: {
       '@type': 'Answer',
       text: answer,
     },
+    name: question,
   })),
 };
 
 const TIMELINE = [
   {
     date: 'Aug 11, 2026',
-    title: 'React Native 0.87',
     text: 'Experimental, opt-in Swift Package Manager support for iOS.',
+    title: 'React Native 0.87',
   },
   {
     date: 'Oct 2026',
-    title: 'Firebase leaves CocoaPods',
     text: 'New Firebase iOS SDK versions ship through SPM only.',
+    title: 'Firebase leaves CocoaPods',
   },
   {
     date: 'Nov 1–7, 2026',
-    title: 'Read-only test run',
     text: 'CocoaPods trunk is temporarily frozen. No pod can be published.',
+    title: 'Read-only test run',
   },
   {
     date: 'Dec 2, 2026',
-    title: 'Trunk goes read-only',
     text: 'No new pod versions, ever. Existing ones still install.',
+    title: 'Trunk goes read-only',
   },
 ];
 
 const BLOCKERS = [
   {
-    title: 'Swift + C++ libraries',
     text: 'SPM cannot mix Swift and C++ in one target. Nitro modules, VisionCamera and MMKV are affected until they split their targets.',
+    title: 'Swift + C++ libraries',
   },
   {
-    title: 'Podspec script phases',
     text: 'Libraries running Ruby or shell logic from their podspec need an SPM plugin or a new build step.',
+    title: 'Podspec script phases',
   },
   {
-    title: 'Bare header imports',
     text: 'Headers now come from ReactNativeHeaders.xcframework. #import <RCTAppDelegate.h> becomes #import <React/RCTAppDelegate.h>.',
+    title: 'Bare header imports',
   },
   {
-    title: 'Podfile post_install hooks',
     text: 'Build settings patched in Ruby have no SPM equivalent. Move them to the Xcode project or drop them.',
+    title: 'Podfile post_install hooks',
   },
   {
-    title: 'Build from source',
     text: 'The first phase consumes prebuilt XCFrameworks only. Patching React Native native code means staying on CocoaPods.',
+    title: 'Build from source',
   },
   {
-    title: 'Expo',
     text: 'Available in expo@canary only. Managed and CNG apps should wait for a stable SDK.',
+    title: 'Expo',
   },
 ];
 

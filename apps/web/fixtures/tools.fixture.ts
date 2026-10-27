@@ -2,17 +2,17 @@ export interface Tool {
   id: string;
   name: string;
   slug: string;
-  description?: string;
-  description_success?: string;
+  type: string[];
+  ios_url?: string;
+  pricing?: string[];
   website_url: string;
   github_url?: string;
-  twitter_url?: string;
   platform?: string[];
-  pricing?: string[];
   features?: string[];
-  ios_url?: string;
-  type: string[];
+  description?: string;
+  twitter_url?: string;
   android_url?: string;
+  description_success?: string;
 }
 
 export const tools: Tool[] = [
@@ -22,6 +22,7 @@ export const tools: Tool[] = [
     description_success:
       '1. **Install once, send everywhere.** Add the Segment React Native SDK and connect all your analytics destinations (Mixpanel, Amplitude, BigQuery, etc.) from the Segment dashboard — no code changes needed when you add new tools.\n2. **Unify user identity across platforms.** Segment automatically stitches anonymous sessions to identified users, so you see the full journey from first open to conversion on both iOS and Android.\n3. **Ship faster with confidence.** With a single tracking plan and schema validation, your team stops debating which events exist and starts making data-driven product decisions that grow your app.\n',
     github_url: 'https://github.com/segmentio/analytics-react-native',
+    id: 'rec26VdpJBnJo2tzo',
     name: 'Segment',
     platform: ['Android', 'iOS', 'Web'],
     pricing: ['Free tier', 'Free trial', 'Premium tiers'],
@@ -29,7 +30,6 @@ export const tools: Tool[] = [
     twitter_url: 'https://twitter.com/segment',
     type: ['Analytics'],
     website_url: 'https://segment.com',
-    id: 'rec26VdpJBnJo2tzo',
   },
   {
     description:
@@ -38,6 +38,7 @@ export const tools: Tool[] = [
       '1. **Launch paywalls without engineering bottlenecks.** Use the no-code builder to design and publish new paywall variants from the dashboard — no app release required, so your monetization team moves at its own pace.\n2. **Run pricing experiments with confidence.** Built-in A/B testing lets you compare price points, offer structures, and paywall designs to find the combination that converts best on iOS and Android.\n3. **Reduce revenue leakage automatically.** Purchasely handles receipt validation, renewal tracking, and failed-payment recovery server-side, so you never lose subscribers to expired receipts or billing errors.\n',
     features: ['A / B testing'],
     github_url: 'https://github.com/Purchasely/Purchasely-ReactNative',
+    id: 'rec37Adlm4H93DXRu',
     name: 'Purchasely',
     platform: ['iOS', 'Android'],
     pricing: ['Premium tiers'],
@@ -45,7 +46,6 @@ export const tools: Tool[] = [
     twitter_url: 'https://twitter.com/purchaselycom',
     type: ['Payments & Subscriptions'],
     website_url: 'https://www.purchasely.com/',
-    id: 'rec37Adlm4H93DXRu',
   },
   {
     description:
@@ -54,6 +54,7 @@ export const tools: Tool[] = [
       '1. **Catch visual regressions before they ship.** Sherlo runs your full Storybook on every PR and sends a Slack notification with a visual diff the moment a component changes — so your team reviews UI changes alongside code changes.\n2. **Eliminate manual screenshot comparison.** Instead of manually checking every screen after a design system update, Sherlo automates the comparison across iOS and Android, saving hours of QA work per release.\n3. **Ship UI updates with confidence.** With a documented visual history of every component, your team can approve, reject, or discuss UI changes asynchronously — keeping design and engineering aligned without endless meetings.\n',
     features: ['CLI'],
     github_url: 'https://github.com/sherlo-io/sherlo',
+    id: 'rec7PqCtUjuHCsV8m',
     name: 'Sherlo',
     platform: ['Android', 'iOS'],
     pricing: ['Premium tiers'],
@@ -61,7 +62,6 @@ export const tools: Tool[] = [
     twitter_url: 'https://x.com/sherlo_io',
     type: ['Error Monitoring'],
     website_url: 'https://sherlo.io/',
-    id: 'rec7PqCtUjuHCsV8m',
   },
   {
     description:
@@ -69,13 +69,13 @@ export const tools: Tool[] = [
     description_success:
       "1. **Replace AsyncStorage with a real database in hours.** Realm's React Native SDK gives you typed, queryable collections that persist across app restarts — upgrade from ad-hoc JSON storage to a proper data layer without rewriting your app architecture.\n2. **Build offline-first apps without extra infrastructure.** Realm works entirely on-device with no network required, then syncs automatically to MongoDB Atlas when connectivity returns — giving your users a seamless experience regardless of connection quality.\n3. **Keep your UI in sync with zero boilerplate.** Live objects and reactive queries mean your components re-render automatically when data changes, eliminating the polling loops and manual cache invalidation that slow down React Native development.\n",
     github_url: 'https://www.npmjs.com/package/@realm/expo-template-ts',
+    id: 'rec7TqGAXJ4UrYa4g',
     name: 'realm',
     platform: ['Android', 'iOS'],
     pricing: ['Open source'],
     slug: 'realm',
     type: ['Database & Storage'],
     website_url: 'https://realm.io',
-    id: 'rec7TqGAXJ4UrYa4g',
   },
   {
     description:
@@ -84,13 +84,13 @@ export const tools: Tool[] = [
       "1. **Understand your funnel in one afternoon.** Install the Mixpanel SDK, track your core user flows (signup → activation → purchase), and immediately see where users drop off — so your team prioritizes fixes with the highest retention impact.\n2. **Segment users by behavior, not just demographics.** Build cohorts based on what users did (or didn't do) in your app, then target those segments with push notifications or experiments to bring them back.\n3. **Move from gut decisions to data decisions.** With retention charts and feature adoption metrics available to everyone on your team, product discussions shift from opinions to evidence — speeding up roadmap decisions and reducing wasted sprints.\n",
     features: ['Push notifications', 'A / B testing'],
     github_url: 'https://github.com/mixpanel/mixpanel-react-native',
+    id: 'rec7bddzgKz9FTQG4',
     name: 'Mixpanel',
     pricing: ['Free tier', 'Premium tiers'],
     slug: 'mixpanel',
     twitter_url: 'https://twitter.com/mixpanel',
     type: ['Analytics'],
     website_url: 'https://mixpanel.com',
-    id: 'rec7bddzgKz9FTQG4',
   },
   {
     description:
@@ -99,13 +99,13 @@ export const tools: Tool[] = [
       "1. **Accept every payment method your users expect.** One Braintree integration covers cards, PayPal, Apple Pay, and Google Pay on both iOS and Android — so you stop losing sales to missing payment options at checkout.\n2. **Ship a PCI-compliant checkout in hours, not weeks.** The Drop-in UI component handles card tokenization and validation client-side, meaning your backend never sees raw card numbers and your compliance burden stays minimal.\n3. **Scale revenue without scaling infrastructure.** Braintree's server-side webhooks and subscription APIs handle recurring billing, failed payment retries, and refunds automatically — so your small team can support complex monetization without building payment infrastructure from scratch.\n",
     features: ['Analytics', 'Integrations'],
     github_url: 'https://github.com/ekreative/react-native-braintree',
+    id: 'rec8VkLjRUcNej4eS',
     name: 'Braintree',
     platform: ['Android', 'iOS'],
     pricing: ['Pay as-you-go'],
     slug: 'braintree',
     type: ['Payments & Subscriptions'],
     website_url: 'https://www.braintreepayments.com/',
-    id: 'rec8VkLjRUcNej4eS',
   },
   {
     description:
@@ -119,13 +119,13 @@ export const tools: Tool[] = [
       'Session tracking',
     ],
     github_url: 'https://github.com/shakebugs/shake-react-native',
+    id: 'recDGW4TfLy0lneF4',
     name: 'Shakebugs',
     platform: ['Android', 'iOS', 'Web', 'macOS'],
     pricing: ['Free tier', 'Premium tiers'],
     slug: 'shakebugs',
     type: ['Error Monitoring'],
     website_url: 'https://www.shakebugs.com/',
-    id: 'recDGW4TfLy0lneF4',
   },
   {
     description:
@@ -139,13 +139,13 @@ export const tools: Tool[] = [
       'Performance',
     ],
     github_url: 'https://github.com/bitdriftlabs',
+    id: 'recHBl50Lwp5xeRT5',
     name: 'bitdrift',
     pricing: ['Free tier', 'Premium tiers'],
     slug: 'bitdrift',
     twitter_url: 'https://x.com/bitdriftio',
     type: ['Error Monitoring'],
     website_url: 'https://bitdrift.io/',
-    id: 'recHBl50Lwp5xeRT5',
   },
   {
     description:
@@ -154,6 +154,7 @@ export const tools: Tool[] = [
       '1. **Reduce the risk of every release.** Wrap new features in a flag and release to a small percentage of users first. If something breaks, disable the flag instantly — no hotfix, no app store review, no rollback required.\n2. **Improve the user experience with targeted rollouts.** Target specific users, devices, or app versions with new features before the general release, gathering real feedback from your most engaged users without exposing everyone to unfinished work.\n3. **Increase release velocity without increasing risk.** With feature flags separating deploy from release, your team ships code continuously and coordinates launches around business events — not the next available engineer weekend.\n',
     features: ['Feature flags', 'Session tracking'],
     github_url: 'https://github.com/launchdarkly/react-native-client-sdk',
+    id: 'recI6x4s0zmjf0rOb',
     name: 'LaunchDarkly',
     platform: ['Android', 'iOS', 'macOS', 'tvOS', 'Web', 'Windows', 'Unity'],
     pricing: ['Free tier', 'Premium tiers'],
@@ -161,7 +162,6 @@ export const tools: Tool[] = [
     twitter_url: 'https://twitter.com/launchdarkly',
     type: ['Backend & APIs'],
     website_url: 'https://launchdarkly.com/',
-    id: 'recI6x4s0zmjf0rOb',
   },
   {
     description:
@@ -171,6 +171,7 @@ export const tools: Tool[] = [
     features: ['Real-time database', 'Video', 'Analytics', 'Cloud storage'],
     github_url:
       'https://github.com/ZEGOCLOUD/zego_uikit_prebuilt_call_example_rn',
+    id: 'recIAkp0BimbjQWjY',
     name: 'zegocloud',
     platform: ['Android', 'iOS'],
     pricing: ['Free trial', 'Pay as-you-go'],
@@ -178,7 +179,6 @@ export const tools: Tool[] = [
     twitter_url: 'https://twitter.com/ZEGOCLOUD_Dev',
     type: ['CI/CD & Release'],
     website_url: 'https://www.zegocloud.com/',
-    id: 'recIAkp0BimbjQWjY',
   },
   {
     description:
@@ -187,6 +187,7 @@ export const tools: Tool[] = [
       '1. **Watch what users actually do, not what you think they do.** Session recordings on real iOS and Android devices reveal tap errors, confusing navigation, and friction points that no metric dashboard can show — giving your team empathy-driven insights in minutes.\n2. **Diagnose crashes with full video context.** When a crash occurs, UXCam attaches the session recording leading up to it, so your engineers reproduce the exact steps that caused the issue instead of guessing from a stack trace alone.\n3. **Prioritize UX fixes with quantitative heatmaps.** Aggregate tap and scroll heatmaps across thousands of sessions show you which UI elements users interact with most — so you redesign with data, not debate.\n',
     features: ['Analytics'],
     github_url: 'https://github.com/uxcam/react-native-ux-cam',
+    id: 'recJHvvUTV48AKDMm',
     name: 'UXCam',
     platform: ['Android', 'iOS', 'Web'],
     pricing: ['Free tier', 'Premium tiers'],
@@ -194,7 +195,6 @@ export const tools: Tool[] = [
     twitter_url: 'https://twitter.com/uxcam',
     type: ['Analytics'],
     website_url: 'https://uxcam.com',
-    id: 'recJHvvUTV48AKDMm',
   },
   {
     description:
@@ -203,13 +203,13 @@ export const tools: Tool[] = [
       "1. **Handle large datasets without UI jank.** WatermelonDB's lazy evaluation means it never loads more records than your screen needs — so list views stay fast and scrollable even with 100,000 items in the database.\n2. **Build reactive UIs with zero manual wiring.** Wrap your components with `withObservables` and they automatically re-render when the underlying data changes — eliminating the prop-drilling and cache invalidation patterns that make data-heavy apps hard to maintain.\n3. **Ship offline-first features your users love.** With SQLite under the hood and sync adapters for popular backends, WatermelonDB makes it straightforward to build apps that work perfectly offline and sync reliably when connectivity returns.\n",
     features: ['Offline'],
     github_url: 'https://github.com/Nozbe/WatermelonDB',
+    id: 'recL86qfmzGmriOzs',
     name: 'Watermelon DB',
     pricing: ['Open source'],
     slug: 'watermelon-db',
     twitter_url: 'https://twitter.com/Nozbe',
     type: ['Database & Storage'],
     website_url: 'https://watermelondb.dev/',
-    id: 'recL86qfmzGmriOzs',
   },
   {
     description:
@@ -218,13 +218,13 @@ export const tools: Tool[] = [
       '1. **Go offline-first in your React Native app without rebuilding your data layer.** RxDB stores data locally on-device and syncs automatically with CouchDB, PouchDB, or custom backends when the connection returns — giving users a seamless experience with no extra infrastructure to manage.\n2. **Drive your UI with reactive data streams.** RxDB queries return RxJS Observables — subscribe to a collection in your component and the UI updates automatically whenever data changes, locally or from a sync — eliminating manual refetch logic.\n3. **Choose your storage engine without changing your code.** RxDB supports IndexedDB, SQLite, Memory, and more through a swappable adapter system — so you can optimize for performance on each platform without rewriting your data access layer.\n',
     features: ['Real-time database', 'Offline'],
     github_url: 'https://github.com/pubkey/rxdb',
+    id: 'recLpTxHJIXJtTIvW',
     name: 'RxDB',
     platform: ['Android', 'iOS', 'Web'],
     pricing: ['Open source'],
     slug: 'rxdb',
     type: ['Database & Storage'],
     website_url: 'https://rxdb.info/',
-    id: 'recLpTxHJIXJtTIvW',
   },
   {
     description:
@@ -233,6 +233,7 @@ export const tools: Tool[] = [
       "1. **Start building in minutes, not days.** `npx create-expo-app` scaffolds a fully configured React Native project with TypeScript, navigation, and native modules ready to go — no Xcode or Android Studio configuration required to see your app on a real device.\n2. **Ship updates instantly without the App Store review cycle.** Expo's Over-the-Air (OTA) update system lets you push JavaScript and asset changes directly to your users' installed apps — critical bug fixes reach production in minutes, not days.\n3. **Build for iOS from any operating system.** EAS Build runs your iOS and Android builds in the cloud, so your Linux or Windows developers can produce App Store-ready builds without owning Apple hardware — removing the biggest infrastructure bottleneck in React Native teams.\n",
     features: ['Hosting', 'Push notifications', 'CLI', 'Over the Air Updates'],
     github_url: 'https://github.com/expo/expo',
+    id: 'recLvcsE6QmzdBZoZ',
     name: 'Expo',
     platform: ['Android', 'iOS', 'macOS', 'tvOS', 'Web', 'Windows'],
     pricing: ['Open source', 'Free tier', 'Pay as-you-go', 'Premium tiers'],
@@ -240,7 +241,6 @@ export const tools: Tool[] = [
     twitter_url: 'https://twitter.com/expo',
     type: ['CI/CD & Release'],
     website_url: 'https://expo.dev',
-    id: 'recLvcsE6QmzdBZoZ',
   },
   {
     description:
@@ -249,6 +249,7 @@ export const tools: Tool[] = [
       "1. **Protect your critical user flows on every PR.** Set up smoke tests for Login, Signup, Checkout, and other core screens once — Waldo runs them automatically on every branch so broken flows never make it to main.\n2. **Give QA superpowers without engineering involvement.** Non-technical team members record test sessions on selected devices using Waldo's UI — QA and product managers create and maintain tests independently, freeing your engineers for feature work.\n3. **Debug failures in seconds with full video evidence.** Every failed test comes with a video replay, captured network requests, and app logs — your team reproduces the exact failure conditions immediately instead of spending hours trying to replicate a flaky environment.\n",
     features: ['Video'],
     github_url: 'https://github.com/waldoapp/fastlane-plugin-waldo',
+    id: 'recMXWD3QR2asK5uQ',
     name: 'Waldo',
     platform: ['Android', 'iOS'],
     pricing: ['Free trial', 'Premium tiers'],
@@ -256,7 +257,6 @@ export const tools: Tool[] = [
     twitter_url: 'https://twitter.com/UseWaldo',
     type: ['Backend & APIs'],
     website_url: 'https://www.waldo.com/',
-    id: 'recMXWD3QR2asK5uQ',
   },
   {
     description:
@@ -265,6 +265,7 @@ export const tools: Tool[] = [
       '1. **Replace five analytics tools with one.** PostHog covers events, session replay, feature flags, and A/B tests under a single SDK and dashboard — eliminating the integration overhead of stitching together Mixpanel, LaunchDarkly, and Hotjar just to understand your users.\n2. **Own your data, no vendor lock-in.** Self-host PostHog on your own infrastructure to keep all user data within your control — critical for apps handling sensitive data, healthcare workloads, or customers with strict compliance requirements.\n3. **Iterate faster with integrated feature flags.** Define a feature flag in PostHog, roll it out to 10% of users, track the analytics impact in the same tool, and graduate the rollout — the entire experiment lifecycle lives in one place, so nothing falls through the cracks between tools.\n',
     features: ['A / B testing', 'Analytics', 'Feature flags'],
     github_url: 'https://github.com/PostHog/posthog-react-native',
+    id: 'recMXZGNue9gXJ2oD',
     name: 'Posthog',
     platform: ['Android', 'iOS', 'Web'],
     pricing: ['Open source', 'Free tier', 'Premium tiers', 'Pay as-you-go'],
@@ -272,7 +273,6 @@ export const tools: Tool[] = [
     twitter_url: 'https://twitter.com/posthog',
     type: ['Analytics'],
     website_url: 'https://posthog.com',
-    id: 'recMXZGNue9gXJ2oD',
   },
   {
     description:
@@ -298,6 +298,7 @@ export const tools: Tool[] = [
       'Deep Linking',
     ],
     github_url: 'https://github.com/aws-amplify/amplify-js',
+    id: 'recPn4JmIKEEbbtII',
     name: 'Amplify',
     platform: ['Android', 'iOS', 'Web'],
     pricing: ['Free tier', 'Pay as-you-go', 'Premium tiers'],
@@ -305,7 +306,6 @@ export const tools: Tool[] = [
     twitter_url: 'https://twitter.com/AWSAmplify',
     type: ['CI/CD & Release', 'Backend & APIs', 'Auth & Identity'],
     website_url: 'https://docs.amplify.aws/react-native/',
-    id: 'recPn4JmIKEEbbtII',
   },
   {
     description:
@@ -314,13 +314,13 @@ export const tools: Tool[] = [
       '1. **Go from database to GraphQL API in under 10 minutes.** Connect Hasura to a new or existing PostgreSQL database and get a fully functional, type-safe GraphQL API with queries, mutations, and subscriptions — without writing a single resolver function.\n2. **Implement authorization that scales with your product.** Hasura\'s row-level and column-level permission system lets you define rules like "users can only read their own data" declaratively in the console — no custom auth middleware, no security vulnerabilities from hand-rolled access control.\n3. **Stream live data to your React Native UI.** Hasura GraphQL subscriptions push database changes to connected clients in real time — build live feeds, collaborative features, and dashboards that stay in sync without polling or WebSocket infrastructure to manage.\n',
     features: ['CLI', 'Cloud storage', 'GraphQL', 'Real-time database'],
     github_url: 'https://github.com/hasura/graphql-engine',
+    id: 'recQbHiwOM3PXmaPC',
     name: 'Hasura',
     platform: ['Android', 'iOS', 'Web'],
     slug: 'hasura',
     twitter_url: 'https://twitter.com/HasuraHQ',
     type: ['Backend & APIs', 'Database & Storage'],
     website_url: 'https://hasura.io/learn/graphql/react-native/introduction/',
-    id: 'recQbHiwOM3PXmaPC',
   },
   {
     description:
@@ -329,13 +329,13 @@ export const tools: Tool[] = [
       "1. **Own your user data with no vendor lock-in.** Self-host FusionAuth on any cloud or on-premise server — your user database stays under your control, no data leaves your infrastructure, and you're never subject to a third-party's policy changes or pricing increases.\n2. **Ship complete auth in days, not weeks.** FusionAuth provides pre-built login, registration, MFA, and OAuth flows out of the box, with a React Native example app in the official docs — so your team implements production-grade auth without building it from scratch.\n3. **Handle every authentication use case in one platform.** SSO, passwordless, social login, SAML, LDAP, and biometric auth are all supported — so as your user base grows and your enterprise customers arrive with their own identity requirements, FusionAuth already has you covered.\n",
     features: ['Auth'],
     github_url: 'https://github.com/FusionAuth/fusionauth-example-react-native',
+    id: 'recRFVW9jgQv4FrZz',
     name: 'FusionAuth',
     pricing: ['Free tier', 'Premium tiers', 'Open source'],
     slug: 'fusionauth',
     twitter_url: 'https://twitter.com/FusionAuth',
     type: ['Auth & Identity'],
     website_url: 'https://fusionauth.io',
-    id: 'recRFVW9jgQv4FrZz',
   },
   {
     description:
@@ -343,11 +343,11 @@ export const tools: Tool[] = [
     description_success:
       "1. **Ship authentication in hours, not sprints.** Clerk's pre-built sign-in and sign-up components handle every edge case — password reset, email verification, OAuth callbacks — so your team implements complete auth without writing a single authentication screen from scratch.\n2. **Protect every route and API with one line of code.** Clerk's middleware and session tokens work across your React Native app and backend, giving you consistent user context everywhere without custom token validation logic.\n3. **Manage users without building an admin panel.** Clerk's dashboard gives your team visibility into every user account, active sessions, and authentication history — so support and ops can resolve account issues without engineering involvement.\n",
     features: ['Auth', 'Auth - Multi-factor', 'Auth - Social Login '],
+    id: 'recRLncgjgRtXGiGa',
     name: 'Clerk',
     slug: 'clerk',
     type: ['Auth & Identity'],
     website_url: 'https://clerk.com/',
-    id: 'recRLncgjgRtXGiGa',
   },
   {
     description:
@@ -367,6 +367,7 @@ export const tools: Tool[] = [
       'Real-time database',
     ],
     github_url: 'https://github.com/wundergraph/wundergraph',
+    id: 'recRh2QjhDDju1i4G',
     name: 'WunderGraph',
     platform: ['Android', 'iOS', 'macOS', 'Web', 'Windows'],
     pricing: [
@@ -380,7 +381,6 @@ export const tools: Tool[] = [
     twitter_url: 'https://twitter.com/wundergraphcom',
     type: ['Backend & APIs'],
     website_url: 'https://wundergraph.com/',
-    id: 'recRh2QjhDDju1i4G',
   },
   {
     description:
@@ -389,6 +389,7 @@ export const tools: Tool[] = [
       '1. **Know about crashes before your users complain.** Sentry sends an alert the moment a new error appears in production, with a full stack trace and session replay — so your team is already investigating before the first support ticket arrives.\n2. **Fix bugs faster with complete context.** Every error report includes device info, OS version, app version, user actions, and network requests leading up to the crash — reducing the time from "bug reported" to "root cause identified" from hours to minutes.\n3. **Track release health and ship with confidence.** Sentry\'s release health dashboard shows crash-free session rates and error regressions for every deploy — so you merge PRs knowing exactly what impact each change has on your production stability.\n',
     features: ['Crash reporting'],
     github_url: 'https://github.com/getsentry/sentry-react-native',
+    id: 'recS01syAN8EAJTk1',
     name: 'Sentry',
     platform: ['Android', 'iOS', 'Web'],
     pricing: ['Free tier', 'Premium tiers'],
@@ -396,7 +397,6 @@ export const tools: Tool[] = [
     twitter_url: 'https://twitter.com/getsentry',
     type: ['Error Monitoring'],
     website_url: 'https://sentry.io',
-    id: 'recS01syAN8EAJTk1',
   },
   {
     description:
@@ -412,12 +412,12 @@ export const tools: Tool[] = [
       'Crash reporting',
     ],
     github_url: 'https://github.com/flurry/react-native-flurry-sdk',
+    id: 'recUrA2AQOxjmNcvq',
     name: 'Flurry',
     platform: ['Android', 'iOS', 'tvOS'],
     slug: 'flurry',
     type: ['Analytics'],
     website_url: 'https://www.flurry.com/',
-    id: 'recUrA2AQOxjmNcvq',
   },
   {
     description:
@@ -437,6 +437,7 @@ export const tools: Tool[] = [
       'Deep Linking',
     ],
     github_url: 'https://github.com/invertase/react-native-firebase',
+    id: 'recXY5f6J6Ryht5wz',
     name: 'Firebase',
     platform: ['Android', 'iOS', 'Unity', 'Web'],
     pricing: ['Free tier', 'Pay as-you-go'],
@@ -444,7 +445,6 @@ export const tools: Tool[] = [
     twitter_url: 'https://twitter.com/rnfirebase',
     type: ['CI/CD & Release', 'Backend & APIs', 'Database & Storage'],
     website_url: 'https://rnfirebase.io',
-    id: 'recXY5f6J6Ryht5wz',
   },
   {
     description:
@@ -461,6 +461,7 @@ export const tools: Tool[] = [
       'Other',
     ],
     github_url: 'https://github.com/Pushwoosh/pushwoosh-react-native-plugin',
+    id: 'recXoL2bTgaO34va8',
     name: 'Pushwoosh',
     platform: ['Android', 'iOS', 'Web'],
     pricing: ['Premium tiers', 'Free trial'],
@@ -468,7 +469,6 @@ export const tools: Tool[] = [
     twitter_url: 'https://twitter.com/Pushwoosh',
     type: ['CI/CD & Release'],
     website_url: 'https://www.pushwoosh.com',
-    id: 'recXoL2bTgaO34va8',
   },
   {
     description:
@@ -478,6 +478,7 @@ export const tools: Tool[] = [
     features: ['Video', 'Events tracking', 'Cloud storage'],
     github_url:
       'https://github.com/getstoryteller/storyteller-sdk-react-native',
+    id: 'recY8xh59eWIWw3uL',
     name: 'Storyteller',
     platform: ['Android', 'iOS', 'macOS', 'Web'],
     pricing: ['Free trial', 'Premium tiers'],
@@ -486,7 +487,6 @@ export const tools: Tool[] = [
     type: ['Backend & APIs'],
     website_url:
       'https://www.getstoryteller.com/documentation/react-native/getting-started',
-    id: 'recY8xh59eWIWw3uL',
   },
   {
     description:
@@ -495,6 +495,7 @@ export const tools: Tool[] = [
       "1. **Give your content team an admin panel without building one.** Strapi's visual content type builder and admin UI let non-developers create, edit, and publish content independently — so your React Native app always has fresh content without a developer being in the loop for every change.\n2. **Ship faster with a flexible, auto-generated API.** Define your content models in Strapi's builder and get REST and GraphQL endpoints automatically — no API code to write, no endpoint documentation to maintain, and a type-safe query layer for your React Native app from day one.\n3. **Own your content infrastructure with full customization.** Self-host Strapi on any cloud provider with full access to the source code — extend it with custom plugins, webhooks, and lifecycle hooks, or upgrade to Strapi Cloud for a managed option — without ever being locked into a proprietary platform.\n",
     features: ['GraphQL'],
     github_url: 'https://github.com/phidn/awesome-react-native-strapi-starter',
+    id: 'recZt8NrvzeBJ9WTn',
     name: 'Strapi',
     platform: ['Android', 'iOS', 'macOS', 'Web', 'Windows'],
     pricing: ['Open source', 'Free trial', 'Premium tiers'],
@@ -502,7 +503,6 @@ export const tools: Tool[] = [
     twitter_url: 'https://twitter.com/strapijs',
     type: ['CMS & Content', 'Backend & APIs'],
     website_url: 'https://strapi.io/',
-    id: 'recZt8NrvzeBJ9WTn',
   },
   {
     description:
@@ -528,6 +528,7 @@ export const tools: Tool[] = [
       'Custom events',
     ],
     github_url: 'https://vexo-docs.vercel.app/',
+    id: 'reca452Fwq3Q3HJuK',
     name: 'Vexo',
     platform: ['Android', 'iOS', 'Web'],
     pricing: ['Free tier', 'Premium tiers'],
@@ -535,7 +536,6 @@ export const tools: Tool[] = [
     twitter_url: 'https://twitter.com/vexo_tech',
     type: ['Analytics'],
     website_url: 'https://www.vexo.co/',
-    id: 'reca452Fwq3Q3HJuK',
   },
   {
     description:
@@ -544,6 +544,7 @@ export const tools: Tool[] = [
       "1. **Ship production-ready in-app chat in days, not months.** Stream's React Native Chat SDK includes pre-built UI components for every part of the chat experience — channels, messages, reactions, threads — so you're customizing an existing product, not building messaging infrastructure from scratch.\n2. **Scale to millions of users without managing infrastructure.** Stream's cloud handles message persistence, fan-out to offline devices, push notification delivery, and real-time delivery at scale — your React Native app just connects to the API and the platform handles the rest.\n3. **Improve retention with chat that users love.** In-app messaging keeps users inside your product instead of switching to WhatsApp or SMS — increasing session time, daily active users, and the stickiness of your core product loop.\n",
     features: ['Push notifications', 'Video', 'Image & file upload'],
     github_url: 'https://github.com/GetStream/stream-chat-react-native',
+    id: 'recbItw6artac4gqd',
     name: 'Stream',
     platform: ['Android', 'iOS', 'Web'],
     pricing: ['Free tier', 'Premium tiers'],
@@ -551,7 +552,6 @@ export const tools: Tool[] = [
     twitter_url: 'https://twitter.com/getstream_io',
     type: ['Backend & APIs'],
     website_url: 'https://getstream.io',
-    id: 'recbItw6artac4gqd',
   },
   {
     description:
@@ -560,13 +560,13 @@ export const tools: Tool[] = [
       '1. **Monetize your app on all platforms with a single API.** `react-native-iap` abstracts iOS StoreKit, Google Play Billing, and Amazon IAP behind one consistent interface — so your purchase logic, subscription management, and receipt handling code works on every platform without platform-specific branches.\n2. **Reduce revenue loss from unvalidated receipts.** The library exposes receipt data in a standardized format that you can forward to your server for validation — preventing fraudulent purchases from slipping through without building your own StoreKit/Billing integration.\n3. **Handle subscription lifecycle events correctly.** `react-native-iap` provides purchase update listeners that fire on renewal, cancellation, and billing issues — so your app responds to subscription state changes in real time instead of discovering them only on the next launch.\n',
     features: ['Other'],
     github_url: 'https://github.com/dooboolab-community/react-native-iap',
+    id: 'recbseR7a3VeMnHmb',
     name: 'react-native-iap',
     platform: ['iOS', 'Android'],
     pricing: ['Open source'],
     slug: 'react-native-iap',
     type: ['Payments & Subscriptions'],
     website_url: 'https://react-native-iap.dooboolab.com/docs/get-started/',
-    id: 'recbseR7a3VeMnHmb',
   },
   {
     description:
@@ -576,13 +576,13 @@ export const tools: Tool[] = [
     features: ['Auth', 'Auth - Social Login ', 'Auth - Multi-factor'],
     github_url:
       'https://github.com/auth0-samples/auth0-react-native-sample/tree/master/00-Login-Hooks',
+    id: 'recdtu5o6p40gOu37',
     name: 'Auth0',
     pricing: ['Free tier', 'Premium tiers'],
     slug: 'auth0',
     twitter_url: 'https://twitter.com/auth0',
     type: ['Auth & Identity'],
     website_url: 'https://auth0.com',
-    id: 'recdtu5o6p40gOu37',
   },
   {
     description:
@@ -590,6 +590,7 @@ export const tools: Tool[] = [
     description_success:
       "1. **Eliminate UI stutter caused by slow storage reads.** MMKV's synchronous API means you read user preferences and session tokens instantly on the JS thread — no `await`, no loading states, no flickering UI while your app waits for AsyncStorage to return a value.\n2. **Secure sensitive data with built-in AES encryption.** MMKV supports transparent encryption with a single `encryptionKey` parameter — store auth tokens, API keys, and user data with encryption-at-rest without integrating a separate keychain library.\n3. **Drop in as an AsyncStorage replacement in minutes.** MMKV's API mirrors AsyncStorage closely, and community wrappers make migration trivial — so you get a 30x storage performance improvement with a minimal diff to your existing code.\n",
     github_url: 'https://github.com/mrousavy/react-native-mmkv',
+    id: 'recfVAxGQNNd1Ok9n',
     name: 'React Native MMKV',
     platform: ['Android', 'iOS'],
     pricing: ['Open source'],
@@ -597,7 +598,6 @@ export const tools: Tool[] = [
     twitter_url: 'https://twitter.com/mrousavy',
     type: ['Database & Storage'],
     website_url: 'https://github.com/mrousavy/react-native-mmkv',
-    id: 'recfVAxGQNNd1Ok9n',
   },
   {
     description:
@@ -611,6 +611,7 @@ export const tools: Tool[] = [
       'Audience segmentation',
     ],
     github_url: 'https://github.com/featurevisor/featurevisor',
+    id: 'recfzMIEarrqrCmZB',
     name: 'Featurevisor',
     platform: ['Android', 'iOS', 'macOS', 'Web'],
     pricing: ['Open source'],
@@ -618,7 +619,6 @@ export const tools: Tool[] = [
     twitter_url: 'https://twitter.com/featurevisor',
     type: ['Backend & APIs'],
     website_url: 'https://featurevisor.com/docs/react-native/',
-    id: 'recfzMIEarrqrCmZB',
   },
   {
     description:
@@ -626,6 +626,7 @@ export const tools: Tool[] = [
     description_success:
       '1. **Make your app fully functional without internet.** PouchDB stores all data locally on-device and syncs in the background when connectivity returns — users create, edit, and delete data offline without any "no connection" states or lost work.\n2. **Sync data across devices without building sync infrastructure.** PouchDB\'s CouchDB replication protocol handles conflict resolution, incremental updates, and attachment sync automatically — you define what to sync and PouchDB manages the rest, even with intermittent connectivity.\n3. **Get started in minutes with a familiar document API.** PouchDB\'s `put`, `get`, `query`, and `allDocs` API is intuitive for JavaScript developers — you have a working local database in your React Native app within minutes of installation, with full offline support from day one.\n',
     github_url: 'https://github.com/seigel/pouchdb-react-native',
+    id: 'rech5TNiPo7O3tNIh',
     name: 'PouchDB',
     platform: ['Android', 'iOS', 'Web'],
     pricing: ['Open source'],
@@ -633,7 +634,6 @@ export const tools: Tool[] = [
     twitter_url: 'https://twitter.com/pouchdb',
     type: ['Database & Storage'],
     website_url: 'https://pouchdb.com',
-    id: 'rech5TNiPo7O3tNIh',
   },
   {
     description:
@@ -642,6 +642,7 @@ export const tools: Tool[] = [
       "1. **Stop guessing, start watching.** LogRocket's session replay shows you the exact sequence of user actions, screen states, and network requests that led to a bug — your team reproduces any reported issue instantly without needing the user on a call to demonstrate it.\n2. **Combine visual replay with technical context.** Every session recording is annotated with Redux state changes, console errors, and API response times — so you see both what the user saw and what was happening in the app simultaneously.\n3. **Proactively catch issues before user reports.** LogRocket's anomaly detection surfaces sessions where users rage-tapped, hit errors, or saw degraded performance — so your team finds and fixes friction points before they accumulate into bad App Store reviews.\n",
     features: ['Crash reporting'],
     github_url: 'https://docs.logrocket.com/docs/react-native',
+    id: 'rechLPQrH2pc7o9WY',
     name: 'LogRocket',
     platform: ['Android', 'iOS', 'Web'],
     pricing: ['Free tier', 'Premium tiers'],
@@ -649,7 +650,6 @@ export const tools: Tool[] = [
     twitter_url: 'https://twitter.com/LogRocket',
     type: ['Error Monitoring'],
     website_url: 'https://logrocket.com',
-    id: 'rechLPQrH2pc7o9WY',
   },
   {
     description:
@@ -658,13 +658,13 @@ export const tools: Tool[] = [
       "1. **Use Airtable as your app's backend without writing a backend.** BaseQL wraps your Airtable base in a GraphQL API automatically — so your React Native app queries Airtable records with typed GraphQL operations instead of wrestling with the Airtable REST API's pagination and filtering quirks.\n2. **Move from no-code prototype to shipped app faster.** If your team already manages data in Airtable, BaseQL closes the gap between the spreadsheet and the app with zero additional infrastructure — prototype in Airtable, ship to users via React Native.\n3. **Filter and join data with GraphQL instead of client-side logic.** BaseQL exposes Airtable's filtering and linked record relationships as GraphQL arguments — so you query exactly the records you need server-side instead of fetching entire tables and filtering in JavaScript.\n",
     features: ['GraphQL'],
     github_url: 'https://docs.baseql.com/',
+    id: 'reciYrtGCT9a6YGIb',
     name: 'BaseQL',
     pricing: ['Free tier', 'Premium tiers'],
     slug: 'baseql',
     twitter_url: 'https://twitter.com/BaseQL',
     type: ['Backend & APIs'],
     website_url: 'https://baseql.com',
-    id: 'reciYrtGCT9a6YGIb',
   },
   {
     description:
@@ -680,6 +680,7 @@ export const tools: Tool[] = [
       'Localization',
     ],
     github_url: 'https://github.com/urbanairship/react-native-module',
+    id: 'recj0iM37aM6CNleb',
     name: 'Airship',
     platform: ['Android', 'iOS', 'Web'],
     pricing: ['Premium tiers'],
@@ -687,7 +688,6 @@ export const tools: Tool[] = [
     twitter_url: 'https://twitter.com/airship',
     type: ['CI/CD & Release'],
     website_url: 'https://docs.airship.com/platform/mobile/',
-    id: 'recj0iM37aM6CNleb',
   },
   {
     description:
@@ -696,6 +696,7 @@ export const tools: Tool[] = [
       "1. **Launch subscriptions without building payment infrastructure.** RevenueCat validates receipts, tracks subscription status, and handles billing edge cases server-side — your React Native app calls the SDK, RevenueCat handles the complexity, and you ship monetization in days instead of months.\n2. **Optimize revenue with data-driven pricing experiments.** RevenueCat's A/B testing for paywalls and pricing lets you experiment with different subscription tiers, trial lengths, and offer structures — and measures the actual revenue impact of each variant, not just conversion rate.\n3. **Get cross-platform subscription analytics in one dashboard.** RevenueCat unifies iOS App Store and Google Play subscription data — MRR, churn, LTV, trial conversion — into a single view, so your team makes monetization decisions based on total business reality, not platform silos.\n",
     features: ['Analytics', 'A / B testing'],
     github_url: 'https://github.com/RevenueCat/react-native-purchases',
+    id: 'reclw400RHyEgHJjV',
     name: 'RevenueCat',
     platform: ['iOS', 'Android', 'Unity', 'Web'],
     pricing: ['Free tier', 'Pay as-you-go', 'Premium tiers'],
@@ -703,7 +704,6 @@ export const tools: Tool[] = [
     twitter_url: 'https://twitter.com/revenuecat',
     type: ['Payments & Subscriptions'],
     website_url: 'https://www.revenuecat.com/docs/reactnative',
-    id: 'reclw400RHyEgHJjV',
   },
   {
     description:
@@ -719,13 +719,13 @@ export const tools: Tool[] = [
       'A / B testing',
     ],
     github_url: 'https://github.com/AppsFlyerSDK/appsflyer-react-native-plugin',
+    id: 'recm3J131JfMFdLpF',
     name: 'AppsFlyer',
     platform: ['Android', 'iOS', 'Web', 'tvOS'],
     pricing: ['Free tier', 'Premium tiers'],
     slug: 'appsflyer',
     type: ['Analytics'],
     website_url: 'https://www.appsflyer.com',
-    id: 'recm3J131JfMFdLpF',
   },
   {
     description:
@@ -734,12 +734,12 @@ export const tools: Tool[] = [
       "1. **Set up push notifications in 30 minutes.** OneSignal's React Native SDK handles APNs and FCM token management, permission requests, and delivery tracking automatically — your team sends the first push notification to a real device in under an hour, with no backend infrastructure required.\n2. **Send the right message to the right user.** OneSignal's segmentation engine lets you target users by device type, location, behavior, or custom attributes — so re-engagement campaigns reach inactive users and promotional messages hit only the audience that's relevant, improving open rates and reducing unsubscribes.\n3. **Automate the push lifecycle with zero engineering overhead.** OneSignal's automated messages trigger on user events — session start, purchase completion, 7-day inactivity — running your entire push engagement strategy in the background without a single manual send or engineering sprint.\n",
     features: ['Cloud messaging', 'Push notifications'],
     github_url: 'https://github.com/OneSignal/react-native-onesignal',
+    id: 'recmwNkublGYk6O47',
     name: 'OneSignal',
     platform: ['Android', 'iOS', 'Web'],
     slug: 'onesignal',
     type: ['Backend & APIs'],
     website_url: 'https://onesignal.com',
-    id: 'recmwNkublGYk6O47',
   },
   {
     description:
@@ -747,13 +747,13 @@ export const tools: Tool[] = [
     description_success:
       '1. **Eliminate unpredictable CI bills.** A Mac mini is a one-time hardware cost that replaces monthly cloud CI subscriptions — for teams with frequent builds (multiple deploys per day), self-hosted CI typically pays for itself within 3–6 months compared to Bitrise or Codemagic.\n2. **Get full control over your build environment.** Self-hosted CI means you choose every Xcode version, simulator, and macOS configuration — no waiting for a cloud provider to support the latest iOS SDK or workarounding undocumented differences between your local environment and the cloud runner.\n3. **Build iOS without a Mac subscription.** A single Mac mini on your network gives every developer on your team — including Linux and Windows developers — the ability to trigger iOS builds and App Store submissions through Fastlane without owning personal Apple hardware.\n',
     features: ['Other'],
+    id: 'recpKXVA0FCRYBclI',
     name: 'Mac mini',
     platform: ['iOS'],
     pricing: ['Premium tiers'],
     slug: 'mac-mini',
     type: ['CI/CD & Release'],
     website_url: 'https://www.apple.com/mac-mini/',
-    id: 'recpKXVA0FCRYBclI',
   },
   {
     description:
@@ -761,6 +761,7 @@ export const tools: Tool[] = [
     description_success:
       "1. **Add video playback to your React Native app in hours.** Mux's React Native Player component integrates with your Mux video assets and handles adaptive bitrate switching, buffering states, and fullscreen automatically — your team ships a high-quality video experience without implementing a custom media player.\n2. **Upload and process user-generated video at any scale.** Mux's video upload API accepts any input format and returns an HLS stream optimized for mobile playback — eliminating the server infrastructure, encoding queues, and storage management that video features normally require.\n3. **Monitor video quality where it actually matters — on the user's device.** Mux Data provides real-time playback quality metrics (startup time, buffering ratio, error rate) broken down by device, OS, and network quality — so you fix video performance issues before they show up in App Store reviews.\n",
     features: ['Video', 'Audio', 'Real-time streaming', 'Live'],
+    id: 'recpj2YXTgqEFTfCZ',
     name: 'Mux',
     platform: ['Android', 'iOS'],
     pricing: ['Pay as-you-go', 'Premium tiers'],
@@ -768,7 +769,6 @@ export const tools: Tool[] = [
     twitter_url: 'https://x.com/muxhq',
     type: ['Backend & APIs'],
     website_url: 'https://www.mux.com/video-for/react-native',
-    id: 'recpj2YXTgqEFTfCZ',
   },
   {
     description:
@@ -777,6 +777,7 @@ export const tools: Tool[] = [
       "1. **Deploy schema changes without downtime or table locks.** PlanetScale's branching model lets you propose, test, and merge database schema changes like pull requests — non-blocking migrations run automatically, so your React Native app's backend updates without a maintenance window or degraded user experience.\n2. **Scale your database without a DBA.** PlanetScale's Vitess foundation handles horizontal sharding automatically as your data grows — so the same database setup that works for your first 1,000 users scales to your first 10 million without re-architecting your data layer.\n3. **Ship faster with database branches.** Create a PlanetScale branch for every feature branch — test risky schema changes in isolation before merging to production, and roll back instantly if something goes wrong — without affecting your live React Native app's database.\n",
     features: ['Cloud function', 'Real-time database'],
     github_url: 'https://github.com/planetscale/database-js',
+    id: 'recqlao2CHN3Ym5eH',
     name: 'PlanetScale',
     platform: ['Android', 'iOS', 'Web'],
     pricing: ['Free tier', 'Premium tiers'],
@@ -784,7 +785,6 @@ export const tools: Tool[] = [
     twitter_url: 'https://twitter.com/planetscaledata',
     type: ['Database & Storage'],
     website_url: 'https://planetscale.com/',
-    id: 'recqlao2CHN3Ym5eH',
   },
   {
     description:
@@ -793,13 +793,13 @@ export const tools: Tool[] = [
       "1. **Prioritize bugs by user impact, not just frequency.** Bugsnag's stability score shows you the percentage of crash-free sessions for each app version — so your team fixes the errors affecting the most users first, not just the errors that appeared most recently in your error inbox.\n2. **Reproduce crashes with complete diagnostic context.** Every Bugsnag error report includes device state, app version, recent breadcrumbs, and the full stack trace with source-mapped JavaScript — your engineers diagnose the root cause in the report, not in a 45-minute debugging session.\n3. **Release confidently with real-time stability monitoring.** Bugsnag's release tracking dashboard shows error rates climbing or falling for each deploy — so your team catches stability regressions in the first hour after a release, not after it reaches all users and damages your App Store rating.\n",
     features: ['Crash reporting'],
     github_url: 'https://docs.bugsnag.com/platforms/react-native/expo/',
+    id: 'recqyttqfExh8posU',
     name: 'BugSnag',
     platform: ['Android', 'iOS', 'Web'],
     pricing: ['Free tier', 'Premium tiers'],
     slug: 'bugsnag',
     type: ['Error Monitoring'],
     website_url: 'https://www.bugsnag.com',
-    id: 'recqyttqfExh8posU',
   },
   {
     description:
@@ -816,6 +816,7 @@ export const tools: Tool[] = [
       'User feedback management',
     ],
     github_url: 'https://github.com/Instabug/Instabug-React-Native',
+    id: 'recrKm6FFFxPIHjn8',
     name: 'Instabug',
     platform: ['iOS', 'Android', 'Unity'],
     pricing: ['Free tier', 'Premium tiers'],
@@ -823,7 +824,6 @@ export const tools: Tool[] = [
     twitter_url: 'https://twitter.com/instabug',
     type: ['Error Monitoring'],
     website_url: 'https://www.instabug.com/platforms/react-native',
-    id: 'recrKm6FFFxPIHjn8',
   },
   {
     description:
@@ -831,6 +831,7 @@ export const tools: Tool[] = [
     description_success:
       "1. **Cut release preparation time in half.** Runway automates the repetitive parts of your release — branch creation, build triggering, changelog generation, TestFlight distribution, and store submission — so your team executes a consistent release process without a dedicated release manager.\n2. **Give everyone visibility into release health.** Runway's release dashboard shows open issues, build status, store review status, and crash rates in one view — so every stakeholder knows exactly where the release stands without Slacking the mobile team for a status update.\n3. **Ship without the weekend anxiety.** Runway's rollout controls let you start a release at 1%, monitor crash rates and ANRs in real time, and pause or halt the rollout from the dashboard — so your team ships confidently on any day of the week, not just Tuesday mornings with everyone online.\n",
     features: ['Over the Air Updates'],
+    id: 'recv6nP97msWvGgMF',
     name: 'Runway',
     platform: ['Android', 'iOS'],
     pricing: ['Free tier', 'Premium tiers'],
@@ -838,7 +839,6 @@ export const tools: Tool[] = [
     twitter_url: 'https://twitter.com/RunwayTeam',
     type: ['CI/CD & Release'],
     website_url: 'https://www.runway.team/',
-    id: 'recv6nP97msWvGgMF',
   },
   {
     description:
@@ -848,6 +848,7 @@ export const tools: Tool[] = [
     features: ['Auth', 'Real-time database'],
     github_url:
       'https://github.com/supabase/supabase/tree/master/examples/expo-todo-list',
+    id: 'recx8kDZRBP3jj79y',
     name: 'Supabase',
     platform: ['Android', 'iOS', 'Web'],
     pricing: ['Open source'],
@@ -855,7 +856,6 @@ export const tools: Tool[] = [
     twitter_url: 'https://twitter.com/supabase',
     type: ['Backend & APIs', 'Database & Storage', 'Auth & Identity'],
     website_url: 'https://supabase.com',
-    id: 'recx8kDZRBP3jj79y',
   },
   {
     description:
@@ -870,13 +870,13 @@ export const tools: Tool[] = [
       'Auth - Multi-factor',
     ],
     github_url: 'https://github.com/magiclabs/magic-js',
+    id: 'reczZoVhsonfN26FS',
     name: 'Magic',
     pricing: ['Free tier', 'Pay as-you-go'],
     slug: 'magic',
     twitter_url: 'https://twitter.com/magic_labs',
     type: ['Auth & Identity'],
     website_url: 'https://magic.link',
-    id: 'reczZoVhsonfN26FS',
   },
   {
     description:
@@ -885,12 +885,12 @@ export const tools: Tool[] = [
       '1. **Ship critical fixes in minutes, not days.** Push a JavaScript or asset update straight to your users’ installed apps with the CodePush-compatible SDK — a production bug reaches everyone without waiting on an App Store review cycle.\n2. **Migrate off deprecated CodePush without rewriting.** RevoPush works with the existing open-source CodePush client SDK, so teams stuck on App Center can switch backends and keep their release workflow intact.\n3. **Roll out safely and cut bandwidth costs.** DIFF updates shrink payloads 10–20×, while staged rollouts, code signing, and one-click rollbacks let your team release to a percentage of users and instantly revert if something breaks.\n',
     features: ['Over the Air Updates', 'CLI'],
     github_url: 'https://github.com/revopush',
+    id: 'recRevoPushOTA001',
     name: 'RevoPush',
     platform: ['iOS', 'Android'],
     pricing: ['Free tier', 'Premium tiers', 'Open source'],
     slug: 'revopush',
     type: ['CI/CD & Release'],
     website_url: 'https://revopush.org/',
-    id: 'recRevoPushOTA001',
   },
 ];

@@ -7,15 +7,15 @@
  */
 export const AUTHOR_SCHEMA = {
   '@type': 'Person',
-  name: 'David Leuliette',
-  url: 'https://weshipit.today/about',
   jobTitle: 'React Native engineer',
+  name: 'David Leuliette',
   sameAs: ['https://github.com/flexbox', 'https://x.com/flexbox_'],
+  url: 'https://weshipit.today/about',
 } as const;
 
 export const PUBLISHER_SCHEMA = {
   '@type': 'Organization',
   name: 'weshipit.today',
-  url: 'https://weshipit.today',
   sameAs: ['https://github.com/flexbox/weshipit.today'],
+  url: 'https://weshipit.today',
 } as const;

@@ -100,29 +100,29 @@ function getVerdict(scorePct: number) {
 }
 
 const SECURITY_AUDIT: SelfAuditConfig = {
-  id: 'security-audit',
-  eyebrow: '12 checks · 2 minutes',
-  title: 'Your security checklist',
-  intro: 'Answer No, Unknown or Yes. Your score shows up instantly.',
   categories: CATEGORIES,
+  cta: {
+    href: '/audit',
+    label: 'Discover the full audit',
+    text: 'Scored below 80? Our team audits your codebase and native configuration, and delivers a prioritized remediation plan.',
+  },
+  eyebrow: '12 checks · 2 minutes',
   getVerdict,
-  resetLabel: 'Restart the security audit',
+  id: 'security-audit',
+  intro: 'Answer No, Unknown or Yes. Your score shows up instantly.',
+  labels: EN_LABELS,
   report: {
-    title: 'Get your security report',
-    text: 'Your answers ranked by severity and fix effort, with the steps to fix each weak spot.',
     bullets: [
       'Your vulnerabilities ranked by severity (critical / high / moderate)',
       'The concrete React Native and Expo fix, item by item',
       'The rnsec command to plug into your CI',
     ],
+    text: 'Your answers ranked by severity and fix effort, with the steps to fix each weak spot.',
+    title: 'Get your security report',
   },
+  resetLabel: 'Restart the security audit',
   scoreField: 'security_score',
-  cta: {
-    text: 'Scored below 80? Our team audits your codebase and native configuration, and delivers a prioritized remediation plan.',
-    href: '/audit',
-    label: 'Discover the full audit',
-  },
-  labels: EN_LABELS,
+  title: 'Your security checklist',
 };
 
 interface SecurityAuditProps {

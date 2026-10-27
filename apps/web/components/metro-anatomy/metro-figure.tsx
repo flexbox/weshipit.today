@@ -230,8 +230,8 @@ const FRONT_ART = (
 );
 
 const Card = React.memo(function Card({
-  file,
   built,
+  file,
   lit,
 }: {
   file: number;
@@ -270,7 +270,6 @@ const Card = React.memo(function Card({
 /* ---------- Simulation ---------- */
 
 interface Copy {
-  file: number;
   x: number;
   y: number;
   z: number;
@@ -279,6 +278,7 @@ interface Copy {
   ty: number;
   tz: number;
   ta: number;
+  file: number;
   built: boolean;
   /** Level in the bundle stack, or -1 while travelling. */
   level: number;
@@ -288,54 +288,54 @@ interface Sim {
   platform: Platform;
   copies: Array<Copy | null>;
   /** Transform cache, per platform: one entry per file. */
-  cache: Record<Platform, boolean[]>;
-  resolved: boolean[];
-  edges: boolean[];
-  version: Record<Platform, number>;
-  clock: number;
-  plan: Array<{ at: number; run: () => void }>;
-  connected: boolean;
-  screen: number;
-  screenTarget: number;
-  buttonFlash: number;
-  head: number;
-  edited: number[];
-  count: number;
-  knob: number;
-  pulses: number[];
   lit: number;
+  head: number;
+  knob: number;
   idle: number;
   tour: number;
+  clock: number;
+  count: number;
+  screen: number;
+  edges: boolean[];
+  edited: number[];
+  pulses: number[];
   touched: boolean;
+  connected: boolean;
+  resolved: boolean[];
+  buttonFlash: number;
+  screenTarget: number;
+  version: Record<Platform, number>;
+  cache: Record<Platform, boolean[]>;
+  plan: Array<{ at: number; run: () => void }>;
 }
 
 const COPIES = FILES.length + 1;
 
 const initial = (): Sim => ({
-  platform: 'ios',
-  copies: Array.from({ length: COPIES }, () => null),
+  buttonFlash: 0,
   cache: {
-    ios: FILES.map(() => false),
     android: FILES.map(() => false),
+    ios: FILES.map(() => false),
   },
-  resolved: FILES.map(() => false),
-  edges: FILES.map(() => false),
-  version: { ios: 0, android: 0 },
   clock: 0,
-  plan: [],
   connected: false,
+  copies: Array.from({ length: COPIES }, () => null),
+  count: 0,
+  edges: FILES.map(() => false),
+  edited: FILES.map(() => 0),
+  head: 0,
+  idle: 1.6,
+  knob: -1,
+  lit: -1,
+  plan: [],
+  platform: 'ios',
+  pulses: [],
+  resolved: FILES.map(() => false),
   screen: 0,
   screenTarget: 0,
-  buttonFlash: 0,
-  head: 0,
-  edited: FILES.map(() => 0),
-  count: 0,
-  knob: -1,
-  pulses: [],
-  lit: -1,
-  idle: 1.6,
-  tour: 0,
   touched: false,
+  tour: 0,
+  version: { android: 0, ios: 0 },
 });
 
 const LABEL =
@@ -386,17 +386,17 @@ export function MetroBench() {
     const x = TRAY_XS[file];
     later(start, () => {
       s.copies[slot] = {
-        file,
-        x,
-        y: TRAY_Y,
-        z: FLOOR_Z + 1.4,
         a: 1,
+        built: false,
+        file,
+        level: -1,
+        ta: 1,
         tx: x,
         ty: LANE_Y,
         tz: FLOOR_Z,
-        ta: 1,
-        built: false,
-        level: -1,
+        x,
+        y: TRAY_Y,
+        z: FLOOR_Z + 1.4,
       };
       s.lit = slot;
       rerender();
@@ -598,8 +598,8 @@ export function MetroBench() {
     // Paint far to near: a sheet lifting onto the stack goes on top.
     const sorted = s.copies
       .map((copy, slot) => ({
-        slot,
         key: copy ? depth(copy.x, copy.y, copy.z) : -1e9,
+        slot,
       }))
       .sort((a, b) => a.key - b.key)
       .map((entry) => entry.slot);
@@ -713,14 +713,14 @@ export function MetroBench() {
 
   const onKey = (event: React.KeyboardEvent) => {
     const keys: Record<string, () => void> = {
-      Enter: onStage,
       ' ': onStage,
+      a: () => act(() => setPlatform('android')),
+      c: () => act(clear),
+      Enter: onStage,
+      i: () => act(() => setPlatform('ios')),
       r: () => act(open),
       s: () => act(save),
       t: () => act(tap),
-      c: () => act(clear),
-      i: () => act(() => setPlatform('ios')),
-      a: () => act(() => setPlatform('android')),
     };
     const run = keys[event.key];
     if (!run) return;
@@ -981,9 +981,9 @@ export function MetroAnatomyFigure() {
         hint="Tap to open · then tap to save Button"
         readout={readouts.rest('ios')}
         keys={[
-          { mark: 'lit', label: 'The module being worked on' },
-          { mark: 'raised', label: 'Transformed module, in the bundle' },
-          { mark: 'dim', label: 'Source file on disk' },
+          { label: 'The module being worked on', mark: 'lit' },
+          { label: 'Transformed module, in the bundle', mark: 'raised' },
+          { label: 'Source file on disk', mark: 'dim' },
         ]}
         caption="Metro starts at index.js and follows every import, so only files the graph reaches end up in the bundle; platform extensions are resolved per build, and an iOS bundle never contains Button.android.tsx. Each file goes through Babel once and the result is cached on disk, keyed by its contents and the platform, which is why a reload is fast and why --clear makes the next one slow. In development the bundle is served on port 8081 over a socket that stays open: saving a file transforms just that file and sends just that module, and Fast Refresh swaps it in while the component keeps its state."
       >

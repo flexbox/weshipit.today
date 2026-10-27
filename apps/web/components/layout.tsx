@@ -4,34 +4,34 @@ import BannerProductHunt from '../components/banner-product-hunt/banner-product-
 
 interface LayoutProps extends NextHeadProps {
   withHeader?: boolean;
-  navigation?: HeaderLinksProps[];
-  callToActionButton?: HeaderLinksProps;
-  callToActionLink?: HeaderLinksProps;
   withFooter?: boolean;
   withContainer?: boolean;
   children: React.ReactNode;
   withProductHunt?: boolean;
+  navigation?: HeaderLinksProps[];
+  callToActionLink?: HeaderLinksProps;
   ogImagePodcast?: PodcastOgImageData;
+  callToActionButton?: HeaderLinksProps;
 }
 
 export function Layout({
-  children,
-  ogImageTitle,
-  ogImageKicker,
-  ogImageSubline,
-  ogImageAlt,
-  seoDescription,
-  seoTitle,
-  locale,
-  noindex,
-  withHeader = false,
   callToActionButton,
   callToActionLink,
+  children,
+  locale,
+  navigation,
+  noindex,
+  ogImageAlt,
+  ogImageKicker,
+  ogImagePodcast,
+  ogImageSubline,
+  ogImageTitle,
+  seoDescription,
+  seoTitle,
   withContainer = false,
   withFooter = false,
-  navigation,
+  withHeader = false,
   withProductHunt = false,
-  ogImagePodcast,
 }: LayoutProps) {
   return (
     <>

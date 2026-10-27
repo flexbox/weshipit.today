@@ -28,72 +28,72 @@ const CTA_LABEL_SHORT = 'Voir le code réduction Incubateur';
 
 const faqs = [
   {
+    answer:
+      'Si tu veux apprendre la persuasion écrite, le copywriting et les mécaniques marketing pointues (VSL, funnels, YouTube) : Marketing Mania de Stan Leloup. Si tu es déjà solopreneur en activité et que tu veux construire des actifs (newsletter, podcast, offre, sponsoring, SaaS solo) dans la durée avec un cercle de pairs qui pousse au shipping : Incubateur Solopreneur de Flavie Prevot. Les deux sont sérieux — le bon choix dépend de ton objectif, pas du prix.',
     id: 'faq-vs-1',
     question:
       'Marketing Mania ou Incubateur Solopreneur : lequel choisir en 2026 ?',
-    answer:
-      'Si tu veux apprendre la persuasion écrite, le copywriting et les mécaniques marketing pointues (VSL, funnels, YouTube) : Marketing Mania de Stan Leloup. Si tu es déjà solopreneur en activité et que tu veux construire des actifs (newsletter, podcast, offre, sponsoring, SaaS solo) dans la durée avec un cercle de pairs qui pousse au shipping : Incubateur Solopreneur de Flavie Prevot. Les deux sont sérieux — le bon choix dépend de ton objectif, pas du prix.',
   },
   {
-    id: 'faq-vs-2',
-    question: 'Quelle est la différence principale entre les deux ?',
     answer:
       "Marketing Mania est un format formation (contenus structurés, cohorte intensive de quelques semaines, focus tactique marketing). L'Incubateur Solopreneur est un format communauté + Sprints mensuels sur 12 mois (rythme long, format atelier, focus construction d'actifs et passage à l'action). L'un t'apprend, l'autre te met en mouvement.",
+    id: 'faq-vs-2',
+    question: 'Quelle est la différence principale entre les deux ?',
   },
   {
-    id: 'faq-vs-3',
-    question: 'Combien coûte Marketing Mania ?',
     answer:
       'Le Bootcamp Marketing Mania est historiquement positionné autour de 1 000 à 1 500 € HT selon les éditions, avec des variantes en fonction des modules inclus (copywriting, YouTube, offres). Le tarif exact évolue à chaque nouvelle cohorte — vérifier sur la page officielle avant achat. Stan Leloup propose aussi des formations plus courtes et des ressources gratuites (chaîne YouTube).',
+    id: 'faq-vs-3',
+    question: 'Combien coûte Marketing Mania ?',
   },
   {
-    id: 'faq-vs-4',
-    question: "Combien coûte l'Incubateur Solopreneur ?",
     answer:
       "2 400 € HT au tarif public sur la page de vente, 1 900 € HT en remise VSL (3–4 jours après la vidéo), 1 490 € HT via lien affilié (le tarif plancher verrouillé par Flavie). Le tarif couvre 12 mois d'accès complet à la communauté, aux Sprints mensuels, aux lives et aux experts invités. Aucun upsell caché.",
+    id: 'faq-vs-4',
+    question: "Combien coûte l'Incubateur Solopreneur ?",
   },
   {
-    id: 'faq-vs-5',
-    question: 'Combien de temps chaque programme prend-il ?',
     answer:
       "Marketing Mania : format bootcamp intensif, généralement 6 à 8 semaines avec un rythme dense (plusieurs heures par semaine). L'Incubateur Solopreneur : 12 mois avec un rythme modéré (1 à 3 heures par semaine, un live le vendredi, un Sprint par mois). Marketing Mania demande un sprint d'effort concentré, l'Incubateur demande de la régularité dans la durée.",
+    id: 'faq-vs-5',
+    question: 'Combien de temps chaque programme prend-il ?',
   },
   {
-    id: 'faq-vs-6',
-    question: 'Peut-on faire les deux ?',
     answer:
       "Oui, et c'est cohérent. Beaucoup d'incubés Solopreneur ont fait Marketing Mania avant (ou l'envisagent après). L'ordre logique : Marketing Mania d'abord pour poser les fondamentaux marketing (copywriting, persuasion, funnels), puis l'Incubateur pour appliquer ces fondamentaux à un actif construit dans la durée. Compte 3 000 à 4 000 € HT cumulés — investissement significatif mais pas déraisonnable si tu es solopreneur à temps plein.",
+    id: 'faq-vs-6',
+    question: 'Peut-on faire les deux ?',
   },
   {
-    id: 'faq-vs-7',
-    question: 'Marketing Mania est-il adapté aux solopreneurs ?',
     answer:
       "Oui, mais pas seulement. Le Bootcamp attire des solopreneurs, des marketers en entreprise, des indépendants du service (agences, freelances) et des créateurs. Le focus reste sur la mécanique marketing / persuasion — moins sur le business creator complet. Si tu cherches un cadre solopreneur global (offre, sponsoring, communauté, positionnement), l'Incubateur est plus adapté.",
+    id: 'faq-vs-7',
+    question: 'Marketing Mania est-il adapté aux solopreneurs ?',
   },
   {
-    id: 'faq-vs-8',
-    question: 'L’Incubateur Solopreneur est-il adapté aux marketers ?',
     answer:
       "Partiellement. La communauté est composée majoritairement de solopreneurs en activité (créateurs, freelances, consultants, SaaS solo), pas de marketers en poste. Si tu es marketer employé qui prépare une transition, l'Incubateur reste utile pour la partie business / positionnement. Mais Marketing Mania sera plus dense sur les compétences techniques marketing.",
+    id: 'faq-vs-8',
+    question: 'L’Incubateur Solopreneur est-il adapté aux marketers ?',
   },
   {
+    answer:
+      "L'Incubateur Solopreneur, sans hésiter. Le programme contient des Sprints IA/Claude, Custom GPT’s, automation et SaaS solo — le tech est déjà dans le format, tu n'as qu'à l'appliquer. Un dev qui rejoint l'Incubateur obtient un effet 10x sur ces Sprints : ce qui prend 3 semaines à un non-dev te prend l'après-midi (mise en place d'un agent, déploiement d'un mini-SaaS, automation d'une chaîne d'outils). Marketing Mania reste utile pour la persuasion et le copywriting, mais son terrain n'est pas la construction tech.",
     id: 'faq-vs-8b',
     question:
       'Je suis développeur / builder — lequel choisir pour un effet levier ?',
-    answer:
-      "L'Incubateur Solopreneur, sans hésiter. Le programme contient des Sprints IA/Claude, Custom GPT’s, automation et SaaS solo — le tech est déjà dans le format, tu n'as qu'à l'appliquer. Un dev qui rejoint l'Incubateur obtient un effet 10x sur ces Sprints : ce qui prend 3 semaines à un non-dev te prend l'après-midi (mise en place d'un agent, déploiement d'un mini-SaaS, automation d'une chaîne d'outils). Marketing Mania reste utile pour la persuasion et le copywriting, mais son terrain n'est pas la construction tech.",
   },
   {
-    id: 'faq-vs-9',
-    question: 'Y a-t-il des alternatives à ces deux programmes ?',
     answer:
       "Oui : Livementor (formations multi-thématiques), Le Board (communauté leaders femmes), Solopreneur.fr (communauté gratuite), Copywriting Mafia et autres formations copywriting spécialisées. Chaque programme cible un profil légèrement différent. Marketing Mania et l'Incubateur Solopreneur restent parmi les plus reconnus du paysage FR pour leur qualité d'exécution.",
+    id: 'faq-vs-9',
+    question: 'Y a-t-il des alternatives à ces deux programmes ?',
   },
   {
-    id: 'faq-vs-10',
-    question: 'Stan Leloup vs Flavie Prevot : quelle différence de style ?',
     answer:
       "Stan Leloup (Marketing Mania) : profil intellectuel, référence Cialdini, ton analytique, YouTube long-format, focus mécaniques de persuasion. Flavie Prevot (Incubateur Solopreneur) : profil entrepreneure-praticienne, ton direct et pragmatique, LinkedIn + podcast + lives, focus passage à l'action. Deux excellents opérateurs avec des styles très différents. La question n'est pas « qui est meilleur » mais « à quel style tu adhères ».",
+    id: 'faq-vs-10',
+    question: 'Stan Leloup vs Flavie Prevot : quelle différence de style ?',
   },
 ];
 
@@ -244,29 +244,29 @@ function VerdictSection() {
 function VueDensembleSection() {
   const products = [
     {
-      name: 'Incubateur Solopreneur',
+      accent: true,
       by: 'Flavie Prevot',
-      tagline: 'Communauté + 10 Sprints/an (bootcamps) sur 12 mois',
-      format: 'Programme long, format atelier',
-      price: '1 490 € HT (affilié) / 2 400 € HT (public)',
       duration: '12 mois',
-      rythme: '1 à 3h / semaine',
       focus:
         'IA (Custom GPT’s, Claude), automation, SaaS solo, actifs (podcast, newsletter, sponsoring, offre) — +50 experts, 50+ templates',
+      format: 'Programme long, format atelier',
       icon: UsersIcon,
-      accent: true,
+      name: 'Incubateur Solopreneur',
+      price: '1 490 € HT (affilié) / 2 400 € HT (public)',
+      rythme: '1 à 3h / semaine',
+      tagline: 'Communauté + 10 Sprints/an (bootcamps) sur 12 mois',
     },
     {
-      name: 'Bootcamp Marketing Mania',
-      by: 'Stan Leloup',
-      tagline: 'Formation intensive marketing / copywriting',
-      format: 'Cohorte structurée, contenus vidéo',
-      price: '~1 000 à 1 500 € HT (variable selon édition)',
-      duration: '6 à 8 semaines',
-      rythme: 'Intensif, plusieurs heures / semaine',
-      focus: 'Copywriting, persuasion, funnels, YouTube',
-      icon: AcademicCapIcon,
       accent: false,
+      by: 'Stan Leloup',
+      duration: '6 à 8 semaines',
+      focus: 'Copywriting, persuasion, funnels, YouTube',
+      format: 'Cohorte structurée, contenus vidéo',
+      icon: AcademicCapIcon,
+      name: 'Bootcamp Marketing Mania',
+      price: '~1 000 à 1 500 € HT (variable selon édition)',
+      rythme: 'Intensif, plusieurs heures / semaine',
+      tagline: 'Formation intensive marketing / copywriting',
     },
   ];
 
@@ -368,47 +368,47 @@ function ComparaisonCriteresSection() {
   const criteria = [
     {
       icon: AcademicCapIcon,
-      label: 'Objectif principal',
       incubateur:
         'Construire des actifs (newsletter, podcast, offre, sponsoring, SaaS) dans la durée.',
+      label: 'Objectif principal',
       marketingMania:
         'Monter en compétence sur les mécaniques marketing et le copywriting.',
     },
     {
       icon: ClockIcon,
-      label: 'Format et rythme',
       incubateur: '12 mois, 1 à 3h/semaine, format atelier hebdomadaire.',
+      label: 'Format et rythme',
       marketingMania:
         '6 à 8 semaines, rythme intensif, cohorte structurée avec deadlines.',
     },
     {
       icon: UsersIcon,
-      label: 'Communauté',
       incubateur:
         '300+ solopreneurs actifs, Mighty Networks, lives réguliers, canaux thématiques.',
+      label: 'Communauté',
       marketingMania:
         'Cohorte fermée pendant le Bootcamp, échanges asynchrones. Moins d’accès long terme.',
     },
     {
       icon: CurrencyEuroIcon,
-      label: 'Prix',
       incubateur: '1 490 € HT (affilié) à 2 400 € HT (public) pour 12 mois.',
+      label: 'Prix',
       marketingMania:
         '~1 000 à 1 500 € HT pour le Bootcamp, variable selon édition et modules.',
     },
     {
       icon: BoltIcon,
-      label: 'Prise en charge (support)',
       incubateur:
         'Flavie anime elle-même, office hours, +50 experts invités récurrents.',
+      label: 'Prise en charge (support)',
       marketingMania:
         'Stan Leloup + équipe pédagogique pendant la cohorte, contenu vidéo structuré.',
     },
     {
       icon: ChartBarIcon,
-      label: 'Résultats attendus',
       incubateur:
         'Actifs concrets construits sur 12 mois (podcast lancé, offre productisée, sponsors, etc.).',
+      label: 'Résultats attendus',
       marketingMania:
         'Compétences marketing solides et applicables (copywriting, VSL, YouTube, funnels).',
     },
@@ -474,46 +474,46 @@ function ComparaisonCriteresSection() {
 function CasDUsageSection() {
   const cases = [
     {
+      accent: true,
       persona: 'Dev solopreneur / builder (SaaS solo, agents IA, automation)',
       recommend: 'Incubateur Solopreneur (effet 10x)',
       why: 'Les Sprints IA/Claude, Custom GPT’s, automation et SaaS solo sont ton terrain de jeu. Là où les autres galèrent à comprendre l’outil, tu ships. Marketing Mania t’apprendra la persuasion, mais l’Incubateur te donne le contexte pour appliquer ton edge tech — et le format « un actif par vendredi » colle exactement à la façon dont un dev construit.',
-      accent: true,
     },
     {
+      accent: true,
       persona: 'Freelance senior qui veut productiser',
       recommend: 'Incubateur Solopreneur',
       why: 'Le format Sprint « Offre » + la communauté de solopreneurs qui ont déjà productisé accélère la décision. Marketing Mania t’apprendra les tactiques, mais pas comment bâtir la brique.',
-      accent: true,
     },
     {
+      accent: false,
       persona: 'Créateur YouTube ou copywriter en devenir',
       recommend: 'Marketing Mania',
       why: 'Le Bootcamp couvre exactement ces compétences avec un niveau technique élevé. L’Incubateur ne traite pas YouTube à ce niveau de profondeur.',
-      accent: false,
     },
     {
+      accent: true,
       persona: 'Solopreneur avec podcast ou newsletter à lancer / relancer',
       recommend: 'Incubateur Solopreneur',
       why: 'Les Sprints Podcasting vidéo, Sponsoring et Newsletter sont explicitement conçus pour ce cas. La communauté ajoute la pair pression qui fait passer à l’action.',
-      accent: true,
     },
     {
+      accent: false,
       persona: 'Marketer employé qui prépare une transition freelance',
       recommend: 'Marketing Mania (puis Incubateur)',
       why: 'Consolide d’abord tes compétences marketing avec le Bootcamp, puis rejoins l’Incubateur une fois freelance pour l’aspect construction de business creator.',
-      accent: false,
     },
     {
+      accent: true,
       persona: 'Consultant / agence qui veut lever la tête du guidon',
       recommend: 'Incubateur Solopreneur',
       why: 'Le format « 1h le vendredi » forcée dans l’agenda, la communauté et le focus « sortir du modèle 100% TJM » collent exactement à ce cas.',
-      accent: true,
     },
     {
+      accent: false,
       persona: 'Curieux qui veut tester avant de s’engager',
       recommend: 'Ni l’un ni l’autre — canaux gratuits d’abord',
       why: 'Newsletter et podcast de Flavie (gratuit) + chaîne YouTube de Stan (gratuit) pendant 2–3 mois. Ça te donne une vraie base pour décider. Voir aussi mon avis détaillé après 6 mois d’incubation.',
-      accent: false,
     },
   ];
 
@@ -823,10 +823,10 @@ export default function IncubateurVsMarketingManiaPage() {
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: faqs.map(({ question, answer }) => ({
+    mainEntity: faqs.map(({ answer, question }) => ({
       '@type': 'Question',
-      name: question,
       acceptedAnswer: { '@type': 'Answer', text: answer },
+      name: question,
     })),
   };
 
@@ -836,15 +836,15 @@ export default function IncubateurVsMarketingManiaPage() {
     itemListElement: [
       {
         '@type': 'ListItem',
-        position: 1,
-        name: 'Accueil',
         item: 'https://weshipit.today',
+        name: 'Accueil',
+        position: 1,
       },
       {
         '@type': 'ListItem',
-        position: 2,
-        name: 'Incubateur Solopreneur vs Marketing Mania',
         item: 'https://weshipit.today/incubateur-solopreneur-vs-marketing-mania',
+        name: 'Incubateur Solopreneur vs Marketing Mania',
+        position: 2,
       },
     ],
   };
@@ -852,22 +852,22 @@ export default function IncubateurVsMarketingManiaPage() {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    headline:
-      'Incubateur Solopreneur vs Marketing Mania : quelle formation solopreneur choisir en 2026 ?',
-    author: {
-      '@type': 'Person',
-      name: 'David Leuliette',
-      url: 'https://weshipit.today',
-    },
-    datePublished: '2026-07-01',
-    dateModified: '2026-07-01',
-    description:
-      "Comparaison indépendante entre l'Incubateur Solopreneur de Flavie Prevot et le Bootcamp Marketing Mania de Stan Leloup : format, prix, rythme, communauté, résultats attendus. Recommandation par cas d'usage.",
     about: [
       { '@type': 'Thing', name: 'Incubateur Solopreneur' },
       { '@type': 'Thing', name: 'Marketing Mania' },
       { '@type': 'Thing', name: 'Formation solopreneur' },
     ],
+    author: {
+      '@type': 'Person',
+      name: 'David Leuliette',
+      url: 'https://weshipit.today',
+    },
+    dateModified: '2026-07-01',
+    datePublished: '2026-07-01',
+    description:
+      "Comparaison indépendante entre l'Incubateur Solopreneur de Flavie Prevot et le Bootcamp Marketing Mania de Stan Leloup : format, prix, rythme, communauté, résultats attendus. Recommandation par cas d'usage.",
+    headline:
+      'Incubateur Solopreneur vs Marketing Mania : quelle formation solopreneur choisir en 2026 ?',
   };
 
   return (
@@ -912,8 +912,8 @@ export default function IncubateurVsMarketingManiaPage() {
         withHeader
         withFooter
         callToActionButton={{
-          name: CTA_LABEL_SHORT,
           href: CODE_REDUCTION_URL,
+          name: CTA_LABEL_SHORT,
         }}
       >
         <HeroSection />

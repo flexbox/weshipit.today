@@ -17,39 +17,39 @@ const SITE_URL = 'https://weshipit.today';
 const GLOSSARY_PATH = '/react-native-glossary';
 
 interface TermLink {
-  title: string;
   slug: string;
+  title: string;
 }
 
 interface GlossaryTermPageProps {
   slug: string;
   title: string;
   summary: string;
-  aliases: string[];
   content: string;
-  previousTerm: TermLink | null;
-  nextTerm: TermLink | null;
-  relatedTerms: TermLink[];
-  mentionedIn: TermLink[];
-  updatedAt: string | null;
   termUrl: string;
-  seoDescription: string;
-  definedTermSchema: object;
+  aliases: string[];
   articleSchema: object;
+  seoDescription: string;
+  mentionedIn: TermLink[];
+  relatedTerms: TermLink[];
+  updatedAt: string | null;
   breadcrumbSchema: object;
+  nextTerm: TermLink | null;
+  definedTermSchema: object;
+  previousTerm: TermLink | null;
 }
 
 const toTermLink = (term: GlossaryTerm): TermLink => ({
-  title: term.title,
   slug: term.slug,
+  title: term.title,
 });
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const terms = getAllGlossaryTerms();
 
   return {
-    paths: terms.map((term) => ({ params: { uid: term.slug } })),
     fallback: false,
+    paths: terms.map((term) => ({ params: { uid: term.slug } })),
   };
 };
 
@@ -72,8 +72,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     index < terms.length - 1 ? toTermLink(terms[index + 1]) : null;
 
   const relatedTerms: TermLink[] = term.related.map((label) => ({
-    title: label,
     slug: resolveTermSlug(label, terms),
+    title: label,
   }));
 
   // Terms rarely link each other explicitly, so derive the reverse index:
@@ -97,21 +97,21 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const definedTermSchema = {
     '@context': 'https://schema.org',
-    '@type': 'DefinedTerm',
     '@id': termUrl,
-    name: term.title,
+    '@type': 'DefinedTerm',
     alternateName: term.aliases.length ? term.aliases : undefined,
-    description: term.summary || undefined,
-    url: termUrl,
-    inLanguage: 'en',
-    dateModified: term.updated ?? undefined,
     author: AUTHOR_SCHEMA,
-    publisher: PUBLISHER_SCHEMA,
+    dateModified: term.updated ?? undefined,
+    description: term.summary || undefined,
     inDefinedTermSet: {
       '@type': 'DefinedTermSet',
       name: 'React Native Glossary',
       url: `${SITE_URL}${GLOSSARY_PATH}`,
     },
+    inLanguage: 'en',
+    name: term.title,
+    publisher: PUBLISHER_SCHEMA,
+    url: termUrl,
   };
 
   // DefinedTerm alone carries no article body. Pairing it with TechArticle
@@ -119,23 +119,23 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'TechArticle',
-    headline: `What is ${term.title} in React Native?`,
-    description: term.summary || undefined,
+    about: { '@id': termUrl },
     articleBody: term.plainText || undefined,
-    wordCount: term.wordCount,
-    url: termUrl,
-    inLanguage: 'en',
+    author: AUTHOR_SCHEMA,
     dateModified: term.updated ?? undefined,
     datePublished: term.updated ?? undefined,
-    author: AUTHOR_SCHEMA,
-    publisher: PUBLISHER_SCHEMA,
-    about: { '@id': termUrl },
+    description: term.summary || undefined,
+    headline: `What is ${term.title} in React Native?`,
+    inLanguage: 'en',
     isPartOf: {
       '@type': 'CollectionPage',
       name: 'React Native Glossary',
       url: `${SITE_URL}${GLOSSARY_PATH}`,
     },
-    mainEntityOfPage: { '@type': 'WebPage', '@id': termUrl },
+    mainEntityOfPage: { '@id': termUrl, '@type': 'WebPage' },
+    publisher: PUBLISHER_SCHEMA,
+    url: termUrl,
+    wordCount: term.wordCount,
   };
 
   const breadcrumbSchema = {
@@ -144,36 +144,36 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     itemListElement: [
       {
         '@type': 'ListItem',
-        position: 1,
-        name: 'React Native Glossary',
         item: `${SITE_URL}${GLOSSARY_PATH}`,
+        name: 'React Native Glossary',
+        position: 1,
       },
       {
         '@type': 'ListItem',
-        position: 2,
-        name: term.title,
         item: termUrl,
+        name: term.title,
+        position: 2,
       },
     ],
   };
 
   return {
     props: {
-      slug: term.slug,
-      title: term.title,
-      summary: term.summary,
       aliases: term.aliases,
-      content: term.content,
-      previousTerm,
-      nextTerm,
-      relatedTerms,
-      mentionedIn,
-      updatedAt: term.updated,
-      termUrl,
-      seoDescription,
-      definedTermSchema,
       articleSchema,
       breadcrumbSchema,
+      content: term.content,
+      definedTermSchema,
+      mentionedIn,
+      nextTerm,
+      previousTerm,
+      relatedTerms,
+      seoDescription,
+      slug: term.slug,
+      summary: term.summary,
+      termUrl,
+      title: term.title,
+      updatedAt: term.updated,
     },
   };
 };
@@ -212,8 +212,8 @@ function CopyLinkButton({ url }: { url: string }) {
 }
 
 function MetaRow({
-  label,
   children,
+  label,
 }: {
   label: string;
   children: React.ReactNode;
@@ -247,28 +247,28 @@ function TermChips({ terms }: { terms: TermLink[] }) {
 }
 
 export default function GlossaryTermPage({
-  slug,
-  title,
-  summary,
   aliases,
-  content,
-  previousTerm,
-  nextTerm,
-  relatedTerms,
-  mentionedIn,
-  updatedAt,
-  termUrl,
-  seoDescription,
-  definedTermSchema,
   articleSchema,
   breadcrumbSchema,
+  content,
+  definedTermSchema,
+  mentionedIn,
+  nextTerm,
+  previousTerm,
+  relatedTerms,
+  seoDescription,
+  slug,
+  summary,
+  termUrl,
+  title,
+  updatedAt,
 }: GlossaryTermPageProps) {
   const formattedDate = updatedAt
     ? new Intl.DateTimeFormat('en-US', {
-        year: 'numeric',
-        month: 'long',
         day: 'numeric',
+        month: 'long',
         timeZone: 'UTC',
+        year: 'numeric',
       }).format(new Date(updatedAt))
     : null;
 

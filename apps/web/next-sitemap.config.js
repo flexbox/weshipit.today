@@ -6,14 +6,15 @@ module.exports = {
   // committed and collected into the build output that Vercel serves.
   // (The previous value, dist/apps/web/public, is neither served nor committed,
   // so the generated sitemap was silently dropped and /sitemap-0.xml 404'd.)
-  outDir: 'apps/web/public',
   exclude: ['/qr', '/brand', '/onboarding', '/home'],
+  outDir: 'apps/web/public',
   robotsTxtOptions: {
+    additionalSitemaps: ['https://weshipit.today/sitemap.xml'],
     policies: [
       {
-        userAgent: '*',
         allow: ['/', '/api/og/'],
         disallow: ['/api/'],
+        userAgent: '*',
       },
       // AI search crawlers, listed explicitly. A bare `*` policy already
       // allows them, but several of these bots only read the rule that names
@@ -30,12 +31,11 @@ module.exports = {
         'Google-Extended', // Google — Gemini / AI Overviews grounding
         'Applebot-Extended', // Apple Intelligence
       ].map((userAgent) => ({
-        userAgent,
         allow: ['/'],
         disallow: ['/api/'],
+        userAgent,
       })),
     ],
-    additionalSitemaps: ['https://weshipit.today/sitemap.xml'],
   },
   siteUrl: 'https://weshipit.today/',
   sourceDir: 'dist/apps/web/.next',

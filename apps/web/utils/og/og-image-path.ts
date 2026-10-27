@@ -5,17 +5,17 @@ export const OG_IMAGE_VERSION = '3';
 export type OgLang = 'en' | 'fr';
 
 export interface OgImageOptions {
-  kicker?: string;
   lang?: OgLang;
   path?: string;
-  subline?: string;
   title: string;
+  kicker?: string;
+  subline?: string;
 }
 
 export interface PodcastOgImageData {
-  episode: number;
   guest: string;
   title: string;
+  episode: number;
   type: 'podcast' | 'transcript';
 }
 

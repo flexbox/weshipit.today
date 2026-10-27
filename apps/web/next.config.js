@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const { PHASE_DEVELOPMENT_SERVER } = require('next/constants');
 
 /**
@@ -7,13 +6,6 @@ const { PHASE_DEVELOPMENT_SERVER } = require('next/constants');
 const nextConfig = {
   // The OG routes read fonts and logos with fs at runtime; make sure Vercel
   // bundles those files with the functions.
-  outputFileTracingIncludes: {
-    '/api/og': ['./public/fonts/**'],
-    '/api/podcast-og': [
-      './public/fonts/**',
-      './public/images/podcast-logos/og/**',
-    ],
-  },
   images: {
     contentDispositionType: 'attachment',
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
@@ -51,6 +43,13 @@ const nextConfig = {
         hostname: 'play-lh.googleusercontent.com',
         protocol: 'https',
       },
+    ],
+  },
+  outputFileTracingIncludes: {
+    '/api/og': ['./public/fonts/**'],
+    '/api/podcast-og': [
+      './public/fonts/**',
+      './public/images/podcast-logos/og/**',
     ],
   },
 };

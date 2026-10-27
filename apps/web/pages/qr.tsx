@@ -15,11 +15,11 @@ export function Qr() {
       withHeader
       withFooter
       callToActionLink={{
-        name: 'Star Us on GitHub',
         href: 'https://github.com/flexbox/weshipit.today',
         isExternalLink: true,
+        name: 'Star Us on GitHub',
       }}
-      callToActionButton={{ name: 'Work with us', href: '/' }}
+      callToActionButton={{ href: '/', name: 'Work with us' }}
     >
       <div className="mx-auto max-w-2xl p-3">
         <Prose size="lg">

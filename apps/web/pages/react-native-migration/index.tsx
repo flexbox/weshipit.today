@@ -53,63 +53,63 @@ export function Migration({ clients, feedback }: MigrationProps) {
 
   const processSteps = [
     {
-      title: 'Free Technical Assessment',
       description:
         'We analyze your codebase, identify potential challenges, and create a detailed migration roadmap.',
+      title: 'Free Technical Assessment',
     },
     {
-      title: 'Custom Migration Strategy',
       description:
         'We develop a tailored plan that addresses your specific needs and minimizes business disruption.',
+      title: 'Custom Migration Strategy',
     },
     {
-      title: 'Parallel Development',
       description:
         'We migrate your app while your team continues development, ensuring no feature freeze or downtime.',
+      title: 'Parallel Development',
     },
     {
-      title: 'Comprehensive Testing',
       description:
         'Rigorous testing across devices and platforms ensures your app works flawlessly after migration.',
+      title: 'Comprehensive Testing',
     },
     {
-      title: 'Knowledge Transfer & Support',
       description:
         'We train your team on Expo best practices and provide 3 months of post-migration support.',
+      title: 'Knowledge Transfer & Support',
     },
   ];
 
   // Static data for the current FAQs
   const faqData = [
     {
-      question: 'How long does the migration typically take?',
       answer:
         'Most migrations take 2-4 weeks depending on app complexity. We provide a specific timeline after our initial assessment.',
+      question: 'How long does the migration typically take?',
     },
     {
-      question: "Will my app's performance be affected?",
       answer:
         'In most cases, performance improves after migration. We optimize your app during the process to ensure it runs smoothly.',
+      question: "Will my app's performance be affected?",
     },
     {
-      question: 'What if we have custom native modules?',
       answer:
         'We handle custom native modules by either finding Expo-compatible alternatives or creating custom Expo development builds.',
+      question: 'What if we have custom native modules?',
     },
     {
-      question: 'Can we continue development during migration?',
       answer:
         'Yes! Our parallel development approach allows your team to continue working while we handle the migration.',
+      question: 'Can we continue development during migration?',
     },
     {
-      question: "What's your pricing model?",
       answer:
         "We offer fixed-price packages based on your app's complexity. After our free assessment, you'll receive a detailed quote with no hidden costs.",
+      question: "What's your pricing model?",
     },
     {
-      question: 'What support do you provide after migration?',
       answer:
         "All migrations include 3 months of technical support, knowledge transfer sessions, and documentation to ensure your team's success.",
+      question: 'What support do you provide after migration?',
     },
   ];
 
@@ -120,11 +120,11 @@ export function Migration({ clients, feedback }: MigrationProps) {
     '@type': 'FAQPage',
     mainEntity: faqData.map((faq) => ({
       '@type': 'Question',
-      name: faq.question,
       acceptedAnswer: {
         '@type': 'Answer',
         text: faq.answer, // Use plain text answer
       },
+      name: faq.question,
     })),
   };
 
@@ -145,10 +145,10 @@ export function Migration({ clients, feedback }: MigrationProps) {
         }
         withHeader
         navigation={[
-          { name: 'Benefits', href: '#benefits' },
-          { name: 'Process', href: '#process' },
-          { name: 'Success Stories', href: '#testimonials' },
-          { name: 'FAQ', href: '#faq' },
+          { href: '#benefits', name: 'Benefits' },
+          { href: '#process', name: 'Process' },
+          { href: '#testimonials', name: 'Success Stories' },
+          { href: '#faq', name: 'FAQ' },
         ]}
         withFooter
       >
@@ -451,7 +451,7 @@ export function Migration({ clients, feedback }: MigrationProps) {
                         width={48}
                         height={48}
                         className="h-12 w-12 rounded-full bg-slate-200 dark:bg-slate-700 object-cover"
-                        imgixParams={{ fit: 'crop', ar: '1:1' }}
+                        imgixParams={{ ar: '1:1', fit: 'crop' }}
                         alt={item.data.alt || 'Client Avatar'}
                       />
                       <div>

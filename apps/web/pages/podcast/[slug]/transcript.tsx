@@ -14,10 +14,10 @@ import { ChevronLeftIcon } from '@heroicons/react/20/solid';
 import Link from 'next/link';
 
 interface PodcastTranscriptPageProps {
-  episode: (typeof podcastEpisodes)[0] | null;
-  previousEpisode: (typeof podcastEpisodes)[0] | null;
-  nextEpisode: (typeof podcastEpisodes)[0] | null;
   transcriptEntries: TranscriptEntryType[];
+  episode: (typeof podcastEpisodes)[0] | null;
+  nextEpisode: (typeof podcastEpisodes)[0] | null;
+  previousEpisode: (typeof podcastEpisodes)[0] | null;
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -37,8 +37,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
     }));
 
   return {
-    paths,
     fallback: false,
+    paths,
   };
 };
 
@@ -53,8 +53,8 @@ export const getStaticProps: GetStaticProps<
     return {
       props: {
         episode: null,
-        previousEpisode: null,
         nextEpisode: null,
+        previousEpisode: null,
         transcriptEntries: [],
       },
     };
@@ -84,8 +84,8 @@ export const getStaticProps: GetStaticProps<
   return {
     props: {
       episode,
-      previousEpisode,
       nextEpisode,
+      previousEpisode,
       transcriptEntries,
     },
   };
@@ -93,8 +93,8 @@ export const getStaticProps: GetStaticProps<
 
 export default function PodcastTranscriptPage({
   episode,
-  previousEpisode,
   nextEpisode,
+  previousEpisode,
   transcriptEntries,
 }: PodcastTranscriptPageProps) {
   if (!episode) {
@@ -128,9 +128,9 @@ export default function PodcastTranscriptPage({
       seoTitle={`Transcript - Épisode ${episode.number} - ${episode.name} avec ${episode.guests.join(', ')}`}
       seoDescription={`Transcript complet de l'épisode ${episode.number} du podcast avec ${episode.guests.join(', ')} de ${episode.name}. ${episode.description_short}`}
       ogImagePodcast={{
-        title: episode.name,
-        guest: episode.guests.join(', '),
         episode: episode.number,
+        guest: episode.guests.join(', '),
+        title: episode.name,
         type: 'transcript',
       }}
       withHeader

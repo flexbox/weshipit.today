@@ -11,7 +11,7 @@ export const HEIGHT = 330;
 const AZIMUTH = 58;
 
 /** Bench plate. */
-export const BASE: Plan = { x: -172, y: -74, w: 344, d: 138, r: 10 };
+export const BASE: Plan = { d: 138, r: 10, w: 344, x: -172, y: -74 };
 export const BASE_H = 9;
 export const FOOT_H = 5;
 
@@ -24,10 +24,10 @@ export const TRACK_Y1 = 20;
 /** Chassis: the native binary. A back block, the bay floor and a front block. */
 export const CH_X0 = -62;
 export const CH_X1 = 62;
-export const BACK: Plan = { x: CH_X0, y: -50, w: CH_X1 - CH_X0, d: 48, r: 1.5 };
+export const BACK: Plan = { d: 48, r: 1.5, w: CH_X1 - CH_X0, x: CH_X0, y: -50 };
 export const BACK_TOP = 34;
-export const BAY: Plan = { x: CH_X0, y: -2, w: CH_X1 - CH_X0, d: 24, r: 0 };
-export const FRONT: Plan = { x: CH_X0, y: 22, w: CH_X1 - CH_X0, d: 18, r: 1.5 };
+export const BAY: Plan = { d: 24, r: 0, w: CH_X1 - CH_X0, x: CH_X0, y: -2 };
+export const FRONT: Plan = { d: 18, r: 1.5, w: CH_X1 - CH_X0, x: CH_X0, y: 22 };
 export const FRONT_TOP = 18;
 
 /** Backplane and module cards on top of the back block. */
@@ -39,11 +39,11 @@ export const CARD_TOP = SOCKET_TOP + 18;
 /** Cartridge: the JS bundle. Built at x = 0, moved along the track. */
 export const CART_HALF = 17;
 export const CART: Plan = {
-  x: -CART_HALF,
-  y: 1,
-  w: CART_HALF * 2,
   d: 18,
   r: 2,
+  w: CART_HALF * 2,
+  x: -CART_HALF,
+  y: 1,
 };
 export const CART_TOP = FLOOR_Z + 16;
 export const PIN_YS = [4.4, 8.2, 12, 15.8];
@@ -51,17 +51,17 @@ export const CART_PIN_X = -11;
 
 /** The keyed pawl at the bay entrance. */
 export const PAWL_X = 52;
-export const PAWL: Plan = { x: PAWL_X - 2.5, y: 1.5, w: 5, d: 17, r: 0.8 };
+export const PAWL: Plan = { d: 17, r: 0.8, w: 5, x: PAWL_X - 2.5, y: 1.5 };
 export const PAWL_TOP = 30;
 export const PAWL_DROP = PAWL_TOP - FLOOR_Z;
 
 /** Where a cartridge sits. */
 export const SLOT_X = {
-  gone: -150,
-  tray: -112,
   bay: 0,
-  stop: PAWL_X + 2.5 + CART_HALF + 0.4,
   feed: 104,
+  gone: -150,
+  stop: PAWL_X + 2.5 + CART_HALF + 0.4,
+  tray: -112,
 } as const;
 export const DROP_Z = 34;
 
@@ -72,7 +72,7 @@ export const FEED_X0 = CH_X1 + 1;
 export const FEED_X1 = 146;
 
 /** Update server rack. */
-export const RACK: Plan = { x: 110, y: -68, w: 46, d: 52, r: 3 };
+export const RACK: Plan = { d: 52, r: 3, w: 46, x: 110, y: -68 };
 export const RACK_TOP = 68;
 
 /** Build counter dial on the front block. */
@@ -86,11 +86,11 @@ export const P = fitProjection(
   [
     ...boxCorners(BASE, -BASE_H - FOOT_H, 0),
     ...boxCorners(RACK, 0, RACK_TOP + 3),
-    ...boxCorners({ x: -54, y: -44, w: 108, d: 34, r: 0 }, 0, CARD_TOP + 2),
+    ...boxCorners({ d: 34, r: 0, w: 108, x: -54, y: -44 }, 0, CARD_TOP + 2),
   ],
   WIDTH,
   HEIGHT,
-  { pad: 20, azimuth: AZIMUTH },
+  { azimuth: AZIMUTH, pad: 20 },
 );
 
 export const at = (point: Point3) => iso(point, P);

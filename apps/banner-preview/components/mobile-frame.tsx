@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
 
 interface MobileFrameProps {
-  children: ReactNode;
   width?: number;
+  children: ReactNode;
 }
 
 export function MobileFrame({ children, width = 320 }: MobileFrameProps) {

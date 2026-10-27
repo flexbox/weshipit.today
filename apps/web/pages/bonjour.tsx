@@ -30,21 +30,21 @@ interface BonjourPageProps {
 
 const testimonials = [
   {
+    author: 'Ludovic Borie',
     quote:
       "Capacité d'adaptation à notre environnement de travail. Travailler avec des petites entreprises n'est pas toujours facile, mais David et Matthys ont su s'intégrer parfaitement à notre équipe.",
-    author: 'Ludovic Borie',
     role: 'CTO, Karnott',
   },
   {
+    author: 'Clémentine Lourme',
     quote:
       "Énergie positive, envie d'avancer, proposer des solutions. Grâce à son coaching automation, je suis plus productive — merci !",
-    author: 'Clémentine Lourme',
     role: 'Business developer, Retail Shake',
   },
   {
+    author: 'Alice Jodra',
     quote:
       "Des connaissances pratiques et une expertise impressionnantes, avec beaucoup d'informations utiles pour se lancer dans le développement le plus facilement et efficacement possible.",
-    author: 'Alice Jodra',
     role: 'Chef de projet IT, Saint-Gobain PAM Canalisation',
   },
 ];
@@ -221,21 +221,21 @@ function ProblemsSection() {
 function StatsSection() {
   const stats = [
     {
-      value: '90%',
-      label: 'de réutilisation de code',
       description:
         'Architecture designée chez Mahalo Banking — onboarding rapide, coût technique réduit',
+      label: 'de réutilisation de code',
+      value: '90%',
     },
     {
-      value: '100%',
-      label: 'des releases automatisées',
       description: 'Shipping continu pendant 5 ans sur des projets complexes',
+      label: 'des releases automatisées',
+      value: '100%',
     },
     {
-      value: 'IoT',
-      label: 'offline-first, apps complexes',
       description:
         'Des apps qui tournent dans des environnements hostiles, sans réseau',
+      label: 'offline-first, apps complexes',
+      value: 'IoT',
     },
   ];
 
@@ -327,37 +327,37 @@ function TestimonialsSection() {
 function ProcessSection() {
   const steps = [
     {
-      number: '1',
-      icon: MagnifyingGlassIcon,
-      title: 'Fondations',
       description: 'On identifie ce qui bloque. On nettoie.',
+      icon: MagnifyingGlassIcon,
       items: [
         "Audit des dépendances et de l'architecture",
         'Suppression du code mort et des librairies inutiles',
         'Mise à jour des versions critiques',
       ],
+      number: '1',
+      title: 'Fondations',
     },
     {
-      number: '2',
-      icon: CogIcon,
-      title: 'Écosystème',
       description: 'On met en place les outils pour ship.',
+      icon: CogIcon,
       items: [
         'Observabilité (crash reports, performance monitoring)',
         'Tests automatisés sur les chemins critiques',
         'CI/CD pour déployer sans stress',
       ],
+      number: '2',
+      title: 'Écosystème',
     },
     {
-      number: '3',
-      icon: BoltIcon,
-      title: 'Accélération',
       description: 'On optimise perf, data, release.',
+      icon: BoltIcon,
       items: [
         'Optimisation des performances (FPS, TTI, bundle size)',
         'Data layer propre (cache, offline, sync)',
         'Release pipeline automatisé',
       ],
+      number: '3',
+      title: 'Accélération',
     },
   ];
 
@@ -428,20 +428,20 @@ function ProcessSection() {
 function PricingSection() {
   const features = [
     {
+      description: 'Tu prends un mois. On ship. Tu continues si ça fonctionne.',
       positive: true,
       title: 'Pas de contrat long',
-      description: 'Tu prends un mois. On ship. Tu continues si ça fonctionne.',
     },
     {
-      positive: true,
-      title: "Pas d'engagement",
       description:
         "Pause ou annule quand tu veux. Le code t'appartient à 100%.",
+      positive: true,
+      title: "Pas d'engagement",
     },
     {
+      description: 'Si ça ne fonctionne pas, tu arrêtes. Simple.',
       positive: false,
       title: 'Pas de remboursement',
-      description: 'Si ça ne fonctionne pas, tu arrêtes. Simple.',
     },
   ];
 
@@ -603,18 +603,18 @@ function UrgencySection() {
   const items = [
     {
       icon: ArrowTrendingDownIcon,
-      value: '40%',
       text: 'des users désinstallent une app instable chaque semaine',
+      value: '40%',
     },
     {
       icon: BoltIcon,
-      value: '+',
       text: 'Tes concurrents shippent pendant que ton app vieillit',
+      value: '+',
     },
     {
       icon: CurrencyDollarIcon,
-      value: '$$$',
       text: 'Ta dette technique augmente chaque jour',
+      value: '$$$',
     },
   ];
 
@@ -714,47 +714,47 @@ function CtaFinalSection() {
 // ─── FAQ DATA ────────────────────────────────────────────────────────────────
 const faqs = [
   {
-    id: 'faq-fr-1',
-    question: "C'est quoi exactement qui est inclus dans les 5 000 €/mois ?",
     answer:
       "Développement React Native, audits de performance, mise à jour des dépendances, CI/CD, observabilité, tests, support Slack, calls hebdo. On s'occupe de tout ce qui bloque ton shipping.",
+    id: 'faq-fr-1',
+    question: "C'est quoi exactement qui est inclus dans les 5 000 €/mois ?",
   },
   {
-    id: 'faq-fr-2',
-    question: 'Et si je veux arrêter après un mois ?',
     answer:
       "Tu arrêtes. Pas de pénalité, pas de préavis. Le code t'appartient à 100%. Tu peux reprendre le développement plus tard, ou le donner à une autre équipe.",
+    id: 'faq-fr-2',
+    question: 'Et si je veux arrêter après un mois ?',
   },
   {
-    id: 'faq-fr-3',
-    question: 'Pourquoi pas recruter un dev React Native senior ?',
     answer:
       "Un senior React Native coûte entre 60 000 € et 90 000 € par an, sans compter les charges, les avantages et les mois de recrutement. Et un dev seul ne résout pas un problème d'architecture ou de vélocité. Notre abonnement te donne accès à une équipe senior, immédiatement, sans engagement.",
+    id: 'faq-fr-3',
+    question: 'Pourquoi pas recruter un dev React Native senior ?',
   },
   {
+    answer:
+      "C'est exactement ce qu'on fait. On a déjà transformé des apps avec des centaines de dépendances obsolètes, zéro tests, et des releases manuelles en apps qui shippent tous les jours. L'étape 1 (Fondations) est faite pour ça.",
     id: 'faq-fr-4',
     question:
       'Mon app est vraiment en mauvais état. Vous pouvez quand même intervenir ?',
-    answer:
-      "C'est exactement ce qu'on fait. On a déjà transformé des apps avec des centaines de dépendances obsolètes, zéro tests, et des releases manuelles en apps qui shippent tous les jours. L'étape 1 (Fondations) est faite pour ça.",
   },
   {
-    id: 'faq-fr-5',
-    question: 'Combien de temps avant de voir des résultats concrets ?',
     answer:
       'Premier livrable en quelques jours, pas en quelques mois. Dès la première semaine, on identifie et corrige les blockers les plus critiques. En un mois, ton pipeline de release est en place.',
+    id: 'faq-fr-5',
+    question: 'Combien de temps avant de voir des résultats concrets ?',
   },
   {
-    id: 'faq-fr-6',
-    question: 'Pourquoi pas de remboursement ?',
     answer:
       "Parce que notre modèle est simple : si ça ne fonctionne pas, tu arrêtes. Pas de contrat qui te bloque. La qualité de notre travail parle d'elle-même.",
+    id: 'faq-fr-6',
+    question: 'Pourquoi pas de remboursement ?',
   },
   {
-    id: 'faq-fr-7',
-    question: 'Avec qui je travaille concrètement ?',
     answer:
       "Directement avec David et Matthys, les deux développeurs seniors de l'équipe. Pas d'account managers, pas de junior qui découvre React Native sur ton projet.",
+    id: 'faq-fr-7',
+    question: 'Avec qui je travaille concrètement ?',
   },
 ];
 
@@ -763,10 +763,10 @@ export default function BonjourPage({ clients }: BonjourPageProps) {
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: faqs.map(({ question, answer }) => ({
+    mainEntity: faqs.map(({ answer, question }) => ({
       '@type': 'Question',
-      name: question,
       acceptedAnswer: { '@type': 'Answer', text: answer },
+      name: question,
     })),
   };
 
@@ -776,15 +776,15 @@ export default function BonjourPage({ clients }: BonjourPageProps) {
     itemListElement: [
       {
         '@type': 'ListItem',
-        position: 1,
-        name: 'Accueil',
         item: 'https://weshipit.today',
+        name: 'Accueil',
+        position: 1,
       },
       {
         '@type': 'ListItem',
-        position: 2,
-        name: 'Agence React Native',
         item: 'https://weshipit.today/bonjour',
+        name: 'Agence React Native',
+        position: 2,
       },
     ],
   };
@@ -792,11 +792,34 @@ export default function BonjourPage({ clients }: BonjourPageProps) {
   const professionalServiceSchema = {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
-    name: 'weshipit.today \u2014 Agence Web React Native',
+    areaServed: { '@type': 'Country', name: 'France' },
     description:
       'Agence web sp\u00e9cialis\u00e9e dans le d\u00e9veloppement d\u2019applications mobiles React Native pour iOS et Android. Experts React Native depuis 2016.',
-    url: 'https://weshipit.today/bonjour',
     foundingDate: '2016',
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            description:
+              'Cr\u00e9ation d\u2019applications iOS et Android avec React Native',
+            name: 'D\u00e9veloppement application React Native',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            description:
+              'Audit de performance et optimisation d\u2019applications React Native existantes',
+            name: 'Audit et performance React Native',
+          },
+        },
+      ],
+      name: 'Services de d\u00e9veloppement React Native',
+    },
     knowsAbout: [
       'React Native',
       'iOS',
@@ -804,32 +827,9 @@ export default function BonjourPage({ clients }: BonjourPageProps) {
       'applications mobiles',
       'd\u00e9veloppement cross-platform',
     ],
+    name: 'weshipit.today \u2014 Agence Web React Native',
     serviceType: 'D\u00e9veloppement d\u2019applications mobiles React Native',
-    areaServed: { '@type': 'Country', name: 'France' },
-    hasOfferCatalog: {
-      '@type': 'OfferCatalog',
-      name: 'Services de d\u00e9veloppement React Native',
-      itemListElement: [
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'D\u00e9veloppement application React Native',
-            description:
-              'Cr\u00e9ation d\u2019applications iOS et Android avec React Native',
-          },
-        },
-        {
-          '@type': 'Offer',
-          itemOffered: {
-            '@type': 'Service',
-            name: 'Audit et performance React Native',
-            description:
-              'Audit de performance et optimisation d\u2019applications React Native existantes',
-          },
-        },
-      ],
-    },
+    url: 'https://weshipit.today/bonjour',
   };
 
   return (
@@ -873,9 +873,9 @@ export default function BonjourPage({ clients }: BonjourPageProps) {
         withHeader
         withFooter
         callToActionButton={{
-          name: CTA_LABEL,
           href: linksApi.cal.ONBOARDING,
           isExternalLink: true,
+          name: CTA_LABEL,
         }}
       >
         <HeroSection />

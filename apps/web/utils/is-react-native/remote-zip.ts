@@ -13,10 +13,10 @@ const STORED = 0;
 const TIMEOUT_MS = 15000;
 
 export interface ZipEntry {
+  name: string;
+  method: number;
   compressedSize: number;
   localHeaderOffset: number;
-  method: number;
-  name: string;
 }
 
 export class RemoteZip {

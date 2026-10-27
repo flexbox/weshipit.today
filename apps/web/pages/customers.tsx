@@ -17,11 +17,11 @@ export default function CustomersPage({ clients }: CustomersPageProps) {
       ogImageTitle="weshipit.today success stories"
       withHeader
       callToActionLink={{
-        name: 'Star us on GitHub',
         href: 'https://github.com/flexbox/weshipit.today',
         isExternalLink: true,
+        name: 'Star us on GitHub',
       }}
-      callToActionButton={{ name: 'Work with us', href: '/' }}
+      callToActionButton={{ href: '/', name: 'Work with us' }}
     >
       <Prose className="py-12" variant="slate">
         <h1>Trusted by ambitious teams worldwide</h1>

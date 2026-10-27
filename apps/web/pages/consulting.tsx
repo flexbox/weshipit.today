@@ -19,9 +19,9 @@ export function Consulting() {
       ogImageTitle="Helping you to ship your vision in production"
       withHeader
       callToActionButton={{
-        name: 'Schedule 1-to-1 consulting',
         href: 'https://cal.com/davidl/coaching',
         isExternalLink: true,
+        name: 'Schedule 1-to-1 consulting',
       }}
     >
       <div className="relative">

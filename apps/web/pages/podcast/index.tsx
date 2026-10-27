@@ -10,32 +10,32 @@ import Link from 'next/link';
 
 const FAQ_ITEMS = [
   {
-    question: "React Native est-il adapté pour une app à 1M d'utilisateurs ?",
     answer:
       "Oui, des apps comme Alan, Cdiscount et Swan gèrent des millions d'utilisateurs avec React Native. Découvrez leurs architectures dans nos épisodes.",
+    question: "React Native est-il adapté pour une app à 1M d'utilisateurs ?",
   },
   {
-    question: 'Combien coûte réellement une app React Native sur 3 ans ?',
     answer:
       'Entre 200K€ et 800K€ selon la complexité. Nos interviews de CTO décortiquent les coûts cachés et optimisations.',
+    question: 'Combien coûte réellement une app React Native sur 3 ans ?',
   },
   {
-    question: 'Comment éviter la dette technique React Native ?',
     answer:
       'Architecture modulaire, tests automatisés, code reviews strictes. Nos épisodes avec Alan et Swan détaillent leurs stratégies.',
+    question: 'Comment éviter la dette technique React Native ?',
   },
 ];
 
 const faqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: FAQ_ITEMS.map(({ question, answer }) => ({
+  mainEntity: FAQ_ITEMS.map(({ answer, question }) => ({
     '@type': 'Question',
-    name: question,
     acceptedAnswer: {
       '@type': 'Answer',
       text: answer,
     },
+    name: question,
   })),
 };
 
@@ -84,9 +84,9 @@ export default function Podcast() {
         locale="fr_FR"
         withHeader
         callToActionLink={{
-          name: 'Participer au podcast',
           href: linksApi.notion.PODCAST_FORM,
           isExternalLink: true,
+          name: 'Participer au podcast',
         }}
         withContainer
       >
@@ -195,7 +195,7 @@ export default function Podcast() {
             <h2>Questions fréquentes</h2>
           </Prose>
           <dl className="mt-6 divide-y divide-gray-200 dark:divide-gray-800">
-            {FAQ_ITEMS.map(({ question, answer }) => (
+            {FAQ_ITEMS.map(({ answer, question }) => (
               <div key={question} className="py-6">
                 <dt className="text-base font-semibold text-gray-900 dark:text-gray-100">
                   {question}

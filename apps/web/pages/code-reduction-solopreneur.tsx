@@ -29,79 +29,79 @@ const AFFILIATE_URL = linksApi.affiliate.INCUBATEUR_SOLOPRENEUR;
 
 const faqs = [
   {
-    id: 'faq-cr-1',
-    question: 'Comment obtenir le code réduction Solopreneur ?',
     answer:
       "Le code réduction le plus avantageux pour l'Incubateur Solopreneur de Flavie Prevot est appliqué automatiquement quand tu passes par le lien d'affilié d'un incubé actif. Tu paies 1 490 € HT au lieu de 2 400 € HT, soit 910 € d'économie sur la première année. Aucun code à saisir, la remise est appliquée à l'inscription.",
+    id: 'faq-cr-1',
+    question: 'Comment obtenir le code réduction Solopreneur ?',
   },
   {
-    id: 'faq-cr-2',
-    question: 'Est-ce que le code réduction Solopreneur est officiel ?',
     answer:
       "Oui. Flavie Prevot a mis en place un programme d'affiliation officiel pour ses incubés actifs. Le tarif affilié à 1 490 € HT est le prix le plus bas du marché : aucune remise publique, soldes ou code promo Black Friday ne descend en dessous de ce prix. C'est la condition imposée par la fondatrice pour récompenser ses ambassadeurs.",
+    id: 'faq-cr-2',
+    question: 'Est-ce que le code réduction Solopreneur est officiel ?',
   },
   {
+    answer:
+      "Le prix public sur la page de vente (VSL) est de 2 400 € HT pour un an d'accompagnement. Une remise de 500 € est proposée pendant 3-4 jours après le visionnage de la vidéo, ramenant le tarif à 1 900 € HT. Le code réduction d'affiliation reste plus avantageux à 1 490 € HT.",
     id: 'faq-cr-3',
     question:
       "Quel est le prix de l'Incubateur Solopreneur sans code de réduction ?",
-    answer:
-      "Le prix public sur la page de vente (VSL) est de 2 400 € HT pour un an d'accompagnement. Une remise de 500 € est proposée pendant 3-4 jours après le visionnage de la vidéo, ramenant le tarif à 1 900 € HT. Le code réduction d'affiliation reste plus avantageux à 1 490 € HT.",
   },
   {
-    id: 'faq-cr-4',
-    question: "Combien d'économies avec le code réduction Solopreneur ?",
     answer:
       "Tu économises 910 € HT par rapport au tarif public de 2 400 € HT, et 410 € HT par rapport à la remise VSL temporaire de 1 900 € HT. Autre façon de le voir : un Sprint seul (1 mois) coûte 1 490 € HT. Avec le lien affilié, tu as les 12 mois et les 12 Sprints pour le prix d'un seul.",
+    id: 'faq-cr-4',
+    question: "Combien d'économies avec le code réduction Solopreneur ?",
   },
   {
-    id: 'faq-cr-5',
-    question: "Qu'est-ce qui est inclus dans l'Incubateur Solopreneur ?",
     answer:
       "12 mois d'accès à la communauté de 300+ solopreneurs, 10 bootcamps (Sprints) thématiques par an (IA, automation, podcasting, sponsoring, offre, design…), des lives pratico-pratiques chaque vendredi, l'accès aux replays, +50 experts invités, 50+ templates et un canal #mes-réussites pour partager tes wins. L'Incubateur est orienté passage à l'action et construction d'actifs, pas formation passive.",
+    id: 'faq-cr-5',
+    question: "Qu'est-ce qui est inclus dans l'Incubateur Solopreneur ?",
   },
   {
+    answer:
+      "Chaque Sprint est vendu à deux prix : le Sprint seul (1 mois) autour de 1 490 € HT, ou le Sprint + 12 mois d'Incubateur autour de 1 990 € HT. Le tarif affilié est plus simple : 1 490 € HT pour les 12 mois, Sprint en cours inclus. Autrement dit, tu paies le prix du Sprint seul et tu obtiens l'année entière. C'est le prix « sous le manteau » que Flavie réserve aux personnes recommandées par un incubé, et qu'elle n'affiche nulle part.",
     id: 'faq-cr-6',
     question:
       'Le code réduction Solopreneur fonctionne aussi sur le Sprint mensuel ?',
-    answer:
-      "Chaque Sprint est vendu à deux prix : le Sprint seul (1 mois) autour de 1 490 € HT, ou le Sprint + 12 mois d'Incubateur autour de 1 990 € HT. Le tarif affilié est plus simple : 1 490 € HT pour les 12 mois, Sprint en cours inclus. Autrement dit, tu paies le prix du Sprint seul et tu obtiens l'année entière. C'est le prix « sous le manteau » que Flavie réserve aux personnes recommandées par un incubé, et qu'elle n'affiche nulle part.",
   },
   {
-    id: 'faq-cr-7',
-    question: "L'Incubateur Solopreneur, c'est pour qui ?",
     answer:
       "Pour les solopreneurs qui ont déjà consommé du contenu (formations, bootcamps, livres) sans passer à l'action. Pour ceux qui veulent une heure par semaine vraiment dédiée à leur business plutôt qu'à leurs clients. Et pour celles et ceux qui veulent construire des actifs (newsletter, podcast, offre, SaaS, sponsoring) brique après brique, dans une communauté qui pousse au shipping.",
+    id: 'faq-cr-7',
+    question: "L'Incubateur Solopreneur, c'est pour qui ?",
   },
   {
-    id: 'faq-cr-8',
-    question: 'Y a-t-il un risque à utiliser le lien de réduction ?',
     answer:
       "Aucun. Le lien ouvre ma page de parrainage officielle sur incubateursolopreneur.fr (avec ma photo et ma recommandation), puis la page de paiement de l'Incubateur où le « tarif parrainage » est déjà appliqué. Tu obtiens exactement le même accès (mêmes lives, mêmes Sprints, même communauté Mighty, mêmes experts) qu'un client direct, simplement à un meilleur prix. Le seul effet : un incubé existant touche une commission d'apporteur d'affaires, ce qui permet à la communauté de grandir.",
+    id: 'faq-cr-8',
+    question: 'Y a-t-il un risque à utiliser le lien de réduction ?',
   },
   {
+    answer:
+      "Flavie a progressivement augmenté les prix : 90 €, 200 €, 400 €, 800 € puis 2 400 € HT pour la cohorte actuelle. La logique : attirer des solopreneurs investis, qui se présentent aux lives et passent vraiment à l'action. Le tarif est verrouillé sur la première année, sans engagement de reconduction.",
     id: 'faq-cr-9',
     question:
       "Quand l'augmentation de prix de l'Incubateur Solopreneur a-t-elle eu lieu ?",
-    answer:
-      "Flavie a progressivement augmenté les prix : 90 €, 200 €, 400 €, 800 € puis 2 400 € HT pour la cohorte actuelle. La logique : attirer des solopreneurs investis, qui se présentent aux lives et passent vraiment à l'action. Le tarif est verrouillé sur la première année, sans engagement de reconduction.",
   },
   {
-    id: 'faq-cr-10',
-    question: 'Puis-je avoir un essai ou un remboursement ?',
     answer:
       "Il n'y a pas de période d'essai ni de remboursement. Deux façons de réduire le risque : assister à la masterclass gratuite que Flavie anime avant chaque Sprint (ouverte à tous, replay disponible) pour voir sa façon de travailler, ou réserver un Sprint seul (1 mois, autour de 1 490 € HT). Mais à ce prix-là, le tarif affilié te donne l'année entière, donc le Sprint seul n'a d'intérêt que si tu es sûr de ne pas vouloir continuer.",
+    id: 'faq-cr-10',
+    question: 'Puis-je avoir un essai ou un remboursement ?',
   },
   {
-    id: 'faq-cr-11',
-    question: 'Quel est le prochain Sprint de l’Incubateur Solopreneur ?',
     answer:
       "Le Sprint « Solo SaaS : construire un SaaS qui bosse à ta place » du 9 au 30 octobre 2026, animé avec Pierre Thomassina (développeur agentique). 4 lives : trouver la bonne idée de SaaS, installer son environnement de vibe coding (base de données, déploiement, sécurité), construire les premières features, puis organiser un bêta-test pour trouver ses premiers utilisateurs. Ensuite : « Client Express » (4 semaines pour trouver 10 clients) en novembre, puis « Indé blindé » (optimisation fiscale, financière et rémunération) en fin d'année. Il y a 12 Sprints par an : tu rejoins pour un Sprint, les 11 autres sont inclus. Voir le détail sur /sprint-solo-saas.",
+    id: 'faq-cr-11',
+    question: 'Quel est le prochain Sprint de l’Incubateur Solopreneur ?',
   },
   {
-    id: 'faq-cr-12',
-    question: 'Faut-il être à l’aise avec les outils digitaux et l’IA ?',
     answer:
       "Oui, c'est le vrai critère de filtrage. L'Incubateur va vite : une app communautaire (Mighty), des prompts à copier-coller, des outils comme Claude, Codex, Notion ou n8n manipulés en live. Ce n'est pas un programme materné : si tu as besoin qu'on te tienne la main sur chaque clic, tu vas te sentir perdu. Si tu utilises déjà un peu l'IA au quotidien et que tu aimes apprendre en faisant, tu es dans la cible.",
+    id: 'faq-cr-12',
+    question: 'Faut-il être à l’aise avec les outils digitaux et l’IA ?',
   },
 ];
 
@@ -174,22 +174,22 @@ function HeroSection() {
 function CestQuoiSection() {
   const bullets = [
     {
-      icon: UsersIcon,
-      title: 'Une communauté active',
       description:
         '300+ solopreneurs francophones (freelances, créateurs, SaaS solo, consultants), noyau très actif sur Mighty Networks.',
+      icon: UsersIcon,
+      title: 'Une communauté active',
     },
     {
-      icon: SparklesIcon,
-      title: 'Un bootcamp (Sprint) par mois — tech + business',
       description:
         '10 bootcamps thématiques par an : IA/Claude, Custom GPT’s, automation, SaaS solo côté tech ; sponsoring, offre productisée, podcast, newsletter côté business. Cadre, deadlines, livrables (50+ templates) — pas de théorie.',
+      icon: SparklesIcon,
+      title: 'Un bootcamp (Sprint) par mois — tech + business',
     },
     {
-      icon: RocketLaunchIcon,
-      title: 'Un live-atelier chaque vendredi',
       description:
         'Format « on monte un meuble Ikea ensemble » : tu arrives avec ton projet, tu repars avec un livrable. Replays disponibles.',
+      icon: RocketLaunchIcon,
+      title: 'Un live-atelier chaque vendredi',
     },
   ];
 
@@ -248,22 +248,22 @@ function CestQuoiSection() {
 function ComparatifSection() {
   const rows = [
     {
+      best: false,
       label: 'Prix public sur la page de vente (VSL)',
       price: '2 400 € HT',
       saving: '0 €',
-      best: false,
     },
     {
+      best: false,
       label: 'Remise VSL (3-4 jours après la vidéo)',
       price: '1 900 € HT',
       saving: '500 €',
-      best: false,
     },
     {
+      best: true,
       label: 'Code réduction Solopreneur (lien affilié)',
       price: '1 490 € HT',
       saving: '910 €',
-      best: true,
     },
   ];
 
@@ -368,21 +368,21 @@ function ProchainSprintSection() {
 
   const roadmap = [
     {
-      when: 'Octobre 2026',
       name: 'Solo SaaS',
       pitch: 'Construire un SaaS qui bosse à ta place, avec Pierre Thomassina.',
+      when: 'Octobre 2026',
     },
     {
-      when: 'Novembre 2026',
       name: 'Client Express',
       pitch:
         '4 semaines pour trouver 10 clients : relances, setting, prospection sans forcer.',
+      when: 'Novembre 2026',
     },
     {
-      when: 'Décembre 2026',
       name: 'Indé blindé',
       pitch:
         'Optimisation fiscale, financière et rémunération : capter plus de valeur sur ton entreprise.',
+      when: 'Décembre 2026',
     },
   ];
 
@@ -476,25 +476,25 @@ function ProchainSprintSection() {
 function CommentCaMarcheSection() {
   const steps = [
     {
-      number: '1',
-      icon: TagIcon,
-      title: 'Clique sur le lien de parrainage',
       description:
         "Tu arrives sur ma page de parrainage officielle sur incubateursolopreneur.fr : ma photo, pourquoi je recommande l'Incubateur, et le tarif parrainage à 1 490 € HT déjà affiché. Pas de code promo à saisir.",
+      icon: TagIcon,
+      number: '1',
+      title: 'Clique sur le lien de parrainage',
     },
     {
-      number: '2',
-      icon: ClipboardDocumentCheckIcon,
-      title: 'Passe sur la page de paiement',
       description:
         "La page de paiement de l'Incubateur reprend le « tarif parrainage », le prix le plus bas pour toi puisque tu connais un incubé. Paiement en une fois ou en plusieurs mensualités selon les options affichées.",
+      icon: ClipboardDocumentCheckIcon,
+      number: '2',
+      title: 'Passe sur la page de paiement',
     },
     {
-      number: '3',
-      icon: RocketLaunchIcon,
-      title: 'Accède à la communauté',
       description:
         'Tu rejoins immédiatement les 300+ solopreneurs incubés, les replays, les lives du vendredi, le Sprint en cours et la roadmap des Sprints à venir.',
+      icon: RocketLaunchIcon,
+      number: '3',
+      title: 'Accède à la communauté',
     },
   ];
 
@@ -539,40 +539,40 @@ function CommentCaMarcheSection() {
 function CeQuiEstInclusSection() {
   const items = [
     {
-      icon: UsersIcon,
-      title: 'Communauté de 300+ solopreneurs',
       description:
         "Sur Mighty Networks : Slack, canaux thématiques, café d'accueil, partages de wins. Les vrais clients de tes futurs services sont déjà dedans.",
+      icon: UsersIcon,
+      title: 'Communauté de 300+ solopreneurs',
     },
     {
-      icon: SparklesIcon,
-      title: '10 bootcamps (Sprints) thématiques par an',
       description:
         "IA & Claude, Cloud Designer, Bye Bye TJM, Sugar Daddy (sponsoring), Glow Up, podcasting vidéo, automation, SaaS solo… Un bootcamp par mois, tous orientés construction d'actifs.",
+      icon: SparklesIcon,
+      title: '10 bootcamps (Sprints) thématiques par an',
     },
     {
-      icon: RocketLaunchIcon,
-      title: 'Lives pratico-pratiques chaque vendredi',
       description:
         '« On monte un meuble Ikea ensemble. » Format atelier : tu repars avec un livrable. Replay disponible si tu rates le live.',
+      icon: RocketLaunchIcon,
+      title: 'Lives pratico-pratiques chaque vendredi',
     },
     {
-      icon: ShieldCheckIcon,
-      title: '+50 experts invités sur tes problématiques',
       description:
         "Un réseau de +50 spécialistes (Notion, IA, design, vente, copywriting, podcasting…). Tu peux les recruter en dehors si besoin, mais tu les rencontres d'abord en live.",
+      icon: ShieldCheckIcon,
+      title: '+50 experts invités sur tes problématiques',
     },
     {
-      icon: ClipboardDocumentCheckIcon,
-      title: "Construction d'actifs concrets",
       description:
         'Newsletter, podcast vidéo, agent IA documenté, offre productisée, sponsors trouvés, SaaS lancé. Sortir avec un truc concret, pas un PDF de plus.',
+      icon: ClipboardDocumentCheckIcon,
+      title: "Construction d'actifs concrets",
     },
     {
-      icon: CurrencyEuroIcon,
-      title: 'Tarif verrouillé un an',
       description:
         "Le prix de 1 490 € HT couvre 12 mois pleins. Pas d'engagement de reconduction. À toi de décider en fin d'année si tu repars pour un tour.",
+      icon: CurrencyEuroIcon,
+      title: 'Tarif verrouillé un an',
     },
   ];
 
@@ -687,26 +687,26 @@ function PourQuiSection() {
 function PreuvesSection() {
   const proofs = [
     {
-      title: "Marion — 2e année d'incubation",
       quote:
         "C'est ma deuxième année et avec le concept des Sprints mensuels, ma marge de progression est encore plus impressionnante.",
       source: 'Trustpilot',
+      title: "Marion — 2e année d'incubation",
     },
     {
-      title: 'Anne-Marie — vente conclue en vocal',
       quote:
         "À 1 200 € je le prends. Le lien d'affilié m'a fait gagner encore 200 € — c'est ce qui a déclenché l'achat.",
       source: 'Témoignage prospect',
+      title: 'Anne-Marie — vente conclue en vocal',
     },
     {
-      title: 'David Leuliette — incubé & ambassadeur',
-      quote:
-        "Je passe une heure le vendredi avec une vingtaine de solopreneurs. En 6 mois j'ai relancé mon podcast vidéo et structuré mon offre. Le tarif affilié rembourse l'investissement dès le premier Sprint.",
-      source: 'weshipit.today',
       link: {
         href: '/avis-incubateur-solopreneur',
         label: 'Lire mon avis détaillé après 6 mois d’incubation →',
       },
+      quote:
+        "Je passe une heure le vendredi avec une vingtaine de solopreneurs. En 6 mois j'ai relancé mon podcast vidéo et structuré mon offre. Le tarif affilié rembourse l'investissement dès le premier Sprint.",
+      source: 'weshipit.today',
+      title: 'David Leuliette — incubé & ambassadeur',
     },
   ];
 
@@ -866,10 +866,10 @@ export default function CodeReductionSolopreneurPage() {
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: faqs.map(({ question, answer }) => ({
+    mainEntity: faqs.map(({ answer, question }) => ({
       '@type': 'Question',
-      name: question,
       acceptedAnswer: { '@type': 'Answer', text: answer },
+      name: question,
     })),
   };
 
@@ -879,15 +879,15 @@ export default function CodeReductionSolopreneurPage() {
     itemListElement: [
       {
         '@type': 'ListItem',
-        position: 1,
-        name: 'Accueil',
         item: 'https://weshipit.today',
+        name: 'Accueil',
+        position: 1,
       },
       {
         '@type': 'ListItem',
-        position: 2,
-        name: 'Code réduction Solopreneur',
         item: 'https://weshipit.today/code-reduction-solopreneur',
+        name: 'Code réduction Solopreneur',
+        position: 2,
       },
     ],
   };
@@ -895,27 +895,27 @@ export default function CodeReductionSolopreneurPage() {
   const productSchema = {
     '@context': 'https://schema.org',
     '@type': 'Product',
-    name: 'Incubateur Solopreneur — Code réduction (tarif affilié)',
-    description:
-      "Tarif affilié pour l'Incubateur Solopreneur de Flavie Prevot. 12 mois d'incubation avec Sprints mensuels, lives, communauté de 300+ solopreneurs et experts invités. Prix le plus bas du marché : 1 490 € HT au lieu de 2 400 € HT.",
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      bestRating: '5',
+      ratingValue: '4.85',
+      reviewCount: '47',
+      worstRating: '1',
+    },
     brand: {
       '@type': 'Brand',
       name: 'Incubateur Solopreneur',
     },
+    description:
+      "Tarif affilié pour l'Incubateur Solopreneur de Flavie Prevot. 12 mois d'incubation avec Sprints mensuels, lives, communauté de 300+ solopreneurs et experts invités. Prix le plus bas du marché : 1 490 € HT au lieu de 2 400 € HT.",
+    name: 'Incubateur Solopreneur — Code réduction (tarif affilié)',
     offers: {
       '@type': 'Offer',
-      url: 'https://weshipit.today/code-reduction-solopreneur',
-      priceCurrency: 'EUR',
-      price: String(PRICE_AFFILIATE),
-      priceValidUntil: '2026-12-31',
       availability: 'https://schema.org/InStock',
-    },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.85',
-      reviewCount: '47',
-      bestRating: '5',
-      worstRating: '1',
+      price: String(PRICE_AFFILIATE),
+      priceCurrency: 'EUR',
+      priceValidUntil: '2026-12-31',
+      url: 'https://weshipit.today/code-reduction-solopreneur',
     },
   };
 
@@ -962,9 +962,9 @@ export default function CodeReductionSolopreneurPage() {
         withHeader
         withFooter
         callToActionButton={{
-          name: CTA_LABEL_SHORT,
           href: AFFILIATE_URL,
           isExternalLink: true,
+          name: CTA_LABEL_SHORT,
         }}
       >
         <HeroSection />

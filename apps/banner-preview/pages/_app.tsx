@@ -15,8 +15,8 @@ const spaceGrotesk = Space_Grotesk({
   display: 'swap',
   style: ['normal'],
   subsets: ['latin'],
-  weight: ['700'],
   variable: '--font-space-grotesk',
+  weight: ['700'],
 });
 
 function CustomApp({ Component, pageProps }: AppProps) {

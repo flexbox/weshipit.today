@@ -1,8 +1,8 @@
 import { ReactNode } from 'react';
 
 interface BrowserFrameProps {
-  children: ReactNode;
   url?: string;
+  children: ReactNode;
 }
 
 export function BrowserFrame({

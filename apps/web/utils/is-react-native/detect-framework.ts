@@ -9,10 +9,10 @@ export type Framework =
   | 'xamarin';
 
 export interface FrameworkDetection {
-  evidence: string[];
   expo: boolean;
-  framework: Framework;
   hermes: boolean;
+  evidence: string[];
+  framework: Framework;
   isReactNative: boolean;
 }
 

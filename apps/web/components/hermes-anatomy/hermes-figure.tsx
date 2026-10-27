@@ -195,8 +195,8 @@ const RAM = (
 
 const Card = React.memo(function Card({
   index,
-  punched,
   lit,
+  punched,
 }: {
   index: number;
   punched: boolean;
@@ -241,43 +241,43 @@ interface Eased {
 }
 
 interface Sim {
-  engine: Engine;
-  cards: CardState[];
   ram: Eased;
   knob: Eased;
-  needle: Eased;
   lamp: Eased;
-  head: number;
-  clock: number;
-  plan: Array<{ at: number; run: () => void }>;
-  launchAt: number | null;
   lit: number;
+  head: number;
   idle: number;
   tour: number;
+  needle: Eased;
+  clock: number;
+  engine: Engine;
   touched: boolean;
+  cards: CardState[];
+  launchAt: number | null;
+  plan: Array<{ at: number; run: () => void }>;
 }
 
 const stackZ = (level: number) => FLOOR_Z + level * STACK;
 const sourceCard = (level: number): CardState => {
   const z = stackZ(level);
-  return { x: AT.source, z, a: 1, tx: AT.source, tz: z, ta: 1, punched: false };
+  return { a: 1, punched: false, ta: 1, tx: AT.source, tz: z, x: AT.source, z };
 };
 
 const initial = (): Sim => ({
-  engine: 'hermes',
   cards: Array.from({ length: CARDS }, (_, index) => sourceCard(index)),
-  ram: { v: RAM_UP, t: RAM_UP },
-  knob: { v: -1, t: -1 },
-  needle: { v: 0, t: 0 },
-  lamp: { v: 0, t: 0 },
-  head: 0,
   clock: 0,
-  plan: [],
+  engine: 'hermes',
+  head: 0,
+  idle: 0,
+  knob: { t: -1, v: -1 },
+  lamp: { t: 0, v: 0 },
   launchAt: null,
   lit: -1,
-  idle: 0,
-  tour: 0,
+  needle: { t: 0, v: 0 },
+  plan: [],
+  ram: { t: RAM_UP, v: RAM_UP },
   touched: false,
+  tour: 0,
 });
 
 const LABEL =
@@ -531,11 +531,11 @@ export function HermesBench() {
 
   const onKey = (event: React.KeyboardEvent) => {
     const keys: Record<string, () => void> = {
-      Enter: launch,
       ' ': launch,
-      l: launch,
+      Enter: launch,
       h: () => setEngine('hermes'),
       j: () => setEngine('jsc'),
+      l: launch,
     };
     const run = keys[event.key];
     if (!run) return;
@@ -648,9 +648,9 @@ export function HermesAnatomyFigure() {
         hint="Tap to launch · H / J engine"
         readout={readouts.rest('hermes')}
         keys={[
-          { mark: 'lit', label: 'The card being worked on' },
-          { mark: 'raised', label: 'Punched card: bytecode' },
-          { mark: 'dim', label: 'Printed card: JavaScript source' },
+          { label: 'The card being worked on', mark: 'lit' },
+          { label: 'Punched card: bytecode', mark: 'raised' },
+          { label: 'Printed card: JavaScript source', mark: 'dim' },
         ]}
         caption="Both engines turn source into bytecode before running it; the difference is when. Hermes compiles the bundle with hermesc at build time and ships the bytecode in the app, so the launch dial only times the reader. JavaScriptCore receives source text and parses it on every launch, so the press runs while the dial turns. Hermes has no JIT: the reader interprets bytecode, trading peak speed for fast, predictable startup. The dial is in figure seconds; the gap, not the unit, is the point."
       >
