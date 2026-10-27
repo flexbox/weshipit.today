@@ -19,12 +19,17 @@ const MAX_KICKER_LEN = 60;
 const MAX_SUBLINE_LEN = 120;
 const MAX_PATH_LEN = 48;
 
+// Slack, iMessage and others show a small square thumbnail cropped from the
+// center of the 1200×630 image, so the kicker, title and subline must fit in
+// the middle square.
+const SAFE_ZONE_WIDTH = 560;
+
 const fontSizeFor = (title: string): number => {
-  if (title.length <= 22) return 108;
-  if (title.length <= 40) return 90;
-  if (title.length <= 60) return 72;
-  if (title.length <= 90) return 60;
-  return 48;
+  if (title.length <= 20) return 80;
+  if (title.length <= 40) return 64;
+  if (title.length <= 70) return 52;
+  if (title.length <= 110) return 42;
+  return 34;
 };
 
 const mono = (size: number, color: string) => ({
@@ -108,12 +113,14 @@ export default async function handler(
         >
           <div
             style={{
+              alignItems: 'center',
               borderLeft: `10px solid ${CYAN}`,
               display: 'flex',
               flexDirection: 'column',
               flexGrow: 1,
               justifyContent: 'center',
-              padding: '0 88px',
+              // Offset the cyan border so the column is centered on the image.
+              paddingRight: 10,
             }}
           >
             {kicker ? (
@@ -122,6 +129,8 @@ export default async function handler(
                   ...mono(18, CYAN),
                   fontWeight: 700,
                   marginBottom: 26,
+                  maxWidth: SAFE_ZONE_WIDTH,
+                  textAlign: 'center',
                 }}
               >
                 {kicker}
@@ -134,8 +143,9 @@ export default async function handler(
                 fontSize,
                 fontWeight: 700,
                 letterSpacing: -fontSize * 0.025,
-                lineHeight: 1.04,
-                maxWidth: 1000,
+                lineHeight: 1.08,
+                textAlign: 'center',
+                width: SAFE_ZONE_WIDTH,
               }}
             >
               {title}
@@ -145,9 +155,11 @@ export default async function handler(
                 style={{
                   color: MUTED,
                   fontFamily: 'Inter',
-                  fontSize: 28,
+                  fontSize: 24,
                   fontWeight: 500,
                   marginTop: 26,
+                  textAlign: 'center',
+                  width: SAFE_ZONE_WIDTH,
                 }}
               >
                 {subline}
