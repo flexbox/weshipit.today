@@ -6,6 +6,9 @@ import type { ComponentType } from 'react';
  * slug. Each one is its own chunk, so other terms never load it.
  */
 const FIGURES: Record<string, ComponentType> = {
+  'continuous-native-generation': dynamic(() =>
+    import('./cng-anatomy/cng-figure').then((mod) => mod.CngAnatomyFigure),
+  ),
   expo: dynamic(() =>
     import('./expo-anatomy/expo-figure').then((mod) => mod.ExpoAnatomyFigure),
   ),

@@ -1,0 +1,85 @@
+/* CNG stamping press figure (glossary /react-native-glossary/continuous-native-generation). */
+.cx {
+  cursor: pointer;
+  border-radius: 10px;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.cx:focus-visible {
+  outline: 1px solid var(--anatomy-muted);
+  outline-offset: 6px;
+}
+
+.cx .iso-svg {
+  overflow: visible;
+}
+
+.cx-shadow {
+  filter: blur(3px);
+  opacity: 0.5;
+  transform: translateY(1px);
+}
+
+.cx-needle {
+  fill: var(--anatomy-lit);
+  stroke: none;
+}
+
+.cx-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 28px;
+}
+
+.cx-controls button {
+  font-family: var(--anatomy-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--anatomy-text);
+  background: var(--anatomy-card);
+  border: 1px solid var(--anatomy-lo);
+  border-radius: 999px;
+  padding: 7px 14px;
+  cursor: pointer;
+  transition:
+    border-color 160ms var(--anatomy-ease),
+    color 160ms var(--anatomy-ease);
+}
+
+.cx-controls button:hover:not(:disabled) {
+  border-color: var(--anatomy-mid);
+  color: var(--anatomy-strong);
+}
+
+.cx-controls button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+@media (max-width: 640px) {
+  .iso-plate .cx {
+    overflow: hidden;
+  }
+
+  .iso-plate .cx .iso-svg {
+    width: 116%;
+    margin: -2% -8% -2%;
+  }
+}
+
+.cx-lever {
+  fill: none;
+  stroke: var(--anatomy-mid);
+  stroke-width: 2.4px;
+  stroke-linecap: round;
+}
+
+.cx-knob {
+  fill: var(--anatomy-face);
+  stroke: var(--anatomy-hi);
+  stroke-width: var(--anatomy-weight, 0.75px);
+}
