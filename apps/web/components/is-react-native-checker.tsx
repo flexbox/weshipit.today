@@ -45,7 +45,7 @@ async function requestCheck(packageId: string): Promise<Outcome> {
     );
     if (response.status === 404) {
       return {
-        message: `We could not get a copy of "${packageId}". Check the link: paid and region-locked apps cannot be inspected.`,
+        message: `We could not find a copy of "${packageId}" to download. Small or new apps are often missing from the APK mirrors we use, and paid apps cannot be inspected.`,
         status: 'error',
       };
     }
