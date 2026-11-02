@@ -7,8 +7,8 @@ export interface Feedback {
     full_name: string;
     job_title: string;
     company: string;
-    /** One string per paragraph */
-    review: string[];
+    /** Markdown */
+    review: string;
     avatar: LocalImage | null;
   };
 }
@@ -26,10 +26,8 @@ export const feedback: Feedback[] = [
       company: 'Retail Shake',
       full_name: 'Clémentine Lourme',
       job_title: 'Business developer',
-      review: [
-        "David is a true tech influencer who will improve your team's productivity by 55% thanks to his startup knowledge and deep roots in the JavaScript ecosystem.",
-        "Thanks to his automation coaching, I'm more productive—thank you!",
-      ],
+      review:
+        "David is a true tech influencer who will improve your team's productivity by 55% thanks to his startup knowledge and deep roots in the JavaScript ecosystem.\n\nThanks to his automation coaching, I'm more productive—thank you!",
     },
     id: 'aAoHIBEAACcAtES1',
   },
@@ -44,9 +42,8 @@ export const feedback: Feedback[] = [
       company: 'Karnott',
       full_name: 'Ludovic Borie',
       job_title: 'CTO',
-      review: [
+      review:
         "Positive energy, the desire to move forward, to propose solutions, and, with Matthys, the ability to adapt to our work environment. Thank you for that; working with small companies isn't always easy.",
-      ],
     },
     id: 'aAoDkREAACcAtD-T',
   },
@@ -61,9 +58,8 @@ export const feedback: Feedback[] = [
       company: 'Saint-Gobain PAM Canalisation',
       full_name: 'Alice Jodra',
       job_title: 'IT Project Manager',
-      review: [
+      review:
         'Impressive practical knowledge and expertise, with a lot of useful information provided to jump into development as easily and efficiently as possible.',
-      ],
     },
     id: 'aAoC5hEAACwAtD6c',
   },

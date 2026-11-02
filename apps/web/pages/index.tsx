@@ -17,7 +17,7 @@ import { Layout } from '../components/layout';
 import Head from 'next/head';
 import { Customer, getVisibleClients } from './api/client';
 import { Step, workflowSteps } from '../content/workflow-steps';
-import { RichParagraphs } from '../components/rich-paragraphs';
+import ReactMarkdown from 'react-markdown';
 
 import { useState, useEffect } from 'react';
 import { TrustedConsultantsSection } from '../components/trusted-consultants-section';
@@ -306,7 +306,7 @@ function HowDoesItWorks({ steps }: { steps: Step[] }) {
               title={step.data.title}
               image={step.data.image}
             >
-              <RichParagraphs paragraphs={step.data.description} />
+              <ReactMarkdown>{step.data.description}</ReactMarkdown>
             </WorkflowCard>
           ))}
         </div>

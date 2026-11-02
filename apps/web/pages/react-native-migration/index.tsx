@@ -22,6 +22,7 @@ import { StarIcon as StarIconSolid } from '@heroicons/react/24/solid';
 import { Container } from '../../components/container';
 import Image from 'next/image';
 import Head from 'next/head';
+import ReactMarkdown from 'react-markdown';
 
 interface MigrationProps {
   clients: ClientProps[];
@@ -438,9 +439,7 @@ export function Migration({ clients, feedback }: MigrationProps) {
                       ))}
                     </div>
                     <div className="prose prose-slate dark:prose-invert text-slate-600 dark:text-slate-400 mb-6 flex-grow">
-                      {item.data.review.map((paragraph, i) => (
-                        <p key={i}>{paragraph}</p>
-                      ))}
+                      <ReactMarkdown>{item.data.review}</ReactMarkdown>
                     </div>
                     <div className="flex items-center gap-4 mt-auto pt-4 border-t border-slate-200 dark:border-slate-800">
                       {item.data.avatar && (
