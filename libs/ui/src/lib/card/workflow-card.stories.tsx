@@ -1,14 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { ImageFieldImage } from '@prismicio/client';
-import { WorkflowCard } from './workflow-card';
+import { WorkflowCard, WorkflowCardImage } from './workflow-card';
 
-const image: ImageFieldImage = {
-  id: 'placeholder-image',
+const image: WorkflowCardImage = {
   url: 'https://images.unsplash.com/photo-1551650975-87deedd944c3?w=429&h=335&fit=crop',
-  dimensions: { width: 429, height: 335 },
-  edit: { x: 0, y: 0, zoom: 1, background: 'transparent' },
-  alt: null,
-  copyright: null,
+  width: 429,
+  height: 335,
 };
 
 const meta: Meta<typeof WorkflowCard> = {

@@ -28,10 +28,6 @@ const nextConfig = {
         protocol: 'https',
       },
       {
-        hostname: 'images.prismic.io',
-        protocol: 'https',
-      },
-      {
         hostname: 'pbs.twimg.com',
         protocol: 'https',
       },

@@ -1,7 +1,5 @@
 import { AppProps } from 'next/app';
 import { Inter, Space_Grotesk } from 'next/font/google';
-import { PrismicProvider } from '@prismicio/react';
-import { client } from './api/prismic';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import { DefaultSeo } from 'next-seo';
@@ -30,7 +28,7 @@ const spaceGrotesk = Space_Grotesk({
 
 function CustomApp({ Component, pageProps }: AppProps) {
   return (
-    <PrismicProvider client={client}>
+    <>
       <DefaultSeo
         titleTemplate="%s — weshipit.today"
         defaultTitle="React Native Development Agency — weshipit.today"
@@ -54,7 +52,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
       </div>
       <Analytics />
       <SpeedInsights />
-    </PrismicProvider>
+    </>
   );
 }
 

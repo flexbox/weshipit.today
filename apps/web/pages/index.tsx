@@ -16,8 +16,8 @@ import { linksApi } from './api/links';
 import { Layout } from '../components/layout';
 import Head from 'next/head';
 import { Customer, getVisibleClients } from './api/client';
-import { Steps, getAllWorkflowSteps } from './api/workflow-steps';
-import { PrismicRichText } from '@prismicio/react';
+import { Step, workflowSteps } from '../content/workflow-steps';
+import { RichParagraphs } from '../components/rich-paragraphs';
 
 import { useState, useEffect } from 'react';
 import { TrustedConsultantsSection } from '../components/trusted-consultants-section';
@@ -32,7 +32,7 @@ import {
 } from '@heroicons/react/24/outline';
 
 interface IndexPageProps {
-  steps: Steps[];
+  steps: Step[];
   clients: Customer[];
 }
 
@@ -291,7 +291,7 @@ export function TeamSection() {
   );
 }
 
-function HowDoesItWorks({ steps }: { steps: Steps[] }) {
+function HowDoesItWorks({ steps }: { steps: Step[] }) {
   return (
     <div className="container px-4 py-16 mx-auto" id="services">
       <div className="flex flex-col gap-4">
@@ -306,7 +306,7 @@ function HowDoesItWorks({ steps }: { steps: Steps[] }) {
               title={step.data.title}
               image={step.data.image}
             >
-              <PrismicRichText field={step.data.description} />
+              <RichParagraphs paragraphs={step.data.description} />
             </WorkflowCard>
           ))}
         </div>
@@ -489,13 +489,11 @@ export default function IndexPage({ clients, steps }: IndexPageProps) {
 
 export async function getStaticProps() {
   const { clients } = await getVisibleClients();
-  const { steps } = await getAllWorkflowSteps();
 
   return {
     props: {
       clients,
-      steps,
+      steps: workflowSteps,
     },
-    revalidate: 86400,
   };
 }

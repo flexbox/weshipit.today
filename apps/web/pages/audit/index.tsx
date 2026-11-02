@@ -40,7 +40,6 @@ export async function getStaticProps() {
     props: {
       clients: clients.filter((client) => client.data?.is_audit),
     },
-    revalidate: 86400,
   };
 }
 

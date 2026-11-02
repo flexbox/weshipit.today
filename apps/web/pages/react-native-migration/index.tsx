@@ -1,5 +1,5 @@
 import { getAllClients } from '../api/client';
-import { getAllFeedback, FeedbackPrismicDocument } from '../api/feedback';
+import { feedback as allFeedback, Feedback } from '../../content/feedback';
 import { Layout } from '../../components/layout';
 import {
   Button,
@@ -20,26 +20,21 @@ import {
 } from '@heroicons/react/24/outline';
 import { StarIcon as StarIconSolid } from '@heroicons/react/24/solid';
 import { Container } from '../../components/container';
-import { PrismicRichText, PrismicText } from '@prismicio/react';
-import { PrismicNextImage } from '@prismicio/next';
 import Image from 'next/image';
 import Head from 'next/head';
 
 interface MigrationProps {
   clients: ClientProps[];
-  feedback: FeedbackPrismicDocument[];
+  feedback: Feedback[];
 }
 
 export async function getStaticProps() {
-  const [{ clients }, { feedback }] = await Promise.all([
-    getAllClients(),
-    getAllFeedback(),
-  ]);
+  const { clients } = await getAllClients();
 
   return {
     props: {
-      clients: clients ?? [],
-      feedback: feedback ?? [],
+      clients,
+      feedback: allFeedback.slice(0, 5),
     },
   };
 }
@@ -443,24 +438,26 @@ export function Migration({ clients, feedback }: MigrationProps) {
                       ))}
                     </div>
                     <div className="prose prose-slate dark:prose-invert text-slate-600 dark:text-slate-400 mb-6 flex-grow">
-                      <PrismicRichText field={item.data.review} />
+                      {item.data.review.map((paragraph, i) => (
+                        <p key={i}>{paragraph}</p>
+                      ))}
                     </div>
                     <div className="flex items-center gap-4 mt-auto pt-4 border-t border-slate-200 dark:border-slate-800">
-                      <PrismicNextImage
-                        field={item.data.avatar}
-                        width={48}
-                        height={48}
-                        className="h-12 w-12 rounded-full bg-slate-200 dark:bg-slate-700 object-cover"
-                        imgixParams={{ ar: '1:1', fit: 'crop' }}
-                        alt={item.data.alt || 'Client Avatar'}
-                      />
+                      {item.data.avatar && (
+                        <Image
+                          src={item.data.avatar.url}
+                          width={48}
+                          height={48}
+                          className="h-12 w-12 rounded-full bg-slate-200 dark:bg-slate-700 object-cover"
+                          alt={item.data.avatar.alt || item.data.full_name}
+                        />
+                      )}
                       <div>
                         <p className="font-semibold text-slate-900 dark:text-white">
-                          <PrismicText field={item.data.full_name} />
+                          {item.data.full_name}
                         </p>
                         <p className="text-sm text-slate-600 dark:text-slate-400">
-                          <PrismicText field={item.data.job_title} />,{' '}
-                          <PrismicText field={item.data.company} />
+                          {item.data.job_title}, {item.data.company}
                         </p>
                       </div>
                     </div>

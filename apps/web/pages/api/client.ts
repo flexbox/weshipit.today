@@ -1,52 +1,20 @@
-import * as prismic from '@prismicio/client';
-import { client as prismicClient } from './prismic';
+import { clients, Customer } from '../../content/clients';
 
-export interface Customer {
-  id: string;
-  data: {
-    name: string;
-    industry?: string;
-    is_visible_homepage: boolean;
-    is_audit: boolean;
-    logo?: {
-      url: string;
-    };
-    id: string;
-  };
-}
+export type { Customer };
 
 /**
  * We should rename the endpoint to /api/customers to avoid confusion with GraphQL clients.
  */
 export async function getAllClients() {
-  try {
-    const clients = await prismicClient.getAllByType('client');
-
-    return {
-      clients: clients ? clients : [],
-    };
-  } catch (error) {
-    console.error('getAllClients -> error', error);
-    return error;
-  }
+  return { clients };
 }
 
 export async function getVisibleClients({
   visibleOnHomepage = true,
 }: { visibleOnHomepage?: boolean } = {}) {
-  try {
-    const { results } = await prismicClient.get({
-      filters: [
-        prismic.filter.at('document.type', 'client'),
-        prismic.filter.at('my.client.is_visible_homepage', visibleOnHomepage),
-      ],
-    });
-
-    return {
-      clients: results ? results : [],
-    };
-  } catch (error) {
-    console.error('❌ getVisibleClients -> error', error);
-    return error;
-  }
+  return {
+    clients: clients.filter(
+      (client) => client.data.is_visible_homepage === visibleOnHomepage,
+    ),
+  };
 }

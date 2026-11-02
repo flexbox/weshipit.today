@@ -20,7 +20,7 @@ import { GetStaticProps } from 'next';
 
 export const getStaticProps = (async (context) => {
   const { clients } = await getVisibleClients();
-  return { props: { clients }, revalidate: 86400 };
+  return { props: { clients } };
 }) satisfies GetStaticProps<{
   clients: Customer[];
 }>;
