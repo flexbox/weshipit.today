@@ -60,22 +60,23 @@ export const tools: Tool[] = [
     pricing: ['Premium tiers'],
     slug: 'sherlo',
     twitter_url: 'https://x.com/sherlo_io',
-    type: ['Error Monitoring'],
+    type: ['CI/CD & Release'],
     website_url: 'https://sherlo.io/',
   },
   {
     description:
-      'Realm is a **mobile-first database** designed as a drop-in replacement for SQLite and AsyncStorage in React Native apps. It stores objects natively — no SQL, no ORM, no serialization overhead — making reads and writes dramatically faster than traditional key-value stores.\n\nRealm supports **live objects**, meaning your UI automatically reflects database changes without manual re-fetching, and its Atlas Device Sync integration lets you sync data with MongoDB Atlas in real time with conflict resolution built in.\n',
+      'Realm is an **object database for React Native** that stores data as live, typed objects instead of SQL rows, with reactive queries that re-render your UI when data changes.\n\n**Realm is deprecated.** MongoDB announced the deprecation of the Atlas Device SDKs in September 2024, and they reached end-of-life on **September 30, 2025**, together with Atlas Device Sync. A community build of `realm` without sync features is still published on npm, but new React Native projects should pick an actively maintained local database instead.\n',
     description_success:
-      "1. **Replace AsyncStorage with a real database in hours.** Realm's React Native SDK gives you typed, queryable collections that persist across app restarts — upgrade from ad-hoc JSON storage to a proper data layer without rewriting your app architecture.\n2. **Build offline-first apps without extra infrastructure.** Realm works entirely on-device with no network required, then syncs automatically to MongoDB Atlas when connectivity returns — giving your users a seamless experience regardless of connection quality.\n3. **Keep your UI in sync with zero boilerplate.** Live objects and reactive queries mean your components re-render automatically when data changes, eliminating the polling loops and manual cache invalidation that slow down React Native development.\n",
-    github_url: 'https://www.npmjs.com/package/@realm/expo-template-ts',
+      '1. **Know what still works.** Local-only Realm databases keep running in shipped apps, and the community build of `realm` (npm tag `community`) lets you stay on Realm without the removed sync features while you plan a migration.\n2. **Pick a maintained replacement.** For an offline-first, reactive database, look at WatermelonDB or RxDB; for simple key-value storage, React Native MMKV; for relational data, SQLite through `expo-sqlite` or `op-sqlite`.\n3. **Replace Device Sync before it bites you.** Atlas Device Sync no longer exists, so apps that relied on it need a new sync layer, such as Supabase, Firebase, or RxDB replication, before the next release.\n',
+    features: ['Offline'],
+    github_url: 'https://github.com/realm/realm-js',
     id: 'rec7TqGAXJ4UrYa4g',
-    name: 'realm',
+    name: 'Realm',
     platform: ['Android', 'iOS'],
     pricing: ['Open source'],
     slug: 'realm',
     type: ['Database & Storage'],
-    website_url: 'https://realm.io',
+    website_url: 'https://www.mongodb.com/docs/atlas/device-sdks/deprecation/',
   },
   {
     description:
@@ -86,6 +87,7 @@ export const tools: Tool[] = [
     github_url: 'https://github.com/mixpanel/mixpanel-react-native',
     id: 'rec7bddzgKz9FTQG4',
     name: 'Mixpanel',
+    platform: ['Android', 'iOS', 'Web'],
     pricing: ['Free tier', 'Premium tiers'],
     slug: 'mixpanel',
     twitter_url: 'https://twitter.com/mixpanel',
@@ -94,18 +96,17 @@ export const tools: Tool[] = [
   },
   {
     description:
-      'Braintree is a **full-stack payment processing platform** owned by PayPal that lets React Native apps accept credit cards, debit cards, PayPal, Apple Pay, Google Pay, and Venmo through a single SDK.\n\nWith its Drop-in UI and Client SDK, you can add a complete, PCI-compliant checkout flow to your app in hours — and Braintree handles tokenization, fraud detection, and recurring billing on the server side so you never touch raw card data.\n',
+      "Braintree is a **payment processing platform** owned by PayPal that lets mobile apps accept credit and debit cards, PayPal, Venmo, Apple Pay, and Google Pay through one merchant account.\n\nBraintree does not ship an official React Native SDK: React Native apps use the official native iOS and Android SDKs through a native module or a community wrapper, while your server creates client tokens and transactions with Braintree's server SDKs. Braintree handles tokenization, fraud tools, and recurring billing, so your backend never touches raw card data.\n",
     description_success:
-      "1. **Accept every payment method your users expect.** One Braintree integration covers cards, PayPal, Apple Pay, and Google Pay on both iOS and Android — so you stop losing sales to missing payment options at checkout.\n2. **Ship a PCI-compliant checkout in hours, not weeks.** The Drop-in UI component handles card tokenization and validation client-side, meaning your backend never sees raw card numbers and your compliance burden stays minimal.\n3. **Scale revenue without scaling infrastructure.** Braintree's server-side webhooks and subscription APIs handle recurring billing, failed payment retries, and refunds automatically — so your small team can support complex monetization without building payment infrastructure from scratch.\n",
-    features: ['Analytics', 'Integrations'],
-    github_url: 'https://github.com/ekreative/react-native-braintree',
+      "1. **Accept the payment methods your users expect.** One Braintree account covers cards, PayPal, Venmo, Apple Pay, and Google Pay on iOS and Android, so you stop losing sales to a missing payment option at checkout.\n2. **Keep your PCI scope small.** The native Drop-in UI tokenizes card details on the device, so your servers only see a payment method nonce and never raw card numbers.\n3. **Handle subscriptions on the server.** Braintree's recurring billing, webhooks, and automatic retries for failed payments let a small team run subscription billing without building payment infrastructure from scratch.\n",
+    features: ['Integrations'],
     id: 'rec8VkLjRUcNej4eS',
     name: 'Braintree',
     platform: ['Android', 'iOS'],
     pricing: ['Pay as-you-go'],
     slug: 'braintree',
     type: ['Payments & Subscriptions'],
-    website_url: 'https://www.braintreepayments.com/',
+    website_url: 'https://www.paypal.com/us/braintree',
   },
   {
     description:
@@ -153,7 +154,8 @@ export const tools: Tool[] = [
     description_success:
       '1. **Reduce the risk of every release.** Wrap new features in a flag and release to a small percentage of users first. If something breaks, disable the flag instantly — no hotfix, no app store review, no rollback required.\n2. **Improve the user experience with targeted rollouts.** Target specific users, devices, or app versions with new features before the general release, gathering real feedback from your most engaged users without exposing everyone to unfinished work.\n3. **Increase release velocity without increasing risk.** With feature flags separating deploy from release, your team ships code continuously and coordinates launches around business events — not the next available engineer weekend.\n',
     features: ['Feature flags', 'Session tracking'],
-    github_url: 'https://github.com/launchdarkly/react-native-client-sdk',
+    github_url:
+      'https://github.com/launchdarkly/js-core/tree/main/packages/sdk/react-native',
     id: 'recI6x4s0zmjf0rOb',
     name: 'LaunchDarkly',
     platform: ['Android', 'iOS', 'macOS', 'tvOS', 'Web', 'Windows', 'Unity'],
@@ -172,12 +174,12 @@ export const tools: Tool[] = [
     github_url:
       'https://github.com/ZEGOCLOUD/zego_uikit_prebuilt_call_example_rn',
     id: 'recIAkp0BimbjQWjY',
-    name: 'zegocloud',
+    name: 'ZEGOCLOUD',
     platform: ['Android', 'iOS'],
     pricing: ['Free trial', 'Pay as-you-go'],
     slug: 'zegocloud',
     twitter_url: 'https://twitter.com/ZEGOCLOUD_Dev',
-    type: ['CI/CD & Release'],
+    type: ['Backend & APIs'],
     website_url: 'https://www.zegocloud.com/',
   },
   {
@@ -244,19 +246,17 @@ export const tools: Tool[] = [
   },
   {
     description:
-      'Waldo is a **no-code mobile testing platform** that lets React Native teams record, automate, and run end-to-end tests on real iOS and Android devices — without writing a single line of test code.\n\nBy integrating directly into your CI/CD pipeline, Waldo runs smoke tests on every pull request and delivers video reports with network logs and app traces — so engineers catch broken user flows before merging, not after a user files a bug report.\n',
+      "Waldo was a **no-code mobile testing platform** that let React Native teams record end-to-end tests on iOS and Android and run them on every pull request, without writing test code.\n\nTricentis acquired Waldo in July 2023 and folded its technology into **Tricentis Testim Mobile**, where Waldo's virtual device grid now runs no-code mobile tests. The standalone waldo.com site is no longer online, so new teams should start with Testim Mobile or an open-source alternative such as Maestro or Detox.\n",
     description_success:
-      "1. **Protect your critical user flows on every PR.** Set up smoke tests for Login, Signup, Checkout, and other core screens once — Waldo runs them automatically on every branch so broken flows never make it to main.\n2. **Give QA superpowers without engineering involvement.** Non-technical team members record test sessions on selected devices using Waldo's UI — QA and product managers create and maintain tests independently, freeing your engineers for feature work.\n3. **Debug failures in seconds with full video evidence.** Every failed test comes with a video replay, captured network requests, and app logs — your team reproduces the exact failure conditions immediately instead of spending hours trying to replicate a flaky environment.\n",
+      '1. **Keep no-code tests for your critical flows.** Testim Mobile records Login, Signup, and Checkout flows on iOS and Android, so product and QA people can maintain end-to-end tests without engineering help.\n2. **Run tests on virtual devices in CI.** The Virtual Mobile Grid that came from Waldo runs your suite on emulators and simulators from your pipeline, so you get feedback on every pull request without maintaining a device lab.\n3. **Choose open source if you prefer code.** If your team would rather keep tests in the repo, Maestro (YAML flows) and Detox (gray-box JavaScript tests) are the two most common React Native options.\n',
     features: ['Video'],
-    github_url: 'https://github.com/waldoapp/fastlane-plugin-waldo',
     id: 'recMXWD3QR2asK5uQ',
     name: 'Waldo',
     platform: ['Android', 'iOS'],
     pricing: ['Free trial', 'Premium tiers'],
     slug: 'waldo',
-    twitter_url: 'https://twitter.com/UseWaldo',
-    type: ['Backend & APIs'],
-    website_url: 'https://www.waldo.com/',
+    type: ['CI/CD & Release'],
+    website_url: 'https://www.tricentis.com/products/testim-mobile',
   },
   {
     description:
@@ -264,9 +264,10 @@ export const tools: Tool[] = [
     description_success:
       '1. **Replace five analytics tools with one.** PostHog covers events, session replay, feature flags, and A/B tests under a single SDK and dashboard — eliminating the integration overhead of stitching together Mixpanel, LaunchDarkly, and Hotjar just to understand your users.\n2. **Own your data, no vendor lock-in.** Self-host PostHog on your own infrastructure to keep all user data within your control — critical for apps handling sensitive data, healthcare workloads, or customers with strict compliance requirements.\n3. **Iterate faster with integrated feature flags.** Define a feature flag in PostHog, roll it out to 10% of users, track the analytics impact in the same tool, and graduate the rollout — the entire experiment lifecycle lives in one place, so nothing falls through the cracks between tools.\n',
     features: ['A / B testing', 'Analytics', 'Feature flags'],
-    github_url: 'https://github.com/PostHog/posthog-react-native',
+    github_url:
+      'https://github.com/PostHog/posthog-js/tree/main/packages/react-native',
     id: 'recMXZGNue9gXJ2oD',
-    name: 'Posthog',
+    name: 'PostHog',
     platform: ['Android', 'iOS', 'Web'],
     pricing: ['Open source', 'Free tier', 'Premium tiers', 'Pay as-you-go'],
     slug: 'posthog',
@@ -276,26 +277,20 @@ export const tools: Tool[] = [
   },
   {
     description:
-      'AWS Amplify is a **full-stack development platform** that lets React Native developers build, deploy, and scale mobile backends on AWS without becoming a cloud infrastructure expert.\n\nFrom the terminal, you can provision authentication, REST and GraphQL APIs, real-time databases, file storage, push notifications, and CI/CD pipelines — all configured through Amplify CLI and managed as infrastructure-as-code.\n',
+      'AWS Amplify is a **full-stack development platform** that lets React Native developers build, deploy, and scale mobile backends on AWS without becoming a cloud infrastructure expert.\n\nWith Amplify Gen 2, you define authentication, data models, file storage, and functions in TypeScript inside your repo, and Amplify provisions the matching AWS resources (Cognito, AppSync, DynamoDB, S3, Lambda) for each environment and pull request.\n',
     description_success:
-      "1. **Provision a production-ready backend in one command.** `amplify init` followed by `amplify add auth` gives you a complete Cognito-backed authentication system — sign-up, sign-in, MFA, and social login — with zero AWS console configuration required.\n2. **Scale from prototype to production on battle-tested AWS infrastructure.** Amplify abstracts DynamoDB, S3, Lambda, and AppSync behind simple configuration, so your React Native app inherits enterprise-grade scalability without the operational overhead of managing those services directly.\n3. **Ship full-stack features independently.** Backend changes deploy through Amplify's CI/CD pipeline separately from your app — so your team updates APIs, auth rules, or storage without waiting for an app store release.\n",
+      "1. **Get production-ready auth in a few lines of TypeScript.** `defineAuth` gives you a complete Cognito-backed authentication system with sign-up, sign-in, MFA, and social login, and a personal cloud sandbox to test it before you deploy.\n2. **Scale from prototype to production on AWS.** Amplify puts DynamoDB, S3, Lambda, and AppSync behind simple TypeScript definitions, so your React Native app runs on AWS infrastructure without your team operating those services by hand.\n3. **Ship backend changes without an app release.** Backend changes deploy from Git through Amplify's CI/CD pipeline, separately from your app, so you update APIs, auth rules, or storage without waiting for App Store review.\n",
     features: [
       'Auth',
       'Auth - Social Login ',
       'Auth - Multi-factor',
-      'Push notifications',
       'GraphQL',
+      'Real-time database',
+      'Cloud storage',
+      'Cloud function',
       'Hosting',
       'CLI',
-      'Cloud storage',
-      'Geolocation',
-      'AR / VR',
       'AI / ML Predictions',
-      'PubSub',
-      'Analytics',
-      'Real-time database',
-      'Cloud function',
-      'Deep Linking',
     ],
     github_url: 'https://github.com/aws-amplify/amplify-js',
     id: 'recPn4JmIKEEbbtII',
@@ -317,6 +312,7 @@ export const tools: Tool[] = [
     id: 'recQbHiwOM3PXmaPC',
     name: 'Hasura',
     platform: ['Android', 'iOS', 'Web'],
+    pricing: ['Open source', 'Free tier', 'Premium tiers'],
     slug: 'hasura',
     twitter_url: 'https://twitter.com/HasuraHQ',
     type: ['Backend & APIs', 'Database & Storage'],
@@ -328,7 +324,8 @@ export const tools: Tool[] = [
     description_success:
       "1. **Own your user data with no vendor lock-in.** Self-host FusionAuth on any cloud or on-premise server — your user database stays under your control, no data leaves your infrastructure, and you're never subject to a third-party's policy changes or pricing increases.\n2. **Ship complete auth in days, not weeks.** FusionAuth provides pre-built login, registration, MFA, and OAuth flows out of the box, with a React Native example app in the official docs — so your team implements production-grade auth without building it from scratch.\n3. **Handle every authentication use case in one platform.** SSO, passwordless, social login, SAML, LDAP, and biometric auth are all supported — so as your user base grows and your enterprise customers arrive with their own identity requirements, FusionAuth already has you covered.\n",
     features: ['Auth'],
-    github_url: 'https://github.com/FusionAuth/fusionauth-example-react-native',
+    github_url:
+      'https://github.com/FusionAuth/fusionauth-quickstart-react-native',
     id: 'recRFVW9jgQv4FrZz',
     name: 'FusionAuth',
     pricing: ['Free tier', 'Premium tiers', 'Open source'],
@@ -343,44 +340,30 @@ export const tools: Tool[] = [
     description_success:
       "1. **Ship authentication in hours, not sprints.** Clerk's pre-built sign-in and sign-up components handle every edge case — password reset, email verification, OAuth callbacks — so your team implements complete auth without writing a single authentication screen from scratch.\n2. **Protect every route and API with one line of code.** Clerk's middleware and session tokens work across your React Native app and backend, giving you consistent user context everywhere without custom token validation logic.\n3. **Manage users without building an admin panel.** Clerk's dashboard gives your team visibility into every user account, active sessions, and authentication history — so support and ops can resolve account issues without engineering involvement.\n",
     features: ['Auth', 'Auth - Multi-factor', 'Auth - Social Login '],
+    github_url: 'https://github.com/clerk/javascript/tree/main/packages/expo',
     id: 'recRLncgjgRtXGiGa',
     name: 'Clerk',
+    platform: ['Android', 'iOS', 'Web'],
+    pricing: ['Free tier', 'Premium tiers'],
     slug: 'clerk',
     type: ['Auth & Identity'],
     website_url: 'https://clerk.com/',
   },
   {
     description:
-      'WunderGraph is an **end-to-end API integration framework** that lets React Native developers compose multiple APIs — REST, GraphQL, databases, and auth providers — into a single, type-safe client with one configuration file.\n\nInstead of writing custom API clients for every service your app talks to, WunderGraph auto-generates operations and TypeScript types from your API schema — so your frontend always has a type-safe, cached, and secured interface to your backend with security and caching built in.\n',
+      'WunderGraph started as an **API integration framework** (the WunderGraph BFF SDK) that composed REST, GraphQL, and database APIs into one type-safe client for frontend and React Native apps.\n\n**The BFF SDK has been sunset.** WunderGraph now focuses entirely on **Cosmo**, an open-source GraphQL Federation platform with a router, schema registry, and analytics. Cosmo is a backend tool: your React Native app talks to the Cosmo router like any other GraphQL endpoint, using a client such as Apollo Client or urql.\n',
     description_success:
-      "1. **Eliminate the API integration backlog.** WunderGraph auto-generates a fully typed client for all your APIs from a single config — no more hand-writing fetch wrappers, normalizing response shapes, or debugging CORS issues for each new service you integrate.\n2. **Ship secure APIs by default.** WunderGraph's BFF (Backend for Frontend) architecture means sensitive API credentials and logic stay server-side, never exposed to your React Native client — reducing your attack surface without extra security code.\n3. **Move faster with instant type safety.** Generated TypeScript types for every API operation mean your IDE autocompletes API calls, catches breaking changes at build time, and eliminates the runtime type errors that slow down mobile development.\n",
-    features: [
-      'Analytics',
-      'Auth',
-      'Auth - Multi-factor',
-      'Auth - Social Login ',
-      'CLI',
-      'Cloud function',
-      'GraphQL',
-      'Image & file upload',
-      'Offline',
-      'Real-time database',
-    ],
-    github_url: 'https://github.com/wundergraph/wundergraph',
+      "1. **Serve one GraphQL API from many services.** Cosmo federates several backend subgraphs behind a single router, so your React Native app queries one endpoint instead of calling each service separately.\n2. **Catch breaking schema changes before they ship.** Cosmo's schema registry checks every change against the operations your clients actually send, which protects older app versions that are still installed on users' phones.\n3. **See how mobile clients use your API.** Cosmo's analytics and tracing show which fields and operations each client calls, so you know when it is safe to remove a field that old app builds might still request.\n",
+    features: ['GraphQL', 'Analytics', 'CLI'],
+    github_url: 'https://github.com/wundergraph/cosmo',
     id: 'recRh2QjhDDju1i4G',
     name: 'WunderGraph',
     platform: ['Android', 'iOS', 'macOS', 'Web', 'Windows'],
-    pricing: [
-      'Open source',
-      'Premium tiers',
-      'Free tier',
-      'Free trial',
-      'Pay as-you-go',
-    ],
+    pricing: ['Open source', 'Free tier', 'Premium tiers'],
     slug: 'wundergraph',
     twitter_url: 'https://twitter.com/wundergraphcom',
     type: ['Backend & APIs'],
-    website_url: 'https://wundergraph.com/',
+    website_url: 'https://wundergraph.com/cosmo',
   },
   {
     description:
@@ -400,15 +383,13 @@ export const tools: Tool[] = [
   },
   {
     description:
-      'Flurry is a **free mobile analytics platform** from Yahoo that provides React Native developers with install tracking, active user metrics, event funnels, audience segmentation, push notifications, and crash reporting — all in a single SDK.\n\nFor indie developers and small teams that need a comprehensive analytics baseline without paying for premium tools, Flurry offers a surprisingly deep feature set covering the full analytics lifecycle from acquisition to retention.\n',
+      'Flurry was a **free mobile analytics platform** from Yahoo that gave React Native developers install tracking, active users, event funnels, audience segmentation, and crash reporting in one SDK.\n\n**Flurry has been shut down.** Yahoo sunset Flurry Analytics, including the SDK and the analytics dashboard, on **March 15, 2024**. New sign-ups and integrations are no longer possible, and apps still shipping the Flurry SDK should remove it and move to another analytics tool.\n',
     description_success:
-      "1. **Get complete app analytics with zero budget.** Flurry's free tier covers installs, DAU/MAU, custom events, crashes, and push notifications — giving bootstrapped React Native apps the same analytical visibility as well-funded competitors without the monthly tool bill.\n2. **Understand acquisition and retention in one dashboard.** Flurry connects install source attribution to in-app behavior, so you can see which marketing channels bring users who actually stick around — not just users who install and churn.\n3. **Re-engage churned users with targeted push campaigns.** Flurry's audience segmentation lets you define cohorts by behavior (e.g., \"users who haven't opened in 7 days\") and send targeted re-engagement notifications without building a separate push infrastructure.\n",
+      '1. **Remove the dead SDK.** The Flurry SDK no longer reports anywhere, so deleting `react-native-flurry-sdk` cuts app size and removes a native dependency you would otherwise have to keep upgrading.\n2. **Pick a free replacement.** Firebase Analytics is the closest free equivalent for installs, events, and audiences; PostHog and Mixpanel add funnels, retention, and feature flags with generous free tiers; Vexo is built specifically for React Native.\n3. **Rebuild your tracking plan, not just the SDK.** Use the migration to list the events that actually drive decisions, so your new tool starts with clean data instead of years of unused Flurry events.\n',
     features: [
       'Events tracking',
       'Install tracking',
       'Audience segmentation',
-      'Push notifications',
-      'Audience retargeting',
       'Crash reporting',
     ],
     github_url: 'https://github.com/flurry/react-native-flurry-sdk',
@@ -434,7 +415,6 @@ export const tools: Tool[] = [
       'AI / ML Predictions',
       'Cloud function',
       'Cloud storage',
-      'Deep Linking',
     ],
     github_url: 'https://github.com/invertase/react-native-firebase',
     id: 'recXY5f6J6Ryht5wz',
@@ -467,7 +447,7 @@ export const tools: Tool[] = [
     pricing: ['Premium tiers', 'Free trial'],
     slug: 'pushwoosh',
     twitter_url: 'https://twitter.com/Pushwoosh',
-    type: ['CI/CD & Release'],
+    type: ['Backend & APIs'],
     website_url: 'https://www.pushwoosh.com',
   },
   {
@@ -494,7 +474,7 @@ export const tools: Tool[] = [
     description_success:
       "1. **Give your content team an admin panel without building one.** Strapi's visual content type builder and admin UI let non-developers create, edit, and publish content independently — so your React Native app always has fresh content without a developer being in the loop for every change.\n2. **Ship faster with a flexible, auto-generated API.** Define your content models in Strapi's builder and get REST and GraphQL endpoints automatically — no API code to write, no endpoint documentation to maintain, and a type-safe query layer for your React Native app from day one.\n3. **Own your content infrastructure with full customization.** Self-host Strapi on any cloud provider with full access to the source code — extend it with custom plugins, webhooks, and lifecycle hooks, or upgrade to Strapi Cloud for a managed option — without ever being locked into a proprietary platform.\n",
     features: ['GraphQL'],
-    github_url: 'https://github.com/phidn/awesome-react-native-strapi-starter',
+    github_url: 'https://github.com/strapi/strapi',
     id: 'recZt8NrvzeBJ9WTn',
     name: 'Strapi',
     platform: ['Android', 'iOS', 'macOS', 'Web', 'Windows'],
@@ -555,18 +535,18 @@ export const tools: Tool[] = [
   },
   {
     description:
-      '`react-native-iap` is the **most popular open-source library for in-app purchases in React Native**, supporting both iOS App Store (StoreKit) and Android Google Play Billing — including subscriptions, consumables, non-consumables, and Amazon IAP.\n\nIt provides a consistent JavaScript API across all three platforms, handling the complex platform-specific purchase flows, receipt validation hooks, and subscription status updates — so you implement one purchasing logic that works everywhere.\n',
+      '`react-native-iap` is the **most popular open-source library for in-app purchases in React Native**, supporting both the iOS App Store (StoreKit 2) and Google Play Billing, including subscriptions, consumables, and non-consumables.\n\nThe library now follows the **OpenIAP** specification and is developed in the `hyodotdev/openiap` monorepo, next to `expo-iap` and the native OpenIAP implementations. The npm package name is unchanged, so `npm install react-native-iap` keeps working.\n',
     description_success:
-      '1. **Monetize your app on all platforms with a single API.** `react-native-iap` abstracts iOS StoreKit, Google Play Billing, and Amazon IAP behind one consistent interface — so your purchase logic, subscription management, and receipt handling code works on every platform without platform-specific branches.\n2. **Reduce revenue loss from unvalidated receipts.** The library exposes receipt data in a standardized format that you can forward to your server for validation — preventing fraudulent purchases from slipping through without building your own StoreKit/Billing integration.\n3. **Handle subscription lifecycle events correctly.** `react-native-iap` provides purchase update listeners that fire on renewal, cancellation, and billing issues — so your app responds to subscription state changes in real time instead of discovering them only on the next launch.\n',
+      '1. **Sell on both stores with a single API.** `react-native-iap` puts StoreKit and Google Play Billing behind one consistent interface, so your purchase and subscription code works on iOS and Android without platform-specific branches.\n2. **Validate purchases on your server.** The library returns purchase data in a standard format that you send to your backend for verification, so fraudulent purchases do not unlock paid content.\n3. **React to subscription changes as they happen.** Purchase update listeners fire on new purchases, renewals, and errors, so your app updates access right away instead of finding out on the next launch.\n',
     features: ['Other'],
-    github_url: 'https://github.com/dooboolab-community/react-native-iap',
+    github_url: 'https://github.com/hyodotdev/openiap',
     id: 'recbseR7a3VeMnHmb',
     name: 'react-native-iap',
     platform: ['iOS', 'Android'],
     pricing: ['Open source'],
     slug: 'react-native-iap',
     type: ['Payments & Subscriptions'],
-    website_url: 'https://react-native-iap.dooboolab.com/docs/get-started/',
+    website_url: 'https://www.openiap.dev/docs/setup/react-native',
   },
   {
     description:
@@ -574,8 +554,7 @@ export const tools: Tool[] = [
     description_success:
       "1. **Ship auth in a day with battle-tested security.** Auth0's React Native SDK provides pre-built login, registration, and token refresh flows that handle every edge case — PKCE, silent refresh, biometric unlock — so your team never writes vulnerable authentication code from scratch.\n2. **Meet enterprise customer requirements without building enterprise features.** When a business customer asks for SAML SSO, SCIM provisioning, or custom MFA — Auth0 already supports it — so your sales team says yes instead of \"we'll add it to the roadmap.\"\n3. **Protect every API endpoint with zero configuration.** Auth0's access tokens work natively with your React Native app and backend, giving you a consistent, verified user identity in every API call without custom token validation middleware.\n",
     features: ['Auth', 'Auth - Social Login ', 'Auth - Multi-factor'],
-    github_url:
-      'https://github.com/auth0-samples/auth0-react-native-sample/tree/master/00-Login-Hooks',
+    github_url: 'https://github.com/auth0/react-native-auth0',
     id: 'recdtu5o6p40gOu37',
     name: 'Auth0',
     pricing: ['Free tier', 'Premium tiers'],
@@ -589,7 +568,7 @@ export const tools: Tool[] = [
       'React Native MMKV is the **fastest key-value storage library for React Native**, leveraging the MMKV storage framework originally built by WeChat — delivering read and write speeds approximately 30x faster than AsyncStorage.\n\nWith synchronous reads, AES encryption support, and a simple key-value API, MMKV is the go-to replacement for AsyncStorage in performance-critical React Native apps — handling user preferences, session tokens, and cached data without the async overhead that causes UI jank.\n',
     description_success:
       "1. **Eliminate UI stutter caused by slow storage reads.** MMKV's synchronous API means you read user preferences and session tokens instantly on the JS thread — no `await`, no loading states, no flickering UI while your app waits for AsyncStorage to return a value.\n2. **Secure sensitive data with built-in AES encryption.** MMKV supports transparent encryption with a single `encryptionKey` parameter — store auth tokens, API keys, and user data with encryption-at-rest without integrating a separate keychain library.\n3. **Drop in as an AsyncStorage replacement in minutes.** MMKV's API mirrors AsyncStorage closely, and community wrappers make migration trivial — so you get a 30x storage performance improvement with a minimal diff to your existing code.\n",
-    github_url: 'https://github.com/mrousavy/react-native-mmkv',
+    github_url: 'https://github.com/margelo/react-native-mmkv',
     id: 'recfVAxGQNNd1Ok9n',
     name: 'React Native MMKV',
     platform: ['Android', 'iOS'],
@@ -597,7 +576,7 @@ export const tools: Tool[] = [
     slug: 'react-native-mmkv',
     twitter_url: 'https://twitter.com/mrousavy',
     type: ['Database & Storage'],
-    website_url: 'https://github.com/mrousavy/react-native-mmkv',
+    website_url: 'https://github.com/margelo/react-native-mmkv',
   },
   {
     description:
@@ -641,7 +620,7 @@ export const tools: Tool[] = [
     description_success:
       "1. **Stop guessing, start watching.** LogRocket's session replay shows you the exact sequence of user actions, screen states, and network requests that led to a bug — your team reproduces any reported issue instantly without needing the user on a call to demonstrate it.\n2. **Combine visual replay with technical context.** Every session recording is annotated with Redux state changes, console errors, and API response times — so you see both what the user saw and what was happening in the app simultaneously.\n3. **Proactively catch issues before user reports.** LogRocket's anomaly detection surfaces sessions where users rage-tapped, hit errors, or saw degraded performance — so your team finds and fixes friction points before they accumulate into bad App Store reviews.\n",
     features: ['Crash reporting'],
-    github_url: 'https://docs.logrocket.com/docs/react-native',
+    github_url: 'https://docs.logrocket.com/reference/react-native',
     id: 'rechLPQrH2pc7o9WY',
     name: 'LogRocket',
     platform: ['Android', 'iOS', 'Web'],
@@ -679,15 +658,15 @@ export const tools: Tool[] = [
       'Google Wallet',
       'Localization',
     ],
-    github_url: 'https://github.com/urbanairship/react-native-module',
+    github_url: 'https://github.com/urbanairship/react-native-airship',
     id: 'recj0iM37aM6CNleb',
     name: 'Airship',
     platform: ['Android', 'iOS', 'Web'],
     pricing: ['Premium tiers'],
     slug: 'airship',
     twitter_url: 'https://twitter.com/airship',
-    type: ['CI/CD & Release'],
-    website_url: 'https://docs.airship.com/platform/mobile/',
+    type: ['Backend & APIs'],
+    website_url: 'https://www.airship.com/docs/platform/mobile/',
   },
   {
     description:
@@ -737,6 +716,7 @@ export const tools: Tool[] = [
     id: 'recmwNkublGYk6O47',
     name: 'OneSignal',
     platform: ['Android', 'iOS', 'Web'],
+    pricing: ['Free tier', 'Premium tiers'],
     slug: 'onesignal',
     type: ['Backend & APIs'],
     website_url: 'https://onesignal.com',
@@ -772,15 +752,15 @@ export const tools: Tool[] = [
   },
   {
     description:
-      'PlanetScale is a **MySQL-compatible serverless database platform** built on Vitess — the same database sharding technology that powers YouTube and Google — designed to give React Native backend teams the scalability of Google-scale infrastructure with the familiarity of MySQL.\n\nWith branching workflows, non-blocking schema changes, and automatic query optimization, PlanetScale brings a developer-friendly Git-like workflow to database operations — so your team deploys schema changes safely without locking tables or causing downtime.\n',
+      'PlanetScale is a **managed cloud database platform** that runs both MySQL on Vitess (the sharding technology built at YouTube) and Postgres, designed for teams whose React Native backend needs to scale without a dedicated database administrator.\n\nWith database branching, non-blocking schema changes, and query insights, PlanetScale brings a Git-like workflow to database operations, so your team ships schema changes without locking tables or causing downtime. Your React Native app never connects to it directly: it talks to your API, which uses PlanetScale as its database.\n',
     description_success:
-      "1. **Deploy schema changes without downtime or table locks.** PlanetScale's branching model lets you propose, test, and merge database schema changes like pull requests — non-blocking migrations run automatically, so your React Native app's backend updates without a maintenance window or degraded user experience.\n2. **Scale your database without a DBA.** PlanetScale's Vitess foundation handles horizontal sharding automatically as your data grows — so the same database setup that works for your first 1,000 users scales to your first 10 million without re-architecting your data layer.\n3. **Ship faster with database branches.** Create a PlanetScale branch for every feature branch — test risky schema changes in isolation before merging to production, and roll back instantly if something goes wrong — without affecting your live React Native app's database.\n",
+      "1. **Deploy schema changes without downtime or table locks.** PlanetScale's deploy requests let you propose, review, and merge schema changes like pull requests, so your app's backend updates without a maintenance window.\n2. **Scale your database without a DBA.** Vitess handles horizontal sharding as your data grows, so the setup that works for your first thousand users still works at millions without re-architecting your data layer.\n3. **Test risky changes on a branch.** Create a database branch for each feature branch, try the migration in isolation, and only then merge it to production, without touching the live database your app depends on.\n",
     features: ['Cloud function', 'Real-time database'],
     github_url: 'https://github.com/planetscale/database-js',
     id: 'recqlao2CHN3Ym5eH',
     name: 'PlanetScale',
     platform: ['Android', 'iOS', 'Web'],
-    pricing: ['Free tier', 'Premium tiers'],
+    pricing: ['Pay as-you-go', 'Premium tiers'],
     slug: 'planetscale',
     twitter_url: 'https://twitter.com/planetscaledata',
     type: ['Database & Storage'],
@@ -792,20 +772,20 @@ export const tools: Tool[] = [
     description_success:
       "1. **Prioritize bugs by user impact, not just frequency.** Bugsnag's stability score shows you the percentage of crash-free sessions for each app version — so your team fixes the errors affecting the most users first, not just the errors that appeared most recently in your error inbox.\n2. **Reproduce crashes with complete diagnostic context.** Every Bugsnag error report includes device state, app version, recent breadcrumbs, and the full stack trace with source-mapped JavaScript — your engineers diagnose the root cause in the report, not in a 45-minute debugging session.\n3. **Release confidently with real-time stability monitoring.** Bugsnag's release tracking dashboard shows error rates climbing or falling for each deploy — so your team catches stability regressions in the first hour after a release, not after it reaches all users and damages your App Store rating.\n",
     features: ['Crash reporting'],
-    github_url: 'https://docs.bugsnag.com/platforms/react-native/expo/',
+    github_url: 'https://github.com/bugsnag/bugsnag-js',
     id: 'recqyttqfExh8posU',
     name: 'BugSnag',
     platform: ['Android', 'iOS', 'Web'],
     pricing: ['Free tier', 'Premium tiers'],
     slug: 'bugsnag',
     type: ['Error Monitoring'],
-    website_url: 'https://www.bugsnag.com',
+    website_url: 'https://docs.bugsnag.com/platforms/react-native/',
   },
   {
     description:
-      'Instabug is a **mobile bug reporting and in-app feedback platform** that makes it easy for users to report issues directly from your React Native app — by shaking the device or tapping a floating button — and automatically attaches a screenshot, session recording, device info, and logs to every report.\n\nTrusted by 25,000+ mobile teams, Instabug reduces the feedback loop between your users and your engineers from days of back-and-forth to minutes — giving your team reproducible, context-rich bug reports instead of vague "the app crashed" tickets.\n',
+      'Luciq, **formerly Instabug**, is a **mobile observability and bug reporting platform** for React Native apps. Users report issues by shaking the device or tapping a floating button, and every report automatically includes a screenshot, a screen recording, device details, and logs.\n\nInstabug rebranded as Luciq in September 2025 and now positions itself as an AI-powered mobile observability platform, adding crash reporting, app performance monitoring, and AI-assisted crash resolution on top of bug reporting. The React Native SDK moved from `instabug-reactnative` to the new Luciq SDK, with a migration guide in the Luciq docs.\n',
     description_success:
-      "1. **Get reproducible bug reports with zero extra effort from users.** When a user reports an issue through Instabug, it automatically attaches the last 60 seconds of screen recording, network requests, console logs, and device state — so your engineers have everything they need to reproduce the bug immediately.\n2. **Understand user behavior to build a better app.** Instabug's in-app surveys and feedback widgets give you direct qualitative insight from your most engaged users — identifying the UX friction, missing features, and confusing flows that structured analytics can't reveal.\n3. **Reduce churn by fixing issues before they accumulate.** Instabug's crash tracking and user feedback loop lets your team identify and resolve high-impact issues within hours of release — keeping your App Store rating high, your users happy, and your churn rate low.\n",
+      '1. **Get reproducible bug reports with no extra effort from users.** Each report arrives with a screen recording, network requests, console logs, and device state, so your engineers can reproduce the bug immediately instead of asking the user for details.\n2. **Hear from users inside the app.** In-app surveys and feedback widgets collect qualitative feedback from your most engaged users and surface the UX friction that analytics alone does not show.\n3. **Fix the crashes that matter first.** Crash reporting and performance monitoring rank issues by how many users they affect, so your team fixes high-impact problems within hours of a release and keeps your store rating up.\n',
     features: [
       'Analytics',
       'Crash reporting',
@@ -815,15 +795,14 @@ export const tools: Tool[] = [
       'In-app surveys',
       'User feedback management',
     ],
-    github_url: 'https://github.com/Instabug/Instabug-React-Native',
+    github_url: 'https://github.com/luciqai/luciq-reactnative-sdk',
     id: 'recrKm6FFFxPIHjn8',
-    name: 'Instabug',
+    name: 'Luciq (formerly Instabug)',
     platform: ['iOS', 'Android', 'Unity'],
     pricing: ['Free tier', 'Premium tiers'],
     slug: 'instabug',
-    twitter_url: 'https://twitter.com/instabug',
     type: ['Error Monitoring'],
-    website_url: 'https://www.instabug.com/platforms/react-native',
+    website_url: 'https://docs.luciq.ai/react-native',
   },
   {
     description:
@@ -846,12 +825,11 @@ export const tools: Tool[] = [
     description_success:
       "1. **Ship a full-stack React Native app with a single backend.** Supabase Auth, Postgres database, and Storage bucket give you everything a mobile app needs — user accounts, relational data, and file uploads — with auto-generated REST and GraphQL APIs, so your team focuses on the product, not the infrastructure.\n2. **Own your data with a real SQL database.** Unlike Firebase's NoSQL model, Supabase gives you PostgreSQL — full SQL queries, foreign keys, and row-level security policies — so you model complex data correctly from day one instead of working around NoSQL limitations as your app scales.\n3. **Add real-time features without a WebSocket server.** Supabase Realtime streams database changes to your React Native app as they happen — build live feeds, collaborative editing, and notification triggers by subscribing to table changes, with zero additional infrastructure to manage.\n",
     features: ['Auth', 'Real-time database'],
-    github_url:
-      'https://github.com/supabase/supabase/tree/master/examples/expo-todo-list',
+    github_url: 'https://github.com/supabase/supabase-js',
     id: 'recx8kDZRBP3jj79y',
     name: 'Supabase',
     platform: ['Android', 'iOS', 'Web'],
-    pricing: ['Open source'],
+    pricing: ['Open source', 'Free tier', 'Premium tiers'],
     slug: 'supabase',
     twitter_url: 'https://twitter.com/supabase',
     type: ['Backend & APIs', 'Database & Storage', 'Auth & Identity'],
@@ -892,5 +870,21 @@ export const tools: Tool[] = [
     slug: 'revopush',
     type: ['CI/CD & Release'],
     website_url: 'https://revopush.org/',
+  },
+  {
+    description:
+      'Adyen is a **global payments platform** used by companies like Uber, Spotify, and Microsoft to accept cards, wallets, and local payment methods in a single integration. Its official React Native SDK, `@adyen/react-native`, brings Adyen Drop-in and Components to iOS and Android.\n\nWith one SDK you can offer cards, Apple Pay, Google Pay, and dozens of regional methods like iDEAL, Klarna, or Swish, with 3D Secure 2 authentication and PCI-compliant card handling built in. Adyen acts as both gateway and acquirer, so payments, risk management, and payouts live on one platform.\n',
+    description_success:
+      '1. **Ship a complete checkout with Drop-in.** Drop-in renders every payment method enabled on your Adyen account in a ready-made, native UI, so a React Native team gets a PCI-compliant checkout without building card forms or 3D Secure flows.\n2. **Sell in new markets without new integrations.** Turning on a local payment method is a configuration change in the Customer Area, not an app release, which lets you add iDEAL in the Netherlands or Pix in Brazil when you expand.\n3. **Keep payments, fraud, and reporting in one place.** Adyen processes the transaction end to end and scores it with its built-in risk engine, so your backend handles one set of webhooks and your finance team reconciles from one dashboard.\n',
+    features: ['Integrations'],
+    github_url: 'https://github.com/Adyen/adyen-react-native',
+    id: 'recAdyenPayments01',
+    name: 'Adyen',
+    platform: ['Android', 'iOS'],
+    pricing: ['Pay as-you-go'],
+    slug: 'adyen',
+    twitter_url: 'https://twitter.com/Adyen',
+    type: ['Payments & Subscriptions'],
+    website_url: 'https://docs.adyen.com/',
   },
 ];
