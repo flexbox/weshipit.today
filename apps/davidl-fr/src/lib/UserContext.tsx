@@ -1,51 +1,46 @@
 import { createContext, useEffect, useState, ReactNode } from 'react';
-import type { MagicUserMetadata } from '@magic-sdk/types';
-import { magic } from '~/lib/magic';
-
-export type MagicUser = MagicUserMetadata;
+import type { User as SupabaseUser } from '@supabase/supabase-js';
+import { supabase } from '~/lib/supabase';
+import type { WorkshopUser } from '~/types/user';
 
 interface UserContextValue {
-  user: MagicUser | null;
-  setUser: (user: MagicUser | null) => void;
   loaded: boolean;
+  user: WorkshopUser | null;
 }
 
 export const UserContext = createContext<UserContextValue>({
-  user: null,
-  setUser: () => {},
   loaded: false,
+  user: null,
 });
 
+export function toWorkshopUser(
+  user: SupabaseUser | null | undefined,
+): WorkshopUser | null {
+  if (!user?.email) return null;
+  return { email: user.email };
+}
+
 export function UserProvider({ children }: { children: ReactNode }) {
-  const [user, setUser] = useState<MagicUser | null>(null);
+  const [user, setUser] = useState<WorkshopUser | null>(null);
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    if (!magic) return;
-    let cancelled = false;
+    if (!supabase) return;
 
-    (async () => {
-      try {
-        const isLoggedIn = await magic.user.isLoggedIn();
-        if (cancelled) return;
-        if (isLoggedIn) {
-          const metadata = await magic.user.getInfo();
-          if (!cancelled) setUser(metadata);
-        }
-      } catch (error) {
-        console.error('[UserProvider] failed to restore session:', error);
-      } finally {
-        if (!cancelled) setLoaded(true);
-      }
-    })();
+    // Fires INITIAL_SESSION once the stored session (or the magic link
+    // fragment) has been read, then on every sign in / sign out.
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(toWorkshopUser(session?.user));
+      setLoaded(true);
+    });
 
-    return () => {
-      cancelled = true;
-    };
+    return () => subscription.unsubscribe();
   }, []);
 
   return (
-    <UserContext.Provider value={{ user, setUser, loaded }}>
+    <UserContext.Provider value={{ loaded, user }}>
       {children}
     </UserContext.Provider>
   );

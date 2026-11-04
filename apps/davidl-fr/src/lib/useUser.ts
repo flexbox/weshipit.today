@@ -1,6 +1,7 @@
 import { useContext, useEffect } from 'react';
 import Router from 'next/router';
 import { UserContext } from '~/lib/UserContext';
+import { saveReturnTo } from '~/lib/returnTo';
 
 export function useUser({
   redirectTo = '/workshop/login',
@@ -17,6 +18,8 @@ export function useUser({
       // If redirectIfFound is also set, redirect if the user was found
       (redirectIfFound && hasUser)
     ) {
+      // Remember where the visitor was headed so the magic link brings them back.
+      if (!hasUser) saveReturnTo(Router.asPath);
       Router.push(redirectTo);
     }
   }, [redirectTo, redirectIfFound, loaded, hasUser]);
