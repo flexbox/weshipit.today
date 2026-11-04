@@ -5,6 +5,7 @@
 - Content managed with [Prismic](https://davidl.prismic.io)
 - Styled with [Tailwind CSS](https://tailwindcss.com) and styled-components
 - Auth with [Supabase](https://supabase.com) magic links (project `bootcamp`)
+- Auth with [Resend](https://resend.com) for sending login emails through Supabase
 
 ## Getting started
 
@@ -57,8 +58,6 @@ yarn davidl-fr:supabase migration list
 ```
 
 The GitHub integration watches the `apps/davidl-fr` working directory. Migrations merged into `main` are applied to production automatically, so you only need `db:push` for changes you want live before merging.
-
-`supabase/config.toml` only configures the local stack (`supabase start`). Set the hosted auth URLs in the dashboard under Authentication → URL Configuration: Site URL `https://davidl.fr`, plus the `/workshop/auth/callback` redirect URLs.
 
 ## New `/mobile/[slug]` page
 
