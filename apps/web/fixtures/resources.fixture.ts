@@ -17,9 +17,9 @@ export const resources = {
         name: 'React Native Radio',
         slack_url: 'http://community.infinite.red',
         type: ['Podcast'],
-        website_url: 'https://reactnativeradio.com/',
+        website_url: 'https://infinite.red/react-native-radio',
         youtube_url:
-          'https://www.youtube.com/playlist?list=PLFHvL21g9bk1qmsf-3cWRxwOGmPX00Ddw',
+          'https://www.youtube.com/playlist?list=PLFHvL21g9bk0HKMhHLDtlMwxy2Qpv4GHg',
       },
       id: 'rec160LFXZiBkbIvq',
     },
@@ -50,9 +50,21 @@ export const resources = {
     },
     {
       fields: {
+        conference_country: '🇩🇪 Germany',
+        description:
+          'The biggest mobile developer conference in Berlin, with 6,000+ developers and talks on React Native, Flutter, Swift, Android, AI coding tools and mobile security.',
+        name: 'next.app devCon',
+        type: ['Conference'],
+        website_url: 'https://www.nextappcon.com/',
+        youtube_url: 'https://www.youtube.com/@nextappevents',
+      },
+      id: 'recNextAppDevCon01',
+    },
+    {
+      fields: {
         description:
           'Create your first universal app that runs on Android, iOS, and the web; all with a single react native codebase.',
-        discord_url: 'https://discord.gg/7uCcJRW5',
+        discord_url: 'https://chat.expo.dev/',
         name: 'Expo Introduction Tutorial',
         type: ['Guide'],
         website_url: 'https://docs.expo.dev/tutorial/introduction/',
@@ -64,7 +76,7 @@ export const resources = {
         description:
           'Everyone knows why the nation of Poland carries the whole React Native ecosystem.',
         discord_url: 'https://discord.gg/zwR2Cdh',
-        name: 'The React Native Show',
+        name: 'React Universe On Air',
         type: ['Podcast'],
         website_url: 'https://soundcloud.com/user-985069846',
         youtube_url:
@@ -75,11 +87,11 @@ export const resources = {
     {
       fields: {
         conference_country: '🇵🇱 Poland',
-        description: 'Conference focused on everything related to Expo.',
-        discord_url: 'https://discord.gg/wqncvaFz',
+        description:
+          'The biggest React Native and Expo conference in the world, with three days of talks and workshops in Kraków.',
         name: 'App.js Conf',
         type: ['Conference'],
-        website_url: 'https://appjs.co/',
+        website_url: 'https://appjs.swmansion.com/',
         youtube_url: 'https://www.youtube.com/channel/UCKgDsBDpYdZf2mbRzcEC8FA',
       },
       id: 'recNxPhr9RdnR0EaS',
@@ -121,7 +133,7 @@ export const resources = {
         slack_url: 'http://community.infinite.red',
         type: ['Guide'],
         website_url: 'https://ignitecookbook.com/',
-        youtube_url: 'https://www.youtube.com/@ExpoDevelopers',
+        youtube_url: 'https://www.youtube.com/c/InfiniteRed',
       },
       id: 'recXvEYPK6AfTRrEQ',
     },
@@ -139,11 +151,10 @@ export const resources = {
       fields: {
         conference_country: '🇵🇱 Poland',
         description:
-          'First conference in the world to focused on anything and everything React Native',
-        discord_url: 'https://discord.gg/rxPKYf9w',
-        name: 'React Universe Conf',
+          'Formerly React Universe Conf, the Callstack conference in Warsaw now focuses on agentic development and AI-driven workflows.',
+        name: 'Agent Conf',
         type: ['Conference'],
-        website_url: 'https://www.react-native.eu/',
+        website_url: 'https://www.agent.sh/',
         youtube_url: 'https://www.youtube.com/c/CallstackEngineers',
       },
       id: 'recaFQCLIpFSAjVJV',
@@ -159,15 +170,6 @@ export const resources = {
           'https://www.youtube.com/channel/UCO0X5b0mQ4eIHitXHXSFUyw?sub_confirmation=1',
       },
       id: 'recauky3hGY8xjvcH',
-    },
-    {
-      fields: {
-        description: 'Collection of Expo Snacks maintained by Dan Stepanov.',
-        name: "There's a Snack for That",
-        type: ['Guide'],
-        website_url: 'https://www.snackforthat.com/',
-      },
-      id: 'recp9ODfQYbZDtu87',
     },
     {
       fields: {
@@ -238,9 +240,9 @@ export const resources = {
       fields: {
         description:
           'Weekly React Native newsletter mixing news, tools, and industry updates with memes and humor.',
-        name: 'React Native Rewind',
+        name: 'The React Native Rewind',
         type: ['Newsletter'],
-        website_url: 'https://reactnativerewind.com/',
+        website_url: 'https://thereactnativerewind.com/',
       },
       id: 'recRnRewind001abc',
     },
