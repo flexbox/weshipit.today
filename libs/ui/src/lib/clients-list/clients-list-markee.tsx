@@ -21,7 +21,7 @@ export function ClientsListMarkee({ clients }: ClientsListMarkeeProps) {
               alt={`${client.data.name} logo`}
               width={125}
               height={125}
-              className="size-32 object-contain opacity-50 grayscale transition-[opacity,filter] hover:opacity-100 hover:grayscale-0 dark:rounded-2xl dark:bg-white/80 dark:p-2"
+              className="size-32 object-contain opacity-50 grayscale transition-[opacity,filter] hover:opacity-100 hover:grayscale-0"
             />
           </div>
         ))}

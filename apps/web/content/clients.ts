@@ -23,7 +23,7 @@ export const clients: Customer[] = [
       logo: {
         alt: 'React GraphQL Academy logo',
         height: 250,
-        url: '/images/clients/react-grahql-academy.png',
+        url: '/images/clients/react-grahql-academy.svg',
         width: 250,
       },
       name: 'React GrahQL Academy',
@@ -39,7 +39,7 @@ export const clients: Customer[] = [
       logo: {
         alt: 'Axa Insurance logo',
         height: 250,
-        url: '/images/clients/axa.png',
+        url: '/images/clients/axa.svg',
         width: 250,
       },
       name: 'Axa',
@@ -55,7 +55,7 @@ export const clients: Customer[] = [
       logo: {
         alt: 'Smartpension logo',
         height: 250,
-        url: '/images/clients/smart-pension.png',
+        url: '/images/clients/smart-pension.svg',
         width: 250,
       },
       name: 'Smart Pension',
@@ -71,7 +71,7 @@ export const clients: Customer[] = [
       logo: {
         alt: 'Université du littoral Logo',
         height: 250,
-        url: '/images/clients/universite-du-littoral-cote-d-opale.jpg',
+        url: '/images/clients/universite-du-littoral-cote-d-opale.svg',
         width: 250,
       },
       name: "Université du Littoral-Côte-d'Opale",
@@ -87,7 +87,7 @@ export const clients: Customer[] = [
       logo: {
         alt: 'mahalo BANKING logo',
         height: 250,
-        url: '/images/clients/mahalo-banking.png',
+        url: '/images/clients/mahalo-banking.svg',
         width: 250,
       },
       name: 'Mahalo Banking',
@@ -103,7 +103,7 @@ export const clients: Customer[] = [
       logo: {
         alt: 'M6 media logo',
         height: 250,
-        url: '/images/clients/m6.png',
+        url: '/images/clients/m6.svg',
         width: 250,
       },
       name: 'M6',
@@ -119,7 +119,7 @@ export const clients: Customer[] = [
       logo: {
         alt: '',
         height: 250,
-        url: '/images/clients/retail-shake.png',
+        url: '/images/clients/retail-shake.svg',
         width: 250,
       },
       name: 'Retail Shake',
@@ -135,7 +135,7 @@ export const clients: Customer[] = [
       logo: {
         alt: 'Spark Speed Dating app logo',
         height: 250,
-        url: '/images/clients/spark-dating.jpg',
+        url: '/images/clients/spark-dating.svg',
         width: 250,
       },
       name: 'Spark Dating',
@@ -151,7 +151,7 @@ export const clients: Customer[] = [
       logo: {
         alt: 'Plantura garden logo',
         height: 250,
-        url: '/images/clients/plantura.png',
+        url: '/images/clients/plantura.svg',
         width: 250,
       },
       name: 'Plantura',
@@ -167,7 +167,7 @@ export const clients: Customer[] = [
       logo: {
         alt: 'Nacon gaming logo',
         height: 250,
-        url: '/images/clients/nacon.png',
+        url: '/images/clients/nacon.svg',
         width: 250,
       },
       name: 'Nacon',
@@ -183,7 +183,7 @@ export const clients: Customer[] = [
       logo: {
         alt: 'Shoootin logo',
         height: 250,
-        url: '/images/clients/shoootin.png',
+        url: '/images/clients/shoootin.svg',
         width: 250,
       },
       name: 'Shoootin',
@@ -199,7 +199,7 @@ export const clients: Customer[] = [
       logo: {
         alt: '',
         height: 250,
-        url: '/images/clients/drdata.png',
+        url: '/images/clients/drdata.svg',
         width: 250,
       },
       name: 'DrData',
@@ -215,7 +215,7 @@ export const clients: Customer[] = [
       logo: {
         alt: 'Karnott logo',
         height: 250,
-        url: '/images/clients/karnott.png',
+        url: '/images/clients/karnott.svg',
         width: 250,
       },
       name: 'Karnott',
@@ -231,7 +231,7 @@ export const clients: Customer[] = [
       logo: {
         alt: 'Freeformers logo',
         height: 250,
-        url: '/images/clients/freeformers.png',
+        url: '/images/clients/freeformers.svg',
         width: 250,
       },
       name: 'Freeformers',
@@ -247,7 +247,7 @@ export const clients: Customer[] = [
       logo: {
         alt: 'Human Coders Logo',
         height: 250,
-        url: '/images/clients/human-coders.png',
+        url: '/images/clients/human-coders.svg',
         width: 250,
       },
       name: 'Human Coders',
@@ -263,7 +263,7 @@ export const clients: Customer[] = [
       logo: {
         alt: 'Abricot logo',
         height: 250,
-        url: '/images/clients/abricot.png',
+        url: '/images/clients/abricot.svg',
         width: 250,
       },
       name: 'Abricot',
@@ -279,7 +279,7 @@ export const clients: Customer[] = [
       logo: {
         alt: '',
         height: 250,
-        url: '/images/clients/talib.png',
+        url: '/images/clients/talib.svg',
         width: 250,
       },
       name: 'Talib',
@@ -295,7 +295,7 @@ export const clients: Customer[] = [
       logo: {
         alt: 'Stablehouse logo',
         height: 250,
-        url: '/images/clients/stablehouse.png',
+        url: '/images/clients/stablehouse.svg',
         width: 250,
       },
       name: 'Stablehouse',
@@ -311,7 +311,7 @@ export const clients: Customer[] = [
       logo: {
         alt: 'contentful logo',
         height: 250,
-        url: '/images/clients/contentful.png',
+        url: '/images/clients/contentful.svg',
         width: 250,
       },
       name: 'Contentful',
@@ -327,7 +327,7 @@ export const clients: Customer[] = [
       logo: {
         alt: 'le wagon best worldwide tech bootcamp logo',
         height: 250,
-        url: '/images/clients/le-wagon.png',
+        url: '/images/clients/le-wagon.svg',
         width: 250,
       },
       name: 'Le wagon',
@@ -343,11 +343,27 @@ export const clients: Customer[] = [
       logo: {
         alt: 'Red bull logo',
         height: 250,
-        url: '/images/clients/red-bull.png',
+        url: '/images/clients/red-bull.svg',
         width: 250,
       },
       name: 'Red Bull',
     },
     id: 'Y0aMOBEAACEAq22B',
+  },
+  {
+    data: {
+      id: 'sunday',
+      industry: 'Fintech',
+      is_audit: false,
+      is_visible_homepage: true,
+      logo: {
+        alt: 'sunday restaurant payments logo',
+        height: 250,
+        url: '/images/clients/sunday.svg',
+        width: 250,
+      },
+      name: 'Sunday',
+    },
+    id: 'sunday',
   },
 ];

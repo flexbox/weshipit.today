@@ -30,7 +30,7 @@ export function ClientsListAudit({ clients }: ClientsListHomepageProps) {
                 alt={`${client.data.name} logo`}
                 width={250}
                 height={250}
-                className="size-32 transition duration-300 ease-in-out dark:rounded-xl dark:bg-white/90 dark:p-2"
+                className="size-32 transition duration-300 ease-in-out"
               />
               <Text as="p" variant="p2">
                 {client.data.industry}
