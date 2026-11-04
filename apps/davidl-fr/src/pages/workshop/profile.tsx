@@ -1,10 +1,8 @@
-import { useContext } from 'react';
 import Router from 'next/router';
 import Layout from '~/components/Workshop/Layout';
 import { ErrorText } from '~/components/Workshop/ErrorText';
 import { useUser } from '~/lib/useUser';
-import { magic } from '~/lib/magic';
-import { UserContext } from '~/lib/UserContext';
+import { supabase } from '~/lib/supabase';
 import { humanReadableDate } from '~/utils/date';
 import { Rarr } from '~/components/Typography';
 import PrimaryButton from '~/components/Button/PrimaryButton';
@@ -75,15 +73,13 @@ const LearningPathWithUser = ({ email }: { email: string }) => {
 
 const ProfileContent = () => {
   const user = useUser();
-  const { setUser } = useContext(UserContext);
 
   async function handleLogout() {
     try {
-      if (magic) await magic.user.logout();
+      if (supabase) await supabase.auth.signOut();
     } catch (error) {
       console.error('logout failed:', error);
     }
-    setUser(null);
     Router.push('/workshop/login');
   }
 
