@@ -887,4 +887,35 @@ export const tools: Tool[] = [
     type: ['Payments & Subscriptions'],
     website_url: 'https://docs.adyen.com/',
   },
+  {
+    description:
+      'Maestro is an **open-source end-to-end testing framework** for mobile and web apps. You describe user journeys as readable **YAML flows** (`launchApp`, `tapOn`, `inputText`, `assertVisible`) and the Maestro CLI runs them on iOS simulators, Android emulators, and real Android devices.\n\nMaestro works the same way for React Native, Flutter, and native apps, and Expo recommends it as its preferred E2E testing tool. It waits for the UI to settle on its own, so you rarely write sleeps or retries, and the free **Maestro Studio** desktop app lets you build flows by clicking through your app instead of typing selectors.\n',
+    description_success:
+      '1. **Cover critical flows in an afternoon.** A Login, Signup, or Checkout flow is a dozen lines of YAML, so a React Native team can protect its money paths without learning Detox internals or adding native test targets.\n2. **Reduce flaky tests.** Built-in waiting and retry on every command means flows tolerate animations, network latency, and slow emulators, which is where most mobile E2E suites lose trust.\n3. **Run the same flows locally, in CI, and in the cloud.** `maestro test` runs on your machine, EAS Workflows and GitHub Actions run it on every pull request, and Maestro Cloud or DeviceCloud run your suite on many devices in parallel.\n',
+    features: ['CLI'],
+    github_url: 'https://github.com/mobile-dev-inc/maestro',
+    id: 'recMaestroE2ETest01',
+    name: 'Maestro',
+    platform: ['Android', 'iOS', 'Web'],
+    pricing: ['Open source', 'Free trial', 'Premium tiers'],
+    slug: 'maestro',
+    twitter_url: 'https://x.com/maestro__dev',
+    type: ['CI/CD & Release'],
+    website_url: 'https://maestro.dev/',
+  },
+  {
+    description:
+      'DeviceCloud is a **hosted device cloud for Maestro tests**. It runs your existing Maestro YAML flows on parallel iOS simulators and Android emulators, so your end-to-end suite finishes in minutes instead of running one device at a time in CI.\n\nDeviceCloud is a drop-in replacement for Maestro Cloud: you swap `maestro cloud` for `dcd cloud` (npm package `@devicecloud.dev/dcd`) and keep your flows as they are. It plugs into GitHub Actions, EAS Workflows, Bitrise, and Bitbucket, and you pay per test run on top of a small monthly plan, starting at $25/month with $20 of free credit to try it.\n',
+    description_success:
+      '1. **Keep your Maestro flows, change one command.** Point the `dcd` CLI or the `device-cloud-for-maestro` GitHub Action at your build and flows, and your existing suite runs in the cloud with no rewrite.\n2. **Get faster feedback on every pull request.** Flows run in parallel across up to 20 iOS and 20 Android devices on the Max plan, so a React Native team can run the full suite before merging instead of nightly.\n3. **Pay for the tests you run.** Per-run pricing (around $0.09 to $0.15 per flow per device) with free retries suits small teams that cannot justify a fixed monthly fee for each concurrent device.\n',
+    features: ['CLI'],
+    github_url: 'https://github.com/devicecloud-dev',
+    id: 'recDeviceCloudDev1',
+    name: 'DeviceCloud',
+    platform: ['Android', 'iOS'],
+    pricing: ['Free trial', 'Pay as-you-go', 'Premium tiers'],
+    slug: 'devicecloud',
+    type: ['CI/CD & Release'],
+    website_url: 'https://devicecloud.dev/',
+  },
 ];
