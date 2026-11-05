@@ -55,8 +55,10 @@ const Layout = ({
         <div className="flex">
           <Sidebar user={user} />
 
-          <main className="m-auto py-16">
-            <div className="max-w-screen-sm">
+          {/* The sidebar is fixed (w-72) from lg: reserve its width so the
+              content centres in the remaining space instead of under it. */}
+          <main className="min-w-0 flex-1 lg:ps-72">
+            <div className="mx-auto max-w-screen-sm px-4 py-16 sm:px-6 lg:px-8">
               <LayoutActionBar />
 
               <div className="mb-4 w-full" style={{ maxWidth: 600 }}>
