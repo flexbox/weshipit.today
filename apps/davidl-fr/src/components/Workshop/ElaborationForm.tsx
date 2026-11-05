@@ -1,3 +1,10 @@
+import {
+  Dialog,
+  DialogBackdrop,
+  DialogPanel,
+  DialogTitle,
+} from '@headlessui/react';
+import { XMarkIcon } from '@heroicons/react/24/outline';
 import React, { FormEvent, useState } from 'react';
 import PrimaryButton from '~/components/Button/PrimaryButton';
 import { revalidateChallenges } from '~/components/Workshop/useSWRChallenge';
@@ -56,6 +63,7 @@ interface Props {
 }
 
 export const ElaborationForm = ({ email, exercise, module }: Props) => {
+  const [isOpen, setIsOpen] = useState(false);
   const [learned, setLearned] = useState('');
   const [exerciseRating, setExerciseRating] = useState<number | null>(null);
   const [instructionsRating, setInstructionsRating] = useState<number | null>(
@@ -96,83 +104,102 @@ export const ElaborationForm = ({ email, exercise, module }: Props) => {
   }
 
   return (
-    <form className="mt-8" onSubmit={handleSubmit}>
+    <section className="mt-8">
       <h2>🏅 Elaboration and Feedback</h2>
       <p>
         After the exercice, <strong>remember what you’ve just learned</strong>{' '}
         and <strong>update your progression</strong>.
       </p>
+      <PrimaryButton type="button" onClick={() => setIsOpen(true)}>
+        Answer the questions
+      </PrimaryButton>
 
-      <details className="group">
-        <summary className="inline-flex cursor-pointer list-none items-center gap-2 rounded-md border border-gray-300 px-4 py-2 font-semibold transition-colors hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 dark:border-gray-700 dark:hover:bg-gray-800 dark:focus-visible:outline-orange-400 [&::-webkit-details-marker]:hidden">
-          Answer the questions
-          <svg
-            aria-hidden="true"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            className="size-4 group-open:rotate-180 motion-safe:transition-transform"
-          >
-            <path
-              fillRule="evenodd"
-              d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
-              clipRule="evenodd"
-            />
-          </svg>
-        </summary>
+      <Dialog
+        open={isOpen}
+        onClose={() => setIsOpen(false)}
+        className="relative z-50"
+      >
+        <DialogBackdrop className="fixed inset-0 bg-black/60" />
+        <div className="fixed inset-0 overflow-y-auto p-4">
+          <div className="flex min-h-full items-center justify-center">
+            <DialogPanel className="w-full max-w-xl rounded-lg bg-white p-6 text-gray-900 shadow-xl dark:border dark:border-gray-800 dark:bg-gray-950 dark:text-gray-100">
+              <div className="flex items-start justify-between gap-4">
+                <DialogTitle className="text-xl font-bold">
+                  🏅 Elaboration and Feedback
+                </DialogTitle>
+                <button
+                  type="button"
+                  onClick={() => setIsOpen(false)}
+                  className="-m-2 rounded-md p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-700 focus-visible:outline-2 focus-visible:outline-blue-500 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white dark:focus-visible:outline-orange-400"
+                >
+                  <span className="sr-only">Close</span>
+                  <XMarkIcon className="size-6" aria-hidden="true" />
+                </button>
+              </div>
 
-        <label className="mt-6 block">
-          <span className="font-semibold">What did you learn?</span>
-          <textarea
-            name="learned"
-            value={learned}
-            onChange={(event) => setLearned(event.target.value)}
-            minLength={LEARNED_MIN_LENGTH}
-            maxLength={TEXT_MAX_LENGTH}
-            rows={5}
-            required
-            className={textareaClassName}
-          />
-        </label>
+              <form onSubmit={handleSubmit}>
+                <label className="mt-6 block">
+                  <span className="font-semibold">What did you learn?</span>
+                  <textarea
+                    name="learned"
+                    value={learned}
+                    onChange={(event) => setLearned(event.target.value)}
+                    minLength={LEARNED_MIN_LENGTH}
+                    maxLength={TEXT_MAX_LENGTH}
+                    rows={5}
+                    required
+                    className={textareaClassName}
+                  />
+                </label>
 
-        <RatingField
-          label="How was the exercise?"
-          name="exercise_rating"
-          value={exerciseRating}
-          onChange={setExerciseRating}
-        />
+                <RatingField
+                  label="How was the exercise?"
+                  name="exercise_rating"
+                  value={exerciseRating}
+                  onChange={setExerciseRating}
+                />
 
-        <RatingField
-          label="How were the instructions?"
-          name="instructions_rating"
-          value={instructionsRating}
-          onChange={setInstructionsRating}
-        />
+                <RatingField
+                  label="How were the instructions?"
+                  name="instructions_rating"
+                  value={instructionsRating}
+                  onChange={setInstructionsRating}
+                />
 
-        <label className="mt-6 block">
-          <span className="font-semibold">Comments</span>{' '}
-          <span className="text-gray-500">(optional)</span>
-          <textarea
-            name="comments"
-            value={comments}
-            onChange={(event) => setComments(event.target.value)}
-            maxLength={TEXT_MAX_LENGTH}
-            rows={3}
-            className={textareaClassName}
-          />
-        </label>
+                <label className="mt-6 block">
+                  <span className="font-semibold">Comments</span>{' '}
+                  <span className="text-gray-500 dark:text-gray-400">
+                    (optional)
+                  </span>
+                  <textarea
+                    name="comments"
+                    value={comments}
+                    onChange={(event) => setComments(event.target.value)}
+                    maxLength={TEXT_MAX_LENGTH}
+                    rows={3}
+                    className={textareaClassName}
+                  />
+                </label>
 
-        {errorMessage && (
-          <p role="alert" className="mt-4 text-red-600">
-            {errorMessage}
-          </p>
-        )}
+                {errorMessage && (
+                  <p
+                    role="alert"
+                    className="mt-4 text-red-600 dark:text-red-400"
+                  >
+                    {errorMessage}
+                  </p>
+                )}
 
-        <div className="mt-6">
-          <PrimaryButton type="submit" disabled={isSubmitting}>
-            {isSubmitting ? 'Sending…' : 'Complete the challenge'}
-          </PrimaryButton>
+                <div className="mt-6 flex justify-end">
+                  <PrimaryButton type="submit" disabled={isSubmitting}>
+                    {isSubmitting ? 'Sending…' : 'Complete the challenge'}
+                  </PrimaryButton>
+                </div>
+              </form>
+            </DialogPanel>
+          </div>
         </div>
-      </details>
-    </form>
+      </Dialog>
+    </section>
   );
 };
