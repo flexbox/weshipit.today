@@ -17,8 +17,8 @@ export interface Workshop {
   challenges: Challenge[];
 }
 
-export interface AirtableRecord {
-  name: string;
-  exercice: number;
-  date: string;
+export interface ChallengeRecord {
+  module: string;
+  exercise: number;
+  created_at: string;
 }

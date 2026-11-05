@@ -32,7 +32,6 @@ vercel env pull .env.local --environment=development
 
 See [`.env.local.example`](./.env.local.example) for the full list. Required to run locally:
 
-- `NEXT_PUBLIC_BASEQL_API_URL` — GraphQL endpoint for workshop challenges
 - `NEXT_PUBLIC_SUPABASE_URL` / `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` — Supabase project `bootcamp`, from Project Settings → API Keys
 - `PRISMIC_API_ENDPOINT` / `PRISMIC_ACCESS_TOKEN` — [Prismic](https://prismic.io) CMS access
 - `MAILCHIMP_API_KEY` / `MAILCHIMP_LIST_ID` — newsletter subscriptions

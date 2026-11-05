@@ -3,17 +3,19 @@ import { useUser } from '~/lib/useUser';
 import { ErrorText } from '~/components/Workshop/ErrorText';
 import { CertificationBox } from '~/components/Workshop/CertificationBox';
 import { useSWRChallengesList } from '~/components/Workshop/useSWRChallenge';
+import { allWorkshops } from '~/pages/api/workshop';
+import { countDoneChallenges } from '~/utils/formatWorshopToDone';
 
 /**
  * @deprecated
  */
 const CertificationLinkUser = ({ email }: { email: string }) => {
-  const { data, error } = useSWRChallengesList(email);
+  const { challenges, error } = useSWRChallengesList(email);
 
   if (error) return <ErrorText description={error.message} />;
-  if (!data) return <p>Loading…</p>;
+  if (!challenges) return <p>Loading…</p>;
 
-  const workshopsDone = data.challenge.length;
+  const workshopsDone = countDoneChallenges(allWorkshops, challenges);
 
   return <CertificationBox workshopsDone={workshopsDone} />;
 };

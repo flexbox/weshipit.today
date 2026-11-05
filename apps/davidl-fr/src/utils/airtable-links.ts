@@ -6,7 +6,3 @@ export enum AIRTABLE_FORM {
   ROAST_MOBILE_APP = 'https://airtable.com/embed/shrh3geS3tCkHpTjF',
   START = 'https://airtable.com/embed/shrkRxhdc2zJD8EM5',
 }
-
-export enum AIRTABLE_LINK {
-  CHALLENGE_ELABORATION = 'https://airtable.com/shrBuZqOJL5UeLLF1',
-}

@@ -1,4 +1,8 @@
-import { formatWorshopToDone } from './formatWorshopToDone';
+import {
+  countDoneChallenges,
+  formatWorshopToDone,
+  isCurriculumChallenge,
+} from './formatWorshopToDone';
 
 const allWorkshops = [
   {
@@ -94,24 +98,24 @@ describe('formatWorshopToDone', () => {
   it('should return an array of workshops with challenges status `done`', () => {
     const dataFromApi = [
       {
-        name: 'foundation',
-        exercice: 1,
-        date: '2023-09-10T20:36:48.000Z',
+        module: 'foundation',
+        exercise: 1,
+        created_at: '2023-09-10T20:36:48.000Z',
       },
       {
-        name: 'foundation',
-        exercice: 2,
-        date: '2023-09-10T20:36:48.000Z',
+        module: 'foundation',
+        exercise: 2,
+        created_at: '2023-09-10T20:36:48.000Z',
       },
       {
-        name: 'data',
-        exercice: 1,
-        date: '2023-09-10T20:36:48.000Z',
+        module: 'data',
+        exercise: 1,
+        created_at: '2023-09-10T20:36:48.000Z',
       },
       {
-        name: 'data',
-        exercice: 2,
-        date: '2023-09-10T20:36:48.000Z',
+        module: 'data',
+        exercise: 2,
+        created_at: '2023-09-10T20:36:48.000Z',
       },
     ];
 
@@ -164,14 +168,14 @@ describe('formatWorshopToDone', () => {
   it('should return an array of workshops with challenges status `done` and `todo`', () => {
     const dataFromApi = [
       {
-        name: 'foundation',
-        exercice: 1,
-        date: '2023-09-10T20:36:48.000Z',
+        module: 'foundation',
+        exercise: 1,
+        created_at: '2023-09-10T20:36:48.000Z',
       },
       {
-        name: 'foundation',
-        exercice: 2,
-        date: '2023-09-10T20:36:48.000Z',
+        module: 'foundation',
+        exercise: 2,
+        created_at: '2023-09-10T20:36:48.000Z',
       },
     ];
 
@@ -219,5 +223,82 @@ describe('formatWorshopToDone', () => {
     ];
 
     expect(formatWorshopToDone(allWorkshops, dataFromApi)).toEqual(result);
+  });
+});
+
+const record = (module: string, exercise: number) => ({
+  module,
+  exercise,
+  created_at: '2023-09-10T20:36:48.000Z',
+});
+
+describe('countDoneChallenges', () => {
+  it('should return 0 without records', () => {
+    expect(countDoneChallenges(allWorkshops, undefined)).toBe(0);
+    expect(countDoneChallenges(allWorkshops, [])).toBe(0);
+  });
+
+  it('should count each challenge of the curriculum once', () => {
+    const records = [
+      record('foundation', 1),
+      record('foundation', 1),
+      record('data', 2),
+    ];
+
+    expect(countDoneChallenges(allWorkshops, records)).toBe(2);
+  });
+
+  it('should ignore legacy modules and exercises', () => {
+    const records = [
+      record('react-navigation', 1),
+      record('GitHub 101', 1),
+      record('foundation', 9),
+      record('foundation', 2),
+    ];
+
+    expect(countDoneChallenges(allWorkshops, records)).toBe(1);
+  });
+
+  it('should never count more than the curriculum', () => {
+    const records = [
+      record('foundation', 1),
+      record('foundation', 2),
+      record('data', 1),
+      record('data', 2),
+      record('data', 2),
+      record('react-navigation', 2),
+    ];
+
+    expect(countDoneChallenges(allWorkshops, records)).toBe(4);
+  });
+
+  it('should not count setup and hackathon', () => {
+    const workshops = [
+      ...allWorkshops,
+      {
+        id: 'setup',
+        title: 'Setup',
+        description: '',
+        challenges: [
+          { exercice: 1, title: '1', linkHref: '/workshop/challenges/setup' },
+        ],
+      },
+    ];
+
+    expect(countDoneChallenges(workshops, [record('setup', 1)])).toBe(0);
+  });
+});
+
+describe('isCurriculumChallenge', () => {
+  it('should accept a challenge of the curriculum', () => {
+    expect(isCurriculumChallenge(allWorkshops, 'data', 2)).toBe(true);
+  });
+
+  it('should reject legacy modules and unknown exercises', () => {
+    expect(isCurriculumChallenge(allWorkshops, 'react-navigation', 1)).toBe(
+      false,
+    );
+    expect(isCurriculumChallenge(allWorkshops, 'foundation', 9)).toBe(false);
+    expect(isCurriculumChallenge(allWorkshops, 'data', NaN)).toBe(false);
   });
 });
