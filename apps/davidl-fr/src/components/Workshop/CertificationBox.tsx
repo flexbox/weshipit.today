@@ -18,12 +18,12 @@ export const CertificationBox = ({ workshopsDone }: CertificationBoxProps) => {
     <div>
       <H2>
         Certification{' '}
-        <span className="text-sm font-medium text-gray-400">
+        <span className="text-sm font-medium tabular-nums text-gray-600 dark:text-gray-400">
           {workshopsDoneInPercent}%
         </span>
       </H2>
 
-      <div className="mb-2 h-4 w-full rounded bg-gray-200">
+      <div className="mb-2 h-4 w-full rounded bg-gray-200 dark:bg-gray-800">
         <div
           className="h-4 rounded bg-blue-500 dark:bg-green-500"
           style={{ width: workshopsDoneWithPercent }}
@@ -36,13 +36,13 @@ export const CertificationBox = ({ workshopsDone }: CertificationBoxProps) => {
             <strong>the React Native Bootcamp</strong>.
           </P>
           <Link href="/workshop/challenges/certification">
-            Add your Certification on LinkedIn
+            Add your certification to LinkedIn
           </Link>
         </>
       ) : (
-        <div className="cursor-not-allowed text-gray-400 underline">
-          Complete challenges to unlock your certification
-        </div>
+        <p className="text-gray-600 dark:text-gray-400">
+          Complete more than 80% of the challenges to unlock your certification.
+        </p>
       )}
     </div>
   );

@@ -13,7 +13,7 @@ const CertificationLinkUser = ({ email }: { email: string }) => {
   const { challenges, error } = useSWRChallengesList(email);
 
   if (error) return <ErrorText description={error.message} />;
-  if (!challenges) return <p>Loading…</p>;
+  if (!challenges) return <p>Loading your progress…</p>;
 
   const workshopsDone = countDoneChallenges(allWorkshops, challenges);
 
