@@ -32,6 +32,18 @@ create policy "Students submit their own challenges"
   to authenticated
   with check (email = lower(auth.jwt() ->> 'email'));
 
+-- Bootcamp signups imported from Airtable, they predate the challenge forms.
+-- Private: only the service role and alumni_count() read it.
+create table if not exists public.bootcamp_onboarding (
+  email      text primary key check (email = lower(email)),
+  created_at timestamptz not null default now()
+);
+
+alter table public.bootcamp_onboarding enable row level security;
+
+revoke all on table public.bootcamp_onboarding from anon;
+revoke all on table public.bootcamp_onboarding from authenticated;
+
 -- Public number for the /bootcamp alumni strip, without exposing any email.
 create or replace function public.alumni_count()
 returns integer
@@ -40,7 +52,12 @@ stable
 security definer
 set search_path = ''
 as $$
-  select count(distinct email)::integer from public.challenge;
+  select count(*)::integer
+  from (
+    select email from public.challenge
+    union
+    select email from public.bootcamp_onboarding
+  ) as alumni;
 $$;
 
 revoke all on function public.alumni_count() from public;

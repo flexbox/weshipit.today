@@ -11,6 +11,21 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      bootcamp_onboarding: {
+        Row: {
+          created_at: string;
+          email: string;
+        };
+        Insert: {
+          created_at?: string;
+          email: string;
+        };
+        Update: {
+          created_at?: string;
+          email?: string;
+        };
+        Relationships: [];
+      };
       challenge: {
         Row: {
           airtable_id: string | null;
