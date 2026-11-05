@@ -13,18 +13,13 @@ const StatsWithUser = ({ email }: { email: string }) => {
 
   if (error)
     return (
-      <div className="-mt-8 mr-2">
+      <div className="-mt-8 mr-2 max-w-xs">
         <ErrorText />
       </div>
     );
   if (!challenges) return <StatsSkeleton />;
 
   const workshopsDone = countDoneChallenges(allWorkshops, challenges);
-
-  if (workshopsDone === 0) {
-    return null;
-  }
-
   const stats = formatStats(workshopsDone);
 
   return <StatsItems stats={stats} />;

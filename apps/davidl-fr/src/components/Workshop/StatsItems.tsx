@@ -13,10 +13,10 @@ export const StatsItems = ({ stats }: StatsItemsProps) => {
     <dl className="grid grid-cols-1 gap-5 sm:grid-cols-2">
       {stats.map((item: StatsItemProps) => (
         <div key={item.name} className="px-4">
-          <dt className="truncate text-sm font-medium text-gray-400">
+          <dt className="whitespace-nowrap text-sm font-medium text-gray-500 dark:text-gray-400">
             {item.name}
           </dt>
-          <dd className="-mt-1 font-semibold text-gray-700 dark:text-white">
+          <dd className="-mt-1 font-semibold tabular-nums text-gray-700 dark:text-white">
             {item.stat}
           </dd>
         </div>

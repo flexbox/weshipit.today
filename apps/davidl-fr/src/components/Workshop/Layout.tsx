@@ -1,4 +1,5 @@
 import React, { PropsWithChildren } from 'react';
+import { createGlobalStyle } from 'styled-components';
 import { useUser } from '~/lib/useUser';
 import { InnerPageContainer } from '~/components/Page/style';
 import { NewIssueLink } from '~/components/Workshop/NewIssueLink';
@@ -16,6 +17,13 @@ interface LayoutProps extends PropsWithChildren {
   withFooter?: boolean;
   routerQueryId?: string;
 }
+
+// The header is fixed (h-12): keep focused links and #anchors below it.
+const FixedHeaderScrollPadding = createGlobalStyle`
+  html {
+    scroll-padding-top: 4rem;
+  }
+`;
 
 const LayoutActionBar = () => {
   return (
@@ -40,6 +48,7 @@ const Layout = ({
   return (
     <>
       <WorkshopSeo />
+      <FixedHeaderScrollPadding />
       <HeaderWithMenu user={user} />
 
       {isChallenge ? (
@@ -63,7 +72,7 @@ const Layout = ({
         </div>
       ) : (
         <div className="mt-12">
-          <InnerPageContainer role="main">{children}</InnerPageContainer>
+          <InnerPageContainer>{children}</InnerPageContainer>
           {withFooter && <Footer />}
         </div>
       )}

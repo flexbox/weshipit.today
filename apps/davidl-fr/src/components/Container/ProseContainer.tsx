@@ -12,7 +12,7 @@ export const ProseContainer = ({
   style = '',
   withContentContainer = false,
 }: ProseProps) => {
-  const className = `prose prose-a:text-blue-500 dark:prose-invert dark:prose-a:text-orange-500 ${style}`;
+  const className = `prose prose-a:text-blue-600 dark:prose-invert dark:prose-a:text-orange-500 ${style}`;
 
   if (withContentContainer) {
     return (

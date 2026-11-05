@@ -52,10 +52,17 @@ const ResetStyles = createGlobalStyle`
     animation-play-state: running;
   }
 
-  a {
-    color: currentColor;
-    text-decoration: none;
-    background-color: transparent;
+  /*
+    Tailwind v4 puts its utilities in cascade layers, and unlayered rules beat
+    every layer. Keep the link reset in the base layer so classes such as
+    bg-blue-600 or text-white on a link still apply.
+  */
+  @layer base {
+    a {
+      color: ${(props) => props.theme.text.primary};
+      text-decoration: none;
+      background-color: transparent;
+    }
   }
 
   a:hover {
@@ -251,10 +258,6 @@ const ResetStyles = createGlobalStyle`
     display: block;
     margin-top: 16px;
     width: 100%;
-  }
-
-  a {
-    color: ${(props) => props.theme.text.primary};
   }
 
   a:hover button {
