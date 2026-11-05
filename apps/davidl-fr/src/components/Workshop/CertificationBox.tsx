@@ -41,7 +41,8 @@ export const CertificationBox = ({ workshopsDone }: CertificationBoxProps) => {
         </>
       ) : (
         <p className="text-gray-600 dark:text-gray-400">
-          Complete more than 80% of the challenges to unlock your certification.
+          Complete at least {Math.floor(numberChallenges * 0.8) + 1} of{' '}
+          {numberChallenges} challenges to unlock your certification.
         </p>
       )}
     </div>

@@ -20,11 +20,6 @@ const StatsWithUser = ({ email }: { email: string }) => {
   if (!challenges) return <StatsSkeleton />;
 
   const workshopsDone = countDoneChallenges(allWorkshops, challenges);
-
-  if (workshopsDone === 0) {
-    return null;
-  }
-
   const stats = formatStats(workshopsDone);
 
   return <StatsItems stats={stats} />;
