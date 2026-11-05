@@ -24,9 +24,9 @@ const RatingField = ({ label, name, onChange, value }: RatingFieldProps) => (
       {RATINGS.map((rating) => (
         <label
           key={rating}
-          className={`flex size-10 cursor-pointer items-center justify-center rounded-md text-sm font-medium tabular-nums transition-colors has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-blue-500 ${
+          className={`flex size-10 cursor-pointer items-center justify-center rounded-md text-sm font-medium tabular-nums transition-colors has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-blue-500 dark:has-[:focus-visible]:ring-orange-400 ${
             value === rating
-              ? 'bg-blue-600 text-white'
+              ? 'bg-blue-600 text-white dark:bg-[#FF9500] dark:text-gray-950'
               : 'bg-gray-100 text-gray-900 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-700'
           }`}
         >
@@ -47,7 +47,7 @@ const RatingField = ({ label, name, onChange, value }: RatingFieldProps) => (
 );
 
 const textareaClassName =
-  'mt-2 block w-full rounded-md border border-gray-300 bg-white p-3 text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100';
+  'mt-2 block w-full rounded-md border border-gray-300 bg-white p-3 text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-gray-700 dark:focus:border-orange-400 dark:focus:ring-orange-400 dark:bg-gray-900 dark:text-gray-100';
 
 interface Props {
   email: string;
@@ -103,58 +103,76 @@ export const ElaborationForm = ({ email, exercise, module }: Props) => {
         and <strong>update your progression</strong>.
       </p>
 
-      <label className="mt-6 block">
-        <span className="font-semibold">What did you learn?</span>
-        <textarea
-          name="learned"
-          value={learned}
-          onChange={(event) => setLearned(event.target.value)}
-          minLength={LEARNED_MIN_LENGTH}
-          maxLength={TEXT_MAX_LENGTH}
-          rows={5}
-          required
-          className={textareaClassName}
+      <details className="group">
+        <summary className="inline-flex cursor-pointer list-none items-center gap-2 rounded-md border border-gray-300 px-4 py-2 font-semibold transition-colors hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500 dark:border-gray-700 dark:hover:bg-gray-800 dark:focus-visible:outline-orange-400 [&::-webkit-details-marker]:hidden">
+          Answer the questions
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            className="size-4 group-open:rotate-180 motion-safe:transition-transform"
+          >
+            <path
+              fillRule="evenodd"
+              d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </summary>
+
+        <label className="mt-6 block">
+          <span className="font-semibold">What did you learn?</span>
+          <textarea
+            name="learned"
+            value={learned}
+            onChange={(event) => setLearned(event.target.value)}
+            minLength={LEARNED_MIN_LENGTH}
+            maxLength={TEXT_MAX_LENGTH}
+            rows={5}
+            required
+            className={textareaClassName}
+          />
+        </label>
+
+        <RatingField
+          label="How was the exercise?"
+          name="exercise_rating"
+          value={exerciseRating}
+          onChange={setExerciseRating}
         />
-      </label>
 
-      <RatingField
-        label="How was the exercise?"
-        name="exercise_rating"
-        value={exerciseRating}
-        onChange={setExerciseRating}
-      />
-
-      <RatingField
-        label="How were the instructions?"
-        name="instructions_rating"
-        value={instructionsRating}
-        onChange={setInstructionsRating}
-      />
-
-      <label className="mt-6 block">
-        <span className="font-semibold">Comments</span>{' '}
-        <span className="text-gray-500">(optional)</span>
-        <textarea
-          name="comments"
-          value={comments}
-          onChange={(event) => setComments(event.target.value)}
-          maxLength={TEXT_MAX_LENGTH}
-          rows={3}
-          className={textareaClassName}
+        <RatingField
+          label="How were the instructions?"
+          name="instructions_rating"
+          value={instructionsRating}
+          onChange={setInstructionsRating}
         />
-      </label>
 
-      {errorMessage && (
-        <p role="alert" className="mt-4 text-red-600">
-          {errorMessage}
-        </p>
-      )}
+        <label className="mt-6 block">
+          <span className="font-semibold">Comments</span>{' '}
+          <span className="text-gray-500">(optional)</span>
+          <textarea
+            name="comments"
+            value={comments}
+            onChange={(event) => setComments(event.target.value)}
+            maxLength={TEXT_MAX_LENGTH}
+            rows={3}
+            className={textareaClassName}
+          />
+        </label>
 
-      <div className="mt-6">
-        <PrimaryButton type="submit" disabled={isSubmitting}>
-          {isSubmitting ? 'Sending…' : 'Complete the challenge'}
-        </PrimaryButton>
-      </div>
+        {errorMessage && (
+          <p role="alert" className="mt-4 text-red-600">
+            {errorMessage}
+          </p>
+        )}
+
+        <div className="mt-6">
+          <PrimaryButton type="submit" disabled={isSubmitting}>
+            {isSubmitting ? 'Sending…' : 'Complete the challenge'}
+          </PrimaryButton>
+        </div>
+      </details>
     </form>
   );
 };
