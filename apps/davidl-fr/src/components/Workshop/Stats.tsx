@@ -13,7 +13,7 @@ const StatsWithUser = ({ email }: { email: string }) => {
 
   if (error)
     return (
-      <div className="-mt-8 mr-2">
+      <div className="-mt-8 mr-2 max-w-xs">
         <ErrorText />
       </div>
     );

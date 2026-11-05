@@ -1,5 +1,10 @@
 import { allWorkshops, countChallenges } from '~/pages/api/workshop';
 
+export const statsLabels = {
+  completed: 'Completed',
+  progress: 'Progress',
+};
+
 export const formatStats = (workshopsDone: number) => {
   const numberChallenges = countChallenges(allWorkshops);
 
@@ -8,10 +13,10 @@ export const formatStats = (workshopsDone: number) => {
 
   const result = [
     {
-      name: 'Challenges completed',
+      name: statsLabels.completed,
       stat: `${workshopsDone}/${numberChallenges}`,
     },
-    { name: 'Progression', stat: `${workshopsDoneInPercent}%` },
+    { name: statsLabels.progress, stat: `${workshopsDoneInPercent}%` },
   ];
   return result;
 };
