@@ -366,4 +366,20 @@ export const clients: Customer[] = [
     },
     id: 'sunday',
   },
+  {
+    data: {
+      id: 'tracktile',
+      industry: 'FoodTech',
+      is_audit: true,
+      is_visible_homepage: true,
+      logo: {
+        alt: 'Tracktile food and beverage operations software logo',
+        height: 250,
+        url: '/images/clients/tracktile.svg',
+        width: 250,
+      },
+      name: 'Tracktile',
+    },
+    id: 'tracktile',
+  },
 ];
