@@ -5,14 +5,11 @@ import { StatsItems } from '~/components/Workshop/StatsItems';
 import { StatsSkeleton } from '~/components/Workshop/StatsSkeleton';
 import { useSWRChallengesList } from '~/components/Workshop/useSWRChallenge';
 import { useUser } from '~/lib/useUser';
-import { AirtableRecord } from '~/types/workshop';
-
-interface ChallengesData {
-  challenge: AirtableRecord[];
-}
+import { allWorkshops } from '~/pages/api/workshop';
+import { countDoneChallenges } from '~/utils/formatWorshopToDone';
 
 const StatsWithUser = ({ email }: { email: string }) => {
-  const { data, error } = useSWRChallengesList(email);
+  const { challenges, error } = useSWRChallengesList(email);
 
   if (error)
     return (
@@ -20,13 +17,9 @@ const StatsWithUser = ({ email }: { email: string }) => {
         <ErrorText />
       </div>
     );
-  if (!data) return <StatsSkeleton />;
+  if (!challenges) return <StatsSkeleton />;
 
-  const { challenge } = data as ChallengesData;
-
-  if (challenge[0] === undefined) return null;
-
-  const workshopsDone = challenge.length;
+  const workshopsDone = countDoneChallenges(allWorkshops, challenges);
 
   if (workshopsDone === 0) {
     return null;

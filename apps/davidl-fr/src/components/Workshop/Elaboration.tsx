@@ -2,7 +2,8 @@ import isNil from 'lodash/isNil';
 import { useRouter } from 'next/router';
 import { ErrorText } from '~/components/Workshop/ErrorText';
 import { useUser } from '~/lib/useUser';
-import { AIRTABLE_LINK } from '~/utils/airtable-links';
+import { allWorkshops } from '~/pages/api/workshop';
+import { isCurriculumChallenge } from '~/utils/formatWorshopToDone';
 import { getChallengeName, getChallengeNumber } from '~/utils/getGitHubSlug';
 import { ElaborationCompleted } from '~/components/Workshop/ElaborationCompleted';
 import { ElaborationForm } from '~/components/Workshop/ElaborationForm';
@@ -10,37 +11,41 @@ import { useSWRChallengeStatus } from '~/components/Workshop/useSWRChallenge';
 
 interface ChallengeStatusWithUserProps {
   email: string;
-  routerQueryId: string;
   routerPath: string;
+  routerQueryId: string;
 }
 
 const ElaborationWithUser = ({
   email,
-  routerQueryId,
   routerPath,
+  routerQueryId,
 }: ChallengeStatusWithUserProps) => {
-  const FORM_LINK = AIRTABLE_LINK.CHALLENGE_ELABORATION;
   const challengeName = getChallengeName(routerQueryId);
-  const PARAM_NAME = `?prefill_Name=${challengeName}`;
-  const challengeNumber = getChallengeNumber(routerQueryId);
-  const PARAM_EXERCICE = `&prefill_Exercice=${challengeNumber}`;
-  const PARAM_EMAIL = `&prefill_Email=${email}`;
-  const FORM_ENDPOINT = `${FORM_LINK}${PARAM_NAME}${PARAM_EXERCICE}${PARAM_EMAIL}`;
+  const challengeNumber = Number(getChallengeNumber(routerQueryId));
 
-  const { data, error } = useSWRChallengeStatus(
+  const { error, isDone, isLoading } = useSWRChallengeStatus(
     email,
     challengeName,
     challengeNumber,
   );
 
-  if (error) return <ErrorText description={error.message} />;
-  if (!data) return <p>Loading…</p>;
-
-  if (data.challenge.length >= 1) {
-    return <ElaborationCompleted routerPath={routerPath} />;
-  } else {
-    return <ElaborationForm formEndpoint={FORM_ENDPOINT} />;
+  if (!isCurriculumChallenge(allWorkshops, challengeName, challengeNumber)) {
+    return null;
   }
+  if (error) return <ErrorText description={error.message} />;
+  if (isLoading) return <p>Loading…</p>;
+
+  if (isDone) {
+    return <ElaborationCompleted routerPath={routerPath} />;
+  }
+
+  return (
+    <ElaborationForm
+      email={email}
+      module={challengeName}
+      exercise={challengeNumber}
+    />
+  );
 };
 
 export function ElaborationResult() {

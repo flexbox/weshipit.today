@@ -14,35 +14,29 @@ import {
 
 interface ChallengeStatusWithUserProps {
   email: string;
-  routerQueryId: string;
   isHomepage?: boolean;
+  routerQueryId: string;
 }
 
 const ChallengeStatusWithUser = ({
   email,
-  routerQueryId,
   isHomepage,
+  routerQueryId,
 }: ChallengeStatusWithUserProps) => {
   const challengeName = getChallengeName(routerQueryId);
-  const challengeNumber = getChallengeNumber(routerQueryId);
+  const challengeNumber = Number(getChallengeNumber(routerQueryId));
 
   let item = { status: 'Status: TODO', statusType: 'todo' };
 
-  const { data, error, isLoading } = useSWRChallengeStatus(
+  const { error, isDone, isLoading } = useSWRChallengeStatus(
     email,
     challengeName,
     challengeNumber,
   );
 
   if (error || isLoading) return null;
-  if (!data)
-    return (
-      <div className="flex items-baseline justify-between">
-        <StatusItem item={item} />
-      </div>
-    );
 
-  if (data.challenge.length === 1) {
+  if (isDone) {
     item = { status: 'Status: DONE', statusType: 'done' };
   }
 

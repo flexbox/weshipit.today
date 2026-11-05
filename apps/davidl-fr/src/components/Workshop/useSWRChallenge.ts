@@ -1,89 +1,75 @@
-import useSWR from 'swr';
-import { TypedDocumentNode } from '@graphql-typed-document-node/core';
-import { RequestDocument, Variables, request } from 'graphql-request';
+import useSWR, { mutate } from 'swr';
+import { supabase } from '~/lib/supabase';
+import { ChallengeRecord } from '~/types/workshop';
 
-// https://vercel.com/docs/projects/environment-variables/system-environment-variables#using-prefixed-framework-environment-variables-locally
-const BASEQL_API_URL =
-  process.env.NEXT_PUBLIC_BASEQL_API_URL || 'https://your-api-url.com/graphql';
+// RLS only returns the signed-in student's rows, the email is part of the key
+// so switching account never shows a cached list.
+const challengesKey = (email: string) => ['challenges', email.toLowerCase()];
 
-function fetcher(
-  query: RequestDocument | TypedDocumentNode<unknown, Variables>,
-) {
-  return request(BASEQL_API_URL, query);
+async function fetchChallenges(): Promise<ChallengeRecord[]> {
+  if (!supabase) return [];
+
+  const { data, error } = await supabase
+    .from('challenge')
+    .select('module, exercise, created_at')
+    .order('created_at', { ascending: false });
+
+  if (error) throw error;
+  return data;
+}
+
+export function useSWRChallengesList(email: string | undefined) {
+  const { data, error, isLoading } = useSWR(
+    email ? challengesKey(email) : null,
+    fetchChallenges,
+  );
+
+  return {
+    challenges: data,
+    error,
+    isLoading,
+  };
 }
 
 export function useSWRChallengeStatus(
   email: string,
   challengeName: string,
-  challengeNumber: string | undefined,
+  challengeNumber: number,
 ) {
-  const { data, error } = useSWR(
-    `
-    {
-      challenge(_filter: {
-          _and: [
-            {email: {_eq: "${email}"}},
-            {name: {_eq: "${challengeName}"}},
-            {exercice: {_eq: "${challengeNumber}"}}
-          ]
-        },
-      ) {
-        name
-        exercice
-        date
-      }
-    }
-    `,
-    fetcher,
+  const { challenges, error, isLoading } = useSWRChallengesList(email);
+
+  const isDone = challenges?.some(
+    (challenge) =>
+      challenge.module === challengeName &&
+      challenge.exercise === challengeNumber,
   );
 
   return {
-    data,
     error,
-    isLoading: !data && !error,
+    isDone,
+    isLoading,
   };
 }
 
-export function useSWRChallengesList(email: string | undefined) {
-  const { data, error } = useSWR(
-    `
-    {
-      challenge(
-        _order_by: {date: "desc"},
-        _filter: {email: {_eq: "${email}"}},
-      ) {
-        name
-        exercice
-        date
-      }
-    }
-    `,
-    fetcher,
-  );
-
-  return {
-    data,
-    error,
-    isLoading: !data && !error,
-  };
+export function revalidateChallenges(email: string) {
+  return mutate(challengesKey(email));
 }
 
-export function useSWRAlumnis() {
-  const { data, error } = useSWR(
-    `
-    {
-      bootcampOnboarding {
-        email
-        fullName
-      }
-    }
-    `,
-    fetcher,
-  );
+async function fetchAlumniCount(): Promise<number> {
+  if (!supabase) return 0;
+
+  const { data, error } = await supabase.rpc('alumni_count');
+
+  if (error) throw error;
+  return data;
+}
+
+export function useSWRAlumniCount() {
+  const { data, error, isLoading } = useSWR('alumni-count', fetchAlumniCount);
 
   return {
-    data,
+    alumniCount: data,
     error,
-    isLoading: !data && !error,
+    isLoading,
   };
 }

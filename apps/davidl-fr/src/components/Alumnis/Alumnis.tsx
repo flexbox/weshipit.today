@@ -1,11 +1,7 @@
 import React from 'react';
 import Gravatar from 'react-gravatar';
-import { useSWRAlumnis } from '~/components/Workshop/useSWRChallenge';
-
-type AlumniProps = {
-  email: string;
-  fullName: string;
-};
+import { useSWRAlumniCount } from '~/components/Workshop/useSWRChallenge';
+import { featuredAlumni } from '~/data/alumni';
 
 const SkeletonGravatar = () => (
   <svg
@@ -43,7 +39,7 @@ const SkeletonAlumnis = () => (
 );
 
 export function Alumnis() {
-  const { data, isLoading, error } = useSWRAlumnis();
+  const { alumniCount, error, isLoading } = useSWRAlumniCount();
 
   if (error)
     return (
@@ -53,25 +49,20 @@ export function Alumnis() {
     return <SkeletonAlumnis />;
   }
 
-  // @ts-ignore
-  const alumnisLastFive = data.bootcampOnboarding.slice(55, 60);
-  // @ts-ignore
-  const alumnisNumber = data.bootcampOnboarding.length;
-
   return (
     <div>
       <p className="m-auto my-8 flex w-full justify-center text-center uppercase text-gray-400">
-        Create your first React Native application, just like {alumnisNumber}{' '}
+        Create your first React Native application, just like {alumniCount}{' '}
         hired grads
       </p>
       <div className="m-auto flex flex-col md:flex-row ">
-        {alumnisLastFive.map((alumni: AlumniProps) => (
+        {featuredAlumni.map((alumni) => (
           <div
-            key={alumni.email}
+            key={alumni.gravatarHash}
             className=" flex w-full flex-col items-center justify-center text-center md:mx-8 "
           >
             <Gravatar
-              email={alumni.email}
+              md5={alumni.gravatarHash}
               size={75}
               className=" mb-6 rounded-full"
             />

@@ -10,23 +10,13 @@ import Link from 'next/link';
 import { ProseContainer } from '~/components/Container/ProseContainer';
 import { useSWRChallengesList } from '~/components/Workshop/useSWRChallenge';
 
-interface Challenge {
-  date: Date;
-  exercice: string;
-  name: string;
-}
-
-interface Data {
-  challenge: Challenge[];
-}
-
 const LearningPathWithUser = ({ email }: { email: string }) => {
-  const { data, error } = useSWRChallengesList(email);
+  const { challenges, error } = useSWRChallengesList(email);
 
   if (error) return <ErrorText description={error.message} />;
-  if (!data) return <p>Loading…</p>;
+  if (!challenges) return <p>Loading…</p>;
 
-  if (data.challenge[0] === undefined)
+  if (challenges.length === 0)
     return (
       <>
         <h2>Sorry, we dont have stats yet</h2>
@@ -42,26 +32,19 @@ const LearningPathWithUser = ({ email }: { email: string }) => {
       </>
     );
 
-  const workshopsDone = data.challenge.length;
-  const allChallenges = data.challenge;
-
-  if (workshopsDone === 0) {
-    return null;
-  }
-
   return (
     <>
       <h2>Progression</h2>
-      {allChallenges.map((challenge: Challenge, index: number) => (
-        <div key={`${challenge.name}-${index}`} className="mb-6">
+      {challenges.map((challenge) => (
+        <div key={`${challenge.module}-${challenge.exercise}`} className="mb-6">
           <p className="mb-0 truncate text-sm font-medium text-gray-500">
-            {humanReadableDate(challenge.date)}
+            {humanReadableDate(challenge.created_at)}
           </p>
           <div className="flex">
             <p className="mt-2 text-gray-900 dark:text-white">
               You completed the challenge{' '}
               <span className="font-semibold">
-                {challenge.name} {challenge.exercice}
+                {challenge.module} {challenge.exercise}
               </span>
             </p>
           </div>
