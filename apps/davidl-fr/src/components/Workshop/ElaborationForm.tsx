@@ -7,54 +7,20 @@ import {
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import React, { FormEvent, useState } from 'react';
 import PrimaryButton from '~/components/Button/PrimaryButton';
+import {
+  fieldClassName,
+  RatingField,
+  ratingScale,
+} from '~/components/Form/RatingField';
 import { revalidateChallenges } from '~/components/Workshop/useSWRChallenge';
 import { supabase } from '~/lib/supabase';
 
 const LEARNED_MIN_LENGTH = 10;
 const TEXT_MAX_LENGTH = 5000;
-const RATINGS = Array.from({ length: 11 }, (_, index) => index);
+const RATINGS = ratingScale(0, 10);
 
 // Postgres unique_violation: the challenge was already submitted (double click, other tab).
 const UNIQUE_VIOLATION = '23505';
-
-interface RatingFieldProps {
-  name: string;
-  label: string;
-  value: number | null;
-  onChange: (value: number) => void;
-}
-
-const RatingField = ({ label, name, onChange, value }: RatingFieldProps) => (
-  <fieldset className="mt-6">
-    <legend className="font-semibold">{label}</legend>
-    <div className="mt-2 flex flex-wrap gap-1">
-      {RATINGS.map((rating) => (
-        <label
-          key={rating}
-          className={`flex size-10 cursor-pointer items-center justify-center rounded-md text-sm font-medium tabular-nums transition-colors has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-blue-500 dark:has-[:focus-visible]:ring-orange-400 ${
-            value === rating
-              ? 'bg-blue-600 text-white dark:bg-[#FF9500] dark:text-gray-950'
-              : 'bg-gray-100 text-gray-900 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-700'
-          }`}
-        >
-          <input
-            type="radio"
-            name={name}
-            value={rating}
-            checked={value === rating}
-            onChange={() => onChange(rating)}
-            className="sr-only"
-            required
-          />
-          {rating}
-        </label>
-      ))}
-    </div>
-  </fieldset>
-);
-
-const textareaClassName =
-  'mt-2 block w-full rounded-md border border-gray-300 bg-white p-3 text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 dark:border-gray-700 dark:focus:border-orange-400 dark:focus:ring-orange-400 dark:bg-gray-900 dark:text-gray-100';
 
 interface Props {
   email: string;
@@ -148,13 +114,14 @@ export const ElaborationForm = ({ email, exercise, module }: Props) => {
                     maxLength={TEXT_MAX_LENGTH}
                     rows={5}
                     required
-                    className={textareaClassName}
+                    className={fieldClassName}
                   />
                 </label>
 
                 <RatingField
                   label="How was the exercise?"
                   name="exercise_rating"
+                  ratings={RATINGS}
                   value={exerciseRating}
                   onChange={setExerciseRating}
                 />
@@ -162,6 +129,7 @@ export const ElaborationForm = ({ email, exercise, module }: Props) => {
                 <RatingField
                   label="How were the instructions?"
                   name="instructions_rating"
+                  ratings={RATINGS}
                   value={instructionsRating}
                   onChange={setInstructionsRating}
                 />
@@ -177,7 +145,7 @@ export const ElaborationForm = ({ email, exercise, module }: Props) => {
                     onChange={(event) => setComments(event.target.value)}
                     maxLength={TEXT_MAX_LENGTH}
                     rows={3}
-                    className={textareaClassName}
+                    className={fieldClassName}
                   />
                 </label>
 
