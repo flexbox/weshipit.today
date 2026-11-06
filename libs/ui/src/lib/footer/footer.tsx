@@ -30,6 +30,7 @@ const navigation = {
     { href: '/devtools', name: 'React Native Dev Tools' },
     { href: '/is-react-native', name: 'Is it React Native?' },
     { href: '/react-native-starters', name: 'React Native Starters' },
+    { href: '/react-native-ui-inspiration', name: 'UI Inspiration' },
   ],
   company: [
     { href: '/about', name: 'About' },
