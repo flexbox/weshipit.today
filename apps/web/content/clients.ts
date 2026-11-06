@@ -382,4 +382,84 @@ export const clients: Customer[] = [
     },
     id: 'tracktile',
   },
+  {
+    data: {
+      id: 'ensemble-analytics',
+      industry: 'Logistics',
+      is_audit: false,
+      is_visible_homepage: true,
+      logo: {
+        alt: 'Ensemble Analytics port workforce management software logo',
+        height: 250,
+        url: '/images/clients/ensemble-analytics.svg',
+        width: 250,
+      },
+      name: 'Ensemble Analytics',
+    },
+    id: 'ensemble-analytics',
+  },
+  {
+    data: {
+      id: 'klareo',
+      industry: 'Logistics',
+      is_audit: true,
+      is_visible_homepage: true,
+      logo: {
+        alt: 'Klareo last-mile delivery software logo',
+        height: 250,
+        url: '/images/clients/klareo.svg',
+        width: 250,
+      },
+      name: 'Klareo',
+    },
+    id: 'klareo',
+  },
+  {
+    data: {
+      id: 'stellar-quantum',
+      industry: 'AI',
+      is_audit: true,
+      is_visible_homepage: true,
+      logo: {
+        alt: 'Stellar Quantum human-centred AI software logo',
+        height: 250,
+        url: '/images/clients/stellar-quantum.svg',
+        width: 250,
+      },
+      name: 'Stellar Quantum',
+    },
+    id: 'stellar-quantum',
+  },
+  {
+    data: {
+      id: 'kizeo-forms',
+      industry: 'Field Service',
+      is_audit: true,
+      is_visible_homepage: true,
+      logo: {
+        alt: 'Kizeo Forms field data collection app logo',
+        height: 250,
+        url: '/images/clients/kizeo-forms.svg',
+        width: 250,
+      },
+      name: 'Kizeo Forms',
+    },
+    id: 'kizeo-forms',
+  },
+  {
+    data: {
+      id: 'gac-technology',
+      industry: 'Asset Management',
+      is_audit: true,
+      is_visible_homepage: true,
+      logo: {
+        alt: 'GAC Software fleet and asset management software logo',
+        height: 250,
+        url: '/images/clients/gac-technology.svg',
+        width: 250,
+      },
+      name: 'GAC Technology',
+    },
+    id: 'gac-technology',
+  },
 ];

@@ -22,9 +22,11 @@ export default function WorkshopPage({
   const router = useRouter();
   const routerQueryId = router.query.id;
 
+  // Re-run when the content changes: navigating between challenges keeps this
+  // page mounted, and the fallback render has no source yet.
   useEffect(() => {
     Prism.highlightAll();
-  }, []);
+  }, [source]);
 
   return (
     <Layout isChallenge={true} routerQueryId={routerQueryId as string}>
