@@ -6,7 +6,6 @@ interface SourceBannerProps {
   url?: string;
   width: number;
   height: number;
-  status?: string;
   tagline?: string;
   headline?: string;
   platform?: 'linkedin' | 'youtube' | 'x' | 'og';
@@ -39,9 +38,18 @@ const COLORS = {
   ink: '#0A0A0A', // neutral-950
   muted: '#64748B', // slate-500
   pill: '#FFFFFF',
-  pillBorder: '#E2E8F0', // slate-200
-  status: '#F97316', // orange-500
 };
+
+// Per-platform type scale (fraction of the main row height). `url` is the
+// mono URL chip above the headline. Widths were checked against each platform's
+// content column so the headline keeps its two authored lines and the
+// tagline stays on one line.
+const TYPE_SCALE = {
+  linkedin: { headline: 0.2, url: 0.07, tagline: 0.085 },
+  og: { headline: 0.16, url: 0.055, tagline: 0.065 },
+  x: { headline: 0.175, url: 0.07, tagline: 0.075 },
+  youtube: { headline: 0.2, url: 0.06, tagline: 0.075 },
+} as const;
 
 // Phone blueprint geometry, lifted straight from phone-animation.tsx
 // (180×360 in CSS pixels at 1x, scaled here to safe-band height).
@@ -67,7 +75,6 @@ export function SourceBanner({
   logoLabel = 'Interview de',
   logos,
   platform,
-  status = BANNER.status,
   tagline = BANNER.tagline,
   url = BANNER.url,
   width,
@@ -98,19 +105,19 @@ export function SourceBanner({
   const footerH = hasLogos ? Math.round(safeHeight * 0.22) : 0;
   const mainH = safeHeight - footerH;
 
-  // LinkedIn renders profile covers small enough that the smallest UI text
-  // (status pill, URL chip, tagline) loses subpixel detail and reads soft on
-  // upload. Boost the secondary type sizes — and nudge the headline — so they
-  // survive LinkedIn's downscale. X / YouTube already render large enough.
-  const linkedinBoost = isLinkedIn ? 1.3 : 1;
-  const headlineSize = Math.round(mainH * 0.16 * (isLinkedIn ? 1.1 : 1));
-  // Tagline stays compact on X so all three metrics fit on one line.
-  const taglineSize = Math.round(mainH * (isX ? 0.05 : 0.065) * linkedinBoost);
-  const pillSize = Math.round(mainH * 0.055 * linkedinBoost);
-  const chipSize = Math.round(mainH * 0.055 * linkedinBoost);
+  // One type scale per platform, as fractions of the main row height.
+  // Every banner is shown heavily downscaled (X ≈ 0.4×, LinkedIn ≈ 0.5×,
+  // YouTube desktop ≈ 0.5×), so each step is sized to the room that platform
+  // leaves, keeping the tagline ≥ ~11px and the headline ≥ ~28px on screen.
+  const typeScale = TYPE_SCALE[platform ?? 'og'];
+  const headlineSize = Math.round(mainH * typeScale.headline);
+  const taglineSize = Math.round(mainH * typeScale.tagline);
+  const urlSize = Math.round(mainH * typeScale.url);
 
-  // Phone sized to fit fully inside the safe band, with a touch of padding.
-  const phoneH = Math.round(mainH * 0.95);
+  // Phone sized to fit inside the main row together with its "200px" label
+  // (label + gap ≈ 6% of the safe band), so the label never collides with the
+  // phone's top edge or the canvas edge.
+  const phoneH = Math.round(mainH * 0.88);
   const phoneW = Math.round((PHONE.width / PHONE.height) * phoneH);
 
   // Layout: phone on the left, content stack on the right. On X, push the
@@ -257,56 +264,17 @@ export function SourceBanner({
               width: `${contentColWidth}px`,
             }}
           >
-            {/* Top row — status pill + URL chip, both left-aligned. */}
+            {/* Top row — URL chip. */}
             <div
               style={{
-                alignItems: 'center',
+                color: COLORS.blueprint,
                 display: 'flex',
-                gap: `${Math.round(padX * 0.6)}px`,
-                justifyContent: 'flex-start',
+                fontFamily: '"JetBrains Mono", monospace',
+                fontSize: `${urlSize}px`,
+                fontWeight: 400,
               }}
             >
-              <div
-                style={{
-                  alignItems: 'center',
-                  backgroundColor: COLORS.pill,
-                  border: `1px solid ${COLORS.pillBorder}`,
-                  color: COLORS.ink,
-                  display: 'flex',
-                  fontSize: `${pillSize}px`,
-                  fontWeight: 500,
-                  gap: `${Math.round(pillSize * 0.5)}px`,
-                  paddingBottom: `${Math.round(pillSize * 0.35)}px`,
-                  paddingLeft: `${Math.round(pillSize * 0.75)}px`,
-                  paddingRight: `${Math.round(pillSize * 0.95)}px`,
-                  paddingTop: `${Math.round(pillSize * 0.35)}px`,
-                  // rounded-lg at text-sm, like the site's SpotLeft chip.
-                  borderRadius: `${Math.round(pillSize * 0.57)}px`,
-                }}
-              >
-                <span
-                  style={{
-                    backgroundColor: COLORS.status,
-                    borderRadius: '999px',
-                    display: 'flex',
-                    height: `${Math.round(pillSize * 0.55)}px`,
-                    width: `${Math.round(pillSize * 0.55)}px`,
-                  }}
-                />
-                <span style={{ display: 'flex' }}>{status}</span>
-              </div>
-
-              <div
-                style={{
-                  color: COLORS.blueprint,
-                  display: 'flex',
-                  fontFamily: '"JetBrains Mono", monospace',
-                  fontSize: `${chipSize}px`,
-                  fontWeight: 400,
-                }}
-              >
-                {url}
-              </div>
+              {url}
             </div>
 
             {/* Headline — Space Grotesk 700 at -0.03em, the website's
@@ -321,7 +289,7 @@ export function SourceBanner({
                 fontSize: `${headlineSize}px`,
                 fontWeight: 700,
                 letterSpacing: '-0.03em',
-                lineHeight: 1.05,
+                lineHeight: 1.1,
                 whiteSpace: 'pre-line',
                 width: `${headlineWidth}px`,
               }}

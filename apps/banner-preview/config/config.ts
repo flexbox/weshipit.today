@@ -22,7 +22,6 @@ export const AVATAR_URL =
 export const CONFIG = {
   banner: {
     name: 'David Leuliette',
-    status: 'Nouvel épisode chaque mercredi',
     // \n is honored by the renderer (white-space: pre-line) so the break
     // lands exactly here rather than wherever the text would naturally wrap.
     headline: 'Scale ton app React Native,\nsans 300k€ de dette technique.',

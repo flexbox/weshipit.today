@@ -12,13 +12,6 @@ const interRegular = fetch(
   ),
 ).then((res) => res.arrayBuffer());
 
-const interMedium = fetch(
-  new URL(
-    'https://cdn.jsdelivr.net/npm/@fontsource/inter/files/inter-latin-500-normal.woff',
-    import.meta.url,
-  ),
-).then((res) => res.arrayBuffer());
-
 // Headlines mirror the website's `font-display` token (Space Grotesk 700).
 // Satori can't decode woff2, so pull the .woff build.
 const spaceGroteskBold = fetch(
@@ -102,13 +95,11 @@ export default async function handler(
 
     const headline = queryParam(req.query.headline) ?? undefined;
     const tagline = queryParam(req.query.tagline) ?? undefined;
-    const status = queryParam(req.query.status) ?? undefined;
     const url = queryParam(req.query.url) ?? undefined;
 
-    const [regularData, mediumData, displayData, monoRegularData, logoData] =
+    const [regularData, displayData, monoRegularData, logoData] =
       await Promise.all([
         interRegular,
-        interMedium,
         spaceGroteskBold,
         jetbrainsMonoRegular,
         logos,
@@ -120,7 +111,6 @@ export default async function handler(
           width={width}
           height={height}
           platform={platformParam}
-          status={status}
           headline={headline}
           tagline={tagline}
           url={url}
@@ -135,12 +125,6 @@ export default async function handler(
             name: 'Inter',
             style: 'normal',
             weight: 400,
-          },
-          {
-            data: mediumData,
-            name: 'Inter',
-            style: 'normal',
-            weight: 500,
           },
           {
             data: displayData,
