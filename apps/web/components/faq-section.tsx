@@ -36,14 +36,14 @@ export const faqs: FaqProps[] = [
   },
   {
     answer:
-      "You can upgrade, downgrade, pause, or cancel your subscription at any time with no penalty. If your roadmap accelerates, we can increase throughput. If you're in a quiet period, pause and restart when you're ready. We're designed to flex with your engineering needs, not lock you into a fixed contract.",
+      'You can upgrade, downgrade, pause, or cancel your subscription at any time with no penalty. If your roadmap accelerates, we can increase throughput. If you’re in a quiet period, pause and restart when you’re ready. We’re designed to flex with your engineering needs, not lock you into a fixed contract.',
     id: 'faq-6',
     question:
       'What happens if we need to scale up or scale down the engagement?',
   },
   {
     answer:
-      "We manage the full release pipeline — TestFlight builds, Google Play internal tracks, Expo EAS submissions, and production rollouts. We set up automated CI/CD if you don't have it, handle code signing and provisioning profiles, and notify your team on Slack when each build is ready for review or live in the stores.",
+      'We manage the full release pipeline — TestFlight builds, Google Play internal tracks, Expo EAS submissions, and production rollouts. We set up automated CI/CD if you don’t have it, handle code signing and provisioning profiles, and notify your team on Slack when each build is ready for review or live in the stores.',
     id: 'faq-7',
     question:
       'How do you handle App Store submissions and production deployments?',
@@ -57,13 +57,13 @@ export const faqs: FaqProps[] = [
   },
   {
     answer:
-      "You organize your backlog as GitHub Issues in your repository. We triage, prioritize, and work through tasks one at a time, focusing on production-ready delivery rather than partially completed work. You get automatic Slack notifications when a task is in review and when it's shipped to production.",
+      'You organize your backlog as GitHub Issues in your repository. We triage, prioritize, and work through tasks one at a time, focusing on production-ready delivery rather than partially completed work. You get automatic Slack notifications when a task is in review and when it’s shipped to production.',
     id: 'faq-9',
     question: 'How is our backlog managed and how do we track progress?',
   },
   {
     answer:
-      "That's exactly who we built this for. We act as your embedded React Native experts — reviewing architectural decisions, mentoring your existing developers, and delivering features your team doesn't have the mobile depth to build confidently. We've helped CTOs at funded startups and scale-ups ship iOS and Android apps without hiring a full mobile team.",
+      'That’s exactly who we built this for. We act as your embedded React Native experts — reviewing architectural decisions, mentoring your existing developers, and delivering features your team doesn’t have the mobile depth to build confidently. We’ve helped CTOs at funded startups and scale-ups ship iOS and Android apps without hiring a full mobile team.',
     id: 'faq-10',
     question:
       'Is this service suitable for a CTO managing a product team without dedicated mobile expertise?',

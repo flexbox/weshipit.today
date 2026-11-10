@@ -23,6 +23,7 @@ export const TextVariants = cva([], {
       h1: [
         'text-balance',
         'font-display',
+        'leading-[1.1]',
         'text-neutral-950',
         'text-5xl',
         'font-bold',
@@ -36,6 +37,7 @@ export const TextVariants = cva([], {
       h2: [
         'text-balance',
         'font-display',
+        'leading-[1.1]',
         'text-neutral-950',
         'text-3xl',
         'font-bold',
@@ -49,6 +51,7 @@ export const TextVariants = cva([], {
       h3: [
         'text-balance',
         'font-display',
+        'leading-tight',
         'text-neutral-950',
         'text-2xl',
         'font-bold',
@@ -62,6 +65,7 @@ export const TextVariants = cva([], {
       h4: [
         'text-balance',
         'font-display',
+        'leading-tight',
         'text-neutral-950',
         'text-xl',
         'font-bold',
@@ -78,7 +82,6 @@ export const TextVariants = cva([], {
         'text-neutral-950',
         'text-xl',
         'font-bold',
-        'tracking-[-0.03em]',
         'dark:text-neutral-200',
       ],
       h6: [
@@ -87,7 +90,6 @@ export const TextVariants = cva([], {
         'text-neutral-950',
         'text-lg',
         'font-semibold',
-        'tracking-[-0.03em]',
         'dark:text-neutral-200',
       ],
       p1: [

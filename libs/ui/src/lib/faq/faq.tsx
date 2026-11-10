@@ -27,7 +27,7 @@ export function Faq({
     <div className="py-24">
       {/* Pages that render their own heading pass title="" — skip the empty h2. */}
       {title && (
-        <Text as="h2" variant="h3" className="mb-8 px-4" id={headingId}>
+        <Text as="h2" variant="h2" className="mb-8 px-4" id={headingId}>
           {title}
         </Text>
       )}
