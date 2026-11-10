@@ -63,7 +63,7 @@ export const pricingTiers: Tier[] = [
       'Technical debt assessment with priority matrix',
       'DX improvements and tooling recommendations',
       'Library updates and architecture optimization strategy',
-      'High-level optimization roadmap (4-12 weeks)',
+      'High-level optimization roadmap (4–12 weeks)',
       'Key success metrics and implementation phases',
       '2 strategic follow-up calls within 3 months',
       'Slack access for critical questions',
@@ -647,9 +647,9 @@ export function Pricing({ ctaLink, withPlanFinder = true }: PricingProps) {
       <div className="mx-auto max-w-8xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-base/7 font-semibold text-blue-600">Pricing</p>
-          <h2 className="font-display mt-2 text-balance text-5xl font-bold tracking-[-0.03em] text-gray-900 dark:text-white sm:text-6xl">
+          <Text as="h2" variant="h2" className="mt-2">
             Pricing that scales with you
-          </h2>
+          </Text>
         </div>
         <p className="mx-auto mt-6 max-w-2xl text-pretty text-center text-lg font-medium text-gray-600 sm:text-xl/8">
           Choose your entry point, upgrade anytime. No contracts, no BS.
@@ -668,7 +668,7 @@ export function Pricing({ ctaLink, withPlanFinder = true }: PricingProps) {
                   <h3
                     id={tier.id}
                     className={clsx(
-                      'font-display mb-4 text-xl font-bold tracking-[-0.03em]',
+                      'font-display mb-4 text-xl font-bold',
                       tier.featured
                         ? 'text-white dark:text-gray-900'
                         : 'text-gray-900 dark:text-white',
@@ -709,7 +709,7 @@ export function Pricing({ ctaLink, withPlanFinder = true }: PricingProps) {
                   <p className="mt-6 flex items-baseline gap-x-1">
                     <span
                       className={clsx(
-                        'font-display text-4xl font-semibold tracking-[-0.03em]',
+                        'font-display text-4xl font-bold tracking-[-0.03em]',
                         tier.featured
                           ? 'text-white dark:text-gray-900'
                           : 'text-gray-900 dark:text-white',
@@ -798,7 +798,7 @@ export function Pricing({ ctaLink, withPlanFinder = true }: PricingProps) {
                       : 'text-gray-600 dark:text-gray-300 border-gray-200 dark:border-gray-700',
                   )}
                 >
-                  NO CONTRACTS, CANCEL ANYTIME
+                  No contracts, cancel anytime
                 </p>
               </Card>
             );

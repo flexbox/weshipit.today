@@ -78,7 +78,7 @@ function ProblemAgitation() {
         <strong>50%</strong> and boost retention by over <strong>35%</strong>.
       </p>
 
-      <Text as="h2" variant="h4">
+      <Text as="p" variant="h4" className="not-prose my-8">
         Join the top 1% of mobile apps that actually succeed.
       </Text>
       <div className="relative flex h-[72px] w-[124px] flex-row items-center">
@@ -94,7 +94,7 @@ function ProblemAgitation() {
         />
       </div>
       <p>
-        I'm David, a{' '}
+        I’m David, a{' '}
         <Hyperlink href={'https://x.com/flexbox_/status/1801588179687936329'}>
           top 20 Stack Overflow contributor
         </Hyperlink>{' '}
@@ -105,8 +105,8 @@ function ProblemAgitation() {
       </p>
       <p>
         We are based in France, speak english for all our communications and use{' '}
-        <code>qwerty</code> keyboards. It&apos;s <LocalTimeInFrance /> for us
-        right now,{' '}
+        <code>qwerty</code> keyboards. It’s <LocalTimeInFrance /> for us right
+        now,{' '}
         <Hyperlink href={linksApi.cal.ONBOARDING}>
           book a call to see if we can help you
         </Hyperlink>
@@ -122,13 +122,13 @@ function ProblemAgitation() {
 
       <p>
         We can <strong>partner with you and your team</strong> on a rolling
-        basis, or we can enhance your team&apos;s skills with a one-off
-        workshop. We are flexible to suit your needs.
+        basis, or we can enhance your team’s skills with a one-off workshop. We
+        are flexible to suit your needs.
       </p>
 
       <p>
         We are going to present the details of our partnership below. However,
-        if you&apos;re interested in workshops, you can directly{' '}
+        if you’re interested in workshops, you can directly{' '}
         <Hyperlink href="https://davidl.fr/bootcamp">
           jump to workshops
         </Hyperlink>
@@ -199,7 +199,7 @@ export function TeamSection() {
           <p className="text-base/7 font-semibold text-blue-600">
             Trusted Experts
           </p>
-          <Text variant="h1" as="h2">
+          <Text variant="h2" as="h2">
             Meet your React Native team
           </Text>
           <Text
@@ -295,9 +295,9 @@ function HowDoesItWorks({ steps }: { steps: Step[] }) {
   return (
     <div className="container px-4 py-16 mx-auto" id="services">
       <div className="flex flex-col gap-4">
-        <Prose size="xl">
-          <h2>How does it work?</h2>
-        </Prose>
+        <Text as="h2" variant="h2">
+          How does it work?
+        </Text>
         <div className="flex flex-col gap-12">
           {steps.map((step) => (
             <WorkflowCard

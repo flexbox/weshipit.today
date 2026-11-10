@@ -16,7 +16,7 @@ export const workflowSteps: Step[] = [
   {
     data: {
       description:
-        "Whether it's **big features**, **small fixes**, or **relase workflows**, no matter the complexity, we've got your back. We will provide you with a custom todo list tailored to your needs.\n\nYou can add any tasks requiring our attention to this list. There are no limits or constraints.",
+        'Whether it’s **big features**, **small fixes**, or **relase workflows**, no matter the complexity, we’ve got your back. We will provide you with a custom todo list tailored to your needs.\n\nYou can add any tasks requiring our attention to this list. There are no limits or constraints.',
       image: {
         alt: '',
         height: 400,
@@ -31,7 +31,7 @@ export const workflowSteps: Step[] = [
   {
     data: {
       description:
-        "We'll tackle your custom todo list **one task at a time**.\n\nYou have the freedom to reshuffle, invert, add, or remove any tasks that have not yet started. **You set the order**, and we’ll proceed accordingly.",
+        'We’ll tackle your custom todo list **one task at a time**.\n\nYou have the freedom to reshuffle, invert, add, or remove any tasks that have not yet started. **You set the order**, and we’ll proceed accordingly.',
       image: {
         alt: '',
         height: 400,
@@ -46,7 +46,7 @@ export const workflowSteps: Step[] = [
   {
     data: {
       description:
-        '_"Using your app should spark joy."_\n\nWe\'ve always wanted to say that, and we\'ve always believed in it too.\n\nWe offer unlimited revisions, comments, and critiques on any task. No matter how high you set the bar, we aim to meet and exceed it. Our goal is to help you build **not just good, but memorable products**.',
+        '_“Using your app should spark joy.”_\n\nWe’ve always wanted to say that, and we’ve always believed in it too.\n\nWe offer unlimited revisions, comments, and critiques on any task. No matter how high you set the bar, we aim to meet and exceed it. Our goal is to help you build **not just good, but memorable products**.',
       image: {
         alt: '',
         height: 400,
@@ -61,7 +61,7 @@ export const workflowSteps: Step[] = [
   {
     data: {
       description:
-        "We understand that your needs can fluctuate – whether you're in between projects, feature launches, or funding rounds. That's why we offer the flexibility to pause or cancel your subscription at any time.\n\nWe believe in being there when you need us and respecting your timeline. It's your call, because we're here to support your journey, whether it's a sprint or a marathon.",
+        'We understand that your needs can fluctuate – whether you’re in between projects, feature launches, or funding rounds. That’s why we offer the flexibility to pause or cancel your subscription at any time.\n\nWe believe in being there when you need us and respecting your timeline. It’s your call, because we’re here to support your journey, whether it’s a sprint or a marathon.',
       image: {
         alt: '',
         height: 400,
