@@ -27,13 +27,17 @@ export function getGithubChallengeUrl(url: string) {
   }
 }
 
+/**
+ * Module id of a challenge: everything before the trailing exercise number.
+ * @example getChallengeName('expo-router-01') // 'expo-router'
+ */
 export function getChallengeName(url: string) {
-  const challengeName = url.split('-');
-  if (challengeName[0] === 'react') {
-    return 'react-navigation';
+  const parts = url.split('-');
+  if (parts.length > 1 && /^\d+$/.test(parts[parts.length - 1])) {
+    parts.pop();
   }
 
-  return challengeName[0];
+  return parts.join('-');
 }
 
 export function getLastChallengeName(linkHref: string) {

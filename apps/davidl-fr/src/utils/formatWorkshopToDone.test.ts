@@ -3,6 +3,12 @@ import {
   formatWorshopToDone,
   isCurriculumChallenge,
 } from './formatWorshopToDone';
+import { allWorkshops as curriculum } from '~/pages/api/workshop';
+import {
+  getChallengeName,
+  getChallengeNumber,
+  getLastChallengeName,
+} from './getGitHubSlug';
 
 const allWorkshops = [
   {
@@ -292,6 +298,22 @@ describe('countDoneChallenges', () => {
 describe('isCurriculumChallenge', () => {
   it('should accept a challenge of the curriculum', () => {
     expect(isCurriculumChallenge(allWorkshops, 'data', 2)).toBe(true);
+  });
+
+  it('should accept every challenge of the real curriculum', () => {
+    curriculum
+      .filter((workshop) => !['setup', 'hackathon'].includes(workshop.id))
+      .flatMap((workshop) => workshop.challenges)
+      .forEach(({ linkHref }) => {
+        const id = getLastChallengeName(linkHref) as string;
+        expect(
+          isCurriculumChallenge(
+            curriculum,
+            getChallengeName(id),
+            Number(getChallengeNumber(id)),
+          ),
+        ).toBe(true);
+      });
   });
 
   it('should reject legacy modules and unknown exercises', () => {

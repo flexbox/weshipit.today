@@ -38,6 +38,16 @@ describe('getChallengeName', () => {
     expect(result).toBe('ecosystem');
   });
 
+  it('gives the name of the exercice for `expo-router-01`', () => {
+    const source = 'expo-router-01';
+    const result = getChallengeName(source);
+    expect(result).toBe('expo-router');
+  });
+
+  it('gives the name of the exercice for `hackathon`', () => {
+    expect(getChallengeName('hackathon')).toBe('hackathon');
+  });
+
   it('gives the name of the exercice for `data-01`', () => {
     const source = 'data-01';
     const result = getChallengeName(source);
