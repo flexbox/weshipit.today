@@ -6,46 +6,41 @@ import LinkButton from '../button/link-button';
 
 const navigation = {
   services: [
-    { href: '/consulting', name: 'React Native Consulting' },
     { href: '/pricing', name: 'Pricing' },
-    { href: '/audit', name: 'React Native Audit' },
-    { href: '/audit-gratuit', name: 'Audit gratuit 🇫🇷' },
-    { href: '/react-native-security-audit', name: 'Security Audit' },
-    { href: '/agentic-sprint', name: 'Agentic Sprint 🇫🇷' },
-    { href: '/react-native-migration', name: 'Migrate to Expo' },
+    { href: '/audit', name: 'React Native audit' },
+    { href: '/react-native-security-audit', name: 'Security audit' },
   ],
   guides: [
-    { href: '/react-native-testing', name: 'E2E Testing with Maestro' },
+    { href: '/react-native-testing', name: 'E2E testing with Maestro' },
     {
       href: '/react-native-swift-package-manager-migration',
       name: 'CocoaPods to SPM',
     },
-    { href: '/react-native-glossary', name: 'React Native Glossary' },
-    { href: '/french-react-native-apps', name: 'React Native Apps 🇫🇷' },
+    { href: '/react-native-glossary', name: 'React Native glossary' },
+    { href: '/french-react-native-apps', name: 'French React Native apps 🇫🇷' },
     { href: '/podcast', name: 'Podcast' },
   ],
   resources: [
-    { href: '/react-native-resources', name: 'Start Learning' },
-    { href: '/react-native-tools', name: 'React Native Tools' },
-    { href: '/devtools', name: 'React Native Dev Tools' },
+    { href: '/react-native-resources', name: 'Learn React Native' },
+    { href: '/react-native-tools', name: 'React Native tools' },
+    { href: '/devtools', name: 'React Native dev tools' },
     { href: '/is-react-native', name: 'Is it React Native?' },
-    { href: '/react-native-starters', name: 'React Native Starters' },
-    { href: '/react-native-ui-inspiration', name: 'UI Inspiration' },
+    { href: '/react-native-starters', name: 'React Native starters' },
+    { href: '/react-native-ui-inspiration', name: 'UI inspiration' },
   ],
   company: [
     { href: '/about', name: 'About' },
     { href: '/customers', name: 'Customers' },
-    { href: '/partenaires', name: 'Partenaires' },
-    { href: '/bonjour', name: 'Version française' },
+    { href: '/partenaires', name: 'Partners 🇫🇷' },
     {
       href: 'https://github.com/sponsors/flexbox?frequency=one-time&sponsor=flexbox',
-      name: 'Sponsorship',
+      name: 'Sponsor us',
     },
     {
       href: 'https://flexbox.notion.site/Jobs-1c65e7a956a64a07b60a401f8747f1af',
       name: 'Jobs',
     },
-    { href: '/terms-of-service', name: 'Terms' },
+    { href: '/terms-of-service', name: 'Terms of service' },
   ],
   social: [
     {
@@ -57,7 +52,7 @@ const navigation = {
           </g>
         </svg>
       ),
-      name: 'X',
+      name: 'Follow us on X',
     },
     {
       href: 'https://github.com/flexbox',
@@ -70,7 +65,7 @@ const navigation = {
           />
         </svg>
       ),
-      name: 'GitHub',
+      name: 'GitHub profile',
     },
     {
       href: 'https://www.youtube.com/channel/UCO0X5b0mQ4eIHitXHXSFUyw?sub_confirmation=1',
@@ -83,7 +78,7 @@ const navigation = {
           />
         </svg>
       ),
-      name: 'YouTube',
+      name: 'YouTube channel',
     },
     {
       href: 'https://join.slack.com/t/weblille/shared_invite/zt-87i4ozyq-K5GRJKAFqKp_w9IHjleW~Q',
@@ -100,7 +95,7 @@ const navigation = {
           <path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z" />
         </svg>
       ),
-      name: 'Slack',
+      name: 'Slack community',
     },
   ],
 };
@@ -152,13 +147,15 @@ function AISearch() {
       <div className="flex flex-col items-center justify-center w-full py-8 gap-6">
         <div className="flex flex-col gap-4 items-center">
           <p className="text-base text-slate-400 text-center">
-            Request an AI summary of weshipit.today
+            Ask an AI assistant what working with us looks like
           </p>
           <div className="flex items-center gap-3 flex-wrap justify-center">
             <a
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center transition-transform hover:scale-110 cursor-pointer w-10 h-10 rounded-full overflow-hidden p-1.5"
+              aria-label="Ask ChatGPT about weshipit.today"
+              title="Ask ChatGPT"
               href={`https://chat.openai.com/?q=${queryURI}`}
             >
               <svg
@@ -173,6 +170,8 @@ function AISearch() {
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center transition-transform hover:scale-110 cursor-pointer w-10 h-10 rounded-full overflow-hidden p-1.5"
+              aria-label="Ask Claude about weshipit.today"
+              title="Ask Claude"
               href={`https://claude.ai/new?q=${queryURI}`}
             >
               <svg
@@ -242,6 +241,8 @@ c-704 -121 -1047 -186 -1659 -316 -335 -71 -631 -132 -656 -135 -42 -6 -49 -4
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center transition-transform hover:scale-110 cursor-pointer w-10 h-10 rounded-full overflow-hidden p-1.5"
+              aria-label="Ask Gemini about weshipit.today"
+              title="Ask Gemini"
               href={`https://gemini.google.com/app?q=${queryURI}`}
             >
               <svg
@@ -275,6 +276,8 @@ c-704 -121 -1047 -186 -1659 -316 -335 -71 -631 -132 -656 -135 -42 -6 -49 -4
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center transition-transform hover:scale-110 cursor-pointer w-10 h-10 rounded-full overflow-hidden p-1.5"
+              aria-label="Ask Grok about weshipit.today"
+              title="Ask Grok"
               href={`https://x.com/i/grok?text=${queryURI}`}
             >
               <svg
@@ -316,6 +319,8 @@ c524 388 866 633 891 642 32 10 51 11 81 3 64 -17 89 -44 121 -129 137 -360
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center transition-transform hover:scale-110 cursor-pointer w-10 h-10 rounded-full overflow-hidden p-1.5"
+              aria-label="Ask Perplexity about weshipit.today"
+              title="Ask Perplexity"
               href={`https://www.perplexity.ai/?q=${queryURI}`}
             >
               <svg
@@ -394,12 +399,12 @@ export function Footer() {
 
           <div className="mt-12 space-y-8 xl:mt-0">
             <p className="text-base font-bold text-slate-900 dark:text-slate-200">
-              Are you looking to build a React Native app?
+              Building a React Native app?
             </p>
             <p className="text-base leading-7 text-slate-400">
-              Look no further than weshipit.today, the #1 destination for
-              finding tools, discovering launch advices, and finding partners to
-              successfully release your React Native app today.
+              We help teams ship and maintain React Native apps. Start with an
+              audit, or use our free tools, starters and guides to launch on
+              your own.
             </p>
             <LinkButton href="/pricing" size="xl">
               Work with us
@@ -421,7 +426,7 @@ export function Footer() {
             ))}
           </div>
           <p className="mt-8 text-base text-slate-400 md:order-1 md:mt-0">
-            &copy; {fullYear} weshipit.today EURL, All rights reserved. <br />
+            &copy; {fullYear} weshipit.today EURL. All rights reserved. <br />
             <Hyperlink
               href="https://www.pappers.fr/entreprise/weshipittoday-919243923"
               isExternal
@@ -432,7 +437,7 @@ export function Footer() {
           </p>
         </div>
         <p className="text-base text-slate-400">
-          Website 100% Over-engineered made with React,{' '}
+          This website is 100% over-engineered with React,{' '}
           <Hyperlink
             href="https://design.weshipit.today/"
             isExternal
@@ -440,7 +445,7 @@ export function Footer() {
           >
             Storybook
           </Hyperlink>
-          , Next.js and Nx monorepo. You can hack the{' '}
+          , Next.js and an Nx monorepo. Hack the{' '}
           <Hyperlink
             href="https://github.com/flexbox/weshipit.today/"
             isExternal
