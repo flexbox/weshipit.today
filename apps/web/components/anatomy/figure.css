@@ -1,0 +1,395 @@
+/* Shared styles for the glossary Anatomy figures. */
+.af-stage {
+  cursor: pointer;
+  border-radius: 10px;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.af-stage:focus-visible {
+  outline: 1px solid var(--anatomy-muted);
+  outline-offset: 6px;
+}
+
+.af-stage .iso-svg {
+  overflow: visible;
+}
+
+.af-cable {
+  fill: none;
+  stroke: var(--anatomy-mid);
+  stroke-width: 3.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.af-cable-core {
+  fill: none;
+  stroke: var(--anatomy-face);
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.af-run {
+  fill: none;
+  stroke: var(--anatomy-lit);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.af-run[data-heavy] {
+  stroke-width: 3;
+}
+
+.af-head {
+  fill: var(--anatomy-lit);
+}
+
+.af-head-halo {
+  fill: var(--anatomy-lit);
+  opacity: 0.18;
+}
+
+.af-pointer {
+  stroke-width: 1.4;
+  stroke-linecap: round;
+}
+
+.af-needle {
+  fill: var(--anatomy-lit);
+  stroke: none;
+}
+
+.af-glass {
+  fill: var(--anatomy-paper);
+  stroke: var(--anatomy-lo);
+  stroke-width: 0.7;
+}
+
+.af-screen {
+  fill: var(--anatomy-face);
+}
+
+.af-ui {
+  fill: var(--anatomy-mid);
+}
+
+.af-ui-line {
+  fill: none;
+  stroke: var(--anatomy-mid);
+  stroke-width: 0.8;
+}
+
+.af-ui-lit {
+  fill: none;
+  stroke: var(--anatomy-lit);
+  stroke-width: 1.2;
+}
+
+.af-red {
+  fill: var(--anatomy-red);
+}
+
+.af-red-line {
+  fill: none;
+  stroke: var(--anatomy-red);
+  stroke-width: 1.2;
+}
+
+.af-green-line {
+  fill: none;
+  stroke: var(--anatomy-green);
+  stroke-width: 1.2;
+}
+
+.af-mono {
+  font-family: var(--anatomy-mono);
+  fill: var(--anatomy-hi);
+}
+
+.af-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 28px;
+}
+
+.af-segmented {
+  display: inline-flex;
+}
+
+.af-controls button {
+  font-family: var(--anatomy-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--anatomy-text);
+  background: var(--anatomy-card);
+  border: 1px solid var(--anatomy-lo);
+  border-radius: 999px;
+  padding: 7px 14px;
+  cursor: pointer;
+  transition:
+    border-color 160ms var(--anatomy-ease),
+    color 160ms var(--anatomy-ease);
+}
+
+.af-segmented button:first-child {
+  border-radius: 999px 0 0 999px;
+}
+
+.af-segmented button:last-child {
+  border-radius: 0 999px 999px 0;
+  margin-left: -1px;
+}
+
+.af-segmented button[aria-checked='true'] {
+  color: var(--anatomy-strong);
+  border-color: var(--anatomy-mid);
+}
+
+.af-controls button:hover:not(:disabled) {
+  border-color: var(--anatomy-mid);
+  color: var(--anatomy-strong);
+}
+
+.af-controls button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+@media (max-width: 640px) {
+  .iso-plate .af-stage {
+    overflow: hidden;
+  }
+
+  .iso-plate .af-stage .iso-svg {
+    width: 112%;
+    margin: -2% -6% -2%;
+  }
+}
+
+.af-error-text {
+  font-family: var(--anatomy-mono);
+  fill: #ffffff;
+}
+
+.af-error-line {
+  fill: none;
+  stroke: #ffffff;
+  stroke-opacity: 0.7;
+  stroke-width: 0.8;
+}
+
+.af-flash {
+  fill: var(--anatomy-lit);
+}
+
+.ra-rod {
+  stroke-width: 1.8;
+  stroke-linecap: round;
+}
+
+.ra-arm {
+  stroke-width: 2.4;
+  stroke-linecap: round;
+}
+
+.ra-tape {
+  stroke-dasharray: 1.2 2.2;
+}
+
+.ota-black {
+  fill: #000000;
+}
+
+.ota-dial {
+  fill: var(--anatomy-face);
+  stroke: var(--anatomy-lo);
+  stroke-width: 0.8;
+}
+
+.ota-hand {
+  fill: none;
+  stroke: var(--anatomy-lit);
+  stroke-width: 1.2;
+  stroke-linecap: round;
+}
+
+.af-dial {
+  fill: var(--anatomy-top);
+  stroke: var(--anatomy-mid);
+  stroke-width: 0.8;
+}
+
+.af-dial-face {
+  fill: var(--anatomy-face);
+  stroke: var(--anatomy-lo);
+  stroke-width: 0.6;
+}
+
+.af-dial-needle {
+  fill: none;
+  stroke: var(--anatomy-lit);
+  stroke-width: 1.2;
+  stroke-linecap: round;
+}
+
+.sa-screen rect,
+.sa-screen path {
+  vector-effect: non-scaling-stroke;
+}
+
+.sa-header {
+  fill: var(--anatomy-shade-0);
+}
+
+.sa-line {
+  fill: none;
+  stroke: var(--anatomy-mid);
+  stroke-width: 0.8;
+}
+
+.sa-ink {
+  fill: none;
+  stroke: var(--anatomy-hi);
+  stroke-width: 1.4;
+  stroke-linecap: round;
+}
+
+.sa-ink-fill {
+  fill: var(--anatomy-hi);
+}
+
+.sa-button {
+  fill: var(--anatomy-lit-top);
+  stroke: var(--anatomy-lit);
+  stroke-width: 1.2;
+}
+
+.sa-guide {
+  fill: none;
+  stroke: var(--anatomy-mid);
+  stroke-width: 0.8;
+  stroke-dasharray: 3 2;
+}
+
+.sa-red {
+  fill: var(--anatomy-red);
+  fill-opacity: 0.55;
+}
+
+.sa-gap {
+  fill: none;
+  stroke: var(--anatomy-red);
+  stroke-width: 0.8;
+  stroke-dasharray: 2 2;
+}
+
+.sa-island {
+  fill: #000000;
+}
+
+.sa-clock {
+  font-family: var(--anatomy-mono);
+  font-weight: 600;
+  fill: var(--anatomy-hi);
+}
+
+.sa-home {
+  fill: var(--anatomy-hi);
+}
+
+.rn-header {
+  fill: var(--anatomy-shade-1);
+}
+
+.er-url {
+  fill: var(--anatomy-mid);
+}
+
+.ps-window {
+  fill: var(--anatomy-face);
+  stroke: var(--anatomy-lo);
+  stroke-width: 0.7;
+}
+
+.ps-window-red {
+  stroke: var(--anatomy-red);
+  stroke-width: 1.4;
+}
+
+.jx-src {
+  fill: var(--anatomy-mid);
+}
+
+.jx-roller {
+  fill: var(--anatomy-shade-1);
+  stroke: var(--anatomy-mid);
+  stroke-width: 0.8;
+}
+
+.jx-roller-end {
+  fill: var(--anatomy-top);
+  stroke: var(--anatomy-mid);
+  stroke-width: 0.8;
+}
+
+.jx-view {
+  fill: var(--anatomy-shade-2);
+  stroke: var(--anatomy-hi);
+  stroke-width: 0.8;
+}
+
+.ut-blank {
+  fill: var(--anatomy-shade-1);
+}
+
+.cg-cut {
+  fill: none;
+  stroke: var(--anatomy-mid);
+  stroke-width: 1;
+  stroke-linejoin: round;
+}
+
+.cg-new {
+  fill: none;
+  stroke: var(--anatomy-lit);
+  stroke-width: 1.6;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.cg-wrong {
+  fill: var(--anatomy-red);
+}
+
+.jb-boot {
+  fill: var(--anatomy-page);
+}
+
+.hp-screen-lit {
+  fill: var(--anatomy-lit-top);
+  stroke: var(--anatomy-lit);
+  stroke-width: 0.8;
+}
+
+.ss-blue {
+  fill: var(--anatomy-blue);
+}
+
+.ss-card {
+  fill: var(--anatomy-face);
+  stroke: var(--anatomy-mid);
+  stroke-width: 0.8;
+}
+
+.ss-card-active {
+  fill: var(--anatomy-blue);
+  fill-opacity: 0.35;
+  stroke: var(--anatomy-blue);
+  stroke-width: 1;
+}
