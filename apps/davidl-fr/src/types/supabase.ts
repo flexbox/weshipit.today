@@ -13,16 +13,43 @@ export type Database = {
     Tables: {
       bootcamp_onboarding: {
         Row: {
+          computer_os: string | null;
           created_at: string;
           email: string;
+          full_name: string | null;
+          git_confidence: number | null;
+          github_username: string | null;
+          javascript_confidence: number | null;
+          motivation: string | null;
+          phone_os: string | null;
+          react_experience: number | null;
+          setup_done: boolean | null;
         };
         Insert: {
+          computer_os?: string | null;
           created_at?: string;
           email: string;
+          full_name?: string | null;
+          git_confidence?: number | null;
+          github_username?: string | null;
+          javascript_confidence?: number | null;
+          motivation?: string | null;
+          phone_os?: string | null;
+          react_experience?: number | null;
+          setup_done?: boolean | null;
         };
         Update: {
+          computer_os?: string | null;
           created_at?: string;
           email?: string;
+          full_name?: string | null;
+          git_confidence?: number | null;
+          github_username?: string | null;
+          javascript_confidence?: number | null;
+          motivation?: string | null;
+          phone_os?: string | null;
+          react_experience?: number | null;
+          setup_done?: boolean | null;
         };
         Relationships: [];
       };
