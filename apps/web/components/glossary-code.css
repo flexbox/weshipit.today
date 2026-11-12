@@ -1,0 +1,55 @@
+/* Syntax colors for glossary code blocks. The block is always dark, in both
+   themes, so one palette serves both. Every color clears 4.5:1 on neutral-900. */
+.glossary-code .token.comment,
+.glossary-code .token.prolog,
+.glossary-code .token.doctype {
+  color: #8b949e;
+  font-style: italic;
+}
+.glossary-code .token.punctuation,
+.glossary-code .token.operator,
+.glossary-code .token.interpolation-punctuation {
+  color: #a3a3a3;
+}
+.glossary-code .token.keyword {
+  color: #ff7b72;
+}
+.glossary-code .token.string,
+.glossary-code .token.template-string,
+.glossary-code .token.attr-value,
+.glossary-code .token.char {
+  color: #a5d6ff;
+}
+.glossary-code .token.number,
+.glossary-code .token.boolean,
+.glossary-code .token.constant {
+  color: #79c0ff;
+}
+.glossary-code .token.function,
+.glossary-code .token.method {
+  color: #d2a8ff;
+}
+.glossary-code .token.tag,
+.glossary-code .token.class-name,
+.glossary-code .token.builtin {
+  color: #7ee787;
+}
+.glossary-code .token.attr-name,
+.glossary-code .token.property {
+  color: #ffa657;
+}
+.glossary-code .token.attr-value .token.punctuation {
+  color: inherit;
+}
+.glossary-code .token.tag .token.punctuation {
+  color: #a3a3a3;
+}
+.glossary-code .token.plain-text {
+  color: #f5f5f5;
+}
+/* JavaScript inside JSX braces and template interpolations reads as code,
+   not as the tag or string around it. */
+.glossary-code .token.tag .token.script,
+.glossary-code .token.interpolation {
+  color: #f5f5f5;
+}

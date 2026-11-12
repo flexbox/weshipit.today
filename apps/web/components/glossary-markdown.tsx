@@ -1,6 +1,23 @@
 import Link from 'next/link';
 import ReactMarkdown, { type Components } from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import './prism-manual';
+import Prism from 'prismjs';
+import 'prismjs/components/prism-jsx';
+import 'prismjs/components/prism-typescript';
+import 'prismjs/components/prism-tsx';
+import 'prismjs/components/prism-json';
+import 'prismjs/components/prism-bash';
+
+/**
+ * Highlights a fenced block at render time, so the colors are in the static
+ * HTML and there is no flash on load. Unknown or missing languages stay plain.
+ */
+function highlight(code: string, className: string) {
+  const language = /language-(\w+)/.exec(className)?.[1];
+  const grammar = language ? Prism.languages[language] : undefined;
+  return grammar ? Prism.highlight(code, grammar, language!) : null;
+}
 
 const isInternal = (href: string) =>
   href.startsWith('/') || href.startsWith('#');
@@ -25,21 +42,32 @@ const components: Components = {
       </a>
     );
   },
-  code: ({ children, className }) =>
+  code: ({ children, className }) => {
     // react-markdown only sets `className` (language-*) on fenced blocks, so an
     // absent one means this is an inline span.
-    className ? (
-      <code className={className}>{children}</code>
-    ) : (
+    if (className) {
+      const html = highlight(String(children).replace(/\n$/, ''), className);
+      return html ? (
+        <code
+          className={className}
+          dangerouslySetInnerHTML={{ __html: html }}
+        />
+      ) : (
+        <code className={className}>{children}</code>
+      );
+    }
+
+    return (
       <code className="rounded bg-neutral-200/70 px-1.5 py-0.5 font-mono text-[0.85em] text-neutral-800 dark:bg-neutral-800 dark:text-neutral-200">
         {children}
       </code>
-    ),
+    );
+  },
   ol: ({ children }) => (
     <ol className="list-decimal space-y-1 pl-5">{children}</ol>
   ),
   pre: ({ children }) => (
-    <pre className="overflow-x-auto rounded-xl bg-neutral-900 p-4 font-mono text-xs leading-relaxed text-neutral-100 dark:bg-neutral-950">
+    <pre className="glossary-code overflow-x-auto rounded-xl bg-neutral-900 p-4 font-mono text-xs leading-relaxed text-neutral-100 dark:bg-neutral-950">
       {children}
     </pre>
   ),

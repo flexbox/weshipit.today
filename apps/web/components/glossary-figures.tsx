@@ -7,185 +7,185 @@ import type { ComponentType } from 'react';
  */
 const FIGURES: Record<string, ComponentType> = {
   bridge: dynamic(() =>
-    import('./bridge-anatomy/bridge-figure').then(
+    import('./anatomy/bridge/bridge-figure').then(
       (mod) => mod.BridgeAnatomyFigure,
     ),
   ),
   'continuous-native-generation': dynamic(() =>
-    import('./cng-anatomy/cng-figure').then((mod) => mod.CngAnatomyFigure),
+    import('./anatomy/cng/cng-figure').then((mod) => mod.CngAnatomyFigure),
   ),
   'dev-menu': dynamic(() =>
-    import('./dev-menu-anatomy/dev-menu-figure').then(
+    import('./anatomy/dev-menu/dev-menu-figure').then(
       (mod) => mod.DevMenuAnatomyFigure,
     ),
   ),
   expo: dynamic(() =>
-    import('./expo-anatomy/expo-figure').then((mod) => mod.ExpoAnatomyFigure),
+    import('./anatomy/expo/expo-figure').then((mod) => mod.ExpoAnatomyFigure),
   ),
   'fast-refresh': dynamic(() =>
-    import('./fast-refresh-anatomy/fast-refresh-figure').then(
+    import('./anatomy/fast-refresh/fast-refresh-figure').then(
       (mod) => mod.FastRefreshAnatomyFigure,
     ),
   ),
   hermes: dynamic(() =>
-    import('./hermes-anatomy/hermes-figure').then(
+    import('./anatomy/hermes/hermes-figure').then(
       (mod) => mod.HermesAnatomyFigure,
     ),
   ),
   jsi: dynamic(() =>
-    import('./jsi-anatomy/jsi-figure').then((mod) => mod.JsiAnatomyFigure),
+    import('./anatomy/jsi/jsi-figure').then((mod) => mod.JsiAnatomyFigure),
   ),
   metro: dynamic(() =>
-    import('./metro-anatomy/metro-figure').then(
+    import('./anatomy/metro/metro-figure').then(
       (mod) => mod.MetroAnatomyFigure,
     ),
   ),
   'over-the-air-update': dynamic(() =>
-    import('./ota-anatomy/ota-figure').then((mod) => mod.OtaAnatomyFigure),
+    import('./anatomy/ota/ota-figure').then((mod) => mod.OtaAnatomyFigure),
   ),
   reanimated: dynamic(() =>
-    import('./reanimated-anatomy/reanimated-figure').then(
+    import('./anatomy/reanimated/reanimated-figure').then(
       (mod) => mod.ReanimatedAnatomyFigure,
     ),
   ),
   flatlist: dynamic(() =>
-    import('./flatlist-anatomy/flatlist-figure').then(
+    import('./anatomy/flatlist/flatlist-figure').then(
       (mod) => mod.FlatListAnatomyFigure,
     ),
   ),
   flexbox: dynamic(() =>
-    import('./flexbox-anatomy/flexbox-figure').then(
+    import('./anatomy/flexbox/flexbox-figure').then(
       (mod) => mod.FlexboxAnatomyFigure,
     ),
   ),
   turbomodules: dynamic(() =>
-    import('./turbomodules-anatomy/turbomodules-figure').then(
+    import('./anatomy/turbomodules/turbomodules-figure').then(
       (mod) => mod.TurboModulesAnatomyFigure,
     ),
   ),
   'safe-area': dynamic(() =>
-    import('./safe-area-anatomy/safe-area-figure').then(
+    import('./anatomy/safe-area/safe-area-figure').then(
       (mod) => mod.SafeAreaAnatomyFigure,
     ),
   ),
   keys: dynamic(() =>
-    import('./keys-anatomy/keys-figure').then((mod) => mod.KeysAnatomyFigure),
+    import('./anatomy/keys/keys-figure').then((mod) => mod.KeysAnatomyFigure),
   ),
   'react-navigation': dynamic(() =>
-    import('./react-navigation-anatomy/react-navigation-figure').then(
+    import('./anatomy/react-navigation/react-navigation-figure').then(
       (mod) => mod.ReactNavigationAnatomyFigure,
     ),
   ),
   'expo-router': dynamic(() =>
-    import('./expo-router-anatomy/expo-router-figure').then(
+    import('./anatomy/expo-router/expo-router-figure').then(
       (mod) => mod.ExpoRouterAnatomyFigure,
     ),
   ),
   'props-and-state': dynamic(() =>
-    import('./props-and-state-anatomy/props-and-state-figure').then(
+    import('./anatomy/props-and-state/props-and-state-figure').then(
       (mod) => mod.PropsStateAnatomyFigure,
     ),
   ),
   jsx: dynamic(() =>
-    import('./jsx-anatomy/jsx-figure').then((mod) => mod.JsxAnatomyFigure),
+    import('./anatomy/jsx/jsx-figure').then((mod) => mod.JsxAnatomyFigure),
   ),
   'platform-specific-code': dynamic(() =>
     import(
-      './platform-specific-code-anatomy/platform-specific-code-figure'
+      './anatomy/platform-specific-code/platform-specific-code-figure'
     ).then((mod) => mod.PlatformAnatomyFigure),
   ),
   'ui-thread-main-thread': dynamic(() =>
-    import('./ui-thread-anatomy/ui-thread-figure').then(
+    import('./anatomy/ui-thread/ui-thread-figure').then(
       (mod) => mod.UiThreadAnatomyFigure,
     ),
   ),
   codegen: dynamic(() =>
-    import('./codegen-anatomy/codegen-figure').then(
+    import('./anatomy/codegen/codegen-figure').then(
       (mod) => mod.CodegenAnatomyFigure,
     ),
   ),
   'fabric-renderer': dynamic(() =>
-    import('./fabric-anatomy/fabric-figure').then(
+    import('./anatomy/fabric/fabric-figure').then(
       (mod) => mod.FabricAnatomyFigure,
     ),
   ),
   'javascript-bundle': dynamic(() =>
-    import('./javascript-bundle-anatomy/javascript-bundle-figure').then(
+    import('./anatomy/javascript-bundle/javascript-bundle-figure').then(
       (mod) => mod.BundleAnatomyFigure,
     ),
   ),
   'development-build': dynamic(() =>
-    import('./development-build-anatomy/development-build-figure').then(
+    import('./anatomy/development-build/development-build-figure').then(
       (mod) => mod.DevBuildAnatomyFigure,
     ),
   ),
   'core-components': dynamic(() =>
-    import('./core-components-anatomy/core-components-figure').then(
+    import('./anatomy/core-components/core-components-figure').then(
       (mod) => mod.CoreComponentsAnatomyFigure,
     ),
   ),
   'host-platform': dynamic(() =>
-    import('./host-platform-anatomy/host-platform-figure').then(
+    import('./anatomy/host-platform/host-platform-figure').then(
       (mod) => mod.HostPlatformAnatomyFigure,
     ),
   ),
   'javascript-thread': dynamic(() =>
-    import('./javascript-thread-anatomy/javascript-thread-figure').then(
+    import('./anatomy/javascript-thread/javascript-thread-figure').then(
       (mod) => mod.JsThreadAnatomyFigure,
     ),
   ),
   refs: dynamic(() =>
-    import('./refs-anatomy/refs-figure').then((mod) => mod.RefsAnatomyFigure),
+    import('./anatomy/refs/refs-figure').then((mod) => mod.RefsAnatomyFigure),
   ),
   stylesheet: dynamic(() =>
-    import('./stylesheet-anatomy/stylesheet-figure').then(
+    import('./anatomy/stylesheet/stylesheet-figure').then(
       (mod) => mod.StyleSheetAnatomyFigure,
     ),
   ),
   yoga: dynamic(() =>
-    import('./yoga-anatomy/yoga-figure').then((mod) => mod.YogaAnatomyFigure),
+    import('./anatomy/yoga/yoga-figure').then((mod) => mod.YogaAnatomyFigure),
   ),
   'javascript-runtime': dynamic(() =>
-    import('./javascript-runtime-anatomy/javascript-runtime-figure').then(
+    import('./anatomy/javascript-runtime/javascript-runtime-figure').then(
       (mod) => mod.RuntimeAnatomyFigure,
     ),
   ),
   worklet: dynamic(() =>
-    import('./worklet-anatomy/worklet-figure').then(
+    import('./anatomy/worklet/worklet-figure').then(
       (mod) => mod.WorkletAnatomyFigure,
     ),
   ),
   'animated-component': dynamic(() =>
-    import('./animated-component-anatomy/animated-component-figure').then(
+    import('./anatomy/animated-component/animated-component-figure').then(
       (mod) => mod.AnimatedAnatomyFigure,
     ),
   ),
   'react-elements': dynamic(() =>
-    import('./react-elements-anatomy/react-elements-figure').then(
+    import('./anatomy/react-elements/react-elements-figure').then(
       (mod) => mod.ElementsAnatomyFigure,
     ),
   ),
   'view-component': dynamic(() =>
-    import('./view-component-anatomy/view-component-figure').then(
+    import('./anatomy/view-component/view-component-figure').then(
       (mod) => mod.ViewAnatomyFigure,
     ),
   ),
   'native-module': dynamic(() =>
-    import('./native-module-anatomy/native-module-figure').then(
+    import('./anatomy/native-module/native-module-figure').then(
       (mod) => mod.NativeModuleAnatomyFigure,
     ),
   ),
   'communication-layer': dynamic(() =>
-    import('./communication-layer-anatomy/communication-layer-figure').then(
+    import('./anatomy/communication-layer/communication-layer-figure').then(
       (mod) => mod.CommunicationAnatomyFigure,
     ),
   ),
   eas: dynamic(() =>
-    import('./eas-anatomy/eas-figure').then((mod) => mod.EasAnatomyFigure),
+    import('./anatomy/eas/eas-figure').then((mod) => mod.EasAnatomyFigure),
   ),
   'legacy-vs-new-architecture': dynamic(() =>
     import(
-      './legacy-vs-new-architecture-anatomy/legacy-vs-new-architecture-figure'
+      './anatomy/legacy-vs-new-architecture/legacy-vs-new-architecture-figure'
     ).then((mod) => mod.ArchitectureAnatomyFigure),
   ),
 };
