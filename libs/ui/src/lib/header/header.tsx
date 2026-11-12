@@ -65,7 +65,7 @@ export function Header({
             </a>
           ))}
         </div>
-        <div className="flex flex-1 items-center justify-end gap-x-6">
+        <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:gap-x-6">
           {callToActionLink && (
             <LinkButton
               href={callToActionLink.href}

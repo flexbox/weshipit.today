@@ -302,7 +302,7 @@ export default function ReactNativeUiInspirationPage({ itemListSchema }) {
               key={category.id}
               id={category.id}
               aria-labelledby={`${category.id}-title`}
-              className="flex scroll-mt-24 flex-col gap-8"
+              className="flex scroll-mt-28 flex-col gap-8"
             >
               <div className="flex max-w-3xl flex-col gap-3">
                 <Text
@@ -339,7 +339,7 @@ export default function ReactNativeUiInspirationPage({ itemListSchema }) {
           <section
             id="how-to-choose"
             aria-labelledby="how-to-choose-title"
-            className="flex scroll-mt-24 flex-col gap-8 rounded-3xl bg-slate-50 p-6 sm:p-10 dark:bg-slate-800/50"
+            className="flex scroll-mt-28 flex-col gap-8 rounded-3xl bg-slate-50 p-6 sm:p-10 dark:bg-slate-800/50"
           >
             <div className="flex max-w-3xl flex-col gap-3">
               <Text
