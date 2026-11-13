@@ -24,6 +24,11 @@
       "options": {
         "command": "tsc --noEmit -p {projectRoot}/tsconfig.json"
       }
+    },
+    "serve": {
+      "options": {
+        "port": 4200
+      }
     }
   }
 }
