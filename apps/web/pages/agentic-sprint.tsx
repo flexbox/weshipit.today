@@ -760,7 +760,6 @@ export default function AgenticSprintPage() {
   return (
     <>
       <Head>
-        <link rel="canonical" href="https://weshipit.today/agentic-sprint" />
         <link
           rel="alternate"
           hrefLang="fr"

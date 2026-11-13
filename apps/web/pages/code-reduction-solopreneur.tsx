@@ -923,10 +923,6 @@ export default function CodeReductionSolopreneurPage() {
     <>
       <Head>
         <link
-          rel="canonical"
-          href="https://weshipit.today/code-reduction-solopreneur"
-        />
-        <link
           rel="alternate"
           hrefLang="fr"
           href="https://weshipit.today/code-reduction-solopreneur"

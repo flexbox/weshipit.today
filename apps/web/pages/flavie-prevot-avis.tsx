@@ -660,10 +660,6 @@ export default function FlaviePrevotAvisPage() {
     <>
       <Head>
         <link
-          rel="canonical"
-          href="https://weshipit.today/flavie-prevot-avis"
-        />
-        <link
           rel="alternate"
           hrefLang="fr"
           href="https://weshipit.today/flavie-prevot-avis"

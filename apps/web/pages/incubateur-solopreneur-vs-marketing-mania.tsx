@@ -874,10 +874,6 @@ export default function IncubateurVsMarketingManiaPage() {
     <>
       <Head>
         <link
-          rel="canonical"
-          href="https://weshipit.today/incubateur-solopreneur-vs-marketing-mania"
-        />
-        <link
           rel="alternate"
           hrefLang="fr"
           href="https://weshipit.today/incubateur-solopreneur-vs-marketing-mania"

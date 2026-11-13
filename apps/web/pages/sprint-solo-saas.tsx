@@ -679,7 +679,6 @@ export default function SprintSoloSaasPage() {
   return (
     <>
       <Head>
-        <link rel="canonical" href="https://weshipit.today/sprint-solo-saas" />
         <link
           rel="alternate"
           hrefLang="fr"

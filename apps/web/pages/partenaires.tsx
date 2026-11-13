@@ -872,7 +872,6 @@ export default function PartnersPage() {
   return (
     <>
       <Head>
-        <link rel="canonical" href={PAGE_URL} />
         <link rel="alternate" hrefLang="fr" href={PAGE_URL} />
         <link rel="alternate" hrefLang="x-default" href={PAGE_URL} />
         <script

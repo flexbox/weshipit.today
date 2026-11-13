@@ -1100,10 +1100,6 @@ export default function AvisIncubateurSolopreneurPage() {
     <>
       <Head>
         <link
-          rel="canonical"
-          href="https://weshipit.today/avis-incubateur-solopreneur"
-        />
-        <link
           rel="alternate"
           hrefLang="fr"
           href="https://weshipit.today/avis-incubateur-solopreneur"
