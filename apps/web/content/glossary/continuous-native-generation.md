@@ -1,15 +1,15 @@
 ---
 title: 'Continuous Native Generation'
-summary: 'Continuous Native Generation (CNG) regenerates the ios and android folders from app config and config plugins, so native projects are build artefacts rather than hand-edited source.'
+summary: 'Continuous Native Generation (CNG) regenerates the ios and android folders from app config and config plugins, so native projects become build output, not hand-edited source.'
 aliases:
   - 'CNG'
   - 'Prebuild'
-  - 'Config plugin'
 related:
   - 'Expo'
   - 'Native Module'
   - 'EAS'
   - 'Development Build'
+  - 'Config Plugin'
 updated: 2026-09-12
 ---
 

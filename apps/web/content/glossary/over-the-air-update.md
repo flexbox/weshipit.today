@@ -3,14 +3,14 @@ title: 'Over-the-Air Update'
 summary: 'An over-the-air update ships new JavaScript and assets straight to installed apps, skipping app store review. Native code changes still require a new store build.'
 aliases:
   - 'OTA update'
-  - 'EAS Update'
-  - 'CodePush'
   - 'Hot update'
 related:
   - 'JavaScript Bundle'
   - 'EAS'
   - 'Native Module'
   - 'Metro'
+  - 'EAS Update'
+  - 'CodePush'
 updated: 2026-09-12
 ---
 

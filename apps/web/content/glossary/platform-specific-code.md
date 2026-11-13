@@ -1,6 +1,6 @@
 ---
 title: 'Platform-Specific Code'
-summary: 'Platform-specific code lets one codebase behave differently per platform, through the Platform module or file extensions such as Button.ios.tsx that Metro resolves automatically.'
+summary: 'Platform-specific code lets one codebase behave differently per platform, via the Platform module or file extensions like Button.ios.tsx that Metro resolves.'
 aliases:
   - 'Platform module'
   - 'Platform.select'
