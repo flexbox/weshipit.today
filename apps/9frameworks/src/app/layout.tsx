@@ -25,6 +25,8 @@ const DESCRIPTION =
   'Pick the 9 frameworks, languages and tools that shaped the developer you are. Order them, share the grid.';
 
 export const metadata: Metadata = {
+  // Pages that don't set their own canonical are the home page.
+  alternates: { canonical: '/' },
   description: DESCRIPTION,
   metadataBase: new URL(SITE_URL),
   openGraph: {

@@ -26,6 +26,9 @@ export async function generateMetadata({
       images: [`/api/og?${toSearchParams(state)}`],
       title: heading,
     },
+    // Every shared grid is a query-string variant of the same page: keep
+    // them out of the index but let crawlers follow the links back home.
+    robots: { follow: true, index: false },
     title: heading,
   };
 }
