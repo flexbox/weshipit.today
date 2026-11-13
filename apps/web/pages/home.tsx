@@ -9,6 +9,7 @@ import {
 export default function HomePage() {
   return (
     <Layout
+      noindex
       withContainer
       withFooter
       seoTitle="React Native Experts"

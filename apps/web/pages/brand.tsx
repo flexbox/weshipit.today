@@ -20,6 +20,7 @@ const links = [
 export default function BrandPage() {
   return (
     <Layout
+      noindex
       seoTitle="Brand"
       ogImageTitle="Brand assets & guidelines"
       ogImageKicker="Brand"

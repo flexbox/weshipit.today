@@ -12,6 +12,7 @@ import { getAllClients } from '../pages/api/client';
 export default function Onboarding({ clients }) {
   return (
     <Layout
+      noindex
       withContainer
       withFooter
       seoTitle="Onboard with React Native Experts"

@@ -6,6 +6,7 @@ import { Prose } from '@weshipit/ui';
 export function Qr() {
   return (
     <Layout
+      noindex
       seoTitle="FREE Pair Programming Session"
       ogImageTitle="Free pair programming session"
       ogImageKicker="Code & Coffee"
