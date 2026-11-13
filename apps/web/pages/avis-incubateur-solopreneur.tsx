@@ -1125,7 +1125,7 @@ export default function AvisIncubateurSolopreneurPage() {
         />
       </Head>
       <Layout
-        seoTitle="Avis Incubateur Solopreneur 2026 : mon retour honnête après 6 mois (4,6/5)"
+        seoTitle="Avis Incubateur Solopreneur 2026 (4,6/5)"
         seoDescription="Avis vérifié sur l'Incubateur Solopreneur de Flavie Prevot après 6 mois d'incubation : points forts, limites, résultats concrets, comparatif avec les alternatives et code réduction à 1 490 € HT."
         ogImageTitle="Avis Incubateur Solopreneur 2026"
         ogImageKicker="Avis vérifié"

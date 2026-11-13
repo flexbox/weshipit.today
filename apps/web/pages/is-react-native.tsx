@@ -188,7 +188,7 @@ export default function IsReactNative({ results }: IsReactNativeProps) {
         />
       </Head>
       <Layout
-        seoTitle="Is this app built with React Native? Free checker"
+        seoTitle="Is This App Built with React Native?"
         seoDescription={SEO_DESCRIPTION}
         ogImageTitle="Is this app built with React Native?"
         ogImageKicker="Free tool"

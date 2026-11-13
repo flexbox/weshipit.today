@@ -61,7 +61,10 @@ function isoWeekEnd(slug: string): string | undefined {
   const jan4 = new Date(Date.UTC(Number(match[1]), 0, 4));
   const monday = new Date(jan4);
   monday.setUTCDate(
-    jan4.getUTCDate() - (jan4.getUTCDay() || 7) + 1 + (Number(match[2]) - 1) * 7
+    jan4.getUTCDate() -
+      (jan4.getUTCDay() || 7) +
+      1 +
+      (Number(match[2]) - 1) * 7,
   );
   monday.setUTCDate(monday.getUTCDate() + 6);
   return monday.toISOString().slice(0, 10);
@@ -103,7 +106,7 @@ function glossaryEntries(): SitemapEntry[] {
 function podcastEntries(): SitemapEntry[] {
   const transcriptsDir = path.join(appDir, 'public/podcast-transcripts');
   const transcripts = new Set(
-    fs.existsSync(transcriptsDir) ? fs.readdirSync(transcriptsDir) : []
+    fs.existsSync(transcriptsDir) ? fs.readdirSync(transcriptsDir) : [],
   );
   return podcastEpisodes.flatMap((episode) => {
     const lastmod = toIsoDate(episode.published_at);
@@ -155,5 +158,7 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const entries = sitemapEntries();
   const out = path.join(appDir, 'public/sitemap.xml');
   fs.writeFileSync(out, renderSitemap(entries));
-  console.log(`sitemap: ${entries.length} URLs → ${path.relative(process.cwd(), out)}`);
+  console.log(
+    `sitemap: ${entries.length} URLs → ${path.relative(process.cwd(), out)}`,
+  );
 }

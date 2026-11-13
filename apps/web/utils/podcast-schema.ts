@@ -23,6 +23,34 @@ export function toIsoDuration(duration?: string): string | undefined {
   return undefined;
 }
 
+/** First candidate that fits in `max` chars (43 + " — weshipit.today" = 60). */
+function firstThatFits(candidates: string[], max = 43): string {
+  return (
+    candidates.find((c) => c.length <= max) ?? candidates[candidates.length - 1]
+  );
+}
+
+/** Episode page title: the brand searchers type, then the guest. */
+export function episodeTitle(episode: PodcastEpisode): string {
+  const guests = episode.guests.join(', ');
+  return firstThatFits([
+    `${episode.name} avec ${guests} | Podcast`,
+    `${episode.name} avec ${guests}`,
+    `${episode.name} : podcast React Native`,
+    episode.name,
+  ]);
+}
+
+/** Transcript title, distinct from the episode page it belongs to. */
+export function transcriptTitle(episode: PodcastEpisode): string {
+  const guests = episode.guests.join(', ');
+  return firstThatFits([
+    `Transcript : ${episode.name} avec ${guests}`,
+    `Transcript : ${episode.name}`,
+    `Transcript épisode ${episode.number}`,
+  ]);
+}
+
 /** Trim to `max` characters at a word boundary, for meta descriptions. */
 export function truncateAtWord(text: string, max = 155): string {
   if (text.length <= max) return text;

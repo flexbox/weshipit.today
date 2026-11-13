@@ -60,7 +60,7 @@ export default function AuditGratuit() {
         />
       </Head>
       <Layout
-        seoTitle="Audit React Native Gratuit : Scorez votre Stack en 3 Minutes"
+        seoTitle="Audit React Native gratuit en 3 minutes"
         seoDescription="32 questions pour auditer votre stack React Native : fondations, écosystème, couche data, devops. Score sur 100 immédiat + rapport détaillé par email. Gratuit."
         ogImageTitle="Audit React Native Gratuit"
         ogImageKicker="Outil gratuit"

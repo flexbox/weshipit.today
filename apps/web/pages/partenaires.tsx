@@ -886,7 +886,7 @@ export default function PartnersPage() {
         />
       </Head>
       <Layout
-        seoTitle="Sponsoriser Le Cross Platform Show : accède aux équipes qui choisissent leur stack mobile"
+        seoTitle="Sponsoriser Le Cross Platform Show"
         seoDescription="Kit média du podcast Le Cross Platform Show. Le seul podcast francophone sur React Native en production : 20 000 abonnés LinkedIn, 200 écoutes par épisode, 2 épisodes par mois, le co-créateur de React Native et Doctolib au micro. Message sponsor, épisode co-produit, live code, étude co-brandée. Réserve un appel de 20 min."
         ogImageTitle="Sponsoriser Le Cross Platform Show"
         ogImageKicker="Kit média · podcast"

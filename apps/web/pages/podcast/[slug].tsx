@@ -22,6 +22,7 @@ import Link from 'next/link';
 import Head from 'next/head';
 import {
   buildEpisodeSchemas,
+  episodeTitle,
   truncateAtWord,
 } from '../../utils/podcast-schema';
 
@@ -138,7 +139,7 @@ export default function PodcastEpisodePage({
   return (
     <Layout
       locale="fr_FR"
-      seoTitle={`${episode.name} avec ${episode.guests.join(', ')} — Le Cross Platform Show Podcast`}
+      seoTitle={episodeTitle(episode)}
       seoDescription={truncateAtWord(episode.description_short)}
       ogImagePodcast={{
         episode: episode.number,

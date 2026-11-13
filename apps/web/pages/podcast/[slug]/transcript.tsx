@@ -7,7 +7,7 @@ import {
   parseTranscript,
   TranscriptEntryType,
 } from '../../../utils/transcript';
-import { truncateAtWord } from '../../../utils/podcast-schema';
+import { transcriptTitle, truncateAtWord } from '../../../utils/podcast-schema';
 import { PodcastNavigation } from '../../../components/podcast-navigation';
 import fs from 'fs';
 import path from 'path';
@@ -128,7 +128,7 @@ export default function PodcastTranscriptPage({
   return (
     <Layout
       locale="fr_FR"
-      seoTitle={`Transcript - Épisode ${episode.number} - ${episode.name} avec ${episode.guests.join(', ')}`}
+      seoTitle={transcriptTitle(episode)}
       seoDescription={truncateAtWord(
         `Transcript complet de l'épisode ${episode.number} du podcast avec ${episode.guests.join(', ')} de ${episode.name}. ${episode.description_short}`,
       )}
