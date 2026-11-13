@@ -67,3 +67,6 @@ vitest.config.*.timestamp*
 .nx/self-healing
 .nx/migrate-runs
 .vitest
+
+# Local TLS certificates and keys (mkcert, etc.) — never commit
+*.pem

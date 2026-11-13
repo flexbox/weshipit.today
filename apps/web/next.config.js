@@ -41,6 +41,16 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      // Device apps that moved from the tools directory to /devtools.
+      ...['exodus-privacy', 'nrf-connect'].map((slug) => ({
+        destination: '/devtools',
+        permanent: true,
+        source: `/react-native-tools/${slug}`,
+      })),
+    ];
+  },
   outputFileTracingIncludes: {
     '/api/og': ['./public/fonts/**'],
     '/api/podcast-og': [

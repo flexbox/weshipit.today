@@ -44,7 +44,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
     .filter((r) => r.slug)
     .map((r) => ({ params: { slug: r.slug } }));
 
-  return { fallback: false, paths };
+  // Unknown slugs render on demand so removed tools can redirect (below)
+  // instead of returning a 404.
+  return { fallback: 'blocking', paths };
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
@@ -52,7 +54,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const record = tools.find((r) => r.slug === slug);
 
   if (!record) {
-    return { notFound: true };
+    // A tool we removed from the directory: send visitors and link equity to
+    // the directory rather than a dead end.
+    return {
+      redirect: { destination: '/react-native-tools', permanent: true },
+    };
   }
 
   const { description, description_success, name, platform, website_url } =
