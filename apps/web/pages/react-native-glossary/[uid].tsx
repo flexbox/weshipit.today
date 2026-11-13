@@ -197,7 +197,7 @@ function CopyLinkButton({ url }: { url: string }) {
       type="button"
       onClick={copy}
       aria-live="polite"
-      className="mx-auto flex size-12 items-center justify-center rounded-full border border-neutral-300 text-neutral-600 transition hover:border-neutral-400 hover:text-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:hover:border-neutral-500 dark:hover:text-neutral-100"
+      className="mx-auto flex size-10 items-center justify-center rounded-full border border-neutral-300 text-neutral-600 transition hover:border-neutral-400 hover:text-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:hover:border-neutral-500 dark:hover:text-neutral-100"
     >
       {copied ? (
         <CheckIcon aria-hidden="true" className="size-5" />
@@ -223,7 +223,7 @@ function MetaRow({
       <dt className="text-sm text-neutral-400 dark:text-neutral-500">
         {label}
       </dt>
-      <dd className="text-sm font-medium text-neutral-900 sm:mt-2 dark:text-neutral-200">
+      <dd className="text-sm font-medium text-neutral-900 sm:mt-1 dark:text-neutral-200">
         {children}
       </dd>
     </div>
@@ -304,7 +304,7 @@ export default function GlossaryTermPage({
 
       <article className="mx-auto max-w-[100rem] px-4 pb-24 sm:px-6">
         {/* Hero: breadcrumb, oversized title, copy link, then the term's facts. */}
-        <header className="mt-6 rounded-[2rem] bg-white px-6 py-16 sm:px-12 sm:py-20 dark:bg-neutral-900">
+        <header className="mt-6 rounded-[2rem] bg-white px-6 py-10 sm:px-12 sm:py-12 dark:bg-neutral-900">
           <nav
             aria-label="Breadcrumb"
             className="flex items-center justify-center gap-2 text-sm"
@@ -323,21 +323,21 @@ export default function GlossaryTermPage({
             </span>
           </nav>
 
-          <h1 className="mt-20 text-center font-display text-4xl font-bold leading-[1.05] tracking-[-0.04em] text-balance text-neutral-950 sm:mt-28 sm:text-6xl lg:text-7xl dark:text-neutral-100">
+          <h1 className="mt-10 text-center font-display text-4xl font-bold leading-[1.05] tracking-[-0.04em] text-balance text-neutral-950 sm:mt-12 sm:text-5xl lg:text-6xl dark:text-neutral-100">
             {title}
           </h1>
 
           {aliases.length > 0 && (
-            <p className="mt-5 text-center text-neutral-400 dark:text-neutral-500">
+            <p className="mt-3 text-center text-neutral-400 dark:text-neutral-500">
               Also called {aliases.join(', ')}
             </p>
           )}
 
-          <div className="mt-10">
+          <div className="mt-6">
             <CopyLinkButton url={termUrl} />
           </div>
 
-          <dl className="mt-20 grid gap-6 border-t border-neutral-200 pt-8 sm:mt-28 sm:grid-cols-2 lg:grid-cols-4 dark:border-neutral-800">
+          <dl className="mt-10 grid gap-x-8 gap-y-5 sm:mt-12 sm:grid-cols-2 lg:grid-cols-4">
             <MetaRow label="Part of">
               <Link
                 href={GLOSSARY_PATH}
@@ -346,10 +346,6 @@ export default function GlossaryTermPage({
                 React Native Glossary
               </Link>
             </MetaRow>
-
-            {aliases.length > 0 && (
-              <MetaRow label="Also known as">{aliases.join(', ')}</MetaRow>
-            )}
 
             {relatedTerms.length > 0 && (
               <MetaRow label="Related">

@@ -5,7 +5,6 @@ aliases:
   - 'New Architecture'
   - 'Old Architecture'
   - 'Paper'
-  - 'Bridgeless'
 related:
   - 'Fabric Renderer'
   - 'TurboModules'
@@ -13,6 +12,7 @@ related:
   - 'Bridge'
   - 'Codegen'
   - 'Communication Layer'
+  - 'Bridgeless Mode'
 updated: 2026-09-12
 ---
 

@@ -6,10 +6,13 @@ import { DefaultSeo } from 'next-seo';
 
 import './styles.css';
 import '../components/anatomy/kit/iso.css';
-import '../components/cng-anatomy/cng-figure.css';
-import '../components/expo-anatomy/expo-figure.css';
-import '../components/hermes-anatomy/hermes-figure.css';
-import '../components/metro-anatomy/metro-figure.css';
+import '../components/anatomy/figure.css';
+import '../components/glossary-code.css';
+import '../components/anatomy/cng/cng-figure.css';
+import '../components/anatomy/dev-menu/dev-menu-figure.css';
+import '../components/anatomy/expo/expo-figure.css';
+import '../components/anatomy/hermes/hermes-figure.css';
+import '../components/anatomy/metro/metro-figure.css';
 
 const inter = Inter({
   display: 'swap',

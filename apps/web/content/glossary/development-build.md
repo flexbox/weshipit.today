@@ -1,6 +1,6 @@
 ---
 title: 'Development Build'
-summary: 'A development build is a debug build of your own app containing your native dependencies plus the Expo dev client, so you can load JavaScript from Metro and use any native library.'
+summary: 'A development build is a debug build of your app with its native dependencies and the Expo dev client, so it loads JavaScript from Metro and runs any native library.'
 aliases:
   - 'Dev client'
   - 'expo-dev-client'

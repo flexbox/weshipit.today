@@ -28,8 +28,6 @@ interface GlossaryEntry {
   summary: string;
   /** Other names for the concept, matched by search and shown under the title. */
   aliases: string[];
-  /** Lowercased title + aliases + definition, used for client-side filtering. */
-  haystack: string;
   relatedTo: { label: string; slug: string }[];
 }
 
@@ -76,8 +74,6 @@ export async function getStaticProps() {
 
   const entries: GlossaryEntry[] = terms.map((term: GlossaryTerm) => ({
     aliases: term.aliases,
-    haystack:
-      `${term.title} ${term.aliases.join(' ')} ${term.plainText}`.toLowerCase(),
     letter: term.letter,
     relatedTo: term.related.map((label) => ({
       label,
@@ -95,45 +91,70 @@ export async function getStaticProps() {
       .sort()
       .at(-1) ?? null;
 
-  // Carrying each term's definition and alternate names in the set schema lets
-  // an AI crawler answer from this one document without fetching 40 pages.
-  const definedTermSetSchema = {
+  return {
+    props: {
+      entries,
+      lastUpdated,
+      termCount: entries.length,
+    },
+  };
+}
+
+/**
+ * Carrying each term's definition and alternate names in the set schema lets
+ * an AI crawler answer from this one document without fetching every term
+ * page. Built at render from the entries rather than passed as its own prop,
+ * so 250+ summaries are not serialised into the page data twice.
+ */
+function toDefinedTermSetSchema(
+  entries: GlossaryEntry[],
+  lastUpdated: string | null,
+) {
+  return {
     '@context': 'https://schema.org',
     '@type': 'DefinedTermSet',
     author: AUTHOR_SCHEMA,
     dateModified: lastUpdated ?? undefined,
-    description: `Plain-English definitions of ${terms.length} React Native terms, written for developers new to the ecosystem.`,
-    hasDefinedTerm: terms.map((term) => ({
+    description: `Plain-English definitions of ${entries.length} React Native terms, written for developers new to the ecosystem.`,
+    hasDefinedTerm: entries.map((entry) => ({
       '@type': 'DefinedTerm',
-      alternateName: term.aliases.length ? term.aliases : undefined,
-      description: term.summary,
-      name: term.title,
-      url: `${SITE_URL}${GLOSSARY_PATH}/${term.slug}`,
+      alternateName: entry.aliases.length ? entry.aliases : undefined,
+      description: entry.summary,
+      name: entry.title,
+      url: `${SITE_URL}${GLOSSARY_PATH}/${entry.slug}`,
     })),
     inLanguage: 'en',
     name: 'React Native Glossary',
     publisher: PUBLISHER_SCHEMA,
     url: `${SITE_URL}${GLOSSARY_PATH}`,
   };
-
-  return {
-    props: {
-      definedTermSetSchema,
-      entries,
-      termCount: entries.length,
-    },
-  };
 }
 
 export default function ReactNativeGlossary({
-  definedTermSetSchema,
   entries,
+  lastUpdated,
   termCount,
 }: {
   entries: GlossaryEntry[];
+  lastUpdated: string | null;
   termCount: number;
-  definedTermSetSchema: object;
 }) {
+  const definedTermSetSchema = useMemo(
+    () => toDefinedTermSetSchema(entries, lastUpdated),
+    [entries, lastUpdated],
+  );
+  // Search matches title, aliases and summary. Built on the client, not
+  // shipped in the page data, which would repeat every summary again.
+  const haystacks = useMemo(
+    () =>
+      new Map(
+        entries.map((entry) => [
+          entry.slug,
+          `${entry.title} ${entry.aliases.join(' ')} ${entry.summary}`.toLowerCase(),
+        ]),
+      ),
+    [entries],
+  );
   const [query, setQuery] = useState('');
   const [activeLetter, setActiveLetter] = useState<string | null>(null);
   const searchInputRef = useRef<HTMLInputElement>(null);
@@ -143,8 +164,10 @@ export default function ReactNativeGlossary({
   const visibleEntries = useMemo(() => {
     const needle = query.trim().toLowerCase();
     if (!needle) return entries;
-    return entries.filter((entry) => entry.haystack.includes(needle));
-  }, [entries, query]);
+    return entries.filter((entry) =>
+      haystacks.get(entry.slug)?.includes(needle),
+    );
+  }, [entries, haystacks, query]);
 
   /** Letters that actually have a matching term, in alphabetical order. */
   const letters = useMemo(() => {

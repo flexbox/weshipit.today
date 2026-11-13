@@ -3,11 +3,11 @@ title: 'FlatList'
 summary: 'FlatList is React Native’s virtualised list component. It renders only the rows near the viewport, keeping memory flat no matter how long the data is.'
 aliases:
   - 'Virtualised list'
-  - 'FlashList'
 related:
   - 'Core Components'
   - 'Keys'
   - 'JavaScript Thread'
+  - 'FlashList'
 updated: 2026-09-12
 ---
 
