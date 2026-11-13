@@ -1,6 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import {
-  Hyperlink,
   Button,
   SpotifyIcon,
   ApplePodcastIcon,
@@ -14,7 +13,7 @@ import { podcastEpisodes } from '../../fixtures/podcast-episodes.fixture';
 import { PodcastNavigation } from '../../components/podcast-navigation';
 import fs from 'fs';
 import path from 'path';
-import { ChevronLeftIcon } from '@heroicons/react/20/solid';
+import { ChevronDownIcon, ChevronLeftIcon } from '@heroicons/react/20/solid';
 import { linksApi } from '../api/links';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -30,8 +29,8 @@ import {
 } from '../../utils/podcast-schema';
 
 interface PodcastEpisodePageProps {
-  transcriptEntries: TranscriptEntryType[];
   articleContent: string | null;
+  transcriptEntries: TranscriptEntryType[];
   episode: (typeof podcastEpisodes)[0] | null;
   nextEpisode: (typeof podcastEpisodes)[0] | null;
   previousEpisode: (typeof podcastEpisodes)[0] | null;
@@ -148,13 +147,14 @@ export default function PodcastEpisodePage({
             variant="p1"
             className="text-slate-600 dark:text-slate-400 mb-8"
           >
-            L'épisode que vous recherchez n'existe pas.
+            L&apos;épisode que vous recherchez n&apos;existe pas.
           </Text>
           <Link
             href="/podcast"
-            className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700"
+            className="inline-flex items-center gap-2 text-slate-600 transition-colors hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200"
           >
-            <ChevronLeftIcon className="h-4 w-4" /> Retour aux épisodes
+            <ChevronLeftIcon className="size-4" aria-hidden="true" /> Retour aux
+            épisodes
           </Link>
         </div>
       </Layout>
@@ -186,137 +186,146 @@ export default function PodcastEpisodePage({
       </Head>
       <div className="mt-8">
         <div className="max-w-4xl mx-auto">
-          <div className="inline-flex mb-8 gap-4">
+          <nav className="mb-8 flex items-center gap-4 text-slate-600 dark:text-slate-400">
             <Link
               href="/podcast"
-              className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200 transition-colors"
+              className="inline-flex items-center gap-2 transition-colors hover:text-slate-800 dark:hover:text-slate-200"
             >
-              <ChevronLeftIcon className="h-4 w-4" />
+              <ChevronLeftIcon className="size-4" aria-hidden="true" />
               Retour aux épisodes
             </Link>
-            <div className="text-slate-400">•</div>
             {transcriptEntries.length > 0 && (
-              <a
-                href="#transcript"
-                className="text-slate-600 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200 transition-colors"
-              >
-                Transcript
-              </a>
+              <>
+                <span className="text-slate-400" aria-hidden="true">
+                  •
+                </span>
+                <a
+                  href="#transcript"
+                  className="transition-colors hover:text-slate-800 dark:hover:text-slate-200"
+                >
+                  Transcript
+                </a>
+              </>
+            )}
+          </nav>
+
+          <header className="mb-8 flex items-start justify-between gap-6">
+            <div>
+              <div className="mb-4 flex items-center gap-3">
+                <Badge size="sm">Épisode {episode.number}</Badge>
+                <Badge variant="green" size="sm">
+                  Podcast
+                </Badge>
+              </div>
+              <Text as="h1" variant="h2" className="mb-3 text-balance">
+                {episode.name}
+              </Text>
+              <Text variant="s1" className="text-slate-600 dark:text-slate-300">
+                avec{' '}
+                <span className="font-semibold">
+                  {episode.guests.join(', ')}
+                </span>
+              </Text>
+            </div>
+            {episode.company_logo && (
+              <img
+                src={episode.company_logo}
+                alt={`Logo ${episode.name}`}
+                className="size-16 shrink-0 rounded-xl object-cover shadow-md outline outline-1 -outline-offset-1 outline-black/10 sm:size-24 dark:outline-white/10"
+              />
+            )}
+          </header>
+
+          <div className="mb-12 flex flex-col gap-6">
+            {(episode.spotify_url || episode.apple_podcast_url) && (
+              <Card>
+                <Text as="h2" variant="h4" className="mb-4">
+                  Écouter l&apos;épisode
+                </Text>
+                <div className="flex flex-wrap gap-4">
+                  {episode.spotify_url && (
+                    <Button
+                      as="a"
+                      href={episode.spotify_url}
+                      isExternalLink={true}
+                      size="lg"
+                      variant="spotify"
+                      accessoryLeft={<SpotifyIcon />}
+                    >
+                      Écouter sur Spotify
+                    </Button>
+                  )}
+
+                  {episode.apple_podcast_url && (
+                    <Button
+                      as="a"
+                      href={episode.apple_podcast_url}
+                      isExternalLink={true}
+                      size="lg"
+                      variant="apple"
+                      accessoryLeft={<ApplePodcastIcon />}
+                    >
+                      Écouter sur Apple Podcast
+                    </Button>
+                  )}
+                </div>
+              </Card>
+            )}
+            {episode.youtube_embed_id && (
+              <Card>
+                <Text as="h2" variant="h4" className="mb-4">
+                  Regarder sur YouTube
+                </Text>
+                <div className="aspect-video">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${episode.youtube_embed_id}`}
+                    title={`YouTube video player - ${episode.name}`}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    loading="lazy"
+                    className="size-full rounded-lg"
+                  />
+                </div>
+              </Card>
             )}
           </div>
 
-          <div className="flex flex-col lg:flex-row lg:items-start lg:gap-8 mb-12">
-            <div className="flex-1 lg:order-1">
-              <div className="flex items-start justify-between gap-6">
-                <div className="flex-1">
-                  <div className="flex items-start justify-between gap-6">
-                    <div>
-                      <div className="flex items-center gap-3 mb-4">
-                        <Badge size="sm">Épisode {episode.number}</Badge>
-                        <Badge variant="green" size="sm">
-                          Podcast
-                        </Badge>
-                      </div>
-                      <Text as="h1" variant="h2" className="mb-3 text-balance">
-                        {episode.name}
-                      </Text>
-                      <Text
-                        variant="s1"
-                        className="text-slate-600 dark:text-slate-300 mb-6"
-                      >
-                        avec{' '}
-                        <span className="font-semibold">
-                          {episode.guests.join(', ')}
-                        </span>
-                      </Text>
-                    </div>
-                    {episode.company_logo && (
-                      <img
-                        src={episode.company_logo}
-                        alt={`Logo ${episode.name}`}
-                        className="w-24 h-24 rounded-xl object-cover shadow-md outline outline-1 -outline-offset-1 outline-black/10 dark:outline-white/10"
-                      />
-                    )}
-                  </div>
-                  {(episode.spotify_url || episode.apple_podcast_url) && (
-                    <Card>
-                      <Text as="h2" variant="h3" className="mb-6">
-                        Écouter l'épisode
-                      </Text>
-                      <div className="flex flex-wrap gap-4">
-                        {episode.spotify_url && (
-                          <Button
-                            as="a"
-                            href={episode.spotify_url}
-                            isExternalLink={true}
-                            size="lg"
-                            variant="spotify"
-                            accessoryLeft={<SpotifyIcon />}
-                          >
-                            Écouter sur Spotify
-                          </Button>
-                        )}
+          {articleContent && (
+            <Prose size="lg" className="text-pretty">
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                // The article opens with its own `# title`; the page
+                // already has the episode <h1>, so demote it.
+                components={{
+                  h1: ({ node, ...props }) => <h2 {...props} />,
+                }}
+              >
+                {articleContent}
+              </ReactMarkdown>
+            </Prose>
+          )}
 
-                        {episode.apple_podcast_url && (
-                          <Button
-                            as="a"
-                            href={episode.apple_podcast_url}
-                            isExternalLink={true}
-                            size="lg"
-                            variant="apple"
-                            accessoryLeft={<ApplePodcastIcon />}
-                          >
-                            Écouter sur Apple Podcast
-                          </Button>
-                        )}
-                      </div>
-                    </Card>
-                  )}
-                  {episode.youtube_embed_id && (
-                    <Card className="my-6">
-                      <Text as="h2" variant="h4" className="mb-4">
-                        Regarder sur YouTube
-                      </Text>
-                      <div className="aspect-video">
-                        <iframe
-                          src={`https://www.youtube.com/embed/${episode.youtube_embed_id}`}
-                          title={`YouTube video player - ${episode.name}`}
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                          allowFullScreen
-                          className="w-full h-full rounded-lg"
-                        />
-                      </div>
-                    </Card>
-                  )}
-                  <Prose size="lg" className="text-pretty">
-                    {articleContent && (
-                      <ReactMarkdown
-                        remarkPlugins={[remarkGfm]}
-                        // The article opens with its own `# title`; the page
-                        // already has the episode <h1>, so demote it.
-                        components={{
-                          h1: ({ node, ...props }) => <h2 {...props} />,
-                        }}
-                      >
-                        {articleContent}
-                      </ReactMarkdown>
-                    )}
-                  </Prose>
-                </div>
-              </div>
-            </div>
-          </div>
           {transcriptEntries.length > 0 && (
             // Server-rendered inside <details>: collapsed for readers, but the
             // full text is in the HTML for search engines.
             <details
               id="transcript"
-              className="group mt-16 rounded-2xl border border-slate-200 p-6 dark:border-slate-800"
+              className="group mt-16 overflow-hidden rounded-3xl bg-white ring-1 ring-slate-200 dark:bg-slate-900 dark:ring-slate-800"
             >
-              <summary className="cursor-pointer text-lg font-semibold text-slate-900 dark:text-slate-100">
-                Lire le transcript complet de l&apos;épisode
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-6 transition-[background-color] duration-150 ease-out hover:bg-slate-50 dark:hover:bg-slate-800/50 [&::-webkit-details-marker]:hidden">
+                <Text as="h2" variant="h4">
+                  Transcript de l&apos;épisode
+                </Text>
+                <span className="flex items-center gap-2 text-sm font-medium text-slate-600 dark:text-slate-400">
+                  <span className="group-open:hidden">Afficher</span>
+                  <span className="hidden group-open:inline">Masquer</span>
+                  <ChevronDownIcon
+                    className="size-5 motion-safe:transition-[rotate] motion-safe:duration-150 motion-safe:ease-out group-open:rotate-180"
+                    aria-hidden="true"
+                  />
+                </span>
               </summary>
-              <div className="mt-8">
+              <div className="px-6 pb-6">
                 <Transcript
                   entries={transcriptEntries}
                   spotify_url={episode.spotify_url}

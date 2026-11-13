@@ -1,8 +1,10 @@
 import React from 'react';
 import { TranscriptEntryType } from '../utils/transcript';
 import { TranscriptEntry } from './transcript-entry';
-import { Prose, Text } from '@weshipit/ui';
+import { Prose } from '@weshipit/ui';
 
+// The section heading lives in the <summary> that wraps this list on the
+// episode page, so this only renders the entries.
 export function Transcript({
   entries,
   spotify_url,
@@ -13,15 +15,10 @@ export function Transcript({
   if (!entries || entries.length === 0) return null;
 
   return (
-    <section className="max-w-4xl mx-auto">
-      <Text as="h2" variant="h4" className="mb-6">
-        Transcript de l'épisode
-      </Text>
-      <Prose>
-        {entries.map((entry, idx) => (
-          <TranscriptEntry key={idx} entry={entry} spotify_url={spotify_url} />
-        ))}
-      </Prose>
-    </section>
+    <Prose>
+      {entries.map((entry, idx) => (
+        <TranscriptEntry key={idx} entry={entry} spotify_url={spotify_url} />
+      ))}
+    </Prose>
   );
 }
