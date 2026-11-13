@@ -104,19 +104,11 @@ function glossaryEntries(): SitemapEntry[] {
 }
 
 function podcastEntries(): SitemapEntry[] {
-  const transcriptsDir = path.join(appDir, 'public/podcast-transcripts');
-  const transcripts = new Set(
-    fs.existsSync(transcriptsDir) ? fs.readdirSync(transcriptsDir) : [],
-  );
-  return podcastEpisodes.flatMap((episode) => {
-    const lastmod = toIsoDate(episode.published_at);
-    const entries: SitemapEntry[] = [
-      { lastmod, loc: `/podcast/${episode.slug}` },
-    ];
-    if (transcripts.has(`${episode.slug}.txt`))
-      entries.push({ lastmod, loc: `/podcast/${episode.slug}/transcript` });
-    return entries;
-  });
+  // Transcripts render inside the episode page (no separate URL).
+  return podcastEpisodes.map((episode) => ({
+    lastmod: toIsoDate(episode.published_at),
+    loc: `/podcast/${episode.slug}`,
+  }));
 }
 
 function planEntries(): SitemapEntry[] {

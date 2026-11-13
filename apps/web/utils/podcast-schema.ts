@@ -41,16 +41,6 @@ export function episodeTitle(episode: PodcastEpisode): string {
   ]);
 }
 
-/** Transcript title, distinct from the episode page it belongs to. */
-export function transcriptTitle(episode: PodcastEpisode): string {
-  const guests = episode.guests.join(', ');
-  return firstThatFits([
-    `Transcript : ${episode.name} avec ${guests}`,
-    `Transcript : ${episode.name}`,
-    `Transcript épisode ${episode.number}`,
-  ]);
-}
-
 /** Trim to `max` characters at a word boundary, for meta descriptions. */
 export function truncateAtWord(text: string, max = 155): string {
   if (text.length <= max) return text;
