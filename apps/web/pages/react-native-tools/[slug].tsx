@@ -77,7 +77,13 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const others = tools.filter(
     (r) => r.slug !== slug && !r.type.some((t) => record.type.includes(t)),
   );
-  const recommendedRecords = take([...sameType, ...others], 3);
+  // Same-category tools first: they are the real alternatives, and linking
+  // siblings to each other is what gives these pages internal links.
+  const alternatives = take(sameType, 6);
+  const recommendedRecords =
+    alternatives.length >= 3
+      ? alternatives
+      : take([...alternatives, ...others], 3);
 
   const toolUrl = `https://weshipit.today/react-native-tools/${slug}`;
 
@@ -113,6 +119,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   return {
     props: {
       breadcrumbSchema,
+      hasAlternatives: alternatives.length > 0,
       recommendedRecords,
       record,
       seoDescription,
@@ -122,8 +129,19 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   };
 };
 
+/** ["a", "b", "c"] → "a, b and c". */
+function listToSentence(items: string[]): string {
+  return items.length > 1
+    ? `${items.slice(0, -1).join(', ')} and ${items[items.length - 1]}`
+    : (items[0] ?? '');
+}
+
+const lowercase = (items: string[]) => items.map((item) => item.toLowerCase());
+const platformLabel = (item: string) => (item === 'Web' ? 'the web' : item);
+
 export function ReactNativeSlugPage({
   breadcrumbSchema,
+  hasAlternatives,
   recommendedRecords,
   record,
   seoDescription,
@@ -213,12 +231,24 @@ export function ReactNativeSlugPage({
               ))}
             </div>
             <Prose size="lg" className="mb-12">
+              {/* Facts from the record, so every page opens with a summary
+                  that is specific to this tool. */}
+              <p className="lead">
+                {name} works in React Native apps
+                {platform && platform.length > 0
+                  ? ` on ${listToSentence(platform.map(platformLabel))}`
+                  : ''}
+                . Category: {listToSentence(type)}.
+                {pricing && pricing.length > 0
+                  ? ` Pricing: ${listToSentence(lowercase(pricing))}.`
+                  : ''}
+              </p>
               <ReactMarkdown>{description}</ReactMarkdown>
 
               {!isNil(description_success) && (
                 <>
                   <Text as="h2" variant="s1" className="my-6">
-                    How {name} will help you grow and be more successful?
+                    When to use {name} in a React Native app
                   </Text>
                   <ReactMarkdown>{description_success}</ReactMarkdown>
                 </>
@@ -294,7 +324,9 @@ export function ReactNativeSlugPage({
       {recommendedRecords.length > 0 && (
         <section className="py-12 max-w-6xl mx-auto">
           <Text as="h2" variant="h3" className="my-4">
-            Other {type[0]} React Native tools
+            {hasAlternatives
+              ? `Alternatives to ${name} for React Native`
+              : 'Other React Native tools'}
           </Text>
 
           <ToolList records={recommendedRecords} />

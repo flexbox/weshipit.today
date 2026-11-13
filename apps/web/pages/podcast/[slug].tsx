@@ -19,6 +19,11 @@ import { linksApi } from '../api/links';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import Link from 'next/link';
+import Head from 'next/head';
+import {
+  buildEpisodeSchemas,
+  truncateAtWord,
+} from '../../utils/podcast-schema';
 
 interface PodcastEpisodePageProps {
   hasTranscript: boolean;
@@ -103,6 +108,7 @@ export default function PodcastEpisodePage({
   if (!episode) {
     return (
       <Layout
+        locale="fr_FR"
         seoTitle="Épisode non trouvé"
         seoDescription="L'épisode que vous recherchez n'existe pas."
         withHeader
@@ -131,8 +137,9 @@ export default function PodcastEpisodePage({
 
   return (
     <Layout
+      locale="fr_FR"
       seoTitle={`${episode.name} avec ${episode.guests.join(', ')} — Le Cross Platform Show Podcast`}
-      seoDescription={episode.description_short}
+      seoDescription={truncateAtWord(episode.description_short)}
       ogImagePodcast={{
         episode: episode.number,
         guest: episode.guests.join(', '),
@@ -142,6 +149,15 @@ export default function PodcastEpisodePage({
       withHeader
       withContainer
     >
+      <Head>
+        {buildEpisodeSchemas(episode).map((schema) => (
+          <script
+            key={String(schema['@type'])}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          />
+        ))}
+      </Head>
       <div className="mt-8">
         <div className="max-w-4xl mx-auto">
           <div className="inline-flex mb-8 gap-4">
@@ -248,7 +264,14 @@ export default function PodcastEpisodePage({
                   )}
                   <Prose size="lg" className="text-pretty">
                     {articleContent && (
-                      <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                      <ReactMarkdown
+                        remarkPlugins={[remarkGfm]}
+                        // The article opens with its own `# title`; the page
+                        // already has the episode <h1>, so demote it.
+                        components={{
+                          h1: ({ node, ...props }) => <h2 {...props} />,
+                        }}
+                      >
                         {articleContent}
                       </ReactMarkdown>
                     )}
