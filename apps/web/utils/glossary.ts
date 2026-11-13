@@ -31,6 +31,10 @@ export interface GlossaryTerm {
   content: string;
   /** Body stripped of markdown syntax — for search, meta descriptions and schema. */
   plainText: string;
+  /** Optional `seo_title` frontmatter: overrides the default page title. */
+  seoTitle: string | null;
+  /** Optional `seo_description` frontmatter: overrides the summary as meta description. */
+  seoDescription: string | null;
   /** Words in the body — used by the content-coverage check in the tests. */
   wordCount: number;
 }
@@ -106,6 +110,11 @@ function parseTerm(filename: string): GlossaryTerm | null {
     letter: firstLetterOf(title),
     plainText,
     related: toStringArray(data.related),
+    seoDescription:
+      typeof data.seo_description === 'string'
+        ? data.seo_description.trim()
+        : null,
+    seoTitle: typeof data.seo_title === 'string' ? data.seo_title.trim() : null,
     slug: filename.replace(/\.md$/, ''),
     summary:
       typeof data.summary === 'string' && data.summary.trim()
@@ -115,6 +124,24 @@ function parseTerm(filename: string): GlossaryTerm | null {
     updated: toIsoDate(data.updated),
     wordCount: plainText ? plainText.split(/\s+/).length : 0,
   };
+}
+
+/**
+ * Page title without the " — weshipit.today" suffix the layout appends, so
+ * it has to fit in 43 characters for the full title to stay under 60.
+ * Searchers type the term, so it goes first.
+ */
+export function glossaryPageTitle(
+  term: Pick<GlossaryTerm, 'seoTitle' | 'title'>,
+) {
+  if (term.seoTitle) return term.seoTitle;
+  const candidates = /react native/i.test(term.title)
+    ? [`${term.title}, Explained`]
+    : [
+        `${term.title} in React Native, Explained`,
+        `${term.title} in React Native`,
+      ];
+  return candidates.find((candidate) => candidate.length <= 43) ?? term.title;
 }
 
 /** Every term, sorted alphabetically by title. */

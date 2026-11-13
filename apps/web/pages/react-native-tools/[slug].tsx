@@ -66,10 +66,14 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const proseSource = description || description_success || '';
   const plainDesc = stripMarkdown(proseSource);
-  const prefix = `${name} for React Native`;
-  const seoDescription = plainDesc
-    ? `${prefix} — ${truncateAtWord(plainDesc, 155 - prefix.length - 3)}`
-    : `${prefix}.`;
+  // "React Native MMKV for React Native" reads like a typo.
+  const prefix = /react native/i.test(name) ? name : `${name} for React Native`;
+  const seoDescription =
+    record.seo_description ||
+    (plainDesc
+      ? `${prefix} — ${truncateAtWord(plainDesc, 155 - prefix.length - 3)}`
+      : `${prefix}.`);
+  const seoTitle = record.seo_title || prefix;
 
   const sameType = tools.filter(
     (r) => r.slug !== slug && r.type.some((t) => record.type.includes(t)),
@@ -123,6 +127,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       recommendedRecords,
       record,
       seoDescription,
+      seoTitle,
       softwareAppSchema,
     },
     revalidate: 86400,
@@ -145,6 +150,7 @@ export function ReactNativeSlugPage({
   recommendedRecords,
   record,
   seoDescription,
+  seoTitle,
   softwareAppSchema,
 }) {
   if (record === undefined) {
@@ -176,9 +182,9 @@ export function ReactNativeSlugPage({
 
   return (
     <Layout
-      seoTitle={`${name} for React Native`}
+      seoTitle={seoTitle}
       seoDescription={seoDescription}
-      ogImageTitle={`${name} for React Native`}
+      ogImageTitle={seoTitle}
       ogImageKicker="React Native tools"
       withHeader
       withFooter
@@ -222,7 +228,7 @@ export function ReactNativeSlugPage({
           <div className="col-span-1 md:col-span-8">
             <CompanyLogo name={name} websiteUrl={website_url} size={64} />
             <Text as="h1" variant="h2" className="my-6">
-              {name} for React Native
+              {/react native/i.test(name) ? name : `${name} for React Native`}
             </Text>
 
             <div className="mb-4 flex flex-wrap gap-2">

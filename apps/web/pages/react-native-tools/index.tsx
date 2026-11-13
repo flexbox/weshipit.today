@@ -63,8 +63,8 @@ export default function ReactNativeToolsPage({ itemListSchema, records }) {
 
   return (
     <Layout
-      seoTitle={`${numberOfTools}+ React Native Tools & Resources`}
-      seoDescription={`${numberOfTools}+ curated tools and libraries for React Native developers — analytics, CI/CD, debugging, UI components, and more.`}
+      seoTitle={`React Native Tools: ${numberOfTools}+ Libraries & SDKs`}
+      seoDescription={`${numberOfTools}+ curated React Native tools, libraries and SDKs: analytics, auth, payments, databases, CI/CD and error monitoring, with alternatives for each.`}
       ogImageTitle="React Native Tools"
       ogImageKicker="Free directory"
       withHeader

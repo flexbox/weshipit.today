@@ -1,6 +1,8 @@
 ---
 title: 'Development Build'
 summary: 'A development build is a debug build of your app with its native dependencies and the Expo dev client, so it loads JavaScript from Metro and runs any native library.'
+seo_title: 'Expo Development Build: When You Need One'
+seo_description: 'A development build is your app plus expo-dev-client: run any native library, load JS from Metro and outgrow Expo Go. When to switch and how to build one.'
 aliases:
   - 'Dev client'
   - 'expo-dev-client'

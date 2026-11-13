@@ -13,6 +13,10 @@ export interface Tool {
   twitter_url?: string;
   android_url?: string;
   description_success?: string;
+  /** Overrides the page title (max 43 chars: the layout appends the site name). */
+  seo_title?: string;
+  /** Overrides the meta description (140–155 chars). */
+  seo_description?: string;
 }
 
 export const tools: Tool[] = [
@@ -125,6 +129,9 @@ export const tools: Tool[] = [
     platform: ['Android', 'iOS', 'Web', 'macOS'],
     pricing: ['Free tier', 'Premium tiers'],
     slug: 'shakebugs',
+    seo_description:
+      'Shake (Shakebugs) adds screenshots, logs and 50+ device data points to every React Native bug report. Features, pricing, setup and the best alternatives.',
+    seo_title: 'Shakebugs for React Native: Setup & Review',
     type: ['Error Monitoring'],
     website_url: 'https://www.shakebugs.com/',
   },
@@ -209,6 +216,9 @@ export const tools: Tool[] = [
     name: 'Watermelon DB',
     pricing: ['Open source'],
     slug: 'watermelon-db',
+    seo_description:
+      'WatermelonDB is a lazy-loading, reactive SQLite database for offline-first React Native apps. When it beats Realm or MMKV, sync options and alternatives.',
+    seo_title: 'WatermelonDB for React Native: Offline DB',
     twitter_url: 'https://twitter.com/Nozbe',
     type: ['Database & Storage'],
     website_url: 'https://watermelondb.dev/',
@@ -574,6 +584,9 @@ export const tools: Tool[] = [
     platform: ['Android', 'iOS'],
     pricing: ['Open source'],
     slug: 'react-native-mmkv',
+    seo_description:
+      'react-native-mmkv is a synchronous key-value store built on JSI, about 30x faster than AsyncStorage. When to use it, encryption, setup and alternatives.',
+    seo_title: 'react-native-mmkv: Fast Key-Value Storage',
     twitter_url: 'https://twitter.com/mrousavy',
     type: ['Database & Storage'],
     website_url: 'https://github.com/margelo/react-native-mmkv',

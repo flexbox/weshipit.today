@@ -8,6 +8,7 @@ import { GlossaryMarkdown } from '../../components/glossary-markdown';
 import { GlossaryFigure } from '../../components/glossary-figures';
 import {
   getAllGlossaryTerms,
+  glossaryPageTitle,
   resolveTermSlug,
   type GlossaryTerm,
 } from '../../utils/glossary';
@@ -32,6 +33,7 @@ interface GlossaryTermPageProps {
   aliases: string[];
   articleSchema: object;
   seoDescription: string;
+  seoTitle: string;
   mentionedIn: TermLink[];
   relatedTerms: TermLink[];
   relatedTools: { name: string; slug: string }[];
@@ -107,7 +109,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   // The hand-written summary beats a truncated body: it is a complete
   // sentence, so it survives being quoted in a SERP or an AI answer.
   const seoDescription =
-    term.summary || `Learn about ${term.title} in React Native development.`;
+    term.seoDescription ||
+    term.summary ||
+    `Learn about ${term.title} in React Native development.`;
 
   const termUrl = `${SITE_URL}${GLOSSARY_PATH}/${term.slug}`;
 
@@ -186,6 +190,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       relatedTerms,
       relatedTools,
       seoDescription,
+      seoTitle: glossaryPageTitle(term),
       service: serviceForTerm(term.slug),
       slug: term.slug,
       summary: term.summary,
@@ -276,6 +281,7 @@ export default function GlossaryTermPage({
   relatedTerms,
   relatedTools,
   seoDescription,
+  seoTitle,
   service,
   slug,
   summary,
@@ -294,7 +300,7 @@ export default function GlossaryTermPage({
 
   return (
     <Layout
-      seoTitle={`${title} | React Native Glossary`}
+      seoTitle={seoTitle}
       seoDescription={seoDescription}
       ogImageTitle={title}
       ogImageKicker="React Native glossary"

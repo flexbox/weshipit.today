@@ -313,6 +313,13 @@ export default function ReactNativeSwiftPackageManagerMigration() {
               </Link>
               .
             </p>
+            <p>
+              Still on a bare React Native app with hand-edited ios/ and
+              android/ folders? SPM is easier to adopt once Expo generates them
+              for you: see our{' '}
+              <Link href="/react-native-migration">Expo migration service</Link>
+              .
+            </p>
           </Prose>
         </div>
 
