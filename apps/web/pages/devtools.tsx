@@ -1,5 +1,9 @@
-import { AppBadge, Button, Card, Hero, TagList, Text } from '@weshipit/ui';
+import { AppBadge, Button, Card, TagList, Text } from '@weshipit/ui';
 import { Layout } from '../components/layout';
+import {
+  DirectoryHero,
+  DirectoryHeroHighlight,
+} from '../components/directory-hero';
 import { InferGetStaticPropsType } from 'next/types';
 import { devtoolsFixture, DevTool } from '../fixtures/devtools.fixture';
 import { useMemo } from 'react';
@@ -185,38 +189,25 @@ export default function DevToolsPage({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
         />
       </Head>
-      <div className="bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-400 py-12 md:py-4 mb-12">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <Hero
-            title={
+      <DirectoryHero
+        kicker={`Free directory · ${devtools.length} apps`}
+        title={
+          <>
+            All the{' '}
+            {activeFeature && (
               <>
-                <span className="text-white">
-                  All the{' '}
-                  {activeFeature && (
-                    <span className="text-yellow-300">
-                      {activeFeature.toLowerCase()}{' '}
-                    </span>
-                  )}
-                  apps you need
-                </span>
-                <br />
-                <span className="text-white">to ship React Native apps.</span>
+                <DirectoryHeroHighlight>
+                  {activeFeature.toLowerCase()}
+                </DirectoryHeroHighlight>{' '}
               </>
-            }
-          >
-            <Text
-              as="p"
-              variant="p1"
-              className="my-4 !text-purple-100 max-w-2xl"
-            >
-              A curated collection of all the apps React Native developers need
-              on their phone to debug, test, and ship mobile apps.
-            </Text>
-          </Hero>
-        </div>
-      </div>
+            )}
+            apps you need to ship React Native apps
+          </>
+        }
+        description="A curated collection of all the apps React Native developers need on their phone to debug, test, and ship mobile apps."
+      />
 
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+      <div className="mx-auto max-w-screen-xl px-4 sm:px-6">
         <div className="my-6 flex flex-wrap gap-2">
           <Button
             onClick={() => router.push('/devtools')}

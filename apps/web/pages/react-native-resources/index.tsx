@@ -1,7 +1,12 @@
 import { Layout } from '../../components/layout';
 import { resources } from '../../fixtures/resources.fixture';
 
-import { Text, Hero, Card } from '@weshipit/ui';
+import { Text, Card } from '@weshipit/ui';
+import {
+  DirectoryHero,
+  DirectoryHeroHighlight,
+  RoadmapSponsorship,
+} from '../../components/directory-hero';
 import round from 'lodash/round';
 
 /**
@@ -211,35 +216,35 @@ export default function ReactNativeResourcesPage({
         name: 'Add resource',
       }}
     >
-      <div className="bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-400 py-12 md:py-20 mb-12">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <Hero
-            title={
-              <>
-                <span className="text-white">
-                  Starting mobile app development
-                </span>
-                <br /> <span className="text-white">with React Native.</span>
-              </>
-            }
-          >
-            <Text as="p" variant="p1" className="my-4 !text-purple-100">
-              We have curated essential resources for the success of your React
-              Native app.
-              <br />
-              This informative content has been brought to you through the
-              generous sponsorship of{' '}
-              <a
-                href="https://gum.co/road-react-native/HELLO_FRIEND"
-                className="font-semibold text-white underline underline-offset-4 hover:text-purple-200 transition-colors"
-              >
-                the React Native Roadmap
-              </a>
-              .
-            </Text>
-          </Hero>
-        </div>
-      </div>
+      <DirectoryHero
+        kicker={`Free directory · ${records.length} resources`}
+        title={
+          <>
+            Start mobile app development with{' '}
+            <DirectoryHeroHighlight>React Native</DirectoryHeroHighlight>
+          </>
+        }
+        description={
+          <>
+            The guides, newsletters, podcasts and conferences we recommend to
+            every developer starting a React Native app. <RoadmapSponsorship />
+          </>
+        }
+        sections={[
+          { href: '#guides', label: 'Guides', count: guides.length },
+          {
+            href: '#newsletters',
+            label: 'Newsletters',
+            count: newsletters.length,
+          },
+          { href: '#podcasts', label: 'Podcasts', count: podcasts.length },
+          {
+            href: '#conferences',
+            label: 'Conferences',
+            count: conferences.length,
+          },
+        ]}
+      />
 
       <div className="mx-auto max-w-screen-xl px-4 pb-12 sm:px-6 grid gap-16 md:gap-24">
         <section id="guides">

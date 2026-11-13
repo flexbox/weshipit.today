@@ -7,7 +7,12 @@ import {
   starters,
 } from '../../fixtures/starters.fixture';
 
-import { Badge, Hyperlink, Prose, TagList, Text } from '@weshipit/ui';
+import { Hyperlink, Prose, TagList, Text } from '@weshipit/ui';
+import {
+  DirectoryHero,
+  DirectoryHeroHighlight,
+  RoadmapSponsorship,
+} from '../../components/directory-hero';
 import round from 'lodash/round';
 
 import { linksApi } from '../api/links';
@@ -163,53 +168,30 @@ export default function ReactNativeStartersPage({
       }}
       withFooter
     >
-      <div className="bg-gradient-to-tr from-blue-600 to-cyan-300">
-        <header className="mx-auto flex max-w-screen-xl flex-col gap-6 px-4 py-16 sm:px-6 lg:py-24">
-          <Badge variant="blue" size="sm" className="self-start">
-            Free directory · {totalStarters} starters
-          </Badge>
-          <Text as="h1" variant="h2" className="max-w-3xl text-balance">
-            <span className="text-white">The best </span>
-            <span className="text-blue-100">Starter Templates</span>{' '}
-            <span className="text-white">for busy developers.</span>
-          </Text>
-          <Text
-            as="p"
-            variant="p1"
-            className="max-w-3xl text-pretty text-sky-50"
-          >
-            We have curated essential resources for the success of your React
-            Native app. This informative content has been brought to you through
-            the generous sponsorship of{' '}
-            <a
-              href="https://gum.co/road-react-native/HELLO_FRIEND"
-              className="font-semibold text-white underline underline-offset-4 transition-colors hover:text-blue-100"
-            >
-              the React Native Roadmap
-            </a>
-            .
-          </Text>
-          <nav aria-label="Levels">
-            <ul className="flex flex-wrap gap-3">
-              {levels.map((category) => (
-                <li key={category.title}>
-                  <a
-                    href={`#${levelDetails[category.title].id}`}
-                    className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-2 text-sm font-medium text-white ring-1 ring-inset ring-white/40 transition-colors hover:bg-white/25"
-                  >
-                    {category.title}
-                    <span className="rounded-full bg-white/20 px-2 text-xs tabular-nums">
-                      {category.records.length}
-                    </span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </header>
-      </div>
+      <DirectoryHero
+        kicker={`Free directory · ${totalStarters} starters`}
+        title={
+          <>
+            The best{' '}
+            <DirectoryHeroHighlight>starter templates</DirectoryHeroHighlight>{' '}
+            for busy React Native developers
+          </>
+        }
+        description={
+          <>
+            Boilerplates to create your React Native project, sorted by how much
+            they decide for you. <RoadmapSponsorship />
+          </>
+        }
+        sectionsLabel="Levels"
+        sections={levels.map((category) => ({
+          href: `#${levelDetails[category.title].id}`,
+          label: category.title,
+          count: category.records.length,
+        }))}
+      />
 
-      <div className="mx-auto flex max-w-screen-xl flex-col gap-24 px-4 py-16 sm:px-6 lg:py-24">
+      <div className="mx-auto flex max-w-screen-xl flex-col gap-24 px-4 pb-24 sm:px-6">
         {levels.map((category) => {
           const { description, id } = levelDetails[category.title];
           return (

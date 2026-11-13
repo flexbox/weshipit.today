@@ -1,4 +1,4 @@
-import { Badge, Card, Faq, Hero, LinkButton, Prose, Text } from '@weshipit/ui';
+import { Badge, Card, Faq, LinkButton, Prose, Text } from '@weshipit/ui';
 import Head from 'next/head';
 import Link from 'next/link';
 import type { GetStaticProps } from 'next';
@@ -7,6 +7,10 @@ import {
   IsReactNativeChecker,
 } from '../components/is-react-native-checker';
 import { Layout } from '../components/layout';
+import {
+  DirectoryHero,
+  DirectoryHeroHighlight,
+} from '../components/directory-hero';
 import {
   AndroidAppInspection,
   inspectAndroidApp,
@@ -190,172 +194,179 @@ export default function IsReactNative({ results }: IsReactNativeProps) {
         ogImageKicker="Free tool"
         withHeader
         withFooter
-        withContainer
       >
-        <Hero
-          title="Is this app built with React Native?"
+        <DirectoryHero
+          kicker="Free tool"
+          title={
+            <>
+              Is this app built with{' '}
+              <DirectoryHeroHighlight>React Native</DirectoryHeroHighlight>?
+            </>
+          }
           description="Paste a Google Play link. We look inside the APK and tell you if the app runs React Native, with or without Expo, or another framework like Flutter."
         />
 
-        <IsReactNativeChecker initialResults={results} />
+        <div className="mx-auto max-w-screen-xl px-4 sm:px-6">
+          <IsReactNativeChecker initialResults={results} />
 
-        <section className="mt-24">
-          <Text as="h2" variant="h4">
-            How the checker works
-          </Text>
-          <div className="mt-8 grid gap-4 sm:grid-cols-3">
-            {STEPS.map((step, index) => (
-              <Card key={step.title} size="md">
-                <Text
-                  as="p"
-                  variant="c2"
-                  className="uppercase tracking-wide text-blue-600 dark:text-blue-400"
-                >
-                  Step {index + 1}
-                </Text>
-                <Text as="h3" variant="h6" className="mt-2">
-                  {step.title}
-                </Text>
-                <Text
-                  as="p"
-                  variant="p2"
-                  className="mt-2 text-slate-600 dark:text-slate-300"
-                >
-                  {step.text}
-                </Text>
-              </Card>
-            ))}
-          </div>
-        </section>
-
-        <section className="mt-24">
-          <Text as="h2" variant="h4">
-            Popular apps built with React Native
-          </Text>
-          <Text
-            as="p"
-            variant="p1"
-            className="mt-4 max-w-3xl text-slate-600 dark:text-slate-300"
-          >
-            Checked with this tool in October 2026. Open one to see the files
-            that prove it.
-          </Text>
-          <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {POPULAR_APPS.map((app) => (
-              <li key={app.id}>
-                <Link
-                  href={`/is-react-native?id=${app.id}`}
-                  shallow
-                  className="flex h-full flex-col gap-3 rounded-2xl bg-white p-6 ring-1 ring-slate-200 transition-shadow hover:shadow-md dark:bg-white/5 dark:ring-white/10"
-                >
-                  <Text as="span" variant="h6">
-                    Is {app.name} built with React Native?
+          <section className="mt-24">
+            <Text as="h2" variant="h4">
+              How the checker works
+            </Text>
+            <div className="mt-8 grid gap-4 sm:grid-cols-3">
+              {STEPS.map((step, index) => (
+                <Card key={step.title} size="md">
+                  <Text
+                    as="p"
+                    variant="c2"
+                    className="uppercase tracking-wide text-blue-600 dark:text-blue-400"
+                  >
+                    Step {index + 1}
                   </Text>
-                  <span className="flex flex-wrap gap-2">
-                    <Badge size="sm" variant="green">
-                      Yes
-                    </Badge>
-                    {app.expo && (
-                      <Badge size="sm" variant="blue">
-                        Expo
-                      </Badge>
-                    )}
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <Text
-            as="p"
-            variant="p1"
-            className="mt-6 text-slate-600 dark:text-slate-300"
-          >
-            Looking for more? Browse the{' '}
-            <Link
-              href="/french-react-native-apps"
-              className="font-medium text-blue-600 underline dark:text-blue-400"
+                  <Text as="h3" variant="h6" className="mt-2">
+                    {step.title}
+                  </Text>
+                  <Text
+                    as="p"
+                    variant="p2"
+                    className="mt-2 text-slate-600 dark:text-slate-300"
+                  >
+                    {step.text}
+                  </Text>
+                </Card>
+              ))}
+            </div>
+          </section>
+
+          <section className="mt-24">
+            <Text as="h2" variant="h4">
+              Popular apps built with React Native
+            </Text>
+            <Text
+              as="p"
+              variant="p1"
+              className="mt-4 max-w-3xl text-slate-600 dark:text-slate-300"
             >
-              French React Native apps
-            </Link>{' '}
-            list.
-          </Text>
-        </section>
+              Checked with this tool in October 2026. Open one to see the files
+              that prove it.
+            </Text>
+            <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {POPULAR_APPS.map((app) => (
+                <li key={app.id}>
+                  <Link
+                    href={`/is-react-native?id=${app.id}`}
+                    shallow
+                    className="flex h-full flex-col gap-3 rounded-2xl bg-white p-6 ring-1 ring-slate-200 transition-shadow hover:shadow-md dark:bg-white/5 dark:ring-white/10"
+                  >
+                    <Text as="span" variant="h6">
+                      Is {app.name} built with React Native?
+                    </Text>
+                    <span className="flex flex-wrap gap-2">
+                      <Badge size="sm" variant="green">
+                        Yes
+                      </Badge>
+                      {app.expo && (
+                        <Badge size="sm" variant="blue">
+                          Expo
+                        </Badge>
+                      )}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <Text
+              as="p"
+              variant="p1"
+              className="mt-6 text-slate-600 dark:text-slate-300"
+            >
+              Looking for more? Browse the{' '}
+              <Link
+                href="/french-react-native-apps"
+                className="font-medium text-blue-600 underline dark:text-blue-400"
+              >
+                French React Native apps
+              </Link>{' '}
+              list.
+            </Text>
+          </section>
 
-        <div className="mt-24">
-          <Prose>
-            <h2>How to tell if an app is built with React Native</h2>
-            <p>
-              A React Native app is a native shell that runs JavaScript. On
-              Android, both parts end up as files inside the APK, and their
-              names give the framework away.
-            </p>
-            <table>
-              <thead>
-                <tr>
-                  <th>File in the APK</th>
-                  <th>What it means</th>
-                </tr>
-              </thead>
-              <tbody>
-                {SIGNATURES.map((signature) => (
-                  <tr key={signature.file}>
-                    <td>
-                      <code>{signature.file}</code>
-                    </td>
-                    <td>{signature.meaning}</td>
+          <div className="mt-24">
+            <Prose>
+              <h2>How to tell if an app is built with React Native</h2>
+              <p>
+                A React Native app is a native shell that runs JavaScript. On
+                Android, both parts end up as files inside the APK, and their
+                names give the framework away.
+              </p>
+              <table>
+                <thead>
+                  <tr>
+                    <th>File in the APK</th>
+                    <th>What it means</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
-            <p>
-              The bundle is the app code itself (see{' '}
-              <Link href="/react-native-glossary/javascript-bundle">
-                JavaScript bundle
-              </Link>
-              ). <Link href="/react-native-glossary/hermes">Hermes</Link> is the
-              default engine since React Native 0.70, and{' '}
-              <Link href="/react-native-glossary/expo">Expo</Link> modules leave
-              their own libraries next to it.
-            </p>
-            <h3>Check an APK yourself</h3>
-            <p>
-              If you already have the APK file, list its content and search for
-              these names:
-            </p>
-            <pre>
-              <code>
-                unzip -l app.apk | grep -E
-                &quot;libreactnative|index.android.bundle|libhermes|expo&quot;
-              </code>
-            </pre>
-            <p>
-              Apps from Google Play are often split APKs. In that case the
-              native libraries sit in the architecture split (for example{' '}
-              <code>config.arm64_v8a.apk</code>), not in the base APK. The
-              checker above reads both.
-            </p>
-          </Prose>
-        </div>
+                </thead>
+                <tbody>
+                  {SIGNATURES.map((signature) => (
+                    <tr key={signature.file}>
+                      <td>
+                        <code>{signature.file}</code>
+                      </td>
+                      <td>{signature.meaning}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              <p>
+                The bundle is the app code itself (see{' '}
+                <Link href="/react-native-glossary/javascript-bundle">
+                  JavaScript bundle
+                </Link>
+                ). <Link href="/react-native-glossary/hermes">Hermes</Link> is
+                the default engine since React Native 0.70, and{' '}
+                <Link href="/react-native-glossary/expo">Expo</Link> modules
+                leave their own libraries next to it.
+              </p>
+              <h3>Check an APK yourself</h3>
+              <p>
+                If you already have the APK file, list its content and search
+                for these names:
+              </p>
+              <pre>
+                <code>
+                  unzip -l app.apk | grep -E
+                  &quot;libreactnative|index.android.bundle|libhermes|expo&quot;
+                </code>
+              </pre>
+              <p>
+                Apps from Google Play are often split APKs. In that case the
+                native libraries sit in the architecture split (for example{' '}
+                <code>config.arm64_v8a.apk</code>), not in the base APK. The
+                checker above reads both.
+              </p>
+            </Prose>
+          </div>
 
-        <Faq faqs={FAQ_ITEMS} title="Frequently asked questions" />
+          <Faq faqs={FAQ_ITEMS} title="Frequently asked questions" />
 
-        <div className="mx-auto mb-24 max-w-4xl">
-          <Card
-            size="xl"
-            className="flex flex-col items-center justify-center gap-6 text-center"
-            variant="gradient-blue"
-          >
-            <Text as="h2" variant="h4" className="text-white">
-              Building your app with React Native?
-            </Text>
-            <Text as="p" variant="p1" className="max-w-xl text-white">
-              We help teams ship and maintain React Native and Expo apps. Start
-              with an audit of your codebase.
-            </Text>
-            <LinkButton href="/audit" variant="outline" size="xl">
-              Discover the audit
-            </LinkButton>
-          </Card>
+          <div className="mx-auto mb-24 max-w-4xl">
+            <Card
+              size="xl"
+              className="flex flex-col items-center justify-center gap-6 text-center"
+              variant="gradient-blue"
+            >
+              <Text as="h2" variant="h4" className="text-white">
+                Building your app with React Native?
+              </Text>
+              <Text as="p" variant="p1" className="max-w-xl text-white">
+                We help teams ship and maintain React Native and Expo apps.
+                Start with an audit of your codebase.
+              </Text>
+              <LinkButton href="/audit" variant="outline" size="xl">
+                Discover the audit
+              </LinkButton>
+            </Card>
+          </div>
         </div>
       </Layout>
     </>

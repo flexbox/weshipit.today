@@ -1,6 +1,7 @@
 import { Layout } from '../components/layout';
 
 import { Badge, CompanyLogo, Text } from '@weshipit/ui';
+import { DirectoryHero } from '../components/directory-hero';
 import Head from 'next/head';
 import Link from 'next/link';
 
@@ -258,44 +259,19 @@ export default function ReactNativeUiInspirationPage({ itemListSchema }) {
         />
       </Head>
 
+      <DirectoryHero
+        kicker={`Free directory · ${allResources.length} handpicked resources`}
+        title="React Native UI inspiration for apps that feel native"
+        description="Good-looking apps are rarely designed from scratch. This is the short list of screen libraries, paywall examples, animation galleries and UI blocks we use when we build React Native apps for our clients. Each one saves you hours of design and prototyping."
+        sectionsLabel="Categories"
+        sections={categories.map((category) => ({
+          href: `#${category.id}`,
+          label: category.shortTitle,
+          count: category.resources.length,
+        }))}
+      />
+
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6">
-        <header className="flex max-w-3xl flex-col gap-6 py-12 lg:py-24">
-          <Badge variant="blue" size="sm" className="self-start">
-            Free directory · {allResources.length} handpicked resources
-          </Badge>
-          <Text as="h1" variant="h2" className="text-balance">
-            React Native UI inspiration for apps that feel native
-          </Text>
-          <Text
-            as="p"
-            variant="p1"
-            className="text-pretty text-slate-600 dark:text-slate-400"
-          >
-            Good-looking apps are rarely designed from scratch. This is the
-            short list of screen libraries, paywall examples, animation
-            galleries and UI blocks we use when we build React Native apps for
-            our clients. Each one saves you hours of design and prototyping.
-          </Text>
-
-          <nav aria-label="Categories">
-            <ul className="flex flex-wrap gap-3">
-              {categories.map((category) => (
-                <li key={category.id}>
-                  <a
-                    href={`#${category.id}`}
-                    className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium text-slate-700 ring-1 ring-inset ring-slate-300 transition-colors hover:bg-slate-50 hover:ring-slate-400 dark:bg-slate-800 dark:text-slate-200 dark:ring-slate-600 dark:hover:bg-slate-700"
-                  >
-                    {category.shortTitle}
-                    <span className="rounded-full bg-slate-100 px-2 text-xs tabular-nums text-slate-500 dark:bg-slate-700 dark:text-slate-400">
-                      {category.resources.length}
-                    </span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </header>
-
         <div className="flex flex-col gap-24 pb-24">
           {categories.map((category, index) => (
             <section

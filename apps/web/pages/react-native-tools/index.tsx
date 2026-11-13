@@ -1,7 +1,12 @@
 import { Layout } from '../../components/layout';
 import { tools } from '../../fixtures/tools.fixture';
 
-import { ToolList, SearchBar, Hero, TypeFilter } from '@weshipit/ui';
+import { ToolList, SearchBar, TypeFilter } from '@weshipit/ui';
+import {
+  DirectoryHero,
+  DirectoryHeroHighlight,
+  RoadmapSponsorship,
+} from '../../components/directory-hero';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
@@ -77,45 +82,30 @@ export default function ReactNativeToolsPage({ itemListSchema, records }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
         />
       </Head>
-      <div className="mx-auto mb-6 max-w-6xl px-4 sm:px-6">
-        <Hero
-          badgeStyle="bg-orange-200 dark:bg-orange-900 text-[#ed6c5c] ring-[#ed6c5c] dark:ring-[#ed6c5c]"
-          hintTitle="Upvote us on Product Hunt"
-          hintDescription="Help us climb the ranks and reach more people"
-          hintLink="https://www.producthunt.com/@flexbox"
-          title={
-            <>
-              The best React Native{' '}
-              {toolType && (
-                <span className="text-indigo-600">
-                  {toolType.toLowerCase()}{' '}
-                </span>
-              )}
-              tools
-              <br />
-              and resources for busy developers.
-            </>
-          }
-          description={
-            <>
-              We have curated essential resources for the success of your React
-              Native app.
-              <br />
-              This informative content has been brought to you through the
-              generous sponsorship of{' '}
-              <a
-                href="https://gum.co/road-react-native/HELLO_FRIEND"
-                className="font-semibold text-blue-500 underline underline-offset-4 hover:text-blue-700"
-              >
-                the React Native Roadmap
-              </a>
-              .
-            </>
-          }
-        />
-      </div>
+      <DirectoryHero
+        kicker={`Free directory · ${numberOfTools} tools`}
+        title={
+          <>
+            The best React Native{' '}
+            {toolType && (
+              <>
+                <DirectoryHeroHighlight>
+                  {toolType.toLowerCase()}
+                </DirectoryHeroHighlight>{' '}
+              </>
+            )}
+            tools and resources for busy developers
+          </>
+        }
+        description={
+          <>
+            Analytics, CI/CD, debugging, UI components and more, curated for the
+            success of your React Native app. <RoadmapSponsorship />
+          </>
+        }
+      />
 
-      <div className="mx-auto max-w-screen-2xl px-4 pb-12 sm:px-6">
+      <div className="mx-auto max-w-screen-xl px-4 pb-12 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-6 md:gap-6">
           <div>
             <TypeFilter numberOfTools={numberOfTools} />
