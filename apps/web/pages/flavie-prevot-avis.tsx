@@ -660,10 +660,6 @@ export default function FlaviePrevotAvisPage() {
     <>
       <Head>
         <link
-          rel="canonical"
-          href="https://weshipit.today/flavie-prevot-avis"
-        />
-        <link
           rel="alternate"
           hrefLang="fr"
           href="https://weshipit.today/flavie-prevot-avis"
@@ -689,7 +685,7 @@ export default function FlaviePrevotAvisPage() {
         />
       </Head>
       <Layout
-        seoTitle="Flavie Prevot : avis, parcours et Incubateur Solopreneur (2026)"
+        seoTitle="Flavie Prevot : avis et parcours (2026)"
         seoDescription="Qui est Flavie Prevot ? Parcours, écosystème (newsletter 30k+ abonnés, podcast, Incubateur Solopreneur), avis publics, réputation Trustpilot et LinkedIn. Analyse neutre par un incubé actif."
         ogImageTitle="Flavie Prevot : avis et parcours"
         ogImageKicker="Incubateur Solopreneur"

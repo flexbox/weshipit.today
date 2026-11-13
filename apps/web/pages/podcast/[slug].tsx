@@ -19,9 +19,18 @@ import { linksApi } from '../api/links';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import Link from 'next/link';
+import Head from 'next/head';
+import { useEffect } from 'react';
+import { Transcript } from '../../components/transcript';
+import { parseTranscript, TranscriptEntryType } from '../../utils/transcript';
+import {
+  buildEpisodeSchemas,
+  episodeTitle,
+  truncateAtWord,
+} from '../../utils/podcast-schema';
 
 interface PodcastEpisodePageProps {
-  hasTranscript: boolean;
+  transcriptEntries: TranscriptEntryType[];
   articleContent: string | null;
   episode: (typeof podcastEpisodes)[0] | null;
   nextEpisode: (typeof podcastEpisodes)[0] | null;
@@ -51,9 +60,9 @@ export const getStaticProps: GetStaticProps<PodcastEpisodePageProps> = async ({
       props: {
         articleContent: null,
         episode: null,
-        hasTranscript: false,
         nextEpisode: null,
         previousEpisode: null,
+        transcriptEntries: [],
       },
     };
   }
@@ -71,7 +80,11 @@ export const getStaticProps: GetStaticProps<PodcastEpisodePageProps> = async ({
     'public/podcast-transcripts',
     `${slug}.txt`,
   );
-  const hasTranscript = fs.existsSync(transcriptPath);
+  // The transcript lives on the episode page (it used to be a separate
+  // /transcript page that competed with this one and wasn't indexed).
+  const transcriptEntries = fs.existsSync(transcriptPath)
+    ? parseTranscript(fs.readFileSync(transcriptPath, 'utf-8'))
+    : [];
 
   const articlePath = path.join(
     process.cwd(),
@@ -86,9 +99,9 @@ export const getStaticProps: GetStaticProps<PodcastEpisodePageProps> = async ({
     props: {
       articleContent,
       episode,
-      hasTranscript,
       nextEpisode,
       previousEpisode,
+      transcriptEntries,
     },
   };
 };
@@ -96,13 +109,32 @@ export const getStaticProps: GetStaticProps<PodcastEpisodePageProps> = async ({
 export default function PodcastEpisodePage({
   articleContent,
   episode,
-  hasTranscript,
   nextEpisode,
   previousEpisode,
+  transcriptEntries,
 }: PodcastEpisodePageProps) {
+  // Old /transcript URLs redirect to #transcript, and the "Transcript" link
+  // points there too: open the section when the hash targets it.
+  useEffect(() => {
+    const openTranscript = () => {
+      const details = document.getElementById('transcript');
+      if (
+        window.location.hash === '#transcript' &&
+        details instanceof HTMLDetailsElement
+      ) {
+        details.open = true;
+        details.scrollIntoView();
+      }
+    };
+    openTranscript();
+    window.addEventListener('hashchange', openTranscript);
+    return () => window.removeEventListener('hashchange', openTranscript);
+  }, []);
+
   if (!episode) {
     return (
       <Layout
+        locale="fr_FR"
         seoTitle="Épisode non trouvé"
         seoDescription="L'épisode que vous recherchez n'existe pas."
         withHeader
@@ -131,8 +163,9 @@ export default function PodcastEpisodePage({
 
   return (
     <Layout
-      seoTitle={`${episode.name} avec ${episode.guests.join(', ')} — Le Cross Platform Show Podcast`}
-      seoDescription={episode.description_short}
+      locale="fr_FR"
+      seoTitle={episodeTitle(episode)}
+      seoDescription={truncateAtWord(episode.description_short)}
       ogImagePodcast={{
         episode: episode.number,
         guest: episode.guests.join(', '),
@@ -142,6 +175,15 @@ export default function PodcastEpisodePage({
       withHeader
       withContainer
     >
+      <Head>
+        {buildEpisodeSchemas(episode).map((schema) => (
+          <script
+            key={String(schema['@type'])}
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          />
+        ))}
+      </Head>
       <div className="mt-8">
         <div className="max-w-4xl mx-auto">
           <div className="inline-flex mb-8 gap-4">
@@ -153,13 +195,13 @@ export default function PodcastEpisodePage({
               Retour aux épisodes
             </Link>
             <div className="text-slate-400">•</div>
-            {hasTranscript && (
-              <Link
-                href={`/podcast/${episode.slug}/transcript`}
+            {transcriptEntries.length > 0 && (
+              <a
+                href="#transcript"
                 className="text-slate-600 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200 transition-colors"
               >
                 Transcript
-              </Link>
+              </a>
             )}
           </div>
 
@@ -248,7 +290,14 @@ export default function PodcastEpisodePage({
                   )}
                   <Prose size="lg" className="text-pretty">
                     {articleContent && (
-                      <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                      <ReactMarkdown
+                        remarkPlugins={[remarkGfm]}
+                        // The article opens with its own `# title`; the page
+                        // already has the episode <h1>, so demote it.
+                        components={{
+                          h1: ({ node, ...props }) => <h2 {...props} />,
+                        }}
+                      >
                         {articleContent}
                       </ReactMarkdown>
                     )}
@@ -257,6 +306,24 @@ export default function PodcastEpisodePage({
               </div>
             </div>
           </div>
+          {transcriptEntries.length > 0 && (
+            // Server-rendered inside <details>: collapsed for readers, but the
+            // full text is in the HTML for search engines.
+            <details
+              id="transcript"
+              className="group mt-16 rounded-2xl border border-slate-200 p-6 dark:border-slate-800"
+            >
+              <summary className="cursor-pointer text-lg font-semibold text-slate-900 dark:text-slate-100">
+                Lire le transcript complet de l&apos;épisode
+              </summary>
+              <div className="mt-8">
+                <Transcript
+                  entries={transcriptEntries}
+                  spotify_url={episode.spotify_url}
+                />
+              </div>
+            </details>
+          )}
           <Card
             size="xl"
             className="my-24 flex flex-col items-center justify-center gap-8 text-center"

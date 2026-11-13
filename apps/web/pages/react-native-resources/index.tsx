@@ -198,8 +198,8 @@ export default function ReactNativeResourcesPage({
 
   return (
     <Layout
-      seoTitle={`${numberOfRecords}+ best resources to start with React Native in mobile app development`}
-      seoDescription={`Most effective resources for learning React Native, online guides and tutorials, podcast and newsletter.`}
+      seoTitle={`Learn React Native: ${numberOfRecords}+ Best Resources`}
+      seoDescription={`The ${numberOfRecords}+ best resources to learn React Native in 2026: official docs, courses, tutorials, newsletters and podcasts, picked by a React Native agency.`}
       ogImageTitle="React Native Resources"
       ogImageKicker="Free directory"
       withHeader

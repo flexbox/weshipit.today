@@ -23,6 +23,7 @@ import { Container } from '../../components/container';
 import Image from 'next/image';
 import Head from 'next/head';
 import ReactMarkdown from 'react-markdown';
+import Link from 'next/link';
 
 interface MigrationProps {
   clients: ClientProps[];
@@ -133,11 +134,11 @@ export function Migration({ clients, feedback }: MigrationProps) {
         />
       </Head>
       <Layout
-        seoTitle="Migrate to Expo - Simplify Your React Native Development"
-        ogImageTitle="Migrate your React Native app to Expo"
+        seoTitle="Expo Migration Service for React Native"
+        ogImageTitle="Expo migration service for React Native apps"
         ogImageKicker="React Native migration"
         seoDescription={
-          'Our React Native to Expo Migration Package helps organizations transition their codebase to Expo, improving development speed and efficiency. Book a call today to learn more.'
+          'Expo migration service for bare and legacy React Native apps: we move you to Expo, development builds and EAS while your team keeps shipping features.'
         }
         withHeader
         navigation={[
@@ -159,8 +160,8 @@ export function Migration({ clients, feedback }: MigrationProps) {
                 variant="h1"
                 className="text-slate-900 dark:text-white"
               >
-                Transform Your{' '}
-                <span className="text-primary">React Native</span> App with Expo
+                Expo migration service for{' '}
+                <span className="text-primary">React Native</span> apps
               </Text>
               <Text variant="p1" className="text-slate-600 dark:text-slate-400">
                 Unlock faster development cycles, easier updates, and superior
@@ -228,6 +229,77 @@ export function Migration({ clients, feedback }: MigrationProps) {
         <div className="py-16 dark:bg-slate-900">
           <ClientsListHomepage clients={clients} />
         </div>
+
+        <section className="py-16" id="what-we-migrate">
+          <Container>
+            <div className="max-w-3xl mx-auto mb-12 text-center">
+              <Text
+                variant="h2"
+                as="h2"
+                className="mb-4 text-slate-900 dark:text-white"
+              >
+                Two migrations we run every month
+              </Text>
+            </div>
+            <div className="grid gap-8 md:grid-cols-2 max-w-5xl mx-auto">
+              <Card shadow="light" className="border-none">
+                <Text as="h3" variant="h5" className="mb-3">
+                  Bare React Native to Expo migration
+                </Text>
+                <p className="text-slate-600 dark:text-slate-400">
+                  Your app was created with the React Native CLI and the ios/
+                  and android/ folders are edited by hand. We move native
+                  changes into config plugins, switch to{' '}
+                  <Link
+                    href="/react-native-glossary/continuous-native-generation"
+                    className="underline underline-offset-2"
+                  >
+                    Continuous Native Generation
+                  </Link>
+                  , replace Expo Go with a{' '}
+                  <Link
+                    href="/react-native-glossary/development-build"
+                    className="underline underline-offset-2"
+                  >
+                    development build
+                  </Link>{' '}
+                  and set up{' '}
+                  <Link
+                    href="/react-native-glossary/eas"
+                    className="underline underline-offset-2"
+                  >
+                    EAS
+                  </Link>{' '}
+                  for builds, store submissions and over-the-air updates.
+                </p>
+              </Card>
+              <Card shadow="light" className="border-none">
+                <Text as="h3" variant="h5" className="mb-3">
+                  Legacy React Native app modernization
+                </Text>
+                <p className="text-slate-600 dark:text-slate-400">
+                  Your app is several React Native versions behind, still on the{' '}
+                  <Link
+                    href="/react-native-glossary/legacy-vs-new-architecture"
+                    className="underline underline-offset-2"
+                  >
+                    legacy architecture
+                  </Link>
+                  , and every upgrade breaks a native dependency. We upgrade
+                  step by step, replace abandoned libraries, enable the New
+                  Architecture and get iOS ready for{' '}
+                  <Link
+                    href="/react-native-swift-package-manager-migration"
+                    className="underline underline-offset-2"
+                  >
+                    Swift Package Manager
+                  </Link>
+                  , without a feature freeze.
+                </p>
+              </Card>
+            </div>
+          </Container>
+        </section>
 
         <section className="py-16" id="benefits">
           <Container>

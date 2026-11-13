@@ -5,19 +5,23 @@
   "projectType": "application",
   "tags": [],
   "targets": {
-    "postbuild": {
+    "build": {
+      "dependsOn": [
+        "^build",
+        "sitemap"
+      ]
+    },
+    "sitemap": {
       "executor": "nx:run-commands",
-      "dependsOn": ["build"],
+      "cache": false,
       "options": {
-        "commands": [
-          {
-            "command": "next-sitemap --config apps/web/next-sitemap.config.js"
-          }
-        ]
+        "command": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON apps/web/scripts/generate-sitemap.mts"
       }
     },
     "test": {
-      "outputs": ["{workspaceRoot}/coverage/apps/web"]
+      "outputs": [
+        "{workspaceRoot}/coverage/apps/web"
+      ]
     },
     "typecheck": {
       "executor": "nx:run-commands",

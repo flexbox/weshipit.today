@@ -40,7 +40,12 @@ const navigation = {
       href: 'https://flexbox.notion.site/Jobs-1c65e7a956a64a07b60a401f8747f1af',
       name: 'Jobs',
     },
-    { href: '/terms-of-service', name: 'Terms of service' },
+    {
+      // Link straight to the terms: /terms-of-service is only a redirect to
+      // this page, and internal links should never go through a redirect.
+      href: 'https://flexbox.notion.site/Conditions-g-n-rales-de-vente-306f478bcb8c8151b246c498ab11a0d1',
+      name: 'Terms of service',
+    },
   ],
   social: [
     {

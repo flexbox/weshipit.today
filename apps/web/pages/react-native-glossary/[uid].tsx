@@ -8,10 +8,13 @@ import { GlossaryMarkdown } from '../../components/glossary-markdown';
 import { GlossaryFigure } from '../../components/glossary-figures';
 import {
   getAllGlossaryTerms,
+  glossaryPageTitle,
   resolveTermSlug,
   type GlossaryTerm,
 } from '../../utils/glossary';
 import { AUTHOR_SCHEMA, PUBLISHER_SCHEMA } from '../../utils/schema';
+import { ServiceLink, serviceForTerm } from '../../utils/glossary-services';
+import { tools } from '../../fixtures/tools.fixture';
 
 const SITE_URL = 'https://weshipit.today';
 const GLOSSARY_PATH = '/react-native-glossary';
@@ -30,8 +33,11 @@ interface GlossaryTermPageProps {
   aliases: string[];
   articleSchema: object;
   seoDescription: string;
+  seoTitle: string;
   mentionedIn: TermLink[];
   relatedTerms: TermLink[];
+  relatedTools: { name: string; slug: string }[];
+  service: ServiceLink;
   updatedAt: string | null;
   breadcrumbSchema: object;
   nextTerm: TermLink | null;
@@ -88,10 +94,24 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     )
     .map(toTermLink);
 
+  // Tools whose name or description names this term, so a definition leads
+  // somewhere you can act on it.
+  const relatedTools = tools
+    .filter(
+      (tool) =>
+        tool.slug === term.slug ||
+        titlePattern.test(tool.name) ||
+        titlePattern.test(tool.description ?? ''),
+    )
+    .slice(0, 6)
+    .map(({ name, slug }) => ({ name, slug }));
+
   // The hand-written summary beats a truncated body: it is a complete
   // sentence, so it survives being quoted in a SERP or an AI answer.
   const seoDescription =
-    term.summary || `Learn about ${term.title} in React Native development.`;
+    term.seoDescription ||
+    term.summary ||
+    `Learn about ${term.title} in React Native development.`;
 
   const termUrl = `${SITE_URL}${GLOSSARY_PATH}/${term.slug}`;
 
@@ -168,7 +188,10 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       nextTerm,
       previousTerm,
       relatedTerms,
+      relatedTools,
       seoDescription,
+      seoTitle: glossaryPageTitle(term),
+      service: serviceForTerm(term.slug),
       slug: term.slug,
       summary: term.summary,
       termUrl,
@@ -256,7 +279,10 @@ export default function GlossaryTermPage({
   nextTerm,
   previousTerm,
   relatedTerms,
+  relatedTools,
   seoDescription,
+  seoTitle,
+  service,
   slug,
   summary,
   termUrl,
@@ -274,7 +300,7 @@ export default function GlossaryTermPage({
 
   return (
     <Layout
-      seoTitle={`${title} | React Native Glossary`}
+      seoTitle={seoTitle}
       seoDescription={seoDescription}
       ogImageTitle={title}
       ogImageKicker="React Native glossary"
@@ -385,6 +411,42 @@ export default function GlossaryTermPage({
           <div className="mt-6 text-lg leading-relaxed text-neutral-700 sm:text-xl [&_a:hover]:text-blue-600 [&_a]:underline [&_a]:underline-offset-2 [&>*+*]:mt-5 dark:text-neutral-300 dark:[&_a:hover]:text-blue-400">
             <GlossaryMarkdown>{content}</GlossaryMarkdown>
           </div>
+
+          <aside className="mt-16 rounded-2xl bg-neutral-100 p-8 dark:bg-neutral-900">
+            {relatedTools.length > 0 && (
+              <>
+                <h2 className="font-display text-xl font-bold text-neutral-950 dark:text-neutral-100">
+                  React Native tools for {title}
+                </h2>
+                <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-2">
+                  {relatedTools.map((tool) => (
+                    <li key={tool.slug}>
+                      <Link
+                        href={`/react-native-tools/${tool.slug}`}
+                        className="underline decoration-neutral-300 underline-offset-4 hover:decoration-neutral-900 dark:decoration-neutral-600 dark:hover:decoration-neutral-100"
+                      >
+                        {tool.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )}
+            <h2
+              className={`font-display text-xl font-bold text-neutral-950 dark:text-neutral-100${relatedTools.length > 0 ? ' mt-8' : ''}`}
+            >
+              Need help with {title}?
+            </h2>
+            <p className="mt-3 text-neutral-700 dark:text-neutral-300">
+              {service.pitch}{' '}
+              <Link
+                href={service.href}
+                className="font-semibold underline underline-offset-4"
+              >
+                See our {service.label}
+              </Link>
+            </p>
+          </aside>
 
           {/* Prev / next, alphabetically through the glossary. */}
           <nav

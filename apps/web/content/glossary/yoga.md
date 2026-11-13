@@ -1,6 +1,8 @@
 ---
 title: 'Yoga'
 summary: 'Yoga is the cross-platform C++ layout engine React Native uses to implement Flexbox, producing identical layout results on iOS and Android.'
+seo_title: 'Yoga Layout Engine in React Native'
+seo_description: 'Yoga is the C++ Flexbox engine behind every React Native layout. Why styles render the same on iOS and Android, and where it differs from CSS on the web.'
 aliases:
   - 'Yoga layout engine'
 related:

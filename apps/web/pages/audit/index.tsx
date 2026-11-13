@@ -420,7 +420,7 @@ function FreeTools() {
 export function Audit({ clients }: AuditProps) {
   return (
     <Layout
-      seoTitle="React Native Audit: Fix Tech Debt in 2 Weeks"
+      seoTitle="React Native Code Audit in 2 Weeks"
       seoDescription={
         'Full React Native codebase audit in 2 weeks: prioritized backlog, dependency upgrades, unblocked releases. Trusted by apps serving millions of users.'
       }

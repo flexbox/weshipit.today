@@ -31,6 +31,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     hosts: ['David Leuliette'],
     name: 'Capgo',
     number: 40,
+    published_at: '2026-10-08',
+    duration: '1h25',
     slug: 'refus-stores',
     spotify_url: 'https://open.spotify.com/episode/2aqUlg7hqcsFxKheng9TZj',
     title:
@@ -47,6 +49,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     hosts: ['David Leuliette'],
     name: 'React Native Reusables',
     number: 39,
+    published_at: '2026-09-23',
+    duration: '1h31',
     slug: 'react-native-reusables',
     spotify_url: 'https://open.spotify.com/episode/2ZAHFbRxza6magVMXD8hxt',
     title: 'Ton design system mobile te coûte 100 K€ par an — Zach Nugent',
@@ -62,6 +66,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     hosts: ['David Leuliette'],
     name: 'React Native',
     number: 38,
+    published_at: '2026-09-02',
+    duration: '1h02',
     slug: 'vjeux',
     spotify_url: '' /* ⚠️ TODO à compléter */,
     title:
@@ -78,6 +84,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     hosts: ['David Leuliette'],
     name: 'Doctolib',
     number: 37,
+    published_at: '2026-08-19',
+    duration: '1h05',
     slug: 'doctolib',
     spotify_url: 'https://open.spotify.com/episode/6DJaZSwTFJTK8SIT5O7EMF',
     title:
@@ -94,6 +102,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     hosts: ['David Leuliette'],
     name: 'App.js 2026',
     number: 36,
+    published_at: '2026-08-15',
+    duration: '1h08',
     slug: 'app-js-2026',
     spotify_url: '' /* ⚠️ TODO à compléter */,
     title: 'App.js 2026 — Ce que la conf ne vous a pas dit',
@@ -109,6 +119,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     hosts: ['David Leuliette'],
     name: 'RevenueCat',
     number: 35,
+    published_at: '2026-06-10',
+    duration: '1h05',
     slug: 'revenuecat',
     spotify_url: 'https://open.spotify.com/episode/5S8cWrGkWlkbyXFYaUn5FS',
     title: 'RevenueCat : La vérité sur les stores en 2026',
@@ -124,6 +136,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     hosts: ['David Leuliette'],
     name: 'TikTools',
     number: 34,
+    published_at: '2026-06-03',
+    duration: '1h05',
     slug: 'tiktools',
     spotify_url: 'https://open.spotify.com/episode/2UasjGWdgW72Wp0klGIRo4',
     title:
@@ -140,6 +154,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     hosts: ['David Leuliette'],
     name: 'Allo',
     number: 33,
+    published_at: '2026-05-27',
+    duration: '1h03',
     slug: 'allo',
     spotify_url: 'https://open.spotify.com/episode/0AXbU04Fm2c1P8FAzm361p',
     title: 'Les 5 erreurs coûteuses des CTO mobile',
@@ -155,6 +171,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     hosts: ['David Leuliette'],
     name: 'Mobiskill',
     number: 32,
+    published_at: '2026-05-20',
+    duration: '51:00',
     slug: 'recruter-devs-rn',
     spotify_url: 'https://open.spotify.com/episode/7M80x8p5Q3peRxbaFYv8xJ',
     title: 'Comment recruter des devs React Native seniors',
@@ -170,6 +188,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     hosts: ['David Leuliette'],
     name: 'Atelier Trivium',
     number: 31,
+    published_at: '2026-04-12',
+    duration: '55:00',
     slug: 'atelier-trivium',
     spotify_url: 'https://open.spotify.com/episode/3yYveE5Wv5S8bVbEewMGff',
     title:
@@ -186,6 +206,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     hosts: ['David Leuliette'],
     name: 'Biogen',
     number: 30,
+    published_at: '2026-03-25',
+    duration: '49:00',
     slug: 'xavier-carpentier',
     spotify_url: 'https://open.spotify.com/episode/56jYsfd6SQA5AvVRq6VOK3',
     title:
@@ -202,6 +224,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     hosts: ['David Leuliette', 'Ludwig Vantours'],
     name: 'Premier Octet',
     number: 25,
+    published_at: '2026-01-28',
+    duration: '1h14',
     slug: 'thibault-lenclos',
     spotify_url: 'https://open.spotify.com/episode/2RlleLgTgvQ7YszwxRTzGg',
     title:
@@ -218,6 +242,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     hosts: ['David Leuliette'],
     name: 'Skia',
     number: 24,
+    published_at: '2026-01-21',
+    duration: '1h05',
     slug: 'skia',
     spotify_url: 'https://open.spotify.com/episode/5yEyIiz9pbvPZt9LRfL1Nz',
     title:
@@ -234,6 +260,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     hosts: ['David Leuliette'],
     name: 'This Week in React',
     number: 23,
+    published_at: '2025-12-10',
+    duration: '1h14',
     slug: 'this-week-in-react',
     spotify_url: 'https://open.spotify.com/episode/4u0abzAvJBiihcBPi36aTd',
     title:
@@ -250,6 +278,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     hosts: ['David Leuliette'],
     name: 'ASO & Growth Mobile',
     number: 22,
+    published_at: '2025-12-03',
+    duration: '1h04',
     slug: 'aso-growth-mobile',
     spotify_url: 'https://open.spotify.com/episode/6yzYcFXqRvRQVephednDfB',
     title:
@@ -266,6 +296,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     hosts: ['David Leuliette'],
     name: 'Upstream',
     number: 21,
+    published_at: '2025-11-26',
+    duration: '1h11',
     slug: 'upstream',
     spotify_url: 'https://open.spotify.com/episode/15c4xt4EuU3C2BLeaJAzyl',
     title:
@@ -282,6 +314,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     hosts: ['Ludwig Vantours'],
     name: 'KidGo',
     number: 20,
+    published_at: '2025-11-12',
+    duration: '1h17',
     slug: 'kidgo',
     spotify_url: 'https://open.spotify.com/episode/2XlvoUrRprj3ZfsLkSQqzl',
     title:
@@ -298,6 +332,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     hosts: ['David Leuliette'],
     name: 'SaxoTools',
     number: 19,
+    published_at: '2025-10-15',
+    duration: '1h24',
     slug: 'saxotools',
     spotify_url: 'https://open.spotify.com/episode/3tYS4XStjhwtqqPenqRL2m',
     title:
@@ -314,6 +350,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     hosts: ['David Leuliette'],
     name: 'Osly Solutions',
     number: 18,
+    published_at: '2025-09-24',
+    duration: '1h06',
     slug: 'osly-solutions',
     spotify_url: 'https://open.spotify.com/episode/2qQDkRi66lzMSKnZA39YOj',
     title:
@@ -330,6 +368,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     hosts: ['David Leuliette'],
     name: 'KicksFolio',
     number: 17,
+    published_at: '2025-09-17',
+    duration: '1h11',
     slug: 'kicksfolio',
     spotify_url: 'https://open.spotify.com/episode/5O89q9TOfDhsJNCC9H89xV',
     title:
@@ -346,6 +386,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     hosts: ['David Leuliette'],
     name: 'OdiseiMusic',
     number: 16,
+    published_at: '2025-08-05',
+    duration: '1h25',
     slug: 'odisei-music',
     spotify_url: 'https://open.spotify.com/episode/1ym8Ydg6M3QTuP5xiThsIQ',
     title:
@@ -362,6 +404,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     hosts: ['David Leuliette'],
     name: 'Rosk (ex Brigad)',
     number: 15,
+    published_at: '2025-07-30',
+    duration: '1h24',
     slug: 'rosk',
     spotify_url: 'https://open.spotify.com/episode/7oDLs8BUb1TFYUeBZ4Cnys',
     title:
@@ -378,6 +422,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     hosts: ['David Leuliette'],
     name: 'Shine',
     number: 14,
+    published_at: '2025-07-22',
+    duration: '1h35',
     slug: 'shine',
     spotify_url: 'https://open.spotify.com/episode/273rWVjbCwhsAUUibuxHQF',
     title:
@@ -393,6 +439,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     hosts: ['David Leuliette'],
     name: 'App.js Conf',
     number: 13,
+    published_at: '2025-06-18',
+    duration: '1h23',
     slug: 'appjs-conf-2025',
     spotify_url: 'https://open.spotify.com/episode/1BPHr0oylS8FrNneRdGCZD',
     title:
@@ -409,6 +457,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     hosts: ['David Leuliette'],
     name: 'ControlResell',
     number: 12,
+    published_at: '2025-06-04',
+    duration: '1h24',
     slug: 'controlresell',
     spotify_url: 'https://open.spotify.com/episode/1Pet3tskRm0E64ftDt00n9',
     title:
@@ -425,6 +475,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     hosts: ['David Leuliette'],
     name: 'Ornikar',
     number: 11,
+    published_at: '2025-05-28',
+    duration: '1h16',
     slug: 'ornikar',
     spotify_url: 'https://open.spotify.com/episode/7nKJ4uxFPnhv2TMf28eqEJ',
     title:
@@ -441,6 +493,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     hosts: ['David Leuliette'],
     name: 'Mangacollec',
     number: 10,
+    published_at: '2025-05-21',
+    duration: '1h19',
     slug: 'mangacollec',
     spotify_url: 'https://open.spotify.com/episode/6guQ03HE7yadwX369y0zjn',
     title:
@@ -457,6 +511,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     hosts: ['David Leuliette'],
     name: 'ShareLock',
     number: 9,
+    published_at: '2025-05-15',
+    duration: '1h08',
     slug: 'sharelock',
     spotify_url: 'https://open.spotify.com/episode/2zOddvp0or5uyg97FSGMkA',
     title:
@@ -473,6 +529,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     hosts: ['David Leuliette'],
     name: 'Ilevia',
     number: 8,
+    published_at: '2025-04-29',
+    duration: '1h18',
     slug: 'ilevia',
     spotify_url: 'https://open.spotify.com/episode/5Ul1mOJ5iCg1JhJgkTCMmO',
     title:
@@ -489,6 +547,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     hosts: ['David Leuliette'],
     name: 'Mucho',
     number: 7,
+    published_at: '2025-04-17',
+    duration: '1h09',
     slug: 'mucho',
     spotify_url: 'https://open.spotify.com/episode/1uF2VZH5rs5eXeUAPpVNQQ',
     title:
@@ -505,6 +565,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     hosts: ['David Leuliette'],
     name: 'Ekklo',
     number: 6,
+    published_at: '2025-03-27',
+    duration: '53:00',
     slug: 'ekklo',
     spotify_url: 'https://open.spotify.com/episode/06y8m0c9yQyrkp9ZDmQKRq',
     title:
@@ -521,6 +583,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     hosts: ['David Leuliette'],
     name: 'Swan',
     number: 5,
+    published_at: '2025-03-18',
+    duration: '1h10',
     slug: 'swan',
     spotify_url: 'https://open.spotify.com/episode/6OFwNSER1iNx1K5Scoge4t',
     title:
@@ -537,6 +601,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     hosts: ['David Leuliette'],
     name: 'Karnott',
     number: 4,
+    published_at: '2025-02-28',
+    duration: '56:00',
     slug: 'karnott',
     spotify_url: 'https://open.spotify.com/episode/4dyRNiw7xuSGpdQXkwb3GW',
     title:
@@ -553,6 +619,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     hosts: ['David Leuliette'],
     name: 'Pacevisor',
     number: 3,
+    published_at: '2025-02-14',
+    duration: '1h06',
     slug: 'pacevisor',
     spotify_url: 'https://open.spotify.com/episode/4VyluvJMpxAOvTPS0Cbj3k',
     title:
@@ -569,6 +637,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     hosts: ['David Leuliette'],
     name: 'Alan',
     number: 2,
+    published_at: '2025-02-06',
+    duration: '54:00',
     slug: 'alan',
     spotify_url: 'https://open.spotify.com/episode/7GxdKx5EsfhTwnhCBitOau',
     title:
@@ -585,6 +655,8 @@ export const podcastEpisodes: PodcastEpisode[] = [
     hosts: ['David Leuliette'],
     name: 'Cdiscount',
     number: 1,
+    published_at: '2025-01-16',
+    duration: '1h00',
     slug: 'cdiscount',
     spotify_url: 'https://open.spotify.com/episode/4u0RkE3y1gkCpFtpppk25t',
     title:

@@ -1,6 +1,8 @@
 ---
 title: 'EAS'
 summary: 'EAS (Expo Application Services) is Expo’s hosted cloud service for building, submitting and updating React Native apps without running your own Xcode and Gradle machines.'
+seo_title: 'EAS (Expo Application Services) Explained'
+seo_description: "EAS is Expo's cloud for building, submitting and updating React Native apps: EAS Build, Submit, Update and Workflows. What each does and when to use it."
 aliases:
   - 'Expo Application Services'
 related:

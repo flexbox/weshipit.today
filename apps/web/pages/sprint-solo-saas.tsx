@@ -679,7 +679,6 @@ export default function SprintSoloSaasPage() {
   return (
     <>
       <Head>
-        <link rel="canonical" href="https://weshipit.today/sprint-solo-saas" />
         <link
           rel="alternate"
           hrefLang="fr"
@@ -706,7 +705,7 @@ export default function SprintSoloSaasPage() {
         />
       </Head>
       <Layout
-        seoTitle="Sprint Solo SaaS (oct. 2026) : construire un SaaS qui bosse à ta place, sans coder"
+        seoTitle="Sprint Solo SaaS : ton SaaS sans coder"
         seoDescription="Le Sprint Solo SaaS de l'Incubateur Solopreneur, du 9 au 30 octobre 2026 : 4 lives avec Flavie Prevot et Pierre Thomassina pour trouver ton idée, installer ton setup, construire tes features et trouver tes premiers utilisateurs. Tarif parrainage : 12 mois d'Incubateur pour le prix du Sprint."
         ogImageTitle="Sprint Solo SaaS"
         ogImageKicker="Incubateur Solopreneur"

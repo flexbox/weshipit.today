@@ -1077,9 +1077,13 @@ export default function AvisIncubateurSolopreneurPage() {
       url: 'https://weshipit.today',
     },
     datePublished: DATE_PUBLISHED,
+    // An Organization, not a Product: a Product must carry offers, review or
+    // aggregateRating itself, so Google reported this nested one as an
+    // invalid Product snippet. The incubator is a programme run by Flavie
+    // Prevot, which Organization describes and still allows review snippets.
     itemReviewed: {
-      '@type': 'Product',
-      brand: { '@type': 'Brand', name: 'Flavie Prevot' },
+      '@type': 'Organization',
+      founder: { '@type': 'Person', name: 'Flavie Prevot' },
       name: 'Incubateur Solopreneur',
     },
     reviewBody:
@@ -1095,10 +1099,6 @@ export default function AvisIncubateurSolopreneurPage() {
   return (
     <>
       <Head>
-        <link
-          rel="canonical"
-          href="https://weshipit.today/avis-incubateur-solopreneur"
-        />
         <link
           rel="alternate"
           hrefLang="fr"
@@ -1125,7 +1125,7 @@ export default function AvisIncubateurSolopreneurPage() {
         />
       </Head>
       <Layout
-        seoTitle="Avis Incubateur Solopreneur 2026 : mon retour honnête après 6 mois (4,6/5)"
+        seoTitle="Avis Incubateur Solopreneur 2026 (4,6/5)"
         seoDescription="Avis vérifié sur l'Incubateur Solopreneur de Flavie Prevot après 6 mois d'incubation : points forts, limites, résultats concrets, comparatif avec les alternatives et code réduction à 1 490 € HT."
         ogImageTitle="Avis Incubateur Solopreneur 2026"
         ogImageKicker="Avis vérifié"

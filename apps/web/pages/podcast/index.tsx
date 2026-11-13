@@ -77,7 +77,7 @@ export default function Podcast() {
         />
       </Head>
       <Layout
-        seoTitle="Podcast React Native : Scale ton Équipe & Livre 40% Plus Vite"
+        seoTitle="Podcast React Native (Cross Platform Show)"
         seoDescription="Le podcast React Native pour CTO : évite la dette technique, scale ton équipe de 2 à 15 devs, réduis ton time-to-market. Retours d'expérience Alan, Cdiscount, Swan."
         ogImageTitle="Le Cross Platform Show"
         ogImageKicker="Podcast React Native"

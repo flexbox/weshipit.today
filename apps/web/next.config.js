@@ -41,6 +41,32 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      // Device apps that moved from the tools directory to /devtools.
+      ...['exodus-privacy', 'nrf-connect'].map((slug) => ({
+        destination: '/devtools',
+        permanent: true,
+        source: `/react-native-tools/${slug}`,
+      })),
+      // Transcripts are now part of the episode page.
+      {
+        destination: '/podcast/:slug#transcript',
+        permanent: true,
+        source: '/podcast/:slug/transcript',
+      },
+    ];
+  },
+  async headers() {
+    return [
+      // Raw transcript files back the episode pages; keep the .txt copies
+      // out of the index so they don't compete with them.
+      {
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex' }],
+        source: '/podcast-transcripts/:path*',
+      },
+    ];
+  },
   outputFileTracingIncludes: {
     '/api/og': ['./public/fonts/**'],
     '/api/podcast-og': [

@@ -1,6 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "cd ../.. && yarn nx build web --prod && yarn nx postbuild web",
+  "buildCommand": "cd ../.. && yarn nx build web --prod",
   "outputDirectory": "../../dist/apps/web/.next",
   "installCommand": "cd ../.. && yarn install --frozen-lockfile",
   "ignoreCommand": "sh ../../tools/vercel/ignore-build.sh . ../../libs/ui ../../libs/utils ../../package.json ../../yarn.lock ../../.yarnrc.yml ../../nx.json ../../tsconfig.base.json",

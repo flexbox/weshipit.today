@@ -4,6 +4,7 @@ import { Builder } from '../../components/builder';
 import { fromSearchParams } from '../../lib/grid-state';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/create' },
   title: 'Build your 9',
 };
 

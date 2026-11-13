@@ -1,6 +1,8 @@
 ---
 title: 'TurboModules'
 summary: 'TurboModules are the New Architecture’s native modules. They are typed by Codegen, built on JSI, and loaded lazily so startup only pays for what the app actually uses.'
+seo_title: 'TurboModules in React Native, Explained'
+seo_description: "TurboModules are the New Architecture's native modules: typed by Codegen, built on JSI and loaded lazily. How they replace the bridge and when to migrate."
 aliases:
   - 'Turbo Modules'
   - 'TurboModule'

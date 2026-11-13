@@ -3,6 +3,9 @@ import { Inter, Space_Grotesk } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import { DefaultSeo } from 'next-seo';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
+import { langForPage } from '../utils/page-lang';
 
 import './styles.css';
 import '../components/anatomy/kit/iso.css';
@@ -30,6 +33,14 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 function CustomApp({ Component, pageProps }: AppProps) {
+  const { pathname } = useRouter();
+
+  // _document only renders on the server: keep <html lang> right on
+  // client-side navigations between English and French pages.
+  useEffect(() => {
+    document.documentElement.lang = langForPage(pathname);
+  }, [pathname]);
+
   return (
     <>
       <DefaultSeo

@@ -605,6 +605,9 @@ export default function ReactNativeTesting() {
     ],
   };
 
+  // No `review` here: Service is not a valid parent for review snippets
+  // (Search Console flagged it), and reviews of your own business are
+  // ignored anyway. The testimonial stays visible in the page.
   const serviceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
@@ -626,17 +629,6 @@ export default function ReactNativeTesting() {
       name: 'weshipit.today',
       url: 'https://weshipit.today',
     },
-    review: {
-      '@type': 'Review',
-      author: {
-        '@type': 'Person',
-        jobTitle: 'QA engineer',
-        name: 'Maxence Cottel',
-        worksFor: { '@type': 'Organization', name: 'Nacon' },
-      },
-      reviewBody:
-        'Went from zero end-to-end tests and 3+ hours of manual QA per release to Maestro flows running on iOS and Android, with CI green on every PR and the e-commerce checkout covered.',
-    },
     serviceType: 'Mobile app end-to-end test automation',
     url: 'https://weshipit.today/react-native-testing',
   };
@@ -644,7 +636,7 @@ export default function ReactNativeTesting() {
   return (
     <Layout
       withFooter
-      seoTitle="React Native E2E Testing with Maestro | weshipit.today"
+      seoTitle="React Native E2E Testing with Maestro"
       seoDescription="Done-for-you end-to-end (E2E) testing for React Native apps with Maestro. We write YAML flows for your 5 core user journeys, wire CI/CD, and hand off in 2 weeks — one flat fee. A simpler alternative to Detox."
       ogImageTitle="Mobile testing for React Native, done in 2 weeks"
       ogImageKicker="React Native testing"

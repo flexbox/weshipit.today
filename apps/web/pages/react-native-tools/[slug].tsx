@@ -44,7 +44,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
     .filter((r) => r.slug)
     .map((r) => ({ params: { slug: r.slug } }));
 
-  return { fallback: false, paths };
+  // Unknown slugs render on demand so removed tools can redirect (below)
+  // instead of returning a 404.
+  return { fallback: 'blocking', paths };
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
@@ -52,7 +54,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const record = tools.find((r) => r.slug === slug);
 
   if (!record) {
-    return { notFound: true };
+    // A tool we removed from the directory: send visitors and link equity to
+    // the directory rather than a dead end.
+    return {
+      redirect: { destination: '/react-native-tools', permanent: true },
+    };
   }
 
   const { description, description_success, name, platform, website_url } =
@@ -60,10 +66,14 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const proseSource = description || description_success || '';
   const plainDesc = stripMarkdown(proseSource);
-  const prefix = `${name} for React Native`;
-  const seoDescription = plainDesc
-    ? `${prefix} — ${truncateAtWord(plainDesc, 155 - prefix.length - 3)}`
-    : `${prefix}.`;
+  // "React Native MMKV for React Native" reads like a typo.
+  const prefix = /react native/i.test(name) ? name : `${name} for React Native`;
+  const seoDescription =
+    record.seo_description ||
+    (plainDesc
+      ? `${prefix} — ${truncateAtWord(plainDesc, 155 - prefix.length - 3)}`
+      : `${prefix}.`);
+  const seoTitle = record.seo_title || prefix;
 
   const sameType = tools.filter(
     (r) => r.slug !== slug && r.type.some((t) => record.type.includes(t)),
@@ -71,7 +81,13 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const others = tools.filter(
     (r) => r.slug !== slug && !r.type.some((t) => record.type.includes(t)),
   );
-  const recommendedRecords = take([...sameType, ...others], 3);
+  // Same-category tools first: they are the real alternatives, and linking
+  // siblings to each other is what gives these pages internal links.
+  const alternatives = take(sameType, 6);
+  const recommendedRecords =
+    alternatives.length >= 3
+      ? alternatives
+      : take([...alternatives, ...others], 3);
 
   const toolUrl = `https://weshipit.today/react-native-tools/${slug}`;
 
@@ -107,20 +123,34 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   return {
     props: {
       breadcrumbSchema,
+      hasAlternatives: alternatives.length > 0,
       recommendedRecords,
       record,
       seoDescription,
+      seoTitle,
       softwareAppSchema,
     },
     revalidate: 86400,
   };
 };
 
+/** ["a", "b", "c"] → "a, b and c". */
+function listToSentence(items: string[]): string {
+  return items.length > 1
+    ? `${items.slice(0, -1).join(', ')} and ${items[items.length - 1]}`
+    : (items[0] ?? '');
+}
+
+const lowercase = (items: string[]) => items.map((item) => item.toLowerCase());
+const platformLabel = (item: string) => (item === 'Web' ? 'the web' : item);
+
 export function ReactNativeSlugPage({
   breadcrumbSchema,
+  hasAlternatives,
   recommendedRecords,
   record,
   seoDescription,
+  seoTitle,
   softwareAppSchema,
 }) {
   if (record === undefined) {
@@ -152,9 +182,9 @@ export function ReactNativeSlugPage({
 
   return (
     <Layout
-      seoTitle={`${name} for React Native`}
+      seoTitle={seoTitle}
       seoDescription={seoDescription}
-      ogImageTitle={`${name} for React Native`}
+      ogImageTitle={seoTitle}
       ogImageKicker="React Native tools"
       withHeader
       withFooter
@@ -198,7 +228,7 @@ export function ReactNativeSlugPage({
           <div className="col-span-1 md:col-span-8">
             <CompanyLogo name={name} websiteUrl={website_url} size={64} />
             <Text as="h1" variant="h2" className="my-6">
-              {name} for React Native
+              {/react native/i.test(name) ? name : `${name} for React Native`}
             </Text>
 
             <div className="mb-4 flex flex-wrap gap-2">
@@ -207,12 +237,24 @@ export function ReactNativeSlugPage({
               ))}
             </div>
             <Prose size="lg" className="mb-12">
+              {/* Facts from the record, so every page opens with a summary
+                  that is specific to this tool. */}
+              <p className="lead">
+                {name} works in React Native apps
+                {platform && platform.length > 0
+                  ? ` on ${listToSentence(platform.map(platformLabel))}`
+                  : ''}
+                . Category: {listToSentence(type)}.
+                {pricing && pricing.length > 0
+                  ? ` Pricing: ${listToSentence(lowercase(pricing))}.`
+                  : ''}
+              </p>
               <ReactMarkdown>{description}</ReactMarkdown>
 
               {!isNil(description_success) && (
                 <>
                   <Text as="h2" variant="s1" className="my-6">
-                    How {name} will help you grow and be more successful?
+                    When to use {name} in a React Native app
                   </Text>
                   <ReactMarkdown>{description_success}</ReactMarkdown>
                 </>
@@ -288,7 +330,9 @@ export function ReactNativeSlugPage({
       {recommendedRecords.length > 0 && (
         <section className="py-12 max-w-6xl mx-auto">
           <Text as="h2" variant="h3" className="my-4">
-            Other {type[0]} React Native tools
+            {hasAlternatives
+              ? `Alternatives to ${name} for React Native`
+              : 'Other React Native tools'}
           </Text>
 
           <ToolList records={recommendedRecords} />

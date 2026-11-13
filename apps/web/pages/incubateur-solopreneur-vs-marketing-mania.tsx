@@ -874,10 +874,6 @@ export default function IncubateurVsMarketingManiaPage() {
     <>
       <Head>
         <link
-          rel="canonical"
-          href="https://weshipit.today/incubateur-solopreneur-vs-marketing-mania"
-        />
-        <link
           rel="alternate"
           hrefLang="fr"
           href="https://weshipit.today/incubateur-solopreneur-vs-marketing-mania"
@@ -903,7 +899,7 @@ export default function IncubateurVsMarketingManiaPage() {
         />
       </Head>
       <Layout
-        seoTitle="Incubateur Solopreneur vs Marketing Mania : quelle formation choisir en 2026 ?"
+        seoTitle="Incubateur Solopreneur vs Marketing Mania"
         seoDescription="Comparaison indépendante entre l'Incubateur Solopreneur (Flavie Prevot) et le Bootcamp Marketing Mania (Stan Leloup) : format, prix, rythme, communauté, résultats. Recommandation par cas d'usage."
         ogImageTitle="Incubateur Solopreneur vs Marketing Mania"
         ogImageKicker="Comparatif 2026"

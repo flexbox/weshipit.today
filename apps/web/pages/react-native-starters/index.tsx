@@ -152,8 +152,8 @@ export default function ReactNativeStartersPage({
 
   return (
     <Layout
-      seoTitle={`${seoCount}+ starter templates to create your React Native project`}
-      seoDescription="Starter repos to create your React Native project."
+      seoTitle="React Native Starter Kits & Boilerplates"
+      seoDescription={`${seoCount}+ React Native starter kits and boilerplates for Expo and the CLI, sorted by level: navigation, auth, state and UI already wired so you ship faster.`}
       ogImageTitle="React Native Starter Templates"
       ogImageKicker="Free directory"
       withHeader

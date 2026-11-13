@@ -1,6 +1,8 @@
 ---
 title: 'Platform-Specific Code'
 summary: 'Platform-specific code lets one codebase behave differently per platform, via the Platform module or file extensions like Button.ios.tsx that Metro resolves.'
+seo_title: 'React Native Platform-Specific Code'
+seo_description: 'Write iOS- or Android-only code in React Native with Platform.OS, Platform.select or .ios.tsx and .android.tsx files. When to use each, with examples.'
 aliases:
   - 'Platform module'
   - 'Platform.select'
