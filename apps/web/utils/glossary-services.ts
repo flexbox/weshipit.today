@@ -82,3 +82,20 @@ const SERVICE_BY_TERM: Record<string, ServiceLink> = {
 export function serviceForTerm(slug: string): ServiceLink {
   return SERVICE_BY_TERM[slug] ?? AUDIT;
 }
+
+/**
+ * The service a free-text page (a weekly plan) is closest to. The first
+ * matching rule wins, so the more specific services come first.
+ */
+const SERVICE_BY_KEYWORD: [RegExp, ServiceLink][] = [
+  [/\b(swift ?pm|swift package manager|cocoapods)\b/i, SPM],
+  [/\b(security|owasp|ssl pinning|secure storage|vulnerab)/i, SECURITY],
+  [/\b(maestro|detox|e2e|end-to-end)\b/i, TESTING],
+  [/\b(expo sdk \d+|new architecture|upgrade|migrat)/i, MIGRATION],
+];
+
+export function serviceForText(text: string): ServiceLink {
+  return (
+    SERVICE_BY_KEYWORD.find(([pattern]) => pattern.test(text))?.[1] ?? AUDIT
+  );
+}

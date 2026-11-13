@@ -9,6 +9,16 @@ import rehypeRaw from 'rehype-raw';
 import remarkGfm from 'remark-gfm';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { PlanNavSelect, PlanSidebar } from 'apps/web/components/plan-sidebar';
+import Link from 'next/link';
+import { getAllGlossaryTerms } from '../../utils/glossary';
+import { ServiceLink, serviceForText } from '../../utils/glossary-services';
+import {
+  glossaryTermsIn,
+  planHeading,
+  planSeoDescription,
+  planSeoTitle,
+  planTopics,
+} from '../../utils/plan-seo';
 
 interface Issue {
   slug: string;
@@ -22,6 +32,12 @@ interface PlanSlugPageProps {
   currentSlug: string;
   description: string;
   datePublished: string;
+  heading: string;
+  seoTitle: string;
+  seoDescription: string;
+  topics: string[];
+  glossaryTerms: { slug: string; title: string }[];
+  service: ServiceLink;
 }
 
 // Plan files start with YAML frontmatter, so the title is the first heading,
@@ -93,14 +109,30 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const title = extractTitle(content);
   const description = frontmatter.description || extractDescription(content);
   const datePublished = isoWeekToDate(slug);
+  const topics = planTopics(description);
+
   return {
     props: {
       content,
       currentSlug: slug,
       datePublished,
       description,
+      glossaryTerms: glossaryTermsIn(
+        `${description}\n${content}`,
+        getAllGlossaryTerms(),
+      ),
+      heading: planHeading(slug, frontmatter.seo_title),
       issues,
+      // The blockquote under the title, e.g. "Week of May 18–May 24, 2026".
+      seoDescription: planSeoDescription(
+        slug,
+        topics,
+        extractDescription(content),
+      ),
+      seoTitle: planSeoTitle(slug, frontmatter.seo_title),
+      service: serviceForText(`${description}\n${content}`),
       title,
+      topics,
     },
   };
 };
@@ -110,8 +142,14 @@ export default function PlanSlugPage({
   currentSlug,
   datePublished,
   description,
+  glossaryTerms,
+  heading,
   issues,
+  seoDescription,
+  seoTitle,
+  service,
   title,
+  topics,
 }: PlanSlugPageProps) {
   const articleSchema = {
     '@context': 'https://schema.org',
@@ -123,7 +161,7 @@ export default function PlanSlugPage({
     },
     datePublished: datePublished,
     description: description,
-    headline: title,
+    headline: heading || title,
     mainEntityOfPage: {
       '@id': `https://weshipit.today/plan/${currentSlug}`,
       '@type': 'WebPage',
@@ -163,10 +201,10 @@ export default function PlanSlugPage({
 
   return (
     <Layout
-      seoTitle={`Plan ${currentSlug.toUpperCase()}`}
+      seoTitle={seoTitle}
       ogImageTitle={title}
       ogImageKicker={`Plan ${currentSlug.toUpperCase()}`}
-      seoDescription={description}
+      seoDescription={seoDescription}
       withHeader={true}
     >
       <Head>
@@ -190,12 +228,28 @@ export default function PlanSlugPage({
           <PlanSidebar issues={issues} />
 
           {/* Content */}
-          <main className="min-w-0 flex-1">
+          <article className="min-w-0 flex-1">
             <Prose className="prose-headings:text-balance prose-p:text-pretty">
               <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
                 rehypePlugins={[rehypeRaw]}
                 components={{
+                  // Every file opens with the same "React Native Roadmap
+                  // <week>" heading; say what the week is about, then
+                  // introduce it.
+                  h1: () => (
+                    <>
+                      <h1>{heading}</h1>
+                      {topics.length > 0 && (
+                        <p className="lead">
+                          What to ship in a React Native app this week:{' '}
+                          {topics.join(', ')}. Each one links to its source,
+                          then the 5-day plan below breaks it into steps you can
+                          apply to your codebase.
+                        </p>
+                      )}
+                    </>
+                  ),
                   // Wide tables scroll inside their own container instead of
                   // forcing the whole page to scroll horizontally on mobile.
                   table: ({ node, ...props }) => (
@@ -208,7 +262,43 @@ export default function PlanSlugPage({
                 {content}
               </ReactMarkdown>
             </Prose>
-          </main>
+
+            <aside className="mt-16 rounded-2xl bg-slate-100 p-8 dark:bg-slate-900">
+              {glossaryTerms.length > 0 && (
+                <>
+                  <h2 className="text-xl font-bold text-slate-950 dark:text-slate-100">
+                    Terms in this plan
+                  </h2>
+                  <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-2">
+                    {glossaryTerms.map((term) => (
+                      <li key={term.slug}>
+                        <Link
+                          href={`/react-native-glossary/${term.slug}`}
+                          className="underline decoration-slate-300 underline-offset-4 hover:decoration-slate-900 dark:decoration-slate-600 dark:hover:decoration-slate-100"
+                        >
+                          {term.title}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
+              <h2
+                className={`text-xl font-bold text-slate-950 dark:text-slate-100${glossaryTerms.length > 0 ? ' mt-8' : ''}`}
+              >
+                Want this done in your app?
+              </h2>
+              <p className="mt-3 text-slate-700 dark:text-slate-300">
+                {service.pitch}{' '}
+                <Link
+                  href={service.href}
+                  className="font-semibold underline underline-offset-4"
+                >
+                  See our {service.label}
+                </Link>
+              </p>
+            </aside>
+          </article>
         </div>
       </div>
     </Layout>
