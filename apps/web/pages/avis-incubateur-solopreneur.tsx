@@ -1077,9 +1077,13 @@ export default function AvisIncubateurSolopreneurPage() {
       url: 'https://weshipit.today',
     },
     datePublished: DATE_PUBLISHED,
+    // An Organization, not a Product: a Product must carry offers, review or
+    // aggregateRating itself, so Google reported this nested one as an
+    // invalid Product snippet. The incubator is a programme run by Flavie
+    // Prevot, which Organization describes and still allows review snippets.
     itemReviewed: {
-      '@type': 'Product',
-      brand: { '@type': 'Brand', name: 'Flavie Prevot' },
+      '@type': 'Organization',
+      founder: { '@type': 'Person', name: 'Flavie Prevot' },
       name: 'Incubateur Solopreneur',
     },
     reviewBody:
