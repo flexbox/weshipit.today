@@ -23,7 +23,7 @@ const CheckYourInbox = ({
           <span className="font-semibold text-gray-900 dark:text-gray-200">
             {email}
           </span>
-          . Click it to sign in.
+          . Click it within 24 hours to sign in.
         </p>
         <button
           type="button"
