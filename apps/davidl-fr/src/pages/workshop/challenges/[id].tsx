@@ -10,6 +10,7 @@ import { Challenge } from '~/types/workshop';
 import { getGitHubSlug } from '~/utils/getGitHubSlug';
 import 'prism-themes/themes/prism-synthwave84.css';
 import remarkGfm from 'remark-gfm';
+import { rehypeTaskList, taskListComponents } from '~/components/TaskList';
 
 interface WorkshopPageProps {
   challenge: Challenge;
@@ -32,7 +33,7 @@ export default function WorkshopPage({
     <Layout isChallenge={true} routerQueryId={routerQueryId as string}>
       <ProseContainer>
         {source ? (
-          <MDXRemote {...source} />
+          <MDXRemote {...source} components={taskListComponents} />
         ) : (
           <p>Fetching content from GitHub...</p>
         )}
@@ -60,6 +61,7 @@ export async function getStaticProps({ params }: { params: { id: string } }) {
   const mdxSource = await serialize(mdxContent, {
     mdxOptions: {
       remarkPlugins: [remarkGfm],
+      rehypePlugins: [rehypeTaskList],
     },
   });
 

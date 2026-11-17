@@ -6,6 +6,7 @@ import Prism from 'prismjs';
 import 'prism-themes/themes/prism-synthwave84.css';
 import { MDXProps } from '~/types/mdx';
 import remarkGfm from 'remark-gfm';
+import { rehypeTaskList, taskListComponents } from '~/components/TaskList';
 
 const SETUP_SOURCE_RAW =
   'https://raw.githubusercontent.com/flexbox/react-native-bootcamp/main/setup/README.md';
@@ -18,7 +19,7 @@ export default function SetupPage({ source }: MDXProps): ReactElement {
   return (
     <Layout isChallenge={true}>
       {source ? (
-        <MDXRemote {...source} />
+        <MDXRemote {...source} components={taskListComponents} />
       ) : (
         <p>Fetching content from GitHub...</p>
       )}
@@ -33,6 +34,7 @@ export async function getStaticProps() {
   const mdxSource = await serialize(mdxContent, {
     mdxOptions: {
       remarkPlugins: [remarkGfm],
+      rehypePlugins: [rehypeTaskList],
     },
   });
 

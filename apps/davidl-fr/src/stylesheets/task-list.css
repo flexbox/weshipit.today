@@ -21,3 +21,26 @@
   margin: 0 !important;
   margin-right: 6px !important;
 }
+
+.task-list-item label {
+  display: block;
+  cursor: pointer;
+}
+
+.task-list-item [type='checkbox'] {
+  width: 18px;
+  height: 18px;
+  vertical-align: -3px;
+  cursor: pointer;
+  accent-color: #1e40af;
+}
+
+@media (prefers-color-scheme: dark) {
+  .task-list-item [type='checkbox'] {
+    accent-color: #ea580c;
+  }
+}
+
+.task-list-item:has(> label > [type='checkbox']:checked) {
+  opacity: 0.6;
+}
