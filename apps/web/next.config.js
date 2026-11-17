@@ -4,6 +4,9 @@ const { PHASE_DEVELOPMENT_SERVER } = require('next/constants');
  * @type {import('next').NextConfig}
  **/
 const nextConfig = {
+  experimental: {
+    agentUpgrade: 'security',
+  },
   // The OG routes read fonts and logos with fs at runtime; make sure Vercel
   // bundles those files with the functions.
   images: {
