@@ -2760,15 +2760,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@formatjs/intl-localematcher@npm:^0.5.2":
-  version: 0.5.10
-  resolution: "@formatjs/intl-localematcher@npm:0.5.10"
-  dependencies:
-    tslib: "npm:2"
-  checksum: 10/119e36974607d5d3586570db93358c1f316c0736b83acc81dce88468435a9519a9e58a5abe6ed3078ffe40d6b4ad4613c6371e2a39cd570c9b6f561372ffb14d
-  languageName: node
-  linkType: hard
-
 "@hapi/hoek@npm:^9.0.0, @hapi/hoek@npm:^9.3.0":
   version: 9.3.0
   resolution: "@hapi/hoek@npm:9.3.0"
@@ -6015,46 +6006,39 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@prismicio/next@npm:^1.7.2":
-  version: 1.7.2
-  resolution: "@prismicio/next@npm:1.7.2"
+"@prismicio/next@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@prismicio/next@npm:3.0.0"
   dependencies:
-    "@formatjs/intl-localematcher": "npm:^0.5.2"
-    imgix-url-builder: "npm:^0.0.4"
-    negotiator: "npm:^0.6.3"
+    "@prismicio/simulator": "npm:^0.2.4"
+    imgix-url-builder: "npm:^0.0.6"
+    lz-string: "npm:^1.5.0"
   peerDependencies:
-    "@prismicio/client": ^6 || ^7
-    next: ^13.4.5 || ^14 || ^15.0.0-rc.0
-    react: ^18 || ^19.0.0-rc.0
-  checksum: 10/64cad6d7114bbbb634f4dbc04ec682c01255eef059697e3951b7155ea9d45a9dce928b0ef9ef9b63b5b203ffad1b885d26f4d746a802b6cbcb0ce5d988d7d584
+    "@prismicio/client": ^7.23.0
+    next: ^15 || ^16
+    react: ^18 || ^19
+  checksum: 10/2b92774f5134819c32c7dceca0076475593b609e56dd3ab7eafd4ab9aeb9b49b5a2208592316e4cc63abea472e2aed8f4644f92a5a4abc56a9b44a9351abb4a3
   languageName: node
   linkType: hard
 
-"@prismicio/react@npm:^2.9.2":
-  version: 2.9.2
-  resolution: "@prismicio/react@npm:2.9.2"
+"@prismicio/react@npm:^3.5.1":
+  version: 3.5.1
+  resolution: "@prismicio/react@npm:3.5.1"
   dependencies:
-    "@prismicio/richtext": "npm:^2.1.5"
+    esm-env: "npm:^1.2.2"
   peerDependencies:
-    "@prismicio/client": ^6 || ^7
-    react: ^18 || ^19.0.0-rc.0
-  checksum: 10/7c2decd49dc5a17e30ea4b1663a0a131b30f5ede590cda2bc0ce8baf832b124235ff204483d50f30e63593753aff1eb57b0b702b39d5664b5892b134eb526017
+    "@prismicio/client": ^7
+    react: ^18 || ^19
+  checksum: 10/8e6203688868c0d813a3ee2cfedcdbd1133c955c2ac72c960282b86d475655c900c8987c5fc696a211610a44bcadb368bede293b678364ce34bb9327175ff2c0
   languageName: node
   linkType: hard
 
-"@prismicio/richtext@npm:^2.1.5":
-  version: 2.1.5
-  resolution: "@prismicio/richtext@npm:2.1.5"
-  dependencies:
-    "@prismicio/types": "npm:^0.2.7"
-  checksum: 10/2ed246d20ca277edd059a2b3c7a2b0adf7c15a2326670dd1336a4615faf3ca816ccd1df5b795104e6e20ccd42af36eabbe60aa3c16b7e7567b9789dee3a03c59
-  languageName: node
-  linkType: hard
-
-"@prismicio/types@npm:^0.2.7":
-  version: 0.2.9
-  resolution: "@prismicio/types@npm:0.2.9"
-  checksum: 10/e74e393fcbdc66b455dda74f640872099c948789628d7b991a8454b94cd92e86f2a4a1d1f7747a88d1e6d6c368caca40c5a19f95d34eb6a8434da5291724bfca
+"@prismicio/simulator@npm:^0.2.4":
+  version: 0.2.4
+  resolution: "@prismicio/simulator@npm:0.2.4"
+  peerDependencies:
+    "@prismicio/client": ^7
+  checksum: 10/574ebc64a73735f17fdaa43a4217a603aa5f05c4fdfa5d2c9e50823299183c762c47ae722aff82f5bada3077935eae4645c85c278cb6a38d0e96e5151f2e0948
   languageName: node
   linkType: hard
 
@@ -13206,6 +13190,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"esm-env@npm:^1.2.2":
+  version: 1.2.2
+  resolution: "esm-env@npm:1.2.2"
+  checksum: 10/caf5f3cc2bc7107494585b4e38835787f48ef77b670aeb2d765a5b6b64c41102d20bbdd34bda32474291b6b8d819d4d02ce92570a0886baca6cef70f5fe689f3
+  languageName: node
+  linkType: hard
+
 "espree@npm:^10.0.1":
   version: 10.3.0
   resolution: "espree@npm:10.3.0"
@@ -15235,13 +15226,6 @@ __metadata:
   version: 7.0.5
   resolution: "ignore@npm:7.0.5"
   checksum: 10/f134b96a4de0af419196f52c529d5c6120c4456ff8a6b5a14ceaaa399f883e15d58d2ce651c9b69b9388491d4669dda47285d307e827de9304a53a1824801bc6
-  languageName: node
-  linkType: hard
-
-"imgix-url-builder@npm:^0.0.4":
-  version: 0.0.4
-  resolution: "imgix-url-builder@npm:0.0.4"
-  checksum: 10/5c3aa1eb2048224b34a1dc255afa0d6777115b2605875619b7508aac556b140c7ae15dc2bdb4058f1663a9591c990efab33b6b69cc708ef946ae536ba9a1e5f1
   languageName: node
   linkType: hard
 
@@ -19351,17 +19335,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"negotiator@npm:^0.6.3, negotiator@npm:~0.6.4":
-  version: 0.6.4
-  resolution: "negotiator@npm:0.6.4"
-  checksum: 10/d98c04a136583afd055746168f1067d58ce4bfe6e4c73ca1d339567f81ea1f7e665b5bd1e81f4771c67b6c2ea89b21cb2adaea2b16058c7dc31317778f931dab
-  languageName: node
-  linkType: hard
-
 "negotiator@npm:^1.0.0":
   version: 1.0.0
   resolution: "negotiator@npm:1.0.0"
   checksum: 10/b5734e87295324fabf868e36fb97c84b7d7f3156ec5f4ee5bf6e488079c11054f818290fc33804cef7b1ee21f55eeb14caea83e7dafae6492a409b3e573153e5
+  languageName: node
+  linkType: hard
+
+"negotiator@npm:~0.6.4":
+  version: 0.6.4
+  resolution: "negotiator@npm:0.6.4"
+  checksum: 10/d98c04a136583afd055746168f1067d58ce4bfe6e4c73ca1d339567f81ea1f7e665b5bd1e81f4771c67b6c2ea89b21cb2adaea2b16058c7dc31317778f931dab
   languageName: node
   linkType: hard
 
@@ -21294,36 +21278,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prismic-helpers@npm:^1.0.3":
-  version: 1.0.3
-  resolution: "prismic-helpers@npm:1.0.3"
-  checksum: 10/a1f3a9ebb46df44d7a02a0ae5457023c8f4ca94925b81cdbf99ae34756429787533ce24dcfd3237a5d10215300b2b4be813d1944b2e5109f00e9cb1f1989bf58
-  languageName: node
-  linkType: hard
-
-"prismic-reactjs@npm:^1.3.4":
-  version: 1.3.4
-  resolution: "prismic-reactjs@npm:1.3.4"
-  dependencies:
-    prismic-helpers: "npm:^1.0.3"
-    prismic-richtext: "npm:^1.0.3"
-    prop-types: "npm:^15.7.2"
-  peerDependencies:
-    react: ">=16.0.0"
-  checksum: 10/b080655eec0c7879524d2cbebdd5b7b245fe9ceb01af14556fd184e59bfbe6dcb1a69f3e43a8d3e5edf606715a1988b0587e82f1101bda4177431d056dc5a3f9
-  languageName: node
-  linkType: hard
-
-"prismic-richtext@npm:^1.0.3":
-  version: 1.0.3
-  resolution: "prismic-richtext@npm:1.0.3"
-  dependencies:
-    ramda: "npm:^0.26.1"
-    uuid: "npm:^3.3.2"
-  checksum: 10/ddc78af0b3017191b747c9b77092b0f865f42c0efc9c0d8f6ef358fdfff716b6fd66cf5a1dd1fb699dd72b3f3b3c6a3aa5192b8b2bfd7a035ce0b755dc447ea6
-  languageName: node
-  linkType: hard
-
 "prismjs@npm:^1.29.0":
   version: 1.30.0
   resolution: "prismjs@npm:1.30.0"
@@ -21391,7 +21345,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.6.0, prop-types@npm:^15.6.2, prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
+"prop-types@npm:^15.6.0, prop-types@npm:^15.6.2, prop-types@npm:^15.8.1":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:
@@ -21537,13 +21491,6 @@ __metadata:
   dependencies:
     inherits: "npm:~2.0.3"
   checksum: 10/3437954ef1442c86ff01a0fbe3dc6222838823b1ca97f37eff651bc20b868c0c2904424ef2c0d44cba46055f54b578f92866e573125dc9a5e8823d751e4d1585
-  languageName: node
-  linkType: hard
-
-"ramda@npm:^0.26.1":
-  version: 0.26.1
-  resolution: "ramda@npm:0.26.1"
-  checksum: 10/32f99fa901bf54a42f7cef607668921d2553c34fe6ba3ea9776309604a57ea91cce36624de50d9547f82335d814de6ebe1dce83442b8a5ff002a53130be31e43
   languageName: node
   linkType: hard
 
@@ -24677,7 +24624,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:2, tslib@npm:2.8.1, tslib@npm:^2.0.0, tslib@npm:^2.0.1, tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.3.0, tslib@npm:^2.4.0, tslib@npm:^2.8.0, tslib@npm:^2.8.1":
+"tslib@npm:2.8.1, tslib@npm:^2.0.0, tslib@npm:^2.0.1, tslib@npm:^2.0.3, tslib@npm:^2.1.0, tslib@npm:^2.3.0, tslib@npm:^2.4.0, tslib@npm:^2.8.0, tslib@npm:^2.8.1":
   version: 2.8.1
   resolution: "tslib@npm:2.8.1"
   checksum: 10/3e2e043d5c2316461cb54e5c7fe02c30ef6dccb3384717ca22ae5c6b5bc95232a6241df19c622d9c73b809bea33b187f6dbc73030963e29950c2141bc32a79f7
@@ -25373,15 +25320,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"uuid@npm:^3.3.2":
-  version: 3.4.0
-  resolution: "uuid@npm:3.4.0"
-  bin:
-    uuid: ./bin/uuid
-  checksum: 10/4f2b86432b04cc7c73a0dd1bcf11f1fc18349d65d2e4e32dd0fc658909329a1e0cc9244aa93f34c0cccfdd5ae1af60a149251a5f420ec3ac4223a3dab198fb2e
-  languageName: node
-  linkType: hard
-
 "uuid@npm:^8.3.2":
   version: 8.3.2
   resolution: "uuid@npm:8.3.2"
@@ -26027,8 +25965,8 @@ __metadata:
     "@nx/webpack": "npm:24.0.6"
     "@nx/workspace": "npm:24.0.6"
     "@prismicio/client": "npm:^7.23.1"
-    "@prismicio/next": "npm:^1.7.2"
-    "@prismicio/react": "npm:^2.9.2"
+    "@prismicio/next": "npm:^3.0.0"
+    "@prismicio/react": "npm:^3.5.1"
     "@react-pdf/renderer": "npm:^4.9.0"
     "@storybook/addon-a11y": "npm:10.6.8"
     "@storybook/addon-docs": "npm:10.6.8"
@@ -26109,7 +26047,6 @@ __metadata:
     posthog-js: "npm:^1.453.0"
     prettier: "npm:^3.10.1"
     prism-themes: "npm:^1.9.0"
-    prismic-reactjs: "npm:^1.3.4"
     prismjs: "npm:^1.29.0"
     react: "npm:19.3.1"
     react-dom: "npm:19.3.1"
