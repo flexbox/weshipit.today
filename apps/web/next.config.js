@@ -74,6 +74,26 @@ const nextConfig = {
       './public/images/podcast-logos/og/**',
     ],
   },
+  // PostHog reverse proxy (EU region). A neutral path keeps ad blockers,
+  // common in a dev audience, from dropping conversion events.
+  async rewrites() {
+    return [
+      {
+        destination: 'https://eu-assets.i.posthog.com/static/:path*',
+        source: '/wsi/static/:path*',
+      },
+      {
+        destination: 'https://eu-assets.i.posthog.com/array/:path*',
+        source: '/wsi/array/:path*',
+      },
+      {
+        destination: 'https://eu.i.posthog.com/:path*',
+        source: '/wsi/:path*',
+      },
+    ];
+  },
+  // PostHog API paths end with a trailing slash; don't redirect them.
+  skipTrailingSlashRedirect: true,
 };
 
 // Production builds and `next start` use dist/apps/web/.next, the

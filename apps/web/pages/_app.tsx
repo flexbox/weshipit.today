@@ -5,6 +5,7 @@ import { SpeedInsights } from '@vercel/speed-insights/react';
 import { DefaultSeo } from 'next-seo';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
+import { initAnalytics } from '../utils/analytics';
 import { langForPage } from '../utils/page-lang';
 
 import './styles.css';
@@ -34,6 +35,10 @@ const spaceGrotesk = Space_Grotesk({
 
 function CustomApp({ Component, pageProps }: AppProps) {
   const { pathname } = useRouter();
+
+  useEffect(() => {
+    initAnalytics();
+  }, []);
 
   // _document only renders on the server: keep <html lang> right on
   // client-side navigations between English and French pages.
