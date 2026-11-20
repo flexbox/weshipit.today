@@ -9,6 +9,7 @@ import {
 import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/20/solid';
 import clsx from 'clsx';
 import { FormEvent, useState } from 'react';
+import { track } from '../utils/analytics';
 
 // MailerLite → Forms → Embedded form → HTML code → action URL
 // https://assets.mailerlite.com/jsonp/ACCOUNT_ID/forms/FORM_ID/subscribe
@@ -178,6 +179,7 @@ export function SelfAuditQuiz({
   const handleSubscribe = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setFormStatus('submitting');
+    track('audit_requested', { audit: config.id, score: String(scorePct) });
     try {
       const response = await fetch(MAILERLITE_FORM_ACTION, {
         body: new FormData(event.currentTarget),
