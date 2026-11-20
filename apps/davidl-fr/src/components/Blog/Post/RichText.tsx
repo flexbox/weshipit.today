@@ -7,18 +7,13 @@ import kebabCase from 'lodash/kebabCase';
 import Link from 'next/link';
 
 Prism.hooks.add('before-highlight', function (env) {
-  // @ts-ignore: Unreachable code error
+  // @ts-expect-error: Prism env.element is typed as Element, which has no innerText
   env.code = env.element.innerText;
 });
 
 // Returning null falls back to @prismicio/react's default serializer
 const components: JSXMapSerializer = {
-  preformatted: ({ children, key }) => (
-    <pre key={key}>
-      <code className="language-javascript">{children}</code>
-    </pre>
-  ),
-  heading2: ({ node, children, key }) => {
+  heading2: ({ children, key, node }) => {
     const id = kebabCase(node.text);
     return (
       <h2 key={key} id={id}>
@@ -28,7 +23,7 @@ const components: JSXMapSerializer = {
       </h2>
     );
   },
-  hyperlink: ({ node, children, key }) => {
+  hyperlink: ({ children, key, node }) => {
     if (node.data.link_type === 'Document' && 'uid' in node.data) {
       return (
         <Link key={key} href={`/blog/${node.data.uid}`}>
@@ -38,6 +33,11 @@ const components: JSXMapSerializer = {
     }
     return null;
   },
+  preformatted: ({ children, key }) => (
+    <pre key={key}>
+      <code className="language-javascript">{children}</code>
+    </pre>
+  ),
 };
 
 interface Props {
