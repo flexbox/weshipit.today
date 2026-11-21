@@ -41,7 +41,7 @@
       "executor": "nx:run-commands",
       "cache": false,
       "options": {
-        "command": "supabase db push",
+        "command": "supabase db push --linked",
         "cwd": "{projectRoot}"
       }
     },
@@ -49,7 +49,7 @@
       "executor": "nx:run-commands",
       "cache": false,
       "options": {
-        "command": "supabase gen types typescript --linked > utils/hq/database.types.ts",
+        "command": "supabase gen types typescript --linked > utils/hq/database.types.ts && npx prettier --write utils/hq/database.types.ts",
         "cwd": "{projectRoot}"
       }
     }

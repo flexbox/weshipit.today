@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { HqShell } from '../../../components/hq/hq-shell';
 import { MagnetMarkdown } from '../../../components/hq/magnet-markdown';
-import type { LeadMagnet } from '../../../utils/hq/database.types';
+import type { LeadMagnet } from '../../../utils/hq/types';
 import { requireOwnerPage } from '../../../utils/hq/require-owner';
 import { getHqAdmin } from '../../../utils/hq/supabase';
 

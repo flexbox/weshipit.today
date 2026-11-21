@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { baseUrl } from '../../../utils/hq/base-url';
 import { MARKETING_CONSENT_LABELS } from '../../../utils/hq/consent';
-import type { Lead } from '../../../utils/hq/database.types';
+import type { Lead } from '../../../utils/hq/types';
 import { ownerEmail, visitorEmail } from '../../../utils/hq/emails';
 import { subscribeSchema } from '../../../utils/hq/schemas';
 import { sendEmail } from '../../../utils/hq/shipmail';
