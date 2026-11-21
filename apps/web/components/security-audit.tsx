@@ -121,7 +121,6 @@ const SECURITY_AUDIT: SelfAuditConfig = {
     title: 'Get your security report',
   },
   resetLabel: 'Restart the security audit',
-  scoreField: 'security_score',
   title: 'Your security checklist',
 };
 

@@ -6,10 +6,7 @@
   "tags": [],
   "targets": {
     "build": {
-      "dependsOn": [
-        "^build",
-        "sitemap"
-      ]
+      "dependsOn": ["^build", "sitemap"]
     },
     "sitemap": {
       "executor": "nx:run-commands",
@@ -19,9 +16,7 @@
       }
     },
     "test": {
-      "outputs": [
-        "{workspaceRoot}/coverage/apps/web"
-      ]
+      "outputs": ["{workspaceRoot}/coverage/apps/web"]
     },
     "typecheck": {
       "executor": "nx:run-commands",
@@ -32,6 +27,30 @@
     "serve": {
       "options": {
         "port": 4200
+      }
+    },
+    "supabase": {
+      "executor": "nx:run-commands",
+      "cache": false,
+      "options": {
+        "command": "supabase",
+        "cwd": "{projectRoot}"
+      }
+    },
+    "db-push": {
+      "executor": "nx:run-commands",
+      "cache": false,
+      "options": {
+        "command": "supabase db push",
+        "cwd": "{projectRoot}"
+      }
+    },
+    "db-types": {
+      "executor": "nx:run-commands",
+      "cache": false,
+      "options": {
+        "command": "supabase gen types typescript --linked > utils/hq/database.types.ts",
+        "cwd": "{projectRoot}"
       }
     }
   }
