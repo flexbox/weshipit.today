@@ -1,3 +1,5 @@
+import { ArrowDownTrayIcon } from '@heroicons/react/20/solid';
+import { Button } from '@weshipit/ui';
 import type { GetServerSideProps } from 'next';
 import Link from 'next/link';
 import { HqShell } from '../../components/hq/hq-shell';
@@ -54,18 +56,19 @@ export default function HqLeads({
             className="rounded-md px-2 py-1.5 text-slate-900 ring-1 ring-slate-300 dark:bg-white/5 dark:text-white dark:ring-white/10"
           />
         </label>
-        <button
-          type="submit"
-          className="rounded-md px-3 py-1.5 font-medium ring-1 ring-slate-300 hover:bg-slate-50 dark:ring-white/20 dark:hover:bg-white/10"
-        >
+        <Button as="button" variant="outline">
           Filtrer
-        </button>
-        <a
+        </Button>
+        {/* A plain <a>: next/link must not open an API route as a page. */}
+        <Button
+          as="a"
           href={`/api/hq/leads-csv${exportQuery ? `?${exportQuery}` : ''}`}
-          className="ml-auto text-blue-600 hover:underline"
+          variant="outline"
+          className="ml-auto gap-1.5"
         >
+          <ArrowDownTrayIcon className="size-4" aria-hidden="true" />
           Exporter en CSV
-        </a>
+        </Button>
       </form>
       <p className="mb-4 text-sm text-slate-500">
         {total} lead{total > 1 ? 's' : ''}

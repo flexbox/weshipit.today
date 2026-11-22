@@ -1,6 +1,6 @@
 # weshipit HQ: a minimal lead-magnet tool for one person
 
-> Plan written 2026-11-21, cut down to the minimum after the [Minute Lead teardown](./minutelead-findings.md), then updated with three decisions the same day. Status: **v1 code written** on branch `feat/hq-lead-magnets` (2026-11-21); waiting on the Supabase project and Shipmail setup (§7, Setup).
+> Plan written 2026-11-21, cut down to the minimum after the [Minute Lead teardown](./minutelead-findings.md), then updated with three decisions the same day. Status: **v1 code written** on branch `feat/hq-lead-magnets` (2026-11-21). Supabase is set up, and sign-in plus magnet creation work locally (tested 2026-11-22). `/hq` has a sidebar layout modelled on Catalyst, built with `@weshipit/ui` (2026-11-22). Next: Shipmail (§6, §7 Setup).
 > One user (me). It lives inside `apps/web` on the existing Pages Router. Supabase handles auth and the database, and [Shipmail](https://shipmail.to) is **the only email tool**.
 
 **Decided 2026-11-21**
@@ -71,7 +71,8 @@ apps/web/
 ├── components/hq/
 │   ├── lead-magnet-form.tsx           email, first name, opt-in, honeypot, UTM from the URL
 │   ├── magnet-markdown.tsx            react-markdown + remark-gfm (already installed)
-│   ├── hq-shell.tsx, leads-table.tsx  HQ frame and the shared leads table
+│   ├── hq-shell.tsx                   sidebar frame modelled on Catalyst: Tableau de bord, Leads, Nouveau magnet, sign out
+│   └── leads-table.tsx                shared leads table
 └── supabase/                          config.toml (project "weshipit-hq", sign-ups off) + migrations/20261121120000_hq.sql
 ```
 
@@ -133,13 +134,13 @@ Conversion is `count(leads) / views` per magnet, computed in the `/hq` query wit
 **Setup (half a day)**
 
 - [x] New Supabase project "weshipit-hq" (ref `doztcafmauxhqrqxkiol`), linked; migration pushed and types generated on 2026-11-21. `web:db:push` targets the linked project (`--linked`): Supabase CLI 2.119 pushes to the local stack by default.
-- [ ] In the Supabase dashboard:
+- [x] In the Supabase dashboard (done; magic-link sign-in tested locally 2026-11-22):
   - Authentication → Sign In / Providers: turn off "Allow new users to sign up"
   - Authentication → Users → Add user, with "Auto Confirm User" ticked
   - Authentication → URL Configuration: Site URL `https://weshipit.today`; redirect URLs `https://weshipit.today/api/hq/auth/callback` and `http://localhost:4200/api/hq/auth/callback`
   - Don't use `supabase config push`: it would also copy the local `site_url` to the live project.
 - [ ] Shipmail: transactional domain, DNS, verify, transactional sender, API key (`messages:send`, hold-for-review off)
-- [ ] Env vars in `apps/web/.env.local` and on Vercel. The list is in `apps/web/.env.local.example` (done):
+- [ ] Env vars in `apps/web/.env.local` and on Vercel. The list is in `apps/web/.env.local.example`. Locally the Supabase and `HQ_*` ones are set; the Shipmail ones and all of Vercel are still to do:
   - `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, `SUPABASE_SECRET_KEY`
   - `HQ_OWNER_EMAIL`, `HQ_SITE_URL`
   - `SHIPMAIL_API_KEY`, `HQ_FROM_EMAIL`
@@ -154,13 +155,19 @@ Conversion is `count(leads) / views` per magnet, computed in the `/hq` query wit
   - send the two emails, return `{ token }` when there is a magnet
   - same response whether or not the email is already known
 - [x] `/r/[slug]` with `lead-magnet-form.tsx` and the view beacon (a `keepalive` fetch, once per session per slug), then `/r/[slug]/[token]` with `magnet-markdown.tsx` and Tailwind `print:` styles, then `/api/lm/unsubscribe` and `/desabonnement`
-- [ ] First magnet: the **React Native Stability Checklist** (`docs/marketing/plan.md` §5), inserted with SQL until HQ exists
+- [ ] First magnet: the **React Native Stability Checklist** (`docs/marketing/plan.md` §5), written in `/hq/magnets/new` and published. A first magnet exists as a draft (2026-11-22).
 - [x] `/hq` and `/desabonnement` added to `EXCLUDED_PAGES` in `scripts/generate-sitemap.mts` (`/r/*` has no index page, so it isn't picked up), and every new page renders `noindex`
 
 **HQ (half a day)**
 
 - [x] `requireOwnerPage`/`getOwner`, `/hq/login`, `/api/hq/login`, `/api/hq/auth/callback`, `/api/hq/logout`
-- [x] `/hq` (magnets with views, leads, conversion and the `/r/` link; last 20 leads), `/hq/magnets/[id]` + `/api/hq/magnets`, `/hq/leads` + `/api/hq/leads-csv`
+- [x] `/hq` (magnets with views, leads, conversion and the `/r/` link; latest leads), `/hq/magnets/[id]` + `/api/hq/magnets`, `/hq/leads` + `/api/hq/leads-csv`
+- [x] Sidebar layout modelled on [Catalyst](https://catalyst.tailwindui.com) (2026-11-22). Only the layout idea is borrowed; no Catalyst code is copied. Details:
+  - `hq-shell.tsx`: a fixed sidebar on desktop, and on mobile a drawer using the same Headless UI `Dialog` as the site header. The content sits on a white panel over a slate background.
+  - Text, buttons, badges and cards come from `@weshipit/ui` (`Text`, `Button`, `LinkButton`, `Badge`, `Card`).
+  - `/hq` shows four numbers (total leads, leads in the last 7 days, `/r` views, `/r` conversion), the magnets table and the 10 latest leads.
+  - Tables have no lines between rows, only a hover tint.
+  - The CSV export is `Button as="a"`, not `LinkButton`: `next/link` must not try to open an API route as a page.
 
 **Leave MailerLite and Mailchimp (half a day), see §8**
 

@@ -1,3 +1,5 @@
+import { Badge, Text } from '@weshipit/ui';
+
 export interface LeadRow {
   id: string;
   email: string;
@@ -19,7 +21,7 @@ const dateFormat = new Intl.DateTimeFormat('fr-FR', {
 /** Shared by /hq and /hq/leads. */
 export function LeadsTable({ leads }: { leads: LeadRow[] }) {
   if (leads.length === 0) {
-    return <p className="text-slate-600 dark:text-slate-400">Aucun lead.</p>;
+    return <Text variant="c1">Aucun lead.</Text>;
   }
   return (
     <div className="overflow-x-auto">
@@ -51,11 +53,19 @@ export function LeadsTable({ leads }: { leads: LeadRow[] }) {
               </td>
               <td className="py-2 pr-4">{lead.utm_source ?? '—'}</td>
               <td className="py-2 pr-4">
-                {lead.unsubscribed_at
-                  ? 'Désabonné'
-                  : lead.marketing_consent
-                    ? 'Oui'
-                    : 'Non'}
+                {lead.unsubscribed_at ? (
+                  <Badge size="sm" variant="red">
+                    Désabonné
+                  </Badge>
+                ) : lead.marketing_consent ? (
+                  <Badge size="sm" variant="green">
+                    Oui
+                  </Badge>
+                ) : (
+                  <Badge size="sm" variant="gray-light">
+                    Non
+                  </Badge>
+                )}
               </td>
               <td className="py-2 tabular-nums">
                 {dateFormat.format(new Date(lead.created_at))}
