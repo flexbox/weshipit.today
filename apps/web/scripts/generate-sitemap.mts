@@ -32,6 +32,9 @@ const pagesDir = path.join(appDir, 'pages');
 export const EXCLUDED_PAGES = [
   '/404',
   '/brand',
+  // HQ: unsubscribe confirmation and the private dashboard.
+  '/desabonnement',
+  '/hq',
   '/home',
   '/og-preview',
   '/onboarding',

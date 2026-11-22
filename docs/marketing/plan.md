@@ -5,6 +5,8 @@
 **Date:** 2026-07-10
 **Status:** v1 — approved section-by-section by David, 2026-07-09/10
 
+> **Update 2026-11-21: MailerLite is dropped.** Email capture and sending move to HQ, a small in-house tool at `weshipit.today/hq` built on Supabase, with Shipmail sending the email. See `docs/hq/plan.md`. Read every "MailerLite" below as "HQ + Shipmail". The Mailchimp list is imported into HQ, then both accounts are cancelled.
+
 ---
 
 ## 1. Executive summary

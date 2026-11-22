@@ -10,11 +10,10 @@ import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/20/solid';
 import clsx from 'clsx';
 import { FormEvent, useState } from 'react';
 import { track } from '../utils/analytics';
-
-// MailerLite → Forms → Embedded form → HTML code → action URL
-// https://assets.mailerlite.com/jsonp/ACCOUNT_ID/forms/FORM_ID/subscribe
-const MAILERLITE_FORM_ACTION =
-  'https://assets.mailerlite.com/jsonp/ACCOUNT_ID/forms/FORM_ID/subscribe';
+import {
+  type ConsentLocale,
+  MARKETING_CONSENT_LABELS,
+} from '../utils/hq/consent';
 
 export interface SelfAuditLabels {
   step: string;
@@ -34,11 +33,14 @@ export interface SelfAuditLabels {
   namePlaceholder: string;
   emailPlaceholder: string;
   answers: { no: string; unknown: string; yes: string };
+  /** Language of the opt-in sentence, see utils/hq/consent. */
+  consentLocale: ConsentLocale;
 }
 
 export const FR_LABELS: SelfAuditLabels = {
   answered: 'répondues',
   answers: { no: 'Non', unknown: 'Incertain', yes: 'Oui' },
+  consentLocale: 'fr',
   emailLabel: 'Email pro',
   emailPlaceholder: 'toi@entreprise.com',
   error: 'Une erreur est survenue. Réessayez, ou écrivez-nous directement.',
@@ -61,6 +63,7 @@ export const FR_LABELS: SelfAuditLabels = {
 export const EN_LABELS: SelfAuditLabels = {
   answered: 'answered',
   answers: { no: 'No', unknown: 'Unknown', yes: 'Yes' },
+  consentLocale: 'en',
   emailLabel: 'Work email',
   emailPlaceholder: 'you@company.com',
   error: 'Something went wrong. Try again, or email us directly.',
@@ -99,8 +102,11 @@ export interface SelfAuditConfig {
   categories: AuditCategory[];
   getVerdict: (scorePct: number) => AuditVerdict;
   report: { title: string; text: string; bullets: string[] };
-  /** MailerLite custom field receiving the score. */
-  scoreField: string;
+  /**
+   * Slug of the HQ magnet holding the detailed report. Leads get its link by
+   * email; without it they get a thank-you with their score.
+   */
+  leadMagnetSlug?: string;
   labels?: SelfAuditLabels;
   cta: { text: string; href: string; label: string };
 }
@@ -180,13 +186,27 @@ export function SelfAuditQuiz({
     event.preventDefault();
     setFormStatus('submitting');
     track('audit_requested', { audit: config.id, score: String(scorePct) });
+    const form = new FormData(event.currentTarget);
+    const params = new URLSearchParams(window.location.search);
     try {
-      const response = await fetch(MAILERLITE_FORM_ACTION, {
-        body: new FormData(event.currentTarget),
+      const response = await fetch('/api/lm/subscribe', {
+        body: JSON.stringify({
+          email: form.get('email'),
+          first_name: form.get('name'),
+          locale: labels.consentLocale,
+          magnet: config.leadMagnetSlug,
+          marketing_consent: form.get('marketing_consent') === 'on',
+          meta: { score: scorePct },
+          source: `audit:${config.id}`,
+          utm_campaign: params.get('utm_campaign') ?? undefined,
+          utm_medium: params.get('utm_medium') ?? undefined,
+          utm_source: params.get('utm_source') ?? undefined,
+          website: form.get('website'),
+        }),
+        headers: { 'Content-Type': 'application/json' },
         method: 'POST',
       });
-      const result = await response.json();
-      setFormStatus(result.success ? 'success' : 'error');
+      setFormStatus(response.ok ? 'success' : 'error');
     } catch {
       setFormStatus('error');
     }
@@ -335,7 +355,7 @@ export function SelfAuditQuiz({
                     <input
                       type="text"
                       id={`${config.id}-name`}
-                      name="fields[name]"
+                      name="name"
                       placeholder={labels.namePlaceholder}
                       autoComplete="given-name"
                       className="w-full rounded-md border-0 bg-white px-3.5 py-2.5 text-slate-900 shadow-xs ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 dark:bg-white/5 dark:text-white dark:ring-white/10"
@@ -352,7 +372,7 @@ export function SelfAuditQuiz({
                     <input
                       type="email"
                       id={`${config.id}-email`}
-                      name="fields[email]"
+                      name="email"
                       placeholder={labels.emailPlaceholder}
                       required
                       autoComplete="email"
@@ -360,12 +380,26 @@ export function SelfAuditQuiz({
                     />
                   </div>
 
-                  <input
-                    type="hidden"
-                    name={`fields[${config.scoreField}]`}
-                    value={scorePct}
-                  />
-                  <input type="hidden" name="ml-submit" value="1" />
+                  {/* Honeypot: off-screen for people, tempting for bots. */}
+                  <div aria-hidden="true" className="absolute -left-[9999px]">
+                    <input
+                      type="text"
+                      name="website"
+                      tabIndex={-1}
+                      autoComplete="off"
+                    />
+                  </div>
+
+                  <label className="mb-6 flex items-start gap-3 text-sm text-slate-600 dark:text-slate-400">
+                    <input
+                      type="checkbox"
+                      name="marketing_consent"
+                      className="mt-0.5 size-4 rounded border-slate-300"
+                    />
+                    <span>
+                      {MARKETING_CONSENT_LABELS[labels.consentLocale]}
+                    </span>
+                  </label>
 
                   <Button
                     as="button"

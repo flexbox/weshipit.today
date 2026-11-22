@@ -6723,6 +6723,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@supabase/ssr@npm:0.12.7":
+  version: 0.12.7
+  resolution: "@supabase/ssr@npm:0.12.7"
+  dependencies:
+    cookie: "npm:^1.0.2"
+  peerDependencies:
+    "@supabase/supabase-js": ^2.114.0
+  checksum: 10/fd75b3137012ba17ec492c6bf063de7d16ccf85ab486e82a76a2a0f9bdada048cffba5b9b4d21463828f06cbb0e7da0d481695381bdcc01ba23c76744c70219b
+  languageName: node
+  linkType: hard
+
 "@supabase/storage-js@npm:2.119.2":
   version: 2.119.2
   resolution: "@supabase/storage-js@npm:2.119.2"
@@ -22908,6 +22919,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"shipmail@npm:0.6.11":
+  version: 0.6.11
+  resolution: "shipmail@npm:0.6.11"
+  checksum: 10/503190fe38d24e1771e97ed93450f0a73102272f83d76a29291b22636ef25c432d479c125247b68aa537c866bdfdd4a82fa8fdbe98ff705ec9af41a36f9d38d1
+  languageName: node
+  linkType: hard
+
 "side-channel-list@npm:^1.0.0":
   version: 1.0.0
   resolution: "side-channel-list@npm:1.0.0"
@@ -25735,6 +25753,7 @@ __metadata:
     "@storybook/addon-docs": "npm:10.6.8"
     "@storybook/nextjs-vite": "npm:10.6.8"
     "@storybook/test-runner": "npm:0.26.1"
+    "@supabase/ssr": "npm:0.12.7"
     "@supabase/supabase-js": "npm:^2.119.2"
     "@svgr/webpack": "npm:8.1.0"
     "@swc-node/register": "npm:1.12.1"
@@ -25820,6 +25839,7 @@ __metadata:
     rehype-external-links: "npm:^3.0.0"
     rehype-raw: "npm:^7.0.0"
     remark-gfm: "npm:^4.0.1"
+    shipmail: "npm:0.6.11"
     storybook: "npm:10.6.8"
     styled-components: "npm:^6.6.0"
     swr: "npm:^2.5.1"
@@ -25836,6 +25856,7 @@ __metadata:
     webpack: "npm:5.113.0"
     webpack-cli: "npm:^7.3.1"
     webpack-dev-server: "npm:5.2.7"
+    zod: "npm:^4.6.7"
   languageName: unknown
   linkType: soft
 
@@ -26306,7 +26327,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zod@npm:^3.25.0 || ^4.0.0":
+"zod@npm:^3.25.0 || ^4.0.0, zod@npm:^4.6.7":
   version: 4.6.7
   resolution: "zod@npm:4.6.7"
   checksum: 10/3ca8b8d6bb401538e59504c543db629ea7beaa775e504c3f22269b406fdffbf1431c856d59a597bf66d8487e4d2be12b03a55d76fc2c63d9f046eae1ca173bca

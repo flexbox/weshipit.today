@@ -200,7 +200,6 @@ const STACK_AUDIT: SelfAuditConfig = {
     title: "Recevez votre rapport d'audit complet",
   },
   resetLabel: "Recommencer l'audit",
-  scoreField: 'audit_score',
   title: 'Auditez vous-même votre stack React Native',
 };
 

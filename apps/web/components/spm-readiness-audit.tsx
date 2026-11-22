@@ -121,7 +121,6 @@ const SPM_READINESS_AUDIT: SelfAuditConfig = {
     title: 'Get your migration plan',
   },
   resetLabel: 'Restart the readiness check',
-  scoreField: 'spm_score',
   title: 'Your SPM readiness check',
 };
 
