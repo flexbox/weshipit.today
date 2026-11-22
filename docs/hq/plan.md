@@ -1,6 +1,6 @@
 # weshipit HQ: a minimal lead-magnet tool for one person
 
-> Plan written 2026-11-21, cut down to the minimum after the [Minute Lead teardown](./minutelead-findings.md), then updated with three decisions the same day. Status: **v1 code written** on branch `feat/hq-lead-magnets` (2026-11-21). Supabase is set up, and sign-in plus magnet creation work locally (tested 2026-11-22). `/hq` has a sidebar layout modelled on Catalyst, built with `@weshipit/ui` (2026-11-22). Next: Shipmail (§6, §7 Setup).
+> Plan written 2026-11-21, cut down to the minimum after the [Minute Lead teardown](./minutelead-findings.md), then updated with three decisions the same day. Status: **v1 code written** on branch `feat/hq-lead-magnets` (2026-11-21). Supabase is set up, and sign-in plus magnet creation work locally (tested 2026-11-22). `/hq` has a sidebar layout modelled on Catalyst, built with `@weshipit/ui` (2026-11-22). Shipmail is set up and a local send test passed: `weshipit.today` is verified and the sender `david@mail.weshipit.today` is active (2026-11-22). The env vars are on Vercel Production. Next: merge and deploy, then test `/hq/login` and one `/r` signup on production.
 > One user (me). It lives inside `apps/web` on the existing Pages Router. Supabase handles auth and the database, and [Shipmail](https://shipmail.to) is **the only email tool**.
 
 **Decided 2026-11-21**
@@ -125,7 +125,7 @@ Conversion is `count(leads) / views` per magnet, computed in the `/hq` query wit
 - **Notification to me:** idempotency key `notify-{lead.id}`. It gives the email, first name, source, magnet, `utm_source`, `meta.score` when present, and a link to `/hq/leads`.
 - Send both with `Promise.allSettled` **before** responding. If they fail, log it and still return the token, because the visitor sees the resource on the page anyway.
 - Setup:
-  - A transactional domain (e.g. `mail.weshipit.today`) with its DNS records on Vercel, verified in Shipmail. Then a **transactional sender** on it (e.g. `david@mail.weshipit.today`), with replies going to my Shipmail mailbox. `HQ_FROM_EMAIL` is that bare address.
+  - A transactional domain (e.g. `mail.weshipit.today`) with its DNS records on Vercel, verified in Shipmail. Then a **transactional sender** on it (e.g. `david@mail.weshipit.today`), with replies going to my Shipmail mailbox. `HQ_FROM_EMAIL` is that bare address. Done 2026-11-22: `david@mail.weshipit.today`, replies to `david@weshipit.today` (§7).
   - An API key with scope `messages:send` and **"Hold email to outside addresses for review" off**. With it on, every send returns `202 held_for_review` and sits in Drafts.
 - Limits: the trial is capped at 100 recipients per day. Shipmail sends no open or click events, and v1 doesn't need them.
 
@@ -139,9 +139,19 @@ Conversion is `count(leads) / views` per magnet, computed in the `/hq` query wit
   - Authentication → Users → Add user, with "Auto Confirm User" ticked
   - Authentication → URL Configuration: Site URL `https://weshipit.today`; redirect URLs `https://weshipit.today/api/hq/auth/callback` and `http://localhost:4200/api/hq/auth/callback`
   - Don't use `supabase config push`: it would also copy the local `site_url` to the live project.
-- [ ] Shipmail: transactional domain, DNS, verify, transactional sender, API key (`messages:send`, hold-for-review off)
-- [ ] Env vars in `apps/web/.env.local` and on Vercel. The list is in `apps/web/.env.local.example`. Locally the Supabase and `HQ_*` ones are set; the Shipmail ones and all of Vercel are still to do:
-  - `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, `SUPABASE_SECRET_KEY`
+- [x] Shipmail domain (2026-11-22). `weshipit.today` is verified in Shipmail. Its DNS changes on Vercel:
+  - MX now points to `mx1.shipmail.to`, which replaces ImprovMX.
+  - The SPF record has `include:spf.shipmail.to` added. The MailerLite and ImprovMX includes stay until §8 is done.
+  - A DKIM record `shipmail._domainkey` was added.
+  - DMARC is now `v=DMARC1; p=reject`, Shipmail's recommended value. Anything sending as @weshipit.today without aligned DKIM or SPF is rejected. MailerLite signs with its `litesrv._domainkey` DKIM.
+  - Incoming mail goes to the mailbox `david@weshipit.today`.
+- [x] Transactional domain `mail.weshipit.today`, verified on 2026-11-22. Its records on Vercel are DKIM `shipmail._domainkey.mail`, plus MX and SPF on `mail.mail`, the MAIL FROM domain (Amazon SES eu-central-1). The old Resend records under `mail.` don't conflict.
+- [x] Transactional sender `david@mail.weshipit.today` ("David Leuliette"). Replies go to `david@weshipit.today`.
+- [x] App API key: scope `messages:send` only, hold-for-review off. It is set as `SHIPMAIL_API_KEY` in `.env.local` (2026-11-22).
+- [ ] Revoke the Shipmail setup key used for the steps above.
+- [x] Local send test (2026-11-22). One `POST /api/lm/subscribe` with no magnet triggers both emails, the visitor's and the owner's "Nouveau lead". Both reached Gmail outside spam, with DKIM, SPF and DMARC passing, `Reply-To: david@weshipit.today` and the List-Unsubscribe headers. The test lead was deleted. Restart `next dev` after editing `.env.local`; the running server kept the old values.
+- [x] Env vars in `apps/web/.env.local` and on Vercel. The list is in `apps/web/.env.local.example`. They're set locally and on Vercel **Production** only (2026-11-22), and the two keys are stored as Secret. Preview is left out because the magic link always returns to `HQ_SITE_URL`, and a preview `/r` page would write real leads and send real emails. Restart `next dev` after editing `.env.local`:
+  - `HQ_SUPABASE_URL`, `HQ_SUPABASE_PUBLISHABLE_KEY`, `HQ_SUPABASE_SECRET_KEY`. These have an `HQ_` prefix, not `NEXT_PUBLIC_SUPABASE_*`, because the Supabase integration (installed 2026-11-04) syncs those standard names from the davidl-fr project into the `weshipit-today` Vercel project.
   - `HQ_OWNER_EMAIL`, `HQ_SITE_URL`
   - `SHIPMAIL_API_KEY`, `HQ_FROM_EMAIL`
 - [x] `@supabase/ssr@0.12.7`, `shipmail@0.6.11`, `zod@^4.6.7`, plus Nx targets `web:supabase`, `web:db-push`, `web:db-types`

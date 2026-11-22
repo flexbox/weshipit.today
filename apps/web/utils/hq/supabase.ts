@@ -31,8 +31,8 @@ let admin: SupabaseClient<Database> | undefined;
  */
 export function getHqAdmin(): SupabaseClient<Database> {
   admin ??= createClient<Database>(
-    env('NEXT_PUBLIC_SUPABASE_URL'),
-    env('SUPABASE_SECRET_KEY'),
+    env('HQ_SUPABASE_URL'),
+    env('HQ_SUPABASE_SECRET_KEY'),
     { auth: { autoRefreshToken: false, persistSession: false } },
   );
   return admin;
@@ -44,8 +44,8 @@ export function getHqAdmin(): SupabaseClient<Database> {
  */
 export function createHqAuthClient(req: IncomingMessage, res: ServerResponse) {
   return createServerClient<Database>(
-    env('NEXT_PUBLIC_SUPABASE_URL'),
-    env('NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY'),
+    env('HQ_SUPABASE_URL'),
+    env('HQ_SUPABASE_PUBLISHABLE_KEY'),
     {
       cookies: {
         getAll() {
