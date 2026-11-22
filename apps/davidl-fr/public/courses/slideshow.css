@@ -451,3 +451,11 @@ a:hover {
   font-size: 0.65em;
   opacity: 0.75;
 }
+
+/* small pixel-art PNGs, scaled up without blur */
+.pixel-shot img {
+  image-rendering: pixelated;
+  height: 380px;
+  width: auto;
+  max-width: none;
+}

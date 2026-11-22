@@ -17,6 +17,10 @@ const SEO_DATA = {
 
 const coursesList = [
   {
+    title: 'How I shipped Kebab Profitable in a week with AI',
+    link: '/courses/kebab-profitable.html',
+  },
+  {
     title: 'Offline First Mobile Apps with React Native & LegendState',
     link: '/courses/offline-first.html',
   },
