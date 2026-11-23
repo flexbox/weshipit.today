@@ -162,3 +162,30 @@ export function ownerEmail(input: OwnerEmailInput): EmailContent {
   ]);
   return { html, subject, text };
 }
+
+export interface FollowupEmailInput {
+  firstName?: string | null;
+  /** The magnet they downloaded; null for newsletter and quiz leads. */
+  magnetTitle?: string | null;
+}
+
+/**
+ * The three-line "Merci !" I send by hand from HQ, within 24 hours of a
+ * signup. It must read like a personal note, so no layout and no visible
+ * footer: unsubscribing goes through the List-Unsubscribe header.
+ */
+export function followupEmail({
+  firstName,
+  magnetTitle,
+}: FollowupEmailInput): EmailContent {
+  const hello = firstName ? `Hello ${firstName},` : 'Hello,';
+  const ask = magnetTitle
+    ? `Merci d’avoir téléchargé « ${magnetTitle} ». Dis-moi, qu’est-ce que tu en as pensé ?`
+    : 'Merci de t’être inscrit. Dis-moi, qu’est-ce qui t’a amené ici ?';
+  const text = [hello, '', ask, '', SIGNATURE[0]].join('\n');
+  const html = wrapHtml([escapeHtml(hello), escapeHtml(ask), SIGNATURE[0]]);
+  return { html, subject: 'Merci !', text };
+}
+
+export const FOLLOWUP_STATUSES = ['to_contact', 'sent', 'replied'] as const;
+export type FollowupStatus = (typeof FOLLOWUP_STATUSES)[number];

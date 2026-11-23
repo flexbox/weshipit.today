@@ -212,6 +212,15 @@ Steps:
   > From `apps/web/public/podcast-transcripts/<slug>.txt` (and `apps/web/content/podcast-articles/<slug>.md` if it exists), write a French lead magnet for React Native tech leads: a title, a one-line pitch, 3–5 bullets, then a checklist of 8–12 `- [ ]` items grouped under 2–4 `##` headings. Use the guest's own examples and wording. Make no claims that aren't in the transcript.
 - [ ] Add an optional `lead_magnet_slug` to `podcast-episodes.fixture.ts`. `/podcast/[slug]` renders a small CTA card linking to `/r/{lead_magnet_slug}` (a `next/link`, not an inline form)
 
+## 9b. Follow-up "Merci !" (added 2026-11-23)
+
+Minute Lead's own advice: write to every new contact within 24 hours, one by one, with three lines and no offer. HQ now does that from the leads tables.
+
+- **Status per lead** (`leads.followup_status`, migration `20261123120000_hq_followup.sql`): `to_contact` (default, existing leads included) → `sent` → `replied`. `followup_sent_at` keeps the send time.
+- **Suivi column** in `/hq` and `/hq/leads`: a badge (À contacter / Relance envoyée / A répondu) and one button. "Envoyer « Merci ! »" sends the email and moves to `sent`; "A répondu" is clicked by hand once they answer. `/hq/leads?followup=to_contact` lists who's left.
+- **The email** (`followupEmail()` in `utils/hq/emails.ts`): subject "Merci !", "Hello {prénom}, Merci d'avoir téléchargé « {magnet} ». Dis-moi, qu'est-ce que tu en as pensé ? David". Leads without a magnet get "Merci de t'être inscrit. Dis-moi, qu'est-ce qui t'a amené ici ?". No layout and no visible footer, so it reads like a personal note; the List-Unsubscribe header still carries the unsubscribe link. Unsubscribed leads can't be sent one, and the Shipmail idempotency key `followup:{lead id}` stops a double send.
+- **Route**: `POST /api/hq/followup` (owner only, `id` + `action` = `send` | `replied` + `returnTo`, 303 back).
+
 ## 10. Later, only if a real need shows up
 
 | Need                                           | Smallest answer                                                                                       |
