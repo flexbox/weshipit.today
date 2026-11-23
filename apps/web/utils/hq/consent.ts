@@ -9,5 +9,3 @@ export const MARKETING_CONSENT_LABELS = {
 } as const;
 
 export type ConsentLocale = keyof typeof MARKETING_CONSENT_LABELS;
-
-export const MARKETING_CONSENT_LABEL = MARKETING_CONSENT_LABELS.fr;
