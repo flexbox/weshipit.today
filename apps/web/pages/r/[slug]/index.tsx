@@ -44,18 +44,17 @@ export default function CapturePage({ magnet }: CapturePageProps) {
       seoTitle={magnet.title}
       seoDescription={magnet.pitch}
       ogImageTitle={magnet.title}
-      ogImageKicker="Ressource gratuite"
-      locale="fr_FR"
+      ogImageKicker="Free resource"
+      locale="en_US"
       noindex
       withHeader
-      withFooter
       withContainer
     >
       <div className="mx-auto grid max-w-5xl gap-10 py-12 md:grid-cols-2 md:py-20">
         <div>
           {!magnet.published && (
             <p className="mb-4 inline-block rounded bg-amber-100 px-2 py-1 text-sm text-amber-900">
-              Brouillon : visible seulement par toi
+              Draft: only visible to you
             </p>
           )}
           <Text as="h1" variant="h2" className="text-slate-900 dark:text-white">

@@ -15,7 +15,7 @@ export default function ResourcePage({ content, title }: ResourcePageProps) {
     <Layout
       seoTitle={title}
       seoDescription={title}
-      locale="fr_FR"
+      locale="en_US"
       noindex
       withContainer
     >
@@ -32,7 +32,7 @@ export default function ResourcePage({ content, title }: ResourcePageProps) {
             onClick={() => window.print()}
             className="rounded-md px-3 py-2 text-sm font-medium text-slate-900 ring-1 ring-inset ring-slate-300 hover:bg-slate-50 dark:text-white dark:ring-white/20 dark:hover:bg-white/10"
           >
-            Enregistrer en PDF
+            Save as PDF
           </button>
         </div>
         <h1 className="mb-8 text-3xl font-semibold text-slate-900 dark:text-white">
