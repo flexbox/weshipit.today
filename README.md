@@ -1,7 +1,6 @@
 # weshipit.today
 
 - [Getting started with Nx —our monorepo tool](./docs/nx.md)
-- [Running Nx migrations](./docs/nx-migration.md)
 - [Check others docs](./docs/)
 
 ## Tooling
@@ -12,7 +11,7 @@
 - Design system with Storybook [design.weshipit.today](https://design.weshipit.today/)
 - Airtable API reference [airtable.com/api](https://airtable.com/api)
 - Content Management System with [prismic.io](https://weshipit.prismic.io/)
-- Email with [improvmx.com](https://improvmx.com/)
+- Email with [Shipmail](https://shipmail.to/): the mailbox, transactional emails from HQ (`/hq`) and the newsletter audience
 
 ## Getting Started
 

@@ -6,6 +6,8 @@
 **Status:** v1 — approved section-by-section by David, 2026-07-09/10
 
 > **Update 2026-11-21: MailerLite is dropped.** Email capture and sending move to HQ, a small in-house tool at `weshipit.today/hq` built on Supabase, with Shipmail sending the email. See `docs/hq/plan.md`. Read every "MailerLite" below as "HQ + Shipmail". The Mailchimp list is imported into HQ, then both accounts are cancelled.
+>
+> **Update 2026-11-23:** the newsletter list is one **Shipmail audience**. HQ captures leads and adds the ones who opt in; the cleaned Mailchimp list is imported there directly. Read every "MailerLite" below as "Shipmail". MailerLite is deleted, and Mailchimp is cancelled after the export.
 
 ---
 
@@ -804,7 +806,7 @@ _Sections 4–8 prescribe what's being done. This section maps what's possible �
 ### Appendix — deep-dive references
 
 - Plan artifacts: this document (`docs/marketing/plan.md`); the research record and per-section drafts live in the fCMO working folder — ask David
-- In-repo strategy docs: the Incubateur cluster strategy + tracking plan (`docs/seo/`), 8 executed SEO improvement plans (`plans/`), podcast workflow guide (`docs/`)
+- In-repo strategy docs: the Incubateur cluster strategy + tracking plan (`docs/seo/`), podcast workflow guide (`docs/`)
 - Dashboards: Vercel Analytics, GSC, Stripe, Gumroad, Systeme.io (affiliate), MailerLite (post-migration)
 - Voice + positioning source: §2 of this plan; recommend running `product-marketing` in Q1 to persist it as `.agents/product-marketing.md` in the repo
 - Tooling note: most skills named in §4–8 and §11 are installed and verified. A few (`cro`, `copywriting`, `copy-editing`, `sales-enablement`, `referrals`, `ab-testing`) are part of the wider marketing-skills library and may need installing when first used — fall back to the underlying tactic if absent.

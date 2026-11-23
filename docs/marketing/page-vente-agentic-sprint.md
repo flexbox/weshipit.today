@@ -195,8 +195,8 @@ Dans les deux cas, les crashs de lundi prochain arriveront. La seule question, c
 
 ## Notes d'intégration (hors page)
 
-- **CTA →** checkout Stripe (à créer) ; fallback si pas prêt : formulaire waitlist MailerLite avec groupe `agentic-sprint-c1`.
+- **CTA →** checkout Stripe (à créer) ; fallback si pas prêt : page HQ `/r/agentic-sprint-c1` (source `agentic-sprint-c1`).
 - **Internal links** (`next/link`) : directory d'outils, glossaire, page audit (§5 « Passe ton chemin »), page livre (bonus 4).
 - **Assets à produire avant mise en ligne :** 3 screenshots de PRs d'agents (§4), photos équipe (§10). Le bloc §4 est le seul bloquant — la page ne tient pas sans les reçus.
 - **Schema.org :** `Course` + `Offer` (490 EUR, validThrough 2026-09-11) — skill `schema` au moment de l'intégration.
-- **Compteur de places :** uniquement si branché sur le vrai compte Stripe/MailerLite. Pas de compteur manuel.
+- **Compteur de places :** uniquement si branché sur le vrai compte Stripe. Pas de compteur manuel.

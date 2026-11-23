@@ -1,4 +1,4 @@
-import { escapeHtml, followupEmail, ownerEmail, visitorEmail } from './emails';
+import { escapeHtml, followupEmail, visitorEmail } from './emails';
 
 const unsubscribeUrl = 'https://weshipit.today/api/lm/unsubscribe?t=abc';
 
@@ -35,36 +35,6 @@ describe('visitorEmail', () => {
     expect(email.subject).toBe('Ton audit : 72/100');
     expect(email.text).toContain('Ton score : 72/100.');
     expect(email.text.startsWith('Bonjour,')).toBe(true);
-  });
-});
-
-describe('ownerEmail', () => {
-  it('lists the lead and links back to HQ', () => {
-    const email = ownerEmail({
-      email: 'jane@example.com',
-      firstName: 'Jane',
-      hqUrl: 'https://weshipit.today/hq/leads',
-      magnetTitle: 'Checklist',
-      marketingConsent: true,
-      source: 'r-page',
-      utm: { medium: 'video', source: 'youtube' },
-    });
-    expect(email.subject).toBe('Nouveau lead · Checklist');
-    expect(email.text).toContain('UTM : youtube / video');
-    expect(email.text).toContain('Accepte les emails : oui');
-    expect(email.text).toContain('mailto:jane@example.com');
-  });
-
-  it('falls back to the source when there is no magnet', () => {
-    expect(
-      ownerEmail({
-        email: 'a@b.co',
-        hqUrl: 'https://weshipit.today/hq/leads',
-        marketingConsent: false,
-        score: 40,
-        source: 'audit:security',
-      }).subject,
-    ).toBe('Nouveau lead · audit:security');
   });
 });
 

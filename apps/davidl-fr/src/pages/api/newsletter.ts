@@ -1,43 +1,45 @@
-import fetch from 'isomorphic-unfetch';
+import type { NextApiRequest, NextApiResponse } from 'next';
 
-export default async (req, res) => {
-  const { email } = req.body;
+const HQ_SUBSCRIBE_URL = 'https://weshipit.today/api/lm/subscribe';
 
+/**
+ * The newsletter form forwards here, and this route forwards to weshipit.today
+ * HQ, which stores the lead and adds it to the Shipmail newsletter audience.
+ * Server to server, so the form needs no CORS. Signing up to a newsletter is
+ * the opt-in.
+ */
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse<{ error: string }>,
+) {
+  if (req.method !== 'POST') {
+    res.setHeader('Allow', 'POST');
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  const email = typeof req.body?.email === 'string' ? req.body.email : '';
   if (!email) {
     return res.status(400).json({ error: 'Email is required' });
   }
 
   try {
-    const LIST_ID = process.env.MAILCHIMP_LIST_ID;
-    const API_KEY = process.env.MAILCHIMP_API_KEY;
-    const DATACENTER = API_KEY?.split('-')[1];
-
-    const data = {
-      email_address: email,
-      status: 'subscribed',
-    };
-
-    const response = await fetch(
-      `https://${DATACENTER}.api.mailchimp.com/3.0/lists/${LIST_ID}/members`,
-      {
-        body: JSON.stringify(data),
-        headers: {
-          Authorization: `apikey ${API_KEY}`,
-          'Content-Type': 'application/json',
-        },
-        method: 'POST',
-      },
-    ).then((res) => res.json());
-
-    if (response.status >= 400) {
-      return res.status(400).json({
-        error:
-          'Hm, couldn’t add you to the newsletter - ping me directly at dleuliette@gmail.com and I’ll add you to this list!',
-      });
-    }
-
+    const response = await fetch(HQ_SUBSCRIBE_URL, {
+      body: JSON.stringify({
+        email,
+        locale: 'en',
+        marketing_consent: true,
+        source: 'davidl-newsletter',
+      }),
+      headers: { 'Content-Type': 'application/json' },
+      method: 'POST',
+    });
+    if (!response.ok) throw new Error(`HQ answered ${response.status}`);
     return res.status(201).json({ error: '' });
   } catch (error) {
-    return res.status(500).json({ error: error.message || error.toString() });
+    console.error('[newsletter] forward to HQ failed', error);
+    return res.status(500).json({
+      error:
+        'Hm, couldn’t add you to the newsletter - ping me directly at david@weshipit.today and I’ll add you to this list!',
+    });
   }
-};
+}

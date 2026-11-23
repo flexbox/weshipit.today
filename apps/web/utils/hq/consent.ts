@@ -9,3 +9,17 @@ export const MARKETING_CONSENT_LABELS = {
 } as const;
 
 export type ConsentLocale = keyof typeof MARKETING_CONSENT_LABELS;
+
+/**
+ * Forms where signing up is itself the opt-in, with no checkbox. Their
+ * consent text describes the form instead of quoting a checkbox.
+ */
+export const FORM_CONSENT_LABELS: Record<string, string> = {
+  'davidl-newsletter':
+    'Subscribed through the davidl.fr newsletter form (“Subscribe?”): signing up is the opt-in.',
+};
+
+/** The consent text stored for a lead that opted in. */
+export function consentLabelFor(source: string, locale: ConsentLocale): string {
+  return FORM_CONSENT_LABELS[source] ?? MARKETING_CONSENT_LABELS[locale];
+}

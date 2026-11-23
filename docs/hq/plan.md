@@ -5,7 +5,7 @@
 
 **Decided 2026-11-21**
 
-- **Shipmail only.** HQ becomes the single list. MailerLite and Mailchimp are dropped (see §8). This replaces the MailerLite choice in `docs/marketing/plan.md`.
+- **Shipmail only.** MailerLite and Mailchimp are dropped (see §8). This replaces the MailerLite choice in `docs/marketing/plan.md`. _Revised 2026-11-23:_ the newsletter list lives in **one Shipmail audience**, not in the HQ `leads` table. HQ captures leads and adds the ones who opt in to that audience.
 - **A new Supabase project** just for HQ.
 - **Capture pages at `/r/[slug]`**, short enough for show notes and video descriptions.
 
@@ -17,7 +17,7 @@
 
 1. **Magnets.** Each one has a title, slug, one-line pitch, three to five bullets, a markdown body and a published flag. I write them by hand: a checklist is a GFM task list, a guide is headings and paragraphs.
 2. **Capture page** at `/r/[slug]`. It asks for an email, an optional first name and an optional, unticked opt-in to other emails, and it records the UTM parameters. The resource is delivered whether or not the box is ticked. A view counter sits behind it. The self-audit quizzes and the davidl.fr newsletter form post to the same endpoint.
-3. **Reveal and email.** After submit, the visitor goes straight to the resource, rendered from markdown with print CSS so "save as PDF" works. Shipmail sends them one email with the link (replies go to the mailbox set on the Shipmail sender), and sends me one email saying who signed up.
+3. **Reveal and email.** After submit, the visitor goes straight to the resource, rendered from markdown with print CSS so "save as PDF" works. Shipmail sends them one email with the link (replies go to the mailbox set on the Shipmail sender). I get one Slack message saying who signed up (2026-11-23, it replaces the owner email). Leads who opt in are added to the Shipmail newsletter audience.
 4. **HQ** at `/hq`, behind a magic link. Pages: magnets with views, leads and conversion; a magnet form; a leads table with CSV export.
 5. **Unsubscribe link** in every email, which sets a flag. Unsubscribed leads are left out of the CSV export by default.
 
@@ -31,7 +31,8 @@ self-audit quiz ─┐
 davidl.fr form ──┤ (server-to-server)
 /r/[slug] form ──┴▶ POST /api/lm/subscribe ── insert lead (or reuse the existing row for this email + magnet)
                          │                    ├─ Shipmail → visitor: resource link (or a welcome note for newsletter signups) + unsubscribe
-                         │                    └─ Shipmail → me: "Nouveau lead : {email} · {source} · {utm_source}"
+                         │                    ├─ Slack → me: "Nouveau lead · {magnet or source}" + details
+                         │                    └─ opted in → Shipmail newsletter audience (SHIPMAIL_AUDIENCE_ID)
                          ▼
                /r/[slug]/[token]   the resource (markdown, print-friendly, noindex)
 ```
@@ -62,7 +63,9 @@ apps/web/
 │   ├── supabase.ts                    getHqAdmin() (secret key) + createHqAuthClient(req, res) via @supabase/ssr
 │   ├── require-owner.ts               getOwner() / requireOwnerPage(): getUser() + email === HQ_OWNER_EMAIL
 │   ├── shipmail.ts                    sendEmail(): one transactional send, logs instead when Shipmail isn't set (dev)
-│   ├── emails.ts                      visitorEmail(), ownerEmail(): pure { subject, html, text }
+│   ├── emails.ts                      visitorEmail(), followupEmail(): pure { subject, html, text }
+│   ├── slack.ts                       newLeadMessage() (pure) + notifySlack(): the per-lead ping to me
+│   ├── audience.ts                    addToAudience() / unsubscribeFromAudience(): the Shipmail newsletter audience
 │   ├── schemas.ts                     zod: subscribeSchema, magnetFormSchema
 │   ├── consent.ts                     opt-in sentence, FR + EN
 │   ├── csv.ts, base-url.ts            CSV export (formula-safe), absolute origin for email links
@@ -122,11 +125,12 @@ Conversion is `count(leads) / views` per magnet, computed in the `/hq` query wit
   - Newsletter signup: a two-line welcome.
   - Idempotency key `visitor-{lead.id}`. No `reply_to`: for a transactional sender, Shipmail adds the display name and the Reply-To mailbox configured on the sender.
   - Every one carries an unsubscribe link plus the headers `List-Unsubscribe: <https://weshipit.today/api/lm/unsubscribe?t={token}>` and `List-Unsubscribe-Post: List-Unsubscribe=One-Click`.
-- **Notification to me:** idempotency key `notify-{lead.id}`. It gives the email, first name, source, magnet, `utm_source`, `meta.score` when present, and a link to `/hq/leads`.
-- Send both with `Promise.allSettled` **before** responding. If they fail, log it and still return the token, because the visitor sees the resource on the page anyway.
+- **Notification to me:** a Slack message through an incoming webhook (`HQ_SLACK_WEBHOOK_URL`), only for a new lead. It gives the email, first name, source, magnet, UTM, `meta.score` when present, a reply link and a link to `/hq/leads`. It replaced the owner email on 2026-11-23.
+- **Newsletter audience:** when `marketing_consent` is true, the lead is added to the Shipmail audience `SHIPMAIL_AUDIENCE_ID` with `consent_source: weshipit-hq:{source}`. Shipmail never re-adds someone who left the audience. `/api/lm/unsubscribe` also unsubscribes them from it.
+- Run the email, the Slack ping and the audience add with `Promise.allSettled` **before** responding. If they fail, log it and still return the token, because the visitor sees the resource on the page anyway.
 - Setup:
   - A transactional domain (e.g. `mail.weshipit.today`) with its DNS records on Vercel, verified in Shipmail. Then a **transactional sender** on it (e.g. `david@mail.weshipit.today`), with replies going to my Shipmail mailbox. `HQ_FROM_EMAIL` is that bare address. Done 2026-11-22: `david@mail.weshipit.today`, replies to `david@weshipit.today` (§7).
-  - An API key with scope `messages:send` and **"Hold email to outside addresses for review" off**. With it on, every send returns `202 held_for_review` and sits in Drafts.
+  - An API key with scopes `messages:send` and `audiences:write` (the second since 2026-11-23), and **"Hold email to outside addresses for review" off**. With it on, every send returns `202 held_for_review` and sits in Drafts.
 - Limits: the trial is capped at 100 recipients per day. Shipmail sends no open or click events, and v1 doesn't need them.
 
 ## 7. Build steps (about 2.5 days)
@@ -181,28 +185,30 @@ Conversion is `count(leads) / views` per magnet, computed in the `/hq` query wit
 
 **Leave MailerLite and Mailchimp (half a day), see §8**
 
-**Done when** a real submit on production shows the checklist, both emails arrive, and the lead appears in `/hq` with the right conversion rate. Gate PRs on `npx nx typecheck web` and `npx nx build web`. `nx lint web` has a known pre-existing failure (see `plans/README.md`).
+**Done when** a real submit on production shows the checklist, the email arrives, the Slack ping arrives, and the lead appears in `/hq` with the right conversion rate. Gate PRs on `npx nx typecheck web`, `npx nx test web` and `npx nx build web`. `nx lint web` has a known pre-existing failure (see `apps/web/AGENTS.md`).
 
 ## 8. Leaving MailerLite and Mailchimp
 
-What exists today in code:
+Decided 2026-11-23: the newsletter list is **one Shipmail audience**. The old Mailchimp list goes straight there, not into HQ, so there is no HQ import script. Gumroad contacts are added to the same audience by hand later.
 
-| Touchpoint                                   | State                                                                                                                                                                                                | Change                                                                                                                                                                                                                                                                                                |
-| -------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `apps/web/components/self-audit-quiz.tsx`    | Posted to `assets.mailerlite.com/jsonp/ACCOUNT_ID/forms/FORM_ID/subscribe`, a **placeholder that was never filled in**, so the three quizzes (security, stack, SPM readiness) couldn't capture leads | **Done:** posts JSON to `/api/lm/subscribe` with `source: 'audit:<config.id>'`, `meta: { score }`, the honeypot and the FR/EN opt-in box. `scoreField` is gone. Set `leadMagnetSlug` in an audit config once its "detailed report" magnet exists; until then the lead gets a thank-you with the score |
-| `apps/davidl-fr/src/pages/api/newsletter.ts` | Live Mailchimp `lists/{id}/members` call, used by `Newsletter.tsx`                                                                                                                                   | Forward server-to-server to `https://weshipit.today/api/lm/subscribe` with `source: 'davidl-newsletter'` and `marketing_consent: true` (signing up to a newsletter is the opt-in). Remove `MAILCHIMP_*` from `.env.local.example` and from Vercel                                                     |
+| Touchpoint                                   | Change (done 2026-11-23 unless noted)                                                                                                                                                                                                                               |
+| -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `apps/web/components/self-audit-quiz.tsx`    | Posts to `/api/lm/subscribe` with `source: 'audit:<config.id>'` and `meta: { score }` (done 2026-11-21). Set `leadMagnetSlug` in an audit config once its "detailed report" magnet exists                                                                           |
+| `apps/davidl-fr/src/pages/api/newsletter.ts` | Thin server-to-server forward to `https://weshipit.today/api/lm/subscribe` with `source: 'davidl-newsletter'`, `locale: 'en'` and `marketing_consent: true` (signing up is the opt-in, its consent text is in `FORM_CONSENT_LABELS`). `Newsletter.tsx` is unchanged |
+| `/api/lm/subscribe`                          | Opted-in leads are added to the Shipmail audience; the owner email is replaced by a Slack message                                                                                                                                                                   |
+| Legacy                                       | `MAILCHIMP_*` env docs, `isomorphic-unfetch`, the ImprovMX README line, the MailerLite mentions in the marketing docs, `ownerEmail()` and the finished `plans/` folder are deleted                                                                                  |
 
 Steps:
 
-- [ ] Export the subscribers, **including unsubscribed and cleaned ones**, from Mailchimp and from MailerLite if anything was imported there.
-- [ ] One-off import into `leads`:
-  - `source: 'import:mailchimp'` (or `import:mailerlite`), `lead_magnet_id` null
-  - `created_at` = the original opt-in date, `consent_text` = "imported from <tool>, opted in <date>"
-  - set `unsubscribed_at` for anyone unsubscribed or cleaned; deduplicate by email, with unsubscribed taking priority
-  - keep the CSVs and the import script **outside git**, as with the BaseQL → Supabase migration
-- [ ] Switch the davidl.fr route (table above) once HQ is live in production; the quiz is already switched. Test one quiz submit and one newsletter submit on production.
-- [ ] Check that the counts match, then cancel Mailchimp and MailerLite.
-- [x] Dated note at the top of `docs/marketing/plan.md` saying MailerLite is replaced by HQ + Shipmail (done 2026-11-21). The welcome sequence and monthly digest become the "later" rows in §10.
+- [x] MailerLite account deleted (2026-11-23). ImprovMX was already replaced by the Shipmail mailbox (2026-11-22).
+- [ ] Shipmail: create the newsletter audience, set `SHIPMAIL_AUDIENCE_ID`; give the app key the `audiences:write` scope; create a Slack incoming webhook and set `HQ_SLACK_WEBHOOK_URL`. All on Vercel Production for `weshipit-today`.
+- [ ] Merge and deploy, then test one davidl.fr newsletter submit and one `/r` submit on production: lead in `/hq`, Slack ping, subscriber in the audience.
+- [ ] Remove `MAILCHIMP_API_KEY` and `MAILCHIMP_LIST_ID` from the davidl-fr Vercel project (after the deploy, so the old route never runs without them).
+- [ ] One-time Mailchimp export of **subscribed** contacts only. Unsubscribed and cleaned contacts are never imported, because adding them would subscribe them again; keep their CSV outside git as the opt-out record.
+- [ ] Clean the subscribed CSV once with no2bounce, keep only the valid addresses, and import them into the Shipmail audience.
+- [ ] Cancel Mailchimp.
+- [ ] DNS: remove the MailerLite and ImprovMX includes from the `weshipit.today` SPF record and the `litesrv._domainkey` CNAME (DKIM) and the `mailerlite-domain-verification` TXT record.
+- [x] Dated note at the top of `docs/marketing/plan.md` (2026-11-21, revised 2026-11-23).
 
 ## 9. Optional: a magnet per podcast episode (about 2 hours, no AI in the app)
 
@@ -223,10 +229,10 @@ Minute Lead's own advice: write to every new contact within 24 hours, one by one
 
 ## 10. Later, only if a real need shows up
 
-| Need                                           | Smallest answer                                                                                       |
-| ---------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| Bounces pile up                                | Shipmail webhook (`message.bounced`, `message.complained`) → set `unsubscribed_at`                    |
-| Too many leads to answer by hand               | One welcome email a few days later, via a daily Vercel cron with idempotency key `welcome-{lead.id}`  |
-| Newsletter or monthly digest to the whole list | Sync subscribed leads to a Shipmail audience and use their newsletter feature; don't build a composer |
-| Drafting by hand gets tedious                  | "Draft from episode" in HQ with AI SDK + AI Gateway                                                   |
-| Inline capture on content pages                | Reuse `lead-magnet-form.tsx` in podcast, tools and glossary pages                                     |
+| Need                                           | Smallest answer                                                                                                                               |
+| ---------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| Bounces pile up                                | Shipmail webhook (`message.bounced`, `message.complained`) → set `unsubscribed_at`                                                            |
+| Too many leads to answer by hand               | One welcome email a few days later, via a daily Vercel cron with idempotency key `welcome-{lead.id}`                                          |
+| Newsletter or monthly digest to the whole list | Done by design (2026-11-23): opted-in leads land in the Shipmail audience; write issues in Shipmail's newsletter tool, don't build a composer |
+| Drafting by hand gets tedious                  | "Draft from episode" in HQ with AI SDK + AI Gateway                                                                                           |
+| Inline capture on content pages                | Reuse `lead-magnet-form.tsx` in podcast, tools and glossary pages                                                                             |
