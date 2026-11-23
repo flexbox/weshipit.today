@@ -85,6 +85,8 @@ export type Database = {
           created_at: string;
           email: string;
           first_name: string | null;
+          followup_sent_at: string | null;
+          followup_status: string;
           id: string;
           lead_magnet_id: string | null;
           marketing_consent: boolean;
@@ -103,6 +105,8 @@ export type Database = {
           created_at?: string;
           email: string;
           first_name?: string | null;
+          followup_sent_at?: string | null;
+          followup_status?: string;
           id?: string;
           lead_magnet_id?: string | null;
           marketing_consent?: boolean;
@@ -121,6 +125,8 @@ export type Database = {
           created_at?: string;
           email?: string;
           first_name?: string | null;
+          followup_sent_at?: string | null;
+          followup_status?: string;
           id?: string;
           lead_magnet_id?: string | null;
           marketing_consent?: boolean;

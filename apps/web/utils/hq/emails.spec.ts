@@ -1,4 +1,4 @@
-import { escapeHtml, ownerEmail, visitorEmail } from './emails';
+import { escapeHtml, followupEmail, ownerEmail, visitorEmail } from './emails';
 
 const unsubscribeUrl = 'https://weshipit.today/api/lm/unsubscribe?t=abc';
 
@@ -73,5 +73,31 @@ describe('escapeHtml', () => {
     expect(escapeHtml(`<a href="x">'&'</a>`)).toBe(
       '&lt;a href=&quot;x&quot;&gt;&#39;&amp;&#39;&lt;/a&gt;',
     );
+  });
+});
+
+describe('followupEmail', () => {
+  it('asks what they thought of the magnet', () => {
+    const email = followupEmail({
+      firstName: 'Jane',
+      magnetTitle: 'Checklist',
+    });
+    expect(email.subject).toBe('Merci !');
+    expect(email.text).toBe(
+      'Hello Jane,\n\nMerci d’avoir téléchargé « Checklist ». Dis-moi, qu’est-ce que tu en as pensé ?',
+    );
+    expect(email.html).not.toContain('Ne plus recevoir');
+  });
+
+  it('falls back to a generic thank-you without a magnet', () => {
+    const email = followupEmail({});
+    expect(email.text.startsWith('Hello,')).toBe(true);
+    expect(email.text).toContain('qu’est-ce qui t’a amené ici ?');
+  });
+
+  it('escapes the first name and the title', () => {
+    const email = followupEmail({ firstName: '<b>x</b>', magnetTitle: '<i>' });
+    expect(email.html).not.toContain('<b>x</b>');
+    expect(email.html).not.toContain('<i>');
   });
 });

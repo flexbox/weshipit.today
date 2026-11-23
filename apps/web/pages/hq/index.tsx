@@ -3,7 +3,11 @@ import { Badge, Card, LinkButton, Text } from '@weshipit/ui';
 import type { GetServerSideProps } from 'next';
 import Link from 'next/link';
 import { HqShell } from '../../components/hq/hq-shell';
-import { LeadsTable, type LeadRow } from '../../components/hq/leads-table';
+import {
+  LEAD_ROW_COLUMNS,
+  LeadsTable,
+  type LeadRow,
+} from '../../components/hq/leads-table';
 import { requireOwnerPage } from '../../utils/hq/require-owner';
 import { getHqAdmin } from '../../utils/hq/supabase';
 
@@ -196,9 +200,7 @@ export const getServerSideProps: GetServerSideProps<HqHomeProps> = async (
         .order('created_at', { ascending: false }),
       db
         .from('leads')
-        .select(
-          'id, email, first_name, source, marketing_consent, unsubscribed_at, utm_source, created_at, lead_magnets(title)',
-        )
+        .select(LEAD_ROW_COLUMNS)
         .order('created_at', { ascending: false })
         .limit(10),
       db.from('leads').select('id', { count: 'exact', head: true }),
