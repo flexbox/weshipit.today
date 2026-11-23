@@ -84,7 +84,7 @@ describe('followupEmail', () => {
     });
     expect(email.subject).toBe('Merci !');
     expect(email.text).toBe(
-      'Hello Jane,\n\nMerci d’avoir téléchargé « Checklist ». Dis-moi, qu’est-ce que tu en as pensé ?\n\nDavid',
+      'Hello Jane,\n\nMerci d’avoir téléchargé « Checklist ». Dis-moi, qu’est-ce que tu en as pensé ?\n\n--David',
     );
     expect(email.html).not.toContain('Ne plus recevoir');
   });
