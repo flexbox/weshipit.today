@@ -182,8 +182,8 @@ export function followupEmail({
   const ask = magnetTitle
     ? `Merci d’avoir téléchargé « ${magnetTitle} ». Dis-moi, qu’est-ce que tu en as pensé ?`
     : 'Merci de t’être inscrit. Dis-moi, qu’est-ce qui t’a amené ici ?';
-  const text = [hello, '', ask, '', '--David'].join('\n');
-  const html = wrapHtml([escapeHtml(hello), escapeHtml(ask), '--David']);
+  const text = [hello, '', ask].join('\n');
+  const html = wrapHtml([escapeHtml(hello), escapeHtml(ask)]);
   return { html, subject: 'Merci !', text };
 }
 

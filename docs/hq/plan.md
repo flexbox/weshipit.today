@@ -218,7 +218,7 @@ Minute Lead's own advice: write to every new contact within 24 hours, one by one
 
 - **Status per lead** (`leads.followup_status`, migration `20261123120000_hq_followup.sql`): `to_contact` (default, existing leads included) → `sent` → `replied`. `followup_sent_at` keeps the send time.
 - **Suivi column** in `/hq` and `/hq/leads`: a badge (À contacter / Relance envoyée / A répondu) and one button. "Envoyer « Merci ! »" sends the email and moves to `sent`; "A répondu" is clicked by hand once they answer. `/hq/leads?followup=to_contact` lists who's left.
-- **The email** (`followupEmail()` in `utils/hq/emails.ts`): subject "Merci !", "Hello {prénom}, Merci d'avoir téléchargé « {magnet} ». Dis-moi, qu'est-ce que tu en as pensé ? David". Leads without a magnet get "Merci de t'être inscrit. Dis-moi, qu'est-ce qui t'a amené ici ?". No layout and no visible footer, so it reads like a personal note; the List-Unsubscribe header still carries the unsubscribe link. Unsubscribed leads can't be sent one, and the Shipmail idempotency key `followup:{lead id}` stops a double send.
+- **The email** (`followupEmail()` in `utils/hq/emails.ts`): subject "Merci !", "Hello {prénom}, Merci d'avoir téléchargé « {magnet} ». Dis-moi, qu'est-ce que tu en as pensé ?" (no signature). Leads without a magnet get "Merci de t'être inscrit. Dis-moi, qu'est-ce qui t'a amené ici ?". No layout and no visible footer, so it reads like a personal note; the List-Unsubscribe header still carries the unsubscribe link. Unsubscribed leads can't be sent one, and the Shipmail idempotency key `followup:{lead id}` stops a double send.
 - **Route**: `POST /api/hq/followup` (owner only, `id` + `action` = `send` | `replied` + `returnTo`, 303 back).
 
 ## 10. Later, only if a real need shows up
