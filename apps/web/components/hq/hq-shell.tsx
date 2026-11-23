@@ -1,7 +1,6 @@
 import { Dialog, DialogBackdrop, DialogPanel } from '@headlessui/react';
 import {
   ArrowRightStartOnRectangleIcon,
-  ArrowTopRightOnSquareIcon,
   HomeIcon,
   PlusIcon,
   UsersIcon,
@@ -86,12 +85,6 @@ function SidebarNav({ onNavigate }: { onNavigate?: () => void }) {
           onNavigate={onNavigate}
         />
         <div aria-hidden="true" className="mt-8 flex-1" />
-        <NavItem
-          href="/"
-          label="Voir le site"
-          icon={ArrowTopRightOnSquareIcon}
-          onNavigate={onNavigate}
-        />
       </div>
       <div className="border-t border-slate-950/5 p-4 dark:border-white/5">
         <form method="post" action="/api/hq/logout">
