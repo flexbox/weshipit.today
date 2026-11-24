@@ -1,10 +1,12 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { baseUrl } from '../../../utils/hq/base-url';
-import { MARKETING_CONSENT_LABELS } from '../../../utils/hq/consent';
+import { consentLabelFor } from '../../../utils/hq/consent';
 import type { Lead } from '../../../utils/hq/types';
-import { ownerEmail, visitorEmail } from '../../../utils/hq/emails';
+import { addToAudience } from '../../../utils/hq/audience';
+import { visitorEmail } from '../../../utils/hq/emails';
 import { subscribeSchema } from '../../../utils/hq/schemas';
 import { sendEmail } from '../../../utils/hq/shipmail';
+import { newLeadMessage, notifySlack } from '../../../utils/hq/slack';
 import { getHqAdmin } from '../../../utils/hq/supabase';
 
 type Response = { ok: true; token: string | null } | { error: string };
@@ -13,8 +15,9 @@ const UNIQUE_VIOLATION = '23505';
 
 /**
  * Every capture form posts here: /r/[slug] pages, the self-audit quizzes and
- * the davidl.fr newsletter. It stores the lead, emails the visitor (and me
- * when the lead is new) and returns the access token when there is a magnet.
+ * the davidl.fr newsletter. It stores the lead, emails the visitor, pings me
+ * on Slack when the lead is new, adds opted-in leads to the Shipmail
+ * newsletter audience and returns the access token when there is a magnet.
  * The answer is the same whether or not the email was already known.
  */
 export default async function handler(
@@ -36,7 +39,7 @@ export default async function handler(
   if (input.website) return res.status(200).json({ ok: true, token: null });
 
   const db = getHqAdmin();
-  const consentLabel = MARKETING_CONSENT_LABELS[input.locale];
+  const consentLabel = consentLabelFor(input.source, input.locale);
 
   const { data: magnet } = input.magnet
     ? await db
@@ -128,11 +131,10 @@ export default async function handler(
     }),
   ];
 
-  const ownerAddress = process.env.HQ_OWNER_EMAIL;
-  if (isNew && ownerAddress) {
+  if (isNew) {
     sends.push(
-      sendEmail({
-        ...ownerEmail({
+      notifySlack(
+        newLeadMessage({
           email: lead.email,
           firstName: lead.first_name,
           hqUrl: `${origin}/hq/leads`,
@@ -146,18 +148,27 @@ export default async function handler(
             source: lead.utm_source,
           },
         }),
-        idempotencyKey: `notify-${lead.id}`,
-        metadata: { kind: 'notify', lead_id: lead.id },
-        to: { address: ownerAddress },
+      ),
+    );
+  }
+
+  // Shipmail never re-adds someone who left the audience, so this is safe to
+  // repeat for a known lead.
+  if (input.marketing_consent) {
+    sends.push(
+      addToAudience({
+        email: lead.email,
+        firstName: lead.first_name,
+        source: lead.source,
       }),
     );
   }
 
-  // The visitor already sees the resource on the page, so a failed email is
-  // logged, not returned as an error.
+  // The visitor already sees the resource on the page, so a failed email,
+  // Slack ping or audience add is logged, not returned as an error.
   for (const result of await Promise.allSettled(sends)) {
     if (result.status === 'rejected') {
-      console.error('[hq] subscribe: email failed', result.reason);
+      console.error('[hq] subscribe: side effect failed', result.reason);
     }
   }
 

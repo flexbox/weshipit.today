@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { z } from 'zod';
+import { unsubscribeFromAudience } from '../../../utils/hq/audience';
 import { getHqAdmin } from '../../../utils/hq/supabase';
 
 const tokenSchema = z.uuid();
@@ -7,7 +8,8 @@ const tokenSchema = z.uuid();
 /**
  * GET: the link in the email footer → redirect to /desabonnement.
  * POST: one-click unsubscribe from the mail client (RFC 8058).
- * Unsubscribing applies to every row with the same email.
+ * Unsubscribing applies to every row with the same email, and to the
+ * Shipmail newsletter audience.
  */
 export default async function handler(
   req: NextApiRequest,
@@ -36,6 +38,12 @@ export default async function handler(
         .eq('email', lead.email)
         .is('unsubscribed_at', null);
       if (error) console.error('[hq] unsubscribe: update failed', error);
+      await unsubscribeFromAudience(lead.email).catch((audienceError) =>
+        console.error(
+          '[hq] unsubscribe: audience update failed',
+          audienceError,
+        ),
+      );
     }
   }
 

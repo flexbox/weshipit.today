@@ -2,7 +2,7 @@
 
 **Statut :** proposition v1 (2026-07-17)
 **Inspiration :** épisode Le Board (Flavie Prévost) — 4 formats d'offre IA : bootcamp cohorte, bootcamp d'été à angle fort, workshop low-ticket, IA dans la pédagogie
-**Alignement plan marketing v1 :** c'est la relance bootcamp Q3 (Bet 3), avec l'angle IA comme moteur de vente. Zéro nouvel actif à construire — on réutilise la plateforme bootcamp, le livre, la liste MailerLite, la Stability Checklist.
+**Alignement plan marketing v1 :** c'est la relance bootcamp Q3 (Bet 3), avec l'angle IA comme moteur de vente. Zéro nouvel actif à construire — on réutilise la plateforme bootcamp, le livre, la liste newsletter (audience Shipmail), la Stability Checklist.
 
 ---
 
@@ -92,9 +92,9 @@ Gated sur la complétion → protège des touristes, crédibilise la promesse, e
 
 ## 5. Canal de lancement
 
-Exactement le séquencement du plan v1 : **la liste MailerLite est le canal #1.**
+Exactement le séquencement du plan v1 : **la liste newsletter (audience Shipmail) est le canal #1.**
 
-Exactement le séquencement du plan v1 : **la liste MailerLite est le canal #1.**
+Exactement le séquencement du plan v1 : **la liste newsletter (audience Shipmail) est le canal #1.**
 
 1. Lead magnet Stability Checklist (déjà prévu) → welcome sequence → waitlist du sprint
 2. Séquence de lancement 5 emails sur la liste (davidl.fr + weshipit)

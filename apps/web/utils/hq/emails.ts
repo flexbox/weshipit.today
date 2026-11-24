@@ -1,5 +1,5 @@
 /**
- * The three HQ emails, as plain data. No sending here, so the copy is easy to
+ * The HQ emails, as plain data. No sending here, so the copy is easy to
  * test and to change. Everything a visitor typed is escaped before it goes
  * into HTML.
  */
@@ -109,57 +109,6 @@ export function visitorEmail({
     ],
     link(unsubscribeUrl, unsubscribe),
   );
-  return { html, subject, text };
-}
-
-export interface OwnerEmailInput {
-  email: string;
-  hqUrl: string;
-  source: string;
-  score?: number | null;
-  firstName?: string | null;
-  marketingConsent: boolean;
-  magnetTitle?: string | null;
-  utm?: {
-    source?: string | null;
-    medium?: string | null;
-    campaign?: string | null;
-  };
-}
-
-/** Sent to me for each new lead, so I can write back by hand. */
-export function ownerEmail(input: OwnerEmailInput): EmailContent {
-  const utm = [input.utm?.source, input.utm?.medium, input.utm?.campaign]
-    .filter(Boolean)
-    .join(' / ');
-  const rows: [string, string][] = [
-    ['Email', input.email],
-    ['Prénom', input.firstName || '—'],
-    ['Source', input.source],
-    ['Ressource', input.magnetTitle || '—'],
-    ['UTM', utm || '—'],
-    ...(typeof input.score === 'number'
-      ? ([['Score', `${input.score}/100`]] as [string, string][])
-      : []),
-    ['Accepte les emails', input.marketingConsent ? 'oui' : 'non'],
-  ];
-  const subject = `Nouveau lead · ${input.magnetTitle || input.source}`;
-  const mailto = `mailto:${input.email}`;
-  const text = [
-    ...rows.map(([label, value]) => `${label} : ${value}`),
-    '',
-    `Lui répondre : ${mailto}`,
-    `Tous les leads : ${input.hqUrl}`,
-  ].join('\n');
-  const html = wrapHtml([
-    rows
-      .map(
-        ([label, value]) =>
-          `<strong>${escapeHtml(label)}</strong> : ${escapeHtml(value)}`,
-      )
-      .join('<br>'),
-    `${link(mailto, 'Lui répondre')} · ${link(input.hqUrl, 'Tous les leads')}`,
-  ]);
   return { html, subject, text };
 }
 
