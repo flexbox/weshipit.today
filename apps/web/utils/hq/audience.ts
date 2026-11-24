@@ -11,6 +11,11 @@ import { getShipmail } from './shipmail';
 function audience() {
   const shipmail = getShipmail();
   const audienceId = process.env.SHIPMAIL_AUDIENCE_ID;
+  if ((!shipmail || !audienceId) && process.env.NODE_ENV === 'production') {
+    throw new Error(
+      'Shipmail audience is not configured (SHIPMAIL_API_KEY, SHIPMAIL_AUDIENCE_ID)',
+    );
+  }
   return shipmail && audienceId ? { audienceId, shipmail } : null;
 }
 
