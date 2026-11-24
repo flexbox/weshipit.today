@@ -152,17 +152,9 @@ export default async function handler(
       notifySlack(
         newLeadMessage({
           email: lead.email,
-          firstName: lead.first_name,
           hqUrl: `${origin}/hq/leads`,
           magnetTitle: magnet?.title,
-          marketingConsent: lead.marketing_consent,
-          score,
           source: lead.source,
-          utm: {
-            campaign: lead.utm_campaign,
-            medium: lead.utm_medium,
-            source: lead.utm_source,
-          },
         }),
       ),
     );

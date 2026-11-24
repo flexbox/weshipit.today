@@ -7,15 +7,7 @@ export interface NewLeadInput {
   email: string;
   hqUrl: string;
   source: string;
-  score?: number | null;
-  firstName?: string | null;
-  marketingConsent: boolean;
   magnetTitle?: string | null;
-  utm?: {
-    source?: string | null;
-    medium?: string | null;
-    campaign?: string | null;
-  };
 }
 
 /** Slack mrkdwn treats &, < and > as control characters. */
@@ -28,26 +20,17 @@ export function escapeSlack(value: string): string {
 
 /** Pure: the webhook payload for one new lead. */
 export function newLeadMessage(input: NewLeadInput): { text: string } {
-  const utm = [input.utm?.source, input.utm?.medium, input.utm?.campaign]
-    .filter(Boolean)
-    .join(' / ');
-  const rows: [string, string][] = [
-    ['Email', input.email],
-    ['Prénom', input.firstName || '—'],
-    ['Source', input.source],
-    ['Ressource', input.magnetTitle || '—'],
-    ['UTM', utm || '—'],
-    ...(typeof input.score === 'number'
-      ? ([['Score', `${input.score}/100`]] as [string, string][])
-      : []),
-    ['Accepte les emails', input.marketingConsent ? 'oui' : 'non'],
-  ];
-  const title = `*Nouveau lead · ${escapeSlack(input.magnetTitle || input.source)}*`;
-  const lines = rows.map(
-    ([label, value]) => `*${label}* : ${escapeSlack(value)}`,
-  );
-  const links = `<mailto:${escapeSlack(input.email)}|Lui répondre> · <${input.hqUrl}|Tous les leads>`;
-  return { text: [title, ...lines, links].join('\n') };
+  const bold = (value: string) => `*${escapeSlack(value)}*`;
+  return {
+    text: [
+      `Nouveau lead: ${bold(input.magnetTitle || input.source)}`,
+      `Source: ${bold(input.source)}`,
+      `Ressource: ${bold(input.magnetTitle || '—')}`,
+      `Email: ${bold(input.email)}`,
+      '',
+      `<${input.hqUrl}|Tous les leads>`,
+    ].join('\n'),
+  };
 }
 
 /**

@@ -1,41 +1,39 @@
 import { escapeSlack, newLeadMessage } from './slack';
 
 describe('newLeadMessage', () => {
-  it('lists the lead and links back to HQ', () => {
+  it('shows the resource, source and email, then links to HQ', () => {
     const { text } = newLeadMessage({
       email: 'jane@example.com',
-      firstName: 'Jane',
       hqUrl: 'https://weshipit.today/hq/leads',
       magnetTitle: 'Checklist',
-      marketingConsent: true,
       source: 'r-page',
-      utm: { medium: 'video', source: 'youtube' },
     });
-    expect(text.startsWith('*Nouveau lead · Checklist*')).toBe(true);
-    expect(text).toContain('*UTM* : youtube / video');
-    expect(text).toContain('*Accepte les emails* : oui');
-    expect(text).toContain('<mailto:jane@example.com|Lui répondre>');
-    expect(text).toContain('<https://weshipit.today/hq/leads|Tous les leads>');
+    expect(text).toBe(
+      [
+        'Nouveau lead: *Checklist*',
+        'Source: *r-page*',
+        'Ressource: *Checklist*',
+        'Email: *jane@example.com*',
+        '',
+        '<https://weshipit.today/hq/leads|Tous les leads>',
+      ].join('\n'),
+    );
   });
 
-  it('falls back to the source and shows the quiz score', () => {
+  it('falls back to the source when there is no resource', () => {
     const { text } = newLeadMessage({
       email: 'a@b.co',
       hqUrl: 'https://weshipit.today/hq/leads',
-      marketingConsent: false,
-      score: 40,
-      source: 'audit:security',
+      source: 'davidl-newsletter',
     });
-    expect(text.startsWith('*Nouveau lead · audit:security*')).toBe(true);
-    expect(text).toContain('*Score* : 40/100');
+    expect(text.startsWith('Nouveau lead: *davidl-newsletter*')).toBe(true);
+    expect(text).toContain('Ressource: *—*');
   });
 
   it('escapes what the visitor typed', () => {
     const { text } = newLeadMessage({
-      email: 'a@b.co',
-      firstName: '<!channel>',
+      email: '<!channel>@b.co',
       hqUrl: 'https://weshipit.today/hq/leads',
-      marketingConsent: false,
       source: 'r-page',
     });
     expect(text).not.toContain('<!channel>');
