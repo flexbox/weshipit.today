@@ -8,7 +8,12 @@ import remarkGfm from 'remark-gfm';
  */
 export function MagnetMarkdown({ content }: { content: string }) {
   return (
-    <Prose className="max-w-none print:prose-sm" size="lg">
+    // Inline code keeps its monospace style without the literal backticks
+    // the typography plugin adds around it.
+    <Prose
+      className="max-w-none prose-code:before:content-none prose-code:after:content-none print:prose-sm"
+      size="lg"
+    >
       <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
     </Prose>
   );
