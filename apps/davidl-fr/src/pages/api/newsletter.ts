@@ -18,6 +18,10 @@ export default async function handler(
   }
 
   const email = typeof req.body?.email === 'string' ? req.body.email : '';
+  const firstName =
+    typeof req.body?.first_name === 'string'
+      ? req.body.first_name.trim().slice(0, 80)
+      : '';
   if (!email) {
     return res.status(400).json({ error: 'Email is required' });
   }
@@ -26,6 +30,8 @@ export default async function handler(
     const response = await fetch(HQ_SUBSCRIBE_URL, {
       body: JSON.stringify({
         email,
+        // Stored on the lead for later; the emails don't use it yet.
+        first_name: firstName || undefined,
         locale: 'en',
         marketing_consent: true,
         source: 'davidl-newsletter',

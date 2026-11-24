@@ -25,7 +25,7 @@ export const Container = styled.div`
 
 export const Form = styled.form`
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 2fr 3fr 1fr;
   grid-gap: ${defaultTheme.space[3]};
   margin-top: ${defaultTheme.space[2]};
   button {

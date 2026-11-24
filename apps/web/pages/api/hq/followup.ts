@@ -1,6 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { baseUrl } from '../../../utils/hq/base-url';
-import { followupEmail, type FollowupStatus } from '../../../utils/hq/emails';
+import {
+  followupEmail,
+  leadLocale,
+  type FollowupStatus,
+} from '../../../utils/hq/emails';
 import { getOwner } from '../../../utils/hq/require-owner';
 import { sendEmail } from '../../../utils/hq/shipmail';
 import { getHqAdmin } from '../../../utils/hq/supabase';
@@ -52,7 +56,7 @@ export default async function handler(
   const { data: lead, error } = await db
     .from('leads')
     .select(
-      'id, email, first_name, followup_status, unsubscribed_at, unsubscribe_token, lead_magnets(title)',
+      'id, email, first_name, source, meta, followup_status, unsubscribed_at, unsubscribe_token, lead_magnets(title)',
     )
     .eq('id', id)
     .single();
@@ -69,8 +73,9 @@ export default async function handler(
     try {
       await sendEmail({
         ...followupEmail({
-          firstName: lead.first_name,
+          locale: leadLocale(lead),
           magnetTitle: lead.lead_magnets?.title,
+          source: lead.source,
         }),
         // One follow-up per lead, even on a double click.
         idempotencyKey: `followup:${lead.id}`,

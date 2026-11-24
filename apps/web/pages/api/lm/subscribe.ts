@@ -3,7 +3,11 @@ import { baseUrl } from '../../../utils/hq/base-url';
 import { consentLabelFor } from '../../../utils/hq/consent';
 import type { Lead } from '../../../utils/hq/types';
 import { addToAudience } from '../../../utils/hq/audience';
-import { visitorEmail } from '../../../utils/hq/emails';
+import {
+  NEWSLETTER_SOURCE,
+  newsletterEmail,
+  visitorEmail,
+} from '../../../utils/hq/emails';
 import { subscribeSchema } from '../../../utils/hq/schemas';
 import { sendEmail } from '../../../utils/hq/shipmail';
 import { newLeadMessage, notifySlack } from '../../../utils/hq/slack';
@@ -58,7 +62,8 @@ export default async function handler(
       first_name: input.first_name ?? null,
       lead_magnet_id: magnet?.id ?? null,
       marketing_consent: input.marketing_consent,
-      meta: input.meta ?? {},
+      // The locale is kept so later emails (the HQ follow-up) match it.
+      meta: { ...input.meta, locale: input.locale },
       referrer: req.headers.referer?.slice(0, 500) ?? null,
       source: input.source,
       utm_campaign: input.utm_campaign ?? null,
@@ -87,6 +92,14 @@ export default async function handler(
       return res.status(500).json({ error: 'Something went wrong' });
     }
     lead = existing.data;
+
+    // Keep the first name a returning visitor gives us if we had none.
+    if (input.first_name && !lead.first_name) {
+      await db
+        .from('leads')
+        .update({ first_name: input.first_name })
+        .eq('id', lead.id);
+    }
 
     // A fresh, explicit opt-in overrides an earlier refusal or unsubscribe.
     if (input.marketing_consent && !lead.marketing_consent) {
@@ -118,12 +131,15 @@ export default async function handler(
 
   const sends: Promise<void>[] = [
     sendEmail({
-      ...visitorEmail({
-        firstName: lead.first_name,
-        magnet: magnet && accessUrl ? { accessUrl, title: magnet.title } : null,
-        score,
-        unsubscribeUrl,
-      }),
+      ...(lead.source === NEWSLETTER_SOURCE && !magnet
+        ? newsletterEmail({ unsubscribeUrl })
+        : visitorEmail({
+            locale: input.locale,
+            magnet:
+              magnet && accessUrl ? { accessUrl, title: magnet.title } : null,
+            score,
+            unsubscribeUrl,
+          })),
       idempotencyKey: `visitor-${lead.id}`,
       metadata: { kind: 'visitor', lead_id: lead.id },
       to: { address: lead.email, name: lead.first_name ?? undefined },
