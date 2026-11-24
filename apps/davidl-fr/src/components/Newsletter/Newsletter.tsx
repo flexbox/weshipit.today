@@ -4,7 +4,6 @@ import { H5, P } from '~/components/Typography';
 import { Container, Input, Form, Success, Error } from './style';
 
 export default function Newsletter() {
-  const [firstName, setFirstName] = React.useState('');
   const [email, setEmail] = React.useState('');
   const [status, setStatus] = React.useState('pending');
   const [errorMessage, setErrorMessage] = React.useState('');
@@ -18,7 +17,7 @@ export default function Newsletter() {
     event.preventDefault();
 
     const res = await fetch('/api/newsletter', {
-      body: JSON.stringify({ email, first_name: firstName.trim() }),
+      body: JSON.stringify({ email }),
       headers: { 'Content-Type': 'application/json' },
       method: 'POST',
     });
@@ -32,7 +31,6 @@ export default function Newsletter() {
     }
 
     setEmail('');
-    setFirstName('');
     setStatus('succeeded');
   }
 
@@ -50,18 +48,6 @@ export default function Newsletter() {
         <Success>Thanks for subscribing!</Success>
       ) : (
         <Form onSubmit={submit}>
-          <Input
-            value={firstName}
-            disabled={status === 'loading'}
-            onChange={(event) => setFirstName(event.target.value)}
-            placeholder="First name"
-            aria-label="First name (optional)"
-            id="subscribe-first-name"
-            type="text"
-            name="first_name"
-            autoComplete="given-name"
-            maxLength={80}
-          />
           <Input
             value={email}
             disabled={status === 'loading'}
