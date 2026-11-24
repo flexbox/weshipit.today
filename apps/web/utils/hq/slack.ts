@@ -57,6 +57,9 @@ export function newLeadMessage(input: NewLeadInput): { text: string } {
 export async function notifySlack(payload: { text: string }): Promise<void> {
   const url = process.env.HQ_SLACK_WEBHOOK_URL;
   if (!url) {
+    if (process.env.NODE_ENV === 'production') {
+      throw new Error('Slack is not configured (HQ_SLACK_WEBHOOK_URL)');
+    }
     console.info(`[hq] Slack not configured, message:\n${payload.text}`);
     return;
   }
