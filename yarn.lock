@@ -21315,6 +21315,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-hook-form@npm:^7.92.0":
+  version: 7.92.0
+  resolution: "react-hook-form@npm:7.92.0"
+  peerDependencies:
+    "@types/react": "*"
+    react: ^16.8.0 || ^17 || ^18 || ^19
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 10/902034af23c4d1b3828c77d08f31f1762db10fcc5e04dad7064b66850dbb5bd9179cb115a83cfe5cb4f67bf2a3334026f829c83154460acff155b5ef2da2c52f
+  languageName: node
+  linkType: hard
+
 "react-intersection-observer@npm:^9.16.0":
   version: 9.16.0
   resolution: "react-intersection-observer@npm:9.16.0"
@@ -25762,6 +25775,7 @@ __metadata:
     react: "npm:19.3.1"
     react-dom: "npm:19.3.1"
     react-gravatar: "npm:^2.6.3"
+    react-hook-form: "npm:^7.92.0"
     react-intersection-observer: "npm:^9.16.0"
     react-lite-youtube-embed: "npm:^2.4.0"
     react-markdown: "npm:^10.1.0"
