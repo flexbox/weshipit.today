@@ -55,28 +55,61 @@ export async function addToAudience(input: {
   });
 }
 
-async function unsubscribeFrom(name: AudienceName, email: string) {
+async function findSubscriber(name: AudienceName, email: string) {
   const audience = target(name);
-  if (!audience) return;
+  if (!audience) return null;
   const { id, shipmail } = audience;
-  let subscriber;
   try {
-    subscriber = await shipmail.audiences.subscribers.getByEmail(id, email);
+    const subscriber = await shipmail.audiences.subscribers.getByEmail(
+      id,
+      email,
+    );
+    return { id, shipmail, subscriber };
   } catch (error) {
-    if (error instanceof NotFoundError) return; // Not in this audience.
+    if (error instanceof NotFoundError) return null; // Not in this audience.
     throw error;
   }
+}
+
+async function unsubscribeFrom(name: AudienceName, email: string) {
+  const found = await findSubscriber(name, email);
+  if (!found) return;
+  const { id, shipmail, subscriber } = found;
   if (subscriber.status === 'subscribed' || subscriber.status === 'pending') {
     await shipmail.audiences.subscribers.unsubscribe(id, subscriber.id);
   }
 }
 
-/** An HQ unsubscribe link means "no more emails": leave both audiences. */
-export async function unsubscribeFromAudiences(email: string): Promise<void> {
+async function removeFrom(name: AudienceName, email: string) {
+  const found = await findSubscriber(name, email);
+  if (!found) return;
+  await found.shipmail.audiences.subscribers.remove(
+    found.id,
+    found.subscriber.id,
+  );
+}
+
+async function forBoth(
+  run: (name: AudienceName, email: string) => Promise<void>,
+  email: string,
+) {
   const results = await Promise.allSettled([
-    unsubscribeFrom('newsletter', email),
-    unsubscribeFrom('leads', email),
+    run('newsletter', email),
+    run('leads', email),
   ]);
   const failed = results.find((result) => result.status === 'rejected');
   if (failed) throw (failed as PromiseRejectedResult).reason;
+}
+
+/** An HQ unsubscribe link means "no more emails": leave both audiences. */
+export function unsubscribeFromAudiences(email: string): Promise<void> {
+  return forBoth(unsubscribeFrom, email);
+}
+
+/**
+ * Deleting a lead in HQ (my own test signups) removes the address from both
+ * audiences. Unlike an unsubscribe, a removed address can sign up again.
+ */
+export function removeFromAudiences(email: string): Promise<void> {
+  return forBoth(removeFrom, email);
 }

@@ -1,3 +1,4 @@
+import { TrashIcon } from '@heroicons/react/20/solid';
 import { Badge, Button, Text } from '@weshipit/ui';
 import { useRouter } from 'next/router';
 import type { FollowupStatus } from '../../utils/hq/emails';
@@ -71,6 +72,39 @@ function FollowupCell({ lead, returnTo }: { lead: LeadRow; returnTo: string }) {
   );
 }
 
+function DeleteLeadButton({
+  lead,
+  returnTo,
+}: {
+  lead: LeadRow;
+  returnTo: string;
+}) {
+  return (
+    <form
+      method="post"
+      action="/api/hq/delete-lead"
+      onSubmit={(event) => {
+        if (!window.confirm(`Supprimer ${lead.email} ? C’est définitif.`)) {
+          event.preventDefault();
+        }
+      }}
+    >
+      <input type="hidden" name="id" value={lead.id} />
+      <input type="hidden" name="returnTo" value={returnTo} />
+      <Button
+        as="button"
+        size="sm"
+        variant="ghost"
+        aria-label={`Supprimer ${lead.email}`}
+        title="Supprimer"
+        className="text-slate-400 hover:text-red-600 dark:hover:text-red-400"
+      >
+        <TrashIcon className="size-4" aria-hidden="true" />
+      </Button>
+    </form>
+  );
+}
+
 /** Shared by /hq and /hq/leads. */
 export function LeadsTable({ leads }: { leads: LeadRow[] }) {
   const { asPath, query } = useRouter();
@@ -101,7 +135,10 @@ export function LeadsTable({ leads }: { leads: LeadRow[] }) {
             <th className="py-2 pr-4 font-medium">UTM</th>
             <th className="py-2 pr-4 font-medium">Emails</th>
             <th className="py-2 pr-4 font-medium">Suivi</th>
-            <th className="py-2 font-medium">Date</th>
+            <th className="py-2 pr-4 font-medium">Date</th>
+            <th className="py-2">
+              <span className="sr-only">Actions</span>
+            </th>
           </tr>
         </thead>
         <tbody className="text-slate-800 dark:text-slate-200">
@@ -138,8 +175,11 @@ export function LeadsTable({ leads }: { leads: LeadRow[] }) {
               <td className="py-2 pr-4">
                 <FollowupCell lead={lead} returnTo={returnTo} />
               </td>
-              <td className="py-2 tabular-nums">
+              <td className="py-2 pr-4 tabular-nums">
                 {dateFormat.format(new Date(lead.created_at))}
+              </td>
+              <td className="py-2 text-right">
+                <DeleteLeadButton lead={lead} returnTo={returnTo} />
               </td>
             </tr>
           ))}
