@@ -37,7 +37,7 @@ export default async function handler(
 
   const id = req.body?.id;
   if (typeof id !== 'string' || !/^[0-9a-f-]{36}$/i.test(id)) {
-    return back('Requête invalide.');
+    return back('Requête invalide. Recharge la page et réessaie.');
   }
 
   const db = getHqAdmin();

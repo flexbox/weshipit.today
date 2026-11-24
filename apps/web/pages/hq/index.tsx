@@ -27,10 +27,14 @@ interface HqHomeProps {
   recentLeads: LeadRow[];
 }
 
-const rate = (leads: number, views: number) =>
-  views > 0 ? `${Math.round((leads / views) * 1000) / 10} %` : '—';
-
 const number = new Intl.NumberFormat('fr-FR');
+const percent = new Intl.NumberFormat('fr-FR', {
+  maximumFractionDigits: 1,
+  style: 'percent',
+});
+
+const rate = (leads: number, views: number) =>
+  views > 0 ? percent.format(leads / views) : '—';
 
 export default function HqHome({
   leadsLastWeek,
@@ -46,7 +50,7 @@ export default function HqHome({
       label: 'Leads',
       value: number.format(totalLeads),
     },
-    { label: '7 derniers jours', value: number.format(leadsLastWeek) },
+    { label: 'Leads, 7 derniers jours', value: number.format(leadsLastWeek) },
     {
       hint: 'Une par visiteur et par session',
       label: 'Vues des pages /r',
@@ -95,7 +99,7 @@ export default function HqHome({
           Aucun magnet pour l’instant.{' '}
           <Link
             href="/hq/magnets/new"
-            className="text-blue-600 hover:underline"
+            className="text-blue-600 hover:underline dark:text-blue-400"
           >
             Créer le premier
           </Link>
@@ -103,14 +107,16 @@ export default function HqHome({
       ) : (
         <div className="mt-4 overflow-x-auto">
           <table className="w-full text-left text-sm">
-            <thead className="text-slate-500">
+            <thead className="text-slate-500 dark:text-slate-400">
               <tr>
                 <th className="py-2 pr-4 font-medium">Magnet</th>
                 <th className="py-2 pr-4 font-medium">Statut</th>
                 <th className="py-2 pr-4 text-right font-medium">Vues</th>
                 <th className="py-2 pr-4 text-right font-medium">Leads</th>
-                <th className="py-2 pr-4 text-right font-medium">Conversion</th>
-                <th className="py-2 font-medium">Page</th>
+                <th className="py-2 pr-4 text-right font-medium max-sm:hidden">
+                  Conversion
+                </th>
+                <th className="py-2 font-medium max-sm:hidden">Page</th>
               </tr>
             </thead>
             <tbody className="text-slate-800 dark:text-slate-200">
@@ -122,7 +128,7 @@ export default function HqHome({
                   <td className="py-3 pr-4">
                     <Link
                       href={`/hq/magnets/${magnet.id}`}
-                      className="font-medium hover:underline"
+                      className="font-medium underline decoration-slate-300 underline-offset-2 hover:decoration-current dark:decoration-slate-600"
                     >
                       {magnet.title}
                     </Link>
@@ -144,18 +150,18 @@ export default function HqHome({
                   <td className="py-3 pr-4 text-right tabular-nums">
                     <Link
                       href={`/hq/leads?magnet=${magnet.id}`}
-                      className="hover:underline"
+                      className="underline decoration-slate-300 underline-offset-2 hover:decoration-current dark:decoration-slate-600"
                     >
                       {number.format(magnet.leads)}
                     </Link>
                   </td>
-                  <td className="py-3 pr-4 text-right tabular-nums">
+                  <td className="py-3 pr-4 text-right tabular-nums max-sm:hidden">
                     {rate(magnet.leads, magnet.views)}
                   </td>
-                  <td className="py-3">
+                  <td className="py-3 max-sm:hidden">
                     <Link
                       href={`/r/${magnet.slug}`}
-                      className="text-blue-600 hover:underline"
+                      className="text-blue-600 hover:underline dark:text-blue-400"
                     >
                       /r/{magnet.slug}
                     </Link>
@@ -172,7 +178,7 @@ export default function HqHome({
           Derniers leads
         </Text>
         <LinkButton href="/hq/leads" variant="ghost">
-          Tout voir
+          Voir tous les leads
         </LinkButton>
       </div>
       <div className="mt-4">

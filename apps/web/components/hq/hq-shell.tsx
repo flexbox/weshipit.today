@@ -130,7 +130,7 @@ export function HqShell({
           />
           <DialogPanel
             transition
-            className="fixed inset-y-0 w-full max-w-80 p-2 transition duration-300 ease-in-out data-closed:-translate-x-full"
+            className="fixed inset-y-0 w-full max-w-80 p-2 transition duration-300 ease-out data-closed:opacity-0 data-leave:duration-200 data-leave:ease-in motion-safe:data-closed:-translate-x-full"
           >
             <div className="flex h-full flex-col rounded-lg bg-white shadow-xs ring-1 ring-slate-950/5 dark:bg-slate-900 dark:ring-white/10">
               <div className="-mb-3 px-4 pt-3">

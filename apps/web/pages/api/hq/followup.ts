@@ -49,7 +49,7 @@ export default async function handler(
     !/^[0-9a-f-]{36}$/i.test(id) ||
     !ACTIONS.includes(action)
   ) {
-    return back('Requête invalide.');
+    return back('Requête invalide. Recharge la page et réessaie.');
   }
 
   const db = getHqAdmin();
@@ -60,7 +60,10 @@ export default async function handler(
     )
     .eq('id', id)
     .single();
-  if (error || !lead) return back('Lead introuvable.');
+  if (error || !lead)
+    return back(
+      'Lead introuvable, il a peut-être été supprimé. Recharge la page.',
+    );
 
   let update: { followup_status: FollowupStatus; followup_sent_at?: string };
 
@@ -98,7 +101,7 @@ export default async function handler(
   const result = await db.from('leads').update(update).eq('id', id);
   if (result.error) {
     console.error('[hq] followup: update failed', result.error);
-    return back('Statut non enregistré.');
+    return back('Statut non enregistré. Recharge la page et réessaie.');
   }
   return back();
 }

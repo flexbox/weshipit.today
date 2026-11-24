@@ -43,10 +43,10 @@ function FollowupCell({ lead, returnTo }: { lead: LeadRow; returnTo: string }) {
     status === 'to_contact' && !lead.unsubscribed_at
       ? { label: 'Envoyer « Merci ! »', value: 'send' }
       : status === 'sent'
-        ? { label: 'A répondu', value: 'replied' }
+        ? { label: 'Marquer comme répondu', value: 'replied' }
         : null;
   return (
-    <div className="flex items-center gap-2 whitespace-nowrap">
+    <div className="flex items-center gap-2 whitespace-nowrap max-sm:flex-wrap">
       <Badge
         size="sm"
         variant={badge.variant}
@@ -97,7 +97,7 @@ function DeleteLeadButton({
         variant="ghost"
         aria-label={`Supprimer ${lead.email}`}
         title="Supprimer"
-        className="text-slate-400 hover:text-red-600 dark:hover:text-red-400"
+        className="text-slate-500 hover:text-red-600 dark:text-slate-400 dark:hover:text-red-400"
       >
         <TrashIcon className="size-4" aria-hidden="true" />
       </Button>
@@ -113,27 +113,50 @@ export function LeadsTable({ leads }: { leads: LeadRow[] }) {
   returnUrl.searchParams.delete('error');
   const returnTo = `${returnUrl.pathname}${returnUrl.search}`;
 
-  if (leads.length === 0) {
-    return <Text variant="c1">Aucun lead.</Text>;
-  }
   return (
-    <div className="overflow-x-auto">
+    <div>
+      {/* Above the empty state: deleting the last lead can still fail. */}
       {error && (
         <p
           role="alert"
-          className="mb-4 rounded bg-red-50 px-3 py-2 text-sm text-red-800"
+          className="mb-4 rounded bg-red-50 px-3 py-2 text-sm text-red-800 dark:bg-red-400/10 dark:text-red-300"
         >
           {error}
         </p>
       )}
-      <table className="w-full text-left text-sm">
-        <thead className="text-slate-500">
+      {leads.length === 0 ? (
+        <Text variant="c1">
+          Aucun lead pour l’instant. Ils arrivent dès qu’un visiteur remplit une
+          page /r ou un quiz.
+        </Text>
+      ) : (
+        <LeadsRows leads={leads} returnTo={returnTo} />
+      )}
+    </div>
+  );
+}
+
+/**
+ * Below sm, each row stacks (email, then follow-up, date and delete), so no
+ * action hides past a scroll edge. Prénom, Origine and UTM show from xl up.
+ */
+function LeadsRows({
+  leads,
+  returnTo,
+}: {
+  leads: LeadRow[];
+  returnTo: string;
+}) {
+  return (
+    <div className="overflow-x-auto">
+      <table className="w-full text-left text-sm max-sm:block">
+        <thead className="text-slate-500 max-sm:hidden dark:text-slate-400">
           <tr>
             <th className="py-2 pr-4 font-medium">Email</th>
-            <th className="py-2 pr-4 font-medium">Prénom</th>
-            <th className="py-2 pr-4 font-medium">Origine</th>
-            <th className="py-2 pr-4 font-medium">UTM</th>
-            <th className="py-2 pr-4 font-medium">Emails</th>
+            <th className="py-2 pr-4 font-medium max-xl:hidden">Prénom</th>
+            <th className="py-2 pr-4 font-medium max-xl:hidden">Origine</th>
+            <th className="py-2 pr-4 font-medium max-xl:hidden">UTM</th>
+            <th className="py-2 pr-4 font-medium">Newsletter</th>
             <th className="py-2 pr-4 font-medium">Suivi</th>
             <th className="py-2 pr-4 font-medium">Date</th>
             <th className="py-2">
@@ -141,23 +164,30 @@ export function LeadsTable({ leads }: { leads: LeadRow[] }) {
             </th>
           </tr>
         </thead>
-        <tbody className="text-slate-800 dark:text-slate-200">
+        <tbody className="text-slate-800 max-sm:block dark:text-slate-200">
           {leads.map((lead) => (
             <tr
               key={lead.id}
-              className="hover:bg-slate-50 dark:hover:bg-white/5"
+              className="hover:bg-slate-50 max-sm:flex max-sm:flex-wrap max-sm:items-center max-sm:gap-x-3 max-sm:gap-y-2 max-sm:py-3 dark:hover:bg-white/5"
             >
-              <td className="py-2 pr-4">
-                <a href={`mailto:${lead.email}`} className="hover:underline">
+              <td className="py-2 pr-4 max-sm:w-full max-sm:p-0">
+                <a
+                  href={`mailto:${lead.email}`}
+                  className="break-all underline decoration-slate-300 underline-offset-2 hover:decoration-current dark:decoration-slate-600"
+                >
                   {lead.email}
                 </a>
               </td>
-              <td className="py-2 pr-4">{lead.first_name ?? '—'}</td>
-              <td className="py-2 pr-4">
+              <td className="py-2 pr-4 max-xl:hidden">
+                {lead.first_name ?? '—'}
+              </td>
+              <td className="py-2 pr-4 max-xl:hidden">
                 {lead.lead_magnets?.title ?? lead.source}
               </td>
-              <td className="py-2 pr-4">{lead.utm_source ?? '—'}</td>
-              <td className="py-2 pr-4">
+              <td className="py-2 pr-4 max-xl:hidden">
+                {lead.utm_source ?? '—'}
+              </td>
+              <td className="py-2 pr-4 max-sm:hidden">
                 {lead.unsubscribed_at ? (
                   <Badge size="sm" variant="red">
                     Désabonné
@@ -172,13 +202,13 @@ export function LeadsTable({ leads }: { leads: LeadRow[] }) {
                   </Badge>
                 )}
               </td>
-              <td className="py-2 pr-4">
+              <td className="py-2 pr-4 max-sm:p-0">
                 <FollowupCell lead={lead} returnTo={returnTo} />
               </td>
-              <td className="py-2 pr-4 tabular-nums">
+              <td className="py-2 pr-4 tabular-nums max-sm:p-0 max-sm:text-slate-500 dark:max-sm:text-slate-400">
                 {dateFormat.format(new Date(lead.created_at))}
               </td>
-              <td className="py-2 text-right">
+              <td className="py-2 text-right max-sm:ml-auto max-sm:p-0">
                 <DeleteLeadButton lead={lead} returnTo={returnTo} />
               </td>
             </tr>
