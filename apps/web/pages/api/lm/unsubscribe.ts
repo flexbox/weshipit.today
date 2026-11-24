@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { z } from 'zod';
-import { unsubscribeFromAudience } from '../../../utils/hq/audience';
+import { unsubscribeFromAudiences } from '../../../utils/hq/audience';
 import { getHqAdmin } from '../../../utils/hq/supabase';
 
 const tokenSchema = z.uuid();
@@ -38,7 +38,7 @@ export default async function handler(
         .eq('email', lead.email)
         .is('unsubscribed_at', null);
       if (error) console.error('[hq] unsubscribe: update failed', error);
-      await unsubscribeFromAudience(lead.email).catch((audienceError) =>
+      await unsubscribeFromAudiences(lead.email).catch((audienceError) =>
         console.error(
           '[hq] unsubscribe: audience update failed',
           audienceError,

@@ -32,7 +32,7 @@ davidl.fr form ──┤ (server-to-server)
 /r/[slug] form ──┴▶ POST /api/lm/subscribe ── insert lead (or reuse the existing row for this email + magnet)
                          │                    ├─ Shipmail → visitor: resource link (or a welcome note for newsletter signups) + unsubscribe
                          │                    ├─ Slack → me: "Nouveau lead · {magnet or source}" + details
-                         │                    └─ opted in → Shipmail newsletter audience (SHIPMAIL_AUDIENCE_ID)
+                         │                    └─ opted in → Shipmail audience: Newsletter or Leads
                          ▼
                /r/[slug]/[token]   the resource (markdown, print-friendly, noindex)
 ```
@@ -126,7 +126,7 @@ Conversion is `count(leads) / views` per magnet, computed in the `/hq` query wit
   - Idempotency key `visitor-{lead.id}`. No `reply_to`: for a transactional sender, Shipmail adds the display name and the Reply-To mailbox configured on the sender.
   - Every one carries an unsubscribe link plus the headers `List-Unsubscribe: <https://weshipit.today/api/lm/unsubscribe?t={token}>` and `List-Unsubscribe-Post: List-Unsubscribe=One-Click`.
 - **Notification to me:** a Slack message through an incoming webhook (`HQ_SLACK_WEBHOOK_URL`), only for a new lead. It gives the email, first name, source, magnet, UTM, `meta.score` when present, a reply link and a link to `/hq/leads`. It replaced the owner email on 2026-11-23.
-- **Newsletter audience:** when `marketing_consent` is true, the lead is added to the Shipmail audience `SHIPMAIL_AUDIENCE_ID` with `consent_source: weshipit-hq:{source}`. Shipmail never re-adds someone who left the audience. `/api/lm/unsubscribe` also unsubscribes them from it.
+- **Audiences:** when `marketing_consent` is true, the lead is added to a Shipmail audience with `consent_source: weshipit-hq:{source}`: `davidl-newsletter` signups go to Newsletter (`SHIPMAIL_NEWSLETTER_AUDIENCE_ID`), lead magnets and self-audits go to Leads (`SHIPMAIL_LEADS_AUDIENCE_ID`). Shipmail never re-adds someone who left an audience. `/api/lm/unsubscribe` unsubscribes them from both.
 - Run the email, the Slack ping and the audience add with `Promise.allSettled` **before** responding. If they fail, log it and still return the token, because the visitor sees the resource on the page anyway.
 - Setup:
   - A transactional domain (e.g. `mail.weshipit.today`) with its DNS records on Vercel, verified in Shipmail. Then a **transactional sender** on it (e.g. `david@mail.weshipit.today`), with replies going to my Shipmail mailbox. `HQ_FROM_EMAIL` is that bare address. Done 2026-11-22: `david@mail.weshipit.today`, replies to `david@weshipit.today` (§7).
@@ -201,7 +201,7 @@ Decided 2026-11-23: the newsletter list is **one Shipmail audience**. The old Ma
 Steps:
 
 - [x] MailerLite account deleted (2026-11-23). ImprovMX was already replaced by the Shipmail mailbox (2026-11-22).
-- [ ] Shipmail: create the newsletter audience, set `SHIPMAIL_AUDIENCE_ID`; give the app key the `audiences:write` scope; create a Slack incoming webhook and set `HQ_SLACK_WEBHOOK_URL`. All on Vercel Production for `weshipit-today`.
+- [ ] Shipmail: create the Newsletter and Leads audiences, set `SHIPMAIL_NEWSLETTER_AUDIENCE_ID` and `SHIPMAIL_LEADS_AUDIENCE_ID`; give the app key the `audiences:write` scope; create a Slack incoming webhook and set `HQ_SLACK_WEBHOOK_URL`. All on Vercel Production for `weshipit-today`.
 - [ ] Merge and deploy, then test one davidl.fr newsletter submit and one `/r` submit on production: lead in `/hq`, Slack ping, subscriber in the audience.
 - [ ] Remove `MAILCHIMP_API_KEY` and `MAILCHIMP_LIST_ID` from the davidl-fr Vercel project (after the deploy, so the old route never runs without them).
 - [ ] One-time Mailchimp export of **subscribed** contacts only. Unsubscribed and cleaned contacts are never imported, because adding them would subscribe them again; keep their CSV outside git as the opt-out record.
