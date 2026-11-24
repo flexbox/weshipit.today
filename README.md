@@ -11,7 +11,7 @@
 - Design system with Storybook [design.weshipit.today](https://design.weshipit.today/)
 - Airtable API reference [airtable.com/api](https://airtable.com/api)
 - Content Management System with [prismic.io](https://weshipit.prismic.io/)
-- Email with [Shipmail](https://shipmail.to/): the mailbox, transactional emails from HQ (`/hq`) and the newsletter audience
+- Email with [Shipmail](https://shipmail.to/): mailbox, transactional emails and newsletter
 
 ## Getting Started
 
