@@ -208,8 +208,6 @@ const auditSchema = {
   ],
 };
 
-const EYEBROW = 'uppercase tracking-wide text-blue-600 dark:text-blue-400';
-
 function SectionHeading({
   children,
   description,
@@ -223,7 +221,7 @@ function SectionHeading({
 }) {
   return (
     <div className="max-w-2xl">
-      <Text as="p" variant="c2" className={EYEBROW}>
+      <Text as="p" variant="eyebrow" tone="primary">
         {eyebrow}
       </Text>
       <Text as="h2" variant="h3" className="mt-2 text-balance" id={id}>
@@ -266,11 +264,7 @@ function Process() {
               <Text as="h3" variant="h6" className="mt-3">
                 {step.title}
               </Text>
-              <Text
-                as="p"
-                variant="c2"
-                className="mt-1 text-slate-500 dark:text-slate-400"
-              >
+              <Text tone="muted" as="p" variant="c2" className="mt-1">
                 {step.when}
               </Text>
               <Text
@@ -304,12 +298,16 @@ function Deliverables() {
         </SectionHeading>
         {PRICE && (
           <p className="mt-8 flex items-baseline gap-2">
-            <span className="font-display text-3xl font-bold tabular-nums">
+            <Text
+              as="span"
+              variant="inherit"
+              className="font-display text-3xl font-bold tabular-nums"
+            >
               {PRICE}
-            </span>
-            <span className="text-slate-500 dark:text-slate-400">
+            </Text>
+            <Text as="span" variant="inherit" tone="muted">
               fixed fee
-            </span>
+            </Text>
           </p>
         )}
       </div>
@@ -391,7 +389,7 @@ function FreeTools() {
                 size="md"
                 className="flex h-full flex-col group-hover:shadow-lg"
               >
-                <Text as="p" variant="c2" className={EYEBROW}>
+                <Text as="p" variant="eyebrow" tone="primary">
                   {tool.label}
                 </Text>
                 <Text as="h3" variant="h6" className="mt-2 text-balance">
@@ -444,7 +442,7 @@ export function Audit({ clients }: AuditProps) {
       <FadeIn>
         <HeroSplit
           eyebrow={
-            <Text as="p" variant="c2" className={EYEBROW}>
+            <Text as="p" variant="eyebrow" tone="primary">
               React Native & Expo · Fixed fee · 2 weeks
             </Text>
           }
@@ -472,9 +470,10 @@ export function Audit({ clients }: AuditProps) {
           {clients.length > 0 && (
             <div className="mt-16">
               <Text
+                tone="muted"
                 as="p"
-                variant="c2"
-                className="text-center uppercase tracking-wide text-slate-500 dark:text-slate-400"
+                variant="eyebrow"
+                className="text-center"
               >
                 Apps we audited
               </Text>

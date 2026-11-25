@@ -127,11 +127,7 @@ export default function XcodeDeviceHubAlternatives() {
       >
         <HeroSplit
           eyebrow={
-            <Text
-              as="p"
-              variant="c2"
-              className="uppercase tracking-wide text-blue-600 dark:text-blue-400"
-            >
+            <Text tone="primary" as="p" variant="eyebrow">
               Xcode 27 · iOS simulators · Updated {VERIFIED_ON}
             </Text>
           }
@@ -179,11 +175,7 @@ export default function XcodeDeviceHubAlternatives() {
                   >
                     {change.text}
                   </Text>
-                  <Text
-                    as="p"
-                    variant="c2"
-                    className="mt-3 text-slate-500 dark:text-slate-400"
-                  >
+                  <Text tone="muted" as="p" variant="c2" className="mt-3">
                     Source:{' '}
                     <Hyperlink href={change.source}>
                       {change.sourceLabel}
@@ -293,11 +285,7 @@ export default function XcodeDeviceHubAlternatives() {
               </tbody>
             </table>
           </Card>
-          <Text
-            as="p"
-            variant="c2"
-            className="mt-3 text-slate-500 dark:text-slate-400"
-          >
+          <Text tone="muted" as="p" variant="c2" className="mt-3">
             Facts from each project’s README or product page, checked on{' '}
             {VERIFIED_ON}.
           </Text>

@@ -69,18 +69,22 @@ function HeroSection() {
         <div className="mx-auto max-w-4xl text-center">
           <Text variant="h1" as="h1" className="mb-6 text-balance">
             Si ton app React Native devient{' '}
-            <span className="text-neutral-500 dark:text-neutral-400">
+            <Text as="span" variant="inherit" tone="muted">
               plus lente
-            </span>{' '}
+            </Text>{' '}
             à chaque feature…{' '}
             <span className="text-accent">ce n’est pas normal.</span>
           </Text>
 
-          <p className="mx-auto mb-10 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-500 dark:text-neutral-400 md:text-xl">
+          <Text
+            variant="lead"
+            tone="muted"
+            className="mx-auto mb-10 max-w-2xl text-pretty leading-relaxed"
+          >
             Une bonne app devient plus rapide à faire évoluer avec le temps. La
             tienne te ralentit. Et ça te coûte déjà des users, du temps et du
             cash.
-          </p>
+          </Text>
 
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button
@@ -115,7 +119,11 @@ function HeroSection() {
 
         {/* Intro */}
         <div className="mx-auto mt-16 max-w-2xl text-center">
-          <p className="text-pretty text-lg leading-relaxed text-neutral-500 dark:text-neutral-400">
+          <Text
+            variant="lead"
+            tone="muted"
+            className="text-pretty leading-relaxed"
+          >
             Je m&apos;appelle{' '}
             <span className="font-medium text-neutral-950 dark:text-neutral-200">
               David
@@ -129,7 +137,7 @@ function HeroSection() {
             <span className="font-semibold text-accent">
               shipper. Tous les jours.
             </span>
-          </p>
+          </Text>
         </div>
       </Container>
     </section>
@@ -192,9 +200,13 @@ function ProblemsSection() {
             <Text variant="h4" as="h3" className="mb-8">
               Ce que personne ne te dit
             </Text>
-            <p className="mb-6 leading-relaxed text-neutral-500 dark:text-neutral-400">
+            <Text
+              variant="inherit"
+              tone="muted"
+              className="mb-6 leading-relaxed"
+            >
               Ton app ne ralentit pas par hasard. Tu accumules :
-            </p>
+            </Text>
             <ul className="mb-8 space-y-3">
               {hiddenProblems.map((p, i) => (
                 <li key={i} className="flex items-center gap-3">
@@ -209,14 +221,14 @@ function ProblemsSection() {
               <p className="mb-4 font-medium text-destructive">
                 Résultat : tu ne maîtrises plus rien.
               </p>
-              <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+              <Text variant="small" tone="muted" className="leading-relaxed">
                 Vendredi soir. Release prévue. Tout casse. Et tu n&apos;as plus
                 que deux options : rebuild from scratch ou patcher en espérant
                 que ça tienne.{' '}
                 <span className="font-medium text-neutral-950 dark:text-neutral-200">
                   Dans les deux cas, tu brûles du cash.
                 </span>
-              </p>
+              </Text>
             </div>
           </div>
         </div>
@@ -251,14 +263,14 @@ function StatsSection() {
     <Section>
       <Container>
         <div className="mb-16 text-center">
-          <p className="mb-4 text-sm font-medium uppercase tracking-wider text-accent">
+          <Text variant="eyebrow" className="mb-4">
             J&apos;ai vu ça des dizaines de fois.
-          </p>
+          </Text>
           <Text variant="h3" as="h2" className="mx-auto max-w-2xl text-balance">
             Je ne fais pas du code.{' '}
-            <span className="text-neutral-500 dark:text-neutral-400">
+            <Text as="span" variant="inherit" tone="muted">
               Je règle des problèmes de vélocité.
-            </span>
+            </Text>
           </Text>
         </div>
 
@@ -273,9 +285,9 @@ function StatsSection() {
                   {stat.label}
                 </div>
               </div>
-              <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+              <Text variant="small" tone="muted" className="leading-relaxed">
                 {stat.description}
-              </p>
+              </Text>
             </div>
           ))}
         </div>
@@ -293,10 +305,10 @@ function TestimonialsSection() {
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Ils ont transformé leur app avec nous
           </Text>
-          <p className="text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted">
             Des apps lentes devenues des plateformes scalables. Des années de
             releases automatisées.
-          </p>
+          </Text>
         </div>
 
         <div className="mb-16 grid gap-6 md:grid-cols-3">
@@ -313,16 +325,20 @@ function TestimonialsSection() {
               >
                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
               </svg>
-              <p className="mb-6 flex-1 text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+              <Text
+                variant="small"
+                tone="muted"
+                className="mb-6 flex-1 leading-relaxed"
+              >
                 {item.quote}
-              </p>
+              </Text>
               <div className="border-t border-border pt-4">
                 <div className="font-medium text-neutral-950 dark:text-neutral-200">
                   {item.author}
                 </div>
-                <div className="text-sm text-neutral-500 dark:text-neutral-400">
+                <Text as="div" variant="small" tone="muted">
                   {item.role}
-                </div>
+                </Text>
               </div>
             </Surface>
           ))}
@@ -378,18 +394,23 @@ function ProcessSection() {
             Je prends ton app et je la transforme en{' '}
             <span className="text-accent">machine à shipper.</span>
           </Text>
-          <p className="text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted">
             Pas dans 6 mois.{' '}
             <span className="font-medium text-neutral-950 dark:text-neutral-200">
               Maintenant.
             </span>
-          </p>
+          </Text>
         </div>
 
         <div className="mb-12 flex items-center justify-center gap-4 text-center">
-          <span className="rounded-lg border border-border bg-card px-4 py-2 text-sm text-neutral-500 dark:text-neutral-400 line-through">
+          <Text
+            as="span"
+            variant="small"
+            tone="muted"
+            className="rounded-lg border border-border bg-card px-4 py-2 line-through"
+          >
             &ldquo;on espère que ça passe&rdquo;
-          </span>
+          </Text>
           <span className="text-2xl text-accent">&rarr;</span>
           <span className="rounded-lg border border-accent bg-accent/10 px-4 py-2 text-sm font-medium text-accent">
             &ldquo;on ship aujourd&apos;hui&rdquo;
@@ -408,18 +429,21 @@ function ProcessSection() {
               <Text variant="h4" as="h3" className="mb-2">
                 {step.title}
               </Text>
-              <p className="mb-4 text-sm text-neutral-500 dark:text-neutral-400">
+              <Text variant="small" tone="muted" className="mb-4">
                 {step.description}
-              </p>
+              </Text>
               <ul className="space-y-2">
                 {step.items.map((item, i) => (
-                  <li
+                  <Text
+                    as="li"
+                    variant="small"
+                    tone="muted"
                     key={i}
-                    className="flex items-start gap-2 text-sm text-neutral-500 dark:text-neutral-400"
+                    className="flex items-start gap-2"
                   >
                     <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                     {item}
-                  </li>
+                  </Text>
                 ))}
               </ul>
             </Surface>
@@ -457,9 +481,9 @@ function PricingSection() {
         <div className="mx-auto max-w-3xl">
           <Surface padding="none" radius="2xl" className="overflow-hidden">
             <div className="border-b border-border bg-secondary/30 px-8 py-12 text-center">
-              <div className="mb-2 text-sm font-medium uppercase tracking-wider text-accent">
+              <Text as="div" variant="eyebrow" className="mb-2">
                 Tarif unique
-              </div>
+              </Text>
               <div className="mb-4 flex items-baseline justify-center gap-2">
                 <span className="font-display text-6xl font-bold tracking-[-0.03em] text-neutral-950 dark:text-neutral-200 md:text-7xl">
                   5k&euro;
@@ -468,9 +492,9 @@ function PricingSection() {
                   /mois
                 </span>
               </div>
-              <p className="text-neutral-500 dark:text-neutral-400">
+              <Text variant="inherit" tone="muted">
                 C&apos;est tout.
-              </p>
+              </Text>
             </div>
 
             <div className="p-8">
@@ -493,9 +517,9 @@ function PricingSection() {
                     <div className="mb-1 font-medium text-neutral-950 dark:text-neutral-200">
                       {f.title}
                     </div>
-                    <div className="text-sm text-neutral-500 dark:text-neutral-400">
+                    <Text as="div" variant="small" tone="muted">
                       {f.description}
-                    </div>
+                    </Text>
                   </div>
                 ))}
               </div>
@@ -555,15 +579,15 @@ function ComparisonSection() {
           <div className="flex items-center justify-center gap-8">
             <div className="flex items-center gap-2">
               <span className="text-4xl font-bold text-accent">-50%</span>
-              <span className="text-sm text-neutral-500 dark:text-neutral-400">
+              <Text as="span" variant="small" tone="muted">
                 de temps de dev
-              </span>
+              </Text>
             </div>
             <div className="flex items-center gap-2">
               <span className="text-4xl font-bold text-accent">+35%</span>
-              <span className="text-sm text-neutral-500 dark:text-neutral-400">
+              <Text as="span" variant="small" tone="muted">
                 de rétention utilisateur
-              </span>
+              </Text>
             </div>
           </div>
         </div>
@@ -588,10 +612,15 @@ function ComparisonSection() {
               <div className="flex items-center p-4 font-medium text-neutral-950 dark:text-neutral-200">
                 {row.category}
               </div>
-              <div className="flex items-center gap-2 border-l border-border bg-card p-4 text-sm text-neutral-500 dark:text-neutral-400">
+              <Text
+                as="div"
+                variant="small"
+                tone="muted"
+                className="flex items-center gap-2 border-l border-border bg-card p-4"
+              >
                 <XMarkIcon className="h-4 w-4 shrink-0 text-destructive" />
                 {row.without}
-              </div>
+              </Text>
               <div className="flex items-center gap-2 border-l border-border bg-accent/5 p-4 text-sm text-neutral-950 dark:text-neutral-200">
                 <CheckIcon className="h-4 w-4 shrink-0 text-accent" />
                 {row.withUs}
@@ -645,9 +674,9 @@ function UrgencySection() {
               <div className="mb-2 text-3xl font-bold text-neutral-950 dark:text-neutral-200">
                 {item.value}
               </div>
-              <p className="text-sm text-neutral-500 dark:text-neutral-400">
+              <Text variant="small" tone="muted">
                 {item.text}
-              </p>
+              </Text>
             </div>
           ))}
         </div>
@@ -682,10 +711,14 @@ function CtaFinalSection() {
               Je ne promets pas du code.{' '}
               <span className="text-accent">Je promets du shipping.</span>
             </Text>
-            <p className="mx-auto mb-10 max-w-xl text-lg text-neutral-500 dark:text-neutral-400">
+            <Text
+              variant="lead"
+              tone="muted"
+              className="mx-auto mb-10 max-w-xl"
+            >
               Prends un premier mois. Et vois par toi-même si ton app peut enfin
               ship.
-            </p>
+            </Text>
 
             <Button
               href={linksApi.stripe.MONTHLY_PLAN}
@@ -700,7 +733,12 @@ function CtaFinalSection() {
               <ArrowRightIcon className="ml-2 h-4 w-4" />
             </Button>
 
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-neutral-500 dark:text-neutral-400">
+            <Text
+              as="div"
+              variant="small"
+              tone="muted"
+              className="mt-8 flex flex-wrap items-center justify-center gap-6"
+            >
               <span className="flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                 Sans engagement
@@ -713,7 +751,7 @@ function CtaFinalSection() {
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                 Le code t&apos;appartient
               </span>
-            </div>
+            </Text>
           </div>
         </Surface>
       </Container>

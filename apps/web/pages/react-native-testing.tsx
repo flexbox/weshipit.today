@@ -86,12 +86,16 @@ function HeroSection() {
             <br />
             <small>Until the first production crash.</small>
           </Text>
-          <p className="mt-6 text-lg leading-8 text-gray-500 dark:text-gray-400 max-w-xl mx-auto lg:mx-0 text-pretty">
+          <Text
+            variant="lead"
+            tone="muted"
+            className="mt-6 leading-8 max-w-xl mx-auto lg:mx-0 text-pretty"
+          >
             We set up{' '}
             <Hyperlink href="https://maestro.mobile.dev">Maestro</Hyperlink>{' '}
             end-to-end tests for your React Native app — YAML flows, CI
             integration, team handoff — in two weeks, one flat fee.
-          </p>
+          </Text>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <Button
               href={linksApi.cal.ONBOARDING}
@@ -130,10 +134,14 @@ function WhyMaestro() {
         <Text as="h2" variant="h2" className="mt-4">
           A simpler stack for mobile tests
         </Text>
-        <p className="mt-4 text-lg leading-8 text-gray-500 dark:text-gray-400 max-w-2xl mx-auto text-pretty">
+        <Text
+          variant="lead"
+          tone="muted"
+          className="mt-4 leading-8 max-w-2xl mx-auto text-pretty"
+        >
           Most React Native teams skip mobile end-to-end tests or wrestle with
           Detox flakiness for months. Maestro takes a different approach.
-        </p>
+        </Text>
       </div>
       <FeatureGrid
         columns={3}
@@ -184,9 +192,13 @@ function WhatYouGet() {
         <Text as="h2" variant="h2" className="mt-4">
           A productized engagement
         </Text>
-        <p className="mt-4 text-lg leading-8 text-gray-500 dark:text-gray-400 max-w-2xl mx-auto text-pretty">
+        <Text
+          variant="lead"
+          tone="muted"
+          className="mt-4 leading-8 max-w-2xl mx-auto text-pretty"
+        >
           Fixed scope, fixed timeline. Two weeks from kickoff to handoff.
-        </p>
+        </Text>
       </div>
       <FeatureGrid
         columns={3}
@@ -456,10 +468,10 @@ function WhoAmI() {
               priority={false}
             />
           </div>
-          <p className="mt-3 text-sm text-gray-500 dark:text-gray-400 text-center">
+          <Text variant="small" tone="muted" className="mt-3 text-center">
             With Jacob Krupski (right) behind Maestro and Mazen Chami (left)
             from Infinite Red.
-          </p>
+          </Text>
         </div>
 
         <div className="lg:col-span-3">

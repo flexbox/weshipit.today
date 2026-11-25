@@ -85,11 +85,15 @@ function HeroSection() {
               </span>
             </Text>
 
-            <p className="mb-6 max-w-xl text-pretty text-lg leading-relaxed text-neutral-500 dark:text-neutral-400">
+            <Text
+              variant="lead"
+              tone="muted"
+              className="mb-6 max-w-xl text-pretty leading-relaxed"
+            >
               Le seul écosystème francophone dédié à React Native en production.
               Les personnes qui le suivent décident quel SDK, quel outil et quel
               prestataire entrent dans leur app.
-            </p>
+            </Text>
 
             <ul className="mb-10 flex flex-wrap gap-2" aria-label="Canaux">
               {HERO_CHANNELS.map((channel) => (
@@ -103,9 +107,9 @@ function HeroSection() {
                     aria-hidden="true"
                   />
                   <span className="font-medium">{channel.label}</span>
-                  <span className="text-neutral-500 dark:text-neutral-400">
+                  <Text as="span" variant="inherit" tone="muted">
                     {channel.metric}
-                  </span>
+                  </Text>
                 </li>
               ))}
             </ul>
@@ -134,7 +138,12 @@ function HeroSection() {
               </Button>
             </div>
 
-            <div className="mt-8 flex flex-col gap-2 text-sm text-neutral-500 dark:text-neutral-400">
+            <Text
+              as="div"
+              variant="small"
+              tone="muted"
+              className="mt-8 flex flex-col gap-2"
+            >
               <span className="flex items-center gap-2">
                 <CheckIcon strokeWidth={2.25} className="h-4 w-4 text-accent" />
                 Le co-créateur de React Native au micro
@@ -147,7 +156,7 @@ function HeroSection() {
                 <CheckIcon strokeWidth={2.25} className="h-4 w-4 text-accent" />
                 Media partner de React Native Connection
               </span>
-            </div>
+            </Text>
           </div>
 
           <div className="flex items-center justify-center">
@@ -197,12 +206,16 @@ function ProofSection() {
           <Text variant="h2" as="h2" className="mb-4 text-balance">
             Ce qu&apos;il faut savoir avant de continuer
           </Text>
-          <p className="mx-auto max-w-2xl text-pretty text-neutral-500 dark:text-neutral-400">
+          <Text
+            variant="inherit"
+            tone="muted"
+            className="mx-auto max-w-2xl text-pretty"
+          >
             Pas des millions d&apos;écoutes. Chaque canal a sa propre audience :
             les chiffres ci-dessous ne s&apos;additionnent pas. Une niche sans
             alternative francophone, et les personnes qu&apos;on n&apos;entend
             d&apos;habitude qu&apos;en anglais.
-          </p>
+          </Text>
         </div>
 
         <div className="mb-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -214,9 +227,9 @@ function ProofSection() {
               <div className="mt-1 text-sm font-medium text-neutral-950 dark:text-neutral-200">
                 {stat.label}
               </div>
-              <div className="mt-1 text-xs text-neutral-500 dark:text-neutral-400">
+              <Text as="div" variant="caption" tone="muted" className="mt-1">
                 {stat.detail}
-              </div>
+              </Text>
             </Surface>
           ))}
         </div>
@@ -236,14 +249,18 @@ function ProofSection() {
                   <div className="text-sm font-semibold text-neutral-950 dark:text-neutral-100">
                     {guest.name}
                   </div>
-                  <div className="text-xs text-neutral-500 dark:text-neutral-400">
+                  <Text as="div" variant="caption" tone="muted">
                     {guest.role}
-                  </div>
+                  </Text>
                 </div>
               </div>
             ))}
           </div>
-          <p className="mt-6 border-t border-border pt-4 text-sm text-neutral-500 dark:text-neutral-400">
+          <Text
+            variant="small"
+            tone="muted"
+            className="mt-6 border-t border-border pt-4"
+          >
             Tous les épisodes sont sur la{' '}
             <Link
               href="/podcast"
@@ -252,7 +269,7 @@ function ProofSection() {
               page du podcast
             </Link>
             , avec transcription et page permanente pour chacun.
-          </p>
+          </Text>
         </Surface>
       </Container>
     </Section>
@@ -308,11 +325,15 @@ function AudienceSection() {
           <Text variant="h2" as="h2" className="mb-4 text-balance">
             Une audience qui arbitre des budgets
           </Text>
-          <p className="mx-auto max-w-2xl text-pretty text-neutral-500 dark:text-neutral-400">
+          <Text
+            variant="inherit"
+            tone="muted"
+            className="mx-auto max-w-2xl text-pretty"
+          >
             Sur LinkedIn, 35 % des abonnés sont Senior et 26 % occupent une
             fonction de direction, de management ou de décision. Ce ne sont pas
             des débutants en quête de tutos.
-          </p>
+          </Text>
         </div>
 
         <div className="mb-8 grid gap-6 md:grid-cols-3">
@@ -323,16 +344,19 @@ function AudienceSection() {
               </Text>
               <ul className="space-y-3">
                 {block.items.map((item) => (
-                  <li
+                  <Text
+                    as="li"
+                    variant="small"
+                    tone="muted"
                     key={item}
-                    className="flex items-start gap-3 text-sm text-neutral-500 dark:text-neutral-400"
+                    className="flex items-start gap-3"
                   >
                     <CheckIcon
                       strokeWidth={1.8}
                       className="mt-0.5 h-5 w-5 shrink-0 text-accent"
                     />
                     {item}
-                  </li>
+                  </Text>
                 ))}
               </ul>
             </Surface>
@@ -398,11 +422,15 @@ function ChannelsSection() {
           <Text variant="h2" as="h2" className="mb-4 text-balance">
             Quatre canaux, une même audience
           </Text>
-          <p className="mx-auto max-w-2xl text-pretty text-neutral-500 dark:text-neutral-400">
+          <Text
+            variant="inherit"
+            tone="muted"
+            className="mx-auto max-w-2xl text-pretty"
+          >
             Un partenariat ne se limite pas à un message dans un épisode. La
             même personne croise ton produit dans son feed, dans ses écouteurs
             et dans une démo vidéo.
-          </p>
+          </Text>
         </div>
 
         <div className="grid gap-4 md:grid-cols-2">
@@ -422,9 +450,9 @@ function ChannelsSection() {
                   {channel.metric}
                 </span>
               </div>
-              <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+              <Text variant="small" tone="muted" className="leading-relaxed">
                 {channel.description}
-              </p>
+              </Text>
             </Surface>
           ))}
         </div>
@@ -442,9 +470,9 @@ function ChannelsSection() {
             {CTA_LABEL}
             <ArrowRightIcon strokeWidth={2.25} className="ml-2 h-4 w-4" />
           </Button>
-          <p className="text-sm text-neutral-500 dark:text-neutral-400">
+          <Text variant="small" tone="muted">
             Proposition écrite sous 48 h, aucun engagement avant.
-          </p>
+          </Text>
         </div>
       </Container>
     </Section>
@@ -497,11 +525,15 @@ function ActivationsSection() {
           <Text variant="h2" as="h2" className="mb-4 text-balance">
             Les formats possibles
           </Text>
-          <p className="mx-auto max-w-2xl text-pretty text-neutral-500 dark:text-neutral-400">
+          <Text
+            variant="inherit"
+            tone="muted"
+            className="mx-auto max-w-2xl text-pretty"
+          >
             Chaque collaboration combine plusieurs de ces formats selon ton
             objectif : essais de ton outil, notoriété dans l&apos;écosystème, ou
             recrutement de développeurs React Native.
-          </p>
+          </Text>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -513,9 +545,9 @@ function ActivationsSection() {
               <Text variant="h4" as="h3" className="mb-2">
                 {item.title}
               </Text>
-              <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+              <Text variant="small" tone="muted" className="leading-relaxed">
                 {item.description}
-              </p>
+              </Text>
             </Surface>
           ))}
         </div>
@@ -575,10 +607,14 @@ function OffersSection() {
           <Text variant="h2" as="h2" className="mb-4 text-balance">
             Trois niveaux d&apos;engagement
           </Text>
-          <p className="mx-auto max-w-2xl text-pretty text-neutral-500 dark:text-neutral-400">
+          <Text
+            variant="inherit"
+            tone="muted"
+            className="mx-auto max-w-2xl text-pretty"
+          >
             Tester, s&apos;installer, s&apos;associer. Le tarif se définit avec
             toi selon le format retenu, pendant l&apos;appel.
-          </p>
+          </Text>
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
@@ -597,9 +633,9 @@ function OffersSection() {
               <Text variant="h3" as="h3" className="mb-2">
                 {offer.name}
               </Text>
-              <p className="mb-6 text-sm text-neutral-500 dark:text-neutral-400">
+              <Text variant="small" tone="muted" className="mb-6">
                 {offer.goal}
-              </p>
+              </Text>
               <ul className="mb-6 space-y-3">
                 {offer.items.map((item) => (
                   <li
@@ -614,9 +650,13 @@ function OffersSection() {
                   </li>
                 ))}
               </ul>
-              <p className="mt-auto border-t border-border pt-4 text-sm text-neutral-500 dark:text-neutral-400">
+              <Text
+                variant="small"
+                tone="muted"
+                className="mt-auto border-t border-border pt-4"
+              >
                 {offer.result}
-              </p>
+              </Text>
             </div>
           ))}
         </div>
@@ -666,9 +706,10 @@ function AudienceFitSection() {
         <div className="grid gap-8 md:grid-cols-2">
           <div className="rounded-xl border border-accent/30 bg-accent/5 p-6">
             <Text
+              tone="accent"
               variant="h4"
               as="h3"
-              className="mb-4 flex items-center gap-2 text-accent"
+              className="mb-4 flex items-center gap-2"
             >
               ✅ On devrait se parler
             </Text>
@@ -690,31 +731,39 @@ function AudienceFitSection() {
 
           <Surface>
             <Text
+              tone="muted"
               variant="h4"
               as="h3"
-              className="mb-4 flex items-center gap-2 text-neutral-500 dark:text-neutral-400"
+              className="mb-4 flex items-center gap-2"
             >
               ❌ Ce n&apos;est pas le bon média
             </Text>
             <ul className="space-y-3">
               {no.map((item) => (
-                <li
+                <Text
+                  as="li"
+                  variant="small"
+                  tone="muted"
                   key={item}
-                  className="flex items-start gap-3 text-sm text-neutral-500 dark:text-neutral-400"
+                  className="flex items-start gap-3"
                 >
                   <XMarkIcon
                     strokeWidth={1.8}
                     className="mt-0.5 h-5 w-5 shrink-0 text-destructive"
                   />
                   {item}
-                </li>
+                </Text>
               ))}
             </ul>
-            <p className="mt-6 border-t border-border pt-4 text-sm text-neutral-500 dark:text-neutral-400">
+            <Text
+              variant="small"
+              tone="muted"
+              className="mt-6 border-t border-border pt-4"
+            >
               Indépendance éditoriale : je ne présente que des produits que
               j&apos;utiliserais dans une app cliente. Chaque contenu sponsorisé
               est annoncé comme tel.
-            </p>
+            </Text>
           </Surface>
         </div>
       </Container>
@@ -796,10 +845,14 @@ function FinalCtaSection() {
               Construisons l&apos;activation{' '}
               <span className="text-accent">adaptée à ton objectif</span>
             </Text>
-            <p className="mx-auto mb-10 max-w-xl text-pretty text-lg text-neutral-500 dark:text-neutral-400">
+            <Text
+              variant="lead"
+              tone="muted"
+              className="mx-auto mb-10 max-w-xl text-pretty"
+            >
               Vingt minutes pour savoir si ton produit a sa place devant cette
               audience. Si ce n&apos;est pas le cas, je te le dirai.
-            </p>
+            </Text>
 
             <Button
               href={CTA_URL}
@@ -814,7 +867,12 @@ function FinalCtaSection() {
               <ArrowRightIcon strokeWidth={2.25} className="ml-2 h-4 w-4" />
             </Button>
 
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-neutral-500 dark:text-neutral-400">
+            <Text
+              as="div"
+              variant="small"
+              tone="muted"
+              className="mt-8 flex flex-wrap items-center justify-center gap-6"
+            >
               <span className="flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                 Proposition écrite sous 48 h
@@ -827,7 +885,7 @@ function FinalCtaSection() {
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                 Aucun engagement avant la proposition
               </span>
-            </div>
+            </Text>
           </div>
         </Surface>
       </Container>

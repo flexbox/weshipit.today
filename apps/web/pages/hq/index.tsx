@@ -76,16 +76,16 @@ export default function HqHome({
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {stats.map((stat) => (
           <Card key={stat.label} size="sm">
-            <Text variant="c2" className="text-slate-500 dark:text-slate-400">
+            <Text tone="muted" variant="c2">
               {stat.label}
             </Text>
             <Text as="p" variant="h5" className="mt-2 tabular-nums">
               {stat.value}
             </Text>
             {stat.hint && (
-              <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">
+              <Text variant="caption" tone="muted" className="mt-2">
                 {stat.hint}
-              </p>
+              </Text>
             )}
           </Card>
         ))}

@@ -134,7 +134,11 @@ function HeroSection() {
           1&nbsp;490 € au lieu de 2&nbsp;400 €
         </Text>
 
-        <p className="mx-auto mb-10 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-500 dark:text-neutral-400 md:text-xl">
+        <Text
+          variant="lead"
+          tone="muted"
+          className="mx-auto mb-10 max-w-2xl text-pretty leading-relaxed"
+        >
           L&apos;Incubateur Solopreneur, c&apos;est le programme annuel de{' '}
           <Link
             href="/flavie-prevot-avis"
@@ -147,7 +151,7 @@ function HeroSection() {
           thématiques dans l&apos;année, un live-atelier le vendredi, +50
           experts invités et 50+ templates. Ici, tu obtiens le tarif affilié —
           910 € d&apos;économie, sans code à saisir.
-        </p>
+        </Text>
 
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button
@@ -166,7 +170,12 @@ function HeroSection() {
           </Button>
         </div>
 
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-neutral-500 dark:text-neutral-400">
+        <Text
+          as="div"
+          variant="small"
+          tone="muted"
+          className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2"
+        >
           <span className="flex items-center gap-2">
             <CheckIcon className="h-4 w-4 text-accent" />
             300+ solopreneurs déjà incubés
@@ -179,7 +188,7 @@ function HeroSection() {
             <CheckIcon className="h-4 w-4 text-accent" />
             Page de parrainage officielle
           </span>
-        </div>
+        </Text>
       </Container>
     </Section>
   );
@@ -218,14 +227,18 @@ function CestQuoiSection() {
           <Text variant="h3" as="h2" className="mb-3">
             C&apos;est quoi l&apos;Incubateur Solopreneur&nbsp;?
           </Text>
-          <p className="mb-8 max-w-2xl text-pretty leading-relaxed text-neutral-500 dark:text-neutral-400">
+          <Text
+            variant="inherit"
+            tone="muted"
+            className="mb-8 max-w-2xl text-pretty leading-relaxed"
+          >
             Un programme d&apos;accompagnement de 12 mois pour solopreneurs déjà
             en activité qui veulent construire des actifs (newsletter, podcast,
             offre productisée, sponsoring, SaaS solo) avec un cercle de pairs
             plutôt qu&apos;une formation vidéo passive. Prix public&nbsp;:
             2&nbsp;400&nbsp;€ HT. Tarif affilié via cette page&nbsp;:
             1&nbsp;490&nbsp;€ HT (le prix le plus bas verrouillé par Flavie).
-          </p>
+          </Text>
 
           <div className="grid gap-4 md:grid-cols-3">
             {bullets.map((b) => (
@@ -239,9 +252,9 @@ function CestQuoiSection() {
                 <div className="mb-1 text-sm font-semibold text-neutral-950 dark:text-neutral-100">
                   {b.title}
                 </div>
-                <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+                <Text variant="small" tone="muted" className="leading-relaxed">
                   {b.description}
-                </p>
+                </Text>
               </div>
             ))}
           </div>
@@ -288,12 +301,12 @@ function ComparatifSection() {
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Comparatif des tarifs de l&apos;Incubateur Solopreneur
           </Text>
-          <p className="mx-auto max-w-2xl text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted" className="mx-auto max-w-2xl">
             Les 3 manières de payer l&apos;Incubateur Solopreneur en 2026, du
             plus cher au plus avantageux. Le code réduction via lien affilié est
             le tarif plancher imposé par Flavie : aucune promo publique ne
             descend en dessous.
-          </p>
+          </Text>
         </div>
 
         <div className="overflow-hidden rounded-xl border border-border">
@@ -411,12 +424,12 @@ function ProchainSprintSection() {
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Le prochain Sprint&nbsp;: construire un SaaS qui bosse à ta place
           </Text>
-          <p className="mx-auto max-w-2xl text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted" className="mx-auto max-w-2xl">
             On rejoint l&apos;Incubateur pour un Sprint précis, puis les 11
             autres deviennent des bonus. Celui d&apos;octobre est animé avec
             Pierre Thomassina, développeur agentique et ancien incubé. Si tu
             arrives par cette page, tu commences par celui-là.
-          </p>
+          </Text>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2">
@@ -437,11 +450,11 @@ function ProchainSprintSection() {
                 </li>
               ))}
             </ol>
-            <p className="mt-4 text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+            <Text variant="small" tone="muted" className="mt-4 leading-relaxed">
               Pensé pour les freelances et solopreneurs qui refont la même chose
               chaque mois pour leurs clients et veulent un logiciel qui le fait
               à leur place. Pas réservé aux devs.
-            </p>
+            </Text>
             <LinkButton
               href="/sprint-solo-saas"
               size="md"
@@ -462,24 +475,24 @@ function ProchainSprintSection() {
                 <li key={item.name} className="flex items-start gap-3">
                   <CalendarDaysIcon className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
                   <div>
-                    <div className="text-xs font-semibold uppercase tracking-wide text-accent">
+                    <Text as="div" variant="eyebrow">
                       {item.when}
-                    </div>
+                    </Text>
                     <div className="font-medium text-neutral-950 dark:text-neutral-200">
                       {item.name}
                     </div>
-                    <p className="text-sm text-neutral-500 dark:text-neutral-400">
+                    <Text variant="small" tone="muted">
                       {item.pitch}
-                    </p>
+                    </Text>
                   </div>
                 </li>
               ))}
             </ul>
-            <p className="mt-4 text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+            <Text variant="small" tone="muted" className="mt-4 leading-relaxed">
               12 Sprints par an. Tu n&apos;es pas obligé de tous les
               suivre&nbsp;: tu choisis ceux qui servent ton business, et les
               replays restent disponibles.
-            </p>
+            </Text>
           </Surface>
         </div>
       </Container>
@@ -519,9 +532,9 @@ function CommentCaMarcheSection() {
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Comment activer le code réduction en 3 étapes
           </Text>
-          <p className="text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted">
             Aucun code à recopier. La remise est appliquée automatiquement.
-          </p>
+          </Text>
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
@@ -536,9 +549,9 @@ function CommentCaMarcheSection() {
               <Text variant="h4" as="h3" className="mb-2">
                 {step.title}
               </Text>
-              <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+              <Text variant="small" tone="muted" className="leading-relaxed">
                 {step.description}
-              </p>
+              </Text>
             </Surface>
           ))}
         </div>
@@ -594,10 +607,10 @@ function CeQuiEstInclusSection() {
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Ce que tu obtiens avec le tarif réduit
           </Text>
-          <p className="mx-auto max-w-2xl text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted" className="mx-auto max-w-2xl">
             Exactement le même accès qu&apos;un client au prix public. Aucune
             limitation, aucune brique en moins. Seul le prix change.
-          </p>
+          </Text>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -609,9 +622,9 @@ function CeQuiEstInclusSection() {
               <Text variant="h4" as="h3" className="mb-2">
                 {item.title}
               </Text>
-              <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+              <Text variant="small" tone="muted" className="leading-relaxed">
                 {item.description}
-              </p>
+              </Text>
             </Surface>
           ))}
         </div>
@@ -650,7 +663,7 @@ function PourQuiSection() {
 
         <div className="grid gap-8 md:grid-cols-2">
           <div className="rounded-xl border border-accent/30 bg-accent/5 p-6">
-            <Text variant="h4" as="h3" className="mb-4 text-accent">
+            <Text tone="accent" variant="h4" as="h3" className="mb-4">
               ✅ Oui, fonce
             </Text>
             <ul className="space-y-3">
@@ -667,22 +680,21 @@ function PourQuiSection() {
           </div>
 
           <Surface>
-            <Text
-              variant="h4"
-              as="h3"
-              className="mb-4 text-neutral-500 dark:text-neutral-400"
-            >
+            <Text tone="muted" variant="h4" as="h3" className="mb-4">
               ❌ Passe ton chemin
             </Text>
             <ul className="space-y-3">
               {no.map((item) => (
-                <li
+                <Text
+                  as="li"
+                  variant="small"
+                  tone="muted"
                   key={item}
-                  className="flex items-start gap-3 text-sm text-neutral-500 dark:text-neutral-400"
+                  className="flex items-start gap-3"
                 >
                   <XMarkIcon className="mt-0.5 h-5 w-5 shrink-0 text-destructive" />
                   {item}
-                </li>
+                </Text>
               ))}
             </ul>
           </Surface>
@@ -725,10 +737,10 @@ function PreuvesSection() {
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Ils sont passés à l&apos;action avec l&apos;Incubateur Solopreneur
           </Text>
-          <p className="text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted">
             Témoignages publics extraits de Trustpilot, LinkedIn et des calls
             ambassadeurs de Flavie.
-          </p>
+          </Text>
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
@@ -741,16 +753,20 @@ function PreuvesSection() {
               >
                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
               </svg>
-              <p className="mb-6 flex-1 text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+              <Text
+                variant="small"
+                tone="muted"
+                className="mb-6 flex-1 leading-relaxed"
+              >
                 {p.quote}
-              </p>
+              </Text>
               <div className="border-t border-border pt-4">
                 <div className="font-medium text-neutral-950 dark:text-neutral-200">
                   {p.title}
                 </div>
-                <div className="text-sm text-neutral-500 dark:text-neutral-400">
+                <Text as="div" variant="small" tone="muted">
                   {p.source}
-                </div>
+                </Text>
                 {p.link && (
                   <Link
                     href={p.link.href}
@@ -832,10 +848,14 @@ function CtaFinalSection() {
               Active ton code réduction{' '}
               <span className="text-accent">Solopreneur</span> en 1 clic
             </Text>
-            <p className="mx-auto mb-10 max-w-xl text-lg text-neutral-500 dark:text-neutral-400">
+            <Text
+              variant="lead"
+              tone="muted"
+              className="mx-auto mb-10 max-w-xl"
+            >
               1 490 € HT pour 12 mois d&apos;incubation. Le prix le plus bas
               disponible. Aucun code à saisir.
-            </p>
+            </Text>
 
             <Button
               href={AFFILIATE_URL}
@@ -850,7 +870,12 @@ function CtaFinalSection() {
               <ArrowRightIcon className="ml-2 h-4 w-4" />
             </Button>
 
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-neutral-500 dark:text-neutral-400">
+            <Text
+              as="div"
+              variant="small"
+              tone="muted"
+              className="mt-8 flex flex-wrap items-center justify-center gap-6"
+            >
               <span className="flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                 Page de parrainage officielle
@@ -863,7 +888,7 @@ function CtaFinalSection() {
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                 Communauté de 300+ solopreneurs
               </span>
-            </div>
+            </Text>
           </div>
         </Surface>
       </Container>
@@ -988,9 +1013,9 @@ export default function CodeReductionSolopreneurPage() {
               <Text variant="h3" as="h2" className="mb-4 text-balance">
                 FAQ — Code réduction Solopreneur
               </Text>
-              <p className="text-neutral-500 dark:text-neutral-400">
+              <Text variant="inherit" tone="muted">
                 Tout ce qu&apos;il faut savoir avant d&apos;activer ta remise.
-              </p>
+              </Text>
             </div>
             <Faq faqs={faqs} title="" headingId="faq-cr-heading" />
           </Container>

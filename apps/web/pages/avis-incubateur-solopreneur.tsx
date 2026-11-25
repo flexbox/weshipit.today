@@ -144,12 +144,16 @@ function HeroSection() {
           &nbsp;: mon retour honnête après {MONTHS_INCUBATED} mois
         </Text>
 
-        <p className="mx-auto mb-8 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-500 dark:text-neutral-400 md:text-xl">
+        <Text
+          variant="lead"
+          tone="muted"
+          className="mx-auto mb-8 max-w-2xl text-pretty leading-relaxed"
+        >
           12 mois d’incubation avec Flavie Prevot, 300+ solopreneurs, 10
           bootcamps (Sprints) par an, des lives le vendredi. Mon verdict après 6
           mois&nbsp;: recommandé, sous conditions précises que je détaille plus
           bas.
-        </p>
+        </Text>
 
         <div className="mb-10 flex flex-col items-center justify-center gap-2">
           <div className="flex items-center gap-3">
@@ -158,9 +162,9 @@ function HeroSection() {
               {RATING_VALUE.toString().replace('.', ',')}&nbsp;/&nbsp;5
             </span>
           </div>
-          <span className="text-xs uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
+          <Text as="span" variant="eyebrow" tone="muted">
             Note globale sur 6 critères détaillés
-          </span>
+          </Text>
         </div>
 
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -177,7 +181,12 @@ function HeroSection() {
           </Button>
         </div>
 
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-neutral-500 dark:text-neutral-400">
+        <Text
+          as="div"
+          variant="small"
+          tone="muted"
+          className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2"
+        >
           <span className="flex items-center gap-2">
             <CheckIcon className="h-4 w-4 text-accent" />6 mois d’incubation
             effectifs
@@ -189,7 +198,7 @@ function HeroSection() {
             <CheckIcon className="h-4 w-4 text-accent" />
             Avis sans bonus secret
           </span>
-        </div>
+        </Text>
       </Container>
     </Section>
   );
@@ -236,10 +245,10 @@ function VerdictSection() {
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Le verdict en 30 secondes
           </Text>
-          <p className="text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted">
             Ce que tu dois savoir avant d’acheter — le résumé qui m’aurait fait
             gagner du temps.
-          </p>
+          </Text>
         </div>
 
         <Surface padding="lg">
@@ -319,10 +328,10 @@ function NotesParCriteresSection() {
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Notes par critères
           </Text>
-          <p className="mx-auto max-w-2xl text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted" className="mx-auto max-w-2xl">
             Mon évaluation sur les 6 dimensions qui pèsent vraiment dans la
             décision d’acheter. Notes sur 5, basées sur 6 mois d’incubation.
-          </p>
+          </Text>
         </div>
 
         <div className="overflow-hidden rounded-xl border border-border">
@@ -348,9 +357,13 @@ function NotesParCriteresSection() {
                   {c.score.toString().replace('.', ',')}/5
                 </span>
               </div>
-              <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400 md:col-span-5">
+              <Text
+                variant="small"
+                tone="muted"
+                className="leading-relaxed md:col-span-5"
+              >
                 {c.justification}
-              </p>
+              </Text>
             </div>
           ))}
         </div>
@@ -406,10 +419,10 @@ function PointsFortsSection() {
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Ce qui marche vraiment
           </Text>
-          <p className="mx-auto max-w-2xl text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted" className="mx-auto max-w-2xl">
             Six points forts vérifiés sur 6 mois d’incubation, avec des exemples
             concrets de ce que ça a produit pour moi.
-          </p>
+          </Text>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -421,9 +434,9 @@ function PointsFortsSection() {
               <Text variant="h4" as="h3" className="mb-2">
                 {item.title}
               </Text>
-              <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+              <Text variant="small" tone="muted" className="leading-relaxed">
                 {item.description}
-              </p>
+              </Text>
             </Surface>
           ))}
         </div>
@@ -471,10 +484,10 @@ function PointsFaiblesSection() {
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Ce qui peut décevoir
           </Text>
-          <p className="mx-auto max-w-2xl text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted" className="mx-auto max-w-2xl">
             Les quatre limites qu’on ne te dit pas sur la page de vente. Si
             elles sont rédhibitoires pour toi, passe ton chemin.
-          </p>
+          </Text>
         </div>
 
         <div className="space-y-6">
@@ -490,18 +503,22 @@ function PointsFaiblesSection() {
                   {item.title}
                 </Text>
               </div>
-              <p className="mb-3 text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+              <Text
+                variant="small"
+                tone="muted"
+                className="mb-3 leading-relaxed"
+              >
                 <span className="font-semibold text-neutral-950 dark:text-neutral-200">
                   La réalité&nbsp;:
                 </span>{' '}
                 {item.reality}
-              </p>
-              <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+              </Text>
+              <Text variant="small" tone="muted" className="leading-relaxed">
                 <span className="font-semibold text-accent">
                   Comment je gère&nbsp;:
                 </span>{' '}
                 {item.mitigation}
-              </p>
+              </Text>
             </Surface>
           ))}
         </div>
@@ -567,10 +584,10 @@ function ExperienceMoisParMoisSection() {
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Mon expérience mois par mois
           </Text>
-          <p className="mx-auto max-w-2xl text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted" className="mx-auto max-w-2xl">
             Journal de bord des 6 premiers mois d’incubation. Ce que j’ai
             shippé, ce que j’ai appris. Pour que tu saches à quoi t’attendre.
-          </p>
+          </Text>
         </div>
 
         <div className="space-y-4">
@@ -585,22 +602,26 @@ function ExperienceMoisParMoisSection() {
                 </div>
                 <CalendarDaysIcon className="hidden h-5 w-5 text-accent md:block" />
               </div>
-              <div className="mb-1 text-xs font-semibold uppercase tracking-wide text-accent">
+              <Text as="div" variant="eyebrow" className="mb-1">
                 {m.month}
-              </div>
+              </Text>
               <Text variant="h4" as="h3" className="mb-3">
                 {m.title}
               </Text>
-              <p className="mb-2 text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+              <Text
+                variant="small"
+                tone="muted"
+                className="mb-2 leading-relaxed"
+              >
                 <span className="font-semibold text-neutral-950 dark:text-neutral-200">
                   Shippé&nbsp;:
                 </span>{' '}
                 {m.shipped}
-              </p>
-              <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+              </Text>
+              <Text variant="small" tone="muted" className="leading-relaxed">
                 <span className="font-semibold text-accent">Appris&nbsp;:</span>{' '}
                 {m.learned}
-              </p>
+              </Text>
             </div>
           ))}
         </div>
@@ -652,10 +673,10 @@ function ComparatifAlternativesSection() {
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Comparatif avec les alternatives
           </Text>
-          <p className="mx-auto max-w-2xl text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted" className="mx-auto max-w-2xl">
             Les principales options si tu hésites entre l’Incubateur et un autre
             format. Comparatif honnête, sans straw-man.
-          </p>
+          </Text>
         </div>
 
         <div className="overflow-x-auto rounded-xl border border-border">
@@ -693,25 +714,25 @@ function ComparatifAlternativesSection() {
                     )}
                     {r.name}
                   </td>
-                  <td className="p-4 text-neutral-500 dark:text-neutral-400">
+                  <Text as="td" variant="inherit" tone="muted" className="p-4">
                     {r.prix}
-                  </td>
-                  <td className="p-4 text-neutral-500 dark:text-neutral-400">
+                  </Text>
+                  <Text as="td" variant="inherit" tone="muted" className="p-4">
                     {r.format}
-                  </td>
-                  <td className="p-4 text-neutral-500 dark:text-neutral-400">
+                  </Text>
+                  <Text as="td" variant="inherit" tone="muted" className="p-4">
                     {r.engagement}
-                  </td>
-                  <td className="p-4 text-neutral-500 dark:text-neutral-400">
+                  </Text>
+                  <Text as="td" variant="inherit" tone="muted" className="p-4">
                     {r.verdict}
-                  </td>
+                  </Text>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
 
-        <p className="mt-6 text-center text-sm text-neutral-500 dark:text-neutral-400">
+        <Text variant="small" tone="muted" className="mt-6 text-center">
           Comparaison détaillée avec Marketing Mania&nbsp;:{' '}
           <Link
             href="/incubateur-solopreneur-vs-marketing-mania"
@@ -719,7 +740,7 @@ function ComparatifAlternativesSection() {
           >
             Incubateur Solopreneur vs Marketing Mania →
           </Link>
-        </p>
+        </Text>
       </Container>
     </Section>
   );
@@ -754,10 +775,10 @@ function AvisExternesSection() {
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Avis externes sur l’Incubateur Solopreneur
           </Text>
-          <p className="text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted">
             Témoignages publics extraits de Trustpilot, LinkedIn et des calls
             ambassadeurs.
-          </p>
+          </Text>
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
@@ -770,16 +791,20 @@ function AvisExternesSection() {
               >
                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
               </svg>
-              <p className="mb-6 flex-1 text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+              <Text
+                variant="small"
+                tone="muted"
+                className="mb-6 flex-1 leading-relaxed"
+              >
                 {p.quote}
-              </p>
+              </Text>
               <div className="border-t border-border pt-4">
                 <div className="font-medium text-neutral-950 dark:text-neutral-200">
                   {p.title}
                 </div>
-                <div className="text-sm text-neutral-500 dark:text-neutral-400">
+                <Text as="div" variant="small" tone="muted">
                   {p.source}
-                </div>
+                </Text>
               </div>
             </Surface>
           ))}
@@ -820,7 +845,7 @@ function PourQuiSection() {
 
         <div className="grid gap-8 md:grid-cols-2">
           <div className="rounded-xl border border-accent/30 bg-accent/5 p-6">
-            <Text variant="h4" as="h3" className="mb-4 text-accent">
+            <Text tone="accent" variant="h4" as="h3" className="mb-4">
               ✅ Achète sans hésiter
             </Text>
             <ul className="space-y-3">
@@ -837,22 +862,21 @@ function PourQuiSection() {
           </div>
 
           <Surface>
-            <Text
-              variant="h4"
-              as="h3"
-              className="mb-4 text-neutral-500 dark:text-neutral-400"
-            >
+            <Text tone="muted" variant="h4" as="h3" className="mb-4">
               ❌ Passe ton chemin
             </Text>
             <ul className="space-y-3">
               {no.map((item) => (
-                <li
+                <Text
+                  as="li"
+                  variant="small"
+                  tone="muted"
                   key={item}
-                  className="flex items-start gap-3 text-sm text-neutral-500 dark:text-neutral-400"
+                  className="flex items-start gap-3"
                 >
                   <XMarkIcon className="mt-0.5 h-5 w-5 shrink-0 text-destructive" />
                   {item}
-                </li>
+                </Text>
               ))}
             </ul>
           </Surface>
@@ -870,10 +894,10 @@ function PrixEtCodeReductionSection() {
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Prix et code réduction
           </Text>
-          <p className="mx-auto max-w-2xl text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted" className="mx-auto max-w-2xl">
             Trois tarifs possibles selon comment tu rejoins l’Incubateur. Le
             tarif affilié est le plus bas verrouillé par Flavie.
-          </p>
+          </Text>
         </div>
 
         <div className="overflow-hidden rounded-xl border border-border">
@@ -884,26 +908,36 @@ function PrixEtCodeReductionSection() {
           </div>
           <div className="grid grid-cols-3 items-center bg-card p-6 text-center">
             <div>
-              <div className="text-lg font-semibold text-neutral-500 line-through dark:text-neutral-400">
+              <Text
+                as="div"
+                variant="lead"
+                tone="muted"
+                className="font-semibold line-through"
+              >
                 2 400 € HT
-              </div>
-              <div className="mt-1 text-xs uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
+              </Text>
+              <Text as="div" variant="eyebrow" tone="muted" className="mt-1">
                 Page de vente
-              </div>
+              </Text>
             </div>
             <div>
-              <div className="text-lg font-semibold text-neutral-500 line-through dark:text-neutral-400">
+              <Text
+                as="div"
+                variant="lead"
+                tone="muted"
+                className="font-semibold line-through"
+              >
                 1 900 € HT
-              </div>
-              <div className="mt-1 text-xs uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
+              </Text>
+              <Text as="div" variant="eyebrow" tone="muted" className="mt-1">
                 Après VSL (3–4 jours)
-              </div>
+              </Text>
             </div>
             <div className="rounded-lg bg-accent/10 px-2 py-3">
               <div className="text-xl font-bold text-accent">1 490 € HT</div>
-              <div className="mt-1 text-xs font-semibold uppercase tracking-wide text-accent">
+              <Text as="div" variant="eyebrow" className="mt-1">
                 Lien affilié
-              </div>
+              </Text>
             </div>
           </div>
         </div>
@@ -929,11 +963,11 @@ function PrixEtCodeReductionSection() {
           </LinkButton>
         </div>
 
-        <p className="mt-6 text-center text-xs text-neutral-500 dark:text-neutral-400">
+        <Text variant="caption" tone="muted" className="mt-6 text-center">
           Divulgation&nbsp;: lien d’affiliation. Tu paies exactement le même
           prix (le plus bas du marché) qu’un client direct. Je touche une
           commission d’apporteur d’affaires, sans coût supplémentaire pour toi.
-        </p>
+        </Text>
       </Container>
     </Section>
   );
@@ -1008,10 +1042,14 @@ function CtaFinalSection() {
               <span className="text-accent">Incubateur Solopreneur</span>
               &nbsp;?
             </Text>
-            <p className="mx-auto mb-10 max-w-xl text-lg text-neutral-500 dark:text-neutral-400">
+            <Text
+              variant="lead"
+              tone="muted"
+              className="mx-auto mb-10 max-w-xl"
+            >
               Active le tarif affilié à 1&nbsp;490&nbsp;€ HT. Le prix le plus
               bas du marché, sans code à saisir.
-            </p>
+            </Text>
 
             <Button
               href={AFFILIATE_URL}
@@ -1026,7 +1064,12 @@ function CtaFinalSection() {
               <ArrowRightIcon className="ml-2 h-4 w-4" />
             </Button>
 
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-neutral-500 dark:text-neutral-400">
+            <Text
+              as="div"
+              variant="small"
+              tone="muted"
+              className="mt-8 flex flex-wrap items-center justify-center gap-6"
+            >
               <span className="flex items-center gap-2">
                 <CurrencyEuroIcon className="h-4 w-4 text-accent" />
                 910&nbsp;€ d’économie immédiate
@@ -1039,7 +1082,7 @@ function CtaFinalSection() {
                 <UsersIcon className="h-4 w-4 text-accent" />
                 12 mois d’accès complet
               </span>
-            </div>
+            </Text>
           </div>
         </Surface>
       </Container>
@@ -1167,9 +1210,9 @@ export default function AvisIncubateurSolopreneurPage() {
               <Text variant="h3" as="h2" className="mb-4 text-balance">
                 FAQ — Avis Incubateur Solopreneur
               </Text>
-              <p className="text-neutral-500 dark:text-neutral-400">
+              <Text variant="inherit" tone="muted">
                 Les questions qu’on me pose le plus souvent avant de rejoindre.
-              </p>
+              </Text>
             </div>
             <Faq faqs={faqs} title="" headingId="faq-avis-heading" />
           </Container>

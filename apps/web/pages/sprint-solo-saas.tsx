@@ -109,7 +109,11 @@ function HeroSection() {
           un logiciel qui bosse à ta place en 4 semaines
         </Text>
 
-        <p className="mx-auto mb-10 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-500 dark:text-neutral-400 md:text-xl">
+        <Text
+          variant="lead"
+          tone="muted"
+          className="mx-auto mb-10 max-w-2xl text-pretty leading-relaxed"
+        >
           4 lives avec{' '}
           <Link
             href="/flavie-prevot-avis"
@@ -122,7 +126,7 @@ function HeroSection() {
           premières features et tu trouves tes premiers utilisateurs. Sans
           savoir coder. Pour les freelances et solopreneurs qui refont la même
           chose chaque mois pour leurs clients.
-        </p>
+        </Text>
 
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button
@@ -141,7 +145,12 @@ function HeroSection() {
           </Button>
         </div>
 
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-neutral-500 dark:text-neutral-400">
+        <Text
+          as="div"
+          variant="small"
+          tone="muted"
+          className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2"
+        >
           <span className="flex items-center gap-2">
             <CheckIcon className="h-4 w-4 text-accent" />
             Aucun code à écrire soi-même
@@ -154,7 +163,7 @@ function HeroSection() {
             <CheckIcon className="h-4 w-4 text-accent" />
             12 mois d&apos;Incubateur pour le prix du Sprint
           </span>
-        </div>
+        </Text>
       </Container>
     </Section>
   );
@@ -190,12 +199,12 @@ function PourquoiSection() {
             Soit ça travaille à ta place, soit ça génère tes premiers revenus
             scalables
           </Text>
-          <p className="mx-auto max-w-2xl text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted" className="mx-auto max-w-2xl">
             Le Sprint n&apos;est pas réservé aux indie hackers. Les devs
             n&apos;ont pas besoin de Flavie pour créer un SaaS. Il est pensé
             pour les freelances et solopreneurs qui veulent mettre plus
             d&apos;IA dans leur business sans savoir par où commencer.
-          </p>
+          </Text>
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
@@ -207,9 +216,9 @@ function PourquoiSection() {
               <Text variant="h4" as="h3" className="mb-2">
                 {card.title}
               </Text>
-              <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+              <Text variant="small" tone="muted" className="leading-relaxed">
                 {card.description}
-              </p>
+              </Text>
             </Surface>
           ))}
         </div>
@@ -258,11 +267,11 @@ function ProgrammeSection() {
             Le programme&nbsp;: 4 lives, de l&apos;idée aux premiers
             utilisateurs
           </Text>
-          <p className="mx-auto max-w-2xl text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted" className="mx-auto max-w-2xl">
             Un live par semaine le vendredi midi, du 9 au 30 octobre 2026. On te
             prend par la main sur toute la chaîne. Replays disponibles si tu
             rates une séance.
-          </p>
+          </Text>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
@@ -277,9 +286,9 @@ function ProgrammeSection() {
               <Text variant="h4" as="h3" className="mb-2">
                 {live.title}
               </Text>
-              <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+              <Text variant="small" tone="muted" className="leading-relaxed">
                 {live.description}
-              </p>
+              </Text>
             </Surface>
           ))}
         </div>
@@ -322,15 +331,15 @@ function PourQuiSection() {
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Le Sprint Solo SaaS, c&apos;est pour toi si…
           </Text>
-          <p className="mx-auto max-w-2xl text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted" className="mx-auto max-w-2xl">
             Flavie le dit sans détour&nbsp;: c&apos;est un Sprint avancé, pas un
             Sprint débutant. Voici comment savoir de quel côté tu es.
-          </p>
+          </Text>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2">
           <div className="rounded-xl border border-accent/30 bg-accent/5 p-6">
-            <Text variant="h4" as="h3" className="mb-4 text-accent">
+            <Text tone="accent" variant="h4" as="h3" className="mb-4">
               ✅ Oui, fonce
             </Text>
             <ul className="space-y-3">
@@ -347,22 +356,21 @@ function PourQuiSection() {
           </div>
 
           <Surface>
-            <Text
-              variant="h4"
-              as="h3"
-              className="mb-4 text-neutral-500 dark:text-neutral-400"
-            >
+            <Text tone="muted" variant="h4" as="h3" className="mb-4">
               ❌ Passe ton chemin
             </Text>
             <ul className="space-y-3">
               {no.map((item) => (
-                <li
+                <Text
+                  as="li"
+                  variant="small"
+                  tone="muted"
                   key={item}
-                  className="flex items-start gap-3 text-sm text-neutral-500 dark:text-neutral-400"
+                  className="flex items-start gap-3"
                 >
                   <XMarkIcon className="mt-0.5 h-5 w-5 shrink-0 text-destructive" />
                   {item}
-                </li>
+                </Text>
               ))}
             </ul>
           </Surface>
@@ -401,12 +409,12 @@ function PrixSection() {
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Le prix du Sprint seul, avec l&apos;année entière
           </Text>
-          <p className="mx-auto max-w-2xl text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted" className="mx-auto max-w-2xl">
             Chaque Sprint est vendu seul ou couplé aux 12 mois. Les tarifs
             indiqués avec « ~ » sont ceux du Sprint précédent, la page de vente
             officielle fait foi. Le tarif parrainage, lui, ne change pas&nbsp;:
             c&apos;est le prix plancher que Flavie n&apos;affiche nulle part.
-          </p>
+          </Text>
         </div>
 
         <div className="overflow-hidden rounded-xl border border-border">
@@ -495,19 +503,27 @@ function OnLeFaitEnsembleSection() {
           <Text variant="h3" as="h2" className="mb-3">
             Je fais ce Sprint aussi. On peut le faire en binôme.
           </Text>
-          <p className="mb-4 text-pretty leading-relaxed text-neutral-500 dark:text-neutral-400">
+          <Text
+            variant="inherit"
+            tone="muted"
+            className="mb-4 text-pretty leading-relaxed"
+          >
             Je suis développeur React Native et Next.js depuis 2016 et incubé
             chez Flavie depuis 2025. En octobre, je construis mon propre SaaS
             back-office pendant le Sprint. Ce que j&apos;ai remarqué dans les
             Sprints précédents&nbsp;: quand on est deux ou trois à se connaître,
             on vit les hauts et les bas ensemble et on finit vraiment.
-          </p>
-          <p className="mb-6 text-pretty leading-relaxed text-neutral-500 dark:text-neutral-400">
+          </Text>
+          <Text
+            variant="inherit"
+            tone="muted"
+            className="mb-6 text-pretty leading-relaxed"
+          >
             Si tu rejoins par cette page, dis-le moi. Je te retrouve dans la
             communauté, on partage nos avancées chaque semaine, et quand ton
             setup bloque sur un truc de dev, tu as quelqu&apos;un à qui demander
             en dehors du live.
-          </p>
+          </Text>
           <Link
             href={AVIS_URL}
             className="inline-flex items-center gap-1 text-sm font-medium text-accent underline-offset-2 hover:underline"
@@ -584,10 +600,14 @@ function CtaFinalSection() {
               Fin octobre, ton SaaS tourne{' '}
               <span className="text-accent">avec de vrais utilisateurs</span>
             </Text>
-            <p className="mx-auto mb-10 max-w-xl text-lg text-neutral-500 dark:text-neutral-400">
+            <Text
+              variant="lead"
+              tone="muted"
+              className="mx-auto mb-10 max-w-xl"
+            >
               4 lives, un setup propre, tes premières features, un bêta-test. Et
               11 autres Sprints dans l&apos;année pour le même prix.
-            </p>
+            </Text>
 
             <Button
               href={AFFILIATE_URL}
@@ -602,7 +622,12 @@ function CtaFinalSection() {
               <ArrowRightIcon className="ml-2 h-4 w-4" />
             </Button>
 
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-neutral-500 dark:text-neutral-400">
+            <Text
+              as="div"
+              variant="small"
+              tone="muted"
+              className="mt-8 flex flex-wrap items-center justify-center gap-6"
+            >
               <span className="flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                 Page de parrainage officielle
@@ -615,7 +640,7 @@ function CtaFinalSection() {
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                 Roast de ton SaaS avec Pierre sur demande
               </span>
-            </div>
+            </Text>
           </div>
         </Surface>
       </Container>
@@ -746,9 +771,9 @@ export default function SprintSoloSaasPage() {
               <Text variant="h3" as="h2" className="mb-4 text-balance">
                 FAQ — Sprint Solo SaaS
               </Text>
-              <p className="text-neutral-500 dark:text-neutral-400">
+              <Text variant="inherit" tone="muted">
                 Les questions qui reviennent avant de se lancer.
-              </p>
+              </Text>
             </div>
             <Faq faqs={faqs} title="" headingId="faq-saas-heading" />
           </Container>

@@ -56,9 +56,13 @@ function SectionHeading({ title, lede }: { title: string; lede: string }) {
       <Text variant="h2" as="h2" className="mb-4">
         {title}
       </Text>
-      <p className="mx-auto max-w-2xl text-pretty text-neutral-500 dark:text-neutral-400">
+      <Text
+        variant="inherit"
+        tone="muted"
+        className="mx-auto max-w-2xl text-pretty"
+      >
         {lede}
-      </p>
+      </Text>
     </div>
   );
 }
@@ -103,10 +107,14 @@ export const Hero: Story = {
         <Text variant="h1" as="h1" className="mb-6">
           Agentic Sprint
         </Text>
-        <p className="mx-auto mb-10 max-w-2xl text-pretty text-lg text-neutral-500 dark:text-neutral-400">
+        <Text
+          variant="lead"
+          tone="muted"
+          className="mx-auto mb-10 max-w-2xl text-pretty"
+        >
           variant=&quot;plain&quot; spacing=&quot;hero&quot; leaves room for the
           fixed header above the first band.
-        </p>
+        </Text>
         <Button
           size="xl"
           accessoryRight={<ArrowRightIcon className="ml-2 size-4" />}
@@ -163,9 +171,13 @@ export const LandingPage: Story = {
           <Text variant="h1" as="h1" className="mb-6">
             Agentic Sprint
           </Text>
-          <p className="mx-auto max-w-2xl text-pretty text-lg text-neutral-500 dark:text-neutral-400">
+          <Text
+            variant="lead"
+            tone="muted"
+            className="mx-auto max-w-2xl text-pretty"
+          >
             4 semaines pour faire travailler un agent sur ton app.
-          </p>
+          </Text>
         </Container>
       </Section>
 
@@ -182,9 +194,9 @@ export const LandingPage: Story = {
                 <Text variant="h6" as="h3" className="mb-2">
                   {feature.title}
                 </Text>
-                <p className="text-sm text-neutral-500 dark:text-neutral-400">
+                <Text variant="small" tone="muted">
                   {feature.description}
-                </p>
+                </Text>
               </Surface>
             ))}
           </div>

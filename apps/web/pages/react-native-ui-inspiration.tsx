@@ -281,11 +281,7 @@ export default function ReactNativeUiInspirationPage({ itemListSchema }) {
               className="flex scroll-mt-28 flex-col gap-8"
             >
               <div className="flex max-w-3xl flex-col gap-3">
-                <Text
-                  as="p"
-                  variant="c2"
-                  className="font-semibold uppercase tracking-wide text-blue-600 dark:text-blue-400"
-                >
+                <Text tone="primary" as="p" variant="eyebrow">
                   Step {index + 1} · {category.step}
                 </Text>
                 <Text

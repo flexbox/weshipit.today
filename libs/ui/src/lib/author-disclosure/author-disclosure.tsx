@@ -44,15 +44,20 @@ export function AuthorDisclosure({
             <div className="font-semibold text-neutral-950 dark:text-neutral-100">
               {name}
             </div>
-            <div className="text-sm text-neutral-500 dark:text-neutral-400">
+            <Text as="div" variant="small" tone="muted">
               {tagline}
-            </div>
+            </Text>
           </div>
         </div>
 
-        <div className="space-y-4 text-pretty leading-relaxed text-neutral-500 dark:text-neutral-400">
+        <Text
+          as="div"
+          variant="inherit"
+          tone="muted"
+          className="space-y-4 text-pretty leading-relaxed"
+        >
           {children}
-        </div>
+        </Text>
       </div>
     </section>
   );

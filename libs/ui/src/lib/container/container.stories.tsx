@@ -1,3 +1,4 @@
+import { Text } from '../text/text';
 import type { Meta, StoryObj } from '@storybook/react';
 import { withPageBackdrop } from '../utils/story-backdrop';
 import { Container } from './container';
@@ -67,10 +68,15 @@ export const Sizes: Story = {
     <div className="grid gap-6">
       {SIZES.map(({ size, use, width }) => (
         <Container key={size} size={size}>
-          <div className="mb-1.5 flex justify-between text-xs text-neutral-500 dark:text-neutral-400">
+          <Text
+            as="div"
+            variant="caption"
+            tone="muted"
+            className="mb-1.5 flex justify-between"
+          >
             <span className="font-mono">size=&quot;{size}&quot;</span>
             <span>{use}</span>
-          </div>
+          </Text>
           <Ruler label={width} />
         </Container>
       ))}

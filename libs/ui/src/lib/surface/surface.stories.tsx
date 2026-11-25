@@ -38,9 +38,9 @@ const meta: Meta<typeof Surface> = {
         <Text variant="h6" as="h3" className="mb-2">
           Livrable concret
         </Text>
-        <p className="text-sm text-neutral-500 dark:text-neutral-400">
+        <Text variant="small" tone="muted">
           Une PR d’agent mergée sur ton app à la fin du mois.
-        </p>
+        </Text>
       </>
     ),
   },
@@ -144,9 +144,9 @@ export const FeatureGrid: Story = {
         <Surface key={stat.label} as="li" padding="sm" className="text-center">
           <stat.icon className="mx-auto mb-3 size-6 text-accent" />
           <div className="text-3xl font-bold text-accent">{stat.value}</div>
-          <div className="text-sm text-neutral-500 dark:text-neutral-400">
+          <Text as="div" variant="small" tone="muted">
             {stat.label}
-          </div>
+          </Text>
         </Surface>
       ))}
     </ul>
@@ -166,9 +166,9 @@ export const WithHeader: Story = {
           <Text variant="h5" as="h3" className="mb-1">
             Sprint Solo SaaS
           </Text>
-          <p className="text-sm text-neutral-500 dark:text-neutral-400">
+          <Text variant="small" tone="muted">
             `padding=&quot;none&quot;` lets the content split the box into rows.
-          </p>
+          </Text>
         </div>
       </>
     ),

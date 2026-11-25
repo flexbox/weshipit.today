@@ -425,13 +425,23 @@ export function PlanFinderSection({ ctaLink }: { ctaLink: string }) {
             {/* Progress */}
             <div className="mb-8">
               <div className="flex justify-between items-center mb-2">
-                <span className="text-sm text-muted-foreground tabular-nums">
+                <Text
+                  as="span"
+                  variant="small"
+                  tone="muted"
+                  className="tabular-nums"
+                >
                   Question {currentQuestion + 1} of {questions.length}
-                </span>
-                <span className="text-sm text-muted-foreground tabular-nums">
+                </Text>
+                <Text
+                  as="span"
+                  variant="small"
+                  tone="muted"
+                  className="tabular-nums"
+                >
                   {Math.round(((currentQuestion + 1) / questions.length) * 100)}
                   %
-                </span>
+                </Text>
               </div>
               <div className="h-2 bg-muted rounded-full overflow-hidden dark:bg-muted/20">
                 <div
@@ -460,9 +470,9 @@ export function PlanFinderSection({ ctaLink }: { ctaLink: string }) {
                         <p className="font-medium text-foreground group-hover:text-primary transition-colors">
                           {option.label}
                         </p>
-                        <p className="text-sm text-muted-foreground mt-1">
+                        <Text variant="small" tone="muted" className="mt-1">
                           {option.description}
-                        </p>
+                        </Text>
                       </div>
                       <ChevronRightIcon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
                     </div>
@@ -490,9 +500,13 @@ export function PlanFinderSection({ ctaLink }: { ctaLink: string }) {
                   >
                     <plan.icon className={cn('w-8 h-8', plan.textColor)} />
                   </div>
-                  <p className="text-sm font-medium text-muted-foreground mb-2">
+                  <Text
+                    variant="small"
+                    tone="muted"
+                    className="font-medium mb-2"
+                  >
                     We recommend
-                  </p>
+                  </Text>
                   <Text as="h3" variant="h3">
                     {plan.name}
                   </Text>
@@ -505,11 +519,13 @@ export function PlanFinderSection({ ctaLink }: { ctaLink: string }) {
                     >
                       {plan.price}
                     </span>
-                    <span className="text-muted-foreground">{plan.period}</span>
+                    <Text as="span" variant="inherit" tone="muted">
+                      {plan.period}
+                    </Text>
                   </div>
-                  <p className="text-muted-foreground mt-3">
+                  <Text variant="inherit" tone="muted" className="mt-3">
                     {plan.description}
-                  </p>
+                  </Text>
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-4 mb-8">
@@ -589,13 +605,17 @@ export function PlanFinderSection({ ctaLink }: { ctaLink: string }) {
                     >
                       {p.price}
                     </span>
-                    <span className="text-sm text-muted-foreground">
+                    <Text as="span" variant="small" tone="muted">
                       {p.period}
-                    </span>
+                    </Text>
                   </div>
-                  <p className="text-sm text-muted-foreground mb-4 md:min-h-24">
+                  <Text
+                    variant="small"
+                    tone="muted"
+                    className="mb-4 md:min-h-24"
+                  >
                     {p.description}
-                  </p>
+                  </Text>
                   <ul className="space-y-2 mb-6">
                     {p.highlights.map((highlight, index) => (
                       <li

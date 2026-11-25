@@ -52,7 +52,7 @@ function ResourceList({ records }) {
           >
             <div>
               {conference_country && (
-                <Text as="p" variant="p2" className="mb-2 text-gray-500">
+                <Text tone="muted" as="p" variant="p2" className="mb-2">
                   {conference_country}
                 </Text>
               )}

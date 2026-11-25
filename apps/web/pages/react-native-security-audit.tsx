@@ -97,11 +97,7 @@ export default function ReactNativeSecurityAudit() {
       >
         <HeroSplit
           eyebrow={
-            <Text
-              as="p"
-              variant="c2"
-              className="uppercase tracking-wide text-blue-600 dark:text-blue-400"
-            >
+            <Text tone="primary" as="p" variant="eyebrow">
               Free tool · React Native & Expo
             </Text>
           }
@@ -144,11 +140,7 @@ export default function ReactNativeSecurityAudit() {
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {CHECKED_AREAS.map((area) => (
               <Card key={area.title} size="md">
-                <Text
-                  as="p"
-                  variant="c2"
-                  className="uppercase tracking-wide text-blue-600 dark:text-blue-400"
-                >
+                <Text tone="primary" as="p" variant="eyebrow">
                   {area.masvs}
                 </Text>
                 <Text as="h3" variant="h6" className="mt-2">

@@ -203,9 +203,10 @@ export function TeamSection() {
             Meet your React Native team
           </Text>
           <Text
+            tone="muted"
             as="p"
             variant="p1"
-            className="max-w-2xl mx-auto mt-4 text-muted-foreground"
+            className="max-w-2xl mx-auto mt-4"
           >
             We’re a specialized duo combining strategic expertise with reliable
             execution.
@@ -242,7 +243,9 @@ export function TeamSection() {
                     <Text as="h3" variant="h5">
                       {member.name}
                     </Text>
-                    <p className="text-muted-foreground">{member.role}</p>
+                    <Text variant="inherit" tone="muted">
+                      {member.role}
+                    </Text>
                     <Badge variant="gray-lighter" className="mt-2" size="sm">
                       {currentYear - member.experienceStarted}+ years
                     </Badge>
@@ -260,9 +263,9 @@ export function TeamSection() {
                         key={item.text}
                         className="flex items-center gap-3 text-foreground"
                       >
-                        <span className="text-muted-foreground">
+                        <Text as="span" variant="inherit" tone="muted">
                           {item.icon}
-                        </span>
+                        </Text>
                         <span className="text-sm">{item.text}</span>
                       </div>
                     ))}
