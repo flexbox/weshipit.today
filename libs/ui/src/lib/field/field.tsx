@@ -21,6 +21,8 @@ export const fieldVariants = cva(
     'dark:text-white',
     'dark:ring-white/10',
     'dark:aria-invalid:ring-red-400',
+    'disabled:cursor-not-allowed',
+    'disabled:opacity-50',
   ],
   {
     defaultVariants: {

@@ -1,28 +1,179 @@
+import {
+  ChartBarIcon,
+  ClockIcon,
+  ShieldCheckIcon,
+} from '@heroicons/react/24/outline';
 import type { Meta, StoryObj } from '@storybook/react';
+import { Badge } from '../badge/badge';
+import { Text } from '../text/text';
+import { withPageBackdrop } from '../utils/story-backdrop';
 import { Surface } from './surface';
 
 const meta: Meta<typeof Surface> = {
-  component: Surface,
-  title: 'Layout/Surface',
   argTypes: {
-    interactive: { control: 'boolean' },
-    padding: { control: 'radio', options: ['none', 'sm', 'md', 'lg', 'xl'] },
-    radius: { control: 'radio', options: ['xl', '2xl'] },
+    as: {
+      control: 'text',
+      description: 'Element to render (`div`, `li`, `article`, `a`…).',
+    },
+    interactive: {
+      control: 'boolean',
+      description: 'Accent border on hover, for surfaces that link somewhere.',
+    },
+    padding: {
+      control: 'inline-radio',
+      description:
+        '`none` · `sm` p-5 · `md` p-6 · `lg` p-6 md:p-8 · `xl` p-6 md:p-10',
+      options: ['none', 'sm', 'md', 'lg', 'xl'],
+      table: { defaultValue: { summary: 'md' } },
+    },
+    radius: {
+      control: 'inline-radio',
+      options: ['xl', '2xl'],
+      table: { defaultValue: { summary: 'xl' } },
+    },
   },
+  args: {
+    children: (
+      <>
+        <Text variant="h6" as="h3" className="mb-2">
+          Livrable concret
+        </Text>
+        <p className="text-sm text-neutral-500 dark:text-neutral-400">
+          Une PR d’agent mergée sur ton app à la fin du mois.
+        </p>
+      </>
+    ),
+  },
+  component: Surface,
+  decorators: [
+    withPageBackdrop,
+    (Story) => (
+      <div className="max-w-md">
+        <Story />
+      </div>
+    ),
+  ],
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'Bordered panel on the theme tokens (`--card`, `--border`, `--accent`): the box landing sections are built from. Use `Card` for the older slate, rounded-3xl look.',
+      },
+    },
+  },
+  title: 'Layout/Surface',
 };
 export default meta;
 type Story = StoryObj<typeof Surface>;
 
-export const Default: Story = {
-  args: {
-    children: <p>Livrable concret à la fin de chaque semaine.</p>,
+export const Default: Story = {};
+
+export const Interactive: Story = {
+  args: { interactive: true },
+  render: ({ children, ...args }) => (
+    <a href="#interactive" className="block">
+      <Surface {...args}>{children}</Surface>
+    </a>
+  ),
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Hover it: the border turns accent. Wrap it in a link (or `next/link`) when the whole box navigates.',
+      },
+    },
   },
 };
 
-export const Interactive: Story = {
-  args: { ...Default.args, interactive: true },
+export const Paddings: Story = {
+  decorators: [
+    (Story) => (
+      <div className="w-[min(48rem,90vw)]">
+        <Story />
+      </div>
+    ),
+  ],
+  render: () => (
+    <div className="grid gap-4 sm:grid-cols-2">
+      {(['none', 'sm', 'md', 'lg', 'xl'] as const).map((padding) => (
+        <Surface key={padding} padding={padding}>
+          <div className="rounded-md bg-accent/10 px-3 py-2 font-mono text-sm text-accent">
+            padding=&quot;{padding}&quot;
+          </div>
+        </Surface>
+      ))}
+    </div>
+  ),
 };
 
-export const Large: Story = {
-  args: { ...Default.args, padding: 'xl', radius: '2xl' },
+export const Radius: Story = {
+  render: () => (
+    <div className="grid gap-4">
+      <Surface>radius=&quot;xl&quot;, default, for cards in a grid</Surface>
+      <Surface radius="2xl" padding="lg">
+        radius=&quot;2xl&quot;, for large standalone panels (pricing, final CTA)
+      </Surface>
+    </div>
+  ),
+};
+
+const STATS = [
+  { icon: ClockIcon, label: 'par semaine', value: '2–3 h' },
+  { icon: ChartBarIcon, label: 'lives', value: '4' },
+  { icon: ShieldCheckIcon, label: 'satisfait ou remboursé', value: '14 j' },
+];
+
+export const FeatureGrid: Story = {
+  decorators: [
+    (Story) => (
+      <div className="w-[min(56rem,90vw)]">
+        <Story />
+      </div>
+    ),
+  ],
+  parameters: {
+    docs: {
+      description: {
+        story: 'A `ul` of `Surface as="li"`, the common landing-page grid.',
+      },
+    },
+  },
+  render: () => (
+    <ul className="grid gap-4 sm:grid-cols-3">
+      {STATS.map((stat) => (
+        <Surface key={stat.label} as="li" padding="sm" className="text-center">
+          <stat.icon className="mx-auto mb-3 size-6 text-accent" />
+          <div className="text-3xl font-bold text-accent">{stat.value}</div>
+          <div className="text-sm text-neutral-500 dark:text-neutral-400">
+            {stat.label}
+          </div>
+        </Surface>
+      ))}
+    </ul>
+  ),
+};
+
+export const WithHeader: Story = {
+  args: {
+    children: (
+      <>
+        <div className="border-b border-border px-6 py-4">
+          <Badge variant="neutral" size="sm">
+            Le plus choisi
+          </Badge>
+        </div>
+        <div className="p-6">
+          <Text variant="h5" as="h3" className="mb-1">
+            Sprint Solo SaaS
+          </Text>
+          <p className="text-sm text-neutral-500 dark:text-neutral-400">
+            `padding=&quot;none&quot;` lets the content split the box into rows.
+          </p>
+        </div>
+      </>
+    ),
+    className: 'overflow-hidden',
+    padding: 'none',
+    radius: '2xl',
+  },
 };
