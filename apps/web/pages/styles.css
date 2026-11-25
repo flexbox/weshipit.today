@@ -169,3 +169,36 @@
     }
   }
 }
+
+/* Heroicons outline are drawn on a 24px grid, so at 16-20px their stroke
+   thins to 1-1.25px. Hold small icons at 1.5px rendered. Button raises it to
+   2px beside its semibold label; Badge stays at 1.5px because detailed glyphs
+   (calendar dots, sparkles) clump at 2px on 14-16px. Icons at 24px and up
+   keep their natural, heavier stroke. */
+@layer base {
+  svg[data-slot='icon'][stroke]:is(
+      .size-3,
+      .size-3\.5,
+      .size-4,
+      .size-5,
+      .h-3,
+      .h-3\.5,
+      .h-4,
+      .h-5
+    ) {
+    stroke-width: 1.5;
+  }
+  svg[data-slot='icon'][stroke]:is(
+      .size-3,
+      .size-3\.5,
+      .size-4,
+      .size-5,
+      .h-3,
+      .h-3\.5,
+      .h-4,
+      .h-5
+    )
+    * {
+    vector-effect: non-scaling-stroke;
+  }
+}

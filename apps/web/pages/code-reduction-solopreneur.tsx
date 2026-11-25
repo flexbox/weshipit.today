@@ -242,10 +242,7 @@ function CestQuoiSection() {
 
           <div className="grid gap-4 md:grid-cols-3">
             {bullets.map((b) => (
-              <div
-                key={b.title}
-                className="rounded-xl border border-border bg-secondary/50 p-4"
-              >
+              <Surface tone="muted" key={b.title} className="p-4">
                 <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-lg bg-card">
                   <b.icon className="h-5 w-5 text-accent" />
                 </div>
@@ -255,7 +252,7 @@ function CestQuoiSection() {
                 <Text variant="small" tone="muted" className="leading-relaxed">
                   {b.description}
                 </Text>
-              </div>
+              </Surface>
             ))}
           </div>
 
@@ -358,14 +355,18 @@ function ComparatifSection() {
           ))}
         </div>
 
-        <div className="mx-auto mt-8 max-w-2xl rounded-xl border border-accent/30 bg-accent/5 p-5 text-sm leading-relaxed text-neutral-950 dark:text-neutral-200">
+        <Surface
+          tone="accent"
+          padding="sm"
+          className="mx-auto mt-8 max-w-2xl text-sm leading-relaxed text-neutral-950 dark:text-neutral-200"
+        >
           <span className="font-semibold text-accent">
             Le calcul qui change tout&nbsp;:
           </span>{' '}
           chaque Sprint est aussi vendu seul, autour de 1&nbsp;490&nbsp;€ HT le
           mois (ou 1&nbsp;990&nbsp;€ HT avec l&apos;année). Avec le tarif
           parrainage, tu paies le prix d&apos;un Sprint et tu as les 12.
-        </div>
+        </Surface>
 
         <div className="mt-10 flex justify-center">
           <Button
@@ -662,7 +663,7 @@ function PourQuiSection() {
         </div>
 
         <div className="grid gap-8 md:grid-cols-2">
-          <div className="rounded-xl border border-accent/30 bg-accent/5 p-6">
+          <Surface tone="accent">
             <Text tone="accent" variant="h4" as="h3" className="mb-4">
               ✅ Oui, fonce
             </Text>
@@ -677,7 +678,7 @@ function PourQuiSection() {
                 </li>
               ))}
             </ul>
-          </div>
+          </Surface>
 
           <Surface>
             <Text tone="muted" variant="h4" as="h3" className="mb-4">

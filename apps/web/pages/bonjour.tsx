@@ -180,17 +180,14 @@ function ProblemsSection() {
             </Text>
             <ul className="space-y-4">
               {problems.map((p, i) => (
-                <li
-                  key={i}
-                  className="flex items-start gap-4 rounded-lg border border-border bg-card p-4"
-                >
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-secondary">
+                <Surface as="li" key={i} className="flex items-start gap-4 p-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-secondary">
                     <p.icon className="h-5 w-5 text-neutral-500 dark:text-neutral-400" />
                   </div>
                   <span className="pt-2 text-neutral-950 dark:text-neutral-200">
                     {p.text}
                   </span>
-                </li>
+                </Surface>
               ))}
             </ul>
           </div>
@@ -217,7 +214,7 @@ function ProblemsSection() {
                 </li>
               ))}
             </ul>
-            <div className="rounded-xl border border-destructive/30 bg-destructive/5 p-6">
+            <Surface tone="destructive">
               <p className="mb-4 font-medium text-destructive">
                 Résultat : tu ne maîtrises plus rien.
               </p>
@@ -229,7 +226,7 @@ function ProblemsSection() {
                   Dans les deux cas, tu brûles du cash.
                 </span>
               </Text>
-            </div>
+            </Surface>
           </div>
         </div>
       </Container>
@@ -664,9 +661,9 @@ function UrgencySection() {
 
         <div className="mb-12 grid gap-6 md:grid-cols-3">
           {items.map((item, i) => (
-            <div
+            <Surface
               key={i}
-              className="flex flex-col items-center rounded-xl border border-border bg-card p-8 text-center"
+              className="flex flex-col items-center p-8 text-center"
             >
               <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-destructive/10">
                 <item.icon className="h-7 w-7 text-destructive" />
@@ -677,16 +674,16 @@ function UrgencySection() {
               <Text variant="small" tone="muted">
                 {item.text}
               </Text>
-            </div>
+            </Surface>
           ))}
         </div>
 
-        <div className="rounded-xl border border-accent bg-accent/10 p-8 text-center">
+        <Surface tone="accent" className="p-8 text-center">
           <p className="text-xl font-bold text-neutral-950 dark:text-neutral-200">
             On prend <span className="text-accent">3 clients max</span>. Il
             reste une place.
           </p>
-        </div>
+        </Surface>
       </Container>
     </Section>
   );

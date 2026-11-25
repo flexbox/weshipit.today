@@ -26,6 +26,13 @@ const meta: Meta<typeof Surface> = {
       options: ['none', 'sm', 'md', 'lg', 'xl'],
       table: { defaultValue: { summary: 'md' } },
     },
+    tone: {
+      control: 'inline-radio',
+      description:
+        '`default` card · `accent` highlight · `destructive` warning · `muted` recessed box inside another surface',
+      options: ['default', 'accent', 'destructive', 'muted'],
+      table: { defaultValue: { summary: 'default' } },
+    },
     radius: {
       control: 'inline-radio',
       options: ['xl', '2xl'],
@@ -45,15 +52,9 @@ const meta: Meta<typeof Surface> = {
     ),
   },
   component: Surface,
-  decorators: [
-    withPageBackdrop,
-    (Story) => (
-      <div className="max-w-md">
-        <Story />
-      </div>
-    ),
-  ],
+  decorators: [withPageBackdrop],
   parameters: {
+    contentWidth: 'min(28rem, 85vw)',
     docs: {
       description: {
         component:
@@ -86,13 +87,9 @@ export const Interactive: Story = {
 };
 
 export const Paddings: Story = {
-  decorators: [
-    (Story) => (
-      <div className="w-[min(48rem,90vw)]">
-        <Story />
-      </div>
-    ),
-  ],
+  parameters: {
+    contentWidth: 'min(48rem, 85vw)',
+  },
   render: () => (
     <div className="grid gap-4 sm:grid-cols-2">
       {(['none', 'sm', 'md', 'lg', 'xl'] as const).map((padding) => (
@@ -102,6 +99,53 @@ export const Paddings: Story = {
           </div>
         </Surface>
       ))}
+    </div>
+  ),
+};
+
+export const Tones: Story = {
+  parameters: {
+    contentWidth: 'min(48rem, 85vw)',
+    docs: {
+      description: {
+        story:
+          'Use `tone`, not ad-hoc `border-accent/*` and `bg-accent/*` classes, so every highlighted box on the site matches.',
+      },
+    },
+  },
+  render: () => (
+    <div className="grid gap-4 sm:grid-cols-2">
+      <Surface>
+        <Text variant="h6" as="h3" className="mb-1">
+          default
+        </Text>
+        <Text variant="small" tone="muted">
+          Cards in a grid.
+        </Text>
+      </Surface>
+      <Surface tone="accent">
+        <Text variant="h6" as="h3" className="mb-1">
+          accent
+        </Text>
+        <Text variant="small" tone="muted">
+          Garantie, recommandation, chiffre clé.
+        </Text>
+      </Surface>
+      <Surface tone="destructive">
+        <Text variant="h6" as="h3" className="mb-1">
+          destructive
+        </Text>
+        <Text variant="small" tone="muted">
+          Ce qu’il ne faut pas faire.
+        </Text>
+      </Surface>
+      <Surface>
+        <Surface tone="muted" padding="sm">
+          <Text variant="small" tone="muted">
+            muted, nested inside a default surface.
+          </Text>
+        </Surface>
+      </Surface>
     </div>
   ),
 };
@@ -124,14 +168,8 @@ const STATS = [
 ];
 
 export const FeatureGrid: Story = {
-  decorators: [
-    (Story) => (
-      <div className="w-[min(56rem,90vw)]">
-        <Story />
-      </div>
-    ),
-  ],
   parameters: {
+    contentWidth: 'min(56rem, 85vw)',
     docs: {
       description: {
         story: 'A `ul` of `Surface as="li"`, the common landing-page grid.',

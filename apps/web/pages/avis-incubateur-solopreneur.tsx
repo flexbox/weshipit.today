@@ -267,14 +267,17 @@ function VerdictSection() {
             ))}
           </ul>
 
-          <div className="mt-8 rounded-lg border border-accent/30 bg-accent/10 p-4 text-sm leading-relaxed text-neutral-950 dark:text-neutral-200">
+          <Surface
+            tone="accent"
+            className="mt-8 p-4 text-sm leading-relaxed text-neutral-950 dark:text-neutral-200"
+          >
             <span className="font-semibold">Recommandé</span> si tu es déjà
             solopreneur actif, que tu veux construire un actif (newsletter,
             podcast, offre, SaaS, sponsoring) et que tu as 1 à 3 heures par
             semaine. <span className="font-semibold">À éviter</span> si tu
             cherches un cours vidéo passif ou si tu n’as pas le temps d’assister
             aux lives.
-          </div>
+          </Surface>
         </Surface>
       </Container>
     </Section>
@@ -592,10 +595,7 @@ function ExperienceMoisParMoisSection() {
 
         <div className="space-y-4">
           {milestones.map((m, i) => (
-            <div
-              key={m.month}
-              className="relative rounded-xl border border-border bg-card p-6 md:pl-20"
-            >
+            <Surface key={m.month} className="relative md:pl-20">
               <div className="mb-2 flex items-center gap-3 md:absolute md:left-6 md:top-6 md:mb-0 md:flex-col md:items-start">
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-sm font-bold text-neutral-950 dark:text-neutral-200">
                   {i + 1}
@@ -622,7 +622,7 @@ function ExperienceMoisParMoisSection() {
                 <span className="font-semibold text-accent">Appris&nbsp;:</span>{' '}
                 {m.learned}
               </Text>
-            </div>
+            </Surface>
           ))}
         </div>
       </Container>
@@ -844,7 +844,7 @@ function PourQuiSection() {
         </div>
 
         <div className="grid gap-8 md:grid-cols-2">
-          <div className="rounded-xl border border-accent/30 bg-accent/5 p-6">
+          <Surface tone="accent">
             <Text tone="accent" variant="h4" as="h3" className="mb-4">
               ✅ Achète sans hésiter
             </Text>
@@ -859,7 +859,7 @@ function PourQuiSection() {
                 </li>
               ))}
             </ul>
-          </div>
+          </Surface>
 
           <Surface>
             <Text tone="muted" variant="h4" as="h3" className="mb-4">

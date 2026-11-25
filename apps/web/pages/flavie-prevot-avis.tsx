@@ -265,10 +265,7 @@ function ParcoursSection() {
 
         <div className="space-y-4">
           {stages.map((s, i) => (
-            <div
-              key={s.period}
-              className="relative rounded-xl border border-border bg-card p-6 md:pl-24"
-            >
+            <Surface key={s.period} className="relative md:pl-24">
               <div className="mb-2 flex items-center gap-3 md:absolute md:left-6 md:top-6 md:mb-0">
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-sm font-bold text-neutral-950 dark:text-neutral-200">
                   {i + 1}
@@ -283,7 +280,7 @@ function ParcoursSection() {
               <Text variant="small" tone="muted" className="leading-relaxed">
                 {s.description}
               </Text>
-            </div>
+            </Surface>
           ))}
         </div>
       </Container>
@@ -443,7 +440,7 @@ function ReputationSection() {
           ))}
         </div>
 
-        <div className="mt-8 rounded-xl border border-accent/30 bg-accent/5 p-6">
+        <Surface tone="accent" className="mt-8">
           <div className="mb-2 flex items-center gap-2">
             <ShieldCheckIcon className="h-5 w-5 text-accent" />
             <Text tone="accent" variant="h4" as="h3">
@@ -458,7 +455,7 @@ function ReputationSection() {
             à savoir si son approche te correspond — c’est l’objet des sections
             ci-dessous.
           </p>
-        </div>
+        </Surface>
       </Container>
     </Section>
   );

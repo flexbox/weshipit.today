@@ -74,7 +74,7 @@ function HeroSection() {
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
           <div>
             <Badge variant="accent" className="mb-6">
-              <MicrophoneIcon strokeWidth={2.25} className="h-4 w-4" />
+              <MicrophoneIcon className="h-4 w-4" />
               Kit média · Le Cross Platform Show
             </Badge>
 
@@ -102,7 +102,6 @@ function HeroSection() {
                   className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1 text-sm text-neutral-700 dark:text-neutral-300"
                 >
                   <channel.icon
-                    strokeWidth={2}
                     className="h-4 w-4 text-accent"
                     aria-hidden="true"
                   />
@@ -125,7 +124,7 @@ function HeroSection() {
                 className="min-h-11 justify-center"
               >
                 {CTA_LABEL}
-                <ArrowRightIcon strokeWidth={2.25} className="ml-2 h-4 w-4" />
+                <ArrowRightIcon className="ml-2 h-4 w-4" />
               </Button>
               <Button
                 as="a"
@@ -145,15 +144,15 @@ function HeroSection() {
               className="mt-8 flex flex-col gap-2"
             >
               <span className="flex items-center gap-2">
-                <CheckIcon strokeWidth={2.25} className="h-4 w-4 text-accent" />
+                <CheckIcon className="h-4 w-4 text-accent" />
                 Le co-créateur de React Native au micro
               </span>
               <span className="flex items-center gap-2">
-                <CheckIcon strokeWidth={2.25} className="h-4 w-4 text-accent" />
+                <CheckIcon className="h-4 w-4 text-accent" />
                 Animé par un Microsoft MVP
               </span>
               <span className="flex items-center gap-2">
-                <CheckIcon strokeWidth={2.25} className="h-4 w-4 text-accent" />
+                <CheckIcon className="h-4 w-4 text-accent" />
                 Media partner de React Native Connection
               </span>
             </Text>
@@ -241,10 +240,7 @@ function ProofSection() {
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {guests.map((guest) => (
               <div key={guest.name} className="flex items-start gap-3">
-                <MicrophoneIcon
-                  strokeWidth={1.8}
-                  className="mt-0.5 h-5 w-5 shrink-0 text-accent"
-                />
+                <MicrophoneIcon className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
                 <div>
                   <div className="text-sm font-semibold text-neutral-950 dark:text-neutral-100">
                     {guest.name}
@@ -351,10 +347,7 @@ function AudienceSection() {
                     key={item}
                     className="flex items-start gap-3"
                   >
-                    <CheckIcon
-                      strokeWidth={1.8}
-                      className="mt-0.5 h-5 w-5 shrink-0 text-accent"
-                    />
+                    <CheckIcon className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
                     {item}
                   </Text>
                 ))}
@@ -363,7 +356,7 @@ function AudienceSection() {
           ))}
         </div>
 
-        <div className="rounded-xl border border-accent/30 bg-accent/5 p-6">
+        <Surface tone="accent">
           <div className="mb-3 text-sm font-medium text-neutral-950 dark:text-neutral-200">
             Ce qu&apos;ils achètent ou évaluent en ce moment
           </div>
@@ -377,7 +370,7 @@ function AudienceSection() {
               </span>
             ))}
           </div>
-        </div>
+        </Surface>
       </Container>
     </Section>
   );
@@ -438,10 +431,7 @@ function ChannelsSection() {
             <Surface key={channel.title}>
               <div className="mb-3 flex items-center justify-between gap-4">
                 <div className="flex items-center gap-2">
-                  <channel.icon
-                    strokeWidth={1.8}
-                    className="h-5 w-5 shrink-0 text-accent"
-                  />
+                  <channel.icon className="h-5 w-5 shrink-0 text-accent" />
                   <Text variant="h4" as="h3">
                     {channel.title}
                   </Text>
@@ -468,7 +458,7 @@ function ChannelsSection() {
             className="min-h-11 justify-center"
           >
             {CTA_LABEL}
-            <ArrowRightIcon strokeWidth={2.25} className="ml-2 h-4 w-4" />
+            <ArrowRightIcon className="ml-2 h-4 w-4" />
           </Button>
           <Text variant="small" tone="muted">
             Proposition écrite sous 48 h, aucun engagement avant.
@@ -539,8 +529,8 @@ function ActivationsSection() {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {activations.map((item) => (
             <Surface key={item.title}>
-              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10">
-                <item.icon strokeWidth={1.8} className="h-5 w-5 text-accent" />
+              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-secondary">
+                <item.icon className="h-5 w-5 text-accent" />
               </div>
               <Text variant="h4" as="h3" className="mb-2">
                 {item.title}
@@ -642,10 +632,7 @@ function OffersSection() {
                     key={item}
                     className="flex items-start gap-3 text-sm text-neutral-950 dark:text-neutral-200"
                   >
-                    <CheckIcon
-                      strokeWidth={1.8}
-                      className="mt-0.5 h-5 w-5 shrink-0 text-accent"
-                    />
+                    <CheckIcon className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
                     {item}
                   </li>
                 ))}
@@ -672,7 +659,7 @@ function OffersSection() {
             className="min-h-11"
           >
             {CTA_LABEL}
-            <ArrowRightIcon strokeWidth={2.25} className="ml-2 h-4 w-4" />
+            <ArrowRightIcon className="ml-2 h-4 w-4" />
           </Button>
         </div>
       </Container>
@@ -704,7 +691,7 @@ function AudienceFitSection() {
         </div>
 
         <div className="grid gap-8 md:grid-cols-2">
-          <div className="rounded-xl border border-accent/30 bg-accent/5 p-6">
+          <Surface tone="accent">
             <Text
               tone="accent"
               variant="h4"
@@ -719,15 +706,12 @@ function AudienceFitSection() {
                   key={item}
                   className="flex items-start gap-3 text-sm text-neutral-950 dark:text-neutral-200"
                 >
-                  <CheckIcon
-                    strokeWidth={1.8}
-                    className="mt-0.5 h-5 w-5 shrink-0 text-accent"
-                  />
+                  <CheckIcon className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
                   {item}
                 </li>
               ))}
             </ul>
-          </div>
+          </Surface>
 
           <Surface>
             <Text
@@ -747,10 +731,7 @@ function AudienceFitSection() {
                   key={item}
                   className="flex items-start gap-3"
                 >
-                  <XMarkIcon
-                    strokeWidth={1.8}
-                    className="mt-0.5 h-5 w-5 shrink-0 text-destructive"
-                  />
+                  <XMarkIcon className="mt-0.5 h-5 w-5 shrink-0 text-destructive" />
                   {item}
                 </Text>
               ))}
@@ -838,7 +819,7 @@ function FinalCtaSection() {
 
           <div className="relative px-8 py-16 text-center md:py-24">
             <Badge variant="accent" className="mb-6">
-              <BriefcaseIcon strokeWidth={2.25} className="h-4 w-4" />
+              <BriefcaseIcon className="h-4 w-4" />
               Un seul sponsor par trimestre
             </Badge>
             <Text variant="h2" as="h2" className="mb-6 text-balance">
@@ -864,7 +845,7 @@ function FinalCtaSection() {
               className="mx-auto justify-center"
             >
               {CTA_LABEL}
-              <ArrowRightIcon strokeWidth={2.25} className="ml-2 h-4 w-4" />
+              <ArrowRightIcon className="ml-2 h-4 w-4" />
             </Button>
 
             <Text

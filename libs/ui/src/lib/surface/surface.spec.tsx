@@ -22,4 +22,11 @@ describe('Surface', () => {
     expect(element.className).toContain('hover:border-accent/50');
     expect(element.className).not.toContain('p-6');
   });
+
+  it('swaps the fill with tone', () => {
+    const { getByText } = render(<Surface tone="accent">Content</Surface>);
+    const { className } = getByText('Content');
+    expect(className).toContain('bg-accent/5');
+    expect(className).not.toContain('bg-card');
+  });
 });

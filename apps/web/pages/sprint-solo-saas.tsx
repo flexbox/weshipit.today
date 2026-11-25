@@ -293,7 +293,11 @@ function ProgrammeSection() {
           ))}
         </div>
 
-        <div className="mx-auto mt-8 max-w-3xl rounded-xl border border-accent/30 bg-accent/5 p-5 text-sm leading-relaxed text-neutral-950 dark:text-neutral-200">
+        <Surface
+          tone="accent"
+          padding="sm"
+          className="mx-auto mt-8 max-w-3xl text-sm leading-relaxed text-neutral-950 dark:text-neutral-200"
+        >
           <span className="font-semibold text-accent">
             Bonus parrainage&nbsp;:
           </span>{' '}
@@ -301,7 +305,7 @@ function ProgrammeSection() {
           de roast de 30 minutes avec Pierre. Il passe ton SaaS au crible et te
           dit franchement si c&apos;est bon ou pas. Demande-la moi après ton
           inscription.
-        </div>
+        </Surface>
       </Container>
     </Section>
   );
@@ -338,7 +342,7 @@ function PourQuiSection() {
         </div>
 
         <div className="grid gap-8 md:grid-cols-2">
-          <div className="rounded-xl border border-accent/30 bg-accent/5 p-6">
+          <Surface tone="accent">
             <Text tone="accent" variant="h4" as="h3" className="mb-4">
               ✅ Oui, fonce
             </Text>
@@ -353,7 +357,7 @@ function PourQuiSection() {
                 </li>
               ))}
             </ul>
-          </div>
+          </Surface>
 
           <Surface>
             <Text tone="muted" variant="h4" as="h3" className="mb-4">

@@ -524,7 +524,7 @@ export function Migration({ clients, feedback }: MigrationProps) {
                           src={item.data.avatar.url}
                           width={48}
                           height={48}
-                          className="h-12 w-12 rounded-full bg-slate-200 dark:bg-slate-700 object-cover"
+                          className="h-12 w-12 rounded-full bg-slate-200 dark:bg-slate-700 object-cover outline outline-1 -outline-offset-1 outline-black/10 dark:outline-white/10"
                           alt={item.data.avatar.alt || item.data.full_name}
                         />
                       )}

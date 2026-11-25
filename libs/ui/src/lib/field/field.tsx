@@ -1,26 +1,28 @@
 import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '../utils/cn';
 
-/** Shared look of text inputs, textareas and selects. */
+/**
+ * Shared look of text inputs, textareas and selects. The edge is an inset
+ * outline, not a ring: forced-colors mode drops box-shadow but keeps outlines.
+ */
 export const fieldVariants = cva(
   [
     'w-full',
     'rounded-md',
-    'border-0',
     'bg-white',
     'text-slate-900',
-    'ring-1',
-    'ring-inset',
-    'ring-slate-300',
+    'outline-1',
+    '-outline-offset-1',
+    'outline-slate-300',
     'placeholder:text-slate-400',
-    'focus:ring-2',
-    'focus:ring-inset',
-    'focus:ring-blue-600',
-    'aria-invalid:ring-red-500',
+    'focus:outline-2',
+    'focus:-outline-offset-2',
+    'focus:outline-blue-600',
+    'aria-invalid:outline-red-500',
     'dark:bg-white/5',
     'dark:text-white',
-    'dark:ring-white/10',
-    'dark:aria-invalid:ring-red-400',
+    'dark:outline-white/10',
+    'dark:aria-invalid:outline-red-400',
     'disabled:cursor-not-allowed',
     'disabled:opacity-50',
   ],
@@ -43,7 +45,7 @@ type FieldVariantProps = VariantProps<typeof fieldVariants>;
 export interface InputProps
   extends Omit<React.ComponentProps<'input'>, 'size'>, FieldVariantProps {}
 
-/** Text input. Set `aria-invalid` to show the error ring. */
+/** Text input. Set `aria-invalid` to show the red error outline. */
 export function Input({ className, size, ...props }: InputProps) {
   return (
     <input className={cn(fieldVariants({ size }), className)} {...props} />

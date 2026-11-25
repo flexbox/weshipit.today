@@ -389,7 +389,7 @@ function PourQuiSection() {
         </div>
 
         <div className="grid gap-8 md:grid-cols-2">
-          <div className="rounded-xl border border-accent/30 bg-accent/5 p-6">
+          <Surface tone="accent">
             <Text tone="accent" variant="h4" as="h3" className="mb-4">
               ✅ Oui, fonce
             </Text>
@@ -404,7 +404,7 @@ function PourQuiSection() {
                 </li>
               ))}
             </ul>
-          </div>
+          </Surface>
 
           <Surface>
             <Text tone="muted" variant="h4" as="h3" className="mb-4">
@@ -524,7 +524,7 @@ function GarantieSection() {
   return (
     <Section>
       <Container size="md">
-        <div className="rounded-2xl border border-accent/30 bg-accent/5 p-8 text-center md:p-12">
+        <Surface tone="accent" radius="2xl" className="p-8 text-center md:p-12">
           <ShieldCheckIcon className="mx-auto mb-6 h-12 w-12 text-accent" />
           <Text variant="h2" as="h2" className="mb-6 text-balance">
             Une PR en semaine 1, ou remboursé
@@ -540,7 +540,7 @@ function GarantieSection() {
             ça&nbsp;: le first-win de la semaine 1 est le cœur du sprint, pas sa
             conclusion.
           </Text>
-        </div>
+        </Surface>
       </Container>
     </Section>
   );

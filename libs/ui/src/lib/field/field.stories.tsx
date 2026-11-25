@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from '../button/button';
+import { withPageBackdrop } from '../utils/story-backdrop';
 import { FieldError, Input, Label, LabelHint, Select, Textarea } from './field';
 
 const meta: Meta<typeof Input> = {
@@ -22,14 +23,9 @@ const meta: Meta<typeof Input> = {
     size: 'md',
   },
   component: Input,
-  decorators: [
-    (Story) => (
-      <div className="max-w-md">
-        <Story />
-      </div>
-    ),
-  ],
+  decorators: [withPageBackdrop],
   parameters: {
+    contentWidth: 'min(28rem, 85vw)',
     docs: {
       description: {
         component:

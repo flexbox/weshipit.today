@@ -464,7 +464,7 @@ function WhoAmI() {
               alt="David Leuliette with Jacob Krupski and Mazen Chami"
               fill
               sizes="(min-width: 1024px) 40vw, 100vw"
-              className="object-cover"
+              className="object-cover outline outline-1 -outline-offset-1 outline-black/10 dark:outline-white/10"
               priority={false}
             />
           </div>

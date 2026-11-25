@@ -191,7 +191,7 @@ function VerdictSection() {
         </div>
 
         <div className="space-y-4">
-          <div className="rounded-xl border border-accent/30 bg-accent/5 p-6">
+          <Surface tone="accent">
             <div className="mb-2 flex items-center gap-2">
               <PencilSquareIcon className="h-5 w-5 text-accent" />
               <Text tone="accent" variant="h4" as="h3">
@@ -204,9 +204,9 @@ function VerdictSection() {
               Idéal si tu veux monter en compétence technique sur ces sujets en
               6–8 semaines intensives.
             </p>
-          </div>
+          </Surface>
 
-          <div className="rounded-xl border border-accent/30 bg-accent/5 p-6">
+          <Surface tone="accent">
             <div className="mb-2 flex items-center gap-2">
               <UsersIcon className="h-5 w-5 text-accent" />
               <Text tone="accent" variant="h4" as="h3">
@@ -221,9 +221,9 @@ function VerdictSection() {
               podcast, offre, sponsoring). Chaque vendredi, un actif construit
               en live avec un cercle de pairs qui te tient le rythme.
             </p>
-          </div>
+          </Surface>
 
-          <div className="rounded-xl border border-accent/40 bg-accent/5 p-6">
+          <Surface tone="accent">
             <div className="mb-2 flex items-center gap-2">
               <BoltIcon className="h-5 w-5 text-accent" />
               <Text tone="accent" variant="h4" as="h3">
@@ -239,7 +239,7 @@ function VerdictSection() {
               mini-SaaS te prend l’après-midi alors qu’elle prend 3 semaines à
               un non-dev.
             </p>
-          </div>
+          </Surface>
 
           <Surface>
             <div className="mb-2 flex items-center gap-2">
@@ -689,7 +689,7 @@ function LesDeuxSection() {
               construiras ensuite.
             </Text>
           </Surface>
-          <div className="rounded-xl border border-accent/30 bg-accent/5 p-6">
+          <Surface tone="accent">
             <Text as="div" variant="eyebrow" className="mb-3">
               Étape 2
             </Text>
@@ -701,7 +701,7 @@ function LesDeuxSection() {
               lives-ateliers. Là où tu poses les briques d’un actif réel avec
               une pair pression positive.
             </p>
-          </div>
+          </Surface>
           <Surface>
             <Text as="div" variant="eyebrow" className="mb-3">
               Budget total
