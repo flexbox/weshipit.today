@@ -1,47 +1,77 @@
 'use client';
 
-import { createContext, useContext } from 'react';
-import { motion, useReducedMotion } from 'framer-motion';
+import {
+  ComponentPropsWithoutRef,
+  createContext,
+  useContext,
+  useLayoutEffect,
+} from 'react';
+import { cn } from '../utils/cn';
+import {
+  revealClassName,
+  revealOffsetClassName,
+  RevealPhase,
+  useReveal,
+} from './use-reveal';
 
-const FadeInStaggerContext = createContext(false);
+/** Phase of the surrounding `FadeInStagger`, or null outside of one. */
+const FadeInStaggerContext = createContext<RevealPhase | null>(null);
 
-const viewport = { margin: '0px 0px -200px', once: true };
+// Wait until the element is 200px into the viewport, so the fade is seen.
+const rootMargin = '0px 0px -200px';
 
-// https://www.framer.com/motion/component/###animating-css-variables
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function FadeIn(props: any) {
-  const shouldReduceMotion = useReducedMotion();
-  const isInStaggerGroup = useContext(FadeInStaggerContext);
+type DivProps = ComponentPropsWithoutRef<'div'>;
+
+/**
+ * Fades its content in and up the first time it scrolls into view. Content
+ * that is on screen when the page loads is shown straight away.
+ */
+export function FadeIn({ className, ...props }: DivProps) {
+  const groupPhase = useContext(FadeInStaggerContext);
+  const isInStaggerGroup = groupPhase !== null;
+  const { phase, ref } = useReveal<HTMLDivElement>({
+    disabled: isInStaggerGroup,
+    rootMargin,
+  });
 
   return (
-    <motion.div
-      variants={{
-        hidden: { opacity: 0, y: shouldReduceMotion ? 0 : 24 },
-        visible: { opacity: 1, y: 0 },
-      }}
-      transition={{ duration: 0.5 }}
-      {...(isInStaggerGroup
-        ? {}
-        : {
-            initial: 'hidden',
-            viewport,
-            whileInView: 'visible',
-          })}
+    <div
+      ref={ref}
+      data-reveal={isInStaggerGroup ? groupPhase : phase}
+      data-fade-in-item={isInStaggerGroup ? '' : undefined}
+      className={cn(revealClassName, revealOffsetClassName.up, className)}
       {...props}
     />
   );
 }
 
-export function FadeInStagger({ faster = false, ...props }) {
+interface FadeInStaggerProps extends DivProps {
+  /** Shorter delay between two items. */
+  faster?: boolean;
+}
+
+/** Reveals every `FadeIn` inside it one after the other. */
+export function FadeInStagger({
+  faster = false,
+  ...props
+}: FadeInStaggerProps) {
+  const { phase, ref } = useReveal<HTMLDivElement>({ rootMargin });
+  const stagger = faster ? 0.12 : 0.2;
+
+  // Items can sit at any depth, so the delay follows their order in the DOM
+  // rather than their position among the direct children.
+  useLayoutEffect(() => {
+    if (phase !== 'hidden') return;
+    ref.current
+      ?.querySelectorAll<HTMLElement>('[data-fade-in-item]')
+      .forEach((item, index) => {
+        item.style.transitionDelay = `${index * stagger}s`;
+      });
+  }, [phase, ref, stagger]);
+
   return (
-    <FadeInStaggerContext.Provider value={true}>
-      <motion.div
-        initial="hidden"
-        whileInView="visible"
-        viewport={viewport}
-        transition={{ staggerChildren: faster ? 0.12 : 0.2 }}
-        {...props}
-      />
+    <FadeInStaggerContext.Provider value={phase}>
+      <div ref={ref} {...props} />
     </FadeInStaggerContext.Provider>
   );
 }

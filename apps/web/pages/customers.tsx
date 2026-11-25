@@ -1,7 +1,7 @@
 import { Layout } from '../components/layout';
-import { Customer, getAllClients } from './api/client';
+import { Customer, getAllClients } from '../utils/clients';
 import { ClientsList, Prose } from '@weshipit/ui';
-import { linksApi } from './api/links';
+import { linksApi } from '../utils/links';
 
 interface CustomersPageProps {
   clients: Customer[];
@@ -51,12 +51,9 @@ export default function CustomersPage({ clients }: CustomersPageProps) {
   );
 }
 
-CustomersPage.getInitialProps = async function () {
-  const result = await getAllClients();
-
-  if (!result) {
-    return { clients: [] };
-  }
-
-  return { clients: result.clients };
-};
+// The client list is local content: prerender the page instead of running a
+// function on every request.
+export async function getStaticProps() {
+  const { clients } = await getAllClients();
+  return { props: { clients } };
+}

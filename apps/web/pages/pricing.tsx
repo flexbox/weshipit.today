@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { PlanFinderSection, Pricing, Text, pricingTiers } from '@weshipit/ui';
 import { Layout } from '../components/layout';
 import { FaqSection, faqPageSchema, faqs } from '../components/faq-section';
-import { linksApi } from './api/links';
+import { linksApi } from '../utils/links';
 
 const PAGE_URL = 'https://weshipit.today/pricing';
 

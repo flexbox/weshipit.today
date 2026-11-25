@@ -14,7 +14,7 @@ import { PodcastNavigation } from '../../components/podcast-navigation';
 import fs from 'fs';
 import path from 'path';
 import { ChevronDownIcon, ChevronLeftIcon } from '@heroicons/react/20/solid';
-import { linksApi } from '../api/links';
+import { linksApi } from '../../utils/links';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import Link from 'next/link';

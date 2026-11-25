@@ -1,4 +1,4 @@
-import posthog from 'posthog-js';
+import type { PostHog } from 'posthog-js';
 
 /**
  * Conversion tracking. Vercel Analytics handles traffic (pageviews,
@@ -11,17 +11,31 @@ import posthog from 'posthog-js';
 const POSTHOG_KEY = process.env.NEXT_PUBLIC_POSTHOG_KEY;
 
 export type ConversionEvent =
-  | 'audit_requested'
-  | 'book_call_clicked'
-  | 'checkout_clicked';
+  'audit_requested' | 'book_call_clicked' | 'checkout_clicked';
 
-let initialized = false;
+/**
+ * posthog-js is about 120 kB gzipped, more than React and Next.js together.
+ * It loads in its own chunk once the page is idle, so it never delays
+ * hydration. Events tracked before it arrives wait on this promise.
+ */
+let posthogReady: Promise<PostHog> | null = null;
 
-export function initAnalytics() {
-  if (initialized || !POSTHOG_KEY || typeof window === 'undefined') return;
-  initialized = true;
+function whenIdle(): Promise<void> {
+  return new Promise((resolve) => {
+    // Safari has no requestIdleCallback.
+    if (typeof window.requestIdleCallback === 'function') {
+      window.requestIdleCallback(() => resolve(), { timeout: 3000 });
+    } else {
+      window.setTimeout(resolve, 200);
+    }
+  });
+}
 
-  posthog.init(POSTHOG_KEY, {
+async function loadPostHog(key: string): Promise<PostHog> {
+  await whenIdle();
+  const { default: posthog } = await import('posthog-js');
+
+  posthog.init(key, {
     api_host: '/wsi',
     autocapture: false,
     capture_pageleave: false,
@@ -34,6 +48,15 @@ export function initAnalytics() {
     ui_host: 'https://eu.posthog.com',
   });
 
+  return posthog;
+}
+
+export function initAnalytics() {
+  if (posthogReady || !POSTHOG_KEY || typeof window === 'undefined') return;
+  posthogReady = loadPostHog(POSTHOG_KEY);
+  // A blocked or failed chunk must not surface as an unhandled rejection.
+  posthogReady.catch(() => undefined);
+
   document.addEventListener('click', trackOutboundConversion, {
     capture: true,
   });
@@ -43,8 +66,9 @@ export function track(
   event: ConversionEvent,
   properties?: Record<string, string>,
 ) {
-  if (!initialized) return;
-  posthog.capture(event, properties);
+  posthogReady
+    ?.then((posthog) => posthog.capture(event, properties))
+    .catch(() => undefined);
 }
 
 /**

@@ -29,7 +29,7 @@ import {
   XCircleIcon,
 } from '@heroicons/react/24/outline';
 import { Layout } from '../components/layout';
-import { linksApi } from './api/links';
+import { linksApi } from '../utils/links';
 
 function MaestroFlowPreview() {
   return (

@@ -28,7 +28,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { Layout } from '../components/layout';
 import { PodcastPhonePreview } from '../components/podcast-phone-preview';
-import { linksApi } from './api/links';
+import { linksApi } from '../utils/links';
 
 const CTA_LABEL = 'Réserver un appel de 20 min';
 const CTA_URL = linksApi.cal.PARTNER;

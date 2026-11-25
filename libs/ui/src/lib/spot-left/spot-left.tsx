@@ -1,4 +1,6 @@
-import { format } from 'date-fns';
+'use client';
+
+import { useSyncExternalStore } from 'react';
 
 export interface SpotLeftProps {
   spotsLeft: number;
@@ -13,11 +15,35 @@ export const SPOT_AVAILABILITY = {
   enterprise: 0,
 } as const;
 
+const monthFormatter = new Intl.DateTimeFormat('en-US', { month: 'long' });
+
+function nextMonthName() {
+  const today = new Date();
+  // Day 1, so a 31st does not overflow past the next month.
+  return monthFormatter.format(
+    new Date(today.getFullYear(), today.getMonth() + 1, 1),
+  );
+}
+
+const subscribe = () => () => undefined;
+const isServer = typeof window === 'undefined';
+
+/**
+ * Pages are prerendered, so the month in the HTML is the month of the last
+ * build. Hydrating with today's month would be a text mismatch, which makes
+ * React throw away the server HTML and render the whole page again. Hydrate
+ * with an empty month instead (the server text stays on screen, see
+ * `suppressHydrationWarning` below) and let React write today's month in the
+ * same pass.
+ */
+function useNextMonthName() {
+  return useSyncExternalStore(subscribe, nextMonthName, () =>
+    isServer ? nextMonthName() : '',
+  );
+}
+
 export function SpotLeft({ spotsLeft = 2, invert = false }: SpotLeftProps) {
-  const currentDate = new Date();
-  const nextMonth = new Date();
-  nextMonth.setMonth(currentDate.getMonth() + 1);
-  const nextMonthInText = format(nextMonth, 'MMMM');
+  const nextMonthInText = useNextMonthName();
 
   const wrapperClass = invert
     ? 'inline-block rounded-lg bg-white/10 px-3 py-1 text-sm text-gray-200'
@@ -32,7 +58,11 @@ export function SpotLeft({ spotsLeft = 2, invert = false }: SpotLeftProps) {
               <span className="animate-ping motion-reduce:animate-none absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
             </span>
-            Fully booked for {nextMonthInText}
+            {/* One text node: the parent is a flex row, where a nested
+                element would become its own item and lose the space. */}
+            <span suppressHydrationWarning>
+              {`Fully booked for ${nextMonthInText}`}
+            </span>
           </span>
         </div>
       </div>
@@ -47,8 +77,9 @@ export function SpotLeft({ spotsLeft = 2, invert = false }: SpotLeftProps) {
             <span className="animate-ping motion-reduce:animate-none absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
           </span>
-          {spotsLeft} spot{spotsLeft > 1 ? 's' : ''} left in {nextMonthInText}{' '}
-          ✨
+          <span suppressHydrationWarning>
+            {`${spotsLeft} spot${spotsLeft > 1 ? 's' : ''} left in ${nextMonthInText} ✨`}
+          </span>
         </span>
       </div>
     </div>

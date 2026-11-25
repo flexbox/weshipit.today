@@ -29,15 +29,15 @@ interface PlanSlugPageProps {
   title: string;
   issues: Issue[];
   content: string;
-  currentSlug: string;
-  description: string;
-  datePublished: string;
   heading: string;
   seoTitle: string;
-  seoDescription: string;
   topics: string[];
-  glossaryTerms: { slug: string; title: string }[];
+  currentSlug: string;
+  description: string;
   service: ServiceLink;
+  datePublished: string;
+  seoDescription: string;
+  glossaryTerms: { slug: string; title: string }[];
 }
 
 // Plan files start with YAML frontmatter, so the title is the first heading,
@@ -65,7 +65,16 @@ function isoWeekToDate(slug: string): string {
   return monday.toISOString().split('T')[0];
 }
 
+let cachedIssues: { files: string[]; issues: Issue[] } | null = null;
+
+/**
+ * Every plan page lists all the issues in its sidebar. Production reads the
+ * folder once per process instead of once per page; development reads again
+ * so a new file shows up on refresh.
+ */
 function readIssues(planDir: string): { files: string[]; issues: Issue[] } {
+  if (cachedIssues) return cachedIssues;
+
   const files = fs
     .readdirSync(planDir)
     .filter((f) => f.endsWith('.md'))
@@ -78,7 +87,9 @@ function readIssues(planDir: string): { files: string[]; issues: Issue[] } {
     return { slug, title: extractTitle(content) };
   });
 
-  return { files, issues };
+  const result = { files, issues };
+  if (process.env.NODE_ENV === 'production') cachedIssues = result;
+  return result;
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -93,10 +104,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const slug = params?.slug as string;
   const planDir = path.join(process.cwd(), 'pages/plan');
-  const { issues } = readIssues(planDir);
+  const { files, issues } = readIssues(planDir);
 
   // Find the file matching the slug (case-insensitive)
-  const files = fs.readdirSync(planDir).filter((f) => f.endsWith('.md'));
   const match = files.find(
     (f) => f.replace('.md', '').toLowerCase() === slug.toLowerCase(),
   );

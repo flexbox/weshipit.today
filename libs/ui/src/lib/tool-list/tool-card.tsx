@@ -5,7 +5,8 @@ import { Text } from '../text/text';
 import truncate from 'lodash/truncate';
 import Link from 'next/link';
 import { CompanyLogo } from './company-logo';
-import { Badge, getVariantFromType } from '@weshipit/ui';
+import { Badge } from '../badge/badge';
+import { getVariantFromType } from './get-variant-from-type';
 import ReactMarkdown from 'react-markdown';
 
 export function ToolCard({

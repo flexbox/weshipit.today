@@ -1,6 +1,9 @@
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { PropsWithChildren } from 'react';
+'use client';
+
+import { lazy, PropsWithChildren, Suspense, useEffect, useState } from 'react';
+import { Bars3Icon } from '@heroicons/react/24/outline';
+import LinkButton from '../button/link-button';
+import { HeaderLogo } from './header-logo';
 
 export interface HeaderLinksProps {
   href: string;
@@ -14,28 +17,28 @@ interface HeaderProps extends PropsWithChildren {
   callToActionLink?: HeaderLinksProps;
 }
 
-import { useState } from 'react';
-import { Dialog, DialogPanel } from '@headlessui/react';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import LinkButton from '../button/link-button';
+const loadMobileMenu = () => import('./mobile-menu');
+const MobileMenu = lazy(loadMobileMenu);
 
-function LogoToBrandPage() {
-  const router = useRouter();
+// Same breakpoint as the `lg:hidden` on the hamburger button.
+const HAMBURGER_QUERY = '(max-width: 1023px)';
 
-  const handleContextMenu = (e: React.MouseEvent) => {
-    e.preventDefault();
-    router.push('/brand');
-  };
+/**
+ * Fetches the menu once the page is idle on screens that show the hamburger,
+ * so the first tap opens it without waiting on the network.
+ */
+function usePreloadMobileMenu() {
+  useEffect(() => {
+    if (!window.matchMedia(HAMBURGER_QUERY).matches) return;
 
-  return (
-    <Link
-      href="/"
-      className="-m-1.5 p-1.5 text-lg font-bold leading-6 dark:text-white"
-      onContextMenu={handleContextMenu}
-    >
-      weshipit<span className="text-slate-400">.today</span>
-    </Link>
-  );
+    if (typeof window.requestIdleCallback === 'function') {
+      const id = window.requestIdleCallback(loadMobileMenu);
+      return () => window.cancelIdleCallback(id);
+    }
+    // Safari has no requestIdleCallback.
+    const id = window.setTimeout(loadMobileMenu, 1500);
+    return () => window.clearTimeout(id);
+  }, []);
 }
 
 export function Header({
@@ -44,6 +47,13 @@ export function Header({
   callToActionLink,
 }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileMenuRequested, setMobileMenuRequested] = useState(false);
+  usePreloadMobileMenu();
+
+  const openMobileMenu = () => {
+    setMobileMenuRequested(true);
+    setMobileMenuOpen(true);
+  };
 
   return (
     <header className="sticky top-0 z-40 bg-white dark:bg-slate-900">
@@ -52,7 +62,7 @@ export function Header({
         className="mx-auto flex max-w-7xl items-center justify-between gap-x-6 p-6 lg:px-8"
       >
         <div className="flex lg:flex-1">
-          <LogoToBrandPage />
+          <HeaderLogo />
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
           {navigation?.map((item) => (
@@ -92,7 +102,9 @@ export function Header({
         <div className="flex lg:hidden">
           <button
             type="button"
-            onClick={() => setMobileMenuOpen(true)}
+            onClick={openMobileMenu}
+            onPointerEnter={loadMobileMenu}
+            onFocus={loadMobileMenu}
             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
           >
             <span className="sr-only">Open main menu</span>
@@ -100,62 +112,19 @@ export function Header({
           </button>
         </div>
       </nav>
-      <Dialog
-        open={mobileMenuOpen}
-        onClose={setMobileMenuOpen}
-        className="lg:hidden"
-      >
-        <div className="fixed inset-0 z-10" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto [-webkit-overflow-scrolling:touch] bg-white dark:bg-slate-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-          <div className="flex items-center gap-x-6">
-            <LogoToBrandPage />
-            {callToActionButton && (
-              <LinkButton
-                href={callToActionButton.href}
-                className="ml-auto "
-                variant="primary"
-              >
-                {callToActionButton.name}
-              </LinkButton>
-            )}
-            <button
-              type="button"
-              onClick={() => setMobileMenuOpen(false)}
-              className="-m-2.5 rounded-md p-2.5 text-gray-700"
-            >
-              <span className="sr-only">Close menu</span>
-              <XMarkIcon aria-hidden="true" className="size-6" />
-            </button>
-          </div>
-          <div className="mt-6 flow-root">
-            <div className="-my-6 divide-y divide-gray-500/10">
-              <div className="space-y-2 py-6">
-                {navigation?.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                  >
-                    {item.name}
-                  </a>
-                ))}
-              </div>
-              <div className="py-6">
-                {callToActionLink && (
-                  <Link
-                    href={callToActionLink.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                  >
-                    {callToActionLink.name}
-                  </Link>
-                )}
-              </div>
-            </div>
-          </div>
-        </DialogPanel>
-      </Dialog>
+      {/* Mounted on the first open, then kept so the dialog can give focus
+          back to the button when it closes. */}
+      {mobileMenuRequested && (
+        <Suspense fallback={null}>
+          <MobileMenu
+            open={mobileMenuOpen}
+            onClose={() => setMobileMenuOpen(false)}
+            navigation={navigation}
+            callToActionButton={callToActionButton}
+            callToActionLink={callToActionLink}
+          />
+        </Suspense>
+      )}
     </header>
   );
 }

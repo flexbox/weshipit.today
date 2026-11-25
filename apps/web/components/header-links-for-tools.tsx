@@ -1,5 +1,5 @@
 import { Button } from '@weshipit/ui';
-import { linksApi } from '../pages/api/links';
+import { linksApi } from '../utils/links';
 
 interface HeaderLinksForToolsProps {
   buttonText?: string;

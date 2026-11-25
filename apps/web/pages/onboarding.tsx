@@ -6,8 +6,8 @@ import {
   ClientsListHomepage,
   Prose,
 } from '@weshipit/ui';
-import { linksApi } from '../pages/api/links';
-import { getAllClients } from '../pages/api/client';
+import { linksApi } from '../utils/links';
+import { getAllClients } from '../utils/clients';
 
 export default function Onboarding({ clients }) {
   return (
@@ -81,7 +81,7 @@ export default function Onboarding({ clients }) {
   );
 }
 
-Onboarding.getInitialProps = async function () {
-  const clients = await getAllClients();
-  return clients;
-};
+export async function getStaticProps() {
+  const { clients } = await getAllClients();
+  return { props: { clients } };
+}

@@ -1,10 +1,7 @@
-import { clients, Customer } from '../../content/clients';
+import { clients, Customer } from '../content/clients';
 
 export type { Customer };
 
-/**
- * We should rename the endpoint to /api/customers to avoid confusion with GraphQL clients.
- */
 export async function getAllClients() {
   return { clients };
 }

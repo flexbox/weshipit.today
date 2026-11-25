@@ -5,8 +5,9 @@ import { ReactNode } from 'react';
 import { PhoneAnimation } from './phone-animation';
 import { CalendarIcon } from '@heroicons/react/24/solid';
 import { ArrowRightIcon } from '@heroicons/react/24/solid';
-import { LinkButton, SpotLeft, Text } from '@weshipit/ui';
-import { SPOT_AVAILABILITY } from '../spot-left/spot-left';
+import { LinkButton } from '../button/link-button';
+import { SPOT_AVAILABILITY, SpotLeft } from '../spot-left/spot-left';
+import { Text } from '../text/text';
 
 interface HeroSplitProps {
   eyebrow?: ReactNode;

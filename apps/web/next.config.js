@@ -1,4 +1,15 @@
+const fs = require('fs');
+const path = require('path');
 const { PHASE_DEVELOPMENT_SERVER } = require('next/constants');
+
+/** Slug of the most recent weekly plan, e.g. `2026-W42`. */
+function latestPlanSlug() {
+  const [latest] = fs
+    .readdirSync(path.join(__dirname, 'pages/plan'))
+    .filter((file) => file.endsWith('.md'))
+    .sort((a, b) => b.localeCompare(a, undefined, { sensitivity: 'base' }));
+  return latest?.replace(/\.md$/, '');
+}
 
 /**
  * @type {import('next').NextConfig}
@@ -45,7 +56,20 @@ const nextConfig = {
     ],
   },
   async redirects() {
+    const planSlug = latestPlanSlug();
+
     return [
+      // /plan opens the latest weekly plan. Plans are files in the repo, so
+      // the target is known at build time: no function runs per request.
+      ...(planSlug
+        ? [
+            {
+              destination: `/plan/${planSlug}`,
+              permanent: false,
+              source: '/plan',
+            },
+          ]
+        : []),
       // Device apps that moved from the tools directory to /devtools.
       ...['exodus-privacy', 'nrf-connect'].map((slug) => ({
         destination: '/devtools',

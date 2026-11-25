@@ -1,4 +1,4 @@
-import { getAllClients } from '../api/client';
+import { getAllClients } from '../../utils/clients';
 import { feedback as allFeedback, Feedback } from '../../content/feedback';
 import { Layout } from '../../components/layout';
 import {
@@ -9,7 +9,7 @@ import {
   Container,
   Text,
 } from '@weshipit/ui';
-import { linksApi } from '../api/links';
+import { linksApi } from '../../utils/links';
 import {
   ClockIcon,
   CheckCircleIcon,

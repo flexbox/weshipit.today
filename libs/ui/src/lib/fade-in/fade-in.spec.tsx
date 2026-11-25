@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 
 import { FadeIn } from './fade-in';
 
-// jsdom has no IntersectionObserver, which framer-motion's whileInView needs.
+// jsdom has no IntersectionObserver, which the reveal hook observes with.
 globalThis.IntersectionObserver = class {
   observe() {}
   unobserve() {}

@@ -12,10 +12,10 @@ import {
   Badge,
   ClientsListMarkee,
 } from '@weshipit/ui';
-import { linksApi } from './api/links';
+import { linksApi } from '../utils/links';
 import { Layout } from '../components/layout';
 import Head from 'next/head';
-import { Customer, getVisibleClients } from './api/client';
+import { Customer, getVisibleClients } from '../utils/clients';
 import { Step, workflowSteps } from '../content/workflow-steps';
 import ReactMarkdown from 'react-markdown';
 

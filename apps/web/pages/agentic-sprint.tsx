@@ -26,7 +26,7 @@ import {
 import Head from 'next/head';
 import Link from 'next/link';
 import { Layout } from '../components/layout';
-import { linksApi } from './api/links';
+import { linksApi } from '../utils/links';
 
 const CTA_LABEL = 'Réserver ma place — 490 € HT';
 const CTA_LABEL_SHORT = 'Réserver ma place';

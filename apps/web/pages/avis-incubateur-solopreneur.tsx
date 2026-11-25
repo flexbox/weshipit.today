@@ -30,7 +30,7 @@ import {
 import Head from 'next/head';
 import Link from 'next/link';
 import { Layout } from '../components/layout';
-import { linksApi } from './api/links';
+import { linksApi } from '../utils/links';
 
 const CTA_LABEL = 'Activer mon code réduction (-910 €)';
 const CTA_LABEL_SHORT = 'Activer le code réduction';

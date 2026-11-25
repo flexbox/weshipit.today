@@ -8,10 +8,10 @@ import {
   Text,
 } from '@weshipit/ui';
 
-import { Customer, getVisibleClients } from './api/client';
+import { Customer, getVisibleClients } from '../utils/clients';
 import Head from 'next/head';
 import { Layout } from '../components/layout';
-import { linksApi } from './api/links';
+import { linksApi } from '../utils/links';
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
 import {

@@ -1,4 +1,4 @@
-import { getAllClients } from '../api/client';
+import { getAllClients } from '../../utils/clients';
 import { Layout } from '../../components/layout';
 import { AuditRouteAnimation } from '../../components/audit-route-animation';
 import {
@@ -15,7 +15,7 @@ import {
   pricingTiers,
 } from '@weshipit/ui';
 import { ArrowRightIcon, CalendarIcon } from '@heroicons/react/24/solid';
-import { linksApi } from '../api/links';
+import { linksApi } from '../../utils/links';
 
 import Head from 'next/head';
 import Link from 'next/link';

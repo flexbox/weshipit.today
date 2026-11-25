@@ -28,7 +28,7 @@ import {
 import Head from 'next/head';
 import Link from 'next/link';
 import { Layout } from '../components/layout';
-import { linksApi } from './api/links';
+import { linksApi } from '../utils/links';
 
 const AFFILIATE_URL = linksApi.affiliate.INCUBATEUR_SOLOPRENEUR;
 const AVIS_URL = '/avis-incubateur-solopreneur';

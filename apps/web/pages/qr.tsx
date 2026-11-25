@@ -1,6 +1,6 @@
 import { Layout } from '../components/layout';
 import Script from 'next/script';
-import { linksApi } from './api/links';
+import { linksApi } from '../utils/links';
 import { Prose } from '@weshipit/ui';
 
 export function Qr() {

@@ -15,7 +15,7 @@ import {
 } from '../../components/directory-hero';
 import round from 'lodash/round';
 
-import { linksApi } from '../api/links';
+import { linksApi } from '../../utils/links';
 import { extractUsernameFromGithubUrl } from '@weshipit/utils';
 
 const levelDetails: Record<StarterLevel, { id: string; description: string }> =

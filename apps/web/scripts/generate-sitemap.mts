@@ -38,8 +38,6 @@ export const EXCLUDED_PAGES = [
   '/home',
   '/og-preview',
   '/onboarding',
-  // Server-side redirect to the latest weekly plan.
-  '/plan',
   '/qr',
 ];
 

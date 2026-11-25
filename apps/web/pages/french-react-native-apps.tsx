@@ -4,7 +4,7 @@ import { InferGetStaticPropsType } from 'next/types';
 import Image from 'next/image';
 import Link from 'next/link';
 import { formatAppsByCategory } from '../components/french-react-native-apps/format-apps-by-category';
-import { linksApi } from './api/links';
+import { linksApi } from '../utils/links';
 import kebabCase from 'lodash/kebabCase';
 import { useMemo, useState } from 'react';
 

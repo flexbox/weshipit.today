@@ -144,16 +144,29 @@ export function glossaryPageTitle(
   return candidates.find((candidate) => candidate.length <= 43) ?? term.title;
 }
 
-/** Every term, sorted alphabetically by title. */
+let cachedTerms: GlossaryTerm[] | null = null;
+
+/**
+ * Every term, sorted alphabetically by title.
+ *
+ * Each glossary and plan page asks for the whole list, so a build would parse
+ * the ~250 files once per page. Production keeps the parsed list for the life
+ * of the process; development reads again so an edit shows up on refresh.
+ * Treat the result as read-only.
+ */
 export function getAllGlossaryTerms(): GlossaryTerm[] {
+  if (cachedTerms) return cachedTerms;
   if (!fs.existsSync(GLOSSARY_DIR)) return [];
 
-  return fs
+  const terms = fs
     .readdirSync(GLOSSARY_DIR)
     .filter((filename) => filename.endsWith('.md'))
     .map(parseTerm)
     .filter((term): term is GlossaryTerm => term !== null)
     .sort((a, b) => a.title.localeCompare(b.title));
+
+  if (process.env.NODE_ENV === 'production') cachedTerms = terms;
+  return terms;
 }
 
 /** Resolve a related-term title to a slug, preferring an existing term. */

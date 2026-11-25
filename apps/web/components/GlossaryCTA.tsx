@@ -1,5 +1,5 @@
 import { Card, LinkButton, Prose, Text } from '@weshipit/ui';
-import { linksApi } from '../pages/api/links';
+import { linksApi } from '../utils/links';
 
 export function GlossaryCTA() {
   return (

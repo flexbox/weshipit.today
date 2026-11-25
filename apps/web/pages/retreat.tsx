@@ -1,7 +1,7 @@
 import { Button, Card, Hero, Prose, Text } from '@weshipit/ui';
 import { Layout } from '../components/layout';
 import React from 'react';
-import { linksApi } from './api/links';
+import { linksApi } from '../utils/links';
 
 export default function CodingRetreat() {
   return (

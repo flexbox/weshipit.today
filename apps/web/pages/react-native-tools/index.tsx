@@ -10,7 +10,7 @@ import {
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
-import { linksApi } from '../api/links';
+import { linksApi } from '../../utils/links';
 
 export async function getStaticProps() {
   const records = tools;

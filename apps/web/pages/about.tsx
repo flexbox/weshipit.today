@@ -12,10 +12,10 @@ import {
 import { ArrowRightIcon, CalendarIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
 import { Layout } from '../components/layout';
-import { Customer, getVisibleClients } from './api/client';
+import { Customer, getVisibleClients } from '../utils/clients';
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
-import { linksApi } from './api/links';
+import { linksApi } from '../utils/links';
 import { GetStaticProps } from 'next';
 
 export const getStaticProps = (async (context) => {

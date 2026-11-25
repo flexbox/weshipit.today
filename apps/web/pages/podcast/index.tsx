@@ -3,7 +3,7 @@ import { Layout } from '../../components/layout';
 import { PodcastEpisodeCard } from '../../components/podcast-episode-card';
 import { AuditGratuitCta } from '../../components/audit-gratuit-cta';
 import { podcastEpisodes } from '../../fixtures/podcast-episodes.fixture';
-import { linksApi } from 'apps/web/pages/api/links';
+import { linksApi } from 'apps/web/utils/links';
 import { useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
