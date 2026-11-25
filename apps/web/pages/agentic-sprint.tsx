@@ -1,4 +1,13 @@
-import { AuthorDisclosure, Button, Faq, Text } from '@weshipit/ui';
+import {
+  AuthorDisclosure,
+  Badge,
+  Button,
+  Container,
+  Faq,
+  Section,
+  Surface,
+  Text,
+} from '@weshipit/ui';
 
 import {
   ArrowRightIcon,
@@ -82,26 +91,34 @@ const faqs = [
 
 function HeroSection() {
   return (
-    <section className="relative overflow-hidden pt-32 pb-20">
-      <div className="relative mx-auto max-w-5xl px-6 text-center">
-        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent">
+    <Section
+      variant="plain"
+      spacing="hero"
+      className="relative overflow-hidden"
+    >
+      <Container size="lg" className="relative text-center">
+        <Badge variant="accent" className="mb-6">
           <CalendarDaysIcon className="h-4 w-4" />
           Batch en ligne · 14 septembre – 9 octobre 2026 · {SPOTS} places
-        </div>
+        </Badge>
 
         <Text variant="h1" as="h1" className="mb-6 text-balance">
           Agentic Sprint <br />
           <span className="text-accent">React Native</span>
         </Text>
 
-        <p className="mx-auto mb-10 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-500 dark:text-neutral-400 md:text-xl">
+        <Text
+          variant="lead"
+          tone="muted"
+          className="mx-auto mb-10 max-w-2xl text-pretty leading-relaxed"
+        >
           Un batch d&apos;un mois pour développeurs React Native&nbsp;: tu
           montes des agents IA qui triagent tes crashs Sentry, écrivent tes
           tests Maestro et préparent tes releases EAS — sur ton app, pas sur un
           projet d&apos;exemple. Un live par semaine, des exercices sur ton
           repo, et ton premier agent qui ouvre une vraie PR dès la semaine 1.
           Garanti, ou remboursé.
-        </p>
+        </Text>
 
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button
@@ -120,12 +137,17 @@ function HeroSection() {
           </Button>
         </div>
 
-        <div className="mt-4 text-sm text-neutral-500 dark:text-neutral-400">
+        <Text as="div" variant="small" tone="muted" className="mt-4">
           Tarif founding batch 1 · paiement en une fois · passe à{' '}
           {PRICE_BATCH_2} € dès le batch 2
-        </div>
+        </Text>
 
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-neutral-500 dark:text-neutral-400">
+        <Text
+          as="div"
+          variant="small"
+          tone="muted"
+          className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2"
+        >
           <span className="flex items-center gap-2">
             <CheckIcon className="h-4 w-4 text-accent" />8 ans de React Native
             en production
@@ -138,9 +160,9 @@ function HeroSection() {
             <CheckIcon className="h-4 w-4 text-accent" />
             Notre propre site tourne sur ce workflow
           </span>
-        </div>
-      </div>
-    </section>
+        </Text>
+      </Container>
+    </Section>
   );
 }
 
@@ -167,35 +189,40 @@ function ProblemeSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-4xl px-6">
+    <Section>
+      <Container size="md">
         <Text variant="h2" as="h2" className="mb-6 text-balance text-center">
           Tu utilises l&apos;IA. Mais elle ne travaille pas pour toi.
         </Text>
-        <p className="mx-auto mb-12 max-w-2xl text-center text-pretty leading-relaxed text-neutral-500 dark:text-neutral-400">
+        <Text
+          variant="inherit"
+          tone="muted"
+          className="mx-auto mb-12 max-w-2xl text-center text-pretty leading-relaxed"
+        >
           Copier-coller du code dans ChatGPT, accepter trois suggestions de
           Copilot — ce n&apos;est pas ça, l&apos;IA en 2026. Pendant que tu fais
           ça&nbsp;:
-        </p>
+        </Text>
 
         <div className="mb-12 grid gap-4 md:grid-cols-3">
           {pains.map((pain) => (
-            <div
-              key={pain.title}
-              className="rounded-xl border border-border bg-card p-5"
-            >
+            <Surface padding="sm" key={pain.title}>
               <pain.icon className="mb-3 h-6 w-6 text-accent" />
               <div className="mb-1 text-sm font-semibold text-neutral-950 dark:text-neutral-100">
                 {pain.title}
               </div>
-              <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+              <Text variant="small" tone="muted" className="leading-relaxed">
                 {pain.description}
-              </p>
-            </div>
+              </Text>
+            </Surface>
           ))}
         </div>
 
-        <p className="mx-auto max-w-2xl text-pretty leading-relaxed text-neutral-500 dark:text-neutral-400">
+        <Text
+          variant="inherit"
+          tone="muted"
+          className="mx-auto max-w-2xl text-pretty leading-relaxed"
+        >
           Le vrai saut, ce n&apos;est pas un meilleur autocomplete. C&apos;est
           un{' '}
           <strong className="text-neutral-950 dark:text-neutral-100">
@@ -207,12 +234,12 @@ function ProblemeSection() {
           mais personne ne montre comment le faire marcher sur une app React
           Native en production, avec ses builds natifs, son Metro, ses stores et
           ses SDK qui bougent tous les 6 mois.
-        </p>
+        </Text>
         <p className="mx-auto mt-4 max-w-2xl font-medium text-neutral-950 dark:text-neutral-100">
           C&apos;est exactement ce que couvre ce sprint. Rien d&apos;autre.
         </p>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -253,33 +280,34 @@ function ProgrammeSection() {
   ];
 
   return (
-    <section id="programme" className="border-t border-border py-24">
-      <div className="mx-auto max-w-5xl px-6">
+    <Section id="programme">
+      <Container size="lg">
         <div className="mb-16 text-center">
           <Text variant="h2" as="h2" className="mb-4 text-balance">
             1 mois, 4 lives, une PR d&apos;agent mergée sur ton app
           </Text>
-          <p className="mx-auto max-w-2xl text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted" className="mx-auto max-w-2xl">
             Un live par semaine, le mardi midi. Entre les lives&nbsp;: exercices
             guidés sur ton repo et review de repos en groupe — c&apos;est pour
             ça qu&apos;il y a {SPOTS} places, pas 250. Tous les lives sont
             enregistrés, replays à vie.
-          </p>
+          </Text>
         </div>
 
         <div className="space-y-4">
           {weeks.map((item) => (
-            <div
+            <Surface
+              interactive
               key={item.week}
-              className="grid gap-4 rounded-xl border border-border bg-card p-6 transition-colors hover:border-accent/50 md:grid-cols-[180px_1fr]"
+              className="grid gap-4 md:grid-cols-[180px_1fr]"
             >
               <div>
                 <div className="mb-1 font-semibold text-accent">
                   {item.week}
                 </div>
-                <div className="text-xs text-neutral-500 dark:text-neutral-400">
+                <Text as="div" variant="caption" tone="muted">
                   {item.date}
-                </div>
+                </Text>
               </div>
               <div>
                 <div className="mb-2 flex items-center gap-2">
@@ -288,44 +316,52 @@ function ProgrammeSection() {
                     {item.title}
                   </Text>
                 </div>
-                <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+                <Text variant="small" tone="muted" className="leading-relaxed">
                   {item.description}
-                </p>
+                </Text>
               </div>
-            </div>
+            </Surface>
           ))}
         </div>
 
-        <p className="mt-8 text-center text-sm text-neutral-500 dark:text-neutral-400">
+        <Text variant="small" tone="muted" className="mt-8 text-center">
           Charge de travail : 2 à 3 h par semaine (1 live + exercices), pendant
           4 semaines.
-        </p>
-      </div>
-    </section>
+        </Text>
+      </Container>
+    </Section>
   );
 }
 
 function RecusSection() {
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-4xl px-6">
+    <Section>
+      <Container size="md">
         <Text variant="h2" as="h2" className="mb-6 text-balance text-center">
           On ne te vend pas une démo. C&apos;est notre outillage interne.
         </Text>
-        <p className="mx-auto mb-10 max-w-2xl text-center text-pretty leading-relaxed text-neutral-500 dark:text-neutral-400">
+        <Text
+          variant="inherit"
+          tone="muted"
+          className="mx-auto mb-10 max-w-2xl text-center text-pretty leading-relaxed"
+        >
           Ce workflow n&apos;est pas une théorie de conférence&nbsp;: c&apos;est
           celui qui fait tourner weshipit.today. En juin 2026, nos agents ont
           produit 8 plans d&apos;audit SEO et les ont menés jusqu&apos;au merge
           en 2 semaines — pendant qu&apos;on livrait pour nos clients. Le site
           que tu es en train de lire est maintenu comme ça.
-        </p>
-        <p className="mx-auto max-w-2xl text-center text-pretty leading-relaxed text-neutral-500 dark:text-neutral-400">
+        </Text>
+        <Text
+          variant="inherit"
+          tone="muted"
+          className="mx-auto max-w-2xl text-center text-pretty leading-relaxed"
+        >
           Ce qu&apos;on enseigne dans ce sprint, c&apos;est cet outillage,
           nettoyé et documenté pour tenir dans 4 semaines. Pas un condensé de
           threads Twitter.
-        </p>
-      </div>
-    </section>
+        </Text>
+      </Container>
+    </Section>
   );
 }
 
@@ -344,8 +380,8 @@ function PourQuiSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-5xl px-6">
+    <Section>
+      <Container size="lg">
         <div className="mb-12 text-center">
           <Text variant="h2" as="h2" className="mb-4 text-balance">
             L&apos;Agentic Sprint, c&apos;est pour toi si…
@@ -353,8 +389,8 @@ function PourQuiSection() {
         </div>
 
         <div className="grid gap-8 md:grid-cols-2">
-          <div className="rounded-xl border border-accent/30 bg-accent/5 p-6">
-            <Text variant="h4" as="h3" className="mb-4 text-accent">
+          <Surface tone="accent">
+            <Text tone="accent" variant="h4" as="h3" className="mb-4">
               ✅ Oui, fonce
             </Text>
             <ul className="space-y-3">
@@ -368,28 +404,31 @@ function PourQuiSection() {
                 </li>
               ))}
             </ul>
-          </div>
+          </Surface>
 
-          <div className="rounded-xl border border-border bg-card p-6">
-            <Text
-              variant="h4"
-              as="h3"
-              className="mb-4 text-neutral-500 dark:text-neutral-400"
-            >
+          <Surface>
+            <Text tone="muted" variant="h4" as="h3" className="mb-4">
               ❌ Passe ton chemin
             </Text>
             <ul className="space-y-3">
               {no.map((item) => (
-                <li
+                <Text
+                  as="li"
+                  variant="small"
+                  tone="muted"
                   key={item}
-                  className="flex items-start gap-3 text-sm text-neutral-500 dark:text-neutral-400"
+                  className="flex items-start gap-3"
                 >
                   <XMarkIcon className="mt-0.5 h-5 w-5 shrink-0 text-destructive" />
                   {item}
-                </li>
+                </Text>
               ))}
             </ul>
-            <p className="mt-6 border-t border-border pt-4 text-sm text-neutral-500 dark:text-neutral-400">
+            <Text
+              variant="small"
+              tone="muted"
+              className="mt-6 border-t border-border pt-4"
+            >
               Besoin de done-for-you ? On installe ces agents pour ton équipe
               dans le cadre de{' '}
               <Link
@@ -399,11 +438,11 @@ function PourQuiSection() {
                 notre audit React Native
               </Link>
               .
-            </p>
-          </div>
+            </Text>
+          </Surface>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -442,53 +481,50 @@ function InclusSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <Section>
+      <Container>
         <div className="mb-16 text-center">
           <Text variant="h2" as="h2" className="mb-4 text-balance">
             Le sprint, plus tout ce qu&apos;il faut pour continuer sans nous
           </Text>
-          <p className="mx-auto max-w-2xl text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted" className="mx-auto max-w-2xl">
             Pas de «&nbsp;valeur totale&nbsp;: 4&nbsp;997&nbsp;€&nbsp;». Les
             bonus sont là pour lever tes objections, pas pour gonfler une
             addition.
-          </p>
+          </Text>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {items.map((item) => (
-            <div
-              key={item.title}
-              className="rounded-xl border border-border bg-card p-6 transition-colors hover:border-accent/50"
-            >
+            <Surface interactive key={item.title}>
               <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-secondary">
                 <item.icon className="h-5 w-5 text-accent" />
               </div>
               <Text variant="h4" as="h3" className="mb-2">
                 {item.title}
               </Text>
-              <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+              <Text variant="small" tone="muted" className="leading-relaxed">
                 {item.description}
-              </p>
-            </div>
+              </Text>
+            </Surface>
           ))}
         </div>
 
-        <p className="mt-8 text-center text-sm text-neutral-500 dark:text-neutral-400">
+        <Text variant="small" tone="muted" className="mt-8 text-center">
           Non inclus, dit franchement&nbsp;: pas de 1:1, pas de code écrit à ta
           place, et les outils IA sont à ta charge (~20&nbsp;$/mois pendant le
           sprint).
-        </p>
-      </div>
-    </section>
+        </Text>
+      </Container>
+    </Section>
   );
 }
 
 function GarantieSection() {
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-4xl px-6">
-        <div className="rounded-2xl border border-accent/30 bg-accent/5 p-8 text-center md:p-12">
+    <Section>
+      <Container size="md">
+        <Surface tone="accent" radius="2xl" className="p-8 text-center md:p-12">
           <ShieldCheckIcon className="mx-auto mb-6 h-12 w-12 text-accent" />
           <Text variant="h2" as="h2" className="mb-6 text-balance">
             Une PR en semaine 1, ou remboursé
@@ -499,14 +535,14 @@ function GarantieSection() {
             rembourse intégralement. Sans discussion, sans formulaire de
             rétention.
           </p>
-          <p className="mx-auto max-w-2xl text-sm text-neutral-500 dark:text-neutral-400">
+          <Text variant="small" tone="muted" className="mx-auto max-w-2xl">
             On peut se le permettre parce que le programme est construit pour
             ça&nbsp;: le first-win de la semaine 1 est le cœur du sprint, pas sa
             conclusion.
-          </p>
-        </div>
-      </div>
-    </section>
+          </Text>
+        </Surface>
+      </Container>
+    </Section>
   );
 }
 
@@ -521,20 +557,20 @@ function PrixSection() {
   ];
 
   return (
-    <section id="prix" className="border-t border-border py-24">
-      <div className="mx-auto max-w-4xl px-6">
+    <Section id="prix">
+      <Container size="md">
         <div className="mb-12 text-center">
           <Text variant="h2" as="h2" className="mb-4 text-balance">
             {PRICE_FOUNDING} € HT — tarif founding du batch 1
           </Text>
-          <p className="mx-auto max-w-2xl text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted" className="mx-auto max-w-2xl">
             Le batch 2 sera à {PRICE_BATCH_2} € HT. Ce n&apos;est pas une menace
             marketing&nbsp;: c&apos;est le mécanisme de toutes les premiers
             batchs — le tarif founding paie l&apos;absence de témoignages.
-          </p>
+          </Text>
         </div>
 
-        <div className="overflow-hidden rounded-2xl border border-border bg-card">
+        <Surface padding="none" radius="2xl" className="overflow-hidden">
           <div className="grid md:grid-cols-2">
             <div className="border-b border-border p-8 md:border-b-0 md:border-r">
               <div className="mb-2 text-sm font-medium text-accent">
@@ -544,10 +580,10 @@ function PrixSection() {
                 {PRICE_FOUNDING} €{' '}
                 <span className="text-lg font-normal">HT</span>
               </div>
-              <div className="mb-6 text-sm text-neutral-500 dark:text-neutral-400">
+              <Text as="div" variant="small" tone="muted" className="mb-6">
                 paiement en une fois · facture fournie (frais de formation pour
                 la plupart des freelances)
-              </div>
+              </Text>
               <Button
                 href={CTA_URL}
                 as="a"
@@ -560,7 +596,12 @@ function PrixSection() {
                 {CTA_LABEL_SHORT}
                 <ArrowRightIcon className="ml-2 h-4 w-4" />
               </Button>
-              <div className="mt-4 space-y-1 text-sm text-neutral-500 dark:text-neutral-400">
+              <Text
+                as="div"
+                variant="small"
+                tone="muted"
+                className="mt-4 space-y-1"
+              >
                 <div>
                   <strong className="text-neutral-950 dark:text-neutral-200">
                     {SPOTS} places.
@@ -572,7 +613,7 @@ function PrixSection() {
                   Inscriptions closes le <strong>vendredi 11 septembre</strong>{' '}
                   — ou avant, si c&apos;est complet.
                 </div>
-              </div>
+              </Text>
             </div>
             <div className="p-8">
               <div className="mb-4 text-sm font-medium text-neutral-950 dark:text-neutral-200">
@@ -580,20 +621,23 @@ function PrixSection() {
               </div>
               <ul className="space-y-3">
                 {included.map((item) => (
-                  <li
+                  <Text
+                    as="li"
+                    variant="small"
+                    tone="muted"
                     key={item}
-                    className="flex items-start gap-3 text-sm text-neutral-500 dark:text-neutral-400"
+                    className="flex items-start gap-3"
                   >
                     <CheckIcon className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
                     {item}
-                  </li>
+                  </Text>
                 ))}
               </ul>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </Surface>
+      </Container>
+    </Section>
   );
 }
 
@@ -642,27 +686,35 @@ function QuiSection() {
 
 function CtaFinalSection() {
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="relative overflow-hidden rounded-2xl border border-border bg-card">
+    <Section>
+      <Container>
+        <Surface
+          padding="none"
+          radius="2xl"
+          className="relative overflow-hidden"
+        >
           <div className="pointer-events-none absolute inset-0">
             <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:2rem_2rem] opacity-30" />
           </div>
 
           <div className="relative px-8 py-16 text-center md:py-24">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent">
+            <Badge variant="accent" className="mb-6">
               <CalendarDaysIcon className="h-4 w-4" />
               {SPOTS} places · inscriptions closes le 11 septembre
-            </div>
+            </Badge>
             <Text variant="h2" as="h2" className="mb-6 text-balance">
               Le 14 septembre, ton app a son premier agent.{' '}
               <span className="text-accent">Ou pas.</span>
             </Text>
-            <p className="mx-auto mb-10 max-w-xl text-lg text-neutral-500 dark:text-neutral-400">
+            <Text
+              variant="lead"
+              tone="muted"
+              className="mx-auto mb-10 max-w-xl"
+            >
               Dans les deux cas, les crashs de lundi prochain arriveront. La
               seule question, c&apos;est qui les triage&nbsp;: toi, ou une PR
               qui t&apos;attend au réveil.
-            </p>
+            </Text>
 
             <Button
               href={CTA_URL}
@@ -677,7 +729,12 @@ function CtaFinalSection() {
               <ArrowRightIcon className="ml-2 h-4 w-4" />
             </Button>
 
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-neutral-500 dark:text-neutral-400">
+            <Text
+              as="div"
+              variant="small"
+              tone="muted"
+              className="mt-8 flex flex-wrap items-center justify-center gap-6"
+            >
               <span className="flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                 Un live par semaine pendant 1 mois
@@ -690,11 +747,11 @@ function CtaFinalSection() {
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                 Replays à vie
               </span>
-            </div>
+            </Text>
           </div>
-        </div>
-      </div>
-    </section>
+        </Surface>
+      </Container>
+    </Section>
   );
 }
 
@@ -809,19 +866,19 @@ export default function AgenticSprintPage() {
         <GarantieSection />
         <PrixSection />
 
-        <section id="faq" className="border-t border-border py-24">
-          <div className="mx-auto max-w-3xl px-6">
+        <Section id="faq">
+          <Container size="sm">
             <div className="mb-12 text-center">
               <Text variant="h3" as="h2" className="mb-4 text-balance">
                 FAQ — Agentic Sprint
               </Text>
-              <p className="text-neutral-500 dark:text-neutral-400">
+              <Text variant="inherit" tone="muted">
                 Tout ce qu&apos;il faut savoir avant de réserver ta place.
-              </p>
+              </Text>
             </div>
             <Faq faqs={faqs} title="" headingId="faq-as-heading" />
-          </div>
-        </section>
+          </Container>
+        </Section>
 
         <QuiSection />
         <CtaFinalSection />

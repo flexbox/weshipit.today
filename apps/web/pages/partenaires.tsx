@@ -1,4 +1,14 @@
-import { AuthorDisclosure, Button, CountUp, Faq, Text } from '@weshipit/ui';
+import {
+  AuthorDisclosure,
+  Badge,
+  Button,
+  Container,
+  CountUp,
+  Faq,
+  Section,
+  Surface,
+  Text,
+} from '@weshipit/ui';
 
 import {
   ArrowRightIcon,
@@ -63,10 +73,10 @@ function HeroSection() {
         {/* Same shape as the homepage hero: copy on the left, phone on the right. */}
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
           <div>
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent">
-              <MicrophoneIcon strokeWidth={2.25} className="h-4 w-4" />
+            <Badge variant="accent" className="mb-6">
+              <MicrophoneIcon className="h-4 w-4" />
               Kit média · Le Cross Platform Show
-            </div>
+            </Badge>
 
             <Text variant="h1" as="h1" className="mb-6 text-balance">
               Accède aux équipes qui choisissent{' '}
@@ -75,11 +85,15 @@ function HeroSection() {
               </span>
             </Text>
 
-            <p className="mb-6 max-w-xl text-pretty text-lg leading-relaxed text-neutral-500 dark:text-neutral-400">
+            <Text
+              variant="lead"
+              tone="muted"
+              className="mb-6 max-w-xl text-pretty leading-relaxed"
+            >
               Le seul écosystème francophone dédié à React Native en production.
               Les personnes qui le suivent décident quel SDK, quel outil et quel
               prestataire entrent dans leur app.
-            </p>
+            </Text>
 
             <ul className="mb-10 flex flex-wrap gap-2" aria-label="Canaux">
               {HERO_CHANNELS.map((channel) => (
@@ -88,14 +102,13 @@ function HeroSection() {
                   className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1 text-sm text-neutral-700 dark:text-neutral-300"
                 >
                   <channel.icon
-                    strokeWidth={2}
                     className="h-4 w-4 text-accent"
                     aria-hidden="true"
                   />
                   <span className="font-medium">{channel.label}</span>
-                  <span className="text-neutral-500 dark:text-neutral-400">
+                  <Text as="span" variant="inherit" tone="muted">
                     {channel.metric}
-                  </span>
+                  </Text>
                 </li>
               ))}
             </ul>
@@ -111,7 +124,7 @@ function HeroSection() {
                 className="min-h-11 justify-center"
               >
                 {CTA_LABEL}
-                <ArrowRightIcon strokeWidth={2.25} className="ml-2 h-4 w-4" />
+                <ArrowRightIcon className="ml-2 h-4 w-4" />
               </Button>
               <Button
                 as="a"
@@ -124,20 +137,25 @@ function HeroSection() {
               </Button>
             </div>
 
-            <div className="mt-8 flex flex-col gap-2 text-sm text-neutral-500 dark:text-neutral-400">
+            <Text
+              as="div"
+              variant="small"
+              tone="muted"
+              className="mt-8 flex flex-col gap-2"
+            >
               <span className="flex items-center gap-2">
-                <CheckIcon strokeWidth={2.25} className="h-4 w-4 text-accent" />
+                <CheckIcon className="h-4 w-4 text-accent" />
                 Le co-créateur de React Native au micro
               </span>
               <span className="flex items-center gap-2">
-                <CheckIcon strokeWidth={2.25} className="h-4 w-4 text-accent" />
+                <CheckIcon className="h-4 w-4 text-accent" />
                 Animé par un Microsoft MVP
               </span>
               <span className="flex items-center gap-2">
-                <CheckIcon strokeWidth={2.25} className="h-4 w-4 text-accent" />
+                <CheckIcon className="h-4 w-4 text-accent" />
                 Media partner de React Native Connection
               </span>
-            </div>
+            </Text>
           </div>
 
           <div className="flex items-center justify-center">
@@ -181,62 +199,64 @@ function ProofSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-5xl px-6">
+    <Section>
+      <Container size="lg">
         <div className="mb-12 text-center">
           <Text variant="h2" as="h2" className="mb-4 text-balance">
             Ce qu&apos;il faut savoir avant de continuer
           </Text>
-          <p className="mx-auto max-w-2xl text-pretty text-neutral-500 dark:text-neutral-400">
+          <Text
+            variant="inherit"
+            tone="muted"
+            className="mx-auto max-w-2xl text-pretty"
+          >
             Pas des millions d&apos;écoutes. Chaque canal a sa propre audience :
             les chiffres ci-dessous ne s&apos;additionnent pas. Une niche sans
             alternative francophone, et les personnes qu&apos;on n&apos;entend
             d&apos;habitude qu&apos;en anglais.
-          </p>
+          </Text>
         </div>
 
         <div className="mb-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat) => (
-            <div
-              key={stat.label}
-              className="rounded-xl border border-border bg-card p-5 text-center"
-            >
+            <Surface padding="sm" key={stat.label} className="text-center">
               <div className="text-3xl font-bold tabular-nums text-neutral-950 dark:text-neutral-100">
                 <CountUp end={stat.value} locale="fr-FR" />
               </div>
               <div className="mt-1 text-sm font-medium text-neutral-950 dark:text-neutral-200">
                 {stat.label}
               </div>
-              <div className="mt-1 text-xs text-neutral-500 dark:text-neutral-400">
+              <Text as="div" variant="caption" tone="muted" className="mt-1">
                 {stat.detail}
-              </div>
-            </div>
+              </Text>
+            </Surface>
           ))}
         </div>
 
-        <div className="rounded-xl border border-border bg-card p-6">
+        <Surface>
           <div className="mb-4 text-sm font-medium text-neutral-950 dark:text-neutral-200">
             Ils sont passés au micro
           </div>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {guests.map((guest) => (
               <div key={guest.name} className="flex items-start gap-3">
-                <MicrophoneIcon
-                  strokeWidth={1.8}
-                  className="mt-0.5 h-5 w-5 shrink-0 text-accent"
-                />
+                <MicrophoneIcon className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
                 <div>
                   <div className="text-sm font-semibold text-neutral-950 dark:text-neutral-100">
                     {guest.name}
                   </div>
-                  <div className="text-xs text-neutral-500 dark:text-neutral-400">
+                  <Text as="div" variant="caption" tone="muted">
                     {guest.role}
-                  </div>
+                  </Text>
                 </div>
               </div>
             ))}
           </div>
-          <p className="mt-6 border-t border-border pt-4 text-sm text-neutral-500 dark:text-neutral-400">
+          <Text
+            variant="small"
+            tone="muted"
+            className="mt-6 border-t border-border pt-4"
+          >
             Tous les épisodes sont sur la{' '}
             <Link
               href="/podcast"
@@ -245,10 +265,10 @@ function ProofSection() {
               page du podcast
             </Link>
             , avec transcription et page permanente pour chacun.
-          </p>
-        </div>
-      </div>
-    </section>
+          </Text>
+        </Surface>
+      </Container>
+    </Section>
   );
 }
 
@@ -295,47 +315,48 @@ function AudienceSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-5xl px-6">
+    <Section>
+      <Container size="lg">
         <div className="mb-12 text-center">
           <Text variant="h2" as="h2" className="mb-4 text-balance">
             Une audience qui arbitre des budgets
           </Text>
-          <p className="mx-auto max-w-2xl text-pretty text-neutral-500 dark:text-neutral-400">
+          <Text
+            variant="inherit"
+            tone="muted"
+            className="mx-auto max-w-2xl text-pretty"
+          >
             Sur LinkedIn, 35 % des abonnés sont Senior et 26 % occupent une
             fonction de direction, de management ou de décision. Ce ne sont pas
             des débutants en quête de tutos.
-          </p>
+          </Text>
         </div>
 
         <div className="mb-8 grid gap-6 md:grid-cols-3">
           {profile.map((block) => (
-            <div
-              key={block.title}
-              className="rounded-xl border border-border bg-card p-6"
-            >
+            <Surface key={block.title}>
               <Text variant="h4" as="h3" className="mb-4">
                 {block.title}
               </Text>
               <ul className="space-y-3">
                 {block.items.map((item) => (
-                  <li
+                  <Text
+                    as="li"
+                    variant="small"
+                    tone="muted"
                     key={item}
-                    className="flex items-start gap-3 text-sm text-neutral-500 dark:text-neutral-400"
+                    className="flex items-start gap-3"
                   >
-                    <CheckIcon
-                      strokeWidth={1.8}
-                      className="mt-0.5 h-5 w-5 shrink-0 text-accent"
-                    />
+                    <CheckIcon className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
                     {item}
-                  </li>
+                  </Text>
                 ))}
               </ul>
-            </div>
+            </Surface>
           ))}
         </div>
 
-        <div className="rounded-xl border border-accent/30 bg-accent/5 p-6">
+        <Surface tone="accent">
           <div className="mb-3 text-sm font-medium text-neutral-950 dark:text-neutral-200">
             Ce qu&apos;ils achètent ou évaluent en ce moment
           </div>
@@ -349,9 +370,9 @@ function AudienceSection() {
               </span>
             ))}
           </div>
-        </div>
-      </div>
-    </section>
+        </Surface>
+      </Container>
+    </Section>
   );
 }
 
@@ -388,31 +409,29 @@ function ChannelsSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-5xl px-6">
+    <Section>
+      <Container size="lg">
         <div className="mb-12 text-center">
           <Text variant="h2" as="h2" className="mb-4 text-balance">
             Quatre canaux, une même audience
           </Text>
-          <p className="mx-auto max-w-2xl text-pretty text-neutral-500 dark:text-neutral-400">
+          <Text
+            variant="inherit"
+            tone="muted"
+            className="mx-auto max-w-2xl text-pretty"
+          >
             Un partenariat ne se limite pas à un message dans un épisode. La
             même personne croise ton produit dans son feed, dans ses écouteurs
             et dans une démo vidéo.
-          </p>
+          </Text>
         </div>
 
         <div className="grid gap-4 md:grid-cols-2">
           {channels.map((channel) => (
-            <div
-              key={channel.title}
-              className="rounded-xl border border-border bg-card p-6"
-            >
+            <Surface key={channel.title}>
               <div className="mb-3 flex items-center justify-between gap-4">
                 <div className="flex items-center gap-2">
-                  <channel.icon
-                    strokeWidth={1.8}
-                    className="h-5 w-5 shrink-0 text-accent"
-                  />
+                  <channel.icon className="h-5 w-5 shrink-0 text-accent" />
                   <Text variant="h4" as="h3">
                     {channel.title}
                   </Text>
@@ -421,10 +440,10 @@ function ChannelsSection() {
                   {channel.metric}
                 </span>
               </div>
-              <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+              <Text variant="small" tone="muted" className="leading-relaxed">
                 {channel.description}
-              </p>
-            </div>
+              </Text>
+            </Surface>
           ))}
         </div>
 
@@ -439,14 +458,14 @@ function ChannelsSection() {
             className="min-h-11 justify-center"
           >
             {CTA_LABEL}
-            <ArrowRightIcon strokeWidth={2.25} className="ml-2 h-4 w-4" />
+            <ArrowRightIcon className="ml-2 h-4 w-4" />
           </Button>
-          <p className="text-sm text-neutral-500 dark:text-neutral-400">
+          <Text variant="small" tone="muted">
             Proposition écrite sous 48 h, aucun engagement avant.
-          </p>
+          </Text>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 function ActivationsSection() {
@@ -490,39 +509,40 @@ function ActivationsSection() {
   ];
 
   return (
-    <section id="activations" className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <Section id="activations">
+      <Container>
         <div className="mb-16 text-center">
           <Text variant="h2" as="h2" className="mb-4 text-balance">
             Les formats possibles
           </Text>
-          <p className="mx-auto max-w-2xl text-pretty text-neutral-500 dark:text-neutral-400">
+          <Text
+            variant="inherit"
+            tone="muted"
+            className="mx-auto max-w-2xl text-pretty"
+          >
             Chaque collaboration combine plusieurs de ces formats selon ton
             objectif : essais de ton outil, notoriété dans l&apos;écosystème, ou
             recrutement de développeurs React Native.
-          </p>
+          </Text>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {activations.map((item) => (
-            <div
-              key={item.title}
-              className="rounded-xl border border-border bg-card p-6"
-            >
-              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10">
-                <item.icon strokeWidth={1.8} className="h-5 w-5 text-accent" />
+            <Surface key={item.title}>
+              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-secondary">
+                <item.icon className="h-5 w-5 text-accent" />
               </div>
               <Text variant="h4" as="h3" className="mb-2">
                 {item.title}
               </Text>
-              <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+              <Text variant="small" tone="muted" className="leading-relaxed">
                 {item.description}
-              </p>
-            </div>
+              </Text>
+            </Surface>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -571,16 +591,20 @@ function OffersSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <Section>
+      <Container>
         <div className="mb-16 text-center">
           <Text variant="h2" as="h2" className="mb-4 text-balance">
             Trois niveaux d&apos;engagement
           </Text>
-          <p className="mx-auto max-w-2xl text-pretty text-neutral-500 dark:text-neutral-400">
+          <Text
+            variant="inherit"
+            tone="muted"
+            className="mx-auto max-w-2xl text-pretty"
+          >
             Tester, s&apos;installer, s&apos;associer. Le tarif se définit avec
             toi selon le format retenu, pendant l&apos;appel.
-          </p>
+          </Text>
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
@@ -599,26 +623,27 @@ function OffersSection() {
               <Text variant="h3" as="h3" className="mb-2">
                 {offer.name}
               </Text>
-              <p className="mb-6 text-sm text-neutral-500 dark:text-neutral-400">
+              <Text variant="small" tone="muted" className="mb-6">
                 {offer.goal}
-              </p>
+              </Text>
               <ul className="mb-6 space-y-3">
                 {offer.items.map((item) => (
                   <li
                     key={item}
                     className="flex items-start gap-3 text-sm text-neutral-950 dark:text-neutral-200"
                   >
-                    <CheckIcon
-                      strokeWidth={1.8}
-                      className="mt-0.5 h-5 w-5 shrink-0 text-accent"
-                    />
+                    <CheckIcon className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
                     {item}
                   </li>
                 ))}
               </ul>
-              <p className="mt-auto border-t border-border pt-4 text-sm text-neutral-500 dark:text-neutral-400">
+              <Text
+                variant="small"
+                tone="muted"
+                className="mt-auto border-t border-border pt-4"
+              >
                 {offer.result}
-              </p>
+              </Text>
             </div>
           ))}
         </div>
@@ -634,11 +659,11 @@ function OffersSection() {
             className="min-h-11"
           >
             {CTA_LABEL}
-            <ArrowRightIcon strokeWidth={2.25} className="ml-2 h-4 w-4" />
+            <ArrowRightIcon className="ml-2 h-4 w-4" />
           </Button>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -657,8 +682,8 @@ function AudienceFitSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-5xl px-6">
+    <Section>
+      <Container size="lg">
         <div className="mb-12 text-center">
           <Text variant="h2" as="h2" className="mb-4 text-balance">
             Pour qui c&apos;est fait
@@ -666,11 +691,12 @@ function AudienceFitSection() {
         </div>
 
         <div className="grid gap-8 md:grid-cols-2">
-          <div className="rounded-xl border border-accent/30 bg-accent/5 p-6">
+          <Surface tone="accent">
             <Text
+              tone="accent"
               variant="h4"
               as="h3"
-              className="mb-4 flex items-center gap-2 text-accent"
+              className="mb-4 flex items-center gap-2"
             >
               ✅ On devrait se parler
             </Text>
@@ -680,47 +706,49 @@ function AudienceFitSection() {
                   key={item}
                   className="flex items-start gap-3 text-sm text-neutral-950 dark:text-neutral-200"
                 >
-                  <CheckIcon
-                    strokeWidth={1.8}
-                    className="mt-0.5 h-5 w-5 shrink-0 text-accent"
-                  />
+                  <CheckIcon className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
                   {item}
                 </li>
               ))}
             </ul>
-          </div>
+          </Surface>
 
-          <div className="rounded-xl border border-border bg-card p-6">
+          <Surface>
             <Text
+              tone="muted"
               variant="h4"
               as="h3"
-              className="mb-4 flex items-center gap-2 text-neutral-500 dark:text-neutral-400"
+              className="mb-4 flex items-center gap-2"
             >
               ❌ Ce n&apos;est pas le bon média
             </Text>
             <ul className="space-y-3">
               {no.map((item) => (
-                <li
+                <Text
+                  as="li"
+                  variant="small"
+                  tone="muted"
                   key={item}
-                  className="flex items-start gap-3 text-sm text-neutral-500 dark:text-neutral-400"
+                  className="flex items-start gap-3"
                 >
-                  <XMarkIcon
-                    strokeWidth={1.8}
-                    className="mt-0.5 h-5 w-5 shrink-0 text-destructive"
-                  />
+                  <XMarkIcon className="mt-0.5 h-5 w-5 shrink-0 text-destructive" />
                   {item}
-                </li>
+                </Text>
               ))}
             </ul>
-            <p className="mt-6 border-t border-border pt-4 text-sm text-neutral-500 dark:text-neutral-400">
+            <Text
+              variant="small"
+              tone="muted"
+              className="mt-6 border-t border-border pt-4"
+            >
               Indépendance éditoriale : je ne présente que des produits que
               j&apos;utiliserais dans une app cliente. Chaque contenu sponsorisé
               est annoncé comme tel.
-            </p>
-          </div>
+            </Text>
+          </Surface>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -778,26 +806,34 @@ function AuthorSection() {
 
 function FinalCtaSection() {
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="relative overflow-hidden rounded-2xl border border-border bg-card">
+    <Section>
+      <Container>
+        <Surface
+          padding="none"
+          radius="2xl"
+          className="relative overflow-hidden"
+        >
           <div className="pointer-events-none absolute inset-0">
             <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:2rem_2rem] opacity-30" />
           </div>
 
           <div className="relative px-8 py-16 text-center md:py-24">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent">
-              <BriefcaseIcon strokeWidth={2.25} className="h-4 w-4" />
+            <Badge variant="accent" className="mb-6">
+              <BriefcaseIcon className="h-4 w-4" />
               Un seul sponsor par trimestre
-            </div>
+            </Badge>
             <Text variant="h2" as="h2" className="mb-6 text-balance">
               Construisons l&apos;activation{' '}
               <span className="text-accent">adaptée à ton objectif</span>
             </Text>
-            <p className="mx-auto mb-10 max-w-xl text-pretty text-lg text-neutral-500 dark:text-neutral-400">
+            <Text
+              variant="lead"
+              tone="muted"
+              className="mx-auto mb-10 max-w-xl text-pretty"
+            >
               Vingt minutes pour savoir si ton produit a sa place devant cette
               audience. Si ce n&apos;est pas le cas, je te le dirai.
-            </p>
+            </Text>
 
             <Button
               href={CTA_URL}
@@ -809,10 +845,15 @@ function FinalCtaSection() {
               className="mx-auto justify-center"
             >
               {CTA_LABEL}
-              <ArrowRightIcon strokeWidth={2.25} className="ml-2 h-4 w-4" />
+              <ArrowRightIcon className="ml-2 h-4 w-4" />
             </Button>
 
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-neutral-500 dark:text-neutral-400">
+            <Text
+              as="div"
+              variant="small"
+              tone="muted"
+              className="mt-8 flex flex-wrap items-center justify-center gap-6"
+            >
               <span className="flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                 Proposition écrite sous 48 h
@@ -825,11 +866,11 @@ function FinalCtaSection() {
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                 Aucun engagement avant la proposition
               </span>
-            </div>
+            </Text>
           </div>
-        </div>
-      </div>
-    </section>
+        </Surface>
+      </Container>
+    </Section>
   );
 }
 
@@ -908,13 +949,13 @@ export default function PartnersPage() {
         <OffersSection />
         <AudienceFitSection />
         <section className="border-t border-border">
-          <div className="mx-auto max-w-4xl px-6">
+          <Container size="md">
             <Faq
               faqs={faqs}
               title="Questions que posent les sponsors"
               headingId="faq"
             />
-          </div>
+          </Container>
         </section>
         <AuthorSection />
         <FinalCtaSection />

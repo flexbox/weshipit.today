@@ -1,4 +1,6 @@
 import type { StoryFn, Meta } from '@storybook/react';
+import { CalendarDaysIcon, SparklesIcon } from '@heroicons/react/24/outline';
+import { withPageBackdrop } from '../utils/story-backdrop';
 import { Badge } from './badge';
 
 const Story: Meta<typeof Badge> = {
@@ -15,6 +17,8 @@ export const Primary = {
 
 const VariantExamples = () => (
   <div className="grid gap-4">
+    <Badge variant="accent">Accent</Badge>
+    <Badge variant="neutral">Neutral</Badge>
     <Badge variant="lime">Analytics</Badge>
     <Badge variant="indigo">Authentication</Badge>
     <Badge variant="green">Backend</Badge>
@@ -43,4 +47,29 @@ const SizeExamples = () => (
 
 export const Size = {
   render: SizeExamples,
+};
+
+/**
+ * `accent` and `neutral` follow the theme tokens (`--accent`, `--border`,
+ * `--secondary`) like `Surface`. `accent` is the pill above landing-page
+ * headings; an icon sits next to the label with the built-in gap.
+ */
+export const ThemePills = {
+  decorators: [withPageBackdrop],
+  render: () => (
+    <div className="grid justify-items-start gap-4">
+      <Badge variant="accent">
+        <CalendarDaysIcon className="size-4" />
+        Batch en ligne · 14 septembre – 9 octobre 2026
+      </Badge>
+      <Badge variant="accent" size="sm">
+        <SparklesIcon className="size-3.5" />
+        Nouveau
+      </Badge>
+      <Badge variant="neutral">Pourquoi je publie cette page</Badge>
+      <Badge variant="neutral" size="sm">
+        Le plus choisi
+      </Badge>
+    </div>
+  ),
 };

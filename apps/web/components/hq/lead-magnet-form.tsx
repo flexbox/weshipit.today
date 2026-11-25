@@ -1,13 +1,8 @@
-import { Button } from '@weshipit/ui';
+import { Button, FieldError, Input, Label, LabelHint } from '@weshipit/ui';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { MARKETING_CONSENT_LABELS } from '../../utils/hq/consent';
-
-const inputClass =
-  'w-full rounded-md border-0 bg-white px-3.5 py-2.5 text-slate-900 shadow-xs ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 aria-invalid:ring-red-500 dark:bg-white/5 dark:text-white dark:ring-white/10 dark:aria-invalid:ring-red-400';
-
-const errorClass = 'mt-2 text-sm text-red-600 dark:text-red-400';
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -101,14 +96,10 @@ export function LeadMagnetForm({
         Enter your email to unlock this content for free and download it as PDF.
       </p>
       <div>
-        <label
-          htmlFor="lm-first-name"
-          className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300"
-        >
-          First name{' '}
-          <span className="font-normal text-slate-400">(optional)</span>
-        </label>
-        <input
+        <Label htmlFor="lm-first-name" className="mb-2">
+          First name <LabelHint>(optional)</LabelHint>
+        </Label>
+        <Input
           id="lm-first-name"
           type="text"
           autoComplete="given-name"
@@ -116,7 +107,7 @@ export function LeadMagnetForm({
           aria-describedby={
             errors.first_name ? 'lm-first-name-error' : undefined
           }
-          className={inputClass}
+          size="lg"
           {...register('first_name', {
             maxLength: {
               message: 'Keep it under 80 characters.',
@@ -125,26 +116,23 @@ export function LeadMagnetForm({
           })}
         />
         {errors.first_name && (
-          <p id="lm-first-name-error" className={errorClass}>
+          <FieldError id="lm-first-name-error">
             {errors.first_name.message}
-          </p>
+          </FieldError>
         )}
       </div>
       <div>
-        <label
-          htmlFor="lm-email"
-          className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300"
-        >
+        <Label htmlFor="lm-email" className="mb-2">
           Email
-        </label>
-        <input
+        </Label>
+        <Input
           id="lm-email"
           type="email"
           autoComplete="email"
           placeholder="you@example.com"
           aria-invalid={errors.email ? true : undefined}
           aria-describedby={errors.email ? 'lm-email-error' : undefined}
-          className={inputClass}
+          size="lg"
           {...register('email', {
             maxLength: { message: 'This email is too long.', value: 254 },
             pattern: {
@@ -156,9 +144,7 @@ export function LeadMagnetForm({
           })}
         />
         {errors.email && (
-          <p id="lm-email-error" className={errorClass}>
-            {errors.email.message}
-          </p>
+          <FieldError id="lm-email-error">{errors.email.message}</FieldError>
         )}
       </div>
       {/*
@@ -196,9 +182,9 @@ export function LeadMagnetForm({
           <span>{MARKETING_CONSENT_LABELS.en}</span>
         </label>
         {errors.marketing_consent && (
-          <p id="lm-consent-error" className={errorClass}>
+          <FieldError id="lm-consent-error">
             {errors.marketing_consent.message}
-          </p>
+          </FieldError>
         )}
       </div>
       <Button

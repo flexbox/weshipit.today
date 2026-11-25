@@ -1,4 +1,14 @@
-import { AuthorDisclosure, Button, Faq, LinkButton, Text } from '@weshipit/ui';
+import {
+  AuthorDisclosure,
+  Badge,
+  Button,
+  Container,
+  Faq,
+  LinkButton,
+  Section,
+  Surface,
+  Text,
+} from '@weshipit/ui';
 
 import {
   ArrowRightIcon,
@@ -83,19 +93,27 @@ const faqs = [
 
 function HeroSection() {
   return (
-    <section className="relative overflow-hidden pt-32 pb-20">
-      <div className="relative mx-auto max-w-5xl px-6 text-center">
-        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent">
+    <Section
+      variant="plain"
+      spacing="hero"
+      className="relative overflow-hidden"
+    >
+      <Container size="lg" className="relative text-center">
+        <Badge variant="accent" className="mb-6">
           <CalendarDaysIcon className="h-4 w-4" />
           Sprint Incubateur Solopreneur — du 9 au 30 octobre 2026
-        </div>
+        </Badge>
 
         <Text variant="h1" as="h1" className="mb-6 text-balance">
           Sprint <span className="text-accent">Solo SaaS</span>&nbsp;: construis
           un logiciel qui bosse à ta place en 4 semaines
         </Text>
 
-        <p className="mx-auto mb-10 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-500 dark:text-neutral-400 md:text-xl">
+        <Text
+          variant="lead"
+          tone="muted"
+          className="mx-auto mb-10 max-w-2xl text-pretty leading-relaxed"
+        >
           4 lives avec{' '}
           <Link
             href="/flavie-prevot-avis"
@@ -108,7 +126,7 @@ function HeroSection() {
           premières features et tu trouves tes premiers utilisateurs. Sans
           savoir coder. Pour les freelances et solopreneurs qui refont la même
           chose chaque mois pour leurs clients.
-        </p>
+        </Text>
 
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button
@@ -127,7 +145,12 @@ function HeroSection() {
           </Button>
         </div>
 
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-neutral-500 dark:text-neutral-400">
+        <Text
+          as="div"
+          variant="small"
+          tone="muted"
+          className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2"
+        >
           <span className="flex items-center gap-2">
             <CheckIcon className="h-4 w-4 text-accent" />
             Aucun code à écrire soi-même
@@ -140,9 +163,9 @@ function HeroSection() {
             <CheckIcon className="h-4 w-4 text-accent" />
             12 mois d&apos;Incubateur pour le prix du Sprint
           </span>
-        </div>
-      </div>
-    </section>
+        </Text>
+      </Container>
+    </Section>
   );
 }
 
@@ -169,41 +192,38 @@ function PourquoiSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <Section>
+      <Container>
         <div className="mb-12 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Soit ça travaille à ta place, soit ça génère tes premiers revenus
             scalables
           </Text>
-          <p className="mx-auto max-w-2xl text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted" className="mx-auto max-w-2xl">
             Le Sprint n&apos;est pas réservé aux indie hackers. Les devs
             n&apos;ont pas besoin de Flavie pour créer un SaaS. Il est pensé
             pour les freelances et solopreneurs qui veulent mettre plus
             d&apos;IA dans leur business sans savoir par où commencer.
-          </p>
+          </Text>
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
           {cards.map((card) => (
-            <div
-              key={card.title}
-              className="rounded-xl border border-border bg-card p-6 transition-colors hover:border-accent/50"
-            >
+            <Surface interactive key={card.title}>
               <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-secondary">
                 <card.icon className="h-5 w-5 text-accent" />
               </div>
               <Text variant="h4" as="h3" className="mb-2">
                 {card.title}
               </Text>
-              <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+              <Text variant="small" tone="muted" className="leading-relaxed">
                 {card.description}
-              </p>
-            </div>
+              </Text>
+            </Surface>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -240,26 +260,23 @@ function ProgrammeSection() {
   ];
 
   return (
-    <section id="programme" className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <Section id="programme">
+      <Container>
         <div className="mb-16 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Le programme&nbsp;: 4 lives, de l&apos;idée aux premiers
             utilisateurs
           </Text>
-          <p className="mx-auto max-w-2xl text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted" className="mx-auto max-w-2xl">
             Un live par semaine le vendredi midi, du 9 au 30 octobre 2026. On te
             prend par la main sur toute la chaîne. Replays disponibles si tu
             rates une séance.
-          </p>
+          </Text>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
           {lives.map((live) => (
-            <div
-              key={live.number}
-              className="group relative rounded-xl border border-border bg-card p-6 transition-colors hover:border-accent/50"
-            >
+            <Surface interactive key={live.number} className="group relative">
               <div className="mb-6 flex items-center gap-4">
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-xl font-bold text-neutral-950 dark:text-neutral-200">
                   {live.number}
@@ -269,14 +286,18 @@ function ProgrammeSection() {
               <Text variant="h4" as="h3" className="mb-2">
                 {live.title}
               </Text>
-              <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+              <Text variant="small" tone="muted" className="leading-relaxed">
                 {live.description}
-              </p>
-            </div>
+              </Text>
+            </Surface>
           ))}
         </div>
 
-        <div className="mx-auto mt-8 max-w-3xl rounded-xl border border-accent/30 bg-accent/5 p-5 text-sm leading-relaxed text-neutral-950 dark:text-neutral-200">
+        <Surface
+          tone="accent"
+          padding="sm"
+          className="mx-auto mt-8 max-w-3xl text-sm leading-relaxed text-neutral-950 dark:text-neutral-200"
+        >
           <span className="font-semibold text-accent">
             Bonus parrainage&nbsp;:
           </span>{' '}
@@ -284,9 +305,9 @@ function ProgrammeSection() {
           de roast de 30 minutes avec Pierre. Il passe ton SaaS au crible et te
           dit franchement si c&apos;est bon ou pas. Demande-la moi après ton
           inscription.
-        </div>
-      </div>
-    </section>
+        </Surface>
+      </Container>
+    </Section>
   );
 }
 
@@ -308,21 +329,21 @@ function PourQuiSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-5xl px-6">
+    <Section>
+      <Container size="lg">
         <div className="mb-12 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Le Sprint Solo SaaS, c&apos;est pour toi si…
           </Text>
-          <p className="mx-auto max-w-2xl text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted" className="mx-auto max-w-2xl">
             Flavie le dit sans détour&nbsp;: c&apos;est un Sprint avancé, pas un
             Sprint débutant. Voici comment savoir de quel côté tu es.
-          </p>
+          </Text>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2">
-          <div className="rounded-xl border border-accent/30 bg-accent/5 p-6">
-            <Text variant="h4" as="h3" className="mb-4 text-accent">
+          <Surface tone="accent">
+            <Text tone="accent" variant="h4" as="h3" className="mb-4">
               ✅ Oui, fonce
             </Text>
             <ul className="space-y-3">
@@ -336,31 +357,30 @@ function PourQuiSection() {
                 </li>
               ))}
             </ul>
-          </div>
+          </Surface>
 
-          <div className="rounded-xl border border-border bg-card p-6">
-            <Text
-              variant="h4"
-              as="h3"
-              className="mb-4 text-neutral-500 dark:text-neutral-400"
-            >
+          <Surface>
+            <Text tone="muted" variant="h4" as="h3" className="mb-4">
               ❌ Passe ton chemin
             </Text>
             <ul className="space-y-3">
               {no.map((item) => (
-                <li
+                <Text
+                  as="li"
+                  variant="small"
+                  tone="muted"
                   key={item}
-                  className="flex items-start gap-3 text-sm text-neutral-500 dark:text-neutral-400"
+                  className="flex items-start gap-3"
                 >
                   <XMarkIcon className="mt-0.5 h-5 w-5 shrink-0 text-destructive" />
                   {item}
-                </li>
+                </Text>
               ))}
             </ul>
-          </div>
+          </Surface>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -387,18 +407,18 @@ function PrixSection() {
   ];
 
   return (
-    <section id="prix" className="border-t border-border py-24">
-      <div className="mx-auto max-w-5xl px-6">
+    <Section id="prix">
+      <Container size="lg">
         <div className="mb-12 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Le prix du Sprint seul, avec l&apos;année entière
           </Text>
-          <p className="mx-auto max-w-2xl text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted" className="mx-auto max-w-2xl">
             Chaque Sprint est vendu seul ou couplé aux 12 mois. Les tarifs
             indiqués avec « ~ » sont ceux du Sprint précédent, la page de vente
             officielle fait foi. Le tarif parrainage, lui, ne change pas&nbsp;:
             c&apos;est le prix plancher que Flavie n&apos;affiche nulle part.
-          </p>
+          </Text>
         </div>
 
         <div className="overflow-hidden rounded-xl border border-border">
@@ -470,36 +490,44 @@ function PrixSection() {
             Comprendre le tarif parrainage
           </LinkButton>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
 function OnLeFaitEnsembleSection() {
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-4xl px-6">
-        <div className="rounded-2xl border border-border bg-card p-6 md:p-10">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary px-3 py-1 text-xs font-medium text-neutral-500 dark:text-neutral-400">
+    <Section>
+      <Container size="md">
+        <Surface padding="xl" radius="2xl">
+          <Badge variant="neutral" size="sm" className="mb-4">
             <UsersIcon className="h-3.5 w-3.5" />
             Plus on est de fous
-          </div>
+          </Badge>
           <Text variant="h3" as="h2" className="mb-3">
             Je fais ce Sprint aussi. On peut le faire en binôme.
           </Text>
-          <p className="mb-4 text-pretty leading-relaxed text-neutral-500 dark:text-neutral-400">
+          <Text
+            variant="inherit"
+            tone="muted"
+            className="mb-4 text-pretty leading-relaxed"
+          >
             Je suis développeur React Native et Next.js depuis 2016 et incubé
             chez Flavie depuis 2025. En octobre, je construis mon propre SaaS
             back-office pendant le Sprint. Ce que j&apos;ai remarqué dans les
             Sprints précédents&nbsp;: quand on est deux ou trois à se connaître,
             on vit les hauts et les bas ensemble et on finit vraiment.
-          </p>
-          <p className="mb-6 text-pretty leading-relaxed text-neutral-500 dark:text-neutral-400">
+          </Text>
+          <Text
+            variant="inherit"
+            tone="muted"
+            className="mb-6 text-pretty leading-relaxed"
+          >
             Si tu rejoins par cette page, dis-le moi. Je te retrouve dans la
             communauté, on partage nos avancées chaque semaine, et quand ton
             setup bloque sur un truc de dev, tu as quelqu&apos;un à qui demander
             en dehors du live.
-          </p>
+          </Text>
           <Link
             href={AVIS_URL}
             className="inline-flex items-center gap-1 text-sm font-medium text-accent underline-offset-2 hover:underline"
@@ -507,9 +535,9 @@ function OnLeFaitEnsembleSection() {
             Lire mon avis détaillé après 6 mois d&apos;incubation
             <ArrowRightIcon className="h-3.5 w-3.5" />
           </Link>
-        </div>
-      </div>
-    </section>
+        </Surface>
+      </Container>
+    </Section>
   );
 }
 
@@ -556,26 +584,34 @@ function DisclosureSection() {
 
 function CtaFinalSection() {
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="relative overflow-hidden rounded-2xl border border-border bg-card">
+    <Section>
+      <Container>
+        <Surface
+          padding="none"
+          radius="2xl"
+          className="relative overflow-hidden"
+        >
           <div className="pointer-events-none absolute inset-0">
             <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:2rem_2rem] opacity-30" />
           </div>
 
           <div className="relative px-8 py-16 text-center md:py-24">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent">
+            <Badge variant="accent" className="mb-6">
               <TagIcon className="h-4 w-4" />
               Premier live le vendredi 9 octobre 2026
-            </div>
+            </Badge>
             <Text variant="h2" as="h2" className="mb-6 text-balance">
               Fin octobre, ton SaaS tourne{' '}
               <span className="text-accent">avec de vrais utilisateurs</span>
             </Text>
-            <p className="mx-auto mb-10 max-w-xl text-lg text-neutral-500 dark:text-neutral-400">
+            <Text
+              variant="lead"
+              tone="muted"
+              className="mx-auto mb-10 max-w-xl"
+            >
               4 lives, un setup propre, tes premières features, un bêta-test. Et
               11 autres Sprints dans l&apos;année pour le même prix.
-            </p>
+            </Text>
 
             <Button
               href={AFFILIATE_URL}
@@ -590,7 +626,12 @@ function CtaFinalSection() {
               <ArrowRightIcon className="ml-2 h-4 w-4" />
             </Button>
 
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-neutral-500 dark:text-neutral-400">
+            <Text
+              as="div"
+              variant="small"
+              tone="muted"
+              className="mt-8 flex flex-wrap items-center justify-center gap-6"
+            >
               <span className="flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                 Page de parrainage officielle
@@ -603,11 +644,11 @@ function CtaFinalSection() {
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                 Roast de ton SaaS avec Pierre sur demande
               </span>
-            </div>
+            </Text>
           </div>
-        </div>
-      </div>
-    </section>
+        </Surface>
+      </Container>
+    </Section>
   );
 }
 
@@ -728,19 +769,19 @@ export default function SprintSoloSaasPage() {
         <OnLeFaitEnsembleSection />
         <DisclosureSection />
 
-        <section id="faq" className="border-t border-border py-24">
-          <div className="mx-auto max-w-3xl px-6">
+        <Section id="faq">
+          <Container size="sm">
             <div className="mb-12 text-center">
               <Text variant="h3" as="h2" className="mb-4 text-balance">
                 FAQ — Sprint Solo SaaS
               </Text>
-              <p className="text-neutral-500 dark:text-neutral-400">
+              <Text variant="inherit" tone="muted">
                 Les questions qui reviennent avant de se lancer.
-              </p>
+              </Text>
             </div>
             <Faq faqs={faqs} title="" headingId="faq-saas-heading" />
-          </div>
-        </section>
+          </Container>
+        </Section>
 
         <CtaFinalSection />
       </Layout>

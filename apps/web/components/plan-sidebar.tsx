@@ -1,3 +1,4 @@
+import { Text } from '@weshipit/ui';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -62,9 +63,9 @@ export function PlanSidebar({ issues }: PlanSidebarProps) {
   const sorted = sortIssues(issues);
   return (
     <aside className="hidden w-56 shrink-0 md:block">
-      <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
+      <Text variant="eyebrow" tone="muted" className="mb-4">
         Previous issues
-      </p>
+      </Text>
       <nav className="flex flex-col gap-1">
         {sorted.map((issue) => {
           const isActive = asPath

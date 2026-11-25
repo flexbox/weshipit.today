@@ -1,4 +1,14 @@
-import { AuthorDisclosure, Button, Faq, LinkButton, Text } from '@weshipit/ui';
+import {
+  AuthorDisclosure,
+  Badge,
+  Button,
+  Container,
+  Faq,
+  LinkButton,
+  Section,
+  Surface,
+  Text,
+} from '@weshipit/ui';
 
 import {
   ArrowRightIcon,
@@ -79,24 +89,32 @@ const faqs = [
 
 function HeroSection() {
   return (
-    <section className="relative overflow-hidden pt-32 pb-20">
-      <div className="relative mx-auto max-w-5xl px-6 text-center">
-        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent">
+    <Section
+      variant="plain"
+      spacing="hero"
+      className="relative overflow-hidden"
+    >
+      <Container size="lg" className="relative text-center">
+        <Badge variant="accent" className="mb-6">
           <UserCircleIcon className="h-4 w-4" />
           Profil vérifié — Fondatrice de l’Incubateur Solopreneur
-        </div>
+        </Badge>
 
         <Text variant="h1" as="h1" className="mb-6 text-balance">
           <span className="text-accent">Flavie Prevot</span>&nbsp;: avis,
           parcours et projets (2026)
         </Text>
 
-        <p className="mx-auto mb-10 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-500 dark:text-neutral-400 md:text-xl">
+        <Text
+          variant="lead"
+          tone="muted"
+          className="mx-auto mb-10 max-w-2xl text-pretty leading-relaxed"
+        >
           Entrepreneure française, fondatrice de l’Incubateur Solopreneur, hôte
           d’un podcast à forte traction et d’une newsletter de 30&nbsp;000+
           abonnés. Résumé neutre de son parcours, de sa réputation et de son
           écosystème pour décider si son approche te correspond.
-        </p>
+        </Text>
 
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button as="a" href="#en-bref" size="xl" variant="primary">
@@ -108,7 +126,12 @@ function HeroSection() {
           </Button>
         </div>
 
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-neutral-500 dark:text-neutral-400">
+        <Text
+          as="div"
+          variant="small"
+          tone="muted"
+          className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2"
+        >
           <span className="flex items-center gap-2">
             <CheckIcon className="h-4 w-4 text-accent" />
             Analyse par un incubé actif
@@ -121,9 +144,9 @@ function HeroSection() {
             <CheckIcon className="h-4 w-4 text-accent" />
             Mise à jour 2026
           </span>
-        </div>
-      </div>
-    </section>
+        </Text>
+      </Container>
+    </Section>
   );
 }
 
@@ -160,15 +183,15 @@ function EnBrefSection() {
   ];
 
   return (
-    <section id="en-bref" className="border-t border-border py-24">
-      <div className="mx-auto max-w-4xl px-6">
+    <Section id="en-bref">
+      <Container size="md">
         <div className="mb-12 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Flavie Prevot en 30 secondes
           </Text>
-          <p className="text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted">
             Les faits vérifiables sur son écosystème actuel.
-          </p>
+          </Text>
         </div>
 
         <div className="overflow-hidden rounded-xl border border-border">
@@ -179,17 +202,17 @@ function EnBrefSection() {
                 i !== facts.length - 1 ? 'border-b border-border' : ''
               } bg-card`}
             >
-              <div className="text-sm font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
+              <Text as="div" variant="eyebrow" tone="muted">
                 {f.label}
-              </div>
+              </Text>
               <div className="text-sm text-neutral-950 dark:text-neutral-100 md:col-span-2">
                 {f.value}
               </div>
             </div>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -228,43 +251,40 @@ function ParcoursSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-5xl px-6">
+    <Section>
+      <Container size="lg">
         <div className="mb-12 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Parcours de Flavie Prevot
           </Text>
-          <p className="mx-auto max-w-2xl text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted" className="mx-auto max-w-2xl">
             Reconstitution à partir de sources publiques (LinkedIn, newsletter,
             podcast, contenus de vente).
-          </p>
+          </Text>
         </div>
 
         <div className="space-y-4">
           {stages.map((s, i) => (
-            <div
-              key={s.period}
-              className="relative rounded-xl border border-border bg-card p-6 md:pl-24"
-            >
+            <Surface key={s.period} className="relative md:pl-24">
               <div className="mb-2 flex items-center gap-3 md:absolute md:left-6 md:top-6 md:mb-0">
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-sm font-bold text-neutral-950 dark:text-neutral-200">
                   {i + 1}
                 </div>
               </div>
-              <div className="mb-1 text-xs font-semibold uppercase tracking-wide text-accent">
+              <Text as="div" variant="eyebrow" className="mb-1">
                 {s.period}
-              </div>
+              </Text>
               <Text variant="h4" as="h3" className="mb-3">
                 {s.title}
               </Text>
-              <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+              <Text variant="small" tone="muted" className="leading-relaxed">
                 {s.description}
-              </p>
-            </div>
+              </Text>
+            </Surface>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -315,43 +335,45 @@ function EcosystemeSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <Section>
+      <Container>
         <div className="mb-16 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             L’écosystème Flavie Prevot en 2026
           </Text>
-          <p className="mx-auto max-w-2xl text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted" className="mx-auto max-w-2xl">
             Six points d’entrée pour découvrir son travail, du gratuit au
             payant. Aucune obligation de passer par la formule annuelle.
-          </p>
+          </Text>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {pillars.map((p) => (
-            <div
-              key={p.title}
-              className="rounded-xl border border-border bg-card p-6 transition-colors hover:border-accent/50"
-            >
+            <Surface interactive key={p.title}>
               <div className="mb-4 flex items-center justify-between">
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary">
                   <p.icon className="h-5 w-5 text-accent" />
                 </div>
-                <span className="rounded-full border border-border bg-secondary px-3 py-1 text-xs font-medium text-neutral-500 dark:text-neutral-400">
+                <Text
+                  as="span"
+                  variant="caption"
+                  tone="muted"
+                  className="rounded-full border border-border bg-secondary px-3 py-1 font-medium"
+                >
                   {p.access}
-                </span>
+                </Text>
               </div>
               <Text variant="h4" as="h3" className="mb-2">
                 {p.title}
               </Text>
-              <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+              <Text variant="small" tone="muted" className="leading-relaxed">
                 {p.description}
-              </p>
-            </div>
+              </Text>
+            </Surface>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -384,24 +406,21 @@ function ReputationSection() {
   ];
 
   return (
-    <section id="reputation" className="border-t border-border py-24">
-      <div className="mx-auto max-w-5xl px-6">
+    <Section id="reputation">
+      <Container size="lg">
         <div className="mb-12 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Réputation et avis publics
           </Text>
-          <p className="mx-auto max-w-2xl text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted" className="mx-auto max-w-2xl">
             Signaux vérifiables sur les canaux publics — sans reprendre les
             arguments de sa propre page de vente.
-          </p>
+          </Text>
         </div>
 
         <div className="grid gap-4 md:grid-cols-2">
           {signals.map((s) => (
-            <div
-              key={s.source}
-              className="rounded-xl border border-border bg-card p-6"
-            >
+            <Surface key={s.source}>
               <div className="mb-3 flex items-center justify-between">
                 <Text
                   variant="h4"
@@ -414,17 +433,17 @@ function ReputationSection() {
                   {s.note}
                 </span>
               </div>
-              <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+              <Text variant="small" tone="muted" className="leading-relaxed">
                 {s.summary}
-              </p>
-            </div>
+              </Text>
+            </Surface>
           ))}
         </div>
 
-        <div className="mt-8 rounded-xl border border-accent/30 bg-accent/5 p-6">
+        <Surface tone="accent" className="mt-8">
           <div className="mb-2 flex items-center gap-2">
             <ShieldCheckIcon className="h-5 w-5 text-accent" />
-            <Text variant="h4" as="h3" className="text-accent">
+            <Text tone="accent" variant="h4" as="h3">
               Verdict sur la réputation
             </Text>
           </div>
@@ -436,9 +455,9 @@ function ReputationSection() {
             à savoir si son approche te correspond — c’est l’objet des sections
             ci-dessous.
           </p>
-        </div>
-      </div>
-    </section>
+        </Surface>
+      </Container>
+    </Section>
   );
 }
 
@@ -484,43 +503,44 @@ function PourAllerPlusLoinSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <Section>
+      <Container>
         <div className="mb-16 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Pour aller plus loin
           </Text>
-          <p className="mx-auto max-w-2xl text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted" className="mx-auto max-w-2xl">
             Quatre chemins possibles selon où tu en es dans ta réflexion.
-          </p>
+          </Text>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {routes.map((r) => (
-            <div
-              key={r.title}
-              className="flex flex-col rounded-xl border border-border bg-card p-6"
-            >
+            <Surface key={r.title} className="flex flex-col">
               <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-secondary">
                 <r.icon className="h-5 w-5 text-accent" />
               </div>
               <Text variant="h4" as="h3" className="mb-2">
                 {r.title}
               </Text>
-              <p className="mb-6 flex-1 text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+              <Text
+                variant="small"
+                tone="muted"
+                className="mb-6 flex-1 leading-relaxed"
+              >
                 {r.description}
-              </p>
+              </Text>
               {r.cta && (
                 <LinkButton href={r.cta.href} size="md" variant="outline">
                   {r.cta.label}
                   <ArrowRightIcon className="ml-2 h-4 w-4" />
                 </LinkButton>
               )}
-            </div>
+            </Surface>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -561,27 +581,35 @@ function DisclosureSection() {
 
 function CtaFinalSection() {
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="relative overflow-hidden rounded-2xl border border-border bg-card">
+    <Section>
+      <Container>
+        <Surface
+          padding="none"
+          radius="2xl"
+          className="relative overflow-hidden"
+        >
           <div className="pointer-events-none absolute inset-0">
             <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:2rem_2rem] opacity-30" />
           </div>
 
           <div className="relative px-8 py-16 text-center md:py-24">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent">
+            <Badge variant="accent" className="mb-6">
               <CheckCircleIcon className="h-4 w-4" />
               Profil sérieux, approche vérifiée
-            </div>
+            </Badge>
             <Text variant="h2" as="h2" className="mb-6 text-balance">
               L’étape suivante&nbsp;: lire mon avis complet sur son
               <span className="text-accent"> Incubateur</span>
             </Text>
-            <p className="mx-auto mb-10 max-w-xl text-lg text-neutral-500 dark:text-neutral-400">
+            <Text
+              variant="lead"
+              tone="muted"
+              className="mx-auto mb-10 max-w-xl"
+            >
               6 mois d’incubation, notes par critères, points forts, limites,
               comparatif avec les alternatives françaises. Pour décider en
               connaissance de cause.
-            </p>
+            </Text>
 
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
               <LinkButton href={AVIS_URL} size="xxl" variant="primary">
@@ -597,9 +625,9 @@ function CtaFinalSection() {
               </LinkButton>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </Surface>
+      </Container>
+    </Section>
   );
 }
 
@@ -706,19 +734,19 @@ export default function FlaviePrevotAvisPage() {
         <PourAllerPlusLoinSection />
         <DisclosureSection />
 
-        <section id="faq" className="border-t border-border py-24">
-          <div className="mx-auto max-w-3xl px-6">
+        <Section id="faq">
+          <Container size="sm">
             <div className="mb-12 text-center">
               <Text variant="h3" as="h2" className="mb-4 text-balance">
                 FAQ — Flavie Prevot
               </Text>
-              <p className="text-neutral-500 dark:text-neutral-400">
+              <Text variant="inherit" tone="muted">
                 Les questions qui reviennent le plus souvent la concernant.
-              </p>
+              </Text>
             </div>
             <Faq faqs={faqs} title="" headingId="faq-flavie-heading" />
-          </div>
-        </section>
+          </Container>
+        </Section>
 
         <CtaFinalSection />
       </Layout>

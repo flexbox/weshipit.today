@@ -1,4 +1,12 @@
-import { Text, Button, ClientsListHomepage, Faq } from '@weshipit/ui';
+import {
+  Button,
+  ClientsListHomepage,
+  Container,
+  Faq,
+  Section,
+  Surface,
+  Text,
+} from '@weshipit/ui';
 
 import { Customer, getVisibleClients } from './api/client';
 import Head from 'next/head';
@@ -57,22 +65,26 @@ function HeroSection() {
 
   return (
     <section className="relative overflow-hidden pt-32 pb-24">
-      <div className="relative mx-auto max-w-6xl px-6">
+      <Container className="relative">
         <div className="mx-auto max-w-4xl text-center">
           <Text variant="h1" as="h1" className="mb-6 text-balance">
             Si ton app React Native devient{' '}
-            <span className="text-neutral-500 dark:text-neutral-400">
+            <Text as="span" variant="inherit" tone="muted">
               plus lente
-            </span>{' '}
+            </Text>{' '}
             à chaque feature…{' '}
             <span className="text-accent">ce n’est pas normal.</span>
           </Text>
 
-          <p className="mx-auto mb-10 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-500 dark:text-neutral-400 md:text-xl">
+          <Text
+            variant="lead"
+            tone="muted"
+            className="mx-auto mb-10 max-w-2xl text-pretty leading-relaxed"
+          >
             Une bonne app devient plus rapide à faire évoluer avec le temps. La
             tienne te ralentit. Et ça te coûte déjà des users, du temps et du
             cash.
-          </p>
+          </Text>
 
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button
@@ -107,7 +119,11 @@ function HeroSection() {
 
         {/* Intro */}
         <div className="mx-auto mt-16 max-w-2xl text-center">
-          <p className="text-pretty text-lg leading-relaxed text-neutral-500 dark:text-neutral-400">
+          <Text
+            variant="lead"
+            tone="muted"
+            className="text-pretty leading-relaxed"
+          >
             Je m&apos;appelle{' '}
             <span className="font-medium text-neutral-950 dark:text-neutral-200">
               David
@@ -121,9 +137,9 @@ function HeroSection() {
             <span className="font-semibold text-accent">
               shipper. Tous les jours.
             </span>
-          </p>
+          </Text>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }
@@ -153,8 +169,8 @@ function ProblemsSection() {
   ];
 
   return (
-    <section id="probleme" className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <Section id="probleme">
+      <Container>
         <div className="grid gap-16 lg:grid-cols-2">
           {/* Left */}
           <div>
@@ -164,17 +180,14 @@ function ProblemsSection() {
             </Text>
             <ul className="space-y-4">
               {problems.map((p, i) => (
-                <li
-                  key={i}
-                  className="flex items-start gap-4 rounded-lg border border-border bg-card p-4"
-                >
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-secondary">
+                <Surface as="li" key={i} className="flex items-start gap-4 p-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-secondary">
                     <p.icon className="h-5 w-5 text-neutral-500 dark:text-neutral-400" />
                   </div>
                   <span className="pt-2 text-neutral-950 dark:text-neutral-200">
                     {p.text}
                   </span>
-                </li>
+                </Surface>
               ))}
             </ul>
           </div>
@@ -184,9 +197,13 @@ function ProblemsSection() {
             <Text variant="h4" as="h3" className="mb-8">
               Ce que personne ne te dit
             </Text>
-            <p className="mb-6 leading-relaxed text-neutral-500 dark:text-neutral-400">
+            <Text
+              variant="inherit"
+              tone="muted"
+              className="mb-6 leading-relaxed"
+            >
               Ton app ne ralentit pas par hasard. Tu accumules :
-            </p>
+            </Text>
             <ul className="mb-8 space-y-3">
               {hiddenProblems.map((p, i) => (
                 <li key={i} className="flex items-center gap-3">
@@ -197,23 +214,23 @@ function ProblemsSection() {
                 </li>
               ))}
             </ul>
-            <div className="rounded-xl border border-destructive/30 bg-destructive/5 p-6">
+            <Surface tone="destructive">
               <p className="mb-4 font-medium text-destructive">
                 Résultat : tu ne maîtrises plus rien.
               </p>
-              <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+              <Text variant="small" tone="muted" className="leading-relaxed">
                 Vendredi soir. Release prévue. Tout casse. Et tu n&apos;as plus
                 que deux options : rebuild from scratch ou patcher en espérant
                 que ça tienne.{' '}
                 <span className="font-medium text-neutral-950 dark:text-neutral-200">
                   Dans les deux cas, tu brûles du cash.
                 </span>
-              </p>
-            </div>
+              </Text>
+            </Surface>
           </div>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -240,17 +257,17 @@ function StatsSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <Section>
+      <Container>
         <div className="mb-16 text-center">
-          <p className="mb-4 text-sm font-medium uppercase tracking-wider text-accent">
+          <Text variant="eyebrow" className="mb-4">
             J&apos;ai vu ça des dizaines de fois.
-          </p>
+          </Text>
           <Text variant="h3" as="h2" className="mx-auto max-w-2xl text-balance">
             Je ne fais pas du code.{' '}
-            <span className="text-neutral-500 dark:text-neutral-400">
+            <Text as="span" variant="inherit" tone="muted">
               Je règle des problèmes de vélocité.
-            </span>
+            </Text>
           </Text>
         </div>
 
@@ -265,37 +282,38 @@ function StatsSection() {
                   {stat.label}
                 </div>
               </div>
-              <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+              <Text variant="small" tone="muted" className="leading-relaxed">
                 {stat.description}
-              </p>
+              </Text>
             </div>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
 // ─── TESTIMONIALS ────────────────────────────────────────────────────────────
 function TestimonialsSection() {
   return (
-    <section id="testimonials" className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <Section id="testimonials">
+      <Container>
         <div className="mb-16 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Ils ont transformé leur app avec nous
           </Text>
-          <p className="text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted">
             Des apps lentes devenues des plateformes scalables. Des années de
             releases automatisées.
-          </p>
+          </Text>
         </div>
 
         <div className="mb-16 grid gap-6 md:grid-cols-3">
           {testimonials.map((item, index) => (
-            <div
+            <Surface
+              interactive
               key={index}
-              className="group relative flex flex-col rounded-xl border border-border bg-card p-6 transition-colors hover:border-accent/50"
+              className="group relative flex flex-col"
             >
               <svg
                 className="mb-4 h-8 w-8 text-accent opacity-50"
@@ -304,22 +322,26 @@ function TestimonialsSection() {
               >
                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
               </svg>
-              <p className="mb-6 flex-1 text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+              <Text
+                variant="small"
+                tone="muted"
+                className="mb-6 flex-1 leading-relaxed"
+              >
                 {item.quote}
-              </p>
+              </Text>
               <div className="border-t border-border pt-4">
                 <div className="font-medium text-neutral-950 dark:text-neutral-200">
                   {item.author}
                 </div>
-                <div className="text-sm text-neutral-500 dark:text-neutral-400">
+                <Text as="div" variant="small" tone="muted">
                   {item.role}
-                </div>
+                </Text>
               </div>
-            </div>
+            </Surface>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -362,25 +384,30 @@ function ProcessSection() {
   ];
 
   return (
-    <section id="process" className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <Section id="process">
+      <Container>
         <div className="mb-16 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Je prends ton app et je la transforme en{' '}
             <span className="text-accent">machine à shipper.</span>
           </Text>
-          <p className="text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted">
             Pas dans 6 mois.{' '}
             <span className="font-medium text-neutral-950 dark:text-neutral-200">
               Maintenant.
             </span>
-          </p>
+          </Text>
         </div>
 
         <div className="mb-12 flex items-center justify-center gap-4 text-center">
-          <span className="rounded-lg border border-border bg-card px-4 py-2 text-sm text-neutral-500 dark:text-neutral-400 line-through">
+          <Text
+            as="span"
+            variant="small"
+            tone="muted"
+            className="rounded-lg border border-border bg-card px-4 py-2 line-through"
+          >
             &ldquo;on espère que ça passe&rdquo;
-          </span>
+          </Text>
           <span className="text-2xl text-accent">&rarr;</span>
           <span className="rounded-lg border border-accent bg-accent/10 px-4 py-2 text-sm font-medium text-accent">
             &ldquo;on ship aujourd&apos;hui&rdquo;
@@ -389,10 +416,7 @@ function ProcessSection() {
 
         <div className="grid gap-6 md:grid-cols-3">
           {steps.map((step) => (
-            <div
-              key={step.number}
-              className="group relative rounded-xl border border-border bg-card p-6 transition-colors hover:border-accent/50"
-            >
+            <Surface interactive key={step.number} className="group relative">
               <div className="mb-6 flex items-center gap-4">
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-xl font-bold text-neutral-950 dark:text-neutral-200">
                   {step.number}
@@ -402,25 +426,28 @@ function ProcessSection() {
               <Text variant="h4" as="h3" className="mb-2">
                 {step.title}
               </Text>
-              <p className="mb-4 text-sm text-neutral-500 dark:text-neutral-400">
+              <Text variant="small" tone="muted" className="mb-4">
                 {step.description}
-              </p>
+              </Text>
               <ul className="space-y-2">
                 {step.items.map((item, i) => (
-                  <li
+                  <Text
+                    as="li"
+                    variant="small"
+                    tone="muted"
                     key={i}
-                    className="flex items-start gap-2 text-sm text-neutral-500 dark:text-neutral-400"
+                    className="flex items-start gap-2"
                   >
                     <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
                     {item}
-                  </li>
+                  </Text>
                 ))}
               </ul>
-            </div>
+            </Surface>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -446,14 +473,14 @@ function PricingSection() {
   ];
 
   return (
-    <section id="pricing" className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <Section id="pricing">
+      <Container>
         <div className="mx-auto max-w-3xl">
-          <div className="overflow-hidden rounded-2xl border border-border bg-card">
+          <Surface padding="none" radius="2xl" className="overflow-hidden">
             <div className="border-b border-border bg-secondary/30 px-8 py-12 text-center">
-              <div className="mb-2 text-sm font-medium uppercase tracking-wider text-accent">
+              <Text as="div" variant="eyebrow" className="mb-2">
                 Tarif unique
-              </div>
+              </Text>
               <div className="mb-4 flex items-baseline justify-center gap-2">
                 <span className="font-display text-6xl font-bold tracking-[-0.03em] text-neutral-950 dark:text-neutral-200 md:text-7xl">
                   5k&euro;
@@ -462,9 +489,9 @@ function PricingSection() {
                   /mois
                 </span>
               </div>
-              <p className="text-neutral-500 dark:text-neutral-400">
+              <Text variant="inherit" tone="muted">
                 C&apos;est tout.
-              </p>
+              </Text>
             </div>
 
             <div className="p-8">
@@ -487,9 +514,9 @@ function PricingSection() {
                     <div className="mb-1 font-medium text-neutral-950 dark:text-neutral-200">
                       {f.title}
                     </div>
-                    <div className="text-sm text-neutral-500 dark:text-neutral-400">
+                    <Text as="div" variant="small" tone="muted">
                       {f.description}
-                    </div>
+                    </Text>
                   </div>
                 ))}
               </div>
@@ -507,10 +534,10 @@ function PricingSection() {
                 <ArrowRightIcon className="ml-2 h-4 w-4" />
               </Button>
             </div>
-          </div>
+          </Surface>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -540,8 +567,8 @@ function ComparisonSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <Section>
+      <Container>
         <div className="mb-16 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Combien ça te coûte de continuer comme ça ?
@@ -549,15 +576,15 @@ function ComparisonSection() {
           <div className="flex items-center justify-center gap-8">
             <div className="flex items-center gap-2">
               <span className="text-4xl font-bold text-accent">-50%</span>
-              <span className="text-sm text-neutral-500 dark:text-neutral-400">
+              <Text as="span" variant="small" tone="muted">
                 de temps de dev
-              </span>
+              </Text>
             </div>
             <div className="flex items-center gap-2">
               <span className="text-4xl font-bold text-accent">+35%</span>
-              <span className="text-sm text-neutral-500 dark:text-neutral-400">
+              <Text as="span" variant="small" tone="muted">
                 de rétention utilisateur
-              </span>
+              </Text>
             </div>
           </div>
         </div>
@@ -582,10 +609,15 @@ function ComparisonSection() {
               <div className="flex items-center p-4 font-medium text-neutral-950 dark:text-neutral-200">
                 {row.category}
               </div>
-              <div className="flex items-center gap-2 border-l border-border bg-card p-4 text-sm text-neutral-500 dark:text-neutral-400">
+              <Text
+                as="div"
+                variant="small"
+                tone="muted"
+                className="flex items-center gap-2 border-l border-border bg-card p-4"
+              >
                 <XMarkIcon className="h-4 w-4 shrink-0 text-destructive" />
                 {row.without}
-              </div>
+              </Text>
               <div className="flex items-center gap-2 border-l border-border bg-accent/5 p-4 text-sm text-neutral-950 dark:text-neutral-200">
                 <CheckIcon className="h-4 w-4 shrink-0 text-accent" />
                 {row.withUs}
@@ -593,8 +625,8 @@ function ComparisonSection() {
             </div>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -619,8 +651,8 @@ function UrgencySection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <Section>
+      <Container>
         <div className="mb-12 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Chaque semaine sans agir te coûte
@@ -629,9 +661,9 @@ function UrgencySection() {
 
         <div className="mb-12 grid gap-6 md:grid-cols-3">
           {items.map((item, i) => (
-            <div
+            <Surface
               key={i}
-              className="flex flex-col items-center rounded-xl border border-border bg-card p-8 text-center"
+              className="flex flex-col items-center p-8 text-center"
             >
               <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-destructive/10">
                 <item.icon className="h-7 w-7 text-destructive" />
@@ -639,30 +671,34 @@ function UrgencySection() {
               <div className="mb-2 text-3xl font-bold text-neutral-950 dark:text-neutral-200">
                 {item.value}
               </div>
-              <p className="text-sm text-neutral-500 dark:text-neutral-400">
+              <Text variant="small" tone="muted">
                 {item.text}
-              </p>
-            </div>
+              </Text>
+            </Surface>
           ))}
         </div>
 
-        <div className="rounded-xl border border-accent bg-accent/10 p-8 text-center">
+        <Surface tone="accent" className="p-8 text-center">
           <p className="text-xl font-bold text-neutral-950 dark:text-neutral-200">
             On prend <span className="text-accent">3 clients max</span>. Il
             reste une place.
           </p>
-        </div>
-      </div>
-    </section>
+        </Surface>
+      </Container>
+    </Section>
   );
 }
 
 // ─── CTA FINAL ───────────────────────────────────────────────────────────────
 function CtaFinalSection() {
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="relative overflow-hidden rounded-2xl border border-border bg-card">
+    <Section>
+      <Container>
+        <Surface
+          padding="none"
+          radius="2xl"
+          className="relative overflow-hidden"
+        >
           <div className="pointer-events-none absolute inset-0">
             <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:2rem_2rem] opacity-30" />
           </div>
@@ -672,10 +708,14 @@ function CtaFinalSection() {
               Je ne promets pas du code.{' '}
               <span className="text-accent">Je promets du shipping.</span>
             </Text>
-            <p className="mx-auto mb-10 max-w-xl text-lg text-neutral-500 dark:text-neutral-400">
+            <Text
+              variant="lead"
+              tone="muted"
+              className="mx-auto mb-10 max-w-xl"
+            >
               Prends un premier mois. Et vois par toi-même si ton app peut enfin
               ship.
-            </p>
+            </Text>
 
             <Button
               href={linksApi.stripe.MONTHLY_PLAN}
@@ -690,7 +730,12 @@ function CtaFinalSection() {
               <ArrowRightIcon className="ml-2 h-4 w-4" />
             </Button>
 
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-neutral-500 dark:text-neutral-400">
+            <Text
+              as="div"
+              variant="small"
+              tone="muted"
+              className="mt-8 flex flex-wrap items-center justify-center gap-6"
+            >
               <span className="flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                 Sans engagement
@@ -703,11 +748,11 @@ function CtaFinalSection() {
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                 Le code t&apos;appartient
               </span>
-            </div>
+            </Text>
           </div>
-        </div>
-      </div>
-    </section>
+        </Surface>
+      </Container>
+    </Section>
   );
 }
 
@@ -888,16 +933,16 @@ export default function BonjourPage({ clients }: BonjourPageProps) {
         <UrgencySection />
 
         {/* FAQ */}
-        <section id="faq" className="border-t border-border py-24">
-          <div className="mx-auto max-w-3xl px-6">
+        <Section id="faq">
+          <Container size="sm">
             <div className="mb-12 text-center">
               <Text variant="h3" as="h2" className="mb-4 text-balance">
                 Questions fréquentes
               </Text>
             </div>
             <Faq faqs={faqs} title="" headingId="faq-fr-heading" />
-          </div>
-        </section>
+          </Container>
+        </Section>
 
         <CtaFinalSection />
       </Layout>

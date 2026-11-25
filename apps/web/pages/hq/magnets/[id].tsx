@@ -1,4 +1,4 @@
-import { Button } from '@weshipit/ui';
+import { Button, Input, Label, LabelHint, Textarea } from '@weshipit/ui';
 import type { GetServerSideProps } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -16,11 +16,6 @@ type EditableMagnet = Pick<
 interface MagnetPageProps {
   magnet: EditableMagnet | null;
 }
-
-const fieldClass =
-  'w-full rounded-md border-0 px-3 py-2 text-slate-900 ring-1 ring-inset ring-slate-300 focus:ring-2 focus:ring-blue-600 dark:bg-white/5 dark:text-white dark:ring-white/10';
-const labelClass =
-  'mb-1 block text-sm font-medium text-slate-700 dark:text-slate-300';
 
 const STARTER = `## Avant de commencer
 
@@ -58,78 +53,66 @@ export default function MagnetPage({ magnet }: MagnetPageProps) {
       >
         <input type="hidden" name="id" value={magnet?.id ?? ''} />
         <div>
-          <label htmlFor="title" className={labelClass}>
+          <Label htmlFor="title" className="mb-1">
             Titre
-          </label>
-          <input
+          </Label>
+          <Input
             id="title"
             name="title"
             required
             maxLength={160}
             defaultValue={magnet?.title}
-            className={fieldClass}
           />
         </div>
         <div>
-          <label htmlFor="slug" className={labelClass}>
-            Slug{' '}
-            <span className="font-normal text-slate-400">
-              (l’adresse : /r/slug)
-            </span>
-          </label>
-          <input
+          <Label htmlFor="slug" className="mb-1">
+            Slug <LabelHint>(l’adresse : /r/slug)</LabelHint>
+          </Label>
+          <Input
             id="slug"
             name="slug"
             required
             maxLength={80}
             pattern="[a-z0-9]+(-[a-z0-9]+)*"
             defaultValue={magnet?.slug}
-            className={fieldClass}
           />
         </div>
         <div>
-          <label htmlFor="pitch" className={labelClass}>
-            Promesse{' '}
-            <span className="font-normal text-slate-400">(une phrase)</span>
-          </label>
-          <input
+          <Label htmlFor="pitch" className="mb-1">
+            Promesse <LabelHint>(une phrase)</LabelHint>
+          </Label>
+          <Input
             id="pitch"
             name="pitch"
             required
             maxLength={300}
             defaultValue={magnet?.pitch}
-            className={fieldClass}
           />
         </div>
         <div>
-          <label htmlFor="bullets" className={labelClass}>
+          <Label htmlFor="bullets" className="mb-1">
             Ce que la personne reçoit{' '}
-            <span className="font-normal text-slate-400">
-              (une ligne par point, 8 max)
-            </span>
-          </label>
-          <textarea
+            <LabelHint>(une ligne par point, 8 max)</LabelHint>
+          </Label>
+          <Textarea
             id="bullets"
             name="bullets"
             rows={4}
             defaultValue={magnet?.bullets.join('\n')}
-            className={fieldClass}
           />
         </div>
         <div>
-          <label htmlFor="content_md" className={labelClass}>
+          <Label htmlFor="content_md" className="mb-1">
             Contenu en markdown{' '}
-            <span className="font-normal text-slate-400">
-              (- [ ] pour une checklist)
-            </span>
-          </label>
-          <textarea
+            <LabelHint>(- [ ] pour une checklist)</LabelHint>
+          </Label>
+          <Textarea
             id="content_md"
             name="content_md"
             required
             rows={18}
             defaultValue={magnet?.content_md ?? STARTER}
-            className={`${fieldClass} font-mono text-sm`}
+            className="font-mono text-sm"
           />
         </div>
         <label className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-300">

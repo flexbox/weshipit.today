@@ -233,11 +233,7 @@ export function SelfAuditQuiz({
                   <span className="text-2xl text-slate-400">/100</span>
                 </Text>
                 <div>
-                  <Text
-                    as="h3"
-                    variant="c2"
-                    className="uppercase tracking-wide text-blue-600 dark:text-blue-400"
-                  >
+                  <Text tone="primary" as="h3" variant="eyebrow">
                     {verdict.label}
                   </Text>
                   <Text
@@ -259,18 +255,10 @@ export function SelfAuditQuiz({
                 const catPct = Math.round((score.sum / score.total) * 100);
                 return (
                   <Card key={category.key} size="md">
-                    <Text
-                      as="p"
-                      variant="c2"
-                      className="uppercase tracking-wide text-slate-500 dark:text-slate-400"
-                    >
+                    <Text tone="muted" as="p" variant="eyebrow">
                       {category.label}
                     </Text>
-                    <Text
-                      as="p"
-                      variant="h5"
-                      className="mt-2 text-blue-600 dark:text-blue-400"
-                    >
+                    <Text tone="primary" as="p" variant="h5" className="mt-2">
                       {catPct}%
                     </Text>
                     <div className="mt-3 h-1 rounded-full bg-slate-200 dark:bg-slate-700">
@@ -465,11 +453,7 @@ export function SelfAuditQuiz({
 
   return (
     <section aria-labelledby={titleId}>
-      <Text
-        as="p"
-        variant="c2"
-        className="uppercase tracking-wide text-blue-600 dark:text-blue-400"
-      >
+      <Text tone="primary" as="p" variant="eyebrow">
         {config.eyebrow}
       </Text>
       <Text as={headingAs} variant="h3" className="mt-2" id={titleId}>

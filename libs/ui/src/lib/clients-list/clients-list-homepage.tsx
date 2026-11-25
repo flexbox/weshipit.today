@@ -12,7 +12,6 @@ export function ClientsListHomepage({
   clients,
   withIndustry = true,
 }: ClientsListHomepageProps) {
-  console.log('🚀 ~ ClientsListHomepage ~ clients:', clients);
   return (
     <div className="my-12">
       <div className="group relative grid grid-cols-3 content-around gap-4 md:grid-cols-5">

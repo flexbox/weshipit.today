@@ -174,7 +174,7 @@ export function IsReactNativeChecker({
       </form>
 
       <div className="mt-3 flex flex-wrap items-center gap-2">
-        <Text as="span" variant="p2" className="text-gray-500">
+        <Text tone="muted" as="span" variant="p2">
           Try:
         </Text>
         {EXAMPLES.map((example) => (

@@ -15,12 +15,7 @@ import {
 } from '../fixtures/french-apps.fixture';
 
 type ViewMode =
-  | 'category'
-  | 'alphabetical'
-  | 'ios'
-  | 'android'
-  | 'web'
-  | 'podcast';
+  'category' | 'alphabetical' | 'ios' | 'android' | 'web' | 'podcast';
 
 export async function getStaticProps() {
   const records: frenchApp[] = frenchAppsFixture.records.map((record) => ({
@@ -47,7 +42,7 @@ export async function getStaticProps() {
 function AppGrid({ apps }: { apps: filteredApp[] }) {
   if (apps.length === 0) {
     return (
-      <Text className="my-12 text-center text-gray-500 dark:text-gray-400">
+      <Text tone="muted" className="my-12 text-center">
         No applications found for this view.
       </Text>
     );
@@ -197,7 +192,7 @@ export default function FrenchReactNativePage({
                 </section>
               ))
             ) : (
-              <Text className="my-12 text-center text-gray-500 dark:text-gray-400">
+              <Text tone="muted" className="my-12 text-center">
                 No applications found.
               </Text>
             )}

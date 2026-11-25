@@ -4,9 +4,10 @@ import { Layout } from '../../components/layout';
 import {
   Button,
   Card,
-  Text,
   ClientProps,
   ClientsListHomepage,
+  Container,
+  Text,
 } from '@weshipit/ui';
 import { linksApi } from '../api/links';
 import {
@@ -19,7 +20,6 @@ import {
   BanknotesIcon,
 } from '@heroicons/react/24/outline';
 import { StarIcon as StarIconSolid } from '@heroicons/react/24/solid';
-import { Container } from '../../components/container';
 import Image from 'next/image';
 import Head from 'next/head';
 import ReactMarkdown from 'react-markdown';
@@ -150,7 +150,7 @@ export function Migration({ clients, feedback }: MigrationProps) {
         withFooter
       >
         <section className="bg-gradient-to-b py-20 md:py-32">
-          <Container>
+          <Container size="2xl">
             <div className="max-w-3xl mx-auto text-center space-y-6">
               <h2 className="text-base/7 font-semibold text-blue-600">
                 Trusted by {clientCount}+ Companies
@@ -200,9 +200,14 @@ export function Migration({ clients, feedback }: MigrationProps) {
                           className="object-cover"
                         />
                       ) : (
-                        <span className="text-xs font-bold text-slate-500 dark:text-slate-400">
+                        <Text
+                          as="span"
+                          variant="caption"
+                          tone="muted"
+                          className="font-bold"
+                        >
                           {client.data.name?.charAt(0) || '?'}
-                        </span>
+                        </Text>
                       )}
                     </div>
                   ))}
@@ -231,7 +236,7 @@ export function Migration({ clients, feedback }: MigrationProps) {
         </div>
 
         <section className="py-16" id="what-we-migrate">
-          <Container>
+          <Container size="2xl">
             <div className="max-w-3xl mx-auto mb-12 text-center">
               <Text
                 variant="h2"
@@ -302,7 +307,7 @@ export function Migration({ clients, feedback }: MigrationProps) {
         </section>
 
         <section className="py-16" id="benefits">
-          <Container>
+          <Container size="2xl">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="text-base/7 font-semibold text-blue-600">
                 Why Choose Us
@@ -428,7 +433,7 @@ export function Migration({ clients, feedback }: MigrationProps) {
           className="my-0 py-20 bg-slate-50 dark:bg-slate-900"
           id="process"
         >
-          <Container>
+          <Container size="2xl">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="text-base/7 font-semibold text-blue-600">
                 Our Process
@@ -470,7 +475,7 @@ export function Migration({ clients, feedback }: MigrationProps) {
           </Container>
         </section>
         <section id="testimonials" className="my-0 py-20 ">
-          <Container>
+          <Container size="2xl">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="text-base/7 font-semibold text-blue-600">
                 Success Stories
@@ -519,7 +524,7 @@ export function Migration({ clients, feedback }: MigrationProps) {
                           src={item.data.avatar.url}
                           width={48}
                           height={48}
-                          className="h-12 w-12 rounded-full bg-slate-200 dark:bg-slate-700 object-cover"
+                          className="h-12 w-12 rounded-full bg-slate-200 dark:bg-slate-700 object-cover outline outline-1 -outline-offset-1 outline-black/10 dark:outline-white/10"
                           alt={item.data.avatar.alt || item.data.full_name}
                         />
                       )}
@@ -539,7 +544,7 @@ export function Migration({ clients, feedback }: MigrationProps) {
           </Container>
         </section>
         <section className="my-0 py-20 bg-white dark:bg-slate-900">
-          <Container>
+          <Container size="2xl">
             <div className="max-w-3xl mx-auto text-center space-y-6">
               <Text variant="h2" as="h2" className="text-black dark:text-white">
                 Ready to Supercharge Your React Native App?
@@ -569,7 +574,7 @@ export function Migration({ clients, feedback }: MigrationProps) {
           </Container>
         </section>
         <section id="faq" className="my-0 py-20">
-          <Container>
+          <Container size="2xl">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="text-base/7 font-semibold text-blue-600">FAQ</h2>
               <Text

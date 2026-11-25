@@ -44,11 +44,7 @@ export default function AboutPage({ clients }) {
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <HeroSplit
           eyebrow={
-            <Text
-              as="p"
-              variant="c2"
-              className="uppercase tracking-wide text-blue-600 dark:text-blue-400"
-            >
+            <Text tone="primary" as="p" variant="eyebrow">
               About · React Native agency
             </Text>
           }

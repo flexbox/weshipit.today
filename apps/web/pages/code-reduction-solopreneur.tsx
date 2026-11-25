@@ -1,4 +1,14 @@
-import { AuthorDisclosure, Button, Faq, LinkButton, Text } from '@weshipit/ui';
+import {
+  AuthorDisclosure,
+  Badge,
+  Button,
+  Container,
+  Faq,
+  LinkButton,
+  Section,
+  Surface,
+  Text,
+} from '@weshipit/ui';
 
 import {
   ArrowRightIcon,
@@ -107,12 +117,16 @@ const faqs = [
 
 function HeroSection() {
   return (
-    <section className="relative overflow-hidden pt-32 pb-20">
-      <div className="relative mx-auto max-w-5xl px-6 text-center">
-        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent">
+    <Section
+      variant="plain"
+      spacing="hero"
+      className="relative overflow-hidden"
+    >
+      <Container size="lg" className="relative text-center">
+        <Badge variant="accent" className="mb-6">
           <TagIcon className="h-4 w-4" />
           Mis à jour septembre 2026 — Tarif parrainage vérifié
-        </div>
+        </Badge>
 
         <Text variant="h1" as="h1" className="mb-6 text-balance">
           Code réduction{' '}
@@ -120,7 +134,11 @@ function HeroSection() {
           1&nbsp;490 € au lieu de 2&nbsp;400 €
         </Text>
 
-        <p className="mx-auto mb-10 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-500 dark:text-neutral-400 md:text-xl">
+        <Text
+          variant="lead"
+          tone="muted"
+          className="mx-auto mb-10 max-w-2xl text-pretty leading-relaxed"
+        >
           L&apos;Incubateur Solopreneur, c&apos;est le programme annuel de{' '}
           <Link
             href="/flavie-prevot-avis"
@@ -133,7 +151,7 @@ function HeroSection() {
           thématiques dans l&apos;année, un live-atelier le vendredi, +50
           experts invités et 50+ templates. Ici, tu obtiens le tarif affilié —
           910 € d&apos;économie, sans code à saisir.
-        </p>
+        </Text>
 
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button
@@ -152,7 +170,12 @@ function HeroSection() {
           </Button>
         </div>
 
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-neutral-500 dark:text-neutral-400">
+        <Text
+          as="div"
+          variant="small"
+          tone="muted"
+          className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2"
+        >
           <span className="flex items-center gap-2">
             <CheckIcon className="h-4 w-4 text-accent" />
             300+ solopreneurs déjà incubés
@@ -165,9 +188,9 @@ function HeroSection() {
             <CheckIcon className="h-4 w-4 text-accent" />
             Page de parrainage officielle
           </span>
-        </div>
-      </div>
-    </section>
+        </Text>
+      </Container>
+    </Section>
   );
 }
 
@@ -194,41 +217,42 @@ function CestQuoiSection() {
   ];
 
   return (
-    <section className="border-t border-border py-16">
-      <div className="mx-auto max-w-4xl px-6">
-        <div className="rounded-2xl border border-border bg-card p-6 md:p-10">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary px-3 py-1 text-xs font-medium text-neutral-500 dark:text-neutral-400">
+    <Section spacing="md">
+      <Container size="md">
+        <Surface padding="xl" radius="2xl">
+          <Badge variant="neutral" size="sm" className="mb-4">
             <SparklesIcon className="h-3.5 w-3.5" />
             Tu découvres ? L&apos;essentiel en 3 points
-          </div>
+          </Badge>
           <Text variant="h3" as="h2" className="mb-3">
             C&apos;est quoi l&apos;Incubateur Solopreneur&nbsp;?
           </Text>
-          <p className="mb-8 max-w-2xl text-pretty leading-relaxed text-neutral-500 dark:text-neutral-400">
+          <Text
+            variant="inherit"
+            tone="muted"
+            className="mb-8 max-w-2xl text-pretty leading-relaxed"
+          >
             Un programme d&apos;accompagnement de 12 mois pour solopreneurs déjà
             en activité qui veulent construire des actifs (newsletter, podcast,
             offre productisée, sponsoring, SaaS solo) avec un cercle de pairs
             plutôt qu&apos;une formation vidéo passive. Prix public&nbsp;:
             2&nbsp;400&nbsp;€ HT. Tarif affilié via cette page&nbsp;:
             1&nbsp;490&nbsp;€ HT (le prix le plus bas verrouillé par Flavie).
-          </p>
+          </Text>
 
           <div className="grid gap-4 md:grid-cols-3">
             {bullets.map((b) => (
-              <div
-                key={b.title}
-                className="rounded-xl border border-border bg-secondary/50 p-4"
-              >
+              <Surface tone="muted" key={b.title} className="p-4">
                 <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-lg bg-card">
                   <b.icon className="h-5 w-5 text-accent" />
                 </div>
                 <div className="mb-1 text-sm font-semibold text-neutral-950 dark:text-neutral-100">
                   {b.title}
                 </div>
-                <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+                <Text variant="small" tone="muted" className="leading-relaxed">
                   {b.description}
-                </p>
-              </div>
+                </Text>
+              </Surface>
             ))}
           </div>
 
@@ -239,9 +263,9 @@ function CestQuoiSection() {
             Lire mon avis détaillé après 6 mois d&apos;incubation
             <ArrowRightIcon className="h-3.5 w-3.5" />
           </Link>
-        </div>
-      </div>
-    </section>
+        </Surface>
+      </Container>
+    </Section>
   );
 }
 
@@ -268,18 +292,18 @@ function ComparatifSection() {
   ];
 
   return (
-    <section id="comparatif" className="border-t border-border py-24">
-      <div className="mx-auto max-w-5xl px-6">
+    <Section id="comparatif">
+      <Container size="lg">
         <div className="mb-12 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Comparatif des tarifs de l&apos;Incubateur Solopreneur
           </Text>
-          <p className="mx-auto max-w-2xl text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted" className="mx-auto max-w-2xl">
             Les 3 manières de payer l&apos;Incubateur Solopreneur en 2026, du
             plus cher au plus avantageux. Le code réduction via lien affilié est
             le tarif plancher imposé par Flavie : aucune promo publique ne
             descend en dessous.
-          </p>
+          </Text>
         </div>
 
         <div className="overflow-hidden rounded-xl border border-border">
@@ -331,14 +355,18 @@ function ComparatifSection() {
           ))}
         </div>
 
-        <div className="mx-auto mt-8 max-w-2xl rounded-xl border border-accent/30 bg-accent/5 p-5 text-sm leading-relaxed text-neutral-950 dark:text-neutral-200">
+        <Surface
+          tone="accent"
+          padding="sm"
+          className="mx-auto mt-8 max-w-2xl text-sm leading-relaxed text-neutral-950 dark:text-neutral-200"
+        >
           <span className="font-semibold text-accent">
             Le calcul qui change tout&nbsp;:
           </span>{' '}
           chaque Sprint est aussi vendu seul, autour de 1&nbsp;490&nbsp;€ HT le
           mois (ou 1&nbsp;990&nbsp;€ HT avec l&apos;année). Avec le tarif
           parrainage, tu paies le prix d&apos;un Sprint et tu as les 12.
-        </div>
+        </Surface>
 
         <div className="mt-10 flex justify-center">
           <Button
@@ -353,8 +381,8 @@ function ComparatifSection() {
             <ArrowRightIcon className="ml-2 h-4 w-4" />
           </Button>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -387,26 +415,26 @@ function ProchainSprintSection() {
   ];
 
   return (
-    <section id="prochain-sprint" className="border-t border-border py-24">
-      <div className="mx-auto max-w-5xl px-6">
+    <Section id="prochain-sprint">
+      <Container size="lg">
         <div className="mb-12 text-center">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent">
+          <Badge variant="accent" className="mb-4">
             <CalendarDaysIcon className="h-4 w-4" />
             Du 9 au 30 octobre 2026
-          </div>
+          </Badge>
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Le prochain Sprint&nbsp;: construire un SaaS qui bosse à ta place
           </Text>
-          <p className="mx-auto max-w-2xl text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted" className="mx-auto max-w-2xl">
             On rejoint l&apos;Incubateur pour un Sprint précis, puis les 11
             autres deviennent des bonus. Celui d&apos;octobre est animé avec
             Pierre Thomassina, développeur agentique et ancien incubé. Si tu
             arrives par cette page, tu commences par celui-là.
-          </p>
+          </Text>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2">
-          <div className="rounded-xl border border-border bg-card p-6">
+          <Surface>
             <Text variant="h4" as="h3" className="mb-4">
               4 lives, de l&apos;idée aux premiers utilisateurs
             </Text>
@@ -423,11 +451,11 @@ function ProchainSprintSection() {
                 </li>
               ))}
             </ol>
-            <p className="mt-4 text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+            <Text variant="small" tone="muted" className="mt-4 leading-relaxed">
               Pensé pour les freelances et solopreneurs qui refont la même chose
               chaque mois pour leurs clients et veulent un logiciel qui le fait
               à leur place. Pas réservé aux devs.
-            </p>
+            </Text>
             <LinkButton
               href="/sprint-solo-saas"
               size="md"
@@ -437,9 +465,9 @@ function ProchainSprintSection() {
               Voir le programme complet du Sprint
               <ArrowRightIcon className="ml-2 h-4 w-4" />
             </LinkButton>
-          </div>
+          </Surface>
 
-          <div className="rounded-xl border border-border bg-card p-6">
+          <Surface>
             <Text variant="h4" as="h3" className="mb-4">
               Et après&nbsp;? La suite du programme
             </Text>
@@ -448,28 +476,28 @@ function ProchainSprintSection() {
                 <li key={item.name} className="flex items-start gap-3">
                   <CalendarDaysIcon className="mt-0.5 h-5 w-5 shrink-0 text-accent" />
                   <div>
-                    <div className="text-xs font-semibold uppercase tracking-wide text-accent">
+                    <Text as="div" variant="eyebrow">
                       {item.when}
-                    </div>
+                    </Text>
                     <div className="font-medium text-neutral-950 dark:text-neutral-200">
                       {item.name}
                     </div>
-                    <p className="text-sm text-neutral-500 dark:text-neutral-400">
+                    <Text variant="small" tone="muted">
                       {item.pitch}
-                    </p>
+                    </Text>
                   </div>
                 </li>
               ))}
             </ul>
-            <p className="mt-4 text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+            <Text variant="small" tone="muted" className="mt-4 leading-relaxed">
               12 Sprints par an. Tu n&apos;es pas obligé de tous les
               suivre&nbsp;: tu choisis ceux qui servent ton business, et les
               replays restent disponibles.
-            </p>
-          </div>
+            </Text>
+          </Surface>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -499,23 +527,20 @@ function CommentCaMarcheSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <Section>
+      <Container>
         <div className="mb-16 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Comment activer le code réduction en 3 étapes
           </Text>
-          <p className="text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted">
             Aucun code à recopier. La remise est appliquée automatiquement.
-          </p>
+          </Text>
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
           {steps.map((step) => (
-            <div
-              key={step.number}
-              className="group relative rounded-xl border border-border bg-card p-6 transition-colors hover:border-accent/50"
-            >
+            <Surface interactive key={step.number} className="group relative">
               <div className="mb-6 flex items-center gap-4">
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-xl font-bold text-neutral-950 dark:text-neutral-200">
                   {step.number}
@@ -525,14 +550,14 @@ function CommentCaMarcheSection() {
               <Text variant="h4" as="h3" className="mb-2">
                 {step.title}
               </Text>
-              <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+              <Text variant="small" tone="muted" className="leading-relaxed">
                 {step.description}
-              </p>
-            </div>
+              </Text>
+            </Surface>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -577,38 +602,35 @@ function CeQuiEstInclusSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <Section>
+      <Container>
         <div className="mb-16 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Ce que tu obtiens avec le tarif réduit
           </Text>
-          <p className="mx-auto max-w-2xl text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted" className="mx-auto max-w-2xl">
             Exactement le même accès qu&apos;un client au prix public. Aucune
             limitation, aucune brique en moins. Seul le prix change.
-          </p>
+          </Text>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {items.map((item) => (
-            <div
-              key={item.title}
-              className="rounded-xl border border-border bg-card p-6 transition-colors hover:border-accent/50"
-            >
+            <Surface interactive key={item.title}>
               <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-secondary">
                 <item.icon className="h-5 w-5 text-accent" />
               </div>
               <Text variant="h4" as="h3" className="mb-2">
                 {item.title}
               </Text>
-              <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+              <Text variant="small" tone="muted" className="leading-relaxed">
                 {item.description}
-              </p>
-            </div>
+              </Text>
+            </Surface>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -632,8 +654,8 @@ function PourQuiSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-5xl px-6">
+    <Section>
+      <Container size="lg">
         <div className="mb-12 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             L&apos;Incubateur Solopreneur, c&apos;est pour toi si…
@@ -641,8 +663,8 @@ function PourQuiSection() {
         </div>
 
         <div className="grid gap-8 md:grid-cols-2">
-          <div className="rounded-xl border border-accent/30 bg-accent/5 p-6">
-            <Text variant="h4" as="h3" className="mb-4 text-accent">
+          <Surface tone="accent">
+            <Text tone="accent" variant="h4" as="h3" className="mb-4">
               ✅ Oui, fonce
             </Text>
             <ul className="space-y-3">
@@ -656,31 +678,30 @@ function PourQuiSection() {
                 </li>
               ))}
             </ul>
-          </div>
+          </Surface>
 
-          <div className="rounded-xl border border-border bg-card p-6">
-            <Text
-              variant="h4"
-              as="h3"
-              className="mb-4 text-neutral-500 dark:text-neutral-400"
-            >
+          <Surface>
+            <Text tone="muted" variant="h4" as="h3" className="mb-4">
               ❌ Passe ton chemin
             </Text>
             <ul className="space-y-3">
               {no.map((item) => (
-                <li
+                <Text
+                  as="li"
+                  variant="small"
+                  tone="muted"
                   key={item}
-                  className="flex items-start gap-3 text-sm text-neutral-500 dark:text-neutral-400"
+                  className="flex items-start gap-3"
                 >
                   <XMarkIcon className="mt-0.5 h-5 w-5 shrink-0 text-destructive" />
                   {item}
-                </li>
+                </Text>
               ))}
             </ul>
-          </div>
+          </Surface>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -711,24 +732,21 @@ function PreuvesSection() {
   ];
 
   return (
-    <section id="avis" className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <Section id="avis">
+      <Container>
         <div className="mb-16 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Ils sont passés à l&apos;action avec l&apos;Incubateur Solopreneur
           </Text>
-          <p className="text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted">
             Témoignages publics extraits de Trustpilot, LinkedIn et des calls
             ambassadeurs de Flavie.
-          </p>
+          </Text>
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
           {proofs.map((p) => (
-            <div
-              key={p.title}
-              className="flex flex-col rounded-xl border border-border bg-card p-6"
-            >
+            <Surface key={p.title} className="flex flex-col">
               <svg
                 className="mb-4 h-8 w-8 text-accent opacity-50"
                 fill="currentColor"
@@ -736,16 +754,20 @@ function PreuvesSection() {
               >
                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
               </svg>
-              <p className="mb-6 flex-1 text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+              <Text
+                variant="small"
+                tone="muted"
+                className="mb-6 flex-1 leading-relaxed"
+              >
                 {p.quote}
-              </p>
+              </Text>
               <div className="border-t border-border pt-4">
                 <div className="font-medium text-neutral-950 dark:text-neutral-200">
                   {p.title}
                 </div>
-                <div className="text-sm text-neutral-500 dark:text-neutral-400">
+                <Text as="div" variant="small" tone="muted">
                   {p.source}
-                </div>
+                </Text>
                 {p.link && (
                   <Link
                     href={p.link.href}
@@ -755,11 +777,11 @@ function PreuvesSection() {
                   </Link>
                 )}
               </div>
-            </div>
+            </Surface>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -807,26 +829,34 @@ function PourquoiCettePageSection() {
 
 function CtaFinalSection() {
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="relative overflow-hidden rounded-2xl border border-border bg-card">
+    <Section>
+      <Container>
+        <Surface
+          padding="none"
+          radius="2xl"
+          className="relative overflow-hidden"
+        >
           <div className="pointer-events-none absolute inset-0">
             <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:2rem_2rem] opacity-30" />
           </div>
 
           <div className="relative px-8 py-16 text-center md:py-24">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent">
+            <Badge variant="accent" className="mb-6">
               <TagIcon className="h-4 w-4" />
               Tarif plancher — 910 € d&apos;économie
-            </div>
+            </Badge>
             <Text variant="h2" as="h2" className="mb-6 text-balance">
               Active ton code réduction{' '}
               <span className="text-accent">Solopreneur</span> en 1 clic
             </Text>
-            <p className="mx-auto mb-10 max-w-xl text-lg text-neutral-500 dark:text-neutral-400">
+            <Text
+              variant="lead"
+              tone="muted"
+              className="mx-auto mb-10 max-w-xl"
+            >
               1 490 € HT pour 12 mois d&apos;incubation. Le prix le plus bas
               disponible. Aucun code à saisir.
-            </p>
+            </Text>
 
             <Button
               href={AFFILIATE_URL}
@@ -841,7 +871,12 @@ function CtaFinalSection() {
               <ArrowRightIcon className="ml-2 h-4 w-4" />
             </Button>
 
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-sm text-neutral-500 dark:text-neutral-400">
+            <Text
+              as="div"
+              variant="small"
+              tone="muted"
+              className="mt-8 flex flex-wrap items-center justify-center gap-6"
+            >
               <span className="flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                 Page de parrainage officielle
@@ -854,11 +889,11 @@ function CtaFinalSection() {
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                 Communauté de 300+ solopreneurs
               </span>
-            </div>
+            </Text>
           </div>
-        </div>
-      </div>
-    </section>
+        </Surface>
+      </Container>
+    </Section>
   );
 }
 
@@ -973,19 +1008,19 @@ export default function CodeReductionSolopreneurPage() {
         <PreuvesSection />
         <PourquoiCettePageSection />
 
-        <section id="faq" className="border-t border-border py-24">
-          <div className="mx-auto max-w-3xl px-6">
+        <Section id="faq">
+          <Container size="sm">
             <div className="mb-12 text-center">
               <Text variant="h3" as="h2" className="mb-4 text-balance">
                 FAQ — Code réduction Solopreneur
               </Text>
-              <p className="text-neutral-500 dark:text-neutral-400">
+              <Text variant="inherit" tone="muted">
                 Tout ce qu&apos;il faut savoir avant d&apos;activer ta remise.
-              </p>
+              </Text>
             </div>
             <Faq faqs={faqs} title="" headingId="faq-cr-heading" />
-          </div>
-        </section>
+          </Container>
+        </Section>
 
         <CtaFinalSection />
       </Layout>

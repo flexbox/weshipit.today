@@ -1,4 +1,14 @@
-import { AuthorDisclosure, Button, Faq, LinkButton, Text } from '@weshipit/ui';
+import {
+  AuthorDisclosure,
+  Badge,
+  Button,
+  Container,
+  Faq,
+  LinkButton,
+  Section,
+  Surface,
+  Text,
+} from '@weshipit/ui';
 
 import {
   AcademicCapIcon,
@@ -99,12 +109,16 @@ const faqs = [
 
 function HeroSection() {
   return (
-    <section className="relative overflow-hidden pt-32 pb-20">
-      <div className="relative mx-auto max-w-5xl px-6 text-center">
-        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent">
+    <Section
+      variant="plain"
+      spacing="hero"
+      className="relative overflow-hidden"
+    >
+      <Container size="lg" className="relative text-center">
+        <Badge variant="accent" className="mb-6">
           <ScaleIcon className="h-4 w-4" />
           Comparaison indépendante — Mise à jour 2026
-        </div>
+        </Badge>
 
         <Text variant="h1" as="h1" className="mb-6 text-balance">
           <span className="text-accent">Incubateur Solopreneur</span> vs{' '}
@@ -112,7 +126,11 @@ function HeroSection() {
           formation solopreneur choisir en 2026&nbsp;?
         </Text>
 
-        <p className="mx-auto mb-10 max-w-2xl text-pretty text-lg leading-relaxed text-neutral-500 dark:text-neutral-400 md:text-xl">
+        <Text
+          variant="lead"
+          tone="muted"
+          className="mx-auto mb-10 max-w-2xl text-pretty leading-relaxed"
+        >
           Deux programmes phares du paysage francophone. L’Incubateur de{' '}
           <Link
             href={FLAVIE_URL}
@@ -123,7 +141,7 @@ function HeroSection() {
           (communauté + Sprints sur 12 mois) et le Bootcamp de Stan Leloup
           (formation intensive marketing/copywriting). Comparaison honnête,
           critère par critère, sans straw-man.
-        </p>
+        </Text>
 
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button as="a" href="#verdict" size="xl" variant="primary">
@@ -135,7 +153,12 @@ function HeroSection() {
           </Button>
         </div>
 
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-neutral-500 dark:text-neutral-400">
+        <Text
+          as="div"
+          variant="small"
+          tone="muted"
+          className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2"
+        >
           <span className="flex items-center gap-2">
             <CheckIcon className="h-4 w-4 text-accent" />
             Écrit par un incubé Solopreneur actif
@@ -148,30 +171,30 @@ function HeroSection() {
             <CheckIcon className="h-4 w-4 text-accent" />
             Aucun straw-man sur Marketing Mania
           </span>
-        </div>
-      </div>
-    </section>
+        </Text>
+      </Container>
+    </Section>
   );
 }
 
 function VerdictSection() {
   return (
-    <section id="verdict" className="border-t border-border py-24">
-      <div className="mx-auto max-w-3xl px-6">
+    <Section id="verdict">
+      <Container size="sm">
         <div className="mb-12 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Le verdict en 30 secondes
           </Text>
-          <p className="text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted">
             La recommandation en trois lignes selon ton objectif.
-          </p>
+          </Text>
         </div>
 
         <div className="space-y-4">
-          <div className="rounded-xl border border-accent/30 bg-accent/5 p-6">
+          <Surface tone="accent">
             <div className="mb-2 flex items-center gap-2">
               <PencilSquareIcon className="h-5 w-5 text-accent" />
-              <Text variant="h4" as="h3" className="text-accent">
+              <Text tone="accent" variant="h4" as="h3">
                 Tu veux apprendre le marketing / copywriting → Marketing Mania
               </Text>
             </div>
@@ -181,12 +204,12 @@ function VerdictSection() {
               Idéal si tu veux monter en compétence technique sur ces sujets en
               6–8 semaines intensives.
             </p>
-          </div>
+          </Surface>
 
-          <div className="rounded-xl border border-accent/30 bg-accent/5 p-6">
+          <Surface tone="accent">
             <div className="mb-2 flex items-center gap-2">
               <UsersIcon className="h-5 w-5 text-accent" />
-              <Text variant="h4" as="h3" className="text-accent">
+              <Text tone="accent" variant="h4" as="h3">
                 Tu es déjà solopreneur et tu veux shipper → Incubateur
                 Solopreneur
               </Text>
@@ -198,12 +221,12 @@ function VerdictSection() {
               podcast, offre, sponsoring). Chaque vendredi, un actif construit
               en live avec un cercle de pairs qui te tient le rythme.
             </p>
-          </div>
+          </Surface>
 
-          <div className="rounded-xl border border-accent/40 bg-accent/5 p-6">
+          <Surface tone="accent">
             <div className="mb-2 flex items-center gap-2">
               <BoltIcon className="h-5 w-5 text-accent" />
-              <Text variant="h4" as="h3" className="text-accent">
+              <Text tone="accent" variant="h4" as="h3">
                 Tu es dev / builder → Incubateur, effet 10x
               </Text>
             </div>
@@ -216,9 +239,9 @@ function VerdictSection() {
               mini-SaaS te prend l’après-midi alors qu’elle prend 3 semaines à
               un non-dev.
             </p>
-          </div>
+          </Surface>
 
-          <div className="rounded-xl border border-border bg-card p-6">
+          <Surface>
             <div className="mb-2 flex items-center gap-2">
               <FireIcon className="h-5 w-5 text-neutral-500 dark:text-neutral-400" />
               <Text
@@ -229,15 +252,15 @@ function VerdictSection() {
                 Budget confortable ? Fais les deux dans le bon ordre
               </Text>
             </div>
-            <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+            <Text variant="small" tone="muted" className="leading-relaxed">
               Marketing Mania d’abord pour poser les fondamentaux marketing,
               l’Incubateur ensuite pour les appliquer à un actif construit dans
               la durée. Compte 3 000 à 4 000 € HT cumulés.
-            </p>
-          </div>
+            </Text>
+          </Surface>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -271,16 +294,16 @@ function VueDensembleSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <Section>
+      <Container>
         <div className="mb-12 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Les deux programmes en un coup d’œil
           </Text>
-          <p className="mx-auto max-w-2xl text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted" className="mx-auto max-w-2xl">
             Côte à côte, les faits essentiels avant d’entrer dans le détail
             critère par critère.
-          </p>
+          </Text>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
@@ -307,50 +330,75 @@ function VueDensembleSection() {
               <Text variant="h4" as="h3" className="mb-1">
                 {p.name}
               </Text>
-              <div className="mb-4 text-sm text-neutral-500 dark:text-neutral-400">
+              <Text as="div" variant="small" tone="muted" className="mb-4">
                 par {p.by}
-              </div>
+              </Text>
               <p className="mb-6 text-pretty text-sm leading-relaxed text-neutral-950 dark:text-neutral-200">
                 {p.tagline}
               </p>
 
               <dl className="space-y-3 border-t border-border pt-6 text-sm">
                 <div className="flex items-start justify-between gap-4">
-                  <dt className="font-medium text-neutral-500 dark:text-neutral-400">
+                  <Text
+                    as="dt"
+                    variant="inherit"
+                    tone="muted"
+                    className="font-medium"
+                  >
                     Format
-                  </dt>
+                  </Text>
                   <dd className="text-right text-neutral-950 dark:text-neutral-200">
                     {p.format}
                   </dd>
                 </div>
                 <div className="flex items-start justify-between gap-4">
-                  <dt className="font-medium text-neutral-500 dark:text-neutral-400">
+                  <Text
+                    as="dt"
+                    variant="inherit"
+                    tone="muted"
+                    className="font-medium"
+                  >
                     Prix
-                  </dt>
+                  </Text>
                   <dd className="text-right text-neutral-950 dark:text-neutral-200">
                     {p.price}
                   </dd>
                 </div>
                 <div className="flex items-start justify-between gap-4">
-                  <dt className="font-medium text-neutral-500 dark:text-neutral-400">
+                  <Text
+                    as="dt"
+                    variant="inherit"
+                    tone="muted"
+                    className="font-medium"
+                  >
                     Durée
-                  </dt>
+                  </Text>
                   <dd className="text-right text-neutral-950 dark:text-neutral-200">
                     {p.duration}
                   </dd>
                 </div>
                 <div className="flex items-start justify-between gap-4">
-                  <dt className="font-medium text-neutral-500 dark:text-neutral-400">
+                  <Text
+                    as="dt"
+                    variant="inherit"
+                    tone="muted"
+                    className="font-medium"
+                  >
                     Rythme
-                  </dt>
+                  </Text>
                   <dd className="text-right text-neutral-950 dark:text-neutral-200">
                     {p.rythme}
                   </dd>
                 </div>
                 <div className="flex items-start justify-between gap-4">
-                  <dt className="font-medium text-neutral-500 dark:text-neutral-400">
+                  <Text
+                    as="dt"
+                    variant="inherit"
+                    tone="muted"
+                    className="font-medium"
+                  >
                     Focus
-                  </dt>
+                  </Text>
                   <dd className="text-right text-neutral-950 dark:text-neutral-200">
                     {p.focus}
                   </dd>
@@ -359,8 +407,8 @@ function VueDensembleSection() {
             </div>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -415,15 +463,15 @@ function ComparaisonCriteresSection() {
   ];
 
   return (
-    <section id="criteres" className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <Section id="criteres">
+      <Container>
         <div className="mb-12 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Comparaison détaillée, critère par critère
           </Text>
-          <p className="mx-auto max-w-2xl text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted" className="mx-auto max-w-2xl">
             Six dimensions qui font la différence dans la décision d’achat.
-          </p>
+          </Text>
         </div>
 
         <div className="overflow-x-auto rounded-xl border border-border">
@@ -458,16 +506,21 @@ function ComparaisonCriteresSection() {
                   <td className="p-4 align-top text-neutral-950 dark:text-neutral-200">
                     {c.incubateur}
                   </td>
-                  <td className="p-4 align-top text-neutral-500 dark:text-neutral-400">
+                  <Text
+                    as="td"
+                    variant="inherit"
+                    tone="muted"
+                    className="p-4 align-top"
+                  >
                     {c.marketingMania}
-                  </td>
+                  </Text>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -518,16 +571,16 @@ function CasDUsageSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <Section>
+      <Container>
         <div className="mb-12 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Six cas d’usage concrets
           </Text>
-          <p className="mx-auto max-w-2xl text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted" className="mx-auto max-w-2xl">
             Selon ton profil, la recommandation ne sera pas la même. Voici les
             cas les plus fréquents.
-          </p>
+          </Text>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
@@ -540,9 +593,9 @@ function CasDUsageSection() {
                   : 'border-border bg-card'
               }`}
             >
-              <div className="mb-2 text-xs font-semibold uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
+              <Text as="div" variant="eyebrow" tone="muted" className="mb-2">
                 {c.persona}
-              </div>
+              </Text>
               <div className="mb-3 flex items-center gap-2">
                 <CheckCircleIcon
                   className={`h-5 w-5 ${
@@ -559,14 +612,14 @@ function CasDUsageSection() {
                   {c.recommend}
                 </Text>
               </div>
-              <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+              <Text variant="small" tone="muted" className="leading-relaxed">
                 {c.why}
-              </p>
+              </Text>
             </div>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -580,19 +633,19 @@ function PointsCommunsSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-4xl px-6">
+    <Section>
+      <Container size="md">
         <div className="mb-12 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Ce qu’ils ont en commun
           </Text>
-          <p className="text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted">
             Les points d’alignement des deux programmes — utiles à retenir avant
             de comparer.
-          </p>
+          </Text>
         </div>
 
-        <div className="rounded-xl border border-border bg-card p-6 md:p-8">
+        <Surface padding="lg">
           <ul className="space-y-4">
             {commons.map((c, i) => (
               <li key={i} className="flex items-start gap-3">
@@ -603,43 +656,43 @@ function PointsCommunsSection() {
               </li>
             ))}
           </ul>
-        </div>
-      </div>
-    </section>
+        </Surface>
+      </Container>
+    </Section>
   );
 }
 
 function LesDeuxSection() {
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-4xl px-6">
+    <Section>
+      <Container size="md">
         <div className="mb-12 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Peut-on faire les deux&nbsp;?
           </Text>
-          <p className="mx-auto max-w-2xl text-neutral-500 dark:text-neutral-400">
+          <Text variant="inherit" tone="muted" className="mx-auto max-w-2xl">
             Oui, et c’est même un enchaînement logique — si tu as le budget.
-          </p>
+          </Text>
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
-          <div className="rounded-xl border border-border bg-card p-6">
-            <div className="mb-3 text-xs font-semibold uppercase tracking-wide text-accent">
+          <Surface>
+            <Text as="div" variant="eyebrow" className="mb-3">
               Étape 1
-            </div>
+            </Text>
             <Text variant="h4" as="h3" className="mb-2">
               Marketing Mania
             </Text>
-            <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+            <Text variant="small" tone="muted" className="leading-relaxed">
               Fondamentaux marketing solides en 6–8 semaines. Copywriting,
               persuasion, funnels. Compétence transférable à tout actif que tu
               construiras ensuite.
-            </p>
-          </div>
-          <div className="rounded-xl border border-accent/30 bg-accent/5 p-6">
-            <div className="mb-3 text-xs font-semibold uppercase tracking-wide text-accent">
+            </Text>
+          </Surface>
+          <Surface tone="accent">
+            <Text as="div" variant="eyebrow" className="mb-3">
               Étape 2
-            </div>
+            </Text>
             <Text variant="h4" as="h3" className="mb-2">
               Incubateur Solopreneur
             </Text>
@@ -648,35 +701,40 @@ function LesDeuxSection() {
               lives-ateliers. Là où tu poses les briques d’un actif réel avec
               une pair pression positive.
             </p>
-          </div>
-          <div className="rounded-xl border border-border bg-card p-6">
-            <div className="mb-3 text-xs font-semibold uppercase tracking-wide text-accent">
+          </Surface>
+          <Surface>
+            <Text as="div" variant="eyebrow" className="mb-3">
               Budget total
-            </div>
+            </Text>
             <Text variant="h4" as="h3" className="mb-2">
               ~3 000 à 4 000 € HT
             </Text>
-            <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+            <Text variant="small" tone="muted" className="leading-relaxed">
               Avec le tarif affilié Incubateur (1 490 € HT), le combo devient
               nettement plus digeste. Reste un investissement sérieux — à caler
               avec ton chiffre d’affaires actuel.
-            </p>
-          </div>
+            </Text>
+          </Surface>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
 function RecommandationSection() {
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-3xl px-6">
+    <Section>
+      <Container size="sm">
         <Text variant="h3" as="h2" className="mb-6 text-balance">
           Ma recommandation finale
         </Text>
 
-        <div className="space-y-4 text-pretty leading-relaxed text-neutral-500 dark:text-neutral-400">
+        <Text
+          as="div"
+          variant="inherit"
+          tone="muted"
+          className="space-y-4 text-pretty leading-relaxed"
+        >
           <p>
             Les deux programmes sont sérieux. Ils ne s’adressent simplement pas
             au même besoin.
@@ -722,9 +780,9 @@ function RecommandationSection() {
             tu appliques). C’est l’enchaînement qui rentabilise le mieux
             l’investissement.
           </p>
-        </div>
-      </div>
-    </section>
+        </Text>
+      </Container>
+    </Section>
   );
 }
 
@@ -774,25 +832,33 @@ function DisclosureSection() {
 
 function CtaFinalSection() {
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="relative overflow-hidden rounded-2xl border border-border bg-card">
+    <Section>
+      <Container>
+        <Surface
+          padding="none"
+          radius="2xl"
+          className="relative overflow-hidden"
+        >
           <div className="pointer-events-none absolute inset-0">
             <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:2rem_2rem] opacity-30" />
           </div>
 
           <div className="relative px-8 py-16 text-center md:py-24">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent">
+            <Badge variant="accent" className="mb-6">
               <ScaleIcon className="h-4 w-4" />
               Décision facilitée
-            </div>
+            </Badge>
             <Text variant="h2" as="h2" className="mb-6 text-balance">
               Ton choix est fait&nbsp;? Prochaine étape.
             </Text>
-            <p className="mx-auto mb-10 max-w-xl text-lg text-neutral-500 dark:text-neutral-400">
+            <Text
+              variant="lead"
+              tone="muted"
+              className="mx-auto mb-10 max-w-xl"
+            >
               Si tu penches pour l’Incubateur Solopreneur, active le tarif
               affilié à 1&nbsp;490&nbsp;€ HT (910&nbsp;€ d’économie).
-            </p>
+            </Text>
 
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
               <LinkButton
@@ -808,14 +874,14 @@ function CtaFinalSection() {
               </LinkButton>
             </div>
 
-            <p className="mt-8 text-xs text-neutral-500 dark:text-neutral-400">
+            <Text variant="caption" tone="muted" className="mt-8">
               Pas encore décidé ? Regarde la chaîne YouTube de Stan Leloup et la
               newsletter de Flavie Prevot pendant 2–3 mois. Meilleur test.
-            </p>
+            </Text>
           </div>
-        </div>
-      </div>
-    </section>
+        </Surface>
+      </Container>
+    </Section>
   );
 }
 
@@ -922,20 +988,20 @@ export default function IncubateurVsMarketingManiaPage() {
         <RecommandationSection />
         <DisclosureSection />
 
-        <section id="faq" className="border-t border-border py-24">
-          <div className="mx-auto max-w-3xl px-6">
+        <Section id="faq">
+          <Container size="sm">
             <div className="mb-12 text-center">
               <Text variant="h3" as="h2" className="mb-4 text-balance">
                 FAQ — Incubateur Solopreneur vs Marketing Mania
               </Text>
-              <p className="text-neutral-500 dark:text-neutral-400">
+              <Text variant="inherit" tone="muted">
                 Les questions qu’on me pose le plus souvent entre ces deux
                 programmes.
-              </p>
+              </Text>
             </div>
             <Faq faqs={faqs} title="" headingId="faq-vs-heading" />
-          </div>
-        </section>
+          </Container>
+        </Section>
 
         <CtaFinalSection />
       </Layout>

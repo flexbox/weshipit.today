@@ -9,6 +9,7 @@ export const buttonVariants = cva(
     'focus-visible:outline-2',
     'focus-visible:outline-offset-2',
     'font-semibold',
+    '[&_[data-slot=icon]]:stroke-2',
     'transition',
     'hover:cursor-pointer',
     'active:scale-[0.96]',
@@ -95,7 +96,8 @@ export const buttonVariants = cva(
 );
 
 export interface ButtonProps
-  extends React.HTMLAttributes<HTMLDivElement>,
+  extends
+    React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof buttonVariants> {
   rel?: string;
   href?: string;

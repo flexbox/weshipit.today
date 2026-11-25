@@ -1,3 +1,4 @@
+import { Text } from '@weshipit/ui';
 import { Layout } from '../../components/layout';
 import Link from 'next/link';
 import Head from 'next/head';
@@ -306,14 +307,16 @@ export default function ReactNativeGlossary({
         </h1>
 
         {/* Live region so screen readers hear the filtered count. */}
-        <p
+        <Text
+          variant="inherit"
+          tone="muted"
           aria-live="polite"
-          className="mt-3 text-center text-neutral-500 dark:text-neutral-400"
+          className="mt-3 text-center"
         >
           {isSearching
             ? `${visibleEntries.length} of ${termCount} terms match “${query.trim()}”`
             : `${termCount} terms that come up when you build, ship and debug a React Native app.`}
-        </p>
+        </Text>
 
         {!isSearching && (
           <div className="mx-auto mt-8 max-w-2xl text-base leading-relaxed text-neutral-600 dark:text-neutral-400">
@@ -398,9 +401,9 @@ export default function ReactNativeGlossary({
             <p className="font-display text-2xl font-bold tracking-[-0.03em] text-neutral-950 dark:text-neutral-200">
               No term matches “{query.trim()}”
             </p>
-            <p className="mt-3 text-neutral-500 dark:text-neutral-400">
+            <Text variant="inherit" tone="muted" className="mt-3">
               Try a broader keyword, or browse the full glossary.
-            </p>
+            </Text>
             <button
               type="button"
               onClick={() => setQuery('')}

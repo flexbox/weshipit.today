@@ -1,3 +1,4 @@
+import { Text } from '@weshipit/ui';
 import React from 'react';
 import { PodcastEpisode } from '../fixtures/podcast-episodes.fixture';
 import Link from 'next/link';
@@ -27,9 +28,9 @@ export function PodcastNavigation({
         >
           <ChevronLeftIcon className="size-5 shrink-0" aria-hidden="true" />
           <span className="min-w-0 text-left">
-            <span className="block text-xs text-slate-500 dark:text-slate-400">
+            <Text as="span" variant="caption" tone="muted" className="block">
               Épisode précédent · {previousEpisode.number}
-            </span>
+            </Text>
             <span className="block font-medium text-pretty">
               {previousEpisode.title}
             </span>
@@ -48,9 +49,9 @@ export function PodcastNavigation({
           className={`${linkClassName} justify-end sm:col-start-2`}
         >
           <span className="min-w-0 text-right">
-            <span className="block text-xs text-slate-500 dark:text-slate-400">
+            <Text as="span" variant="caption" tone="muted" className="block">
               Épisode suivant · {nextEpisode.number}
-            </span>
+            </Text>
             <span className="block font-medium text-pretty">
               {nextEpisode.title}
             </span>

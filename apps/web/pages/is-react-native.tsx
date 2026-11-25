@@ -216,11 +216,7 @@ export default function IsReactNative({ results }: IsReactNativeProps) {
             <div className="mt-8 grid gap-4 sm:grid-cols-3">
               {STEPS.map((step, index) => (
                 <Card key={step.title} size="md">
-                  <Text
-                    as="p"
-                    variant="c2"
-                    className="uppercase tracking-wide text-blue-600 dark:text-blue-400"
-                  >
+                  <Text tone="primary" as="p" variant="eyebrow">
                     Step {index + 1}
                   </Text>
                   <Text as="h3" variant="h6" className="mt-2">

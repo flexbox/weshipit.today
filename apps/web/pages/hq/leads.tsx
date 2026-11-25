@@ -1,5 +1,5 @@
 import { ArrowDownTrayIcon } from '@heroicons/react/20/solid';
-import { Button } from '@weshipit/ui';
+import { Button, Input, Select } from '@weshipit/ui';
 import type { GetServerSideProps } from 'next';
 import Link from 'next/link';
 import { HqShell } from '../../components/hq/hq-shell';
@@ -39,40 +39,32 @@ export default function HqLeads({
       >
         <label className="flex flex-col gap-1 text-slate-600 dark:text-slate-400">
           Magnet
-          <select
-            name="magnet"
-            defaultValue={filter.magnet}
-            className="rounded-md px-2 py-1.5 text-slate-900 ring-1 ring-slate-300 dark:bg-white/5 dark:text-white dark:ring-white/10"
-          >
+          <Select name="magnet" defaultValue={filter.magnet} size="sm">
             <option value="">Tous</option>
             {magnets.map((magnet) => (
               <option key={magnet.id} value={magnet.id}>
                 {magnet.title}
               </option>
             ))}
-          </select>
+          </Select>
         </label>
         <label className="flex flex-col gap-1 text-slate-600 dark:text-slate-400">
           Source
-          <input
+          <Input
             name="source"
             defaultValue={filter.source}
             placeholder="r-page, audit:security…"
-            className="rounded-md px-2 py-1.5 text-slate-900 ring-1 ring-slate-300 dark:bg-white/5 dark:text-white dark:ring-white/10"
+            size="sm"
           />
         </label>
         <label className="flex flex-col gap-1 text-slate-600 dark:text-slate-400">
           Suivi
-          <select
-            name="followup"
-            defaultValue={filter.followup}
-            className="rounded-md px-2 py-1.5 text-slate-900 ring-1 ring-slate-300 dark:bg-white/5 dark:text-white dark:ring-white/10"
-          >
+          <Select name="followup" defaultValue={filter.followup} size="sm">
             <option value="">Tous</option>
             <option value="to_contact">À contacter</option>
             <option value="sent">Relance envoyée</option>
             <option value="replied">A répondu</option>
-          </select>
+          </Select>
         </label>
         <Button as="button" variant="outline">
           Filtrer

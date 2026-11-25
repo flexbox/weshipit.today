@@ -10,11 +10,7 @@ export function TrustedConsultantsSection() {
           <Text as="h2" variant="h2" className="mb-4">
             Industry-leading React Native experts trusted by top companies
           </Text>
-          <Text
-            as="p"
-            variant="p1"
-            className="text-neutral-500 dark:text-neutral-400"
-          >
+          <Text tone="muted" as="p" variant="p1">
             Not just consultants — we're active community leaders shaping the
             future of React Native
           </Text>
@@ -46,11 +42,7 @@ export function TrustedConsultantsSection() {
                 className="w-full object-cover outline outline-1 -outline-offset-1 outline-black/10 dark:outline-white/10"
               />
               <div className="p-4 bg-muted/30 dark:bg-slate-800/50">
-                <Text
-                  as="p"
-                  variant="c1"
-                  className="text-neutral-500 dark:text-neutral-400"
-                >
+                <Text tone="muted" as="p" variant="c1">
                   David Leuliette with John Major and Mazen Chami at Chain React
                 </Text>
               </div>
@@ -69,11 +61,7 @@ export function TrustedConsultantsSection() {
                 className="w-full object-cover outline outline-1 -outline-offset-1 outline-black/10 dark:outline-white/10"
               />
               <div className="p-4 bg-muted/30 dark:bg-slate-800/50">
-                <Text
-                  as="p"
-                  variant="c1"
-                  className="text-neutral-500 dark:text-neutral-400"
-                >
+                <Text tone="muted" as="p" variant="c1">
                   David Leuliette with Catalyn Miron and Aman Mittal at App.js
                   Conf
                 </Text>

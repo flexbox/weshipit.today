@@ -155,11 +155,7 @@ export default function ReactNativeSwiftPackageManagerMigration() {
       >
         <HeroSplit
           eyebrow={
-            <Text
-              as="p"
-              variant="c2"
-              className="uppercase tracking-wide text-blue-600 dark:text-blue-400"
-            >
+            <Text tone="primary" as="p" variant="eyebrow">
               Free tool · React Native 0.87 · iOS
             </Text>
           }
@@ -197,11 +193,7 @@ export default function ReactNativeSwiftPackageManagerMigration() {
             {TIMELINE.map((step) => (
               <li key={step.title}>
                 <Card size="md" className="h-full">
-                  <Text
-                    as="p"
-                    variant="c2"
-                    className="uppercase tracking-wide text-blue-600 dark:text-blue-400"
-                  >
+                  <Text tone="primary" as="p" variant="eyebrow">
                     {step.date}
                   </Text>
                   <Text as="h3" variant="h6" className="mt-2">
