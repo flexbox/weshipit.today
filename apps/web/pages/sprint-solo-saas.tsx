@@ -1,4 +1,14 @@
-import { AuthorDisclosure, Button, Faq, LinkButton, Text } from '@weshipit/ui';
+import {
+  AuthorDisclosure,
+  Badge,
+  Button,
+  Container,
+  Faq,
+  LinkButton,
+  Section,
+  Surface,
+  Text,
+} from '@weshipit/ui';
 
 import {
   ArrowRightIcon,
@@ -83,12 +93,16 @@ const faqs = [
 
 function HeroSection() {
   return (
-    <section className="relative overflow-hidden pt-32 pb-20">
-      <div className="relative mx-auto max-w-5xl px-6 text-center">
-        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent">
+    <Section
+      variant="plain"
+      spacing="hero"
+      className="relative overflow-hidden"
+    >
+      <Container size="lg" className="relative text-center">
+        <Badge variant="accent" className="mb-6">
           <CalendarDaysIcon className="h-4 w-4" />
           Sprint Incubateur Solopreneur — du 9 au 30 octobre 2026
-        </div>
+        </Badge>
 
         <Text variant="h1" as="h1" className="mb-6 text-balance">
           Sprint <span className="text-accent">Solo SaaS</span>&nbsp;: construis
@@ -141,8 +155,8 @@ function HeroSection() {
             12 mois d&apos;Incubateur pour le prix du Sprint
           </span>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -169,8 +183,8 @@ function PourquoiSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <Section>
+      <Container>
         <div className="mb-12 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Soit ça travaille à ta place, soit ça génère tes premiers revenus
@@ -186,10 +200,7 @@ function PourquoiSection() {
 
         <div className="grid gap-6 md:grid-cols-3">
           {cards.map((card) => (
-            <div
-              key={card.title}
-              className="rounded-xl border border-border bg-card p-6 transition-colors hover:border-accent/50"
-            >
+            <Surface interactive key={card.title}>
               <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-secondary">
                 <card.icon className="h-5 w-5 text-accent" />
               </div>
@@ -199,11 +210,11 @@ function PourquoiSection() {
               <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
                 {card.description}
               </p>
-            </div>
+            </Surface>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -240,8 +251,8 @@ function ProgrammeSection() {
   ];
 
   return (
-    <section id="programme" className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <Section id="programme">
+      <Container>
         <div className="mb-16 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Le programme&nbsp;: 4 lives, de l&apos;idée aux premiers
@@ -256,10 +267,7 @@ function ProgrammeSection() {
 
         <div className="grid gap-6 md:grid-cols-2">
           {lives.map((live) => (
-            <div
-              key={live.number}
-              className="group relative rounded-xl border border-border bg-card p-6 transition-colors hover:border-accent/50"
-            >
+            <Surface interactive key={live.number} className="group relative">
               <div className="mb-6 flex items-center gap-4">
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-xl font-bold text-neutral-950 dark:text-neutral-200">
                   {live.number}
@@ -272,7 +280,7 @@ function ProgrammeSection() {
               <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
                 {live.description}
               </p>
-            </div>
+            </Surface>
           ))}
         </div>
 
@@ -285,8 +293,8 @@ function ProgrammeSection() {
           dit franchement si c&apos;est bon ou pas. Demande-la moi après ton
           inscription.
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -308,8 +316,8 @@ function PourQuiSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-5xl px-6">
+    <Section>
+      <Container size="lg">
         <div className="mb-12 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Le Sprint Solo SaaS, c&apos;est pour toi si…
@@ -338,7 +346,7 @@ function PourQuiSection() {
             </ul>
           </div>
 
-          <div className="rounded-xl border border-border bg-card p-6">
+          <Surface>
             <Text
               variant="h4"
               as="h3"
@@ -357,10 +365,10 @@ function PourQuiSection() {
                 </li>
               ))}
             </ul>
-          </div>
+          </Surface>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -387,8 +395,8 @@ function PrixSection() {
   ];
 
   return (
-    <section id="prix" className="border-t border-border py-24">
-      <div className="mx-auto max-w-5xl px-6">
+    <Section id="prix">
+      <Container size="lg">
         <div className="mb-12 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Le prix du Sprint seul, avec l&apos;année entière
@@ -470,20 +478,20 @@ function PrixSection() {
             Comprendre le tarif parrainage
           </LinkButton>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
 function OnLeFaitEnsembleSection() {
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-4xl px-6">
-        <div className="rounded-2xl border border-border bg-card p-6 md:p-10">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary px-3 py-1 text-xs font-medium text-neutral-500 dark:text-neutral-400">
+    <Section>
+      <Container size="md">
+        <Surface padding="xl" radius="2xl">
+          <Badge variant="neutral" size="sm" className="mb-4">
             <UsersIcon className="h-3.5 w-3.5" />
             Plus on est de fous
-          </div>
+          </Badge>
           <Text variant="h3" as="h2" className="mb-3">
             Je fais ce Sprint aussi. On peut le faire en binôme.
           </Text>
@@ -507,9 +515,9 @@ function OnLeFaitEnsembleSection() {
             Lire mon avis détaillé après 6 mois d&apos;incubation
             <ArrowRightIcon className="h-3.5 w-3.5" />
           </Link>
-        </div>
-      </div>
-    </section>
+        </Surface>
+      </Container>
+    </Section>
   );
 }
 
@@ -556,18 +564,22 @@ function DisclosureSection() {
 
 function CtaFinalSection() {
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="relative overflow-hidden rounded-2xl border border-border bg-card">
+    <Section>
+      <Container>
+        <Surface
+          padding="none"
+          radius="2xl"
+          className="relative overflow-hidden"
+        >
           <div className="pointer-events-none absolute inset-0">
             <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:2rem_2rem] opacity-30" />
           </div>
 
           <div className="relative px-8 py-16 text-center md:py-24">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent">
+            <Badge variant="accent" className="mb-6">
               <TagIcon className="h-4 w-4" />
               Premier live le vendredi 9 octobre 2026
-            </div>
+            </Badge>
             <Text variant="h2" as="h2" className="mb-6 text-balance">
               Fin octobre, ton SaaS tourne{' '}
               <span className="text-accent">avec de vrais utilisateurs</span>
@@ -605,9 +617,9 @@ function CtaFinalSection() {
               </span>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </Surface>
+      </Container>
+    </Section>
   );
 }
 
@@ -728,8 +740,8 @@ export default function SprintSoloSaasPage() {
         <OnLeFaitEnsembleSection />
         <DisclosureSection />
 
-        <section id="faq" className="border-t border-border py-24">
-          <div className="mx-auto max-w-3xl px-6">
+        <Section id="faq">
+          <Container size="sm">
             <div className="mb-12 text-center">
               <Text variant="h3" as="h2" className="mb-4 text-balance">
                 FAQ — Sprint Solo SaaS
@@ -739,8 +751,8 @@ export default function SprintSoloSaasPage() {
               </p>
             </div>
             <Faq faqs={faqs} title="" headingId="faq-saas-heading" />
-          </div>
-        </section>
+          </Container>
+        </Section>
 
         <CtaFinalSection />
       </Layout>

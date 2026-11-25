@@ -1,29 +1,28 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { Container } from '../container/container';
 import { Section } from './section';
 
 const meta: Meta<typeof Section> = {
   component: Section,
-  title: 'Section',
+  title: 'Layout/Section',
   argTypes: {
-    variant: {
-      control: 'radio',
-      options: ['light', 'transparent'],
-    },
+    spacing: { control: 'radio', options: ['md', 'lg', 'hero'] },
+    variant: { control: 'radio', options: ['divided', 'plain'] },
   },
 };
 export default meta;
 type Story = StoryObj<typeof Section>;
 
-export const Light: Story = {
+export const Divided: Story = {
   args: {
-    variant: 'light',
-    children: <p className="text-center">Section content</p>,
+    children: (
+      <Container size="md">
+        <p className="text-center">Section content</p>
+      </Container>
+    ),
   },
 };
 
-export const Transparent: Story = {
-  args: {
-    variant: 'transparent',
-    children: <p className="text-center">Section content</p>,
-  },
+export const Plain: Story = {
+  args: { ...Divided.args, spacing: 'md', variant: 'plain' },
 };

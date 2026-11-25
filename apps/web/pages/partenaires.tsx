@@ -1,4 +1,14 @@
-import { AuthorDisclosure, Button, CountUp, Faq, Text } from '@weshipit/ui';
+import {
+  AuthorDisclosure,
+  Badge,
+  Button,
+  Container,
+  CountUp,
+  Faq,
+  Section,
+  Surface,
+  Text,
+} from '@weshipit/ui';
 
 import {
   ArrowRightIcon,
@@ -63,10 +73,10 @@ function HeroSection() {
         {/* Same shape as the homepage hero: copy on the left, phone on the right. */}
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
           <div>
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent">
+            <Badge variant="accent" className="mb-6">
               <MicrophoneIcon strokeWidth={2.25} className="h-4 w-4" />
               Kit média · Le Cross Platform Show
-            </div>
+            </Badge>
 
             <Text variant="h1" as="h1" className="mb-6 text-balance">
               Accède aux équipes qui choisissent{' '}
@@ -181,8 +191,8 @@ function ProofSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-5xl px-6">
+    <Section>
+      <Container size="lg">
         <div className="mb-12 text-center">
           <Text variant="h2" as="h2" className="mb-4 text-balance">
             Ce qu&apos;il faut savoir avant de continuer
@@ -197,10 +207,7 @@ function ProofSection() {
 
         <div className="mb-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat) => (
-            <div
-              key={stat.label}
-              className="rounded-xl border border-border bg-card p-5 text-center"
-            >
+            <Surface padding="sm" key={stat.label} className="text-center">
               <div className="text-3xl font-bold tabular-nums text-neutral-950 dark:text-neutral-100">
                 <CountUp end={stat.value} locale="fr-FR" />
               </div>
@@ -210,11 +217,11 @@ function ProofSection() {
               <div className="mt-1 text-xs text-neutral-500 dark:text-neutral-400">
                 {stat.detail}
               </div>
-            </div>
+            </Surface>
           ))}
         </div>
 
-        <div className="rounded-xl border border-border bg-card p-6">
+        <Surface>
           <div className="mb-4 text-sm font-medium text-neutral-950 dark:text-neutral-200">
             Ils sont passés au micro
           </div>
@@ -246,9 +253,9 @@ function ProofSection() {
             </Link>
             , avec transcription et page permanente pour chacun.
           </p>
-        </div>
-      </div>
-    </section>
+        </Surface>
+      </Container>
+    </Section>
   );
 }
 
@@ -295,8 +302,8 @@ function AudienceSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-5xl px-6">
+    <Section>
+      <Container size="lg">
         <div className="mb-12 text-center">
           <Text variant="h2" as="h2" className="mb-4 text-balance">
             Une audience qui arbitre des budgets
@@ -310,10 +317,7 @@ function AudienceSection() {
 
         <div className="mb-8 grid gap-6 md:grid-cols-3">
           {profile.map((block) => (
-            <div
-              key={block.title}
-              className="rounded-xl border border-border bg-card p-6"
-            >
+            <Surface key={block.title}>
               <Text variant="h4" as="h3" className="mb-4">
                 {block.title}
               </Text>
@@ -331,7 +335,7 @@ function AudienceSection() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </Surface>
           ))}
         </div>
 
@@ -350,8 +354,8 @@ function AudienceSection() {
             ))}
           </div>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -388,8 +392,8 @@ function ChannelsSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-5xl px-6">
+    <Section>
+      <Container size="lg">
         <div className="mb-12 text-center">
           <Text variant="h2" as="h2" className="mb-4 text-balance">
             Quatre canaux, une même audience
@@ -403,10 +407,7 @@ function ChannelsSection() {
 
         <div className="grid gap-4 md:grid-cols-2">
           {channels.map((channel) => (
-            <div
-              key={channel.title}
-              className="rounded-xl border border-border bg-card p-6"
-            >
+            <Surface key={channel.title}>
               <div className="mb-3 flex items-center justify-between gap-4">
                 <div className="flex items-center gap-2">
                   <channel.icon
@@ -424,7 +425,7 @@ function ChannelsSection() {
               <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
                 {channel.description}
               </p>
-            </div>
+            </Surface>
           ))}
         </div>
 
@@ -445,8 +446,8 @@ function ChannelsSection() {
             Proposition écrite sous 48 h, aucun engagement avant.
           </p>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 function ActivationsSection() {
@@ -490,8 +491,8 @@ function ActivationsSection() {
   ];
 
   return (
-    <section id="activations" className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <Section id="activations">
+      <Container>
         <div className="mb-16 text-center">
           <Text variant="h2" as="h2" className="mb-4 text-balance">
             Les formats possibles
@@ -505,10 +506,7 @@ function ActivationsSection() {
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {activations.map((item) => (
-            <div
-              key={item.title}
-              className="rounded-xl border border-border bg-card p-6"
-            >
+            <Surface key={item.title}>
               <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10">
                 <item.icon strokeWidth={1.8} className="h-5 w-5 text-accent" />
               </div>
@@ -518,11 +516,11 @@ function ActivationsSection() {
               <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
                 {item.description}
               </p>
-            </div>
+            </Surface>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -571,8 +569,8 @@ function OffersSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <Section>
+      <Container>
         <div className="mb-16 text-center">
           <Text variant="h2" as="h2" className="mb-4 text-balance">
             Trois niveaux d&apos;engagement
@@ -637,8 +635,8 @@ function OffersSection() {
             <ArrowRightIcon strokeWidth={2.25} className="ml-2 h-4 w-4" />
           </Button>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -657,8 +655,8 @@ function AudienceFitSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-5xl px-6">
+    <Section>
+      <Container size="lg">
         <div className="mb-12 text-center">
           <Text variant="h2" as="h2" className="mb-4 text-balance">
             Pour qui c&apos;est fait
@@ -690,7 +688,7 @@ function AudienceFitSection() {
             </ul>
           </div>
 
-          <div className="rounded-xl border border-border bg-card p-6">
+          <Surface>
             <Text
               variant="h4"
               as="h3"
@@ -717,10 +715,10 @@ function AudienceFitSection() {
               j&apos;utiliserais dans une app cliente. Chaque contenu sponsorisé
               est annoncé comme tel.
             </p>
-          </div>
+          </Surface>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -778,18 +776,22 @@ function AuthorSection() {
 
 function FinalCtaSection() {
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="relative overflow-hidden rounded-2xl border border-border bg-card">
+    <Section>
+      <Container>
+        <Surface
+          padding="none"
+          radius="2xl"
+          className="relative overflow-hidden"
+        >
           <div className="pointer-events-none absolute inset-0">
             <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:2rem_2rem] opacity-30" />
           </div>
 
           <div className="relative px-8 py-16 text-center md:py-24">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent">
+            <Badge variant="accent" className="mb-6">
               <BriefcaseIcon strokeWidth={2.25} className="h-4 w-4" />
               Un seul sponsor par trimestre
-            </div>
+            </Badge>
             <Text variant="h2" as="h2" className="mb-6 text-balance">
               Construisons l&apos;activation{' '}
               <span className="text-accent">adaptée à ton objectif</span>
@@ -827,9 +829,9 @@ function FinalCtaSection() {
               </span>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </Surface>
+      </Container>
+    </Section>
   );
 }
 
@@ -908,13 +910,13 @@ export default function PartnersPage() {
         <OffersSection />
         <AudienceFitSection />
         <section className="border-t border-border">
-          <div className="mx-auto max-w-4xl px-6">
+          <Container size="md">
             <Faq
               faqs={faqs}
               title="Questions que posent les sponsors"
               headingId="faq"
             />
-          </div>
+          </Container>
         </section>
         <AuthorSection />
         <FinalCtaSection />

@@ -11,6 +11,7 @@ const badge = cva([''], {
       md: [
         'inline-flex',
         'items-center',
+        'gap-2',
         'rounded-full',
         'px-4',
         'py-2',
@@ -22,6 +23,7 @@ const badge = cva([''], {
       sm: [
         'inline-flex',
         'items-center',
+        'gap-1.5',
         'rounded-full',
         'px-2',
         'py-1',
@@ -32,6 +34,15 @@ const badge = cva([''], {
       ],
     },
     variant: {
+      /** Theme accent, the pill above landing-page headings. */
+      accent: ['bg-accent/10', 'text-accent', 'ring-accent/30'],
+      /** Theme neutral, for quiet labels on `card` surfaces. */
+      neutral: [
+        'bg-secondary',
+        'text-neutral-500',
+        'ring-border',
+        'dark:text-neutral-400',
+      ],
       blue: [
         'bg-blue-50',
         'text-blue-700',
@@ -149,8 +160,7 @@ const badge = cva([''], {
 });
 
 export interface BadgeProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof badge> {}
+  extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof badge> {}
 
 export const Badge: React.FC<BadgeProps> = ({
   className,

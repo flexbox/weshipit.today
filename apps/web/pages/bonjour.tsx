@@ -1,4 +1,12 @@
-import { Text, Button, ClientsListHomepage, Faq } from '@weshipit/ui';
+import {
+  Button,
+  ClientsListHomepage,
+  Container,
+  Faq,
+  Section,
+  Surface,
+  Text,
+} from '@weshipit/ui';
 
 import { Customer, getVisibleClients } from './api/client';
 import Head from 'next/head';
@@ -57,7 +65,7 @@ function HeroSection() {
 
   return (
     <section className="relative overflow-hidden pt-32 pb-24">
-      <div className="relative mx-auto max-w-6xl px-6">
+      <Container className="relative">
         <div className="mx-auto max-w-4xl text-center">
           <Text variant="h1" as="h1" className="mb-6 text-balance">
             Si ton app React Native devient{' '}
@@ -123,7 +131,7 @@ function HeroSection() {
             </span>
           </p>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }
@@ -153,8 +161,8 @@ function ProblemsSection() {
   ];
 
   return (
-    <section id="probleme" className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <Section id="probleme">
+      <Container>
         <div className="grid gap-16 lg:grid-cols-2">
           {/* Left */}
           <div>
@@ -212,8 +220,8 @@ function ProblemsSection() {
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -240,8 +248,8 @@ function StatsSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <Section>
+      <Container>
         <div className="mb-16 text-center">
           <p className="mb-4 text-sm font-medium uppercase tracking-wider text-accent">
             J&apos;ai vu ça des dizaines de fois.
@@ -271,16 +279,16 @@ function StatsSection() {
             </div>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
 // ─── TESTIMONIALS ────────────────────────────────────────────────────────────
 function TestimonialsSection() {
   return (
-    <section id="testimonials" className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <Section id="testimonials">
+      <Container>
         <div className="mb-16 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Ils ont transformé leur app avec nous
@@ -293,9 +301,10 @@ function TestimonialsSection() {
 
         <div className="mb-16 grid gap-6 md:grid-cols-3">
           {testimonials.map((item, index) => (
-            <div
+            <Surface
+              interactive
               key={index}
-              className="group relative flex flex-col rounded-xl border border-border bg-card p-6 transition-colors hover:border-accent/50"
+              className="group relative flex flex-col"
             >
               <svg
                 className="mb-4 h-8 w-8 text-accent opacity-50"
@@ -315,11 +324,11 @@ function TestimonialsSection() {
                   {item.role}
                 </div>
               </div>
-            </div>
+            </Surface>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -362,8 +371,8 @@ function ProcessSection() {
   ];
 
   return (
-    <section id="process" className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <Section id="process">
+      <Container>
         <div className="mb-16 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Je prends ton app et je la transforme en{' '}
@@ -389,10 +398,7 @@ function ProcessSection() {
 
         <div className="grid gap-6 md:grid-cols-3">
           {steps.map((step) => (
-            <div
-              key={step.number}
-              className="group relative rounded-xl border border-border bg-card p-6 transition-colors hover:border-accent/50"
-            >
+            <Surface interactive key={step.number} className="group relative">
               <div className="mb-6 flex items-center gap-4">
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-xl font-bold text-neutral-950 dark:text-neutral-200">
                   {step.number}
@@ -416,11 +422,11 @@ function ProcessSection() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </Surface>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -446,10 +452,10 @@ function PricingSection() {
   ];
 
   return (
-    <section id="pricing" className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <Section id="pricing">
+      <Container>
         <div className="mx-auto max-w-3xl">
-          <div className="overflow-hidden rounded-2xl border border-border bg-card">
+          <Surface padding="none" radius="2xl" className="overflow-hidden">
             <div className="border-b border-border bg-secondary/30 px-8 py-12 text-center">
               <div className="mb-2 text-sm font-medium uppercase tracking-wider text-accent">
                 Tarif unique
@@ -507,10 +513,10 @@ function PricingSection() {
                 <ArrowRightIcon className="ml-2 h-4 w-4" />
               </Button>
             </div>
-          </div>
+          </Surface>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -540,8 +546,8 @@ function ComparisonSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <Section>
+      <Container>
         <div className="mb-16 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Combien ça te coûte de continuer comme ça ?
@@ -593,8 +599,8 @@ function ComparisonSection() {
             </div>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -619,8 +625,8 @@ function UrgencySection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <Section>
+      <Container>
         <div className="mb-12 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Chaque semaine sans agir te coûte
@@ -652,17 +658,21 @@ function UrgencySection() {
             reste une place.
           </p>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
 // ─── CTA FINAL ───────────────────────────────────────────────────────────────
 function CtaFinalSection() {
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="relative overflow-hidden rounded-2xl border border-border bg-card">
+    <Section>
+      <Container>
+        <Surface
+          padding="none"
+          radius="2xl"
+          className="relative overflow-hidden"
+        >
           <div className="pointer-events-none absolute inset-0">
             <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:2rem_2rem] opacity-30" />
           </div>
@@ -705,9 +715,9 @@ function CtaFinalSection() {
               </span>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </Surface>
+      </Container>
+    </Section>
   );
 }
 
@@ -888,16 +898,16 @@ export default function BonjourPage({ clients }: BonjourPageProps) {
         <UrgencySection />
 
         {/* FAQ */}
-        <section id="faq" className="border-t border-border py-24">
-          <div className="mx-auto max-w-3xl px-6">
+        <Section id="faq">
+          <Container size="sm">
             <div className="mb-12 text-center">
               <Text variant="h3" as="h2" className="mb-4 text-balance">
                 Questions fréquentes
               </Text>
             </div>
             <Faq faqs={faqs} title="" headingId="faq-fr-heading" />
-          </div>
-        </section>
+          </Container>
+        </Section>
 
         <CtaFinalSection />
       </Layout>

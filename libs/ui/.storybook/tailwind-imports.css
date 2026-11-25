@@ -16,8 +16,14 @@
 
   --color-primary: hsl(var(--primary));
   --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
   --color-muted: hsl(var(--muted));
   --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-card: hsl(var(--card));
+  --color-border: hsl(var(--border));
+  --color-secondary: hsl(var(--secondary));
+  --color-accent: hsl(var(--accent));
+  --color-destructive: hsl(var(--destructive));
 
   @keyframes shine {
     100% {
@@ -60,13 +66,30 @@
   }
 }
 
+/* Theme tokens, kept in sync with apps/web/pages/styles.css. */
 @layer base {
   :root {
+    --background: 210 40% 96.1%;
+    --foreground: 0 0% 3.9%;
     --muted: 0 0% 96.1%;
     --muted-foreground: 0 0% 45.1%;
+    --primary: 220 90% 56%;
+    --card: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --secondary: 0 0% 96.1%;
+    --accent: 142 80% 25%;
+    --destructive: 0 84% 60%;
   }
   .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
     --muted: 0 0% 14.9%;
     --muted-foreground: 0 0% 63.9%;
+    --primary: 220 90% 56%;
+    --card: 0 0% 7%;
+    --border: 0 0% 14.9%;
+    --secondary: 0 0% 14.9%;
+    --accent: 142 71% 45%;
+    --destructive: 0 62% 50%;
   }
 }

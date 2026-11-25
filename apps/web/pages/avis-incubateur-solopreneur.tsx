@@ -1,4 +1,14 @@
-import { AuthorDisclosure, Button, Faq, LinkButton, Text } from '@weshipit/ui';
+import {
+  AuthorDisclosure,
+  Badge,
+  Button,
+  Container,
+  Faq,
+  LinkButton,
+  Section,
+  Surface,
+  Text,
+} from '@weshipit/ui';
 
 import {
   ArrowRightIcon,
@@ -118,12 +128,16 @@ function RatingStars({ rating }: { rating: number }) {
 
 function HeroSection() {
   return (
-    <section className="relative overflow-hidden pt-32 pb-20">
-      <div className="relative mx-auto max-w-5xl px-6 text-center">
-        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent">
+    <Section
+      variant="plain"
+      spacing="hero"
+      className="relative overflow-hidden"
+    >
+      <Container size="lg" className="relative text-center">
+        <Badge variant="accent" className="mb-6">
           <ShieldCheckIcon className="h-4 w-4" />
           Avis vérifié — Incubé depuis 2025
-        </div>
+        </Badge>
 
         <Text variant="h1" as="h1" className="mb-6 text-balance">
           Avis <span className="text-accent">Incubateur Solopreneur</span> 2026
@@ -176,8 +190,8 @@ function HeroSection() {
             Avis sans bonus secret
           </span>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -216,8 +230,8 @@ function VerdictSection() {
   ];
 
   return (
-    <section id="verdict" className="border-t border-border py-24">
-      <div className="mx-auto max-w-3xl px-6">
+    <Section id="verdict">
+      <Container size="sm">
         <div className="mb-12 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Le verdict en 30 secondes
@@ -228,7 +242,7 @@ function VerdictSection() {
           </p>
         </div>
 
-        <div className="rounded-xl border border-border bg-card p-6 md:p-8">
+        <Surface padding="lg">
           <ul className="space-y-4">
             {points.map((p, i) => (
               <li key={i} className="flex items-start gap-3">
@@ -252,9 +266,9 @@ function VerdictSection() {
             cherches un cours vidéo passif ou si tu n’as pas le temps d’assister
             aux lives.
           </div>
-        </div>
-      </div>
-    </section>
+        </Surface>
+      </Container>
+    </Section>
   );
 }
 
@@ -299,8 +313,8 @@ function NotesParCriteresSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-5xl px-6">
+    <Section>
+      <Container size="lg">
         <div className="mb-12 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Notes par critères
@@ -340,8 +354,8 @@ function NotesParCriteresSection() {
             </div>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -386,8 +400,8 @@ function PointsFortsSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <Section>
+      <Container>
         <div className="mb-16 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Ce qui marche vraiment
@@ -400,10 +414,7 @@ function PointsFortsSection() {
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {items.map((item) => (
-            <div
-              key={item.title}
-              className="rounded-xl border border-border bg-card p-6 transition-colors hover:border-accent/50"
-            >
+            <Surface interactive key={item.title}>
               <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-secondary">
                 <item.icon className="h-5 w-5 text-accent" />
               </div>
@@ -413,11 +424,11 @@ function PointsFortsSection() {
               <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
                 {item.description}
               </p>
-            </div>
+            </Surface>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -454,8 +465,8 @@ function PointsFaiblesSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-5xl px-6">
+    <Section>
+      <Container size="lg">
         <div className="mb-12 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Ce qui peut décevoir
@@ -468,10 +479,7 @@ function PointsFaiblesSection() {
 
         <div className="space-y-6">
           {items.map((item) => (
-            <div
-              key={item.title}
-              className="rounded-xl border border-border bg-card p-6"
-            >
+            <Surface key={item.title}>
               <div className="mb-3 flex items-start gap-3">
                 <ExclamationTriangleIcon className="mt-0.5 h-5 w-5 shrink-0 text-destructive" />
                 <Text
@@ -494,11 +502,11 @@ function PointsFaiblesSection() {
                 </span>{' '}
                 {item.mitigation}
               </p>
-            </div>
+            </Surface>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -553,8 +561,8 @@ function ExperienceMoisParMoisSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-5xl px-6">
+    <Section>
+      <Container size="lg">
         <div className="mb-12 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Mon expérience mois par mois
@@ -596,8 +604,8 @@ function ExperienceMoisParMoisSection() {
             </div>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -638,8 +646,8 @@ function ComparatifAlternativesSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <Section>
+      <Container>
         <div className="mb-12 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Comparatif avec les alternatives
@@ -712,8 +720,8 @@ function ComparatifAlternativesSection() {
             Incubateur Solopreneur vs Marketing Mania →
           </Link>
         </p>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -740,8 +748,8 @@ function AvisExternesSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <Section>
+      <Container>
         <div className="mb-12 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Avis externes sur l’Incubateur Solopreneur
@@ -754,10 +762,7 @@ function AvisExternesSection() {
 
         <div className="grid gap-6 md:grid-cols-3">
           {proofs.map((p) => (
-            <div
-              key={p.title}
-              className="flex flex-col rounded-xl border border-border bg-card p-6"
-            >
+            <Surface key={p.title} className="flex flex-col">
               <svg
                 className="mb-4 h-8 w-8 text-accent opacity-50"
                 fill="currentColor"
@@ -776,11 +781,11 @@ function AvisExternesSection() {
                   {p.source}
                 </div>
               </div>
-            </div>
+            </Surface>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -805,8 +810,8 @@ function PourQuiSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-5xl px-6">
+    <Section>
+      <Container size="lg">
         <div className="mb-12 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             L’Incubateur Solopreneur, c’est pour toi si…
@@ -831,7 +836,7 @@ function PourQuiSection() {
             </ul>
           </div>
 
-          <div className="rounded-xl border border-border bg-card p-6">
+          <Surface>
             <Text
               variant="h4"
               as="h3"
@@ -850,17 +855,17 @@ function PourQuiSection() {
                 </li>
               ))}
             </ul>
-          </div>
+          </Surface>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
 function PrixEtCodeReductionSection() {
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-4xl px-6">
+    <Section>
+      <Container size="md">
         <div className="mb-12 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Prix et code réduction
@@ -929,8 +934,8 @@ function PrixEtCodeReductionSection() {
           prix (le plus bas du marché) qu’un client direct. Je touche une
           commission d’apporteur d’affaires, sans coût supplémentaire pour toi.
         </p>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -982,18 +987,22 @@ function DisclosureSection() {
 
 function CtaFinalSection() {
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="relative overflow-hidden rounded-2xl border border-border bg-card">
+    <Section>
+      <Container>
+        <Surface
+          padding="none"
+          radius="2xl"
+          className="relative overflow-hidden"
+        >
           <div className="pointer-events-none absolute inset-0">
             <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:2rem_2rem] opacity-30" />
           </div>
 
           <div className="relative px-8 py-16 text-center md:py-24">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent">
+            <Badge variant="accent" className="mb-6">
               <TagIcon className="h-4 w-4" />
               Verdict&nbsp;: recommandé, sous conditions
-            </div>
+            </Badge>
             <Text variant="h2" as="h2" className="mb-6 text-balance">
               Prêt à rejoindre l’
               <span className="text-accent">Incubateur Solopreneur</span>
@@ -1032,9 +1041,9 @@ function CtaFinalSection() {
               </span>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </Surface>
+      </Container>
+    </Section>
   );
 }
 
@@ -1152,8 +1161,8 @@ export default function AvisIncubateurSolopreneurPage() {
         <PrixEtCodeReductionSection />
         <DisclosureSection />
 
-        <section id="faq" className="border-t border-border py-24">
-          <div className="mx-auto max-w-3xl px-6">
+        <Section id="faq">
+          <Container size="sm">
             <div className="mb-12 text-center">
               <Text variant="h3" as="h2" className="mb-4 text-balance">
                 FAQ — Avis Incubateur Solopreneur
@@ -1163,8 +1172,8 @@ export default function AvisIncubateurSolopreneurPage() {
               </p>
             </div>
             <Faq faqs={faqs} title="" headingId="faq-avis-heading" />
-          </div>
-        </section>
+          </Container>
+        </Section>
 
         <CtaFinalSection />
       </Layout>

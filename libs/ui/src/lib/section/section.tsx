@@ -1,38 +1,51 @@
-import { PropsWithChildren } from 'react';
-import { cva, VariantProps } from 'class-variance-authority';
+import { cva, type VariantProps } from 'class-variance-authority';
+import { cn } from '../utils/cn';
 
-// Define the variant styles using cva
-const sectionVariants = cva(
-  // Base styles
-  'my-12 py-32',
-  {
-    variants: {
-      variant: {
-        light: 'bg-white dark:bg-slate-900',
-        transparent: 'bg-transparent',
-      },
+export const sectionVariants = cva('', {
+  defaultVariants: {
+    spacing: 'lg',
+    variant: 'divided',
+  },
+  variants: {
+    spacing: {
+      md: 'py-16',
+      lg: 'py-24',
+      hero: 'pt-32 pb-20',
     },
-    // Optional: Default variant values
-    defaultVariants: {
-      variant: 'light',
+    variant: {
+      /** Hairline on top, the default rhythm of landing pages. */
+      divided: 'border-t border-border',
+      plain: '',
     },
-  }
-);
+  },
+});
 
-interface SectionProps
-  extends PropsWithChildren,
-    React.HTMLAttributes<HTMLDivElement>,
+export interface SectionProps
+  extends
+    React.HTMLAttributes<HTMLElement>,
     VariantProps<typeof sectionVariants> {
-  variants?: {
-    variant?: 'light' | 'transparent';
-  };
+  as?: React.ElementType;
 }
 
-export function Section({ children, className, variant }: SectionProps) {
+/**
+ * Vertical band of a page. Pair it with `<Container>` for the width:
+ *
+ * <Section id="prix">
+ *   <Container size="md">…</Container>
+ * </Section>
+ */
+export function Section({
+  as: Element = 'section',
+  className,
+  spacing,
+  variant,
+  ...props
+}: SectionProps) {
   return (
-    <section className={sectionVariants({ className, variant })}>
-      {children}
-    </section>
+    <Element
+      className={cn(sectionVariants({ spacing, variant }), className)}
+      {...props}
+    />
   );
 }
 

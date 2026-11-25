@@ -15,6 +15,8 @@ export const Primary = {
 
 const VariantExamples = () => (
   <div className="grid gap-4">
+    <Badge variant="accent">Accent</Badge>
+    <Badge variant="neutral">Neutral</Badge>
     <Badge variant="lime">Analytics</Badge>
     <Badge variant="indigo">Authentication</Badge>
     <Badge variant="green">Backend</Badge>

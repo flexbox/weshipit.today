@@ -1,4 +1,14 @@
-import { AuthorDisclosure, Button, Faq, LinkButton, Text } from '@weshipit/ui';
+import {
+  AuthorDisclosure,
+  Badge,
+  Button,
+  Container,
+  Faq,
+  LinkButton,
+  Section,
+  Surface,
+  Text,
+} from '@weshipit/ui';
 
 import {
   AcademicCapIcon,
@@ -99,12 +109,16 @@ const faqs = [
 
 function HeroSection() {
   return (
-    <section className="relative overflow-hidden pt-32 pb-20">
-      <div className="relative mx-auto max-w-5xl px-6 text-center">
-        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent">
+    <Section
+      variant="plain"
+      spacing="hero"
+      className="relative overflow-hidden"
+    >
+      <Container size="lg" className="relative text-center">
+        <Badge variant="accent" className="mb-6">
           <ScaleIcon className="h-4 w-4" />
           Comparaison indépendante — Mise à jour 2026
-        </div>
+        </Badge>
 
         <Text variant="h1" as="h1" className="mb-6 text-balance">
           <span className="text-accent">Incubateur Solopreneur</span> vs{' '}
@@ -149,15 +163,15 @@ function HeroSection() {
             Aucun straw-man sur Marketing Mania
           </span>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
 function VerdictSection() {
   return (
-    <section id="verdict" className="border-t border-border py-24">
-      <div className="mx-auto max-w-3xl px-6">
+    <Section id="verdict">
+      <Container size="sm">
         <div className="mb-12 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Le verdict en 30 secondes
@@ -218,7 +232,7 @@ function VerdictSection() {
             </p>
           </div>
 
-          <div className="rounded-xl border border-border bg-card p-6">
+          <Surface>
             <div className="mb-2 flex items-center gap-2">
               <FireIcon className="h-5 w-5 text-neutral-500 dark:text-neutral-400" />
               <Text
@@ -234,10 +248,10 @@ function VerdictSection() {
               l’Incubateur ensuite pour les appliquer à un actif construit dans
               la durée. Compte 3 000 à 4 000 € HT cumulés.
             </p>
-          </div>
+          </Surface>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -271,8 +285,8 @@ function VueDensembleSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <Section>
+      <Container>
         <div className="mb-12 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Les deux programmes en un coup d’œil
@@ -359,8 +373,8 @@ function VueDensembleSection() {
             </div>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -415,8 +429,8 @@ function ComparaisonCriteresSection() {
   ];
 
   return (
-    <section id="criteres" className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <Section id="criteres">
+      <Container>
         <div className="mb-12 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Comparaison détaillée, critère par critère
@@ -466,8 +480,8 @@ function ComparaisonCriteresSection() {
             </tbody>
           </table>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -518,8 +532,8 @@ function CasDUsageSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <Section>
+      <Container>
         <div className="mb-12 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Six cas d’usage concrets
@@ -565,8 +579,8 @@ function CasDUsageSection() {
             </div>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -580,8 +594,8 @@ function PointsCommunsSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-4xl px-6">
+    <Section>
+      <Container size="md">
         <div className="mb-12 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Ce qu’ils ont en commun
@@ -592,7 +606,7 @@ function PointsCommunsSection() {
           </p>
         </div>
 
-        <div className="rounded-xl border border-border bg-card p-6 md:p-8">
+        <Surface padding="lg">
           <ul className="space-y-4">
             {commons.map((c, i) => (
               <li key={i} className="flex items-start gap-3">
@@ -603,16 +617,16 @@ function PointsCommunsSection() {
               </li>
             ))}
           </ul>
-        </div>
-      </div>
-    </section>
+        </Surface>
+      </Container>
+    </Section>
   );
 }
 
 function LesDeuxSection() {
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-4xl px-6">
+    <Section>
+      <Container size="md">
         <div className="mb-12 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Peut-on faire les deux&nbsp;?
@@ -623,7 +637,7 @@ function LesDeuxSection() {
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
-          <div className="rounded-xl border border-border bg-card p-6">
+          <Surface>
             <div className="mb-3 text-xs font-semibold uppercase tracking-wide text-accent">
               Étape 1
             </div>
@@ -635,7 +649,7 @@ function LesDeuxSection() {
               persuasion, funnels. Compétence transférable à tout actif que tu
               construiras ensuite.
             </p>
-          </div>
+          </Surface>
           <div className="rounded-xl border border-accent/30 bg-accent/5 p-6">
             <div className="mb-3 text-xs font-semibold uppercase tracking-wide text-accent">
               Étape 2
@@ -649,7 +663,7 @@ function LesDeuxSection() {
               une pair pression positive.
             </p>
           </div>
-          <div className="rounded-xl border border-border bg-card p-6">
+          <Surface>
             <div className="mb-3 text-xs font-semibold uppercase tracking-wide text-accent">
               Budget total
             </div>
@@ -661,17 +675,17 @@ function LesDeuxSection() {
               nettement plus digeste. Reste un investissement sérieux — à caler
               avec ton chiffre d’affaires actuel.
             </p>
-          </div>
+          </Surface>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
 function RecommandationSection() {
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-3xl px-6">
+    <Section>
+      <Container size="sm">
         <Text variant="h3" as="h2" className="mb-6 text-balance">
           Ma recommandation finale
         </Text>
@@ -723,8 +737,8 @@ function RecommandationSection() {
             l’investissement.
           </p>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -774,18 +788,22 @@ function DisclosureSection() {
 
 function CtaFinalSection() {
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="relative overflow-hidden rounded-2xl border border-border bg-card">
+    <Section>
+      <Container>
+        <Surface
+          padding="none"
+          radius="2xl"
+          className="relative overflow-hidden"
+        >
           <div className="pointer-events-none absolute inset-0">
             <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:2rem_2rem] opacity-30" />
           </div>
 
           <div className="relative px-8 py-16 text-center md:py-24">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent">
+            <Badge variant="accent" className="mb-6">
               <ScaleIcon className="h-4 w-4" />
               Décision facilitée
-            </div>
+            </Badge>
             <Text variant="h2" as="h2" className="mb-6 text-balance">
               Ton choix est fait&nbsp;? Prochaine étape.
             </Text>
@@ -813,9 +831,9 @@ function CtaFinalSection() {
               newsletter de Flavie Prevot pendant 2–3 mois. Meilleur test.
             </p>
           </div>
-        </div>
-      </div>
-    </section>
+        </Surface>
+      </Container>
+    </Section>
   );
 }
 
@@ -922,8 +940,8 @@ export default function IncubateurVsMarketingManiaPage() {
         <RecommandationSection />
         <DisclosureSection />
 
-        <section id="faq" className="border-t border-border py-24">
-          <div className="mx-auto max-w-3xl px-6">
+        <Section id="faq">
+          <Container size="sm">
             <div className="mb-12 text-center">
               <Text variant="h3" as="h2" className="mb-4 text-balance">
                 FAQ — Incubateur Solopreneur vs Marketing Mania
@@ -934,8 +952,8 @@ export default function IncubateurVsMarketingManiaPage() {
               </p>
             </div>
             <Faq faqs={faqs} title="" headingId="faq-vs-heading" />
-          </div>
-        </section>
+          </Container>
+        </Section>
 
         <CtaFinalSection />
       </Layout>

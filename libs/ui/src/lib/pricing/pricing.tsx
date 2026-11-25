@@ -12,18 +12,14 @@ import {
   ChevronRightIcon,
   ArrowRightIcon,
 } from '@heroicons/react/24/outline';
-import clsx, { ClassValue } from 'clsx';
 import { SpotLeft, SPOT_AVAILABILITY } from '../spot-left/spot-left';
 import { Card } from '../card/card';
-import { twMerge } from 'tailwind-merge';
+import clsx from 'clsx';
+import { cn } from '../utils/cn';
 import { Text } from '../text/text';
 import { Badge } from '../badge/badge';
 import LinkButton from '../button/link-button';
 import { BookDiscoveryCta } from '../book-discovery-cta/book-discovery-cta';
-
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
-}
 
 type PlanKey = 'kickstart' | 'essential' | 'growth' | 'enterprise';
 

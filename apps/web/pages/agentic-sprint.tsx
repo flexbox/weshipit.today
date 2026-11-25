@@ -1,4 +1,13 @@
-import { AuthorDisclosure, Button, Faq, Text } from '@weshipit/ui';
+import {
+  AuthorDisclosure,
+  Badge,
+  Button,
+  Container,
+  Faq,
+  Section,
+  Surface,
+  Text,
+} from '@weshipit/ui';
 
 import {
   ArrowRightIcon,
@@ -82,12 +91,16 @@ const faqs = [
 
 function HeroSection() {
   return (
-    <section className="relative overflow-hidden pt-32 pb-20">
-      <div className="relative mx-auto max-w-5xl px-6 text-center">
-        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent">
+    <Section
+      variant="plain"
+      spacing="hero"
+      className="relative overflow-hidden"
+    >
+      <Container size="lg" className="relative text-center">
+        <Badge variant="accent" className="mb-6">
           <CalendarDaysIcon className="h-4 w-4" />
           Batch en ligne · 14 septembre – 9 octobre 2026 · {SPOTS} places
-        </div>
+        </Badge>
 
         <Text variant="h1" as="h1" className="mb-6 text-balance">
           Agentic Sprint <br />
@@ -139,8 +152,8 @@ function HeroSection() {
             Notre propre site tourne sur ce workflow
           </span>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -167,8 +180,8 @@ function ProblemeSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-4xl px-6">
+    <Section>
+      <Container size="md">
         <Text variant="h2" as="h2" className="mb-6 text-balance text-center">
           Tu utilises l&apos;IA. Mais elle ne travaille pas pour toi.
         </Text>
@@ -180,10 +193,7 @@ function ProblemeSection() {
 
         <div className="mb-12 grid gap-4 md:grid-cols-3">
           {pains.map((pain) => (
-            <div
-              key={pain.title}
-              className="rounded-xl border border-border bg-card p-5"
-            >
+            <Surface padding="sm" key={pain.title}>
               <pain.icon className="mb-3 h-6 w-6 text-accent" />
               <div className="mb-1 text-sm font-semibold text-neutral-950 dark:text-neutral-100">
                 {pain.title}
@@ -191,7 +201,7 @@ function ProblemeSection() {
               <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
                 {pain.description}
               </p>
-            </div>
+            </Surface>
           ))}
         </div>
 
@@ -211,8 +221,8 @@ function ProblemeSection() {
         <p className="mx-auto mt-4 max-w-2xl font-medium text-neutral-950 dark:text-neutral-100">
           C&apos;est exactement ce que couvre ce sprint. Rien d&apos;autre.
         </p>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -253,8 +263,8 @@ function ProgrammeSection() {
   ];
 
   return (
-    <section id="programme" className="border-t border-border py-24">
-      <div className="mx-auto max-w-5xl px-6">
+    <Section id="programme">
+      <Container size="lg">
         <div className="mb-16 text-center">
           <Text variant="h2" as="h2" className="mb-4 text-balance">
             1 mois, 4 lives, une PR d&apos;agent mergée sur ton app
@@ -269,9 +279,10 @@ function ProgrammeSection() {
 
         <div className="space-y-4">
           {weeks.map((item) => (
-            <div
+            <Surface
+              interactive
               key={item.week}
-              className="grid gap-4 rounded-xl border border-border bg-card p-6 transition-colors hover:border-accent/50 md:grid-cols-[180px_1fr]"
+              className="grid gap-4 md:grid-cols-[180px_1fr]"
             >
               <div>
                 <div className="mb-1 font-semibold text-accent">
@@ -292,7 +303,7 @@ function ProgrammeSection() {
                   {item.description}
                 </p>
               </div>
-            </div>
+            </Surface>
           ))}
         </div>
 
@@ -300,15 +311,15 @@ function ProgrammeSection() {
           Charge de travail : 2 à 3 h par semaine (1 live + exercices), pendant
           4 semaines.
         </p>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
 function RecusSection() {
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-4xl px-6">
+    <Section>
+      <Container size="md">
         <Text variant="h2" as="h2" className="mb-6 text-balance text-center">
           On ne te vend pas une démo. C&apos;est notre outillage interne.
         </Text>
@@ -324,8 +335,8 @@ function RecusSection() {
           nettoyé et documenté pour tenir dans 4 semaines. Pas un condensé de
           threads Twitter.
         </p>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -344,8 +355,8 @@ function PourQuiSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-5xl px-6">
+    <Section>
+      <Container size="lg">
         <div className="mb-12 text-center">
           <Text variant="h2" as="h2" className="mb-4 text-balance">
             L&apos;Agentic Sprint, c&apos;est pour toi si…
@@ -370,7 +381,7 @@ function PourQuiSection() {
             </ul>
           </div>
 
-          <div className="rounded-xl border border-border bg-card p-6">
+          <Surface>
             <Text
               variant="h4"
               as="h3"
@@ -400,10 +411,10 @@ function PourQuiSection() {
               </Link>
               .
             </p>
-          </div>
+          </Surface>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -442,8 +453,8 @@ function InclusSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <Section>
+      <Container>
         <div className="mb-16 text-center">
           <Text variant="h2" as="h2" className="mb-4 text-balance">
             Le sprint, plus tout ce qu&apos;il faut pour continuer sans nous
@@ -457,10 +468,7 @@ function InclusSection() {
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {items.map((item) => (
-            <div
-              key={item.title}
-              className="rounded-xl border border-border bg-card p-6 transition-colors hover:border-accent/50"
-            >
+            <Surface interactive key={item.title}>
               <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-secondary">
                 <item.icon className="h-5 w-5 text-accent" />
               </div>
@@ -470,7 +478,7 @@ function InclusSection() {
               <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
                 {item.description}
               </p>
-            </div>
+            </Surface>
           ))}
         </div>
 
@@ -479,15 +487,15 @@ function InclusSection() {
           place, et les outils IA sont à ta charge (~20&nbsp;$/mois pendant le
           sprint).
         </p>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
 function GarantieSection() {
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-4xl px-6">
+    <Section>
+      <Container size="md">
         <div className="rounded-2xl border border-accent/30 bg-accent/5 p-8 text-center md:p-12">
           <ShieldCheckIcon className="mx-auto mb-6 h-12 w-12 text-accent" />
           <Text variant="h2" as="h2" className="mb-6 text-balance">
@@ -505,8 +513,8 @@ function GarantieSection() {
             conclusion.
           </p>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -521,8 +529,8 @@ function PrixSection() {
   ];
 
   return (
-    <section id="prix" className="border-t border-border py-24">
-      <div className="mx-auto max-w-4xl px-6">
+    <Section id="prix">
+      <Container size="md">
         <div className="mb-12 text-center">
           <Text variant="h2" as="h2" className="mb-4 text-balance">
             {PRICE_FOUNDING} € HT — tarif founding du batch 1
@@ -534,7 +542,7 @@ function PrixSection() {
           </p>
         </div>
 
-        <div className="overflow-hidden rounded-2xl border border-border bg-card">
+        <Surface padding="none" radius="2xl" className="overflow-hidden">
           <div className="grid md:grid-cols-2">
             <div className="border-b border-border p-8 md:border-b-0 md:border-r">
               <div className="mb-2 text-sm font-medium text-accent">
@@ -591,9 +599,9 @@ function PrixSection() {
               </ul>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </Surface>
+      </Container>
+    </Section>
   );
 }
 
@@ -642,18 +650,22 @@ function QuiSection() {
 
 function CtaFinalSection() {
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="relative overflow-hidden rounded-2xl border border-border bg-card">
+    <Section>
+      <Container>
+        <Surface
+          padding="none"
+          radius="2xl"
+          className="relative overflow-hidden"
+        >
           <div className="pointer-events-none absolute inset-0">
             <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:2rem_2rem] opacity-30" />
           </div>
 
           <div className="relative px-8 py-16 text-center md:py-24">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent">
+            <Badge variant="accent" className="mb-6">
               <CalendarDaysIcon className="h-4 w-4" />
               {SPOTS} places · inscriptions closes le 11 septembre
-            </div>
+            </Badge>
             <Text variant="h2" as="h2" className="mb-6 text-balance">
               Le 14 septembre, ton app a son premier agent.{' '}
               <span className="text-accent">Ou pas.</span>
@@ -692,9 +704,9 @@ function CtaFinalSection() {
               </span>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </Surface>
+      </Container>
+    </Section>
   );
 }
 
@@ -809,8 +821,8 @@ export default function AgenticSprintPage() {
         <GarantieSection />
         <PrixSection />
 
-        <section id="faq" className="border-t border-border py-24">
-          <div className="mx-auto max-w-3xl px-6">
+        <Section id="faq">
+          <Container size="sm">
             <div className="mb-12 text-center">
               <Text variant="h3" as="h2" className="mb-4 text-balance">
                 FAQ — Agentic Sprint
@@ -820,8 +832,8 @@ export default function AgenticSprintPage() {
               </p>
             </div>
             <Faq faqs={faqs} title="" headingId="faq-as-heading" />
-          </div>
-        </section>
+          </Container>
+        </Section>
 
         <QuiSection />
         <CtaFinalSection />

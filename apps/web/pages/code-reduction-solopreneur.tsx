@@ -1,4 +1,14 @@
-import { AuthorDisclosure, Button, Faq, LinkButton, Text } from '@weshipit/ui';
+import {
+  AuthorDisclosure,
+  Badge,
+  Button,
+  Container,
+  Faq,
+  LinkButton,
+  Section,
+  Surface,
+  Text,
+} from '@weshipit/ui';
 
 import {
   ArrowRightIcon,
@@ -107,12 +117,16 @@ const faqs = [
 
 function HeroSection() {
   return (
-    <section className="relative overflow-hidden pt-32 pb-20">
-      <div className="relative mx-auto max-w-5xl px-6 text-center">
-        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent">
+    <Section
+      variant="plain"
+      spacing="hero"
+      className="relative overflow-hidden"
+    >
+      <Container size="lg" className="relative text-center">
+        <Badge variant="accent" className="mb-6">
           <TagIcon className="h-4 w-4" />
           Mis à jour septembre 2026 — Tarif parrainage vérifié
-        </div>
+        </Badge>
 
         <Text variant="h1" as="h1" className="mb-6 text-balance">
           Code réduction{' '}
@@ -166,8 +180,8 @@ function HeroSection() {
             Page de parrainage officielle
           </span>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -194,13 +208,13 @@ function CestQuoiSection() {
   ];
 
   return (
-    <section className="border-t border-border py-16">
-      <div className="mx-auto max-w-4xl px-6">
-        <div className="rounded-2xl border border-border bg-card p-6 md:p-10">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-secondary px-3 py-1 text-xs font-medium text-neutral-500 dark:text-neutral-400">
+    <Section spacing="md">
+      <Container size="md">
+        <Surface padding="xl" radius="2xl">
+          <Badge variant="neutral" size="sm" className="mb-4">
             <SparklesIcon className="h-3.5 w-3.5" />
             Tu découvres ? L&apos;essentiel en 3 points
-          </div>
+          </Badge>
           <Text variant="h3" as="h2" className="mb-3">
             C&apos;est quoi l&apos;Incubateur Solopreneur&nbsp;?
           </Text>
@@ -239,9 +253,9 @@ function CestQuoiSection() {
             Lire mon avis détaillé après 6 mois d&apos;incubation
             <ArrowRightIcon className="h-3.5 w-3.5" />
           </Link>
-        </div>
-      </div>
-    </section>
+        </Surface>
+      </Container>
+    </Section>
   );
 }
 
@@ -268,8 +282,8 @@ function ComparatifSection() {
   ];
 
   return (
-    <section id="comparatif" className="border-t border-border py-24">
-      <div className="mx-auto max-w-5xl px-6">
+    <Section id="comparatif">
+      <Container size="lg">
         <div className="mb-12 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Comparatif des tarifs de l&apos;Incubateur Solopreneur
@@ -353,8 +367,8 @@ function ComparatifSection() {
             <ArrowRightIcon className="ml-2 h-4 w-4" />
           </Button>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -387,13 +401,13 @@ function ProchainSprintSection() {
   ];
 
   return (
-    <section id="prochain-sprint" className="border-t border-border py-24">
-      <div className="mx-auto max-w-5xl px-6">
+    <Section id="prochain-sprint">
+      <Container size="lg">
         <div className="mb-12 text-center">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent">
+          <Badge variant="accent" className="mb-4">
             <CalendarDaysIcon className="h-4 w-4" />
             Du 9 au 30 octobre 2026
-          </div>
+          </Badge>
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Le prochain Sprint&nbsp;: construire un SaaS qui bosse à ta place
           </Text>
@@ -406,7 +420,7 @@ function ProchainSprintSection() {
         </div>
 
         <div className="grid gap-8 md:grid-cols-2">
-          <div className="rounded-xl border border-border bg-card p-6">
+          <Surface>
             <Text variant="h4" as="h3" className="mb-4">
               4 lives, de l&apos;idée aux premiers utilisateurs
             </Text>
@@ -437,9 +451,9 @@ function ProchainSprintSection() {
               Voir le programme complet du Sprint
               <ArrowRightIcon className="ml-2 h-4 w-4" />
             </LinkButton>
-          </div>
+          </Surface>
 
-          <div className="rounded-xl border border-border bg-card p-6">
+          <Surface>
             <Text variant="h4" as="h3" className="mb-4">
               Et après&nbsp;? La suite du programme
             </Text>
@@ -466,10 +480,10 @@ function ProchainSprintSection() {
               suivre&nbsp;: tu choisis ceux qui servent ton business, et les
               replays restent disponibles.
             </p>
-          </div>
+          </Surface>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -499,8 +513,8 @@ function CommentCaMarcheSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <Section>
+      <Container>
         <div className="mb-16 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Comment activer le code réduction en 3 étapes
@@ -512,10 +526,7 @@ function CommentCaMarcheSection() {
 
         <div className="grid gap-6 md:grid-cols-3">
           {steps.map((step) => (
-            <div
-              key={step.number}
-              className="group relative rounded-xl border border-border bg-card p-6 transition-colors hover:border-accent/50"
-            >
+            <Surface interactive key={step.number} className="group relative">
               <div className="mb-6 flex items-center gap-4">
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-xl font-bold text-neutral-950 dark:text-neutral-200">
                   {step.number}
@@ -528,11 +539,11 @@ function CommentCaMarcheSection() {
               <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
                 {step.description}
               </p>
-            </div>
+            </Surface>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -577,8 +588,8 @@ function CeQuiEstInclusSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <Section>
+      <Container>
         <div className="mb-16 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Ce que tu obtiens avec le tarif réduit
@@ -591,10 +602,7 @@ function CeQuiEstInclusSection() {
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {items.map((item) => (
-            <div
-              key={item.title}
-              className="rounded-xl border border-border bg-card p-6 transition-colors hover:border-accent/50"
-            >
+            <Surface interactive key={item.title}>
               <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-secondary">
                 <item.icon className="h-5 w-5 text-accent" />
               </div>
@@ -604,11 +612,11 @@ function CeQuiEstInclusSection() {
               <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
                 {item.description}
               </p>
-            </div>
+            </Surface>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -632,8 +640,8 @@ function PourQuiSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-5xl px-6">
+    <Section>
+      <Container size="lg">
         <div className="mb-12 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             L&apos;Incubateur Solopreneur, c&apos;est pour toi si…
@@ -658,7 +666,7 @@ function PourQuiSection() {
             </ul>
           </div>
 
-          <div className="rounded-xl border border-border bg-card p-6">
+          <Surface>
             <Text
               variant="h4"
               as="h3"
@@ -677,10 +685,10 @@ function PourQuiSection() {
                 </li>
               ))}
             </ul>
-          </div>
+          </Surface>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -711,8 +719,8 @@ function PreuvesSection() {
   ];
 
   return (
-    <section id="avis" className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <Section id="avis">
+      <Container>
         <div className="mb-16 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Ils sont passés à l&apos;action avec l&apos;Incubateur Solopreneur
@@ -725,10 +733,7 @@ function PreuvesSection() {
 
         <div className="grid gap-6 md:grid-cols-3">
           {proofs.map((p) => (
-            <div
-              key={p.title}
-              className="flex flex-col rounded-xl border border-border bg-card p-6"
-            >
+            <Surface key={p.title} className="flex flex-col">
               <svg
                 className="mb-4 h-8 w-8 text-accent opacity-50"
                 fill="currentColor"
@@ -755,11 +760,11 @@ function PreuvesSection() {
                   </Link>
                 )}
               </div>
-            </div>
+            </Surface>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -807,18 +812,22 @@ function PourquoiCettePageSection() {
 
 function CtaFinalSection() {
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="relative overflow-hidden rounded-2xl border border-border bg-card">
+    <Section>
+      <Container>
+        <Surface
+          padding="none"
+          radius="2xl"
+          className="relative overflow-hidden"
+        >
           <div className="pointer-events-none absolute inset-0">
             <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:2rem_2rem] opacity-30" />
           </div>
 
           <div className="relative px-8 py-16 text-center md:py-24">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent">
+            <Badge variant="accent" className="mb-6">
               <TagIcon className="h-4 w-4" />
               Tarif plancher — 910 € d&apos;économie
-            </div>
+            </Badge>
             <Text variant="h2" as="h2" className="mb-6 text-balance">
               Active ton code réduction{' '}
               <span className="text-accent">Solopreneur</span> en 1 clic
@@ -856,9 +865,9 @@ function CtaFinalSection() {
               </span>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </Surface>
+      </Container>
+    </Section>
   );
 }
 
@@ -973,8 +982,8 @@ export default function CodeReductionSolopreneurPage() {
         <PreuvesSection />
         <PourquoiCettePageSection />
 
-        <section id="faq" className="border-t border-border py-24">
-          <div className="mx-auto max-w-3xl px-6">
+        <Section id="faq">
+          <Container size="sm">
             <div className="mb-12 text-center">
               <Text variant="h3" as="h2" className="mb-4 text-balance">
                 FAQ — Code réduction Solopreneur
@@ -984,8 +993,8 @@ export default function CodeReductionSolopreneurPage() {
               </p>
             </div>
             <Faq faqs={faqs} title="" headingId="faq-cr-heading" />
-          </div>
-        </section>
+          </Container>
+        </Section>
 
         <CtaFinalSection />
       </Layout>

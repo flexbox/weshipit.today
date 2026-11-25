@@ -1,4 +1,14 @@
-import { AuthorDisclosure, Button, Faq, LinkButton, Text } from '@weshipit/ui';
+import {
+  AuthorDisclosure,
+  Badge,
+  Button,
+  Container,
+  Faq,
+  LinkButton,
+  Section,
+  Surface,
+  Text,
+} from '@weshipit/ui';
 
 import {
   ArrowRightIcon,
@@ -79,12 +89,16 @@ const faqs = [
 
 function HeroSection() {
   return (
-    <section className="relative overflow-hidden pt-32 pb-20">
-      <div className="relative mx-auto max-w-5xl px-6 text-center">
-        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent">
+    <Section
+      variant="plain"
+      spacing="hero"
+      className="relative overflow-hidden"
+    >
+      <Container size="lg" className="relative text-center">
+        <Badge variant="accent" className="mb-6">
           <UserCircleIcon className="h-4 w-4" />
           Profil vérifié — Fondatrice de l’Incubateur Solopreneur
-        </div>
+        </Badge>
 
         <Text variant="h1" as="h1" className="mb-6 text-balance">
           <span className="text-accent">Flavie Prevot</span>&nbsp;: avis,
@@ -122,8 +136,8 @@ function HeroSection() {
             Mise à jour 2026
           </span>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -160,8 +174,8 @@ function EnBrefSection() {
   ];
 
   return (
-    <section id="en-bref" className="border-t border-border py-24">
-      <div className="mx-auto max-w-4xl px-6">
+    <Section id="en-bref">
+      <Container size="md">
         <div className="mb-12 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Flavie Prevot en 30 secondes
@@ -188,8 +202,8 @@ function EnBrefSection() {
             </div>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -228,8 +242,8 @@ function ParcoursSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-5xl px-6">
+    <Section>
+      <Container size="lg">
         <div className="mb-12 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Parcours de Flavie Prevot
@@ -263,8 +277,8 @@ function ParcoursSection() {
             </div>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -315,8 +329,8 @@ function EcosystemeSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <Section>
+      <Container>
         <div className="mb-16 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             L’écosystème Flavie Prevot en 2026
@@ -329,10 +343,7 @@ function EcosystemeSection() {
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {pillars.map((p) => (
-            <div
-              key={p.title}
-              className="rounded-xl border border-border bg-card p-6 transition-colors hover:border-accent/50"
-            >
+            <Surface interactive key={p.title}>
               <div className="mb-4 flex items-center justify-between">
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary">
                   <p.icon className="h-5 w-5 text-accent" />
@@ -347,11 +358,11 @@ function EcosystemeSection() {
               <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
                 {p.description}
               </p>
-            </div>
+            </Surface>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -384,8 +395,8 @@ function ReputationSection() {
   ];
 
   return (
-    <section id="reputation" className="border-t border-border py-24">
-      <div className="mx-auto max-w-5xl px-6">
+    <Section id="reputation">
+      <Container size="lg">
         <div className="mb-12 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Réputation et avis publics
@@ -398,10 +409,7 @@ function ReputationSection() {
 
         <div className="grid gap-4 md:grid-cols-2">
           {signals.map((s) => (
-            <div
-              key={s.source}
-              className="rounded-xl border border-border bg-card p-6"
-            >
+            <Surface key={s.source}>
               <div className="mb-3 flex items-center justify-between">
                 <Text
                   variant="h4"
@@ -417,7 +425,7 @@ function ReputationSection() {
               <p className="text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
                 {s.summary}
               </p>
-            </div>
+            </Surface>
           ))}
         </div>
 
@@ -437,8 +445,8 @@ function ReputationSection() {
             ci-dessous.
           </p>
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -484,8 +492,8 @@ function PourAllerPlusLoinSection() {
   ];
 
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <Section>
+      <Container>
         <div className="mb-16 text-center">
           <Text variant="h3" as="h2" className="mb-4 text-balance">
             Pour aller plus loin
@@ -497,10 +505,7 @@ function PourAllerPlusLoinSection() {
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {routes.map((r) => (
-            <div
-              key={r.title}
-              className="flex flex-col rounded-xl border border-border bg-card p-6"
-            >
+            <Surface key={r.title} className="flex flex-col">
               <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-secondary">
                 <r.icon className="h-5 w-5 text-accent" />
               </div>
@@ -516,11 +521,11 @@ function PourAllerPlusLoinSection() {
                   <ArrowRightIcon className="ml-2 h-4 w-4" />
                 </LinkButton>
               )}
-            </div>
+            </Surface>
           ))}
         </div>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
 
@@ -561,18 +566,22 @@ function DisclosureSection() {
 
 function CtaFinalSection() {
   return (
-    <section className="border-t border-border py-24">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="relative overflow-hidden rounded-2xl border border-border bg-card">
+    <Section>
+      <Container>
+        <Surface
+          padding="none"
+          radius="2xl"
+          className="relative overflow-hidden"
+        >
           <div className="pointer-events-none absolute inset-0">
             <div className="absolute inset-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:2rem_2rem] opacity-30" />
           </div>
 
           <div className="relative px-8 py-16 text-center md:py-24">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent">
+            <Badge variant="accent" className="mb-6">
               <CheckCircleIcon className="h-4 w-4" />
               Profil sérieux, approche vérifiée
-            </div>
+            </Badge>
             <Text variant="h2" as="h2" className="mb-6 text-balance">
               L’étape suivante&nbsp;: lire mon avis complet sur son
               <span className="text-accent"> Incubateur</span>
@@ -597,9 +606,9 @@ function CtaFinalSection() {
               </LinkButton>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </Surface>
+      </Container>
+    </Section>
   );
 }
 
@@ -706,8 +715,8 @@ export default function FlaviePrevotAvisPage() {
         <PourAllerPlusLoinSection />
         <DisclosureSection />
 
-        <section id="faq" className="border-t border-border py-24">
-          <div className="mx-auto max-w-3xl px-6">
+        <Section id="faq">
+          <Container size="sm">
             <div className="mb-12 text-center">
               <Text variant="h3" as="h2" className="mb-4 text-balance">
                 FAQ — Flavie Prevot
@@ -717,8 +726,8 @@ export default function FlaviePrevotAvisPage() {
               </p>
             </div>
             <Faq faqs={faqs} title="" headingId="faq-flavie-heading" />
-          </div>
-        </section>
+          </Container>
+        </Section>
 
         <CtaFinalSection />
       </Layout>
