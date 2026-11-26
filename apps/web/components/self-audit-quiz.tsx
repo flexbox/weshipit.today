@@ -6,7 +6,11 @@ import {
   LinkButton,
   Text,
 } from '@weshipit/ui';
-import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/20/solid';
+import {
+  ArrowLeftIcon,
+  ArrowRightIcon,
+  PaperAirplaneIcon,
+} from '@heroicons/react/20/solid';
 import clsx from 'clsx';
 import { FormEvent, useState } from 'react';
 import { track } from '../utils/analytics';
@@ -57,7 +61,7 @@ export const FR_LABELS: SelfAuditLabels = {
   submitting: 'Envoi en cours…',
   successText:
     'Vérifiez votre boîte mail (et le dossier spam) dans les prochaines minutes.',
-  successTitle: 'Rapport en route ✓',
+  successTitle: 'Rapport en route',
 };
 
 export const EN_LABELS: SelfAuditLabels = {
@@ -78,7 +82,7 @@ export const EN_LABELS: SelfAuditLabels = {
   submit: 'Get my report',
   submitting: 'Sending…',
   successText: 'Check your inbox (and spam folder) in the next few minutes.',
-  successTitle: 'Report on its way ✓',
+  successTitle: 'Report on its way',
 };
 
 export interface AuditCategory {
@@ -139,6 +143,8 @@ export function SelfAuditQuiz({
     'idle' | 'submitting' | 'success' | 'error'
   >('idle');
 
+  const isSent = formStatus === 'success';
+
   const categoryScore = (category: AuditCategory) => {
     let sum = 0;
     let answered = 0;
@@ -184,6 +190,7 @@ export function SelfAuditQuiz({
 
   const handleSubscribe = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    if (isSent) return;
     setFormStatus('submitting');
     track('audit_requested', { audit: config.id, score: String(scorePct) });
     const form = new FormData(event.currentTarget);
@@ -311,115 +318,114 @@ export function SelfAuditQuiz({
                 </ul>
               </div>
 
-              {formStatus === 'success' ? (
-                <div className="flex flex-col items-center justify-center text-center">
-                  <Text
-                    as="p"
-                    variant="h4"
-                    className="text-green-600 dark:text-green-400"
+              <form
+                onSubmit={handleSubscribe}
+                className="flex flex-col justify-center"
+              >
+                <div className="mb-4">
+                  <label
+                    htmlFor={`${config.id}-name`}
+                    className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300"
                   >
-                    {labels.successTitle}
-                  </Text>
-                  <Text
-                    as="p"
-                    variant="p2"
-                    className="mt-3 text-slate-600 dark:text-slate-300"
-                  >
-                    {labels.successText}
-                  </Text>
-                </div>
-              ) : (
-                <form
-                  onSubmit={handleSubscribe}
-                  className="flex flex-col justify-center"
-                >
-                  <div className="mb-4">
-                    <label
-                      htmlFor={`${config.id}-name`}
-                      className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300"
-                    >
-                      {labels.nameLabel}
-                    </label>
-                    <input
-                      type="text"
-                      id={`${config.id}-name`}
-                      name="name"
-                      placeholder={labels.namePlaceholder}
-                      autoComplete="given-name"
-                      className="w-full rounded-md border-0 bg-white px-3.5 py-2.5 text-slate-900 shadow-xs ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 dark:bg-white/5 dark:text-white dark:ring-white/10"
-                    />
-                  </div>
-
-                  <div className="mb-6">
-                    <label
-                      htmlFor={`${config.id}-email`}
-                      className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300"
-                    >
-                      {labels.emailLabel}
-                    </label>
-                    <input
-                      type="email"
-                      id={`${config.id}-email`}
-                      name="email"
-                      placeholder={labels.emailPlaceholder}
-                      required
-                      autoComplete="email"
-                      className="w-full rounded-md border-0 bg-white px-3.5 py-2.5 text-slate-900 shadow-xs ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 dark:bg-white/5 dark:text-white dark:ring-white/10"
-                    />
-                  </div>
-
-                  {/* Honeypot: off-screen for people, tempting for bots. */}
-                  <div aria-hidden="true" className="absolute -left-[9999px]">
-                    <input
-                      type="text"
-                      name="website"
-                      tabIndex={-1}
-                      autoComplete="off"
-                    />
-                  </div>
-
-                  <label className="mb-6 flex items-start gap-3 text-sm text-slate-600 dark:text-slate-400">
-                    <input
-                      type="checkbox"
-                      name="marketing_consent"
-                      className="mt-0.5 size-4 rounded border-slate-300"
-                    />
-                    <span>
-                      {MARKETING_CONSENT_LABELS[labels.consentLocale]}
-                    </span>
+                    {labels.nameLabel}
                   </label>
+                  <input
+                    type="text"
+                    id={`${config.id}-name`}
+                    name="name"
+                    placeholder={labels.namePlaceholder}
+                    autoComplete="given-name"
+                    readOnly={isSent}
+                    className="w-full rounded-md border-0 bg-white px-3.5 py-2.5 text-slate-900 shadow-xs ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 dark:bg-white/5 dark:text-white dark:ring-white/10"
+                  />
+                </div>
 
-                  <Button
-                    as="button"
-                    variant="primary"
-                    size="xl"
-                    className="w-full justify-center"
-                    disabled={formStatus === 'submitting'}
+                <div className="mb-6">
+                  <label
+                    htmlFor={`${config.id}-email`}
+                    className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300"
                   >
-                    {formStatus === 'submitting'
+                    {labels.emailLabel}
+                  </label>
+                  <input
+                    type="email"
+                    id={`${config.id}-email`}
+                    name="email"
+                    placeholder={labels.emailPlaceholder}
+                    required
+                    autoComplete="email"
+                    readOnly={isSent}
+                    className="w-full rounded-md border-0 bg-white px-3.5 py-2.5 text-slate-900 shadow-xs ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 dark:bg-white/5 dark:text-white dark:ring-white/10"
+                  />
+                </div>
+
+                {/* Honeypot: off-screen for people, tempting for bots. */}
+                <div aria-hidden="true" className="absolute -left-[9999px]">
+                  <input
+                    type="text"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+                </div>
+
+                <label className="mb-6 flex items-start gap-3 text-sm text-slate-600 dark:text-slate-400">
+                  <input
+                    type="checkbox"
+                    name="marketing_consent"
+                    disabled={isSent}
+                    className="mt-0.5 size-4 rounded border-slate-300"
+                  />
+                  <span>{MARKETING_CONSENT_LABELS[labels.consentLocale]}</span>
+                </label>
+
+                <Button
+                  as="button"
+                  variant={isSent ? 'success' : 'primary'}
+                  size="xl"
+                  className="w-full justify-center"
+                  disabled={formStatus === 'submitting'}
+                  aria-disabled={isSent || undefined}
+                  accessoryRight={
+                    isSent ? (
+                      <PaperAirplaneIcon
+                        aria-hidden="true"
+                        className="ml-2 size-5"
+                      />
+                    ) : undefined
+                  }
+                >
+                  {isSent
+                    ? labels.successTitle
+                    : formStatus === 'submitting'
                       ? labels.submitting
                       : labels.submit}
-                  </Button>
+                </Button>
 
-                  {formStatus === 'error' && (
-                    <Text
-                      as="p"
-                      variant="c1"
-                      className="mt-4 text-red-600 dark:text-red-400"
-                    >
-                      {labels.error}
-                    </Text>
-                  )}
-
+                {formStatus === 'error' && (
                   <Text
                     as="p"
-                    variant="c2"
-                    className="mt-4 text-slate-400 dark:text-slate-500"
+                    variant="c1"
+                    className="mt-4 text-red-600 dark:text-red-400"
                   >
-                    {labels.privacy}
+                    {labels.error}
                   </Text>
-                </form>
-              )}
+                )}
+
+                <Text
+                  as="p"
+                  variant="c2"
+                  role="status"
+                  className={clsx(
+                    'mt-4',
+                    isSent
+                      ? 'text-green-700 dark:text-green-400'
+                      : 'text-slate-400 dark:text-slate-500',
+                  )}
+                >
+                  {isSent ? labels.successText : labels.privacy}
+                </Text>
+              </form>
             </Card>
           </FadeIn>
 

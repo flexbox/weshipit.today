@@ -69,6 +69,14 @@ export const buttonVariants = cva(
           'text-blue-600',
           'hover:bg-blue-100',
         ],
+        success: [
+          'shadow-xs',
+          'bg-green-600',
+          'text-white',
+          'pointer-events-none',
+          'dark:bg-green-700',
+          'dark:text-white',
+        ],
         spotify: [
           'shadow-xs',
           'bg-[#1db954]',

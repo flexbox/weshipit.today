@@ -58,6 +58,7 @@ export const Variants = () => (
     <Button onClick={() => alert('click')} variant="outline">
       outline
     </Button>
+    <Button variant="success">success</Button>
     <Button onClick={() => alert('click')} variant="ghost">
       ghost
     </Button>
