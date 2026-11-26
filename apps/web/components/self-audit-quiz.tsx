@@ -6,25 +6,18 @@ import {
   LinkButton,
   Text,
 } from '@weshipit/ui';
-import {
-  ArrowLeftIcon,
-  ArrowRightIcon,
-  PaperAirplaneIcon,
-} from '@heroicons/react/20/solid';
+import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/16/solid';
+import { PaperAirplaneIcon } from '@heroicons/react/20/solid';
 import clsx from 'clsx';
 import { FormEvent, useState } from 'react';
 import { track } from '../utils/analytics';
-import {
-  type ConsentLocale,
-  MARKETING_CONSENT_LABELS,
-} from '../utils/hq/consent';
+import { type ConsentLocale, AUDIT_NOTICE_LABELS } from '../utils/hq/consent';
 
 export interface SelfAuditLabels {
   step: string;
   next: string;
   error: string;
   submit: string;
-  privacy: string;
   answered: string;
   previous: string;
   seeScore: string;
@@ -52,8 +45,6 @@ export const FR_LABELS: SelfAuditLabels = {
   namePlaceholder: 'Ton prénom',
   next: 'Suivant :',
   previous: 'Précédent',
-  privacy:
-    'Un email, zéro spam. Désinscription possible à tout moment via chaque email envoyé.',
   reportEyebrow: 'Rapport détaillé',
   seeScore: 'Voir mon score',
   step: 'Étape',
@@ -75,7 +66,6 @@ export const EN_LABELS: SelfAuditLabels = {
   namePlaceholder: 'Your first name',
   next: 'Next:',
   previous: 'Previous',
-  privacy: 'One email, zero spam. Unsubscribe anytime from any email.',
   reportEyebrow: 'Detailed report',
   seeScore: 'See my score',
   step: 'Step',
@@ -188,6 +178,22 @@ export function SelfAuditQuiz({
     setFormStatus('idle');
   };
 
+  /**
+   * The No and Unknown answers as `r2:n,d3:u` (skipped questions count as
+   * Unknown), so the server can build the plan. Dropped if it would not fit
+   * the 200-character meta limit.
+   */
+  const answerGapsMeta = (): { answers?: string } => {
+    const answersValue = CATEGORIES.flatMap((category) => category.questions)
+      .filter((question) => answers[question.id] !== 1)
+      .map(
+        (question) =>
+          `${question.id}:${answers[question.id] === 0 ? 'n' : 'u'}`,
+      )
+      .join(',');
+    return answersValue.length <= 200 ? { answers: answersValue } : {};
+  };
+
   const handleSubscribe = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (isSent) return;
@@ -202,8 +208,10 @@ export function SelfAuditQuiz({
           first_name: form.get('name'),
           locale: labels.consentLocale,
           magnet: config.leadMagnetSlug,
-          marketing_consent: form.get('marketing_consent') === 'on',
-          meta: { score: scorePct },
+          // Sending the form is the opt-in: the notice under the button says
+          // the report comes with occasional emails.
+          marketing_consent: true,
+          meta: { score: scorePct, ...answerGapsMeta() },
           source: `audit:${config.id}`,
           utm_campaign: params.get('utm_campaign') ?? undefined,
           utm_medium: params.get('utm_medium') ?? undefined,
@@ -336,7 +344,7 @@ export function SelfAuditQuiz({
                     placeholder={labels.namePlaceholder}
                     autoComplete="given-name"
                     readOnly={isSent}
-                    className="w-full rounded-md border-0 bg-white px-3.5 py-2.5 text-slate-900 shadow-xs ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 dark:bg-white/5 dark:text-white dark:ring-white/10"
+                    className="w-full rounded-md border border-transparent bg-white px-3.5 py-2.5 text-slate-900 shadow-xs ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 dark:bg-white/5 dark:text-white dark:ring-white/10"
                   />
                 </div>
 
@@ -355,7 +363,7 @@ export function SelfAuditQuiz({
                     required
                     autoComplete="email"
                     readOnly={isSent}
-                    className="w-full rounded-md border-0 bg-white px-3.5 py-2.5 text-slate-900 shadow-xs ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 dark:bg-white/5 dark:text-white dark:ring-white/10"
+                    className="w-full rounded-md border border-transparent bg-white px-3.5 py-2.5 text-slate-900 shadow-xs ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 dark:bg-white/5 dark:text-white dark:ring-white/10"
                   />
                 </div>
 
@@ -369,16 +377,6 @@ export function SelfAuditQuiz({
                   />
                 </div>
 
-                <label className="mb-6 flex items-start gap-3 text-sm text-slate-600 dark:text-slate-400">
-                  <input
-                    type="checkbox"
-                    name="marketing_consent"
-                    disabled={isSent}
-                    className="mt-0.5 size-4 rounded border-slate-300"
-                  />
-                  <span>{MARKETING_CONSENT_LABELS[labels.consentLocale]}</span>
-                </label>
-
                 <Button
                   as="button"
                   variant={isSent ? 'success' : 'primary'}
@@ -390,7 +388,7 @@ export function SelfAuditQuiz({
                     isSent ? (
                       <PaperAirplaneIcon
                         aria-hidden="true"
-                        className="ml-2 size-5"
+                        className="-mr-0.5 ml-2 size-5"
                       />
                     ) : undefined
                   }
@@ -420,10 +418,12 @@ export function SelfAuditQuiz({
                     'mt-4',
                     isSent
                       ? 'text-green-700 dark:text-green-400'
-                      : 'text-slate-400 dark:text-slate-500',
+                      : 'text-slate-600 dark:text-slate-400',
                   )}
                 >
-                  {isSent ? labels.successText : labels.privacy}
+                  {isSent
+                    ? labels.successText
+                    : AUDIT_NOTICE_LABELS[labels.consentLocale]}
                 </Text>
               </form>
             </Card>
@@ -530,7 +530,7 @@ export function SelfAuditQuiz({
                     aria-pressed={isActive}
                     onClick={() => handleAnswer(question.id, option.value)}
                     className={clsx(
-                      'min-h-11 rounded-md px-3.5 py-2 text-xs font-semibold uppercase tracking-wide transition-[color,background-color,box-shadow,transform] duration-150 ease-out active:scale-[0.96] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600',
+                      'min-h-11 rounded-md border border-transparent px-3.5 py-2 text-xs font-semibold uppercase tracking-wide transition-[color,background-color,box-shadow,transform] duration-150 ease-out active:scale-[0.96] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600',
                       !isActive &&
                         'text-slate-500 ring-1 ring-inset ring-slate-300 hover:ring-blue-500 dark:text-slate-400 dark:ring-slate-700',
                       isActive &&

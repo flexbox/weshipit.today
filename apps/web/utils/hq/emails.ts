@@ -4,6 +4,15 @@
  * into HTML.
  */
 
+import {
+  type AnswerGap,
+  buildSpmPlan,
+  getSpmVerdict,
+  SPM_EFFORT_LABELS,
+  SPM_QUESTIONS,
+  type SpmPlanStep,
+} from '../audits/spm-readiness';
+
 export interface EmailContent {
   html: string;
   text: string;
@@ -258,3 +267,98 @@ export function leadLocale(lead: {
 
 export const FOLLOWUP_STATUSES = ['to_contact', 'sent', 'replied'] as const;
 export type FollowupStatus = (typeof FOLLOWUP_STATUSES)[number];
+
+export interface SpmPlanEmailInput {
+  /** Score out of 100. */
+  score: number;
+  /** The No and Unknown answers, from parseAnswerGaps(). */
+  gaps: Map<string, AnswerGap>;
+  /** Paid audit page, linked at the end. */
+  auditUrl: string;
+  unsubscribeUrl: string;
+}
+
+const MIGRATE_COMMAND = 'cd ios && npx react-native spm --deintegrate';
+
+/**
+ * The SPM readiness report: every answer that wasn't Yes becomes a step,
+ * grouped by effort, with its command. English only, like the quiz page.
+ */
+export function spmPlanEmail({
+  auditUrl,
+  gaps,
+  score,
+  unsubscribeUrl,
+}: SpmPlanEmailInput): EmailContent {
+  const verdict = getSpmVerdict(score);
+  const plan = buildSpmPlan(gaps);
+  const okCount = SPM_QUESTIONS.filter(({ id }) => !gaps.has(id)).length;
+  const subject = `Your SPM migration plan (${score}/100)`;
+  const headline = `Score: ${score}/100. ${verdict.label}.`;
+  const okLine = `Already OK: ${okCount} of ${SPM_QUESTIONS.length} checks.`;
+  const finish = plan.length
+    ? 'Once the list is done, migrate on a branch:'
+    : 'No blockers left. Migrate on a branch:';
+  const offer = 'Want us to run the migration with you?';
+  const ask = 'Questions? Reply to this email.';
+  const unsubscribe = 'Unsubscribe';
+  const stepTitle = (step: SpmPlanStep) =>
+    step.gap === 'unknown' ? `Check first: ${step.label}` : step.label;
+
+  let index = 0;
+  const textPlan = plan.flatMap(({ effort, steps }) => [
+    SPM_EFFORT_LABELS[effort].toUpperCase(),
+    ...steps.flatMap((step) => {
+      index += 1;
+      return [
+        `${index}. ${stepTitle(step)}`,
+        `   ${step.fix}`,
+        ...(step.command ? [`   $ ${step.command}`] : []),
+      ];
+    }),
+    '',
+  ]);
+  const text = [
+    headline,
+    okLine,
+    '',
+    ...(plan.length ? ['Your plan, in order:', '', ...textPlan] : []),
+    finish,
+    `$ ${MIGRATE_COMMAND}`,
+    '',
+    `${offer} ${auditUrl}`,
+    '',
+    ask,
+    '',
+    `${unsubscribe}: ${unsubscribeUrl}`,
+  ].join('\n');
+
+  const code = (command: string) =>
+    `<code style="font-family:ui-monospace,Menlo,monospace;font-size:14px">${escapeHtml(command)}</code>`;
+  let htmlIndex = 0;
+  const htmlPlan = plan
+    .map(({ effort, steps }) => {
+      const items = steps
+        .map((step) => {
+          htmlIndex += 1;
+          const command = step.command ? `<br>${code(step.command)}` : '';
+          return `<li value="${htmlIndex}" style="margin:0 0 12px"><strong>${escapeHtml(stepTitle(step))}</strong><br>${escapeHtml(step.fix)}${command}</li>`;
+        })
+        .join('');
+      return `<p style="margin:0 0 8px"><strong>${escapeHtml(SPM_EFFORT_LABELS[effort])}</strong></p><ol style="margin:0 0 16px;padding-left:20px">${items}</ol>`;
+    })
+    .join('');
+  const body = [
+    `<strong>${escapeHtml(headline)}</strong><br>${escapeHtml(okLine)}`,
+    ...(plan.length
+      ? [
+          `${escapeHtml('Your plan, in order:')}</p>${htmlPlan}<p style="margin:0 0 16px">`,
+        ]
+      : []),
+    `${escapeHtml(finish)}<br>${code(MIGRATE_COMMAND)}`,
+    `${escapeHtml(offer)} ${link(auditUrl)}`,
+    escapeHtml(ask),
+  ];
+  const html = wrapHtml(body, link(unsubscribeUrl, unsubscribe), 'en');
+  return { html, subject, text };
+}

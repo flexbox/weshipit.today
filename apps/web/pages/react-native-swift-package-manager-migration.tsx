@@ -7,10 +7,14 @@ import {
   Prose,
   Text,
 } from '@weshipit/ui';
-import { ArrowRightIcon } from '@heroicons/react/24/solid';
+import { ArrowRightIcon } from '@heroicons/react/16/solid';
 import Head from 'next/head';
 import Link from 'next/link';
 import { Layout } from '../components/layout';
+import {
+  COCOAPODS_READ_ONLY_URL,
+  CocoaPodsCountdown,
+} from '../components/cocoapods-countdown';
 import { SpmReadinessAudit } from '../components/spm-readiness-audit';
 
 const FAQ_ITEMS = [
@@ -71,7 +75,7 @@ const TIMELINE = [
     title: 'Firebase leaves CocoaPods',
   },
   {
-    date: 'Nov 1–7, 2026',
+    date: 'Nov 2–6, 2026',
     text: 'CocoaPods trunk is temporarily frozen. No pod can be published.',
     title: 'Read-only test run',
   },
@@ -155,9 +159,12 @@ export default function ReactNativeSwiftPackageManagerMigration() {
       >
         <HeroSplit
           eyebrow={
-            <Text tone="primary" as="p" variant="eyebrow">
-              Free tool · React Native 0.87 · iOS
-            </Text>
+            <div className="flex flex-wrap items-center gap-3">
+              <Text tone="primary" as="p" variant="eyebrow">
+                Free tool · React Native 0.87 · iOS
+              </Text>
+              <CocoaPodsCountdown />
+            </div>
           }
           title="Migrate React Native from CocoaPods to Swift Package Manager"
           description="CocoaPods stops accepting new pods on December 2, 2026. Find out in 2 minutes what stands between your app and Swift Package Manager."
@@ -173,7 +180,10 @@ export default function ReactNativeSwiftPackageManagerMigration() {
                 href="/audit"
               >
                 Get migration help
-                <ArrowRightIcon className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                <ArrowRightIcon
+                  aria-hidden="true"
+                  className="-mr-0.5 ml-2 size-4 transition-transform group-hover:translate-x-1"
+                />
               </LinkButton>
             </>
           }
@@ -187,6 +197,13 @@ export default function ReactNativeSwiftPackageManagerMigration() {
               Your app keeps building after December 2. The risk is slower:
               every native SDK that moves to Swift Package Manager only stops
               shipping fixes and security patches to your Podfile.
+            </p>
+            <p>
+              Source:{' '}
+              <Hyperlink href={COCOAPODS_READ_ONLY_URL}>
+                CocoaPods Trunk Read-only Plan
+              </Hyperlink>
+              , on the official CocoaPods blog.
             </p>
           </Prose>
           <ol className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

@@ -4,9 +4,11 @@ import {
   leadLocale,
   newsletterEmail,
   NEWSLETTER_LINKS,
+  spmPlanEmail,
   visitorEmail,
   type EmailContent,
 } from './emails';
+import { parseAnswerGaps } from '../audits/spm-readiness';
 
 const unsubscribeUrl = 'https://weshipit.today/api/lm/unsubscribe?t=abc';
 
@@ -135,5 +137,63 @@ describe('leadLocale', () => {
   it('guesses English for older newsletter leads and French otherwise', () => {
     expect(leadLocale({ meta: {}, source: 'davidl-newsletter' })).toBe('en');
     expect(leadLocale({ meta: null, source: 'audit:security' })).toBe('fr');
+  });
+});
+
+describe('spmPlanEmail', () => {
+  const base = {
+    auditUrl: 'https://weshipit.today/audit',
+    unsubscribeUrl: 'https://weshipit.today/api/lm/unsubscribe?t=abc',
+  };
+
+  it('groups the gaps by effort, upgrade first, with their commands', () => {
+    const email = spmPlanEmail({
+      ...base,
+      gaps: parseAnswerGaps('d3:n,p3:n,r1:n,c1:u'),
+      score: 58,
+    });
+    expect(email.subject).toBe('Your SPM migration plan (58/100)');
+    expect(email.text).toContain('Score: 58/100. Ready for a spike.');
+    expect(email.text).toContain('Already OK: 8 of 12 checks.');
+    const order = [
+      'START HERE',
+      '1. Upgrade to React Native 0.87',
+      'QUICK FIXES',
+      '2. Scaffold a Package.swift for local pods',
+      '$ npx react-native spm scaffold',
+      '3. Check first: Make a fresh clone build without Pods/',
+      'WAITING ON UPSTREAM',
+      '4. Check your Swift + C++ libraries',
+    ].map((line) => email.text.indexOf(line));
+    expect(order.every((position) => position >= 0)).toBe(true);
+    expect([...order].sort((a, b) => a - b)).toEqual(order);
+    expect(email.text).not.toContain('LIBRARY CHANGES');
+    expect(email.html).toContain('<li value="4"');
+    expect(email.text).toContain(base.auditUrl);
+    expect(email.html).toContain(base.unsubscribeUrl);
+    expectStraightToThePoint(email);
+  });
+
+  it('says there is nothing left when every answer is Yes', () => {
+    const email = spmPlanEmail({
+      ...base,
+      gaps: parseAnswerGaps(''),
+      score: 100,
+    });
+    expect(email.text).toContain('No blockers left.');
+    expect(email.text).not.toContain('Your plan, in order:');
+  });
+
+  it('ignores unknown ids and codes', () => {
+    const gaps = parseAnswerGaps('zz:n,r1:x,<b>:n,r2:u');
+    expect([...gaps.entries()]).toEqual([
+      ['zz', 'no'],
+      ['<b>', 'no'],
+      ['r2', 'unknown'],
+    ]);
+    const email = spmPlanEmail({ ...base, gaps, score: 90 });
+    expect(email.text).not.toContain('<b>');
+    expect(email.text).toContain('1. Check first: Stop patching');
+    expect(email.text).toContain('Already OK: 11 of 12 checks.');
   });
 });

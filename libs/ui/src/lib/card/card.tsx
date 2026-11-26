@@ -1,13 +1,15 @@
 import { cva, type VariantProps } from 'class-variance-authority';
 
 export interface CardProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof card> {}
+  extends React.HTMLAttributes<HTMLDivElement>, VariantProps<typeof card> {}
 
 const card = cva(
   [
     'overflow-hidden',
     'rounded-3xl',
+    // Forced-colors mode drops the ring (a box-shadow): draw a real edge
+    // there only, so pages passing border-* colors see no change.
+    'forced-colors:border',
     'bg-white dark:bg-slate-900',
     'ring-1',
     'ring-slate-200 dark:ring-slate-800',

@@ -4,8 +4,14 @@ import { consentLabelFor } from '../../../utils/hq/consent';
 import type { Lead } from '../../../utils/hq/types';
 import { addToAudience } from '../../../utils/hq/audience';
 import {
+  parseAnswerGaps,
+  SPM_AUDIT_ID,
+} from '../../../utils/audits/spm-readiness';
+import {
+  type EmailContent,
   NEWSLETTER_SOURCE,
   newsletterEmail,
+  spmPlanEmail,
   visitorEmail,
 } from '../../../utils/hq/emails';
 import { subscribeSchema } from '../../../utils/hq/schemas';
@@ -129,17 +135,37 @@ export default async function handler(
     : null;
   const score = typeof input.meta?.score === 'number' ? input.meta.score : null;
 
+  let content: EmailContent;
+  if (lead.source === NEWSLETTER_SOURCE && !magnet) {
+    content = newsletterEmail({ unsubscribeUrl });
+  } else if (
+    input.source === `audit:${SPM_AUDIT_ID}` &&
+    !magnet &&
+    score !== null &&
+    // Missing on pages cached before the plan shipped: an empty plan
+    // would wrongly say "no blockers", so those get the score email.
+    typeof input.meta?.answers === 'string'
+  ) {
+    // The plan is built here from the question ids: the browser only sends
+    // which answers weren't Yes, never the copy.
+    content = spmPlanEmail({
+      auditUrl: `${origin}/audit`,
+      gaps: parseAnswerGaps(input.meta?.answers),
+      score,
+      unsubscribeUrl,
+    });
+  } else {
+    content = visitorEmail({
+      locale: input.locale,
+      magnet: magnet && accessUrl ? { accessUrl, title: magnet.title } : null,
+      score,
+      unsubscribeUrl,
+    });
+  }
+
   const sends: Promise<void>[] = [
     sendEmail({
-      ...(lead.source === NEWSLETTER_SOURCE && !magnet
-        ? newsletterEmail({ unsubscribeUrl })
-        : visitorEmail({
-            locale: input.locale,
-            magnet:
-              magnet && accessUrl ? { accessUrl, title: magnet.title } : null,
-            score,
-            unsubscribeUrl,
-          })),
+      ...content,
       idempotencyKey: `visitor-${lead.id}`,
       metadata: { kind: 'visitor', lead_id: lead.id },
       to: { address: lead.email, name: lead.first_name ?? undefined },
