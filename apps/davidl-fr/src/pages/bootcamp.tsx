@@ -1,8 +1,8 @@
 import Avatar from '~/components/Avatar';
 import Image from 'next/image';
-import React from 'react';
+import React, { useState } from 'react';
 import Page, { ContentContainer } from '~/components/Page';
-import { H1, Subheading } from '~/components/Typography';
+import { H1, Rarr, Subheading } from '~/components/Typography';
 import GlobalSeo from '~/components/SEO/GlobalSeo';
 import BootcampStack from '~/components/Stack/BootcampStack';
 import CurriculumLearn from '../components/Content/curriculum-learn.mdx';
@@ -10,27 +10,36 @@ import CurriculumInstructor from '../components/Content/curriculum-instructor.md
 import CurriculumTeam from '../components/Content/curriculum-team.mdx';
 import { ProseContainer } from '~/components/Container/ProseContainer';
 import { FaqBootcamp } from '~/components/Faq/FaqBootcamp';
-import AirtableToggleForm from '~/components/Airtable/AirtableToggleForm';
-import { AIRTABLE_FORM } from '~/utils/airtable-links';
+import { PrimaryButton } from '~/components/Button';
+import { BootcampOnboardingCard } from '~/components/Form/BootcampOnboardingForm';
+import { InnerPageContainer } from '~/components/Page/style';
 import { Alumnis } from '~/components/Alumnis/Alumnis';
 
 const ScheduleForm = ({ title = 'Schedule' }: { title?: string }) => {
+  const [isFormOpen, setIsFormOpen] = useState(false);
+
   return (
-    <AirtableToggleForm
-      formLink={AIRTABLE_FORM.BOOTCAMP_ONBOARDING}
-      formHeight={2990}
-      buttonText={title}
-    />
+    <ContentContainer>
+      <InnerPageContainer>
+        {isFormOpen ? (
+          <BootcampOnboardingCard />
+        ) : (
+          <PrimaryButton size="large" onClick={() => setIsFormOpen(true)}>
+            <span style={{ marginRight: 24 }}>{title}</span> <Rarr />
+          </PrimaryButton>
+        )}
+      </InnerPageContainer>
+    </ContentContainer>
   );
 };
 
 const SEO_DATA = {
-  seo_title: 'Coding Bootcamp React Native Remote',
-  seo_description:
-    'Let’s amplify your magic and create an experience on web and mobile that connects, engages and inspires your dreamiest clients and customers.',
   image: {
     alt: 'Coding Bootcamp React Native Remote',
   },
+  seo_description:
+    'Let’s amplify your magic and create an experience on web and mobile that connects, engages and inspires your dreamiest clients and customers.',
+  seo_title: 'Coding Bootcamp React Native Remote',
 };
 
 export default function BootcampPage() {
@@ -48,7 +57,7 @@ export default function BootcampPage() {
           <H1 className="mb-4">React Native Bootcamp</H1>
         </div>
 
-        <Subheading style={{ textAlign: 'center', maxWidth: '100%' }}>
+        <Subheading style={{ maxWidth: '100%', textAlign: 'center' }}>
           <p className="text-gray-500">
             Never stop learning by booking a workshop for yourself or your team,
             tailored to the latest technologies around the React Native
