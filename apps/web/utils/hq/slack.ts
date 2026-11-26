@@ -1,3 +1,5 @@
+import { SELF_AUDITS, selfAuditIdFrom } from '../audits/registry';
+
 /**
  * One Slack message per new lead, through an incoming webhook
  * (HQ_SLACK_WEBHOOK_URL). It replaces the old "Nouveau lead" email to me.
@@ -12,16 +14,6 @@ export interface NewLeadInput {
   score?: number | null;
 }
 
-/** Self-audit sources are `audit:<quiz id>`; Slack shows them as "audit". */
-const AUDIT_PREFIX = 'audit:';
-
-/** Names of the self-audit quizzes, by the id in their source. */
-const AUDIT_NAMES: Record<string, string> = {
-  'security-audit': 'React Native security checklist',
-  'spm-readiness': 'SPM readiness check',
-  'stack-audit': 'React Native stack audit',
-};
-
 /** Slack mrkdwn treats &, < and > as control characters. */
 export function escapeSlack(value: string): string {
   return value
@@ -33,13 +25,12 @@ export function escapeSlack(value: string): string {
 /** Pure: the webhook payload for one new lead. */
 export function newLeadMessage(input: NewLeadInput): { text: string } {
   const bold = (value: string) => `*${escapeSlack(value)}*`;
-  const auditId = input.source.startsWith(AUDIT_PREFIX)
-    ? input.source.slice(AUDIT_PREFIX.length)
-    : null;
+  // Self-Audit sources are `audit:<id>`; Slack shows them as "audit".
+  const auditId = selfAuditIdFrom(input.source);
   const source = auditId === null ? input.source : 'audit';
   const resource =
     input.magnetTitle ||
-    (auditId === null ? null : (AUDIT_NAMES[auditId] ?? auditId));
+    (auditId === null ? null : (SELF_AUDITS[auditId]?.name ?? auditId));
   return {
     text: [
       `Nouveau lead: ${bold(resource || source)}`,

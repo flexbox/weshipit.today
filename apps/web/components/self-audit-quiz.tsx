@@ -11,7 +11,17 @@ import { PaperAirplaneIcon } from '@heroicons/react/20/solid';
 import clsx from 'clsx';
 import { FormEvent, useState } from 'react';
 import { track } from '../utils/analytics';
-import { type ConsentLocale, AUDIT_NOTICE_LABELS } from '../utils/hq/consent';
+import {
+  ANSWER_VALUES,
+  ANSWERS_MAX_LENGTH,
+  encodeGaps,
+} from '../utils/audits/answers';
+import type {
+  Category,
+  SelfAudit,
+  SelfAuditLocale,
+} from '../utils/audits/types';
+import { AUDIT_NOTICE_LABELS, AUDIT_SOURCE_PREFIX } from '../utils/hq/consent';
 
 export interface SelfAuditLabels {
   step: string;
@@ -32,19 +42,16 @@ export interface SelfAuditLabels {
   namePlaceholder: string;
   emailPlaceholder: string;
   answers: { no: string; unknown: string; yes: string };
-  /** Language of the opt-in sentence, see utils/hq/consent. */
-  consentLocale: ConsentLocale;
 }
 
-export const FR_LABELS: SelfAuditLabels = {
+const FR_LABELS: SelfAuditLabels = {
   answered: 'répondues',
   answers: { no: 'Non', unknown: 'Incertain', yes: 'Oui' },
-  consentLocale: 'fr',
   emailLabel: 'Email pro',
   emailPlaceholder: 'toi@entreprise.com',
-  error: 'Une erreur est survenue. Réessayez, ou écrivez-nous directement.',
+  error: 'Une erreur est survenue. Réessaie, ou écris-nous directement.',
   emailError:
-    'Le rapport n’a pas pu être envoyé. Réessayez dans une minute, ou écrivez à david@weshipit.today.',
+    'Le rapport n’a pas pu être envoyé. Réessaie dans une minute, ou écris à david@weshipit.today.',
   nameLabel: 'Prénom',
   namePlaceholder: 'Ton prénom',
   next: 'Suivant :',
@@ -55,14 +62,13 @@ export const FR_LABELS: SelfAuditLabels = {
   submit: 'Recevoir mon rapport',
   submitting: 'Envoi en cours…',
   successText:
-    'Vérifiez votre boîte mail (et le dossier spam) dans les prochaines minutes.',
+    'Vérifie ta boîte mail (et le dossier spam) dans les prochaines minutes.',
   successTitle: 'Rapport en route',
 };
 
-export const EN_LABELS: SelfAuditLabels = {
+const EN_LABELS: SelfAuditLabels = {
   answered: 'answered',
   answers: { no: 'No', unknown: 'Unknown', yes: 'Yes' },
-  consentLocale: 'en',
   emailLabel: 'Work email',
   emailPlaceholder: 'you@company.com',
   error: 'Something went wrong. Try again, or email us directly.',
@@ -81,56 +87,33 @@ export const EN_LABELS: SelfAuditLabels = {
   successTitle: 'Report on its way',
 };
 
-export interface AuditCategory {
-  key: string;
-  label: string;
-  questions: { id: string; text: string }[];
-}
-
-export interface AuditVerdict {
-  text: string;
-  label: string;
-}
-
-export interface SelfAuditConfig {
-  /** Prefix for DOM ids, unique per page. */
-  id: string;
-  title: string;
-  intro: string;
-  eyebrow: string;
-  resetLabel: string;
-  categories: AuditCategory[];
-  getVerdict: (scorePct: number) => AuditVerdict;
-  report: { title: string; text: string; bullets: string[] };
-  /**
-   * Slug of the HQ magnet holding the detailed report. Leads get its link by
-   * email; without it they get a thank-you with their score.
-   */
-  leadMagnetSlug?: string;
-  labels?: SelfAuditLabels;
-  cta: { text: string; href: string; label: string };
-}
+const LABELS: Record<SelfAuditLocale, SelfAuditLabels> = {
+  en: EN_LABELS,
+  fr: FR_LABELS,
+};
 
 interface SelfAuditQuizProps {
-  config: SelfAuditConfig;
+  audit: SelfAudit;
   headingAs?: 'h1' | 'h2';
 }
 
-export function SelfAuditQuiz({
-  config,
-  headingAs = 'h2',
-}: SelfAuditQuizProps) {
-  const { categories: CATEGORIES } = config;
-  const TOTAL_QUESTIONS = CATEGORIES.reduce(
-    (sum, cat) => sum + cat.questions.length,
+/**
+ * The quiz page of any Self-Audit: Categories one step at a time, the Score
+ * and Verdict, then the form that sends the Report. Everything it shows
+ * comes from the Self-Audit's file in utils/audits.
+ */
+export function SelfAuditQuiz({ audit, headingAs = 'h2' }: SelfAuditQuizProps) {
+  const { categories: CATEGORIES, page } = audit;
+  const TOTAL_CHECKS = CATEGORIES.reduce(
+    (sum, category) => sum + category.checks.length,
     0,
   );
-  const titleId = `${config.id}-title`;
-  const labels = config.labels ?? FR_LABELS;
+  const titleId = `${audit.id}-title`;
+  const labels = LABELS[audit.locale];
   const answerOptions = [
-    { label: labels.answers.no, value: 0 },
-    { label: labels.answers.unknown, value: 0.5 },
-    { label: labels.answers.yes, value: 1 },
+    { label: labels.answers.no, value: ANSWER_VALUES.no },
+    { label: labels.answers.unknown, value: ANSWER_VALUES.unknown },
+    { label: labels.answers.yes, value: ANSWER_VALUES.yes },
   ];
   const [answers, setAnswers] = useState<Record<string, number>>({});
   const [currentStep, setCurrentStep] = useState(0);
@@ -141,17 +124,17 @@ export function SelfAuditQuiz({
 
   const isSent = formStatus === 'success';
 
-  const categoryScore = (category: AuditCategory) => {
+  const categoryScore = (category: Category) => {
     let sum = 0;
     let answered = 0;
-    for (const question of category.questions) {
-      const value = answers[question.id];
+    for (const check of category.checks) {
+      const value = answers[check.id];
       if (value !== undefined) {
         sum += value;
         answered += 1;
       }
     }
-    return { answered, sum, total: category.questions.length };
+    return { answered, sum, total: category.checks.length };
   };
 
   const currentCategory = CATEGORIES[currentStep];
@@ -162,11 +145,11 @@ export function SelfAuditQuiz({
     (sum, value) => sum + value,
     0,
   );
-  const scorePct = Math.round((totalSum / TOTAL_QUESTIONS) * 100);
-  const verdict = config.getVerdict(scorePct);
+  const scorePct = Math.round((totalSum / TOTAL_CHECKS) * 100);
+  const verdict = audit.getVerdict(scorePct);
 
-  const handleAnswer = (questionId: string, value: number) => {
-    setAnswers((prev) => ({ ...prev, [questionId]: value }));
+  const handleAnswer = (checkId: string, value: number) => {
+    setAnswers((prev) => ({ ...prev, [checkId]: value }));
   };
 
   const handleNext = () => {
@@ -185,26 +168,19 @@ export function SelfAuditQuiz({
   };
 
   /**
-   * The No and Unknown answers as `r2:n,d3:u` (skipped questions count as
-   * Unknown), so the server can build the plan. Dropped if it would not fit
-   * the 200-character meta limit.
+   * The Gaps, so the server can build the Report. Dropped if they would not
+   * fit the meta limit; a unit test keeps every Self-Audit under it.
    */
-  const answerGapsMeta = (): { answers?: string } => {
-    const answersValue = CATEGORIES.flatMap((category) => category.questions)
-      .filter((question) => answers[question.id] !== 1)
-      .map(
-        (question) =>
-          `${question.id}:${answers[question.id] === 0 ? 'n' : 'u'}`,
-      )
-      .join(',');
-    return answersValue.length <= 200 ? { answers: answersValue } : {};
+  const gapsMeta = (): { answers?: string } => {
+    const encoded = encodeGaps(audit, answers);
+    return encoded.length <= ANSWERS_MAX_LENGTH ? { answers: encoded } : {};
   };
 
   const handleSubscribe = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (isSent) return;
     setFormStatus('submitting');
-    track('audit_requested', { audit: config.id, score: String(scorePct) });
+    track('audit_requested', { audit: audit.id, score: String(scorePct) });
     const form = new FormData(event.currentTarget);
     const params = new URLSearchParams(window.location.search);
     try {
@@ -212,13 +188,12 @@ export function SelfAuditQuiz({
         body: JSON.stringify({
           email: form.get('email'),
           first_name: form.get('name'),
-          locale: labels.consentLocale,
-          magnet: config.leadMagnetSlug,
+          locale: audit.locale,
           // Sending the form is the opt-in: the notice under the button says
           // the report comes with occasional emails.
           marketing_consent: true,
-          meta: { score: scorePct, ...answerGapsMeta() },
-          source: `audit:${config.id}`,
+          meta: { score: scorePct, ...gapsMeta() },
+          source: `${AUDIT_SOURCE_PREFIX}${audit.id}`,
           utm_campaign: params.get('utm_campaign') ?? undefined,
           utm_medium: params.get('utm_medium') ?? undefined,
           utm_source: params.get('utm_source') ?? undefined,
@@ -243,7 +218,7 @@ export function SelfAuditQuiz({
       <section aria-labelledby={titleId}>
         <Button variant="outline" size="lg" onClick={handleReset}>
           <ArrowLeftIcon className="-ml-0.5 mr-2 size-4" aria-hidden="true" />
-          {config.resetLabel}
+          {page.resetLabel}
         </Button>
 
         <FadeInStagger faster>
@@ -310,17 +285,17 @@ export function SelfAuditQuiz({
                   {labels.reportEyebrow}
                 </Text>
                 <Text as="h3" variant="h4" className="mt-3">
-                  {config.report.title}
+                  {page.form.title}
                 </Text>
                 <Text
                   as="p"
                   variant="p2"
                   className="mt-4 text-slate-600 dark:text-slate-300"
                 >
-                  {config.report.text}
+                  {page.form.text}
                 </Text>
                 <ul className="mt-6 space-y-3">
-                  {config.report.bullets.map((bullet) => (
+                  {page.form.bullets.map((bullet) => (
                     <li
                       key={bullet}
                       className="flex gap-3 text-sm text-slate-600 dark:text-slate-300"
@@ -343,14 +318,14 @@ export function SelfAuditQuiz({
               >
                 <div className="mb-4">
                   <label
-                    htmlFor={`${config.id}-name`}
+                    htmlFor={`${audit.id}-name`}
                     className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300"
                   >
                     {labels.nameLabel}
                   </label>
                   <input
                     type="text"
-                    id={`${config.id}-name`}
+                    id={`${audit.id}-name`}
                     name="name"
                     placeholder={labels.namePlaceholder}
                     autoComplete="given-name"
@@ -361,14 +336,14 @@ export function SelfAuditQuiz({
 
                 <div className="mb-6">
                   <label
-                    htmlFor={`${config.id}-email`}
+                    htmlFor={`${audit.id}-email`}
                     className="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300"
                   >
                     {labels.emailLabel}
                   </label>
                   <input
                     type="email"
-                    id={`${config.id}-email`}
+                    id={`${audit.id}-email`}
                     name="email"
                     placeholder={labels.emailPlaceholder}
                     required
@@ -437,7 +412,7 @@ export function SelfAuditQuiz({
                 >
                   {isSent
                     ? labels.successText
-                    : AUDIT_NOTICE_LABELS[labels.consentLocale]}
+                    : AUDIT_NOTICE_LABELS[audit.locale]}
                 </Text>
               </form>
             </Card>
@@ -450,15 +425,15 @@ export function SelfAuditQuiz({
                 variant="p2"
                 className="text-slate-600 dark:text-slate-300"
               >
-                {config.cta.text}
+                {page.cta.text}
               </Text>
               <LinkButton
-                href={config.cta.href}
+                href={page.cta.href}
                 variant="outline"
                 size="xl"
                 className="group mt-4"
               >
-                {config.cta.label}
+                {page.cta.label}
                 <ArrowRightIcon
                   className="-mr-0.5 ml-2 size-4 transition-transform group-hover:translate-x-1"
                   aria-hidden="true"
@@ -474,17 +449,17 @@ export function SelfAuditQuiz({
   return (
     <section aria-labelledby={titleId}>
       <Text tone="primary" as="p" variant="eyebrow">
-        {config.eyebrow}
+        {page.eyebrow}
       </Text>
       <Text as={headingAs} variant="h3" className="mt-2" id={titleId}>
-        {config.title}
+        {page.title}
       </Text>
       <Text
         as="p"
         variant="p2"
         className="mt-4 max-w-3xl text-slate-600 dark:text-slate-300"
       >
-        {config.intro}
+        {page.intro}
       </Text>
 
       <div className="mt-8 flex gap-1.5" aria-hidden="true">
@@ -526,23 +501,23 @@ export function SelfAuditQuiz({
           </Text>
         </div>
 
-        {currentCategory.questions.map((question) => (
+        {currentCategory.checks.map((check) => (
           <div
-            key={question.id}
+            key={check.id}
             className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 px-6 py-5 last:border-b-0 dark:border-slate-800"
           >
             <p className="m-0 max-w-xl text-sm text-slate-700 dark:text-slate-300">
-              {question.text}
+              {check.text}
             </p>
             <div className="flex shrink-0 gap-2">
               {answerOptions.map((option) => {
-                const isActive = answers[question.id] === option.value;
+                const isActive = answers[check.id] === option.value;
                 return (
                   <button
                     key={option.label}
                     type="button"
                     aria-pressed={isActive}
-                    onClick={() => handleAnswer(question.id, option.value)}
+                    onClick={() => handleAnswer(check.id, option.value)}
                     className={clsx(
                       'min-h-11 rounded-md border border-transparent px-3.5 py-2 text-xs font-semibold uppercase tracking-wide transition-[color,background-color,box-shadow,transform] duration-150 ease-out active:scale-[0.96] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600',
                       !isActive &&

@@ -5,13 +5,12 @@
  */
 
 import {
-  type AnswerGap,
-  buildSpmPlan,
-  getSpmVerdict,
-  SPM_EFFORT_LABELS,
-  SPM_QUESTIONS,
-  type SpmPlanStep,
-} from '../audits/spm-readiness';
+  allChecks,
+  buildPlan,
+  type Gap,
+  type PlanStep,
+} from '../audits/answers';
+import type { SelfAudit } from '../audits/types';
 
 export interface EmailContent {
   html: string;
@@ -268,50 +267,91 @@ export function leadLocale(lead: {
 export const FOLLOWUP_STATUSES = ['to_contact', 'sent', 'replied'] as const;
 export type FollowupStatus = (typeof FOLLOWUP_STATUSES)[number];
 
-export interface SpmPlanEmailInput {
+export interface SelfAuditReportInput {
+  audit: SelfAudit;
   /** Score out of 100. */
   score: number;
-  /** The No and Unknown answers, from parseAnswerGaps(). */
-  gaps: Map<string, AnswerGap>;
-  /** Paid audit page, linked at the end. */
-  auditUrl: string;
+  /** The No and Unknown answers, from parseGaps(). */
+  gaps: Map<string, Gap>;
+  /** Site origin, for the paid Audit link and the closing step's page. */
+  origin: string;
   unsubscribeUrl: string;
 }
 
-const MIGRATE_COMMAND = 'cd ios && npx react-native spm --deintegrate';
+/** The Report's fixed wording, in the language of each Self-Audit. */
+const REPORT_COPY = {
+  en: {
+    ask: 'Stuck on one fix? Reply with its number.',
+    askClear: 'Questions? Reply to this email.',
+    clear: (total: number) => `All ${total} checks pass. Nothing left to fix.`,
+    passed: (ok: number, total: number, left: number) =>
+      `${ok} of ${total} checks already pass. ` +
+      (left === 1
+        ? 'Here is the other one.'
+        : `Here are the other ${left}, in the order to tackle them.`),
+    subject: (count: number) =>
+      count === 0
+        ? 'nothing to fix'
+        : `${count} ${count === 1 ? 'fix' : 'fixes in order'}`,
+    unsubscribe: 'Unsubscribe',
+    verify: (label: string) => `Verify: ${label}`,
+  },
+  fr: {
+    ask: 'Bloqué sur un point ? Réponds avec son numéro.',
+    askClear: 'Une question ? Réponds à cet email.',
+    clear: (total: number) => `Les ${total} points sont bons. Rien à corriger.`,
+    passed: (ok: number, total: number, left: number) =>
+      `${ok} ${ok === 1 ? 'point' : 'points'} sur ${total} ${ok === 1 ? 'est déjà bon' : 'sont déjà bons'}. ` +
+      (left === 1
+        ? 'Voici celui qui reste.'
+        : `Voici les ${left} autres, dans l’ordre où les traiter.`),
+    subject: (count: number) =>
+      count === 0
+        ? 'rien à corriger'
+        : `${count} ${count === 1 ? 'point' : 'points'} à corriger`,
+    unsubscribe: 'Ne plus recevoir d’emails',
+    verify: (label: string) => `À vérifier : ${label}`,
+  },
+} satisfies Record<EmailLocale, unknown>;
 
 /**
- * The SPM readiness report: every answer that wasn't Yes becomes a step,
- * grouped by effort, with its command. English only, like the quiz page.
+ * The Report a visitor gets after a Self-Audit: their Gaps as a numbered
+ * plan under each Priority, then the audit's closing step and offer.
+ * Same skeleton for every Self-Audit (docs/audits/README.md).
  */
-export function spmPlanEmail({
-  auditUrl,
+export function selfAuditReportEmail({
+  audit,
   gaps,
+  origin,
   score,
   unsubscribeUrl,
-}: SpmPlanEmailInput): EmailContent {
-  const verdict = getSpmVerdict(score);
-  const plan = buildSpmPlan(gaps);
-  const okCount = SPM_QUESTIONS.filter(({ id }) => !gaps.has(id)).length;
-  const subject = `Your SPM migration plan (${score}/100)`;
-  const headline = `Score: ${score}/100. ${verdict.label}.`;
-  const okLine = `Already OK: ${okCount} of ${SPM_QUESTIONS.length} checks.`;
-  const finish = plan.length
-    ? 'Once the list is done, migrate on a branch:'
-    : 'No blockers left. Migrate on a branch:';
-  const offer = 'Want us to run the migration with you?';
-  const ask = 'Questions? Reply to this email.';
-  const unsubscribe = 'Unsubscribe';
-  const stepTitle = (step: SpmPlanStep) =>
-    step.gap === 'unknown' ? `Check first: ${step.label}` : step.label;
+}: SelfAuditReportInput): EmailContent {
+  const copy = REPORT_COPY[audit.locale];
+  const separator = audit.locale === 'fr' ? ' : ' : ': ';
+  const checks = allChecks(audit);
+  const plan = buildPlan(audit, gaps);
+  const left = plan.reduce((sum, group) => sum + group.steps.length, 0);
+  const verdict = audit.getVerdict(score);
+  const auditUrl = `${origin}/audit`;
+  const { closing } = audit.report;
+  const closingUrl = closing.path ? `${origin}${closing.path}` : null;
 
-  let index = 0;
-  const textPlan = plan.flatMap(({ effort, steps }) => [
-    SPM_EFFORT_LABELS[effort].toUpperCase(),
+  const subject = `${audit.report.subject}${separator}${score}/100, ${copy.subject(left)}`;
+  const headline = `${score}/100. ${verdict.label}.`;
+  const summary = left
+    ? copy.passed(checks.length - left, checks.length, left)
+    : copy.clear(checks.length);
+  const ask = left ? copy.ask : copy.askClear;
+  const title = (step: PlanStep) =>
+    step.gap === 'unknown' ? copy.verify(step.label) : step.label;
+
+  let number = 0;
+  const textPlan = plan.flatMap(({ priority, steps }) => [
+    priority.label.toUpperCase(),
     ...steps.flatMap((step) => {
-      index += 1;
+      number += 1;
       return [
-        `${index}. ${stepTitle(step)}`,
+        `${number}. ${title(step)}`,
         `   ${step.fix}`,
         ...(step.command ? [`   $ ${step.command}`] : []),
       ];
@@ -320,45 +360,49 @@ export function spmPlanEmail({
   ]);
   const text = [
     headline,
-    okLine,
+    summary,
     '',
-    ...(plan.length ? ['Your plan, in order:', '', ...textPlan] : []),
-    finish,
-    `$ ${MIGRATE_COMMAND}`,
+    ...textPlan,
+    closing.text,
+    closing.command ? `$ ${closing.command}` : closingUrl,
     '',
-    `${offer} ${auditUrl}`,
+    `${audit.report.offer} ${auditUrl}`,
     '',
     ask,
     '',
-    `${unsubscribe}: ${unsubscribeUrl}`,
+    `${copy.unsubscribe}: ${unsubscribeUrl}`,
   ].join('\n');
 
   const code = (command: string) =>
     `<code style="font-family:ui-monospace,Menlo,monospace;font-size:14px">${escapeHtml(command)}</code>`;
-  let htmlIndex = 0;
+  let htmlNumber = 0;
   const htmlPlan = plan
-    .map(({ effort, steps }) => {
+    .map(({ priority, steps }) => {
       const items = steps
         .map((step) => {
-          htmlIndex += 1;
+          htmlNumber += 1;
           const command = step.command ? `<br>${code(step.command)}` : '';
-          return `<li value="${htmlIndex}" style="margin:0 0 12px"><strong>${escapeHtml(stepTitle(step))}</strong><br>${escapeHtml(step.fix)}${command}</li>`;
+          return `<li value="${htmlNumber}" style="margin:0 0 12px"><strong>${escapeHtml(title(step))}</strong><br>${escapeHtml(step.fix)}${command}</li>`;
         })
         .join('');
-      return `<p style="margin:0 0 8px"><strong>${escapeHtml(SPM_EFFORT_LABELS[effort])}</strong></p><ol style="margin:0 0 16px;padding-left:20px">${items}</ol>`;
+      return `<p style="margin:0 0 8px"><strong>${escapeHtml(priority.label)}</strong></p><ol style="margin:0 0 16px;padding-left:20px">${items}</ol>`;
     })
     .join('');
   const body = [
-    `<strong>${escapeHtml(headline)}</strong><br>${escapeHtml(okLine)}`,
-    ...(plan.length
-      ? [
-          `${escapeHtml('Your plan, in order:')}</p>${htmlPlan}<p style="margin:0 0 16px">`,
-        ]
-      : []),
-    `${escapeHtml(finish)}<br>${code(MIGRATE_COMMAND)}`,
-    `${escapeHtml(offer)} ${link(auditUrl)}`,
+    // The plan sits between paragraphs, so it closes and reopens one.
+    `<strong>${escapeHtml(headline)}</strong><br>${escapeHtml(summary)}${
+      htmlPlan ? `</p>${htmlPlan}<p style="margin:0 0 16px">` : ''
+    }`,
+    `${escapeHtml(closing.text)}<br>${
+      closing.command ? code(closing.command) : link(closingUrl ?? origin)
+    }`,
+    `${escapeHtml(audit.report.offer)} ${link(auditUrl)}`,
     escapeHtml(ask),
   ];
-  const html = wrapHtml(body, link(unsubscribeUrl, unsubscribe), 'en');
+  const html = wrapHtml(
+    body,
+    link(unsubscribeUrl, copy.unsubscribe),
+    audit.locale,
+  );
   return { html, subject, text };
 }

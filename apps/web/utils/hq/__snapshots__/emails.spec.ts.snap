@@ -1,0 +1,206 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`selfAuditReportEmail renders the security-audit Report with every Gap 1`] = `
+Object {
+  "html": "<!doctype html><html lang=\\"en\\"><body style=\\"margin:0;padding:24px;background:#ffffff\\"><div style=\\"max-width:560px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;color:#0f172a\\"><p style=\\"margin:0 0 16px\\"><strong>25/100. High exposure.</strong><br>0 of 12 checks already pass. Here are the other 12, in the order to tackle them.</p><p style=\\"margin:0 0 8px\\"><strong>Critical</strong></p><ol style=\\"margin:0 0 16px;padding-left:20px\\"><li value=\\"1\\" style=\\"margin:0 0 12px\\"><strong>Move secret keys out of the app</strong><br>Anything in your JS bundle, app.config or EXPO_PUBLIC_* variables can be read from the app binary. Move each secret behind your own API, then rotate it: the old key is already exposed.<br><code style=\\"font-family:ui-monospace,Menlo,monospace;font-size:14px\\">npx rnsec scan</code></li><li value=\\"2\\" style=\\"margin:0 0 12px\\"><strong>Verify: Block plain HTTP traffic</strong><br>Remove usesCleartextTraffic from AndroidManifest.xml and NSAllowsArbitraryLoads from Info.plist. If a dev server needs plain HTTP, allow only that domain, in a debug-only config.<br><code style=\\"font-family:ui-monospace,Menlo,monospace;font-size:14px\\">git grep -nE &quot;usesCleartextTraffic|NSAllowsArbitraryLoads&quot;</code></li><li value=\\"3\\" style=\\"margin:0 0 12px\\"><strong>Enforce authorization on the backend</strong><br>Anyone can call your API without the app. Turn on Row Level Security on every Supabase table, or write Firebase Security Rules, then make each endpoint check who is asking and what they own.</li></ol><p style=\\"margin:0 0 8px\\"><strong>High</strong></p><ol style=\\"margin:0 0 16px;padding-left:20px\\"><li value=\\"4\\" style=\\"margin:0 0 12px\\"><strong>Verify: Store auth tokens in secure storage</strong><br>AsyncStorage and MMKV write plain files that a backup or a rooted device can read. Store access and refresh tokens with expo-secure-store (or react-native-keychain). This command lists the places that write a token today.<br><code style=\\"font-family:ui-monospace,Menlo,monospace;font-size:14px\\">git grep -nE &quot;(AsyncStorage|MMKV|storage)\\\\.set.*[Tt]oken&quot;</code></li><li value=\\"5\\" style=\\"margin:0 0 12px\\"><strong>Clean secrets out of production logs</strong><br>Strip console.log from production builds with babel-plugin-transform-remove-console, and drop tokens, passwords and personal data in Sentry’s beforeSend.</li><li value=\\"6\\" style=\\"margin:0 0 12px\\"><strong>Validate deep link parameters</strong><br>Treat every deep link as untrusted input. Validate each parameter against what the screen expects, and ask for confirmation before a payment, a deletion or an account change.</li><li value=\\"7\\" style=\\"margin:0 0 12px\\"><strong>Verify: Lock down your WebViews</strong><br>Set originWhitelist to your own domains, and check event.nativeEvent.url in onMessage before acting on a message. Turn off javaScriptEnabled on WebViews that only show content.</li><li value=\\"8\\" style=\\"margin:0 0 12px\\"><strong>Verify: Remove debug screens from production</strong><br>Wrap every debug menu, feature flag screen and test endpoint in if (__DEV__) or a build-time flag. Then install a release build and check they are gone.</li></ol><p style=\\"margin:0 0 8px\\"><strong>Moderate</strong></p><ol style=\\"margin:0 0 16px;padding-left:20px\\"><li value=\\"9\\" style=\\"margin:0 0 12px\\"><strong>Verify: Protect sensitive APIs from scripts</strong><br>Rate-limit login, signup and payment endpoints first. Then attest the app with Firebase App Check, or with App Attest and Play Integrity directly.</li><li value=\\"10\\" style=\\"margin:0 0 12px\\"><strong>Keep sensitive data out of Android backups</strong><br>Set android:allowBackup=&quot;false&quot; in AndroidManifest.xml, or exclude the sensitive files with dataExtractionRules (Android 12 and later) and fullBackupContent.</li><li value=\\"11\\" style=\\"margin:0 0 12px\\"><strong>Monitor your dependencies</strong><br>Turn on Dependabot or Renovate, and run this command in CI so a critical advisory fails the build.<br><code style=\\"font-family:ui-monospace,Menlo,monospace;font-size:14px\\">npm audit --audit-level=critical</code></li><li value=\\"12\\" style=\\"margin:0 0 12px\\"><strong>Verify: Run a security scanner in CI</strong><br>Add rnsec to your pull request pipeline, with the command at the end of this email, so it blocks changes that introduce a vulnerability.</li></ol><p style=\\"margin:0 0 16px\\"></p><p style=\\"margin:0 0 16px\\">Run rnsec on every pull request so these stay fixed:<br><code style=\\"font-family:ui-monospace,Menlo,monospace;font-size:14px\\">npx rnsec scan --changed-files main --silent</code></p><p style=\\"margin:0 0 16px\\">Want us to audit the codebase itself? <a href=\\"https://weshipit.today/audit\\" style=\\"color:#2563eb\\">https://weshipit.today/audit</a></p><p style=\\"margin:0 0 16px\\">Stuck on one fix? Reply with its number.</p><p style=\\"margin:32px 0 0;font-size:13px;color:#64748b\\"><a href=\\"https://weshipit.today/api/lm/unsubscribe?t=abc\\" style=\\"color:#2563eb\\">Unsubscribe</a></p></div></body></html>",
+  "subject": "Your security report: 25/100, 12 fixes in order",
+  "text": "25/100. High exposure.
+0 of 12 checks already pass. Here are the other 12, in the order to tackle them.
+
+CRITICAL
+1. Move secret keys out of the app
+   Anything in your JS bundle, app.config or EXPO_PUBLIC_* variables can be read from the app binary. Move each secret behind your own API, then rotate it: the old key is already exposed.
+   $ npx rnsec scan
+2. Verify: Block plain HTTP traffic
+   Remove usesCleartextTraffic from AndroidManifest.xml and NSAllowsArbitraryLoads from Info.plist. If a dev server needs plain HTTP, allow only that domain, in a debug-only config.
+   $ git grep -nE \\"usesCleartextTraffic|NSAllowsArbitraryLoads\\"
+3. Enforce authorization on the backend
+   Anyone can call your API without the app. Turn on Row Level Security on every Supabase table, or write Firebase Security Rules, then make each endpoint check who is asking and what they own.
+
+HIGH
+4. Verify: Store auth tokens in secure storage
+   AsyncStorage and MMKV write plain files that a backup or a rooted device can read. Store access and refresh tokens with expo-secure-store (or react-native-keychain). This command lists the places that write a token today.
+   $ git grep -nE \\"(AsyncStorage|MMKV|storage)\\\\.set.*[Tt]oken\\"
+5. Clean secrets out of production logs
+   Strip console.log from production builds with babel-plugin-transform-remove-console, and drop tokens, passwords and personal data in Sentry’s beforeSend.
+6. Validate deep link parameters
+   Treat every deep link as untrusted input. Validate each parameter against what the screen expects, and ask for confirmation before a payment, a deletion or an account change.
+7. Verify: Lock down your WebViews
+   Set originWhitelist to your own domains, and check event.nativeEvent.url in onMessage before acting on a message. Turn off javaScriptEnabled on WebViews that only show content.
+8. Verify: Remove debug screens from production
+   Wrap every debug menu, feature flag screen and test endpoint in if (__DEV__) or a build-time flag. Then install a release build and check they are gone.
+
+MODERATE
+9. Verify: Protect sensitive APIs from scripts
+   Rate-limit login, signup and payment endpoints first. Then attest the app with Firebase App Check, or with App Attest and Play Integrity directly.
+10. Keep sensitive data out of Android backups
+   Set android:allowBackup=\\"false\\" in AndroidManifest.xml, or exclude the sensitive files with dataExtractionRules (Android 12 and later) and fullBackupContent.
+11. Monitor your dependencies
+   Turn on Dependabot or Renovate, and run this command in CI so a critical advisory fails the build.
+   $ npm audit --audit-level=critical
+12. Verify: Run a security scanner in CI
+   Add rnsec to your pull request pipeline, with the command at the end of this email, so it blocks changes that introduce a vulnerability.
+
+Run rnsec on every pull request so these stay fixed:
+$ npx rnsec scan --changed-files main --silent
+
+Want us to audit the codebase itself? https://weshipit.today/audit
+
+Stuck on one fix? Reply with its number.
+
+Unsubscribe: https://weshipit.today/api/lm/unsubscribe?t=abc",
+}
+`;
+
+exports[`selfAuditReportEmail renders the spm-readiness Report with every Gap 1`] = `
+Object {
+  "html": "<!doctype html><html lang=\\"en\\"><body style=\\"margin:0;padding:24px;background:#ffffff\\"><div style=\\"max-width:560px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;color:#0f172a\\"><p style=\\"margin:0 0 16px\\"><strong>25/100. Not ready yet.</strong><br>0 of 12 checks already pass. Here are the other 12, in the order to tackle them.</p><p style=\\"margin:0 0 8px\\"><strong>Start here</strong></p><ol style=\\"margin:0 0 16px;padding-left:20px\\"><li value=\\"1\\" style=\\"margin:0 0 12px\\"><strong>Upgrade to React Native 0.87</strong><br>Swift Package Manager support starts in React Native 0.87. Do the upgrade on its own branch, with the Upgrade Helper (https://react-native-community.github.io/upgrade-helper/), and ship it before you touch CocoaPods.</li></ol><p style=\\"margin:0 0 8px\\"><strong>Quick fixes</strong></p><ol style=\\"margin:0 0 16px;padding-left:20px\\"><li value=\\"2\\" style=\\"margin:0 0 12px\\"><strong>Switch to framework-style imports</strong><br>Headers now come from ReactNativeHeaders.xcframework. Rewrite bare imports in framework style: #import &lt;RCTAppDelegate.h&gt; becomes #import &lt;React/RCTAppDelegate.h&gt;. This command lists the imports to check.<br><code style=\\"font-family:ui-monospace,Menlo,monospace;font-size:14px\\">grep -rnE &#39;#import &lt;[^/&gt;]+&gt;&#39; ios --include=&#39;*.h&#39; --include=&#39;*.m&#39; --include=&#39;*.mm&#39;</code></li><li value=\\"3\\" style=\\"margin:0 0 12px\\"><strong>Verify: List your native iOS dependencies</strong><br>List every package with an ios folder, plus the pods in your Podfile. This command shows the ones that already ship a Package.swift. The others are your real blockers.<br><code style=\\"font-family:ui-monospace,Menlo,monospace;font-size:14px\\">ls node_modules/*/Package.swift node_modules/@*/*/Package.swift</code></li><li value=\\"4\\" style=\\"margin:0 0 12px\\"><strong>Move post_install settings into Xcode</strong><br>SPM has no Ruby hook. Move each build setting from post_install into the Xcode project (Build Settings), or drop the ones you no longer need.</li><li value=\\"5\\" style=\\"margin:0 0 12px\\"><strong>Scaffold a Package.swift for local pods</strong><br>Generate a Package.swift for each local or forked pod (:path, :git), then commit it next to the pod.<br><code style=\\"font-family:ui-monospace,Menlo,monospace;font-size:14px\\">npx react-native spm scaffold</code></li><li value=\\"6\\" style=\\"margin:0 0 12px\\"><strong>Verify: Make a fresh clone build without Pods/</strong><br>Write down the commands for a fresh clone. In CI, replace pod install with this command, and drop the Pods/ cache and the Ruby setup.<br><code style=\\"font-family:ui-monospace,Menlo,monospace;font-size:14px\\">npx react-native spm</code></li><li value=\\"7\\" style=\\"margin:0 0 12px\\"><strong>Test release builds on a device</strong><br>SPM changes how frameworks are embedded and signed. Add a release build on a physical device to your release checklist before you switch.</li><li value=\\"8\\" style=\\"margin:0 0 12px\\"><strong>Verify: Plan a rollback</strong><br>Run the migration on a branch, next to your CocoaPods build. If it breaks before a release, this command removes the package references.<br><code style=\\"font-family:ui-monospace,Menlo,monospace;font-size:14px\\">npx react-native spm deinit</code></li></ol><p style=\\"margin:0 0 8px\\"><strong>Library changes</strong></p><ol style=\\"margin:0 0 16px;padding-left:20px\\"><li value=\\"9\\" style=\\"margin:0 0 12px\\"><strong>Find the SPM package of each native SDK</strong><br>For each native SDK, note its SPM package URL and product name (Firebase: https://github.com/firebase/firebase-ios-sdk). An SDK with no SPM package blocks the migration: ask the vendor for a date or plan a replacement.</li><li value=\\"10\\" style=\\"margin:0 0 12px\\"><strong>Verify: Replace podspec script phases</strong><br>A podspec script_phase has no SPM equivalent. Replace it with an Xcode Run Script build phase or an SPM build tool plugin, or switch to a library that does not need one.</li></ol><p style=\\"margin:0 0 8px\\"><strong>Waiting on upstream</strong></p><ol style=\\"margin:0 0 16px;padding-left:20px\\"><li value=\\"11\\" style=\\"margin:0 0 12px\\"><strong>Verify: Stop patching React Native native code</strong><br>The first SPM phase only consumes the prebuilt XCFrameworks. Upstream your patches to React Native or drop them. Until then, this app stays on CocoaPods.</li><li value=\\"12\\" style=\\"margin:0 0 12px\\"><strong>Verify: Check your Swift + C++ libraries</strong><br>SPM cannot mix Swift and C++ in one target. Nitro modules, VisionCamera and MMKV are affected until they split their targets. Follow their SPM issue, and keep CocoaPods for this app until it ships.</li></ol><p style=\\"margin:0 0 16px\\"></p><p style=\\"margin:0 0 16px\\">Ready to switch? Migrate on a branch:<br><code style=\\"font-family:ui-monospace,Menlo,monospace;font-size:14px\\">cd ios &amp;&amp; npx react-native spm --deintegrate</code></p><p style=\\"margin:0 0 16px\\">Want us to run the migration with you? <a href=\\"https://weshipit.today/audit\\" style=\\"color:#2563eb\\">https://weshipit.today/audit</a></p><p style=\\"margin:0 0 16px\\">Stuck on one fix? Reply with its number.</p><p style=\\"margin:32px 0 0;font-size:13px;color:#64748b\\"><a href=\\"https://weshipit.today/api/lm/unsubscribe?t=abc\\" style=\\"color:#2563eb\\">Unsubscribe</a></p></div></body></html>",
+  "subject": "Your SPM migration plan: 25/100, 12 fixes in order",
+  "text": "25/100. Not ready yet.
+0 of 12 checks already pass. Here are the other 12, in the order to tackle them.
+
+START HERE
+1. Upgrade to React Native 0.87
+   Swift Package Manager support starts in React Native 0.87. Do the upgrade on its own branch, with the Upgrade Helper (https://react-native-community.github.io/upgrade-helper/), and ship it before you touch CocoaPods.
+
+QUICK FIXES
+2. Switch to framework-style imports
+   Headers now come from ReactNativeHeaders.xcframework. Rewrite bare imports in framework style: #import <RCTAppDelegate.h> becomes #import <React/RCTAppDelegate.h>. This command lists the imports to check.
+   $ grep -rnE '#import <[^/>]+>' ios --include='*.h' --include='*.m' --include='*.mm'
+3. Verify: List your native iOS dependencies
+   List every package with an ios folder, plus the pods in your Podfile. This command shows the ones that already ship a Package.swift. The others are your real blockers.
+   $ ls node_modules/*/Package.swift node_modules/@*/*/Package.swift
+4. Move post_install settings into Xcode
+   SPM has no Ruby hook. Move each build setting from post_install into the Xcode project (Build Settings), or drop the ones you no longer need.
+5. Scaffold a Package.swift for local pods
+   Generate a Package.swift for each local or forked pod (:path, :git), then commit it next to the pod.
+   $ npx react-native spm scaffold
+6. Verify: Make a fresh clone build without Pods/
+   Write down the commands for a fresh clone. In CI, replace pod install with this command, and drop the Pods/ cache and the Ruby setup.
+   $ npx react-native spm
+7. Test release builds on a device
+   SPM changes how frameworks are embedded and signed. Add a release build on a physical device to your release checklist before you switch.
+8. Verify: Plan a rollback
+   Run the migration on a branch, next to your CocoaPods build. If it breaks before a release, this command removes the package references.
+   $ npx react-native spm deinit
+
+LIBRARY CHANGES
+9. Find the SPM package of each native SDK
+   For each native SDK, note its SPM package URL and product name (Firebase: https://github.com/firebase/firebase-ios-sdk). An SDK with no SPM package blocks the migration: ask the vendor for a date or plan a replacement.
+10. Verify: Replace podspec script phases
+   A podspec script_phase has no SPM equivalent. Replace it with an Xcode Run Script build phase or an SPM build tool plugin, or switch to a library that does not need one.
+
+WAITING ON UPSTREAM
+11. Verify: Stop patching React Native native code
+   The first SPM phase only consumes the prebuilt XCFrameworks. Upstream your patches to React Native or drop them. Until then, this app stays on CocoaPods.
+12. Verify: Check your Swift + C++ libraries
+   SPM cannot mix Swift and C++ in one target. Nitro modules, VisionCamera and MMKV are affected until they split their targets. Follow their SPM issue, and keep CocoaPods for this app until it ships.
+
+Ready to switch? Migrate on a branch:
+$ cd ios && npx react-native spm --deintegrate
+
+Want us to run the migration with you? https://weshipit.today/audit
+
+Stuck on one fix? Reply with its number.
+
+Unsubscribe: https://weshipit.today/api/lm/unsubscribe?t=abc",
+}
+`;
+
+exports[`selfAuditReportEmail renders the stack-audit Report with every Gap 1`] = `
+Object {
+  "html": "<!doctype html><html lang=\\"fr\\"><body style=\\"margin:0;padding:24px;background:#ffffff\\"><div style=\\"max-width:560px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;color:#0f172a\\"><p style=\\"margin:0 0 16px\\"><strong>25/100. Fondations à consolider.</strong><br>0 points sur 32 sont déjà bons. Voici les 32 autres, dans l’ordre où les traiter.</p><p style=\\"margin:0 0 8px\\"><strong>Gains rapides</strong></p><ol style=\\"margin:0 0 16px;padding-left:20px\\"><li value=\\"1\\" style=\\"margin:0 0 12px\\"><strong>Ajouter un Error Boundary global</strong><br>Enveloppe la racine de l’app dans un Error Boundary (react-error-boundary) qui affiche un écran de secours et envoie l’erreur à Sentry. Sans lui, une erreur de rendu laisse un écran blanc.</li><li value=\\"2\\" style=\\"margin:0 0 12px\\"><strong>À vérifier : Gérer les zones sûres sur chaque écran</strong><br>Utilise react-native-safe-area-context : SafeAreaProvider à la racine, puis useSafeAreaInsets dans les écrans qui dessinent sous l’encoche ou la barre système.</li><li value=\\"3\\" style=\\"margin:0 0 12px\\"><strong>Virtualiser les listes longues</strong><br>Remplace les .map() dans un ScrollView par FlashList (ou FlatList) dès qu’une liste peut dépasser une vingtaine d’éléments.</li><li value=\\"4\\" style=\\"margin:0 0 12px\\"><strong>Passer au Native Stack</strong><br>Remplace createStackNavigator par createNativeStackNavigator (@react-navigation/native-stack) : les transitions passent sur les composants natifs. Expo Router l’utilise déjà par défaut.</li><li value=\\"5\\" style=\\"margin:0 0 12px\\"><strong>Passer les images sur expo-image</strong><br>Remplace Image de react-native par celui d’expo-image : cache disque, placeholders (blurhash) et priorités de chargement. L’API est presque la même, la migration se fait fichier par fichier.</li><li value=\\"6\\" style=\\"margin:0 0 12px\\"><strong>À vérifier : Configurer ESLint pour React Native</strong><br>Ajoute eslint-config-expo (ou @react-native/eslint-config) avec les règles des hooks, puis lance ESLint en CI. Sur un projet Expo, cette commande installe la config.<br><code style=\\"font-family:ui-monospace,Menlo,monospace;font-size:14px\\">npx expo lint</code></li><li value=\\"7\\" style=\\"margin:0 0 12px\\"><strong>À vérifier : Centraliser Sentry dans un seul fichier</strong><br>Initialise Sentry dans un seul module (DSN, environnement, release, beforeSend) et importe tes helpers depuis ce module plutôt que d’appeler Sentry partout.</li><li value=\\"8\\" style=\\"margin:0 0 12px\\"><strong>Passer le stockage clé-valeur sur MMKV</strong><br>Remplace AsyncStorage par react-native-mmkv pour les préférences et le cache : les lectures sont synchrones et bien plus rapides. Garde expo-secure-store pour les tokens.</li><li value=\\"9\\" style=\\"margin:0 0 12px\\"><strong>À vérifier : Stocker les tokens dans expo-secure-store</strong><br>AsyncStorage et MMKV écrivent des fichiers en clair, lisibles dans une sauvegarde ou sur un appareil rooté. Déplace tokens et secrets dans expo-secure-store (ou react-native-keychain). Cette commande liste les endroits qui écrivent un token.<br><code style=\\"font-family:ui-monospace,Menlo,monospace;font-size:14px\\">git grep -nE &quot;(AsyncStorage|MMKV|storage)\\\\.set.*[Tt]oken&quot;</code></li><li value=\\"10\\" style=\\"margin:0 0 12px\\"><strong>Gérer les erreurs réseau</strong><br>Fais passer tous les appels par un seul client qui vérifie response.ok, lève une erreur typée (réseau, 401, 5xx) et réessaie avec backoff. Un catch vide cache les pannes, à tes utilisateurs comme à toi.</li><li value=\\"11\\" style=\\"margin:0 0 12px\\"><strong>Passer les variables d’environnement sur EAS</strong><br>Déclare tes variables par environnement (development, preview, production) avec eas env, retire les .env commités et change les secrets qu’ils contenaient : ils restent dans l’historique git.<br><code style=\\"font-family:ui-monospace,Menlo,monospace;font-size:14px\\">eas env:create</code></li><li value=\\"12\\" style=\\"margin:0 0 12px\\"><strong>À vérifier : Laisser EAS gérer les numéros de version</strong><br>Dans eas.json, mets cli.appVersionSource à &quot;remote&quot; et autoIncrement à true sur le profil production. EAS incrémente les numéros de build à ta place.</li><li value=\\"13\\" style=\\"margin:0 0 12px\\"><strong>Scanner l’app avec rnsec</strong><br>Lance rnsec sur ton code et ta config native : il détecte les clés en dur et les secrets exposés. Pour aller plus loin, fais la checklist sécurité sur https://weshipit.today/react-native-security-audit.<br><code style=\\"font-family:ui-monospace,Menlo,monospace;font-size:14px\\">npx rnsec scan</code></li><li value=\\"14\\" style=\\"margin:0 0 12px\\"><strong>À vérifier : Livrer les correctifs JS avec EAS Update</strong><br>Installe expo-updates et configure un channel par profil EAS, puis publie tes correctifs JS sans repasser par la review des stores. Un changement de code natif demande toujours un nouveau build.<br><code style=\\"font-family:ui-monospace,Menlo,monospace;font-size:14px\\">eas update --channel production</code></li></ol><p style=\\"margin:0 0 8px\\"><strong>Chantiers structurants</strong></p><ol style=\\"margin:0 0 16px;padding-left:20px\\"><li value=\\"15\\" style=\\"margin:0 0 12px\\"><strong>Construire une librairie de composants</strong><br>Regroupe boutons, textes, champs et espacements dans des composants partagés, avec des tokens pour les couleurs et les tailles. Commence par les 5 composants les plus copiés-collés.</li><li value=\\"16\\" style=\\"margin:0 0 12px\\"><strong>À vérifier : Migrer vers la New Architecture</strong><br>Vérifie la compatibilité de chaque librairie native (expo-doctor la contrôle pour toi), mets à jour celles qui bloquent, puis active la New Architecture sur une branche. Depuis React Native 0.82, l’ancienne architecture n’existe plus.<br><code style=\\"font-family:ui-monospace,Menlo,monospace;font-size:14px\\">npx expo-doctor</code></li><li value=\\"17\\" style=\\"margin:0 0 12px\\"><strong>À vérifier : Tester les parties critiques</strong><br>Commence par la logique qui coûte cher en cas de bug (paiement, auth, calculs) avec Jest et React Native Testing Library, et lance les tests à chaque pull request.</li><li value=\\"18\\" style=\\"margin:0 0 12px\\"><strong>Couvrir les parcours critiques en E2E</strong><br>Écris un flow Maestro par parcours critique (inscription, connexion, paiement) et lance-les en CI sur chaque build de release.<br><code style=\\"font-family:ui-monospace,Menlo,monospace;font-size:14px\\">maestro test .maestro/</code></li><li value=\\"19\\" style=\\"margin:0 0 12px\\"><strong>Passer les appels réseau sur TanStack Query</strong><br>Commence par les écrans les plus chargés : useQuery remplace le trio fetch + useState + isLoading, avec le cache, le retry et le rafraîchissement inclus.</li><li value=\\"20\\" style=\\"margin:0 0 12px\\"><strong>Générer le client API depuis OpenAPI</strong><br>Si ton backend expose un schéma OpenAPI, génère le client et les types avec Orval (il crée aussi les hooks TanStack Query), et relance la génération en CI.<br><code style=\\"font-family:ui-monospace,Menlo,monospace;font-size:14px\\">npx orval</code></li><li value=\\"21\\" style=\\"margin:0 0 12px\\"><strong>À vérifier : Concevoir une stratégie offline-first</strong><br>Liste les actions qui doivent marcher sans réseau, garde-les dans une queue persistée et rejoue-la avec retry quand le réseau revient. Les mutations en pause de TanStack Query couvrent une partie de ce cycle.</li><li value=\\"22\\" style=\\"margin:0 0 12px\\"><strong>À vérifier : Mettre à jour le SDK Expo</strong><br>Monte d’un SDK à la fois, sur une branche, en suivant le guide de migration de chaque version. La deuxième commande aligne les versions des librairies.<br><code style=\\"font-family:ui-monospace,Menlo,monospace;font-size:14px\\">npx expo install expo@latest &amp;&amp; npx expo install --fix</code></li></ol><p style=\\"margin:0 0 8px\\"><strong>Améliorations</strong></p><ol style=\\"margin:0 0 16px;padding-left:20px\\"><li value=\\"23\\" style=\\"margin:0 0 12px\\"><strong>À vérifier : Unifier les modals</strong><br>Choisis un seul système (@gorhom/bottom-sheet, ou les modals natives d’Expo Router) et migre les autres implémentations écran par écran.</li><li value=\\"24\\" style=\\"margin:0 0 12px\\"><strong>À vérifier : Passer le scan sur react-native-vision-camera</strong><br>Pour scanner des codes ou traiter l’image en temps réel, utilise react-native-vision-camera et ses frame processors.</li><li value=\\"25\\" style=\\"margin:0 0 12px\\"><strong>À vérifier : Passer les animations sur Reanimated</strong><br>Réécris les animations liées aux gestes et au scroll avec Reanimated et react-native-gesture-handler, en animant transform et opacity. Elles restent fluides même quand le thread JS est occupé.</li><li value=\\"26\\" style=\\"margin:0 0 12px\\"><strong>Mettre en place Storybook</strong><br>Installe Storybook for React Native et écris une story par composant partagé. Tu développes et revois l’UI sans naviguer dans toute l’app.</li><li value=\\"27\\" style=\\"margin:0 0 12px\\"><strong>Centraliser les logs</strong><br>Crée un seul module logger (debug, info, warn, error) qui écrit en console en dev et envoie à Sentry en production, puis remplace les console.log au fil de l’eau.</li><li value=\\"28\\" style=\\"margin:0 0 12px\\"><strong>À vérifier : Exposer un statut typé dans les hooks data</strong><br>Remplace les booléens isLoading, isError et isSuccess empilés par un seul champ status (idle, loading, error, success). Les états impossibles disparaissent.</li><li value=\\"29\\" style=\\"margin:0 0 12px\\"><strong>Limiter les re-renders du state global</strong><br>Découpe les gros Contexts par domaine, ou passe sur un store à sélecteurs (Zustand, Jotai) pour que chaque composant ne s’abonne qu’à ce qu’il lit. Le Profiler de React DevTools montre qui re-rend.</li><li value=\\"30\\" style=\\"margin:0 0 12px\\"><strong>À vérifier : Adapter la précision du GPS en arrière-plan</strong><br>Baisse la précision et augmente la distance minimale quand l’utilisateur ne bouge pas (expo-location : accuracy, distanceInterval, deferredUpdatesInterval). La batterie tient plus longtemps.</li><li value=\\"31\\" style=\\"margin:0 0 12px\\"><strong>À vérifier : Mesurer la taille du bundle JS</strong><br>Exporte le bundle avec Expo Atlas pour voir ce qui pèse, puis retire ou charge à la demande les plus grosses dépendances.<br><code style=\\"font-family:ui-monospace,Menlo,monospace;font-size:14px\\">EXPO_ATLAS=true npx expo export --platform ios</code></li><li value=\\"32\\" style=\\"margin:0 0 12px\\"><strong>Mesurer le Time To Interaction</strong><br>Mesure le démarrage avec Flashlight sur un Android d’entrée de gamme, note le score, et refais la mesure après chaque grosse dépendance ajoutée.</li></ol><p style=\\"margin:0 0 16px\\"></p><p style=\\"margin:0 0 16px\\">Refais l’audit dans 3 mois pour mesurer tes progrès :<br><a href=\\"https://weshipit.today/audit-gratuit\\" style=\\"color:#2563eb\\">https://weshipit.today/audit-gratuit</a></p><p style=\\"margin:0 0 16px\\">Tu veux qu’on fasse l’audit complet sur ton code ? <a href=\\"https://weshipit.today/audit\\" style=\\"color:#2563eb\\">https://weshipit.today/audit</a></p><p style=\\"margin:0 0 16px\\">Bloqué sur un point ? Réponds avec son numéro.</p><p style=\\"margin:32px 0 0;font-size:13px;color:#64748b\\"><a href=\\"https://weshipit.today/api/lm/unsubscribe?t=abc\\" style=\\"color:#2563eb\\">Ne plus recevoir d’emails</a></p></div></body></html>",
+  "subject": "Ton audit de stack : 25/100, 32 points à corriger",
+  "text": "25/100. Fondations à consolider.
+0 points sur 32 sont déjà bons. Voici les 32 autres, dans l’ordre où les traiter.
+
+GAINS RAPIDES
+1. Ajouter un Error Boundary global
+   Enveloppe la racine de l’app dans un Error Boundary (react-error-boundary) qui affiche un écran de secours et envoie l’erreur à Sentry. Sans lui, une erreur de rendu laisse un écran blanc.
+2. À vérifier : Gérer les zones sûres sur chaque écran
+   Utilise react-native-safe-area-context : SafeAreaProvider à la racine, puis useSafeAreaInsets dans les écrans qui dessinent sous l’encoche ou la barre système.
+3. Virtualiser les listes longues
+   Remplace les .map() dans un ScrollView par FlashList (ou FlatList) dès qu’une liste peut dépasser une vingtaine d’éléments.
+4. Passer au Native Stack
+   Remplace createStackNavigator par createNativeStackNavigator (@react-navigation/native-stack) : les transitions passent sur les composants natifs. Expo Router l’utilise déjà par défaut.
+5. Passer les images sur expo-image
+   Remplace Image de react-native par celui d’expo-image : cache disque, placeholders (blurhash) et priorités de chargement. L’API est presque la même, la migration se fait fichier par fichier.
+6. À vérifier : Configurer ESLint pour React Native
+   Ajoute eslint-config-expo (ou @react-native/eslint-config) avec les règles des hooks, puis lance ESLint en CI. Sur un projet Expo, cette commande installe la config.
+   $ npx expo lint
+7. À vérifier : Centraliser Sentry dans un seul fichier
+   Initialise Sentry dans un seul module (DSN, environnement, release, beforeSend) et importe tes helpers depuis ce module plutôt que d’appeler Sentry partout.
+8. Passer le stockage clé-valeur sur MMKV
+   Remplace AsyncStorage par react-native-mmkv pour les préférences et le cache : les lectures sont synchrones et bien plus rapides. Garde expo-secure-store pour les tokens.
+9. À vérifier : Stocker les tokens dans expo-secure-store
+   AsyncStorage et MMKV écrivent des fichiers en clair, lisibles dans une sauvegarde ou sur un appareil rooté. Déplace tokens et secrets dans expo-secure-store (ou react-native-keychain). Cette commande liste les endroits qui écrivent un token.
+   $ git grep -nE \\"(AsyncStorage|MMKV|storage)\\\\.set.*[Tt]oken\\"
+10. Gérer les erreurs réseau
+   Fais passer tous les appels par un seul client qui vérifie response.ok, lève une erreur typée (réseau, 401, 5xx) et réessaie avec backoff. Un catch vide cache les pannes, à tes utilisateurs comme à toi.
+11. Passer les variables d’environnement sur EAS
+   Déclare tes variables par environnement (development, preview, production) avec eas env, retire les .env commités et change les secrets qu’ils contenaient : ils restent dans l’historique git.
+   $ eas env:create
+12. À vérifier : Laisser EAS gérer les numéros de version
+   Dans eas.json, mets cli.appVersionSource à \\"remote\\" et autoIncrement à true sur le profil production. EAS incrémente les numéros de build à ta place.
+13. Scanner l’app avec rnsec
+   Lance rnsec sur ton code et ta config native : il détecte les clés en dur et les secrets exposés. Pour aller plus loin, fais la checklist sécurité sur https://weshipit.today/react-native-security-audit.
+   $ npx rnsec scan
+14. À vérifier : Livrer les correctifs JS avec EAS Update
+   Installe expo-updates et configure un channel par profil EAS, puis publie tes correctifs JS sans repasser par la review des stores. Un changement de code natif demande toujours un nouveau build.
+   $ eas update --channel production
+
+CHANTIERS STRUCTURANTS
+15. Construire une librairie de composants
+   Regroupe boutons, textes, champs et espacements dans des composants partagés, avec des tokens pour les couleurs et les tailles. Commence par les 5 composants les plus copiés-collés.
+16. À vérifier : Migrer vers la New Architecture
+   Vérifie la compatibilité de chaque librairie native (expo-doctor la contrôle pour toi), mets à jour celles qui bloquent, puis active la New Architecture sur une branche. Depuis React Native 0.82, l’ancienne architecture n’existe plus.
+   $ npx expo-doctor
+17. À vérifier : Tester les parties critiques
+   Commence par la logique qui coûte cher en cas de bug (paiement, auth, calculs) avec Jest et React Native Testing Library, et lance les tests à chaque pull request.
+18. Couvrir les parcours critiques en E2E
+   Écris un flow Maestro par parcours critique (inscription, connexion, paiement) et lance-les en CI sur chaque build de release.
+   $ maestro test .maestro/
+19. Passer les appels réseau sur TanStack Query
+   Commence par les écrans les plus chargés : useQuery remplace le trio fetch + useState + isLoading, avec le cache, le retry et le rafraîchissement inclus.
+20. Générer le client API depuis OpenAPI
+   Si ton backend expose un schéma OpenAPI, génère le client et les types avec Orval (il crée aussi les hooks TanStack Query), et relance la génération en CI.
+   $ npx orval
+21. À vérifier : Concevoir une stratégie offline-first
+   Liste les actions qui doivent marcher sans réseau, garde-les dans une queue persistée et rejoue-la avec retry quand le réseau revient. Les mutations en pause de TanStack Query couvrent une partie de ce cycle.
+22. À vérifier : Mettre à jour le SDK Expo
+   Monte d’un SDK à la fois, sur une branche, en suivant le guide de migration de chaque version. La deuxième commande aligne les versions des librairies.
+   $ npx expo install expo@latest && npx expo install --fix
+
+AMÉLIORATIONS
+23. À vérifier : Unifier les modals
+   Choisis un seul système (@gorhom/bottom-sheet, ou les modals natives d’Expo Router) et migre les autres implémentations écran par écran.
+24. À vérifier : Passer le scan sur react-native-vision-camera
+   Pour scanner des codes ou traiter l’image en temps réel, utilise react-native-vision-camera et ses frame processors.
+25. À vérifier : Passer les animations sur Reanimated
+   Réécris les animations liées aux gestes et au scroll avec Reanimated et react-native-gesture-handler, en animant transform et opacity. Elles restent fluides même quand le thread JS est occupé.
+26. Mettre en place Storybook
+   Installe Storybook for React Native et écris une story par composant partagé. Tu développes et revois l’UI sans naviguer dans toute l’app.
+27. Centraliser les logs
+   Crée un seul module logger (debug, info, warn, error) qui écrit en console en dev et envoie à Sentry en production, puis remplace les console.log au fil de l’eau.
+28. À vérifier : Exposer un statut typé dans les hooks data
+   Remplace les booléens isLoading, isError et isSuccess empilés par un seul champ status (idle, loading, error, success). Les états impossibles disparaissent.
+29. Limiter les re-renders du state global
+   Découpe les gros Contexts par domaine, ou passe sur un store à sélecteurs (Zustand, Jotai) pour que chaque composant ne s’abonne qu’à ce qu’il lit. Le Profiler de React DevTools montre qui re-rend.
+30. À vérifier : Adapter la précision du GPS en arrière-plan
+   Baisse la précision et augmente la distance minimale quand l’utilisateur ne bouge pas (expo-location : accuracy, distanceInterval, deferredUpdatesInterval). La batterie tient plus longtemps.
+31. À vérifier : Mesurer la taille du bundle JS
+   Exporte le bundle avec Expo Atlas pour voir ce qui pèse, puis retire ou charge à la demande les plus grosses dépendances.
+   $ EXPO_ATLAS=true npx expo export --platform ios
+32. Mesurer le Time To Interaction
+   Mesure le démarrage avec Flashlight sur un Android d’entrée de gamme, note le score, et refais la mesure après chaque grosse dépendance ajoutée.
+
+Refais l’audit dans 3 mois pour mesurer tes progrès :
+https://weshipit.today/audit-gratuit
+
+Tu veux qu’on fasse l’audit complet sur ton code ? https://weshipit.today/audit
+
+Bloqué sur un point ? Réponds avec son numéro.
+
+Ne plus recevoir d’emails: https://weshipit.today/api/lm/unsubscribe?t=abc",
+}
+`;
