@@ -13,6 +13,17 @@
  *   node apps/web/scripts/check-seo.mjs            # errors fail the run
  *   node apps/web/scripts/check-seo.mjs --warnings # also list warnings
  *   node apps/web/scripts/check-seo.mjs --json     # machine-readable report
+ *
+ * Head snapshot, the safety net of the App Router migration
+ * (docs/app-router/plan.md). It records what search engines and social
+ * networks read on every page: <html lang>, title, meta tags, canonical,
+ * hreflang and icon links, and the JSON-LD.
+ *   node apps/web/scripts/check-seo.mjs --snapshot        # write the file
+ *   node apps/web/scripts/check-seo.mjs --snapshot-check  # diff the build
+ *                                                         # against the file
+ *
+ * Both routers are read: `server/pages` (Pages Router) and `server/app`
+ * (App Router).
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -25,20 +36,25 @@ const appDir = path.resolve(here, '..');
 const repoRoot = path.resolve(appDir, '../..');
 const distDir = path.join(repoRoot, 'dist/apps/web/.next');
 const pagesDir = path.join(distDir, 'server/pages');
+const appOutDir = path.join(distDir, 'server/app');
 const publicDir = path.join(appDir, 'public');
+const snapshotFile = path.join(here, 'head-snapshot.json');
 
 const args = new Set(process.argv.slice(2));
 const showWarnings = args.has('--warnings');
 const asJson = args.has('--json');
+const writeSnapshot = args.has('--snapshot');
+const checkSnapshot = args.has('--snapshot-check');
 
-if (!fs.existsSync(pagesDir)) {
+if (!fs.existsSync(pagesDir) && !fs.existsSync(appOutDir)) {
   console.error(
-    `No build output at ${pagesDir}. Run \`yarn web:build\` first.`,
+    `No build output in ${distDir}/server. Run \`yarn web:build\` first.`,
   );
   process.exit(2);
 }
 
 function walk(dir) {
+  if (!fs.existsSync(dir)) return [];
   return fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
     const full = path.join(dir, entry.name);
     return entry.isDirectory() ? walk(full) : [full];
@@ -46,15 +62,27 @@ function walk(dir) {
 }
 
 const routeOf = (file) => {
-  const rel = path.relative(pagesDir, file).replace(/\.html$/, '');
+  const base = file.startsWith(`${appOutDir}${path.sep}`)
+    ? appOutDir
+    : pagesDir;
+  const rel = path.relative(base, file).replace(/\.html$/, '');
   if (rel === 'index') return '/';
   return `/${rel.replace(/\/index$/, '')}`;
 };
 
-const htmlFiles = walk(pagesDir).filter(
-  (file) => file.endsWith('.html') && !/\/(404|500)\.html$/.test(file),
+// App Router internals (`_not-found.html`, `_global-error.html`) and the
+// error pages are not routes a visitor or a crawler can ask for.
+const htmlFiles = [...walk(pagesDir), ...walk(appOutDir)].filter(
+  (file) =>
+    file.endsWith('.html') &&
+    !/\/(404|500)\.html$/.test(file) &&
+    !path.basename(file).startsWith('_'),
 );
 const pageRoutes = new Set(htmlFiles.map(routeOf));
+if (pageRoutes.size !== htmlFiles.length) {
+  console.error('The same route is prerendered by both routers.');
+  process.exit(2);
+}
 
 // Server-rendered routes (getServerSideProps / API) have no .html file.
 const routesManifest = JSON.parse(
@@ -63,10 +91,18 @@ const routesManifest = JSON.parse(
 const prerenderManifest = JSON.parse(
   fs.readFileSync(path.join(distDir, 'prerender-manifest.json'), 'utf8'),
 );
-const pagesManifest = JSON.parse(
-  fs.readFileSync(path.join(distDir, 'server/pages-manifest.json'), 'utf8'),
-);
-const serverRoutes = new Set(Object.keys(pagesManifest));
+const readManifest = (name) => {
+  const file = path.join(distDir, 'server', name);
+  return fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) : {};
+};
+// App Router keys look like `/(en)/plan/[slug]/page`: drop the route groups
+// and the trailing file name to get the route.
+const appRouteOf = (key) =>
+  key.replace(/\/\([^/]+\)/g, '').replace(/\/(page|route)$/, '') || '/';
+const serverRoutes = new Set([
+  ...Object.keys(readManifest('pages-manifest.json')),
+  ...Object.keys(readManifest('app-paths-manifest.json')).map(appRouteOf),
+]);
 // Dynamic SSG routes are `fallback: false`, so every valid path already has
 // an .html file. Only dynamic routes rendered on demand need a pattern match.
 const onDemandRoutes = (routesManifest.dynamicRoutes ?? [])
@@ -121,10 +157,84 @@ const warnings = [];
 const titles = new Map();
 const descriptions = new Map();
 const pages = [];
+const heads = {};
+
+// Tags the framework writes for itself; they say nothing about the page.
+const FRAMEWORK_META = new Set(['next-head-count', 'next-size-adjust']);
+const SNAPSHOT_LINKS = new Set([
+  'alternate',
+  'apple-touch-icon',
+  'canonical',
+  'icon',
+  'manifest',
+  'mask-icon',
+  'shortcut icon',
+]);
+
+/**
+ * What a crawler reads in the page, whichever router rendered it. Tag order
+ * and attribute order are left out on purpose: the two routers write the
+ * same tags in a different order.
+ */
+function headOf(document) {
+  const meta = {};
+  for (const element of document.querySelectorAll('meta')) {
+    const names = ['charset', 'name', 'property', 'http-equiv']
+      .filter((attribute) => element.hasAttribute(attribute))
+      .map((attribute) =>
+        attribute === 'charset' ? 'charset' : element.getAttribute(attribute),
+      );
+    const key = names.join(' + ');
+    if (!key || names.some((name) => FRAMEWORK_META.has(name))) continue;
+    let value =
+      element.getAttribute('content') ?? element.getAttribute('charset') ?? '';
+    // `index,follow` and `index, follow` mean the same thing.
+    if (key === 'robots' || key === 'googlebot')
+      value = value.replace(/\s+/g, '').toLowerCase();
+    if (key === 'charset') value = value.toLowerCase();
+    (meta[key] ??= []).push(value);
+  }
+
+  const links = {};
+  for (const element of document.querySelectorAll('link[rel]')) {
+    const rel = element.getAttribute('rel').toLowerCase();
+    if (!SNAPSHOT_LINKS.has(rel)) continue;
+    const detail = ['hreflang', 'sizes', 'type', 'color', 'media']
+      .filter((attribute) => element.hasAttribute(attribute))
+      .map((attribute) => `${attribute}=${element.getAttribute(attribute)}`);
+    (links[rel] ??= []).push(
+      [element.getAttribute('href') ?? '', ...detail].join(' '),
+    );
+  }
+  for (const list of Object.values(links)) list.sort();
+
+  const jsonLd = [
+    ...document.querySelectorAll('script[type="application/ld+json"]'),
+  ].map((script) => {
+    try {
+      return JSON.parse(script.textContent);
+    } catch {
+      return { invalid: script.textContent };
+    }
+  });
+
+  const sorted = (object) =>
+    Object.fromEntries(
+      Object.entries(object).sort(([a], [b]) => a.localeCompare(b)),
+    );
+  return {
+    lang: document.documentElement.getAttribute('lang') ?? '',
+    title: document.querySelector('title')?.textContent ?? '',
+    meta: sorted(meta),
+    links: sorted(links),
+    jsonLd,
+  };
+}
 
 for (const file of htmlFiles) {
   const route = routeOf(file);
   const { document } = new JSDOM(fs.readFileSync(file, 'utf8')).window;
+  if (writeSnapshot || checkSnapshot) heads[route] = headOf(document);
   const robots =
     document.querySelector('meta[name="robots"]')?.getAttribute('content') ??
     'index,follow';
@@ -267,7 +377,63 @@ for (const [description, routes] of descriptions) {
     });
 }
 
-if (asJson) {
+/** Every leaf that differs between two JSON values, as readable lines. */
+function differences(before, after, trail = '') {
+  if (JSON.stringify(before) === JSON.stringify(after)) return [];
+  const isObject = (value) =>
+    value !== null && typeof value === 'object' && !Array.isArray(value);
+  if (isObject(before) && isObject(after)) {
+    return [...new Set([...Object.keys(before), ...Object.keys(after)])]
+      .sort()
+      .flatMap((key) =>
+        differences(before[key], after[key], trail ? `${trail}.${key}` : key),
+      );
+  }
+  const show = (value) => {
+    if (value === undefined) return '(none)';
+    const text = JSON.stringify(value);
+    return text.length > 240 ? `${text.slice(0, 240)}…` : text;
+  };
+  return [`${trail}\n      - ${show(before)}\n      + ${show(after)}`];
+}
+
+if (writeSnapshot) {
+  // One page per line: a changed page is one changed line in a git diff.
+  const lines = Object.entries(heads)
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(
+      ([route, head]) => `${JSON.stringify(route)}: ${JSON.stringify(head)}`,
+    );
+  fs.writeFileSync(snapshotFile, `{\n${lines.join(',\n')}\n}\n`);
+  console.log(
+    `head snapshot: ${lines.length} pages → ${path.relative(process.cwd(), snapshotFile)}`,
+  );
+} else if (checkSnapshot) {
+  if (!fs.existsSync(snapshotFile)) {
+    console.error(`No snapshot at ${snapshotFile}. Run with --snapshot first.`);
+    process.exit(2);
+  }
+  const expected = JSON.parse(fs.readFileSync(snapshotFile, 'utf8'));
+  const routes = [
+    ...new Set([...Object.keys(expected), ...Object.keys(heads)]),
+  ].sort();
+  let changed = 0;
+  for (const route of routes) {
+    const lines = !(route in heads)
+      ? ['page is no longer prerendered']
+      : !(route in expected)
+        ? ['new page, not in the snapshot']
+        : differences(expected[route], heads[route]);
+    if (!lines.length) continue;
+    changed += 1;
+    console.log(`\n✖ ${route}`);
+    for (const line of lines) console.log(`    ${line}`);
+  }
+  console.log(
+    `\n${routes.length} pages compared with the head snapshot: ${changed} differ.`,
+  );
+  process.exitCode = changed ? 1 : 0;
+} else if (asJson) {
   console.log(JSON.stringify({ errors, pages, warnings }, null, 2));
 } else {
   const group = (list) =>
@@ -291,4 +457,5 @@ if (asJson) {
 }
 
 // exitCode, not exit(): exit() can cut off a large --json report when piped.
-process.exitCode = errors.length ? 1 : 0;
+// The snapshot modes set their own exit code above.
+if (!writeSnapshot && !checkSnapshot) process.exitCode = errors.length ? 1 : 0;

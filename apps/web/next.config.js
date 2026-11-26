@@ -5,7 +5,7 @@ const { PHASE_DEVELOPMENT_SERVER } = require('next/constants');
 /** Slug of the most recent weekly plan, e.g. `2026-W42`. */
 function latestPlanSlug() {
   const [latest] = fs
-    .readdirSync(path.join(__dirname, 'pages/plan'))
+    .readdirSync(path.join(__dirname, 'content/plan'))
     .filter((file) => file.endsWith('.md'))
     .sort((a, b) => b.localeCompare(a, undefined, { sensitivity: 'base' }));
   return latest?.replace(/\.md$/, '');
@@ -17,6 +17,9 @@ function latestPlanSlug() {
 const nextConfig = {
   experimental: {
     agentUpgrade: 'security',
+    // app/global-not-found.tsx: the 404 page of a site with two root layouts
+    // (docs/app-router/plan.md, decision 2).
+    globalNotFound: true,
   },
   // The OG routes read fonts and logos with fs at runtime; make sure Vercel
   // bundles those files with the functions.

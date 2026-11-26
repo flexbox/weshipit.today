@@ -6,3 +6,5 @@
 /.nx/cache
 /.nx/workspace-data
 .nx/self-healing
+# Head snapshot written by apps/web/scripts/check-seo.mjs --snapshot
+apps/web/scripts/head-snapshot.json

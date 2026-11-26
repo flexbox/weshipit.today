@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 import { Button } from '../button/button';
 import { ArrowRightIcon } from '@heroicons/react/20/solid';

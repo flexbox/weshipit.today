@@ -1,25 +1,17 @@
-import { Footer, Header, HeaderLinksProps } from '@weshipit/ui';
 import NextHead, { NextHeadProps, PodcastOgImageData } from './next-head';
-import BannerProductHunt from '../components/banner-product-hunt/banner-product-hunt';
+import { PageShell, PageShellProps } from './page-shell';
 
-interface LayoutProps extends NextHeadProps {
-  withHeader?: boolean;
-  withFooter?: boolean;
-  withContainer?: boolean;
-  children: React.ReactNode;
-  withProductHunt?: boolean;
-  navigation?: HeaderLinksProps[];
-  callToActionLink?: HeaderLinksProps;
+interface LayoutProps extends NextHeadProps, PageShellProps {
   ogImagePodcast?: PodcastOgImageData;
-  callToActionButton?: HeaderLinksProps;
 }
 
+/**
+ * Pages Router only: the page shell plus its SEO tags. App Router pages use
+ * `<PageShell>` and export `metadata` (see utils/seo/metadata.ts). This
+ * component goes away with the last page in `pages/`.
+ */
 export function Layout({
-  callToActionButton,
-  callToActionLink,
-  children,
   locale,
-  navigation,
   noindex,
   ogImageAlt,
   ogImageKicker,
@@ -28,10 +20,7 @@ export function Layout({
   ogImageTitle,
   seoDescription,
   seoTitle,
-  withContainer = false,
-  withFooter = false,
-  withHeader = false,
-  withProductHunt = false,
+  ...shell
 }: LayoutProps) {
   return (
     <>
@@ -46,25 +35,7 @@ export function Layout({
         locale={locale}
         noindex={noindex}
       />
-      <div className="flex min-h-screen flex-col justify-between">
-        {withProductHunt && <BannerProductHunt />}
-        {withHeader && (
-          <Header
-            navigation={navigation}
-            callToActionButton={callToActionButton}
-            callToActionLink={callToActionLink}
-          />
-        )}
-
-        <main id="main-content" className="mb-auto">
-          {withContainer ? (
-            <div className="mx-auto max-w-7xl px-4 sm:px-6">{children}</div>
-          ) : (
-            children
-          )}
-        </main>
-        {withFooter && <Footer />}
-      </div>
+      <PageShell {...shell} />
     </>
   );
 }

@@ -1,13 +1,16 @@
+'use client';
+
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 
-/** The wordmark. A right-click opens the brand page with the logo assets. */
+/**
+ * The wordmark. A right-click opens the brand page with the logo assets.
+ * A plain page load is enough for this shortcut, and it keeps the logo
+ * independent of which Next.js router renders the page.
+ */
 export function HeaderLogo() {
-  const router = useRouter();
-
   const handleContextMenu = (e: React.MouseEvent) => {
     e.preventDefault();
-    router.push('/brand');
+    window.location.assign('/brand');
   };
 
   return (
