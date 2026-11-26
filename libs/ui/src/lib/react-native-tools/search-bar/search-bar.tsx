@@ -1,3 +1,5 @@
+'use client';
+
 export interface SearchBarProps {
   searchTerm: string;
   handleChange: (e: any) => void;

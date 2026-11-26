@@ -1,13 +1,16 @@
 import { render, screen } from '@testing-library/react';
-import mockRouter from 'next-router-mock';
 
 import TypeFilter from './type-filter';
 
-jest.mock('next/router', () => jest.requireActual('next-router-mock'));
+// next-router-mock 0.9 only covers `next/router`.
+let mockSearch = '';
+jest.mock('next/navigation', () => ({
+  useSearchParams: () => new URLSearchParams(mockSearch),
+}));
 
 describe('TypeFilter', () => {
   beforeEach(() => {
-    mockRouter.setCurrentUrl('/react-native-tools');
+    mockSearch = '';
   });
 
   it('should render successfully', () => {
@@ -17,7 +20,7 @@ describe('TypeFilter', () => {
   });
 
   it('should offer to reset the filter when a type is selected', () => {
-    mockRouter.setCurrentUrl('/react-native-tools?type=Analytics');
+    mockSearch = 'type=Analytics';
     render(<TypeFilter numberOfTools={12} />);
     expect(screen.getByText('Reset filter')).toBeTruthy();
   });

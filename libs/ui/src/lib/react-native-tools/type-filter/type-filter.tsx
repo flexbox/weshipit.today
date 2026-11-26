@@ -1,5 +1,7 @@
+'use client';
+
 import { ChevronRightIcon, XMarkIcon } from '@heroicons/react/20/solid';
-import { useRouter } from 'next/router';
+import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 
 import { Text } from '../../text/text';
@@ -8,8 +10,9 @@ import { types } from '../../tool-list/get-variant-from-type';
 import { Button } from '../../button/button';
 
 export function TypeFilter({ numberOfTools }: { numberOfTools: number }) {
-  const router = useRouter();
-  const selectedType = router.query['type'] as string | undefined;
+  // Works in both routers. In the Pages Router it is empty until the router
+  // is ready, which is how `router.query` behaved on this static page.
+  const selectedType = useSearchParams()?.get('type') ?? undefined;
   const canResetFilter = !!selectedType;
 
   return (

@@ -1,6 +1,11 @@
-import { LinkButton, Text } from '@weshipit/ui';
 import { Layout } from '../components/layout';
+import { NotFoundContent } from '../components/not-found-content';
 
+/**
+ * Pages Router 404: only rendered when a page in `pages/` answers
+ * `notFound: true`. A URL that matches no route at all is handled by
+ * `app/global-not-found.tsx`.
+ */
 export default function NotFoundPage() {
   return (
     <Layout
@@ -13,17 +18,7 @@ export default function NotFoundPage() {
       ogImageKicker="404"
       noindex
     >
-      <div className="m-auto mb-64 w-2/3 py-24">
-        <Text variant="h2" as="h1" className="mb-12">
-          Oh oh. There is nothing to see here.
-        </Text>
-        <Text variant="p2" as="p" className="mb-12">
-          The page you requested does not exist.
-        </Text>
-        <LinkButton href="/" size="xl">
-          Go back to homepage
-        </LinkButton>
-      </div>
+      <NotFoundContent />
     </Layout>
   );
 }

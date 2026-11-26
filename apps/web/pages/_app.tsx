@@ -1,14 +1,13 @@
 import { AppProps } from 'next/app';
-import { Inter, Space_Grotesk } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import { DefaultSeo } from 'next-seo';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
-import { initAnalytics } from '../utils/analytics';
+import { fontClassName } from '../utils/fonts';
 import { langForPage } from '../utils/page-lang';
 
-import './styles.css';
+import '../styles/globals.css';
 import '../components/anatomy/kit/iso.css';
 import '../components/anatomy/figure.css';
 import '../components/glossary-code.css';
@@ -18,27 +17,8 @@ import '../components/anatomy/expo/expo-figure.css';
 import '../components/anatomy/hermes/hermes-figure.css';
 import '../components/anatomy/metro/metro-figure.css';
 
-const inter = Inter({
-  display: 'swap',
-  style: ['normal'],
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
-});
-
-const spaceGrotesk = Space_Grotesk({
-  display: 'swap',
-  style: ['normal'],
-  subsets: ['latin'],
-  variable: '--font-space-grotesk',
-  weight: ['700'],
-});
-
 function CustomApp({ Component, pageProps }: AppProps) {
   const { pathname } = useRouter();
-
-  useEffect(() => {
-    initAnalytics();
-  }, []);
 
   // _document only renders on the server: keep <html lang> right on
   // client-side navigations between English and French pages.
@@ -64,9 +44,7 @@ function CustomApp({ Component, pageProps }: AppProps) {
           site: '@flexbox_',
         }}
       />
-      <div
-        className={`${inter.className} ${spaceGrotesk.variable} antialiased`}
-      >
+      <div className={fontClassName}>
         <Component {...pageProps} />
       </div>
       <Analytics />

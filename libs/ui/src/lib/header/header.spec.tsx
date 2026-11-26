@@ -1,12 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import { useRouter } from 'next/router';
 
 import Header from './header';
-
-// Mock Next.js router
-jest.mock('next/router', () => ({
-  useRouter: jest.fn(),
-}));
 
 describe('Header', () => {
   beforeEach(() => {
@@ -16,12 +10,6 @@ describe('Header', () => {
       addEventListener: jest.fn(),
       matches: false,
       removeEventListener: jest.fn(),
-    });
-    (useRouter as jest.Mock).mockReturnValue({
-      push: jest.fn(),
-      pathname: '/',
-      query: {},
-      asPath: '/',
     });
   });
 

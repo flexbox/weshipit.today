@@ -1,4 +1,5 @@
-import { Button, Text } from '@weshipit/ui';
+import { Button } from '@weshipit/ui/button/button';
+import { Text } from '@weshipit/ui/text/text';
 
 export function BannerProductHunt() {
   return (

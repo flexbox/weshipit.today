@@ -1,3 +1,5 @@
+'use client';
+
 import md5 from 'md5';
 
 interface AvatarProps {

@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@weshipit/ui": ["libs/ui/src/index.ts"],
+      "@weshipit/ui/*": ["libs/ui/src/lib/*"],
       "@weshipit/utils": ["libs/utils/src/index.ts"]
     },
     "strict": false,

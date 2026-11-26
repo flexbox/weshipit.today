@@ -9,7 +9,8 @@
  *
  * Every route comes from the same sources the pages read in
  * getStaticPaths, so a new tool, glossary term or episode lands in the
- * sitemap automatically. New top-level pages are picked up from pages/;
+ * sitemap automatically. New top-level pages are picked up from pages/
+ * (Pages Router) and app/ (App Router) while the site is being migrated;
  * add them to EXCLUDED_PAGES if they must stay out of the index.
  *
  * Run with: node apps/web/scripts/generate-sitemap.mts
@@ -24,6 +25,8 @@ import { tools } from '../fixtures/tools.fixture.ts';
 const SITE_URL = 'https://weshipit.today';
 const appDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const pagesDir = path.join(appDir, 'pages');
+const appRouterDir = path.join(appDir, 'app');
+const planDir = path.join(appDir, 'content/plan');
 
 /**
  * Pages that exist but must not be indexed. Each of them also renders
@@ -71,8 +74,9 @@ function isoWeekEnd(slug: string): string | undefined {
   return monday.toISOString().slice(0, 10);
 }
 
-/** Static routes: pages/foo.tsx → /foo, pages/foo/index.tsx → /foo. */
-export function staticPageRoutes(): string[] {
+/** Pages Router: pages/foo.tsx → /foo, pages/foo/index.tsx → /foo. */
+function pagesRouterRoutes(): string[] {
+  if (!fs.existsSync(pagesDir)) return [];
   const routes: string[] = [];
   for (const entry of fs.readdirSync(pagesDir, { withFileTypes: true })) {
     if (entry.isFile() && /\.tsx$/.test(entry.name)) {
@@ -87,7 +91,47 @@ export function staticPageRoutes(): string[] {
       routes.push(`/${entry.name}`);
     }
   }
-  return routes.filter((route) => !EXCLUDED_PAGES.includes(route));
+  return routes;
+}
+
+/**
+ * App Router: app/(en)/page.tsx → /, app/(fr)/bonjour/page.tsx → /bonjour.
+ * Route groups `(name)` are not part of the URL. Like the Pages Router
+ * list above, only the home page and one-segment routes are returned:
+ * dynamic routes come from their data source, and nested static pages
+ * (the HQ screens) are private.
+ */
+function appRouterRoutes(
+  dir = appRouterDir,
+  segments: string[] = [],
+): string[] {
+  if (!fs.existsSync(dir)) return [];
+  const routes: string[] = [];
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    if (entry.isFile() && /^page\.(tsx|jsx|ts|js)$/.test(entry.name)) {
+      if (segments.length <= 1) routes.push(`/${segments.join('/')}`);
+    } else if (entry.isDirectory()) {
+      const { name } = entry;
+      // Dynamic segments, private folders, parallel and intercepted routes.
+      if (/^[[_@]/.test(name) || name === 'api') continue;
+      const isGroup = /^\(.+\)$/.test(name);
+      if (isGroup && name.startsWith('(.')) continue;
+      routes.push(
+        ...appRouterRoutes(
+          path.join(dir, name),
+          isGroup ? segments : [...segments, name],
+        ),
+      );
+    }
+  }
+  return routes;
+}
+
+/** Static routes of both routers, minus the pages kept out of the index. */
+export function staticPageRoutes(): string[] {
+  return [...new Set([...pagesRouterRoutes(), ...appRouterRoutes()])].filter(
+    (route) => !EXCLUDED_PAGES.includes(route),
+  );
 }
 
 function glossaryEntries(): SitemapEntry[] {
@@ -114,7 +158,7 @@ function podcastEntries(): SitemapEntry[] {
 
 function planEntries(): SitemapEntry[] {
   return fs
-    .readdirSync(path.join(pagesDir, 'plan'))
+    .readdirSync(planDir)
     .filter((file) => file.endsWith('.md'))
     .map((file) => {
       const slug = file.replace(/\.md$/, '');

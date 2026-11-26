@@ -1,8 +1,7 @@
 import { Hyperlink } from '../hyperlink/hyperlink';
-import Link from 'next/link';
 import { JSX, SVGProps } from 'react';
-import { useRouter } from 'next/router';
 import LinkButton from '../button/link-button';
+import { FooterNavLink } from './footer-nav-link';
 
 const navigation = {
   services: [
@@ -113,9 +112,6 @@ const footerColumns = [
 ];
 
 function FooterLink(item: { name: string; href: string }) {
-  const { pathname } = useRouter();
-  const isActive = pathname === item.href;
-
   if (item.href.startsWith('https')) {
     return (
       <Hyperlink
@@ -128,18 +124,7 @@ function FooterLink(item: { name: string; href: string }) {
     );
   }
 
-  return (
-    <Link
-      href={item.href}
-      className={
-        isActive
-          ? 'text-base text-slate-900 dark:text-white'
-          : 'text-base text-slate-400 hover:text-slate-900 dark:hover:text-white'
-      }
-    >
-      {item.name}
-    </Link>
-  );
+  return <FooterNavLink href={item.href} name={item.name} />;
 }
 
 function AISearch() {
