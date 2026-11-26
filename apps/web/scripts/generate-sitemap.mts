@@ -157,6 +157,17 @@ function podcastEntries(): SitemapEntry[] {
 }
 
 function planEntries(): SitemapEntry[] {
+  // Temporary migration guard: remove when legacy plan PRs can no longer merge.
+  const legacyDir = path.join(pagesDir, 'plan');
+  const legacyPlans = fs.existsSync(legacyDir)
+    ? fs.readdirSync(legacyDir).filter((file) => file.endsWith('.md'))
+    : [];
+  if (legacyPlans.length > 0) {
+    throw new Error(
+      `Legacy weekly plans found in apps/web/pages/plan: ${legacyPlans.join(', ')}. Move them to apps/web/content/plan before building.`,
+    );
+  }
+
   return fs
     .readdirSync(planDir)
     .filter((file) => file.endsWith('.md'))
