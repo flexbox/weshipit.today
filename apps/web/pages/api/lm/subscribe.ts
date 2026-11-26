@@ -16,10 +16,15 @@ import {
 } from '../../../utils/hq/emails';
 import { subscribeSchema } from '../../../utils/hq/schemas';
 import { sendEmail } from '../../../utils/hq/shipmail';
-import { newLeadMessage, notifySlack } from '../../../utils/hq/slack';
+import {
+  failureMessage,
+  newLeadMessage,
+  notifySlack,
+} from '../../../utils/hq/slack';
 import { getHqAdmin } from '../../../utils/hq/supabase';
 
-type Response = { ok: true; token: string | null } | { error: string };
+type Response =
+  { ok: true; token: string | null } | { error: string; code?: 'email_failed' };
 
 const UNIQUE_VIOLATION = '23505';
 
@@ -45,8 +50,12 @@ export default async function handler(
   }
   const input = parsed.data;
 
-  // Honeypot filled: pretend it worked and store nothing.
-  if (input.website) return res.status(200).json({ ok: true, token: null });
+  // Honeypot filled: pretend it worked and store nothing. Logged, because a
+  // browser autofilling the field would drop a real signup the same way.
+  if (input.website) {
+    console.warn(`[hq] subscribe: honeypot filled, dropped (${input.source})`);
+    return res.status(200).json({ ok: true, token: null });
+  }
 
   const db = getHqAdmin();
   const consentLabel = consentLabelFor(input.source, input.locale);
@@ -163,47 +172,70 @@ export default async function handler(
     });
   }
 
-  const sends: Promise<void>[] = [
-    sendEmail({
-      ...content,
-      idempotencyKey: `visitor-${lead.id}`,
-      metadata: { kind: 'visitor', lead_id: lead.id },
-      to: { address: lead.email, name: lead.first_name ?? undefined },
-      unsubscribeUrl,
-    }),
-  ];
-
-  if (isNew) {
-    sends.push(
-      notifySlack(
-        newLeadMessage({
-          email: lead.email,
-          hqUrl: `${origin}/hq/leads`,
-          magnetTitle: magnet?.title,
-          source: lead.source,
-        }),
-      ),
-    );
-  }
-
+  const hqUrl = `${origin}/hq/leads`;
+  const emailSend = sendEmail({
+    ...content,
+    idempotencyKey: `visitor-${lead.id}`,
+    metadata: { kind: 'visitor', lead_id: lead.id },
+    to: { address: lead.email, name: lead.first_name ?? undefined },
+    unsubscribeUrl,
+  });
   // Shipmail never re-adds someone who left the audience, so this is safe to
   // repeat for a known lead.
-  if (input.marketing_consent) {
-    sends.push(
-      addToAudience({
+  const audienceAdd = input.marketing_consent
+    ? addToAudience({
         email: lead.email,
         firstName: lead.first_name,
         source: lead.source,
-      }),
-    );
+      })
+    : Promise.resolve();
+  const slackPing = isNew
+    ? notifySlack(
+        newLeadMessage({
+          email: lead.email,
+          hqUrl,
+          magnetTitle: magnet?.title,
+          score,
+          source: lead.source,
+        }),
+      )
+    : Promise.resolve();
+
+  const [email, audience, slack] = await Promise.allSettled([
+    emailSend,
+    audienceAdd,
+    slackPing,
+  ]);
+  if (slack.status === 'rejected') {
+    console.error('[hq] subscribe: Slack ping failed', slack.reason);
+  }
+  // A failed email or audience add is logged and pinged to me on Slack.
+  for (const [failed, result] of [
+    ['email', email],
+    ['audience', audience],
+  ] as const) {
+    if (result.status === 'rejected') {
+      console.error(`[hq] subscribe: ${failed} failed`, result.reason);
+      await notifySlack(
+        failureMessage({
+          email: lead.email,
+          failed,
+          hqUrl,
+          reason: result.reason,
+        }),
+      ).catch((error) =>
+        console.error('[hq] subscribe: Slack alert failed', error),
+      );
+    }
   }
 
-  // The visitor already sees the resource on the page, so a failed email,
-  // Slack ping or audience add is logged, not returned as an error.
-  for (const result of await Promise.allSettled(sends)) {
-    if (result.status === 'rejected') {
-      console.error('[hq] subscribe: side effect failed', result.reason);
-    }
+  // With a magnet the visitor sees the resource on the page anyway. Without
+  // one (audits, newsletter) the email is the deliverable, so the form must
+  // say it failed. The lead is kept: a retry reuses it and sends again.
+  if (email.status === 'rejected' && !magnet) {
+    return res
+      .status(502)
+      .json({ code: 'email_failed', error: 'The email could not be sent' });
   }
 
   return res

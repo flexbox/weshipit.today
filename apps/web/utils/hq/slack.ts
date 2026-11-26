@@ -8,7 +8,19 @@ export interface NewLeadInput {
   hqUrl: string;
   source: string;
   magnetTitle?: string | null;
+  /** Quiz score out of 100, for self-audit leads. */
+  score?: number | null;
 }
+
+/** Self-audit sources are `audit:<quiz id>`; Slack shows them as "audit". */
+const AUDIT_PREFIX = 'audit:';
+
+/** Names of the self-audit quizzes, by the id in their source. */
+const AUDIT_NAMES: Record<string, string> = {
+  'security-audit': 'React Native security checklist',
+  'spm-readiness': 'SPM readiness check',
+  'stack-audit': 'React Native stack audit',
+};
 
 /** Slack mrkdwn treats &, < and > as control characters. */
 export function escapeSlack(value: string): string {
@@ -21,14 +33,49 @@ export function escapeSlack(value: string): string {
 /** Pure: the webhook payload for one new lead. */
 export function newLeadMessage(input: NewLeadInput): { text: string } {
   const bold = (value: string) => `*${escapeSlack(value)}*`;
+  const auditId = input.source.startsWith(AUDIT_PREFIX)
+    ? input.source.slice(AUDIT_PREFIX.length)
+    : null;
+  const source = auditId === null ? input.source : 'audit';
+  const resource =
+    input.magnetTitle ||
+    (auditId === null ? null : (AUDIT_NAMES[auditId] ?? auditId));
   return {
     text: [
-      `Nouveau lead: ${bold(input.magnetTitle || input.source)}`,
-      `Source: ${bold(input.source)}`,
-      `Ressource: ${bold(input.magnetTitle || '—')}`,
+      `Nouveau lead: ${bold(resource || source)}`,
+      `Source: ${bold(source)}`,
+      `Ressource: ${bold(resource || '—')}`,
+      ...(typeof input.score === 'number'
+        ? [`Score: ${bold(`${input.score}/100`)}`]
+        : []),
       `Email: ${bold(input.email)}`,
       '',
       `<${input.hqUrl}|Tous les leads>`,
+    ].join('\n'),
+  };
+}
+
+/**
+ * Pure: an alert when a lead was saved but its email or its Shipmail
+ * audience add failed, so I can fix it by hand.
+ */
+export function failureMessage(input: {
+  email: string;
+  failed: 'email' | 'audience';
+  reason: unknown;
+  hqUrl: string;
+}): { text: string } {
+  const what =
+    input.failed === 'email'
+      ? 'Email not sent'
+      : 'Not added to the Shipmail audience';
+  const reason =
+    input.reason instanceof Error ? input.reason.message : String(input.reason);
+  return {
+    text: [
+      `:warning: ${what} · ${escapeSlack(input.email)}`,
+      `Reason: ${escapeSlack(reason.slice(0, 300))}`,
+      `<${input.hqUrl}|Open HQ leads>`,
     ].join('\n'),
   };
 }

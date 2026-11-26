@@ -17,6 +17,8 @@ export interface SelfAuditLabels {
   step: string;
   next: string;
   error: string;
+  /** Shown when the lead was saved but the report email failed. */
+  emailError: string;
   submit: string;
   answered: string;
   previous: string;
@@ -41,6 +43,8 @@ export const FR_LABELS: SelfAuditLabels = {
   emailLabel: 'Email pro',
   emailPlaceholder: 'toi@entreprise.com',
   error: 'Une erreur est survenue. Réessayez, ou écrivez-nous directement.',
+  emailError:
+    'Le rapport n’a pas pu être envoyé. Réessayez dans une minute, ou écrivez à david@weshipit.today.',
   nameLabel: 'Prénom',
   namePlaceholder: 'Ton prénom',
   next: 'Suivant :',
@@ -62,6 +66,8 @@ export const EN_LABELS: SelfAuditLabels = {
   emailLabel: 'Work email',
   emailPlaceholder: 'you@company.com',
   error: 'Something went wrong. Try again, or email us directly.',
+  emailError:
+    'Your report could not be sent. Try again in a minute, or write to david@weshipit.today.',
   nameLabel: 'First name',
   namePlaceholder: 'Your first name',
   next: 'Next:',
@@ -130,7 +136,7 @@ export function SelfAuditQuiz({
   const [currentStep, setCurrentStep] = useState(0);
   const [showResults, setShowResults] = useState(false);
   const [formStatus, setFormStatus] = useState<
-    'idle' | 'submitting' | 'success' | 'error'
+    'idle' | 'submitting' | 'success' | 'error' | 'emailError'
   >('idle');
 
   const isSent = formStatus === 'success';
@@ -216,12 +222,17 @@ export function SelfAuditQuiz({
           utm_campaign: params.get('utm_campaign') ?? undefined,
           utm_medium: params.get('utm_medium') ?? undefined,
           utm_source: params.get('utm_source') ?? undefined,
-          website: form.get('website'),
+          website: form.get('hp'),
         }),
         headers: { 'Content-Type': 'application/json' },
         method: 'POST',
       });
-      setFormStatus(response.ok ? 'success' : 'error');
+      if (response.ok) {
+        setFormStatus('success');
+      } else {
+        const body = await response.json().catch(() => null);
+        setFormStatus(body?.code === 'email_failed' ? 'emailError' : 'error');
+      }
     } catch {
       setFormStatus('error');
     }
@@ -371,7 +382,7 @@ export function SelfAuditQuiz({
                 <div aria-hidden="true" className="absolute -left-[9999px]">
                   <input
                     type="text"
-                    name="website"
+                    name="hp"
                     tabIndex={-1}
                     autoComplete="off"
                   />
@@ -400,13 +411,16 @@ export function SelfAuditQuiz({
                       : labels.submit}
                 </Button>
 
-                {formStatus === 'error' && (
+                {(formStatus === 'error' || formStatus === 'emailError') && (
                   <Text
                     as="p"
                     variant="c1"
+                    role="alert"
                     className="mt-4 text-red-600 dark:text-red-400"
                   >
-                    {labels.error}
+                    {formStatus === 'emailError'
+                      ? labels.emailError
+                      : labels.error}
                   </Text>
                 )}
 
