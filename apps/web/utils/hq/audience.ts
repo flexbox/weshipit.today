@@ -23,11 +23,7 @@ export function audienceFor(source: string): AudienceName {
 }
 
 function audienceId(name: AudienceName): string | undefined {
-  // SHIPMAIL_AUDIENCE_ID was the single newsletter audience before the split.
-  const id =
-    process.env[ENV[name]] ||
-    (name === 'newsletter' ? process.env.SHIPMAIL_AUDIENCE_ID : undefined);
-  return id || undefined;
+  return process.env[ENV[name]] || undefined;
 }
 
 function target(name: AudienceName) {

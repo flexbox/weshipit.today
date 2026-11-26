@@ -3,15 +3,13 @@ import { baseUrl } from '../../../utils/hq/base-url';
 import { consentLabelFor } from '../../../utils/hq/consent';
 import type { Lead } from '../../../utils/hq/types';
 import { addToAudience } from '../../../utils/hq/audience';
-import {
-  parseAnswerGaps,
-  SPM_AUDIT_ID,
-} from '../../../utils/audits/spm-readiness';
+import { parseGaps } from '../../../utils/audits/answers';
+import { SELF_AUDITS, selfAuditIdFrom } from '../../../utils/audits/registry';
 import {
   type EmailContent,
   NEWSLETTER_SOURCE,
   newsletterEmail,
-  spmPlanEmail,
+  selfAuditReportEmail,
   visitorEmail,
 } from '../../../utils/hq/emails';
 import { subscribeSchema } from '../../../utils/hq/schemas';
@@ -144,26 +142,33 @@ export default async function handler(
     : null;
   const score = typeof input.meta?.score === 'number' ? input.meta.score : null;
 
+  const auditId = selfAuditIdFrom(input.source);
+  const audit = auditId ? SELF_AUDITS[auditId] : undefined;
+  // Pages cached before the Report shipped send no answers: an empty plan
+  // would wrongly say "nothing to fix", so those get the score email.
+  const answers = input.meta?.answers;
+
   let content: EmailContent;
   if (lead.source === NEWSLETTER_SOURCE && !magnet) {
     content = newsletterEmail({ unsubscribeUrl });
-  } else if (
-    input.source === `audit:${SPM_AUDIT_ID}` &&
-    !magnet &&
-    score !== null &&
-    // Missing on pages cached before the plan shipped: an empty plan
-    // would wrongly say "no blockers", so those get the score email.
-    typeof input.meta?.answers === 'string'
-  ) {
-    // The plan is built here from the question ids: the browser only sends
-    // which answers weren't Yes, never the copy.
-    content = spmPlanEmail({
-      auditUrl: `${origin}/audit`,
-      gaps: parseAnswerGaps(input.meta?.answers),
+  } else if (audit && score !== null && typeof answers === 'string') {
+    // The Report is built here from the Check ids: the browser only sends
+    // which answers weren't Yes, never the copy (docs/adr/0001).
+    content = selfAuditReportEmail({
+      audit,
+      gaps: parseGaps(answers),
+      origin,
       score,
       unsubscribeUrl,
     });
   } else {
+    if (auditId) {
+      console.warn(
+        `[hq] subscribe: no Report for ${input.source} (${
+          audit ? 'no answers sent' : 'unknown Self-Audit'
+        }), sent the score email`,
+      );
+    }
     content = visitorEmail({
       locale: input.locale,
       magnet: magnet && accessUrl ? { accessUrl, title: magnet.title } : null,

@@ -7,12 +7,12 @@ import { StackAudit } from '../components/stack-audit';
 const FAQ_ITEMS = [
   {
     answer:
-      '3 minutes environ. 32 questions réparties en 4 catégories : fondations, écosystème, couche data et devops. Vous répondez par Oui, Incertain ou Non.',
+      '3 minutes environ. 32 questions réparties en 4 catégories : fondations, écosystème, couche data et devops. Tu réponds par Oui, Incertain ou Non.',
     question: "Combien de temps prend l'audit gratuit ?",
   },
   {
     answer:
-      "Non. Votre score sur 100 et le détail par catégorie s'affichent immédiatement. L'email sert uniquement à recevoir le rapport détaillé avec les recommandations priorisées.",
+      "Non. Ton score sur 100 et le détail par catégorie s'affichent immédiatement. L'email sert uniquement à recevoir le rapport détaillé, avec une recommandation par point, classée par priorité.",
     question: 'Dois-je donner mon email pour voir mon score ?',
   },
   {
@@ -22,7 +22,7 @@ const FAQ_ITEMS = [
   },
   {
     answer:
-      'Un score sous 70 signale de la dette technique à traiter avant de scaler. Le rapport email priorise vos points faibles par impact et effort, et notre équipe peut réaliser un audit complet de votre codebase en 2 semaines.',
+      'Un score sous 70 signale de la dette technique à traiter avant de scaler. Le rapport email classe tes points faibles par impact et effort, et notre équipe peut réaliser un audit complet de ta codebase en 2 semaines.',
     question: 'Que faire si mon score est faible ?',
   },
 ];
@@ -61,10 +61,10 @@ export default function AuditGratuit() {
       </Head>
       <Layout
         seoTitle="Audit React Native gratuit en 3 minutes"
-        seoDescription="32 questions pour auditer votre stack React Native : fondations, écosystème, couche data, devops. Score sur 100 immédiat + rapport détaillé par email. Gratuit."
+        seoDescription="32 questions pour auditer ta stack React Native : fondations, écosystème, couche data, devops. Score sur 100 immédiat + rapport détaillé par email. Gratuit."
         ogImageTitle="Audit React Native Gratuit"
         ogImageKicker="Outil gratuit"
-        ogImageSubline="Scorez votre stack en 3 minutes"
+        ogImageSubline="Score ta stack en 3 minutes"
         locale="fr_FR"
         withHeader
         withFooter
@@ -76,7 +76,7 @@ export default function AuditGratuit() {
 
         <div className="mt-24 grid gap-8 lg:grid-cols-2">
           <Prose>
-            <h2>Pourquoi auditer votre stack React Native ?</h2>
+            <h2>Pourquoi auditer ta stack React Native ?</h2>
             <p>
               La dette technique React Native ne se voit pas dans les démos.
               Elle se voit 6 mois plus tard : des upgrades Expo impossibles, des
@@ -87,8 +87,8 @@ export default function AuditGratuit() {
               Ces 32 questions couvrent les points que nous vérifions en premier
               lors d'un audit d'architecture : error boundaries, virtualisation
               des listes, data fetching, tests E2E, gestion des versions et des
-              secrets. Si vous répondez « Non » ou « Incertain » à plus d'un
-              tiers d'entre elles, vous payez déjà cette dette en vélocité.
+              secrets. Si tu réponds « Non » ou « Incertain » à plus d'un tiers
+              d'entre elles, tu paies déjà cette dette en vélocité.
             </p>
           </Prose>
           <Prose>
@@ -96,7 +96,7 @@ export default function AuditGratuit() {
             <p>
               Chaque réponse vaut 1 point (Oui), 0,5 point (Incertain) ou 0
               point (Non). Le score final est ramené sur 100, avec un détail par
-              catégorie pour identifier où concentrer vos efforts :
+              catégorie pour identifier où concentrer tes efforts :
             </p>
             <ul>
               <li>
@@ -113,14 +113,14 @@ export default function AuditGratuit() {
               </li>
             </ul>
             <p>
-              Pour aller plus loin, écoutez les architectures décortiquées dans
+              Pour aller plus loin, écoute les architectures décortiquées dans
               notre <Link href="/podcast">podcast React Native</Link> ou
-              découvrez notre{' '}
+              découvre notre{' '}
               <Link href="/audit">audit de codebase complet</Link>.
             </p>
             <p>
-              Vous voulez aussi vérifier vos secrets, votre stockage et vos API
-              ? Passez notre{' '}
+              Tu veux aussi vérifier tes secrets, ton stockage et tes API ?
+              Passe notre{' '}
               <Link href="/react-native-security-audit">
                 audit sécurité React Native gratuit
               </Link>{' '}
@@ -154,10 +154,10 @@ export default function AuditGratuit() {
             variant="gradient-blue"
           >
             <Text as="h2" variant="h4" className="text-white">
-              Besoin d'un regard extérieur sur votre codebase ?
+              Besoin d'un regard extérieur sur ta codebase ?
             </Text>
             <Text as="p" variant="p1" className="max-w-xl text-white">
-              Nous réalisons le même audit en profondeur sur votre application,
+              Nous réalisons le même audit en profondeur sur ton application,
               avec un backlog priorisé et un plan d'upgrade en 2 semaines.
             </Text>
             <LinkButton href="/audit" variant="outline" size="xl">
