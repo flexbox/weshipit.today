@@ -30,6 +30,10 @@ export interface Palette {
   gridMajor: string;
   /** Peak opacity of the backlight behind the handset. 0 disables it. */
   halo: number;
+  /** "r, g, b" of the broken state (use with `rgba`). */
+  danger: string;
+  /** "r, g, b" of the fixed, working state (use with `rgba`). */
+  success: string;
 }
 
 export const rgba = (rgb: string, alpha: number) => `rgba(${rgb}, ${alpha})`;
@@ -48,6 +52,8 @@ const PALETTES: Record<'light' | 'dark', Palette> = {
     grid: rgba(LIGHT_RGB, 0.09),
     gridMajor: rgba(LIGHT_RGB, 0.16),
     halo: 0,
+    danger: '220, 38, 38',
+    success: '22, 163, 74',
   },
   dark: {
     ink: `rgb(${DARK_RGB})`,
@@ -59,6 +65,8 @@ const PALETTES: Record<'light' | 'dark', Palette> = {
     grid: rgba(DARK_RGB, 0.06),
     gridMajor: rgba(DARK_RGB, 0.11),
     halo: 0.28,
+    danger: '248, 113, 113',
+    success: '74, 222, 128',
   },
 };
 

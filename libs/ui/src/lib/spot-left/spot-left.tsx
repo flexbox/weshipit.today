@@ -8,11 +8,11 @@ export interface SpotLeftProps {
 }
 
 export const SPOT_AVAILABILITY = {
-  team: 0,
-  kickstart: 0,
-  essential: 0,
-  growth: 0,
-  enterprise: 0,
+  team: 2,
+  kickstart: 2,
+  essential: 2,
+  growth: 2,
+  enterprise: 1,
 } as const;
 
 const monthFormatter = new Intl.DateTimeFormat('en-US', { month: 'long' });

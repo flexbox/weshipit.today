@@ -25,6 +25,7 @@ export * from './lib/gravatar/avatar-avengers';
 export * from './lib/header/header';
 export * from './lib/hero/hero';
 export * from './lib/hero/hero-banner';
+export * from './lib/hero/audit-animation';
 export * from './lib/hero/security-animation';
 export * from './lib/hero/team-animation';
 export * from './lib/hyperlink/hyperlink';

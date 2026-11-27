@@ -130,7 +130,7 @@ export const clients: Customer[] = [
     data: {
       id: 'spark-dating',
       industry: 'Dating',
-      is_audit: true,
+      is_audit: false,
       is_visible_homepage: false,
       logo: {
         alt: 'Spark Speed Dating app logo',
@@ -274,7 +274,7 @@ export const clients: Customer[] = [
     data: {
       id: 'talib',
       industry: 'Education',
-      is_audit: true,
+      is_audit: false,
       is_visible_homepage: false,
       logo: {
         alt: '',
@@ -354,7 +354,7 @@ export const clients: Customer[] = [
     data: {
       id: 'sunday',
       industry: 'Fintech',
-      is_audit: false,
+      is_audit: true,
       is_visible_homepage: true,
       logo: {
         alt: 'sunday restaurant payments logo',

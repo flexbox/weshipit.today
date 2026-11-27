@@ -14,6 +14,8 @@ interface HeroSplitProps {
   title: ReactNode;
   description: ReactNode;
   actions?: ReactNode;
+  /** Short reassurance line right under the actions (price, scope, risk). */
+  note?: ReactNode;
   visual: ReactNode;
   children?: ReactNode;
 }
@@ -24,6 +26,7 @@ export function HeroSplit({
   title,
   description,
   actions,
+  note,
   visual,
   children,
 }: HeroSplitProps) {
@@ -47,6 +50,11 @@ export function HeroSplit({
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
                 {actions}
               </div>
+            )}
+            {note && (
+              <Text as="p" variant="small" tone="muted">
+                {note}
+              </Text>
             )}
           </div>
           <div className="flex items-center justify-center">{visual}</div>
