@@ -6,66 +6,70 @@ class: center, middle, inverse
 
 layout: false
 
-<!-- 15 min. Cut candidates if running late, in order: "The sound", "Under the hood". -->
-<!-- TODO: fill the traction slide (players, leaderboard, kebabs sold) the morning of the talk. -->
+<!-- 15 min. À couper en cas de retard, dans l'ordre : « Le son », « Under the hood », « Le film de lancement », « Ce qu'on ne fait pas ». -->
 
 # How I shipped Kebab Profitable 🥙
 
-## a game, in one week, with AI
+## un jeu, en une semaine, avec l'IA
 
-📍 Indie Hackers Lille
+📍 Indie Hackers Lille · Apéro #50
 
-🗓️ _November 2026_
+🗓️ _8 décembre 2026_
 
-<small class="text-hint">`C` to clone a display; `P` to switch to presenter mode.</small>
+<small class="text-hint">`C` pour cloner l'affichage ; `P` pour passer en mode présentateur.</small>
 
 ???
 _00:00_
 
-Show of hands: who played it already? Who is on the leaderboard?
-
-15 minutes: what I built, how, with which tools, what it cost in AI, and what comes next.
-
----
-
-## `/whois`
-
-.remark-avatar[![Picture of David Leuliette](./images/avatar.jpeg)]
-
-- Freelance React Native developer since 2016
-
-- Solopreneur behind [weshipit.today](https://weshipit.today)
-
-- [`@flexbox_` on X](https://x.com/flexbox_)
+Levez la main : qui a déjà joué ? Qui est dans le leaderboard ?
 
 ---
 
 class: center, middle
 
-.pixel-shot[![Chef, the kebab shop owner](./images/kebab-profitable/chef.png)]
+# 100 commits. 150 visiteurs.
+
+--
+
+# **0 €.**
+
+???
+_00:20_
+
+Une semaine avec l'IA pour construire le jeu. Dix jours en ligne. Pas un euro.
+
+Construire, c'est réglé. Vendre, non. Ce talk, ce sont les deux moitiés : comment je l'ai construit, et le plan pour qu'il rapporte d'ici le 8 janvier.
+
+---
+
+class: center, middle
+
+.pixel-shot[![Chef, le patron du kebab](./images/kebab-profitable/chef.png)]
+
+_« Fais plus de thune que moi. Si tu peux. »_
 
 ???
 _00:45_
 
-Meet Chef. He owns the kebab shop downstairs. He makes money. You don't.
+Voici Chef. Il tient le kebab en bas de chez toi. Lui, il gagne de l'argent. Toi, non.
 
 ---
 
-## The pitch
+## Le pitch
 
-You just signed your _rupture conventionnelle_.
-
---
-
-- 💶 €1,500 in the bank, a studio in Lille, a kebab shop downstairs
+Tu viens de signer ta _rupture conventionnelle_.
 
 --
 
-- 🎯 One goal: **€270 of MRR**, the price of a kebab a day
+- 💶 1 500 € en banque, un studio à Lille, un kebab en bas
 
 --
 
-- 💀 Run out of cash: _retour au CDI_
+- 🎯 Un objectif : **270 € de MRR**, le prix d'un kebab par jour
+
+--
+
+- 💀 Plus de cash : _retour au CDI_
 
 --
 
@@ -74,243 +78,227 @@ You just signed your _rupture conventionnelle_.
 👉 [kebab-profitable.vercel.app](https://kebab-profitable.vercel.app)
 
 ???
-A parody management game about indie hacking, made for this group. Some of you are in it.
+Un jeu de gestion parodique sur l'indie hacking, fait pour ce groupe. Certains d'entre vous sont dedans.
 
 ---
 
 class: center, middle
 
-![The share picture of Kebab Profitable](./images/kebab-profitable/og.png)
+![L'image de partage de Kebab Profitable](./images/kebab-profitable/og.png)
 
 ???
 _01:30_
 
-Three slots a day: matin, après-midi, soir. Code, ship, post, cold outreach, freelance, rest, pivot, and the monthly apéro at Le Charlatan.
+Trois créneaux par jour : matin, après-midi, soir. Coder, shipper, poster, cold outreach, freelance, se reposer, pivoter, et l'apéro mensuel au Charlatan.
 
 ---
 
-## What is inside
+## Ce qu'il y a dedans
 
 --
 
-- 🧠 A pure TypeScript rules engine, and a **balance simulator** (`pnpm sim`)
+- 🧠 Un rules engine en TypeScript pur, et un **simulateur d'équilibrage** (`pnpm sim`)
 
 --
 
-- 🎲 A **seeded daily run**: everyone gets the same luck, so you compare decisions
+- 🎲 Un **daily run seedé** : tout le monde a la même chance, on compare les décisions
 
 --
 
-- 🏆 A weekly leaderboard that **replays every run on the server**. No cheating.
+- 🏆 Un leaderboard hebdo qui **rejoue chaque partie sur le serveur**. Pas de triche.
 
 --
 
-- 🎨 Pixel art and 🎵 music **written as code**
+- 🎨 Du pixel art et 🎵 de la musique **écrits en code**
 
 --
 
-- 🥙 Chef: a coach with a hundred lines, dealt like a shuffled deck
+- 🥙 Chef : un coach avec une centaine de répliques, distribuées comme un paquet de cartes mélangé
 
 --
 
-- ⏱️ Urgent cards: 6 seconds to decide. Production is down.
+- ⏱️ Des cartes urgentes : 6 secondes pour décider. La prod est down.
 
 ???
-Nothing the browser claims is ranked. The server replays your list of moves with the same engine.
+Rien de ce que le navigateur annonce n'est classé. Le serveur rejoue ta liste de coups avec le même engine.
 
 ---
 
 template: inverse
 
-# The numbers
+# Les chiffres
 
 ---
 
-## One week
+## Une semaine, puis le polish
 
 ```console
-first commit   : Sat 15 Nov 2026
-last commit    : Sat 22 Nov 2026
-commit days    : 7 of 8
-commits        : 91
-lines added    : 34,163
-lines removed  : 6,203
+premier commit  : sam. 15 nov. 2026
+dernier commit  : mer. 26 nov. 2026
+jours de commit : 10 sur 12
+commits         : 100 (dont 91 la première semaine)
+lignes ajoutées : 35 628
+lignes retirées : 6 658
 ```
 
 --
 
-**88 of 91 commits** co-authored by Claude.
+**96 commits sur 100** co-écrits avec Claude.
 
 ???
 _03:00_
 
-The first day already had the engine, the sim, the UI, the leaderboard API. Then six days of polish. The polish is where the game is.
+Dès le premier jour, il y avait l'engine, la sim, l'UI, l'API du leaderboard. Puis six jours de polish : 91 commits la première semaine. Depuis le lancement, des événements URSSAF et l'apéro. Le jeu, il est dans le polish.
 
 ---
 
-## AI usage, from the session logs
+## L'usage de l'IA, d'après les logs de session
 
-|                        |                                  |
-| ---------------------- | -------------------------------- |
-| Sessions               | **18**                           |
-| Prompts I typed        | **155**                          |
-| Model turns            | **1,868**                        |
-| Tool calls             | **2,249** (1,287 shell commands) |
-| Web searches + fetches | **113**                          |
-| Subagents spawned      | **9**                            |
-| Output tokens          | **2.5 M**                        |
-| Cached context read    | **533 M** tokens                 |
+|                         |                                           |
+| ----------------------- | ----------------------------------------- |
+| Sessions                | **25**                                    |
+| Prompts tapés           | **122** (dont 43 skills en slash command) |
+| Tours du modèle         | **2 121**                                 |
+| Tool calls              | **2 565** (dont 1 482 commandes shell)    |
+| Recherches web          | **120**                                   |
+| Subagents lancés        | **13**                                    |
+| Output tokens           | **2,7 M**                                 |
+| Contexte lu en cache    | **575 M** de tokens                       |
+| Coût, au tarif de l'API | **≈ 351 $** (Fable 282 $, Opus 69 $)      |
+
+<small class="text-hint">Logs Claude Code du 15 au 26 novembre 2026. Coût recalculé au tarif public de l'API, cache compris.</small>
 
 ???
-155 prompts for 91 commits. That's less than two prompts per commit. I wrote intentions, not code.
+122 prompts pour 100 commits. À peu près un prompt par commit. J'ai écrit des intentions, pas du code.
 
-533 M cached tokens: the model rereads the whole project on every turn. Prompt caching is what makes this affordable.
+575 M de tokens en cache : le modèle relit tout le projet à chaque tour. C'est le prompt caching qui rend ça abordable : ces lectures ont coûté 115 $, sans cache elles en auraient coûté environ 4 000.
+
+351 $ au tarif API : une quarantaine de kebabs. Le jeu doit en vendre 30 pour être kebab profitable.
 
 ---
 
-## Which model did what
+## Quel modèle a fait quoi
 
 --
 
-- 🦄 **Claude Fable 5.2** — 70% of turns, 60 commits
+- 🦄 **Claude Fable 5.2** — 63 % des tours, 60 commits
 
-  the game itself: engine, art, sound, UI
-
---
-
-- 🧠 **Claude Opus 5.5** — 29% of turns, 28 commits
-
-  launch film, SEO, Product Hunt prep, the phone layout
+  le jeu lui-même : engine, art, son, UI
 
 --
 
-- ⚡ **Claude Haiku 5.5** — 1%, the small chores
+- 🧠 **Claude Opus 5.5** — 36 % des tours, 36 commits
+
+  film de lancement, SEO, prépa Product Hunt, le layout mobile, les événements URSSAF
+
+--
+
+- ⚡ **Claude Haiku 5.5** — 1 %, les petites corvées
 
 ???
-Rule of thumb: the most capable model for creative work where taste matters, the faster one for well-specified tasks.
+Règle de base : le modèle le plus capable pour le travail créatif où le goût compte, le plus rapide pour les tâches bien spécifiées.
 
 ---
 
 template: inverse
 
-# The tools
+# Les outils
 
 ---
 
-## The stack
+class: scene
 
---
+## La stack
 
-- ▲ **Next.js 16** on **Vercel**
+LE JEU DANS LE NAVIGATEUR · LE SERVEUR REJOUE · LE MARKETPLACE BRANCHE LE RESTE
 
---
-
-- 🗄️ **Upstash Redis** for the leaderboard, one command from the Vercel Marketplace
-
---
-
-- 💳 **Stripe Payment Links**, also from the Marketplace, made by a script
-
---
-
-- 📈 **Vercel Analytics**, one line
-
---
-
-- 🧪 **Vitest** + a balance simulator of scripted players
+<object data="./images/kebab-profitable/scene-stack.svg" type="image/svg+xml" data-play-on-show aria-label="La stack : Next.js 16, Vercel, Upstash Redis, Stripe, Vercel Analytics, Vitest"></object>
 
 ???
-`vercel integration add upstash/upstash-kv` and `vercel integration add stripe`. No dashboard clicking, the agent did it.
+`vercel integration add upstash/upstash-kv` et `vercel integration add stripe`. Aucun clic dans un dashboard, c'est l'agent qui l'a fait.
 
-No database in preview deployments, on purpose: a test run never reaches the real board.
+Pas de base de données sur les preview deployments, exprès : une partie de test n'atteint jamais le vrai classement.
 
 ---
 
-## The workshop
+class: scene
 
---
+## L'atelier
 
-- 🤖 **Claude Code**, driven from **T3 Code**: threads, worktrees, delegates
+T3 CODE PILOTE · CLAUDE CODE CONSTRUIT · GIT GARDE LA TRACE
 
---
-
-- 📱 **Argent**: the agent plays the game in a real browser, taps, screenshots, reads state
-
---
-
-- 🔍 Built-in **preview**: resize to phone width, check the layout
-
---
-
-- 🎬 **Headless Chrome + ffmpeg**: a 48-second launch film rendered frame by frame
+<object data="./images/kebab-profitable/scene-workshop.svg" type="image/svg+xml" data-play-on-show aria-label="L'atelier : T3 Code lance un agent Claude Code par thread, chacun dans son worktree, avec le shell, la preview et les skills, jusqu'à git et Vercel"></object>
 
 ???
-The agent doesn't just write code. It opens the game, plays it, looks at the screen, and fixes what's wrong. 148 JavaScript evaluations in the running game, 53 screenshots.
+J'écris une intention dans un thread T3 Code. Chaque thread lance son propre agent Claude Code, dans son propre worktree : Fable sur le jeu, Opus sur le film, Haiku sur les corvées. Ils avancent en parallèle sans se marcher dessus.
 
+L'agent ne fait pas qu'écrire du code. Il ouvre le jeu dans la preview, y joue, regarde l'écran et corrige ce qui cloche. C'est la boucle au centre.
+
+Le film de lancement de 48 secondes, c'est Chrome headless + ffmpeg, rendu image par image par le même agent.
 ---
 
-## Skills: teach the agent a craft
+## Les skills : apprendre un métier à l'agent
 
 --
 
-- 🎨 **pxl** — pixel art as code (MIT, `crsolver/claude-pxl`)
+- 🎨 **pxl** — le pixel art en code (MIT, `crsolver/claude-pxl`)
 
 --
 
-- 🎵 **chirp** — a synthesiser, music as code (MIT, `uilianks/chirp`)
+- 🎵 **chirp** — un synthé, la musique en code (MIT, `uilianks/chirp`)
 
 --
 
-- ✍️ **better-\***: writing, layout, typography, colors, accessibility
+- ✍️ **better-\*** : écriture, layout, typo, couleurs, accessibilité ([jakub.kr/skills](https://jakub.kr/skills))
 
 --
 
-- 🔥 **grilling** — the agent interrogates my plan before building it
+- 🔥 **grilling** — l'agent cuisine mon plan avant de le construire ([aihero.dev/skills-grill-me](https://www.aihero.dev/skills-grill-me))
 
 --
 
-- 🛒 **vercel:marketplace** — provision Redis and Stripe the right way
+- 🛒 **vercel:marketplace** — provisionner Redis et Stripe comme il faut
 
 ???
-A skill is a folder of instructions and scripts the agent loads when it needs it. pxl and chirp live in the repo, in `.claude/skills/`.
+Un skill, c'est un dossier d'instructions et de scripts que l'agent charge quand il en a besoin. pxl et chirp vivent dans le repo, dans `.claude/skills/`.
 
 ---
 
 class: center, middle
 
-.pixel-shot[![The room, in the evening light](./images/kebab-profitable/room_evening.png)]
+.pixel-shot[![La chambre, dans la lumière du soir](./images/kebab-profitable/room_evening.png)]
 
 `art/kebab.px.js` → `pnpm art` → PNG
 
 ???
 _07:30_
 
-Every pixel here is code. Neo Geo conventions: ramps that shift hue, outlines the colour of what they surround, one light from the top left. I told the agent the conventions, the skill applies them.
+Chaque pixel ici est du code. Les conventions Neo Geo : des dégradés qui changent de teinte, des contours de la couleur de ce qu'ils entourent, une seule lumière en haut à gauche. J'ai donné les conventions à l'agent, le skill les applique.
 
 ---
 
-## The sound
+## Le son
 
 ```javascript
-// audio/kebab.cx.js — one file, every effect and every tune
-// a chest opens when a customer signs up
-// four bars of fanfare when you win, the same notes falling when you lose
+// audio/kebab.cx.js — un seul fichier, chaque effet et chaque musique
+// un coffre s'ouvre quand un client s'inscrit
+// quatre mesures de fanfare quand tu gagnes, les mêmes notes qui tombent quand tu perds
 ```
 
 --
 
-- Three music loops in related keys, so one can follow another
+- Trois boucles musicales dans des tonalités voisines, pour enchaîner de l'une à l'autre
 
 --
 
-- Loops without a seam in every browser
+- Des boucles sans couture, dans tous les navigateurs
 
 ???
-Cut candidate. The chest sound when you sign a customer is the best dopamine in the game.
+À couper si besoin. Le son du coffre quand tu signes un client, c'est la meilleure dopamine du jeu.
 
 ---
 
-## Under the hood: balance by simulation
+## Under the hood : l'équilibrage par la simulation
 
 ```console
 $ pnpm sim
@@ -318,43 +306,45 @@ $ pnpm sim
 
 --
 
-- Scripted players run thousands of games
+- Des joueurs scriptés enchaînent des milliers de parties
 
 --
 
-- A good player is kebab profitable in **~45 days, ~200 clicks**
+- Un bon joueur est kebab profitable en **~45 jours, ~200 clics**, soit **~10 minutes** de jeu
 
 --
 
-- Chef's tips are **tested**: a newcomer who follows them wins far more often
+- Les conseils de Chef sont **testés** : un débutant qui les suit gagne bien plus souvent ([skill onboarding](https://marketing-skills.com/skills/onboarding))
+
+<img src="./images/kebab-profitable/chef-tips.png" alt="Premier jour : Chef marque son conseil sur une idée et montre la route vers le premier client, en cinq étapes" style="display:block;max-height:262px;margin:0.4em auto 0;border-radius:10px">
 
 ???
-Cut candidate. This is the part a human would never do by hand. The agent tunes a number in `balance.ts`, reruns the sim, reads the win rates.
+À couper si besoin. C'est la partie qu'un humain ne ferait jamais à la main. L'agent ajuste un chiffre dans `balance.ts`, relance la sim, lit les taux de victoire.
+
+La capture : le premier jour d'une première partie. Chef marque son conseil sur une idée et montre la route vers le premier client, en cinq étapes. Ces conseils sont vérifiés par `src/ui/coach.test.ts`.
+
+L'histoire derrière : j'ai fait tester le jeu à ma femme, et elle n'a pas compris comment ça fonctionnait. Je n'ai rien conçu moi-même : j'ai juste lancé le skill onboarding de marketing-skills.com pour améliorer l'onboarding. C'est de là que vient la route vers le premier client, avec un conseil de Chef à chaque étape.
 
 ---
 
-## What I actually did
+## Ce que j'ai vraiment fait
 
 --
 
-- 🎯 Decide what the game is about
+- 🎯 Décider de quoi parle le jeu
 
 --
 
-- 👀 Play it. A lot. Say what feels wrong.
+- 👀 Y jouer. Beaucoup. Dire ce qui sonne faux.
 
 --
 
-- ✂️ Say no: "Open the game in French for everyone" → **reverted** 2 minutes later
-
---
-
-- 🧑‍🤝‍🧑 Ask the people in the game if they were OK being in it
+- ✂️ Dire non : « Ouvre le jeu en français pour tout le monde » → **revert** 2 minutes plus tard
 
 ???
 _10:00_
 
-The job moved from typing to taste. Every commit message reads like a product decision: "Have the founder spin and raise a fist for a new customer."
+Le boulot est passé de taper à avoir du goût. Chaque message de commit se lit comme une décision produit : « Le fondateur tourne sur lui-même et lève le poing pour un nouveau client. »
 
 ---
 
@@ -362,104 +352,230 @@ template: inverse
 
 # Go-to-market
 
+### 270 € en un mois. Zéro budget. Un dev.
+
 ---
 
-## Phase 0 — done: the room
+## L'objectif : 270 € en un mois
+
+Le jeu doit devenir kebab profitable. Lui aussi.
 
 --
 
-- 🍻 Built **for one group**: this one. The apéro is in the game, linked to the real Luma.
+.pull-left[
+
+### 30
+
+kebabs à **9 €**, offerts à l'auteur à la fin d'une partie
+
+<img src="./images/kebab-profitable/kebab-offer.png" alt="Écran de victoire : Kebab profitable en 48 jours, et le bouton Offrir un kebab à 9 €" style="display:block;max-width:100%;max-height:290px;margin:0.6em auto 0;border-radius:10px">
+]
 
 --
 
-- 🧑‍🎤 **You are in it**: members are playable founders, guests drop by at night
+.pull-right[
 
---
+### 10
 
-- 📣 Every month-end report has a **share on X** button that thanks the guests you met, by handle
+Founder cards à **27 €**. Trois kebabs la carte.
 
---
-
-- 🖼️ A win shares a **picture of that score**, read from the leaderboard
+<img src="./images/kebab-profitable/founder-card.png" alt="La carte de Karl à côté de la carte Crée le tien, avec le bouton Entrer dans le jeu à 27 €" style="display:block;max-width:100%;max-height:290px;margin:0.6em auto 0;border-radius:10px">
+]
 
 ???
 _11:00_
 
-Distribution is designed into the game: when you share, you tag the people in it, and their followers see it.
+L'objectif du jeu, appliqué au jeu.
+
+À gauche : l'écran de victoire, le seul endroit où l'offre kebab apparaît. À droite : une vraie carte de fondateur, et la case « Crée le tien » qui la vend.
 
 ---
 
-## Traction so far
+## Où on en est
 
-<!-- TODO: fill on the day -->
+|                                                  |          |
+| ------------------------------------------------ | -------- |
+| Visiteurs en dix jours, à peu près               | **150**  |
+| Viennent de France                               | **72 %** |
+| Arrivés par X, le seul canal qui envoie du monde | **59**   |
+| Encaissé : ni kebab, ni carte                    | **0 €**  |
 
-|                           |          |
-| ------------------------- | -------- |
-| Players                   | **TODO** |
-| Winning runs on the board | **TODO** |
-| Shares on X               | **TODO** |
-| Kebabs bought (€9)        | **TODO** |
-| Founder cards sold (€27)  | **TODO** |
+Au moins **7 joueurs** ont gagné une partie.
+
+<small class="text-hint">Source : Vercel Analytics, du 17 au 26 novembre 2026. Leaderboard du jeu au 26 novembre.</small>
+
+???
+<!-- TODO : mettre ces chiffres à jour le matin du talk. -->
 
 ---
 
-## Phase 1 — Product Hunt
+## Le kebab ne suffira pas
+
+L'offre à 9 € ne s'affiche qu'**après une victoire**.
+
+--
+
+- 🏆 **5 %** des visiteurs ont gagné une partie, donc vu l'offre
+
+--
+
+- 🥙 **1 sur 200** : un visiteur sur 200 achète un kebab, si un gagnant sur dix paie. C'est généreux pour un pourboire.
+
+--
+
+- 📉 **6 000** visiteurs pour vendre 30 kebabs. On en a eu 150.
+
+<small class="text-hint">Estimation : il n'y a encore aucune vente à mesurer.</small>
+
+???
+Les maths tuent le pourboire. Le plan repose donc sur trois paris.
+
+---
+
+class: center, middle
+
+### Pari 1
+
+# L'argent est dans la Founder card
+
+## 10 × 27 € = 270 €
+
+Dix places à la table. Trois kebabs la place.
+
+--
+
+🎨 Ton portrait en pixel art · 🃏 Ta carte, jouable par tout le monde · 💡 Ton produit en idée fétiche · 📣 Ton @ sur la carte
+
+???
+Chaque acheteur devient un personnage, et partage le jeu pour le montrer. La carte vend autant de reach qu'une place.
+
+---
+
+## Pari 2 — les gens du jeu font le reach
+
+.pull-left[
+
+### 5
+
+membres jouables
+
+### 13
+
+caméos, avec leur @
+]
+
+.pull-right[
+
+**Jeudi 10 : un thread.**
+
+- Un post par caméo : sa carte en image, son conseil « Dans la vraie vie », son @. Un seul @ par post.
+
+- Le dernier post donne le lien.
+
+- Le même matin, chaque membre poste sa carte.
+  ]
+
+???
+Une carte te déplaît ? Elle sort du jeu le jour même.
+
+---
+
+## Pari 3 — la salle d'abord, Product Hunt ensuite
+
+--
+
+- 🍻 **Mar. 8 — l'apéro.** Le leaderboard à l'écran. Les premières ventes. Vos phrases, mot pour mot. La photo.
+
+--
+
+- 🔧 **Mer. 9 — on corrige.** Ce que la salle a trouvé. La photo et les chiffres vont dans le premier commentaire.
+
+--
+
+- 🚀 **Jeu. 10, 09:01 — Product Hunt.** Avec un leaderboard plein, des ventes et vos mots. Pas avec un tableau vide.
+
+???
+Le leaderboard repart à zéro chaque lundi. Jeudi, il est encore plein.
+
+---
+
+## Le film de lancement
 
 .row[
 .left-column[
-![Launch film: goes broke on day 59](./images/kebab-profitable/film-broke.png)
+![Film de lancement : à sec au jour 59](./images/kebab-profitable/film-broke.png)
 ]
 .right-column[
-![Launch film: kebab profitable on day 43](./images/kebab-profitable/film-win.png)
+![Film de lancement : kebab profitable au jour 43](./images/kebab-profitable/film-win.png)
 ]
 ]
 
-- 🎬 A 48-second film: the same run, played twice. Never posts → broke on day 59. Posts → profitable on day 43.
+- 🎬 48 secondes : la même partie, jouée deux fois. Ne poste jamais → à sec au jour 59. Poste → profitable au jour 43.
 
-- 📐 16:9, 9:16 and 1:1 cuts, plus a reduced-motion version
+- 📐 Formats 16:9, 9:16 et 1:1, plus une version reduced motion
 
 ???
-Every number in the film comes from the real rules engine. The film's message is the game's message: distribution beats code.
+À couper si besoin. Chaque chiffre du film sort du vrai rules engine. Le message du film, c'est celui du jeu : distribution beats code.
 
 ---
 
-## Phase 2 — make it pay for itself
+## Le calendrier
 
---
-
-- 🥙 **€9**: buy the author a real kebab after a win
-
---
-
-- 🃏 **€27**: your own founder card, pixel portrait, playable, balanced with you by e-mail
-
---
-
-- 🎯 Goal for the game itself: be **kebab profitable**. €270 a month.
-
-???
-The founder card is the clever one: every buyer becomes a character, and shares the game to show it off.
+| Quand                   | Quoi                                                                                                  |
+| ----------------------- | ----------------------------------------------------------------------------------------------------- |
+| Jusqu'au 6 déc.         | Rendre le funnel lisible. Le compteur de places. L'offre kebab après une défaite. Préparer le thread. |
+| Lun. 7 déc.             | Message Luma aux inscrits : joue la partie du 8 avant de venir.                                       |
+| **Mar. 8 déc., 19:00**  | **Cette salle. Dix places en vente.**                                                                 |
+| Mer. 9 déc.             | Corriger. Presse locale, avec la photo.                                                               |
+| **Jeu. 10 déc., 09:01** | **Product Hunt. Le thread des caméos. Les membres postent leur carte. LinkedIn.**                     |
+| Lun. 14 déc.            | Premier podium de la semaine. Première nouvelle carte.                                                |
+| Mar. 15 déc.            | Show HN.                                                                                              |
+| Ven. 8 janv.            | On compte, et on publie le résultat, quel qu'il soit.                                                 |
 
 ---
 
-## Phase 3 — next rooms
+## Ce qu'on ne fait pas
 
---
+.pull-left[
 
-- 🗺️ Other Indie Hackers chapters: their bar, their apéro, their founders
+- 💸 **Ads** — aucune marge pour acheter un visiteur
 
---
+- 🔎 **SEO** — des mois à rentabiliser, personne ne cherche ce jeu
 
-- 🃏 Open source cards: add an event, an idea, a guest with a pull request
+- 📬 **Newsletter, Discord** — de la machinerie pour un produit dont on a besoin chaque semaine
+  ]
 
---
+.pull-right[
 
-- 🏢 The same recipe as a service: a small game for your community or your launch
+- 📱 **TikTok, Insta** — la scène est sur X et LinkedIn
+
+- 🛍️ **Autre chose à vendre** — pas avant la première vente
+
+- 🇬🇧 **Un push en anglais** — l'anglais sert à Product Hunt, l'effort va au français
+  ]
 
 ???
-_14:00_
+À couper si besoin. Dire non, ça fait aussi partie du plan.
 
-The cards are plain data. `pnpm test` and `pnpm sim` check that a new card doesn't break the balance. Send me a PR.
+---
+
+## Comment on saura
+
+### 0 / 270 €
+
+Un seul chiffre : les euros encaissés.
+
+--
+
+- 🪑 **Aucune place vendue ce soir** → c'est l'offre qui cloche, pas le reach. On change le pitch avant jeudi.
+
+--
+
+- 🚪 **Des visiteurs, peu de parties lancées** → c'est l'écran titre. On arrête d'envoyer du monde et on corrige.
+
+--
+
+- ⏳ **Des parties lancées, peu de finies** → la partie est trop longue. On regarde où les gens s'arrêtent.
 
 ---
 
@@ -467,31 +583,54 @@ The cards are plain data. `pnpm test` and `pnpm sim` check that a new card doesn
 
 --
 
-- 🧠 AI turned a weekend idea into **91 commits in a week**
+- 🧠 L'IA a transformé une idée de week-end en **91 commits en une semaine**
 
 --
 
-- 🎯 Your job is **taste and saying no**, not typing
+- 🎯 Ton job, c'est **le goût et savoir dire non**, pas taper
 
 --
 
-- 🛠️ Give the agent **skills and a way to see** what it built
+- 🛠️ Donne à l'agent **des skills et un moyen de voir** ce qu'il a construit
 
 --
 
-- 📣 Design distribution **into** the product, from day one
+- 📣 Conçois la distribution **dans** le produit, dès le premier jour
 
 ---
 
-template: inverse
+## À toi de jouer
 
-# Merci 🥙
+--
 
-👉 [kebab-profitable.vercel.app](https://kebab-profitable.vercel.app)
+1. 🎮 **Joue la partie du jour** — [kebab-profitable.vercel.app](https://kebab-profitable.vercel.app)
 
-[`@flexbox_`](https://x.com/flexbox_) · [weshipit.today](https://weshipit.today)
+--
+
+2. 🚀 **Jeudi, à 09:01** — donne ton nombre de jours sur Product Hunt
+
+--
+
+3. 🪑 **Prends une place** — 27 €. Dix places à la table.
+
+???
+_14:30_
+
+Joue la partie du jour. Bats mon score. Et si tu gagnes, Chef aimerait bien son kebab.
+
+---
+
+class: outro
+
+<object data="./images/kebab-profitable/scene-thanks.svg" type="image/svg+xml" data-play-on-show aria-label="Merci · David Leuliette · @flexbox_"></object>
 
 ???
 _15:00_
 
-Play today's run. Beat my score. And if you win, Chef would like his kebab.
+Moi, c'est David, `@flexbox_` sur internet. Développeur React Native freelance depuis 2016, solopreneur derrière weshipit.today.
+
+Le podcast : Le Cross Platform Show.
+
+Les slides et les chiffres : davidl.fr/courses/kebab-profitable.html
+
+Merci. Des questions ?
